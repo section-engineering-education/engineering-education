@@ -1,4 +1,4 @@
-### Contribution Guidelines
+## Contribution Guidelines
 In order to participate in the program, all members will be required to sign an agreement based on established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (This process will be facilitated following enrollment in the program.)
 
 Content can include:
@@ -18,9 +18,10 @@ Suggested topic areas (but certainly not limited to):
 - Kubernetes
 - Docker
 
-### Example Article Submission
+## Example Article Submission
 
 title: A Brief History of Container Technology
+
 description: A brief history of container technology and how it has fundamentally altered the development of software today.
 
 ---
