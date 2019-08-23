@@ -22,10 +22,10 @@ Suggested topic areas (but certainly not limited to):
 - Cloud Native Technologies
 
 Other subject matter samples:
-https://www.section.io/blog/prometheus-querying/
-https://www.section.io/blog/debug-headers-best-practices/
-https://www.section.io/blog/real-user-monitoring-performance-optimization/
-https://www.section.io/blog/varnish-cache-503-error-guru-meditation/
+- https://www.section.io/blog/prometheus-querying/
+- https://www.section.io/blog/debug-headers-best-practices/
+- https://www.section.io/blog/real-user-monitoring-performance-optimization/
+- https://www.section.io/blog/varnish-cache-503-error-guru-meditation/
 
 
 ## Example Article Submission
