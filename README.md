@@ -41,4 +41,4 @@ Suggested topic areas (but certainly not limited to):
 5. Once your article has been published, we will facilitate payouts for your contribution :)
 
 ### Help Us Help All
-This program is very much in the beginning phases, and we can only improve and add value by working together with our community. Please help us iterate on our processes so that we can grow this program to enrich the larger engineering community.
+This program is very much in the beginning phases, and we can only improve and add value by working together with our community. Please help us iterate on our processes so that we can grow this program to enrich the larger engineering community. If you see something that needs attention, please submit an issue so we can address it in a timely manner.
