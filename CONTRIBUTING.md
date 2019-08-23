@@ -1,6 +1,8 @@
 ## Contribution Guidelines
 In order to participate in the program, all members will be required to sign an agreement based on established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (This process will be facilitated following enrollment in the program.)
 
+Articles should be approximately 500-750 words.
+
 Content can include:
 - How-to guides
 - Tutorials
@@ -9,7 +11,7 @@ Content can include:
 
 Suggested topic areas (but certainly not limited to):
 - Network Engineering
-- DNS routing 
+- DNS Routing 
 - BGP
 - Caching
 - Web Application Firewall
@@ -17,6 +19,14 @@ Suggested topic areas (but certainly not limited to):
 - Reverse Proxy Technology
 - Kubernetes
 - Docker
+- Cloud Native Technologies
+
+Other subject matter samples:
+https://www.section.io/blog/prometheus-querying/
+https://www.section.io/blog/debug-headers-best-practices/
+https://www.section.io/blog/real-user-monitoring-performance-optimization/
+https://www.section.io/blog/varnish-cache-503-error-guru-meditation/
+
 
 ## Example Article Submission
 
