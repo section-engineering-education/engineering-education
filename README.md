@@ -1,19 +1,6 @@
 # engineering-education
 A community-generated pool of educational content which is useful for engineers of every level. Published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/).
 
-### About [Section](http://section.io/)
-Section is an edge compute platform which helps modern engineers deliver better web applications. 
-
-Section gives engineers the flexibility and control to run any compute workload, anywhere, underpinned by modern DevOps principles. Section’s developer-centric framework is based on complete transparency, extreme flexibility, and software-defined control.
- 
-With its container-based (Docker/Kubernetes) approach to HTTP traffic delivery, developers can choose to deploy their own custom workload on the distributed edge platform or choose from Section’s extensive library of highly available and highly performant edge compute modules.
-
-Modules available on Section include Varnish Cache, OpenResty, image optimization, bot management, web application firewall (WAF), server-side multivariate testing, virtual waiting room, PageSpeed, Node JS, and other front end optimization modules. Section operates across the HTTP delivery path from origin to distributed network, is hosting provider-agnostic (cloud, on-premise, self-hosted, ...), and has already been proven to address challenges far beyond traditionally centralized cloud or CDN workloads.
-
-Moving more application logic to the edge is a priority for performance-oriented engineering teams, but many run into challenges because they don’t have the tooling they need to properly code, tune, and test before deploying to production. Section’s edge compute platform has been specifically designed to accelerate, scale and secure websites with the complete development lifecycle in mind. The complete DevOps suite includes: configuration as code, full API availability, real-time diagnostics and insights, and instant global configuration change propagation and cache clear.
-
-With Section, the possibilities of what developers can achieve at the edge are limitless. By giving engineers the tooling to run any workload, anywhere, using modern DevOps principles, we ask engineers, “What will you create?”
-
 ### Program Purpose
 Section is partnering with local university computer science programs to create a community-generated pool of content which is useful for engineers of every (any) level. 
 
