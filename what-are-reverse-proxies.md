@@ -23,3 +23,8 @@ An example of a common reverse proxy that is widely used in a proxy stack is [Va
 
 ### Proxy Stacks in Section
 In Section’s case, the Section platform revolves around the use of reverse proxies to enhance customer website applications. Unlike other edge compute platforms, Section allows the customer to configure which reverse proxy modules are a part of the proxy stack and in which order. The order is a key feature since most reverse proxies tend to come after a Web Application Firewall (WAF) reverse proxy. However, Section does not restrict customers to having a WAF first in the proxy stack. This not only makes Section unique from other edge compute platforms, but it gives users freedom in how their website operates.
+
+---
+
+#### About the Author
+<img style="float: left; padding-right: 5%; margin-bottom: 10px;" src="/assets/images/education/authors/ivan-santos.png">Ivan Santos is currently a computer science student at the Colorado School of Mines. He originates from the rural parts of Aguascalientes, Mexico, but grew up in Denver, CO where he remains today. He has developed a special relationship with numbers throughout his academic experience, realizing his favorite application for numbers, logic, and math is computer science. Aside from his studies, he has always had a strong passion for soccer, and his favorite teams vary across countries - FC Barcelona of Spain and Club America from Mexico have his heart until the day he dies.
