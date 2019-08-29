@@ -1,5 +1,5 @@
 ## Contribution Guidelines
-In order to participate in the program, all members will be required to sign an agreement based on established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (This process will be facilitated following enrollment in the program.)
+In order to participate in the program, all members will be required to agree to established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (Agreement is included as part of the enrollment process.)
 
 **Articles should be approximately 500-750 words.**
 
