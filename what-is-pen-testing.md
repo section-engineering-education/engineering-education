@@ -39,3 +39,8 @@ Zero-day vulnerabilities are vulnerabilities that are generally unknown to the o
 Pen testing can also give security personnel experience in dealing with attackers. It can help these personnel discover ways to effectively and quickly remove attackers from the system before they can do any damage. Also, testing can give developers/creators insight into their systems. They can be shown if their application is vulnerable in a certain way, if an exploit was created for that vulnerability, and how it could be fixed or at a minimum mitigated.
 
 Penetration Testing, or pen testing for short, is simply the process by which professional ethical hackers attack systems in order to find or even exploit security vulnerabilities that may be present. Upon discovery, the developers/creators of the system can begin to work on a patch to close the vulnerability.
+
+---
+
+#### About the Author
+<img style="float: left; padding-right: 5%; margin-bottom: 10px;" src="/assets/images/education/authors/gregory-manley.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.
