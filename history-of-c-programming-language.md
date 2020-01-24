@@ -6,7 +6,7 @@ title: A Brief History of C Programming
 description: There are many offshoots of the C programming language, including Objective-C, C++, and C#. None of these are the same language. Here's a brief history of C.
 author: Gregory Manley
 date: 2020-01-23T00:00:00-07:00
-topics: [networking]
+topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
