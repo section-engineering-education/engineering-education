@@ -11,7 +11,7 @@ Content can be found at [https://section.io/engineering-education](https://secti
 The Section team will monitor and manage the overall Program.
 
 ### Program Resources
-- Be sure to sign up to the Section Community Slack Channel at [slack.section.io](https://slack.section.io/). Once signed up, join the #eng-ed channel for ongoing program communications.
+- Be sure to sign up to the Section Community Slack Channel at [slack.section.io](https://slack.section.io/). Once signed up, join the **#eng-ed** channel for ongoing program communications.
 
 ### Submission Instructions
 1. To submit an article for consideration, be sure to first check [published content](https://www.section.io/engineering-education/) to ensure relevance and prevent overlap. Hint: Use the community Slack channel to suggest and get feedback on topic ideas.
