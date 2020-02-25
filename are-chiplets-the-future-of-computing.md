@@ -10,8 +10,8 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/brief-history-of-c.jpg
-    alt: brief history of C
+  - url: /assets/images/education/chiplet-future.jpg
+    alt: chiplet future of cumputing
 ---
 The use of chiplets allows manufactures to use more than one node in a processor design. For example, the I/O components of CPUs are hard to shrink.
 <!--more-->
