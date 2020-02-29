@@ -14,13 +14,13 @@ images:
     alt: fiber-optic
 ---
 
-All around the world, artificial intelligence is making its way into people's lives. This technology is feared by many, but how realistic is that fear? Should we really be concerned?
+When comparing fiber optic cable to other mediums, fiber optic cables has a much lighter weight, a smaller diameter, and the ability to avoid corrosion and rust due to a non-metallic construction. These characteristics place fiber optics at the top of the list for communications in today’s world.
 
 <!--more-->
 
 ## Fiber Optic Communication – What is it and why is it beneficial?
 
-When comparing the physical aspects of fiber optic cable to other mediums, fiber optic cables have a much lighter weight, a smaller diameter, and the ability to avoid corrosion and rust due to a non-metallic construction. These characteristics place fiber optics at the top of the list for communications in today’s world.
+The world we live in runs on the ability to communicate and send information rapidly from one place to another. Without a medium to send data back and forth, the power of many technologies would be useless. One of the most powerful technologies for communication today is fiber optics.
 
 ### What is fiber optic communication and how does it work?
 
