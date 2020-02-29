@@ -10,10 +10,12 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/artificial-intelligence-future.jpg
-    alt: artificial intelligence future
+  - url: /assets/images/education/fiber-optic-communication.jpg.jpg
+    alt: fiber-optic
 ---
+
 All around the world, artificial intelligence is making its way into people's lives. This technology is feared by many, but how realistic is that fear? Should we really be concerned?
+
 <!--more-->
 
 ## Fiber Optic Communication – What is it and why is it beneficial?
