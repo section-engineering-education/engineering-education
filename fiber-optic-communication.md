@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-title: Fiber Optic Communication – What is it and why is it beneficial?
-description: description placeholder
+title: Fiber Optic Communication
+description: Using light to transmit data, fiber optics are one of the most powerful technologies facilitating communication in today's fast-paced world.
 author: Michael Zanoff
 date: 2020-02-29T00:00:00-07:00
-topics: []
+topics: [networking]
 excerpt_separator: <!--more-->
 images:
 
@@ -14,7 +14,7 @@ images:
     alt: fiber-optic
 ---
 
-When comparing fiber optic cable to other mediums, fiber optic cables have a much lighter weight, a smaller diameter, and the ability to avoid corrosion and rust due to a non-metallic construction. These characteristics place fiber optics at the top of the list for communications in today’s world.
+When comparing fiber optic cables to other mediums, fiber optic cables have a much lighter weight, a smaller diameter, and the ability to avoid corrosion and rust due to a non-metallic construction. These characteristics place fiber optics at the top of the list for communications in today’s world.
 
 <!--more-->
 The world we live in runs on the ability to communicate and send information rapidly from one place to another. Without a medium to send data back and forth, the power of many technologies would be useless. One of the most powerful technologies for communication today is fiber optics.
@@ -43,7 +43,7 @@ When it comes to transmission distance, fiber optics come out on top, as they ca
 #### Weight
 When comparing the physical aspects of fiber optic cable to other mediums, fiber optic cables have a much lighter weight, a smaller diameter, and the ability to avoid corrosion and rust due to a non-metallic construction. These characteristics place fiber optics at the top of the list for communications in today’s world.
 
-As new technologies begin to run at faster speeds, communication infrastructures must keep up, and fiber optics make that possible. Without this technology our world would be at a major bottle neck, but thanks to fiber optics, the possibilities are endless.
+As new technologies begin to run at faster speeds, communication infrastructures must keep up, and fiber optics make that possible. Without this technology, our world would be at a major bottle neck, but thanks to fiber optics, the possibilities are endless.
 
 ---
 
