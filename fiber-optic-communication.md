@@ -35,12 +35,12 @@ The transmitter takes analog or digital information and converts it into digital
 Fiber optic communication, when compared to other methods of data transfer, such as copper wire, has a vast number of benefits.
 
 #### Speed
-To begin, fiber optics allow for data transmission speeds that have never been seen before in previous technologies. While copper Internet connections can transfer data at about 50 Mbps, fiber optics can easily run at 1 Gbps and have been tested successfully at speeds of over 1000 times this ([Pilot Fiber](https://www.pilotfiber.com/blog/how-fast-can-fiber-optic-internet-be)).
+To begin, fiber optics allow for data transmission speeds that have never been seen before in previous technologies. While copper Internet connections can transfer data at about 50 Mbps, fiber optics can easily run above 1 Gbps and have been tested successfully at speeds of over 1000 times this ([Pilot Fiber](https://www.pilotfiber.com/blog/how-fast-can-fiber-optic-internet-be)).
 
 #### Distance
 When it comes to transmission distance, fiber optics come out on top, as they can send data tens of miles with very minimal signal loss. In the case that a distance causes significant signal loss, amplification is very simple and easy to achieve. Since these cables use light instead of electricity, interference is nonexistent. Standard electrical communication can be compromised by electric fields; however, light does not react to this type of interference.
 
-#### Weight
+#### Physical Aspects
 When comparing the physical aspects of fiber optic cable to other mediums, fiber optic cables have a much lighter weight, a smaller diameter, and the ability to avoid corrosion and rust due to a non-metallic construction. These characteristics place fiber optics at the top of the list for communications in today’s world.
 
 As new technologies begin to run at faster speeds, communication infrastructures must keep up, and fiber optics make that possible. Without this technology, our world would be at a major bottle neck, but thanks to fiber optics, the possibilities are endless.
