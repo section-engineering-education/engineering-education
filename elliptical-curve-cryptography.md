@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 title: How Does Elliptical Curve Cryptography Work?
-description: There are many modern encryption algorithms, each of which have their own strengths. Elliptical curve cryptography is a family of algorithms that are based upon elliptical curves.
+description:  Elliptical curve cryptography is a next-generation public key cryptography system that provides a significant increase in security over previous generations.
 author: Gregory Manley
 date: 2020-03-06T00:00:00-07:00
 topics: [security]
@@ -13,13 +13,10 @@ images:
   - url: /assets/images/education/elliptical-curve-cryptography.jpg
     alt: elliptical curve cryptography
 ---
-Elliptical curve cryptography is a next generation public key cryptography system that provides a significant increase in security over previous generations.
+There are many modern encryption algorithms, each of which have their own strengths. Elliptical curve cryptography (ECC) is a family of algorithms that are based upon elliptical curves. ECC is a next-generation public key cryptography system that provides a significant increase in security over previous generations.
 <!--more-->
-
-There are many modern encryption algorithms, each of which have their own strengths. Elliptical curve cryptography (ECC) is a family of algorithms that are based upon elliptical curves. ECC is a next generation public key cryptography system that provides a significant increase in security over previous generations.
-
 ### Background
-According to [Clouldfare](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/), the turning point in cryptography occurred in 1977 with the introduction of the RSA and the Diffie-Hellman key exchange algorithms. These were revolutionary because they were the first cryptographic schemes where security was based upon the Theory of Numbers, which nearly all modern cryptography standards are.
+According to [Cloudflare](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/), the turning point in cryptography occurred in 1977 with the introduction of the RSA and the Diffie-Hellman key exchange algorithms. These were revolutionary because they were the first cryptographic schemes where security was based upon the Theory of Numbers, which nearly all modern cryptography standards are.
 
 ### What is Elliptical Curve Cryptography?
 To start, the general equation of an elliptical curve is:
@@ -28,10 +25,10 @@ To start, the general equation of an elliptical curve is:
 
 These curves have two interesting features, being:
 
-- Three Points on a Line - if you find the line between any two points, that line will always intersect another point on the curve
-- Horizontal Symmetry - any point on the curve can be reflected over the x-axis and remain on the curve.
+- **Three Points on a Line** - If you find the line between any two points, that line will always intersect another point on the curve.
+- **Horizontal Symmetry** - Any point on the curve can be reflected over the x-axis and remain on the curve.
 
-When using elliptical curve for cryptography, only whole numbers or the resulting number from modding (finding the remainder) the equation by a prime number are used. Despite the fact that the resulting plot of points does not look like a curve any more, by wrapping the line that goes between two points around the confines you still intersect a third point. Then that point can be reflected over the x-axis which results in the desired point. This process is known as point addition.
+When using elliptical curves for cryptography, only whole numbers or the resulting number from modding (finding the remainder of) the equation by a prime number are used. Despite the fact that the resulting plot of points does not look like a curve any more, by wrapping the line that goes between two points around the confines, you still intersect a third point. Then that point can be reflected over the x-axis which results in the desired point. This process is known as point addition.
 
 ### What Uses Elliptical Curves?
 The elliptical curve is used by Bitcoin, Ethereum, and many other cryptocurrencies. Specifically, Bitcoin uses the secp256k1 curve, which has the equation:
@@ -49,7 +46,7 @@ Then, in order to make sure the resulting values can fit in 512-bit public keys,
 
 The remainder is found by dividing both sides by the previous number. Then, the desired point is found using an equation between two points, finding the third intersection, and reflecting over the x-axis, doing this operation as many times as desired.
 
-Elliptical Curve Cryptography is common in many cryptocurrency as they are the modern basis for public-private key cryptography. It is nearly impossible find the private key from the resulting public key after all the operations are done, we simply do not have the computing power on Earth (excluding Quantum Computing). This allows us to have a modern, extremely secure, and relatively fast cryptographic standard.
+Elliptical Curve Cryptography is common in many cryptocurrencies, as they are the modern basis for public-private key cryptography. It is nearly impossible to find the private key from the resulting public key after all the operations are done, we simply do not have the computing power on Earth (excluding Quantum Computing). This allows us to have a modern, extremely secure, and relatively fast cryptographic standard.
 
 ---
 
