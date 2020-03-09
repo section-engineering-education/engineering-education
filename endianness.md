@@ -45,7 +45,7 @@ As a last example, take the following character array.  <!-- Should I add more h
 ```
 char s[] = {0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0};
 ```
-As you might be able to perdict, this is stored in the following format.
+As you might be able to predict, this is stored in the following format.
 ```
 0x00: 12
 0x01: 34
@@ -67,7 +67,7 @@ I would recommend proving this for your self. <!-- Not a great line -->
 
 
 ## So Why Does Everyone Have It Backwards
-However counter-intuitive it might seem at first, there are valid reasons why little-endian is used over big-endian. The reason for the widespread use of little-endian in not because of the ease of user understanding (as you might have figured out), but rather for ease of the computer. Let's take a look at why. We will use this 8-byte value `0x0000000000000042;`;. When we store it in little-endian we have the following.
+However counter-intuitive it might seem at first, there are valid reasons why little-endian is used over big-endian. The reason for the widespread use of little-endian is not because of the ease of user understanding (as you might have figured out), but rather for ease of the computer. Let's take a look at why. We will use this 8-byte value `0x0000000000000042;`. When we store it in little-endian we have the following.
 ```
 0x00: 42 00 00 00 00 00 00 00 
 ```
@@ -77,8 +77,9 @@ and in big-endian we would get.
 ```
 Now let's say we were to run the following code.
 ```c
-unsigned long x = 0x0000000000000042;
-unsigned long * x_p = &x;
+// In the case of 64 bit compilers, long long is the same size as long. They are both 8 bytes.
+unsigned long long x = 0x0000000000000042;
+unsigned long long * x_p = &x;
 
 unsigned int * y_p = (unsigned int *)x_p;
 unsigned int y = *y_p;
@@ -104,8 +105,8 @@ The `y_p` pointer (`0x00` in our case) points to `0x00000000`.
 
 Getting code to run this in big-endian is hard because most processors are either little-endian or [bi-endian](https://en.wikipedia.org/wiki/Endianness#Bi-endianness). However, you can change the code by adding [byte swaps](https://stackoverflow.com/a/105339/9664285) to "emulate" big-endian.
 ```c
-unsigned long x = __builtin_bswap64(0x0000000000000042);
-unsigned long * x_p = &x;
+unsigned long long x = __builtin_bswap64(0x0000000000000042);
+unsigned long long * x_p = &x;
 
 unsigned int * y_p = (unsigned int *)x_p;
 unsigned int y = __builtin_bswap32(*y_p);
