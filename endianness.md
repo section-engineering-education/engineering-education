@@ -1,5 +1,5 @@
 # What Is Little-Endian And Big-Endian Byte Ordering
-Computers store data in memory in binary. One thing that is often overlooked is the formating at the bytes level. This is called endianness and it refers to the ordering of the bytes for a stored piece of data. Specifically, little-endian is when the least significant bytes are stored before more significant bytes and big-endian is when the most significant bytes are stored before the less significant bytes. 
+Computers store data in memory in binary. One thing that is often overlooked is the formating at the byte level of this data. This is called endianness and it refers to the ordering of the bytes. Specifically, little-endian is when the least significant bytes are stored before the more significant bytes and big-endian is when the most significant bytes are stored before the less significant bytes. 
 When we write a number (in hex), i.e. `0x12345678`, we write it with the most significant byte first (the `12` part). In a sense, big-endian is the "normal" way to write things down.
 
 This article will only talk about endianness when it comes to integer numbers and not [floating point](https://en.wikipedia.org/wiki/Endianness#Floating_point) numbers as is gets a lot more complicated and way less defined.
@@ -63,7 +63,7 @@ Now, if we bring this back to big-endian, we can see that every one of these exa
 0x00: 12 34 56 78 9a bc de f0
 ```
 This is because big-endian is stored in the order that you see things. 
-I would recommend proving this for your self. <!-- Not a great line -->
+I would recommend proving this for yourself. <!-- Not a great line -->
 
 
 ## So Why Does Everyone Have It Backwards
