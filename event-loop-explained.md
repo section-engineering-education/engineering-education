@@ -3,17 +3,17 @@ layout: engineering-education
 status: publish
 published: true
 title: The Event Loop Explained
-description: As browsers and JavaScript engines become faster and more powerful, client-side JavaScript is more efficient. Non-blocking asynchronous code is crucial for responsive web apps that use web/server requests or complex processes during run-time.
+description: The event loop is not just for JavaScript. It is the standard that defines how a web browser front end works. Understanding the event loop is the first step to creating great web-based software.
 author: Nadiv Gold Edelstein
 date: 2020-03-10T00:00:00-07:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /assets/images/education/event-loop-explained.jpg
     alt: event loop explained
 ---
-The event loop is not just for JavaScript. It is the standard that defines how a web browser front end works.  Understanding the event loop is the first step to creating great web-based software.
+The event loop is not just for JavaScript. It is the standard that defines how a web browser front end works. Understanding the event loop is the first step to creating great web-based software.
 <!--more-->
 ### Parallel Processing
 In the early 2000s, CPU manufacturers hit a wall. At the time, clock cycles were king. The more cycles your CPU could produce, the more instructions it could perform per second, and the faster the machine. With increased cycles came increased heat - too much to dissipate.
