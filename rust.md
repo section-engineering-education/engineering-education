@@ -1,3 +1,6 @@
+<!--
+img: ![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1200px-Rust_programming_language_black_logo.svg.png)
+-->
 # Writing Good Code With The Rust Language
 This article will talk about a lot of the interesting features that rust has to offer without really talking about how to write a program in rust. If that is what you are interested in, please refer
 to the rust book: [https://www.rust-lang.org/learn](https://www.rust-lang.org/learn) which is really well done.
