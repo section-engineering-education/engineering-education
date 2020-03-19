@@ -5,8 +5,9 @@ img: ![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programm
 This article will talk about a lot of the interesting features that rust has to offer without really talking about how to write a program in rust. If that is what you are interested in, please refer
 to the rust book: [https://www.rust-lang.org/learn](https://www.rust-lang.org/learn), which is really well done.
 
-In talking about these interesting features I will regularly talk about how C/C++ handles these same things because C is a prime example of what rust can solve. <!-- C has problems -->
-There are other languages that are more comparable to Rust's features that I will not talk about. 
+In talking about these interesting features I will regularly talk about how C/C++ handles these same things because C is not perfect and has issues. 
+Rust, fixes a lot of these issues in rather elegant ways.
+To note, there are other languages that are more comparable to Rust's features that I will not talk about. 
 
 The main talking point for this article is how rust *forces* you to write good code which in turn eliminates all possibility of [undefined behavior](https://en.cppreference.com/w/cpp/language/ub) that can cause segfaults. Now, you can't just take C code, change the compiler and then say that you can guarantee no segfaults.
 No, these changes must happen in the code because segfaults come from code, not the compiler. This doesn't mean that the compiler can't help you write good code.
@@ -16,10 +17,10 @@ How does rust *force* you to write good code?
 This happens in 2 main parts: the powerful type system (and error handling) and the ownership/borrowing rules.
 
 ### Rust's Type System
-It is important to know that rust is strongly and staticly typed.
+It is important to know that rust is strongly and statically typed.
 
-The best example to show how powerful the type system is, is raw pointers and more spasificlt null pointers. 
-Now, you might be thinking, what is a systems programming language without raw pointers? Hopefuly rust can challange your preconseptions on this.
+The best example to show how powerful the type system is, is raw pointers and more specifically null pointers. 
+Now, you might be thinking, what is a systems programming language without raw pointers? Hopefully, rust can challenge your preconceptions about this.
 
 That being said, lets look at the following C code.
 ```c
@@ -109,10 +110,10 @@ In a similar way that smart pointers force you to follow their rules. This allow
 [Try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=27083389043aa11874249ee2d1684c44)
 
 ## Ok, But We Still Want A Systems Programming Language
-Rust is above all a systems programming language. What does this mean? For starters, this means that there is [no runtime](https://prev.rust-lang.org/en-US/faq.html#does-rust-do-tail-call-optimization). <!-- this page has a banner that covers up what I want to show so i got the link to the item above it -->
+Rust is above all a systems programming language. What does this mean? For starters, this means that there is [no runtime](https://prev.rust-lang.org/en-US/faq.html#does-rust-do-tail-call-optimization). <!-- this page has a banner that covers up what I want to show so I got the link to the item above it -->
 In short, everything rust does uses zero-cost abstractions.
 
-You might be wondering how rust is able to implement abstract data types without adding runtime costs to the program.
+You might be wondering how can rust implement abstract data types without adding runtime costs to the program.
 They do this using their [enum](https://doc.rust-lang.org/book/ch06-00-enums.html) which is implemented using a C like union which can then be heavily optimized.
 Here is the option implementation.
 ```rust
@@ -123,9 +124,9 @@ enum Option<T> {
 ```
 Now, this is a very good example of a zero-cost abstraction as it is compiled out completely in most cases.
 When it comes to using Options, you generally treat them the same as nullable values. The compiler will see that and optimize the `None` into null and the `Some(&T)` into a `*T` (this is only if we are using references to types e.x. `Option<&t>`).
-At the assembly level, this is the exact same as a raw pointer. The real difference is that rust guarantees that you will never get a null pointer exception because rust *forced* you to have `None` checks (which are now null checks).
+At the assembly level, this is the same as a raw pointer. The real difference is that rust guarantees that you will never get a null pointer exception because rust *forced* you to have `None` checks (which are now null checks).
 
-When it comes to ownership and borrowing rust is able to check for rule violations at compile time.
+When it comes to ownership and borrowing rust can check for rule violations at compile time.
 This not only means that rust can run as fast as C but sometimes [even faster](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/rust.html).
 They can do this because of the rules they put in place that allow rust to make optimizations that C can't. Here is a fairly simple [example of this](https://doc.rust-lang.org/nomicon/aliasing.html).
 ```rust
@@ -155,18 +156,15 @@ This is something C just can't [always](https://stackoverflow.com/a/30827880/966
 In C these two pieces of code do different things.
 
 ## I Can Just Write Good C Code <!-- needs work -->
-It might seem like a lot of examples just show how rust prevents you from writing very trivial mistakes
-or even things that won't actually cause issues. While this is true, it ignores the  extent of . <!-- make better -->
-
-In big projects, code can get very complicated and a simple mistakes can hide in the code like a needle in a hay stack.
+It might seem like a lot of examples just show how rust prevents you from writing very trivial mistakes or even things that won't actually cause issues. While this is true, in big projects code can get very complicated and a simple mistake can hide in the code like a needle in a haystack.
 Worse, errors can propagate throughout the whole program making it very hard to debug.
 Have you ever tried figuring out why/where you're getting a null pointer? <!-- I don't like this line -->
 
-A lot of code can be "safe", where there is no way that it __*alone*__ will ever result in a segfault (like some of the above C examples).  
+A lot of code can be "safe", where there is no way that it __*alone*__ will ever result in a segfault (like some of the above C examples).
 However, that doesn't mean it is good code. And in the end, that's what rust helps with.
 Rust forces you to write good code so that simple avoidable mistakes don't come back to bite you.
 
-When you write code in rust you can be guaranteed that your code won't have any undefined behavior just by compiling it (thats the hard part).
+When you write code in rust you can be guaranteed that your code won't have any undefined behavior just by compiling it (that's the hard part).
 That is something that no other language can offer (especially at compile time).
 
 There is a reason the rust has been the most loved language for 4 years in a row according to the [stackoverflow developer servay](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-languages).
