@@ -9,7 +9,7 @@ In talking about these interesting features I will regularly talk about how C/C+
 Rust, fixes a lot of these issues in rather elegant ways.
 To note, there are other languages that are more comparable to Rust's features that I will not talk about. 
 
-The main talking point for this article is how rust *forces* you to write good code which in turn eliminates all possibility of [undefined behavior](https://en.cppreference.com/w/cpp/language/ub) that can cause segfaults. Now, you can't just take C code, change the compiler and then say that you can guarantee no segfaults.
+The main talking point for this article is how rust *forces* you to write good code which in turn eliminates all possibility of [undefined behavior](https://doc.rust-lang.org/reference/behavior-considered-undefined.html) that can cause segfaults. Now, you can't just take C code, change the compiler and then say that you can guarantee no segfaults.
 No, these changes must happen in the code because segfaults come from code, not the compiler. This doesn't mean that the compiler can't help you write good code.
 
 ## Normally You Don't Want Things To [Rust](https://stackoverflow.com/q/16494822/9664285). <!-- This could be better -->
@@ -45,7 +45,7 @@ fn main()
 }
 ```
 This sort of works in two parts. The first is the `Option<T>` type.
-This is an example of an [algebraic data type](https://doc.rust-lang.org/book/ch06-00-enums.html) that can take the values `Some(data)` or `None`. <!-- or should the link be to https://en.wikipedia.org/wiki/Algebraic_data_type -->
+This is an example of an [algebraic data type](https://en.wikipedia.org/wiki/Algebraic_data_type) that can take the values `Some(data)` or `None`.
 In this example, the `data` part is the reference to the int that is returned.
 This means if the data is null you can instead return a `None` which has no data attached.
 If the return value is not null then you can return a `Some(data)` of which you must first check to see if it is `Some` before you can access `data`.
@@ -69,7 +69,7 @@ You can never assume that it is one or the other.
 
 ### Rust's Ownership Model
 In rust, there is an idea called ownership. It is by far one of the most significantly different things from any other language.
-The idea is that every value is owned by one variable, for example in `let x = "hello";` the value `"hello"` is owned by `x`.
+The idea is that every value is owned by one variable, for example in `let x = 5;` the value `5` is owned by `x`.
 
 Now, let's look at something called moving ownership. 
 ```rust
@@ -106,7 +106,7 @@ Now if we were to uncomment the `s3` stuff in the above code we would start to g
 Specifically that we "cannot borrow `s1` as mutable because it is also borrowed as immutable".
 
 This might not seem super significant but what's happening is that rust if *forcing* us to write *good code*.
-In a similar way that smart pointers force you to follow their rules. This allows rust to guarantee that no race conditions will ever occur and that there will never be any memory aliasing.
+This allows rust to guarantee that no race conditions will ever occur and that there will never be any memory aliasing.
 
 [Try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=80073c4daa22554e95293475906f046a)
 
