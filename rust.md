@@ -19,7 +19,7 @@ This happens in 2 main parts: the powerful type system (and error handling) and 
 ### Rust's Type System
 It is important to know that rust is strongly and statically typed.
 
-The best example to show how powerful the type system is, is raw pointers and more specifically null pointers. 
+The best example to show how powerful the type system is, is how rust handles raw pointers and more specifically null pointers. 
 Now, you might be thinking, what is a systems programming language without raw pointers? Hopefully, rust can challenge your preconceptions about this.
 
 That being said, lets look at the following C code.
@@ -45,13 +45,13 @@ fn main()
 }
 ```
 This sort of works in two parts. The first is the `Option<T>` type.
-This is an example of an [algebraic data type](https://doc.rust-lang.org/book/ch06-00-enums.html) that can take the values `Some(data)` or `None`.
+This is an example of an [algebraic data type](https://doc.rust-lang.org/book/ch06-00-enums.html) that can take the values `Some(data)` or `None`. <!-- or should the link be to https://en.wikipedia.org/wiki/Algebraic_data_type -->
 In this example, the `data` part is the reference to the int that is returned.
 This means if the data is null you can instead return a `None` which has no data attached.
 If the return value is not null then you can return a `Some(data)` of which you must first check to see if it is `Some` before you can access `data`.
 
 The second thing is that the underlying return type, `&i32` (the `'static` refers to the [lifetime](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html) which is outside the scope of this article), is really a reference and not a raw pointer.
-This is the same as raw pointers at the assembly level, the difference lies with how you create them. As null pointers show, raw pointers can take any value (e.x. `int *x = 0x0;`).
+Functionally, at the assembly level, these are the same as raw pointers, the difference lies with how you create them. As null pointers show, raw pointers can take any value (e.x. `int *x = 0x0;`).
 In rust, you can't really use raw pointers (well, you [can](https://doc.rust-lang.org/1.30.0/book/2018-edition/ch19-01-unsafe-rust.html?highlight=raw,pointer#dereferencing-a-raw-pointer) but it's more complicated and also outside the scope of this article), instead, you must use a reference. References in rust must be created from existing values (e.x. `let ref_x = &x;` not `let ref_x = 0x0;`). 
 Now going back to the code, because we can't create a null reference, we are therefore *forced* to use the `Option<T>` type by returning a `None` when we can't create a pointer.
 
@@ -69,11 +69,11 @@ You can never assume that it is one or the other.
 
 ### Rust's Ownership Model
 In rust, there is an idea called ownership. It is by far one of the most significantly different things from any other language.
-The idea is that every value is owned by one variable, for example in `let x = 3;` the value 3 is owned by `x`.
+The idea is that every value is owned by one variable, for example in `let x = "hello";` the value `"hello"` is owned by `x`.
 
 Now, let's look at something called moving ownership. 
 ```rust
-let s1 = String::from("hello");
+let s1 = String::from("hello"); // Makes a String object from a string literal
 let s2 = s1;
 
 println!("{}, section.", s1);
@@ -81,14 +81,15 @@ println!("{}, section.", s1);
 ```
 
 The value `"hello"` is initially owned by `s1` but then in line two, it is moved to `s2` (it is now owned by `s2`).
-In rust, a value can only be owned by one variable. This means that when we try to print `s1` we will get an error because the value was moved ([try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=c120b11388eba7a5cc0b7884f0bf2d0e)).
+In rust, a value can only be owned by one variable at a time. This means that when we try to print `s1` we will get an error because the value was moved ([try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=c120b11388eba7a5cc0b7884f0bf2d0e)).
 As a side note, look at how good rust's compiler errors are.
 
 So why is this important? Well, if you were to try this in C you would get two references to the same point in memory.
 This isn't necessarily a bad thing, but both of these references are mutable which can lead to race conditions. And that is where the problem lies because C lets you easily have race conditions.
 
-Sometimes you want to have reference to an object. This is what borrowing does, and rules are a lot like [smart pointers](https://stackoverflow.com/a/106614/9664285).
-However, rust is able to detect rule violations at compile time. To borrow, we just get a reference to the value.
+Sometimes you want to have multiple reference to an object. This is what borrowing does. To borrow, we just get a reference to the value;
+you can have both mutable and immutable references that follow simple rules.
+Rust is able to detect rule violations at compile time.
 ```rust
 let mut s1 = String::from("hello");
 let s2 = &s1; // immutable reference
@@ -100,7 +101,7 @@ println!("{}, section.", s2);
 // println!("{}", s3);
 ```
 
-On its own, the above code will compile. This is because we only ever create immutable references that can never create race conditions alone (no matter how many there are).
+On its own, the above code will compile. This is because we only ever create immutable references that alone can never create race conditions (no matter how many there are).
 Now if we were to uncomment the `s3` stuff in the above code we would start to get compiler errors.
 Specifically that we "cannot borrow `s1` as mutable because it is also borrowed as immutable".
 
@@ -115,7 +116,7 @@ In short, everything rust does uses zero-cost abstractions.
 
 You might be wondering how can rust implement abstract data types without adding runtime costs to the program.
 They do this using their [enum](https://doc.rust-lang.org/book/ch06-00-enums.html) which is implemented using a C like union which can then be heavily optimized.
-Here is the option implementation.
+Here is the `Option<T>` implementation.
 ```rust
 enum Option<T> {
     Some(T),
@@ -124,7 +125,7 @@ enum Option<T> {
 ```
 Now, this is a very good example of a zero-cost abstraction as it is compiled out completely in most cases.
 When it comes to using Options, you generally treat them the same as nullable values. The compiler will see that and optimize the `None` into null and the `Some(&T)` into a `*T` (this is only if we are using references to types e.x. `Option<&t>`).
-At the assembly level, this is the same as a raw pointer. The real difference is that rust guarantees that you will never get a null pointer exception because rust *forced* you to have `None` checks (which are now null checks).
+At the assembly level, this is the same as a raw pointer. The real difference is that rust has *forced* use to have `None` checks (which are now null checks).
 
 When it comes to ownership and borrowing rust can check for rule violations at compile time.
 This not only means that rust can run as fast as C but sometimes [even faster](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/rust.html).
