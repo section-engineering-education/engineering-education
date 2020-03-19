@@ -45,7 +45,7 @@ fn main()
 }
 ```
 This sort of works in two parts. The first is the `Option<T>` type.
-This is an example of an [algabraic data type](https://doc.rust-lang.org/book/ch06-00-enums.html) that can take the values `Some(data)` or `None`.
+This is an example of an [algebraic data type](https://doc.rust-lang.org/book/ch06-00-enums.html) that can take the values `Some(data)` or `None`.
 In this example, the `data` part is the reference to the int that is returned.
 This means if the data is null you can instead return a `None` which has no data attached.
 If the return value is not null then you can return a `Some(data)` of which you must first check to see if it is `Some` before you can access `data`.
@@ -91,11 +91,11 @@ Sometimes you want to have reference to an object. This is what borrowing does, 
 However, rust is able to detect rule violations at compile time. To borrow, we just get a reference to the value.
 ```rust
 let mut s1 = String::from("hello");
-let s2 = &s1; // immutable referance
-// let s3 = &mut s1; // mutable referance
+let s2 = &s1; // immutable reference
+// let s3 = &mut s1; // mutable reference
 // s3.push_str(", section.");
 
-println!("{}, section.", &s1); // another immutable referance
+println!("{}, section.", &s1); // another immutable reference
 println!("{}, section.", s2);
 // println!("{}", s3);
 ```
@@ -107,7 +107,7 @@ Specifically that we "cannot borrow `s1` as mutable because it is also borrowed 
 This might not seem super significant but what's happening is that rust if *forcing* us to write *good code*.
 In a similar way that smart pointers force you to follow their rules. This allows rust to guarantee that no race conditions will ever occur and that there will never be any memory aliasing.
 
-[Try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=27083389043aa11874249ee2d1684c44)
+[Try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=80073c4daa22554e95293475906f046a)
 
 ## Ok, But We Still Want A Systems Programming Language
 Rust is above all a systems programming language. What does this mean? For starters, this means that there is [no runtime](https://prev.rust-lang.org/en-US/faq.html#does-rust-do-tail-call-optimization). <!-- this page has a banner that covers up what I want to show so I got the link to the item above it -->
@@ -167,5 +167,5 @@ Rust forces you to write good code so that simple avoidable mistakes don't come 
 When you write code in rust you can be guaranteed that your code won't have any undefined behavior just by compiling it (that's the hard part).
 That is something that no other language can offer (especially at compile time).
 
-There is a reason the rust has been the most loved language for 4 years in a row according to the [stackoverflow developer servay](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-languages).
+There is a reason the rust has been the most loved language for 4 years in a row according to the [stackoverflow developer survey](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-languages).
 And, it has only been out of beta development for 3 of those years.
