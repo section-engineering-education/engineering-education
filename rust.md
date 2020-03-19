@@ -22,7 +22,7 @@ It is important to know that rust is strongly and statically typed.
 The best example to show how powerful the type system is, is how rust handles raw pointers and more specifically null pointers. 
 Now, you might be thinking, what is a systems programming language without raw pointers? Hopefully, rust can challenge your preconceptions about this.
 
-That being said, lets look at the following C code.
+That being said, let's look at the following C code.
 ```c
 int * can_return_null() { ... }
 
@@ -87,7 +87,7 @@ As a side note, look at how good rust's compiler errors are.
 So why is this important? Well, if you were to try this in C you would get two references to the same point in memory.
 This isn't necessarily a bad thing, but both of these references are mutable which can lead to race conditions. And that is where the problem lies because C lets you easily have race conditions.
 
-Sometimes you want to have multiple reference to an object. This is what borrowing does. To borrow, we just get a reference to the value;
+Sometimes you want to have multiple references to an object. This is what borrowing does. To borrow, we just get a reference to the value;
 you can have both mutable and immutable references that follow simple rules.
 Rust is able to detect rule violations at compile time.
 ```rust
@@ -125,7 +125,7 @@ enum Option<T> {
 ```
 Now, this is a very good example of a zero-cost abstraction as it is compiled out completely in most cases.
 When it comes to using Options, you generally treat them the same as nullable values. The compiler will see that and optimize the `None` into null and the `Some(&T)` into a `*T` (this is only if we are using references to types e.x. `Option<&t>`).
-At the assembly level, this is the same as a raw pointer. The real difference is that rust has *forced* use to have `None` checks (which are now null checks).
+At the assembly level, this is the same as a raw pointer. The real difference is that rust has *forced* you to have `None` checks (which are now null checks).
 
 When it comes to ownership and borrowing rust can check for rule violations at compile time.
 This not only means that rust can run as fast as C but sometimes [even faster](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/rust.html).
@@ -168,5 +168,4 @@ Rust forces you to write good code so that simple avoidable mistakes don't come 
 When you write code in rust you can be guaranteed that your code won't have any undefined behavior just by compiling it (that's the hard part).
 That is something that no other language can offer (especially at compile time).
 
-There is a reason the rust has been the most loved language for 4 years in a row according to the [stackoverflow developer survey](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-languages).
-And, it has only been out of beta development for 3 of those years.
+There is a reason that rust has been the [most loved language](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-languages) for 4 years in a row according to the [Stack Overflow developer survey](https://insights.stackoverflow.com/survey).
