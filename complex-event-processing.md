@@ -22,8 +22,6 @@ Data is all around us. Sensor networks, smart devices and mobile apps are contin
 
 As we struggle to process and analyze the ever-growing streams of data in near-real time, the ability to react rapidly to changing trends or deliver up-to-date business and security intelligence can prove invaluable to a company's success or failure. With the availability of thousands to millions of data streams and incoming events, we are constantly challenged with how to proactively take effective actions. What is the solution? CEP addresses this exact problem.
 
-![CEP2](/assets/images/education/cep2.png)
-
 ### What is Complex Event Processing and why is it important?
 
 CEP, according to the book *[High performance in-memory data grid with Apache Ignite](https://www.amazon.com/Performance-memory-computing-Apache-Ignite/dp/1365732355)* by Shamim Bhuiyan and Michael Zheludkov is primarily "an event processing concept that deals with the task of processing multiple events with the goal of identifying the meaningful events within the event cloud in real time or near real time."
