@@ -152,12 +152,12 @@ fn compute(input: &u32, output: &mut u32) {
 }
 ```
 
-This is because rust can guarantee that `input` and `output` are not referencing to the same thing (there is no memory aliasing).
+This is because rust can guarantee that `input` and `output` are not referencing the same thing (there is no memory aliasing).
 This is something C just can't [always](https://stackoverflow.com/a/30827880/9664285) do. 
 In C these two pieces of code do different things.
 
 ## I Can Just Write Good C Code <!-- needs work -->
-It might seem like a lot of examples just show how rust prevents you from writing very trivial mistakes or even things that won't actually cause issues. While this is true, in big projects code can get very complicated and a simple mistake can hide in the code like a needle in a haystack.
+It might seem like these examples just show how rust prevents you from writing very trivial mistakes or even things that won't actually cause issues. While this is true, in big projects code can get very complicated and a simple mistake can hide in the code like a needle in a haystack.
 Worse, errors can propagate throughout the whole program making it very hard to debug.
 Have you ever tried figuring out why/where you're getting a null pointer? <!-- I don't like this line -->
 
