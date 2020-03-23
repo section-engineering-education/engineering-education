@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 title: A Primer on JavaScript Hoisting
-description: Hoisting is when the JavaScript compiler changes the placement of variables and function in your code. We will explore why this happens. In short, hoisting is when the JS compiler changes the placement of variables and function in your code.
+description: Hoisting is when the JavaScript compiler changes the placement of variables and function in your code.
 author: Nadiv Gold Edelstein
 date: 2020-03-19T00:00:00-07:00
 topics: [Languages]
@@ -17,7 +17,7 @@ JavaScript is similar to an interpreted language. JS compiles one line at a time
 <!--more-->
 
 ### Introduction
-I personally know many JavaScript (JS) developers who are missing out on some of the more basic concepts. I can't blame them; JS is a quirky language, and a lot education about it skips out on some of the higher-level JS principles, like [the event loop](https://www.section.io/engineering-education/event-loop-explained/), even if they are crucial to writing good JavaScript code. In this article we will explore *hoisting*, a JS fundamental that will impact every line of code you will ever write.
+I personally know many JavaScript (JS) developers who are missing out on some of the more basic concepts. I can't blame them; JS is a quirky language, and a lot education about it skips out on some of the higher-level JS principles, like [the event loop](/engineering-education/event-loop-explained/), even if they are crucial to writing good JavaScript code. In this article, we will explore *hoisting*, a JS fundamental that will impact every line of code you will ever write.
 
 ### Hoist the Mainsail
 In short, hoisting is when the JS compiler changes the placement of variables and function in your code. We will explore why this happens a little later, but for now, take a look at this code:
@@ -30,18 +30,18 @@ var b //variable is declared here
 You can run it on [repl.it here](https://repl.it/@NadivGold/Hoisting1).
 As you can see, this works and alerts `Section is cool` just fine. But why? The variable is declared at the bottom of the code. We expect it to either not print anything, or print undefined. Try commenting out the line "var b" to see that nothing is alerted without it.
 
-This is an example of hoisting. JS turns the above code into:
+This is an example of hoisting. JS restructures the above code into:
 ~~~javascript
 "use strict"
 var b //variable is declared here
 b = "Section is cool" //variable is changed here
 alert(b) //variable is used here
 ~~~
- after restructuring. JavaScript hoists the variable declaration to the top of our code.
+JavaScript hoists the variable declaration to the top of our code.
 
 ### Why JavaScript Edits Your Code
 
-JS is similar to an interpreted language (it is a Just-In-Time compiled language, but that's outside the scope of this article). JS compiles one line at a time, and then runs that line. To ensure that each function can access all the variables in its scope, JS moves variables from the scope they were defined in to the outer scope above it. This is necessary when defining new variables in the middle of a scope instead of the top of that scope.
+JS is similar to an [interpreted language](https://en.wikipedia.org/wiki/Interpreted_language); it is a Just-In-Time compiled language (but that's outside the scope of this article). JS compiles one line at a time, and then runs that line. To ensure that each function can access all the variables in its scope, JS moves variables from the scope they were defined in to the outer scope above it. This is necessary when defining new variables in the middle of a scope instead of the top of that scope.
 
 Before C99, C programmers had to declare all local variables they needed at the beginning of the scope, and not anywhere else. Modern languages now support variable declarations anywhere,
 
@@ -67,7 +67,7 @@ Using your knowledge of hoisting, what does the following code do?
 ~~~javascript
 function printMessage(){
 	console.log(msg)
-	var msg =  "Section is cool"
+	var msg = "Section is cool"
 }
 printMessage()
 ~~~
@@ -78,7 +78,7 @@ Here's what JS sees:
 function printMessage(){
 	var msg
 	console.log(msg)
-	msg =  "Section is cool"
+	msg = "Section is cool"
 }
 printMessage()
 ~~~
@@ -88,15 +88,15 @@ Certain functions also get hoisted. Let's take a look at this code:
 ~~~javascript
 printMessage()
 function printMessage(){
-	var msg =  "Section is cool"
+	var msg = "Section is cool"
 	console.log(msg)
 }
 ~~~
-In other languages, the compiler would be mad at us for calling a function before we declared it, but JS is nice enough to move our function to the top of the scope, and before the `printMessage()` function call. [Here](https://repl.it/@NadivGold/Hoisting4)'s the live version.
+In other languages, the compiler would be mad at us for calling a function before we declared it, but JS is nice enough to move our function to the top of the scope, and before the `printMessage()` function call. You can view the live version [here](https://repl.it/@NadivGold/Hoisting4).
 
 ### Straight as an Arrow Function
 
-Use ES6? One of the nicest things ES6 has added to the language are arrow functions, like:
+Use [ES6](https://www.w3schools.com/js/js_es6.asp)? One of the nicest things ES6 has added to the language are arrow functions, like:
 ~~~javascript
 const printMessage = ()  =>  {
 	console.log("Section is cool")
