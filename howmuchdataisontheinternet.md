@@ -10,13 +10,13 @@ To visualize this amount of data, think about a byte as being as a big as a Unit
 
 All of this data is stored between Hard Drives, Magnetic Tapes, and Solid State Drives. Each of these drives have a different maximum capacity, Hard Drives currently have a maximum capacity of 16Tb (3.5" drive), Magnetic Tape Drives hold 12Tb native and 30Tb compressed , and Solid State Drives can hold up to 15.3Tb (2.5" drive).
 
-Assuming we are storing all of the data that we generate per day on the 16Tb drives, it would take 156,250 drive. That many would take up about 2156.576 cubic feet. This would only fill up an Olympic swimming pool about 2.4434%, not including the necessary components like motherboard, cables, processor, and RAM. 
+Assuming we are storing all of the data that we generate per day on the 16Tb drives, it would take 156,250 drives. That many would take up about 2156.576 cubic feet. This would only fill up an Olympic swimming pool about 2.4434%, not including the necessary components like motherboard, cables, processor, and RAM. 
 
 ### Measuring the Internet
 
 While these numbers are mostly an estimate on how much data we are producing are hard to know (since a large part of the internet is hidden, which may include server log files and other hidden information), we can estimate based upon what we know about the internet. 
 
-According to [Live-Counter](https://www.live-coutner.com/how-big-is-the-internet), the size of the Internet double roughly every two years. We also know that the amount of data on the internet was 3.7 Zettabytes or 3,700 exabytes in 2013. That means that, assuming the data on the internet does double every two years and not faster nor slower, we are looking at an amazing 97.433 Zettabytes of data on the internet. Which assuming are are still using 16Tb 3.5 inch drives, would fill up 952.25 Olympic swimming pools. 
+According to [Live-Counter](https://www.live-coutner.com/how-big-is-the-internet), the size of the Internet double roughly every two years. We also know that the amount of data on the internet was 3.7 Zettabytes or 3,700 exabytes in 2013. That means that, assuming the data on the internet does double every two years and not faster nor slower, we are looking at an amazing 44.4 Zettabytes of data on the internet. Which assuming are are still using 16Tb 3.5 inch drives, would fill up 433.94 Olympic swimming pools. 
 
 With this astounding amount of data on the internet how much will you add today?
 
