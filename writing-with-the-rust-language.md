@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 title: Writing Good Code with the Rust Language
-description: How rust forces you to write good code which, in turn, eliminates all possibility of undefined behavior that can cause segfaults.
+description: How Rust forces you to write good code which, in turn, eliminates all possibility of undefined behavior that can cause segfaults.
 author: Zack Jorquera
 date: 2020-03-20T00:00:00-07:00
 topics: [Languages]
