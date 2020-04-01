@@ -5,8 +5,8 @@ published: true
 title: How to Install Kubernetes on Ubuntu Server 18.04.4
 description: Kubernetes is not limited to being installed only on Ubuntu server. It can be installed on Linux, Windows, and even macOS.
 author: Gregory Manley
-date: 2020-03-26T00:00:00-07:00
-topics: [Edge Computing]
+date: 2020-04-01T00:00:00-07:00
+topics: [edge-computing]
 excerpt_separator: <!--more-->
 images:
 
