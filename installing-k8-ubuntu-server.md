@@ -19,7 +19,7 @@ Kubernetes, or K8s, is an open-source system that is used to automate deployment
 In a recent article, I explained [what Kubernetes is](/engineering-education/what-is-kubernetes/) and what it can be used for. In continuation, I will show how to install a single node Kubernetes cluster on an Ubuntu server, running Ubuntu 18.04.4. For this tutorial, I am assuming you will be installing K8s on a single node. You will need a separate computer (or a VM) with an Internet browser connected to the same network to access and use the dashboard.
 
 We will be using MicroK8s for this installation. MicroK8s is a CNCF certified upstream Kubernetes deployment that is designed
-to run entirely on a workstation or edge device. All K8s services are ran natively.
+to run entirely on a workstation or edge device. All K8s services are run natively.
 
 To get started you will need to make sure your server is updated. To do so, run the following commands:
 ~~~
@@ -31,7 +31,7 @@ Now that your server is up to date, it is time to install MicroK8s. MicroK8s is 
 ~~~
 sudo snap install microk8s --classic
 ~~~
-After installing MicroK8s you need to check the status, run:
+After installing MicroK8s, you need to check the status by running (output displayed below command):
 ~~~
 sudo microk8s.status --wait-ready
 
@@ -62,7 +62,7 @@ It is recommended to run the following in order to enable the basic Kubernetes s
 ~~~
 sudo microk8s.enable dashboard dns
 ~~~
-Then, to check on the deployment of these add-ons run:
+Then, to check on the deployment of these add-ons, run (output displayed below command):
 ~~~
 sudo microk8s.kubectl get pods --all-namespaces
 
@@ -73,7 +73,7 @@ kube-system   heapster-v1.5.2-58fdbb6f4d-2sm76                  4/4     Running 
 kube-system   kubernetes-dashboard-67765b55f5-2knqj             1/1     Running   2          22h
 kube-system   monitoring-influxdb-grafana-v4-6dc675bf8c-qsdct   2/2     Running   4          22h
 ~~~
-It should take a few minutes to get all the pods in the "RUNNING" state (hint: if this is taking a while, try using the linux comand `watch` between `sudo` and `microk8s` to have the command repeated every 2 seconds). 
+It should take a few minutes to get all the pods in the "RUNNING" state (hint: if this is taking a while, try using the linux comand `watch` between `sudo` and `microk8s` to have the command repeated every 2 seconds).
 
 Once all the pods show running, we are now ready to access the dashboard. First, we need to find out the internal IP of your server. Run:
 ~~~
@@ -83,7 +83,7 @@ You will want to save the first IPv4 address somewhere as it will be used later 
 ~~~
 sudo microk8s.config
 ~~~~
-Save the username and password that are outputted at the end. Hint: This is a pretty long password. I'd recommend ssh'ing into the box and copying the password located in `/var/snap/microk8s/current/credentials/basic_auth.csv`. 
+Save the username and password that are outputted at the end. Hint: This is a pretty long password. I'd recommend ssh'ing into the box and copying the password located in `/var/snap/microk8s/current/credentials/basic_auth.csv`.
 
 Once you have the password, start the dashboard by running:
 ~~~
@@ -94,14 +94,15 @@ Now, on your other computer, open a browser and let's load the Grafana endpoint:
 *https://<YOUR_INTERNAL_IP>:16443/api/v1/namespaces/kube-system/services/monitoring-grafana/proxy*
 
 You will be asked for that username and password that we saved previously. Once authenticated, you should see something like this:
-![](/images/education/installing-k8-ubuntu/grafana.png)
+
+![grafana endpoint](/images/education/installing-k8-ubuntu/grafana.png)
 
 Now that we have the dashboard up and running, we'll use an [available image of the microbot app](https://github.com/dontrebootme/docker-microbot) to create an actual deployment on our local cluster. Run:
 ~~~
 sudo microk8s.kubectl create deployment microbot --image=dontrebootme/microbot:v1
 ~~~
 
-You can see the newly created microbot application in your list of running pods by running:
+You can see the newly created microbot application in your list of running pods by running (output displayed below command):
 ~~~
 sudo microk8s.kubectl get pods --all-namespaces
 
@@ -114,15 +115,15 @@ kube-system   kubernetes-dashboard-67765b55f5-2knqj             1/1     Running 
 kube-system   monitoring-influxdb-grafana-v4-6dc675bf8c-qsdct   2/2     Running   2          118m
 ~~~
 
-Now let's scale out the deployment. Run this command to increase the replica count:
-~~~ 
+Now let's scale out the deployment. Run this command to increase the replica count (output displayed below command):
+~~~
 sudo microk8s.kubectl scale deployment microbot --replicas=5
 
 deployment.apps/microbot scaled
-~~~ 
+~~~
 
-Immediately after running this, rerun your `microk8s.kubectl get pods` command from above and you will see the additional instances of the microbot application being created and eventually stablize in `Running`. Note: you can use the `-n` command to pass the namespace rather than listing all of the pods on the cluster, in this case the namespace is called default. We've successful scaled the application on our cluster by increasing the replica count.
-~~~ 
+Immediately after running this, re-run your `microk8s.kubectl get pods` command from above and you will see the additional instances of the microbot application being created and eventually stabilize in `Running`. Note: you can use the `-n` command to pass the namespace rather than listing all of the pods on the cluster; in this case the namespace is called default. We've successfully scaled the application on our cluster by increasing the replica count (output displayed below command).
+~~~
 sudo microk8s.kubectl get pods -n default
 
 NAME                        READY   STATUS    RESTARTS   AGE
@@ -144,7 +145,7 @@ Now, in order to expose our deployment, we must create it as a service:
 ~~~
 sudo microk8s.kubectl expose deployment microbot --type=NodePort --port=80 --name=microbot-service
 ~~~
-You can confirm that the deployment was successful, by running:
+You can confirm that the deployment was successful, by running (output displayed below command):
 ~~~
 sudo microk8s.kubectl get all --all-namespaces
 
