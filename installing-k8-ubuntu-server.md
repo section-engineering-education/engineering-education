@@ -16,7 +16,7 @@ images:
 Kubernetes, or K8s, is an open-source system that is used to automate deployment, scaling and management of containerized applications. It provides a framework to run distributed systems, taking care of scaling and failover for your applications.
 <!--more-->
 
-In a recent article, I explained [what Kubernetes is](/engineering-education/what-is-kubernetes/) and what it can be used for. In continuation, I will show how to install Kubernetes on an Ubuntu server, running Ubuntu 18.04.4. For this tutorial, I am assuming you will be installing K8s on a single node. You will need a separate computer (or a VM) with an Internet browser connected to the same network to access and use the dashboard.
+In a recent article, I explained [what Kubernetes is](/engineering-education/what-is-kubernetes/) and what it can be used for. In continuation, I will show how to install a single node Kubernetes cluster on an Ubuntu server, running Ubuntu 18.04.4. For this tutorial, I am assuming you will be installing K8s on a single node. You will need a separate computer (or a VM) with an Internet browser connected to the same network to access and use the dashboard.
 
 We will be using MicroK8s for this installation. MicroK8s is a CNCF certified upstream Kubernetes deployment that is designed
 to run entirely on a workstation or edge device. All K8s services are ran natively.
@@ -64,15 +64,14 @@ sudo microk8s.enable dashboard dns
 ~~~
 Then, to check on the deployment of these add-ons run:
 ~~~
-sudo microk8s.kubectl get deployments --all-namespaces
+sudo microk8s.kubectl get pods --all-namespaces
 
-NAMESPACE     NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
-default       microbot                         2/2     2            2           5m
-kube-system   coredns                          1/1     1            1           9m
-kube-system   dashboard-metrics-scraper        1/1     1            1           9m
-kube-system   heapster-v1.5.2                  1/1     1            1           9m
-kube-system   kubernetes-dashboard             1/1     1            1           9m
-kube-system   monitoring-influxdb-grafana-v4   1/1     1            1           9m
+NAMESPACE     NAME                                              READY   STATUS    RESTARTS   AGE
+kube-system   coredns-588fd544bf-dv9b9                          1/1     Running   2          22h
+kube-system   dashboard-metrics-scraper-db65b9c6f-5lvcj         1/1     Running   2          22h
+kube-system   heapster-v1.5.2-58fdbb6f4d-2sm76                  4/4     Running   8          22h
+kube-system   kubernetes-dashboard-67765b55f5-2knqj             1/1     Running   2          22h
+kube-system   monitoring-influxdb-grafana-v4-6dc675bf8c-qsdct   2/2     Running   4          22h
 ~~~
 It should take a few minutes to get all the pods in the "RUNNING" state (hint: if this is taking a while, try using the linux comand `watch` between `sudo` and `microk8s` to have the command repeated every 2 seconds). 
 
