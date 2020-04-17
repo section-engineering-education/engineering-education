@@ -26,7 +26,7 @@ One convenient way of removing complexity through abstraction is using functions
 
 #### Ex: Initializing a Simple Data Structure:
 
-```shell Python
+```Python shell
 def init(data):
 		data['full_name'] = {}
 		data['phone'] = {}
@@ -36,7 +36,7 @@ def init(data):
 
 By moving the initialization statements inside a function, we make the code more readable:
 
-```shell Python
+```python shell
 >>> customers = {}
 >>> init(customers)
 >>> customers
@@ -59,7 +59,7 @@ If a local variable or parameter has the same name as a global variable you are 
 
 #### Ex: Preventing Shadowing using Globals
 
-```shell Python
+```Python shell
 >>> def join(parameter):
 ... 		print(parameter + globals()['parameter'])
 ...
@@ -82,7 +82,7 @@ Calculating powers like the built-in function ```pow``` (operator)
 
 **Non-recursive way of writing a power function (using a loop)**:
 
-```shell python
+```python shell
 def power(x, n):
 		result = 1
 		for i in range(n):
@@ -94,7 +94,7 @@ Raising x to the power of n is equivalent to multiplying a number times itself n
 
 **Recursive way of writing a power function**:
 
-```shell python
+```python shell 
 def power(x, n):
 		if n == 0:
 				return 1
