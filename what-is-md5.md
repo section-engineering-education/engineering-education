@@ -1,0 +1,38 @@
+---
+layout: engineering-education
+status: publish
+published: true
+title: What Is MD5 and What Is It Used For?
+description: MD5 Message-Digest Algorithm, is a cryptographic hashing function. It is a part of the Message Digest Algorithm family. MD5 is the third installment of the Message Digest algorithm.
+author: Gregory Manley
+date: 2020-04-20T00:00:00-07:00
+excerpt_separator: <!--more-->
+images:
+
+  - url: /assets/images/education/what-is-md5.jpg
+    alt: what is md5 cryptographic hashing
+---
+MD5 Message-Digest Algorithm, or [MD5](https://en.wikipedia.org/wiki/MD5), is a cryptographic hashing function. It is a part of the Message Digest Algorithm family. This family was created to verify the integrity of any message or file that is hashed. MD5 is still used in a few cases, however, MD5 is insecure and should not be used in any application.
+<!--more-->
+
+### What Is MD5
+MD5 is the third installment in the line of the Message Digest algorithm. The first installment, known as MD2 was created in 1989 and was specifically designed to operate on 16-bit processors. This algorithm took any plaintext message and created a 128-bit hash to secure that message. Today, MD2 is considered far too slow and is rarely used (CompTIA Security+ 2008 in-depth, 2009). MD4, came along afterward, unlike MD2 this standard was developed for 32-bit computers in 1990. This standard still has major flaws which prevented it from being widely accepted as stated by [*CompTIA Security+ 2008 in depth*](http://www.worldcat.org/oclc/752979537).
+
+MD5 was designed by Ronald Rivest in 1991 to address the flaws with MD4. The algorithm used four variables of 32-bit length in a round-robin fashion to create a value that is then compromised to generate the hash.
+
+### What Is MD5 Used For?
+There are many uses for MD5. One big use is the storage of passwords. This is due to the insecurity of databases and the need to store the passwords somewhere. Many passwords were stored in this manner. Many Linux systems used password-hashing algorithms, like MD5, to securely store passwords.
+
+MD5 is also used as a checksum for files. With the internet age, there are many insecurities in websites that may allow hackers to change download links and trick users into downloading a tampered file. One way this is mitigated is through the use of checksums, where a unique hash is generated against the file and provided so that the user may generate the hash-based upon the file they download and compare. If they match, the file is the same and has not been tampered with.
+
+### Should It Be Used?
+[*CompTIA Security+ 2008 in depth*](http://www.worldcat.org/oclc/752979537) says that, "By the mid-1990s, weaknesses were revealed in the compression functions that could lead to collisions, and 10 years later successful attacks on MD5 were being conducted. Most security experts recommend that the family of MD hashes be replaced with a more secure hash algorithm" (2009). These collisions mean that a hacker or malicious user could create files that would have the same exact hash as another, making it impossible to be sure that the file has not actually been tampered with.
+
+But what should you use instead? The author goes on to say, "Most security experts recommend that SHA-2 be substituted in place of MD5".
+
+Unfortunately, MD5 has been cryptography broken and considered insecure. For this reason it should not be used for anything. Instead developers should switch to the Secure Hash Algorithm or a Symmetric Cryptographic Algorithm. Like I've similarly stated in my [WEP article](/engineering-education/wep-encryption/), using MD5 is much better than using nothing at all. It is always recommended to store user passwords using a hashing algorithm and any algorithm is better than none.
+
+---
+
+#### About the Author
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/gregory-manley.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.
