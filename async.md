@@ -4,7 +4,7 @@ In rust, it is accomplished using an idea called a [Future](https://doc.rust-lan
 
 Asynchronous programming is used a lot for IO, this is because there are many times where you have to wait for something to happen (like reading from a socket) during which no progress can be made.
 This is a perfect moment to hand over control to another future so that it can start to make progress.
-This is why we will be talking about synchronous programming as it relates to IO.
+This is why we will be talking about asynchronous programming as it relates to IO.
 
 This article will be talking a lot about the implementation of futures in rust. <!-- add more -->
 I chose to talk about rust specifically because rust is a systems-level language meaning that all of the magic with futures is "visible".
@@ -13,7 +13,7 @@ Also, knowing how asynchronous code works, in general, will help with understand
 <!-- Why is it important to talk about how it works and not just dive into how to use it? -->
 This article does not come close to covering the extent to how futures in rust work.
 This is especially true when explaining how rust can guarantee memory safety with futures.
-While it's very important, it's also very completed and best left for further reading.
+While it's very important, it's also very completed and best left for [further reading](#further-reading).
 
 <!-- Why is it useful? Why don't threads cover it? -->
 <!-- I don't think this is important to talk about -->
@@ -74,9 +74,9 @@ This is a good start for understanding how we actually implement asynchronous co
 
 
 ## How does it work
-The basic idea here is that async works with a trait called a [Future](https://doc.rust-lang.org/beta/std/future/trait.Future.html).
+The basic idea here is that async works with a [trait](https://doc.rust-lang.org/rust-by-example/trait.html) called a [Future](https://doc.rust-lang.org/beta/std/future/trait.Future.html).
 Here is a simplified version of this trait. 
-The real implementation is more complicated but still has the same underlying concepts. <!-- we talk about the real implementation later -->
+The [real implementation](https://doc.rust-lang.org/beta/std/future/trait.Future.html) is more complicated but still has the same underlying concepts. <!-- we talk about the real implementation later -->
 
 ```rust
 trait SimpleFuture {
@@ -105,7 +105,7 @@ Note, poll can have multiple things to wait on and thus needs to return `Pending
 <!-- This needs a lot of work and rewrites -->
 An executor is what takes a future and runs it.
 How to run it, whether that be single-threaded or multithreaded, with priorities and so on, is left very open-ended as far as rust is concerned.
-In this article, we will only be talking about how an even loop driven executer works using a single thread.
+In this article, we will only be talking about how an [even loop](https://en.wikipedia.org/wiki/Event_loop) driven executer works using a single thread.
 
 We can sort of think about how we can implement an executor similar to our first asynchronous function idea:
 We could iterate over each future and poll it to check if it is ready.
@@ -197,10 +197,10 @@ impl Future for FutSocket
 *The full implementation can be found [here line 79](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=6ce079559e56a7fa2de45b7c04755e16).*
 
 The first thing you will notice is that we are no longer using the `SimpleFuture` trait anymore.
-We are now using the standard `Future` trait. The main differences are that we are taking a `Pin` to `&mut Self`.
+We are now using the standard `Future` trait. The main differences are that we are taking a [`Pin`](https://doc.rust-lang.org/beta/std/pin/index.html) to `&mut Self`.
 This is just a fancy way that rust guarantees memory safety and is way outside the scope of this article.
 Just think of it as a regular mutable reference to self (as it will be optimized out). The second difference is that we are not passing a `wake` closure anymore.
-Now, it's a `Context` which is just an abstraction to a [virtual function pointer table](https://en.wikipedia.org/wiki/Virtual_method_table) which is also outside the scope of this article. 
+Now, it's a [`Context`](https://doc.rust-lang.org/beta/std/task/struct.Context.html) which is just an abstraction to a [virtual function pointer table](https://en.wikipedia.org/wiki/Virtual_method_table) which is also outside the scope of this article. 
 Just know that the <!--`Context::waker()`-->`cx.waker()` will get the previously used `wake` closure.
 
 Now with that out of the way lets look at what is happening here. If the data is there, we return the data as a `Ready(data)`.
@@ -251,9 +251,9 @@ Async/await is used to take existing future implementation (like `File::open(p)`
 
 ## How is it used in production
 Futures in rust are zero cost which you can tell by our implementation. This effort to get futures into rust has taken over 3 years.
-And, it pays off because the only posable limitation to performance would then be in executer design. <!-- I don't like this, it's too negative -->
-Because of the way rust guarantees memory and thread safety the implementation for executors can very complicated and yet very safe.
-One of the more popular executers (or in this case runtimes) is called tokio, it is a multithreaded, work-stealing, task scheduler tuned for async networking workloads.
+It pays off because the performance is directly tied to executor design.
+And, because rust guarantees memory and thread safety, the implementation for executors can very complicated and yet very safe.
+One of the more popular executers (or in this case runtimes) is called [tokio](https://tokio.rs/), it is a multithreaded, work-stealing, task scheduler tuned for async networking workloads.
 
 It is using tokio that an actor based web framework called [actix](https://actix.rs/), written in rust, can handle 153% more [fortunes responses](https://github.com/TechEmpower/FrameworkBenchmarks/wiki/Project-Information-Framework-Tests-Overview#fortunes) per second then the next best web framework <!-- is this how math works --> written in C according to [this TechEmpower benchmark](https://www.techempower.com/benchmarks/#section=data-r18).
 
