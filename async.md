@@ -42,7 +42,7 @@ impl MySocket
     fn set_readable_callback(&self, waker: Waker) { /* code omitted */ }
 }
 ```
-*My implementation can be found [here](#) with comments. Note, it doesn't use real sockets.*
+*My implementation can be found [here line 104](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=6ce079559e56a7fa2de45b7c04755e16) with comments. Note, it doesn't use real sockets.*
 
 The functions do exactly what you would expect.
 It is important to note that if you try to read the data before it is readable you will get an error.
@@ -63,7 +63,7 @@ fn get_num_sync() -> i32
 }
 ```
 
-Now, if we wanted to call this function twice, one after another, we would have to wait 4 total seconds to get both results.
+Now, if we wanted to call this function twice, one after another, we would have to wait 4 total seconds to get both results ([try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=bf5c809a66cc4eb0fdbedc8f31d90f62)).
 We could also write a function that creates 2 sockets at the same time and then busy waits together.
 Now we only have to wait 2 seconds for both results. This is asynchronous.
 
@@ -159,7 +159,7 @@ fn run2(fut_vec)
     }
 }
 ```
-*This is pseudo-code, it breaks a lot of rust rules. If you want to see the real implementation look [here](#)*
+*This is pseudo-code, it breaks a lot of rust rules. If you want to see the real implementation look [here line 214](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=6ce079559e56a7fa2de45b7c04755e16)*
 
 I'm not going to go into depth on the specifics of implementing an executor in rust because it is enough to know how an executor works.
 And there are a lot of good ones that you can just use out of the box like the one in the [futures crate](https://docs.rs/futures-preview/0.3.0-alpha.19/futures/executor/index.html).
@@ -194,6 +194,7 @@ impl Future for FutSocket
     }
 }
 ```
+*The full implementation can be found [here line 79](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=6ce079559e56a7fa2de45b7c04755e16).*
 
 The first thing you will notice is that we are no longer using the `SimpleFuture` trait anymore.
 We are now using the standard `Future` trait. The main differences are that we are taking a `Pin` to `&mut Self`.
@@ -205,7 +206,7 @@ Just know that the <!--`Context::waker()`-->`cx.waker()` will get the previously
 Now with that out of the way lets look at what is happening here. If the data is there, we return the data as a `Ready(data)`.
 Otherwise, we arrange to be woken by using `set_readable_callback` and then return `Pending`. 
 
-With that, we now have everything needed to use futures. You can try out all of the code [here](#).
+With that, we now have everything needed to use futures. You can try out all of the code [here](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=6ce079559e56a7fa2de45b7c04755e16).
 
 
 ## async/await
