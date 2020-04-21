@@ -30,7 +30,7 @@ MD5 is also used as a checksum for files. With the internet age, there are many 
 
 But what should you use instead? The author goes on to say, "Most security experts recommend that SHA-2 be substituted in place of MD5".
 
-Unfortunately, MD5 has been cryptography broken and considered insecure. For this reason it should not be used for anything. Instead developers should switch to the Secure Hash Algorithm or a Symmetric Cryptographic Algorithm. Like I've similarly stated in my [WEP article](/engineering-education/wep-encryption/), using MD5 is much better than using nothing at all. It is always recommended to store user passwords using a hashing algorithm and any algorithm is better than none.
+Unfortunately, MD5 has been cryptography broken and considered insecure. For this reason it should not be used for anything. Instead developers should switch to the Secure Hash Algorithm or a Symmetric Cryptographic Algorithm. With current GPUs and hash cracking tools, using MD5 is barely better than using nothing at all. It is always recommended to store user passwords using a hashing algorithm and you should find that it is equally easy to use SHA-2 in place of MD5 in any modern programming framework.
 
 ---
 
