@@ -59,6 +59,8 @@ The procedure begins by having both parties agree on some random starting color 
 The beauty behind this secret exchange is that it prevents third parties from listening in and acquiring the common secret color even if they knew the common color (yellow) and the first mixed colors (orange-tan and light-blue). In reality, colors are not used but numbers however the  [Diffie-Hellman method](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) is determined to be computationally expensive to “crack”. “It is impossible to compute in a practical amount of time even for modern supercomputers.”
 The common key can now be used to create key-pairs for PGP encrypted messages however in practice, Diffie–Hellman is not used in this way. RSA, which is based on the practical difficulty of factoring the product of two large prime numbers, is the dominant public key algorithm.
 
+Diffie–Hellman has become preferred due its Forward Secrecy attributes. i.e. obtaining eventual access to the communicating systems does not enable an interested party to decrypt a previously recorded conversation. The previously popular key-exchange algorithm (RSA) does not support Forward Secrecy and obtaining the RSA private keys from the communicating systems does allow previously recorded conversations to be decrypted.
+
 *Image source:
 [Introduction to public key cryptography](https://www.uni-due.de/imperia/md/images/dc/crypto_chapter_5_public_key.pdf)*
 
