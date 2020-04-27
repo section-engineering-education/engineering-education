@@ -13,7 +13,7 @@ images:
   - url: /assets/images/education/python-image.jpg
     alt: python ball hiding
 ---
-Abstraction is the art of hiding unnecessary details. It is a fundamental object-oriented programming concept which allows us to only show relevant features of an object and conceal the rest. In doing so, we make our programs more abstract and don't do unnecessary work. We achieve this in Python through the use of classes and interfaces, but before diving in, let's review the fundamentals:
+Abstraction is the art of hiding unnecessary details. It is a fundamental object-oriented programming concept which allows us to only show relevant features of an object and conceal the rest. In doing so, we make our programs more abstract and don't do unnecessary work. We achieve this in Python through the use of classes and interfaces, which we'll discuss in Part 2 of this series, after reviewing some important fundamentals.
 <!--more-->
 
 ### Parameters
@@ -67,7 +67,7 @@ If a local variable or parameter has the same name as a global variable you are 
 >>> combine('Sun')
 Sunflower
 ```
-Nested scopes, also known as closures, refer to putting one function inside another. The outer function returns the inner one, though the function itself is only _returned_, not called. The returned function carries the environment and associated local variables with it.
+***Nested scopes***, also known as ***closures***, refer to putting one function inside another. The outer function returns the inner one, though the function itself is only _returned_, not called. The returned function carries the environment and associated local variables with it. Closures enable data privacy, as the enclosed variables are only in scope in the outer function. They can also be replaced with an object implementing a specific interface, which results in more brevity.
 
 ### Recursion
 
@@ -94,7 +94,7 @@ Raising x to the power of n is equivalent to multiplying a number times itself n
 
 **Recursive way of writing a power function**:
 
-```python shell 
+```python shell
 def power(x, n):
 		if n == 0:
 				return 1
