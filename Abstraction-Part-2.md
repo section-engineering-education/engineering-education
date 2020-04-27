@@ -1,3 +1,4 @@
+---
 title: Abstraction, Part 2
 description: A concise look at abstraction principles with corresponding code examples: polymorphism, encapsulation, methods and attributes, subclasses and superclasses, and inheritance.
 ---

@@ -1,3 +1,4 @@
+---
 title: Understanding Abstraction in Python, Part 1
 
 description: An introduction to abstraction through the concepts of parameters, scoping, and recursion.
