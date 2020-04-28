@@ -3,7 +3,8 @@
 The Reed-Solomon error correcting code is one of the most powerful tool to prevent data corruption lossy environments   
 conditions. Reed-Solomon is use most commonly used in DVD, Blu-Rays, and RAID 6 storage systems. Before we dive into   
 Reed-Solomon code it is important to first understand fields, what error correcting code are and why they work. For this   
-article an understanding of linear algebra is recommended.  
+article an understanding of linear algebra is recommended.
+
 Note that many of the code examples below will reference the addition files `polynomial.py` and `fieldmath.py` both can be found here.
 
 ## Finite Fields  
@@ -177,7 +178,7 @@ def decode(self, msg):
 			for i in range(len(error_locations)):  
 				msg_matrix.set(0, error_locations[i], self.f.subtract(msg_matrix.get(0, error_locations[i]), errors.get(i, 0)))  
   
-	 if not self.syndrome(msg_matrix).any():  
+	if not self.syndrome(msg_matrix).any():  
 		return fieldmath.solve_ax_b_fast(self.generator_matrix.transpose(), msg_matrix.transpose()).to_list(single=True)  
 	else:  
 		return [0]*self.k
@@ -189,11 +190,14 @@ For a simple text input with random error check out this interatice demonstratio
 
 To test this implementation lets create a generalized Reed-Solomon code with parameters $[82, 64, 19]$. Meaning with this code we can correct up to a maximum of 9 byte errors per 82 byte segments of the encoded data. To help highlight why Reed-Solomon can be so powerful we are going to use an image and simulate a scratch on the image, to visualize what migth happen on a disk. Each pixel of the image will be represented by 3 bytes, one for each color, so to correct a single pixel 3 bytes would need to be fixed assuming all 3 bytes were corrupted. To simulate error we will randomly create a line in the form $\alpha + \beta x$ and then compare each pixel location $(x, y)$ with the line to determine the likely hood that the pixel was corrupt. Below is a visualization of the simulated scratch, note that due to the increased size of the encoding this does not necessarily correspond the exact error, but this does represent the number of 3-byte errors and their approximate location in the image. Each white dot represents 3 errors and the thickness of the line ranges from 1 pixel to more than 4.
 
-The original image
-Visualization of scratched image
+<p align="middle"><img width="450" height="450" src="https://lh3.googleusercontent.com/JPCtdgvtAMqRPTGM0zuZAdvCiHAePwOXciB_JVPSmROw6jSkCWl-7zg3aeCn2Ra_ORqJYSwVk9KMTj2Q8LjwD05fm-wy4rNDIncnx13oRXEHD6kqCoZDLI39mT8k3D4f2-Ks6SP9ZKO9mI6wRaHxG5A0F4OS1HLODYhH5_7Xqf6xcay7GF8rsK_CDiTm2xDmJe23-Mn4BJlgPVAg3hJvyfru68iKtt7W4rsD67pL-6BRCzVe8OnEvX0K8D_0MYZjUiAm8v4Tavv6SJvYHJnORBKRAwiGjoyyT473joOJsopIRCFQZMYvejU7zxjdHbe1J7gH3CvZ9B9dWcconyITvhLDkN8vQxgYukHJlTM9rkaw9h3SchV-de7zYs2QINTGU2Ltg7DBy1TRClmwlf-oa6hJ-RM-s35r57ermVxQ2dck2D-ZBTAW39SbwGfYT7Hnj8FpB45V2STGHyg814a21x5QWXQ0IIQ857wLmBS_j8hbwHWTVpq6qH9xKUd5lV9s1zqCzg8WGjMo-ULDHTGbT9fIe4cuwTJWZ0SfcLiZAAus9uL3i9TizesOxOaNelgg9Xf6brKYpV5vbpmVPsQtzOgWKY2UdLNko8RXZE5Nzl5T1hhH9VxstO8PeWPYIdO3St3Xka2T2RhVgk9oGHie_iaMnvh8RDd5Q-oQwzUBuO_peui9_ry-0ES-KRMAoF1KFVWQISruZc2acjkoilXdG_mhAMs2E_IvcgaFyxo7LmeL5hlFpS-wEkQ=s640-no"/> <img width="450" height="450" src="https://lh3.googleusercontent.com/V4xEn_lZz4EQo1_Fv6UINK87CaOioyLJrZ6U_8S-Jzf_v9KO_DbO4s5m4az9F3YcDtFbd6Y3P9W_9M3zeJc0O5C5Vn7z9FMRQRpFfzEaA0Gs3HvoH13PkoArIc9e1BCdCMSsemjdBimIR0lqvchTnv-jmpJM7Qw3JpZ_btSbxEYQoH2xf1jdG0xCw5YAby7O6aUXL-m_qr7BQLntPjozmH5m734Ko5mvhKIpk0eO-EMEdb2-K9ebw9j8pEbffL1-3glefcAwfWPIoChAq3ledMmw4iC3lm1JavclFvix5sIZsLRuU4NfwsjGowDXtb0FeI_WrjeCJ4-Hiq-5yAypdRlSk6l1ScmDNlx5rZq3d_4k-S0kXsRQLoGp6fTdZRhGMaSlhYxavMFlxozeRW1ZqJpp-f35nnEHoa2cSFpHtc1uA-_SSJpHB8qAn7jm-fw5HM3M1AWkbVmm-M9MVUYQ1BOxDVFFfPUASmxzy0-Nz9Ovc8udqGBut43jmQYVTXIcfcabcHIzvpRrzQfUXGNrS4B-7Fy4xyzAc7g9-JedeaIurt1xeMVX8_oZNxSeUnxJsNONsFGKqNkkITTh76E-m_DQ14-u0Tjf_5JJPGVG3JkczVgZWNNeY46bvrcvcVXWmxuI3ORvsUeEzAKvDSVfFHjTpXIwjZ1D3Aor1gZaNe9PZziK5k2fNm2lzGo_ZdYna2l1XTcHzpCRaua1kXzdWJ3deRhU2X9GzDdkn6W5HaQM4Tnpk0I8taQ=s640-no"/></p>
+
+<p align="center"> The Original Image and the scratched image. </p>
+
+
 
 To correct this image we can run the encoded image into our decoder and get the best possible decoding. 
-
-Error corrected image.
+<p align="center">  <img width="450" height="450" src="https://lh3.googleusercontent.com/7HfAlqgNozeFmaoUKCincy9m2jpl_hiEjhWgcGp1tZ39hDDlQpawpuycuj-LT-yIyCVWa-KdHExtdyYoeHfB3z1MrRDci8u31XCkx-uGEeca_mIEZmJKxp9HYOhg51FFxLl0qXK8KExhhzFdwqzLfo_UX6-3n8IWehCZUHMaWTeh74bX2ci6HGhOB1TaNoDd2I5-sPx57HOiTOhgbGao-LKYefq6pirLTbe-bpgi00ivmQHDZHPwTtvODsYE6m93NqApQoL-kWsQGLkf4f6Jw6-iBjvqujZsWpCxjqOqELd77ucGUlOQWYZB5ZAidtWu4Lz1MarzAGx2cIRnUbIBNW7B1nwsBnqLqtawCRBx9Lcbt_upqknTyNiI9lKfl2G3kciWCglUED-gHAnH03VG1L5g4YOvO4SNg1N4ZesXHPjVr9xzJ_Qdh0mM_XUN0blEhEaWtLzrWhZYdN2ybqKHoa3BhuFAm_UzleMtPhpcX2cLLWRQEFXA0ED7ZeQGTF4P5vQmm72GITEvSrG5uohRPfebRJZCPiqWwxKTyrcW-jM-ZCY2JrlGROZPo2qlgsqYOctxdE4lp2eYSA8mRc3uyLx4GZJwiN8UhUVTdRN-gNHJTyVqwt1ab25p9SEVgusqi4hmuyfX4_qLacoidiJnSeWyR1e7OFFr_kOnaHjVRrzKglaKem_VOqR1crtlcSUS8UFNyOOX2l_V4_-5Fr4XogonQp6p8j3dgjMdR3xE1MmyUDUaOthOcmk=s640-no"> </p>
+<p align="center"> The decoded image </p>
 
 As we see most of the scratch was accurately corrected. In fact there are only 2 visible instances of error left. The error is sparse meaning the lost data could be approximated by averaging its surroundings. If we wanted to increase the number of error corrections we could create a new GRS with parameters $[122, 96, 27]$ which would give us a total of 13 correctable errors while still keeping the ratio of data bits to total bits relatively the same.
