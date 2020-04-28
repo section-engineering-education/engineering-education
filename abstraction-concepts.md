@@ -13,11 +13,10 @@ images:
   - url: /assets/images/education/python-image.jpg
     alt: python ball hiding
 ---
-Abstraction is the art of hiding unnecessary details. It is a fundamental object-oriented programming concept which allows us to only show relevant features of an object and conceal the rest. In doing so, we make our programs more abstract and don't do unnecessary work. We achieve this in Python through the use of classes and interfaces, but before diving in, let's review the fundamentals:
+Abstraction is the art of hiding unnecessary details. It is a fundamental object-oriented programming concept which allows us to only show relevant features of an object and conceal the rest. In doing so, we make our programs more abstract and don't do unnecessary work. We achieve this in Python through the use of classes and interfaces, which we'll discuss in Part 2 of this series, after reviewing some important fundamentals.
 <!--more-->
 
 ### Parameters
-
 Parameters are the variables that are set when a function is called. We refer to formal parameters as those we write after the function name in `def` statements, whereas actual parameters (also known as arguments) are the values we supply when *calling* the function.
 
 It is important to distinguish between mutable and immutable data structures. Mutable data structures, such as a list, can change parameters; whereas strings, numbers, and tuples are immutable, meaning that you can't modify them, but rather only replace them with new values.
@@ -34,7 +33,7 @@ def init(data):
 		data['email'] = {}
 ```
 
-By moving the initialization statements inside a function, we make the code more readable:
+By moving the initialization statements inside a function, we make the code more readable and loosely coupled:
 
 ```python shell
 >>> customers = {}
@@ -49,9 +48,11 @@ Parameters are kept in a local scope, which brings us to another fundamental con
 
 ### Scoping
 
-A scope, also known as a namespace, is the place where you can access a variable.
+In Python, a namespace is a mapping of names to objects. A scope is the textual place where a namespace is accessible. Think of namespaces as a way of safely organizing your variables and preventing collision, and scoping as a concept tied to the lifetime of a variable.
 
-Variables defined inside a function are local variables, so they are in the local scope and can only be accessed inside that function. Variables defined outside of functions are global variables and are accessible everywhere.
+Variables defined inside a function (also called function or method scope) are local variables and generally life for the life of the function. They are in the local scope and can only be accessed inside that function. Variables defined outside of functions are global variables and are accessible everywhere. These live for the lifetime of the compilation unit.
+
+NOTE: Python does not have block level scope as do some other languages like Java or C#. All local variables are assigned to the function scope.
 
 In addition to the global scope, each function call creates a new scope. In Python, functions can rebind a variable locally, but if you declare the same variable in the global namespace, this doesn't affect its value in the outer scope. In other words, you will have no problem accessing a global variable inside a function, but assigning a value to a variable inside a function automatically makes it local.
 
@@ -67,7 +68,7 @@ If a local variable or parameter has the same name as a global variable you are 
 >>> combine('Sun')
 Sunflower
 ```
-Nested scopes, also known as closures, refer to putting one function inside another. The outer function returns the inner one, though the function itself is only _returned_, not called. The returned function carries the environment and associated local variables with it.
+***Nested scopes***, also known as ***closures***, refer to putting one function inside another. The outer function returns the inner one, though the function itself is only _returned_, not called. The returned function carries the environment and associated local variables with it. Closures enable data privacy, as the enclosed variables are only in scope in the outer function. They can also be replaced with an object implementing a specific interface, which results in more brevity.
 
 ### Recursion
 
