@@ -60,6 +60,8 @@ Now, you and Bob don’t know much about public-key cryptography; however you an
 
 ### General overview of Diffie-Hellman key exchange (OTR) with paint
 ![diffie-hellman key exchange with paint](/assets/images/education/image_5_end.png)
+<br>*Image source:
+[Introduction to public key cryptography](https://www.uni-due.de/imperia/md/images/dc/crypto_chapter_5_public_key.pdf)*
 
 Diffie-Hellman key exchange allows two parties to create a shared secret that can be used for secret communication over an insecure network. The illustration above uses colors as an analogy to explain the concept of key exchange.
 
@@ -74,9 +76,6 @@ The beauty behind this secret exchange is that it prevents third parties from li
 The common key can now be used to create key-pairs for PGP (Pretty Good Privacy) encrypted messages.
 
 Diffie–Hellman has become the preferred key exchange algorithm for TLS (i.e. HTTPS) due its Forward Secrecy attributes, meaning that obtaining eventual access to the communicating systems does not enable an interested party to decrypt a previously recorded conversation. The previously popular key-exchange algorithm (RSA) does not support Forward Secrecy, and obtaining the RSA private keys from the communicating systems does allow previously recorded conversations to be decrypted.
-
-*Image source:
-[Introduction to public key cryptography](https://www.uni-due.de/imperia/md/images/dc/crypto_chapter_5_public_key.pdf)*
 
 ### In Review
 We went over symmetric encryption that used one key encryption technique to both encrypt data and decrypt data. The major flaw in symmetric encryption was its inability to establish unique keys over an insecure network.
