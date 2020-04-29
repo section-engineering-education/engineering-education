@@ -2,28 +2,30 @@
 layout: engineering-education
 status: publish
 published: true
-title: An Explanation of End-to-End Encryption (E2EE) A Secure Way to Communicate Privately and Securely
-description: What is a secure way to communicate privately and securely, end-to-end encryption, a public key encryption system that ensures the contents of your messages, text, and even files from being understood by anyone except their intended recipients.
+title: End-to-End Encryption (E2EE) Explained
+description: End-to-end encryption (E2EE) is a a public key encryption system that prevents the contents of your messages, text, and files from being understood by anyone except their intended recipients.
 author: Earl Potters
-date: 2020-04-23T00:00:00-07:00
-topics: []
+date: 2020-04-25T00:00:00-07:00
+topics: [security]
 excerpt_separator: <!--more-->
 images:
 
   - url: /assets/images/education/image_9_end.jpg
     alt: End-to-End Encryption Private communication
 ---
-WhatsApp announced in mid-February 2020 on its blog that the messaging app is now being actively used by more than 2 billion people worldwide; Billions of texts are being sent through the public web each day including your messages, photos, videos, voice messages, documents, status updates, and calls. Now imagine your data getting into the wrong hands for everyone to see with no privacy or security. What kind of harm could that cause? Fortunately, there is [End-to-End Encryption](https://ssd.eff.org/en/module/deep-dive-end-end-encryption-how-do-public-key-encryption-systems-work) — “a public key encryption system that ensures the contents of your messages, text, and even files from being understood by anyone except their intended recipients”
+ In mid-February 2020, WhatsApp announced on its blog that the messaging app is now being actively used by more than 2 billion people worldwide. Multiply that by the number of messages being sent by each user – that's a lot of texts, photos, videos, voice messages, documents, status updates, and calls being sent through the public web each day!
 <!--more-->
 
-Until recently end-to-end encryption(E2EE) provided necessary security to prevent your information to be read in transit — that is, not hackers, not the government, and not even the company that facilitates your communication could read your messages. Disconcertingly, this is under threat under the EARN IT legislation bill which aims to uproot encryption systems.
-Therefore in this article, I will dive into how E2EE works and why it is important that we keep it. So before we begin going over end-to-end encryption let’s take some time going over the basics of encryption.
+Imagine your data getting into the wrong hands for everyone to see with no privacy or security. What kind of harm could that cause? Fortunately, there is [end-to-end encryption (E2EE)](https://ssd.eff.org/en/module/deep-dive-end-end-encryption-how-do-public-key-encryption-systems-work) — “a public key encryption system that ensures the contents of your messages, text, and even files from being understood by anyone except their intended recipients”
+
+Until recently, end-to-end encryption provided necessary security to prevent your information from being read in transit — that is, not hackers, not the government, and not even the company that facilitates your communication could read your messages. Disconcertingly, this is under threat under the [EARN IT legislation bill](https://www.wired.com/story/earn-it-act-sneak-attack-on-encryption/) which aims to uproot encryption systems.
+
+In this article, I will dive into how E2EE works and why it is important that we keep it. Before we begin going over end-to-end encryption, let’s take some time going over the basics of encryption.
 
 ### Passing a secret message
-
 Let’s say you are in a classroom and want to send a secret message to your friend Bob but you need to pass it through your friends beforehand. In this example, you and the intermediaries are called network nodes which are either a redistribution point or a communication endpoint.
 
-![](/assets/images/education/image_1_end.png)
+![secret message](/assets/images/education/image_1_end.png)
 *Image source: [ssd.eff.org](https://ssd.eff.org/en/module/deep-dive-end-end-encryption-how-do-public-key-encryption-systems-work)*
 
 As you might have guessed, you are very concerned that your friends may take a peek at your secret message. So you encrypt the message using the classic Caesar/shift cipher — “a cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.”(wiki) For this example, you and Bob have chosen 3 to be your key.
