@@ -1,21 +1,18 @@
-<!-- TODO: -->
-<!-- add more things todo -->
-
 <!-- Ok, so I'm not 100% happy with how everything turned out (writing/word-wise). But, I think it is in a state that I feel I can submit and not be unsatisfied with. I had a lot of fun writing this article and it has been hard to articulate everything I wanted to.  -->
 # Asynchronous programming in Rust
 Asynchronous programming is a method of programming that can allow multiple different things to be run concurrently (or in parallel).
-In Rust, it is accomplished using an idea called a Future. <!-- [Future](https://doc.rust-lang.org/beta/std/future/trait.Future.html). I don't want this to be a link because I don't want people to think they need to know what it is yet. That is also why I don't want to compare it to javascript promises -->
+In Rust, it is accomplished using a high-level idea called a Future. <!-- [Future](https://doc.rust-lang.org/beta/std/future/trait.Future.html). I don't want this to be a link because I don't want people to think they need to know what it is yet. That is also why I don't want to compare it to javascript promises -->
 
 <!-- this needs work, but I don't know how to fix it -->
 Asynchronous programming is used a lot for IO, this is because there are many times where you have to wait for something <!-- "something", I don't like this word but I don't know what else to use. I cant use process because that has a very different meaning. This is very important as using process in this context would be very ambiguous is not just wrong. Maybe task would be a good word here. IDK, I'm lost here. --> to happen (such as reading from a socket or a file) during which no progress can be made.
 This is a perfect moment to hand over control to something else so that it can start to make progress.
-This allows our program to always be making progress, that's the name of the game. <!-- I just added this last part and it sort of works-->
+This allows our program to always be making progress, which is the name of the game.
 
 This article will be talking a lot about the implementation of futures in Rust.
 However, most of the time programming asynchronous code you will only ever have to use async/await because everything low level is already implemented.
 This article will not talk about how to use async/await in the traditional sense, however, knowing how the underlying concepts work is very useful for programming async/await.
 
-I chose to talk about Rust specifically because Rust is a systems-level language; meaning there is almost no hidden magic is happening behind the scenes. <!-- find a better wording -->
+I chose to talk about Rust specifically because Rust is a systems-level language; meaning that, even for a high-level idea, almost no hidden magic is happening behind the scenes.
 This article does not come close to covering the more specialized workings of futures in Rust especially when explaining how Rust can guarantee memory safety throughout all of this.
 While this is very important for Rust to do, it's also very complicated and best left for [further reading](#further-reading).
 
@@ -47,7 +44,7 @@ impl MySocket
 
 
 Let's look at using `has_data_to_read` and `read_data` to make a synchronous function to get the data.
-We'll have to check if the data is ready in a loop and then when it is we can return the data.
+We'll have to check if the data is ready in a loop and then when it is, we can return the data.
 
 ```rust
 fn get_num_sync() -> i32
@@ -74,13 +71,12 @@ fn get_2_num_async_hardcode() -> (i32, i32)
     
     // busy wait until data is ready to be read
     // will take 2 seconds
-    while !s1.has_data_to_read() {}
-    while !s2.has_data_to_read() {}
+    while !s1.has_data_to_read() || !s2.has_data_to_read() {}
 
     return (s1.read_data(), s2.read_data())
 }
 ```
-This is asynchronous ([try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=eee84a470237c4263c9a10b6bb4ed729)).
+This is asynchronous ([try it out](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=1f3f8fb2cae281cc22974f89f3b36989)).
 
 This is a good start for understanding how we actually implement asynchronous code, however, there are a few issues:
 - There is no good way to accommodate more sockets without creating a new function.
@@ -91,7 +87,7 @@ This is a good start for understanding how we actually implement asynchronous co
 ## How Does It Really Work
 The basic idea is that async works with a [trait](https://doc.rust-lang.org/rust-by-example/trait.html) called [Future](https://doc.rust-lang.org/beta/std/future/trait.Future.html).
 The following is a simplified version of that trait. 
-The real implementation<!--[real implementation](https://doc.rust-lang.org/beta/std/future/trait.Future.html)--> is more complicated but still has the same underlying concepts.
+The real implementation is more complicated but still has the same underlying concepts.
 
 ```rust
 trait SimpleFuture {
@@ -111,16 +107,16 @@ Before we talk about how we will implement the poll function lets look into how 
 When we call poll on a future we are allowing progress to be made on that future.
 
 The return type for `poll()` is of type `Poll` which is an algebraic data type that can be `Poll::Ready(data)` or `Poll::Pending` as shown by the enum.
-If the future has finished, i.e. our socket is done waiting, then we can return that data as `Poll::Ready(data)`.
+If the future has finished, i.e. our toy socket is done waiting, then we can return that data as `Poll::Ready(data)`.
 However, poll must never block, so as soon it knows it can't make progress it should return `Poll::Pending` (like when `has_data_to_read()` is `false`).
 
 Note, a task might have multiple things to wait on, and thus `poll` may need to return `Poll::Pending` multiple times before it can eventually return `Poll::Ready(data)`.
 
 ### Defining an Executor
 <!-- This whole section needs some work. I'm not happy with it but I'm fine submitting with it in this state -->
-An executor is what takes a future or multiple and runs them.
+An executor is what takes one or multiple futures and runs them.
 How to run it, whether that be single-threaded or multithreaded, with priorities, and so on, is left very open-ended as far as Rust is concerned. <!-- there are too many commas: I'm just trying to say that async does not mean single-threaded -->
-However, In this article, we will only be talking about how an [event loop](https://en.wikipedia.org/wiki/Event_loop) driven executor works using a single thread.
+However, in this article, we will only be talking about how an [event loop](https://en.wikipedia.org/wiki/Event_loop) driven executor works using a single thread.
 
 We can think about how we can implement an executor similar to our first asynchronous function idea:
 We could iterate over each future and poll it to check if it is ready; and if it is not ready, just poll it again.
@@ -130,19 +126,23 @@ Here is some pseudo-code.
 ```rust
 fn run(fut_vec)
 {
+    let mut ret = vec![]; 
     while !all_done()
     {
         for fut in fut_vec
         {
             if !is_done(fut)
             {
+                // if result of `fut.poll(...)` is `Poll::Ready(d)` then grab data as `d`
                 if let Poll::Ready(d) = fut.poll(||) // it expects a wake function but we are not using it yet
                 {
                     is_done(fut) = true;
+                    ret.push(d);
                 }
             }
         }
     }
+    return ret;
 }
 ```
 
@@ -152,17 +152,18 @@ This is where the `wake` part of the poll function comes in.
 
 The point of this [closure](https://en.wikipedia.org/wiki/Closure_(computer_programming)) is to allow the executor to not waste its time continuously checking to see if a future can make progress.
 Instead, we will require each future to tell us when it can make progress.
-So now when poll returns `Poll::Pending`, we know that the future can't make progress and that the futures will have arranged for its self to be "woken up" (by something <!-- I wanted to use the word task here but I don't think I would work as it might seem that another future is what will do the waking, that's not necessarily the case as anything can call it. --> else calling the `wake()` function) when it can make progress.
-This `wake()` function is created by the executor so that it can keep track of which futures can be polled. <!-- doesn't flow -->
+So now when a future's poll returns `Poll::Pending`, we know that, that future can't make progress and that it will have arranged for its self to be "woken up" (by something <!-- I wanted to use the word task here but I don't think I would work as it might seem that another future is what will do the waking, that's not necessarily the case as anything can call it. --> else calling the `wake()` function) when it can make progress.
+This `wake()` function is created by the executor so that it can keep track of which futures can be polled.
 
-Let's try to add this to our pseudo executor. we'll keep a list of futures that can make progress and make the `wake()` function add the current future back to the list. 
+Let's try to add this to our pseudo executor. We'll keep a list of futures that can make progress and make the `wake()` function add the current future back to the list. 
 Here is the pseudo implementation.
 
-<!-- I really dont like this code. make more rusty (less psudo)  -->
+<!-- I dont like this code. make more rusty (less psudo)  -->
 ```rust
 fn run2(fut_vec)
 {
-    can_make_progress_vec.push_many(fut_vec);
+    let mut ret = vec![];
+    let mut can_make_progress_vec = fut_vec.clone();
     while !all_done()
     {
         while let Some(fut) = can_make_progress_vec.pop()
@@ -170,16 +171,18 @@ fn run2(fut_vec)
             if let Poll::Ready(d) = fut.poll(|| can_make_progress_vec.push(self))
             {
                 is_done(fut) = true;
+                ret.push(d);
             }
         }
     }
+    return ret;
 }
 ```
 <!-- I dont like having to say that this this code is wrong. I would like to have real code here but in order to have it work you need to put in a lot more code and I dont want it to be overly completed -->
 *This is pseudo-code, it breaks a lot of Rust's rules. If you want to see the real implementation look [here at line 227](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=57a64d3e4054bfcddbb50c81e1971f65)*
 
-I'm not going to go any more in-depth on the specifics of implementing an executor in Rust as this is enough to know how an executor works at a high level.
-Implementing an executor is more of a Rust challenge then it is an understanding futures challenge; you can still play around with one by using the one in the [futures crate](https://docs.rs/futures-preview/0.3.0-alpha.19/futures/executor/index.html).
+This pseudo-code is sufficient to understand how an executor works at a high level, so I'm not going to go any more in-depth on the specifics of implementing an executor in Rust.
+Implementing an executor is more of a Rust challenge than it is an understanding futures challenge; you can still play around with one by using the one in the [futures crate](https://docs.rs/futures-preview/0.3.0-alpha.19/futures/executor/index.html).
 
 ### Defining Poll
 We know now what the executor expects of the poll function. That means 2 things for our toy socket.
@@ -218,12 +221,12 @@ impl Future for FutSocket
 The first thing you will notice is that we are no longer using our `SimpleFuture` trait anymore.
 We are now using the standard `Future` trait. The first difference is that we are taking a [`Pin`](https://doc.rust-lang.org/beta/std/pin/index.html) to `&mut Self`.
 This is just a very elegant way that Rust can guarantee memory safety, which is outside the scope of this article.
-Just think of it as a regular mutable reference to self like in `SimpleFuture` (as it will be optimized out).
+Just think of it as a regular mutable reference to self like in `SimpleFuture`, as it will be optimized out and in the poll function, we treat it as such.
 The second difference is that we are not passing a `wake()` closure anymore.
 Now it's a [`Context`](https://doc.rust-lang.org/beta/std/task/struct.Context.html) which is just an abstraction to a [virtual function pointer table](https://en.wikipedia.org/wiki/Virtual_method_table) (which is not important for this article). 
 Just know that `cx.waker()` will get the previously used `wake()` closure.
 
-Now with that out of the way lets look at what is happening here. If the data is there, we return the data as a `Poll::Ready(data)`.
+Now with that out of the way lets look at what is happening here. If the data is ready, we return the data as a `Poll::Ready(data)`.
 Otherwise, we arrange to be woken by using `set_readable_callback` and then return `Poll::Pending`. 
 
 With that, we now have everything needed to use futures for asynchronous code.
@@ -232,14 +235,14 @@ You can try out all of this working together [here](https://play.rust-lang.org/?
 
 ## Async/Await
 <!-- I want to add more be we are already at 2000 words so I don't think I will -->
-It's easy to see how writing out a poll function can get complicated as more things need to be done in them.
+It's easy to see how writing out a poll function can get more complicated as more things need to be done within them.
 For example, assume we wanted to write an asynchronous `read_file` function that opens a file and reads it.
 We must do this in two steps, we need to open it wich this takes time, as we will have to ask the OS to give us a file descriptor.
 Then once that has finished we can then read the file which will also take time to do.
 
-Both steps can be done asynchronously but together have to happen synchronously (one after another).
+Both steps can be run asynchronously, but to work together they have to happen synchronously (one after another).
 If we imagined what the poll function would look like for this operation, we would have to know where we are in the process of running the future (opening and then reading the file). <!-- I sort of broke my rule with the use of process here, but I think that it is ok because it is less ambiguous in this context. IDK, I still don't like it. -->
-So that every time poll is called we could continue execution where we left off.
+This would be necessary so that every time poll is called we could continue execution where we left off.
 
 This is heavily simplified by the `async` and [`.await`](https://boats.gitlab.io/blog/post/await-decision/) keywords.
 The following is all we have to write to have the functionality mentioned above.
@@ -254,18 +257,18 @@ pub async fn read_file(file_path: &str) -> io::Result<String> {
 ```
 
 So what does this do for us?
-In short, it returns a future with the poll function implement for us at compile-time. 
+In short, it returns a future with the poll function implemented for us at compile-time. 
 
 
 This poll function would work in the following way. There would be a state variable that stores where it is throughout this function and any relevant data (like a file descriptor).
-The first would be an uninitialized state, this is when we just start executing the program.
-On our first poll, this would run until we reach the first await. At this point we would poll the future created by `File::open()` and most likely won't be able to make progress so the poll would return `Poll::Pending`.
-Once the `File::open()` future wakes back up and returns `Poll::Ready(data)` then we can progress to the next state with our new file variable set.
+The first would be an uninitialized state, which is when we just start executing the program.
+On our first poll, it would run until we reach the first await. At this point we would poll the future created by `File::open(...)` and most likely won't be able to make progress so the poll would return `Poll::Pending`.
+Once the `File::open(...)` future wakes back up and returns `Poll::Ready(data)` then we can progress to the next state with our new file variable set.
 This next state would be defined for everything in between the two awaits. This general idea continues until the end of the function.
 
  
 One thing to note is that we can't replace our `FutSocket`'s poll implementation with async/await because we have to do special things like set the `wake()` function and interface with the OS.
-Async/await is used to take existing future implementation (like `File::open(p)` and `File::read_to_string(...)`) and chain them together to make more complicated, more useful asynchronous code easily.
+Async/await is intended to take existing future implementation (like `File::open(...)` and `File::read_to_string(...)`) and chain them together to make more complicated, more useful asynchronous code, easily.
 
 
 
@@ -275,7 +278,7 @@ That time paid off because it means that performance is directly tied to executo
 And, because Rust guarantees memory and thread safety, the implementation for executors can be very complicated and yet very safe.
 One of the more popular executors (or in this case a [runtime](https://docs.rs/tokio/0.2.19/tokio/runtime/index.html)) is called [tokio](https://tokio.rs/), it is a multithreaded, work-stealing, task scheduler tuned for async networking workloads.
 
-By using a runtime like tokio, the actor based web framework called [actix](https://actix.rs/), written in Rust, can handle 154% more [fortunes responses](https://github.com/TechEmpower/FrameworkBenchmarks/wiki/Project-Information-Framework-Tests-Overview#fortunes) per second then the next best web framework <!-- is this how math works (154% more)? --> written in C according to [this TechEmpower benchmark](https://www.techempower.com/benchmarks/#section=data-r18).
+By using a runtime like tokio, the actor based web framework called [actix](https://actix.rs/), written in Rust, can handle 154% more [fortunes responses](https://github.com/TechEmpower/FrameworkBenchmarks/wiki/Project-Information-Framework-Tests-Overview#fortunes) per second than the next best web framework <!-- is this how math works (154% more)? --> written in C, according to [this TechEmpower benchmark](https://www.techempower.com/benchmarks/#section=data-r18).
 
 
 ## Further Reading
