@@ -5,7 +5,7 @@ published: true
 title: All About Binary Search
 description: Walk-through of a simple Binary Search implementation in Python and discussion of binary search time and space complexity.
 author: Sophia Raji
-date: 2020-04-27T00:00:00-07:00
+date: 2020-05-04T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -13,32 +13,34 @@ images:
   - url: /assets/images/education/binary-search.jpg
     alt: binary search magnifying glass
 ---
-A **binary search** is an algorithm that finds the position of a target value in a _sorted_ list. It has [several uses in practice](https://stackoverflow.com/questions/540165/where-is-binary-search-used-in-practice): finding entries in  sorted arrays, including sorted collections from language libraries like Java, .NET, C++ STL; hunting for errors during the debugging process, which is faster than single-stepping large parts of the code (even Git has a [git-bisect command](https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git#Binary-Search)); and retrieving 3D game displays according to position and camera.
+A **binary search** is an algorithm that finds the position of a target value in a *sorted* list. It has [several uses in practice](https://stackoverflow.com/questions/540165/where-is-binary-search-used-in-practice):
+- Finding entries in sorted arrays, including sorted collections from language libraries like Java, .NET, C++ STL;
+- Hunting for errors during the debugging process, which is faster than single-stepping large parts of the code (even Git has a [git-bisect command](https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git#Binary-Search));
+- Retrieving 3D game displays according to position and camera.
 <!--more-->
 
 ### Process
-1. Compare target to middle number, since the last is sorted, this tells us whether the target will be in the left or right half of the list.
+1. Compare target to middle number, since the last is sorted – this tells us whether the target will be in the left or right half of the list.
 2. We now ignore the other half of the list, seeing as we have divided the problem in half.
-3. Repeat the same process, with the middle of the new half of the list we are using, until finding the target value or not finding it in the list.
+3. Repeat the same process, with the middle of the new half of the list we are using, until finding the target value, or not finding it in the list.
 
 ### Benefits
-- Always **reduces complexity of linear search** from O(log(N)) to O(log(N)) in sorted list
-- This is because the search interval decreases by a power of two each time (halving the lists). Includes cost of insert(), delete(), and lookup()
+- Reduces time complexity of linear search from `-O(n)` to `O(log n)` in sorted list – this is because the search interval decreases by a power of two each time (halving the lists).
+- Includes cost of `insert()`, `delete()`, and `lookup()`
 - Space complexity is O(1), meaning it requires constant time to perform operations, as we just need to store three values (upper, middle, and lower bounds)
-- **More efficient for searching for specific target from large input**
+- More efficient for searching for specific target from large input
 - Simple to program for lists
 
 **Fun fact:** You could search all the names in the world (written in order) and find a specific name in a maximum of [35 iterations](https://www.hackerearth.com/practice/algorithms/searching/binary-search/tutorial/)
 
 ### Disadvantages
-- It only works on **sorted lists** that are kept sorted
-- More complicated to implement than a linear search and it requires a three-way update of low and high index and potentially an additional check if the target wasn't found
-- **Overkill for smaller lists**
+- It only works on sorted lists that are kept sorted
+- More complicated to implement than a linear search – it requires a three-way update of low and high index, and potentially an additional check if the target wasn't found
+- Overkill for smaller lists
 - The recursive implementation requires more stack space
-- **Loss of efficiency** if the list does not support random-access
-- Using interpolating search to predict where to start searching when the elements are distributed evenly gets us to our destination more quickly than a binary search tree, i.e. O(log(log(N))) instead of O(log(N))
-- Improvements over Binary Search for sorted arrays that are uniformly distributed (sorted but unindexed on-disk datasets)
-- However, when list size increases exponentially, interpolation search time complexity is O(log(N)), the worst case, as it has to go to different locations according to the value of what is being searched
+- Loss of efficiency if the list does not support random-access
+
+Additionally, using interpolating search to predict where to start searching when the elements are distributed evenly gets us to our destination more quickly than a binary search tree, i.e. `O(log(log(n)))` instead of `O(log(n))`; and there are further improvements over binary search for sorted arrays that are uniformly distributed (sorted but unindexed on-disk datasets). However, when list size increases exponentially, interpolation search time complexity is `O(log(n))`, the worst case, as it has to go to different locations according to the value of what is being searched.
 
 ### Implementation
 
@@ -70,7 +72,7 @@ def binary_search(target, input):
 ```
 
 ### Python-Specific Modules and Features
-The above implementation takes a target and a set of elements as an input. What if our target was a string value and we wanted to search by index instead? In that case, you can use an index parameter:
+The above implementation takes a target and a set of elements as an input. What if our target was a string value and we wanted to search by index instead? In that case, you can use an `index` parameter:
 ```python shell
 def binary_search(target, input, index = identity):
 ```
@@ -78,17 +80,17 @@ By using the `index` parameter, we lose the ability to search by value. We could
 ```python shell
 def binary_search(target, input, index = lambda x: x)
 ```
-Here we use `lambda` to create an anonymous function (one not bound to an identifier). Instead of including a “return” statement like a regular function, it returns an expression instead.
-  - **lambda**: shortcut for declaring small anonymous functions, can take many arguments but return only one expression
+Here we use `lambda` to create an anonymous function (one not bound to an identifier). Instead of including a “return” statement like a regular function, it returns an expression.
+  - **lambda**: shortcut for declaring small anonymous functions; can take many arguments but return only one expression
 
 In addition, there are useful functions and modules we can use to implement binary search in Python such as:
   - **recursive()**: an inner function that can access both elements and value parameters even though they’re defined in the enclosing scope
 
-This is potentially useful when manually implementing a recursive binary search algorithm
+This is potentially useful when manually implementing a recursive binary search algorithm.
 
-  - **bisect()**: a build-in module that helps you find an index of an element or add a new element in an already sorted list, via insort(), insort_left(), or insort_right()
+  - **bisect()**: a build-in module that helps you find an index of an element or add a new element in an already sorted list, via `insort()`, `insort_left()`, or `insort_right()`
 
-This helps avoid having to sort the list after each insertion
+This helps avoid having to sort the list after each insertion.
 
 ### Example using bisect():
 ```python shell
