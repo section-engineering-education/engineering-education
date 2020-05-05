@@ -5,7 +5,7 @@ published: true
 title: A History of Cryptoanarchy
 description: Overview of the anarchist philosophy and technologies predating Bitcoin.
 author: Sophia Raji
-date: 2020-05-04T00:00:00-07:00
+date: 2020-05-04T00:00:00-07:30
 topics: []
 excerpt_separator: <!--more-->
 images:
