@@ -1,120 +1,138 @@
+
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-# Reed-Solomon Error Correction  
-The Reed-Solomon error correcting code is one of the most powerful tool to prevent data corruption lossy environments   
-conditions. Reed-Solomon is use most commonly used in DVD, Blu-Rays, and RAID 6 storage systems. Before we dive into   
-Reed-Solomon code it is important to first understand fields, what error correcting code are and why they work. For this   
-article an understanding of linear algebra is recommended.
 
-Note that many of the code examples below will reference the addition files `polynomial.py` and `fieldmath.py` both can be found here.
+# Reed-Solomon Error Correction
 
-## Finite Fields  
-A field is set of elements closed under multiplication, division, addition and subtraction. the most common example of  
-a field are the real numbers. A finite field is field with finite number of elements. A common example would be the set  
-$\{0,1\}$ with both addition and subtraction definited using the xor operator and multiplication and division being definited as normal. With Reed-Solomon, any finite field with the size being a prime power is allowed and most commonly a binear field of size $2^8$. For the definitions of each of the four required operations see the following implementation here. In general a finite field will work very similarly to the real numbers except with only a fixed number of $q$ elements. A python implementation of a finite field and related matrix operations can be found here.
+Have you ever wondered how images of Jupiter or Pluto can travel hundreds of millions of miles or even billions of miles through space with relatively few signs of interference? This is done with the magic of error-correcting codes, and often the combination of multiple encoding techniques including Reed-Solomon codes. Error-correcting codes are not only responsible for the integrity of data transmission but data storage as well. The entire reason a scratched DVD still works in due to Reed-Solomon error correction. Like encryption, error-correcting codes are one of the most fundamental parts of our technology-driven society.
+
   
-## Linear Error Correcting Codes  
-A linear code $C$ is a set of code words that form a subspace of the vector space $\mathbb{F}^n_q$, where $\mathbb{F}_q$ is a field with $q$ elements. To allow for error correcting we want to create a encoding procedure to map any message of size $k$ into a code word of size $n$.  Note to detect or correct errors we see that $n > k$.  We will call a code with parameters $n$, and $k$ with code-words forming a subspace a linear $[n,k]$-code. 
 
-We can define a lienar code $C$ with a generator matrix $G$, whose rows form the basis for the code $C$, meaning the rows can be any set of linearly independent code-words. This then gives us a rather simple encoding procedure where for some input message $m$ can be encoded to $w=m\cdot G$ where $w$ and $m$ are row vectors. In this case the the space of code-words is the co-image, or row space of the of $G$. To check if a code word, $w$ of size $n$ is in fact in our code $C$ we can perform Gaussian elimination to determine compatibility. Alternativily we can define a parity check matrix $H$  such that $H\cdot G^T= 0$. This would mean the the parity check matrix represent the compliment of the code $C$, this is called a dual-code and has the generator matrix $H$. This provides us with a very useful property: $v\in C$ if and only if $v\cdot H^T= 0$. This provides us with avery simple method to check whether or not a received message had an error. We can also determine that for a linear $[n,k]$-code, $G\in \mathbb{F}^{k\times n}_q$ and $H\in \mathbb{F}^{(n−k)\times n}_q$. If our two matrices are in the following form $G = (I_k|X)$ and $H=(−X^T|I_{n−k})$ we say they are in standard form. Notice a generator matrix in this form can not only easily help constructthe partiy check matrix but finding original message, when no errors is just the first $k$ elements of the received message. And any matrix $G$ and $H$ can be transformed to standard form using Guassing elemenination.
+In this article, we will break down how Reed-Solomon error-correcting code work and what make then so powerful. Before we dive into Reed-Solomon codes it is important to first understand a few mathematical concepts.
 
-A code $C$ is a $[n, k, d]$-code if it is a $[n,k]$-code with a minimum distance, Hamming distance, $d$ between code words. Refer to the additional reading for how this paramaeter is found, for this article we will consider it a give that is unique to each family of codes. This attribute determines how many errors are correctable and a linear $[n, k, d]$-code can correct up to $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ errors.
+  
 
-Consider a code-word $w$ in our code $C$ and some error $e$. Assume that the error is fixable meaning there are less than $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ individual errors in $e$, and let $y = w + e$. When we multiply $y$ with the transpose of the parity check matrix we will get a non-zero result, which we call the syndrome, and due to the distributive properly of matrix multiplication, $S_H(y) = yH^T= (m+e)H^T = eH^T$. This syndrome is a unique vector that corresponds to the specific error that occurred. This leads to a decoding process called syndrome decoding, can be found in addition reading section, This is not always a practical method of decoding, as it requires a very large amount of space and initialization and more often than not we will create other algorithm using the syndrome specific to each code.
+## Finite Fields
+
+A field is set of elements closed under multiplication, division, addition, and subtraction, Meaning the result of any of the previously mentioned operations with any two elements of the field must also result in an element of the field. The most common example of a field is the set of real numbers. Furthermore, a finite field is a field with a finite number of elements. With Reed-Solomon, we will work with the finite field of $2^8$ elements such that each element can be represented as a byte. To see how we might implement one of these fields, with some linear algebra examples in python look [here](https://repl.it/@jorqueraian/FiniteFields).
+
+## Linear Error-Correcting Codes
+
+Before we talk about Reed-Solomon codes I want to talk about what an error-correcting code is and how we define it.
+
+  
+
+A linear code $C$ is a set of code words that form a subspace of the [vector space](https://en.wikipedia.org/wiki/Vector_space) $\mathbb{F}^n_q$, where $\mathbb{F}_q$ is a field with $q$ elements. In this case, a code-word is an $n$-dimensional vector, with each element being part of our field. Error-correcting codes take in an input message of size $k$ and return an encoded messaged of size $n$, and as a shorthand, we call this a linear $[n,k]$-code.
+
+  
+
+The [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance), $d$ of a code, represents the minimum number of different symbols between the closest two codewords. This attribute determines how many errors are correctable as a code with Hamming distance $d$ can correct up to $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ errors. Knowing $d$ we call the code a linear $[n, k, d]$-code.
+
+  
+
+Every error-correcting code can be defined using two matrices, the generator matrix, and the parity check matrix. These will help us encode a message and determine if an error occurred. With our generator matrix $G$ we can create a fairly simply encoding procedure $E_G(m)=m\cdot G$. This tells us to encode an input message $m$ we can multiply the generator matrix on the right of the message. By defining our code with a generator matrix we guarantee that our code will be linear. To check if a received message, $w$ is in fact in our code we can perform [Gaussian elimination](https://en.wikipedia.org/wiki/Gaussian_elimination) to simply solve for $m$, in $w=m\cdot G$. Alternatively, we can use the parity check matrix $H$. We want to create the parity check matrix such that $H\cdot G^T= 0$. This allows us to easily check if $w$ is a valid code-word as $v\in C$ if and only if $v\cdot H^T= 0$. This would be a non-zero value if the received message wasn't in our code. We call this the syndrome. For some received message $y$ the syndrome is $S_H(y) = yH^T$. To understand why this is important consider a code-word $w$ in our code $C$ and some error $e$. Assume that the error is fixable meaning there are less than $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ non-zero elements in $e$, and let $y = w + e$. In this case, the syndrome will be a non-zero vector. Using the distributive property of matrix multiplication we can determine that the syndrome is a unique value dependent on the error, $S_H(y) = S_H(e)$. This tells us that for two different encoded messages with the same error we would calculate the same syndrome.
+
+  
 
 ## The Generalized Reed-Solomon Code
-Now that we have the fundamental down we can jump into the encoding and decoding of the Generalized Reed-Solomon (GRS), error correcting code. For the remainder of this article we will work in the binary field of $2^8$ elements, as this allows each symbol in our message to be a byte. A code implementation of this finite field can be found here.
 
-A GRS code is created from a set of $n$ distinct non-zero value of $\mathbb{F}_q$, $\alpha_1, \dots \alpha_n$ called the code locators. Conventionally these are created from a single value $\alpha$, such that $\alpha_i = \alpha^i$. In addition we define two sets of column multipliers, with non-zero values of $\mathbb{F}_q$, $v_1, \dots, v_n$ and $v'_1, \dots, v'_n$, but when creating a GRS code only one of these sets is required on initialization. Reed-Solomon codes are defined using a polynomial to both find the encoded message and the syndrome of a code, but as we will see both of these procedures can be modified to use a generator and parity check matrix. With this definition Reed-Solomon in a linear $[n, k, d]$-code, with parameters $[n, k, n-k+1]$ meaning there are $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ correctable errors.
+Now that we have the fundamentals down we can jump into the encoding and decoding of the Generalized Reed-Solomon (GRS), error-correcting code.
 
-In python we can create a GRS class as such
-```python
-class GeneralizedReedSolomon(object):  
-	def __init__(self, f, k, n, alpha=0x2):
-		# Will create GRS [n, k]-code over the field f from fieldmath.py
-		...
-		self.f = f
-		self.p = PolynomialOperations(self.f)
-		...
-```
-The full extended  implementation including the generation of both the generator and parity check matrices can be found here.
+  
 
-### Creating the Generator and Partity Check Matrices
+Unlike more traditional error-correcting codes, [like the Hamming code]([https://en.wikipedia.org/wiki/Hamming_code](https://en.wikipedia.org/wiki/Hamming_code)), that can correct bit errors, Reed-Solomon can correct entire bytes as it effectively groups bit when encoding messages. This clustering effect allows for large segments of contiguous data to be correctable that wouldn't normally be fixed by traditional codes. A visualization of this idea can be found below. This can be very useful for situations with a cluster like error, were multiple contiguous bit are affected, like a scratch on a DVD, or localized interference in data communication.
 
-Reed-Solomon codes are definited with the following endoing procedure. Let our message $m= m_0,\dots,m_{k-1}$ be the coefficients of a polynomial in $\mathbb{F}_q[x]$ such that $m(x) = m_0 + m_1x+m_2x^2+\dots+m_{k-1}x^{k-1}$. Now each value $\alpha_i$ will be used to creating the encoded message $\langle v'_1m(\alpha_1),\dots,v'_n m(\alpha_n)\rangle$. From this definition we can construct a generator matrix from this encoding as each column of the generator matrix would correspond to the message polynomial without the coefficients. This provides us with the encoding procedure $E(m) = mG$. Additionally knowing that the orthogonal compliment, the dual-code, of our GRS is its self a GRS with parameters $[n, n-k]$, we can construct the parity check matrix in a similar way, but now we will use the column multipliers $v_1,\dots,v_n$, and it is common to see these as all ones.
-$$G_{GRS}= 
+  
+
+But how does this work?
+
+  
+
+For this implementation, I will be using the finite field of 256 elements, as this gives us the ability to correct entire bytes, but any finite field with a prime power of elements can be used.
+
+Like any linear code, we want to define a generator matrix and a parity check matrix. We will create $n$ distinct non-zero values of $\alpha_1, \dots \alpha_n$ called the code locators. In our case, we will let the first code locater $\alpha_1$ be the value 2, and all following code locators will be $\alpha_i = \alpha_1^i$. These code locators will correspond to each column of both the generator and parity check matrices. This means when we encode the message each of the elements of the encoded message will be related to its corresponding code locator. As we will see this will help determine where the error occurs. We will be able to determine the location using a polynomial, $\Lambda(x)$, with coefficients that can be found from the syndrome. The roots of this polynomial will correspond to code locators for where errors occurred.
+
+In addition to our code locators we want to define two sets of non-zero values called the column multipliers, $v_1, \dots, v_n$ and $v'_1, \dots, v'_n$. These will play a significance in making our matrices valid.
+
+  
+
+### Creating the Generator and Parity Check Matrices
+
+To encode a message with Reed-Solomon let our input message $m= m_0,\dots,m_{k-1}$ be the coefficients of the polynomial $m(x) = m_0 + m_1x+m_2x^2+\dots+m_{k-1}x^{k-1}$. Using this polynomial we can pass in each of the code locates for each of the elements of our encoded message, so each element corresponds to a specific code locator. This will create the encoded message $\langle v'_1m(\alpha_1),\dots,v'_n m(\alpha_n)\rangle$. From this definition we can construct a generator matrix where each column of the generator matrix would correspond to the message polynomial without the coefficients of $m$. This provides us with an alternative encoding procedure $E(m) = mG$. Similarly we can create the parity check matrix $H$.
+
+$$G_{GRS}=
 \begin{pmatrix}
 v'_1 & \dots & v'_n\\
 v'_1\alpha_1 & & v'_n\alpha_n\\
-\vdots &  & \vdots\\
+\vdots & & \vdots\\
 v'_1\alpha_1^{k-1} & \dots & v'_n\alpha_n^{k-1}
-\end{pmatrix} \;\;\;\; 
-H_{GRS}= 
+\end{pmatrix} \;\;\;\;
+H_{GRS}=
 \begin{pmatrix}
 v_1 & \dots & v_n\\
 v_1\alpha_1 & & v_n\alpha_n\\
 \vdots & & \vdots\\
 v_1\alpha_1^{n-k-1} & \dots & v_n\alpha_n^{n-k-1}
 \end{pmatrix}$$
-For these matrices to represent a valid code they would have to satisfy $H G^T = 0$, and this is done with our two sets of column multipliers. Provided with one of these sets the other can be found with a process involving finding the kernel of a related parity check matrix, a code implementation is provided here but for now we will assume the column multipliers have been selected to create a valid code.
 
-In code our encoding algorithm, using the polynomial definition would be as as follows. A matrix implementation can be found here, but its generally slower.
-```python
-def encode(self, msg):
-	encoded_msg = []  
-	for i in range(self.n):  
-		encoded_msg.append(self.f.multiply(self.vp_arr[i], self.p.poly_call(msg, self.alpha_arr[i])))  
-	return encoded_msg
-```
+I have encluded these matreces to verify their existance and to show that our GRS code is in fact linear. For these matrices to represent a valid code they would have to satisfy $H G^T = 0$, and this is done by carefully picking value for the column multipliers. For simplicity let the set $v_1, \dots, v_n$ be all ones, and then we can then solve for $v'_1, \dots, v'_n$.
+
+  
+
 ### The Decoding Algorithm
-In this section we will talk about the theory behind the Peterson-Gorenstein-Zierler GRS decoding algorithm. This algorith, first finds the location of the errors and then use the syndrome to create a system of equations that when solved would result in the errors that occurred. By breaking down the definition of the syndrome $S_H(y)= (S_0,\dots, S_d-2)$ we can see that for $0 \leq \ell < d-1$, the corresponding element can expressed as $S_{\ell}=\sum_{j=1}^{n} y_j v_j \alpha_j^{\ell}$. Recall that for the error $e$, in $y$, $S_H(y) = S_H(e)$, meaning if $e_j = 0$, $e_j v_j \alpha_j^{\ell} = 0$ therefore we only need to consider the $j$ values with error, and we can call the set of all erroneous location $J$, such that for all $j \in J$, $e_j \neq 0$.
 
-$$S_{\ell}=\sum_{j=1}^{n} y_j v_j \alpha_j^{\ell}=\sum_{j=1}^{n} e_j v_j \alpha_j^{\ell} = \sum_{j\in J} e_j v_j \alpha_j^{\ell}$$
+In this section, we will talk about the Peterson-Gorenstein-Zierler GRS decoding algorithm which uses the syndrome and the code locators to find and correct any possible error that occurred. For this section let $S_H(y) = yH^T= (S_0,\dots, S_d-2)$.
 
-In code to just find the syndrome of a message would look like this, and again a version using the partiy check matrix can be found here.
-```python
-def syndrome(self, msg):  
-	syndrome = []  
-	for l in range(self.d-1):  
-		syn_l = self.f.zero()  
-		for j in range(self.n):  
-			syn_l = self.f.add(syn_l, self.f.multiply(self.f.multiply(msg[j], self.v_arr[j]), fieldmath.pow_over_field(self.alpha_arr[j], l, self.f)))  
-		syndrome.append(syn_l)  
-	return syndrome
-```
+  
 
-Assuming the size of $|J| \leq \left \lfloor{\frac{d-1}{2}}\right \rfloor$ we have a solvable system of equations to find the error vector $e$. Before we can do this we must locate the error, and this is done with two polynomials in $\mathbb{F}_q[x]$, the error locator polynomial, $\Lambda(x)$ and the error evaluator polynomial $\Gamma(x)$. We will define $\Lambda(x)$ such that $\Lambda(\alpha_k^{-1}) = 0$ if and only if $k\in J$. Similarly we want to define $\Gamma(x)$ such that if $k\in J$ then $\Gamma(\alpha_k^{-1}) \neq 0$. Defining these polynomials as such will provide us with useful fact that the $\gcd(\Lambda(x), \Gamma(x)) = 1$. In addition to the definition we can write them in terms of their coefficients, $\Lambda_m$ and $\Gamma_m$ corresponding to the $x^m$ term. Let $\tau$ be the number of correctable errors $\left \lfloor{\frac{d-1}{2}}\right \rfloor$.
+Recall that the syndrome of a received message is only dependent on the error, therefore if we knew what elements of the received messaged had error we could create a system of equations to find the error, as we could entirely ignore some of the rows of the parity check matrix. For each element of the syndrome $S_\ell$, we only need to consider the indices that we know have an error. We can call this set of all erroneous location $J$. Assuming we have less than the number of correctable errors we can solve for the error vector $e$. Otherwise, if there more we would not have a solvable system of equations.
 
-$$\Lambda(x)= \prod_{j\in J}(1-\alpha_jx) = \sum_{m=0}^{\tau} \Lambda_mx^m \;\;\;\;\Gamma(x) = \sum_{j \in J} e_j v_j \prod_{m \in J \,\setminus \{j\}}(1-\alpha_mx) = \sum_{m=0}^{\tau-1}  \Gamma_mx^m$$
+  
 
-From these definitions we can find that $\Lambda(x)S(x) \equiv \Gamma(x) \mod x^{d-1}$, which creates a system of equations to find possible coefficients for $\Lambda(x)$ and $\Gamma(x)$. First we can solve the homogeneous system of equations below to find a subspace of the possible coefficients of $\Lambda(x)$, and we will call an element of this space $\lambda$ which has a corresponding polynomial $\lambda(x)$. 
+Before we can do this we must locate the error, and this is done with the error locator polynomial, $\Lambda(x)$, and the error evaluator polynomial $\Gamma(x)$. In order to locate errors with the code locators, we want the roots of $\Lambda(x)$ to tell use what element of our message had an error. To do this we want to create a polynomial with the roots being the multiplicative inverses of each of the code locators with an error. Once we have created this polynomial we can easily plug in each code locator and determine exactly which elements had an error. To help find the coefficients for the error locator we want to create the polynomial $\Gamma(x)$, such that none of its roots are the same as $\Lambda(x)$. Defining these polynomials as such will provide us with useful fact that the $\gcd(\Lambda(x), \Gamma(x)) = 1$.
+
+  
+
+To find the coefficients for each of these equations we can solve the homogeneous system of equations below to find a possible set of coefficients of $\Lambda(x)$, and we will call this $\lambda$ which has a corresponding polynomial $\lambda(x)$. As this is a homogeneous system of equations there will be a large number of possible solutions, but we only need any non-zero solution.
+
+  
 
 $$\begin{pmatrix}
 S_\tau & S_{\tau-1} & \dots & S_0\\
 S_{\tau+1} & S_{\tau} & \dots & S_1\\
 \vdots & \vdots & & \vdots\\
 S_{d-2} & S_{d-3} & \dots & S_{d-\tau-2}
-\end{pmatrix} 
+\end{pmatrix}
 \begin{pmatrix}
 \lambda_0\\
 \lambda_1\\
 \vdots\\
 \lambda_\tau
-\end{pmatrix} = 0$$
+\end{pmatrix} =
+\begin{pmatrix}
+0\\
+0\\
+\vdots\\
+0
+\end{pmatrix}$$
 
-To solve for $\lambda$ we need to find the kernel, null space, of the matrix. This then gives a finite, but large number of possible combinations for the vector $\lambda$. This doesn't allow us to immediately determine what the polynomial $\Lambda$ is but we know the coefficients exist in the kernel space. To help determine the exact values of the coefficients we need to also find possible coefficients for $\Gamma(x)$ which can be found with the following matrix multiplication, using any possible $\lambda$ in the kernel. This will provide us with the vector $\gamma$ and its corresponding polynomial $\gamma(x)$
+  
+
+To find a possible set of coefficients for $\Gamma(x)$ we can use $\lambda$ found previously to find a set of possible values that we will call $\gamma$ with its corresponding polynomial $\gamma(x)$.
+
+  
 
 $$\begin{pmatrix}
 S_0 & 0 & \dots & 0 & 0\\
 S_1 & S_0 & \dots & 0 & 0\\
 \vdots & \vdots & & \vdots & \vdots\\
 S_{\tau-1} & S_{\tau-2} & \dots & S_0& 0
-\end{pmatrix} 
+\end{pmatrix}
 \begin{pmatrix}
 \lambda_0\\
 \lambda_1\\
 \vdots\\
 \lambda_\tau
-\end{pmatrix} = 
+\end{pmatrix} =
 \begin{pmatrix}
 \gamma_0\\
 \gamma_1\\
@@ -122,82 +140,46 @@ S_{\tau-1} & S_{\tau-2} & \dots & S_0& 0
 \gamma_{\tau-1}
 \end{pmatrix}$$
 
-Recall that the $\gcd(\Lambda(x), \Gamma(x)) = 1$ meaning there exists a $\lambda$ and $\gamma$ with corresponding $\lambda(x)$ and $\gamma(x)$ such that $\gcd(\lambda(x), \gamma(x)) = 1$. This then allows to find $\Lambda$ by taking any non zero $\lambda(x)$ and the corresponding polynomial $\gamma(x)$.
+Based on how we defined these polynomials, $\gcd(\Lambda(x), \Gamma(x)) = 1$ we can force our $\lambda(x)$ to be the actual error locator polynomial by dividing our the greatest common divider between our two guesses of $\lambda(x)$ and $\gamma(x)$. This means
+
+  
 
 $$\Lambda(x) = \frac{\lambda(x)}{\gcd(\lambda(x), \gamma(x))}$$
 
-Finally with $\Lambda(x)$ we can find the locations of each of the possible errors by simply testing the multiplicative inverse of each $\alpha_j$, as $\Lambda(\alpha_j^{-1}) = 0$ means the $j$ index of our received message has an error. And using the syndrome equation provided earlier we can solve for the errors and correct them. This decoding process has $O(d^3)$ run time which is by no means very fast but with specialized hardware similar to what is in a DVD player this can be done in real time as it only involves matrix operations.
-In code this would look something like this
-```python
-def decode(self, msg):  
-	# First find syndrome (S_0, ... , S_d-2)
-	msg_synd = self.syndrome(msg)  
-	msg_matrix = fieldmath.create_matrix([msg], self.f)
   
-	if any([syn != self.f.zero() for syn in msg_synd]):  
-		msg_syndrome = fieldmath.create_matrix([msg_synd], self.f)
-		# Create system of equations to find lambda and gamma
-		tau = (self.d - 1) // 2  
-		syndrome_matrix = fieldmath.Matrix(self.d - 1, tau + 1, self.f, zeros=True)  
-		for i in range(self.d - 1):  
-			for j in range(i, max(-1, i - tau - 1), -1):  
-				syndrome_matrix.set(i, i - j, msg_syndrome.get(0, j)) 
-		# Find lambda poly  
-		lam_eqs = syndrome_matrix.get_sub_matrix(tau, None, None, None)  
-		lam_kernel_space = lam_eqs.kernel_space()  
-		if lam_kernel_space != 0:  
-			lam_coeff_matrix = lam_kernel_space * fieldmath.create_matrix([[1]] * lam_kernel_space.column_count(), self.f)  
-		lam_coeff = lam_coeff_matrix.to_list(single=True)
-		# Find gamma poly
-		gamma_coeff_matrix = syndrome_matrix.get_sub_matrix(None, tau, None, None)*lam_coeff_matrix  
-		gamma_coeff = gamma_coeff_matrix.to_list(single=True)  
-		# Find Big Lambda
-		gcd_lg = self.p.poly_gcd(lam_coeff, gamma_coeff)
-		error_locator_poly, rem = self.p.poly_divmod(lam_coeff, gcd_lg)  
-  
-		# Find location of errors
-		for j in range(len(self.alpha_arr)):  
-			alpha_inv = self.f.reciprocal(self.alpha_arr[j])  
-				if self.p.poly_call(error_locator_poly, alpha_inv) == 0:  
-					error_locations.append(j)  
-		# Create system of equations to find error.
-		if len(error_locations) != 0:
-			err_matrix = fieldmath.Matrix(self.d - 1, len(error_locations), self.f)  
-			for r in range(err_matrix.row_count()):  
-				for c in range(err_matrix.column_count()):  
-					val = self.f.multiply(self.v_arr[error_locations[c]], fieldmath.pow_over_field(self.alpha_arr[error_locations[c]], r, self.f))
-					err_matrix.set(r, c, val)  
-			# Solve for error
-			try: 
-				errors = fieldmath.solve_ax_b_fast(err_matrix, msg_syndrome.transpose())  
-			except Exception as e:  
-				print(f"Could not solve and find errors using solve_ax_b: {e}")  # This can be safely ignored
-			errors = fieldmath.create_matrix([[0]]*err_matrix.column_count(), self.f)  
-  
-			# finally fix the errors  
-			for i in range(len(error_locations)):  
-				msg_matrix.set(0, error_locations[i], self.f.subtract(msg_matrix.get(0, error_locations[i]), errors.get(i, 0)))  
-  
-	if not self.syndrome(msg_matrix).any():  
-		return fieldmath.solve_ax_b_fast(self.generator_matrix.transpose(), msg_matrix.transpose()).to_list(single=True)  
-	else:  
-		return [0]*self.k
-```
-A more commented version can be found here.
 
-## Using the Generalized Reed-Solome code
-For a simple text input with random error check out this interatice demonstration here.
+Finally with $\Lambda(x)$ we can find the locations of each of the possible errors by simply testing the multiplicative inverse of each code locator, and this will give us the roots. With the roots and using the syndrome, and solve and correct any error that occurred. This decoding process has $O(d^3)$ run time which is by no means very fast but with specialized hardware similar to what is in a DVD player this can be done in real-time as it only involves matrix operations.
 
-To test this implementation lets create a generalized Reed-Solomon code with parameters $[82, 64, 19]$. Meaning with this code we can correct up to a maximum of 9 byte errors per 82 byte segments of the encoded data. To help highlight why Reed-Solomon can be so powerful we are going to use an image and simulate a scratch on the image, to visualize what migth happen on a disk. Each pixel of the image will be represented by 3 bytes, one for each color, so to correct a single pixel 3 bytes would need to be fixed assuming all 3 bytes were corrupted. To simulate error we will randomly create a line in the form $\alpha + \beta x$ and then compare each pixel location $(x, y)$ with the line to determine the likely hood that the pixel was corrupt. Below is a visualization of the simulated scratch, note that due to the increased size of the encoding this does not necessarily correspond the exact error, but this does represent the number of 3-byte errors and their approximate location in the image. Each white dot represents 3 errors and the thickness of the line ranges from 1 pixel to more than 4.
+  
+
+To play around with a python implementation of the generalize Reed-Solomon code with a random error generator for text inputs look [here](https://repl.it/@jorqueraian/ReedSolomon).
+
+  
+
+## Visualizing the Generalized Reed-Solome code
+
+Let's create a linear generalized Reed-Solomon code with parameters $[82, 64, 19]$, meaning with this code we can correct up to a maximum of 9 bytes of errors for each 82-byte segment of the encoded image. To help highlight in what cases Reed-Solomon codes can be so powerful let's encode an image and simulate a scratch on the image. Each pixel of the image will be represented by 3 bytes, one for each color. For simplicity, if pixel data is corrupted we will assume all three bytes were affected. This corresponds to 72 bits of consecutive correctable error.
+
+  
+
+To simulate this cluster-like, or scratch of error we will randomly create a line and compare each pixel location $(x, y)$ with the line to determine a likely hood that the pixel was corrupted. Note that due to the increased size of the encoding the images below do not necessarily correspond to the exact error, but this does represent the number of 3-byte errors and their approximate location in the image.
+
+  
 
 <p align="middle"><img width="450" height="450" src="https://lh3.googleusercontent.com/JPCtdgvtAMqRPTGM0zuZAdvCiHAePwOXciB_JVPSmROw6jSkCWl-7zg3aeCn2Ra_ORqJYSwVk9KMTj2Q8LjwD05fm-wy4rNDIncnx13oRXEHD6kqCoZDLI39mT8k3D4f2-Ks6SP9ZKO9mI6wRaHxG5A0F4OS1HLODYhH5_7Xqf6xcay7GF8rsK_CDiTm2xDmJe23-Mn4BJlgPVAg3hJvyfru68iKtt7W4rsD67pL-6BRCzVe8OnEvX0K8D_0MYZjUiAm8v4Tavv6SJvYHJnORBKRAwiGjoyyT473joOJsopIRCFQZMYvejU7zxjdHbe1J7gH3CvZ9B9dWcconyITvhLDkN8vQxgYukHJlTM9rkaw9h3SchV-de7zYs2QINTGU2Ltg7DBy1TRClmwlf-oa6hJ-RM-s35r57ermVxQ2dck2D-ZBTAW39SbwGfYT7Hnj8FpB45V2STGHyg814a21x5QWXQ0IIQ857wLmBS_j8hbwHWTVpq6qH9xKUd5lV9s1zqCzg8WGjMo-ULDHTGbT9fIe4cuwTJWZ0SfcLiZAAus9uL3i9TizesOxOaNelgg9Xf6brKYpV5vbpmVPsQtzOgWKY2UdLNko8RXZE5Nzl5T1hhH9VxstO8PeWPYIdO3St3Xka2T2RhVgk9oGHie_iaMnvh8RDd5Q-oQwzUBuO_peui9_ry-0ES-KRMAoF1KFVWQISruZc2acjkoilXdG_mhAMs2E_IvcgaFyxo7LmeL5hlFpS-wEkQ=s640-no"/> <img width="450" height="450" src="https://lh3.googleusercontent.com/V4xEn_lZz4EQo1_Fv6UINK87CaOioyLJrZ6U_8S-Jzf_v9KO_DbO4s5m4az9F3YcDtFbd6Y3P9W_9M3zeJc0O5C5Vn7z9FMRQRpFfzEaA0Gs3HvoH13PkoArIc9e1BCdCMSsemjdBimIR0lqvchTnv-jmpJM7Qw3JpZ_btSbxEYQoH2xf1jdG0xCw5YAby7O6aUXL-m_qr7BQLntPjozmH5m734Ko5mvhKIpk0eO-EMEdb2-K9ebw9j8pEbffL1-3glefcAwfWPIoChAq3ledMmw4iC3lm1JavclFvix5sIZsLRuU4NfwsjGowDXtb0FeI_WrjeCJ4-Hiq-5yAypdRlSk6l1ScmDNlx5rZq3d_4k-S0kXsRQLoGp6fTdZRhGMaSlhYxavMFlxozeRW1ZqJpp-f35nnEHoa2cSFpHtc1uA-_SSJpHB8qAn7jm-fw5HM3M1AWkbVmm-M9MVUYQ1BOxDVFFfPUASmxzy0-Nz9Ovc8udqGBut43jmQYVTXIcfcabcHIzvpRrzQfUXGNrS4B-7Fy4xyzAc7g9-JedeaIurt1xeMVX8_oZNxSeUnxJsNONsFGKqNkkITTh76E-m_DQ14-u0Tjf_5JJPGVG3JkczVgZWNNeY46bvrcvcVXWmxuI3ORvsUeEzAKvDSVfFHjTpXIwjZ1D3Aor1gZaNe9PZziK5k2fNm2lzGo_ZdYna2l1XTcHzpCRaua1kXzdWJ3deRhU2X9GzDdkn6W5HaQM4Tnpk0I8taQ=s640-no"/></p>
 
 <p align="center"> The Original Image and the scratched image. </p>
 
+After we have scratched the image we can decode it. As we see, most of the scratch was accurately decoded. There are only 2 visible instances of error left.
 
+<p align="center"> <img width="450" height="450" src="https://lh3.googleusercontent.com/7HfAlqgNozeFmaoUKCincy9m2jpl_hiEjhWgcGp1tZ39hDDlQpawpuycuj-LT-yIyCVWa-KdHExtdyYoeHfB3z1MrRDci8u31XCkx-uGEeca_mIEZmJKxp9HYOhg51FFxLl0qXK8KExhhzFdwqzLfo_UX6-3n8IWehCZUHMaWTeh74bX2ci6HGhOB1TaNoDd2I5-sPx57HOiTOhgbGao-LKYefq6pirLTbe-bpgi00ivmQHDZHPwTtvODsYE6m93NqApQoL-kWsQGLkf4f6Jw6-iBjvqujZsWpCxjqOqELd77ucGUlOQWYZB5ZAidtWu4Lz1MarzAGx2cIRnUbIBNW7B1nwsBnqLqtawCRBx9Lcbt_upqknTyNiI9lKfl2G3kciWCglUED-gHAnH03VG1L5g4YOvO4SNg1N4ZesXHPjVr9xzJ_Qdh0mM_XUN0blEhEaWtLzrWhZYdN2ybqKHoa3BhuFAm_UzleMtPhpcX2cLLWRQEFXA0ED7ZeQGTF4P5vQmm72GITEvSrG5uohRPfebRJZCPiqWwxKTyrcW-jM-ZCY2JrlGROZPo2qlgsqYOctxdE4lp2eYSA8mRc3uyLx4GZJwiN8UhUVTdRN-gNHJTyVqwt1ab25p9SEVgusqi4hmuyfX4_qLacoidiJnSeWyR1e7OFFr_kOnaHjVRrzKglaKem_VOqR1crtlcSUS8UFNyOOX2l_V4_-5Fr4XogonQp6p8j3dgjMdR3xE1MmyUDUaOthOcmk=s640-no"> </p>
 
-To correct this image we can run the encoded image into our decoder and get the best possible decoding. 
-<p align="center">  <img width="450" height="450" src="https://lh3.googleusercontent.com/7HfAlqgNozeFmaoUKCincy9m2jpl_hiEjhWgcGp1tZ39hDDlQpawpuycuj-LT-yIyCVWa-KdHExtdyYoeHfB3z1MrRDci8u31XCkx-uGEeca_mIEZmJKxp9HYOhg51FFxLl0qXK8KExhhzFdwqzLfo_UX6-3n8IWehCZUHMaWTeh74bX2ci6HGhOB1TaNoDd2I5-sPx57HOiTOhgbGao-LKYefq6pirLTbe-bpgi00ivmQHDZHPwTtvODsYE6m93NqApQoL-kWsQGLkf4f6Jw6-iBjvqujZsWpCxjqOqELd77ucGUlOQWYZB5ZAidtWu4Lz1MarzAGx2cIRnUbIBNW7B1nwsBnqLqtawCRBx9Lcbt_upqknTyNiI9lKfl2G3kciWCglUED-gHAnH03VG1L5g4YOvO4SNg1N4ZesXHPjVr9xzJ_Qdh0mM_XUN0blEhEaWtLzrWhZYdN2ybqKHoa3BhuFAm_UzleMtPhpcX2cLLWRQEFXA0ED7ZeQGTF4P5vQmm72GITEvSrG5uohRPfebRJZCPiqWwxKTyrcW-jM-ZCY2JrlGROZPo2qlgsqYOctxdE4lp2eYSA8mRc3uyLx4GZJwiN8UhUVTdRN-gNHJTyVqwt1ab25p9SEVgusqi4hmuyfX4_qLacoidiJnSeWyR1e7OFFr_kOnaHjVRrzKglaKem_VOqR1crtlcSUS8UFNyOOX2l_V4_-5Fr4XogonQp6p8j3dgjMdR3xE1MmyUDUaOthOcmk=s640-no"> </p>
 <p align="center"> The decoded image </p>
 
-As we see most of the scratch was accurately corrected. In fact there are only 2 visible instances of error left. The error is sparse meaning the lost data could be approximated by averaging its surroundings. If we wanted to increase the number of error corrections we could create a new GRS with parameters $[122, 96, 27]$ which would give us a total of 13 correctable errors while still keeping the ratio of data bits to total bits relatively the same.
+  
+
+Additionally, the error is sparse meaning the pixel values of these areas could be approximated from the average of the surroundings to give an even better-corrected image. This is exactly what happens to errors too large to correct on DVDs.
+
+## Sources
+
+## Further reading
