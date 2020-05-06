@@ -25,7 +25,7 @@ A **binary search** is an algorithm that finds the position of a target value in
 3. Repeat the same process, with the middle of the new half of the list we are using, until finding the target value, or not finding it in the list.
 
 ### Benefits
-- Reduces time complexity of linear search from `-O(n)` to `O(log n)` in sorted list – this is because the search interval decreases by a power of two each time (halving the lists).
+- Reduces time complexity of linear search from `O(n)` to `O(log n)` in sorted list – this is because the search interval decreases by a power of two each time (halving the lists).
 - Includes cost of `insert()`, `delete()`, and `lookup()`
 - Space complexity is O(1), meaning it requires constant time to perform operations, as we just need to store three values (upper, middle, and lower bounds)
 - More efficient for searching for specific target from large input
