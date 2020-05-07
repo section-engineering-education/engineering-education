@@ -23,8 +23,8 @@ The problem with the previous example is that a valid code-word, like $110$, can
 ## The Binary Hamming code
 
 Using the idea of parity bits we can create what is called the Hamming$[7,4]$-code. This code will take in any four-bit input message and encode it into a seven-bit message, by adding three additional parity bits. For simplicity lets call these three parity bits $x_1$, $x_2$ and $x_3$ and the original four bits $m_1$, $m_2$, $m_3$, and $m_4$. Our goal is for these bits to help us decode, and to do that we can let each of them contain data of three of the four original bits. For example with the XOR operator $x_1=m_1 \oplus m_2  \oplus m_4$. When deciding if this parity bit incorrect we know the error must have occurred on one of the four-bit in the equation, $x_1$, $m_1$, $m_2$, or $m_4$. We can create the other two parity bits similarly.
-$$x_1=m_1 \oplus m_2  \oplus m_4\\
-x_2=m_1 \oplus m_3  \oplus m_4\\
+$$x_1=m_1 \oplus m_2  \oplus m_4\newline 
+x_2=m_1 \oplus m_3  \oplus m_4\newline 
 x_3=m_2 \oplus m_3  \oplus m_4$$
 With the parity bits, we can determine where the error occurred. It is important to note that we must assume at most one error occurred as any more than a single error will be impossible to correct and will appear as if an alternative single-error occurred. Now that we have our parity bit lets break down how we can use them to correct errors. There are a total of 8 combinations of possibilities for any received message. These will include all three bits being correct, one of them being wrong, two of them being wrong or three of them being wrong. For a message with no error, all three bits will be correct. If $m_1$ had an error we would see that both $x_1$ and $x_2$ would be incorrect, similarly if $m_2$ has an error, the parity bits $x_2$ and $x_3$ would be incorrect and if $m_3$ has an error $x_1$ and $x_3$ would be incorrect. We can determine this by looking at which equation involves which part of the encoded message. Similarly, if all three bits were incorrect we would know that $m_4$ must have had an error. Finally, if only one of the parity bits was incorrect we would know that the parity bit itself would have been erroneous. 
 
@@ -64,9 +64,9 @@ def decode(m):
 The Hamming code is excellent at correcting exactly one error, but in real life, this is rarely the case. In this section, I want to focus on a more complete definition of error-correcting codes. We want to narrow down our focus on linear codes as linear codes will provide us with a simple method to encode our messages. A linear code is a code that for any two codewords, the linear combination is its self a code word, For example, $1001001$ and $1011010$ are both codewords of the Hamming code presented above. The linear combination can be found by taking the XOR operator of each element. The linear combination would then be $0010011$ which is also a valid code-word. This property allows us to define the encoding process of any linear code with a matrix, called the generator matrix. To encode a message we can simply [multiply](https://en.wikipedia.org/wiki/Matrix_multiplication) the input message on the right by the generator matrix. Note that instead of using addition we will use the XOR operator. For the Hamming code above the generator matrix would be
 $$
 \begin{pmatrix}  
-1&0&0&0&1&1&0\\  
-0&1&0&0&1&0&1\\  
-0&0&1&0&0&1&1\\  
+1&0&0&0&1&1&0\newline   
+0&1&0&0&1&0&1\newline   
+0&0&1&0&0&1&1\newline   
 0&0&0&1&1&1&1  
 \end{pmatrix}
 $$
@@ -78,17 +78,17 @@ m_1&m_2&m_3&m_4&x_1&x_2&x_3
 \begin{pmatrix}  
 m_1&m_2&m_3&m_4
 \end{pmatrix}\begin{pmatrix}  
-1&0&0&0&1&1&0\\  
-0&1&0&0&1&0&1\\  
-0&0&1&0&0&1&1\\  
+1&0&0&0&1&1&0\newline   
+0&1&0&0&1&0&1\newline   
+0&0&1&0&0&1&1\newline   
 0&0&0&1&1&1&1  
 \end{pmatrix}
 $$
 We also need a way to detect errors with this new definition. This will be done with the second matrix called the parity check matrix. With the parity check matrix, we will calculate what is called the syndrome. The syndrome, much like the definition of the word might suggest will correspond to the specific error that occurred, meaning the syndrome of a received message will directly correspond to the error and not the message. If no error occurs the syndrome will be zero and if an error occurred the syndrome will be some non-zero value that can help us to determine the error. The parity check matrix for the hamming code will be
 $$
 \begin{pmatrix}  
-1&1&0&1&1&0&0\\  
-1&0&1&1&0&1&0\\  
+1&1&0&1&1&0&0\newline   
+1&0&1&1&0&1&0\newline   
 0&1&1&1&0&0&1
 \end{pmatrix}
 $$
@@ -100,8 +100,8 @@ S_1&S_2&S_3
 \begin{pmatrix}  
 m_1&m_2&m_3&m_4&x_1&x_2&x_3
 \end{pmatrix}\begin{pmatrix}  
-1&1&0&1&1&0&0\\  
-1&0&1&1&0&1&0\\  
+1&1&0&1&1&0&0\newline  
+1&0&1&1&0&1&0\newline 
 0&1&1&1&0&0&1
 \end{pmatrix}^T
 $$

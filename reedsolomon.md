@@ -13,7 +13,7 @@ In this article, we will break down how Reed-Solomon error-correcting code work 
 
 ## Finite Fields
 
-A field is set of elements closed under multiplication, division, addition, and subtraction, Meaning the result of any of the previously mentioned operations with any two elements of the field must also result in an element of the field. The most common example of a field is the set of real numbers. Furthermore, a finite field is a field with a finite number of elements. With Reed-Solomon, we will work with the finite field of $2^8$ elements such that each element can be represented as a byte. To see how we might implement one of these fields, with some linear algebra examples in python look [here](https://repl.it/@jorqueraian/FiniteFields).
+A [field](https://en.wikipedia.org/wiki/Field_(mathematics)) is set of elements closed under multiplication, division, addition, and subtraction, meaning for any two elements of a field, the use of any of these operations wil result with another element in the field. The most common example of a field is the set of real numbers. In this article we will focus on finite field which is a field with a finite number of elements. With Reed-Solomon, a logic field to use is the field of $2^8$ elements such that each element can be represented as a single byte. To see how we might implement one of these fields, with some linear algebra examples in python look [here](https://repl.it/@jorqueraian/FiniteFields).
 
 ## Linear Error-Correcting Codes
 
