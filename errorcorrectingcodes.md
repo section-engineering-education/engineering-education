@@ -54,9 +54,9 @@ def decode(m):
 The Hamming code is excellent at correcting exactly one error, but in real life, this is rarely the case. In this section, I want to focus on a more complete definition of error-correcting codes. We want to narrow down our focus on linear codes as linear codes will provide us with a simple method to encode our messages. A linear code is a code that for any two codewords, the linear combination is its self a code word. For example, $1001001$ and $1011010$ are both codewords of the Hamming code presented above. The linear combination can be found by taking the XOR operator of each element. The linear combination would then be $0010011$ which is also a valid code-word. This property allows us to define the encoding process of any linear code with a matrix, called the generator matrix. To encode a message, we simply [multiply](https://en.wikipedia.org/wiki/Matrix_multiplication) the input message on the right by the generator matrix. Note that instead of using addition we will use the XOR operator. For the Hamming code presented above, we could create the following generator matrix.
 $$
 \begin{pmatrix}  
-1&0&0&0&1&1&0\\  
-0&1&0&0&1&0&1\\  
-0&0&1&0&0&1&1\\  
+1&0&0&0&1&1&0\newline  
+0&1&0&0&1&0&1\newline  
+0&0&1&0&0&1&1\newline  
 0&0&0&1&1&1&1  
 \end{pmatrix}
 $$
@@ -68,17 +68,17 @@ m_1&m_2&m_3&m_4&x_1&x_2&x_3
 \begin{pmatrix}  
 m_1&m_2&m_3&m_4
 \end{pmatrix}\begin{pmatrix}  
-1&0&0&0&1&1&0\\  
-0&1&0&0&1&0&1\\  
-0&0&1&0&0&1&1\\  
+1&0&0&0&1&1&0\newline  
+0&1&0&0&1&0&1\newline  
+0&0&1&0&0&1&1\newline  
 0&0&0&1&1&1&1  
 \end{pmatrix}
 $$
 We also need a way to detect errors with this new definition. This will be done with the second matrix called the parity check matrix. With the parity check matrix, we will calculate what is called the syndrome. The syndrome, much like the definition of the word might suggest will correspond to the specific error that occurred, meaning the syndrome of a received message will directly correspond to the error and not the message. If no error occurs, then the syndrome will be zero. Otherwise, if an error occurred in the message, the syndrome would be some non-zero value that can help us to determine the error. The parity check matrix for the hamming code will be as follows:
 $$
 \begin{pmatrix}  
-1&1&0&1&1&0&0\\  
-1&0&1&1&0&1&0\\  
+1&1&0&1&1&0&0\newline  
+1&0&1&1&0&1&0\newline
 0&1&1&1&0&0&1
 \end{pmatrix}
 $$
@@ -90,8 +90,8 @@ S_1&S_2&S_3
 \begin{pmatrix}  
 m_1&m_2&m_3&m_4&x_1&x_2&x_3
 \end{pmatrix}\begin{pmatrix}  
-1&1&0&1&1&0&0\\  
-1&0&1&1&0&1&0\\  
+1&1&0&1&1&0&0\newline  
+1&0&1&1&0&1&0\newline  
 0&1&1&1&0&0&1
 \end{pmatrix}^T
 $$
