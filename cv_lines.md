@@ -1,25 +1,27 @@
-# CV and lines
-Computer vision is how computers learn high-level information from images <!-- from digital media-->.
+# Computer Vision: Straight Lines
+Computer vision is how computers can identify high-level information from images or really any digital media.
 In this article, we will look into one of the more basic algorithms in computer vision.
 That is finding straight lines in images.
-
-While it is basic, it illustrates many techniques that are used in more complicated computer vision algorithms. 
+While it sounds basic, it illustrates many techniques that are used in more complicated computer vision algorithms. 
 
 ## edges
+Before we dive into lines, we need to think about what we want to do.
 We have an image and we want to extract information from it.
-To do this, we need to determine what is important in the image.
+To do this, we need to first determine what aspects of the image are important for our use.
 What this is will depend heavily on what our end goal is.
-We are trying to find lines in images, so it would be helpful to use the edges in the images. <!-- We don't care about color or texture -->
+The most obvious thing for our use would be the edges in the images. <!-- this needs a lot of work -->
+That means we don't care about the color or texture.
 
 This is sort of step one of the line detecting process: making an edge image.
 
-We will use a method called Canny edge detection. Without going into depth here's a quick summary of how it works
-1. Apply a gaussian filter to smooth the image
-2. Fing the norm of the gradient at each pixel (this will give us a rough edge image)
-3. Lines/curves with gradient norm above a threshold are thinned to one pixel in width
-4. Connect edges and remove unconnected edges (Hysteresis)
+We will use a method called [Canny edge detection](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_canny/py_canny.html).
+Without going into depth here's a quick summary of how it works
+1. Apply a [gaussian filter](https://en.wikipedia.org/wiki/Gaussian_filter) to smooth the image.
+2. Fing the norm of the [gradient](https://en.wikipedia.org/wiki/Image_gradient) at each pixel (this will give us a [rough edge image](https://en.wikipedia.org/wiki/Sobel_operator)).
+3. edges that form lines/curves with gradient norm above a threshold are thinned to one pixel in width.
+4. Connect weak edges to strong edges and remove unconnected weak edges ([Hysteresis](https://en.wikipedia.org/wiki/Hysteresis)).
 
-Let's see how this working in action.
+Let's see how this works in action.
 Take the following image.
 
 ![alt text](cv_lines_images/section-logo.png "Section Logo")
@@ -28,10 +30,10 @@ The edge image would look like the following.
 
 ![alt text](cv_lines_images/section-logo-edge.png "Section logo edge image.")
 
-It might look like we are done and that we have found the straight line, but that's because sections logo is just a bunch of straight lines.
+It might look like we are done and that we have found the straight lines, but that's because the sections logo is made up of only straight lines.
 So what if instead, we looked at a more complicated image. The edge images, in this case, can only take us so far. <!-- reword this part -->
 
-<!-- I might just get rid of the image -->
+<!-- I might just get rid of these image -->
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Valve_original_%281%29.PNG" alt="Without edges" width="400"/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Valve_monochrome_canny_%286%29.PNG" alt="Classic edge image" width="400"/>
 
@@ -44,37 +46,41 @@ We, however, will not be using this definition, instead, we will use what is cal
 
 ![alt text](cv_lines_images/line_image.png "Hesse normal form of line")
 
-Which would give us this equation to represent the line: $\rho = x \cos(\theta) - y \sin(\theta)$. <!-- i dont like this -->
-This equation gives us a lot of benefits over the slope-intercept form, namely, we can represent verticle lines (we would set $\theta = 0$).
-And a lot more of the benefits will become evident when we talk more about the hough transform.
-When we need to have slope-intercept form we can calculate $m = \cot(\theta)$ and $b = -\rho \cdot \csc(\theta)$.
+The equation that represents the red line is now: $\rho = x \cos(\theta) - y \sin(\theta)$ for some particular $\theta$ and $\rho$. <!-- should I add more or is it evedent from the image -->
+This means that we can define a line as a point in $(\theta, \rho)$ space.
+Additionally, this form gives us a lot of benefits over the slope-intercept form, namely, we can represent verticle lines (we would set $\theta = 0$).
+The rest of the benefits will become evident when we talk more about the Hough transform.
 
-With the Hesse normal form of a line, we can now define a line as a point in $(\theta, \rho)$ space.
+There are still cases where we would want to have the slope-intercept form of a line.
+This can be easily calculate: $m = \cot(\theta)$ and $b = -\rho \cdot \csc(\theta)$.
 
 
 ## Hough Space
-let's look at the edge image, what is it? It's just a bunch of pixels that represent edges. <!-- no shit -->
-Each pixel can only be a 1 or a 0 (is an edge or not an edge).
-Because our image is of a discrete size we can represent it as a matrix of 1 and 0s.
-We will call this the image space where each edge pixel is at a point in the image space. <!-- I can do better with the words -->
-To determine what lines exist in this matrix, we will look at each edge pixel and essentially ask, what are all the possible lines this point could be in.
+Let's look at the edge image, and what we can do with it. Right now it's just a bunch of pixels that represent edges. <!-- no shit -->
+Each pixel can only be a 1 or a 0 (an edge or not an edge).
+Because our image is of a discrete size we can think of our edges image as being a set of edge points or pixels.
+We will say that each of these points are in image space, a location in the image. <!-- I can do better with the words -->
+
+To determine what lines exist in our images, we will look at each edge pixel and essentially ask, what are all the possible lines this point could be in.
 This, in essence, is what the Hough transform is.
 
 We made it easy for our selves to figure out all the possible lines because we are using the Hesse normal form of a line.
 We can just iterate over every possible $\theta$ (with a discrete step size) and then solve for the resulting $\rho_\theta$s.
 This works because any line can be represented with some $0 \leq \theta < 180$ and $\rho \in \mathbb{R}$ (note $\rho$ can be negative in this case).
 We can then plot these $(\theta, \rho)$ pairs in a sperate graph. 
+Note, these $(\theta, \rho)$ points do not reside in the images space, instead, they reside in the Hough space.
 
-The whole process will end up looking like the following.
+The whole process will end up looking like the following for each edge pixel.
+In this graph, the orange and purple points represent edges in image space.
 
 ![alt text](cv_lines_images/desmos_plot.gif "Desmos Plot")
 
 *I made this as an interactable desmos plot [here](https://www.desmos.com/calculator/lvwhvdltth)*
 
 <!-- talk more about the graphic-->
-In this image, the plot on the right is the resulting hough transform. The plot shows the $\rho$ values (Y-axis) vs. the $\theta$ values (X-axis). 
+In this image, the plot on the right is the result of the hough transform. The plot shows Hough space with the $\rho$ values (Y-axis) vs. the $\theta$ values (X-axis). 
 The main plot (with the points) shows the image space of the edges where each point represents a single edge.
-We can see that one point in image space is a line (really a curve) in hough space (look at the purple point and line). 
+We can see that one point in image space is turned into a line (really a curve) in hough space (look at the purple point and line). 
 And it might make sense that there are intersections in hough space where <!-- or when --> the line hits multiple points.
 Also, a point in Hough space is a line in image space (look at the red line and point). 
 We can say that an intersection in hough space makes a line from two or more points in image space. <!-- reword -->
@@ -85,27 +91,28 @@ Each entry of this matrix will count the number of votes each line gets.
 Where each bucket represents all lines were the $\theta$ and $\rho$ lie within the range that the bucket resides in.
 This will mean that the bucket that contains the intersection of the 4 lines in the desmos plot will have 4 votes.
 
-This allows us to not just solve for intersections, but to also know how many points reside in the line.
-This helps because any two points can form a line but it doesn't mean that they really are a line in the image.
-That would only be the case if the number of votes a particular bucket has is above some threshold.
+This allows us to not just solve for intersections, but to also know how many points reside in any possible line.
+This helps because any two points can form a line but that doesn't mean that they really are a line in the image.
+That would only be the case if the number of votes a particular bucket has is above some threshold which we can set.
 
-If we go back to our section logo edge image and apply the Hough transform to it them we get the following.
-I normalized the vote counts and applied a heat map so that you can see more of the details.
+If we go back to our section logo edge image and apply the Hough transform to it (or more specifically to each edge) them we get the following.
+I normalized the vote counts and applied a heat map so that the details are more visible.
 
 ![alt text](cv_lines_images/section-logo-heat.png "Section logo in Hough space shown as a heat map")
+
 *I am not sure what causes the vertical lines. <!-- I assume it is some form aliasing -->*
 
 Just like before the X-dimension represents the $\theta$ values in the range $0$ to $180$ degrees and the Y-dimension represents the $\rho$ values with 0 being halfway.
 
 You will notice that this looks a lot like the desmos plot. Which should make sense.
-The main difference is that it is flipped, this is because matrices/images store the $(0,0)$ entry at the top left corner and then going down and to the right givens higher entry.
+The main difference is that it is flipped, this is because matrices/images store the $(0,0)$ entry at the top left corner and then going down and to the right gives higher entry.
 So this image means the same thing as the desmos plot, but when we show it, it looks flipped.
 
 Now, did we find all 16 lines of the section logo? 
-Sort of, if you were to count the peaks you will count 16.
-You have the 8 peaks at 0 degrees, the 4 just before 90 degrees, and the 4 just after 90 degrees. Try to figure out which line each peak represents.
+Sort of, if you were to count the peaks you will count 16ish.
+You have the 8 peaks at 0 degrees, the 4 just before 90 degrees, and the 4 just after 90 degrees. Try to figure out which line in the section logo each peak represents.
 
-Note that because 180 degrees and 0 degrees both represent a vertical line and 180 degrees is not an option the peaks at the right side aren't real peaks.
+Note that because 180 degrees and 0 degrees both represent a vertical line and because 180 degrees is not an option the peaks at the right side aren't real peaks.
 Instead, they lead up to the real peaks at 0 degrees.
 They are sort of reflected over the image. <!-- needs work -->
 
@@ -116,39 +123,46 @@ All we need to do is to extract the lines from this matrix; easier said than don
 
 The most accurate way to do this would be to use gradient ascent.
 However, for a demo, it is good enough to just pick the spots with the most votes and filter out similar lines.
-
-<!-- the complexity is $O(n^2)$ -->
+Regardless, the complexity of the Hough transform is $O(n^2)$ because we have to run the hough transform for each pixel <!-- this doesn't really add anything -->
 
 Ones we found a peak, which is just a $(\theta, \rho)$ point in hough space we can convert it into a line in images space, and then we are done. We have successfully found a line.
 
 <!-- code: ??? -->
 
+With all that said there is still one important thing to note about the hough transform.
+It is only effective if a high number of votes fall into a small subset of bins.
+This means that there must be low noise in the edge image.
+Also, the bin sizes must be properly sized depending on the accuracy/variance of the line being detected.
+We talk more about this in the next section.
+
 
 ## Results
-When we do all of this and finally have our line we can then plot the lines on the image.
+When we finally run the full algorithm to get out our line we can then plot the lines on the image.
 If we use our section logo limited to 14 lines we get the following:
 
 ![alt text](cv_lines_images/section-logo_with_lines.png "Section Logo with lines")
 
-<!-- why does it have a hard time getting the two other lines? -->
+<!-- why does it have a hard time getting the last two or 3 lines? IDK-->
 
 Now, the section logo is made up of straight lines so it is not as impressive to find them.
 If we instead use a more complicated image, we will get a better understanding of how well this method works.
-
-Take this image of cracks in ice.
+Take this image of cracks in ice for example.
 
 ![alt text](cv_lines_images/ice.jpg "Cracked ice")
 
 None of the edges are 100% straight, but they are straight enough that we would expect them to be detected.
-For the edges to be detected we will have to lower the strictness set for each type of line.
+For the edges to be detected we will have to lower the "accuracy" for each possible line.
 We can do this by making the hough space buckets larger in the $\rho$ dimension.
+This allows us to still detect straight lines but to also allow for some variance in the position of each edge within.
 And with all that done, here is the resulting image with 10 lines.
 
 ![alt text](cv_lines_images/ice_with_lines.png "Cracked ice with lines")
 
-I would say that worked pretty well.
+I would say that worked pretty well. You will notice how not all of the lines line up exactly with the image. 
+This is because we decreasing line's $rho$ accuracy. <!-- conclusion?? -->
 
-If you want to, you can play around with the program I wrote in python [here](https://repl.it/@ZackJorquera/FindingLinesComputerVision) with these and more images. <!-- I should try to add the code to the article -->
+If you want to, you can play around with the [program I wrote in python](https://repl.it/@ZackJorquera/FindingLinesComputerVision) with these and more images. <!-- I should try to add the code to the article -->
+All the code to make all of the images shown in this article can be found there.
 
 
 ## More Hough
