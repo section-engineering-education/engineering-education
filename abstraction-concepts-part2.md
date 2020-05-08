@@ -128,19 +128,19 @@ Here we create an object and bind variable `c` to it. Suppose we write a `Hidden
 
 ```python shell
 >>> pcbh = HiddenObject()
->>> pcbh.set_name('Princess Consuela Banana Hammock')
+>>> pcbh.set_name('Princess Consuela Banana')
 >>> pcbh.get_name()
-'Princess Consuela Banana Hammock'
+'Princess Consuela Banana'
 ```
 After creating another object, we see that the original object `h` retains its name because it has its own state which can be changed using class methods.
 
 ```python shell
 >>> cb = HiddenObject()
->>> cb.set_name('Crap Bag')
+>>> cb.set_name('Quack')
 >>> cb.get_name()
-'Crap Bag'
+'Quack'
 >>> pcbh.get_name()
-'Princess Consuela Banana Hammock'
+'Princess Consuela Banana'
 ```
 
 ---
