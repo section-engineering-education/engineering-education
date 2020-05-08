@@ -5,7 +5,7 @@ published: true
 title: Understanding Abstraction in Python, Part 2
 description: A concise look at abstraction principles with corresponding code examples. Polymorphism, encapsulation, methods and attributes, subclasses and superclasses, and inheritance.
 author: Sophia Raji
-date: 2020-04-26T00:00:00-07:00
+date: 2020-05-07T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
