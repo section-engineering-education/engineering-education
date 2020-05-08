@@ -52,7 +52,7 @@ Additionally, this form gives us a lot of benefits over the slope-intercept form
 The rest of the benefits will become evident when we talk more about the Hough transform.
 
 There are still cases where we would want to have the slope-intercept form of a line.
-This can be easily calculate: $m = \cot(\theta)$ and $b = -\rho \cdot \csc(\theta)$.
+This can easily be calculate: $m = \cot(\theta)$ and $b = -\rho \cdot \csc(\theta)$.
 
 
 ## Hough Space
@@ -121,11 +121,12 @@ They are sort of reflected over the image. <!-- needs work -->
 So far we have our Hough space matrix that has peaks where the lines are.
 All we need to do is to extract the lines from this matrix; easier said than done.
 
-The most accurate way to do this would be to use gradient ascent.
+The most accurate way to do this would be to use [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent).
 However, for a demo, it is good enough to just pick the spots with the most votes and filter out similar lines.
-Regardless, the complexity of the Hough transform is $O(n^2)$ because we have to run the hough transform for each pixel <!-- this doesn't really add anything -->
+Regardless, the complexity of the Hough transform is $O(n^2)$ because we have to run the hough transform for each pixel. <!-- this doesn't really add anything -->
 
 Ones we found a peak, which is just a $(\theta, \rho)$ point in hough space we can convert it into a line in images space, and then we are done. We have successfully found a line.
+I also draw the lines on the images to make it more clear what lines we found.
 
 <!-- code: ??? -->
 
@@ -138,11 +139,9 @@ We talk more about this in the next section.
 
 ## Results
 When we finally run the full algorithm to get out our line we can then plot the lines on the image.
-If we use our section logo limited to 14 lines we get the following:
+If we use our section logo limited to 16 lines we get the following:
 
 ![alt text](cv_lines_images/section-logo_with_lines.png "Section Logo with lines")
-
-<!-- why does it have a hard time getting the last two or 3 lines? IDK-->
 
 Now, the section logo is made up of straight lines so it is not as impressive to find them.
 If we instead use a more complicated image, we will get a better understanding of how well this method works.
