@@ -4,7 +4,7 @@ In this article, we will look into one of the more basic algorithms in computer 
 That is finding straight lines in images.
 While it sounds basic, it illustrates many techniques that are used in more complicated computer vision algorithms. 
 
-## edges
+## Edges
 Before we dive into lines, we need to think about what we want to do.
 We have an image and we want to extract information from it.
 To do this, we need to first determine what aspects of the image are important for our use.
@@ -17,8 +17,8 @@ This is sort of step one of the line detecting process: making an edge image.
 We will use a method called [Canny edge detection](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_canny/py_canny.html).
 Without going into depth here's a quick summary of how it works
 1. Apply a [gaussian filter](https://en.wikipedia.org/wiki/Gaussian_filter) to smooth the image.
-2. Fing the norm of the [gradient](https://en.wikipedia.org/wiki/Image_gradient) at each pixel (this will give us a [rough edge image](https://en.wikipedia.org/wiki/Sobel_operator)).
-3. edges that form lines/curves with gradient norm above a threshold are thinned to one pixel in width.
+2. Fing the norm of the [gradient](https://en.wikipedia.org/wiki/Image_gradient) at each pixel (this will give us an [image with emphasized edges](https://en.wikipedia.org/wiki/Sobel_operator#/media/File:Valve_sobel_(3).PNG)).
+3. Edges that form lines/curves with gradient norm above a threshold are thinned to one pixel in width.
 4. Connect weak edges to strong edges and remove unconnected weak edges ([Hysteresis](https://en.wikipedia.org/wiki/Hysteresis)).
 
 Let's see how this works in action.
@@ -31,7 +31,7 @@ The edge image would look like the following.
 ![alt text](cv_lines_images/section-logo-edge.png "Section logo edge image.")
 
 It might look like we are done and that we have found the straight lines, but that's because the sections logo is made up of only straight lines.
-So what if instead, we looked at a more complicated image. The edge images, in this case, can only take us so far. <!-- reword this part -->
+So what if instead, we looked at a more complicated image. The edge images, in this case, can only take us so far to find straight lines. <!-- reword this part -->
 
 <!-- I might just get rid of these image -->
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Valve_original_%281%29.PNG" alt="Without edges" width="400"/>
@@ -40,7 +40,7 @@ So what if instead, we looked at a more complicated image. The edge images, in t
 *Image source: [Wikipedia](https://en.wikipedia.org/wiki/Canny_edge_detector)*
 
 ## Lines
-Before we start to find lines in images, we will need to understand what a line is.
+Before we start to find straight lines in the images, we will need to understand what a line is.
 The most common way to define a line is, of course, $y=mx+b$. 
 We, however, will not be using this definition, instead, we will use what is called the Hesse normal form of a line.
 
@@ -52,16 +52,16 @@ Additionally, this form gives us a lot of benefits over the slope-intercept form
 The rest of the benefits will become evident when we talk more about the Hough transform.
 
 There are still cases where we would want to have the slope-intercept form of a line.
-This can easily be calculate: $m = \cot(\theta)$ and $b = -\rho \cdot \csc(\theta)$.
+This can easily be calculated: $m = \cot(\theta)$ and $b = -\rho \cdot \csc(\theta)$.
 
 
 ## Hough Space
-Let's look at the edge image, and what we can do with it. Right now it's just a bunch of pixels that represent edges. <!-- no shit -->
+Let's look at the edge image and what we can do with it. Right now it's just a bunch of pixels that represent edges.
 Each pixel can only be a 1 or a 0 (an edge or not an edge).
 Because our image is of a discrete size we can think of our edges image as being a set of edge points or pixels.
 We will say that each of these points are in image space, a location in the image. <!-- I can do better with the words -->
 
-To determine what lines exist in our images, we will look at each edge pixel and essentially ask, what are all the possible lines this point could be in.
+To determine what lines exist in our images, we will look at each edge pixel and essentially ask, what are all the possible lines this point could be in?
 This, in essence, is what the Hough transform is.
 
 We made it easy for our selves to figure out all the possible lines because we are using the Hesse normal form of a line.
@@ -126,7 +126,7 @@ However, for a demo, it is good enough to just pick the spots with the most vote
 Regardless, the complexity of the Hough transform is $O(n^2)$ because we have to run the hough transform for each pixel. <!-- this doesn't really add anything -->
 
 Ones we found a peak, which is just a $(\theta, \rho)$ point in hough space we can convert it into a line in images space, and then we are done. We have successfully found a line.
-I also draw the lines on the images to make it more clear what lines we found.
+I also draw the lines on the images to make it more clear what lines were found.
 
 <!-- code: ??? -->
 
@@ -158,7 +158,7 @@ And with all that done, here is the resulting image with 10 lines.
 ![alt text](cv_lines_images/ice_with_lines.png "Cracked ice with lines")
 
 I would say that worked pretty well. You will notice how not all of the lines line up exactly with the image. 
-This is because we decreasing line's $rho$ accuracy. <!-- conclusion?? -->
+This is because we decreased the line's $\rho$ accuracy. <!-- conclusion?? -->
 
 If you want to, you can play around with the [program I wrote in python](https://repl.it/@ZackJorquera/FindingLinesComputerVision) with these and more images. <!-- I should try to add the code to the article -->
 All the code to make all of the images shown in this article can be found there.
