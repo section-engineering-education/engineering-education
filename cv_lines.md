@@ -15,8 +15,8 @@ This is step one of the line detecting process: making an edge image.
 
 We will use a method called [Canny edge detection](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_canny/py_canny.html).
 Without going into depth here's a quick summary of how it works:
-1. Apply a [gaussian filter](https://en.wikipedia.org/wiki/Gaussian_filter) to smooth the image.
-2. Fing the norm of the [gradient](https://en.wikipedia.org/wiki/Image_gradient) at each pixel (this will give us an [image with emphasized edges](https://en.wikipedia.org/wiki/Sobel_operator#/media/File:Valve_sobel_(3).PNG)).
+1. Apply a [gaussian filter](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_filtering/py_filtering.html#gaussian-filtering) to smooth the image.
+2. Finding the norm of the [gradient](https://en.wikipedia.org/wiki/Image_gradient) at each pixel (this will give us an [image with emphasized edges](https://en.wikipedia.org/wiki/Sobel_operator#/media/File:Valve_sobel_(3).PNG)).
 3. Edges that form lines/curves with gradient norm above a threshold are thinned to one pixel in width.
 4. Connect weak edges to strong edges and remove unconnected weak edges ([Hysteresis](https://en.wikipedia.org/wiki/Hysteresis)).
 
