@@ -22,7 +22,7 @@ Without going into depth here's a quick summary of how it works
 4. Connect weak edges to strong edges and remove unconnected weak edges ([Hysteresis](https://en.wikipedia.org/wiki/Hysteresis)).
 
 Let's see how this works in action.
-Take the following image.
+Take the following image of the section logo.
 
 ![alt text](cv_lines_images/section-logo.png "Section Logo")
 
@@ -31,7 +31,7 @@ The edge image would look like the following.
 ![alt text](cv_lines_images/section-logo-edge.png "Section logo edge image.")
 
 It might look like we are done and that we have found the straight lines, but that's because the sections logo is made up of only straight lines.
-So what if instead, we looked at a more complicated image. The edge images, in this case, can only take us so far to find straight lines. <!-- reword this part -->
+So what if instead, we looked at a more complicated image. The edge images, in this case, can only take us so far in finding straight lines.
 
 <!-- I might just get rid of these image -->
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Valve_original_%281%29.PNG" alt="Without edges" width="400"/>
@@ -80,22 +80,22 @@ In this graph, the orange and purple points represent edges in image space.
 <!-- talk more about the graphic-->
 In this image, the plot on the right is the result of the hough transform. The plot shows Hough space with the $\rho$ values (Y-axis) vs. the $\theta$ values (X-axis). 
 The main plot (with the points) shows the image space of the edges where each point represents a single edge.
-We can see that one point in image space is turned into a line (really a curve) in hough space (look at the purple point and line). 
-And it might make sense that there are intersections in hough space where <!-- or when --> the line hits multiple points.
-Also, a point in Hough space is a line in image space (look at the red line and point). 
+We can see that one point in image space is turned into a line (really a curve) in hough space (look at the purple point and the purple line). 
+And a point in Hough space is a line in image space (look at the red point and the red line). 
+It might make sense that there are intersections in hough space where <!-- or when --> the line hits multiple points.
 We can say that an intersection in hough space makes a line from two or more points in image space. <!-- reword -->
 
 Solving for intersections can be costly and hard so instead of plotting things we will add points from the plot into "buckets".
 We will define Hough space to be a matrix of buckets that represent chucks of the continuous hough space shown in the desmos plot. 
 Each entry of this matrix will count the number of votes each line gets. 
 Where each bucket represents all lines were the $\theta$ and $\rho$ lie within the range that the bucket resides in.
-This will mean that the bucket that contains the intersection of the 4 lines in the desmos plot will have 4 votes.
+This will mean that the bucket that contains the intersection of the 4 Hough space lines in the desmos plot will have 4 votes.
 
 This allows us to not just solve for intersections, but to also know how many points reside in any possible line.
 This helps because any two points can form a line but that doesn't mean that they really are a line in the image.
 That would only be the case if the number of votes a particular bucket has is above some threshold which we can set.
 
-If we go back to our section logo edge image and apply the Hough transform to it (or more specifically to each edge) them we get the following.
+If we go back to our section logo edge image and apply the Hough transform to it (or more specifically to each edge) then we get the following.
 I normalized the vote counts and applied a heat map so that the details are more visible.
 
 ![alt text](cv_lines_images/section-logo-heat.png "Section logo in Hough space shown as a heat map")
@@ -104,7 +104,7 @@ I normalized the vote counts and applied a heat map so that the details are more
 
 Just like before the X-dimension represents the $\theta$ values in the range $0$ to $180$ degrees and the Y-dimension represents the $\rho$ values with 0 being halfway.
 
-You will notice that this looks a lot like the desmos plot. Which should make sense.
+You will notice that this looks a lot like the desmos plot , which should make sense.
 The main difference is that it is flipped, this is because matrices/images store the $(0,0)$ entry at the top left corner and then going down and to the right gives higher entry.
 So this image means the same thing as the desmos plot, but when we show it, it looks flipped.
 
@@ -134,7 +134,7 @@ With all that said there is still one important thing to note about the hough tr
 It is only effective if a high number of votes fall into a small subset of bins.
 This means that there must be low noise in the edge image.
 Also, the bin sizes must be properly sized depending on the accuracy/variance of the line being detected.
-We talk more about this in the next section.
+We will talk more about this in the next section.
 
 
 ## Results
@@ -166,5 +166,5 @@ All the code to make all of the images shown in this article can be found there.
 
 ## More Hough
 In this article, we looked at the standard Hough transform which is specialized for lines.
-However, the Hough transform has sense been generalized for more purposes.  
+However, the Hough transform has sense been generalized for more purposes.
 Some good examples of this are [finding circles/ellipses](https://en.wikipedia.org/wiki/Circle_Hough_Transform) in images, [finding any shape](https://en.wikipedia.org/wiki/Generalised_Hough_transform) in images, and [finding complex objects using image keywords](https://github.com/ZackJorquera/Keyword_Object_Detection).
