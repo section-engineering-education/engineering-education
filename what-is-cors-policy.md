@@ -10,7 +10,7 @@ topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/cors-policy.jpg
+  - url: /assets/images/education/cors-policy-image.jpg
     alt: CORS policy
 ---
 The CORS policy, or the Cross-Origin Resource Sharing policy, prevents accessing web resources from sources other than the server the website is running on for security purposes.  
@@ -60,7 +60,7 @@ Running this `fetch()` command in the console acts as if the website was sending
 
 You should see a CORS error in your console, looking something like:
 
-Access to fetch at 'https://cors1--nadivgold.repl.co/' from origin 'NOTE: PLEASE REPLACE THIS SENTENCE IN ALL CAPS WITH THE URL OF THIS ARTICLE INSIDE THESE SINGLE QUOTATION MARKS' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+![](/assets/images/education/cors_failed.jpg)
 
 The asset we tried to request was the string "Section is cool" from the Node.js web server. Our request was blocked because the server did not explicitly give our website permission.
 
