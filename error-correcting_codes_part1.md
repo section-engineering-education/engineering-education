@@ -1,6 +1,4 @@
-# An Introduction to Error Correction Codes: The Hamming Code
-
-
+# An Introduction to Error Correction Codes: Part 1
 The spacecraft [Juno](https://en.wikipedia.org/wiki/Juno_(spacecraft)) has taken countless [pictures](https://www.nasa.gov/mission_pages/juno/images/index.html) of Jupiter's chaotic storms, all in stunning detail. But how are these images transmitted hundreds of millions of miles through space, with almost no signs of interference? You might also wonder how DVDs can still play movies with scratches on them. The answer to both of these problems is error-correcting codes. Error-correcting codes are one of the most fundamental concepts that keep our technology-driven society running. Every communication channels experience transmission errors in some form, meaning it is a requirement to be able to fix these errors, hence the importance of error-correction. In this article, I plan to explore the intuitions behind error-correcting codes and present the Hamming code.
 
 One of the most common uses of the Hamming code is error-correcting memory. A computer uses [dynamic random-access memory](https://en.wikipedia.org/wiki/Dynamic_random-access_memory#Error_detection_and_correction), or RAM, to speed up the time it takes to run all your programs. This type of memory stores data in tiny capacitors. Electrical or magnetic interference can cause spontaneous bitflips in these capacitors, resulting in error. This interference is rare but can cause undesirable consequences. Computers use specialized hardware controllers to correct these errors, which traditionally use the Hamming code.
@@ -48,7 +46,13 @@ Now that we have our parity bit let's break down how we can use them to correct 
 |Case 6|$x_2$|$x_2$|
 |Case 7|$x_3$|$x_3$|
 
-From this, we can create a decoding process by checking these eight cases to determine where in the encoded message the error occurred. Later we will generalize this step to what is called a syndrome. A python implementation would be as follows.
+From this, we can create a decoding process by checking these eight cases to determine where in the encoded message the error occurred. Let's work through a quick example to show how this process looks.  Say we want to transmit the message `1011`. First, we need to calculate the parity bits: 
+$$x_1=1 \oplus 0 \oplus 1 = 0\\
+x_2=1 \oplus 1 \oplus 1=1\\
+x_3=0 \oplus 1 \oplus 1=0$$
+So our encoded message is then `1011010`. When transmitting the encoded message the third bit flips resulting in the received message `1001010`. We can recalculate the parity bits and find, $x_1=0$, $x_2=0$, and $x_3=1$. Using the table provided above we can determine that the third bit has an error as the parity bits $x_2$ and $x_3$ are incorrect.
+
+A python implementation would be as follows.
 
 ```python
 def encode(m): 
@@ -99,68 +103,6 @@ def decode(m):
 
 To see this implementation used on a random error generator, look [here](https://repl.it/@jorqueraian/Hamming). 
 
-## Linear Error-Correcting Codes
-Now that we have explored the Hamming code I want to provide a more generalized definition for error-correcting codes. In this section, we will come to the same mathematical conclusions, just stated with matrices. This might seem unimportant and for the Hamming code, it is not completely necessary. But this definition provides a template for the set of error-correcting codes called linear codes.
-
-We want to narrow down our focus on linear codes as they will provide us with efficient methods for encoding and decoding. A linear code is a code that for any two codewords, the linear combination is its self a codeword. For example, `1001 001` and `1011 010` are both codewords of the Hamming code presented above. The linear combination can be found by taking the XOR operator of each element. The linear combination would then be `0010 011` which is also a valid codeword. This is true as the Hamming code is linear. This property allows us to define the encoding process of any linear code with a matrix, called the generator matrix. To encode a message, we simply [multiply](https://en.wikipedia.org/wiki/Matrix_multiplication) the input message on the left of a generator matrix. Note that instead of using addition we will use the XOR operator. For the Hamming code presented above, we could create the following generator matrix, which is mathematically the same as the encoding procedure presented above.
-
-$$
-\begin{pmatrix} 
-1&0&0&0&1&1&0\\ 
-0&1&0&0&1&0&1\\ 
-0&0&1&0&0&1&1\\ 
-0&0&0&1&1&1&1 
-\end{pmatrix}
-$$
-
-The encoding procedure can be expressed with the generator matrix.
-
-$$
-\begin{pmatrix} 
-m_1&m_2&m_3&m_4&x_1&x_2&x_3
-\end{pmatrix} =
-\begin{pmatrix} 
-m_1&m_2&m_3&m_4
-\end{pmatrix}\begin{pmatrix} 
-1&0&0&0&1&1&0\\ 
-0&1&0&0&1&0&1\\ 
-0&0&1&0&0&1&1\\ 
-0&0&0&1&1&1&1 
-\end{pmatrix}
-$$
-
-I encourage the reader to verify for themselves that this new encoding procedure is mathematically the same as what was presented previously. 
-
-We also need a way to detect errors with this new definition. This will be done with the second matrix called the parity-check matrix. With the parity-check matrix, we will calculate what is called the syndrome by multiplying our received message on the left of the transpose of the parity-check matrix. The syndrome, much like the definition of the word might suggest will be related to the specific error that occurred. This implies the syndrome of a received message will directly correspond to the error and have no relation to the message. In general, the syndrome will be a zero vector when no error occurs and a non-zero vector when one does. We can split any received message $y$ into two components; the error $e$ and the original message $w$. We can use the distributive property of matrix multiplication to find the syndrome of each of these components separately. The syndrome of $w$ will be zero so the syndrome of $y$ is only dependent on the error and is equal to the syndrome of $e$. For the Hamming code, the syndrome will tell us exactly which parity bits were incorrect. Meaning the process of checking each parity bit as we did above will now be replaced with matrix multiplication. The parity-check matrix for the Hamming code will be as follows:
-
-$$
-\begin{pmatrix} 
-1&1&0&1&1&0&0\\ 
-1&0&1&1&0&1&0\\ 
-0&1&1&1&0&0&1
-\end{pmatrix}
-$$
-
-And the syndrome can be found by multiplying the encoded message with the transpose of the parity-check matrix.
-
-$$
-\begin{pmatrix} 
-S_1&S_2&S_3
-\end{pmatrix} =
-\begin{pmatrix} 
-m_1&m_2&m_3&m_4&x_1&x_2&x_3
-\end{pmatrix}\begin{pmatrix} 
-1&1&0&1&1&0&0\\ 
-1&0&1&1&0&1&0\\ 
-0&1&1&1&0&0&1
-\end{pmatrix}^T
-$$
-
-Looking closely at the parity-check matrix each column corresponds to one of the cases for decoding the Hamming code. For example the first row $\begin{pmatrix}1&1&0\end{pmatrix}^T$ corresponds to the parity bits $x_1$ and $x_2$ being incorrect, which is the case that $m_1$ had an error. If we continue to look at each column, we see this pattern is consistent. We see that each column corresponds to which parity bits would be incorrect for that column of the encoded message to contain an error. Calculating the syndrome for this Hamming code would give us the column of the parity-check matrix with an error. For example, let's say we had the message `0000 000`, and as shown above, any message will have the same result. Also, consider an error in the fourth bit. When we calculate the syndrome, we would get $\begin{pmatrix}1&1&1\end{pmatrix}$ which is the fourth column of the parity-check matrix. For the Hamming code, we can decode a message by simply calculating the syndrome and then finding the corresponding column of the parity-check matrix. Finally, we can then correct that column in the message. This decoding process is unique to the Hamming code but highlights the usefulness of the syndrome and parity-check matrix. Notice that the original process of decoding mentioned in the previous section is mathematically the same, except we never explicitly defined the syndrome.
-
-An implementation using this new definition can be found [here](https://repl.it/@jorqueraian/Hamming).
-
-To recap any linear code can be defined with a generator matrix and a parity-check matrix. These are implemented to encode and calculate the syndrome. The syndrome can then be used to help decode the received message. This definition is extremely important as it provides a simple way to create any linear error-correcting codes, as well as providing a framework for efficient decoding methods.
 
 ## Conclusion
 
