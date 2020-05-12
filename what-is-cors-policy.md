@@ -47,21 +47,20 @@ http.createServer(function  (req, res)  {
 
 If you have Node.js, I recommend running this code locally.
 
-To test the webserver, open the browser's [console](https://support.monday.com/hc/en-us/articles/360002197259-How-to-Open-the-Developer-Console-in-your-Browser) on this website, and enter:
+To test the webserver, open the browser's [console](https://support.monday.com/hc/en-us/articles/360002197259-How-to-Open-the-Developer-Console-in-your-Browser) on a website (such as this one), and enter:
 ```javascript
 fetch("https://cors1--nadivgold.repl.co/").then(req=> req.text()).then(console.log)
 ```
 If you're using the Node.js local version, use:
 ```javascript
-fetch("localhost:6003").then(req => req.text()).then(console.log)
+fetch("http://localhost:6003").then(req => req.text()).then(console.log)
 ```
 
 Running this `fetch()` command in the console acts as if the website was sending the request.
 
 You should see a CORS error in your console, looking something like:
 
-![](/assets/images/education/cors_failed.jpg)
-
+![cors console error](/assets/images/education/cors-failed.png)<br/>
 The asset we tried to request was the string "Section is cool" from the Node.js web server. Our request was blocked because the server did not explicitly give our website permission.
 
 To fix this issue, we can add the 'Access-Control-Allow-Origin' to our web server. This HTTP header lets CORS know that we are okay with letting others request the asset. Simply add
