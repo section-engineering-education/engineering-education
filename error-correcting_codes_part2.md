@@ -1,34 +1,34 @@
 # An Introduction to Error Correction Codes: Part 2
 
-Before reading this article I recommend reading [part 1](), which goes over the basic intuitions of error-correcting codes as well as the Hamming code. In this section, we will continue to look at the Hamming code, but we will also explore the Golay code which can correct up to three errors. 
 
-The Golay code was most notably used on the Voyager I and II spacecraft in the 1970s. When transmitting messages through space we need to be able to correct interference and single dilution. Unlike the Hamming code, which can correct an isolated error, the Golay code can correct multi-consecutive errors, making it ideal for more situations.
+Error-correction is one of the most fundamental aspects of digital communication and is responsible for the validity of real-time interactions. In [Part 1](), with the Hamming code, we analyzed techniques of correcting isolated errors. In the real world, we can't always assume that error will be isolated. In this article, we will explore the Golay code, which is a method of correcting clusters of error.
+
+One of the more notable applications of the Golay code was with the Voyager I and II spacecraft in the 1970s. Transmitting messages or images through space requires the ability to correct interference and signal dilution. The Golay code can correct multiple consecutive errors, allowing it to perform very well in these senarios. This doesn't come without its disadvantages. The Golay code is often more intensive when it comes to both encoding and decoding.
 
 ## The Hamming Code
-
-Recall that with the Hamming$[7,4]$ code we encoded four-bit inputs into seven-bit encoded messaged. We could then correct up to a single bit of error, for each seven-bit segment of data. We were able to do this by adding three parity bits in addition to the four original bits 
+With the Hamming$[7,4]$ code, as presented in [Part 1](), can encode four-bit input messages into seven-bit codewords. With this encoding, it could correct one erroneous bit for each seven-bit encoded message. This was achieved by adding three parity bits to the original message.
 
 $$x_1=m_1 \oplus m_2 \oplus m_4\\
 x_2=m_1 \oplus m_3 \oplus m_4\\
 x_3=m_2 \oplus m_3 \oplus m_4$$
 
-When the message was received would recalculate these bits and determine which bits were now incorrect. Knowing this allowed us to determine where an error occurred in the received message using the following table.
+If an error occurred, the parity bits could be recalculated to help determine where the error occurred. With parity but equations, we were able to create a table to help determine which incorrect parity bits resulted in which erroneous bit.
 
-|Case|Erroneous bit | Incorrect parity bits |
-|---|:-:|---|
-|Case 0|No Error|None|
-|Case 1|$m_1$|$x_1$, and $x_2$|
-|Case 2|$m_2$|$x_1$, and $x_3$|
-|Case 3|$m_3$|$x_2$, and $x_3$|
-|Case 4|$m_4$|$x_1$, $x_2$, and $x_3$|
-|Case 5|$x_1$|$x_1$|
-|Case 6|$x_2$|$x_2$|
-|Case 7|$x_3$|$x_3$|
+|Erroneous bit | Incorrect parity bits |
+|:-:|---|
+|No Error|None|
+|$m_1$|$x_1$, and $x_2$|
+|$m_2$|$x_1$, and $x_3$|
+|$m_3$|$x_2$, and $x_3$|
+|$m_4$|$x_1$, $x_2$, and $x_3$|
+|$x_1$|$x_1$|
+|$x_2$|$x_2$|
+|$x_3$|$x_3$|
 
 An implementation of the Hamming code can be found [here](https://repl.it/@jorqueraian/Hamming).
 
 ## Linear Error-Correcting Codes
-Now that we have explored the Hamming code, I want to provide a more generalized definition for error-correcting codes. In this section, we will come to the same mathematical conclusions, just stated with matrices. This might seem unimportant and for the Hamming code, it is not completely necessary. But this definition provides a template for the set of error-correcting codes called linear codes.
+Now that we have analyzed the Hamming code, I want to provide a more generalized definition for error-correcting codes. In this section, we will come to the same mathematical conclusions, just stated with matrices. This might seem unimportant and for the Hamming code, it is not completely necessary. But this definition provides a template for the set of error-correcting codes called linear codes. It will also be helpful when constructing the Golay code.
 
 We want to narrow down our focus on linear codes as they will provide us with efficient methods for encoding and decoding. A linear code is a code that for any two codewords, the linear combination is its self a codeword. For example, `1001 001` and `1011 010` are both codewords of the Hamming code presented above. The linear combination can be found by taking the XOR operator of each element. The linear combination would then be `0010 011` which is also a valid codeword. This is true as the Hamming code is linear. This property allows us to define the encoding process of any linear code with a matrix, called the generator matrix. To encode a message, we simply [multiply](https://en.wikipedia.org/wiki/Matrix_multiplication) the input message on the left of a generator matrix. Note that instead of using addition we will use the XOR operator. Subtraction will also use the XOR operator meaning the additive inverse of a bit is just itself, for each $-1=1$. This might seem counter-intuitive but is required to keep all operations valid. For the Hamming code presented above, we could create the following generator matrix, which is mathematically the same as the encoding procedure presented above.
 
@@ -89,7 +89,7 @@ Looking closely at the parity-check matrix each column corresponds to one of the
 An implementation using this new definition can be found [here](https://repl.it/@jorqueraian/Hamming).
 
 
-Looking closely at both of the matrices above we can see that they both contain a [identity matrix](https://en.wikipedia.org/wiki/Identity_matrix). When encoding this is why we still have the original four bits. We say a code is in standard form if its generator matrix, can be expressed with the [augmented matrix](https://en.wikipedia.org/wiki/Augmented_matrix) $G = \left( I_k | X\right)$  and parity check matrix can be represented as $H = \left(-X^T | I_{n-k}\right)$. Notice that when in the standard form they share a common submatrix, meaning it is easy to construct one matrix from the other. This can be seen with the Hamming code, as both the generator and parity-check matrices share the matrix shown below.
+Looking closely at both of the matrices above we can see that they both contain the [identity matrix](https://en.wikipedia.org/wiki/Identity_matrix). We say a code is in standard form if its generator matrix, can be expressed with the [augmented matrix](https://en.wikipedia.org/wiki/Augmented_matrix) $G = \left( I_k | X\right)$. Similarly the parity check matrix would be represented as $H = \left(-X^T | I_{n-k}\right)$. The variable $k$ represents the size of the input message and $n$ represents the size of the encoded message. Notice that in the standard form, both matrices share a common submatrix $X$, so it is easy to construct one matrix from the other. This can be seen with the Hamming code, as both the generator and parity-check matrices share the matrix shown below.
 
 $$X=
 \begin{pmatrix} 
@@ -100,9 +100,69 @@ $$X=
 \end{pmatrix}
 $$
 
-Notice that each column represents the parity bits. All linear codes can be expressed in this fashion. If a code is in standard form, and once all errors are correct the original message is simply the first few bits
+Each of the columns of this matrix represents one of the parity bits for the Hamming code. Once all errors are corrected, and if the generator matrix is in standard form the original message is simply the first few bits. This is what we have seen with the Hamming code.
 
 To recap any linear code can be defined with a generator matrix and a parity-check matrix. These are implemented to encode and calculate the syndrome. The syndrome can then be used to help decode the received message. This definition is extremely important as it provides a simple way to create any linear error-correcting codes, as well as providing a framework for efficient decoding methods.
 
 ## The Binary Golay Code
-With the Hamming$[7,4]$ code we could correct up to a single bit of error, for each 7-bit segment of data. If the probability of any single bit experiencing an error is around $.02$, with the Hamming code we could correct 99.2% of all the received messages. This is pretty good and this highlights the usefulness of the Hamming code. The reason the Hamming code might still fail is due to the fact 
+To understand the motivation behind the Golay code, we want to know where the Hamming code fails. Although rare, what if two close by bits both have an error. This could cause the Hamming code to fail as it can only correct one error for each seven-bit encoded message. With the Golay code, our encoded message will be 24 bits and we will be able to correct up to three of them. Unlike the Hamming code, we will be able to correct 3 consecutive errors. This is exceptionally powerful for situations where errors might occur in small clusters.
+
+The Golay code will take in a 12-bit input and encode it into a 23-bit codeword. This encoding process adds 11 parity bits, which will give this code a Hamming distance of seven, meaning we can correct up to three errors. As mention in the previous section to define a linear code, in standard form, it suffices to know only the common submatrix. The generator matrix for this code will be $G = \left( I_{12} | A\right)$ where the matrix $A$ is shown below.
+
+$$A=
+\begin{pmatrix}
+0&1&1&1&1&1&1&1&1&1&1\\
+1&1&1&0&1&1&1&0&0&0&1\\
+1&1&0&1&1&1&0&0&0&1&0\\
+1&0&1&1&1&0&0&0&1&0&1\\
+1&1&1&1&0&0&0&1&0&1&1\\
+1&1&1&0&0&0&1&0&1&1&0\\
+1&1&0&0&0&1&0&1&1&0&1\\
+1&0&0&0&1&0&1&1&0&1&1\\
+1&0&0&1&0&1&1&0&1&1&1\\
+1&0&1&0&1&1&0&1&1&1&0\\
+1&1&0&1&1&0&1&1&1&0&0\\
+1&0&1&1&0&1&1&1&0&0&0
+\end{pmatrix}
+$$
+
+
+This is a rather intimidating matrix, so let's break down what it means. At its core, this matrix is very similar to the Hamming matrix shown in the previous section. Each column represents a different parity bit. For example, the first rows tell us that the first parity bit is the XOR between all the bits in the original message except the first one.
+
+Using the ideas from the previous section we can define our encoding procedure for the Golay code with matrix multiplication. For simplicity we will call the 12-bit input message $m$, the 23-bit encoded message $w$, and the 11 parity bits will be the row vector $x$. To encode our input message we can multiply it on the left by our generator matrix. Knowing that the first 12 bits will be multiplied with the identity matrix, and therefore wont change, we can reduce the number of computations. As we only need to calculate the parity bits, and this can be done by multiplying the original message by the matrix $A$. To encode our message we can concatenate the original message with these parity bits.
+
+$$
+w = m\cdot G= m\cdot(I_{12}|A) = (m|m\cdot A)
+$$
+
+Notice that $m\cdot A$ in the above equation calculates the parity bits.
+
+Now that we can correct three errors, locating these errors is a bit more challenging. It is no longer practical to build out the entire table by hand as we did for the Hamming code. Instead, we can automatically generate a table with a method called syndrome decoding. 
+
+As mentioned previously the syndrome represents the specific error that occurred and has no relation to the message. The syndrome is found by multiplying a received message $w$, by the transpose of the parity-check matrix. Where the parity-check matrix for the Golay code is $H = (A^T|I_{11})$. Let's call the syndrome vector $S$. The syndrome can be calculated as follows.
+
+$$S = w\cdot H^T = w\cdot (A^T|I_{11})^T$$
+
+Syndrome decoding works by first calculating the syndrome of all possible errors to create a table mapping syndromes to their corresponding error. This is exactly what the table for the Hamming code does. Now that our table is constructed we can correct the error in our received message. First, calculate the syndrome, then map the syndrome to its error, and finally correct the error. 
+<!--- I need to reword the above paragraph-->
+
+Let's walk through an example of syndrome decoding with the Hamming code. First, we need to calculate all the possible syndromes.
+|Error|Syndrome|
+|:-:|---|
+|`0000 000`|`000`|
+|`1000 000`|`110`|
+|`0100 000`|`101`|
+|`0010 000`|`011`|
+|`0001 000`|`111`|
+|`0000 100`|`100`|
+|`0000 010`|`010`|
+|`0000 001`|`001`|
+
+Now let's consider the same example presented in [part 1](). We want to transmit the message `1011`. First, we can encode it into the message `1011010`. During transmission, an error occurs in the third bit resulting in the received message `1001010`. If we calculate the syndrome of this message we would then get `011`. Matching this syndrome to our table we find that the error occurred in the third bit. So with syndrome decoding, we were again able to accurately correct the error.
+
+Syndrome decoding for the Golay code would look very similar to this. An implementation of syndrome decoding for the Golay code with a random error generator can be found [here](https://repl.it/@jorqueraian/GolayCode).
+
+## Conclusion
+
+## Sources
+Lindell, Y. Introduction to Coding Theory (89-662) [Lecture Notes]. (2010). Retrieved from (http://u.cs.biu.ac.il/~lindell/89-662/main-89-662.html)
