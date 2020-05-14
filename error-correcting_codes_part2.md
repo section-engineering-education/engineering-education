@@ -1,5 +1,5 @@
 
-# An Introduction to Error Correcting Codes: Part 2
+# An Introduction to Error-Correcting Codes: Part 2
 Error-correction is one of the most fundamental aspects of digital communication and is responsible for the validity of real-time interactions. In [part 1](https://www.section.io/engineering-education/error-correcting-codes-part1/), with the Hamming code, we analyzed techniques of correcting isolated errors. In the real world, we can't always assume errors will be isolated. In this article, we will explore the Golay code, which is a method of correcting multiple nearby errors.
 
 One of the more notable applications of the Golay code was with the Voyager I and II spacecraft in the 1970s. Transmitting messages or images through space requires the ability to correct interference and signal dilution. The Golay code can correct multiple consecutive errors, allowing it to perform well in these scenarios. This doesn't come without its disadvantages. The Golay code is often more intensive when it comes to both encoding and decoding.
@@ -130,7 +130,7 @@ $$
 
 This is a rather intimidating matrix, so let's break down what it means. At its core, this matrix is very similar to the Hamming matrix shown in the previous section. Each column represents a different parity bit. For example, the first rows tell us that the first parity bit is the XOR between all the bits in the original message except the first one.
 
-Let's create the encoding procedure for the Golay code with matrix multiplication. For simplicity, we will call the 12-bit input message $m$, and the 23-bit encoded message $w$. To encode our input message, we can multiply it on the left by our generator matrix. Knowing that the first 12 bits will be multiplied with the identity matrix, and therefore wont change, we can reduce the number of computations. We only need to calculate the parity bits, and this can be done by multiplying the original message by the matrix $A$. Finally, the encoded message will then be the concatenation of the original message and the parity bits, $w = (m|m\cdot A)$. Notice that $m\cdot A$ calculates the parity bits.
+Let's create the encoding procedure for the Golay code with matrix multiplication. For simplicity, we will call the 12-bit input message $m$, and the 23-bit encoded message $w$. To encode our input message, we can multiply it on the left by our generator matrix. Knowing that the first 12 bits will be multiplied with the identity matrix, and therefore won't change, we can reduce the number of computations. We only need to calculate the parity bits, and this can be done by multiplying the original message by the matrix $A$. Finally, the encoded message will then be the concatenation of the original message and the parity bits, $w = (m|m\cdot A)$. Notice that $m\cdot A$ calculates the parity bits.
 
 Now that we can correct three errors, locating these errors is a bit more challenging. It is no longer practical to build out the entire table by hand as we did for the Hamming code. Instead, we can automatically generate a table with a method called syndrome decoding. 
 
