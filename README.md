@@ -1,4 +1,4 @@
-# Relivancy of Quantum Cryptography in the future
+# Relevancy of Quantum Cryptography in the future
 
 Encryption is a part of everyday life. It provides protection to everything from emails to bank accounts. With quantum computing becoming a viable way information may become more vulnerable to hacking and intrusions. Therefore it is all the more important to know about quantum encryption, lets dive into the basics. 
 
