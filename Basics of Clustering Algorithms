@@ -1,0 +1,24 @@
+# Basics of Clustering Algorithms
+
+# What is a Cluster?
+
+A cluster can be described as a network of servers that act as a single unit. This system can be made up of different structures of hardware, networks, or software. In a sense, this becomes a sort of fluid hive mind where the memory allocated can exist in several different locations in small bits and operate cohesively. Cluster processing has a fundamental structure when it comes to analyzing data. When an analyzer does not have access to a strong independent computing system, the ability to distribute the processing load across systems becomes a necessity. Depending on the cluster structure, data may be capable of processing through independent systems with more capable abilities, reduce the total process time, or process through a mix of both software and hardware, and allow for additional components to be added for when more power is needed.  
+
+## Basic types of Clustering Algorithms
+
+### Centroid based
+
+This type of algorithm identifies the clusters of data according to the closeness of the data points. The algorithm determines the optimum local point of a cluster point and performs an iterative method of calculations. Something to note is that this requires prior knowledge of the number range of clusters in the data set. One of the most used algorithms based on this model is the [K-means](https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a). It is easily understood and has a relatively quick processing speed due to its linearity. K-means does not handle large data sets well and may not produce consistent results.
+
+### Distrubtion
+
+One of the less common methods, the distribution method utilizes a Gaussian Mixture Model (GMM) under the parameters of a Gaussian or normal distribution table. Using the deviation and mean of the total data set, the cluster of the data points finds the probability that the data point will be within the data range. This method succeeds in the K-method when it comes to data sets that represent an elliptical/circular spread. Additionally, this method allows for overlapping data points within different data sets.
+
+### Connectivity
+
+This model is based on the Euclidean distance of data points in terms of the space data points exhibit. It classifies the data points close in proximity under the assumption points close together have more similarity than data points that are spaced apart. Connectivity can be broken down into 2 different methods: top-down and bottom-up. The bottom-up approach treats every data point as a single cluster and merges each cluster from the increasing distance till all the points are contained within a single cluster; much like mitosis performed in reverse. Top-down approaches use the same method in reverse, where all data points start as a single cluster and divided into independent clusters varying on the subjective distance of the points. These algometric methods are typically visualized through a hierarchical dendrogram chart. Overall a very solid method for data processing, but it is typically low inefficiency.
+![Hierarchical Dendrogram](https://46gyn61z4i0t1u1pnq2bbk2e-wpengine.netdna-ssl.com/wp-content/uploads/2018/03/What-is-a-Dendrogram.png)
+
+### Density based
+
+Like the connectivity model, this method searches for varying areas of density. Each space is visited to determine if it is sufficiently dense to consider it a cluster of data points don’t meet this requirement then they are deemed as an outlier and marked as scanned. Some of these outlier points may be marked to a different cluster after searching in new areas. Once all the areas have been visited, all points will have been noted as a cluster or noise. This method is advantageous for it does not require previous knowledge on the number of cluster sets and can identify outliers. Although, data sets with multiple dimensions and varying sections of density offer notable challenges.
