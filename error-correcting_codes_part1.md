@@ -15,7 +15,11 @@ The problem with the previous example is we have no way of actually correcting t
 
 <p align="center"> <img width="450" height="450" src="https://lh3.googleusercontent.com/pw/ACtC-3d9dZ5ZqsVpDlvWkuyFZvhWd1o6zcRH_FWUyA5kX_T3NtSSlOoxNwHb55G1dQ_niRS5iTLDAeSGO9ws2-nvMS1srxZsQYKWtWPEwEWmpLNVo-oFQJo70NjRPHI8vd7VQSoTPqHSkyZjrJVDY7ILw441xg=w576-h523-no?authuser=0"> </p>
 
-If we start at any valid codeword, we can get to another valid codeword by traversing along two edges or making two-bit flips. These traversals can be thought of as a distance between codewords, which we call the Hamming distance. More formally we say the Hamming distance between two codewords is the number of elements with different values. For example, `110` and `000` have a Hamming distance of two. Starting at an invalid code, one with an error, we can see we have no way to determine which of the valid codes was sent. As three valid codes are all a distance of one from the invalid code. This indicates that there would be three equally likely possibilities. For example, consider again the received message `100`, which has an error in the second bit. We can not accurately correct it as it is equally likely that the error happened in any of the three bits. The Hamming distance of an entire code is equal to the minimum Hamming distance between any two valid codewords. In this case, using the graph, we can see the Hamming distance of this code is two.
+If we start at any valid codeword, we can get to another valid codeword by traversing along two edges or making two-bit flips. These traversals can be thought of as a distance between codewords, which we call the Hamming distance. More formally we say the Hamming distance between two codewords is the number of bits with different values. For example, `110` and `000` have a Hamming distance of two as the first two bits are different. We can also determine this using the graph above, first find the node `110`. Then make the traversal to the node `100` and then to `000`. Because we made two traversals, which is the minimum number required, we can determine the Hamming distance is two. 
+
+Starting at an invalid code, one with an error, we can see we have no way to determine which of the valid codes was sent. As three valid codes are all a distance of one from the invalid code. This indicates that there would be three equally likely possibilities. For example, consider again the received message `100`, which has an error in the second bit. We can not accurately correct it as it is equally likely that the error happened in any of the three bits. The valid code words `110`, `000`, and `101` are all a Hamming distance of one away. 
+
+The Hamming distance of an entire code is equal to the minimum Hamming distance between any two valid codewords. In this case, using the graph, we can see the Hamming distance of this code is two.
 
 It turns out, for a code to be correctable the Hamming distance must be at least three. Let's consider again the repetition code, which has a Hamming distance of three. With the graph below, we can see that an invalid codeword can never be an equal distance from two valid codewords. This highlights why the repetition code can always correct one error, as there is always a closest valid codeword. This is true for all codes with a Hamming distance of three. In general for a code with Hamming distance $d$, we can correct up to $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ errors.
 
@@ -98,7 +102,7 @@ def decode(m):
 	elif x3 != m[6]: 
 		# If just x3 is incorrect
 		m[6] ^= 1 # Case 7
-	# Case 0: If all thre bits are correct then nothing will be changed
+	# Case 0: If all three bits are correct then nothing will be changed
 
 	return m[0:4]
 ```
