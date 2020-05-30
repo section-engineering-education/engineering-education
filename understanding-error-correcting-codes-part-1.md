@@ -44,9 +44,11 @@ If we start at any valid codeword, we can get to another valid codeword by trave
 
 For example, `110` and `000` have a Hamming distance of two. Starting at an invalid code, one with an error, we can see we have no way to determine which of the valid codes was sent. As three valid codes are all a distance of one from the invalid code. This indicates that there would be three equally likely possibilities.
 
-Consider again the received message `100`, which has an error in the second bit. We can not accurately correct it, as it is equally likely that the error happened in any of the three bits. The Hamming distance of an entire code is equal to the minimum Hamming distance between any two valid codewords. In this case, using the graph, we can see the Hamming distance of this code is two.
+Consider again the received message `100`, which has an error in the second bit. We can not accurately correct it as it is equally likely that the error happened in any of the three bits. The valid code words `110`, `000`, and `101` are all a Hamming distance of one away.
 
-It turns out, for a code to be correctable, the Hamming distance must be at least three. Let's consider again the repetition code, which has a Hamming distance of three. With the graph below, we can see that an invalid codeword can never be an equal distance from two valid codewords. This highlights why the repetition code can always correct one error, as there is always a closest valid codeword. This is true for all codes with a Hamming distance of three. In general, for a code with Hamming distance $d$, we can correct up to $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ errors.
+The Hamming distance of an entire code is equal to the minimum Hamming distance between any two valid codewords. In this case, using the graph, we can see the Hamming distance of this code is two.
+
+It turns out, for a code to be correctable the Hamming distance must be at least three. Let's consider again the repetition code, which has a Hamming distance of three. With the graph below, we can see that an invalid codeword can never be an equal distance from two valid codewords. This highlights why the repetition code can always correct one error, as there is always a closest valid codeword. This is true for all codes with a Hamming distance of three. In general for a code with Hamming distance $d$, we can correct up to $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ errors.
 
 <p align="center"> <img width="450" height="450" src="https://lh3.googleusercontent.com/pw/ACtC-3fV5CoKzciPZCb8_80XYrZJF2TY-ZrWLj7DYToe0nI5D2-Jt8ggPamQFgKn_8cePkNABGqyg-iMvR_fa8gY8YIRZTGdpsStJFiBytPpE5WTHHSbSAEi__6tbz0UQ4NHI1Ro0eecCSZKcAq2R_hoevuqeg=w593-h537-no?authuser=0"> </p>
 
