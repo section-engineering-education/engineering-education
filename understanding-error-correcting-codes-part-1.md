@@ -5,7 +5,7 @@ published: true
 title: An Introduction to Error-Correcting Codes - Part 1
 description: Error-correcting codes are one of the most fundamental concepts that keep our technology-driven society running.
 author: Ian Jorquera
-date: 2020-05-21T00:00:00-07:00
+date: 2020-05-22T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -48,7 +48,7 @@ Consider again the received message `100`, which has an error in the second bit.
 
 The Hamming distance of an entire code is equal to the minimum Hamming distance between any two valid codewords. In this case, using the graph, we can see the Hamming distance of this code is two.
 
-It turns out, for a code to be correctable the Hamming distance must be at least three. Let's consider again the repetition code, which has a Hamming distance of three. With the graph below, we can see that an invalid codeword can never be an equal distance from two valid codewords. This highlights why the repetition code can always correct one error, as there is always a closest valid codeword. This is true for all codes with a Hamming distance of three. In general for a code with Hamming distance $d$, we can correct up to $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ errors.
+It turns out, for a code to be correctable, the Hamming distance must be at least three. Let's consider again the repetition code, which has a Hamming distance of three. With the graph below, we can see that an invalid codeword can never be an equal distance from two valid codewords. This highlights why the repetition code can always correct one error, as there is always a closest valid codeword. This is true for all codes with a Hamming distance of three. In general for a code with Hamming distance $d$, we can correct up to $\left\lfloor{\frac{d-1}{2}}\right \rfloor$ errors.
 
 <p align="center"> <img width="450" height="450" src="https://lh3.googleusercontent.com/pw/ACtC-3fV5CoKzciPZCb8_80XYrZJF2TY-ZrWLj7DYToe0nI5D2-Jt8ggPamQFgKn_8cePkNABGqyg-iMvR_fa8gY8YIRZTGdpsStJFiBytPpE5WTHHSbSAEi__6tbz0UQ4NHI1Ro0eecCSZKcAq2R_hoevuqeg=w593-h537-no?authuser=0"> </p>
 
