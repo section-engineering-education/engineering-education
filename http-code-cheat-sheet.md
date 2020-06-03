@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 title: HTTP Code Cheat Sheet - What You Need to Know About HTTP Requests and Responses
-description: HTTP stands for HyperText Transfer Protocol and is used, or at least the variant HyperText Transfer Protocol Secure (HTTPS), for nearly every single website on the internet. HTTP codes are important to understand, especially if you are developing a web application and are trying to debug based upon the console responses. Knowing these codes came in handy while I was working on my website and forgot to allow methods through the function. This returned a 501 code, allowing me to easily find my mistake.
+description: HTTP codes are important to understand, especially if you are developing a web application and are trying to debug based upon the console responses.
 author: Gregory Manley
 date: 2020-05-25T00:00:00-07:00
 topics: []
@@ -13,16 +13,18 @@ images:
   - url: /assets/images/education/http-cheatsheet-image.jpg
     alt: http cheatsheet laptop
 ---
-If you have ever copied a link from your browser and noticed that http:// or https:// had been added before the domain, you are looking at the protocol used which defines how messages are formatted and transmitted. It also defines how web servers and browsers should respond to various commands. HTTP stands for HyperText Transfer Protocol and is used, or at least the variant HyperText Transfer Protocol Secure (HTTPS), for nearly every single website on the internet.
+If you have ever copied a link from your browser and noticed that `http://` or `https://` had been added before the domain, you are looking at the protocol used which defines how messages are formatted and transmitted. It also defines how web servers and browsers should respond to various commands.
 <!--more-->
 
+HTTP stands for HyperText Transfer Protocol and is used, or at least the variant HyperText Transfer Protocol Secure (HTTPS), for nearly every single website on the internet.
+
 ### HTTP Codes
-All HTTP response codes can be separated into five categories. These are the categories:
-*   _1xx informational response_ - the request has been received and continuing process
-*   _2xx successful_ - the request has been received, understood, and accepted
-*   _3xx redirection_ - further action is needed in order to complete the request
-*   _4xx client error_ - the request contains bad syntax or cannot be fulfilled
-*   _5xx server error_ - the server failed to fulfill the apparently valid request
+All HTTP response codes can be separated into five categories:
+*   ___1xx informational response___ - the request has been received and continuing process
+*   ___2xx successful___ - the request has been received, understood, and accepted
+*   ___3xx redirection___ - further action is needed in order to complete the request
+*   ___4xx client error___ - the request contains bad syntax or cannot be fulfilled
+*   ___5xx server error___ - the server failed to fulfill the apparently valid request
 
 ### 1xx: Information
 
@@ -30,9 +32,9 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <tbody>
 
-<tr>
+<tr style="font-weight: 600">
 
-<td>Message</td>
+<td style="padding-right: 30%;">Message</td>
 
 <td>Description</td>
 
@@ -79,6 +81,14 @@ All HTTP response codes can be separated into five categories. These are the cat
 <table>
 
 <tbody>
+
+<tr style="font-weight: 600">
+
+<td style="padding-right: 30%;">Message</td>
+
+<td>Description</td>
+
+</tr>
 
 <tr>
 
@@ -170,6 +180,14 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <tbody>
 
+<tr style="font-weight: 600">
+
+<td style="padding-right: 30%;">Message</td>
+
+<td>Description</td>
+
+</tr>
+
 <tr>
 
 <td>300 Multiple Choices</td>
@@ -252,6 +270,14 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <tbody>
 
+<tr style="font-weight: 600">
+
+<td style="padding-right: 30%;">Message</td>
+
+<td>Description</td>
+
+</tr>
+
 <tr>
 
 <td>400 Bad Request</td>
@@ -264,7 +290,7 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <td>401 Unauthorized</td>
 
-<td>The requested page requires a username and password</td>
+<td>The requested page requires a username and password.</td>
 
 </tr>
 
@@ -304,7 +330,7 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <td>406 Not Acceptable</td>
 
-<td>The server cannot generate a response that is accepted by the client</td>
+<td>The server cannot generate a response that is accepted by the client.</td>
 
 </tr>
 
@@ -312,7 +338,7 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <td>407 Proxy Authentication Required</td>
 
-<td>You must first authenticate with the proxy</td>
+<td>You must first authenticate with the proxy.</td>
 
 </tr>
 
@@ -352,7 +378,7 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <td>412 Precondition Failed</td>
 
-<td>The pre-condition that was given in the request evaluated to false by the server</td>
+<td>The pre-condition that was given in the request evaluated to false by the server.</td>
 
 </tr>
 
@@ -400,7 +426,7 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <td>418 I'm a teapot</td>
 
-<td>This code was introduced as an April Fools' joke. It is currently unexpected to be implemented by actual servers</td>
+<td>This code was introduced as an April Fools' joke. It is currently unexpected to be implemented by actual servers.</td>
 
 </tr>
 
@@ -416,7 +442,7 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <td>422 Unprocessable Entity</td>
 
-<td>The request was well-formed but the server was unable to follow due to semantic errors</td>
+<td>The request was well-formed but the server was unable to follow due to semantic errors.</td>
 
 </tr>
 
@@ -424,7 +450,7 @@ All HTTP response codes can be separated into five categories. These are the cat
 
 <td>423 Locked</td>
 
-<td>The resource that is being accessed is locked</td>
+<td>The resource that is being accessed is locked.</td>
 
 </tr>
 
@@ -493,6 +519,14 @@ All HTTP response codes can be separated into five categories. These are the cat
 <table>
 
 <tbody>
+
+<tr style="font-weight: 600">
+
+<td style="padding-right: 30%;">Message</td>
+
+<td>Description</td>
+
+</tr>
 
 <tr>
 
