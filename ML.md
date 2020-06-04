@@ -10,7 +10,7 @@ Most of you may have already be familiar with traditional programming, where you
 
 
 <p align="center">
-  <img src="/home/reddy/rulebased.png" alt="Rule Based"/>
+  <img src="rulebased.png" alt="Rule Based"/>
 </p>
 
 ## Machine Learning
@@ -18,7 +18,7 @@ Most of you may have already be familiar with traditional programming, where you
 But there are certain problems which cannot be solve by traditional programming, for example consider creating an application which classify doodles made by kinder garden kids. Using traditional programming how would you differentiate between a cat and a human? you might say cat have a tail, whiskers, four legs etc.., looks simple and intutive right? now differentiate between a cat and dog? both have four legs, and tail which makes it little difficult to differentiate. Now Imagine having hundreds of such classes how many rules should you check. To tackle such problem we use Machine Learning, ML is all about learning from examples.
 
 <p align="center">
-  <img src="/home/reddy/ml.png" alt="ML"/>
+  <img src="ml.png" alt="ML"/>
 </p>
 
 **Machine Learning is a specific field of Artificial Intelligence, where a system learns to find patterns in examples in order to make predictions.**
@@ -36,7 +36,7 @@ In [Quick Draw](https://quickdraw.withgoogle.com/) **goal** is to create a model
 5. Hypothesis is used to predict on validation data if results are not satisfactory we try to enhance our hypothesis
 
 <p align="center">
-  <img src="/home/reddy/wf.png" alt="Workflow"/>
+  <img src="wf.png" alt="Workflow"/>
 </p>
 
 ## Classification
