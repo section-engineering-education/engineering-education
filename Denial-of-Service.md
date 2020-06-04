@@ -20,6 +20,6 @@ While there is no way to completely avoid becoming a target of a DoS attack, pro
 
 ## How do you know if an attack is happening?
 
-- Unusually slow network performance (opening files or accessing websites),
-- Unavailability of a particular website, or
+- Unusually slow network performance
+- Unavailability of a particular website
 - An inability to access any website.
