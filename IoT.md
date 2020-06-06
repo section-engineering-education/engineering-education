@@ -21,6 +21,7 @@ Through IoT, one can easily connect any device with anything, anywhere in the wo
 -	2008-The Internet of Things was conceived.
 -	2011-Gartner, the statistical surveying organization, incorporate "The Internet of Things" innovation in their examination.
 
+
 ## How does it work?
 
 Gadgets and articles with worked in sensors are associated with an Internet of Things stage, which coordinates information from the various gadgets and applies examination to impart the most important data to applications worked to address explicit necessities. 
@@ -31,6 +32,7 @@ For instance, in the event that I own a vehicle producing business, I should kno
 •Automatically adjust deals information to flexibly, with the goal that well-known things don't leave stock. 
 The data got by associated gadgets empowers me to settle on shrewd choices about which parts to load up on, in light of continuous data, which causes me set aside time and cash. 
 With the knowledge gave by cutting edge examination comes the ability to make forms progressively productive. Shrewd items and frameworks mean you can robotize certain undertakings, especially when these are redundant, commonplace, tedious or even hazardous. How about we take a gander at certain guides to perceive what this resembles, in actuality-
+
 - ### **Smart home**
     - IoT gadgets are a piece of the bigger idea of home computerization, which can incorporate lighting, warming, and cooling, media, and security frameworks. Long haul advantages could incorporate vitality reserve funds via naturally guaranteeing lights and gadgets are killed. 
     A shrewd home or computerized home could be founded on a stage or centre points that control brilliant gadgets and machines. For example, utilizing Apple's HomeKit, makers can have their home items and frill constrained by an application in iOS gadgets, for example, the iPhone and the Apple Watch.
@@ -42,6 +44,7 @@ With the knowledge gave by cutting edge examination comes the ability to make fo
 - ### **Manufacturing** 
     - **Industry 4.0**, the fourth modern upset, envelops mix of conventional assembling and mechanical stages and practices with the most recent keen innovation. This fundamentally centres around the utilization of huge scope machine to machine correspondence (M2M) and Internet of Things (IoT) arrangements to give expanded computerization, improved correspondence and self-checking, just as shrewd machines that can investigate and analyse issues without the requirement for human mediation.
 
+
 ## Importance and Application
 From time to time, the definition of the Internet of Things (IoT) has been evolving spontaneously like its application in the real world. IoT is connecting machines to humans (connecting anything to another thing or connecting anything to human). IoT is what we get when we join “Things” which are not operated by humans, to the Internet. Increasing the interaction between the devices and the humans by the introduction of Internet technology as a medium between these two heterogeneous models(i.e., machines and humans) to achieve the goal of automation, increased efficiency, interoperability, increased and quality production and many more goals on the way. Unlike human beings, the machine is not that much susceptible to errors and laziness, so to have error-free work, sound production, accurate data collection, improved quality with increased quantity, and increased efficiency we need IoT. This has led the vision of ‘‘anytime, anywhere, anyway, anything” communications. Practically in true sense. Significant applications of IoT in the present are in the following sectors: 
 -   For Security 
@@ -52,6 +55,7 @@ From time to time, the definition of the Internet of Things (IoT) has been evolv
 -	For Agriculture Production and Management. 
 
 An open and comprehensive network of smart objects that can auto-organize, share information, data, and resources, reacting and acting in the face of situations and changes in the environment. With the help of communication technologies such as Wireless Sensor Networks (WSN) and Radiofrequency Identification (RFID), sharing of information takes place. 
+
 
 ## Statistics and Market
 The worldwide market size of IoT Platforms was US$ 1340 million of every 2017 and is relied upon to reach USD 9960 million before the finish of 2025, with a CAGR of 28.5 percent somewhere in the range of 2018 and 2025. 
