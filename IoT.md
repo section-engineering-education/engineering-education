@@ -45,11 +45,11 @@ With the knowledge gave by cutting edge examination comes the ability to make fo
 ## Importance and Application
 From time to time, the definition of the Internet of Things (IoT) has been evolving spontaneously like its application in the real world. IoT is connecting machines to humans (connecting anything to another thing or connecting anything to human). IoT is what we get when we join “Things” which are not operated by humans, to the Internet. Increasing the interaction between the devices and the humans by the introduction of Internet technology as a medium between these two heterogeneous models(i.e., machines and humans) to achieve the goal of automation, increased efficiency, interoperability, increased and quality production and many more goals on the way. Unlike human beings, the machine is not that much susceptible to errors and laziness, so to have error-free work, sound production, accurate data collection, improved quality with increased quantity, and increased efficiency we need IoT. This has led the vision of ‘‘anytime, anywhere, anyway, anything” communications. Practically in true sense. Significant applications of IoT in the present are in the following sectors: 
 -   For Security 
--	For Home Automation 
+-	For Home Automation
 -	For Industry Automation 
--	For Governance 
--	For Health Management (Monitoring) and Disease Detection 
--	For Agriculture Production and Management 
+-	For Governance
+-	For Health Management (Monitoring) and Disease Detection. 
+-	For Agriculture Production and Management. 
 
 An open and comprehensive network of smart objects that can auto-organize, share information, data, and resources, reacting and acting in the face of situations and changes in the environment. With the help of communication technologies such as Wireless Sensor Networks (WSN) and Radiofrequency Identification (RFID), sharing of information takes place. 
 
