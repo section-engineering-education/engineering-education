@@ -50,6 +50,7 @@ From time to time, the definition of the Internet of Things (IoT) has been evolv
 -	For Governance 
 -	For Health Management (Monitoring) and Disease Detection 
 -	For Agriculture Production and Management 
+
 An open and comprehensive network of smart objects that can auto-organize, share information, data, and resources, reacting and acting in the face of situations and changes in the environment. With the help of communication technologies such as Wireless Sensor Networks (WSN) and Radiofrequency Identification (RFID), sharing of information takes place. 
 
 ## Statistics and Market
