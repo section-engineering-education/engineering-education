@@ -7,7 +7,7 @@ Through IoT, one can easily connect any device with anything, anywhere in the wo
 
 
 
- ![alt Internet of Things](https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)
+ ![alt Internet of Things](https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=500)
 
 
 
@@ -36,7 +36,7 @@ With the knowledge gave by cutting edge examination comes the ability to make fo
     A shrewd home or computerized home could be founded on a stage or centre points that control brilliant gadgets and machines. For example, utilizing Apple's HomeKit, makers can have their home items and frill constrained by an application in iOS gadgets, for example, the iPhone and the Apple Watch.
 
 
- ![alt Alexa](https://images.unsplash.com/photo-1512446733611-9099a758e5e5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=800)
+ ![alt Alexa](https://images.unsplash.com/photo-1512446733611-9099a758e5e5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=500)
 
 
 - ### **Manufacturing** 
