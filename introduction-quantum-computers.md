@@ -1,0 +1,33 @@
+---
+layout: engineering-education
+status: publish
+published: true
+title: Quantum Computers - Are they the future of computing?
+description: Computers that perform quantum computations are known as quantum computers. Quantum computing is the use of quantum-mechanical processing such as superposition and entanglement to perform computation.
+author: Michael Zanoff
+date: 2020-06-08T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /assets/images/education/quantum-image.jpg
+    alt: quantum image
+---
+Computers are electronic devices designed to store and process data. As time has passed, computers have made large strides in both the areas of storage capacity and processing power, but when will these strides come to a halt, and what will be the defining limitations? When it comes to complex computations, there is one specific technology that is helping to break past the limitations of classical computers, quantum computing.
+<!--more-->
+
+### What makes Quantum Computers Different?
+At the most basic level, classical computers rely on bits to store data. These bits can be either a 0 or a 1 and are transmitted using electrical signals. Combinations of these bits are what allow computers to understand data and interact with users. On the quantum computer side of things, there are not bits, but instead qubits. Qubits are physical atomic particles (atoms, protons, electrons, etc.) that are manipulated in order to store a data point. While bits can either be in a 0 or 1 state, qubits can exist at all the states between 0 and 1 at once, something known as a  [superposition](https://computer.howstuffworks.com/quantum-computer1.htm).
+
+### Advantages of Quantum Computers
+Since quantum computers use qubits, which can represent every value from 0 to 1 at once, they are able to complete multiple, and possibly millions, of operations simultaneously. This is a major advantage over classical computers which can only complete one operation at a time. This makes quantum computers far more efficient at tasks that involve large numbers of possible combinations or probabilities. This processing advantage can be helpful in areas such as artificial intelligence, weather modeling, particle physics, and much more. One specific example of the use of quantum computing is in solving the “traveling salesman” problem. This problem requires the determination of the most efficient path between multiple cities that will end back at the starting point. This is a computation being explored by [Volkswagen](https://builtin.com/hardware/quantum-computing-applications) in which quantum computers are being employed very successfully.
+
+### Limitations of Quantum Computers
+While quantum computers posses a large amount of processing power, they are not better than classical computers at every task. When it comes to things like streaming videos, surfing the web and editing documents, classical computers are still far more practical, as they are optimized for these tasks. In addition to this, quantum computers require a lot of special equipment in order to operate and remain stable. Some computers even require their internal temperature to remain colder than [deep space](https://www.scientificamerican.com/article/how-close-are-we-really-to-building-a-quantum-computer/), which is very difficult to achieve.
+
+Overall, quantum computers are extremely powerful tools that will be able to push high level computing to the next level. While they are still not suited for personal use and require extreme hardware to operate, there is no doubt that they will play a major role in the world of the near future.
+
+---
+
+#### About the Author
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/michael-zanoff.jpeg">Michael Zanoff is a freshman at Colorado School of Mines. His passion for the design process and robotics has led him to pursue a degree in Mechanical Engineering. He enjoys keeping up with new technology and learning about the world around him.
