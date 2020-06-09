@@ -1,4 +1,4 @@
-# Kubernetes as service: Comparing EKS vs AKS vs GKE
+# Kubernetes as a service: Comparing EKS vs AKS vs GKE
 
 All the major cloud service providers offer managed Kubernetes services for their customers. Managed Kubernetes services provide and administer the Kubernetes control plane, the set of services that would normally run on Kubernetes master nodes in a cluster created directly on virtual or physical machines. While dozens of vendors have received Certified Kubernetes status from the Cloud Native Computing Federation, which means their Kubernetes offering or implementation offers conformance to a consistent interface, details between offerings can differ. This variation can be especially true for managed Kubernetes services, which will often support different features and options for their cluster control planes and nodes.
 
