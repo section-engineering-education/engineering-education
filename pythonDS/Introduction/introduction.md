@@ -8,7 +8,7 @@ Python is used everywhere. It is used for general purpose programming, scripting
 
 ## <strong>Python for Developers</strong>
 
-If you're a student who is very much interested in becoming a developer, you would probably know that developer roles require a strong grasp on fundamentals, with most technical interviews for developer roles dealing with Data Structures. You also need to know Data Structures to ace the whiteboard programming and online programming rounds in recruitment processes.
+If you're a student who is very much interested in becoming a developer, you would probably know that developer roles require a strong grasp on fundamentals, with most technical interviews for developer roles dealing with Data Structures. You also need to know Data Structures to ace the whiteboard programming and online programming rounds in recruitment processes. 🔥
 
 When I started preparing for interviews, I found myself learning Data Structures, and were a major part of preparation. And hence, I feel that this series would give an overview of the Data Structures and help students study for, and ace interviews.
 
