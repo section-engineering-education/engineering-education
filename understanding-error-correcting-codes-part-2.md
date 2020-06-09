@@ -14,7 +14,7 @@ images:
     alt: error-correcting codes
 ---
 
-Error-correction is one of the most fundamental aspects of digital communication and is responsible for the validity of real-time interactions. In [part 1](/engineering-education/understanding-error-correcting-codes-part-1/), with the Hamming code, we analyzed techniques of correcting isolated errors. In the real world, we can't always assume errors will be isolated, and multiple consecutive errors can occur. In this article, we will continue talking about the Hamming code as well as a new code designed to correct these consecutive errors called the Golay code.
+Error correction is one of the most fundamental aspects of digital communication and is responsible for the validity of real-time interactions. In [part 1](/engineering-education/understanding-error-correcting-codes-part-1/), with the Hamming code, we analyzed techniques of correcting isolated errors. In the real world, we can't always assume errors will be isolated, and multiple consecutive errors can occur. In this article, we will continue talking about the Hamming code as well as a new code designed to correct these consecutive errors called the Golay code.
 
 <!--more-->
 
@@ -32,7 +32,7 @@ $$x_3=m_2 \oplus m_3 \oplus m_4$$
 The parity bits could be recalculated and used to help correct any error that occurred. Using these parity bits, we create a table to help determine which incorrect parity bits lead to which errors.
 
 |Erroneous bit | Incorrect parity bits |
-|:-:|---|
+|---|---|
 |No Error|None|
 |$m_1$|$x_1$, and $x_2$|
 |$m_2$|$x_1$, and $x_3$|
@@ -41,6 +41,7 @@ The parity bits could be recalculated and used to help correct any error that oc
 |$x_1$|$x_1$|
 |$x_2$|$x_2$|
 |$x_3$|$x_3$|
+<br>
 
 ### Repetition code
 The most classic example of error-correction is the repetition code, where for each bit in an input message, we duplicate each bit multiple times. For example, if you had the message `01101` we could encode it using this repetition method and it would become `000 111 111 000 111`. In this case, we repeated each bit three times. If a random bit flip or error occurred, we could correct it by simply taking the most common bit of each three-bit segments.
@@ -59,9 +60,9 @@ For the Hamming code, we can create the following generator matrix, which is mat
 
 $$
 \begin{pmatrix}
-1&0&0&0&1&1&0\\
-0&1&0&0&1&0&1\\
-0&0&1&0&0&1&1\\
+1&0&0&0&1&1&0\\\\\\
+0&1&0&0&1&0&1\\\\\\
+0&0&1&0&0&1&1\\\\\\
 0&0&0&1&1&1&1
 \end{pmatrix}
 $$
@@ -75,9 +76,9 @@ m_1&m_2&m_3&m_4&x_1&x_2&x_3
 \begin{pmatrix}
 m_1&m_2&m_3&m_4
 \end{pmatrix}\begin{pmatrix}
-1&0&0&0&1&1&0\\
-0&1&0&0&1&0&1\\
-0&0&1&0&0&1&1\\
+1&0&0&0&1&1&0\\\\\\
+0&1&0&0&1&0&1\\\\\\
+0&0&1&0&0&1&1\\\\\\
 0&0&0&1&1&1&1
 \end{pmatrix}
 $$
@@ -106,8 +107,8 @@ The syndrome, much like the definition of the word might suggest will be related
 
 $$
 \begin{pmatrix}
-1&1&0&1&1&0&0\\
-1&0&1&1&0&1&0\\
+1&1&0&1&1&0&0\\\\\\
+1&0&1&1&0&1&0\\\\\\
 0&1&1&1&0&0&1
 \end{pmatrix}
 $$
@@ -121,8 +122,8 @@ S_1&S_2&S_3
 \begin{pmatrix}
 m_1&m_2&m_3&m_4&x_1&x_2&x_3
 \end{pmatrix}\begin{pmatrix}
-1&1&0&1&1&0&0\\
-1&0&1&1&0&1&0\\
+1&1&0&1&1&0&0\\\\\\
+1&0&1&1&0&1&0\\\\\\
 0&1&1&1&0&0&1
 \end{pmatrix}^T
 $$
@@ -141,7 +142,7 @@ Syndrome decoding works by constructing a table, mapping syndromes to their corr
 Let's walk through an example of syndrome decoding with the Hamming code. First, we need to calculate and create a table of all possible syndromes. This should look very similar to the table we created in the previous section.
 
 |Error|Syndrome|
-|:-:|---|
+|---|---|
 |`0000 000`|`000`|
 |`1000 000`|`110`|
 |`0100 000`|`101`|
@@ -150,6 +151,7 @@ Let's walk through an example of syndrome decoding with the Hamming code. First,
 |`0000 100`|`100`|
 |`0000 010`|`010`|
 |`0000 001`|`001`|
+<br>
 
 Now let's consider the example where we want to transmit the message `1011`. First, we encode it into the message `1011010`. Now, during transmission, the third bit experiences an error and flips resulting in the received message `1001010`. Calculating the syndrome of this message will give us a syndrome of `011`. Using the table, we can match this syndrome to the error `0010 000`. Finally, we can swap this bit resulting in the original encoded message.
 
@@ -160,9 +162,9 @@ Notice that in the standard form, both matrices share a common submatrix, $X$. T
 
 $$X=
 \begin{pmatrix}
-1&1&0\\
-1&0&1\\
-0&1&1\\
+1&1&0\\\\\\
+1&0&1\\\\\\
+0&1&1\\\\\\
 1&1&1
 \end{pmatrix}
 $$
@@ -174,17 +176,17 @@ The Golay code will take in a 12-bit input and encode it into a 23-bit codeword.
 
 $$A=
 \begin{pmatrix}
-0&1&1&1&1&1&1&1&1&1&1\\
-1&1&1&0&1&1&1&0&0&0&1\\
-1&1&0&1&1&1&0&0&0&1&0\\
-1&0&1&1&1&0&0&0&1&0&1\\
-1&1&1&1&0&0&0&1&0&1&1\\
-1&1&1&0&0&0&1&0&1&1&0\\
-1&1&0&0&0&1&0&1&1&0&1\\
-1&0&0&0&1&0&1&1&0&1&1\\
-1&0&0&1&0&1&1&0&1&1&1\\
-1&0&1&0&1&1&0&1&1&1&0\\
-1&1&0&1&1&0&1&1&1&0&0\\
+0&1&1&1&1&1&1&1&1&1&1\\\\\\
+1&1&1&0&1&1&1&0&0&0&1\\\\\\
+1&1&0&1&1&1&0&0&0&1&0\\\\\\
+1&0&1&1&1&0&0&0&1&0&1\\\\\\
+1&1&1&1&0&0&0&1&0&1&1\\\\\\
+1&1&1&0&0&0&1&0&1&1&0\\\\\\
+1&1&0&0&0&1&0&1&1&0&1\\\\\\
+1&0&0&0&1&0&1&1&0&1&1\\\\\\
+1&0&0&1&0&1&1&0&1&1&1\\\\\\
+1&0&1&0&1&1&0&1&1&1&0\\\\\\
+1&1&0&1&1&0&1&1&1&0&0\\\\\\
 1&0&1&1&0&1&1&1&0&0&0
 \end{pmatrix}
 $$
