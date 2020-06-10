@@ -6,7 +6,7 @@ When people talk about blockchain, most of them are only referring to the use of
 
 A blockchain is a growing linked list of blocks and a block is a group of ordered transactions(**ledger**). Transaction in this context is a database transaction which stands for any changes made within the database. 
 
-![file:///home/keerthi/Desktop/engineering-education/blockchain%20(1).png](file:///home/keerthi/Desktop/engineering-education/blockchain%20(1).png)
+![./blockchain%20(1).png](./blockchain%20(1).png)
 
 Each block typically contains the cryptographic hash of the previous block, a timestamp and transaction data. To use it as a distributed ledger which is accessible and contributed to by many people, the Blockchain works on the P2P (**peer to peer**) protocol where every node has an equal say validating the transactions on the network. This network can be public or private, depending on the needs of the user.
 
