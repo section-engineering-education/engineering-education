@@ -165,7 +165,7 @@ section .bss
 	var resb 4
 ```
 
-I should probably mention how you can run this. Assuming that the file is called `incrementor.asm`:
+I should probably mention how you can run this. Assuming that the file is called `incrementor.asm`, and you're using NASM:
 
 ```bash
 nasm -f elf incrementor.asm
