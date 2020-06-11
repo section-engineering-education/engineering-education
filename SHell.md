@@ -32,7 +32,7 @@ You have looked at how a typical shell script looks like, now let's see how to e
 		
 		chmod +x filepath/filename.sh 
 3. Execute the file we can do it in the following ways. If you are using a GUI file navigation system, right-click on the file and click on `run` or `execute`. If you are using the terminal, `./filename.sh`  will execute the script (make sure you are in the correct directory!).
-[img](0.png)
+![img](0.png)
 Let's discuss shell scripting in a little more details
 
 
