@@ -33,23 +33,23 @@ You have looked at how a typical shell script looks like, now let's see how to e
 		chmod +x filepath/filename.sh 
 3. Execute the file we can do it in the following ways. If you are using a GUI file navigation system, right-click on the file and click on `run` or `execute`. If you are using the terminal, `./filename.sh`  will execute the script (make sure you are in the correct directory!).
 ![img](0.png)
+
 Let's discuss shell scripting in a little more details
 
 
 
-<!Spell Check Completed>
 
 
 ## Variables
 
-Variables in shell scripting are similar to variables in general programming languages, they are used as a pointer to the actual data. Variables do not have to be declared, as compared to programming languages like C, but if you try to read from an *undeclared*variable then you will not get intended results.
+Variables in shell scripting are similar to variables in general programming languages, they are used as a pointer to the actual data. Variables do not have to be declared, as compared to programming languages like C, but if you try to read from an *undeclared* variable then you will not get intended results.
 
 	my_name="Rohan Reddy"
 	echo $my_name
 Naming Conventions of variables
 1. All caps and underscores for exported variables and constants, when they are shared across multiple scripts. Ex: `JOB_ID`, `PROCESS_NAME`
 2. All lowercase and underscores for all variables that are scoped to a single script. Ex: `max_amount` , `i`.
-3. Use leading underscore for private variables and functions, can be used where functions share the same variables without clashing with similary named variables in the code. Ex: `_debug
+3. Use leading underscore for private variables and functions, can be used where functions share the same variables without clashing with similarly named variables in the code. Ex: `_debug
 
 **When we are declaring variables, make sure there are no spaces before and after `=` , `a=12` is correct `a = 12` throws an error**.
 
@@ -66,7 +66,7 @@ Naming Conventions of variables
 ## Control-flow Constructs
 
 ### If-else statements
-Useful for decision making, we can use it like a typical if-else ladder and use nested if-else statements, similar to programming languages.
+Useful for decision making, we can use it as a typical if-else ladder and use nested if-else statements, similar to programming languages.
 	
 Simple If statement
 	
@@ -173,7 +173,7 @@ We can loop over a range of numbers, loop over an array of numbers or loop over 
 	done					
 
 
-**`break`** and **`continue`** keywords can be used with the same meaning as any programming languages. `break` is is used to stop the execution of a loop, and `continue` can be used to cause the loop to execute the next iteration.
+**`break`** and **`continue`** keywords can be used with the same meaning as any programming languages. `break` is used to stop the execution of a loop, and `continue` can be used to cause the loop to execute the next iteration.
 
 *We'll talk about more advanced topics like `sed` , `awk` and regular expressions in the next post.*
 
