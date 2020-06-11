@@ -3,9 +3,9 @@ layout: engineering-education
 status: publish
 published: true
 title: How Polygonal Graphics Are Made
-description: Polygons are used in computer graphics to compose images that are three-dimensional in appearance. Usually triangular, polygons arise when an object's surface is modeled, vertices are selected, and the object is rendered in a wire frame model.
+description: Polygons are used in computer graphics to compose images that are three-dimensional in appearance. Usually triangular polygons arise when an object's surface is modeled, vertices are selected, and the object is rendered in a wire frame model.
 author: Nadiv Gold Edelstein
-date: 2020-06-08T00:00:00-07:00
+date: 2020-06-10T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -23,24 +23,21 @@ These faces are constructed by vertices made up of points. We can visualize thes
 
 For example, here is a [wireframe of a sphere](https://playground.babylonjs.com/#T4TNWL).
 
-![Sphere Wireframe](https://i.imgur.com/gUnhTu4.png)
-
+![Sphere Wireframe](https://i.imgur.com/gUnhTu4.png)<br>
 *Wireframe of a sphere*
 
-To explore how changing the number of vertices changes the approximation of the solid, try experimenting with the number of [tessellations on this cylinder](https://playground.babylonjs.com/#VR8AHB). Change the value of `poly` up or down to see how creating more subdivisions in a shape increases quality. The higher the vertex count, the more memory the shape takes up, and the resources it needs to be operated on. This is why early movies and video games have models with much less detail than they do today.
+To explore how changing the number of vertices changes the approximation of the solid, try experimenting with the number of [tessellations on this cylinder](https://playground.babylonjs.com/#VR8AHB).
 
-![7 divs](https://i.imgur.com/ScRkwYv.png)
+Change the value of `poly` up or down to see how creating more subdivisions in a shape increases quality. The higher the vertex count, the more memory the shape takes up, and the more resources it needs to operate. This is why early movies and video games have models with much less detail than they do today.
 
+![7 divs](https://i.imgur.com/ScRkwYv.png)<br>
 *A cylinder with 7 subdivisions on the top face*
 
-![20_poly](https://i.imgur.com/jd9XR20.png)
-
+![20_poly](https://i.imgur.com/jd9XR20.png)<br>
 *A cylinder with 20 subdivisions on the top face*
 
-![100 divs](https://i.imgur.com/3KZLqAe.png)
-
+![100 divs](https://i.imgur.com/3KZLqAe.png)<br>
 *A cylinder with 100 subdivisions on the top face*
-
 
 ### Textures
 
@@ -66,7 +63,7 @@ box.subMeshes.push(new  BABYLON.SubMesh(0, 0, verticesCount, 0, 6, box));
 box.subMeshes.push(new  BABYLON.SubMesh(1, 1, verticesCount, 6, 6, box));
 ...
 ~~~
-![standard cube](https://i.imgur.com/r7p2oYC.png)
+![standard cube](https://i.imgur.com/r7p2oYC.png)<br>
 *The cube with the material applied to all faces*
 
 Try changing the `6` in the line to a `5`.
@@ -79,10 +76,11 @@ Try changing the `6` in the line to a `5`.
 *Cube with the 6 changed to a 5*
 
 ### Transformations
+Since the end result of most 3D graphics need to be displayed on a 2D screen from a fixed viewpoint, 3D models need to be able to be rotated and moved in respect to the viewer. This is done with transformation matrices. In essence, these matrices define how any given point would be rotated. This matrix is then multiplied by the matrix containing the vertices of the shape to define new positions for each point.
 
-Since the end result of most 3D graphics need to be displayed on a 2D screen from a fixed viewpoint, 3D models need to be able to be rotated and moved in respect to the viewer. This is done with transformation matrices. In essence, these matrices define how any given point would be rotated. This matrix is then multiplied by the matrix containing the vertices of the shape to define new positions for each point. Due to the ease of using transformation matrices, it is far easier to move and transform all 3D models around the viewer than to move the viewer themselves.  
+Due to the ease of using transformation matrices, it is far easier to move and transform all 3D models around the viewer than to move the viewer itself.  
 
-### Wrap Up
+### Wrap-Up
 Polygonal objects are the backbone of 3D graphics, and are crucial for computers to approximate and visualize our world. The construction of vertices, faces, and textures have endless applications, including film CGI, video games, architecture, and 3D printing.  
 
 ---
