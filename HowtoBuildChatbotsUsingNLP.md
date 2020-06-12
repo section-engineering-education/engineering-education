@@ -6,6 +6,8 @@ Natural Language Processing or NLP is a field of Artificial Intelligence that gi
 
 There are various types of chatbot and most of them have very specific use cases. But most chatbots are built on a very similar backend NLP. 
 
+![Chatbot](1_RD1s9xBIvd_ycJUnX12Tyw@2x.png)
+
 To build a NLP chatbot there are few basic steps to take before:
 
 ### Understand the business logic 
@@ -48,4 +50,6 @@ Planning your first chatbot, you should go through these stages:
 [How does NLP work](https://en.wikipedia.org/wiki/Natural_language_processing)
 
 [How to use Twillo API](https://www.twilio.com/docs/autopilot/guides/how-to-build-a-chatbot)
+
+[Things to consider before building a Chatbot](https://chatbotsmagazine.com/to-build-a-successful-chatbot-ask-these-5-questions-b7fe3776c74c)
 
