@@ -23,3 +23,11 @@ While there is no way to completely avoid becoming a target of a DoS attack, pro
 - Unusually slow network performance
 - Unavailability of a particular website
 - An inability to access any website.
+
+## Additional Resources
+
+- [Denial of Service Attacks](https://s2.ist.psu.edu/paper/DDoS-Chap-Gu-June-07.pdf) by Qijun Gu and Peng Liu
+
+## About the Author
+
+Richu Thomas a student of DPG Institute of Technology and Management, India. He is a Github Campus Expert and Leads Developers Student Club and Hack Club in his campus.Always Intrested in learning new things
