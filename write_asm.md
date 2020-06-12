@@ -10,7 +10,7 @@ In the first part, we talked about the basics of Assembly. Now, we want to write
 
 Before we get started, there's something we have to talk about. We wrote an infinite loop in the first tutorial, but we want to write a program that ends now. But we can't just go to the end of the program. We want to end *gracefully*.
 
-In Linux, you do this using a "system call". For our purposes, all of our system calls will tell the operating system to do something, such as printing to the console or exiting the program. To do a system interrupt, we use the `int 0x80` instruction. Then, depending on what is in the registers, something will happen. Here are two examples:
+In Linux, you do this using a "system call". For our purposes, all of our system calls will tell the operating system to do something, such as printing to the console or exiting the program. To do a system interrupt, we use the `int 0x80` instruction. Then, depending on what is in the registers, [something will happen](http://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/). Here are two examples:
 
 * **sys_exit** - If `eax` is set to 1, then a system exit will be performed. The exit code is whatever number is stored in `ebx`.
 * **sys_write** - If `eax` is 4 and `ebx` is 1, then the string with its pointer stored in `ecx` will be printed. The length of the string is in `edx`
@@ -43,7 +43,7 @@ section .data
 	message db "Hello, world!", 10, 0 ; the message to print
 ```
 
-The `10` is a newline character (equivalent to `\n` in traditional programming languages) and the `0` is a null character (equivalent to `\0`).
+The [`10` is a newline character](http://www.asciitable.com/) (equivalent to `\n` in traditional programming languages) and the `0` is a null character (equivalent to `\0`).
 
 One down, one to go. Now we need the `len` constant. We could just say `15`, but what if we have to change it later? Assembly has some syntactical sugar that can help us define our `len` constant.
 
@@ -55,7 +55,7 @@ There's a lot of [cleverness](https://stackoverflow.com/a/20411716/12195838) in 
 
 ## Fibonacci
 
-Ok, so enough with the boring stuff. Let's do something interesting. Let's print out the first forty Fibonacci numbers. If for some reason, you still don't know what fibonacci numbers are, the first two are zero and one. To get the next Fibonacci number, you just add the last two fibonaccci numbers together, like so:
+Ok, so enough with the boring stuff. Let's do something interesting. Let's print out the first forty Fibonacci numbers. If for some reason, you still don't know what [fibonacci numbers](https://www.mathsisfun.com/numbers/fibonacci-sequence.html) are, the first two are zero and one. To get the next Fibonacci number, you just add the last two fibonaccci numbers together, like so:
 
 `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...`
 
