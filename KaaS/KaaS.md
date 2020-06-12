@@ -6,19 +6,24 @@ All the major cloud service providers offer managed [Kubernetes](https://kuberne
 This article reviews the Kubernetes offerings from the three providers: Amazon Elastic Kubernetes Service (EKS)  from Amazon Web Services (AWS), Azure Kubernetes Service (AKS) from Microsoft Azure, and Google Kubernetes Engine (GKE) from Google Cloud. When selecting which hosted Kubernetes offering is best for you, you have to look beyond just price. Additional considerations like scalability, standardization, update frequency, recovery, and whether or not a service mesh is included are all critical to making the best decision.
 
 ### [Amazon Web Services’ Elastic Kubernetes Services](https://aws.amazon.com/eks/)
+
 ![logo](https://github.com/gagan3012/engineering-education/blob/master/KaaS/263-2635408_amazon-eks-logo-amazon-eks.png)
 
-Elastic Kubernetes Services (EKS) is one of the managed container offerings that are available on AWS, and is the least integrated offering as far as interacting with other AWS services like CI/CD pipelines. Elastic Container Service (ECS) that preceded EKS and Fargate are more preferred offerings within the AWS ecosystem; but as EKS is based on Kubernetes, most everything you will need to connect to it will work, as the industry is moving towards supporting Kubernetes as a deployment target for applications and data source for logs and application performance metrics. EKS is a good choice if you already have a large AWS footprint and are either experimenting with Kubernetes or want to migrate workloads from Kubernetes on other clouds.
+[Elastic Kubernetes Services (EKS)](https://aws.amazon.com/eks/) is one of the managed container offerings that are available on AWS, and is the least integrated offering as far as interacting with other AWS services like CI/CD pipelines. Elastic Container Service (ECS) that preceded EKS and Fargate are more preferred offerings within the AWS ecosystem; but as EKS is based on Kubernetes, most everything you will need to connect to it will work, as the industry is moving towards supporting Kubernetes as a deployment target for applications and data source for logs and application performance metrics. EKS is a good choice if you already have a large AWS footprint and are either experimenting with Kubernetes or want to migrate workloads from Kubernetes on other clouds.
 ### [Google Cloud Platform Kubernetes Engine](https://cloud.google.com/kubernetes-engine)
 
 ![logo](https://github.com/gagan3012/engineering-education/blob/master/KaaS/download.png)
 
-The Google Cloud Platform (GCP) entry in the hosted Kubneretes space is Google Kubernetes Engine (GKE). GKE is the most resilient and well-rounded Kubernetes offering when compared to AKS and EKS. It has the highest SLA for uptime (see table below) and is the only one with a marketplace to deploy applications from. It has support for the Istio service mesh, and gvisor for an extra layer of security between running containers. It also has an on-premises offering in development as part of Google’s Anthos offering for hybrid/multi cloud environments on dedicated hardware.
+The Google Cloud Platform (GCP) entry in the hosted Kubneretes space is [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine). GKE is the most resilient and well-rounded Kubernetes offering when compared to AKS and EKS. It has the highest SLA for uptime (see table below) and is the only one with a marketplace to deploy applications from. It has support for the Istio service mesh, and gvisor for an extra layer of security between running containers. It also has an on-premises offering in development as part of Google’s Anthos offering for hybrid/multi cloud environments on dedicated hardware.
 ### [Microsoft Azure Kubernetes Service](https://azure.microsoft.com/en-in/services/kubernetes-service/#:~:text=Azure%20Kubernetes%20Service%20(AKS)%20offers,and%20scale%20applications%20with%20confidence.)
 
 ![logo](https://github.com/gagan3012/engineering-education/blob/master/KaaS/image.png)
 
-AKS is the Microsoft developed Kubernetes offering that runs on Azure Public Cloud, Government Cloud, and even Azure Stack for on-premises. It is deeply integrated with the rest of the Microsoft cloud services and has managed worker nodes (unlike EKS). Like most things Microsoft does, it is definitely best-of-breed when it comes to seamless integration with their cross-platform development tools, including VS Code and DevOps (formerly Visual Studio Team Services). If you have an established relationship with Microsoft, and no strong preference for another cloud, then AKS will fit your needs.
+[Azure Kubernetes Service](https://azure.microsoft.com/en-in/services/kubernetes-service/#:~:text=Azure%20Kubernetes%20Service%20(AKS)%20offers,and%20scale%20applications%20with%20confidence.)
+is the Microsoft developed Kubernetes offering that runs on Azure Public Cloud, Government Cloud, and even Azure Stack for on-premises. It is deeply integrated with the rest of the Microsoft cloud services and has managed worker nodes (unlike EKS). Like most things Microsoft does, it is definitely best-of-breed when it comes to seamless integration with their cross-platform development tools, including VS Code and DevOps (formerly Visual Studio Team Services). If you have an established relationship with Microsoft, and no strong preference for another cloud, then AKS will fit your needs.
+
+### Technical Components
+
 | Measure|EKS|GKE|AKS|
 |---------:|---:|---:|---:|
 | Year Released	|2018|	2014|	2017|
