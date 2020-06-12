@@ -13,7 +13,7 @@ To build a NLP chatbot there are few basic steps to take:
 ### Understand the business logic 
 This step is important because it helps the developer understand what the client is looking for. To analyze business logic, a team usually needs to conduct a discovery phase, study the competitive market, determine the core features of your future chatbot and, finally, create the business logic of your future product. During this step it is recommended to note down all the client interactions and client replies that can make our system smarter. 
 
-### Technological Stack
+### Understanding the technological stack
 Depending on the use case of chatbot we must decide the tech stack to be used. We need to decide how and where it will be implemented. Whether it is a text-based one or a voice-based one. If you would like to create a voice chatbot, it is better to use the Twilio platform as a base channel. On the other hand, when creating text chatbots, Telegram, Messenger, or Webchat are the right channels to work with.
 	
 The most common tech stack used is:
