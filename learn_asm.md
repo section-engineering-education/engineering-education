@@ -4,13 +4,13 @@ Description: This article will be an introduction for people who are learning As
 
 ## What is Assembly?
 
-In the beginning, there were punch cards. Eventually, someone got the bright idea to have the computer be programmable. Just type in the hexadecimal code and let it run. The problem is that it's very difficult to look at hexadecimal and decipher what it does.
+[In the beginning, there were punch cards](https://www.youtube.com/watch?v=nwDq4adJwzM). Eventually, someone got the bright idea to have the computer be programmable. Just type in the hexadecimal code and let it run. The problem is that it's very difficult to look at hexadecimal and decipher what it does.
 
 Enter: Assembly
 
-Assembly is still really down to the metal, where every detail of how the computer does its task must be specified. The difference is that Assembly makes these instructions human-readable.
+[Assembly is still really down to the metal](https://en.wikipedia.org/wiki/Assembly_language), where every detail of how the computer does its task must be specified. The difference is that Assembly makes these instructions human-readable.
 
-The next step above that would be to use a programming language, such as C, Java, or Typescript. This is certainly easier than using Assembly, but to this day, there are still tasks which systems programming languages cannot accomplish:
+The next step above that would be to use a programming language, such as C, Java, or Typescript. This is certainly easier than using Assembly, but to this day, [there are still tasks which systems programming languages cannot accomplish](https://en.wikipedia.org/wiki/Assembly_language#Current_usage):
 
 * Aggressive optimization (C and Rust are already very fast, but they're not perfect)
 * Assembly makes it easier to calculate exactly how long a program will take to run
@@ -28,7 +28,7 @@ Assembly isn't the same on all systems, unfortunately. Different computers need 
 
 ## Sections
 
-Executable programs can be divided into three sections (there are more you can use, but this tutorial will stick to three). Here they are:
+Executable programs [can be divided into three sections](https://www.tutorialspoint.com/assembly_programming/assembly_basic_syntax.htm) ([you can use more](https://www.nasm.us/doc/nasmdoc7.html#section-7.1.3), but this tutorial will stick to three). Here they are:
 
 * **text** - This section contains the actual instructions that your code will run
 * **bss** - All of the global variables are stored here. Any `static` variable is placed here
@@ -57,7 +57,7 @@ mnemonic [operands] [;comment]
 
 Let's break it down.
 
-The mnemonic is the actual to run. Some operations take one parameter. Some take multiple. There are many instructions in Assembly, but we'll focus on the following ones.
+The mnemonic is the actual to run. Some operations take one parameter. Some take multiple. There are [many instructions](https://en.wikipedia.org/wiki/X86_instruction_listings) in Assembly, but we'll focus on the following ones.
 
 | Mnemonic | Operand 1 | Operand 2 | Description                                                |
 | -------- | --------- | --------- | ---------------------------------------------------------- |
@@ -179,7 +179,7 @@ Did you know that your CPU has built-in memory? :astonished: Registers are memor
 
 > So why don't we just use registers for everything?
 
-Here's the problem. We don't have very many registers. This tutorial will only use four. This will become a problem later, but as long as we need less than four variables, this should work for us. We'll use four: `eax`, `ebx`, `ecx`, and `edx`. We'll use these four because it's very easy to remember them. They all follow the format of `e_x`. Each of these registers can store one 32-bit number.
+Here's the problem. [We don't have very many registers](https://www.tutorialspoint.com/assembly_programming/assembly_registers.htm). This tutorial will only use four. This will become a problem later, but as long as we need less than four variables, this should work for us. We'll use four: `eax`, `ebx`, `ecx`, and `edx`. We'll use these four because it's very easy to remember them. They all follow the format of `e_x`. Each of these registers can store one 32-bit number.
 
 We can rewrite our infinite loop from before to use a register
 
