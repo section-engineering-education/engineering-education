@@ -42,3 +42,12 @@ AKS is the Microsoft developed Kubernetes offering that runs on Azure Public Clo
 
 ### Conclusion 
 Kubernetes is now an integral part of the technology landscape and is expected to be around for a long time as part of any cloud infrastructure. So regardless if you are just getting started on GKE, leveraging your Microsoft Enterprise Agreement to get better pricing and support on Azure, or want to make transitioning on-premises applications to the cloud easier with EKS on Amazon, there is a certified hosted Kubernetes offering that will meet your needs.
+
+### References 
+[Kubernetes](https://kubernetes.io/)
+
+[Amazon EKS](https://aws.amazon.com/eks/)
+
+[Microsoft AKS](https://azure.microsoft.com/en-in/services/kubernetes-service/#:~:text=Azure%20Kubernetes%20Service%20(AKS)%20offers,and%20scale%20applications%20with%20confidence.)
+
+[Google EKS](https://cloud.google.com/kubernetes-engine)
