@@ -40,7 +40,12 @@ Planning your first chatbot, you should go through these stages:
 
 ### References
 [A Comprehensive Guide To Improving Your Chatbot Using NLP](https://www.enterprisebotmanager.com/improving-your-chatbot-using-nlp/)
+
 [ChatBots -Wikipedia](https://en.wikipedia.org/wiki/Chatbot)
-[NLP Chatbots](https://towardsdatascience.com/how-to-build-a-chatbot-a-lesson-in-nlp-d0df588afa4b)
-[NLP](https://en.wikipedia.org/wiki/Natural_language_processing)
-[Twillo API](https://www.twilio.com/docs/autopilot/guides/how-to-build-a-chatbot)
+
+[BAsics of chatbots built using NLP](https://towardsdatascience.com/how-to-build-a-chatbot-a-lesson-in-nlp-d0df588afa4b)
+
+[How does NLP work](https://en.wikipedia.org/wiki/Natural_language_processing)
+
+[How to use Twillo API](https://www.twilio.com/docs/autopilot/guides/how-to-build-a-chatbot)
+
