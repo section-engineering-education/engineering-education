@@ -86,9 +86,9 @@ I have filled a table for each of these cases labeling which erroneous bit leads
 <br/>
 From this, we can create a decoding process by checking these eight cases to determine where in the encoded message the error occurred. Let's work through a quick example to show how this process looks.  Say we want to transmit the message `1011`. First, we need to calculate the parity bits:
 
-$$x_1=m_1 \oplus m_2 \oplus m_4$$
-$$x_2=m_1 \oplus m_3 \oplus m_4$$
-$$x_3=m_2 \oplus m_3 \oplus m_4$$
+$$x_1=1 \oplus 0 \oplus 1=0$$
+$$x_2=1 \oplus 1 \oplus 1=1$$
+$$x_3=0 \oplus 1 \oplus 1=0$$
 
 So our encoded message is then `1011010`. When transmitting the encoded message, the third bit, $m_3$, experiences an error and flips resulting in the received message `1001010`. We can recalculate the parity bits and find, $x_1=0$, $x_2=0$, and $x_3=1$. Using the table provided above, we can determine that the third bit has an error as the parity bits $x_2$ and $x_3$ are incorrect.
 
