@@ -43,7 +43,7 @@ Planning your first chatbot, you should go through these stages:
 
 [ChatBots -Wikipedia](https://en.wikipedia.org/wiki/Chatbot)
 
-[BAsics of chatbots built using NLP](https://towardsdatascience.com/how-to-build-a-chatbot-a-lesson-in-nlp-d0df588afa4b)
+[Basics of chatbots built using NLP](https://towardsdatascience.com/how-to-build-a-chatbot-a-lesson-in-nlp-d0df588afa4b)
 
 [How does NLP work](https://en.wikipedia.org/wiki/Natural_language_processing)
 
