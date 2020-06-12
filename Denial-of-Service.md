@@ -27,6 +27,10 @@ While there is no way to completely avoid becoming a target of a DoS attack, pro
 ## Additional Resources
 
 - [Denial of Service Attacks](https://s2.ist.psu.edu/paper/DDoS-Chap-Gu-June-07.pdf) by Qijun Gu and Peng Liu
+- [Smurf Attack](https://usa.kaspersky.com/resource-center/definitions/what-is-a-smurf-attack)
+- [SYN Flood Attack](https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/)
+- [UDP Flood Attack](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/)
+- [IPFragmentation Attack](https://www.netscout.com/what-is-ddos/ip-icmp-fragmentation)
 
 ## About the Author
 
