@@ -37,3 +37,10 @@ Planning your first chatbot, you should go through these stages:
 3) Choose the development tools
 4) Build and export your model
 5) Test and maintain your chatbot 
+
+### References
+[A Comprehensive Guide To Improving Your Chatbot Using NLP](https://www.enterprisebotmanager.com/improving-your-chatbot-using-nlp/)
+[ChatBots -Wikipedia](https://en.wikipedia.org/wiki/Chatbot)
+[NLP Chatbots](https://towardsdatascience.com/how-to-build-a-chatbot-a-lesson-in-nlp-d0df588afa4b)
+[NLP](https://en.wikipedia.org/wiki/Natural_language_processing)
+[Twillo API](https://www.twilio.com/docs/autopilot/guides/how-to-build-a-chatbot)
