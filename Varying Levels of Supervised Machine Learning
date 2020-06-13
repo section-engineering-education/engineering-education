@@ -1,0 +1,23 @@
+# Varying Levels of Supervised Machine Learning
+
+Machine learning is a rapidly growing field in automation and being applied to several large-scale operations. As it grows, it can be difficult to be able to apply human oversight to every operation. It will prove increasingly important that these machines be capable of transforming independently and have unsupervised learning.  
+
+## Supervised Learning
+
+One of the first and simplest methods for machine learning is supervised learning. Machine learning is typically introduced with this method to train algorithms to recognize certain patterns and outcomes. In supervised learning, the whole labeled data set is presented to the machine with the outcome so that the machine can view the progression of the data. when it comes to training with new data sets the supervised learning module will use the same patterns that it was trained with to calculate the desired outcome. The two main categories of supervised learning are classification and regression. 
+
+Classification would be the linear organization of data into separate categories, such as cars that are free of damage and cars that are wrecked. Machine learning is also capable of multi-classification such as noting where on the car the damage would be located. Regression uses statistical data to predict the correlation between independent and dependent points. Supervised testing utilizes these linear functions in areas such as test scores, vector calculations, and other simplistic equation models.  
+
+## Unsupervised learning
+
+Where supervised learning is using all labeled parts, unsupervised learning starts from no labeled data; unsupervised machine learning is independent in the way it organizes data. In some cases, the machine will use different organization methods with the same data set. 
+
+The machine will first need to define the information, find what information is applicable, then integrate the information into the decision-making process for better efficiency. To perform this analysis, it is typically done in two different fashions: clustering and dimensionality reduction.
+
+Clustering [reference] is the process of finding correlations between data points and identifying these relations to certain groups or clusters. Clustering is simple in its method, but capable of handling large amounts of data. There are many methods of clustering that can be utilized and is a topic that should be an independent search. The main takeaway is that the machine may look at each independent data point and group them based on proximity to other points, or it may look at the whole data set and then break it down to independent clusters. Dimensionality reduction is the process of reducing the data to the most helpful form. In a large data set, there may exist points that can be considered noise or interference and may be resolved from the set to provide better clarity of the information.
+
+When unsupervised learning is applied it can make associations that can be introduced to finding more correlations as a base for calculating the probability of certain events. This comes especially helpful when it comes to things like anomaly detection or finding the demand rate for a new purchase item. In comparison, unsupervised learning does not produce accurate information for sorting and could require a bit more processing time.
+
+## Semi-Supervised Learning
+
+In a way to combat the high price of labeling data and the time cost of processing data for unlabeled information, it can be helpful to use a hybrid of these two learning methods to reduce the weaknesses of each. Semi-supervised learning is a provision to the machine where there is partial labeling of the data, which can give it a boost in finding the outcome. This could appear in areas such as audio files translated by a user, or protein classification where a scientist directs the learning process to look in certain areas.
