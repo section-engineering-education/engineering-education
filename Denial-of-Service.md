@@ -3,11 +3,11 @@ It is a type of cyber attack which achieve their goal by flooding a stream of pa
 
 ## Common types of attacks 
 
-- Smurf Attack - An assault on a network that floods it with excessive messages in order to impede normal traffic. It is accomplished by sending ping requests (ICMP echo requests) to a broadcast address on the target network or an intermediate network. The return address is spoofed to the victim's address. Since a broadcast address is picked up by all nodes on the subnet, it functions like an amplifier, generating hundreds of responses from one request and eventually causing a traffic overload.
-- SYN Flood - It is a type of TCP State-Exhaustion Attack  that attempts to consume the connection state tables present in many infrastructure components, such as load balancers, firewalls, Intrusion Prevention Systems (IPS), and the application servers themselves. This type of attack can take down even high-capacity devices capable of maintaining millions of connections.
-- UDP Flood Attack - Large number of User Datagram Protocol (UDP) packets are sent to a targeted server with the aim of overwhelming that device’s ability to process and respond. The firewall protecting the targeted server can also become exhausted as a result of UDP flooding, resulting in a denial-of-service to legitimate traffic.
+- [Smurf Attack](https://usa.kaspersky.com/resource-center/definitions/what-is-a-smurf-attack) - An assault on a network that floods it with excessive messages in order to impede normal traffic. It is accomplished by sending ping requests (ICMP echo requests) to a broadcast address on the target network or an intermediate network. The return address is spoofed to the victim's address. Since a broadcast address is picked up by all nodes on the subnet, it functions like an amplifier, generating hundreds of responses from one request and eventually causing a traffic overload.
+- [SYN Flood Attack](https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/) - It is a type of TCP State-Exhaustion Attack  that attempts to consume the connection state tables present in many infrastructure components, such as load balancers, firewalls, Intrusion Prevention Systems (IPS), and the application servers themselves. This type of attack can take down even high-capacity devices capable of maintaining millions of connections.
+- [UDP Flood Attack](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/) - Large number of User Datagram Protocol (UDP) packets are sent to a targeted server with the aim of overwhelming that device’s ability to process and respond. The firewall protecting the targeted server can also become exhausted as a result of UDP flooding, resulting in a denial-of-service to legitimate traffic.
 - Plashing - It is done by causing permanent damage to the system hardware by sending fraudulent updates to the hardware thereby making them completely unusable. The only solution is to re-install the hardware.
-- Fragmentation attacks - It fights against the reassembling ability of the target. Numerous fragmented packets are sent to the target, making it difficult for the target to reassemble them; thereby, denying access to valid clients.
+- [IPFragmentation Attack](https://www.netscout.com/what-is-ddos/ip-icmp-fragmentation) - It fights against the reassembling ability of the target. Numerous fragmented packets are sent to the target, making it difficult for the target to reassemble them; thereby, denying access to valid clients.
 
 ## How do you avoid being part of the problem?
 
@@ -27,11 +27,7 @@ While there is no way to completely avoid becoming a target of a DoS attack, pro
 ## Additional Resources
 
 - [Denial of Service Attacks](https://s2.ist.psu.edu/paper/DDoS-Chap-Gu-June-07.pdf) by Qijun Gu and Peng Liu
-- [Smurf Attack](https://usa.kaspersky.com/resource-center/definitions/what-is-a-smurf-attack)
-- [SYN Flood Attack](https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/)
-- [UDP Flood Attack](https://www.cloudflare.com/learning/ddos/udp-flood-ddos-attack/)
-- [IPFragmentation Attack](https://www.netscout.com/what-is-ddos/ip-icmp-fragmentation)
-
+- [Distributed Denial of Service](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/)
 ## About the Author
 
 Richu Thomas a student of DPG Institute of Technology and Management, India. He is a Github Campus Expert and Leads Developers Student Club and Hack Club in his campus.Always Intrested in learning new things
