@@ -17,7 +17,7 @@ The Data is received from the Server or a Cloud based Web-Server. So, the client
 So the Data which we get from the server has a format which can be JSON, XML or Both. The Data is formatted because we don't want the response to be an unstructured HTML Web Page. 
 
 # Principles of REST API.
-Well, there are six ground principles laid down by Dr. Fielding who was the one to define the REST API design in 2000. Below are the six guiding principles of REST:
+Well, there are six ground principles laid down by Dr. Fielding who was the one to define the REST API design in 2000. Below are the six guiding principles of [REST](https://en.wikipedia.org/wiki/Representational_state_transfer):
 # Stateless
 The requests sent from a client to a server will contain all the required information to make the server understand the requests sent from the client. This can be either a part of URL,  query-string parameters, body, or even headers. The URL is used to uniquely identify the resource and the body holds the state of the requesting resource. Once the server processes the request, a response is sent to the client through body, status or headers
 # Client-Server
