@@ -4,7 +4,7 @@ You must have an account created with Github already.
 
 In order to upload your prepared .md file to Github, first, click the **Fork** option in the upper right-hand corner (pictured below).
 
-![Fork Image](section-io/engineering-education/fork_image.png)
+![Fork Image](fork_image.png)
 
 When you click the **Fork** button, you will see a screen similar to the one below indicating you are copying over to your own repository.
 
