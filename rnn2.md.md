@@ -9,7 +9,8 @@ RNNs theoretically should be able to retain information about inputs seen in the
 The **_Long Short Term Memory_** networks are a modified version of recurrent neural networks. It adds a way for information to be carried across many timesteps; we can think of this as a conveyer belt, one which contains information and moves through different timesteps, information from the sequence can jump onto the conveyer belt at any point and unnecessary information can jump off. LSTM was introduced in [this book](https://www.mitpressjournals.org/doi/abs/10.1162/neco.1997.9.8.1735#.WIxuWvErJnw) which you can refer for more information.
 
 ### Architecture of LSTM
-[img](img)
+![img](10.png)
+
 $h_{t}$  is the short term memory.
 $C_{t}$ is the long term memory. In some books it is mentioned as $Cell(t)$ or $Carry(t)$.
 
@@ -37,11 +38,15 @@ term state is copied and passed through the tanh function, and then the result i
 ## GRU
 
 **_Gated Recurrent Unit_**  	is a simplified version of the LSTM cell, and it performs just as well. 
-[img](img2)
+
+![img](11.png)
+
 In lstm we had two state vectors $h_{t}$ and $c_{t}$, in this both are merged into a single vector $h_{t}$. A single gate controller controls both forget gate and input gate. If that gate controller outputs 1, the input gate is open and forget gate is closed. If it outputs a 0, the opposite happens. Whenever a memory must be stored, the location where it will be stored is erased first.
 The full state vector is output at every time step. However, there is a new gate controller that controls which part of the previous state will be shown to the main layer.
 
-The equations for the above are [img](img).
+The equations for the above are 
+
+![img](12.png).
 
 For more detailed explanation on the difference between LSTM and GRU read this paper [Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling](https://arxiv.org/pdf/1412.3555v1.pdf).
 
