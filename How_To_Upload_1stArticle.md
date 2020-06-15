@@ -40,7 +40,7 @@ This will take you to a screen similar to the one below. On this screen, click *
 
 Once you click **Create pull request**, it will open a request for you, which should look something like this:
 
-![Comparing Changes Image](openPR_image2.png)
+![OpenPR_image](openPR_image2.png)
 
 Add a commit subject and message before clicking the final **Create pull request** button (green arrow).
 
