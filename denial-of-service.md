@@ -14,6 +14,8 @@ images:
     alt: stop sign example denial of service
 ---
 It is a type of cyber attack which achieves their goal by flooding a stream of packets to the victim that swamps his/her network or processing capacity denying access to the legitimate user. It can cost both time and money because its resources and services are inaccessible.
+This article will mainly focus on network-based Denial Of Service. It should also be noted that there are other kinds, e.g. ReDoS.
+Anything that can overload the available resources, or cause an application to crash, and then impacts availability is a Denial Of Service.
 
 <!--more-->
 
@@ -27,8 +29,9 @@ It is a type of cyber attack which achieves their goal by flooding a stream of p
 ### How do you avoid being part of the problem?
 While there is no way to completely avoid becoming a target of a DoS attack, proactive steps can be taken to reduce the effects of an attack on their network.
 
-- Contact your Internet Service provider - If you find your company is under attack, you should notify your Internet Service Provider as soon as possible to determine if your traffic can be rerouted. Having a backup ISP is a good idea, too. Also, consider services that can disperse the massive DoS traffic among a network of servers. That can help render an attack ineffective.
-- Investigate black hole routing - Internet service providers can use “black hole routing.” It directs excessive traffic into a null route, sometimes referred to as a black hole. This can help prevent the targeted website or network from crashing. The drawback is that both legitimate and illegitimate traffic is rerouted in the same way.
+- Contact your Hosting Provider, Cloud Provider, or Internet Service Provider - If you find your company is under attack, you should notify your Internet Service Provider as soon as possible to determine if your traffic can be rerouted. Having a backup ISP is a good idea, too. Also, consider services that can disperse the massive DoS traffic among a network of servers. That can help render an attack ineffective.
+- Investigate black hole routing - Providers can use “black hole routing.” It directs excessive traffic into a null route, sometimes referred to as a black hole. This can help prevent the targeted website or network from crashing. The drawback is that both legitimate and illegitimate traffic is rerouted in the same way.
+- For more granular control than just black-holing, a [scrubbing service](https://security.radware.com/ddos-knowledge-center/ddospedia/scrubbing-center/) is another option.
 - Configure firewalls and routers - Firewalls and routers should be configured to reject bogus traffic. Remember to keep your routers and firewalls updated with the latest security patches.
 - Consider front-end hardware - Application front-end hardware that’s integrated into the network before traffic reaches a server can help analyze and screen data packets. The hardware classifies the data as a priority, regular, or dangerous as they enter a system. It can also help block threatening data.
 
