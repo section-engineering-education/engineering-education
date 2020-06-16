@@ -50,7 +50,7 @@ The equations for the above are
 
 For more detailed explanation on the difference between LSTM and GRU read this paper [Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling](https://arxiv.org/pdf/1412.3555v1.pdf).
 
-I am also learning about this topic as I write this article, I will be pushing code to [my github](https://github.com/rohanreddych) as I experiment with RNNs, check out if you are interested.
+I am also learning about this topic as I write this article, I will be pushing code to [my github](https://github.com/rohanreddych/stuff) as I experiment with RNNs, check out if you are interested.
 
 
 ### References and Resources
