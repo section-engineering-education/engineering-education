@@ -150,7 +150,7 @@ Now, we need to obtain our ```firebase_CONFIG``` variable from the console. To d
 ### Write the Cloud Function
 Now comes the most integral part. Let’s write the Cloud Function.
 
-```JS
+```javascript
 const admin = require('firebase-admin');
 admin.initializeApp({
     credential: admin.credential.cert({
@@ -190,7 +190,7 @@ The function, `storeFormDetails` is our main serverless function that is going t
 ### package.json
 Cloud Functions uses a package.json file to identify the dependencies of your code and the versions those dependencies need to use. So we also need a package.json file. Create an empty package.json file in the same folder as your index.js file, and paste the following code.
 
-```JSON
+```json
 {
     "name": "firestore-function",
     "version": "1.0.0",
@@ -216,20 +216,26 @@ Deploying Cloud Functions can be done through three ways
 
 We’re gonna deploy it through the Cloud CLI. Fire up the terminal/PowerShell and cd into the directory where the index.js and package.json is located.
 
-`$ gcloud beta functions deploy storeFormDetails --runtime nodejs10 --trigger-http`
+```bash
+$ gcloud beta functions deploy storeFormDetails --runtime nodejs10 --trigger-http
+```
 
 Ensure the function is deployed correctly
 
-`$ gcloud beta functions list
+```bash
+$ gcloud beta functions list
 NAME 		 STATUS  TRIGGER 	REGION
-storeFormDetails ACTIVE  HTTP Trigger    us-central1`
+storeFormDetails ACTIVE  HTTP Trigger    us-central1
+```
 
 This function is a HTTP Trigger based function, which means that it is triggered by sending a HTTP request. We need the endpoint for the function, so obtain that by using this command.
 
 
-`$ gcloud beta functions describe sendFormDetails`
+```bash
+$ gcloud beta functions describe sendFormDetails
+```
 
-```HTML
+```bash
 availableMemoryMb: 256
 entryPoint: storeFormDetails
 httpsTrigger:url: https://us-central1-<YOUR_PROJECT_ID>.cloudfunctions.net/storeFormDetails
@@ -256,33 +262,3 @@ So we have successfully written and deployed a Cloud Function! We’ve seen an o
 
 #### About the Author
 <img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/saiharsha-balasubramaniam.jpg">Saiharsha Balasubramaniam is a Computer Science Undergrad at Amrita Vishwa Vidyapeetham University, India. He is also a passionate software developer and an avid researcher. He designs and develops aesthetic websites, and loves blockchain technology. While he is not programming, he usually binges Netflix or can be seen reading a book.
-
-<!-- MathJax script -->
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-           extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-    });
-    MathJax.Hub.Queue(function() {
-      // Fix <code> tags after MathJax finishes running. This is a
-      // hack to overcome a shortcoming of Markdown. Discussion at
-      // https://github.com/mojombo/jekyll/issues/199
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i = 0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-
-    MathJax.Hub.Config({
-    // Autonumbering by mathjax
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-  </script>
