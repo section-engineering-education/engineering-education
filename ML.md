@@ -93,4 +93,5 @@ When to use Machine Learning? when there are no explict rules for solving the pr
 ### References
 
 [1]. [http://cs229.stanford.edu/](http://cs229.stanford.edu/)
+
 [2]. [https://medium.com/@randylaosat/a-beginners-guide-to-machine-learning-dfadc19f6caf](https://medium.com/@randylaosat/a-beginners-guide-to-machine-learning-dfadc19f6caf)
