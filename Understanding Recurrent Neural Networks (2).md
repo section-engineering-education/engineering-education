@@ -21,7 +21,7 @@ $$y_{t}=softmax(W_{y}h_{t}) -(3)$$
 (3) To make a prediction, we apply to `softmax` function to weighted current hidden state.
 
 **Loss Function** the loss function $L$ of all time steps is defined based on the loss at every time step as follows
-$$L(\hat y, y) = \Sigma_{t=1}^{Ty} L(\hat y^{<T>}, y^{<T>})$$
+$$L(\hat y, y) = \Sigma_{t=1}^{Ty} L(\hat y^{t}, y^{t})$$
     
 **Backpropagation through time** RNNs also follow backpropagation but are slightly tricky. Backpropagation is done at each point in time. At each timestep T the derivative of loss function $L$ wrt weight matrix $W$ is expressed as
 $$\frac{\delta L^{(t)}}{\delta W} = \sum_{t=1}^{T} \frac{\delta L^{T}}{\delta W}|t$$
