@@ -1,4 +1,4 @@
-# DDoS Attacks: Botnets
+# DDoS Attacks: Using Botnets as a Tool
 
 A DDoS attack or [Distributed Denial of Service attack](https://en.wikipedia.org/wiki/Denial-of-service_attack#Distributed_DoS_attack) is a type of [Denial of Service (DoS)](https://en.wikipedia.org/wiki/Denial-of-service_attack) attack where the incoming traffic flooding the victim originates from many different sources. This effectively makes it impossible to stop the attack simply by blocking a single source.
 Since DDoS attack uses thousands, or hundreds of thousands, of sources to flood its target its power is greater than a DoS attack by quite a few orders of magnitude. 
