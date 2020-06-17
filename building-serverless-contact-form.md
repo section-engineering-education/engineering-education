@@ -15,21 +15,20 @@ images:
 ---
 In this post, let’s get a quick hands-on and take a look at how to write and deploy a serverless function.
 
-What is serverless architecture? It essentially means that you write a section of code for accomplishing a certain task, and deploy it on the cloud. The need for server software and hardware management is eliminated and the cloud service provider takes care of it.
-
-Fascinating isn’t it? Just write, deploy, and go! Popular serverless architecture offerings include Google Cloud Functions, AWS Lambda, and Azure Functions. It is even knows as FaaS, or **Functions as a Service**.
-
-Now, let’s get look at how we can use this amazing technology for our daily developer needs. We will be building a basic contact form and storing the form data in a database. Well, this usually requires the use of a node server or a remote Cloud Engine instance. But let’s add some serverless magic and make this easier.
+First off, what is serverless architecture? It essentially means that you write a snippet of code for accomplishing a certain task, and deploy it on the cloud. The need for server software and hardware management by you, as the developer, is eliminated and the cloud service provider takes care of it.
 <!--more-->
 
-### What we’ll be doing
-- Build a basic HTML form
-- Get those credentials
-- Write the Cloud Function
-- Install the Google Cloud SDK
+Fascinating, isn’t it? Just write, deploy, and go! Popular serverless architecture offerings include Google Cloud Functions, AWS Lambda, and Azure Functions. It is also known as Functions as a Service (FaaS).
+
+Now, let’s get look at how we can use this amazing technology for our daily developer needs. We will be building a basic contact form and storing the form data in a database. Well, this usually requires the use of a node server or a remote Cloud Engine instance. But let’s add some serverless magic and make this easier.
+
+### What we'll be doing
+- Building a basic HTML form
+- Getting those credentials
+- Writing the Cloud Function
+- Installing the Google Cloud SDK
 - Time to Deploy 🔥
 - Profit?!
-
 
 ### Building the form
 ```html
@@ -49,9 +48,7 @@ Now, let’s get look at how we can use this amazing technology for our daily de
                 <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
                 <!--Section description-->
                 <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to
-                    contact us
-                    directly. Our team will come back to you within
-                    a matter of hours to help you.</p>
+                    contact us directly. Our team will come back to you within a matter of hours to help you.</p>
                 <div class="row">
                     <!--Grid column-->
                     <div class="col-md-9 mb-md-0 mb-5">
@@ -128,24 +125,22 @@ Now, let’s get look at how we can use this amazing technology for our daily de
     </body>
 </html>
 ```
-If you’re still clueless, refer to the [Mozilla Developer Network docs](https://developer.mozilla.org/en-US/), they have really good documentation for HTML, CSS and JS.
+If you’re struggling to follow along with the above code, refer to the [Mozilla Developer Network docs](https://developer.mozilla.org/en-US/). They have really good documentation for HTML, CSS and JS.
 
-I’ve also used [Bootstrap](https://getbootstrap.com/) for this form for the simple styling and a touch of responsiveness.
+I’ve also used [Bootstrap](https://getbootstrap.com/) for this form for simple styling and a touch of responsiveness.
 
 ### Get those credentials
-Before venturing out to write our main function, we need some API Tokens and Keys from Google Cloud. We are going to do this in Firebase, which is a web and mobile development platform. We could do the same in Google Cloud Platform and even access services like Cloud Firestore and Cloud Functions from GCP, but Firebase is faster to get started and has a clean, aesthetic UI. 😉
+Before venturing out to write our main function, we need some API Tokens and Keys from Google Cloud. We are going to do this in [Firebase](https://firebase.google.com/), which is a web and mobile development platform. We could do the same in [Google Cloud Platform](https://cloud.google.com/) and even access services like Cloud Firestore and Cloud Functions from GCP, but I chose to use Firebase because it is faster to get started and has a clean, aesthetic UI. 😉
 
-We need to start up a new project in Firebase. Project in Firebase are Google Cloud Platform projects that use **Firebase** services. This means that — Billing and permissions for projects are shared across consoles. A project is like a container with a unique project ID assigned to it.
+First, we need to start up a new project in Firebase. Projects in Firebase are GCP projects that use **Firebase** services. This means that billing and permissions for projects are shared across consoles. A project is like a container with a unique project ID assigned to it.
 
-![Firebase, Dashboard](/assets/images/education/dashboard.jpg)
-
+![Firebase Dashboard](/assets/images/education/dashboard.jpeg)<br>
 Once you’ve started a new project, we need to obtain the API keys and tokens. On the left pane, click the **Settings** icon -> **Project Settings** and select **Service Accounts** tab.
 
-![Firebase, Settings](/assets/images/education/settings.png)
+![Firebase, Settings](/assets/images/education/settings.png)<br>
+Now, select **Node.js** and **Generate Private Key**, to generate the admin credentials private key in JavaScript. This private key is used to authenticate us as the admin of the project and give us various permissions. Download the generated private key and store it safely. We will need to import this file later while writing our Cloud Function.
 
-Now, select **Node.js** and **Generate Private Key**, to generate the admin credentials private key in JavaScript. This private key is used to authenticate us as the admin of the project and give us various permissions. Download the generated private key and store it safely. We would need to import this file later while writing our Cloud Function.
-
-Now, we need to obtain our ```firebase_CONFIG``` variable from the console. To do this, go to **Settings**, scroll down and you will find a snippet with your firebase config. Copy the ```databaseURL``` and type it down.
+Now, we need to obtain our `firebase_CONFIG` variable from the console. To do this, go to **Settings**, scroll down and you will find a snippet with your firebase config. Copy the `databaseURL` and store it for later use.
 
 ### Write the Cloud Function
 Now comes the most integral part. Let’s write the Cloud Function.
@@ -181,11 +176,14 @@ exports.storeFormDetails = (req, res) => {
 
 ### Explanation
 `admin.initializeApp()` → This initializes an instance of your Firebase App as an admin. It takes an object as an argument. We pass the private key and our databaseURL as params.
-*Note : Paste your private key and databaseURL in the indicated spots. Directly pasting the private key isn’t a good practice, since it is a really sensitive piece of information. We could also import it as a JSON file and then use it in our code.*
+*Note : Directly pasting the private key isn’t a good practice, since it is a really sensitive piece of information. We could also import it as a JSON file and then use it in our code.*
+
 `admin.firestore()` → Creates a Firestore instance to create in our app.
-The function, `storeFormDetails` is our main serverless function that is going to be triggered from our web form.
-*Important note here is that, Cloud Functions already has middleware like Express, so you can directly parse the request body to obtain your form data 😃*
-`db.collection(“formDetails”).add({})` → Creates a database document with an auto-generated ID and adds the passed JSON into it
+
+`storeFormDetails` → This is our main serverless function that is going to be triggered from our web form.
+*Important note here is that Cloud Functions already has middleware (like Express), so you can directly parse the request body to obtain your form data 😃*
+
+`db.collection(“formDetails”).add({})` → Creates a database document with an auto-generated ID and adds the passed JSON into it.
 
 ### package.json
 Cloud Functions uses a package.json file to identify the dependencies of your code and the versions those dependencies need to use. So we also need a package.json file. Create an empty package.json file in the same folder as your index.js file, and paste the following code.
@@ -203,9 +201,10 @@ Cloud Functions uses a package.json file to identify the dependencies of your co
 ```
 
 ### Install the Google Cloud SDK
-Let’s install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts), which provides a CLI and various other tools to create, deploy and manage our GCP and Firebase Projects.
+Let’s install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts), which provides a CLI and various other tools to create, deploy, and manage our GCP and Firebase Projects.
+
 Go to the above link, and view the installation for your corresponding OS and install the SDK.
-*Make sure you include the option to install <strong>Beta Features</strong> in your installer*
+*Make sure you include the option to install <strong>Beta Features</strong> in your installer.*
 
 ### Time to Deploy!
 Deploying Cloud Functions can be done through three ways
@@ -214,7 +213,7 @@ Deploying Cloud Functions can be done through three ways
 - Cloud Shell
 - Cloud Console CLI
 
-We’re gonna deploy it through the Cloud CLI. Fire up the terminal/PowerShell and cd into the directory where the index.js and package.json is located.
+We’re gonna deploy it through the Cloud CLI. Fire up the terminal/PowerShell and cd into the directory where the index.js and package.json is located (shown as `gcloud beta functions` in the examples below).
 
 ```bash
 $ gcloud beta functions deploy storeFormDetails --runtime nodejs10 --trigger-http
@@ -228,7 +227,7 @@ NAME 		 STATUS  TRIGGER 	REGION
 storeFormDetails ACTIVE  HTTP Trigger    us-central1
 ```
 
-This function is a HTTP Trigger based function, which means that it is triggered by sending a HTTP request. We need the endpoint for the function, so obtain that by using this command.
+This function is a HTTP Trigger-based function, which means that it is triggered by sending a HTTP request. We need the endpoint for the function, so obtain that by using this command.
 
 
 ```bash
@@ -256,7 +255,7 @@ On the Google Cloud Platform Console, search for StackDriver Logging. You can al
 ![Settings, Function Logs](/assets/images/education/functions.png)
 
 ### Profit?!
-So we have successfully written and deployed a Cloud Function! We’ve seen an overview of how to do this, but I highly recommend you read the [documentation](https://cloud.google.com/docs) of Google Cloud Platforms and Firebase to get a proper understanding of how these tools and technologies work. Reading documentation and experimenting on things is the hard yet best way to become an expert programmer.
+So we have successfully written and deployed a Cloud Function! We’ve seen an overview of how to do this, but I highly recommend you read the [documentation](https://cloud.google.com/docs) of Google Cloud Platforms and Firebase to get a proper understanding of how these tools and technologies work. Reading documentation and experimenting on things is the hard, yet best way to become an expert programmer.
 
 ---
 
