@@ -40,8 +40,11 @@ It will try to mimic the website and pretend that normal communication is happen
 - Long page load delays for no apparent reason.
 - URLs switching from HTTPS to HTTP.
 
-## Tools for Technical people
+## Tools for Preventing Man-in-the-Middle attack
 - [Wireshark](https://www.wireshark.org/) is the world’s most used network protocol analyzer to detect ARP spoofing.
-- [SSL Eye](https://download.cnet.com/SSLEye/3000-2144_4-75996785.html) is a free software program for Windows which determines the SSL credentials of every site you connect.
+- [SSL Eye](https://www.digi77.com/ssl-eye-prism-protection/) is a free software program which determines the SSL credentials of every site you connect.
+- [Perspective](https://perspectives-project.org/) is browser plugin that do essentially that. They keep a note of which domainnames are issues by which Certificate Authorities's(CA) (eg. Google,etc.) and many other parameters related to the certificates and will alarm the user if either the CA changes OR if the public key in the cert changes.
 
+## News about Man-in-the-Middle attacks
+-
 
