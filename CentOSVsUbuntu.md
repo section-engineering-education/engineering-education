@@ -1,12 +1,14 @@
 # CentOS Vs Ubuntu
 
-In this article we will go through the difference between the two Linux distributions, CentOS and Ubuntu.
+Just like Windows and iOS, Linux is also an operating system unlike its competitor, its free and open source. It was created using a kernel developed by Linus Torvalds while he was attending the University of Helsinki in Finland.
+
+When it comes to choosing a Linux distributive or "Distros", there are many many options available in the market that can easily confuse developers about which one to choose. But the most tried and trusted one are **CentOS** and **Ubuntu**. In this article we will go through the difference between the two Linux distributions, CentOS and Ubuntu.
 
 ### CentOS
-CentOS is basically based on Linux framework and a Linux distribution to implement free, community supported computing platform that is compatible with the corresponding upstream source, Red hat linux.
+CentOS is basically based on Linux framework and a Linux distribution to implement free, community supported computing platform that is compatible with the corresponding upstream source, Red hat linux, which is widely used in the IT sector. It’s highly customizable, secure, and stable.
 
 ### Ubuntu
-Ubuntu is basically an open sourced and Linux distribution that is based on Debian. It is one of the popular operating system for the cloud.
+Ubuntu is basically an open sourced and Linux distribution that is based on Debian. It is one of the popular operating system for the cloud. It is considered to be the best option for personal and professional use. It comes with more than 40,000 applications available and is considered to have best security features.
 
 
 ## Architecture
@@ -52,5 +54,5 @@ In case of Ubuntu, the security patches also do perform well but sometimes due t
 | .deb packages installed using the apt-get package manager | .rpm packages installed using the yum package manager |
 
 ## Final Word
-CentOS vs Ubuntu comparison, both are famous and one of the best Linux distributions that come with their own set of pros and cons. Choosing one is an easy task if you consider your requirements. The whole objective of this article is to give a certain idea of both the Operating System.
-
+The main difference between both of the Operating System is that one is based on Debian architecture while is based on RHEL. CentOS is know as more stable than Ubuntu in terms of distribution and when it comes to online community and tutorial Ubuntu has the upper hand. 
+When it comes to CentOS vs Ubuntu comparison, both are famous and one of the best Linux distributions that come with their own set of pros and cons. Choosing one is an easy task if you consider your requirements. The whole objective of this article is to give a certain idea of both the Operating System. 
