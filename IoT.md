@@ -1,3 +1,5 @@
+
+
 # What is Internet of Things?
 
 ## Introduction
@@ -69,4 +71,12 @@ The worldwide market size of IoT Platforms was US$ 1340 million of every 2017 an
 -	The joined IoT advertise size in 2021 will be $520 billion.
 
 
+ ![alt Alexa](https://images.unsplash.com/photo-1512446733611-9099a758e5e5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=500)
 
+## Sources
+Balkrishna Harode's paper for Smart Home (https://www.ijariit.com/manuscript/smart-home-and-security-system-with-intelligent-monitoring/) and forbes.com
+
+
+## About the Author
+
+|![alt author](https://lh3.googleusercontent.com/k1YYhpJrhlY7kksIw9dn8pdw2iTIiSwEc1PeX29x-KnGgZ4o7-hsEt7xMc0lJZpUYjzrtdNdYwxBZo4qZZneja5BlALMxtZ7lH7Eo1rMPRLC2Z48XhU7m2YtqdZL1aBKNLycgrM0OP8vwB-Ix8avogsQik2lew-P9jD_ENvevtnsuX4M7eeJUUuVmIynN9sMNdTDp4kbTrkQosFQW4ZNhTPWJCIe4Z5K7yV47ZNtJPIsgNZS7k3ps8bY4pE8k55JyZvzn3IsKlE8Ta-DyS9ixIjbn2GXVjeMsB1G_0ROAGIQ41qoXznQ-zuBVrxjqr5MlqOIxfvXse4b9OtYXgZAwveNrE2b81hgest-SACIi20lFNgPCgAHldvKaLfaG7X7UoVrDPZhIoZcZiNaLxvJzFFM0Qd_eq85IZKo1UOe5kn8mkhWberUAYkhX1Ef6sJYin_zE4Epb4xRjQPHZkFo2y09euQDSZqbcKj2zQMLJnrzBqMTGXLtySJVO4B-4AwoeWJNpH385WZa1wvah7os8eJzkHl5Jqi5kO9quB9M-TlQzVfEC4l_fexfYRRsXWS6qA0ZX5YIvDTvxr3SB4XvWkuqZ8FYL1PbsxCxa0SsPGGUf797A5t1A_RIB-LQ2ehnuwComXfnSqTy1k1q0MmgNGM0_w2N0H3jBlI063pd-xAoaPoRiaOxVTLCmUuNb4s=w200-h450-no?authuser=0)| Balkrishna Harode is an undergraduate student at the Devi Alhiya University Indore pursuing a degree in Computer Science. Balkrishna is particularly interested in mathematics, embedded systems, web development and algorithms. In his free time, Balkrishna enjoys cooking and gardening.|
