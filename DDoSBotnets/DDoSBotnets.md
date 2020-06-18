@@ -27,6 +27,8 @@ Full-service DDoS attacks are available for as little as $5 per hour, and the in
 
 Botnet structures usually take one of two forms, and each structure is designed to give the botmaster as much control as possible.
 
+![botnet](https://github.com/gagan3012/engineering-education/blob/article-3/DDoSBotnets/structuresBotNets.jpg)
+
 ### Client-server model
 
 The client-server botnet structure is set up like a basic network with one main server controlling the transmission of information from each client. The botmaster uses special software to establish command and control (C&C) servers to relay instructions to each client device.
