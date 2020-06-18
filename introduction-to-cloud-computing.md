@@ -46,6 +46,7 @@ First, you need to determine the cloud computing architecture, that we will impl
 - **Hybrid Cloud:** This is the combination of public cloud and private cloud. A hybrid cloud gives your business greater flexibility, more deployment options, and helps optimize your existing infrastructure, security, and compliance.
 
 ![image](/assets/images/education/cloud-image-1.png)
+*[Image Source: Medium](https://medium.com/@karansinghreen/what-is-the-difference-between-public-private-and-hybrid-cloud-a41bba631479)*
 
 ### Types of Cloud Services
 
@@ -61,10 +62,12 @@ Popular IaaS providers include:
 
 
 ![IaaS](/assets/images/education/infrastructure-management.jpg)
+*[Image Source:indiamart](https://www.indiamart.com/proddetail/infrastructure-management-services-9277027797.html)*
 
 - **PaaS:** It provides a platform and environment to allow developers to build applications and services. This service is hosted in the cloud and accessed by the users via the internet. Users access these tools over the internet using APIs, web portals, or gateway software. It provides a platform to support application development. It includes software support and management services, storage, networking, deploying, testing, collaborating, hosting, and maintaining applications. An example is Heroku.
 
 ![PaaS](/assets/images/education/paas.jpg)
+*[Image Source:360logica](https://www.360logica.com/blog/some-of-the-key-benefits-of-platform-as-a-service-paas-cloud-computing-model/)*
 
 - **SaaS:** It delivers software applications over the internet; these applications are often called web services. With SaaS, cloud providers host and manage the software application and underlying infrastructure and handle any maintenance, like software upgrades and security patching. An example of a SaaS application is Microsoft Office 365 for productivity and email services.
 
