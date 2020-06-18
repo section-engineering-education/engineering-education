@@ -2,9 +2,10 @@
 
 ![cloud computing](https://i.ytimg.com/vi/dH0yz-Osy54/maxresdefault.jpg)
 
-Before we go into describing cloud computing, let’s go on a throwback to how things were before cloud computing came around. Back then to set up an app you do that on some specific occasions, get some hardware and software components, use professionals to run and control these servers and as the number of guests to your site expands you get to purchase more resources, use more people and even have to buy or rent a warehouse to hosting your server is Hella stressful, right?
+Cloud concepts have existed for many years. Here, I will take you back to that time. Then, to set up an app you do that on some specific occasions, get some hardware and software components, use professionals to run and control these servers and as the number of guests to your site expands you get to purchase more resources, use more people and even have to buy or rent a warehouse to hosting your server is Hella stressful, right?
+		
 
-So sometimes in the 90s, cloud computing was conceived, and the idea was to move all these components (storage, compute resources, etc) to the internet. And that was how it all started till it grew to what we have now and we are still growing. 
+Cloud computing has grown through several phases which include Grid Computing, Utility Computing, Application Service Provision, and Software as a Service, etc. The idea was to move all these components (storage, compute resources, etc) to the internet. And that was how it all started till it grew to what we have now and it’s still growing.
 
 So, from that brief history lesson, According to *Microsoft Azure* we can define **cloud computing** as the delivery of computing services like servers, storage, databases, networking, software, analytics, intelligence -over the internet (*‘the cloud’*) to offer faster innovation, flexible resources & economies of scale... does that make sense?
 
