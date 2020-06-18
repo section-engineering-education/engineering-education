@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/cloud-computing-image.jpg
+  - url: /assets/images/education/cloud-image.jpg
     alt: cloud computing image example
 ---
 Cloud concepts have existed for many years. Here, I will take you back to that time. Then, to set up an app you do that on some specific occasions, get some hardware and software components, use professionals to run and control these servers and as the number of guests to your site expands you get to purchase more resources, use more people and even have to buy or rent a warehouse to hosting your server is Hella stressful, right?
