@@ -5,7 +5,7 @@ published: true
 title: Blockchain as a database
 description: Blockchain is a distributed database existing on multiple computers at the same time. It is constantly growing as new sets of recordings, or 'blocks', are added to it.
 author: Keerthi V
-date: 2020-06-17T00:00:00-07:00
+date: 2020-06-18T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
