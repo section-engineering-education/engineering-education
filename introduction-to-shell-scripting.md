@@ -98,6 +98,7 @@ Arguments passed from the **command line** can be accessed by using `$0`, `$1`, 
 ```
 ./script 1 2 3
 ```
+
 - `$0 = scriptname`
 - `first_argument = $1`: We can assign it to variables
 - `$#`: This variable contains the number of arguments supplied to the script.
@@ -247,10 +248,25 @@ for i in {1..5}
 
 *We'll talk about more advanced topics like `sed`, `awk` and regular expressions in the next post.*
 
+### More Helpful Tips
+#### Debugging
+Putting set `-o xtrace` and `set -o errexit` can often help debug bash scripts. xtrace will print each bash line as they run, and errexit will exit the script if a command returns a status of something other than 0. '$?' will show the last status code.
+
+For example, include this at the top of your scripts:
+```
+test -z "${DEBUG}" || set -o xtrace
+set -o errexit
+```
+The first line checks if a DEBUG environment variable is set, and if it is, it will print each bash line. The second makes the script exit when there was an error on a command.
+
+### Important Note
+There are many scripting languages, and nearly any programming language can be used to write scripts (python, ruby, go, javascript, etc.). These have many advantages over bash with regard to data manipulation and simplicity. Bash has the advantage of running on nearly any Linux machine without prior install effort. Always consider the complexity of your scripting task and ask if it's really necessary to use bash. Bash should largely be reserved for tasks where another language would be cumbersome.
+
 ### Additional Resources and References
 
 - [The Linux Documentation Project](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
 - [https://www.tutorialspoint.com/unix](https://www.tutorialspoint.com/unix)
+- [ShellCheck](https://github.com/koalaman/shellcheck) -  can be installed as a VS Code extension to catch many bash errors that are easy to make.
 
 ---
 
