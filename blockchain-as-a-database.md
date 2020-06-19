@@ -16,7 +16,7 @@ images:
 
 When people talk about blockchain, many times, they are referring to the use of blockchain for trading cryptocurrencies. But blockchain has another big, and perhaps as powerful an application - blockchain as a database. Before we delve into this world of possibilities, let’s first look at what blockchain is.
 <!--more-->
-### What is a Blockchain
+### What is a Blockchain?
 A blockchain is a growing linked list of blocks, where a block is a group of ordered transactions **ledger**. Transaction, in this context, is a database transaction which stands for any changes made within the database.
 
 ![blockchain image](/assets/images/education/blockchain.png)<br>
