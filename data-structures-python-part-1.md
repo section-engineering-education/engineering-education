@@ -5,12 +5,12 @@ published: true
 title: Data Structures in Python - Part 1
 description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
 author: Saiharsha Balasubramaniam
-date: 2020-06-17T00:00:00-07:00
+date: 2020-06-17T00:00:00-12:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/py-comic.png
+  - url: /assets/images/education/data-structures-python.jpg
     alt: python data structures
  
 ---
@@ -23,9 +23,9 @@ Python. Beautiful, concise, simple are some words that come to mind. [Python](ht
 
 If you're a student who is very much interested in becoming a developer, you would probably know that developer roles require a strong grasp on fundamentals, with most technical interviews for developer roles dealing with data structures. You also need to know data structures to ace the whiteboard programming and online programming rounds in recruitment processes. 🔥
 
-When I started preparing for interviews, I found myself learning data structures, and were a major part of preparation. And hence, I feel that this series would give an overview of data structures to help students study for, and ace interviews.
+When I started preparing for interviews, I found myself learning data structures as a major part of preparation. And hence, I felt that this series would give an overview of data structures to help students study for and ace interviews.
 
-Let's look at an overview of data structures in this article and move on to learn about every data structure, and its implementation in Python throughout this series! 😄
+In this article, we'll look at an overview of data structures, and then move on to learn about more data structures and their implementations in Python throughout this series! 😄
 
 ### Linear Data Structures
 
@@ -55,7 +55,7 @@ Non-Linear data structures are more complex data structures, that are not sequen
 Now that we have an overview of data structures, let's delve into the nuances of each of them in the upcoming articles of the series. Here are some resources to get you started with interview and programming preparation.
 
 ### Choose a Platform
-There are numerous platforms like LeetCode, HackerRank, InterviewBit, TopCoder, HackerEarth, CodeChef, CodeForces, SPOJ, etc. to learn programming. Out of these, after a lot of trial and error I felt that a combination of HackerRank and LeetCode worked really well for preparing for interviews.
+There are numerous platforms like [LeetCode](https://leetcode.com/), [HackerRank](https://www.hackerrank.com/), [InterviewBit](https://www.interviewbit.com/), [TopCoder](https://www.topcoder.com/), [HackerEarth](https://www.hackerearth.com/), [CodeChef](https://www.codechef.com/), [CodeForces](https://codeforces.com/), [SPOJ](https://www.spoj.com/), etc. to learn programming. Out of these, after a lot of trial and error I felt that a combination of HackerRank and LeetCode worked really well for preparing for interviews.
 
 #### HackerRank
 HackerRank is amazing because it has customized tracks for each programming language, and one each for data structures and algorithms. There are also customized filters for each DS type like Stack, Queue, etc. 
