@@ -74,3 +74,6 @@ This article is serving as an introduction to this new series, so make sure you'
 
 Soon, I will be publishing a standard article on TEAM Work as a major role of Productivity.
 
+### About the Author
+
+Dominic Nshimba is a Web Developer at All1Zed and currently a Hack Club Facilitator for HackClub in Zambia. He is pursuing a degree in computer science and applied mathematics. Dominic’s key interest lies in systems programming.
