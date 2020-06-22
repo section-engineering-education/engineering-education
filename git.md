@@ -1,17 +1,16 @@
 # "Beginner's Guide to Git: Something that every Software Engineer should at least know of"
 
-Git is an open source version control system to track changes in computer files. The technology is used widely in the industry by almost all the companies. Every Software Engineer is expected to know it. It is designed for coordinating work among programmers., but can be used to track changes in any files.
+Git is an open source version control system to track changes in computer files. The technology is used widely in the industry by almost all the companies. Every Software Engineer is expected to know it. It is designed for coordinating work among programmers, but can be used to track changes in any files.
 
 This guide would help you to get started with Git for your personal projects. For this we will assume that we are working on a project from scratch and wants to manage it with Git. We would also see how can we manage it with GitHub. This would cover everything a beginner needs to know. 
 
 ## Why Git?
 
-* Open source version control distributed system
-* Helps synchronize working between multiple people
-* Helps to organize code
-* Can track of every changes and who made them
-* Can take snapshots of your file
-* And many more
+Git is an open source version control distributed system that helps to organize code. It keeps track of every changes you make to the files by taking snapshots of your file. so you have a record of what has been done, and you can revert to specific versions should you ever need to. 
+
+It helps collaboration easier among developers allowing changes by multiple people to all be merged into one source. So regardless of the fact that you write code, it would be beneficial for you to keep track of it.
+
+Git runs locally, So your files are stored on your computer. You can also use online host such as GitHub to keep a copy of your code. Working on an online host like Github would help you manage your code easily in a synchronized way, where multiple developer upload and download changes. So developers can work on different different code at the same time and merges them at the end without loosing each other's work.
 
 ## How to Install Git
 
