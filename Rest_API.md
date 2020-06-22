@@ -84,3 +84,6 @@ Entire JSON response
 
 # Further Reading
 [Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)
+
+# About the Author
+Priyank is an undergraduate student pursuing a degree in Computer Science & Engineering. Priyank is Data science Enthusiast. He loves contributing to open source projects, and also involving himself in tech communities.
