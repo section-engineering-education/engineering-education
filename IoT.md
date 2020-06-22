@@ -51,7 +51,7 @@ With the knowledge gave by cutting edge examination comes the ability to make fo
 
 - ### **Manufacturing** 
 
-    - **Industry 4.0(https://en.wikipedia.org/wiki/Industry_4.0)**, the fourth modern upset, envelops mix of conventional assembling and mechanical stages and practices with the most recent keen innovation. This fundamentally centres around the utilization of huge scope machine to machine correspondence (M2M) and Internet of Things (IoT) arrangements to give expanded computerization, improved correspondence and self-checking, just as shrewd machines that can investigate and analyse issues without the requirement for human mediation.
+    - **[Industry 4.0](https://en.wikipedia.org/wiki/Industry_4.0)**, the fourth modern upset, envelops mix of conventional assembling and mechanical stages and practices with the most recent keen innovation. This fundamentally centres around the utilization of huge scope machine to machine correspondence (M2M) and Internet of Things (IoT) arrangements to give expanded computerization, improved correspondence and self-checking, just as shrewd machines that can investigate and analyse issues without the requirement for human mediation.
 
 
 ## Importance and Application
