@@ -5,7 +5,7 @@ published: true
 title: Introduction to Shell Scripting
 description: A shell script is a computer program designed to be run by the Unix shell. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
 author: Rohan Reddy
-date: 2020-06-19T00:00:00-07:00
+date: 2020-06-20T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -98,12 +98,25 @@ Arguments passed from the **command line** can be accessed by using `$0`, `$1`, 
 ```
 ./script 1 2 3
 ```
+**Note:** These variables not only work from the command line, but also with functions. You should use functions to organize your bash code just like your would in another language. Variables can be passed to functions just like you do with the command line, using `$1`, `$2`, etc.
+
+At the end of your script, try something like:
+```
+if [ -z "$@" ]; then
+	main
+else
+	"$@"
+fi
+```
+This will allow you to test individual functions like `./myscript.sh function1` or `./myscript.sh function2 arg1`, and have your "main" entry function run by default.
 
 - `$0 = scriptname`
-- `first_argument = $1`: We can assign it to variables
+- `first_argument = $1`: We can assign it to variables<br>
 - `$#`: This variable contains the number of arguments supplied to the script.
 - `$?`: The exit status of the last command executed. Most commands return 0 if they were successful and 1 if they were unsuccessful.
 - Comments in shell scripting start with `#` symbol.
+
+
 
 ### Control-flow Constructs
 
