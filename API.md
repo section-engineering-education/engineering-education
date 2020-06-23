@@ -1,26 +1,26 @@
 # How does API works?
 
 ## What is an API?
-We always hear about APIs. what basically are they? and how does that really works? 
-API stand for **"Application Programming Interface."**
+We always hear about APIs. What are they? And how does that work? 
+API stands for **"Application Programming Interface."**
 An API is essentially a set of rules that dictate how two machines talk to each other.
 
 *For Example*
-Whenever you use an app on your phone or computer or log to to Twitter or Facebook, you're interacting with several different **APIs** behind the scene. 
-An API is a message that delivers your (the client) request to the provider (the server) that you're requesting it from and then delivers the response back to you
+Whenever you use an app on your phone or computer or log to Twitter or Facebook, you're interacting with several different **APIs** behind the scene. 
+An API is a message that delivers your (the client) request to the provider (the server) that you're requesting it from and then delivers the response back to you.
 
 ## How do APIs work?
-let us consider an example of how a restaurent operates. 
+Let's consider an example of how a restaurant operates. 
 
 **Customer (User) -> Waiter (API) -> Kitchen (Webserver)
 
-You, the customer, are sitting at the table with a menu of choice to order from, and the kitchen is the provider who will fulfill your order. You need someone who takes your order to the kitchen and then to deliver your food back to your table.
-That's where the waiter as in the API comes in the picture. The waiter being an API takes your order to the kitchen, telling them what do you want, and then delivers your request back to you.
+You are a customer, sitting at the table with a menu of choice to order from, and the kitchen is the provider who will fulfill your order. You need someone who takes your order to the kitchen and then to deliver your food back to your table.
+That's where the waiter as in the API comes in the picture. The waiter is an API that takes your order to the kitchen, telling them what do you want and then delivers your request back to you.
 
 ## Types of API
 
 ### **Java APIs** 
-Interfaces within the classes let object to talk to each other.
+Interfaces within the classes let objects to talk to each other.
 
 ### **Web APIs** 
 Simple Objects Access Protocol (SOAP), Remote Procedure Call (RPC), and the most popular Representational State Transfer (REST)
@@ -34,14 +34,14 @@ Over 70% of all public APIs use REST, because of it's fast performance, reliabil
 
 ## Methods For REST
 
-* **GET** - The HTTP GET method is used to read or retreive a representation of a resource
+* **GET** - The HTTP GET method is used to read or retrieve a representation of a resource
 * **POST** - The POST web is most often utilized to create new resources
-* **DELETE** - DELETE is preety easy to understand. It is used to delete a resource identified by a URL
+* **DELETE** - DELETE is pretty easy to understand. It is used to delete a resource identified by a URL
 * **PUT** - PUT is most often utilized for updates capabilities
-* **PATCH** - PATCH is used for modify capabilities. The PATCH request only needs to contain the changes to the resource, not the complete resource
+* **PATCH** - PATCH is used for modifying capabilities. The PATCH request only needs to contain the changes to the resource, not the complete resource
 
 ## Working Example
-We will be using Open WeatherMap API to get the current weather data. Suppose you want to know the weather of particular location. but you don't have any of your own service to do that. In that case, you'll need to make some call out to the weather service to get the information. and then you can know about the weather of a specific location. Below is the example that shows you how to get the weather information using Open WeatherMap API (It's free to use)
+We will be using Open WeatherMap API to get the current weather data. Suppose you want to know the weather of a particular location, but you don't have any of your services to do that. In that case, you'll need to make some calls out to the weather service to get the information. And then you can know about the weather of a specific location. Below is an example that shows you how to get the weather information using Open WeatherMap API (It's free to use)
 
 * ### Open WeatherMap API
 
@@ -120,7 +120,7 @@ We will be using Open WeatherMap API to get the current weather data. Suppose yo
       
       
 
-This shows the result in coordinates, which also includes things such as Temperature and Humidity. **This would help us get the weathe of a location using REST API**
+The above code shows the result in coordinates, which also include things such as temperature and humidity. **This would help us get the weather of a location using REST API**
 
 ## Takeaways
-This was a quick introduction the API, that many people don't know of. In this article, we get to discussed what they are and how does that work. APIs are integral to running a data-driven business nowadays as it's been proven as a game changer for the modern software industry. It's been used all of the business these days since a long time due to quick implementation.
+That was a quick introduction to the API that many people don't know of. In this article, we get to discuss what they are and how does that works. APIs are integral to running a data-driven business nowadays as it's been proven as a game-changer for the modern software industry. It's been used in the industry for a long time now, due to its quick implementation.
