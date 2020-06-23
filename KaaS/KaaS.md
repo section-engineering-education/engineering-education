@@ -12,6 +12,7 @@ This article reviews the Kubernetes offerings from the three providers: Amazon E
 ### [Google Cloud Platform Kubernetes Engine](https://cloud.google.com/kubernetes-engine)
 
 ![logo](https://github.com/gagan3012/engineering-education/blob/master/KaaS/download.png)
+
 The Google Cloud Platform (GCP) entry in the hosted Kubneretes space is. [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine). GKE is the most resilient and well-rounded Kubernetes offering when compared to AKS and EKS. It is the only one with a marketplace to deploy applications from. It has support for the Istio service mesh. And a  gvisor for an extra layer of security between running containers. It also has an on-premises offering in development as part of Google’s Anthos offering for hybrid/multi-cloud environments on dedicated hardware.
 ### [Microsoft Azure Kubernetes Service](https://azure.microsoft.com/en-in/services/kubernetes-service/#:~:text=Azure%20Kubernetes%20Service%20(AKS)%20offers,and%20scale%20applications%20with%20confidence.)
 
@@ -47,3 +48,10 @@ is the Microsoft developed Kubernetes offering that runs on Azure Public Cloud, 
 
 ### Conclusion 
 Kubernetes is now an integral part of the technology landscape and is expected to be around for a long time as part of any cloud infrastructure. So regardless if you are just getting started on GKE, leveraging your Microsoft Enterprise Agreement to get better pricing and support on Azure, or want to make transitioning on-premises applications to the cloud easier with EKS on Amazon, there is a certified hosted Kubernetes offering that will meet your needs.
+
+### Rescouces
+[Azure Kubernetes Service](https://codeteddy.com/2019/08/15/azure-kubernetes-services-day-three-deploying-asp-net-core-application-to-azure-kubernetes-services/)
+
+[Google Cloud Platform Kubernetes Engine](https://devopedia.org/google-kubernetes-engine)
+
+[AWS EKS](https://medium.com/containers-101/getting-started-with-amazon-eks-provisioning-and-adding-clusters-ff02738118e8)
