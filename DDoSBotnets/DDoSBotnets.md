@@ -1,7 +1,7 @@
 # DDoS Attacks: Using Botnets as a Tool
 
 A DDoS attack or [Distributed Denial of Service attack](https://en.wikipedia.org/wiki/Denial-of-service_attack#Distributed_DoS_attack) is a type of [Denial of Service (DoS)](https://en.wikipedia.org/wiki/Denial-of-service_attack) attack where the incoming traffic flooding the victim originates from many different sources. This effectively makes it impossible to stop the attack simply by blocking a single source.
-Since DDoS attack uses thousands, or hundreds of thousands, of sources to flood its target its power is greater than a DoS attack by quite a few orders of magnitude. 
+Since the DDoS attack uses thousands, or hundreds of thousands, of sources to flood its target its power is greater than a DoS attack by quite a few orders of magnitude. 
 
 There’s more than one way of carrying out a denial-of-service attack. Some methods are easier to execute than others, but not as powerful. Other times, the attacker might want to go the extra mile, to really be sure the victim gets the message, so he can hire a dedicated botnet to carry out the attack.
 
@@ -47,5 +47,4 @@ By now it should be evident that a global strategy is required to counter botnet
 - Don't click suspicious links
 - Install an antivirus program
 
-If you have IoT devices, you should make sure your devices are formatted for the maximum protection. Secure passwords should be used for all devices. Internet of Things devices have been vulnerable to weak passwords, with many devices operating with easily discovered default passwords. A strong firewall is also important. Protecting your devices is an essential part of Cyber Safety.
-
+If you have IoT devices, you should make sure your devices are formatted for maximum protection. Secure passwords should be used for all devices. Internet of Things devices has been vulnerable to weak passwords, with many devices operating with easily discovered default passwords. A strong firewall is also important. Protecting your devices is an essential part of Cyber Safety.
