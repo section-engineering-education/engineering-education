@@ -16,7 +16,7 @@ images:
 This article will cover many of the interesting features that Rust has to offer, but does not go into detail around how to write a program in Rust. If you're looking for a good resource to get started with Rust, please refer to the [Learn Rust](https://www.rust-lang.org/learn) guide, which is very helpful for beginners.
 <!--more-->
 
-<img src="/assets/images/education/Rust_language_logo.png" style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;">In talking about Rust's features, I will regularly talk about how C/C++ handles these same things as a matter of comparison. Rust fixes a lot of the issues inherent in C in rather elegant ways. (Note: there are additional languages that are also comparable to Rust's features that I will not be talking about.)
+<img src="/engineering-education/writing-with-the-rust-language/Rust_language_logo.png" style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;">In talking about Rust's features, I will regularly talk about how C/C++ handles these same things as a matter of comparison. Rust fixes a lot of the issues inherent in C in rather elegant ways. (Note: there are additional languages that are also comparable to Rust's features that I will not be talking about.)
 
 The main talking point for this article is how Rust "forces" you to write good code which, in turn, eliminates all possibility of [undefined behavior](https://doc.rust-lang.org/reference/behavior-considered-undefined.html) that can cause segfaults. Now, you can't just take C code, change the compiler, and then say that you can guarantee no segfaults; these changes must happen in the code because segfaults come from code, not the compiler. This also doesn't mean that the compiler can't help you write good code.
 

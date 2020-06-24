@@ -11,9 +11,9 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/what-is-linux/hero.jpg
-    alt: Linux Penguin  
+    alt: Linux Penguin
 ---
-<img src="/assets/images/education/Tux_linux_logo.png" style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;">
+<img src="/engineering-education/what-is-linux/Tux_linux_logo.png" style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;">
 
 Initially released on September 17th, 1991, by Linux Torvalds, [Linux](https://en.wikipedia.org/wiki/Linux) is a set of open source Unix-like operating systems. Unlike MacOS and Windows, Linux is open source, meaning that the source code that makes up the Kernel is available for anyone to use, modify, and distribute. Linux also operates similarly to the original [Unix system by Bell labs](https://en.wikipedia.org/wiki/Unix).
 
