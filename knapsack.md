@@ -171,7 +171,7 @@ maximum_weight = 2000
 We can run this example with each of the implementations we have gone over and compare their results. The first implementation is the pseudo-polynomial dynamic programming solution as presented in the dynamic programming section. We will also look at our alternative dynamic programming solution presented in the approximation section. Then we will consider our two approximations, the greedy approximation, and the fully polynomial-time approximation. We can see the results, over five trials, of each of these algorithms in the following table. 
 
 |Algorithm|Result|Average runtime (Seconds)|
-|---|---|---|---|---|---|---|---|
+|---|---|---|
 |Dynamic Programming Solution|2213|0.08455|
 |Alternative Dynamic Programming Solution|2213|0.14044
 |Greedy Approximation|2178|0.00004
