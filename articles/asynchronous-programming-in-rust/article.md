@@ -282,4 +282,4 @@ By using a runtime like tokio, the actor-based web framework called [actix](http
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/zack-jorquera.jpg">Zack Jorquera is a sophomore at the University of Colorado at Boulder pursuing a degree in computer science and applied mathematics. Zack’s key interests are systems programming and algorithmic design. In his free time, he likes to kayak and ski.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/zack-jorquera/avatar.jpg">Zack Jorquera is a sophomore at the University of Colorado at Boulder pursuing a degree in computer science and applied mathematics. Zack’s key interests are systems programming and algorithmic design. In his free time, he likes to kayak and ski.

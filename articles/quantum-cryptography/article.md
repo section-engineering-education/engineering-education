@@ -39,4 +39,4 @@ It's also worth noting the distinction between quantum encryption and [post-quan
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/justin-osborne.jpeg">Justin Osborne is a Senior at Wichita State University pursuing a degree in Mechanical Engineering. Justin’s passions are robotics and learning new subjects. He is Event Coordinator for the SAMPE chapter at Wichita State, a club that focuses on teaching and networking with professionals around manufacturing practices and techniques happening in the industry.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/justin-osborne/avatar.jpeg">Justin Osborne is a Senior at Wichita State University pursuing a degree in Mechanical Engineering. Justin’s passions are robotics and learning new subjects. He is Event Coordinator for the SAMPE chapter at Wichita State, a club that focuses on teaching and networking with professionals around manufacturing practices and techniques happening in the industry.

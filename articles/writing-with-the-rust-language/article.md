@@ -163,4 +163,4 @@ There is a reason that Rust has been the [most loved language](https://insights.
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/zack-jorquera.jpg">Zack Jorquera is a sophomore at CU Boulder pursuing a degree in computer science and applied mathematics. Zack's key interest is systems programming.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/zack-jorquera/avatar.jpg">Zack Jorquera is a sophomore at CU Boulder pursuing a degree in computer science and applied mathematics. Zack's key interest is systems programming.

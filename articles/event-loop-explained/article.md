@@ -85,4 +85,4 @@ eyJoaXN0b3J5IjpbLTE3MzQxNTE2MjhdfQ==
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/nadiv-gold-edelstein.jpg">Nadiv Gold Edelstein is a sophomore at University of Colorado at Boulder. He enjoys full stack development, teaching computer science, and being strongly opinionated about code.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/nadiv-gold-edelstein/avatar.jpg">Nadiv Gold Edelstein is a sophomore at University of Colorado at Boulder. He enjoys full stack development, teaching computer science, and being strongly opinionated about code.

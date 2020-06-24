@@ -27,4 +27,4 @@ In a society where public Internet connections lack security and data is being s
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/michael-zanoff.jpeg">Michael Zanoff is a freshman at Colorado School of Mines. His passion for the design process and robotics has led him to pursue a degree in Mechanical Engineering. He enjoys keeping up with new technology and learning about the world around him.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/michael-zanoff/avatar.jpeg">Michael Zanoff is a freshman at Colorado School of Mines. His passion for the design process and robotics has led him to pursue a degree in Mechanical Engineering. He enjoys keeping up with new technology and learning about the world around him.

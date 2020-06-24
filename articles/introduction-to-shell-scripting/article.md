@@ -284,4 +284,4 @@ There are many scripting languages, and nearly any programming language can be u
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/rohan-reddy.jpg">Rohan Reddy is an undergraduate student at the University of Hyderabad pursuing a degree in Computer Science. Rohan is particularly interested in machine learning and web development.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/rohan-reddy/avatar.jpg">Rohan Reddy is an undergraduate student at the University of Hyderabad pursuing a degree in Computer Science. Rohan is particularly interested in machine learning and web development.

@@ -78,4 +78,4 @@ Along with the many benefits, Linux does come with its own drawbacks as well.
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/jesus-nunez.jpg">Jesus Nunez is a Sophomore at Colorado School of Mines where he is getting his Computer Science degree with a focus in Computer Engineering. He is an avid Linux user and Vice President to the Linux Users Group.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/jesus-nunez/avatar.jpg">Jesus Nunez is a Sophomore at Colorado School of Mines where he is getting his Computer Science degree with a focus in Computer Engineering. He is an avid Linux user and Vice President to the Linux Users Group.

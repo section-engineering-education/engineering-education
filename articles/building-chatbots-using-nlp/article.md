@@ -75,4 +75,4 @@ In planning your first chatbot, you should go through these stages:
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/gagan-bhatia.jpg">Gagan Bhatia is a rising junior at UBC. He is a full-stack developer and a machine learning enthusiast. In his spare time, he advocates for better mental health.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gagan-bhatia/avatar.jpg">Gagan Bhatia is a rising junior at UBC. He is a full-stack developer and a machine learning enthusiast. In his spare time, he advocates for better mental health.

@@ -36,4 +36,4 @@ In conclusion, SDN is the way forward to survive in this technology-first world.
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/aakash-rawal.jpeg">Aakash Rawal is  a first-year graduate student pursuing a Masters in Technology, Cybersecurity and Policy at the University of Colorado Boulder. He is interested in Network Automation, DevOps and Network Security.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/aakash-rawal/avatar.jpeg">Aakash Rawal is  a first-year graduate student pursuing a Masters in Technology, Cybersecurity and Policy at the University of Colorado Boulder. He is interested in Network Automation, DevOps and Network Security.

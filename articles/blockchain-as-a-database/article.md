@@ -52,4 +52,4 @@ While blockchain technology is exciting and innovative, it is not efficient for 
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/keerthi-v.jpg">Keerthi V is a senior at JSS Science and Technology University and a Data Engineering Intern at redBus. Her key interests include Data Science and Web Development. When she's not coding, she's probably running or baking pizzas.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/keerthi-v/avatar.jpg">Keerthi V is a senior at JSS Science and Technology University and a Data Engineering Intern at redBus. Her key interests include Data Science and Web Development. When she's not coding, she's probably running or baking pizzas.

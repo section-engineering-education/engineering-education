@@ -146,4 +146,4 @@ After creating another object, we see that the original object `h` retains its n
 ---
 
 #### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/sophia-raji.jpg">Sophia R. is a junior in computer science at Columbia University. She takes particular interest in full-stack web development and Bitcoin programming. When she is not working on side projects, she teaches coding to middle school and high school students and writes a satire website.
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/sophia-raji/avatar.jpg">Sophia R. is a junior in computer science at Columbia University. She takes particular interest in full-stack web development and Bitcoin programming. When she is not working on side projects, she teaches coding to middle school and high school students and writes a satire website.
