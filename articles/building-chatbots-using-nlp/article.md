@@ -25,7 +25,7 @@ Today, NLP is booming thanks to the huge improvements in the access to data and 
 
 There are various types of chatbots and most of them have very specific use cases. But most chatbots are built on a very similar [backend NLP](https://towardsdatascience.com/how-to-build-a-chatbot-a-lesson-in-nlp-d0df588afa4b).
 
-![Chatbot](/assets/images/education/chatbot-image.png)<br>
+![Chatbot](/engineering-education/building-chatbots-using-nlp/chatbot-image.png)<br>
 ### Steps to building a NLP chatbot:
 
 #### Understand the business logic
