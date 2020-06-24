@@ -23,8 +23,3 @@ VPNs work by connecting a user’s computer or other Internet-active device to a
 There are many reasons why someone might want to use a VPN, but some major reasons include security and the ability to bypass geographic restrictions. Since all data goes through a VPN while it is in use, browsing data and Internet activity will not be visible to anyone else on the network, as all that can be seen is the presence of a VPN connection. This provides a level of security if a user has hopes of keeping their activity private. In addition to this, there are many services, like Netflix and Hulu, that have geographic restrictions on the use of their service and the ability to view certain content. A VPN can be used to bypass this as it can mask network usage and make is appear as if the Internet is being accessed from a location other than the users.
 
 In a society where public Internet connections lack security and data is being stolen on the regular, VPNs can provide protection and another level of security to users all around the world.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/michael-zanoff/avatar.jpeg">Michael Zanoff is a freshman at Colorado School of Mines. His passion for the design process and robotics has led him to pursue a degree in Mechanical Engineering. He enjoys keeping up with new technology and learning about the world around him.

@@ -84,8 +84,3 @@ We should now see `Section is cool` in the console.
 ### Wrap Up
 The most important thing to remember when dealing with CORS is to drink responsibly:)
 The second most important thing to remember is that, if you need something from another server, you also need that server's permission.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/nadiv-gold-edelstein/avatar.jpg">Nadiv Gold Edelstein is a sophomore at University of Colorado at Boulder. He enjoys full stack development, teaching computer science, and being strongly opinionated about code.

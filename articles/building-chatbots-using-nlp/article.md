@@ -71,8 +71,3 @@ In planning your first chatbot, you should go through these stages:
 - [How does NLP work](https://en.wikipedia.org/wiki/Natural_language_processing)
 - [How to use Twillo API](https://www.twilio.com/docs/autopilot/guides/how-to-build-a-chatbot)
 - [Things to consider before building a Chatbot](https://chatbotsmagazine.com/to-build-a-successful-chatbot-ask-these-5-questions-b7fe3776c74c)
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gagan-bhatia/avatar.jpg">Gagan Bhatia is a rising junior at UBC. He is a full-stack developer and a machine learning enthusiast. In his spare time, he advocates for better mental health.

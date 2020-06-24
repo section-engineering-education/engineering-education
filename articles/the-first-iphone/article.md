@@ -30,8 +30,3 @@ For a great look at the evolution of the iPhone over the years, check out this [
 The iPhone not only changed other products; it changed Apple itself. During the Macworld Expo where the iPhone was announced, Steve Jobs said, "The Mac, iPod, Apple TV, and iPhone. Only one of those is a computer. So we're changing the name." Today it is Apple, Inc., a company that used to specialize in desktop and laptop computers that now makes much more. Today's Apple has seen the release of the iPad, Apple Watch, AirPods, Cases, Keyboards, along with many updated versions and designs of pre-existing device names like the MacBook and Mac.
 
 "The iPod changed everything in 2001, and we're going to do it again with the iPhone in 2007." Thus, history was made (again).
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

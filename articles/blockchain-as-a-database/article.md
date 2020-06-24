@@ -48,8 +48,3 @@ It is without a central authority (**decentralized**). One party is not responsi
 
 ### Final Thoughts
 While blockchain technology is exciting and innovative, it is not efficient for all use cases. There are challenges ranging from scalability, search query speed, and storage requirements. So blockchain is currently not the best solution for systems that require quick and frequent lookup, big data management, high performance, and privacy. Blockchain is only preferred if a trustless, robust, and immutable system is required.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/keerthi-v/avatar.jpg">Keerthi V is a senior at JSS Science and Technology University and a Data Engineering Intern at redBus. Her key interests include Data Science and Web Development. When she's not coding, she's probably running or baking pizzas.

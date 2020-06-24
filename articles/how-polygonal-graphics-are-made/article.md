@@ -82,8 +82,3 @@ Due to the ease of using transformation matrices, it is far easier to move and t
 
 ### Wrap-Up
 Polygonal objects are the backbone of 3D graphics, and are crucial for computers to approximate and visualize our world. The construction of vertices, faces, and textures have endless applications, including film CGI, video games, architecture, and 3D printing.  
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/nadiv-gold-edelstein/avatar.jpg">Nadiv Gold Edelstein is a sophomore at University of Colorado at Boulder. He enjoys full stack development, teaching computer science, and being strongly opinionated about code.

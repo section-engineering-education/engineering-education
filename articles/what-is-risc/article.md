@@ -38,8 +38,3 @@ Even the most powerful supercomputer in the world, as of November of 2019, is po
 These processors are considered "ARM-based" processors which are generally less expensive than standard CISC processors. They are also considerably more (transistor) dense and more power efficient.
 
 RISC has already made a big appearance in modern computing, being seen in computers from the iPhone to the fastest supercomputer Summit. It offers denser processors and more power efficient ones.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

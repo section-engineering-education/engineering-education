@@ -29,8 +29,3 @@ This is reminiscent of my high school days when our STEM Lab teacher would set u
 [Guiding Tech](https://www.guidingtech.com/9304/why-you-should-never-use-wep-to-protect-home-wi-fi/) points out that, "The hole in a wall lies in the way WEP encrypts the packets with a static encryption key. The key does not change with every packet that is transmitted, so a hacker can listen in and, with patience, gather enough packets to decipher the encryption key." Remember, WEP actually uses an encryption key of either 64 or 128 bits, using only hexadecimal characters (0-9, A-F). This length of a key is not very secure with the amount of computing power that people have in their pockets.
 
 WEP is not a good encryption standard; however, it is better than no security. It encrypted all traffic to and from the access point using a static key, which was its downfall. This downfall can now be exploited by common, everyday computers. It is now recommended to use at least WPA, but how much longer until that can be cracked by everyday computers?
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

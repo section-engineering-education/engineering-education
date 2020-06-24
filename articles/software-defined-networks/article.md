@@ -32,8 +32,3 @@ We need to consider the different vendors which offer the software and support n
 Once you have successfully transitioned even a small part of your network to SDN, comparing the parameters like performance, the operation cost of the new SDN, and the old legacy network will give you an idea of how successful the transition was. Having a rollback plan is also mandatory in the unlikely event that SDN is not suitable for your organization.
 
 In conclusion, SDN is the way forward to survive in this technology-first world. An early shift will be beneficial, as the organization will have more streamlined services. SDN is an inexpensive option compared to maintaining existing data centers.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/aakash-rawal/avatar.jpeg">Aakash Rawal is  a first-year graduate student pursuing a Masters in Technology, Cybersecurity and Policy at the University of Colorado Boulder. He is interested in Network Automation, DevOps and Network Security.

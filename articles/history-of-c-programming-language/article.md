@@ -28,8 +28,3 @@ In 1978, Brian Kernighan and Dennis Ritchie published [<i>The C Programming Lang
 According to [Toptal](https://www.toptal.com/c/after-all-these-years-the-world-is-still-powered-by-c-programming), UNIX operating systems are written in C and most of Linux is also in C. Also databases such as Oracle Database, MySQL, MS SQL Server, and PostgresSQL are at least partially written in C. C is the basis of many system kernels. Other programming languages, like Python and Perl, use compilers or interpreters that are written in C.
 
 C has changed over the years and is still a common language to use in lower level programs, like kernels. But it is also used for many applications ranging from device drivers to other programming languages' compilers or interpreters. The language also made way for C++, Objective-C, C#, and many more C-based languages that each have their own speciality.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

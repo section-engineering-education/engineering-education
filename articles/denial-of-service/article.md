@@ -43,8 +43,3 @@ While there is no way to completely avoid becoming a target of a DoS attack, pro
 - [Denial of Service Attacks](https://s2.ist.psu.edu/paper/DDoS-Chap-Gu-June-07.pdf) by Qijun Gu and Peng Liu
 
 - [Distributed Denial of Service](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/)
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/richu-thomas/avatar.jpg">Richu Thomas a student of DPG Institute of Technology and Management in India. He is a GitHub Campus Expert and leads the Developers Student Club and the Hack Club on his campus. He is always interested in learning new things both on and off the campus.

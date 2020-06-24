@@ -624,8 +624,3 @@ All HTTP response codes can be separated into five categories:
 There are many HTTP codes that are unassigned. Some of them may be introduced in later revisions. Even with the limited amount of currently assigned codes, some people may never see many of these codes. Many end-users, however, may be familiar with 404 and 500 as they have an auto-generated error page.
 
 HTTP codes are important to understand, especially if you are developing a web application and are trying to debug based upon the console responses. Knowing these codes came in handy while I was working on my website and forgot to allow methods through the function. This returned a 501 code, allowing me to easily find my mistake. Hopefully this guide of codes can help you!
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

@@ -159,8 +159,3 @@ Rust forces you to write good code so that simple avoidable mistakes don't come 
 When you write code in Rust, you can be guaranteed that your code won't have any undefined behavior just by compiling it (that's the hard part); this is something that no other language can offer (especially at compile time).
 
 There is a reason that Rust has been the [most loved language](https://insights.stackoverflow.com/survey/2019#technology-_-most-loved-dreaded-and-wanted-languages) for 4 years in a row according to the [Stack Overflow developer survey](https://insights.stackoverflow.com/survey).
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/zack-jorquera/avatar.jpg">Zack Jorquera is a sophomore at CU Boulder pursuing a degree in computer science and applied mathematics. Zack's key interest is systems programming.

@@ -33,8 +33,3 @@ According to Todd Lammle in *CCENT Cisco Certified Entry Networking Technician S
 IPv6 also implements security features to mitigate current attack methods. For example, IPv6 can use the Secure Neighbor Discovery protocol with is capable of enabling cryptographic confirmation that a web host is who it claims to be ([LinkLabs](https://www.link-labs.com/blog/why-ipv6-is-important-for-internet-of-things)). This renders the Address Resolution Protocol poisoning and some other naming-based attacks much more difficult.
 
 Smart devices, like a smart lock, smart speaker, smart TVs, and any other "smart" Internet-connected device, are assigned an IP address. This takes up an available address, creating the need for IPv6. There are not enough addresses in IPv4 to support all of these devices. IPv6 also allows for more secure communications between these already insecure devices.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

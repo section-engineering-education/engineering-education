@@ -75,8 +75,3 @@ By personal experience, implementing the data structures from scratch helps a lo
 
 To wrap up, keep programming every day! Stay tuned for this amazing series of articles to kick start your learning and strengthen your fundamentals of data structures!
 
----
-
-#### About the Author
-
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/saiharsha-balasubramaniam/avatar.jpg">Saiharsha Balasubramaniam is a Computer Science Undergrad at Amrita Vishwa Vidyapeetham University, India. He is also a passionate software developer and an avid researcher. He designs and develops aesthetic websites, and loves blockchain technology. While he is not programming, he usually binges NetFlix or can be seen reading a book.

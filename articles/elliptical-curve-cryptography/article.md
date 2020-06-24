@@ -47,8 +47,3 @@ Then, in order to make sure the resulting values can fit in 512-bit public keys,
 The remainder is found by dividing both sides by the previous number. Then, the desired point is found using an equation between two points, finding the third intersection, and reflecting over the x-axis, doing this operation as many times as desired.
 
 Elliptical Curve Cryptography is common in many cryptocurrencies, as they are the modern basis for public-private key cryptography. It is nearly impossible to find the private key from the resulting public key after all the operations are done, we simply do not have the computing power on Earth (excluding Quantum Computing). This allows us to have a modern, extremely secure, and relatively fast cryptographic standard.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

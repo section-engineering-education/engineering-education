@@ -60,8 +60,3 @@ Some notable examples of K8s applications are:
 These are not the only Kubernetes applications out there, and you could even build your own. These applications have the advantage of being easily scalable and new containers can be automatically spawned to minimize down time.
 
 To sum Kubernetes up, it is an automatic container management system. While it is not a traditional, all-inclusive Platform as a Service (PaaS) system, due to it operating at the container level, it provide some features common to PaaS such as deployment, scaling, load balancing and monitoring. All in all, Kubernetes is a great system to implement if you deploy a server side application and want high reliability, low downtime, and great load balancing.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

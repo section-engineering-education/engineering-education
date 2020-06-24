@@ -278,8 +278,3 @@ By using a runtime like tokio, the actor-based web framework called [actix](http
 - [Pinning](https://rust-lang.github.io/async-book/04_pinning/01_chapter.html)
 - [The Rust Async Book](https://rust-lang.github.io/async-book/)
 - [tokio-rs](https://tokio.rs/)
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/zack-jorquera/avatar.jpg">Zack Jorquera is a sophomore at the University of Colorado at Boulder pursuing a degree in computer science and applied mathematics. Zack’s key interests are systems programming and algorithmic design. In his free time, he likes to kayak and ski.

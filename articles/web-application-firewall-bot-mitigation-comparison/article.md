@@ -42,8 +42,3 @@ But how exactly does a bot mitigation module distinguish the bad bots from the g
 The main difference between a WAF and a bot mitigation solution is that the focal point of a bot mitigation solution is to only target bots. A WAF is capable of targeting them as well, but is more focused on protecting against a combined threat profile to prevent app exploitations and safeguard sensitive data.
 
 So which is better? It depends. If a company’s security goal is to minimize the probability of account takeover, content scraping, or denial of service attacks, to name a few examples, a bot mitigation solution would be best. If the goal is to safeguard against internal app exploitations, such as SQL injections or session hijacking, a Web Application Firewall serves best. It all depends on the security objective a company has for their web application, and in many cases, both solutions are leveraged to build a stronger security perimeter.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px;" src="/engineering-education/authors/ivan-santos/avatar.png">Ivan Santos is currently a computer science student at the Colorado School of Mines. He originates from the rural parts of Aguascalientes, Mexico, but grew up in Denver, CO where he remains today. He has developed a special relationship with numbers throughout his academic experience, realizing his favorite application for numbers, logic, and math is computer science. Aside from his studies, he has always had a strong passion for soccer, and his favorite teams vary across countries - FC Barcelona from Spain and Club America from Mexico hold the biggest place in his heart.

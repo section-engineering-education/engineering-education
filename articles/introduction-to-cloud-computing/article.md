@@ -81,8 +81,3 @@ Cloud Computing [Wikipedia](https://en.wikipedia.org/wiki/Cloud_computing)
 [Zdnet Article](https://www.zdnet.com/article/what-is-cloud-computing-everything-you-need-to-know-about-the-cloud/)
 
 [QueensLand Article](https://www.business.qld.gov.au/running-business/it/cloud-computing/explained)
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/francisca-adekanye/avatar.jpg">Francisca is an undergraduate student pursuing a degree in Computer Engineering. Cisca loves technical writing, contributing to open source projects, and also involving herself in tech communities.

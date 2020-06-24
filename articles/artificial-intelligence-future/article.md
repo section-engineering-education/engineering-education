@@ -32,8 +32,3 @@ While AI has its benefits and a large amount of potential, there are a few major
 The first major concern is if AI gets in the wrong hands and is programmed to do something that is wrong. For example, if someone had control over autonomous weapons, the results could be catastrophic. Another concern that many researchers have, as stated by [Future of Life](https://futureoflife.org/background/benefits-risks-of-artificial-intelligence/?cn-reloaded=1), is the possibility that AI will develop a destructive method for achieving a beneficial goal. When AI is given a specific task, it is difficult to set parameters and ensure that the task will be completed in a safe and constructive way. This is a major concern, and one that needs to be heavily researched before this technology takes a bigger stake in our world.
 
 Artificial intelligence is a very powerful emerging technology in the modern world, with the ability to do a vast amount of good. However, steps in this direction need to be taken slowly and methodically in order to ensure safety and minimize concerns.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/michael-zanoff/avatar.jpeg">Michael Zanoff is a freshman at Colorado School of Mines. His passion for the design process and robotics has led him to pursue a degree in Mechanical Engineering. He enjoys keeping up with new technology and learning about the world around him.

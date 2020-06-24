@@ -256,8 +256,3 @@ On the Google Cloud Platform Console, search for StackDriver Logging. You can al
 
 ### Profit?!
 So we have successfully written and deployed a Cloud Function! We’ve seen an overview of how to do this, but I highly recommend you read the [documentation](https://cloud.google.com/docs) of Google Cloud Platforms and Firebase to get a proper understanding of how these tools and technologies work. Reading documentation and experimenting on things is the hard, yet best way to become an expert programmer.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/saiharsha-balasubramaniam/avatar.jpg">Saiharsha Balasubramaniam is a Computer Science Undergrad at Amrita Vishwa Vidyapeetham University, India. He is also a passionate software developer and an avid researcher. He designs and develops aesthetic websites, and loves blockchain technology. While he is not programming, he usually binges Netflix or can be seen reading a book.

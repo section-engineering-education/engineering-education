@@ -36,8 +36,3 @@ Based on the current state of quantum computers, it is easy to see their place i
 It is clear that this technology has its place in industry, but will it ever find its place in the hands of customers? While it is an extremely powerful technology, it may not be suited for personal use, as modern computers are far more optimized for tasks like streaming video and running programs. In addition to this, modern computers do not have the same environmental restraints that quantum computers currently have on their operation.
 
 So for now, it is easy to assume that we won’t be seeing someone walking around with a quantum computer in their bag as of yet, but it should be no surprise to see this technology grow in the businesses sector and open up new worlds of opportunity.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/michael-zanoff/avatar.jpeg">Michael Zanoff is a freshman at Colorado School of Mines. His passion for the design process and robotics has led him to pursue a degree in Mechanical Engineering. He enjoys keeping up with new technology and learning about the world around him.

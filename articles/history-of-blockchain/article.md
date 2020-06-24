@@ -32,8 +32,3 @@ Satoshi Nakamoto released the first [Bitcoin whitepaper](https://bitcoin.org/bit
 Bitcoin led to many cryptocurrencies, but not all cryptocurrencies are about money; some have built applications into the chain such as Ethereum building smart contracts. These contracts are simply code that runs on the Ethereum chain and can be used to create [DApps](https://docs.ethhub.io/ethereum-basics/what-is-ethereum/#what-are-smart-contracts-and-decentralized-applications), which can include games, digital collectables, online voting, and many others.
 
 The applications of blockchain technology are expanding. When blockchains first started with Bitcoin, the technology was not taken seriously. Now that the technology has been vetted and verified, companies have started using blockchains for uses other than cryptocurrencies. We now have decentralized online file sharing applications from this technology, for instance, which provide numerous backups of files that are inaccessible without your private key.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

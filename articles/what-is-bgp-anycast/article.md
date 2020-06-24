@@ -28,8 +28,3 @@ Since an Anycast system is comprised of multiple servers, network traffic is spr
 
 #### Improved Scalability
 Anycast systems are great for services that experience high volumes of traffic. If a service using Anycast grows and requires new servers to handle the increase in traffic, new servers can be added to the network to accommodate the additional traffic. Servers can be added to either new locations or locations that already have existing servers on the Anycast network, depending on what you are trying to achieve. If a specific location experiences a large growth in traffic, adding another server to that location will help balance the load for that location. Adding a server to a new location helps reduce latency by creating a new shortest path for some users. Both ways help improve the stability of the service by having more servers available on the network.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px;" src="/engineering-education/authors/jonathan-popova-jones/avatar.jpg">Jonathan Popova-Jones is pursuing a computer science degree at the Colorado School of Mines. He is originally from Boulder, Colorado, but has been living in the Washington D.C. area for the past 10 years. When not busy with schoolwork, he enjoys fishing, traveling, and working on coding projects. "I’m glad to be a part of this program since it gives me the opportunity to expand my knowledge of computer science topics related to Section as well as learn more about the computer science industry.

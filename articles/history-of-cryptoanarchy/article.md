@@ -84,8 +84,3 @@ Modern cryptoanarchy tools are designed to evade pitfalls of centralization and 
 Simply put, "decentralized networks are [anathema to the Microsofts and Apples](https://bitcoinmagazine.com/articles/crypto-anarchists-cryptoanarchists-2-1412033787) of the world today."
 
 Though there are several strains in the current crypto-anarchist movements, ranging from [Bitcoin maximalism](https://blog.liquid.com/what-is-bitcoin-maximalism) to populist movements and [gun advocacy](https://defdist.org/), the quest for digital liberty and freedom is constantly evolving, with every new tool and cryptographic advancement raising new, fascinating philosophical questions.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/sophia-raji/avatar.jpg">Sophia R. is a junior in computer science at Columbia University. She takes particular interest in full-stack web development and Bitcoin programming. When she is not working on side projects, she teaches coding to middle school and high school students and writes a satire website.

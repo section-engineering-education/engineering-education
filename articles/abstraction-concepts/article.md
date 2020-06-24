@@ -112,8 +112,3 @@ def power(x, n):
 While we could solve these problems using loops, recursion is often times more readable and can even reduce time complexity with proper memorization (saving the value of results used in later calculations).
 
 We have seen how parameters, scoping, and recursion are the foundations for using abstraction effectively. In Part 2, we'll discuss how we can build on this foundation to design large functional units with classes and interfaces.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/sophia-raji/avatar.jpg">Sophia R. is a junior in computer science at Columbia University. She takes particular interest in full-stack web development and Bitcoin programming. When she is not working on side projects, she teaches coding to middle school and high school students and writes a satire website.

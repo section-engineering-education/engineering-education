@@ -44,8 +44,3 @@ When it comes to transmission distance, fiber optics come out on top, as they ca
 When comparing the physical aspects of fiber optic cable to other mediums, fiber optic cables have a much lighter weight, a smaller diameter, and the ability to avoid corrosion and rust due to a non-metallic construction. These characteristics place fiber optics at the top of the list for communications in today’s world.
 
 As new technologies begin to run at faster speeds, communication infrastructures must keep up, and fiber optics make that possible. Without this technology, our world would be at a major bottle neck, but thanks to fiber optics, the possibilities are endless.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/michael-zanoff/avatar.jpeg">Michael Zanoff is a freshman at Colorado School of Mines. His passion for the design process and robotics has led him to pursue a degree in Mechanical Engineering. He enjoys keeping up with new technology and learning about the world around him.

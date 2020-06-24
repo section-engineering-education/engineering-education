@@ -379,8 +379,3 @@ main.py
 Now you can access the system by visiting the same link used when we were creating users: `yourIP:5000/`
 
 Congratulations! You have now created a user login system for a website in Python! You can now create your own website with private webpages, where you may do things like keep a private journal, store your notes or other files, and much more. Let your imagination go wild and create something amazing.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

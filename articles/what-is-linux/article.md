@@ -74,8 +74,3 @@ Along with the many benefits, Linux does come with its own drawbacks as well.
 - **Limited driver availability:** Some devices have drivers made to work on Windows or MacOS but not on Linux; however, support for Linux-compatible drivers has consistently grown over time.
 
 - **Learning curve:** Linux comes with a learning curve. Installing and updating software through a terminal, along with general usage can take some time to get used to.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/jesus-nunez/avatar.jpg">Jesus Nunez is a Sophomore at Colorado School of Mines where he is getting his Computer Science degree with a focus in Computer Engineering. He is an avid Linux user and Vice President to the Linux Users Group.

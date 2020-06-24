@@ -128,8 +128,3 @@ unsigned int y = __builtin_bswap32(*y_p);
 printf("y = %#.8x\n", y);
 ```
 And then you can [run that](https://repl.it/@ZackJorquera/EndianDownCastExample) on your computer.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/zack-jorquera/avatar.jpg">Zack Jorquera is a sophomore at CU Boulder pursuing a degree in computer science and applied mathematics. Zack's key interest is systems programming.

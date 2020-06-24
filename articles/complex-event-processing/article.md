@@ -67,8 +67,3 @@ These are just a number of open source streaming frameworks available that allow
 
 ### Want to know more?
 If you are interested in practical applications using CEP, I recommend reading *High performance in-memory data grid with Apache Ignite* (referenced above) or the new book *[The Apache Ignite Book](https://leanpub.com/ignitebook)* by Shamim Bhuiyan and Michael Zheludkov. They provide code samples, scripts, and more in-depth examples throughout the book.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/earl-potters/avatar.png">Earl is a Junior at CU Boulder pursuing a degree in Computer Science. Earl’s passions are robotics and rugby. He is the founder of RoboBoat at CU Boulder, a robotics club that focus on designing and building ASV(Autonomous Surface Vehicles) for the annual Roboboat International Competition.

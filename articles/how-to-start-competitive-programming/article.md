@@ -126,8 +126,3 @@ Other competitions include:
 - Consult editorials, online references, YouTube tutorials, different approaches for the solution, and read other contestants' code after the completion of the contest. Keep believing in yourself and eventually, there will come a time when you can ***proceed*** to the next stage after successfully solving the phase.
 
 - There is so much more to tell about the same. I'll be discussing them in detail in another blog. Remember there is no shortcut for success. The harder the path, the better the fruit will be. ***Until then, practice, have fun, and learn a lot.***  
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/aman-saxena/avatar.jpg">Aman Saxena is pursuing a degree in Computer Science. He has a keen interest in Competitive Programming & Web Development. He is fond of playing Cricket & solving Big-O complexities. When he's not glued to a computer screen, he is likely exploring the mighty Universe. For any advice or a fruitful discussion, you may connect with him on LinkedIn [@Aman](https://www.linkedin.com/in/amansaxena333/).

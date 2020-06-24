@@ -39,8 +39,3 @@ One of the biggest advantages with white-box switches and Linux OS is that it is
 
 ### Summary
 In conclusion, both open source and vendor-provided networking solutions have their advantages and shortcomings, and it is up to the operator to decide which path to follow, or maybe, use a hybrid model instead of a definite path. In my opinion, vendor-specific technology’s days are [numbered](https://techcrunch.com/2019/01/12/how-open-source-software-took-over-the-world/) and open source with interoperability is the way forward in network technology.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/aakash-rawal/avatar.jpeg">Aakash Rawal is  a first-year graduate student pursuing a Masters in Technology, Cybersecurity and Policy at the University of Colorado Boulder. He is interested in Network Automation, DevOps and Network Security.

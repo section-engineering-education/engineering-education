@@ -59,8 +59,3 @@ A mainframe may be the symbol of a bygone era to most, but most people have used
 [IBM](https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmainframe/zconc_whousesmf.htm) says, "Today, mainframe computers play a central role in the daily operations of most of the world's largest corporations. While other forms of computing are used extensively in business in various capacities, the mainframe occupies a coveted place in today's *e-business* environment. In banking, finance, health care, insurance, utilities, government, and a multitude of other public and private enterprises, the mainframe computer continues to be the foundation of modern business."
 
 So, supercomputers and mainframes are both considered high-performance computers. However, they can have drastically different uses – from banking and retail transactions for mainframes, to nuclear weapon simulations and weather simulations on supercomputers. Access to an amazing amount of computing power allows scientists, engineers, and businesses not only to save time and money, but also peace of mind that whatever they are running will happen at amazing speeds.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

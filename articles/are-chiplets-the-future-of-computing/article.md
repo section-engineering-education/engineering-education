@@ -30,8 +30,3 @@ Chiplets are, in the most basic sense, dies that contain some of the function bl
 Chiplets offer many advantages, one of which is decreased costs. According to [Techquickie](https://www.youtube.com/watch?v=NkknclAeUZ8), chiplets are modular and therefore smaller dies. Chiplet designs are good for yields. This is due to how these dies are manufactured on a Silicon Wafer. The decreased size means more chiplets on a given wafer, and defectives would not waste a big area of silicon, since the chiplet is much smaller than a monolithic die. Since there is less waste and more dies per wafer, it allows for less expensive and faster production of the end product.
 
 Up until AMD's Ryzen 3rd generation processors, chiplets had been restricted to high-end desktop and server processors. Ryzen 3 introduced many consumers to chiplet based processors, that offered a performance boost over previous monolithic designs of yester-year. The chiplet design allows manufactures to continue to shrink the transistors for the CPU cores without worrying (too much) about shrinking the complex I/O and Memory controllers. Chiplets have allowed for faster and less expensive production of processing units, creating more competition in the CPU market.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

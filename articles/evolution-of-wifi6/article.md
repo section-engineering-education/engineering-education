@@ -36,8 +36,3 @@ WPA3 will also introduce Opportunistic Wireless Encryption (OWE), which will rep
 According to the [Wi-Fi Alliance](https://www.wi-fi.org/news-events/newsroom/wi-fi-certified-6-delivers-new-wi-fi-era) Wi-Fi 6 supports "a more diverse set of devices and applications, from those requiring peak performance in demanding enterprise environments to those requiring low power and low latency in smart homes or industrial IoT scenarios... [It] delivers nearly four times the capacity of [802.11ac], and is an evolutionary advancement. [Wi-Fi 6] delivers critical connectivity that supports cellular networks, and leverages high speeds, low latency, power efficiency, greater capacity, and enhanced coverage to deliver many advanced 5G services."
 
 In summary, Wi-Fi 6 allows for more devices that a single wireless router can serve. It also comes with a mandated new security protocol known as WPA3, which includes advanced encryption and improved privacy on open wireless access points. Protecting your data on the Internet is important, and Wi-Fi 6 helps protect it while allowing for a better experience with many devices.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

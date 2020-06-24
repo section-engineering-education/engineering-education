@@ -32,8 +32,3 @@ While these numbers are mostly estimates, definitive information on how much dat
 According to [Live-Counter](https://www.live-counter.com/how-big-is-the-internet), the size of the Internet doubles roughly every two years. We also know that the amount of data on the Internet was 3.7 Zettabytes or 3,700 exabytes in 2013. Assuming the data on the Internet has doubled every two years neither faster nor slower, we are looking at an amazing 44.4 Zettabytes of data on the Internet. Which if we are still using 16Tb 3.5 inch drives for our example, that would fill up 433.94 Olympic swimming pools.
 
 With this astounding amount of data on the Internet how much will you add today?
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/gregory-manley/avatar.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.

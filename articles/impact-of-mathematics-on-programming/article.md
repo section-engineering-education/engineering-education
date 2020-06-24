@@ -85,8 +85,3 @@ Random numbers are used for simulation, cryptography, and some other areas. The 
 
 ### Summary
 Mathematics is the underlying foundation of programming. For you to build a solid career in programming, it's helpful to have a solid foundation in mathematics.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/dominic-nshimba/avatar.jpg">Dominic Nshimba is a Web Developer at All1Zed and currently a Hack Club Facilitator for HackClub in Zambia. He is pursuing a degree in computer science and applied mathematics. Dominic's key interest lies in systems programming.
