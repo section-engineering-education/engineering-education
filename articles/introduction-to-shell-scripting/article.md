@@ -16,7 +16,7 @@ images:
 If you are familiar with a programming language like python or C, then it should be pretty easy to get started with shell scripting. This article can be used as a "cheat sheet" as well.
 <!--more-->
 
-![Shell Scripting](https://www.etlhive.com/wp-content/uploads/2017/06/Shell-Scripting-Image.jpg)<br>
+![Shell Scripting](/assets/images/education/shell-scripting-image.png)<br>
 *Image Source:[etlhive](https://www.etlhive.com/wp-content/uploads/2017/06/Shell-Scripting-Image.jpg)*
 
 ### Shell Scripting
