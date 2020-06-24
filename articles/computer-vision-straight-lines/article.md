@@ -138,11 +138,6 @@ If you'd like to explore further, you can play around with the [program I wrote 
 ### More Hough
 In this article, we looked at the standard Hough transform, which is specialized for lines. However, the Hough transform has since been generalized for more purposes. Some good examples of this are [finding circles/ellipses](https://en.wikipedia.org/wiki/Circle_Hough_Transform) in images, [finding any shape](https://en.wikipedia.org/wiki/Generalised_Hough_transform) in images, and [finding complex objects using image keywords](https://github.com/ZackJorquera/Keyword_Object_Detection).
 
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/zack-jorquera/avatar.jpg">Zack Jorquera is a sophomore at CU Boulder pursuing a degree in computer science and applied mathematics. Zack's key interest is systems programming.
-
 <!-- MathJax script -->
 <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -172,3 +167,8 @@ In this article, we looked at the standard Hough transform, which is specialized
     TeX: { equationNumbers: { autoNumber: "AMS" } }
     });
   </script>
+
+---
+
+#### About the Author
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/zack-jorquera/avatar.jpg">Zack Jorquera is a sophomore at CU Boulder pursuing a degree in computer science and applied mathematics. Zack's key interest is systems programming.
