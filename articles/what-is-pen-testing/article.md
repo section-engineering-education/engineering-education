@@ -4,16 +4,16 @@ status: publish
 published: true
 title: What Is Pen Testing and Why Is It Important?
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
-author: Gregory Manley
+author: gregory-manley
 date: 2019-10-02T00:00:00-07:00
 topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/what-is-pen-testing.jpg
+  - url: /engineering-education/what-is-pen-testing/what-is-pen-testing.jpg
     alt: pen testing
 ---
-Pen Testing, also known as penetration testing, is the method of planning attacks against security infrastructure or computer programs to find security vulnerabilities that need to be patched. Pen testing comes in many forms and contains different specialities.  
+Pen Testing, also known as penetration testing, is the method of planning attacks against security infrastructure or computer programs to find security vulnerabilities that need to be patched. Pen testing comes in many forms and contains different specialities.
 <!--more-->
 
 So, what exactly is penetration testing and why is it important?
@@ -39,8 +39,3 @@ Zero-day vulnerabilities are vulnerabilities that are generally unknown to the o
 Pen testing can also give security personnel experience in dealing with attackers. It can help these personnel discover ways to effectively and quickly remove attackers from the system before they can do any damage. Also, testing can give developers/creators insight into their systems. They can be shown if their application is vulnerable in a certain way, if an exploit was created for that vulnerability, and how it could be fixed or at a minimum mitigated.
 
 Penetration Testing, or pen testing for short, is simply the process by which professional ethical hackers attack systems in order to find or even exploit security vulnerabilities that may be present. Upon discovery, the developers/creators of the system can begin to work on a patch to close the vulnerability.
-
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/assets/images/education/authors/gregory-manley.jpg">Gregory Manley is a freshman at Colorado School of Mines where he is majoring in Computer Science and Computer Engineering. He is currently the owner of iTech News and a contributor for Section's Engineering Education Content Program. His management of iTech News has led him to work with many brands on writing technology focus articles.
