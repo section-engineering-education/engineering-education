@@ -216,11 +216,6 @@ If you're interested in learning more about error-correcting codes, specifically
 ### Sources
 Lindell, Y. Introduction to Coding Theory (89-662) [Lecture Notes]. (2010). Retrieved from (http://u.cs.biu.ac.il/~lindell/89-662/main-89-662.html)
 
----
-
-#### About the Author
-<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/ian-jorquera/avatar.jpg">Ian Jorquera is an undergraduate student at the University of Colorado Boulder pursuing a degree in Computer Science. Ian is particularly interested in mathematics and algorithms. In his free time, Ian enjoys skiing and whitewater kayaking.
-
 <!-- MathJax script -->
 <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -250,3 +245,8 @@ Lindell, Y. Introduction to Coding Theory (89-662) [Lecture Notes]. (2010). Retr
     TeX: { equationNumbers: { autoNumber: "AMS" } }
     });
   </script>
+
+---
+
+#### About the Author
+<img style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;" src="/engineering-education/authors/ian-jorquera/avatar.jpg">Ian Jorquera is an undergraduate student at the University of Colorado Boulder pursuing a degree in Computer Science. Ian is particularly interested in mathematics and algorithms. In his free time, Ian enjoys skiing and whitewater kayaking.
