@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/competitive-programming.jpg
+  - url: /engineering-education/how-to-start-competitive-programming/hero.jpg
     alt: competitive programming example
 ---
 Whether you are a high schooler, a university student, or a careered developer, this is the perfect time to start with competitive programming. Yeah, you heard it right! Competitive programming does not have age-barrier or portfolio limitations. It only requires a passionate spirit with some love for coding.

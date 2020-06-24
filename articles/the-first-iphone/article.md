@@ -9,7 +9,7 @@ date: 2019-11-13T00:00:00-07:00
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/first-iphone.jpg
+  - url: /engineering-education/the-first-iphone/hero.jpg
     alt: the first iphone
 ---
 On January 9, 2007, Apple CEO Steve Jobs unveiled a phone that forever changed the smartphone industry. On that day, [Jobs said](https://time.com/4628515/steve-jobs-iphone-launch-keynote-2007/), "This is a day I've been looking forward to for two and a half years. Every once in a while a revolutionary product comes along that changes everything."

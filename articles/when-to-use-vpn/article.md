@@ -10,7 +10,7 @@ topics: [networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/virtual-private-network.jpg
+  - url: /engineering-education/when-to-use-vpn/hero.jpg
     alt: virtual private network
 ---
 Since the creation of the Internet, security has been a major concern for many users. People desire to keep their information safe and out of the hands of those seeking to use it to their benefit. From this issue emerged services like anti-virus and eventually Virtual Private Networks (VPNs). According to [GeoSurf](https://www.geosurf.com/blog/history-of-vpn-the-quest-for-a-better-internet/), the VPN was developed in 1996 when a Microsoft employee was developing the Point-to-Point Tunneling Protocol. This initial VPN was being created for use in businesses but would soon make its way onto the computers of users all around the world.

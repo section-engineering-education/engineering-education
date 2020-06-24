@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/artificial-intelligence-future.jpg
+  - url: /engineering-education/artificial-intelligence-future/hero.jpg
     alt: artificial intelligence future
 ---
 All around the world, artificial intelligence is making its way into people's lives. This technology is feared by many, but how realistic is that fear? Should we really be concerned?

@@ -10,7 +10,7 @@ topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/elliptical-curve-cryptography.jpg
+  - url: /engineering-education/elliptical-curve-cryptography/hero.jpg
     alt: elliptical curve cryptography
 ---
 There are many modern encryption algorithms, each of which have their own strengths. Elliptical curve cryptography (ECC) is a family of algorithms that are based upon elliptical curves. ECC is a next-generation public key cryptography system that provides a significant increase in security over previous generations.

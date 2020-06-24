@@ -10,7 +10,7 @@ topics: [Edge Computing]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/what-is-kubernetes.jpg
+  - url: /engineering-education/what-is-kubernetes/hero.jpg
     alt: Kubernetes container management system
 ---
 Kubernetes is an automatic container management system. While it is not a traditional, all-inclusive Platform as a Service (PaaS), due to it operating at the container level, it provides some features common to PaaS such as deployment, scaling, load balancing and monitoring.

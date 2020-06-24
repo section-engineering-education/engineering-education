@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/what-is-risc.jpg
+  - url: /engineering-education/what-is-risc/hero.jpg
     alt: RISC
 ---
 The Central Processing Unit Architecture operates using an instruction set architecture. RISC, or Reduced Instruction Set Computer, is a type of microprocessor architecture that uses a small, highly-optimized set of instructions. RISC offers some advantages over CISC and have even been used in the current world's fastest supercomputer.

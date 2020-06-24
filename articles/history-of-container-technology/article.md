@@ -10,7 +10,7 @@ topics: [containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/container-technology-history.jpg
+  - url: /engineering-education/history-of-container-technology/hero.jpg
     alt: container technology history
 ---
 ### The Beginning

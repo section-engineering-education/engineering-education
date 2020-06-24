@@ -10,7 +10,7 @@ topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/history-of-blockchain.jpg
+  - url: /engineering-education/history-of-blockchain/hero.jpg
     alt: history of blockchain
 ---
 The first blockchain application was started by Satoshi Nakamoto on January 3, 2009 with the creation of the first block of the chain. While we do not know the actual identity of Nakamoto, we do know the blockchain application known as Bitcoin. Bitcoin is credited with being the very first blockchain. This chain is still going strong and is the most common example of a blockchain.  

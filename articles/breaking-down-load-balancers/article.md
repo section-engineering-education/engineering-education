@@ -10,7 +10,7 @@ topics: [networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/load-balancers.jpg
+  - url: /engineering-education/breaking-down-load-balancers/hero.jpg
     alt: load balancer
 ---
 Modern Internet infrastructure requires multiple computers to serve a website or web application reliably around the globe, but each of these computers has a different external IP address. While this would not be a problem if all of the computers hosted a different application, DNS (Domain Name Server) and mobile applications rely on a single IP to connect to.

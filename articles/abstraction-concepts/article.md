@@ -10,7 +10,7 @@ topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/python-image.jpg
+  - url: /engineering-education/abstraction-concepts/hero.jpg
     alt: python ball hiding
 ---
 Abstraction is the art of hiding unnecessary details. It is a fundamental object-oriented programming concept which allows us to only show relevant features of an object and conceal the rest. In doing so, we make our programs more abstract and don't do unnecessary work. We achieve this in Python through the use of classes and interfaces, which we'll discuss in Part 2 of this series, after reviewing some important fundamentals.

@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/quantum-image.jpg
+  - url: /engineering-education/introduction-quantum-computers/hero.jpg
     alt: quantum image
 ---
 Computers are electronic devices designed to store and process data. As time has passed, computers have made large strides in both the areas of storage capacity and processing power, but when will these strides reach their limits, and what will be the defining limitations? When it comes to complex computations, there is one specific technology that is helping to break past the limitations of classical computers – quantum computing.

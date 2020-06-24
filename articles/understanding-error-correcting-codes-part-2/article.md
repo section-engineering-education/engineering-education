@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/error-code-image2.jpg
+  - url: /engineering-education/understanding-error-correcting-codes-part-2/hero.jpg
     alt: error-correcting codes
 ---
 

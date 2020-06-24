@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/ice_with_lines.png
+  - url: /engineering-education/computer-vision-straight-lines/hero.png
     alt: computer vision straight lines
 ---
 Computer vision is how computers can identify high-level information from images or videos.
@@ -128,7 +128,7 @@ None of the edges are 100% straight, but they are straight enough that we would 
 
 And with all that done, here is the resulting image with 10 lines:
 
-![cracked ice with lines](/assets/images/education/ice_with_lines.png)
+![cracked ice with lines](/engineering-education/computer-vision-straight-lines/hero.png)
 
 I would say that worked pretty well. You will notice how not all of the lines line up exactly with the image.
 This is because we decreased the line's $\rho$ accuracy.

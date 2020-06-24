@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/cloud-image.jpg
+  - url: /engineering-education/building-serverless-contact-form/hero.jpg
     alt: cloud image example server
 ---
 In this post, let’s get a quick hands-on and take a look at how to write and deploy a serverless function.

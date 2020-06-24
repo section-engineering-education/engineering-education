@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/binary-search.jpg
+  - url: /engineering-education/binary-search/hero.jpg
     alt: binary search magnifying glass
 ---
 A **binary search** is an algorithm that finds the position of a target value in a *sorted* list. It has [several uses in practice](https://stackoverflow.com/questions/540165/where-is-binary-search-used-in-practice):

@@ -10,7 +10,7 @@ topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/web-application-firewall-diagram.png
+  - url: /engineering-education/web-application-firewall-bot-mitigation-comparison/hero.png
     alt: WAF vs Bot Mitigation
 ---
 Web applications today face an expansive and diverse makeup of increasingly sophisticated security threats. Web application firewalls and bot mitigation solutions both provide tooling to help prevent malicious activity from affecting web applications, but what exactly are these solutions and how do they differ?
@@ -24,7 +24,7 @@ But how exactly does a WAF know what to filter? The answer is in the way the WAF
 A visual of how a Web Application Firewall works can be seen below. The WAF stands between the user and the web application server to ensure valid requests are allowed to reach the web application.
 
 <div style="text-align: center; padding-bottom: 5%;">
-<img style="padding: 0; margin:0;" src="/assets/images/education/web-application-firewall-diagram.png" alt="web application firewall diagram"><br>
+<img style="padding: 0; margin:0;" src="/engineering-education/web-application-firewall-bot-mitigation-comparison/hero.png" alt="web application firewall diagram"><br>
 <span style="font-size: 11px;">Figure 1: WAF visual from I. Bulatov, D. Rybin, and A. Romanov, habr. <a href="https://habr.com/en/company/dsec/blog/454592/">Digital Security</a>, 2019.<span>
 </div>
 

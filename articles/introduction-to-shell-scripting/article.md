@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/shell-image.jpg
+  - url: /engineering-education/introduction-to-shell-scripting/hero.jpg
     alt: shell scripting example image
 ---
 If you are familiar with a programming language like python or C, then it should be pretty easy to get started with shell scripting. This article can be used as a "cheat sheet" as well.

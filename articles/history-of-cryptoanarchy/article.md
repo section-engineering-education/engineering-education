@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/bitcoin.jpg
+  - url: /engineering-education/history-of-cryptoanarchy/hero.jpg
     alt: bitcoin coin
 ---
 As we have moved from the Industrial Age to the Information Age, questions arise as to how digital technology, data, and automation will further evolve, and along with it, our economic and social systems. On the one hand, we are left with government unemployment systems built on [legacy software](https://www.popularmechanics.com/science/a32095395/cobol-programming-language-covid-19/); and on the other, bids for undermining the government's control using decentralized technology, which tears down hierarchical organizations and builds new networked ones.

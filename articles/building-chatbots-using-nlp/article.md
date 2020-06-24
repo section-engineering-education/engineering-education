@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/chat.jpg
+  - url: /engineering-education/building-chatbots-using-nlp/hero.jpg
     alt: chatbot example
 
 ---

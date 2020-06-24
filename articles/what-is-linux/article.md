@@ -10,7 +10,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/linux_live_logo.jpg
+  - url: /engineering-education/what-is-linux/hero.jpg
     alt: Linux Penguin  
 ---
 <img src="/assets/images/education/Tux_linux_logo.png" style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;">

@@ -10,7 +10,7 @@ topics: [networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/fiber-optic-communication.jpg
+  - url: /engineering-education/fiber-optic-communication/hero.jpg
     alt: fiber-optic
 ---
 

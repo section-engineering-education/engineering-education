@@ -10,7 +10,7 @@ topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/quantum-cryptography.jpg
+  - url: /engineering-education/quantum-cryptography/hero.jpg
     alt: quantum cryptography
 ---
 Encryption is a hidden part of everyday life, providing data protection around everything from emails to bank accounts. With quantum computing gaining momentum, there are concerns about information becoming more vulnerable to hacking. Quantum encryption aims to use quantum mechanics to protect data from hacking threats. Let's dive into the basics.

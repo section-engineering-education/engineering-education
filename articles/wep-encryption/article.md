@@ -10,7 +10,7 @@ topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/wep-encryption.jpg
+  - url: /engineering-education/wep-encryption/hero.jpg
     alt: Wired Equivalent Privacy (WEP)
 ---
 There are many encryption standards in the digital world today, many of which have been shown to have fatal flaws. Unfortunately, many standards that are considered insecure are still being used in sensitive applications. One such standard is WEP. So what is it and why is it bad to use?

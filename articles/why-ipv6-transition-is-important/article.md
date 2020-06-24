@@ -10,7 +10,7 @@ topics: [networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/ipv6-transition.jpg
+  - url: /engineering-education/why-ipv6-transition-is-important/hero.jpg
     alt: IPv6 transition
 ---
 Computers talk to other computers all the time, but how can they tell who is who? This is where IP addresses come in. Each computer on a network receives an IP address, which can be thought as the unique name of the computer. These addresses are much like a mailing address identifies given people. Currently, we are mainly using IPv4 addresses to tell computers apart, but we need to transition to IPv6 soon.

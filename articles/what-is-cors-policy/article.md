@@ -10,7 +10,7 @@ topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/cors-policy-image.jpg
+  - url: /engineering-education/what-is-cors-policy/hero.jpg
     alt: CORS policy
 ---
 The CORS policy, or the Cross-Origin Resource Sharing policy, prevents accessing web resources from sources other than the server the website is running on for security purposes.  
