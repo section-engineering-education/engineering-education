@@ -1,4 +1,4 @@
-# Converting A Static Site to A Dynamic NodeJS Web App - Part 1: Create a Basic Express Server
+# Converting A Static Site to A Dynamic NodeJS Web App
 
 This tutorial will guide you how to convert a static website that uses HTML, CSS and JS to a dynamic one using the MEN stack. Similar to the popular MEAN/MEARN stack (MongoDB, Express, Angular or React and NodeJS), but instead of using Angular or React, we will use a templating engine called [EJS](https://ejs.co) (Embedded JavaScript.) Other popular templating engines include Handlebars, Pug and Nunjucks.
 
@@ -43,7 +43,7 @@ Finally, type: `npm start` and then go to (IP Address of your VPS host or localh
 
 ~~In Part 2, we will discuss how to convert your static files to dynamic ones using the EJS templating engine and how to copy repeated code using partials and inject server-side variables to the front-end.~~
 
-# Part 2 - Templating Basics (included in same article/or part 2?)
+# ~~Part 2 - Templating Basics (included in same article/or part 2?)~~
 
 ## Installing EJS
 
@@ -90,8 +90,59 @@ The '/' specifies the URL of the website the code will activate on, the req stan
 
 **Should this be left till Part 3? Article over 1200 words**
 
-## Passing Server-Side Data to the Frontend
+## Passing Server-Side Data ~~(should it be variables?)~~ to the Frontend
 
-The main attraction of templating apart from reusing code is that you can pass server-side variables to the front-end either a single variable like the current user's username or array of registered users' details. The real strength is apparent when using APIs. **For API Use, see Part 3?**
+The main attraction of templating apart from reusing code is that you can pass server-side variables to the front-end. Either a single variable like the current user's username or an array like the details of every registered users. However, the real strength of passing server-side variables becomes apparent when using APIs or databases. 
+
+For a basic example, the below code will display "Louise" in the h2 tag of the index page:
+
+**server.js**
+```js
+// Route Route
+app.get('/', function (req, res) {
+    var name = "Louise";
+    // Render index page
+    res.render('pages/index', {
+        // EJS variable and server-side variable
+        name: name
+    });
+});
+```
+The first name is the name of the EJS variable (the name for displaying it on the front-end) and the second the variable that contains the data you want to send. They don't have to be identical.
+
+**index.ejs**
+``` html
+<h2>My name is <%= name %></h2>
+```
+
+For a simple array, you can use this example instead which will create a p tag for every name in the listnames variable:
+
+**server.js**
+
+``` js
+// Route Route
+app.get('/', function (req, res) {
+    var listnames = ["Louise", "Sadie", "Erik", "Raph", "Gina"];
+    // Render index page
+    res.render('pages/index', {
+        // EJS variable and server-side variable
+        listnames: listnames
+    });
+});
+```
+**index.ejs**
+``` html
+<% listnames.forEach(function(name) { %>
+        <p><%= name %></p>
+        <% }); %>
+```
+
+## ~~Passing Server-Side Data (Extended)~~(Should it be more about continuing work/future work/building on skills?)
+
+Congratulations. You've successfully converted your static website to a NodeJS web app. You've also created your first Express web server and  learned the basic of EJS templating.
+
+If you want to build on the skills you've learned on this tutorial, I suggest using EJS templating to work with APIs and databases. 
+
+If you need a helping hand on either of those areas, check out my Getting to Grips with Databases [guide](https://www.section.io/engineering-education/working-with-databases-part1/) and ~~look out for The Simple Guide to Using APIs~~ **~~(only mention when I've written the article?)~~** which will get you started and later expand into using EJS.
 
  
