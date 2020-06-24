@@ -24,7 +24,7 @@ Once you have created a static website, the first step to create a NodeJS app is
 
 First, move all your website’s static files (HTML, CSS, JS and images etc.) into a folder called public and create a file called server.js in the root directory of your website folder. In the server.js file type:
 
-```
+```js
 // Load Node modules
 var express = require('express');
 // Initialise Express
@@ -78,7 +78,7 @@ Now we need to configure routes. Routes tell the server what to do when a user g
 
 Since we only want to display our EJS pages, we will just use get routes. Add them after the `app.listen(8080)` line in server.js. For the index page, the route will be:
 
-```
+```js
 // *** GET Routes - display pages ***
 
 // Root Route
