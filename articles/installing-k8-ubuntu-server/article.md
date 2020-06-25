@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: installing-k8-ubuntu-server
 title: How to Install a Single Node Kubernetes Cluster on Ubuntu
 description: Kubernetes is not limited to being installed only on Ubuntu server. It can be installed on Linux, Windows, and even macOS.
 author: Gregory Manley

@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: binary-search
 title: All About Binary Search
 description: Walk-through of a simple Binary Search implementation in Python and discussion of binary search time and space complexity.
 author: Sophia Raji

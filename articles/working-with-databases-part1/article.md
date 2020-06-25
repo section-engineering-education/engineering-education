@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: working-with-databases-part1
 title: Getting to Grips with Databases - Part 1
 description: Using MongoDB, this article proves that all you need to work with a database is some basic knowledge about the command line and JSON.
 author: Louise Findlay

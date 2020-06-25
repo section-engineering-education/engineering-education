@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: elliptical-curve-cryptography
 title: How Does Elliptical Curve Cryptography Work?
 description:  Elliptical curve cryptography is a next-generation public key cryptography system that provides a significant increase in security over previous generations.
 author: Gregory Manley

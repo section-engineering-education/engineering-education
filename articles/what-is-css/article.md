@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: what-is-css
 title: What is CSS and Why Does it Matter?
 description: CSS is a very important part of the modern web. Without CSS, websites would look plain, uninteresting and dated by today's standards.
 author: Gregory Manley

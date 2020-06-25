@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: what-are-reverse-proxies
 title: What Are Reverse Proxies?
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
 author: Ivan Santos

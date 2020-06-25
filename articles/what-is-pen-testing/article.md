@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: what-is-pen-testing
 title: What Is Pen Testing and Why Is It Important?
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
 author: gregory-manley

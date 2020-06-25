@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: what-is-bgp-anycast
 title: What Is BGP Anycast and Where Is It Used?
 description: The Border Gateway Protocol (BGP) is a protocol which is used to determine the fastest path in which data will travel to reach its destination. BGP Anycast is a networking technique that allows different servers to share the same IP address.
 author: Jonathan Popova-Jones

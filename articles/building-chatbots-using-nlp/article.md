@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: building-chatbots-using-nlp
 title: How to Build a Chatbot Using NLP
 description: This article breaks down how to approach building a Natural Language Processing (NLP) chatbot across a diverse set of use cases, including healthcare, media, finance, and human resources, among others.
 author: Gagan Bhatia
