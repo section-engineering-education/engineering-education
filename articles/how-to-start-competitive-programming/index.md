@@ -5,7 +5,7 @@ published: true
 slug: how-to-start-competitive-programming
 title: How to Get Started with Competitive Programming
 description: Competitive programming is a mind sport usually held over the Internet or a local network, involving participants trying to program according to provided specifications.
-author: Aman Saxena
+author: aman-saxena
 date: 2020-06-20T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

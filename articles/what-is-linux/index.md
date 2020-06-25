@@ -5,7 +5,7 @@ published: true
 slug: what-is-linux
 title: What is Linux?
 description: Initially released on September 17th, 1991, by Linux Torvalds, Linux is a set of open source Unix-like operating systems.
-author: Jesus Nunez
+author: jesus-nunez
 date: 2020-04-20T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

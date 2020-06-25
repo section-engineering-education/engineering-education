@@ -5,7 +5,7 @@ published: true
 slug: why-ipv6-transition-is-important
 title: Why is the Switch to IPv6 Important?
 description: Currently, communication through the Internet is primarily conducted using IPv4 addresses, but limited inventory of these addresses is demanding that we transition to IPv6 soon.
-author: Gregory Manley
+author: gregory-manley
 date: 2019-12-05T00:00:00-07:00
 topics: [networking]
 excerpt_separator: <!--more-->

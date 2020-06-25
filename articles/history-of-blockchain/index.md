@@ -5,7 +5,7 @@ published: true
 slug: history-of-blockchain
 title: The History of Blockchain
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
-author: Gregory Manley
+author: gregory-manley
 date: 2019-10-18T00:00:00-07:00
 topics: [security]
 excerpt_separator: <!--more-->

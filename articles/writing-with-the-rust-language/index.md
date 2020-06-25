@@ -5,7 +5,7 @@ published: true
 slug: writing-with-the-rust-language
 title: Writing Good Code with the Rust Language
 description: How Rust forces you to write good code which, in turn, eliminates all possibility of undefined behavior that can cause segfaults.
-author: Zack Jorquera
+author: zack-jorquera
 date: 2020-03-20T00:00:00-07:00
 topics: [Languages]
 excerpt_separator: <!--more-->

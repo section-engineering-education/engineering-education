@@ -5,7 +5,7 @@ published: true
 slug: what-is-cors-policy
 title: What is the CORS Policy?
 description: The CORS policy, or the Cross-Origin Resource Sharing policy, prevents accessing web resources from sources other than the server the website is running on for security purposes.
-author: Nadiv Gold Edelstein
+author: nadiv-gold-edelstein
 date: 2020-05-11T00:00:00-07:00
 topics: [security]
 excerpt_separator: <!--more-->

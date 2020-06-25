@@ -5,7 +5,7 @@ published: true
 slug: http-code-cheat-sheet
 title: HTTP Code Cheat Sheet - What You Need to Know About HTTP Requests and Responses
 description: HTTP codes are important to understand, especially if you are developing a web application and are trying to debug based upon the console responses.
-author: Gregory Manley
+author: gregory-manley
 date: 2020-05-25T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

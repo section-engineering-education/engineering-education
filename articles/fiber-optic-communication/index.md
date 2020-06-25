@@ -5,7 +5,7 @@ published: true
 slug: fiber-optic-communication
 title: Fiber Optic Communication - What is it and why is it beneficial?
 description: Using light to transmit data, fiber optics are one of the most powerful technologies facilitating communication in today's fast-paced world.
-author: Michael Zanoff
+author: michael-zanoff
 date: 2020-02-29T00:00:00-07:00
 topics: [networking]
 excerpt_separator: <!--more-->

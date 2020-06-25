@@ -5,7 +5,7 @@ published: true
 slug: quantum-cryptography
 title: Is Quantum Cryptography the Future of Encryption?
 description: As momentum around quantum computing continues to build, will current encryption methods be able to stand up to the processing power? Quantum encryption aims to use quantum mechanics to protect data from hacking threats.
-author: Justin Osborne
+author: justin-osborne
 date: 2020-05-21T00:00:00-07:00
 topics: [security]
 excerpt_separator: <!--more-->

@@ -5,7 +5,7 @@ published: true
 slug: data-structures-python-part-1
 title: Data Structures in Python - Part 1
 description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
-author: Saiharsha Balasubramaniam
+author: saiharsha-balasubramaniam
 date: 2020-06-17T00:00:00-12:00
 topics: [languages]
 excerpt_separator: <!--more-->

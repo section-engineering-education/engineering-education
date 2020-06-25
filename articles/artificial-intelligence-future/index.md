@@ -5,7 +5,7 @@ published: true
 slug: artificial-intelligence-future
 title: Artificial Intelligence – Does it have a place in our future?
 description: description placeholder
-author: Michael Zanoff
+author: michael-zanoff
 date: 2020-02-06T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

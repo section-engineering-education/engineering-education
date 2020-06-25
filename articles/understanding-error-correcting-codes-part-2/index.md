@@ -5,7 +5,7 @@ published: true
 slug: understanding-error-correcting-codes-part-2
 title: An Introduction to Error-Correcting Codes - Part 2
 description: Error-correcting codes are one of the most fundamental concepts that keep our technology-driven society running.
-author: Ian Jorquera
+author: ian-jorquera
 date: 2020-06-06T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

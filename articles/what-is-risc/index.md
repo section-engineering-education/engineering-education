@@ -5,7 +5,7 @@ published: true
 slug: what-is-risc
 title: What is RISC?
 description: RISC, or Reduced Instruction Set Computer, is a type of microprocessor architecture that uses a small, highly-optimized set of instructions.
-author: Gregory Manley
+author: gregory-manley
 date: 2020-02-10T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

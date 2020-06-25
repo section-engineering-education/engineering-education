@@ -5,7 +5,7 @@ published: true
 slug: mainframes-vs-supercomputers
 title: What is the difference between mainframes and supercomputers?
 description: Mainframes are powerful computers that have handled mission-critical business workloads for decades, but supercomputers take power to the next level.
-author: Gregory Manley
+author: gregory-manley
 date: 2020-04-06T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

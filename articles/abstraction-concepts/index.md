@@ -5,7 +5,7 @@ published: true
 slug: abstraction-concepts
 title: Understanding Abstraction in Python, Part 1
 description: An introduction to abstraction in Python through the concepts of parameters, scoping, and recursion.
-author: Sophia Raji
+author: sophia-raji
 date: 2020-04-24T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->

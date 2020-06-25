@@ -5,7 +5,7 @@ published: true
 slug: impact-of-mathematics-on-programming
 title: The Impact of Mathematics on Programming
 description: Basic mathematics is necessary to be mastered by students taking a programming subject because it can promote problem solving and algorithmic thinking skills.
-author: Dominic Nshimba
+author: dominic-nshimba
 date: 2020-06-17T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->

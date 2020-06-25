@@ -5,7 +5,7 @@ published: true
 slug: introduction-quantum-computers
 title: Quantum Computers - Are they the future of computing?
 description: Computers that perform quantum computations are known as quantum computers. Quantum computing is the use of quantum-mechanical processing such as superposition and entanglement to perform computation.
-author: Michael Zanoff
+author: michael-zanoff
 date: 2020-06-15T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->

@@ -5,7 +5,7 @@ published: true
 slug: introduction-to-cloud-computing
 title: Introduction To Cloud Computing
 description: Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.
-author: Francisca Adekanye
+author: francisca-adekanye
 date: 2020-06-18T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->

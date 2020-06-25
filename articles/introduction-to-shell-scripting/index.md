@@ -5,7 +5,7 @@ published: true
 slug: introduction-to-shell-scripting
 title: Introduction to Shell Scripting
 description: A shell script is a computer program designed to be run by the Unix shell. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
-author: Rohan Reddy
+author: rohan-reddy
 date: 2020-06-20T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

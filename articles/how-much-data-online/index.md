@@ -5,7 +5,7 @@ published: true
 slug: how-much-data-online
 title: How Much Data Is on the Internet?
 description: How much data is on the Internet, how much information is online, and how is data on the internet stored?
-author: Gregory Manley
+author: gregory-manley
 date: 2020-03-27T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

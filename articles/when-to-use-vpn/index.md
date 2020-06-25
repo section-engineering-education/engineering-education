@@ -5,7 +5,7 @@ published: true
 slug: when-to-use-vpn
 title: What are VPNs and When Should You Use One?
 description: There are many reasons why someone might want to use a VPN, but some major reasons include security and the ability to bypass geographic restrictions.
-author: Michael Zanoff
+author: michael-zanoff
 date: 2020-01-20T00:00:00-07:00
 topics: [networking]
 excerpt_separator: <!--more-->

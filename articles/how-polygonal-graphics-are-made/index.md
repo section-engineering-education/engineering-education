@@ -5,7 +5,7 @@ published: true
 slug: how-polygonal-graphics-are-made
 title: How Polygonal Graphics Are Made
 description: Polygons are used in computer graphics to compose images that are three-dimensional in appearance. Usually triangular polygons arise when an object's surface is modeled, vertices are selected, and the object is rendered in a wire frame model.
-author: Nadiv Gold Edelstein
+author: nadiv-gold-edelstein
 date: 2020-06-10T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->

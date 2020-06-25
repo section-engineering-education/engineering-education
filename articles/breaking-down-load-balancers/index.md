@@ -5,7 +5,7 @@ published: true
 slug: breaking-down-load-balancers
 title: Breaking Down Load Balancers
 description: By adding a load balancer to a web application you not only increase the amount of servers that support a single application, but you also increase the reliably of an application with backups and fallback servers.
-author: Gregory Manley
+author: gregory-manley
 date: 2019-12-19T00:00:00-07:00
 topics: [networking]
 excerpt_separator: <!--more-->

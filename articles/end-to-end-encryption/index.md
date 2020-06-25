@@ -5,7 +5,7 @@ published: true
 slug: end-to-end-encryption
 title: End-to-End Encryption (E2EE) Explained
 description: End-to-end encryption (E2EE) is a a public key encryption system that prevents the contents of your messages, text, and files from being understood by anyone except their intended recipients.
-author: Earl Potters
+author: earl-potters
 date: 2020-04-25T00:00:00-07:00
 topics: [security]
 excerpt_separator: <!--more-->

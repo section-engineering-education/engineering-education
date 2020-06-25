@@ -5,7 +5,7 @@ published: true
 slug: computer-vision-straight-lines
 title: Computer Vision - Straight Lines
 description: Computer vision is how computers can identify high-level information from images or videos. This article explores one of the more basic algorithms in computer vision – finding straight lines in images.
-author: Zack Jorquera
+author: zack-jorquera
 date: 2020-05-19T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
