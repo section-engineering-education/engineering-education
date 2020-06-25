@@ -1,16 +1,16 @@
-# "Beginner's Guide to Git: Something that every Software Engineer should at least know of"
+# "Beginner's Guide to Git: Something that every Software Engineer should at least know of."
 
-Git is an open-source version control system to track changes in computer files. The technology is being used in the industry by almost all the companies. Every Software Engineer is expected to know it. It is designed for coordinating work among programmers but can be used to track changes in any files.
+Git is an open-source version control system to track changes in computer files. The technology is being used in the industry by almost all the companies. It is something that every Software Engineer should know. It is for synchronized work among programmers but can be used to track changes in any files.
 
-This guide would help you to get started with Git for your personal projects. For this, we will assume that we are working on a project from scratch and wants to manage it with Git. We would also see how can we manage it with GitHub. This would cover everything a beginner needs to know. 
+This guide would help you to get started with Git for your personal projects. For this, we will assume that we are working on a project from scratch and wants to manage it with Git. We would also see how we can manage it with GitHub. This article would cover everything a beginner needs to know. 
 
 ## Why Git?
 
-Git is an open-source version control distributed system that helps to organize code. It keeps track of every change you make to the files by taking snapshots of your file. So you have a record of what is been done, and you can revert to specific versions should you ever need to. 
+Git is an open-source version control distributed system that helps to organize code. It keeps track of every change you make to the files by taking snapshots of your code file. So you have a record of what is been done, and you can revert to specific versions should you ever need to. 
 
-It helps collaboration easier among developers. Allowing changes by number of developers to be all merged into one source. So even though you don't write code, it would be beneficial for you to keep track of it.
+It helps collaboration easier among developers. Allowing the changes by many developers to be all merged into one source. So even though you don't write code, it would be beneficial for you to keep track of it.
 
-Git runs locally, So your files are being stored on your computer. You can also use an online host such as GitHub to keep a copy of your code. Working on an online host like Github would help you manage your code in a synchronized way. Where the numbers of developers can upload and download changes. So developers can work on different code at the same time. And merges them at the end without losing each other's work.
+Git runs locally, So your files are being stored on your computer. You can also use an online host such as GitHub to keep a copy of your code. Working on an online host like Github would help you manage your code files in a synchronized way. Where the numbers of developers can upload and download changes. So that developers can work on different code files at the same time and merges them at the end without losing each other's work.
 
 ## How to Install Git
 
@@ -34,7 +34,7 @@ http://git-scm.com/download/win
 
 
 ## Initial Configuration
-The first thing first would be to create a Repository aka Repo, which means a collection of source code. This would the Repo you want to work on.
+The first thing first would be to create a Repository, aka Repo, which means a collection of source code.
 The next step would be to clone it, which means download it to our desktop. This would create an empty folder in our directory and we can work on it by adding all the files.
                               
     $ git clone [url]
@@ -48,12 +48,12 @@ Here's how to execute **git clone** command:
 We can use the git command to make the source code file in the folder. We can create any type of file by stating its type. Here's how to do it.
 
     $ touch index.html
-This would create an index file of HTML type. likewise, you can any type of file.
+This command would help us to create an index file of HTML type. Likewise, you can create any type of file.
 
 
 
 ## Checking the status of your Repository
-So now we have some files in our repository. let's check the current status of our repository, For this, we would use
+So now we have some files in our repository. Let's check the current status of our repository. For this, we would use
 **git status**. This command tells us about the current state of the working directory. It tells you about what staged changes and files that aren't tracked by the Git. 
 
     $ git status
@@ -81,12 +81,12 @@ Let's say you have some files that you no longer need. You can delete those file
 
     $ git rm --cached [file_name]
 
-This would delete the particular file
+This command would delete the particular file.
 
     
 
 ## Commit changes
-This command helps you to record the permanent snapshot in history. There are a couple of ways to do it but the better and the quickest way to do is by using the following command.
+This command helps you to record the permanent snapshot in history. There are a couple of ways to do it, but the better and the quickest way to do is by using the following command.
 
     $ git commit -m "Any comment"
 
@@ -97,7 +97,7 @@ Here's how to execute add and commit:
 
 
 ## Pushing your code in the Cloud
-This command helps to push all the local branches to Github. After this, you would be able to see your changes in your Github. This way you would be able to keep track of all your source code by keeping it safe in the cloud.
+This command helps to push all the local branches to Github. After this, you would be able to see your changes in your Github. This way, you would be able to keep track of all your source code by keeping it safe in the cloud.
 
     $ git push
 
@@ -107,7 +107,7 @@ Here's how to execute push:
 
 
 ## Getting your files into the working directory
-This command lets you update your local branch. With all the new commits from the corresponding remote branch on Github. After using this command you would be able to see all the changes made by the developers in the repository.
+This command lets you update your local branch, with all the new commits from the corresponding remote branch on Github. After using this command, you would be able to see all the changes made by the developers in the repository.
 
     $ git pull
 
@@ -118,7 +118,7 @@ Here's how to execute pull:
 
 # Conclusion
 Congratulation! Now you know all the basics of Git. Now you would be able to work on your projects or in a group in a synchronized way. 
-There's are more things as well in Git such as Branching and Merge. But this tutorial helps you get started with Git and GitHub. Even more.
+There's are more things as well in Git, such as Branching and Merge. But this tutorial helps you get started with Git and GitHub. Even more.
 
 **Happy coding!**
 
