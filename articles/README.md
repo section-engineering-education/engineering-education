@@ -1,15 +1,15 @@
 ## Anatomy of an article
 
 - Every article has its own directory
-- Every article's text content exists at `$article_directory/article.md`
-- Every article's hero image exists at `$article_directory/hero.jpg`
+- Every article's copy lives at `$article_directory/index.md`
+- Every article's hero image lives at `$article_directory/hero.jpg`
 - Any additional images live in the article directory
 
 The whole structure looks like this:
 
 ```
 working-with-databases-part1/
-├── article.md
+├── index.md
 ├── hero.jpg
 └── mongodb.png
 ```
