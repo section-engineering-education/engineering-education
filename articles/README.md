@@ -20,5 +20,4 @@ There are several special files and directories in this directory:
 
 - `README.md` - this file
 - `_index.md` - content home page at https://section.io/engineering-education
-- `search.md` - engineering education search at https://section.io/engineering-education/search/
 - `topic` - topic categories at https://section.io/engineering-education/topic/*
