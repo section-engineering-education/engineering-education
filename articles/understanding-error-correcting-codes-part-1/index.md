@@ -63,7 +63,9 @@ We can define the first parity bit to be $x_1=m_1 \oplus m_2 \oplus m_4$. When t
 If we create the other two parity bits similarly, we will have the following definitions. With this definition, this code will have a Hamming distance of three.
 
 $$x_1=m_1 \oplus m_2 \oplus m_4$$
+
 $$x_2=m_1 \oplus m_3 \oplus m_4$$
+
 $$x_3=m_2 \oplus m_3 \oplus m_4$$
 
 With these parity bits, we can determine where the error occurred in the seven-bit message, by knowing which parity bits are incorrect. It is important to note that we must assume at most one error occurred. Any more than one error will be impossible to correct and our code will end up correcting a different bit. We could imagine creating a graph similar to what we did before. We would see that two errors would then push our message closer to a different valid codeword, which is exactly what we see with the repetition code.
