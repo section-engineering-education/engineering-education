@@ -41,11 +41,16 @@ In [Quick Draw](https://quickdraw.withgoogle.com/) **goal** is to create a model
 
 ## Classification
 
-* **Supervised** : In supervised learning, we have access to examples of correct input-output pairs that we can show to the machine during the training phase. 
-	* MNIST image classification
+* **Supervised** : In supervised learning, we have access to examples of correct input and output labels that we can show to the machine during the training phase. 
+	* image classification
+		* input is an image
+		* output will be label like cat or dog
 	* Stock price prediction
-* **Unsupervised** : In Unsupervised learning tasks find patterns in data where labels are not present, by forming clusters.
-	* Clustering based problems
+		* inputs can be time, date, company etc..,
+		* output can be price of stock at given date
+* **Unsupervised** : In Unsupervised learning tasks find patterns in data where labels are not present. Clustering is the task of dividing the population or data points into a number of groups such that data points in the same groups are more similar to other data points in the same group and dissimilar to the data points in other groups.
+	* Google News: In google news, articles describing same incidents by different news channels are clubbed together using clustering.
+	* Gene sequencing
 * **Semi-supervised** : In Semi-supervised learning large amount of input data (X) is present and only some of the data is labeled (Y) 
 	* Google News
 * **Reinforcement Learning** : Reward system and trial-and-error where goal is to maximize the long-term reward.
@@ -64,12 +69,6 @@ In [Quick Draw](https://quickdraw.withgoogle.com/) **goal** is to create a model
 
 	* Is this an image of a dog, a cat, or a hamster?
 
-
-### Understanding Problem
-**Task** : [Predict price of houses](https://www.kaggle.com/vikrishnan/boston-house-prices)
-* One of the important task in ML is formulating the task.
-* As price of houses are real valued it's a **Regression** problem
-* Every instance had output label in training data so **Supervised** 
 
 ### Examples:
 1. Stock price prediction
