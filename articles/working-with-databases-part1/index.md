@@ -18,7 +18,7 @@ For the uninitiated, databases can seem a complicated, mythical thing that only 
 
 <!--more-->
 
-### MondoDB Installation
+### MongoDB Installation
 ![mongodb.png](/engineering-education/working-with-databases-part1/mongodb.png)<br>
 [MongoDB](https://www.mongodb.com/) is a popular NoSQL database that you can run both locally and in the cloud (called MongoDB Atlas.) NoSQL stands for not just SQL and means it is non-relational which makes it easier to adapt to different types of data.
 
