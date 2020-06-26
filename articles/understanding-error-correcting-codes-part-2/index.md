@@ -44,11 +44,6 @@ The parity bits could be recalculated and used to help correct any error that oc
 |$x_3$|$x_3$|
 <br>
 
-### Repetition code
-The most classic example of error-correction is the repetition code, where for each bit in an input message, we duplicate each bit multiple times. For example, if you had the message `01101` we could encode it using this repetition method and it would become `000 111 111 000 111`. In this case, we repeated each bit three times. If a random bit flip or error occurred, we could correct it by simply taking the most common bit of each three-bit segments.
-
-Let's say we received the following message `100 111 101 000 110`, which includes multiple errors. We would then be able to correct the error and decode the message to the original message `01101`. But this method isn't very efficient as we had to make our message three times longer, adding two parity bits for each bit of the original code. Additionally, it's important to note that if more than one bit in these three-bit segment was affected by an error we could no longer correct the error.
-
 ### Linear Error-Correcting Codes
 Using the Hamming code, we will come to a more generalized definition for error-correcting codes. In this section, we will come to the same mathematical conclusions, just stated with matrices. This definition provides a template for the set of error-correcting codes called linear codes. It will also be helpful when constructing the Golay code.
 
