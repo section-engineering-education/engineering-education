@@ -40,6 +40,7 @@ Within that article folder, upload your prepared .md file containing article con
 ```
 
 Your folder should look similar to this:
+
 ![folder contents](/images/folder-contents.png)
 
 Once your files are properly uploaded and organized, add, commit, and push your changes to your forked remote Github repository either using the command line or Github tooling within your text editor.
