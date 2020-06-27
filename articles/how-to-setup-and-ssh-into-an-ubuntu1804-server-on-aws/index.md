@@ -1,4 +1,4 @@
-# How To Setup and SSH into an Ubuntu 18.04 server on AWS
+# How To Setup and SSH into an Ubuntu 18.04 Virtual Machine on AWS
 
 ## Introduction
 
@@ -9,7 +9,7 @@ Web applications can be served on [Virtual Machines](https://en.wikipedia.org/wi
 
 The tutorial takes advantage of the FREE services offered under the [AWS Free Tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc). You will use the [Infrastructure As A Service](https://en.wikipedia.org/wiki/Infrastructure_as_a_service) Virtual Machine offering [Amazon EC2](https://aws.amazon.com/ec2/?did=ft_card&trk=ft_card).
 
->Note: Under the Free tier for eligible users, you get 750 hours per month(For up to 12 months) of Linux t2.micro or t3.micro instance dependent on region. This is subject to Amazon's terms and conditions. You should thus ensure you are eligible to avoid being billed for the services you will use in this tutorial.
+>Note: Under the Free tier for eligible users, you get 750 hours per month(For up to 12 months) of a Linux t2.micro or t3.micro instance dependent on region. This is subject to Amazon's terms and conditions. You should thus ensure you are eligible to avoid being billed for the services you will use in this tutorial.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ On the navbar, navigate to Services > Compute > EC2. This will take you to the E
 
 Scroll down to the "Launch Instance" prompt and click on it.
 
-You will then navigate to a page where you choose an Amazon Machine Image.
+You will then navigate to a page where you get to choose an Amazon Machine Image.
 Under QuickStart, you should select the Ubuntu Server 18.04 LTS that is Free tier eligible.
 
 ![Choose an Amazon Machine Image](ami.png)
@@ -34,38 +34,31 @@ You then need to click the button labelled "Next: Configure Instance Details".
 
 ![Select Instance Type](instance_type.png)
 
-On the next page, you do not need to make any changes.
-Click the button labelled "Next: Add storage"
+On the next three subsequent pages, you do not need to make any changes.
+Click the buttons labelled "Next: Add storage", "Next: Add Tags" and "Configure Security Group" respectively.
 
-On the next page, you also do not need to make any changes.
-Click the button labelled "Next: Add Tags"
-
-On the next page, you also do not need to make any changes.
-Click the button labelled "Configure Security Group"
-
-On  the Configure Security Group page, select create a new security group.
-You can leave everything else as is.
+On  the Configure Security Group page, select create a new security group and leave everything else as is.
 Ignore the displayed warning.
 You can then click on "Review and Launch"
 
 ![Configure Security Group](configure_security_group.png)
 
 On the Launch Page click on "Launch".
-You will then get a prompt. Select "create a new key pair". Name it and download it.
-We will use your_pem_file.pem to SSH into the instance we are about to launch, later on in the tutorial.
+You will then get a prompt. Select "create a new key pair". Name the key pair and download it.
+Later on, you will use your_pem_file.pem to SSH into the Virtual Machine instance you are about to launch.
 When done, you can then click on "Launch Instances".
 
 ![Launch Instance](launch_instance.png)
 
 CONGRATULATIONS!! You managed to set up and launch your own Virtual Machine Instance.
-Now we can move on to connecting to it remotely via the [SSH protocol](https://www.ssh.com/ssh/protocol/).
+Now you can move on to connecting to it remotely via the [SSH protocol](https://www.ssh.com/ssh/protocol/).
 
-## Connect to the Ubuntu 18.04 Linux
+## SSH into the Amazon EC2 Virtual Machine
 
-The operating system of your local computer determines the options that you have to connect from your local computer to your Linux instance.
+The operating system of your local computer determines the options that you have to SSH from your local computer to your Virtual Machine instance running Linux(Ubuntu 18.04).
 Moving forward the tutorial assumes your local computer operating system is Linux or macOS X. If this isn't the case see [Amazon's guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html?icmpid=docs_ec2_console).
 
-First, we need to locate your private key file(your_pem_file.pem) and move it to the ```~/.ssh``` directory.
+First, you need to locate your private key file(your_pem_file.pem), that you downloaded earlier, and move it to the ```~/.ssh``` directory.
 From the terminal in the directory where your_pem_file.pem was downloaded run:
 
 ```bash
@@ -74,7 +67,7 @@ mv your_pem_file.pem ~/.ssh/your_pem_file.pem
 
 ```
 
-Change from your current directory to the ```~/.ssh``` directory where we placed the private key file.
+Change from your current directory to the ```~/.ssh``` directory where you placed the private key file.
 
 ```bash
 
@@ -82,7 +75,7 @@ cd ~/.ssh
 
 ```
 
-Next, we need to ensure your private key file(your_pem_file.pem) is not publicly viewable for SSH to work.
+Next, you need to ensure your private key file(your_pem_file.pem) is not publicly viewable for SSH to work.
 
 To do this run:
 
@@ -100,7 +93,7 @@ You can get this from the AWS console as shown in the image below.
 
 ![Virtual Machine IP address](ip_address.png)
 
-Now we can ssh into our instance by running the ssh command.
+Now you can ssh into your instance by running the ssh command.
 
 ```bash
 
@@ -123,7 +116,7 @@ Enter ```yes```
 And You DID IT!!! You have successfully used SSH to get remote access to your Virtual Machine on AWS as promised.
 Feel free to poke around!!
 
-To better understand the ssh command we used above see the breakdown below.
+To better understand the ssh command you used above see the breakdown below.
 
 1. ssh : the ssh command is used to start the SSH client program that enables secure connection to the SSH server on a remote machine.
 2. -i : identity_file, A file from which the [identity key](https://www.ssh.com/ssh/identity-key) (private key) for [public key authentication](https://www.ssh.com/ssh/public-key-authentication) is read.
