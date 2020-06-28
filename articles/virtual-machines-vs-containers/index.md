@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: quantum-cryptography
+slug: advantages-and-disadvantages-of-vms-vs-containers
 title: Advantages and Disadvantages of VMs vs. Containers
 description: A virtual machine is an emulation of a computer system - a container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
 author: jeremy-osborne
