@@ -17,7 +17,9 @@ Assuming, you have a working Github Account(which is necessary for contributing 
    You get more brownie points by submitting articles in '.md' format. Markdown (.md) is a way to style text on the web. You control the display of the document, formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown.
 
 ## Step 2: Forking the Section Repository
+
 https://github.com/Aman333Saxena/engineering-education/blob/master/Guide%20to%20upload%20article/fork.png
+
 After setting up the workspace successfully, open Section IO github repository(LINK) on your web browser. You'll be seeing a Master github repo with few boiler files. Click the Fork option in the upper right-hand corner (below your user account display).
 // Fork2.img
 Once you clicked that option, a pop-up will come. You need to give permission to forked the repository contents in your github account (See image for reference).
