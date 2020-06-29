@@ -137,6 +137,6 @@ jobs:
             issue_number: context.payload.pull_request.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: "Here's a screenshot of the article:\n\n![screenshot](${{ steps.upload-screenshot.outputs.img_url }})"
+            body: "Here's a screenshot of the article (/engineering-education/${{ matrix.article_slug }}/):\n\n![screenshot](${{ steps.upload-screenshot.outputs.img_url }})"
           }
           github.issues.createComment(args)
