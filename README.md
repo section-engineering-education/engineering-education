@@ -15,7 +15,7 @@ The Section team will monitor and manage the overall Program.
 
 ### Submission Instructions
 1. To submit an article for consideration, be sure to first check [published content](https://www.section.io/engineering-education/) to ensure relevance and prevent overlap. Hint: Use the community Slack channel to suggest and get feedback on topic ideas.
-2. When you're ready to submit a draft for review, open a PR with your draft. (Bonus points for submitting your draft as a .md file.) If you choose to share drafts via a link, please be sure to set the appropriate sharing permissions.
+2. When you're ready to submit a draft for review, open a PR with your draft. [View instructions here](/UPLOAD_INSTRUCTIONS.md)
 3. Articles will be reviewed by the Section team for technical accuracy, relevance, and quality. (We need to be sure we're continuing to build value for our fellow engineering community as a trusted source of content.) Comments and requested revisions will be provided within the open PR.
 4. Once suggested edits have been incorporated, the Section team will approve your PR and the draft will move to our publishing queue.
 5. Once your article has been published, we will facilitate payouts for your contribution :)

@@ -1,7 +1,7 @@
 ## Contribution Guidelines
 In order to participate in the program, all members will be required to agree to established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (Agreement is included as part of the enrollment process.)
 
-**Articles should be approximately 500-750 words.**
+**Articles should be a minimum of 750 words.**
 
 Content can include:
 - How-to guides
