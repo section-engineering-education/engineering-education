@@ -56,7 +56,7 @@ jobs:
       id: article_names
       run: |
         echo -n "::set-output name=slug_matrix::"
-        jq --slurp --compact-output '.[0] + .[1] | unique | map(select(. | test("^articles\/"))) | map(. | split("/")[1] | { article_slug: . }) | { include: . }' ~/files_added.json ~/files_modified.json
+        jq --slurp --compact-output '.[0] + .[1] | unique | map(select(. | test("^articles\/"))) | map(. | split("/")[1] | { article_slug: . }) | unique | { include: . }' ~/files_added.json ~/files_modified.json
 
   build:
     name: 🌍 Build the website
