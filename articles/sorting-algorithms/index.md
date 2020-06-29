@@ -18,9 +18,9 @@ Most of the algorithms we talk about today will be either `O(n^2)` or `O(nlogn)`
 
 [Insertion sort](https://github.com/botahamec/sorting_algos/blob/master/python/insertion_sort.py) works by splitting the list into a "sorted part" and an "unsorted part". Initially, every element in the list is in the "unsorted part". The algorithm needs to move all the elements into the sorted part. To do this, it needs to pick an element, and shift it until the element is in its proper place.
 
-![A hand drawn demonstration showing a few steps of insertion sort](insertion1.png)
+![A hand drawn demonstration showing a few steps of insertion sort](insertion1.jpg)
 
-![A hand-drawn illustration of insertion sort](insertion2.png)
+![A hand-drawn illustration of insertion sort](insertion2.jpg)
 
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=TZRWRjq2CAg)
 
@@ -32,7 +32,7 @@ There is one reason to use insertion sort, which is if there's a high chance tha
 
 [Merge sort](https://github.com/botahamec/sorting_algos/blob/master/python/merge_sort.py) splits the list in half, repeatedly, until every part of the list is just one element. Then, we can merge halves together until we eventually get the sorted list back.
 
-![A hand-drawn demonstration of merge sort](merge.png)
+![A hand-drawn demonstration of merge sort](merge.jpg)
 
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=es2T6KY45cA)
 
@@ -42,7 +42,7 @@ Merging the lists is an `O(n)` operation. This time, it only has to be done log(
 
 [Quick sort](https://github.com/botahamec/sorting_algos/blob/master/python/quick_sort.py) is very interesting. The first thing you do is select an element of the list to be a "pivot". Then, you split the list into three lists. One contains elements that are less than the pivot. One contains elements equal to the pivot. The last one contains elements greater than the pivot. Then you need to run quick sort on the less and greater lists, until everything has been sorted.
 
-![A hand-drawn demonstration of quick sort](quick.png)
+![A hand-drawn demonstration of quick sort](quick.jpg)
 
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=es2T6KY45cA)
 
@@ -52,7 +52,7 @@ The complexity of quick sort is complicated. Usually, it's `O(nlogn)`, but it ca
 
 [Counting sort](https://github.com/botahamec/sorting_algos/blob/master/python/counting_sort.py) is amazing. You can use either a HashMap or a List. You need to count how many of each number appear in the list. Then, just go through each number and put that many in the list.
 
-![A hand-drawn demonstration of counting sort](counting.png)
+![A hand-drawn demonstration of counting sort](counting.jpg)
 
 ***Note:*** *Counting sort typically uses a different algorithm, [described here](https://www.youtube.com/watch?v=TTnvXY82dtM). It works better if you're using things that aren't numbers. It's also good when you have a lot of unused values in your range.*
 
