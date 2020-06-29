@@ -18,7 +18,7 @@ Assuming, you have a working Github Account(which is necessary for contributing 
 
 ## Step 2: Forking the Section Repository
 
-https://github.com/Aman333Saxena/engineering-education/blob/master/Guide%20to%20upload%20article/fork.png
+![Fork Image](https://github.com/Aman333Saxena/engineering-education/blob/master/Guide%20to%20upload%20article/fork.png)
 
 After setting up the workspace successfully, open Section IO github repository(LINK) on your web browser. You'll be seeing a Master github repo with few boiler files. Click the Fork option in the upper right-hand corner (below your user account display).
 // Fork2.img
