@@ -1,0 +1,34 @@
+#Functional Programming
+ 
+##What is Functional Programming?
+
+Functional programming (FP) is a programming paradigm focused on the most basic forms of math functions. It is a seldom-used type of programming and one of the harder to grasp. The concepts provide a strict system that greatly focuses on consistency and repeatability. Making sure that the program does exactly what it needs to do every time. 
+
+FP is based on lambda calculus which operates based on immutable values and pure functions. Immutability states that a variable may not be subject to change or re-use. New variables can be created, but the original variables will always remain constant. Notably, languages such as Java do have immutable variables such as strings and Booleans, but these variables are not assured to be immutable by the “const” function. It becomes preferable to use languages such as Purescript, F#, ClojureScript, and Haskell which use special data structures that are immutable. 
+
+A pure function can be boiled down to two properties. Firstly, it is a function that will always produce the same output given that it has the same inputs. It can be said to have a deterministic principle. Secondly, the function does not change due to outside influences or has no side effects. Side effects are possible mutations from outside sources such as files, databases, or web services. A pure function is prized in that it will have no bugs to deal with and has high predictability. A simple example of a pure function is as follows: 
+
+```
+sum(x,y)    //sum is function taking x and y as arguments
+  return x + y    // sum is returning sum of x and y without changing them
+```
+
+##Notes on using Functional Programming
+
+When it comes to using a functional system it helps to follow some basic principles. In programming, you’ll look to apply a simple structure that allows for repeatable action. Especially for later when it comes to creating more complex functions. Some things to include for the data will be to add all numbers in the form of a list, calculate the average, and to retrieve a single property from the lists of everything. Consider that all the functions need to accept at least one of the arguments, functions need to return the predicted output or at least another function. 
+
+It is important to not use loops in the structure. Loops are often avoided in FP due to its tendency to cause mutations within the structure. To substitute for the lack of for loops, a method called recursion is used. In recursion, the rest operator splits the first elements in an array and the remaining elements. Then sums up the elements through iterations. Special care is needed to handle recursion if the elements exceed the available memory. This can be avoided through a method called tail call optimization [https://www.geeksforgeeks.org/tail-call-elimination/].
+
+##Why use Functional Programming
+
+Functional programming has been a method of providing accurate and detailed calculations for nearly 20 years. FP still offers some benefits in niche areas. Pure functions offer an easy comprehension of reasoning and almost guaranteed results without any side effects. Testing and debugging the system is simple and straight forward, providing fast detection of any errors. FP is especially useful for functions that use concurrency or parallelism in their calculations because the variables don’t change. Some challenges that are present in FP may be:
+
+* While pure functions are simple, combining these functions with other operations can prove to be a troublesome task. 
+* Using immutable values and recursion can reduce the performance in RAM and speed. 
+* FP style can be a slow learning process and may feel unnatural when first writing in recursive style with many new terminologies. 
+
+Despite the challenges and difficulty in the learning curve. FP is a powerful tool worth learning when it comes to solving concurrency problems. 
+
+##Further reading
+
+If this concept is a little difficult in conceptualizing, please feel free for some further reading into more Java-based concepts and examples of functional programming[https://medium.com/valtech-ch/functional-programming-concepts-explained-in-javascript-16133b441936].
