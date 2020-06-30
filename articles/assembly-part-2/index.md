@@ -1,4 +1,21 @@
-# Assembly Part 2: Let's Write Assembly!
+---
+layout: engineering-education
+status: publish
+published: true
+slug: assembly-part-2
+title: Assembly Part 2 - Let's Write Assembly!
+description: In computer programming, assembly language, often abbreviated asm, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
+author: mike-white
+date: 2020-06-30T00:00:00-07:00
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /assets/images/education/asm-image.jpg
+    alt: computer image asm example
+---
+
+### Assembly Part 2: Let's Write Assembly!
 
 Description: This article is targeted towards people learning Assembly for the first time. We'll test our skills by writing a Fibonacci program at the end.
 
