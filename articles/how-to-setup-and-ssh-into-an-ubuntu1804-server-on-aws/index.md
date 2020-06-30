@@ -1,21 +1,37 @@
-# How To Setup and SSH into an Ubuntu 18.04 Virtual Machine on AWS
+---
+layout: engineering-education
+status: publish
+published: true
+slug: setup-ssh-ubuntu-vm-aws
+title: How To Setup and SSH into an Ubuntu 18.04 Virtual Machine on AWS
+description: Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.
+author: adrian-murage
+date: 2020-06-30T00:00:00-06:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-## Introduction
-
+  - url: /engineering-education/setup-ssh-ubuntu-vm-aws/hero.jpg
+    alt: cloud computing image example
+---
 Many modern web applications today are served from [the cloud](https://en.wikipedia.org/wiki/Cloud_computing).
-Public cloud providers, like Google Cloud Platform (GCP), Amazon Web Services (AWS), and Microsoft Azure, to name a few, offer service models that enable this trend. An [Introduction To Cloud Computing](https://www.section.io/engineering-education/introduction-to-cloud-computing/) can be found on Section.io's [Engineering Education blog](https://www.section.io/engineering-education/).
+Public cloud providers, like Google Cloud Platform (GCP), Amazon Web Services (AWS), and Microsoft Azure, to name a few, offer service models that enable this trend.
+<!--more-->
+
+### Introduction
+An [Introduction To Cloud Computing](https://www.section.io/engineering-education/introduction-to-cloud-computing/) can be found on Section.io's [Engineering Education blog](https://www.section.io/engineering-education/).
 
 Web applications can be served on [Virtual Machines](https://en.wikipedia.org/wiki/Virtual_machine) provisioned on a public cloud. In this tutorial, you will cover exactly how to provision a Virtual Machine running Ubuntu 18.04 on AWS and [SSH](https://en.wikipedia.org/wiki/Secure_Shell) into it.
 
 The tutorial takes advantage of the FREE services offered under the [AWS Free Tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc). You will use the [Infrastructure As A Service](https://en.wikipedia.org/wiki/Infrastructure_as_a_service) Virtual Machine offering [Amazon EC2](https://aws.amazon.com/ec2/?did=ft_card&trk=ft_card).
 
->Note: Under the Free tier for eligible users, you get 750 hours per month(For up to 12 months) of a Linux t2.micro or t3.micro instance dependent on region. This is subject to Amazon's terms and conditions. You should thus ensure you are eligible to avoid being billed for the services you will use in this tutorial.
+*Note:* Under the Free tier for eligible users, you get 750 hours per month(For up to 12 months) of a Linux t2.micro or t3.micro instance dependent on region. This is subject to Amazon's terms and conditions. You should thus ensure you are eligible to avoid being billed for the services you will use in this tutorial.
 
-## Prerequisites
+### Prerequisites
 
 To complete this tutorial you will need to have an AWS account and a Linux machine or SSH client that you will use to SSH into the virtual machine.
 
-## Launch an Amazon EC2 Virtual Machine
+### Launch an Amazon EC2 Virtual Machine
 
 Navigate to the [AWS console](https://console.aws.amazon.com/).
 
@@ -26,13 +42,13 @@ Scroll down to the "Launch Instance" prompt and click on it.
 You will then navigate to a page where you get to choose an Amazon Machine Image.
 Under QuickStart, you should select the Ubuntu Server 18.04 LTS that is Free tier eligible.
 
-![Choose an Amazon Machine Image](ami.png)
+![Choose an Amazon Machine Image](/engineering-education/setup-ssh-ubuntu-vm-aws/ami.png)
 
 You will then navigate to a page where you select the Instance type.
 For this case a General Purpose t3.micro instance that is Free tier eligible is sufficient.
 You then need to click the button labelled "Next: Configure Instance Details".
 
-![Select Instance Type](instance_type.png)
+![Select Instance Type](/engineering-education/setup-ssh-ubuntu-vm-aws/instance_type.png)
 
 On the next three subsequent pages, you do not need to make any changes.
 Click the buttons labelled "Next: Add storage", "Next: Add Tags" and "Configure Security Group" respectively.
@@ -41,19 +57,19 @@ On  the Configure Security Group page, select create a new security group and le
 Ignore the displayed warning.
 You can then click on "Review and Launch"
 
-![Configure Security Group](configure_security_group.png)
+![Configure Security Group](/engineering-education/setup-ssh-ubuntu-vm-aws/configure_security_group.png)
 
 On the Launch Page click on "Launch".
 You will then get a prompt. Select "create a new key pair". Name the key pair and download it.
 Later on, you will use your_pem_file.pem to SSH into the Virtual Machine instance you are about to launch.
 When done, you can then click on "Launch Instances".
 
-![Launch Instance](launch_instance.png)
+![Launch Instance](/engineering-education/setup-ssh-ubuntu-vm-aws/launch_instance.png)
 
 CONGRATULATIONS!! You managed to set up and launch your own Virtual Machine Instance.
 Now you can move on to connecting to it remotely via the [SSH protocol](https://www.ssh.com/ssh/protocol/).
 
-## SSH into the Amazon EC2 Virtual Machine
+### SSH into the Amazon EC2 Virtual Machine
 
 The operating system of your local computer determines the options that you have to SSH from your local computer to your Virtual Machine instance running Linux(Ubuntu 18.04).
 Moving forward the tutorial assumes your local computer operating system is Linux or macOS X. If this isn't the case see [Amazon's guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html?icmpid=docs_ec2_console).
@@ -91,7 +107,7 @@ At this point, you're almost ready to SSH into your Virtual Machine Instance.
 You need one last thing, your Virtual Machine's IP address.
 You can get this from the AWS console as shown in the image below.
 
-![Virtual Machine IP address](ip_address.png)
+![Virtual Machine IP address](/engineering-education/setup-ssh-ubuntu-vm-aws/ip_address.png)
 
 Now you can ssh into your instance by running the ssh command.
 
@@ -103,7 +119,8 @@ ssh -i ~/.ssh/your_pem_file.pem ubuntu@your_virtual_machine_ip_address -v
 
 You will then get a response like.
 
-``` bash
+```
+bash
 
 The authenticity of host '13.244.115.171 (13.244.115.171)' can't be established.
 ECDSA key fingerprint is SHA256:hTaJnzw/oDXxzLCMHcp9ieHcHxEISfxubiEkylIhtkc.
@@ -136,9 +153,9 @@ logout
 
 ```
 
->Note: Remember to Terminate the instance to avoid charges when the trial period ends.
+*Note:* Remember to Terminate the instance to avoid charges when the trial period ends.
 
 To terminate the instance right click on the instance on the console.
 Instance State > Terminate.
 
-![Terminate Virtual Machine Instance](terminate_instance.png)
+![Terminate Virtual Machine Instance](/engineering-education/setup-ssh-ubuntu-vm-aws/terminate_instance.png)
