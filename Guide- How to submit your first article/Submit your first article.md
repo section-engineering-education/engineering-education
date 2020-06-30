@@ -26,9 +26,11 @@
 
  - After setting up the workspace successfully, open [Section github repository](https://github.com/section-io/engineering-education) on your web browser. You'll be seeing a Master github repo with few boiler files. Click the **Fork** option in the upper right-hand corner (below your user account display).
 
+
 ![Fork Image 2](./imgs/fork2.png)
 
  - Once you clicked that option, a pop-up will come. You need to give permission to forked the repository contents in your github account (See image for reference).
+
 
 ![Fork Image 3](./imgs/fork3.png)
 
@@ -36,13 +38,16 @@
 
 ## Step 3: Cloning the forked repository
 
+
 ![Clone Image](./imgs/clone.png)
 
  - Now, you will be able to see a green-colored **Clone** option. You need to clone your repository using that button in to your local machine. After clicking "Clone", select **Open in Desktop**. This will automatically direct you to the Github Desktop's Window.
-
+ 
+ 
 ![Publish PR Image](./imgs/publishPR.png) 
 
  - After creating a new branch, give it a suitable name. On Github Desktop window, choose "Open in Visual Studio Code". This will take you to the VS Code Window where you will be able to add, edit & save your work.
+
 
 ![VS Code Image](./imgs/vscode.png)
 
@@ -50,24 +55,30 @@
 
 ## Step 4: I am all done with my work. How to create a Pull Request?
 
+
 ![Commit PR Image](./imgs/commitPR.png)
 
  - Go to your Github Desktop, you will see all the changes you have done in your branch. Write suitable details like what you've done in the "Summary" section (with an optional description). Then, click **"Commit"** in the bottom left-hand corner. Next, click **"Push Origin"** option to push your work into github repository.
+ 
 
-![Create PR Desktop Image](./imgs/createPRDesktop.png)
+![Create PR Desktop Image](./imgs/createPRdesktop.png)
 
  - Once you're done with editing and updating your files, now you're all set to create a **Pull Request**. In order to do so, click **"Create Pull Request"**.
 
 ## Step 5: Verification & Final Submit
 
-![Create PR Github Image](./imgs/creatingPRfinalgithub.png)
+
+![Create PR Github Image](./imgs/createPRfinalgithub.png)
 
  - After clicking **"Create Pull Request"** button, you'll be automatically directed to github repo. page where you can first verify all the details are correct or not. Finally, click **"Create Pull Request"** and Voila! you're done.
 
 ## Mission Completed!
+
+![Done Image](./imgs/done.png)
+
  - Your have successfully submitted your article with your own unique PR number! Now, you need to wait for review and to get approval by the Section team. Meanwhile, do checkout all the other interesting articles on [Section](https://www.section.io/engineering-education/how-to-start-competitive-programming/)
 
 ## About the Author
    - ***Aman Saxena*** is pursuing a degree in Computer Science. He has a keen interest in Competitive Programming & Web Development. He is fond of playing Cricket & solving Big-O complexities. When he’s not glued to a computer screen, he is likely exploring the mighty Universe. For any query or a fruitful discussion, you may connect with him on LinkedIn [@Aman](https://www.linkedin.com/in/amansaxena333/)
 
-### **Headshot** : [Image](./imgs/commitPR.jpg)
+### **Headshot** : [Image](./imgs/Aman.jpg)
