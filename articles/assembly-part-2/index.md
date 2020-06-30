@@ -4,26 +4,26 @@ status: publish
 published: true
 slug: assembly-part-2
 title: Assembly Part 2 - Let's Write Assembly!
-description: In computer programming, assembly language, often abbreviated asm, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
+description: Learning assembly language, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
 author: mike-white
 date: 2020-06-30T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/education/asm-image.jpg
+  - url: /engineering-education/assembly-learning/hero.jpg
     alt: computer image asm example
 ---
 
 ### Assembly Part 2: Let's Write Assembly!
 
-Description: This article is targeted towards people learning Assembly for the first time. We'll test our skills by writing a Fibonacci program at the end.
+Description:
 
 In the first part, we talked about the basics of Assembly. Now, we want to write a couple of programs. In this article, we'll try to do "Hello, World!" and a Fibonacci program.
 
 **NOTE:** Unlike the first part, this part will only work on the Linux operating system. A virtual machine or WSL should also be able to run this.
 
-## System Calls
+### System Calls
 
 Before we get started, there's something we have to talk about. We wrote an infinite loop in the first tutorial, but we want to write a program that ends now. But we can't just go to the end of the program. We want to end *gracefully*.
 
@@ -37,7 +37,7 @@ With these two system calls, we can write "Hello, world!" in Assembly! Let's do 
 ```assembly
 section .text
 	global _start
-	
+
 	start:
 
 		; print("Hello, world!\n")
@@ -46,7 +46,7 @@ section .text
 		mov ecx, message ; the message to write
 		mov edx, len ; the length of the message
 		int 0x80
-		
+
 		; exit(0)
 		mov eax, 1 ; system exit
 		mov ebx, 0 ; exit code 0
@@ -68,9 +68,9 @@ One down, one to go. Now we need the `len` constant. We could just say `15`, but
 len equ $-message ; length of the message
 ```
 
-There's a lot of [cleverness](https://stackoverflow.com/a/20411716/12195838) in this line, but don't if you don't care, don't worry about it. It works.
+There's a lot of [cleverness](https://stackoverflow.com/a/20411716/12195838) in this line, don't worry about it if it works.
 
-## Fibonacci
+### Fibonacci
 
 Ok, so enough with the boring stuff. Let's do something interesting. Let's print out the first forty Fibonacci numbers. If for some reason, you still don't know what [fibonacci numbers](https://www.mathsisfun.com/numbers/fibonacci-sequence.html) are, the first two are zero and one. To get the next Fibonacci number, you just add the last two fibonaccci numbers together, like so:
 
@@ -81,19 +81,19 @@ We'll use the following algorithm to generate the numbers:
 ```rust
 fn fibonacci() {
     let mut iteration = 40;
-    
+
     let mut a = 0;
     let mut b = 1;
     let mut c : usize;
-    
+
     while iteration != 0 {
-        
+
         c = a + b;
         println!("{}", c);
-        
+
         a = b;
         b = c;
-        
+
         iteration -= 1;
     }
 }
@@ -106,18 +106,18 @@ Let's get started. We'll store our variables in the `bss` section. Let's just fo
 ```assembly
 section .text
 	global _start
-	
+
 	_start:
 		; initialize values
 		mov dword [var_a], 0
 		mov dword [var_b], 1
 		mov dword [itera], 40	; generate 40 numbers
-		
+
 section .bss
 	var_a resb 4
 	var_b resb 4
 	var_c resb 4
-	
+
 	itera resb 4
 ```
 
@@ -130,7 +130,7 @@ one_num:
 	; c = a + b
 	mov dword [var_c], var_a	; c = a
 	add dword [var_c], var_b	; c += b
-	
+
 	mov dword [var_a], var_b	; a = b
 	mov dword [var_b], var_c	; b = c
 ```
@@ -144,9 +144,9 @@ one_num:
 	; if (iteration == 0) goto end
 	cmp dword [itera], 0
 	je end
-	
+
 	; ... generate fib number
-	
+
 	dec dword [itera]	; iteration --
 
 end:
@@ -166,37 +166,37 @@ Here's the full code:
 ```assembly
 section .text
 	global _start
-	
+
 	_start:
 		; initialize values
 		mov dword [var_a], 0
 		mov dword [var_b], 1
 		mov dword [itera], 40		; generate 40 numbers
-	
+
 	one_num:
 		; if (iteration == 0) goto end
 		cmp dword [itera], 0
 		je end
-	
+
 		; c = a + b
 		mov dword [var_c], var_a	; c = a
 		add dword [var_c], var_b	; c += b
-	
+
 		mov dword [var_a], var_b	; a = b
 		mov dword [var_b], var_c	; b = c
-	
+
 		dec dword [itera]			; iteration --
 
 	end:
 		mov eax, 1					; system exit
 		mov ebx, 0					; exit code 0
 		int 0x80
-		
+
 section .bss
 	var_a resb 4
 	var_b resb 4
 	var_c resb 4
-	
+
 	itera resb 4
 ```
 
