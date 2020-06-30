@@ -6,12 +6,12 @@ slug: how-to-build-your-own-private-blockchain
 title: How to build your own private blockchain - Episode 1
 description: Private blockchains work based on access controls which restrict the people who can participate in the network. Instead of waiting for a network consensus, information can be recorded immediately.
 author: jethro-magaji
-date: 2020-06-28T00:00:00-07:00
+date: 2020-06-28T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/block-chain-image/hero.jpg
+  - url: /engineering-education/how-to-build-your-own-private-blockchain/hero.jpg
     alt: blockchain image example
 ---
 In this series we are going to build our own private Blockchain were we can store data and connect them in a chain.
@@ -27,7 +27,7 @@ Or simply
 **A shared database that contains a list of the entire transactions made on the network**
 The blockchain was designed to resist any modification of data after it has been recorded using a distributed computing system with high consensus that has therefore been achieved with a Blockchain. This makes Blockchain potentially suitable for the recording of events, medical records, and other records management activities, such as identity management, transaction processing, documenting provenance, food traceability, or voting.
 
-![Image of Blockchain Framework](/engineering-education/blockchain-framework.png)
+![Image of Blockchain Framework](/engineering-education/how-to-build-your-own-private-blockchain/blockchain-framework.png)
 
 ### Let’s discuss the blockchain framework
 **Transaction**: This can be seen as the basic unit of any blockchain. Transactions are made of multiple inputs and outputs. By understanding the inputs, outputs, miners’ fees, and amount sent, we can determine the balance of user’s wallets before and after transactions are made.
@@ -48,7 +48,7 @@ The blockchain was designed to resist any modification of data after it has been
 For the purpose of building our own private blockchain, it’s very important that we understand the concept of block.
 Blocks are the fundamental components of the blockchain. The word "Block" is an interesting way to think about the information it stores; but what a block is, might be a little different than you expect.
 
-![Image of Block Model](/engineering-education/block-model.png)
+![Image of Block Model](/engineering-education/how-to-build-your-own-private-blockchain/block-model.png)
 *[Andersbrownworth Block](https://andersbrownworth.com)*
 
 **Genesis block**
@@ -67,26 +67,26 @@ The genesis block is often referred to as the first block on a blockchain. The g
 Here we can demonstrate a simple block. In the image below you can see the Block's number, Nonce, Data, and Hash.
 Using [Andersbrownworth Block](https://andersbrownworth.com/block/block) we can demonstrate a block model and blockchain.
 
-![Image of Block1](/engineering-education/block1.png)
+![Image of Block1](/engineering-education/how-to-build-your-own-private-blockchain/block1.png)
 *[Image Source](https://andersbrownworth.com)*
 
 Next, we can pass data and mine it and you will see it turns green. If you try to change the nonce or the data it will invalidate the block by turning red.
 
-![Image of Block2](/engineering-education/block2.png)
+![Image of Block2](/engineering-education/how-to-build-your-own-private-blockchain/block2.png)
 *[Image Source](https://andersbrownworth.com)*
 
 Now let’s see a chain of blocks linked together using their previous hash value
 [Andersbrownworth](https://andersbrownworth.com/blockchain/blockchain)
 
-![Image of Block3](/engineering-education/block3.png)
+![Image of Block3](/engineering-education/how-to-build-your-own-private-blockchain/block3.png)
 *[Image Source](https://andersbrownworth.com)*
 
 Now let’s pass our data into them and try to mine them, you will see that the blocks turn green and each block carries a new hash value of the previous block.
 
-![Image of Block4](/engineering-education/block4.png)
+![Image of Block4](/engineering-education/how-to-build-your-own-private-blockchain/block4.png)
 *[Image Source](https://andersbrownworth.com)*
 
-![Image of Block5](/engineering-education/block5.png)
+![Image of Block5](/engineering-education/how-to-build-your-own-private-blockchain/block5.png)
 *[Image Source](https://andersbrownworth.com)*
 
 You can see that when I try to change the value of one block, it completely invalidates the whole block in the chain. To validate the blocks in the chain, I have to mine the blocks again to make every block carry the correct previous hash.
