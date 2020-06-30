@@ -1,6 +1,6 @@
 # How to submit your First Article using Github Desktop & VS Code
 
- - One of the most fundamental part of contributing to **"Open-Source Projects"** is working as a group and handling a large number of files, with every development stage. Here, in **Section.io**, the whole process runs on a very smooth and well-mannered structure. Today, I'll be guiding you with a walkthrough to get a better understanding for submitting your first article in Section.io
+ - One of the most fundamental part of contributing to **"Open-Source Projects"** is working as a group and handling a large number of files, with every development stage. Here, in **Section**, the whole process runs on a very smooth and well-mannered structure. Today, I'll be guiding you with a walkthrough to get a better understanding for submitting your first article in Section.
 
 > I've always been a believer of learning things by actually doing them. The more I make mistakes, more I get to learn. The idea of this blog post originated after I faced several difficulties in submitting my first article itself. 
 
@@ -12,19 +12,19 @@
 
 - Apart from all the traditional ways of doing things, there exists yet another simple but efficient method to do same work with increased productivity. Technology aiding another technology has been one of the important feature of modern era. On similar lines, we'll be using following tools to ease the process:
 
- - [Github Desktop](https://desktop.github.com/) 
- - Text Editor like [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
+    - [Github Desktop](https://desktop.github.com/) 
+    - Text Editor like [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
 
 - Assuming, you have a working Github Account (which is necessary for contributing in Engineering Education's Programme) and your article content in **'.md'** format, we are all ready & good to go for uploading your first article.
 
 ### Tips: 
-    You get more brownie points by submitting articles in '.md' format. Markdown (.md) is a way to style text on the web. You control the display of the document, formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown.
+> You get more brownie points by submitting articles in '.md' format. Markdown (.md) is a way to style text on the web. You control the display of the document, formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown.
 
 ## Step 2: Forking the Section Repository
 
 ![Fork Image](./imgs/fork.png)
 
- - After setting up the workspace successfully, open [Section IO github repository](https://github.com/section-io/engineering-education) on your web browser. You'll be seeing a Master github repo with few boiler files. Click the **Fork** option in the upper right-hand corner (below your user account display).
+ - After setting up the workspace successfully, open [Section github repository](https://github.com/section-io/engineering-education) on your web browser. You'll be seeing a Master github repo with few boiler files. Click the **Fork** option in the upper right-hand corner (below your user account display).
 
 ![Fork Image 2](./imgs/fork2.png)
 
@@ -65,7 +65,7 @@
  - After clicking **"Create Pull Request"** button, you'll be automatically directed to github repo. page where you can first verify all the details are correct or not. Finally, click **"Create Pull Request"** and Voila! you're done.
 
 ## Mission Completed!
- - Your have successfully submitted your article with your own unique PR number! Now, you need to wait for review and to get approval by the Section team. Meanwhile, do checkout all the other interesting articles on Section.io
+ - Your have successfully submitted your article with your own unique PR number! Now, you need to wait for review and to get approval by the Section team. Meanwhile, do checkout all the other interesting articles on [Section](https://www.section.io/engineering-education/how-to-start-competitive-programming/)
 
 ## About the Author
    - ***Aman Saxena*** is pursuing a degree in Computer Science. He has a keen interest in Competitive Programming & Web Development. He is fond of playing Cricket & solving Big-O complexities. When he’s not glued to a computer screen, he is likely exploring the mighty Universe. For any query or a fruitful discussion, you may connect with him on LinkedIn [@Aman](https://www.linkedin.com/in/amansaxena333/)
