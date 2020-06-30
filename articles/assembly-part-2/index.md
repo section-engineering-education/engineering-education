@@ -11,7 +11,7 @@ topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/assembly-learning/hero.jpg
+  - url: /engineering-education/assembly-part-2/hero.jpg
     alt: computer image asm example
 ---
 
