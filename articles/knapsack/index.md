@@ -42,7 +42,7 @@ In general, each element of the table represents the subproblem considering all 
 
 Any sub-problem with no items or weight of zero will produce an optimal value of zero. We will refer to these as the bases cases and they occur in the zeroth row and zeroth column. This should make sense as these cases represent situations were no items can be placed in the knapsack.
 
-![Table and Arrows](/engineering-education/articles/knapsack/table-arrows.PNG)
+![Table and Arrows](/engineering-education/knapsack/table-arrows.PNG)
 
 Consider again the element in the table with the star. In this case, we want to ask, is the item in the third row in our optimal solution. This gives us our two subproblems to consider: taking the item and not taking the item. These subproblems have been denoted with the triangle and square respectively. For the triangle, we subtracted out the weight of the third item to construct our subproblem. Now we want to determine the optimal solution of the remaining two items and the remaining weight. For the square, we didn't select the item, so the weight for the subproblem doesn't change but again we are only considering the first two items. To find the value of the star, we take the maximum of these situations. But first, we would need to solve for the triangle and square. We can repeat this splitting process for both the triangle and square until we hit the base cases.
 
