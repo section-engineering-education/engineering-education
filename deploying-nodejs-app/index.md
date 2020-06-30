@@ -1,13 +1,16 @@
 # Deploying Your First NodeJS Web App
-Congratulations, you’ve finished developing your first NodeJS web app and now you want to publish it on the web. If you’re still in the development process however, then you may find my *XYZ NodeJS web app* guide helpful. 
 
-There are many hosting platforms you can use to deploy your NodeJS web app such as Heroku, Vultr, Linode, Google Cloud Platform and Amazon Web Services.*Link to the platforms* We will be using DigitalOcean because it’s very popular, simple to use and good value.
+**Add header image**
+
+Congratulations, you’ve finished developing your first NodeJS web app and now you want to publish it on the web. If you’re still in the development process however, then you may find my **XYZ NodeJS web app** guide helpful. 
+
+There are many hosting platforms you can use to deploy your NodeJS web app such as Heroku, Vultr, Linode, Google Cloud Platform and Amazon Web Services. **Link to the platforms** We will be using DigitalOcean because it’s very popular, simple to use and good value.
 
 ## Setting up DigitalOcean
 
 First, create an account on the DigitalOcean platform. There are discount codes available to add free credit to your account such as the code available in the Github Student Developer Pack. Be aware that you can only redeem one code per account.
 
-*Include Images of DigitalOcean and Namecheap*
+**Include Images of DigitalOcean and Namecheap**
 
 Second, you need to create a droplet. A droplet is a VPS (Virtual Private Server.) It’s similar to a Linux VM which is hosted on a server farm somewhere. Once you’ve logged into your account, go to Droplets under the Manage heading and click Create and Droplets. 
 
@@ -18,14 +21,15 @@ Also, choose the datacenter closest to the target audience of your app and chang
 All that’s left now is to pick a name (hostname) and click Create Droplet.
 
 ## Connecting to your Droplet
+
 Shortly afterwards, you’ll receive an email containing the username and password of your droplet which you’ll use to login. 
 
-Back on the DigitalOcean website, under Droplets, click the name of your newly created droplet and then on Console. This will open a new tab that will let you control your droplet. Alternatively, you can use any SSH client with the IP address and user credentials contained in the email. *Link to an article on SSH (see if Section has any already)*
+Back on the DigitalOcean website, under Droplets, click the name of your newly created droplet and then on Console. This will open a new tab that will let you control your droplet. Alternatively, you can use any SSH client with the IP address and user credentials contained in the email. **Link to an article on SSH (see if Section has any already)**
 
-On your first login, since you used password authentication, it will prompt you to set a new password. A great way to generate secure passwords and store them is a password manager like LastPass. *Link here*  
+On your first login, since you used password authentication, it will prompt you to set a new password. A great way to generate secure passwords and store them is a password manager like LastPass. **Link here**
 
 ## Deploying Your NodeJS Web App
-First, you’ll need to copy the code for your web app to your Droplet. If you’re using source control such as Git *Link to Section article on Git* then it’s a simple as installing git using `apt-get install git -y`  and then using the git clone command  `git clone (link to your repository)` and then add the link to your repository at the end.
+First, you’ll need to copy the code for your web app to your Droplet. If you’re using source control such as Git **Link to Section article on Git** then it’s a simple as installing git using `apt-get install git -y`  and then using the git clone command  `git clone (link to your repository)` and then add the link to your repository at the end.
 
 Second, you’ll need to install Node. Type:
 
@@ -42,14 +46,15 @@ If you need to install MongoDB (if you’ve created a MongoDB database), then fo
 
 Finally, type `npm start`  to start your web app. Now that your web app is running, in a new browser tab, type the IP Address of your droplet (found in the email that DigitalOcean sent when you created the droplet) followed by a colon and the port your app runs on. For example, `167.172.54.51:8080`.
 
-If you’re using an Express web server (which if you followed my *Node JS Web App Guide*) you did, you’ll find the port number located in the  `app.listen()`  line inside the server.js file. For example,  `app.listen(8080)`  which is a common port used. 
+If you’re using an Express web server (which if you followed my **Node JS Web App Guide**) you did, you’ll find the port number located in the  `app.listen()`  line inside the server.js file. For example,  `app.listen(8080)`  which is a common port used. 
 
 Congratulations, your first NodeJS web app should be displayed in your web browser which is running on your DigitalOcean droplet.
 
 ## Connecting Your Domain Name
+
 You typed in an IP Address and port number to view your web app but wouldn't you prefer a custom domain name like yourapp.com? 
 
-Assuming you’ve already bought a domain, the first step is to connect it to your DigitalOcean droplet. If you’ve not, domain registars like Namecheap *link to Namecheap* sell domain names and often other services such as email and static/CMS hosting (though it’s best to go with a dedicated hosting and email provider.) *Link to article you'll write about domain name basics (deploying static site to Netlify - part of creating your first static website series - intro to designing (Adobe XD) and developing*
+Assuming you’ve already bought a domain, the first step is to connect it to your DigitalOcean droplet. If you’ve not, domain registars like Namecheap **link to Namecheap** sell domain names and often other services such as email and static/CMS hosting (though it’s best to go with a dedicated hosting and email provider.)
 
 Login to your domain registrar and go to the advanced DNS settings of your domain. For example, on Namecheap, it’s the Advanced DNS tab on the Manage Domain screen. 
 
@@ -60,7 +65,8 @@ It can take up to  24-48hrs for the changes to process but it’s usually betwee
 The final test is to type your domain name followed by a colon and then the port number (e.g. `yourdomain.com:8080`.) You should now see your web app loading. 
 
 ## Removing the Port Number from your URL
-Now you’ve got a cool domain name hooked up to your web app, you’ll probably want to remove that pesky port number. We can do this by setting up what’s called a reverse proxy. A reverse proxy will tell your droplet when a user goes to yourdomain.com, it should serve the site at yourdomain.com:8080. We will use the popular reverse proxy, Nginx *link here* to do so.
+
+Now you’ve got a cool domain name hooked up to your web app, you’ll probably want to remove that pesky port number. We can do this by setting up what’s called a reverse proxy. A reverse proxy will tell your droplet when a user goes to yourdomain.com, it should serve the site at yourdomain.com:8080. We will use the popular reverse proxy, Nginx **link here** to do so.
 
 The first step is to install Nginx. Type the following to update your package list (so you can get the latest version) and install Nginx:
 
@@ -88,4 +94,39 @@ To test, there’s no errors in the file, type  `sudo nginx -t`  and if there’
 
 Now we just need to generate the SSL certificate.  `sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com` will start the process.  You should choose option 2 for the redirect process because it will forward anyone trying to access the insecure version of your site (http) to the secure (https) version instead.
 
-Continue on to Part 2 to discover how to connect a domain name to the droplet (and thus web app) and how to keep the web app running using a process manager.
+To test this, go to https://yourdomain.com and you should see the Nginx Welcome screen again.
+
+Finally, we're onto the last step, adding the Nginx configuration for your web app. Since it's easiest, we'll just modify the default one instead of creating a new one specifically for your web app. If you need to host several web apps on one droplet, you'd need to add a new configuration for each site.
+
+Type: `sudo nano /etc/nginx/sites-available/nano/default` to edit the default configuration file. 
+
+You need to change the server_name parameter to the name of your domain. For example: yourdomain.com. Under location /, proxy_pass should be changed to http://localhost:(port name). The ssl_certificate_key should be modified: `/etc/letsencrypt/live/(domain name)/privkey.pem`. Finally, add the code block below to the end of the file and then type CTRL+X and then y to exit.
+
+```bash
+server {
+    if ($host = auroraspotter.space) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        server_name auroraspotter.space;
+    return 404; # managed by Certbot
+```
+To test, there’s no errors in the file, type  `sudo nginx -t`  and if there’s none type  `sudo systemctl reload nginx`  to reload Nginx so it will use the updated configuration.
+
+Finally, you should be able to go to yourdomain.com and your web app will be running.
+
+## Running the App on Boot (Setting up a Process Manager)
+
+You've hooked your domain name up to your droplet and configured Nginx to serve your web app but how do you keep it running all the time especially after restarting your droplet? That's where a process manager comes in. It will manage your NodeJS web app, log any errors and start/stop it as needed. We will be using the process manager called PM2.
+
+The first step is to install PM2 using `sudo npm install pm2@latest -g`. Next, to run it on boot, use `pm2 startup systemd`. That will return the code you'll need so copy and paste the line and press enter.
+
+Using the cd command, navigate to the folder of your web app. Then type `pm2 start (name of server file)` which is commonly server.js. This will start the web app using pm2. Afterwards, type `pm2 save` which will save it to be started on boot. Finally, type `sudo systemctl start pm2-(username)`. If you used the login that DigitalOcean provided this will be root.
+
+Try restarting your droplet by typing reboot and after a few minutes go to yourdomain.com. Your web app should be up and running like normal.
+
+Congratulations, you've developed your first NodeJS web app and have just deployed it live. Why not try creating more web apps by utilising different APIs like a Spotify clone? **Link to future article on Getting Started with APIs**
