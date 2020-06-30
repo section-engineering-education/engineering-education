@@ -198,4 +198,4 @@ section .bss
 	itera resb 4
 ```
 
-The next step is to print the numbers to the console, but this is already getting long, so see if you can figure that out on your own :wink:
+The next step is to print the numbers to the console, see if you can figure that out on your own with the steps above as a guide. :wink:
