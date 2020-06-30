@@ -50,19 +50,19 @@
 
 ## Step 4: I am all done with my work. How to create a Pull Request?
 
-![Create PR Desktop Image](./imgs/createPRDesktop.png)
-
- - Once you're done with editing and updating your files, now you're all set to create a **Pull Request**. In order to do so, go to your Github Desktop, click **"Create Pull Request"**.
-
 ![Commit PR Image](./imgs/commitPR.png)
 
- - After clicking, you will see all the changes you have done in your branch. Write suitable details like what you've done in the "Summary" section (with an optional description). Then, click **"Commit"** in the bottom left-hand corner.
+ - Go to your Github Desktop, you will see all the changes you have done in your branch. Write suitable details like what you've done in the "Summary" section (with an optional description). Then, click **"Commit"** in the bottom left-hand corner. Next, click **"Push Origin"** option to push your work into github repository.
+
+![Create PR Desktop Image](./imgs/createPRDesktop.png)
+
+ - Once you're done with editing and updating your files, now you're all set to create a **Pull Request**. In order to do so, click **"Create Pull Request"**.
 
 ## Step 5: Verification & Final Submit
 
 ![Create PR Github Image](./imgs/creatingPRfinalgithub.png)
 
- - After clicking "Commit" button, you'll be automatically directed to github repo. page where you can first verify all the details are correct or not. Finally, click **"Create Pull Request"** and Voila! you're done.
+ - After clicking **"Create Pull Request"** button, you'll be automatically directed to github repo. page where you can first verify all the details are correct or not. Finally, click **"Create Pull Request"** and Voila! you're done.
 
 ## Mission Completed!
  - Your have successfully submitted your article with your own unique PR number! Now, you need to wait for review and to get approval by the Section team. Meanwhile, do checkout all the other interesting articles on Section.io
