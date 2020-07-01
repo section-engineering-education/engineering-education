@@ -1,9 +1,0 @@
-Write an article about creating your first static site (intro to HTML, CSS, JS, Flexbox and Google Fonts)
-
-Include an article about designing your first static site (Adobe XD)
-
-Write about deploying your first static site to Netlify
-
-Write about SSH, how to configure it and great SSH clients (Termius)
-
-Write an intro to Google Search Console. How to add a site, sitemap (build on sitemap Section article) and use it to fix errors and increase SEO
