@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: setup-ssh-ubuntu-vm-aws
 title: How To Setup and SSH into an Ubuntu 18.04 Virtual Machine on AWS
-description: 
+description: Enabling SSH on Ubuntu, to check if the client is available on your Linux-based system, you will need to connect to an AWS account and a Linux machine or SSH client that you will use to SSH into the virtual machine.
 author: adrian-murage
-date: 2020-06-30T00:00:00-06:00
+date: 2020-07-01T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -25,7 +25,7 @@ Web applications can be served on [Virtual Machines](https://en.wikipedia.org/wi
 
 The tutorial takes advantage of the FREE services offered under the [AWS Free Tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc). You will use the [Infrastructure As A Service](https://en.wikipedia.org/wiki/Infrastructure_as_a_service) Virtual Machine offering [Amazon EC2](https://aws.amazon.com/ec2/?did=ft_card&trk=ft_card).
 
-*Note:* Under the Free tier for eligible users, you get 750 hours per month(For up to 12 months) of a Linux t2.micro or t3.micro instance dependent on region. This is subject to Amazon's terms and conditions. You should thus ensure you are eligible to avoid being billed for the services you will use in this tutorial.
+*Note:* Under the Free tier for eligible users, you get 750 hours per month (for up to 12 months) of a Linux t2.micro or t3.micro instance dependent on region. This is subject to Amazon's terms and conditions. You should thus ensure you are eligible to avoid being billed for the services you will use in this tutorial.
 
 ### Prerequisites
 
