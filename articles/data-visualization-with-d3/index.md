@@ -4,30 +4,32 @@ status: publish
 published: true
 slug: data-visualization-with-d3-js
 title: Data Visualization with D3.js
-description: A shell script is a computer program designed to be run by the Unix shell. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
+description: Data visualization is the graphic representation of data. It involves producing images that communicate relationships among the represented data to viewers of the images, using visual elements like charts and graphs.
 author: rohan-reddy
-date: 2020-06-20T00:00:00-07:00
+date: 2020-07-01T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/data-visualization-with-d3-js/hero.jpg
-    alt: shell scripting example image
+    alt: data visualization example image
 ---
-If you are familiar with a programming language like python or C, then it should be pretty easy to get started with shell scripting. This article can be used as a "cheat sheet" as well.
+If you are familiar with any programming language like Python or C, then it should be pretty easy to get started with shell scripting. This article can be used as a "cheat sheet" as well.
 <!--more-->
-D3 (Data-Driven Documents) is a javascript library which allows us to manipulate documents based on data. D3 allows us to bind data to a [DOM](https://www.w3schools.com/js/js_htmldom.asp) element and then apply data-driven transformations to the document. For example, we can create an HTML table from an array of numbers, or create an interactive [SVG](https://www.w3schools.com/graphics/svg_intro.asp) bar chart.
 
-![intro](first.png)
+D3 (Data-Driven Documents) is a JavaScript library that allows us to manipulate documents based on data. D3 allows us to bind data to a [DOM](https://www.w3schools.com/js/js_htmldom.asp) element and then apply data-driven transformations to the document. For example, we can create an HTML table from an array of numbers, or create an interactive [SVG](https://www.w3schools.com/graphics/svg_intro.asp) bar chart.
 
-  You don't need detailed knowledge about SVG but feel free to check out the resources. To run the examples in this article, or play with D3.js you can use [blockbuilder.org](https://blockbuilder.org) or [Observable](https://observablehq.com), you can also view other's work and get inspiration. To use D3 in local environment [install](https://github.com/d3/d3/releases/) or insert this snippet 
+![intro](/engineering-education/data-visualization-with-d3-js/first.png)
+
+You don't need much background knowledge about SVG but feel free to check out the resources. To run the examples in this article, or play with D3.js you can use [blockbuilder.org](https://blockbuilder.org) or [Observable](https://observablehq.com), you can also view other's work and get inspiration. To use D3 in local environment [install](https://github.com/d3/d3/releases/) or insert this snippet
 
 `<script src="https://d3js.org/d3.v5.min.js"></script>
 `.
 Let's dive in!!
 
-## Selections 
-	
+### Selections
+
+```
 	  <svg>
 	    <rect />
 	    <rect />		// Three Rectangle Elements
@@ -39,35 +41,36 @@ Let's dive in!!
 	  var height =200;
 	  d3.selectAll('rect')
 	    	.data(data) // loops through each svg element and sets __data_ attribute
-	    	.attr('x', (d, i) => i * rectWidth) // function is set the x coordinate of each bar, index*width of bar	
+	    	.attr('x', (d, i) => i * rectWidth) // function is set the x coordinate of each bar, index*width of bar
 	    	.attr('y', d => height - d) // d is the bound data
 	    	.attr('width', rectWidth)
 	    	.attr('height', d => d)
 	    	.attr('fill', 'blue')
 	    	.attr('stroke', '#fff');
 	  </script>
+```    
 This produces a bar chart
 
-![img](second.png)
+![img](/engineering-education/data-visualization-with-d3-js/second.png)
 
 `d3.selectAll('rect')`  is a *selector*, which goes and selects all the "rect" elements in the document. Modifying documents using [DOM API](https://www.w3.org/DOM/DOMTR) is tedious and repetetive, with d3.selectAll we can use any CSS selector to select everything on the DOM. Under the hood d3.selection is an array of all the DOM elements wrapped around a powerful API which can be used to set attributes, styles, properties, data and more. This has a `.data()` function which is used to **_bind_** the data to the selections. You can pass an array of data and under the hood d3 maps the data one-to-one to the array of selections. The various attributes in the above example are x axis, y axis, width of the bar chart, color and style. d3 loops through each element and return the value from the function based on the datayou passed in.
 
-## Enter-Exit
-> When joining elements to data by key, there are three possible logical outcomes:
-> -   _Update_  - There was a matching element for a given datum.
-> * _Enter_  - There was no matching element for a given datum.
-> -   _Exit_  - There was no matching datum for a given element.
+### Enter-Exit
+When joining elements to data by key, there are three possible logical outcomes:
+-   _Update_  - There was a matching element for a given datum.
+- _Enter_  - There was no matching element for a given datum.
+-   _Exit_  - There was no matching datum for a given element.
 
 
-In the previous example, we saw that we had to have `n` number of `<rect/>` elements for `n` number of elements of data, using D3's *enter* and *exit* we can create new nodes for incoming data and remove nodes that are no longer needed. 
+In the previous example, we saw that we had to have `n` number of `<rect/>` elements for `n` number of elements of data, using D3's *enter* and *exit* we can create new nodes for incoming data and remove nodes that are no longer needed.
 
-
+```
 	  <svg></svg>
 	  <script>
 	    var rectWidth = 100;
 	    var height = 300;
 	    var data = [100, 250, 175, 200, 120];
-    
+
 	    var svg = d3.select('svg');
 	    svg.selectAll('rect')
     	.data(data)
@@ -86,12 +89,13 @@ In the previous example, we saw that we had to have `n` number of `<rect/>` elem
     	})
     	.attr('stroke', '#fff');
 	</script>
-	
-![img](enter.png)
+```
+![img](/engineering-education/data-visualization-with-d3-js/enter.png)
 
-We have an empty selection `svg ` to which we are creating a rect element and appending it to the DOM for every iteration through the data, this can be very useful if the data is changing and  we can change different properties based on data by writing functions in the `.attr()` functions. 
+We have an empty selection `svg ` to which we are creating a rect element and appending it to the DOM for every iteration through the data, this can be very useful if the data is changing and  we can change different properties based on data by writing functions in the `.attr()` functions.
 
-If we simply want to ***update*** a DOM element rather than adding new elements, we do this by 
+If we simply want to ***update*** a DOM element rather than adding new elements, we do this by
+
 ```
 var p = d3.select("body")
   .selectAll("p")
@@ -100,29 +104,29 @@ var p = d3.select("body")
 ```
 **Exit** selections are used when the data is less than the number of DOM elements, for example, if the number of elements in the array is less than the number of `rect` elements in the DOM, then we can perform operations on those excess elements, like removing them.
 ```
-	d3.select('#content') 
+	d3.select('#content')
 		 .selectAll('div')
 		 .data(myData)
 		 .exit()
 		 .remove();
 ```
-## Transitions
+### Transitions
 **Without Transitions**
 
-![without](without.gif)
+![without](/engineering-education/data-visualization-with-d3-js/without.gif)
 
 **With Transitions**
 
-![with](with.gif)
+![with](/engineering-education/data-visualization-with-d3-js/with.gif)
 
-A transition is an interface for animating changes to the DOM. Instead of applying changes to instantaneiusly, transitions interpolates smoothly over time, from a state-A to desired state-B. If we want the result to be immediate then we can do :`d3.select("body").style("color", "red");`To instead animate the change over time, derive a transition:`d3.select("body").transition().style("color", "red");`.
+A transition is an interface for animating changes to the DOM. Instead of applying changes to instantaneously, transitions interpolates smoothly over time, from a state-A to the desired state-B. If we want the result to be immediate then we can do :`d3.select("body").style("color", "red");`To instead animate the change over time, derive a transition:`d3.select("body").transition().style("color", "red");`.
 
-We will discuss one way of doing transitions in this article. 
-	
+We will discuss one way of doing transitions in this article.
+```
 	var t = d3.transition().duration(1000); // we can declare a constant or function anywhere
 	var svg = d3.select('svg');
 	 var bars = svg.selectAll('rect') .data(data, d => d);
-	  // exit 
+	  // exit
 	  bars.exit()
 		  .transition(t)
 		  .attr('y', height)
@@ -133,20 +137,20 @@ We will discuss one way of doing transitions in this article.
 				  .append('rect')
 				  .attr('width', rectWidth)
 				  .attr('stroke', '#fff')
-				  .attr('y', height); 
-	// enter + update 
+				  .attr('y', height);
+	// enter + update
 	bars = enter.merge(bars)
 				.attr('x', (d, i) => i * rectWidth)
 				.attr('fill', d => colors(d))
 				.transition(t) .attr('y', d => height - d)
 				.attr('height', d => d);
-
-In the above code, we see a transition is applied to `.exit()` selection, it returns a selection of DOM elements, to which the target state is *height = 0* it is applied in a smooth animated way by using transitions. Everything after `.transition()` is the target state. The *from* state or the *initial* state is the DOM if no attributes are given, in the above code, we gave certain attributes for the `enter + update` which is the initial state. Check out the transition API [here](https://github.com/d3/d3-transition).
+```
+In the example above, we see a transition is applied to `.exit()` selection, it returns a selection of DOM elements, to which the target state is *height = 0* it is applied in a smooth animated way by using transitions. Everything after `.transition()` is the target state. The *from* state or the *initial* state is the DOM if no attributes are given, in the example above, we gave certain attributes to the `enter + update` which is the initial state. You can check out the transition API [here](https://github.com/d3/d3-transition).
 
 D3 API offers many functionalities like [Shapes](https://github.com/d3/d3-shape), Axis, [Geo-Projection](https://github.com/d3/d3-geo-projection), [Forces](https://github.com/d3/d3-force) and many more check them out if you are interested.
 
- **Resources and References**
-* [Frontend Masters (I used this to learn, it's good)](https://frontendmasters.com/learn/d3-js/). 
+### Resources and References
+* [Frontend Masters (I used this to learn, it's good)](https://frontendmasters.com/learn/d3-js/).
 * [Shirley Wu, Intro to D3.js](http://slides.com/shirleywu/fm-d3intro#/4)
 * [API Reference](https://github.com/d3/d3/blob/master/API.md)
 * [D3.js tutorials](https://github.com/d3/d3/wiki/Tutorials)
@@ -154,8 +158,3 @@ D3 API offers many functionalities like [Shapes](https://github.com/d3/d3-shape)
 * [d3indepth.com](https://www.d3indepth.com/enterexit/)
 * [Transitions](https://github.com/d3/d3-transition)
 * You can find the code [here](https://gist.github.com/rohanreddych/dde3a63a464f34526a9e1fbc396c02fb)
-
- 
-
-
-
