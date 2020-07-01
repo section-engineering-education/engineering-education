@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: setup-ssh-ubuntu-vm-aws
 title: How To Setup and SSH into an Ubuntu 18.04 Virtual Machine on AWS
-description: Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.
+description: 
 author: adrian-murage
 date: 2020-06-30T00:00:00-06:00
 topics: []
