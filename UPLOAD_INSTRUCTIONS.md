@@ -38,6 +38,7 @@ Within that article folder, upload your prepared .md file containing article con
 ```
 ![image title](/engineering-education/new-folder-name/image-name.jpg)
 ```
+If you have a Header image in mind - (for the hero image) -feel free to include it your PR as well - please try to keep images as close to 600X400 pixels (images can be resized in paint) - also please make sure the image is from a site like www.unsplash.com
 
 Your folder should look similar to this:
 
