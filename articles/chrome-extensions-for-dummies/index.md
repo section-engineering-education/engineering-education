@@ -38,15 +38,15 @@ Let’s test out to see if we have made our `manifest.json` correctly.
 
 Navigate to `chrome://extensions`.
 
-![image title](/engineering-education/chrome-extensions-for-dummies/chrome-extension-developer-mode-off.png)
+![image title](chrome-extension-developer-mode-off.png)
 
 Tick the developer mode switch and your toolbar will look like this.
 
-![image title](/engineering-education/chrome-extensions-for-dummies/chrome-extension-developer-mode-on.png)
+![image title](chrome-extension-developer-mode-on.png)
 
 Hit the Load unpacked button and select the folder that we have been working in. If all goes well it will load and it will appear in the chrome extensions toolbar on the upper right portion of your screen.
 
-![image title](/engineering-education/chrome-extensions-for-dummies/chrome-extension-toolbar.png)
+![image title](chrome-extension-toolbar.png)
 
 Yay! We did it! Very cool. Now to actually add some functionality into this pretty little button.
 
@@ -79,11 +79,11 @@ Since this is only referenced by `popup.html`, we don’t have to reference it i
 We use `addEventListener` to make sure the popup is loaded and the button is clicked, before we execute any of our code.
 Follow the steps to load up your extension again, hit update and click on your icon!
 
-![image title](/engineering-education/chrome-extensions-for-dummies/popup.png)
+![image title](popup.png)
 
 Hit the **Change Text** button and if you did everything correctly an alert should congratulate you on your screen.
 
-![image title](/engineering-education/chrome-extensions-for-dummies/working-popup.png)
+![image title](working-popup.png)
 
 ### Grabbing Text off the Webpage
 
