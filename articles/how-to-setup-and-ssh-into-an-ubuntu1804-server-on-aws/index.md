@@ -119,8 +119,7 @@ ssh -i ~/.ssh/your_pem_file.pem ubuntu@your_virtual_machine_ip_address -v
 
 You will then get a response like.
 
-```
-bash
+```bash
 
 The authenticity of host '13.244.115.171 (13.244.115.171)' can't be established.
 ECDSA key fingerprint is SHA256:hTaJnzw/oDXxzLCMHcp9ieHcHxEISfxubiEkylIhtkc.
