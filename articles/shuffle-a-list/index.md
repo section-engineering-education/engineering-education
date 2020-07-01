@@ -2,13 +2,15 @@
 
 ## The Problem
 
-A couple months ago, I made a webpage called the [Pronoun Testing Grounds](https://botahamec.github.io/pronoun_test/), which basically allows users to try a different set of pronouns. It comes up with a cute little story to try them out. It's very similar to the [Pronoun Dressing Room](http://www.pronouns.failedslacker.com/), if you've heard of that/
+A couple of months ago, I made a webpage called the [Pronoun Testing Grounds](https://botahamec.github.io/pronoun_test/). It allows users to try a different set of pronouns. It comes up with a cute little story to try them out. It's like the [Pronoun Dressing Room](http://www.pronouns.failedslacker.com/), if you've heard of that.
 
-Problem: Most people don't know what objective/possessive determiner pronouns are
+Problem: Most people don't know what objective and possessive determiner pronouns are.
 
-The Pronoun Dressing Room solves this by using she/her pronouns as placeholder text for each textbox. It tells you that the subjective pronoun for a girl is "she", and the reflexive pronoun is "herself". This is problematic, because the objective and possessive determiner pronouns are both "her", so someone could very feasibly be confused as to which pronouns are which.
+The Pronoun Dressing Room solves this by using she/her pronouns as placeholder text. It tells you that the subjective pronoun for a girl is "she", and the reflexive pronoun is "herself". This is problematic, because the objective and possessive determiner pronouns are both "her". Someone could very feasibly be confused about which pronouns are which.
 
-My solution was to give three examples for each pronoun: "he/him", "she/her", and "they/them". This way, nobody should be confused as to which pronoun is which. If you checked the link I made to the Pronoun Testing Grounds earlier, you may have noticed that I listed them in the wrong order (or you're now very confused because it seems like they're in the right order).
+![The placeholder text for the Pronoun Dressing Room.](dressing_room.png)
+
+My solution was to give three examples for each pronoun: "he/him", "she/her", and "they/them". This way, nobody should be confused about which pronoun is which. If you click on the link to the Pronoun Testing Grounds, you may notice that these pronouns are in the wrong order. Or you're now very confused because it seems like they're in the right order.
 
 ![The placeholder text for the Pronoun Testing Grounds. In this instance, all of the pronouns are in the order of they/she/he](placeholders.png)
 
@@ -30,7 +32,7 @@ function shuffle(list) {
 }
 ```
 
-We need to go through the list in reverse-order, and swap each one. We can use a for loop for this:
+We need to go through the list in reverse order, and swap each one. We can use a for loop for this:
 
 ```javascript
 function shuffle(list) {
@@ -43,7 +45,7 @@ function shuffle(list) {
 }
 ```
 
-For each element in the array we need to pick a random element to swap with. Luckily, Javascript includes a function called `Math.random()`, which picks a random floating-point number between 0 and 1. We'll need to use some arithmetic to turn it into a number between 0 and the current index.
+For each element in the array we need to pick a random element to swap with. Luckily, Javascript includes a function called `Math.random()`. It picks a random floating-point number between 0 and 1. We'll need to use some arithmetic to turn it into a number between 0 and the current index.
 
 ```javascript
 for (var i = list.length - 1; i > 0; i--) {
@@ -65,7 +67,7 @@ function swap(list, index_one, index_two) {
 }
 ```
 
-The first parameter specifies the list to perform a swap, and then you need the indexes of the two elements that you wish to swap. This is the common way of performing a swap:
+The first parameter specifies the list to perform a swap. Then it needs the indexes of the two elements that you wish to swap. This is the common way of performing a swap:
 
 ```javascript
 var temp = list[index_one]; // save the value of the first element, so it's not overwritten
