@@ -6,7 +6,7 @@ It can be complicated to setup so this guide will teach you how to add a site (c
 
 ## Setting up Google Search Console
 
-**Link/Embed Loom Video**
+<a href="https://www.loom.com/share/778381dd2a874b6d93d9faaec8c2450b" target="_blank"><img src="https://cdn.loom.com/sessions/thumbnails/778381dd2a874b6d93d9faaec8c2450b-00001.jpg" alt="Google Search Console video" width="100%" height="auto" border="0" /></a>
 
 Go to [Google Search Console](https://search.google.com/search-console/welcome) and login using a Google account. The first step is to add your site. Google calls this a property. There are two methods to adding your site domain or URL prefix. Domain is the best method but it counts both the insecure (http) and secure (https) version of your website and any subdomains such as blog.yourdomain.com. 
 
