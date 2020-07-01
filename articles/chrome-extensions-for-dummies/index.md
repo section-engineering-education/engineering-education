@@ -1,4 +1,4 @@
-#H1 Chrome Extensions for Dummies
+# H1 Chrome Extensions for Dummies
 
 I’ve been using chrome extensions religously for years. Yet, I never ever had a clue how to make one. I tried for the first time a week ago and it took 6 hours of frustration to build something that, at its core, was just grabbing all the text from a webpage. Part of that was because most of the tutorials I tried to follow were geared for things either too simple or too complex.
 Though, after understanding what parts go into it, I have taken a deep sigh of relief because really… it is way less intimidating than it looks.
@@ -9,7 +9,7 @@ I am going to show you all how to make a basic extension that changes all the te
 
 I know this sounds really strange, but the core concepts will allow you to build off this and make any chrome extension that involves taking data/text from the page, running a script on it(or not) and replacing/altering it with something of your choosing. Pretty powerful!
 
-#H3 Getting Started
+### H3 Getting Started
 First you’re going to make a directory to hold all these files. Later on you will drag this folder into the extensions interface to make it usable to you. Make sure all your files are in this folder!
 
 `mkdir my-chrome-extension`
@@ -50,7 +50,7 @@ Hit the Load unpacked button and select the folder that we have been working in.
 
 Yay! We did it! Very cool. Now to actually add some functionality into this pretty little button.
 
-#H3 Starting to Code(popups!)
+### H3 Starting to Code(popups!)
 
 Lets create the file that dictates how the popup will appear.
 
@@ -85,7 +85,7 @@ Hit the **Change Text** button and if you did everything correctly an alert shou
 
 ![image title](/engineering-education/chrome-extensions-for-dummies/working-popup.png)
 
-#H3 Grabbing Text off the Webpage
+### H3 Grabbing Text off the Webpage
 
 Next we are going to grab all the text off the webpage in every html tag.This is actually a really simple phrase that took me forever to find. You can test it out for yourself on this site by right clicking on your screen, hitting inspect and finding the console.
 
@@ -129,7 +129,7 @@ We’ve also made this code in such a way that the response from the request is 
 
 <script src="https://gist.github.com/riathakkar/376f409d9ac710ad65b44f3f99f0d84d.js"></script>
 
-#H3 Congratulations!
+### H3 Congratulations!
 You’ve made your first chrome extension! In my next article I’m going to write more about a concept in Message Passing called portals. This allows you send multiple requests in quick succession from your `popup.js` to your `content.js`
 
 Although simple and it gets the job done, this form of one time message passing is only good for certain types of applications like this one where a message only needs to be sent when a button is pressed.
