@@ -1,5 +1,3 @@
-<script src="https://gist.github.com/riathakkar/42f5591563c2298aa729ae8644837c88.js"></script>
-
 # Chrome Extensions for Dummies
 
 I’ve been using chrome extensions religously for years. Yet, I never ever had a clue how to make one. I tried for the first time a week ago and it took 6 hours of frustration to build something that, at its core, was just grabbing all the text from a webpage. Part of that was because most of the tutorials I tried to follow were geared for things either too simple or too complex.
@@ -61,13 +59,13 @@ Lets create the file that dictates how the popup will appear.
 Think of the popup as a little mini webpage hidden away inside that foot icon.
 
 As with everything in chrome extensions, if we want to link another file we have to reference it in the `manifest.json`
-
+<html>
 <script src="https://gist.github.com/riathakkar/8456b4462476222de3042697145138bd.js"></script>
-
+</html>
 Here we reference it in **browser_action** which tells the browser that when someone clicks on our icon, the popup is popup.html It will hold all of the UI elements for our popup.
-
+<html>
 <script src="https://gist.github.com/riathakkar/c9dc495719892337f3c95ca63b9fe0aa.js"></script>
-
+</html>
 Here we are referencing a javascript file called `popup.js` This file will contain the logic for `popup.html`
 
 Remember to keep this in the same directory
