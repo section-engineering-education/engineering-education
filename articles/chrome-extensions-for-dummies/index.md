@@ -1,3 +1,5 @@
+<script src="https://gist.github.com/riathakkar/42f5591563c2298aa729ae8644837c88.js"></script>
+
 # Chrome Extensions for Dummies
 
 I’ve been using chrome extensions religously for years. Yet, I never ever had a clue how to make one. I tried for the first time a week ago and it took 6 hours of frustration to build something that, at its core, was just grabbing all the text from a webpage. Part of that was because most of the tutorials I tried to follow were geared for things either too simple or too complex.
@@ -23,7 +25,7 @@ Next we will create our `manifest.json` file.
 
 This file is required to make any chrome extension usable. It contains all the information needed for configuration, like the files that are used for the popup, the name of the extension, the permissions etc. It’s important!! If you get permissions errors later on, it’s most likely because something here was done incorrectly.
 
-<script src="https://gist.github.com/riathakkar/1b2edd235b8e1e749893a9430549fcc4.js"> </script>
+<script src="https://gist.github.com/riathakkar/1b2edd235b8e1e749893a9430549fcc4.js"></script>
 
 The required elements in this are:
 - manifest_version
