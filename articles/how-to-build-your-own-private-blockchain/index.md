@@ -97,8 +97,8 @@ Though changing a block's data looks easy here, in the real blockchain, changing
 We've now covered some of the core concepts of blocks and blockchain. My goal with this article is to equip you with key concepts and skills to be able to become a blockchain developer. In my next article, I will look to dive deep into writing some code to build our very own blockchain using Node.js, a JavaScript server-side framework.
 
 **Additional Resources**
-[Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf)
-[Blockchain Terminology](https://blog.goodaudience.com/blockchain-terminology-d903758d6bd)
-[Blockchain](https://en.wikipedia.org/wiki/Blockchain)
-[Andersbrownworth  Blockchain](https://andersbrownworth.com/blockchain/blockchain)
-[Andersbrownworth Block](https://andersbrownworth.com/block/block)
+- [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf)
+- [Blockchain Terminology](https://blog.goodaudience.com/blockchain-terminology-d903758d6bd)
+- [Blockchain](https://en.wikipedia.org/wiki/Blockchain)
+- [Andersbrownworth  Blockchain](https://andersbrownworth.com/blockchain/blockchain)
+- [Andersbrownworth Block](https://andersbrownworth.com/block/block)
