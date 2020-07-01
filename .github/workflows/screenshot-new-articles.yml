@@ -1,0 +1,142 @@
+# # Screenshot PR changes
+#
+# This job:
+#
+# - Detects if there are any articles that should be screenshotted
+# - Builds a version of the website with the new articles
+# - Takes a screenshot of any article changes
+# - Posts them as comments on open PRs
+#
+# This job requires multiple secrets to successfully run:
+#
+# | Secret name       | Description                                                                       | Example                                                 |
+# |-------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------|
+# | ACCESS_TOKEN      | Personal access token with permissions: repo, read:packages, write:packages, +SSO | 1b6c637ac9b58abe8be795077bc13145                        |
+# | WEBSITE_REPO      | Git repository for the full Section website, to build the articles inside         | https://github.com/section/example-website-repo         |
+# | DOCKER_REGISTRY   | Docker registry the image should be pushed/pulled                                 | registry.hub.docker.com                                 |
+# | DOCKER_IMAGE      | Name of the Docker image to be built and used                                     | section-io/section-www.section.io-engineering-education |
+# | DOCKER_USERNAME   | Username for the Docker registry                                                  | section                                                 |
+# | DOCKER_PASSWORD   | Password for the Docker registry                                                  | s3cr3t                                                  |
+# | KRAKEN_API_KEY    | API key for Kraken                                                                | 5ce999eabbd6ad238475bcab6a44f4ad                        |
+# | KRAKEN_API_SECRET | Secret for Kraken API key                                                         | 183c026816dfa5428d029b63e3aac647                        |
+
+name: Screenshot PR changes
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  preflight:
+    name: 🤔 Screenshot needed?
+    runs-on: ubuntu-latest
+    outputs:
+      slug_matrix: ${{ steps.article_names.outputs.slug_matrix }}
+    steps:
+    - name: 🛒 Checkout repo
+      uses: actions/checkout@v2
+
+    - name: 🔎 Identify file changes
+      id: file_changes
+      uses: trilom/file-changes-action@v1.2.3
+      with:
+        prNumber: ${{ github.event.pull_request.number }}
+
+    - name: 🕵️ Any articles?
+      id: any_articles
+      run: |
+        echo -n "::set-output name=count::"
+        jq --slurp '.[0] + .[1] | unique | map(select(. | test("^articles\/"))) | length' ~/files_added.json ~/files_modified.json
+
+    - name: 🚧 Stop if no article changes
+      if: steps.any_articles.outputs.count == 0
+      uses: andymckay/cancel-action@0.2
+
+    - name: 🕵️ Identify article names
+      id: article_names
+      run: |
+        echo -n "::set-output name=slug_matrix::"
+        jq --slurp --compact-output '.[0] + .[1] | unique | map(select(. | test("^articles\/"))) | map(. | split("/")[1] | { article_slug: . }) | unique | { include: . }' ~/files_added.json ~/files_modified.json
+
+  build:
+    name: 🌍 Build the website
+    runs-on: ubuntu-latest
+    needs: [ preflight ]
+    steps:
+    - name: 🛒 Checkout repo
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ secrets.WEBSITE_REPO }}
+        token: ${{ secrets.ACCESS_TOKEN }}
+        submodules: false
+
+    - name: 🔀 Change to PR branch
+      run: |
+        git config -f .gitmodules submodule.eng-ed.url https://github.com/${{ github.repository }}
+        git config -f .gitmodules submodule.eng-ed.branch ${{ github.head_ref }}
+        git submodule sync
+        git submodule update --init --remote --force
+
+    - name: 🛠 Build, Tag, Push
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        # TODO(auxesis): When GitHub Actions starts supporting authenticated GitHub Package Registry https://github.community/t/16358
+        repository: auxesis/section-gh-action-www.section.io
+        tags: latest
+
+  screenshot:
+    name: 📸 Take screenshot
+    needs: [ preflight, build ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJSON(needs.preflight.outputs.slug_matrix) }}
+    services:
+      website:
+        image: registry.hub.docker.com/auxesis/section-gh-action-www.section.io:latest
+        ports:
+          - 1313:1313
+    steps:
+    - name: ⏳ Wait for Hugo to serve
+      run: |
+        npm install wait-port
+        $(npm bin)/wait-port --timeout 45000 http://localhost:1313/
+
+    - name: 📸 Screenshot Website
+      id: screenshot_website
+      uses: swinton/screenshot-website@v1.0.0
+      timeout-minutes: 2
+      with:
+        source: http://localhost:1313/engineering-education/${{ matrix.article_slug }}/
+        destination: screenshot-${{ matrix.article_slug }}.png # FIXME(auxesis) lookup variable name
+        full-page: true
+
+    - name: ☁️  Upload screenshot
+      id: upload-screenshot
+      env:
+        UPLOAD_RESPONSE_FILENAME: kraken-upload-screenshot-${{ matrix.article_slug }}-response.json
+      run: |
+        curl https://api.kraken.io/v1/upload \
+        -X POST \
+        --output $UPLOAD_RESPONSE_FILENAME \
+        --form data='{"auth":{"api_key": "${{ secrets.KRAKEN_API_KEY }}", "api_secret": "${{ secrets.KRAKEN_API_SECRET }}"}, "wait":true, "lossy":true}' \
+        --form upload=@${{ steps.screenshot_website.outputs.path }}
+        if ! grep -c '^{' $UPLOAD_RESPONSE_FILENAME; then
+          cat $UPLOAD_RESPONSE_FILENAME
+          exit 1
+        fi
+        echo -n "::set-output name=img_url::"
+        jq --raw-output '.kraked_url' $UPLOAD_RESPONSE_FILENAME
+
+    - name: 🗣 Post comment
+      uses: actions/github-script@v2
+      with:
+        script: |
+          args = {
+            issue_number: context.payload.pull_request.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: "Here's a screenshot of the article (/engineering-education/${{ matrix.article_slug }}/):\n\n![screenshot](${{ steps.upload-screenshot.outputs.img_url }})"
+          }
+          github.issues.createComment(args)
