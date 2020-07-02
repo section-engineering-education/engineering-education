@@ -40,7 +40,6 @@ This file is required to make any chrome extension usable. It contains all the i
  ]
 }</code>
 </pre>
-<script src="https://gist.github.com/riathakkar/1b2edd235b8e1e749893a9430549fcc4.js"></script>
 
 The required elements in this are:
 - manifest_version
@@ -55,15 +54,15 @@ Let’s test out to see if we have made our `manifest.json` correctly.
 
 Navigate to `chrome://extensions`.
 
-![image title](chrome-extension-developer-mode-off.png)
+![chrome://extensions toolbar](/engineering-education/articles/chrome-extensions-for-dummies/chrome-extension-developer-mode-off.png)
 
 Tick the developer mode switch and your toolbar will look like this.
 
-![image title](chrome-extension-developer-mode-on.png)
+![chrome:// developer mode](/engineering-education/articles/chrome-extensions-for-dummies/chrome-extension-developer-mode-on.png)
 
 Hit the Load unpacked button and select the folder that we have been working in. If all goes well it will load and it will appear in the chrome extensions toolbar on the upper right portion of your screen.
 
-![image title](chrome-extension-toolbar.png)
+![The foot is our extension!](/engineering-education/articles/chrome-extensions-for-dummies/chrome-extension-toolbar.png)
 
 Yay! We did it! Very cool. Now to actually add some functionality into this pretty little button.
 
@@ -135,11 +134,11 @@ document.addEventListener('DOMContentLoaded', function() {
 We use `addEventListener` to make sure the popup is loaded and the button is clicked, before we execute any of our code.
 Follow the steps to load up your extension again, hit update and click on your icon!
 
-![image title](popup.png)
+![Should look like this!](/engineering-education/articles/chrome-extensions-for-dummies/popup.png)
 
 Hit the **Change Text** button and if you did everything correctly an alert should congratulate you on your screen.
 
-![image title](working-popup.png)
+![Congratulations!](/engineering-education/articles/chrome-extensions-for-dummies/working-popup.png)
 
 ## Grabbing Text off the Webpage
 
