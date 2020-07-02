@@ -13,7 +13,7 @@ DDoS attack types include HTTP floods, slow attacks (Slowloris, RUDY), zero-day 
 DDoS attack types include UDP floods, SYN floods, NTP amplification, DNS amplification, SSDP amplification, IP fragmentation and more.
 These are high-capacity barrages, measured in gigabits per second (Gbps) or packets per second (PPS). They’re almost always executed by botnets, with a goal of consuming the target’s upstream bandwidth, resulting in network saturation.
 
-![botnet](structuresBotNets.jpg)[Image Source](https://www.safetydetectives.com/blog/what-is-a-botnet-and-how-to-protect-yourself-in/)
+![botnet](what-is-a-botnet-and-how-to-protect-yourself-in-2019-1.png.png)[Image Source](https://www.safetydetectives.com/blog/what-is-a-botnet-and-how-to-protect-yourself-in/)
 ## Botnets
 
 A botnet is a collection of computers or other Internet-connected devices that have been infected with malware and now respond to the orders and commands of a central computer, called the Command and Control center. Botnets can be used to perform Distributed Denial-of-Service (DDoS) attacks, steal data, send spam, and allow the attacker to access the device and its connection. The big botnets have a web of millions of devices, and most of the owners have no clue their devices are compromised. Some are available to rent for the highest bidder, who can use them in whatever way seems fit. Oftentimes, this means a DDoS attack.
@@ -27,7 +27,7 @@ Full-service DDoS attacks are available for as little as $5 per hour, and the in
 
 Botnet structures usually take one of two forms, and each structure is designed to give the botmaster as much control as possible.
 
-![botnet](what-is-a-botnet-and-how-to-protect-yourself-in-2019-1.png.png)[Image Source](https://www.computerweekly.com/tip/Botnet-detection-through-DNS-behavior-and-clustering-analysis)
+![botnet](structuresBotNets.jpg)[Image Source](https://www.computerweekly.com/tip/Botnet-detection-through-DNS-behavior-and-clustering-analysis)
 
 ### Client-server model
 
