@@ -4,7 +4,7 @@
 
 Congratulations, you’ve finished developing your first NodeJS web app and now you want to publish it on the web. If you’re still in the development process however, then you may find my **(Link to previous developing NodeJS web app when it gets published)** guide helpful. 
 
-There are many hosting platforms you can use to deploy your NodeJS web app such as [Heroku](https://www.heroku.com), [Vultr](https://www.vultr.com), [Linode](https://www.linode.com), [Google Cloud Platform](https://console.cloud.google.com) and [Amazon Web Services](https://aws.amazon.com). We will be using [DigitalOcean](https://www.digitalocean.com) because it’s very popular, simple to use and good value.
+There are many hosting platforms you can use to deploy your NodeJS web apps such as [Heroku](https://www.heroku.com), [Vultr](https://www.vultr.com), [Linode](https://www.linode.com), [Google Cloud Platform](https://console.cloud.google.com) and [Amazon Web Services](https://aws.amazon.com). We will be using [DigitalOcean](https://www.digitalocean.com) because it’s very popular, simple to use and good value.
 
 ## Setting up DigitalOcean
 
@@ -16,7 +16,7 @@ Second, you need to create a droplet. A droplet is a VPS (Virtual Private Server
 
 You can leave most of the settings as the default but change the plan to the basic $5 a month which contains enough resources for your app. You can scale this up later if needed. 
 
-Also, choose the datacenter closest to the target audience of your app and change the authentication to password. While password authentication is less secure (SSH Keys is recommended), it’s much easier to setup so for your first drop we’ll use that. 
+Also, choose the datacenter closest to the target audience of your app and change the authentication to password. While password authentication is less secure (SSH Keys is recommended), it’s much easier to set up so for your first drop we’ll use that. 
 
 All that’s left now is to pick a name (hostname) and click Create Droplet.
 
@@ -40,7 +40,7 @@ sudo apt-get install -y nodejs
 
 Third, you’ll need to install the node modules (dependencies) for your web app. If you installed all your modules with `-save` at the end which saves them to the package.json file then just type `npm install` and press enter. 
 
-If not, when you run `npm start`  an error will appear with module not found. Type `npm install (module name)`  and press enter and then try running `npm start`  again. Repeat the process until the error disappears. 
+If not, when you run `npm start`  an error will appear with module not found. Type `npm install (module name)`  and press enter and then try running `npm start` again. Repeat the process until the error disappears. 
 
 If you need to install MongoDB (if you’ve created a MongoDB database), then follow these [instructions](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#install-mongodb-community-edition).
 
@@ -54,11 +54,11 @@ Congratulations, your first NodeJS web app should be displayed in your web brows
 
 You typed in an IP Address and port number to view your web app but wouldn't you prefer a custom domain name like yourapp.com? 
 
-Assuming you’ve already bought a domain, the first step is to connect it to your DigitalOcean droplet. If you’ve not, domain registars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting (though it’s best to go with a dedicated hosting and email provider.)
+Assuming you’ve already bought a domain, the first step is to connect it to your DigitalOcean droplet. If you’ve not, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting (though it’s best to go with a dedicated hosting and email provider.)
 
 Login to your domain registrar and go to the advanced DNS settings of your domain. For example, on Namecheap, it’s the Advanced DNS tab on the Manage Domain screen. 
 
-You want to add a new record as follows: the type should be set to A, the host should be either @ or blank depending on your provider and the value should be the IP Address of the your droplet. Repeat the process for the host www which will do the same for the www version of your domain.
+You want to add a new record as follows: the type should be set to A, the host should be either @ or blank depending on your provider and the value should be the IP Address of your droplet. Repeat the process for the host www which will do the same for the www version of your domain.
 
 It can take up to  24-48hrs for the changes to process but it’s usually between 15 minutes to an hour. A quick way to check when it’s done is to go to [DNSChecker](dnschecker.org). Type in your domain name and make sure to type is set to A. When the result comes back as the IP Address of your droplet then you’ve connected your domain successfully.
 
@@ -90,7 +90,7 @@ sudo apt-get install python-certbot-nginx
 
 Next, you need to add your domain to Nginx so Certbot can generate a certificate to the correct domain. Open the configuration file using `sudo nano /etc/nginx/sites-available/default` and replace the underscores in the server_name line to your domain. For example  `server_name yourdomain.com www.yourdomain.com;`. Save the file and exit by typing CTRL+X, y and then enter.
 
-To test, there’s no errors in the file, type  `sudo nginx -t`  and if there’s none type  `sudo systemctl reload nginx`  to reload Nginx so it will use the updated configuration.
+To test, there are no errors in the file, type  `sudo nginx -t`  and if there’s none type  `sudo systemctl reload nginx`  to reload Nginx so it will use the updated configuration.
 
 Now we just need to generate the SSL certificate.  `sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com` will start the process.  You should choose option 2 for the redirect process because it will forward anyone trying to access the insecure version of your site (http) to the secure (https) version instead.
 
@@ -115,7 +115,7 @@ server {
         server_name auroraspotter.space;
     return 404; # managed by Certbot
 ```
-To test, there’s no errors in the file, type  `sudo nginx -t`  and if there’s none type  `sudo systemctl reload nginx`  to reload Nginx so it will use the updated configuration.
+To test, there are no errors in the file, type  `sudo nginx -t`  and if there’s none type  `sudo systemctl reload nginx`  to reload Nginx so it will use the updated configuration.
 
 Finally, you should be able to go to yourdomain.com and your web app will be running.
 
@@ -123,7 +123,7 @@ Finally, you should be able to go to yourdomain.com and your web app will be run
 
 You've hooked your domain name up to your droplet and configured Nginx to serve your web app but how do you keep it running all the time especially after restarting your droplet? That's where a process manager comes in. It will manage your NodeJS web app, log any errors and start/stop it as needed. We will be using the process manager called PM2.
 
-The first step is to install PM2 using `sudo npm install pm2@latest -g`. Next, to run it on boot, use `pm2 startup systemd`. That will return the code you'll need so copy and paste the line and press enter.
+The first step is to install PM2 using `sudo npm install pm2@latest -g`. Next, to run it on boot, use `pm2 startup systemd`. That will return the code you'll need to copy and paste into the terminal.
 
 Using the cd command, navigate to the folder of your web app. Then type `pm2 start (name of server file)` which is commonly server.js. This will start the web app using pm2. Afterwards, type `pm2 save` which will save it to be started on boot. Finally, type `sudo systemctl start pm2-(username)`. If you used the login that DigitalOcean provided this will be root.
 
