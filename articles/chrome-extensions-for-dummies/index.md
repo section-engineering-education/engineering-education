@@ -98,9 +98,8 @@ As with everything in chrome extensions, if we want to link another file we have
 
 Here we reference it in **browser_action** which tells the browser that when someone clicks on our icon, the popup is popup.html It will hold all of the UI elements for our popup.
 
-<pre><code>
 <!-- popup.html -->
-`<!doctype html>
+<!doctype html>
 <html>
   <head>
     <title>Text to Foot</title>
@@ -110,8 +109,7 @@ Here we reference it in **browser_action** which tells the browser that when som
     <h1>Text to Foot</h1>
     <button id="check">Change Text</button>
   </body>
-</html>`
-</code></pre>
+</html>
 
 Here we are referencing a javascript file called `popup.js` This file will contain the logic for `popup.html`
 
