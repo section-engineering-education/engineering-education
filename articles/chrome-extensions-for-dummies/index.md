@@ -23,7 +23,9 @@ Next we will create our `manifest.json` file.
 
 This file is required to make any chrome extension usable. It contains all the information needed for configuration, like the files that are used for the popup, the name of the extension, the permissions etc. It’s important!! If you get permissions errors later on, it’s most likely because something here was done incorrectly.
 
-<pre><code>{
+<pre><code>
+// manifest.json
+{
   "manifest_version": 2,
 
   "name": "Text to Foot",
@@ -75,11 +77,41 @@ Think of the popup as a little mini webpage hidden away inside that foot icon.
 
 As with everything in chrome extensions, if we want to link another file we have to reference it in the `manifest.json`
 
-<script src="https://gist.github.com/riathakkar/8456b4462476222de3042697145138bd.js"></script>
+<pre><code>
+// manifest.json
+{
+  "manifest_version": 2,
+
+  "name": "Text to Foot",
+  "description": "This extension will convert all text on page to the word foot and change the background.",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "foot.png",
+   "default_popup": "popup.html"
+  },
+  "permissions": [
+   "activeTab"
+ ]
+}
+</code></pre>
 
 Here we reference it in **browser_action** which tells the browser that when someone clicks on our icon, the popup is popup.html It will hold all of the UI elements for our popup.
 
-<script src="https://gist.github.com/riathakkar/c9dc495719892337f3c95ca63b9fe0aa.js"></script>
+<pre><code>
+<!-- popup.html -->
+<!doctype html>
+<html>
+  <head>
+    <title>Text to Foot</title>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <h1>Text to Foot</h1>
+    <button id="check">Change Text</button>
+  </body>
+</html>
+</code></pre>
 
 Here we are referencing a javascript file called `popup.js` This file will contain the logic for `popup.html`
 
@@ -89,7 +121,15 @@ Remember to keep this in the same directory
 
 Since this is only referenced by `popup.html`, we don’t have to reference it in `manifest.json`
 
-<script src="https://gist.github.com/riathakkar/0a475f472796a2b372eea339dacbff2d.js"></script>
+<pre><code>
+// popup.js
+document.addEventListener('DOMContentLoaded', function() {
+  var checkButton = document.getElementById('check');
+  checkButton.addEventListener('click', function() {
+   alert("Hey your button is working!");
+  }, false);
+}, false);
+</code></pre>
 
 We use `addEventListener` to make sure the popup is loaded and the button is clicked, before we execute any of our code.
 Follow the steps to load up your extension again, hit update and click on your icon!
@@ -114,7 +154,32 @@ In order to get this information though we need to utilize message passing betwe
 
 With the additions, our `manifest.json` will look something like this.
 
-<script src="https://gist.github.com/riathakkar/42f5591563c2298aa729ae8644837c88.js"></script>
+<pre><code>
+// manifest.json
+{
+  "manifest_version": 2,
+
+  "name": "Text to Foot",
+  "description": "This extension will convert all text on page to the word foot and change the background.",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "foot.png",
+   "default_popup": "popup.html"
+  },
+  "permissions": [
+   "activeTab"
+ ],
+ "content_scripts": [
+    { 
+     "matches": [
+       "<all_urls>"
+     ],
+     "js": ["content.js"]
+    }
+  ]
+}
+</code></pre>
 
 The **content_scripts** attribute takes in two items here
 - matches — tells you what pages the scripts will be injected to/used on. Here it is all URLS
@@ -128,15 +193,37 @@ Since we have referenced a `content.js` it’s time to make it.
 
 First let’s edit our `popup.js` file to send a message to `content.js` to change the webpage.
 
-<script src="https://gist.github.com/riathakkar/2f741b6e7f061d3accb6af04f7b2b3d7.js"></script>
-<pre><code>This is a code block.
+<pre><code>
+// popup.js
+document.addEventListener('DOMContentLoaded', function() {
+  var checkButton = document.getElementById('check');
+  checkButton.addEventListener('click', function() {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {method: "changePage"}, function(response) {
+          if(response.method == "changePage"){
+            alert("Succeeded with "+response.method);
+          }
+        });
+      });
+  }, false);
+}, false);
 </code></pre>
 
 `chrome.tabs` references the tabs api. The `chrome.tabs.query` call will look through all the tabs and return back the tabs that fit the parameters used to make the call. As we can see, our call is trying to fetch the `activeTab`.
 
 `sendMessage` will then send a message to our `content.js` script. The response will then be processed by the function and an alert will popup on our screen letting us know we have succeeded!
 
-<script src="https://gist.github.com/riathakkar/2296d656cf2ee80641503f78d0e41907.js"></script>
+<pre><code>
+// content.js
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if(request.method == "changePage"){
+            document.body.innerText = "Foot";
+            sendResponse({text: document.body.innerText, method: "changePage"}); //same as innerText
+        }
+    }
+);
+</code></pre>
 
 Here we send a response back to the calling script, in this case `popup.js`
 
@@ -144,7 +231,21 @@ The code here will only activate if `changePage` is the method argument passed i
 
 We’ve also made this code in such a way that the response from the request is all the text on the webpage. Change your `popup.js` to this to see all the text on the webpage in the alert that’s generated.
 
-<script src="https://gist.github.com/riathakkar/376f409d9ac710ad65b44f3f99f0d84d.js"></script>
+<pre><code>
+// popup.js
+document.addEventListener('DOMContentLoaded', function() {
+  var checkButton = document.getElementById('check');
+  checkButton.addEventListener('click', function() {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {method: "changePage"}, function(response) {
+          if(response.method == "changePage"){
+            alert(response.text);
+          }
+        });
+      });
+  }, false);
+}, false);
+</code></pre>
 
 ### Congratulations!
 You’ve made your first chrome extension! In my next article I’m going to write more about a concept in Message Passing called portals. This allows you send multiple requests in quick succession from your `popup.js` to your `content.js`
