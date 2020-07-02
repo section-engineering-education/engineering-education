@@ -45,7 +45,7 @@ In an electron application, the client-side code has all the same privileges as 
 
 ![electron workflow](/engineering-education/cross-platform-applications-electron/electron-workflow.png)
 
-**Electron Process Model**
+#### Electron Process Model
 In the `package.json` file, we define the main file, which is executed first when we start the application. The `main.js` file creates an application window, or a browser window instance, to run web pages. The main.js file will spawn the *Main Process*. The web page runs its processes known as *rendered processes*.
 
 ### Advantages of using Electron
@@ -66,7 +66,7 @@ node -v
 npm -v
 ```
 #### Project Structure
-A basic electron app has the following structure.
+A basic electron app has the following structure:
 ```
 your-app/
 ├── package.json
@@ -80,7 +80,7 @@ your-app/
     "start": "electron ."
   }
 ```
-3. Install electron `npm install --save-dev electron`.
+3. Install electron using `npm install --save-dev electron`.
 4. Create files.
 
 #### Electron Development
