@@ -6,12 +6,12 @@ slug: sitemapping-what-is-it
 title: Sitemapping, What Is It and Is It Important?
 description: The Sitemaps protocol allows a webmaster to inform search engines about URLs on a website that are available for crawling. A Sitemap is an XML file that lists the URLs for a site.
 author: gregory-manley
-date: 2020-02-26T00:00:00-07:00
+date: 2020-07-02T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/are-chiplets-the-future-of-computing/hero.jpg
+  - url: /engineering-education/sitemapping-what-is-it/hero.jpg
     alt: chiplet future of cumputing
 ---
 Sitemapping is by definition create a map that describes relations between pages of a website. Most websites have a sitemap, but not many people see, use, or even know about it. This raises the question: what is a sitemap and is it important?
