@@ -36,7 +36,7 @@ Thankfully, it is easy to generate a sitemap for your website using free online 
 
 Simply go to the website and enter your website's address, then click "Create free XML Sitemap". It may take some time to generate a sitemap for your site, especially if you have hundreds of webpages. Once you have this sitemap downloaded (known as sitemap.xml). You will need to upload this file to your website.
 
-Once this is upload head over to your Google Search Console and click on sitemap on the sidebar. Once there enter sitemap.xml into the text box.
+Once this is uploaded head over to your Google Search Console and click on sitemap on the sidebar. Once there enter sitemap.xml into the text box.
 
 ![](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/screen-shot-2020-07-02-at-10-47-34-am_orig.png)
 
