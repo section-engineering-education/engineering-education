@@ -171,6 +171,10 @@ As our application grows, we will need to add more types and operations to the s
 
 ## Read More
 [GraphQL](https://graphql.org/)
+
 [How to Guide](https://www.howtographql.com/)
+
 [The GraphQL specification](http://spec.graphql.org/)
+
 [GraphQL vs REST](https://phil.tech/2017/graphql-vs-rest-overview/) by Phil Sturgeon: Objective and thoughtful comparison of GraphQL and REST.
+
