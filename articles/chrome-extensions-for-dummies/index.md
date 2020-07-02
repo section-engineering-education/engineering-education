@@ -100,7 +100,7 @@ Here we reference it in **browser_action** which tells the browser that when som
 
 <pre><code>
 <!-- popup.html -->
-<!doctype html>
+`<!doctype html>
 <html>
   <head>
     <title>Text to Foot</title>
@@ -110,7 +110,7 @@ Here we reference it in **browser_action** which tells the browser that when som
     <h1>Text to Foot</h1>
     <button id="check">Change Text</button>
   </body>
-</html>
+</html>`
 </code></pre>
 
 Here we are referencing a javascript file called `popup.js` This file will contain the logic for `popup.html`
