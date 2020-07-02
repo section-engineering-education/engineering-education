@@ -15,16 +15,16 @@ In this article we will see how neural networks can be use to generate text data
 A recurrent neural networks (RNN) are  a class of [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) that is powerful for modelling sequence data such as time series or natural language.
 [Vanilla neural networks](https://en.wikipedia.org/wiki/Multilayer_perceptron) have one shortcoming when compared to RNNs, they cannot solve solve machine learning problems which need to rememeber information about the past inputs. When processing sequential data it is key that we remember the relationships in the data, and plain [CNNs](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) are not born good at length-varying input and output. Hence, we are using RNNs for the task of text generation.
 
-![rnn]()
+![rnn](RNN-rolled.png)
 
 We will use a special type of RNN called [LSTM](https://colah.github.io/posts/2015-08-Understanding-LSTMs/),  which are equipped to handle very large sequences of data. Simple RNNs  have a problem called the *[vanishing gradient problem](https://www.youtube.com/watch?v=qhXZsFVxGKo)*, because of which they cannot handle large sequences. LSTMs are designed to handle long-term dependencies.
 
-![lstm]()
+![lstm](62.png)
 
 ## Text Generation 
 The way to generate sequence data (text or music) is to train a network to predict the next token or next few tokens in a sequence, using the previous tokens as input. For instance, given the input “*the cat is on the ma*,” the network is trained to predict the target ***t***, the next character. When working with text data *tokens* are words or characters and any network that can model the probability of next token is called *language model*. A language model captures the statistical structure of the text.
 
-![model]()
+![model](63.png)
 
 ## Implementing in Tensorflow
 ### The Dataset
