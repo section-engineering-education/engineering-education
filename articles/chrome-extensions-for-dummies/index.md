@@ -59,13 +59,13 @@ Lets create the file that dictates how the popup will appear.
 Think of the popup as a little mini webpage hidden away inside that foot icon.
 
 As with everything in chrome extensions, if we want to link another file we have to reference it in the `manifest.json`
-<html>
+
 <script src="https://gist.github.com/riathakkar/8456b4462476222de3042697145138bd.js"></script>
-</html>
+
 Here we reference it in **browser_action** which tells the browser that when someone clicks on our icon, the popup is popup.html It will hold all of the UI elements for our popup.
-<html>
+
 <script src="https://gist.github.com/riathakkar/c9dc495719892337f3c95ca63b9fe0aa.js"></script>
-</html>
+
 Here we are referencing a javascript file called `popup.js` This file will contain the logic for `popup.html`
 
 Remember to keep this in the same directory
@@ -114,6 +114,8 @@ Since we have referenced a `content.js` it’s time to make it.
 First let’s edit our `popup.js` file to send a message to `content.js` to change the webpage.
 
 <script src="https://gist.github.com/riathakkar/2f741b6e7f061d3accb6af04f7b2b3d7.js"></script>
+<pre><code>This is a code block.
+</code></pre>
 
 `chrome.tabs` references the tabs api. The `chrome.tabs.query` call will look through all the tabs and return back the tabs that fit the parameters used to make the call. As we can see, our call is trying to fetch the `activeTab`.
 
