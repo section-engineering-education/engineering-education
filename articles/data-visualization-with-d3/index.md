@@ -123,27 +123,27 @@ A transition is an interface for animating changes to the DOM. Instead of applyi
 
 We will discuss one way of doing transitions in this article.
 ```
-	var t = d3.transition().duration(1000); // we can declare a constant or function anywhere
-	var svg = d3.select('svg');
-	 var bars = svg.selectAll('rect') .data(data, d => d);
-	  // exit
-	  bars.exit()
-		  .transition(t)
-		  .attr('y', height)
-		  .attr('height', 0)
-		  .remove();
-	// enter
-	  var enter = bars.enter()
-				  .append('rect')
-				  .attr('width', rectWidth)
-				  .attr('stroke', '#fff')
-				  .attr('y', height);
-	// enter + update
-	bars = enter.merge(bars)
-				.attr('x', (d, i) => i * rectWidth)
-				.attr('fill', d => colors(d))
-				.transition(t) .attr('y', d => height - d)
-				.attr('height', d => d);
+var t = d3.transition().duration(1000); // we can declare a constant or function anywhere
+var svg = d3.select('svg');
+	var bars = svg.selectAll('rect') .data(data, d => d);
+	// exit
+	bars.exit()
+		.transition(t)
+		.attr('y', height)
+		.attr('height', 0)
+		.remove();
+// enter
+	var enter = bars.enter()
+				.append('rect')
+				.attr('width', rectWidth)
+				.attr('stroke', '#fff')
+				.attr('y', height);
+// enter + update
+bars = enter.merge(bars)
+			.attr('x', (d, i) => i * rectWidth)
+			.attr('fill', d => colors(d))
+			.transition(t) .attr('y', d => height - d)
+			.attr('height', d => d);
 ```
 In the example above, we see a transition is applied to `.exit()` selection, it returns a selection of DOM elements, to which the target state is *height = 0* it is applied in a smooth animated way by using transitions. Everything after `.transition()` is the target state. The *from* state or the *initial* state is the DOM if no attributes are given, in the example above, we gave certain attributes to the `enter + update` which is the initial state. You can check out the transition API [here](https://github.com/d3/d3-transition).
 
