@@ -98,8 +98,9 @@ As with everything in chrome extensions, if we want to link another file we have
 
 Here we reference it in **browser_action** which tells the browser that when someone clicks on our icon, the popup is popup.html It will hold all of the UI elements for our popup.
 
-<!-- popup.html -->
+
 <pre><code>
+&lt;!-- popup.html --&gt;
 &lt;!doctype html&gt;
 &lt;html&gt;
   &lt;head&gt;
