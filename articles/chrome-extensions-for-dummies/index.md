@@ -9,7 +9,7 @@ I am going to show you all how to make a basic extension that changes all the te
 
 I know this sounds really strange, but the core concepts will allow you to build off this and make any chrome extension that involves taking data/text from the page, running a script on it(or not) and replacing/altering it with something of your choosing. Pretty powerful!
 
-### Getting Started
+## Getting Started
 First you’re going to make a directory to hold all these files. Later on you will drag this folder into the extensions interface to make it usable to you. Make sure all your files are in this folder!
 
 `mkdir my-chrome-extension`
@@ -67,7 +67,7 @@ Hit the Load unpacked button and select the folder that we have been working in.
 
 Yay! We did it! Very cool. Now to actually add some functionality into this pretty little button.
 
-### Starting to Code(popups!)
+## Starting to Code(popups!)
 
 Lets create the file that dictates how the popup will appear.
 
@@ -141,7 +141,7 @@ Hit the **Change Text** button and if you did everything correctly an alert shou
 
 ![image title](working-popup.png)
 
-### Grabbing Text off the Webpage
+## Grabbing Text off the Webpage
 
 Next we are going to grab all the text off the webpage in every html tag.This is actually a really simple phrase that took me forever to find. You can test it out for yourself on this site by right clicking on your screen, hitting inspect and finding the console.
 
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 </code></pre>
 
-### Congratulations!
+## Congratulations!
 You’ve made your first chrome extension! In my next article I’m going to write more about a concept in Message Passing called portals. This allows you send multiple requests in quick succession from your `popup.js` to your `content.js`
 
 Although simple and it gets the job done, this form of one time message passing is only good for certain types of applications like this one where a message only needs to be sent when a button is pressed.
