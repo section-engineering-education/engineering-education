@@ -23,10 +23,22 @@ Next we will create our `manifest.json` file.
 
 This file is required to make any chrome extension usable. It contains all the information needed for configuration, like the files that are used for the popup, the name of the extension, the permissions etc. It’s important!! If you get permissions errors later on, it’s most likely because something here was done incorrectly.
 
-<script src="https://gist.github.com/riathakkar/1b2edd235b8e1e749893a9430549fcc4.js"></script>
+<pre><code>{
+  "manifest_version": 2,
 
-<pre><code>This is a code block.
-</code></pre>
+  "name": "Text to Foot",
+  "description": "This extension will convert all text on page to the word foot and change the background.",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "foot.png"
+  },
+  "permissions": [
+   "activeTab"
+ ]
+}</code>
+</pre>
+<script src="https://gist.github.com/riathakkar/1b2edd235b8e1e749893a9430549fcc4.js"></script>
 
 The required elements in this are:
 - manifest_version
