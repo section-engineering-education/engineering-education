@@ -1,17 +1,17 @@
 # Converting A Static Site to A Dynamic NodeJS Web App
 
-This tutorial will guide you how to convert a static website that uses HTML, CSS and JS to a dynamic one using the MEN stack. Similar to the popular MEAN/MEARN stack (MongoDB, Express, Angular or React and NodeJS), but instead of using Angular or React, we will use a templating engine called [EJS](https://ejs.co) (Embedded JavaScript.) Other popular templating engines include Handlebars, Pug and Nunjucks.
+This tutorial will guide you on how to convert a static website that uses HTML, CSS and JS to a dynamic one using MongoDB, Express, Static HTML, CSS and JS and NodeJS. Similar to the popular MEAN/MEARN stack (MongoDB, Express, Angular or React and NodeJS), but instead of using Angular or React, we will use a templating engine called [EJS](https://ejs.co) (Embedded JavaScript.) Other popular templating engines include Handlebars, Pug and Nunjucks.
 
 Learning a templating language is easier than a JS framework because you can just write HTML and it lets you insert the same piece of code in multiple locations (called partials) or pass server-side variables to be displayed in the front-end (such as a username).
 
 
 ## Installing NodeJS
 
-First, make sure you’ve installed NodeJS on your local machine or VPS hosting provider.  If you haven’t installed it, go to the [NodeJS website](https://nodejs.org/en/) in order to do so. With NodeJS, you can write server-side code using a special form of JavaScript so you can use an already familiar language. 
+First, make sure you’ve installed NodeJS on your local machine or VPS hosting provider.  If you haven’t installed it, go to the [NodeJS website](https://nodejs.org/en/) to do so. With NodeJS, you can write server-side code using a special form of JavaScript so you can use an already familiar language. 
 
 The NodeJS installer comes bundled with the package manager, NPM. NPM is a repository for Node Modules (reusable pieces of code that can extend the functionality of your server). It’s similar to a plugin repository and Node Modules can be thought of as code snippets or libraries (depending on how large they are).
 
-*Windows Users:* Need to add Node and NPM to their PATH so they can call them easily on the command line. See my [guide](https://www.section.io/engineering-education/working-with-databases-part1/#mondodb-installation)  on How to Install MongoDB if you don’t already know how.
+*Windows Users:* Need to add Node and NPM to their PATH so they can call them easily on the command line. See my [guide](https://www.section.io/engineering-education/working-with-databases-part1/#mondodb-installation)  on How to Install MongoDB which tells you how.
 
 
 ## Testing the Install
@@ -51,19 +51,19 @@ The first step to use EJS is to install it. A simple `npm install ejs --save` wi
 
 ## Converting Static Pages to EJS Files
 
-Next, you need to convert your static HTML files into dynamic EJS ones and setup your folder structure in the way EJS expects. In the root directory of your website, create a folder called views and inside that folder create two sub-folders called pages and partials. Move all your HTML files into the pages sub-folder and rename the .html file extensions to .ejs. Your folder structure should look similar to the picture below.
+Next, you need to convert your static HTML files into dynamic EJS ones and set up your folder structure in the way EJS expects. In the root directory of your website, create a folder called views and inside that folder create two sub-folders called pages and partials. Move all your HTML files into the pages sub-folder and rename the .html file extensions to .ejs. Your folder structure should look similar to the picture below.
 
 ![NodeJS File Structure.png](/engineering-education/deploying-nodejs-app/digitalocean-creation.png)
 
 ## Reusing Code - Creating Your First EJS Partial
 
-When creating static sites, there's often code that you repeat on every page such as the head (where the meta tags are located), header and footer sections. It's inconvienent to change them on every page (especially on larger sites) if alterations are needed but if you use EJS partials then you won't have to. Editing one template (partial) file will update the code on every page and location the file is included in.
+When creating static sites, there's often code that you repeat on every page such as the head (where the meta tags are located), header and footer sections. It's inconvenient to change them on every page (especially on larger sites) if alterations are needed but if you use EJS partials then you won't have to. Editing one template (partial) file will update the code on every page and location the file is included in.
 
 We'll take a typical part of a website to be templated, the header as an example. Create a new file called header.ejs in the partials folder. Copy and paste all the code between the `<header></header>` tags on one of your EJS pages into it.
 
 Finally, on all pages with a header delete the code between the `<header></header>` tags (the same code you copied to the header.ejs partial file) and replace it with `<%- include('../partials/header') %>`. Now, you've created your first EJS partial. Repeat the process for any other repetitive pieces of code such as the head and footer sections.
 
-*Small Tip:* If you find it hard to differentiate between your pages and partials since they have the same .ejs file extension then it can be helpful to put a underscore _ in front of the names of partials so _header.ejs. It's a naming convention that some developers use that can be helpful.
+*Small Tip:* If you find it hard to differentiate between your pages and partials since they have the same .ejs file extension then it can be helpful to put an underscore _ in front of the names of partials so _header.ejs. It's a naming convention that some developers use that can be helpful.
 
 
 ## Rendering EJS Pages
