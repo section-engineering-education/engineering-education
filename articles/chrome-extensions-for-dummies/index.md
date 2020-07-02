@@ -99,17 +99,19 @@ As with everything in chrome extensions, if we want to link another file we have
 Here we reference it in **browser_action** which tells the browser that when someone clicks on our icon, the popup is popup.html It will hold all of the UI elements for our popup.
 
 <!-- popup.html -->
-<!doctype html>
-<html>
-  <head>
-    <title>Text to Foot</title>
-    <script src="popup.js"></script>
-  </head>
-  <body>
-    <h1>Text to Foot</h1>
-    <button id="check">Change Text</button>
-  </body>
-</html>
+<pre><code>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Text to Foot&lt;/title&gt;
+    &lt;script src="popup.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Text to Foot&lt;/h1&gt;
+    &lt;button id="check"&gt;Change Text&lt;/button&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
 Here we are referencing a javascript file called `popup.js` This file will contain the logic for `popup.html`
 
