@@ -2,7 +2,7 @@
 
 Let us resume this series with the most fundamental and powerful Data Structure in Python, the list which are similar to arrays.
 
-![Array, Meme](/pythonDS/lists/images/array-mindexpands.png)
+![Array, Meme](/engineering-education/data-structures-python-part-2/array-mindexpands.png)
 
 Python Lists are amazing, with extremely powerful features that cut down the lines of code and the time taken to write the code. Let us start looking into various list creation, updation and deletion and other powerful list methods.
 
@@ -24,7 +24,7 @@ colors = ['red', 'blue', 'green']
 ```
 The above list, ```colors``` is stored in memory as shown below.
 
-![List, Visualization](/pythonDS/lists/images/list-vis.png)
+![List, Visualization](/engineering-education/data-structures-python-part-2/list-vis.png)
 
 We can also create a list with multiple data types, like strings, integers and floats in them.
 
