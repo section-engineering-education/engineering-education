@@ -168,3 +168,9 @@ type Book {
 ```
 
 As our application grows, we will need to add more types and operations to the schema. At some point, this schema will become unwieldy to manage in a single file. We need to modularize it, just like we modularize code into modules and our UI into components. The easiest way to do this is to split the schema into smaller manageable chunks. By convention, we use .graphql as the extension for these files.
+
+## Read More
+[GraphQL](https://graphql.org/)
+[How to Guide](https://www.howtographql.com/)
+[The GraphQL specification](http://spec.graphql.org/)
+[GraphQL vs REST](https://phil.tech/2017/graphql-vs-rest-overview/) by Phil Sturgeon: Objective and thoughtful comparison of GraphQL and REST.
