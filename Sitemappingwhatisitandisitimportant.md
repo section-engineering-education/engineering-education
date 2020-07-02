@@ -1,4 +1,23 @@
-## Sitemapping, What Is It and Is It Important
+---
+layout: engineering-education
+status: publish
+published: true
+slug: sitemapping-what-is-it
+title: Sitemapping, What Is It and Is It Important?
+description: Processors followed Moore's Law, which says that the number of transistors will double every two years. It is now being said that Moore's Law is coming to an end, especially with monolithic designs.
+author: gregory-manley
+date: 2020-02-26T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/are-chiplets-the-future-of-computing/hero.jpg
+    alt: chiplet future of cumputing
+---
+The use of chiplets allows manufactures to use more than one node in a processor design. For example, the I/O components of CPUs are hard to shrink.
+<!--more-->
+
+## 
 Sitemapping is by definition create a map that describes relations between pages of a website. Most websites have a sitemap, but not many people see, use, or even know about it. This raises the question: what is a sitemap and is it important?
 
 ### What Is A Sitemap?
