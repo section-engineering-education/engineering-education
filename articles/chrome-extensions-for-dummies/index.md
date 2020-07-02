@@ -25,6 +25,9 @@ This file is required to make any chrome extension usable. It contains all the i
 
 <script src="https://gist.github.com/riathakkar/1b2edd235b8e1e749893a9430549fcc4.js"></script>
 
+<pre><code>This is a code block.
+</code></pre>
+
 The required elements in this are:
 - manifest_version
 - name
