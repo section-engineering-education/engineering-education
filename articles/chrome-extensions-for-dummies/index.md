@@ -54,7 +54,7 @@ Let’s test out to see if we have made our `manifest.json` correctly.
 
 Navigate to `chrome://extensions`.
 
-![chrome://extensions toolbar](/engineering-education/articles/chrome-extensions-for-dummies/chrome-extension-developer-mode-off.png)
+![chrome://extensions toolbar](engineering-education/articles/chrome-extensions-for-dummies/chrome-extension-developer-mode-off.png)
 
 Tick the developer mode switch and your toolbar will look like this.
 
