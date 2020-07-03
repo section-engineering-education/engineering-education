@@ -1,0 +1,36 @@
+---
+layout: engineering-education
+status: publish
+published: true
+slug: supervised-machine-learning
+title: Varying Levels of Supervised Machine Learning
+description: Supervised learning is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples.
+author: justin-osborne
+date: 2020-07-02T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/supervised-machine-learninghero.jpg
+    alt: supervised learning example image
+---
+[Machine learning](https://www.ibm.com/analytics/machine-learning?p1=Search&p4=p50436721077&p5=e&cm_mmc=Search_Google-_-1S_1S-_-WW_NA-_-machine%20learning_e&cm_mmca7=71700000060812519&cm_mmca8=kwd-59020306&cm_mmca9=EAIaIQobChMIl7K-iq2w6gIVyrzACh0A-gBxEAAYASAAEgJ7oPD_BwE&cm_mmca10=407020396491&cm_mmca11=e&gclid=EAIaIQobChMIl7K-iq2w6gIVyrzACh0A-gBxEAAYASAAEgJ7oPD_BwE&gclsrc=aw.ds) is a growing field in computer science and data analysis. As a project gets more complex it can be difficult to apply human oversight to every operation. Unsupervised learning is quickly replacing the need for human analysis. Machine learning may be more independent, but it is still important to know the varying levels of supervised learning.
+
+<!--more-->
+
+### Supervised Learning
+One of the first and simplest methods for machine learning is [supervised learning](https://cs.nyu.edu/~mohri/mlbook/). This method trains algorithms in recognizing certain patterns or outcomes. In supervised learning, the whole labeled data set is presented to the machine. In a problem, the final answer is given so that the machine can view the progression of the data. The machine continues to train with similar data sets until it calculates the desired outcome. When presented with a new data set it will use the same patterns to find the answer. The two main categories of supervised learning are classification and regression.
+
+Classification is the linear organization of data into separate categories. Such as cars that are free of damage and cars that are wrecked. Machine learning is also capable of a multi-classification organization. In the example that it organized wrecked cars, it could also note the location of the damage. Regression uses statistical data to predict the correlation between independent and dependent points. An example of this would be using a polynomial or logarithmic best fit line to predict a result. Some applications of supervised learning are finding test scores, vector calculations, and other simplistic linear equations.  
+
+### Unsupervised learning
+Where supervised learning is using all labeled parts, [unsupervised learning](https://algorithmia.com/blog/introduction-to-unsupervised-learning) has little to no labeled data. Unsupervised machine learning is independent in the way it organizes data. Even with the same data, the machine may organize the information with different methods.
+
+The first step for unsupervised learning is first defining the information. Then integrating the information into a decision-making process for better efficiency. To perform an analysis, it is typically done in two different fashions: clustering and dimensionality reduction.
+
+Clustering[https://www.section.io/engineering-education/clustering-algorithms/] is the process of finding correlations between data points and identifying these relations to certain groups. Clustering is simple in its method, but capable of handling large amounts of data. There are many methods for clustering but is a topic that should be an independent search. Dimensionality reduction takes the information and simplifies it to the most important parts. It most cases the information is only a fraction of the total, and the rest is counted as redundant. A reduction is also a helpful tool for compressing the size of the data.
+
+One of the benefits of unsupervised learning is it can compute non-linear problems. This is especially helpful since many real-world problems are rarely linear. These complicated problems may be solved at a loss for accuracy. There are also challenges in verifying the outcome when there are no labels provided. When unsupervised learning is applied it can make associations that can be introduced to finding more correlations as a base for calculating the probability of certain events. This is helpful for things like anomaly detection or finding the demand rate for a new purchase item.
+
+### Semi-Supervised Learning
+[Semi-supervised learning](https://medium.com/inside-machine-learning/placeholder-3557ebb3d470) is classified as a mixture of both learning methods. Where there is only partial labeling of the information. Labeling all information can prove to be expensive. By using a mixture of both learning methods it may be beneficial to predict structures. This method has many real-world applications. Such audio files translated by a user, or protein classification by a scientist directing the learning process.
