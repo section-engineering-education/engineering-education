@@ -5,7 +5,7 @@ published: true
 slug: machine-learning-overview
 title: Machine Learning - An Overview
 description: Machine learning is the study of computer algorithms that improve automatically through experience and data sets. It is seen as a subset of artificial intelligence that has gotten more traction recently due to improved data collection.
-author: Saichethan Reddy
+author: saichethan-reddy
 date: 2020-07-01T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
