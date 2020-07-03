@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: static-site-dynamic-nodejs-web-app
 title: Converting A Static Site to A Dynamic NodeJS Web App
-description: Using MongoDB, this article proves that all you need to work with a database is some basic knowledge about the command line and JSON.
+description: How to build your first dynamic NodeJS web app from a static site. This article dispels the difficulties of learning full-stack development.
 author: louise-findlay
 date: 2020-07-02T00:00:00-07:00
 topics: []
@@ -91,7 +91,7 @@ First, we need to add the EJS node module to our server so in the server.js file
 
 Second, we need to tell our Express server to use EJS so underneath the `app.use(express.static('public'));` line add  `app.set('view engine', 'ejs');`.
 
-Now we need to configure routes. Routes tell the server what to do when a user goes to a certain URL in your website such as http://testapp.com/login. There are two types of routes, get and post. Get routes display pages and post routes upload data from the front-end to the server (usually via a form) typically before a page is rendered and the uploaded data is somehow used.
+Now we need to configure routes. Routes tell the server what to do when a user goes to a certain URL in your website such as `http://testapp.com/login`. There are two types of routes, get and post. Get routes display pages and post routes upload data from the front-end to the server (usually via a form) typically before a page is rendered and the uploaded data is somehow used.
 
 Since we only want to display our EJS pages, we will just use get routes. Add them after the `app.listen(8080)` line in server.js. For the index page, the route will be:
 
@@ -102,9 +102,9 @@ app.get('/', function (req, res) {
     res.render('pages/index');
 });
 ```
-The '/' specifies the URL of the website the code will activate on, the req stands for request and res for result so the result of going to http://testapp.com is rendering (displaying to the browser) the pages/index.ejs page. Add similar routes for your other EJS pages.
+The '/' specifies the URL of the website the code will activate on, the req stands for request and res for result so the result of going to `http://testapp.com` is rendering (displaying to the browser) the pages/index.ejs page. Add similar routes for your other EJS pages.
 
-**Should this be left till Part 3? Article over 1200 words**
+**Should this be left to a Part 2 where working with APIs and templating can be covered in more detail? Article over 1200 words**
 
 ### Passing Server-Side Data to the Frontend
 
