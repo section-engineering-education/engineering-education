@@ -2,6 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
+slug: man-in-the-middle-attack
 title: What is a Man in the Middle Attack?
 description: A man-in-the-middle attack, also known as a hijack attack is an attack where the attacker secretly relays and possibly alters the communications between two parties who believe that they are directly communicating with each other.
 author: Richu Thomas
@@ -10,7 +11,7 @@ topics: [security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/man-in-middle-image/hero.jpg
+  - url: /engineering-education/man-in-the-middle-attack/hero.jpg
     alt: man in the middle example image
 ---
 Man-in-the-middle attacks happen at different levels and forms. But, its basic concept requires three key players: the victim, the entity which the victim is trying to contact, and the “man in the middle.”
@@ -58,7 +59,7 @@ On any typical connection, the user can connect to the website server and visit 
 ### Tools for Preventing Man-in-the-Middle attack
 - [Wireshark](https://www.wireshark.org/) is the world’s most used network protocol analyzer to detect ARP spoofing.
 - [SSL Eye](https://www.digi77.com/ssl-eye-prism-protection/) is a free software program which determines the SSL credentials of every site you connect.
-- [Perspective](https://perspectives-project.org/) is a browser plugin that does that. They keep a note of which domain names are issues by which Certificate Authorities's(CA) (eg. Google,etc.) and many other parameters related to the certificates and will alarm the user if either the CA changes OR if the public key in the cert changes.
+- [Perspective](https://perspectives-project.org/) is a browser plugin that does that. They keep a note of which domain names are issues by which Certificate Authorities'(CA) (eg. Google,etc.) and many other parameters related to the certificates and will alarm the user if either the CA changes OR if the public key in the cert changes.
 
 ### Some Famous News about Man-in-the-Middle attacks
 - The [US National Security Agency posing as Google](https://www.cnet.com/news/nsa-disguised-itself-as-google-to-spy-say-reports/) revealed in 2013 when Edward Snowden leaked NSA documents to the public. Using its ability to intercept traffic and spoof SSL certificates, the NSA was able to keep tabs on anyone's Google searches.
