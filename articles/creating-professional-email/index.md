@@ -20,13 +20,36 @@ Office365 however, has four business plans, basic, standard, premium and apps th
 
 Both of these email platforms charge per user (email address) though shared email addresses (hello@yourdomain.com) are free.
 
-This guide will use GSuite as an example as it is more popular than Office365 just for emails.
+This guide will use GSuite as an example as it is more popular than Office365 for emails.
 
 ## Creating your GSuite Account
 
+The first step is to create your GSuite account. Go to the [account creation](https://gsuite.google.com/signup/basic/welcome?hl=en-GB) page and enter your personal information to set up your account. 
 
+If you already have a domain such as  `yourdomain.com`  then you should click yes, I have one I should use otherwise no, I need one. If you need one then you can buy one through Google who will connect the new domain automatically.
 
+Whatever route you take, you’ll have to provide your recovery email and create your account credentials. Remember your username will form part of your email address, `user@yourdomain.com`  so name it accordingly. Click agree and create account to finish setting up your account.
+
+## Adding Multiple Users
+
+Once you’ve created your account, you’ll start the setup process. The first step of which is to add users. Users are classed as  `name@yourdomain.com`  and are for individuals. Shared mailboxes like  `info@yourdomain.com`  are free and how to set them up will be covered later in this guide.
+
+When you’ve finished setting up users, click the checkbox saying I added all user email addresses currently using  `@yourdomain.com` and click next.
+ 
 ## Connecting your Domain
+Now that you’ve set up all your GSuite users, you’ll have to connect your domain name. There are two steps to this. The first is to add a TXT record (similar to adding a site (property) to Google Search Console) **Link to Google Search Console article** to verify you own the domain and the second step is to add MX records which will configure emails.
+
+Google will try to detect the domain registrar you bought your domain from and provide detailed instructions on how to add the records. Follow the step by step instructions and click the checkboxes when you’ve accomplished each step. 
+
+When you’ve finished adding the DNS records to your domain, click the Verify Domain and Set Up Email button. DNS records can take up to 24-48hrs to activate (though usually about an hour) so if it doesn’t work, try again later.
+
+## Adding Shared Mailboxes/Domain Aliases
+
+An email like `hello@yourdomain.com`  could be used by multiple users but sharing the same account can lead to temporary bans due to high usage. The solution is domain aliases or how Office365 refers to it shared mailboxes. You login to your existing GSuite or Office365 account and can access and send emails as the hello email. 
+
+You can have an unlimited number of aliases and it doesn’t cost you a penny. However, you need a GSuite user for every person that wants to access the shared mailbox.
+
+
 
 ## Configuring Spam Protection (SPF, DKIM and DMARC)
 
