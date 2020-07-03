@@ -1,8 +1,8 @@
 ﻿# Text Generation With RNN + TensorFlow
 
-The potential of artificial intelligence to emulate human thought goes from passive tasks such as [object recognition](https://www.mathworks.com/solutions/image-video-processing/object-recognition.html) to [self driving cars](https://www.wired.com/story/guide-self-driving-cars/), it also extends to creative tasks such as text-generation, [music generation](https://magenta.tensorflow.org/), art generation, etc.
+The potential of artificial intelligence to emulate human thought goes from passive tasks such as [object recognition](https://www.mathworks.com/solutions/image-video-processing/object-recognition.html) to [self-driving cars](https://www.wired.com/story/guide-self-driving-cars/), it also extends to creative tasks such as text-generation, [music generation](https://magenta.tensorflow.org/), art generation, etc.
 
-In this article we will see how neural networks can be use to generate text data,  same can be used for music generation.
+In this article/tutorial, we will see how neural networks can be used to generate text data, the same can be used for music generation.
 
 **Pre-Requisites:** 
 
@@ -12,8 +12,8 @@ In this article we will see how neural networks can be use to generate text data
 	* OR use [Google Colab](https://colab.research.google.com) [Recommended]
 
 ## RNN- Recurrent Neural Network
-A recurrent neural networks (RNN) are  a class of [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) that is powerful for modelling sequence data such as time series or natural language.
-[Vanilla neural networks](https://en.wikipedia.org/wiki/Multilayer_perceptron) have one shortcoming when compared to RNNs, they cannot solve solve machine learning problems which need to rememeber information about the past inputs. When processing sequential data it is key that we remember the relationships in the data, and plain [CNNs](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) are not born good at length-varying input and output. Hence, we are using RNNs for the task of text generation.
+Recurrent neural networks (RNN) are  a class of [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) that is powerful for modelling sequence data such as time series or natural language.
+[Vanilla neural networks](https://en.wikipedia.org/wiki/Multilayer_perceptron) have one shortcoming when compared to RNNs, they cannot solve machine learning problems which need to remember information about the past inputs. When processing sequential data, it is key that we remember the relationships in the data, and plain [CNNs](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) are not born good at length-varying input and output. Hence, we are using RNNs for the task of text generation.
 
 ![rnn](RNN-rolled.png)
 
@@ -22,13 +22,13 @@ We will use a special type of RNN called [LSTM](https://colah.github.io/posts/20
 ![lstm](62.png)
 
 ## Text Generation 
-The way to generate sequence data (text or music) is to train a network to predict the next token or next few tokens in a sequence, using the previous tokens as input. For instance, given the input “*the cat is on the ma*,” the network is trained to predict the target ***t***, the next character. When working with text data *tokens* are words or characters and any network that can model the probability of next token is called *language model*. A language model captures the statistical structure of the text.
+The way to generate sequence data (text or music) is to train a network to predict the next token or next few tokens in a sequence, using the previous tokens as input. For instance, given the input “*the cat is on the ma*,” the network is trained to predict the target ***t***, the next character. When working with text data *tokens* are words or characters and any network that can model the probability of the next token is called *language model*. A language model captures the statistical structure of the text.
 
 ![model](63.png)
 
 ## Implementing in Tensorflow
 ### The Dataset
-For this tutorial we will use a dataset which contains the works of Shakespeare. 
+For this tutorial, we will use a dataset which contains the works of Shakespeare. 
 ```python
 import tensorflow as tf
 import numpy as np
@@ -77,9 +77,9 @@ model.compile(loss="categorical_crossentropy", optimizer="adam")
 Given a trained model and a seed snippet, you can generate text by doing the following repeatedly:
 
 * Draw from the model a probability distribution for the next character	
-* Reweight the distribution to a certain *temperature*. (The temperature can be used to control the randomeness of the output. Higher temperatures result in sampling distributions of higher entropy that will generate more
+* Reweight the distribution to a certain *temperature*. (The temperature can be used to control the randomness of the output. Higher temperatures result in sampling distributions of higher entropy that will generate more
 surprising and unstructured generated data, whereas a lower temperature will result in less randomness and much more predictable generated data)
-* Sample the next character accoding to the reweighted distribution.
+* Sample the next character according to the reweighted distribution.
 * Add the character to the seed text
 
 ```python
@@ -106,7 +106,7 @@ for epoch in range(1, 60):
 		   generated_text += next_char
 		   generated_text = generated_text[1:]
 ```
-The above mentioned loop is used for training if you want to look at the results at each epoch or at different temperatures, print or append to a file in between the epochs. You can even give your own starting string instead of randomly choosing one.
+The above-mentioned loop is used for training if you want to look at the results at each epoch or at different temperatures, print or append to a file in between the epochs. You can even give your own starting string instead of randomly choosing one and observe how the model evolves through the epochs.
 
 After 10 epochs and giving the output string length = 2000 the output is as follows:
 
@@ -174,7 +174,7 @@ pride, sir, by the fresh perfects to o
 
 ### Conclusion
 
-To improve the model we can use [stacked LSTM layers](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/) instead of a single LSTM layer, use Bidirectional LSTM, Dropout to avoid over-fitting, clean the data. Dont expect a perfect speech from this as it is simply a statistical model, for better results we can train it on a large dataset like Wikipedia. 
+To improve the model we can use [stacked LSTM layers](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/) instead of a single LSTM layer, use Bidirectional LSTM, Dropout to avoid over-fitting, clean the data. Dont expect a perfect speech from this as it is simply a statistical model.
 
 [OpenAI GPT language Model](https://openai.com/blog/better-language-models/), have a look at this.
 
@@ -188,4 +188,3 @@ Full code [here](https://github.com/rohanreddych/Generative-NN-Applications).
 * [https://dev.to/nedomas](https://dev.to/nedomas/pytorch-lstm-text-generation-tutorial-2nf5)
 * [Rnn effectiveness, A Karpathy](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 * [https://www.tensorflow.org/tutorials/text/text_generation](https://www.tensorflow.org/tutorials/text/text_generation)
-* 
