@@ -18,7 +18,7 @@ A Stack is a linear data structure. It stores items using the Last In, First Out
 
 ```push``` in a stack is putting an item on top of the stack.
 
-```pop``` in a stcak is taking out the top item in the stack.
+```pop``` in a stack is taking out the top item in the stack.
 
 ![Push Pop](/engineering-education/data-structures-python-part-3/pushpop.png)
 
