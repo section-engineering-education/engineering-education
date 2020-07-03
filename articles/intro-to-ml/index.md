@@ -45,11 +45,16 @@ Machine Learning is a specific field of AI, where a system learns to find patter
 
 ### Classification
 
-**Supervised:** In supervised learning, we have access to examples of correct input-output pairs that we can show to the machine during the training phase.
-* MNIST image classification
-* Stock price prediction
-**Unsupervised:** In unsupervised learning, tasks find patterns in data where labels are not present, by forming clusters.
-* Clustering based problems
+* **Supervised** : In supervised learning, we have access to examples of correct input and output labels that we can show to the machine during the training phase. 
+	* MNIST image classification		* image classification
+		* input is an image
+		* output will be label like cat or dog
+	* Stock price prediction		* Stock price prediction
+* **Unsupervised** : In Unsupervised learning tasks find patterns in data where labels are not present, by forming clusters.			* inputs can be time, date, company etc..,
+	* Clustering based problems			* output can be price of stock at given date
+* **Unsupervised** : In Unsupervised learning tasks find patterns in data where labels are not present. Clustering is the task of dividing the population or data points into a number of groups such that data points in the same groups are more similar to other data points in the same group and dissimilar to the data points in other groups.
+	* Google News: In google news, articles describing same incidents by different news channels are clubbed together using clustering.
+	* Gene sequencing
 **Semi-supervised:** In semi-supervised learning, large amounts of input data (X) are present and only some of the data is labeled (Y).
 * Google News
 **Reinforcement Learning:** Reward system and trial-and-error where the goal is to maximize the long-term reward.
@@ -62,10 +67,6 @@ Machine Learning is a specific field of AI, where a system learns to find patter
 **Classification:** A classification model predicts discrete values. For example, classification models make predictions that answer questions like the following:
 * Is a given email message spam or not spam?
 * Is this an image of a dog, a cat, or a hamster?
-
-### Understanding the Problem
-Lets say the **Task** is to [Predict price of houses](https://www.kaggle.com/vikrishnan/boston-house-prices)<br>
-One of the important tasks in ML is formulating the task. In this example, as the price of houses are real values, it's a **Regression** problem. Every instance had output label in training data, so it's **Supervised**.
 
 #### Examples:
 - Stock price prediction
