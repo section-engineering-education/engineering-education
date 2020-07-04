@@ -6,8 +6,6 @@ However because of spam and fraudulent email protection, if you want your emails
 
 ## Choosing Between Office365 and GSuite
 
-GSuite vs Office 365 (annual vs monthly fee), GSuite basic vs business 
-
 The two main email providers that offer custom domains (yourname@yourbusiness.com) are Office365 and GSuite. These are the business email plans of Microsoft and Google. 
 
 While the choice tends to be which ecosystem you use, do you prefer Google's suite of collaborative software or the desktop apps of Microsoft Office?, each has it's own benefits. 
@@ -43,13 +41,19 @@ Google will try to detect the domain registrar you bought your domain from and p
 
 When you’ve finished adding the DNS records to your domain, click the Verify Domain and Set Up Email button. DNS records can take up to 24-48hrs to activate (though usually about an hour) so if it doesn’t work, try again later.
 
-## Adding Shared Mailboxes/Domain Aliases
+## Adding Shared Mailboxes/Group Aliases
 
 An email like `hello@yourdomain.com`  could be used by multiple users but sharing the same account can lead to temporary bans due to high usage. The solution is domain aliases or how Office365 refers to it shared mailboxes. You login to your existing GSuite or Office365 account and can access and send emails as the hello email. 
 
 You can have an unlimited number of aliases and it doesn’t cost you a penny. However, you need a GSuite user for every person that wants to access the shared mailbox.
 
+GSuite has three types of aliases, user, group and domain. A user alias (setup in Users > username > User information > Email aliases) is an alternate username for one GSuite user can't be used multiple times. An example would be `trent@trent.com` instead of `trentdobbs@trent.com` that was used to create the account. A domain alias (setup in Domains > Manage domains) is for the `@yourdomain.com` part of the email address. It allows you to add another domain so you can send and receive emails from multiple domains.
 
+A group alias is similar to Office 365's shared mailboxes (multiple users sharing the same email) and the one that this tutorial will guide you through. You have to group GSuite users together first and then set an alias for the group.
+
+The first step is to login to the GSuite admin [page](https://support.google.com/a/answer/182076), and click on Groups. You'll have to create a group and then added the relevant GSuite users to it. 
+
+Next, click on the group you've just created and then on Aliases. Click the Edit button and then add the name you want for example: `info` in Group Alias Email and then click Add Alias. Any emails sent to `info@yourdomain.com` will appear in the mailbox of the GSuite users in the group though it can take up to 24 hours for it to start working.
 
 ## Configuring Spam Protection (SPF, DKIM and DMARC)
 
