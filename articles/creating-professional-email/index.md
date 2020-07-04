@@ -57,13 +57,56 @@ Next, click on the group you've just created and then on Aliases. Click the Edit
 
 ## Configuring Spam Protection (SPF, DKIM and DMARC)
 
+Email providers now use spam protection features such as SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail) and DMARC (Domain Message Authentication Reporting) to authenticate emails and try to prevent fraudulent emails. If you try and use your GSuite account without setting them up then it's highly likely that some of your email will get rejected.
+
+If you bought your domain from Google then they can automatically setup SPF and partially DKIM for you but since you have to manually configure DMARC and the second part of DKIM to finish the entire process, it makes sense to show the entire process.
+
+### Setting up SPF (Sender Policy Framework)
+
+SPF determines the email server that can send emails from your domain. It prevents malicious email servers (those other than Google's since you're using GSuite) to send emails on your behalf.
+
+To configure SPF, you just need to add a DNS record to your domain. Log into your domain registrar (who you bought your domain from) and add a DNS record with the type: TXT, host: @ and value: v=spf1 include:_spf.google.com ~all. 
+
+Remember it can take 24-48hrs for DNS changes to be active (though usually only an hour or two.) 
+
+You can check SPF has been setup successfully using the[GSuite Toolbox](https://toolbox.googleapps.com/apps/checkmx) but we will do this at the end with a more versatile tool which will check several other factors in ensuring your emails will be received in your recipient's inboxes.
+
+### Setting up DKIM (DomainKeys Identified Mail)
+
+DKIM provides verification that your email hasn't been tampered or altered with in any way.
+
+In the GSuite admin [page](https://support.google.com/a/answer/182076), navigate to Apps > GSuite > Gmail, click Authenticate email and then Generate new record.
+
+Set the DKIM key bit length to 2048-bit because it's more secure. Most hosts should support it but if yours doesn't lower it to 1024-bit.
+
+You don't have to modify the prefix selector so just click the Generate button.
+
+Copy and paste the values provided into a new TXT record for your domain. Similar to how you configured SPF but you'll have two values instead. Copy the DNS Host name into the name/host part of the TXT record and for the last field paste it into the value part of the record.
+
+The last step is to turn on DKIM signing. Remember it can take up to 48 hours for the DNS changes to take effect so if the signing doesn't work, you may need to wait. Also, Google won't let new accounts enable it so it may take two to three days before you can do so.
+
+Finally, back on the GSuite email authentication page, click start authentication to finish the process.
+
+### Setting up DMARC (Domain Message Authentication Reporting)
+
+DMARC tells the email server how to handle suspect emails heading towards your inbox. You must have configured SPF and DKIM before you do so otherwise every email will fail this authentication step.
+
+To setup, add a new TXT record with the name of `_dmarc.yourdomain.com`. The value depends on what kind of authentication you want to setup. This example `v=DMARC1; p=quarantine; rua=mailto:youremail@yourdomain.com; pct=100; sp=none` would move all supicious emails to the spam folder and send you daily emails detailing which emails were quarantined. 
+
+You can change the p value to none which would do nothing or r which would reject all suspicious emails. The pct parameter determines the percentage of emails that the authentication runs on. 
+
+A typical process would be to start with allowing all emails through and then slowly raise the quarantine percentage and eventually reject until you're rejecting all suspicious emails. If you're worried about deleting legitimate emails then just use the example above which quarantines them instead.
+
 ## Testing your New Email Account
 
-Site where you can send a test email to check SPF etc is configured correctly.
+To test this all works correctly, we can use the [Mail Tester tool](https://www.mail-tester.com). Copy the email address provided and then send an email to it from your GSuite account. Once you've sent it, click the Then check your score button. 
 
+If the You're properly authenticated test is checked green then you've setup all three spam protection features successfully. You can click on the heading to find out in more detail whether your email passed DMARC testing, it had a proper DKIM signature and your SPF record works with your email server. Congratulations, your email is now secure.
 
 ## Adding your Email to your Devices
 
-Since you using GSuite or Office 365 then it's a simple as choosing Gmail or Office 365 and go through the automated setup on your favourite email client. 
+Since you using GSuite or Office 365 then adding your new email to your devices is as simple as choosing Gmail or Office 365 and go through the automated setup on your favourite email client. 
 
-That's much simpler than using another email provider because you have to configure an IMAP account and fill in all sorts of information and port numbers etc.
+That's much easier than using another email provider because you have to configure an IMAP account and fill in all sorts of information like port numbers.
+
+Congratulations, you've setup a professional email address, made it secure and learned how to setup user, group and domain aliases.
