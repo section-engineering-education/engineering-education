@@ -62,6 +62,8 @@ Helps make any writing BOLD & CLEAR
 It highlights lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it.
 Please use on all future articles before submitting a PR (pull request)
 
+Include a short Author Biography and Headshot image to be included at the end of your articles.
+
 http://www.hemingwayapp.com/
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team.
