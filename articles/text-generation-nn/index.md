@@ -1,34 +1,47 @@
-﻿# Text Generation With RNN + TensorFlow
+---
+layout: engineering-education
+status: publish
+published: true
+slug: text-generation-nn
+title: Text Generation With RNN + TensorFlow
+description: Text generation with an RNN. Contents. Setup. Import TensorFlow and other libraries. Download the Shakespeare dataset. Process the text. Vectorize the text. The prediction task. Build The Model. Try the model. Train the model.
+author: rohan-reddy
+date: 2020-07-03T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/text-generation-nn/hero.jpg
+    alt: shell scripting example image
+---
 The potential of artificial intelligence to emulate human thought goes from passive tasks such as [object recognition](https://www.mathworks.com/solutions/image-video-processing/object-recognition.html) to [self-driving cars](https://www.wired.com/story/guide-self-driving-cars/), it also extends to creative tasks such as text-generation, [music generation](https://magenta.tensorflow.org/), art generation, etc.
-
 In this article/tutorial, we will see how neural networks can be used to generate text data, the same can be used for music generation.
+<!--more-->
 
-**Pre-Requisites:** 
-
+### Pre-Requisites:
 * Knowledge of Python, Tensorflow, Machine Learning concepts. Check out the resources.
 * Environment
-	* Locally install [Python 3.x](https://www.python.org/downloads/) and [Tensorflow 2.x](https://www.tensorflow.org/install)
-	* OR use [Google Colab](https://colab.research.google.com) [Recommended]
+* Locally install [Python 3.x](https://www.python.org/downloads/) and [Tensorflow 2.x](https://www.tensorflow.org/install)
+* OR use [Google Colab](https://colab.research.google.com) [Recommended]
 
-## RNN- Recurrent Neural Network
+### RNN- Recurrent Neural Network
 Recurrent neural networks (RNN) are  a class of [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) that is powerful for modelling sequence data such as time series or natural language.
 [Vanilla neural networks](https://en.wikipedia.org/wiki/Multilayer_perceptron) have one shortcoming when compared to RNNs, they cannot solve machine learning problems which need to remember information about the past inputs. When processing sequential data, it is key that we remember the relationships in the data, and plain [CNNs](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) are not born good at length-varying input and output. Hence, we are using RNNs for the task of text generation.
 
-![rnn](RNN-rolled.png)
+![rnn](/engineering-education/text-generation-nn/RNN-rolled.png)
 
 We will use a special type of RNN called [LSTM](https://colah.github.io/posts/2015-08-Understanding-LSTMs/),  which are equipped to handle very large sequences of data. Simple RNNs  have a problem called the *[vanishing gradient problem](https://www.youtube.com/watch?v=qhXZsFVxGKo)*, because of which they cannot handle large sequences. LSTMs are designed to handle long-term dependencies.
 
-![lstm](62.png)
+![lstm](/engineering-education/text-generation-nn/62.png)
 
-## Text Generation 
-The way to generate sequence data (text or music) is to train a network to predict the next token or next few tokens in a sequence, using the previous tokens as input. For instance, given the input “*the cat is on the ma*,” the network is trained to predict the target ***t***, the next character. When working with text data *tokens* are words or characters and any network that can model the probability of the next token is called *language model*. A language model captures the statistical structure of the text.
+### Text Generation
+The way to generate sequence data (text or music) is to train a network to predict the next token or next few tokens in a sequence, using the previous tokens as input. For instance, given the input “*the cat is on the man*,” the network is trained to predict the target ***t***, the next character. When working with text data *tokens* are words or characters and any network that can model the probability of the next token is called *language model*. A language model captures the statistical structure of the text.
 
-![model](63.png)
+![model](/engineering-education/text-generation-nn/63.png)
 
-## Implementing in Tensorflow
-### The Dataset
-For this tutorial, we will use a dataset which contains the works of Shakespeare. 
+### Implementing in Tensorflow
+#### The Dataset
+For this tutorial, we will use a dataset which contains the works of Shakespeare.
 ```python
 import tensorflow as tf
 import numpy as np
@@ -43,7 +56,7 @@ Before training we need to map strings to numbers, extract partially overlapping
 
 ```python
 maxlen = 60 #extract sequences of length 60
-step = 3 
+step = 3
 sentences = []	#holds extracted sequences
 next_chars = [] #holds the targets
 for i in range(0, len(text)-maxlen, step):
@@ -60,7 +73,7 @@ for i, sentence in enumerate(sentences):
 	y[i, char_indices[next_chars[i]]] = 1
 ```
 ### Building the Network
-The network is a single LSTM layer followed by a `Dense` classifier and [softmax](https://medium.com/data-science-bootcamp/understand-the-softmax-function-in-minutes-f3a59641e86d) over all possible characters. 
+The network is a single LSTM layer followed by a `Dense` classifier and [softmax](https://medium.com/data-science-bootcamp/understand-the-softmax-function-in-minutes-f3a59641e86d) over all possible characters.
 ```python
 from tensorflow.keras import layers
 model = tf.keras.models.Sequential()
@@ -76,7 +89,7 @@ model.compile(loss="categorical_crossentropy", optimizer="adam")
 ```
 Given a trained model and a seed snippet, you can generate text by doing the following repeatedly:
 
-* Draw from the model a probability distribution for the next character	
+* Draw from the model a probability distribution for the next character
 * Reweight the distribution to a certain *temperature*. (The temperature can be used to control the randomness of the output. Higher temperatures result in sampling distributions of higher entropy that will generate more
 surprising and unstructured generated data, whereas a lower temperature will result in less randomness and much more predictable generated data)
 * Sample the next character according to the reweighted distribution.
@@ -173,15 +186,14 @@ pride, sir, by the fresh perfects to o
 ```
 
 ### Conclusion
-
-To improve the model we can use [stacked LSTM layers](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/) instead of a single LSTM layer, use Bidirectional LSTM, Dropout to avoid over-fitting, clean the data. Dont expect a perfect speech from this as it is simply a statistical model.
+To improve the model we can use [stacked LSTM layers](https://machinelearningmastery.com/stacked-long-short-term-memory-networks/) instead of a single LSTM layer, use Bidirectional LSTM, Dropout to avoid over-fitting, clean the data. Do not expect perfect speech from this as it is simply a statistical model.
 
 [OpenAI GPT language Model](https://openai.com/blog/better-language-models/), have a look at this.
 
 Full code [here](https://github.com/rohanreddych/Generative-NN-Applications).
 
 ### References and Resources
-* Deep Learning With Python, F. Chollet, Manning Publications.
+* [Deep Learning With Python, F. Chollet, Manning Publications](https://www.manning.com/books/deep-learning-with-python)
 * [Python Tutorial](https://www.w3schools.com/python/).
 * [TensorFlow tutorial](https://www.tensorflow.org/tutorials).
 * [Machine_learning](https://en.wikipedia.org/wiki/Machine_learning)
