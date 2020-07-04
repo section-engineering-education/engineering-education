@@ -1,13 +1,26 @@
-# Data Structures in Python, Part 2
+---
+layout: engineering-education
+status: publish
+published: true
+slug: data-structures-python-part-2
+title: Data Structures in Python, Part 2
+description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
+author: saiharsha-balasubramaniam
+date: 2020-07-03T00:00:00-12:00
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
 
-Let us resume this series with the most fundamental and powerful Data Structure in Python, the list which are similar to arrays.
+  - url: /engineering-education/data-structures-python-part-2/hero.jpg
+    alt: python data structures
+
+---
+Python Lists are amazing, with extremely powerful features that cut down the lines of code and the time taken to write the code. Let us start looking into various list creation, updating, and deletion and other powerful list methods. Let us resume this series with the most fundamental and powerful Data Structure in Python, the list which is similar to arrays.
+<!--more-->
 
 ![Array, Meme](/engineering-education/data-structures-python-part-2/array-mindexpands.png)
 
-Python Lists are amazing, with extremely powerful features that cut down the lines of code and the time taken to write the code. Let us start looking into various list creation, updation and deletion and other powerful list methods.
-
-## Table of Contents
-
+### Table of Contents
 - [Creating a List](#creation)
 - [Accessing Various Elements](#accessing-various-elements)
 - [List Slicing and Reversing](#list-slicing-and-reversing)
@@ -15,8 +28,7 @@ Python Lists are amazing, with extremely powerful features that cut down the lin
 - [List Comprehension](#list-comprehension)
 - [Conclusion](#conclusion)
 
-## Creation
-
+### Creation
 In Python, lists are represented by **square brackets**. Therefore, we create a list as follows.
 
 ```
@@ -32,7 +44,7 @@ We can also create a list with multiple data types, like strings, integers and f
 type = ['hello', 3.14, 420]
 ```
 
-## Accessing Various Elements
+### Accessing Various Elements
 Python Lists follow a **Zero Indexing**, and the list index starts from 0. Nested Lists are accessed using **nested indexing**.
 
 ```
@@ -55,7 +67,7 @@ print(colors[3])
 print(colors[1.0])
 ```
 
-Python has a very handy **negative indexing** feature too!
+Python has a very handy **negative indexing** feature as well!
 
 ```
 colors = ['red', 'blue', 'green']
@@ -64,10 +76,10 @@ colors = ['red', 'blue', 'green']
 print(colors[-1])
 ```
 
-## List Slicing and Reversing
+### List Slicing and Reversing
 We can reverse and slice lists using list indices, as follows
 
-``` 
+```
 nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # This notation slices from start index -> stop index - 1
@@ -91,9 +103,9 @@ print(nums[:])
 ```
 For more information regarding list slicing, refer to this [link](https://stackoverflow.com/questions/509211/understanding-slice-notation)
 
-## List Methods
+### List Methods
 
-### list.index()
+#### list.index()
 Returns the index of specified element in the list.
 The syntax is,  ```list.index(element, start, end)```
 ```
@@ -109,7 +121,7 @@ index = vowels.index('x')
 # Output: Throws ValueError exception
 ```
 
-### list.append()
+#### list.append()
 This method adds an item at the end of a list.
 ```
 fruits = ['apple']
@@ -119,7 +131,7 @@ fruits.append('orange')
 print(fruits)
 ```
 
-### list.extend()
+#### list.extend()
 Extends the list by appending items.
 ```
 animals = ['lion', 'tiger']
@@ -129,7 +141,7 @@ print(animals)
 # Output: ['lion', 'tiger', 'wolf', 'panther']
 ```
 
-### list.insert()
+#### list.insert()
 Insert an element into the mentioned index.
 ```
 nums = [1, 2, 3, 4, 5]
@@ -139,7 +151,7 @@ print(nums)
 # Output: [1, 2, 3, 4, 5, 6]
 ```
 
-### list.remove()
+#### list.remove()
 Remove the first element that matches from the specified list.
 ```
 languages = ['english', 'tamil', 'french']
@@ -151,7 +163,7 @@ print(languages)
 languages.remove('tamil')
 ```
 
-### list.count(x)
+#### list.count(x)
 Returns the number of times that 'x' appears in the list.
 ```
 counts = [0, 1, 2, 3, 2, 1, 4, 6, 2]
@@ -159,7 +171,7 @@ print(list.count(2))
 # Output: 3
 ```
 
-### list.pop()
+#### list.pop()
 The pop() method removes and returns the element specified in the parameter. If the parameter is not specified, it removes and returns the last element in the list.
 ```
 alpha = ['a', 'b', 'c', 'd', 'e']
@@ -171,7 +183,7 @@ print(x)
 print(alpha)
 ```
 
-### list.reverse()
+#### list.reverse()
 This method reverses the list, and updates it. It has no return value.
 ```
 alpha = ['a', 'b', 'c', 'd', 'e']
@@ -180,7 +192,7 @@ alpha.reverse()
 print(alpha)
 ```
 
-### list.sort()
+#### list.sort()
 The sort method sorts the elements of the given list. Syntax: ```list.sort(key= , reverse= )```
 ```
 # vowels list
@@ -201,7 +213,7 @@ print(vowels)
 # Output: ['u', 'o', 'i', 'e', 'a']
 ```
 
-### list.copy()
+#### list.copy()
 This method copies the list into another list.
 ```
 list1 = [1, 2, 3]
@@ -211,7 +223,7 @@ list2 = list1.copy()
 print(list2)
 ```
 
-### list.clear()
+#### list.clear()
 This method empties the given list.
 ```
 l = ['hello', 'world']
@@ -226,7 +238,7 @@ l.clear()
 print(l)
 ```
 
-## List Comprehension
+### List Comprehension
 List Comprehensions are advanced features in Python that enable you to create a new list from an existing list and it consists of expressions within a for statement inside square brackets.
 
 For example,
@@ -238,8 +250,7 @@ p = [5 + x for x in range(5)]
 print(p)
 ```
 
-## Conclusion
-
+### Conclusion
 Therefore, lists are one of the most commonly used and most powerful data structures in Python. If one manages to master lists, he/she would perform very well in programming interviews. Once you're done reading and using the list methods, check out the below links and start solving programs based on lists.
 
 - List - Problems on [LeetCode](https://leetcode.com/tag/array/)
