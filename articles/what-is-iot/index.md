@@ -118,6 +118,6 @@ The global IoT Platform [market size](https://www.prnewswire.com/news-releases/i
 
 ## About the Author
 
-<img align="left" width="180" height="250" src="/engineering-education/articles/what-is-iot/author.jpg">
+<img align="left" width="180" height="250" src="/engineering-education/authors/balkrishna-harode/author.jpg">
 
 Balkrishna Harode is an undergraduate student at the Devi Alhiya University Indore pursuing a degree in Computer Science. Balkrishna is particularly interested in mathematics, embedded systems, web development and algorithms. In his free time, Balkrishna enjoys cooking and gardening.
