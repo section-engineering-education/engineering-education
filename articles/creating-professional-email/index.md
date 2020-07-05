@@ -1,5 +1,7 @@
 # How to Create a Professional Email: Setting up GSuite
 
+![GSuite Setup Email image](hero.png)
+
 With the popularity of Office 365 and GSuite it can seem that creating a business email is as simple as signing up for an account and paying the annual or monthly fee. 
 
 However because of spam and fraudulent email protection, if you want your emails to appear in your recipient's inbox, then it's lot more than complicated than that because you have to configure SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail) and DMARC (Domain Message Authentication Reporting.)
