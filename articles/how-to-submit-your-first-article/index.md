@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 slug: how-to-submit-your-first-article
-title: How to submit your First Article using Github Desktop & VS Code
+title: How to Submit Your First Article Using Github Desktop and VS Code
 description: A blog for the "How-To Guides" category about how to submit your first article for Section's Engineering Education (EngEd) Program using GitHub Desktop and VS Code.
 author: aman-saxena
 date: 2020-07-06T00:00:00-07:00
@@ -27,8 +27,8 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 #### Step 1: So, I have my article ready. What should I do now to submit it?
 Apart from all of the traditional ways of doing things, we're always seeking simpler and more efficient methods to do the same work with increased productivity. Technology aiding another technology has been one of the important features of the modern era. On similar lines, we'll be using following tools to ease the process:
 
-    - [Github Desktop](https://desktop.github.com/)
-    - *Text Editor* like [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
+- [Github Desktop](https://desktop.github.com/)
+- *Text Editor* like [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
 
 Assuming, you have a working Github Account (which is required for contributing in the Engineering Education Program) and your article content is in **markdown (.md)** format, you are ready to upload your first article.
 
