@@ -7,7 +7,7 @@ title: DDoS Attacks Using Botnets
 description: In order to ensure that your application is fully protected from DDoS attacks, it's essential to understand how these types of attacks are carried out. This article focuses on DDoS attacks by botnets.
 author: gagan-bhatia
 date: 2020-07-05T00:00:00-08:00
-topics: []
+topics: [security]
 excerpt_separator: <!--more-->
 images:
 
