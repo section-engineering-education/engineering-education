@@ -6,7 +6,7 @@ slug: assembly-part-2
 title: Assembly Part 2 - Let's Write Assembly!
 description: Learning assembly language, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
 author: mike-white
-date: 2020-06-30T00:00:00-07:00
+date: 2020-07-03T00:00:00-08:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,15 +14,12 @@ images:
   - url: /engineering-education/assembly-part-2/hero.jpg
     alt: computer image asm example
 ---
-In the first part, we talked about the basics of Assembly. Now, we want to write a couple of programs. In this article, we'll try to do "Hello, World!" and a Fibonacci program.
+In the [first part of this series](/engineering-education/assembly-part-1/), we talked about the basics of Assembly. Now, we want to write a couple of programs. In this article, we'll try to do "Hello, World!" and a Fibonacci program.
 <!--more-->
-
-### Assembly Part 2: Let's Write Assembly!
 
 **NOTE:** Unlike the first part, this part will only work on the Linux operating system. A virtual machine or WSL should also be able to run this.
 
 ### System Calls
-
 Before we get started, there's something we have to talk about. We wrote an infinite loop in the first tutorial, but we want to write a program that ends now. But we can't just go to the end of the program. We want to end *gracefully*.
 
 In Linux, you do this using a "system call". For our purposes, all of our system calls will tell the operating system to do something, such as printing to the console or exiting the program. To do a system interrupt, we use the `int 0x80` instruction. Then, depending on what is in the registers, [something will happen](http://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/). Here are two examples:
@@ -30,9 +27,9 @@ In Linux, you do this using a "system call". For our purposes, all of our system
 * **sys_exit** - If `eax` is set to 1, then a system exit will be performed. The exit code is whatever number is stored in `ebx`.
 * **sys_write** - If `eax` is 4 and `ebx` is 1, then the string with its pointer stored in `ecx` will be printed. The length of the string is in `edx`
 
-With these two system calls, we can write "Hello, world!" in Assembly! Let's do it.
+With these two system calls, we can write "Hello, world!" in Assembly. Let's do it!
 
-```assembly
+```asm
 section .text
 	global _start
 
@@ -53,7 +50,7 @@ section .text
 
 That's the `text` section, but now we need the `data` section. To create a string of characters, we use `db`, which stands for "declare bytes".
 
-```assembly
+```asm
 section .data
 	message db "Hello, world!", 10, 0 ; the message to print
 ```
@@ -62,7 +59,7 @@ The [`10` is a newline character](http://www.asciitable.com/) (equivalent to `\n
 
 One down, one to go. Now we need the `len` constant. We could just say `15`, but what if we have to change it later? Assembly has some syntactical sugar that can help us define our `len` constant.
 
-```assembly
+```asm
 len equ $-message ; length of the message
 ```
 
@@ -101,7 +98,7 @@ Before you read further, try to see if you can do it on your own. Then, you can 
 
 Let's get started. We'll store our variables in the `bss` section. Let's just focus on initializing our variables for now:
 
-```assembly
+```asm
 section .text
 	global _start
 
@@ -123,7 +120,7 @@ Each of our numbers are 32 bits. We set up `itera` to start at 40, so 40 numbers
 
 Now we need a loop in our code to generate a single fibonacci number. We'll make a label called `one_num`. For now, we'll just focus on generating the next number. We'll worry about creating the loop later.
 
-```assembly
+```asm
 one_num:
 	; c = a + b
 	mov dword [var_c], var_a	; c = a
@@ -137,7 +134,7 @@ We can't simply make `var_c` equal to the sum of two numbers, so we must first s
 
 Now that we can generate one fibonacci number, we need to loop. The first thing we need to do is check `itera` at the beginning so that we can jump to the end if it's zero. We'll also need an `end` label. Remember to decrement `itera` at the end of the loop.
 
-```assembly
+```asm
 one_num:
 	; if (iteration == 0) goto end
 	cmp dword [itera], 0
@@ -152,7 +149,7 @@ end:
 
 Now we just need to exit gracefully
 
-```assembly
+```asm
 end:
 	mov eax, 1	; system exit
 	mov ebx, 0	; exit code 0
@@ -161,7 +158,7 @@ end:
 
 Here's the full code:
 
-```assembly
+```asm
 section .text
 	global _start
 
