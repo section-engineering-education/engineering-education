@@ -159,4 +159,4 @@ Congratulations. You've successfully converted your static website to a NodeJS w
 
 If you want to build on the skills you've learned on this tutorial, I suggest using EJS templating to work with APIs and databases.
 
-If you need a helping hand on either of those areas, check out my Getting to Grips with Databases [guide](https://www.section.io/engineering-education/working-with-databases-part1/) and ~~look out for The Simple Guide to Using APIs~~ **~~(only mention when I've written the article?)~~** which will get you started and later expand into using EJS.
+If you need a helping hand on either of those areas, check out my Getting to Grips with Databases [guide](/engineering-education/working-with-databases-part1/) and ~~look out for The Simple Guide to Using APIs~~ **~~(only mention when I've written the article?)~~** which will get you started and later expand into using EJS.
