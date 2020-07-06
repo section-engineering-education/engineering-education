@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-slug: how-to-sort-list
-title: How to Sort a List
+slug: sorting-algorithms
+title: How to Sort a List Using Algorithms
 description: A sorting algorithm is an algorithm that puts elements of a list in a certain order. Efficient sorting is important to optimizing the efficiency of other algorithms that require input data to be in sorted lists.
 author: mike-white
-date: 2020-06-30T00:00:00-07:00
+date: 2020-07-04T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-sort-list/hero.jpg
+  - url: /engineering-education/sorting-algorithms/hero.jpg
     alt: computer image asm example
 ---
 This article will describe a few popular sorting methods. The goal is for the reader to be able to choose the best one for their project.
@@ -23,7 +23,7 @@ Sorting is a common operation that needs to be done, but there are many ways to 
 
 Time complexity measures how an algorithm performs under large inputs.
 
-![A graph showing how time complexity works](/engineering-education/how-to-sort-list/complexity.png)
+![A graph showing how time complexity works](/engineering-education/sorting-algorithms/complexity.png)
 
 `O(1)` is the best-case scenario. It means that no matter how big the list is, it will take the same amount of time to sort it. `O(logn)` means that the extra time for each element decreases as you add more elements. `O(n)` means that a constant amount of time is added for each element. These are also both pretty good time complexities to have. Unfortunately, none of our algorithms are this quick. [It's impossible to have a sorting algorithm that works faster than `O(n)`](https://www.youtube.com/watch?v=4Q72kbwyEmk).
 
@@ -33,9 +33,9 @@ Most of the algorithms we will talk about today will be either `O(n^2)` or `O(nl
 
 [Insertion sort](https://github.com/botahamec/sorting_algos/blob/master/python/insertion_sort.py) works by splitting the list into a "sorted part" and an "unsorted part". Initially, every element in the list is in the "unsorted part". The algorithm needs to move all the elements into the sorted part. To do this, it needs to pick an element, and shift it until the element is in its proper place.
 
-![A hand drawn demonstration showing a few steps of insertion sort](/engineering-education/how-to-sort-list/insertion1.jpg)
+![A hand drawn demonstration showing a few steps of insertion sort](/engineering-education/sorting-algorithms/insertion1.jpg)
 
-![A hand-drawn illustration of insertion sort](/engineering-education/how-to-sort-list/insertion2.jpg)
+![A hand-drawn illustration of insertion sort](/engineering-education/sorting-algorithms/insertion2.jpg)
 
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=TZRWRjq2CAg)
 
@@ -47,7 +47,7 @@ There is one reason to use insertion sort, which is if there's a high chance tha
 
 [Merge sort](https://github.com/botahamec/sorting_algos/blob/master/python/merge_sort.py) splits the list in half, repeatedly, until every part of the list is just one element. Then, we can merge halves together until we eventually get the sorted list back.
 
-![A hand-drawn demonstration of merge sort](/engineering-education/how-to-sort-list/merge.jpg)
+![A hand-drawn demonstration of merge sort](/engineering-education/sorting-algorithms/merge.jpg)
 
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=es2T6KY45cA)
 
@@ -57,7 +57,7 @@ Merging the lists is an `O(n)` operation. This time, it only has to be done log(
 
 [Quick sort](https://github.com/botahamec/sorting_algos/blob/master/python/quick_sort.py) is very interesting. The first thing you do is select an element of the list to be a "pivot". Then, you split the list into three lists. One contains elements that are less than the pivot. One contains elements equal to the pivot. The last one contains elements greater than the pivot. Then you need to run quick sort on the less and greater lists, until everything has been sorted.
 
-![A hand-drawn demonstration of quick sort](/engineering-education/how-to-sort-list/quick.jpg)
+![A hand-drawn demonstration of quick sort](/engineering-education/sorting-algorithms/quick.jpg)
 
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=es2T6KY45cA)
 
@@ -67,7 +67,7 @@ The complexity of quick sort is complicated. Usually, it's `O(nlogn)`, but it ca
 
 [Counting sort](https://github.com/botahamec/sorting_algos/blob/master/python/counting_sort.py) is amazing. You can use either a HashMap or a List. You need to count how many of each number appear in the list. Then, just go through each number and put that many in the list.
 
-![A hand-drawn demonstration of counting sort](/engineering-education/how-to-sort-list/counting.jpg)
+![A hand-drawn demonstration of counting sort](/engineering-education/sorting-algorithms/counting.jpg)
 
 ***Note:*** *Counting sort typically uses a different algorithm, [described here](https://www.youtube.com/watch?v=TTnvXY82dtM). It works better if you're using things that aren't numbers. It's also good when you have a lot of unused values in your range.*
 
