@@ -96,7 +96,7 @@ fn fibonacci() {
 
 Before you read further, try to see if you can do it on your own. Then, you can come back to this article if you get stuck.
 
-Let's get started. We'll store our variables in the `bss` section. Let's just focus on initializing our variables for now:
+To get started, we'll store our variables in the `bss` section. Let's just focus on initializing our variables for now:
 
 ```asm
 section .text
@@ -147,7 +147,7 @@ one_num:
 end:
 ```
 
-Now we just need to exit gracefully
+Now we just need to exit gracefully:
 
 ```asm
 end:
@@ -195,4 +195,4 @@ section .bss
 	itera resb 4
 ```
 
-The next step is to print the numbers to the console, see if you can figure that out on your own with the steps above as a guide. :wink:
+The next step is to print the numbers to the console. See if you can figure that out on your own with the steps above as a guide. :wink:
