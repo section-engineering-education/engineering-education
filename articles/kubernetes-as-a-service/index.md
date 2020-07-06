@@ -41,8 +41,8 @@ is the Microsoft-developed Kubernetes offering that runs on Azure Public Cloud, 
 
 ### Technical Components
 |Measure|EKS|GKE|AKS|
-|:---------:|:---:|:---:|:---:|
-| Year Released	|2018|	2014|	2017|
+|:---------|:---:|:---:|:---:|
+|Year Released	|2018|	2014|	2017|
 |Kubernetes Versions|	1.12, 1.13, 1.14|	1.13, 1.14, 1.15|	1.12, 1.13, 1.14|
 |Global Availability|	Yes|	Yes|	Yes + Government|
 |SLA	|99.9%	|99.5% (zone) 99.95% (regional)| 99.5%|
