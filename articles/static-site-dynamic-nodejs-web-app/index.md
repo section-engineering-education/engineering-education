@@ -69,7 +69,7 @@ The first step to use EJS is to install it. A simple `npm install ejs --save` wi
 
 Next, you need to convert your static HTML files into dynamic EJS ones and set up your folder structure in the way EJS expects. In the root directory of your website, create a folder called views and inside that folder create two sub-folders called pages and partials. Move all your HTML files into the pages sub-folder and rename the .html file extensions to .ejs. Your folder structure should look similar to the picture below.
 
-![NodeJS File Structure.png](/engineering-education/static-site-dynamic-nodejs-web-app/nodejs-file-structure.png)
+![NodeJS File Structure](/engineering-education/static-site-dynamic-nodejs-web-app/nodejs-file-structure.png)
 
 ### Reusing Code - Creating Your First EJS Partial
 
