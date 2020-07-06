@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-slug: introduction-to-webassembly
+slug: introduction-web-assembly
 title: An Introduction to WebAssembly - Part 1
 description: WebAssembly is designed as an open standard that defines a portable binary-code format for programming languages, and a corresponding textual assembly language. Enabling deployment on the web for client and server applications.
 author: lucas-gompou
-date: 2020-06-28T00:00:00-07:00
+date: 2020-07-03T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/webassembly-image/hero.jpg
+  - url: /engineering-education/introduction-web-assembly/hero.jpg
     alt: WebAssembly example image
 ---
 According webassembly.org:
@@ -55,7 +55,7 @@ It also generates an HTML file that loads the JavaScript “glue” code to disp
 Here is an overview of the toolchain:
 
 
-![Emcripten compiler toochain](/engineering-education/webassembly-image/diagram.png)
+![Emcripten compiler toochain](/engineering-education/introduction-web-assembly/diagram.png)
 
 
 1. Using Clang, your C source code gets compiled into LLVM's [intermediate representation](https://en.wikipedia.org/wiki/Intermediate_representation)
@@ -68,7 +68,7 @@ Emscripten ships with several tools that allow large C/C++ codebases to be fully
 
 Let's get our hand dirty by building a small web application that generates the Fibonacci sequence with WebAssembly as our backend.
 
-![Web browser screenshot](/engineering-education/webassembly-image/example.png)
+![Web browser screenshot](/engineering-education/introduction-web-assembly/example.png)
 
 First, let's set up our development environment by downloading and installing the [Emscripten SDK](https://emscripten.org/docs/getting_started/downloads.html)
 
