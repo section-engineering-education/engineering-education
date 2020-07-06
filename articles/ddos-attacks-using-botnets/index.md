@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-slug: ddos-attacks-using-botnets-tool
-title: DDoS Attacks Using Botnets as a Tool
+slug: ddos-attacks-using-botnets
+title: DDoS Attacks Using Botnets
 description: In order to ensure that your application is fully protected from DDoS attacks, it's essential to understand how these types of attacks are carried out. This article focuses on DDoS attacks by botnets.
 author: gagan-bhatia
 date: 2020-07-05T00:00:00-08:00
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ddos-attacks-using-botnets-tool/hero.png
+  - url: /engineering-education/ddos-attacks-using-botnets/hero.png
     alt: ddos botnets
 
 ---
@@ -30,7 +30,7 @@ DDoS attack types include HTTP floods, slow attacks (Slowloris, RUDY), zero-day 
 #### [Network layer](https://en.wikipedia.org/wiki/Denial-of-service_attack#HTTP_slow_POST_DoS_attack)
 DDoS attack types include UDP floods, SYN floods, NTP amplification, DNS amplification, SSDP amplification, IP fragmentation, and more. These are high-capacity barrages, measured in gigabits per second (Gbps) or packets per second (PPS). They’re almost always executed by botnets, with a goal of consuming the target’s upstream bandwidth, resulting in network saturation.
 
-![botnet](/engineering-education/ddos-attacks-using-botnets-tool/what-is-a-botnet-and-how-to-protect-yourself-in-2019-1.png.png)<br>
+![botnet](/engineering-education/ddos-attacks-using-botnets/what-is-a-botnet-and-how-to-protect-yourself-in-2019-1.png.png)<br>
 [Image Source - Safety Detetives](https://www.safetydetectives.com/blog/what-is-a-botnet-and-how-to-protect-yourself-in/)
 
 ### Botnets
@@ -47,7 +47,7 @@ Full-service DDoS attacks are available for as little as $5 per hour, and the in
 ### Botnet Structures
 Botnet structures usually take one of two forms, and each structure is designed to give the botmaster as much control as possible.
 
-![botnet](/engineering-education/ddos-attacks-using-botnets-tool/structuresBotNets.jpg)<br>
+![botnet](/engineering-education/ddos-attacks-using-botnets/structuresBotNets.jpg)<br>
 [Image Source - Counter  Weekly](https://www.computerweekly.com/tip/Botnet-detection-through-DNS-behavior-and-clustering-analysis)
 
 #### Client-server model
