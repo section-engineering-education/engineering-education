@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: static-site-dynamic-nodejs-web-app
 title: Converting A Static Site to A Dynamic NodeJS Web App
-description: Using MongoDB, this article proves that all you need to work with a database is some basic knowledge about the command line and JSON.
+description: How to build your first dynamic NodeJS web app from a static site. This article dispels the difficulties of learning full-stack development.
 author: louise-findlay
 date: 2020-07-02T00:00:00-07:00
 topics: []
