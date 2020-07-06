@@ -59,16 +59,10 @@ First, you need to locate your private key file (your_pem_file.pem) that you dow
 mv your_pem_file.pem ~/.ssh/your_pem_file.pem
 ```
 
-Change from your current directory to the `~/.ssh` directory where you placed the private key file:
-
-```bash
-cd ~/.ssh
-```
-
 Next, you need to ensure your private key file (your_pem_file.pem) is not publicly viewable for SSH to work. To do this, run:
 
 ```bash
-chmod 400 ubuntu.pem
+chmod 400 ~/.ssh/your_pem_file.pem
 ```
 
 To gain an understanding of how the `chmod` command works, read up on [Linux File Permissions](https://www.linux.com/training-tutorials/understanding-linux-file-permissions/).
@@ -104,6 +98,11 @@ To better understand the ssh command you used above, see the breakdown below.
 7. **-v**: verbose mode, where every action is printed to the screen as it happens.
 
 For more information read [SSH Command](https://www.ssh.com/ssh/command).
+I also suggest that you see [ssh-add](https://www.ssh.com/ssh/add) and [ssh-agent](https://www.ssh.com/ssh/agent) to add your_pem_file.pem to the ssh-agent. The ssh-add command adds private key identities like your_pem_file.pem to the authentication agent(ssh-agent) so that the ssh agent can take care of authentication for you. Shortening the ssh command you used earlier to:
+
+```bash
+ssh ubuntu@your_virtual_machine_ip_address -v
+```
 
 When you're done, exit the SSH connection by running:
 
