@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 slug: graphql-basics
-title: What is GraphQL and how it works.
+title: GraphQL basics - What is GraphQL
 description: GraphQL is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data.
 author: gagan-bhatia
 date: 2020-07-06T00:00:00-07:00
