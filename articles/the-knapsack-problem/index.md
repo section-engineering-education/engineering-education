@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: the-knapsack-problem
 title: Breaking Down The Knapsack Problem
-description: The Knapsack Problem is a problem in combinatorics given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
+description: In this article, we will discuss both a pseudo-polynomial time solution using dynamic programming and different polynomial time approximations for the knapsack problem.
 author: ian-jorquera
-date: 2020-07-T00:00:00-07:00
+date: 2020-07-06T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
