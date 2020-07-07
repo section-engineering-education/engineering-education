@@ -42,7 +42,7 @@ To communicate with a C&C server, the botmaster uses various hidden channels lik
 
 DDoS attacks have become viable (if criminal) and cost-effective options for anyone looking to take out a website or disturb the communication of home and office networks. This results in many attack scenarios, ranging from shady businesses using DDoS to gain a competitive advantage, to assaults in which DDoS becomes a tool of vandalism, revenge, or simply a way to get some attention.
 
-Full-service DDoS attacks are available for as little as $5 per hour, and the interested party can easily stretch their hour with a monthly plan that averages $38. Within the cybercrime ecosystem, botnet DDoS attacks are a mainstream commodity; prices continually drop, while efficacy and sophistication are constantly on the rise.
+Full-service DDoS attacks are becoming increasingly affordable to the average person. Within the cybercrime ecosystem, botnet DDoS attacks have become a mainstream commodity; prices continually drop, while efficacy and sophistication are constantly on the rise.
 
 ### Botnet Structures
 Botnet structures usually take one of two forms, and each structure is designed to give the botmaster as much control as possible.
@@ -69,4 +69,4 @@ By now it should be evident that a global strategy is required to counter botnet
 - Don't click suspicious links.
 - Install an antivirus program.
 
-If you have IoT devices, you should make sure your devices are formatted for maximum protection. Secure passwords should be used for all devices. IoT devices, in particular, have been vulnerable to weak passwords. Many devices operate with easily discovered default passwords. A strong firewall is also important. Protecting your devices is an essential part of cybersecurity.
+If you have IoT devices, you should make sure your devices are configured and updated for maximum protection. Secure passwords should be used for all devices. IoT devices, in particular, have been vulnerable to weak passwords. Many devices operate with easily discovered default passwords. A strong firewall is also important. Protecting your devices is an essential part of cybersecurity.
