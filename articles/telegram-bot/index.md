@@ -1,17 +1,34 @@
-# Python: Build a Reddit Autoposter Telegram Bot
+---
+layout: engineering-education
+status: publish
+published: true
+slug: telegram-bot
+title:  Python-Build a Reddit Autoposter Telegram Bot
+description: How to create a Telegram bot - an approach of creating a Python autoposter Telegram Bot that autoposts from a subreddit.
+author: saiharsha-balasubramaniam
+date: 2020-07-06T00:00:00-12:00
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
 
-Telegram is one of the best modern cross platform apps that we all use extensively for messaging. It's extremely fast, secure, cloud-based and works seamlessly across all devices. Seems perfect, doesn't it? The possibilities don't end there! **The entire code is open-sourced** and you can build your own version of telegram!
+  - url: /engineering-education/telegram-bot/hero.jpg
+    alt: image telegram bot
 
-Telegram is also extremely developer friendly. They offer APIs that are totally free. Their developer offerings can be classified into two types:
+---
+
+Telegram is one of the best modern cross-platform apps that we all use extensively for messaging. It's extremely fast, secure, cloud-based, and works seamlessly across all devices. Seems perfect, doesn't it? The possibilities don't end there! **The entire code is open-sourced** and you can build your own version of telegram!
+
+Telegram is also extremely developer-friendly. They offer APIs that are totally free. Their developer offerings can be classified into two types:
+<!--more-->
 
 - Bot APIs - Create powerful bots that run on Telegram.
-- Telegram APIs and TDLib - Build your own customized Telegram Clients.
+- Telegram APIs and TDLib - Build your own customized Telegram clients.
 
-Let us take a look at the Telegram Bot API and dive into building a powerful bot that can autopost from a subreddit.
+Let us take a look at the Telegram Bot API and dive into building a powerful bot that can auto-post from a subreddit.
 
-**All the Code for the following tutorial has been displayed in my GitHub Repository. You could use it as reference, or star it. Fork it and submit a PR! Link to the repository would be displayed at the end of the tutorial**
+**All the Code for the following tutorial has been displayed in my GitHub Repository. You could use it as a reference, or star it. Fork it and submit a PR! Link to the repository would be displayed at the end of the tutorial**
 
-## Table of Contents
+### Table of Contents
 
 - [Motivation](#motivation)
 - [Get the Bot API Credentials](#get-the-bot-api-credentials)
@@ -25,9 +42,9 @@ Let us take a look at the Telegram Bot API and dive into building a powerful bot
 
 We all love dogs, don't we? 😄
 
-I love scrolling through dog photos on Reddit, and there was one point in time where I felt that I spend too much time in Reddit. So I had an idea. Like a true programmer, I decided to create a bot in Python that would automatically post new posts from Subreddits to a Telegram Channel. This way, I got better at Python and also I save time everyday!
+I love scrolling through dog photos on Reddit, and there was one point in time where I felt that I spend too much time in Reddit. So I had an idea. Like a true programmer, I decided to create a bot in Python that would automatically post new posts from Subreddits to a Telegram Channel. This way, I got better at Python and also I save time every day!
 
-In the below example, we would be autoposting from the [r/dogpictures](https://www.reddit.com/r/dogpictures/) subreddit.
+In the below example, we would be auto-posting from the [r/dogpictures](https://www.reddit.com/r/dogpictures/) subreddit.
 
 ### Get the Bot API Credentials
 
@@ -49,8 +66,8 @@ There! You have successfully created the bot! The API Token and the bot link are
 
 ### Create a Telegram Channel
 
-Creating a channel on Telegram is quite simple. 
-- Click on the Hamburger Menu on the left and click on ```New Channel```. 
+Creating a channel on Telegram is quite simple.
+- Click on the Hamburger Menu on the left and click on `New Channel`.
 - Give a channel name of your choice.
 - Add the bot that you created into the channel with administrative permissions.
 
@@ -59,14 +76,14 @@ Creating a channel on Telegram is quite simple.
 To access posts from Reddit, we'll be using the **Reddit API** and the python library PRAW: **The Python Reddit API Wrapper**.
 
 - The foremost step would be to get the credentials.
-- Create a new reddit account.
-- Go to [App Preferences](https://www.reddit.com/prefs/apps/), and click on ```create app```.
+- Create a new Reddit account.
+- Go to [App Preferences](https://www.reddit.com/prefs/apps/), and click on `create app`.
 
 ![Reddit Credentials](/engineering-education/telegram-bot/redditcreds.png)
 
-- Give the desired app **name**, and select the sub-option ```script``` from the radio buttons.
+- Give the desired app **name**, and select the sub-option `script` from the radio buttons.
 - Enter a short **description**.
-- Leave the **About URI** blank and enter ```http://localhost:8080``` in the **Redirect URI** field.
+- Leave the **About URI** blank and enter `http://localhost:8080` in the **Redirect URI** field.
 - Create the App.
 - You would be provided with a Client ID and a Client Secret. Store them securely.
 
@@ -119,7 +136,7 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
 log.addHandler(ch)
 
-if credentials["token"] == "": 
+if credentials["token"] == "":
     raise RuntimeError('Bot token not found 🙁! Put bot token🔐 in credentials.json!')
 if credentials["subreddit"] == "":
     raise RuntimeError('Subreddit name not found 🙁! Enter the subreddit name📃 in credentials.json!')
@@ -146,9 +163,9 @@ def write_submissions(sub_id):
     except:
         log.expection("Error writing sub ID!")
 ```
-Here, we write two functions. The ```prev_submissions()``` function reads the **prev_submissions.id**, which is a file that specifies the previous posts that the bot has already posted to the telegram channel, so as to avoid duplicates.
+Here, we write two functions. The `prev_submissions()` function reads the **prev_submissions.id**, which is a file that specifies the previous posts that the bot has already posted to the telegram channel, so as to avoid duplicates.
 
-```write_submissions()``` writes the posts that are sent to the channel into the file.
+`write_submissions()` writes the posts that are sent to the channel into the file.
 
 #### Setting Variables and Initializing PRAW and the Bot API
 
@@ -162,7 +179,7 @@ if not last_sub_id:
 else:
     log.info("Last posted submission is {}".format(last_sub_id))
 
-r = praw.Reddit(user_agent="Dank Doggo by Harsha :D", 
+r = praw.Reddit(user_agent="Dank Doggo by Harsha :D",
                 client_id=os.environ.get('CLIENT_ID'),
                 client_secret=os.environ.get('CLIENT_SECRET'),
                 username=os.environ.get('RUSERNAME'),
@@ -173,13 +190,13 @@ subreddit = r.subreddit(sub)
 bot = telegram.Bot(token=token)
 ```
 
-Here, the conditional statement set by the condition,```if not last_sub_id``` starts posting to the channel if there are new posts on the subreddit. 
+Here, the conditional statement set by the condition, `if not last_sub_id` starts posting to the channel if there are new posts on the subreddit.
 
-We initialize the reddit instance by passing in the ```CLIENT_ID, CLIENT_SECRET```, Reddit Username and Reddit Password as parameters.
+We initialize the Reddit instance by passing in the `CLIENT_ID, CLIENT_SECRET`, Reddit Username, and Reddit Password as parameters.
 
 The Bot is also initialized by passing in the Bot API Token.
 
-#### Main Control Block 
+#### Main Control Block
 
 ```
 while True:
@@ -211,9 +228,9 @@ while True:
         sleep(10)
 ```
 
-Here, the ```subreddit.hot()``` returns all the Hot Posts in the Subreddit. If the script finds a new post that has not been written to **prev_submissions.id** file (not yet been posted to the channel), it formats the message by using markup. Finally, it sends out the message by the use of the ```bot.sendPhoto()``` API call, which takes in the channel name, photo URL and the caption as parameters.
+Here, the `subreddit.hot()` returns all the Hot Posts in the Subreddit. If the script finds a new post that has not been written to **prev_submissions.id** file (not yet been posted to the channel), it formats the message by using markup. Finally, it sends out the message by the use of the ```bot.sendPhoto()``` API call, which takes in the channel name, photo URL and the caption as parameters.
 
-We have also set the bot to send only one message once every 10 minutes, so that it does not spam. This is achieved by pausing the script for 600 seconds using the ```sleep()``` function.
+We have also set the bot to send only one message once every 10 minutes, so that it does not spam. This is achieved by pausing the script for 600 seconds using the `sleep()` function.
 
 ### Deploying to Heroku
 
