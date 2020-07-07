@@ -97,7 +97,13 @@ With this method, we can complete the table with optimal total values for all su
 
 ![Table Empty](/engineering-education/the-knapsack-problem/table-arrows.PNG)
 
-To obtain the items in our solution, we start at the solution square, the bottom right. We can use our recurrence, to determine which case, either selecting the item or not selecting it leads to our optimal solution. For example, let's look at the solution square in the above table, with value 25. The case for selecting the last item would result in a value of $v_5+k[4, 10] = 11 + 12 = 23$. Not selecting the item would result in the optimal value $k[4,20] = 25$. This tells us our optimal solution came from not selecting this last item. We can then draw an array pointing to this next subproblem $k[4,20]$, and repeat this process. We see that not selecting this next item, of weight eight, leads to the non-optimal solution of $k[3,20] = 17$. And selecting it leads to the optimal value of $v_4+k[3,12]=17+8=25$. So we know we select the second to last item. Again we will draw an arrow pointing to the next subproblem $k[3, 12]$. We can continue this process until we get to a zero-element. The arrows representing this process are shown in the previous table. We would then determine the optimal subset consists of the first four items or everything not including the vase. And this would have an optimal value of 25 thousand dollars.
+To obtain the items in our solution, we start at the solution square, the bottom right. We can use our recurrence to determine which case, either selecting the item or not selecting it, leads to our optimal solution.
+
+For example, let's look at the solution square in the above table, with value 25. The case for selecting the last item would result in a value of $v_5+k[4, 10] = 11 + 12 = 23$. Not selecting the item would result in the optimal value $k[4,20] = 25$. This tells us our optimal solution came from not selecting this last item. We can then draw an array pointing to this next subproblem $k[4,20]$, and repeat this process.
+
+We see that not selecting this next item, of weight eight, leads to the non-optimal solution of $k[3,20] = 17$. And selecting it leads to the optimal value of $v_4+k[3,12]=17+8=25$. So we know we select the second to last item. Again we will draw an arrow pointing to the next subproblem $k[3, 12]$. We can continue this process until we get to a zero-element.
+
+The arrows representing this process are shown in the previous table. We would then determine that the optimal subset consists of the first four items, or everything not including the vase. And this would have an optimal value of 25 thousand dollars.
 
 This process is called backtracking and in python would be as follows.
 ```python
@@ -120,15 +126,23 @@ def recover_solution(k, w):
     return solution[::-1]
 ```
 
-To see both of these functions together look [here](https://repl.it/@jorqueraian/KnapsackProblem). This solution has a time and space complexity of O$(nW)$ where $n$ is the number of elements and $W$ is our maximum weight. We can see this because there are $nW$ total cells in the table and each cell takes constant time to populate. Therefore, creating our table is O$(nW)$. Backtracking requires us to consider each of the items, so we have time complexity O$(n)$. This means the time complexity of the entire problem we be O$(nW)$. This is a pseudo-polynomial time solution as its runtime is polynomial but depends on the integer $W$ as well as the size of input $n$ and therefore not truly polynomial. A truly polynomial solution would be one that is polynomial and only depends on the input size $n$  Although this solution is more efficient than the brute force solution it may still have a non-polynomial upper bound. Assuming $P\neq NP$ there will never exist a truly polynomial-time solution, so this solution is one the most efficient solutions.
+To see both of these functions together, look [here](https://repl.it/@jorqueraian/KnapsackProblem). This solution has a time and space complexity of O$(nW)$ where $n$ is the number of elements and $W$ is our maximum weight. We can see this because there are $nW$ total cells in the table and each cell takes constant time to populate. Therefore, creating our table is O$(nW)$.
+
+Backtracking requires us to consider each of the items, so we have time complexity O$(n)$. This means the time complexity of the entire problem would be O$(nW)$. This is a pseudo-polynomial time solution as its runtime is polynomial but depends on the integer $W$ as well as the size of input $n$ and therefore is not truly polynomial. A truly polynomial solution would be one that is polynomial and only depends on the input size $n$.
+
+Although this solution is more efficient than the brute force solution, it may still have a non-polynomial upper bound. Assuming $P\neq NP$ there will never exist a truly polynomial-time solution, so this solution is one the most efficient solutions.
 
 
 ### Polynomial Time Approximation
 Although it is likely impossible to create a polynomial-time algorithm, it is important to note the existence of multiple polynomial approximations. To begin with, we can implement a greedy approach and select elements of the highest value to weight ratio. This ends up being a mediocre approximation with O$(n\log{n})$ time complexity, as we would have to sort the items. An implementation of this greedy approach can be found [here](https://repl.it/@jorqueraian/KnapsackProblem). We can still do much better with accuracy.
 
-The knapsack problem has a [fully polynomial-time approximation scheme](https://en.wikipedia.org/wiki/Polynomial-time_approximation_scheme). This means it can approximate a solution to any desired precision in polynomial time. Provided with the variable $\epsilon$ we can obtain an approximated optimal value at most a $(1 + \epsilon)$ factor below the true optimal solution. As this precision metric approaches zero, or 100% accuracy we would start to see non-polynomial run time.
+The knapsack problem has a [fully polynomial-time approximation scheme](https://en.wikipedia.org/wiki/Polynomial-time_approximation_scheme). This means it can approximate a solution to any desired precision in polynomial time. Provided with the variable $\epsilon$ we can obtain an approximated optimal value at most a $(1 + \epsilon)$ factor below the true optimal solution. As this precision metric approaches zero, or 100% accuracy, we would start to see non-polynomial run time.
 
-This approximation uses an alternative dynamic programming method of solving the knapsack problem with time complexity O$(n^2\max_i(v_i))$ where $v_{max} = \max_i(v_i)$ is the maximum value of the items. This is also a pseudo-polynomial time solution as it is polynomial in time but depends on $v_{max}$. We did not cover this algorithm in the previous section as it only performs well for very small values of $v_{max}$, and is only really used for this approximation. We will compare the performance of this algorithm with the previous algorithm in the conclusion section. The code for this algorithm is shown below. An in-depth explanation of this algorithm can be found in section 11.8 in the textbook listen in the sources section.
+This approximation uses an alternative dynamic programming method of solving the knapsack problem with time complexity O$(n^2\max_i(v_i))$ where $v_{max} = \max_i(v_i)$ is the maximum value of the items. This is also a pseudo-polynomial time solution as it is polynomial in time but depends on $v_{max}$.
+
+We did not cover this algorithm in the previous section, as it only performs well for very small values of $v_{max}$ and is only really used for this approximation. We will compare the performance of this algorithm with the previous algorithm in the conclusion section.
+
+The code for this algorithm is shown below. An in-depth explanation of this algorithm can be found in section 11.8 in the textbook listen in the sources section.
 
 ```python
 import numpy as np
@@ -162,7 +176,7 @@ def recover_solution2(M, w, v, max_weight):
     return solution[::-1]
 ```
 
-To create an approximation for the knapsack problem, we want to provide this new algorithm with a value of $v_{max}$ that is proportional to $n$ and therefore no longer dependent on an integer input for the problem. This will give us a true polynomial algorithm. Our approximation will resize the values such that $v_{max}$ is proportional to $n\epsilon^{-1}$ making the time complexity of this approximation O$(n^3\epsilon^{-1})$. This has a polynomial-time complexity as $\epsilon$ is a constant, independent of the problem, unlike $W$ and $v_{max}$. The code for the approximation is shown below.
+To create an approximation for the knapsack problem, we want to provide this new algorithm with a value of $v_{max}$ that is proportional to $n$ and therefore no longer dependent on an integer input for the problem. This will give us a true polynomial algorithm. Our approximation will resize the values such that $v_{max}$ is proportional to $n\epsilon^{-1}$, making the time complexity of this approximation O$(n^3\epsilon^{-1})$. This has a polynomial-time complexity, as $\epsilon$ is a constant, independent of the problem, unlike $W$ and $v_{max}$. The code for the approximation is shown below.
 
 ```python
 def knapsack_approx(w, v, max_weight, eps):  
@@ -176,7 +190,7 @@ To test out this approximation, look [here](https://repl.it/@jorqueraian/Knapsac
 ### Conclusion
 Finally, let's look at how well our approximation works, concerning both accuracy and time.
 
-I have randomly generated the following example, but I encourage the reader to investigate there own examples [here](https://repl.it/@jorqueraian/KnapsackProblem).
+I have randomly generated the following example, but I encourage the reader to investigate their own examples [here](https://repl.it/@jorqueraian/KnapsackProblem).
 
 ```python
 # Array of the weight and values for each item.
@@ -188,15 +202,14 @@ maximum_weight = 2000
 We can run this example with each of the implementations we have gone over and compare their results. The first implementation is the pseudo-polynomial dynamic programming solution as presented in the dynamic programming section. We will also look at our alternative dynamic programming solution presented in the approximation section. Then we will consider our two approximations, the greedy approximation, and the fully polynomial-time approximation. We can see the results, over five trials, of each of these algorithms in the following table.
 
 |Algorithm|Result|Average runtime (Seconds)|
-|---|---|---|
+|:---|:---:|:---:|
 |Dynamic Programming Solution|2213|0.08455|
 |Alternative Dynamic Programming Solution|2213|0.14044
 |Greedy Approximation|2178|0.00004
 |fully polynomial-time approximation, $\epsilon = 1$|2202|0.00179
 |fully polynomial-time approximation, $\epsilon = .5$|2213|0.00309
 
-
-As we can see both of our approximation algorithms resulted in very good approximations. Our fully polynomial-time approximation was even able to achieve the exact solution.
+As we can see, both of our approximation algorithms resulted in very good approximations. Our fully polynomial-time approximation was even able to achieve the exact solution.
 
 In general, it depends on the situation that we encounter, to decide what solution we would want to use. For example, if we have a problem with high values but a small maximum weight it would make sense to use our first dynamic programming solution. Its runtime is O$(nW)$, so the low maximum weight would be beneficial. If we had a larger maximum weight, it would no longer make sense to use this algorithm. Instead, we might want to use our alternative dynamic programming solution or one of our approximations.
 
