@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: beginner-guide-to-git
 title: Beginner's Guide to Git
-description: Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files.
+description: This guide is intended to help any beginner get started with Git. Using the examples provided below, we will assume that we are starting a project from scratch and want to manage it with Git.
 author: Parampreet Singh
-date: 2020-07-01T00:00:00-08:00
+date: 2020-07-06T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,19 +14,20 @@ images:
   - url: /engineering-education/beginner-guide-to-git/hero.jpg
     alt: Git image example
 ---
-Git is an open-source software that is used as a version control system to track and manage any changes in computer files. The technology is being used by almost all the major players in the industry. It is something that every software engineer should know. It is was created to help in coordinating work among programmers, but it can also be used to track changes in any type of files. Its goals include speed, data integrity, and support for distributed, workflows.
+Git is an open-source software that is used as a version control system to track and manage any changes in computer files. The technology is used by almost all the major players in the industry and is something that every software engineer should know. It was created to help in coordinating work among programmers, but it can also be used to track changes in any type of files. Its goals include speed, data integrity, and support for distributed workflows.
 <!--more-->
 
-### What is Git
-Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its [initial development](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git). Since its birth in 2005, Git has evolved and matured to be easy to use and yet retain these initial qualities. It’s amazingly fast, it’s very efficient with large projects, and it has an incredible branching system for non-linear development
+### What is Git?
+Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its [initial development](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git). Since its birth in 2005, Git has evolved and matured to be easy to use while retaining its initial qualities. It’s amazingly fast, it’s very efficient with large projects, and it has an incredible branching system for non-linear development.
 
 This guide is intended to help any beginner get started with Git. Using the examples provided below, we will assume that we are starting a project from scratch and want to manage it with Git. We will also look at how we can manage our project with GitHub, a leading software solution built around Git.
 
 ### Why Git?
 Git is an open-source version control distributed system that helps to organize code. It keeps track of every change you make to any working files by taking snapshots of that file. It keeps a record of what is being done, and allows you to revert to specific versions should you ever need to.
+
 Git runs locally, meaning your files are stored on your computer. You can also use an online host such as GitHub to keep a copy of your code.
-Git makes collaboration easier for developers. It allows changes and edits by many people. It then takes those changes and merges them into one source.  Regardless if you use Git/GitHub to write any code, it's beneficial to keep track of any changes made to files.
-Working with an online host like GitHub can help anyone manage their code in a synchronized way.
+
+Git makes collaboration easier for developers by helping to coordinate changes and edits by many people. It then takes those changes and merges them into one source. Regardless if you use Git/GitHub to write any code, it's beneficial to keep track of any changes made to files. Working with an online host like GitHub can help teams small and large collaborate more effectively.
 
 ### How to Install Git
 
@@ -41,7 +42,7 @@ http://git-scm.com/download/mac
 **Windows**
 http://git-scm.com/download/win
 
-### Basic Commands that we would be using in this tutorial
+### Basic Commands that we will be using in this tutorial
 * $ git [clone](https://git-scm.com/docs/git-clone) - Clone a repository into a new directory
 * $ git [status](https://git-scm.com/docs/git-status) - Show the working tree status
 * $ git [add](https://git-scm.com/docs/git-add) - Add file contents to the index
@@ -50,12 +51,14 @@ http://git-scm.com/download/win
 * $ git [push](https://git-scm.com/docs/git-push) - Update remote refs along with associated objects
 * $ git [pull](https://git-scm.com/docs/git-pull) - Fetch from and integrate with another repository or a local branch
 
-
 ### Initial Configuration
-The first thing would be to create a Repository, aka Repo, which means a collection of source code.
-The next step would be to clone it, which means download it to our desktop. This would create an empty folder in our directory and we can work on it by adding all the files.
-```
-    $ git clone [url]
+The first thing to do is create a repository, aka repo, which means a collection of source code. You can create a repo in Github.
+
+The next step is to clone it, which means download it to our local machine. This will create an empty folder in our directory where we can begin to add files. (Note: if your cloning from an existing repo, all of the files from that repo will be copied to your local machine in the cloning process.)
+
+To clone a repo, use the command: 
+```bash
+$ git clone [url]
 ```
 
 Here's how to execute **git clone** command:
@@ -63,8 +66,8 @@ Here's how to execute **git clone** command:
 
 ### Creating files
 We can use the git command to make the source code file in the folder. We can create any type of file by stating its type. Here's how to do it.
-```
-    $ touch index.html
+```bash
+$ touch index.html
 ```
 
 This command would help us to create an index file of HTML type. Likewise, you can create any type of file.
