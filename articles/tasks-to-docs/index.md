@@ -22,14 +22,17 @@ I currently have 2 To-Do lists
 
 College work - containing all my college-related tasks:
 
-<img src="college-work" alt="alt text" title="completed tasks in list College Work" style="zoom:33%;" />
+![img](./college-work.png "completed tasks in list College Work" )
 
 My List - containing the rest of the tasks:
 
-<img src="my-list" alt="img" style="zoom:34%;" title="completed tasks in list My List"/>
+![img](./my-list.png "completed tasks in list My List" )
 
 And I want to move these date-wise to one designated Google Doc like this:
-<img src="updated-doc" alt="img" style="zoom: 50%;" />
+
+![img](./updated-doc.png "" )
+
+
 
 This blog post is a tutorial on how to build a python script that moves completed tasks from Google Tasks to Google Docs, within a given time-frame, categorized date-wise.
 
@@ -41,14 +44,16 @@ Firstly, we need to create our project on Google Developers Console and create c
 
 1. Login to https://console.developers.google.com/
 
-2. Create a new project.<img src="select-project" alt="img" style="zoom: 33%;" />
-   <img src="./create-project" alt="img" style="zoom: 25%;" />
-
-3. Select the project, and go to its Dashboard. Click on Explore and Enable APIs.<img src="./enable-api" alt="img" style="zoom:35%;" />Enable Google Docs and Tasks APIs.
+2. Create a new project.
+   
+![img](./select-project.png "" )
+   ![img](./create-project.png)
+   
+3. Select the project, and go to its Dashboard. Click on Explore and Enable APIs.![img](./enable-api.png)Enable Google Docs and Tasks APIs.
 
 4. Create credentials to use in our project.
 
-Go to Credentials under APIs & Services. ![img](./create-credentials)Configure the OAuth consent screen (just entering the name of the application will suffice). Create an OAuth client ID for Desktop App by clicking on CREATE CREDENTIALS.
+Go to Credentials under APIs & Services. ![img](./create-credentials.png)Configure the OAuth consent screen (just entering the name of the application will suffice). Create an OAuth client ID for Desktop App by clicking on CREATE CREDENTIALS.
 
 Once created, download the OAuth credentials, rename it as “credentials.json” and store it in the Project folder. (When we run the project for the first time, it will prompt us to log in to our Google account and give permission to view and manage Docs and Tasks. Once we give permission, it will create a token file and use that for all the future runs.)
 
@@ -123,7 +128,7 @@ Returns the data of all To Do lists present in your account of Google Tasks. Wit
 
 
 #### pick_tasks()
-Returns the tasks(along with the date of completion) completed within a specified time-frame, from the To Do lists which were chosen among all the lists present in your Google Tasks account. To improve the aesthetic of command-line user prompts, I used a python library [questionary](https://pypi.org/project/questionary/) throughout this project. ![img](./questionary-prompt "questionary prompt to select list")
+Returns the tasks(along with the date of completion) completed within a specified time-frame, from the To Do lists which were chosen among all the lists present in your Google Tasks account. To improve the aesthetic of command-line user prompts, I used a python library [questionary](https://pypi.org/project/questionary/) throughout this project. ![img](./questionary-prompt.png "questionary prompt to select list")
 
 ```python
 def pick_tasks(items,service_task):
