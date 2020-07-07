@@ -1,24 +1,43 @@
-![img](./hero-image.jpg)
+---
+layout: engineering-education
+status: publish
+published: true
+slug: tasks-to-docs
+title: Automating Tasks to Google Docs
+description: This article is a tutorial on how to build a python script that moves completed tasks from Google Tasks to Google Docs, within a given time-frame, categorized date-wise.
+author: keerthi-v
+date: 2020-07-07T00:00:00-09:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-# Tasks to Docs 
+  - url: /engineering-education/tasks-to-docs/hero.jpg
+    alt: automate tasks to google docs image
+---
 
-A lot of us use Google Tasks to maintain our To Do lists because it is simple and convenient. However, if we want to improve our productivity systems and maintain a report of all the tasks completed daily in a Google Doc, we would have to manually enter these completed tasks on a day-to day basis. I always found myself procrastinating when it was time to update my daily report. Therefore I decided to automate it. 
+A lot of us use Google Tasks to maintain our To-Do lists because it is simple and convenient. However, if we want to improve our overall productivity and maintain a report of all the tasks completed daily in a Google Doc, we would have to manually enter these completed tasks on a day-to-day basis. I always found myself procrastinating when it was time to update my daily report. Therefore I decided to automate it.
+<!--more-->
 
-I currently have 2 To Do lists-
+I currently have 2 To-Do lists
 
-College work - containing all my college-related tasks <img src="college-work" alt="alt text" title="completed tasks in list College Work" style="zoom:33%;" />
+College work - containing all my college-related tasks:
 
-My List - containing the rest of the tasks          			  <img src="my-list" alt="img" style="zoom:34%;" title="completed tasks in list My List"/>
+<img src="college-work" alt="alt text" title="completed tasks in list College Work" style="zoom:33%;" />
 
-And I want to move these date-wise to one designated Google Doc like this-
+My List - containing the rest of the tasks:
+
+<img src="my-list" alt="img" style="zoom:34%;" title="completed tasks in list My List"/>
+
+And I want to move these date-wise to one designated Google Doc like this:
 <img src="updated-doc" alt="img" style="zoom: 50%;" />
-This blog post is a tutorial on how to build a python script that moves completed tasks from Google Tasks to Google Docs, within a given time-frame, categorised date-wise.
+
+This blog post is a tutorial on how to build a python script that moves completed tasks from Google Tasks to Google Docs, within a given time-frame, categorized date-wise.
 
 **Note**: This tutorial only includes partial code. The Complete code can be found on my [Github](https://github.com/keerthivarumbudy/ToDocs/blob/master/app.py).
 
 ### Google Developers Console configuration
 
-Firstly, we need to create our project on Google Developers Console, and create credentials that will allow us to make use of their APIs. 
+Firstly, we need to create our project on Google Developers Console and create credentials that will allow us to make use of their APIs.
 
 1. Login to https://console.developers.google.com/
 
@@ -27,16 +46,18 @@ Firstly, we need to create our project on Google Developers Console, and create 
 
 3. Select the project, and go to its Dashboard. Click on Explore and Enable APIs.<img src="./enable-api" alt="img" style="zoom:35%;" />Enable Google Docs and Tasks APIs.
 
-4. Create credentials to use in our project. 
+4. Create credentials to use in our project.
 
-   Go to Credentials under APIs & Services. ![img](./create-credentials)Configure the OAuth consent screen (just entering the name of the application will suffice). Create an OAuth client ID for Desktop App by clicking on CREATE CREDENTIALS. 
+Go to Credentials under APIs & Services. ![img](./create-credentials)Configure the OAuth consent screen (just entering the name of the application will suffice). Create an OAuth client ID for Desktop App by clicking on CREATE CREDENTIALS.
 
-   Once created, download the OAuth credentials, rename it as “credentials.json” and store it in the Project folder. (When we run the project for the first time, it will prompt us to login to our Google account and give permission to view and manage Docs and Tasks. Once we give permission, it will create a token file and use that for all the future runs.)
+Once created, download the OAuth credentials, rename it as “credentials.json” and store it in the Project folder. (When we run the project for the first time, it will prompt us to log in to our Google account and give permission to view and manage Docs and Tasks. Once we give permission, it will create a token file and use that for all the future runs.)
 
 ### Installing Google Client Library
-We are accessing our completed tasks through the Google Tasks API and inserting these into a document using the Google Docs API. These public APIs support [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)ful calling styles and [client libraries](https://developers.google.com/api-client-library) in multiple programming languages, including python, making it our choice for this project. We need to install this library before we get started with the script.	
+We are accessing our completed tasks through the Google Tasks API and inserting these into a document using the Google Docs API. These public APIs support [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)ful calling styles and [client libraries](https://developers.google.com/api-client-library) in multiple programming languages, including python, making it our choice for this project. We need to install this library before we get started with the script.
 
-```pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib	```
+```
+pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+```
 
 ### Python Script using Google Tasks API and Google Docs API
 
@@ -51,7 +72,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 import requests
 
-SCOPES = ['https://www.googleapis.com/auth/tasks.readonly', 'https://www.googleapis.com/auth/documents'] 
+SCOPES = ['https://www.googleapis.com/auth/tasks.readonly', 'https://www.googleapis.com/auth/documents']
 ```
 
 In the main function, we use the [boiler-plate](https://github.com/gsuitedevs/python-samples/blob/master/tasks/quickstart/quickstart.py) code provided by Google to create access tokens which are required to access different google services. Since we are using Docs and Tasks, we build a class each to interact with these resources. We also call 3 functions - get_task_list, pick_tasks, put_tasks.	  
@@ -76,19 +97,20 @@ In the main function, we use the [boiler-plate](https://github.com/gsuitedevs/py
        # Save the credentials for the next run
        with open('token.pickle', 'wb') as token:
            pickle.dump(creds, token)
- 
+
    service_task = build('tasks', 'v1', credentials=creds)
    service_docs = build('docs', 'v1', credentials=creds)
- 
+
    items = get_task_list(service_task)
    completed_tasks = pick_tasks(items,service_task)
    put_tasks(completed_tasks,service_docs)
    print("Completed Tasks Successfully Updated :)")
- 
+
 
 ```
 
-get_tasks_list() returns the data of all To Do lists present in your account of Google Tasks. Within this function we make an API call to Tasks using service_task (which returns a dictionary with more information than we require) and extract only the task lists (which are mapped to the key “items”) along with its meta data.	
+#### get_tasks_list()
+Returns the data of all To Do lists present in your account of Google Tasks. Within this function we make an API call to Tasks using service_task (which returns a dictionary with more information than we require) and extract only the task lists (which are mapped to the key “items”) along with its meta data.
 
 ```python
  def get_task_list(service_task):  
@@ -96,11 +118,12 @@ get_tasks_list() returns the data of all To Do lists present in your account of 
         results = service_task.tasklists().list(maxResults=10).execute()  
         # Get Tasks Lists, along with it's metadata  
         items = results.get('items', [])  
-        return items 
+        return items
 ```
 
 
-pick_tasks() returns the tasks(along with the date of completion) completed within a specified time-frame, from the To Do lists which were chosen among all the lists present in your Google Tasks account. To improve the aesthetic of command-line user prompts, I used a python library [questionary](https://pypi.org/project/questionary/) throughout this project. ![img](./questionary-prompt "questionary prompt to select list")
+#### pick_tasks()
+Returns the tasks(along with the date of completion) completed within a specified time-frame, from the To Do lists which were chosen among all the lists present in your Google Tasks account. To improve the aesthetic of command-line user prompts, I used a python library [questionary](https://pypi.org/project/questionary/) throughout this project. ![img](./questionary-prompt "questionary prompt to select list")
 
 ```python
 def pick_tasks(items,service_task):
@@ -108,43 +131,44 @@ def pick_tasks(items,service_task):
    todo_lists = []
    for item in items:
        todo_lists.append(item['title'])
-  
+
    selected_lists = (
            questionary.checkbox(
                "Select List", choices=todo_lists,
            ).ask()
            or ['My List']
        )
- 
+
    print(f"Moving tasks from {' and '.join(selected_lists)}.")
- 
+
    # Write code to add a date range, ie, prompt user to enter min_date and max_date, and convert these into strings of timeformat: %Y-%m-%dT%H:%M:%S.00Z
- 
+
    #Filter completed tasks only
    completed_tasks = dict()
    for item in items:
        if item['title'] in selected_lists:
            task = service_task.tasks().list(tasklist=item['id'],showHidden=1,completedMin=min_date,completedMax=max_date).execute()
- 
+
            # Group tasks based on date range
            for i in task['items']:
            	# Write code to populate completed_tasks with key = i[‘updated’] and value = i[‘title’]. We are concerned with date only, not time, hence splice the date string to only include date
- 
+
    #Write code to sort completed_tasks in ascending order of updated date
    return completed_tasks
 ```
 
-put_task() appends the tasks, categorised by date, into a Google Doc as specified by the user.
+#### put_task() A
+Appends the tasks, categorized by date, into a Google Doc as specified by the user.
 
-Google Docs API only allows us to insert text at indices(locations) that we specify/hard code in the script, so I made use of stack-type insertion into the doc, where tasks of a given date are added in ascending order at the beginning of the document, ie, at index=1, instead of trying to find the location of the last character of the document. 
+Google Docs API only allows us to insert text at indices(locations) that we specify/hard code in the script, so I made use of stack-type insertion into the doc, where tasks of a given date are added in ascending order at the beginning of the document, i.e., at index=1, instead of trying to find the location of the last character of the document.
 
 ```python
 def put_tasks(completed_tasks,service_docs ):
-   # Write code to prompt user to include google doc id, found in the url of the document: https://docs.google.com/document/d/DOCUMENT_ID/edit
+   # Write code to prompt user to include google doc id, found in the URL of the document: https://docs.google.com/document/d/DOCUMENT_ID/edit
    DOCUMENT_ID = questionary.text("Enter Google Doc Id").ask()
    document = service_docs.documents().get(documentId=DOCUMENT_ID).execute()
    print('The title of the document is: {}'.format(document.get('title')))
- 
+
    # Format and append to doc
    for i in completed_tasks:
        # Write code to format date_text, which has date followed by all the tasks completed on that date
@@ -158,17 +182,12 @@ def put_tasks(completed_tasks,service_docs ):
                }
            },
        ]
- 
+
        result = service_docs.documents().batchUpdate(
            documentId=DOCUMENT_ID, body={'requests': requests}).execute()
 ```
 
-And you're done! Run this program whenever you need to update your report with all the new tasks you completed, by specifying the date range. 
+### Complete
+And you're done! Run this program whenever you need to update your report with all the new tasks you completed, by specifying the date range.
 
 *If you're only concerned with moving tasks from the same lists every time, you can include a file that stores the datetime of the latest run. So the next time this program runs, it picks all the tasks completed since the previous update.*
-
-**About the author**
-
-<img src="../../authors/keerthi-v/avatar.jpg" alt="img" style="zoom:25%;" />
-
-Keerthi V is a senior at JSS Science and Technology University, and a Data Engineering Intern at redBus. Her key interests include Data Science and Web Development. When she's not coding, she's probably running or baking pizzas.
