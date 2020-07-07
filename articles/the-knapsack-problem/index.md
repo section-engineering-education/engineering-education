@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: the-knapsack-problem
 title: Breaking Down The Knapsack Problem
-description: In this article, we will discuss both a pseudo-polynomial time solution using dynamic programming and different polynomial time approximations for the knapsack problem.
+description: In this article, we will discuss two approaches to the Knapsack Problem, including a pseudo-polynomial time solution using dynamic programming and different polynomial time approximations.
 author: ian-jorquera
 date: 2020-07-06T00:00:00-07:00
 topics: []
@@ -15,7 +15,7 @@ images:
     alt: knapsack example image
 ---
 
-Imagine you are a world-class thief, and you have just burgled a house with many valuable artifacts. You have brought a backpack or a knapsack, but it can only contain a limited amount of weight. Your goal is to leave with the highest combined value of items that fit in your bag. But how do you pick these items and what is the optimal value? This is the Knapsack Problem.
+Imagine you are a world-class thief, and you have just burglarized a house with many valuable artifacts. You have brought a backpack or a knapsack, but it can only contain a limited amount of weight. Your goal is to leave with the highest combined value of items that fit in your bag, but how do you pick these items and what is the optimal value? This is the Knapsack Problem.
 <!--more-->
 
 For example, let's say there are five items and the knapsack can hold 20 pounds.
@@ -29,34 +29,44 @@ For example, let's say there are five items and the knapsack can hold 20 pounds.
 ### Creating the algorithm
 For starters, we can think about a brute force approach where we consider every possible combination. But this would be incredibly inefficient as we would have to check $2^n-1$ total combinations if there were $n$ items.
 
-The Knapsack problem is [NP-Hard](https://en.wikipedia.org/wiki/NP-hardness), meaning it is computationally very challenging to solve. Assuming $P \neq NP$, there exists no proper polynomial-time solution to this problem. In this article, we will discuss both a [pseudo-polynomial time solution](https://www.geeksforgeeks.org/pseudo-polynomial-in-algorithms/) using dynamic programming and different polynomial time approximations for the knapsack problem.
+The knapsack problem is [NP-Hard](https://en.wikipedia.org/wiki/NP-hardness), meaning it is computationally very challenging to solve. Assuming $P \neq NP$, there exists no proper polynomial-time solution to this problem. In this article, we will discuss both a [pseudo-polynomial time solution](https://www.geeksforgeeks.org/pseudo-polynomial-in-algorithms/) using dynamic programming and different polynomial time approximations for the knapsack problem.
 
 ### Dynamic Programming
 Dynamic programming determines an optimal solution by first finding optimal solutions to subproblems. If a problem can be solved in this manner it is said to have *optimal substructure*. Let's see how this applies to the knapsack problem.
 
-When creating our subproblems, we want to think about how different choices lead to different values. For the problem presented above, it is helpful to ask whether or not the porcelain vase is in our optimal solution. This provides us with two subproblems or two possible solutions: selecting the vase and not selecting the vase. If we selected the vase, our optimal value would represent the value of the vase plus the optimal solution for the remaining items. Assuming we take the vase we want to determine the optimal solution for the remaining 10 pounds of our bag and the remaining items. This is our first subproblem. Alternatively, if we don't select the vase, we need to find the optimal value of all the items except the vase. This is our second subproblem. We can use the results of these two subproblems to determine if adding the porcelain vase leads to an optimal solution. Notice that these two subproblems are both themselves instance of that knapsack problem, considering only four items and a max weight of 20 and 10 respectively. This shows that we can take our original problem and split it into two new instances of the knapsack problem. We can again split these new instances into two more problems by asking if the next item is in the knapsack or not. This effectively breaks the problem into smaller pieces and shows that the knapsack problem has an optimal substructure.
+When creating our subproblems, we want to think about how different choices lead to different values. For the problem presented above, it is helpful to ask whether or not the porcelain vase is in our optimal solution. This provides us with two subproblems or two possible solutions: selecting the vase and not selecting the vase.
 
-Implementing this method, of splitting our problem into two, we might have situations where the same subproblem in needed twice. For these cases, it is helpful to store all the previously solved solutions in a table. Along the top of the table, we will have all the possible maximum weights and on the side, we will list each of the items. So each row will represent the subset of items from the first item to the item of that row. Each box on the table will represent an instance of the knapsack problem and contain the optimal value for that problem, once we calculate it. For example, in the table below the box with the star represents the subproblem considering the first three items with a maximum weight of nine.
+If we selected the vase, our optimal value would represent the value of the vase plus the optimal solution for the remaining items. Assuming we take the vase, we want to determine the optimal solution for the remaining 10 pounds of our bag and the remaining items. This is our first subproblem.
 
-In general, each element of the table represents the subproblem considering all items up until the element's row and the weight of its column. Notice that we ignore all the items in the rows after the element's row. With this logic, the solution to our entire problem, considering all items and the max weight, is the cell in the final row and the rightmost column.
+Alternatively, if we don't select the vase, we need to find the optimal value of all the items except the vase. This is our second subproblem. We can use the results of these two subproblems to determine if adding the porcelain vase leads to an optimal solution. Notice that these two subproblems are both themselves instances of the knapsack problem, considering only four items and a max weight of 20 and 10 respectively.
 
-Any sub-problem with no items or weight of zero will produce an optimal value of zero. We will refer to these as the bases cases and they occur in the zeroth row and zeroth column. This should make sense as these cases represent situations were no items can be placed in the knapsack.
+This shows that we can take our original problem and split it into two new instances of the knapsack problem. We can again split these new instances into two more problems by asking if the next item is in the knapsack or not. This effectively breaks the problem into smaller pieces and shows that the knapsack problem has an optimal substructure.
 
-![Table and Arrows](/engineering-education/the-knapsack-problem/table-arrows.PNG)
+Implementing this method, of splitting our problem into two, we might have situations where the same subproblem is needed twice. For these cases, it is helpful to store all the previously solved solutions in a table. Along the top of the table, we will have all the possible maximum weights and on the side, we will list each of the items. So each row will represent the subset of items from the first item to the item of that row. Each box on the table will represent an instance of the knapsack problem and contain the optimal value for that problem once we calculate it. For example, in the table below, the box with the star represents the subproblem considering the first three items with a maximum weight of nine.
 
-Consider again the element in the table with the star. In this case, we want to ask, is the item in the third row in our optimal solution. This gives us our two subproblems to consider: taking the item and not taking the item. These subproblems have been denoted with the triangle and square respectively. For the triangle, we subtracted out the weight of the third item to construct our subproblem. Now we want to determine the optimal solution of the remaining two items and the remaining weight. For the square, we didn't select the item, so the weight for the subproblem doesn't change but again we are only considering the first two items. To find the value of the star, we take the maximum of these situations. But first, we would need to solve for the triangle and square. We can repeat this splitting process for both the triangle and square until we hit the base cases.
+![Table and Arrows](/engineering-education/the-knapsack-problem/table-empty.PNG)<br>
+In general, each element of the table represents the subproblem, considering all items up until the element's row and the weight of its column. Notice that we ignore all the items in the rows after the element's row. With this logic, the solution to our entire problem, considering all items and the max weight, is the cell in the final row and the rightmost column.
 
-Let's denote the table as the two-dimensional array $k$. Each element $k[i,j]$ represents the $i$th row and the $j$th column. We also want two additional arrays, one for the values $v$, and one for the weights $w$. With these definitions, $k[3,9]$ will represent the box with the star. And $v_3$ and $w_3$ will represent and value and weight of the third item, with value and weight five. Notice that our table is `0` indexed but the two arrays are `1` indexed. This is done to better align them and in code will require us to add a NULL element to the arrays.
+Any sub-problem with no items or weight of zero will produce an optimal value of zero. We will refer to these as the base cases and they occur in the zeroth row and zeroth column. This should make sense as these cases represent situations were no items can be placed in the knapsack.
 
-For any subproblem or element in the table, $k[i,j]$ we must first ask if there is room for the item at index $i$ in the knapsack. So we must compare the weight of the item, $w_i$ to the max weight for our subproblem $j$. If it is possible to include the item, we have to consider both cases or adding and not adding the item $i$ and find the max between the two. If we select the item, our optimal value can be written as $v_i+k[i-1,j-w_i]$. This is the sum of the current item's value $v_i$ and the optimal solution to the subproblem of the remaining items and the remaining weight, $k[i-1,j-w_i]$. If we don't include the item, the optimal value will be the subproblem considering all the items before the current item, $k[i-1,j]$. This would also be the same subproblem to consider if the knapsack didn't have enough room for the item originally. This process can then be written as the following recurrence.
+Consider again the element in the table with the star. In this case, we want to ask, is the item in the third row in our optimal solution. This gives us our two subproblems to consider: taking the item and not taking the item. These subproblems have been denoted with the triangle and square respectively. For the triangle, we subtracted out the weight of the third item to construct our subproblem. Now we want to determine the optimal solution of the remaining two items and the remaining weight. For the square, we didn't select the item, so the weight for the subproblem doesn't change, but again we are only considering the first two items. To find the value of the star, we take the maximum of these situations. But first, we would need to solve for the triangle and square. We can repeat this splitting process for both the triangle and square until we hit the base cases.
 
-$$ k[i,j]=   \left\{
+Let's denote the table as the two-dimensional array $k$. Each element $k[i,j]$ represents the $i$th row and the $j$th column. We also want two additional arrays, one for the values $v$, and one for the weights $w$. With these definitions, $k[3,9]$ will represent the box with the star. And $v_3$ and $w_3$ will represent the value and weight of the third item, with value and weight five. Notice that our table is `0` indexed but the two arrays are `1` indexed. This is done to better align them and in code will require us to add a NULL element to the arrays.
+
+For any subproblem or element in the table $k[i,j]$, we must first ask if there is room for the item at index $i$ in the knapsack. So we must compare the weight of the item $w_i$ to the max weight for our subproblem $j$. If it is possible to include the item, we have to consider both cases of adding and not adding the item $i$ and find the max between the two.
+
+If we select the item, our optimal value can be written as $v_i+k[i-1,j-w_i]$. This is the sum of the current item's value $v_i$ and the optimal solution to the subproblem of the remaining items and the remaining weight, $k[i-1,j-w_i]$.
+
+If we don't include the item, the optimal value will be the subproblem considering all the items before the current item, $k[i-1,j]$. This would also be the same subproblem to consider if the knapsack didn't have enough room for the item originally. This process can then be written as the following recurrence.
+
+$$
+k[i,j]=   \left\{
 \begin{array}{ll}
       \max(v_i+k[i-1,j-w_i],\, k[i-1,j]) & w_i \leq j\\
       k[i-1,j] & \text{otherwise}\\
 \end{array}
-\right.  $$
-
+\right.  
+$$
 
 A python implementation using this recurrence is shown below. In this implementation, we employ a bottom-up approach: first calculating each of the elements of the first row and then working up to the final row. This makes it so our recurrence never tries to access elements of our table that haven't already been calculated. Alternatively, we could implement a recursive top-down approach and only calculate the elements of the table as needed.
 
@@ -87,7 +97,7 @@ def knapsack(w, v, max_weight):
 
 With this method, we can complete the table with optimal total values for all subproblems. With the completed table we can determine the optimal subset of items by looking at the completed table.
 
-![Table Empty](/engineering-education/the-knapsack-problem/table-empty.png)
+![Table Empty](/engineering-education/the-knapsack-problem/table-arrows.png)
 
 To obtain the items in our solution, we start at the solution square, the bottom right. We can use our recurrence, to determine which case, either selecting the item or not selecting it leads to our optimal solution. For example, let's look at the solution square in the above table, with value 25. The case for selecting the last item would result in a value of $v_5+k[4, 10] = 11 + 12 = 23$. Not selecting the item would result in the optimal value $k[4,20] = 25$. This tells us our optimal solution came from not selecting this last item. We can then draw an array pointing to this next subproblem $k[4,20]$, and repeat this process. We see that not selecting this next item, of weight eight, leads to the non-optimal solution of $k[3,20] = 17$. And selecting it leads to the optimal value of $v_4+k[3,12]=17+8=25$. So we know we select the second to last item. Again we will draw an arrow pointing to the next subproblem $k[3, 12]$. We can continue this process until we get to a zero-element. The arrows representing this process are shown in the previous table. We would then determine the optimal subset consists of the first four items or everything not including the vase. And this would have an optimal value of 25 thousand dollars.
 
