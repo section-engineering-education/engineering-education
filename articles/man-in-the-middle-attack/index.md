@@ -5,7 +5,7 @@ published: true
 slug: man-in-the-middle-attack
 title: Man in the Middle Attacks Explained
 description: A man-in-the-middle attack, also known as a hijack attack is an attack where the attacker secretly relays and possibly alters the communications between two parties who believe that they are directly communicating with each other.
-author: Richu Thomas
+author: richu-thomas
 date: 2020-07-07T00:00:00-07:00
 topics: [security]
 excerpt_separator: <!--more-->
@@ -22,8 +22,8 @@ On a typical connection, the user connects to the website server which delivers 
 ### Stages of Man-in-the-Middle Attacks
 #### Interception
 - **IP Spoofing** - Every computer on the internet has an internet protocol (IP) address. The attacker masks himself as an application and changes headers of the IP address. By spoofing an IP address, an attacker can trick you into thinking you’re interacting with a legitimate entity. Users attempting to access the URL of an application will be redirected to the attacker’s website instead. Thus, you will be giving the attacker access to the information you’d otherwise not share.
-- **DNS spoofing** - The attacker accesses the server and alters the website address record to match his/her website records, thus redirecting the user through the attacker’s website. It’s a technique that forces a user to a fake website rather than the one that the user intends to visit. You may think you’re visiting a safe, trusted website when you’re actually interacting with a fraudster. The attacker’s goal is to divert traffic from the real site or capture user login credentials.
-- **ARP spoofing** - Address Resolution Protocol (ARP) helps to translate IP addresses to physical Media Access Control (MAC) addresses which identify devices in a local area network. Hackers will respond to requests with their own MAC address using placed packets. This will direct the communication of the user to the hacker’s server where it can sniff personal information.
+- **DNS Spoofing** - The attacker accesses the server and alters the website address record to match his/her website records, thus redirecting the user through the attacker’s website. It’s a technique that forces a user to a fake website rather than the one that the user intends to visit. You may think you’re visiting a safe, trusted website when you’re actually interacting with a fraudster. The attacker’s goal is to divert traffic from the real site or capture user login credentials.
+- **ARP Spoofing** - Address Resolution Protocol (ARP) helps to translate IP addresses to physical Media Access Control (MAC) addresses which identify devices in a local area network. Hackers will respond to requests with their own MAC address using placed packets. This will direct the communication of the user to the hacker’s server where it can sniff personal information.
 
 #### Decryption
 - [HTTPS Spoofing](https://www.thewindowsclub.com/https-security-spoofing-man-in-the-middle/) - The attacker can send an SSL certificate containing the digital thumbprint of the user obtained from a compromised application. After that, the browser verifies it and approves, thus granting access to the attacker. The attacker fools your browser into believing it’s visiting a trusted website when it’s not. By redirecting your browser to an unsecured website, the attacker can check your interactions with that website and steal personal information you may be sharing.
