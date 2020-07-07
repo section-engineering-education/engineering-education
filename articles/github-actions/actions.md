@@ -8,10 +8,21 @@ We can use Github actions to perform real-world tasks such as CI/CD, publish to 
 
 ### Getting Started with Github Actions
 
-1. Go to any repository, where you want to create a workflow, any navigate to actions tab. ![img]()
-2. Select the required workflow, from the ones available, or create a new one. ![img]()
-3. To create a your own workflow create a `.yml` file in the path `.github/workflows/action1.yml`. Commit the file, github will automatically understand that it is a workflow. ![img]()
-4. You can monitor you workflow logs in the same **Actions** tab after you have set it up. ![img]()
+1. Go to any repository, where you want to create a workflow, any navigate to actions tab. 
+	
+	![img](repo.png)
+	
+2. Select the required workflow, from the ones available, or create a new one. 
+
+	![img](actions.png)
+	
+3. To create a your own workflow create a `.yml` file in the path `.github/workflows/action1.yml`. Commit the file, github will automatically understand that it is a workflow. 
+
+	![img](ga4.png)
+
+4. You can monitor you workflow logs in the same **Actions** tab after you have set it up. 
+
+	![img](log.png)
 
 ## How to create custom actions for common uses.
 
@@ -54,7 +65,9 @@ The above action does the following
  * Runs the command `npm test` followed by `npm run build`, we can use our preffered libraries like *jest* and *webpack*, it executes the test *script* mentioned in `package.json`.
 
 If there are any errors or build failures, then it shows up in the log in the actions tab of our repository by a green check or a red cross.
-![img]()
+
+
+![img](greencheck.png)
 
 ### Continuous Deployment
 Once you have valid pull request and when we merge that code into the master branch we also want to deploy the app to our customers. [Continuous deployment](https://www.atlassian.com/continuous-delivery/continuous-deployment) is about pushing that code out to the customer.
