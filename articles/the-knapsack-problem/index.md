@@ -59,10 +59,10 @@ If we select the item, our optimal value can be written as $v_i+k[i-1,j-w_i]$. T
 
 If we don't include the item, the optimal value will be the subproblem considering all the items before the current item, $k[i-1,j]$. This would also be the same subproblem to consider if the knapsack didn't have enough room for the item originally. This process can then be written as the following recurrence.
 
-$$k[i,j]=   \left\{
+$$\k[i,j]=   \left\{
 \begin{array}{ll}
-      \max(v_i+k[i-1,j-w_i],\, k[i-1,j]) & w_i \leq j\\
-      k[i-1,j] & \text{otherwise}\\
+      \max(v_i+k[i-1,j-w_i],\, k[i-1,j]) & w_i \leq j\\\\\\
+      k[i-1,j] & \text{otherwise}\\\\\\
 \end{array}
 \right.$$
 
