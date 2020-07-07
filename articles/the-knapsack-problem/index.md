@@ -44,7 +44,7 @@ This shows that we can take our original problem and split it into two new insta
 
 Implementing this method, of splitting our problem into two, we might have situations where the same subproblem is needed twice. For these cases, it is helpful to store all the previously solved solutions in a table. Along the top of the table, we will have all the possible maximum weights and on the side, we will list each of the items. So each row will represent the subset of items from the first item to the item of that row. Each box on the table will represent an instance of the knapsack problem and contain the optimal value for that problem once we calculate it. For example, in the table below, the box with the star represents the subproblem considering the first three items with a maximum weight of nine.
 
-![Table and Arrows](/engineering-education/the-knapsack-problem/table-empty.PNG)<br>
+![Table and Arrows](/engineering-education/the-knapsack-problem/table-empty.png)<br>
 In general, each element of the table represents the subproblem, considering all items up until the element's row and the weight of its column. Notice that we ignore all the items in the rows after the element's row. With this logic, the solution to our entire problem, considering all items and the max weight, is the cell in the final row and the rightmost column.
 
 Any sub-problem with no items or weight of zero will produce an optimal value of zero. We will refer to these as the base cases and they occur in the zeroth row and zeroth column. This should make sense as these cases represent situations were no items can be placed in the knapsack.
@@ -59,14 +59,12 @@ If we select the item, our optimal value can be written as $v_i+k[i-1,j-w_i]$. T
 
 If we don't include the item, the optimal value will be the subproblem considering all the items before the current item, $k[i-1,j]$. This would also be the same subproblem to consider if the knapsack didn't have enough room for the item originally. This process can then be written as the following recurrence.
 
-$$
-k[i,j]=   \left\{
+$$k[i,j]=   \left\{
 \begin{array}{ll}
       \max(v_i+k[i-1,j-w_i],\, k[i-1,j]) & w_i \leq j\\
       k[i-1,j] & \text{otherwise}\\
 \end{array}
-\right.  
-$$
+\right.$$
 
 A python implementation using this recurrence is shown below. In this implementation, we employ a bottom-up approach: first calculating each of the elements of the first row and then working up to the final row. This makes it so our recurrence never tries to access elements of our table that haven't already been calculated. Alternatively, we could implement a recursive top-down approach and only calculate the elements of the table as needed.
 
@@ -97,7 +95,7 @@ def knapsack(w, v, max_weight):
 
 With this method, we can complete the table with optimal total values for all subproblems. With the completed table we can determine the optimal subset of items by looking at the completed table.
 
-![Table Empty](/engineering-education/the-knapsack-problem/table-arrows.png)
+![Table Empty](/engineering-education/the-knapsack-problem/table-arrows.PNG)
 
 To obtain the items in our solution, we start at the solution square, the bottom right. We can use our recurrence, to determine which case, either selecting the item or not selecting it leads to our optimal solution. For example, let's look at the solution square in the above table, with value 25. The case for selecting the last item would result in a value of $v_5+k[4, 10] = 11 + 12 = 23$. Not selecting the item would result in the optimal value $k[4,20] = 25$. This tells us our optimal solution came from not selecting this last item. We can then draw an array pointing to this next subproblem $k[4,20]$, and repeat this process. We see that not selecting this next item, of weight eight, leads to the non-optimal solution of $k[3,20] = 17$. And selecting it leads to the optimal value of $v_4+k[3,12]=17+8=25$. So we know we select the second to last item. Again we will draw an arrow pointing to the next subproblem $k[3, 12]$. We can continue this process until we get to a zero-element. The arrows representing this process are shown in the previous table. We would then determine the optimal subset consists of the first four items or everything not including the vase. And this would have an optimal value of 25 thousand dollars.
 
