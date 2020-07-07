@@ -16,7 +16,7 @@ images:
 ---
 With the popularity of Office 365 and GSuite it can seem that creating a business email is as simple as signing up for an account and paying the annual or monthly fee.
 
-However because of spam and fraudulent email protection, if you want your emails to appear in your recipient's inbox, then it's a lot more than complicated than that because you have to configure SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail) and DMARC (Domain Message Authentication Reporting.)
+However because of spam and fraudulent email protection, if you want your emails to appear in your recipient's inbox, then it's a lot more complicated than that because you have to configure SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail) and DMARC (Domain Message Authentication Reporting.)
 
 <!--more-->
 
