@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: creating-professional-email
 title: How to Create a Professional Email - Setting up GSuite
-description: G Suite is a suite of cloud computing, productivity and collaboration tools, software and products developed by Google.
+description: Shows how to set up GSuite with MX records and configuring SPF, DKIM and DMARC to authenticate and prevent spam emails and making sure your emails are received.
 author: louise-findlay
 date: 2020-07-06T00:00:00-07:00
 topics: []
