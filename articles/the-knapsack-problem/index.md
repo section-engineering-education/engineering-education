@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-slug: knapsack
-title: The Knapsack Problem
+slug: the-knapsack-problem
+title: Breaking Down The Knapsack Problem
 description: The Knapsack Problem is a problem in combinatorics given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
 author: ian-jorquera
-date: 2020-06-30T00:00:00-07:00
+date: 2020-07-T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/knapsack/hero.jpg
+  - url: /engineering-education/the-knapsack-problem/hero.jpg
     alt: knapsack example image
 ---
 
@@ -42,7 +42,7 @@ In general, each element of the table represents the subproblem considering all 
 
 Any sub-problem with no items or weight of zero will produce an optimal value of zero. We will refer to these as the bases cases and they occur in the zeroth row and zeroth column. This should make sense as these cases represent situations were no items can be placed in the knapsack.
 
-![Table and Arrows](/engineering-education/knapsack/table-arrows.PNG)
+![Table and Arrows](/engineering-education/the-knapsack-problem/table-arrows.PNG)
 
 Consider again the element in the table with the star. In this case, we want to ask, is the item in the third row in our optimal solution. This gives us our two subproblems to consider: taking the item and not taking the item. These subproblems have been denoted with the triangle and square respectively. For the triangle, we subtracted out the weight of the third item to construct our subproblem. Now we want to determine the optimal solution of the remaining two items and the remaining weight. For the square, we didn't select the item, so the weight for the subproblem doesn't change but again we are only considering the first two items. To find the value of the star, we take the maximum of these situations. But first, we would need to solve for the triangle and square. We can repeat this splitting process for both the triangle and square until we hit the base cases.
 
@@ -87,7 +87,7 @@ def knapsack(w, v, max_weight):
 
 With this method, we can complete the table with optimal total values for all subproblems. With the completed table we can determine the optimal subset of items by looking at the completed table.
 
-![Table Empty](/engineering-education/knapsack/table-empty.png)
+![Table Empty](/engineering-education/the-knapsack-problem/table-empty.png)
 
 To obtain the items in our solution, we start at the solution square, the bottom right. We can use our recurrence, to determine which case, either selecting the item or not selecting it leads to our optimal solution. For example, let's look at the solution square in the above table, with value 25. The case for selecting the last item would result in a value of $v_5+k[4, 10] = 11 + 12 = 23$. Not selecting the item would result in the optimal value $k[4,20] = 25$. This tells us our optimal solution came from not selecting this last item. We can then draw an array pointing to this next subproblem $k[4,20]$, and repeat this process. We see that not selecting this next item, of weight eight, leads to the non-optimal solution of $k[3,20] = 17$. And selecting it leads to the optimal value of $v_4+k[3,12]=17+8=25$. So we know we select the second to last item. Again we will draw an arrow pointing to the next subproblem $k[3, 12]$. We can continue this process until we get to a zero-element. The arrows representing this process are shown in the previous table. We would then determine the optimal subset consists of the first four items or everything not including the vase. And this would have an optimal value of 25 thousand dollars.
 
