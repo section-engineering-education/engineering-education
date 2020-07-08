@@ -1,6 +1,22 @@
-# Templating Your Static Site (Converting a Static Site to a Static Site Generator)
+---
+layout: engineering-education
+status: publish
+published: true
+slug: templating-your-static-site
+title: Templating Your Static Site (Converting a Static Site to a Static Site Generator)
+description:
+author: louise-findlay
+date: 2020-07-08T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/templating-your-static-site/hero.jpg
+    alt:
+---
 Static sites are much easier to develop and deploy than full-stack dynamic web apps. You don’t have to pay monthly hosting charges (if you use a free hosting provider like [Netlify]**Link here**) and if you use a CSS framework like Bootstrap **Link here** or Material **check name** it only takes a basic knowledge of HTML and CSS to code a simple website. **Insert reference to articles you’ll write about designing and developing static websites**
+
+<!--more-->
 
 However, for more complex multi-page websites, a static site may not be suitable. Every time you want to add content, a new page has to be created and coded. If you change something that appears on multiple pages then you’d have to change it everywhere. That’s where static site generators come in. They bring the power of templating to static sites.
 
@@ -38,7 +54,3 @@ Any pages will just have the content and front-matter
 ## Deploying Your First Static Site Generator Website
 
 Netlify
-
-
-
-
