@@ -12,3 +12,33 @@ Templating (see Converting a Static Site to a Dynamic NodeJS Web App **link** fo
 
 ## Installing Eleventy
 
+The first step is to install Eleventy which will be done through the package manager, NPM. New to NPM? Check out my installation guide **(link to NPM install)**.
+
+Create a package.json file using `npm init -y` and then install Eleventy using `npm install --save-dev @11ty/eleventy`.
+
+To test the install, run `npx @11ty/eleventy` which should return:
+`Processed 0 files in number of seconds (version number)`.
+
+## Creating Your First EJS Partial
+
+**Note:** If you've followed my [Converting a Static Site to NodeJS tutorial] **link and grab full title** where you learned EJS or prefer to use a different templating language then feel free to skip to the next section, [Creating Your First Layout File]**Anchor link**.
+
+## Creating Your First Layout File
+
+**Tip:** Adding _site folder to .gitignore. **Explain the StackOverflow answer to fix any issues with it**
+
+Creating the base layout with the EJS partials (head, header and footer).
+
+Any pages will just have the content and front-matter
+
+## Adding Front-Matter (should this be a sub-heading in previous section?)
+
+## Creating a Page Template (Layout Chaining)
+
+## Deploying Your First Static Site Generator Website
+
+Netlify
+
+
+
+
