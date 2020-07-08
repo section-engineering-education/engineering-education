@@ -82,7 +82,7 @@ Authenticate
 This provides a secret token which we can share with Github
 Go to the settings tab on the Github repository. Create a new `FIREBASE_TOKEN` secret.
 
-       ![img](secret.png)
+![img](secret.png)
 
 ```yml
 name: Firebase CD
