@@ -35,6 +35,10 @@ Create a package.json file using `npm init -y` and then install Eleventy using `
 To test the install, run `npx @11ty/eleventy` which should return:
 `Processed 0 files in number of seconds (version number)`.
 
+## Serving Your Static Site
+
+To serve your default site using Eleventy. Add .eleventy.js and use passthrough copy for your css/js/image files. Add .gitgnore tip here.
+
 ## Creating Your First EJS Partial
 
 **Note:** If you've followed my [Converting a Static Site to NodeJS tutorial] **link and grab full title** where you learned EJS or prefer to use a different templating language then feel free to skip to the next section, [Creating Your First Layout File]**Anchor link**.
