@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-slug: chrome-extensions-for-dummies
-title: Chrome Extensions for Dummies
+slug: how-to-build-chrome-extension
+title: How to Build Your First Chrome Extension
 description: How to build a chrome extension, extensions are made of different, but cohesive, components. Components can include background scripts, content scripts, an options page, UI elements and various logic files.
 author: ria-thakkar
-date: 2020-07-03T00:00:00-07:00
+date: 2020-07-08T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/chrome-extensions-for-dummies/hero.jpg
+  - url: /engineering-education/how-to-build-chrome-extension/hero.jpg
     alt: chrome extension image example
 ---
 I’ve been using chrome extensions religiously for years. Yet, I never ever had a clue how to make one. I tried for the first time a week ago and it took 6 hours of frustration to build something that, at its core, was just grabbing all the text from a webpage. Part of that was because most of the tutorials I tried to follow were geared for things either too simple or too complex.
@@ -70,15 +70,15 @@ Let’s test out to see if we have made our `manifest.json` correctly.
 
 Navigate to `chrome://extensions`.
 
-![chrome://extensions toolbar](/engineering-education/chrome-extensions-for-dummies/chrome-extension-developer-mode-off.png)
+![chrome://extensions toolbar](/engineering-education/how-to-build-chrome-extension/chrome-extension-developer-mode-off.png)
 
 Tick the developer mode switch and your toolbar will look like this.
 
-![chrome:// developer mode](/engineering-education/chrome-extensions-for-dummies/chrome-extension-developer-mode-on.png)
+![chrome:// developer mode](/engineering-education/how-to-build-chrome-extension/chrome-extension-developer-mode-on.png)
 
 Hit the Load unpacked button and select the folder that we have been working in. If all goes well it will load and it will appear in the chrome extensions toolbar on the upper right portion of your screen.
 
-![The foot is our extension!](/engineering-education/chrome-extensions-for-dummies/chrome-extension-toolbar.png)
+![The foot is our extension!](/engineering-education/how-to-build-chrome-extension/chrome-extension-toolbar.png)
 
 Yay! We did it! Very cool. Now to actually add some functionality into this pretty little button.
 
@@ -154,11 +154,11 @@ document.addEventListener('DOMContentLoaded', function() {
 We use `addEventListener` to make sure the popup is loaded and the button is clicked, before we execute any of our code.
 Follow the steps to load up your extension again, hit update and click on your icon!
 
-![Should look like this!](/engineering-education/chrome-extensions-for-dummies/popup.png)
+![Should look like this!](/engineering-education/how-to-build-chrome-extension/popup.png)
 
 Hit the **Change Text** button and if you did everything correctly an alert should congratulate you on your screen.
 
-![Congratulations!](/engineering-education/chrome-extensions-for-dummies/working-popup.png)
+![Congratulations!](/engineering-education/how-to-build-chrome-extension/working-popup.png)
 
 ### Grabbing Text off the Webpage
 
