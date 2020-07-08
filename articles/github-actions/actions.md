@@ -70,8 +70,9 @@ If there are any errors or build failures, then it shows up in the log in the ac
 ![img](greencheck.png)
 
 ### Continuous Deployment
+
 Once you have valid pull request and when we merge that code into the master branch, we also want to deploy the app to our customers. [Continuous deployment](https://www.atlassian.com/continuous-delivery/continuous-deployment) is about pushing that code out to the customer.
-If your website is hosted on Github, then you can use the `github-pages` action. However, if a third-party provider hosts your app, then they provide an SFTP option to upload the site data. This is fine when we are doing it manually but not so easy when we are using a CD tool. So we have to share a secret token with Github. I will show how to deploy to firebase.
+If your website is hosted on Github, then you can use the `github-pages` action. However, if a third-party provider hosts your app, then they provide an [SFTP](https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server) option to upload the site data. This is fine when we are doing it manually but not so easy when we are using a CD tool. So we have to share a secret token with Github. I will show how to deploy to [firebase](http://firebase.google.com/).
 
     firebase init 
     firebase deploy --only-hosting
@@ -79,7 +80,9 @@ Authenticate
     
     firebase login:ci 
 This provides a secret token which we can share with Github
-Go to settings tab on the github repository. Create a new `FIREBASE_TOKEN` secret.
+Go to the settings tab on the Github repository. Create a new `FIREBASE_TOKEN` secret.
+
+       ![img](secret.png)
 
 ```yml
 name: Firebase CD
@@ -107,7 +110,7 @@ jobs:
 The above action deploys our app to firebase whenever we push changes to the master branch. Above `w9jds/firebase-action@master` is a third party action published on GitHub. 
 
 ## Conclusion
-There are other cool things you can do with GitHub actions like publish to NPM package, we can automatically publish new *versions* of the code to npm. In Github marketplace we see *Actions* and *Apps*, Actions are reusable chunks of code for your own workflows, whereas Apps are fully-managed integrations that dont require any code. The nice thing about apps is that they can be installed with afew clicks and they can be used across multiple repositories. So, when you are automating with Github actions its a good idea to ask yourself if you want a fully built app or build your own workflow. **Check out the actions or apps required for your business in [Github Marketplace](https://github.com/marketplace/)**
+There are other cool things you can do with GitHub actions like publishing to NPM package, we can automatically publish new *versions* of the code to npm. In Github marketplace, we see *Actions* and *Apps*, Actions are reusable chunks of code for your own workflows, whereas Apps are fully-managed integrations that don't require any code. The nice thing about apps is that they can be installed with a few clicks and they can be used across multiple repositories. So, when you are automating with Github actions its a good idea to ask yourself if you want a fully built app or build your own workflow. **Check out the actions or apps required for your business in [Github Marketplace](https://github.com/marketplace/)**
 
 ## References and Resources
 * [Docs](https://docs.github.com/en/actions)
