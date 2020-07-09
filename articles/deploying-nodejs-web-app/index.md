@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: deploying-nodejs-web-app
 title: Deploying Your First NodeJS Web App
-description: Using MongoDB, this article proves that all you need to work with a database is some basic knowledge about the command line and JSON.
+description: It’s an introduction to NodeJS and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
 author: louise-findlay
 date: 2020-07-02T00:00:00-07:00
 topics: []
