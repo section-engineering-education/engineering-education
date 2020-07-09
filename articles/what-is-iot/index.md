@@ -1,11 +1,23 @@
-# What is Internet of Things?
+---
+layout: engineering-education
+status: publish
+published: true
+slug: what-is-iot
+title: What is the Internet of Things (IoT)?
+description:
+author: balkrishna-harode
+date: 2020-07-09T00:00:00-07:00
+excerpt_separator: <!--more-->
+images:
 
-
-
-## Introduction
-
+  - url: /engineering-education/what-is-iot/hero.jpg
+    alt:
+---
 "Automation is about innovation", and one such innovation is what we call the Internet of Things (IoT). IoT is an arrangement of interrelated processing gadgets, mechanical and advanced machines given one-of-a-kind identifiers (UIDs) and the capacity to move information over a system without expecting human-to-human or human-to-PC connection.
-Through IoT, one can easily connect any device with anything, anywhere in the world over the internet. Also termed Internet of Everything and Internet of Humans, IoT is a network between “Things with Things” and “Things with Human”. “Internet of Things (IoT) is a platform where anything can be inspected, supervised, and executed from anywhere over the internet.”
+<!--more-->
+
+### Introductions
+Through IoT, someone can easily connect any device with anything, anywhere in the world over the internet. This has termed the phrase Internet of Everything and Internet of Humans, IoT is a network between “Things with Things” and “Things with Human”. “Internet of Things (IoT) is a platform where anything can be inspected, supervised, and executed from anywhere over the internet.”
 Connecting a simple device (Home or Commercial) to sensors, actuators with microcontrollers (and beyond) can help those connected to the internet have better living standards, active management, and also easier lives with customized applications.
 
 
@@ -14,7 +26,7 @@ Connecting a simple device (Home or Commercial) to sensors, actuators with micro
  ![alt Internet of Things](/engineering-education/articles/what-is-iot/p1.jpg)
 
 
-## History of IOT 
+## History of IOT
 
 -	1970 - The real thought of associated gadgets was proposed.
 
@@ -48,10 +60,10 @@ For instance, in the event that somebody owns a vehicle manufacturing business, 
 
 This gathered data helps an organization to make stratagies in order to be in demand in market by performing data analysis about which parts to load up on, in light of continuous data, which leads to businesses saving time and cash.
 With the knowledge given by cutting edge examinations also comes the ability to make informed and productive decisions. You can also robotize certain undertakings, especially when these are redundant, typical, repetitive or even hazardous.
-How about taking a brief overview of some major excelling areas which implement IoT? Below are major fields which are utilizing IoT technology to enhance living standards - 
+How about taking a brief overview of some major excelling areas which implement IoT? Below are major fields which are utilizing IoT technology to enhance living standards -
 
 
-- ### **Smart home**
+### **Smart home**
 
    - IoT gadgets are a part of home devices, which can incorporate lighting, warming, cooling, media, and security frameworks.  A smart home or computerized home can found controlling brilliant gadgets and machines.
    - For example, utilizing Apple's HomeKit, makers can have their home items constrained by an application in iOS gadgets, for example, the iPhone and the Apple Watch.
@@ -62,20 +74,19 @@ How about taking a brief overview of some major excelling areas which implement 
  ![alt Alexa](/engineering-education/articles/what-is-iot/p2.jpg)
 
 
-- ### **Manufacturing** 
+### **Manufacturing**
 
     - **[Industry 4.0](https://en.wikipedia.org/wiki/Industry_4.0)**, the fourth modern transformation, envelops a mix of conventional assembling and mechanical stages and practices with the most recent keen innovations. This fundamentally centers around the utilization of huge scope machine-to-machine correspondence [(M2M)](https://en.wikipedia.org/wiki/Machine_to_machine) and IoT arrangements to give expanded computerization, improved correspondence, and self-checking, just as smart machines that can investigate and analyze issues without the requirement for human intervention.
 
-- ### **Agriculture**
+### **Agriculture**
    - Agriculture on an average contributes to 30% (estimated) of the economy of any country. Smart farming based on IoT technologies enables growers and farmers to reduce waste and enhance productivity.
-   - IoT smart farming solutions is a system that is built for monitoring the crop field with the help of sensors (light, humidity, temperature, soil moisture, crop health, etc.) and automating the irrigation system. The farmers can monitor the field conditions from anywhere. 
+   - IoT smart farming solutions is a system that is built for monitoring the crop field with the help of sensors (light, humidity, temperature, soil moisture, crop health, etc.) and automating the irrigation system. The farmers can monitor the field conditions from anywhere.
    - For example, if the soil moisture level decreases, the farmer can deploy sensors to start the irrigation. Smart farming is highly efficient when compared with the conventional approach.
 
 
+### Importance and Application
 
-## Importance and Application
-
-Over time, the definition of IoT has evolved, as its application in the real world. Presently, IoT is not only connecting machines and humans but indirectly connecting humans all together with each other (i.e. Smart-watchs, Mobile-Phones etc.). IoT is what we get when we join “Things” which are operated by humans, to the Internet. 
+Over time, the definition of IoT has evolved, so has its application in the real world. Currently, IoT is not only connecting machines and humans but also indirectly connecting humans all over the world with each other (i.e. Smart-watches, Mobile-Phones etc.). IoT is what we get when we join “Things” which are operated by humans, to the Internet.
     Increasing the interaction between the devices and humans by the introduction of Internet technology has clear vision of achieving the goal of automation, increased efficiency, interoperability, increased and quality production and many more goals on the way. Unlike a human being, the machine is not that susceptible to errors and laziness, therefore to have error-free work, sound production, accurate data collection, improved quality with increased quantity, and increased efficiency.
 This has led to the vision of ‘anytime, anywhere, anyway, anything' communications. Practically in true sense. Significant applications of IoT in the present day are:
 
@@ -93,9 +104,7 @@ This has led to the vision of ‘anytime, anywhere, anyway, anything' communicat
 
 An network of smart objects that can auto-organize data, share information and resources depending upon the environment and surroundings. Communication technologies such as Wireless Sensor Networks [(WSN)](https://en.wikipedia.org/wiki/Wireless_sensor_network) and Radiofrequency Identification [(RFID)](https://en.wikipedia.org/wiki/Radio-frequency_identification), are used for sharing of information.
 
-
-
-## Statistics and Market
+### Statistics and Market
 
 The global IoT Platform [market size](https://www.prnewswire.com/news-releases/iot-platform-market-size-to-reach-usd-13-310-billion-by-2026---valuates-reports-301059317.html#:~:text=The%20global%20IoT%20Platform%20market,28.5%20percent%20in%202021%2D2026.) was USD 2.260 Billion in 2019 and is expected to hit USD 13.310 Billion by the end of 2026, with a CAGR of 28.5 percent in 2021-2026.
 
@@ -108,16 +117,10 @@ The global IoT Platform [market size](https://www.prnewswire.com/news-releases/i
  -	93% of undertakings have embraced (or will receive) some type of IoT innovation before the finish of 2019
  -	The joined IoT advertise size in 2021 will be $520 billion
 
-
-
-
-
-## Sources
+### Sources
 [Wikipedia.org](https://en.wikipedia.org/wiki/Internet_of_things) and Balkrishna Harode's paper for [Smart Home](https://www.ijariit.com/manuscript/smart-home-and-security-system-with-intelligent-monitoring/).
 
 
 ## About the Author
 
 <img align="left" width="180" height="250" src="/engineering-education/authors/balkrishna-harode/author.jpg">
-
-Balkrishna Harode is an undergraduate student at the Devi Alhiya University Indore pursuing a degree in Computer Science. Balkrishna is particularly interested in mathematics, embedded systems, web development and algorithms. In his free time, Balkrishna enjoys cooking and gardening.
