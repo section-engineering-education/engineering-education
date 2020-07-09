@@ -25,6 +25,7 @@ Next, enter your domain name (i.e. yourdomain.com) and click Continue. A popup w
 It can take up to 24-48hrs for the record you added to be processed (though is usually around an hour). So, when you click Verify, if it doesn’t work at first, then try again later.
 
 ### Submitting a Sitemap
+![sitemap preview](/engineering-education/google-search-console-introduction/sitemap-preview.png)<br>
 A sitemap is an XML file that details the structure of your website (how the different pages relate to each other) in a way that search engines can understand. Creating and submitting one can help Google discover pages that its crawlers have missed.
 
 Depending on your website setup, you may have built-in tools available for dynamically generating a sitemap. As an alternative, you can generate one using the free tool, [XML Sitemaps](https://www.xml-sitemaps.com). Just submit your website URL and download the XML file it provides. Then upload the file to your website.
@@ -36,6 +37,7 @@ It can take some time for Google to read (index) your sitemap but you can find a
 Remember to update your sitemap when you add or remove any pages on your website or change any URLs.
 
 ### Fixing Mobile Usability Errors
+![mobile friendly pages](/engineering-education/google-search-console-introduction/mobile-friendly-pages.png)<br>
 The mobile usability tool underneath Enhancements assists in creating a more usable mobile-friendly website. Any errors will impact your site’s search rankings.
 
 Common errors are text too small to read, clickable elements too close together, and content wider than screen.
@@ -47,6 +49,7 @@ Increase space between clickable elements by increasing the margins. Try  `a {ma
 To fix content wider than the screen, add  `* {max-width: 100%}`  which prevents elements from being wider than the maximum width of the screen. You may need to add !important to the end to override any max-widths you’ve previously set. This will also sort out any horizontal scrollbar issues.
 
 ### Monitoring Search Traffic to Improve SEO
+![search traffic](/engineering-education/google-search-console-introduction/search-traffic.png)<br>
 In the Performance tab, you can monitor how people have searched for your website. You can select different date ranges to look at and Google Image and Video searches. Click the signal wave icon to see more parameters.
 
 - **Clicks** are when users have visited the page.
@@ -57,6 +60,7 @@ In the Performance tab, you can monitor how people have searched for your websit
 These metrics can help in a variety of ways to boost your site’s SEO. Discovering search terms users use to find your website can help you pick keywords to include in your copy. You should create more content similar to your most popular pages. Make sure to provide an optimized experience for the device that the majority of you users use.
 
 ### How to Redirect Your Site the Right Way (Without Losing Your Search Rankings)
+![change of address tool](/engineering-education/google-search-console-introduction/change-of-address-tool.png)<br>
 If you’ve changed domains, such as from yourdomain.com to newdomain.com or yourdomain.co.uk then you’ll want to redirect users that may still navigate to your old domain. You’ll want to point Google to your new domain so it’ll stop showing your old domain in searches and transfer your search ranking to the new domain. That’s where the Change of Address tool comes in.
 
 The [Change of Address Tool](https://search.google.com/search-console/settings/change-address) informs Google that you’ve changed domain names. You need to add both domains to the Search Console and set up a permanent redirect (301) for it to work.
