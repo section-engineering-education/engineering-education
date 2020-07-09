@@ -14,20 +14,20 @@ images:
   - url: /engineering-education/beginner-guide-to-git/hero.jpg
     alt: Git image example
 ---
-Git is an open-source software that is used as a version control system to track and manage any changes in computer files. The technology is used by almost all the major players in the industry and is something that every software engineer should know. It was created to help in coordinating work among programmers, but it can also be used to track changes in any type of files. Its goals include speed, data integrity, and support for distributed workflows.
+Git is an open-source version control system to track and manage any changes in computer files. Almost all the major players in the industry use Git, and this technology is something that every software engineer should know. Linus Torvalds created it to help in coordinating work among programmers, but it can also be used to track changes in any type of file. Its goals include speed, data integrity, and support for distributed workflows.
 <!--more-->
 
 ### What is Git?
-Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its [initial development](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git). Since its birth in 2005, Git has evolved and matured to be easy to use while retaining its initial qualities. It’s amazingly fast, it’s very efficient with large projects, and it has an incredible branching system for non-linear development.
+Git was created by Linus Torvalds in 2005 for the development of the Linux kernel, with other kernel developers contributing to its [initial development](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git). Since its birth in 2005, Git has evolved and matured to be easy to use while retaining its initial qualities. It is amazingly fast, very efficient with large projects, and it has an incredible branching system for non-linear development.
 
-This guide is intended to help any beginner get started with Git. Using the examples provided below, we will assume that we are starting a project from scratch and want to manage it with Git. We will also look at how we can manage our project with GitHub, a leading software solution built around Git.
+This article aims to help any beginner get started with Git. Using the examples provided below, we will assume that we are starting a project from scratch and want to manage it with Git. We will also look at how we can manage our project with GitHub, a leading software solution built around Git.
 
 ### Why Git?
-Git is an open-source version control distributed system that helps to organize code. It keeps track of every change you make to any working files by taking snapshots of that file. It keeps a record of what is being done, and allows you to revert to specific versions should you ever need to.
+Git is an open-source version control distributed system that helps to organize code. It helps to keep track of every change you make to any working files by taking snapshots of that file. It keeps a record of what you have done and allows you to revert to specific versions you ever need to.
 
-Git runs locally, meaning your files are stored on your computer. You can also use an online host such as GitHub to keep a copy of your code.
+Git runs locally, meaning your files are simultaneously stored locally on your computer. You can also use an online host such as GitHub to keep a copy of your code.
 
-Git makes collaboration easier for developers by helping to coordinate changes and edits by many people. It then takes those changes and merges them into one source. Regardless if you use Git/GitHub to write any code, it's beneficial to keep track of any changes made to files. Working with an online host like GitHub can help teams small and large collaborate more effectively.
+Git makes collaboration easier for developers by helping to coordinate changes and edits by many people. It then takes those changes and merges them into one source. Regardless of whether you use Git/GitHub to write any code, it's beneficial to keep track of any changes made to files. Working with an online host like GitHub can help teams small and large collaborate more effectively.
 
 ### How to Install Git
 
@@ -54,7 +54,7 @@ http://git-scm.com/download/win
 ### Initial Configuration
 The first thing to do is create a repository, aka repo, which means a collection of source code. You can create a repo in Github.
 
-The next step is to clone it, which means download it to our local machine. This will create an empty folder in our directory where we can begin to add files. (Note: if your cloning from an existing repo, all of the files from that repo will be copied to your local machine in the cloning process.)
+The next step is to clone it, which means download it to your local machine. That will create an empty folder in your directory where we can begin to add files.
 
 To clone a repo, use the command: 
 ```bash
@@ -65,15 +65,15 @@ Here's how to execute **git clone** command:
 ![clone](/engineering-education/beginner-guide-to-git/clone.png)
 
 ### Creating files
-We can use the git command to make the source code file in the folder. We can create any type of file by stating its type. Here's how to do it.
+You can use the git command to make the source code file in the folder. We can create a file with any extension by stating its type. Here's how to do it:
 ```bash
 $ touch index.html
 ```
 
-This command would help us to create an index file of HTML type. Likewise, you can create any type of file.
+This command will create an index file of HTML type. Likewise, you can create a file with any extension.
 
-### Checking the status of your Repository
-So now we have some files in our repository. Let's check the current status of our repository. For this, we would use
+### Checking the status of your repository
+So now we have some files in your repository. Let's check the current status of your repository. For this, we would use
 **git status**. This command tells us about the current state of the working directory. It tells you about what staged changes and files that aren't tracked by the Git.
 ```
     $ git status
@@ -84,7 +84,7 @@ Here's how to execute **git status** command:
 
 
 ### Adding some files to the staging area.
-It helps to tell git that you want to add files into Git to track. Here's how to do it:
+It helps to tell git that you want to add files to track. Here's how to do it:
 ```
     $ git add my_file
 ```
@@ -109,17 +109,17 @@ Let's say you have some files that you no longer need. You can delete those file
 This command would delete the particular file.
 
 ### Commit changes
-This command helps you to record the permanent snapshot in history. There are a couple of ways to do it, but the better and the quickest way to do is by using the following command.
+This command helps you to record the permanent snapshot in history. There are few ways to do it, but the best and quickest way to do is by using the following command.
 
 ```
-    $ git commit -m "Any comment"
+    $ git commit -m "Anything you want to write"
 ```
 
 Here's how to execute add and commit:
 
 ![add & commit](/engineering-education/beginner-guide-to-git/add-commit.png)
 
-### Pushing your code in the Cloud
+### Pushing your code in the cloud
 This command helps to push all the local branches to Github. After this, you would be able to see your changes in your Github. This way, you would be able to keep track of all your source code by keeping it safe in the cloud.
 ```
     $ git push
@@ -136,12 +136,12 @@ This command lets you update your local branch, with all the new commits from th
     $ git pull
 ```
 
-Here's how to execute pull:
+Here's how to execute the pull command:
 
 ![pull](/engineering-education/beginner-guide-to-git/pull.png)
 
 ### Conclusion
-Congratulation! Now you have a better understanding around the basics of Git. Now you would be able to work on your projects or in a group in a much more synchronized way.
-There's are more things as well in Git, such as [Branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell#ch03-git-branching) and [Merge](https://git-scm.com/docs/git-merge). But this tutorial helps you get started with Git and GitHub. Even more.
+Congratulations! Now you have a better understanding of the basics of Git. Now you would be able to work on your projects or in a group in a much more synchronized way.
+There is are more things as well in Git, such as [Branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell#ch03-git-branching) and [Merge](https://git-scm.com/docs/git-merge). But this tutorial helps you get started with Git and GitHub. 
 
 **Happy coding!**
