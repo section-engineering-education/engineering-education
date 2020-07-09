@@ -6,8 +6,8 @@ slug: data-visualization-with-d3-js
 title: Data Visualization with D3.js
 description: Data visualization is the graphic representation of data. It involves producing images that communicate relationships among the represented data to viewers of the images, using visual elements like charts and graphs.
 author: rohan-reddy
-date: 2020-07-01T00:00:00-07:00
-topics: []
+date: 2020-07-09T00:00:00-07:00
+topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -29,7 +29,7 @@ Let's dive in!!
 
 ### Selections
 
-```
+```html
 <svg>
 <rect />
 <rect />		// Three Rectangle Elements
@@ -66,7 +66,7 @@ When joining elements to data by key, there are three possible logical outcomes:
 
 In the previous example, we saw that we had to have `n` number of `<rect/>` elements for `n` number of elements of data. Using D3's *enter* and *exit*, we can create new nodes for incoming data and remove nodes that are no longer needed.
 
-```
+```html
 <svg></svg>
 <script>
 var rectWidth = 100;
@@ -97,14 +97,14 @@ We have an empty selection `svg ` to which we are creating a `rect` element and 
 
 If we simply want to ***update*** a DOM element rather than adding new elements, we do this by:
 
-```
+```javascript
 var p = d3.select("body")
   .selectAll("p")
   .data([4, 8, 15, 16, 23, 42])
     .text(function(d) { return d; });
 ```
 **Exit** selections are used when the data is less than the number of DOM elements. For example, if the number of elements in the array is less than the number of `rect` elements in the DOM, then we can perform operations on those excess elements, such as removing them.
-```
+```javascript
 d3.select('#content')
 	.selectAll('div')
 	.data(myData)
@@ -121,17 +121,17 @@ d3.select('#content')
 A transition is an interface for animating changes to the DOM. Instead of applying changes instantaneously, transitions interpolate smoothly over time, from a state-A to the desired state-B.
 
 If we want the result to be immediate then we can do :
-```
+```javascript
 d3.select("body").style("color", "red");
 ```
 
 To, instead, animate the change over time, derive a transition:
-```
+```javascript
 d3.select("body").transition().style("color", "red");
 ```
 
 We will discuss one way of doing transitions in this article.
-```
+```javascript
 var t = d3.transition().duration(1000); // we can declare a constant or function anywhere
 var svg = d3.select('svg');
 	var bars = svg.selectAll('rect') .data(data, d => d);
