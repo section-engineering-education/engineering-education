@@ -24,8 +24,8 @@ If you're into JAMStack, you'd know that robust APIs are extremely important for
 - [Prerequisites and Installation](#prerequisites-and-installation)
 - [Login and Initialize](#login-and-initialize)
 - [Let's write the API](#let's-write-the-API)
-- [Deploy!](#deploy!)
-- [Test much?](#test-much?)
+- [Deploy](#deploy)
+- [Test much](#test-much)
 - [Conclusion](#conclusion)
 
 ### Introduction
@@ -122,7 +122,7 @@ We have to specify the function dependencies in our **package.json**. Now procee
     "express": "^4.17.1"
 ```
 
-### Deploy!
+### Deploy
 
 Let's deploy our function! Enter the command, `firebase deploy` in the terminal.
 
@@ -130,7 +130,7 @@ Let's deploy our function! Enter the command, `firebase deploy` in the terminal.
 
 You have successfully deployed the API! Yay! Now get your API URL from the [Firebase Console](https://console.firebase.google.com).
 
-### Test much?
+### Test much
 
 Now that we have deployed our API, we also need to test whether it behaves properly. For this we can use the amazing API testing tool, [Postman](https://www.postman.com/downloads/) which is a GUI tool for API testing or CURL, which is a CLI utility for sending HTTP requests.
 
