@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 slug: shuffle-a-list-algorithm
-title:  How to Shuffle a List
-description: The Fisher–Yates shuffle is an algorithm for generating a random permutation of a finite sequence—in other words, the algorithm shuffles the sequence. 
+title:  How to Shuffle a List Using the Fisher-Yates Method
+description: In this step-by-step guide, we use the Fisher-Yates algorithm to shuffle a list using JavaScript.
 author: mike-white
 date: 2020-07-08T00:00:00-10:00
-topics: [languages]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
