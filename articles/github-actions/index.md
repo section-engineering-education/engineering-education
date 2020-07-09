@@ -130,6 +130,8 @@ The above action deploys our app to firebase whenever we push changes to the mas
 
 There are several CI tools you can use such as [Jenkins](https://www.jenkins.io/), [Travis CI](https://travis-ci.org/) and [Circle Ci](https://circleci.com/). The main difference between Jenkins and Github actions is Jenkins is a Self-Hosted automations server whereas Github actions is a [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service). Github Actions is free for open source repositories and has a free limit for private repositories. Github Actions integrates CI into the Github ecosystem. Using an external CI like Travis is useful when you want to move your repository to another Git platform without rewriting the entire CI process.
 
+* [Guide for migrating from Jenkins to Github Actions](https://docs.github.com/en/actions/migrating-to-github-actions/migrating-from-jenkins-to-github-actions)
+
 There are other cool things you can do with GitHub actions like publishing to NPM package, we can automatically publish new *versions* of the code to npm. In Github marketplace, we see *Actions* and *Apps*, Actions are reusable chunks of code for your own workflows, whereas Apps are fully-managed integrations that don't require any code. The nice thing about apps is that they can be installed with a few clicks and they can be used across multiple repositories. So, when you are automating with Github actions its a good idea to ask yourself if you want a fully built app or build your own workflow. **Check out the actions or apps required for your business in [Github Marketplace](https://github.com/marketplace/)**.
 
 ## References and Resources
