@@ -94,11 +94,11 @@ print(labels[top_indices[0]], predictions[top_indices[0]])
 
 We can expect sample input and output to be.
 
-![img](doginut.png) ![img](dogoutput.png)
+![img](doginput.png) ![img](dogoutput.png)
 
 ## Conclusion
 
-Machine Learning is a powerful tool which can eliminate redundent tasks by automating them, it was assumed that you need a pwerful computing machine with a GPU to train models. But with the evolution of hardware and optimization of software for low-end computing devices, we can perform complex machine learning tasks on devices such as micro-controllers, mobile phones, smart home device,etc. We see these in our day-to-day applications like Gmail uses TensorFlow Lite for Smart Reply and Auto-Complete. Google Assistent uses it for Natural Language Processing and Understanding. 
+Machine Learning is a powerful tool which can help automate many tasks which are beyond the scope of classical programming, it was assumed that you need a powerful computing machine with a GPU to train models. But with the evolution of hardware and optimization of software for low-end computing devices, we can perform complex machine learning tasks on devices such as micro-controllers, mobile phones, smart home device,etc. We see these in our day-to-day applications like Gmail uses TensorFlow Lite for Smart Reply and Auto-Complete. Google Assistent uses it for Natural Language Processing and Understanding. 
 
 
 ## References 
