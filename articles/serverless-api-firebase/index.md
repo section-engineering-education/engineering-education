@@ -23,7 +23,7 @@ If you're into JAMStack, you'd know that robust APIs are extremely important for
 - [Introduction](#introduction)
 - [Prerequisites and Installation](#prerequisites-and-installation)
 - [Login and Initialize](#login-and-initialize)
-- [Let's write the API](#let's-write-the-API)
+- [Write the API](#write-the-API)
 - [Deploy](#deploy)
 - [Test much](#test-much)
 - [Conclusion](#conclusion)
@@ -75,7 +75,7 @@ Let's get started. First, please install Node from [here](https://nodejs.org/en/
 - Now, our firebase project is ready!
 ![Project Setup](/engineering-education/serverless-api-firebase/project-setup.png)
 
-### Let's write the API
+### Write the API
 Now, let's jump into the programming part.
 
 In your project directory, the **functions/index.js** file is the entry point of your function. That's the file that would be executed always. We have to edit only this file. So let's start editing!
