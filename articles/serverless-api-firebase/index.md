@@ -1,6 +1,24 @@
-# Build a Serverless API using Firebase Functions!
+---
+layout: engineering-education
+status: publish
+published: true
+slug: serverless-api-firebase
+title: Build a Serverless API using Firebase Functions!
+description: This article walks a beginner through creating, writing and deploying a simple RESTful API using the firebase-cli tools onto a publicly hosted link.
+author: saiharsha-balasubramaniam
+date: 2020-07-08T00:00:00-12:00
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
 
-## Table of Contents
+  - url: /engineering-education/serverless-api-firebase/hero.jpg
+    alt: serverless api firebase image
+
+---
+Python. Beautiful, concise, simple are some words that come to mind. [Python](https://www.python.org/) is a high-level, interpreted and dynamic programming language, created by Guido van Rossum in 1991. Python is used everywhere. It is used for general purpose programming, scripting, for the web, artificial intelligence and more. The possibilities are endless.
+<!--more-->
+
+### Table of Contents
 
 - [Introduction](#introduction)
 - [Prerequisites and Installation](#prerequisites-and-installation)
@@ -30,37 +48,34 @@ Sounds amazing, right? Let's build a basic serverless API and deploy it through 
 
 Let's get started. First, please install Node from [here](https://nodejs.org/en/)
 
-- Now, once you're done installing, let's initialize our project. 
-- Create a new directory for your project. 
-- Open up a terminal the project directory and type, ```npm init```
+- Now, once you're done installing, let's initialize our project.
+- Create a new directory for your project.
+- Open up a terminal the project directory and type, `npm init`
 ![Node Initialization](/engineering-education/serverless-api-firebase/npm-setup.png)
 - For now, accept the default options and let the project be initialized.
-- Install firebase by typing, ```npm install -g firebase-tools```
+- Install firebase by typing, `npm install -g firebase-tools`
 - Awesome!
 
 ### Login and Initialize
 
 #### Login and Validate
-
-- Login to Firebase by entering this command, ```firebase login```
-- It would open a window in the browser. You can login there.
+- Login to Firebase by entering this command, `firebase login`
+- It would open a window in the browser. You can log in there.
 - Return to the terminal once you've logged in.
 
 #### Initialize
-
 - Let's initialize a project in firebase.
-- Type, ```firebase init```
+- Type, `firebase init`
 ![Firebase Initialization](/engineering-education/serverless-api-firebase/firebase-init.png)
 - When it asks for what CLI features are needed, just choose Firebase Functions for now.
 ![Firebase Setup](/engineering-education/serverless-api-firebase/functions-setup.png)
-- It would ask to connect to a project, create a new one and drop in a name of your choice.
-- Choose **```JavaScript```** as the language for functions.
-- Choose to not use ```ESLint``` as we don't really need it now.
+- It would ask to connect to a project, create a new one, and drop in a name of your choice.
+- Choose **`JavaScript`** as the language for functions.
+- Choose to not use `ESLint` as we don't really need it now.
 - Now, our firebase project is ready!
 ![Project Setup](/engineering-education/serverless-api-firebase/project-setup.png)
 
 ### Let's write the API
-
 Now, let's jump into the programming part.
 
 In your project directory, the **functions/index.js** file is the entry point of your function. That's the file that would be executed always. We have to edit only this file. So let's start editing!
@@ -92,8 +107,8 @@ exports.app = functions.https.onRequest(app)
 **A brief explanation of this code**
 - **Lines 1-4** -> We import the needed packages
 - **Lines 6-9** -> We initialize express, and set options for CORS handling.
-- **Lines 11-14** -> This is our main api route, **```/hello```**. If we send a request to /hello, we'll get a server response that says, **"hello!"**
-- **Lines 16-19** -> This is our main api route, **```/world```**. If we send a request to /world, we'll get a server response that says, **"world!"**
+- **Lines 11-14** -> This is our main api route, **`/hello`**. If we send a request to /hello, we'll get a server response that says, **"hello!"**
+- **Lines 16-19** -> This is our main api route, **`/world`**. If we send a request to /world, we'll get a server response that says, **"world!"**
 - **Line 21** -> This line is a Firebase Functions **method** that says that the function would be **triggered** if a HTTP Request is sent to the function URL.
 
 Thus we have a very basic API with two routes. Let's go on and deploy it!
@@ -109,7 +124,7 @@ We have to specify the function dependencies in our **package.json**. Now procee
 
 ### Deploy!
 
-Let's deploy our function! Enter the command, ```firebase deploy``` in the terminal.
+Let's deploy our function! Enter the command, `firebase deploy` in the terminal.
 
 ![Firebase, Deploy](/engineering-education/serverless-api-firebase/deploy.png)
 
@@ -127,9 +142,7 @@ You'd get a response that looks something like this.
 
 The API works really well. You could also try to send a request to "/hello" and check it out.
 
-**Note:** There's also a way by which you can deploy your API locally and test it before deploying it to the web by running the command, ```firebase emulators:start```. Check these docs for more info -> [Link](https://firebase.google.com/docs/functions/get-started)
+**Note:** There's also a way by which you can deploy your API locally and test it before deploying it to the web by running the command, `firebase emulators:start`. Check these docs for more info -> [Link](https://firebase.google.com/docs/functions/get-started)
 
 ### Conclusion
-
-We have successfully written and deployed a super simple API onto Firebase!
-We could also make use of Firebase's Firestore and other features and integrate it into functions. We can create powerful APIs and deploy them with the command or a click of a button!
+We have successfully written and deployed a super simple API onto Firebase! We could also make use of Firebase’s Firestore and other features and integrate them into functions. We can create powerful APIs and deploy them with the command or a click of a button!
