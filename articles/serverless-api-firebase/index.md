@@ -78,7 +78,7 @@ Now, let's jump into the programming part.
 
 In your project directory, the **`functions/index.js`** file is the entry point of your function. That's the file that will always be executed. We have to edit only this file. So let's start editing!
 
-```javascript {linenos=table,linenostart=1}
+```javascript {linenos=inline,linenostart=1}
 const functions = require('firebase-functions');
 const express = require('express')
 const bodyParser = require('body-parser')
