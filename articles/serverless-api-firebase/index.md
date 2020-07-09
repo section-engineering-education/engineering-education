@@ -23,7 +23,7 @@ If you're into JAMStack, you'd know that robust APIs are extremely important for
 - [Introduction](#introduction)
 - [Prerequisites and Installation](#prerequisites-and-installation)
 - [Login and Initialize](#login-and-initialize)
-- [Write the API](#write-the-API)
+- [Write the API](#write-the-api)
 - [Deploy](#deploy)
 - [Test much](#test-much)
 - [Conclusion](#conclusion)
