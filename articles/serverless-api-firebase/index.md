@@ -15,7 +15,7 @@ images:
     alt: serverless api firebase image
 
 ---
-Python. Beautiful, concise, simple are some words that come to mind. [Python](https://www.python.org/) is a high-level, interpreted and dynamic programming language, created by Guido van Rossum in 1991. Python is used everywhere. It is used for general purpose programming, scripting, for the web, artificial intelligence and more. The possibilities are endless.
+If you're into JAMStack, you'd know that robust APIs are extremely important for a better developer experience!
 <!--more-->
 
 ### Table of Contents
