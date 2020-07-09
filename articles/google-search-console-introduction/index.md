@@ -6,7 +6,7 @@ slug: google-search-console-introduction
 title: Google Search Console - An Introduction
 description: This guide to Google Search Console will teach you how to add a site (called a property), submit a sitemap, and find and fix any errors that the Google crawlers may come across.
 author: louise-findlay
-date: 2020-07-07T00:00:00-10:00
+date: 2020-07-09T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
