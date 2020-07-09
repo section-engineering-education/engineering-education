@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/github-actions/hero.jpg
     alt: shell scripting example image
 ---
-[Github Actions](https://github.com/features/actions) enables you to create custom and automated software development life cycle ([SDLC](https://en.wikipedia.org/wiki/Systems_development_life_cycle)) workflows directly in your [GitHub repository](https://github.com/github).
+[Github Actions](https://github.com/features/actions) enables you to create custom and automated software development workflows (including CI/CD) directly in your [GitHub repository](https://github.com/github).
 Suppose we have a GitHub repository, there are different kinds of events that can happen to that repo like *starring*, *pull-request* or *create an issue*; these events can be used to trigger an automated workflow. GitHub can spin up one or more containers for us in the cloud and execute given instructions to do something useful.
 <!--more-->
 
@@ -88,7 +88,7 @@ If there are any errors or build failures, then it shows up in the log in the ac
 
 ### Continuous Deployment
 Once you have a valid pull request and when we merge that code into the master branch, we also want to deploy the app to our customers. [Continuous deployment](https://www.atlassian.com/continuous-delivery/continuous-deployment) is about pushing that code out to the customer.
-If your website is hosted on Github, then you can use the `github-pages` action. However, if a third-party provider hosts your app, then they provide an [SFTP](https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server) option to upload the site data. This is fine when we are doing it manually but not so easy when we are using a CD tool. We will have to share a secret token with GitHub. I will show how to deploy to [firebase](http://firebase.google.com/).
+If your website is hosted on Github, then you can use the `github-pages` action. However, if a third-party provider hosts your app, then they provide options like [SFTP](https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server), [FTP](https://github.com/marketplace/actions/ftp-deploy), [SSH](https://github.com/marketplace/actions/ssh-deploy) . This is fine when we are doing it manually but not so easy when we are using a CD tool. We will have to share a secret token with GitHub for CD process. We will see how to deploy to [firebase](http://firebase.google.com/).
 
     firebase init
     firebase deploy --only-hosting
@@ -127,7 +127,10 @@ jobs:
 The above action deploys our app to firebase whenever we push changes to the master branch. Above `w9jds/firebase-action@master` is a third party action published on GitHub.
 
 ### Conclusion
-There are other cool things you can do with GitHub actions like publishing to NPM package, we can automatically publish new *versions* of the code to npm. In Github marketplace, we see *Actions* and *Apps*, Actions are reusable chunks of code for your own workflows, whereas Apps are fully-managed integrations that don't require any code. The nice thing about apps is that they can be installed with a few clicks and they can be used across multiple repositories. So, when you are automating with Github actions its a good idea to ask yourself if you want a fully built app or build your own workflow. **Check out the actions or apps required for your business in [Github Marketplace](https://github.com/marketplace/)**
+
+There are several CI tools you can use such as [Jenkins](https://www.jenkins.io/), [Travis CI](https://travis-ci.org/) and [Circle Ci](https://circleci.com/). The main difference between Jenkins and Github actions is Jenkins is a Self-Hosted automations server whereas Github actions is a [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service). Github Actions is free for open source repositories and has a free limit for private repositories. Github Actions integrates CI into the Github ecosystem. Using an external CI like Travis is useful when you want to move your repository to another Git platform without rewriting the entire CI process.
+
+There are other cool things you can do with GitHub actions like publishing to NPM package, we can automatically publish new *versions* of the code to npm. In Github marketplace, we see *Actions* and *Apps*, Actions are reusable chunks of code for your own workflows, whereas Apps are fully-managed integrations that don't require any code. The nice thing about apps is that they can be installed with a few clicks and they can be used across multiple repositories. So, when you are automating with Github actions its a good idea to ask yourself if you want a fully built app or build your own workflow. **Check out the actions or apps required for your business in [Github Marketplace](https://github.com/marketplace/)**.
 
 ## References and Resources
 * [GitHub Docs](https://docs.github.com/en/actions)
