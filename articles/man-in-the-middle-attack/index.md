@@ -60,7 +60,7 @@ On a typical connection, the user connects to the website server which delivers 
 - [SSL Eye](https://www.digi77.com/ssl-eye-prism-protection/) is a free software program which determines the SSL credentials of every site you connect.
 - [Perspective](https://perspectives-project.org/) is a browser plugin that does that keeps notes on which domain names are issued by which Certificate Authorities'(CA) (eg. Google,etc.) and many other parameters related to the certificates, and will alarm the user if either the CA changes OR if the public key in the cert changes.
 
-### Some Famous News about Man-in-the-Middle attacks
+### Some Famous Examples about Man-in-the-Middle attacks
 - The [US National Security Agency posing as Google](https://www.cnet.com/news/nsa-disguised-itself-as-google-to-spy-say-reports/) revealed in 2013 when Edward Snowden leaked NSA documents to the public. Using its ability to intercept traffic and spoof SSL certificates, the NSA was able to keep tabs on anyone's Google searches.
 - How hackers were able to steal £333,000 (about $500,000) from [Paul and Ann Lupton](https://www.telegraph.co.uk/finance/personalfinance/borrowing/mortgages/11605010/Fraudsters-hacked-emails-to-my-solicitor-and-stole-340000-from-my-property-sale.html).
 - [Comcast](https://www.infoworld.com/article/2925839/code-injection-new-low-isps.html) caught injecting JavaScript into its web traffic to show its own advertisements in place of those hosted by third-party sites.
