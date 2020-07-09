@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/man-in-the-middle-attack/hero.jpg
     alt: man in the middle example image
 ---
-Man-in-the-middle attacks happen at different levels and in different forms. But, its basic concept requires three key players: the victim, the entity which the victim is trying to contact, and the “man in the middle". The victim can be any user trying to access a website or a web application (the entity).
+Man-in-the-middle(MitM) attacks happen at different levels and in different forms. But, its basic concept requires three key players: the victim, the entity which the victim is trying to contact, and the “man in the middle". The victim can be any user trying to access a website or a web application (the entity).
 <!--more-->
 
 On a typical connection, the user connects to the website server which delivers the website. The “man in the middle” inserts itself within the connection, between the user and the website server, attempting to mimic the website and pretend that normal communication is happening with the user. However, the “man in the middle” snoops in the conversation and gathers important information, allowing the hacker to collect sensitive information such as login details, credit card numbers, and other data.
@@ -28,14 +28,14 @@ On a typical connection, the user connects to the website server which delivers 
 #### Decryption
 - [HTTPS Spoofing](https://www.thewindowsclub.com/https-security-spoofing-man-in-the-middle/) - The attacker can send an SSL certificate containing the digital thumbprint of the user obtained from a compromised application. After that, the browser verifies it and approves, thus granting access to the attacker. The attacker fools your browser into believing it’s visiting a trusted website when it’s not. By redirecting your browser to an unsecured website, the attacker can check your interactions with that website and steal personal information you may be sharing.
 - [SSL Hijacking](http://techgenix.com/Understanding-Man-in-the-Middle-Attacks-ARP-Part4/) - An attacker passes forged authentication keys to both the user and application during a TCP handshake. This sets up what appears to be a secure connection when, in fact, the man in the middle controls the entire session.
-- [SSL Stripping](http://techgenix.com/Understanding-Man-in-the-Middle-Attacks-ARP-Part4/) - It minimizes an HTTPS association with HTTP by intercepting the TLS authentication sent from the application to the client. The attacker sends a decoded form of the application's site to the client while maintaining the anchored session with the application. In the meantime, the client's entire session is open to the attacker.
+- [SSL Stripping](http://techgenix.com/Understanding-Man-in-the-Middle-Attacks-ARP-Part4/) - It downgrades an HTTPS connection to HTTP by intercepting the TLS authentication sent from the application to the client. The attacker transfers an unencrypted form of the application's site to the client while maintaining the secure session with the application. In the meantime, the client's entire session is open to the attacker.
 
 ### Types of Man-in-the-Middle Attacks
 - [Wi-Fi Eavesdropping](https://doubleoctopus.com/security-wiki/threats-and-tools/wi-fi-eavesdropping/) - Attackers set up Wi-Fi connections with very legitimate-sounding names, using similar names to a business nearby or evil twin tactics (when hackers mimic trusted public WiFi connections in the area). It will trick you into thinking that it is the same network that you have used in the past. Once a user connects to the attacker’s Wi-Fi, he/she will be able to watch the user’s online activity and intercept important information, such as login credentials and payment information.
 - [Email Hijacking](https://doubleoctopus.com/security-wiki/threats-and-tools/email-hijacking/) - Attackers sometimes target email accounts of banks and other financial institutions. Once they gain access, they can check transactions between the institution and its customers. After that, they can spoof the institutions’s email address and send their own instructions to customers. This fools the customers into following the attacker’s instructions rather than the legitimate institution.
 - [Session Hijacking](https://owasp.org/www-community/attacks/Session_hijacking_attack) - Many websites store a “session browser cookie” on the user’s machine. This cookie is invalidated when the user logs off. However, while the session is active, the cookie provides identity, access, and tracking information. A Session Hijack occurs when an attacker steals a session cookie. This can happen if the user’s machine is infected with malware or browser hijackers. It can also happen when an attacker uses a cross-site scripting (XSS) attack – where the attacker injects malicious code into a frequently-used website.
 
-### How to prevent Man-in-the-Middle attacks?
+### How to mitigate Man-in-the-Middle attacks?
 - Make sure that the websites you visit have HTTPS in front of the URL.
 - Before clicking on emails, check the sender of the email.
 - If you’re a website admin, you should implement HSTS.
@@ -43,8 +43,8 @@ On a typical connection, the user connects to the website server which delivers 
 - DO NOT make a purchase or send sensitive data on a public Wi-Fi network. If doing so, be sure to use secure VPN.
 - If your website is using SSL, make sure you have disabled insecure SSL/TLS protocols. You should only have enabled TLS 1.1 and TLS 1.2
 - Don’t click on suspicious links or emails.
-- Avoid installing unnecessary software or plugins, especially those that offer something for free. This reduces the likelihood that you install something that can install a MitM attack.
-- Keep your system protected at all times.
+- Avoid installing unnecessary software or plugins, especially those that offer something for free. This reduces the likelihood that you install something that can install a MitM.
+- Keep the firewall active.
 - Pay attention to browser notifications reporting a website as unsecured.
 - Always use the latest version of your favorite web browser and keep your operating system up to date with updates.
 - Use more methods for secure login, if the website operator offers the service – for example, multi-factor authentication (MFA) through token one-time passwords via SMS or smartphone app.
@@ -66,3 +66,4 @@ On a typical connection, the user connects to the website server which delivers 
 - [Comcast](https://www.infoworld.com/article/2925839/code-injection-new-low-isps.html) caught injecting JavaScript into its web traffic to show its own advertisements in place of those hosted by third-party sites.
 - [Superfish](https://www.techrepublic.com/article/superfish-adware-weakens-security-and-injects-ads-on-some-lenovo-laptops/), an adware program, found to be scanning SSL traffic and installing certificates that allowed it to intercept and redirect secure traffic.
 - A major [flaw in banking apps on Android](https://www.zdnet.com/article/man-in-the-middle-flaw-left-smartphone-banking-apps-vulnerable/) smartphones opened up dozens of apps to MITM attacks.
+- [Firesheep Extension](https://techcrunch.com/2010/10/24/firesheep-in-wolves-clothing-app-lets-you-hack-into-twitter-facebook-accounts-easily/) Lets You Hack Into Twitter, Facebook Accounts Easily
