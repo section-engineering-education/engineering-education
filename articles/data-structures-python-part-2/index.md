@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 slug: data-structures-python-part-2
-title: Data Structures in Python, Part 2
+title: List, Data Structures in Python
 description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
 author: saiharsha-balasubramaniam
 date: 2020-07-03T00:00:00-12:00
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/data-structures-python-part-2/hero.jpg
-    alt: python data structures
+    alt: list, python data structures
 
 ---
 Python Lists are amazing, with extremely powerful features that cut down the lines of code and the time taken to write the code. Let us start looking into various list creation, updating, and deletion and other powerful list methods. Let us resume this series with the most fundamental and powerful Data Structure in Python, the list which is similar to arrays.
