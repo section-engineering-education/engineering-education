@@ -1,4 +1,4 @@
-Most applications have an authentication system or a way of verifying their users. Some make use of APIs while others use other services like OAuth2 etc. Here, I will show you how to make an authentication API that will be used to verify users in a database (MongoDB) and return a JSON web token that will be used when making requests on the same server.
+Most applications have an authentication system or a way of verifying their users. Some make use of APIs while others use other services like OAuth2 etc. Here, I will show you how to make an authentication API that will be used to verify users in a database (MongoDB) and return a JSON web token.
 
 ## Prerequisites
 * [Express.js](https://expressjs.com/) : We will be using this framework to make Nodejs servers and produce APIs
@@ -12,7 +12,7 @@ To set up our work environment, run the following commands in the terminal while
 
 ``` npm i express mongoose ``` : to add express and mongoose to your project.
 
-``` npm i bcrypt jsonwebtoken nodemon ```: we have thre new npm packagaes here:
+``` npm i bcrypt jsonwebtoken nodemon ```: we have three new npm packagaes here:
 
 - **bcrypt** : this will be used to hash our passwords as we cannot save them directly. For security purposes.
 - **jsonwebtoken** : it will create and decode our JSON web tokens.
@@ -43,15 +43,15 @@ app.listen(2400, () => {console.log("Server started: 2400")})
 
 We first import the express and mongoose modules. Then we initialise the app as an express application using the express() method. 
 
-``app.use(express.json())`` makes sure the server can receive json in its requests.
+``app.use(express.json())`` makes sure the server can receive json as a request body.
 
-Using mongoose we connect the server to mongoDB using a uri. Then we listen to the connection with the database.
+Using mongoose we connect the server to mongoDB using the `mongodb://` uri. Then we listen to the connection with the database.
 
 The server then listens to port number 2400 for any incoming requests. Once you run  ```nodemon``` you will have a result similar to the one below.
 
 ![nodemon](/engineering-education/node-authentication-api/nodemon.png)
 
-Next we can create a user schema/model to define how our user objects will be in the database. So go ahead and create a folder known as models and within it a file called user.js and add the code below.
+Next we can create a user schema/model to define how our user objects will be in the database. So go ahead and create a folder known as models and within it, a file called user.js and add the code below.
 
 ```javascript
 const mongoose = require('mongoose')
@@ -118,7 +118,7 @@ Next we move to the login route. In this route, we look for the user in the data
 
 ![login](/engineering-education/node-authentication-api/login.png)
 
-In the login route, we first look for the record that matches the email. If there is no record, the method returns undefined and we handle the error using a 404 error. Then we proceed to comparing the two passwords and if they match, then we send a success response containing the token. 
+In the login route, we first look for the record that matches the email. If there is no record, the method returns undefined and we handle the error using a 404 code. Then we proceed to comparing the two passwords and if they match, then we send a success response containing the token. 
 
 We can add a middleware to check and verify our JSON web token. First, we create a file `middlewares.js` in the project's root directory. Then we add the following code. 
 
@@ -139,8 +139,8 @@ exports.verify = (req, res, next) => {
 }
 ```
 
-Here we export a function known as verify which checks for the availability of the token in the request. Then it decodes it and we add a value known as user in the request so that we can use it later in search queries and manipulation. We import this module in our auth.js file for us to access the exported methods. We use this verify method as a middleware in our request. It is executed before the rest of the request block and with this we can add it to other requests to verify the JSON web token. 
+Here we export a function known as `verify` which checks for the availability of the token in the request. Then it decodes it and we add a value known as user in the request so that we can use it later in search queries or manipulation. We import this module in our `auth.js` file for us to access the exported methods. We use this verify method as a middleware in our request. It is executed before the rest of the request block and with this we can add it to other requests to verify the JSON web token. 
 
 ![jwt-test](/engineering-education/node-authentication-api/jwt-test.png)
 
-And that's it. Congratulations on your first Authentication.You can use it to authenticate tokens and provide a basic authentication system. In my next tutorial we will pass through environment variables and deploying an application like this to Heroku. 
+And that's it. Congratulations on your first Authentication.You can use it to authenticate tokens and provide a basic authentication system. You can get the full code on [Github](https://github.com/LinusMuema/node-authentication-api). In my next tutorial we will pass through environment variables and deploying an application like this to Heroku. 
