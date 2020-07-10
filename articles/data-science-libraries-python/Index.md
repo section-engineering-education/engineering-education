@@ -3,7 +3,7 @@ Before Jumping directly to the data science Libraries. If you are a newbie then 
 
 ## Data Science
 
-Data science is a multidisciplinary field focused on finding actionable insights from large sets of raw and structured data. The field tries to find answers to the things we don’t know . Data science experts use several different techniques to get answers, incorporating computer science, predictive analytics, statistics, and machine learning to parse through massive datasets to establish solutions to problems that haven’t been thought of yet.
+Data science is a multidisciplinary field focused on finding actionable insights from large sets of raw and structured data. The field tries to find answers to the things we don’t know. Data science experts use several different techniques to get answers, incorporating computer science, predictive analytics, statistics, and machine learning to parse through massive datasets to establish solutions to problems that haven’t been thought of yet.
 
 
 ## Why python is popular in Data Science
@@ -11,7 +11,7 @@ Python provides with all the necessary tools to carry out this process with dedi
 
 Here we will be talking about  Numpy, Scipy, Matplotlib and Pandas
 
-## Numpy
+## [Numpy](https://numpy.org/)
 
 It is the foundation library for most of the scientific computing in Python, and several other libraries are dependent on NumPy arrays as their basic inputs and outputs. It also provides routines that allow developers to perform advanced mathematical and statistical functions on multidimensional arrays and matrices with very few lines of code. The core functionality of NumPy is its ‘ndarray’, or n-dimensional array data structure. These arrays are typed and must all the elements of the array to be of the same type.
 
@@ -47,11 +47,11 @@ print(np.dot(x, y))
  [71 87]]
  ```
 
-## Scipy
+## [Scipy](https://www.scipy.org/)
 Scipy is a python library that is useful in solving many mathematical equations and algorithms. It is designed on the top of Numpy library that gives more extension of finding scientific mathematical formulae like Matrix Rank, Inverse, polynomial equations, LU Decomposition, etc. Using its high-level functions will significantly reduce the complexity of the code and helps in better analyzing the data. It has many user-friendly, efficient and easy-to-use functions that help to solve problems like numerical integration, interpolation, optimization, linear algebra and statistics.
 
 ```python 
-# Python script using Scipy for calculating determinant
+# Python script using Scipy for calculating the determinant
   
 # import numpy library 
 import numpy as np 
@@ -69,7 +69,7 @@ linalg.det(A)
 ```
 
 
-## Matplotlib  
+## [Matplotlib](https://matplotlib.org/)
 Matpoltlib is a very popular Python library for data visualization. It particularly comes in handy when a programmer wants to visualize the patterns in the data. It is a 2D plotting library used for creating 2D graphs and plots. A module named pyplot makes it easy for programmers for plotting as it provides features to control line styles, font properties, formatting axes, etc. It provides various kinds of graphs and plots for data visualization, viz., histogram, error charts, bar charts, etc,
 
 ```python
@@ -92,9 +92,9 @@ plt.legend()
 plt.show()
 ```
 *Output* </br>
-![Alt](/matplotlib.png "linear plot")
+![Alt](matplotlib.png "linear plot")
 
-## Pandas
+## [Pandas](https://pandas.pydata.org/)
 Pandas is a popular Python library for data analysis.  It is developed specifically for data extraction and preparation. It provides high-level data structures and a wide variety of tools for data analysis. It is built on the Numpy package and its key data structure is called the DataFrame. DataFrames allow you to store and manipulate tabular data in rows of observations and columns of variables. It provides many inbuilt methods for groping, combining and filtering data.
 
 ```python
@@ -121,8 +121,13 @@ print(data_table)
 3         China    Beijing   9.597     1357.00
 4  South Africa   Pretoria   1.221       52.98
 ``` 
- 
- 
- 
- 
 
+ There are many libraries in python for data science which is not covered in this article I will provide some of there link in the additional resourses.
+ 
+## Additional Resources
+- [Tensorflow](https://www.tensorflow.org/)
+- [Scikit-learn](https://scikit-learn.org/stable/index.html)
+- [Keras](https://keras.io/)
+- [PyTorch](https://pytorch.org/)
+
+ 
