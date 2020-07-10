@@ -6,7 +6,7 @@ slug: the-knapsack-problem
 title: Breaking Down The Knapsack Problem
 description: In this article, we will discuss two approaches to the Knapsack Problem, including a pseudo-polynomial time solution using dynamic programming and different polynomial time approximations.
 author: ian-jorquera
-date: 2020-07-06T00:00:00-07:00
+date: 2020-07-10T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->
 images:
