@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 slug: data-structures-python-part-3
-title: Data Structures in Python - Part 3
+title: Stack, Data Structures in Python
 description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python and using stack.
 author: saiharsha-balasubramaniam
 date: 2020-07-04T00:00:00-12:00
