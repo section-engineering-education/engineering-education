@@ -33,11 +33,29 @@ The first step is to install Eleventy which will be done through the package man
 Create a package.json file using `npm init -y` and then install Eleventy using `npm install --save-dev @11ty/eleventy`.
 
 To test the install, run `npx @11ty/eleventy` which should return:
-`Processed 0 files in number of seconds (version number)`.
+`Processed X files in number of seconds (version number)`.
 
 ## Serving Your Static Site
 
-To serve your default site using Eleventy. Add .eleventy.js and use passthrough copy for your css/js/image files. Add .gitgnore tip here.
+To serve your current site using Eleventy, you'll have to create a config file and add some settings to it which will tell Eleventy how to handle your images, CSS and JavaScript.
+
+In the root folder of your site, create a JS file called .eleventy.js and include the following:
+
+```js
+module.exports = function (eleventyConfig) {
+    eleventyConfig.addPassthroughCopy('img');
+    eleventyConfig.addPassthroughCopy('css');
+    eleventyConfig.addPassthroughCopy('js');
+    return {
+        passthroughFileCopy: true
+    };
+};
+```
+This will tell Eleventy when it builds your website to just copy the img, css and js folders across (which is called passthrough copy) so you can link them to them in your code.
+
+Now run `npx @11ty/eleventy` and it should have built your website and output the result to the _site folder.
+
+**Tip:** If you're using the version control software, Git **link to a section article on Git** manage your code then it would be a good idea to add the _site folder to your .gitignore file. This will stop you commiting your _site folder to Git which prevents the constant uncommitted changes warning. 
 
 ## Creating Your First EJS Partial
 
