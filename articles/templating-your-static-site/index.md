@@ -123,11 +123,19 @@ Then, add the following layout front-matter at the beginning:
 layout: _base-layout.ejs
 ---
 ```
-The three dashes define the start and the end of the front-matter.
+The three dashes define the start and the end of the front-matter. 
 
-Any pages will just have the content and front-matter
+Run `npx @11ty/eleventy --serve` in the terminal to start a local web-server for your site that will reload on changes. 
+
+Go to `http://localhost:8080/nameofhtmlfile` to view the page. It should display the head, header and footer as well as the content of the page.
+
+Congratulations, you've successfully converted your first static HTML page to use an EJS Eleventy layout file.
 
 ## Creating a Page Template (Layout Chaining)
+
+You've just created your basic layout containing the elements present on every page but what if you have a custom layout for only a select number of pages such as for products? This is where layout chaining comes in.
+
+Layout chaining is how you can combine multiple layout files. You create a secondary (or as many layers as you want) layout file which uses the base layout in the exact same way as you linked it to a HTML page.
 
 ## Deploying Your First Static Site Generator Website
 
