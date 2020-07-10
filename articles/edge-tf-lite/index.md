@@ -23,10 +23,14 @@ it's needed. Edge devices include [IoT devices](https://en.wikipedia.org/wiki/In
 
 ![img](/engineering-education/edge-tf-lite/traditional.png)
 
+Image Source: [Udacity](https://www.udacity.com/)
+
 The above diagram shows the traditional flow of data in a machine learning system. A device collects information from the environment, which is sent via a network connection
 to a back-end server that performs inference. The server sends some data back to the device if necessary.
 
 ![img](/engineering-education/edge-tf-lite/edge.png)
+
+Image Source: [Udacity](https://www.udacity.com/)
 
 But we can perform inference on the device itself, we get to skip a bunch of steps. **There are huge advantages to this**.
 
@@ -34,13 +38,12 @@ But we can perform inference on the device itself, we get to skip a bunch of ste
 for remote places with no proper internet.
 * **Latency**. Sending data to a server involves a round-trip delay which gets in the way when working with real-time data. This is no longer an issue when our model
 is at the edge. When inference is super fast we can solve high-performance actions like real-time object tracking for a robot.
-* **Privacy and Security**. When data stays on device users benefit from increased privacy and security since personal information never leaves their devices. This
-benefits privacy-sensitive applications like webcams and health-care data.
+* **Privacy and Security**. When data stays on device users benefit from increased privacy and security since personal information never leaves their devices. This benefits privacy-sensitive applications like security webcams and health-care data.
 
 ### RaspberryPi + TensorFlow Lite = Awesome Things!!
 
 The [Raspberry Pi](https://www.raspberrypi.org/) (R Pi) is a low cost, very small computer that runs a linux-based operating system called [Raspbian or Raspberry Pi OS](https://www.raspberrypi.org/downloads/)
-. It's often used for building prototype devices since it has fairly typicaly hardware specifications and it's easy to connect to sensors and peripherals like cameras.
+. It's often used for building prototype devices since it has fairly typical hardware specifications and it's easy to connect to sensors and peripherals like cameras.
 [TensorFlow](https://www.tensorflow.org/) is a popular open-source machine learning framework, which is used for a variety of tasks. [TensorFlow Lite](https://www.tensorflow.org/lite/) is a lightweight library
 for deploying models on mobile and embedded devices. It is a lighter, less-featured deep learning framework for on-device inference.  
 
@@ -71,6 +74,8 @@ An image classification model takes an image file and predicts what the image re
 `image-classification.py`
 
 ![img](/engineering-education/edge-tf-lite/steps.png)
+
+Image Source: [TensorFlow.org](https://www.tensorflow.org)
 
 
 ```python
