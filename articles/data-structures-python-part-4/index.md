@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 slug: data-structures-python-part-4
-title: Data Structures in Python - Part 4
+title: Queue, Data Structures in Python
 description: An overview of data structures in this article, and move on to learn about every data structure, in-depth article about implementing queues in Python.
 author: saiharsha-balasubramaniam
 date: 2020-07-07T00:00:00-12:00
