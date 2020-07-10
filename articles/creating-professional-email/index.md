@@ -28,9 +28,9 @@ While the choice tends to be which ecosystem you use, do you prefer Google's sui
 
 The easiest pricing structure to understand is GSuite which can be paid either monthly or annually. They have three plans: basic, business, and enterprise. Basic is £4.60 a month, business is £9.20 a month and the enterprise is £20 a month.
 
-The basic plan is great if you just want a custom email address but if you want more cloud storage then the business is the plan to go for. The business plan offers unlimited cloud storage to over five users (though this restriction has not been enforced) as an upgrade to the 30GB in the basic plan. Enterprise has many security features that would suit a business that needs to restrict access to sensitive documents.
+The basic plan is great if you want a custom email address but if you want more cloud storage then you may want to consider the business plan. The business plan offers unlimited cloud storage to over five users (though this restriction has not been enforced) as an upgrade to the 30GB in the basic plan. Enterprise has many security features that would suit a business that needs to restrict access to sensitive documents.
 
-Office365 however, has four business plans, basic, standard, premium, and apps though only three (basic, standard, and premium) include business email. Basic is £3.80 a month, the standard is £9.40 a month, the premium is £15.10 and apps is £7.90 a month. Basic is sufficient for email but if you more desktop Office applications than you'll have to upgrade to one of the higher plans.
+Office365 has four business plans: basic, standard, premium, and apps though only three (basic, standard, and premium) include business email. Basic is £3.80 a month, the standard is £9.40 a month, the premium is £15.10 and apps is £7.90 a month. Basic is sufficient for email but if you have more desktop Office applications then you'll have to upgrade to one of the higher plans.
 
 Both of these email platforms charge per user (email address) though shared email addresses (`hello@yourdomain.com`) are free.
 
@@ -40,7 +40,7 @@ This guide will use GSuite as an example as it is more popular than Office365 fo
 
 The first step is to create your GSuite account. Go to the [account creation](https://gsuite.google.com/signup/basic/welcome?hl=en-GB) page and enter your personal information to set up your account.
 
-If you already have a domain such as  `yourdomain.com`  then you should click yes, I have one I should use otherwise no, I need one. If you need one then you can buy one through Google who will connect the new domain automatically.
+If you already have a domain such as  `yourdomain.com`  then you should click yes, "I have one I should use" otherwise no, "I need one". If you need one then you can buy one through Google who will connect the new domain automatically.
 
 Whatever route you take, you’ll have to provide your recovery email and create your account credentials. Remember your username will form part of your email address, `user@yourdomain.com`  so name it accordingly. Click agree and create an account to finish setting up your account.
 
@@ -59,11 +59,11 @@ When you’ve finished adding the DNS records to your domain, click the Verify D
 
 ### Adding Shared Mailboxes/Group Aliases
 
-An email like `hello@yourdomain.com`  could be used by multiple users but sharing the same account can lead to temporary bans due to high usage. The solution is domain aliases or how Office365 refers to its shared mailboxes. You log in to your existing GSuite or Office365 account and can access and send emails as the hello email.
+An email like `hello@yourdomain.com`  could be used by multiple users but sharing the same account can lead to temporary bans due to high usage. The solution is called "domain aliases" with GSuite or "shared mailboxes" with Office365. You log in to your existing GSuite or Office365 account and can access and send emails as the hello@ email.
 
 You can have an unlimited number of aliases and it doesn’t cost you a penny. However, you need a GSuite user for every person that wants to access the shared mailbox.
 
-GSuite has three types of aliases, user, group, and domain. A user alias (setup in Users > username > User information > Email aliases) is an alternate username for one GSuite user can't be used multiple times. An example would be `trent@trent.com` instead of `trentdobbs@trent.com` that was used to create the account. A domain alias (setup in Domains > Manage domains) is for the `@yourdomain.com` part of the email address. It allows you to add another domain so you can send and receive emails from multiple domains.
+GSuite has three types of aliases: user, group, and domain. A user alias (setup in Users > username > User information > Email aliases) is an alternate username for one GSuite user, and can't be used multiple times. An example would be `trent@trent.com` instead of `trentdobbs@trent.com` that was used to create the account. A domain alias (setup in Domains > Manage domains) is for the `@yourdomain.com` part of the email address. It allows you to add another domain so you can send and receive emails from multiple domains.
 
 A group alias is similar to Office 365's shared mailboxes (multiple users sharing the same email) and the one that this tutorial will guide you through. You have to group GSuite users together first and then set an alias for the group.
 
@@ -73,7 +73,7 @@ Next, click on the group you've just created and then on Aliases. Click the Edit
 
 ### Configuring Spam Protection (SPF, DKIM, and DMARC)
 
-Email providers now use spam protection features such as SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail), and DMARC (Domain Message Authentication Reporting) to authenticate emails and try to prevent fraudulent emails. If you try and use your GSuite account without setting them up then it's highly likely that some of your emails will get rejected.
+Email providers now use spam protection features such as SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail), and DMARC (Domain Message Authentication Reporting) to authenticate emails and try to prevent fraudulent emails. If you try and use your GSuite account without setting them up then it's highly likely some of your emails will get rejected.
 
 If you bought your domain from Google then they can automatically setup SPF and partially DKIM for you but since you have to manually configure DMARC and the second part of DKIM to finish the entire process, it makes sense to show the entire process.
 
@@ -81,7 +81,7 @@ If you bought your domain from Google then they can automatically setup SPF and 
 
 SPF determines the email server that can send emails from your domain. It prevents malicious email servers (those other than Google's since you're using GSuite) to send emails on your behalf.
 
-To configure SPF, you just need to add a DNS record to your domain. Log into your domain registrar (who you bought your domain from) and add a DNS record with the type: `TXT, host: @ and value: v=spf1 include:_spf.google.com ~all.`
+To configure SPF, you need to add a DNS record to your domain. Log into your domain registrar (who you bought your domain from) and add a DNS record with the type: `TXT, host: @ and value: v=spf1 include:_spf.google.com ~all.`
 
 Remember it can take 24-48hrs for DNS changes to be active (though usually only an hour or two.)
 
@@ -105,23 +105,23 @@ Finally, back on the GSuite email authentication page, click start authenticatio
 
 ### Setting up DMARC (Domain Message Authentication Reporting)
 
-DMARC tells the email server how to handle suspect emails heading towards your inbox. You must have configured SPF and DKIM before you do so otherwise every email will fail this authentication step.
+DMARC tells the email server how to handle suspect emails heading towards your inbox. You must have configured SPF and DKIM before you do so, otherwise every email will fail this authentication step.
 
 To set up, add a new TXT record with the name of `_dmarc.yourdomain.com`. The value depends on what kind of authentication you want to set up. This example `v=DMARC1; p=quarantine; rua=mailto:youremail@yourdomain.com; pct=100; sp=none` would move all suspicious emails to the spam folder and send you daily emails detailing which emails were quarantined.
 
 You can change the p value to none which would do nothing or r which would reject all suspicious emails. The pct parameter determines the percentage of emails that the authentication runs on.
 
-A typical process would be to start with allowing all emails through and then slowly raise the quarantine percentage and eventually reject until you're rejecting all suspicious emails. If you're worried about deleting legitimate emails then just use the example above which quarantines them instead.
+A typical process would be to start with allowing all emails through and then slowly raise the quarantine percentage until you're rejecting all suspicious emails. If you're worried about deleting legitimate emails then just use the example above, which quarantines them instead.
 
 ### Testing your New Email Account
 
 To test this all works correctly, we can use the [Mail Tester tool](https://www.mail-tester.com). Copy the email address provided and then send an email to it from your GSuite account. Once you've sent it, click the Then check your score button.
 
-If the You're properly authenticated test is checked green then you've set up all three spam protection features successfully. You can click on the heading to find out in more detail whether your email passed DMARC testing, it had a proper DKIM signature and your SPF record works with your email server. Congratulations, your email is now secure.
+If the "You're properly authenticated" test is checked green then you've set up all three spam protection features successfully. You can click on the heading to find out in more detail whether your email passed DMARC testing, it had a proper DKIM signature and your SPF record works with your email server. Congratulations, your email is now secure.
 
 ### Adding your Email to your Devices
 
-Since you using GSuite or Office 365 then adding your new email to your devices is as simple as choosing Gmail or Office 365 and go through the automated setup on your favorite email client.
+Since you using GSuite or Office 365, adding your new email to your devices is as simple as choosing the Gmail or Office 365 option and going through the automated setup on your favorite email client.
 
 That's much easier than using another email provider because you have to configure an IMAP account and fill in all sorts of information like port numbers.
 
