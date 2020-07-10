@@ -35,9 +35,11 @@ Create a package.json file using `npm init -y` and then install Eleventy using `
 To test the install, run `npx @11ty/eleventy` which should return:
 `Processed X files in number of seconds (version number)`.
 
-## Serving Your Static Site
+## Serving Your Static Site using Eleventy
 
-To serve your current site using Eleventy, you'll have to create a config file and add some settings to it which will tell Eleventy how to handle your images, CSS and JavaScript.
+The second step is to be able to serve your current site using Eleventy.
+
+To do so, you'll have to create a config file and add some settings to it which will tell Eleventy how to handle your images, CSS and JavaScript.
 
 In the root folder of your site, create a JS file called .eleventy.js and include the following:
 
@@ -53,7 +55,7 @@ module.exports = function (eleventyConfig) {
 ```
 This will tell Eleventy when it builds your website to just copy the img, css and js folders across (which is called passthrough copy) so you can link them to them in your code.
 
-Now run `npx @11ty/eleventy` and it should have built your website and output the result to the _site folder.
+Now run `npx @11ty/eleventy` and it should have built your website and output the result to the _site folder. Congratulations, you've just finished the first Eleventy build of your website.
 
 **Tip:** If you're using the version control software, Git **link to a section article on Git** manage your code then it would be a good idea to add the _site folder to your .gitignore file. This will stop you commiting your _site folder to Git which prevents the constant uncommitted changes warning. 
 
@@ -61,15 +63,69 @@ Now run `npx @11ty/eleventy` and it should have built your website and output th
 
 **Note:** If you've followed my [Converting a Static Site to NodeJS tutorial] **link and grab full title** where you learned EJS or prefer to use a different templating language then feel free to skip to the next section, [Creating Your First Layout File]**Anchor link**.
 
-## Creating Your First Layout File
+Now that your site is up and running on Eleventy, we can get to the templating part.
 
-**Tip:** Adding _site folder to .gitignore. **Explain the StackOverflow answer to fix any issues with it**
+EJS partials are a way of reusing pieces of code for example, if you created an EJS partial of your website's header then it could be referenced on all your website's pages. In the future, if you decided to add a new menu item then you would only need to update one file.
 
-Creating the base layout with the EJS partials (head, header and footer).
+Create a folder in the root of your website called _includes. This is where Eleventy looks for templates.
 
-Any pages will just have the content and front-matter
+**Tip:** A naming convention you may wish to use is to add an _ to your template files so _head.ejs.
+
+**Explain the StackOverflow answer to fix any issues with the tip**
+
+In your _includes folder, add a file called _head.ejs and copy and paste the content of your website's head section. Don't worry if the content differs between pages such as the title tag. We will cover how to use EJS variables with Eleventy in the Adding Front-Matter section **Link here** so such values can be unique for each page.
+
+Add new partial files for other repeated elements such as the header and footer.
+
+## Creating Your First Layout (Template) File
+
+With the partials created, you can now create your first layout file (template.) 
+
+The first layout (often named base layout) will form the basic template of all your pages and will contain the EJS partials (head, header and footer) that you've just created.
+
+**Tip:** Another naming convention that you may want to use is to add -layout at the end of your layout files. This helps to diffrentiate them from your partials.
+
+In the _includes folder, create a file called _base-layout.ejs file and add the following to it:
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <% include _head.ejs %>
+</head>
+<body>
+    <% include _header.ejs %>
+    <main>
+        <%- content %>
+    </main>
+    <% include _footer.ejs %>
+</body>
+</html>
+```
+If you're new to EJS, `<% include` is the code (syntax) for including a partial file and `<%-` is for including an EJS variable. Content is a variable Eleventy uses to add the body content of HTML, Markdown and other input files.
+
+Congratulations, you've just created your first Eleventy layout file. 
 
 ## Adding Front-Matter (should this be a sub-heading in previous section?)
+
+We have our basic layout template but we need to tell Eleventy where to use it. This is where front-matter comes in.
+
+Front-Matter allows you to define variables you can use in your layout templates both built-in (from Eleventy) and those you've created yourself. By default, Eleventy uses YAML for front-matter though you can change it to JSON or even JavaScript if you prefer.
+
+The most basic front-matter variable, layout will instruct Eleventy which layout file to use to render a page.
+
+On one of the HTML pages of your site, remove the code you included in EJS partials (head, header and footer if you followed the tutorial.)
+
+Then, add the following layout front-matter at the beginning:
+
+```yaml
+---
+layout: _base-layout.ejs
+---
+```
+The three dashes define the start and the end of the front-matter.
+
+Any pages will just have the content and front-matter
 
 ## Creating a Page Template (Layout Chaining)
 
