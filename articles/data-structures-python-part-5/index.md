@@ -1,4 +1,4 @@
-# Data Structures in Python, Part 5
+# Linked Lists, Data Structures in Python
 
 We're almost at the end of the line, having mastered all the Linear Data Structures in Python. To finish things off, we have the most sophisticated Linear Data Structure, the mighty **Linked List.** 😏
 
