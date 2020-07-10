@@ -59,12 +59,14 @@ If we select the item, our optimal value can be written as $v_i+k[i-1,j-w_i]$. T
 
 If we don't include the item, the optimal value will be the subproblem considering all the items before the current item, $k[i-1,j]$. This would also be the same subproblem to consider if the knapsack didn't have enough room for the item originally. This process can then be written as the following recurrence.
 
-$$ k[i,j]=   \left\{
-\begin{array}{ll}
+$$ 
+k[i,j]=\left\{
+\begin{array}{l}
       \max(v_i+k[i-1,j-w_i],\, k[i-1,j]) & w_i \leq j\\
-      k[i-1,j] & \text{otherwise}\\
+      k[i-1,j]  &\text{otherwise}\\
 \end{array} 
-\right.  $$
+\right.
+$$
 
 A python implementation using this recurrence is shown below. In this implementation, we employ a bottom-up approach: first calculating each of the elements of the first row and then working up to the final row. This makes it so our recurrence never tries to access elements of our table that haven't already been calculated. Alternatively, we could implement a recursive top-down approach and only calculate the elements of the table as needed.
 
