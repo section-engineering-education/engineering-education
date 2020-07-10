@@ -62,7 +62,7 @@ If we don't include the item, the optimal value will be the subproblem consideri
 $$ 
 k[i,j]=\left\{
 \begin{array}{l}
-      \max(v_i+k[i-1,j-w\_i],\, k[i-1,j]) & w\_i \leq j\\\\\\
+      \max(v\_i+k[i-1,j-w\_i],\, k[i-1,j]) & w\_i \leq j\\\\\\
       k[i-1,j]  &\text{otherwise}\\\\\\
 \end{array} 
 \right.
