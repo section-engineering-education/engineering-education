@@ -21,9 +21,10 @@ The GraphQL specification has been implemented in [many different programming la
 <!--more-->
 
 ### Complex object data retrieval
-In the traditional REST world, each entity is associated with a separate endpoint (a.k.a. resource). We would have to hit multiple endpoints to satisfy our questions. Of course, we can cheat and include some related objects in our responses, but this approach will only take us so far. There will be future use cases that will need more and we will have to change our interfaces to accommodate them. We will need to call the API endpoint multiple times and that will increase the latency of the API.
+In the traditional REST world, each entity is associated with a separate endpoint (a.k.a. resource). We would have to hit multiple endpoints to satisfy our questions. Of course, we can cheat and include some related objects in our responses, but this approach will only take us so far. There will be future use cases that will need more and we will have to change our interfaces to accommodate them. We will need to call the API endpoint multiple times and that will increase the latency of the API. When we are building compact mobile applications having more HTTP reuqest per minute can it slow and often we can recieve a 429 error or a too many HTTP requests error.  
 
-GraphQL changes all that — it hands over the control to the client. The server is only responsible for publishing the shape of the object graph (a.k.a. the schema) and then letting the client query it anyway it wants. We can obtain multiple responses in one response only which will reduce the latency of the API.
+GraphQL changes all that — it hands over the control to the client. The server is only responsible for publishing the shape of the object graph (a.k.a. the schema) and then letting the client query it anyway it wants. We can obtain multiple responses in one response only which will reduce the latency of the API. GraphQL gives more power to the frontend developers who can make their applications more efficent and can reduce the HTTP request they make. 
+
 For example a GraphQL query will be:
 
 ```
@@ -66,6 +67,9 @@ The result will be:
             },
             {
               "name": "Cracking the Tech Career"
+            },
+            {
+              "name": "Cracking the Coding Interview"
             }
           ]
         }
@@ -89,7 +93,8 @@ This approach improves the performance significantly, especially on mobile devic
 
 ### Keep client and server models in sync with type-safe schemas
 A major problem during application development is the conceptual disconnect between the client and the server. These two ends are generally developed by different teams at different speeds. In spite of careful documentation, it is common to get client and server data structures out of sync. This results in painful integration and bugs that go undetected even into production.
-GraphQL helps this situation by offering an API-driven approach.
+
+GraphQL helps this situation by offering an API-driven approach. Defining the API first establishes a common understanding between the client and the server. While this can be done with REST also, what is unique about GraphQL is its strong type system — expressed using a simple syntax called the GraphQL Schema Definition Language (SDL). Both the client and the server can validate their messages to conform to the schema, preventing a major category of bugs. Moreover we can generate parts of the client and the server from the schema, making it even more convenient to conform to the API.
 
 ### Defining the API first
 Defining the API first establishes a common understanding between the client and the server. While this can be done with REST also, what is unique about GraphQL is its strong type system — expressed using a simple syntax called the GraphQL Schema Definition Language (SDL). Both the client and the server can validate their messages to conform to the schema, preventing a major category of bugs. Moreover, we can generate parts of the client and the server from the schema, making it even more convenient to conform to the API.
@@ -102,7 +107,7 @@ GraphQL provides access to data from one or more data sources. The client doesn�
 ### GraphQL provides a unified interface to access data from different sources.
 
 #### Display changes in real-time
-There’s a whole range of applications that can benefit from displaying the latest data in real-time. For example, a trading application needs to show stock prices in real-time. Games and other interactive applications need to show events as soon as they happen.
+There’s a whole range of applications that can benefit from displaying the latest data in real-time. For example, a trading application needs to show stock prices in real-time. Games and other interactive applications need to show events as soon as they happen. Inorder to display events instanteosly we can 
 GraphQL subscriptions are a way to push data from the server to the clients in real-time. As defined by the GraphQL specification: “subscription is a long‐lived request that fetches data in response to source events”.
 
 #### Subscriptions
@@ -192,6 +197,10 @@ type Book {
 
 As our application grows, we will need to add more types and operations to the schema. At some point, this schema will become unwieldy to manage in a single file. We need to modularize it, just like we modularize code into modules and our UI into components. The easiest way to do this is to split the schema into smaller manageable chunks. By convention, we use .graphql as the extension for these files.
 
+Frameworks like [Prisma](https://www.prisma.io/) are excellent tools that greatly simplify interacting with the database via a GraphQL API. Prisma takes care of the challenge of connecting your server to your database through (1) a generated client and (2) a server that translates your GraphQL calls into commands for your database.
+
+
+
 ### More resources
 [GraphQL](https://graphql.org/)
 
@@ -200,3 +209,5 @@ As our application grows, we will need to add more types and operations to the s
 [The GraphQL specification](http://spec.graphql.org/)
 
 [GraphQL vs REST](https://phil.tech/2017/graphql-vs-rest-overview/) by Phil Sturgeon: Objective and thoughtful comparison of GraphQL and REST.
+
+[Prisma](https://www.prisma.io/)
