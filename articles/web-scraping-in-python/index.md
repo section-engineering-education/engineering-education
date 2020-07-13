@@ -44,17 +44,17 @@ The urlopen function in the urllib module allows us to open web pages and takes 
 #### Getting the data from the web page
 The sample google form that we are going to scrape can be found [**here**](https://docs.google.com/forms/d/e/1FAIpQLSeI8_vYyaJgM7SJM4Y9AWfLq-tglWZh6yt7bEXEOJr_L-hV1A/viewform?formkey=dGx0b1ZrTnoyZDgtYXItMWVBdVlQQWc6MQ)
 
-![Google forms image](/engineering-education/web-scraping-in-python/google-forms.png)
+![Google forms image](/engineering-education/articles/web-scraping-in-python/google-forms.png)
 
 Let us collect all the questions from this form and store them in an excel sheet. For this, we first need to understand the HTML structure of the web page so that we can use beautifulsoup to obtain only the questions. Navigate to the sample google forms website on your browser. 
 
 Right click on any question in the from and select inspect (If you are using chrome) or inspect element (if you are using firefox). 
 
-![Google forms inspect](/engineering-education/web-scraping-in-python/google-forms-inspect.png)
+![Google forms inspect](/engineering-education/articles/web-scraping-in-python/google-forms-inspect.png)
 
 As you can see in the above image, the inspect element allows users to view the HTML contents of the page and make changes to it. It opens a console (right half) where you can view and edit the HTML. We need to obtain the class of the element that contains the questions. Once we get the class, we can use beautifulsoup to get all the elements that have that particular class label and parse them. 
 
-![Google forms class](/engineering-education/web-scraping-in-python/google-forms-class.png)
+![Google forms class](/engineering-education/articles/web-scraping-in-python/google-forms-class.png)
 
 As you can see in the image (highlighted portion), the class we are looking for is called *"freebirdFormviewerComponentsQuestionBaseTitle"*. If we want to obtain the descriptions of the questions (the text below the question), we can use "freebirdFormviewerComponentsQuestionBaseDescription" for the descriptions. However, In this article, we will only scrape the questions. 
 
@@ -120,6 +120,6 @@ if __name__ == '__main__':
 
 In the main function, we take the URL as input from the user. We pass this URL to the get_data function that returns the elements that belong to the questions class. We then call the store_excel function and store the questions. 
 
-![Excel](/engineering-education/web-scraping-in-python/excel.png)
+![Excel](/engineering-education/articles/web-scraping-in-python/excel.png)
 ### Conclusion
 The legalization of web scraping is a sensitive issue, as it can be a blessing or a curse depending on the way it is used. Web scraping is an automated threat that can be used by cybercriminals to collect sensitive information. Many companies prevent users from scraping sensitive information from their websites.  
