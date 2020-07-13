@@ -48,7 +48,7 @@ The sample google form that we are going to scrape can be found [**here**](https
 
 Let us collect all the questions from this form and store them in an excel sheet. For this, we first need to understand the HTML structure of the web page so that we can use beautifulsoup to obtain only the questions. Navigate to the sample google forms website on your browser. 
 
-Right click on any question in the from and select inspect (If you are using chrome) or inspect element (if you are using firefox). 
+Right-click on any question in the form and select inspect (If you are using Chrome) or inspect element (if you are using firefox).
 
 ![Google forms inspect](/engineering-education/web-scraping-in-python/google-forms-inspect.png)
 
@@ -75,7 +75,7 @@ def get_data(url):
 	return content
 ```
 
-The get_data function takes the URL as a parameter and returns all the elements that belong to a particular class. The urlopen() function establishes a connection to the URL and the read() function reads the contents of that page. We create an object called parser using beautifulsoup. This function takes two parameters: the contents of the page and the type of parser. In this case, we shall use the html parser. the findall() method finds all the HTML elements based on a given condition. In this case, we are looking for all the "div" tags that have the class "freebirdFormviewerComponentsQuestionBaseTitle". 
+The get_data function takes the URL as a parameter and returns all the elements that belong to a particular class. The urlopen() function establishes a connection to the URL and the read() function reads the contents of that page. We create an object called parser using beautifulsoup. This function takes two parameters: the contents of the page and the type of parser. In this case, we shall use the HTML parser. the findall() method finds all the HTML elements based on a given condition. In this case, we are looking for all the "div" tags that have the class "freebirdFormviewerComponentsQuestionBaseTitle". 
 
 #### Storing the data in an excel sheet
 Once the data gets fetched from the web page, the next step is to store it in a presentable format. 
