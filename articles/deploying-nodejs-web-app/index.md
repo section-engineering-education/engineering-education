@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: deploying-nodejs-web-app
 title: Deploying Your First NodeJS Web App
-description: It’s an introduction to NodeJS and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
+description: It’s an introduction to Node.js and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
 author: louise-findlay
 date: 2020-07-02T00:00:00-07:00
 topics: []
@@ -14,28 +14,28 @@ images:
   - url: /engineering-education/deploying-nodejs-web-app/hero.JPG
     alt: header image nodejs
 ---
-Congratulations, you’ve finished developing your first NodeJS web app and now you want to publish it on the web. If you’re still in the development process, however, then you may find my **(Link to previous developing NodeJS web app when it gets published)** guide helpful.
+Congratulations, you’ve finished developing your first Node.js web app and now you want to publish it on the web. If you’re still in the development process, however, then you may find my **(Link to previous developing NodeJS web app when it gets published)** guide helpful.
 
 <!--more-->
-### Deploying Your First NodeJS Web App
+### Deploying Your First Node.js Web App
 
 **Add header image**
 
-Congratulations, you’ve finished developing your first NodeJS web app and now you want to publish it on the web. If you’re still in the development process however, then you may find my **(Link to previous developing NodeJS web app when it gets published)** guide helpful.
+Congratulations, you’ve finished developing your first Node.js web app and now you want to publish it on the web. If you’re still in the development process however, then you may find my **(Link to previous developing NodeJS web app when it gets published)** guide helpful.
 
-There are many hosting platforms you can use to deploy your NodeJS web apps such as [Heroku](https://www.heroku.com), [Vultr](https://www.vultr.com), [Linode](https://www.linode.com), [Google Cloud Platform](https://console.cloud.google.com) and [Amazon Web Services](https://aws.amazon.com). We will be using [DigitalOcean](https://www.digitalocean.com) because it’s very popular, simple to use and good value.
+There are many hosting platforms you can use to deploy your Node.js web apps such as [Heroku](https://www.heroku.com), [Vultr](https://www.vultr.com), [Linode](https://www.linode.com), [Google Cloud Platform](https://console.cloud.google.com) and [Amazon Web Services](https://aws.amazon.com). We will be using [DigitalOcean](https://www.digitalocean.com) because it’s very popular, simple to use and provides good value.
 
 ### Setting up DigitalOcean
 
 First, create an account on the DigitalOcean platform. There are discount codes available to add free credit to your account such as the code available in the Github Student Developer Pack. Be aware that you can only redeem one code per account.
 
-Second, you need to create a droplet. A droplet is a VPS (Virtual Private Server.) It’s similar to a Linux VM which is hosted on a server farm somewhere. Once you’ve logged into your account, go to Droplets under the Manage heading and click Create and Droplets.
+Second, you need to create a droplet. A droplet is a VPS (Virtual Private Server.) It’s similar to a Linux VM which is hosted on a server farm somewhere. Once you’ve logged into your account, go to droplets under the Manage heading and click create and then droplets.
 
 ![DigitalOcean Droplet Creation](/engineering-education/deploying-nodejs-web-app/digitalocean-creation.png)
 
 You can leave most of the settings as the default but change the plan to the basic $5 a month which contains enough resources for your app. You can scale this up later if needed.
 
-Also, choose the datacenter closest to the target audience of your app and change the authentication to password. While password authentication is less secure (SSH Keys is recommended), it’s much easier to set up so for your first drop we’ll use that.
+Also, choose the datacenter closest to the target audience of your app and change the authentication to password. While password authentication is less secure (SSH Keys is recommended), it’s much easier to set up so for your first droplet we’ll use that.
 
 All that’s left now is to pick a name (hostname) and click Create Droplet.
 
@@ -43,12 +43,12 @@ All that’s left now is to pick a name (hostname) and click Create Droplet.
 
 Shortly afterward, you’ll receive an email containing the username and password of your droplet which you’ll use to login.
 
-Back on the DigitalOcean website, under Droplets, click the name of your newly created droplet and then on Console. This will open a new tab that will let you control your droplet. Alternatively, you can use any SSH client with the IP address and user credentials contained in the email.
+Back on the DigitalOcean website, under droplets, click the name of your newly created droplet and then on Console. This will open a new tab that will let you control your droplet. Alternatively, you can use any SSH client with the IP address and user credentials contained in the email.
 
 On your first login, since you used password authentication, it will prompt you to set a new password. A great way to generate secure passwords and store them is a password manager like [LastPass](https://www.lastpass.com).
 
-### Deploying Your NodeJS Web App
-First, you’ll need to copy the code for your web app to your Droplet. If you’re using source control such as Git **Link to Section article on Git when it's published** then it’s a simple as installing git using `apt-get install git -y`  and then using the git clone command  `git clone (link to your repository)` and then add the link to your repository at the end.
+### Deploying Your Node.js Web App
+First, you’ll need to copy the code for your web app to your droplet. If you’re using source control such as Git **Link to Section article on Git when it's published** then it’s a simple as installing git using `apt-get install git -y`  and then using the git clone command  `git clone (link to your repository)` and then add the link to your repository at the end.
 
 Second, you’ll need to install Node. Type:
 
@@ -67,13 +67,15 @@ Finally, type `npm start`  to start your web app. Now that your web app is runni
 
 If you’re using an Express web server (which if you followed my **Link to previous developing NodeJS web app when it gets published**) you did, you’ll find the port number located in the  `app.listen()`  line inside the server.js file. For example,  `app.listen(8080)`  which is a common port used.
 
-Congratulations, your first NodeJS web app should be displayed in your web browser which is running on your DigitalOcean droplet.
+Congratulations, your first Node.js web app should be displayed in your web browser which is running on your DigitalOcean droplet.
 
-### Connecting Your Domain Name
+###  Configuring Your Domain Name
 
 You typed in an IP Address and port number to view your web app but wouldn't you prefer a custom domain name like yourapp.com?
 
-Assuming you’ve already bought a domain, the first step is to connect it to your DigitalOcean droplet. If you’ve not, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting (though it’s best to go with a dedicated hosting and email provider.)
+Assuming you’ve already bought a domain, the first step is to add a DNS record so your domain name will resolve to the IP address of your DigitalOcean droplet. A DNS record tells your browser what to do when they load your domain. In this case, it should go to the IP address of your droplet. 
+
+If you’ve not bought a domain, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting though it’s best to go with a dedicated hosting and email provider.  [Netlify](https://www.netlify.com) is great for hosting static sites and [SiteGround](https://www.siteground.co.uk) for CMS websites. Office365 and GSuite are the kings of custom email providers. See my [Setting Up a Business Email]**link to Section article** for a comparison between them.
 
 Login to your domain registrar and go to the advanced DNS settings of your domain. For example, on Namecheap, it’s the Advanced DNS tab on the Manage Domain screen.
 
@@ -121,8 +123,7 @@ Type: `sudo nano /etc/nginx/sites-available/nano/default` to edit the default co
 
 You need to change the server_name parameter to the name of your domain. For example: yourdomain.com. Under location /, proxy_pass should be changed to http://localhost:(port name). The ssl_certificate_key should be modified: `/etc/letsencrypt/live/(domain name)/privkey.pem`. Finally, add the code block below to the end of the file and then type CTRL+X and then y to exit.
 
-```
-bash
+```bash
 server {
     if ($host = auroraspotter.space) {
         return 301 https://$host$request_uri;
@@ -136,8 +137,8 @@ To test, there are no errors in the file, type  `sudo nginx -t`  and if there’
 Finally, you should be able to go to yourdomain.com and your web app will be running.
 
 ### Running the App on Boot (Setting up a Process Manager)
-You've hooked your domain name up to your droplet and configured Nginx to serve your web app but how do you keep it running all the time especially after restarting your droplet? That's where a process manager comes in. It will manage your NodeJS web app, log any errors and start/stop it as needed. We will be using the process manager called PM2.
+You've hooked your domain name up to your droplet and configured Nginx to serve your web app but how do you keep it running all the time especially after restarting your droplet? That's where a process manager comes in. It will manage your Node.js web app, log any errors and start/stop it as needed. We will be using the process manager called PM2.
 The first step is to install PM2 using `sudo npm install pm2@latest -g`. Next, to run it on boot, use `pm2 startup systemd`. That will return the code you'll need to copy and paste into the terminal.
-Using the cd command, navigate to the folder of your web app. Then type `pm2 start (name of server file)` which is commonly server.js. This will start the web app using pm2. Afterward, type `pm2 save` which will save it to be started on boot. Finally, type `sudo systemctl start pm2-(username)`. If you used the login that DigitalOcean provided this will be root.
+Using the cd command, navigate to the folder of your web app. Then type `pm2 start server.js`. This will start the web app using pm2. Afterward, type `pm2 save` which will save it to be started on boot. Finally, type `sudo systemctl start pm2-(username)`. If you used the login that DigitalOcean provided this will be root.
 Try restarting your droplet by typing reboot and after a few minutes go to yourdomain.com. Your web app should be up and running like normal.
-Congratulations, you've just deployed your first NodeJS web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash? **Link to future article on Getting Started with APIs**
+Congratulations, you've just deployed your first Node.js web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash? **Link to future article on Getting Started with APIs**
