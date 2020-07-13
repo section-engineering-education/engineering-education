@@ -14,21 +14,21 @@ images:
   - url: /engineering-education/templating-your-static-site/hero.jpg
     alt:
 ---
-Static sites are much easier to develop and deploy than full-stack dynamic web apps. You don’t have to pay monthly hosting charges (if you use a free hosting provider like [Netlify]**Link here**) and if you use a CSS framework like Bootstrap **Link here** or Material **check name** it only takes a basic knowledge of HTML and CSS to code a simple website. **Insert reference to articles you’ll write about designing and developing static websites**
+Static sites are much easier to develop and deploy than full-stack dynamic web apps. You don’t have to pay monthly hosting charges (if you use a free hosting provider like [Netlify](https://www.netlify.co) and if you use a CSS framework like [Bootstrap](https://getbootstrap.com) or [Materialize](https://materializecss.com) it only takes a basic knowledge of HTML and CSS to code a simple website. **Insert reference to articles you’ll write about designing and developing static websites**
 
 <!--more-->
 
 However, for more complex multi-page websites, a static site may not be suitable. Every time you want to add content, a new page has to be created and coded. If you change something that appears on multiple pages then you’d have to change it everywhere. That’s where static site generators come in. They bring the power of templating to static sites.
 
-There are many static site generators (Hugo, Gatsby, to name a few **links and add more**) but we will use Eleventy because it’s easy to use and flexible. It uses vanilla JavaScript and allows multiple template languages to be mixed and matched so you don’t have to learn a new language or templating system. Static site generators work by taking the layout templates you’ve created and building the pages using the template and data you’ve provided.
+There are many static site generators, [Hugo](https://gohugo.io), [Gatsby](http://gatsbyjs.org) and [Next.js](http://gatsbyjs.org) to name a few but we will use Eleventy because it’s easy to use and flexible. It uses vanilla JavaScript and allows multiple template languages to be mixed and matched so you don’t have to learn a new language or templating system. Static site generators work by taking the layout templates you’ve created and building the pages using the template and data you’ve provided.
 
 **Swap these paragraphs around?**
 
-Templating (see Converting a Static Site to a Dynamic NodeJS Web App **link** for more info **maybe link later when I mention EJS**) lets you reuse code by inserting it into multiple places and add dynamic data. There are a variety of templating languages such as Nunchucks, Liquid, Pug and Handlebars **Link to them** but the one we’ll be using is EJS **link**.
+Templating (see Converting a Static Site to a Dynamic NodeJS Web App **link** for more info **maybe link later when I mention EJS**) lets you reuse code by inserting it into multiple places and add dynamic data. There are a variety of templating languages such as [Nunchucks](https://mozilla.github.io/nunjucks), [Liquid](https://shopify.github.io/liquid), [Pug](https://pugjs.org/api/getting-started.html) and [Handlebars](https://handlebarsjs.com) but the one we’ll be using is [EJS](https://ejs.co).
 
 ## Installing Eleventy
 
-The first step is to install Eleventy which will be done through the package manager, NPM. New to NPM? Check out my installation guide **(link to NPM install)**.
+The first step is to install Eleventy which will be done through the package manager, NPM. New to NPM? Check out my installation guide **(link to NPM install in Converting a Static Site to a Dynamic NodeJS Web App article)**.
 
 Create a package.json file using `npm init -y` and then install Eleventy using `npm install --save-dev @11ty/eleventy`.
 
@@ -61,8 +61,6 @@ Now run `npx @11ty/eleventy` and it should have built your website and output th
 
 ## Creating Your First EJS Partial
 
-**Note:** If you've followed my [Converting a Static Site to NodeJS tutorial] **link and grab full title** where you learned EJS or prefer to use a different templating language then feel free to skip to the next section, [Creating Your First Layout File]**Anchor link**.
-
 Now that your site is up and running on Eleventy, we can get to the templating part.
 
 EJS partials are a way of reusing pieces of code for example, if you created an EJS partial of your website's header then it could be referenced on all your website's pages. In the future, if you decided to add a new menu item then you would only need to update one file.
@@ -71,9 +69,7 @@ Create a folder in the root of your website called _includes. This is where Elev
 
 **Tip:** A naming convention you may wish to use is to add an _ to your template files so _head.ejs.
 
-**Explain the StackOverflow answer to fix any issues with the tip**
-
-In your _includes folder, add a file called _head.ejs and copy and paste the content of your website's head section. Don't worry if the content differs between pages such as the title tag. We will cover how to use EJS variables with Eleventy in the Adding Front-Matter section **Link here** so such values can be unique for each page.
+In your _includes folder, add a file called _head.ejs and copy and paste the content of your website's head section. Don't worry if the content differs between pages such as the title tag. We will cover how to use EJS variables with Eleventy in the Adding More Front-Matter section **Anchor Link** so such values can be unique for each page.
 
 Add new partial files for other repeated elements such as the header and footer.
 
@@ -83,7 +79,7 @@ With the partials created, you can now create your first layout file (template.)
 
 The first layout (often named base layout) will form the basic template of all your pages and will contain the EJS partials (head, header and footer) that you've just created.
 
-**Tip:** Another naming convention that you may want to use is to add -layout at the end of your layout files. This helps to diffrentiate them from your partials.
+**Tip:** Another naming convention that you may want to use is to add -layout at the end of your layout files. This helps to differentiate them from your partials.
 
 In the _includes folder, create a file called _base-layout.ejs file and add the following to it:
 
@@ -182,7 +178,7 @@ Congratulations you've just used layout chaining for the first time. You can cre
 
 You've converted your first static website to a static site generator but now you need to deploy it to a web hosting platform. 
 
-There are many hosts for static sites but we will use [Netlify]**link here** because it's easy to use and has a generous free plan. 
+There are many hosts for static sites but we will use [Netlify](https://www.netlify.com) because it's easy to use and has a generous free plan. 
 
 If you're using Git for source control and using a provider like Github (which is highly recommended), then once you've created a Netlify account, click Sites and then New Site from Git. In basic build settings, change the build command to eleventy and the publish directory to _site. This instructs Netlify how to build your site after every change you've pushed to Github.
 
