@@ -106,7 +106,7 @@ If you're new to EJS, `<% include` is the code (syntax) for including a partial 
 
 Congratulations, you've just created your first Eleventy layout file. 
 
-## Adding Front-Matter (should this be a sub-heading in previous section?)
+##  Rendering Your First Layout File
 
 We have our basic layout template but we need to tell Eleventy where to use it. This is where front-matter comes in.
 
@@ -131,12 +131,64 @@ Go to `http://localhost:8080/nameofhtmlfile` to view the page. It should display
 
 Congratulations, you've successfully converted your first static HTML page to use an EJS Eleventy layout file.
 
+## Adding More Front Matter
+
+Remember how we templated your website's header so that all the meta tags would be the same? Now that you've added your first piece of front-matter, we can add some more to account for unique values like different page titles.
+
+First, In your partial pages (such as _head.ejs), remove everything inside the content attribute of your meta tags and replace it with EJS variables like the example below:
+
+```html
+<meta property="og:title" content="<%- title %>">
+<meta property="og:description" content="<%- short_description %>">
+```
+Adding - after <% definites it as an EJS variable rather than a partial file which we did before. The values such as title and short-description are the names of the variables which we will use in the front-matter.
+
+Next, in one of your HTML pages, add the EJS variables you've just created and the content you want to add like so:
+```yaml
+---
+layout: _base-layout.ejs
+title: About Louise Findlay - Front-End Web Developer
+short_description: Louise Findlay has designed and developed over 20 static websites.
+---
+```
+Finally, check on your website and the front-matter content you've just added should be reflected in the code. If not, make sure you've run `npx @11ty/eleventy --serve` in the terminal to make your website automatically reload on changes.
+
 ## Creating a Page Template (Layout Chaining)
 
 You've just created your basic layout containing the elements present on every page but what if you have a custom layout for only a select number of pages such as for products? This is where layout chaining comes in.
 
 Layout chaining is how you can combine multiple layout files. You create a secondary (or as many layers as you want) layout file which uses the base layout in the exact same way as you linked it to a HTML page.
 
+Create a file called _(layoutname)-layout.ejs in the _includes folder and add the layout front-matter to link it to your base layout (in the exact same way you did for your HTML file.)
+
+Then add all the code that is identical throughout all your template pages. For example, if every product page had a section with three images, then add the section and div tags but remove the image tags since each image is unique.  In its place, add an EJS variable tag such as `<%- product_image1 %>`. See the example below:
+
+```html
+<section id="test1" class="product">
+        <div class="flex-item">
+            <picture>
+                <%- product_image1 %>
+            </picture>
+        </div>
+</section>
+```
+Add the image tags to the front-matter of the HTML page and change the layout: to your new layout file.
+
+Remove the HTML you've just templated from the HTML page and check on your website. It should now display the HTML from the layout file with the images you added in the page's front-matter.
+
+Congratulations you've just used layout chaining for the first time. You can create new templates for different parts of your website. The beauty of Eleventy is you can template as little or as much as you like.
+
 ## Deploying Your First Static Site Generator Website
 
-Netlify
+You've converted your first static website to a static site generator but now you need to deploy it to a web hosting platform. 
+
+There are many hosts for static sites but we will use [Netlify]**link here** because it's easy to use and has a generous free plan. 
+
+If you're using Git for source control and using a provider like Github (which is highly recommended), then once you've created a Netlify account, click Sites and then New Site from Git. In basic build settings, change the build command to eleventy and the publish directory to _site. This instructs Netlify how to build your site after every change you've pushed to Github.
+
+Otherwise, just drag and drop the _site folder into the space instructed on the Sites page on Netlify. This will deploy your website but won't automatically update once you've made changes. You'll have to update your website's files manually every time. 
+
+Congratulations, you've finished converting your first static site to a static site generator and deployed it to the web. Think of it as a great middle ground between a static site and a full-blown CMS (content management system) or full-stack web app.
+
+Look out for Part 2 where you can learn how to create a blog using Eleventy and create archive pages using Eleventy collections.
+
