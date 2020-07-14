@@ -6,8 +6,8 @@ slug: graphql-basics
 title: GraphQL basics - What is GraphQL
 description: GraphQL is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data.
 author: gagan-bhatia
-date: 2020-07-06T00:00:00-07:00
-topics: []
+date: 2020-07-13T00:00:00-08:00
+topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
