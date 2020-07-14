@@ -122,4 +122,4 @@ In the main function, we take the URL as input from the user. We pass this URL t
 
 ![Excel](/engineering-education/web-scraping-in-python/excel.png)
 ### Conclusion
-The legalization of web scraping is a sensitive issue, as it can be a blessing or a curse depending on the way it is used. Web scraping is an automated threat that can be used by cybercriminals to collect sensitive information. Many companies prevent users from scraping sensitive information from their websites.  
+The legalization of web scraping is a sensitive issue, as it can be a blessing or a curse depending on the way it is used. Web scraping is an automated threat that can be used by cybercriminals to collect sensitive information. Many companies prevent users from scraping sensitive information from their websites. Therefore, it is always a good idea to go through the company policies before scraping data from their websites.
