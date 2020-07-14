@@ -6,8 +6,10 @@ Before Jumping directly to the data science Libraries. If you are a newbie then 
 Data science is a multidisciplinary field focused on finding actionable insights from large sets of raw and structured data. The field tries to find answers to the things we don’t know. Data science experts use several different techniques to get answers, incorporating computer science, predictive analytics, statistics, and machine learning to parse through massive datasets to establish solutions to problems that haven’t been thought of yet.
 
 
-## Why python is popular in Data Science
+## Why python is popular in Data Science and Why people prefer python when starting the Data Science Journey?
 Python provides with all the necessary tools to carry out this process with dedicated libraries for each step. It comes with powerful statistical and numerical libraries such as Pandas, Numpy, Matplotlib, SciPy, scikit-learn, etc.and advanced deep learning libraries such as Tensorflow, PyBrain, etc. Moreover, Python has emerged as the default language for AI and ML, and data science has an intersection with Artificial Intelligence.  This interpreter-based high-level programming language is not only easy to use, but it also equips data scientists to implement solutions and, at the same time, follow the standards of required algorithms
+
+Python is easy to learn the language and it is often the first language taught in many Schools and Colleges to students who are beginning there journey in Programming. The language is close to what humans understand in comparison with [R Language](https://www.r-project.org/). Since it is a general-purpose language it can be used in web development popular frameworks are Django and Flask and R is somewhat difficult to learn for people who are beginning to start their programming career since it inclines to the scientific community. But there is a catch python is a slower programming language in comparison with C++ user friend means more work to the computer
 
 Here we will be talking about  Numpy, Scipy, Matplotlib and Pandas
 
