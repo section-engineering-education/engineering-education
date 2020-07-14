@@ -5,7 +5,7 @@ published: true
 slug: beginner-guide-to-git
 title: Beginner's Guide to Git
 description: This guide is intended to help any beginner get started with Git. Using the examples provided below, we will assume that we are starting a project from scratch and want to manage it with Git.
-author: Parampreet Singh
+author: parampreet-singh
 date: 2020-07-09T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
