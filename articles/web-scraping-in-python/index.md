@@ -5,10 +5,10 @@ Web scraping tools have been developed specifically for extracting data from the
 ### Installing dependencies
 The easiest way to install the required libraries in Python is to use pip. [**pip**](https://pip.pypa.io/en/stable/) is a package manager for Python. We need to install beautifulsoup for web scraping, URLib for establishing a connection with the website and sending requests to it, and xlsxwriter to create and manage excel sheets in Python. 
 
-Run the following commands to install the dependencies:
+The dependencies can be installed by running the following commands:
 
 **urllib3:**
-Urllib is used to send an HTTP request to the URL of the webpage that we wish to scrape. The server responds to the request by returning the HTML content of the webpage. 
+[Urllib](https://docs.python.org/3/library/urllib.html) is used to send an HTTP request to the URL of the webpage that we wish to scrape. Using urllib, the user can send a request to the server, which then responds to the request by returning the HTML content of the webpage. 
 
 ```
 pip install urllib3
@@ -22,7 +22,7 @@ pip install beautifulsoup4
 ```
 
 **XlsxWriter:** 
-XlsxWriter is a Python module that is used to write text, numbers, formulas, and hyperlinks to multiple worksheets in an Excel file. It supports features such as formatting and many more. We will use this to store the contents of our scraped data in an excel sheet. 
+[XlsxWriter](https://xlsxwriter.readthedocs.io/) is a Python module that is used to write text, numbers, formulas, and hyperlinks to multiple worksheets in an Excel file. We will use this to store the contents of our scraped data in an excel sheet. 
 
 ```
 pip install XlsxWriter
