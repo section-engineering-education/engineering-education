@@ -6,29 +6,27 @@ slug: what-is-iot
 title: What is the Internet of Things (IoT)?
 description:
 author: balkrishna-harode
-date: 2020-07-09T00:00:00-07:00
+date: 2020-07-14T00:00:00-07:00
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/what-is-iot/hero.jpg
     alt:
 ---
-"Automation is about innovation", and one such innovation is what we call the Internet of Things (IoT). IoT is an arrangement of interrelated processing gadgets, mechanical and advanced machines given one-of-a-kind identifiers (UIDs) and the capacity to move information over a system without expecting human-to-human or human-to-PC connection.
+"Automation is about innovation", and one such innovation is what we call the Internet of Things (IoT). IoT is an arrangement of interrelated processing gadgets, mechanical and advanced machines given one-of-a-kind identifiers (UIDs) and the ability to move information over a system without expecting human-to-human or human-to-PC connection.
 <!--more-->
 
-### Introductions
-Through IoT, someone can easily connect any device with anything, anywhere in the world over the internet. This has termed the phrase Internet of Everything and Internet of Humans, IoT is a network between “Things with Things” and “Things with Human”. “Internet of Things (IoT) is a platform where anything can be inspected, supervised, and executed from anywhere over the internet.”
-Connecting a simple device (Home or Commercial) to sensors, actuators with microcontrollers (and beyond) can help those connected to the internet have better living standards, active management, and also easier lives with customized applications.
+### Introduction
+Through [IoT](https://en.wikipedia.org/wiki/Internet_of_things), someone can easily connect any device with anything, anywhere in the world over the internet. This has termed the phrase Internet of Everything and Internet of Humans, IoT is a network between “Things with Things” and “Things with Human”. “Internet of Things (IoT) is a platform where anything can be inspected, supervised, and executed from anywhere over the internet.”
+Connecting a simple device (Home or Commercial) to sensors, actuators with microcontrollers (and more) helps users connected to those devices have better active management, and in a sense easier and better lives with customized applications all done via the internet.
 
 
+![alt Internet of Things](/engineering-education/articles/what-is-iot/p1.jpg)
 
 
- ![alt Internet of Things](/engineering-education/articles/what-is-iot/p1.jpg)
+### History of IOT
 
-
-## History of IOT
-
--	1970 - The real thought of associated gadgets was proposed.
+-	1970 - The real idea of associated gadgets was proposed.
 
 -	1990 - John Romkey made a toaster that could be turned on/off over the Internet.
 
@@ -47,8 +45,7 @@ Connecting a simple device (Home or Commercial) to sensors, actuators with micro
 
 
 
-## How does it work?
-
+### How does it work?
 Gadgets and devices with built-in sensors are associated with an Internet of Things platform, which gathers information from these gadgets and applies examination to impart the most important data to applications worked to address explicit necessities.
 These amazing IoT stages can pinpoint precisely what data is helpful and what can securely be overlooked. This data can be utilized to recognize designs, make proposals, and distinguish potential issues before they happen.
 For instance, in the event that somebody owns a vehicle manufacturing business, one should know which discretionary parts (cowhide seats or combination wheels, for instance) are the most mainstream. Utilizing IoT innovation, one can:
@@ -102,7 +99,8 @@ This has led to the vision of ‘anytime, anywhere, anyway, anything' communicat
 
 -	[Education](https://www.futurereadyedu.com/what-is-education-4-0-how-you-can-adapt-this-in-the-learning-environment/)
 
-An network of smart objects that can auto-organize data, share information and resources depending upon the environment and surroundings. Communication technologies such as Wireless Sensor Networks [(WSN)](https://en.wikipedia.org/wiki/Wireless_sensor_network) and Radiofrequency Identification [(RFID)](https://en.wikipedia.org/wiki/Radio-frequency_identification), are used for sharing of information.
+A network of smart devices that can auto-organize data, share information and resources depending upon the environment and surroundings.
+Communication technologies such as Wireless Sensor Networks [(WSN)](https://en.wikipedia.org/wiki/Wireless_sensor_network) and Radiofrequency Identification [(RFID)](https://en.wikipedia.org/wiki/Radio-frequency_identification), are used for sharing information.
 
 ### Statistics and Market
 
@@ -119,8 +117,3 @@ The global IoT Platform [market size](https://www.prnewswire.com/news-releases/i
 
 ### Sources
 [Wikipedia.org](https://en.wikipedia.org/wiki/Internet_of_things) and Balkrishna Harode's paper for [Smart Home](https://www.ijariit.com/manuscript/smart-home-and-security-system-with-intelligent-monitoring/).
-
-
-## About the Author
-
-<img align="left" width="180" height="250" src="/engineering-education/authors/balkrishna-harode/author.jpg">
