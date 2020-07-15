@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-spark/hero.jpg
-    alt: apache spark image example screensaver 
+    alt: apache spark image example screensaver
 ---
 
 The modern world is no stranger to [Big Data](https://www.bigdataframework.org/short-history-of-big-data/). Over the last 2 years, we generated about 90% of all data ever created. Big Data began to take form when database management systems became increasingly common (between 1970-2000). Storage, [warehousing](https://www.tutorialspoint.com/dwh/dwh_data_warehousing.htm), analytics were all mainly performed on RDBMS, which manages structured and homogenous data. However, the popularization of the use of the Internet since the early 2000s changed the [volume, velocity, variety, and veracity](https://www.bigdataframework.org/four-vs-of-big-data/) of the data. 80-90% of the data generated today is[ unstructured](https://en.wikipedia.org/wiki/Unstructured_data).  This means that searching, deriving insights from, and managing this data is extremely challenging.
@@ -32,7 +32,7 @@ MapReduce is implemented on top of HDFS, which has already divided the input fil
 
 **Reduce:** Worker nodes process the output per key, in parallel.
 
-Example: ![img](/engineering-education/introduction-to-spark//mapreduce.png)
+Example: ![img](/engineering-education/introduction-to-spark/mapreduce.png)
 
 While Hadoop MapReduce was revolutionary in linear processing large datasets economically, it isn’t good enough if complicated or fast, real time processing is required. MapReduce’s architecture is such that results from a MapReduce job need to be stored in the disk before it can be used again. This makes it inherently bad at performing iterative processes. MapReduce is also a low-level framework, meaning that a number of other technologies need to be used on top of it to generalize its use, making it complex to implement.
 
@@ -45,6 +45,6 @@ The variance in computation speed of Spark with respect to MapReduce comes from 
 [Spark](https://en.wikipedia.org/wiki/Apache_Spark) uses **RDD** (Resilient Distributed Dataset), a read-only multiset (a set that contains multiple instances of the same element) of the data, which is stored in a distributed way in the cluster of machines. Dataframe and Dataset APIs are provided as an abstraction on top of these RDDs. These RDDs are processed in a restricted form of shared memory where a fixed interval is given to the distributed programs to execute, allowing iterative and non-linear programming paradigms. Cluster Manager, which allocates resources, is required for Spark. Spark supports Spark native cluster manager which can also run on a single machine, YARN, Kubernetes, and Mesos. It also needs a distributed storage system, and can work well most of the distributed storage systems present. It can also work on local file system on a single computer for development/testing purposes.
 Spark segregates its nodes into **Drivers** and **Workers**. Driver nodes have a driver program which creates a **SparkContext** object. Worker nodes have processes that run computations and store data called **executors**. SparkContext connects to cluster manager and executors, and coordinates between them. SparkContext assigns **tasks** to executors, to run in parallel. Driver schedules tasks on executors and sends application code.
 
-[![img](/engineering-education/introduction-to-spark//spark.png)](http://spark.apache.org/docs/latest/cluster-overview.html)
+[![img](/engineering-education/introduction-to-spark/spark.png)](http://spark.apache.org/docs/latest/cluster-overview.html)
 
 Spark has 4 built-in libraries - Spark SQL and Dataframes, Spark Streaming, MLLib and GraphX. The simplest way to get started with Spark is to use it’s Python API [Pyspark](https://pypi.org/project/pyspark/), which we will explore in the upcoming articles.
