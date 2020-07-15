@@ -1,16 +1,30 @@
-# How does API works?
+---
+layout: engineering-education
+status: publish
+published: true
+slug: how-does-api-work
+title: What is an API and how do APIs work?
+description: 
+author: Parampreet Singh
+date: 2020-07-14T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-## What is an API?
-We always hear about APIs. What are they? And how does that work? 
+  - url: /engineering-education/how-does-api-work/hero.jpg
+    alt:
+---
+We always hear about APIs. What are they, and how does that work?
 API stands for **"Application Programming Interface."**
-An API is a set of rules that dictate how two machines talk to each other.
-
+An [API](https://en.wikipedia.org/wiki/Application_programming_interface) is a set of rules that dictate how two machines talk to each other.
+<!--more-->
+### What is an API?
 *For Example*
-Whenever you use an app on your phone or computer or log to Twitter or Facebook, you're interacting with several different **APIs** behind the scene. 
+Whenever you use an app on your phone or computer or log to Twitter or Facebook, you're interacting with several different **APIs** behind the scene.
 An API is a messenger that delivers your (the client) request to the provider (the server) that you're requesting it from and then get the response back to you.
 
-## How do APIs work?
-Let's consider an example of how a restaurant operates. 
+### How do APIs work?
+Let's consider an example of how a restaurant operates.
 
 **Customer (User) -> Waiter (API) -> Kitchen (Webserver)
 
@@ -19,10 +33,10 @@ That's where the waiter as in the API comes in the picture. The waiter is an API
 
 ## Types of API
 
-### **Java APIs** 
+### **Java APIs**
 Interfaces within the classes let objects to talk to each other.
 
-### **Web APIs** 
+### **Web APIs**
 Simple Objects Access Protocol (SOAP), Remote Procedure Call (RPC). And the most popular Representational State Transfer (REST)
 
 ## REST APIs
@@ -32,7 +46,7 @@ It is a  type of Software Design that gives access to data (aka "Backend server"
 
 Over 70% of all public APIs use REST, because of it's fast performance, reliability, and ability to scale up.
 
-## Methods For REST
+### Methods For REST
 
 * **GET** - The HTTP GET method is to read or retrieve a representation of a resource
 * **POST** - The POST web is, most often utilized to create new resources
@@ -40,12 +54,12 @@ Over 70% of all public APIs use REST, because of it's fast performance, reliabil
 * **PUT** - PUT is, most often utilized for updates capabilities
 * **PATCH** - PATCH is for modifying capabilities. The PATCH request only needs to contain the changes to the resource. Not the complete resource
 
-## Working Example
+### Working Example
 We will be using Open WeatherMap API to get the current weather data. Suppose you want to know the weather of a particular location, but you don't have any of your services to do that. In that case, you'll need to make some calls out to the weather service to get the information. And then you can know about the weather of a specific location. Below is an example that shows you how to get the weather information using Open WeatherMap API (It's free to use)
 
-* ### Open WeatherMap API
+#### Open WeatherMap API
 
-
+```
       import configparser
       import requests
         import sys
@@ -74,10 +88,11 @@ We will be using Open WeatherMap API to get the current weather data. Suppose yo
 
       if __name__ == '__main__':
       main()
+```
 
-* ### OUTPUT
+#### OUTPUT
 
-
+```
        {"coord": { "lon": 139,"lat": 35},
        "weather": [
       {
@@ -118,9 +133,9 @@ We will be using Open WeatherMap API to get the current weather data. Suppose yo
       "cod": 200
       }
 
-
+```
 
 The above code shows the result in coordinates. Which also includes things such as temperature and humidity. **This would help us get the weather of a location using REST API**
 
-## Takeaways
+### Takeaways
 That was a quick introduction to the API that many people don't know off. In this article, we get to discuss what they are and how does that works. APIs are integral to running a data-driven business nowadays. It's a game-changer for the modern software industry. It's used in the industry for a long time now, due to its quick implementation.
