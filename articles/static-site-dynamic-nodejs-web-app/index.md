@@ -76,9 +76,30 @@ Finally, on all pages with a header delete the code between the `<header></heade
 ### Rendering EJS Pages
 Now we get to the exciting part, making the server render the EJS pages and partials so you can see them on the front-end.
 
-First, we need to add the EJS Node module to our server. So, in the `server.js` file, add `const ejs = require('ejs');` near the beginning of the file with the other Node modules.
+**server.js Example**
+```js
+// Load Node modules
+var express = require('express');
+const ejs = require('ejs');
+// Initialise Express
+var app = express();
+// Render static files
+app.use(express.static('public'));
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
+// Port website will run on
+app.listen(8080);
 
-Second, we need to tell our Express server to use EJS so underneath the `app.use(express.static('public'));` line add  `app.set('view engine', 'ejs');`.
+// *** GET Routes - display pages ***
+// Root Route
+app.get('/', function (req, res) {
+    res.render('pages/index');
+});
+```
+
+First, we need to add the EJS Node module to our server. So, in the `server.js` file (see example above), add `const ejs = require('ejs');`
+
+Second, we need to tell our Express server to use EJS so add  `app.set('view engine', 'ejs');`.
 
 Now, we need to configure routes. Routes tell the server what to do when a user goes to a certain URL in your website such as `http://testapp.com/login`. There are two types of routes, GET and POST. GET routes display pages and POST routes upload data from the front-end to the server (usually via a form) typically before a page is rendered and the uploaded data is somehow used.
 
