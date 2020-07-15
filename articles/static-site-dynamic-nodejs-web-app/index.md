@@ -6,7 +6,7 @@ slug: static-site-dynamic-nodejs-web-app
 title: Converting A Static Site to A Dynamic Node.js Web App
 description: How to build your first dynamic Node.js web app from a static site. This article dispels the difficulties of learning full-stack development.
 author: louise-findlay
-date: 2020-07-15T00:00:00-07:00
+date: 2020-07-14T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ This tutorial will guide you on how to convert a static website that uses HTML, 
 Learning a templating language can be easier than a JS framework because you can just write HTML, and it lets you insert the same piece of code in multiple locations (called partials) or pass server-side variables to be displayed on the front-end (such as a username).
 
 
-### Installing NodeJS
+### Installing Node.js
 First, make sure you’ve installed Node.js on your local machine or VPS hosting provider.  If you haven’t installed it, go to the [Node.js website](https://nodejs.org/en/) to do so. With Node.js, you can write server-side code using a special form of JavaScript so you can use an already familiar language.
 
 The Node.js installer comes bundled with the package manager NPM. NPM is a repository for Node Modules, reusable pieces of code that can extend the functionality of your server. It’s similar to a plugin repository, and Node Modules can be thought of as code snippets or libraries (depending on how large they are).
@@ -164,4 +164,4 @@ Congratulations! You've successfully converted your static website to a Node.js 
 
 If you want to build on the skills you've learned in this tutorial, I suggest using EJS templating to work with APIs and databases.
 
-If you need a helping hand on either of those areas, check out my Getting to Grips with Databases [guide](/engineering-education/working-with-databases-part1/) which will get you started and later expand into using EJS.
+If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases guide](/engineering-education/working-with-databases-part1/) which will get you started and later expand into using EJS.
