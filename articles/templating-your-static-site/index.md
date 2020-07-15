@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: templating-your-static-site
 title: Templating Your Static Site (Converting a Static Site to a Static Site Generator)
-description:
+description: Tutorial on converting a simple static website to a static site generator, Eleventy and using EJS templating.
 author: louise-findlay
 date: 2020-07-15T00:00:00-07:00
 topics: []
@@ -53,11 +53,11 @@ module.exports = function (eleventyConfig) {
     };
 };
 ```
-This will tell Eleventy when it builds your website to just copy the img, css and js folders across (which is called passthrough copy) so you can link them to them in your code.
+This will tell Eleventy when it builds your website to just copy the img, CSS and js folders across (which is called passthrough copy) so you can link them to them in your code.
 
 Now run `npx @11ty/eleventy` and it should have built your website and output the result to the `_site` folder. Congratulations, you've just finished the first Eleventy build of your website.
 
-**Tip:** If you're using the version control software, Git **link to a section article on Git** manage your code then it would be a good idea to add the `_site` folder to your .gitignore file. This will stop you commiting your `_site` folder to Git which prevents the constant uncommitted changes warning.
+**Tip:** If you're using the version control software, Git **link to a section article on Git** manages your code then it would be a good idea to add the `_site` folder to your .gitignore file. This will stop you from committing your `_site` folder to Git which prevents the constant uncommitted changes warning.
 
 ### Creating Your First EJS Partial
 
@@ -175,7 +175,6 @@ Remove the HTML you've just templated from the HTML page and check on your websi
 Congratulations you've just used layout chaining for the first time. You can create new templates for different parts of your website. The beauty of Eleventy is you can template as little or as much as you like.
 
 ### Deploying Your First Static Site Generator Website
-
 You've converted your first static website to a static site generator but now you need to deploy it to a web hosting platform.
 
 There are many hosts for static sites but we will use [Netlify](https://www.netlify.com) because it's easy to use and has a generous free plan.
