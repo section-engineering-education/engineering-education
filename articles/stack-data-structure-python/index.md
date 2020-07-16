@@ -2,21 +2,24 @@
 layout: engineering-education
 status: publish
 published: true
-slug: data-structures-python-part-3
-title: Stack, Data Structures in Python
-description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python and using stack.
+slug: stack-data-structure-python
+title: Using the Stack Data Structure in Python
+description: The Stack is a very powerful linear data structure that's used in many low level operating system programs.
 author: saiharsha-balasubramaniam
 date: 2020-07-04T00:00:00-12:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/data-structures-python-part-3/hero.jpg
+  - url: /engineering-education/stack-data-structure-python/hero.jpg
     alt: python data structures image
 
 ---
-A Stack is a linear data structure. It stores items using the Last In, First Out(LIFO) manner. Whenever a new element is added to a stack, it is added to the top of the stack, and the top element is always removed first from a stack. The next Data Structure we'll be looking at will be the Stack.
+A Stack is a linear data structure. It stores items using the Last In, First Out(LIFO) manner. Whenever a new element is added to a stack, it is added to the top of the stack, and the top element is always removed first from a stack. In this article, we'll be looking at ways to implement and use the stack in Python.
 <!--more-->
+
+*For more background on the different types of data structures in Python, check out my [previous article](/engineering-education/data-structures-python-part-1/) on the list data structure.*
+
 ### Table of Contents
 
 - [Stack: Introduction](#stack:-introduction)
@@ -27,10 +30,10 @@ A Stack is a linear data structure. It stores items using the Last In, First Out
 
 ### Stack: Introduction
 
-| ![Stack, Books](/engineering-education/data-structures-python-part-3/stack-books.jpg) | A great analogy we can use is stacking a pile of books. We always keep a new book on top and remove the topmost book. - Stacks are similar to queues in that they are linear collections of items and they differ by the order they are accessed in. Stacks are used in a variety of areas from Operating System Software, in Compilers and Language Parsing, and to implement other complex Data Structures like Trees and Graphs. |
+| ![Stack, Books](/engineering-education/stack-data-structure-python/stack-books.jpg) | A great analogy we can use is stacking a pile of books. We always keep a new book on top and remove the topmost book. - Stacks are similar to queues in that they are linear collections of items and they differ by the order they are accessed in. Stacks are used in a variety of areas from Operating System Software, in Compilers and Language Parsing, and to implement other complex Data Structures like Trees and Graphs. |
 |:---:|:---:|
 
-![Push Pop](/engineering-education/data-structures-python-part-3/pushpop.png)
+![Push Pop](/engineering-education/stack-data-structure-python/pushpop.png)
 `push` in a stack is putting an item on top of the stack.
 
 `pop` in a stack is taking out the top item in the stack.
@@ -52,23 +55,23 @@ Stacks are used extensively in a lot of places.
 There are various functions that are associated with a stack. They are,
 
 ##### stack.isEmpty()
-- It returns `True` if the stack is empty. Else, returns `False`
+- The `stack.isEmpty()` method returns `True` if the stack is empty. Else, returns `False`
 - Time Complexity - O(1)
 
 ##### stack.length()
-- It returns the length of the stack.
+- The `stack.length()` method returns the length of the stack.
 - Time Complexity - O(1)
 
 ##### stack.top()
-- Returns a pointer/reference to the top element in the stack.
+- The `stack.top()` method returns a pointer/reference to the top element in the stack.
 - Time Complexity - O(1)
 
 ##### stack.push(x)
-- Inserts the element, ```x``` to the top of the stack.
+- The `stack.push()` method inserts the element, ```x``` to the top of the stack.
 - Time Complexity - O(1)
 
 ##### stack.pop()
-- Removes the top element of the stack and returns it.
+- The `stack.pop()` method removes the top element of the stack and returns it.
 - Time Complexity - O(1)
 
 ### Stack Implementations
@@ -77,7 +80,7 @@ In Python, we can implement the stack by various methods. We are gonna dive into
 ### Stack using a List
 We use the list methods, ```append``` and ```pop``` to implement a Stack.
 
-```
+```python
 class Stack:
 
     def __init__(self):
@@ -107,7 +110,7 @@ class Stack:
 Python `collections` are container classes that are used for data collection storage. They are highly optimized and are really fast, and they have a ton of methods built-in.
 `Deque` is one such python collection that is used for inserting and removing items. We can use it to create a faster implementation of a stack.
 
-```
+```python
 from collections import deque
 class Stack:
 
@@ -147,6 +150,6 @@ Once you are done with understanding the stack and the basic implementation, pra
 - Stack Problem Set - [HackerRank](https://www.hackerrank.com/domains/data-structures?filters%5Bsubdomains%5D%5B%5D=stacks)
 
 ### Conclusion
-Thus, we have learned the implementation, importance, and application of stacks. This is one of the most important data structures to know and it is extensively asked in the computer science industry, it is important to have strong knowledge on this topic as it would give you an edge.
+We have learned the implementation, importance, and application of stacks. This is one of the most important data structures to know and it is extensively asked in the computer science industry. It is important to have strong knowledge on this topic as it would give you an edge.
 
 Stay tuned for the next article in this series!
