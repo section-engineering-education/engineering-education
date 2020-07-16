@@ -18,8 +18,6 @@ images:
 Python lists are extremely powerful features that cut down the lines of code and the time taken to write your code. In this article, we'll look at various ways to use the Python list data structure to create, update, and delete lists, along with other powerful list methods.
 <!--more-->
 
-![Array, Meme](/engineering-education/list-data-structure-python/array-mindexpands.png)
-
 ### Table of Contents
 - [Creating a List](#creation)
 - [Accessing Various Elements](#accessing-various-elements)
@@ -67,7 +65,7 @@ print(colors[3])
 print(colors[1.0])
 ```
 
-Python has a very handy **negative indexing** feature as well:
+Python has a very handy **negative indexing** feature as well, which starts from the end of the list:
 
 ```python
 colors = ['red', 'blue', 'green']
