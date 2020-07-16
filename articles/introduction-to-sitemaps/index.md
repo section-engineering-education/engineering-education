@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-slug: sitemapping-what-is-it
-title: Sitemapping, What Is It and Is It Important?
+slug: introduction-to-sitemaps
+title: Does your website need a sitemap?
 description: Sitemapping allows a webmaster to inform search engines about URLs on a website that are available for crawling. A Sitemap is an XML file that lists the URLs for a site.
 author: gregory-manley
-date: 2020-07-02T00:00:00-07:00
+date: 2020-07-16T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/sitemapping-what-is-it/hero.jpg
+  - url: /engineering-education/introduction-to-sitemaps/hero.jpg
     alt:  Sitemapping example image
 ---
 Sitemapping is by definition create a map that describes relations between pages of a website. Most websites have a sitemap, but not many people see, use, or even know about it. This raises the question: what is a sitemap and is it important?
@@ -32,15 +32,15 @@ Not only can sitemaps be useful for search engines to index a website,  but it c
 ### How To Generate and Upload to Google Search Console
 Thankfully, it is easy to generate a sitemap for your website using free online services. For this example we will use [Online XML Sitemap Generator](https://www.web-site-map.com/xml_sitemap.php) to generate a sitemap for iTech News and provide Google Search Console access in order to index our site.
 
-![](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/5d9bf435-c752-47c0-b904-053022c179a7_orig.png)
+![sitemap generator](/engineering-education/introduction-to-sitemaps/sitemap-generator.png)
 
 Simply go to the website and enter your website's address, then click "Create free XML Sitemap". It may take some time to generate a sitemap for your site, especially if you have hundreds of webpages. Once you have this sitemap downloaded (known as sitemap.xml). You will need to upload this file to your website.
 
 Once this is uploaded head over to your Google Search Console and click on sitemap on the sidebar. Once there enter sitemap.xml into the text box.
 
-![](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/screen-shot-2020-07-02-at-10-47-34-am_orig.png)
+![google search console sitemap](/engineering-education/introduction-to-sitemaps/google-search-console-sitemap.png)
 
-After that click submit and Google now knows where your sitemap is and will shortly start indexing it.
+After that, click submit and Google now knows where your sitemap is and will shortly start indexing it.
 
 Simply go to the website and enter your website's address, then click "Create free XML Sitemap". It may take some time to generate a sitemap for your site, especially if you have hundreds of webpages. Once you have this sitemap downloaded (known as sitemap.xml). You will need to upload this file to your website.
 
