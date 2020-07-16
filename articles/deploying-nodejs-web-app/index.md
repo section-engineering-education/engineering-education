@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 slug: deploying-nodejs-web-app
-title: Deploying Your First NodeJS Web App
+title: Deploying Your First Node.js Web App
 description: This guide provides an introduction to Node.js and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
 author: louise-findlay
 date: 2020-07-15T00:00:00-10:00
