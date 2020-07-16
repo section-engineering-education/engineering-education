@@ -2,20 +2,23 @@
 layout: engineering-education
 status: publish
 published: true
-slug: data-structures-python-part-4
-title: Queue, Data Structures in Python
-description: An overview of data structures in this article, and move on to learn about every data structure, in-depth article about implementing queues in Python.
+slug: queue-data-structure-python
+title: Using the Queue Data Structure in Python
+description: A queue is an efficient linear data structure that is used to maintain the order and is used to implement other data structures. 
 author: saiharsha-balasubramaniam
 date: 2020-07-07T00:00:00-12:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/data-structures-python-part-4/hero.jpg
+  - url: /engineering-education/queue-data-structure-python/hero.jpg
     alt: python data structures queue
 
 ---
-In Part 4 of this series, let us dive into Queues, a data structure that stores data in a **First In, First Out** (FIFO) manner. [Queue](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm) is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at both its ends.
+In Part 4 of this series, let us dive into Queues, a data structure that stores data in a **First In, First Out** (FIFO) manner. [Queue](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm) is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at both its ends. In this article, we'll be looking at the implement and use the stack in Python.
+
+*For more background on the different data structures in Python, check out my articles on the [List](/engineering-education/list-data-structure-python/) and [Stack](/engineering-education/stack-data-structure-python) data structures.*
+
 <!--more-->
 
 ### Table of Contents
@@ -29,7 +32,7 @@ In Part 4 of this series, let us dive into Queues, a data structure that stores 
 ### Queue - An introduction
 A Queue is a linear data structure in which data is stored in a **First In, First Out** manner. In a queue, the item that was added the earliest is removed first. The item that was added more recently is removed last. A queue can be compared to a real-life queue.
 
-![Queue, Diagram](/engineering-education/data-structures-python-part-4/queue.png)
+![Queue, Diagram](/engineering-education/queue-data-structure-python/queue.png)
 
 `enqueue` is a queue operation where you add an item at the back of a queue.
 
@@ -47,19 +50,19 @@ A Queue is a linear data structure in which data is stored in a **First In, Firs
 #### Queue Methods
 
 ##### queue.Enqueue()
-- Adds an element at the rear of the queue.
+- The `queue.Enqueue()` method adds an element at the rear of the queue.
 - Time Complexity -> O(1)
 ##### queue.Dequeue()
-- Removes an element from the front of the queue.
+- The `queue.Dequeue()` method removes an element from the front of the queue.
 - Time Complexity -> O(1)
 ##### queue.Front()
-- Return the front item from the queue.
+- The `queue.Front()` method returns the front item from the queue.
 - Time Complexity -> O(1)
 ##### queue.Rear()
-- Return the rear item from the queue.
+- The `queue.Rear()` method returns the rear item from the queue.
 - Time Complexity -> O(1)
 ##### queue.isEmpty()
-- Returns `True` if the queue is empty, else returns `False`.
+- The `queue.isEmpty()` method returns `True` if the queue is empty, else returns `False`.
 - Time Complexity -> O(1)
 
 Queues can be implemented in various ways. Let us look implement a queue using list and using the `collections.deque` module in Python.
@@ -68,7 +71,7 @@ Queues can be implemented in various ways. Let us look implement a queue using l
 
 We can use the list methods `insert` and `pop` to implement a queue.
 
-```
+```python
 class Queue:
 
     def __init__(self):
@@ -98,7 +101,7 @@ class Queue:
 
 The `deque` class from the python `collections` module can also be used to implement a queue. This method of implementing a queue is far more efficient because deque provides faster enqueue and dequeue operations.
 
-```
+```python
 from collections import deque
 class Queue:
 
@@ -141,4 +144,4 @@ Try implementing the queue in Python first. Then once you're done with the imple
 
 ### Conclusion
 We have implemented queues and learned how to use them in algorithmic problems. Queues are very integral from an operating system point of view. They are also asked in interviews extensively.
-**We have thus covered all the linear data structures successfully in this series.** The next article would deal with Non-Linear Data Structures like Tree, Heap, etc. Stay tuned!
+**We have covered all the linear data structures successfully in this series.** The next article would deal with Non-Linear Data Structures like Tree, Heap, etc. Stay tuned!
