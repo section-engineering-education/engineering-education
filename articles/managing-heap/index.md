@@ -1,8 +1,23 @@
-# Managing the Heap in C
+---
+layout: engineering-education
+status: publish
+published: true
+slug: managing-heap
+title: Managing the Heap in C
+description: Working with the heap in C is very difficult. Even Google struggles with it. But it's very important to not have memory issues in your code.
+author: mike-white
+date: 2020-07-16T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /assets/images/managing-heap/asm-image.jpg
+    alt:
+---
 Memory management is very important. In Google Chrome, [70% of security bugs are memory problems](https://zdnet.com/article/chrom-70-of-all-security-bugs-are-memory-safety-issues/). Fixing memory management would lead to much more reliable and secure programs. There are two possible solutions to this. You can [use](https://www.java.com/) [a](https://www.haskell.com/) [language](https://www.python.org/) [with](https://nim-lang.org/) [better](https://www.rust-lang.org/) [or](https://en.wikipedia.org/wiki/Pony) [easier](https://docs.microsoft.com/en-us/dotnet/csharp/) [memory](https://ziglang.org/) [management](https://www.javascript.com/), or just learn how to use memory properly. We’ll talk about the latter today.
+<!--more-->
 
-## The Stack
+### The Stack
 
 There are two places where memory can be placed: the stack and the heap.
 
@@ -14,9 +29,9 @@ int stack_num = 5; // this variable is stored in the stack
 
 The advantage of using the stack is that it’s relatively fast. Not as fast as [cpu registers](https://www.section.io/engineering-education/assembly-part-1/#registers), but still fast. It only takes a couple cycles of the CPU to use it. There are still some times when it’s useless though…
 
-## The Heap
+### The Heap
 
-### What is the Heap?
+#### What is the Heap?
 
 The heap is in the back of memory, and it’s managed by the operating system. Using this is a bit more involved. You need to use the `malloc` function to tell the operating system how much memory you need.
 
@@ -38,7 +53,7 @@ If you try to access `heap_num` now, you’ll get the dreaded “segmentation fa
 
 The heap is much slower than the stack. The computer needs to keep track of what processes are allowed to use which points of memory. Accessing the memory isn’t as big of a problem as the allocation. The `malloc` function has to find an empty place in memory, mark the space as used, and then tell your program where it is.
 
-### Why Use the Heap at all?
+#### Why Use the Heap at all?
 
 The heap gives you control over when memory is freed. Consider the following function.
 
@@ -71,12 +86,12 @@ struct Account {
 struct Account* new_account(char* name) {
     static int current_id = 0;
     current_id ++;
-    
+
     struct Account* account = malloc(sizeof(Account));
     account -> name = name;
     account -> id = current_id;
     account -> amount = 0;
-    
+
     return account;
 }
 ```
@@ -111,6 +126,5 @@ free(pointer);
 free(pointer); // undefined behavior
 ```
 
-## Conclusion
-
+### Conclusion
 Now you know many of the problems with memory management. You should be able to prevent these errors from popping up in your own C code.
