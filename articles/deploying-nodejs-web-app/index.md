@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/deploying-nodejs-web-app/hero.JPG
+  - url: /engineering-education/deploying-nodejs-web-app/hero.jpeg
     alt: header image nodejs
 ---
 You’ve finished developing your first Node.js web app and now you want to publish it on the web. This guide will walk you through how to get a basic Express server running to serve static web files. *Note: If you’re still in the development process, then you may find my [Node.js guide](/engineering-education/static-site-dynamic-nodejs-web-app/) helpful.*
