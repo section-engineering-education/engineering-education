@@ -11,14 +11,13 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assets/images/managing-heap/asm-image.jpg
-    alt:
+  - url: /engineering-education/managing-heap/hero.jpg
+    alt: memory drive image example
 ---
 Memory management is very important. In Google Chrome, [70% of security bugs are memory problems](https://zdnet.com/article/chrom-70-of-all-security-bugs-are-memory-safety-issues/). Fixing memory management would lead to much more reliable and secure programs. There are two possible solutions to this. You can [use](https://www.java.com/) [a](https://www.haskell.com/) [language](https://www.python.org/) [with](https://nim-lang.org/) [better](https://www.rust-lang.org/) [or](https://en.wikipedia.org/wiki/Pony) [easier](https://docs.microsoft.com/en-us/dotnet/csharp/) [memory](https://ziglang.org/) [management](https://www.javascript.com/), or just learn how to use memory properly. We’ll talk about the latter today.
 <!--more-->
 
 ### The Stack
-
 There are two places where memory can be placed: the stack and the heap.
 
 The stack is the default for primitive variables in most statically-typed programming languages. The stack is at the front of memory. Not only does it contain variables, but also function parameters, and return addresses. Assigning a variable to the stack is easy. Just create a variable.
@@ -32,7 +31,6 @@ The advantage of using the stack is that it’s relatively fast. Not as fast as 
 ### The Heap
 
 #### What is the Heap?
-
 The heap is in the back of memory, and it’s managed by the operating system. Using this is a bit more involved. You need to use the `malloc` function to tell the operating system how much memory you need.
 
 ```c
@@ -49,12 +47,11 @@ free(heap_num);
 
 Some programs forget to do this, which causes what is called a “memory leak”. The OS still thinks you need that memory and doesn’t clear it until the program ends.
 
-If you try to access `heap_num` now, you’ll get the dreaded “segmentation fault”. You’re trying to access memory which doesn’t belong to you. There are very good security reasons why this happens.
+If you try to access `heap_num` now, you’ll get the dreaded “segmentation fault”. You’re trying to access memory that doesn’t belong to you. There are very good security reasons why this happens.
 
 The heap is much slower than the stack. The computer needs to keep track of what processes are allowed to use which points of memory. Accessing the memory isn’t as big of a problem as the allocation. The `malloc` function has to find an empty place in memory, mark the space as used, and then tell your program where it is.
 
 #### Why Use the Heap at all?
-
 The heap gives you control over when memory is freed. Consider the following function.
 
 ```c
@@ -99,15 +96,12 @@ struct Account* new_account(char* name) {
 This way, you can modify the account and pass it in between functions. In Java, [all objects are stored in the heap](https://www.baeldung.com/java-stack-heap) for this reason. It makes it easier to have multiple references to a single object.
 
 ### Other Problems
-
 Of course, there are other problems that can occur when using the heap. Here are a few:
 
 #### Dereferencing Null
-
 Some functions, instead of returning a pointer, return `NULL`. This indicates something has gone wrong. Normally, this causes a segmentation fault. That’s because `NULL` isn’t a real address that you have permission to use.
 
 #### Using Uninitialized Memory
-
 This isn’t strictly a heap problem, but say you try to do this.
 
 ```c
@@ -118,7 +112,6 @@ printf("%d", *pointer); // undefined behavior, most likely a random number
 You never initialized the value of `pointer`. The value will be whatever just happened to be there before. This is almost completely random.
 
 #### Double Free
-
 You don’t want to try to free something that’s already free. In some cases, it can actually cause a problem with the memory manager, and cause future mallocs or frees to fail.
 
 ```c
