@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: edge-tf-lite
 title: Machine Learning on Edge Devices Using TensorFlow Lite
-description: This article details machine learning on edge computing devices which use TensorFlow Lite and RaspberryPi.
+description: This article details machine learning on edge computing devices which use TensorFlow Lite and RaspberryPi. Talking about Latency, Bandwidth, privacy, and security.
 author: rohan-reddy
-date: 2020-07-09T00:00:00-09:00
+date: 2020-07-16T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,7 @@ images:
   - url: /engineering-education/edge-tf-lite/hero.jpg
     alt: edge device example image
 ---
-[Edge Devices](https://en.wikipedia.org/wiki/Edge_device) are computing devices that live at the "edge" of the network and perform work in the exact location that
-it's needed. Edge devices include [IoT devices](https://en.wikipedia.org/wiki/Internet_of_things), [smart home equipment](https://www.pcmag.com/news/the-best-smart-home-devices-for-2020) and computers embedded as household or industrial items. IoT devices are growing rapidly and continue to do so for the next couple of years[1].
+[Edge Devices](https://en.wikipedia.org/wiki/Edge_device) are computing devices that live at the "edge" of the network and perform work in the exact location that is needed. Edge devices include [IoT devices](https://en.wikipedia.org/wiki/Internet_of_things), [smart home equipment](https://www.pcmag.com/news/the-best-smart-home-devices-for-2020) and computers embedded as household or industrial items. IoT devices are growing rapidly and continue to do so for the next couple of years[1].
 <!--more-->
 
 ![img](/engineering-education/edge-tf-lite/logo.png)
@@ -25,8 +24,7 @@ it's needed. Edge devices include [IoT devices](https://en.wikipedia.org/wiki/In
 
 Image Source: [Udacity](https://www.udacity.com/)
 
-The above diagram shows the traditional flow of data in a machine learning system. A device collects information from the environment, which is sent via a network connection
-to a back-end server that performs inference. The server sends some data back to the device if necessary.
+The above diagram shows the traditional flow of data in a machine learning system. A device collects information from the environment, which is sent via a network connection to a back-end server that performs inference. The server sends some data back to the device if necessary.
 
 ![img](/engineering-education/edge-tf-lite/edge.png)
 
@@ -42,8 +40,7 @@ is at the edge. When inference is super fast we can solve high-performance actio
 
 ### RaspberryPi + TensorFlow Lite = Awesome Things!!
 
-The [Raspberry Pi](https://www.raspberrypi.org/) (R Pi) is a low cost, very small computer that runs a linux-based operating system called [Raspbian or Raspberry Pi OS](https://www.raspberrypi.org/downloads/)
-. It's often used for building prototype devices since it has fairly typical hardware specifications and it's easy to connect to sensors and peripherals like cameras.
+The [Raspberry Pi](https://www.raspberrypi.org/) (R Pi) is a low cost, very small computer that runs a Linux-based operating system called [Raspbian or Raspberry Pi OS](https://www.raspberrypi.org/downloads/). It's often used for building prototype devices since it has fairly typical hardware specifications and it's easy to connect to sensors and peripherals like cameras.
 [TensorFlow](https://www.tensorflow.org/) is a popular open-source machine learning framework, which is used for a variety of tasks. [TensorFlow Lite](https://www.tensorflow.org/lite/) is a lightweight library
 for deploying models on mobile and embedded devices. It is a lighter, less-featured deep learning framework for on-device inference.  
 
@@ -113,7 +110,7 @@ We can expect sample input and output to be.
 
 ### Conclusion
 
-Machine Learning is a powerful tool which can help automate many tasks which are beyond the scope of classical programming, it was assumed that you need a powerful computing machine with a GPU to train models. But with the evolution of hardware and optimization of software for low-end computing devices, we can perform complex machine learning tasks on devices such as micro-controllers, mobile phones, smart home devices, etc. We see these in our day-to-day applications like Gmail uses TensorFlow Lite for Smart Reply and Auto-Complete. Google Assistant uses it for Natural Language Processing and Understanding.
+Machine Learning is a powerful tool which can help automate many tasks which are beyond the scope of classical programming, it was assumed that you need a powerful computing machine with a GPU to train models. But with the evolution of hardware and optimization of software for low-end computing devices, we can perform complex machine learning tasks on devices such as micro-controllers, mobile phones, smart home devices, etc. We see these in our day-to-day applications, for example - Gmail uses TensorFlow Lite for Smart Reply and Auto-Complete. Google Assistant uses it for Natural Language Processing and Understanding.
 
 ### Resources & References
 1. [Free Udacity Course](https://www.udacity.com/course/intro-to-tensorflow-lite--ud190)
