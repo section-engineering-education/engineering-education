@@ -60,6 +60,12 @@ This is a good news for web projects. However, browser support is incomplete and
 
 So why webpack? Bundlers like webpack automatically go through your application and build a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) based on what is imported and exported. This along with other plugins and loaders make for a great developer experience. It's a tool that lets you bundle your JavaScript applications (supporting both ESM and CommonJS). Any time one file depends on another, webpack treats this as a dependency. This allows webpack to take non-code assets, such as images or web fonts, and also provide them as dependencies for your application.
 
+## Getting Started with Webpack
+
+### Install webpack
+
+`npm init`
+`npm install webpack webpack-cli --save-dev` 
 
 
 
