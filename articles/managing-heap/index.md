@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/managing-heap/hero.jpg
     alt: memory drive image example
 ---
-Memory management is very important. In Google Chrome, [70% of security bugs are memory problems](https://zdnet.com/article/chrom-70-of-all-security-bugs-are-memory-safety-issues/). Fixing memory management would lead to much more reliable and secure programs. There are two possible solutions to this. You can [use](https://www.java.com/) [a](https://www.haskell.com/) [language](https://www.python.org/) [with](https://nim-lang.org/) [better](https://www.rust-lang.org/) [or](https://www.ponylang.io/discover/) [easier](https://docs.microsoft.com/en-us/dotnet/csharp/) [memory](https://ziglang.org/) [management](https://www.javascript.com/), or just learn how to use memory properly. We will talk about the today.
+Memory management is very important. In Google Chrome, [70% of security bugs are memory problems](https://zdnet.com/article/chrom-70-of-all-security-bugs-are-memory-safety-issues/). Fixing memory management would lead to much more reliable and secure programs. There are two possible solutions to this. You can use a language with [better](https://www.rust-lang.org) or [easier](https://www.java.com), or just learn how to use memory properly. We will talk about the latter today.
 <!--more-->
 
 ### The Stack
