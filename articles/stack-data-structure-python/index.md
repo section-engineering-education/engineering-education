@@ -30,7 +30,7 @@ A Stack is a linear data structure. It stores items using the Last In, First Out
 
 ### Stack: Introduction
 
-| ![Stack, Books](/engineering-education/stack-data-structure-python/stack-books.jpg) | A great analogy we can use is stacking a pile of books. We always keep a new book on top and remove the topmost book. - Stacks are similar to queues in that they are linear collections of items and they differ by the order they are accessed in. Stacks are used in a variety of areas from Operating System Software, in Compilers and Language Parsing, and to implement other complex Data Structures like Trees and Graphs. |
+| ![Stack, Books](/engineering-education/stack-data-structure-python/stack-books.jpg) | A great analogy we can use is stacking a pile of books. We always keep a new book on top and remove the topmost book. Stacks are similar to queues in that they are linear collections of items, but they differ in the order in which they are accessed. Stacks are used in a variety of areas from Operating System Software, in Compilers and Language Parsing, and to implement other complex Data Structures like Trees and Graphs. |
 |:---:|:---:|
 
 ![Push Pop](/engineering-education/stack-data-structure-python/pushpop.png)
@@ -75,10 +75,10 @@ There are various functions that are associated with a stack. They are,
 - Time Complexity - O(1)
 
 ### Stack Implementations
-In Python, we can implement the stack by various methods. We are gonna dive into two of the methods, the common method, and the efficient method.
+In Python, we can implement the stack by various methods. We are going to dive into two of the methods - the **common method** and the **efficient method**.
 
 ### Stack using a List
-We use the list methods, ```append``` and ```pop``` to implement a Stack.
+We use the list methods `append` and `pop` to implement a Stack.
 
 ```python
 class Stack:
@@ -107,7 +107,8 @@ class Stack:
 ```
 
 ### Stack using collection.Deque
-Python `collections` are container classes that are used for data collection storage. They are highly optimized and are really fast, and they have a ton of methods built-in.
+Python `collections` are container classes that are used for data collection storage. They are highly optimized, are really fast, and have lots of methods built-in.
+
 `Deque` is one such python collection that is used for inserting and removing items. We can use it to create a faster implementation of a stack.
 
 ```python
@@ -151,5 +152,3 @@ Once you are done with understanding the stack and the basic implementation, pra
 
 ### Conclusion
 We have learned the implementation, importance, and application of stacks. This is one of the most important data structures to know and it is extensively asked in the computer science industry. It is important to have strong knowledge on this topic as it would give you an edge.
-
-Stay tuned for the next article in this series!
