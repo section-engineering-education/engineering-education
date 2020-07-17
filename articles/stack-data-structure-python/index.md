@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: stack-data-structure-python
 title: Using the Stack Data Structure in Python
-description: The Stack is a very powerful linear data structure that's used in many low level operating system programs.
+description: The Stack is a very powerful linear data structure that's used in many low level operating system programs. This article explores ways to implement and use the stack data structure in Python.
 author: saiharsha-balasubramaniam
-date: 2020-07-04T00:00:00-12:00
+date: 2020-07-15T00:00:00-12:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,10 +15,10 @@ images:
     alt: python data structures image
 
 ---
-A Stack is a linear data structure. It stores items using the Last In, First Out(LIFO) manner. Whenever a new element is added to a stack, it is added to the top of the stack, and the top element is always removed first from a stack. In this article, we'll be looking at ways to implement and use the stack in Python.
+A Stack is a linear data structure. It stores items using the Last In, First Out (LIFO) method. Whenever a new element is added to a stack, it is added to the top of the stack, and the top element is always removed first from a stack. In this article, we'll be looking at ways to implement and use the stack in Python.
 <!--more-->
 
-*For more background on the different types of data structures in Python, check out my [previous article](/engineering-education/data-structures-python-part-1/) on the list data structure.*
+*For more background on the different types of data structures in Python, check out my [previous article](/engineering-education/data-structures-python-part-1/).*
 
 ### Table of Contents
 
