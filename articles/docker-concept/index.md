@@ -6,13 +6,13 @@ slug: docker-concept
 title: Understanding Docker Concepts
 description: The basic concepts of Docker, technology and has helped drive the trend towards containerization and micro-services in software development that’s known as cloud-native development.
 author: francisca-adekanye
-date: 2020-07-14T00:00:00-06:00
+date: 2020-07-18T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/docker-concept/hero.jpg
-    alt: 
+    alt: container example image
 ---
 [Docker](https://docs.docker.com/get-started/overview/), an open-source project launched in 2013,  has helped popularize technology and has helped drive the trend towards containerization and micro-services in software development that’s known as cloud-native development.
 <!--more-->
