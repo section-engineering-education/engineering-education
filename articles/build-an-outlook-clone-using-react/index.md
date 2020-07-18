@@ -1,4 +1,4 @@
-![This is the cover image. The final output of outlook clone is shown](homepage.jpg "Output")
+![This is the cover image. The final output of outlook clone is shown](hero.jpg "Output")
 
 # Building An Outlook Clone with React
 
