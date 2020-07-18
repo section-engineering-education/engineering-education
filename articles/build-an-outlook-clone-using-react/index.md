@@ -174,7 +174,7 @@ outlookclonereact
 
 We will be working with class based components in this article. The next article will talk about using Hooks for the same. A study of the two articles is enough to get a working understanding of React. Many examples that we find on GitHub are in class based components. Having the ability to use React Hooks in place of class based components is a useful skill to have.
 
-Let us create a folder called components in the root folder. The updated directory looks like this
+Let us create a folder called components in the root folder. The updated directory looks like this. Add the components *Email.js*, *EmailList.js*, *EmailBody.js*,*SearchBox.js*,*Scroll.js*.
 
 ```
 outlookclonereact
@@ -182,12 +182,6 @@ outlookclonereact
 ├── node_modules
 ├── package.json
 ├── .gitignore
-├── components
-│   ├── Email.js
-│   ├── EmailBody.js
-│   ├── EmailList.js
-│   ├── SearchBox.js
-│   ├── Scroll.js
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
@@ -196,6 +190,12 @@ outlookclonereact
 │   ├── manifest.json
 │   └── robots.txt
 └── src
+    ├── components
+    │   ├── Email.js
+    │   ├── EmailBody.js
+    │   ├── EmailList.js
+    │   ├── SearchBox.js
+    │   ├── Scroll.js
     ├── App.css
     ├── App.js
     ├── App.test.js
@@ -210,9 +210,13 @@ React is modular and powerful to create simple yet elaborate applications. We wi
 
 On an *onClick* event, the id of the email is saved in the state. This id is used to fetch the email body from the API. We will look into this in depth at a later stage.
 
+*App.js*
 ```JSX
 import React, { Component } from 'react';
 import './App.css';
+import SearchBox from './components/SearchBox'
+import Scroll from './components/Scroll'
+import EmailList from './components/EmailList'
 
 class App extends Component {
   constructor() {
@@ -222,44 +226,44 @@ class App extends Component {
       email: [],
       dualPanel: false
     }
-    }
   }
 
-  onSearchChange = (event) => {
-        this.setState({
-          searchField: event.target.value,
-        })
-      }
-  // make an API call as soon as the component is mounted
-  componentDidMount() {
-    fetch('https://my-json-server.typicode.com/lalith1403/jsonemaillist/db')
-      .then(data => data.json())
-      .then(email => this.setState({ email: email["list"] }))
-      .catch(err => console.log(err))
-  }
-    // function to set dualPanel
-  setDualPanel = () => {
-    this.setState({ dualPanel: true })
-  }
 
-    // function to reset dualPanel
-  resetDualPanel = () => {
-    this.setState({ dualPanel: false })
-  }
+onSearchChange = (event) => {
+  this.setState({
+    searchField: event.target.value,
+  })
+}
+// make an API call as soon as the component is mounted
+componentDidMount() {
+  fetch('https://my-json-server.typicode.com/lalith1403/jsonemaillist/db')
+    .then(data => data.json())
+    .then(email => this.setState({ email: email["list"]}))
+    .catch(err => console.log(err))
+}
+// function to set dualPanel
+setDualPanel = () => {
+  this.setState({ dualPanel: true })
+}
 
-  render() {
-    const { email } = this.state;
-    // when no emails are received, display loading message
-    if (!email.length) {
-      return !this.state.dualPanel &&
-        <h1 >
-          Loading
+// function to reset dualPanel
+resetDualPanel = () => {
+  this.setState({ dualPanel: false })
+}
+
+render() {
+  const { email } = this.state;
+  // when no emails are received, display loading message
+  if (!email.length) {
+    return !this.state.dualPanel &&
+      <h1 >
+        Loading
       </h1>
-    }
-    else {
+  }
+  else {
     // when emails list is updated, send the list over to EmailList component
-      return(
-        <div className='dualpanel'>
+    return (
+      <div className='dualpanel'>
         <div>
           <button>FilterBy</button>
           <button>read</button>
@@ -268,7 +272,7 @@ class App extends Component {
           {/* SearchBox component defined below */}
           <SearchBox searchChange={this.onSearchChange} />
         </div>
-         {/*onclick set the dualPanel to true, and make space for email body.*/}
+        {/*onclick set the dualPanel to true, and make space for email body.*/}
         <div onClick={this.setDualPanel}>
           {!email.length &&
             <div style={{ marginRight: "10em", fontSize: "2em" }}>
@@ -281,13 +285,12 @@ class App extends Component {
           </Scroll>
         </div>
       </div>
-      )
-    }
+    )
   }
+}
 }
 
 export default App;
-
 ```
 *App.css*
 ```css
@@ -303,9 +306,21 @@ Let us create the child components. Let us begin with Emaillist component. It is
 
 Consider *EmailList.js*. We send the component *email* as props. Props are selective pieces of information that is passed on from parent to child. 
 
+*EmailList.js*
 ```JSX
 import React from 'react';
 import Email from './Email'
+
+const processDate = date => {
+    let formattedDate = new Date(date);
+    const mnth = ("0" + (formattedDate.getMonth() + 1)).slice(-2)
+    const day = ("0" + formattedDate.getDate()).slice(-2)
+    const hours = ("0" + formattedDate.getHours()).slice(-2)
+    const minutes = ("0" + formattedDate.getMinutes()).slice(-2)
+    const displayTime = [hours - 12, minutes].join(":")
+    const displayDate = [day, mnth, formattedDate.getFullYear()].join("-")
+    return [displayDate, ' ', displayTime, ' ', hours > 12 ? 'pm' : 'am'];
+}
 
 const EmailList = ({ email }) => {
     return (<div>
@@ -330,7 +345,8 @@ export default EmailList
 ```
 The map functionality is used to perform the same operation on various emails in the list. Each email in the list is sent to the *Email* component. The *Email* component is resposible for displaying the details related to the email. The next component of interest is the *Scroll* component. This is a very handy and useful component to be used to control display height. 
 
-`JSX
+*Scroll.js*
+```JSX
 import React from 'react';
 
 const Scroll = (props) => {
@@ -346,6 +362,7 @@ export default Scroll
 
 To get comfortable with components, let us create one more component, that is, the search box. We can always include it in the code itself. This is one case where we are demonstrating separation of concerns between the components. The *SearchBox* component is defined as follows. It takes in a function searchChange as a parameter which is discussed at a later stage. 
 
+*SearchBox.js*
 ```jsx
 import React from 'react'
 
@@ -361,11 +378,37 @@ export default SearchBox;
 
 The final component that we need is an EmailBody component, which shows us the body of the email. Let us define that as well. The body that we get from the db.json file has html tags in it. We use dangerouslySetInnerHTML property of div tag and set the html content as the body.
 
-file: *EmailBody.js*
-
+*Email.js*
 ```jsx
 import React from 'react'
-import './css/EmailBody.css'
+
+const Email = ({ name, email, subject, shortDesc, date, id }) => {
+
+    return (
+        <div>
+            <div>
+                <div>
+                    <div className='avatar' style={{ paddingLeft: "0.49em", paddingTop: "0.22em", fontSize: "1.8em", margin: "5px" }}>
+                        {name[0]}
+                    </div>
+                </div>
+                <div style={{ marginRight: "1vw" }}>
+                    <h4><span>From:</span> {name} &lt;{email}&gt;</h4>
+                    <p className='subject'><span>Subject:</span> {subject} </p>
+                    <p>{shortDesc}</p>
+                    <p>{date}</p>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Email;
+```
+
+*EmailBody.js*
+```jsx
+import React from 'react'
 
 const EmailBody = ({ body }) => {
     return (
@@ -379,6 +422,7 @@ export default EmailBody
 
 Having defined all the components required, we need to ensure interoperability amongst components. 
 
+## Passing Props and Implementing CallBack Functions
 Let us modify the *App.js* component. We need to ensure the following changes are made.
 
 1. Obtain and store the current id, and other details related to the email with the corresponding id. Details to be stored in the state are
@@ -605,6 +649,7 @@ The updated files are given below.
 
 The EmailList component modified as follows:
 
+*EmailList.js*
 ```jsx
 import React from 'react';
 import Email from './Email'
@@ -646,10 +691,9 @@ const EmailList = ({ email, onClick, read, markfav, currentCard }) => {
 export default EmailList
 
 ```
-To style the emails according to their read/unread status, we pass the read list as a prop from *App.js* to *Email.js*. For styling, we use nested ternary operators to check if the current email is read or not.  
+To style the emails according to their read/unread status, we pass the read list as a prop from *App.js* to *Email.js*. For styling, we use nested ternary operators to check if the current email is read or not.  File *Email.css* and *EmailBody.css* are mentioned below. Don't worry if you get an error. Fill in the file with the css properties given below.
 
 *Email.js*:
-
 ```jsx
 import React from 'react'
 import './css/Email.css'
@@ -883,224 +927,224 @@ The state variables are
 Let us add the following functionality into the codebase.
 
 ```jsx
-    import React, { Component } from 'react';
-    import './App.css';
-    import SearchBox from './components/SearchBox'
-    import EmailList from './components/EmailList'
-    import EmailBody from './components/EmailBody'
-    import Scroll from './components/Scroll'
+import React, { Component } from 'react';
+import './App.css';
+import SearchBox from './components/SearchBox'
+import EmailList from './components/EmailList'
+import EmailBody from './components/EmailBody'
+import Scroll from './components/Scroll'
 
-    class App extends Component {
-      constructor() {
-        super()
-        this.state = {
-          email: [],
-          body: ' ',
-          currentId: 0,
-          currentDate: ' ',
-          currentSender: ' ',
-          currentSubject: ' ',
-          dualPanel: false,
-          fav: [],
-          filteredByFav: false,
-          filteredByRead: false,
-          filteredBySearch: false,
-          filteredByUnread: false,
-          noFilter: true,
-          read: [],
-          searchField: ' '
-        }
-      }
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      email: [],
+      body: ' ',
+      currentId: 0,
+      currentDate: ' ',
+      currentSender: ' ',
+      currentSubject: ' ',
+      dualPanel: false,
+      fav: [],
+      filteredByFav: false,
+      filteredByRead: false,
+      filteredBySearch: false,
+      filteredByUnread: false,
+      noFilter: true,
+      read: [],
+      searchField: ' '
+    }
+  }
 
-      processDate = date => {
-        let formattedDate = new Date(date);
-        const mnth = ("0" + (formattedDate.getMonth() + 1)).slice(-2)
-        const day = ("0" + formattedDate.getDate()).slice(-2)
-        const hours = ("0" + formattedDate.getHours()).slice(-2)
-        const minutes = ("0" + formattedDate.getMinutes()).slice(-2)
-        const displayTime = [hours - 12, minutes].join(":")
-        const displayDate = [day, mnth, formattedDate.getFullYear()].join("-")
-        return [displayDate, ' ', displayTime, ' ', hours > 12 ? 'pm' : 'am'];
-      }
+  processDate = date => {
+    let formattedDate = new Date(date);
+    const mnth = ("0" + (formattedDate.getMonth() + 1)).slice(-2)
+    const day = ("0" + formattedDate.getDate()).slice(-2)
+    const hours = ("0" + formattedDate.getHours()).slice(-2)
+    const minutes = ("0" + formattedDate.getMinutes()).slice(-2)
+    const displayTime = [hours - 12, minutes].join(":")
+    const displayDate = [day, mnth, formattedDate.getFullYear()].join("-")
+    return [displayDate, ' ', displayTime, ' ', hours > 12 ? 'pm' : 'am'];
+  }
 
-      onSearchChange = (event) => {
-        this.setState({
-          searchField: event.target.value,
-          filteredBySearch: true,
-          filteredByFav: false,
-          filteredByRead: false,
-          filteredByUnread: false,
-          noFilter: true
-        })
-      }
+  onSearchChange = (event) => {
+    this.setState({
+      searchField: event.target.value,
+      filteredBySearch: true,
+      filteredByFav: false,
+      filteredByRead: false,
+      filteredByUnread: false,
+      noFilter: true
+    })
+  }
 
-      setDualPanel = () => {
-        this.setState({ dualPanel: true })
-      }
+  setDualPanel = () => {
+    this.setState({ dualPanel: true })
+  }
 
-      resetDualPanel = () => {
-        this.setState({ dualPanel: false })
-      }
+  resetDualPanel = () => {
+    this.setState({ dualPanel: false })
+  }
 
-      findEmailId = (id) => {
-        fetch(`http://localhost:3000/emailbody?id=${id}`)
-          .then(data => data.json())
-          .then(data => this.setState({ body: data[0]["body"] }))
-          .catch(err => console.log(err))
+  findEmailId = (id) => {
+    fetch(`http://localhost:3000/emailbody?id=${id}`)
+      .then(data => data.json())
+      .then(data => this.setState({ body: data[0]["body"] }))
+      .catch(err => console.log(err))
 
-        this.setState({
-          currentDate: this.processDate(this.state.email[id - 1].date),
-          currentSubject: this.state.email[id - 1].subject,
-          currentSender: this.state.email[id - 1].from.name,
-          currentId: id - 1
-        })
+    this.setState({
+      currentDate: this.processDate(this.state.email[id - 1].date),
+      currentSubject: this.state.email[id - 1].subject,
+      currentSender: this.state.email[id - 1].from.name,
+      currentId: id - 1
+    })
 
-        if (!this.state.read.includes(parseInt(id - 1))) {
-          this.setState({
-            read: [...this.state.read, parseInt(id - 1)]
-          })
-        }
-      }
+    if (!this.state.read.includes(parseInt(id - 1))) {
+      this.setState({
+        read: [...this.state.read, parseInt(id - 1)]
+      })
+    }
+  }
 
-      markAsFav = () => {
-        if (!this.state.fav.includes(parseInt(this.state.currentId))) {
-          this.setState({
-            fav: [...this.state.fav, parseInt(this.state.currentId)]
-          })
-        }
-      }
+  markAsFav = () => {
+    if (!this.state.fav.includes(parseInt(this.state.currentId))) {
+      this.setState({
+        fav: [...this.state.fav, parseInt(this.state.currentId)]
+      })
+    }
+  }
 
-      setFilterByRead = () => {
-        this.setState({
-          filteredByRead: !this.state.filteredByRead,
-          filteredByFav: false,
-          filteredByUnread: false,
-          filteredBySearch: false
-        })
-      }
+  setFilterByRead = () => {
+    this.setState({
+      filteredByRead: !this.state.filteredByRead,
+      filteredByFav: false,
+      filteredByUnread: false,
+      filteredBySearch: false
+    })
+  }
 
-      setFilterByUnread = () => {
-        this.setState({
-          filteredByUnread: !this.state.filteredByUnread,
-          filteredByFav: false,
-          filteredBySearch: false,
-          filteredByRead: false
-        })
-      }
+  setFilterByUnread = () => {
+    this.setState({
+      filteredByUnread: !this.state.filteredByUnread,
+      filteredByFav: false,
+      filteredBySearch: false,
+      filteredByRead: false
+    })
+  }
 
-      setFilterByFav = () => {
-        this.setState({
-          filteredByFav: !this.state.filteredByFav,
-          filteredByRead: false,
-          filteredByUnread: false,
-          filteredBySearch: false
-        })
-      }
+  setFilterByFav = () => {
+    this.setState({
+      filteredByFav: !this.state.filteredByFav,
+      filteredByRead: false,
+      filteredByUnread: false,
+      filteredBySearch: false
+    })
+  }
 
-      componentDidMount() {
-        fetch('https://my-json-server.typicode.com/lalith1403/jsonemaillist/db')
-          .then(data => data.json())
-          .then(email => this.setState({ email: email["list"] }))
-          .catch(err => console.log(err))
-      }
-      
-      render() {
-        const { email, searchField } = this.state;
-        // filter emails using the short_description.  
-        const filterEmails = email.filter(emails => {
-          return emails.short_description.toLowerCase().includes(searchField.toLowerCase())
-        })
-        // filter read emails 
-        const filterByRead = email.filter(item => {
-          return this.state.read.includes(parseInt(item.id - 1))
-        })
-        // filter unread emails 
-        const filterByUnread = email.filter(item => {
-          return !this.state.read.includes(parseInt(item.id - 1))
-        })
-        // filter favourite emails 
-        const filterByFav = email.filter(item => {
-          return this.state.fav.includes(parseInt(item.id - 1))
-        })
+  componentDidMount() {
+    fetch('https://my-json-server.typicode.com/lalith1403/jsonemaillist/db')
+      .then(data => data.json())
+      .then(email => this.setState({ email: email["list"] }))
+      .catch(err => console.log(err))
+  }
 
-        if (!email.length) {
-          return !this.state.dualPanel &&
-            <h1 >
-              Loading
+  render() {
+    const { email, searchField } = this.state;
+    // filter emails using the short_description.  
+    const filterEmails = email.filter(emails => {
+      return emails.short_description.toLowerCase().includes(searchField.toLowerCase())
+    })
+    // filter read emails 
+    const filterByRead = email.filter(item => {
+      return this.state.read.includes(parseInt(item.id - 1))
+    })
+    // filter unread emails 
+    const filterByUnread = email.filter(item => {
+      return !this.state.read.includes(parseInt(item.id - 1))
+    })
+    // filter favourite emails 
+    const filterByFav = email.filter(item => {
+      return this.state.fav.includes(parseInt(item.id - 1))
+    })
+
+    if (!email.length) {
+      return !this.state.dualPanel &&
+        <h1 >
+          Loading
           </h1>
-        }
-
-        else {
-          return (<div className='dualpanel'>
-            <div style={{ display: "flex", flexDirection: "row", marginBottom: "50px", marginTop: "15px" }}>
-              <button className={'buttons'} style={{ cursor: "default", background: 'transparent', fontWeight: "bold" }}>FilterBy</button>
-              // onclick show the read emails
-              <button className={!this.state.filteredByRead ? 'buttons clicked' : 'buttons'} onClick={this.setFilterByRead}>read</button>
-              // onclick show the unread emails
-              <button className={!this.state.filteredByUnread ? 'buttons clicked' : 'buttons'} onClick={this.setFilterByUnread}>Unread</button>
-              // onclick show the favourite emails
-              <button className={!this.state.filteredByFav ? 'buttons clicked' : 'buttons'} onClick={this.setFilterByFav}>Favourite</button>
-
-              {this.state.dualPanel &&
-                <button style={{ cursor: "pointer", background: "#e54065", border: "1px solid black", width: "80px", outline: "none" }}
-                  onClick={this.resetDualPanel}>Back</button>}
-              <hr style={{ color: "white", height: '0px', backgroundColor: "transparent" }} />
-                
-              // onchange show the emails that contain the keyword in their short description.
-              <SearchBox searchChange={this.onSearchChange} />
-            </div>
-
-            <div onClick={this.setDualPanel} style={this.state.dualPanel ? { display: "flex", flexDirection: "row" } : {}}>
-              {!filterEmails.length &&
-                <div style={{ marginRight: "10em", fontSize: "2em" }}>
-                  No Emails Found
-                </div>
-              }
-                // if filteredByRead, send filterByRead as email prop
-              {this.state.filteredByRead && <Scroll>
-                <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterByRead} onClick={this.findEmailId} />
-              </Scroll>}
-                // if filteredByUnread, send filterByUnread as email prop
-              {this.state.filteredByUnread && <Scroll>
-                <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterByUnread} onClick={this.findEmailId} />
-              </Scroll>}
-
-                // if filteredByFav, send filterByFav as email prop
-              {this.state.filteredByFav && <Scroll>
-                <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterByFav} onClick={this.findEmailId} />
-              </Scroll>}
-
-                // if filteredBySearch, send filterEmails as email prop
-              {this.state.filteredBySearch && <Scroll>
-                <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterEmails} onClick={this.findEmailId} />
-              </Scroll>}
-                // default option, if no operation is specified
-              {!this.state.filteredByFav && !this.state.filteredByRead && !this.state.filteredByUnread && !this.state.filteredBySearch && this.state.noFilter && <Scroll>
-                <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterEmails} onClick={this.findEmailId} />
-              </Scroll>}
-
-              {this.state.dualPanel
-                &&
-                filterEmails.length !== 0 &&
-                <EmailBody
-                  markAsFav={this.markAsFav}
-                  currentSender={this.state.currentSender}
-                  currentSubject={this.state.currentSubject}
-                  currentDate={this.state.currentDate}
-                  currentId={this.state.currentId}
-                  body={this.state.body} />}
-            </div>
-          </div>)
-        }
-      }
     }
 
-    export default App;
+    else {
+      return (<div className='dualpanel'>
+        <div style={{ display: "flex", flexDirection: "row", marginBottom: "50px", marginTop: "15px" }}>
+          <button className={'buttons'} style={{ cursor: "default", background: 'transparent', fontWeight: "bold" }}>FilterBy</button>
+          {/* // onclick show the read emails */}
+          <button className={!this.state.filteredByRead ? 'buttons clicked' : 'buttons'} onClick={this.setFilterByRead}>read</button>
+          {/* // onclick show the unread emails */}
+          <button className={!this.state.filteredByUnread ? 'buttons clicked' : 'buttons'} onClick={this.setFilterByUnread}>Unread</button>
+          {/* // onclick show the favourite emails */}
+          <button className={!this.state.filteredByFav ? 'buttons clicked' : 'buttons'} onClick={this.setFilterByFav}>Favourite</button>
+
+          {this.state.dualPanel &&
+            <button style={{ cursor: "pointer", background: "#e54065", border: "1px solid black", width: "80px", outline: "none" }}
+              onClick={this.resetDualPanel}>Back</button>}
+          <hr style={{ color: "white", height: '0px', backgroundColor: "transparent" }} />
+
+          {/* // onchange show the emails that contain the keyword in their short description. */}
+          <SearchBox searchChange={this.onSearchChange} />
+        </div>
+
+        <div onClick={this.setDualPanel} style={this.state.dualPanel ? { display: "flex", flexDirection: "row" } : {}}>
+          {!filterEmails.length &&
+            <div style={{ marginRight: "10em", fontSize: "2em" }}>
+              No Emails Found
+                </div>
+          }
+          {/* // if filteredByRead, send filterByRead as email prop */}
+          {this.state.filteredByRead && <Scroll>
+            <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterByRead} onClick={this.findEmailId} />
+          </Scroll>}
+          {/* // if filteredByUnread, send filterByUnread as email prop */}
+          {this.state.filteredByUnread && <Scroll>
+            <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterByUnread} onClick={this.findEmailId} />
+          </Scroll>}
+
+          {/* // if filteredByFav, send filterByFav as email prop */}
+          {this.state.filteredByFav && <Scroll>
+            <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterByFav} onClick={this.findEmailId} />
+          </Scroll>}
+
+          {/* // if filteredBySearch, send filterEmails as email prop */}
+          {this.state.filteredBySearch && <Scroll>
+            <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterEmails} onClick={this.findEmailId} />
+          </Scroll>}
+          {/* // default option, if no operation is specified */}
+          {!this.state.filteredByFav && !this.state.filteredByRead && !this.state.filteredByUnread && !this.state.filteredBySearch && this.state.noFilter && <Scroll>
+            <EmailList currentCard={this.state.currentId} markfav={this.state.fav} read={this.state.read} email={filterEmails} onClick={this.findEmailId} />
+          </Scroll>}
+
+          {this.state.dualPanel
+            &&
+            filterEmails.length !== 0 &&
+            <EmailBody
+              markAsFav={this.markAsFav}
+              currentSender={this.state.currentSender}
+              currentSubject={this.state.currentSubject}
+              currentDate={this.state.currentDate}
+              currentId={this.state.currentId}
+              body={this.state.body} />}
+        </div>
+      </div>)
+    }
+  }
+}
+
+export default App;
 ```
 
 ### Session Persistence
 
-Try reloading the above program. You will observe that all the read emails and favourited emails are reset. Every email is unread. Therefore, we need to store the state in the local storage. localstorage is a finite amount of memory provided by the browser. Therefore, we need to be cautious while using localstorage.
+Try reloading the above web page. You will observe that all the read emails and favourited emails are reset. Every email is unread. Therefore, we need to store the state in the local storage. localstorage is a finite amount of memory provided by the browser. Therefore, we need to be cautious while using localstorage.
 
 Let's save the state in the local storage. We need to add the following functions.
 
@@ -1422,4 +1466,4 @@ The final App.js file is given below.
 
 ```
 
-This marks the end of the very long article. We have built a beautiful looking, yet simple interface. In the next article, we optimize the entire project using hooks. Moreover we use styled-components for styling.
+This marks the end of the very long article. We have built a beautiful looking, yet simple interface. In the next article, we optimize the entire project using hooks. Moreover we use styled-components for styling. 
