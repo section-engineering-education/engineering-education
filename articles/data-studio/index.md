@@ -21,7 +21,31 @@ The metrics and dimensions will appear in the data source so you can choose whic
 ![img](flow.png)
 
 ## Guide for Building a Report
+Let's build a report based on some dummy data. First, log in with your google account and go to [Data Studio](https://datastudio.google.com).
+### Connect Data to Data Studio.
+For this article we will use a dummy dataset made in Google Sheets [here](https://docs.google.com/spreadsheets/d/1sEC7zGBUG6X4TKc1pWuNyF7uufjQP5cBLQ0k5sLkags/edit?usp=sharing).
 
+![img](create.png)
+
+Choose from the many official and third party connections depending on your data set.
+
+![img](connection.png)
+
+We selected Google Sheets Connector. Choose which spreadsheet you want to use as Data Set.
+
+![img](sheets.png)
+
+After creating a Data Source you can see the Dimensions and Metrics, you can edit the data-type, field name, choose to hide certain fields and so on.
+
+![img](source.png)
+
+Click on `Create Report` to make visualizations and build a report.
+
+![img](sure.png)
+
+![img](chart.png)
+
+### Add Charts to the report
 
 ## References and Resources
 * [Google Analytics Academy](https://analytics.google.com/analytics/academy/course/1)
