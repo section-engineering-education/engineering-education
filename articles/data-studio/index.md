@@ -43,9 +43,53 @@ Click on `Create Report` to make visualizations and build a report.
 
 ![img](sure.png)
 
-![img](chart.png)
+
 
 ### Add Charts to the report
+
+![img](chart.png)
+
+Click on the `Add a Chart` drop down menu to select suitable graph or table for your data.
+
+![img](dropdown.png)
+
+Time Series are used to show change in a metric with respect to time. Scorecards are used to display a number (profit, loss, count, etc). Bar charts are used to display and compare different discrete categories of data. Pie chart illustrates numerical proportion. Geo maps can be used to show how a metric changes wrt a location (We need a field with Type = `Geo`). These are some ways to visualize data.
+
+We can create new field off of the existing fields. For example, if you want to plot/calculate `Profit` from existing fields `Revenue` and `Cost`, we can create a new field (or) constant value. 
+
+Click on **Add a Field** in report or Data Source. 
+
+![img](addField.png)
+
+Creating a new field is similar to creating an [Excel Functions](https://www.excelfunctions.net/excel-math-functions.html). We can select from available math functions like SUM(), COUNT(), AVERAGE(), etc. Choose appropriate mathematical functions on fields to get desired output.
+
+![img](inloss.png)
+
+![img](totloss.png)
+
+
+### Add and configure report controls.
+
+Once you’ve built a report to visualize your data, you can empower viewers to refine that visualization to meet their own needs by adding controls to your report.
+* A **date range** control allows your viewers to change the time frame of a report.
+* A **filter control** allows viewers to select one or more dimension values from a list by which to filter the report.
+* A **data control** allows a report viewer to change the data set used by a specific type of data source. 
+
+![img](datecontol.png)
+
+### Share reports with others
+
+Once your report is ready you can share it with others for colloboration or review. For reports, you can give others to view or edit access, at which point they’ll receive an email with a link to view or edit that file. Viewers can view and interact with the report, while editors can make changes to the design, chart data, format, and so on. Similar to report sharing, you can give others to view or edit access to your data source files, at which point they’ll receive an email with a link to view or edit that file. 
+
+![img](sharing.png)
+
+
+## Conclusion
+
+Data Studio is a powerful data visualization tool for all. Developers can create their custom designs and charts, using Javascript and CSS. We can even use Data Studio reports to incorporate insights into and predictions from the data, using powerful tools such as [TensorFlow](https://www.tensorflow.org/). TensorFlow provides a JavaScript API called [TensorFlow.js](https://www.tensorflow.org/js) which can be even used for training complex neural networks. For more information look at [Data Studio Community Visualizations](https://developers.google.com/datastudio/visualization/get-started). Checkout my tutorial on [D3.js](https://www.section.io/engineering-education/data-visualization-with-d3js/) data visualization in javascript (Even D3.js can be used in Data Studio).
+Data Studio is equally helpful for people who don't code in their profession like Marketering, Advertising, Sales and Accounting by providing an intiuitive and useful click-and-drag based features. Data Studio can be easily integrated with Google Ads analytics, which is a major advertisement platform, to study how their ads are performing and the amount of traffic they are contributing to the business. There are many data visualization tools out there like [Tableau](https://www.tableau.com/), [PowerBi from Microsoft](https://powerbi.microsoft.com/en-us/), these tools are **not free of cost**. They have more features but they may cost a lot depending on your team size. If you are a small company or individual interested in data visualization then Data Studio is a good choice.
+
+
 
 ## References and Resources
 * [Google Analytics Academy](https://analytics.google.com/analytics/academy/course/1)
