@@ -188,8 +188,66 @@ Wait about five seconds (depending on how good your internet connection is) and 
 }
 
 ```
-This reponse tells us I made a successful search request with the query of The Serpent's Shadow. The displayed results were 1 to 20 though there were 33 in total. The source was Goodreads and the query on the server itself took 0.07 seconds.
+This response tells us I made a successful search request with the query of The Serpent's Shadow. The displayed results were 1 to 20 though there were 33 in total. The source was Goodreads and the query on the server itself took 0.07 seconds.
 
-However, the search results (the part of the response we want to return) are stored further down so we will adjust our console.log accordingly. Using trial and error with console.logs is a great way to understand how JSON works.
+However, the search results (the part of the response we want to return) are stored further down so we will adjust our console.log accordingly. Using trial and error with console.logs is a great way to understand how JSON and your chosen API works.
 
-We can see from the result the search results are stored in search.results in an array called work.
+We can see from the response the search results are stored in search.results. Since there can up to around 20 books returned from a search, this information is stored in an array called work (which is what Goodreads classifies as a book.)
+
+ Update your console.log to `console.log(result.search.results.work);` and test again. This should return specifically the book results. An example of the data for a book in the array is below:
+
+```json
+[
+  {
+    id: { _: '16416771', type: 'integer' },
+    books_count: { _: '92', type: 'integer' },
+    ratings_count: { _: '117390', type: 'integer' },
+    text_reviews_count: { _: '5244', type: 'integer' },
+    original_publication_year: { _: '2012', type: 'integer' },
+    original_publication_month: { _: '5', type: 'integer' },
+    original_publication_day: { _: '1', type: 'integer' },
+    average_rating: '4.29',
+    best_book: {
+      type: 'Book',
+      id: [Object],
+      title: "The Serpent's Shadow (The Kane Chronicles, #3)",
+      author: [Object],
+      image_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366227982l/12893742._SX98_.jpg',
+      small_image_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366227982l/12893742._SY75_.jpg'
+    }
+  },
+```
+## Displaying Book Information on the Front-End
+
+Now that we can return an array of results from a book search, we want to display this information (such as the title of the book) so users can see it. We can do this through EJS templating.
+
+First, you need to add a variable for `result.search.results.work` and then render a new page including the variable you just created. The updated search route should look like:
+
+```js
+// Search Route
+app.post('/search', function (req, res) {
+    var bookquery = req.body.book;
+    var booklist = gr.searchBooks({
+        q: bookquery,
+        page: 1,
+        field: 'title'
+    });
+    booklist.then(function (result) {
+        var bookresult = result.search.results.work;
+        console.log(bookresult);
+        res.render('pages/search-results', {
+            bookresult: bookresult
+        });
+    });
+});
+```
+Second, create a new EJS file called search-results.ejs in your views/pages folder and include your partials (such as head, header and footer) like usual. 
+
+Then between the main tags, add the following HTML:
+
+```html
+<% bookresult.forEach(function(book) { %>
+            <h2><%= book.best_book.title %></h2>
+            <% }); %>
+```
+This will take every book in the bookresult array (aka our search results) and render a h2 tag containing its title. 
