@@ -65,4 +65,131 @@ const gr = goodreads(myCredentials);
 app.use(express.static('public'));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
+app.listen(8080);
+console.log('Listening on 8080');
 ```
+
+## Searching For A Book
+
+The first piece of functionality we're going to create with the Goodreads API is searching for books. On the homepage, there will be a searchbar where users will type in the name of a book or its author and they will see book covers of the results.
+
+### Displaying A Form
+
+First, we need to add a form so users can type their query so in your index.ejs file add:
+
+```html
+<form action="/search" method="post">
+            <input type="text" name="book" value="" placeholder="Book Title or Author">
+            <input type="submit">
+        </form>
+```
+This will POST the form to the /search route and append the value of the book field to the URL but we need to tell the server what to do when a user is there which requires the body-parser node module and creating a search route.
+
+### Parsing the Submitted Form URL
+
+To install body-parser, type `npm install body-parser --save` into the terminal and press enter. Add `const bodyParser = require('body-parser');` to your required node modules in server.js and add the following code after you've initialised Express:
+
+```js
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(bodyParser.json());
+```
+**Updated server.js Example**
+```js
+// Node Modules
+const express = require('express');
+const bodyParser = require('body-parser');
+const ejs = require('ejs');
+require('dotenv').config();
+const goodreads = require('goodreads-api-node');
+const app = express();
+
+// Goodreads API - NodeJS
+const myCredentials = {
+    key: process.env.GOODREADS_KEY,
+    secret: process.env.GOODREADS_SECRET
+};
+const gr = goodreads(myCredentials);
+
+// Initialising Express
+app.use(express.static('public'));
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(bodyParser.json());
+
+app.listen(8080);
+console.log('Listening on 8080');
+```
+###  Adding A Goodreads API searchBooks Function
+
+To create the search route, add the following:
+
+```js
+// *** POST Routes ***
+
+// Search Route
+app.post('/search', function (req, res) {
+    var bookquery = req.body.book;
+    var booklist = gr.searchBooks({
+        q: bookquery,
+        page: 1,
+        field: 'title'
+    });
+    booklist.then(function (result) {
+        console.log(result);
+    });
+});
+```
+The bookquery variable parses the value of the book form field and plugs it into a searchBooks function using the Goodreads API. 
+
+gr calls the goodreads-api-node module along with your API credentials. 
+
+Then the q defines the query (search term) to be used. 
+
+To speed up queries, Goodreads API uses pagination to split up results so you can choose which page you want returned using page. 
+
+Finally, field determines which parameter to search for which in this case is title.
+
+After the searchBooks function, there is a `booklist.then` function which is a promise. A promise is **link to an article about Promises - is there a Section one** a way of ensuring code is run after a function has finished. This is important because otherwise, if you were returning a lot of data code that requires that data may run before the data has been returned. **Reword this to make more sense - maybe use API example - if GoodReads server was slow etc.**
+
+After declaring it as a function, in the brackets is the variable, result. This stores the output of the booklist function though you can rename the variable if you wish. In this example, we've used it in a `console.log()` so we can see what data has been returned.
+
+###  Parsing Goodreads API searchBooks Data
+
+Now that you've added a function to return the results of a book search, let's test it.
+
+Go to localhost:8080 in your web browser, type the name of a book or author such as The Serpent's Shadow and click Submit Query.
+
+Wait about five seconds (depending on how good your internet connection is) and back in the terminal you should have received a response similar to:
+
+```json
+{
+  Request: {
+    authentication: 'true',
+    key: '(Your API Key)',
+    method: 'search_index'
+  },
+  search: {
+    query: "The Serpent's Shadow",
+    'results-start': '1',
+    'results-end': '20',
+    'total-results': '33',
+    source: 'Goodreads',
+    'query-time-seconds': '0.07',
+    results: { work: [Array] }
+  }
+}
+
+```
+This reponse tells us I made a successful search request with the query of The Serpent's Shadow. The displayed results were 1 to 20 though there were 33 in total. The source was Goodreads and the query on the server itself took 0.07 seconds.
+
+However, the search results (the part of the response we want to return) are stored further down so we will adjust our console.log accordingly. Using trial and error with console.logs is a great way to understand how JSON works.
+
+We can see from the result the search results are stored in search.results in an array called work.
