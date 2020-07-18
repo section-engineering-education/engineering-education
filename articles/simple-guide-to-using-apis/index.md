@@ -313,5 +313,7 @@ Pleased with your work and not sure how to deploy your web app so you can show i
 
 **Next Steps:** If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle or use your new-found knowledge, to work with different APIs like Unsplash or Spotify **link to the API docs**. 
 
+Prefer an example of what you can achieve with the Goodreads API? Check out LibraryTrackr **link to Github repo**, a NodeJS web app I'm developing aimed at solving library management (both print and eBook) for bibliophiles. 
+
 Also, look out for Part 2, which will show you how to authenticate with the Goodreads API using oAuth which will allow you to manipulate shelves, book reviews and more. 
 
