@@ -251,3 +251,67 @@ Then between the main tags, add the following HTML:
             <% }); %>
 ```
 This will take every book in the bookresult array (aka our search results) and render a h2 tag containing its title. 
+
+## Creating Dynamic Book Pages
+
+So far, we've created a search page with a form to search for books using the Goodreads API and a results page to display every title in the first page of results but how do users find out more about those books? Finally, our last task is to dynamically create new book pages and link them to the results.
+
+First, we need to create a new route to handle these book pages and use the `gr.showBook()` function to grab the detailed information for a single book.
+
+```js
+// Single Book Route
+app.get('/book', function (req, res) {
+    var bookid = gr.showBook(req.query.id);
+    bookid.then(function (result) {
+        var bookdetails = result.book;
+        console.log(bookdetails);
+        res.render('pages/book', {
+            bookdetails: bookdetails
+        });
+    });
+});
+```
+There's only one issue. How do we append the book id to the URL so the API knows which book to get information for when a user clicks on a book title? The answer is a little bit of client-side JavaScript and HTML.
+
+In search-results.ejs, surround the h2 tag with an a tag like this:
+
+```html
+<% bookresult.forEach(function(book) { %>
+        <a id="<%= book.best_book.id._ %>" href="/book">
+            <img class="book-result" src="<%= book.best_book.image_url %>">
+            <% }); %>
+        </a>
+```
+This will link every book title to the /book route we just created and add its Goodreads book id (required for the `gr.showBook` function) as an id attribute.
+
+Now you haven't already, create a script.js file in your public/js folder and add a script tag in your head.ejs partial file. Add the following to your script.js file:
+
+```js
+// Append slash with book id, only if a book ID is not found in the link yet
+    const booklinks = document.querySelectorAll('a[href*="/book"]');
+    booklinks.forEach(function (el) {
+        if (!el.href.includes('id=')) {
+            el.href = el.href.replace(/\?.*$/, '') + '?id=' + el.getAttribute('id');
+        }
+    });
+```
+This will take every link with an `<a href="/book">` tag (i.e. every book title on the results page) and append ?id= and the id of the tag (which in this case is the book id) which will allow our `gr.showBook` function to grab the book id we want.
+
+Finally, we just need to create a book.ejs to determine the content of the book pages. Between the main tags, add the following: 
+
+```html
+<h3><%= bookdetails.title %></h3>
+        <img src="<%= bookdetails.image_url %>">
+        <h3><%= bookdetails.publication_year %></h3>
+        <p><%= bookdetails.description %></p>
+```
+This will show the book title, year it is was published and the book description.
+
+Congratulations, you've just work with your first API using Node.js and EJS templating. Why not try it out? Search for a book and click on any of the titles. A new page will load with details of the result you clicked from the Goodreads API.
+
+Pleased with your work and not sure how to deploy your web app so you can show it off? Check out my guide to Deploying a NodeJS Web App Using DigitalOcean **Link to Deploying NodeJS article**. 
+
+**Next Steps:** If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle or use your new-found knowledge, to work with different APIs like Unsplash or Spotify **link to the API docs**. 
+
+Also, look out for Part 2, which will show you how to authenticate with the Goodreads API using oAuth which will allow you to manipulate shelves, book reviews and more. 
+
