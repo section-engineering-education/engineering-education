@@ -123,15 +123,10 @@ npm install --save lodash
 ```
 src/index.js
 ```javascript
-+ import _ from 'lodash';
-+
+  import _ from 'lodash';
   function component() {
     const element = document.createElement('div');
-
--   // Lodash, currently included via a script, is required for this line to work
-+   // Lodash, now imported by this script
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
     return element;
   }
 
@@ -143,11 +138,9 @@ dist/index.html
   <html>
    <head>
      <title>Getting Started</title>
--    <script src="https://unpkg.com/lodash@4.16.6"></script>
    </head>
    <body>
--    <script src="./src/index.js"></script>
-+    <script src="main.js"></script>
+     <script src="main.js"></script>
    </body>
   </html>
 ```
@@ -155,15 +148,72 @@ If we now open `index.html` in browser we see "Hello webpack".
 
 ## Using a configuration with webpack
 
- 
+webpack doesn't require any configuration, but most projects will need a more complex setup, which is why webpack supports a configuration file. Add a file with name `webpack.config.js` in the `dummy-project` directory.
 
+Example **webpack.config.js**
+```javascript
+const path = require('path');
 
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+};
+```
+The following are some configurable concepts of webpack.
 
+* **Entry**. *Entry* defines the entry-point for the application. It is the first module that webpack will process to build its dependency graph.
+```javascript
+module.exports = {
+  entry: './path/to/my/entry/file.js'
+};
+```
+* **Output**. The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to `./dist/main.js` for the main output file and to the `./dist` folder for any other generated file.
+```javascript
+module.exports = {
+  output: {
+    filename: 'my-first-bundle.js',
+    pathname: __dirname + '/dist'
+   }
+}
+```
+* **Loaders**. Out of the box, webpack only understands JavaScript and JSON files. Loaders allow webpack to process other types of files and convert them into valid modules that can be consumed by your application and added to the dependency graph.
 
+```javascript
+moduel.exports = {
+  module: {
+    rules: [
+      {test: /\.txt$/, use: 'raw-loader'}
+     ]
+   } 
+}
+```
+The `test` property identifies ehich file should be transformed. The `use` property indicates which loader should be used.
 
+* **Plugins**. While loaders are used to transform certain types of modules, plugins can be leveraged to perform a wider range of tasks like bundle optimization, asset management and injection of environment variables. In order to use a plugin, you need to `require()` it and add it to the `plugins` array. Most plugins are customizable through options.
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+  plugins: [
+    new HtmlWebpackPlugin({template: './src/index.html'})
+  ]
+};
+``` 
 
+* **Mode**.  Mode can be set to `production` or `development` with their usual meanings.
+
+*We can add webpack to npm scripts in `package.json` so as to ease our development process. Add ` "build": "webpack",` to package.json and run the command `npm run build`*
+
+## Conclusion
+
+A huge advantagge of using webpack is its customizability and its features like [Hot Module Reloading](https://webpack.js.org/concepts/hot-module-replacement/), we have discussed only some ways in which webpack can be configured please visit [here](https://webpack.js.org/configuration/) for more information. There are other tools which have emerged like [Parcel Bundler](https://parceljs.org/) but webpack is still well suited for large and complex applications due to its features.Read about comparisons [here](https://webpack.js.org/comparison/).
 
 
 ## References 
 * [Video Tutorial](https://www.youtube.com/watch?v=lziuNMk_8eQ)
-* [Documentation](https://webpack.js.org/concepts/)
+* The [Documentation](https://webpack.js.org/concepts/) is well written would reccomend to start here.
+* https://levelup.gitconnected.com/what-is-webpack-4fdb624597ae
+* https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/
+
