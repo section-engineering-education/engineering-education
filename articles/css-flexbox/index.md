@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: css-flexbox
 title: Create Layouts for Websites using CSS Flexbox
-description: CSS Flexbox is a one-dimensional layout system for creating layouts for webpages.
+description: CSS Flexbox is a one-dimensional layout system for creating layouts for webpages. It is used to align and define element behavior across a row or a column.
 author: saiharsha-balasubramaniam
-date: 2020-07-17T00:00:00-08:00
+date: 2020-07-19T00:00:00-08:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -48,7 +48,7 @@ A container is a placeholder or a wrapper to which we apply flex properties.
 }
 ```
 
-Here, the *display: flex* property defines the parent container to be the element with class 'bucket'. Flex properties can be applied to both the parent and children containers. 
+Here, the *display: flex* property defines the parent container to be the element with class 'bucket'. Flex properties can be applied to both the parent and children containers.
 
 #### Main-Axis, Cross-Axis
 
@@ -107,7 +107,7 @@ Flex has a two-coordinate axis system. The horizontal axis is referred to as the
 
 - **no-wrap** property says that the items would not overflow into the next line, and would be wrapped in the same line.
 - **wrap** property says that the items would wrap into many lines, from top to bottom.
-- **wrap-reverse** property is similar to *wrap*, but would wrap the items from bottom to top. 
+- **wrap-reverse** property is similar to *wrap*, but would wrap the items from bottom to top.
 
 #### justify-content
 
@@ -127,7 +127,7 @@ Flex has a two-coordinate axis system. The horizontal axis is referred to as the
 
 #### align-items
 
-*align-items* defines the placement and alignment along the cross-axis. 
+*align-items* defines the placement and alignment along the cross-axis.
 
 ```css
 .bucket {
@@ -193,7 +193,7 @@ Let's start by writing the markup.
 </html>
 ```
 
-Here, we're having a parent container for every alignment we need. 
+Here, we're having a parent container for every alignment we need.
 
 **Container 1** and **Container 2** are used for creating a horizontal flex layout, whereas **Container 3** is used for having a vertical layout. We fetch images from random image generators from the internet.
 
