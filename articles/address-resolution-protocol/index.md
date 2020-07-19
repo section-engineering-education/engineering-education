@@ -1,5 +1,8 @@
 # Introduction to Address Resolution Protocol(ARP) and its Types
 
+![hero image](/engineering-education/address-resolution-protocol/hero.jpg)
+Photo by [Stephen Phillips - Hostreviews.co.uk](https://unsplash.com/@hostreviews?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/ethernet?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+
 **The [Address Resolution Protocol(ARP)](https://en.wikipedia.org/wiki/Address_Resolution_Protocol) is a communication protocol used to discover the data-link layer address(Layer 2 address like Media Access Control(MAC) address) associated with an Internet layer address(Layer 3 address like IPv4 address). ARP was defined in 1982 by [RFC 826](https://tools.ietf.org/html/rfc826).**
 
 ARP is a request-response or request-reply protocol in which one device sends a request to another device asking for some information, to which the other device will reply with required information. It is a message exchange pattern. *ARP packets are encapsulated by link layer and are distributed only in a particular network. As a result, ARP is said to be a link layer protocol.*
@@ -27,7 +30,7 @@ When device 1 with IP 192.168.10.154 wants to send a packet to device 3 with IP 
 ### Proxy ARP
 **[Proxy ARP](https://en.wikipedia.org/wiki/Proxy_ARP) is used to facilitate ARP exchanges in order to resolve IP addresses to MAC addresses in devices that are separated by routers in the same network or sub-network.** Routers cannot forward Layer 2 packets and hence, ARP messages are never propagated outside of their networks. *When a device wants to resolve the MAC address of another device in a different subnet, the router located between the two subnets acts as a proxy for the other device and responds to the ARP broadcast with its own MAC address.* Proxy ARP is defined in [RFC 1027](https://www.ietf.org/rfc/rfc1027.txt).
 
-![ProxyARP-example](/engineering-education/address-resolution-protocol/proxyARP)
+![ProxyARP-example](/engineering-education/address-resolution-protocol/proxyARP.jpg)
 
 When the ARP request from 192.168.1.2 asking for the MAC address of the device with IP 192.168.2.3 reaches 192.168.1.1(router interface), the router notices that 192.168.2.3 is in a different network. It acts as the proxy and sends an ARP response to 192.168.1.2 with its own MAC address i.e 00:00:AB:00:00:01.
 192.168.1.2 sends all packets destined for 192.168.2.3 to the router first. The router takes care of further ARP resolution and routes packets to the intended destination.   
