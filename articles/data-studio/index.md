@@ -47,7 +47,6 @@ Click on `Create Report` to make visualizations and build a report.
 
 ### Add Charts to the report
 
-![img](chart.png)
 
 Click on the `Add a Chart` drop-down menu to select a suitable graph or table for your data.
 
