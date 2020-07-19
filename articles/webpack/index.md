@@ -1,4 +1,4 @@
-# Introduction To Webpack
+# Introduction To Webpack 4
 [Webpack](https://webpack.js.org/) is a *static module bundler* for JavaScript applications. It takes [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) whether that's a custom file that we created or something that was installed through NPM and converts these modules to static assets so that you can take a fully dynamic application package it into static files which you can then upload and deploy to your server. We can also extend what webpack can do with [Plugins](https://webpack.js.org/concepts/plugins/) and [Loaders](https://webpack.js.org/concepts/loaders/). A module is javascript code with discrete chunk of functionality and its abstract and delegates functionality to libraries so that we dont have to understand the complexity of it. 
 
 ## Why Use Module Bundlers and Webpack?
@@ -25,9 +25,9 @@ and
   </body>
 </html>
 ```
-This method does not scale and when we have many scripts it becomes a problem to load these scripts because of network bottleneck. If we keep them all in one file then it becomes unmaintainable. There will be problems with name and scope of variables. Then came **[IIFE's](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)** which solved scope issues for large projects but changing even one file meant rebuilding ther entire project.
+This method does not scale and when we have many scripts it becomes a problem to load these scripts because of network bottleneck. If we keep them all in one file then it becomes unmaintainable and causes global variable scope problems. There will be problems with name and scope of variables. Then came **[IIFE's](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)** which solved scope issues for large projects but changing even one file meant rebuilding ther entire project.
 
-**JavaScript Modules** when javascript was bought to server side with NodeJS, there were no HTML files to add `<script>` tags. CommonJS came out and introduced `require`, which allows you to load and use a module in the current file. 
+**JavaScript Modules**[(node modules)](https://www.w3schools.com/nodejs/nodejs_modules.asp) when javascript was bought to server side with NodeJS, there were no HTML files to add `<script>` tags. CommonJS came out and introduced `require`, which allows you to load and use a module in the current file. 
 
 ```javascript
 //math.js
@@ -58,14 +58,109 @@ console.log(add(1,2));
 ```
 This is a good news for web projects. However, browser support is incomplete and bundling is still faster than early module implementations.
 
-So why webpack? Bundlers like webpack automatically go through your application and build a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) based on what is imported and exported. This along with other plugins and loaders make for a great developer experience. It's a tool that lets you bundle your JavaScript applications (supporting both ESM and CommonJS). Any time one file depends on another, webpack treats this as a dependency. This allows webpack to take non-code assets, such as images or web fonts, and also provide them as dependencies for your application.
+So why webpack? Bundlers like webpack automatically go through your application and build a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) based on what is imported and exported. This along with other plugins and loaders make for a great developer experience. It's a tool that lets you bundle your JavaScript applications (supporting **both ESM and CommonJS**). Any time one file depends on another, webpack treats this as a dependency. This allows webpack to take non-code assets, such as images or web fonts, and also provide them as dependencies for your application.
 
 ## Getting Started with Webpack
+Once installed, you can interface webpack with webpack either from its [CLI](https://webpack.js.org/api/cli) or [API](https://webpack.js.org/api/node). Since version 4, webpack does not need a configuration file to bundle your project. Nevertheless, it is incredibly configurable.
+
+Lets create a dummy node project and bundle it with webpack, you can use your project.
 
 ### Install webpack
+You need [NPM](https://www.npmjs.com/get-npm) and [Node](https://nodejs.org/en/download/) installed on your machine. 
 
-`npm init`
-`npm install webpack webpack-cli --save-dev` 
+```
+mkdir dummy-project
+cd dummy-project
+npm init -y
+npm install webpack webpack-cli --save-dev
+```
+### webpack without configuration
+Create the following directory structure.
+```
+  webpack-demo
+  |- package.json
+  |- index.html
+  |- /src
+    |- index.js
+```
+Add the following code to `index.js`.
+```javascript
+function component() {
+  const element = document.createElement('div');
+  // Lodash, currently included via a script, is required for this line to work
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  return element;
+}
+
+document.body.appendChild(component());
+```
+In `index.html`.
+```
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started</title>
+    <script src="https://unpkg.com/lodash@4.16.6"></script>
+  </head>
+  <body>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
+```
+The above code works, because we added a `<script>` loading [lodash](https://lodash.com/). If we run **`npx webpack`** in the *dummy-project* directory, webpack creates a bundle in the `dist` directory with filename `main.js`.
+
+`src` is the "source" directory where we write and edit our code. The `dist` folder contains "distribution" code, which is the minimized and optimized output of the build process that will eventually be loaded in the browser.
+
+If we inspect `dist/main.js`. 
+
+```javascript
+!function(e){var n={};function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{enumerable:!0,get:r})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,n){if(1&n&&(e=t(e)),8&n)return e;if(4&n&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(t.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&n&&"string"!=typeof e)for(var o in e)t.d(r,o,function(n){return e[n]}.bind(null,o));return r},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},t.p="",t(t.s=0)}([function(e,n){document.body.appendChild(function(){const e=document.createElement("div");return e.innerHTML=_.join(["Hello","webpack"]," "),e}())}]);
+```
+Let's install `lodash` locally and remove the <script> tag in index.html. We should also tweak the directory structure and move index.html into `dist` to use main.js file.
+ 
+``` 
+npm install --save lodash
+```
+src/index.js
+```javascript
++ import _ from 'lodash';
++
+  function component() {
+    const element = document.createElement('div');
+
+-   // Lodash, currently included via a script, is required for this line to work
++   // Lodash, now imported by this script
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+    return element;
+  }
+
+  document.body.appendChild(component());
+```
+dist/index.html
+```html
+  <!doctype html>
+  <html>
+   <head>
+     <title>Getting Started</title>
+-    <script src="https://unpkg.com/lodash@4.16.6"></script>
+   </head>
+   <body>
+-    <script src="./src/index.js"></script>
++    <script src="main.js"></script>
+   </body>
+  </html>
+```
+If we now open `index.html` in browser we see "Hello webpack".
+
+## Using a configuration with webpack
+
+ 
+
+
+
+
+
 
 
 
