@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+slug: virtual-machines-vs-containers
+title: Advantages and Disadvantages of VMs vs Containers
+description: Both Virtual Machines (VMs) and containers are used to increase the productivity of the development lifecycle, but each has their advantages and disadvantages. What are VMs and Containers.
+author: jeremy-osborne
+date: 2020-07-19T00:00:00-08:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/virtual-machines-vs-containers/hero.jpg
+    alt: container image example
+---
 Both Virtual Machines (VMs) and containers are used to increase the productivity of the development life cycle. For containers specifically, 451 Research did a [study]([https://451research.com/images/Marketing/press_releases/Application-container-market-will-reach-2-7bn-in-2020_final_graphic.pdf](https://451research.com/images/Marketing/press_releases/Application-container-market-will-reach-2-7bn-in-2020_final_graphic.pdf) ) outlining that containers will be at a $2.7 billion market value in 2020. [Containers](https://www.cio.com/article/2924995/what-are-containers-and-why-do-you-need-them.html) and [VMs](https://en.wikipedia.org/wiki/Virtual_machine) are software instances that differ in size, resources, and use cases. While everyone loves a classic rivalry, VMs and containers don't offer this dichotomy but rather compliment each other. Rather than explaining the history and specific use cases of containers and VMs. I am going to outline their advantages and disadvantages to better help someone find a fit for their purposes.
+<!--more-->
 
 ### **Advantages of VMs over Containers:**
 
