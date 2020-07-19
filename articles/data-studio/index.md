@@ -14,7 +14,7 @@ To use Data Studio, you'll start with a * dataset* -- a system outside of Data S
 
 Once you have a dataset, we need to set up a *Data Source* in Data Studio. A Data Source is Data Studio's representation of your underlying data. It lets you decide which data you would like to visualize and who can view it. To set up a Data Source, you'll choose a *connector*. [Connectors](https://datastudio.google.com/u/0/datasources/create) are pipelines which connect original dataset to Data Source so that if there are any changes in the dataset, then they also reflect in the Data Source. We need to choose the connector that matches your type of Data Set and Authorize Data Studio to access that data.
 
-![img](metrics.png)
+
 
 The metrics and dimensions will appear in the data source so you can choose which data you'd like to visualize and how it should appear in Data Studio reports.  The report is a blank canvas where you can create visualizations, and it *can* be multiple pages which help in organizing your reports in logical ways. You can choose from different types of charts available such as bar charts, time series, geo maps and more. When you add a chart to your report, it is automatically created from the data from your Data Source. You can tweak what data is shown and customize the chart's design.
 
@@ -74,7 +74,7 @@ Once you've built a report to visualize your data, you can empower viewers to re
 * A **filter control** allows viewers to select one or more dimension values from a list by which to filter the report.
 * A **data control** allows a report viewer to change the data set used by a specific type of data source. 
 
-![img](datecontol.png)
+![img](datecontrol.png)
 
 ### Share reports with others
 
