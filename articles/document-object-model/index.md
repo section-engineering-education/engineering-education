@@ -1,10 +1,21 @@
-# Understanding Document Object Model(DOM)
-![hero-image](/engineering-education/document-object-model/hero.jpg)
-Photo by [Sai Kiran Anagani](https://unsplash.com/@_imkiran?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/coding-flowchart?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+---
+layout: engineering-education
+status: publish
+published: true
+slug: document-object-model
+title: Understanding Document Object Model(DOM)
+description: 
+author: 
+date: 2020-07-19T00:00:00-08:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-
+  - url: /engineering-education/document-object-model/hero.jpg
+    alt: container image example
+---
 **A Document Object Model (abbreviated as DOM) is a structure which acts as the framework of a standard HTML (HyperText Markup Language) or DHTML (Dynamic HyperText Markup Language) webscripts.** DOM is basically tree structure. A tree is known to have many branches. Likewise, a DOM too has many branches and sub branches which describe various elements of the webpage. Each branch of the tree represents one element. Each element may be referred to as a single node in DOM structure. If a particular element has one or more attributes in the HTML webpage, then the branch forks into multiple nodes depending on the number of attributes. The formation of nodes are proportional to the number of attributes in the HTML page.
-
+<!--more-->
 
 ### STRUCTURE OF DOM
 DOM follows a hierarchical tree structure in its representation. The first node in the DOM is Document node. That is because the whole web code for the HTML page is nothing but a document. The `<html>` tag is the root node. All the nodes which are directly attached to the root node are the child nodes.
