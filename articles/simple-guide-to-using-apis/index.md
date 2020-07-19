@@ -2,7 +2,7 @@
 
 **Alternative title: Getting to Grips with APIs: Using Node.js and EJS**
 
-Always wanted to use data from an API (Application Programming Interface) but never knew how? This tutorial will guide you through how to work with your first API using Node.js **Link** and EJS **Link** templating to create a dynamic **(use full-stack instead?)** web app. Don't worry if you've never used JSON before or know very little JavaScript, the guide is aimed at you.
+Always wanted to use data from an API (Application Programming Interface) but never knew how? This tutorial will guide you through how to work with your first API using [Node.js](https://nodejs.org) and [EJS](https://ejs.co) templating to create a dynamic **(use full-stack instead?)** web app. Don't worry if you've never used JSON before or know very little JavaScript, the guide is aimed at you.
 
 **(Excerpt ends)**
 
@@ -44,6 +44,7 @@ const myCredentials = {
 
 const gr = goodreads(myCredentials);
 ```
+
 If you've added the code correctly, the start of your server.js file (before you've added any routes) should look like:
 
 ```js
@@ -70,7 +71,6 @@ console.log('Listening on 8080');
 ```
 
 ## Searching For A Book
-
 The first piece of functionality we're going to create with the Goodreads API is searching for books. On the homepage, there will be a searchbar where users will type in the name of a book or its author and they will see book covers of the results.
 
 ### Displaying A Form
@@ -83,6 +83,7 @@ First, we need to add a form so users can type their query so in your index.ejs 
             <input type="submit">
         </form>
 ```
+
 This will POST the form to the /search route and append the value of the book field to the URL but we need to tell the server what to do when a user is there which requires the body-parser node module and creating a search route.
 
 ### Parsing the Submitted Form URL
@@ -96,7 +97,9 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 ```
+
 **Updated server.js Example**
+
 ```js
 // Node Modules
 const express = require('express');
@@ -127,7 +130,8 @@ app.use(bodyParser.json());
 app.listen(8080);
 console.log('Listening on 8080');
 ```
-###  Adding A Goodreads API searchBooks Function
+
+### Adding A Goodreads API searchBooks Function
 
 To create the search route, add the following:
 
@@ -147,6 +151,7 @@ app.post('/search', function (req, res) {
     });
 });
 ```
+
 The bookquery variable parses the value of the book form field and plugs it into a searchBooks function using the Goodreads API. 
 
 gr calls the goodreads-api-node module along with your API credentials. 
@@ -157,7 +162,7 @@ To speed up queries, Goodreads API uses pagination to split up results so you ca
 
 Finally, field determines which parameter to search for which in this case is title.
 
-After the searchBooks function, there is a `booklist.then` function which is a promise. A promise is **link to an article about Promises - is there a Section one** a way of ensuring code is run after a function has finished. This is important because otherwise, if you were returning a lot of data code that requires that data may run before the data has been returned. **Reword this to make more sense - maybe use API example - if GoodReads server was slow etc.**
+After the searchBooks function, there is a `booklist.then` function which is a promise. A promise is **link to an article about Promises - is there a Section one** a way of ensuring code is run after a function has finished. This is important because otherwise, if you were returning a lot of data code that requires that data may run before the data has been returned. **Reword this to make more sense? - maybe use API example - if GoodReads server was slow etc.**
 
 After declaring it as a function, in the brackets is the variable, result. This stores the output of the booklist function though you can rename the variable if you wish. In this example, we've used it in a `console.log()` so we can see what data has been returned.
 
@@ -188,6 +193,7 @@ Wait about five seconds (depending on how good your internet connection is) and 
 }
 
 ```
+
 This response tells us I made a successful search request with the query of The Serpent's Shadow. The displayed results were 1 to 20 though there were 33 in total. The source was Goodreads and the query on the server itself took 0.07 seconds.
 
 However, the search results (the part of the response we want to return) are stored further down so we will adjust our console.log accordingly. Using trial and error with console.logs is a great way to understand how JSON and your chosen API works.
@@ -217,8 +223,8 @@ We can see from the response the search results are stored in search.results. Si
     }
   },
 ```
-## Displaying Book Information on the Front-End
 
+## Displaying Book Information on the Front-End
 Now that we can return an array of results from a book search, we want to display this information (such as the title of the book) so users can see it. We can do this through EJS templating.
 
 First, you need to add a variable for `result.search.results.work` and then render a new page including the variable you just created. The updated search route should look like:
@@ -241,6 +247,7 @@ app.post('/search', function (req, res) {
     });
 });
 ```
+
 Second, create a new EJS file called search-results.ejs in your views/pages folder and include your partials (such as head, header and footer) like usual. 
 
 Then between the main tags, add the following HTML:
@@ -250,10 +257,10 @@ Then between the main tags, add the following HTML:
             <h2><%= book.best_book.title %></h2>
             <% }); %>
 ```
+
 This will take every book in the bookresult array (aka our search results) and render a h2 tag containing its title. 
 
 ## Creating Dynamic Book Pages
-
 So far, we've created a search page with a form to search for books using the Goodreads API and a results page to display every title in the first page of results but how do users find out more about those books? Finally, our last task is to dynamically create new book pages and link them to the results.
 
 First, we need to create a new route to handle these book pages and use the `gr.showBook()` function to grab the detailed information for a single book.
@@ -271,6 +278,7 @@ app.get('/book', function (req, res) {
     });
 });
 ```
+
 There's only one issue. How do we append the book id to the URL so the API knows which book to get information for when a user clicks on a book title? The answer is a little bit of client-side JavaScript and HTML.
 
 In search-results.ejs, surround the h2 tag with an a tag like this:
@@ -282,6 +290,7 @@ In search-results.ejs, surround the h2 tag with an a tag like this:
             <% }); %>
         </a>
 ```
+
 This will link every book title to the /book route we just created and add its Goodreads book id (required for the `gr.showBook` function) as an id attribute.
 
 Now you haven't already, create a script.js file in your public/js folder and add a script tag in your head.ejs partial file. Add the following to your script.js file:
@@ -295,6 +304,7 @@ Now you haven't already, create a script.js file in your public/js folder and ad
         }
     });
 ```
+
 This will take every link with an `<a href="/book">` tag (i.e. every book title on the results page) and append ?id= and the id of the tag (which in this case is the book id) which will allow our `gr.showBook` function to grab the book id we want.
 
 Finally, we just need to create a book.ejs to determine the content of the book pages. Between the main tags, add the following: 
@@ -305,15 +315,15 @@ Finally, we just need to create a book.ejs to determine the content of the book 
         <h3><%= bookdetails.publication_year %></h3>
         <p><%= bookdetails.description %></p>
 ```
+
 This will show the book title, year it is was published and the book description.
 
 Congratulations, you've just work with your first API using Node.js and EJS templating. Why not try it out? Search for a book and click on any of the titles. A new page will load with details of the result you clicked from the Goodreads API.
 
 Pleased with your work and not sure how to deploy your web app so you can show it off? Check out my guide to Deploying a NodeJS Web App Using DigitalOcean **Link to Deploying NodeJS article**. 
 
-**Next Steps:** If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle or use your new-found knowledge, to work with different APIs like Unsplash or Spotify **link to the API docs**. 
+**Next Steps:** If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle or use your new-found knowledge, to work with different APIs like [Unsplash](https://unsplash.com/developers) or [Spotify](https://developer.spotify.com/documentation/web-api/).
 
-Prefer an example of what you can achieve with the Goodreads API? Check out LibraryTrackr **link to Github repo**, a NodeJS web app I'm developing aimed at solving library management (both print and eBook) for bibliophiles. 
+Prefer an example of what you can achieve with the Goodreads API? Check out [LibraryTrackr](https://github.com/louisefindlay23/library-trackr), a NodeJS web app I'm developing aimed at solving library management (both print and eBook) for bibliophiles. 
 
 Also, look out for Part 2, which will show you how to authenticate with the Goodreads API using oAuth which will allow you to manipulate shelves, book reviews and more. 
-
