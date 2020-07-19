@@ -20,7 +20,7 @@ CSS Flexible Box is a CSS Module that defines a one-dimensional layout for webpa
 
 Let us understand some terms in Flexbox and build a simple layout using it.
 
-## Table of Contents
+### Table of Contents
 
 - [Introduction](#introduction)
 - [Terminology](#terminology)
@@ -28,19 +28,19 @@ Let us understand some terms in Flexbox and build a simple layout using it.
 - [Further Reading](#further-reading)
 - [Conclusion](#conclusion)
 
-## Introduction
+### Introduction
 
 CSS Layout is a tricky process, and developers tend to go with frameworks such as [Bootstrap](https://getbootstrap.com/) or [Bulma](https://bulma.io/) for getting a good layout system. Frameworks like these tend to **add weight** to the project, with their huge sizes and **complexity**. The in-built CSS Flex Module can substitute frameworks like these to create lightweight resposive website layouts.
 
 Let's look at some basic terminology used in the flexbox module.
 
-## Terminology
+### Terminology
 
-### container
+#### container
 
 A container is a placeholder or a wrapper to which we apply flex properties.
 
-### display
+#### display
 
 ```css
 .bucket {
@@ -50,13 +50,13 @@ A container is a placeholder or a wrapper to which we apply flex properties.
 
 Here, the *display: flex* property defines the parent container to be the element with class 'bucket'. Flex properties can be applied to both the parent and children containers. 
 
-### Main-Axis, Cross-Axis
+#### Main-Axis, Cross-Axis
 
 ![Flexbox, diagram](/engineering-education/css-flexbox/flex-diag.png)
 
 Flex has a two-coordinate axis system. The horizontal axis is referred to as the **main-axis** and the vertical axis is referred to as the **cross-axis**. To stretch across the main axis, **justify** properties are used. To set the cross-axis alignment, **align** properties are used.
 
-### flex-direction
+#### flex-direction
 
 *flex-direction* sets the direction of flow of items in the parent container.
 
@@ -87,7 +87,7 @@ Flex has a two-coordinate axis system. The horizontal axis is referred to as the
 - **row-reverse** would make the items flow from right -> left.
 - **column-reverse** would make the elements flow from bottom -> top.
 
-### flex-wrap
+#### flex-wrap
 
 *flex-wrap* defines the behaviour for elements when container runs out of space.
 
@@ -109,7 +109,7 @@ Flex has a two-coordinate axis system. The horizontal axis is referred to as the
 - **wrap** property says that the items would wrap into many lines, from top to bottom.
 - **wrap-reverse** property is similar to *wrap*, but would wrap the items from bottom to top. 
 
-### justify-content
+#### justify-content
 
 *justify-content* defines the placement and alignment along the main-axis. The mode we use defines how to distribute the extra space leftover.
 
@@ -125,7 +125,7 @@ Flex has a two-coordinate axis system. The horizontal axis is referred to as the
 - **flex-end** packs the items towards the end of the row/column according to the flex-direction.
 - **center** packs the items towards the center of the main-axis.
 
-### align-items
+#### align-items
 
 *align-items* defines the placement and alignment along the cross-axis. 
 
@@ -141,8 +141,7 @@ Flex has a two-coordinate axis system. The horizontal axis is referred to as the
 - **flex-end** packs the items towards the end of the cross-axis.
 - **center** packs the items towards the center of the cross-axis.
 
-## Let's Code
-
+### Let's Code
 Our goal is to generate a simple image grid as shown.
 
 ![Image Grid](/engineering-education/css-flexbox/img-grid.png)
@@ -229,14 +228,12 @@ Let's write the stylesheet!
 This can either be embedded within a style tag or linked as an external file.
 In this code snippet, the `justify-content` property defines the mode of alignment along the main-axis and the `align-items` property defines the alignment along the cross-axis of the container.
 
-## Further Reading
-
+### Further Reading
 To learn in-depth about Flexbox and CSS, check out the links below.
 
 - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - Mozilla Developer Network
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - CSS Tricks
 - [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) - W3Schools
 
-## Conclusion
-
+### Conclusion
 CSS Flexbox has proven to be an extremely simple and powerful tool for creating layouts. For a two-dimensional layout, there's a CSS module called the CSS Grid.
