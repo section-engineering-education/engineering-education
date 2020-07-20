@@ -1,10 +1,25 @@
-![This is the cover image. The final output of outlook clone is shown](hero.jpg "Output")
+---
+layout: engineering-education
+status: publish
+published: true
+slug: 
+build-an-outlook-clone-using-react
+title: Building An Outlook Clone with React
+description: It’s an introduction to NodeJS and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
+author: kanishkvardhan-a-n
+date: 2020-07-19T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-# Building An Outlook Clone with React
-
+  - url: /engineering-education/build-an-outlook-clone-using-react/hero.JPG
+    alt: output image outlook clone example
+---
 Hey there! We have built an outlook clone using React so that you can learn React as easily as possible. This article is suitable for developers of all caliber. We want the person who is just starting out to learn React as quickly as possible. At the same time. an experienced developer will find this project a good place to begin with. This is going to be a long article. Open your editor, and let's get started. 
 
-## What is React?
+<!--more-->
+
+### What is React?
 
 React is a front-end JavaScript library used for building single-page and mobile applications. The React library boasts of two main features:
 
@@ -12,7 +27,7 @@ React is a front-end JavaScript library used for building single-page and mobile
 - Component-Based: Build encapsulated components with their own state. These are later composed to make complex UIs.
 - Re-Usability: The React library enables components to be re-used across many pages. This enables faster and efficient development.
 
-## What are we building today?
+### What are we building today?
 
 The aim of this article is to build a simple interface using React. We initially fetch a list of mails from an API, and display the list. On clicking on an email, the respective email body is displayed. We also add various functionalities such as marking the mail as favourite, filtering the mails by read, unread and favourite categories.
 
@@ -20,16 +35,17 @@ Going one step forward, we will also implement session persistence using local s
 
 <!-- talk about optimization as well -->
 
-## Lets Begin. Shall We?
+### Lets Begin. Shall We?
 
-### Prerequisites
+#### Prerequisites
 
 - Any Code Editor: (We use VSCode in this article)
 - npm : https://www.npmjs.com/get-npm
 - create-react-app: https://www.npmjs.com/package/create-react-app
 
 We wont be covering the installation for the above files. The links mentioned above are self explanatory.
-## Setting up API on localhost
+
+### Setting up API on localhost
 For the project, we need to make API calls to get the list of emails and email body. Thus, lets set that up . We will be using *json-server* package. This
 
 ```
@@ -137,6 +153,7 @@ Majority of the times, the above mentioned lifecycle methods are used. There are
 
 [![Lifecycle Methods](https://i2.wp.com/programmingwithmosh.com/wp-content/uploads/2018/10/Screen-Shot-2018-10-31-at-1.44.28-PM.png?ssl=1)](LifecycleMethods)   
 Source:[ programmingwithmosh.com](https://programmingwithmosh.com/javascript/react-lifecycle-methods/)
+
 ### Code
 
 Alrighty, we first begin with creating a React project, using create-react-app package. Open a new terminal of your choice and execute the following commands.  
@@ -422,7 +439,7 @@ export default EmailBody
 
 Having defined all the components required, we need to ensure interoperability amongst components. 
 
-## Passing Props and Implementing CallBack Functions
+### Passing Props and Implementing CallBack Functions
 Let us modify the *App.js* component. We need to ensure the following changes are made.
 
 1. Obtain and store the current id, and other details related to the email with the corresponding id. Details to be stored in the state are
@@ -1466,4 +1483,5 @@ The final App.js file is given below.
 
 ```
 
+### Conclusion 
 This marks the end of the very long article. We have built a beautiful looking, yet simple interface. In the next article, we optimize the entire project using hooks. Moreover we use styled-components for styling. 
