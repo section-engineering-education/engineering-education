@@ -148,6 +148,8 @@ app.post('/search', function (req, res) {
     });
     booklist.then(function (result) {
         console.log(result);
+    }).catch(function () {
+        console.log("Goodreads Search Books Rejected");
     });
 });
 ```
@@ -162,7 +164,7 @@ To speed up queries, Goodreads API uses pagination to split up results so you ca
 
 Finally, field determines which parameter to search for which in this case is title.
 
-After the searchBooks function, there is a `booklist.then` function which is a promise. A promise is **link to an article about Promises - is there a Section one** a way of ensuring code is run after a function has finished. This is important because otherwise, if you were returning a lot of data code that requires that data may run before the data has been returned. **Reword this to make more sense? - maybe use API example - if GoodReads server was slow etc.**
+After the searchBooks function, there is a `booklist.then` function which is a promise. A promise is **link to an article about Promises - is there a Section one? (if not use this, https://hackernoon.com/exploring-differences-between-promises-and-callbacks-in-javascript-9m2a3uk0)** a way of ensuring code is run after a function has finished. This is important because otherwise, if you were returning a lot of data code that requires that data may run before the data has been returned. **Reword this to make more sense? - maybe use API example - if GoodReads server was slow etc.** The catch part of the promise refers to what will happen if the promise is rejected (i.e. fails.)
 
 After declaring it as a function, in the brackets is the variable, result. This stores the output of the booklist function though you can rename the variable if you wish. In this example, we've used it in a `console.log()` so we can see what data has been returned.
 
@@ -244,6 +246,8 @@ app.post('/search', function (req, res) {
         res.render('pages/search-results', {
             bookresult: bookresult
         });
+    }).catch(function () {
+        console.log("Goodreads Search Books Rejected");
     });
 });
 ```
@@ -275,7 +279,9 @@ app.get('/book', function (req, res) {
         res.render('pages/book', {
             bookdetails: bookdetails
         });
-    });
+    }).catch(function () {
+            console.log("Book Search Rejected");
+        });
 });
 ```
 
@@ -324,6 +330,6 @@ Pleased with your work and not sure how to deploy your web app so you can show i
 
 **Next Steps:** If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle or use your new-found knowledge, to work with different APIs like [Unsplash](https://unsplash.com/developers) or [Spotify](https://developer.spotify.com/documentation/web-api/).
 
-Prefer an example of what you can achieve with the Goodreads API? Check out [LibraryTrackr](https://github.com/louisefindlay23/library-trackr), a NodeJS web app I'm developing aimed at solving library management (both print and eBook) for bibliophiles. 
+Looking for more example code? Check out [LibraryTrackr](https://github.com/louisefindlay23/library-trackr), a NodeJS web app I'm developing aimed at solving library management (both print and eBook) for bibliophiles. 
 
 Also, look out for Part 2, which will show you how to authenticate with the Goodreads API using oAuth which will allow you to manipulate shelves, book reviews and more. 
