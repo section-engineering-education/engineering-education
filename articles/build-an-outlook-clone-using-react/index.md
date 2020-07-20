@@ -6,7 +6,7 @@ slug:
 build-an-outlook-clone-using-react
 title: Building An Outlook Clone with React
 description: It’s an introduction to NodeJS and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
-author: kanishkvardhan-a-n
+author: lalithnaryan-c
 date: 2020-07-19T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
