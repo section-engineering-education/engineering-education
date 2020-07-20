@@ -7,15 +7,15 @@ title: How to Create Your First Mock Server
 description: How to Create Your First Mock Server simulating APIs. It consists of all the extensive details, step-by-step instructions with images and resources links to help in the beginning of your open source deployment.
 author: aman-saxena
 date: 2020-07-20T00:00:00-07:00
-topics: []
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/guide-to-create-mock-server/hero.jpg
-    alt: mock server computer image example 
+    alt: mock server computer image example
 
 ---
-One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. These stages consist of several APIs calls requesting various information through GET/POST methods which require a functioning server. But what happeneds when you do not have full backend support yet or no running APIs in the development stage? You end up to square one & hence, not able to set up a server eventually. Here comes the magical feature of Postman to create a dummy server aka Mock Server to your aid.
+One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. These stages consist of several APIs calls requesting various information through GET/POST methods which require a functioning server. But what happens when you do not have full backend support yet or no running APIs in the development stage? You end up back on square one & hence, not able to set up a server. Here comes the magical feature of Postman to create a dummy server aka Mock Server to come to your aid.
 <!--more-->
 
 This guide includes step-by-step instructions, so that you have a comfortable experience in beginning your open source deployment. Without further ado, let's get started by answering all the why(s), what(s) & how(s)!
@@ -24,10 +24,9 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 
 ![Mock Image](/engineering-education/guide-to-create-mock-server/image00.png)
 
- - Mock Server allows you to simulate your API data. When MockServer receives a request it matches the request against active **expectations** that have been configured, if no matches are found it proxies the request if appropriate otherwise a 404 is returned. An expectation defines the action that is taken, i.e., a response could be returned. By saving example responses for your requests, you can create a mock server that will return your example response instead of connecting to your actual API.
+ - Mock Server allows you to simulate your API data. When MockServer receives a request it matches the request against active **expectations** that have been configured, if no matches are found, it proxies the request if appropriate otherwise, a 404 is returned. An expectation defines the action that is taken, i.e., a response could be returned. By saving example responses for your requests, you can create a mock server that will return your example response instead of connecting to your actual API.
 
 ###  Why are Mock Servers so useful?
-
 - Mock Servers start working against a service API even before the service is available. If an API or service is not yet fully developed they can mock the API allowing any team who is using the service to start work without being delayed.
 - They isolate development teams during the initial development phases when the APIs / services may be extremely unstable and volatile. Using MockServer allows development work to continue even when an external service fails.
 
@@ -41,7 +40,7 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 #### Step 1: So, I have my APIs ready. What should I do now to create a mock server?
  - Apart from all of the traditional ways of doing things, we're always seeking simpler and more efficient methods to do the same work with increased productivity. Technology aiding another technology has been one of the important features of the modern era. On similar lines, we'll be using the [Postman](https://www.postman.com/downloads/) tool to ease the process.
 
- - Assuming, you have a working Postman Account (which is required for contributing for private repositories) and your APIs & routers are up to date, you are ready to create your first mock server.
+ - Assuming, you have a working Postman Account (which is required for contributing to private repositories) and your APIs & routers are up to date, you are ready to create your first mock server.
 
 #### Step 2: Creating the Mock Server
 - After setting up the workspace successfully, open the **Postman** Window in the app. You'll be seeing a launchpad tap with a few basic options. To create your mock server, click the **New** button in the top left of the header toolbar. (See image for reference).
@@ -86,6 +85,6 @@ You can view and search the details of calls to your mock servers using the mock
 
 ![Edit Delete Image](/engineering-education/guide-to-create-mock-server/image7.png)
 
-### Fin
-- The Postman Web Application provides you with several efficient features to up-scale your task as and whenever required. You can also modify requests, link your APIs, and even **Edit** & **Delete** your whole Mock Server. All these options can be available by going to the Collections panel, in APIs and choosing edit option. Save the Mock Server URL for the future usage… and **Voila!**
+### Voila
+- The Postman Web Application provides you with several efficient features to scale-up your task as and whenever required. You can also modify requests, link your APIs, and even **Edit** & **Delete** your whole Mock Server. All these options can be available by going to the Collections panel, in APIs and choosing edit option. Save the Mock Server URL for the future usage… and **Voila!**
 You're done!
