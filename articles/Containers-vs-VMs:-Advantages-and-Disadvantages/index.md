@@ -6,7 +6,7 @@ slug: virtual-machines-vs-containers
 title: Advantages and Disadvantages of VMs vs Containers
 description: Both Virtual Machines (VMs) and containers are used to increase the productivity of the development lifecycle, but each has their advantages and disadvantages. What are VMs and Containers.
 author: jeremy-osborne
-date: 2020-07-19T00:00:00-08:00
+date: 2020-07-21T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
