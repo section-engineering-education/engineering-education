@@ -66,8 +66,7 @@ Using mongoose, we connect the server to mongoDB using the `mongodb://` uri. The
 
 The server then listens to port number 2400 for any incoming requests. Once you run `nodemon`, you will have a result similar to the one below.
 
-![nodemon](/engineering-education/node-authentication-api/nodemon.png)
-
+![nodemon](/engineering-education/node-authentication-api/nodemon.png)<br>
 Next, we can create a user schema/model to define how our user objects will be structured in the database. So go ahead and create a folder known as `models` and within it, a file called `user.js` and add the code below.
 
 ```javascript
@@ -109,32 +108,26 @@ module.exports = router
 
 The express router module will help us to create router handlers and even manage to add our own middleware. We have two endpoints/routes. One for `login` and one for `signup`. We also have to set up routing in our server's entry point. To do this, make changes in the `index.js` to look like the one below.
 
-![index.js](/engineering-education/node-authentication-api/app-router.png)
-
+![index.js](/engineering-education/node-authentication-api/app-router.png)<br>
 With that, the complete urls will be:
 * `login` - http://localhost:2400/api/auth/login
 * `signup` - http://localhost:2400/api/auth/signup
 
 Now, let's start with **signup** (i.e. registering users). This is a post method where we will be receiving the user email and password from the request body. From here, we will hash the user password and save it with the email in the database.
 
-![route-signup](/engineering-education/node-authentication-api/route-signup.png)
-
+![route-signup](/engineering-education/node-authentication-api/route-signup.png)<br>
 As you can see in the signup route, we import the bcrypt module. Then we use it to hash the password from the request body using [ten salt rounds](https://stackoverflow.com/questions/46693430/what-are-salt-rounds-and-how-are-salts-stored-in-bcrypt). Then we save the hashed password and email to our database using the mongoose method `save()`. This method returns a promise, and we send the response accordingly. Below is an example of a signup request made with postman.
 
-![postman-response](/engineering-education/node-authentication-api/postman-signup-1.png)
-
+![postman-response](/engineering-education/node-authentication-api/postman-signup-1.png)<br>
 As you can see, mongoose has automatically generated an id for us. Next, we have to create a JSON web token after the signup process. We will use the user object returned as our payload.
 
-![generate-jwt](/engineering-education/node-authentication-api/jwt-generate.png)
-
+![generate-jwt](/engineering-education/node-authentication-api/jwt-generate.png)<br>
 In the above code, we import the `jsonwebtoken` module and create a variable known as `tokenSecret` which will be used to decrypt and encrypt our payloads. Then we create a function called `generateToken` which will be used to create the JSON web token and return it. This token will be the one displayed as the return of the request. It also has an expiry duration of 24hrs, you can add a different one like `2 days`, `60 * 60` (1 minute), etc.
 
-![json-token](/engineering-education/node-authentication-api/json-token.png)
-
+![json-token](/engineering-education/node-authentication-api/json-token.png)<br>
 Next, we move to the **login** route. In this route, we look for the user in the database, then we compare if the password in the database matches the one provided in the request body. If they all match, we can generate new JSON web tokens to be used. Add the following code to the login route.
 
-![login](/engineering-education/node-authentication-api/login.png)
-
+![login](/engineering-education/node-authentication-api/login.png)<br>
 In the login route, we first look for the record that matches the email. If there is no record, the method returns undefined and we handle the error using a 404 code. Then we proceed to compare the two passwords and if they match, then we send a success response containing the token.
 
 We can add middleware to check and verify our JSON web token. First, we create a file `middlewares.js` in the project's root directory. Then we add the following code.
