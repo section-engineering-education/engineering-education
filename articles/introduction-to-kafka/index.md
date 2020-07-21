@@ -21,8 +21,6 @@ In Kafka, data is referred to as a message. In other words, a message refers to 
 
 *A topic is a name or a unique id given to a category or feed to which streams of records or messages are sent*. In Kafka, topics can have zero or more consumers that receive the data that is written to it. For example, if we want to send information about stocks, we can create a topic called "stocks", and multiple producers can send messages to that topic. The topic can also have multiple consumers collecting information about stock prices.
 
-![topics](/engineering-education/introduction-to-kafka/topic.png)
-
 2. **Brokers**
 
 *Brokers, also called Kafka nodes or Kafka servers, are responsible for facilitating between the producers and consumers*. They act as a "middleman" and store the data sent by the producer and allow the consumer to fetch the messages in a topic. In a Kafka cluster where multiple producers and consumers are interacting with each other, brokers are essential and act as a "load balancer". Brokers can have multiple partitions of topics, and these partitions can either be a leader or a replica(a message is replicated multiple times to provide fault tolerance). The leader is responsible for all writes and reads to a topic and coordinates with the other replicas. If something happens to the leader or it is unable to function, a replica becomes the new leader, thus providing fault-tolerance. 
