@@ -60,6 +60,7 @@ We will be using the above-mentioned functions frequently during plotting.
 ### matplotlib
 
 [![Parts of a Figure](https://matplotlib.org/3.1.1/_images/anatomy.png)](Parts-Figure)
+
 Source: [matplotlib docs](https://matplotlib.org/3.1.1/)
 
 Each of the parts shown in the above figure is mutable. One should keep in mind the above features to enhance and give more information regarding the plots. Let us get into the generation of plots.
@@ -67,10 +68,19 @@ Each of the parts shown in the above figure is mutable. One should keep in mind 
 Matplotlib is a huge library. We will be using a sub-library pyplot for all our plotting cases. 
 
 Regarding the anatomy of the figure, we will use the in-built functions that matplotlib provides for the purposes of adding anatomical tags. There is no need to study them separately. As and when required, we use them and they are self-explanatory.
- 
+
+### Usecases
+
+The library is used in many fields inlcuding but not limited to the following:
+
+* image processing: modifying images and understanding images via plotting histograms, density charts, etc.
+* signal processing: performing noise analysis, depth estimation, various transformations to gain more understanding.
+* machine learning & data science: : exploratory data analysis and understanding the dataset. Characterizing the dataset and identifying outliers.
+* academic research: the scientific community creates plots so that they can be published in conference papers and scientific journals. The professional touch and the ease of development enhances the experience of using the library.
+
 Let's begin with co-ordinate geometry. We will plot circle, hyperbola, parabola, and ellipse. The concepts that will be introduced are 2-D plots and 3-D plots
 
-#### 2-D Plots
+#### 2-D Pl1ots
 
 ##### Key Points: 
 
