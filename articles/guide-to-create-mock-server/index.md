@@ -22,7 +22,7 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 
 ### What is Mock Server?
 
-![Mock Image](/engineering-education/guide-to-create-mock-server/image00.png)
+![Mock Image](/engineering-education/guide-to-create-mock-server/image00.png) *Fig 1: www.mock-server.com*
 
  - Mock Server allows you to simulate your API data. When MockServer receives a request it matches the request against active **expectations** that have been configured, if no matches are found, it proxies the request if appropriate otherwise, a 404 is returned. An expectation defines the action that is taken, i.e., a response could be returned. By saving example responses for your requests, you can create a mock server that will return your example response instead of connecting to your actual API.
 
@@ -30,7 +30,7 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 - Mock Servers start working against a service API even before the service is available. If an API or service is not yet fully developed they can mock the API allowing any team who is using the service to start work without being delayed.
 - They isolate development teams during the initial development phases when the APIs / services may be extremely unstable and volatile. Using MockServer allows development work to continue even when an external service fails.
 
-![Usage Image](/engineering-education/guide-to-create-mock-server/image01.png)
+![Usage Image](/engineering-education/guide-to-create-mock-server/image01.png) *Fig 2: www.mock-server.com*
 
 - Mock Servers easily recreate all types of responses for HTTP dependencies such as REST or RPC services to test applications easily and effectively. They isolate the system-under-test to ensure tests run reliably and only fail when there is a genuine bug.
 - These servers easily setup mock responses independently for each test to ensure test data is encapsulated with each test. Avoid sharing data between tests that are difficult to manage and maintain that decrease the risks of tests infecting each other.
