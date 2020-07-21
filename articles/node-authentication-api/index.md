@@ -130,7 +130,7 @@ Next, we move to the **login** route. In this route, we look for the user in the
 ![login](/engineering-education/node-authentication-api/login.png)<br>
 In the login route, we first look for the record that matches the email. If there is no record, the method returns undefined and we handle the error using a 404 code. Then we proceed to compare the two passwords and if they match, then we send a success response containing the token.
 
-We can add middleware to check and verify our JSON web token. First, we create a file `middlewares.js` in the project's root directory. Then we add the following code.
+We can add middleware to check and verify our JSON web token. First, we create a file `middleware.js` in the project's root directory. Then we add the following code.
 
 ```javascript
 const jwt = require('jsonwebtoken')
@@ -151,6 +151,5 @@ exports.verify = (req, res, next) => {
 
 Here we export a function known as `verify` which checks for the availability of the token in the request. Then it decodes it and we add a value known as user in the request so that we can use it later in search queries or manipulation. We import this module in our `auth.js` file for us to access the exported methods. We use this verify method as middleware in our request. It is executed before the rest of the request block and with this, we can add it to other requests to verify the JSON web token.
 
-![jwt-test](/engineering-education/node-authentication-api/jwt-test.png)
-
+![jwt-test](/engineering-education/node-authentication-api/jwt-test.png)<br>
 And that's it. Congratulations on your first Authentication! You can use it to authenticate tokens and provide a basic authentication system. You can access the full code on [GitHub](https://github.com/LinusMuema/node-authentication-api).
