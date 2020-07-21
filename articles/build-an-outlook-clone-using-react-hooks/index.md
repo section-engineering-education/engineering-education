@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: build-an-outlook-clone-using-react -hooks
+slug: build-an-outlook-clone-using-react-hooks
 title: React Hooks and Building Outlook Clone
 description: Complete guide where we discuss react hooks and have written optimized code following up on our earlier topic of how to build an outlook clone using React.
 author: lalithnaryan-c
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-an-outlook-clone-using-react/hero.JPG
-    alt: output image outlook clone example
+  - url: /engineering-education/build-an-outlook-clone-using-react-hooks/hero.JPG
+    alt: outlook clone example image
 ---
-Welcome to Hook part of the React series. This time we cover implementing the same outlook clone, that we built earlier. But this time, we use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To sum up the earlier attempt at building outlook clone, we made API calls and displayed emails according to the filter requested. We also implemented local storage.
+Welcome to Hook part of the React series. This time we cover implementing the same outlook clone that we built earlier. But this time, we use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To sum up the earlier attempt at building an outlook clone, we made API calls and displayed emails according to the filter requested. We also implemented local storage.
 
 <!--more-->
 
