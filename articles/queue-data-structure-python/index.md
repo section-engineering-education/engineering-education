@@ -6,7 +6,7 @@ slug: queue-data-structure-python
 title: Using the Queue Data Structure in Python
 description: A queue is an efficient linear data structure that is used to maintain the order and is used to implement other data structures. 
 author: saiharsha-balasubramaniam
-date: 2020-07-07T00:00:00-12:00
+date: 2020-07-20T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: python data structures queue
 
 ---
-In Part 4 of this series, let us dive into Queues, a data structure that stores data in a **First In, First Out** (FIFO) manner. [Queue](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm) is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at both its ends. In this article, we'll be looking at the implement and use the stack in Python.
+In Part 4 of this series, let us dive into Queues, a data structure that stores data in a **First In, First Out** (FIFO) manner. [Queue](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm) is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at both of its ends. In this article, we'll be looking at how to implement and use the queue data structure in Python.
 
 *For more background on the different data structures in Python, check out my articles on the [List](/engineering-education/list-data-structure-python/) and [Stack](/engineering-education/stack-data-structure-python) data structures.*
 
@@ -36,7 +36,7 @@ A Queue is a linear data structure in which data is stored in a **First In, Firs
 
 `enqueue` is a queue operation where you add an item at the back of a queue.
 
-`dequeue` is a queue operating where you remove an item from the front of a queue.
+`dequeue` is a queue operation where you remove an item from the front of a queue.
 
 ### Uses of Queues
 
@@ -65,7 +65,7 @@ A Queue is a linear data structure in which data is stored in a **First In, Firs
 - The `queue.isEmpty()` method returns `True` if the queue is empty, else returns `False`.
 - Time Complexity -> O(1)
 
-Queues can be implemented in various ways. Let us look implement a queue using list and using the `collections.deque` module in Python.
+Queues can be implemented in various ways. Let us look at how to implement a queue using a list and using the `collections.deque` module in Python.
 
 #### Queue using a List
 
@@ -143,5 +143,4 @@ Try implementing the queue in Python first. Then once you're done with the imple
 - Design Circular Dequeue - [LeetCode](https://leetcode.com/problems/design-circular-deque/)
 
 ### Conclusion
-We have implemented queues and learned how to use them in algorithmic problems. Queues are very integral from an operating system point of view. They are also asked in interviews extensively.
-**We have covered all the linear data structures successfully in this series.** The next article would deal with Non-Linear Data Structures like Tree, Heap, etc. Stay tuned!
+We have implemented queues and learned how to use them in algorithmic problems. Queues are very integral from an operating system point of view. They are also commonly asked about in interviews.
