@@ -35,7 +35,7 @@ class Example extends React.Component{
 ```
 The above definition declares that *Example* class is a child component of *React.Component* class.
 
-### The basis of the need to react in terms of the React Documentation page is as follows.
+### The basis of the need for react hooks in terms of the React Documentation page is as follows.
 
 #### *It’s hard to reuse stateful logic between components*
 
