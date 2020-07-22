@@ -1,34 +1,50 @@
-# **Introduction to DNA Computing and its Applications**
+---
+layout: engineering-education
+status: publish
+published: true
+slug: dna-computing
+title: Introduction to DNA Computing and its Applications
+description: The article introduces to DNA computing, natural computing based on the concept of performing logical and arithmetic operations using molecular properties of DNA.
+author: aditi-jayakumar
+date: 2020-07-22T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/dna-computing/hero.jpg
+    alt: dna-computing
+---
 Every single cell which builds up a living organism carries information for various functions necessary for the survival of the cell. This genetic information in each cell is stored in molecules called nucleic acids. The most stable form of nucleic acids is called deoxyribonucleic acid(DNA).
 Each of the DNA strands forms helical structures that are long polymers of millions of linked nucleotides. These nucleotides consist of one of four nitrogen bases, a five-carbon sugar, and a phosphate group. The nitrogen bases - **A** (Adenine), **T** (Thymine), **G** (Guanine), **C** (Cytosine) encodes the genetic information while the others provide structural stability. The strands are linked to each other by the base-pairing rule, T with A and C with  G.  The arrangement of these bases is important as they decide the functionality of different [genes]().
+<!--more-->
 
-## What is DNA Computing
+### What is DNA Computing
 DNA computing _is an area of natural computing based on the concept of performing logical and arithmetic operations using molecular properties of DNA by replacing traditional carbon/silicon chips with biochips_. This allows massively parallel computation, where complex mathematical equations or problems can be solved at a much less time. Hence with a considerable amount of [self-replicating DNA](https://en.wikipedia.org/wiki/Self-replication#:~:text=Self%2Dreplication%20is%20any%20behavior,transmitted%20to%20offspring%20during%20reproduction.), computation is much efficient than the traditional computer which would require a lot more hardware.
 A good experience with biology and computer science is required to build algorithms to be executed in DNA computing. The information or data instead of being stored in binary digits will now be stored in the form of the bases A, T, G, C. The ability to synthesize short sequences of DNA artificially makes it possible to use these sequences as inputs for algorithms.
 
 
-## Applications
-
+### Applications
 The first theory of DNA computation was proposed by Leonard Adleman in 1994. He put his experimental theory into the test with a seven-point Hamiltonian path problem or also called the traveling salesman problem. The salesman in this problem needs to find the shortest path between seven cities whose distances are known in such a way that he crosses no city twice and returns to the original city. Adleman represented each city with a short DNA sequence with about 20 bases and a [complementary strand](https://en.wikipedia.org/wiki/Complementary_DNA) with 20 bases as the street between the cities. All the fragments are capable of linking with each other. When the fragments were put in a tube and mixed, the natural bonding tendencies the DNA created 109 formations or solutions in less than a second. Not all were correct and he took a week to extrapolate and filter out the shortest path through various techniques.
-![Image source](\engineering-education\articles\dna-computing\image1.png)
-[_Image source_](https://www.cs.uaf.edu/2010/fall/cs441/proj1/dna/DNAComputingHTMLNotes.html)
-Though this solution was not ideal, this demonstration opened floodgates to a wide range of possibilities and applications. Few applications being  developed are mentioned below
-  * **Security**
-Deploying DNA algorithms in cryptography to build an [intrusion detection model](https://www.geeksforgeeks.org/intrusion-detection-system-ids/#:~:text=Dropping%20in%20Routers-,Intrusion%20Detection%20System%20(IDS),harmful%20activity%20or%20policy%20breaching.) is the most recent development. The ability to store 108 terabytes of data in 1 gram of DNA has led to the potential holding a huge one time pad. Another example is DNA steganography, in which a novel method was used to hide the messages in a microdot. Instead of the traditional binary encoding, each letter was denoted by three chemical bases i.e the letter A was encoded by CGA. These messages are then encoded into DNA sequences and concealed by mixing it in a tube with a large amount of sonicated random human DNA. This led to the formation of microdots, which was then decoded by the receiver with appropriate primers(short sequence with complementary bases). However such encryption techniques have been posed with problems. The lack of a theoretical basis to explain the implementation and come up with good schemes seem to be a challenge. These are also expensive to apply, and analyze which requires modern infrastructure.
 
-  - **Scheduling**
+![Image source](/engineering-education/dna-computing/image1.png)
+
+[_Image source_](https://www.cs.uaf.edu/2010/fall/cs441/proj1/dna/DNAComputingHTMLNotes.html)
+
+Though this solution was not ideal, this demonstration opened floodgates to a wide range of possibilities and applications. Few applications being  developed are mentioned below
+
+#### **Security**
+Deploying DNA algorithms in cryptography to build an [intrusion detection model](https://www.geeksforgeeks.org/intrusion-detection-system-ids/#:~:text=Dropping%20in%20Routers-,Intrusion%20Detection%20System%20(IDS),harmful%20activity%20or%20policy%20breaching.) is the most recent development. The ability to store 108 terabytes of data in 1 gram of DNA has led to the potential holding a huge one time pad. Another example is DNA steganography, in which a novel method was used to hide the messages in a microdot. Instead of the traditional binary encoding, each letter was denoted by three chemical bases i.e. the letter A was encoded by CGA. These messages are then encoded into DNA sequences and concealed by mixing it in a tube with a large amount of sonicated random human DNA. This led to the formation of microdots, which was then decoded by the receiver with appropriate primers(short sequence with complementary bases). However such encryption techniques have been posed with problems. The lack of a theoretical basis to explain the implementation and come up with good schemes seem to be a challenge. These are also expensive to apply, and analyze which requires modern infrastructure.
+
+#### **Scheduling**
  A DNA computing based algorithm was presented to solve the job scheduling problem by Zhixing et al. In order to explain the model with six tasks, he demonstrated the working operations, mimicking the method used for the Hamiltonian Path problem. This however was not the first time, Watada in early 2000 used DNA algorithms to work out elevator schedule systems and rearrangement of Flexible Manufacturing System. However, due to a lack of theoretical base, only medium-sized tasks were taken into consideration.
 
-- **Clustering**
+#### **Clustering**
 Clustering deals with deriving highly meaningful relationships in a complex collection of data by creating a structure using various concepts and algorithms. DNA- based clustering involves using strands to assign edges and vertices. Iterative calculations are performed for every produced cluster to improve quality. This method is of particular interest when dealing with large heterogeneous data with an unknown number of clusters. It helps in reducing the time complexity by high parallelism features of DNA
 
 Further developments in recent times are the creation of DNA based artificial neural networking which can recognize hand signals for up to 100 bits and an integrated technique between DNA computing and fuzzy developed to forecast money exchange rate.
 
+### Pros and Cons
+The use of DNA strands to compute has led to high parallel computation that makes up for the slow processing of the chip. Memory space required by DNA is around 1 bit per cubic nanometer which is much less when compared to regular storage systems. Consumption of power is almost nil as the chemical bonds in DNA produce energy to build or repair new strands. However, the output yielded by such computation would require complex expensive tools. The synthesis of DNA is also prone to errors such as mismatching breaks. The possibility of errors increasing exponentially with each iteration which reduces the reliability.
 
-## Pros and Cons
-The use of DNA strands to compute has led to high parallel computation that makes up for the slow processing of the chip. Memory space required by DNA is around 1 bit per cubic nanometer which is much less when compared to regular storage systems. Consumption of power is almost nil as the chemical bonds in DNA produce energy to build or repair new strands. However, the output yielded by such computation would require complex expensive tools. The synthesis of DNA is also prone to errors such as mismatching, breaks. The possibility of errors increasing exponentially with each iteration which reduces the reliability.
-
-## Future prospects
-
-The field of DNA computing is an emerging concept still in its infancy and its applications are still being understood. DNA computing can be harnessed to act along with the living cells to provide new detection methods in medicals devices. With the flexible molecular algorithms on the rise, one might be able to assemble a complex entity on the nanoscale with the reprogrammable tileset. Though replacing silicon chips based computer seems highly unlikely in the near future, the concept of solving problems beyond the scope of conventional computers gives rise to unfathomable applications.
+### Future prospects
+The field of DNA computing is an emerging concept still in its infancy and its applications are still being understood. DNA computing can be harnessed to act along with the living cells to provide new detection methods in medical devices. With the flexible molecular algorithms on the rise, one might be able to assemble a complex entity on the nanoscale with the reprogrammable tile set. Though replacing silicon chips based computers seems highly unlikely in the near future, the concept of solving problems beyond the scope of conventional computers gives rise to unfathomable applications.
