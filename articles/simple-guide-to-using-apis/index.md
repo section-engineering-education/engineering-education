@@ -7,7 +7,7 @@ title: Getting to Grips with APIs - Using Node.js and EJS
 description: Using the Goodreads API and goodreads-api-node wrapper to search for books, display the results as book titles and create book pages when a cover is clicked upon.
 author: louise-findlay
 date: 2020-07-21T00:00:00-07:00
-topics: []
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
