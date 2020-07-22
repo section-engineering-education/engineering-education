@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: simple-guide-to-using-apis
 title: Getting to Grips with APIs - Using Node.js and EJS
-description: Using the Goodreads API and goodreads-api-node wrapper to search for books, display the results as book titles and create book pages when a cover is clicked upon.
+description: Using the Goodreads API and goodreads-api-node wrapper to search for books, display the results as book titles and create book pages when a book title is clicked upon.
 author: louise-findlay
 date: 2020-07-21T00:00:00-07:00
 topics: [API]
