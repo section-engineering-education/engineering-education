@@ -57,5 +57,14 @@ Open a pull request that includes the name of your article and a description of 
 
 Here is a [link](https://www.youtube.com/watch?v=nT8KGYVurIU&t=47s) to a short video further explaining what a **pull request** is and how to **fork** a Github repository.
 
-Congratulations! Your article has been submitted for review and approval by the Section team.
+Before submitting your article make sure you take advantage of this useful tool that helps with word count, formatting, and grammar/readability.
+Helps make any writing BOLD & CLEAR
+It highlights lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it.
+Please use on all future articles before submitting a PR (pull request)
+
+Include a short Author Biography and Headshot image to be included at the end of your articles.
+
+http://www.hemingwayapp.com/
+
+Congratulations! Your article is now ready to be submitted for review and approval by the Section team.
 

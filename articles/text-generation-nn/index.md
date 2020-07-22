@@ -6,13 +6,13 @@ slug: text-generation-nn
 title: Text Generation With RNN + TensorFlow
 description: Text generation with an RNN. Contents. Setup. Import TensorFlow and other libraries. Download the Shakespeare dataset. Process the text. Vectorize the text. The prediction task. Build The Model. Try the model. Train the model.
 author: rohan-reddy
-date: 2020-07-03T00:00:00-07:00
+date: 2020-07-09T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/text-generation-nn/hero.jpg
-    alt: shell scripting example image
+    alt: rnn and tensorflow
 ---
 The potential of artificial intelligence to emulate human thought goes from passive tasks such as [object recognition](https://www.mathworks.com/solutions/image-video-processing/object-recognition.html) to [self-driving cars](https://www.wired.com/story/guide-self-driving-cars/), it also extends to creative tasks such as text-generation, [music generation](https://magenta.tensorflow.org/), art generation, etc.
 In this article/tutorial, we will see how neural networks can be used to generate text data, the same can be used for music generation.
