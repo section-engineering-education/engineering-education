@@ -6,12 +6,12 @@ slug: build-an-outlook-clone-using-react-hooks
 title: React Hooks and Building Outlook Clone
 description: Complete guide where we discuss react hooks and have written optimized code following up on our earlier topic of how to build an outlook clone using React.
 author: lalithnaryan-c
-date: 2020-07-19T00:00:00-07:00
+date: 2020-07-23T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-an-outlook-clone-using-react-hooks/hero.JPG
+  - url: /engineering-education/build-an-outlook-clone-using-react-hooks/hero.jpg
     alt: outlook clone example image
 ---
 Welcome to Hook part of the React series. This time we cover implementing the same outlook clone that we built earlier. But this time, we use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To sum up the earlier attempt at building an outlook clone, we made API calls and displayed emails according to the filter requested. We also implemented local storage.
@@ -97,9 +97,7 @@ We will consider some of the hooks and get an understanding of the underlying fu
    It is usually used to access the DOM variables and to keep track of a mutable variable.
 4. **createContext** and **useContext**: createContext us used to pass props from parent to child components. Consider the example of passing props from parent to child components present many levels below. Sending it via the props makes the code messy. Instead, createContext is used to send the props. Whenever the props are needed, we use useContext to get the value of the props.  We will discuss this below in the project.
 
-
 ### Code
-
 Alrighty, we first begin with creating a React project, using create-react-app package. Open a new terminal of your choice and execute the following commands.  
 
 ```terminal
@@ -293,14 +291,14 @@ We have also used createContext. We declare a global const EmailContext. This is
 
 ### Styled-components
 
-This is by far the easiest library to use for styling. There are various alternatives like inline styling and tachyons. But styled-components enables us to use our css knowledge. Let's say we want to style a button element. The inline styling would be
+This is by far the easiest library to use for styling. There are various alternatives like inline styling and tachyons. But styled-components enables us to use our CSS knowledge. Let's say we want to style a button element. The inline styling would be
 
 ```jsx
 <button style={{borderRadius:'1%'}}>Hey there</button>  
 ```
 Using styled-components, on the other hand, would allow us to maintain a tidy code. Let's look at styling the button using styled-components.
 
-All we have to do is create a constant and define our css styling within the constant. We can also create classes and ids similar to css.
+All we have to do is create a constant and define our CSS styling within the constant. We can also create classes and ids similar to CSS.
 
 ```jsx
 const ButtonStyle = styled.button {
@@ -521,8 +519,7 @@ function useLocalStorage(key, initialValue) {
   return [storedValue, setValue];
 }
 ```
-## Custom Hooks
-
+### Custom Hooks
 We have defined two custom hooks for various purposes. Let's understand what custom hooks are. Custom hooks enable the reuse of stateful logic by providing boundaries to maintain isolated states and side effects.
 
 The first custom hook called isMounted is used to check if the component is mounted or not. This is done to ensure performance. At the time of mounting, we want only the first useEffect to make the API call. All the other hooks should not be called. The lesser the number of API calls made, the faster the web page.
@@ -532,7 +529,6 @@ The second custom hook is used to store the read and fav lists in local storage.
 To check the value of the localStorage, go to Developer Tools -> Application -> Local Storage. You will find the values stored there. Any change in the list will be immediately reflected in the localStorage.
 
 ### Explaination: *Email.js*
-
 We use useContext to get the email. Each email is displayed with the incorporation of various styling components. The scroll component limits the display height and prevents overflow.  
 *Email.js*
 
@@ -589,7 +585,6 @@ export default Email;
 ```
 
 ### Explaination: *EmailBody.js*
-
 We receive the body of the email and a callback function markAsFav, which is called when the button Favourite is clicked.
 markAsFav is a callback function that updates the fav list
 *EmailBody.js*
@@ -881,7 +876,6 @@ Let's discuss some of the performance improvements that we have focused on.
 2. We make fewer API calls by ensuring that the call is made on a change in the value of id.
 3. Enhancing user experience by showing relevant information.
 4. Another reason to avoid inline styling is the constant updating of CSSOM(CSS Object Model). Every change causes a re-render of the entire page. If we increase the computational load by updating the CSSOM every single time, it will cause performance issues. Styled-components, on the other hand, do not update the CSSOM unless we change it manually.
-
 
 ### Conclusion
 In the two-part series, we have introduced all the prominent React features, including hooks. Going through the process of designing the web page and incorporating optimizations towards the end is a good way to get experience. This way, the next time you will start from a point of optimization, and find new parameters to be optimized.
