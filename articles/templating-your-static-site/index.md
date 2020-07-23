@@ -20,7 +20,7 @@ Static sites are much easier to develop and deploy than full-stack dynamic web a
 
 However, for more complex multi-page websites, a static site may not be suitable. Every time you want to add content, a new page has to be created and coded. If you change something that appears on multiple pages then you’d have to change it everywhere. That’s where static site generators come in. They bring the power of templating to static sites.
 
-There are many static site generators (SSGs), [Hugo](https://gohugo.io), [Gatsby](https://gatsbyjs.org) and [Next.js](https://nextjs.org) to name a few but we will use Eleventy because it’s easy to use and flexible. It uses vanilla JavaScript and allows multiple template languages to be mixed and matched so you don’t have to learn a new language or templating system. Static site generators work by taking the layout templates you’ve created and building the pages using the template and data you’ve provided.
+There are many static site generators (SSGs), [Hugo](https://gohugo.io), [Gatsby](https://gatsbyjs.org) and [Next.js](https://nextjs.org) to name a few but we will use [Eleventy](https://www.11ty.dev) because it’s easy to use and flexible. It uses vanilla JavaScript and allows multiple template languages to be mixed and matched so you don’t have to learn a new language or templating system. Static site generators work by taking the layout templates you’ve created and building the pages using the template and data you’ve provided.
 
 **Swap these paragraphs around?**
 
