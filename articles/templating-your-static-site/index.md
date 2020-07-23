@@ -67,7 +67,7 @@ EJS partials are a way of reusing pieces of code for example, if you created an 
 
 Create a folder in the root of your website called `_includes`. This is where Eleventy looks for templates.
 
-**Tip:** A naming convention you may wish to use is to add an `_` to your template files so `_head.ejs`.
+**Tip:** A naming convention you may wish to use is to add an `_` to your template files so `head.ejs` would be renamed to `_head.ejs`. This helps to further distinguish your template files from the main content files that will create pages on your website.
 
 In your `_includes` folder, add a file called `_head.ejs` and copy and paste the content of your website's head section. Don't worry if the content differs between pages such as the title tag. We will cover how to use EJS variables with Eleventy in the Adding More Front-Matter section **Anchor Link** so such values can be unique for each page.
 
