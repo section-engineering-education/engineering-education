@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
     };
 };
 ```
-This will tell Eleventy when it builds your website to just copy the img, CSS and js folders across (which is called passthrough copy) so you can link them to them in your code.
+This will tell Eleventy when it builds your website to copy the img, CSS and js folders across (which is called passthrough copy) so you can link to them in your code.
 
 Now run `npx @11ty/eleventy` and it should have built your website and output the result to the `_site` folder. Congratulations, you've just finished the first Eleventy build of your website.
 
