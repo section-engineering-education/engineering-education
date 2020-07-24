@@ -75,7 +75,7 @@ Add new partial files for other repeated elements such as the header and footer.
 
 ### Creating Your First Layout (Template) File
 
-With the partials created, you can now create your first layout file (template.)
+With the partials created, you can now create your first layout file.
 
 The first layout (often named base layout) will form the basic template of all your pages and will contain the EJS partials (head, header and footer) that you've just created.
 
