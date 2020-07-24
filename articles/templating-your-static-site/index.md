@@ -192,20 +192,36 @@ Then add all the code that is identical throughout all your template pages. For 
         </div>
 </section>
 ```
-Add the image tags to the front-matter of the HTML page and change the `layout:` value to `_(layoutname)-layout.ejs`.
+Add the image tags to the front-matter of the HTML page and change the `layout:` value to `_(layoutname)-layout.ejs`. See the example front-matter below:
+
+```yaml
+---
+layout: _product-layout.ejs
+title: New Product - Louise Findlay
+description: Product Description
+keywords: Louise Findlay, product, SSG, Eleventy, demo
+product_image1: <img src="../../img/product-image1.png" alt="Product Image">
+product_image2: <img src="../../img/product-image2.png" alt="Product Image">
+product_image3: <img src="../../img/product-image3.png" alt="Product Image">
+---
+```
 
 Remove the HTML you've just templated from the HTML page and check on your website. It should now display the HTML from the layout file with the images you added in the page's front-matter.
 
-Congratulations you've just used layout chaining for the first time. You can create new templates for different parts of your website. The beauty of Eleventy is you can template as little or as much as you like.
+Congratulations you've successfully created a template through layout chaining. You can now create new templates for different parts of your website. The beauty of Eleventy is you can template as little or as much as you like.
 
 ### Deploying Your First Static Site Generator Website
-You've converted your first static website to a static site generator but now you need to deploy it to a web hosting platform.
+Now that you've converted your first static website to use a static site generator, you need to deploy it to a web hosting platform.
 
 There are many hosts for static sites but we will use [Netlify](https://www.netlify.com) because it's easy to use and has a generous free plan.
 
 If you're using Git for source control and using a provider like Github (which is highly recommended), then once you've created a Netlify account, click Sites and then New Site from Git. In basic build settings, change the build command to eleventy and the publish directory to `_site`. This instructs Netlify how to build your site after every change you've pushed to Github.
 
+![Netlify Basic Build Settings](netlify-basic-build-settings.png)
+
 Otherwise, just drag and drop the `_site` folder into the space instructed on the Sites page on Netlify. This will deploy your website but won't automatically update once you've made changes. You'll have to update your website's files manually every time.
+
+![Netlify New Site From Folder](netlify-new-site-from-folder.png)
 
 Congratulations, you've finished converting your first static site to a static site generator and deployed it to the web. Think of it as a great middle ground between a static site and a full-blown CMS (content management system) or full-stack web app.
 
