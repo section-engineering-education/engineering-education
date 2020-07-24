@@ -78,4 +78,4 @@ Client Side Rendering fares poorly with Search Engine Optimization because crawl
 | Quick Initial Load | Yes | No | Yes |
 
 ### Conclusion
-As a web developer, it is important to choose an architecture according to the reqirements of the application we are going to build. A good understanding of how each approach works and some development experience would help to become a better developer.
+As a web developer, it is important to choose an architecture according to the requirements of the application we are going to build. A good understanding of how each approach works and some development experience would help to become a better developer.
