@@ -77,7 +77,7 @@ Add new partial files for other repeated elements such as the header and footer.
 
 With the partials created, you can now create your first layout file.
 
-The first layout (often named base layout) will form the basic template of all your pages and will contain the EJS partials (head, header and footer) that you've just created.
+The first layout (often named _base-layout.ejs) will form the basic template of all your pages and will contain the EJS partials (head, header and footer) that you've just created.
 
 **Tip:** Another naming convention that you may want to use is to add -layout at the end of your layout files. This helps to differentiate them from your partials.
 
@@ -98,7 +98,7 @@ In the `_includes` folder, create a file called `_base-layout.ejs` file and add 
 </body>
 </html>
 ```
-If you're new to EJS, `<% include` is the code (syntax) for including a partial file and `<%-` is for including an EJS variable. Content is a variable Eleventy uses to add the body content of HTML, Markdown and other input files.
+If you're new to EJS, `<% include` is the syntax for including a partial file and `<%-` is for including an EJS variable. Content is a variable Eleventy uses to add the body content of HTML, Markdown and other input files.
 
 Congratulations, you've just created your first Eleventy layout file.
 
@@ -108,7 +108,7 @@ We have our basic layout template but we need to tell Eleventy where to use it. 
 
 Front-Matter allows you to define variables you can use in your layout templates both built-in (from Eleventy) and those you've created yourself. By default, Eleventy uses YAML for front-matter though you can change it to JSON or even JavaScript if you prefer.
 
-The most basic front-matter variable, layout will instruct Eleventy which layout file to use to render a page.
+The most basic front-matter variable, layout, will instruct Eleventy which layout file to use to render a page.
 
 On one of the HTML pages of your site, remove the code you included in EJS partials (head, header and footer if you followed the tutorial.)
 
@@ -121,7 +121,7 @@ layout: _base-layout.ejs
 ```
 The three dashes define the start and the end of the front-matter.
 
-Run `npx @11ty/eleventy --serve` in the terminal to start a local web-server for your site that will reload on changes.
+Run `npx @11ty/eleventy --serve` in the terminal. This command tells Eleventy to build your site and to start a local web-server using [Browsersync](https://www.browsersync.io) which will trigger a build when changes have been made and automatically refresh the current page.
 
 Go to `http://localhost:8080/nameofhtmlfile` to view the page. It should display the head, header and footer as well as the content of the page.
 
@@ -137,9 +137,9 @@ First, In your partial pages (such as `_head.ejs`), remove everything inside the
 <meta property="og:title" content="<%- title %>">
 <meta property="og:description" content="<%- short_description %>">
 ```
-Adding - after <% definites it as an EJS variable rather than a partial file which we did before. The values such as title and short-description are the names of the variables which we will use in the front-matter.
+Adding `-` after `<%` definites it as an EJS variable rather than a partial file which we did before. The values such as title and short-description are the names of the variables which we will use in the front-matter.
 
-Next, in one of your HTML pages, add the EJS variables you've just created and the content you want to add like so:
+Next, on one of your HTML pages, add the EJS variables you've just created and the content you want to add like so:
 ```yaml
 ---
 layout: _base-layout.ejs
@@ -147,13 +147,13 @@ title: About Louise Findlay - Front-End Web Developer
 short_description: Louise Findlay has designed and developed over 20 static websites.
 ---
 ```
-Finally, check on your website and the front-matter content you've just added should be reflected in the code. If not, make sure you've run `npx @11ty/eleventy --serve` in the terminal to make your website automatically reload on changes.
+Finally, check on your website. The new front-matter content you've just added should be reflected in the code. If it's not, make sure you've ran `npx @11ty/eleventy --serve` in the terminal to make your website automatically reload on changes. You've done so earlier when [Rendering Your First Layout File](#rendering-your-first-layout-file).
 
 ### Creating a Page Template (Layout Chaining)
 
 You've just created your basic layout containing the elements present on every page but what if you have a custom layout for only a select number of pages such as for products? This is where layout chaining comes in.
 
-Layout chaining is how you can combine multiple layout files. You create a secondary (or as many layers as you want) layout file which uses the base layout in the exact same way as you linked it to a HTML page.
+Layout chaining is how you can combine multiple layout files. You create a secondary (or as many layers as you want) layout file which uses the base layout in the exact same way as you linked it to an HTML page.
 
 Create a file called `_(layoutname)-layout.ejs` in the `_includes` folder and add the layout front-matter to link it to your base layout (in the exact same way you did for your HTML file.)
 
@@ -168,7 +168,7 @@ Then add all the code that is identical throughout all your template pages. For 
         </div>
 </section>
 ```
-Add the image tags to the front-matter of the HTML page and change the layout: to your new layout file.
+Add the image tags to the front-matter of the HTML page and change the `layout:` value to `_(layoutname)-layout.ejs`.
 
 Remove the HTML you've just templated from the HTML page and check on your website. It should now display the HTML from the layout file with the images you added in the page's front-matter.
 
