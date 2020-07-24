@@ -26,11 +26,9 @@ We’re even told that Web Developers are paid well. As we see, websites are an 
 JavaScript is a high-level, just-in-time compiled programming language that has become the de-facto language of the Web. Unlike, conventional languages like C, which are compiled then run, JavaScript follows a way of executing code called just-in-time compilation. Here the compilation is done during the execution of a program. In this article, we’d be taking a look at the JavaScript engine and how it works.
 
 ### JavaScript Engines
-
 A **JavaScript Engine** is a program which executes JavaScript code. JS Engines were first mere interpreters, but modern engines utilize just-in-time compilation techniques for improved performance. These engines are typically developed by web browser vendors.
 
 #### Obtaining the Source Code
-
 Whenever a `<script>` tag is encountered by the parser, it tries to load the source code. This source code could be from our local machine, a content delivery network, cache, or from a remote server.
 
 ![Source Code](/engineering-education/javascript-engine/source.jpeg)
@@ -40,7 +38,6 @@ Whenever a `<script>` tag is encountered by the parser, it tries to load the sou
 This source code is converted into a byte stream as it is loaded.
 
 #### Tokenization
-
 The byte stream is sent to the byte stream decoder, which splits the bytes into meaningful tokens. For example,
 
 ```javascript
@@ -76,7 +73,6 @@ Abstract syntax trees are data structures, that are used in compilers, because t
 *Figure: Abstract Syntax Trees*
 
 #### Interpreting & Optimization
-
 The **interpreter** now walks through the abstract syntax tree and converts it into bytecode, that the machine can understand.
 
 Now, since source code is typed by humans, it can be highly inefficient in the memory and resource point of view. So in order to optimize the code, there is a tool called the **optimizing compiler**. For example,
