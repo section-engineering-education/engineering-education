@@ -63,7 +63,7 @@ Now run `npx @11ty/eleventy` and it should have built your website and output th
 
 Now that your site is up and running on Eleventy, we can get to the templating part.
 
-EJS partials are a way of reusing pieces of code for example, if you created an EJS partial of your website's header then it could be referenced on all your website's pages. In the future, if you decided to add a new menu item then you would only need to update one file.
+EJS partials are a way of reusing pieces of code. For example, if you created an EJS partial of your website's header then it could be referenced on all your website's pages. In the future, if you decided to add a new menu item then you would only need to update one file.
 
 Create a folder in the root of your website called `_includes`. This is where Eleventy looks for templates.
 
@@ -108,7 +108,7 @@ We have our basic layout template but we need to tell Eleventy where to use it. 
 
 Front-Matter allows you to define variables you can use in your layout templates both built-in (from Eleventy) and those you've created yourself. By default, Eleventy uses YAML for front-matter though you can change it to JSON or even JavaScript if you prefer.
 
-The most basic front-matter variable, layout, will instruct Eleventy which layout file to use to render a page.
+The most basic front-matter variable, `layout`, will instruct Eleventy which layout file to use to render a page.
 
 On one of the HTML pages of your site, remove the code you included in EJS partials (head, header and footer if you followed the tutorial.)
 
