@@ -69,9 +69,25 @@ Create a folder in the root of your website called `_includes`. This is where El
 
 **Tip:** A naming convention you may wish to use is to add an `_` to your template files so `head.ejs` would be renamed to `_head.ejs`. This helps to further distinguish your template files from the main content files that will create pages on your website.
 
-In your `_includes` folder, add a file called `_head.ejs` and copy and paste the content of your website's head section. Don't worry if the content differs between pages such as the title tag. We will cover how to use EJS variables with Eleventy in the Adding More Front-Matter section **Anchor Link** so such values can be unique for each page.
+In your `_includes` folder, add a file called `_head.ejs` and copy and paste the content of your website's head section. It should look like the example below. Don't worry if the content differs between pages such as the title tag. We will cover how to use EJS variables with Eleventy in the Adding More Front-Matter section **Anchor Link** so such values can be unique for each page.
 
-Add new partial files for other repeated elements such as the header and footer.
+```html
+<meta charset="utf-8">
+<meta name="author" content="Louise Findlay">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="This is a page description">
+<meta name="keywords" content="random, keywords, for, SEO">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Lato&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+<script src="/js/script.js"></script>
+<title>Louise Findlay</title>
+```
+
+Add new partial files for other repeated elements such as the header and footer. Your `_includes` folder should like similar to the image below.
+
+![_includes folder structure](includes-folder.png)
 
 ### Creating Your First Layout (Template) File
 
@@ -151,11 +167,13 @@ Finally, check on your website. The new front-matter content you've just added s
 
 ### Creating a Page Template (Layout Chaining)
 
-You've just created your basic layout containing the elements present on every page but what if you have a custom layout for only a select number of pages such as for products? This is where layout chaining comes in.
+Congratulations, you've finished creating the basic layout template for your website. Your site's head, header and footer sections have been templated. But what about if you had a group of pages like products that had a similar content layout? You don't want to style the homepage this way nor write the same HTML for every product page. This is where layout chaining comes in.
 
 Layout chaining is how you can combine multiple layout files. You create a secondary (or as many layers as you want) layout file which uses the base layout in the exact same way as you linked it to an HTML page.
 
-Create a file called `_(layoutname)-layout.ejs` in the `_includes` folder and add the layout front-matter to link it to your base layout (in the exact same way you did for your HTML file.)
+Create a file called `_(layoutname)-layout.ejs` in the `_includes` folder and add the layout front-matter to link it to your base layout (in the exact same way you did for your HTML file.) The entire folder structure of your site should resemble the image below.
+
+![Eleventy Folder Structure](eleventy-folder-structure.png)
 
 Then add all the code that is identical throughout all your template pages. For example, if every product page had a section with three images, then add the section and div tags but remove the image tags since each image is unique.  In its place, add an EJS variable tag such as `<%- product_image1 %>`. See the example below:
 
@@ -164,6 +182,12 @@ Then add all the code that is identical throughout all your template pages. For 
         <div class="flex-item">
             <picture>
                 <%- product_image1 %>
+            </picture>
+            <picture>
+                <%- product_image2 %>
+            </picture>
+            <picture>
+                <%- product_image3 %>
             </picture>
         </div>
 </section>
