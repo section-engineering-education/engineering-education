@@ -5,7 +5,7 @@ description: A tutorial on installing Xfce or LXDE GUIs onto an Ubuntu Server 18
 
 Almost every Linux-based Virtual Private Server (VPS) runs off of a command line with no graphical user interface (GUI). This is good for many programs as there is less overhead and thus more resources for the programs to utilize. There are programs that do not need a GUI, but benefit from the GUI such as GitHub, IDEs, and mining pool management. GUIs also can help server administrators maintain and operate servers. 
 
-This tutorial assume that you already know how to SSH into your VPS/server. If you are running a machine on Amazon Web Services (AWS) you can check out our [guide](https://www.section.io/engineering-education/setup-ssh-ubuntu-vm-aws/) on setting up SSH on Ubuntu 18.04. It is also assumed that you are running Ubuntu 18.04 and have some general knowledge about command line. 
+This tutorial assume that you already know how to SSH into your VPS/server. If you are running a machine on Amazon Web Services (AWS) you can check out our [guide](https://www.section.io/engineering-education/setup-ssh-ubuntu-vm-aws/) on setting up SSH on Ubuntu 18.04 by Adrian. It is also assumed that you are running Ubuntu 18.04 and have some general knowledge about command line. 
 
 ### Should you Install a GUI?
 
