@@ -1,4 +1,4 @@
-## Intro to Apache Spark - Part 1
+## Introduction to Apache Spark - Part 1
 ### **Introduction** 
 The modern world is no stranger to **Big Data**. Over the last 2 years, we generated about 90% of all data ever created. Big Data began to take form when database management systems became increasingly common (between 1970-2000). Storage, warehousing (storing large amounts of heterogeneous data together), analytics were all mainly performed on RDBMS, which manages structured and homogenous data. However, the popularization of the use of the Internet since the early 2000s changed the [volume, velocity, variety, and veracity](https://www.bigdataframework.org/four-vs-of-big-data/) of the data. 80-90% of the data generated today is unstructured. This means that searching, deriving insights from, and managing this data is extremely challenging. 
 
