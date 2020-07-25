@@ -1,10 +1,22 @@
-# Function Overloading (C++)
+---
+layout: engineering-education
+status: publish
+published: true
+slug: function-overloading
+title: Function Overloading (C++)
+description: A brief introduction to the Internet's Border Gateway Protocol, its functioning, capabilities and importance.
+author: kanishkvardhan-a-n
+date: 2020-07-25T00:00:00-12:00
+topics: [networking]
+excerpt_separator: <!--more-->
+images:
 
-![hero-image](/engineering-education/function-overloading/hero.jpg)
-Photo by [Jefferson Santos](https://unsplash.com/@jefflssantos) on [Unsplash](https://images.unsplash.com/photo-1528372444006-1bfc81acab02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
+  - url: /engineering-education/function-overloading/hero.jpg
+    alt: Function Overloading (C++) computer image
 
+---
 Object Oriented Programming is a fundamental method of programming which helps to develop programs using a modular approach. This approach treats data as the main element. The data is attached or linked to a function that acts and operates on it. Other functions cannot indulge in modifying this data. The functions only act on those data elements which are linked to them. This whole collection of data elements and functions is considered to be an object. An object is one of the characteristics of Object Oriented Programming(OOP). This article introduces another characteristic feature of OOP - **Polymorphism**, through the concept of function overloading.
-
+<!--more-->
 ### Polymorphism in Function Overloading
 Polymorphism is the occurrence of different forms under certain given conditions. In computing, polymorphism is a property of object oriented programming in which a function can take different forms based on the number of arguments and their data types. All the functions will have the same name, but they will differ in their arguments.
 **Note:** Function overloading is independent of the return type. Two functions with the same return types can qualify as function overloading if and only if they differ in their type of   arguments and number of arguments.
@@ -16,7 +28,6 @@ When the user declares different functions with different names, calling has to 
 - Handling and preserving the code is easy.
 - Code becomes shorter, hence easy to interpret and understand.
 - The interface between real world objects and the code enhances comprehension.
-
 
 ### Differentiating Overloaded Functions
 Consider this example 1:
