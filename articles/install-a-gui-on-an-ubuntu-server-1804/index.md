@@ -1,4 +1,4 @@
-title: How to Install a GUI on an Ubuntu Server 18.04 for Easier Remote Management
+title: How to Install a GUI on an Ubuntu Server 18.04 for Easier Remote Management  
 description: A tutorial on installing Xfce or LXDE GUIs onto an Ubuntu Server 18.04 Installation.
 
 ## How to Install a GUI on an Ubuntu Server 18.04 for Easier Remote Management
