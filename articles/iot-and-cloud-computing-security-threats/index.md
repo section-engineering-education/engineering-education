@@ -1,6 +1,3 @@
----
-
----
 # IOT and Cloud Computing Security Threats
 ## Introduction
 Technology is evolving rapidly, the Internet of Things (IoT) and Cloud Computing are growing fields in the area of computing. IoT brings about smart objects whereby there is an integration of sensors and objects that communicate directly with one another without human intervention. Through cloud computing firms can outsource their processes and various IT responsibilities. Cloud computing allows firms to concentrate on their business thus increasing productivity, utilizing hardware resources, and cutting the storage cost incurred over IT infrastructure. IoT resorts to the cloud for outsourced storage and computation. However, the security issue is a great challenge for IoT and Cloud Computing despite their benefits [computer.org](https://www.computer.org/csdl/journal/ec/2017/04/07562568/13rRUxYIN8t).
