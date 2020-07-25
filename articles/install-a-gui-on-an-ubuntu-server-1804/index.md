@@ -44,7 +44,7 @@ You will also need to install some X-server packages, specifically we will be in
 
 `sudo apt-get install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils`
 
-This may take some time depending on both your VPS internet speed and specifications.
+This may take some time depending on both your VPS internet speed and specifications, so be patient.
 
 ##### Installing Xrdp to Access your GUI 
 
