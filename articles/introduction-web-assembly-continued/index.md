@@ -484,7 +484,7 @@ export const NUMBER_OF_SAMPLES = 1024;
 
 This marks the end of our demo application, and if you followed all the steps above you should end up with something similar to [this](https://github.com/lucasm08/react-wasm-audio-rendering). Now, all that's left  is the start the app with `npm start`:
 
-![Web browser screenshot](browser-screenshot.png "")
+![Web browser screenshot](hero.png "")
 
 Congrats, you have successfully imported and run a Wasm library inside a react application!
 
