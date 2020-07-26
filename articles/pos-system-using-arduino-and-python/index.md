@@ -1,17 +1,28 @@
-# Point Of Sale Transaction System Using Arduino and Python
+---
+layout: engineering-education
+status: publish
+published: true
+slug: pos-system-using-arduino-and-python
+title: Point Of Sale Transaction System Using Arduino and Python
+description: Building a point of sale transaction system using Arduino and python using RFID-enabled ID cards to transact.
+author: lalithnaryan-c
+date: 2020-07-26T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/pos-system-using-arduino-and-python/hero.jpg
+    alt: outlook clone example image
+---
 We are going to be building something unique and exciting. We will use hardware components and integrate them with our python code. All the components presented can always be updated, modified, and secured. The basic flow of information is of utmost interest. Let's begin.
+<!--more-->
+### Point Of Sale - POS
+A POS or point of sale usually refers to the location where a sale or transaction takes place. For retailers and restauranteurs, POS traditionally means the area surrounding the cashier or counter where payment is accepted during checkout.
 
-## Point Of Sale - POS
-
- A POS or point of sale usually refers to the location where a sale or transaction takes place. For retailers and restauranteurs, POS traditionally means the area surrounding the cashier or counter where payment is accepted during checkout.
-
-### What is POS?
-
+#### What is POS?
 A point-of-sale (POS) transaction is what takes place between a merchant and a customer when a product or service is purchased, commonly using a point of sale system to complete the transaction. Merchants typically use a POS system to complete a sales transaction. In its most basic definition, a POS system is a combination of POS hardware and POS software to create a POS machine for processing a transaction and payment.
 
 ### Project Overview
-
 In the lightning-fast era of technology, carrying multiple cards, and bulky wallets is not fashionable. Hence, we introduce a smart ID in place of the wallets. This reduces the time required to carry out a transaction, especially at supermarkets and local grocery shops. It can also be used for various other purposes like National ID cards, library cards to borrow books and pay fine if any.
 
 In this project, we use RFID-enabled ID cards to transact, which we scan using
@@ -20,21 +31,18 @@ UID number to the client using Serial communication from Arduino and the client
 machine. Then with the help of socket programming, we establish a connection with the server which has a database of all the users. At the server end, we check for the authenticity of the user by the means of UID number and the PIN unique to each
 user. After verification, we proceed with the transaction for a valid user, else report the non-availability of the user in the database.
 
-## Hardware
+### Hardware
 #### RFID Tag and Scanner
-
 ”RFID” is an abbreviation for Radio Frequency Identification. RFID uses electromagnetic fields to automatically identify and track tags attached to objects. The tags contain electronically stored information. Passive tags collect energy from a nearby RFID reader’s interrogating radio waves.
 
 The RFID module used is MFRC522. The RFID module is connected to
 Arduino. Here we are reading the UID number of a person’s ID card using
-RFID scanner. We load the UID value onto the RFID tag. 
+RFID scanner. We load the UID value onto the RFID tag.
 
-![alt text](arduino.jpg "Title")
+![alt text](/engineering-education/pos-system-using-arduino-and-python/arduino.jpg "Title")
 
-
-## Software 
+### Software
 ### Socket Programming
-
 In a POS system, there can be many service providers at various locations throughout a building complex. Hence all of these computers will need to establish a connection with the main database server or even an intermediate server. Having a wired connection between all the client machines and the server involves a lot of
 unnecessary hardware and wiring. This we take the help of sockets which establish
 a wireless connection with the server. The RFID data is received using the RFID module, connected to an Arduino Uno board, which is transmitted via serial communication to the Server Program.
@@ -48,7 +56,7 @@ The connection between the client and the server is a two-way simplex connection
 Because based on the client input, the server requests much more data, all of which happens in the same connection.
 
 
-Let's save the database. We create a temporary database called database.csv. You can create the file in the same directory as *client.py* and *server.py*. 
+Let's save the database. We create a temporary database called database.csv. You can create the file in the same directory as *client.py* and *server.py*.
 
 ### *database.csv*
 
@@ -85,7 +93,7 @@ def send_data(data):
 def recieve_data():
     r_data,addr = UDPSock.recvfrom(Buffer_size)
     return r_data.decode()
-    
+
 while True:
     tries=0
     #reading data from port
@@ -113,7 +121,7 @@ while True:
             amount = int(input("Enter the amount:"))
             send_data(str(amount))
             break
-        
+
         elif(data==3):
             print("Authentication Failed")
             break
@@ -128,7 +136,7 @@ while True:
             #UDPSock.close()
             break
         tries+=1
-        
+
 os._exit(0)
 ```
 
@@ -193,26 +201,26 @@ while True:
                 print("Authentication Successful")
                 status=1
                 break
-            
+
             else:
                 print("Authentication Failed")
                 send_data("3",u_addr)
                 print(count)
-        
+
         count=count+1  
 
     if(status==1):
-    
+
         print("Welcome ",name[count])
         print("Waiting for amount")
         send_data("2",u_addr)
         ta1=recieve_data()[0]
         ta1 = int(ta1)
-        
+
         if(ta1>cb[count]):
             send_data("4",u_addr)
 
-        
+
         else:
             clb[count]=cb[count]-ta1
             cb[count]=clb[count]
@@ -290,16 +298,15 @@ void loop() {
 
 ```
 
-### Illustrations and Packet Analysis sent 
-Wireshark is the go-to software for packet analysis. It can be downloaded from https://www.wireshark.org/. Once downloaded, we use the packet analyzer feature in Wireshark to analyze the packets sent and received. 
+### Illustrations and Packet Analysis sent
+Wireshark is the go-to software for packet analysis. It can be downloaded from https://www.wireshark.org/. Once downloaded, we use the packet analyzer feature in Wireshark to analyze the packets sent and received.
 
 Let's use the tool Wireshark to capture the packets sent and received. The outputs received are as follows-
 1. Data sent from client to server
-![alt text](Wireframe_1.jpg "Title")
-2. Data sent from server to client 
-![alt text](Wireframe_2.jpg "Title")
+![wireframe_1](/engineering-education/pos-system-using-arduino-and-python/wireframe_1.jpg)
+2. Data sent from server to client
+![wireframe_2](/engineering-education/pos-system-using-arduino-and-python/wireframe_2.jpg)
 3. A message showing the transaction amount
-![alt text](Wireframe_3.jpg "Title")
+![wireframe_3](/engineering-education/pos-system-using-arduino-and-python/wireframe_3.jpg)
 
 We have built an entire loop of establishing transactions. We can, therefore, improvise the project by encrypting the storage of the pin, securing the transit data, and creating encrypted ID's. All these suggestions can be built on top of the above-stated project. We encourage you to enhance and build your prototypes using Arduino and various modules available with it.
-
