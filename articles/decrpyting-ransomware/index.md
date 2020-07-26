@@ -1,12 +1,21 @@
 ---
-title: Section Engineering Education
-description: Resources created by engineers for engineers
-aliases:
-- "/engineering-education/building-chatbots-using-nlp/"
-- "/engineering-education/ddos-attacks-using-botnets/"
-- "/engineering-education/kubernetes-as-a-service/"
+layout: engineering-education
+status: publish
+published: true
+slug: decrpyting-ransomware
+title: Decrypting Ransomware - Quick recovery guide
+description: D3 (Data-Driven Documents) is a JavaScript library that allows us to manipulate documents based on data. This tutorial walks through how to visualize data using D3.js.
+author: rohan-reddy
+date: 2020-07-09T00:00:00-07:00
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/decrpyting-ransomware/hero.jpg
+    alt:
 ---
-Decrypting Ransomware: Quick recovery guide
+D3 (Data-Driven Documents) is a JavaScript library that allows us to manipulate documents based on data. With D3, we can bind data to a [DOM](https://www.w3schools.com/js/js_htmldom.asp) element and then apply data-driven transformations to the document. For example, we can create an HTML table from an array of numbers, or create an interactive [SVG](https://www.w3schools.com/graphics/svg_intro.asp) bar chart.
+<!--more-->
 
 Here is the scenario.
 
