@@ -1,8 +1,20 @@
-# Overview of VLAN Trunking and Encapsulation
+---
+layout: engineering-education
+status: publish
+published: true
+slug: vlan-trunking-and-encapsulation
+title: Overview of VLAN Trunking and Encapsulation
+description: This article briefly introduces Virtual Local Area Networks(VLANs) and their requirements. It discusses VLAN trunking and VLAN encapsulation using IEEE 802.1Q standard.
+author: shreya-a-n
+date: 2020-07-26T00:00:00-12:00
+topics: [networking]
+excerpt_separator: <!--more-->
+images:
 
-![hero-image](/engineering-education/vlan-trunking-and-encapsulation/hero.jpg)
-Photo by [Thomas Jensen](https://unsplash.com/@thomasjsn?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)</a> on [Unsplash](https://unsplash.com/s/photos/switch-network?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+  - url: /engineering-education/vlan-trunking-and-encapsulation/hero.jpg
+    alt: vlan trunking and encapsulation
 
+---
 ### What is a VLAN?
 **A [virtual LAN (VLAN)](https://en.wikipedia.org/wiki/Virtual_LAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI Layer 2).** LAN stands for Local Area Network and virtual, in the name, upholds the concept of separating broadcast domains of networks logically. *A broadcast domain is a network that is logically divided such that all nodes in the network can reach each other by broadcast at the data link layer*. *VLANs function by tagging every frame with a VLAN tag and designing the network such that it takes these tags into account while performing routing and forwarding.* By assigning tags to frames one can create the appearance and functionality of a computer network that is physically on a single network but acts as if it is split between separate networks. In simple terms, VLAN segregates traffic within a network.
 
@@ -10,7 +22,8 @@ Photo by [Thomas Jensen](https://unsplash.com/@thomasjsn?utm_source=unsplash&amp
 There are two ways of categorising VLAN enabled ports on network devices:
 - Untagged or Native ports
 - Tagged or Trunk ports
-> A network port is a communication endpoint a device uses to send and receive traffic.
+
+ *A network port is a communication endpoint a device uses to send and receive traffic.*
 
 **Native ports accept traffic from a single VLAN and are hence used to link end devices like routers, servers, terminals etc.** They do not need to accommodate an additional identification tag as they are involved in exchanging traffic with a single end device. Hence the name, **untagged ports**. They are also referred to as **access ports.**
 **Trunk ports are used to pass traffic from multiple VLANs and are used to link switches.** In order to distinguish between frames from different VLANs, trunk ports add identification tags to the frames. Hence the name, **tagged ports.**
@@ -25,7 +38,7 @@ When a switch port is configured to function as a trunk port, it adds unique ide
 
 **IEEE[802.1Q](https://en.wikipedia.org/wiki/IEEE_802.1Q), often referred to as DOT1Q or 1Q, is the networking standard that supports virtual LANs (VLANs) on an IEEE 802.3 Ethernet network. It is the most widely used encapsulation method for VLAN tagging.**
 
-> Note: [IEEE 802.3](https://en.wikipedia.org/wiki/IEEE_802.3) is a standard that specifies the characteristics of physical layer and Media Access Control(MAC) layer for wired Ethernet connections, generally called LANs. It is also referred to as the Ethernet standard.
+*Note: [IEEE 802.3](https://en.wikipedia.org/wiki/IEEE_802.3) is a standard that specifies the characteristics of physical layer and Media Access Control(MAC) layer for wired Ethernet connections, generally called LANs. It is also referred to as the Ethernet standard.*
 
 ![dot1q-frame-format](/engineering-education/vlan-trunking-and-encapsulation/dot1q.jpg)
 
