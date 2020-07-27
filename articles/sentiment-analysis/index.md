@@ -12,21 +12,21 @@ Sentiment analysis has many applications for different domains for example in bu
 We will use the Twitter API to get realtime tweets and perform sentiment analysis and visualize our findings.
 
 ### Setup development environment 
-Install the required libraries using `pip`.
+Install the required libraries using `pip`. Make sure you have [Python 3](https://www.python.org/downloads/) installed.
 	
 	pip install tweepy
 	pip install textblob
 	pip install nltk
 
 You should have a Twitter account. Apply for [developer account](https://developer.twitter.com/en/apply-for-access). Fill out the details asked in the subsequent steps. 
+
 ![img](apply.png)
 
 Submit the application and wait for developer access.
-![img](submit.png)
 
 After getting access, we need to create an [app](https://developer.twitter.com/en/apps/) and API key in order to authenticate and integrate with most Twitter developer products.
 
-![img](create.png)
+![img](create1.png)
 
 Fill out the required details. Ignore the fields you dont need ( these are used for authenicating with twitter and other use cases.)
 
@@ -36,8 +36,8 @@ Go to the `Keys and Tokens` tab under your app to get the API key and API secret
 
 ![img](tokens.png)
 
-### Lets get cracking
-Let's start coding. We use a python library called [tweepy](https://tweepy.org) for authenticating and getting information from the Twitter API. You can also use [Twitter](https://pypi.org/project/twitter/).
+### Lets get started
+Let's start coding. We use a python library called [tweepy](https://tweepy.org) for authenticating and getting information from the Twitter API. You can also use [twitter](https://pypi.org/project/twitter/).
 
 ```python
 import tweepy
@@ -57,7 +57,7 @@ We will use [API.search](http://docs.tweepy.org/en/latest/api.html) which return
 ![img](search.png)
 
 ```python
-qurery=""
+query=""
 count=""
 tweets = api.search(q=query, count=count) 
 text = []
@@ -96,8 +96,43 @@ TextBlob has [Naive-Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
 
 Let's examine two sentences, * This is a beautiful day, I am very happy* and * What a horrible person *, when we read these sentences the words `happy`, `beautiful` describe the positivity of the sentence 1 and the words `horrible` describes the negativity of sentence 2, words like `is`, `a` don't convey any particular sentiment and are neutral. We can have *rule based* systems that perform sentiment analysis based on a set of manually crafted rules or *Automatic* systems that rely on machine learning techniques to learn from data. These systems learn which words represent a positive sentiment and which represent negative. Of course, words have different meaning in different contexts and to different persons. So we can train a supervised machine learning algorithm to perform sentiment analysis. If you are interested you can look at my code [here](https://github.com/rohanreddych/stuff) where I implemented Sentiment Analysis using neural networks. 
 
-### Sample Results
+### Sample Results and Conclusion
 
+As a sample use case, I made an analysis on tweets related to **Javascript**. The following are the results.
 
-## Conclusion
-Sentiment analysis can be very useful for teams like marketing and sales. It shows whether people are responding poorly or greatly to a product or service. Automated sentiment analysis coupled with Chatbots can provide respond to customer greivances and reduce human workload. Sentiment Analysis provides great insights into data.
+* An example of a raw tweet.
+
+`RT @kennyrecruiter: Microsoft has released tutorials on building #Javascript applications using #nodejs. They look good and are easy to fol…`
+
+* After cleaning the text
+
+`: Microsoft has released tutorials on building Javascript applications using nodejs. They look good and are easy to fol…`
+
+* Our algorithm predicts this as `1`, meaning positive.
+
+* The sentiment of 125 random tweets.
+
+![img](bar.png)
+
+* Word Clouds are used to visaully represent words in a text, the bigger the font size, the more a word is repeated. 
+
+Without cleaning.
+
+![img](dirty-word.png)
+
+With cleaning.
+
+![img](clean-word.png)
+
+As you can see cleaning text is a very important step, because it allows us to get the main information the text is trying to convey.
+
+Sentiment analysis can be useful for a team in the similar manner, they can find how their users are liking their product.
+
+#### References and Resources
+
+* [https://en.wikipedia.org/wiki/Sentiment_analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
+* [https://monkeylearn.com/sentiment-analysis/](https://monkeylearn.com/sentiment-analysis/)
+* [https://www.geeksforgeeks.org/twitter-sentiment-analysis-using-python/](https://www.geeksforgeeks.org/twitter-sentiment-analysis-using-python/)
+* [https://medium.com/better-programming/twitter-sentiment-analysis-15d8892c0082](https://medium.com/better-programming/twitter-sentiment-analysis-15d8892c0082)
+* [https://arxiv.org/pdf/1711.10377](https://arxiv.org/pdf/1711.10377)
+
