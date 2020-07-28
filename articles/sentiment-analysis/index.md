@@ -1,11 +1,11 @@
 # Sentiment Analysis of Twitter data
-Social networks are the main resources to gather information about people’s opinion and sentiments towards different topics as they spend hours daily on social medias and share their opinion. In this article we shall discuss about the applications of sentiment analysis and how to connect to twitter and run sentiment analysis queries. Basic knowledge of [Python](https://www.python.org/about/gettingstarted/) is required for understanding the code. 
+Social networks are the primary resources to gather information about people’s opinion and sentiments towards different topics as they spend hours daily on social media and share their opinion. In this article, we shall discuss the applications of sentiment analysis and how to connect to twitter and run sentiment analysis queries. Basic knowledge of [Python](https://www.python.org/about/gettingstarted/) is required for understanding the code. 
 
 Sentiment analysis is the process of extracting the *sentiment* from a piece of text and to classify it as **positive**, **negative** or **neutral** accordingly.
 
-### Why Sentiment Analysis on Twitter ?
+### Why Sentiment Analysis on Twitter?
 
-Sentiment analysis has many applications for different domains for example in business to get feedbacks for products by which companies can learn user's feedback and reviews on social media.  Social networks is a rich platform to learn about people's opinion and sentiment regarding different topics as they communicate and share their opinions. [Twitter](https://twitter.com/) has 1.3 billion accounts with a 330 million monthly active users and 145 million daily users. Twitter data is the most comprehensible source of live, public conversations worldwide. Understand customer sentiment as people and markets respond to product and business decisions. Sentiment analysis can predict the outcome of upcoming events, evaluate the impact of a recent product launch, pivot the direction or content of an ad campaign, and more.  
+Sentiment analysis has many applications for different domains for example, in business to get feedbacks for products by which companies can learn user's feedback and reviews on social media.  Social network is a rich platform to learn about people's opinion and sentiment regarding different topics as they communicate and share their opinions. [Twitter](https://twitter.com/) has 1.3 billion accounts with 330 million monthly active users and 145 million daily users. Twitter data is the most comprehensible source of live, public conversations worldwide. Understand customer sentiment as people and markets respond to product and business decisions. Sentiment analysis can predict the outcome of upcoming events, evaluate the impact of a recent product launch, pivot the direction or content of an ad campaign, and more.  
 
 ## Sentiment analysis with python
 
@@ -26,15 +26,15 @@ Submit the application and wait for developer access.
 
 After getting access, we need to create an [app](https://developer.twitter.com/en/apps/) and API key in order to authenticate and integrate with most Twitter developer products.
 
-![img](create1.png)
+![img](/engineering-education/sentiment-analysis/create1.png)
 
-Fill out the required details. Ignore the fields you dont need ( these are used for authenicating with twitter and other use cases.)
+Fill out the required details. Ignore the fields you don't need ( these are used for authenticating with twitter and other use cases.)
 
-![img](form.png)
+![img](/engineering-education/sentiment-analysis/form.png)
 
 Go to the `Keys and Tokens` tab under your app to get the API key and API secret key (Do not share with others). 
 
-![img](tokens.png)
+![img](/engineering-education/sentiment-analysis/tokens.png)
 
 ### Lets get started
 Let's start coding. We use a python library called [tweepy](https://tweepy.org) for authenticating and getting information from the Twitter API. You can also use [twitter](https://pypi.org/project/twitter/).
@@ -52,9 +52,9 @@ auth.set_access_token(access_token, access_token_secret)
 ```
 Tweepy's API classs provides access to the entire twitter [RESTful](https://www.tutorialspoint.com/restful/restful_introduction.htm) API methods. Each method can accept various parameters and return responses. 
 
-We will use [API.search](http://docs.tweepy.org/en/latest/api.html) which returns a collection of relevant tweets matching a specified query. A raw tweet may contain many unwanted characters and information which may not be neccessary like emoji, "@" mentions, "#" hastags, etc. These may be useful in some other scenario.
+We will use [API.search](http://docs.tweepy.org/en/latest/api.html) which returns a collection of relevant tweets matching a specified query. A raw tweet may contain many unwanted characters and information which may not be necessary like emoji, "@" mentions, "#" hashtags, etc. These may be useful in some other scenario.
 
-![img](search.png)
+![img](/engineering-education/sentiment-analysis/search.png)
 
 ```python
 query=""
@@ -112,17 +112,17 @@ As a sample use case, I made an analysis on tweets related to **Javascript**. Th
 
 * The sentiment of 125 random tweets.
 
-![img](bar.png)
+![img](/engineering-education/sentiment-analysis/bar.png)
 
 * Word Clouds are used to visaully represent words in a text, the bigger the font size, the more a word is repeated. 
 
 Without cleaning.
 
-![img](dirty-word.png)
+![img](/engineering-education/sentiment-analysis/dirty-word.png)
 
 With cleaning.
 
-![img](clean-word.png)
+![img](/engineering-education/sentiment-analysis/clean-word.png)
 
 As you can see cleaning text is a very important step, because it allows us to get the main information the text is trying to convey.
 
