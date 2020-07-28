@@ -3,39 +3,42 @@ layout: engineering-education
 status: publish
 published: true
 slug: node-mvc-architecture
-title: Nodejs applications following an MVC architecture
-description: The article is about creating your Nodejs applications following an MVC architecture pattern that divides the whole application into three parts.
+title: Node.js applications following an MVC architecture
+description: The article is about creating your Node.js applications following an MVC architecture pattern that divides the whole application into three parts.
 author: linus-muema
-date: 2020-07-25T00:00:00-07:00
+date: 2020-07-27T00:00:00-07:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/node-mvc-architecture/hero.jpg
-    alt: Nodejs applications following an MVC architecture
+    alt: Node.js applications following an MVC architecture
 ---
-Good architecture is key to any software development success. This not only ensures easy development process among teams, but also the scalability of the software. It makes sure that whenever new changes are needed, the developers will not have a hard time refactoring various aspects of the code. There are many architecture patterns in different languages like MVT in Python, MVVM in Android and MVC. We can MVC in our JavaScript application.
-
-MVC architecture divides the whole application into three parts; the `Model`, the `View` and the `Controller`.
+Good architecture is key to any software development success. This not only ensures easy development processes among teams, but also the scalability of the application. It makes sure that whenever new changes are needed, the developers will not have a hard time refactoring various aspects of the code.
 <!--more-->
 
-### 1. Model
-* This part defines our data. It is where our schemas and models are located i.e the blueprint of our application's data.
+### MVC Architecture
+There are many architecture patterns in different languages like MVT in Python, MVVM in Android, and MVC in JavaScript applications.
 
-### 2. View
-* This includes templates and any other form of interaction the user has to the application. It is where the data defined by our `Model` is presented to the user.
+MVC architecture divides the whole application into three parts; the `Model`, the `View` and the `Controller`.
 
-### 3. Controller
-* The business logic is handled in this part. This includes the database reading and writing, and any other modification the data undergoes. Any change happens here. This connects the `Model` and `View`.
+#### Model
+This part defines our data. It is where our schemas and models are located, i.e the blueprint of our application's data.
 
-With that in mind, we can get into our code and start refactoring and changing it to follow the MVC pattern. The code before changing can be found on [Github](https://github.com/LinusMuema/node-authentication-api/tree/heroku-deployment)
+#### View
+This includes templates and any other form of interaction the user has with the application. It is where the data defined by our `Model` is presented to the user.
 
-In order to change our application to an MVC pattern. We will need controllers. Since we already have our models i.e the model files in the `models` directory. Our `views` will be the routes files in the `routes` folder as we are not rendering any pages and the user interacts with the API endpoints.
+#### Controller
+The business logic is handled in this part. This includes the database reading and writing, and any other modifications that the data undergo. This connects the `Model` and `View`.
 
-Go ahead and create a directory known as `controllers` in the root level. Then add a file known as `auth.controller.js` which will handle all our auth route's logic.
+### Refactoring to MVC
+With that in mind, we can get into our code and start refactoring it to follow the MVC pattern. The base code (prior to alterations) can be found on [Github](https://github.com/LinusMuema/node-authentication-api/tree/heroku-deployment).
 
-![mvc-files](/engineering-education/node-mvc-architecture/mvc-files.png)
+In order to transition our application to an MVC pattern, we will need controllers. Note that we already have our models, i.e the model files in the `models` directory, and our views will be the routes files in the `routes` folder, as we are not rendering any pages when the user interacts with the API endpoints.
 
+Go ahead and create a directory called `controllers` in the root level. Then add a file named `auth.controller.js` which will handle all our auth route's logic.
+
+![mvc-files](/engineering-education/node-mvc-architecture/mvc-files.png)<br>
 Next, add the following exports in the `auth.controller.js` file.  Here we are exporting two functions.
 
 ```javascript
@@ -48,14 +51,12 @@ exports.signup = (req, res) => {
 }
 ```
 
-The `login` and `signup` functions. They will have access to the request and response bodies of our requests and we will handle the signup and login processes here.
+The `login` and `signup` functions will have access to the request and response bodies of our requests, and we will handle the signup and login processes here.
 
+In the controller, import the `bcrypt` and `User` model. Then move the entire password hashing functions and mongoose CRUD methods to the respective functions in the controller file.
 
-In the controller, import the `bcrypt` and `User` model. They will be used in the controller. Then move the whole password hashing functions and mongoose CRUD methods to the respective functions in the controller file.
-
-![function-blocks](/engineering-education/node-mvc-architecture/function-blocks.png)
-
-Import the controller in the `routes/auth.js` file. This will allow you to access the exported functions. Then where there were the `login` and `signup` implementations, call the controller methods respectively.
+![function-blocks](/engineering-education/node-mvc-architecture/function-blocks.png)<br>
+Import the controller in the `routes/auth.js` file. This will allow you to access the exported functions. Then, where there were the `login` and `signup` implementations, call the controller methods respectively.
 
 ```javascript
 const controller = require('../controllers/auth.controller')
@@ -65,7 +66,7 @@ router.get('/login', controller.login);
 router.post('/signup', controller.signup);
 ```
 
-In case you have not noticed, we had not moved the `generateToken` method. This is because we can place it in its own file so that you can reuse it in all controllers. So I will create a root-level directory called `utils` and create a file known as `utils.js`. And in here is where I will place my `generateToken` function and any other reusable function.     
+In case you haven't noticed, we did not move the `generateToken` method. This is because we can place it in its own file so that you can reuse it in all controllers. So I will create a root-level directory called `utils` and create a file known as `utils.js`. And in here is where I will place my `generateToken` function and any other reusable functions.     
 
 ```javascript
 const jwt = require('jsonwebtoken')
@@ -75,8 +76,9 @@ exports.generateToken = (user) => jwt.sign({data: user}, tokenSecret, {expiresIn
 
 ```
 
-Then in my controller, I will import the utils file to access the exported functions.
+Then, in my controller, I will import the `utils` file to access the exported functions.
 
-![controller-utils](/engineering-education/node-mvc-architecture/controller-utils.png)
+![controller-utils](/engineering-education/node-mvc-architecture/controller-utils.png)<br>
+And with that, you have some clean MVC architecture. This follows the principle of "separation of concerns" where we decouple our code into very small units which can be handled independently. This is an important aspect to follow, especially in a team, to allow smooth collaboration.
 
-And with that, you have some clean MVC architecture. This follows the principle of "separation of concerns" where we decouple our code into very small units which can be handled independently. This is an important aspect to follow especially in a team to allow smooth collaboration. The code to the refactored code can be found on [Github](https://github.com/LinusMuema/node-authentication-api/tree/mvc)
+The fully refactored code can be found on [Github](https://github.com/LinusMuema/node-authentication-api/tree/mvc).
