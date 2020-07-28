@@ -1,0 +1,342 @@
+# Deploying Machine learning Models into Production? A Simple Guide Wth Examples.
+The demand for Machine Learning (ML) applications is growing. Many resources show how to train ML algorithms. However, the ML algorithms work in two phases:
+
+the training phase - in which the ML algorithm is trained based on historical data,
+
+the inference phase - the ML algorithm is used for computing predictions on new data with unknown outcomes.
+
+The benefits for business are in the interference phase when ML algorithms provide information before it is known. There is a technological challenge on how to provide ML algorithms for inference into production systems. 
+
+Today We will focus directly on Deploying Machine Learning models in production with the help of Rest API's. If you want to learn how Rest Api's work you can view this [Article](https://www.section.io/engineering-education/rest-api/)
+
+We Will foucs on Python's Django Rest Framework to Deploy ML Models as REST API.
+
+### How Django Rest Framework works?
+## Installation
+
+First We need to install Django Rest Framework in our system. To install DRF you can use Pip.
+```
+pip install djangorestframework
+pip install django
+```
+Next, let’s start a new Django project:
+```
+django-admin startproject digits
+cd digits
+python manage.py startapp digitapp
+pip install keras
+pip install tensorflow
+```
+You have to create a folder named as __scripts__. We are creating this folder to keep our python written files here. You can easily find your python file with __.py__ extension.
+
+If you open the directory you are able to view the folder structure like this:-
+
+![folder img](/engineering-education/machine-learning-model-deployments/folder-structure.png)
+
+Now Before Moving Deep Into Django We first have to create our Machine Learning Model. 
+
+We are Picking Digits Classifier to Train our model for the training data. Follow The below Steps to train you ML Model
+
+```
+# coding: utf-8
+# baseline cnn model for mnist
+from numpy import mean
+from numpy import std
+from matplotlib import pyplot
+from sklearn.model_selection import KFold
+from keras.datasets import mnist
+from keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Conv2D
+from keras.layers import MaxPooling2D
+from keras.layers import Dense
+from keras.layers import Flatten
+from keras.optimizers import SGD
+
+
+def load_dataset():
+    # load dataset
+    (trainX, trainY), (testX, testY) = mnist.load_data()
+    # reshape dataset to have a single channel
+    trainX = trainX.reshape((trainX.shape[0], 28, 28, 1))
+    testX = testX.reshape((testX.shape[0], 28, 28, 1))
+    # one hot encode target values
+    trainY = to_categorical(trainY)
+    testY = to_categorical(testY)
+    return trainX, trainY, testX, testY
+
+
+def prep_pixels(train, test):
+    # convert from integers to floats
+    train_norm = train.astype('float32')
+    test_norm = test.astype('float32')
+    # normalize to range 0-1
+    train_norm = train_norm / 255.0
+    test_norm = test_norm / 255.0
+    # return normalized images
+    return train_norm, test_norm
+
+
+def define_model():
+    model = Sequential()
+    model.add(Conv2D(32, (3, 3), activation='relu', kernel_initializer='he_uniform', input_shape=(28, 28, 1)))
+    model.add(MaxPooling2D((2, 2)))
+    model.add(Flatten())
+    model.add(Dense(100, activation='relu', kernel_initializer='he_uniform'))
+    model.add(Dense(10, activation='softmax'))
+    # compile model
+    opt = SGD(lr=0.01, momentum=0.9)
+    model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
+    return model
+
+
+def evaluate_model(model, dataX, dataY, n_folds=5):
+    scores, histories = list(), list()
+    # prepare cross validation
+    kfold = KFold(n_folds, shuffle=True, random_state=1)
+    # enumerate splits
+    for train_ix, test_ix in kfold.split(dataX):
+        # select rows for train and test
+        trainX, trainY, testX, testY = dataX[train_ix], dataY[train_ix], dataX[test_ix], dataY[test_ix]
+        # fit model
+        history = model.fit(trainX, trainY, epochs=10, batch_size=32, validation_data=(testX, testY), verbose=0)
+        # evaluate model
+        _, acc = model.evaluate(testX, testY, verbose=0)
+        print('> %.3f' % (acc * 100.0))
+        # stores scores
+        scores.append(acc)
+        histories.append(history)
+    return scores, histories
+
+
+
+
+def summarize_diagnostics(histories):
+    for i in range(len(histories)):
+    # plot loss
+        pyplot.subplot(211)
+        pyplot.title('Cross Entropy Loss')
+        pyplot.plot(histories[i].history['loss'], color='blue', label='train')
+        pyplot.plot(histories[i].history['val_loss'], color='orange', label='test')
+        # plot accuracy
+        pyplot.subplot(212)
+        pyplot.title('Classification Accuracy')
+        pyplot.plot(histories[i].history['accuracy'], color='blue', label='train')
+        pyplot.plot(histories[i].history['val_accuracy'], color='orange', label='test')
+    pyplot.show()
+
+
+
+
+def summarize_performance(scores):
+    # print summary
+    print('Accuracy: mean=%.3f std=%.3f, n=%d' % (mean(scores)*100, std(scores)*100, len(scores)))
+    # box and whisker plots of results
+    pyplot.boxplot(scores)
+    pyplot.show()
+ 
+# Model is evaluated and now saving the model.
+def run_test_harness():
+    # load dataset
+    # load dataset
+    trainX, trainY, testX, testY = load_dataset()
+    # prepare pixel data
+    trainX, testX = prep_pixels(trainX, testX)
+    # define model
+    model = define_model()
+    # fit model
+    model.fit(trainX, trainY, epochs=10, batch_size=32, verbose=0)
+    # save model
+    model.save('final_model.h5')
+
+
+(trainx, trainy), (testx, testy) = mnist.load_data()
+print('Train: X=%s, y=%s' % (trainx.shape, trainy.shape))
+print('Test: X=%s, y=%s' % (testx.shape, testy.shape))
+for i in range(9):
+    pyplot.subplot(330 + 1 + i)
+    pyplot.imshow(trainx[i], cmap=pyplot.get_cmap('gray'))
+pyplot.show()
+run_test_harness()
+
+```
+The Model is trained with the help of Neural Networks and there are a lot more tutorials available. You can follow [This link](https://pathmind.com/wiki/neural-network)
+
+Now We have our Model Trained. But this model is can be used by You only and it will work on your system right now as we are not able to deploy it. So we have to make it accesible to everyone.
+
+1. We have to Save Our Model. But How? 
+If you notice __Carefully__ the function  run_test_harness we have written a line there to save our model.
+```
+model.save('final_model.h5')
+``` 
+You have to save the model in h5 format. As it can be easily accessed by the Python Keras  Library.
+
+2. You will notice that there is a file saved in the same directory with name final_model.h5, This is your trained model and you can use it for your Predictions.             
+
+3. Now to Let our model work For test or Validation Images We can just took a random image and test it with our model. You can follow the code below.
+```
+from keras.preprocessing.image import load_img
+from keras.preprocessing.image import img_to_array
+from keras.models import load_model
+
+
+def load_image(filename):
+	# load the image
+	img = load_img(filename, grayscale=True, target_size=(28, 28))
+	# convert to array
+	img = img_to_array(img)
+	# reshape into a single sample with 1 channel
+	img = img.reshape(1, 28, 28, 1)
+	# prepare pixel data
+	img = img.astype('float32')
+	img = img / 255.0
+	return img
+
+# load an image and predict the class
+def run_example(location):
+	# load the image
+	img = load_image(location)
+	# load model
+	model = load_model('/home/Priyank/Documents/Django_projects/DigitRecognition/digits/scripts/final_model.h5')
+	# predict the class
+	digit = model.predict_classes(img)
+	return {'Predictions': digit[0]}
+
+```
+This file returs a Dictionary whenever you are passing an Image to Predict.
+
+
+Our Model is now Trained and we are able to Predict from it as well.
+
+Follow The below Steps in order to let your model works as a Rest Api.
+1. Copy these 3 file ( your_mode.py, your_prediction_from_model.py and final_model.h5) and paste these file inside the folder scripts we have created previously in Django.
+
+![scripts img](/engineering-education/machine-learning-model-deployments/scripts-folder.png)
+
+2. Now open your digits folder and go inside setting.py file. You can find you file with the help of below image.
+
+![settings img](/engineering-education/machine-learning-model-deployments/settings.png)
+
+3. Add your apps in installed apps so that django can recognized your apps.
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'digitapp',
+    'rest_framework',
+]
+```
+4. Go to Your App and make an empty file name as serializer.py and add following Code to your file:-
+
+![app img](/engineering-education/machine-learning-model-deployments/app.png)
+
+```
+from rest_framework import serializers
+from .models import File
+
+class FileSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = File
+        fields = '__all__'
+
+```
+5. Open your models.py file and add the following code. We are adding a filefield so that we can upload an image and our model can predict from it.
+
+```
+from django.db import models
+
+
+class File(models.Model):
+    file = models.FileField(blank=False, null=False)
+```
+6. Open app.py and add the code below:-
+```
+from django.apps import AppConfig
+
+
+class DigitappConfig(AppConfig):
+    name = 'digitapp'
+
+```
+7. We now have to open our views.py file. We will call all our above files with views and from views the code will goto our serializer and then models. We will add below code to let our views works for us.
+
+```
+from rest_framework.views import APIView
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import FileSerializer
+from scripts.predictionFromModel import *
+import os
+
+
+class FileView(APIView):
+    parser_classes = (MultiPartParser, FormParser)
+
+    def post(self, request, *args, **kwargs):
+        file_serializer = FileSerializer(data=request.data)
+        if file_serializer.is_valid():
+            file_serializer.save()
+            dict_data = file_serializer.data
+            location = []
+            for k, v in dict_data.items():
+                if k == 'file':
+                    location.append(v)
+            directory = '/home/Priyank/Documents/Django_projects/DigitRecognition/digits'+location[0]
+            prediction = run_example(directory)
+            return Response(prediction, status=status.HTTP_201_CREATED)
+        else:
+            return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+```
+8. Now in order to access it on the web we have add a url in our urls.py file which is inside digit folder. Open urls.py file and add the following urls to it.
+```
+from django.contrib import admin
+from django.urls import path
+from digitapp.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('digitRecogniser/', FileView.as_view())
+]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+```
+Now, Your code will first come to your urls.py then it will be routed to views.py then serializer.py. In Your views.py file you are calling your "make-prediction-from-model.py" file and the run_example function will execute from there.
+
+For testing your model you can take the below image.
+
+![sample img](/engineering-education/machine-learning-model-deployments/sample-image.png)
+s
+Now we have to run our model. Run by entering below command.
+```
+python manage.py runserver
+```
+Open http://127.0.0.1:8000/digitRecogniser/ in your browser.
+
+![django img](/engineering-education/machine-learning-model-deployments/django.png)
+
+Now open your Postman. You can [Download](https://www.postman.com/) it from here. Postman is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
+
+Click on Post and paste your url http://127.0.0.1:8000/digitRecogniser/ there.
+
+Now Click on body and then binary. Upload your sample-image.png file there and click on button send. You will get the output like this
+```
+{"Predictions": 7}
+```
+Congratulation, You have deployed you Ml model. Now Just goto any server in the production environment and just push your code.
+
+### Further Reading 
+[Django](https://docs.djangoproject.com/en/3.0/)
+
+[NeuralNetworks](https://pathmind.com/wiki/neural-network)
+
+[ModelBuilding](https://www.kaggle.com/c/digit-recognizer)
