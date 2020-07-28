@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 slug: telegram-bot
-title:  Python-Build a Reddit Autoposter Telegram Bot
-description: How to create a Telegram bot - an approach of creating a Python autoposter Telegram Bot that autoposts from a subreddit.
+title:  Building a Reddit Autoposter Telegram Bot with Python
+description: How to use Python to create a Telegram Bot that autoposts from a subreddit.
 author: saiharsha-balasubramaniam
-date: 2020-07-06T00:00:00-12:00
+date: 2020-07-28T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,17 +16,17 @@ images:
 
 ---
 
-Telegram is one of the best modern cross-platform apps that we all use extensively for messaging. It's extremely fast, secure, cloud-based, and works seamlessly across all devices. Seems perfect, doesn't it? The possibilities don't end there! **The entire code is open-sourced** and you can build your own version of telegram!
-
-Telegram is also extremely developer-friendly. They offer APIs that are totally free. Their developer offerings can be classified into two types:
+[Telegram](https://telegram.org/) is a popular, modern cross-platform app that is used extensively for messaging. It's extremely fast, secure, cloud-based, and works seamlessly across all devices. Seems perfect, doesn't it? The possibilities don't end there! **The entire code is open-sourced**, allowing you to build your own version of telegram!
 <!--more-->
 
-- Bot APIs - Create powerful bots that run on Telegram.
-- Telegram APIs and TDLib - Build your own customized Telegram clients.
+Telegram is also extremely developer-friendly, offering APIs that are totally free. Their developer offerings can be classified into two types:
 
-Let us take a look at the Telegram Bot API and dive into building a powerful bot that can auto-post from a subreddit.
+- Bot APIs - Create powerful bots that run on Telegram
+- Telegram APIs and TDLib - Build your own customized Telegram clients
 
-**All the Code for the following tutorial has been displayed in my GitHub Repository. You could use it as a reference, or star it. Fork it and submit a PR! Link to the repository would be displayed at the end of the tutorial**
+In this article, we'll take a look at the Telegram Bot API and dive into building a powerful bot that can auto-post from a subreddit.
+
+**All the code for the following tutorial is available in my [GitHub Repository]((https://github.com/cybershaw/dank-doggo)). You can use it as a reference or star it, or fork it and submit a PR!**
 
 ### Table of Contents
 
@@ -42,38 +42,35 @@ Let us take a look at the Telegram Bot API and dive into building a powerful bot
 
 We all love dogs, don't we? 😄
 
-I love scrolling through dog photos on Reddit, and there was one point in time where I felt that I spend too much time in Reddit. So I had an idea. Like a true programmer, I decided to create a bot in Python that would automatically post new posts from Subreddits to a Telegram Channel. This way, I got better at Python and also I save time every day!
+I love scrolling through dog photos on Reddit, and there was one point in time where I felt that I spent too much time in Reddit. So I had an idea. Like a true programmer, I decided to create a bot in Python that would automatically post new posts from Subreddits to a Telegram Channel. This was a way for me to get better at Python, while also saving time every day!
 
-In the below example, we would be auto-posting from the [r/dogpictures](https://www.reddit.com/r/dogpictures/) subreddit.
+In the below example, we will be auto-posting from the [r/dogpictures](https://www.reddit.com/r/dogpictures/) subreddit.
 
 ### Get the Bot API Credentials
 
-Our second step would be to create a new bot on Telegram and get API keys for the bot. Bot Management is done by a bot on Telegram called BotFather.
+Our second step will be to create a new bot on Telegram and get API keys for the bot. Bot Management is done by a bot on Telegram called BotFather.
 
 Now, click on this [link](https://t.me/botfather) and open up BotFather.
 
-![Create a New Bot](/engineering-education/telegram-bot/newbot.png)
+![Create a New Bot](/engineering-education/telegram-bot/newbot.png)<br>
+Create a new bot by entering the command, `\newbot`
 
-Create a new bot by entering the command, ```\newbot```
-
-![Bot Username](/engineering-education/telegram-bot/botusername.png)
-
+![Bot Username](/engineering-education/telegram-bot/botusername.png)<br>
 Enter a display name for the bot and hit enter. Now choose a username for the bot.
 
-![Bot Success](/engineering-education/telegram-bot/botsuccess.png)
-
-There! You have successfully created the bot! The API Token and the bot link are given. Store it securely as we'd need it soon.
+![Bot Success](/engineering-education/telegram-bot/botsuccess.png)<br>
+There! You have successfully created the bot! The API Token and the bot link are given. Store it securely, as we'll need it soon.
 
 ### Create a Telegram Channel
 
 Creating a channel on Telegram is quite simple.
 - Click on the Hamburger Menu on the left and click on `New Channel`.
-- Give a channel name of your choice.
+- Give the channel a name of your choice.
 - Add the bot that you created into the channel with administrative permissions.
 
 ### Get Reddit Credentials
 
-To access posts from Reddit, we'll be using the **Reddit API** and the python library PRAW: **The Python Reddit API Wrapper**.
+To access posts from Reddit, we'll be using the **Reddit API** and the Python library PRAW (The Python Reddit API Wrapper).
 
 - The foremost step would be to get the credentials.
 - Create a new Reddit account.
@@ -81,17 +78,17 @@ To access posts from Reddit, we'll be using the **Reddit API** and the python li
 
 ![Reddit Credentials](/engineering-education/telegram-bot/redditcreds.png)
 
-- Give the desired app **name**, and select the sub-option `script` from the radio buttons.
+- Give your app a **name**, and select the sub-option `script` from the radio buttons.
 - Enter a short **description**.
 - Leave the **About URI** blank and enter `http://localhost:8080` in the **Redirect URI** field.
 - Create the App.
-- You would be provided with a Client ID and a Client Secret. Store them securely.
+- You will be provided with a Client ID and a Client Secret. Store them securely.
 
 ### Let's Code!
 
 #### Required Imports
 
-```
+```python
 from __future__ import unicode_literals
 
 import telegram
@@ -106,11 +103,11 @@ from time import sleep
 from datetime import datetime
 ```
 
-Now that we have imported the necessary libraries, let us set the credentials and error loggers.
+Now that we have imported the necessary libraries, let's set the credentials and error loggers.
 
 #### Credentials
 
-```
+```python
 credentials = {}
 
 credentials["token"] = os.environ.get('TOKEN')
@@ -123,13 +120,13 @@ sub = "dogpictures"
 start_time = datetime.utcnow().timestamp()
 ```
 
-Here, we are using the concept of environment variables to hide our sensitive information. When we open source our project and post it on code repositories like **GitHub**, it would be easier to manage the credentials.
+Here, we are using the concept of environment variables to hide our sensitive information. When we open source our project and post it on code repositories like **GitHub**, it will be easier to manage the credentials.
 
 We'll look at how to set the environment variables before deploying the Python Script.
 
 #### Exceptions and Logs
 
-```
+```python
 ch = logging.StreamHandler(sys.stdout)
 ch.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -148,7 +145,7 @@ The above code is used to raise exceptions when any of the environment variables
 
 #### Track Submissions
 
-```
+```python
 def prev_submissions():
     try:
         with open('prev_submissions.id', 'r') as f:
@@ -169,7 +166,7 @@ Here, we write two functions. The `prev_submissions()` function reads the **prev
 
 #### Setting Variables and Initializing PRAW and the Bot API
 
-```
+```python
 post = False
 last_sub_id = prev_submissions()
 
@@ -198,7 +195,7 @@ The Bot is also initialized by passing in the Bot API Token.
 
 #### Main Control Block
 
-```
+```python
 while True:
     try:
         for submission in subreddit.hot():
@@ -228,28 +225,27 @@ while True:
         sleep(10)
 ```
 
-Here, the `subreddit.hot()` returns all the Hot Posts in the Subreddit. If the script finds a new post that has not been written to **prev_submissions.id** file (not yet been posted to the channel), it formats the message by using markup. Finally, it sends out the message by the use of the ```bot.sendPhoto()``` API call, which takes in the channel name, photo URL and the caption as parameters.
+Here, the `subreddit.hot()` returns all the Hot Posts in the Subreddit. If the script finds a new post that has not been written to the **prev_submissions.id** file (i.e. not yet been posted to the channel), it formats the message by using markup. Finally, it sends out the message by using the `bot.sendPhoto()` API call, which takes in the channel name, photo URL, and caption as parameters.
 
-We have also set the bot to send only one message once every 10 minutes, so that it does not spam. This is achieved by pausing the script for 600 seconds using the `sleep()` function.
+We have also set the bot to send only one message every 10 minutes, so that it does not spam. This is achieved by pausing the script for 600 seconds using the `sleep()` function.
 
 ### Deploying to Heroku
 
 Now, we have successfully written the code for our autoposter bot!
 
-Let us deploy it on Heroku so that it runs 24x7!
+Let's deploy it on Heroku so that it runs 24x7!
 
-- First, upload all the code to a GitHub Repository. Link to a sample repository is given at the end of this article.
-- Go to [Heroku Dashboard](https://dashboard.heroku.com/) and create a new account.
-- Create a new heroku app.
+- First, upload all the code to a GitHub Repository. (Link to a sample repository is given at the end of this article.)
+- Go to the [Heroku Dashboard](https://dashboard.heroku.com/) and create a new account.
+- Create a new Heroku app.
 
-![Heroku Dash](/engineering-education/telegram-bot/herokudash.png)
-
+![Heroku Dash](/engineering-education/telegram-bot/herokudash.png)<br>
 - Go to the **Deploy** Tab, and select **GitHub** as the deployment method.
 - Now search for your GitHub Repository and enable **auto deploy**.
 - Auto Deploy starts deploying your script as soon as it detects an update in your GitHub.
-- Now you would have to add the environment varibles.
+- Now you will need to add the environment variables.
 - Select the **Settings** Tab and click on the **Reveal Config Vars** Option.
-- Here, you would need to add the following config variables.
+- Here, you will need to add the following config variables:
     - CHANNEL: "@your-telegram-channel-name"
     - CLIENT_ID: "your-reddit-clientid"
     - CLIENT_SECRET: "your-reddit-client-secret"
@@ -257,8 +253,8 @@ Let us deploy it on Heroku so that it runs 24x7!
     - RUSERNAME: "your-reddit-username"
     - SUB: "subreddit-name"
     - TOKEN: "your-telegram-bot-api-token"
-- Once you save, the bot would automatically be deployed!
-- It would keep sending new posts every 10 minutes!
+- Once you save, the bot will automatically be deployed!
+- It will keep sending new posts every 10 minutes!
 
 ### References
 
