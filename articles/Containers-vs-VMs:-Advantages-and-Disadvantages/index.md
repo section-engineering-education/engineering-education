@@ -6,7 +6,7 @@ slug: virtual-machines-vs-containers
 title: Advantages and Disadvantages of VMs vs Containers
 description: Both Virtual Machines (VMs) and containers are used to increase the productivity of the development lifecycle, but each has their advantages and disadvantages. What are VMs and Containers.
 author: jeremy-osborne
-date: 2020-07-21T00:00:00-08:00
+date: 2020-07-29T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,6 @@ Both Virtual Machines (VMs) and containers are used to increase the productivity
 <!--more-->
 
 ### **Advantages of VMs over Containers:**
-
 - Virtual Machines offer more computing resources
     - While containers use the same operating system for every instance. A virtual machine uses the full bandwidth of the operating system. Rather than dividing resources among each instance. This allows for each instance in a virtual machine to have the full armory of the physical resources provided by the hardware. For simplicity, an instance in this context is used to mean a virtual copy of running an operating system.
 - Stability and Security
@@ -29,16 +28,14 @@ Both Virtual Machines (VMs) and containers are used to increase the productivity
     - The development of VMs has allowed for more automation of [load balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)) and optimized resource allocation compared to container systems. During the infancy of container systems, this heavily influenced the appeal for movement to virtual machines over container systems. However, more recent technologies have emerged to help with asset reallocation, such as Kubernetes.
 
 ### **Advantages of Containers over VMs:**
-
 - Lightweight and Portability
     - Containers only use what is needed to run the virtual environment required, this allows containers to be mobile and quick in regards to different instances because they are not weighted by unused computing resources.
 - Compartmentalization
     - Containers allows the development process the localize tasks thus increasing modularity. With increased modularity, finding potential crashes or bottlenecks are more easily found. This helps to quicken the troubleshooting and debugging processes.
 - Startup Time
     - Given the lightweight nature of containers, the boot up time for a container is only a fraction of what a VM is. This allows for agile development and distributed applications to be more efficient. This is because of how small the software application size is.
-
+    
 ### **Disadvantages of VMs**
-
 - Security Issues
     - Snooping is a common problem in virtual machines. This is because of the lack of communication between virtual machines. It is hard to prevent this because, for security reasons, it is better for virtual machines to not communicate with each other. For example, if a server is encrypted, overloaded and has moved physical locations, maintaining the same configurations without communication between virtual instances can cause many security challenges.
 - Size
@@ -46,10 +43,10 @@ Both Virtual Machines (VMs) and containers are used to increase the productivity
     - Startup time is also influenced by the size, compared to seconds for containers, VMs can take several minutes to get going.
 
 ### **Disadvantages of Containers**
-
 - Communication Control
     - The same reason that allows VMs to stay secure, can be the downfall of containers. For example, if one container instance becomes compromised, due to the communication between instances, an attacker would be able to access the other containers due to their connection, thus compromising each instance in the kernel.
 - Complexity of Orchestration
     - Orchestration efforts and complexity increase with containers. For virtual machines, there can be a single orchestration such as VMware Orchestration in the case for VMware, but for containers, there is a plethora of options to choose from, like Kubernetes, Mesos, Swarm, etc.
 
+### Final Thought
 If you are trying to consider which virtual instance is for you, there are two schools of thought to consider. While VMs are a large, bulky, and a secure option, containers provide a mobile, agile, and lightweight appeal. Each has their advantages and disadvantages, before choosing, consider the task at hand, and use this reference to help decide. Happy Hacking!
