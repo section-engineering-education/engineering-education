@@ -4,14 +4,14 @@ status: publish
 published: true
 slug: introduction-web-assembly-continued
 title: An Introduction to WebAssembly - Part 2
-description: WWebAssembly walk through the steps of building a react application the consumes a Wasm module. This article includes only one .png image which a browser screenshot of the resulting application.
+description:   This article includes WebAssembly walk through the steps of building a react application the consumes a Wasm module.
 author: lucas-gompou
-date: 2020-07-24T00:00:00-07:00
+date: 2020-07-29T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-web-assembly-continued/hero.jpg
+  - url: /engineering-education/introduction-web-assembly-continued/hero.png
     alt: WebAssembly example image
 ---
 In the second part of this article, we will continue our exploration of [WebAssembly](https://webassembly.org/) by using it inside a React Application. Basically, we will take an existing code written in Rust, compile it to a WebAssembly, then add the resulting .wasm module to a react application generated using [create-react-app](https://github.com/facebook/create-react-app).
