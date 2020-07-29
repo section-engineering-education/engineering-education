@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: raising-exceptions
 title: Raising Exceptions
-description: This article will go over how to manually throw exceptions in Python and using assertions for better debugging. Raising exceptions allows us to distinguish between regular events and something exceptional, such as errors
+description: This article will go over how to manually throw exceptions in Python and use assertions for better debugging. Raising exceptions allows us to distinguish between regular events and something exceptional, such as errors.
 author: sophia-raji
-date: 2020-07-23T00:00:00-07:00
+date: 2020-07-29T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -18,18 +18,19 @@ images:
 
 Errors come in two forms: syntax errors and [exceptions](https://docs.python.org/3/tutorial/errors.html).
 
-While syntax errors occur when the Python can't parse a line of code, raising exceptions allows us to distinguish between regular events and something exceptional, such as errors (dividing by zero) or something you might not expect to handle. Using conditionals to check for every possible event is not only inefficient and inflexible, but it also compromises readability. Fortunately, Python offers powerful exception-handling mechanisms to resolve this.
+While syntax errors occur when Python can't parse a line of code, raising exceptions allows us to distinguish between regular events and something exceptional, such as errors (e.g. dividing by zero) or something you might not expect to handle. Using conditionals to check for every possible event is not only inefficient and inflexible, but it also compromises readability. Fortunately, Python offers powerful exception-handling mechanisms to resolve this.
 <!--more-->
 
 **Exception**: Exception objects represent exceptional conditions
-- When Python encounters an error, it _raises_ an exception
-- If the exception object is not _caught_, the program terminates with a **traceback** (error message)
+- When Python encounters an error, it _raises_ an exception.
+- If the exception object is not _caught_, the program terminates with a **traceback** (error message).
 
 The benefit of using exceptions is that rather than just getting error messages, you can trap the error and do something instead of letting the whole program fail.
 
 ### raise Statement
-Use `raise` with an argument that is either a class (subclasses `Exception`) or an instance
-- Using a class creates an instance automatically
+Use `raise` with an argument that is either a class (subclasses `Exception`) or an instance.
+
+Using a class creates an instance automatically:
 
 ```shell
 >>> raise Exception('hyperdrive overload')
@@ -45,17 +46,17 @@ Traceback (most recent call last):
 ArithmeticError
 ```
 
-#### Examples of Built-in Exceptions:
-1. `Exception`: base class
-2. `AttributeError`: attribute reference or assignment fails
-3. `OSError`: OS can't perform a task (i.e. file)
-4. `IndexError`: nonexistent index on a sequence (subclass of `LookupError`)
-5. `KeyError`: nonexistent key on mapping (subclass of `LookupError`)
-6. `NameError`: Name (variable) not found
-7. `SyntaxError`: syntax error in code
-8. `TypeError`: built-in operation or function applied to object of wrong type
-9. `ValueError`: built-in operation or function applied to object of correct type but with inappropriate value
-10. `ZeroDivisionError`: second argument of division or modulo operation is 0
+#### Examples of Built-in Exceptions
+- `Exception`: base class
+- `AttributeError`: attribute reference or assignment fails
+- `OSError`: OS can't perform a task (i.e. file)
+- `IndexError`: nonexistent index on a sequence (subclass of `LookupError`)
+- `KeyError`: nonexistent key on mapping (subclass of `LookupError`)
+- `NameError`: Name (variable) not found
+- `SyntaxError`: syntax error in code
+- `TypeError`: built-in operation or function applied to object of wrong type
+- `ValueError`: built-in operation or function applied to object of correct type but with inappropriate value
+- `ZeroDivisionError`: second argument of division or modulo operation is 0
 
 A more complete list is available in the official [Python documentation](https://docs.python.org/3/library/exceptions.html).
 
@@ -70,11 +71,11 @@ class NewCustomException(Exception): pass
 ```
 ### Catching Exceptions
 
-It's possible to catch exceptions using a [```try/except``` statement](https://www.educative.io/edpresso/how-is-tryexcept-used-in-python).
+It's possible to catch exceptions using a [`try/except` statement](https://www.educative.io/edpresso/how-is-tryexcept-used-in-python).
 
 Exceptions not caught where a function is called will propagate to the top level of the program. If you called an exception already but want to raise it again, you can call `raise` without any arguments or supply the exception explicitly.
 
-In an interactive session with a user, it is useful to create a class, whereas used internally in a program, raising an exception is better. When raising a different exception, the exception that took you into `except` will be stored as context and be part of the final error message:
+In an interactive session with a user, it is useful to create a class, whereas when used internally in a program, raising an exception is better. When raising a different exception, the exception that took you into `except` will be stored as context and be part of the final error message:
 
 ```shell
 >>> try:
@@ -137,7 +138,7 @@ except (ZeroDivisionError, TypeError) as e:
 
 Even if you handle several types of exceptions, you may not foresee all of them. What happens if we press Enter at the prompt in our sample program?
 
-The ***stack trace*** (information about what went wrong is as follows:
+The ***stack trace*** (information about what went wrong) is as follows:
 ```shell
 Traceback (most recent call last):
   ...
@@ -145,7 +146,7 @@ ValueError: invalid literal for int() with base 10: ''
 ```
 
 #### Options:
-- Crash the program immediately so you can see what's wrong rather than hide exception with ```try/except``` statement that won't catch it
+- Crash the program immediately so you can see what's wrong rather than hide exception with `try/except` statement that won't catch it
 - Omit the exception class from the except clause
 
 ```shell
@@ -157,14 +158,15 @@ except:
     print('An error occurred')
 ```
 
-This is risky because it hides both errors you anticipated and those you did not. The user will also have to terminate the program's execution with CTRL-C and functions with `sys.exit`. Some cases might benefit from using `except Exception as e` and checking the exception on the object `e` to allow the few exceptions that don't subclass to slip through.
+This is risky because it hides both errors you anticipated and those you did not. The user will also have to terminate the program's execution with CTRL-C and functions with `sys.exit`.
+
+Some cases might benefit from using `except Exception as e` and checking the exception on the object `e` to allow the few exceptions that don't subclass to slip through.
 
 ### When Things Go Right
 
 It can also be useful to have a block of code execute unless something bad happens using an `else` clause:
 
-```
-shell
+```shell
 while True:
     try:
         x = int(input('Enter the first number: '))
@@ -181,8 +183,7 @@ The loop is broken only when no exception is raised. The program runs as long as
 
 We modify our earlier code:
 
-```
-shell
+```shell
 while True:
     try:
         x = int(input('Enter the first number: '))
