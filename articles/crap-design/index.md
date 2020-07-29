@@ -8,7 +8,7 @@ Contrast means to make things stand out from each other. You may notice that the
 
 If you want one really big thing for the reader to focus on, make it contrast with the rest of the page. Consider the following two pages:
 
-![On the left, an image showing an example of poor contrast, where everything is the same size. On the right, the meeting title is the largest element, the next largest is the date and time, and the smallest are the details](contrast.png)
+![On the left, an image showing an example of poor contrast, where everything is the same size. On the right, the meeting title is the largest element, the next largest is the date and time, and the smallest are the details](contrast.jpg)
 
 On the left, it's hard to immediately tell what you need to focus on. On the right, the biggest element is the title, which gives a very good idea of what the meeting is. The next most important thing is logistics, which would be the date and time. That's why that is the second biggest. The exact details here are less important, so we can afford to make that smaller.
 
@@ -24,11 +24,11 @@ The navigation system should also be repetitive. The user doesn't want to learn 
 
 ## Alignment
 
-All the elements of your page should be lined up with each other. The elements can either be aligned on the left side, the right side, and the center. Normally, you don't want to mix alignments. You want to pick one and stick with it. 
+All the elements of your page should be lined up with each other. The elements can either be aligned on the left side, the right side, and the center. Normally, you don't want to mix alignments. You want to pick one and stick with it.
 
 A lot of non-designers have trouble with this. It's tempting to show off by putting all the text in different places, but it looks terrible. The easiest alignment to use is center, because it's nice and symmetrical. Although, most people are used to a left-align.
 
-![An example article with a center align. There's a margin of 10% on the left and right](center_align.png)
+![An example article with a center align. There's a margin of 10% on the left and right](center_align.jpg)
 
 Also, please don't bump into the edges. It's annoying for the eyes whenever you want to move to the next line.
 
@@ -36,7 +36,7 @@ Also, please don't bump into the edges. It's annoying for the eyes whenever you 
 
 If two items are related, they should be close together. Elements that are close together seem related. Avoid orphaning your elements by separation.
 
-![An example from the section.io homepage. The image seems to be related to the text, because it is close to it](proximity.png)
+![An example from the section.io homepage. The image seems to be related to the text, because it is close to it](proximity.jpg)
 
 This image looks related to the text, because it's pretty close to the text. This screenshot doesn't quite do it justice, but trust me, it works. If the image was separated by a few hundred pixels, the reader might think that the image is unrelated to the text.
 
