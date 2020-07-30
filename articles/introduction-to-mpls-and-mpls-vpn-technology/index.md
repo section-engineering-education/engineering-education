@@ -36,11 +36,9 @@ The process of packet forwarding in an MPLS network can be broadly divided into 
 2. **Routers then exchange the labels they have chosen for every route in the network with their neighbouring routers. Label Distribution Protocol(LDP) is used to exchange labels.** R2 tells R1 and R3 that its MPLS label for 10.10.10.1/32 is 200.
 
 3. Using the label advertisements from neighbouring routers, **each router builds an MPLS forwarding table**. Notice that R2 receives MPLS label advertisements from both R1 and R3.  
-  - R1 tells R2 that the MPLS label for 10.10.10.1/32 is 100.
-  - R3 tells R2 that the MPLS label for 10.10.10.1/32 is 300.
-
-  In this case, R2 refers to its **IPv4 unicast routing table** to identify the next hop in the route to 10.10.10.1/32. By doing so, R2 gets to know that R3 is the next hop and consequently, updates its MPLS forwarding table with R3’s MPLS label i.e 300.<br>
-  *This way, when MPLS is implemented on an IPv4 network, every router in the network will know the MPLS labels of its neighbouring routers for all IPv4 routers in that network.*
+    - R1 tells R2 that the MPLS label for 10.10.10.1/32 is 100.
+    - R3 tells R2 that the MPLS label for 10.10.10.1/32 is 300.<br><br>
+    In this case, R2 refers to its **IPv4 unicast routing table** to identify the next hop in the route to 10.10.10.1/32. By doing so, R2 gets to know that R3 is the next hop and consequently, updates its MPLS forwarding table with R3’s MPLS label i.e 300. *This way, when MPLS is implemented on an IPv4 network, every router in the network will know the MPLS labels of its neighbouring routers for all IPv4 routers in that network.*
 
 4. Now the routers are ready to use labels to forward packets. **Each router swaps the existing label with the next hop’s MPLS label.** When a packet intended for 10.10.10.1/32 enters the MPLS network through R1, it analyses its destination IP and adds an MPLS header to the packet containing MPLS label of the next hop i.e. 200 before forwarding it to R2. R2 swaps the existing MPLS header with R3’s and this process goes on until the packet reaches its destination. **The packet’s IP header information is never analyzed and forwarding occurs solely by the inspection of MPLS labels.**
 
