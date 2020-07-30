@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: edge-tf-lite
 title: Machine Learning on Edge Devices Using TensorFlow Lite
-description: This article details machine learning on edge computing devices which use TensorFlow Lite and RaspberryPi. Talking about advantages of on-device machine learning inference such as Latency, Bandwidth, privacy, and security.
+description: This article details machine learning on edge computing devices which use TensorFlow Lite and RaspberryPi. Talking about the advantages of on-device machine learning inference such as Latency, Bandwidth, privacy, and security.
 author: rohan-reddy
 date: 2020-07-16T00:00:00-09:00
 topics: []
@@ -77,13 +77,32 @@ In this article we will be performing [Image Classification](https://developers.
 
 #### Image Classification
 
-An image classification model takes an image file and predicts what the image is or represents. An image classification model is trained to recognize various classes of images. For this tutorial we will use the `cats_vs_dogs` dataset and train a neural network to identify and differentiate between cats and dogs. I use TensorFlow 2 (not TensorFlow lite) to build a model and train it, and then convert the model into TF lite model. 
+An image classification model takes an image file and predicts what the image is or represents. An image classification model is trained to recognize various classes of images. For this tutorial we will use the `mnist` dataset and train a neural network to identify hand written digits (The most commonly used dataset). I use TensorFlow 2 (not TensorFlow lite) to build a model and train it, and then convert the model into TF lite model. 
 
 To install Tensorflow: `pip install tensorflow`.
 
 ```python
 import tensorflow as tf
-""" incomplete code """
+# prepping the data
+fashion_mnist = tf.keras.datasets.fashion_mnist
+(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+train_images = train_images / 255.0
+test_images = test_images / 255.0
+
+#building the model
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=(28, 28)),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(10)
+])
+
+#train the model
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+model.fit(train_images, train_labels, epochs=10)
+
+#converting to TF Lite
 model.save("my_model)
 converter = tf.lite.TFLiteConverter.from_saved_model("my_model")
 tflite_model = converter.convert()
@@ -147,9 +166,13 @@ We can expect sample input and output to be.
 
 ![img](/engineering-education/edge-tf-lite/doginput.png)
 
+#### TensorFlow Lite and TensorFlow compatibility
+
+TensorFlow lite supports a number of TensorFlow operations used for getting predictions. As TensorFlow operations are optimized for TensorFlow lite, they may be omitted or combined. Since the set of TensorFlow Lite operations is smaller than TensorFlow's, not every model is convertible. Even for supported operations, very specific usage patterns are sometimes expected, for performance reasons. Please refer to [this guide](https://www.tensorflow.org/lite/guide/ops_compatibility) for complete list of supported and unsupported operations.
+
 ### Conclusion
 
-Machine Learning is a powerful tool which can help automate many tasks which are beyond the scope of classical programming, it was assumed that you need a powerful computing machine with a GPU to train models. But with the evolution of hardware and optimization of software for low-end computing devices, we can perform complex machine learning tasks on devices such as micro-controllers, mobile phones, smart home devices, etc.
+Machine Learning is a powerful tool which can help automate many tasks which are beyond the scope of classical programming, it is assumed that you need a powerful computing machine with a GPU to train models. But with the evolution of hardware and optimization of software for low-end computing devices, we can perform complex machine learning tasks on devices such as micro-controllers, mobile phones, smart home devices, etc.
 
 
 ### Resources & References
