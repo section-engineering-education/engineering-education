@@ -25,8 +25,8 @@ Data science is a multidisciplinary field focused on finding actionable insights
 Python provides developers with all the necessary tools to carry out this process with dedicated libraries for each step. It comes with powerful statistical and numerical libraries such as Pandas, Numpy, Matplotlib, SciPy, scikit-learn, etc. and advanced deep learning libraries such as Tensorflow, PyBrain, etc.
 Moreover, Python has emerged as the default language for AI and ML, as data science has come to an intersection with Artificial Intelligence.  This interpreter-based high-level programming language is not only easy to use, but it also equips data scientists to implement solutions and, at the same time, follow the standards of required algorithms
 
-Python is easy to learn the language and it is often the first language taught in many Schools and Colleges to students who are beginning there journey in Programming. The language is close to what humans understand in comparison with [R Language](https://www.r-project.org/). Since it is a general-purpose language it can be used in web development.
-Popular frameworks like Django and Flask and R are somewhat difficult to learn for people who are beginning to start their programming career since it is more inclined to the scientific community. But there is a catch python is a slower programming language in comparison with C++ which means more work for the computer.
+Python is easy to learn and it is often the first language taught in many Schools and Colleges to students who are beginning their journey in Programming. The language is close to what humans understand in comparison with [R Language](https://www.r-project.org/). Since it is a general-purpose language it can be used in web development.
+Popular frameworks like Django and Flask and R are somewhat difficult to learn for people who are beginning to start their programming career since it is more inclined to the scientific community. But there is a catch, Python is a slower programming language in comparison with C++ which means more work for the computer.
 
 Next, we will be talking about  Numpy, Scipy, Matplotlib, and Pandas
 
@@ -66,7 +66,7 @@ print(np.dot(x, y))
  ```
 
 ### Scipy
-[Scipy](https://www.scipy.org/) is a python library that is useful in solving many mathematical equations and algorithms. It is designed on the top of Numpy library that gives more of an option when finding scientific mathematical formulae like Matrix Rank, Inverse, polynomial equations, LU Decomposition, etc. Using its high-level functions will significantly reduce the complexity of the code and it also helps in better analyzing the data. It has many user-friendly, efficient and easy-to-use functions that help to solve problems like numerical integration, interpolation, optimization, linear algebra and statistics.
+[Scipy](https://www.scipy.org/) is a python library that is useful in solving many mathematical equations and algorithms. It is designed on the top of Numpy library that gives more of an option when finding scientific mathematical formulas like Matrix Rank, Inverse, polynomial equations, LU Decomposition, etc. Using its high-level functions will significantly reduce the complexity of the code and it also helps in better analyzing the data. It has many user-friendly, efficient and easy-to-use functions that help to solve problems like numerical integration, interpolation, optimization, linear algebra and statistics.
 
 ```python
 # Python script using Scipy for calculating the determinant
@@ -88,7 +88,7 @@ linalg.det(A)
 
 
 ### Matpoltlib
-[Matplotlib](https://matplotlib.org/) is a very popular Python libraryused for data visualization. It particularly comes in handy when a programmer wants to visualize the patterns in the data. It is a 2D plotting library used for creating 2D graphs and plots. A module named pyplot makes it easy for programmers that need plotting done as it provides features to control line styles, font properties, formatting axes, etc. It provides various kinds of graphs and plots for data visualization, viz., histogram, error charts, bar charts, etc,
+[Matplotlib](https://matplotlib.org/) is a very popular Python library used for data visualization. It particularly comes in handy when a programmer wants to visualize the patterns in the data. It is a 2D plotting library used for creating 2D graphs and plots. A module named pyplot makes it easy for programmers that need plotting done as it provides features to control line styles, font properties, formatting axes, etc. It provides various kinds of graphs and plots for data visualization, viz., histogram, error charts, bar charts, etc,
 
 ```python
 #  Python program using Matplotib for forming a linear plot
