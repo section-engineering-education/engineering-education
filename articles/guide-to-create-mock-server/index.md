@@ -33,7 +33,7 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 ![Usage Image](/engineering-education/guide-to-create-mock-server/image01.png) *Fig 2: www.mock-server.com*
 
 - Mock Servers easily recreate all types of responses for HTTP dependencies such as REST or RPC services to test applications easily and effectively. They isolate the system-under-test to ensure tests run reliably and only fail when there is a genuine bug.
-- These servers easily setup mock responses independently for each test to ensure test data is encapsulated with each test. Avoid sharing data between tests that are difficult to manage and maintain that decrease the risks of tests infecting each other.
+- These servers easily setup mock responses independently for each test to ensure test data is encapsulated with each test. Avoid sharing data between tests that are difficult to manage and maintain this also decreases the risks of tests infecting each other.
 
 ### Mock Server: A Complete Roadmap
 
@@ -52,7 +52,7 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 ![Mock Server Image](/engineering-education/guide-to-create-mock-server/image2.png)
 
 #### Step 3: Setting-up the Mock Server
-- Now, you will be able to see a new tab asking for basic information about the server from you. Choose whether you want to mock a **new API** or an **existing collection**. If you create a new API to mock, you will select a request method and enter the request path, response code, and response body or else use an existing collection to mock.
+- Now, you will be able to see a new tab asking for some basic information about the server. Choose whether you want to mock a **new API** or an **existing collection**. If you create a new API to mock, you will select a request method and enter the request path, response code, and response body or else use an existing collection to mock.
 
 ![Select Image](/engineering-education/guide-to-create-mock-server/image3.png)
 
@@ -79,12 +79,12 @@ You can view and search the details of calls to your mock servers using the mock
 
 ![Request Image](/engineering-education/guide-to-create-mock-server/image6.png)
 
-- In the left-hand corner, you will be seeing **Setting Option(3 Dots)** in the Collections panel. On clicking that, you'll be able to see several options. Choose **Add Request**, by which a large number of Request Methods, (i.e. GET, POST) will be made available to you, choose whatever you need. Make sure you have an example saved for the request in the collection you have the mock connected to.
+- In the left-hand corner, you will see **Setting Option(3 Dots)** in the Collections panel. On clicking that, you'll be able to see several options. Choose **Add Request**, by which a large number of Request Methods, (i.e. GET, POST) will be made available to you, choose whatever you need. Make sure you have an example saved for the request in the collection you have the mock connected to.
 
 #### Step 5: Additional Feature of Postman Server
 
 ![Edit Delete Image](/engineering-education/guide-to-create-mock-server/image7.png)
 
 ### Voila
-- The Postman Web Application provides you with several efficient features to scale-up your task as and whenever required. You can also modify requests, link your APIs, and even **Edit** & **Delete** your whole Mock Server. All these options can be available by going to the Collections panel, in APIs and choosing edit option. Save the Mock Server URL for the future usage… and **Voila!**
+- The Postman Web Application provides you with several efficient features to scale-up your task as and whenever required. You can also modify requests, link your APIs, and even **Edit** & **Delete** your whole Mock Server. All these options can be made available by going to the Collections panel, in APIs and choosing edit option. Save the Mock Server URL for the future usage… and **Voila!**
 You're done!
