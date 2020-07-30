@@ -6,7 +6,7 @@ slug: document-object-model
 title: Understanding Document Object Model(DOM)
 description: Understanding document object model (DOM) is a structure which acts as the framework of a standard HTML (HyperText Markup Language) DOM is a programming API for HTML and XML documents.
 author: kanishkvardhan-a-n
-date: 2020-07-19T00:00:00-08:00
+date: 2020-07-30T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/document-object-model/hero.jpg
     alt: computer screen image
 ---
-**A Document Object Model (abbreviated as DOM) is a structure which acts as the framework of a standard HTML (HyperText Markup Language) or DHTML (Dynamic HyperText Markup Language) webscripts.** DOM is basically a structure. A tree is known to have many branches. Likewise, a DOM has many branches and sub-branches which describe various elements of the webpage. Each branch of the tree represents one element. Each element may be referred to as a single node in DOM structure. If a particular element has one or more attributes in the HTML webpage, then the branch forks into multiple nodes depending on the number of attributes. The formation of nodes is proportional to the number of attributes in the HTML page.
+**A Document Object Model (abbreviated as DOM) is a structure which acts as the framework of a standard HTML (HyperText Markup Language) or DHTML (Dynamic HyperText Markup Language) webscripts.** DOM is basically a structure. A tree is known to have many branches. Likewise, a DOM has many branches and sub-branches which describe various elements of the webpage. Each branch of the tree represents one element. Each element may be referred to as a single node in the DOM structure. If a particular element has one or more attributes in the HTML webpage, then the branch forks into multiple nodes depending on the number of attributes. The formation of nodes is proportional to the number of attributes in the HTML page.
 <!--more-->
 
 ### STRUCTURE OF DOM
