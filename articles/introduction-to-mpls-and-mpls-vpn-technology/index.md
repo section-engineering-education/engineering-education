@@ -6,7 +6,7 @@ slug: introduction-to-mpls-and-mpls-vpn-technology
 title: Introduction to MPLS and MPLS VPN technology
 description: This article briefly introduces Multi-protocol Label Switching(MPLS) and talks about how Virtual Private Networks running on MPLS cores offer reliability, security and enhanced performance.
 author: shreya-a-n
-date: 2020-07-14T00:00:00-12:00
+date: 2020-07-30T00:00:00-09:00
 topics: [networking]
 excerpt_separator: <!--more-->
 images:
@@ -15,12 +15,14 @@ images:
     alt: VPN example image laptop
 
 ---
-**Multi-Protocol Label Switching(MPLS)** is a method of switching packets using labels instead of IP addresses or Layer 3 information. It is protocol-agnostic and speeds up packet forwarding and routing. Back when MPLS was first introduced, it showed a considerable boost in speed and took away substantial load off networks by laying off IP address inspection. Today, MPLS is used not only to facilitate higher speed requirements but to develop advanced and augmented applications and services over the existing network infrastructure.
+**Multi-Protocol Label Switching(MPLS)** is a method of switching packets using labels instead of IP addresses or Layer 3 information. It is protocol-agnostic and speeds up packet forwarding and routing. Back when MPLS was first introduced, it showed a considerable boost in speed and took substantial load off networks by laying off IP address inspection. Today, MPLS is used not only to facilitate higher speed requirements but to develop advanced and augmented applications and services over the existing network infrastructure.
 <!--more-->
 
 ### How does MPLS work?
 **IP forwarding/routing** is a concept you might already be familiar with. *It is the process of a router forwarding/routing a packet using information stored in its routing tables. It is a layer 3 protocol.*
-When a router receives a packet, it examines its IP header, fetches the destination IP and decides which path to forward the packet on, such that it reaches its intended destination, based on the routing table. **MPLS technology aims to do the same but without IP header inspection. Instead, it uses MPLS labels.**
+
+When a router receives a packet, it examines its IP header, fetches the destination IP and decides which path to forward the packet onto, such that it reaches its intended destination, based on the routing table. **MPLS technology aims to do the same but without IP header inspection. Instead, it uses MPLS labels.**
+
 Let us understand how MPLS works using an example. The figure depicts an IPv4 network topology with four routers.
 
 ![MPLS:example](/engineering-education/introduction-to-mpls-and-mpls-vpn-technology/mpls.jpg)
@@ -28,18 +30,17 @@ Let us understand how MPLS works using an example. The figure depicts an IPv4 ne
 `Note: The routers in an MPLS network are called Label Switch Routers(LSRs).`
 
 The process of packet forwarding in an MPLS network can be broadly divided into 4 steps:
-1. **Routers choose an MPLS label for every route on the network.** For instance, routers R1, R2, R3 and R4 have labels 100, 200, 300 and 400 for the network 10.10.10.1/32, respectively.
+1. **Routers choose an MPLS label for every route on the network.** For instance, routers R1, R2, R3 and R4 have labels 100, 200, 300 and 400 for the network 10.10.10.1/32, respectively.<br>
 `Note: The label field is 20 bits in length. Hence, the label can take values from 0 to 2^20–1 (1,048,575). However, the first 16 label values i.e. from 0 to 15 are reserved for special usage.`
 
 2. **Routers then exchange the labels they have chosen for every route in the network with their neighbouring routers. Label Distribution Protocol(LDP) is used to exchange labels.** R2 tells R1 and R3 that its MPLS label for 10.10.10.1/32 is 200.
 
 3. Using the label advertisements from neighbouring routers, **each router builds an MPLS forwarding table**. Notice that R2 receives MPLS label advertisements from both R1 and R3.  
+  - R1 tells R2 that the MPLS label for 10.10.10.1/32 is 100.
+  - R3 tells R2 that the MPLS label for 10.10.10.1/32 is 300.
 
-- R1 tells R2 that the MPLS label for 10.10.10.1/32 is 100.
-- R3 tells R2 that the MPLS label for 10.10.10.1/32 is 300.
-
-In this case, R2 refers to its **IPv4 unicast routing table** to identify the next hop in the route to 10.10.10.1/32. By doing so, R2 gets to know that R3 is the next hop and consequently, updates its MPLS forwarding table with R3’s MPLS label i.e 300.
-*This way, when MPLS is implemented on an IPv4 network, every router in the network will know the MPLS labels of its neighbouring routers for all IPv4 routers in that network.*
+  In this case, R2 refers to its **IPv4 unicast routing table** to identify the next hop in the route to 10.10.10.1/32. By doing so, R2 gets to know that R3 is the next hop and consequently, updates its MPLS forwarding table with R3’s MPLS label i.e 300.<br>
+  *This way, when MPLS is implemented on an IPv4 network, every router in the network will know the MPLS labels of its neighbouring routers for all IPv4 routers in that network.*
 
 4. Now the routers are ready to use labels to forward packets. **Each router swaps the existing label with the next hop’s MPLS label.** When a packet intended for 10.10.10.1/32 enters the MPLS network through R1, it analyses its destination IP and adds an MPLS header to the packet containing MPLS label of the next hop i.e. 200 before forwarding it to R2. R2 swaps the existing MPLS header with R3’s and this process goes on until the packet reaches its destination. **The packet’s IP header information is never analyzed and forwarding occurs solely by the inspection of MPLS labels.**
 
