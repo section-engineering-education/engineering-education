@@ -121,7 +121,7 @@ def store_excel(data):
 	workbook.close()
 ```
 
-The store_excel() function takes the data as a parameter and creates an excel sheet that contains the data. The Workbook() function creates a workbook with the name "content.xlsx" and add_worksheet() adds a new worksheet to our workbook. We then go through all the items in our data (all the questions) and add them to our worksheet using the write() method. The row and column integers denote the current row and column in the sheet.
+The `store_excel()` function takes the data as a parameter and creates an excel sheet that contains the data. The `Workbook()` function creates a workbook with the name "content.xlsx" and `add_worksheet()` adds a new worksheet to our workbook. We then go through all the items in our data (all the questions) and add them to our worksheet using the `write()` method. The row and column integers denote the current row and column in the sheet.
 
 #### Putting it all together
 
