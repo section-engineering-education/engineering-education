@@ -52,7 +52,7 @@ for deploying models on mobile and embedded devices. It is a lighter, less-featu
 
 TensorFlow lite has two main components:
 
-* **TensorFlow Lite Converter**. Training a neural network is a time consuming process, especially if it is on a large dataset. So, we [*save*](https://www.tensorflow.org/tutorials/keras/save_and_load) a model in formats like [`.h5`](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) or `.model`. Saving a model makes it easier to share and deploy the model. TensorFlow lite converter is used to convert these models into an efficient form for use by the interpreter. 
+* **TensorFlow Lite Converter**. Training a neural network is a time consuming process, especially if it is on a large dataset. So, we [*save*](https://www.tensorflow.org/tutorials/keras/save_and_load) a model in formats like [`.h5`](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) or `SavedModel`. Saving a model makes it easier to share and deploy the model. TensorFlow lite converter is used to convert these models into an efficient form for use by the interpreter. 
   
   
   
@@ -98,18 +98,20 @@ interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 #get ouput tensors details
 output_details = interpreter.get_ouptut_details()
-#load image
+#load image from memory
 img = Image.open(filename).convert("RGB")
 #preprocess the image
 img = img.resize((224, 224))
+#converting image to an numpy array
 input_data = np.array(img)
+#np.expand_dims expands the shape of an array. This is done to take into account the *batch* dimension.
 input_data = np.expand_dims(img, axis=0)
 #Point data to be used for testing the interpreter and run it
 interpreter.set_tensor(input_details[0]["index"], input_data)
 interpreter.invoke()
 #Obtain Results
 predictions = interpreter.get_tensor(output_details[0]["index"])
-#THe model outputs a probability for every class it has been trained on, we take the top 10 most probable classes.
+#The model outputs a probability for every class it has been trained on, we take the top 10 most probable classes.
 top_indices = np.argsort(predictions)[::-1][:10]
 
 print(labels[top_indices[0]], predictions[top_indices[0]])
