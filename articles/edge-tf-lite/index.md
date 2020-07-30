@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: edge-tf-lite
 title: Machine Learning on Edge Devices Using TensorFlow Lite
-description: This article details machine learning on edge computing devices which use TensorFlow Lite and RaspberryPi. Talking about Latency, Bandwidth, privacy, and security.
+description: This article details machine learning on edge computing devices which use TensorFlow Lite and RaspberryPi. Talking about advantages of on-device machine learning inference such as Latency, Bandwidth, privacy, and security.
 author: rohan-reddy
 date: 2020-07-16T00:00:00-09:00
 topics: []
@@ -48,14 +48,17 @@ for deploying models on mobile and embedded devices. It is a lighter, less-featu
  
 
 
-### How to use TensorFlow lite 
+### About and How to use TensorFlow lite 
 
 TensorFlow lite has two main components:
 
 * **TensorFlow Lite Converter**. Training a neural network is a time consuming process, especially if it is on a large dataset. So, we [*save*](https://www.tensorflow.org/tutorials/keras/save_and_load) a model in formats like [`.h5`](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) or `SavedModel`. Saving a model makes it easier to share and deploy the model. TensorFlow lite converter is used to convert these models into an efficient form for use by the interpreter. 
   
+A `SavedModel` model for a simple image classification model trained on [MNIST](http://yann.lecun.com/exdb/mnist/) data has a size of MB, the same model converted to `.tflite` is about KB.
+
+* **TensorFlow Lite Interpreter**. TensorFlow Lite Interpreter runs specially optimized models on many different hardware types, including mobile phones, embedded Linux devices, and microcontrollers.
   
-  
+The development workflow for using TensorFlow lite involves the following steps:
 
 1. Choose a model. A model is a data structure that contains the logic and knowledge of a machine learning network trained to solve a particular problem. We can train our own model for custom business problems or obtain a pre-trained model from [TensorFlow Hub](https://www.tensorflow.org/hub).
 2. Convert the model. TensorFlow lite is designed to execute models efficiently on mobile and other embedded devices with limited compute and memory resources. Some of this efficiency comes from the use of a special format for storing models. TensorFlow models must be converted into this format before they can be used by TensorFlow Lite. The [TensorFlow Lite converter](https://www.tensorflow.org/lite/convert) is a tool available as a Python API that converts trained TensorFlow models into the TensorFlow Lite format.
@@ -69,13 +72,18 @@ documentation [guide](https://www.tensorflow.org/install/source_rpi). Building f
 
 **Installing Tensorflow lite interpreter.**
 
-`pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl`
 
-`$ wget https://storage.googleapis.com/download.tensorflow.org/models/tflite/mobilenet_v1_1.0_224_quant_and_labels.zip`
 
 ### Running TensorFlow Lite on R Pi
 The **awesome thing about TensorFlow lite** is that you don't need to be a machine learning expert to start doing cool experiments. The only pre-requisite is a basic knowledge of [Python](https://www.learnpython.org/). The most common applications of deep learning (like Object Detection, Pose Estimation, Smart Reply, ...) have been [implemented by the community](https://www.tensorflow.org/lite/models) and they are available for developers to use off-the-shelf.
 In this article we will be performing [Image Classification](https://developers.google.com/machine-learning/practica/image-classification) one of the most common applications of deep learning.
+
+
+#### Image Classification with Pretrained Model
+
+`pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl`
+
+`$ wget https://storage.googleapis.com/download.tensorflow.org/models/tflite/mobilenet_v1_1.0_224_quant_and_labels.zip`
 
 An image classification model takes an image file and predicts what the image represents. An image classification model is trained to recognize various classes of images. For example, a model might be trained to recognize photos representing three different types of animals: rabbits, hamsters, and dogs. We use the [MobileNet](https://arxiv.org/abs/1704.04861) image classification model. MobileNet is a [pretrained model](https://towardsdatascience.com/transfer-learning-from-pre-trained-models-f2393f124751), which means it has been trained on a very large dataset to classify over 1000 classes of images including people, objects, animals, etc.
 
@@ -94,9 +102,9 @@ import numpy as np
 interpreter = Interpreter(model_path="mobilenet_v1_1.0.224.tflite")
 #allocate memory for the model
 interpreter.allocate_tensors()
-#get input tensors details
+#get model input tensors details.
 input_details = interpreter.get_input_details()
-#get ouput tensors details
+#gets model output details. Returns a list of output details.
 output_details = interpreter.get_ouptut_details()
 #load image from memory
 img = Image.open(filename).convert("RGB")
@@ -108,8 +116,9 @@ input_data = np.array(img)
 input_data = np.expand_dims(img, axis=0)
 #Point data to be used for testing the interpreter and run it
 interpreter.set_tensor(input_details[0]["index"], input_data)
+#invoke the interpreter for inference
 interpreter.invoke()
-#Obtain Results
+#Obtain Results. The function get_tensor() returns a copy of the tensor data.
 predictions = interpreter.get_tensor(output_details[0]["index"])
 #The model outputs a probability for every class it has been trained on, we take the top 10 most probable classes.
 top_indices = np.argsort(predictions)[::-1][:10]
