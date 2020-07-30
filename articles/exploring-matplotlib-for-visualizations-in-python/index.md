@@ -1,13 +1,28 @@
-#  Exploring Matplotlib for Visualizations in Python
+---
+layout: engineering-education
+status: publish
+published: true
+slug: exploring-matplotlib-for-visualizations-in-python
+title: Exploring Matplotlib for Visualizations in Python
+description: 
+author: kanishkvardhan-a-n
+date: 2020-07-30T00:00:00-08:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/exploring-matplotlib-for-visualizations-in-python/hero.jpg
+    alt: 
+---
 Matplotlib is one of the most powerful and popular plotting libraries for Python and the numerical extension NumPy. It enables the creation of static, animated, and interactive visualizations in Python. Reading the matplotlib documentation is always ideal, but the amount of information available can be daunting. Therefore the following article is designed to gain a basic understanding of the library. Further, we will also understand the use cases of the library. 
+<!--more-->
 
-## NumPy
-
+### NumPy
 Numpy is the scientific computing library for Python. It is a library highly optimized written in C to perform faster vectorized, indexing, and distributed operations. It allows operations that fall under the domains of image processing, 3-D visualizations, interactive computing. astronomical processes, simulation modeling to name a few. 
 
 NumPy is the library that one must know to excel in any computerized field in today's world. Let's look at some of the most commonly used functions:
 
-### Coding Time
+#### Coding Time
 
 Let's begin by creating a numpy array
 
@@ -146,7 +161,6 @@ plot_cos()
 
 ```
 #### 3-D Plots
-
 We use the axes function present in pyplot and set the projection parameter to 3d for a 3D-plot.
 
 ```python
@@ -219,7 +233,6 @@ plt.show()
 ```
 
 ##### Line Chart
-
 The plt.plot() function takes in parameters (x,y), where x represents the data points on the x-axis, y represents the data points on the y-axis. The indexes decide the order of plotting.
 
 ```python 
@@ -283,7 +296,6 @@ plt.show()
 ```
 
 #### Pie Charts
-
 Pie charts are handy visual graphs that most of the presentations include. matplotlib allows nested charts, as well as customization with respect to color, shape. We choose the default option of a circle.
  
 ```python
@@ -300,6 +312,4 @@ plt.show()
 ```
 
  ### Conclusion
-
  In this article, we have covered the majority of the features of matplolib. From here on, we encourage you to build as many cool data visualization projects as possible. With the newly gained knowledge of numpy and matplotlib, the sky is the limit.
-
