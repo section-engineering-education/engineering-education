@@ -4,21 +4,21 @@ status: publish
 published: true
 slug: exploring-matplotlib-for-visualizations-in-python
 title: Exploring Matplotlib for Visualizations in Python
-description: 
+description: Covering numpy, matplotlib - exploring matplotlib features for data visualization in python. We cover the various use cases and generate 2-D, 3-D plots and various charts for data analysis.
 author: kanishkvardhan-a-n
 date: 2020-07-30T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/exploring-matplotlib-for-visualizations-in-python/hero.jpg
-    alt: 
+  - url: /engineering-education/exploring-matplotlib-for-visualizations-in-python/hero.png
+    alt: matplotlib example image
 ---
-Matplotlib is one of the most powerful and popular plotting libraries for Python and the numerical extension NumPy. It enables the creation of static, animated, and interactive visualizations in Python. Reading the matplotlib documentation is always ideal, but the amount of information available can be daunting. Therefore the following article is designed to gain a basic understanding of the library. Further, we will also understand the use cases of the library. 
+Matplotlib is one of the most powerful and popular plotting libraries for Python and the numerical extension NumPy. It enables the creation of static, animated, and interactive visualizations in Python. Reading the matplotlib documentation is always ideal, but the amount of information available can be daunting. Therefore the following article is designed to gain a basic understanding of the library. Further, we will also understand the use cases of the library.
 <!--more-->
 
 ### NumPy
-Numpy is the scientific computing library for Python. It is a library highly optimized written in C to perform faster vectorized, indexing, and distributed operations. It allows operations that fall under the domains of image processing, 3-D visualizations, interactive computing. astronomical processes, simulation modeling to name a few. 
+Numpy is the scientific computing library for Python. It is a library highly optimized written in C to perform faster vectorized, indexing, and distributed operations. It allows operations that fall under the domains of image processing, 3-D visualizations, interactive computing. astronomical processes, simulation modeling to name a few.
 
 NumPy is the library that one must know to excel in any computerized field in today's world. Let's look at some of the most commonly used functions:
 
@@ -46,7 +46,7 @@ randomArray = np.empty((4,5))
 ```
 The above functions take in the array size, in the form of a tuple as an input.
 
-Creating equally spaced lists is a usual problem during plotting. Therefore, we use linspace or arange to achieve the same. 
+Creating equally spaced lists is a usual problem during plotting. Therefore, we use linspace or arange to achieve the same.
 
 ```python
 import numpy as np
@@ -70,7 +70,7 @@ There are many auxiliary functions available:
 * cos
 * eigenvalue and eigenvector
 
-We will be using the above-mentioned functions frequently during plotting. 
+We will be using the above-mentioned functions frequently during plotting.
 
 ### matplotlib
 
@@ -78,33 +78,33 @@ We will be using the above-mentioned functions frequently during plotting.
 
 Source: [matplotlib docs](https://matplotlib.org/3.1.1/)
 
-Each of the parts shown in the above figure is mutable. One should keep in mind the above features to enhance and give more information regarding the plots. Let us get into the generation of plots.
+Each of the parts shown in the above figure is mutable. One should keep the above features in mind to enhance and give more information regarding the plots. Let us get into the generation of plots.
 
-Matplotlib is a huge library. We will be using a sub-library pyplot for all our plotting cases. 
+Matplotlib is a huge library. We will be using a sub-library pyplot for all our plotting cases.
 
 Regarding the anatomy of the figure, we will use the in-built functions that matplotlib provides for the purposes of adding anatomical tags. There is no need to study them separately. As and when required, we use them and they are self-explanatory.
 
 ### Usecases
 
-The library is used in many fields inlcuding but not limited to the following:
+The library is used in many fields including but not limited to the following:
 
 * image processing: modifying images and understanding images via plotting histograms, density charts, etc.
 * signal processing: performing noise analysis, depth estimation, various transformations to gain more understanding.
-* machine learning & data science: : exploratory data analysis and understanding the dataset. Characterizing the dataset and identifying outliers.
+* machine learning & data science: exploratory data analysis and understanding the dataset. Characterizing the dataset and identifying outliers.
 * academic research: the scientific community creates plots so that they can be published in conference papers and scientific journals. The professional touch and the ease of development enhances the experience of using the library.
 
 Let's begin with co-ordinate geometry. We will plot circle, hyperbola, parabola, and ellipse. The concepts that will be introduced are 2-D plots and 3-D plots
 
 #### 2-D Pl1ots
 
-##### Key Points: 
+##### Key Points:
 
-* np.meshgrid: Let's say we want to create a plotting surface covering all the points over the two axes. meshgrid creates the plotting area by taking in two arrays as input. 
+* np.meshgrid: Let's say we want to create a plotting surface covering all the points over the two axes. meshgrid creates the plotting area by taking in two arrays as input.
 
     Example:
 
     ```python
-    import numpy as np 
+    import numpy as np
     xline = np.linspace(-5, 5, 10)
     yline = np.linspace(-5, 5, 10)
     print(xline,yline)
@@ -115,7 +115,7 @@ Let's begin with co-ordinate geometry. We will plot circle, hyperbola, parabola,
     Print the above outputs. You will notice that the second array consists of co-ordinate pairs. The pairs are suitable for plotting.
 
 * Contour Plots: Contour plots are useful when we want to plot graphs where data varies in both the axes. We can represent changes in the data by coloring the surface. The input to the contour function is the x variable, the y variable, and the variable that we want to contour upon.
-  
+
 
 ```python
 import numpy as np
@@ -131,7 +131,7 @@ def plot_circle():
     circle_eqn = xline**2 + yline**2 - range**2
     plt.contour(xline, yline, circle_eqn, [0], cmap='gray')
     plt.show()
-    
+
 # ellipse
 def plot_ellipse():
     xline = np.linspace(-range/4,range/4,100)
@@ -235,7 +235,7 @@ plt.show()
 ##### Line Chart
 The plt.plot() function takes in parameters (x,y), where x represents the data points on the x-axis, y represents the data points on the y-axis. The indexes decide the order of plotting.
 
-```python 
+```python
 import matplotlib.pyplot as plt
 
 year = [1920,1930,1940,1950,1960,1970,1980,1990,2000,2010]
@@ -254,7 +254,7 @@ In a histogram, the total range of data set is divided into equal parts. These e
 Each and every observation in the data set is placed in its respective bin. The number of observations belonging to a given bin is defined as the frequency. A data-point can occupy only one bin. The bins are specified as a parameter in the pyplot.hist function.
 
 ```python
-import numpy as np 
+import numpy as np
 import matplotlib.pyplot as plt
 
 # Let's generate random data
@@ -297,7 +297,7 @@ plt.show()
 
 #### Pie Charts
 Pie charts are handy visual graphs that most of the presentations include. matplotlib allows nested charts, as well as customization with respect to color, shape. We choose the default option of a circle.
- 
+
 ```python
 import matplotlib.pyplot as plt
 
