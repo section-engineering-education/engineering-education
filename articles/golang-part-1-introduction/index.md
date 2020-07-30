@@ -6,7 +6,7 @@ slug: golang-part-1-introduction
 title: Introduction to Golang
 description:  It covers the history of Golang, its purpose, where it is used, and how to install -  Go is  similar to C but with memory safety.
 author: adith-bharadwaj
-date: 2020-07-19T00:00:00-07:00
+date: 2020-07-29T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
