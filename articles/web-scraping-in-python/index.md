@@ -46,7 +46,7 @@ pip install XlsxWriter
 ```
 
 ### Building the web scraper
-Beautiful helps us locate the content that is stored within the HTML structure. Users can easily navigate the structure of the page by using the in-built methods in beautifulsoup.
+Beautifulsoup helps us locate the content that is stored within the HTML structure. Users can easily navigate the structure of the page by using the in-built methods in beautifulsoup.
 
 #### Importing the dependencies
 
@@ -92,7 +92,7 @@ def get_data(url):
 	return content
 ```
 
-The get_data function takes the URL as a parameter and returns all the elements that belong to a particular class. The urlopen() function establishes a connection to the URL and the read() function reads the contents of that page. We create an object called parser using beautifulsoup. This function takes two parameters: the contents of the page and the type of parser. In this case, we shall use the HTML parser. the findall() method finds all the HTML elements based on a given condition. In this case, we are looking for all the "div" tags that have the class "freebirdFormviewerComponentsQuestionBaseTitle".
+The `get_data` function takes the URL as a parameter and returns all the elements that belong to a particular class. The `urlopen()` function establishes a connection to the URL and the `read()` function reads the contents of that page. We create an object called `parser` using beautifulsoup. This function takes two parameters: the contents of the page and the type of parser. In this case, we shall use the HTML parser. the `findall()` method finds all the HTML elements based on a given condition. In this case, we are looking for all the "div" tags that have the class "freebirdFormviewerComponentsQuestionBaseTitle".
 
 #### Storing the data in an excel sheet
 Once the data gets fetched from the web page, the next step is to store it in a presentable format.
@@ -121,7 +121,7 @@ def store_excel(data):
 	workbook.close()
 ```
 
-The store_excel() function takes the data as a parameter and creates an excel sheet that contains the data. The Workbook() function creates a workbook with the name "content.xlsx" and add_worksheet() adds a new worksheet to our workbook. We then go through all the items in our data (all the questions) and add them to our worksheet using the write() method. The row and column integers denote the current row and column in the sheet.
+The `store_excel()` function takes the data as a parameter and creates an excel sheet that contains the data. The `Workbook()` function creates a workbook with the name "content.xlsx" and `add_worksheet()` adds a new worksheet to our workbook. We then go through all the items in our data (all the questions) and add them to our worksheet using the `write()` method. The row and column integers denote the current row and column in the sheet.
 
 #### Putting it all together
 
@@ -130,12 +130,11 @@ if __name__ == '__main__':
 
 	url = input('enter the url: ')
 	data = get_data(url)
-	print(data)
 	store_excel(data)
 
 ```
 
-In the main function, we take the URL as input from the user. We pass this URL to the get_data function that returns the elements that belong to the questions class. We then call the store_excel function and store the questions.
+In the main function, we take the URL as input from the user. We pass this URL to the `get_data` function that returns the elements that belong to the questions class. We then call the `store_excel` function and store the questions.
 
 ![Excel](/engineering-education/web-scraping-in-python/excel.png)
 
