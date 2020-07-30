@@ -34,12 +34,12 @@ Before we delve into the comparative study on various methods of authenticating 
 * Use powerful hashing methods with salt(random salt preferably; having the same salt for all passwords makes salting go in vain). Hashing algorithms like MD5 are too weak for present-day computational power, hence comparatively insecure.
 * Additionally, older standards of hashing have multiple known collision pairs. A collision is an event where two distinct inputs give the same hash as output.
 
- Hence, you should hash passwords at each level of transmission, multiple times if needed.
-
+ With super-fast computers in the present day, it is wise to have passwords hashed multiple times to make sure a brute-force attack attempt would require more computational power, in turn making each brute-force trial time taking. 
+ 
 ### Additional Ways to Secure
 * Go Slow. In this age of high-speed internet, how can going slow be beneficial?
   * A wrong password entry should have a cool-off time before next attempt. This can be done from first attempt itself(a few hundred milliseconds) or after few attempts(maybe three of five). The cool-down time would be decided after coming to a common ground between User Experience and Security standpoints. This cool-down should be done on the server end and not client end as client-side scripts are easier to manipulate. Additionally, is done client-side, a script can have multiple instances of a client running parallelly, which will bypass client-side protection.
-  * IP Rate Limiting. This should be used to protect bogus sign-ups from the same IP. Additionally, multiple users trying to log in from the same IP would also be an indication of compromised accounts.
+  * IP Rate Limiting. When IP Rate Limiting is being incorporated, there are few pointer to keep in mind; in a shared internet connection like an office, educational institution or home Wi-Fi, strict IP Rate Limiting might cause issue with user experience. One way to combat this to have a CAPTCHA to protect the site along with an IP Rate Limiting policy that keeps in mind that users may use your service over a shared internet connection.   
 * Have only verified accounts—all users who sign-up must be verified via phone(SMS or call) or email. Without a verified account, any user who knows a random person's email or phone(which is relatively easy to obtain) can make an account using their credentials.
 * Doing Reset Password the correct way
   * The reset password link generated must be unique and single-use. Let us imagine a scenario where-in single-use is not enforced, then I can grab my friend's phone, and if I see any reset password link, I can go ahead and change the password again
