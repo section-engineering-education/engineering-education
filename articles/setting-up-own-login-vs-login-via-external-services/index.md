@@ -27,15 +27,12 @@ Before we delve into the comparative study on various methods of authenticating 
 ![Unless secured,the database can be compromised](/engineering-education/setting-up-own-login-vs-login-via-external-services/hacker-stealing-representation.jpg)
 
 ### Basic Setup for Login-Signup Flow
- Login-Signup is the first line of security for any service. If this is breached, a malicious user can access data that is otherwise not allowed. The login interface should also verify for user access level during the process- vendors, delivery boy, buyer, etc. in case of e-commerce or editor, author, a viewer in case of a blog, and similarly for other services. At the bare minimum, the authentication should be on username/email with the password, which can be secured even further with multi-factor authentication. To ensure privacy and protection of the users, passwords must be hashed at all stages(even before sendingit to the server via API).
+ Login-Signup is the first line of security for any service. If this is breached, a malicious user can access data that is otherwise not allowed. The login interface should also verify for user access level during the process- vendors, delivery boy, buyer, etc. in case of e-commerce or editor, author, a viewer in case of a blog, and similarly for other services. At the bare minimum, the authentication should be on username/email with the password, which can be secured even further with multi-factor authentication. To ensure privacy and protection of the users, passwords must be hashed wherever they are stored, and encrypted whenever they are transmitted.
 
 ### Some pointers to keep in mind while hashing are:
 * Use hash function, not encryption, no matter how secure the encryption is. There is no feature or facility required for login and sign-up flow that is not provided by hashing methodology which encryption provides.
 * Use powerful hashing methods with salt(random salt preferably; having the same salt for all passwords makes salting go in vain). Hashing algorithms like MD5 are too weak for present-day computational power, hence comparatively insecure.
 * Additionally, older standards of hashing have multiple known collision pairs. A collision is an event where two distinct inputs give the same hash as output.
-* If you are using API and passing hashed password in request(hashed passwords always better than plain-text), then do not directly store this has in server. If you directly store the hash, then your entire database if compromised in multiple ways.  
-  * Any internal employee with access to the database can copy hash from the database and use API to login.
-  * If the database gets breached by a hacker, they no longer need to get a plain-text password to login as API can do it directly
 
  Hence, you should hash passwords at each level of transmission, multiple times if needed.
 
