@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/edge-tf-lite/hero.jpg
     alt: edge device example image
 ---
-[Edge Devices](https://en.wikipedia.org/wiki/Edge_device) are computing devices that live at the "edge" of the network and perform work in the exact location that is needed. Edge devices include [IoT devices](https://en.wikipedia.org/wiki/Internet_of_things), [smart home equipment](https://www.pcmag.com/news/the-best-smart-home-devices-for-2020) and computers embedded as household or industrial items. IoT devices are growing rapidly and continue to do so for the next couple of years[1].
+[Edge Devices](https://en.wikipedia.org/wiki/Edge_device) are computing devices that live at the "edge" of the network and perform work in the exact location that is needed. Edge devices include [IoT devices](https://en.wikipedia.org/wiki/Internet_of_things), [smart home equipment](https://www.pcmag.com/news/the-best-smart-home-devices-for-2020) and computers embedded as household or industrial items. IoT devices are growing rapidly and continue to do so for the next couple of years.
 <!--more-->
 
 ![img](/engineering-education/edge-tf-lite/logo.png)
@@ -38,14 +38,25 @@ for remote places with no proper internet.
 is at the edge. When inference is super fast we can solve high-performance actions like real-time object tracking for a robot.
 * **Privacy and Security**. When data stays on device users benefit from increased privacy and security since personal information never leaves their devices. This benefits privacy-sensitive applications like security webcams and health-care data.
 
-### RaspberryPi + TensorFlow Lite = Awesome Things!!
+### RaspberryPi + TensorFlow Lite 
 
 The [Raspberry Pi](https://www.raspberrypi.org/) (R Pi) is a low cost, very small computer that runs a Linux-based operating system called [Raspbian or Raspberry Pi OS](https://www.raspberrypi.org/downloads/). It's often used for building prototype devices since it has fairly typical hardware specifications and it's easy to connect to sensors and peripherals like cameras.
+
+
 [TensorFlow](https://www.tensorflow.org/) is a popular open-source machine learning framework, which is used for a variety of tasks. [TensorFlow Lite](https://www.tensorflow.org/lite/) is a lightweight library
-for deploying models on mobile and embedded devices. It is a lighter, less-featured deep learning framework for on-device inference.  
+for deploying models on mobile and embedded devices. It is a lighter, less-featured deep learning framework for on-device inference. TensorFlow lite provides APIs in Python (which we will be using on Raspberry Pi), Java (for Android) and Swift (for iOS). We can see Tensorflow lite in action in our day-to-day applications, for example - Gmail uses TensorFlow Lite for Smart Reply and Auto-Complete. Google Assistant uses it for Natural Language Processing and Understanding. 
+ 
 
 
-### How TensorFlow lite works
+### How to use TensorFlow lite 
+
+TensorFlow lite has two main components:
+
+* **TensorFlow Lite Converter**. Training a neural network is a time consuming process, especially if it is on a large dataset. So, we [*save*](https://www.tensorflow.org/tutorials/keras/save_and_load) a model in formats like [`.h5`](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) or `.model`. Saving a model makes it easier to share and deploy the model. TensorFlow lite converter is used to convert these models into an efficient form for use by the interpreter. 
+  
+  
+  
+
 1. Choose a model. A model is a data structure that contains the logic and knowledge of a machine learning network trained to solve a particular problem. We can train our own model for custom business problems or obtain a pre-trained model from [TensorFlow Hub](https://www.tensorflow.org/hub).
 2. Convert the model. TensorFlow lite is designed to execute models efficiently on mobile and other embedded devices with limited compute and memory resources. Some of this efficiency comes from the use of a special format for storing models. TensorFlow models must be converted into this format before they can be used by TensorFlow Lite. The [TensorFlow Lite converter](https://www.tensorflow.org/lite/convert) is a tool available as a Python API that converts trained TensorFlow models into the TensorFlow Lite format.
 3. Run inference with the model. Inference is the process of running data through a model to obtain predictions. It requires a model, an interpreter, and input data.
@@ -110,7 +121,8 @@ We can expect sample input and output to be.
 
 ### Conclusion
 
-Machine Learning is a powerful tool which can help automate many tasks which are beyond the scope of classical programming, it was assumed that you need a powerful computing machine with a GPU to train models. But with the evolution of hardware and optimization of software for low-end computing devices, we can perform complex machine learning tasks on devices such as micro-controllers, mobile phones, smart home devices, etc. We see these in our day-to-day applications, for example - Gmail uses TensorFlow Lite for Smart Reply and Auto-Complete. Google Assistant uses it for Natural Language Processing and Understanding.
+Machine Learning is a powerful tool which can help automate many tasks which are beyond the scope of classical programming, it was assumed that you need a powerful computing machine with a GPU to train models. But with the evolution of hardware and optimization of software for low-end computing devices, we can perform complex machine learning tasks on devices such as micro-controllers, mobile phones, smart home devices, etc.
+
 
 ### Resources & References
 1. [Free Udacity Course](https://www.udacity.com/course/intro-to-tensorflow-lite--ud190)
