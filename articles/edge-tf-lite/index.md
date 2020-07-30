@@ -149,7 +149,7 @@ img = img.resize((224, 224))
 #converting image to an numpy array
 input_data = np.array(img)
 #np.expand_dims expands the shape of an array. This is done to take into account the *batch* dimension.
-input_data = np.expand_dims(img, axis=0)
+input_data = np.expand_dims(input_data, axis=0)
 #Point data to be used for testing the interpreter and run it
 interpreter.set_tensor(input_details[0]["index"], input_data)
 #invoke the interpreter for inference
