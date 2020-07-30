@@ -92,7 +92,7 @@ def get_data(url):
 	return content
 ```
 
-The get_data function takes the URL as a parameter and returns all the elements that belong to a particular class. The urlopen() function establishes a connection to the URL and the read() function reads the contents of that page. We create an object called parser using beautifulsoup. This function takes two parameters: the contents of the page and the type of parser. In this case, we shall use the HTML parser. the findall() method finds all the HTML elements based on a given condition. In this case, we are looking for all the "div" tags that have the class "freebirdFormviewerComponentsQuestionBaseTitle".
+The `get_data` function takes the URL as a parameter and returns all the elements that belong to a particular class. The `urlopen()` function establishes a connection to the URL and the `read()` function reads the contents of that page. We create an object called `parser` using beautifulsoup. This function takes two parameters: the contents of the page and the type of parser. In this case, we shall use the HTML parser. the `findall()` method finds all the HTML elements based on a given condition. In this case, we are looking for all the "div" tags that have the class "freebirdFormviewerComponentsQuestionBaseTitle".
 
 #### Storing the data in an excel sheet
 Once the data gets fetched from the web page, the next step is to store it in a presentable format.
