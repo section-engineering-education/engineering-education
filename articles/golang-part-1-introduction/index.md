@@ -37,7 +37,7 @@ According to the Go documentation, Go is used widely in production inside Google
 2. Once the archive file has been downloaded, move it to /usr/local. Extract the tar file using the following command:
 
 ```
-sudo sudo tar -xvf <Version of go you downloaded>
+sudo tar -xvf <Version of go you downloaded>
 ```
 This will extract the tar file inside /usr/local and will create a folder called go.
 
