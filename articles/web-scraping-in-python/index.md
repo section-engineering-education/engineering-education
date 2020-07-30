@@ -135,7 +135,7 @@ if __name__ == '__main__':
 
 ```
 
-In the main function, we take the URL as input from the user. We pass this URL to the get_data function that returns the elements that belong to the questions class. We then call the store_excel function and store the questions.
+In the main function, we take the URL as input from the user. We pass this URL to the `get_data` function that returns the elements that belong to the questions class. We then call the `store_excel` function and store the questions.
 
 ![Excel](/engineering-education/web-scraping-in-python/excel.png)
 
