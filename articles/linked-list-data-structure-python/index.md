@@ -6,7 +6,7 @@ slug: linked-list-data-structure-python
 title: Using the Linked List Data Structure in Python
 description: The linked list data structure is a linear data structure that is used to implement other data structures.
 author: saiharsha-balasubramaniam
-date: 2020-07-15T00:00:00-08:00
+date: 2020-07-29T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,10 +16,10 @@ images:
 
 ---
 
-We're almost at the end of the line, having mastered all the Linear Data Structures in Python. To finish things off, we have the most sophisticated Linear Data Structure, the mighty **Linked List.** 😏
+We're almost at the end of the line with this series, having mastered all the Linear Data Structures in Python. To finish things off, we have the most sophisticated Linear Data Structure, the mighty **Linked List.** 😏
+<!--more-->
 
-![Thanos Meme, Linked List](/engineering-education/linked-list-data-structure-python/thanosll.jpg)
-
+![Thanos Meme, Linked List](/engineering-education/linked-list-data-structure-python/thanosll.jpg)<br>
 As the meme says, the head is the most integral part of the linked list!
 
 Well, the Linked List is not as sophisticated as you think. It's extremely powerful though.
@@ -48,15 +48,14 @@ Linked Lists are a chain of **nodes**, connected together by links. Every node (
 - **Data** -> The item to be stored in the node.
 - **Next** -> The link or **reference** to the next node.
 
-![Node, Linked List](/engineering-education/linked-list-data-structure-python/nodell.png)
-
+![Node, Linked List](/engineering-education/linked-list-data-structure-python/nodell.png)<br>
 In a linked list, the first node is called the **head** and the last node is determined by the condition that the **next** points to a null value.
 
 ![Null, Linked List](/engineering-education/linked-list-data-structure-python/nonell.jpg)
 
 ## Uses of Linked Lists
 
-- Due to their **dynamic size allocation** and ease of insertion/deletion, linked lists are applied in a lot of usecases.
+- Due to their **dynamic size allocation** and ease of insertion/deletion, linked lists are applied in a lot of use cases.
 - They're used to implement a lot of complex data structures like the **adjacency list** in graphs.
 - They are used for **lifecycle management** in operating systems.
 - A playlist in a music application is implemented using a doubly linked list.
@@ -71,8 +70,7 @@ There are two main types of Linked Lists:
 
 ### Singly Linked Lists
 
-We'll implement a singly linked list from scratch in Python.
-This contains the following methods:
+In the following example, we'll implement a singly linked list from scratch in Python. This contains the following methods:
 
 - **```ll.search(head, data)```** -> Search the given element in the Linked List.
 - **```ll.print_list()```** -> Print the linked list.
@@ -162,8 +160,7 @@ class LinkedList(object):
 
 A doubly linked list is similar to a singly linked list. It differs in that it also contains a link to the previous node.
 
-![Doubly Linked List](/engineering-education/linked-list-data-structure-python/doublyll.png)
-
+![Doubly Linked List](/engineering-education/linked-list-data-structure-python/doublyll.png)<br>
 We implement the following methods for the Doubly Linked List data structure: 
 
 - **```dll.addNodeLast(x)```** -> Adds a node at the right end of the linked list.
@@ -252,4 +249,4 @@ First, try implementing the Linked Lists as shown above, and then try running th
 
 ## Conclusion
 
-Linked Lists can be a little intimidating, but once you understand them you'd find it easy to understand trees, graphs and other such data structures! You have mastered linear data structures by the end of this article. Stay tuned for Non Linear Data Structures in the next article!
+Linked Lists can be a little intimidating, but once you understand them you'll find it easy to understand trees, graphs, and other such data structures! Congratulations, you have mastered linear data structures by the end of this article series.
