@@ -15,7 +15,7 @@ images:
     alt: mock server computer image example
 
 ---
-One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. These stages consist of several APIs calls requesting various information through GET/POST methods which require a functioning server. But what happens when you do not have full backend support yet or no running APIs in the development stage? You end up back on square one & hence, not able to set up a server. Here comes the magical feature of Postman to create a dummy server aka Mock Server to come to your aid.
+When contributing to open source projects one often uses several APIs calls. These calls work as an important bridge between the client and the user requesting various information through GET/POST methods which require a functioning server. But what happens when you do not have full backend support yet or no running APIs in the development stage? You end up back on square one & hence, not able to set up a server. Here comes to your aid the magical feature of Postman to create a dummy server aka Mock Server.
 <!--more-->
 
 This guide includes step-by-step instructions, so that you have a comfortable experience in beginning your open source deployment. Without further ado, let's get started by answering all the why(s), what(s) & how(s)!
@@ -33,7 +33,7 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 ![Usage Image](/engineering-education/guide-to-create-mock-server/image01.png) *Fig 2: www.mock-server.com*
 
 - Mock Servers easily recreate all types of responses for HTTP dependencies such as REST or RPC services to test applications easily and effectively. They isolate the system-under-test to ensure tests run reliably and only fail when there is a genuine bug.
-- These servers easily setup mock responses independently for each test to ensure test data is encapsulated with each test. Avoid sharing data between tests that are difficult to manage and maintain this also decreases the risks of tests infecting each other.
+- These servers easily setup mock responses independently for each test to ensure test data is encapsulated with each test. They avoid sharing data between tests that are difficult to manage and maintain. This also decreases the risks of tests infecting each other.
 
 ### Mock Server: A Complete Roadmap
 
@@ -61,7 +61,7 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 ![Set up Image](/engineering-education/guide-to-create-mock-server/image4.png)
 
 - In the **Set up the mock server** tab, you can configure your mock server.
-1. Enter the name of the mock.
+1. Enter the name of the mock server you want to create.
 2. Select an environment (optional).
 3. Check the checkbox if you want to make the mock server private.
 4. Check the checkbox if you want to save the mock server URL as an environment variable.
@@ -73,13 +73,13 @@ This guide includes step-by-step instructions, so that you have a comfortable ex
 
 - If the setting process went well without an error, you'll be able to see your Mock Server in the left corner on the **Collections** panel.
 
-You can view and search the details of calls to your mock servers using the mock call log. Open a mock from the Postman app by clicking it in Collections, in APIs, or by switching to Browse > Mocks and clicking the mock name.
+You can view and search the details of calls to your mock servers using the mock call log. Open the mock server you previously created from the Postman app by clicking it in Collections, in APIs, or by switching to Browse > Mocks and clicking the mock server name.
 
 #### Step 4: I am all done with my server. How do I create a Router Request?
 
 ![Request Image](/engineering-education/guide-to-create-mock-server/image6.png)
 
-- In the left-hand corner, you will see **Setting Option(3 Dots)** in the Collections panel. On clicking that, you'll be able to see several options. Choose **Add Request**, by which a large number of Request Methods, (i.e. GET, POST) will be made available to you, choose whatever you need. Make sure you have an example saved for the request in the collection you have the mock connected to.
+- In the left-hand corner, see **Setting Option(3 Dots)** in the Collections panel. On clicking that, you'll be able to see several options. Choose **Add Request**, by which a large number of Request Methods, (i.e. GET, POST) will be made available to you, choose whatever you need. Make sure you have an example saved for the request in the collection you have the mock connected to.
 
 #### Step 5: Additional Feature of Postman Server
 
