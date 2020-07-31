@@ -215,8 +215,7 @@ We can see from the response that the search results are stored in `search.resul
  Update your `console.log()` to `console.log(result.search.results.work);` and test again. This should return the specific book results. An example of the data for a book in the array is below:
 
 ```json
-[
-  {
+{
     id: { _: '16416771', type: 'integer' },
     books_count: { _: '92', type: 'integer' },
     ratings_count: { _: '117390', type: 'integer' },
@@ -226,14 +225,14 @@ We can see from the response that the search results are stored in `search.resul
     original_publication_day: { _: '1', type: 'integer' },
     average_rating: '4.29',
     best_book: {
-      type: 'Book',
-      id: [Object],
-      title: "The Serpent's Shadow (The Kane Chronicles, #3)",
-      author: [Object],
-      image_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366227982l/12893742._SX98_.jpg',
-      small_image_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366227982l/12893742._SY75_.jpg'
+        type: 'Book',
+        id: [Object],
+        title: "The Serpent's Shadow (The Kane Chronicles, #3)",
+        author: [Object],
+        image_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366227982l/12893742._SX98_.jpg',
+        small_image_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366227982l/12893742._SY75_.jpg'
     }
-  },
+},
 ```
 
 ### Displaying Book Information on the Front-End
@@ -340,3 +339,23 @@ Congratulations, you've just work with your first API using Node.js and EJS temp
 If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle or use your new-found knowledge, to work with different APIs like [Unsplash](https://unsplash.com/developers) or [Spotify](https://developer.spotify.com/documentation/web-api/).
 
 Looking for more example code? Check out [LibraryTrackr](https://github.com/louisefindlay23/library-trackr), a NodeJS web app I'm developing aimed at solving library management (both print and eBook) for bibliophiles.
+
+<section class="section-rich-text xs-pb-80 xs-pt-80">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5">
+      <a class="decoration-none" href="/modules/node-js/">
+        <div class="cta-block-box relative xs-mt-10 xs-mb-50">
+          <div class="cta-block-box-left-block absolute"></div>
+          <div class="cta-block-box-left-stripes absolute"></div>
+          <div class="cta-block-box-inner pa-5 cta-shadow">
+            <h3 class="title-3" style="text-align: center;"><img src="/assets/images/blog/featured-images/Node.js_logo.png" width="150" style="margin: 0;"><br>Edge Hosting</h3>
+            <p class="xs-mb-20">Section’s Node.js Edge Hosting empowers DevOps teams to run mission critical Node.js applications at the network edge for blazingly fast results with enterprise level AppSec protection.</p>
+            <span class="link-with-arrow-blue text-blue text-18-medium">Learn more and get started on a free plan</span>
+          </div>
+          <div class="cta-block-box-right-block absolute"></div>
+          <div class="cta-block-box-right-stripes absolute"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
