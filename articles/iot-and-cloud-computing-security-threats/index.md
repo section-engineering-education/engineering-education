@@ -35,11 +35,13 @@ It involves leakage of user or organization data to an unauthorized user. This m
 It is a very sensitive issue related to cloud and IoT security. It happens when a malicious attacker has unauthorized access to the system or network to manipulate data. Malware attacks also cause data destruction.
 
 #### Network Threats
-Network security is an important factor in IoT and cloud, having weak network security leads to attacks, which include man-in-the-middle attacks and denial of service. IoT network security involves securing the communication network of different IoT objects [ieee.org](https://ieeexplore.ieee.org/document/8519613).
+Network security is an important factor in IoT and cloud, having weak network security leads to attacks, which include man-in-the-middle attacks and denial of service. IoT network security involves securing the [communication network](https://ieeexplore.ieee.org/document/8519613) of different IoT objects.
 ##### Man-in-the-Middle attack
 It is a form of account hijacking where an attacker steals the credentials of the user to get access to his account. The credentials are used to access and monitor the network causing interference in communication between the nodes.
+For more information on Man-in-the-middle attacks - feel free to read our article on the [subject](/engineering-education/man-in-the-middle-attack/).
 ##### Denial of Service
 DOS attacks are done to prevent legitimate users from accessing the IoT and cloud network, storage, data, and other computing services. DOS attacks also cause a delay in operations because many requests are made thus consuming more resources.
+For more information on Denial of Service attacks - please refer to our other article on the [subject](/engineering-education/denial-of-service/).
 
 #### Cloud Environment Threats
 ##### Insecure Interfaces and APIs
@@ -58,4 +60,6 @@ Cloud computing is widely used and embraced through the world thus IoT depends o
 Cloud computing is widely used and embraced through the world thus IoT depends on the cloud because of the storage of data and resources. The two computing technologies face security threats and it’s a major issue. It is important to mitigate security issues to maintain the trust and integrity of customers. IoT and Cloud computing technologies are advancing rapidly thus factual security is required.
 
 ### Sources
-[Digital ACM Library](https://dl.acm.org/doi/abs/10.1145/2732209.2732216) and Muhammad Kazim and Shao Ying paper in [ResearchGate](https://www.researchgate.net/publication/307842608_A_survey_on_top_security_threats_in_cloud_computing)
+[Digital ACM Library](https://dl.acm.org/doi/abs/10.1145/2732209.2732216)
+
+Muhammad Kazim and Shao Ying paper in [ResearchGate](https://www.researchgate.net/publication/307842608_A_survey_on_top_security_threats_in_cloud_computing)
