@@ -36,12 +36,17 @@ export SPARK_HOME={path-to-spark}/spark-3.0.0-preview2-bin-hadoop2.7
 export PATH=$PATH:$PATH_HOME/bin
 ```
 
-Step 4: Install jupyter notebook$ pip install jupyter
+Step 4: Install jupyter notebook
+
+```
+$ pip install jupyter
+```
 
 Step 5: In ~/.bash_profile (for mac) or ~/.bashrc (for linux), add these lines indicating the configurations of PySpark.
 
 ```
-export PYSPARK_PYTHON=python3export PYSPARK_DRIVER_PYTHON=jupyter
+export PYSPARK_PYTHON=python3
+export PYSPARK_DRIVER_PYTHON=jupyter
 export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 ```
 
@@ -55,6 +60,8 @@ We will be using the [Books](http://www2.informatik.uni-freiburg.de/~cziegler/BX
 
 
 ### **Initializing Spark and RDD**
+
+Open Jupyter notebook and let's begin programming!
 
 Import these pyspark libraries into the program.
 
@@ -90,9 +97,9 @@ Action functions are used to retrieve information from the RDD that may or may n
 
 In this example, we load the ‘BX-Books.csv’ file into the program, and store it as an RDD. The first action we execute is count() - which returns the number of rows. Next we want to see what the data actually looks like. We *could* use load() function, which returns the entire dataset as a list. However, since this dataset has over 200,000 rows and we only want to peek at the data, it would not be wise to bring that into memory. Hence we prefer to use take(n) - which returns a list of n rows.
 
-![img](./import.png)
-
 Here, we have loaded the ‘BX-Books.csv’ file and converted it into an RDD, using the SparkContext object and did not perform any transformations on it.
+
+![img](./import.png)
 
 ```python
 books_file = spark_context.textFile("./BX-CSV-Dump/BX-Books.csv")
@@ -100,11 +107,11 @@ print("number of books = ",books_file.count())
 print("First 3 rows are - \n",books_file.take(3))
 ```
 
+Here we applied map() function to the same RDD and that resulted in each line splitting into its own row and parts of the row split into individual elements.
+
 ![img](./map.png)
 
 
-
-Here we applied map() function to the same RDD and that resulted in each line splitting into its own row and parts of the row split into individual elements.
 
 ```python
 books_file = spark_context.textFile("./BX-CSV-Dump/BX-Books.csv").map(lambda l: l.split(‘;’))
