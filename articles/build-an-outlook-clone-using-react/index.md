@@ -4,33 +4,33 @@ status: publish
 published: true
 slug: build-an-outlook-clone-using-react
 title: Building An Outlook Clone with React
-description: It’s an introduction to NodeJS and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
+description: This article helps developers get started with React by building an Outlook clone using React so that you can learn the fundamentals by getting hands-on with the code.
 author: lalithnarayan-c
-date: 2020-07-20T00:00:00-07:00
+date: 2020-07-31T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-an-outlook-clone-using-react/hero.JPG
+  - url: /engineering-education/build-an-outlook-clone-using-react/hero.jpg
     alt: output image outlook clone example
 ---
-Hey there! We have built an outlook clone using React so that you can learn React as easily as possible. This article is suitable for developers of all caliber. We want the person who is just starting out to learn React as quickly as possible. At the same time. an experienced developer will find this project a good place to begin with. This is going to be a long article. Open your editor, and let's get started.
+This guide will walk you through how to build an Outlook clone using React so that you can learn the fundamentals of React. This article is suitable for developers of all experience levels. Open your editor, and let's get started.
 
 <!--more-->
 
 ### What is React?
 
-React is a front-end JavaScript library used for building single-page and mobile applications. The React library boasts of two main features:
+React is a front-end JavaScript library used for building single-page and mobile applications. The React library boasts of three main features:
 
-- Declarative: UIs are designed using React components. Declarative programming paradigm expresses the logic of computation without describing the control flow. React provides efficient algorithms for updating and rendering the right components upon change.
-- Component-Based: Build encapsulated components with their own state. These are later composed to make complex UIs.
-- Re-Usability: The React library enables components to be re-used across many pages. This enables faster and efficient development.
+- **Declarative:** UIs are designed using React components. Declarative programming paradigm expresses the logic of computation without describing the control flow. React provides efficient algorithms for updating and rendering the right components upon change.
+- **Component-Based:** Build encapsulated components with their own state. These are later composed to make complex UIs.
+- **Re-Usability:** The React library enables components to be re-used across many pages. This enables faster and efficient development.
 
 ### What are we building today?
 
-The aim of this article is to build a simple interface using React. We initially fetch a list of e-mails from an API, and display the list. On clicking on an email, the respective email body is displayed. We also add various functionalities such as marking the e-mail as favourite, filtering the e-mails by read, unread and favourite categories.
+The aim of this article is to build a simple interface using React. We initially fetch a list of e-mails from an API, and display the list. On clicking on an email, the respective email body is displayed. We also add various functionalities, such as marking the e-mail as favorite and filtering the e-mail list by read, unread, and favorite categories.
 
-Going one step forward, we will also implement session persistence using local storage. This way, when we reload the state is preserved.
+Going one step further, we will also implement session persistence using local storage. This way, when we reload, the state is preserved.
 
 <!-- talk about optimization as well -->
 
@@ -38,28 +38,26 @@ Going one step forward, we will also implement session persistence using local s
 
 #### Prerequisites
 
-- Any Code Editor: (We use VSCode in this article)
-- npm : https://www.npmjs.com/get-npm
-- create-react-app: https://www.npmjs.com/package/create-react-app
+- Code Editor: (We use VSCode in this article)
+- [npm](https://www.npmjs.com/get-npm)
+- [create-react-app](https://www.npmjs.com/package/create-react-app)
 
-We wont be covering the installation for the above files. The links mentioned above are self explanatory.
+We wont be covering the installation for the above files. The links mentioned above are self-explanatory.
 
 ### Setting up API on localhost
-For the project, we need to make API calls to get the list of emails and email body. Thus, lets set that up . We will be using *json-server* package. This
+For the project, we need to make API calls to get the list of emails and email body. To set that up we will be using **json-server** package:
 
 ```
 npm install -g json-server
 ```
 
-The single line command installs the required package. -g denotes that the following package is installed globally.
+The single line command above installs the required package. `-g` denotes that the package is installed globally.
 
-Our first JSON file consists of 15 emails. We will use My JSON Server, a hosted service that provides fake online REST APIs for free.
-
-The link for the hosted service is https://my-json-server.typicode.com/lalith1403/jsonemaillist/list
+Our first JSON file consists of 15 emails. We will use [My JSON Server](https://my-json-server.typicode.com/lalith1403/jsonemaillist/list), a hosted service that provides fake online REST APIs for free.
 
 The other API of interest is fetching the email body given the email id. Online hosting services have various bottlenecks when it comes to content length. Thus, let's use local hosting to get the data.
 
-The email body JSON file is as follows. Paste the following code into a file called *db.json*. Again *db.json* is a naming convention used.
+The email body JSON file is as follows. Paste the following code into a file called `db.json`.
 
 ``` json
 {
@@ -135,36 +133,38 @@ The email body JSON file is as follows. Paste the following code into a file cal
 json-server --watch db.json
 ```
 
-If you get an error, do check if **npm** has been added to environment variables. That should be a quick fix. Add the following to your **PATH** environment variable: C:\Users\YOUR_NAME\AppData\Roaming\npm
+If you get an error, check if **npm** has been added to environment variables. That should be a quick fix. Add the following to your **PATH** environment variable: `C:\Users\YOUR_NAME\AppData\Roaming\npm`
 
-Once we have the server running, we can check via Postman or just go to http://localhost:3000/emailbody. To get a specific email body, we can send the *id* as a parameter. The url is modified as follows: http://localhost:3000/emailbody?id=1. This returns the first email body.
+Once we have the server running, we can check via Postman or just go to http://localhost:3000/emailbody. To get a specific email body, we can send the `id` as a parameter.
+
+To do this, modify the url as follows: http://localhost:3000/emailbody?id=1. This returns the body of the email with the id of 1.
 
 ### React Lifecycle Methods
 
-The react lifecycle methods signal the series of events a component goes through. The various lifecycle methods are
+The React lifecycle methods signal the series of events that a component goes through. The various lifecycle methods are:
 1. render()
 2. componentDidMount()
 3. componentDidUpdate()
 4. componentWillUnmount()
 
-Majority of the times, the above mentioned lifecycle methods are used. There are few more lifecycle methods that are rarely used.
+The above mentioned lifecycle methods are used most often. There are a few more lifecycle methods that are rarely used, including:
 1. shouldComponentUpdate()
 2. getSnapshotBeforeUpdate()
 
-[![Lifecycle Methods](https://i2.wp.com/programmingwithmosh.com/wp-content/uploads/2018/10/Screen-Shot-2018-10-31-at-1.44.28-PM.png?ssl=1)](LifecycleMethods)   
-Source:[ programmingwithmosh.com](https://programmingwithmosh.com/javascript/react-lifecycle-methods/)
+![Lifecycle Methods](/engineering-education/build-an-outlook-clone-using-react/Lifecycle-Methods.png)<br>
+*Source:[programmingwithmosh.com](https://programmingwithmosh.com/javascript/react-lifecycle-methods/)*
 
 ### Code
 
-Alrighty, we first begin with creating a React project, using create-react-app package. Open a new terminal of your choice and execute the following commands.  
+We first begin with creating a React project using the **create-react-app** package. Open a new terminal of your choice and execute the following commands.  
 
-```terminal
+```bash
 npx create-react-app outlookclonereact
 cd outlookclonereact
 npm start
 ```
 
-The folder structure should look like this.
+The folder structure should look like this:
 
 ```
 outlookclonereact
@@ -189,9 +189,9 @@ outlookclonereact
     └── serviceWorker.js
 ```
 
-We will be working with class based components in this article. The next article will talk about using Hooks for the same. A study of the two articles is enough to get a working understanding of React. Many examples that we find on GitHub are in class based components. Having the ability to use React Hooks in place of class based components is a useful skill to have.
+We will be working with class-based components in this article. (My next article will talk about using Hooks for the same.) A study of the two articles is enough to get a working understanding of React. Many examples that we find on GitHub are in class-based components. Having the ability to use React Hooks in place of class-based components is a useful skill to have.
 
-Let us create a folder called components in the root folder. The updated directory looks like this. Add the components *Email.js*, *EmailList.js*, *EmailBody.js*,*SearchBox.js*,*Scroll.js*.
+Let's create a folder called components in the root folder. The updated directory looks like this. Add the components **`Email.js`**, **`EmailList.js`**, **`EmailBody.js`**, **`SearchBox.js`**,**`Scroll.js`**.
 
 ```
 outlookclonereact
@@ -221,14 +221,14 @@ outlookclonereact
     ├── logo.svg
     └── serviceWorker.js
 ```
-Let us start with the file *App.js*. The first logical step is to get the emails from the API. We use *fetch* provided by JavaScript for this purpose. *fetch* returns a promise which resolves with an object of built-in Response class as soon as the server responds with headers.
 
-React is modular and powerful to create simple yet elaborate applications. We will create a component called *EmailList* that receieves the list of emails from the API in *App.js*. The *EmailList* component sends over each email to the *Email* component. *Email* component displays the contents of the email. We have another API for accessing the body of the email.
+##### App.js
+Let's start with the file `App.js`. The first logical step is to get the emails from the API. We use *fetch* provided by JavaScript for this purpose. *fetch* returns a promise which resolves with an object of built-in Response class as soon as the server responds with headers.
+
+React is modular and powerful to create simple yet elaborate applications. The component that we just created called `EmailList.js` receives the list of emails from the API in `App.js`. It then sends over each email to the `Email.js` component, which displays the contents of the email. We have another API for accessing the body of the email.
 
 On an *onClick* event, the id of the email is saved in the state. This id is used to fetch the email body from the API. We will look into this in depth at a later stage.
-
-##### *App.js*
-```JSX
+```javascript
 import React, { Component } from 'react';
 import './App.css';
 import SearchBox from './components/SearchBox'
@@ -244,7 +244,6 @@ class App extends Component {
       dualPanel: false
     }
   }
-
 
 onSearchChange = (event) => {
   this.setState({
@@ -309,7 +308,7 @@ render() {
 
 export default App;
 ```
-##### *App.css*
+##### App.css
 ```css
 .dualpanel{
     /* width: 30vw; */
@@ -319,12 +318,12 @@ export default App;
 }
 
 ```
-Let us create the child components. Let us begin with Emaillist component. It is a convention to start components with a capital letter.
 
-Consider *EmailList.js*. We send the component *email* as props. Props are selective pieces of information that is passed on from parent to child.
+##### EmailList.js
+Let's create the child components, beginning with the `Emaillist.js` component. (Note: It is a convention to start components with a capital letter.)
 
-##### *EmailList.js*
-```JSX
+In `EmailList.js`, we send the component `email` as props. Props are selective pieces of information that are passed on from parent to child.
+```javascript
 import React from 'react';
 import Email from './Email'
 
@@ -360,10 +359,12 @@ const EmailList = ({ email }) => {
 export default EmailList
 
 ```
-The map functionality is used to perform the same operation on various emails in the list. Each email in the list is sent to the *Email* component. The *Email* component is resposible for displaying the details related to the email. The next component of interest is the *Scroll* component. This is a very handy and useful component to be used to control display height.
 
-##### *Scroll.js*
-```JSX
+##### Scroll.js
+The map functionality is used to perform the same operation on various emails in the list. Each email in the list is sent to the `Email.js` component, which is resposible for displaying the details related to the email.
+
+The next component of interest is the `Scroll.js` component. This is a very handy and useful component that we will use to control display height.
+```javascript
 import React from 'react';
 
 const Scroll = (props) => {
@@ -377,10 +378,9 @@ const Scroll = (props) => {
 export default Scroll
 ```
 
-To get comfortable with components, let us create one more component, that is, the search box. We can always include it in the code itself. This is one case where we are demonstrating separation of concerns between the components. The *SearchBox* component is defined as follows. It takes in a function searchChange as a parameter which is discussed at a later stage.
-
-##### *SearchBox.js*
-```jsx
+##### SearchBox.js
+To get even more comfortable with components, let's create one more for the search box. Though, we could include it in the code itself, this is a case where we are demonstrating separation of concerns between the components. The `SearchBox.js` component is defined as follows. It takes in a function `searchChange` as a parameter which is discussed at a later stage.
+```javascript
 import React from 'react'
 
 const SearchBox = ({ searchChange }) => {
@@ -393,10 +393,9 @@ const SearchBox = ({ searchChange }) => {
 export default SearchBox;
 ```
 
-The final component that we need is an EmailBody component, which shows us the body of the email. Let us define that as well. The body that we get from the db.json file has html tags in it. We use dangerouslySetInnerHTML property of div tag and set the html content as the body.
-
-##### *Email.js*
-```jsx
+##### EmailBody.js
+The final component that we need is an `EmailBody.js` component, which shows us the body of the email. The body that we get from the `db.json` file has html tags in it. We use `dangerouslySetInnerHTML` property of div tag to set the html content as the body.
+```javascript
 import React from 'react'
 
 const Email = ({ name, email, subject, shortDesc, date, id }) => {
@@ -437,22 +436,22 @@ const EmailBody = ({ body }) => {
 export default EmailBody
 ```
 
+### Passing Props and Implementing CallBack Functions
 Having defined all the components required, we need to ensure interoperability amongst components.
 
-### Passing Props and Implementing CallBack Functions
-Let us modify the *App.js* component. We need to ensure the following changes are made.
+To do this, we will modify the `App.js` component with the following changes:
 
-1. Obtain and store the current id, and other details related to the email with the corresponding id. Details to be stored in the state are
-   1. current id
-   2. current sender email ID
-   3. current subject
-   4. current date
-2. Enable operations like mark as favourite, and filter operations. We need to maintain lists to store emails after the filter operations are performed. Additional lists are required to store the list of read and favourited emails. We need to store the following in the state.   
-   1. fav
-   2. read
+1. Obtain and store the current id, and other details related to the email with the corresponding id. Details to be stored in the state are:
+   - current id
+   - current sender email ID
+   - current subject
+   - current date
+2. Enable operations like mark as favorite and filter operations. We need to maintain lists to store emails after the filter operations are performed. Additional lists are required to store the list of read and favorited emails. We need to store the following in the state:   
+   - fav
+   - read
 
-Let us go through each of the functionalities. The first function is processing the date parameter in the JSON. We can use various packages like moment.js to obtain the processed date in the required format. Since we are using only react, we are going to use vanilla JavaScript to get the same. The function processDate does the same. It returns the date in the format DD-MM-YYYY HH:MM AM/PM.
-```jsx
+Let's go through each of the functionalities. The first function is processing the date parameter in the JSON. We can use various packages like [moment.js](https://momentjs.com/) to obtain the processed date in the required format. Since we are using only React, we are going to use vanilla JavaScript to get the same. The function `processDate()` does the same. It returns the date in the format DD-MM-YYYY HH:MM AM/PM.
+```javascript
 
       processDate = date => {
         let formattedDate = new Date(date);
@@ -466,9 +465,9 @@ Let us go through each of the functionalities. The first function is processing 
       }
 ```
 
-The next function is updating the parameter searchField in the state object. searchField is updated when the input to the text changes. The searchField is used to enable search functionality. Any changes in the DOM are captured through events. the input to the function onSearchChange is the text change event. When it changes, the searchField is set to the value of the event.  This is an example of a callback function.
+The next function is updating the parameter `searchField` in the state object. `searchField` is updated when the input to the text changes and is used to enable search functionality. Any changes in the DOM are captured through events. The input to the function `onSearchChange()` is the text change event. When it changes, the `searchField` is set to the value of the event. This is an example of a **callback function**.
 
-```jsx
+```javascript
    onSearchChange = (event) => {
         this.setState({
           searchField: event.target.value,
@@ -476,23 +475,23 @@ The next function is updating the parameter searchField in the state object. sea
       }
 ```
 
-Now, let us add the functionalities to add emails to read and favourite lists. We enable this via two functions, findEmailId and markAsFav.
+Now, let's add the functionalities to add emails to read and favorite lists. To do this, we enable this via two functions, `findEmailId()` and `markAsFav()`.
 
-findEmailId is used for the following:
+**`findEmailId()`** is used for the following:
 
- *Find the current email ID, and fetching the body. Setting the parameters currentDate, currentSubject, currentId and currentSender. The email that has been clicked, is by default marked as **read**. Therefore, we add the email to the read list, if it is the first time it is being read.*
+ *Find the current email ID, and fetch the body. Set the parameters currentDate, currentSubject, currentId and currentSender. The email that has been clicked, is by default marked as **read**. Therefore, we add the email to the read list, if it is the first time it is being read.*
 
-markAsFav uses the same logic as adding emails to the read list. In this case, we use the fav list to determine if an email is marked as favourite or not.
+**`markAsFav()`** uses the same logic as adding emails to the read list. In this case, we use the fav list to determine if an email is marked as favorite or not.
 
-#### Where are we getting the id in findEmailId and when is markAsFav function called?
+#### Where are we getting the id in `findEmailId()` and when is the `markAsFav()` function called?
 
 This is an important concept. The communication between parent and child components is straightforward. We can send them as props. But how do we update the props and get the information in the parent component?
 
 There are instances where changes in the children components have to be reflected in the parent component.
 
- For this purpose, we use callback functions. findEmailId is a callback function sent as a prop to the EmailList component. It is redirected over to Email component. In the Email component, we call the onClick function, when there is an onClick event.    
+For this purpose, we use callback functions. `findEmailId()` is a callback function sent as a prop to the `EmailList.js` component. It is redirected over to `Email.js` component. In the `Email.js` component, we call the `onClick` function when there is an onClick event.    
 
-```jsx
+```javascript
       findEmailId = (id) => {
         fetch(`http://localhost:3000/emailbody?id=${id}`)
           .then(data => data.json())
@@ -524,8 +523,8 @@ There are instances where changes in the children components have to be reflecte
 ```
 The updated files are given below.
 
-##### *App.js*
-```jsx
+##### App.js
+```javascript
     import React, { Component } from 'react';
     import './App.css';
     import SearchBox from './components/SearchBox'
@@ -664,10 +663,8 @@ The updated files are given below.
 
 ```
 
-The EmailList component modified as follows:
-
-##### *EmailList.js*
-```jsx
+##### EmailList.js
+```javascript
 import React from 'react';
 import Email from './Email'
 
@@ -708,10 +705,11 @@ const EmailList = ({ email, onClick, read, markfav, currentCard }) => {
 export default EmailList
 
 ```
-To style the emails according to their read/unread status, we pass the read list as a prop from *App.js* to *Email.js*. For styling, we use nested ternary operators to check if the current email is read or not.  File *Email.css* and *EmailBody.css* are mentioned below. Don't worry if you get an error. Fill in the file with the css properties given below.
 
-##### *Email.js*:
-```jsx
+##### Email.js
+To style the emails according to their read/unread status, we pass the read list as a prop from `App.js` to `Email.js`. For styling, we use nested ternary operators to check if the current email is read or not. `Email.css` and `EmailBody.css` are mentioned below. Don't worry if you get an error. Fill in the file with the css properties given below.
+
+```javascript
 import React from 'react'
 import './css/Email.css'
 
@@ -745,9 +743,9 @@ export default Email;
 
 ```
 
-##### *EmailBody.js*
+##### EmailBody.js
 
-```jsx
+```javascript
 import React from 'react'
 import './css/EmailBody.css'
 
@@ -779,9 +777,9 @@ export default EmailBody
 ```
 ### Styling
 
-Since, this is a react tutorial, we will not be diving deep into the CSS styling. We have used inline styles for the purposes of better readability. But, it's always a good practice to have a different CSS file, or use the library style-components. It optimizes the performance of the web page. We will use styled-components in the next tutorial.
+Since, this is a React tutorial, we will not be diving deep into the CSS styling. We have used inline styles for the purposes of better readability. But, it's always a good practice to have a separate CSS file, or use the library styled-components, which optimizes the performance of the web page. We will use styled-components in the next tutorial.
 
-##### *index.css*
+##### index.css
 ```css
 body {
   margin: 0;
@@ -799,9 +797,7 @@ code {
     monospace;
 }
 ```
-*app.css*
-
-
+##### app.css
 ```css
 .dualpanel{
     /* width: 30vw; */
@@ -832,7 +828,7 @@ code {
 
 Create a new folder called css inside the components directory. Include the following two files there.
 
-##### *Email.css*
+##### Email.css
 ```css
 span {
   font-weight: lighter;
@@ -892,7 +888,7 @@ button {
 
 ```
 
-##### *EmailBody.css*
+##### EmailBody.css
 
 ```css
 .upperbody {
@@ -932,18 +928,18 @@ button {
 
 ### Adding Filtering Functionality
 
-We filter the emails on the basis of whether it has been read, unread, marked as favourite. Additionally, search is also a filter operation.
+We filter the emails on the basis of whether it has been read, unread, marked as favorite. Additionally, search is also a filter operation.
 
 Let us maintain a few state variables for identifying the current operation.
-The state variables are
+The state variables are:
 1. filteredBySearch
 2. filteredByFav
 3. filteredByRead
 4. filteredByUnread
 
-Let us add the following functionality into the codebase.
+Add the following functionality into the codebase:
 
-```jsx
+```javascript
 import React, { Component } from 'react';
 import './App.css';
 import SearchBox from './components/SearchBox'
@@ -1161,11 +1157,11 @@ export default App;
 
 ### Session Persistence
 
-Try reloading the above web page. You will observe that all the read emails and favourited emails are reset. Every email is unread. Therefore, we need to store the state in the local storage. localstorage is a finite amount of memory provided by the browser. Therefore, we need to be cautious while using localstorage.
+Try reloading the above web page. You will observe that all the read emails and favorited emails are reset. Every email is unread. Therefore, we need to store the state in the local storage. `localstorage` is a finite amount of memory provided by the browser. Therefore, we need to be cautious when using localstorage.
 
-Let's save the state in the local storage. We need to add the following functions.
+To save the state in the local storage, add the following functions:
 
-```jsx
+```javascript
 hydrateStateWithLocalStorage() {
         // for all items in state
         for (let key in this.state) {
@@ -1187,7 +1183,7 @@ hydrateStateWithLocalStorage() {
       }
 ```
 
-```jsx
+```javascript
 saveStateToLocalStorage() {
         // for every item in React state
         for (let key in this.state) {
@@ -1197,9 +1193,9 @@ saveStateToLocalStorage() {
       }
 ```
 
-We need to update the componentDidMount lifecycle method and add componentWillUnmount to store the state upon exit.
+We need to update the `componentDidMount` lifecycle method and add `componentWillUnmount` to store the state upon exit.
 
-```jsx
+```javascript
       componentDidMount() {
         this.hydrateStateWithLocalStorage();
         window.addEventListener(
@@ -1224,9 +1220,9 @@ We need to update the componentDidMount lifecycle method and add componentWillUn
       }
 ```
 
-The final App.js file is given below.
+##### App.js
 
-##### *App.js*
+The final `App.js` file is given below.
 
 ```jsx
     import React, { Component } from 'react';
@@ -1484,4 +1480,4 @@ The final App.js file is given below.
 ```
 
 ### Conclusion
-This marks the end of the very long article. We have built a beautiful looking, yet simple interface. In the next article, we optimize the entire project using hooks. Moreover we use styled-components for styling.
+This marks the end of the very long article. We have built a beautiful, yet simple interface. In the next article, we will optimize the entire project using React Hooks and will use styled-components for styling.
