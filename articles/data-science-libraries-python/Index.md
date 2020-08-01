@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/data-science-libraries-python/hero.jpg
     alt: hero image visual data science python
 ---
-Before Jumping directly to the data science Libraries. If you are a newbie then let’s learn about what is data science before getting started. If you already know about this you can skip this part.
+Before Jumping directly to the data science Libraries. If you are a newbie then let’s learn what data science is before getting started. If you already know about this you can skip this part.
 <!--more-->
 
 ### Data Science
