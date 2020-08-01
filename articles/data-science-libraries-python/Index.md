@@ -18,7 +18,7 @@ Before Jumping directly to the data science Libraries. If you are a newbie then 
 <!--more-->
 
 ### Data Science
-Data science is a multidisciplinary field focused on finding actionable insights from large sets of raw and structured data. The field tries to find answers to the things we don’t know. Data science experts use several different techniques to get answers, incorporating computer science, predictive analytics, statistics, and machine learning to parse through massive datasets to establish solutions to problems that haven’t been thought of yet.
+Data science is a multidisciplinary field focused on finding actionable insights from large sets of raw and structured data. Data science experts use several different techniques to get answers, incorporating computer science, predictive analytics, statistics, and machine learning to process massive datasets to find solutions to problems that haven’t been thought of yet.
 
 
 ### Why is Python so popular when people start their coding Journey?
