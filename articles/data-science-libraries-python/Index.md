@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 slug: data-science-libraries-python
-title: Popular Data Science Libraries in python
-description: This is an article about the popular data science libraries in python, and how developers are using them for analysis.
+title: Popular Data Science Libraries used in python
+description: This is an article about the popular data science libraries used in python, and how developers are using them for analysis.
 author: richu-thomas
 date: 2020-07-14T00:00:00-07:00
 topics: [security]
@@ -14,24 +14,23 @@ images:
   - url: /engineering-education/data-science-libraries-python/hero.jpg
     alt: hero image visual data science python
 ---
-Before Jumping directly to the data science Libraries. If you are a newbie then let’s learn what data science is before getting started. If you already know about this you can skip this part.
 <!--more-->
 
 ### Data Science
-Data science is a multidisciplinary field focused on finding actionable insights from large sets of raw and structured data. Data science experts use several different techniques to get answers, incorporating computer science, predictive analytics, statistics, and machine learning to process massive datasets to find solutions to problems that haven’t been thought of yet.
+Data science is a multidisciplinary field focused on finding actionable insights from lar
+ge sets of raw and structured data. Data science experts use several different techniques to get answers, incorporating computer science, predictive analytics, statistics, and machine learning to process massive datasets to find solutions to problems that haven’t been thought of yet.
 
 
 ### Why is Python so popular when people start their coding Journey?
 A wide set of tools are built for Python developers to carry out this processing with dedicated libraries for each step. These libraries come with powerful statistical and numerical libraries such as Pandas, Numpy, Matplotlib, SciPy, scikit-learn, etc. and advanced deep learning libraries such as Tensorflow, PyBrain, etc.
 Moreover, Python has emerged as the default language for AI and ML, as data science has come to an intersection with Artificial Intelligence.  This interpreter-based high-level programming language is not only easy to use, but it also helps data scientists implement solutions and follow standards.
 
-Python is easy to learn and is the first language taught in many Schools and Colleges to students. The Python programming language is closer to human language than statistical programming languages like the [R Language](https://www.r-project.org/). Since Pyhton is a general-purpose language it can be used in web development as well.
-Popular frameworks like Django and Flask and R are somewhat difficult to learn for people who are beginning to start their programming career since it is more inclined to the scientific community. But there is a catch, Python is a slower programming language in comparison with C++ which means more work for the computer.
+Python is easy to learn and is the first language taught in many Schools and Colleges to students. The Python programming language is closer to human language than statistical programming languages like the [R Language](https://www.r-project.org/). Since Python is a general-purpose language it can be used for web development as well with the help of popular frameworks like Django and Flask.The Language R are somewhat difficult to learn for people who are beginning to start their programming career since it is more inclined to the scientific community.
 
 Next, we will be talking about  Numpy, Scipy, Matplotlib, and Pandas
 
 ### NumPy
-[Numpy](https://numpy.org/) is the foundation library for most of the scientific computing in Python, and several other libraries are dependent on NumPy arrays as their basic inputs and outputs. It also provides routines that allow developers to perform advanced mathematical and statistical functions on multidimensional arrays and matrices with very few lines of code. The core functionality of NumPy is its ‘ndarray’, or n-dimensional array data structure. These arrays are typed and must match all the elements of the array to be of the same type.
+[Numpy](https://numpy.org/) is the foundation library for most of the scientific computing used in Python, and several other libraries are dependent on NumPy arrays as their basic inputs and outputs. It also provides routines that allow developers to perform advanced mathematical and statistical functions on multidimensional arrays and matrices with very few lines of code. The core functionality of NumPy is its ‘ndarray’, or n-dimensional array data structure. These arrays are typed and must match all the elements of the array to be of the same type.
 
 ```python
 # Python program using NumPy for some basic mathematical operations
