@@ -22,7 +22,7 @@ Data science is a multidisciplinary field focused on finding actionable insights
 
 
 ### Why is Python so popular when people start their coding Journey?
-Python provides developers with all the necessary tools to carry out this process with dedicated libraries for each step. It comes with powerful statistical and numerical libraries such as Pandas, Numpy, Matplotlib, SciPy, scikit-learn, etc. and advanced deep learning libraries such as Tensorflow, PyBrain, etc.
+A wide set of tools are built for Python developers to carry out this processing with dedicated libraries for each step. These libraries come with powerful statistical and numerical libraries such as Pandas, Numpy, Matplotlib, SciPy, scikit-learn, etc. and advanced deep learning libraries such as Tensorflow, PyBrain, etc.
 Moreover, Python has emerged as the default language for AI and ML, as data science has come to an intersection with Artificial Intelligence.  This interpreter-based high-level programming language is not only easy to use, but it also helps data scientists implement solutions and follow standards.
 
 Python is easy to learn and is the first language taught in many Schools and Colleges to students. The Python programming language is closer to human language than statistical programming languages like the [R Language](https://www.r-project.org/). Since Pyhton is a general-purpose language it can be used in web development as well.
