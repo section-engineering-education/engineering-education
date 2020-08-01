@@ -66,7 +66,7 @@ print(np.dot(x, y))
  ```
 
 ### Scipy
-[Scipy](https://www.scipy.org/) is a python library that is useful in solving many mathematical equations and algorithms. It is designed on the top of Numpy library that gives more of an option when finding scientific mathematical formulas like Matrix Rank, Inverse, polynomial equations, LU Decomposition, etc. Using its high-level functions will significantly reduce the complexity of the code and it also helps in better analyzing the data. It has many user-friendly, efficient and easy-to-use functions that help to solve problems like numerical integration, interpolation, optimization, linear algebra and statistics.
+[Scipy](https://www.scipy.org/) is a python library useful for solving many mathematical equations and algorithms. It is designed on top of Numpy adding options for solving scientific mathematical formulas like Matrix Rank, Inverse, polynomial equations, LU Decomposition, etc. Using its high-level functions will significantly reduce the complexity of the code easing implementation during data analysis. It has many user-friendly, efficient and easy-to-use functions that help to solve problems like numerical integration, interpolation, optimization, linear algebra and statistics.
 
 ```python
 # Python script using Scipy for calculating the determinant
