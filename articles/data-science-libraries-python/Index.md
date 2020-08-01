@@ -25,7 +25,7 @@ Data science is a multidisciplinary field focused on finding actionable insights
 Python provides developers with all the necessary tools to carry out this process with dedicated libraries for each step. It comes with powerful statistical and numerical libraries such as Pandas, Numpy, Matplotlib, SciPy, scikit-learn, etc. and advanced deep learning libraries such as Tensorflow, PyBrain, etc.
 Moreover, Python has emerged as the default language for AI and ML, as data science has come to an intersection with Artificial Intelligence.  This interpreter-based high-level programming language is not only easy to use, but it also helps data scientists implement solutions and follow standards.
 
-Python is easy to learn and it is often the first language taught in many Schools and Colleges to students who are beginning their journey in Programming. The language is close to what humans understand in comparison with [R Language](https://www.r-project.org/). Since it is a general-purpose language it can be used in web development.
+Python is easy to learn and is the first language taught in many Schools and Colleges to students. The Python programming language is closer to human language than statistical programming languages like the [R Language](https://www.r-project.org/). Since Pyhton is a general-purpose language it can be used in web development as well.
 Popular frameworks like Django and Flask and R are somewhat difficult to learn for people who are beginning to start their programming career since it is more inclined to the scientific community. But there is a catch, Python is a slower programming language in comparison with C++ which means more work for the computer.
 
 Next, we will be talking about  Numpy, Scipy, Matplotlib, and Pandas
