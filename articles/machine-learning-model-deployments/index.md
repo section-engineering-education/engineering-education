@@ -1,25 +1,39 @@
-# Deploying Machine learning Models into Production? A Simple Guide Wth Examples.
+---
+layout: engineering-education
+status: publish
+published: true
+slug: machine-learning-model-deployments
+title: Deploying Machine learning Models into Production
+description: How to deploy your Machine learning model into production environment with the help of Django Framework - focus towards making an API of your machine learning model so that everyone can access your model.
+author: priyank-kumar
+date: 2020-08-01T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/machine-learning-model-deployments/hero.jpg
+    alt: machine learning image example
+
+---
 The demand for Machine Learning (ML) applications is growing. Many resources show how to train ML algorithms. However, the ML algorithms work in two phases:
+The *training phase* - in which the ML algorithm is trained based on historical data,
+The *inference phase* - the ML algorithm is used for computing predictions on new data with unknown outcomes.
+The benefits for business are in the interference phase when ML algorithms provide information before it is known. There is a technological challenge on how to provide ML algorithms for inference into production systems.
+<!--more-->
 
-the training phase - in which the ML algorithm is trained based on historical data,
-
-the inference phase - the ML algorithm is used for computing predictions on new data with unknown outcomes.
-
-The benefits for business are in the interference phase when ML algorithms provide information before it is known. There is a technological challenge on how to provide ML algorithms for inference into production systems. 
-
-Today We will focus directly on Deploying Machine Learning models in production with the help of Rest API's. If you want to learn how Rest Api's work you can view this [Article](https://www.section.io/engineering-education/rest-api/)
-
-We Will foucs on Python's Django Rest Framework to Deploy ML Models as REST API.
+Today We will focus directly on Deploying Machine Learning models in production with the help of Rest API's. If you want to learn how Rest Api's work you can view this [article](https://www.section.io/engineering-education/rest-api/)
+We will focus on Python's Django Rest Framework to Deploy ML Models as REST API.
 
 ### How Django Rest Framework works?
-## Installation
+#### Installation
 
-First We need to install Django Rest Framework in our system. To install DRF you can use Pip.
+First we need to install Django Rest Framework in our system. To install DRF you can use Pip.
 ```
 pip install djangorestframework
 pip install django
 ```
 Next, let’s start a new Django project:
+
 ```
 django-admin startproject digits
 cd digits
@@ -33,9 +47,9 @@ If you open the directory you are able to view the folder structure like this:-
 
 ![folder img](/engineering-education/machine-learning-model-deployments/folder-structure.png)
 
-Now Before Moving Deep Into Django We first have to create our Machine Learning Model. 
+Now before moving deep into Django we first have to create our Machine Learning model.
 
-We are Picking Digits Classifier to Train our model for the training data. Follow The below Steps to train you ML Model
+We are picking digits classifier to train our model for the training data. Follow the steps below to train your ML model:
 
 ```
 # coding: utf-8
@@ -134,7 +148,7 @@ def summarize_performance(scores):
     # box and whisker plots of results
     pyplot.boxplot(scores)
     pyplot.show()
- 
+
 # Model is evaluated and now saving the model.
 def run_test_harness():
     # load dataset
@@ -160,20 +174,22 @@ pyplot.show()
 run_test_harness()
 
 ```
-The Model is trained with the help of Neural Networks and there are a lot more tutorials available. You can follow [This link](https://pathmind.com/wiki/neural-network)
+The model is trained with the help of Neural Networks and there are a lot more tutorials available. You can follow [this link](https://pathmind.com/wiki/neural-network)
 
-Now We have our Model Trained. But this model is can be used by You only and it will work on your system right now as we are not able to deploy it. So we have to make it accesible to everyone.
+Now we have our model trained. But this model can be used by only you and it will work on your system right now as we are not able to deploy it. So we have to make it accessible to everyone.
 
-1. We have to Save Our Model. But How? 
-If you notice __Carefully__ the function  run_test_harness we have written a line there to save our model.
+1. We have to save our model. But how?
+If you notice __Carefully__ the function `run_test_harness` we have written a line there to save our model.
+
 ```
 model.save('final_model.h5')
-``` 
-You have to save the model in h5 format. As it can be easily accessed by the Python Keras  Library.
+```
+You have to save the model in h5 format. As it can be easily accessed by the Python Keras Library.
 
-2. You will notice that there is a file saved in the same directory with name final_model.h5, This is your trained model and you can use it for your Predictions.             
+2. You will notice that there is a file saved in the same directory with name `final_model.h5`, This is your trained model and you can use it for your Predictions.             
 
-3. Now to Let our model work For test or Validation Images We can just took a random image and test it with our model. You can follow the code below.
+3. Now to let our model work for test or validation images we can just take a random image and test it with our model. You can follow the code below.
+
 ```
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
@@ -203,21 +219,22 @@ def run_example(location):
 	return {'Predictions': digit[0]}
 
 ```
-This file returs a Dictionary whenever you are passing an Image to Predict.
 
+This file returns a Dictionary whenever you are passing an Image to Predict.
 
-Our Model is now Trained and we are able to Predict from it as well.
+Our model is now trained and we are able to predict from it as well.
 
-Follow The below Steps in order to let your model works as a Rest Api.
-1. Copy these 3 file ( your_mode.py, your_prediction_from_model.py and final_model.h5) and paste these file inside the folder scripts we have created previously in Django.
+Follow The steps below in order to let your model works as a Rest Api.
+1. Copy these 3 files ( your_mode.py, your_prediction_from_model.py and final_model.h5) and paste these files inside the folder scripts we have created previously in Django.
 
 ![scripts img](/engineering-education/machine-learning-model-deployments/scripts-folder.png)
 
-2. Now open your digits folder and go inside setting.py file. You can find you file with the help of below image.
+2. Now open your digits folder and go inside the `setting.py` file. You can find your file with the help of the image below.
 
 ![settings img](/engineering-education/machine-learning-model-deployments/settings.png)
 
-3. Add your apps in installed apps so that django can recognized your apps.
+3. Add your apps into `installed apps` so that Django can recognized your apps.
+
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -230,7 +247,8 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 ```
-4. Go to Your App and make an empty file name as serializer.py and add following Code to your file:-
+
+4. Go to your app and make an empty file name as `serializer.py` and add following code to your file:
 
 ![app img](/engineering-education/machine-learning-model-deployments/app.png)
 
@@ -244,7 +262,7 @@ class FileSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 ```
-5. Open your models.py file and add the following code. We are adding a filefield so that we can upload an image and our model can predict from it.
+5. Open your `models.py` file and add the following code. We are adding a file field so that we can upload an image and our model can predict from it.
 
 ```
 from django.db import models
@@ -253,7 +271,8 @@ from django.db import models
 class File(models.Model):
     file = models.FileField(blank=False, null=False)
 ```
-6. Open app.py and add the code below:-
+6. Open `app.py` and add the code below:
+
 ```
 from django.apps import AppConfig
 
@@ -262,7 +281,7 @@ class DigitappConfig(AppConfig):
     name = 'digitapp'
 
 ```
-7. We now have to open our views.py file. We will call all our above files with views and from views the code will goto our serializer and then models. We will add below code to let our views works for us.
+7. We now have to open our `views.py` file. We will call all our above files with views and from views the code will goto our serializer and then models. We will add the code below to let our views works for us.
 
 ```
 from rest_framework.views import APIView
@@ -293,7 +312,7 @@ class FileView(APIView):
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 ```
-8. Now in order to access it on the web we have add a url in our urls.py file which is inside digit folder. Open urls.py file and add the following urls to it.
+8. Now in order to access it on the web we have add a URL in our `urls.py` file which is inside the digit folder. Open the `urls.py` file and add the following URLs to it.
 ```
 from django.contrib import admin
 from django.urls import path
@@ -310,13 +329,14 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 ```
-Now, Your code will first come to your urls.py then it will be routed to views.py then serializer.py. In Your views.py file you are calling your "make-prediction-from-model.py" file and the run_example function will execute from there.
+Now, your code will first come to your `urls.py` then it will be routed to `views.py` then `serializer.py`. In your `views.py` file you are calling your "make-prediction-from-model.py" file and the run_example function will execute from there.
 
-For testing your model you can take the below image.
+To test your model you can refer to the image below.
 
 ![sample img](/engineering-education/machine-learning-model-deployments/sample-image.png)
 s
-Now we have to run our model. Run by entering below command.
+Now we have to run our model. Run by entering command below.
+
 ```
 python manage.py runserver
 ```
@@ -324,17 +344,18 @@ Open http://127.0.0.1:8000/digitRecogniser/ in your browser.
 
 ![django img](/engineering-education/machine-learning-model-deployments/django.png)
 
-Now open your Postman. You can [Download](https://www.postman.com/) it from here. Postman is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
+Now open your Postman. You can [download](https://www.postman.com/) it from here. Postman is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
 
 Click on Post and paste your url http://127.0.0.1:8000/digitRecogniser/ there.
 
-Now Click on body and then binary. Upload your sample-image.png file there and click on button send. You will get the output like this
+Now click on body and then binary. Upload your sample-image.png file there and click on the send button. You will get an output like this:
+
 ```
 {"Predictions": 7}
 ```
-Congratulation, You have deployed you Ml model. Now Just goto any server in the production environment and just push your code.
+Congratulations, you have deployed your ML model. Now, just go to any server in the production environment and push your code.
 
-### Further Reading 
+### Further Reading
 [Django](https://docs.djangoproject.com/en/3.0/)
 
 [NeuralNetworks](https://pathmind.com/wiki/neural-network)
