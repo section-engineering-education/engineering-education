@@ -6,7 +6,7 @@ slug: vlan-trunking-and-encapsulation
 title: Overview of VLAN Trunking and Encapsulation
 description: This article briefly introduces Virtual Local Area Networks(VLANs) and their requirements. It discusses VLAN trunking and VLAN encapsulation using IEEE 802.1Q standard.
 author: shreya-a-n
-date: 2020-07-26T00:00:00-12:00
+date: 2020-07-30T00:00:00-12:00
 topics: [networking]
 excerpt_separator: <!--more-->
 images:
@@ -19,14 +19,15 @@ images:
 **A [virtual LAN (VLAN)](https://en.wikipedia.org/wiki/Virtual_LAN) is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI Layer 2).** LAN stands for Local Area Network and virtual, in the name, upholds the concept of separating broadcast domains of networks logically. *A broadcast domain is a network that is logically divided such that all nodes in the network can reach each other by broadcast at the data link layer*. *VLANs function by tagging every frame with a VLAN tag and designing the network such that it takes these tags into account while performing routing and forwarding.* By assigning tags to frames one can create the appearance and functionality of a computer network that is physically on a single network but acts as if it is split between separate networks. In simple terms, VLAN segregates traffic within a network.
 
 ### What is VLAN trunking?
-There are two ways of categorising VLAN enabled ports on network devices:
+There are two ways of categorizing VLAN enabled ports on network devices:
 - Untagged or Native ports
 - Tagged or Trunk ports
 
  *A network port is a communication endpoint a device uses to send and receive traffic.*
 
-**Native ports accept traffic from a single VLAN and are hence used to link end devices like routers, servers, terminals etc.** They do not need to accommodate an additional identification tag as they are involved in exchanging traffic with a single end device. Hence the name, **untagged ports**. They are also referred to as **access ports.**
-**Trunk ports are used to pass traffic from multiple VLANs and are used to link switches.** In order to distinguish between frames from different VLANs, trunk ports add identification tags to the frames. Hence the name, **tagged ports.**
+**Native ports accept traffic from a single VLAN and are used to link end devices like routers, servers, terminals etc.** They do not need to accommodate an additional identification tag as they are involved in exchanging traffic with a single end device. Hence the name, **untagged ports**. They are also referred to as **access ports.**
+**Trunk ports are used to pass traffic from multiple VLANs and are used to link switches.** In order to distinguish between frames from different VLANs, trunk ports add identification tags to the frames.
+Hence the name, **tagged ports.**
 **A trunk is a point-to-point link between two network devices that carry more than one VLAN.**
 
 ![native-vs-trunk](/engineering-education/vlan-trunking-and-encapsulation/native-vs-trunk.jpg)
@@ -44,14 +45,14 @@ When a switch port is configured to function as a trunk port, it adds unique ide
 
 The dot1Q frame standard accommodates a VLAN tag in the original Ethernet frame. This VLAN tag is 4 bytes long and consists of the fields discussed below:
 1. **Tag Protocol ID(TPID)**: This field is used to identify the frame as IEEE 802.1q frame.  The value is set to 0x8100.
-2. **Priority(PRI)**: This field indicates frame priority level. Also called Priority Code Point(PCP). See [this](https://en.wikipedia.org/wiki/IEEE_P802.1p#Priority_levels) for priority levels.
+2. **Priority(PRI)**: This field indicates frame priority level. Also called Priority Code Point(PCP). See [this](https://en.wikipedia.org/wiki/IEEE_P802.1p#Priority_levels) link for priority levels.
 3. **Canonical Format Indicator(CFI)**: Now known as Drop Eligibility Indicator(DEI), this field along with PCP is used to indicate frames that can be dropped during congestion.
-4. **VLAN ID**: This ID is unique for each VLAN and helps in identifying which VLAN the current frame belongs to. This field is 12 bits long. Hence, 1dotQ supports 2^12 i.e 4096 unique VLANs on a single Ethernet network.
+4. **VLAN ID**: This ID is unique for each VLAN and helps in identifying which VLAN the current frame belongs to. This field is 12 bits long. Hence, 1dotQ supports 2^12 i.e. 4096 unique VLANs on a single Ethernet network.
 
 *As 802.1q encapsulation inserts an additional field into the Ethernet frame, Frame Check Sequence(FCS) is recalculated.*
 *All switches support 802.1q encapsulation.*
 
-*VLAN implementations have shown an increase in the performance, scalability and security of the entire network.* There are several reasons for using VLANs in networks, but the most prominent one is **traffic management**. As long as a Local Area Network branches out and proliferates with more and more end devices and network devices, the frequency of broadcast increases accordingly. The chances of the network getting heavily congested with data increase simultaneously.
+*VLAN implementations have shown an increase in the performance, scalability and security of the entire network.* There are several reasons for using VLANs in networks, but the most prominent one is **traffic management**. As long as a Local Area Network branches out and proliferates with more and more end devices and network devices, the frequency of broadcast increases accordingly. The chances of the network getting heavily congested with data increases simultaneously.
 As stated before, VLANs separate network segments and limit broadcast traffic. In order for two subnets separated by VLANs to communicate, a Layer 3 device is required. Even if two ports of a device belonging to different VLANs wish to communicate, they need to be mediated by a Layer 3 routing device. Their traffic will essentially be segregated too. VLANs must, therefore, be used strategically in networks to avoid looping, overload and redundant usage of Layer 3 network devices.
 
 ### Additional Resources:
