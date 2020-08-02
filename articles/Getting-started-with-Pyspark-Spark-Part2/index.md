@@ -4,7 +4,7 @@ status: publish
 published: true
 slug: getting-started-with-pyspark-spark-part2
 title: Getting started with PySpark (Spark core and RDDs) - Spark Part 2
-description: This article is a tutorial on how to build a python script that moves completed tasks from Google Tasks to Google Docs, within a given time-frame, categorized by date.
+description:  This article covers programming with Spark Core and RDD by applying them on a large dataset - Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient.
 author: keerthi-v
 date: 2020-08-01T00:00:00-09:00
 topics: []
