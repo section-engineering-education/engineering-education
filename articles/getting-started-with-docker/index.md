@@ -1,17 +1,30 @@
-# Getting Started with Docker
+---
+layout: engineering-education
+status: publish
+published: true
+slug: getting-started-with-docker
+title: Getting Started with Docker
+description: The basic concepts of Docker, Understanding how to install Docker, creating your first image from Dockerhub and how to create a Dockerfile.
+author: francisca-adekanye
+date: 2020-08-01T00:00:00-06:00
+topics: [containers]
+excerpt_separator: <!--more-->
+images:
 
-Docker is in the rage these days, and for some good reason. It allows you to run instances of an application inside of a container. A container is similar to a virtual machine, but instead of running a full operating system, it runs the minimal runtime requirements of an application or set of applications.
+  - url: /engineering-education/getting-started-with-docker/hero.jpg
+    alt: container example image
+---
+Docker is all the rage these days, and for good reason. It allows you to run instances of an application inside of a container. A container is similar to a virtual machine, but instead of running a full operating system, it runs the minimal runtime requirements of an application or set of applications.
+<!--more-->
 
-## Versions
-
+### Versions
 Docker comes in two different versions:
 
 Docker-CE is the Community Edition, which is free to use but does not come with any paid support. If you have any issue you will have to use the community forums and read through the documentation.
 
 Docker-EE is the Enterprise Edition, which is the licensed version and allows for support contracts with Docker (the company), SLAs, Image management, and other features.
 
-# Installation
-
+### Installation
 - *For Ubuntu*:
 
 First, update your packages:
@@ -31,9 +44,10 @@ Finally, verify that docker is installed correctly:
 ```
  sudo docker version
 ```
-You should see the installation details. It gives you information about the Client and Server version, the Go-lang version, and so on and so forth.
+You should see the installation details. It gives you information about the Client and Server version, the Go-lang version, so on and so forth.
 
 If the output of your command is somehow like the one below, Congrats!!!!!
+
 ```
 Client: Docker Engine - Community
  Version:           19.03.5
@@ -69,17 +83,16 @@ Server: Docker Engine - Community
 
 - *For Windows*: you can follow this [link](https://docs.docker.com/docker-for-windows/install/).
 
-
 With the basic installation of Docker you’ll need to run the `docker` command as `sudo`. However, you can add your user to the `docker group`, and you’ll be able to run the commands without `sudo`.
+
 ```
  sudo usermod -aG docker ${USER}
  su - ${USER}
 ```
 
-Running these commands will add you user to the `docker group`. To verify this, `run $ id -nG` and if you get back an output with your username in the list rest assured you did everything right.
+Running these commands will add your user to the `docker group`. To verify this, `run $ id -nG` and if you get back an output with your username in the list rest assured you did everything right.
 
-
-# Creating Your First Docker Image
+### Creating Your First Docker Image
 
 Now, let's create our first docker image by pulling it from Docker Hub. First let's search the Hub for an image called "hello-world"
 
@@ -95,7 +108,7 @@ Result:
 ```
 Using default tag: latest
 latest: Pulling from library/hello-world
-0e03bdcc26d7: Pull complete 
+0e03bdcc26d7: Pull complete
 Digest: sha256:49a1c8800c94df04e9658809b006fd8a686cab8028d33cfba2cc049724254202
 Status: Downloaded newer image for hello-world:latest
 docker.io/library/hello-world:latest                                       
@@ -103,11 +116,11 @@ docker.io/library/hello-world:latest
 
 We just pulled our first docker image from the Docker Hub.
 
-## Docker Commands
+### Docker Commands
 
-Now it’s time to get our hands dirty with Docker commands, for which we all have been waiting till now.
+Now it’s time to get our hands dirty with Docker commands, which we all have been waiting till now.
 
-### docker create 
+#### docker create
 Creates a container from an image.
 
 ```
@@ -119,7 +132,7 @@ fa622c1b5eec67139c97a0c0db2a0b306012c504ddfdf53eee7b0c143945667a
 ```
 NOTE: When a container is created, it is given a unique ID.
 
-### docker ps 
+#### docker ps
 Lists running containers, optional -a flag to list all containers.
 ```
  docker ps -a
@@ -135,28 +148,30 @@ fa622c1b5eec        hello-world                  "/hello"               31 minut
 
 ```
 
-### docker start 
+#### docker start
 This command starts any stopped container(s).
 
 Some of the examples of using this command are shown below:
+
 ```
 docker start fa622
 ```
-In the above example, Docker starts the container beginning with the container ID fa622.
+In the example above, Docker starts the container beginning with the container ID fa622.
 ```
 docker start cass_ubuntu
 ```
 Whereas in this example, Docker starts the container named cass_ubuntu.
 
-### docker stop
-This command stops any running container(s).It is similar to the docker start command.
+#### docker stop
+This command stops any running container(s). It is similar to the docker start command.
 
 We can stop the container either by specifying the first few unique characters of its container ID or by specifying its name.
+
 ```
  docker stop fa622
 ```
 
-###  docker run 
+####  docker run
 This command first creates the container, and then it starts the container. In short, this command is a combination of the docker create and the docker start command.
 
 ```
@@ -176,8 +191,9 @@ Status: Downloaded newer image for ubuntu:latest
 Hello world
 ```
 
-### docker images
+#### docker images
 This command lists out all the Docker Images that are present on your Docker Host.
+
 ```
  docker image ls
 
@@ -188,14 +204,15 @@ dockerinaction/hello_world    latest              a1a9a5ed65e9        4 years ag
 kitematic/hello-world-nginx   latest              03b4557ad7b9        5 years ago         7.91MB
 ```
 
-### docker container rm
+#### docker container rm
 This command delete container(s). To remove one or more Docker containers, use the `docker container rm` command, followed by the IDs of the containers you want to remove.
+
 ```
  docker container rm 1a203a1e19a2
 ```
 *NB: The containers need to be in a stopped state in order to be deleted*.
 
-### docker image rm
+#### docker image rm
 This command delete image(s). To remove one or more Docker images first you need to find the images IDs. Use the `docker images ls` command to find the IDs.
 ```
  docker image rm fce289e99eb9
@@ -203,10 +220,11 @@ This command delete image(s). To remove one or more Docker images first you need
 *NB: To remove the image, you will have to remove the container first.*
 
 You can also get help by simply asking for it.
+
 ```
 docker --help
 ```
-This above line with list out all available commands, here is a sample output.
+This line above will list out all available commands, here is a sample output.
 
 ```
 Usage:	docker [OPTIONS] COMMAND
@@ -298,23 +316,22 @@ Run 'docker COMMAND --help' for more information on a command.
 
 ```
 
+### Writing Your First Dockerfile
 
-# Writing Your First Dockerfile
-
-A DockerFile is a text file that contains instructions on how to to build a docker image. A  DockerFile is a text file that contains instructions on how to to build a docker image. To build a Docker image, you need to create a Dockerfile. Below are some Dockerfile instructions that you should know:
+A DockerFile is a text file that contains instructions on how to build a docker image. A DockerFile is a text file that contains instructions on how to build a docker image. To build a Docker image, you need to create a Dockerfile. Below are some Dockerfile instructions that you should know:
 
 - FROM — set the base image
 - RUN — execute a command in the container
 - COPY — supports the basic copying of local files into the container
 - ENV — set environment variable
 - WORKDIR — set the working directory
-- ENTRYPOINT — set the image’s main command, allowing that image to be run as though it was that command 
+- ENTRYPOINT — set the image’s main command, allowing that image to be run as though it was that command
 - VOLUME — create mount-point for a volume
 - CMD — set executable for container
 
-For eample, let's see what a Dockerfile for a Go application could look like:
+For example, let's see what a Dockerfile for a Go application could look like:
 ```
-FROM golang:1.11-alpine 
+FROM golang:1.11-alpine
 
 WORKDIR /go/src/app
 COPY . .
@@ -325,25 +342,25 @@ RUN go install -v ./...
 CMD ["app"]
 ```
 
-*Be sure to always indicate a specific version of the base image you would like to use because you never know when the ‘Latest’ image will be changed*. 
+*Be sure to always indicate a specific version of the base image you would like to use because you never know when the ‘Latest’ image will be changed*.
 
 You can then build and run the Docker image:
+
 ```
- docker build -t my-golang-app 
+ docker build -t my-golang-app
 ```
+
 This command will create an image tagged `my-goland-app` from your Dockerfile
 
 ```
  docker run -it --name my-running-app my-golang-app
 ```
-With this,the container/image is in production ready.
+With this, the container/image is in production ready.
 
-# Conclusion
+### Conclusion
+Docker is a powerful tool for creating and running distributable, lightweight applications both locally and in production. Many CI/CD tools like Jenkins, CircleCI, TravisCI, etc. are now fully supported and integrated with Docker, which makes diffusing your changes from environment to environment a breeze now. This tutorial has just scratched the surface of the Docker world.
 
-Docker is a powerful tool for creating and running distributable, lightweight applications both locally and in production.Many CI/CD tools like Jenkins, CircleCI, TravisCI, etc. are now fully support and integrated with Docker, which makes diffusing your changes from environment to environment is now a breeze.This tutorial has just scratched the surface of the Docker world.
-
-## Resources
-
+#### Resources
 [Docker Guide](https://docs.docker.com/get-started/)
 
 [Docker Cheatsheet](https://medium.com/statuscode/dockercheatsheet-9730ce03630d)
