@@ -7,7 +7,6 @@
 function addNumbers(a,b){
 	return a+b;
 }
-
 console.log(addNumbers(1,2));
 ```
 
@@ -57,8 +56,50 @@ In the above example we used a test case of `x=5` and when we run this script we
 Expected 7 Got 7
 Passed
 ```
-We have written our first unit test. The `if` condition in the above code sample ***asserts*** that the code is working correctly or not. Node.js comes with an [assert module](https://nodejs.org/api/assert.html) with it.  
+We have written our first unit test. The `if` condition in the above code sample ***asserts*** that the code is working correctly or not. Node.js comes with an [assert module](https://nodejs.org/api/assert.html) with it. Let's do the same action using `assert`.
 
+```javascript
+var assert = require("assert")
+function addTwo(a){
+  return a+2; 	
+}
+function testAddTwo(){
+	var x = 5;
+	var y1 = x + 2;
+	var y2 = addTwo(x);
+	console.log("Expected "+y1+" Got " +y2);
+	try{
+		assert.equal(y1,y2);
+		console.log("Passed");
+	 } catch (err) {
+	 	console.log("Failed");
+		console.log(err);
+		}
+	}
+
+testAddTwo();
+```
+
+We can exprect the following result on the console for correct code.
+
+```
+Expected 7 Got 7
+Passed
+```
+When we deliberately change `var y1 = x + 2;` to `var y1 = x + 1;` we see the following error message.
+
+```
+Expected 6 Got 7
+Failed
+AssertionError [ERR_ASSERTION]: 6 == 7
+{
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 6,
+  expected: 7,
+  operator: '=='
+}
+```
 
 
 
@@ -67,4 +108,4 @@ We have written our first unit test. The `if` condition in the above code sample
 * [Node.js in Action Book]()
 * [Wikipedia](https://en.wikipedia.org/wiki/Software_testing)
 * [hackernoon.com](https://hackernoon.com/a-crash-course-on-testing-with-node-js-6c7428d3da02)
-* 
+* [https://www.digitalocean.com/community/tutorials/how-to-test-a-node-js-module-with-mocha-and-assert]
