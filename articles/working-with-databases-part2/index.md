@@ -138,10 +138,155 @@ The response should contain all the data you've added to the `books` collection.
 
 **Books Collection `console.log` example**
 ```json
-Book Collection:[{"_id":"5ed79cc24096aca107f150fc","name":"Harry Potter and the Chamber of Secrets","genre":"Fantasy"},{"_id":"5ed7a03df2223b53e6e0defe","name":"Slated","genre":"Sci-Fi"},{"_id":"5f269cdeb81a7a48f4618bf3","name":"The Novice","genre":"Taran Matharu"},{"_id":"5f269d45cacefe08bc94bcf1","name":"The Outcast","genre":"Taran Matharu"}]
+Book Collection:[{"_id":"5ed79cc24096aca107f150fc","name":"Harry Potter and the Chamber of Secrets","genre":"Fantasy"},{"_id":"5ed7a03df2223b53e6e0defe","name":"Slated","genre":"Sci-Fi"},{"_id":"5f269cdeb81a7a48f4618bf3","name":"The Novice","genre":"Fantasy"},{"_id":"5f269d45cacefe08bc94bcf1","name":"The Outcast","genre":"Fantasy"}]
 ```
 ### Displaying Data on the Front-End
 
+Congratulations. You've successfully returned data from a MongoDB collection using a Node.js server for the first time. Now, we just need to display it on the front-end.
 
+Still in `server.js`, adjust our `res.render` to pass the database results to the front-end as an EJS variable.
+
+```js
+// Show books page
+    res.render('pages/books', {
+            bookdetails: result
+        });
+```
+Now in `books.ejs`, add the following between the `<main></main>` tags.
+
+```html
+<table>
+  <% bookdetails.forEach(function(book) { %>
+    <th><h3>Name</h3></th>
+    <th><h3>Genre</h3></th>
+    <tbody>
+      <tr>
+        <td>
+          <p><%= book.name %></p>
+        </td>
+        <td>
+          <p><%= book.genre %></p>
+        </td>
+      </tr>
+    </tbody>
+  <% }); %>
+</table>
+```
+This will create a table with two table headings: name and genre. Then for every entry in the array (books collection), a new row will be added with two cells. One for the entry's name and the other for its genre.
+
+Run `npm start` again and go to the books page. You should see the table and the data inside.
 
 ### Styling a Table
+
+You've got a table with your book data inside which is great but it doesn't look very nice. Luckily [CSSTricks](link to CSSTricks table article) has come to the rescue with a few code snippets of CSS for tables.
+
+In your CSS file (create one at `public/css` if you haven't already), add the following:
+
+```css
+/* Table Styling from CSSTricks*/
+table {
+    width: 50%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #ffd633;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+}
+table tr:hover {
+    background: #f4f4f4;
+}
+table tr:hover td {
+    color: #555;
+}
+table th, table td {
+    color: #999;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    border-collapse: collapse;
+}
+table th {
+    background: #ffd633;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+table td {
+    padding: 15px 10px;
+}
+table p {
+    text-align: center;
+}
+```
+I adjusted the size of the table by adding a width and changing the padding of the cells etc. to suit the length of the content. I also modified the accent colour to suit the app so feel free to alter the CSS.
+
+Reload the app using `npm start` and go back to the books page and the table should look a lot nicer.
+
+## Modifying a MongoDB Collection from the Web App
+
+Currently, we've only used data that we added to the database in the terminal but the average user shouldn't have to clone our web app and set up a local database to do the same. Let's create a form which users can use to add, delete or update book entries in our database.
+
+Before we create a form or add a route to add, delete or modify database entries, we need to install a node module to grab the form queries from the submitted form URL. 
+
+Type `npm install body-parser --save` to do so and then add `const bodyParser = require('body-parser');` to `server.js` underneath our other required node modules. We also need to include the following before `app.use()` to tell Express how to use the `body-parser` node module:
+
+```js
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+```
+Your `server.js` file should look like this so far:
+
+```js
+// Database Connections
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb://localhost:27017/firstdb";
+
+// Node Modules
+const express = require('express');
+const bodyParser = require('body-parser');
+const ejs = require('ejs');
+const app = express();
+
+// Initialising Express
+app.use(express.static('public'));
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// body-parser config
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
+// connecting variable db to database
+var db;
+MongoClient.connect(url, function (err, client) {
+    if (err) throw err;
+    db = client.db('firstdb');
+    app.listen(8080);
+    console.log('Listening on 8080');
+});
+
+// *** GET Routes - display pages ***
+
+// Root Route
+app.get('/', function (req, res) {
+    res.render('pages/index');
+});
+
+// Books Route
+app.get('/books', function (req, res) {
+    // Find data in books collection
+    db.collection('books').find({}).toArray(function (err, result) {
+        // Turn array into a JSON string for logging
+        console.log("Book Collection: " + JSON.stringify(result));
+    // Show books page
+    res.render('pages/books', {
+            bookdetails: result
+        });
+    });
+});
+``` 
+
+### Adding Data to a MongoDB Collection Using a Form
