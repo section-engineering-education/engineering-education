@@ -80,7 +80,7 @@ app.get('/', function (req, res) {
 
 Since we already have a database with data in it, the first thing you'll learn is how to display the data on a webpage.
 
-Assuming you followed [Part 1](Link to Part 1), inside your `firstdb` database, there's a collection called `books` with several entries of containing `name` and `genre`. We'll add this data into a table and even make it pretty using some CSS from [CSSTricks](Link to CSSTricks table example.)
+Assuming you followed [Part 1](Link to Part 1), inside your `firstdb` database, there's a collection called `books` with several entries of containing `name` and `genre`. We'll add this data into a table and even make it pretty using some CSS from [CSSTricks](https://css-tricks.com/complete-guide-table-element)
 
 The first step is to add a books route. The books route will contain the code to search our database collection, then create an EJS variable of the results and finally render a new page with the variable.
 
@@ -178,7 +178,7 @@ Run `npm start` again and go to the books page. You should see the table and the
 
 ### Styling a Table
 
-You've got a table with your book data inside which is great but it doesn't look very nice. Luckily [CSSTricks](link to CSSTricks table article) has come to the rescue with a few code snippets of CSS for tables.
+You've got a table with your book data inside which is great but it doesn't look very nice. Luckily [CSSTricks](https://css-tricks.com/complete-guide-table-element) has come to the rescue with a few code snippets of CSS for tables.
 
 In your CSS file (create one at `public/css` if you haven't already), add the following:
 
