@@ -101,7 +101,13 @@ AssertionError [ERR_ASSERTION]: 6 == 7
 }
 ```
 
+`equal` tests if the contents of a variable are indeed equal to a value specified in the second argument. Let's look at various methods in the assert module and how we can use them.
 
+* Example Usage: `assert.equal(a,b,c)`. Throws error c if a is not equal to b. c can be a sentence. 
+* `assert.notEqual`. Used when the generation of a certain value by application indicates a problem in logic. 
+* `assert.strictEqual`. This uses [strict equality](https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons) (===) rather than (==).
+* `assert.deepEqual`. This compares the objects. They recursively compare two objects, comparing two object’s properties and, if the properties are themselves objects, comparing these as well.
+* `assert.ok`. This is used for testing [asynchronous functions]
 
 
 ## References
