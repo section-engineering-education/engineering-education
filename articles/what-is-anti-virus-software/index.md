@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: TODO
+published: TODO
+slug: anti-malware
+title: What is Anti-Malware?
+description: Anti-malware is software that protects the user from financial ruin, infrastructure destruction, loss of data or loss of consumer confidence, etc through sophisticated malware techniques in detection, containment and prevention.
+author: earl-potters
+date: TODO
+topics: [security]
+excerpt_separator: <!--more-->
+images:
+
+  - url: TODO
+    alt: TODO
+---
+
 What is antivirus software?
 ===========================
 
@@ -7,7 +24,9 @@ In May 2017 the world was devastated by a worldwide cyber attack that affected m
 Surviving the tech Wild West
 ============================
 
-![Wild_west](/articles/what-is-anti-virus-software/flat-wild-west-background-with-colorful-buildings_23-2147587719.jpg)
+![Wild_west](/articles/what-is-anti-virus-software/flat-wild-west-background-with-colorful-buildings_23-2147587719.jpg )
+<!--  Link to original image
+<a href="https://www.freepik.com/vectors/background">Background vector created by freepik - www.freepik.com</a> -->
 
 With cyber attacks posing real threats to peoples’ livelihoods, it’s not hard to see why protecting yourself from such attacks can be vitally important to government, business and individuals.
 
