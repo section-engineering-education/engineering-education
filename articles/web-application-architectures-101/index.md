@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: web-application-architectures-101
 title: Web Application Architectures - 101
-description: Web Apps are everywhere. Let's look into their structure and how they interact with various services.
+description: Web Apps are everywhere. Let's look into their structure and how they interact with various services - looking at server side rendering, client side rendering, and universal or isomorphic applications.
 author: saiharsha-balasubramaniam
-date: 2020-07-24T00:00:00-08:00
+date: 2020-08-03T00:00:00-08:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: web app
 
 ---
-Websites are everywhere. It is important for developers to understand how they work, and how various internal components of a website interact with each other. Let us look at how web applications are structured and some of the most used web application architectures.
+Websites are everywhere. It is important for developers to understand how they work, and how various internal components of a website interact with one another. Let us look at how web applications are structured and some of the most used web application architectures.
 <!--more-->
 ### Table of Contents
 - [Componenets of a Web Application](#components-of-a-web-application)
@@ -25,7 +25,7 @@ Websites are everywhere. It is important for developers to understand how they w
 - [Comparison](#comparison)
 - [Conclusion](#conclusion)
 
-The end user can visualize a website, with various buttons, content and links that behave beautifully and serve content that they request. The framework that works behind the scenes to manage this plethora of different content and programs interacting with each other could be termed as an ***architecture***.
+The end user can visualize a website, with various buttons, content and links that behave beautifully and serve the content that they request. The framework that works behind the scenes to manage this plethora of different content and programs interacting with each other could be termed as an ***architecture***.
 
 ![csr, ssr](/engineering-education/web-application-architecture-101/csr-ssr.webp)
 
@@ -58,7 +58,7 @@ Server-Side Rendering used to be the most common way used to build websites. The
 
 *Figure: Client Side Rendering ([Source](https://laptrinhx.com/understanding-server-side-rendering-721376809/))*
 
-In Client Side Rendering, a single request is sent to a Content Delivery Network, which sends a single HTML file is sent back, and all the JavaScript is sent to the browser. The interactivity is managed by the JavaScript on the browser, since a web browser is capable of running JavaScript on the browser. This approach works really well with a good internet connection and the web application feels native. This is due to the fact that every time we switch routes, there aren’t repeated requests to the server. Instead, it is handled by the client. Frameworks like **Vue** and **React** use Client Side Rendering.
+In Client Side Rendering, a single request is sent to a Content Delivery Network, which sends a single HTML file back, and all the JavaScript is sent to the browser. The interactivity is managed by the JavaScript on the browser, since a web browser is capable of running JavaScript on the browser. This approach works really well with a good internet connection and the web application feels native. This is due to the fact that every time we switch routes, there aren’t repeated requests to the server. Instead, it is handled by the client. Frameworks like **Vue** and **React** use Client Side Rendering.
 
 ### Universal or Isomorphic Apps
 
