@@ -123,13 +123,47 @@ function testAsync (callback) {
 
 ## Mocha 
 
-[Mocha](https://mochajs.org/) is a popular JavaScript testing framework 
+[Mocha](https://mochajs.org/) is a popular JavaScript testing framework that runs on both Node.js and the browser. Mocha is simple, extensible and fast, it's used for unit and integration testing. Mocha does not have in-built assertion so it is used with libraries like *assert*, [chai](https://www.chaijs.com/), etc. Mocha provides easy asynchronous and synchronous testing with an easy interface. 
 
-#### Installation
+### Installation and Set-up
 
-Go to your project directory and type the following command.
+Create a new directory and initialize a node project (if you don't already have a node project).
 
-`npm install --save-dev mocha`
+```
+mkdir test-project
+cd test-project
+
+npm init -y
+
+npm install --save-dev mocha`
+```
+
+Add the `test` script to your `package.json`. 
+
+```
+//package.json
+...
+{
+	"scripts": {
+    "test": "mocha"
+  }
+}
+...
+```
+### Unit Testing with Mocha and Assert
+
+Mocha follows this template for writing tests.
+
+```
+describe([String with Test Group Name], function() {
+    it([String with Test Name], function() {
+        [Test Code]
+    });
+});
+```
+The `describe()` function is used to group similar tests, grouping tests make our test code easier to maintain. The `it()` contains our test code. We will use the BDD interface of Mocha. Let's write a simple script which returns the sum of numbers. 
+
+
 
 
 
@@ -138,3 +172,4 @@ Go to your project directory and type the following command.
 * [Wikipedia](https://en.wikipedia.org/wiki/Software_testing)
 * [hackernoon.com](https://hackernoon.com/a-crash-course-on-testing-with-node-js-6c7428d3da02)
 * [https://www.digitalocean.com/community/tutorials/how-to-test-a-node-js-module-with-mocha-and-assert]
+* [https://blog.logrocket.com/](https://blog.logrocket.com/a-quick-and-complete-guide-to-mocha-testing-d0e0ea09f09d/)
