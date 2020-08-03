@@ -10,11 +10,11 @@ function addNumbers(a,b){
 console.log(addNumbers(1,2));
 ```
 
-We can conclude that the function above is working correctly because we know basic math. What if there are many functions like this or what if the functions are much more complex than this, automated testing solves this problem. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand.  We’ll look at [Unit Testing]() and [Acceptance Testing]() as methods of automated testing.
+We can conclude that the function above is working correctly because we know basic math. What if there are many functions like this or what if the functions are much more complex than this, automated testing solves this problem. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand.  We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)  as a  method of automated testing.
 
 ## Unit Testing
 
-Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing test code logic directly at function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and helps you avoid pitfalls early. Unit-testing methodology can be divided into two major forms: [test-driven development]() and [behaviour-driven development](). 
+Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing test code logic directly at function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and helps you avoid pitfalls early. Unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behaviour-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development). 
 
 ![img](tdd.png)
 
@@ -161,15 +161,27 @@ describe([String with Test Group Name], function() {
     });
 });
 ```
-The `describe()` function is used to group similar tests, grouping tests make our test code easier to maintain. The `it()` contains our test code. We will use the BDD interface of Mocha. Let's write a simple script which returns the sum of numbers. 
+The `describe()` function is used to group similar tests, grouping tests make our test code easier to maintain. The `it()` contains our test code. We will use the BDD interface of Mocha. Let's write a simple function which adds "2" to the number (same example as above).
 
+```
+//sum.js
+// adds two to a number, if an array is passed adds 2 to every number, if non-number then throws error.
+module.exports = function() {
+	var args = Array.prototype.slice.call(arguments);
+	if (!args.every(Number.isFinite)) {
+    throw new TypeError('sum() expects only numbers.')
+  }
+	return args.map(x => x+2);
+	}
+```
 
 
 
 
 ## References
-* [Node.js in Action Book]()
+* [Node.js in Action Book](https://www.manning.com/books/node-js-in-action)
 * [Wikipedia](https://en.wikipedia.org/wiki/Software_testing)
 * [hackernoon.com](https://hackernoon.com/a-crash-course-on-testing-with-node-js-6c7428d3da02)
 * [https://www.digitalocean.com/community/tutorials/how-to-test-a-node-js-module-with-mocha-and-assert]
 * [https://blog.logrocket.com/](https://blog.logrocket.com/a-quick-and-complete-guide-to-mocha-testing-d0e0ea09f09d/)
+* [DOCS](https://mochajs.org/)
