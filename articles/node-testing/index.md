@@ -22,7 +22,7 @@ Unit tests
 
 ### Unit testing with Node `assert` module.
 
-The basis for most Node testing is the built-in **assert** module, which tests a condition and, if condition is not met, throws an error. 
+The basis for most Node testing is the built-in **assert** module, *which tests a condition and, if condition is not met, throws an error. *
 
 Lets look at a simple example of assertion testing.
 
@@ -107,7 +107,30 @@ AssertionError [ERR_ASSERTION]: 6 == 7
 * `assert.notEqual`. Used when the generation of a certain value by application indicates a problem in logic. 
 * `assert.strictEqual`. This uses [strict equality](https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons) (===) rather than (==).
 * `assert.deepEqual`. This compares the objects. They recursively compare two objects, comparing two object’s properties and, if the properties are themselves objects, comparing these as well.
-* `assert.ok`. This is used for testing [asynchronous functions]
+* `assert.ok`. This is used for testing [asynchronous functions](https://bitsofco.de/asynchronous-functions-101/). When we use it as `assert.ok(value, error_message)` if value is false then it throws the `error_message`. Example usage:
+```javascript
+ function doAsync (callback) {
+	setTimeout(callback, 2000, true); // "callback" function with arguements "true"
+ }
+
+function testAsync (callback) {
+	 doAsync(function (value) {
+	 	assert.ok(value, "Callback should be passed true, got false");
+	 	callback();  //trigger callback when done
+	}) //if we deliberately change the value in doAsync to false then we can see the error.
+ }
+```
+
+## Mocha 
+
+[Mocha](https://mochajs.org/) is a popular JavaScript testing framework 
+
+#### Installation
+
+Go to your project directory and type the following command.
+
+`npm install --save-dev mocha`
+
 
 
 ## References
