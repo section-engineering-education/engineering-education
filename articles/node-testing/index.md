@@ -10,13 +10,13 @@ function addNumbers(a,b){
 console.log(addNumbers(1,2));
 ```
 
-We can conclude that the function above is working correctly because we know basic math. What if there are many functions like this or what if the functions are much more complex than this, automated testing solves this problem. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand.  We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)  as a  method of automated testing.
+We can conclude that the function above is working correctly because we know basic math. What if there are many functions like this? or what if the functions are much more complex than this? automated testing solves this problem. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand.  We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)  as a  method of automated testing.
 
 ## Unit Testing
 
 Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing test code logic directly at function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and helps you avoid pitfalls early. Unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behaviour-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development). 
 
-![img](tdd.png)
+![img](/engineering-education/node-testing/tdd.png)
 
 Unit tests
 
@@ -80,7 +80,7 @@ function testAddTwo(){
 testAddTwo();
 ```
 
-We can exprect the following result on the console for correct code.
+We can expect the following result on the console for correct code.
 
 ```
 Expected 7 Got 7
@@ -135,7 +135,7 @@ cd test-project
 
 npm init -y
 
-npm install --save-dev mocha`
+npm install --save-dev mocha chai
 ```
 
 Add the `test` script to your `package.json`. 
@@ -164,18 +164,94 @@ describe([String with Test Group Name], function() {
 The `describe()` function is used to group similar tests, grouping tests make our test code easier to maintain. The `it()` contains our test code. We will use the BDD interface of Mocha. Let's write a simple function which adds "2" to the number (same example as above).
 
 ```
-//sum.js
+//addTwo.js
 // adds two to a number, if an array is passed adds 2 to every number, if non-number then throws error.
 module.exports = function() {
 	var args = Array.prototype.slice.call(arguments);
 	if (!args.every(Number.isFinite)) {
-    throw new TypeError('sum() expects only numbers.')
+    throw new TypeError('addTwo() exprects only numbers or array of numbers')
   }
 	return args.map(x => x+2);
-	}
+}
 ```
+Create a sub-directory called `test` and create a file inside the directory called `testAddTwo.js`(doesn't matter). We add tests for different cases in this. 
 
+```
+var addt = require("../addTwo.js");
+var assert = require("assert");
+var expect = require("chai").expect;
 
+describe("addTwo()", function() {
+        context("Not passing any arguments", function(){
+                it("should return 0", function(){
+                        assert.equal(addt(), 0);
+                })      
+        })              
+        
+        context("Passing proper number", function(){
+                it("should add 2", function(){
+                        assert.equal(addt(1), 3);
+                })      
+        })      
+        context("With an array of numbers", function(){
+                it("should add 2", function(){
+                        assert.deepEqual(addt([1,2,3]) ,  [3,4,5]); #comparing objects so "deepEqual"
+                })      
+        })
+        context("With non-numbers", function(){
+                it("should throw error", function(){
+                        expect(function(){
+                                addt([1,"as", 1])
+                        }).to.throw(TypeError, 'addTwo() exprects only numbers or array of numbers')
+                })
+        })
+
+})
+
+```
+We used the chai assertion library for the last test, here we can see the areas where assert module just might not cover it. Chai provides three assertion styles `assert`, `expect` and 	`should` read about the differences and uses [here](https://www.chaijs.com/guide/styles/). 
+
+When we run the command `npm test` we can see the following results.
+
+![img](/engineering-education/node-testing/mocha1.png)
+
+When I made changes to cause an error this was the output.
+
+![img](/engineering-education/node-testing/mocha2.png)
+
+#### Testing Asynchronous Code with Mocha 
+
+Most Node.js applications use a lot of asynchronous code. Mocha also makes it easy to test asynchronous code with a very similar syntax. Here is an example of asynchronous function using `async` `await`  and `callbacks` taken from mochajs.org.
+
+```
+//callbacks
+describe('User', function () {
+  describe('#save()', function () {
+    it('should save without error', function (done) {
+      var user = new User('Luna');
+      user.save(function (err) {
+        if (err) done(err);
+        else done();
+      });
+    });
+  });
+});
+
+//async 
+beforeEach(async function () {
+  await db.clear();
+  await db.save([tobi, loki, jane]);
+});
+
+describe('#find()', function () {
+  it('responds with matching records', async function () {
+    const users = await db.find({type: 'User'});
+    users.should.have.length(3);
+  });
+});
+
+```
+We have `done` as an argument to `it()`, The `done()` callback function is used by Mocha to tell it when an asynchronous function is completed.
 
 
 ## References
@@ -184,4 +260,5 @@ module.exports = function() {
 * [hackernoon.com](https://hackernoon.com/a-crash-course-on-testing-with-node-js-6c7428d3da02)
 * [https://www.digitalocean.com/community/tutorials/how-to-test-a-node-js-module-with-mocha-and-assert]
 * [https://blog.logrocket.com/](https://blog.logrocket.com/a-quick-and-complete-guide-to-mocha-testing-d0e0ea09f09d/)
+* [Comaprison](https://blog.logrocket.com/the-best-unit-testing-frameworks-for-node-js/)
 * [DOCS](https://mochajs.org/)
