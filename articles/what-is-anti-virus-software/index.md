@@ -1,0 +1,160 @@
+What is antivirus software?
+===========================
+
+
+In May 2017 the world was devastated by a worldwide cyber attack that affected more than 200,000 computers across 150 countries. Users and companies alike were infected by the rapidly spreading computer virus that attacked critical agency providers like the [National Health Service](https://en.wikipedia.org/wiki/National_Health_Service). According to [Cyber risk modeling firm Cyence](https://www.cbsnews.com/news/wannacry-ransomware-attacks-wannacry-virus-losses/), the hack caused hundreds of millions of dollars in damages that could have been avoided with proper software security updates and vulnerability transparency by governmental agencies like the NSA. Many still remember the historic cyber attack as the infamous WananaCry attack.
+
+Surviving the tech Wild West
+============================
+
+![Wild_west](/articles/what-is-anti-virus-software/flat-wild-west-background-with-colorful-buildings_23-2147587719.jpg)
+
+With cyber attacks posing real threats to peoples’ livelihoods, it’s not hard to see why protecting yourself from such attacks can be vitally important to government, business and individuals.
+
+It Starts With You
+------------------
+
+The first line of defense often starts with you, the user, to be situationally aware of your actions on the world wide web. That entails sifting through [phishing](https://www.malwarebytes.com/phishing/) scams and suspicious websites, links or attachments. Many times then not, good internet common sense can save you a lot of trouble; an ounce of **prevention** is worth a pound of **cure.**
+
+Call In The Calvary
+-------------------
+
+In addition to common good internet practices the second best thing to invest in is anti-malware/antivirus software. Anti-malware’s main objective is to stop any malicious threats from infecting your computer; those include a platitude of threats ranging from computer viruses to internet worms.
+
+Not having AV technology can lead to malware breeches. Currently, malware breeches of all sizes are costing industries $350 billion a year! That is why cyber-breeches incentivize companies and governments to heavily invest in cyber-security.
+
+Anti-malware software is thus an incredible useful tool to help identify and eliminate many malware-threats.
+
+_In this article I will go over the reason why anti-malware is important and what types of malware are out there. Furthermore, I will go in depth over the certain techniques used to do malware analysis and investigations. Lastly, there will a reading list to give you an review of some great anti-malware software out there.
+
+Team Red: Malicious Rogue Bandits
+=================================
+
+![Bandits and Roguges](/articles/what-is-anti-virus-software/rogue-bandits.jpg)
+
+What bandits and gangs were to the Wild West are hackers and scammers in the 21st century. Only difference — they use malware instead of guns to attack and exfiltrate personal data.
+
+Overview: What exactly is Malware?
+----------------------------------
+
+According to Malware bytes Labs, [Malware](https://blog.malwarebytes.com/glossary/malware/) or malicious software “is an umbrella term that describes any malicious program or code that is harmful to systems.” Malware is usually intentionally designed to either destroy data, install additional programs or exfiltrate (steal) data. For instance, malware can break computer systems or even be part of a larger agenda in the case of Wanna Cry. In summary, malware compromises the confidentiality, integrity and availability of a victim’s data (CIA for short).
+
+It is important to understand why malware is a huge concern. Companies large and small are constant targets to malware attacks.
+
+Furthermore, individuals who aren’t likely end-targets can still become potentially impacted as an intermediary; that is, they can be used, for example, as bots in much larger botnet to do more major attacks like dDoS(distributed denial of service) attacks etc. These attacks typically result in loss of data, intellectual property, competitive advantage, and loss of overall consumer confidence.
+
+Malware Arsenal
+===============
+
+![bandit_arsenal](/articles/what-is-anti-virus-software/bandit_arsenal.jpg)
+
+Let’s now look at some of the major forms of malware.
+
+Viruses
+-------
+
+Computer viruses can run on any operating system be it Windows or Mac ( Mac’s are not immune ;) ). Computer viruses are actually, contrary to common belief, a type of malware. Viruses are defined as follows:
+
+1.  A computer virus requires a host program
+2.  A computer virus requires user action to transmit from one system to another.
+3.  A computer virus attaches bits of its own malicious code to other files or replaces files outright with copies of itself.
+
+Worms
+-----
+
+In contrast to computer viruses, worms are capable of spreading and executing itself from one system to another without user interaction. Worms can afterwards do various malicious task such as dropping a payload, affect the file system and consume computer resources.
+
+There are two main types of worms: Network Service Worms, Mass Mailing Worms.
+
+Trojan Horse Programs
+---------------------
+
+Next we have the Trojan horse programs. According to Greek mythology, the Greeks built a wooden horse to subterfuge the city of Troy. Much like Greek Trojan, the computer Trojan horse aims to infect your computer using deception by tricking users into running seemingly benign computer programs.
+
+Ransomware
+----------
+
+Finally we have randsomware, ransomware "_is malicious software that blocks access to the victim’s data until a ransom is paid_.” — [David Koff](https://medium.com/@TheTechTutor?source=post_elevate_sequence_page-----b255b627c879----------------------), _What is Malware? And How to Protect Yourself Against It_. It usually involves encrypting ones files to render it unreadable to the victims. This incentives victims to pay up usually using cryptocurrencies such as Bitcoin.
+
+Team Blue: The Marshal and Deputy
+=================================
+
+![marshal_badge](/articles/what-is-anti-virus-software/marshal_badges.jpg)
+
+In the Wild West the marshal and deputy were there to protect the simple town folk from bandits and gangs. That is now the job of Anti-Malware (AV).
+
+
+
+Overview: What exactly is Anti-Malware?
+---------------------------------------
+
+Anti-malware is software that protects the user from financial ruin, infrastructure destruction, loss of data or loss of consumer confidence, etc through sophisticated malware techniques in detection, containment and prevention.
+
+Anti-malware usually contain various techniques for malware protection and can provide different protection strategies and tools for different malware attacks such as anti-phishing or anti-ransomware protection.
+
+![virus_prtection](/articles/what-is-anti-virus-software/security_shield.jpg)
+
+Malware Protection
+==================
+
+There are roughly four areas that comprise of malware protection
+
+*   Identification/Analysis
+*   Containment
+*   Eradication/Mitigation
+*   Recovery
+
+In this article we are more interested in identification part. Identification and forensics can be split up into two main parts: [static malware analysis and dynamic malware analysis](https://en.wikipedia.org/wiki/Malware_analysis). There are many other forms of analysis such as memory and resources use forensics, web and network analysis and specific sandboxing techniques. However, that is beyond the scope of this blog post.
+
+Malware Analysis
+================
+
+_This this not by far not a comprehensive list of Malware Analysis but more of an overview. There will be a reading list for those who are more interested in the nitty-gritty details._ ;)
+
+Static Malware Analysis
+-----------------------
+
+Static malware analysis is a way of examining code without executing it on your device. There are many techniques and tools paid and opensource that help carry out forensic investigation. The following tools and techniques are:
+
+#### Disassemble
+
+Malware is sometimes reversed-engineered/dissembled using tools called disassemblers._“A_ **_disassembler_** _is a_ [_computer program_](https://en.wikipedia.org/wiki/Computer_program) _that_ [_translates_](https://en.wikipedia.org/wiki/Translator_(computing))  [_machine language_](https://en.wikipedia.org/wiki/Machine_language) _into_ [_assembly language_](https://en.wikipedia.org/wiki/Assembly_language)_” — wiki._ Now for those of you who don’t speak tech-speak, it means AV is looking into the low-level program instructions to find out if the program will execute malicious code without executing it. Cool!
+
+#### File Fingerprinting
+
+**_File fingerprinting_** _is a unique bit string identifier for large data items_. Just as a fingerprint can be used to identify the person a file fingerprint can identify the original file. AV software has a database of fingerprints of malware so that they can quickly identify the bad apples from the good ones.
+
+#### Packer Detection
+
+Hackers are not dumb so many times than not they add a level of armor to there code called a packer. **_Packers_** _compress or encrypt executable files so that its harder to find out the true contents of a file_. Lucky for us, AV have a few tricks themselves to identify packers and retrieve their content. 
+
+They look at something called the [portable executable](https://en.wikipedia.org/wiki/Portable_Executable)(PE) header which contain information about the file format in Windows simular to ELF for linux and Mach-O for MacOS.
+
+Dynamic Malware Analysis
+------------------------
+
+**Virtualization/Sandboxing**
+
+In the aim to provide a safe space to analyze code, a highly controlled environments called sandboxes are frequently used to test and run unverified programs which may contain malicious code.
+
+Virtualization and/or sandboxing allows a host to determine what and how much resources a program can have or use at a given time. All without worring of infecting your computer!
+
+**Debugger**
+
+Debuggers such as [GDB](https://en.wikipedia.org/wiki/GNU_Debugger) or [WinDBG](https://en.wikipedia.org/wiki/WinDbg) are programs that allow you to look at how programs behave during runtime as well as what effects it has on the host’s system. Debuggers give a wide variety of insights about how code is executed instruction by instruction.
+
+* * *
+
+Elect Your Town Sheriff
+=======================
+
+![town_sheriff](/articles/what-is-anti-virus-software/New_Sheriff_in_Town.jpg)
+
+So now that you know about the good guys and the bad guys how are you going to protect yourself? I recommend to take a look at [What is Malware? And How to Protect Yourself Against It](https://medium.com/s/the-firewall/episode5-antimalware-software-b255b627c879); it will give you a brief review on possible good anti-malware software.
+
+In summary
+==========
+
+We covered four main areas in this article; we covered a overview of malware and its major forms; we went into depth on several major types of malware. Next we talked about the what anti-malware does and its main objective. And Lastly, we gave a general malware analysis overview usually done by anti-software.
+
+I hope you enjoyed this brief overview of anti-malware!
