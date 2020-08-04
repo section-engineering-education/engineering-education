@@ -153,3 +153,23 @@ Here we export a function known as `verify` which checks for the availability of
 
 ![jwt-test](/engineering-education/node-authentication-api/jwt-test.png)<br>
 And that's it. Congratulations on your first Authentication! You can use it to authenticate tokens and provide a basic authentication system. You can access the full code on [GitHub](https://github.com/LinusMuema/node-authentication-api).
+
+<section class="section-rich-text xs-pb-80 xs-pt-80">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5">
+      <a class="decoration-none" href="/modules/node-js/">
+        <div class="cta-block-box relative xs-mt-10 xs-mb-50">
+          <div class="cta-block-box-left-block absolute"></div>
+          <div class="cta-block-box-left-stripes absolute"></div>
+          <div class="cta-block-box-inner pa-5 cta-shadow">
+            <h3 class="title-3" style="text-align: center;"><img src="/assets/images/blog/featured-images/Node.js_logo.png" width="150" style="margin: 0;"><br>Edge Hosting</h3>
+            <p class="xs-mb-20">Section’s Node.js Edge Hosting empowers DevOps teams to run mission critical Node.js applications at the network edge for blazingly fast results with enterprise level AppSec protection.</p>
+            <span class="link-with-arrow-blue text-blue text-18-medium">Learn more and get started on a free plan</span>
+          </div>
+          <div class="cta-block-box-right-block absolute"></div>
+          <div class="cta-block-box-right-stripes absolute"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
