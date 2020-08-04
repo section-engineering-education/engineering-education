@@ -39,6 +39,8 @@ Interfaces within the classes let objects to talk to each other.
 ### **Web APIs**
 Simple Objects Access Protocol (SOAP), Remote Procedure Call (RPC). And the most popular Representational State Transfer (REST)
 
+In this article, we will study in-depth about the REST API.
+
 ## REST APIs
 It is a  type of Software Design that gives access to data (aka "Backend server") by using a uniform and predefined set of operations.
 
@@ -55,87 +57,65 @@ Over 70% of all public APIs use REST, because of it's fast performance, reliabil
 * **PATCH** - PATCH is for modifying capabilities. The PATCH request only needs to contain the changes to the resource. Not the complete resource
 
 ### Working Example
-We will be using Open WeatherMap API to get the current weather data. Suppose you want to know the weather of a particular location, but you don't have any of your services to do that. In that case, you'll need to make some calls out to the weather service to get the information. And then you can know about the weather of a specific location. Below is an example that shows you how to get the weather information using Open WeatherMap API (It's free to use)
+To understand more about the REST API, we will be using Open WeatherMap API to get the current weather data. Suppose you want to know the weather of a particular location, but you don't have any of your services to do that. In that case, you'll need to make some calls out to the weather service to get the information. And then you can know about the weather of a specific location. Below is an example that shows you how to get the weather information using Open WeatherMap API (It's free to use).
+
+You can choose any programming language for implementing API calls and get the data about the weather.
+
+Some of the languages that one can use to implement the API calls are:
+* NodeJS
+* PHP
+* Objective-C
+* Java
+* Ruby
+* C#
+* Python
 
 #### Open WeatherMap API
 
+Let's work on an example using Python to extract the weather report of the three cities: New York City, London, Paris. The result will consist of the city names along with country code. Let's jump to the code:
 ```
-      import configparser
-      import requests
-        import sys
+     import requests
+import credentials
+import re
 
-      def get_api_key():
-      config = configparser.ConfigParser()
-      config.read('config.ini')
-      return config['openweathermap']['api']
+cities = ["New York City,us", "London,uk" , "Paris,fr"]
 
-      def get_weather(api_key, location):
-      url = "https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}".format(location, api_key)
-      r = requests.get(url)
-      return r.json()
+def city_forecast(city):
+ response = requests.get(
+ "https://community-open-weather-map.p.rapidapi.com/forecast?q="+city,
+ headers={
+ "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com",
+ "X-RapidAPI-Key": credentials.rapidapi_key
+ },
+ )
 
-      def main():
-      if len(sys.argv) != 2:
-        exit("Usage: {} LOCATION".format(sys.argv[0]))
-      location = sys.argv[1]
+ return response.json()
 
-      api_key = get_api_key()
-      weather = get_weather(api_key, location)
-
-      print(weather['main']['temp'])
-      print(weather)
-
-
-      if __name__ == '__main__':
-      main()
+for city in cities:
+ weather_dict[city] = city_forecast(city)
 ```
+The above code imports some important libraries to generate the result desired result. The function city_forecast receive the name of the city that input and returns the weather forecast.
 
 #### OUTPUT
 
 ```
-       {"coord": { "lon": 139,"lat": 35},
-       "weather": [
-      {
-      "id": 800,
-      "main": "Clear",
-      "description": "clear sky",
-      "icon": "01n"
-      }
-      ],
-      "base": "stations",
-      "main": {
-      "temp": 281.52,
-      "feels_like": 278.99,
-      "temp_min": 280.15,
-      "temp_max": 283.71,
-      "pressure": 1016,
-      "humidity": 93
-      },
-      "wind": {
-      "speed": 0.47,
-      "deg": 107.538
-      },
-      "clouds": {
-      "all": 2
-      },
-      "dt": 1560350192,
-      "sys": {
-      "type": 3,
-      "id": 2019346,
-      "message": 0.0065,
-      "country": "JP",
-      "sunrise": 1560281377,
-      "sunset": 1560333478
-      },
-      "timezone": 32400,
-      "id": 1851632,
-      "name": "Shuzenji",
-      "cod": 200
-      }
+Porto,pt
+Clear sky forecasts: 7
+Average temperature: 16.74 C
+
+
+London,uk
+Clear sky forecasts: 4
+Average temperature: 18.36 C
+
+
+Paris,fr
+Clear sky forecasts: 3
+Average temperature: 19.07 C
 
 ```
 
-The above code shows the result in coordinates. Which also includes things such as temperature and humidity. **This would help us get the weather of a location using REST API**
+The output shows the temperature for the requested cities in coordinates. **This would help us get the weather of a location using REST API**
 
 ### Takeaways
 That was a quick introduction to the API that many people don't know off. In this article, we get to discuss what they are and how does that works. APIs are integral to running a data-driven business nowadays. It's a game-changer for the modern software industry. It's used in the industry for a long time now, due to its quick implementation.
