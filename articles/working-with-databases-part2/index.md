@@ -289,4 +289,120 @@ app.get('/books', function (req, res) {
 });
 ``` 
 
-### Adding Data to a MongoDB Collection Using a Form
+### Adding Data to a MongoDB Collection Using a Form (shorten to Adding Data etc?)
+
+To allow users to add data to our database collection, we first need to create a form. The user will then type in the book's name and genre that they want to add and click the submit button. 
+
+Add the following HTML to your `index.ejs` file:
+
+```html
+<form id="addbook" action="/add" method="post">
+            <input type="text" id="input-name" name="name" placeholder="Book Title">
+            <label for="input-name">Book Name</label>
+            <input type="text" id="input-genre" name="genre" placeholder="Book Genre">
+            <label for="input-genre">Book Genre</label>
+            <button type="submit" value="Add">Add
+            </button>
+        </form>
+```
+The form action specifies what to do after submitting the form. In this case, it will go to the /add route which we will proceed to create. The method is set to POST because /add will be a POST route because we are POSTing data from the form. 
+
+**Note:** Label is an important tag to use in forms for accessibility reasons. They label input tags using the for attribute which associates itself with the corresponding input tag id.
+
+Finally, we can create the /add route. In `server.js`, add the following at the end of the file:
+
+```js
+// *** POST Routes ***
+
+// Add Route
+app.post('/add', function (req, res) {
+    // Get details from the form
+    var bookname = req.body.name;
+    var bookgenre = req.body.genre;
+    // Format book details into JSON
+    var bookdetails = { "name": bookname, "genre": bookgenre };
+    // Add book details to book collection
+    db.collection('books').insertOne(bookdetails, function (err, result) {
+        if (err) throw err;
+        console.log(result);
+        res.redirect('/books');
+    });
+});
+```
+`req.body.name and req.body.genre`, grabs the value of the name and genre inputs from the submitted form URL. Then the `bookdetails` variable, formats the data into JSON so MongoDB can understand it. Finally, `db.collection('books').insertOne` inserts our `bookdetails` entry into our books collection and then redirects the user to /books so they can see the updated list of books.
+
+Run `npm start` and type the name of a book and its genre into the form and click the Add button to try it out for yourself.
+
+### Deleting Data from a MongoDB Collectiom Using a Form
+
+Congratulations, you've successfully created a form where users can type in their query, it's added to a local MongoDB database and a table is updated with the new information.
+
+You'll find that creating a form to delete data is a very similar process. Create a new form but instead of having two input fields for book name and genre, just add one for the name. Then modify the action value to a new route called /delete. See the example below:
+
+```html
+<form id="deletebook" action="/delete" method="post">
+            <input type="text" id="input-name" name="name" placeholder="Book Title">
+            <label for="input-name">Book Name</label>
+            <button type="submit" value="Delete">
+            Delete
+            </button>
+        </form>
+```
+In `server.js`, add a new route for /delete:
+
+```js
+// Delete Route
+app.post('/delete', function (req, res) {
+    // Get details from the form
+    var bookname = req.body.name;
+    // Format book details into JSON
+    var bookdetails = { "name": bookname };
+    // Add book details to book collection
+    db.collection('books').deleteOne(bookdetails, function (err, result) {
+        if (err) throw err;
+        console.log(result);
+        res.redirect('/books');
+    });
+});
+```
+As you can see, it's almost identical to the previous one you created for /add. The only difference is that you're deleting an entry, instead of inserting one and you're only getting the value of one input field.
+
+Test the new form out using `npm start` to make sure it works for you.
+
+### Modifying Data from a MongoDB Collection Using a Form
+
+The last form (and piece of functionality) we'll create is for modifying data. What if one of your users made a typo and wants to correct it?
+
+Add a new form with two inputs like so:
+
+```html
+<form id="editbook" action="/edit" method="post">
+            <input type="text" id="input-editname" name="editname" placeholder="Old Book Name">
+            <input type="text" id="input-newname" name="newname" placeholder="New Book Name">
+            <button type="submit" value="Edit">
+            Edit
+            </button>
+        </form>
+```
+Finally, in `server.js` add:
+
+```js
+// Edit Route
+app.post('/edit', function (req, res) {
+    // Get details from the form
+    var oldbook = req.body.editname;
+    var newbook = req.body.newname;
+    // Format book details into JSON
+    var bookquery = { "name": oldbook };
+    var newbookquery = { $set: {name: newbook } };
+    // Add book details to book collection
+    db.collection('books').updateOne(bookquery, newbookquery, function (err, result) {
+        if (err) throw err;
+        console.log(result);
+        res.redirect('/books');
+    });
+});
+```
+Note, the syntax for updating data is different than adding or deleting. `$set` tells MongoDB the query that should be updated and `updateOne` takes two variables rather the one: the old data to be updated and the new data that should replace it.
+
+Congratulations, you've developed your first data driven web app using Node.js and MongoDB. Looking to develop your book database further, improve the design or check out example code? Check out the [Github Repo](https://github.com/louisefindlay23/bookdatabase). Want to show off your first data driven web app to users? Learn how to [deploy a Node.js web app using DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app).
