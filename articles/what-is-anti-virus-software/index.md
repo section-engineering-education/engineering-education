@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/what-is-anti-virus-software/hero.jpg
     alt: malware image example
 ---
-In May 2017 the world was devastated by a worldwide cyber attack that affected more than 200,000 computers across 150 countries. Users and companies alike were infected by the rapidly spreading computer virus that attacked critical agency providers like the [National Health Service](https://en.wikipedia.org/wiki/National_Health_Service). According to [Cyber risk modeling firm Cyence](https://www.cbsnews.com/news/wannacry-ransomware-attacks-wannacry-virus-losses/), the hack caused hundreds of millions of dollars in damages that could have been avoided with proper software security updates and vulnerability transparency by governmental agencies like the NSA. Many still remember the historic cyber attack as the infamous WananaCry attack.
+In May 2017 the world was devastated by a worldwide cyber attack that affected more than 200,000 computers across 150 countries. Users and companies alike were infected by the rapidly spreading computer virus that attacked critical agency providers like the [National Health Service](https://en.wikipedia.org/wiki/National_Health_Service). According to [Cyber risk modeling firm Cyence](https://www.cbsnews.com/news/wannacry-ransomware-attacks-wannacry-virus-losses/), the hack caused hundreds of millions of dollars in damages that could have been avoided with proper software security updates and vulnerability transparency by governmental agencies like the NSA. Many still remember the historic cyber attack as the infamous WannaCry attack.
 <!--more-->
 
 ### Surviving the tech Wild West
@@ -24,7 +24,7 @@ In May 2017 the world was devastated by a worldwide cyber attack that affected m
 <!--  Link to original image
 <a href="https://www.freepik.com/vectors/background">Background vector created by freepik - www.freepik.com</a> -->
 
-With cyber attacks posing real threats to peoples’ livelihoods, it’s not hard to see why protecting yourself from such attacks can be vitally important to government, business and individuals.
+With cyber attacks posing real threats to peoples’ livelihoods, it’s not hard to see why protecting yourself from such attacks can be vitally important to governments, businesses and individuals.
 
 ### It Starts With You
 The first line of defense often starts with you, the user, to be situationally aware of your actions on the world wide web. That entails sifting through [phishing](https://www.malwarebytes.com/phishing/) scams and suspicious websites, links or attachments. More often than not, good internet common sense can save you a lot of trouble; an ounce of **prevention** is worth a pound of a **cure.**
@@ -32,9 +32,9 @@ The first line of defense often starts with you, the user, to be situationally a
 ### Call In The Calvary
 In addition to common good internet practices, the second best thing to invest in is anti-malware/antivirus software. Anti-malware’s main objective is to stop any malicious threats from infecting your computer; those include a platitude of threats ranging from computer viruses to internet worms.
 
-Not having AV technology can lead to malware breaches. Currently, malware breaches of all sizes are costing industries $350 billion a year! That is why cyber-breeches incentivize companies and governments to heavily invest in cyber-security.
+Not having antivirus (AV) technology can lead to malware breaches. Currently, malware breaches of all sizes are costing industries $350 billion a year! That is why cyber-breaches incentivize companies and governments to heavily invest in cyber-security.
 
-Anti-malware software is thus an incredibly useful tool to help identify and eliminate many malware-threats.
+Anti-malware software is thus an incredibly useful tool to help identify and eliminate many malware threats.
 
 In this article, I will go over the reason why anti-malware is important and what types of malware are out there. Furthermore, I will go over in-depth the certain techniques used to do malware analysis and investigations. Lastly, there will a reading list to give you a review of some great anti-malware software out there.
 
@@ -42,14 +42,16 @@ In this article, I will go over the reason why anti-malware is important and wha
 ![Bandits and Roguges](/engineering-education/what-is-anti-virus-software/rogue-bandits.jpg)
 [*Image source*](https://www.vectorstock.com/royalty-free-vector/vintage-wild-west-bandit-poster-vector-15386994)
 
-What bandits and gangs were to the Wild West,  hackers and scammers are in the 21st century. Only difference — they use malware instead of guns to attack and exfiltrate personal data.
+What bandits and gangs were to the Wild West, hackers and scammers are in the 21st century. Only difference — they use malware instead of guns to attack and exfiltrate personal data.
 
 ### Overview: What exactly is Malware?
-According to Malware bytes Labs, [Malware](https://blog.malwarebytes.com/glossary/malware/) or malicious software “is an umbrella term that describes any malicious program or code that is harmful to systems.” Malware is usually intentionally designed to either destroy data, install additional programs or exfiltrate (steal) data. For instance, malware can break computer systems or even be part of a larger agenda in the case of Wanna Cry. In summary, malware compromises the confidentiality, integrity, and availability of a victim’s data (CIA for short).
+According to [Malwarebytes Labs](https://blog.malwarebytes.com/glossary/malware/), *Malware, or “malicious software,” is an umbrella term that refers to any malicious program or code that is harmful to systems.* 
+
+Malware is usually intentionally designed to either destroy data, install additional programs or exfiltrate (steal) data. For instance, malware can break computer systems or even be part of a larger agenda in the case of WannaCry. In summary, malware compromises the confidentiality, integrity, and availability (CIA for short) of a victim’s data.
 
 It is important to understand why malware is a huge concern. Companies large and small are constant targets for malware attacks.
 
-Furthermore, individuals who aren’t likely end-targets can still become potentially impacted as an intermediary; that is, they can be used, for example, as bots in a much larger botnet to do enact major attacks like DDoS(distributed denial of service) attacks, etc. These attacks typically result in loss of data, intellectual property, competitive advantage, and loss of overall consumer confidence.
+Furthermore, individuals who aren’t likely end-targets can still become potentially impacted as an intermediary; that is, they can be used, for example, as bots in a much larger botnet to enact major attacks like DDoS(distributed denial of service) attacks, etc. These attacks typically result in loss of data, intellectual property, competitive advantage, and loss of overall consumer confidence.
 
 ### Malware Arsenal
 ![bandit_arsenal](/engineering-education/what-is-anti-virus-software/bandit_arsenal.jpg)
@@ -58,14 +60,14 @@ Furthermore, individuals who aren’t likely end-targets can still become potent
 Now, let’s look at some of the major forms of malware.
 
 ### Viruses
-Computer viruses can run on any operating system be it Windows or Mac ( Mac’s are not immune ;)) -- latest [malware report 2020](https://www.google.com/search?tbs=simg:CAQSnwIJ2yJsUXvW6G4akwILELCMpwgaYQpfCAMSJ-4IuwNg7wixA-YI6AjKCPMIwQP4PZk1-T3PN7cn4DSpNbkp9T38PRowcRkeEiQ7oK5sIRv_1v_1zkk9sjJkX--g_17_1BFHARu_1E1vQtj56TKP0vMOAZ1A_1ErXdIAQMCxCOrv4IGgoKCAgBEgRRmgYPDAsQne3BCRqMAQoWCgNlcmfapYj2AwsKCS9tLzBkNzlqcQoZCgZzYWhhcmHapYj2AwsKCS9tLzAxdzF2dAobCgh2YWNhdGlvbtqliPYDCwoJL20vMDJqd3FoCh8KDHNpbmdpbmcgc2FuZNqliPYDCwoJL20vMDE5NHY0ChkKB3BseXdvb2TapYj2AwoKCC9tLzBqaDh3DA&sxsrf=ALeKk034-B4ffrL1T814yJm67B1W__pA0Q:1596539712877&q=sheriff+callie%27s+wild+west+toby+gets+the+scoop&tbm=isch&sa=X&ved=2ahUKEwijsdLztYHrAhUCYKwKHWjACHcQwg4oAHoECAkQKQ&biw=1694&bih=837&dpr=1.09). Computer viruses are actually, contrary to common belief, a type of malware. Viruses are defined as follows:
+Computer viruses can run on any operating system, be it Windows or Mac. Computer viruses are actually, contrary to common belief, a type of malware. Viruses are defined as follows:
 
-1.  A computer virus requires a host program
+1.  A computer virus requires a host program.
 2.  A computer virus requires user action to transmit from one system to another.
 3.  A computer virus attaches bits of its own malicious code to other files or replaces files outright with copies of itself.
 
 ### Worms
-In contrast to computer viruses, worms are capable of spreading and executing itself from one system to another without user interaction. Afterward, worms can do various malicious tasks such as dropping a payload, affecting the file system and consume computer resources.
+In contrast to computer viruses, worms are capable of spreading and executing itself from one system to another without user interaction. Afterward, worms can do various malicious tasks such as dropping a payload, affecting the file system and consuming computer resources.
 
 There are two main types of worms: Network Service Worms, Mass Mailing Worms.
 
@@ -73,14 +75,14 @@ There are two main types of worms: Network Service Worms, Mass Mailing Worms.
 Next, we have the Trojan horse programs. According to Greek mythology, the Greeks built a wooden horse to subterfuge the city of Troy. Much like the Greek Trojan, the computer Trojan horse aims to infect your computer using deception by tricking users into running seemingly benign computer programs.
 
 ### Ransomware
-Finally we have ransomware, ransomware "*is malicious software that blocks access to the victim’s data until a ransom is paid*.” — [David Koff](https://medium.com/@TheTechTutor?source=post_elevate_sequence_page-----b255b627c879----------------------), *What is Malware? And How to Protect Yourself Against It*. It usually involves encrypting ones files to render it unreadable to the victims. This incentivizes victims to pay up, usually using cryptocurrencies such as Bitcoin.
+Finally we have ransomware. Ransomware "*is malicious software that blocks access to the victim’s data until a ransom is paid*.” — [David Koff](https://medium.com/@TheTechTutor?source=post_elevate_sequence_page-----b255b627c879----------------------). It usually involves encrypting one's files to render it unreadable to the victims. This incentivizes victims to pay up, usually using cryptocurrencies such as Bitcoin.
 
 ### Team Blue: The Marshal and Deputy
 
 ![marshal_badge](/engineering-education/what-is-anti-virus-software/marshal_badges.jpg)
 [*Image source*](https://www.google.com/search?tbs=simg:CAQSmAIJUgEqR_1jOuMQajAILELCMpwgaYgpgCAMSKJQX5wGBDIsMsgzwFsUM7xaVF5IXqzSFNfQ3rjTiJIIjqDaQJOMplSkaMFSG3g2HYBxTQAkiN7bp-IoFQ6LGQRvpqGIvSt6X4bSWrfibKNlpP3mBaSYhZruTNyAEDAsQjq7-CBoKCggIARIEnjKBEQwLEJ3twQkahAEKGQoGZW1ibGVt2qWI9gMLCgkvbS8wMXdrOWMKGAoFYmFkZ2XapYj2AwsKCS9tLzAzY255OQoYCgZjaXJjbGXapYj2AwoKCC9tLzAxdmtsChYKBHN0YXLapYj2AwoKCC9tLzA2bmdrChsKCWFpciBmb3JjZdqliPYDCgoIL20vMDEzbTEM&sxsrf=ALeKk00fnz1awR5UZ2suwA_GCs6tZoJE7g:1596539541828&q=old+west+marshall+badge&tbm=isch&sa=X&ved=2ahUKEwi_rYqitYHrAhVJI6wKHfwECEoQwg4oAHoECAkQKQ&biw=1694&bih=837&dpr=1.09#imgrc=fXAmoyg5R7o1UM)
 
-In the Wild West the marshal and deputy were there to protect the simple town folk from bandits and gangs. That is now the job of Anti-Malware (AV).
+In the Wild West the marshal and deputy were there to protect the simple town folk from bandits and gangs. That is now the job of Anti-Malware.
 
 ### Overview: What exactly is Anti-Malware?
 Anti-malware is software that protects the user from infrastructure destruction, financial ruin, loss of data or loss of consumer confidence, etc. through sophisticated malware techniques in detection, containment and prevention.
@@ -102,7 +104,7 @@ There are roughly four areas that comprise malware protection:
 In this article we are more interested in the identification part. Identification and forensics can be split up into two main parts: [static malware analysis and dynamic malware analysis](https://en.wikipedia.org/wiki/Malware_analysis). There are many other forms of analysis such as memory and resource use forensics, web and network analysis and specific sandboxing techniques. However, that is beyond the scope of this blog post.
 
 ### Malware Analysis
-*This this not by far a comprehensive list of Malware Analysis but more of an overview. There will be a reading list for those who are more interested in the nitty-gritty details.* ;)
+*This is nowhere near a comprehensive list of Malware Analysis but more of an overview. There will be a reading list for those who are more interested in the nitty-gritty details.*
 
 #### Static Malware Analysis
 Static malware analysis is a way of examining code without executing it on your device. There are many techniques and tools, both paid and open-source that help carry out forensic investigation. The following tools and techniques are:
