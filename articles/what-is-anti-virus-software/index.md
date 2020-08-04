@@ -55,7 +55,7 @@ Furthermore, individuals who aren’t likely end-targets can still become potent
 Now, let’s look at some of the major forms of malware.
 
 ### Viruses
-Computer viruses can run on any operating system be it Windows or Mac ( Mac’s are not immune ;) ). Computer viruses are actually, contrary to common belief, a type of malware. Viruses are defined as follows:
+Computer viruses can run on any operating system be it Windows or Mac ( Mac’s are not immune ;)) -- latest [malware report 2020](https://www.google.com/search?tbs=simg:CAQSnwIJ2yJsUXvW6G4akwILELCMpwgaYQpfCAMSJ-4IuwNg7wixA-YI6AjKCPMIwQP4PZk1-T3PN7cn4DSpNbkp9T38PRowcRkeEiQ7oK5sIRv_1v_1zkk9sjJkX--g_17_1BFHARu_1E1vQtj56TKP0vMOAZ1A_1ErXdIAQMCxCOrv4IGgoKCAgBEgRRmgYPDAsQne3BCRqMAQoWCgNlcmfapYj2AwsKCS9tLzBkNzlqcQoZCgZzYWhhcmHapYj2AwsKCS9tLzAxdzF2dAobCgh2YWNhdGlvbtqliPYDCwoJL20vMDJqd3FoCh8KDHNpbmdpbmcgc2FuZNqliPYDCwoJL20vMDE5NHY0ChkKB3BseXdvb2TapYj2AwoKCC9tLzBqaDh3DA&sxsrf=ALeKk034-B4ffrL1T814yJm67B1W__pA0Q:1596539712877&q=sheriff+callie%27s+wild+west+toby+gets+the+scoop&tbm=isch&sa=X&ved=2ahUKEwijsdLztYHrAhUCYKwKHWjACHcQwg4oAHoECAkQKQ&biw=1694&bih=837&dpr=1.09). Computer viruses are actually, contrary to common belief, a type of malware. Viruses are defined as follows:
 
 1.  A computer virus requires a host program
 2.  A computer virus requires user action to transmit from one system to another.
