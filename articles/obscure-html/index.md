@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: obscure-html
 title: Five Obscure but Useful HTML Tags
-description: This article details five obscure  and not often used but useful HTML tags - All these will work with HTML5.
+description: This article details five obscure  and not often used but useful HTML tags - All these will work with HTML5 - need to use JavaScript to render it later.
 author: mike-white
-date: 2020-07-25T00:00:00-07:00
+date: 2020-08-05T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
