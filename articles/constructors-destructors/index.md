@@ -266,5 +266,5 @@ class demo
 ```
 
 ### Additional Resources
-[C++ Class Constructor and Destructor](https://www.tutorialspoint.com/cplusplus/cpp_constructor_destructor.htm)
-[Difference between Constructor and Destructor in C++](https://www.geeksforgeeks.org/difference-between-constructor-and-destructor-in-c/)
+- [C++ Class Constructor and Destructor](https://www.tutorialspoint.com/cplusplus/cpp_constructor_destructor.htm)
+- [Difference between Constructor and Destructor in C++](https://www.geeksforgeeks.org/difference-between-constructor-and-destructor-in-c/)
