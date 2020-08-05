@@ -6,7 +6,7 @@ slug: keyword-extraction-in-python
 title: Keyword Extraction in Python
 description: The article covers the basics of keywords extraction and introduces the users to a method called TF-IDF for extracting important words from a document.
 author: adith-bharadwaj
-date: 2020-08-01T00:00:00-07:00
+date: 2020-08-05T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
