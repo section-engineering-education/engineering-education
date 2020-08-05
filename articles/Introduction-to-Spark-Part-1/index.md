@@ -47,7 +47,7 @@ MapReduce’s architecture means that results from a MapReduce job need to be st
 
 ### Enter Spark
 
-[Apache Spark](https://spark.apache.org/) is an open-source distributed general-purpose cluster-computing engine. Spark runs 100x faster than MapReduce, and provides an easy-to-use programming interface to program entire clusters with implicit data parallelism and fault tolerance, with support for Java, Scala, Python, R, and SQL. It can access many data sources and run on diverse setups. Spark performs efficient batch-processing as well as streaming, and can combine streaming with analytics and SQL in the same application.
+[Apache Spark](https://spark.apache.org/) is an open-source distributed general-purpose cluster-computing engine. Spark runs 100x faster than MapReduce, and provides an easy-to-use programming interface to program entire clusters with implicit data parallelism and fault tolerance, with support for Java, Scala, Python, R, and SQL. It can access many data sources and run on diverse setups. Spark performs efficient batch-processing as well as streaming, and can combine streaming with analytics and SQL in the same application. Spark has 4 built-in libraries - Spark Core, Spark SQL and Dataframes, Spark Streaming, MLLib, and GraphX. 
 
 The variance in computation speed of Spark compared to MapReduce comes from the architectural difference of the frameworks. MapReduce reads and writes intermediate results of its computation on disk, which results in considerable latency for iterative processes that need the results from the previous function to carry on. Spark, on the other hand, processes data in-memory, and only when it is not sufficient, it spills to disk. 
 
@@ -62,4 +62,9 @@ Cluster Manager, which allocates resources, is required for Spark. Spark support
 Spark segregates its nodes into _Drivers_ and _Workers_. Driver nodes have a driver program which creates a `SparkContext` object. Worker nodes have processes that run computations and store data called _executors_. `SparkContext` connects to cluster manager and executors, and coordinates between them. `SparkContext` assigns _tasks_ to executors, to run in parallel. Driver schedules tasks on executors and sends application code.
 [![img](./spark.png)](http://spark.apache.org/docs/latest/cluster-overview.html)
 
-Spark has 4 built-in libraries - Spark SQL and Dataframes, Spark Streaming, MLLib and GraphX. The simplest way to get started with Spark is to use it’s Python API [Pyspark](https://pypi.org/project/pyspark/), which we will explore in the upcoming articles.
+
+
+### Conclusion
+
+Apache Spark is a cutting-edge solution to big data computation, and provides APIs to alleviate the difficulties involved in coding distributed processes. It is also faster than its alternative, MapReduce, attributed mainly to an architectural difference in memory management. This advantage in speed of computation can be observed in iterative and non-linear programming paradigms. Spark can run on a wide range of storage setups and cluster managers. Spark's Python API [Pyspark](https://pypi.org/project/pyspark/) is the simplest, and the most popular ways to get started with Spark. In the upcoming article, we will learn to use Spark by exploring RDD programming concepts using Spark Core library to derive useful insights from large datasets in a fast and efficient manner.
+
