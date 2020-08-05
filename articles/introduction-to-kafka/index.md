@@ -6,7 +6,7 @@ slug: introduction-to-kafka
 title: Introduction to Kafka
 description: This article serves to introduces the readers to the basics of Kafka, its history, architecture, and installation.
 author: adith-bharadwaj
-date: 2020-07-25T00:00:00-07:00
+date: 2020-08-05T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
