@@ -1,21 +1,34 @@
-# Getting to Grips With Databases: Part 2 - Develop Your First Data-Driven Node.js Web App
+---
+layout: engineering-education
+status: publish
+published: true
+slug: working-with-databases-part2
+title: Getting to Grips With Databases: Part 2 - Develop Your First Data-Driven Node.js Web App
+description: How to use Node.js, EJS and the MongoDB node module to add, modify and delete data in a MongoDB collection using a book databases as an example.
+author: louise-findlay
+date: 2020-08-04T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/working-with-databases-part2/hero.png
+    alt: databases example images books
+---
 You've created your first MongoDB database and now you want to use it on a website. How do you display its data on the web? How can users add, modify and delete data? The solution is to create a dynamic Node.js web app using the MongoDB node module.
 
-**Note:** First time developing a Node.js web app or don't already have a database? Get started with [Node.js](Link to Converting a Static site article) and [databases](Link to Database Part 1).
-
-## Connecting MongoDB Database to the Web App
-
-First, we need to install the MongoDB node module so we can connect the local database we created in [part 1](Link to Part 1) to our web app **(server?)**.
+**Note:** First time developing a Node.js web app or don't already have a database? Get started with [Node.js](/engineering-education/static-site-dynamic-nodejs-web-app/) and [databases](/engineering-education/working-with-databases-part1/).
+<!--more-->
+### Connecting MongoDB Database to the Web App
+First, we need to install the MongoDB node module so we can connect the local database we created in [part 1](/engineering-education/working-with-databases-part1/) to our web app **(server?)**.
 
 In the terminal, type:
 
 ```bash
-npm install mongo --save 
+npm install mongo --save
 ```
-The install has been successful if `added 1 package`  appears.
+The install has been successful if `added 1 package` appears.
 
-Second, we need to add some code to our `server.js` file to tell our Express server where our database is and that it needs to use the MongoDB node module. 
+Second, we need to add some code to our `server.js` file to tell our Express server where our database is and that it needs to use the MongoDB node module.
 
 Add the following to the start of your `server.js` file:
 
@@ -74,13 +87,13 @@ app.get('/', function (req, res) {
     res.render('pages/index');
 });
 ```
-## Creating a Table of Book Data
+### Creating a Table of Book Data
 
-### Returning Data from a MongoDB Collection
+#### Returning Data from a MongoDB Collection
 
 Since we already have a database with data in it, the first thing you'll learn is how to display the data on a webpage.
 
-Assuming you followed [Part 1](Link to Part 1), inside your `firstdb` database, there's a collection called `books` with several entries of containing `name` and `genre`. We'll add this data into a table and even make it pretty using some CSS from [CSSTricks](https://css-tricks.com/complete-guide-table-element)
+Assuming you followed [Part 1](/engineering-education/working-with-databases-part1/), inside your `firstdb` database, there's a collection called `books` with several entries containing `name` and `genre`. We'll add this data into a table and even make it pretty using some CSS from [CSSTricks](https://css-tricks.com/complete-guide-table-element)
 
 The first step is to add a books route. The books route will contain the code to search our database collection, then create an EJS variable of the results and finally render a new page with the variable.
 
@@ -97,7 +110,7 @@ app.get('/books', function (req, res) {
     });
 });
 ```
-You'll notice the `db.collection('books').find({})` is similar to the `db.books.find()` command we did in Part 1 in the terminal. All Mongo Shell commands (i.e. terminal commands) can be used in Node.js only the syntax is a bit different. 
+You'll notice the `db.collection('books').find({})` is similar to the `db.books.find()` command we did in Part 1 in the terminal. All Mongo Shell commands (i.e. terminal commands) can be used in Node.js only the syntax is a bit different.
 
 The `.toArray` part will convert the results into an Array because there will be multiple results.
 
@@ -124,11 +137,12 @@ In your `views/pages` folder, add `books.ejs` with the following:
 </body>
 </html>
 ```
+
 We only need to add some basic HTML here so we can test. Once the correct data is returned from the database, we can add it to the EJS file.
 
 Run `npm start` in the terminal and then go to `localhost:8080/books` in your browser.
 
-Back in your terminal window, you should see `Book Collection: [object Object],[object Object],[object Object],[object Object]` which isn't very helpful. 
+Back in your terminal window, you should see `Book Collection: [object Object],[object Object],[object Object],[object Object]` which isn't very helpful.
 
 Because it's an array (containing multiple results) rather than a string, you'd have to loop through it (`forEach`) to see the data inside. A quicker solution however, is to convert it to a string for logging purposes.
 
@@ -180,7 +194,7 @@ Run `npm start` again and go to the books page. You should see the table and the
 
 You've got a table with your book data inside which is great but it doesn't look very nice. Luckily [CSSTricks](https://css-tricks.com/complete-guide-table-element) has come to the rescue with a few code snippets of CSS for tables.
 
-In your CSS file (create one at `public/css` if you haven't already), add the following:
+In your CSS file (create one at `public/css` if you haven't already), and add the following:
 
 ```css
 /* Table Styling from CSSTricks*/
@@ -221,11 +235,10 @@ I adjusted the size of the table by adding a width and changing the padding of t
 
 Reload the app using `npm start` and go back to the books page and the table should look a lot nicer.
 
-## Modifying a MongoDB Collection from the Web App
-
+### Modifying a MongoDB Collection from the Web App
 Currently, we've only used data that we added to the database in the terminal but the average user shouldn't have to clone our web app and set up a local database to do the same. Let's create a form which users can use to add, delete or update book entries in our database.
 
-Before we create a form or add a route to add, delete or modify database entries, we need to install a node module to grab the form queries from the submitted form URL. 
+Before we create a form or add a route to add, delete or modify database entries, we need to install a node module to grab the form queries from the submitted form URL.
 
 Type `npm install body-parser --save` to do so and then add `const bodyParser = require('body-parser');` to `server.js` underneath our other required node modules. We also need to include the following before `app.use()` to tell Express how to use the `body-parser` node module:
 
@@ -287,11 +300,11 @@ app.get('/books', function (req, res) {
         });
     });
 });
-``` 
+```
 
 ### Adding Data to a MongoDB Collection Using a Form (shorten to Adding Data etc?)
 
-To allow users to add data to our database collection, we first need to create a form. The user will then type in the book's name and genre that they want to add and click the submit button. 
+To allow users to add data to our database collection, we first need to create a form. The user will then type in the book's name and genre that they want to add and click the submit button.
 
 Add the following HTML to your `index.ejs` file:
 
@@ -305,7 +318,7 @@ Add the following HTML to your `index.ejs` file:
             </button>
         </form>
 ```
-The form action specifies what to do after submitting the form. In this case, it will go to the /add route which we will proceed to create. The method is set to POST because /add will be a POST route because we are POSTing data from the form. 
+The form action specifies what to do after submitting the form. In this case, it will go to the /add route which we will proceed to create. The method is set to POST because /add will be a POST route because we are POSTing data from the form.
 
 **Note:** Label is an important tag to use in forms for accessibility reasons. They label input tags using the for attribute which associates itself with the corresponding input tag id.
 
@@ -333,8 +346,7 @@ app.post('/add', function (req, res) {
 
 Run `npm start` and type the name of a book and its genre into the form and click the Add button to try it out for yourself.
 
-### Deleting Data from a MongoDB Collectiom Using a Form
-
+### Deleting Data from a MongoDB Collection Using a Form
 Congratulations, you've successfully created a form where users can type in their query, it's added to a local MongoDB database and a table is updated with the new information.
 
 You'll find that creating a form to delete data is a very similar process. Create a new form but instead of having two input fields for book name and genre, just add one for the name. Then modify the action value to a new route called /delete. See the example below:
@@ -370,7 +382,6 @@ As you can see, it's almost identical to the previous one you created for /add. 
 Test the new form out using `npm start` to make sure it works for you.
 
 ### Modifying Data from a MongoDB Collection Using a Form
-
 The last form (and piece of functionality) we'll create is for modifying data. What if one of your users made a typo and wants to correct it?
 
 Add a new form with two inputs like so:
