@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 slug: working-with-databases-part2
-title: Getting to Grips With Databases: Part 2 - Develop Your First Data-Driven Node.js Web App
+title: Develop Your First Data-Driven Node.js Web App
 description: How to use Node.js, EJS and the MongoDB node module to add, modify and delete data in a MongoDB collection using a book databases as an example.
 author: louise-findlay
-date: 2020-08-04T00:00:00-07:00
+date: 2020-08-04T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,7 @@ You've created your first MongoDB database and now you want to use it on a websi
 **Note:** First time developing a Node.js web app or don't already have a database? Get started with [Node.js](/engineering-education/static-site-dynamic-nodejs-web-app/) and [databases](/engineering-education/working-with-databases-part1/).
 <!--more-->
 ### Connecting MongoDB Database to the Web App
-First, we need to install the MongoDB node module so we can connect the local database we created in [part 1](/engineering-education/working-with-databases-part1/) to our web app **(server?)**.
+First, we need to install the MongoDB node module so we can connect the local database we created in [part 1](/engineering-education/working-with-databases-part1/) to our web app.
 
 In the terminal, type:
 
@@ -93,9 +93,9 @@ app.get('/', function (req, res) {
 
 Since we already have a database with data in it, the first thing you'll learn is how to display the data on a webpage.
 
-Assuming you followed [Part 1](/engineering-education/working-with-databases-part1/), inside your `firstdb` database, there's a collection called `books` with several entries containing `name` and `genre`. We'll add this data into a table and even make it pretty using some CSS from [CSSTricks](https://css-tricks.com/complete-guide-table-element)
+Assuming you followed [Part 1](/engineering-education/working-with-databases-part1/), inside your `firstdb` database, there's a collection called `books` with several entries containing `name` and `genre`. We'll add this data into a table and even make it pretty using some CSS from [CSSTricks](https://css-tricks.com/complete-guide-table-element).
 
-The first step is to add a books route. The books route will contain the code to search our database collection, then create an EJS variable of the results and finally render a new page with the variable.
+The first step is to add a books route. The books route will contain the code to search our database collection, then create an EJS variable of the results, and finally render a new page with the variable.
 
 Add the following to your `server.js`, below the root route:
 
@@ -110,11 +110,11 @@ app.get('/books', function (req, res) {
     });
 });
 ```
-You'll notice the `db.collection('books').find({})` is similar to the `db.books.find()` command we did in Part 1 in the terminal. All Mongo Shell commands (i.e. terminal commands) can be used in Node.js only the syntax is a bit different.
+You'll notice the `db.collection('books').find({})` is similar to the `db.books.find()` command we did in Part 1 in the terminal. All Mongo Shell commands (i.e. terminal commands) can be used in Node.js, only the syntax is a bit different.
 
 The `.toArray` part will convert the results into an Array because there will be multiple results.
 
-We'll use the `console.log` command to see what's being returned from the database but first we'll need to add a `books.ejs` file for the route.
+We'll use the `console.log` command to see what's being returned from the database, but first we'll need to add a `books.ejs` file for the route.
 
 In your `views/pages` folder, add `books.ejs` with the following:
 
@@ -144,7 +144,7 @@ Run `npm start` in the terminal and then go to `localhost:8080/books` in your br
 
 Back in your terminal window, you should see `Book Collection: [object Object],[object Object],[object Object],[object Object]` which isn't very helpful.
 
-Because it's an array (containing multiple results) rather than a string, you'd have to loop through it (`forEach`) to see the data inside. A quicker solution however, is to convert it to a string for logging purposes.
+Because it's an array (containing multiple results), rather than a string, you'd have to loop through it (`forEach`) to see the data inside. A quicker solution, however, is to convert it to a string for logging purposes.
 
 Alter your `console.log` to `JSON.stringify` the result like so: `console.log("Book Collection:" + JSON.stringify(result));` and then rerun the app and navigate to the books page again.
 
@@ -152,11 +152,16 @@ The response should contain all the data you've added to the `books` collection.
 
 **Books Collection `console.log` example**
 ```json
-Book Collection:[{"_id":"5ed79cc24096aca107f150fc","name":"Harry Potter and the Chamber of Secrets","genre":"Fantasy"},{"_id":"5ed7a03df2223b53e6e0defe","name":"Slated","genre":"Sci-Fi"},{"_id":"5f269cdeb81a7a48f4618bf3","name":"The Novice","genre":"Fantasy"},{"_id":"5f269d45cacefe08bc94bcf1","name":"The Outcast","genre":"Fantasy"}]
+Book Collection:[
+    {"_id":"5ed79cc24096aca107f150fc","name":"Harry Potter and the Chamber of Secrets","genre":"Fantasy"},
+    {"_id":"5ed7a03df2223b53e6e0defe","name":"Slated","genre":"Sci-Fi"},
+    {"_id":"5f269cdeb81a7a48f4618bf3","name":"The Novice","genre":"Fantasy"},
+    {"_id":"5f269d45cacefe08bc94bcf1","name":"The Outcast","genre":"Fantasy"}
+]
 ```
 ### Displaying Data on the Front-End
 
-Congratulations. You've successfully returned data from a MongoDB collection using a Node.js server for the first time. Now, we just need to display it on the front-end.
+Congratulations! You've successfully returned data from a MongoDB collection using a Node.js server for the first time. Now, we just need to display it on the front-end.
 
 Still in `server.js`, adjust our `res.render` to pass the database results to the front-end as an EJS variable.
 
@@ -192,7 +197,7 @@ Run `npm start` again and go to the books page. You should see the table and the
 
 ### Styling a Table
 
-You've got a table with your book data inside which is great but it doesn't look very nice. Luckily [CSSTricks](https://css-tricks.com/complete-guide-table-element) has come to the rescue with a few code snippets of CSS for tables.
+You've got a table with your book data inside, which is great, but it doesn't look very nice. Luckily [CSSTricks](https://css-tricks.com/complete-guide-table-element) has come to the rescue with a few code snippets of CSS for tables.
 
 In your CSS file (create one at `public/css` if you haven't already), and add the following:
 
@@ -231,7 +236,7 @@ table p {
     text-align: center;
 }
 ```
-I adjusted the size of the table by adding a width and changing the padding of the cells etc. to suit the length of the content. I also modified the accent colour to suit the app so feel free to alter the CSS.
+I adjusted the size of the table by adding a width and changing the padding of the cells, etc. to suit the length of the content. I also modified the accent colour to suit the app, so feel free to alter the CSS to fit your styling.
 
 Reload the app using `npm start` and go back to the books page and the table should look a lot nicer.
 
@@ -240,7 +245,7 @@ Currently, we've only used data that we added to the database in the terminal bu
 
 Before we create a form or add a route to add, delete or modify database entries, we need to install a node module to grab the form queries from the submitted form URL.
 
-Type `npm install body-parser --save` to do so and then add `const bodyParser = require('body-parser');` to `server.js` underneath our other required node modules. We also need to include the following before `app.use()` to tell Express how to use the `body-parser` node module:
+Type `npm install body-parser --save` to do so, and then add `const bodyParser = require('body-parser');` to `server.js` underneath our other required node modules. We also need to include the following before `app.use()` to tell Express how to use the `body-parser` node module:
 
 ```js
 app.use(bodyParser.urlencoded({
@@ -302,7 +307,7 @@ app.get('/books', function (req, res) {
 });
 ```
 
-### Adding Data to a MongoDB Collection Using a Form (shorten to Adding Data etc?)
+### Adding Data to a MongoDB Collection Using a Form
 
 To allow users to add data to our database collection, we first need to create a form. The user will then type in the book's name and genre that they want to add and click the submit button.
 
@@ -310,13 +315,13 @@ Add the following HTML to your `index.ejs` file:
 
 ```html
 <form id="addbook" action="/add" method="post">
-            <input type="text" id="input-name" name="name" placeholder="Book Title">
-            <label for="input-name">Book Name</label>
-            <input type="text" id="input-genre" name="genre" placeholder="Book Genre">
-            <label for="input-genre">Book Genre</label>
-            <button type="submit" value="Add">Add
-            </button>
-        </form>
+    <input type="text" id="input-name" name="name" placeholder="Book Title">
+    <label for="input-name">Book Name</label>
+    <input type="text" id="input-genre" name="genre" placeholder="Book Genre">
+    <label for="input-genre">Book Genre</label>
+    <button type="submit" value="Add">Add
+    </button>
+</form>
 ```
 The form action specifies what to do after submitting the form. In this case, it will go to the /add route which we will proceed to create. The method is set to POST because /add will be a POST route because we are POSTing data from the form.
 
@@ -342,23 +347,23 @@ app.post('/add', function (req, res) {
     });
 });
 ```
-`req.body.name and req.body.genre`, grabs the value of the name and genre inputs from the submitted form URL. Then the `bookdetails` variable, formats the data into JSON so MongoDB can understand it. Finally, `db.collection('books').insertOne` inserts our `bookdetails` entry into our books collection and then redirects the user to /books so they can see the updated list of books.
+`req.body.name and req.body.genre`, grabs the value of the name and genre inputs from the submitted form URL. Then the `bookdetails` variable formats the data into JSON so MongoDB can understand it. Finally, `db.collection('books').insertOne` inserts our `bookdetails` entry into our books collection and then redirects the user to /books so they can see the updated list of books.
 
 Run `npm start` and type the name of a book and its genre into the form and click the Add button to try it out for yourself.
 
 ### Deleting Data from a MongoDB Collection Using a Form
-Congratulations, you've successfully created a form where users can type in their query, it's added to a local MongoDB database and a table is updated with the new information.
+Congratulations, you've successfully created a form where users can type in their query; it's added to a local MongoDB database and a table is updated with the new information.
 
 You'll find that creating a form to delete data is a very similar process. Create a new form but instead of having two input fields for book name and genre, just add one for the name. Then modify the action value to a new route called /delete. See the example below:
 
 ```html
 <form id="deletebook" action="/delete" method="post">
-            <input type="text" id="input-name" name="name" placeholder="Book Title">
-            <label for="input-name">Book Name</label>
-            <button type="submit" value="Delete">
-            Delete
-            </button>
-        </form>
+    <input type="text" id="input-name" name="name" placeholder="Book Title">
+    <label for="input-name">Book Name</label>
+    <button type="submit" value="Delete">
+    Delete
+    </button>
+</form>
 ```
 In `server.js`, add a new route for /delete:
 
@@ -377,7 +382,7 @@ app.post('/delete', function (req, res) {
     });
 });
 ```
-As you can see, it's almost identical to the previous one you created for /add. The only difference is that you're deleting an entry, instead of inserting one and you're only getting the value of one input field.
+As you can see, it's almost identical to the previous one you created for /add. The only difference is that you're deleting an entry, instead of inserting one, and you're only getting the value of one input field.
 
 Test the new form out using `npm start` to make sure it works for you.
 
@@ -388,12 +393,12 @@ Add a new form with two inputs like so:
 
 ```html
 <form id="editbook" action="/edit" method="post">
-            <input type="text" id="input-editname" name="editname" placeholder="Old Book Name">
-            <input type="text" id="input-newname" name="newname" placeholder="New Book Name">
-            <button type="submit" value="Edit">
-            Edit
-            </button>
-        </form>
+    <input type="text" id="input-editname" name="editname" placeholder="Old Book Name">
+    <input type="text" id="input-newname" name="newname" placeholder="New Book Name">
+    <button type="submit" value="Edit">
+    Edit
+    </button>
+</form>
 ```
 Finally, in `server.js` add:
 
@@ -414,6 +419,6 @@ app.post('/edit', function (req, res) {
     });
 });
 ```
-Note, the syntax for updating data is different than adding or deleting. `$set` tells MongoDB the query that should be updated and `updateOne` takes two variables rather the one: the old data to be updated and the new data that should replace it.
+**Note:** the syntax for updating data is different than adding or deleting. `$set` tells MongoDB the query that should be updated and `updateOne` takes two variables rather the one: the old data to be updated and the new data that should replace it.
 
-Congratulations, you've developed your first data driven web app using Node.js and MongoDB. Looking to develop your book database further, improve the design or check out example code? Check out the [Github Repo](https://github.com/louisefindlay23/bookdatabase). Want to show off your first data driven web app to users? Learn how to [deploy a Node.js web app using DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app).
+Congratulations, you've developed your first data-driven web app using Node.js and MongoDB. Looking to develop your book database further, improve the design or check out example code? Check out the [Github Repo](https://github.com/louisefindlay23/bookdatabase). Want to show off your first data driven web app to users? Learn how to [deploy a Node.js web app using DigitalOcean](/engineering-education/deploying-nodejs-web-app).
