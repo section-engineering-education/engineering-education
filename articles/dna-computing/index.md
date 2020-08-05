@@ -28,7 +28,7 @@ The first theory of DNA computation was proposed by Leonard Adleman in 1994[1]. 
 
 ![Image source](/engineering-education/dna-computing/image1.png)
 
-[_Image source_](https://www.cs.uaf.edu/2010/fall/cs441/proj1/dna/DNAComputingHTMLNotes.html)
+[*Image source*](https://www.cs.uaf.edu/2010/fall/cs441/proj1/dna/DNAComputingHTMLNotes.html)
 
 Though this solution was not ideal, this demonstration opened floodgates to a wide range of possibilities and applications. A few applications being developed are mentioned below.
 
