@@ -6,7 +6,7 @@ slug: keyword-extraction-in-python
 title: Keyword Extraction in Python
 description: The article covers the basics of keywords extraction and introduces the users to a method called TF-IDF for extracting important words from a document.
 author: adith-bharadwaj
-date: 2020-08-01T00:00:00-07:00
+date: 2020-08-05T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -20,10 +20,12 @@ images:
 ### What is Keyword Extraction?
 *Keyword extraction is a text analysis technique in which we automatically extract the most relevant words and expressions from the text in a given document*. It can help us analyze large amounts of data by **summarizing** the content of the text and making it concise by identifying the main topics being discussed. This makes it highly scalable and efficient in analyzing large amounts of data.
 
-Keyword extraction allows companies to obtain the most important words from huge documents in a very short amount of time. This allows them to obtain insights on the topics their customers are interested in or reviews on their products. A lot of the data we generate is [unstructured](https://en.wikipedia.org/wiki/Unstructured_data) ― meaning it is disorganized and does not conform to any model or arrangement and is hard to analyze and process. *Keyword extraction can help users find relevant words in new articles, papers, or journals, etc., without having to read the whole document manually*. In this article, we are going to look at one such technique used to extract keywords, called **TF-IDF**(Term Frequency-Inverse Document Frequency).  
+Keyword extraction allows companies to obtain the most important words from huge documents in a very short amount of time. This allows them to obtain insights on the topics their customers are interested in or reviews on their products.
+
+A lot of the data we generate is [unstructured](https://en.wikipedia.org/wiki/Unstructured_data) ― meaning it is disorganized and does not conform to any model or arrangement and is hard to analyze and process. *Keyword extraction can help users find relevant words in new articles, papers, or journals, etc., without having to read the whole document manually*. In this article, we are going to look at one such technique used to extract keywords, called **TF-IDF**(Term Frequency-Inverse Document Frequency).  
 
 #### Preprocessing
-The input or raw text data needs to be parsed and cleaned. [Tokenization](https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/) is the process of splitting a sequence of text(sentence) into pieces, called tokens(a single word), and discard certain unwanted characters, such as punctuations, unwanted symbols, numbers,  etc. Once the data is cleaned and tokenized, the TF-IDF scores for the words in the data are calculated. *The higher the TF-IDF score, the more important is the word*.
+The input or raw text data needs to be parsed and cleaned. [Tokenization](https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/) is the process of splitting a sequence of text (sentence) into pieces, called tokens(a single word), and discard certain unwanted characters, such as punctuations, unwanted symbols, numbers,  etc. Once the data is cleaned and tokenized, the TF-IDF scores for the words in the data are calculated. *The higher the TF-IDF score, the more important is the word*.
 
 TF-IDF is a **mathematical score** that tells us how important a word is in a piece of text or document. *This is done by multiplying how many times a word appears in a document (TF) with the inverse document frequency of the word across a set of sentences*.
 
@@ -61,9 +63,9 @@ The most important words (keywords) from a document can be extracted by their tf
 
 #### Vectorization
 Before we process words, we need a way to represent words as numbers to allow mathematical operations on them. *A mathematical way of representing word is called [vectorization](https://medium.com/@paritosh_30025/natural-language-processing-text-data-vectorization-af2520529cf7)*. In the vectorized representation, we consider the bag of words model (unique words in the text).
-We count the occurrence of each word in a sentence and represent it in a vector(an array) whose length is equal to the number of unique words in the text. For example:
+We count the occurrence of each word in a sentence and represent it in a vector (an array) whose length is equal to the number of unique words in the text. For example:
 
-```
+```python
 Let sentence_1 = "i am a boy"
 Let sentence_2 = "i am a girl"
 unique_words = ["i", "am", "a", "boy", "girl"] (length = 5)
@@ -98,7 +100,7 @@ def vectorize(sentences):
 	return vector, unique_words		
 ```
 
-The `vectorize` function takes a `list(array)` of sentences in the text and returns a vectorized representation (as a 2-D array/vector) and a unique list of words in the entire text. 
+The `vectorize` function takes a list (array) of sentences in the text and returns a vectorized representation (as a 2-D array/vector) and a unique list of words in the entire text. 
 
 #### Calculating TF scores
 To calculate the TF scores, we use the formula described above.
@@ -122,7 +124,7 @@ def tf(vector, sentence, unique_words):
 	return tf
 ```
 
-The `tf` function takes a vector representation of the text, a `list` of sentences, and a `list` of unique words in the text as arguments. It returns the TF scores for each word in the document(as a 2-D array/vector). We iterate through all the sentences and for each word in that particular sentence, we use the TF formula to calculate the scores.
+The `tf` function takes a vector representation of the text, a `list` of sentences, and a `list` of unique words in the text as arguments. It returns the TF scores for each word in the document (as a 2-D array/vector). We iterate through all the sentences and for each word in that particular sentence, we use the TF formula to calculate the scores.
 
 #### Calculating IDF scores
 We use the IDF formula described above to calculate the IDF scores.
