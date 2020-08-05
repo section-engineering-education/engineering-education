@@ -6,7 +6,7 @@ slug: extending-classes
 title: Extending Classes (C++)
 description: This article introduces the basic concepts of Inheritance, different types of class derivations and friend functions with code snippets in C++.
 author: kanishkvardhan-a-n
-date: 2020-07-26T00:00:00-12:00
+date: 2020-08-04T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: extending classes example image
 
 ---
-Inheritance is one of the important characteristics of [Object Oriented Programming](https://en.wikipedia.org/wiki/Object-oriented_programming)(OOP). It acts as the foundation for the concept of extending classes (or derived classes). C++ supports this concept. **Inheritance is the ability to inherit properties from one class(base class) to another class(derived class).**
+Inheritance is one of the important characteristics of [Object Oriented Programming](https://en.wikipedia.org/wiki/Object-oriented_programming) (OOP). It acts as the foundation for the concept of extending classes (or derived classes). C++ supports this concept. **Inheritance is the ability to inherit properties from one class (base class) to another class (derived class).**
 <!--more-->
 
 C++ allows the user to construct new classes from the existing classes. The new class derives all the properties and features from its parent class and also has additional properties and features of its own.
@@ -36,7 +36,7 @@ C++ allows the user to construct new classes from the existing classes. The new 
 The above chart shows how properties are inherited and in which state they will be if the base class and derived class are private, public or protected respectively.
 
 ### Defining Derived Classes
-Declaring a subclass or derived class is as easy as declaring a superclass. By using a colon(:) after class(subclass) name, one can indicate that it(subclass) has been derived from another class(superclass).
+Declaring a subclass or derived class is as easy as declaring a superclass. By using a colon (:) after class (subclass) name, one can indicate that it (subclass) has been derived from another class (superclass).
 
 ##### The Syntax:
 
@@ -45,21 +45,22 @@ Declaring a subclass or derived class is as easy as declaring a superclass. By u
 	    *...members of the derived class...*
 };
 
-This is the syntax to declare a derived class. Here,
-**class** is the keyword.
-**subclass_name** is the name of the derived class.
-**:** is the symbol that indicates that the subclass is derived from superclass.
-**visibility_mode** defines the kind of derivation.
-**superclass_name** is the name of the base class.
+This is the syntax to declare a derived class. Here:
+- **class** is the keyword.
+- **subclass_name** is the name of the derived class.
+- **:** is the symbol that indicates that the subclass is derived from superclass.
+- **visibility_mode** defines the kind of derivation.
+- **superclass_name** is the name of the base class.
 
-Like the superclass, the subclass holds its own data members and member functions(mentioned as *...members of the derived class…* in the syntax). Also the declaration of the subclass should be ended by using a **semicolon(;)**.
+Like the superclass, the subclass holds its own data members and member functions (mentioned as *...members of the derived class…* in the syntax). Also the declaration of the subclass should be ended by using a **semicolon (;)**.
+
 **Note**: If visibility mode is not mentioned, then it is considered to be private by default.
 
 ### Examples for derived classes:
 Consider **abc()** and **def()** as base class and derived class with two data members of **int** and **char** type respectively. The two member functions for base class will be **demo1()** and **demo2()** and two member functions for derived class will be **demo3()** and **demo4()**.
 
 - ##### Private Derived Class
-```
+```C
 class abc
 {
 				private:
@@ -81,7 +82,7 @@ class def : private abc
 ```
 
 - ##### Public Derived Class
-```
+```C
 class abc
 {
 				private:
@@ -103,7 +104,7 @@ class def : public abc
 ```
 
 - ##### Protected Derived Class
-```
+```C
 class abc
 {
 				private:
@@ -133,14 +134,18 @@ class def : protected abc
   Since the data members are private to the base class, they do not get inherited into the derived class. The data members which are public in the base class become protected members to the derived class. Similarly, the data members which are protected in the base class stay protected in the derived class.
 
 ### Friend Function
-Now, we have learned that private and protected data members of the base class cannot be accessed from outside(of the base class). It means that the member functions which are declared **outside** the base class are prohibited to act on the data members which are declared **inside** the base class. For this to be allowed, the base class should be made publicly accessible. But C++ has an option where private and protected data members can be accessed outside the class without the need of making the base class public. This is where *‘Friend Function’* comes to picture. The common function can be shared between two classes by making that function as a friend.
+Now, we have learned that private and protected data members of the base class cannot be accessed from outside (of the base class). It means that the member functions which are declared **outside** the base class are prohibited to act on the data members which are declared **inside** the base class. For this to be allowed, the base class should be made publicly accessible.
+
+C++ has an option where private and protected data members can be accessed outside the class without the need of making the base class public. This is where *‘Friend Function’* comes into the picture. The common function can be shared between two classes by making that function as a friend.
+
 **A Friend Function is a non-member function that is a friend to base class**. It is declared inside a class by using the keyword **friend** before the class name. It is defined outside the class *without* using the keyword. Now, it can access private and protected members from outside the class.
+
 **Note**: A friend function is not a member function but a normal external function that has access to the private and protected members.
 
 ### C++ program to demonstrate Friend Function
-Consider the program to calculate area of a circle. The class will be defined with the name **area()**. Let **input()** be the member function which transfers the value to another variable. **calculate()** will be the friend function with return type *double*.
+Consider the program to calculate the area of a circle. The class will be defined with the name **area()**. Let **input()** be the member function which transfers the value to another variable. **calculate()** will be the friend function with return type *double*.
 
-```
+```C
 #include<iostream>
 #include<conio.h>
 using namespace std;
