@@ -49,12 +49,13 @@ The field of DNA computing is an emerging concept still in its infancy and its a
 
 ### References
 [1] [Adleman, L. M. (1994). Molecular computation of solutions to combinatorial problems. Science, 266(5187), 1021-1024.](https://science.sciencemag.org/content/266/5187/1021.abstract)
+
 [2] [Gehani, Ashish & Labean, Thomas & Reif, John. (2002). DNA-based Cryptography. Discr Math Theor Comput Sci. 54. 10.1007/978-3-540-24635-0_12.](https://link.springer.com/chapter/10.1007/978-3-540-24635-0_12)
+
 [3] [Zhixiang, J. Cui, Y. Yang and Y. Ma, Job shop scheduling problem based on DNA computing, Journal of Systems Engineering and Electronic, vol.17, no.3 pp.654-659, 2006.](https://www.sciencedirect.com/science/article/abs/pii/S1004413206601126)
+
 [4] [Watada, S. Kojima, S. Ueda and O. Ono, DNA computing approach to optimal decision problems, Proc. of the 2004 IEEE International Conference on Fuzzy Systems, vol.3, pp.1579-1584,2004.](https://ieeexplore.ieee.org/abstract/document/1375414)
+
 [5] [J. Watada and R. b. a. Bakar, "DNA Computing and Its Applications," 2008 Eighth International Conference on Intelligent Systems Design and Applications, Kaohsiung, 2008, pp. 288-294, doi: 10.1109/ISDA.2008.362.](https://ieeexplore.ieee.org/abstract/document/4696346)
+
 [6] [Young, W. C., & Sheu, B. J. (1997). Unraveling the future of computing. IEEE Circuits and Devices Magazine, 13(6), 14-21.](https://sci-hub.tw/https://www.nature.com/articles/35036086)
-
-
-
-
