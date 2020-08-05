@@ -91,21 +91,19 @@ linalg.det(A)
 
 
 ### Matpoltlib
-[Matplotlib](https://matplotlib.org/) is a very popular Python library used for data visualization. It is always the first choise of programmer to visualize the patterns in the data. A pyplot module makes plotting easier for programmers to provides features to control various parameters like Formatting the style, working with multiple figures and text, Logarithmic and other nonlinear axes, etc. Matplotlib even allows you to customize the layout and color of the various charts that you create.It provides various kinds of graphs and plots for data visualization, viz., histogram, error charts, bar charts, etc,. It can be also used for Plotting data from a database or Web or data extracted by parsing a log file.
+[Matplotlib](https://matplotlib.org/) is a very popular Python library used for graphic representation of data. It is always the first choice of the programmer to visualize the patterns in the data. A pyplot module makes plotting easier for programmers to provide features to control various parameters like Formatting the style, working with multiple figures and text, Logarithmic and other nonlinear axes, etc. Matplotlib even allows you to customize the layout and colour of the various charts that you create. It provides various kinds of graphs and plots for data visualization like line plot, streamplot, bar charts, pie charts, Scatter plots,  etc. It can be also used for Plotting data from a database or Web or data extracted by parsing a log file.
 
 ```python
-#  Python script using Matplotib for forming a linear plot
+#  Python script using Matplotib for forming a number and cube root relation
 
 import matplotlib.pyplot as plt
-import numpy as np
-
-x = np.linspace(0, 10, 100)
 
 # Plot the data
-plt.plot(x, x, label ='linear')
+plt.plot([1, 2, 3, 4], [1, 8, 27, 64])
 
-# Add a legend
-plt.legend()
+# Add Labels in graph
+plt.ylabel('Numbers')
+plt.xlabel('Cube ROOT')
 
 # Show the plot
 plt.show()
@@ -113,10 +111,10 @@ plt.show()
 
 *Output* </br>
 
-!["linear plot"](/engineering-education/data-science-libraries-python/matplotlib.png)
+!["cuberoot relation"](/data-science-libraries-python/matplotlib.png)
 
 ### Pandas
-[Pandas](https://pandas.pydata.org/)  is a popular Python library for data analysis. It is specifically used for preparing and extracting data. It provides high-level data structures and a wide variety of tools for data analysis. Numpy package is used in its core. The key data structure in pandas is called the DataFrame which consists of a number of rows and columns. Pandas data structure involves dataframe, series and panel. But dataframe is mostly used due to high functionality and flexibility it provides. It provides many inbuilt methods for grouping, combining and filtering data. The creator of Pandas, made the python library to mainly handle large datasets efficiently.
+[Pandas](https://pandas.pydata.org/)  is a popular Python library for data analysis. It is specifically used for preparing and extracting data. It provides wide variety of tools for data analysis. Numpy package is used in its core. The key data structure in pandas is called the DataFrame which consists of a number of rows and columns. Pandas data structure involves dataframe, series and panel. But dataframe is mostly used due to high functionality and flexibility it provides. It provides many inbuilt methods for grouping, combining and filtering data.
 
 ```python
 # Python program using Pandas for arranging a given set of data into a  table
