@@ -6,8 +6,8 @@ slug: obscure-html
 title: Five Obscure but Useful HTML Tags
 description: This article details five obscure  and not often used but useful HTML tags - All these will work with HTML5 - need to use JavaScript to render it later.
 author: mike-white
-date: 2020-08-05T00:00:00-07:00
-topics: []
+date: 2020-08-05T00:00:00-12:00
+topics: [languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -55,10 +55,8 @@ By default, content within the `<details>` tags are hidden, but can be shown by 
 </details>
 ```
 
-![A details section before being expanded](details1.png)
-
-![A details section after being expanded](details2.png)
-
+![A details section before being expanded](details1.png)<br>
+![A details section after being expanded](details2.png)<br>
 #### Uses:
 
 * This could be used for an FAQ in a fairly obvious way
@@ -74,7 +72,7 @@ anti<wbr>dise<wbr>stablishmen<wbr>taria<wbr>nism
 
 #### Uses
 * The Hugo theme I use automatically splits up the words in reasonable places for me. Although, I should say that it isn't using the `<wbr>` tag.  My guess is that it's [using CSS](https://css-tricks.com/almanac/properties/w/word-break/) instead. Not all browsers support this feature. You can use it for compatibility with ***checks notes*** [Google Chrome](https://caniuse.com/#feat=css-hyphens).
-* If you have a word that is very very long, like [Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon](https://en.wikipedia.org/wiki/Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon) or [this one](https://en.wiktionary.org/wiki/Appendix:List_of_protologisms/Long_words/Titin#Noun), you may want this.
+* If you have a word that is very very long, like [Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokich](https://en.wikipedia.org/wiki/Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon)<br>[lepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon](https://en.wikipedia.org/wiki/Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon) or [this one](https://en.wiktionary.org/wiki/Appendix:List_of_protologisms/Long_words/Titin#Noun), you may want this.
 
 ### 4. abbr
 The `<abbr>` tag is used to define an abbreviation. When the text is hovered over, it will show the full title.
@@ -89,7 +87,7 @@ Yes, we could do the same thing with a regular `<span>`.
 To do this, we need <span title="HyperText Markup Language">HTML</span> content.
 ```
 
-But using `<abbr>` can help the blind, who need text-to-speech software. The text-to-speech tool is more easily able to tell that it's an abbreviation this way.
+But using `<abbr>` can help the visually impaired, who need text-to-speech software. The text-to-speech tool is more easily able to tell that it's an abbreviation this way.
 
 ### 5. time
 The `<time>` tag tells the browser that the text refers to a time.
