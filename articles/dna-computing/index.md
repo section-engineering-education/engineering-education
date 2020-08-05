@@ -6,7 +6,7 @@ slug: dna-computing
 title: Introduction to DNA Computing and its Applications
 description: The article introduces to DNA computing, natural computing based on the concept of performing logical and arithmetic operations using molecular properties of DNA.
 author: aditi-jayakumar
-date: 2020-07-22T00:00:00-10:00
+date: 2020-08-05T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,7 @@ Each of the DNA strands forms helical structures that are long polymers of milli
 <!--more-->
 
 ### What is DNA Computing
-DNA computing _is an area of natural computing based on the concept of performing logical and arithmetic operations using molecular properties of DNA by replacing traditional carbon/silicon chips with biochips_. This allows massively parallel computation, where complex mathematical equations or problems can be solved at a much less time. Hence with a considerable amount of [self-replicating DNA](https://en.wikipedia.org/wiki/Self-replication#:~:text=Self%2Dreplication%20is%20any%20behavior,transmitted%20to%20offspring%20during%20reproduction.), computation is much efficient than the traditional computer which would require a lot more hardware.
+DNA computing *is an area of natural computing based on the concept of performing logical and arithmetic operations using molecular properties of DNA by replacing traditional carbon/silicon chips with biochips*. This allows massively parallel computation, where complex mathematical equations or problems can be solved at a much less time. Hence with a considerable amount of [self-replicating DNA](https://en.wikipedia.org/wiki/Self-replication#:~:text=Self%2Dreplication%20is%20any%20behavior,transmitted%20to%20offspring%20during%20reproduction.), computation is much efficient than the traditional computer which would require a lot more hardware.
 A good experience with biology and computer science is required to build algorithms to be executed in DNA computing. The information or data instead of being stored in binary digits will now be stored in the form of the bases A, T, G, C. The ability to synthesize short sequences of DNA artificially makes it possible to use these sequences as inputs for algorithms.
 
 
