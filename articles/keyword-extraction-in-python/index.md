@@ -6,7 +6,7 @@ slug: keyword-extraction-in-python
 title: Keyword Extraction in Python
 description: The article covers the basics of keywords extraction and introduces the users to a method called TF-IDF for extracting important words from a document.
 author: adith-bharadwaj
-date: 2020-08-05T00:00:00-14:00
+date: 2020-08-05T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -22,10 +22,10 @@ images:
 
 Keyword extraction allows companies to obtain the most important words from huge documents in a very short amount of time. This allows them to obtain insights on the topics their customers are interested in or reviews on their products.
 
-A lot of the data we generate is [unstructured](https://en.wikipedia.org/wiki/Unstructured_data) ― meaning it is disorganized and does not conform to any model or arrangement and is hard to analyze and process. *Keyword extraction can help users find relevant words in new articles, papers, or journals, etc., without having to read the whole document manually*. In this article, we are going to look at one such technique used to extract keywords, called **TF-IDF**(Term Frequency-Inverse Document Frequency).  
+A lot of the data we generate is [unstructured](https://en.wikipedia.org/wiki/Unstructured_data) ― meaning it is disorganized and does not conform to any model or arrangement and is hard to analyze and process. *Keyword extraction can help users find relevant words in new articles, papers, or journals, etc., without having to read the whole document manually*. In this article, we are going to look at one such technique used to extract keywords, called **TF-IDF** (Term Frequency-Inverse Document Frequency).  
 
 #### Preprocessing
-The input or raw text data needs to be parsed and cleaned. [Tokenization](https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/) is the process of splitting a sequence of text (sentence) into pieces, called tokens(a single word), and discard certain unwanted characters, such as punctuations, unwanted symbols, numbers,  etc. Once the data is cleaned and tokenized, the TF-IDF scores for the words in the data are calculated. *The higher the TF-IDF score, the more important is the word*.
+The input or raw text data needs to be parsed and cleaned. [Tokenization](https://www.analyticsvidhya.com/blog/2020/05/what-is-tokenization-nlp/) is the process of splitting a sequence of text (sentence) into pieces, called tokens (a single word), and discard certain unwanted characters, such as punctuations, unwanted symbols, numbers,  etc. Once the data is cleaned and tokenized, the TF-IDF scores for the words in the data are calculated. *The higher the TF-IDF score, the more important is the word*.
 
 TF-IDF is a **mathematical score** that tells us how important a word is in a piece of text or document. *This is done by multiplying how many times a word appears in a document (TF) with the inverse document frequency of the word across a set of sentences*.
 
@@ -200,6 +200,6 @@ def extract_keywords(tfidf, processed_text):
 	return keywords
 ```
 
-The `extract_keywords` function takes the TF-IDF scores and the processed text(cleaned and converted into an array) as the argument and returns the keywords in sorted order(decreasing order of TF-IDF scores).
+The `extract_keywords` function takes the TF-IDF scores and the processed text (cleaned and converted into an array) as the argument and returns the keywords in sorted order (decreasing order of TF-IDF scores).
 
 And it is done! We have successfully built a keyword extractor in Python.
