@@ -6,7 +6,7 @@ slug: introduction-to-spark
 title: Introduction to Apache Spark
 description: Introduction to the Apache Spark software library that is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.
 author: keerthi-v
-date: 2020-07-25T00:00:00-09:00
+date: 2020-08-05T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -66,5 +66,7 @@ Spark segregates its nodes into _Drivers_ and _Workers_. Driver nodes have a dri
 
 ### Conclusion
 
-Apache Spark is a cutting-edge solution to big data computation, and provides APIs to alleviate the difficulties involved in coding distributed processes. It is also faster than its alternative, MapReduce, attributed mainly to an architectural difference in memory management. This advantage in speed of computation can be observed in iterative and non-linear programming paradigms. Spark can run on a wide range of storage setups and cluster managers. Spark's Python API [Pyspark](https://pypi.org/project/pyspark/) is the simplest, and the most popular ways to get started with Spark. In the upcoming article, we will learn to use Spark by exploring RDD programming concepts using Spark Core library to derive useful insights from large datasets in a fast and efficient manner.
+Apache Spark is a cutting-edge solution to big data computation, and provides APIs to alleviate the difficulties involved in coding distributed processes. It is also faster than its alternative, MapReduce, attributed mainly to an architectural difference in memory management. This advantage in speed of computation can be observed in iterative and non-linear programming paradigms.
+
+Spark can run on a wide range of storage setups and cluster managers. Spark's Python API [Pyspark](https://pypi.org/project/pyspark/) is the simplest, and the most popular ways to get started with Spark. In an upcoming article, we will learn to use Spark by exploring RDD programming concepts using Spark Core library to derive useful insights from large datasets in a fast and efficient manner.
 
