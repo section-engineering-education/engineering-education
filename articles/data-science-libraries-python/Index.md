@@ -111,7 +111,7 @@ plt.show()
 
 *Output* </br>
 
-!["cuberoot relation"](/data-science-libraries-python/cuberoot.png)
+!["cuberoot relation"](/articles/data-science-libraries-python/cuberoot.png)
 
 ### Pandas
 [Pandas](https://pandas.pydata.org/)  is a popular Python library for data analysis. It is specifically used for preparing and extracting data. It provides wide variety of tools for data analysis. Numpy package is used in its core. The key data structure in pandas is called the DataFrame which consists of a number of rows and columns. Pandas data structure involves dataframe, series and panel. But dataframe is mostly used due to high functionality and flexibility it provides. It provides many inbuilt methods for grouping, combining and filtering data.
