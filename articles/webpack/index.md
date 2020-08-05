@@ -250,3 +250,10 @@ The `test` property identifies which file should be transformed. The `use` prope
 
 ### Conclusion
 A huge advantage of using webpack is its customizability and its features like [Hot Module Reloading](https://webpack.js.org/concepts/hot-module-replacement/), we have discussed only some ways in which webpack can be configured please visit [this link](https://webpack.js.org/configuration/) for more information. There are other tools which have emerged like [Parcel Bundler](https://parceljs.org/), but webpack is still well suited for large and complex applications due to its features. Read about comparisons [here](https://webpack.js.org/comparison/).
+
+
+## References
+
+* [DOCS](https://webpack.js.org/guides/getting-started)
+* [https://www.freecodecamp.org/news/](https://www.freecodecamp.org/news/how-to-configure-webpack-4-with-angular-7-a-complete-guide-9a23c879f471)
+* [dev.to](https://dev.to/vinodchauhan7/webpack-zero-to-production-part-1-1m9e)
