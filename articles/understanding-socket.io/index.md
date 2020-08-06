@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: understanding-socket
 title: Understanding Socket.io
-description: Websocket is a computer communication protocol that enables full-duplex communication between the client and server over a single TCP connection.
+description: Websocket is a computer communication protocol that enables full-duplex communication between the client and server over a single TCP connection. Socket.io is event based meaning that the client and server communicate through events.
 author: peter-kayere
-date: 2020-08-01T00:00:00-07:00
+date: 2020-08-06T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
