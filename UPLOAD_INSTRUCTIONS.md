@@ -22,7 +22,7 @@ Students should always keep their fork up to date with section-io/engineering-ed
 ### only need to do this once
 git remote add section http://github.com/section-io/engineering-education 
 
-### then every time
+### then use this every time before contributing a new article
 git fetch section
 git pull --rebase section master
 git push origin
