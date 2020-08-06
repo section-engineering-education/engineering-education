@@ -30,7 +30,7 @@ Let's begin by creating a numpy array
 import numpy as np
 a=np.array([1,2,3,4,5])
 ```
-The input to the np.array should be a list. To specify the data type at runtime, we manually add the argument dtype in the **np.array** function
+The input to the np.array should be a list. To specify the data type at runtime, we manually add the argument dtype in the **np.array** function.
 
 ```python
 import numpy as np
