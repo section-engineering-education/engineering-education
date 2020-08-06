@@ -6,7 +6,7 @@ slug: extending-classes
 title: Extending Classes (C++)
 description: This article introduces the basic concepts of Inheritance, different types of class derivations and friend functions with code snippets in C++.
 author: kanishkvardhan-a-n
-date: 2020-08-04T00:00:00-07:00
+date: 2020-08-06T00:00:00-07:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -132,9 +132,9 @@ In all the above examples, the data members are private to the base class. So th
 ##### Private Inheritance
 The data members of the base class can be inherited because they are public. The public members become private to the sub-class. Protected members stay protected after inheritance. This implies that everything from the base class becomes exclusive to the derived class.
 ##### Public Inheritance
-   This is the most used inheritance mode. Public members again become public to the sub-class. This is helpful if another class inherits data members from the former one. This applies to all the data members. But to avoid that case some members can be protected. By doing so protected members stay protected after inheritance. 
- ##### Protected Inheritance
-   Data members become protected members of the derived class. This is regardless of data members being public or protected in the base class. In this type of inheritance, data members are accessed only by the objects of the same class.
+This is the most used inheritance mode. Public members again become public to the sub-class. This is helpful if another class inherits data members from the former one. This applies to all the data members. But to avoid that case, some members can be protected. By doing so, protected members stay protected after inheritance. 
+##### Protected Inheritance
+Data members become protected members of the derived class. This is regardless of data members being public or protected in the base class. In this type of inheritance, data members are accessed only by the objects of the same class.
 
 
 ### Friend Function
