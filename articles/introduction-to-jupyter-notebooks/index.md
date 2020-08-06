@@ -6,7 +6,7 @@ slug: introduction-to-jupyter-notebooks
 title: Introduction to Jupyter Notebooks
 description: The article explores the basics of Jupyter notebooks, why they are used, how to install, run, and use Jupyter notebooks for a wide array of tasks.
 author: adith-bharadwaj
-date: 2020-07-25T00:00:00-07:00
+date: 2020-08-05T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
