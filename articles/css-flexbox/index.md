@@ -6,7 +6,7 @@ slug: css-flexbox
 title: Create Layouts for Websites using CSS Flexbox
 description: CSS Flexbox is a one-dimensional layout system for creating layouts for webpages. It is used to align and define element behavior across a row or a column.
 author: saiharsha-balasubramaniam
-date: 2020-07-19T00:00:00-08:00
+date: 2020-08-05T00:00:00-08:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -30,7 +30,7 @@ Let us understand some terms in Flexbox and build a simple layout using it.
 
 ### Introduction
 
-CSS Layout is a tricky process, and developers tend to go with frameworks such as [Bootstrap](https://getbootstrap.com/) or [Bulma](https://bulma.io/) for getting a good layout system. Frameworks like these tend to **add weight** to the project, with their huge sizes and **complexity**. The in-built CSS Flex Module can substitute frameworks like these to create lightweight resposive website layouts.
+CSS Layout is a tricky process, and developers tend to go with frameworks such as [Bootstrap](https://getbootstrap.com/) or [Bulma](https://bulma.io/) for getting a good layout system. Frameworks like these tend to **add weight** to the project, with their huge sizes and **complexity**. The in-built CSS Flex Module can substitute frameworks like these to create lightweight responsive website layouts.
 
 Let's look at some basic terminology used in the flexbox module.
 
