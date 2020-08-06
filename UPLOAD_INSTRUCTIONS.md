@@ -14,6 +14,11 @@ Once you have successfully forked over to your repository:
 - You should notice your username in the upper left-hand corner (top red arrow).
 - If a Github Action notice pops up, click **Dismiss** (red arrow in the middle).
 
+General rules:
+Students should always be branching from their master
+
+Students should always keep their fork up to date with section-io/engineering-education
+
 ### Clone the forked repository
 Next, you will need to clone the repository to your local computer.
 
@@ -40,6 +45,9 @@ Within that article folder, upload your prepared .md file containing article con
 ```
 If you have a Header image in mind - (for the hero image) -feel free to include it your PR as well - please try to keep images as close to 600X400 pixels (images can be resized in paint) - also please make sure the image is from a site like www.unsplash.com
 
+Any images within the article need to be host on our site - place the image in the proper folder - and have the proper image paths in the article similar to the hero image. 
+With proper citation if required.
+
 Your folder should look similar to this:
 
 ![folder contents](/images/folder-contents.png)
@@ -55,6 +63,16 @@ Open a pull request that includes the name of your article and a description of 
 
 ![OpenPR_image](/images/openPR_image2_.PNG)
 
+***Note***: Make sure your repository is up to date with the EngEd repository before contributing new articles.
+
+### only need to do this once
+git remote add section http://github.com/section-io/engineering-education 
+
+### then use this every time before contributing a new article
+git fetch section
+git pull --rebase section master
+git push origin
+
 Here is a [link](https://www.youtube.com/watch?v=nT8KGYVurIU&t=47s) to a short video further explaining what a **pull request** is and how to **fork** a Github repository.
 
 Before submitting your article make sure you take advantage of this useful tool that helps with word count, formatting, and grammar/readability.
@@ -62,9 +80,9 @@ Helps make any writing BOLD & CLEAR
 It highlights lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it.
 Please use on all future articles before submitting a PR (pull request)
 
-Include a short Author Biography and Headshot image to be included at the end of your articles.
-
 http://www.hemingwayapp.com/
+
+Include a short Author Biography and Headshot image to be included at the end of your articles.
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team.
 
