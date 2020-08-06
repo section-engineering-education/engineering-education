@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+slug: golang-part-2-programming-basics
+title:  Golang - Programming Basics
+description: It covers the basics of programming in Go: directories, workspaces, variables, loops, conditionals and control flow, etc.
+author: adith-bharadwaj
+date: 2020-07-21T00:00:00-07:00
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/golang-part-2-programming-basics/hero.jpg
+    alt: golang image example
+---
 
 *Go is a statically-typed and procedural programming language whose syntax resembles C*. In the previous article, we looked at the history of Go, its purpose, and installation. In this article, we are going to explore basic programming concepts such as variables, input/output, arrays, etc. Before we start writing programs, there are a few concepts to bear in mind. 
 
