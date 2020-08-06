@@ -6,7 +6,7 @@ slug: data-science-libraries-python
 title: Popular Data Science Libraries used in python
 description: This is an article about the popular data science libraries used in python, and how developers are using them for analysis.
 author: richu-thomas
-date: 2020-07-14T00:00:00-07:00
+date: 2020-08-05T00:00:00-07:00
 topics: [security]
 excerpt_separator: <!--more-->
 images:
