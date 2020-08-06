@@ -10,17 +10,25 @@ Typically, Discord bots are written in [Node.js](https://nodejs.org/en/). Node i
 
 First, you need to visit the [Discord Developer Portal](https://discordapp.com/developers/applications/). Click the "New Application" button. Give your bot a name, and click "Create".
 
-![The New Application button is i]()
+![The New Application button is in the top right corner](discordbot1.png)
+
+![Create](discordbot2.png)
 
 You'll get to your application's page, where if you want, you can give it a description and an avatar.
 
 On the left, you should see a "Bot" tab. Click on that, and then click on the button that says, "Add Bot". Once you confirm your decision, you will be the proud owner of your very own Discord Bot.
+
+![The tab that says “Bot” is on the right side of the page](discordbot3.png)
+
+![The “Add Bot” button is in the top right corner](discordbot4.png)
 
 Give your bot a name and an icon to make it stand out.
 
 ### Getting Your Token
 
 The token for your bot is like a username and a password. It tells Discord which bot you want to control, and proves that you are the owner of the bot. **DO NOT GIVE AWAY YOUR DISCORD TOKEN!** I sometimes accidentally put my token on GitHub. Then I have to go through the trouble of resetting it. I'll show you how to hide it from GitHub in just a sec.
+
+![“Click Here To Reveal Your Token”](discordbot5.png)
 
 ### Adding The Bot To Your Server
 
@@ -32,15 +40,21 @@ https://discord.com/oauth2/authorize?client_id=CLIENT_ID&scope=bot
 
 You'll need to replace `CLIENT_ID` with the client ID of your bot, which you can find on the application page.
 
+![The client ID is on the “General Information” tab](discordbot6.png)
+
 Once you've traveled to this page, you'll need to specify which server to add it to. It needs to be a server where you have administrative privileges. Then click "Authorize", and you'll be ready!
 
 ## Set up Your Project
 
 You'll need to install [Node](https://nodejs.org/en/). Discord.js requires at least version 12 of Node. You can check your version by running `node -v` in a terminal or command prompt. If the version number is at least `12.0`, you're good.
 
-Make a folder for your project. You can call it anything. Once you're in that folder, type `npm install discord.js`. It will take a bit of time. You might see a few warnings, but that's perfectly normal.
+![The version number should be at least 12](discordbot7.png)
 
-If this project is on GitHub, you'll want to hide your token. Create a file called `token.txt`, and add it to your `.gitignore` file. Now, we can start coding.
+Make a folder for your project. You can call it anything. Once you're in that folder, type `npm install discord.js`. It will take a bit of time. You might see a few warnings, but that's perfectly normal. Make sure you have administrative privileges if you’re on Windows, and use `sudo` on Linux.
+
+![The npm install discord.js command](discordbot8.png)
+
+If this project is on GitHub, you'll want to hide your token. Create a file called `token.txt`, and add it to your `.gitignore` file. You might want to put some random text in `token.txt` first, and then push to make sure it’s actually hidden. Once you’re sure you’ve done it correctly, put the token in your `token.txt` file. Now, we can start coding.
 
 Make a file called `index.js` and open it up in your text editor of choice. There's some basic boilerplate code that you'll need to get started.
 
