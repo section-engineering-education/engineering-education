@@ -18,11 +18,11 @@ General rules:
 Students should always be branching from their master
 Students should always keep their fork up to date with section-io/engineering-education
 
-*Note*:
-# only need to do this once
+***Note***:
+### only need to do this once
 git remote add section http://github.com/section-io/engineering-education 
 
-# then every time
+### then every time
 git fetch section
 git pull --rebase section master
 git push origin
