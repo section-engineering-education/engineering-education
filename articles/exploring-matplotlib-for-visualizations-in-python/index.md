@@ -95,7 +95,7 @@ The library is used in many fields including but not limited to the following:
 
 Let's begin with co-ordinate geometry. We will plot circle, hyperbola, parabola, and ellipse. The concepts that will be introduced are 2-D plots and 3-D plots
 
-#### 2-D Pl1ots
+#### 2-D Plots
 
 ##### Key Points:
 
