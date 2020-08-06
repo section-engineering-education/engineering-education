@@ -19,7 +19,7 @@ In the second part of this article, we will continue our exploration of [WebAsse
 
 As I mentioned before in [my previous article](/engineering-education/introduction-web-assembly/), WebAssembly is well suited for resource-intensive tasks like processing big chunks of data as in digital signal manipulation. Hence, reading and writing audio which is exactly what our example application will be about. While I was coming up with an application idea for this article, I tried to stay away from something overly complicated, since WebAssembly is still in active development and there is not that much tooling around integrating it with frontend frameworks such as Angular, Vue.js and React. As a consequence, a lot of research, trials and errors went in the process of writing this article, just to find a beginner-friendly way to import Wasm modules inside a react application. Luckily, I found this [article](https://wasmbyexample.dev/examples/reading-and-writing-audio/reading-and-writing-audio.rust.en-us.html) which presents a small web application that amplifies simple audio sound waves from an [AudioBuffer](https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer) using the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). Our example application will essentially embed the same features, with some minor tweaks, inside a react application that consumes a Webssembly module.
 
-Before we start, let's get familiar with the world of digital audio as it will help understand the logic of our example application. I will add links at the end of the article that points to some other resources for further exploration. Digital audio is stored in the browser using the `AudioBuffer` interface as a series of 32-bits floating-point numbers, ranging between `-1` and `1`, where each one of them represents a sample from the original audio source. The audiobuffer is then passed to the `AudioBufferSourceNode` interface so that the audio data can be played by the browser. As far as our example application is concerned, we will import generated audio samples from JavaScript to be amplified by a Rust program compiled to WebAssembly.
+Before we start, let's get familiar with the world of digital audio as it will help understand the logic of our example application. I will add links at the end of the article that point to some other resources for further exploration. Incoming digital audio is stored in the browser using the `AudioBuffer` interface as a series of 32-bit floating point numbers ranging between `-1` and `1`, where each represents a sample from the original audio source. Once put into the AudioBuffer, the audio is then passed to the `AudioBufferSourceNode` interface to be played by the browser. As far as our example application is concerned, we will import generated audio samples from JavaScript to be amplified by a Rust program compiled to WebAssembly.
 
 ### Some Prerequisites
 
@@ -120,11 +120,11 @@ pub fn amplify_audio() {
 }
 ```
 
-*Credit for the above file goes to the authors of this [article](https://wasmbyexample.dev/examples/reading-and-writing-audio/reading-and-writing-audio.rust.en-us.html) from which my demo application is inspired from.*
+*Credit for the above file goes to the authors of this [article](https://wasmbyexample.dev/examples/reading-and-writing-audio/reading-and-writing-audio.rust.en-us.html) from which inspired my demo application.*
 
-This program defines two buffers: an input buffer that'll store the original audio samples generated from JavaScript, and an output buffer containing the amplified version of the input buffer data.
+This program defines two buffers: an input buffer that will store the original audio samples generated from JavaScript, and an output buffer containing the amplified version of the input buffer data.
 
-Now we will compile our Rust program into WebAssembly and generate along a javascript "glue" code as a module that can be imported inside our React Application.
+Now we will compile our Rust program into WebAssembly and generate along a javascript "glue" code which is a wrapper file around the .wasm code so it can be imported inside our React Application.
 
 Inside the `audio-wasm-library` folder, run the following command:
 
@@ -132,7 +132,7 @@ Inside the `audio-wasm-library` folder, run the following command:
 wasm-pack build
 ```
 
-If everything goes as expected, you should have a `pkg` folder created that contains a `.wasm` module, a `package.json` file, as well as a javascript module that we'll import into our React Application. Ideally, `pkg` should be [published](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages) on npm and install it as any other dependency. For demonstration purposes, we copy and paste the `pkg` folder in the root folder of our application.
+If everything goes as expected, you should have a `pkg` folder created that contains a `.wasm` module, a `package.json` file, and a javascript module that we'll import into our React Application. Ideally, `pkg` should be [published](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages) on npm and install it as any other dependency. For demonstration purposes, we copy and paste the `pkg` folder in the root folder of our application.
 
 Finally, inside `pkg`, open `audio_wasm_library_bg.js` and add the following code at the end of the file:
 
@@ -216,7 +216,7 @@ You should note that this is only for demonstration purposes. In a real-world sc
 
 ### Wiring it all together
 
-Now that we have all in place, the last step is to start building our application.
+Now that we have all the pieces in place, the last step is to start building our application.
 
 Replace the `App.js` component with the follwing code:
 
@@ -312,14 +312,14 @@ First, I'm using [Hooks](https://reactjs.org/docs/hooks-intro.html) which depend
  const wasm = await import("external");
 ```
 
-The code above is asynchronous and you might be wondering why we didn't we import our Wasm module at the top of the file as we did with the other modules (i.e `import wasm from "external"`)? Well, the reason for that is due to the browser producing the  following error when we try to load our Wasm module synchronously:
+The code above is asynchronous and you might be wondering why didn't we import our Wasm module at the top of the file as we did with the other modules (i.e `import wasm from "external"`)? Well, the reason for that is due to the browser producing the  following error when we try to load our Wasm module synchronously:
 
 ```text
 WebAssembly module is included in the initial chunk.
 This is not allowed, because WebAssembly download and compilation must happen asynchronously.
 ```
 
-Furthermore, we perform our actual audio generation and amplification. Again, this article assumes you already know the mechanics of interacting with Wasm memory. Most of the remaining logic here is using the WebAssembly Linear Memory but in the context of a React Application. The important thing to note here is how we are reading from Wasm memory using `.slice` calls. Finally, we set the `AudioContext` and `Audiobuffer` interfaces that we'll use later to play the original and amplified audio samples.
+Afterwards, we perform our actual audio generation and amplification. Again, this article assumes you already know the mechanics of interacting with Wasm memory. Most of the remaining logic here is using the WebAssembly Linear Memory but in the context of a React Application. The important thing to note here is how we are reading from Wasm memory using `.slice` calls. Finally, we set the `AudioContext` and `Audiobuffer` interfaces that we'll use later to play the original and amplified audio samples.
 
 In the `App.js` component, we add some event handler functions to provide a way to play/pause the audio buffers using an `AudioBufferSourceNode` interface. It pretty much looks like this [example](https://wasmbyexample.dev/examples/reading-and-writing-audio/reading-and-writing-audio.rust.en-us.html) with some small changes that use the state variables we defined earlier.
 
