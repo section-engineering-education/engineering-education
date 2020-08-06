@@ -43,13 +43,13 @@ func main() {
 }
 ```
 
-1. Package declaration: *This is The first line of the program and defines the name of the current package name. "Package main", tells Go that this is the starting point to run the program. We can use the **package** keyword to define packages in our program*. 
+1. Package declaration: *This is The first line of the program and defines the name of the current package name. `Package main`, tells Go that this is the starting point to run the program. We can use the **package** keyword to define packages in our program*. 
 
-2. Imports: *Import statements tell the Go compiler to include the files defined in that particular package. In the above example, we are importing the "fmt" package that implements I/O functions in Go. We can use the **import** keyword to import a particular package to our program*.   
+2. Imports: *Import statements tell the Go compiler to include the files defined in that particular package. In the above example, we are importing the `fmt` package that implements I/O functions in Go. We can use the **import** keyword to import a particular package to our program*.   
 
 3. Functions: *A function is a set of statements that perform a particular task. The main function defines where the program begins and ends. The main function is mandatory to define in the main package. Go automatically executes everything in the main function, and the program exits when it reaches the end. The **func** keyword is used to define functions*.
 
-The "go run" command can be used to run the go programs. This command compiles and executes the program on the terminal or command prompt. Copy and paste all the examples in this tutorial onto a file, give the file a name, and run it using the "go run <file name>" command on your terminal. 
+The `go run` command can be used to run the go programs. This command compiles and executes the program on the terminal or command prompt. Copy and paste all the examples in this tutorial onto a file, give the file a name, and run it using the `go run <file name>` command on your terminal. 
 
 ![go run](/engineering-education/golang-part-2-programming-basics/go-run.png)
 
@@ -82,7 +82,7 @@ func main() {
 }
 ```
 
-The user can define single or multiple variables using the **var** keyword. Multiple variables can be declared in a single line and Go will infer the type of the variables if they are initialized without a type. Variables that are declared but not initialized are automatically initialized to zero. The ":=" operator is a shorthand that declares and initializes a variable in the same line and the compiler automatically identifies the type of the variable. In the above example, "d" and "e" are declared using the shorthand operator. 
+The user can define single or multiple variables using the **var** keyword. Multiple variables can be declared in a single line and Go will infer the type of the variables if they are initialized without a type. Variables that are declared but not initialized are automatically initialized to zero. The `:=` operator is a shorthand that declares and initializes a variable in the same line and the compiler automatically identifies the type of the variable. In the above example, `d` and `e` are declared using the shorthand operator. 
 
 [Operators](https://yourbasic.org/golang/operators/) are special symbols that tell Go to perform a particular mathematical operation on variables. 
 
@@ -113,7 +113,7 @@ func main() {
 }
 
 ```
-In the above code, we declare "a" to be a constant. If we try to change the value of "a" or assign a new value to it, the compiler throws an error. The structure for declaring constant variables is:
+In the above code, we declare `a` to be a constant. If we try to change the value of `a` or assign a new value to it, the compiler throws an error. The structure for declaring constant variables is:
 
 ```
 const variable_name data_type (optional) = value (optional)
@@ -141,14 +141,14 @@ func main() {
         fmt.Println("5 is greater")
     } else if 5 < 3 {
         fmt.Println("5 is equal to three")
-    }else{
+    } else{
         fmt.Println("5 is less than 3")
     }
 
 }
 ```
 
-**if** is a keyword that checks an expression to see if it is true or false. If the expression evaluates to true, the statements inside the curly braces are executed. If the expression is false, then the statements enclosed in the **else** portion are executed. For example, "if 3%2 == 0" evaluates to false as 3 is not divisible by two and the print statement inside the else part gets executed. Similarly, since 5 is greater than 3, "if 5 > 3" evaluates to true and the print statement inside if gets executed. 
+**if** is a keyword that checks an expression to see if it is true or false. If the expression evaluates to true, the statements inside the curly braces are executed. If the expression is false, then the statements enclosed in the **else** portion are executed. For example, `if 3%2 == 0` evaluates to `false` as 3 is not divisible by two and the print statement inside the else part gets executed. Similarly, since 5 is greater than 3, `if 5 > 3` evaluates to `true` and the print statement inside if gets executed. 
 
 A user can execute multiple if-else statements and the statements are executed from the top down. As soon as one of the conditions is true, the statement associated with that is executed. This creates a "ladder" also called the if-else ladder.
 
@@ -169,7 +169,7 @@ if condition1 {
 }
 ```
 
-An "if" statement can be used without a corresponding else statement whereas an "else" statement must always follow an "if" statement. "else" statement cannot be used without a corresponding "if". 
+An `if` statement can be used without a corresponding else statement whereas an `else` statement must always follow an `if` statement. `else` statement cannot be used without a corresponding `if`. 
  
 ```
 if condition {
@@ -223,7 +223,7 @@ for condition {
 
 ```
 
-The loop only executes until the condition is satisfied. In the above example, we declare and initialize a variable called "i" to zero and execute the for loop until "i" reaches the value 10. The increment operator (++) is used to increment the value of "i" after every iteration of the loop. 
+The loop only executes until the condition is satisfied. In the above example, we declare and initialize a variable called `i` to zero and execute the for loop until `i` reaches the value 10. The increment operator (`++`) is used to increment the value of `i` after every iteration of the loop. 
 
 Go does not have a **while** loop. However, a for loop can act as a while loop in go:
 
@@ -272,7 +272,7 @@ func main() {
 
 2. We run a for loop to go through all the numbers from 1 to 100 (inclusive).
 
-3. In the for loop, we check to see if the current number is divisible by 2 (if i % 2 == 0). If it is divisible by 2, the statements inside the if block are executed. 
+3. In the for loop, we check to see if the current number is divisible by 2: `if i % 2 == 0`. If it is divisible by 2, the statements inside the if block are executed. 
 
 4. If the number is divisible by 2, we add it to our sum. Every time a number is divisible by two, it gets added to the sum variable.
 
