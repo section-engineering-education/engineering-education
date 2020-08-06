@@ -40,6 +40,9 @@ Within that article folder, upload your prepared .md file containing article con
 ```
 If you have a Header image in mind - (for the hero image) -feel free to include it your PR as well - please try to keep images as close to 600X400 pixels (images can be resized in paint) - also please make sure the image is from a site like www.unsplash.com
 
+Any images within the article need to be host on our site - place the image in the proper folder - and have the proper image paths in the article similar to the hero image. 
+With proper citation if required.
+
 Your folder should look similar to this:
 
 ![folder contents](/images/folder-contents.png)
