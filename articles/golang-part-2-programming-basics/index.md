@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+slug: golang-part-2-programming-basics
+title:  Golang - Programming Basics
+description: It covers the basics of programming in Go: directories, workspaces, variables, loops, conditionals and control flow, etc.
+author: adith-bharadwaj
+date: 2020-07-21T00:00:00-07:00
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/golang-part-2-programming-basics/hero.jpg
+    alt: golang image example
+---
 
 *Go is a statically-typed and procedural programming language whose syntax resembles C*. In the previous article, we looked at the history of Go, its purpose, and installation. In this article, we are going to explore basic programming concepts such as variables, input/output, arrays, etc. Before we start writing programs, there are a few concepts to bear in mind. 
 
@@ -53,13 +69,16 @@ The `go run` command can be used to run the go programs. This command compiles a
 
 ![go run](/engineering-education/golang-part-2-programming-basics/go-run.png)
 
+
 #### Variables, Keywords, and identifiers
-**Identifiers** are names of various components defined by the user in the program. An identifier can be the name of a variable, function, constant, statement, etc. **Keywords** are words that are reserved by a program because they have a special meaning and are used for some internal action. Keywords are reserved and cannot be used as identifiers in a program. There are 25 keywords in Go:
+| Identifiers  | Keywords    | Variables     |
+|     :---:    |    :---:    |   :---:       |
+| **Identifiers** are names of various components defined by the user in the program. An identifier can be the name of a variable, function, constant, statement, etc.  | **Keywords** are words that are reserved by a program because they have a special meaning and are used for some internal action. Keywords are reserved and cannot be used as identifiers in a program. | **Variables** are used to store information and can be referenced or manipulated in a program. In Go, each variable has a specific type associated with it that determines the variable's properties such as the size occupied in memory, operations permitted, etc. A complete list of data types can be found [here](https://www.tutorialspoint.com/go/go_data_types.htm). Variables can only begin with a letter or an underscore and may contain the letters ‘a-z’ or ’A-Z’ or digits 0-9 or underscore.   |
+
+There are 25 keywords in Go:
 
 ![go keywords](/engineering-education/golang-part-2-programming-basics/go-keywords.png)
  
-**Variables** are used to store information and can be referenced or manipulated in a program. In Go, each variable has a specific type associated with it that determines the variable's properties such as the size occupied in memory, operations permitted, etc. A complete list of data types can be found [here](https://www.tutorialspoint.com/go/go_data_types.htm). Variables can only begin with a letter or an underscore and may contain the letters ‘a-z’ or ’A-Z’ or digits 0-9 or underscore.
-
 
 ```go
 package main
