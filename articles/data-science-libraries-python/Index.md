@@ -14,12 +14,10 @@ images:
   - url: /engineering-education/data-science-libraries-python/hero.jpg
     alt: hero image visual data science python
 ---
+It refers to all the procedures and methodologies that are used to procure, organize, package, and present data in an understandable format. There are different kinds of data that might be available in different fields, and this data could be either in a structured or unstructured format.
 <!--more-->
 
-### Data Science
-It refers to all the procedures and methodologies that are used to procure, organize, package, and present data in an understandable format. There are different kinds of data that might be available in different fields, and this data could be either in a structured or unstructured format.
-
-
+#### Data Science
 ### Why is Python so popular when people start their coding Journey?
 There are many tools and libraries which are built for Python developers so they don't have to implement many things from scratch. The libraries such as Numpy, Matplotlib, Pandas, SciPy, scikit-learn, etc. are used in statistics and for processing numerical data. The deep learning libraries such as Tensorflow, PyTorch, etc. has gain very popularity among Deep learning and Machine Learning Enthusiasts.
 Moreover, Python has emerged as the default language for people starting with AI and ML. Since Python is an interpreter-based language this feature is primarily used in jyputer notebooks to break down the full program into chunks(cells) so any addition, deletion or update will only affect the code below that cell it is not in the case of any compile-based language so helps data scientists implement solutions and follow standards.
