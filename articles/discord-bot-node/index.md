@@ -74,6 +74,8 @@ client.login(token); // starts the bot up
 
 You can run this by using `node index.js`. Once you’ve done that it should look something like this:
 
+![The word “ready” appears in the command prompt](discordbot9.png)
+
 ## Creating Commands
 
 That's cool, but we want the bot to actually do something. Whenever a user types in "?ping", let's make the bot reply with "Pong". We just need to add some more code above the `client.login()` call.
@@ -105,6 +107,8 @@ client.on("message", message => {
     }
 });
 ```
+
+![I say “?ping”, the bot says “Pong”](discordbot0.png)
 
 There. Now to add more commands, you just add them to `commands`.
 
