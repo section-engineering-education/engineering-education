@@ -39,7 +39,7 @@ The RFID module used is MFRC522. The RFID module is connected to
 Arduino. Here we are reading the UID number of a person’s ID card using
 RFID scanner. We load the UID value onto the RFID tag.
 
-![alt text](/engineering-education/pos-system-using-arduino-and-python/arduino.jpg "Title")
+!["Title"](/engineering-education/pos-system-using-arduino-and-python/arduino.jpg)
 
 ### Software
 ### Socket Programming
