@@ -3,19 +3,21 @@ layout: engineering-education
 status: publish
 published: true
 slug: webpack
-title: Introduction To Webpack
+title: Introduction To Webpack with Node.js
 description: This article serves as an Introduction to webpack - webpack is a static module bundler for modern JavaScript applications. 
 author: rohan-reddy
-date: 2020-07-23T00:00:00-10:00
-topics: []
+date: 2020-08-06T00:00:00-12:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/webpack/hero.jpg
     alt: webpack example text image
 ---
-[Webpack](https://webpack.js.org/) is a *static module bundler* for JavaScript applications. It takes [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) whether that's a custom file that we created or something that was installed through NPM and converts these modules to static assets so that you can take a fully dynamic application package it into static files which you can then upload and deploy to your server. We can also extend what webpack can do with [Plugins](https://webpack.js.org/concepts/plugins/) and [Loaders](https://webpack.js.org/concepts/loaders/). A module is javascript code with a discrete chunk of functionality and its abstract and delegates functionality to libraries so that we don't have to understand the complexity of it.
+[Webpack](https://webpack.js.org/) is a *static module bundler* for JavaScript applications. It takes [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), whether that's a custom file that we created or something that was installed through NPM, and converts these modules to static assets.
 <!--more-->
+
+This enables you to take a fully dynamic application and package it into static files, which you can then upload and deploy to your server. We can also extend what webpack can do with [Plugins](https://webpack.js.org/concepts/plugins/) and [Loaders](https://webpack.js.org/concepts/loaders/). A module is JavaScript code with a discrete chunk of functionality, and it abstracts and delegates functionality to libraries so that we don't have to understand the complexity of it.
 
 ### Why Use Module Bundlers and Webpack?
 When we had very few JS scripts on a webpage, there were two ways to load JavaScript.
@@ -29,9 +31,7 @@ When we had very few JS scripts on a webpage, there were two ways to load JavaSc
   </html>
   ```
 
-
   and
-
 
   ```html
   <html>
@@ -44,11 +44,12 @@ When we had very few JS scripts on a webpage, there were two ways to load JavaSc
   </html>
   ```
 
-This method does not scale, and when we have many scripts, it becomes a problem to load these scripts because of network bottleneck. If we keep them all in one file, then it becomes unmaintainable and causes problems with the name and scope of variables. Then came **[IIFE's](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)** which solved scope issues for large projects but changing even one file meant rebuilding the entire project.
+This method does not scale, and when we have many scripts, it becomes a problem to load these scripts because of network bottleneck. If we keep them all in one file, then it becomes unmaintainable and causes problems with the name and scope of variables.
 
+Then came **[IIFE's](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)** which solved scope issues for large projects, but changing even one file meant rebuilding the entire project.
 
-**JavaScript Modules**[(node modules)](https://www.w3schools.com/nodejs/nodejs_modules.asp) when JavaScript was bought to server-side with NodeJS, there were no HTML files to add `<script>` tags. CommonJS came out and introduced `require`, which allows you to load and use a module in the current file.
-
+#### JavaScript Modules [(Node.js modules)](https://www.w3schools.com/nodejs/nodejs_modules.asp)
+ When JavaScript was bought server-side with Node.js, there were no HTML files to add `<script>` tags. CommonJS came out and introduced `require`, which allows you to load and use a module in the current file.
 
   ```javascript
   //math.js
@@ -63,7 +64,7 @@ This method does not scale, and when we have many scripts, it becomes a problem 
 While this was great for Node.js projects, there is no browser support for CommonJS. Bundling tools like [RequireJS](https://requirejs.org/) and [Browserify](http://browserify.org/) were created for this purpose.
 
 
-**ECMAScript Modules (ESM)**
+#### ECMAScript Modules (ESM)
 ECMAScript modules are the official standard format to package JavaScript code for reuse. Modules are defined using a variety of `import` and `export` statements.
 
 
@@ -82,15 +83,14 @@ ECMAScript modules are the official standard format to package JavaScript code f
 This is good news for web projects. However, browser support is incomplete, and bundling is still faster than early module implementations.
 
 
-So why, webpack? Bundlers like webpack automatically go through your application and build a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) based on what is imported and exported. This, along with other plugins and loaders, make for great developer experience. It's a tool that lets you bundle your JavaScript applications (supporting **both ESM and CommonJS**). Any time one file depends on another, webpack treats this as a dependency. This allows webpack to take non-code assets, such as images or web fonts, and also provide them as dependencies for your application.
+#### So, why webpack?
+Bundlers like webpack automatically go through your application and build a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) based on what is imported and exported. This, along with other plugins and loaders, makes for a great developer experience. It's a tool that lets you bundle your JavaScript applications (supporting **both ESM and CommonJS**). Any time one file depends on another, webpack treats this as a dependency. This allows webpack to take non-code assets, such as images or web fonts, and also provide them as dependencies for your application.
 
 
 ### Getting Started with Webpack
-Once installed, you can interface webpack with webpack either from its [CLI](https://webpack.js.org/api/cli) or [API](https://webpack.js.org/api/node). Since version 4, webpack does not need a configuration file to bundle your project. Nevertheless, it is incredibly configurable.
+Once installed, you can interface with webpack either from its [CLI](https://webpack.js.org/api/cli) or [API](https://webpack.js.org/api/node). Since version 4, webpack does not need a configuration file to bundle your project. Nevertheless, it is incredibly configurable.
 
-
-Let's create a dummy node project and bundle it with webpack. You can use your project.
-
+Let's create a dummy Node.js project and bundle it with webpack. You can use your project.
 
 ### Install webpack
 You need [NPM](https://www.npmjs.com/get-npm) and [Node](https://nodejs.org/en/download/) installed on your machine.
