@@ -16,16 +16,8 @@ Once you have successfully forked over to your repository:
 
 General rules:
 Students should always be branching from their master
+
 Students should always keep their fork up to date with section-io/engineering-education
-
-***Note***:
-### only need to do this once
-git remote add section http://github.com/section-io/engineering-education 
-
-### then use this every time before contributing a new article
-git fetch section
-git pull --rebase section master
-git push origin
 
 ### Clone the forked repository
 Next, you will need to clone the repository to your local computer.
@@ -71,6 +63,16 @@ Open a pull request that includes the name of your article and a description of 
 
 ![OpenPR_image](/images/openPR_image2_.PNG)
 
+***Note***: Make sure your repository is up to date with the EngEd repository before contributing new articles.
+
+### only need to do this once
+git remote add section http://github.com/section-io/engineering-education 
+
+### then use this every time before contributing a new article
+git fetch section
+git pull --rebase section master
+git push origin
+
 Here is a [link](https://www.youtube.com/watch?v=nT8KGYVurIU&t=47s) to a short video further explaining what a **pull request** is and how to **fork** a Github repository.
 
 Before submitting your article make sure you take advantage of this useful tool that helps with word count, formatting, and grammar/readability.
@@ -78,9 +80,9 @@ Helps make any writing BOLD & CLEAR
 It highlights lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it.
 Please use on all future articles before submitting a PR (pull request)
 
-Include a short Author Biography and Headshot image to be included at the end of your articles.
-
 http://www.hemingwayapp.com/
+
+Include a short Author Biography and Headshot image to be included at the end of your articles.
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team.
 
