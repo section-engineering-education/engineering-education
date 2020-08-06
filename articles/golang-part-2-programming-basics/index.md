@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: golang-part-2-programming-basics
 title:  Golang - Programming Basics
-description: It covers the basics of programming in Go: directories, workspaces, variables, loops, conditionals and control flow, etc.
+description: Covering the basics of programming in Go - directories, workspaces, variables, loops, conditionals and control flow, etc.
 author: adith-bharadwaj
-date: 2020-07-21T00:00:00-07:00
+date: 2020-08-06T00:00:00-09:00
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,22 +15,23 @@ images:
     alt: golang image example
 ---
 
-*Go is a statically-typed and procedural programming language whose syntax resembles C*. In the previous article, we looked at the history of Go, its purpose, and installation. In this article, we are going to explore basic programming concepts such as variables, input/output, arrays, etc. Before we start writing programs, there are a few concepts to bear in mind. 
+*Go is a statically-typed and procedural programming language whose syntax resembles C*. In the [previous article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and installation. In this article, we are going to explore basic programming concepts such as variables, input/output, arrays, etc. Before we start writing programs, there are a few concepts to bear in mind. 
 
 ### Go workspace
 *Go programs are usually kept in the same workspace*. A workspace may contain multiple repositories from version control systems such as Git.  
+
 These repositories can contain several packages. According to the [documentation](https://golang.org/), Go programs are organized into packages. A package is a collection of programs in the same directory that are compiled together. 
 
 *A repository contains one or more modules*. A module is a collection of related Go packages that are released together. A Go repository typically contains only one module, located at the root of the repository. 
 
 #### Directories
-A workspace is a directory hierarchy with two directories at its root: src, bin, and pkg.
+A workspace is a directory hierarchy with three directories at its root: `src`, `bin`, and `pkg`.
 
-**src**: *The src directory contains the source code (Go programs) written by the user. It may contain multiple repositories*. 
+**`src`**: The src directory contains the source code (Go programs) written by the user. It may contain multiple repositories. 
 
-**bin**: *This folder contains the binary executable files that are built and installed by the Go tool*. 
+**`bin`**: This folder contains the binary executable files that are built and installed by the Go tool. 
 
-**pkg**: *This directory contains all the non-executable packages or shared libraries that are used in other executable packages*. 
+**`pkg`**: This directory contains all the non-executable packages or shared libraries that are used in other executable packages. 
 
 This is an example of a workspace that contains an executable program called hello inside the bin directory and multiple programs inside the src directory in a hierarchical structure. 
 
@@ -59,26 +60,23 @@ func main() {
 }
 ```
 
-1. Package declaration: *This is The first line of the program and defines the name of the current package name. `Package main`, tells Go that this is the starting point to run the program. We can use the **package** keyword to define packages in our program*. 
+1. **Package declaration:** This is The first line of the program and defines the name of the current package name. `Package main`, tells Go that this is the starting point to run the program. We can use the **package** keyword to define packages in our program. 
 
-2. Imports: *Import statements tell the Go compiler to include the files defined in that particular package. In the above example, we are importing the `fmt` package that implements I/O functions in Go. We can use the **import** keyword to import a particular package to our program*.   
+2. **Imports:** Import statements tell the Go compiler to include the files defined in that particular package. In the above example, we are importing the `fmt` package that implements I/O functions in Go. We can use the **import** keyword to import a particular package to our program.   
 
-3. Functions: *A function is a set of statements that perform a particular task. The main function defines where the program begins and ends. The main function is mandatory to define in the main package. Go automatically executes everything in the main function, and the program exits when it reaches the end. The **func** keyword is used to define functions*.
+3. **Functions:** A function is a set of statements that perform a particular task. The main function defines where the program begins and ends. The main function is mandatory to define in the main package. Go automatically executes everything in the main function, and the program exits when it reaches the end. The **func** keyword is used to define functions.
 
-The `go run` command can be used to run the go programs. This command compiles and executes the program on the terminal or command prompt. Copy and paste all the examples in this tutorial onto a file, give the file a name, and run it using the `go run <file name>` command on your terminal. 
+The `go run` command can be used to run the go programs. This command compiles and executes the program on the terminal or command prompt.
+
+Copy and paste all the examples in this tutorial onto a file, give the file a name, and run it using the `go run <file name>` command on your terminal. 
 
 ![go run](/engineering-education/golang-part-2-programming-basics/go-run.png)
 
 
-#### Variables, Keywords, and identifiers
-| Identifiers  | Keywords    | Variables     |
-|     :---:    |    :---:    |   :---:       |
-| **Identifiers** are names of various components defined by the user in the program. An identifier can be the name of a variable, function, constant, statement, etc.  | **Keywords** are words that are reserved by a program because they have a special meaning and are used for some internal action. Keywords are reserved and cannot be used as identifiers in a program. | **Variables** are used to store information and can be referenced or manipulated in a program. In Go, each variable has a specific type associated with it that determines the variable's properties such as the size occupied in memory, operations permitted, etc. A complete list of data types can be found [here](https://www.tutorialspoint.com/go/go_data_types.htm). Variables can only begin with a letter or an underscore and may contain the letters ‘a-z’ or ’A-Z’ or digits 0-9 or underscore.   |
+#### Components
 
-There are 25 keywords in Go:
-
-![go keywords](/engineering-education/golang-part-2-programming-basics/go-keywords.png)
- 
+##### Variables
+Variables are used to store information and can be referenced or manipulated in a program. In Go, each variable has a specific type associated with it that determines the variable's properties such as the size occupied in memory, operations permitted, etc. A complete list of data types can be found [here](https://www.tutorialspoint.com/go/go_data_types.htm). Variables can only begin with a letter or an underscore and may contain the letters ‘a-z’ or ’A-Z’ or digits 0-9 or underscore.
 
 ```go
 package main
@@ -113,7 +111,18 @@ var variable_name data_type(optional) = value(optional)
 variable_name := value (shorthand)
 ```
 
-#### Constants
+##### Keywords
+Keywords are words that are reserved by a program because they have a special meaning and are used for some internal action. Keywords are reserved and cannot be used as identifiers in a program.
+
+There are 25 keywords in Go:
+![go keywords](/engineering-education/golang-part-2-programming-basics/go-keywords.png)
+
+##### Identifiers
+Identifiers are names of various components defined by the user in the program. An identifier can be the name of a variable, function, constant, statement, etc.
+
+
+
+##### Constants
 Constants are fixed values that are initialized once and not altered anywhere else in the program. The **const** keyword is used to declare a single or multiple constant variables in Go. 
 
 ```go
@@ -138,7 +147,7 @@ In the above code, we declare `a` to be a constant. If we try to change the valu
 const variable_name data_type (optional) = value (optional)
 ```
 
-#### Conditionals and control flow
+##### Conditionals and control flow
 [Conditionals](https://en.wikipedia.org/wiki/Conditional_(computer_programming)) are features that execute a particular action depending on certain conditions that evaluate to either true or false. Consider the following example:
 
 ```go
@@ -171,8 +180,7 @@ func main() {
 
 A user can execute multiple if-else statements and the statements are executed from the top down. As soon as one of the conditions is true, the statement associated with that is executed. This creates a "ladder" also called the if-else ladder.
 
-![control flow](/engineering-education/golang-part-2-programming-basics/control-flow.jpg)
-
+![control flow](/engineering-education/golang-part-2-programming-basics/control-flow.jpg)<br>
 The basic structure of conditionals:
 
 ```
@@ -209,9 +217,7 @@ if condition1 {
     }
 }
 ```
-
-
-#### Loops
+##### Loops
 [Loops](https://en.wikipedia.org/wiki/For_loop) are a set of instructions that are repeated until a certain condition is met. Loops can be used when the user wants to execute a block of statements multiple times. 
 
 ```go
@@ -264,7 +270,7 @@ func main() {
 ```
 
 ### Putting it all together
-Let us use the above concepts to write a program to add all the even numbers from 1 to 100 and print the result.
+Let's use the above concepts to write a program to add all the even numbers from 1 to 100 and print the result.
 
 ```go
 package main
