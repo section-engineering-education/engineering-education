@@ -10,6 +10,8 @@ Typically, Discord bots are written in [Node.js](https://nodejs.org/en/). Node i
 
 First, you need to visit the [Discord Developer Portal](https://discordapp.com/developers/applications/). Click the "New Application" button. Give your bot a name, and click "Create".
 
+![The New Application button is i]()
+
 You'll get to your application's page, where if you want, you can give it a description and an avatar.
 
 On the left, you should see a "Bot" tab. Click on that, and then click on the button that says, "Add Bot". Once you confirm your decision, you will be the proud owner of your very own Discord Bot.
