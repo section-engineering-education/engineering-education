@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: crap-design
 title: From Crap Design to CRAP Design
-description: Even if you're a non-designer, you can still make a beautiful looking webpage for your project. Here are some tips to show you how.
+description: Even if you're a non-designer, you can still make a beautiful looking webpage for your project. Here are some tips to show you how- talking about contrast, repetition, alignment, proximity.
 author: mike-white
-date: 2020-08-01T00:00:00-07:00
+date: 2020-08-05T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
