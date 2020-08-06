@@ -63,14 +63,16 @@ const Discord = require("discord.js"); // imports the discord library
 const fs = require("fs"); // imports the file io library
 
 const client = new Discord.Client(); // creates a discord client
-const token = fs.readFileSync("token.txt"); // gets your token from the file
+const token = fs.readFileSync("token.txt").toString(); // gets your token from the file
 
 client.once("ready", () => { // prints "Ready!" to the console once the bot is online
-	console.log("Ready!"");
+	console.log("Ready!");
 });
 
 client.login(token); // starts the bot up
 ```
+
+You can run this by using `node index.js`. Once you’ve done that it should look something like this:
 
 ## Creating Commands
 
@@ -96,7 +98,7 @@ commands.set("ping", ping);
 
 client.on("message", message => {
     if (message.content[0] === '?') {
-        const command = message.split(" ")[0].substr(1); // gets the command name
+        const command = message.content.split(" ")[0].substr(1); // gets the command name
         if (commands.has(command)) { // checks if the map contains the command
             commands.get(command)(message) // runs the command
         }
