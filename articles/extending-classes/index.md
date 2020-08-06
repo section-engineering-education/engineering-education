@@ -126,12 +126,16 @@ class def : protected abc
 ```
 
 ### Differentiating between Derived Classes
+In all the above examples, the data members are private to the base class. So they do not get inherited into the derived class. 
+**Note:** The visibility mode of the sub-class has nothing to do with the inheritance of data members(only if they are private in the base class).
+
 ##### Private Inheritance
-  Since the data members are private to the base class, they do not get inherited into the derived class. The data members which are public in the base class become private members to the derived class. Similarly, the data members which are protected in the base class stay protected in the derived class.  
+The data members of the base class can be inherited because they are public. The public members become private to the sub-class. Protected members stay protected after inheritance. This implies that everything from the base class becomes exclusive to the derived class.
 ##### Public Inheritance
-  Since the data members are private to the base class, they do not get inherited into the derived class. The data members which are public in the base class become public members to the derived class. Similarly, the data members which are protected in the base class stay protected in the derived class. This is the most commonly used inheritance mode.
-##### Protected Inheritance
-  Since the data members are private to the base class, they do not get inherited into the derived class. The data members which are public in the base class become protected members to the derived class. Similarly, the data members which are protected in the base class stay protected in the derived class.
+   This is the most used inheritance mode. Public members again become public to the sub-class. This is helpful if another class inherits data members from the former one. This applies to all the data members. But to avoid that case some members can be protected. By doing so protected members stay protected after inheritance. 
+ ##### Protected Inheritance
+   Data members become protected members of the derived class. This is regardless of data members being public or protected in the base class. In this type of inheritance, data members are accessed only by the objects of the same class.
+
 
 ### Friend Function
 Now, we have learned that private and protected data members of the base class cannot be accessed from outside (of the base class). It means that the member functions which are declared **outside** the base class are prohibited to act on the data members which are declared **inside** the base class. For this to be allowed, the base class should be made publicly accessible.
