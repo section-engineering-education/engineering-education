@@ -7,7 +7,7 @@ title: Templating Your Static Site (Converting a Static Site to a Static Site Ge
 description: Tutorial on converting a simple static website to a static site generator, Eleventy and using EJS templating.
 author: louise-findlay
 date: 2020-07-24T00:00:00-07:00
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 

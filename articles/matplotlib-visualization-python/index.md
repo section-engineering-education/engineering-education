@@ -7,7 +7,7 @@ title: Exploring Matplotlib for Visualizations in Python
 description: Covering numpy, matplotlib - exploring matplotlib features for data visualization in python. We cover the various use cases and generate 2-D, 3-D plots and various charts for data analysis.
 author: lalithnarayan-c
 date: 2020-08-06T00:00:00-08:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -201,13 +201,13 @@ rangeX = np.linspace(0, 50, numberOfPoints)
 data = np.random.rand(numberOfPoints-1) * 4.0
 barWidth = 3.0
 middleValue = (rangeX[0:-1] +
-            rangeX[1:]) * 0.5 - barWidth * 0.5  
+            rangeX[1:]) * 0.5 - barWidth * 0.5
 plt.bar(middleValue,
         data,
         facecolor='chocolate',
         width=barWidth,
         label='barChart')
-plt.xticks(middleValue)  
+plt.xticks(middleValue)
 plt.xlabel('X')
 plt.ylabel('Count')
 plt.title('A Bar Chart')
