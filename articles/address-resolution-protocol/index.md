@@ -17,7 +17,6 @@ images:
 ---
 **The [Address Resolution Protocol(ARP)](https://en.wikipedia.org/wiki/Address_Resolution_Protocol) is a communication protocol used to discover the data-link layer address(Layer 2 address like Media Access Control(MAC) address) associated with an Internet layer address(Layer 3 address like IPv4 address). ARP was defined in 1982 by [RFC 826](https://tools.ietf.org/html/rfc826).**
 <!--more-->
-test
 
 ARP is a request-response or request-reply protocol in which one device sends a request to another device asking for some information, to which the other device will reply with the required information. It is a message exchange pattern. *ARP packets are encapsulated by link layer and are distributed only in a particular network. As a result, ARP is said to be a link layer protocol.*
 
