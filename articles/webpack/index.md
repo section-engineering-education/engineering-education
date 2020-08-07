@@ -6,7 +6,7 @@ slug: webpack
 title: Introduction To Webpack with Node.js
 description: This article serves as an Introduction to webpack - webpack is a static module bundler for modern JavaScript applications. 
 author: rohan-reddy
-date: 2020-08-06T00:00:00-12:00
+date: 2020-08-07T00:00:00-08:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
