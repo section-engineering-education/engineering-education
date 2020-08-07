@@ -49,7 +49,7 @@ This method does not scale, and when we have many scripts, it becomes a problem 
 Then came **[IIFE's](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)** which solved scope issues for large projects, but changing even one file meant rebuilding the entire project.
 
 #### JavaScript Modules [(Node.js modules)](https://www.w3schools.com/nodejs/nodejs_modules.asp)
- When JavaScript was bought server-side with Node.js, there were no HTML files to add `<script>` tags. CommonJS came out and introduced `require`, which allows you to load and use a module in the current file.
+ When JavaScript was bought server-side with Node.js, there were no HTML files to add `<script>` tags. [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) (an organisation) came out and introduced Common.js modules and `require`, which allows you to load and use a module in the current file.
 
   ```javascript
   //math.js
@@ -84,17 +84,18 @@ This is good news for web projects. However, browser support is incomplete, and 
 
 
 #### So, why webpack?
-Bundlers like webpack automatically go through your application and build a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) based on what is imported and exported. This, along with other plugins and loaders, makes for a great developer experience. It's a tool that lets you bundle your JavaScript applications (supporting **both ESM and CommonJS**). Any time one file depends on another, webpack treats this as a dependency. This allows webpack to take non-code assets, such as images or web fonts, and also provide them as dependencies for your application.
+
+Webpack provides a great developer experience as it not only bundles JavaScript applications (supporting **both EcmaScript Modules and CommonJS**), but when paired with plugins and loaders it can be used for taking care of dependencies and assets, such as images, fonts, SASS, CSS, etx. Webpack goes through your project and builds a [dependency graph](https://webpack.js.org/concepts/dependency-graph/) based on what is imported and exported. 
 
 
-### Getting Started with Webpack
-Once installed, you can interface with webpack either from its [CLI](https://webpack.js.org/api/cli) or [API](https://webpack.js.org/api/node). Since version 4, webpack does not need a configuration file to bundle your project. Nevertheless, it is incredibly configurable.
+### Getting Started with Webpack 
+
+Webpack provieds a Command Line Interface ([CLI](https://webpack.js.org/api/cli)), which we can call as `webpack filename.js target/index.js` from the terminal; and Node.js [API](https://webpack.js.org/api/node), which we can use in our Node.js application. With webpack 4 we can use it without any configuration.
 
 Let's create a dummy Node.js project and bundle it with webpack. You can use your project.
 
 ### Install webpack
 You need [NPM](https://www.npmjs.com/get-npm) and [Node](https://nodejs.org/en/download/) installed on your machine.
-
 
   ```
   mkdir dummy-project
@@ -102,6 +103,7 @@ You need [NPM](https://www.npmjs.com/get-npm) and [Node](https://nodejs.org/en/d
   npm init -y
   npm install webpack webpack-cli --save-dev
   ```
+
 ### webpack without configuration
 Create the following directory structure.
 
@@ -117,7 +119,6 @@ Add the following code to `index.js`.
   ```javascript
   function component() {
    const element = document.createElement('div');
-   // Lodash, currently included via a script, is required for this line to work
    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
    return element;
   }
@@ -184,6 +185,7 @@ If we now open `index.html` in the browser we see "Hello webpack".
 
 
 ### Using a configuration with webpack
+
 Webpack doesn't require any configuration, but most projects will need a more complex setup, which is why webpack supports a configuration file. Add a file with the name `webpack.config.js` in the `dummy-project` directory.
 
 
@@ -208,7 +210,7 @@ The following are some configurable concepts of webpack.
    entry: './path/to/my/entry/file.js'
   };
   ```
-* **Output**. The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to `./dist/main.js` for the main output file and to the `./dist` folder for any other generated file.
+* **Output**. The output property tells webpack where to store the bundles it creates and how to name these files. The default location is `./dist/main.js` for Javascript files and also stores other generated files in the `./dist` folder.
   ```javascript
   module.exports = {
    output: {
@@ -257,3 +259,4 @@ A huge advantage of using webpack is its customizability and its features like [
 * [DOCS](https://webpack.js.org/guides/getting-started)
 * [https://www.freecodecamp.org/news/](https://www.freecodecamp.org/news/how-to-configure-webpack-4-with-angular-7-a-complete-guide-9a23c879f471)
 * [dev.to](https://dev.to/vinodchauhan7/webpack-zero-to-production-part-1-1m9e)
+* [https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch11s03.html](https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch11s03.html)
