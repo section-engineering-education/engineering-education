@@ -7,7 +7,7 @@ title: Constructors and Destructors (C++)
 description: Learn the difference between Constructors and Destructors with the help of code snippets. Understand the usage of explicit call, implicit call and constructor overloading.
 author: kanishkvardhan-a-n
 date: 2020-08-05T00:00:00-05:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

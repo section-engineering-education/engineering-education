@@ -7,7 +7,7 @@ title: Building a Serverless Contact Form with Google Cloud Functions
 description: A walk through on how to build a serverless contact form, using google cloud functions. Known as FaaS or functions as a service.
 author: saiharsha-balasubramaniam
 date: 2020-06-16T00:00:00-07:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

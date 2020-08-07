@@ -7,7 +7,7 @@ title: Raising Exceptions
 description: This article will go over how to manually throw exceptions in Python and use assertions for better debugging. Raising exceptions allows us to distinguish between regular events and something exceptional, such as errors.
 author: sophia-raji
 date: 2020-07-29T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

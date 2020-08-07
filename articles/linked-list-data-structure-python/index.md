@@ -7,7 +7,7 @@ title: Using the Linked List Data Structure in Python
 description: The linked list data structure is a linear data structure that is used to implement other data structures.
 author: saiharsha-balasubramaniam
 date: 2020-07-29T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

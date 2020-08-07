@@ -7,7 +7,7 @@ title:  Building a Reddit Autoposter Telegram Bot with Python
 description: How to use Python to create a Telegram Bot that autoposts from a subreddit.
 author: saiharsha-balasubramaniam
 date: 2020-07-28T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
