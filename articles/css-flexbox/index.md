@@ -7,7 +7,7 @@ title: Create Layouts for Websites using CSS Flexbox
 description: CSS Flexbox is a one-dimensional layout system for creating layouts for webpages. It is used to align and define element behavior across a row or a column.
 author: saiharsha-balasubramaniam
 date: 2020-08-05T00:00:00-08:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
