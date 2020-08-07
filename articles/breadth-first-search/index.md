@@ -3,22 +3,21 @@ layout: engineering-education
 status: publish
 published: true
 slug: breadth-first-search
-title: Solve This Maze with BFS(breadthFirstSearch)
-description: Pathfinding is a very common task in computing. It's used for directions, and enemy AI in videogames. BFS is one pathfinding algorithm which we can use to solve a maze.
+title: Solving a Maze with Breadth First Search
+description: Pathfinding is a very common task in computing. It's used for directions, and enemy AI in video games. Breadth-first Search (BFS) is one pathfinding algorithm which we can use to solve a maze.
 author: mike-white
-date: 2020-07-09T00:00:00-07:00
-topics: [languages]
+date: 2020-08-07T00:00:00-13:00
+topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/breadth-first-search/hero.jpg
     alt: breadth first search maze image
 ---
-How can we find the fastest way from point A to point B?
-Solving problems like this is very common in computing. An enemy AI in a video game needs to be able to find the fastest way to the player. Google Maps needs to find the fastest way to your destination. Here, we just want to solve a maze.
+How can we find the fastest way from point A to point B? Solving problems like this is very common in computing. An enemy AI in a video game needs to be able to find the fastest way to the player. Google Maps needs to find the fastest way to your destination. Here, we just want to solve a maze.
 <!--more-->
 
-[There](https://en.wikipedia.org/wiki/Depth-first_search) [are](https://en.wikipedia.org/wiki/Djikstra%27s_Algorithm) [several](https://en.wikipedia.org/wiki/A*_search_algorithm) [pathfinding](https://en.wikipedia.org/wiki/B*) [algorithms](https://en.wikipedia.org/wiki/Best-first_search). The one we'll focus on today is Breadth-First Search or BFS. This algorithm is guaranteed to give the fastest path on an unweighted graph.
+[There](https://en.wikipedia.org/wiki/Depth-first_search) [are](https://en.wikipedia.org/wiki/Djikstra%27s_Algorithm) [several](https://en.wikipedia.org/wiki/A*_search_algorithm) [pathfinding](https://en.wikipedia.org/wiki/B*) [algorithms](https://en.wikipedia.org/wiki/Best-first_search). The one we'll focus on today is Breadth-first Search or BFS. This algorithm is guaranteed to give the fastest path on an unweighted graph.
 
 ### What is a Graph?
 
@@ -32,7 +31,7 @@ Some graphs may be *weighted*, meaning that some edges are longer than others. S
 
 We’ll be focusing on unweighted graphs because BFS isn’t very useful otherwise. BFS can work on directed graphs, but figuring how to do that will be left as an exercise to the reader.
 
-### Bleep Bloop What is a Graph?
+### Creating a HashMap
 
 We need to be able to store a graph on the computer’s memory. Each vertex can simply be represented as a list of its neighbors.
 
@@ -85,7 +84,7 @@ class Graph {
 
 ### Traversing the Graph
 
-We need a [Queue](https://www.section.io/engineering-education/data-structures-python-part-1/#linear-data-structures) of vertices to traverse. Whenever we reach a certain vertex, we add all its adjacent vertices to the queue. Unless that vertex was already reached. We'll need a [HashSet](https://www.section.io/engineering-education/data-structures-python-part-1/#non-linear-data-structures) to store which vertices we've already reached. We'll make a `breadthFirstTraversal` method which contains the following.
+We need a [Queue](https://www.section.io/engineering-education/data-structures-python-part-1/#linear-data-structures) of vertices to traverse. Whenever we reach a certain vertex, we add all its adjacent vertices to the queue, unless that vertex was already reached. We'll need a [HashSet](https://www.section.io/engineering-education/data-structures-python-part-1/#non-linear-data-structures) to store which vertices we've already reached. We'll make a `breadthFirstTraversal` method which contains the following.
 
 ```java
 public void breadthFirstTraversal(String start, String end) {
