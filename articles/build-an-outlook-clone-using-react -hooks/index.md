@@ -1,15 +1,15 @@
 # Building Outlook Clone with React Hooks
-
+test
 Welcome to part two of the React series. In this tutorial, we will cover the same outlook clone that we built in , but this time we will use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To skip the theory and get straight into coding, [click here](#Code)
 .
 
-To sum up the earlier attempt at building outlook clone, we made API calls and displayed emails according to the filter requested. We also implemented local storage. Let's think about this for a minute. When we implemented local storage, was it a good idea to store the entire state? 
+To sum up the earlier attempt at building outlook clone, we made API calls and displayed emails according to the filter requested. We also implemented local storage. Let's think about this for a minute. When we implemented local storage, was it a good idea to store the entire state?
 
-While this made sense during the last project, it does not produce the best experience for the user. Upon reloading, we can simply show the user the set of reading and favourite mails and refresh the layout to the default option. This is the ideal approach to building projects. First, we build them logically step by step. Once done, we work on various optimizations in terms of performance, user experience, and code quality. 
+While this made sense during the last project, it does not produce the best experience for the user. Upon reloading, we can simply show the user the set of reading and favourite mails and refresh the layout to the default option. This is the ideal approach to building projects. First, we build them logically step by step. Once done, we work on various optimizations in terms of performance, user experience, and code quality.
 
-One of the drawbacks is repetitiveness. We need to define lifecycle methods for each event. This leads to ambiguous function calls and event handling. Therefore, react-class base components are not conducive for best coding practices. DRY, an acronym that stands for Don't Repeat Yourself, is one such example for an effective coding practice. 
+One of the drawbacks is repetitiveness. We need to define lifecycle methods for each event. This leads to ambiguous function calls and event handling. Therefore, react-class base components are not conducive for best coding practices. DRY, an acronym that stands for Don't Repeat Yourself, is one such example for an effective coding practice.
 
-React Hooks solves the problem of repetition, ambiguity and increases the performance. This article focuses on understanding React hooks. In my previous article, we were constrained to use state and other React features inside the class. We defined the class as 
+React Hooks solves the problem of repetition, ambiguity and increases the performance. This article focuses on understanding React hooks. In my previous article, we were constrained to use state and other React features inside the class. We defined the class as
 
 ```jsx
 import React from 'react';
@@ -18,23 +18,23 @@ class Example extends React.Component{
     //sample component code here
 }
 ```
-The above definition declares *Example* class, which is a child component of *React.Component* class. 
+The above definition declares *Example* class, which is a child component of *React.Component* class.
 
 Class based components have many disadvantages, a few like repetitiveness and ambiguity. Let us understand the shortcomings in detail to appreciate the inclusion of functional components.
 
-## Why Use Functional Components in React? 
+## Why Use Functional Components in React?
 
 * **It’s hard to reuse stateful logic between components**
 
 Using class based components, the communication between parent and child components happened via props. What if cases arise, where information has to be sent to multiple children vertically? Imagine a [long skewed tree](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FSkew_heap&psig=AOvVaw1XQb6By8Nfiuv-Oj3WXFjA&ust=1596810759593000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIie5eXlhusCFQAAAAAdAAAAABAD). In class-based components, it becomes messy due to layers of providers, consumers, render props, and higher-order components. Overall this is due to an underlying problem:*The inability to share stateful info to children components efficiently*. For more info about providers and consumers refer to the documentation on [ContextAPI](https://reactjs.org/docs/context.html#gatsby-focus-wrapper).
 
-With Hooks, we can extract stateful logic from a component so it can be tested independently and reused. Hooks allow us to reuse stateful logic without changing your component hierarchy. 
+With Hooks, we can extract stateful logic from a component so it can be tested independently and reused. Hooks allow us to reuse stateful logic without changing your component hierarchy.
 
 * **Complex components become hard to understand**
 
-Usually projects start out small and in no time turn into an unmanageable mess of stateful logic and side effects. The order of the lifecycle methods is important for absolute control over the web page. However, consider the example where components might perform some data fetching in componentDidMount and componentDidUpdate. At the same time, another piece of code is present in componentDidUpdate that is setting up event listeners. The event listeners need to be set free as each event listener actively looking out for the event decreases performance. This is done in the componentWillUnmount lifecycle method. 
+Usually projects start out small and in no time turn into an unmanageable mess of stateful logic and side effects. The order of the lifecycle methods is important for absolute control over the web page. However, consider the example where components might perform some data fetching in componentDidMount and componentDidUpdate. At the same time, another piece of code is present in componentDidUpdate that is setting up event listeners. The event listeners need to be set free as each event listener actively looking out for the event decreases performance. This is done in the componentWillUnmount lifecycle method.
 
-So many lifecycle methods, with dependency on multiple non-related pieces of code, are problematic. Usually, state management libraries like redux are used to manage the state. However, with the introduction of Hooks, the above problem is solved. 
+So many lifecycle methods, with dependency on multiple non-related pieces of code, are problematic. Usually, state management libraries like redux are used to manage the state. However, with the introduction of Hooks, the above problem is solved.
 
 * **Classes are confusing, Functions enable modularity**
 
@@ -50,43 +50,43 @@ We will consider some of the hooks and get an understanding of the underlying fu
 
    ```jsx
     [stateName, setStateName] = useState(defaultValue)
-   ``` 
-    useState returns a list which consists of the state variable, and a function to set the state variable. Uses list destructuring in JavaScript, we can easily rename it to names according to our convenience. The defaultValue can be any of the data types that JavaScript supports. 
+   ```
+    useState returns a list which consists of the state variable, and a function to set the state variable. Uses list destructuring in JavaScript, we can easily rename it to names according to our convenience. The defaultValue can be any of the data types that JavaScript supports.
 
-2. **useEffect**: useEffect is used for executing certain actions to take place upon triggering of events. useEffect replaces the original way of declaring lifecycle methods. 
-   1. componentDidMount: To declare this event, we can use useEffect with an empty dependency list. 
+2. **useEffect**: useEffect is used for executing certain actions to take place upon triggering of events. useEffect replaces the original way of declaring lifecycle methods.
+   1. componentDidMount: To declare this event, we can use useEffect with an empty dependency list.
    ```jsx
-   useEffect(()=>{ 
+   useEffect(()=>{
        //update the state on componentDidMount
-   },[]) 
+   },[])
    ```
    1. componentWillUnMount: Once a component is unmounted, any clean-0p that needs to be done can be performed by returning a function in useEffect.
    ```jsx
-   useEffect(()=>{ 
+   useEffect(()=>{
        //update the state on componentDidMount
-   return //cleanup code... for example freeing up event listeners 
-   },[]) 
+   return //cleanup code... for example freeing up event listeners
+   },[])
    ```
-   1. dependency list: The dependency list ensures that the useEffect runs only when a change occurs in the state variables mentioned in the dependency list. This way, we can modularize effects and direct it to different actions on the basis of state variables. 
+   1. dependency list: The dependency list ensures that the useEffect runs only when a change occurs in the state variables mentioned in the dependency list. This way, we can modularize effects and direct it to different actions on the basis of state variables.
    ```jsx
-   useEffect(()=>{ 
+   useEffect(()=>{
        //update the state on componentDidMount
-   },[stateVariable1, stateVariable2]) 
+   },[stateVariable1, stateVariable2])
    ```
    The above useEffect will run when there is a change in stateVariable1 or stateVariable2
-    
+
 
 3. **useRef**: The useRef Hook is a function that returns a mutable ref object whose .current property is initialized with the passed argument (initialValue).
    ```jsx
     const refVariable = useRef(initialValue)
    ```
-   It is usually used to access the DOM variables and to keep track of a mutable variable. 
+   It is usually used to access the DOM variables and to keep track of a mutable variable.
 4. **createContext** and **useContext**: createContext is used to pass props from parent to child components. Consider the example of passing props from parent to child components present many levels below. Sending it via the props makes the code messy. Instead, createContext is used to send the props. Whenever the props are needed, we use useContext to get the value of the props.  We will discuss this below in the project.
 
 
 ## Code
 
-Alrighty, we first begin with creating a React project, using create-react-app package. The command creates a react-project template. Open a new terminal, (**Command Prompt** on Windows or **Terminal** on Linux OS)  and execute the following commands. I have used **Command Prompt** on a **Windows10 System** 
+Alrighty, we first begin with creating a React project, using create-react-app package. The command creates a react-project template. Open a new terminal, (**Command Prompt** on Windows or **Terminal** on Linux OS)  and execute the following commands. I have used **Command Prompt** on a **Windows10 System**
 
 ```terminal
 npx create-react-app outlookclonereacthooks
@@ -94,7 +94,7 @@ cd outlookclonereacthooks
 npm start
 ```
 
-The folder structure should look like this. 
+The folder structure should look like this.
 
 ```
 outlookclonereacthooks
@@ -163,14 +163,14 @@ npm install -g json-server
 
 The single-line command installs the required package. -g denotes that the following package is installed globally.
 
-Our first JSON file consists of 15 emails. We will use My JSON Server, a hosted service that provides fake online REST APIs for free. 
+Our first JSON file consists of 15 emails. We will use My JSON Server, a hosted service that provides fake online REST APIs for free.
 
 The link for the hosted service is https://my-json-server.typicode.com/lalith1403/jsonemaillist/list
 
-The other API of interest is fetching the email body given the email id. Online hosting services have various bottlenecks when it comes to content length. Thus, let's use local hosting to get the data. 
+The other API of interest is fetching the email body given the email id. Online hosting services have various bottlenecks when it comes to content length. Thus, let's use local hosting to get the data.
 
-The email body JSON file is as follows. Paste the following code into a file called *db.json*. *db.json* is a naming convention used, and you will find the above name in most of the codebases on GitHub. 
- 
+The email body JSON file is as follows. Paste the following code into a file called *db.json*. *db.json* is a naming convention used, and you will find the above name in most of the codebases on GitHub.
+
 ``` json
 {
   "emailbody": [
@@ -240,7 +240,7 @@ The email body JSON file is as follows. Paste the following code into a file cal
 ```
 
 ### Initiate JSON Server
-This command run on the local terminal or command prompt initiates the json-server. This enables the API functionality. We can make API calls once the server is running. 
+This command run on the local terminal or command prompt initiates the json-server. This enables the API functionality. We can make API calls once the server is running.
 ```
 json-server --watch db.json
 ```
@@ -249,13 +249,13 @@ If you get an error, do check if **npm** has been added to the environment varia
 
 Once we have the server running, we can check via Postman or just go to http://localhost:3000/emailbody. To get a specific email body, we can send the *id* as a parameter. The URL is modified as follows: http://localhost:3000/emailbody?id=1. This returns the first email body.
 
-### Let's implement the hooks we just learned 
+### Let's implement the hooks we just learned
 
 In my [previous article](https://www.section.io/engineering-education/build-an-outlook-clone-using-react/), we focussed on the logic to go about implementing the project from scratch. If you need a refresher on how to implement a project from scratch then you should refer back to the previous article. In this article, we will focus on understanding the hooks and performing optimization.
 
 ### Explanation: *App.js*
 
-We declare functional components and hooks that need to be declared within the function. We use various state variables. We have looked at declaring state variables [using useState earlier in this article](#react-hooks-in-practice). They are 
+We declare functional components and hooks that need to be declared within the function. We use various state variables. We have looked at declaring state variables [using useState earlier in this article](#react-hooks-in-practice). They are
 1. emails
 2. dualPanel
 3. id
@@ -272,7 +272,7 @@ These are the same state variables as earlier.  Declaring state variables as and
 
 Initially, on componentDidMount, the first useEffect is called, where we fetch the list. Initially, the id is set to an empty string. When there is a change in id, we will make an API call to the localhost to fetch the body. The body state is set. getId is the call-back function that is passed as a prop to Email component and we set the id.
 
-Earlier, we had to send a call-back function to modify the readlist. In this case, we can directly send the useState list. We send readlist and setReadList as props to *Email.js*. In *Email.js*, we setReadList on an onClick event. 
+Earlier, we had to send a call-back function to modify the readlist. In this case, we can directly send the useState list. We send readlist and setReadList as props to *Email.js*. In *Email.js*, we setReadList on an onClick event.
 
 We have also used createContext. We declare a global const EmailContext. This is wrapped around the child component. We send the emails as the value to be received at the child component. In the child component, we use the hook useContext to receive the prop email.
 
@@ -285,7 +285,7 @@ Styled-components is by far the easiest library to use for styling. There are va
 ```
 Using styled-components, on the other hand, would allow us to maintain a tidy code. Let's look at styling the button using styled-components. Inline styling decreases code readability.
 
-All we have to do is create a constant and define our CSS styling within the constant. We can also create classes and ids similar to CSS. 
+All we have to do is create a constant and define our CSS styling within the constant. We can also create classes and ids similar to CSS.
 
 ```jsx
 const ButtonStyle = styled.button {
@@ -419,7 +419,7 @@ function App() {
   }, [forRead])
 
   const [emailsToBeSent, setEmailsToBeSent] = useState(emails)
-  
+
   let xyz = 0;
   const findEmail = (id) => {
     console.log(xyz++)
@@ -509,13 +509,13 @@ function useLocalStorage(key, initialValue) {
 ```
 ## Custom Hooks
 
-We have defined two custom hooks for various purposes. Let's understand what custom hooks are. Custom hooks enable the reuse of stateful logic by providing boundaries to maintain isolated states and side effects. 
+We have defined two custom hooks for various purposes. Let's understand what custom hooks are. Custom hooks enable the reuse of stateful logic by providing boundaries to maintain isolated states and side effects.
 
-The first custom hook called isMounted is used to check if the component is mounted or not. This is done to ensure performance. At the time of mounting, we want only the first useEffect to make the API call. All the other hooks should not be called. The lesser the number of API calls made, the faster the web page. 
+The first custom hook called isMounted is used to check if the component is mounted or not. This is done to ensure performance. At the time of mounting, we want only the first useEffect to make the API call. All the other hooks should not be called. The lesser the number of API calls made, the faster the web page.
 
-The second custom hook is used to store the read and fav lists in local storage. This time, we consider it from the user experience perspective. Showing the user the list of reading and favourite, while reloading the page enhances the user experience. It is very important to store only relevant information. Therefore, the second custom hook takes in the input key and initialValue. It is checked if the key exists in the localStorage. If yes, it is updated with the new value, else a new key is created. 
+The second custom hook is used to store the read and fav lists in local storage. This time, we consider it from the user experience perspective. Showing the user the list of reading and favourite, while reloading the page enhances the user experience. It is very important to store only relevant information. Therefore, the second custom hook takes in the input key and initialValue. It is checked if the key exists in the localStorage. If yes, it is updated with the new value, else a new key is created.
 
-To check the value of the localStorage, go to Developer Tools -> Application -> Local Storage. You will find the values stored there. Any change in the list will be immediately reflected in the localStorage. 
+To check the value of the localStorage, go to Developer Tools -> Application -> Local Storage. You will find the values stored there. Any change in the list will be immediately reflected in the localStorage.
 
 ### Explanation: *Email.js*
 
@@ -665,7 +665,7 @@ export const ButtonStyles = styled.div`
   margin-left: 1em;
   font-size: 1.1em;
   font-weight: bold;
-  
+
 .buttons{
     margin-right: 10px;
     background: transparent;
@@ -707,7 +707,7 @@ export const DualPanel = styled.div`
     .dualpanel{
       width: 40vw;
     }
-    
+
     .nodualpanel {
       width:98vw;
     }
@@ -857,16 +857,16 @@ export const Scroll = styled.div`
 `
 ```
 
-## Performance 
+## Performance
 
-Let's discuss some of the performance improvements that we have just implemented in this project. 
+Let's discuss some of the performance improvements that we have just implemented in this project.
 
 1. Calculation of lists only when the filter buttons are clicked. In the previous article, we had computed the lists every time it rendered. This is an overhead on the browser and can be avoided by computing the list in the useEffect.
 2. We make fewer API calls by ensuring that the call is made on a change in the value of id.
 3. Enhancing user experience by showing relevant information.
-4. Another reason to avoid inline styling is the constant updating of CSSOM(CSS Object Model). Every change causes a re-render of the entire page. If we increase the computational load by updating the CSSOM every single time, it will cause performance issues. Styled-components, on the other hand, do not update the CSSOM unless we change it manually. 
+4. Another reason to avoid inline styling is the constant updating of CSSOM(CSS Object Model). Every change causes a re-render of the entire page. If we increase the computational load by updating the CSSOM every single time, it will cause performance issues. Styled-components, on the other hand, do not update the CSSOM unless we change it manually.
 
 
 ## Conclusion
 
-In the two-part series, we have introduced all the prominent React features, including hooks. Going through the process of designing the web page and incorporating optimizations towards the end is a good way to get experience. This way, the next time you will start from a point of optimization, and find new parameters to be optimized. 
+In the two-part series, we have introduced all the prominent React features, including hooks. Going through the process of designing the web page and incorporating optimizations towards the end is a good way to get experience. This way, the next time you will start from a point of optimization, and find new parameters to be optimized.
