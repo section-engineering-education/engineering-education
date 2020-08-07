@@ -88,7 +88,7 @@ client.on("message", message => { // runs whenever a message is sent
 });
 ```
 
-We can add more commands by just adding more `if` statements. This can get messy though. Let's come up with a better command structure. Let's use a Map to store strings as keys and functions as values.
+We can add more commands by just adding more `if` statements. This can get messy though. Let's come up with a better command structure. We can use a Map to store strings as keys and functions as values.
 
 ```javascript
 function ping(message) {
@@ -119,10 +119,10 @@ Now that you know how to make a Discord bot, it would nice if you would actually
 * A bot that can compile its own programming language
 * Calculator Bot. If you're learning a new programming language, you could start by making this bot in that language. Try different ways of inputting the values.
 * Betting Bot, where users bet on which option will receive the least bets
-* Betting bot, where users bet on elections. Ok, just mentioning it makes me really want to do this
+* Betting bot, where users bet on elections. Just mentioning it makes me really want to do this
 * A bot that tracks a GitHub repository. Yes, you can already do this with webhooks, but regular bots are more fun
 * A bot that tracks a YouTube channel
-* A game bot. Any game will work. Sudoku, Tic-Tac-Toe, Trivia, Chess, Pokemon, Tetris (ok maybe not that one). For an extra challenge, make an AI to play it.
+* A game bot. Any game will work. Sudoku, Tic-Tac-Toe, Trivia, Chess, Pokemon, Tetris (ok maybe not that last one). For an extra challenge, make an AI to play it.
 * Assign points to all the members of your server. I wanted to do this for the Effective Altruism server, but I honestly couldn't figure out how to reward them. *Maybe integrate it with the betting bot...?*
 
-Some of these are going to be more compilcated, so the info that's here isn't going to be enough. You can get more information by using the [guide](https://discordjs.guide/) or by reading the [documentation](https://discord.js.org/#/docs/main/stable/general/welcome).
+Some of these are going to be more complicated, so the info that's here isn't going to be enough. You can get more information by using the [guide](https://discordjs.guide/) or by reading the [documentation](https://discord.js.org/#/docs/main/stable/general/welcome).
