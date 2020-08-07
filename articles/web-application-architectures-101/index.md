@@ -6,7 +6,7 @@ slug: web-application-architectures-101
 title: Web Application Architectures - 101
 description: Web Apps are everywhere. Let's look into their structure and how they interact with various services - looking at server side rendering, client side rendering, and universal or isomorphic applications.
 author: saiharsha-balasubramaniam
-date: 2020-08-06T00:00:00-15:00
+date: 2020-08-07T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
