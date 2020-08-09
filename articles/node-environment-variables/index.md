@@ -92,7 +92,7 @@ DB_USER=admin
 DB_PASS=password
 ```
 
-and enter the values of the following variables. This will load these variables into `process.env`.
+Enter the values of the following variables. This will load these variables into `process.env`.
 We can add this `.env` file to `.gitignore` so that our credentials are protected.
 
 ### Environment Variables in Deployment
