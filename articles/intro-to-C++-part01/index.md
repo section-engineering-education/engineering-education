@@ -93,23 +93,22 @@ Congratulations! You just wrote your first C++ program.
 
 Let's write another program that would read two numbers and output the addition of them.
 
-`   
-     // program to add two numbers
-     #include <iostream>
-     using namespace std;
-     int main(){
-     cout<<"enter a number"<<endl;
-     int num_one;
-     cin>>num_one;
-     cout<<" Enter another number"<<endl;
-     int num_two;
-     cin>>num_two;
-     int sum;
-     sum = num_one + num_two;
-     cout<<num_one<<"+"<<num_two<<"="<<sum<<endl;
-     return0;
-     }
-`
+          // program to add two numbers
+       
+             #include <iostream>
+             using namespace std;
+             int main(){
+             cout<<"enter a number"<<endl;
+             int num_one;
+             cin>>num_one;
+             cout<<" Enter another number"<<endl;
+             int num_two;
+            cin>>num_two;
+            int sum;
+            sum = num_one + num_two;
+            cout<<num_one<<"+"<<num_two<<"="<<sum<<endl;
+              return0;
+            }
 
 
 
