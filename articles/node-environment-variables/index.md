@@ -45,7 +45,7 @@ With the increasing popularity of cloud computing, applications are using **clou
 To solve this problem, the config keys can be added as environment variables, and they can be invoked from a closed environment where the application is deployed.
 
 ### Environment Variables in Node
-In Node, `process.env` is a global variable that is injected during runtime. It is a view of the state of the system environment variables. When we set an environment variable, it is loaded into `process.env` during runtime and can be accessed.
+In Node, `process.env` is a global variable that is injected during runtime. It is a view of the state of the system environment variables. When we set an environment variable, it is loaded into `process.env` during runtime and can later be accessed.
 
 Dotenv is a module provided by Node to load environment variables into `process.env`. Dotenv can be added to your node project by installing it from npm or yarn.
 
