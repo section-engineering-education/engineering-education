@@ -35,7 +35,7 @@ Environment Variables are important to a software developer for multiple reasons
 - [Protecting Config Keys](#protecting-config-keys)
 
 #### Separation of Concerns
-Separation of Concerns refers to a software design principle that state that computer programs should be divided into distinct sections, such that each section address a separate concern.\_ This means that a developer working on one section needs to have minimal knowledge about other sections. The details of other sections are placed on the sideline.
+Separation of Concerns refers to a software design principle that state that computer programs should be divided into distinct sections, such that each section address a separate concern. This means that a developer working on one section needs to have minimal knowledge about other sections. The details of other sections are placed on the sideline.
 
 Application Configuration is a section of the code that should be decoupled from the application. Good software practices state that **app config requires strict separation of config from code**. Such config files can be stored as environment variables.
 
