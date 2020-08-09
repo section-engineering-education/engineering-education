@@ -33,6 +33,8 @@ Unit testing is a type of automated testing where you write logic to test discre
 
 Unit tests
 
+
+
 ### Unit testing with Node `assert` module.
 
 The basis for most Node testing is the built-in **assert** module, *which tests a condition and, if condition is not met, throws an error.*
@@ -70,7 +72,44 @@ Expected 7 Got 7
 Passed
 ```
 
-We have written our first unit test. The `if` condition in the code example above *asserts* whether the code is working correctly or not. Node.js comes with an [assert module](https://nodejs.org/api/assert.html) with it. Let's do the same action using `assert`.
+## Structuring Unit Tests
+
+Let's examine one way of structing tests, **AAA Pattern**. A test has 3 parts or sections, Arange, Act, Assert. 
+
+1. Arange: Initialize variables, setup necessary preconditions and inputs. 
+2. Act: Execute the function/unit being tested.
+3. Assert: *Assert* (or check) that the value received from executing the unit is the same value that is expected. 
+
+The above code is 
+
+```javascript
+//index.js
+function addTwo(a){
+  return a+2; 	
+}
+
+function testAddTwo() {
+	//Step 1. Arange
+  var x = 5;
+  var x2 = x + 2;
+	
+	//Step 2. Act
+  var x3 = addTwo(x);
+
+  console.log("Expected "+x2+" Got " + x3);
+	//Step 3. Assert
+  if (x2 === x3){
+    return console.log("Passed");
+  }
+
+  console.log("Failed");
+
+}
+
+testAddTwo();
+```
+
+The `if` condition in the code example above *asserts* whether the code is working correctly or not. Node.js comes with an [assert module](https://nodejs.org/api/assert.html) with it. Let's do the same action using `assert`.
 
 ```javascript
 var assert = require("assert")
@@ -264,6 +303,10 @@ describe('#find()', function () {
 
 ```
 We have `done` as an argument to `it()`, The `done()` callback function is used by Mocha to tell it when an asynchronous function is completed.
+
+## Conclusion
+
+When writing tests keep in mind that tests are made to make your life easier, design your tests to be simple, short and understandable. 
 
 ### References
 * [Node.js in Action Book](https://www.manning.com/books/node-js-in-action)
