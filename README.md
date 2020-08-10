@@ -18,7 +18,7 @@ The Section team will monitor and manage the overall Program.
 2. When you're ready to submit a draft for review, open a PR with your draft. [*View instructions here*](/UPLOAD_INSTRUCTIONS.md)
 3. Articles will be reviewed by the Section team for technical accuracy, relevance, and quality. (We need to be sure we're continuing to build value for our fellow engineering community as a trusted source of content.) Comments and requested revisions will be provided within the open PR.
 4. Once suggested edits have been incorporated, the Section team will approve your PR and the draft will move to our publishing queue.
-5. Once your article has been published, we will facilitate payouts for your contribution - we use PayPal for all payouts currently - so please review your country/region of residence and available services [here](https://www.paypal.com/ga/webapps/mpp/ua/residence-full) 
+5. Once your article has been published, we will facilitate payouts for your contribution (payouts are a bi-weekly schedule) - we use PayPal for all payouts currently - so please review your country/region of residence and available services [here](https://www.paypal.com/ga/webapps/mpp/ua/residence-full) 
 :)
 
 ### Help Us Help All
