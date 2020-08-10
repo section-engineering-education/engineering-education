@@ -22,8 +22,9 @@ Backend code holds all of our application's business logic and it is important t
 There are several stages to testing an application, the most commonly accepted ones are
 
 * **Unit Testing**: Unit tests are written to test the functionality of a specific section of code, like testing a single class or a function. Discussed in detail below.
-* **Integration Testing**: In integration testing software units are grouped together and tested, it is used to detect defects in the interfaces and between integrated components. Meaning if you are exporting(module.exports) and importing(require) code in Node.js, integration testing can be done to see if they both work as intended. The problem with this type of testing is that it deals with a lot of code and it may be difficult to pin-point the cause of error.
-* **System Testing**: System test is performed on the completely integrated system to verify if it meets the needs. 
+* **Integration Testing**: In integration testing software units are grouped together and tested, it is used to detect defects in the interfaces and between integrated components. Meaning if you are exporting(module.exports) and importing(require) code in Node.js, integration testing can be done to see if they both work as intended. The problem with this type of testing is that it deals with a lot of code and it may be difficult to pin-point the cause of error. It is usually performed after unit testing.
+* [**System Testing**](https://en.wikipedia.org/wiki/System_testing): System test is performed on the completely integrated system to verify if it meets the needs. 
+* [**Acceptance Testing**](https://en.wikipedia.org/wiki/Acceptance_testing): Often the final level of testing, where a product's readiness for its release to the consumer is tested. 
 
 We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)  as a  method of automated testing.	
 
