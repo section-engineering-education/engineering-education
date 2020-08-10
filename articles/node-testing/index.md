@@ -19,10 +19,11 @@ images:
 
 Backend code holds all of our application's business logic and it is important that we get it right. Deploying bug ridden code can cost an organisation millions of dollars. As Node.js is being used in critical applications all over the world it is important we test our applications. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand. 
 
+There are several stages to testing an application, the most commonly accepted ones are
 
-
-<!--meth-->
-
+* **Unit Testing**: Unit tests are written to test the functionality of a specific section of code, like testing a single class or a function. Discussed in detail below.
+* **Integration Testing**: In integration testing software units are grouped together and tested, it is used to detect defects in the interfaces and between integrated components. Meaning if you are exporting(module.exports) and importing(require) code in Node.js, integration testing can be done to see if they both work as intended. The problem with this type of testing is that it deals with a lot of code and it may be difficult to pin-point the cause of error.
+* **System Testing**: System test is performed on the completely integrated system to verify if it meets the needs. 
 
 We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)  as a  method of automated testing.	
 
@@ -314,7 +315,7 @@ We have `done` as an argument to `it()`, The `done()` callback function is used 
 
 ## Conclusion
 
-When writing tests keep in mind that tests are made to make your life easier, design your tests to be simple, short and understandable. 
+When writing tests keep in mind that tests are made to make your life easier, design your tests to be simple, short and understandable. Check out best practices [here](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347). 
 
 ### References
 * [Node.js in Action Book](https://www.manning.com/books/node-js-in-action)
