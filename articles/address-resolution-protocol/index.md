@@ -7,7 +7,7 @@ title: Introduction to Address Resolution Protocol(ARP) and its Types
 description: This article briefly introduces Address Resolution Protocol(ARP) and its types, namely, Gratuitous ARP(GARP), Inverse ARP(InARP), Proxy ARP and Reverse ARP(RARP).
 author: shreya-a-n
 date: 2020-08-07T00:00:00-12:00
-topics: []
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
