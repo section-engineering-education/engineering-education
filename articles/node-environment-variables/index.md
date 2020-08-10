@@ -35,23 +35,25 @@ Environment Variables are important to a software developer for multiple reasons
 - [Protecting Config Keys](#protecting-config-keys)
 
 #### Separation of Concerns
-Separation of Concerns refers to a software design principle that state that computer programs should be divided into distinct sections, such that each section address a separate concern. This means that a developer working on one section needs to have minimal knowledge about other sections. The details of other sections are placed on the sideline.
+Separation of Concerns refers to a software design principle that states that computer programs should be divided into distinct sections, such that each section addresses a separate concern. This means that a developer working on one section needs to have minimal knowledge about other sections. The details of other sections are placed on the sideline.
 
 Application Configuration is a section of the code that should be decoupled from the application. Good software practices state that **app config requires strict separation of config from code**. Such config files can be stored as environment variables.
 
 #### Protecting Config Keys
-With the increasing popularity of cloud computing, applications are using **cloud services** and other **external APIs**. Most of these come with config keys for control and access management. If the API keys are added to the application, and the code is pushed to a public repository on GitHub, this could lead to an unmonitored access problem. Unknown parties might end up using your API keys, leading to an unintended bill for your cloud services.
+With the increasing popularity of cloud computing, more applications are using **cloud services** and other **external APIs**. Most of these come with config keys for control and access management. If the API keys are added to the application, and the code is pushed to a public repository on GitHub, this could lead to an unmonitored access problem. Unknown parties might end up using your API keys, leading to an unintended bill for your cloud services, and other potential security issues.
 
-To solve this problem, the config keys can be added as environment variables, and they can be invoked from a closed environment where the application is deployed.
+To solve this problem, the config keys can be added as environment variables and invoked from a closed environment where the application is deployed.
 
-### Environment Variables in Node
-In Node, `process.env` is a global variable that is injected during runtime. It is a view of the state of the system environment variables. When we set an environment variable, it is loaded into `process.env` during runtime and can later be accessed.
+### Environment Variables in Node.js
+In Node.js, `process.env` is a global variable that is injected during runtime. It is a view of the state of the system environment variables. When we set an environment variable, it is loaded into `process.env` during runtime and can later be accessed.
 
-Dotenv is a module provided by Node to load environment variables into `process.env`. Dotenv can be added to your node project by installing it from npm or yarn.
+**`dotenv`** is a module provided by [npm](https://www.npmjs.com/package/dotenv) to load environment variables into `process.env`. dotenv can be added to your Node.js project by installing it from npm or yarn.
 
 ```sh
+# with npm 
 npm install dotenv
 
+# or with Yarn 
 yarn add dotenv
 ```
 
@@ -86,7 +88,7 @@ let con = mysql.createConnection({
 
 Now, to set the env variables, create a `.env` file at the root of the project directory.
 
-```
+```txt
 DB_HOST=localhost
 DB_USER=admin
 DB_PASS=password
@@ -96,7 +98,7 @@ Enter the values of the following variables. This will load these variables into
 We can add this `.env` file to `.gitignore` so that our credentials are protected.
 
 ### Environment Variables in Deployment
-While deploying to services like Vercel, Netlify or Heroku, environment variables can be set so that our deployed apps can access them.
+When deploying to services like [Section](/modules/node-js), Vercel, Netlify or Heroku, environment variables can be set so that our deployed apps can access them.
 
 ![Netlify Dashboard](/engineering-education/node-environment-variables/netlify-dash.png)
 
