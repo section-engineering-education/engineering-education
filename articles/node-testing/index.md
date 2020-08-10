@@ -16,7 +16,15 @@ images:
 ---
 [Node.js](http://nodejs.org/) is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. As the size of the application grows, the risk of bugs also grows. An application is not complete until it is tested. A test can be a simple `console.log` to a function to see if it is working as intended.
 <!--more-->
-We can conclude that the function below is working correctly because we know basic math. What if there are many functions like this? Or what if the functions are much more complex than this? Automated testing solves this problem. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand.  We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)  as a  method of automated testing.
+
+Backend code holds all of our application's business logic and it is important that we get it right. Deploying bug ridden code can cost an organisation millions of dollars. As Node.js is being used in critical applications all over the world it is important we test our applications. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand. 
+
+
+
+<!--meth-->
+
+
+We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)  as a  method of automated testing.	
 
 
 ```javascript
@@ -27,7 +35,7 @@ console.log(addNumbers(1,2));
 ```
 
 ### Unit Testing
-Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing, tests code logic directly at the function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and helps you avoid pitfalls early. Unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development).
+Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing, tests code logic directly at the function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and helps you avoid pitfalls early. Unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development). 
 
 ![img](/engineering-education/node-testing/tdd.png)
 
