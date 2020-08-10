@@ -89,25 +89,29 @@ You can run this by using `node index.js`. Once you’ve done that it should loo
 
 ### Creating Commands
 
-That's cool, but we want the bot to actually do something. Whenever a user types in "?ping", let's make the bot reply with "Pong". We just need to add some more code above the `client.login()` call.
+That's cool, but we want the bot to actually do something. The most common example is [ping-pong](https://www.youtube.com/watch?v=DEqrCI1018I), but we should do something a little more interesting. Let's generate random numbers. Whenever a user types in "?random", let's make the bot reply with a random number. We just need to add some more code above the `client.login()` call.
 
 ```javascript
 client.on("message", message => { // runs whenever a message is sent
-    if (message.content === "?ping") { // checks if the message says "?ping"
-        message.channel.send("Pong"); // sends a message to the channel, saying "Pong"
+    if (message.content === "?random") { // checks if the message says "?random"
+        number = Math.random(); // generates a random number
+        message.channel.send(number.toString()); // sends a message to the channel with the number
     }
 });
 ```
 
+We did it! Albeit, in a [less than optimal way](http://www0.cs.ucl.ac.uk/staff/d.jones/GoodPracticeRNG.pdf).
+
 We can add more commands by just adding more `if` statements. This can get messy though. Let's come up with a better command structure. We can use a Map to store strings as keys and functions as values.
 
 ```javascript
-function ping(message) {
-    message.channel.send("Pong");
+function random(message) {
+    number = Math.random(); // generates a random number
+    message.channel.send(number.toString()); // sends a message to the channel with the number
 }
 
 let commands = new Map();
-commands.set("ping", ping);
+commands.set("random", random);
 
 client.on("message", message => {
     if (message.content[0] === '?') {
