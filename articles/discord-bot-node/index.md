@@ -94,7 +94,7 @@ That's cool, but we want the bot to actually do something. The most common examp
 ```javascript
 client.on("message", message => { // runs whenever a message is sent
     if (message.content === "?random") { // checks if the message says "?random"
-        number = Math.random(); // generates a random number
+        const number = Math.random(); // generates a random number
         message.channel.send(number.toString()); // sends a message to the channel with the number
     }
 });
@@ -106,7 +106,7 @@ We can add more commands by just adding more `if` statements. This can get messy
 
 ```javascript
 function random(message) {
-    number = Math.random(); // generates a random number
+    const number = Math.random(); // generates a random number
     message.channel.send(number.toString()); // sends a message to the channel with the number
 }
 
