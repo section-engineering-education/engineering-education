@@ -6,7 +6,7 @@ slug: node-environment-variables
 title: Environment Variables in NodeJS
 description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
 author: saiharsha-balasubramaniam
-date: 2020-08-09T00:00:00-12:00
+date: 2020-08-10T00:00:00-12:00
 topics: [Node]
 excerpt_separator: <!--more-->
 images:
@@ -42,7 +42,7 @@ Application Configuration is a section of the code that should be decoupled from
 #### Protecting Config Keys
 With the increasing popularity of cloud computing, more applications are using **cloud services** and other **external APIs**. Most of these come with config keys for control and access management. If the API keys are added to the application, and the code is pushed to a public repository on GitHub, this could lead to an unmonitored access problem. Unknown parties might end up using your API keys, leading to an unintended bill for your cloud services, and other potential security issues.
 
-To solve this problem, the config keys can be added as environment variables and invoked from a closed environment where the application is deployed.
+To solve this problem, the config keys can be added as environment variables and invoked from a closed environment from where the application is deployed.
 
 ### Environment Variables in Node.js
 In Node.js, `process.env` is a global variable that is injected during runtime. It is a view of the state of the system environment variables. When we set an environment variable, it is loaded into `process.env` during runtime and can later be accessed.
@@ -50,10 +50,10 @@ In Node.js, `process.env` is a global variable that is injected during runtime. 
 **`dotenv`** is a module provided by [npm](https://www.npmjs.com/package/dotenv) to load environment variables into `process.env`. dotenv can be added to your Node.js project by installing it from npm or yarn.
 
 ```sh
-# with npm 
+# with npm
 npm install dotenv
 
-# or with Yarn 
+# or with Yarn
 yarn add dotenv
 ```
 
