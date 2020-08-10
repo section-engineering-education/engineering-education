@@ -7,7 +7,7 @@ title: An Introduction to WebAssembly - Part 2
 description:   This article includes WebAssembly walk through the steps of building a react application the consumes a Wasm module.
 author: lucas-gompou
 date: 2020-08-07T00:00:00-06:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
