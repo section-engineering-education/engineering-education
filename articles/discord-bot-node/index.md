@@ -29,13 +29,13 @@ First, you need to visit the [Discord Developer Portal](https://discordapp.com/d
 
 You'll get to your application's page, where if you want, you can give it a description and an avatar.
 
-On the left, you should see a "Bot" tab. Click on that, and then click on the button that says, "Add Bot". Once you confirm your decision, you will be the proud owner of your very own Discord Bot.
+On the left, you should see a "Bot" tab. Click on that, and then click on the button that says, "Add Bot".
 
 ![The tab that says “Bot” is on the right side of the page](/engineering-education/discord-bot-node/discordbot3.png)
 
 ![The “Add Bot” button is in the top right corner](/engineering-education/discord-bot-node/discordbot4.png)
 
-Give your bot a name and an icon to make it stand out.
+Give your new bot a name and an icon to make it stand out.
 
 #### Getting Your Token
 
