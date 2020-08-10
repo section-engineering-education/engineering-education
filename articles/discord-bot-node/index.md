@@ -123,7 +123,7 @@ client.on("message", message => {
 });
 ```
 
-![I say “?ping”, the bot says “Pong”](/engineering-education/discord-bot-node/discordbot0.png)
+![I say "?random", and the bot replies with a random number](/engineering-education/discord-bot-node/discordbot0.png)
 
 There. Now to add more commands, you just add them to `commands`.
 
