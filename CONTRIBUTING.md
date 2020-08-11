@@ -120,14 +120,14 @@ Don’t forget to get the audience involved by asking for feedback - or leave a 
 
 ## Tutorial Format Example
 
-Title
-Introduction
-Goals (Optional)
-Prerequisites
-Step 1 — What to do first
-Step 2 — What to do next
-Step n — What to do last
-Conclusion
+- Title
+- Introduction
+- Goals (Optional)
+- Prerequisites
+- Step 1 — What to do first
+- Step 2 — What to do next
+- Step n — What to do last
+- Conclusion
 
 ## Software Reviews:
 #### Detailed Code Review Checklist
