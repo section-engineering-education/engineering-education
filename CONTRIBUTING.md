@@ -62,7 +62,7 @@ Please do not hesitate to reach out at any time  - we’re always happy to help.
 
 ---
 
-## Example Content Structure 
+## Example Format Structure 
 Below you will find more examples to help guide you write excellent content!
 
 Content can include:
