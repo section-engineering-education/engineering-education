@@ -1,10 +1,27 @@
-Real-time data has become a crucial part in most applications these days. Many web applications use sockets to connect clients to other clients and to servers. But a main challenge with this is the storage of data. Firebase has a real-time database feature which can allow for ease in creating f real-time applications such as chat apps.
+---
+layout: engineering-education
+status: publish
+published: true
+slug: node-firebase
+title: Node Firebase
+description: This is a short tutorial that shows how to use the firebase real-time database to store and listen to changes in the database and sending them to listening to clients in real time.
+author: linus-muema
+date: 2020-08-11T00:00:00-07:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
-To begin, create a Node application using `npm init` and add the following packages:
+  - url: /engineering-education/node-authentication-api/hero.jpg
+    alt: node authentication image example key
+---
+Real-time data has become a crucial part in most applications these days. Many web applications use sockets to connect clients to other clients and to servers. Still a main challenge with this is the storage of data. Firebase has a real-time database feature which allows easy creation of real-time applications such as chat apps.
+<!--more-->
+
+To get started, lets begin by creating a Node application using `npm init` and add the following packages:
 * [`firebase`](https://www.npmjs.com/package/firebase) : this will be used to access and perform actions to our firebase real-time database
-* [`websocket`](https://www.npmjs.com/package/websocket) : it will be used to connect our clients to the server and allow them to send messages to the server and in turn the server will echo the same message after it has been recorded in the database. And if any other message from anywhere arrives in the real time database, it will echo it to all clients listening to the server.
+* [`websocket`](https://www.npmjs.com/package/websocket) : will be used to connect our clients to the server and allow them to send messages to the server and in turn the server will echo the same message after it has been recorded in the database. And if any other message from anywhere else arrives in the real time database, it will echo it to all clients listening to the server.
 
-To set up your firebase account follow [these instructions](https://firebase.google.com/docs/web/setup) from the official firebase docs and get your credentials. Follow until `Step 3`. It would be preferable to hide your credientials in an `.env` file too.
+To set up your firebase account follow [these instructions](https://firebase.google.com/docs/web/setup) from the official firebase docs and get your credentials. Follow along until `Step 3`. It would be preferable to hide your credentials in an `.env` file too.
 
 Add the following code to set up the firebase config and database. We are using the `firebase/database` package to access the real time database and we will be working with the `messages` database reference.
 
@@ -26,7 +43,7 @@ require('firebase/database')
 const database = firebase.database().ref('messages/')
 ```
 
-Next, we will need to set up our server to create a socket. We will use the NodeJs `http` interface to create a server. Then we will use `websocket` to connect the register the socket in the server (create a socket server). The server listens to port 2400 and we create a socketServer using the server we have created.
+Next, we will need to set up our server to create a socket. We will use the NodeJs `http` interface to create a server. Then we will use `websocket` to connect the register to the socket in the server (create a socket server). The server listens to port 2400 and we create a socketServer using the server we have created.
 
 ```javascript
 const http = require('http')
@@ -37,7 +54,7 @@ const socketServer = require('websocket').server
 const socket = new socketServer({httpServer: server})
 ```
 
-Next up we send the messages and save them to firebase. We first accept connections from every client. Then whenever a message is sent, we add it to the database. Since the database offers real time capabilities, we listen to whenever a new message arrives, we display it to all listening client.
+Next up we send the messages and save them to firebase. We first accept connections from every client. Then whenever a message is sent, we add it to the database. Since the database offers real time capabilities, we listen to whenever a new message arrives, we display it to all listening clients.
 
 ```javascript
 socket.on('request', (req) => {
@@ -54,13 +71,13 @@ socket.on('request', (req) => {
 })
 ```
 
-We use the `database.set` method to write the firebase database and when it is successful, we log that message has been added. Then, we use the `database.on('value')` method to listen to any changes in the database. Since the data comes in a `snapshot`, we call the `.val()` method to get the contents of the snapshot i.e the new data in the database.
+We use the `database.set` method to write the firebase database and when it is successful, we log that the message has been added. Then, we use the `database.on('value')` method to listen to any changes in the database. Since the data comes in a `snapshot`, we call the `.val()` method to get the contents of the snapshot i.e. the new data in the database.
 
-Once the webscoket connection closes, we also close the database to avoid resource wastage. 
+Once the webscoket connection closes, we also close the database to avoid wasting resources.
 
 As you can see below, two messages are sent to the server, once saved, we get two logs and two messages sent to the clients.
 
 ![socket](/engineering-education/node-firebase/socket.jpg)
 ![log](/engineering-education/node-firebase/log.jpg)
 
-In case you prefer socket.io for client-client connections, you can check out the [socket.io](engineering-education/understanding-socket.io/index.md) tutorial and incorporate firebase to save the messages.
+In case you prefer socket.io for client-client connections, you can check out the [socket.io](https://www.section.io/engineering-education/understanding-socket/) tutorial and incorporate firebase to save the messages.
