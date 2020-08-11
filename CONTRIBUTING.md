@@ -6,7 +6,9 @@ Welcome to Section’s Engineering Education program. This program is dedicated 
 - Topics you can begin working on
 
 Articles do not need to be Section-specific or strongly Section-related. This is not necessarily about Section or Edge Compute directly, but rather an effort to provide educational value to software developers within the diverse ecosystem of web technologies. 
+
 **Articles should be a minimum of 750 words.**
+
 In order to participate in the program, all members will be required to agree to established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (Agreement is included as part of the enrollment process.)
 
 In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed.
