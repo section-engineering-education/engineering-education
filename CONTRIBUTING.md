@@ -58,12 +58,13 @@ Once you have opened a PR with your fully prepared article and accompanying imag
 
 As a community, we are continually striving to add value to our content pool through trusted pieces of content that help enrich the larger engineering community.
 
+*Below you will find MORE examples to reference and help guide you write fantastic content!*
+
 Please do not hesitate to reach out at any time  - we’re always happy to help.
 
 ---
 
 ## Example Format Structure 
-Below you will find more examples to help guide you write excellent content!
 
 Content can include:
 - How-to guides
