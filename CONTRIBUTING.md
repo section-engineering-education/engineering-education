@@ -27,14 +27,14 @@ Other subject matter samples:
 - https://www.section.io/blog/real-user-monitoring-performance-optimization/
 - https://www.section.io/blog/varnish-cache-503-error-guru-meditation/
 
-
+---
 ## Example Article Submission
 
 title: A Brief History of Container Technology
 
 description: A brief history of container technology and how it has fundamentally altered the development of software today.
 
----
+
 ### The Beginning
 Container technology is a method of packaging an application so it can be run with isolated dependencies, and they have fundamentally altered the development of software today due to their compartmentalization of a computer system. Yet, where did this technology come from, and what is the history of container tech?
 
