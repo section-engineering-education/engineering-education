@@ -65,9 +65,10 @@ As a community, we are continually striving to add value to our content pool thr
 Please do not hesitate to reach out at any time  - we’re always happy to help.
 
 ---
-Below you will find more examples to help guide you write excellent content!
 
 ## Example Content Structure 
+Below you will find more examples to help guide you write excellent content!
+
 Content can include:
 - How-to guides
 - Tutorials
