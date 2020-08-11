@@ -2,15 +2,15 @@
 layout: engineering-education
 status: publish
 published: true
-slug: node-environment-variables
-title: Environment Variables in NodeJS
+slug: nodejs-environment-variables
+title: Environment Variables in .js
 description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
 author: saiharsha-balasubramaniam
 date: 2020-08-10T00:00:00-12:00
-topics: [Node]
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/node-environment-variables/hero.jpg
+  - url: /engineering-education/nodejs-environment-variables/hero.jpg
     alt: environment variables
 ---
 
@@ -18,12 +18,12 @@ images:
 Environment Variables are variables that are set by the Operating System. They are decoupled from application logic. They can be accessed from applications and programs through various APIs.
 <!--more-->
 
-Node provides a library called **dotenv** to manage and load environment variables. Let us take a look at the purpose of environment variables, how to use them, and their role in a development environment.
+There is a Node.js library called `dotenv` that helps you manage and load environment variables. Let's take a look at the purpose of environment variables, how to use them, and their role in a development environment.
 
 ### Table of Contents
 
 - [Purpose of Environment Variables](#purpose-of-environment-variables)
-- [Environment Variables in Node](#environment-variables-in-node)
+- [Environment Variables in Node.js](#environment-variables-in-nodejs)
 - [Environment Variables in Deployment](#environment-variables-in-deployment)
 - [Further Reading](#further-reading)
 
@@ -47,7 +47,7 @@ To solve this problem, the config keys can be added as environment variables and
 ### Environment Variables in Node.js
 In Node.js, `process.env` is a global variable that is injected during runtime. It is a view of the state of the system environment variables. When we set an environment variable, it is loaded into `process.env` during runtime and can later be accessed.
 
-**`dotenv`** is a module provided by [npm](https://www.npmjs.com/package/dotenv) to load environment variables into `process.env`. dotenv can be added to your Node.js project by installing it from npm or yarn.
+**`dotenv`** is a module available on [npm](https://www.npmjs.com/package/dotenv) to load environment variables into `process.env`. `dotenv` can be added to your Node.js project by installing it from npm or yarn:
 
 ```sh
 # with npm
@@ -73,7 +73,7 @@ app.listen(port, () => {
 });
 ```
 
-Suppose we want to use sensitive credentials like username and password in an open-source project, we can use dotenv for that as well.
+Suppose we want to use sensitive credentials like username and password in an open-source project, we can use `dotenv` for that as well.
 
 ```js
 require("dotenv").config();
@@ -100,21 +100,22 @@ We can add this `.env` file to `.gitignore` so that our credentials are protecte
 ### Environment Variables in Deployment
 When deploying to services like [Section](/modules/node-js), Vercel, Netlify or Heroku, environment variables can be set so that our deployed apps can access them.
 
-![Netlify Dashboard](/engineering-education/node-environment-variables/netlify-dash.png)
+![Netlify Dashboard](/engineering-education/nodejs-environment-variables/netlify-dash.png)
 
 Open the Netlify Dashboard of the app you're about to deploy.
 
-![Netlify Settings](/engineering-education/node-environment-variables/env-vars.png)
+![Netlify Settings](/engineering-education/nodejs-environment-variables/env-vars.png)
 
 Go to **Build and Deploy** -> **Environment Variables**
 
-![Environment Variables](/engineering-education/node-environment-variables/set-vars.png)
+![Environment Variables](/engineering-education/nodejs-environment-variables/set-vars.png)
 
 Now, set the variables and save.
 
 Your environment variables are successfully set for deployment on Netlify.
 
 ### Further Reading
-- For detailed documentation and advanced configuration options for the dotenv module, visit the [GitHub Page](https://github.com/motdotla/dotenv).
+
+- For detailed documentation and advanced configuration options for the `dotenv` module, visit the [GitHub Page](https://github.com/motdotla/dotenv).
 - Learn how to use environment variables with the [Nuxt Framework](https://nuxtjs.org/api/configuration-env/).
 - Read about good software development practices at [The Twelve Factor App](https://12factor.net/).
