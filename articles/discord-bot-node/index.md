@@ -37,12 +37,6 @@ On the left, you should see a "Bot" tab. Click on that, and then click on the bu
 
 Give your new bot a name and an icon to make it stand out.
 
-#### Getting Your Token
-
-The token for your bot is like a username and a password. It tells Discord which bot you want to control, and proves that you are the owner of the bot. **DO NOT GIVE AWAY YOUR DISCORD TOKEN!** I sometimes accidentally put my token on GitHub. Then I have to go through the trouble of resetting it. I'll show you how to hide it from GitHub in just a sec.
-
-![“Click Here To Reveal Your Token”](/engineering-education/discord-bot-node/discordbot5.png)
-
 #### Adding The Bot To Your Server
 You'll need to use a link that looks something like this:
 
@@ -64,6 +58,13 @@ You'll need to install [Node](https://nodejs.org/en/). Discord.js requires at le
 Make a folder for your project. You can call it anything. Once you're in that folder, type `npm install discord.js`. It will take a bit of time. You might see a few warnings, but that's perfectly normal. Make sure you have administrative privileges if you’re on Windows, and use `sudo` on Linux.
 
 ![The npm install discord.js command](/engineering-education/discord-bot-node/discordbot8.png)
+
+
+#### Getting Your Token
+
+The token for your bot is like a username and a password. It tells Discord which bot you want to control, and proves that you are the owner of the bot. **DO NOT GIVE AWAY YOUR DISCORD TOKEN!** I sometimes accidentally put my token on GitHub. Then I have to go through the trouble of resetting it. I'll show you how to hide it from GitHub in just a sec.
+
+![“Click Here To Reveal Your Token”](/engineering-education/discord-bot-node/discordbot5.png)
 
 If this project is on GitHub, you'll want to hide your token. Create a file called `token.txt`, and add it to your `.gitignore` file. You might want to put some random text in `token.txt` first, and then push to make sure it’s actually hidden. Once you’re sure you’ve done it correctly, put the token in your `token.txt` file. Now, we can start coding.
 
