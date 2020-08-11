@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 slug: nodejs-environment-variables
-title: Environment Variables in .js
-description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
+title: Environment Variables in Node.js
+description: Using the Node.js library dotenv to manage and load environment variables, we take a look at the purpose of environment variables, how to use them, and their role in a development environment.
 author: saiharsha-balasubramaniam
 date: 2020-08-10T00:00:00-12:00
 topics: [Node.js]
@@ -102,7 +102,7 @@ When deploying to services like [Section](/modules/node-js), Vercel, Netlify or 
 
 ![Netlify Dashboard](/engineering-education/nodejs-environment-variables/netlify-dash.png)
 
-Open the Netlify Dashboard of the app you're about to deploy.
+Using Netlify as an example, open the Netlify Dashboard of the app you're about to deploy.
 
 ![Netlify Settings](/engineering-education/nodejs-environment-variables/env-vars.png)
 
