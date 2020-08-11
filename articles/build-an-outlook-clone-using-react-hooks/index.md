@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/build-an-outlook-clone-using-react-hooks/hero.jpg
     alt: output image outlook clone example
 ---
-Welcome to part two of the React series. In this tutorial, we will cover the same outlook clone that we built in [part one](/engineering-education/build-an-outlook-clone-using-react), but this time we will use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To skip the theory and get straight into coding, [click here](#Code)
+Welcome to part two of the React series. In this tutorial, we will cover the same Outlook clone that we built in [part one](/engineering-education/build-an-outlook-clone-using-react), but this time we will use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To skip the theory and get straight into coding, [click here](#code)
 <!--more-->
-To sum up the earlier attempt at building an outlook clone, we made API calls and displayed emails according to the filter requested. We also implemented local storage. Let's think about this for a minute. When we implemented local storage, was it a good idea to store the entire state?
+To sum up the earlier attempt at building an Outlook clone, we made API calls and displayed emails according to the filter requested. We also implemented local storage. Let's think about this for a minute. When we implemented local storage, was it a good idea to store the entire state?
 
 While this made sense during the last project, it does not produce the best experience for the user. Upon reloading, we can simply show the user the set of Read and Favourite e-mails and refresh the layout to the default option. This is the ideal approach to building projects. First, we build them logically step by step. Once done, we work on various optimizations in terms of performance, user experience, and code quality.
 
@@ -66,20 +66,20 @@ useState enables one to create state variables and use it anywhere within the fu
    ```jsx
     [stateName, setStateName] = useState(defaultValue)
    ```
-    useState returns a list which consists of the state variable, and a function to set the state variable. Uses list destructuring in JavaScript, we can easily rename it to any names at our convenience. The defaultValue can be any of the data types that JavaScript supports.
+`useState` returns a list which consists of the state variable, and a function to set the state variable. Using list destructuring in JavaScript, we can easily rename it to any names at our convenience. The defaultValue can be any of the data types that JavaScript supports.
 
 2. **useEffect**:
 
-A useEffect is used for executing certain actions to take place upon triggering of events. useEffect replaces the original way of declaring lifecycle methods.
+A `useEffect` is used for executing certain actions to take place upon triggering of events. `useEffect` replaces the original way of declaring lifecycle methods.
 
-- *componentDidMount*: To declare this event, we can use useEffect with an empty dependency list.
+- *componentDidMount*: To declare this event, we can use `useEffect` with an empty dependency list.
 
 ```jsx
    useEffect(()=>{
        //update the state on componentDidMount
    },[])
 ```
-- *componentWillUnMount*: Once a component is unmounted, any clean-up that needs to be done can be performed by returning a function in useEffect.
+- *componentWillUnMount*: Once a component is unmounted, any clean-up that needs to be done can be performed by returning a function in `useEffect`.
 
 ```jsx
    useEffect(()=>{
@@ -87,7 +87,7 @@ A useEffect is used for executing certain actions to take place upon triggering 
    return //cleanup code... for example freeing up event listeners
    },[])
 ```
-- *dependency list*: The dependency list ensures that the useEffect runs only when a change occurs in the state variables mentioned in the dependency list. This way, we can modularize effects and direct it to different actions on the basis of state variables.
+- *dependency list*: The dependency list ensures that the `useEffect` runs only when a change occurs in the state variables mentioned in the dependency list. This way, we can modularize effects and direct it to different actions on the basis of state variables.
 
 ```jsx
    useEffect(()=>{
@@ -95,11 +95,11 @@ A useEffect is used for executing certain actions to take place upon triggering 
    },[stateVariable1, stateVariable2])
 ```
 
-The useEffect above will run when there is a change in stateVariable1 or stateVariable2
+The `useEffect` above will run when there is a change in `stateVariable1` or `stateVariable2`
 
 3. **useRef**:
 
-The useRef Hook is a function that returns a mutable ref object whose current property is initialized with the passed argument (initialValue).
+The `useRef` Hook is a function that returns a mutable ref object whose current property is initialized with the passed argument (`initialValue`).
 
    ```jsx
     const refVariable = useRef(initialValue)
@@ -108,18 +108,18 @@ The useRef Hook is a function that returns a mutable ref object whose current pr
 It is usually used to access the DOM variables and to keep track of a mutable variable.
 
 4. **createContext** and **useContext**:
-A createContext is used to pass props from parent to child components. Consider the example of passing props from parent to child components presented below. Sending it via the props makes the code messy. Instead, createContext is used to send the props. Whenever the props are needed, we use useContext to get the value of the props.  We will discuss this below in the example project.
+A `createContext` is used to pass props from parent to child components. Consider the example of passing props from parent to child components presented below. Sending it via the props makes the code messy. Instead, `createContext` is used to send the props. Whenever the props are needed, we use `useContext` to get the value of the props.  We will discuss this below in the example project.
 
 ### Code
 Alright, we first begin with creating a React project, using the create-react-app package. The command creates a react-project template. Open a new terminal, (**Command Prompt** on Windows or **Terminal** on Linux OS)  and execute the following commands. I have used **Command Prompt** on a **Windows10 System**
 
-```terminal
+```sh
 npx create-react-app outlookclonereacthooks
 cd outlookclonereacthooks
 npm start
 ```
 
-The folder structure should look like this.
+The folder structure should look like this:
 
 ```
 outlookclonereacthooks
@@ -144,7 +144,9 @@ outlookclonereacthooks
     └── serviceWorker.js
 ```
 
-Let us create a folder called components in the root folder. The updated directory looks like this. Add the components *Email.js*, *EmailBody.js*,*SearchBox.js*,*Scroll.js*, and create directories named *styledComponents* and *css*. Add the files *ButtonStyles.js*, *EmailBody.js* and *EmailStyle.js* to styledComponents directory. Add file *EmailBody.css* to the CSS folder.  
+Let us create a folder called components in the root folder. Add the components *Email.js*, *EmailBody.js*,*SearchBox.js*,*Scroll.js*, and create directories named *styledComponents* and *css*. Add the files *ButtonStyles.js*, *EmailBody.js* and *EmailStyle.js* to styledComponents directory. Add file *EmailBody.css* to the CSS folder.
+
+The updated directory looks like this:
 
 ```
 outlookclonereacthooks
@@ -182,15 +184,13 @@ outlookclonereacthooks
 ### Setting up API on localhost
 For the project, we need to make API calls to get the list of emails and email body. Lets set that up. We will be using *json-server* package.
 
-```
+```sh
 npm install -g json-server
 ```
 
 The single-line command installs the required package. -g denotes that the following package is installed globally.
 
-Our first JSON file consists of 15 emails. We will use My JSON Server, a hosted service that provides fake online REST APIs for free.
-
-The link for the hosted service is https://my-json-server.typicode.com/lalith1403/jsonemaillist/list
+Our first JSON file consists of 15 emails. We will use [My JSON Server](https://my-json-server.typicode.com/lalith1403/jsonemaillist/list), a hosted service that provides fake online REST APIs for free.
 
 The other API of interest is fetching the email body given the email id. Online hosting services have various bottlenecks when it comes to content length. Let's use local hosting to get the data.
 
@@ -267,20 +267,19 @@ The email body JSON file is as follows. Paste the following code into a file cal
 ### Initiate JSON Server
 This command runs on the local terminal or command prompt initiates the json-server. This enables the API functionality. We can make API calls once the server is running.
 
-```
+```sh
 json-server --watch db.json
 ```
 
-If you get an error message, check if **npm** has been added to the environment variables. That should be a quick fix. Add the following text to your **PATH** environment variable: C:\Users\YOUR_NAME\AppData\Roaming\npm
+If you get an error message, check if **npm** has been added to the environment variables. That should be a quick fix. Add the following text to your **PATH** environment variable: `C:\Users\YOUR_NAME\AppData\Roaming\npm`
 
 Once we have the server running, we can double check via Postman or by going to http://localhost:3000/emailbody. To get a specific email body, we can send the *id* as a parameter. The URL is modified as follows: http://localhost:3000/emailbody?id=1. This returns the first email body.
 
 ### Let's implement the hooks we just learned
-In my [previous article](/engineering-education/build-an-outlook-clone-using-react/), we focused on the logic to go about implementing the project from scratch. If you would like a refresher on how to implement a project feel free to refer back to the previous article.
-In this article, we will focus on understanding the hooks and performing optimization.
+In my [previous article](/engineering-education/build-an-outlook-clone-using-react/), we focused on the logic to go about implementing the project from scratch. If you would like a refresher on how to implement a project feel free to refer back to the previous article. In this article, we will focus on understanding the hooks and performing optimization.
 
 ### Explanation: *App.js*
-We declare functional components and hooks that need to be declared within the function. We use various state variables. We have looked at declaring state variables using useState earlier [in this article](#react-hooks-in-practice). They are:
+We declare functional components and hooks that need to be declared within the function. We use various state variables. We have looked at declaring state variables using `useState` [earlier in this article](#react-hooks-in-practice). They are:
 
 1. emails
 2. dualPanel
@@ -296,11 +295,11 @@ We declare functional components and hooks that need to be declared within the f
 
 These are the same state variables as earlier. Declaring state variables as and when required is a powerful feature. It enables modularity and makes the codebase easier to read.
 
-Initially, on componentDidMount, the first useEffect is called, where we fetch the list. Initially, the id is set to an empty string. When there is a change in id, we will make an API call to the localhost to fetch the body. The body state is set. getId is the call-back function that is passed as a prop to Email component and we set the id.
+Initially, on `componentDidMount`, the first `useEffect` is called, where we fetch the list. Initially, the id is set to an empty string. When there is a change in id, we will make an API call to the localhost to fetch the body. The body state is set. getId is the call-back function that is passed as a prop to Email component and we set the id.
 
-Earlier, we had to send a call-back function to modify the readlist. In this case, we can directly send the useState list. We send readlist and setReadList as props to *Email.js*. In *Email.js*, we setReadList on an onClick event.
+Earlier, we had to send a call-back function to modify the readlist. In this case, we can directly send the `useState` list. We send `readlist` and `setReadList` as props to *Email.js*. In *Email.js*, we `setReadList` on an `onClick` event.
 
-We have also used createContext. We declare a global const EmailContext. This is wrapped around the child component. We send the emails as the value to be received at the child component. In the child component, we use the hook useContext to receive the prop email.
+We have also used `createContext`. We declare a global const `EmailContext`. This is wrapped around the child component. We send the emails as the value to be received at the child component. In the child component, we use the hook `useContext` to receive the prop email.
 
 ### Styled-components
 Styled-components is by far the easiest library to use for styling. There are various alternatives like inline styling and tachyons. But styled-components enables us to use our CSS knowledge. Let's say we want to style a button element. The inline styling would be
@@ -308,8 +307,7 @@ Styled-components is by far the easiest library to use for styling. There are va
 ```jsx
 <button style={{borderRadius:'1%'}}>Hey there</button>  
 ```
-Inline styling decreases code readability.
-Using styled-components, on the other hand, would allow us to maintain a much more tidy code. Let's look at styling the button using styled-components.
+Inline styling decreases code readability. Using styled-components, on the other hand, allows us to maintain much more tidy code. Let's look at styling the button using styled-components.
 
 All we have to do is create a constant and define our CSS styling within the constant. We can also create classes and ids similar to CSS.
 
@@ -334,7 +332,7 @@ function App() {
 In the newly created file named **App.js**, paste the code below. We are creating the main file that will interact with all the other components. We created the files earlier. Have a quick recap on the [project structure](#code).
 
 
-*App.js*
+**App.js**
 ```jsx
 import React, { useState, useEffect, createContext, useRef } from 'react';
 
@@ -536,15 +534,16 @@ function useLocalStorage(key, initialValue) {
 ### Custom Hooks
 We have defined two custom hooks for different purposes. Let's understand what custom hooks are. Custom hooks enables the reuse of stateful logic by providing boundaries to maintain isolated states and side effects.
 
-The first custom hook is called isMounted that is used to check if the component is mounted or not. This is done to ensure performance. At the time of mounting, we only want the first useEffect to make the API call. All the other hooks should not be called. The lesser the number of API calls made, the faster the web page will be.
+The first custom hook is called `isMounted` and is used to check if the component is mounted or not. This is done to ensure performance. At the time of mounting, we only want the first useEffect to make the API call. All the other hooks should not be called. The lesser the number of API calls made, the faster the web page will be.
 
-The second custom hook is used to store the read and fav lists in local storage. This time, we consider it from the user experience perspective. Showing the user the list of read and favourite, while reloading the page enhances the user experience. It is very important to store only relevant information. Therefore, the second custom hook takes in the input key and initialValue. It is checked if the key exists in the localStorage. If yes, it is updated with the new value, otherwise a new key is created.
+The second custom hook is used to store the read and fav lists in local storage. This time, we consider it from the user experience perspective. Showing the user the list of read and favourite, while reloading the page enhances the user experience. It is very important to store only relevant information. Therefore, the second custom hook takes in the input key and `initialValue`. It is checked if the key exists in the `localStorage`. If yes, it is updated with the new value, otherwise a new key is created.
 
-To check the value of the localStorage, go to Developer Tools -> Application -> Local Storage. You will find the values stored there. Any changes in the list will be immediately reflected in the localStorage.
+To check the value of the `localStorage`, go to Developer Tools -> Application -> Local Storage. You will find the values stored there. Any changes in the list will be immediately reflected in the `localStorage`.
 
 ### Explanation: *Email.js*
-We use useContext to get the email. Each email is displayed with the incorporation of various styling components. The scroll component limits the display height and prevents overflow.  
-*Email.js*
+We use `useContext` to get the email. Each email is displayed with the incorporation of various styling components. The scroll component limits the display height and prevents overflow.  
+
+**Email.js**
 
 ```jsx
 import React, { useContext } from 'react'
@@ -599,10 +598,9 @@ export default Email;
 ```
 
 ### Explanation: *EmailBody.js*
-We received the body of the email and a call-back function markAsFav, which is called when the Favourite button is clicked.
-markAsFav is a call-back function that updates the fav list.
+We received the body of the email and a call-back function `markAsFav`, which is called when the Favourite button is clicked. `markAsFav` is a call-back function that updates the fav list.
 
-*EmailBody.js*
+**EmailBody.js**
 
 ```jsx
 import React from 'react'
@@ -656,7 +654,7 @@ export default EmailBody
 
 ```
 
-*Scroll.js*
+**Scroll.js**
 
 ```jsx
 import React from 'react';
@@ -679,7 +677,8 @@ export default Scroll
 
 ### Styled Components
 Let's define the styling for the entire project. We can also send props to the styled elements. These props can enable us to include stateful logic inside the styled-components.
-*ButtonStyles.js*
+
+**ButtonStyles.js**
 ```css
 import styled from 'styled-components'
 
@@ -740,7 +739,7 @@ export const DualPanel = styled.div`
 `
 ```
 
-*EmailBodyStyles.js*
+**EmailBodyStyles.js**
 
 ```css
 import styled from 'styled-components'
@@ -793,7 +792,7 @@ align-items: center;
 `
 ```
 
-*EmailStyle.js*
+**EmailStyle.js**
 
 ```css
 import styled from 'styled-components'
@@ -886,10 +885,10 @@ export const Scroll = styled.div`
 ### Performance
 Let's discuss some of the performance improvements that we have just implemented in this project.
 
-1. Calculation of lists only when the filter button is clicked. In the previous article, we had computed the lists every time it rendered. This is an overhead on the browser and can be avoided by computing the list in the useEffect.
+1. Calculation of lists only when the filter button is clicked. In the previous article, we had computed the lists every time it rendered. This is an overhead on the browser and can be avoided by computing the list in the `useEffect`.
 2. We make fewer API calls by ensuring that the call is made on a change in the value of id.
 3. Enhancing user experience by showing relevant information.
 4. Another reason to avoid inline styling is the constant updating of CSSOM (CSS Object Model). Every change causes a re-render of the entire page. If we increase the computational load by updating the CSSOM every single time, it will cause performance issues. Styled-components, on the other hand, do not update the CSSOM unless we change it manually.
 
 ### Conclusion
-In the two-part series, we have introduced all the prominent React features, including hooks. Going through the process of designing the web page and incorporating optimizations towards the end is a good way to get a more user-friendly experience. This way, the next time you will start from a point of optimization, and find new parameters to be optimized.
+In this two-part series, we have introduced all the prominent React features, including hooks. Going through the process of designing the web page and incorporating optimizations towards the end is a good way to get a more user-friendly experience. This way, the next time you will start from a point of optimization, and find new parameters to be optimized.
