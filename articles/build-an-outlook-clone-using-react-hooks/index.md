@@ -6,7 +6,7 @@ slug: build-an-outlook-clone-using-react-hooks
 title: Building Outlook Clone with React Hooks
 description: This article helps developers get started with React by building an Outlook clone using React so that you can learn the fundamentals by getting hands-on with the code.
 author: lalithnarayan-c
-date: 2020-08-09T00:00:00-10:00
+date: 2020-08-11T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
