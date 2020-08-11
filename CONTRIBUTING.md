@@ -53,12 +53,6 @@ If your article is about serving ML models with Django, then the reader should h
 
 The details your article gives should help further grow the readers’ skills as they practice on their own projects.
 
-Other subject matter samples:
-- https://www.section.io/blog/prometheus-querying/
-- https://www.section.io/blog/debug-headers-best-practices/
-- https://www.section.io/blog/real-user-monitoring-performance-optimization/
-- https://www.section.io/blog/varnish-cache-503-error-guru-meditation/
-
 ## Review and approval processes
 Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. Note: articles requiring very few edits will be given priority in the review queue, and we reserve the right to refuse any articles that do not adhere to quality standards.PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
 
@@ -155,6 +149,12 @@ Don’t forget to get the audience involved by asking for feedback - or leave a 
 - POSSIBLE APPLICATIONS  of the new tech – explain how you have used this technology or how this technology may be used in the future.
 - PROS & CONS– outline the advantages and disadvantages of this new technology from your own experience/point of view and support it using relevant examples and sources.
 - CONCLUSION -  include any next or final steps summarizing the technology introduction - that serves as a good launchpad for the audience.
+
+Other subject matter samples:
+- https://www.section.io/blog/prometheus-querying/
+- https://www.section.io/blog/debug-headers-best-practices/
+- https://www.section.io/blog/real-user-monitoring-performance-optimization/
+- https://www.section.io/blog/varnish-cache-503-error-guru-meditation/
 
 ---
 ## Example Article Submission
