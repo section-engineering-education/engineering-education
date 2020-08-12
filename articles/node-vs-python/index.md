@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 slug: node-vs-python
-title: APIs in Node vs Python A Comparison
+title: APIs in Node vs Python - A Comparison
 description: NodeJS and Python are among the most popular languages used to write APIs and backend services. Let's look at a comparison between the two most popular languages out there.
 author: saiharsha-balasubramaniam
 date: 2020-08-11T00:00:00-09:00
