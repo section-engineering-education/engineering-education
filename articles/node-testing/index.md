@@ -17,7 +17,7 @@ images:
 [Node.js](http://nodejs.org/) is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. As the size of the application grows, the risk of bugs also grows. An application is not complete until it is tested. A test can be a simple `console.log` to a function to see if it is working as intended.
 <!--more-->
 
-Backend code holds all of our application's business logic and it is important that we get it right. Deploying bug ridden code can cost an organization millions of dollars. As Node.js is being used in critical applications all over the world it is important we test our applications. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand.
+Backend code holds all of our application's business logic and it is important that we get it right. Deploying bug ridden code can cost an organization millions of dollars. As Node.js is being used in critical applications all over the world it is important we test our applications. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than testing your application's functionality by going through each function or class manually.
 
 There are several stages to testing an application, the most commonly accepted ones are
 
