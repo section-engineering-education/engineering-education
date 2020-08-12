@@ -4,9 +4,9 @@ status: publish
 published: true
 slug: node-testing
 title: Testing Node.js Applications
-description: Testing Node.js application.
+description: Testing Node.js application - Node.js is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. Testing is an important part of that process.
 author: rohan-reddy
-date: 2020-08-04T00:00:00-10:00
+date: 2020-08-12T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -17,16 +17,16 @@ images:
 [Node.js](http://nodejs.org/) is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. As the size of the application grows, the risk of bugs also grows. An application is not complete until it is tested. A test can be a simple `console.log` to a function to see if it is working as intended.
 <!--more-->
 
-Backend code holds all of our application's business logic and it is important that we get it right. Deploying bug ridden code can cost an organisation millions of dollars. As Node.js is being used in critical applications all over the world it is important we test our applications. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand. 
+Backend code holds all of our application's business logic and it is important that we get it right. Deploying bug ridden code can cost an organization millions of dollars. As Node.js is being used in critical applications all over the world it is important we test our applications. Manual testing is tedious and prone to human error, automatic testing involves writing logic to test your code rather than running through application functionality by hand.
 
 There are several stages to testing an application, the most commonly accepted ones are
 
 * **Unit Testing**: Unit tests are written to test the functionality of a specific section of code, like testing a single class or a function. Discussed in detail below.
 * **Integration Testing**: In integration testing software units are grouped together and tested, it is used to detect defects in the interfaces and between integrated components. Meaning if you are exporting(module.exports) and importing(required) code in Node.js, integration testing can be done to see if they both work as intended. The problem with this type of testing is that it deals with a lot of code and it may be difficult to pin-point the cause of an error. It is usually performed after unit testing.
-* [**System Testing**](https://en.wikipedia.org/wiki/System_testing): A system test is performed on the completely integrated system to verify if it meets the required needs. 
-* [**Acceptance Testing**](https://en.wikipedia.org/wiki/Acceptance_testing): Often the final level of testing, where a product's readiness for its release to the consumer is tested. 
+* [**System Testing**](https://en.wikipedia.org/wiki/System_testing): A system test is performed on the completely integrated system to verify if it meets the required needs.
+* [**Acceptance Testing**](https://en.wikipedia.org/wiki/Acceptance_testing): Often the final level of testing, where a product's readiness for its release to the consumer is tested.
 
-We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing) as a  method of automated testing.	
+We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing) as a  method of automated testing.
 
 
 ```javascript
@@ -37,7 +37,7 @@ console.log(addNumbers(1,2));
 ```
 
 ### Unit Testing
-Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing, tests code logic directly at the function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and helps you avoid pitfalls early. Unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development). 
+Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing, tests code logic directly at the function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and helps you avoid pitfalls early. Unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development).
 
 ![img](/engineering-education/node-testing/tdd.png)
 
@@ -83,13 +83,13 @@ Passed
 
 ### Structuring Unit Tests
 
-Let's examine one way of structing tests, **AAA Pattern**. A test has 3 parts or sections, Arange, Act, Assert. 
+Let's examine one way of structing tests, **AAA Pattern**. A test has 3 parts or sections, Arange, Act, Assert.
 
-1. Arange: Initialize variables, setup necessary preconditions and inputs. 
+1. Arange: Initialize variables, setup necessary preconditions and inputs.
 2. Act: Execute the function/unit being tested.
-3. Assert: *Assert* (or check) that the value received from executing the unit is the same value that is expected. 
+3. Assert: *Assert* (or check) that the value received from executing the unit is the same value that is expected.
 
-The code above is 
+The code above is
 
 ```javascript
 //index.js
@@ -101,7 +101,7 @@ function testAddTwo() {
 	//Step 1. Arange
   var x = 5;
   var x2 = x + 2;
-	
+
 	//Step 2. Act
   var x3 = addTwo(x);
 
@@ -166,11 +166,15 @@ AssertionError [ERR_ASSERTION]: 6 == 7
 
 `equal` tests if the contents of a variable are indeed equal to a value specified in the second argument. Let's look at various methods in the assert module and how we can use them.
 
-- Example Usage: `assert.equal(a,b,c)`. Throws error *c* if *a* is not equal to *b*. *c* can be a sentence.
+Examples:
+
+-  `assert.equal(a,b,c)`. Throws error *c* if *a* is not equal to *b*. *c* can be a sentence.
 - `assert.notEqual`. Used when the generation of a certain value by application indicates a problem in logic.
 - `assert.strictEqual`. This uses [strict equality](https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons) (===) rather than (==).
 - `assert.deepEqual`. This compares the objects. They recursively compare two objects, comparing two object’s properties and, if the properties are themselves objects, comparing these as well.
-- `assert.ok`. This is used for testing [asynchronous functions](https://bitsofco.de/asynchronous-functions-101/). When we use it as `assert.ok(value, error_message)` if the value is false then it throws the `error_message`. Example usage:
+- `assert.ok`. This is used for testing [asynchronous functions](https://bitsofco.de/asynchronous-functions-101/). When we use it as `assert.ok(value, error_message)` if the value is false then it throws the `error_message`.
+
+Examples:
 
 ```javascript
  function doAsync (callback) {
@@ -315,7 +319,7 @@ We have `done` as an argument to `it()`, The `done()` callback function is used 
 
 ### Conclusion
 
-When writing tests keep in mind that tests are made to make your life easier, design your tests to be simple, short and understandable. Check out best practices [here](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347). 
+When writing tests keep in mind that tests are made to make your life easier, design your tests to be simple, short and understandable. Check out best practices [here](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347).
 
 ### References
 * [Node.js in Action Book](https://www.manning.com/books/node-js-in-action)
