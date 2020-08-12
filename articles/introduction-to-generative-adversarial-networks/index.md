@@ -18,13 +18,10 @@ images:
 <!--more-->
 
 ### What are GANs?
-Generative Adversarial Networks (GANs) are a popular class of neural networks used for [unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning) (a class of machine learning where there is no pre-existing label in the data). *Generative modeling is a class of
-machines-learning in which the regularities and patterns of the input data are discovered and learned so that a model can be used to generate and output new examples that can be plausibly drawn from the original data set*.
-
-GANs generates new data, and hence, have a wide array of use cases. Every record or information, be it textual, video or audio is data and GAN can be used to generate a new or fake version of them. GAN is considered one of the most potent breakthroughs in Machine learning and it’s application varies from simple needs to very highly complex requirements.
+Generative Adversarial Networks (GANs) are a popular class of neural networks used for [unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning) (a class of machine learning where there is no pre-existing label in the data). GANs generates new data, and hence, have a wide array of use cases. Every record or information, be it textual, video or audio is data and GAN can be used to generate a new or fake version of them. GAN is considered one of the most potent breakthroughs in Machine learning and it’s application varies from simple needs to very highly complex requirements.
 
 #### How do they work?
-A GAN consists of two competing neural network models. The first network, called the **generator**, generates new data instances, whereas the second network, called the **discriminator**, evaluates them for authenticity; i.e. the discriminator evaluates the data instances and checks whether they belong to the actual training dataset. *The generator tries to generate realistic data, and the discriminator network tries to distinguish what it generates*. The generator network uses the discriminator's output to update its parameters as needed, creating data that appears more realistic.
+Two opposing neural networks form the core architecture of a GAN: One network, called the **generator**, creates new information based on certain parameters, whereas the second network, called the **discriminator**, checks the data to see if it is legitimate. *The generator tries to generate realistic data, and the discriminator network tries to distinguish what it generates*. The generator network uses the discriminator's output to update its parameters as needed, creating data that appears more realistic.
 
 The generator predicts the characteristics/features of data given a label. So this component first takes in a random vector (representation of the initial random image) and generates a set of fake data that are forwarded to the discriminator. In every iteration, the generator is run in a more finely tuned manner.
 
