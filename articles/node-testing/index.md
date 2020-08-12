@@ -22,11 +22,11 @@ Backend code holds all of our application's business logic and it is important t
 There are several stages to testing an application, the most commonly accepted ones are
 
 * **Unit Testing**: Unit tests are written to test the functionality of a specific section of code, like testing a single class or a function. Discussed in detail below.
-* **Integration Testing**: In integration testing software units are grouped together and tested, it is used to detect defects in the interfaces and between integrated components. Meaning if you are exporting(module.exports) and importing(require) code in Node.js, integration testing can be done to see if they both work as intended. The problem with this type of testing is that it deals with a lot of code and it may be difficult to pin-point the cause of error. It is usually performed after unit testing.
-* [**System Testing**](https://en.wikipedia.org/wiki/System_testing): System test is performed on the completely integrated system to verify if it meets the needs. 
+* **Integration Testing**: In integration testing software units are grouped together and tested, it is used to detect defects in the interfaces and between integrated components. Meaning if you are exporting(module.exports) and importing(required) code in Node.js, integration testing can be done to see if they both work as intended. The problem with this type of testing is that it deals with a lot of code and it may be difficult to pin-point the cause of an error. It is usually performed after unit testing.
+* [**System Testing**](https://en.wikipedia.org/wiki/System_testing): A system test is performed on the completely integrated system to verify if it meets the required needs. 
 * [**Acceptance Testing**](https://en.wikipedia.org/wiki/Acceptance_testing): Often the final level of testing, where a product's readiness for its release to the consumer is tested. 
 
-We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing)  as a  method of automated testing.	
+We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing) as a  method of automated testing.	
 
 
 ```javascript
@@ -44,10 +44,9 @@ Unit testing is a type of automated testing where you write logic to test discre
 Unit tests
 
 
-
 ### Unit testing with Node `assert` module.
 
-The basis for most Node testing is the built-in **assert** module, *which tests a condition and, if condition is not met, throws an error.*
+The basis for most Node testing is the built-in **assert** module, *which tests a condition and, if that condition is not met, throws an error.*
 
 Lets look at a simple example of assertion testing.
 
@@ -82,7 +81,7 @@ Expected 7 Got 7
 Passed
 ```
 
-## Structuring Unit Tests
+### Structuring Unit Tests
 
 Let's examine one way of structing tests, **AAA Pattern**. A test has 3 parts or sections, Arange, Act, Assert. 
 
@@ -90,7 +89,7 @@ Let's examine one way of structing tests, **AAA Pattern**. A test has 3 parts or
 2. Act: Execute the function/unit being tested.
 3. Assert: *Assert* (or check) that the value received from executing the unit is the same value that is expected. 
 
-The above code is 
+The code above is 
 
 ```javascript
 //index.js
@@ -167,11 +166,11 @@ AssertionError [ERR_ASSERTION]: 6 == 7
 
 `equal` tests if the contents of a variable are indeed equal to a value specified in the second argument. Let's look at various methods in the assert module and how we can use them.
 
-* Example Usage: `assert.equal(a,b,c)`. Throws error *c* if *a* is not equal to *b*. *c* can be a sentence.
-* `assert.notEqual`. Used when the generation of a certain value by application indicates a problem in logic.
-* `assert.strictEqual`. This uses [strict equality](https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons) (===) rather than (==).
-* `assert.deepEqual`. This compares the objects. They recursively compare two objects, comparing two object’s properties and, if the properties are themselves objects, comparing these as well.
-* `assert.ok`. This is used for testing [asynchronous functions](https://bitsofco.de/asynchronous-functions-101/). When we use it as `assert.ok(value, error_message)` if the value is false then it throws the `error_message`. Example usage:
+- Example Usage: `assert.equal(a,b,c)`. Throws error *c* if *a* is not equal to *b*. *c* can be a sentence.
+- `assert.notEqual`. Used when the generation of a certain value by application indicates a problem in logic.
+- `assert.strictEqual`. This uses [strict equality](https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons) (===) rather than (==).
+- `assert.deepEqual`. This compares the objects. They recursively compare two objects, comparing two object’s properties and, if the properties are themselves objects, comparing these as well.
+- `assert.ok`. This is used for testing [asynchronous functions](https://bitsofco.de/asynchronous-functions-101/). When we use it as `assert.ok(value, error_message)` if the value is false then it throws the `error_message`. Example usage:
 
 ```javascript
  function doAsync (callback) {
@@ -187,7 +186,7 @@ function testAsync (callback) {
 ```
 
 ### Mocha
-[Mocha](https://mochajs.org/) is a popular JavaScript testing framework that runs on both Node.js and the browser. Mocha is simple, extensible and fast, it's used for unit and integration testing. Mocha does not have in-built assertion so it is used with libraries like *assert*, [chai](https://www.chaijs.com/), etc. Mocha provides easy asynchronous and synchronous testing with an easy interface.
+[Mocha](https://mochajs.org/) is a popular JavaScript testing framework that runs on both Node.js and the browser. Mocha is simple, extensible and fast, it's used for unit and integration testing. Mocha does not have built-in assertion so it is used with libraries like *assert*, [chai](https://www.chaijs.com/), etc. Mocha provides easy asynchronous and synchronous testing with an easy interface.
 
 ### Installation and Set-up
 Create a new directory and initialize a node project (if you don't already have a node project).
@@ -236,7 +235,7 @@ module.exports = function() {
 	return args.map(x => x+2);
 }
 ```
-Create a sub-directory called `test` and create a file inside the directory called `testAddTwo.js`(doesn't matter). We add tests for different cases in this.
+Create a sub-directory called `test` and create a file inside the directory called `testAddTwo.js`(doesn't matter). We add tests for different cases in this example.
 
 ```
 var addt = require("../addTwo.js");
@@ -271,7 +270,7 @@ describe("addTwo()", function() {
 })
 
 ```
-We used the chai assertion library for the last test, here we can see the areas where assert module just might not cover it. Chai provides three assertion styles `assert`, `expect` and 	`should` - you can read about the differences and uses [here](https://www.chaijs.com/guide/styles/).
+We used the chai assertion library for the last test, here we can see the areas where assert module might just not cover it. Chai provides three assertion styles `assert`, `expect` and `should` - you can read about the differences and uses [here](https://www.chaijs.com/guide/styles/).
 
 When we run the command `npm test` we can see the following results.
 
@@ -314,7 +313,7 @@ describe('#find()', function () {
 ```
 We have `done` as an argument to `it()`, The `done()` callback function is used by Mocha to tell it when an asynchronous function is completed.
 
-## Conclusion
+### Conclusion
 
 When writing tests keep in mind that tests are made to make your life easier, design your tests to be simple, short and understandable. Check out best practices [here](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347). 
 
