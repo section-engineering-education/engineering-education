@@ -6,7 +6,7 @@ slug: getting-started-with-pyspark-spark-part2
 title: Getting started with PySpark (Spark core and RDDs) - Spark Part 2
 description:  This article covers programming with Spark Core and RDD by applying them on a large dataset - Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient.
 author: keerthi-v
-date: 2020-08-01T00:00:00-09:00
+date: 2020-08-11T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
