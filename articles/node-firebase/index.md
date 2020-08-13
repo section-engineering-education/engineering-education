@@ -73,7 +73,7 @@ socket.on('request', (req) => {
 
 We use the `database.set` method to write the firebase database and when it is successful, we log that the message has been added. Then, we use the `database.on('value')` method to listen to any changes in the database. Since the data comes in a `snapshot`, we call the `.val()` method to get the contents of the snapshot i.e. the new data in the database.
 
-Once the webscoket connection closes, we also close the database to avoid wasting resources.
+Once the websocket connection closes, we also close the database to avoid wasting resources.
 
 As you can see below, two messages are sent to the server, once saved, we get two logs and two messages sent to the clients.
 
