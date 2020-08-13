@@ -7,7 +7,7 @@ title: Point Of Sale Transaction System Using Arduino and Python
 description: Building a point of sale transaction system using Arduino and python using RFID-enabled ID cards to transact.
 author: lalithnarayan-c
 date: 2020-08-05T00:00:00-11:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -130,7 +130,7 @@ while True:
             print("Insufficient funds")
             break
 
-        else:    
+        else:
             print("Server Error")
             print("Rescan ID")
             #UDPSock.close()
@@ -207,7 +207,7 @@ while True:
                 send_data("3",u_addr)
                 print(count)
 
-        count=count+1  
+        count=count+1
 
     if(status==1):
 
@@ -225,7 +225,7 @@ while True:
             clb[count]=cb[count]-ta1
             cb[count]=clb[count]
             ta[count]=ta1
-            print("Transaction successful\nThank you",name[count])  
+            print("Transaction successful\nThank you",name[count])
 
         df.to_csv("C://Users//Kantesh//Desktop//CN PBL//Dataset.csv")
 #os._exit(0)

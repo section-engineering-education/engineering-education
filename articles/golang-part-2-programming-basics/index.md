@@ -7,7 +7,7 @@ title:  Golang - Programming Basics
 description: Covering the basics of programming in Go - directories, workspaces, variables, loops, conditionals and control flow, etc.
 author: adith-bharadwaj
 date: 2020-08-06T00:00:00-09:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

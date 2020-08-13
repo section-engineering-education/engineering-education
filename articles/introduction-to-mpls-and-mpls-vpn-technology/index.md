@@ -7,7 +7,7 @@ title: Introduction to MPLS and MPLS VPN technology
 description: This article briefly introduces Multi-protocol Label Switching(MPLS) and talks about how Virtual Private Networks running on MPLS cores offer reliability, security and enhanced performance.
 author: shreya-a-n
 date: 2020-07-30T00:00:00-09:00
-topics: [networking]
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
