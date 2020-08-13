@@ -205,4 +205,6 @@ Finally, type `sudo systemctl start pm2-(username)`.
 
 Try restarting your droplet by typing reboot and after a few minutes, go to `yourdomain.com`. Your web app should be up and running like normal.
 
-Congratulations, you've just deployed your first Node.js web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash?
+Congratulations, you've just deployed your first Node.js web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash? 
+
+Never worked with an API before? Check out my [guide to using the Goodreads API to develop a Node.js web app](/engineering-education/simple-guide-to-using-apis-nodejs).
