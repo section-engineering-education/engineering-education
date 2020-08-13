@@ -18,9 +18,9 @@ Discord bots are very cool. They're also very fun to make. But how do you make o
 
 Typically, Discord bots are written in [Node.js](https://nodejs.org/en/). Node is a JavaScript interpreter that runs on the desktop. Of course, it's possible to write a bot in [other languages](https://discordapi.com/unofficial/libs.html). For some people this may be preferable. If you have lots of users, you will need an efficient language ([unlike javascript](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/node-gpp.html)). We will use the JavaScript library because it is the most popular. But, many of the other libraries are somewhat similar. Once you are done reading this article, try looking at some [Rust tutorials](https://www.youtube.com/watch?v=sOA6rSRCqPw&list=PLPwSz_Jcam3xVjrTAYgIHvf1Jq94yrRXp).
 <!--more-->
-### Get Started By Making a Bot
+## Get Started By Making a Bot
 
-#### Creating The Bot
+### Creating The Bot
 First, you need to visit the [Discord Developer Portal](https://discordapp.com/developers/applications/). Click the "New Application" button. Give your bot a name, and click "Create".
 
 ![The New Application button is in the top right corner](./discordbot1.png)
@@ -37,7 +37,7 @@ On the left, you should see a "Bot" tab. Click on that, and then click on the bu
 
 Give your new bot a name and an icon to make it stand out.
 
-#### Adding The Bot To Your Server
+### Adding The Bot To Your Server
 You'll need to use a link that looks something like this:
 
 ```
@@ -50,7 +50,7 @@ You'll need to replace `CLIENT_ID` with the client ID of your bot, which you can
 
 Once you've traveled to this page, you'll need to specify which server to add it to. It needs to be a server where you have administrative privileges. Then click "Authorize", and you'll be ready!
 
-### Set up Your Project
+## Set up Your Project
 You'll need to install [Node](https://nodejs.org/en/). Discord.js requires at least version 12 of Node. You can check your version by running `node -v` in a terminal or command prompt. If the version number is at least `12.0`, you're good.
 
 ![The version number should be at least 12](/engineering-education/discord-bot-node/gdiscordbot7.png)
@@ -60,7 +60,7 @@ Make a folder for your project. You can call it anything. Once you're in that fo
 ![The npm install discord.js command](/engineering-education/discord-bot-node/discordbot8.png)
 
 
-#### Getting Your Token
+### Getting Your Token
 
 The token for your bot is like a username and a password. It tells Discord which bot you want to control, and proves that you are the owner of the bot. **DO NOT GIVE AWAY YOUR DISCORD TOKEN!** I sometimes accidentally put my token on GitHub. Then I have to go through the trouble of resetting it. I'll show you how to hide it from GitHub in just a sec.
 
@@ -88,7 +88,7 @@ You can run this by using `node index.js`. Once you’ve done that it should loo
 
 ![The word “ready” appears in the command prompt](/engineering-education/discord-bot-node/discordbot9.png)
 
-### Creating Commands
+## Creating Commands
 
 That's cool, but we want the bot to actually do something. The most common example is [ping-pong](https://www.youtube.com/watch?v=DEqrCI1018I), but we should do something a little more interesting. Let's generate random numbers. Whenever a user types in "?random", let's make the bot reply with a random number. We just need to add some more code above the `client.login()` call.
 
@@ -128,7 +128,7 @@ client.on("message", message => {
 
 There. Now to add more commands, you just add them to `commands`.
 
-### Bot Ideas
+## Bot Ideas
 Now that you know how to make a Discord bot, it would nice if you would actually make one. If you need a list of Discord Bot ideas, I've come up with a few already for [my blog](https://botahamec.github.io/posts/20_06_03_project_ideas/). Here are a few more though:
 
 - A bot that can compile its own programming language
