@@ -6,8 +6,8 @@ slug: node-testing
 title: Testing Node.js Applications
 description: Testing Node.js application - Node.js is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. Testing is an important part of that process.
 author: rohan-reddy
-date: 2020-08-12T00:00:00-10:00
-topics: []
+date: 2020-08-13T00:00:00-11:00
+topics: [node.js]
 excerpt_separator: <!--more-->
 images:
 
