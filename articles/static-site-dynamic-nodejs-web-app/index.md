@@ -162,26 +162,8 @@ app.get('/', function (req, res) {
 ### Passing Server-Side Data
 Congratulations! You've successfully converted your static website to a Node.js web app. You've also created your first Express web server and learned the basics of EJS templating.
 
+Eager to deploy your first Node.js web app so you can show it off? Follow my [Node.js deployment tutorial for DigitalOcean](/engineering-education/deploying-nodejs-web-app).
+
 If you want to build on the skills you've learned in this tutorial, I suggest using EJS templating to work with APIs and databases.
 
-If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases guide](/engineering-education/working-with-databases-part1/) which will get you started and later expand into using EJS.
-
-<section class="section-rich-text xs-pb-80 xs-pt-80">
-  <div class="section-container">
-    <div class="section-rich-text-inner prl-5">
-      <a class="decoration-none" href="/modules/node-js/">
-        <div class="cta-block-box relative xs-mt-10 xs-mb-50">
-          <div class="cta-block-box-left-block absolute"></div>
-          <div class="cta-block-box-left-stripes absolute"></div>
-          <div class="cta-block-box-inner pa-5 cta-shadow">
-            <h3 class="title-3" style="text-align: center;"><img src="/assets/images/blog/featured-images/Node.js_logo.png" width="150" style="margin: 0;"><br>Edge Hosting</h3>
-            <p class="xs-mb-20">Section’s Node.js Edge Hosting empowers DevOps teams to run mission critical Node.js applications at the network edge for blazingly fast results with enterprise level AppSec protection.</p>
-            <span class="link-with-arrow-blue text-blue text-18-medium">Learn more and get started on a free plan</span>
-          </div>
-          <div class="cta-block-box-right-block absolute"></div>
-          <div class="cta-block-box-right-stripes absolute"></div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases](/engineering-education/working-with-databases-part1/) and [Getting to Grips with APIs](/engineering-education/simple-guide-to-using-apis-nodejs) guides which will get you started.
