@@ -1,7 +1,5 @@
 ---
-title: 🙋 Authors
+title: EngEd Contributors
 description: The people behind Engineering Education
 type: authors
 ---
-
-Hello 🚀
