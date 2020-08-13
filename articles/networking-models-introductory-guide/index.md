@@ -83,8 +83,8 @@ The networking model describes the architecture, components, and design used to 
   * There are various error correction algorithms like Cyclic Redundancy Check, Checksum, Parity Bits, etc. 
 
 * **Physical Layer**: This layer deals with electrical, mechanical, functional, and procedural characteristics of physical links. Network topology comes under this layer. One prominent aspect of the physical layer is encoding. Encoding refers to the representation of data. The objective of encoding is to ensure maximum probability that the message is transmitted without any errors. There are different types of encoding available. They differ in the way the 0's and 1's are represented. Basic representation is -5V signal for 0 and +5V signal for 1. The probability of error is high, and therefore various other schemes are required. Let's review some of these visually. 
-    * Manchester Encoding: ![](/engineering-education/networking-models-introductory-guide/manchester_coding.jpg)
-    * NRZ Encoding: ![](/engineering-education/networking-models-introductory-guide/nrz_coding.jpg)
+    * Manchester Encoding: ![](manchester_coding.jpg)
+    * NRZ Encoding: ![](nrz_coding.jpg)
     
     Source: https://manikareahome.files.wordpress.com/
 
