@@ -210,7 +210,7 @@ Add the `test` script to your `package.json`.
 //package.json
 ...
 {
-	"scripts": {
+"scripts": {
     "test": "mocha"
   }
 }
@@ -234,7 +234,7 @@ The `describe()` function is used to group similar tests, grouping tests makes o
 module.exports = function() {
 	var args = Array.prototype.slice.call(arguments);
 	if (!args.every(Number.isFinite)) {
-    throw new TypeError('addTwo() exprects only numbers or array of numbers')
+    	throw new TypeError('addTwo() exprects only numbers or array of numbers')
   }
 	return args.map(x => x+2);
 }
