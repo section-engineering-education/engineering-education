@@ -1,6 +1,6 @@
 ---
 title: Lalithnarayan c
-type: author
+type: engineering-education/author
 linkedin: https://www.linkedin.com/in/lalith-narayan-27a89a1b/
 ---
 
