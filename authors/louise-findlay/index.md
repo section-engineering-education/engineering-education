@@ -1,5 +1,5 @@
 ---
-name: Louise Findlay
+title: Louise Findlay
 twitter: https://twitter.com/louisefindlay23
 website: https://louisefindlay.com/
 ---

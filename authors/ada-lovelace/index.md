@@ -1,5 +1,5 @@
 ---
-name: Ada Lovelace
+title: Ada Lovelace
 twitter: https://twitter.com/AdaLovelaceInst
 website: https://en.wikipedia.org/wiki/Ada_Lovelace
 github: https://github.com/ada.lovelace

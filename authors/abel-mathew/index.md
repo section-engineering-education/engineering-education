@@ -1,5 +1,5 @@
 ---
-name: Abel Mathew
+title: Abel Mathew
 linkedin: https://www.linkedin.com/in/designrknight/
 github: https://github.com/DesignrKnight
 ---
