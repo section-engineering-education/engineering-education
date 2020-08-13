@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 slug: node-firebase
-title: Node Firebase
+title: Node.js Firebase
 description: This is a short tutorial that shows how to use the firebase real-time database to store and listen to changes in the database and sending them to listening to clients in real time.
 author: linus-muema
 date: 2020-08-13T00:00:00-13:00
@@ -17,7 +17,7 @@ images:
 Real-time data has become a crucial part of most applications these days. Many web applications use sockets to connect clients to other clients and to servers. Still, the main challenge with this is the storage of data. Firebase has a real-time database feature that allows easy creation of real-time applications such as chat apps.
 <!--more-->
 
-To get started, let's begin by creating a Node application using `npm init` and add the following packages:
+To get started, let's begin by creating a Node.js application using `npm init` and add the following packages:
 
 - [`firebase`](https://www.npmjs.com/package/firebase) : this will be used to access and perform actions to our firebase real-time database
 - [`websocket`](https://www.npmjs.com/package/websocket) : will be used to connect our clients to the server and allow them to send messages to the server and in turn the server will echo the same message after it has been recorded in the database. And if any other message from anywhere else arrives in the real time database, it will echo it to all clients listening to the server.
