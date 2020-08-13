@@ -7,7 +7,7 @@ title: Basics of Generative Adversarial Networks
 description: This article introduces the readers to the basics of GANs, where and why they are used, how they are built, etc. It also explores the architecture of a simple GAN and the system flow.
 author: adith-bharadwaj
 date: 2020-08-12T00:00:00-07:00
-topics: [networking]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
