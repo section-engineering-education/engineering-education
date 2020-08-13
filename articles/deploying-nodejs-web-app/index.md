@@ -7,7 +7,7 @@ title: Deploying Your First Node.js Web App
 description: This guide provides an introduction to Node.js and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
 author: louise-findlay
 date: 2020-07-15T00:00:00-10:00
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
@@ -75,7 +75,7 @@ Congratulations, your first Node.js web app should be displayed in your web brow
 
 You typed in an IP Address and port number to view your web app but, wouldn't you prefer a custom domain name like yourapp.com?
 
-Assuming you’ve already bought a domain, the first step is to add a DNS record so your domain name will resolve to the IP address of your DigitalOcean droplet. A DNS record tells your browser what to do when they load your domain. In this case, it should go to the IP address of your droplet. 
+Assuming you’ve already bought a domain, the first step is to add a DNS record so your domain name will resolve to the IP address of your DigitalOcean droplet. A DNS record tells your browser what to do when they load your domain. In this case, it should go to the IP address of your droplet.
 
 If you’ve not bought a domain, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting, though there are benefits to going with a dedicated hosting and email provider. [Netlify](https://www.netlify.com) offers hosting for static sites and [SiteGround](https://www.siteground.co.uk) for CMS websites. Office365 and GSuite are the kings of custom email providers. See my guide for [Setting Up a Professional Email](/engineering-education/creating-professional-email/) to read a comparison of Office365 and GSuite.
 
@@ -145,10 +145,10 @@ Here's a complete example of what it should look like. **Note:** the `server_nam
 
 ```bash
 server {
-        root /var/www/html;      
+        root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
         server_name auroraspotter.space;
-         
+
 location / {
        proxy_set_header X-Real-IP $remote_addr;
        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -169,10 +169,10 @@ server {
     if ($host = auroraspotter.space) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
-    
+
         listen 80 default_server;
         listen [::]:80 default_server;
-        
+
         server_name auroraspotter.space;
     return 404; # managed by Certbot
 ```
@@ -206,3 +206,23 @@ Finally, type `sudo systemctl start pm2-(username)`.
 Try restarting your droplet by typing reboot and after a few minutes, go to `yourdomain.com`. Your web app should be up and running like normal.
 
 Congratulations, you've just deployed your first Node.js web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash?
+
+<section class="section-rich-text xs-pb-80 xs-pt-80">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5">
+      <a class="decoration-none" href="/modules/node-js/">
+        <div class="cta-block-box relative xs-mt-10 xs-mb-50">
+          <div class="cta-block-box-left-block absolute"></div>
+          <div class="cta-block-box-left-stripes absolute"></div>
+          <div class="cta-block-box-inner pa-5 cta-shadow">
+            <h3 class="title-3" style="text-align: center;"><img src="/assets/images/blog/featured-images/Node.js_logo.png" width="150" style="margin: 0;"><br>Edge Hosting</h3>
+            <p class="xs-mb-20">Section’s Node.js Edge Hosting empowers DevOps teams to run mission critical Node.js applications at the network edge for blazingly fast results with enterprise level AppSec protection.</p>
+            <span class="link-with-arrow-blue text-blue text-18-medium">Learn more and get started on a free plan</span>
+          </div>
+          <div class="cta-block-box-right-block absolute"></div>
+          <div class="cta-block-box-right-stripes absolute"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
