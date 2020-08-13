@@ -28,11 +28,11 @@ Walmart Labs has written a well detailed [blog](https://medium.com/walmartglobal
 
 The two diagrams mentioned below detail the processes involved in server-side rendering and client-side rendering. We observe that server-side rendered applications are one step ahead of client-side rendered applications. They display the HTML and then load the JS files, therefore enhancing the user experience in terms of performance and loading time. It also falls in line with the 7 principles listed above.
 
-![](https://miro.medium.com/max/700/1*jJkEQpgZ8waQ5P-W5lhxuQ.png)
+![](ssr.jpg)
 
 Source: medium.com
 
-![](https://miro.medium.com/max/700/1*CRiH0hUGoS3aoZaIY4H2yg.png)
+![](csr.jpg)
 
 Source: medium.com
 
