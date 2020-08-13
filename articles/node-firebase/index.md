@@ -44,7 +44,7 @@ require('firebase/database')
 const database = firebase.database().ref('messages/')
 ```
 
-Next, we will need to set up our server to create a socket. We will use the NodeJs `http` interface to create a server. Then we will use `websocket` to connect the register to the socket in the server (create a socket server). The server listens to port 2400 and we create a socketServer using the server we have created.
+Next, we will need to set up our server to create a socket. We will use the Node.js `http` interface to create a server. Then we will use `websocket` to connect the register to the socket in the server (create a socket server). The server listens to port 2400 and we create a socketServer using the server we have created.
 
 ```JavaScript
 const http = require('http')
