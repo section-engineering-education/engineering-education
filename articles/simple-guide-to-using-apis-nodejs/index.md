@@ -333,7 +333,9 @@ Finally, we just need to create a `book.ejs` to determine the content of the boo
 
 This will show the book title, year it is was published and the book description.
 
-Congratulations, you've just work with your first API using Node.js and EJS templating. Why not try it out? Search for a book and click on any of the titles. A new page will load with details of the result you clicked from the Goodreads API.
+Congratulations, you've just worked with your first API using Node.js and EJS templating. Why not try it out? Search for a book and click on any of the titles. A new page will load with details of the result you clicked from the Goodreads API. 
+
+Looking to deploy it to the web? Check out my [guide to deploying a Node.js web app using DigitalOcean](/engineering-education/deploying-nodejs-web-app)
 
 ### **Next Steps:**
 If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle or use your new-found knowledge, to work with different APIs like [Unsplash](https://unsplash.com/developers) or [Spotify](https://developer.spotify.com/documentation/web-api/).
