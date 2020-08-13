@@ -6,8 +6,8 @@ slug: introduction-to-generative-adversarial-networks
 title: Basics of Generative Adversarial Networks
 description: This article introduces the readers to the basics of GANs, where and why they are used, how they are built, etc. It also explores the architecture of a simple GAN and the system flow.
 author: adith-bharadwaj
-date: 2020-08-11T00:00:00-07:00
-topics: []
+date: 2020-08-12T00:00:00-07:00
+topics: [networking]
 excerpt_separator: <!--more-->
 images:
 
@@ -36,7 +36,7 @@ This flowchart will give a brief description of how GANs work.
 
 **System flow**:
 
-1. Firstly, A vector, initialized to **random values**, is given as the input to the model.
+1. First, A vector, initialized to **random values**, is given as the input to the model.
 
 2. There are two types of images: The **generated image** and the **real image**. The generated image is the output of the generator, and the real image is part of the training data that the model is trained on.
 
@@ -46,7 +46,7 @@ This flowchart will give a brief description of how GANs work.
 
 5. Based on the results, the generator and discriminator are updated. Their [weights and biases](https://docs.paperspace.com/machine-learning/wiki/weights-and-biases) are modified accordingly for the next iteration of training. This process continues for all the images in the training dataset and the model slowly learns how to generate images that are similar to the training dataset.
 
-A simple GAN architecture involves random noise given as the input to the generator which then transforms this noise into the desired output by performing some operations on the input. Since the input is random data or noise, the GAN can generate a wide variety of outputs by sampling the data from different places in the distribution. This ensures that the GAN does not generate data that already exists.  
+A simple GAN architecture involves random noise given as the input to the generator that transforms this noise into the desired output by performing some operations on the input. Since the input is random data or noise, the GAN can generate a wide variety of outputs by sampling the data from different places in the distribution. This ensures that the GAN does not generate data that already exists.  
 
 Through extensive testing and experimentation, it was found that the initial distribution of the input data does not matter much as the GAN transforms this data into something meaningful. Therefore, something as simple as a [uniform distribution](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)) can be given as the input. The input noise is just something to start with so that the GAN has something to transform.
 
