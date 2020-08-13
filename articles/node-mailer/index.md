@@ -109,5 +109,4 @@ app.get('/email/file', (req, res) => {
 
 As you can see, we use the `renderFile` function to compile our pug code to HTML and get the resultant string. The we pass the string to the html field and the. The good thing about this is that you can have a wide variety of elements and have a clean, organised code.
 
-You can find the full code of this tutorial on [Github](https://github.com/LinusMuema/node-mailer). A good challenge can be adding images to your email so go ahead and try it out!
-
+With that, you are now able to send emails from your NodeJs server. You can use the [Gmail SMTP](https://www.siteground.com/kb/google_free_smtp_server/) settings to send emails to real addresses. A good challenge can be adding images to your email so go ahead and try it out! The full code of this tutorial can be found on [Github](https://github.com/LinusMuema/node-mailer). Feel free to open a PR or submit an issue.
