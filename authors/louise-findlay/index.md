@@ -1,5 +1,6 @@
 ---
 title: Louise Findlay
+type: author
 twitter: https://twitter.com/louisefindlay23
 website: https://louisefindlay.com/
 ---

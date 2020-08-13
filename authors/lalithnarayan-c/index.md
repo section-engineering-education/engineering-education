@@ -1,5 +1,6 @@
 ---
 title: Lalithnarayan c
+type: author
 linkedin: https://www.linkedin.com/in/lalith-narayan-27a89a1b/
 ---
 
