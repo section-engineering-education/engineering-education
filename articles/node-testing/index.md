@@ -19,17 +19,17 @@ images:
 
 Backend code holds all of our application's business logic and it is important that we get it right. Deploying bug-ridden code can cost an organization millions of dollars. As Node.js is being used in critical applications all over the world, it is important we test our applications. Manual testing is tedious and prone to human error; automatic testing involves writing logic to test your code rather than testing your application's functionality by going through each function or class manually.
 
-There are several stages to testing an application, the most commonly accepted ones are
+There are several stages to testing an application, the most commonly accepted ones are:
 
-* **Unit Testing**: Unit tests are written to test the functionality of a specific section of code, like testing a single class or a function, discussed in detail below.
-* **Integration Testing**: In integration testing software units are grouped together and tested, it is used to detect defects in the interfaces and between integrated components. Meaning if you are exporting(module.exports) and importing(required) code in Node.js, integration testing can be done to see if they both work as intended. The problem with this type of testing is that it deals with a lot of code and it may be difficult to pin-point the cause of an error. It is usually performed after unit testing.
-* [**System Testing**](https://en.wikipedia.org/wiki/System_testing): A system test is performed on a completely integrated system to verify if it meets the required needs.
-* [**Acceptance Testing**](https://en.wikipedia.org/wiki/Acceptance_testing): Often, the final level of testing, where a product's readiness for its release to the consumer is tested.
+- **Unit Testing**: Unit tests are written to test the functionality of a specific section of code, like testing a single class or a function, discussed in detail below.
+- **Integration Testing**: In integration testing software units are grouped together and tested, it is used to detect defects in the interfaces and between integrated components. Meaning if you are exporting(module.exports) and importing(required) code in Node.js, integration testing can be done to see if they both work as intended. The problem with this type of testing is that it deals with a lot of code and it may be difficult to pin-point the cause of an error. It is usually performed after unit testing.
+- [**System Testing**](https://en.wikipedia.org/wiki/System_testing): A system test is performed on a completely integrated system to verify if it meets the required needs.
+- [**Acceptance Testing**](https://en.wikipedia.org/wiki/Acceptance_testing): Often, the final level of testing, where a product's readiness is tested prior to its release to the consumer.
 
-We’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing) as a  method of automated testing.
+Below we’ll look at [Unit Testing](https://en.wikipedia.org/wiki/Unit_testing) as a method of automated testing.
 
 
-```javascript
+```JavaScript
 function addNumbers(a,b){
 	return a+b;
 }
@@ -37,7 +37,7 @@ console.log(addNumbers(1,2));
 ```
 
 ### Unit Testing
-Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing tests code logic directly at the function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and helps you avoid pitfalls early. The unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development).
+Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing tests code logic directly at the function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and help you avoid pitfalls early. The unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development).
 
 ![img](/engineering-education/node-testing/tdd.png)
 
@@ -48,9 +48,9 @@ Unit tests
 
 The basis for most Node testing is the built-in **assert** module, *which tests a condition and, if that condition is not met, throws an error.*
 
-Lets look at a simple example of assertion testing.
+Let's look at a simple example of assertion testing.
 
-```javascript
+```JavaScript
 //index.js
 function addTwo(a){
   return a+2; 	//a normal function
@@ -226,7 +226,7 @@ describe([String with Test Group Name], function() {
     });
 });
 ```
-The `describe()` function is used to group similar tests, grouping tests makes our test code easier to maintain. The `it()` contains our test code. We will use the BDD interface of Mocha. Let's write a simple function which adds "2" to the number (same example as above).
+The `describe()` function is used to group similar tests, grouping tests makes our test code easier to maintain. The `it()` contains our test code. We will use the BDD interface of Mocha. Let's write a simple function that adds "2" to the number (same example as above).
 
 ```
 //addTwo.js
@@ -274,7 +274,7 @@ describe("addTwo()", function() {
 })
 
 ```
-We used the chai assertion library for the last test, here we can see the areas where assert module might just not cover it. Chai provides three assertion styles `assert`, `expect` and `should` - you can read about the differences and uses [here](https://www.chaijs.com/guide/styles/).
+We used the chai assertion library for the last test, here we can see the areas where the assert module might just not cover it. Chai provides three assertion styles `assert`, `expect` and `should` - you can read about the differences and uses [here](https://www.chaijs.com/guide/styles/).
 
 When we run the command `npm test` we can see the following results.
 
@@ -285,7 +285,7 @@ When I made changes to cause an error this was the output.
 ![img](/engineering-education/node-testing/mocha2.png)
 
 ### Testing Asynchronous Code with Mocha
-Most Node.js applications use a lot of asynchronous code. Mocha also makes it easy to test asynchronous code with a very similar syntax. Here is an example of asynchronous function using `async` `await`  and `callbacks` taken from mochajs.org.
+Most Node.js applications use a lot of asynchronous code. Mocha also makes it easy to test asynchronous code with a very similar syntax. Here is an example of an asynchronous function using `async` `await`  and `callbacks` taken from mochajs.org.
 
 ```
 //callbacks
@@ -318,7 +318,6 @@ describe('#find()', function () {
 We have `done` as an argument to `it()`, The `done()` callback function is used by Mocha to tell it when an asynchronous function is completed.
 
 ### Conclusion
-
 When writing tests keep in mind that tests are made to make your life easier, design your tests to be simple, short and understandable. Check out best practices [here](https://medium.com/@me_37286/yoni-goldberg-javascript-nodejs-testing-best-practices-2b98924c9347).
 
 ### References
