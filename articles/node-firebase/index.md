@@ -79,6 +79,7 @@ Once the websocket connection closes, we also close the database to avoid wastin
 As you can see below, two messages are sent to the server, once saved, we get two logs and two messages sent to the clients.
 
 ![socket](/engineering-education/node-firebase/socket.jpg)
+
 ![log](/engineering-education/node-firebase/log.jpg)
 
 In case you prefer socket.io for client-client connections, you can check out the [socket.io](https://www.section.io/engineering-education/understanding-socket/) tutorial and incorporate firebase to save the messages.
