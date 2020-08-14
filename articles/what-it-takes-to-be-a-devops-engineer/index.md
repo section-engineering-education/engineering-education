@@ -1,5 +1,5 @@
 @@ -0,0 +1,56 @@
-# What it Takesto be a DevOps Engineer
+# What it Takes to be a DevOps Engineer
 ## Introduction
 The software development life cycle involves many steps and a lot of time is taken to have the product. DevOps is a practice that aims to minimize the time taken for the software development life cycle to complete. DevOps is a collaboration between the development and the operations team, which enables continuous delivery of applications and services. Many organizations are now moving to DevOps [TechRepublic](https://www.techrepublic.com/article/how-to-become-a-devops-engineer-a-cheat-sheet/), thus making DevOps engineering jobs to be on-demand. DevOps is a field that is growing and that will continue to grow.
 The development team creates the product, while the operations team manages and maintains this product. DevOps focuses on the continuous delivery of application when the development team is ready with the product it immediately goes into the maintenance and management phase. This article aims to help those interested in DevOps engineering careers. It gives a complete roadmap and sets a path of what it takes to be a successful DevOps engineer. 
