@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 slug: intro-to-C++-part01
-title: Beginner's Guide to Git
-description: This guide is intended to help any beginner get started with Git. Using the examples provided below, we will assume that we are starting a project from scratch and want to manage it with Git.
+title: Introduction to C++ 
+description: This intro is about C++ and goes through topics such as
 author: Parampreet Singh
-date: 2020-08-09T00:00:00-12:00
+date: 2020-08-13T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -30,20 +30,21 @@ Some of the best applications built with C++ are:
 - PayPal
 - Amazon
 
-And the list will not stop. You can count for days the applications built using C++.
+And the list goes on. You can count the applications built using C++ for days.
 
-C++ is a beginner-friendly language that anybody can start learning with or without any prior programming experience. The online community is so strong that you will never feel left out of resources and help in anything regarding C++.
+C++ is a beginner-friendly language that anybody can start learning with or without any prior programming experience. The online community is so strong that you will never feel left out of any resources or help in anything regarding C++.
 
-In this series of guides, will we go from basics to advanced level. So let's jump straight into learning.
+In this series of guides, will we go from basics to the more advanced levels. 
+So let's jump straight into learning.
 
 ### What do you need beforehand
 - A working PC or a Computer
 - An IDE
 
-The first question that comes to your mind would be, what is an IDE? It is an integrated development environment where you will write your C++ code and run it.
-To get started, you can download [Visual studio code](https://code.visualstudio.com/) as it is simple and beginner-friendly.
+The first question that comes to mind would be, what is an IDE? It is an Integrated Development Environment where you will write your C++ code and run it.
+To get started, you can download [Visual studio code](https://code.visualstudio.com/) as it is a simple and beginner-friendly text editor software.
 
-So let's dive into coding:
+Let's dive into coding:
 
 ### Hello World
 Let's write a Hello World program. We will break it down line by line:
@@ -63,7 +64,7 @@ This program will print Hello World to the screen. Let's examine it line by line
 
 Any line of a program that begins with a "//" is a comment. The compiler will ignore this line.
 
-Comments are there to be read by people. You should always write comments for each major step of the algorithm to explain something weird or cool that is happening. So, anyone working with you or for you would be able to understand what you were trying to do.
+Comments are there to be read by people. You should always write comments for each major step of the algorithm to explain something weird or cool that is happening. That way, anyone working along with you or for you would be able to understand what you were trying to do.
 
 - Line 2 - **#include<iostream>**
 
@@ -87,11 +88,11 @@ This means that this is the end of our program.
 
 - Line 7 - **}**
 
-The aforementioned is our closing bracket to end the program.
+The line above is our closing bracket to end the program.
 
 Congratulations! You just wrote your first C++ program.
 
-Let's write another program that would read two numbers and output the addition of them.
+Let's write another program that would read two numbers and output the sum of them.
 
           // program to add two numbers
        
@@ -112,11 +113,11 @@ Let's write another program that would read two numbers and output the addition 
 
 
 
-Let's discuss the things that are new to us in this above program.
+Let's discuss the things that are new to us in this program above.
 
 1. **int num_one** - This means that we are reserving space in memory to hold an integer (int). And we are naming that space num_one.
 
-Integers hold positive as well as negative values (and 0) and include non - decimal numbers up to about +-2 billion, which gives you an exact value between +- 2 billion.
+Integers hold positive as well as negative values (and 0) and include non-decimal numbers up to about +-2 billion, which gives you an exact value between +- 2 billion.
 
 Just like int, we also have double. It can hold large as well as small numbers. It can also be an exponent. Here is how we declare it.
 
@@ -124,11 +125,12 @@ Just like int, we also have double. It can hold large as well as small numbers. 
 
 2. **cin>>num_one** - This is the way of accepting an input from the user in the same memory location that we reserved earlier.
 
-And that is all you need to know to write basic programs in C++. We will encounter new things as we move forward.
+And that is all you need to know to write basic programs in C++. We will go over other new things as we continue.
 
 Why don't you work on some practice problems before moving forward?
 
-- Write a program to convert a temperature from Fahrenheit to Celsius?
+- Let’s say we want to write a program to convert a temperature from Fahrenheit to Celsius?
+or
 - Write a program to implement a small multiplication table?
 
 ### Takeaway
