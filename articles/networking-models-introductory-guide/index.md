@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: networking-models-introductory-guide
+url: /networking-models-introductory-guide/
 title: Networking Models - Introductory Guide
 description: The networking model describes the architecture, components, and design used to establish communication between the source and destination systems.
 author: lalithnarayan-c
