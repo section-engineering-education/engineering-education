@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: clustering-algorithms
+url: /engineering-education/clustering-algorithms/
 title: Basics of Clustering Algorithms
 description: Clustering algorithms are procedures for partitioning data into groups or clusters such that the clusters are distinct, and members of each cluster belong together.
 author: justin-osborne

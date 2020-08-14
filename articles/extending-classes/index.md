@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: extending-classes
+url: /engineering-education/extending-classes/
 title: Extending Classes (C++)
 description: This article introduces the basic concepts of Inheritance, different types of class derivations and friend functions with code snippets in C++.
 author: kanishkvardhan-a-n
 date: 2020-08-06T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

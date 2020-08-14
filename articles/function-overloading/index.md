@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: function-overloading
+url: /engineering-education/function-overloading/
 title: Function Overloading (C++)
 description: A brief introduction to the Function Overloading, Polymorphism and Inline functions with code snippets. Object Oriented Programming is a fundamental method of programming which helps to develop programs using a modular approach.
 author: kanishkvardhan-a-n
 date: 2020-08-04T00:00:00-09:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -91,7 +91,7 @@ Here, a class is created with the name **demo**. All the functions and data elem
 
 Three functions are defined inside the public domain. All the functions have the same name but are different in their parameter list. This makes the function **demo()** overloaded. The class is publicly derived. So, even though the functions are defined outside the **main()** function, they can be invoked (or called) from the inside.
 
-The functions are declared in the main function and relevant values have been passed through the function declaration itself. This type of passing is called *call by value* method. The other method is the *call by reference* method where the values are inserted during the run time of the program. **d** is the class variable that invokes the member functions.   
+The functions are declared in the main function and relevant values have been passed through the function declaration itself. This type of passing is called *call by value* method. The other method is the *call by reference* method where the values are inserted during the run time of the program. **d** is the class variable that invokes the member functions.
 
 The output of the above program is:
 ```bash

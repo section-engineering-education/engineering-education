@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: introduction-to-jupyter-notebooks
+url: /engineering-education/introduction-to-jupyter-notebooks/
 title: Introduction to Jupyter Notebooks
 description: The article explores the basics of Jupyter notebooks, why they are used, how to install, run, and use Jupyter notebooks for a wide array of tasks.
 author: adith-bharadwaj
 date: 2020-08-05T00:00:00-07:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -122,7 +122,7 @@ The notebook is available as a ".ipynb" file by default. But, if you want to sha
 
 ![download](/engineering-education/introduction-to-jupyter-notebooks/download.png)
 
-Click on file situated at the top left corner of the notebook and go to the **"Download as"** option in the dropdown. A list of options should appear, as shown in the above figure. Select the extension you want to download it as, and Jupyter will export the notebook in that format.  
+Click on file situated at the top left corner of the notebook and go to the **"Download as"** option in the dropdown. A list of options should appear, as shown in the above figure. Select the extension you want to download it as, and Jupyter will export the notebook in that format.
 
 ### Conclusion
 Jupyter Notebook is perfect for exploring data using Python and is very popular in the **Data Science** community. Whether you are a Data scientist, a working professional or a student, you can use Jupyter for scientific computing and data analysis with libraries like NumPy, pandas, and Matplotlib, sci-kit learn, Keras, etc.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: how-to-build-your-own-private-blockchain
+url: /engineering-education/how-to-build-your-own-private-blockchain/
 title: How to Build Your Own Private Blockchain
 description: Private blockchains work based on access controls which restrict the people who can participate in the network. Instead of waiting for a network consensus, information can be recorded immediately.
 author: jethro-magaji

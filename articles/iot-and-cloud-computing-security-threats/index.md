@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: iot-and-cloud-computing-security-threats
+url: /engineering-education/iot-and-cloud-computing-security-threats/
 title: IOT and Cloud Computing Security Threats
 description: IoT and Cloud computing technologies communicate by sharing data that contain valuable information. However, the two technologies face challenges such as security issues.
 author: judy-nduati
 date: 2020-07-30T00:00:00-15:00
-topics: [security]
+topics: [Security]
 excerpt_separator: <!--more-->
 images:
 

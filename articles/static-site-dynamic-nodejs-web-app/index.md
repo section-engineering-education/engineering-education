@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: static-site-dynamic-nodejs-web-app
+url: /engineering-education/static-site-dynamic-nodejs-web-app/
 title: Converting A Static Site to A Dynamic Node.js Web App
 description: How to build your first dynamic Node.js web app from a static site. This article dispels the difficulties of learning full-stack development.
 author: louise-findlay
 date: 2020-07-14T00:00:00-07:00
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 

@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: abstraction-concepts
+url: /engineering-education/abstraction-concepts/
 title: Understanding Abstraction in Python, Part 1
 description: An introduction to abstraction in Python through the concepts of parameters, scoping, and recursion.
 author: sophia-raji
 date: 2020-04-24T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

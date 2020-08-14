@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: vlan-trunking
+url: /engineering-education/vlan-trunking/
 title: Overview of VLAN Trunking and Encapsulation
 description: This article briefly introduces Virtual Local Area Networks(VLANs) and their requirements. It discusses VLAN trunking and VLAN encapsulation using IEEE 802.1Q standard.
 author: shreya-a-n
 date: 2020-08-06T00:00:00-12:00
-topics: [networking]
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
