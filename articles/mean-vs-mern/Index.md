@@ -70,4 +70,4 @@ Angular is created by Google and it is used companies such as Nike, Forbes, Upwo
 
 React is created by Facebook and it is used by Airbnb, Uber, Netflix, Khan Academy, Dropbox, and a some others.
 
-Both MEAN and MERN stack are a good choice for people who are just starting out their full stack web development career. It's mostly a personal choice, which stack is best to choose. Start with any framework just explore and then decide which is best for your use case, this is the way you become a better developer.
+Both MEAN and MERN stack are a good choice for people who are just starting out their full stack web development career. It's mostly a personal decision, which stack will be best to suited for you. Start with any framework you'd like just explore and then decide which is best for your use case, this is the way you become a better developer.
