@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: wep-encryption
+url: /engineering-education/wep-encryption/
 title: Why You Shouldn't Use WEP Encryption
 description: Wired Equivalent Privacy (WEP) is a security algorithm for wireless networks. WEP encrypts all traffic using a static key, which means all traffic, no matter the device, is encrypted using the single key.
 author: gregory-manley

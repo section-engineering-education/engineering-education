@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: google-search-console-introduction
+url: /engineering-education/google-search-console-introduction/
 title: Google Search Console - An Introduction
 description: This guide to Google Search Console will teach you how to add a site (called a property), submit a sitemap, and find and fix any errors that the Google crawlers may come across.
 author: louise-findlay
