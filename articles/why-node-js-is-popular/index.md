@@ -7,7 +7,7 @@ title: Why is Node.js wildly popular among developers?
 description: Node.js is defined as a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js can be simply referred to as a technology. It is mainly used for backend operations.
 author: geoffrey-mungai
 date: 2020-08-13T00:00:00-10:00
-topics: [node.js]
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
