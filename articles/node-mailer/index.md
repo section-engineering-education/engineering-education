@@ -25,7 +25,7 @@ You can get the starter code from [Github](https://github.com/LinusMuema/node-ma
 
 Before we start, it's important to note that we won't be sending emails to real addresses. This can result in a lot of unnecessary emails in the inbox and/or spam messages. To avoid this, we can use a fake SMTP server that can receive our test emails.
 
-A good service to do this is [Ethereal](https://ethereal.email/). It will provide us with the required SMTP configurations and the `nodemailer` configuration. Go ahead and create an account. Copy the `Nodemailer configuration` and add it to the `app.js` file. It should look something like the code below:
+A good service to do this with is [Ethereal](https://ethereal.email/). It will provide us with the required SMTP configurations and the `nodemailer` configuration. Go ahead and create an account. Copy the `Nodemailer configuration` and add it to the `app.js` file. It should look something like the code below:
 
 ```JavaScript
 const transporter = nodemailer.createTransport({
@@ -128,6 +128,5 @@ app.get('/email/file', (req, res) => {
 ```
 
 As you can see, we use the `renderFile` function to compile our pug code to HTML and get the resulting string. Then we pass the string to the html field. The good thing about this is that you can have a wide variety of elements and still have clean, organized code.
-
 
 With that, you are now able to send emails from your NodeJs server. You can use the [Gmail SMTP](https://www.siteground.com/kb/google_free_smtp_server/) settings to send emails to real addresses. A good challenge can be adding images to your email so go ahead and try it out! The full code of this tutorial can be found on [Github](https://github.com/LinusMuema/node-mailer). Feel free to open a PR or submit an issue.
