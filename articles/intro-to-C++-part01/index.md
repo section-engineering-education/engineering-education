@@ -131,4 +131,4 @@ or
 - Write a program to implement a small multiplication table?
 
 ### Takeaway
-In this article, we get to know about the importance of C++ and why and where it is used. And most importantly, we get to know about the basics of the C++ language. In the next article, we will be moving forward with If Else and Loops. Stay tuned!
+In this article, we got to know about the importance of C++ and why and where it is used. And most importantly, we learned about the basics of the C++ language. In the next article, we will be moving forward with If Else and Loops. Stay tuned!
