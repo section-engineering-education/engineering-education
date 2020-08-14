@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: mean-vs-mern
+url: /engineering-education/mean-vs-mern/
 title: Mean and MERN Stack
 description: This is an article about Mean and MERN stack with respect to different parameters, MongoDB expressjs, and Node.js.
 author: richu-thomas
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/mean-vs-mern/hero.jpg
     alt: hero image visual data science python
 ---
-Technology Stack is a combination of frameworks and tools utilized in a software product. Tech  Stack can be created with any combination of Frontend, Backend, Database, and Servers. In today's world, many companies especially in startups, there is a huge demand for full-stack developers, which are developers who are somewhat proficient in all the fields of development from frontend to managing servers.
+A technology stack is a combination of frameworks and tools utilized in a software product. A tech stack can be created with any combination of Frontend, Backend, Database, and Servers. In today's world, many companies especially startups, is seeing a huge demand for full-stack developers, that is, developers who are somewhat proficient in all the fields of development from frontend to managing servers.
 <!--more-->
 
 If the Stack is all based on a single language or little variation of that language then it will be even more sought after. This was one of the main reasons for many JavaScript stacks becoming so popular. MEAN([MongoDB](https://www.mongodb.com/), [Express Js](https://expressjs.com/), [Angular](https://angular.io/), [Node.js](https://nodejs.org/en/docs/)), MEVN(MongoDB, Express Js, [Vue Js](https://vuejs.org/), Node.js) and MERN(MongoDB, Express Js, [React Js](https://reactjs.org/), Node.js).
@@ -27,7 +27,6 @@ MongoDB is a NoSQL open source database built in C++. It's a document store data
 
 ### Express Js
 Express Js is a JavaScript library used for developing efficient, fast and scalable web applications on the backend. It uses "connect" which acts as a middleware between HTTP, Node.js and Express Js. We can use many different template libraries like Squirrelly, Marko, Swig, etc.
-
 
 ### Node.js
 Node.js is a server-side solution for JavaScript, particularly for handling HTTP (RestFul Services) requests and responses. It uses JavaScript engine V8 for interpreting and executing the code. It works on the concept of event-driven mechanism, it does not create many threads for each request rather it uses a callback to handle many requests in a single thread itself.
