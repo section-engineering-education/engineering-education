@@ -1,5 +1,6 @@
 ---
-name: Geoffrey Mungai
+title: Geoffrey Mungai
+type: engineering-education/author
 github: https://github.com/geoffrey45
 ---
 
