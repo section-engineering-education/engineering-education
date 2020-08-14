@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 slug: intro-to-C++-part01
-title: Introduction to C++ 
-description: This intro is about C++ and goes through topics such as
+title: Introduction to C++
+description: This intro is about C++ and goes through topics such as why C++?, who uses C++in the industry, basic implementation.
 author: Parampreet Singh
 date: 2020-08-13T00:00:00-12:00
 topics: []
@@ -34,7 +34,7 @@ And the list goes on. You can count the applications built using C++ for days.
 
 C++ is a beginner-friendly language that anybody can start learning with or without any prior programming experience. The online community is so strong that you will never feel left out of any resources or help in anything regarding C++.
 
-In this series of guides, will we go from basics to the more advanced levels. 
+In this series of guides, will we go from basics to the more advanced levels.
 So let's jump straight into learning.
 
 ### What do you need beforehand
@@ -93,25 +93,22 @@ The line above is our closing bracket to end the program.
 Congratulations! You just wrote your first C++ program.
 
 Let's write another program that would read two numbers and output the sum of them.
+`  // program to add two numbers
 
-          // program to add two numbers
-       
-             #include <iostream>
-             using namespace std;
-             int main(){
-             cout<<"enter a number"<<endl;
-             int num_one;
-             cin>>num_one;
-             cout<<" Enter another number"<<endl;
-             int num_two;
-            cin>>num_two;
-            int sum;
-            sum = num_one + num_two;
-            cout<<num_one<<"+"<<num_two<<"="<<sum<<endl;
-              return0;
-            }
-
-
+     #include <iostream>
+     using namespace std;
+     int main(){
+     cout<<"enter a number"<<endl;
+     int num_one;
+     cin>>num_one;
+     cout<<" Enter another number"<<endl;
+     int num_two;
+    cin>>num_two;
+    int sum;
+    sum = num_one + num_two;
+    cout<<num_one<<"+"<<num_two<<"="<<sum<<endl;
+      return0;
+    }`  
 
 Let's discuss the things that are new to us in this program above.
 
@@ -127,9 +124,9 @@ Just like int, we also have double. It can hold large as well as small numbers. 
 
 And that is all you need to know to write basic programs in C++. We will go over other new things as we continue.
 
-Why don't you work on some practice problems before moving forward?
+Why don't you work on some practice problems before moving forward? For example you could try to:
 
-- Let’s say we want to write a program to convert a temperature from Fahrenheit to Celsius?
+- Write a program to convert a temperature from Fahrenheit to Celsius?
 or
 - Write a program to implement a small multiplication table?
 
