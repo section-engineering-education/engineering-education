@@ -7,7 +7,7 @@ title: Node.js versus Next.js - A React Approach
 description: This article compares the difference between Node.js and Next.js from a Reach approach - going over tility applications which are used to enhance the performance of the main application.
 author: lalithnarayan-c
 date: 2020-08-14T00:00:00-15:00
-topics: [networking]
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
@@ -28,13 +28,13 @@ There are two types of applications built with Node.js. The first one are utilit
 The official website talks about why Next.js was introduced. Let us discuss the reasons in detail to get a perspective about Next.js.
 
 - In his [blog](https://rauchg.com/2014/7-principles-of-rich-web-applications), Guillermo Rauch talks about the seven principles for creating rich web applications. In short, they are
-   1. Pre-rendering pages for optimal performance
-   2. User-Input must be dealt with immediately: For example, when we type into the Google search box, results are displayed instantly without any reloading. AJAX, which stands Asynchronous JavaScript And XML, is an example of this.
-   3. Let the user know about changes in data on the server without asking. This ensures minimal reloading and maximum data throughout on the screen.
-   4. Ensuring proper data exchange with the server: Libraries like Axios, Node-fetch, etc. have enhanced the level of control we have over network calls. Therefore, taking full advantage of the same to maximize user experience is necessary. Error handling, data synchronization, and offline caches are essential for optimal levels of data exchange with the server irrespective of the network conditions.
-   5. Consider the problem of infinite pagination. Since web browsers don't store history, the problem of navigation is a significant one. User's don't expect changes when visiting the previous pages. Therefore maintaining custom local caches is essential for fast feedback.
-   6. Push code updates: Data handling and API calls must be handled carefully. Changes in data should correspond to changes in code as well. This is predominantly done to avoid errors during data fetch.
-   7. Predict user's behavior: Understand patterns and have mechanisms for predicting the final user input.
+1. Pre-rendering pages for optimal performance
+2. User-Input must be dealt with immediately: For example, when we type into the Google search box, results are displayed instantly without any reloading. AJAX, which stands Asynchronous JavaScript And XML, is an example of this.
+3. Let the user know about changes in data on the server without asking. This ensures minimal reloading and maximum data throughout on the screen.
+4. Ensuring proper data exchange with the server: Libraries like Axios, Node-fetch, etc. have enhanced the level of control we have over network calls. Therefore, taking full advantage of the same to maximize user experience is necessary. Error handling, data synchronization, and offline caches are essential for optimal levels of data exchange with the server irrespective of the network conditions.
+5. Consider the problem of infinite pagination. Since web browsers don't store history, the problem of navigation is a significant one. User's don't expect changes when visiting the previous pages. Therefore maintaining custom local caches is essential for fast feedback.
+6. Push code updates: Data handling and API calls must be handled carefully. Changes in data should correspond to changes in code as well. This is predominantly done to avoid errors during data fetch.
+7. Predict user's behavior: Understand patterns and have mechanisms for predicting the final user input.
 - Building a PHP like a system with the convenience and vast resources of Node.js.
 - Enabling easy-to-setup server-side rendering for React. Node.js does offer support for server-side rendering, but the setup is tedious and involves a steep learning curve.
 
