@@ -170,7 +170,7 @@ print(books_file.filter(lambda x: x[0] in top_10).map(lambda x: x[1]).collect())
 
 ![img](/engineering-education/getting-started-with-pyspark-spark-part2/top10.png)
 
-And we’re done! We successfully installed Spark and used its core programming concepts such as actions and transformations on RDDs to derive useful insights from a large dataset very quickly. This same example, if run iteratively without using Spark, would heat up your system and take so much more time!
+And we’re done! We successfully installed Spark and used its core programming concepts such as actions and transformations on RDDs to quickly derive useful insights from a large dataset. This same example, if run iteratively without using Spark, would heat up your system and take so much more time!
 
 In the next article, we will explore Spark libraries like Spark SQL and Dataframes along with MLLib and use it with the same example to answer more questions about this dataset and provide book recommendations.
 
