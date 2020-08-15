@@ -6,8 +6,13 @@ That's a good start but what if you want to be able to add books to one of your 
 
 [oAuth](link to a Section article discussing this) is the main authentication standard for APIs. We will be using oAuth 1 because that's the only version the Goodreads API supports but it's recommend to use oAuth 2 wherever possible. Similar to [Part 1](link to Part 1), `goodreads-api-node-wrapper` will make the process easier.
 
-## Authentication with the Goodreads API
+## Authenticating with the Goodreads API
 
+### Setting a Callback URL
+
+The first step to authenticating with the Goodreads API is to set a callback URL. A callback URL is the link that Goodreads should send users to once they've been authenticated since authentication takes place on the Goodreads website so the API needs to know how to get back to your web app.
+
+Go to the [Goodreads API Key page](https://www.goodreads.com/api/keys) and set the Callback URL to `https://localhost:8080/goodreads-user`. Further on, we will create a goodreads-user route which will obtain the logged in user's Goodreads ID so we can make
 
 * * *
 Building on Part 1, we will use the Goodreads API to authenticate (oAuth 1) with a user's GoodReads account so they can return their own book data such as their shelves and books they've added.
