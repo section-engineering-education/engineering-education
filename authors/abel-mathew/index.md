@@ -1,5 +1,6 @@
 ---
-name: Abel Mathew
+title: Abel Mathew
+type: engineering-education/author
 linkedin: https://www.linkedin.com/in/designrknight/
 github: https://github.com/DesignrKnight
 ---

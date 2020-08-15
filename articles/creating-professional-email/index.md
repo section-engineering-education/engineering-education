@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: creating-professional-email
+url: /engineering-education/creating-professional-email/
 title: How to Create a Professional Email - Setting up GSuite
 description: Shows how to set up GSuite with MX records and configuring SPF, DKIM and DMARC to authenticate and prevent spam emails and making sure your emails are received.
 author: louise-findlay

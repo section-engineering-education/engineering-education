@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: the-first-iphone
+url: /engineering-education/the-first-iphone/
 title: The First iPhone
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
 author: gregory-manley
