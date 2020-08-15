@@ -77,7 +77,7 @@ server.start(error => {
 You can run your server by running node 'name of your index file' on the terminal.
 
 ### Creating routes with hapi.js
-Hapi uses server.route as a method to create routes. server.route methods take an options object. The object has three properties.
+Hapi uses server.route as a method to create routes. server.route method takes an options object as a parameter. An options object is a JSON object that is used as the default configurations for every route, the object has three main properties.
 1. path - This is the route that will be specified on a URL.
 2. method - This is the HTTP method that is associated with the route. The methods include GET, POST, PUT, DELETE, and PATCH
 3. handler function - This is the function that will run when the route is called. This function takes two parameters, req, and reply.
