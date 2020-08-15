@@ -14,11 +14,14 @@ images:
   - url: /engineering-education/getting-started-with-pyspark-spark-part2/hero.jpg
     alt: PySpark image example
 ---
-Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient.
-Computation workflows in Spark are optimized because of the usage of DAG (Directed Acyclic Graph) engine. This means that results are calculated through the most optimum path of computation. So if a program goes through a number of processes to get a result, the DAG engine only goes through the necessary processes and skips all the computations it deems unnecessary to get the same result.
+Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient. It provides a simple programming interface to program entire clusters with implicit data parallelism. This essentially results in fast computation of big data.  Spark does not require the users to have high end, expensive systems with great computing power. It splits the big data into multiple cores or systems available in the cluster and optimally utilises these computing resources to the processes this data in a distributed manner.  Therefore Spark is a great solution for processing large amounts of data and obtaining results to queries quickly and without overheating the system.
+
+
 <!--more-->
 
-In this tutorial, we will delve into the core programming concepts of Spark. Python is the most widely used language on Spark, so we will implement Spark programs using their Python API - PySpark. To learn the concepts and implementation of programming with PySpark, install PySpark locally. While it is possible to use the terminal to write and run these programs, it is more convenient to use Jupyter Notebook.
+In this tutorial, we will delve into the core programming concepts of Spark using an example. In this example, we will use a large dataset containing 278,858 users providing 1,149,780 ratings about 271,379 books to realise which book has the most number of ratings.
+
+Python is the most widely used language on Spark, so we will implement Spark programs using their Python API - PySpark. To learn the concepts and implementation of programming with PySpark, install PySpark locally. While it is possible to use the terminal to write and run these programs, it is more convenient to use Jupyter Notebook.
 
 ### **Installing Spark (and running PySpark API on Jupyter notebook)**
 Step 0: Make sure you have Python 3 and Java 8 or higher installed in the system.
@@ -64,7 +67,7 @@ export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 
 Now restart your terminal and run ‘pyspark’ on it. It should open jupyter notebook and allow you to write and run PySpark programs!
 
-We will be using the [Books](http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip) dataset in our example, so download it and place the dataset in the same folder where you will store your PySpark script. This dataset contains 278,858 users providing 1,149,780 ratings about 271,379 books.
+We will be using the [Books](http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip) dataset in our example, so download it and place the dataset in the same folder where you will store your PySpark script. 
 
 ### **Initializing Spark and RDD**
 
@@ -99,7 +102,7 @@ The functions used to work with RDDs are categorized into 2 types - Transformers
 
 Transformers are the operations that can be performed on RDDs. These operations change the data in some way, i.e., they transform the RDD. Spark supports many [transformations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations). Now, we are using map(), along with a lambda function. map() is a transformation function that returns a new distributed RDD in which all the elements of the RDD have been passed through a function, which in this case is a lambda (inline) function that splits every line by ‘“;”’.
 
-Action functions are used to retrieve information from the RDD that may or may not have been transformed. These [actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions) trigger the evaluation of all the transformations that have occurred in the program thus far. *Therefore trying to print a RDD without calling an action function will only print the location of the RDD and not the value.* This is because Spark follows **lazy evaluation.** It only triggers the creation of a DAG. DAG calculates the most optimum way to get the results that are needed, skipping over unnecessary transformations that the RDD is subjected to. *Calling an action function brings data from the transformed RDD into the driver script, so it is necessary to make sure that the RDD is able to fit into memory!*
+Action functions are used to retrieve information from the RDD that may or may not have been transformed. These [actions](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions) trigger the evaluation of all the transformations that have occurred in the program thus far. *Therefore trying to print a RDD without calling an action function will only print the location of the RDD and not the value.* This is because Spark follows **lazy evaluation.** It only triggers the creation of a DAG. A **DAG (Directed Acyclic Graph)** engine is used to optimize the computation workflows in Spark. This means that results are calculated through the shortest path of computation. So even if a program specifies a workflow involving a number of processes to get a result, the DAG engine only goes through the necessary steps and skips all the computations it deems unnecessary to obtain the same result. So a DAG skips over all unnecessary transformations that the RDD is subjected to. *Calling an action function brings data from the transformed RDD into the driver script, so it is necessary to make sure that the RDD is able to fit into memory!*
 
 In this example, we load the ‘BX-Books.csv’ file into the program, and store it as a RDD. The first action we execute is count() - which returns the number of rows. Next we want to see what the data actually looks like. We *could* use the load() function, which returns the entire dataset as a list. However, since this dataset has over 200,000 rows and we only want to peek at the data, it would not be wise to bring that into memory. Hence we prefer to use take(n) - which returns a list of n rows.
 
@@ -123,8 +126,8 @@ print("number of books = ",books_file.count())
 print("First 3 rows are - \n",books_file.take(3))
 ```
 
-Next, let us count the number of ratings each book has gotten, and print the top 10 books with the most number of ratings. So we have to perform aggregate transformations on the BX-Book-Ratings.csv dataset- counting occurrences of each ISBN (International Standard Book Number), and then sort the dataset based on the count. To implement these special transforms on RDD, we need to convert the dataset into Key-Value (K,V) pairs. (Spark only K,V pairs to undergo special transforms.)
-Here we pick only the 2nd column (second element of the array) and map it to 1, denoting that each Book (with ISBN) has occurred once. So (K,V) => (ISBN, 1). Note: If you have read the previous article in the series, this might look familiar. (Hint: MapReduce!)
+Next, let us count the number of ratings each book has gotten, and print the top 10 books with the most number of ratings. So we have to perform aggregate transformations on the BX-Book-Ratings.csv dataset- counting occurrences of each ISBN (International Standard Book Number), and then sort the dataset based on the count. To implement these special transforms on RDD, we need to convert the dataset into Key-Value (K,V) pairs. (Spark allows only K,V pairs to undergo special transforms.)
+Here we pick only the 2nd column (second element of the array) and assign each book a value of 1, denoting that each Book (with ISBN) has occurred once. So (K,V) => (ISBN, 1). Note: If you have read the previous article in the series, this might look familiar. (Hint: MapReduce!)
 
 ```python
 #import the BX-Book-Ratings.csv file and split it into rows with individual elements
@@ -150,7 +153,7 @@ print(ratings_count.take(10))
 
 ![img](/engineering-education/getting-started-with-pyspark-spark-part2/reducebykey.png)
 
-Now, we swap key and value, so that Count of occurrences becomes the key, and ISBN becomes the value. Then we apply sortByKey(), which does exactly what it’s name states. By default, it sorts in ascending order, so we pass False to retrieve descending order of the count. If we output 10 from the top of this sorted RDD, we get our top 10!
+Now, we swap key and value, so that Count of occurrences becomes the key, and ISBN becomes the value. Then we apply sortByKey(), which does exactly what its name states. By default, it sorts in ascending order, so we pass False to retrieve descending order of the count. If we output 10 from the top of this sorted RDD, we get our top 10!
 
 ![img](/engineering-education/getting-started-with-pyspark-spark-part2/sort.png)
 
@@ -168,6 +171,8 @@ print(books_file.filter(lambda x: x[0] in top_10).map(lambda x: x[1]).collect())
 ![img](/engineering-education/getting-started-with-pyspark-spark-part2/top10.png)
 
 And we’re done! We successfully used RDD programming concepts on Spark to derive useful insights from a large dataset very quickly. This same example, if run iteratively without using Spark, would heat up your system and take so much more time!
+
+In the next article, we will explore Spark libraries like Spark SQL and Dataframes along with MLLib and use it with the same example to answer more questions about this dataset and build a book recommendation system.
 
 ### References:
 - Taming big data with Apache Spark and Python- Frank Kane
