@@ -97,7 +97,7 @@ Here, setMaster(local[`*`]) denotes that we are configuring the SparkContext to 
 
 **Resilient Distributed Datasets** (RDD) forms the core of Spark programming, providing an abstraction to coding distributed transformations of large datasets by using the RDD object. They can run on a cluster of nodes that are either local or distributed and can handle failure of multiple executor nodes automatically.
 
-### Loading the dataset as RDDs and Dataframes
+### Loading the dataset as RDDs 
 The functions used to work with RDDs are categorized into 2 types - Transformers and Actions.
 
 Transformers are the operations that can be performed on RDDs. These operations change the data in some way, i.e., they transform the RDD. Spark supports many [transformations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations). Now, we are using map(), along with a lambda function. map() is a transformation function that returns a new distributed RDD in which all the elements of the RDD have been passed through a function, which in this case is a lambda (inline) function that splits every line by ‘“;”’.
@@ -170,9 +170,9 @@ print(books_file.filter(lambda x: x[0] in top_10).map(lambda x: x[1]).collect())
 
 ![img](/engineering-education/getting-started-with-pyspark-spark-part2/top10.png)
 
-And we’re done! We successfully used RDD programming concepts on Spark to derive useful insights from a large dataset very quickly. This same example, if run iteratively without using Spark, would heat up your system and take so much more time!
+And we’re done! We successfully installed Spark and used its core programming concepts such as actions and transformations on RDDs to derive useful insights from a large dataset very quickly. This same example, if run iteratively without using Spark, would heat up your system and take so much more time!
 
-In the next article, we will explore Spark libraries like Spark SQL and Dataframes along with MLLib and use it with the same example to answer more questions about this dataset and build a book recommendation system.
+In the next article, we will explore Spark libraries like Spark SQL and Dataframes along with MLLib and use it with the same example to answer more questions about this dataset and provide book recommendations.
 
 ### References:
 - Taming big data with Apache Spark and Python- Frank Kane
