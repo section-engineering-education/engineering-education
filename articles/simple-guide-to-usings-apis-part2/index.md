@@ -98,7 +98,7 @@ app.get("/goodreads", function (req, res) {
 ```
 Once the access token has been obtained, the `gr.getCurrentUserInfo()` function runs to obtain the account information of the current Goodreads user and `console.log()` the result so we can find out how to obtain the User ID.
 
-Run `npm start` and go to `https://localhost:8080`. In the terminal, you should see a similar response:
+Run `npm start` and go to `https://localhost:8080/authenticate`. It may take a minute or two but in the terminal, you should see a similar response:
 
 ```json
 {
@@ -119,7 +119,79 @@ From the response, we can see that the user id is `result.user.id` so replace th
 
 ## Listing a User's Shelves (Making Your First Authenticated Request with the Goodreads API)
 
-Congratulations. You've obtained the user ID of your first Goodreads user and have everything in place to make your first authenticated request: listing their shelves. Goodreads users have different preferences for naming their shelves so it's important to find out what shelves they have before trying to add a book to one of them.
+Congratulations. You've obtained the user ID of your first Goodreads user and have everything in place to make your first authenticated request: listing their shelves. 
+
+Goodreads users have different preferences for naming their shelves so it's important to find out what shelves they have before trying to add a book to one of them though to-read, currently-reading and read are three shelves that Goodreads creates by default for every user.
+
+Create a new route in `server.js` called `shelves` and add the following:
+
+```js
+// List Shelves Route
+app.get('/shelves', function (req, res) {
+    var usersshelves = gr.getUsersShelves(userid);
+    usersshelves.then(function (result) {
+        console.log(result);
+    }).catch(function () {
+        console.log("Goodreads Get Shelves Rejected");
+        console.log(result);
+    });
+});
+```
+This time while running one of the Goodreads API's functions we will pass along the `userid` variable. This lets the Goodreads API know which user it should return shelves for. Similar to obtaining the user ID, we will `console.log()` the result to find out which part of the response we need.
+
+Run the app using `npm start` and go to `https://localhost:8080/authenticate`. Once you've been authenticated go to `https://localhost:8080/shelves` and you should see a response in the terminal.
+
+```json
+{
+  start: '1',
+  end: '2',
+  total: '2',
+  user_shelf: [
+    {
+      id: [Object],
+      name: 'read',
+      book_count: [Object],
+      exclusive_flag: [Object],
+      sort: [Object],
+      order: [Object],
+      per_page: [Object],
+      display_fields: '',
+      featured: [Object],
+      recommend_for: [Object],
+      sticky: [Object]
+    },
+    {
+      id: [Object],
+      name: 'currently-reading',
+      book_count: [Object],
+      exclusive_flag: [Object],
+      sort: [Object],
+      order: [Object],
+      per_page: [Object],
+      display_fields: '',
+      featured: [Object],
+      recommend_for: [Object],
+      sticky: [Object]
+    }
+  ]
+}
+
+```
+From this, we can tell that we want the `result.user_shelf` so like before, replace the `console.log(result)` with `var usershelf = result.user_shelf`.
+
+## Adding a Book to a User's Shelf
+
+Finally, we can proceed to adding a book to a user's shelf. For this example, we will use the default read shelf but make sure the shelf you want to add a book to exists by using the `gr.getUsersShelves()` function which we just did.
+
+This is a similar process to generating dynamic book pages which we did in [part 1](link to Part 1). In `book.ejs`, surround the `h3` tag in an `a` tag like so:
+
+```html
+<a id="<%= bookdetails.id %>" href="/book/add">
+  <h3><%= bookdetails.title %></h3>
+</a>
+```
+
+## Next Steps
 
 * * *
 Building on Part 1, we will use the Goodreads API to authenticate (oAuth 1) with a user's GoodReads account so they can return their own book data such as their shelves and books they've added.
