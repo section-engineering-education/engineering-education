@@ -183,13 +183,14 @@ From this, we can tell that we want the `result.user_shelf` so like before, repl
 
 Finally, we can proceed to adding a book to a user's shelf. For this example, we will use the default read shelf but make sure the shelf you want to add a book to exists by using the `gr.getUsersShelves()` function which we just did.
 
-This is a similar process to generating dynamic book pages which we did in [part 1](link to Part 1). In `book.ejs`, surround the `h3` tag in an `a` tag like so:
+This is similar to when we generated dynamic book pages in [part 1](link to Part 1). In `book.ejs`, surround the `h3` tag in an `a` tag like so:
 
 ```html
 <a id="<%= bookdetails.id %>" href="/book/add">
   <h3><%= bookdetails.title %></h3>
 </a>
 ```
+This creates a link to`/book/add` (a route we will just go on to create) and appends the id of the book that the user is viewing.
 
 ## Next Steps
 
