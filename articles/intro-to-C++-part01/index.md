@@ -6,7 +6,7 @@ slug: intro-to-C++-part01
 title: Introduction to C++
 description: This intro is about C++ and goes through topics such as why C++?, who uses C++in the industry, basic implementation.
 author: Parampreet Singh
-date: 2020-08-13T00:00:00-12:00
+date: 2020-08-17T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -32,7 +32,7 @@ Some of the best applications built with C++ are:
 
 And the list goes on. You can count the applications built using C++ for days.
 
-C++ is a beginner-friendly language that anybody can start learning with or without any prior programming experience. The online community is so strong that you will never feel left out of any resources or help in anything regarding C++.
+C++ is a beginner-friendly language that anybody can start learning with or without any prior programming experience. The online community is so strong that you will never feel left out of any resources or lack any help regarding C++.
 
 In this series of guides, will we go from basics to the more advanced levels.
 So let's jump straight into learning.
@@ -72,11 +72,11 @@ C++, by itself, cannot do input or output, so we add functionality to C++ by inc
 
 - Line 3 - **using namespace std;**
 
-It is something that you cannot avoid and have to write in every single program that you will write in your whole life. As defined by Danoja Das on [medium](https://medium.com/breaktheloop/why-using-namespace-std-is-used-after-including-iostream-dc5ae45db652) ,when we run a program to print something, “using namespace std” says if you find something that is not declared in the current scope go and check std. using namespace std; are used. It is because computer needs to know the code for the cout, cin functionalities and it needs to know which namespace they are defined.
+It is something that you cannot avoid and have to write in every single program that you will write in your whole life. As defined by Danoja Das on [medium](https://medium.com/breaktheloop/why-using-namespace-std-is-used-after-including-iostream-dc5ae45db652), when we run a program to print something, “using namespace std” says if you find something that is not declared in the current scope go and check std. using namespace std; are used. It is because computer needs to know the code for the cout, cin functionalities and it needs to know which namespace are defined.
 
 - Line 4 - **int main ( ) {**
 
-The aforementioned tells the compiler that this is the beginning of the main program. **{** means the start of the block of the program.
+The aforementioned line tells the compiler that this is the beginning of the main program. **{** means the start of the block of the program.
 
 - Line 5 - **cout<<"Hello World"<<endl;**
 
@@ -94,7 +94,7 @@ Congratulations! You just wrote your first C++ program.
 
 Let's write another program that would read two numbers and output the sum of them.
 `  
-     
+
      // program to add two numbers
 
      #include <iostream>
@@ -115,11 +115,11 @@ Let's write another program that would read two numbers and output the sum of th
 Here's what the output would like to this program:
 
          enter your first number to add: 7
-         
+
          enter your second number to add: 13
-         
+
          7+13 = 20
-    
+
 Let's discuss the things that are new to us in this program above.
 
 1. **int num_one** - This means that we are reserving space in memory to hold an integer (int). And we are naming that space num_one.
@@ -134,11 +134,12 @@ Just like int, we also have double. It can hold large as well as small numbers. 
 
 And that is all you need to know to write basic programs in C++. We will go over other new things as we continue.
 
-The best way to get more grasp in writing basic C++ programs would be to pratice some questions on your own. Why don't you work on some practice problems before moving forward? For example you could try to:
+The best way to get more of a grasp on how to go about writing basic C++ programs would be to practice some questions on your own.
+Why don't you work on some practice problems before moving forward? For example you could try to:
 
 - Write a program to convert a temperature from Fahrenheit to Celsius?
 And
 - Write a program to implement a small multiplication table?
 
 ### Takeaway
-In this article, we got to know about the importance of C++ and why and where it is used. And most importantly, we learned about the basics of the C++ language. In the next article, we will be moving forward with If Else and Loops. Stay tuned!
+In this article, we got to explore the importance of C++ and why and where it is being used. Most importantly, we learned about the basics of the C++ language and broke down a simple Hello World example. In the next article, we will be moving forward with If Else and Loops. Stay tuned!
