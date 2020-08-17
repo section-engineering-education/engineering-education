@@ -43,14 +43,14 @@ Below is a shortlist of five globally recognized companies that use hapi.js fram
 Creating a server using hapi.js is quite easy and obviously different from other frameworks.
 Let's see how we can create a simple server using hapi.
 
-First run
+First, create a directory for your application, then, using the terminal, navigate to the directory of your app and run
 
 ```
 npm init
 ```
-To create a node package with the name of your choice.
+To create a node package.
 
-Then open a new terminal and navigate to your app's folder and run
+Then 
 ```
 npm install @hapi/hapi
 ```
