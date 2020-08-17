@@ -7,17 +7,17 @@ title: Introduction to C++
 description: This intro is about C++ and goes through topics such as why C++?, who uses C++in the industry, basic implementation.
 author: Parampreet Singh
 date: 2020-08-13T00:00:00-12:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/intro-to-C++-part01/hero.jpg
     alt: image example
 ---
-There are many languages in the industry at the moment, but C++ has been used for a long time now. It is being used by companies from young startups to well-established companies like Facebook and Google.
+There are many languages in the industry at the moment, but C++ has been used for a long time now(back to 1979). It is being used by companies from young startups to well-established companies like Facebook and Google.
 <!--more-->
 ### Why C++?
-C++ is a powerful language. It allows you to have a lot of control as to how you use your computer resources. It is considered remarkably cheap and fast. Therefore, Developers always prefer C++ to build web browsers, game engines, games, and desktop apps.
+C++ is a powerful language. It allows a developer to have a lot of control as to how they use their computer resources. It is considered remarkably cheap and fast. Therefore, Developers always prefer C++ to build web browsers, game engines, games, and desktop apps.
 
 Some of the best applications built with C++ are:
 
