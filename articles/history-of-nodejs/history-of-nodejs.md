@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/history-of-nodejs/
 title: The History of Node.js
-description:
+description: Node.js is a runtime server environment that uses JavaScript on the server side and asynchronous programming. It is a free and open source technology that runs on various platforms (Mac OS X, Unix, Windows, etc.)
 author: jethro-magaji
 date: 2020-08-17T00:00:00-08:00
 topics: []
@@ -14,7 +14,8 @@ images:
   - url: /engineering-education/history-of-nodejs/hero.jpg
     alt:
 ---
-Today we are going to talk about a revolutionary technology that is used to build great web apps, it is called  *Node.js*. You may have probably heard of it or worked or not worked with it, either ways you are welcome to this article. Here, we are going to talk about the history, basics and use cases about this revolutionary technology.
+Today we are going to talk about a revolutionary technology that is being used to build great web apps, it is called  *Node.js*.
+You may have probably heard of it or worked with it(or have been curious about it in the past), either way you are welcome to join us as we further explore the History of Node.js in this article. We are going to talk about the history, some of the basics and a few use cases examples that use this revolutionary technology.
 <!--more-->
 ![Nodejs image](https://drive.google.com/uc?export=view&id=1ChxgpCW0JTXiGTeV15QnuVHv-byDCLuO)
 [source](https://www.simform.com/nodejs-use-case/)
@@ -40,15 +41,16 @@ Node.js is a runtime server environment that uses JavaScript on the server side 
 
 ### The Early Beginnings
 Believe it or not, Node.js is only twelve years old. In comparison, JavaScript is 26 years old and the Web is 32 years old.
-[Ryan Dahl wrote Node.js about thirteen ago, in 2009, ](https://en.wikipedia.org/wiki/Node.js). At first Node.js supported only Mac OS X and Mac OS X. Dahl led the development and maintenance and later it was [sponsored by Joyent](https://en.wikipedia.org/wiki/Node.js).
-The limited possibilities of the most popular web server was criticized in 2009, because the Apache HTTP Server had to handle a lot of connections concurrently (up to 10,000 or more) and the way of creating code was commonly through sequential programming, when there was either a blocked code in the entire process or an implied multiple execution stacks in cases of simultaneous connections.
+[Ryan Dahl wrote Node.js](https://en.wikipedia.org/wiki/Node.js) about thirteen ago, in 2009. At first Node.js supported only Linux and Mac OS X. Dahl led the development and maintenance and later on it was [sponsored by Joyent](https://en.wikipedia.org/wiki/Node.js).
+The most popular web server of the time (Apache) was criticized back in 2009 due to its limited possibilities, because the Apache HTTP Server had to handle various connections concurrently(up to 10,000 or more) which were beyond its capabilities.
+The way of creating code was commonly through sequential programming, when there was either a blocked code in the entire process or an implied multiple execution stacks in cases of simultaneous connections.
 On 8 November 2009 at the inaugural European [JSConf the project was demonstrated by Dahl](https://en.wikipedia.org/wiki/Node.js). Node.js is a combination the V8 JavaScript chrome engine, a low-level I/O API and an event loop.
 
 ### The Evolution
 ![Nodejs image evolution](https://drive.google.com/uc?export=view&id=1e91n-R0-W4S6UOffTNTnBdqyJKNqzOXN)
 [source](https://nodejs.dev/learn/a-brief-history-of-nodejs)
 
-As many browsers competed to offer users the best performance, JavaScript engines also became considerably better. Major browsers worked hard to find ways to make JavaScript run quicker and ways to offer better support for it.
+As many browsers competed to offer users the best performance, JavaScript engines also became considerably better. Because of this major browsers worked hard to find ways to make JavaScript run quicker and ways to offer better support for it.
 It wasn't only luck that made Node.js as popular as it is today, but one could say it was built at the right place and at the right time. It introduces a lot of approaches for JavaScript server-side development and [innovative thinking](https://nodejs.dev/learn/a-brief-history-of-nodejs) that has helped many developers.
 
 Node.js has thousands of open-source libraries and the npm website is where most of them are hosted. There are a lot of developer events and conferences that support the Node.js community, these includes Node Interactive, Node Summit and NodeConf as well as other regional events.
