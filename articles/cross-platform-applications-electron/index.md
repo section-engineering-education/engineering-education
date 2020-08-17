@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: cross-platform-applications-electron
+url: /engineering-education/cross-platform-applications-electron/
 title: Cross-Platform Applications With Electron
 description: Electron is an open-source software framework developed and maintained by GitHub. It allows for the development of desktop GUI applications using web technologies.
 author: rohan-reddy
 date: 2020-07-01T00:00:00-09:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -20,10 +20,10 @@ images:
 <img alt="electron logo" src="/engineering-education/cross-platform-applications-electron/electron-logo.png" width="300">
 
 ### Introduction to Electron
- Instead of having different teams and different codebases for the same application across different platforms, we can have a single codebase in JavaScript (which is a [popular language](https://insights.stackoverflow.com/survey/2019#most-popular-technologies)).  
- 
+ Instead of having different teams and different codebases for the same application across different platforms, we can have a single codebase in JavaScript (which is a [popular language](https://insights.stackoverflow.com/survey/2019#most-popular-technologies)).
+
  Beginners who are building applications for fun don't have to learn Swift, Objective-C, .NET, C++ for the wide variety of platforms. Instead, they can use frontend technologies like HTML and JavaScript that are more beginner-friendly.
- 
+
  There are many cross-platform technologies like [Xamarin](https://dotnet.microsoft.com/apps/xamarin), [Tcl/Tk](https://www.tcl.tk/software/tcltk/) and Java Swing. Still, these involve learning a new programming language and may not have all of the functionality to meet your requirements. In your journey with Electron, you can write platform-specific code to take advantage of the hardware and software, such as the touch bar capabilities of Macbooks and so on.
 
 ### When to use Electron
