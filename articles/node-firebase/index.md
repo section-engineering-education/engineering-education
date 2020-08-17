@@ -8,6 +8,8 @@ description: This is a short tutorial that shows how to use the firebase real-ti
 author: linus-muema
 date: 2020-08-13T00:00:00-13:00
 topics: [Node.js]
+aliases:
+- "/engineering-education/articles/node-firebase/"
 excerpt_separator: <!--more-->
 images:
 
