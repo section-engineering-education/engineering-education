@@ -7,7 +7,7 @@ title: A look at Python web development frameworks.
 description: What a web framework is, types of frameworks, 5 most used frameworks, installation, and a minimal app in each. Which Python web framework is best.
 author: geoffrey-mungai
 date: 2020-08-17T00:00:00-10:00
-topics: [Node.js]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
