@@ -12,14 +12,14 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-hapi/hero.jpg
-    alt: socket image example
+    alt: Hapi.js image example laptop
 ---
-[Node.js](https://nodejs.com) has become increasingly popular in the software industry. With this popularity comes a great need for developers to create frameworks that make Node.js application development easier. There are various frameworks currently available such as [express](https://expressjs.com), [hapi.js](https://hapi.dev) and [Koa](https://koajs.com) just to mention a few. This article will focus on one of the major Node.js frameworks available i.e. hapi.js.
+[Node.js](https://nodejs.org/en/docs/) has become increasingly popular in the software industry. With this popularity comes a great need for developers to create frameworks that make Node.js application development easier. There are various frameworks currently available such as [express](https://expressjs.com), [hapi.js](https://hapi.dev) and [Koa](https://koajs.com) just to mention a few. This article will focus on one of the major Node.js frameworks available i.e. hapi.js.
 <!--more-->
 ### What is hapi.js
-Hapi.js(derived from Http-API) is an open-source Node.js framework used to build powerful and scalable web applications. Hapi is commonly used to build Application Programming Interface servers, HTTP-proxy applications, and websites.
-Hapi.js was created by the mobile team at Walmart Labs — led by Eran Hammer to handle their traffic for events like Black Friday, which is by far one of the busiest days for online shopping in the U.S. calendar.
-Hapi was originally built using express framework before facing challenges that drove Walmart to make hapi its own stand-alone framework.
+Hapi.js (derived from Http-API) is an open-source Node.js framework used to build powerful and scalable web applications. Hapi is commonly used to build Application Programming Interface servers, HTTP-proxy applications, and websites.
+Hapi.js was created by the mobile team at Walmart Labs — led by Eran Hammer to handle their traffic for events like Black Friday, which is by far one of the busiest days for online shopping on the U.S. calendar.
+Hapi was originally built using the express framework before facing challenges that drove Walmart to make hapi, its own stand-alone framework.
 
 ### Hapi.js features
 Hapi.js comes with many unique features that enable developers to build secure, powerful, and scalable applications.
@@ -43,14 +43,15 @@ Below is a shortlist of five globally recognized companies that use hapi.js fram
 Creating a server using hapi.js is quite easy and obviously different from other frameworks.
 Let's see how we can create a simple server using hapi.
 
-First, create a directory for your application, then, using the terminal, navigate to the directory of your app and run
+First, create a directory for your application, then, using the terminal, navigate to the directory of your app and run:
 
 ```
 npm init
 ```
 To create a node package.
 
-Then 
+Then
+
 ```
 npm install @hapi/hapi
 ```
@@ -58,7 +59,7 @@ to install hapi module.
 
 Afterward, navigate to the index file on your app's folder using your favorite code editor and write the code below to create the server.
 
-```javascript
+```JavaScript
 const hapi = require('hapi')
 const server = new hapi.Server()
 
@@ -84,7 +85,7 @@ Hapi uses server.route as a method to create routes. server.route method takes a
 
 The code example below shows how to create two routes on the server we have created above.
 
-```javascript
+```JavaScript
 server.route({
     path: '/',
     method: 'GET',
@@ -104,7 +105,7 @@ server.route({
 Add these two routes before server.start method and test them by sending requests from the browser.
 
 ### Adding Plugins
-One of the features of hapi.js as we saw above was the introduction of plugins that replace middleware. This helps in extending the server. We use server.register to register a plugin.
+One of the features of hapi.js as we saw above was the introduction of plugins that replaces middleware. This helps in extending the server. We use server.register to register a plugin.
 
 server.register takes either an object or an array of configurations. Let's use a code example to demonstrate how we add plugins on a hapi server. We will add *good plugin*. This plugin is used for login purposes in hapi.
 
@@ -133,4 +134,4 @@ server.register({
 ```
 
 ### Summary
-Hapi.js apps work because one can customize its main building blocks i.e the servers, connections, routes, handlers, and plugins to meet his/her requirements. Hapi framework makes Node.js application development easier by letting the developer focus more on the critical parts of his/her application rather than the infrastructure details.
+Hapi.js apps work because one can customize its main building blocks i.e. the servers, connections, routes, handlers, and plugins to meet his/her requirements. Hapi framework makes Node.js application development easier by letting the developer focus more on the critical parts of his/her application rather than the infrastructure details.
