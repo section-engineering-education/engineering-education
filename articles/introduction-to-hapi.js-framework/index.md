@@ -16,7 +16,7 @@ images:
 ---
 [Node.js](https://nodejs.org/en/docs/) has become increasingly popular in the software industry. With this popularity comes a great need for developers to create frameworks that make Node.js application development easier. There are various frameworks currently available such as [express](https://expressjs.com), [hapi.js](https://hapi.dev) and [Koa](https://koajs.com) just to mention a few. This article will focus on one of the major Node.js frameworks available i.e. hapi.js.
 <!--more-->
-### What is hapi.js
+### What is hapi.js?
 Hapi.js (derived from Http-API) is an open-source Node.js framework used to build powerful and scalable web applications. Hapi is commonly used to build Application Programming Interface servers, HTTP-proxy applications, and websites.
 Hapi.js was created by the mobile team at Walmart Labs — led by Eran Hammer to handle their traffic for events like Black Friday, which is by far one of the busiest days for online shopping on the U.S. calendar.
 Hapi was originally built using the express framework before facing challenges that drove Walmart to make hapi, its own stand-alone framework.
@@ -30,14 +30,14 @@ Some of these features include:
 4. An extensive set of official plugins that are meant to replace middleware used in frameworks such as express.
 5. Integrated Authorization and Authentication Architecture which is the most comprehensive authorization API available in Node.js.
 
-### Who uses hapi.js
+### Who uses hapi.js?
 Many companies use hapi.js framework for their websites and web APIs.
 Below is a shortlist of five globally recognized companies that use hapi.js framework.
 - Commercetools
-- Brainhub.
-- Beam.
-- PayPal.
-- Clinlife.
+- Brainhub
+- Beam
+- PayPal
+- Clinlife
 
 ### Creating a Server with hapi.js
 Creating a server using hapi.js is quite easy and obviously different from other frameworks.
@@ -45,21 +45,21 @@ Let's see how we can create a simple server using hapi.
 
 First, create a directory for your application, then, using the terminal, navigate to the directory of your app and run:
 
-```
+```bash
 npm init
 ```
 To create a node package.
 
 Then
 
-```
+```bash
 npm install @hapi/hapi
 ```
 to install hapi module.
 
 Afterward, navigate to the index file on your app's folder using your favorite code editor and write the code below to create the server.
 
-```JavaScript
+```js
 const hapi = require('hapi')
 const server = new hapi.Server()
 
@@ -85,7 +85,7 @@ Hapi uses server.route as a method to create routes. server.route method takes a
 
 The code example below shows how to create two routes on the server we have created above.
 
-```JavaScript
+```js
 server.route({
     path: '/',
     method: 'GET',
@@ -111,8 +111,7 @@ server.register takes either an object or an array of configurations. Let's use 
 
 Go to your index file and add the code below before server.start method
 
-```
-JavaScript
+```js
 server.register({
     register: require('good'),
     options: {
