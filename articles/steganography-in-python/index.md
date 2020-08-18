@@ -1,6 +1,21 @@
-# Steganography: An Experiment in Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/http-requests-nodejs/
+title: Steganography - An Experiment in Python
+description: HyperText Transfer Protocol is mainly used for transmitting multimedia documents and to enhance collaborative and distributed features of an application. In this article, we look at HTTP Requests in detail and use some popular Node.js libraries to perform various processes.
+author: lalithnarayan-c
+date: 2020-08-18T00:00:00-07:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/http-requests-nodejs/hero.jpg
+    alt: nodejs http requests
+---
 In steganography, an innocent-looking image is taken as an example and a message is embedded in the image by changing the number of pixels selected by the encryption algorithm. By embedding a hidden message or file in an image, the number of pixels can be changed. In short, this means we use the encrypted RGB data to include other data, which significantly impairs the visual representation of the image. The hidden message is transmitted by increasing the bandwidth of the original message or by manipulating the file format. Since steganography is often used in phishing and as a way for malicious software to exfiltrate data, it is very difficult to detect it. 
+<!--more-->
 
 ### Military Uses vs Malicious Threats 
 To understand how image steganography works, we take a look at some of the basic ways in which text can be hidden in image files. Due to the nature of image file formats, it is not only possible to hide text strings, but also to hide entire files in jpg or other image formats. In a technique known as secret-key steganography, steganography is applied to a message that already has a key. This ensures multiple levels of security. 
