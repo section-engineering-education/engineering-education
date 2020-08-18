@@ -14,29 +14,34 @@ images:
   - url: /engineering-education/python-frameworks/hero.jpg
     alt: computer image example nodejs
 ---
-Many people nowadays use web frameworks to develop web apps. Using them is better than using raw python. They automate many things like database connections and management, Authorization, and URL routing. In this article we will be exploring what framework should you use? Which is the best framework? Should you even use a framework? Let's look at all this and more.
+Many people nowadays use web frameworks to develop web apps. Using them is better than using raw python. They automate many things like database connections and management, Authorization, and URL routing. In this article we will be exploring what framework should you use? Which is the best framework? Should you even use a framework? We are going to be looking at this and more.
 <!--more-->
-### What is a web framework?
-A web framework is a collection of packages and modules which help developers write web applications. They prevent the developer from having to manage low-level details such as protocols, process management, or sockets. Many frameworks are server-side technologies. With the increasing commonness of AJAX, some of them have started using AJAX to integrate client-side operations. The end product is a web app with a backend and a frontend.
-In short, frameworks support a large number of activities such as interpreting requests, handling cookies, sessions, and producing responses. Let's look at the different types of Python frameworks that we will explore.
+### What is a Python web framework?
+
+A Python web framework is a set of Python packages and modules that support web development. They prevent the developer from having to manage low-level details such as protocols, process management, or sockets. Many frameworks are server-side technologies. With the increasing commonness of AJAX, some of them have started using AJAX to integrate client-side operations. The end product is a web app with a backend and a frontend bundled together.
+Some of the activities supported by frameworks are:
+
+- Reading and writing cookies
+- sessions management
+- Processing requests and returning responses
+- Database management
 
 ### Types of Web Frameworks.
 There are 3 main types of web frameworks:
  1. **Full-stack Frameworks** - These are frameworks that can build a web app with both a backend and a frontend. They may have an HTTP application server, a database, a template engine, an authentication module, and an AJAX toolkit.
  2. **Micro frameworks** or non-full stack - These are frameworks designed for the development of small web apps. They provide fewer features than full-stack frameworks. A developer has to add code manually for things to work. They are usually used by experienced Python developers.
- 3. **Asynchronous Frameworks** - It is the most recent type of Python framework. It is a microframework with the ability to handle a large set of concurrent connections.
+ 3. **Asynchronous Frameworks** - It is the most recent type of Python framework. It is a microframework that can handle many simultaneous connections.
 
 ### Popular Web Frameworks.
 #### 1. [Django](https://www.djangoproject.com/)
 [Github](https://github.com/django/django) stars: 51.3k
 
-Django is a full-stack Python web framework, developed by Django Software Foundation. It was released in 2005 as an open-source framework. It uses the DRY (don't repeat yourself) code principle. It has a vast collection of python libraries. Some of the main features offered by Django are:
+Django is a full-stack Python web framework, developed by Django Software Foundation. It was released in 2005 as an open-source framework. It emphasizes the DRY (don't repeat yourself) concept of software development. It comes with the support of many python libraries. It also comes with Django ORM which is the in-built object-relational mapper. Some of the main features offered by Django are:
 
  1. Authentication
  2. URL routing
  3. Jinja2 template engine
- 4. Object-relational mapper (ORM)
- 5. Database schema migrations
+ 4. Database schema migrations
 
 Django comes with an SQLite database out of the box. It's advised to use Django with Python3. *It is used by some tech giants like Instagram, Pinterest, and GoDaddy.* [Source](https://stackshare.io/django)
 
@@ -70,18 +75,20 @@ Navigate to the newly created directory and run.
 $ python manage.py runserver
 ```
 
-This fires up the app and can be accessed in a browser via http://127.0.0.1:8000/ by default.
+This fires up the app and can be accessed in a browser via http://127.0.0.1:8000/ by default. On getting started with writing Django apps, click [here](https://www.djangoproject.com/start/).
 
 #### 2. [Flask](https://flask.palletsprojects.com/)
 [Github](https://github.com/pallets/flask) stars: 51.6k
 
-Flask is a micro-framework built on the Werkzeug library and Jinja2 template engine. It comes with a built-in development server and unit testing support. It comes fully Unicode-enabled with RESTful request dispatching and WSGI compliance. Features include:
+Flask is a micro-framework built on the Werkzeug library and Jinja2 template engine. It comes with unit testing support out of the box. It features:
 
  - A built-in HTTP server and debugger
+ - The server is WSGI compliant
  - Jinja2 template engine
  - URL routing
  - Cookie handling
  - different databases support
+ - RESTful request dispatching
 
 Flask is recommended to be used with Python3.5 or newer.
 
@@ -112,7 +119,7 @@ Then run the app.
 $ python app.py
 ```
 
-The app can be accessed using a browser by opening http://127.0.0.1:5000
+The app can be accessed using a browser on http://127.0.0.1:5000.
 *Netflix, Mozilla, Uber, and Samsung are some companies using Flask*. [Source](https://stackshare.io/flask)
 
 #### 3. [Tornado](https://www.tornadoweb.org/)
@@ -150,7 +157,7 @@ def make_app():
 
 if __name__ == "__main__":
 	app = make_app()
-	app.listen(8888)
+	app.listen(8008)
 	tornado.ioloop.IOLoop.current().start()
 ```
 
@@ -160,12 +167,13 @@ run the app by executing the command:
 $ python app.py
 ```
 
+The app is accessible from the browser on http://127.0.0.1:8008.
 *Facebook and Delivery Hero are some of the companies using Tornado.* [Source](https://stackshare.io/tornado)
 
 #### 4. [Sanic](https://sanicframework.org/)
 [Github](https://github.com/huge-success/sanic) stars: 14k
 
-Sanic is an open-source asynchronous web framework for building fast web apps. It runs on Python 3.6 or newer. It was designed especially for quick HTTP responses with the help of asynchronous handlers. Sanic can handle many concurrent requests. The name Sanic is an indirect imitation of [Sonic the Hedgehog](https://en.wikipedia.org/wiki/Sonic_the_Hedgehog_%28character%29). Some features of Sanic are:
+Sanic is an open-source asynchronous web framework for building fast web apps. It runs on Python 3.6 or newer. It was designed particularly for fast hypertext transfer protocol responses with the assistance of asynchronous handlers. Sanic can handle many concurrent requests. The name Sanic is an indirect imitation of [Sonic the Hedgehog](https://en.wikipedia.org/wiki/Sonic_the_Hedgehog_%28character%29). Some features of Sanic are:
 
  - Cookies handling
  - Logging support (error and access logs)
@@ -211,12 +219,12 @@ The app is accessible from the browser on http://127.0.0.1:8800.
 #### 5. Bottle
 [Github](https://github.com/bottlepy/bottle) stars: 6.9k
 
-Bottle is a fast and simple micro-framework for building small web applications.  It's only dependency is the Python Standard Library. It's recommended to use Bottle with Python3.4 or newer. Features offered include:
+Bottle is a fast and simple micro-framework for building small web applications.  Apart from the Python Standard Library, Bottle has no other dependency. It's recommended to use Bottle with Python3.4 or newer. Features offered include:
 
  - URL routing
  - Template engine
  - A built-in HTTP server
- - Third party WSGI/HTTP server support
+ - Third-party WSGI/HTTP server support
 
 **Setup and installation**
 After creating and activating a virtual environment, run:
@@ -236,7 +244,7 @@ from bottle import route, run
 def hello():
     return "Hello World!"
 
-run(host='localhost', port=8080, debug=True)
+run(host='localhost', port=2000, debug=True)
 
 ```    
 run the app by executing:
@@ -245,7 +253,7 @@ run the app by executing:
 $ python app.py
 ```
 
-The app is accessible from the browser on http://127.0.0.1:8080.
+The app is accessible from the browser on http://127.0.0.1:2000.
 ### Other frameworks worth mentioning.
  - [Hug](https://www.hug.rest/)
  - [Web2py](http://www.web2py.com/)
@@ -254,7 +262,7 @@ The app is accessible from the browser on http://127.0.0.1:8080.
  - [TurboGears](https://turbogears.org/)
 
 ### Which Python web framework is the best?
-Each web framework has its pros and cons. Every developer has a different coding styles and preferences. The only way to tell the best framework is by knowing which does what better in each circumstance. But in essence, finding the best framework is close to impossible.
+Each web framework has varying features, and so does the pros and cons. Every developer has a unique coding style and inclinations. The only way to tell the best framework is by knowing which does what better in each circumstance. But in essence, finding the best framework is close to impossible.
 
 ### Do I have to use a framework?
 The choice is yours. Whether to use one or not, depends on your experience and what you want to accomplish. For beginners, a framework can be a good choice. It will help you to understand development concepts like:
