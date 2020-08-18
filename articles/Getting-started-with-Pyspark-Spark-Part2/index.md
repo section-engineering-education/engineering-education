@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: getting-started-with-pyspark-spark-part2
+url: /getting-started-with-pyspark-spark-part2/
 title: Getting started with PySpark (Spark core and RDDs) - Spark Part 2
 description:  This article covers programming with Spark Core and RDD by applying them on a large dataset - Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient.
 author: keerthi-v
@@ -14,12 +14,10 @@ images:
   - url: /engineering-education/getting-started-with-pyspark-spark-part2/hero.jpg
     alt: PySpark image example
 ---
-Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient. It provides a simple programming interface to program entire clusters with implicit data parallelism. This essentially results in fast computation of big data.  Spark does not require the users to have high end, expensive systems with great computing power. It splits the big data into multiple cores or systems available in the cluster and optimally utilises these computing resources to the processes this data in a distributed manner.  Therefore Spark is a great solution for processing large amounts of data and obtaining results to queries quickly and without overheating the system.
-
-
+Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient. It provides a simple programming interface to program entire clusters with implicit data parallelism. This essentially results in fast computation of big data.  Spark does not require the users to have high end, expensive systems with great computing power. It splits the big data into multiple cores or systems available in the cluster and optimally utilizes these computing resources to the processes this data in a distributed manner. Therefore Spark is a great solution for processing large amounts of data and obtaining results to queries quickly and without overheating the system.
 <!--more-->
 
-In this tutorial, we will delve into the core programming concepts of Spark using an example. In this example, we will use a large dataset containing 278,858 users providing 1,149,780 ratings about 271,379 books to realise which book has the most number of ratings.
+In this tutorial, we will delve into the core programming concepts of Spark using an example. In this example, we will use a large dataset containing 278,858 users providing 1,149,780 ratings about 271,379 books to realize which book has the most number of ratings.
 
 Python is the most widely used language on Spark, so we will implement Spark programs using their Python API - PySpark. To learn the concepts and implementation of programming with PySpark, install PySpark locally. While it is possible to use the terminal to write and run these programs, it is more convenient to use Jupyter Notebook.
 
@@ -67,7 +65,7 @@ export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
 
 Now restart your terminal and run ‘pyspark’ on it. It should open jupyter notebook and allow you to write and run PySpark programs!
 
-We will be using the [Books](http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip) dataset in our example, so download it and place the dataset in the same folder where you will store your PySpark script. 
+We will be using the [Books](http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip) dataset in our example, so download it and place the dataset in the same folder where you will store your PySpark script.
 
 ### **Initializing Spark and RDD**
 
@@ -97,7 +95,7 @@ Here, setMaster(local[`*`]) denotes that we are configuring the SparkContext to 
 
 **Resilient Distributed Datasets** (RDD) forms the core of Spark programming, providing an abstraction to coding distributed transformations of large datasets by using the RDD object. They can run on a cluster of nodes that are either local or distributed and can handle failure of multiple executor nodes automatically.
 
-### Loading the dataset as RDDs 
+### Loading the dataset as RDDs
 The functions used to work with RDDs are categorized into 2 types - Transformers and Actions.
 
 Transformers are the operations that can be performed on RDDs. These operations change the data in some way, i.e., they transform the RDD. Spark supports many [transformations](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations). Now, we are using map(), along with a lambda function. map() is a transformation function that returns a new distributed RDD in which all the elements of the RDD have been passed through a function, which in this case is a lambda (inline) function that splits every line by ‘“;”’.
@@ -140,7 +138,7 @@ print(" \n K,V pairs are - \n", ratings_file.map(lambda x: (x[1],1)).take(10))
 
 We use filter() to remove the row containing the column names (headers). filter() is a transformation function that picks rows based on whether it passes a specified condition. In this code snippet, we check whether ‘ISBN’ occurs in the 2nd column of the row, and filter that row if it does.
 
-![img](/engineering-education/getting-started-with-pyspark-spark-part2//filter.png)
+![img](/engineering-education/getting-started-with-pyspark-spark-part2/filter.png)
 
 To count the number of occurrences of each ISBN, we use reduceByKey() transformation function. When reduceByKey is called on a (K,V) pair, it aggregates the value of each key according to the function passed to it. In this example, x represents the aggregated value for a key k, and y is the newly encountered value for the same key k. X and Y are added and assigned to X. This results in an RDD with (K,V) => (ISBN, Count of occurrences)
 
