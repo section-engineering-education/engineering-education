@@ -36,7 +36,7 @@ There are 3 main types of web frameworks:
 #### 1. [Django](https://www.djangoproject.com/)
 [Github](https://github.com/django/django) stars: 51.3k
 
-Django is a full-stack Python web framework, developed by Django Software Foundation. It was released in 2005 as an open-source framework. It emphasizes the DRY (don't repeat yourself) concept of software development. It comes with the support of many python libraries. It also comes with Django ORM which is the in-built object-relational mapper. Some of the main features offered by Django are:
+Django is a full-stack Python web framework, developed by Django Software Foundation. It was released in 2005 as an open-source framework. It emphasizes on the DRY (don't repeat yourself) concept of software development. It comes with the support of many python libraries. It also comes with Django ORM which is the in-built object-relational mapper. Some of the main features offered by Django are:
 
  1. Authentication
  2. URL routing
