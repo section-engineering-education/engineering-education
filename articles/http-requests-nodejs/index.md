@@ -119,16 +119,13 @@ The `fetch` module is also built-in and is usually used for making API calls. Fe
 ```jsx
 const url = 'https://my-json-server.typicode.com/lalith1403/jsonemaillist/list'
 ```
-axios.get(url, headers: {'Access-Control-Allow-Origin': '*'}).then(data=>console.log(data)).catch(err => console.log(err))
+
 ```jsx
 fetch(url)
     .then(data=>{return data.json()})
     .then(res=>{console.log(res)})
     .catch(err => {console.log(err)})
 ```
-
-fetch(url).then(data=>{return data.json()}).then(res=>{console.log(res)}).catch(err => {console.log(err)})
-
 ### Axios
 [Axios](https://www.npmjs.com/package/axios) is one of the most popular libraries used for making requests. Axios needs to be installed using npm.
 
