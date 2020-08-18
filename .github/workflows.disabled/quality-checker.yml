@@ -51,10 +51,6 @@ jobs:
       run: |
         echo -n "::set-output name=slug_matrix::"
         jq --slurp --compact-output '.[0] + .[1] | unique | map(select(. | test("^articles\/"))) | unique | { include: . }' ~/files_added.json ~/files_modified.json
-
-    - name: Grab text
-      id: grab_text
-      run: ?????
   
   plagiarismCheck:
     name: Check for plagiarism
