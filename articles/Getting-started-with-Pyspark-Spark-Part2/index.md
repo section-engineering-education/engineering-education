@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /getting-started-with-pyspark-spark-part2/
+url: /engineering-education/getting-started-with-pyspark-spark-part2/
 title: Getting started with PySpark (Spark core and RDDs) - Spark Part 2
 description:  This article covers programming with Spark Core and RDD by applying them on a large dataset - Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient.
 author: keerthi-v
@@ -24,7 +24,7 @@ Python is the most widely used language on Spark, so we will implement Spark pro
 ### **Installing Spark (and running PySpark API on Jupyter notebook)**
 Step 0: Make sure you have Python 3 and Java 8 or higher installed in the system.
 
-```
+```sh
 $ python3 --version
 Python 3.7.6
 $ java -version
@@ -38,26 +38,26 @@ Step 1: Download Spark 3 from the [official page](http://spark.apache.org/downlo
 
 Step 2: Extract it from the zip file and move it to any other folder if you want to (preferably home).
 
-```
+```sh
 $tar -xzf spark-{version}-bin-hadoop{version}.tgz
 ```
 
 Step 3: In ~/.bash_profile (for mac) or ~/.bashrc (for linux), add these lines indicating the path of Spark and its bin.
 
-```
+```sh
 export SPARK_HOME={path-to-spark}/spark-3.0.0-preview2-bin-hadoop2.7
 export PATH=$PATH:$PATH_HOME/bin
 ```
 
 Step 4: Install jupyter notebook
 
-```
+```sh
 $ pip install jupyter
 ```
 
 Step 5: In ~/.bash_profile (for mac) or ~/.bashrc (for linux), add these lines indicating the configurations of PySpark.
 
-```
+```sh
 export PYSPARK_PYTHON=python3
 export PYSPARK_DRIVER_PYTHON=jupyter
 export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
