@@ -41,64 +41,63 @@ Node.js is a runtime server environment that uses JavaScript on the server side 
 
 ### The Early Beginnings
 Believe it or not, Node.js is only twelve years old. In comparison, JavaScript is 26 years old and the Web is 32 years old.
-[Ryan Dahl wrote Node.js](https://en.wikipedia.org/wiki/Node.js) about thirteen ago, in 2009. At first Node.js supported only Linux and Mac OS X. Dahl led the development and maintenance and later on it was [sponsored by Joyent](https://en.wikipedia.org/wiki/Node.js).
-The most popular web server of the time (Apache) was criticized back in 2009 due to its limited possibilities, because the Apache HTTP Server had to handle various connections concurrently(up to 10,000 or more) which were beyond its capabilities.
-The way of creating code was commonly through sequential programming, when there was either a blocked code in the entire process or an implied multiple execution stacks in cases of simultaneous connections.
-On 8 November 2009 at the inaugural European [JSConf the project was demonstrated by Dahl](https://en.wikipedia.org/wiki/Node.js). Node.js is a combination the V8 JavaScript chrome engine, a low-level I/O API and an event loop.
+[In 2009, Ryan Dahl wrote Node.js about thirteen ago](https://en.wikipedia.org/wiki/Node.js).  At first Nodejs supported only Mac OS X and Mac OS X.Dahl led the development and maintenance and later it was  [sponsored by Joyent](https://en.wikipedia.org/wiki/Node.js). 
+The limited possibilities of the most popular web server  ["Apache HTTP Server"](https://en.wikipedia.org/wiki/Apache_HTTP_Server)   in 2009 was criticized by Dahl, because it had to handle a lot of connections concurrently (up to 10,000 and more) and when there was either a blocked code in the entire process or an implied multiple execution stacks in cases of simultaneous connections, this situation had to be resolved by creating code through [sequential programming](https://en.wikipedia.org/wiki/Sequential_algorithm). 
+[On 8 November 2009 at the inaugural European JSConf the project was demonstrated by Dahl](https://en.wikipedia.org/wiki/Node.js). Node.js is a combination the V8 JavaScript chrome engine, a low-level I/O API and an event loop. 
+
 
 ### The Evolution
 ![Nodejs image evolution](https://drive.google.com/uc?export=view&id=1e91n-R0-W4S6UOffTNTnBdqyJKNqzOXN)
 [source](https://nodejs.dev/learn/a-brief-history-of-nodejs)
 
-As many browsers competed to offer users the best performance, JavaScript engines also became considerably better. Because of this major browsers worked hard to find ways to make JavaScript run quicker and ways to offer better support for it.
-It wasn't only luck that made Node.js as popular as it is today, but one could say it was built at the right place and at the right time. It introduces a lot of approaches for JavaScript server-side development and [innovative thinking](https://nodejs.dev/learn/a-brief-history-of-nodejs) that has helped many developers.
+As many browsers competed to offer users the best performance, JavaScript engines also became considerably better. Major browsers worked hard to finding ways to make JavaScript run quicker and offer better support for it.
+It wasn't only luck that made Node.js popular today but it was built at the right place and time. It introduces a lot of approaches for JavaScript server-side development and [innovative thinking](https://nodejs.dev/learn/a-brief-history-of-nodejs) that has helped many developers.
+Node.js have thousands of open-source libraries and the [npm website](https://www.npmjs.com/) is where most of them hosted. There are alot of developer events and conferences that support the Node.js community,these includes Node Interactive, Node Summit and NodeConf as well as other regional events.
+Web frameworks has developed by the [Nodejs open-source community](https://nodejs.org/en/about/community/) to accelerate the development of applications. These frameworks include Connect, Sails.js, Koa.js, Express.js, Feathers.js, socket.io, Derby, Hapi.js, Meteor, and alots more.
 
-Node.js has thousands of open-source libraries and the npm website is where most of them are hosted. There are a lot of developer events and conferences that support the Node.js community, these includes Node Interactive, Node Summit and NodeConf as well as other regional events.
-Web frameworks was developed by the Nodejs open-source community to accelerate the development of applications. These frameworks include Connect, Sails.js, Koa.js, Express.js, Feathers.js, socket.io, Derby, Hapi.js, Meteor, and a lots more.
+**The journey so far**
 
-#### **The journey so far**
-
-- **In 2009**
-    * The beginning of Node.js
-    * npm was created
-- **In 2010**
-    * The beginning of Express
-    * The beginning of socket.io
-- **In 2011**
+* **In 2009**
+    * The begining of [Node.js](https://nodejs.dev/)
+    * [npm](https://www.npmjs.com/) was created
+* **In 2010**
+    * The begining of [Express](https://expressjs.com/) 
+    * The begining of socket.io 
+* **In 2011**
     * version 1.0 of npm was released
     * Companies Uber, LinkedIn, etc. started adopting Node.js
-    * The beginning of hapi started
-- **In 2012**
+    * The begining of [hapi](https://hapi.dev/) started
+* **In 2012**
     * Adoption continues and grew rapidly
-- **In 2013**
-    * Ghost was first big blogging platform to use Nodejs
-    * The beginning of Koa
-- **In 2014**
-    * io.js became a major fork of Node.js "The Big Fork", with the purpose of introducing ES6 support and moving faster
-- **In 2015**
+* **In 2013**
+    * [Ghost](https://ghost.org/) was first big blogging platform to use Nodejs
+    * The begining of [Koa](https://koajs.com/) 
+* **In 2014**
+    * [io.js](https://github.com/nodejs/iojs.org) became a major fork of Node.js "The Big Fork", with the purpose of introducing ES6 support and moving faster
+* **In 2015**
     * The Node.js Foundation began
     * IO.js is merged back into Node.js
     * npm introduces private modules
     * Node.js 4 (versions 1, 2 and 3 never previously released)
-- **In 2016**
+* **In 2016**
     * The leftpad incident
-    * The beginning of Yarn
-    * The beginning of Node.js 6
-- **In 2017**
-    * npm focuses more on security
-    * The beginning of Node.js 8
+    * The begining of [Yarn](https://yarnpkg.com/) 
+    * The begining of Node.js 6
+* **In 2017**
+    * [npm]((https://www.npmjs.com/)) focuses more on security
+    * The begining of Node.js 8
     * HTTP/2
-    * V8 introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome
+    * [V8](https://v8.dev/) introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome
     * Up to3 billion npm downloads every week
-- **In 2018**
-    * The beginning of Node.js 10
+* **In 2018**
+    * The begining of Node.js 10
     * ES modules .mjs experimental support
-- **In 2019**
-    * The beginning of Node 12 - 13
-    * Work on Deno started to move server-side JS into the next decade with modern JavaScript support
-- **In 2020**
-    * The beginning of Node 14 - 15
-    * GitHub (owned by Microsoft) acquired NPM
+* **In 2019**
+    * The begining of Node 12 - 13
+    * Work on [Deno](https://deno.land/) started to move server-side JS into the next decade with modern JavaScript support
+* **In 2020**
+    * The begining of Node 14 - 15
+    * [GitHub](https://github.com/) (owned by Microsoft) acquired [NPM](https://www.npmjs.com/)
 
 ### Setting up Node.js 	
 ![Nodejs image setup](https://drive.google.com/uc?export=view&id=1zipo06_A5JDQiS3hfqO9TEiIjfwf5eua)
