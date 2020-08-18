@@ -126,3 +126,5 @@ Using GSuite or Office 365 simplifies the process of adding your new email to yo
 This can be much easier than using another email provider that requires you to configure an IMAP account and fill in all sorts of information like port numbers.
 
 Congratulations! You've set up a professional email address, made it secure, and learned how to set up user, group, and domain aliases.
+
+Struggling to setup other Google services? Check out my [guide to setting up Google Search Console](/engineering-education/google-search-console).
