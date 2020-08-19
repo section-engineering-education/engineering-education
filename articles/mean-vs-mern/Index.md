@@ -6,8 +6,8 @@ url: /engineering-education/mean-vs-mern/
 title: Mean and MERN Stack
 description: This is an article about Mean and MERN stack with respect to different parameters, MongoDB expressjs, and Node.js.
 author: richu-thomas
-date: 2020-08-19T00:00:00-07:00
-topics: []
+date: 2020-08-19T00:00:00-09:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
