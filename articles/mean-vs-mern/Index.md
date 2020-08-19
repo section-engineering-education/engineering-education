@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/mean-vs-mern/hero.jpg
-    alt: hero image visual data science python
+    alt: example image mean mern mevn
 ---
 A technology stack is a combination of frameworks and tools utilized in a software product. A tech stack can be created with any combination of Frontend, Backend, Database, and Servers. In today's world, many companies especially startups, are seeing a huge demand for full-stack developers, that is, developers who are somewhat proficient in all the fields of development from frontend to managing servers.
 <!--more-->
