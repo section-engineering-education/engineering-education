@@ -6,13 +6,13 @@ url: /engineering-education/steganography-in-python/
 title: Steganography - An Experiment in Python
 description: This is an example of an article on steganography and a simple application using python. I request the review team to kindly give feedback on the same.
 author: lalithnarayan-c
-date: 2020-08-18T00:00:00-07:00
+date: 2020-08-19T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/steganography-in-python/hero.jpg
-    alt:
+    alt: steganography example image python 
 ---
 In steganography, an innocent-looking image is taken as an example and a message is embedded in the image by changing the number of pixels selected by the encryption algorithm. By embedding a hidden message or file in an image, the number of pixels can be changed.
 
@@ -30,7 +30,7 @@ Military intelligence services, however, use high-quality proprietary tools allo
 
 ### Cryptography Vs Steganography
 
-As a technique for hiding data, cryptography is also used for the secure transmission of messages over the Internet. Cryptography is the science of ensuring that only the receiver (of the intended message) reads the message. Steganography, on the other hand, is the science of intelligently placing information so that no one knows about its presence. There are several cases where steganography may be better suited than cryptography. In some situations, cryptography is used to encrypt the message that is going to be placed under the image. Therefore, steganography and cryptography are not mutually exclusive. 
+As a technique for hiding data, cryptography is also used for the secure transmission of messages over the Internet. Cryptography is the science of ensuring that only the receiver (of the intended message) reads the message. Steganography, on the other hand, is the science of intelligently placing information so that no one knows about its presence. There are several cases where steganography may be better suited than cryptography. In some situations, cryptography is used to encrypt the message that is going to be placed under the image. Therefore, steganography and cryptography are not mutually exclusive.
 
 ### Code
 We will build an example to demonstrate the encryption of data into images. The data is represented using its ASCII value. Each letter is represented using 8bits, or 1 byte. Each pixel in the image has three bits, one each for RGB frames. Each pixel can hold 3 bits. We will encode three pixels together, making a place for 9 bits. Out of the 9 bits, we will store 1 letter in the 8 bits and one (End Of File)EOF bit. If the EOF bit is high, then it indicates that the end of the message has been reached. Otherwise, it indicates the program to read more pixels for decoding.
