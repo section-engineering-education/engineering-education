@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/mean-vs-mern/hero.jpg
     alt: hero image visual data science python
 ---
-A technology stack is a combination of frameworks and tools utilized in a software product. A tech stack can be created with any combination of Frontend, Backend, Database, and Servers. In today's world, many companies especially startups, is seeing a huge demand for full-stack developers, that is, developers who are somewhat proficient in all the fields of development from frontend to managing servers.
+A technology stack is a combination of frameworks and tools utilized in a software product. A tech stack can be created with any combination of Frontend, Backend, Database, and Servers. In today's world, many companies especially startups, are seeing a huge demand for full-stack developers, that is, developers who are somewhat proficient in all the fields of development from frontend to managing servers.
 <!--more-->
 
 If the Stack is all based on a single language or little variation of that language then it will be even more sought after. This was one of the main reasons for many JavaScript stacks becoming so popular. MEAN([MongoDB](https://www.mongodb.com/), [Express Js](https://expressjs.com/), [Angular](https://angular.io/), [Node.js](https://nodejs.org/en/docs/)), MEVN(MongoDB, Express Js, [Vue Js](https://vuejs.org/), Node.js) and MERN(MongoDB, Express Js, [React Js](https://reactjs.org/), Node.js).
