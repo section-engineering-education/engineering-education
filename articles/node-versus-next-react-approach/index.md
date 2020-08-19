@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/node-versus-next-react-approach/
 title: Node.js versus Next.js - A React Approach
-description: This article compares the difference between Node.js and Next.js from a Reach approach - going over tility applications which are used to enhance the performance of the main application.
+description: This article compares the difference between Node.js and Next.js from a Reach approach - going over utility applications which are used to enhance the performance of the main application.
 author: lalithnarayan-c
 date: 2020-08-14T00:00:00-15:00
 topics: [Node.js]
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/node-versus-next-react-approach/hero.jpg
-    alt: networking model example image
+    alt: Node.js Next.js example image
 ---
 Back in the early days when websites were becoming interactive, JavaScript was introduced. The JS interpreter was present in the browser and did an amazing job of making websites interactive. All the computations were done on the local machine using in the in-built JS Engine. The makers of JS took JS which is confined to the browser and made it available to the local machine. With this change, a lot of new features are unlocked.
 <!--more-->
