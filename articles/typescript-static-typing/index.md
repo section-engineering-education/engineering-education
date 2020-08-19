@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/typescript-static-typing/
 title: Why TypeScript? Why Static Typing? Why is TypeScript so popular?
-description: TypeScript is much like JavaScript. In fact, all JavaScript is valid as TypeScript code - it's just JavaScript, with static typing.
+description: TypeScript was ranked higher than JavaScript according to the GitHub Developer Survey. Why? What does TypeScript add that's so much better?
 author: mike-white
 date: 2020-08-19T00:00:00-07:00
 topics: [Node.js]
