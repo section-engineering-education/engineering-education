@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: breadth-first-search
+url: /engineering-education/breadth-first-search/
 title: Solving a Maze with Breadth First Search
 description: Pathfinding is a very common task in computing. It's used for directions, and enemy AI in video games. Breadth-first Search (BFS) is one pathfinding algorithm which we can use to solve a maze.
 author: mike-white

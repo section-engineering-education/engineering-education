@@ -70,7 +70,9 @@ git remote add section http://github.com/section-io/engineering-education
 
 ### then use this every time before contributing a new article
 git fetch section
+
 git pull --rebase section master
+
 git push origin
 
 Here is a [link](https://www.youtube.com/watch?v=nT8KGYVurIU&t=47s) to a short video further explaining what a **pull request** is and how to **fork** a Github repository.

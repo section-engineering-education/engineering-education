@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: deploying-nodejs-web-app
+url: /engineering-education/deploying-nodejs-web-app/
 title: Deploying Your First Node.js Web App
 description: This guide provides an introduction to Node.js and NPM and how to get a basic Express server running to serve static web files. Aimed at front-end developers (who can already create basic websites using HTML, CSS and JS.)
 author: louise-findlay
@@ -205,24 +205,6 @@ Finally, type `sudo systemctl start pm2-(username)`.
 
 Try restarting your droplet by typing reboot and after a few minutes, go to `yourdomain.com`. Your web app should be up and running like normal.
 
-Congratulations, you've just deployed your first Node.js web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash?
+Congratulations, you've just deployed your first Node.js web app. If you're looking to do more, why not try creating more web apps by utilising different APIs like Spotify or Unsplash? 
 
-<section class="section-rich-text xs-pb-80 xs-pt-80">
-  <div class="section-container">
-    <div class="section-rich-text-inner prl-5">
-      <a class="decoration-none" href="/modules/node-js/">
-        <div class="cta-block-box relative xs-mt-10 xs-mb-50">
-          <div class="cta-block-box-left-block absolute"></div>
-          <div class="cta-block-box-left-stripes absolute"></div>
-          <div class="cta-block-box-inner pa-5 cta-shadow">
-            <h3 class="title-3" style="text-align: center;"><img src="/assets/images/blog/featured-images/Node.js_logo.png" width="150" style="margin: 0;"><br>Edge Hosting</h3>
-            <p class="xs-mb-20">Section’s Node.js Edge Hosting empowers DevOps teams to run mission critical Node.js applications at the network edge for blazingly fast results with enterprise level AppSec protection.</p>
-            <span class="link-with-arrow-blue text-blue text-18-medium">Learn more and get started on a free plan</span>
-          </div>
-          <div class="cta-block-box-right-block absolute"></div>
-          <div class="cta-block-box-right-stripes absolute"></div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+Never worked with an API before? Check out my [guide to using the Goodreads API to develop a Node.js web app](/engineering-education/simple-guide-to-using-apis-nodejs).

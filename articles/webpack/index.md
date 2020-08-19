@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: webpack
+url: /engineering-education/webpack/
 title: Introduction To Webpack with Node.js
 description: This article serves as an Introduction to webpack - webpack is a static module bundler for modern JavaScript applications. 
 author: rohan-reddy

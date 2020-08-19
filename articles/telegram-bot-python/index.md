@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: telegram-bot-python
+url: /engineering-education/telegram-bot-python/
 title:  Building a Reddit Autoposter Telegram Bot with Python
 description: How to use Python to create a Telegram Bot that autoposts from a subreddit.
 author: saiharsha-balasubramaniam
