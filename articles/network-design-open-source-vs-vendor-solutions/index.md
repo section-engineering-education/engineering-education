@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: network-design-open-source-vs-vendor-solutions
+url: /engineering-education/network-design-open-source-vs-vendor-solutions/
 title: Networking Decisions - Open Source vs. Vendor Solutions  
 description: An overview of open source vs vendor solutions to help engineers to make a more informed choice when selecting network equipment.
 author: aakash-rawal
 date: 2020-05-12T00:00:00-07:00
-topics: [networking]
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
