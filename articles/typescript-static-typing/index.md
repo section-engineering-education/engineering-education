@@ -2,32 +2,30 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/
+url: /engineering-education/typescript-static-typing/
 title: Why TypeScript? Why Static Typing? Why is TypeScript so popular?
-description: 
+description: TypeScript is much like JavaScript. In fact, all JavaScript is valid as TypeScript code - it's just JavaScript, with static typing.
 author: mike-white
-date: 2020-08-13T00:00:00-07:00
-topics: [node.js]
+date: 2020-08-19T00:00:00-07:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/discord-bot-node/hero.jpg
-    alt: discord bot node example image
+  - url: /engineering-education/typescript-static-typing/hero.jpg
+    alt: typescript image example
 ---
-According to the [Stack Overflow Developer Survey 2020](https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted), 67.1% of TypeScript users "loved" it. This makes it the second most loved language, behind Rust, and narrowly beating out Python. JavaScript was number 10, with 58.3% of users interested in continuing to use it. That's still pretty good. It sure beats Visual Basic. But why is TypeScript so much more popular?
+According to the [Stack Overflow Developer Survey 2020](https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted), 67.1% of TypeScript users "loved" it. This makes it the second most loved language, behind Rust, and narrowly beating out Python. JavaScript was number 10, with 58.3% of users interested in continuing to use it. That is still pretty good. It sure beats Visual Basic. But why is TypeScript so much more popular?
 
-TypeScript 4.0 will probably be released [before this article is published](https://github.com/microsoft/TypeScript/issues/38510). Now is a good time to talk about it.
 <!--more-->
+TypeScript 4.0 will probably be released [before this article is published](https://github.com/microsoft/TypeScript/issues/38510). Now is a good time to talk about it.
 
 ## What's a TypeScript?
-
 TypeScript is much like JavaScript. In fact, all JavaScript is valid as TypeScript code. TypeScript [was developed by Microsoft](https://devblogs.microsoft.com/typescript/announcing-typescript-1-0/) to make it [easier to write large code bases](https://www.infoworld.com/article/2614863/microsoft-augments-javascript-for-large-scale-development.html). Essentially, it's just JavaScript, with static typing. The TypeScript compiler does nothing but convert all the TypeScript code into JavaScript. The resulting JavaScript code can be run in any browser.
 
 ### What's Static Typing?
-
 If you don't know, static typing is when the compiler enforces that values use the same type. Here's an example. This is valid in JavaScript:
 
-```javascript
+```JavaScript
 let value = 5;
 value = "hello";
 ```
@@ -40,14 +38,13 @@ value = "hello"; // error: Type '"hello"' is not assignable to type 'number'.
 ```
 
 ## Why TypeScript?
-
-Why would you use static typing? Most of the time, it's for performance reasons. As explained in the [low level javascript](https://www.section.io/engineering-education/low-level-javascript/) article, there is a performance benefit to letting the compiler know what type the value is, without having to check it.
+Why would you use static typing? Most of the time, it's for performance reasons. As explained in the [low level javascript](/engineering-education/low-level-javascript/) article, there is a performance benefit to letting the compiler know what type the value is, without having to check it.
 
 This isn't the reason to use TypeScript though. Alas, TypeScript doesn't take advantage of this. The real benefit to using TypeScript is to prevent certain glitches.
 
 There's one famous example of JavaScript being weird. If a program inputs a number, and the user inputs a string, you might try to do some arithmetic on it.
 
-```javascript
+```JavaScript
 // userInput = "2"
 console.log(userInput + 2);
 ```
@@ -58,13 +55,13 @@ If you use JavaScript, you're likely to not know what the type for some object i
 
 ```javascript
 class ExampleClass {
-    
+
     private value;
-    
+
     constructor(value) {
         this.value = value;
     }
-    
+
     getNumber() {
         return this.value;
     }
@@ -80,11 +77,11 @@ TypeScript knows better. It will give you a compiler error. That means you'll kn
 class ExampleClass {
 
     private value: number;
-    
+
     constructor(value: number) {
         this.value = value;
     }
-    
+
     getNumber(): number {
         return this.value;
     }
