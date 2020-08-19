@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/steganography-in-python/
 title: Steganography - An Experiment in Python
-description: This is an example of an article on steganography and a simple application using python. I request the review team to kindly give feedback on the same.
+description: This is an example of an article on steganography and a simple application using python. By embedding a hidden message or file in an image, the number of pixels can be changed.
 author: lalithnarayan-c
 date: 2020-08-19T00:00:00-07:00
 topics: []
