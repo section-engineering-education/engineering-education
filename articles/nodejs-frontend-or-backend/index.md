@@ -14,15 +14,15 @@ images:
   - url: /engineering-education/engineering-education/nodejs-frontend-or-backend/hero.jpg
     alt: front end and backend with Node.js
 ---
-Let us start by understanding what Node.js is. Node.js is a runtime environment for executing server-side code with higher efficiency and it presents a larger bandwidth to handle large code payloads.
+Let us start by understanding what Node.js is. Node.js is a runtime environment for executing server-side code with higher efficiency and it presents a larger bandwidth to handle large code payloads. The objective of this article is as follows-
 <!--more-->
 
 1. Understand and clarify any doubt of whether Node.js is frontend or backend application
 2. List out various applications in both frontend and backend
 3. Understand how Node.js complements other technologies in the frontend and backend
 
-The choice of the language that Ryan Dahl, the creator of Node.js, used was the most popular programming language at the time, JavaScript.
-Node.js increased the overall control developers had over applications. Developers could control the I/O calls like system calls, database calls, or network calls. Such an improvement resulted in higher performance, and it was rich with features for web applications. JavaScript is still the most preferred programming language across the world. StackOverlfow survey results prove the same. Node.js community benefits extensively from this feat that JavaScript has achieved.
+The choice of the language that Ryan Dahl, the creator of Node.js, opted for is the most popular programming language, JavaScript.
+Node.js increased the overall control developers had over applications. Developers exercise a greater level of control over system calls, database calls, and network calls. Hence, we achieve better performing and feature-rich web applications. JavaScript is still the most preferred programming language across the world. StackOverflow survey results prove the same. This feat achieved by JavaScript enables faster progress for all the libraries and frameworks associated with JS, including node.js. 
 
 ![](/engineering-education/engineering-education/nodejs-frontend-or-backend/stackoverflowresults.jpg)
 [Image Source](https://insights.stackoverflow.com/survey/2020)
