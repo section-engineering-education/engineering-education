@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: introduction-web-assembly-continued
+url: /engineering-education/introduction-web-assembly-continued/
 title: An Introduction to WebAssembly - Part 2
 description:   This article includes WebAssembly walk through the steps of building a react application the consumes a Wasm module.
 author: lucas-gompou

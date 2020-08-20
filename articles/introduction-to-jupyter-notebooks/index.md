@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: introduction-to-jupyter-notebooks
+url: /engineering-education/introduction-to-jupyter-notebooks/
 title: Introduction to Jupyter Notebooks
 description: The article explores the basics of Jupyter notebooks, why they are used, how to install, run, and use Jupyter notebooks for a wide array of tasks.
 author: adith-bharadwaj

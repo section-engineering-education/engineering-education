@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: how-to-submit-your-first-article
+url: /engineering-education/how-to-submit-your-first-article/
 title: How to Submit Your First Article Using GitHub Desktop and VS Code
 description: A blog for the "How-To Guides" category about how to submit your first article for Section's Engineering Education (EngEd) Program using GitHub Desktop and VS Code.
 author: aman-saxena

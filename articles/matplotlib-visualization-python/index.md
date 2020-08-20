@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: matplotlib-visualization-python
+url: /engineering-education/matplotlib-visualization-python/
 title: Exploring Matplotlib for Visualizations in Python
 description: Covering numpy, matplotlib - exploring matplotlib features for data visualization in python. We cover the various use cases and generate 2-D, 3-D plots and various charts for data analysis.
 author: lalithnarayan-c
