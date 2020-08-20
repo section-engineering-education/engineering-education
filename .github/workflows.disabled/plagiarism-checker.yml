@@ -2,90 +2,121 @@
 #
 # This job:
 #
-# - Detects if there are any new articles or updates to existing articles and grabs text from index.md file
+# - Is manually kicked off by EngEd administrator by adding 'plagiarism check' label to PR (to save on review limits in Unicheck plan)
+# - Converts index.md file to .pdf
 # - Calls out to the [Unicheck] API
-# - Compares content in article's index.md file with public domain
+#   - Get access token
+#   - Upload article .pdf
+#   - Start similarity check
+#   - Wait 2 minutes
+#   - Similarity check report export
 # - Displays plagiarism report as comment in PR
 #
-# Does this job require any secrets to successfully run? Examples:
+# This job requires several secrets to successfully run. Examples:
 #
 # | Secret name       | Description                                                                       | Example                                                 |
 # |-------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------|
 # | ACCESS_TOKEN      | Personal access token with permissions: repo, read:packages, write:packages, +SSO | 1b6c637ac9b58abe8be795077bc13145                        |
-# | WEBSITE_REPO      | Git repository for the full Section website, to build the articles inside         | https://github.com/section/example-website-repo         |                                                |
+# | WEBSITE_REPO      | Git repository for the full Section website, to build the articles inside         | https://github.com/section/example-website-repo         | 
+# | UNICHECK API KEY  | Client key                                                                        | xxxxxxxxxxxxxxxxxx                                    |
+# | UNICHECK API SECRET | Unicheck secret key                                                             | xxxxxxxxxxxxxxxxxxxxx                                   | 
 
 name: Plagiarism checker
-
+# Need to figure out how to manually trigger this workflow. (The idea of the below is to trigger when a particular label is added to the PR.)
 on:
   pull_request:
-    types: [ opened, synchronize, reopened ]
+    types: [ labeled ]
 
 jobs:
-  preflight:
-    name: 🤔 Plagiarism check needed?
+  convert_md:
+    name: Convert markdown to pdf
     runs-on: ubuntu-latest
-    outputs:
-      slug_matrix: ${{ steps.article_names.outputs.slug_matrix }}
     steps:
-    - name: 🛒 Checkout repo
-      uses: actions/checkout@v2
-
-    - name: 🔎 Identify file changes
-      id: file_changes
-      uses: trilom/file-changes-action@v1.2.3
+      # This checks out the latest version of the code to get a copy of all .md files. We need to figure out how to only get the index.md file within the PR that triggered this action.
+    - name: Checkout Code
+      uses: actions/checkout@v2.0.0
       with:
-        prNumber: ${{ github.event.pull_request.number }}
-
-    - name: 🕵️ Any articles?
-      id: any_articles
-      run: |
-        echo -n "::set-output name=count::"
-        jq --slurp '.[0] + .[1] | unique | map(select(. | test("^articles\/"))) | length' ~/files_added.json ~/files_modified.json
-
-    - name: 🚧 Stop if no article changes
-      if: steps.any_articles.outputs.count == 0
-      uses: andymckay/cancel-action@0.2
-
-    - name: 🕵️ Identify article names
-      id: article_names
-      run: |
-        echo -n "::set-output name=slug_matrix::"
-        jq --slurp --compact-output '.[0] + .[1] | unique | map(select(. | test("^articles\/"))) | unique | { include: . }' ~/files_added.json ~/files_modified.json
+        fetch-depth: 1
+    - name: Create .pdfs
+      uses: scottypate/md-to-pdf@v0.1.1
+      env: {
+        # Use this parameter to determine where the generated .pdf(s) will be stored.
+        PDF_DIR: './pdfs'
+      }
   
   plagiarismCheck:
     name: Check for plagiarism
+    needs: [ convert_md ]
     runs-on: ubuntu-latest
-    needs: [ preflight ]
     steps: 
-    - name: Schedule a check
-      id: schedule_check
+    - name: Get access token
+      id: access_token
       run: |
-        curl https://api.unicheck.com/similarity/checks \
-        -X POST \
-        --output $UPLOAD_RESPONSE_FILENAME \
-        --form data='{"auth":{"api_key": "${{ secrets.UNICHECK_API_KEY }}", "api_secret": "${{ secrets.UNICHECK_API_SECRET }}"}, "wait":true, "lossy":true}' \
-        
+        curl -X POST \
+        https://api.unicheck.com/oauth/access-token \
+          -H 'Content-Type: application/x-www-form-urlencoded' \
+          -d 'grant_type=client_credentials&client_id={{ UNICHECK API KEY }}&client_secret={{ UNICHECK API SECRET }}'
+# Need to store access token provided in response for use in subsequent steps
+    
+    - name: Upload article
+      id: upload_article
+      run: |
+        curl -X POST \
+        "https://api.unicheck.com/files" \
+        -H "Accept: application/vnd.api+json" \
+        -H "Authorization: Bearer {{ access_token }}" \
+        -H "Content-Type: multipart/form-data" -F "file=@{{ path-to-file.pdf }}"
+# Need to store file_id provided in response for use in subsequent step
 
-    - name: Poll status and return results
-      id: status_results
-      run: "https://api.unicheck.com/similarity/checks/{similarity_check_id}"
+    - name: Start similarity check
+      id: start_check
+      run: |
+        curl -X POST \
+        "https://api.unicheck.com/similarity/checks" \
+        -H "Accept: application/vnd.api+json" \
+        -H "Authorization: Bearer {{ access_token }}" \
+        -H "Content-Type: application/vnd.api+json" \
+        -d "{ \"data\": { \"type\": \"similarityCheck\", \"attributes\": { \"search_types\": { \"web\":true, \"library\": false }, \"parameters\": { \"sensitivity\": { \"percentage\": 0, \"words_count\": 8 } } } }, \"relationships\": { \"file\": { \"data\": { \"id\": \"{{ file_id }}\", \"type\": \"file\" } } }}"
+# Need to store similarity_check_id provided in response for use in subsequent steps
       
+    - name: Delay 2 minutes
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '120s'
 
+    - name: Get report
+      id: get_report
+      run: |
+        curl -X POST \
+        https://api.unicheck.com/similarity/checks/{{ similarity_check_id }}/report/export \
+        -H 'Accept: application/vnd.api+json' \
+        -H 'Authorization: Bearer {{ access_token }}' \
+        -H 'Content-Type: application/vnd.api+json' \
+        -d '{
+          "data": {
+          "type" :"similarity-check-report-export",
+          "attributes":{
+            "format" :"pdf",
+            "locale_code" :"EN"
+              }
+            }
+          }'
+# Need to store id provided in response for use in next step
+
+    - name: Output report
+      id: output_report
+      run: |
+        curl -X GET \
+        https://api.unicheck.com/similarity/checks/{{ similarity_check_id }}/report/export/{{ id }}
+        --output ${{ id }}.pdf
+# Attempting to store the outputed file for next step
 
   report:
     name: 📸 Display report
-    needs: [ preflight, plagiarismCheck ]
+    needs: [ convert_md, plagiarismCheck ]
     runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{ fromJSON(needs.preflight.outputs.slug_matrix) }}
-    services:
-      website:
-        image: registry.hub.docker.com/auxesis/section-gh-action-www.section.io:latest
-        ports:
-          - 1313:1313
     steps:
-
-
+# Reused/manipulated snippet from screenshot-new-articles action to upload the pdf as a comment to the PR
     - name: 🗣 Post comment
       uses: actions/github-script@v2
       with:
@@ -94,6 +125,6 @@ jobs:
             issue_number: context.payload.pull_request.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: "Here's a screenshot of the article (/engineering-education/${{ matrix.article_slug }}/):\n\n![screenshot](${{ steps.upload-screenshot.outputs.img_url }})"
+            body: "Here's your plagiarism check report (/engineering-education/${{ matrix.article_slug }}/):\n\n![plagiarism-check](${{ steps.output_report.outputs.${{ id }}.pdf }})"
           }
           github.issues.createComment(args)
