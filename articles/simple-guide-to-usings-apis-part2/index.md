@@ -1,10 +1,10 @@
 # Getting to Grips with APIs: Authentication
 
-You've worked with the Goodreads API to create a full-stack Node.js web app that will search the Goodreads database for a book query and return a list of relevant matches. If you haven't, read [part 1](link to part 1). 
+You've worked with the Goodreads API to create a full-stack Node.js web app that will search the Goodreads database for a book query and return a list of relevant matches. If you haven't, read [part 1](/engineering-education/simple-guide-to-using-apis-nodejs). 
 
 That's a good start but what if you want to see books a user has already added? You'll need to find a way to authenticate users' Goodreads accounts with the Goodreads API so you can discover their user ID so the API knows which account made the request.
 
-[oAuth](link to a Section article discussing this) is the main authentication standard for APIs. We will be using oAuth 1 because that's the only version the Goodreads API supports but it's recommend to use oAuth 2 wherever possible. Similar to [Part 1](link to Part 1), `goodreads-api-node-wrapper` will make the process easier.
+[oAuth](link to a Section article discussing this) is the main authentication standard for APIs. We will be using oAuth 1 because that's the only version the Goodreads API supports but it's recommend to use oAuth 2 wherever possible. Similar to [Part 1](/engineering-education/simple-guide-to-using-apis-nodejs), `goodreads-api-node-wrapper` will make the process easier.
 
 ## Authenticating with the Goodreads API
 
@@ -211,7 +211,7 @@ As before, go to `https://localhost:8080/authenticate` and login to your Goodrea
   owned_books: { owned_book: [ [Object], [Object] ] }
 }
 ```
-You can see that we need to amend our request to `result.owned_books.owned_book`. We also want to display the titles of owned books to the user on a new page and link (when clicked) to the book pages we created in [part 1](link to Part 1). Change the route according like so:
+You can see that we need to amend our request to `result.owned_books.owned_book`. We also want to display the titles of owned books to the user on a new page and link (when clicked) to the book pages we created in [part 1](/engineering-education/simple-guide-to-using-apis-nodejs). Change the route according like so:
 
 ```js
 // Owned Books Route
@@ -257,12 +257,12 @@ In the `views/pages` folder, create an new file called `owned-books.ejs`. In the
 </html>
 
 ```
-Finally, we should test to make sure it works. Go to `https://localhost:8080/authenticate` to login and then go to `https://localhost:8080/owned-books`. You should now see only the books you're marked as owned in your Goodreads account. Clicking on a book title should you take you to a book page exactly the same as the book search in [part 1](link to part 1).
+Finally, we should test to make sure it works. Go to `https://localhost:8080/authenticate` to login and then go to `https://localhost:8080/owned-books`. You should now see only the books you're marked as owned in your Goodreads account. Clicking on a book title should you take you to a book page exactly the same as the book search in [part 1](/engineering-education/simple-guide-to-using-apis-nodejs).
 
 ## Next Steps
 
-Congratulations. You've authenticated with the Goodreads API and made your first authenticated request. Explore the [goodreads-api-node](link to Git repo) documentation to discover more ways to use the Goodreads API. 
+Congratulations. You've authenticated with the Goodreads API and made your first authenticated request. Explore the [goodreads-api-node](https://github.com/baahrens/goodreads-api-node) documentation to discover more ways to use the Goodreads API. 
 
-Looking for an example? Check out my [Library Trakr web app](https://github.com/louisefindlay23/library-trackr) where I'm aiming to solve the needs of bibliophiles who collect books in both print and ebook format.
+Looking for an example? Check out my [Library Trackr web app](https://github.com/louisefindlay23/library-trackr) where I'm aiming to solve the needs of bibliophiles who collect books in both print and ebook format.
 
-Need more ideas? Why not try to add books to a user's shelf or use different APIs like [Spotify](link to Spotify API docs) or [Unsplash](link to Unsplash API docs)?
+Need more ideas? Why not try to add books to a user's shelf or use different APIs like [Spotify](https://developer.spotify.com/documentation/web-api) or [Unsplash](https://unsplash.com/developers)?
