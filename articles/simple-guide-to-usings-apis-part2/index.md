@@ -2,7 +2,7 @@
 
 You've worked with the Goodreads API to create a full-stack Node.js web app that will search the Goodreads database for a book query and return a list of relevant matches. If you haven't, read [part 1](link to part 1). 
 
-That's a good start but what if you want to be able to add books to one of your users' shelves? You'll need to find a way to authenticate users' Goodreads accounts with the Goodreads API so you can discover their user ID so the API knows which account made the request.
+That's a good start but what if you want to see books a user has already added? You'll need to find a way to authenticate users' Goodreads accounts with the Goodreads API so you can discover their user ID so the API knows which account made the request.
 
 [oAuth](link to a Section article discussing this) is the main authentication standard for APIs. We will be using oAuth 1 because that's the only version the Goodreads API supports but it's recommend to use oAuth 2 wherever possible. Similar to [Part 1](link to Part 1), `goodreads-api-node-wrapper` will make the process easier.
 
@@ -121,7 +121,7 @@ From the response, we can see that the user id is `result.user.id` so replace th
 
 Congratulations. You've obtained the user ID of your first Goodreads user and have everything in place to make your first authenticated request: listing their shelves. 
 
-Goodreads users have different preferences for naming their shelves so it's important to find out what shelves they have before trying to add a book to one of them though to-read, currently-reading and read are three shelves that Goodreads creates by default for every user.
+Goodreads users have different preferences for naming their shelves so it's important to find out what shelves they have before trying to manipulate books on a shelf. `to-read`, `currently-reading` and `read` however, are three shelves that Goodreads creates by default for every user.
 
 Create a new route in `server.js` called `shelves` and add the following:
 
@@ -179,28 +179,90 @@ Run the app using `npm start` and go to `https://localhost:8080/authenticate`. O
 ```
 From this, we can tell that we want the `result.user_shelf` so like before, replace the `console.log(result)` with `var usershelf = result.user_shelf`.
 
-## Adding a Book to a User's Shelf
+## Returning A User's Owned Books
 
-Finally, we can proceed to adding a book to a user's shelf. For this example, we will use the default read shelf but make sure the shelf you want to add a book to exists by using the `gr.getUsersShelves()` function which we just did.
+Finally, we can proceed to get books the user has already added to Goodreads. For simplicity in this example, we will use owned books (a special category of books that isn't a shelf) but the principle is the same. If you want to manipulate books on a user's shelf, make sure the shelf already exists by using the `gr.getUsersShelves()` function which we just did.
 
-This is similar to when we generated dynamic book pages in [part 1](link to Part 1). In `book.ejs`, surround the `h3` tag in an `a` tag like so:
+Create a route called `owned-books` and add the following:
+
+```js
+// Owned Books Route
+app.get('/owned-books', function (req, res) {
+    var usersbooks = gr.getOwnedBooks({
+        userID: userid,
+        page: 1
+    });
+    usersbooks.then(function (result) {
+        console.log(result);
+    }).catch(function () {
+        console.log("Goodreads Get Owned Books Rejected");
+    });
+});
+```
+As before, go to `https://localhost:8080/authenticate` and login to your Goodreads account. Then go to your newly created route (`https://localhost:8080/owned-books`) and check the console for the result. The result should be:
+
+```js
+{
+  Request: {
+    authentication: 'true',
+    key: 'your api key here',
+    method: 'owned_books_user'
+  },
+  owned_books: { owned_book: [ [Object], [Object] ] }
+}
+```
+You can see that we need to amend our request to `result.owned_books.owned_book`. We also want to display the titles of owned books to the user on a new page and link (when clicked) to the book pages we created in [part 1](link to Part 1). Change the route according like so:
+
+```js
+// Owned Books Route
+app.get('/owned-books', function (req, res) {
+    var usersbooks = gr.getOwnedBooks({
+        userID: userid,
+        page: 1
+    });
+    usersbooks.then(function (result) {
+        var userbooklist = result.owned_books.owned_book;
+        res.render('pages/owned-books', {
+            userbooklist: userbooklist
+        });
+    }).catch(function () {
+        console.log("Goodreads Get Owned Books Rejected");
+    });
+});
+```
+In the `views/pages` folder, create an new file called `owned-books.ejs`. In the new file, add:
 
 ```html
-<a id="<%= bookdetails.id %>" href="/book/add">
-  <h3><%= bookdetails.title %></h3>
-</a>
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+    <main>
+        <h2>Your Owned Books</h2>
+          <% for(var i=0; i < userbooklist.length; i++) { %>
+            <a id="<%= userbooklist[i].book.id._ %>" href="/book">
+                <p><%= userbooklist[i].book.title %></p>
+            <% } %>
+            </a>
+    </main>
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+</html>
+
 ```
-This creates a link to`/book/add` (a route we will just go on to create) and appends the id of the book that the user is viewing.
+Finally, we should test to make sure it works. Go to `https://localhost:8080/authenticate` to login and then go to `https://localhost:8080/owned-books`. You should now see only the books you're marked as owned in your Goodreads account. Clicking on a book title should you take you to a book page exactly the same as the book search in [part 1](link to part 1).
 
 ## Next Steps
 
-* * *
-Building on Part 1, we will use the Goodreads API to authenticate (oAuth 1) with a user's GoodReads account so they can return their own book data such as their shelves and books they've added.
+Congratulations. You've authenticated with the Goodreads API and made your first authenticated request. Explore the [goodreads-api-node](link to Git repo) documentation to discover more ways to use the Goodreads API. 
 
-Be able to use oAuth 1 authentication with the Goodreads API in order to make authenticated requests
+Looking for an example? Check out my [Library Trakr web app](https://github.com/louisefindlay23/library-trackr) where I'm aiming to solve the needs of bibliophiles who collect books in both print and ebook format.
 
-Be able to use callback URLs so the user will be redirected back to their web app after signing in to GoodReads
-
-Be able to store the current user's Goodreads ID so they can make authenticated requests on their behalf
-
-Make authenticated Goodreads API requests for information such as a user's shelves or books
+Need more ideas? Why not try to add books to a user's shelf or use different APIs like [Spotify](link to Spotify API docs) or [Unsplash](link to Unsplash API docs)?
