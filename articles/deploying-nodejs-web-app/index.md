@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/deploying-nodejs-web-app/
 title: Deploying Your First Node.js Web App
-description: 
+description: This guide will walk you through how to deploy a Node.js web app to DigitalOcean.
 author: louise-findlay
 date: 2020-07-15T00:00:00-10:00
 topics: [Node.js]
