@@ -77,3 +77,4 @@ Both languages are designed to suit the developer's needs and are the most used 
 Both languages are said to be the hottest up-and-coming developments of the mobile application industry.
 
 There is no ultimate winner between both languages. But, it depends on the needs and skills of the programmer. Sometimes the advantages of any framework best suit developers' needs. But, those advantages can be useless for other developers if they lack the skills.
+
