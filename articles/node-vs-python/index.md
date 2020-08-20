@@ -30,7 +30,7 @@ JavaScript and Python are two of the most popular languages among web developers
 Node.js is a server-side JavaScript runtime. JavaScript was originally designed to run within a browser, inside a JavaScript engine like V8. To expand the capabilities of JavaScript outside the browser, Node.js was developed in **2009** by **Ryan Dahl**. Node.js combined the capabilities of the V8 JavaScript engine, an event loop and low level calls into a robust server-side scripting runtime. It soon grew into the preferred language of web developers.
 
 #### Python
-Python is a multi-paradigm, scripting language conceived by **Guido van Rossum** in the late 1980s. Python is extremely easy to read, straightforward and simple to learn. It was built with simplicity in mind. It thus uses **indentation** to define scope of loops and functions. Python is extensively used as a server-side language. Frameworks like **Django** and **Flask** make it simple to design performant websites. It is also used to create APIs and Machine Learning models. Python, combined with the package manager **pip** make it perfect for projects.
+Python is a multi-paradigm, scripting language conceived by **Guido van Rossum** in the late 1980s. Python is extremely easy to read, straightforward and simple to learn. It was built with simplicity in mind. It thus uses **indentation** to define the scope of loops and functions. Python is extensively used as a server-side language. Frameworks like **Django** and **Flask** make it simple to design performant websites. It is also used to create APIs and Machine Learning models. Python, combined with the package manager **pip** makes it perfect for projects.
 
 ### Node.js vs Python: The Differences
 - [Performance and Architecture](#performance-and-architecture)
@@ -78,7 +78,7 @@ Due to the event loop architecture of Node.js, it is used for websites that invo
 
 #### Frameworks and Expandability
 
-A framework is a library of functions. It contains tools that makes the development, testing and design of the web project quicker and more efficient.
+A framework is a library of functions. It contains tools that make the development, testing and design of the web project quicker and more efficient.
 
 Python uses an interpreter called CPython that improves the performance of Python. There are many frameworks and libraries for full stack development.
 - [Django](https://www.djangoproject.com/) - A python web framework based on the Model-View-Controller Architecture
