@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/what-it-takes-to-be-a-devops-engineer/
 title: What it Takes to be a DevOps Engineer
-description: DevOps is a practice that aims to minimize the time taken for the software development life cycle to complete.
+description: DevOps is a field that is growing and will continue to grow, thus making DevOps engineering jobs in high demand. 
 author: judy-nduati
 date: 2020-08-19T00:00:00-15:00
 topics: []
