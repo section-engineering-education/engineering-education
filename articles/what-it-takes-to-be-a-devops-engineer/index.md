@@ -4,20 +4,20 @@ status: publish
 published: true
 url: /engineering-education/what-it-takes-to-be-a-devops-engineer/
 title: What it Takes to be a DevOps Engineer
-description: DevOps is a field that is growing and will continue to grow, and thus making DevOps engineering jobs in high demand.
+description: DevOps is a field that is growing and will continue to grow and thus making DevOps engineering jobs in high demand.
 author: judy-nduati
-date: 2020-08-20T00:00:00-11:00
+date: 2020-08-20T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/iot-and-cloud-computing-security-threats/hero.jpg
+  - url: /engineering-education/what-it-takes-to-be-a-devops-engineer/hero.jpg
     alt: DevOps example image developers
 
 ---
-The software development life cycle involves many steps and a lot of time is involved in creating and putting together the product. DevOps is a practice that aims to minimize the time taken for the software development life cycle to be complete.
+The software development life cycle (SDLC) involves many steps and a lot of time is involved in creating and putting together the product. DevOps is a practice that aims to minimize the time taken for the software development life cycle to be complete.
 
-DevOps is a collaboration between the development and the operations team, which enables a continuous delivery of applications and services. Many organizations are now moving to  [DevOps](https://www.techrepublic.com/article/how-to-become-a-devops-engineer-a-cheat-sheet/), thus making DevOps engineering jobs higher in demand. DevOps is a field that is growing and that will continue to grow.
+DevOps is a collaboration between the development and the operations team, which enables a continuous delivery of applications and services. Many organizations are now moving to [DevOps](https://www.techrepublic.com/article/how-to-become-a-devops-engineer-a-cheat-sheet/), thus making DevOps engineering jobs higher in demand. DevOps is a field that is growing and that will continue to grow.
 <!--more-->
 
 ### Introduction
@@ -26,7 +26,7 @@ The development team creates the product, while the operations team manages and 
 This article aims to help those interested in DevOps engineering careers. It gives a complete roadmap and sets a path of what it takes to be a successful DevOps engineer.
 
 #### Who is a DevOps Engineer?
-A DevOps engineer is an IT person who understands the software development lifecycle (SDLC) and has a deep understanding of the various automation tools for developing [digital pipelines](https://www.edureka.co/blog/devops-engineer-role) (Continuous Integration and Continuous Deployment, CI/CD pipelines).
+A DevOps engineer is an IT person who understands the software development lifecycle and has a deep understanding of the various automation tools for developing [digital pipelines](https://www.edureka.co/blog/devops-engineer-role) (Continuous Integration and Continuous Deployment, CI/CD pipelines).
 DevOps engineers needs to understand the whole purpose of the SDLC because it has moved from the waterfall model to the agile model and finally to the DevOps lifecycle. They need to know the shortcomings of the previous models. While also, knowing how to use the automation tools needed for developing continuous integration and continuous deployment pipelines.
 
 A DevOps engineer understands all CI/CD pipelines phases from planning to the monitoring of the product. At the planning phase, an algorithm of the product being created is written. The second stage is building the product, where the algorithm is transformed into code and to a usable product.
