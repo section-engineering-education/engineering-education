@@ -14,6 +14,19 @@ Node.js APIs can get complex and writing how to handle a single request can get 
 
 ![flow with express](express.png)
 
-## Advantages of using Express wiht Node
+### Advantages of using Express with Node
+
+- Using Express lets you abstract away a lot of Node's complexities and adding helpful functions to Node's HTTP server. 
+- Instead of a large request handler function, Express allows us to handle requests by writing many small modular and maintainable functions. 
+- Express is not *opinionated*, meaning Express does not enforce any "right way" of doing things. You can use any compatible middleware, structure app as you wish and so on, it is flexible. 
+- We can integrate with [view rendering engine](https://www.digitalocean.com/community/tutorials/nodejs-express-template-engines) of our choice like Jade, Pug, EJS, etc. A template engine enables you to use static template files and at runtime change the values of variables in those files. 
+- Set up ["middleware"](https://expressjs.com/en/guide/using-middleware.html) for request processing. 
+
+### Basic Express App
+
+Insta
 
 
+
+### Conclusion 
+The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes and make more descisions about your applications infrastrucutre. 
