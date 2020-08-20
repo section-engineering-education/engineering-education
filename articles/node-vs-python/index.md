@@ -13,14 +13,14 @@ images:
   - url: /engineering-education/node-vs-python/hero.jpg
     alt: node.js vs Python
 ---
-JavaScript and Python are the most popular languages among web developers. The idea of separating the front-end from the back-end as much as possible has birthed the idea of the JAMStack. JAMStack stands for **JavaScript, APIs and Markup**. It describes the idea of a website being completely static and client-side rendered. The website uses API calls to load all dynamic content. Let us look at the two most popular languages for writing APIs, Node and Python to compare and contrast the two.
+JavaScript and Python are two of the most popular languages among web developers. The idea of separating the front-end from the back-end as much as possible has birthed the idea of the JAMStack. JAMStack stands for **JavaScript, APIs and Markup**. It describes the idea of a website being completely static and client-side rendered. The website uses API calls to load all dynamic content. Let us look at the two most popular languages for writing APIs, Node.js and Python to compare and contrast the two.
 <!--more-->
 
 ### Table of Contents
 
 - [The History](#the-history)
-- [Node vs Python: The Differences](#node-vs-python:-the-differences)
-- [APIs in Node](#apis-in-node)
+- [Node.js vs Python: The Differences](#node.js-vs-python:-the-differences)
+- [APIs in Node.js](#apis-in-node.js)
 - [APIs in Python](#apis-in-python)
 - [Further Reading](#further-reading)
 
@@ -44,7 +44,7 @@ Python and Node.js are interpreted languages. Therefore, they are comparatively 
 
 Python is a single threaded and single flowing language. Though it is optimized by frameworks such as Django, it is slow. Python runs well on servers, but is quite unsuitable for mobile. The limit in processing power is a bottleneck to Python's performance.
 
-Node.js has the upper hand here. Node.js is heavily optimized by Google's V8 JavaScript Engine, making it performant. Node.js follows an event loop based architecture, which makes it non-blocking. Asynchronous requests can be handled. This means that the runtime can execute multiple requests without getting blocked.
+Node.js has the upper hand here. Node.js is heavily optimized by Google's V8 JavaScript Engine, making it performant. Node.js follows an event loop based architecture, which makes it non-blocking. Asynchronous requests are supported and this means that the runtime can execute multiple requests without getting blocked.
 
 #### Syntax and Ease of Use
 Python has extremely readable syntax. This makes it the preferred programming language for beginners to work on. It omits the use of curly braces and uses indentation to define scope.
@@ -54,17 +54,32 @@ Node.js follows the JavaScript syntax, which is harder to understand than Python
 #### Type of Projects
 Both Python and Node.js are used for web development and full-stack projects.
 
+##### Example of Python Websites
+
+- Instagram
+- Netflix
+- Reddit
+
+##### Example of Node.js Websites
+
+- LinkedIn
+- PayPal
+- Medium.com
+
 Python is heavily used as a part of Data Science and Machine Learning projects. It has libraries like numpy, pandas, scikit, opencv and tensorflow that make it perfect for:
 
 - Neural Networks
 - Face Recognition
 - Data Processing
 
-Python is also preferred for small, lightweight websites. Flask, the micro-framework and Jinja, the templating engine is used by web developers.
+Python is also preferred for small, lightweight websites. Parts of Airbnb and Lyft are written in Flask. It is a micro-framework. The templating engine, Jinja is also written in Python.
 
-Due to the event loop architecture of Node.js, it is used for websites that involve a lot of concurrent processes. It is also suitable for Internet of Things solutions and projects.
+Due to the event loop architecture of Node.js, it is used for websites that involve a lot of concurrent processes. For instance, a chat website has a lot of real-time communicaton involves multiple requests being sent and received. It is also suitable for Internet of Things solutions and projects.
 
 #### Frameworks and Expandability
+
+A framework is a libary of functions. It contains tools that makes the development, testing and design of the web project quicker and more efficient.
+
 Python uses an interpreter called CPython that improves the performance of Python. There are many frameworks and libraries for full stack development.
 - [Django](https://www.djangoproject.com/) - A python web framework based on the Model-View-Controller Architecture
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) - A python micro-framework for web development
@@ -76,6 +91,9 @@ Node.js has a ton of libraries that make it extensible, scalable and feature-ric
 - [Koa](https://koajs.com/) - Robust Foundation for Web Applications.
 
 #### Package Management
+
+A package manager is a software that manages versions, packages and dependencies for your project. Some examples of package managers are npm, yarn, pip and composer. When a project grows in scale a package manager helps to manage dependencies. It works perfectly across versions and even in collaborative projects. It cuts costs by reducing dependency problems across developer teams.
+
 Python uses a package manager called `pip`. It is extremely easy to use and has a ton of community-published packages. These packages can be found at the [Python Package Index](https://pypi.org/).
 
 It uses a file called **requirements.txt** to keep track of packages in a project.
@@ -98,7 +116,11 @@ npm i <package-name>
 
 ### APIs in Node.js
 
+An API (Application Programming Interface) is an intermediary that allows our application to communicate with another application. With the increasing popularity of serverless applications, knowing how to build an API is essential for a developer.
+
 Let us dive into creating an API in Node.js our API has an endpoint _/read_ which reads data from a table, _sample_ in a MySQL Database.
+
+MySQL is an open-source SQL database, that is maintained by Oracle. MySQL is popular with developers and is used in a lot of applications. For an introduction to MySQL, check out this [page](https://dev.mysql.com/doc/refman/8.0/en/tutorial.html).
 
 ```js
 /* Importing Libraries */
@@ -127,6 +149,8 @@ const connection = mysql.createConnection({
 });
 
 /* Initialize MySQL Connection */
+/* These lines of code initialize a connection to a MySQL database, 
+on a localhost or a remote server */
 
 connection.connect((err) => {
   if (err) throw err;
@@ -136,8 +160,9 @@ connection.connect((err) => {
 /* Define API Endpoint */
 
 app.get("/read", (req, res) => {
-  connection.query("SELECT * FROM sample", (err, res, fields) => {
-    if (err) throw err;
+  connection.query("SELECT * FROM sample", (err, res, fields) => { 
+    /* The above SQL query selects all records from the 'sample' table */
+    if (err) throw err; // If there's a connection error, the server will throw an error message
     console.log(res);
   });
 });
@@ -148,25 +173,34 @@ In the snippet above, we initialize a MySQL connection using the Node.js MySQL l
 ### APIs in Python
 Let us build a similar API that reads a database (SQLAlchemy) using Python.
 
+SQLAlchemy is a SQL database toolkit written in Python. It can be used to connect to SQL Engines like SQLite, PostgreSQL, MySQL and more. You can read more about SQLAlchemy [here](https://www.sqlalchemy.org/library.html#tutorials). 
+
 ```python
+# Importing libraries
 from flask import Flask, request
 from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from flask.ext.jsonpify import jsonify
 from json import dumps
 
+# Initialize the database using the MySQL engine 
 db = create_engine('mysql://username:password@host/database')
+
+# Initialize the flask web server
 app = Flask(__name__)
 api = Api(app)
 
+# Main class
 class Read(Resource):
     def get(self):
         conn = db.connect() # Connect to Database
         query = conn.execute("select * from sample") # Query and return json result
         return jsonify(query)
 
+# API Endpoint
 api.add_resource(Read, '/read')
 
+# Web server runs on port 5002
 if __name__ == '__main__':
      app.run(port='5002')
 ```
