@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/python-frameworks/
 title: A look at Python web development frameworks
-description: What a web framework is, types of frameworks, 5 most used frameworks, installation, and a minimal app in each. Which Python web framework is the best fit.
+description: What is a web framework, types of frameworks, 5 most used frameworks, installation, and a minimal app in each. Which Python web framework is the best fit.
 author: geoffrey-mungai
 date: 2020-08-21T00:00:00-10:00
 topics: []
