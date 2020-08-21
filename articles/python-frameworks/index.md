@@ -63,7 +63,7 @@ Virtual here is the name of the virtual environment.
 **Install Django**
 
 ```
-$ pip install Django
+$ pip3 install Django
 ```
 
 This will install the latest Django version available. You can give it any name you'd like.
@@ -102,7 +102,7 @@ Flask is recommended to be used with Python3.5 or newer.
 Create a project folder, create and initialize a virtual environment. Look at the how to make one in the Django section. After activation, run:
 
 ```
-$ pip install Flask
+$ pip3 install Flask
 ```
 
 **A minimal application**
@@ -122,7 +122,7 @@ if __name__ == '__main__':
 Then run the app.
 
 ```
-$ python app.py
+$ python3 app.py
 ```
 
 The app can be accessed using a browser on http://127.0.0.1:5000.
@@ -143,7 +143,7 @@ Tornado is a full-stack Python web framework and asynchronous networking library
 After creating and activating a virtual environment, run:
 
 ```
-$ pip install tornado
+$ pip3 install tornado
 ```
 
 **A minimal tornado app**
@@ -171,7 +171,7 @@ if __name__ == "__main__":
 Run the app by executing the command:
 
 ```
-$ python app.py
+$ python3 app.py
 ```
 
 The app is accessible from the browser on http://127.0.0.1:8008.
@@ -194,7 +194,7 @@ Sanic is an open-source asynchronous web framework for building fast web apps. I
 After creating and activating a virtual environment, run:
 
 ```
-$ pip install sanic
+$ pip3 install sanic
 ```
 
 **Minimal sanic app**
@@ -238,7 +238,7 @@ Bottle is a fast and simple micro-framework for building small web applications.
 After creating and activating a virtual environment, run:
 
 ```
-$ pip install bottle
+$ pip3 install bottle
 ```
 
 **A minimal Bottle app**
@@ -258,7 +258,7 @@ run(host='localhost', port=2000, debug=True)
 Run the app by executing:
 
 ```
-$ python app.py
+$ python3 app.py
 ```
 
 The app is accessible from the browser on http://127.0.0.1:2000.
