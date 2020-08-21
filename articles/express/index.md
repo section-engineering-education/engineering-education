@@ -35,14 +35,26 @@ Lets create a basic Express example app.
 var express = require("express");
 var app = express();
 
+//2
 app.get("/", function(req, res){
-  res.send("HEllO WORLD");
+  res.send("HELLO WORLD");
   });
-  
+
+//3
 app.listen(3000, function(){
   console.log("Application started and Listening on port 3000");
   });
 ```
+
+The above code creates a basic express application. To run this script, go to your command prompt and enter the command `node app.js` in the project directory. Lets look at what the above code does. 
+
+The first line imports the express module. The second line creates an Express application, by calling the top level `express()` function. Our `app` variable (express application) has methods for handling requests and configuring how the application behaves. We can create multiple apps this way, each with their own requests and responses. 
+
+The code under 2 `app.get()` is a function which tells express how to handle a HTTP `GET` request 
+
+
+
+
 
 ### Conclusion 
 The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes and make more descisions about your applications infrastrucutre. 
