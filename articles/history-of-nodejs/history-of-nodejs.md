@@ -6,18 +6,18 @@ url: /engineering-education/history-of-nodejs/
 title: The History of Node.js
 description: Node.js is a runtime server environment that uses JavaScript on the server side and asynchronous programming. It is a free and open source technology that runs on various platforms (Mac OS X, Unix, Windows, etc.)
 author: jethro-magaji
-date: 2020-08-17T00:00:00-08:00
-topics: []
+date: 2020-08-20T00:00:00-08:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/history-of-nodejs/hero.jpg
     alt:
 ---
-Today we are going to talk about a revolutionary technology that is being used to build great web apps, it is called  *Node.js*.
-You may have probably heard of it or worked with it(or have been curious about it in the past), either way you are welcome to join us as we further explore the History of Node.js in this article. We are going to talk about the history, some of the basics and a few use cases examples that use this revolutionary technology.
+Today we are going to talk about a revolutionary technology that is being used to build great web applications, it is called  *Node.js*.
+You may have probably heard of it or worked with it (or have been curious about it in the past), either way you are welcome to join us as we further explore the History of Node.js in this article. We are going to talk about the history, some of the basics, and a few use case examples that use this revolutionary technology.
 <!--more-->
-![Nodejs image](https://drive.google.com/uc?export=view&id=1ChxgpCW0JTXiGTeV15QnuVHv-byDCLuO)
+![Nodejs image](/engineering-education/history-of-nodejs/nodejs-use-cases-cover-image.png)
 [source](https://www.simform.com/nodejs-use-case/)
 
 ### What is Node.js?
@@ -27,24 +27,23 @@ You may have probably heard of it or worked with it(or have been curious about i
 Node.js is a runtime server environment that uses JavaScript on the server side and [asynchronous programming!](https://www.w3schools.com/nodejs/nodejs_intro.asp). It is a free and open source technology that runs on various platforms (Mac OS X, Unix, Windows, etc.)
 
 - **Node.js can:**
-    - create, open, read, write, delete, and close files on the server
-    - generate the dynamic page content
-    - collect form data
-    - add, delete, change data in your database
+    - Create, open, read, write, delete, and close files on the server
+    - Generate the dynamic page content
+    - Collect form data
+    - Add, delete, change data in your database
 
 - **Features**
     - Easy to learn
     - Fast
-    - No Buffering
+    - No buffering
     - Consistent source code
-    - Massive Library support
+    - Massive library support
 
 ### The Early Beginnings
 Believe it or not, Node.js is only twelve years old. In comparison, JavaScript is 26 years old and the Web is 32 years old.
-[In 2009, Ryan Dahl wrote Node.js about thirteen ago](https://en.wikipedia.org/wiki/Node.js).  At first Nodejs supported only Mac OS X and Mac OS X.Dahl led the development and maintenance and later it was  [sponsored by Joyent](https://en.wikipedia.org/wiki/Node.js). 
-The limited possibilities of the most popular web server  ["Apache HTTP Server"](https://en.wikipedia.org/wiki/Apache_HTTP_Server)   in 2009 was criticized by Dahl, because it had to handle a lot of connections concurrently (up to 10,000 and more) and when there was either a blocked code in the entire process or an implied multiple execution stacks in cases of simultaneous connections, this situation had to be resolved by creating code through [sequential programming](https://en.wikipedia.org/wiki/Sequential_algorithm). 
-[On 8 November 2009 at the inaugural European JSConf the project was demonstrated by Dahl](https://en.wikipedia.org/wiki/Node.js). Node.js is a combination the V8 JavaScript chrome engine, a low-level I/O API and an event loop. 
-
+In 2009, [Ryan Dahl wrote Node.js](https://en.wikipedia.org/wiki/Node.js).  At first Node.js supported only Mac OS X and Mac OS X. Dahl led the development and maintenance and later it was [sponsored by Joyent](https://en.wikipedia.org/wiki/Node.js).
+The limited possibilities of the most popular web server at the time ["Apache HTTP Server"](https://en.wikipedia.org/wiki/Apache_HTTP_Server) in 2009 was criticized by Dahl, because it had to handle a lot of connections concurrently (up to 10,000 and more) and when there was a blocked code in the entire process or an implied multiple execution stacks in cases of simultaneous connections, it would lead to issues, and this situation had to be resolved by creating code through [sequential programming](https://en.wikipedia.org/wiki/Sequential_algorithm).
+On November 8th 2009 at the inaugural European [JSConf the Node.js project was demonstrated by Dahl](https://en.wikipedia.org/wiki/Node.js). Node.js is a combination the V8 JavaScript chrome engine, a low-level I/O API and an event loop.
 
 ### The Evolution
 ![Nodejs image evolution](https://drive.google.com/uc?export=view&id=1e91n-R0-W4S6UOffTNTnBdqyJKNqzOXN)
@@ -57,47 +56,47 @@ Web frameworks has developed by the [Nodejs open-source community](https://nodej
 
 **The journey so far**
 
-* **In 2009**
-    * The begining of [Node.js](https://nodejs.dev/)
-    * [npm](https://www.npmjs.com/) was created
-* **In 2010**
-    * The begining of [Express](https://expressjs.com/) 
-    * The begining of socket.io 
+- **In 2009**
+    - The beginning of [Node.js](https://nodejs.dev/)
+    - [npm](https://www.npmjs.com/) was created
+- **In 2010**
+    - The beginning of [Express](https://expressjs.com/)
+    - The beginning of socket.io
 * **In 2011**
-    * version 1.0 of npm was released
-    * Companies Uber, LinkedIn, etc. started adopting Node.js
-    * The begining of [hapi](https://hapi.dev/) started
+    - version 1.0 of npm was released
+    - Companies Uber, LinkedIn, etc. started adopting Node.js
+    - The beginning of [hapi](https://hapi.dev/) started
 * **In 2012**
-    * Adoption continues and grew rapidly
+    - Adoption continues and grew rapidly
 * **In 2013**
-    * [Ghost](https://ghost.org/) was first big blogging platform to use Nodejs
-    * The begining of [Koa](https://koajs.com/) 
+    - [Ghost](https://ghost.org/) was first big blogging platform to use Nodejs
+    - The beginning of [Koa](https://koajs.com/)
 * **In 2014**
-    * [io.js](https://github.com/nodejs/iojs.org) became a major fork of Node.js "The Big Fork", with the purpose of introducing ES6 support and moving faster
+    - [io.js](https://github.com/nodejs/iojs.org) became a major fork of Node.js "The Big Fork", with the purpose of introducing ES6 support and moving faster
 * **In 2015**
-    * The Node.js Foundation began
-    * IO.js is merged back into Node.js
-    * npm introduces private modules
-    * Node.js 4 (versions 1, 2 and 3 never previously released)
+    - The Node.js Foundation began
+    - IO.js is merged back into Node.js
+    - npm introduces private modules
+    - Node.js 4 (versions 1, 2 and 3 never previously released)
 * **In 2016**
-    * The leftpad incident
-    * The begining of [Yarn](https://yarnpkg.com/) 
-    * The begining of Node.js 6
+    - The leftpad incident
+    - The beginning of [Yarn](https://yarnpkg.com/)
+    - The beginning of Node.js 6
 * **In 2017**
-    * [npm]((https://www.npmjs.com/)) focuses more on security
-    * The begining of Node.js 8
-    * HTTP/2
-    * [V8](https://v8.dev/) introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome
-    * Up to3 billion npm downloads every week
+    - [npm]((https://www.npmjs.com/)) focuses more on security
+    - The beginning of Node.js 8
+    - HTTP/2
+    - [V8](https://v8.dev/) introduces Node.js in its testing suite, officially making Node.js a target for the JS engine, in addition to Chrome
+    - Up to3 billion npm downloads every week
 * **In 2018**
-    * The begining of Node.js 10
-    * ES modules .mjs experimental support
+    - The beginning of Node.js 10
+    - ES modules .mjs experimental support
 * **In 2019**
-    * The begining of Node 12 - 13
-    * Work on [Deno](https://deno.land/) started to move server-side JS into the next decade with modern JavaScript support
+    - The beginning of Node 12 - 13
+    - Work on [Deno](https://deno.land/) started to move server-side JS into the next decade with modern JavaScript support
 * **In 2020**
-    * The begining of Node 14 - 15
-    * [GitHub](https://github.com/) (owned by Microsoft) acquired [NPM](https://www.npmjs.com/)
+    - The beginning of Node 14 - 15
+    - [GitHub](https://github.com/) (owned by Microsoft) acquired [NPM](https://www.npmjs.com/)
 
 ### Setting up Node.js 	
 ![Nodejs image setup](https://drive.google.com/uc?export=view&id=1zipo06_A5JDQiS3hfqO9TEiIjfwf5eua)
@@ -111,7 +110,7 @@ After you have downloaded and installed Node.js on your computer, now we can try
 Let's create our first Node.js file named _"firstfile.js"_, and add then the following code:
 
 > firstfile.js
-``` javascript
+``` JavaScript
 const http = require('http');
 
 const requestListener = function (req, res) {
@@ -123,34 +122,35 @@ const server = http.createServer(requestListener);
 server.listen(8080);
 ```
 
-The file is saved on your computer:   *C:\Users\YourName\firstfile.js*
+The file is saved on your computer: *C:\Users\YourName\firstfile.js*
 This code tells the computer to display "Hello World!" when anyone with a web browser tries to access your computer on port 8080.
 
 **Using Command Line Interface**
-[To be able to access Node.js files it must be initiated in the "Command Line Interface" program of your computer.](https://www.w3schools.com/nodejs/nodejs_get_started.asp)
-Depending on your operating system, opening the command line interface on your computer would vary. If your are a Windows users, click on the start button and look for "Command Prompt", or you can simply write "cmd" in the search field for quick search.
+To be able to access the Node.js files it must be initiated in the ["Command Line Interface" program of your computer.](https://www.w3schools.com/nodejs/nodejs_get_started.asp)
+Depending on your operating system, opening the command line interface on your computer would vary. If your are a Windows users, click on the start button and look for "Command Prompt", or you can simply write "cmd" in the search field for a quick search.
 
-After opening the 'cmd'go to the folder contains the file _"myfirstfile.js"_, the command line interface window should look something like this:
-> [C:\Users\YourName>](https://www.w3schools.com/nodejs/nodejs_get_started.asp)
+After opening the 'cmd' go to the folder containing the file _"myfirstfile.js"_, the command line interface window should look something like this:
+
+`[C:\Users\YourName>](https://www.w3schools.com/nodejs/nodejs_get_started.asp)`
 
 **Initiating Node.js File**
 Before any action can take place the file created must be initiated by Node.js
 To start your command line interface, type "node myfirstfile.js" and press enter key:
 
-> **_Initiating "firstfile.js":_**
-> C:\Users\YourName>node firstfile.js
+**_Initiating "firstfile.js":_**
+C:\Users\YourName>node firstfile.js
 
-Hurray ! your computer is now a server.
-Your computer is accessible on port 8080, "Hello World!" is  returned, if anyone tries to access it.
+Hurray! Your computer is now a server.
+Your computer is accessible on port 8080, "Hello World!" is returned, if anyone tries to access it.
 Open your internet browser, and type in: http://localhost:8080
 
 ### The Use Cases of Node.js
 The usage of Node.js is not only limited to building web applications, but also for implementing various kinds of services.
-  * Backends and servers
-  * Frontends
-  * Developing API
-  * Microservices
-  * Scripting and automation
+  - Backends and servers
+  - Frontends
+  - Developing API
+  - Microservices
+  - Scripting and automation
 
 Corporate users of Node.js software include GoDaddy, Groupon, IBM, LinkedIn, Microsoft, Netflix, PayPal, Rakuten, SAP, Voxer, Walmart, and Yahoo!.
 
