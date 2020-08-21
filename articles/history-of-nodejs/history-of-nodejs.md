@@ -41,7 +41,7 @@ Node.js is a runtime server environment that uses JavaScript on the server side 
 
 ### The Early Beginnings
 Believe it or not, Node.js is only twelve years old. In comparison, JavaScript is 26 years old and the Web is 32 years old.
-In 2009, [Ryan Dahl wrote Node.js](https://en.wikipedia.org/wiki/Node.js).  At first Node.js supported only Mac OS X and Mac OS X. Dahl led the development and maintenance and later it was [sponsored by Joyent](https://en.wikipedia.org/wiki/Node.js).
+In 2009, [Ryan Dahl wrote Node.js](https://en.wikipedia.org/wiki/Node.js).  At first Node.js supported only Mac OS X and Linux. Dahl led the development and maintenance and later it was [sponsored by Joyent](https://en.wikipedia.org/wiki/Node.js).
 The limited possibilities of the most popular web server at the time ["Apache HTTP Server"](https://en.wikipedia.org/wiki/Apache_HTTP_Server) in 2009 was criticized by Dahl, because it had to handle a lot of connections concurrently (up to 10,000 and more) and when there was a blocked code in the entire process or an implied multiple execution stacks in cases of simultaneous connections, it would lead to issues, and this situation had to be resolved by creating code through [sequential programming](https://en.wikipedia.org/wiki/Sequential_algorithm).
 On November 8th 2009 at the inaugural European [JSConf the Node.js project was demonstrated by Dahl](https://en.wikipedia.org/wiki/Node.js). Node.js is a combination the V8 JavaScript chrome engine, a low-level I/O API and an event loop.
 
