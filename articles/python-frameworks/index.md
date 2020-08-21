@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/python-frameworks/
-title: A look at Python web development frameworks.
+title: A look at Python web development frameworks
 description: What a web framework is, types of frameworks, 5 most used frameworks, installation, and a minimal app in each. Which Python web framework is the best fit.
 author: geoffrey-mungai
 date: 2020-08-21T00:00:00-10:00
@@ -16,7 +16,7 @@ images:
 ---
 Many people nowadays use web frameworks to develop web apps. Using frameworks is better than using raw Python. They automate many things like database connections and management, authorization, and URL routing.
 
-In this article we will be exploring what framework you should use? Which is the best framework? Should you even use a framework? We are going to be looking at this and more.
+In this article, we will be exploring what framework you should use? Which is the best framework? Should you even use a framework? We are going to be looking at this and more.
 <!--more-->
 
 ### What is a Python web framework?
@@ -270,7 +270,7 @@ The app is accessible from the browser on http://127.0.0.1:2000.
  - [TurboGears](https://turbogears.org/)
 
 ### Which Python web framework is the best?
-Each web framework has varying features, and come with their own pros and cons. Every developer has a unique coding style and inclination. The only way to tell the which is the best framework is by knowing what framework performs or works better in each circumstance. In essence, finding the best framework is close to impossible and depends on the use case and situation.
+Each web framework has varying features, and come with their own pros and cons. Every developer has a unique coding style and inclination. The only way to tell which is the best framework is by knowing what framework performs or works better in each circumstance. In essence, finding the best framework is close to impossible and depends on the use case and situation.
 
 ### Do I have to use a framework?
 The choice is yours. Whether to use one or not, depends on your experience and what you want to accomplish. For beginners, a framework can be a good choice. It will help you to understand development concepts like:
@@ -290,4 +290,4 @@ If you are an experienced developer, you can filter out frameworks that don't ma
  4. To help you learn, choose a project that you will work with throughout your learning process. Add functionalities and refine your code as your skills improve. **You can use that project as a future reference.**
 
 ### Conclusion
-There are many Python frameworks out there. The choice of using or not using one is fully dependent on you. Knowing what type of app you want to build, you can easily choose a framework. It's not a must that you use a framework. If you don't get one that covers your needs, feel free to build one. And please make it open source, it'll helps us all out a lot.
+There are many Python frameworks out there. The choice of using or not using one is fully dependent on you. Knowing what type of app you want to build, you can easily choose a framework. It's not a must that you use a framework. If you don't get one that covers your needs, feel free to build one. And please make it open source, it'll help us all out a lot.
