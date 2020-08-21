@@ -4,7 +4,7 @@ A community-generated pool of educational content which is useful for engineers 
 [ENROLL HERE](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 
 ### Program Purpose
-Section is partnering with local university computer science programs to create a community-generated pool of content which is useful for engineers of every (any) level.
+Section partners with university computer science programs across the globe to create a community-generated pool of content which is useful for engineers of every (any) level.
 
 Content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
 
