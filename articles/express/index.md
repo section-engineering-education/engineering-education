@@ -58,7 +58,11 @@ The second parameter, the callback function, has two arguments `req` and `res`. 
 
 The code under 3 starts a server on the port 3000. You can go to `localhost:3000` to view your response. 
 
+## Core Parts of Express
 
+### Middleware
+
+Middleware is a set of functions that sit between a raw request and the final intended route. Middleware functions have access to *all* the http requests coming to the server. Middleware can handle tasks such as logging, sending static files, authorization, session management, etc.  
 
 
 
