@@ -30,7 +30,7 @@ A linter is a computer program that analyzes and checks source code. It flags pr
 
 Linters are tools that perform **static code analysis** in software testing.
 
-Static Code Analysis is the analysis of computer software that is performed on static code. It is performed by looking at source code without running it. This process is usually done using a software or an automated tool. Static Code Analysis is done as a part of **Continuous Integration and Delivery**.
+Static Code Analysis is the analysis of computer software that is performed on static code. It is performed by looking at source code without running it. This process is usually done using a software or an automated tool. Static Code Analysis is done as a part of the programming phase in a typical software engineering workflow.
 
 Linters scan source code and flags code blocks that violates rules. These rules can be aesthetic styling rules, syntactic rules, etc... Linters provide options to define rules or import style guides through a config file.
 
