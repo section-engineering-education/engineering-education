@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/10-tips-working-with-nodejs/
+title: 10 Tips for Working with Node.js	
+description: Discover ten of the common tips you need to know from	
+getting started to deploying your first Node.js application.	
+author: kim-kimani	
+date: 2020-08-22T00:00:00-10:00	
+topics: [Node.js]	
+excerpt_separator: <!--more-->	
+images:		
+  - url: /engineering-education/10-tips-for-working-with-nodejs/hero.jpg	
+    alt: laptop node.js website
+---
 Node.js is a runtime environment for executing JavaScript runtime built
 on Crime's V8 JavaScript enginee.Node.js is one of the top hottest
 versatile open-source platforms for server scripting. It has a very
@@ -16,7 +32,7 @@ as they move along to build their First Node.js application.
 
 This article will cover some of the common tips you need to know from
 getting started to deploying the first Node application.
-
+<!--more-->
 1.  **Understand Node Package Manager (NPM)**
 
 This is package manager for JavaScript Node Platform that helps in
