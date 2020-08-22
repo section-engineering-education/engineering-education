@@ -21,7 +21,7 @@ You may have probably heard of it or worked with it (or have been curious about 
 [source](https://www.simform.com/nodejs-use-case/)
 
 ### What is Node.js?
-![Nodejs logo](https://drive.google.com/uc?export=view&id=13udtjL4Xz5YICREzII6hcHiv0xM8a_ds)
+![Nodejs logo](/engineering-education/history-of-nodejs/Nodejs logo.png)
 [source](https://www.w3schools.com/nodejs/nodejs_intro.asp)
 
 Node.js is a runtime server environment that uses JavaScript on the server side and [asynchronous programming!](https://www.w3schools.com/nodejs/nodejs_intro.asp). It is a free and open source technology that runs on various platforms (Mac OS X, Unix, Windows, etc.)
@@ -46,7 +46,7 @@ In 2009, [Ryan Dahl wrote Node.js](https://en.wikipedia.org/wiki/Node.js). At fi
 The limited possibilities of the most popular web server at the time ["Apache HTTP Server"](https://en.wikipedia.org/wiki/Apache_HTTP_Server) in 2009 was criticized by Dahl, because it had to handle a lot of connections concurrently (up to 10,000 and more) and when there was any blocked code in the entire process or an implied multiple execution stacks in cases of simultaneous connections, it would lead to issues, and this situation had to be resolved by creating code through [sequential programming](https://en.wikipedia.org/wiki/Sequential_algorithm). On November 8th 2009 at the inaugural European [JSConf the Node.js project was first demonstrated by Dahl](https://en.wikipedia.org/wiki/Node.js). Node.js is a combination the V8 JavaScript chrome engine, a low-level I/O API and an event loop.
 
 ### The Evolution
-![Nodejs image evolution](https://drive.google.com/uc?export=view&id=1e91n-R0-W4S6UOffTNTnBdqyJKNqzOXN)
+![Nodejs image evolution](/engineering-education/history-of-nodejs/node img 1.png)
 [source](https://nodejs.dev/learn/a-brief-history-of-nodejs)
 
 As many browsers competed to offer users the best performance, JavaScript engines also became considerably better. Major browsers worked hard on finding ways to make JavaScript run quicker and offer better support for it.
@@ -102,7 +102,7 @@ Web frameworks was developed by the [Nodejs open-source community](https://nodej
     - [GitHub](https://github.com/) (owned by Microsoft) acquired [NPM](https://www.npmjs.com/)
 
 ### Setting up Node.js 	
-![Nodejs image setup](https://drive.google.com/uc?export=view&id=1zipo06_A5JDQiS3hfqO9TEiIjfwf5eua)
+![Nodejs image setup](/engineering-education/history-of-nodejs/blogimage-nodejs.png)
 [source](https://www.w3schools.com/nodejs/nodejs_get_started.asp)
 
 **First of all download Node.js**
@@ -134,7 +134,7 @@ Depending on your operating system, opening the command line interface on your c
 
 After opening the 'cmd' go to the folder containing the file *"myfirstfile.js"*, the command line interface window should look something like this:
 
-`[C:\Users\YourName>](https://www.w3schools.com/nodejs/nodejs_get_started.asp)`
+`[C:\Users\YourName>]`
 
 **Initiating Node.js File**
 Before any action can take place, the file created must be initiated by Node.js
@@ -159,7 +159,7 @@ Corporate users of Node.js software include GoDaddy, Groupon, IBM, LinkedIn, Mic
 
 **Node.js use case Infographic**
 
-![Use cases image](https://drive.google.com/uc?export=view&id=1ozdLz3cdQkas1VttuwkXX4BkY3ehoxuJ)
+![Use cases image](/engineering-education/history-of-nodejs/Node.js-use-case-Inforgraphic.png)
 [source](https://www.simform.com/nodejs-use-case/)
 
 ### Additional Readings
