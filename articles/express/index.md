@@ -24,7 +24,7 @@ Node.js APIs can get complex and writing how to handle a single request can get 
 
 ### Basic Express App
 
-Install express via npm.
+Install express via npm
 
     npm install express --save
 
@@ -46,11 +46,17 @@ app.listen(3000, function(){
   });
 ```
 
-The above code creates a basic express application. To run this script, go to your command prompt and enter the command `node app.js` in the project directory. Lets look at what the above code does. 
+The above code creates a basic express application. To run this script, go to your command prompt and enter the command `node app.js` in the project directory. In the console we can see `Application started and Listening on port 3000` and if we visit `http://localhost:3000/` we can see `HELLO WORLD`. 
 
-The first line imports the express module. The second line creates an Express application, by calling the top level `express()` function. Our `app` variable (express application) has methods for handling requests and configuring how the application behaves. We can create multiple apps this way, each with their own requests and responses. 
+Lets look at what the above code does. 
 
-The code under 2 `app.get()` is a function which tells express how to handle a HTTP `GET` request 
+The first line imports the express module. The second line creates an Express application, by calling the top level `express()` function. Our `app` variable (express application) has methods for handling requests and configuring how the application behaves. We can create multiple apps this way, each with their own requests and responses.
+
+The code under 2 `app.get()` is a function ,called *route definition*, which tells express app how to handle a HTTP `GET` request to our server. This function takes 2 main parameters, the first is the route or path which is the relative path from the root of the server; the second is a function that is invoked whenever there is a request to that path. In this case we are listening for `GET` requests to `/` which is the root of the website. 
+
+The second parameter, the callback function, has two arguments `req` and `res`. `req` represents the **request** sent from the browser to the server. `res` represents the **response** that the server sends back. 
+
+The code under 3 starts a server on the port 3000. You can go to `localhost:3000` to view your response. 
 
 
 
