@@ -1,5 +1,4 @@
-# Bloom Filters: An Introduction to the Elegant Data Structure
-
+# Bloom Filters: An Introduction
 Bloom filters are a probabilistic data structure that uses the concept of hashing extensively. It was designed to solve the problem of finding an element in a set, keeping in mind high efficiency in terms of memory and time. In this article, we will be covering the basics of hashing, bloom filters, and the applications of this data structure. 
 
 ### Hashing
