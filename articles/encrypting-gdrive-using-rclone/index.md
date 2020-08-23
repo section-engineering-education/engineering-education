@@ -7,6 +7,10 @@ Key Takeaways: Readers will understand how to install Rclone, add a Google Drive
 
 Rclone is a command-line tool used on Linux operating systems in order to connect remotes (cloud storage providers) to the local filesystem. This tool is vital for remotes where Linux isn’t natively supported, and it also provides advanced functionality such as syncing which Google Drive doesn’t support for Linux. This work instruction will detail how to setup Rclone and configure a Google Drive remote.
 
+## Table of Contents
+
+(Insert Table of Contents - See FCC article)
+
 ## Installing Rclone
 
 Next, you will need to download Rclone. Using the command below, will automatically install the latest version of Rclone and the one that is correct for your distribution and architecture of your machine. (Craig-Wood, 2014)1
@@ -228,4 +232,61 @@ To view the unencrypted files, type rclone lsf (encrypted remote-name): and pres
 
 This tool is vital for remotes where Linux isn’t natively supported, and it also provides advanced functionality such as mounting which Google Drive doesn’t support for Linux. Mounting is a vital feature because it allows you to access your Google Drive files as if they were local ones. This is similar to Windows’ mapped network drives (Microsoft, n.d.)10 but superior because Linux doesn’t classify it as a network drive and prohibit as Windows does.
 
-### 
+### Creating the Rclone Mount
+
+You need to create a folder on the local filesystem to store your cloud files in. 
+
+Make sure to give the appropriate permissions so you can access the folder.
+
+Instruction
+
+Type mkdir (folder-name) and press enter.
+
+Then type chmod 755 (folder-name) and press enter.
+
+```bash
+mkdir gdrive
+chmod 755 gdrive
+```
+
+Now the mounted folder has been created, you can now start the mount command.
+
+The parameters used in the mount command are ones that work best for this particular setup. It’s best to experiment and try out different ones. For example, if you have gigabit upload speed, you might need to limit the maximum data transferred to prevent rate limiting (Google stops you transferring data if you do too much in one day.) (Craig-Wood, 2014)11
+
+Instruction
+
+Type:
+
+```bash
+rclone mount --dir-cache-time 96h --cache-info-age 100h --vfs-cache-mode writes --allow-other --log-level DEBUG --log-file /(folder-name)/rclone.log (remote-name): / /(local mount folder) and press enter.
+```
+
+### Testing the Rclone Mount
+
+Since the mount command is running, you need to open a new terminal window.
+
+Finally, the last step is to check it has worked. The process is the exact same as you would list files in a local folder.
+
+Instruction
+
+Type cd (path to the mounted folder) and press enter.
+
+Type ls and press enter.
+
+```bash
+cd gdrive
+ls
+```
+
+## Uninstalling Rclone
+
+If you no longer need Rclone, uninstalling it is just as easy as installing it. The process only takes two commands. 
+
+Type:
+
+```bash
+sudo rm /usr/bin/rclone
+
+sudo rm /usr/local/share/man/man1/rclone.1
+```
+
