@@ -118,3 +118,114 @@ If not, type n and press enter.
 Then, type y and then enter.
 
 To test, type q and then enter to exit the configuration editor. Finally, type rclone lsd (name of remote):
+
+## Uploading and Syncing Files to A Remote
+
+Syncing is a vital feature because it allows data to be accessed offline which is necessary if your data needs to be available at all times. This work instruction will show how to upload files to Google Drive using Rclone. It will also cover syncing since the commands are similar.
+
+### Copy/Move/Sync Files
+
+Now you just need to upload the files. Depending on whether you want to retain the files in the local filesystem, you can copy or move them using rclone copy (Craig-Wood, 2014)5 or rclone move. (Craig-Wood, 2014)6
+
+If you want to sync files from the cloud to your local filesystem, then use rclone sync (Craig-Wood, 2014)7 instead.
+
+The -v flag sets the logging level to verbose, so you know what’s going on. Optionally, you can move logging to a file using the –log-file flag with the parameter of a file location such as /opt/rclone.log. 
+
+The –progress flag lets you see the progress of the file transfer.
+The process is the exact same for uploading folders.
+
+Instruction
+
+Type rclone copy/move/sync (depending of which you want) -v –progress (location of the file you want to upload) (remote name):(folder you want the file to be uploaded to).
+
+`rclone copy -v --progress ~/folder/file.txt gdrive:test`
+
+Rclone starts to upload the files/folders you have chosen, and you can see the progress as shown in the image above or a log file has been created if you have specified so.
+
+### Check the Files Have Transferred
+
+You can check that the files have transfers either through viewing the log or listing the files in the remote.
+
+Instruction
+
+If you have set the logging to be output to a file. Type cat and the path to the log file e.g. cat /opt/rclone.log.
+
+To check that the files have uploaded in the remote. Type rclone lsf remotename:folder and press enter. (Craig-Wood, 2014)8
+
+`rclone lsf gdrive:test`
+
+## Encrypt Your Google Drive Remote with Rclone
+
+This work instruction will show how to encrypt your files using Rclone by setting up a folder with everything’s encrypted to securely store the files that need it while still being able to access your other files freely through the web interface.
+
+### Create A Crypt Remote
+
+To encrypt your files, you need to create another remote which will do the encryption process. There are different encryption settings you can choose from and this guide will implement the strongest available.  (Craig-Wood, 2014)9
+
+The remote to encrypt/decrypt should be the name of the remote you created in Work Instruction – Setting up Rclone and the path should be the name of the folder you want to store the encrypted files e.g. encrypted or secret. All your encrypted files will be stored there and can only be decrypted if you setup Rclone on the device with the same credentials.
+
+Instruction
+
+Type rclone config and press enter.
+
+Type n and press enter.
+
+Type a name for the remote and press enter. Common names are crypt or secret.
+
+Type the number for encrypt/decrypt a remote and press enter.
+
+The location should be the name of the remote you created in the Work Instruction – Setting up Rclone, followed by a colon and the name of the encrypted folder you want to create and then press enter.
+
+Type 1 and press enter.
+
+Type 1 and press enter.
+
+Type g and press enter.
+
+Type 1024 and press enter.
+
+Make sure to copy the password to a secure location otherwise you won’t be able to unencrypt your files on another device or if you delete Rclone.
+Type y and press enter.
+
+Similar to the process above, repeat the last four instructions.
+
+Type y and press enter.
+
+Finally, type q and press enter to exit the configurator.
+
+### Upload Files to the Crypt Remote
+
+Now that the crypt remote has been created, you need to upload some files to it.
+
+This is a similar process as Work Instruction – Upload/Move/Sync Files to Google Drive using Rclone.
+
+Instruction
+
+Type rclone copy (file-name) (encrypted-remote name): and press enter. 
+
+`rclone copy test.txt secret:`
+
+The specified file has been moved to the encrypted remote
+
+### Check Files Have Been Uploaded to the Encrypted Remote
+
+There are two ways to check if files have been uploaded to the encrypted remote. 
+You can use the normal gdrive remote and look into the encrypted folder which will show the encrypted version of the files.
+
+If you want to view the unencrypted files, then you would need to search the encrypted remote.
+
+This again is a similar process as Work Instruction – Upload/Move/Sync Files to Google Drive using Rclone.
+
+Instruction
+
+To view the encrypted files, type rclone lsf (remote-name):(remote-path) and press enter.
+
+To view the unencrypted files, type rclone lsf (encrypted remote-name): and press enter.
+
+`rclone lsf gdrive:secret`
+
+## Mount A Google Drive Folder Using Rclone
+
+This tool is vital for remotes where Linux isn’t natively supported, and it also provides advanced functionality such as mounting which Google Drive doesn’t support for Linux. Mounting is a vital feature because it allows you to access your Google Drive files as if they were local ones. This is similar to Windows’ mapped network drives (Microsoft, n.d.)10 but superior because Linux doesn’t classify it as a network drive and prohibit as Windows does.
+
+### 
