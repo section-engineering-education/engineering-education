@@ -108,19 +108,11 @@ To check that the files have uploaded in the remote. Use `rclone lsf remotename:
 
 ## Mount A Google Drive Folder Using Rclone
 
-This tool is vital for remotes where Linux isn’t natively supported, and it also provides advanced functionality such as mounting which Google Drive doesn’t support for Linux. Mounting is a vital feature because it allows you to access your Google Drive files as if they were local ones. This is similar to Windows’ mapped network drives (Microsoft, n.d.)10 but superior because Linux doesn’t classify it as a network drive and prohibit as Windows does.
+Another great Rclone feature is mounting remotes. Mounting a remote allows you to access your Google Drive files as if they were local ones. This is similar to [Windows’ mapped network drives]() but superior because Linux doesn’t classify it as a network drive like Windows does and thus limits functionality.
 
 ### Creating the Rclone Mount
 
-You need to create a folder on the local filesystem to store your cloud files in. 
-
-Make sure to give the appropriate permissions so you can access the folder.
-
-Instruction
-
-Type mkdir (folder-name) and press enter.
-
-Then type chmod 755 (folder-name) and press enter.
+First, we need to create a folder on the local filesystem to store your cloud files in. Make sure to give the appropriate permissions so you can access the folder. `mkdir` followed by the folder name will create the folder and `chmod 775` followed by the folder name will apply read and write permissions. Here’s an example below:
 
 ```bash
 mkdir gdrive
@@ -129,27 +121,17 @@ chmod 755 gdrive
 
 Now the mounted folder has been created, you can now start the mount command.
 
-The parameters used in the mount command are ones that work best for this particular setup. It’s best to experiment and try out different ones. For example, if you have gigabit upload speed, you might need to limit the maximum data transferred to prevent rate limiting (Google stops you transferring data if you do too much in one day.) (Craig-Wood, 2014)11
-
-Instruction
-
-Type:
+The parameters used in the mount command are ones that work best for this particular setup. It’s best to experiment and try out different ones. For example, if you have gigabit upload speed, you might need to limit the maximum data transferred to prevent rate limiting (Google stops you transferring data if you do too much in one day.) 
 
 ```bash
-rclone mount --dir-cache-time 96h --cache-info-age 100h --vfs-cache-mode writes --allow-other --log-level DEBUG --log-file /(folder-name)/rclone.log (remote-name): / /(local mount folder) and press enter.
+rclone mount --dir-cache-time 96h --cache-info-age 100h --vfs-cache-mode writes --allow-other --log-level DEBUG --log-file /(folder-name)/rclone.log (remote-name): / /(local mount folder)
 ```
 
 ### Testing the Rclone Mount
 
-Since the mount command is running, you need to open a new terminal window.
+Since the mount command is running, you need to open a new terminal window. Finally, the last step is to check it has worked. The process is the exact same as you would list files in a local folder.
 
-Finally, the last step is to check it has worked. The process is the exact same as you would list files in a local folder.
-
-Instruction
-
-Type cd (path to the mounted folder) and press enter.
-
-Type ls and press enter.
+Type `cd (path to the mounted folder)` and then `ls`
 
 ```bash
 cd gdrive
