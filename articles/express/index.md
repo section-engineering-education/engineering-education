@@ -64,6 +64,27 @@ The code under 3 starts a server on the port 3000. You can go to `localhost:3000
 
 Middleware is a set of functions that sit between a raw request and the final intended route. Middleware functions have access to *all* the http requests coming to the server. Middleware can handle tasks such as logging, sending static files, authorization, session management, etc.  
 
+In Node.js the request and response object are passed to one function (request handler) that we write, in Express these objects are passed through a set of functions, called the **middleware stack**. Express will start at the first function in the stack and execute in order down the stack. Every function in the stack takes three argumnets `request`, `response` and `next`. `next` is a function, when called Express executes the next function in stack. This is a subtle differece between middleware and a route handler which we saw above. 
+
+Lets look at a basic static file server to understand middleware. Initialize a npm project and install express. Create a directory named `static` and copy-paste *any* available static files into the folder (text, images, etc). 
+
+```
+npm init -y
+npm install express
+mkdir static
+touch static/dummy_file.txt
+touch app.js
+```
+
+
+```javascript
+//app.js
+
+
+```
+
+
+
 
 
 ### Conclusion 
