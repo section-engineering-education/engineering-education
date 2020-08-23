@@ -1,127 +1,78 @@
-# How to Encrypt Google Drive using Rclone
-
+# # How to Encrypt Google Drive using Rclone
 Summary: This is a how-to guide on setting up Rclone to create an encrypted folder where users can store data on Google Drive which will be encrypted before upload.
 Key Takeaways: Readers will understand how to install Rclone, add a Google Drive remote, obtain a Google Client ID, how to manage files on the local filesystem and Google Drive (copy, move, sync and mount) and create an encrypted remote.
 
-## Introduction
-
-Rclone is a command-line tool used on Linux operating systems in order to connect remotes (cloud storage providers) to the local filesystem. This tool is vital for remotes where Linux isn’t natively supported, and it also provides advanced functionality such as syncing which Google Drive doesn’t support for Linux. This work instruction will detail how to setup Rclone and configure a Google Drive remote.
-
 ## Table of Contents
+(Insert Table of Contents - See FCC article for markdown formatting)
 
-(Insert Table of Contents - See FCC article)
+## Introduction
+Rclone is a cross-platform command-line tool which connects remotes (cloud storage providers) with the local filesystem. Similar to [rsync](l) but for cloud storage, this tool is vital for remotes where some operating systems aren’t natively supported and it provides advanced functionality such as syncing and mounting.
 
 ## Installing Rclone
+First, we need to download Rclone. Using the command below, will automatically install the latest version of Rclone and the one that is correct for your distribution and architecture of your machine.
 
-Next, you will need to download Rclone. Using the command below, will automatically install the latest version of Rclone and the one that is correct for your distribution and architecture of your machine. (Craig-Wood, 2014)1
+```bash
+curl https://rclone.org/install.sh | sudo bash
+```
 
-There are security implications of installing Rclone this way because the script could be malicious but it’s much easier to do so because you don’t have figure out the architecture your computer is running on, download the correct version, unzip the file and move it to the correct location.
-
-Type in curl https://rclone.org/install.sh | sudo bash and press enter
+There are security implications of installing Rclone this way because the script could be malicious but this way is far simpler because you don’t have figure out the architecture your computer is running on, download the correct version, unzip the file and move it to the correct location.
 
 ## Creating Your First Rclone Remote
 
-Now you need to configure rclone. There are two ways to do this. You can create a config file with all the relevant parameters or use the interactive mode where it will provide default options and prompt you for the relevant information. 
+Second, we need to add our first remote (cloud storage provider). There are two ways to do this. You can create a config file with all the relevant parameters or use the interactive mode where it will provide default options and prompt you for the relevant information. Because, we’ve never used our Google account with Rclone before, we need to go the interactive route to authorise it.
 
-Since the interactive mode is easier, that is the way this guide will follow.
-
-Type in rclone config to start the interactive configurator.
-
-Since you’ve never installed Rclone before, there won’t be anything configured so you need to make a new remote.
-
-Instruction
-
-Press n to create a new remote
+Type `rclone config` to start the interactive configurator. Since you’ve never installed Rclone before, there won’t be anything configured so you need to make a new remote. Type `n` to do so.
 
 Next, you need to name the remote. This is just for the purposes of differentiating it from other remotes you may create in the future so it can be anything you want.
 
-Instruction
+Rclone supports many storage providers (remotes) so you need to specifically choose Google Drive.
 
-Type in the new of the remote and press enter
+In the example below, 13 is the correct number, though this can change when Rclone adds support for more remotes. 
 
-Rclone supports many storage providers so you need to specifically choose Google Drive.
+**(Insert storage provider image)**
 
-In the example below, 13 is the correct number, though this can change when Rclone adds support for more remotes
 
 ### Create Google Drive Client ID
 
-Rclone provides a default Client ID for Google Drive but it is susceptible to rate limiting because so many users use it instead of creating their own. Having your own Client ID is best practise so this guide will show you how to do so.
+Rclone provides a default Client ID for Google Drive but it is susceptible to rate limiting (slowing down) because so many users use it instead of creating their own. Having your own Client ID is best practise so we’ll create one.
 
-Open up a web browser such as Mozilla Firefox and enter this URL, https://console.developers.google.com/ (Craig-Wood, 2014)3
-
-In order to get a Client ID, you need to create a project to attach it to.
-
-Instruction
-
-Click Create A New Project, fill in the project name with a title such as Rclone and click the blue Create button. 
+Go to the [Google Developer Console](https://console.developers.google.com/) and click Create A New Project. Fill in the project name with a title such as Rclone and click the blue Create button. 
 
 Once the Google API project has been created, you now need to enable the Google Drive API because that’s what you’re trying to connect to.
-
-Instruction
 
 Click Enable APIs & Services, search for Google Drive, click Google Drive API and then click the blue Enable button.
 
 Now that the Google API project has been connected to Google Drive, the credentials (including the Client ID) can be created.
 
-Instruction
+Click Credentials in the sidebar, then OAuth Consent Screen. Select Internal as the Application type, enter an Application name and click the blue Save button.
 
-Click Credentials in the sidebar, then OAuth Consent Screen. Select Internal as the Application type, enter anything you prefer for the Application name and click the blue Save button.
-
-Go back to the Credentials page and click Create Credentials and OAuth Client ID. Set the Application type as Other, name it however you like and click the blue Create button.
+Go back to the Credentials page and click Create Credentials and OAuth Client ID. Set the Application type as Other, name it however you like and finally click the blue Create button.
 
 ## Continuing Rclone Configuration
 
 Now you have your Google Drive API Credentials, you can continue to configure your Google Drive remote in Rclone.
 
-The scope of Rclone defines the permissions that Rclone has to read and write your files on Google Drive.
+Copy and paste your Client ID into the terminal window and do the same for your Client Secret.
 
-The root folder id and service account file are advanced options that you can leave as default and you don’t need to edit the advanced config.
+The scope of Rclone defines the permissions that Rclone has to read and write your files on Google Drive so when you are prompted for the scope, choose 1. For the following two options, just press enter.
 
-Instruction
-
-Copy and paste your Client ID into the terminal windows. Press enter and do the same for your Client Secret. 
-
-When you are prompted for the scope, type 1 and then press enter.
-
-For the next two options, press enter.
-
-When asked if you want to edit advanced config, type n and press enter.
+The root folder id and service account file are advanced options that you can leave as default and you don’t need to edit the advanced config so when asked if you want to edit advanced config, type `n` for no.
 
 ### Allow Rclone Access to Your Google Drive
 
-Now you are prompted where to use auto config or not. If you are using a GUI system (had to open the terminal at the start of this guide), then you should type y and press enter. If you didn’t or are connecting remotely to a computer, then you should type n and press enter. This is because the following steps require an internet browser.
+Now, you are prompted to use auto config or not. If you are using your own computer locally, type `y`. If you are using a remote computer (such as SSHing into one) then type `n`. This is because the following steps require an internet browser.
 
 Since the test machine for this guide is a remote computer, the following instructions will follow a non-auto config.
 
-Instruction
-
-Type n and press enter. 
-
-Copy and paste the link into your web browser. If you used a keyboard shortcut (CTRL + C) and as a result exited the process, repeat steps 1-6 and 11.
-
-Next, you need to give Rclone permission to access your Google Drive and copy and paste the verification code back in the terminal window.
-
-Instruction
-
-Click the blue Allow button, copy and paste the verification code into the terminal and press enter.
+Copy and paste the link into a web browser. You need to agree to give Rclone permission to access your Google Drive by clicking the blue Agree button and then copy and paste the verification code back in the terminal window.
 
 ### Finish Remote Setup and Test
 
-Is the Google Drive a team drive (shared drive) or your own personal drive? If someone set it up for you, then it’s a team drive (now called shared drive), otherwise it’s not. (Google, n.d.)4
+Finally, we are at the last step of connecting Google Drive to Rclone. The last question we need to answer is whether your Google Drive is a team drive (shared drive) or your own personal drive. If someone set it up for you, then it’s a team drive (now called shared drive), otherwise it’s a personal one.
 
-Once you’ve done that then your Google Drive Remote has been setup.
+Once you’ve confirmed the configuration, press `q` to quit the rclone config process. Congratulations, you’ve added your first Rclone remote.
 
-To test this, you can list the files and folders you have in Google Drive.
-
-Instruction
-
-If you’re setting up a team drive, type y and press enter.
-
-If not, type n and press enter.
-
-Then, type y and then enter.
-
-To test, type q and then enter to exit the configuration editor. Finally, type rclone lsd (name of remote):
+To test, you can list the files and folders in the remote i.e. Google Drive. Type `rclone lsd (name of remote):` to do so.
 
 ## Uploading and Syncing Files to A Remote
 
@@ -289,4 +240,3 @@ sudo rm /usr/bin/rclone
 
 sudo rm /usr/local/share/man/man1/rclone.1
 ```
-
