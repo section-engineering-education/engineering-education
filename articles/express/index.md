@@ -73,16 +73,59 @@ npm init -y
 npm install express
 mkdir static
 touch static/dummy_file.txt
+touch static/dummy_file2.txt
+echo file1 > static/dummy_file.txt
+echo file2 > static/dummy_file2.txt
 touch app.js
 ```
+
+Our app will have a [*logger*](https://en.wikipedia.org/wiki/Log_file) function and a static file serving function. 
 
 
 ```javascript
 //app.js
 
+var express = require("express");
+var path = require("path");
+var fs = require("fs");
+
+var app = express();
+
+
+//1. Logging
+app.use(function(req, res, next) {
+    console.log("Request IP: " + req.url);
+    console.log("Request date: " + new Date());
+    next();
+});
+
+
+//2. File Server
+app.use(function(req, res, next) {
+    var filePath = path.join(__dirname, "static", req.url);
+    fs.stat(filePath, function(err, fileInfo) {
+    if (err) {
+        next();
+        return;
+    }
+    if (fileInfo.isFile()) {
+        res.sendFile(filePath);
+    } else {
+        next();
+    }
+  });
+});
+
+
+app.listen(3000, function() {
+console.log("App started on port 3000");
+});
 
 ```
 
+If we run this file using `node app.js` and go to `localhost:3000/dummy_file.txt` we can see on the screen `file1`. If we go to the URL `localhost:3000` we see an error `Cannot GET /` because we did not configure a 404 handler or we did not create a route handler for that path. Lets look at the code.
+
+The logger logs every request that comes in to the server. `app.use` is used to 
 
 
 
