@@ -22,12 +22,12 @@ This article will cover some of the common tips you need to know in order to hav
 
 ## 1. Understand Node.js Package Manager (NPM)
 
-NPM is an easy to use package manager for the Node.js platform. It helps to install packages and manage versions and dependencies. NPM helps to install the package you want with just a single command. To use NPM, you need Node.js to be installed on your computer. For OS X and Windows, the Node.js installer has an easy to use interface and NPM is included. Developers using Linux need to run the following command in their package manager to set up Node.js and NPM.
+NPM is an easy to use package manager for the Node.js platform. It helps to install packages and manage versions and dependencies. NPM helps to install the package you want with just a single command. To use NPM, you need Node.js to be installed on your computer. For OS X and Windows, the Node.js installer has an easy to use interface and NPM is included. Developers using Linux OS need to run the following command in their package manager to set up Node.js and NPM.
 
 ```bash
 sudo apt-get update
 
-sudo apt-get install node
+sudo apt-get install nodejs
 
 sudo apt-get install npm
 ```
@@ -184,10 +184,8 @@ try {
 
 ## 6. Debugging Node.js Programs
 
-Each code for developing an application must go around several debugging
-techniques. Node.js developers interest must find a way on
-how to handle bugs that may arise during application development. The
-commonly used approach for debugging Node.js. application is `console.log`
+As a developer, you need to constantly check bugs in your apps and scripts.
+Debugging helps in tracing coding error back to its source making it easier to find bugs efficiently.The commonly used approach for debugging Node.js. application is `console.log`
 ```js
 *// writing a hello world to console: *
 console.log(\"hello world\");
@@ -202,8 +200,8 @@ Alternatively, use `watchers` in `expressions` and `variables`. To start
 watching an `expression`, include `watch ('my expression');` the command
 `watcher` will print active watchers. To remove a watcher you can use line
 `unwatch ('my expression');` Remember to check
-out [MORE](https://www.section.io/engineering-education/debug-nodejs-vscode/)
-ON SECTION.IO efficient ware to deal with bugs from your app.
+out [MORE ON SECTION.IO](https://www.section.io/engineering-education/debug-nodejs-vscode/)
+ efficient ways to deal with bugs from your app.
 
 ## 7. Always keep your code simple and light
 
