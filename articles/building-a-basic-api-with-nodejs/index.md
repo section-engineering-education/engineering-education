@@ -183,7 +183,8 @@ GET /                          200 OK
 And there you have it. You managed to build a Node.js API server with Express, expose it to the internet with Ngrok and test it on postman!\
 Congratulations!!!
 
-You may now try to implement other request types and expand your API to add more functionality.
+You can find the code above on [GitHub](https://github.com/adrianmurage/dev_journal/tree/master/apps/javascript/nodejs_api).
+I encourage you to try to implement other request types and expand your API to add more functionality.
 
 ### Citations
 
