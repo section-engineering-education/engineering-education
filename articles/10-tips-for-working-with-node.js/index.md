@@ -92,9 +92,9 @@ you ease the development of Node.js applications.
     `require ()` calls in your Node.js application to create a bundle that
     you can serve the browser in a single `<script>` tag.
 
--   [Nodemailer](https://nodemailer.com/about/): Allows (easy as cake).
+-   [Nodemailer](https://nodemailer.com/about/): Allows (easy as cake)
     emails sending.
- You can have a look at all available library on
+You can have a look at all available library on
 [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules)
 
 ## 3. HTTP module for your Node.js. server
