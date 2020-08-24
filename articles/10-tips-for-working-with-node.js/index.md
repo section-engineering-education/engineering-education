@@ -260,7 +260,6 @@ using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).
 
 Let's look in brief how to deploy to Heroku;
 
-all your security preferences. To get started on Heroku with Node.js.
 To get started on Heroku with Node.js.
 Download Heroku CLI for your app. You need to have Node.js version to be
 higher than 8 check `node -v`
