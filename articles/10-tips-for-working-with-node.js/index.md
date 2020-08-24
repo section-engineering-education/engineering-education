@@ -15,23 +15,14 @@ images:
     alt: laptop node.js website
 ---
 As a developer getting started with Node.js application development,
-there a few basic skills that they need to be familiar with as they move
-along to build their first Node.js application.
+there a few basic skills that you need to be familiar with as you move
+along to build your first Node.js application.
 
-This article will cover some of the common tips you need and practice 
-in order to have a strong background fromgetting started to deploying 
-the first Node.js application.
+This article will cover some of the common tips you need to know in order to have a strong background to get started with Node.js application development.
 
 ## 1. Understand Node.js Package Manager (Npm)
 
-This is a package manager for JavaScript Node.js Platform that helps in
-package installation, version management, and dependency management,
-which is very easy to use. Npm helps to install the package you want
-with just a single line command. To use Npm you need Node.js to be
-installed in your gadget. For OS X and Window OS, the Node.js installer
-has an easy to use interface and Npm is included with Node.js
-Installation. Developers using Linux need to run the following command
-inapt package managed to set up Node.js and Npm.
+NPM is an easy to use package manager for the Node.js platform. It helps to install packages and manage versions and dependencies. NPM helps to install the package you want with just a single command. To use NPM, you need Node.js to be installed on your computer. For OS X and Windows, the Node.js installer has an easy to use interface and NPM is included. Developers using Linux need to run the following command in their package manager to set up Node.js and NPM.
 
 ```bash
 sudo apt-get update
@@ -72,7 +63,7 @@ Here's a list of some of the most useful libraries that will help
 you ease the development of Node.js applications.
 
 -   [Express](http://expressjs.com/): is a web application framework for
-    Node.js that handles robust APIs and Web servers
+    Node.js that handles robust APIs and Web servers.
 
 -   [Gulp](https://www.npmjs.com/package/gulp): helps to automate
     development workflow. It helps to automate simple tasks in the
@@ -92,7 +83,7 @@ you ease the development of Node.js applications.
 
 -   [JSHint](https://www.npmjs.com/package/jshint): Helps to detect
     errors and potential problems and threats in your Node.js
-    (JavaScript) code in the way you want your code to execute
+    (JavaScript) code in the way you want your code to execute.
 
 -   [Cheerio](https://cheerio.js.org/): Commonly used for web page
     scraping. It implements the subset of jQuery and removes `DOM`
@@ -104,11 +95,9 @@ you ease the development of Node.js applications.
     you can serve the browser in a single `<script>` tag.
 
 -   [Nodemailer](https://nodemailer.com/about/): Allow email message
-    sending (easy as cake)
+    sending (easy as cake).
 
-Node.js. open-source modules are many and their usability depends on the
-developer familiarity, knowhow capacity, and the application being
-developed. You can have a look at all available library on
+ You can have a look at all available library on
 [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules)
 
 ## 3. HTTP module for your Node.js. server
@@ -120,10 +109,10 @@ visit a webpage from a browser, you make a request to another computer
 (webserver) via the internet, which then provides you the webpage
 response. The webserver receives HTTP requests from the client, which
 listens to a server port and provides an HTTP response for example a
-HTML Page. To use HTTP server and client in Node.js you must use `require
-('http');`. Let\'s look at a simple Hello World HTTP Server module that
+HTML Page. To use HTTP and client server in Node.js you must use `require
+('http');`. Let's look at a simple Hello World HTTP Server module that
 will listen on port no 3000.
-```
+```js
 var http = require('http')
 
 var server = http.createServer((function(request, response) {
@@ -133,15 +122,12 @@ var server = http.createServer((function(request, response) {
     response.end("Hello World\n");
 
 }));
-
 server.listen(3000);
 ```
 When you type localhost:3000 on your browser, The Output will be Hello
 World.
 
-Check
-[MORE](https://www.section.io/engineering-education/http-requests-nodejs/)
-on working HTTP with Node.js.
+Check [MORE](https://www.section.io/engineering-education/http-requests-nodejs/) on working HTTP with Node.js.
 
 ## 4. Embracing asynchronous Node.js functions
 
@@ -150,7 +136,7 @@ operations flow. It enables a system to handle thousands of concurrent
 requests and process gigabytes of data with a small amount of RAM. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Asynchronous helps to avoid the so-called "Call-back Hell"
 
 Example of async/await in Node.js:
-```
+```js
 async function myFunction(inputValue) {
 
     try {
@@ -176,9 +162,7 @@ asynchronous.
 
 ## 5. Handling Node.js Errors
 
-> Node.js. application four types of errors that you need to be familiar
-> with and be able to handle them. The common Node.js errors
-> are:![Node.js_error_types](/engineering-education/10-tips-for-working-with-node.js/node.js_error_types.png)
+> The common Node.js errors are:![Node.js_error_types](/engineering-education/10-tips-for-working-with-node.js/node.js_error_types.png)
 
 In Node.js, errors are handled through exceptions. For example, if we
 have an error that would occur when we divide a number by zero, our
@@ -198,17 +182,16 @@ try {
     *//the application does do something to execute the error without having to make our application crash*
 
 }
-`````
+```
 
 ## 6. Debugging Node.js Programs
 
 Each code for developing an application must go around several debugging
-techniques. The new developers with Node.js interest must find a way on
+techniques. Node.js developers interest must find a way on
 how to handle bugs that may arise during application development. The
 commonly used approach for debugging Node.js. application is `console.log`
-
+```js
 *// writing a hello world to console: *
-```
 console.log(\"hello world\");
 ```
 `Console.log` is provided by internet browsers such as Chrome DevTool, it
@@ -227,8 +210,7 @@ ON SECTION.IO efficient ware to deal with bugs from your app.
 ## 7. Always keep your code simple and light
 
 It is important to keep the Node.js codebase compact and shallow to
-reduce the latency and speed up the response time of a Node.js
-application. Some devices are slower and their latencies are higher thus
+reduce the latency and speed up the response time of the application. Some devices are slower and their latencies are higher thus
 you need to keep the code small, well-arranged executions and light. The
 same ideas should be applied to your server code as well. While writing
 your Node.js code ensure proper and appropriate naming of things for
@@ -241,34 +223,33 @@ Better code quality helps in easier code maintainability
 As you get started with Node.js, try to secure your application by
 proper coding, tooling, and operations.
 
-The main practice to ensure secure Node.js application include
+The main practices that will help to develop secure Node.js application include
 
--   Set up the secure Http headers
+-   Set up the secure HTTP headers.
 
--   Do a static review of your codebase
+-   Do a static review of your codebase.
 
--   Handle error carefully (error codes and stack traces)
+-   Handle error carefully (error codes and stack traces).
 
 -   Regularly use strict mode i.e. restricted variant, undeletable
     properties, validation, and authentication.
 
--   Do proper session management such as Http Only
+-   Do proper session management such as HTTP only.
 
--   Set cookie scope and cookie flags
+-   Set cookie scope and cookie flags.
 
--   Avoid command injection
+-   Avoid command injection.
 
 -   Check for any vulnerabilities using `retire.js`. Retire.js will assist
     you to recognize module versions with associated vulnerabilities,
     install it using command `npm install -g retire`, later after running
-    it, retire command will scan for each vulnerability in your
+    it, retire command will scan any vulnerability present in your
     application.
 
 -   Constantly audit all the modules you have in your Node.js.
     Application using CLI Node Security Platform. Node Security CLI uses
     Command `nsp`, which allows auditing of `package.json` or
-    `npm-shrinkwrap.json` to check unsafe modules. Run `npm install nsp -global` 
-    from your application project directory `nsp check` to start the check.
+    `npm-shrinkwrap.json` to check unsafe modules. Run `npm install nsp -global` from your application project directory `nsp check` to start the check.
 
 Subsequently, practice testing before application deployment to make
 sure that your app passes all security demands.
@@ -304,46 +285,44 @@ how to deploy your Node.js application.
 
 ## 10 Monitoring your Node.js application
 
-Monitoring helps to get the insights of your production, application to
-enhance a fast, stable production system. Which is critical in helping
+Monitoring helps to get the insights of your production application to ensure a fast, stable and reliable system. Insights are critical in helping
 to detect performance problems of your system. As a developer, you need
 to know your system downtimes even before your customers start to
 complain about how your system is faulty thus you need real-time
 alerting for you to be notified immediately. Proper monitoring helps to
 get insight features of your application's behaviour. You need to know
-how much time does our app takes to run each function in the production
+how much time does your app takes to run each function in the production
 environment. In addition, if you are using microservices, you need to
 monitor network connections and lower delays in the communication
-between tour services. Node.js application has two main ways of
-monitoring:
+between two services. Node.js application monitoring has two main segments:
 
 ### i. Server monitoring
 
 This revolves around your host machine. You need to constantly be
 checking:
 
--   Disk space
+-   Disk space.
 
--   CPU memory
+-   CPU memory.
 
--   CPU Time
+-   CPU Time.
 
--   CPU profiling
+-   CPU profiling.
 
--   Network reach
+-   Network.
 
 ### ii. Application monitoring
 
 This revolves around monitoring the health of your application instances
 such as
 
--   Databases
+-   Databases.
 
--   Handling Requests
+-   Handling Requests.
 
--   Response Time
+-   Response Time.
 
--   Server Requests
+-   Server Requests.
 
 Node.js monitoring frameworks include:
 
