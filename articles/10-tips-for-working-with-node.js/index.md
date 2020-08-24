@@ -16,13 +16,13 @@ images:
 ---
 As a developer getting started with Node.js application development,
 there a few basic skills that they need to be familiar with as they move
-along to build their First Node.js application.
+along to build their first Node.js application.
 
 This article will cover some of the common tips you need and practice 
 in order to have a strong background fromgetting started to deploying 
 the first Node.js application.
 
-### 1.  Understand Node.js. Package Manager (Npm)
+## 1. Understand Node.js Package Manager (Npm)
 
 This is a package manager for JavaScript Node.js Platform that helps in
 package installation, version management, and dependency management,
@@ -31,9 +31,9 @@ with just a single line command. To use Npm you need Node.js to be
 installed in your gadget. For OS X and Window OS, the Node.js installer
 has an easy to use interface and Npm is included with Node.js
 Installation. Developers using Linux need to run the following command
-inapt package managed to set up Node.js and Npm
+inapt package managed to set up Node.js and Npm.
 
-```
+```bash
 sudo apt-get update
 
 sudo apt-get install node
@@ -43,21 +43,16 @@ sudo apt-get install npm
 
 You can then verify Npm installation by writing the following in your
 terminal `npm -v` or if you realize you have an older version run `npm
-install npm -g` (for windows) or `npm install -g npm\@latest` (for Linus
-and mac) to update to the current Npm version. Npm helps to install
-Node.js modules. For example, you just need to write `npm install`
-followed by your specified module ie 
-`npm install express`, once the
-package is installed you will be able to use `require ()` on your Node.js
-project and they will run just as if they were built-ins. Another
-important aspect of Npm is dependency management. You can run `npm
-install` in your root folder and any listed dependency in your
-package.json (if you have one) will be installed. This help mostly when
-installing Node.js project from git repository For example `vow` (Node.js
-testing framework) can be installed from git and its single dependency
-`eye` can automatically be installed ie
+install npm -g` (for Windows) or `npm install -g npm\@latest` (for Linux
+and Mac OS X) to update to the current Npm version. 
 
-```
+Npm helps to install Node.js modules. For example, you just need to write `npm install` followed by your specified module i.e `npm install express`, once the package is installed you will be able to use `require ()` on your Node.js project and they will run just as if they were built-ins. 
+
+Another important aspect of Npm is dependency management. You can run `npm
+install` in your root folder and any listed dependency in your package.json (if you have one) will be installed. This will help mostly when installing Node.js projects from git repositories. For example, `vow` (Node.js testing framework) can be installed from git and its single dependency
+`eye` can automatically be installed i.e.
+
+```bash
 git clone https://github.com/clonehad/vows.git
 
 cd vows
@@ -65,7 +60,7 @@ cd vows
 npm install
 ```
 
-### 2.  Understand A to Z Most Useful Node.js. Modules and Frameworks
+## 2. Understand A to Z Most Useful Node.js. Modules and Frameworks
 
 The power of Node.js lies in hundreds of packages that make it easier to
 write your program. The packages are open source and they are the
@@ -73,11 +68,11 @@ ecosystem of Node.js applications. Every Node.js developer will always
 interact with these packages to get a more efficient development
 workflow.
 
-We collect a list of some of the most useful libraries that will help
+Here's a list of some of the most useful libraries that will help
 you ease the development of Node.js applications.
 
--   [Express](http://expressjs.com/): it a web application framework for
-    Node.js that handle robust APIs and Web servers
+-   [Express](http://expressjs.com/): is a web application framework for
+    Node.js that handles robust APIs and Web servers
 
 -   [Gulp](https://www.npmjs.com/package/gulp): helps to automate
     development workflow. It helps to automate simple tasks in the
@@ -95,13 +90,13 @@ you ease the development of Node.js applications.
     the irritation of working with arrays, numbers, objects, strings,
     etc.
 
--   [Jshint](https://www.npmjs.com/package/jshint): Helps to detect
+-   [JSHint](https://www.npmjs.com/package/jshint): Helps to detect
     errors and potential problems and threats in your Node.js
     (JavaScript) code in the way you want your code to execute
 
 -   [Cheerio](https://cheerio.js.org/): Commonly used for web page
     scraping. It implements the subset of jQuery and removes `DOM`
-    inconsistence and browser cleverness to extract API endpoint URLs
+    inconsistency and browser cleverness to extract API endpoint URLs
     from web pages.
 
 -   [Browserify](https://github.com/browserify/browserify): It analyses
@@ -116,7 +111,7 @@ developer familiarity, knowhow capacity, and the application being
 developed. You can have a look at all available library on
 [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules)
 
-### 3.  Http module for your Node.js. server
+## 3. HTTP module for your Node.js. server
 
 Node.js. has a built-in module called HTTP (Hypertext Transfer
 Protocol). It helps in making requests as a client and running the
@@ -148,13 +143,11 @@ Check
 [MORE](https://www.section.io/engineering-education/http-requests-nodejs/)
 on working HTTP with Node.js.
 
-### 4.  Embracing asynchronous Node.js functions
+## 4. Embracing asynchronous Node.js functions
 
-Asynchronous is heavily used in Node.js to ensure non-­blocking
+Asynchronous is heavily used in Node.js to ensure non-blocking
 operations flow. It enables a system to handle thousands of concurrent
-requests and process gigabytes of data with small RAM. Asynchronous I/O
-permits other processing to continue even before the first transmission
-has finished. Asynchronous helps to avoid the so-called "Call-back Hell"
+requests and process gigabytes of data with a small amount of RAM. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Asynchronous helps to avoid the so-called "Call-back Hell"
 
 Example of async/await in Node.js:
 ```
@@ -181,7 +174,7 @@ async function myFunction(inputValue) {
 In this scenario, we can see it is obvious that functions 1,2and 4 are
 asynchronous.
 
-### 5.  Handling Node.js. errors
+## 5. Handling Node.js Errors
 
 > Node.js. application four types of errors that you need to be familiar
 > with and be able to handle them. The common Node.js errors
@@ -190,8 +183,8 @@ asynchronous.
 In Node.js, errors are handled through exceptions. For example, if we
 have an error that would occur when we divide a number by zero, our
 Node.js application will crash, so then we need to handle the error to
-continue with the normal execution of our application ie
-```
+continue with the normal execution of our application i.e.
+```js
 try {
 
     var m = 1;
@@ -207,7 +200,7 @@ try {
 }
 `````
 
-### 6.  Debugging Node.js. programs
+## 6. Debugging Node.js Programs
 
 Each code for developing an application must go around several debugging
 techniques. The new developers with Node.js interest must find a way on
@@ -231,7 +224,7 @@ watching an `expression`, include `watch ('my expression');` the command
 out [MORE](https://www.section.io/engineering-education/debug-nodejs-vscode/)
 ON SECTION.IO efficient ware to deal with bugs from your app.
 
-### 7.  Always keep your code simple and light
+## 7. Always keep your code simple and light
 
 It is important to keep the Node.js codebase compact and shallow to
 reduce the latency and speed up the response time of a Node.js
@@ -243,7 +236,7 @@ better referencing. This will serve as Documentation of your application
 and make it easier to go back to your code when changes are required.
 Better code quality helps in easier code maintainability
 
-### 8.  Security practices to your server
+## 8. Security practices for your server
 
 As you get started with Node.js, try to secure your application by
 proper coding, tooling, and operations.
@@ -256,7 +249,7 @@ The main practice to ensure secure Node.js application include
 
 -   Handle error carefully (error codes and stack traces)
 
--   Regularly use strict mode ie restricted variant, undeletable
+-   Regularly use strict mode i.e. restricted variant, undeletable
     properties, validation, and authentication.
 
 -   Do proper session management such as Http Only
@@ -280,7 +273,7 @@ The main practice to ensure secure Node.js application include
 Subsequently, practice testing before application deployment to make
 sure that your app passes all security demands.
 
-### 9.  Deploying your Node.js. application
+## 9. Deploying your Node.js. application
 
 After finishing developing your app and all features are tested, you
 need now be wondering how you will get your application out for the
@@ -288,7 +281,7 @@ world to interact with it. The most familiar Node.js deployment ways if
 either PaaS provider (Heroku) or
 using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).
 
-Let\'s look in brief what you need to deploy to Heroku;
+Let's look in brief what you need to deploy to Heroku;
 
 This will happen after the app development process is over and it meets
 all your security preferences. To get started on Heroku with Node.js.
@@ -309,7 +302,7 @@ your application on your browser.
 Check [MORE](https://deploybot.com/blog/guest-post-how-to-set-up-and-deploy-nodejs-express-application-for-production) on
 how to deploy your Node.js application.
 
-### 10. Monitoring your Node.js application
+## 10 Monitoring your Node.js application
 
 Monitoring helps to get the insights of your production, application to
 enhance a fast, stable production system. Which is critical in helping
@@ -324,7 +317,7 @@ monitor network connections and lower delays in the communication
 between tour services. Node.js application has two main ways of
 monitoring:
 
-#### i.  Server monitoring
+### i. Server monitoring
 
 This revolves around your host machine. You need to constantly be
 checking:
@@ -339,18 +332,18 @@ checking:
 
 -   Network reach
 
-#### ii. Application monitoring
+### ii. Application monitoring
 
 This revolves around monitoring the health of your application instances
 such as
 
 -   Databases
 
--   handling requests
+-   Handling Requests
 
--   response time
+-   Response Time
 
--   Server request
+-   Server Requests
 
 Node.js monitoring frameworks include:
 
@@ -360,7 +353,7 @@ Node.js monitoring frameworks include:
 
 [Koa](https://koajs.com/), [Zabbix](https://www.zabbix.com/) , e.t.c
 
-**Conclusion**
+## Conclusion
 
 As a Node.js developer, there are many concepts you need to be familiar
 with for you to have a good Node.js application. Check out what you need
