@@ -73,9 +73,8 @@ you ease the development of Node.js applications.
     JavaScript date library for parsing, validating, manipulating, and
     formatting dates.
 
--   [Async](https://caolan.github.io/async/v3/): provides powerful
-    straightforward Over 70 functions for working with asynchronous
-    JavaScript.
+-   [Async](https://caolan.github.io/async/v3/):It is a utility module 
+    that provides powerful straightforward functions for working with asynchronous JavaScript.
 
 -   [Lodash](https://lodash.com/): makes JavaScript easier by taking out
     the irritation of working with arrays, numbers, objects, strings,
