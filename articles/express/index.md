@@ -118,14 +118,16 @@ app.use(function(req, res, next) {
 
 
 app.listen(3000, function() {
-console.log("App started on port 3000");
+    console.log("App started on port 3000");
 });
 
 ```
 
-If we run this file using `node app.js` and go to `localhost:3000/dummy_file.txt` we can see on the screen `file1`. If we go to the URL `localhost:3000` we see an error `Cannot GET /` because we did not configure a 404 handler or we did not create a route handler for that path. Lets look at the code.
+If we run this file using `node app.js` and go to `localhost:3000/dummy_file.txt` we can see on the screen `file1`. If we go to the URL `localhost:3000` we see an error `Cannot GET /` because we did not configure a route handler for that path. Lets look at the code.
 
-The logger logs every request that comes in to the server. `app.use` is used to 
+The logger logs every request that comes in to the server. `app.use` is used to define a middleware function, it take a function. The `next()` function call is tells Express to move onto the next function in the stack (remove the `next()` call in your script, you will observe that it takes forever for the page to load, this is because the request gets stuck on this middleware function). 
+
+We are using the [path module](https://nodejs.org/api/path.html) to join the relative url (from the request) and the directory name. The [fs module](https://nodejs.org/api/fs.html) provides an API for interacting with the file system. We are checking if the file exists, if it does not go to next function in the stack, if it does return that file using `res.sendFile`. 
 
 
 
