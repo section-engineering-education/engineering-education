@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/typescript-static-typing/
-title: Why TypeScript? Why Static Typing? Why is TypeScript so popular?
-description: TypeScript was ranked higher than JavaScript according to the GitHub Developer Survey. Why? What does TypeScript add that's so much better?
+title: Why Static Typing & Why is TypeScript so popular?
+description: TypeScript was ranked higher than JavaScript according to the GitHub Developer Survey. Why? What does TypeScript add that's so much better? TypeScript is much like JavaScript. In fact, all JavaScript is valid as TypeScript code.
 author: mike-white
-date: 2020-08-19T00:00:00-10:00
+date: 2020-08-24T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/typescript-static-typing/hero.jpg
     alt: typescript image example
 ---
-According to the [Stack Overflow Developer Survey 2020](https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted), 67.1% of TypeScript users "loved" it. This makes it the second most loved language, behind Rust, and narrowly beating out Python. JavaScript was number 10, with 58.3% of users interested in continuing to use it. That is still pretty good. It sure beats Visual Basic. But why is TypeScript so much more popular?
+According to the [Stack Overflow Developer Survey 2020](https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted), 67.1% of TypeScript users loved it. This makes it the second most loved language, behind Rust, and narrowly beating out Python. JavaScript was number 10, with 58.3% of users interested in continuing to use it. That is still pretty good. It sure beats Visual Basic. But why is TypeScript so much more popular?
 
 <!--more-->
-TypeScript 4.0 will probably be released [before this article is published](https://github.com/microsoft/TypeScript/issues/38510). Now is a good time to talk about it.
+[TypeScript 4.0](https://github.com/microsoft/TypeScript/issues/38510) will probably be released before this article is published. Now is a good time to talk about it.
 
 ## What's a TypeScript?
 TypeScript is much like JavaScript. In fact, all JavaScript is valid as TypeScript code. TypeScript [was developed by Microsoft](https://devblogs.microsoft.com/typescript/announcing-typescript-1-0/) to make it [easier to write large code bases](https://www.infoworld.com/article/2614863/microsoft-augments-javascript-for-large-scale-development.html). Essentially, it's just JavaScript, with static typing. The TypeScript compiler does nothing but convert all the TypeScript code into JavaScript. The resulting JavaScript code can be run in any browser.
@@ -38,7 +38,7 @@ value = "hello"; // error: Type '"hello"' is not assignable to type 'number'.
 ```
 
 ## Why TypeScript?
-Why would you use static typing? Most of the time, it's for performance reasons. As explained in the [low level JavaScript](/engineering-education/low-level-javascript/) article, there is a performance benefit to letting the compiler know what type the value is, without having to check it.
+Why would you use static typing? Most of the time, it's for performance reasons. As explained in the [low level JavaScript](https://www.section.io/engineering-education/low-level-javascript/) article, there is a performance benefit to letting the compiler know what type the value is, without having to check it.
 
 This isn't the reason to use TypeScript though. Alas, TypeScript doesn't take advantage of this. The real benefit to using TypeScript is to prevent certain glitches.
 
@@ -162,12 +162,12 @@ function rollDice(): DiceRoll {
 }
 ```
 
-There are more advanced features too. The [TypeScript Handbook Reference](https://www.typescriptlang.org/docs/handbook/advanced-types.htmlhttps://www.typescriptlang.org/docs/handbook/advanced-types.html) can be a fun read.
+There are more advanced features too. The [TypeScript Handbook Reference](https://www.typescriptlang.org/docs/handbook/advanced-types.html) can be a fun read.
 
 ## Cons of TypeScript
 TypeScript isn't exactly plug-and-play. Node.js doesn't support it, nor do any Internet browsers. To use it, you'll need to compile it to JavaScript. To compile it, you can use the program, [tsc](https://www.typescriptlang.org/download/). If you forget to compile it, then nothing will change and you'll be very confused.
 
-There are solutions to this. You can use the `--watch` option on tsc to have your code compile automatically. You can also use [Deno](https://deno.land/). Deno is an alternative to Node.js, created by [the same person who created Node](https://www.infoq.com/news/2018/12/deno-v8-typescript/). Deno can run Typescript natively, so there's no need to compile it. Deno also has other features, such as security.
+There are solutions to this. You can use the `--watch` option on tsc to have your code compile automatically. You can also use [Deno](https://deno.land/). Deno is an alternative to Node.js, created by [the same person who created Node.js](https://www.infoq.com/news/2018/12/deno-v8-typescript/). Deno can run Typescript natively, so there's no need to compile it. Deno also has other features, such as security.
 
 The downside of Deno is that Node.js has more support. Node.js has tons and tons of libraries (to the point of [insanity](https://external-preview.redd.it/R8LNCy-V4bFxoaWIB1dZ4UJJalpg8yj27ly9YtF1Gu0.png?s=c59b24a48576a27fe1848f7c23dadb7523897ded)), and used much more often. Deno is cool, but you should definitely also know Node.js before going into a job interview.
 
