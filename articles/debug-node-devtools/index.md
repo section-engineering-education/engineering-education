@@ -1,7 +1,21 @@
-﻿## Debugging a Node.Js app using Chrome Dev Tools.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/debug-node-devtools/
+title: Debugging a Node.Js app using Chrome Dev Tools
+description: 
+author: geoffrey-mungai
+date: 2020-08-24T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/debug-node-devtools/hero.jpg
+    alt: 
+---
 Node.js is really good technology. But, you start doubting that when it comes to debugging. A Node.Js app can fail without any error message. So, how do you go about it? Meet Chrome Dev Tools.
-
+<!--more-->
 ### Introduction
 
 A debugger is a program that is used to inspect a program as it runs. It enables running the code line-by-line and following the execution process. In the process, you can see the code as a flow chart and logically interpret it. From this perspective, you can be able to find the bugs more easily.
