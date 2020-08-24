@@ -91,7 +91,7 @@ let object = new ExampleClass(5);
 console.log(object.number); // compiler error: Property 'number' does not exist on type 'ExampleClass'
 ```
 
-[There are other, hilarious examples of JavaScript being weird (and also Ruby)](https://www.destroyallsoftware.com/talks/wat).
+There are other, [hilarious examples of JavaScript being weird (and also Ruby)](https://www.destroyallsoftware.com/talks/wat).
 
 ### Other Features of TypeScript
 
