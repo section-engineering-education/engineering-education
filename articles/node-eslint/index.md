@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/node-eslint/
-title: Linting in Node using ESLint
+title: Linting in Node.js using ESLint
 description: Introduction to Linters this article will go over linters and how to use ESLint, a popular JavaScript Linter to maintain code quality in projects.
 author: saiharsha-balasubramaniam
 date: 2020-08-24T00:00:00-12:00
@@ -20,7 +20,7 @@ A linter is a computer program that analyzes and checks source code. It flags pr
 ### Table of Contents
 - [Introducting to Linting](#introduction-to-linting)
 - [Advantages of a Linter](#advantages-of-a-linter)
-- [ESLint and Node](#eslint-and-node)
+- [ESLint and Node.js](#eslint-and-node)
 - [Airbnb Style Guide](#airbnb-style-guide)
 - [Further Reading](#further-reading)
 
@@ -38,10 +38,10 @@ Linters scan source code and flag code blocks that violate rules. These rules ca
 - Helps enforce a style guide across a project, to keep code consistent. This is done by the use of a config file.
 - Code reviews are sped up, since basic issues are fixed by the linter.
 
-### ESLint and Node
+### ESLint and Node.js
 Let us now set up ESLint with Node.js to improve code quality in our projects.
 
-First, initialize a node project.
+First, initialize a Node.js project.
 
 ```js
 npm init
