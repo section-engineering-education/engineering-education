@@ -65,7 +65,7 @@ cd vows
 npm install
 ```
 
-###2.  Understand A to Z Most Useful Node.js. Modules and Frameworks
+### 2.  Understand A to Z Most Useful Node.js. Modules and Frameworks
 
 The power of Node.js lies in hundreds of packages that make it easier to
 write your program. The packages are open source and they are the
@@ -116,7 +116,7 @@ developer familiarity, knowhow capacity, and the application being
 developed. You can have a look at all available library on
 [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules)
 
-###3.  Http module for your Node.js. server
+### 3.  Http module for your Node.js. server
 
 Node.js. has a built-in module called HTTP (Hypertext Transfer
 Protocol). It helps in making requests as a client and running the
@@ -148,7 +148,7 @@ Check
 [MORE](https://www.section.io/engineering-education/http-requests-nodejs/)
 on working HTTP with Node.js.
 
-###4.  Embracing asynchronous Node.js functions
+### 4.  Embracing asynchronous Node.js functions
 
 Asynchronous is heavily used in Node.js to ensure non-­blocking
 operations flow. It enables a system to handle thousands of concurrent
@@ -181,7 +181,7 @@ async function myFunction(inputValue) {
 In this scenario, we can see it is obvious that functions 1,2and 4 are
 asynchronous.
 
-###5.  Handling Node.js. errors
+### 5.  Handling Node.js. errors
 
 > Node.js. application four types of errors that you need to be familiar
 > with and be able to handle them. The common Node.js errors
@@ -206,7 +206,7 @@ try {
 
 }
 `````
-###6.  Debugging Node.js. programs
+### 6.  Debugging Node.js. programs
 
 Each code for developing an application must go around several debugging
 techniques. The new developers with Node.js interest must find a way on
@@ -230,7 +230,7 @@ watching an `expression`, include `watch ('my expression');` the command
 out [MORE](https://www.section.io/engineering-education/debug-nodejs-vscode/)
 ON SECTION.IO efficient ware to deal with bugs from your app.
 
-###7.  Always keep your code simple and light
+### 7.  Always keep your code simple and light
 
 It is important to keep the Node.js codebase compact and shallow to
 reduce the latency and speed up the response time of a Node.js
@@ -242,7 +242,7 @@ better referencing. This will serve as Documentation of your application
 and make it easier to go back to your code when changes are required.
 Better code quality helps in easier code maintainability
 
-###8.  Security practices to your server
+### 8.  Security practices to your server
 
 As you get started with Node.js, try to secure your application by
 proper coding, tooling, and operations.
@@ -279,7 +279,7 @@ The main practice to ensure secure Node.js application include
 Subsequently, practice testing before application deployment to make
 sure that your app passes all security demands.
 
-###9.  Deploying your Node.js. application
+### 9.  Deploying your Node.js. application
 
 After finishing developing your app and all features are tested, you
 need now be wondering how you will get your application out for the
@@ -308,7 +308,7 @@ your application on your browser.
 Check [MORE](https://deploybot.com/blog/guest-post-how-to-set-up-and-deploy-nodejs-express-application-for-production) on
 how to deploy your Node.js application.
 
-###10. Monitoring your Node.js application
+### 10. Monitoring your Node.js application
 
 Monitoring helps to get the insights of your production, application to
 enhance a fast, stable production system. Which is critical in helping
@@ -323,7 +323,7 @@ monitor network connections and lower delays in the communication
 between tour services. Node.js application has two main ways of
 monitoring:
 
-####i.  Server monitoring
+#### i.  Server monitoring
 
 This revolves around your host machine. You need to constantly be
 checking:
@@ -338,7 +338,7 @@ checking:
 
 -   Network reach
 
-####ii. Application monitoring
+#### ii. Application monitoring
 
 This revolves around monitoring the health of your application instances
 such as
