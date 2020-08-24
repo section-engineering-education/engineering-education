@@ -61,6 +61,8 @@ To open DevTools dedicated to Node debugging, click **Open dedicated DevTools fo
 
 To debug your app, navigate to the **Sources** tab. This is where you will be editing your code. Expand the file tree on the left and click the file you want to debug. The selected file opens in the central part of the sources tab. You can open multiple files for debugging. 
 
+**Note:** Editing code in DevTools does not change your local or remote files. To make permanent changes you must edit you local or remote files.
+
 Add breakpoints to your code by clicking on the left side of the line number. Once set, a red dot will appear on those lines. On the right panel in the **Sources** tab,  you can watch objects and activate/deactivate breakpoints. To watch a variable, add a variable defined in your code in the **Watch** pane. In the **Scope** pane, you can view the local and global variables currently defined. 
 
 ![Breakpoints DevTools](node-devtools-breakpoints.jpg)
