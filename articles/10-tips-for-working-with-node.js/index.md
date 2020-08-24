@@ -62,10 +62,10 @@ workflow.
 Here's a list of some of the most useful libraries that will help
 you ease the development of Node.js applications.
 
--   [Express](http://expressjs.com/): is a web application framework for
+-   [Express](http://expressjs.com/): It is a web application framework for
     Node.js that handles robust APIs and Web servers.
 
--   [Gulp](https://www.npmjs.com/package/gulp): helps to automate
+-   [Gulp](https://www.npmjs.com/package/gulp): Helps to automate
     development workflow. It helps to automate simple tasks in the
     development of web applications.
 
@@ -73,16 +73,15 @@ you ease the development of Node.js applications.
     JavaScript date library for parsing, validating, manipulating, and
     formatting dates.
 
--   [Async](https://caolan.github.io/async/v3/):It is a utility module 
+-   [Async](https://caolan.github.io/async/v3/): It is a utility module 
     that provides powerful straightforward functions for working with asynchronous JavaScript.
 
--   [Lodash](https://lodash.com/): makes JavaScript easier by taking out
+-   [Lodash](https://lodash.com/): Makes JavaScript easier by taking out
     the irritation of working with arrays, numbers, objects, strings,
     etc.
 
 -   [JSHint](https://www.npmjs.com/package/jshint): Helps to detect
-    errors and potential problems and threats in your Node.js
-    (JavaScript) code in the way you want your code to execute.
+    errors and potential problems in your Node.js (JavaScript) code in the way your code execute.You can easily adjust it in the environment you expect your code to execute
 
 -   [Cheerio](https://cheerio.js.org/): Commonly used for web page
     scraping. It implements the subset of jQuery and removes `DOM`
