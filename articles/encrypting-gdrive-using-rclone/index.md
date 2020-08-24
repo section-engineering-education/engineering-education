@@ -44,7 +44,7 @@ Rclone supports many storage providers (remotes) so you need to specifically cho
 
 In the example below, 13 is the correct number, though this can change when Rclone adds support for more remotes. 
 
-**(Insert storage provider image)**
+![Rclone Storage Providers](storage-providers.png)
 
 
 ### Create Google Drive Client ID
@@ -55,17 +55,25 @@ Rclone provides a default Client ID for Google Drive but it is susceptible to ra
 
 Go to the [Google Developer Console](https://console.developers.google.com/) and click Create A New Project. Fill in the project name with a title such as Rclone and click the blue Create button. 
 
+![Creating A Project](creating-project.png)
+
 Once the Google API project has been created, you now need to enable the Google Drive API because that’s what you’re trying to connect to.
 
 Click Enable APIs & Services, search for Google Drive, click Google Drive API and then click the blue Enable button.
+
+![Enable Google Drive API](gdrive-api.png)
 
 Now that the Google API project has been connected to Google Drive, the credentials (including the Client ID) can be created.
 
 Click Credentials in the sidebar, then OAuth Consent Screen. Select Internal as the Application type, enter an Application name and click the blue Save button.
 
+![OAuth Client](oauth-client.png)
+
 Go back to the Credentials page and click Create Credentials and OAuth Client ID. Set the Application type as Other, name it however you like and finally click the blue Create button.
 
 ## Continuing Rclone Configuration
+
+![Before Auto Config](auto-config.png)
 
 Now you have your Google Drive API Credentials, you can continue to configure your Google Drive remote in Rclone.
 
@@ -76,6 +84,8 @@ The scope of Rclone defines the permissions that Rclone has to read and write yo
 The root folder id and service account file are advanced options that you can leave as default and you don’t need to edit the advanced config so when asked if you want to edit advanced config, type `n` for no.
 
 ### Allow Rclone Access to Your Google Drive
+
+![GDrive Access](gdrive-access.png)
 
 Now, you are prompted to use auto config or not. If you are using your own computer locally, type `y`. If you are using a remote computer (such as SSHing into one) then type `n`. This is because the following steps require an internet browser.
 
@@ -109,7 +119,7 @@ Type `rclone copy/move/sync (depending of which you want) -v –progress (locati
 
 `rclone copy -v --progress ~/folder/file.txt gdrive:test`
 
-**Insert image of rclone copy progress**
+![Rclone Copy Progress](rclone-copy.png)
 
 Rclone will start to upload the files/folder you have chosen, and you can see the progress as shown in the image above or through the log file if you have specified one.
 
@@ -161,9 +171,9 @@ Finally, we can encrypt our files. We will setup an encrypted folder to securely
 
 To encrypt your files, you need to create another remote which will do the encryption process. There are different encryption settings you can choose from and this guide will implement the strongest available.
 
-**(Screenshot this steps)**
-
 The location of the remote should be the name of the Google Drive remote you created earlier and the path should be the name of the folder you want to store the encrypted files e.g. encrypted or secret. It should look like: `gdrive:encrypted`
+
+![Encrypt Remote Path](encrypt-remote.png)
 
 You want to generate a strong password and use the strongest encryption which is 1024. Make sure to copy the password to a secure location otherwise you won’t be able to unencrypt your files on another device or if you delete Rclone.
 
