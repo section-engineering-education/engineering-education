@@ -80,8 +80,8 @@ you ease the development of Node.js applications.
     the irritation of working with arrays, numbers, objects, strings,
     etc.
 
--   [JSHint](https://www.npmjs.com/package/jshint): Helps to detect
-    errors and potential problems in your Node.js (JavaScript) code in the way your code execute.You can easily adjust it in the environment you expect your code to execute
+-   [JSHint](https://www.npmjs.com/package/jshint): Detect
+    errors and potential problems in your Node.js (JavaScript) code. You can easily adjust it in the environment you expect your code to execute.
 
 -   [Cheerio](https://cheerio.js.org/): Commonly used for web page
     scraping. It implements the subset of jQuery and removes `DOM`
@@ -92,9 +92,8 @@ you ease the development of Node.js applications.
     `require ()` calls in your Node.js application to create a bundle that
     you can serve the browser in a single `<script>` tag.
 
--   [Nodemailer](https://nodemailer.com/about/): Allow email message
-    sending (easy as cake).
-
+-   [Nodemailer](https://nodemailer.com/about/): Allows (easy as cake).
+    emails sending.
  You can have a look at all available library on
 [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules)
 
