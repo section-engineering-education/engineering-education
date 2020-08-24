@@ -90,7 +90,7 @@ But most of the time, we will be using **While** and **For Loop** only. Let's se
 
 **While Loop** 
 
-There is a True-False condition at the top. We only enter the block if the test is true, and do the whole block only and if the test is true.
+There is a True-False condition at the top. We only enter the block if the test is true, and do the whole block only if the test is true.
 And the difference between If-Else and while loop is that at the end of the block we jump back and do the test again. There is no else to a while statement.
 
 Let's see an example where you want the user to input a positive number, and if he doesn't, you can ask him again and again until he or she does. Here's the code to it:
