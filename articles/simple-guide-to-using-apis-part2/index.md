@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-slug: simple-guide-to-using-apis-part2
+url: /engineering-education/simple-guide-to-using-apis-part2/
 title: Getting to Grips with APIs - Authentication
 description: Using the Goodreads API, goodreads-api-node wrapper and oAuth1 to authenticate users with their Goodreads account to make authenticated requests such as returning a user's owned books.
 author: louise-findlay
-date: 2020-08-20T00:00:00-12:00
+date: 2020-08-24T00:00:00-13:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -14,23 +14,23 @@ images:
   - url: /engineering-education/simple-guide-to-using-apis-part2/hero.png
     alt: hero image using APIs authentication using Goodreads API
 ---
-You've worked with the Goodreads API to create a full-stack Node.js web app that will search the Goodreads database for a book query and return a list of relevant matches. If you haven't, read [part 1](/engineering-education/simple-guide-to-using-apis-nodejs). 
+You have worked with the Goodreads API to create a full-stack Node.js web app that will search the Goodreads database for a book query and return a list of relevant matches. If you haven't, read [part 1](https://www.section.io/engineering-education/simple-guide-to-using-apis-nodejs/).
 
-That's a good start but what if you want to see books a user has already added? You'll need to find a way to authenticate users' Goodreads accounts with the Goodreads API so you can discover their user ID so the API knows which account made the request.
+That's a good start but what if you want to see books a user has already added? You'll need to find a way to authenticate users' Goodreads accounts with the Goodreads API so you can discover their user ID and the API knows which account made the request.
 <!--more-->
-[oAuth](link to a Section article discussing this) is the main authentication standard for APIs. We will be using oAuth 1 because that's the only version the Goodreads API supports but it's recommend to use oAuth 2 wherever possible. Similar to [Part 1](/engineering-education/simple-guide-to-using-apis-nodejs), `goodreads-api-node-wrapper` will make the process easier.
 
-## Authenticating with the Goodreads API
+[oAuth](https://en.wikipedia.org/wiki/OAuth) is the main authentication standard for APIs. We will be using oAuth 1 because that's the only version the Goodreads API supports but it's recommend to use oAuth 2 wherever possible. Similar to [Part 1](https://www.section.io/engineering-education/simple-guide-to-using-apis-nodejs/), `goodreads-api-node-wrapper` will make the process easier.
 
-### Setting a Callback URL
+### Authenticating with the Goodreads API
 
-The first step to authenticating with the Goodreads API is to set a callback URL. A callback URL is the link that Goodreads should send users to once they've been authenticated since authentication takes place on the Goodreads website so the API needs to know how to get back to your web app.
+#### Setting a Callback URL
+The first step to authenticating with the Goodreads API is to set a callback URL. A callback URL is the link that Goodreads should send users to once they've been authenticated. Since authentication takes place on the Goodreads website, and the API needs to know how to get back to your web app.
 
 Go to the [Goodreads API Key page](https://www.goodreads.com/api/keys) and set the Callback URL to `https://localhost:8080/goodreads-user`. Further on, we will create the goodreads-user route which will obtain the logged in user's Goodreads ID.
 
-### Adding SSL to our Local Web Server
-
-Note that the Callback URL is https and not http. You must use https or it won't work. To add SSL to our local web server, install the `https-localhost` npm package using `npm install https-localhost --save-dev`. Then change the `const app` line in `server.js` to `const app = require("https-localhost")();` The start of your `server.js` should look like:
+#### Adding SSL to our Local Web Server
+Note that the Callback URL is https and not http. You must use https or it won't work. To add SSL to our local web server, install the `https-localhost` npm package using `npm install https-localhost --save-dev`. Then change the `const app` line in `server.js` to `const app = require("https-localhost")();`
+The start of your `server.js` should look like:
 
 ```js
 // Node Modules
@@ -43,9 +43,9 @@ const app = require("https-localhost")();
 ```
 Now you can view your web app by running `npm start` in the terminal and going to `https://localhost:8080` in your browser.
 
-### Initialising oAuth (Adding the Callback URL to our Credentials)
+#### Initializing oAuth (Adding the Callback URL to our Credentials)
 
-Next, we need to initialise the oAuth Goodreads authentication. 
+Next, we need to initialize the oAuth Goodreads authentication.
 
 **Note**: the `goodreads-api-node` documentation states that there are two methods to do so but currently, only this one works.
 
@@ -65,8 +65,7 @@ gr.initOAuth(callbackURL);
 ```
 The value of the `callbackURL` should match the callback URL you set in the Goodreads API settings. `gr.initOAuth(callbackURL)`, starts the authentication process using `goodreads-api-node`'s built-in function and passes your callback URL so the user can be redirected to the correct page.
 
-### Getting a Request Token
-
+#### Getting a Request Token
 Now that the callback URL has been configured, we now need to create a route that when users navigate to it will redirect them to a Goodreads login screen so they can login. The `gr.getAccessToken()` function will do this.
 
 Add the following to `server.js`:
@@ -83,12 +82,11 @@ app.get("/authenticate", function (req, res) {
         });
 });
 ```
-The authenticate route will request an access token and return an OAuth authorisation URL with a unique access token and your callback URL appended to it. The user is then redirected to the special URL, prompted to login to their Goodreads account and then returned to the callback URL. 
+The authenticate route will request an access token and return an OAuth authorization URL with a unique access token and your callback URL appended to it. The user is then redirected to the special URL, prompted to login to their Goodreads account and then returned to the callback URL.
 
 Go to `https://localhost:8080/authenticate` and try it out for yourself.
 
-### Getting an Access Token (Obtaining the User ID)
-
+#### Getting an Access Token (Obtaining the User ID)
 Congratulations, you've managed to authenticate users with Goodreads using the Goodreads API and oAuth1 but there's still one thing we're missing. The user ID of the logged in account. All authenticated requests (requests using a user's Goodreads account) requires one so that's where the `gr.getAccessToken()` function comes in.
 
 To finish authenticating with the API and to allow us to view the current user's account information (such as their ID), we need to get an access token.
@@ -131,11 +129,10 @@ Run `npm start` and go to `https://localhost:8080/authenticate`. It may take a m
 ```
 From the response, we can see that the user id is `result.user.id` so replace the `console.log(result)` with `var userid = result.user.id`;
 
-## Listing a User's Shelves (Making Your First Authenticated Request with the Goodreads API)
+### Listing a User's Shelves (Making Your First Authenticated Request with the Goodreads API)
+Congratulations. You've obtained the user ID of your first Goodreads user and have everything in place to make your first authenticated request: listing their shelves.
 
-Congratulations. You've obtained the user ID of your first Goodreads user and have everything in place to make your first authenticated request: listing their shelves. 
-
-Goodreads users have different preferences for naming their shelves so it's important to find out what shelves they have before trying to manipulate books on a shelf. `to-read`, `currently-reading` and `read` however, are three shelves that Goodreads creates by default for every user.
+Goodreads users have different preferences for naming their shelves so it's important to find out what shelves they have before trying to manipulate books on a shelf. `to-read`, `currently-reading` and `read`, are three shelves that Goodreads creates by default for every user.
 
 Create a new route in `server.js` called `shelves` and add the following:
 
@@ -193,8 +190,7 @@ Run the app using `npm start` and go to `https://localhost:8080/authenticate`. O
 ```
 From this, we can tell that we want the `result.user_shelf` so like before, replace the `console.log(result)` with `var usershelf = result.user_shelf`.
 
-## Returning A User's Owned Books
-
+### Returning A User's Owned Books
 Finally, we can proceed to get books the user has already added to Goodreads. For simplicity in this example, we will use owned books (a special category of books that isn't a shelf) but the principle is the same. If you want to manipulate books on a user's shelf, make sure the shelf already exists by using the `gr.getUsersShelves()` function which we just did.
 
 Create a route called `owned-books` and add the following:
@@ -225,7 +221,8 @@ As before, go to `https://localhost:8080/authenticate` and login to your Goodrea
   owned_books: { owned_book: [ [Object], [Object] ] }
 }
 ```
-You can see that we need to amend our request to `result.owned_books.owned_book`. We also want to display the titles of owned books to the user on a new page and link (when clicked) to the book pages we created in [part 1](/engineering-education/simple-guide-to-using-apis-nodejs). Change the route according like so:
+
+You can see that we need to amend our request to `result.owned_books.owned_book`. We also want to display the titles of owned books to the user on a new page and link (when clicked) to the book pages we created in [part 1](https://www.section.io/engineering-education/simple-guide-to-using-apis-nodejs/). Change the route according like so:
 
 ```js
 // Owned Books Route
@@ -244,7 +241,8 @@ app.get('/owned-books', function (req, res) {
     });
 });
 ```
-In the `views/pages` folder, create an new file called `owned-books.ejs`. In the new file, add:
+
+In the `views/pages` folder, create a new file called `owned-books.ejs`. In the new file, add:
 
 ```html
 !DOCTYPE html>
@@ -271,11 +269,10 @@ In the `views/pages` folder, create an new file called `owned-books.ejs`. In the
 </html>
 
 ```
-Finally, we should test to make sure it works. Go to `https://localhost:8080/authenticate` to login and then go to `https://localhost:8080/owned-books`. You should now see only the books you're marked as owned in your Goodreads account. Clicking on a book title should you take you to a book page exactly the same as the book search in [part 1](/engineering-education/simple-guide-to-using-apis-nodejs).
+Finally, we should test to make sure it works. Go to `https://localhost:8080/authenticate` to login and then go to `https://localhost:8080/owned-books`. You should now see only the books you've marked as owned in your Goodreads account. Clicking on a book title should you take you to a book page exactly the same as the book search in [part 1](https://www.section.io/engineering-education/simple-guide-to-using-apis-nodejs/).
 
-## Next Steps
-
-Congratulations. You've authenticated with the Goodreads API and made your first authenticated request. Explore the [goodreads-api-node](https://github.com/baahrens/goodreads-api-node) documentation to discover more ways to use the Goodreads API. 
+### Next Steps
+Congratulations. You've authenticated with the Goodreads API and made your first authenticated request. Explore the [goodreads-api-node](https://github.com/baahrens/goodreads-api-node) documentation to discover more ways to use the Goodreads API.
 
 Looking for an example? Check out my [Library Trackr web app](https://github.com/louisefindlay23/library-trackr) where I'm aiming to solve the needs of bibliophiles who collect books in both print and ebook format.
 
