@@ -20,7 +20,7 @@ along to build your first Node.js application.
 
 This article will cover some of the common tips you need to know in order to have a strong background to get started with Node.js application development.
 
-## 1. Understand Node.js Package Manager (Npm)
+## 1. Understand Node.js Package Manager (NPM)
 
 NPM is an easy to use package manager for the Node.js platform. It helps to install packages and manage versions and dependencies. NPM helps to install the package you want with just a single command. To use NPM, you need Node.js to be installed on your computer. For OS X and Windows, the Node.js installer has an easy to use interface and NPM is included. Developers using Linux need to run the following command in their package manager to set up Node.js and NPM.
 
@@ -35,7 +35,7 @@ sudo apt-get install npm
 You can then verify Npm installation by writing the following in your
 terminal `npm -v` or if you realize you have an older version run `npm
 install npm -g` (for Windows) or `npm install -g npm\@latest` (for Linux
-and Mac OS X) to update to the current Npm version. 
+and Mac) to update to the current Npm version. 
 
 Npm helps to install Node.js modules. For example, you just need to write `npm install` followed by your specified module i.e `npm install express`, once the package is installed you will be able to use `require ()` on your Node.js project and they will run just as if they were built-ins. 
 
@@ -53,7 +53,7 @@ npm install
 
 ## 2. Understand A to Z Most Useful Node.js. Modules and Frameworks
 
-The power of Node.js lies in hundreds of packages that make it easier to
+The power of Node.js backed by hundreds of packages that make it easier to
 write your program. The packages are open source and they are the
 ecosystem of Node.js applications. Every Node.js developer will always
 interact with these packages to get a more efficient development
@@ -254,16 +254,14 @@ sure that your app passes all security demands.
 
 ## 9. Deploying your Node.js. application
 
-After finishing developing your app and all features are tested, you
-need now be wondering how you will get your application out for the
-world to interact with it. The most familiar Node.js deployment ways if
-either PaaS provider (Heroku) or
+After finishing application development processes, testing its features and security preferences , your Node.js application is now ready for production. The most common Node.js deployment ways are
+either PaaS provider such as Heroku and [DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app/) or
 using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).
 
-Let's look in brief what you need to deploy to Heroku;
+Let's look in brief how to deploy to Heroku;
 
-This will happen after the app development process is over and it meets
 all your security preferences. To get started on Heroku with Node.js.
+To get started on Heroku with Node.js.
 Download Heroku CLI for your app. You need to have Node.js version to be
 higher than 8 check `node -v`
 
@@ -278,8 +276,8 @@ commit" command. Now you can create the Heroku application using command
 git repository. You can now deploy your application to the Heroku
 server, use `git push heroku master`. You can then `heroku open` to open
 your application on your browser.
-Check [MORE](https://deploybot.com/blog/guest-post-how-to-set-up-and-deploy-nodejs-express-application-for-production) on
-how to deploy your Node.js application.
+Check [MORE](https://www.section.io/engineering-education/deploying-nodejs-web-app/) on
+how to deploy your first Node.js application 
 
 ## 10 Monitoring your Node.js application
 
