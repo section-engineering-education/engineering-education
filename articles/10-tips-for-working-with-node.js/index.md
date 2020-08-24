@@ -22,7 +22,7 @@ This article will cover some of the common tips you need and practice
 in order to have a strong background fromgetting started to deploying 
 the first Node.js application.
 
-###1.  Understand Node.js. Package Manager (Npm)
+### 1.  Understand Node.js. Package Manager (Npm)
 
 This is a package manager for JavaScript Node.js Platform that helps in
 package installation, version management, and dependency management,
