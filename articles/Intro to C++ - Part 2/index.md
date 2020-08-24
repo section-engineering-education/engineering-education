@@ -44,7 +44,7 @@ Let's write a program that takes a numerical score and tells you if you're passi
   }
   ```
 
-This program will print "You passed" if your score is more than 60 and "You failed" if your score is less than 60. 
+This program will print "Congratulation! You passed" if your score is greater than or equal to 60 and "You failed" if your score is less than 60. 
 
 Here’s what the output of this program would like:
 
