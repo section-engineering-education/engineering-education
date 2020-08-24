@@ -1,6 +1,21 @@
-## If Else and Loops in C++
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/intro-to-c-part1
+title: If Else and Loops in C++
+description: 
+author: Parampreet Singh
+date: 2020-08-24T00:00:00-12:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/intro-to-c-part1/hero.jpg
+    alt: intro to C++
+---
 Let's move forward from where we left off from the previous article. If you haven't checked the previous article, make sure you do. The previous article walks you through the importance of C++ and why and where it is being used. Most importantly, teaches you about the basics of the C++ language that you need to get started. 
+<!--more--> 
 
 The next most important concept that comes right after the basic concepts of programming is **If Else**.
 
