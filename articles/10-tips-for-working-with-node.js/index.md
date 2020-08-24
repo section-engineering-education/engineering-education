@@ -94,8 +94,8 @@ you ease the development of Node.js applications.
 
 -   [Nodemailer](https://nodemailer.com/about/): Allows (easy as cake)
     emails sending.
-    
-You can have a look at all available library on
+
+You can have a look at more available library on
 [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules)
 
 ## 3. HTTP module for your Node.js. server
@@ -209,7 +209,7 @@ ON SECTION.IO efficient ware to deal with bugs from your app.
 
 It is important to keep the Node.js codebase compact and shallow to
 reduce the latency and speed up the response time of the application. Some devices are slower and their latencies are higher thus
-you need to keep the code small, well-arranged executions and light. The
+you need to keep the code small, well-arranged executions and light. These
 same ideas should be applied to your server code as well. While writing
 your Node.js code ensure proper and appropriate naming of things for
 better referencing. This will serve as Documentation of your application
