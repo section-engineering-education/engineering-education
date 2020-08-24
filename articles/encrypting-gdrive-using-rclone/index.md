@@ -18,7 +18,25 @@ Summary: This is a how-to guide on setting up Rclone to create an encrypted fold
 Key Takeaways: Readers will understand how to install Rclone, add a Google Drive remote, obtain a Google Client ID, how to manage files on the local filesystem and Google Drive (copy, move, sync and mount) and create an encrypted remote.
 
 ## Table of Contents
-(Insert Table of Contents - See FCC article for markdown formatting)
+
+* [Introduction](#introduction)
+* [Installing Rclone](#installing-rclone)
+* [Creating Your First Rclone Remote](#creating-your-first-rclone-remote)
+  * [Create Google Drive Client ID](#create-google-drive-client-id)
+  * [Continuing Rclone Configuration](#continuing-rclone-configuration)
+  * [Allow Rclone Access to Your Google Drive](#allow-rclone-access-to-your-google-drive)
+  * [Finish Remote Setup and Test](#finish-remote-setup-and-test)
+* [Uploading Files to A Remote (Copying, Moving & Syncing)](#uploading-files-to-a-remote-copying-moving-and-syncing)
+  * [Copy/Move/Sync Files](#copy-move-sync-files)
+  * [Check the Files Have Transferred](#check-the-files-have-transferred)
+* [Mount A Google Drive Folder Using Rclone](#mount-a-google-drive-folder-using-rclone)
+  * [Creating the Rclone Mount](#creating-the-rclone-mount)
+  * [Testing the Rclone Mount](#testing-the-rclone-mount)
+* [Encrypt Your Google Drive Remote with Rclone](#encrypt-your-google-drive-remote-with-rclone)
+  * [Create A Crypt Remote](#create-a-crypt-remote)
+  * [Upload Files to the Crypt Remote](#upload-files-to-the-crypt-remote)
+  * [Check Files Have Been Uploaded to the Encrypted Remote](#check-files-have-been-uploaded-to-the-encrypted-remote)
+* [Uninstalling Rclone](#uninstalling-rclone)
 
 ## Introduction
 Rclone is a cross-platform command-line tool which connects remotes (cloud storage providers) with the local filesystem. Similar to [rsync](l) but for cloud storage, this tool is vital for remotes where some operating systems aren’t natively supported and it provides advanced functionality such as syncing and mounting.
@@ -71,7 +89,7 @@ Click Credentials in the sidebar, then OAuth Consent Screen. Select Internal as 
 
 Go back to the Credentials page and click Create Credentials and OAuth Client ID. Set the Application type as Other, name it however you like and finally click the blue Create button.
 
-## Continuing Rclone Configuration
+### Continuing Rclone Configuration
 
 ![Before Auto Config](auto-config.png)
 
