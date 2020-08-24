@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/debug-node-devtools/
 title: Debugging a Node.Js app using Chrome Dev Tools
-description: 
+description: How to set up a local and remote app for debugging. How to set up an SSH tunnel to debug a remote app. Opening DevTools, setting breakpoints, and restarting app instance for debugging. 
 author: geoffrey-mungai
 date: 2020-08-24T00:00:00-10:00
 topics: [Node.js]
