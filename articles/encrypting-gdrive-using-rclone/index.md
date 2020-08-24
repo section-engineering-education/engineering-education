@@ -153,85 +153,41 @@ cd gdrive
 ls
 ```
 
-
 ## Encrypt Your Google Drive Remote with Rclone
 
-This work instruction will show how to encrypt your files using Rclone by setting up a folder with everything’s encrypted to securely store the files that need it while still being able to access your other files freely through the web interface.
+Finally, we can encrypt our files. We will setup an encrypted folder to securely store the files that need it whilst still being able to freely access your unencrypted files. Encrypted files can only be decrypted on a computer with Rclone and the encrypted remote.
 
 ### Create A Crypt Remote
 
-To encrypt your files, you need to create another remote which will do the encryption process. There are different encryption settings you can choose from and this guide will implement the strongest available.  (Craig-Wood, 2014)9
+To encrypt your files, you need to create another remote which will do the encryption process. There are different encryption settings you can choose from and this guide will implement the strongest available.
 
-The remote to encrypt/decrypt should be the name of the remote you created in Work Instruction – Setting up Rclone and the path should be the name of the folder you want to store the encrypted files e.g. encrypted or secret. All your encrypted files will be stored there and can only be decrypted if you setup Rclone on the device with the same credentials.
+**(Screenshot this steps)**
 
-Instruction
+The location of the remote should be the name of the Google Drive remote you created earlier and the path should be the name of the folder you want to store the encrypted files e.g. encrypted or secret. It should look like: `gdrive:encrypted`
 
-Type rclone config and press enter.
+You want to generate a strong password and use the strongest encryption which is 1024. Make sure to copy the password to a secure location otherwise you won’t be able to unencrypt your files on another device or if you delete Rclone.
 
-Type n and press enter.
-
-Type a name for the remote and press enter. Common names are crypt or secret.
-
-Type the number for encrypt/decrypt a remote and press enter.
-
-The location should be the name of the remote you created in the Work Instruction – Setting up Rclone, followed by a colon and the name of the encrypted folder you want to create and then press enter.
-
-Type 1 and press enter.
-
-Type 1 and press enter.
-
-Type g and press enter.
-
-Type 1024 and press enter.
-
-Make sure to copy the password to a secure location otherwise you won’t be able to unencrypt your files on another device or if you delete Rclone.
-Type y and press enter.
-
-Similar to the process above, repeat the last four instructions.
-
-Type y and press enter.
-
-Finally, type q and press enter to exit the configurator.
+Once complete, type `q` to exit the configurator.
 
 ### Upload Files to the Crypt Remote
 
-Now that the crypt remote has been created, you need to upload some files to it.
+Now that the crypt remote has been created, you need to upload some files to it which is exactly the same process as the file upload we did earlier. `rclone copy (file-name) (encrypted-remote name):`. For example: `rclone copy test.txt encrypted:`
 
-This is a similar process as Work Instruction – Upload/Move/Sync Files to Google Drive using Rclone.
-
-Instruction
-
-Type rclone copy (file-name) (encrypted-remote name): and press enter. 
-
-`rclone copy test.txt secret:`
-
-The specified file has been moved to the encrypted remote
+The specified file has been copied to the encrypted remote.
 
 ### Check Files Have Been Uploaded to the Encrypted Remote
 
 There are two ways to check if files have been uploaded to the encrypted remote. 
-You can use the normal gdrive remote and look into the encrypted folder which will show the encrypted version of the files.
-
-If you want to view the unencrypted files, then you would need to search the encrypted remote.
-
-This again is a similar process as Work Instruction – Upload/Move/Sync Files to Google Drive using Rclone.
-
-Instruction
-
-To view the encrypted files, type rclone lsf (remote-name):(remote-path) and press enter.
-
-To view the unencrypted files, type rclone lsf (encrypted remote-name): and press enter.
-
-`rclone lsf gdrive:secret`
+You can use the normal gdrive remote and look into the encrypted folder which will show the encrypted version of the files which `rclone lsf (remote-name):(remote-path)` or swap out the remote name for the encrypted remote to see the unencrypted files.
 
 ## Uninstalling Rclone
 
 If you no longer need Rclone, uninstalling it is just as easy as installing it. The process only takes two commands. 
-
-Type:
 
 ```bash
 sudo rm /usr/bin/rclone
 
 sudo rm /usr/local/share/man/man1/rclone.1
 ```
+
+Congratulations, you've installed Rclone, created your first remote, learned how to copy/movie/sync files and mount folders. You've also created your first encrypted remote and learned how to manipulate files within it.
