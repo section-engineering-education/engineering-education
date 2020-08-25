@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/getting-started-with-docker/hero.jpg
     alt: container example image
 ---
-Docker is all the rage these days, and for good reason. It allows you to run instances of an application inside of a container. A container is similar to a virtual machine, but instead of running a full operating system, it runs the minimal runtime requirements of an application or set of applications.
+Docker is all the rage these days, and for good reason. It allows an application to run instances inside of a container. A container is like a virtual machine, but instead of running a full operating system, it runs the minimal runtime requirements of an application or set of applications.
 <!--more-->
 
 ### Versions
 Docker comes in two different versions:
 
-Docker-CE is the Community Edition, which is free to use but does not come with any paid support. If you have any issue you will have to use the community forums and read through the documentation.
+Docker-CE is the Community Edition, it is free to use and does not come with paid support. If you have any issue, you will have to use the community forums and read through the documentation.
 
 Docker-EE is the Enterprise Edition, which is the licensed version and allows for support contracts with Docker (the company), SLAs, Image management, and other features.
 
@@ -99,7 +99,7 @@ Now, let's create our first docker image by pulling it from Docker Hub. First le
 ```
 docker search hello-world
 ```
-This will list all the available images called "hello-world". At the top of the list you should see an image called "hello-world". Let's pull that image and test it out.
+This will list all the images called "hello-world". From the result, you can see the first image called "hello-world". Let's pull the image and test it out.
 
 ```
 docker pull hello-world
@@ -118,7 +118,7 @@ We just pulled our first docker image from the Docker Hub.
 
 ### Docker Commands
 
-Now it’s time to get our hands dirty with Docker commands, which we all have been waiting till now.
+Now let's get to know some Docker commands;
 
 #### docker create
 Creates a container from an image.
@@ -150,29 +150,19 @@ fa622c1b5eec        hello-world                  "/hello"               31 minut
 
 #### docker start
 This command starts any stopped container(s).
-
-Some of the examples of using this command are shown below:
-
 ```
 docker start fa622
 ```
-In the example above, Docker starts the container beginning with the container ID fa622.
-```
-docker start cass_ubuntu
-```
-Whereas in this example, Docker starts the container named cass_ubuntu.
+We need the container ID to start the container
 
 #### docker stop
-This command stops any running container(s). It is similar to the docker start command.
-
-We can stop the container either by specifying the first few unique characters of its container ID or by specifying its name.
-
+This command stops any running container(s).
 ```
  docker stop fa622
 ```
 
 ####  docker run
-This command first creates the container, and then it starts the container. In short, this command is a combination of the docker create and the docker start command.
+This command creates the container first, and then it starts the container. This command combines the docker create and the docker start command.
 
 ```
 docker run ubuntu /bin/echo 'Hello world'
@@ -192,7 +182,7 @@ Hello world
 ```
 
 #### docker images
-This command lists out all the Docker Images that are present on your Docker Host.
+This command lists out all the Docker Images.
 
 ```
  docker image ls
@@ -205,26 +195,26 @@ kitematic/hello-world-nginx   latest              03b4557ad7b9        5 years ag
 ```
 
 #### docker container rm
-This command delete container(s). To remove one or more Docker containers, use the `docker container rm` command, followed by the IDs of the containers you want to remove.
+This command deletes container(s). 
 
 ```
  docker container rm 1a203a1e19a2
 ```
-*NB: The containers need to be in a stopped state in order to be deleted*.
+*NB: The containers have to be in a stopped state to be deleted*.
 
 #### docker image rm
-This command delete image(s). To remove one or more Docker images first you need to find the images IDs. Use the `docker images ls` command to find the IDs.
+This command deletes image(s). To remove a docker image, you will need the ID of the image. Use the `docker images ls` command to get the ID.
 ```
  docker image rm fce289e99eb9
 ```
-*NB: To remove the image, you will have to remove the container first.*
+*NB: To remove the image, remove the container first.*
 
-You can also get help by simply asking for it.
+You can also get help by asking for it.
 
 ```
 docker --help
 ```
-This line above will list out all available commands, here is a sample output.
+Result:
 
 ```
 Usage:	docker [OPTIONS] COMMAND
@@ -318,7 +308,7 @@ Run 'docker COMMAND --help' for more information on a command.
 
 ### Writing Your First Dockerfile
 
-A DockerFile is a text file that contains instructions on how to build a docker image. A DockerFile is a text file that contains instructions on how to build a docker image. To build a Docker image, you need to create a Dockerfile. Below are some Dockerfile instructions that you should know:
+A Dockerfile is a text file that contains instructions on how to build a docker image. Below are some Dockerfile instructions that you should know:
 
 - FROM — set the base image
 - RUN — execute a command in the container
@@ -366,5 +356,7 @@ Docker is a powerful tool for creating and running distributable, lightweight ap
 [Docker Cheatsheet](https://medium.com/statuscode/dockercheatsheet-9730ce03630d)
 
 [Dockerfile Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
+[Getting Started With Docker In Linux](https://www.putorius.net/getting-started-with-docker-in-linux.html)
 
 [Play with Docker](https://labs.play-with-docker.com/), which is an online playground for Docker. It allows users to practice Docker commands immediately, without having to install anything on your machine. The best part is it’s simple to use and available free of cost.
