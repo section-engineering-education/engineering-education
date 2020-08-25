@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-slug: getting-started-with-docker
+url: /engineering-education/getting-started-with-docker/
 title: Getting Started with Docker
 description: The basic concepts of Docker, Understanding how to install Docker, creating your first image from Dockerhub and how to create a Dockerfile.
 author: francisca-adekanye
-date: 2020-08-01T00:00:00-06:00
+date: 2020-08-25T00:00:00-06:00
 topics: [containers]
 excerpt_separator: <!--more-->
 images:
@@ -195,7 +195,7 @@ kitematic/hello-world-nginx   latest              03b4557ad7b9        5 years ag
 ```
 
 #### docker container rm
-This command deletes container(s). 
+This command deletes container(s).
 
 ```
  docker container rm 1a203a1e19a2
