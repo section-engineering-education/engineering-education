@@ -130,6 +130,8 @@ The logger logs every request that comes in to the server. `app.use` is used to 
 We are using the [path module](https://nodejs.org/api/path.html) to join the relative url (from the request) and the directory name. The [fs module](https://nodejs.org/api/fs.html) provides an API for interacting with the file system. We are checking if the file exists, if it does not go to next function in the stack, if it does return that file using `res.sendFile`. 
 
 
+#### Using Third Party Middleware
+
 We can write our own middleware functions or import them similar to importing modules in Node.js using `require`. Lets use a popular open source logger called [morgan](http://expressjs.com/en/resources/middleware/morgan.html) instead of writing our own logging function. 
 
 Install it using npm.
@@ -144,9 +146,27 @@ var express = require("express");
 var logger_morgan = require("morgan");
 
 var app = express();
+...
 app.use(logger_morgan("short")); // logs short notation of requests
-
+...
 ```
+
+Express comes with `express.static` middleware bundled with it, it can be used to serve static files instead of the function in the previous section. It provides better security and performance thant the function that we wrote. 
+
+```javascript
+app.use(express.static("static") //relative path
+```
+
+Any files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times. If the file is not there in one directory then the request is passed onto the next `static()` call. 
+
+## Routing
+
+
+
+
+## Sub Applications
+
+
 
 
 ### Conclusion 
