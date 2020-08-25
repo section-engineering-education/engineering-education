@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: writing-with-the-rust-language
+url: /engineering-education/writing-with-the-rust-language/
 title: Writing Good Code with the Rust Language
 description: How Rust forces you to write good code which, in turn, eliminates all possibility of undefined behavior that can cause segfaults.
 author: zack-jorquera

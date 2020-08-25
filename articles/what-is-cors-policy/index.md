@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: what-is-cors-policy
+url: /engineering-education/what-is-cors-policy/
 title: What is the CORS Policy?
 description: The CORS policy, or the Cross-Origin Resource Sharing policy, prevents accessing web resources from sources other than the server the website is running on for security purposes.
 author: nadiv-gold-edelstein
 date: 2020-05-11T00:00:00-07:00
-topics: [security]
+topics: [Security]
 excerpt_separator: <!--more-->
 images:
 

@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: stack-data-structure-python
+url: /engineering-education/stack-data-structure-python/
 title: Using the Stack Data Structure in Python
 description: The Stack is a very powerful linear data structure that's used in many low level operating system programs. This article explores ways to implement and use the stack data structure in Python.
 author: saiharsha-balasubramaniam
 date: 2020-07-16T00:00:00-12:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

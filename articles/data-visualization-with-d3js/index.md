@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: data-visualization-with-d3js
+url: /engineering-education/data-visualization-with-d3js/
 title: Data Visualization with D3.js
 description: D3 (Data-Driven Documents) is a JavaScript library that allows us to manipulate documents based on data. This tutorial walks through how to visualize data using D3.js.
 author: rohan-reddy
 date: 2020-07-09T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

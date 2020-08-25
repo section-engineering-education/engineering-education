@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: node-mvc-architecture
+url: /engineering-education/node-mvc-architecture/
 title: Node.js applications following an MVC architecture
 description: The article is about creating your Node.js applications following an MVC architecture pattern that divides the whole application into three parts.
 author: linus-muema
@@ -82,3 +82,23 @@ Then, in my controller, I will import the `utils` file to access the exported fu
 And with that, you have some clean MVC architecture. This follows the principle of "separation of concerns" where we decouple our code into very small units which can be handled independently. This is an important aspect to follow, especially in a team, to allow smooth collaboration.
 
 The fully refactored code can be found on [Github](https://github.com/LinusMuema/node-authentication-api/tree/mvc).
+
+<section class="section-rich-text xs-pb-80 xs-pt-80">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5">
+      <a class="decoration-none" href="/modules/node-js/">
+        <div class="cta-block-box relative xs-mt-10 xs-mb-50">
+          <div class="cta-block-box-left-block absolute"></div>
+          <div class="cta-block-box-left-stripes absolute"></div>
+          <div class="cta-block-box-inner pa-5 cta-shadow">
+            <h3 class="title-3" style="text-align: center;"><img src="/assets/images/blog/featured-images/Node.js_logo.png" width="150" style="margin: 0;"><br>Edge Hosting</h3>
+            <p class="xs-mb-20">Section’s Node.js Edge Hosting empowers DevOps teams to run mission critical Node.js applications at the network edge for blazingly fast results with enterprise level AppSec protection.</p>
+            <span class="link-with-arrow-blue text-blue text-18-medium">Learn more and get started on a free plan</span>
+          </div>
+          <div class="cta-block-box-right-block absolute"></div>
+          <div class="cta-block-box-right-stripes absolute"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

@@ -2,19 +2,20 @@
 layout: engineering-education
 status: publish
 published: true
-slug: what-are-reverse-proxies
+url: /engineering-education/what-are-reverse-proxies/
 title: What Are Reverse Proxies?
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
 author: ivan-santos
 date: 2019-08-19T00:00:00-07:00
-topics: [edge-computing]
+topics:
+- Edge Computing
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/what-are-reverse-proxies/hero.jpg
     alt: reverse proxies
 ---
-Section’s main work focuses on providing an Edge Compute Platform to improve scalability, security, and performance for internet traffic worldwide. But how exactly is Section able to live up to that promise? The answer is through the use of reverse proxies in Section’s platform.  
+Section’s main work focuses on providing an Edge Compute Platform to improve scalability, security, and performance for internet traffic worldwide. But how exactly is Section able to live up to that promise? The answer is through the use of reverse proxies in Section’s platform.
 
 <!--more-->
 Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server. Each reverse proxy handles the request in a different way. There are a variety of reverse proxies that can be used to handle a request: such as caching, security, and content optimization proxies. When a collection of reverse proxies are stacked together for the request to go through, it is called a proxy stack. As seen in the image below, taken from Section’s website, a proxy stack is a set of back-to-back reverse proxies that can be configured to handle both HTTP and HTTPS requests. When a request is sent by a client, it will hit the proxy stack first before hitting the application’s origin. Because this stack brings the handling of requests closer to the source, it is said to be at the edge of the process, hence the term edge computing.

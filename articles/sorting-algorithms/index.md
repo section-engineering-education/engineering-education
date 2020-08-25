@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: sorting-algorithms
+url: /engineering-education/sorting-algorithms/
 title: How to Sort a List Using Algorithms
 description: A sorting algorithm is an algorithm that puts elements of a list in a certain order. Efficient sorting is important to optimizing the efficiency of other algorithms that require input data to be in sorted lists.
 author: mike-white
 date: 2020-07-04T00:00:00-07:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -24,7 +24,7 @@ Time complexity measures how an algorithm performs under large inputs.
 
 - `O(1)` is the best-case scenario. It means that no matter how big the list is, it will take the same amount of time to sort it.
 - `O(logn)` means that the extra time for each element decreases as you add more elements.
-- `O(n)` means that a constant amount of time is added for each element. 
+- `O(n)` means that a constant amount of time is added for each element.
 
 The latter two are both pretty good time complexities to have. Unfortunately, none of our algorithms are this quick. [It's impossible to have a sorting algorithm that works faster than `O(n)`](https://www.youtube.com/watch?v=4Q72kbwyEmk).
 
@@ -56,7 +56,7 @@ Merging the lists is an `O(n)` operation. This time, it only has to be done log(
 ![A hand-drawn demonstration of quick sort](/engineering-education/sorting-algorithms/quick.jpg)<br>
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=es2T6KY45cA)
 
-The complexity of quick sort is complicated. Usually, it's `O(nlogn)`, but it can take longer if the pivot chosen is close to one extreme of the list. The worst-case scenario is `O(n^2)`. 
+The complexity of quick sort is complicated. Usually, it's `O(nlogn)`, but it can take longer if the pivot chosen is close to one extreme of the list. The worst-case scenario is `O(n^2)`.
 
 There are [many ways to choose a pivot](https://stackoverflow.com/questions/164163/quicksort-choosing-the-pivot/) (some of which may or may not take longer than the sort itself). If the list is already sorted, then it will take a while to sort a list if you assign the first element as the pivot. It's still very fast, but you might not want to use this particular approach for user input.
 

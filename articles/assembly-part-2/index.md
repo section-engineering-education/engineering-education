@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: assembly-part-2
+url: /engineering-education/assembly-part-2/
 title: Assembly Part 2 - Let's Write Assembly!
 description: Learning assembly language, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
 author: mike-white
 date: 2020-07-03T00:00:00-08:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
