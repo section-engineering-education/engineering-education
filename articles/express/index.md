@@ -26,7 +26,7 @@ Node.js APIs can get complex and writing how to handle a single request can get 
 
 Install express via npm
 
-    npm install express --save
+    $ npm install express --save
 
 Lets create a basic Express example app. 
 
@@ -69,14 +69,14 @@ In Node.js the request and response object are passed to one function (request h
 Lets look at a basic static file server to understand middleware. Initialize a npm project and install express. Create a directory named `static` and copy-paste *any* available static files into the folder (text, images, etc). 
 
 ```
-npm init -y
-npm install express
-mkdir static
-touch static/dummy_file.txt
-touch static/dummy_file2.txt
-echo file1 > static/dummy_file.txt
-echo file2 > static/dummy_file2.txt
-touch app.js
+$ npm init -y
+$ npm install express
+$ mkdir static
+$ touch static/dummy_file.txt
+$ touch static/dummy_file2.txt
+$ echo file1 > static/dummy_file.txt
+$ echo file2 > static/dummy_file2.txt
+$ touch app.js
 ```
 
 Our app will have a [*logger*](https://en.wikipedia.org/wiki/Log_file) function and a static file serving function. 
@@ -130,6 +130,23 @@ The logger logs every request that comes in to the server. `app.use` is used to 
 We are using the [path module](https://nodejs.org/api/path.html) to join the relative url (from the request) and the directory name. The [fs module](https://nodejs.org/api/fs.html) provides an API for interacting with the file system. We are checking if the file exists, if it does not go to next function in the stack, if it does return that file using `res.sendFile`. 
 
 
+We can write our own middleware functions or import them similar to importing modules in Node.js using `require`. Lets use a popular open source logger called [morgan](http://expressjs.com/en/resources/middleware/morgan.html) instead of writing our own logging function. 
+
+Install it using npm.
+
+`$ npm install morgan`
+
+We can call the `use()` on the Express app object to add the middleware to the stack.
+
+```javascript
+
+var express = require("express");
+var logger_morgan = require("morgan");
+
+var app = express();
+app.use(logger_morgan("short")); // logs short notation of requests
+
+```
 
 
 ### Conclusion 
