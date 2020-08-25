@@ -1,6 +1,6 @@
 # FLUTTER VS KOTLIN
 
-Mobile application development has become an integral part of the business in recent years. Previously, people used to prefer ReactNative or Flutter to develop cross-platform applications due to their low-cost features. But today, Kotlin has managed to enter into the world of cross-platform development. 
+Mobile application development has become an essential part of the business in recent years. Previously, people used to prefer ReactNative or Flutter to develop cross-platform applications due to their low-cost features. But today, Kotlin has managed to enter into the world of cross-platform development. 
 
 Everyone used to prefer React Native for their cross-platform app development but not any longer. Because Flutter has been improved a lot since the past years, it now provides better features than ReactNative. And Kotlin has entered the competition as well.
 
@@ -57,6 +57,8 @@ The operating cost and development charges of Flutter are significantly lower th
 The language used in Dart is still not familiar to all the app developers, and this is quite a hindrance. The framework size of Dart is quite large. Thus, the apps are much bigger, which is detrimental to app development in Flutter today.
 
 ### COMPANIES USING FLUTTER
+
+Acoording the [Flutter's Website](https://flutter.dev/showcase) some of the most prominent companies using Flutter are: 
 
 * GoogleAds - The Google Ads app helps users manage, optimize, and track ad campaigns all from the convenience of an android device.
 
