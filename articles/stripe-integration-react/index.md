@@ -1,6 +1,6 @@
 # Integrating Stripe with React
 
-All online stores need a payment gateway irrespective of the service or product being sold. Such an important step needs the utmost attention of the developer, for this is the source of income for the online store. In this article, we will look at setting up the Stripe API for all payment purposes. The stripe is the go-to choice of most of the developers in the world, for one, its developer-friendly rich documentation. Stripe offers security and ensures safe transactions. 
+All online stores need a payment gateway irrespective of the service or product being sold. Such an important step needs the utmost attention of the developer, for this is the source of income for the online store. In this article, we will look at setting up the Stripe API for all payment purposes. The stripe is the [go-to choice](https://stripe.com/en-in/payments/payment-methods-guide) of most of the developers in the world, for one, its developer-friendly rich [documentation](https://stripe.com/docs/api). Stripe offers security and ensures safe transactions. 
 
 ## Integration With React
 
@@ -35,11 +35,11 @@ If already registered, log in to your dashboard with your login credentials.
 This step is important to ensure we are in testing mode. This enables us to test aspects of payments such as receiving payments, sending payments, or approving refunds. On the bottom left of your dashboard, you should find the *Viewing test data* button. Enable that by toggling the button provided. The dashboard is shown for your reference.
 
 ![](dashboard.jpg)
-
+*Dashboard View*
 ### Obtain Stripe Access Token 
 You will find a section called *Get your test API keys*. Under there, you will find two keys, a Publishable key, and a secret key. As the name suggests, we need to keep these keys secure. The publishable key is used to send requests, whereas the secret key is stored in the .env file at the backend.
 ![](api_test_keys.jpg)
-
+*API Keys on Dashboard*
 ### Stripe Integration using react-stripe-checkout
 
 There are many libraries available for integrating React with stripe. We will be using ```react-stripe-checkout``` library in this tutorial. 
@@ -77,7 +77,7 @@ class CheckoutWithStripe extends React.Component {
     render() {
         return (
             <StripeCheckout
-                amount = '1000'
+                amount = '10.00'
                 name="STRIPE_INTEGRATION"
                 // functions defined above can be used to add more information while making the API call.
                 // description={`Order of ${computeQuantity(cart)} items!`}
@@ -97,6 +97,7 @@ Call the component *CheckoutWithStripe* from the payment page. You should see a 
 It should look like this.
 
 ![](final_output.jpg)
+*Final Output*
 
 The error says that the API key is invalid. To resolve the error, you may enter your public API key. To verify that the application is in test mode, you will get an alert on the top right corner as shown. 
 
