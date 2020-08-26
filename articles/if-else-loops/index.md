@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/if-else-loops/hero.jpg
     alt: If Else Loops C++ image example
 ---
-Let's continue from where we left off in the [previous article](https://www.section.io/engineering-education/intro-to-c-part1/). If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward. The previous article walked us through the importance of C++ as a programming language, the why and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started.
+Let us continue from where we left off in the [previous article](https://www.section.io/engineering-education/intro-to-c-part1/). We started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward. 
 <!--more-->
 The next most logical step would be for us to go over would be the concepts of **If Else**.
 
