@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: static-site-dynamic-nodejs-web-app
+url: /engineering-education/static-site-dynamic-nodejs-web-app/
 title: Converting A Static Site to A Dynamic Node.js Web App
 description: How to build your first dynamic Node.js web app from a static site. This article dispels the difficulties of learning full-stack development.
 author: louise-findlay
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/static-site-dynamic-nodejs-web-app/hero.png
     alt: header image static site nodejs web app
 ---
-This tutorial will guide you on how to convert a static website that uses HTML, CSS and JavaScript (JS) to a dynamic one using MongoDB, Express, Static HTML, CSS, JS, and NodeJS. Similar to the popular MEAN/MERN stack (MongoDB, Express, Angular or React, and NodeJS), but instead of using Angular or React, we will use a templating engine called [EJS](https://ejs.co) (Embedded JavaScript.) Other popular templating engines include Handlebars, Pug, and Nunjucks.
+This tutorial will guide you on how to convert a static website that uses HTML, CSS and JavaScript (JS) to a dynamic one using MongoDB, Express, Static HTML, CSS, JS, and Node.js. Similar to the popular MEAN/MERN stack (MongoDB, Express, Angular or React, and Node.js), but instead of using Angular or React, we will use a templating engine called [EJS](https://ejs.co) (Embedded JavaScript.) Other popular templating engines include Handlebars, Pug, and Nunjucks.
 <!--more-->
 
 Learning a templating language can be easier than a JS framework because you can just write HTML, and it lets you insert the same piece of code in multiple locations (called partials) or pass server-side variables to be displayed on the front-end (such as a username).
@@ -162,26 +162,8 @@ app.get('/', function (req, res) {
 ### Passing Server-Side Data
 Congratulations! You've successfully converted your static website to a Node.js web app. You've also created your first Express web server and learned the basics of EJS templating.
 
+Eager to deploy your first Node.js web app so you can show it off? Follow my [Node.js deployment tutorial for DigitalOcean](/engineering-education/deploying-nodejs-web-app).
+
 If you want to build on the skills you've learned in this tutorial, I suggest using EJS templating to work with APIs and databases.
 
-If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases guide](/engineering-education/working-with-databases-part1/) which will get you started and later expand into using EJS.
-
-<section class="section-rich-text xs-pb-80 xs-pt-80">
-  <div class="section-container">
-    <div class="section-rich-text-inner prl-5">
-      <a class="decoration-none" href="/modules/node-js/">
-        <div class="cta-block-box relative xs-mt-10 xs-mb-50">
-          <div class="cta-block-box-left-block absolute"></div>
-          <div class="cta-block-box-left-stripes absolute"></div>
-          <div class="cta-block-box-inner pa-5 cta-shadow">
-            <h3 class="title-3" style="text-align: center;"><img src="/assets/images/blog/featured-images/Node.js_logo.png" width="150" style="margin: 0;"><br>Edge Hosting</h3>
-            <p class="xs-mb-20">Section’s Node.js Edge Hosting empowers DevOps teams to run mission critical Node.js applications at the network edge for blazingly fast results with enterprise level AppSec protection.</p>
-            <span class="link-with-arrow-blue text-blue text-18-medium">Learn more and get started on a free plan</span>
-          </div>
-          <div class="cta-block-box-right-block absolute"></div>
-          <div class="cta-block-box-right-stripes absolute"></div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases](/engineering-education/working-with-databases-part1/) and [Getting to Grips with APIs](/engineering-education/simple-guide-to-using-apis-nodejs) guides which will get you started.

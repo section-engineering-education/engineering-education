@@ -4,14 +4,14 @@ A community-generated pool of educational content which is useful for engineers 
 [ENROLL HERE](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 
 ### Program Purpose
-Section is partnering with local university computer science programs to create a community-generated pool of content which is useful for engineers of every (any) level.
+Section partners with university computer science programs across the globe to create a community-generated pool of content which is useful for engineers of every (any) level.
 
 Content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
 
 The Section team will monitor and manage the overall Program.
 
 ### Program Resources
-- Be sure to sign up to the Section Community Slack Channel at [slack.section.io](https://slack.section.io/). Once signed up, join the **#eng-ed** channel for ongoing program communications.
+- Be sure to sign up to the Section Community Slack Channel at [slack.section.io](https://sectionio-community.slack.com/). Once signed up, join the **#eng-ed** channel for ongoing program communications.
 
 ### Submission Instructions
 1. To submit an article for consideration, be sure to first check [published content](https://www.section.io/engineering-education/) to ensure relevance and prevent overlap. **Hint**: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. [*View content form here*](https://forms.gle/3PdJatmhFhCToMfp9)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: google-search-console-introduction
+url: /engineering-education/google-search-console-introduction/
 title: Google Search Console - An Introduction
 description: This guide to Google Search Console will teach you how to add a site (called a property), submit a sitemap, and find and fix any errors that the Google crawlers may come across.
 author: louise-findlay
@@ -76,3 +76,5 @@ Back in the Google Search Console, select the old domain and go to Settings and 
 You should keep the redirect in place for a minimum of six months and you can stop renewing the domain after a year but it may be best to keep so it so no one else can buy it.
 
 Congratulations, you’ve set up Google Search Console and learned how to fix errors, add a sitemap, monitor search traffic, and set up a proper redirect.
+
+Struggling to setup other Google services? Check out my [guide to setting up a professional business email using GSuite](/engineering-education/creating-professional-email).

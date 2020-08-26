@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: managing-heap
+url: /engineering-education/managing-heap/
 title: Managing the Heap in C
 description: Working with the heap in C is very difficult. Even Google struggles with it. But it's very important to not have memory issues in your code.
 author: mike-white

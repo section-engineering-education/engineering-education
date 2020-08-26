@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: templating-your-static-site
+url: /engineering-education/templating-your-static-site/
 title: Templating Your Static Site (Converting a Static Site to a Static Site Generator)
 description: Tutorial on converting a simple static website to a static site generator, Eleventy and using EJS templating.
 author: louise-findlay
