@@ -107,8 +107,7 @@ Each text file has an associated plagiarism label/category:
     orig: This is a specific category for the original, Wikipedia source text. We will use these files only for comparison purposes.
 
 
-
-![wiki_pic](./wiki.png)
+<iframe frameborder="0" style="width:100%;height:823px;" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=plagarism_blog_post.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1JuAdE6fiDBQp1hzYW6x0SdAAq412xMh5%26export%3Ddownload"></iframe>
 
 #### QUIZ:
 
@@ -415,3 +414,8 @@ class Tdif_Vectorizer_Detector(Plagarism_Checker):
 Link to my code online is here.
 
 ## References: got to admit I am not all knowing
+
+
+
+
+
