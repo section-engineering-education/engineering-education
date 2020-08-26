@@ -244,7 +244,7 @@ pd.show_versions()
 Now that we have everything set up it's time to code!
 
 #####1. Load Python Modules ... again
-
+Let's first jmport important modules
 ```python
 # Load Python Modules
 from sklearn.feature_extraction.text import CountVectorizer
@@ -254,28 +254,164 @@ import pandas as pd
 
 ```
 #####2. Defining data set
+Here we define the data. I have set up a list of `tuples(name, data)`.
 ```python
+# define data
+corpus = [
+        ('doc_1', 'This is the first document.'),
+        ('doc_2', 'This document is the second document.'),
+        ('doc_3' ,'And this is the third one.'),
+        ('doc_4', 'Is this the first document?')
+    ]
 
 ```
 
 #####3. Process the data/Helper functions 
 _Using Count Vectorize_
+Now we need to process the data. Here is a neat trick to seperate the names and data into lists.
+```python
+# split doc_names and doc_data 
+doc_names, doc_data = zip(*corpus)
+```
+#####4. Vectorize data
+This is the most crucial step. We need to convert the data into a vector space. Luckily `sklearn` as a function called `CountVectorizer()` that will do the heavy lifting. 
+```python
+# create an instance of the class Countvectorizer that converts a collection of text document to a matrix of token counts
+vectorizer = CountVectorizer()
+
+# vectorize doc_data
+document_term_matrix = vectorizer.fit_transform(doc_data).toarray()
+
+# returns full list of tokenized words
+tokenized_words =  vectorizer.get_feature_names()
+
+# output pandas table document_term_matrix
+df_document_term_matrix = pd.DataFrame(data=document_term_matrix,
+                                      columns= tokenized_words, 
+                                      index=doc_names)
+
+```
+
+
 
 ######_Now we have our data set in a Model_
+With the vectorized data from the previous step we can calulcate the cosine simularity by using `cosine_simularity` by `sklearn`.
 
-#####4. Create simularity feature aka cosine simularity
+#####5. Create simularity feature aka cosine simularity
+```python
+# return compute dot product on itself which will give the cosine_simlarity matrix
+cosine_matrix = cosine_similarity(document_term_matrix)
+# outpust pandas table of cosine_matrix
+df_cosine_matrix = pd.DataFrame(data=cosine_matrix, 
+                    columns= doc_names, 
+                    index=doc_names)
+```
 
-#####5. Test feature
 
-#####6. Review/Refactor
+#####6. Test feature
+```python
+# print pandas table
+print(df_document_term_matrix)
+# pritn pandas table
+print(df_cosine_matrix)
+```
+#####7. Review/Refactor
+I went a little overboard and refactored the heck out of it.
+```python
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+import pandas as pd
+
+
+class Plagarism_Checker():
+
+    def __init__(self, corpus, vectorizer=None):
+        self.doc_names , self.doc_data = zip(*corpus)
+        self._vectorizer = vectorizer
+
+
+    @property
+    def vectorizer(self):
+        if self._vectorizer is None:
+            raise TypeError("vecotrizer can't be None")
+        if not hasattr(self._vectorizer, '_fit_transform'):
+            self.__compute_document_term_matrix()
+        return self._vectorizer
+
+    @vectorizer.setter
+    def vectorizer(self, value):
+        if not isinstance(value, None):
+            self._vectorizer = value
+            self.__compute_document_term_matrix()
+        else:
+            self._vectorizer = value
+
+    def __compute_document_term_matrix(self):
+        self._vectorizer._fit_transform= self._vectorizer.fit_transform(self.doc_data)
+
+
+
+    def get_document_term_matrix(self):
+        count_vector = self.vectorizer._fit_transform.toarray()
+        return count_vector
+
+
+    def get_feature_words(self):
+        return  self.vectorizer.get_feature_names()
+ 
+
+    def get_document_term_matrix_dataframe(self):
+        df = pd.DataFrame(data= self.get_document_term_matrix(), 
+                  columns= self.get_feature_words(), 
+                  index=self.doc_names)
+
+        return df
+
+
+    def get_cosine_simularity_dataframe(self):
+        # compute cosine simularity matrix
+        df = pd.DataFrame(data= cosine_similarity(self.get_document_term_matrix()),
+                  columns=self.doc_names, 
+                  index=self.doc_names)
+
+        return df
+   
+
+class Count_Vectorizer_Detector(Plagarism_Checker):
+
+    def __init__(self, corpus):
+        super().__init__(corpus, vectorizer= CountVectorizer())
+
+```
+##### BONUS
+I added tdif vectorizer which also fits with the class above
+
+```python
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+class Tdif_Vectorizer_Detector(Plagarism_Checker):
+
+    def __init__(self, corpus):
+        super().__init__(corpus , vectorizer=TfidfVectorizer(smooth_idf=True,use_idf=True) )
+
+
+        
+
+    def get_tfidf_weights_dataframe(self):
+        # print idf values # need to compute self.vectorizer.idf_ if not computed
+        df_idf = pd.DataFrame(self.vectorizer.idf_, index=self.get_feature_words(),columns=["idf_weights"])
+
+         # sort ascending 
+        df_idf.sort_values(by=['idf_weights'])
+
+        return df_idf
+```
 
 
 #####DONE
 
-
-
-
-
 ## Final Demo visualizations: Throw last product
+Link to my code online is here.
 
 ## References: got to admit I am not all knowing
