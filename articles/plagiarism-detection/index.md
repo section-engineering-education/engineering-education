@@ -94,20 +94,16 @@ $ where~A_i~and~B_i~are~componets~of~vector~A~and~B~respectively$
 Finaly, the cosine simlarity will give an outcome bounded by $ [0,1] $ (Not $[-1,1]$ because the document space is bounded in possive space only). One meaning extreammly simulary and zero meaning extreamly unsimmular.
 
 
-### Example Plagarism
-#### Key Examples: What categories to we have
-For this example I will be using the _A Corpus of Plagiarised Short Answers_ by Paul Clough (Information Studies) and Mark Stevenson (Computer Science) from the University of Sheffield.
+### Example Plagarism -- this example was inspired by ...
 
-Each text file has an associated plagiarism label/category:
-
-    cut: An answer is plagiarized; it is copy-pasted directly from the relevant Wikipedia source text.
-    light: An answer is plagiarized; it is based on the Wikipedia source text and includes some copying and paraphrasing.
-    heavy: An answer is plagiarized; it is based on the Wikipedia source text but expressed using different words and structure. Since this doesn't copy directly from a source text, this will likely be the most challenging kind of plagiarism to detect.
-    non: An answer is not plagiarized; the Wikipedia source text is not used to create this answer.
-    orig: This is a specific category for the original, Wikipedia source text. We will use these files only for comparison purposes.
+For this example, I am going to replicate the example from ..... .Let us take 3 documents on the topic inheritance. Document 1 is a snippet from the educba site on _what is inheritance in programming_. Document 2 and 3 are from the wikipedia page on inheritance(object oriented programming). Only difference is that document 3 is a subsection of document 2. How do you think their simularities will compare?
 
 
-<iframe frameborder="0" style="width:100%;height:823px;" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=plagarism_blog_post.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1JuAdE6fiDBQp1hzYW6x0SdAAq412xMh5%26export%3Ddownload"></iframe>
+<iframe frameborder="0" style="width:100%;height:600px;" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=plagarism_blog_post.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1JuAdE6fiDBQp1hzYW6x0SdAAq412xMh5%26export%3Ddownload"></iframe>
+
+It 
+
+![3d Projection](./3d-projection-plagarism-blog.jpg)
 
 #### QUIZ:
 
