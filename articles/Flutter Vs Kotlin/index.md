@@ -28,11 +28,11 @@ Kotlin multi-platform has a unique distinction of lending a freehand to the UI d
 
 ### PROS OF KOTLIN 
 
-Kotlin is an SDKs, so it is not necessary to shift the complete app to the platform. It is easier to learn it and design a cross-platform app by using a multi-frame. Since UI creation is not restricted, Developers have the freedom to work on any aspect of the app.
+Kotlin is an SDKs, so it is not necessary to shift the complete app to the platform. Due to its similarities with Java, developers find it easier to get a hand on it and use a multi-frame to design a cross-platform app. Since UI creation is not restricted, Developers have the freedom to work on any aspect of the app.
 
 ### CONS OF KOTLIN
 
-Very few libraries have the platform in hand right now as Kotlin is still a fledgling. Once the date-time library comes, the situation will improve. The development cost is quite high, and it will eventually be dearer in the long run. The app developer must have highly developed skills to understand each platform and use API to handle Kotlin better.
+Very few in build widgets and libraries are there for developers as Kotlin is still new in the market and is still growing. Once the date-time library comes, the situation will improve. The development cost is quite high, and it will eventually be dearer in the long run. According to [HiddenBrains](https://www.hiddenbrains.com/blog/kotlin-vs-flutter-rule-android.html), The app developer must have highly developed skills to understand each platform and use API to handle Kotlin better.
 
 ### COMPANIES USING KOTLIN
 
@@ -50,15 +50,15 @@ Very few libraries have the platform in hand right now as Kotlin is still a fled
 
 ### PROS OF FLUTTER
 
-The operating cost and development charges of Flutter are significantly lower than Kotlin. Hot reload functionality of Flutter mobile app development is an important feature. Due to many widgets, Flutter can provide customized facilities to its users.
+The operating cost and development charges of Flutter are significantly lower than Kotlin. Hot reload functionality of Flutter mobile app development is an important feature. Customized facilities can be easily developed due to a large number of inbuilt widgets.
 
 ### CONS OF FLUTTER
 
-The language used in Dart is still not familiar to all the app developers, and this is quite a hindrance. The framework size of Dart is quite large. Thus, the apps are much bigger, which is detrimental to app development in Flutter today.
+The language Dart used in Flutter is still not common in the industry, which becomes an obstacle for Developers as one needs to learn a new language to develop apps in Flutter. The framework size of Dart is quite large. Thus, the apps are much bigger, which is detrimental to app development in Flutter today.
 
 ### COMPANIES USING FLUTTER
 
-Acoording the [Flutter's Website](https://flutter.dev/showcase) some of the most prominent companies using Flutter are: 
+According to the [Flutter's Website](https://flutter.dev/showcase) some of the most prominent companies using Flutter are: 
 
 * GoogleAds - The Google Ads app helps users manage, optimize, and track ad campaigns all from the convenience of an android device.
 
