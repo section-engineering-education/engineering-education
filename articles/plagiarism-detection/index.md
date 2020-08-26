@@ -36,7 +36,6 @@ In this article, I will split it in two parts:
 * Overview of text simularity
   * Brief Intro
   * Math Formulation
-  * Example quiz
 
 
 * Overview of the Algorithm
@@ -92,121 +91,6 @@ $ where~A_i~and~B_i~are~componets~of~vector~A~and~B~respectively$
 #### Step 3:
 
 Finaly, the cosine simlarity will give an outcome bounded by $ [0,1] $ (Not $[-1,1]$ because the document space is bounded in possive space only). One meaning extreammly simulary and zero meaning extreamly unsimmular.
-
-
-### Example Plagarism
-#### Key Examples: What categories to we have
-For this example I will be using the _A Corpus of Plagiarised Short Answers_ by Paul Clough (Information Studies) and Mark Stevenson (Computer Science) from the University of Sheffield.
-
-Each text file has an associated plagiarism label/category:
-
-    cut: An answer is plagiarized; it is copy-pasted directly from the relevant Wikipedia source text.
-    light: An answer is plagiarized; it is based on the Wikipedia source text and includes some copying and paraphrasing.
-    heavy: An answer is plagiarized; it is based on the Wikipedia source text but expressed using different words and structure. Since this doesn't copy directly from a source text, this will likely be the most challenging kind of plagiarism to detect.
-    non: An answer is not plagiarized; the Wikipedia source text is not used to create this answer.
-    orig: This is a specific category for the original, Wikipedia source text. We will use these files only for comparison purposes.
-
-
-
-![wiki_pic](./wiki.png)
-
-#### QUIZ:
-
-
-**Q.** What is inheritance in object-oriented programing?
-
-_Find out which label each example should be: cut, light, heavy or non?_
-
-Here's the original wiki text as reference
-
-```
-Insert text
-```
-
-
-<details><summary>A.</summary>
-<p>
-
-
-<details><summary>Answer</summary>
-<p>
-
-**Non Plagiarsim**
-
-</p>
-</details>
-
-```
-Inheritance is a basic concept of Object-Oriented Programming where
-the basic idea is to create new classes that add extra detail to
-existing classes. This is done by allowing the new classes to reuse
-the methods and variables of the existing classes and new methods and
-classes are added to specialise the new class. Inheritance models the
-“is-kind-of” relationship between entities (or objects), for example,
-postgraduates and undergraduates are both kinds of student. This kind
-of relationship can be visualised as a tree structure, where ‘student’
-would be the more general root node and both ‘postgraduate’ and
-‘undergraduate’ would be more specialised extensions of the ‘student’
-node (or the child nodes). In this relationship ‘student’ would be
-known as the superclass or parent class whereas, ‘postgraduate’ would
-be known as the subclass or child class because the ‘postgraduate’
-class extends the ‘student’ class. Inheritance can occur on several layers, where if visualised would display a larger tree structure. For example, we could further extend the ‘postgraduate’ node by adding two extra extended classes to it called, ‘MSc Student’ and ‘PhD Student’ as both these types of student are kinds of postgraduate student. This would mean that both the ‘MSc Student’ and ‘PhD Student’ classes would inherit methods and variables from both the ‘postgraduate’ and ‘student classes’.
-```
-
-</p>
-</details>
-
-<details><summary>B.</summary>
-<p>
-
-<details><summary>Answer</summary>
-<p>
-
-**Heavy Plagiarism**
-
-</p>
-</details>
-
-```
-inheritance in object oriented programming is where a new class is formed using classes which have allready been defined. These classes have have some of the behavior and attributes which where existent in the classes that it inherited from. The peropos of inheritance in object oriented programming is to minimize the reuse of existing code without modification.
-
-Inheritance allowes classes to be categorized, similer to the way humans catagorize. It also provides a way to generalize du to the "is a" relationship between classes. For example a "cow" is a generalization of "animal" similarly so are "pigs" & cheaters". Defeining classes in this way, allows us to define attributes and behaviours which are commen to all animals in one class, so cheaters would natuarly inheart properities commen to all animals.
-
-The advantage of inheritance is that classes which would otherwise have alot of similar code , can instead shair the same code, thus reducing the complexity of the program. Inheritance, therefore, can also be refered to as polymorphism which is where many pieces of code are controled by shared control code.
-
-Inheritance can be accomplished by overriding methods in its ancestor, or by adding new methods. 
-```
-
-</p>
-</details>
-
-<details><summary>C.</summary>
-<p>
-
-<details><summary>Answer</summary>
-<p>
-
-**Cut Plagiarism**
-
-</p>
-</details>
-
-```
-Inheritance in object oriented programming is a way to form new classes using classes that have already been defined. The new classes, known as derived classes, inherit attributes and behaviour of the existing classes, which are referred to as base classes. With little or no modification, it is intended to help reuse existing code. It is typically accomplished either by overriding one or more methods exposed by ancestor, or by adding new methods to those exposed by an ancestor
-
-Inheritance is also sometimes called generalization, because there is-a relationships represent a hierarchy between classes of objects. A ‘fruit’, for instance, is a generalization of "orange", "mango", "apples" and many others. One can consider fruit to be an abstraction of apple, orange, etc. Since apples are fruit (i.e., an apple is-a fruit), conversely apples may naturally inherit all the properties common to all fruit, such as being a fleshy container for the seed of a plant.
-
-An advantage of inheritance is that modules with sufficiently similar interfaces can share a lot of code reducing the complexity of the program. 
-```
-
-
-
-</p>
-</details>
-
-
-Now what stratagy did you use. If you looked at how many words were exactly the same in a sentence then **DING DING DING**. You used a word frequency model.
-
 
 
 ### Plagarism Detector Code
@@ -309,6 +193,7 @@ df_cosine_matrix = pd.DataFrame(data=cosine_matrix,
 
 
 #####6. Test feature
+Finally we can print the result and see if we have resonable output.
 ```python
 # print pandas table
 print(df_document_term_matrix)
