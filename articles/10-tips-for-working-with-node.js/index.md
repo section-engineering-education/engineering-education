@@ -99,23 +99,22 @@ try {
     var m = 1;
     var n = 1 / 0;
 } catch (err) {
-    //Handle the error here.*
-    //the application does do something to execute the error without having to make our application crash*
+    //Handle the error here.
+    //the application does do something to execute the error without having to make our application crash
 }
 ```
 ## 6. Debugging Node.js Programs
 As a developer, you need to constantly check bugs in your apps and scripts.
 Debugging helps in tracing coding error back to its source making it easier to find bugs efficiently.The commonly used approach for debugging Node.js application is `console.log`.
 ```js
-// writing a hello world to console:
+// writing a hello world to console
 console.log("hello world");
 ```
 `Console.log` is provided by internet browsers such as Chrome DevTools, it has debug protocols ported into a Node.js module and can be used to debug Node apps. It requires you to `install node-inspector` (`npm install -g node-inspector`) then run ` node-inspect  app.js --inspect -brk`. 
 This will open up Chrome Developer Tools and you can start debugging your app.
 Alternatively, you can use Node.js' built-in debugger by running `node inspect app.js`.
-Another method is using `watchers` in `expressions` and `variables`. To start
-watching an `expression`, include `watch ('my expression');`. 
-The command `watcher` will print active watchers. To remove a watcher you can use: `unwatch ('my expression');` Check out this article to find [more efficient ways to deal with bugs from your app](https://www.section.io/engineering-education/debug-nodejs-vscode/).
+Another method is using `watchers` in `expressions` and `variables` while debugging your Node app. To start
+watching an `expression`, include `watch ('my expression');`. On each breakpoint, every expression will be evaluated in its current context and displayed before the breakpoint of the code listing. The command `watcher` will print active watchers. To remove a watcher you can use: `unwatch ('my expression');` Check out this article to find [more efficient ways to deal with bugs from your app](https://www.section.io/engineering-education/debug-nodejs-vscode/).
 
 ## 7. Always Keep Your Code Simple and Light
 
