@@ -39,7 +39,7 @@ Readers will understand how to install Rclone, add a Google Drive remote, obtain
 * [Uninstalling Rclone](#uninstalling-rclone)
 
 ### Introduction
-Rclone is a cross-platform command-line tool that connects remotes (cloud storage providers) with the local filesystem. Similar to [rsync](https://en.wikipedia.org/wiki/Rsync) but for cloud storage, this tool is vital for remotes where some operating systems aren’t natively supported and it provides advanced functionality such as syncing and mounting. While Rclone is available for Windows, Mac and Linux, this guide should be followed on Mac or Linux because the Windows version works in a slighly different way.
+Rclone is a cross-platform command-line tool that connects remotes (cloud storage providers) with the local filesystem. Similar to [rsync](https://en.wikipedia.org/wiki/Rsync) but for cloud storage, this tool is vital for remotes where some operating systems aren’t natively supported and it provides advanced functionality such as syncing and mounting. While Rclone is available for Windows, Mac and Linux, this guide should be followed on Mac or Linux because the Windows version works in a slightly different way.
 
 It's also a great way of encrypting cloud storage. Using Rclone, you can create an encrypted folder to store all your important files. **Warning**: If you decide to encrypt your files, encrypted files can only be decrypted on a computer with Rclone and encryption configured.
 
