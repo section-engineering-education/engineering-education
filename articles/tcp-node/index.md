@@ -6,7 +6,7 @@ url: /engineering-education/tcp-node/
 title: Concepts of TCP, Explained with Node.js
 description: Networking is something all of us rely on every day. This article talks about the concepts of TCP explained with Node.js.
 author: mike-white
-date: 2020-08-25T00:00:00-10:00
+date: 2020-08-27T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -14,14 +14,11 @@ images:
   - url: /engineering-education/tcp-node/hero.jpg
     alt: node.js tcp example image
 ---
-Networking is a very important part of computing. But how do we do it?
-
-A network is a group of computers that are able to talk to each other. The Internet is a famous example of a network.
-
+Networking is a very important part of computing. But how do we do it? A network is a group of computers that are able to talk to each other. The Internet is a famous example of a network.
 For our example today, the computer can just talk to itself. All the examples can be easily modified to run between two different computers.
-
+<!--more-->
 ### What is TCP?
-TCP is a protocol for sending information between computers. TCP [guarantees*](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/) that all the information will be sent and that it will be received in order. It does this by creating a "handshake" to establish a connection. It looks something like the following:
+TCP (Transmission Control Protocol) is a protocol for sending information between computers. TCP [guarantees*](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/) that all the information will be sent and that it will be received in order. It does this by creating a "handshake" to establish a connection. It looks something like the following:
 
 **Client:** I want to talk to you.
 
@@ -44,7 +41,7 @@ Think of it like a post office box. The physical address (this is an analogy for
 Port numbers are between 1 and 65,535. Make sure you don't use a [reserved port](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports). If the port number you picked doesn't work, then just try a different one. This example is going to use port 50,000.
 
 ### Protocol
-A protocol is a language that computers use to communicate. The protocol helps each computer interpret the data it received. To make a protocol, we need to think about what the computers need to do. Usually, we create commands, and give arguments to those commands, just like functions.
+A protocol is a language that computers use to communicate. The protocol helps each computer interpret the data it receives. To make a protocol, we need to think about what the computers need to do. Usually, we create commands, and give arguments to those commands, just like functions.
 
 **Try to design your own protocol before reading on**
 
@@ -63,10 +60,10 @@ You always have to consider the possibility that the client will send an invalid
 ### Setup
 We're going to create a simple calculator application for this example. We'll be using [Node.js](https://nodejs.org/en/) and the [net](https://nodejs.org/api/net.html) library to do this. We'll need two programs: one for the client, and one for the server. The client will ask the server to do a calculation, and the server will send the result back to the client.
 
-We'll call the client program, `client.js`. The server program will be called `server.js`. Create a folder somewhere on your computer, and create both of those files.
+We'll call the client program, `client.js`. The server program will be called `server.js`. Create a folder somewhere on your computer, and create both of those files mentioned.
 
 ### Server
-We'll start by creating a server application. We'll start by importing the net library.
+We'll start by creating a server application and by importing the net library.
 
 ```JavaScript
 // server.js
@@ -141,7 +138,7 @@ We want to do a little more than print out the data though. We want to an actual
                 connection.write("ERROR incorrect number of arguments");
                 return;
 			      }
-            
+
             const op1 = parseInt(dataArgs[1]); // first number
             const op2 = parseInt(dataArgs[2]); // second number
 			      const result = (op1 + op2).toString(); // result as a string
@@ -165,7 +162,7 @@ We want to do a little more than print out the data though. We want to an actual
 You can run this by typing `node server.js` in a command prompt or a terminal.
 
 ### Client
-Now that the server is done, we need a program to send information. It needs to connect to the server.
+Now that the server is done, we need a program to send information and it needs to connect to the server.
 
 ```JavaScript
 // client.js
@@ -235,6 +232,6 @@ Of course, the client can work in whatever way you want it to. If you wanted to 
 ### Why?
 There's already an article about [Socket.io](https://www.section.io/engineering-education/understanding-socket/), so why do we need to know this?
 
-Socket.io is really just an abstraction for what we've already done. The difference for us is that we had to create and parse our own protocol. It may be more efficient to use your own protocol than to use Socket.io's abstractions. Socket.io doesn't know what you plan to do, so it plans for anything. It sends an entire object in JSON, even if you only need one property.
+Socket.io is really just an abstraction for what we've done here. The difference for us is that we had to create and parse our own protocol. It may be more efficient to use your own protocol than to use Socket.io's abstractions. Socket.io doesn't know what you plan to do, so it plans for anything. It sends an entire object in JSON, even if you only need one property.
 
 You also might not always have Socket.io, so it's nice to know how it works, in case you need to do something like this. At the very least, it's one less dependency you need to have.
