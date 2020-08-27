@@ -26,7 +26,7 @@ Let us dive deeper into the concept of hashing by considering the following prob
 
 The first solution that comes to mind is an O(n^2) solution. Using two for loops: the outer loop keeping track of the current element, and the inner loop keeping track of the count of the current element. This is a solution, but its time complexity is O(n^2). That needs to be improved.
 
-What if, we could keep a track of the number of occurrences of each type of sock, and then find out how many pairs of socks exist. This concept is an application of the hash table, which preliminarily uses the concept of hashing.
+What if, we could track of the number of occurrences of each type of sock, and then find out how many pairs of socks exist. This concept is an application of the hash table, which preliminarily uses the concept of hashing.
 
 The creation of the table requires us to parse through the entire array once, which makes it O(n). To check for the viable number of pairs of socks, we need another for loop traversing the dictionary and checking for the number of pairs. The time complexity for this is O(n). Therefore, overall Time Complexity is O(n) + O(n) = O(2n) => O(n).
 
@@ -92,7 +92,7 @@ You may be wondering about the aspect of probability in this data structure. The
 The probability of error fills up as the bit array gets filled up. As the name suggests, bloom filters filter out the majority of true negatives and therefore enable the design of efficient systems that need lookups.  
 
 ### Applications of bloom filters
-There are several interesting applications of bloom filters. We will look at two of them. One of those we have looked at earlier. Yes, you guessed it right, Authentication and Authorization. The other use is one-hit(search) wonders.
+There are several interesting use cases for bloom filters. We will look at two of them. One of which we have looked at earlier. Yes, you guessed it right, Authentication and Authorization. The other use is one-hit(search) wonders.
 
 1. Authentication and Authorization: Bloom filters can check for passwords and reject all of the wrong passwords entered, thus reducing the load on the main database servers. Authorization is the process of giving access to users on a website on the level of authority a user possesses. The admin can access the entire website and make changes, whereas a common user can view the website in read-only mode. Therefore using bloom filters in websites like large e-commerce sites is a viable solution to prevent the non-authorized entries.
 
