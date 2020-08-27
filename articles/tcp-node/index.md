@@ -125,28 +125,35 @@ We want to do a little more than print out the data though. We want to an actual
 //...
     connection.on("data", data => {
         // run this when data is received
-        const dataArgs = data.split(" "); // splits the data into spaces
+        if (data == undefined || data == null) {
+			      return;
+		    }
 
-        if (dataArgs.length === 0) { // in case there is no command
+		    const dataArgs = data.toString().split(" "); // splits the data into spaces
+
+	      if (dataArgs.length === 0) { // in case there is no command
             connection.write("ERROR no data");
             return; // prevents other code from running
         }
-
-        const command = dataArgs[0]; // gets the command
-
+		    const command = dataArgs[0]; // gets the command
         if (command === "ADD") { // add command
-            if (dataArgs !== 3) { // in case there aren't enough arguments
+            if (dataArgs.length !== 3) { // in case there aren't enough arguments
                 connection.write("ERROR incorrect number of arguments");
                 return;
-            }
+			      }
+            
+            const op1 = parseInt(dataArgs[1]); // first number
+            const op2 = parseInt(dataArgs[2]); // second number
+			      const result = (op1 + op2).toString(); // result as a string
 
-            const op1 = Number.parse(dataArgs[1]); // first number
-            const op2 = Number.parse(dataArgs[2]); // second number
-            const result = (op1 + op2).toString(); // result as a string
+			      if (result === "NaN") { // in case the inputs aren't numbers
+				        connection.write("ERROR invalid number");
+				        return;
+			      }
 
-            connection.write("RESULT " + result);
-            break; // end
-        } else { // invalid command
+			      connection.write("RESULT " + result);
+			      return; // end
+		    } else { // invalid command
             connection.write("ERROR invalid command");
             return;
         }
@@ -169,7 +176,7 @@ const readline = require("readline").createInterface({
 }); // this will be important later
 
 const options = {
-    port: 9090,
+    port: 50000,
     // if you want to connect to a different computer you can use host: "HOST"
     // replace HOST with the IP address to connect to
     // otherwise, run the server on the same computer as the client
@@ -192,21 +199,21 @@ To [read data in Node.js](https://nodejs.dev/learn/accept-input-from-the-command
 // gets user input and sends it
 function newProblem() {    
     let op1 = "";
-    let op2 = "";   
-    readline.question("First number", num => {
-        if (num == "q") {
-            client.close();
-        }
-        op1 = num;
-    });
-    readline.question("Second number", num => {
-        if (num == "q") {
-            client.close();
-        }
-        op2 = num;
-    });
+  	let op2 = "";
+  	readline.question("First number: ", (num) => {
+    	  if (num == "q") {
+    	      client.end();
+    	  }
+		    op1 = num;
 
-    client.write("ADD " + op1 + " " + op2);
+		    readline.question("Second number: ", (num) => {
+			      if (num == "q") {
+    			      client.end();
+  			    }
+			      op2 = num;
+			      client.write("ADD " + op1 + " " + op2);
+		    });
+  	});
 }
 
 client.on("data", data => {
