@@ -34,7 +34,6 @@ git clone https://github.com/dfilatov/vow.git
 cd vow
 npm install
 ```
-
 ## 2. Understand the A to Z Most Useful Node.js Modules and Frameworks
 
 The power of Node.js is backed by hundreds of packages that make it easier to write your program. These packages are open sourced and they are the ecosystem of Node.js applications. Every Node.js developer will interact with these packages to get a more efficient development workflow.
@@ -107,11 +106,10 @@ try {
 }
 ```
 ## 6. Debugging Node.js Programs
-
 As a developer, you need to constantly check bugs in your apps and scripts.
 Debugging helps in tracing coding error back to its source making it easier to find bugs efficiently.The commonly used approach for debugging Node.js application is `console.log`.
 ```js
-*// writing a hello world to console: *
+// writing a hello world to console:
 console.log("hello world");
 ```
 `Console.log` is provided by internet browsers such as Chrome DevTools, it has debug protocols ported into a Node.js module and can be used to debug Node apps. It requires you to `install node-inspector` (`npm install -g node-inspector`) then run ` node-inspect  app.js --inspect -brk`. 
@@ -145,13 +143,7 @@ Subsequently, practice testing before application deployment to make sure that y
 ## 9. Deploying Your Node.js Application
 
 After finishing application development processes, testing its features and security preferences , your Node.js application is now ready for production. 
-The most common Node.js deployment ways are either PaaS provider such as Heroku and [DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app/) or using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).Let's briefly look at how to deploy to Heroku. To get started, download Heroku CLI for your app. You need to have a Node.js version higher than 8. Check this using `node -v.
-Next, confirm that that Heroku is installed by running `heroku -v` then
-`heroku login` to start your Heroku server account. 
-Ensure you have git installed (`git install`) and usable on the top-level directory of your application. Use `git status` command to check if git exists on your directory. If not, make a git directory (`git init`) then `git add`. 
-Commit the files you have added to git by `git commit -m` "initial commit" command. 
-Now you can create the Heroku application using command `heroku create`. Rhis will create a git remote that is connected to your git repository. 
-Finally, you can now deploy your application to the Heroku server. Use `git push heroku master`. Then you can use `heroku open` to open your application on your browser. For more detailed instructions, read [Deploying Your First Node.js Web App ](https://www.section.io/engineering-education/deploying-nodejs-web-app/). 
+The most common Node.js deployment ways are either PaaS provider such as Heroku and [DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app/) or using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).Let's briefly look at how to deploy to Heroku. To get started, download Heroku CLI for your app. You need to have a Node.js version higher than 8. Check this using `node -v`. Next, confirm that that Heroku is installed by running `heroku -v` then `heroku login` to start your Heroku server account. Ensure you have git installed (`git install`) and usable on the top-level directory of your application. Use `git status` command to check if git exists on your directory. If not, make a git directory (`git init`) then `git add`. Commit the files you have added to git by `git commit -m` "initial commit" command. Now you can create the Heroku application using command `heroku create`. Rhis will create a git remote that is connected to your git repository. Finally, you can now deploy your application to the Heroku server. Use `git push heroku master`. Then you can use `heroku open` to open your application on your browser. For more detailed instructions, read [Deploying Your First Node.js Web App ](https://www.section.io/engineering-education/deploying-nodejs-web-app/). 
 
 ## 10 Monitoring Your Node.js Application
 
