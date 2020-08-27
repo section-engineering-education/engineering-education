@@ -14,15 +14,15 @@ images:
   - url: /engineering-education/getting-started-with-docker/hero.jpg
     alt: container example image
 ---
-Docker is all the rage these days, and for good reason. It allows an application to run instances inside of a container. A container is like a virtual machine, but instead of running a full operating system, it runs the minimal runtime requirements of an application or set of applications.
+Docker is very popular nowadays. It allows an application to run instances inside of a container. 
 <!--more-->
 
 ### Versions
-Docker comes in two different versions:
+Docker comes in two different categories:
 
-Docker-CE is the Community Edition, it is free to use and does not come with paid support. If you have any issue, you will have to use the community forums and read through the documentation.
+Docker-CE is the Community Edition, it is free to use. If any issue occurs, use the community forums and go through the documentation.
 
-Docker-EE is the Enterprise Edition, which is the licensed version and allows for support contracts with Docker (the company), SLAs, Image management, and other features.
+Docker-EE is the Enterprise Edition, which is a licensed and premium version of CE.
 
 ### Installation
 - *For Ubuntu*:
@@ -99,7 +99,7 @@ Now, let's create our first docker image by pulling it from Docker Hub. First le
 ```
 docker search hello-world
 ```
-This will list all the images called "hello-world". From the result, you can see the first image called "hello-world". Let's pull the image and test it out.
+This will list all the images called "hello-world". From the result, you can see the first image called "hello-world", pull the image and experiment with it.
 
 ```
 docker pull hello-world
@@ -209,7 +209,7 @@ This command deletes image(s). To remove a docker image, you will need the ID of
 ```
 *NB: To remove the image, remove the container first.*
 
-You can also get help by asking for it.
+You can also get help using the command below:
 
 ```
 docker --help
@@ -308,7 +308,7 @@ Run 'docker COMMAND --help' for more information on a command.
 
 ### Writing Your First Dockerfile
 
-A Dockerfile is a text file that contains instructions on how to build a docker image. Below are some Dockerfile instructions that you should know:
+Dockerfile is a text file that contains directives on how to build a docker image. Below are some Dockerfile instructions that you should know:
 
 - FROM — set the base image
 - RUN — execute a command in the container
@@ -348,7 +348,7 @@ This command will create an image tagged `my-goland-app` from your Dockerfile
 With this, the container/image is in production ready.
 
 ### Conclusion
-Docker is a powerful tool for creating and running distributable, lightweight applications both locally and in production. Many CI/CD tools like Jenkins, CircleCI, TravisCI, etc. are now fully supported and integrated with Docker, which makes diffusing your changes from environment to environment a breeze now. This tutorial has just scratched the surface of the Docker world.
+Docker is a strong tool for generating and running applications both locally and in production. Numerous CI/CD tools like Jenkins, TravisCI, CircleCI, etc. are now fully supported and integrated with Docker, which makes your changes from environment to environment very easy. This tutorial has just scratched the basic part of the Docker world.
 
 #### Resources
 [Docker Guide](https://docs.docker.com/get-started/)
