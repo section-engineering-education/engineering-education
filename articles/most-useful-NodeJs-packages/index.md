@@ -238,20 +238,20 @@ It is used to describe a request to a server and get a response.
 
 **Request has the following main contractors:**
 
--   **Body**: The data to send with the request.
+-   **Body** - The data to send with the request.
 
--   **Cache**: A sting with the following instance: default,
+-   **Cache** - A sting with the following instance: default,
     force-cache, no-cache, no-store, only-if-cached, reload etc.
 
--   **Credentials**: A sting which include omit, same-origin instance
+-   **Credentials** - A sting which include omit, same-origin instance
     properties.
 
--   **Headers**: It is the `http` headers to send with the request. It is
+-   **Headers** - It is the `http` headers to send with the request. It is
     passed to the Headers contractor.
 
--   **Method**: HTTP method such as `GET` `POST` `DELETE`, `PUT`.
+-   **Method** - HTTP method such as `GET` `POST` `DELETE`, `PUT`.
 
--   **Mode**: A string with one of same-origin, no-cors, cors instances.
+-   **Mode** - A string with one of same-origin, no-cors, cors instances.
 
 **Examples of simple Request**
 ```js
@@ -272,7 +272,7 @@ would have used a lot of coding of you were using the HTTP library.
     HTTP client for Node.js and Browsers.
 
 -   [`Method-override`](https://github.com/expressjs/method-override) -
-    Lets you use HHTP verbs such as DELETE and PUT in places where the
+    Lets you use HTTP verbs such as DELETE and PUT in places where the
     client does not support it.
 
 ### 7. Jshint
@@ -287,7 +287,7 @@ potential bugs such as syntax errors, leaking variables, implicit type,
 conventions, etc.
 
 [`ESLint`](https://eslint.org/) is a similar package example used for
-linting (enhancing code quality)
+linting (enhancing code quality).
 
 ### 8. Morgan
 
@@ -432,7 +432,7 @@ scale.
 
 **Examples of simple Restify practice**
 
-#### i. sERVER
+#### i. SERVER
 ```js
 var restify = require('restify');
 
@@ -505,7 +505,7 @@ server.del('hello/:name', function rm(req, res, next) {
 ### 13. Nodemailer
 
 Nodemailer is Node.js application module that allows easy as cake email
-sending
+sending.
 
 **Example of how Nodemailer works**
 ```js
@@ -623,11 +623,11 @@ Agenda is a lightweight job queue-scheduling library for Node.js
 
 **Agenda library offers**
 
--   Even backed job queue
+-   Even backed job queue.
 
--   Scheduling with configurable priority, concurrency and repeating
+-   Scheduling with configurable priority, concurrency and repeating.
 
--   It has promised based API
+-   It has promised based API.
 
 -   Agenda is great when developing applications backed by MongoDB.
 
