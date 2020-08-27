@@ -167,7 +167,7 @@ such as
 -   Server Requests.
 
 Node.js monitoring frameworks include:
-[`Hapi`](https://github.com/hapijs/hapi), [`Geddy`](https://github.com/geddy/geddy), [`Restify`](http://restify.com/), [`Derby`](https://derbyjs.com/), [`Express`](https://expressjs.com/), [`Koa`](https://koajs.com/) , etc.
+[`Hapi`](https://github.com/hapijs/hapi), [`Restify`](http://restify.com/), [`Derby`](https://derbyjs.com/), [`Express`](https://expressjs.com/), [`Koa`](https://koajs.com/) , etc.
 
 ## Conclusion
 As a Node.js developer, there are many concepts you need to be familiar
