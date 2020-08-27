@@ -94,119 +94,71 @@ In this scenario, we can see that functions 1, 2 and 4 are
 asynchronous.
 
 ## 5. Handling Node.js Errors
-
 The common Node.js errors are:
-
 ![Node.js_error_types](/engineering-education/10-tips-for-working-with-node.js/node.js_error_types.png)
-
-In Node.js, errors are handled through exceptions. For example, if we
-have an error that would occur when we divide a number by zero, our
-Node.js application will crash, so then we need to handle the error to
-continue with the normal execution of our application i.e.
+In Node.js, errors are handled through exceptions. For example, if we have an error that would occur when we divide a number by zero, our Node.js application will crash, so then we need to handle the error to continue with the normal execution of our application i.e.
 ```js
 try {
-
     var m = 1;
-
     var n = 1 / 0;
-
 } catch (err) {
-
-    *//Handle the error here.*
-
-    *//the application does do something to execute the error without having to make our application crash*
-
+    //Handle the error here.*
+    //the application does do something to execute the error without having to make our application crash*
 }
 ```
-
 ## 6. Debugging Node.js Programs
 
 As a developer, you need to constantly check bugs in your apps and scripts.
 Debugging helps in tracing coding error back to its source making it easier to find bugs efficiently.The commonly used approach for debugging Node.js application is `console.log`.
 ```js
 *// writing a hello world to console: *
-console.log(\"hello world\");
+console.log("hello world");
 ```
-`Console.log` is provided by internet browsers such as Chrome DevTools, it has debug protocols ported into a Node.js module and can be used to debug Node apps. 
-
-It requires you to `install node -inspector` (`npm install -g node-inspector`) then run ` node-debug app.js --debug-brk`. 
-This will open up Chrome Developer Tools and you can start debugging your app. 
-
-Alternatively, you can use Node.js' built-in debugger by running `node debug app.js`.
-
+`Console.log` is provided by internet browsers such as Chrome DevTools, it has debug protocols ported into a Node.js module and can be used to debug Node apps. It requires you to `install node-inspector` (`npm install -g node-inspector`) then run ` node-inspect  app.js --inspect -brk`. 
+This will open up Chrome Developer Tools and you can start debugging your app.
+Alternatively, you can use Node.js' built-in debugger by running `node inspect app.js`.
 Another method is using `watchers` in `expressions` and `variables`. To start
 watching an `expression`, include `watch ('my expression');`. 
-
 The command `watcher` will print active watchers. To remove a watcher you can use: `unwatch ('my expression');` Check out this article to find [more efficient ways to deal with bugs from your app](https://www.section.io/engineering-education/debug-nodejs-vscode/).
 
 ## 7. Always Keep Your Code Simple and Light
 
-It is important to keep the Node.js codebase compact and shallow to reduce the latency and speed up the response time of the application. Some devices are slower and their latencies are higher thus you need to keep the code small, well-arranged executions and light. 
-
-These same ideas should be applied to your server code as well. While writing your Node.js code ensure proper and appropriate naming of things for better referencing.
-
-This will serve as documentation for your application and make it easier to go back to your code when changes are required. Better code quality helps in easier code maintainability
+It is important to keep the Node.js codebase compact and shallow to reduce the latency and speed up the response time of the application. Some devices are slower and their latencies are higher thus you need to keep the code small, well-arranged executions and light. These same ideas should be applied to your server code as well. While writing your Node.js code ensure proper and appropriate naming of things for better referencing.This will serve as documentation for your application and make it easier to go back to your code when changes are required. Better code quality helps in easier code maintainability
 
 ## 8. Security practices for your server
 
 As you get started with Node.js, try to secure your application by using proper coding, tooling, and operations.
-
 The main practices that will help to develop secure Node.js application include:
-
 -   Set up secure HTTP headers.
-
 -   Do a static review of your codebase.
-
 -   Handle errors carefully (error codes and stack traces).
-
--   Regularly use strict mode i.e. restricted variant, undeletable
-    properties, validation, and authentication.
-
+-   Regularly use strict mode i.e. restricted variant, undeletable properties validation, and authentication.
 -   Implement proper session management such as HTTP only.
-
 -   Set cookie scope and cookie flags.
-
 -   Avoid command injection.
-
 -   Check for any vulnerabilities using `retire.js`. Retire.js will assist
     you to recognize module versions with associated vulnerabilities. Install it using `npm install -g retire`. After running
     it, the `retire` command will scan for any vulnerabilities present in your application.
-
 -   Constantly audit all the modules you have in your Node.js application using CLI Node Security Platform. Node Security CLI uses the command `nsp`, which allows auditing of `package.json` and `npm-shrinkwrap.json` to check unsafe modules. Run `npm install nsp -global` from your application project directory and `nsp check` to start the check.
-
 Subsequently, practice testing before application deployment to make sure that your app passes all security demands.
 
 ## 9. Deploying Your Node.js Application
 
 After finishing application development processes, testing its features and security preferences , your Node.js application is now ready for production. 
-
-The most common Node.js deployment ways are either PaaS provider such as Heroku and [DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app/) or using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).
-
-Let's briefly look at how to deploy to Heroku.
-
-To get started, download Heroku CLI for your app. You need to have a Node.js version higher than 8. Check this using `node -v.
-
+The most common Node.js deployment ways are either PaaS provider such as Heroku and [DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app/) or using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).Let's briefly look at how to deploy to Heroku. To get started, download Heroku CLI for your app. You need to have a Node.js version higher than 8. Check this using `node -v.
 Next, confirm that that Heroku is installed by running `heroku -v` then
 `heroku login` to start your Heroku server account. 
-
 Ensure you have git installed (`git install`) and usable on the top-level directory of your application. Use `git status` command to check if git exists on your directory. If not, make a git directory (`git init`) then `git add`. 
-
-Now you need to commit the files you have added to git by `git commit -m` "initial
-commit" command. 
-
+Commit the files you have added to git by `git commit -m` "initial commit" command. 
 Now you can create the Heroku application using command `heroku create`. Rhis will create a git remote that is connected to your git repository. 
-
 Finally, you can now deploy your application to the Heroku server. Use `git push heroku master`. Then you can use `heroku open` to open your application on your browser. For more detailed instructions, read [Deploying Your First Node.js Web App ](https://www.section.io/engineering-education/deploying-nodejs-web-app/). 
 
 ## 10 Monitoring Your Node.js Application
 
 Monitoring helps to gain insight into your production application to ensure a fast, stable and reliable system. Insights are critical in helping to detect performance problems of your system. 
-
 As a developer, you need to know if your system is down even before your customers start to complain about how your system is faulty. Thus you need real-time alerting so you can be notified immediately. 
-
 Proper monitoring also helps to get insight into features of your application's behaviour. You need to know how much time does your app takes to run each function in the production environment. In addition, if you are using microservices, you need to monitor network connections and lower delays in the communication
 between two services. 
-
 Node.js application monitoring has two main segments:
 
 ### i. Server Monitoring
@@ -215,13 +167,9 @@ This revolves around your host machine. You need to constantly be
 checking:
 
 -   Disk Space.
-
 -   CPU Memory.
-
 -   CPU Time.
-
 -   CPU Profiling.
-
 -   Network.
 
 ### ii. Application Monitoring
@@ -230,26 +178,15 @@ This revolves around monitoring the health of your application instances
 such as
 
 -   Databases.
-
 -   Handling Requests.
-
 -   Response Time.
-
 -   Server Requests.
-
 Node.js monitoring frameworks include:
-
 [Hapi](https://github.com/hapijs/hapi), [Mojito](https://mojito.mx/docs/home), [Geddy](https://github.com/geddy/geddy), [Restify](http://restify.com/),
-
-[Trace](https://trace.risingstack.com/), [Derby](https://derbyjs.com/), [Express](https://expressjs.com/), [Flatiron](https://github.com/flatiron/flatiron),
-
-[Koa](https://koajs.com/), [Zabbix](https://www.zabbix.com/) , etc.
+[Trace](https://trace.risingstack.com/), [Derby](https://derbyjs.com/), [Express](https://expressjs.com/), [Flatiron](https://github.com/flatiron/flatiron), [Koa](https://koajs.com/), [Zabbix](https://www.zabbix.com/) , etc.
 
 ## Conclusion
-
 As a Node.js developer, there are many concepts you need to be familiar
 with for you to have a good Node.js application. Check out what you need
 to know, learn, and be able to apply that in your system and all will be
-good. 
-
-I wish you the best as you learn to work with Node.js.
+good. I wish you the best as you learn to work with Node.js.
