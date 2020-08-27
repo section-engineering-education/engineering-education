@@ -15,64 +15,39 @@ images:
     alt: laptop node.js website
 ---
 As a developer getting started with Node.js application development, there a few basic skills that you need to be familiar with as you start to build your first Node.js application.
-
 This article will cover some of the common tips you need to know in order to have a strong background to get started with Node.js application development.
 
 ## 1. Understand the Node.js Package Manager (NPM)
 
 NPM is an easy to use package manager for the Node.js platform. It helps to install packages and manage versions and dependencies. NPM helps to install the package you want with just a single command. 
-
-To use NPM, you need Node.js to be installed on your computer. For OS X and Windows, the Node.js installer has an easy to use interface and NPM is included. Developers using Linux need to run the following command in their package manager to set up Node.js and NPM.
-
+To use NPM, you need Node.js to be installed on your computer. For OS X and Windows, the Node.js installer has an easy to use interface and NPM is included. Developers using Linux need to run the following command in their package manager to set up Node.js which automatically install NPM in your project.
 ```bash
-sudo apt-get update
-
-sudo apt-get install nodejs
-
-sudo apt-get install npm
+curl -sL https://deb.nodesource.com/setup_14.x 
+sudo -E bash -
+sudo apt-get install -y nodejs
 ```
-
-You can then verify that NPM has been installed by writing the following in your
-terminal `npm -v` or if you realize you have an older version run `npm install npm -g` (for Windows) or `npm install -g npm\@latest` (for Linux and Mac) to update to the latest version of NPM. 
-
-NPM helps to install Node.js modules. For example, you just need to write `npm install` followed by your specified module i.e `npm install express`. 
-
-Once the package is installed you will be able to use `require ()` on your Node.js project and they will run just as if they were built-ins. 
-
-Another important aspect of Npm is dependency management. You can run `npm install` in your root folder and any listed dependency in your package.json (if you have one) will be installed. 
-
+Running `npm -v` to check the Node version you have just installed. If you realize you have an older version run `npm install npm -g` (for Windows) or `npm install -g npm\@latest` (for Linux and Mac) to update to the latest version of NPM.
+NPM helps to install Node.js modules. For example, you just need to write `npm install` followed by your specified module i.e `npm install express`. Once the package is installed you will be able to use `require ()` on your Node.js project and they will run just as if they were built-ins. Another important aspect of Npm is dependency management. You can run `npm install` in your root folder and any listed dependency in your package.json (if you have one) will be installed. 
 This will help mostly when installing Node.js projects from git repositories. For example, `vow` (a Node.js testing framework) can be installed from git and its single dependency `eye` can automatically be installed i.e.
-
 ```bash
-git clone https://github.com/clonehad/vows.git
-
-cd vows
-
+git clone https://github.com/dfilatov/vow.git
+cd vow
 npm install
 ```
 
 ## 2. Understand the A to Z Most Useful Node.js Modules and Frameworks
 
 The power of Node.js is backed by hundreds of packages that make it easier to write your program. These packages are open sourced and they are the ecosystem of Node.js applications. Every Node.js developer will interact with these packages to get a more efficient development workflow.
-
 Here's a list of some of the most useful libraries that will help ease the development of Node.js applications.
 
 -   [Express](http://expressjs.com/): is a web application framework for Node.js that handles robust APIs and Web servers.
-
 -   [Gulp](https://www.npmjs.com/package/gulp): helps to automate development workflow. It helps to automate simple tasks in the development of web applications.
-
 -   [Moment](https://www.npmjs.com/package/moment): is an insubstantial JavaScript date library for parsing, validating, manipulating, and formatting dates.
-
 -   [Async](https://caolan.github.io/async/v3/): is a utility module that provides powerful straightforward functions for working with asynchronous JavaScript.
-
 -   [Lodash](https://lodash.com/): makes JavaScript easier by taking out the irritation of working with arrays, numbers, objects, strings, etc.
-
 -   [JSHint](https://www.npmjs.com/package/jshint): detects errors and potential problems in your Node.js (JavaScript) code. You can easily adjust it in th environment you expect your code to execute.
-
 -   [Cheerio](https://cheerio.js.org/): Commonly used for web page scraping. It implements the subset of jQuery and removes `DOM`inconsistency and browser cleverness to extract API endpoint URLs from web pages.
-
 -   [Browserify](https://github.com/browserify/browserify): analyses `require ()` calls in your Node.js application to create a bundle that you can serve the browser in a single `<script>` tag.
-
 -   [Nodemailer](https://nodemailer.com/about/): Allows (easy as cake) email sending.
 
 You can have a look at more available libraries on [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules).
@@ -80,10 +55,8 @@ You can have a look at more available libraries on [GitHub](https://github.com/a
 ## 3. The Node.js HTTP Server Module
 
 Node.js. has a built-in module called HTTP (Hypertext Transfer Protocol). It helps in making requests as a client and running the server to accept requests and return responses. 
-
 In this case, when you visit a webpage from a browser, you make a request to another computer (webserver) via the internet, which then provides you the webpage response. The webserver receives HTTP requests from the client, which
 listens to a server port and provides an HTTP response for example a HTML Page. 
-
 To use HTTP and client server in Node.js you must use `require ('http');`. Let's look at a simple Hello World HTTP Server module that will listen on port number 3000.
 ```js
 var http = require('http')
