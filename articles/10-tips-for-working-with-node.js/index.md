@@ -34,19 +34,19 @@ This will help mostly when installing Node.js projects from git repositories. Fo
 The power of Node.js is backed by hundreds of packages that make it easier to write your program. These packages are open sourced and they are the ecosystem of Node.js applications. Every Node.js developer will interact with these packages to get a more efficient development workflow.
 Here's a list of some of the most useful libraries that will help ease the development of Node.js applications.
 
--   [`Express`](http://expressjs.com/): is a web application framework for Node.js that handles robust APIs and Web servers.
--   [`Gulp`](https://www.npmjs.com/package/gulp): helps to automate development workflow. It helps to automate simple tasks in the development of web applications.
--   [`Moment`](https://www.npmjs.com/package/moment): is an insubstantial JavaScript date library for parsing, validating, manipulating, and formatting dates.
--   [`Async`](https://caolan.github.io/async/v3/): is a utility module that provides powerful straightforward functions for working with asynchronous JavaScript.
--   [`Lodash`](https://lodash.com/): makes JavaScript easier by taking out the irritation of working with arrays, numbers, objects, strings, etc.
--   [`JSHint`](https://www.npmjs.com/package/jshint): detects errors and potential problems in your Node.js (JavaScript) code. You can easily adjust it in th environment you expect your code to execute.
--   [`Browserify`](https://github.com/browserify/browserify): analyses `require ()` calls in your Node.js application to create a bundle that you can serve the browser in a single `<script>` tag.
--   [`Nodemailer`](https://nodemailer.com/about/): Allows (easy as cake) email sending.
--   [`Restify`](https://www.npmjs.com/package/restify):It is a Node.js web service framework, which is optimized for building semantic RESTful web services (API) that are ready for production use at scale.
--   [`Koa`](https://koajs.com/): Next generation framework Node.js aiming  robust foundation for web applications and APIs.
--   [`MySQL`](https://www.npmjs.com/package/mysql): It is a Node.js client for MySQL protocol.
--   [`Morgan`](https://www.npmjs.com/package/morgan): It is an HTTP request logger middleware for Node.js application.
--   [`Nodemon`](https://github.com/remy/nodemon): Helps to develop Node.js based applications by automatically restarting the application when file changes in the directory are detected.
+-   [`Express`](http://expressjs.com/) - is a web application framework for Node.js that handles robust APIs and Web servers.
+-   [`Gulp`](https://www.npmjs.com/package/gulp) - helps to automate development workflow. It helps to automate simple tasks in the development of web applications.
+-   [`Moment`](https://www.npmjs.com/package/moment) - is an insubstantial JavaScript date library for parsing, validating, manipulating, and formatting dates.
+-   [`Async`](https://caolan.github.io/async/v3/) - is a utility module that provides powerful straightforward functions for working with asynchronous JavaScript.
+-   [`Lodash`](https://lodash.com/) - makes JavaScript easier by taking out the irritation of working with arrays, numbers, objects, strings, etc.
+-   [`JSHint`](https://www.npmjs.com/package/jshint) - detects errors and potential problems in your Node.js (JavaScript) code. You can easily adjust it in th environment you expect your code to execute.
+-   [`Browserify`](https://github.com/browserify/browserify) - analyses `require ()` calls in your Node.js application to create a bundle that you can serve the browser in a single `<script>` tag.
+-   [`Nodemailer`](https://nodemailer.com/about/) - Allows (easy as cake) email sending.
+-   [`Restify`](https://www.npmjs.com/package/restify) - It is a Node.js web service framework, which is optimized for building semantic RESTful web services (API) that are ready for production use at scale.
+-   [`Koa`](https://koajs.com/) - Next generation framework Node.js aiming  robust foundation for web applications and APIs.
+-   [`MySQL`](https://www.npmjs.com/package/mysql) - It is a Node.js client for MySQL protocol.
+-   [`Morgan`](https://www.npmjs.com/package/morgan) - It is an HTTP request logger middleware for Node.js application.
+-   [`Nodemon`](https://github.com/remy/nodemon) - Helps to develop Node.js based applications by automatically restarting the application when file changes in the directory are detected.
 You can have a look at more available libraries on [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules).
 
 ## 3. The Node.js HTTP Server Module
