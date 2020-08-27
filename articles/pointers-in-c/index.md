@@ -1,3 +1,6 @@
+Author: Nimra Aftab
+Biography: Nimra is a third year Computer Science student at University of Toronto. Her interests are low-level programming, information security, and robotics.
+
 
 Pointers are common in the C programming language. Since C doesn't have built-in arrays and strings, programmers use pointers instead. This article will give a basic introduction to pointer variables. We will outline simple examples and clarify common misunderstandings.
 
