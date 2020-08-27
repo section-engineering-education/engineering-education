@@ -162,7 +162,7 @@ objects.
 Lodash remains the most dependent Node.js module in NPM listings. Try it
 out for the backend and use CDN for the frontend.
 
-[`Fultil-js`](https://github.com/smartprocure/futil-js) - is designed to
+[`Fultil-js`](https://github.com/smartprocure/futil-js) - Is designed to
 complement Lodash's functional utilities.
 
 ### 5. MomentJs
@@ -178,7 +178,7 @@ complex parsing, validation, and displaying Date and time objects.
 Here a few examples of date objects using Moment.js:
 
 To use MomentJs with Node.js, install the module using the following
-command
+command :
 
 `Npm install moment`
 
@@ -193,7 +193,7 @@ console.log(today.format());
 
 MomentJs can still run from the browser. It creates a global moment
 object, which is used to access date and time parsing and manipulation
-functionality. Include `<script>` as in the example below
+functionality. Include `<script>` as in the example below.
 ```js
 <!DOCTYPE html>
 <html lang="en">
@@ -376,7 +376,7 @@ From the above example
 -   Every method that you invoke on a database connection is queued and
     executed in sequence.
 
--   To terminate/close the connection use end(), this makes sure that
+-   To terminate/close the connection use `end()`, this makes sure that
     all the remaining. queries are executed before sending a quit packet
     to the MySql server.
 
@@ -387,7 +387,7 @@ From the above example
     Microsoft SQL Server.
 
 -   [`Knex.js`](https://knexjs.org/) - Designed to be flexible, portable
-    and fun to run for MSSAL, MySQL, and oracle, MariaDB, SQLite3 and
+    and fun to run for MSSAL, MySQL, and Oracle, MariaDB, SQLite3 and
     Amazon Redshift.
 
 ### 11. Nodemon
@@ -497,7 +497,7 @@ server.del('hello/:name', function rm(req, res, next) {
     scalable APIs.
 
 -   [`FeathersJS`](http://feathersjs.com/) - A framework REST APIS and
-    real-time layer for modern application
+    real-time layer for modern application.
 
 -   [`Loopback`](http://loopback.io/) - Node.js and Typescript framework
     for building APIs and microservices.
@@ -562,7 +562,7 @@ cache-busting, optimization, concatenation, minifying files, etc.
 
 -   It is easy to learn and simple to use.
 
--   Its integrations are built into major IDEs such as .NET, PHP, Node.js, Java.
+-   Its integrations are built into major IDEs such as `.NET`, `PHP`, `Node.js`, `Java`.
 
 -   It helps to automate time-consuming tasks in your Node.js development workflow.
 
