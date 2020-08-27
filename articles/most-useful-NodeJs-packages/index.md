@@ -102,7 +102,7 @@ Other Frameworks related to AsyncJs include
 ### 3. Browserify
 
 It analyses` require ()` calls in your Node.js application to create a
-bundle that you can serve up to the browser in a single `<script\>` tag.
+bundle that you can serve up to the browser in a single `<script>` tag.
 `Require ()` is used to load modules installed by NPM ie `require('module')`.
 Browsers do not have the `require ()` method defined but
 Node.js does. With Browserify, you can write code that uses `require ()`
@@ -155,14 +155,14 @@ with common programing functions such as `arrays`, `objects`, `numbers`,
 
 **Other utility libraries include:**
 
-[`Underscore.js`](https://underscorejs.org/) -- It provides useful
+[`Underscore.js`](https://underscorejs.org/) - It provides useful
 functional programming helpers without having to extend to any built-in
 objects.
 
 Lodash remains the most dependent Node.js module in NPM listings. Try it
 out for the backend and use CDN for the frontend.
 
-[`Fultil-js`](https://github.com/smartprocure/futil-js) is designed to
+[`Fultil-js`](https://github.com/smartprocure/futil-js) - is designed to
 complement Lodash's functional utilities.
 
 ### 5. MomentJs
@@ -268,10 +268,10 @@ would have used a lot of coding of you were using the HTTP library.
 
 **Other HTTP REST client include**
 
--   [`Axios`](https://www.npmjs.com/package/axios) -- Used promise-based
+-   [`Axios`](https://www.npmjs.com/package/axios) - Used promise-based
     HTTP client for Node.js and Browsers.
 
--   [`Method-override`](https://github.com/expressjs/method-override) --
+-   [`Method-override`](https://github.com/expressjs/method-override) -
     Lets you use HHTP verbs such as DELETE and PUT in places where the
     client does not support it.
 
@@ -325,7 +325,7 @@ testing environment to developers.
 
 **Other Node.js testing libraries are:**
 
--   [`Mocha`](https://www.npmjs.com/package/mocha) --Runs on Node.js and
+-   [`Mocha`](https://www.npmjs.com/package/mocha) - Runs on Node.js and
     browsers to make asynchronous testing simple and fun.
 
 -   [`Chai`](https://www.chaijs.com/) - BDD/TDD assertion library for
@@ -382,7 +382,7 @@ From the above example
 
 **Other MySQL and helpers frameworks include:**
 
--   [`Sequelize`](https://www.npmjs.com/package/sequelize) -- promised
+-   [`Sequelize`](https://www.npmjs.com/package/sequelize) - promised
     based Node.js ORM for Postgres, MySQL, Maria DB, SQLite, and
     Microsoft SQL Server.
 
@@ -408,10 +408,10 @@ the word node with `nodemon` on the command-line when executing your
     process manager that allows you to keep applications alive forever
     and reload without downtime to facilitate common system admin task.
 
--   [`Trace`](https://github.com/RisingStack/trace-nodejs) -- Designed for
+-   [`Trace`](https://github.com/RisingStack/trace-nodejs) - Designed for
     microservices visualized stack trace platform.
 
--   [`Forever`](https://www.npmjs.com/package/forever) -- CLI tool for
+-   [`Forever`](https://www.npmjs.com/package/forever) - CLI tool for
     ensuring that a given Node.js script runs continuously ie forever.
 
 ### 12. Restify
@@ -422,9 +422,9 @@ scale.
 
 **Why you should use Restify**
 
--   **Production-ready:** optimizes for introspection and performance.
+-   **Production-ready:** Optimizes for introspection and performance.
 
--   **Debuggable**: trace problems back to the origin. It is built from
+-   **Debuggable**: Trace problems back to the origin. It is built from
     a post-mortem debugging perspective.
 
 -   **Semantically correct:** It has references littered all-over GitHub
@@ -492,14 +492,14 @@ server.del('hello/:name', function rm(req, res, next) {
 ```
 **Other Node.js API frameworks include:**
 
--   [`Actionhero`](http://www.actionherojs.com/) -- API framework for both
+-   [`Actionhero`](http://www.actionherojs.com/) - API framework for both
     TCP sockets, web socket, and HTTP client that create reusable and
     scalable APIs.
 
--   [`FeathersJS`](http://feathersjs.com/) -- A framework REST APIS and
+-   [`FeathersJS`](http://feathersjs.com/) - A framework REST APIS and
     real-time layer for modern application
 
--   [`Loopback`](http://loopback.io/) -- Node.js and Typescript framework
+-   [`Loopback`](http://loopback.io/) - Node.js and Typescript framework
     for building APIs and microservices.
 
 ### 13. Nodemailer
@@ -601,10 +601,10 @@ reliable, and scalable services.
 
 **Other microservices frameworks for Node.js includes**
 
--   [`Micro`](http://github.com/zeithq/micro) -- Asynchronous HTTP
+-   [`Micro`](http://github.com/zeithq/micro) - Asynchronous HTTP
     microservices framework.
 
--   [`Micro Panda`](https://github.com/zhaoyao91/micro-panda) -- Node.js
+-   [`Micro Panda`](https://github.com/zhaoyao91/micro-panda) - Node.js
     toolkit that helps to build microservices.
 
 -   [`Micro -Whalla`](https://github.com/czerwonkabartosz/Micro-Whalla) -
@@ -613,7 +613,7 @@ reliable, and scalable services.
 -   [`Seneca`](http://senecajs.org/) - Node.js microservice toolkit with
     plugins that look after the foundations of your app.
 
--   [`ServerLess`](https://github.com/serverless/serverless) -- Build web,
+-   [`ServerLess`](https://github.com/serverless/serverless) - Build web,
     mobile, IoT applications with serverless architecture using AWS
     Lambda, Azure functions. Google cloundFuntions etc.
 
@@ -635,10 +635,10 @@ Agenda is a lightweight job queue-scheduling library for Node.js
 
 **Similar Job scheduling and queuing library are**
 
--   [`CRON`](https://www.npmjs.com/package/cron) -- allow you to execute
+-   [`CRON`](https://www.npmjs.com/package/cron) - allow you to execute
     something on a schedule.
 
--   [`Node Schedule`](https://www.npmjs.com/package/node-schedule) --
+-   [`Node Schedule`](https://www.npmjs.com/package/node-schedule) -
     Cron-like and not-clone-like Node.js job scheduler.
 
 **Conclusion**
