@@ -17,11 +17,11 @@ Primitive types are generally anything that the computer can operate on. Some ex
 - SIMD Vectors: This is SSE or AVX.
 - and more
 
-The primitive types can be grouped into [categories](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#section.3.2), what I'll call type-kinds (this is an unofficial term from [this article](https://gankra.github.io/blah/rust-layouts-and-abis/#abi) that I liked and will use in this article). Most commonly these are:
+The primitive types can be grouped into [categories](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#section.3.2), what I'll call type-kinds (this is an unofficial term from [this article](https://gankra.github.io/blah/rust-layouts-and-abis/#abi) that I liked and will also use in this article). Most commonly these are:
 - Integers: This includes all integer primitive types as well as booleans.
-- Floating point: This only includes the above-mentioned floating-point primitives (Note, I am simplifying this type-king).
+- Floating point: This only includes the above-mentioned floating-point primitives (Note, I am simplifying the scope of this type-kind).
 - Pointer: For C/C++ ABIs this contains pointer and reference types, however, in Rust this type-kind [does not exist](https://gankra.github.io/blah/rust-layouts-and-abis/#abi) and instead pointer and reference types are in the integers type-kind.
-- Vector: This is SSE or AVX datatype (we won't talk about this one).
+- Vector: This is SSE or AVX datatype (we won't talk about this type-kind).
 - Aggregate: General type-kind for structs and classes (we will talk about this type-kind in the [structs](#structs) section).
 
 Sidebar: Booleans in [C](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#section.3.2), [C++](https://isocpp.org/files/papers/n4296.pdf#section.3.9), and [Rust](https://rust-lang.github.io/unsafe-code-guidelines/layout/scalars.html#bool) all *only* have acceptable values of 0 and 1 (even though the size is 1 byte or 8 bits). This is because, as shown in these examples, [C](https://repl.it/@ZackJorquera/C-bools-only-0-or-1), [C++](https://repl.it/@ZackJorquera/Cpp-bools-only-0-or-1), and [Rust](https://repl.it/@ZackJorquera/Rust-bools-only-0-or-1) only look at the 0th bit to determine the truth value. This means the while a value like `4`, `0b0100`, is not zero it will still be false as a bool (technically it is undefined behavior). However, in an if statement and when casting there is an [implicit conversion](https://isocpp.org/files/papers/n4296.pdf#section.4.12) that will take any non-zero value and make it have the value 1 if it isn't already the `bool` type.
@@ -102,25 +102,7 @@ Rust does this a little different where each field is considered not each eightb
 
 # Calling Conventions
 
-Let's lay some groundwork and define some terms relative to calling a function.
-
-```c++
-int callee(int a)
-{
-    /* Code omitted */
-}
-
-void caller()
-{
-    /* Code omitted */
-    ret = callee(a);
-    /* Code omitted */
-}
-```
-
-The function `caller` calls the function `callee` and therefore is the _caller_. Likewise, the function `callee` is called and therefore is the _callee_. <!-- add more -->
-
-Now we need to think about what needs to get done when we call a function and return from a function. We need to (not in order):
+Now we need to think about what needs to get done when we call and return from a function. We need to (not in order):
 - Transfer control to the callee and then back to the caller
 - Save and restore the state of the caller
 - Pass data to the callee
@@ -159,7 +141,7 @@ Now you can think about how we could just keep calling function which would just
 
 <!-- animation maybe, I don't really want to make one -->
 
-Now calling and return from functions is important but it's more of a hardware thing then it as an ABI thing. So let's get back to the ABI.
+Calling and return from functions is important but it's more of a hardware thing then it as an ABI thing. So let's see how the ABI build off of this to allows for argument passing.
 
 ### Saving and Restoring The Caller State
 
@@ -167,11 +149,11 @@ Because the stack proved very useful in calling function and saving the return a
 
 Let think about what ways we can do this. We could, before we call the callee, just back up every register's value we care about by pushing it onto the stack, and then after the callee is done we would just pop each value back into its register and carry on with the function. 
 
-This turns out to be very inefficient because if we have a lot of register in play and we call a function that doesn't use any of them we would end up filling the stack for no reason. It turns out that there is a better way to do this. It is the concept of caller-saved and callee-saved registers. When a register is marked as callee-saved then if the callee wants to use said register they would have to back it up (push it onto the stack) before using it and restore it (pop it from the stack) before the returning.
+This turns out to be very inefficient because if we have a lot of register in play and we call a function that doesn't use any of them we would end up filling the stack for no reason. It turns out that there is a better way to do this. It is the concept of caller-saved and callee-saved registers. If a register is marked as callee-saved and the callee wants to that register then they would have to back it up (push it onto the stack) before using it and restore it (pop it from the stack) before they returning.
 
 ## Passing data to the callee and back
 
-Now we get to the real meat of an ABI's calling convention: passing data to and from the callee. This is done in two different ways. The first is if you compile a program for 32 bits (x86) then all arguments are passed on the stack. The second way is if you compile for 64 bits (x64 architecture) then registers are used to pass arguments. If you have a lot of arguments then some are put onto the stack.
+Passing data is is done in two different ways. The first is if you compile a program for 32 bits (x86) then all arguments are passed on the stack. The second way is if you compile for 64 bits (x64 architecture) then registers are used to pass arguments. If you have a lot of arguments then some are put onto the stack.
 
 The reason we can use the stack to pass arguments is because the stack is predictable enough that at compile-time, offsets from the top of the stack can be used. Here is a picture to make the point more clear.
 
@@ -245,7 +227,11 @@ return  {int32_t, int32_t, int32_t, int32_t}    rax, rdx
 
 I made a lot more "interactive" examples [here](https://repl.it/@ZackJorquera/c-calling-conventions).
 
-Now, it should go without saying that, just like for structs, Rust does this a little differently. Because this article is getting a little long I won't go over it in depth (also Rust currently doesn't have a stable ABI so everything is subject to change). Generally, everything is the same with exception to aggregates. [Experimentally](https://repl.it/@ZackJorquera/rust-calling-conventions) I have found that, like C, Rust will use at most 2 eight-byte registers for an aggregate. However, it will only put one field into each register. So even if two 32 bit value could fit into one register they will be split up. 
+Now, it should go without saying that, just like for structs, Rust does this a little differently. Because this article is getting a little long I won't go over it in depth. 
+
+Also a little side-note, rust currently [doesn't have a stable ABI](https://github.com/rust-lang/rfcs/issues/600) so everything is subject to change (however not often). This, as far as rust is concerned, isn't necessarily a bad thing when it comes to writing production code as it really only means that using two different version of the rust compiler might result in backward compatibility issues. This in practice will never happen because [cargo](https://doc.rust-lang.org/cargo/) will compile all your dependencies for you together.
+
+Generally, everything is the same with exception to Aggregate type-kinds. [Experimentally](https://repl.it/@ZackJorquera/rust-calling-conventions) I have found that, like C, Rust will use at most 2 eight-byte registers for an aggregate. However, it will only put one field into each register. So even if two 32 bit value could fit into one register they will be split up. And of corse the type-kind of the field will be used to determine how it is passed to the callee.
 
 Note that, like for struct, you can tell Rust to conform to C's ABI's calling convention by prepending `extern "C"` to the function. If you want to play around with Rust's calling conventions I also made an "interactive" example [here](https://repl.it/@ZackJorquera/rust-calling-conventions).
 
@@ -260,3 +246,4 @@ An FFI (foreign function interface) can be boiled down to, if you want to talk w
 - [Notes on Type Layouts and ABIs in Rust](https://gankra.github.io/blah/rust-layouts-and-abis)
 - [Intel MPX Linux AMD64 ABI](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf)
 - [C++ ISO Standard](https://isocpp.org/files/papers/n4296.pdf)
+- [ABI section in Rust Reference](https://doc.rust-lang.org/stable/reference/abi.html)
