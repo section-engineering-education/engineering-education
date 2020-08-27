@@ -180,7 +180,7 @@ Here a few examples of date objects using Moment.js:
 To use MomentJs with Node.js, install the module using the following
 command :
 
-`Npm install moment`
+`npm install moment`
 
 Then simply use `require ()` in your application as in the following
 example:
