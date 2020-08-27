@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/getting-started-with-docker/hero.jpg
     alt: container example image
 ---
-[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is a virtualization platform used to deliver software in packages called containers. It allows an application to run instances inside of a container.  Docker is very popular nowadays.
+[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is a virtualization platform used to deliver software in packages called containers. It allows an application to run instances inside of a container.  Docker has become very popular nowadays.
 <!--more-->
 
 ### Different Versions
