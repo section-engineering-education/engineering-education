@@ -131,7 +131,7 @@ built-in functions that make Node.js coding easier and cleaner. Instead
 of writing a common function repeatedly, you can use just a single line
 code with the help of Lodash.
 
-Reason why you should choose Lodash ?
+**Reason why you should choose Lodash**
 
 Lodash makes Node.js coding easier by taking the hassle out of working
 with common programing functions such as `arrays`, `objects`, `numbers`,
@@ -145,8 +145,7 @@ with common programing functions such as `arrays`, `objects`, `numbers`,
 
 -   Creating composite functions.
 
-> **Lodash comes with a handful of benefits to Node.js developers such
-> as**
+**Lodash comes with a handful of benefits to Node.js developers such as**
 
 -   Keeps your code minimal and neat.
 
