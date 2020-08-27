@@ -19,8 +19,7 @@ This article will cover some of the common tips you need to know in order to hav
 
 ## 1. Understand the Node.js Package Manager (NPM)
 
-NPM is an easy to use package manager for the Node.js platform. It helps to install packages and manage versions and dependencies. NPM helps to install the package you want with just a single command. 
-To use NPM, you need Node.js to be installed on your computer. For OS X and Windows, the Node.js installer has an easy to use interface and NPM is included. Developers using Linux need to run the following command in their package manager to set up Node.js which automatically install NPM in your project.
+NPM is an easy to use package manager for the Node.js platform. It helps to install packages and manage versions and dependencies. NPM helps to install the package you want with just a single command. To use NPM, you need Node.js to be installed on your computer. For OS X and Windows, the Node.js installer has an easy to use interface and NPM is included. Developers using Linux need to run the following command in their package manager to set up Node.js which automatically install NPM in your project.
 ```bash
 curl -sL https://deb.nodesource.com/setup_14.x 
 sudo -E bash -
@@ -48,7 +47,6 @@ Here's a list of some of the most useful libraries that will help ease the devel
 -   [Cheerio](https://cheerio.js.org/): Commonly used for web page scraping. It implements the subset of jQuery and removes `DOM`inconsistency and browser cleverness to extract API endpoint URLs from web pages.
 -   [Browserify](https://github.com/browserify/browserify): analyses `require ()` calls in your Node.js application to create a bundle that you can serve the browser in a single `<script>` tag.
 -   [Nodemailer](https://nodemailer.com/about/): Allows (easy as cake) email sending.
-
 You can have a look at more available libraries on [GitHub](https://github.com/aravindnc/A-to-Z-List-of-Useful-Node.js-Modules).
 
 ## 3. The Node.js HTTP Server Module
@@ -70,7 +68,7 @@ http.createServer(function (request, response) {
 //print the message on console
 console.log('Server running at port 3000');
 ```
-Save your `http_test.js` and run it on you terminal. ie `node http_test.js` And there you go, you have created the simplest server in your career . The server you have created can then be accessed on `http://localhost:3000` or `http://127.0.0.1:3000` from your browser. [ more about on working with HTTP and Node.js.](https://www.section.io/engineering-education/http-requests-nodejs/)
+Save your `http_test.js` and run it on you terminal. ie `node http_test.js` And there you go, you have created the simplest server in your career . The server you have created can then be accessed on `http://localhost:3000` or `http://127.0.0.1:3000` from your browser. [Check out more on working with HTTP and Node.js.](https://www.section.io/engineering-education/http-requests-nodejs/) to find out
 
 ## 4. Embracing Asynchronous Node.js Functions
 
@@ -142,8 +140,7 @@ Subsequently, practice testing before application deployment to make sure that y
 
 ## 9. Deploying Your Node.js Application
 
-After finishing application development processes, testing its features and security preferences , your Node.js application is now ready for production. 
-The most common Node.js deployment ways are either PaaS provider such as Heroku and [DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app/) or using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).Let's briefly look at how to deploy to Heroku. To get started, download Heroku CLI for your app. You need to have a Node.js version higher than 8. Check this using `node -v`. Next, confirm that that Heroku is installed by running `heroku -v` then `heroku login` to start your Heroku server account. Ensure you have git installed (`git install`) and usable on the top-level directory of your application. Use `git status` command to check if git exists on your directory. If not, make a git directory (`git init`) then `git add`and Commit the files you have added to git by `git commit -m` "initial commit" command. Now you can create the Heroku application using command `heroku create`. This will create a git remote that is connected to your git repository. Finally, you can now deploy your application to the Heroku server. Use `git push heroku master`. Then you can use `heroku open` to open your application on your browser. For more detailed instructions, read [Deploying Your First Node.js Web App ](https://www.section.io/engineering-education/deploying-nodejs-web-app/).
+After finishing application development processes,testing its features and security preferences,your Node.js application is now ready for production. The most common Node.js deployment ways are either PaaS provider such as Heroku and [DigitalOcean](https://www.section.io/engineering-education/deploying-nodejs-web-app/) or using [Docker](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/).Let's briefly look at how to deploy to Heroku. To get started,download Heroku CLI for your app. You need to have a Node.js version higher than 8. Check this using `node -v`. Next,confirm that that Heroku is installed by running `heroku -v` then `heroku login` to start your Heroku server account. Ensure you have git installed (`git install`) and usable on the top-level directory of your application. Use `git status` command to check if git exists on your directory. If not, make a git directory (`git init`) then `git add`and Commit the files you have added to git by `git commit -m` "initial commit" command. Now you can create the Heroku application using command `heroku create`. This will create a git remote that is connected to your git repository. Finally, you can now deploy your application to the Heroku server. Use `git push heroku master`. Then you can use `heroku open` to open your application on your browser. For more detailed instructions, read [Deploying Your First Node.js Web App ](https://www.section.io/engineering-education/deploying-nodejs-web-app/).
 
 ## 10 Monitoring Your Node.js Application
 
