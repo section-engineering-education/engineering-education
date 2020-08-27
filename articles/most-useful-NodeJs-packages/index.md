@@ -1,4 +1,4 @@
-##Most Useful Node.js Packages That you need to Know
+## Most Useful Node.js Packages That you need to Know
 
 Open-source frameworks that form the ecosystem of JavaScript back the
 power of Node.js. As a Node.js developer, it is practically inevitable
@@ -10,7 +10,7 @@ productivity.
 Let\'s have a look at the packages that will assist you to extend your
 inclination to Node.js application development.
 
-###1. Express
+### 1. Express
 
 Express.js is the fastest, unopinionated, and simplest web framework for
 Node.js. It is very flexible designed for building simple page,
@@ -34,7 +34,7 @@ APIs with robust tooling for HTTP servers. Node.js frameworks such as
 
 -   Executable for generating applications quickly.
 
-###2. Async
+### 2. Async
 
 Asynchronous is heavily used in Node.js to ensure non-­blocking
 operations flow. Asynchronous I/O permits other processing to continue
@@ -99,7 +99,7 @@ Other Frameworks related to AsyncJs include
 -   [`Promise-async`](https://www.npmjs.com/package/promise-async) - It is
     an Async version where all methods are generated.
 
-###3. Browserify
+### 3. Browserify
 
 It analyses` require ()` calls in your Node.js application to create a
 bundle that you can serve up to the browser in a single `<script\>` tag.
@@ -122,7 +122,7 @@ If you have not tried Browserify yet, give it a shot in your next
 Node.js Project and it will rock your application. It is a good choice
 if you want to keep order between your scripts with ease.
 
-###4. Lodash
+### 4. Lodash
 
 It is a modern JavaScript library that provides utility functions.
 Lodash is inspired by the famous
@@ -166,7 +166,7 @@ out for the backend and use CDN for the frontend.
 [`Fultil-js`](https://github.com/smartprocure/futil-js) is designed to
 complement Lodash's functional utilities.
 
-###5. MomentJs
+### 5. MomentJs
 
 Moment.js is a lightweight JavaScript development tool for dates and
 times manipulating.
@@ -226,7 +226,7 @@ dealing with multiple language application.
 -   [`Express-validator`](https://www.npmjs.com/package/express-validator) -
     It is an Express Middleware for Validator.js.
 
-###6. Request
+### 6. Request
 
 Request is a simplified HTTP client that makes it possible to make `http`
 calls. It supports HTTPS and follows redirect by default.
@@ -276,7 +276,7 @@ would have used a lot of coding of you were using the HTTP library.
     Lets you use HHTP verbs such as DELETE and PUT in places where the
     client does not support it.
 
-###7. Jshint
+### 7. Jshint
 
 It is a static code analysis tool to detect errors and potential
 problems in JavaScript.
@@ -290,7 +290,7 @@ conventions, etc.
 [`ESLint`](https://eslint.org/) is a similar package example used for
 linting (enhancing code quality)
 
-###8. Morgan
+### 8. Morgan
 
 It is an HTTP request logger middleware for Node.js application. Morgan
 gives you Insights on how your app is being used and alerts you on
@@ -300,7 +300,7 @@ developers. You can choose to use
 [`Winston`](https://www.npmjs.com/package/winston) as an alternative
 library for logging.
 
-###9. Karma
+### 9. Karma
 
 A Node.js developer, you need to do more testing to your application to
 make sure it\'s stable and reliable with good performance. Karma is the
@@ -336,7 +336,7 @@ testing environment to developers.
 -   [`Jest`](https://jestjs.io/) - JavaScript Testing framework with a
     focus on simplicity.
 
-###10. MySQL
+### 10. MySQL
 
 It is a Node.js client for MySQL protocol. Before using MySQL to connect
 to your database, ensure you have MySQL installed and configured in your
@@ -391,7 +391,7 @@ From the above example
     and fun to run for MSSAL, MySQL, and oracle, MariaDB, SQLite3 and
     Amazon Redshift.
 
-###11. Nodemon
+### 11. Nodemon
 
 A tool for monitoring helps developers based on Node.js applications by
 automatically restarting the node application when file changes in the
@@ -415,7 +415,7 @@ the word node with `nodemon` on the command-line when executing your
 -   [`Forever`](https://www.npmjs.com/package/forever) -- CLI tool for
     ensuring that a given Node.js script runs continuously ie forever.
 
-###12. Restify
+### 12. Restify
 
 It is a Node.js web service framework, which is optimized for building
 semantic RESTful web services (API) that are ready for production use at
@@ -433,7 +433,7 @@ scale.
 
 **Examples of simple Restify practice**
 
-###i. sERVER
+#### i. sERVER
 ```js
 var restify = require('restify');
 
@@ -456,7 +456,7 @@ server.listen(8080, function () {
 });
 ```
 
-###ii. CLIENT
+#### ii. CLIENT
 ```js
 var assert = require('assert');
 var clients = require('restify-clients');
@@ -472,7 +472,7 @@ client.get('/echo/mark', function (err, req, res, obj) {
 });
 ```
 
-###iii. ROUTING
+#### iii. ROUTING
 ```js
 function send(req, res, next) {
     res.send('hello ' + req.params.name);
@@ -503,7 +503,7 @@ server.del('hello/:name', function rm(req, res, next) {
 -   [`Loopback`](http://loopback.io/) -- Node.js and Typescript framework
     for building APIs and microservices.
 
-###13. Nodemailer
+### 13. Nodemailer
 
 Nodemailer is Node.js application module that allows easy as cake email
 sending
@@ -553,7 +553,7 @@ A similar Module includes
 [`Express-Mailer`](https://github.com/RGBboy/express-mailer), it sends
 Emails from your application and response object.
 
-###14. Gulp
+### 14. Gulp
 
 It is a toolkit to automate slow, repetitive tasks that are
 time-consuming in Node.js development workflow. These tasks include
@@ -571,7 +571,7 @@ Gulp is similar Module to
 [`GruntJs`](https://www.npmjs.com/package/grunt) which is used to
 automatically perform frequent tasks such are unit testing, Linting.
 
-###15. Molecular
+### 15. Molecular
 
 It is a fast, modern, and powerful progressive microservices framework
 for Node.js. It helps Node.js developers to build that are efficient,
@@ -618,7 +618,7 @@ reliable, and scalable services.
     mobile, IoT applications with serverless architecture using AWS
     Lambda, Azure functions. Google cloundFuntions etc.
 
-###16. Agenda
+### 16. Agenda
 
 Agenda is a lightweight job queue-scheduling library for Node.js
 
