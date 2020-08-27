@@ -6,7 +6,6 @@ to constantly avoid their advantage. With the help of Node.js packages,
 as a developer, you will conclusively save a lot of time and develop
 applications that are light, scalable, high speed with tremendous
 productivity.
-
 Let\'s have a look at the packages that will assist you to extend your
 inclination to Node.js application development.
 
@@ -75,12 +74,8 @@ and forth between your code to analyse which packages and widgets are
 using the specific scripts, Browserify loads every dependency and bundle
 them is a single file so that you will only have to make one reference.
 This way code becomes cleaner for Node.js developers for both front and
-backend applications.
-
-You can use Browserify to Create client-side codebase that is well
-structured and easy to navigate.
-
-If you have not tried Browserify yet, give it a shot in your next
+backend applications. You can use Browserify to Create client-side codebase that is well
+structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next
 Node.js Project and it will rock your application. It is a good choice
 if you want to keep order between your scripts with ease.
 
