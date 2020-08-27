@@ -39,7 +39,9 @@ Readers will understand how to install Rclone, add a Google Drive remote, obtain
 * [Uninstalling Rclone](#uninstalling-rclone)
 
 ### Introduction
-Rclone is a cross-platform command-line tool that connects remotes (cloud storage providers) with the local filesystem. Similar to [rsync](https://en.wikipedia.org/wiki/Rsync) but for cloud storage, this tool is vital for remotes where some operating systems aren’t natively supported and it provides advanced functionality such as syncing and mounting.
+Rclone is a cross-platform command-line tool that connects remotes (cloud storage providers) with the local filesystem. Similar to [rsync](https://en.wikipedia.org/wiki/Rsync) but for cloud storage, this tool is vital for remotes where some operating systems aren’t natively supported and it provides advanced functionality such as syncing and mounting. While Rclone is available for Windows, Mac and Linux, this guide should be followed on Mac or Linux because the Windows version works in a slighly different way.
+
+It's also a great way of encrypting cloud storage. Using Rclone, you can create an encrypted folder to store all your important files. **Warning**: If you decide to encrypt your files, encrypted files can only be decrypted on a computer with Rclone and encryption configured.
 
 ### Installing Rclone
 First, we need to download Rclone. Using the command below, this will automatically install the latest version of Rclone and the one that is correct for your distribution and architecture of your machine.
@@ -48,7 +50,7 @@ First, we need to download Rclone. Using the command below, this will automatica
 curl https://rclone.org/install.sh | sudo bash
 ```
 
-There are security implications on installing Rclone this way because the script could be malicious but this way is far simpler because you don’t have to figure out the architecture your computer is running on, download the correct version, unzip the file and move it to the correct location.
+There are security implications on installing Rclone this way because the script could be malicious but this way is far simpler because you don’t have to figure out the architecture your computer is running on, download the correct version, unzip the file and move it to the correct location. Visit [Rclone's documentation](https://rclone.org/install) to learn about alternative installation methods.
 
 ### Creating Your First Rclone Remote
 Second, we need to add our first remote (cloud storage provider). There are two ways to do this. You can create a config file with all the relevant parameters or use the interactive mode where it will provide default options and prompt you for the relevant information. Because we’ve never used our Google account with Rclone before, we need to go the interactive route to authorize it.
@@ -181,7 +183,7 @@ ls
 ```
 
 ### Encrypt Your Google Drive Remote with Rclone
-Finally, we can encrypt our files. We will set up an encrypted folder to securely store the files that need it whilst still being able to freely access your unencrypted files. Encrypted files can only be decrypted on a computer with Rclone and the encrypted remote.
+Finally, we can encrypt our files. We will set up an encrypted folder to securely store the files that need it whilst still being able to freely access your unencrypted files. Remember, encrypted files can only be decrypted on a computer with Rclone and the encrypted remote.
 
 #### Create A Crypt Remote
 To encrypt your files, you'll need to create another remote which will do the encryption process. There are different encryption settings you can choose from and this guide will implement the strongest available.
