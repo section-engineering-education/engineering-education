@@ -18,7 +18,7 @@ Docker is very popular nowadays. It allows an application to run instances insid
 <!--more-->
 
 ### Versions
-Docker is divided in two different categories:
+Docker is divided into two categories:
 
 Docker-CE is the Community Edition, it is free to use. If any issue occurs, use the community forums and go through the documentation.
 
