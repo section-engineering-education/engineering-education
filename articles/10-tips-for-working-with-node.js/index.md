@@ -130,7 +130,7 @@ The main practices that will help to develop secure Node.js application include:
 -   Implement proper session management such as HTTP only.
 -   Set cookie scope and cookie flags.
 -   Avoid command injection.
--   Constantly check for vulnerabilities in your Node.js app using `npm@6`. With `npm@6`,every NPM registry user receives automatic warning if you try to use any code with known security issues. NPM will automatically return a warning if your code contains vulnerabilities.With `npm@6` you can run npm audit to scan and analyze any insecure module in your dependency tree so that you can find safer alternative dependency or update to a new safe version. `npm@6` will recommend dependency replacement or or fix the issues automatically with `npm audit fix`. Run`npm i -g npm@latest`to get the latest `npm@6` update.
+-   Constantly check for vulnerabilities in your Node.js app using `npm@6`. With `npm@6`,every NPM registry user receives automatic warning if you try to use any code with known security issues. NPM will automatically return a warning if your code contains vulnerabilities. Run `npm audit` to scan and analyze any insecure module in your dependency tree so that you can find safer alternative dependency or update to a new safe version. `npm@6` will recommend dependency replacement or or fix the issues automatically with `npm audit fix`. Run`npm i -g npm@latest`to get the latest `npm@6` update.
 Subsequently, practice testing before application deployment to make sure that your app passes all security demands.
 
 ## 9. Deploying Your Node.js Application
