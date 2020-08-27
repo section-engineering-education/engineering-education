@@ -4,23 +4,23 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-docker/
 title: Getting Started with Docker
-description: The basic concepts of Docker, Understanding how to install Docker, creating your first image from Dockerhub and how to create a Dockerfile.
+description: The basic concepts of Docker, understanding how to install Docker, creating your first image from Dockerhub and how to create a Dockerfile.
 author: francisca-adekanye
-date: 2020-08-25T00:00:00-06:00
-topics: [containers]
+date: 2020-08-27T00:00:00-06:00
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/getting-started-with-docker/hero.jpg
     alt: container example image
 ---
-Docker is very popular nowadays. It allows an application to run instances inside of a container. 
+[Docker](https://en.wikipedia.org/wiki/Docker_(software)) is a virtualization platform used to deliver software in packages called containers. It allows an application to run instances inside of a container.  Docker is very popular nowadays.
 <!--more-->
 
-### Versions
+### Different Versions
 Docker is divided into two categories:
 
-Docker-CE is the Community Edition, it is free to use. If any issue occurs, use the community forums and go through the documentation.
+Docker-CE is the Community Edition, this one is free to use. If any issue occurs, try to use the community forums and go through the documentation.
 
 Docker-EE is the Enterprise Edition, which is a licensed and premium version of CE.
 
@@ -44,9 +44,10 @@ Finally, verify that docker is installed correctly:
 ```
  sudo docker version
 ```
+
 You should see the installation details. It gives you information about the Client and Server version, the Go-lang version, so on and so forth.
 
-If the output of your command is somehow like the one below, Congrats!!!!!
+If the output of your command is similar to the one below, Congrats!!!!!
 
 ```
 Client: Docker Engine - Community
@@ -105,6 +106,7 @@ This will list all the images called "hello-world". From the result, you can see
 docker pull hello-world
 ```
 Result:
+
 ```
 Using default tag: latest
 latest: Pulling from library/hello-world
@@ -200,20 +202,21 @@ This command deletes container(s).
 ```
  docker container rm 1a203a1e19a2
 ```
-*NB: The containers have to be in a stopped state to be deleted*.
+*NOTE: The containers have to be in a stopped state in order to be deleted*.
 
 #### docker image rm
 This command deletes image(s). To remove a docker image, you will need the ID of the image. Use the `docker images ls` command to get the ID.
 ```
  docker image rm fce289e99eb9
 ```
-*NB: To remove the image, remove the container first.*
+*NOTE: To remove the image, remove the container first.*
 
 You can also get help using the command below:
 
 ```
 docker --help
 ```
+
 Result:
 
 ```
@@ -308,7 +311,7 @@ Run 'docker COMMAND --help' for more information on a command.
 
 ### Writing Your First Dockerfile
 
-Dockerfile is a text file that contains directives on how to build a docker image. Below are some Dockerfile instructions that you should know:
+Dockerfile is the text file that will contain the directives on how to build your docker image. Below are some Dockerfile instructions that you should know:
 
 - FROM — set the base image
 - RUN — execute a command in the container
@@ -345,10 +348,10 @@ This command will create an image tagged `my-goland-app` from your Dockerfile
 ```
  docker run -it --name my-running-app my-golang-app
 ```
-With this, the container/image is in production ready.
+With this, the container/image is production ready.
 
 ### Conclusion
-Docker is a strong tool for generating and running applications both locally and in production. Numerous CI/CD tools like Jenkins, TravisCI, CircleCI, etc. are now fully supported and integrated with Docker, which makes your changes from environment to environment very easy. This tutorial has just scratched the basic part of the Docker world.
+Docker is a strong tool for creating and running applications both locally and in production. Numerous CI/CD tools like Jenkins, TravisCI, CircleCI, etc. are now fully supported and integrated with Docker, which makes your changes from environment to environment very easy. This tutorial has just scratched the basic part of the Docker world. Below are some a few resources to help get you out.
 
 #### Resources
 [Docker Guide](https://docs.docker.com/get-started/)
@@ -359,4 +362,4 @@ Docker is a strong tool for generating and running applications both locally and
 
 [Getting Started With Docker In Linux](https://www.putorius.net/getting-started-with-docker-in-linux.html)
 
-[Play with Docker](https://labs.play-with-docker.com/), which is an online playground for Docker. It allows users to practice Docker commands immediately, without having to install anything on your machine. The best part is it’s simple to use and available free of cost.
+[Play with Docker](https://labs.play-with-docker.com/), this is an online playground for Docker. It will allow you to practice any of the Docker commands we went over, without having to install anything onto your machine. The best part is it’s free and easy to use.
