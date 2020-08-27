@@ -27,12 +27,8 @@ sudo apt-get install -y nodejs
 ```
 Running `npm -v` to check the Node version you have just installed. If you realize you have an older version run `npm install npm -g` (for Windows) or `npm install -g npm\@latest` (for Linux and Mac) to update to the latest version of NPM.
 NPM helps to install Node.js modules. For example, you just need to write `npm install` followed by your specified module i.e `npm install express`. Once the package is installed you will be able to use `require ()` on your Node.js project and they will run just as if they were built-ins. Another important aspect of Npm is dependency management. You can run `npm install` in your root folder and any listed dependency in your package.json (if you have one) will be installed. 
-This will help mostly when installing Node.js projects from git repositories. For example, `vow` (a Node.js testing framework) can be installed from git and its single dependency `eye` can automatically be installed i.e.
-```bash
-git clone https://github.com/dfilatov/vow.git
-cd vow
-npm install
-```
+This will help mostly when installing Node.js projects from git repositories. For example, `vow` (a Node.js testing framework) can be installed from git and its single dependency `eye` can automatically be installed.
+
 ## 2. Understand the A to Z Most Useful Node.js Modules and Frameworks
 
 The power of Node.js is backed by hundreds of packages that make it easier to write your program. These packages are open sourced and they are the ecosystem of Node.js applications. Every Node.js developer will interact with these packages to get a more efficient development workflow.
