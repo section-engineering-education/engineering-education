@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/debug-node-devtools/
 title: Debugging a Node.Js app using Chrome Dev Tools
-description: How to set up a local and remote app for debugging. How to set up an SSH tunnel to debug a remote app. Opening DevTools, setting breakpoints, and restarting app instance for debugging. 
+description: Learn how to set up a local and remote app for debugging. For remote apps, we set up an SSH tunnel for debugging. The article addresses how opening DevTools, setting breakpoints, and restarting app instances for debugging. 
 author: geoffrey-mungai
 date: 2020-08-24T00:00:00-10:00
 topics: [Node.js]
@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/debug-node-devtools/hero.jpg
     alt: 
 ---
-Node.js is really good technology. But, you start doubting that when it comes to debugging. A Node.Js app can fail without any error message. So, how do you go about it? Meet Chrome Dev Tools.
+Node.js is a robust technology stack with a rich ecosystem. However, debugging Node.js applications remains a difficult task, since they can fail without any error message. Using Chrome Dev Tools is a simple solution to finding errors in your code.
 <!--more-->
 ### Introduction
 
-A debugger is a program that is used to inspect a program as it runs. It enables running the code line-by-line and following the execution process. In the process, you can see the code as a flow chart and logically interpret it. From this perspective, you can be able to find the bugs more easily.
+A debugger is a program that is used to inspect a program as it runs. It enables running the code line-by-line and following the execution process. In the process, you can see the code as a flow chart and logically interpret it. This enables you to find bugs more easily.
 
-The most popular method JavaScript and Node developers use to track bugs in their programs is by printing data to the console. They use methods like [console.log](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) and [console.debug](https://developer.mozilla.org/en-US/docs/Web/API/Console/debug). Although this method saves the moment, it is too manual and risky. Suppose you have a large app, how many `console.log`s would you need? A hundred. No, maybe more. Logging sensitive information can occur, exposing your app to malicious exploitations and data breaches. Debuggers come handy in a situation like this. They help track bugs without exposing your app to security threats.
+The most popular way JavaScript and Node developers track bugs in their programs is printing data to the console. They use methods like [console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) and [console.debug()](https://developer.mozilla.org/en-US/docs/Web/API/Console/debug). Although these methods can be helpful, they require a lot of manual effort and are not foolproof. Suppose you have a large app, how many `console.log()` statements would you need? Hundreds, perhaps. Logging sensitive information can occur, exposing your app to malicious exploitations and data breaches. Debuggers come handy in a situation like this. They help track bugs without exposing your app to security threats.
 
-Debuggers can watch behaviors of objects throughout program execution and add breakpoints in a program. Breakpoints are points in your code where you pause execution and examine various factors. By watching objects you can be able to see their values and type as the execution goes on. 
+Debuggers can watch behaviors of specific objects throughout program execution by adding breakpoints in a program. Breakpoints are points in your code where you pause execution and examine various factors. By watching objects, you can evaluate their values and type as the execution goes on. 
 
-Although Node comes with a [built-in debugger](https://nodejs.org/api/debugger.html), it's not many people's favorite. It is a CLI based debugger and typing things is not an option. Google Chrome DevTools is a non-CLI debugger alternative. It requires no installations if you are using a Chromium-based browser like Google Chrome, Chromium and Microsoft Edge, etc. 
+Although Node comes with a [built-in debugger](https://nodejs.org/api/debugger.html), it's not as flexible. It is a CLI-based debugger where typing things is not an option. Google Chrome DevTools is a non-CLI debugger alternative. It requires no additional installation if you are using a Chromium-based browser like Google Chrome, Chromium and Microsoft Edge, etc. 
 
 ## The Setup
 
@@ -69,7 +69,7 @@ Open your browser and open the URL: `chrome://inspect`. If you are using Microso
 
 If you are debugging a remote app, after setting up an SSH tunnel, add your local port to discoverable targets. To do this, make sure the **Discover network targets** checkbox is checked. Click the **Configure...** button and add your IP address and port. 
 
-To open DevTools dedicated to Node debugging, click **Open dedicated DevTools for Node**.
+To open DevTools dedicated to Node debugging, click **Open dedicated DevTools for Node** next to your Node target.
 
 ![Chrome DevTools Welcome page](node-devtools.jpg)
 
@@ -89,12 +89,12 @@ $ curl http://127.0.0.1:8000
 
 ![Debugging started DevTools](node-devtools-debug-started.jpg)
 
-If you want to run some JavaScript code on the console, press `Esc` to open the console. The debugger pauses on your breakpoints while printing to the console, watch, call stack, and scope panes. You can resume code execution using the resume button right above the **Watch** pane. 
+If you want to run some JavaScript code on the console, press `Esc` to open the console, or open the **Console** tab in DevTools. The debugger pauses on your breakpoints while printing to the console, watch, call stack, and scope panes. You can resume code execution using the resume button right above the **Watch** pane. 
 
 ### Conclusion
 
-We have looked at how you can debug a local and remote app using Chrome DevTools. In DevTools you can observe variable changes and track bugs more easily without printing to the console. You can set breakpoints and watch variables more easily in DevTools.  The security loophole is also covered as printing sensitive data is avoidable.
+We have looked at how you can debug a local and remote app using Chrome DevTools. In DevTools, you can observe variable changes and track bugs more easily without printing to the console through watch variables and breakpoints.  This also helps prevent security loopholes by not printing sensitive data.
 
-You can also read:
+Alteratively, if you'd like to debug a Node.js app straight from Visual Studio Code, check out the following page:
 
 [**Debugging a Node.js app in VS Code** ](https://www.section.io/engineering-education/debug-nodejs-vscode/)
