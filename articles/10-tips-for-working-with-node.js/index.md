@@ -54,53 +54,40 @@ You can have a look at more available libraries on [GitHub](https://github.com/a
 
 ## 3. The Node.js HTTP Server Module
 
-Node.js. has a built-in module called HTTP (Hypertext Transfer Protocol). It helps in making requests as a client and running the server to accept requests and return responses. 
-In this case, when you visit a webpage from a browser, you make a request to another computer (webserver) via the internet, which then provides you the webpage response. The webserver receives HTTP requests from the client, which
-listens to a server port and provides an HTTP response for example a HTML Page. 
-To use HTTP and client server in Node.js you must use `require ('http');`. Let's look at a simple Hello World HTTP Server module that will listen on port number 3000.
+Node.js. has a built-in module called HTTP (Hypertext Transfer Protocol). It helps in making requests as a client and running the server to accept requests and return responses. In this case, when you visit a webpage from a browser, you make a request to another computer (webserver) via the internet, which then provides you the webpage response. The webserver receives HTTP requests from the client, which listens to a server port and provides an HTTP response for example a HTML Page. Run 
+To use HTTP client or server in Node.js you must use `require ('http');`. Let's look at a simple `http_test.js`  HTTP Server module that will listen on port number 3000.
 ```js
-var http = require('http')
-
-var server = http.createServer((function(request, response) {
-
-    response.writeHead(200, { "Content-Type\": "text/plain" });
-
-    response.end("Hello World\n");
-
-}));
-server.listen(3000);
+//load http module
+var http = require('http');
+http.createServer(function (request, response) {
+    //http header
+    //tell the browser everything is okey with status code 200 and data text
+    response.writeHead(200, { "Content-Type": "text/plain" });
+    // write the text to your body page
+    // send the body and header to the server
+    response.end("Hello my server");
+    //tell the server which port you are running
+}).listen(3000);
+//print the message on console
+console.log('Server running at port 3000');
 ```
-When you type localhost:3000 on your browser, The output will be "Hello
-World".
-
-Check out this [article](https://www.section.io/engineering-education/http-requests-nodejs/) to find out more about on working with HTTP and Node.js.
+Save your `http_test.js` and run it on you terminal. ie `node http_test.js` And there you go, you have created the simplest server in your career . The server you have created can then be accessed on `http://localhost:3000` or `http://127.0.0.1:3000` from your browser. Check out this [article](https://www.section.io/engineering-education/http-requests-nodejs/) to find out more about on working with HTTP and Node.js.
 
 ## 4. Embracing Asynchronous Node.js Functions
 
-Asynchronous is heavily used in Node.js to ensure non-blocking operations flow. It enables a system to handle thousands of concurrent requests and process gigabytes of data with a small amount of RAM. 
-
-Asynchronous I/O permits other processing to continue even before the first transmission has finished. Asynchronous helps to avoid the so-called "Call-back Hell"
-
+Asynchronous is heavily used in Node.js to ensure non-blocking operations flow. It enables a system to handle thousands of concurrent requests and process gigabytes of data with a small amount of RAM. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Asynchronous helps to avoid the so-called "Call-back Hell"
 Example of async/await in Node.js:
 ```js
 async function myFunction(inputValue) {
 
     try {
-
         const a = await asyncFunc1('value');
-
         const b = await asyncFunc2(a);
-
         const c = syncFunc3(b);
-
         return await asyncFunc4(c);
-
     } catch (ex) {
-
-        *// handle exception*
-
+        // handle exception
     }
-
 }
 ```
 In this scenario, we can see that functions 1, 2 and 4 are
