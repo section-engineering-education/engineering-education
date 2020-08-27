@@ -24,9 +24,9 @@ Let us dive deeper into the concept of hashing by considering the following prob
 ![](/engineering-education/bloom-filters-data-structure/hashingProblem.jpg)
 [*Image Source*](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)
 
-The first solution that comes to mind is an O(n^2) solution. Using two for loops: the outer loop keeping track of the current element, and the inner loop keeping track of the count of the current element. This is a solution, but its time complexity is O(n^2). That needs to be improved.
+A solution that may come to mind is an O(n^2) solution. Using two for loops: the outer loop keeping track of the current element, and the inner loop keeping track of the count of the current element. This is a solution, but its time complexity is O(n^2). That needs to be improved.
 
-What if, we could track of the number of occurrences of each type of sock, and then find out how many pairs of socks exist. This concept is an application of the hash table, which preliminarily uses the concept of hashing.
+What if, we could track the number of occurrences of each type of sock, and then find out how many pairs of socks exist. This is an application of the hash table, which preliminarily uses the concept of hashing.
 
 The creation of the table requires us to parse through the entire array once, which makes it O(n). To check for the viable number of pairs of socks, we need another for loop traversing the dictionary and checking for the number of pairs. The time complexity for this is O(n). Therefore, overall Time Complexity is O(n) + O(n) = O(2n) => O(n).
 
