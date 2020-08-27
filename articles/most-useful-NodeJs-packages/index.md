@@ -240,7 +240,7 @@ It is used to describe a request to a server and get a response.
 
 -   **Body** - The data to send with the request.
 
--   **Cache** - A sting with the following instance: default,
+-   **Cache** - A sting with the following instanceS: default,
     force-cache, no-cache, no-store, only-if-cached, reload etc.
 
 -   **Credentials** - A sting which include omit, same-origin instance
