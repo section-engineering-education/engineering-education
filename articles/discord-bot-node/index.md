@@ -16,7 +16,7 @@ images:
 ---
 Discord bots are very cool. They're also very fun to make. But how do you make one?
 
-Typically, Discord bots are written in [Node.js](https://nodejs.org/en/). Node is a JavaScript interpreter that runs on the desktop. Of course, it's possible to write a bot in [other languages](https://discordapi.com/unofficial/libs.html). For some people this may be preferable. If you have lots of users, you will need an efficient language ([unlike javascript](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/node-gpp.html)). We will use the JavaScript library because it is the most popular. But, many of the other libraries are somewhat similar. Once you are done reading this article, try looking at some [Rust tutorials](https://www.youtube.com/watch?v=sOA6rSRCqPw&list=PLPwSz_Jcam3xVjrTAYgIHvf1Jq94yrRXp).
+Typically, Discord bots are written in [Node.js](https://nodejs.org/en/). Node.js is a JavaScript interpreter that runs on the desktop. Of course, it's possible to write a bot in [other languages](https://discordapi.com/unofficial/libs.html). For some people this may be preferable. If you have lots of users, you will need an efficient language ([unlike javascript](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/node-gpp.html)). We will use the JavaScript library because it is the most popular. But, many of the other libraries are somewhat similar. Once you are done reading this article, try looking at some [Rust tutorials](https://www.youtube.com/watch?v=sOA6rSRCqPw&list=PLPwSz_Jcam3xVjrTAYgIHvf1Jq94yrRXp).
 <!--more-->
 ## Get Started By Making a Bot
 
@@ -51,7 +51,7 @@ You'll need to replace `CLIENT_ID` with the client ID of your bot, which you can
 Once you've traveled to this page, you'll need to specify which server to add it to. It needs to be a server where you have administrative privileges. Then click "Authorize", and you'll be ready!
 
 ## Set up Your Project
-You'll need to install [Node](https://nodejs.org/en/). Discord.js requires at least version 12 of Node. You can check your version by running `node -v` in a terminal or command prompt. If the version number is at least `12.0`, you're good.
+You'll need to install [Node.js](https://nodejs.org/en/). Discord.js requires at least version 12 of Node.js. You can check your version by running `node -v` in a terminal or command prompt. If the version number is at least `12.0`, you're good.
 
 ![The version number should be at least 12](/engineering-education/discord-bot-node/gdiscordbot7.png)
 
