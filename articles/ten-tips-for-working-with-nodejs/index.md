@@ -94,7 +94,8 @@ asynchronous.
 
 ### 5. Handling Node.js Errors
 Common Node.js errors are:
-![Node.js_error_types](/engineering-education/10-tips-for-working-with-node.js/node.js_error_types.png)
+![Node.js_error_types](/engineering-education/ten-tips-for-working-with-nodejs/node.js_error_types.png)
+
 In Node.js, errors are handled through exceptions. For example, if we have an error that would occur when we divide a number by zero, our Node.js application will crash, so then we need to handle the error to continue with the normal execution of our application i.e.
 
 ```js
