@@ -6,7 +6,7 @@ url: /engineering-education/ten-tips-for-working-with-nodejs/
 title: 10 Tips for Working with Node.js
 description: Discover ten common tips that you need to know if you are getting started in deploying your first Node.js application.
 author: joseph-chege
-date: 2020-08-27T00:00:00-10:00
+date: 2020-08-28T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:		
@@ -93,7 +93,8 @@ In this scenario, we can see that functions 1, 2 and 4 are
 asynchronous.
 
 ### 5. Handling Node.js Errors
-Common Node.js errors are:
+A few common Node.js errors are:
+
 ![Node.js_error_types](/engineering-education/ten-tips-for-working-with-nodejs/node.js_error_types.png)
 
 In Node.js, errors are handled through exceptions. For example, if we have an error that would occur when we divide a number by zero, our Node.js application will crash, so then we need to handle the error to continue with the normal execution of our application i.e.
