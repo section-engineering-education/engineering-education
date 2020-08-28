@@ -11,7 +11,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-an-abi/image1.png
+  - url: /engineering-education/what-is-an-abi/hero.png
     alt: hero image ABI application binary interface library int rust c++ cpp ffi FFI
 ---
 Example intro here
