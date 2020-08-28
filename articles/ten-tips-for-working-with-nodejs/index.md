@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/10-tips-working-with-nodejs/
+url: /engineering-education/ten-tips-for-working-with-nodejs/
 title: 10 Tips for Working with Node.js
 description: Discover ten of the common tips you need to know from getting started to deploying your first Node.js application.
 author: joseph-chege
@@ -10,7 +10,7 @@ date: 2020-08-27T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:		
-  - url: /engineering-education/10-tips-for-working-with-nodejs/hero.jpg
+  - url: /engineering-education/ten-tips-for-working-with-nodejs/hero.jpg
     alt: laptop node.js website
 ---
 As a developer getting started with Node.js application development, there a few basic skills that you need to be familiar with as you start to build your first Node.js application.
@@ -178,3 +178,6 @@ Node.js monitoring frameworks include:
 
 ### Conclusion
 As a Node.js developer, there are many concepts you need to be familiar with for you to have a good Node.js application. Check out what you need to know, learn, and be able to apply that in your system and all will be good. I wish you the best as you learn to work with Node.js.
+
+---
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
