@@ -6,7 +6,7 @@ url: /engineering-education/simple-guide-to-using-apis-part2/
 title: Getting to Grips with APIs - Authentication
 description: Using the Goodreads API, goodreads-api-node wrapper and oAuth1 to authenticate users with their Goodreads account to make authenticated requests such as returning a user's owned books.
 author: louise-findlay
-date: 2020-08-28T00:00:00-13:00
+date: 2020-08-28T00:00:00-10:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
