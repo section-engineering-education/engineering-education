@@ -1,6 +1,6 @@
 ## Functions in C++
 
-Let us continue from where we left off in the previous article [*Introduction to C++*](/engineering-education/if-else-loops/).
+Let us continue from where we left off in the previous article [*If Else and Loops*](/engineering-education/if-else-loops/).
 We talked about If Else and Loops in the previous article. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward. 
 
 In this article, we will be going over the topic of Functions.
