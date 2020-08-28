@@ -6,7 +6,7 @@ url: /engineering-education/tcp-node/
 title: Concepts of TCP, Explained with Node.js
 description: Networking is something all of us rely on every day. This article talks about the concepts of TCP explained with Node.js.
 author: mike-white
-date: 2020-08-27T00:00:00-10:00
+date: 2020-08-28T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -15,8 +15,9 @@ images:
     alt: node.js tcp example image
 ---
 Networking is a very important part of computing. But how do we do it? A network is a group of computers that are able to talk to each other. The Internet is a famous example of a network.
-For our example today, the computer can just talk to itself. All the examples can be easily modified to run between two different computers.
 <!--more-->
+For our example today, the computer can just talk to itself. All the examples can be easily modified to run between two different computers.
+
 ### What is TCP?
 TCP (Transmission Control Protocol) is a protocol for sending information between computers. TCP [guarantees*](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/) that all the information will be sent and that it will be received in order. It does this by creating a "handshake" to establish a connection. It looks something like the following:
 
@@ -43,7 +44,7 @@ Port numbers are between 1 and 65,535. Make sure you don't use a [reserved port]
 ### Protocol
 A protocol is a language that computers use to communicate. The protocol helps each computer interpret the data it receives. To make a protocol, we need to think about what the computers need to do. Usually, we create commands, and give arguments to those commands, just like functions.
 
-**Try to design your own protocol before reading on**
+**Try to design your own protocol before reading on.**
 
 You may have designed a better protocol (it's good to have short messages). The one we'll use in this example is meant to be easy for a human to read. It has a command and arguments, separated by spaces.
 
@@ -55,7 +56,7 @@ You may have designed a better protocol (it's good to have short messages). The 
 
 Of course, it's trivial to add more operations. Feel free to do this in your implementation. We'll only be adding in this example.
 
-You always have to consider the possibility that the client will send an invalid command. It would be unfair to the rest of your users if the entire server crashed just because one user screwed up. We'll have to be very careful to make sure that doesn't happen. If someone does send an invalid command, we'll respond with `ERROR`.
+You always have to consider the possibility that the client will send an invalid command. It would be unfair to the rest of your users if the entire server crashed just because one user messed up. We'll have to be very careful to make sure that doesn't happen. If someone does send an invalid command, we'll respond with `ERROR`.
 
 ### Setup
 We're going to create a simple calculator application for this example. We'll be using [Node.js](https://nodejs.org/en/) and the [net](https://nodejs.org/api/net.html) library to do this. We'll need two programs: one for the client, and one for the server. The client will ask the server to do a calculation, and the server will send the result back to the client.
