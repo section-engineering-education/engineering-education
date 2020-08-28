@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/what-is-an-abi/
+title: What is an ABI?
+description: The application binary interface (ABI) orchestrates how code binaries works together. 
+author: zack-jorquera
+date: 2020-08-27T00:00:00-13:00
+topics: 
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/what-is-an-abi/image1.png
+    alt: hero image ABI application binary interface library int rust c++ cpp ffi FFI
+---
+
+
 # What is an ABI
 
 An ABI is an application binary interface. It has to do with the implementation details of code i.e. what code turns into when it's compiled. Sometimes ABIs are in place to conform to hardware/kernel requirements but most of the time they are to make sure that two pieces of binary code can work together (like using a pre-compiled library).
