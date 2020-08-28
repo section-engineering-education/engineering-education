@@ -58,7 +58,6 @@ The second parameter, the callback function, has two arguments `req` and `res`. 
 
 The code under 3 starts a server on the port 3000. You can go to `localhost:3000` to view your response. 
 
-## Core Parts of Express
 
 ### Middleware
 
@@ -158,14 +157,6 @@ app.use(express.static("static") //relative path
 ```
 
 Any files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times. If the file is not there in one directory then the request is passed onto the next `static()` call. 
-
-## Routing
-
-We saw above *Routing* refers to how the application responds to a request. As application size grows 
-
-
-## Template Engines
-
 
 
 
