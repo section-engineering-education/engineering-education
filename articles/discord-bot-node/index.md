@@ -89,7 +89,7 @@ client.once("ready", () => { // prints "Ready!" to the console once the bot is o
 client.login(token); // starts the bot up
 ```
 
-You can run this by using `node index.js`. Once you’ve done that it should look something like this:
+You can run this by using `node index.js`. Once you’ve done that, you should get this output:
 
 ![The word “ready” appears in the command prompt](/engineering-education/discord-bot-node/discordbot9.png)
 
