@@ -6,7 +6,7 @@ url: /engineering-education/what-is-an-abi/
 title: What is an ABI?
 description: The application binary interface (ABI) orchestrates how code binaries works together. 
 author: zack-jorquera
-date: 2020-08-27T00:00:00-13:00
+date: 2020-08-28T00:00:00-13:00
 topics: 
 excerpt_separator: <!--more-->
 images:
@@ -19,11 +19,11 @@ Example intro here
 
 # What is an ABI
 
-An ABI is an application binary interface. It has to do with the implementation details of code i.e. what code turns into when it's compiled. Sometimes ABIs are in place to conform to hardware/kernel requirements but most of the time they are to make sure that two pieces of binary code can work together (like using a pre-compiled library).
+An ABI is an application binary interface. The ABI deals with the implementation details of code i.e. what code turns into when it's compiled. Sometimes ABIs are in place to conform to hardware/kernel requirements but most of the time they are to make sure that two pieces of binary code can work together (like using a pre-compiled library).
 
-We can imagine why this might be important: let's say we are using a library with an API that requires the caller to pass some arguments to a function. Now, how does your code know how to pass those arguments to the library function? Generally, we would use the stack or registers but we want to guarantee that both our code and the library know what to use and in what order. This is exactly the problem that an ABI solves.
+We can imagine why this might be important: let's say we are using a library with an API that requires the caller to pass some arguments to a function. Now, how does your code know how to pass those arguments to the library function? Generally we would use the stack or registers, but we want to guarantee that both our code and the library know what to use and in what order. This is exactly the problem that an ABI solves.
 
-In most cases, you as a programmer will never need to deal with conforming to the ABI as the compiler will take care of that for you. However different languages can have different ABIs so It is good to know what the ABI does and therefore what differences different languages have.
+In most cases, you as a programmer will never need to deal with conforming to the ABI as the compiler will take care of that for you. However, different languages can have different ABIs so it is good to know what the ABI does, and therefore how difference languages do it differently.
 
 This article will serve as an introduction to some of the important things that an ABI defines looking at how some current ABIs defines them.
 
@@ -43,17 +43,17 @@ The primitive types can be grouped into [categories](https://software.intel.com/
 - Vector: This is SSE or AVX datatype (we won't talk about this type-kind).
 - Aggregate: General type-kind for structs and classes (we will talk about this type-kind in the [structs](#structs) section).
 
-Sidebar: Booleans in [C](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#section.3.2), [C++](https://isocpp.org/files/papers/n4296.pdf#section.3.9), and [Rust](https://rust-lang.github.io/unsafe-code-guidelines/layout/scalars.html#bool) all *only* have acceptable values of 0 and 1 (even though the size is 1 byte or 8 bits). This is because, as shown in these examples, [C](https://repl.it/@ZackJorquera/C-bools-only-0-or-1), [C++](https://repl.it/@ZackJorquera/Cpp-bools-only-0-or-1), and [Rust](https://repl.it/@ZackJorquera/Rust-bools-only-0-or-1) only look at the 0th bit to determine the truth value. This means the while a value like `4`, `0b0100`, is not zero it will still be false as a bool (technically it is undefined behavior). However, in an if statement and when casting there is an [implicit conversion](https://isocpp.org/files/papers/n4296.pdf#section.4.12) that will take any non-zero value and make it have the value 1 if it isn't already the `bool` type.
+Sidebar: Booleans in [C](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#section.3.2), [C++](https://isocpp.org/files/papers/n4296.pdf#section.3.9), and [Rust](https://rust-lang.github.io/unsafe-code-guidelines/layout/scalars.html#bool) all *only* have acceptable values of 0 and 1 (even though the size is 1 byte or 8 bits). This is because, as shown in these examples, [C](https://repl.it/@ZackJorquera/C-bools-only-0-or-1), [C++](https://repl.it/@ZackJorquera/Cpp-bools-only-0-or-1), and [Rust](https://repl.it/@ZackJorquera/Rust-bools-only-0-or-1) only look at the 0th bit to determine the truth value. This means the while a value like `4` (`0b0100` in binary) is not zero it will still be false as a bool (technically it is undefined behavior). However, in an if statement and when casting there is an [implicit conversion](https://isocpp.org/files/papers/n4296.pdf#section.4.12) that will take any non-zero value and make it have the value 1 if it isn't already the `bool` type.
 
 We will talk more about these type-kinds in the [structs](#structs) and [calling conventions](#passing-data-to-the-callee-and-back) sections.
 
 When it comes to primitive types the main issues to think about are how to store them in memory and how to operate on them. These two things play hand in hand because if we want to operate on some data we will first need to read them from memory and into a register.
 
-For anything stored in memory, we will have to think about the [endianness](https://www.section.io/engineering-education/what-is-little-endian-and-big-endian/) of the data. Most of the time this is dealt with by the hardware and exposed to the program as a `mov` instructions that already account for endianness with exception to loading constant value with `mov`. I won't go into detail as I wrote a whole article about it [here](https://www.section.io/engineering-education/what-is-little-endian-and-big-endian/).
+For anything stored in memory, we will have to think about the [endianness](https://www.section.io/engineering-education/what-is-little-endian-and-big-endian/) of the data. Most of the time this is dealt with by the hardware and exposed to the program as a `mov` instructions that already account for endianness, with exception to loading constant value with `mov`. I won't go into detail as I wrote a whole article about it [here](https://www.section.io/engineering-education/what-is-little-endian-and-big-endian/).
 
 ## Size and Alignment
 
-There are also the size and alignment of each piece of data that we have to worry about. The size is, well the size but must also be a multiple of the alignment. The alignment specifies where it can be stored in memory, it must be at least 1 and always a power of two. As an example, if something has an alignment of 4-bytes then the address it is stored at must be divisible by 4-bytes. The reason why this exists is mostly for [performance reasons](https://stackoverflow.com/q/49391001/9664285) because memory hardware is specialized in such a way to read data from cache-lines and alignment can guarantee that one piece of data is not split up into multiple cache-lines.
+There are also the size and alignment of each piece of data that we have to worry about (this follows for structs as well). The size must always be a multiple of the alignment. The alignment specifies where it can be stored in memory, it must be at least 1 and always a power of two. As an example, if something has an alignment of 4-bytes then the address it is stored at must be divisible by 4-bytes (and the size must be divisible by 4-bytes). This exists mostly for [performance reasons](https://stackoverflow.com/q/49391001/9664285) because memory hardware is specialized in such a way as to read data from a cache-block (also called a cache-line) quickly. The alignment can guarantee that one piece of data is not split up into multiple cache-blocks which would require two memory reads.
 
 Take for example a 4-byte value with a 4-byte alignment and an 8-byte value with an 8-byte alignment next to each other. To store these two values we would have to have 4 bytes of empty space between them (shown by the `x`s).
 
@@ -66,7 +66,7 @@ Most ABIs require the alignment of primitive types to be the same as the size ([
 
 # Structs
 
-Like alignment, structs have a similar concept for the data in them. This is to say that structs also have their own alignment so that the data in them can have the alignment they require. We can sort of think about each struct as containing their own space of memory where everything in them is aligned relative to the start of the struct. We call this struct relative memory address the offset of a field in the struct. Let's look at an example.
+Like alignment, structs have a similar concept for the data in them. This is to say that structs also have their own alignment so that the data in them can have the alignment they require. We can think about each struct as containing their own space of memory where everything in them is aligned relative to the start of the struct. We call this memory address relative to the start the offset of a field in the struct. Let's look at an example.
 
 ```c++
 struct MyStruct
@@ -103,7 +103,7 @@ offset: 0123456789abcdef01234567
 value:  bbbbbbbbaaaaddddcccxxxxx
 ```
 
-This struct, although seemingly the same as the C struct, has a completely different layout and there for a smaller size (19 bytes as opposed to C's 24 bytes). Well, really they are both 24 bytes because the size must be a multiple of the alignment and the alignment is 8 in both cases. This is why there is padding at the end. <!-- i don't really like saying the size is 19 and then saying it is 24, but it works to show my point -->
+This struct, although seemingly the same as the C struct, has a completely different layout and therefore a smaller size (19 bytes as opposed to C's 24 bytes). In reality, they are both 24 bytes because the size must be a multiple of the alignment and the alignment is 8 in both cases. This is why there is padding at the end. <!-- i don't really like saying the size is 19 and then saying it is 24, but it works to show my point -->
 
 The reason why this happens is that Rust is not required to maintain the order of the fields to the layout in memory. This, unlike C, allows Rust to make spacial optimizations for you.<!--It is important to say that you can manually arrange the order of the fields in the C struct to result in the same memory arrangement.--> Rust also gives you the ability to tell it that you want to use the C style layout with the [`repr`](https://doc.rust-lang.org/stable/reference/type-layout.html#representations) attribute i.e. you would put `#[repr(C)]` above the struct definition.
 
@@ -138,7 +138,7 @@ Now we need to think about what needs to get done when we call and return from a
 8. Finish caller code
 -->
 
-When we call a function we want our ABI defined process to be dynamic. This means that we want to be able to do all the steps correctly given that the only things that the caller will know are the signature and where the callee is defined in memory. And the only thing the callee will know is its own signature. We also want to be able to have theoretically infinite function calling depth (memory bounded <!-- better word please -->of course).
+When we call a function we want our ABI defined process to be dynamic. This means that we want to be able to do all the steps correctly given that the only things that the caller will know are the signature and where the callee is defined in memory. The only thing the callee will know is its own signature. We also want to be able to have theoretically infinite function calling depth (memory bounded <!-- better word please -->of course).
 
 So how does this get done? Well, let's look at calling the function first. 
 
@@ -150,29 +150,29 @@ The stack works in the way you would expect from the name, i.e. we can push thin
 
 ### Transferring Control
 
-First a little background on how the CPU executed a list of instructions. To know which instruction is needing to be executed there is a register called the instruction pointer, `rip`, that points to the next instruction needing to be executed. This will step through the code one instruction at a time.
+First a little background on how the CPU executed a list of instructions. To know which instruction is needing to be executed next, there is a register called the instruction pointer, `rip`, that points to the next instruction needing to be executed. This will step through the code one instruction at a time.
 
-Back to the topic, in assembly code, we would call a function with the `call <callee addr>` instruction. This will do two things; First, it will push the current value of the instruction pointer on to the stack (this is the return address) and then it will change the value of the instruction pointer to be the address of the callee function.
+Back to the topic, in assembly code, we would call a function with the `call <callee addr>` instruction. This will do two things; first, it will push the current value of the instruction pointer on to the stack (this is the return address), and then it will change the value of the instruction pointer to be the address of the callee function.
 
 When we want to return from the callee and go back to the caller we can use the assembly instruction `ret` which will basically do the opposite of what `call` did. It will pop the return address off of the stack and into `rip` which will set the next instruction (what `rip` is pointing at) to be the instruction after the `call` in the caller code.
 
-Now you can think about how we could just keep calling function which would just keep pushing return addresses onto the stack until we choose to return which would pop all of the return addresses one at a time off of the stack until we are back to where we started.
+Now, you can think about how we could just keep calling functions, which would just keep pushing return addresses onto the stack until we choose to return, which would pop all of the return addresses one at a time off of the stack until we are back to where we started.
 
 <!-- animation maybe, I don't really want to make one -->
 
-Calling and return from functions is important but it's more of a hardware thing then it as an ABI thing. So let's see how the ABI build off of this to allows for argument passing.
+Calling and return from functions is important but it's more of a hardware thing then it as an ABI thing. Let's see how the ABI build off of this to allows for argument passing.
 
 ### Saving and Restoring The Caller State
 
-Because the stack proved very useful in calling function and saving the return address we will use the stack again from saving the caller state.
+Because the stack proved very useful in calling function and saving the return address we will use the stack again when saving the caller state.
 
-Let think about what ways we can do this. We could, before we call the callee, just back up every register's value we care about by pushing it onto the stack, and then after the callee is done we would just pop each value back into its register and carry on with the function. 
+Let's think about what ways we can do this. We could, before we call the callee, just back up every register's value we care about by pushing it onto the stack, and then after the callee is done we would just pop each value back into its register and carry on with the function. 
 
-This turns out to be very inefficient because if we have a lot of register in play and we call a function that doesn't use any of them we would end up filling the stack for no reason. It turns out that there is a better way to do this. It is the concept of caller-saved and callee-saved registers. If a register is marked as callee-saved and the callee wants to that register then they would have to back it up (push it onto the stack) before using it and restore it (pop it from the stack) before they returning.
+This turns out to be very inefficient; this is because if we have a lot of register in play and we call a function that doesn't use any of them, we would end up filling the stack for no reason. It turns out that there is a better way to do this. It is the concept of caller-saved and callee-saved registers. If a register is marked as callee-saved and the callee wants to use that register then the callee would have to back it up (push it onto the stack) before using it and restore it (pop it from the stack) before returning.
 
 ## Passing data to the callee and back
 
-Passing data is done in two different ways. The first is if you compile a program for 32 bits (x86) then all arguments are passed on the stack. The second way is if you compile for 64 bits (x64 architecture) then registers are used to pass arguments. If you have a lot of arguments then some are put onto the stack.
+Passing data is done in two different ways. The first is when you compile a program for 32 bits (x86 architecture); all arguments are passed on the stack. The second is when you compile a program for 64 bits (x64 architecture); registers are used to pass arguments. If there are too many arguments, the arguments that can't fit into a register will be put onto the stack.
 
 The reason we can use the stack to pass arguments is because the stack is predictable enough that at compile-time, offsets from the top of the stack can be used. Here is a picture to make the point more clear.
 
@@ -181,7 +181,7 @@ The reason we can use the stack to pass arguments is because the stack is predic
 *`rsp` and `esp` refer to the same register. `esp` is used in an x86 architecture and is the lower 4 bytes of `rsp` which is used in an x64 architecture.*
 *Note: a lot of the time the stack is drawn upside down for whatever reason so make sure you look at the direction of increasing addresses.*
 
-The stack pointer, `rsp` (`esp` in x86), always points to the top of the stack. From there we can apply an offset known at compile time to get the arguments. This offset is calculated based on the size that the callee allocated for local variables, the numbers of callee-saved registers saved, one pointer sized value for the return address, and finally the parameter sizes and alignments or each parameter before it. Note that when a function allocates space for local variable it will allocate it insuring there is a [16-byte alinement](https://stackoverflow.com/a/49397524/9664285) (some times even 32-bytes or 64-bytes depending on SIMD hardware being used <!-- well right now more then 16 is never required --> but you can't rely on that) by adding padding so that everything that follows has a known alignment.
+The stack pointer, `rsp` (`esp` in x86), always points to the top of the stack. From there we can apply an offset known at compile time to get the arguments. This offset is calculated based on the size that the callee allocated for local variables, the numbers of callee-saved registers saved, one pointer sized value for the return address, and finally the parameter sizes and alignments or each parameter before it. Note that when a function allocates space for local variable it will allocate it insuring there is a [16-byte alinement](https://stackoverflow.com/a/49397524/9664285) (some times even 32-bytes or 64-bytes depending on SIMD hardware being used <!-- well right now more then 16 is never required --> but you can't always rely on that) by adding padding so that everything that follows has a known alignment.
 
 So, let's look at how parameters are passed to the callee in C when there are registers available to use. Note, this is only the case with the architecture is x64. We figure out how each argument is passed individually based on its type-kind. We do this for each argument:
 
@@ -189,13 +189,13 @@ So, let's look at how parameters are passed to the callee in C when there are re
 
 - If the type-kind of the argument is a Float then we will pick the next available float/vector argument register (they are `xmm0` to `xmm7`). If there are no available registers then the argument will be placed in the next argument position on the stack.
 
-- If the type-kind is a Pointer then most of the time the same steps as Integers type-kinds will be used. If there are bounds associated with the pointer then more steps are taken, however, that is outside the scope of this article (read [this](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#section.3.2) page 24 for more information).
+- If the type-kind is a Pointer then most of the time we follow the same steps as for the Integers type-kinds. If there are bounds associated with the pointer then more steps are taken, however, that is outside the scope of this article (read [this](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#section.3.2) page 24 for more information).
 
-- If the type-kind is Aggregate one of two things would happen depending on the size and the sub-type-kind. If the size can fit into two 8-byte registers then follow the steps for the sub-type-kind (Pointer, Integers and Float only). Note this can require 2 registers. If the size is too big to fit into two registers or the sub-type-kind is Memory then the value is saved onto the stack in the caller local variables section and the pointer is passed as Pointer type-kind.
+- If the type-kind is an Aggregate then one of two things would happen depending on the size and the sub-type-kind. If the size can fit into two 8-byte registers then follow the steps for the sub-type-kind (Pointer, Integer and Float only). This means that two registers can be used. If the size is too big to fit into two registers or the sub-type-kind is Memory then the value is saved onto the stack in the caller local variables section and the pointer is passed as Pointer type-kind.
 
 There is also the case of the return value. This is evaluated before the parameters and follows these steps:
 
-- If the type-kind of the return type is an Integers then the register `rax` will be used (note if x86 then we still use a register for the return value, it is `eax` the lower 4 bytes of `rax`). If a second register is needed then `rdx` will be used.
+- If the type-kind of the return type is an Integer then the register `rax` will be used (note if x86 then we still use a register for the return value, it is `eax` the lower 4 bytes of `rax`). If a second register is needed then `rdx` will be used.
 
 - If the type-kind of the return type is a Float then the register `xmm0` will be used. If two registers are needed then `xmm1` will be the second register.
 
@@ -248,18 +248,18 @@ I made a lot more "interactive" examples [here](https://repl.it/@ZackJorquera/c-
 
 Now, it should go without saying that, just like for structs, Rust does this a little differently. Because this article is getting a little long I won't go over it in depth. 
 
-Also a little side-note, rust currently [doesn't have a stable ABI](https://github.com/rust-lang/rfcs/issues/600) so everything is subject to change (however not often). This, as far as rust is concerned, isn't necessarily a bad thing when it comes to writing production code as it really only means that using two different versions of the rust compiler might result in backward compatibility issues. This in practice will never happen because [cargo](https://doc.rust-lang.org/cargo/) will compile all your dependencies for you together.
+Also a little side-note, Rust currently [doesn't have a stable ABI](https://github.com/rust-lang/rfcs/issues/600) so everything is subject to change (however not often). This, as far as Rust is concerned, isn't necessarily a bad thing when it comes to writing production code as it really only means that using two different versions of the Rust compiler might result in backward compatibility issues. This in practice will never happen because [Cargo](https://doc.rust-lang.org/cargo/) will compile all your dependencies for you together.
 
-Generally, everything is the same with exception to Aggregate type-kinds. [Experimentally](https://repl.it/@ZackJorquera/rust-calling-conventions) I have found that, like C, Rust will use at most 2 eight-byte registers for an aggregate. However, it will only put one field into each register. So even if two 32 bit value could fit into one register they will be split up. And the type-kind of the field will be used to determine how it is passed to the callee like with the C ABI.
+Generally, everything is the same with exception to Aggregate type-kinds. [Experimentally](https://repl.it/@ZackJorquera/rust-calling-conventions) I have found that, like C, Rust will use at most 2 eight-byte registers for an aggregate. However, it will only put one field into each register, so even if two 32 bit value could fit into one register they will be split up. Then the type-kind of the field will be used to determine how it is passed to the callee like with the C ABI.
 
-Note that, like for struct, you can tell Rust to conform to C's ABI's calling convention by prepending `extern "C"` to the function. If you want to play around with Rust's calling conventions I also made an "interactive" example [here](https://repl.it/@ZackJorquera/rust-calling-conventions).
+Like for struct, you can tell Rust to conform to C's ABI's calling convention by prepending `extern "C"` to the function. If you want to play around with Rust's calling conventions I also made an "interactive" example [here](https://repl.it/@ZackJorquera/rust-calling-conventions).
 
 
 # Foreign Function Interface
 
 All the heavy lifting is already done, so pat your self on that back for that one.
 
-An FFI (foreign function interface) can be boiled down to, if you want to talk with another language then you have to play by its rules (defined by its ABI). Luckily, rust gives you a lot of the tool required to do this like the `#repr(C)` tag and the `extern "C"` function modifier to name a few.
+An FFI (foreign function interface) can be boiled down to: if you want to talk with another language then you have to play by its rules (defined by its ABI). Luckily, Rust gives you a lot of the tools need to do this like the `#repr(C)` tag and the `extern "C"` function modifier, to name a few.
 
 # Sources and Further reading
 - [Notes on Type Layouts and ABIs in Rust](https://gankra.github.io/blah/rust-layouts-and-abis)
