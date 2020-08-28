@@ -46,13 +46,13 @@ On the left, you should see a "Bot" tab. Click on that, and then click on the bu
 Give your new bot a name and an icon to make it stand out.
 
 ### Adding The Bot To Your Server
-You'll need to use a link that looks something like this:
+You'll need to use a URL that looks something like this:
 
 ```
 https://discord.com/oauth2/authorize?client_id=CLIENT_ID&scope=bot
 ```
 
-You'll need to replace `CLIENT_ID` with the client ID of your bot, which you can find on the application page.
+You'll need to replace `CLIENT_ID` with the client ID of your bot, which you can find on the application page. The client ID is a unique public ID that Discord uses to identify a bot. In this instance, we're telling Discord which bot we'd like to add to the server.
 
 ![The client ID is on the “General Information” tab](/engineering-education/discord-bot-node/discordbot6.png)
 
