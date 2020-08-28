@@ -185,7 +185,7 @@ The stack pointer, `rsp` (`esp` in x86), always points to the top of the stack. 
 
 So, let's look at how parameters are passed to the callee in C when there are registers available to use. Note, this is only the case with the architecture is x64. We figure out how each argument is passed individually based on its type-kind. We do this for each argument:
 
-- If the type-kind of the argument is an Integers then we will pick the next available general-purpose argument register (they are in order `rdi`, `rsi`, `rdx`, `rcx`, `r8`, `r9`). If there are no available registers then the argument will be placed in the next argument position on the stack.
+- If the type-kind of the argument is an Integers then we will pick the next available general-purpose argument register (in order, they are `rdi`, `rsi`, `rdx`, `rcx`, `r8`, `r9`). If there are no available registers then the argument will be placed in the next argument position on the stack.
 
 - If the type-kind of the argument is a Float then we will pick the next available float/vector argument register (they are `xmm0` to `xmm7`). If there are no available registers then the argument will be placed in the next argument position on the stack.
 
