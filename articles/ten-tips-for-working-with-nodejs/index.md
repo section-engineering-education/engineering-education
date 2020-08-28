@@ -6,7 +6,7 @@ url: /engineering-education/ten-tips-for-working-with-nodejs/
 title: 10 Tips for Working with Node.js
 description: Discover ten common tips that you need to know if you are getting started in deploying your first Node.js application.
 author: joseph-chege
-date: 2020-08-28T00:00:00-10:00
+date: 2020-08-28T00:00:00-11:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:		
