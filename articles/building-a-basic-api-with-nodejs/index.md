@@ -33,10 +33,10 @@ Before you begin this guide you'll need the following:
 In this step, you will write up an Express server with Node.js and run it locally.
 
 First, Setup [Express](http://expressjs.com/en/starter/installing.html).
-After the setup you should have one directory ```node_modules``` and two files ```package.json``` & ```package-lock.json```.
+After the setup you should have one directory `node_modules` and two files `package.json` & `package-lock.json`.
 
 Next, you will write a simple Hello world app.
-Create an ```index.js``` file. Then add the code below to it.
+Create an `index.js` file. Then add the code below to it.
 
 
 ```js
@@ -58,16 +58,16 @@ Finally, you should run the server with a command that tells Node.js to run your
 
 ```node index.js```
 
-Opening ```http://localhost:3000/``` should return a "Hello World" message as expected.
+Opening `http://localhost:3000/` should return a "Hello World" message as expected.
 
-Stop the server by running ```CTRL + C```.
+Stop the server by running `CTRL + C`.
 
 In the next step, you will add an API endpoint to your server.
 
 ### Step 2 — Create a GET Endpoint
 In this step, you are going to create an endpoint that returns a list of all the movies stored in a JSON file.
 
-Consider that you have a JSON database of movies in a file named ```movies.json``` that lies in the same directory as your ```index.js``` file.
+Consider that you have a JSON database of movies in a file named `movies.json` that lies in the same directory as your `index.js` file.
 
 ```json
 [
