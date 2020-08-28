@@ -44,7 +44,7 @@ async function myFunction(inputValue) {
         const c = syncFunc3(b);
         return await asyncFunc4(c);
     } catch (ex) {
-        *// handle exception*
+        // handle exception
     }
 }
 ```
