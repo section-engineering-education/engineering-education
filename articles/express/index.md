@@ -161,10 +161,10 @@ Any files in the directory "static" are served. `localhost:3000/dummy_file.txt` 
 
 ## Routing
 
+We saw above *Routing* refers to how the application responds to a request. As application size grows 
 
 
-
-## Sub Applications
+## Template Engines
 
 
 
