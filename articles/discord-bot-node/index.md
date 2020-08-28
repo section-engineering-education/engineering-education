@@ -134,7 +134,7 @@ client.on("message", message => {
 There. Now to add more commands, you just add them to `commands`.
 
 ## Bot Ideas
-Now that you know how to make a Discord bot, it would nice if you would actually make one. If you need a list of Discord Bot ideas, I've come up with a few already for [my blog](https://botahamec.github.io/posts/20_06_03_project_ideas/). Here are a few more though:
+Now that you know how to make a Discord bot, you'll probably want to make your own. If you need a list of Discord Bot ideas, I've come up with a few already for [my blog](https://botahamec.github.io/posts/20_06_03_project_ideas/). Here are a few more though:
 
 - A bot that can compile its own programming language
 - Calculator Bot. If you're learning a new programming language, you could start by making this bot in that language. Try different ways of inputting the values.
