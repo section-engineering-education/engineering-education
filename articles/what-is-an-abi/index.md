@@ -1,6 +1,6 @@
 # What is an ABI
 
-An ABI is an application binary interface. It has to do with the implementation details of code i.e. what code turns into when it's compiled. Sometimes ABIs are in place to conform to hardware requirements but most of the time they are to make sure that two pieces of binary code can work together (like using a pre-compiled library).
+An ABI is an application binary interface. It has to do with the implementation details of code i.e. what code turns into when it's compiled. Sometimes ABIs are in place to conform to hardware/kernel requirements but most of the time they are to make sure that two pieces of binary code can work together (like using a pre-compiled library).
 
 We can imagine why this might be important: let's say we are using a library with an API that requires the caller to pass some arguments to a function. Now, how does your code know how to pass those arguments to the library function? Generally, we would use the stack or registers but we want to guarantee that both our code and the library know what to use and in what order. This is exactly the problem that an ABI solves.
 
@@ -36,7 +36,7 @@ For anything stored in memory, we will have to think about the [endianness](http
 
 There are also the size and alignment of each piece of data that we have to worry about. The size is, well the size but must also be a multiple of the alignment. The alignment specifies where it can be stored in memory, it must be at least 1 and always a power of two. As an example, if something has an alignment of 4-bytes then the address it is stored at must be divisible by 4-bytes. The reason why this exists is mostly for [performance reasons](https://stackoverflow.com/q/49391001/9664285) because memory hardware is specialized in such a way to read data from cache-lines and alignment can guarantee that one piece of data is not split up into multiple cache-lines.
 
-Take for example a 4-byte value with a 4-byte alignment and a 8-byte value with 8-byte alignment next to each other. To store these two values we would have to have 4 bytes of empty space between them (shown by the `x`s).
+Take for example a 4-byte value with a 4-byte alignment and an 8-byte value with an 8-byte alignment next to each other. To store these two values we would have to have 4 bytes of empty space between them (shown by the `x`s).
 
 ```
 addr:  0123456789abcdef
@@ -58,7 +58,7 @@ struct MyStruct
     float d;
 }
 ```
-We can assume that the struct has the alignment of at least the greatest needed alignment for any field in it.From there, the ABI needs to define how to allocate space within the struct for each field. In C this is done in the order the arguments were specified being conscious of the alignments for each field. 
+We can assume that the struct has the alignment of at least the greatest needed alignment for any field in it. From there, the ABI needs to define how to allocate space within the struct for each field. In C this is done in the order the arguments were specified being conscious of the alignments for each field. 
 
 As you would expect we will get the following layout (again the `x`s are padding). Note that a double is 64 bits (8 bytes) and a float is 32 bits (4 bytes).
 ```
@@ -84,7 +84,7 @@ offset: 0123456789abcdef01234567
 value:  bbbbbbbbaaaaddddcccxxxxx
 ```
 
-This struct, although seemingly the same as the C struct, has a completely different layout and there for a smaller size (19 bytes as opposed to C's 24 bytes). Well, really they are both 24 bytes because the size must be a multiple of the alignment and the alignment is 8 in both cases. This is why there is padding at the end. <!-- i don't really like saying the size is 19 and then saying it is 24, but is works to show my point -->
+This struct, although seemingly the same as the C struct, has a completely different layout and there for a smaller size (19 bytes as opposed to C's 24 bytes). Well, really they are both 24 bytes because the size must be a multiple of the alignment and the alignment is 8 in both cases. This is why there is padding at the end. <!-- i don't really like saying the size is 19 and then saying it is 24, but it works to show my point -->
 
 The reason why this happens is that Rust is not required to maintain the order of the fields to the layout in memory. This, unlike C, allows Rust to make spacial optimizations for you.<!--It is important to say that you can manually arrange the order of the fields in the C struct to result in the same memory arrangement.--> Rust also gives you the ability to tell it that you want to use the C style layout with the [`repr`](https://doc.rust-lang.org/stable/reference/type-layout.html#representations) attribute i.e. you would put `#[repr(C)]` above the struct definition.
 
@@ -96,9 +96,9 @@ We will follow these steps to classify the type-kind of the struct (the sub-type
 
 - If the struct is greater then 32 bytes (4 eight-bytes) or contains unaligned fields then we will give the struct the Memory sub-type-kind.
 
-- If the struct is less then 32 bytes in size then it will be split up into eight-byte chunks and each chunk will be given a sub-type-kind. We will determine what the sub-type-kind is based on the type-kind of the fields in it. If there are multiple fields in the eightbytes then the sub-type-kind will be determined in this order Memory, Pointer, Integer, Float, Vector.
+- If the struct is less then 32 bytes in size then it will be split up into eight-byte chunks and each chunk will be given a sub-type-kind. We will determine what the sub-type-kind is based on the type-kind of the fields in it. If there are multiple fields in the eight-byte chunk then the sub-type-kind will be determined in this order Memory, Pointer, Integer, Float, Vector.
 
-Rust does this a little different where each field is considered not each eightbytes. 
+Rust does this a little differently where each field is considered not each eight-byte chunk. 
 
 # Calling Conventions
 
@@ -153,7 +153,7 @@ This turns out to be very inefficient because if we have a lot of register in pl
 
 ## Passing data to the callee and back
 
-Passing data is is done in two different ways. The first is if you compile a program for 32 bits (x86) then all arguments are passed on the stack. The second way is if you compile for 64 bits (x64 architecture) then registers are used to pass arguments. If you have a lot of arguments then some are put onto the stack.
+Passing data is done in two different ways. The first is if you compile a program for 32 bits (x86) then all arguments are passed on the stack. The second way is if you compile for 64 bits (x64 architecture) then registers are used to pass arguments. If you have a lot of arguments then some are put onto the stack.
 
 The reason we can use the stack to pass arguments is because the stack is predictable enough that at compile-time, offsets from the top of the stack can be used. Here is a picture to make the point more clear.
 
@@ -229,9 +229,9 @@ I made a lot more "interactive" examples [here](https://repl.it/@ZackJorquera/c-
 
 Now, it should go without saying that, just like for structs, Rust does this a little differently. Because this article is getting a little long I won't go over it in depth. 
 
-Also a little side-note, rust currently [doesn't have a stable ABI](https://github.com/rust-lang/rfcs/issues/600) so everything is subject to change (however not often). This, as far as rust is concerned, isn't necessarily a bad thing when it comes to writing production code as it really only means that using two different version of the rust compiler might result in backward compatibility issues. This in practice will never happen because [cargo](https://doc.rust-lang.org/cargo/) will compile all your dependencies for you together.
+Also a little side-note, rust currently [doesn't have a stable ABI](https://github.com/rust-lang/rfcs/issues/600) so everything is subject to change (however not often). This, as far as rust is concerned, isn't necessarily a bad thing when it comes to writing production code as it really only means that using two different versions of the rust compiler might result in backward compatibility issues. This in practice will never happen because [cargo](https://doc.rust-lang.org/cargo/) will compile all your dependencies for you together.
 
-Generally, everything is the same with exception to Aggregate type-kinds. [Experimentally](https://repl.it/@ZackJorquera/rust-calling-conventions) I have found that, like C, Rust will use at most 2 eight-byte registers for an aggregate. However, it will only put one field into each register. So even if two 32 bit value could fit into one register they will be split up. And of corse the type-kind of the field will be used to determine how it is passed to the callee.
+Generally, everything is the same with exception to Aggregate type-kinds. [Experimentally](https://repl.it/@ZackJorquera/rust-calling-conventions) I have found that, like C, Rust will use at most 2 eight-byte registers for an aggregate. However, it will only put one field into each register. So even if two 32 bit value could fit into one register they will be split up. And the type-kind of the field will be used to determine how it is passed to the callee like with the C ABI.
 
 Note that, like for struct, you can tell Rust to conform to C's ABI's calling convention by prepending `extern "C"` to the function. If you want to play around with Rust's calling conventions I also made an "interactive" example [here](https://repl.it/@ZackJorquera/rust-calling-conventions).
 
@@ -240,7 +240,7 @@ Note that, like for struct, you can tell Rust to conform to C's ABI's calling co
 
 All the heavy lifting is already done, so pat your self on that back for that one.
 
-An FFI (foreign function interface) can be boiled down to, if you want to talk with another language then you have to play by their rules (defined by their ABI). Luckily, rust gives you a lot of the tool required to do this like the `#repr(C)` tag and the `extern "C"` function modifier to name a few.
+An FFI (foreign function interface) can be boiled down to, if you want to talk with another language then you have to play by its rules (defined by its ABI). Luckily, rust gives you a lot of the tool required to do this like the `#repr(C)` tag and the `extern "C"` function modifier to name a few.
 
 # Sources and Further reading
 - [Notes on Type Layouts and ABIs in Rust](https://gankra.github.io/blah/rust-layouts-and-abis)
