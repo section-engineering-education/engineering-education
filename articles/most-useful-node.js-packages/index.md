@@ -1,5 +1,4 @@
 ## Most Useful Node.js Packages That you need to Know
-
 Open-source frameworks that form the ecosystem of JavaScript back the
 power of Node.js. As a Node.js developer, it is practically inevitable
 to constantly avoid their advantage. With the help of Node.js packages,
@@ -8,12 +7,9 @@ applications that are light, scalable, high speed with tremendous
 productivity.
 Let\'s have a look at the packages that will assist you to extend your
 inclination to Node.js application development.
-
 ### 1. Express
-
-Express.js is the fastest, unopinionated, and simplest web framework forNode.js. It is very flexible designed for building simple page,multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and
+Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexible designed for building simple page,multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and
 APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](https://www.npmjs.com/package/sails), [`NESTJS`](https://nestjs.com/), [`LOCOMOTIVE`](http://www.locomotivejs.org/) are built on Express. Express is available on the NPM registry.
-
 **Features of Express**
 -   Robust routing.
 -   Focus on high-quality performance.
@@ -21,9 +17,7 @@ APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](
 -   HTTP helpers (such as redirection, caching).
 -   Content negation.
 -   Executable for generating applications quickly.
-
 ### 2. Async
-
 Asynchronous is heavily used in Node.js to ensure non-­blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished.
 It uses a queue to keep track of tasks, allowing you to append additional tasks, attaching extra callbacks, and handling error inside callbacks, making it a more versatile and robust solution for complex dependency management.
 Async provides several functions that include usual functional such are '`map`', '`filter`', '`reduce`',' `filter`', '`each`' as well as some common patterns for asynchronous control flow('`parallel`' , '`series`' , '`waterfall`').
@@ -48,7 +42,7 @@ async function myFunction(inputValue) {
     }
 }
 ```
-In this scenario, we can see it is obvious that functions 1,2and 4 are asynchronous.
+In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchronous.
 
 Other Frameworks related to AsyncJs include
 -   [`Limiter`](https://www.npmjs.com/package/limiter) - Used for
