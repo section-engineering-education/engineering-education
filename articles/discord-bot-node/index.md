@@ -75,7 +75,9 @@ The token for your bot is like a username and a password. It tells Discord which
 
 ![“Click Here To Reveal Your Token”](/engineering-education/discord-bot-node/discordbot5.png)
 
-If this project is on GitHub, you'll want to hide your token. Create a file called `token.txt`, and add it to your `.gitignore` file. You might want to put some random text in `token.txt` first, and then push to make sure it’s actually hidden. Once you’re sure you’ve done it correctly, put the token in your `token.txt` file. Now, we can start coding.
+If this project is on GitHub, you'll want to hide your token. In the root directory of your project, create a file called `token.txt`. You'll also need a file called `.gitignore`. If you already have this file, just add a line that says `token.txt`. Otherwise, create it and put that line in there. You might want to put some random text in `token.txt` first, and then push to make sure it’s actually hidden. Once you’re sure you’ve done it correctly, put the bot token in your `token.txt` file. Now, we can start coding.
+
+If you're not planning on putting your project on GitHub, then just create a file called `token.txt` in the root directory of your project. Put your bot token in it.
 
 Make a file called `index.js` and open it up in your text editor of choice. There's some basic boilerplate code that you'll need to get started.
 
