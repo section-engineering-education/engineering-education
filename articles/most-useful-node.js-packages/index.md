@@ -3,7 +3,7 @@ Open-source frameworks that form the ecosystem of JavaScript back the power of N
 Let's have a look at the packages that will assist you to extend your inclination to Node.js application development.
 ### 1. Express
 Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexible designed for building simple page,multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and
-APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](https://www.npmjs.com/package/sails), [`NESTJS`](https://nestjs.com/), [`LOCOMOTIVE`](http://www.locomotivejs.org/) are built on Express. Express is available on the NPM registry.
+APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](https://www.npmjs.com/package/sails), [`NESTJS`](https://nestjs.com/) are built on Express. Express is available on the NPM registry.
 
 **Features of Express**
 -   Robust routing.
@@ -12,12 +12,12 @@ APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](
 -   HTTP helpers (such as redirection, caching).
 -   Content negation.
 -   Executable for generating applications quickly.
-### 2. Async
+### 2. AsyncJS
 Asynchronous is heavily used in Node.js to ensure non-­blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished.
 It uses a queue to keep track of tasks, allowing you to append additional tasks, attaching extra callbacks, and handling error inside callbacks, making it a more versatile and robust solution for complex dependency management.
-Async provides several functions that include usual functional such are '`map`', '`filter`', '`reduce`',' `filter`', '`each`' as well as some common patterns for asynchronous control flow('`parallel`' , '`series`' , '`waterfall`').
+AsyncJS provides several functions that include usual functional such are '`map`', '`filter`', '`reduce`',' `filter`', '`each`' as well as some common patterns for asynchronous control flow('`parallel`' , '`series`' , '`waterfall`').
 
-**Advantages of using Async in your Node.js app include**
+**Advantages of using AsyncJS in your Node.js app include**
 -   It supports inline functions and text strings.
 -   Error handling from the dependency queue.
 -   Use of AsyncLocalStorge within AsyncJS helps to create asynchronous states within callbacks and promise chain.
@@ -39,19 +39,14 @@ async function myFunction(inputValue) {
 In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchronous.
 
 **Other Frameworks related to AsyncJS include**
--   [`Limiter`](https://www.npmjs.com/package/limiter) - Used for
-    rate-limiting based on request per `sec/hr`.
--   [`Co-async`](https://www.npmjs.com/package/co-async) - Inspired by
-    Async for use with `co` and function generator.
--   [`Neo-async`](https://www.npmjs.com/package/neo-async) - Focus on
-    speed implementation of Async.
--   [`Promise-async`](https://www.npmjs.com/package/promise-async) - It is
-    an Async version where all methods are generated.
+-   [`Limiter`](https://www.npmjs.com/package/limiter) - Used for rate-limiting based on request per `sec/hr`.
+-   [`Co-async`](https://www.npmjs.com/package/co-async) - Inspired by Async for use with `co` and function generator.
+-   [`Neo-async`](https://www.npmjs.com/package/neo-async) - Focus on speed implementation of Async.
 ### 3. Browserify
-It analyses` require ()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require ()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require ()` method defined but Node.js does. With Browserify, you can write code that uses `require ()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference.
+It analyses` require()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require()` method defined but Node.js does. With Browserify, you can write code that uses `require()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference.
 This way code becomes cleaner for Node.js developers for both front and backend applications. You can use Browserify to create client-side codebase that is well structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next Node.js project and it will rock your application. It is a good choice if you want to keep order between your scripts.
 ### 4. Lodash
-It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js`] (http://underscorejs.org/) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
+It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js`] (https://www.npmjs.com/package/underscore) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
 
 **Reason why you should choose Lodash**
 
@@ -73,11 +68,8 @@ Lodash makes Node.js coding easier by taking the hassle out of working with comm
 -   [`Fultil-js`](https://github.com/smartprocure/futil-js) - Is designed to complement Lodash's functional utilities.
 Lodash remains one of the  most downloaded Node.js module in NPM listings. Try it out for the backend and use CDN for the frontend.
 ### 5. MomentJs
-Moment.js is a lightweight JavaScript development tool for dates and times manipulating. It makes date and time easy to format, parse, validate, and internationalize using clean and concise API. Node.js date objects are not that bad, it requires you to do a lot of coding for complex parsing, validation, and displaying Date and time objects. 
-Here a few examples of date objects using Moment.js: To use MomentJs with Node.js, install the module using the following command :
-`npm install moment`
-Then simply use `require ()` in your application as in the following
-example:
+MomentJS is a lightweight JavaScript development tool for dates and times manipulating. It makes date and time easy to format, parse, validate, and internationalize using clean and concise API. Node.js date objects are not that bad, it requires you to do a lot of coding for complex parsing, validation, and displaying Date and time objects. 
+Here a few examples of date objects using MomentJS: To use MomentJs with Node.js, install the module using command `npm install moment`. Then simply use `require ()` in your application as in the following example:
 ```js
 const moment = require('moment');
 const today = moment();
@@ -110,8 +102,7 @@ S is an awesome Node.js package. It simplifies date and time related parsing, ma
 -   [`Express-validator`](https://www.npmjs.com/package/express-validator) -
     It is an Express Middleware for Validator.js.
 ### 6. Request
-Request is a simplified HTTP client that makes it possible to make `http`
-calls. It supports HTTPS and follows redirect by default. Request is a fantastic choice if you want an easy to use library to deal with HTTP request in a sane way. If you want to use promises, you can check out the request-promise library. It is used to describe a request to a server and get a response.
+Request is a simplified HTTP client that makes it possible to make `http` calls. It supports HTTPS and follows redirect by default. Request is a fantastic choice if you want an easy to use library to deal with HTTP request in a sane way. If you want to use promises, you can check out the request-promise library. It is used to describe a request to a server and get a response.
 
 **Request has the following main contractors:**
 -   **Body** - The data to send with the request.
@@ -145,7 +136,7 @@ It is a static code analysis tool to detect errors and potential problems in Jav
 It is an HTTP request logger middleware for Node.js application. Morgan gives you Insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers.
 You can choose to use [`Winston`](https://www.npmjs.com/package/winston) as an alternative library for logging.
 ### 9. Karma
-A Node.js developer, you need to do more testing to your application to make sure it\'s stable and reliable with good performance. Karma is the tool for Job Karma. The main goal of karma is to bring a productive testing environment to developers.
+A Node.js developer, you need to do more testing to your application to make sure it's stable and reliable with good performance. Karma is the tool for Job Karma. The main goal of karma is to bring a productive testing environment to developers.
 
 **Why you should choose karma**
 -   Tests code in real browsers.
@@ -195,6 +186,9 @@ From the above example
 **Other MySQL and helpers frameworks include:**
 -   [`Sequelize`](https://www.npmjs.com/package/sequelize) - promised based Node.js ORM for Postgres, MySQL, Maria DB, SQLite, and Microsoft SQL Server.
 -   [`Knex.js`](https://knexjs.org/) - Designed to be flexible, portable and fun to run for MSSAL, MySQL, and Oracle, MariaDB, SQLite3 and Amazon Redshift.
+**Check [MongoDB](https://www.mongodb.com/) and helpers**
+-   [`Mongoose`](https://www.npmjs.com/package/mongoose) - MongoDB object modeling tool designed to work in an asynchronous environment.
+-   [`Mongoose Paginate v2`] (https://www.npmjs.com/package/mongoose-paginate-v2) - A customizable cursor based pagination plugin for Mongoose.
 ### 11. Nodemon
 A tool for monitoring helps developers based on Node.js applications by automatically restarting the node application when file changes in the app directory are detected. With Nodemon, you do not need any additional changes to your code or method of development. It is a replacement wrapper for the node. Nodemon is simple to use, you just need to replace the word node with `nodemon` on the command-line when executing your `script`. Ie `nodemon ./server.js localhost 300`
 
@@ -203,7 +197,7 @@ A tool for monitoring helps developers based on Node.js applications by automati
 -   [`Trace`](https://github.com/RisingStack/trace-nodejs) - Designed for microservices visualized stack trace platform.
 -   [`Forever`](https://www.npmjs.com/package/forever) - CLI tool for ensuring that a given Node.js script runs continuously ie forever.
 ### 12. Restify
-It is a Node.js web service framework, which is optimized for building semantic RESTful web services (API) that are ready for production use at scale.
+It is a Node.js web service framework, which is optimized for building semantic RESTful web services (APIs) that are ready for production use at scale.
 
 **Why you should use Restify**
 -   **Production-ready** - Optimizes for introspection and performance.
@@ -261,9 +255,9 @@ server.del('hello/:name', function rm(req, res, next) {
 });
 ```
 **Other Node.js API frameworks include:**
--   [`Actionhero`](http://www.actionherojs.com/) - API framework for both TCP sockets, web socket, and HTTP client that create reusable and APIs.
--   [`FeathersJS`](http://feathersjs.com/) - A framework REST APIs and real-time layer for modern application.
--   [`Loopback`](http://loopback.io/) - Node.js and Typescript framework for building APIs and microservices.
+-   [`Actionhero`](https://www.npmjs.com/package/actionhero) - API framework for both TCP sockets, web socket, and HTTP client that create reusable and APIs.
+-   [`FeathersJS`](https://www.npmjs.com/package/@feathersjs/feathers) - A framework REST APIs and real-time layer for modern application.
+-   [`Loopback`](https://www.npmjs.com/package/loopback) - Node.js and Typescript framework for building APIs and microservices.
 ### 13. Nodemailer
 Nodemailer is Node.js application module that allows easy as cake email sending.
 
@@ -329,11 +323,10 @@ It is a fast, modern, and powerful progressive microservices framework for Node.
 -   It has fault tolerance features such as Fallback, Timeout, Retry, Bullhead, Circuit Breaker.
 
 **Other microservices frameworks for Node.js includes**
--   [`Micro`](http://github.com/zeithq/micro) - Asynchronous HTTP microservices framework.
+-   [`Micro`](https://www.npmjs.com/package/micro) - Asynchronous HTTP microservices framework.
 -   [`Micro Panda`](https://github.com/zhaoyao91/micro-panda) - Node.js toolkit that helps to build microservices.
--   [`Micro -Whalla`](https://github.com/czerwonkabartosz/Micro-Whalla) - A framework for writing microservices in Node.js using RPC /IPC.
--   [`Seneca`](http://senecajs.org/) - Node.js microservice toolkit with plugins that look after the foundations of your app.
--   [`ServerLess`](https://github.com/serverless/serverless) - Build web, mobile, IoT applications with serverless architecture using AWS Lambda, Azure functions. Google cloundFuntions etc.
+-   [`Seneca`](https://www.npmjs.com/package/seneca) - Node.js microservice toolkit with plugins that look after the foundations of your app.
+-   [`ServerLess`](https://github.com/serverless/serverless) - Build web, mobile, IoT applications with serverless architecture using AWS Lambda, Azure functions, Google clound Funtions etc.
 
 ### 16. Agenda
 Agenda is a lightweight job queue-scheduling library for Node.js
