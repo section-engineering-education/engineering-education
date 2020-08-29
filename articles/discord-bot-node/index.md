@@ -114,7 +114,7 @@ client.on("message", message => { // runs whenever a message is sent
 
 This creates an event which runs whenever the bot sees a new message. It checks to see if the message says `?random`. If it does, it generates a random number, and sends it to the channel. We did it!
 
-We can add more commands by just adding more `if` statements. This can get messy though. Let's come up with a better command structure. We can use a Map to store strings as keys and functions as values.
+We can add more commands by just adding more `if` statements. This can get messy though. Let's come up with a better command structure. We can use a Map to store strings as keys and functions as values. A Map links "keys" to "values". In this case, we'll be using the command name as a key. Each key has a value, which we can access using the `Map.get()` method. In our case, the values will be functions that we can run.
 
 ```javascript
 function random(message) {
