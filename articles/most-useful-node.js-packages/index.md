@@ -4,6 +4,7 @@ Let's have a look at the packages that will assist you to extend your inclinatio
 ### 1. Express
 Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexible designed for building simple page,multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and
 APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](https://www.npmjs.com/package/sails), [`NESTJS`](https://nestjs.com/), [`LOCOMOTIVE`](http://www.locomotivejs.org/) are built on Express. Express is available on the NPM registry.
+
 **Features of Express**
 -   Robust routing.
 -   Focus on high-quality performance.
@@ -16,6 +17,7 @@ Asynchronous is heavily used in Node.js to ensure non-­blocking operations flow
 It uses a queue to keep track of tasks, allowing you to append additional tasks, attaching extra callbacks, and handling error inside callbacks, making it a more versatile and robust solution for complex dependency management.
 Async provides several functions that include usual functional such are '`map`', '`filter`', '`reduce`',' `filter`', '`each`' as well as some common patterns for asynchronous control flow('`parallel`' , '`series`' , '`waterfall`').
 **Advantages of using Async in your Node.js app include**
+
 -   It supports inline functions and text strings.
 -   Error handling from the dependency queue.
 -   Use of AsyncLocalStorge within AsyncJs helps to create asynchronous states within Callbacks and promise chain.
@@ -36,6 +38,7 @@ async function myFunction(inputValue) {
 ```
 In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchronous.
 **Other Frameworks related to AsyncJs include**
+
 -   [`Limiter`](https://www.npmjs.com/package/limiter) - Used for
     rate-limiting based on request per `sec/hr`.
 -   [`Co-async`](https://www.npmjs.com/package/co-async) - Inspired by
@@ -49,11 +52,14 @@ It analyses` require ()` calls in your Node.js application to create a bundle th
 ### 4. Lodash
 It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js` (http://underscorejs.org/) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
 **Reason why you should choose Lodash**
+
 Lodash makes Node.js coding easier by taking the hassle out of working with common programing functions such as `arrays`, `objects`, `numbers`, `strings`, `date`, etc.
+
 **Lodash Utility modular methods are dignified for:**
 -   Interacting arrays, objects, and strings.
 -   Manipulating and testing values.
 -   Creating composite functions.
+
 **Lodash comes with a handful of benefits to Node.js developers such as**
 -   Keeps your code minimal and neat.
 -   You only need to remember the Lodash functions hence easier to code.
