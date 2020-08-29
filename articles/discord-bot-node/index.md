@@ -23,10 +23,14 @@ Typically, Discord bots are written in [Node.js](https://nodejs.org/en/). Node.j
 
 ### What You'll Need
 
-* [Node.js](https://nodejs.org/en/download/) v12.0 or above, with npm
+* [Node.js](https://nodejs.org/en/download/) v12.0 or above, with npm.
 * A [Discord](https://www.discord.com) account
 * A computer to run it on (to keep it on 24/7, try using a [Raspberry Pi](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/))
 * Some basic Javascript knowledge
+
+You'll need Node.js v12 or above. To check which version you have, go into a command prompt or terminal, and type `node -v`. The version number you get should be greater than 12.0. If this isn't the case, then just go to the [download page](https://nodejs.org/en/download/) and install the new version. [Here's a tutorial on how to install it on Windows](https://www.guru99.com/download-install-node-js.html).
+
+![The result of "node -v" should show a number greater than 12](/engineering-education/discord-bot-node/discordbot7.png)
 
 ### Creating The Bot
 First, you need to visit the [Discord Developer Portal](https://discordapp.com/developers/applications/). Click the "New Application" button. Give your bot a name, and click "Create". This will create a new application that uses the Discord API.
