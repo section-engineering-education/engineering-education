@@ -67,7 +67,7 @@ Lodash makes Node.js coding easier by taking the hassle out of working with comm
 -   [`Underscore.js`](https://underscorejs.org/) - It provides useful functional programming helpers without having to extend to any built-in objects.
 -   [`Fultil-js`](https://github.com/smartprocure/futil-js) - Is designed to complement Lodash's functional utilities.
 Lodash remains one of the  most downloaded Node.js module in NPM listings. Try it out for the backend and use CDN for the frontend.
-### 5. MomentJs
+### 5. MomentJS
 MomentJS is a lightweight JavaScript development tool for dates and times manipulating. It makes date and time easy to format, parse, validate, and internationalize using clean and concise API. Node.js date objects are not that bad, it requires you to do a lot of coding for complex parsing, validation, and displaying Date and time objects. 
 Here a few examples of date objects using MomentJS: To use MomentJs with Node.js, install the module using command `npm install moment`. Then simply use `require ()` in your application as in the following example:
 ```js
@@ -89,13 +89,13 @@ MomentJS can still run from the browser. It creates a global moment object, whic
         <script  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script>
         // You have a 'moment' global here
-        const today = moment();
+         const today = moment();
          console.log(today.format());
         </script>
     </body>
 </html>
 ```
-S is an awesome Node.js package. It simplifies date and time related parsing, manipulation as well as validation. If you have a Node.js application that uses data and time objects, consider trying MomentJS. It will help you to solve any date problem in your application. MomentJS support international languages in you date objects which is a good thing to have in your application if you are dealing with multiple language application.
+MomentJS is an awesome Node.js package. It simplifies date and time related parsing, manipulation as well as validation. If you have a Node.js application that uses data and time objects, consider trying MomentJS. It will help you to solve any date problem in your application. MomentJS support international languages in you date objects which is a good thing to have in your application if you are dealing with multiple language application.
 
 **Other validations and formatting libraries include:**
 -   [`Validator.js`](https://github.com/validatorjs/validator.js) - A library for string validators  and sanitizer.
