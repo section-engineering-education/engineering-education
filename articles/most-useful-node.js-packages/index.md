@@ -79,9 +79,8 @@ const today = moment();
 console.log(today.format());
 ```
 **OUTPUT: 2020-08-27T09:21:49+01:00**
-MomentJs can still run from the browser. It creates a global moment
-object, which is used to access date and time parsing and manipulation
-functionality. Include `<script>` as in the example below.
+
+MomentJs can still run from the browser. It creates a global moment object, which is used to access date and time parsing and manipulation functionality. Include `<script>` as in the example below.
 ```js
 <!DOCTYPE html>
 <html lang="en">
@@ -99,13 +98,8 @@ functionality. Include `<script>` as in the example below.
     </body>
 </html>
 ```
-MomentJs is an awesome Node.js package. It simplifies date and time
-related parsing, manipulation as well as validation. If you have a
-Node.js application that uses data and time objects, consider trying
-Moment.js. It will help you to solve any date problem in your
-application. MomentJs support international languages in you date
-objects which is a good thing to have in your application if you are
-dealing with multiple language application.
+MomentJs is an awesome Node.js package. It simplifies date and time related parsing, manipulation as well as validation. If you have a Node.js application that uses data and time objects, consider trying Moment.js. It will help you to solve any date problem in your application. MomentJs support international languages in you date objects which is a good thing to have in your application if you are dealing with multiple language application.
+
 **Other validations and formatting libraries include:**
 -   [`Validator.js`](https://github.com/validatorjs/validator.js) - A library for string validators  and sanitizer.
 -   [`Express-validator`](https://www.npmjs.com/package/express-validator) -
@@ -113,6 +107,7 @@ dealing with multiple language application.
 ### 6. Request
 Request is a simplified HTTP client that makes it possible to make `http`
 calls. It supports HTTPS and follows redirect by default. Request is a fantastic choice if you want an easy to use library to deal with HTTP request in a sane way. If you want to use Promises, you can check out the request-promise library. It is used to describe a request to a server and get a response.
+
 **Request has the following main contractors:**
 -   **Body** - The data to send with the request.
 -   **Cache** - A sting with the following instanceS: default,
@@ -123,6 +118,7 @@ calls. It supports HTTPS and follows redirect by default. Request is a fantastic
     passed to the Headers contractor.
 -   **Method** - HTTP method such as `GET` `POST` `DELETE`, `PUT`.
 -   **Mode** - A string with one of same-origin, no-cors, cors instances.
+
 **Examples of simple Request**
 ```js
 const request = require('request');
@@ -132,8 +128,8 @@ request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, 
     console.log(body.explanation);
 });
 ```
-With request, you need less code to accomplish the same task that you
-would have used a lot of coding of you were using the HTTP library.
+With request, you need less code to accomplish the same task that you would have used a lot of coding of you were using the HTTP library.
+
 **Other HTTP REST client include**
 -   [`Axios`](https://www.npmjs.com/package/axios) - Used promise-based
     HTTP client for Node.js and Browsers.
@@ -141,28 +137,13 @@ would have used a lot of coding of you were using the HTTP library.
     Lets you use HTTP verbs such as DELETE and PUT in places where the
     client does not support it.
 ### 7. Jshint
-It is a static code analysis tool to detect errors and potential
-problems in JavaScript.
-Lining tools help Node.js developers to analyse common bugs in your code
-without your focussed attention. Linter analyses the code themselves.
-Jshint scans your Node.js program and reports commonly made mistakes and
-potential bugs such as syntax errors, leaking variables, implicit type,
-conventions, etc.
-[`ESLint`](https://eslint.org/) is a similar package example used for
-linting (enhancing code quality).
+It is a static code analysis tool to detect errors and potential problems in JavaScript. Lining tools help Node.js developers to analyse common bugs in your code without your focussed attention. Linter analyses the code themselves. Jshint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, conventions, etc.
+[`ESLint`](https://eslint.org/) is a similar package example used for linting (enhancing code quality).
 ### 8. Morgan
-It is an HTTP request logger middleware for Node.js application. Morgan
-gives you Insights on how your app is being used and alerts you on
-potential errors and issues that could be threats to your application.
-Morgan is considered the most reliable HTTP logger by Node.js
-developers. You can choose to use
-[`Winston`](https://www.npmjs.com/package/winston) as an alternative
-library for logging.
+It is an HTTP request logger middleware for Node.js application. Morgan gives you Insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. You can choose to use [`Winston`](https://www.npmjs.com/package winston) as an alternative library for logging.
 ### 9. Karma
-A Node.js developer, you need to do more testing to your application to
-make sure it\'s stable and reliable with good performance. Karma is the
-tool for Job Karma. The main goal of karma is to bring a productive
-testing environment to developers.
+A Node.js developer, you need to do more testing to your application to make sure it\'s stable and reliable with good performance. Karma is the tool for Job Karma. The main goal of karma is to bring a productive testing environment to developers.
+
 **Why you should choose karma**
 -   Tests code in real browsers.
 -   Test code is multiple browsers(desktop, mobile, tablets).
@@ -174,7 +155,6 @@ testing environment to developers.
 -   Karma executes your tests after every save.
 
 **Other Node.js testing libraries are:**
-
 -   [`Mocha`](https://www.npmjs.com/package/mocha) - Runs on Node.js and
     browsers to make asynchronous testing simple and fun.
 -   [`Chai`](https://www.chaijs.com/) - BDD/TDD assertion library for
@@ -184,11 +164,7 @@ testing environment to developers.
     focus on simplicity.
 
 ### 10. MySQL
-
-It is a Node.js client for MySQL protocol. Before using MySQL to connect
-to your database, ensure you have MySQL installed and configured in your
-machine.
-Then create database and database tables that you work with.
+It is a Node.js client for MySQL protocol. Before using MySQL to connect to your database, ensure you have MySQL installed and configured in your machine. Then create database and database tables that you work with.
 
 **An example on how to use on how MySQL**
 ```js
@@ -217,58 +193,28 @@ connection.end();
 //end
 ```
 From the above example
--   Every method that you invoke on a database connection is queued and
-    executed in sequence.
--   To terminate/close the connection use `end()`, this makes sure that
-    all the remaining. queries are executed before sending a quit packet
-    to the MySql server.
+-   Every method that you invoke on a database connection is queued and executed in sequence.
+-   To terminate/close the connection use `end()`, this makes sure that all the remaining. queries are executed before sending a quit packet to the MySql server.
 
 **Other MySQL and helpers frameworks include:**
-
--   [`Sequelize`](https://www.npmjs.com/package/sequelize) - promised
-    based Node.js ORM for Postgres, MySQL, Maria DB, SQLite, and
-    Microsoft SQL Server.
--   [`Knex.js`](https://knexjs.org/) - Designed to be flexible, portable
-    and fun to run for MSSAL, MySQL, and Oracle, MariaDB, SQLite3 and
-    Amazon Redshift.
-
+-   [`Sequelize`](https://www.npmjs.com/package/sequelize) - promised based Node.js ORM for Postgres, MySQL, Maria DB, SQLite, and Microsoft SQL Server.
+-   [`Knex.js`](https://knexjs.org/) - Designed to be flexible, portable and fun to run for MSSAL, MySQL, and Oracle, MariaDB, SQLite3 and Amazon Redshift.
 ### 11. Nodemon
-
-A tool for monitoring helps developers based on Node.js applications by
-automatically restarting the node application when file changes in the
-app directory are detected. With Nodemon, you do not need any additional
-changes to your code or method of development. It is a replacement
-wrapper for the node. Nodemon is simple to use, you just need to replace
-the word node with `nodemon` on the command-line when executing your
-`script`. Ie
-`nodemon ./server.js localhost 300`
+A tool for monitoring helps developers based on Node.js applications by automatically restarting the node application when file changes in the app directory are detected. With Nodemon, you do not need any additional changes to your code or method of development. It is a replacement wrapper for the node. Nodemon is simple to use, you just need to replace the word node with `nodemon` on the command-line when executing your `script`. Ie `nodemon ./server.js localhost 300`
 
 **Example of other monitoring Frameworks include**
-
--   [`PM2`](https://www.npmjs.com/package/pm2) - Node.js production
-    process manager that allows you to keep applications alive forever
-    and reload without downtime to facilitate common system admin task.
--   [`Trace`](https://github.com/RisingStack/trace-nodejs) - Designed for
-    microservices visualized stack trace platform.
--   [`Forever`](https://www.npmjs.com/package/forever) - CLI tool for
-    ensuring that a given Node.js script runs continuously ie forever.
-
+-   [`PM2`](https://www.npmjs.com/package/pm2) - Node.js production process manager that allows you to keep applications alive forever and reload without downtime to facilitate common system admin task.
+-   [`Trace`](https://github.com/RisingStack/trace-nodejs) - Designed for microservices visualized stack trace platform.
+-   [`Forever`](https://www.npmjs.com/package/forever) - CLI tool for ensuring that a given Node.js script runs continuously ie forever.
 ### 12. Restify
+It is a Node.js web service framework, which is optimized for building semantic RESTful web services (API) that are ready for production use at scale.
 
-It is a Node.js web service framework, which is optimized for building
-semantic RESTful web services (API) that are ready for production use at
-scale.
-
-**Why you should use Restify**
-
--   **Production-ready:** Optimizes for introspection and performance.
--   **Debuggable**: Trace problems back to the origin. It is built from
-    a post-mortem debugging perspective.
--   **Semantically correct:** It has references littered all-over GitHub
-    and the codebase.
+**Why you should use Restify*
+-   **Production-ready** - Optimizes for introspection and performance.
+-   **Debuggable** - Trace problems back to the origin. It is built from a post-mortem debugging perspective.
+-   **Semantically correct** - It has references littered all-over GitHub and the codebase.
 
 **Examples of simple Restify practice**
-
 #### i. SERVER
 ```js
 var restify = require('restify');
@@ -319,19 +265,11 @@ server.del('hello/:name', function rm(req, res, next) {
 });
 ```
 **Other Node.js API frameworks include:**
-
--   [`Actionhero`](http://www.actionherojs.com/) - API framework for both
-    TCP sockets, web socket, and HTTP client that create reusable and
-    scalable APIs.
--   [`FeathersJS`](http://feathersjs.com/) - A framework REST APIS and
-    real-time layer for modern application.
--   [`Loopback`](http://loopback.io/) - Node.js and Typescript framework
-    for building APIs and microservices.
-
+-   [`Actionhero`](http://www.actionherojs.com/) - API framework for both TCP sockets, web socket, and HTTP client that create reusable and APIs.
+-   [`FeathersJS`](http://feathersjs.com/) - A framework REST APIS and real-time layer for modern application.
+-   [`Loopback`](http://loopback.io/) - Node.js and Typescript framework for building APIs and microservices.
 ### 13. Nodemailer
-
-Nodemailer is Node.js application module that allows easy as cake email
-sending.
+Nodemailer is Node.js application module that allows easy as cake email sending.
 
 **Example of how Nodemailer works**
 ```js
@@ -368,64 +306,44 @@ async function main() {
 }
 main().catch(console.error);
 ```
-A similar Module includes
-[`Express-Mailer`](https://github.com/RGBboy/express-mailer), it sends Emails from your application and response object.
-
+A similar Module includes [`Express-Mailer`](https://github.com/RGBboy/express-mailer), it sends Emails from your application and response object.
 ### 14. Gulp
 
-It is a toolkit to automate slow, repetitive tasks that are
-time-consuming in Node.js development workflow. These tasks include
-cache-busting, optimization, concatenation, minifying files, etc.
+It is a toolkit to automate slow, repetitive tasks that are time-consuming in Node.js development workflow. These tasks include cache-busting, optimization, concatenation, minifying files, etc.
 
 **Why Gulp:**
 -   It is easy to learn and simple to use.
 -   Its integrations are built into major IDEs such as `.NET`, `PHP`, `Node.js`, `Java`.
 -   It helps to automate time-consuming tasks in your Node.js development workflow.
-Gulp is similar Module to
-[`GruntJs`](https://www.npmjs.com/package/grunt) which is used to
-automatically perform frequent tasks such are unit testing, Linting.
+Gulp is similar Module to [`GruntJs`](https://www.npmjs.com/package/grunt) which is used to automatically perform frequent tasks such are unit testing, Linting.
 
 ### 15. Molecular
-
 It is a fast, modern, and powerful progressive microservices framework
 for Node.js. It helps Node.js developers to build that are efficient,
 reliable, and scalable services.
 
 **Features of Molecular**
-
 -   It uses promise based solutions ie Async/Await compatible.
 -   It supports event-driven architecture with balancing.
 -   Supports versioned services.
 -   It has built-in caching solutions such as memory, memoryLRU, Reds.
--   It has built-in metrics feature with reporters such as Console, CSV,
-    Datagod, StatsD.
--   Molecular has built-in tracing features with exporters such as
-    Event, Jaeger, Zipkin.
+-   It has built-in metrics feature with reporters such as Console, CSV, Datagod, StatsD.
+-   Molecular has built-in tracing features with exporters such as Event, Jaeger, Zipkin.
 -   It has a built-in service registry and dynamic service discovery.
 -   Molecular employs a request-reply concept.
--   It has fault tolerance features such as Fallback, Timeout, Retry,
-    Bullhead, Circuit Breaker.
+-   It has fault tolerance features such as Fallback, Timeout, Retry, Bullhead, Circuit Breaker.
 
 **Other microservices frameworks for Node.js includes**
-
--   [`Micro`](http://github.com/zeithq/micro) - Asynchronous HTTP
-    microservices framework.
--   [`Micro Panda`](https://github.com/zhaoyao91/micro-panda) - Node.js
-    toolkit that helps to build microservices.
--   [`Micro -Whalla`](https://github.com/czerwonkabartosz/Micro-Whalla) -
-    A framework for writing microservices in Node.js using RPC /IPC.
--   [`Seneca`](http://senecajs.org/) - Node.js microservice toolkit with
-    plugins that look after the foundations of your app.
--   [`ServerLess`](https://github.com/serverless/serverless) - Build web,
-    mobile, IoT applications with serverless architecture using AWS
-    Lambda, Azure functions. Google cloundFuntions etc.
+-   [`Micro`](http://github.com/zeithq/micro) - Asynchronous HTTP microservices framework.
+-   [`Micro Panda`](https://github.com/zhaoyao91/micro-panda) - Node.js toolkit that helps to build microservices.
+-   [`Micro -Whalla`](https://github.com/czerwonkabartosz/Micro-Whalla) - A framework for writing microservices in Node.js using RPC /IPC.
+-   [`Seneca`](http://senecajs.org/) - Node.js microservice toolkit with plugins that look after the foundations of your app.
+-   [`ServerLess`](https://github.com/serverless/serverless) - Build web, mobile, IoT applications with serverless architecture using AWS Lambda, Azure functions. Google cloundFuntions etc.
 
 ### 16. Agenda
-
 Agenda is a lightweight job queue-scheduling library for Node.js
 
 **Agenda library offers**
-
 -   Even backed job queue.
 -   Scheduling with configurable priority, concurrency and repeating.
 -   It has promised based API.
@@ -433,16 +351,9 @@ Agenda is a lightweight job queue-scheduling library for Node.js
 -   Agenda aims to keep it's codebase small, compact, and light.
 
 **Similar Job scheduling and queuing library are**
-
--   [`CRON`](https://www.npmjs.com/package/cron) - allow you to execute
-    something on a schedule.
--   [`Node Schedule`](https://www.npmjs.com/package/node-schedule) -
-    Cron-like and not-clone-like Node.js job scheduler.
+-   [`CRON`](https://www.npmjs.com/package/cron) - allow you to execute something on a schedule.
+-   [`Node Schedule`](https://www.npmjs.com/package/node-schedule) - Cron-like and not-clone-like Node.js job scheduler.
 
 **Conclusion**
-As a node.js developer, many open-source frameworks will help you
-improve your skills to deliver professional applications that are light
-and reliable. If you happen to be a Node.js developer, the combination of using
-different frameworks in your app will explode you to another level and
-you cannot work without Node.js packages in your day-to-day dev Node
-development. **WISH YOU HAPPY CODING.**
+As a node.js developer, many open-source frameworks will help you improve your skills to deliver professional applications that are light and reliable. If you happen to be a Node.js developer, the combination of using
+different frameworks in your app will explode you to another level and you cannot work without Node.js packages in your day-to-day dev Node development. **WISH YOU HAPPY CODING.**
