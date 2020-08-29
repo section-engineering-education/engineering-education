@@ -60,11 +60,11 @@ You'll need to replace `CLIENT_ID` with the client ID of your bot, which you can
 
 ![The client ID is on the “General Information” tab](/engineering-education/discord-bot-node/discordbot6.png)
 
-Once you've traveled to this page, you'll need to specify which server to add it to. Then click "Authorize", and you'll be ready!
+Once you've traveled to this page, you'll need to specify which server to add it to. Then click "Authorize". This button puts the bot in your server, and you'll be ready!
 
 ## Set up Your Project
 
-ake a folder for your project. You can call it anything. Open up a command prompt or teminal, and `cd` to the folder you just created. You'll need to install the `discord.js` library. This makes it easy to interact with the Discord API. Type `npm install discord.js` to do this. It will take a bit of time. You might see a few warnings, but that's perfectly normal. Make sure you have administrative privileges if you’re on Windows, and use `sudo` on Linux. The screenshot here is in command prompt.
+Make a folder for your project. You can call it anything. Open up a command prompt or teminal, and `cd` to the folder you just created. You'll need to install the `discord.js` library. This makes it easy to interact with the Discord API. Type `npm install discord.js` to do this. It will take a bit of time. You might see a few warnings, but that's perfectly normal. Make sure you have administrative privileges if you’re on Windows, and use `sudo` on Linux. The screenshot here is in command prompt.
 
 ![The npm install discord.js command](/engineering-education/discord-bot-node/discordbot8.png)
 
