@@ -87,4 +87,4 @@ myString[2] = '\0';
 ```
 ### Putting Your Knowledge to the Use
 
-You've learnt that pointers are memory addresses. Arrays use pointers, and we can dereference pointers to access elements of an array. Strings are arrays too, so we can manipulate them with pointers as well.  I recommend that you read *C Programming: A Modern Approach* by K. N. King for further reference. The book has exercises and programs that you can test out too. 
+You've learned that pointers are memory addresses. Arrays use pointers, and we can dereference pointers to access elements of an array. Strings are arrays too, so we can manipulate them with pointers as well.  I recommend that you read *C Programming: A Modern Approach* by K. N. King for further reference. The book also has exercises and programs that you can test out.
