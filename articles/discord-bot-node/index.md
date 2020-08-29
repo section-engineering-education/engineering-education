@@ -68,7 +68,7 @@ Once you've traveled to this page, you'll need to specify which server to add it
 
 ## Set up Your Project
 
-Make a folder for your project. You can call it anything. Open up a command prompt or teminal, and `cd` to the folder you just created. You'll need to install the `discord.js` library. This makes it easy to interact with the Discord API. Type `npm install discord.js` to do this. It will take a bit of time. You might see a few warnings, but that's perfectly normal. Make sure you have administrative privileges if you’re on Windows, and use `sudo` on Linux. The screenshot here is in command prompt.
+Make a folder for your project. You can call it anything. Open up a command prompt or teminal, and `cd` to the folder you just created. You'll need to install the `discord.js` library. This makes it easy to interact with the Discord API. Type `npm install discord.js` to do this. NPM is the Node Package Manager, which we'll use to install discord.js. It will take a bit of time. You might see a few warnings, but that's perfectly normal. Make sure you have administrative privileges if you’re on Windows, and use `sudo` on Linux. The screenshot here is in command prompt.
 
 ![The npm install discord.js command](/engineering-education/discord-bot-node/discordbot8.png)
 
