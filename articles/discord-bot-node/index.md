@@ -29,7 +29,7 @@ Typically, Discord bots are written in [Node.js](https://nodejs.org/en/). Node.j
 * Some basic Javascript knowledge
 
 ### Creating The Bot
-First, you need to visit the [Discord Developer Portal](https://discordapp.com/developers/applications/). Click the "New Application" button. Give your bot a name, and click "Create".
+First, you need to visit the [Discord Developer Portal](https://discordapp.com/developers/applications/). Click the "New Application" button. Give your bot a name, and click "Create". This will create a new application that uses the Discord API.
 
 ![The New Application button is in the top right corner](./discordbot1.png)
 
@@ -37,11 +37,13 @@ First, you need to visit the [Discord Developer Portal](https://discordapp.com/d
 
 You'll get to your application's page, where if you want, you can give it a description and an avatar.
 
+Applications aren't necessarily bots, but bots are one of the most popular uses. Many games use the Discord API to make their game work with Rich Presence. We'll just need to turn our application into a bot.
+
 On the left, you should see a "Bot" tab. Click on that.
 
 ![The tab that says “Bot” is on the right side of the page](/engineering-education/discord-bot-node/discordbot3.png)
 
-Now we can turn this application into a bot. Just click the "Add Bot" button.
+Now, click the "Add Bot" button.
 
 ![The “Add Bot” button is in the top right corner](/engineering-education/discord-bot-node/discordbot4.png)
 
