@@ -48,7 +48,8 @@ In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchr
 -   [`Promise-async`](https://www.npmjs.com/package/promise-async) - It is
     an Async version where all methods are generated.
 ### 3. Browserify
-It analyses` require ()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require ()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require ()` method defined but Node.js does. With Browserify, you can write code that uses `require ()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference. This way code becomes cleaner for Node.js developers for both front and backend applications. You can use Browserify to create client-side codebase that is well structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next Node.js project and it will rock your application. It is a good choice if you want to keep order between your scripts with ease.
+It analyses` require ()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require ()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require ()` method defined but Node.js does. With Browserify, you can write code that uses `require ()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference.
+This way code becomes cleaner for Node.js developers for both front and backend applications. You can use Browserify to create client-side codebase that is well structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next Node.js project and it will rock your application. It is a good choice if you want to keep order between your scripts.
 ### 4. Lodash
 It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js` (http://underscorejs.org/) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
 
@@ -68,10 +69,12 @@ Lodash makes Node.js coding easier by taking the hassle out of working with comm
 
 **Other utility libraries include:**
 
-[`Underscore.js`](https://underscorejs.org/) - It provides useful functional programming helpers without having to extend to any built-in objects. Lodash remains the most dependent Node.js module in NPM listings. Try it out for the backend and use CDN for the frontend.
-[`Fultil-js`](https://github.com/smartprocure/futil-js) - Is designed to complement Lodash's functional utilities.
+-   [`Underscore.js`](https://underscorejs.org/) - It provides useful functional programming helpers without having to extend to any built-in objects.
+-   [`Fultil-js`](https://github.com/smartprocure/futil-js) - Is designed to complement Lodash's functional utilities.
+Lodash remains one of the  most downloaded Node.js module in NPM listings. Try it out for the backend and use CDN for the frontend.
 ### 5. MomentJs
-Moment.js is a lightweight JavaScript development tool for dates and times manipulating. It makes date and time easy to format, parse, validate, and internationalize using clean and concise API. Node.js date objects are not that bad, it only that it requires you to do a lot of coding to do complex parsing, validation, and displaying Date and time objects. Here a few examples of date objects using Moment.js: To use MomentJs with Node.js, install the module using the following command :
+Moment.js is a lightweight JavaScript development tool for dates and times manipulating. It makes date and time easy to format, parse, validate, and internationalize using clean and concise API. Node.js date objects are not that bad, it requires you to do a lot of coding for complex parsing, validation, and displaying Date and time objects. 
+Here a few examples of date objects using Moment.js: To use MomentJs with Node.js, install the module using the following command :
 `npm install moment`
 Then simply use `require ()` in your application as in the following
 example:
