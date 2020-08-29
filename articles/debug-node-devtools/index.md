@@ -1,4 +1,4 @@
-﻿---
+---
 layout: engineering-education
 status: publish
 published: true
@@ -17,6 +17,7 @@ images:
 Node.js is a robust technology stack with a rich ecosystem. However, debugging Node.js applications remains a difficult task, since they can fail without any error message. Using Chrome Dev Tools is a simple solution to finding errors in your code.
 <!--more-->
 ### Introduction
+
 Node.js is a fast, asynchronous and event driven server-side JavaScript technology. You can read [why Node.js is popular among developers](https://www.section.io/engineering-education/why-node-js-is-popular/). 
 
 A debugger is a program that is used to inspect a program as it runs. It enables running the code line-by-line and following the execution process. In the process, you can see the code as a flow chart and logically interpret it. This enables you to find bugs more easily.
