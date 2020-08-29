@@ -20,7 +20,7 @@ Async provides several functions that include usual functional such are '`map`',
 **Advantages of using Async in your Node.js app include**
 -   It supports inline functions and text strings.
 -   Error handling from the dependency queue.
--   Use of AsyncLocalStorge within AsyncJs helps to create asynchronous states within Callbacks and promise chain.
+-   Use of AsyncLocalStorge within AsyncJs helps to create asynchronous states within callbacks and promise chain.
 -   A collection of Async functions helps to control the flow through the script.
 -   Helps to integrate AsyncResource with EvenEmitter.
 Example of `async/await` in Node.js:
@@ -48,7 +48,7 @@ In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchr
 -   [`Promise-async`](https://www.npmjs.com/package/promise-async) - It is
     an Async version where all methods are generated.
 ### 3. Browserify
-It analyses` require ()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require ()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require ()` method defined but Node.js does. With Browserify, you can write code that uses `require ()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference. This way code becomes cleaner for Node.js developers for both front and backend applications. You can use Browserify to Create client-side codebase that is well structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next Node.js Project and it will rock your application. It is a good choice if you want to keep order between your scripts with ease.
+It analyses` require ()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require ()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require ()` method defined but Node.js does. With Browserify, you can write code that uses `require ()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference. This way code becomes cleaner for Node.js developers for both front and backend applications. You can use Browserify to create client-side codebase that is well structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next Node.js project and it will rock your application. It is a good choice if you want to keep order between your scripts with ease.
 ### 4. Lodash
 It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js` (http://underscorejs.org/) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
 
@@ -108,16 +108,13 @@ MomentJs is an awesome Node.js package. It simplifies date and time related pars
     It is an Express Middleware for Validator.js.
 ### 6. Request
 Request is a simplified HTTP client that makes it possible to make `http`
-calls. It supports HTTPS and follows redirect by default. Request is a fantastic choice if you want an easy to use library to deal with HTTP request in a sane way. If you want to use Promises, you can check out the request-promise library. It is used to describe a request to a server and get a response.
+calls. It supports HTTPS and follows redirect by default. Request is a fantastic choice if you want an easy to use library to deal with HTTP request in a sane way. If you want to use promises, you can check out the request-promise library. It is used to describe a request to a server and get a response.
 
 **Request has the following main contractors:**
 -   **Body** - The data to send with the request.
--   **Cache** - A sting with the following instanceS: default,
-    force-cache, no-cache, no-store, only-if-cached, reload etc.
--   **Credentials** - A sting which include omit, same-origin instance
-    properties.
--   **Headers** - It is the `http` headers to send with the request. It is
-    passed to the Headers contractor.
+-   **Cache** - A sting with the following instanceS: default, force-cache, no-cache, no-store, only-if-cached, reload etc.
+-   **Credentials** - A sting which include omit, same-origin instance properties.
+-   **Headers** - It is the `http` headers to send with the request. It is passed to the headers contractor.
 -   **Method** - HTTP method such as `GET` `POST` `DELETE`, `PUT`.
 -   **Mode** - A string with one of same-origin, no-cors, cors instances.
 
@@ -149,21 +146,16 @@ A Node.js developer, you need to do more testing to your application to make sur
 **Why you should choose karma**
 -   Tests code in real browsers.
 -   Test code is multiple browsers(desktop, mobile, tablets).
--   It tests on real devices such as mobilephone, tablets or even a headless
-    phantomJS.
+-   It tests on real devices such as mobilephone, tablets or even a headless phantomJS.
 -   Control the whole testing workflow from your command or IDE.
 -   It executes tests locally during development.
 -   It executes your tests on a continuous integration server.
 -   Karma executes your tests after every save.
 
 **Other Node.js testing libraries are:**
--   [`Mocha`](https://www.npmjs.com/package/mocha) - Runs on Node.js and
-    browsers to make asynchronous testing simple and fun.
--   [`Chai`](https://www.chaijs.com/) - BDD/TDD assertion library for
-    Node.js and Browser that can be paired with any JavaScript testing
-    framework.
--   [`Jest`](https://jestjs.io/) - JavaScript Testing framework with a
-    focus on simplicity.
+-   [`Mocha`](https://www.npmjs.com/package/mocha) - Runs on Node.js and browsers to make asynchronous testing simple and fun.
+-   [`Chai`](https://www.chaijs.com/) - BDD/TDD assertion library for Node.js and Browser that can be paired with any JavaScript testing framework.
+-   [`Jest`](https://jestjs.io/) - JavaScript Testing framework with a focus on simplicity.
 
 ### 10. MySQL
 It is a Node.js client for MySQL protocol. Before using MySQL to connect to your database, ensure you have MySQL installed and configured in your machine. Then create database and database tables that you work with.
@@ -181,13 +173,11 @@ var connection = mysqldb.createConnection({
     password: 'passwordgoeshere',
     database: 'mydb'
 });
-
 connection.connect();
 connection.query('SELECT 1 + 1 AS solution', function(error, results, fields) {
     if (error) throw error;
     console.log('The solution is: ', results[0].solution);
 });
-
 connection.end();
 //terminate connection
 //executes the remaining queries
@@ -268,7 +258,7 @@ server.del('hello/:name', function rm(req, res, next) {
 ```
 **Other Node.js API frameworks include:**
 -   [`Actionhero`](http://www.actionherojs.com/) - API framework for both TCP sockets, web socket, and HTTP client that create reusable and APIs.
--   [`FeathersJS`](http://feathersjs.com/) - A framework REST APIS and real-time layer for modern application.
+-   [`FeathersJS`](http://feathersjs.com/) - A framework REST APIs and real-time layer for modern application.
 -   [`Loopback`](http://loopback.io/) - Node.js and Typescript framework for building APIs and microservices.
 ### 13. Nodemailer
 Nodemailer is Node.js application module that allows easy as cake email sending.
@@ -308,7 +298,7 @@ async function main() {
 }
 main().catch(console.error);
 ```
-A similar Module includes [`Express-Mailer`](https://github.com/RGBboy/express-mailer), it sends Emails from your application and response object.
+A similar Module includes [`Express-Mailer`](https://github.com/RGBboy/express-mailer), it sends emails from your application and response object.
 ### 14. Gulp
 
 It is a toolkit to automate slow, repetitive tasks that are time-consuming in Node.js development workflow. These tasks include cache-busting, optimization, concatenation, minifying files, etc.
@@ -317,12 +307,11 @@ It is a toolkit to automate slow, repetitive tasks that are time-consuming in No
 -   It is easy to learn and simple to use.
 -   Its integrations are built into major IDEs such as `.NET`, `PHP`, `Node.js`, `Java`.
 -   It helps to automate time-consuming tasks in your Node.js development workflow.
+
 Gulp is similar Module to [`GruntJs`](https://www.npmjs.com/package/grunt) which is used to automatically perform frequent tasks such are unit testing, Linting.
 
 ### 15. Molecular
-It is a fast, modern, and powerful progressive microservices framework
-for Node.js. It helps Node.js developers to build that are efficient,
-reliable, and scalable services.
+It is a fast, modern, and powerful progressive microservices framework for Node.js. It helps Node.js developers to build that are efficient, reliable, and scalable services.
 
 **Features of Molecular**
 -   It uses promise based solutions ie Async/Await compatible.
