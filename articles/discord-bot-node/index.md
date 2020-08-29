@@ -135,6 +135,8 @@ client.on("message", message => {
 });
 ```
 
+To get the bot to say the random number, just go into any Discord channel that the bot has access to, and type "?random".
+
 ![I say "?random", and the bot replies with a random number](/engineering-education/discord-bot-node/discordbot0.png)
 
 There. Now to add more commands, you just add them to `commands`.
