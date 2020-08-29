@@ -1,12 +1,6 @@
 ## Most Useful Node.js Packages That you need to Know
-Open-source frameworks that form the ecosystem of JavaScript back the
-power of Node.js. As a Node.js developer, it is practically inevitable
-to constantly avoid their advantage. With the help of Node.js packages,
-as a developer, you will conclusively save a lot of time and develop
-applications that are light, scalable, high speed with tremendous
-productivity.
-Let's have a look at the packages that will assist you to extend your
-inclination to Node.js application development.
+Open-source frameworks that form the ecosystem of JavaScript back the power of Node.js. As a Node.js developer, it is practically inevitable to constantly avoid their advantage. With the help of Node.js packages, as a developer, you will conclusively save a lot of time and develop applications that are light, scalable, high speed with tremendous productivity.
+Let's have a look at the packages that will assist you to extend your inclination to Node.js application development.
 ### 1. Express
 Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexible designed for building simple page,multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and
 APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](https://www.npmjs.com/package/sails), [`NESTJS`](https://nestjs.com/), [`LOCOMOTIVE`](http://www.locomotivejs.org/) are built on Express. Express is available on the NPM registry.
@@ -41,7 +35,7 @@ async function myFunction(inputValue) {
 }
 ```
 In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchronous.
-Other Frameworks related to AsyncJs include
+**Other Frameworks related to AsyncJs include**
 -   [`Limiter`](https://www.npmjs.com/package/limiter) - Used for
     rate-limiting based on request per `sec/hr`.
 -   [`Co-async`](https://www.npmjs.com/package/co-async) - Inspired by
@@ -51,33 +45,11 @@ Other Frameworks related to AsyncJs include
 -   [`Promise-async`](https://www.npmjs.com/package/promise-async) - It is
     an Async version where all methods are generated.
 ### 3. Browserify
-It analyses` require ()` calls in your Node.js application to create a
-bundle that you can serve up to the browser in a single `<script>` tag.
-`Require ()` is used to load modules installed by NPM ie `require('module')`.
-Browsers do not have the `require ()` method defined but
-Node.js does. With Browserify, you can write code that uses `require ()`
-just like you would use it in Node.js code. Browserify simply complies
-commonjs modules for the browser and structure everything neatly
-together. With Browserify, you don't need to constantly have to go back
-and forth between your code to analyse which packages and widgets are
-using the specific scripts, Browserify loads every dependency and bundle
-them is a single file so that you will only have to make one reference.
-This way code becomes cleaner for Node.js developers for both front and
-backend applications. You can use Browserify to Create client-side codebase that is well
-structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next
-Node.js Project and it will rock your application. It is a good choice
-if you want to keep order between your scripts with ease.
+It analyses` require ()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require ()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require ()` method defined but Node.js does. With Browserify, you can write code that uses `require ()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference. This way code becomes cleaner for Node.js developers for both front and backend applications. You can use Browserify to Create client-side codebase that is well structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next Node.js Project and it will rock your application. It is a good choice if you want to keep order between your scripts with ease.
 ### 4. Lodash
-It is a modern JavaScript library that provides utility functions.
-Lodash is inspired by the famous
-[`Underscore.js`](http://underscorejs.org/) utility library. Lodash has
-built-in functions that make Node.js coding easier and cleaner. Instead
-of writing a common function repeatedly, you can use just a single line
-code with the help of Lodash.
+It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js` (http://underscorejs.org/) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
 **Reason why you should choose Lodash**
-Lodash makes Node.js coding easier by taking the hassle out of working
-with common programing functions such as `arrays`, `objects`, `numbers`,
-`strings`, `date`, etc.
+Lodash makes Node.js coding easier by taking the hassle out of working with common programing functions such as `arrays`, `objects`, `numbers`, `strings`, `date`, etc.
 **Lodash Utility modular methods are dignified for:**
 -   Interacting arrays, objects, and strings.
 -   Manipulating and testing values.
@@ -87,13 +59,8 @@ with common programing functions such as `arrays`, `objects`, `numbers`,
 -   You only need to remember the Lodash functions hence easier to code.
 -   Even the Newbies can understand Lodash.
 **Other utility libraries include:**
-[`Underscore.js`](https://underscorejs.org/) - It provides useful
-functional programming helpers without having to extend to any built-in
-objects.
-Lodash remains the most dependent Node.js module in NPM listings. Try it
-out for the backend and use CDN for the frontend.
-[`Fultil-js`](https://github.com/smartprocure/futil-js) - Is designed to
-complement Lodash's functional utilities.
+[`Underscore.js`](https://underscorejs.org/) - It provides useful functional programming helpers without having to extend to any built-in objects. Lodash remains the most dependent Node.js module in NPM listings. Try it out for the backend and use CDN for the frontend.
+[`Fultil-js`](https://github.com/smartprocure/futil-js) - Is designed to complement Lodash's functional utilities.
 ### 5. MomentJs
 Moment.js is a lightweight JavaScript development tool for dates and times manipulating. It makes date and time easy to format, parse, validate, and internationalize using clean and concise API. Node.js date objects are not that bad, it only that it requires you to do a lot of coding to do complex parsing, validation, and displaying Date and time objects. Here a few examples of date objects using Moment.js: To use MomentJs with Node.js, install the module using the following command :
 `npm install moment`
@@ -136,14 +103,10 @@ dealing with multiple language application.
 -   [`Validator.js`](https://github.com/validatorjs/validator.js) - A library for string validators  and sanitizer.
 -   [`Express-validator`](https://www.npmjs.com/package/express-validator) -
     It is an Express Middleware for Validator.js.
-
 ### 6. Request
-
 Request is a simplified HTTP client that makes it possible to make `http`
 calls. It supports HTTPS and follows redirect by default. Request is a fantastic choice if you want an easy to use library to deal with HTTP request in a sane way. If you want to use Promises, you can check out the request-promise library. It is used to describe a request to a server and get a response.
-
 **Request has the following main contractors:**
-
 -   **Body** - The data to send with the request.
 -   **Cache** - A sting with the following instanceS: default,
     force-cache, no-cache, no-store, only-if-cached, reload etc.
@@ -153,7 +116,6 @@ calls. It supports HTTPS and follows redirect by default. Request is a fantastic
     passed to the Headers contractor.
 -   **Method** - HTTP method such as `GET` `POST` `DELETE`, `PUT`.
 -   **Mode** - A string with one of same-origin, no-cors, cors instances.
-
 **Examples of simple Request**
 ```js
 const request = require('request');
@@ -165,17 +127,13 @@ request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, 
 ```
 With request, you need less code to accomplish the same task that you
 would have used a lot of coding of you were using the HTTP library.
-
 **Other HTTP REST client include**
-
 -   [`Axios`](https://www.npmjs.com/package/axios) - Used promise-based
     HTTP client for Node.js and Browsers.
 -   [`Method-override`](https://github.com/expressjs/method-override) -
     Lets you use HTTP verbs such as DELETE and PUT in places where the
     client does not support it.
-
 ### 7. Jshint
-
 It is a static code analysis tool to detect errors and potential
 problems in JavaScript.
 Lining tools help Node.js developers to analyse common bugs in your code
@@ -185,9 +143,7 @@ potential bugs such as syntax errors, leaking variables, implicit type,
 conventions, etc.
 [`ESLint`](https://eslint.org/) is a similar package example used for
 linting (enhancing code quality).
-
 ### 8. Morgan
-
 It is an HTTP request logger middleware for Node.js application. Morgan
 gives you Insights on how your app is being used and alerts you on
 potential errors and issues that could be threats to your application.
@@ -195,16 +151,12 @@ Morgan is considered the most reliable HTTP logger by Node.js
 developers. You can choose to use
 [`Winston`](https://www.npmjs.com/package/winston) as an alternative
 library for logging.
-
 ### 9. Karma
-
 A Node.js developer, you need to do more testing to your application to
 make sure it\'s stable and reliable with good performance. Karma is the
 tool for Job Karma. The main goal of karma is to bring a productive
 testing environment to developers.
-
 **Why you should choose karma**
-
 -   Tests code in real browsers.
 -   Test code is multiple browsers(desktop, mobile, tablets).
 -   It tests on real devices such as mobilephone, tablets or even a headless
