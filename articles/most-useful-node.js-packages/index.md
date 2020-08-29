@@ -186,6 +186,7 @@ From the above example
 **Other MySQL and helpers frameworks include:**
 -   [`Sequelize`](https://www.npmjs.com/package/sequelize) - promised based Node.js ORM for Postgres, MySQL, Maria DB, SQLite, and Microsoft SQL Server.
 -   [`Knex.js`](https://knexjs.org/) - Designed to be flexible, portable and fun to run for MSSAL, MySQL, and Oracle, MariaDB, SQLite3 and Amazon Redshift.
+
 **Check [`MongoDB and helpers`](https://www.mongodb.com/) frameworks**
 -   [`Mongoose`](https://www.npmjs.com/package/mongoose) - MongoDB object modeling tool designed to work in an asynchronous environment.
 -   [`Mongoose Paginate v2`] (https://www.npmjs.com/package/mongoose-paginate-v2) - A customizable cursor based pagination plugin for Mongoose.
@@ -343,5 +344,6 @@ Agenda is a lightweight job queue-scheduling library for Node.js
 -   [`Node Schedule`](https://www.npmjs.com/package/node-schedule) - Cron-like and not-clone-like Node.js job scheduler.
 
 **Conclusion**
+
 As a node.js developer, many open-source frameworks will help you improve your skills to deliver professional applications that are light and reliable. If you happen to be a Node.js developer, the combination of using
 different frameworks in your app will explode you to another level and you cannot work without Node.js packages in your day-to-day dev Node development. **WISH YOU HAPPY CODING.**
