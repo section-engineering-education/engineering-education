@@ -142,7 +142,8 @@ With request, you need less code to accomplish the same task that you would have
 It is a static code analysis tool to detect errors and potential problems in JavaScript. Lining tools help Node.js developers to analyse common bugs in your code without your focussed attention. Linter analyses the code themselves. JShint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, conventions, etc.
 [`ESLint`](https://eslint.org/) is a similar package example used for linting (enhancing code quality).
 ### 8. Morgan
-It is an HTTP request logger middleware for Node.js application. Morgan gives you Insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. You can choose to use [`Winston`](https://www.npmjs.com/package/winston) as an alternative library for logging.
+It is an HTTP request logger middleware for Node.js application. Morgan gives you Insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers.
+You can choose to use [`Winston`](https://www.npmjs.com/package/winston) as an alternative library for logging.
 ### 9. Karma
 A Node.js developer, you need to do more testing to your application to make sure it\'s stable and reliable with good performance. Karma is the tool for Job Karma. The main goal of karma is to bring a productive testing environment to developers.
 
