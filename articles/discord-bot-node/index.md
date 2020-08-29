@@ -112,7 +112,7 @@ client.on("message", message => { // runs whenever a message is sent
 });
 ```
 
-We did it! Albeit, in a [less than optimal way](http://www0.cs.ucl.ac.uk/staff/d.jones/GoodPracticeRNG.pdf).
+This creates an event which runs whenever the bot sees a new message. It checks to see if the message says `?random`. If it does, it generates a random number, and sends it to the channel. We did it!
 
 We can add more commands by just adding more `if` statements. This can get messy though. Let's come up with a better command structure. We can use a Map to store strings as keys and functions as values.
 
