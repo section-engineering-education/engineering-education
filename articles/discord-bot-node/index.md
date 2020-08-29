@@ -105,22 +105,34 @@ You can run this by using `node index.js`. Once you’ve done that, you should g
 
 ## Creating Commands
 
-That's cool, but we want the bot to actually do something. The most common example is [ping-pong](https://www.youtube.com/watch?v=DEqrCI1018I), but we should do something a little more interesting. Let's generate random numbers. Whenever a user types in "?random", let's make the bot reply with a random number. We just need to add some more code above the `client.login()` call.
+That's cool, but we want the bot to actually do something. The most common example is [ping-pong](https://www.youtube.com/watch?v=DEqrCI1018I), but we should do something a little more interesting. Let's generate random numbers. Whenever a user types in "?random", let's make the bot reply with a random number.
+
+We just need to add some more code directly above the `client.login()` call.
 
 ```javascript
+
+// ...
+
 client.on("message", message => { // runs whenever a message is sent
     if (message.content === "?random") { // checks if the message says "?random"
         const number = Math.random(); // generates a random number
         message.channel.send(number.toString()); // sends a message to the channel with the number
     }
 });
+
+// ...
 ```
 
 This creates an event which runs whenever the bot sees a new message. It checks to see if the message says `?random`. If it does, it generates a random number, and sends it to the channel. We did it!
 
 We can add more commands by just adding more `if` statements. This can get messy though. Let's come up with a better command structure. We can use a Map to store strings as keys and functions as values. A Map links "keys" to "values". In this case, we'll be using the command name as a key. Each key has a value, which we can access using the `Map.get()` method. In our case, the values will be functions that we can run.
 
+The following code needs to replace the earlier `client.on()` call we made earlier.
+
 ```javascript
+
+// ...
+
 function random(message) {
     const number = Math.random(); // generates a random number
     message.channel.send(number.toString()); // sends a message to the channel with the number
@@ -137,6 +149,9 @@ client.on("message", message => {
         }
     }
 });
+
+// ...
+
 ```
 
 To get the bot to say the random number, just go into any Discord channel that the bot has access to, and type "?random".
