@@ -37,9 +37,11 @@ First, you need to visit the [Discord Developer Portal](https://discordapp.com/d
 
 You'll get to your application's page, where if you want, you can give it a description and an avatar.
 
-On the left, you should see a "Bot" tab. Click on that, and then click on the button that says, "Add Bot".
+On the left, you should see a "Bot" tab. Click on that.
 
 ![The tab that says “Bot” is on the right side of the page](/engineering-education/discord-bot-node/discordbot3.png)
+
+Now we can turn this application into a bot. Just click the "Add Bot" button.
 
 ![The “Add Bot” button is in the top right corner](/engineering-education/discord-bot-node/discordbot4.png)
 
