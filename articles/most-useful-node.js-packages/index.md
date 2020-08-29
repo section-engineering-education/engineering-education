@@ -53,6 +53,7 @@ It analyses` require ()` calls in your Node.js application to create a bundle th
 It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js` (http://underscorejs.org/) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
 
 **Reason why you should choose Lodash**
+
 Lodash makes Node.js coding easier by taking the hassle out of working with common programing functions such as `arrays`, `objects`, `numbers`, `strings`, `date`, etc.
 
 **Lodash Utility modular methods are dignified for:**
@@ -66,6 +67,7 @@ Lodash makes Node.js coding easier by taking the hassle out of working with comm
 -   Even the Newbies can understand Lodash.
 
 **Other utility libraries include:**
+
 [`Underscore.js`](https://underscorejs.org/) - It provides useful functional programming helpers without having to extend to any built-in objects. Lodash remains the most dependent Node.js module in NPM listings. Try it out for the backend and use CDN for the frontend.
 [`Fultil-js`](https://github.com/smartprocure/futil-js) - Is designed to complement Lodash's functional utilities.
 ### 5. MomentJs
@@ -209,7 +211,7 @@ A tool for monitoring helps developers based on Node.js applications by automati
 ### 12. Restify
 It is a Node.js web service framework, which is optimized for building semantic RESTful web services (API) that are ready for production use at scale.
 
-**Why you should use Restify*
+**Why you should use Restify**
 -   **Production-ready** - Optimizes for introspection and performance.
 -   **Debuggable** - Trace problems back to the origin. It is built from a post-mortem debugging perspective.
 -   **Semantically correct** - It has references littered all-over GitHub and the codebase.
