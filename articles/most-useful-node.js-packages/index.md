@@ -186,7 +186,7 @@ From the above example
 **Other MySQL and helpers frameworks include:**
 -   [`Sequelize`](https://www.npmjs.com/package/sequelize) - promised based Node.js ORM for Postgres, MySQL, Maria DB, SQLite, and Microsoft SQL Server.
 -   [`Knex.js`](https://knexjs.org/) - Designed to be flexible, portable and fun to run for MSSAL, MySQL, and Oracle, MariaDB, SQLite3 and Amazon Redshift.
-**Check [MongoDB](https://www.mongodb.com/) and helpers**
+**Check [`MongoDB and helpers`](https://www.mongodb.com/) frameworks**
 -   [`Mongoose`](https://www.npmjs.com/package/mongoose) - MongoDB object modeling tool designed to work in an asynchronous environment.
 -   [`Mongoose Paginate v2`] (https://www.npmjs.com/package/mongoose-paginate-v2) - A customizable cursor based pagination plugin for Mongoose.
 ### 11. Nodemon
