@@ -20,7 +20,7 @@ Async provides several functions that include usual functional such are '`map`',
 **Advantages of using Async in your Node.js app include**
 -   It supports inline functions and text strings.
 -   Error handling from the dependency queue.
--   Use of AsyncLocalStorge within AsyncJs helps to create asynchronous states within callbacks and promise chain.
+-   Use of AsyncLocalStorge within AsyncJS helps to create asynchronous states within callbacks and promise chain.
 -   A collection of Async functions helps to control the flow through the script.
 -   Helps to integrate AsyncResource with EvenEmitter.
 Example of `async/await` in Node.js:
@@ -38,7 +38,7 @@ async function myFunction(inputValue) {
 ```
 In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchronous.
 
-**Other Frameworks related to AsyncJs include**
+**Other Frameworks related to AsyncJS include**
 -   [`Limiter`](https://www.npmjs.com/package/limiter) - Used for
     rate-limiting based on request per `sec/hr`.
 -   [`Co-async`](https://www.npmjs.com/package/co-async) - Inspired by
@@ -51,7 +51,7 @@ In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchr
 It analyses` require ()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require ()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require ()` method defined but Node.js does. With Browserify, you can write code that uses `require ()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference.
 This way code becomes cleaner for Node.js developers for both front and backend applications. You can use Browserify to create client-side codebase that is well structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next Node.js project and it will rock your application. It is a good choice if you want to keep order between your scripts.
 ### 4. Lodash
-It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js` (http://underscorejs.org/) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
+It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js`] (http://underscorejs.org/) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
 
 **Reason why you should choose Lodash**
 
@@ -85,25 +85,25 @@ console.log(today.format());
 ```
 **OUTPUT: 2020-08-27T09:21:49+01:00**
 
-MomentJs can still run from the browser. It creates a global moment object, which is used to access date and time parsing and manipulation functionality. Include `<script>` as in the example below.
+MomentJS can still run from the browser. It creates a global moment object, which is used to access date and time parsing and manipulation functionality. Include `<script>` as in the example below.
 ```js
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset ="UTF-8"></meta>
-        <title> Momentjs Date Object </title>
+        <title> MomentJS Date Object </title>
     </head>
     <body>
         <script  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script>
-      // You have a 'moment' global here
-      const today = moment();
-      console.log(today.format());
+        // You have a 'moment' global here
+        const today = moment();
+         console.log(today.format());
         </script>
     </body>
 </html>
 ```
-MomentJs is an awesome Node.js package. It simplifies date and time related parsing, manipulation as well as validation. If you have a Node.js application that uses data and time objects, consider trying Moment.js. It will help you to solve any date problem in your application. MomentJs support international languages in you date objects which is a good thing to have in your application if you are dealing with multiple language application.
+S is an awesome Node.js package. It simplifies date and time related parsing, manipulation as well as validation. If you have a Node.js application that uses data and time objects, consider trying MomentJS. It will help you to solve any date problem in your application. MomentJS support international languages in you date objects which is a good thing to have in your application if you are dealing with multiple language application.
 
 **Other validations and formatting libraries include:**
 -   [`Validator.js`](https://github.com/validatorjs/validator.js) - A library for string validators  and sanitizer.
@@ -138,11 +138,11 @@ With request, you need less code to accomplish the same task that you would have
 -   [`Method-override`](https://github.com/expressjs/method-override) -
     Lets you use HTTP verbs such as DELETE and PUT in places where the
     client does not support it.
-### 7. Jshint
-It is a static code analysis tool to detect errors and potential problems in JavaScript. Lining tools help Node.js developers to analyse common bugs in your code without your focussed attention. Linter analyses the code themselves. Jshint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, conventions, etc.
+### 7. JShint
+It is a static code analysis tool to detect errors and potential problems in JavaScript. Lining tools help Node.js developers to analyse common bugs in your code without your focussed attention. Linter analyses the code themselves. JShint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, conventions, etc.
 [`ESLint`](https://eslint.org/) is a similar package example used for linting (enhancing code quality).
 ### 8. Morgan
-It is an HTTP request logger middleware for Node.js application. Morgan gives you Insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. You can choose to use [`Winston`](https://www.npmjs.com/package winston) as an alternative library for logging.
+It is an HTTP request logger middleware for Node.js application. Morgan gives you Insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. You can choose to use [`Winston`](https://www.npmjs.com/package/winston) as an alternative library for logging.
 ### 9. Karma
 A Node.js developer, you need to do more testing to your application to make sure it\'s stable and reliable with good performance. Karma is the tool for Job Karma. The main goal of karma is to bring a productive testing environment to developers.
 
@@ -311,7 +311,7 @@ It is a toolkit to automate slow, repetitive tasks that are time-consuming in No
 -   Its integrations are built into major IDEs such as `.NET`, `PHP`, `Node.js`, `Java`.
 -   It helps to automate time-consuming tasks in your Node.js development workflow.
 
-Gulp is similar Module to [`GruntJs`](https://www.npmjs.com/package/grunt) which is used to automatically perform frequent tasks such are unit testing, Linting.
+Gulp is similar Module to [`GruntJS`](https://www.npmjs.com/package/grunt) which is used to automatically perform frequent tasks such are unit testing, Linting.
 
 ### 15. Molecular
 It is a fast, modern, and powerful progressive microservices framework for Node.js. It helps Node.js developers to build that are efficient, reliable, and scalable services.
