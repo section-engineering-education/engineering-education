@@ -39,7 +39,11 @@ int main(){
     return 0;
 }
 ``` 
-
+Here's the output when I run it on my machine:
+```c
+ The value of i is 5 
+ The memory address of i is 0x7ffee9dbe958
+```
 ### Arrays: A Pointer to the First Element 
 
 An array in C can only hold one data type (ex: `int`, `char`, etc.).  The name of the array points to the first element. We can dereference the pointer to set the element at index 0.
