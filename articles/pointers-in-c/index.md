@@ -1,8 +1,21 @@
-Author: Nimra Aftab
-Biography: Nimra is a third year Computer Science student at University of Toronto. Her interests are low-level programming, information security, and robotics.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/pointers-in-c/
+title: Pointers in C
+description: Pointers are a hard concept to grasp for a lot of new programmers. This article will help you understand what pointers are and how to use them.   
+author: nimra-aftab
+date: 2020-08-28T00:00:00-12:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-
-Pointers are common in the C programming language. Since C doesn't have built-in arrays and strings, programmers use pointers instead. This article will give a basic introduction to pointer variables. We will outline simple examples and clarify common misunderstandings.
+  - url: /engineering-education/pointers-in-c/hero.jpg
+    alt: c pointers c++ variable
+---
+Pointers are common in the C programming language. Since C doesn't have built-in arrays and strings, programmers use pointers instead. This article will give a basic introduction to pointer variables.
+<!--more-->
 
 ### An Introduction to Pointers
 
