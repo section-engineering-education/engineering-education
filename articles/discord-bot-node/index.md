@@ -160,7 +160,19 @@ To get the bot to say the random number, just go into any Discord channel that t
 
 There. Now to add more commands, you just add them to `commands`.
 
+## Recap
+
+That's essentially what you need to do to get started. To recap, the process was:
+
+* Make a Discord application
+* Turn it into a bot
+* Add it to a server
+* Download discord.js
+* Write your bot
+* Run it
+
 ## Bot Ideas
+
 Now that you know how to make a Discord bot, you'll probably want to make your own. If you need a list of Discord Bot ideas, I've come up with a few already for [my blog](https://botahamec.github.io/posts/20_06_03_project_ideas/). Here are a few more though:
 
 - A bot that can compile its own programming language
