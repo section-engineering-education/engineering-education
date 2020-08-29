@@ -1,8 +1,8 @@
 ## Most Useful Node.js Packages That you need to Know
-Open-source frameworks that form the ecosystem of JavaScript back the power of Node.js. As a Node.js developer, it is practically inevitable to constantly avoid their advantage. With the help of Node.js packages, as a developer, you will conclusively save a lot of time and develop applications that are light, scalable, high speed with tremendous productivity.
+Open-source frameworks that form the ecosystem of JavaScript back the power of Node.js. As a Node.js developer, it is practically impossible to constantly avoid their advantage. With the help of Node.js packages, as a developer, you will conclusively save a lot of time and develop applications that are light, scalable, high speed with tremendous productivity.
 Let's have a look at the packages that will assist you to extend your inclination to Node.js application development.
 ### 1. Express
-Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexible designed for building simple page,multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and
+Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexible designed for building simple page, multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and
 APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](https://www.npmjs.com/package/sails), [`NESTJS`](https://nestjs.com/) are built on Express. Express is available on the NPM registry.
 
 **Features of Express**
@@ -14,7 +14,7 @@ APIs with robust tooling for HTTP servers. Node.js frameworks such as [`SAILS`](
 -   Executable for generating applications quickly.
 ### 2. AsyncJS
 Asynchronous is heavily used in Node.js to ensure non-­blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished.
-It uses a queue to keep track of tasks, allowing you to append additional tasks, attaching extra callbacks, and handling error inside callbacks, making it a more versatile and robust solution for complex dependency management.
+It uses a queue to keep track of tasks, allowing you to append additional tasks, attaching extra callbacks, and handling error with callbacks, making it a more versatile and robust solution for complex dependency management.
 AsyncJS provides several functions that include usual functional such are '`map`', '`filter`', '`reduce`',' `filter`', '`each`' as well as some common patterns for asynchronous control flow('`parallel`' , '`series`' , '`waterfall`').
 
 **Advantages of using AsyncJS in your Node.js app include**
@@ -43,7 +43,7 @@ In this scenario, we can see it is obvious that functions 1,2, and 4 are asynchr
 -   [`Co-async`](https://www.npmjs.com/package/co-async) - Inspired by Async for use with `co` and function generator.
 -   [`Neo-async`](https://www.npmjs.com/package/neo-async) - Focus on speed implementation of Async.
 ### 3. Browserify
-It analyses` require()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require()` method defined but Node.js does. With Browserify, you can write code that uses `require()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structure everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using the specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference.
+It analyses` require()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require()` is used to load modules installed by NPM ie `require('module')`. Browsers do not have the `require()` method defined but Node.js does. With Browserify, you can write code that uses `require()` just like you would use it in Node.js code. Browserify simply complies commonjs modules for the browser and structures everything neatly together. With Browserify, you don't need to constantly have to go back and forth between your code to analyse which packages and widgets are using specific scripts, Browserify loads every dependency and bundle them is a single file so that you will only have to make one reference.
 This way code becomes cleaner for Node.js developers for both front and backend applications. You can use Browserify to create client-side codebase that is well structured and easy to navigate. If you have not tried Browserify yet, give it a shot in your next Node.js project and it will rock your application. It is a good choice if you want to keep order between your scripts.
 ### 4. Lodash
 It is a modern JavaScript library that provides utility functions. Lodash is inspired by the famous [`Underscore.js`](https://www.npmjs.com/package/underscore) utility library. Lodash has built-in functions that make Node.js coding easier and cleaner. Instead of writing a common function repeatedly, you can use just a single line code with the help of Lodash.
@@ -123,7 +123,7 @@ request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, 
 ```
 With request, you need less code to accomplish the same task that you would have used a lot of coding of you were using the HTTP library.
 
-**Other HTTP REST client include**
+**Other HTTP REST client libraries include**
 -   [`Axios`](https://www.npmjs.com/package/axios) - Used promise-based
     HTTP client for Node.js and Browsers.
 -   [`Method-override`](https://github.com/expressjs/method-override) -
@@ -189,7 +189,7 @@ From the above example
 
 **Check [`MongoDB and helpers`](https://www.mongodb.com/) frameworks**
 -   [`Mongoose`](https://www.npmjs.com/package/mongoose) - MongoDB object modeling tool designed to work in an asynchronous environment.
--   [`Mongoose Paginate v2`] (https://www.npmjs.com/package/mongoose-paginate-v2) - A customizable cursor based pagination plugin for Mongoose.
+-   [`Mongoose Paginate v2`](https://www.npmjs.com/package/mongoose-paginate-v2) - A customizable cursor based pagination plugin for Mongoose.
 ### 11. Nodemon
 A tool for monitoring helps developers based on Node.js applications by automatically restarting the node application when file changes in the app directory are detected. With Nodemon, you do not need any additional changes to your code or method of development. It is a replacement wrapper for the node. Nodemon is simple to use, you just need to replace the word node with `nodemon` on the command-line when executing your `script`. Ie `nodemon ./server.js localhost 300`
 
