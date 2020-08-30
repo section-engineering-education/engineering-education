@@ -1,14 +1,14 @@
 #  Book Recommendation System using SparkSQL and MLlib- Spark Part 3
 
-Apache Spark is a distributed cluster computing engine for handling big data. It provides a simple interface to program entire clusters with implicit data parallelism and splits the big data into multiple cores or systems and optimally utilizes these computing resources to process this data in a distributed manner. DAG (directed acyclic graph) manages workflows in Spark, which results in fast computation of big data. Spark does not require the users to have high end, expensive systems with great computing power. Therefore it is a great solution for processing big data quickly and without overheating the system.
+Apache Spark is a distributed cluster computing engine for handling big data. It provides a simple interface to program entire clusters with implicit data parallelism, splits the big data into multiple cores or systems and optimally utilizes these computing resources to process this data in a distributed manner. DAG (directed acyclic graph) manages workflows in Spark, which results in fast computation of big data. Spark does not require the users to have high end, expensive systems with great computing power. Therefore it is a great solution for processing big data quickly and without overheating the system.
 
-In the [previous article](https://www.section.io/engineering-education/getting-started-with-pyspark-spark-part2/), we installed PySpark and explored Spark Core programming concepts. We used these concepts to gain some useful insights from a large dataset containing 278,858 users providing 1,149,780 ratings for 271,379 books and realized which book has the most number of ratings. In this article, we will delve into very useful Spark libraries namely SparkSQL and MLlib to build a book recommender using the same dataset.
+In the [previous article](https://www.section.io/engineering-education/getting-started-with-pyspark-spark-part2/), we installed PySpark and explored Spark Core programming concepts. We used these concepts to gain useful insights from a large dataset containing 278,858 users providing 1,149,780 ratings for 271,379 books and found the book with the most number of ratings. In this article, we will delve into very useful Spark libraries namely SparkSQL and MLlib to build a book recommender using the same dataset.
 
+
+### Dataframes
 RDD (Resilient Distributed Datasets), which we explored in the previous article, are a great way to perform distributed transformations and store data, especially unstructured data. But for **structured data** which has a fixed number of columns and corresponding values (like the dataset we are using), Spark provides an abstraction that is easy to use - **Dataframes and Datasets**. This way, we can treat our RDDs as databases which support SQL style querying, allowing Spark to further increase the efficiency of each operation. 
 
 *Note*: In the recent release of Spark 3, the developers have deprecated RDD programming in their Machine Learning libraries.
-
-### Dataframes
 
 [Dataframes and Datasets are part of Spark SQL](https://spark.apache.org/docs/latest/sql-programming-guide.html), which is a Spark module for structured data processing. A **Dataset** is a distributed collection of data. Dataset is an interface that adds the benefits such as increased efficiency provided by SparkSQL’s computation engine to RDDs usage of powerful lambda functions and strongly typed data. A **DataFrame** is a *Dataset* organized into named columns. 
 Let us see what a dataframe looks like by converting our books dataset (not to be confused with Spark dataset) into a dataframe, and begin coding a book recommender. *Make sure* [*Books*](http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip) *dataset is downloaded and placed in the same folder where you will store your PySpark script.*
@@ -88,20 +88,20 @@ To provide recommendations to users, we need to use data which contains the rati
 user_ratings_df = spark.read.option("delimiter", ";").option("header", "true").csv('./BX-CSV-Dump/BX-Book-Ratings.csv')
 # Columns User-ID, ISBN and Book-Rating were in string format, which we convert to int
 ratings_df = user_ratings_df.withColumn("User-ID", 
-                                        user_ratings_df['User-ID'].
-                                        cast(IntegerType())).
-										withColumn("ISBN", user_ratings_df['ISBN'].
-           								cast(IntegerType())).
-    									withColumn("Book-Rating",
-                                        user_ratings_df['Book-Rating'].
-                                  		cast(IntegerType())).
+                                        user_ratings_df['User-ID'].\
+                                        cast(IntegerType())).\
+										withColumn("ISBN", user_ratings_df['ISBN'].\
+           								cast(IntegerType())).\
+    									withColumn("Book-Rating",\
+                                        user_ratings_df['Book-Rating'].\
+                                  		cast(IntegerType())).\
         								na.drop()ratings_df.show()
 
 ```
 
 ![img](./ratings.png)
 
-To provide recommendations based on the ratings given by users, we can use a technique called [Collaborative Filtering](https://en.wikipedia.org/wiki/Collaborative_filtering). This is based on the concept that if person A and B have given similar ratings to the same objects, then they must have similar taste. Therefore, there is a high probability that person A will like an object they haven’t rated but is rated highly by B. To perform collaborative filtering, we will use an algorithm called [ALS](https://datasciencemadesimpler.wordpress.com/tag/alternating-least-squares/) (Alternating Least Squares), which will make predictions about how much each user would rate each book and ultimately provide recommendations for every user listed in the dataset. Spark’s machine learning library **MLlib** has the ALS function which we can directly plug into this program.
+To provide recommendations based on the ratings given by users, we can use a technique called [Collaborative Filtering](https://en.wikipedia.org/wiki/Collaborative_filtering). This is based on the concept that if person A and B have given similar ratings to the same objects, then they must have similar taste. Therefore, there is a high probability that person A will like an object they haven’t come across but is rated highly by B. To perform collaborative filtering, we will use an algorithm called [ALS](https://datasciencemadesimpler.wordpress.com/tag/alternating-least-squares/) (Alternating Least Squares), which will make predictions about how much each user would rate each book and ultimately provide recommendations for every user listed in the dataset. Spark’s machine learning library **MLlib** has the ALS function which we can directly plug into this program.
 
 ```python
 # define parameters 
@@ -114,14 +114,15 @@ dataframemodel = als.fit(ratings_df)
 Now let’s pick a random user, User-ID = 17. This person has rated the following books as shown -
 
 ```python
-ratings = ratings_df.filter(col('User-ID')==17)books_df.
-					join(ratings,ratings.ISBN==books_df.ISBN).
-    				select(col('User-ID'),col('Book-Title'),col('Book-Author'),col('Year-Of-Publication'),col('Book-Rating')).
+ratings = ratings_df.filter(col('User-ID')==17)books_df.\
+					join(ratings,ratings.ISBN==books_df.ISBN).\
+    				select(col('User-ID'),col('Book-Title'),col('Book-Author'),col('Year-Of-Publication'),col('Book-Rating')).\
         			show()
 ```
 
 
-![img](./user-rating.png)Now we use the model that we just trained, and use that to predict top 5 recommendations for this user.
+![img](./user-rating.png)
+Now we use the ALS model that we just trained, and use that to predict top 5 recommendations for this user.
 
 ```python
 user_id = [[17]]
@@ -137,7 +138,8 @@ recommended_ISBN
 
 
 This model predicted the following ISBNs to be the top 5 recommendations.
-![img](./recommendisbn.png)We would prefer to see the titles of the books, along with a few details rather than just the ISBN. So we look for these books in the ‘books_df’ dataframe and print out the book recommendations.
+![img](./recommendisbn.png)
+We would prefer to see the titles of the books, along with a few details rather than just the ISBN. So we look for these books in the ‘books_df’ dataframe and print out the book recommendations.
 
 ```python
 # convert the recommended_ISBN list into a dataframe so that it can be joined with books_df 
@@ -150,7 +152,7 @@ books_df.join(rec_df,rec_df.value==books_df.ISBN).select(col('Book-Title'),col('
 ![img](./join.png)
 
 ### Conclusion
-Spark is a fast and efficient framework meant for handling big data. We explored some of the amazing abstractions it provides for performing complex computations on structured data, namely SparkSQL, Dataframes, and MLlib. Using these libraries, we built our own book recommender, which recommends top 5 books for a user who has previously rated books in the books dataset. Values of the User-ID and the num_rec variables can be changed based on requirement. The learnings from this article can be further enhanced by making appropriate use of the official documentation of Apache Spark (Pyspark), and used to build a lot of different useful applications. 
+Spark is a fast and efficient framework meant for handling big data. We explored some of the amazing abstractions it provides for performing complex computations on structured data, namely SparkSQL, Dataframes, and MLlib. Using these libraries, we built our own book recommender, which recommends top 5 books for a user who has previously rated books in the books dataset. Values of the User-ID and the num_rec variables can be changed based on requirement. A lot of different applications can be built with these libraries, and there are so many useful functions that they provide. So I strongly recommend going through the official Apache Spark (Pyspark) documentation and further enhancing your learnings!
 
 
 
