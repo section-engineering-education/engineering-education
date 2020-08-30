@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/intro-to-c-part1
 title: Introduction to C++
 description: This introduction is about C++ and goes through topics such as why C++?, who uses C++ in the industry, and basic implementation.
-author: Parampreet Singh
+author: parampreet-singh
 date: 2020-08-19T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
