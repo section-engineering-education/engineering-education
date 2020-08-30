@@ -19,17 +19,17 @@ Let us continue from where we left off in the previous article [*Introduction to
 
 ## Functions in C++
 
-### **What are Functions?**
-
-Functions have a name and take zero or more parameters. The parameters are how information gets sent to the function. The function only cares about the order of the parameters, and it doesn't know or care about the names of the variables in your program. 
-
-The only way to send information to a function is through parameters, and the only way a function can send information back to the scope above is by returning the value.
-
 **Why do we need functions?**
 
 * To write a task once that you'll use a bunch of times.
 * To break the task of writing a big program into smaller, more easily handleable pieces.
 * To create a library of operations for use in multiple programs.
+
+### **What are Functions?**
+
+Functions have a name and take zero or more parameters. The parameters are how information gets sent to the function. The function only cares about the order of the parameters, and it doesn't know or care about the names of the variables in your program. 
+
+The only way to send information to a function is through parameters, and the only way a function can send information back to the scope above is by returning the value.
 
 Let's write a function that returns the largest of the three parameters:
 
