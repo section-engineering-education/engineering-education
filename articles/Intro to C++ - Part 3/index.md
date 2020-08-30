@@ -29,7 +29,7 @@ The only way to send information to a function is through parameters. And the on
 
 * To write a task once that you'll use a bunch of times.
 * To break the task of writing a big program into smaller, more easily handleable pieces.
-* To create a library of operations for use in multiple programs
+* To create a library of operations for use in multiple programs.
 
 Let's write a function that returns the largest of the three parameters:
 
