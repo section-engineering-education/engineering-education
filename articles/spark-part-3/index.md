@@ -147,7 +147,7 @@ books_df.join(rec_df,rec_df.value==books_df.ISBN).select(col('Book-Title'),col('
 ```
 
 
-![img](/home/keerthi/Desktop/Spark part 3/join.png)
+![img](./join.png)
 
 ### Conclusion
 Spark is a fast and efficient framework meant for handling big data. We explored some of the amazing abstractions it provides for performing complex computations on structured data, namely SparkSQL, Dataframes, and MLlib. Using these libraries, we built our own book recommender, which recommends top 5 books for a user who has previously rated books in the books dataset. Values of the User-ID and the num_rec variables can be changed based on requirement. The learnings from this article can be further enhanced by making appropriate use of the official documentation of Apache Spark (Pyspark), and used to build a lot of different useful applications. 
