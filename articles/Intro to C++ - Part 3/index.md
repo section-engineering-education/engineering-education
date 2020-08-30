@@ -49,7 +49,7 @@ else
   return three;
 }
 ```
-The function max_of_three would take three parameters and returns the largest of the three parameters.
+The function ``` max_of_three ``` would take three parameters and returns the largest of the three parameters.
 
 Now let's see how to call (implement) this function in main. 
 
