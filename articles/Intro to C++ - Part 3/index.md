@@ -16,7 +16,6 @@ images:
 ---
 Let us continue from where we left off in the previous article [*Introduction to C++*](/engineering-education/intro-to-c-part1/). We started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward. 
 <!--more-->
-Let us continue from where we left off in the previous article [*If Else and Loops*](/engineering-education/if-else-loops/). We talked about If Else and Loops in the previous article. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward. In this article, we will be going over the topic of Functions.
 
 ## Functions in C++
 
