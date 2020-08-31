@@ -222,14 +222,17 @@ Result:
 ```
 34fe3040ff6b9d1b593a3c5d650ef0f16d53a989fe41816634456dd7f1341183
 ```
+
+## Conclusion
+
 Use the `docker ps` command to check the running container.
 ```
 docker ps -a
 ```
 Result:
 ```
-CONTAINER ID        IMAGE                        COMMAND                CREATED              STATUS                          PORTS                    NAMES
-34fe3040ff6b        cisca                        "npm start"            About a minute ago   Exited (1) About a minute ago        0.0.0.0:8080->8080/tcp                    intelligent_hofstadter
+CONTAINER ID        IMAGE         COMMAND           CREATED              STATUS                          PORTS                    NAMES
+34fe3040ff6b        cisca        "npm start"       About a minute ago   Exited (1) About a minute ago    0.0.0.0:8080->8080/tcp      intelligent_hofstadter
 ```
 
 This tutorial has helped you with the basics of running a simple Node.js application using Docker and using a Dockerfile to build a Docker image.
