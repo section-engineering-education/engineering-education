@@ -22,7 +22,7 @@ images:
 
 **Plagiarism** or taking others' ideas without proper credit or representation can feel like someone just kidnapped your idea. Actually, plagiarism derives its latin root from "plagiarius" which literally means "kidnapper". So plagiarism is widely considered bad overall. 
 
-Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know more about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/). 
+Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know moresi about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/). 
 
 ## Overview  
 
@@ -31,7 +31,6 @@ In this article, I will split the content in two parts:
 * Overview of text similarity
   * Brief Intro
   * Math Formulation
-  * Example quiz
 
 
 * Overview of the Algorithm
@@ -87,6 +86,7 @@ $$ {\displaystyle {\text{similarity}}=\cos(\theta )={\mathbf {A} \cdot \mathbf {
 $ where~A_i~and~B_i~are~components~of~vector~A~and~B~respectively$
 
 #### Step 3:
+
 
 Finally, the cosine similarity will give an outcome bounded by $ [0,1] $ (Not $[-1,1]$ because the document space is bounded in positive space only). 
 
@@ -247,6 +247,7 @@ df
 ![table 2](./Screenshot%20from%202020-08-30%2016-45-33.png)
 
 #####6. Test feature
+Finally we can print the result and see if we have resonable output.
 ```python
 # print pandas table
 print(df_document_term_matrix)
