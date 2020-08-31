@@ -127,9 +127,7 @@ Only big difference in the above function is **void print_rectangle**. Usually, 
 
 This is because of the fact that this function doesn't return anything. For these kinds of functions, we use **void** instead of **int**. Functions that doesn't supposed to return anything are of type **void** and function that are supposed to return something are of type **int**. 
 
-That's how easy it is to write functions. It is a must for a developer to hold a strong grasp on how to write functions as one doesn't write their whole program in the main function during competitive programming and technical interviews.  
-
-Everything is already given to the developers. Developers only tend to write functions. 
+That's how easy it is to write functions. It is a must for a developer to hold a strong grasp on how to write functions as one doesn't write their whole program in the main function during competitive programming and technical interviews.   
 
 I would suggest working on some practice problems to get better. You can try working on the following questions:
 
