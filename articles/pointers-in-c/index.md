@@ -20,7 +20,7 @@ Pointers are common in the C programming language. Since C does not have built-i
 ### An Introduction to Pointers
 Every variable in your program uses up at least one byte in the computer memory. Each byte has an address. *Pointer variables* store the address of a byte in memory. A *pointer* points to something--an `int`, `double`, `char`, etc. To declare a *pointer variable* we use an asterisk (*). We use ampersand (&) to get the address of the variable being pointed at.
 
-``` c
+```c
 int i = 5;
 int *p;
 p = &i; /* We say p 'is a pointer to' i */
