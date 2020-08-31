@@ -2,7 +2,7 @@
 The power of Node.js is backed by open-source frameworks that form the ecosystem of JavaScript. As a Node.js developer, it is practically impossible to constantly avoid their advantage. With the help of Node.js packages, as a developer, you will conclusively save a lot of time and develop applications that are light, scalable and high speed with tremendous productivity.
 Let's have a look at the packages that will assist you to extend your inclination to Node.js development skills.
 ### 1. Express
-Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexibly designed for building simple page, multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and APIs with robust tooling for HTTP servers. Node.js frameworks such as [`Sails`](https://www.npmjs.com/package/sails) and [`NestJS`](https://nestjs.com/) are built on Express. Express is available on the NPM registry.
+Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexibly designed for building simple page, multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and APIs with robust tooling for HTTP servers. Node.js frameworks such as [`Sails`](https://www.npmjs.com/package/sails), [`Hapi`](https://www.section.io/engineering-education/introduction-to-hapi/) and [`NestJS`](https://nestjs.com/) are built on Express. Express is available on the NPM registry.
 
 **Features of Express**
 -   Robust routing.
@@ -128,7 +128,7 @@ With request, you need less code to accomplish the same task if you were using t
     Lets you use HTTP verbs such as DELETE and PUT in places where the
     client does not support it.
 ### 7. JShint
-It is a static code analysis tool to detect errors and potential problems in JavaScript. Linting tools help Node.js developers to analyse common bugs in their code without focussed attention. Linters analyses the code themselves. JShint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, conventions etc. [`ESLint`](https://eslint.org/) is similar to JShint package, used for linting (enhancing code quality).
+It is a static code analysis tool to detect errors and potential problems in JavaScript. Linting tools help Node.js developers to analyse common bugs in their code without focussed attention. Linters analyses the code themselves. JShint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, conventions etc. [`ESLint`](https://www.section.io/engineering-education/node-eslint/) is similar to JShint package, used for linting (enhancing code quality).
 ### 8. Morgan
 It is an HTTP request logger middleware for Node.js application. Morgan gives you insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers.
 You can choose to use [`Winston`](https://www.npmjs.com/package/winston) as an alternative library for logging.
@@ -256,8 +256,8 @@ server.del('hello/:name', function rm(req, res, next) {
 -   [`Actionhero`](https://www.npmjs.com/package/actionhero) - API framework for both TCP sockets, web socket and HTTP client that create reusable and APIs.
 -   [`FeathersJS`](https://www.npmjs.com/package/@feathersjs/feathers) - A framework REST APIs and real-time layer for modern application.
 -   [`Loopback`](https://www.npmjs.com/package/loopback) - Node.js and Typescript framework for building APIs and microservices.
-### 13. Nodemailer
-Nodemailer is Node.js application module that allows easy as cake emails sending.
+### 13. [Nodemailer](https://www.section.io/engineering-education/node-mailer/)
+[Nodemailer](https://www.section.io/engineering-education/node-mailer/) is Node.js application module that allows easy as cake emails sending.
 
 **Example of how Nodemailer works**
 ```js
