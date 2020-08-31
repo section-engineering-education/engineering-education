@@ -1,4 +1,20 @@
-In my previous article about [introduction to hapi.js framework](https://www.section.io/engineering-education/introduction-to-hapi/). I mentioned another node.js framework known as [Koa.js](https://www.koajs.com) which is also one of the major node.js frameworks available. This article will give an introduction to the framework, its features and a tutorial of how to create a simple server using this framework.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-koajs/
+title: Introduction to the Koa.js Framework
+description: Koa.js is an open-source Node.js framework used to build developer-friendly and expressive web applications and APIs. We go over what Koa.js is, and some of its features.
+author: peter-kayere
+date: 2020-08-31T00:00:00-08:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-to-koajs/hero.jpg
+    alt: koa koajs javascript JavaScript node nodejs node.js framework
+---
+In my previous article, an introduction to the [hapi.js framework](https://www.section.io/engineering-education/introduction-to-hapi/), I mentioned [Koa.js](https://www.koajs.com), another major node.js framework. This article will give an introduction to the framework, its features and a tutorial of how to create a simple server using this framework.
 <!--more-->
 ### What is Koa.js?
 Koa.js is an open source node.js web framework developed and maintained by the team behind express. This framework was build with the aim of making a smaller, more expressive and more robust foundations for web applications and Apis. Koa uses asycn functions that help eliminate callbacks and greatly increase error handling. Koa does not bundle midlewares within its core, and provides a refined suite of methods that make writing servers fast and exciting.
