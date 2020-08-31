@@ -22,7 +22,7 @@ images:
 
 **Plagiarism** or taking others' ideas without proper credit or representation can feel like someone just kidnapped your idea. Actually, plagiarism derives its latin root from "plagiarius" which literally means "kidnapper". So plagiarism is widely considered bad overall. 
 
-Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know more about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/). 
+Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know moresi about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/). 
 
 ## Overview  
 
@@ -87,12 +87,6 @@ $ where~A_i~and~B_i~are~components~of~vector~A~and~B~respectively$
 
 #### Step 3:
 
-<<<<<<< HEAD
-Finaly, the cosine simlarity will give an outcome bounded by $ [0,1] $ (Not $[-1,1]$ because the document space is bounded in possive space only). One meaning extreammly simulary and zero meaning extreamly unsimmular.
-
-
-### Plagarism Detector Code
-=======
 Finally, the cosine similarity will give an outcome bounded by $ [0,1] $ (Not $[-1,1]$ because the document space is bounded in positive space only). 
 
 * 1 - very similar
