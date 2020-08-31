@@ -49,7 +49,7 @@ Here's the output when I run it on my machine:
 ```
 
 ### Arrays: A Pointer to the First Element
-An array in C can only hold one data type (ex: `int`, `char`, etc.).  The name of the array points to the first element. We can dereference the pointer to set the element at index 0.
+An array in C can only hold one data type (eg: `int`, `char`, etc.).  The name of the array points to the first element. We can dereference the pointer to set the element at index 0.
 
 ``` c
 int myarray[2]; /* Declare an array that holds 2 integers*/
