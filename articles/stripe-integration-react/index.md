@@ -1,3 +1,20 @@
+---
+  layout: engineering-education
+  status: publish
+  published: true
+  url: /engineering-education/stripe-integration-react/
+  title: Integrating Stripe with React
+  description: Learn how to create a Stripe account and integrate Stripe Payment with your React project.
+  author: lalith-narayan
+  date: 2020-08-24T00:00:00-10:00
+  topics: [Blockchain][Cryptocurrency][Healthtech]
+  excerpt_separator: <!--more-->
+  images:
+
+    - url: /https://images.app.goo.gl/53Wo8TroqUuzF85i9
+      alt: Blockchain Health
+  ---
+
 # Integrating Stripe with React
 
 All online stores need a payment gateway irrespective of the service or product being sold. Such an important step needs the utmost attention of the developer, for this is the source of income for the online store. In this article, we will look at setting up the Stripe API for all payment purposes. The stripe is the [go-to choice](https://stripe.com/en-in/payments/payment-methods-guide) of most of the developers in the world, for one, its developer-friendly rich [documentation](https://stripe.com/docs/api). Stripe offers security and ensures safe transactions. 
