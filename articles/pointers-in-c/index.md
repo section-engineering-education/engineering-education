@@ -51,7 +51,7 @@ Here's the output when I run it on my machine:
 ### Arrays: A Pointer to the First Element
 An array in C can only hold one data type (eg: `int`, `char`, etc.).  The name of the array points to the first element. We can dereference the pointer to set the element at index 0.
 
-``` c
+```c
 int myarray[2]; /* Declare an array that holds 2 integers*/
 /* Since myarray is a pointer to the first element in the
 array, we can dereference it */
@@ -62,7 +62,7 @@ We can use **pointer arithmetic** to access any element of an array. Recall that
 
 Suppose we now want to set the second element (or index 1) of `myarray` to 20.
 
-``` c
+```c
 *(myarray + 1) = 20; /* Stores 20 in myarray[1]*/
 ```
 
@@ -75,14 +75,14 @@ There are two types of strings in C: *string literals* and *string variables*.
 
 String *literals* are of type `char *` since they point to the first character in the string. String literals never change, and they contain characters within double quotes.
 
-``` c
+```c
 char *a;
 a = "Hello, world"; /* a points to the character 'H' */
 ```
 
 In contrast, string *variables* may change throughout your program. String variables are an array of characters. Since string variables are arrays, the name of the string points to the first character. The array is terminated by the null character ( `'\0'` ).  
 
-``` c
+```c
 char myString [3];
 myString[0] = 'P';
 myString[1] = 'i';
