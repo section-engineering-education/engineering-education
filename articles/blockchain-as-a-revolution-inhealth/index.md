@@ -4,7 +4,7 @@
  published: true
  url: /engineering-education/blockchain-as-a-revolution-in-health/
  title: Blockchain as a Revolution in Health
- description: Learn how to set up a local and remote app for debugging. For remote apps, we set up an SSH tunnel for debugging. The article addresses how opening DevTools, setting breakpoints, and restarting app instances for debugging. 
+ description: Learn how Blockchain technology can provide a greater value of care and better health outcomes for patients.
  author: jethro-magaji
  date: 2020-08-24T00:00:00-10:00
  topics: [Blockchain][Cryptocurrency][Healthtech]
