@@ -31,6 +31,7 @@ In this article, I will split the content in two parts:
 * Overview of text similarity
   * Brief Intro
   * Math Formulation
+  * Example
 
 
 * Overview of the Algorithm
@@ -127,7 +128,6 @@ Looking at the example we can see why cosine similarity is a good metric for jud
 
 The reason for that is because total common words is very biased on file sizes while euclidean distance is biased when comparing two different document sizes.
 ### Plagiarism Detector Code
->>>>>>> simularity-example-dev
 Now we are at the coding step! By now you should know the following things:
 
 * A document can be converted into a document **Vector space model** where the documents are represented as vectors, mostly determined by term frequency.
