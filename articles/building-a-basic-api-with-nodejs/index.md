@@ -6,7 +6,7 @@ url: /engineering-education/building-a-basic-api-with-nodejs/
 title: How To Build and Test a Node.js REST API with Express on Ubuntu 18.04
 description: In this guide, you will build a Node.js REST API with the Express Framework, expose it to the internet with Ngrok.
 author: adrian-murage
-date: 2020-08-25T00:00:00-07:00
+date: 2020-08-31T00:00:00-13:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -36,7 +36,7 @@ First, Setup [Express](http://expressjs.com/en/starter/installing.html).
 After the setup you should have one directory `node_modules` and two files `package.json` & `package-lock.json`.
 
 Next, you will write a simple Hello world app.
-Create an `index.js` file. Then add the code below to it.
+Create an `index.js` file and add the code below to it.
 
 
 ```js
@@ -56,7 +56,7 @@ app.listen(port, () => {
 
 Finally, you should run the server with a command that tells Node.js to run your Express sever:
 
-```node index.js```
+`node index.js`
 
 Opening `http://localhost:3000/` should return a "Hello World" message as expected.
 
@@ -67,7 +67,7 @@ In the next step, you will add an API endpoint to your server.
 ### Step 2 — Create a GET Endpoint
 In this step, you are going to create an endpoint that returns a list of all the movies stored in a JSON file.
 
-Consider that you have a JSON database of movies in a file named `movies.json` that lies in the same directory as your `index.js` file.
+Let's consider that you have a JSON database of movies in a file named `movies.json` that lies in the same directory as your `index.js` file.
 
 ```json
 [
@@ -116,11 +116,11 @@ app.listen(port, () => {
   });
 ```
 
-Next, start up the server by running ```node index.js```
+Next, start up the server by running `node index.js`
 
-Finally, opening ```http://localhost:3000/list_movies``` should return the same data found in the ```movies.json``` file, as expected.
+Finally, opening `http://localhost:3000/list_movies` should return the same data found in the `movies.json` file, as expected.
 
-Stop the server by pressing ```CTRL + C```.
+Stop the server by pressing `CTRL + C`.
 
 Congratulations!!! You have managed to build and locally serve a Node.js REST API built with Express!
 
@@ -131,15 +131,15 @@ In this step, you are going to use Ngrok to expose your localhost server to the 
 
 First, get the Express server up and running.
 
-Run ```node index.js```
+Run `node index.js`
 
 Next, you'll need to expose the port the server is running on.
 
-Which in our case is ```port 3000```.
+Which in our case is `port 3000`.
 
-To do this we need to run the ```ngrok``` executable.
+To do this we need to run the `ngrok` executable.
 
-In the directory where the ```ngrok``` executable is, run the command below:
+In the directory where the `ngrok` executable is, run the command below:
 
 ```bash
 ./ngrok http 3000
@@ -181,8 +181,8 @@ In the next step, you will use Postman to test out your server.
 ### Step 4 — Test Requests with Postman
 In this step, you are going to use Postman to make test requests to your running server.
 
-On Postman create a new request tab and make a GET call to your endpoint.\
-The endpoint is your ngrok URL followed by /list_movies.
+On Postman create a new request tab and make a GET call to your endpoint.
+The endpoint is your Ngrok URL followed by /list_movies.
 
 This should return the data from the movies.json as shown below.
 
@@ -206,15 +206,15 @@ GET /favicon.ico               404 Not Found
 GET /                          200 OK
 ```
 
-And there you have it. You managed to build a Node.js API server with Express, expose it to the internet with Ngrok and test it on Postman!
+And there you have it. You managed to build a Node.js API server with Express, exposed it to the internet with Ngrok and tested it on Postman!
 
-To get some more information on Postman - and how to create a mock server with Postman - visit [this article](https://www.section.io/engineering-education/guide-to-create-mock-server/).
+To get some more information on Postman - and how to create a mock server with Postman - visit [this article](/engineering-education/guide-to-create-mock-server/).
 
 Congratulations!!!
 
 You can find the code above on [GitHub](https://github.com/adrianmurage/dev_journal/tree/master/apps/javascript/nodejs_api).
 
-I encourage you to try to implement other request types and expand your API to add more functionality.
+I encourage you to try to implement other request types and expand your API to add more functionality to it.
 
 ### Citations & Resources
 [“Hello world example.” expressjs.com](https://expressjs.com/en/starter/hello-world.html)
