@@ -44,13 +44,14 @@ There are numerous applications of Blockchain in healthcare:
 With Blockchain, patients' treatment history can be tracked anywhere and at any time with no ambiguity, hence providing health practitioners a better context.
 
 _In Data Security: [Do you know that your medical data is worth more than your credit card number in the black market?](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561) According to a report by Protenus Breach Barometer, about 140 million patient health records were hacked between 2015 and 2016._
+
 >**Blockchain has the potential to keep private information safe and secure while still being accessible anywhere.**
 
 ***Medical Device Usage Tracking***
-The use of  medical devices such as electronic wearables have been on the rise, with new reports revealing that forty percent of medical patients use such devices to track their health. However, this makes it difficult to store all the  daily medical reports from devicse for each patients. This is another area where keeping blockchain records can help.
+The use of  medical devices such as electronic wearables have been on the rise, with new reports revealing that forty percent of medical patients use such devices to track their health. However, this makes it difficult to store all the  daily medical reports from devices for each patients. This is another area where keeping blockchain records can help.
 
 ***Drug Supply Chain Tracking***
-According to Hudson River Field Office (HRFO), over fifteen percent of drugs sold in developing countries are counterfeit. In addition, pharmaceutical companies lose about $200 billion annually due to counterfeiting. Blockchain can curb this trend with features like point-by-point, which tracks possibilities and proof of authenticity. This allows users to verify drug authenticity before purchase or consumption.
+According to Hudson River Field Office (HRFO), over fifteen percent of drugs sold in developing countries are counterfeit. In addition, pharmaceutical companies lose about 200 billion dollars annually due to counterfeiting. Blockchain can curb this trend with features like point-by-point, which tracks possibilities and proof of authenticity. This allows users to verify drug authenticity before purchase or consumption.
 
 ### Digital Identity
 ***Patient Identity Validation***
