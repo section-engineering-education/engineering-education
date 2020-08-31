@@ -12,7 +12,7 @@
   images:
 
     - url: /https://images.app.goo.gl/53Wo8TroqUuzF85i9
-      alt: Blockchain Health
+      alt: Stripe React Integration
   ---
 
 # Integrating Stripe with React
