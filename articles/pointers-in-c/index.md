@@ -90,7 +90,7 @@ myString[2] = '\0';
 *myString = 'H'; // myString is a pointer to the character 'H'
 ```
 ### Putting Your Knowledge to Use
-You've learned that pointers are memory addresses. Arrays use pointers, and we can dereference pointers to access elements of an array. Strings are arrays too, so we can manipulate them with pointers as well.  I recommend that you read *C Programming: A Modern Approach* by K. N. King for further reference. The book also has exercises and programs that you can test out.
+You've learned that pointers are memory addresses. Arrays use pointers, and we can dereference pointers to access elements of an array. Strings are arrays too, so we can manipulate them with pointers as well. I recommend that you read *C Programming: A Modern Approach* by K. N. King for further reference. The book also has exercises and programs that you can test out.
 
 ### Sources and Further Reading
 [C Programming: A Modern Approach by K. N. King](http://knking.com/books/c/)
