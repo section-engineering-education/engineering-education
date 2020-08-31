@@ -342,5 +342,4 @@ Agenda is a lightweight job queue-scheduling library for Node.js
 
 **Conclusion**
 
-As a node.js developer, many open-source frameworks will help you improve your skills to deliver professional applications that are light and reliable. If you happen to be a Node.js developer, the combination of using
-different frameworks in your app will explode you to another level and you cannot work without Node.js packages in your day-to-day dev Node development. **WISH YOU HAPPY CODING.**
+As a node.js developer, many open-source frameworks will help you improve your skills to deliver professional applications that are light and reliable. If you happen to be a Node.js developer, the combination of using different frameworks in your app will explode you to another level and you cannot work without Node.js packages in your day-to-day dev Node development. **WISH YOU HAPPY CODING.**
