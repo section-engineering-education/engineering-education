@@ -73,7 +73,7 @@ Note that we can also access any element *i* of the array by calling `myarray[i]
 ### Strings and Pointers
 There are two types of strings in C: *string literals* and *string variables*.
 
-String *literals* are of type `char *` since they point to the first character in the string. String literals never change, and they contain characters within double quotes.
+String *literals* are of the type `char *` since they point to the first character in the string. String literals never change, and they contain characters within double quotes.
 
 ```c
 char *a;
