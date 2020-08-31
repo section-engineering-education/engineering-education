@@ -2,7 +2,7 @@
 
 [Docker](https://www.docker.com/) allows us to run our applications as *containers*. A container is a standalone executable package which is lightweight and has everything needed to run an application be it libraries, tools, runtime, setting or code.
 
-In this tutorial, we will build a Node.js application, create an image and also build a container using the image. Enjoy!!!
+In this tutorial, we will build a Node.js application, create an image and also build a container using the image. Enjoy!
 
 
 # Dockerize the Node.js Application
@@ -22,23 +22,23 @@ In order to dockerize a Node.js Application we need to follow these steps:
 # Step 1 - Creating a Node.js Application
 
 First, we will start by creating a directory for our project then install some dependencies for our simple Hello World Website.
-```
+```Bash
  mkdir node-web-app
  cd node-web-app
 ```
 
-### Install NPM and Express Framework
+## Install NPM and Express Framework
 
-Install npm and install the express framework, which is one of Node.js frameworks. Initialize npm in our directory.
+Install npm and express framework, which is a Node.js framework. Then, initialize npm in our directory.
 ```
  npm init
 ```
-NPM creates a `package.json` that holds the dependencies of the app. Install the express framework dependency.
+npm creates a `package.json` that holds the dependencies of the app. Next, install the express framework dependency.
 ```
  npm install express --save
 ```
 Result:
-```
+```js
 {
   "name": "web-app",
   "version": "1.0.0",
@@ -56,8 +56,8 @@ Result:
 }
 
 ```
-Create `app.js` file with an http server that will set up the Hello World site:
-```
+Create a `app.js` file with an HTTP server that will set up the Hello World site:
+```js
 //Load express module with `require` directive
 var express = require('express')
 var app = express()
@@ -73,13 +73,13 @@ app.listen(8080, function () {
 })
 ```
 
-### Run the application
+### Run The Application
 
 The app is ready to launch:
 ```
 $ node app.js
 ```
-Go to `http://localhost:8080/` in your browser to view it
+Go to `http://localhost:8080/` in your browser to view it.
 
 # Step 2 - Create A DockerFile
 
@@ -89,7 +89,7 @@ The first thing is to define which image we want to build from. Here we will use
 ```
 FROM node:9
 ```
-Next is to create the working directory for your application
+Next, create the working directory for your application
 ```
 # Create app directory
 WORKDIR /app
@@ -112,7 +112,7 @@ Expose 8080
 CMD ["npm", "start"]
 ```
 Your `Dockerfile` should look like this:
-```
+```Bash
 FROM node:9
 
 # Create app directory
@@ -131,20 +131,20 @@ Expose 8080
 
 CMD ["npm","start"]
 ```
-*NB: Above you will notice we have two distinct COPY command was used to reduce the application rebuild time*
+*NB: Above you will notice we used two distinct COPY command to reduce the application rebuild time*
 
-### .dockerignore file
+## .dockerignore file
 
-Create a `.dockerignore` file in the directory so as not to copy unneccessary files to the container:
+Create a `.dockerignore` file so as not to copy unneccessary files to the container:
 ```
 node_modules
 npm-debug.log
 ```
-This prevents local module and debugs logs from being copied onto your Docker image.
+This prevents the local module and debug logs from being copied onto your Docker image.
 
 # Step 3 - Building your Docker Image
 
-Building your Docker image is quiet easy and can be done using a simple command.
+Building your Docker image is quite easy and can be done using a single command.
 ```
 docker build -t <docker-image-name> <filepath>
 ```
@@ -232,7 +232,7 @@ CONTAINER ID        IMAGE                        COMMAND                CREATED 
 34fe3040ff6b        cisca                        "npm start"            About a minute ago   Exited (1) About a minute ago        0.0.0.0:8080->8080/tcp                    intelligent_hofstadter
 ```
 
-This tutorial has helped you with the basics of running a simple Node.js application using Docker especially using a Dockerfile to build a Docker image.
+This tutorial has helped you with the basics of running a simple Node.js application using Docker and using a Dockerfile to build a Docker image.
 
 ## Resources
 
