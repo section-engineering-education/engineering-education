@@ -251,5 +251,5 @@ An FFI (foreign function interface) can be boiled down to: if you want to talk w
 - [Intel MPX Linux AMD64 ABI](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf)
 - [C++ ISO Standard](https://isocpp.org/files/papers/n4296.pdf)
 - [ABI section in Rust Reference](https://doc.rust-lang.org/stable/reference/abi.html)
-
+---
 Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
