@@ -94,3 +94,6 @@ You've learned that pointers are memory addresses. Arrays use pointers, and we c
 
 ### Sources and Further Reading
 [C Programming: A Modern Approach by K. N. King](http://knking.com/books/c/)
+
+---
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
