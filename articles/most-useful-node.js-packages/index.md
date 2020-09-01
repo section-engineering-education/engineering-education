@@ -182,7 +182,7 @@ From the above example
 
 **Other MySQL and helpers frameworks include:**
 -   [`Sequelize`](https://www.npmjs.com/package/sequelize) - promised based Node.js ORM for Postgres, MySQL, Maria DB, SQLite, and Microsoft SQL Server.
--   [`Knex.js`](https://knexjs.org/) - Designed to be flexible, portable and fun to run for MSSAL, MySQL, and Oracle, MariaDB, SQLite3 and Amazon Redshift.
+-   [`Knex.js`](https://knexjs.org/) - Designed to be flexible, portable and fun to run for MSSAL, MySQL, Oracle, MariaDB, SQLite3 and Amazon Redshift.
 
 **Check [`MongoDB and helpers`](https://www.mongodb.com/) frameworks**
 -   [`Mongoose`](https://www.npmjs.com/package/mongoose) - MongoDB object modeling tool designed to work in an asynchronous environment.
@@ -294,9 +294,8 @@ async function main() {
 }
 main().catch(console.error);
 ```
-[`Express-Mailer`](https://github.com/RGBboy/express-mailer) - It is a similar module to Nodemailer used to send emails from your application and response object.
+[`Express-Mailer`](https://github.com/RGBboy/express-mailer) is a similar module to Nodemailer used to send emails from your application and response object.
 ### 14. Gulp
-
 It is a toolkit to automate slow, repetitive tasks that are time-consuming in Node.js development workflow. These tasks include cache-busting, optimization, concatenation, minifying files, etc.
 
 **Why Gulp:**
