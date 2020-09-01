@@ -57,7 +57,13 @@ addr:  0123456789abcdef
 value: aaaaxxxxbbbbbbbb
 ```
 
-Most ABIs require the alignment of primitive types to be the same as the size ([table1](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#figure.3.1), [table2](https://gankra.github.io/blah/rust-layouts-and-abis/#the-layoutsabis-of-builtins)).
+Most ABIs require the alignment of primitive types to be the same as the size
+
+![Table 1](/engineering-education/what-is-an-abi/table1.JPG)
+*[Image Source](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#figure.3.1)*
+
+![Table 2](/engineering-education/what-is-an-abi/table2.JPG)
+*[Image Source](https://gankra.github.io/blah/rust-layouts-and-abis/#the-layoutsabis-of-builtins)*
 
 ### Structs
 Like alignment, structs have a similar concept for the data in them. This is to say that structs also have their own alignment so that the data in them can have the alignment they require. We can think about each struct as containing their own space of memory where everything in them is aligned relative to the start of the struct. We call this memory address relative to the start the offset of a field in the struct. Let's look at an example.
