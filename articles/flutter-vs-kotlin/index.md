@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/flutter-vs-kotlin/hero.jpg
     alt: Kotlin vs Flutter image example
 ---
-Let us continue from where we left off in the previous article [*Introduction to C++*](/engineering-education/intro-to-c-part1/). That article started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward.
 <!--more-->
 Mobile application development has become an essential part of the software business in recent years. Previously, people used to prefer ReactNative or Flutter to develop cross-platform applications due to their low-cost features. But today, Kotlin has managed to enter into the world of cross-platform development.
 
