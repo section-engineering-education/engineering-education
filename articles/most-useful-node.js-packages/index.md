@@ -1,6 +1,6 @@
 ## Most Useful Node.js Packages That you need to Know
 The power of Node.js is backed by open-source frameworks that form the ecosystem of JavaScript. As a Node.js developer, it is practically impossible to constantly avoid their advantage. With the help of Node.js packages, as a developer, you will conclusively save a lot of time and develop applications that are light, scalable and high speed with tremendous productivity.
-Let's have a look at the packages that will assist you to extend your inclination to Node.js development skills.
+Let's have a look at packages that will assist you to extend your Node.js development skills.
 ### 1. Express
 Express.js is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexibly designed for building simple page, multipage and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and APIs with robust tooling for HTTP servers. Node.js frameworks such as [`Sails`](https://www.npmjs.com/package/sails), [`Hapi`](https://www.section.io/engineering-education/introduction-to-hapi/) and [`NestJS`](https://nestjs.com/) are built on Express. Express is available on the NPM registry.
 
@@ -35,7 +35,7 @@ async function myFunction(inputValue) {
     }
 }
 ```
-In this scenario, we can see it is obvious that functions 1 , 2 and 4 are asynchronous.
+In this scenario, functions 1 , 2 and 4 are asynchronous.
 
 **Other Frameworks related to AsyncJS include**
 -   [`Limiter`](https://www.npmjs.com/package/limiter) - Used for rate-limiting based on request per `sec/hr`.
@@ -137,7 +137,7 @@ As a Node.js developer, you need to do more testing to your application to make 
 
 **Why you should choose karma**
 -   Tests code in real browsers.
--   Test code is multiple browsers (desktop, mobile phones and tablets).
+-   Test code in multiple browsers (desktop, mobile phones and tablets).
 -   It tests on real devices such as mobile phones, tablets or even a headless phantomJS.
 -   Control the whole testing workflow from your command or IDE.
 -   It executes tests locally during development.
@@ -202,7 +202,7 @@ It is a Node.js web service framework, which is optimized for building semantic 
 -   **Debuggable** - Trace problems back to the origin. It is built from a post-mortem debugging perspective.
 -   **Semantically correct** - It has references littered all-over GitHub and the codebase.
 
-**Examples of simple Restify practice**
+**Restify examples**
 #### i. SERVER
 ```js
 var restify = require('restify');
