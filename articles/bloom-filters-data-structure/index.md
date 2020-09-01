@@ -6,7 +6,7 @@ url: /engineering-education/bloom-filters-data-structure/
 title: Bloom Filters - An Introduction
 description: Covering the basics of hashing, bloom filters, and the applications of this data structure. Hashing was developed to optimally store and retrieve data.
 author: lalithnarayan-c
-date: 2020-08-26T00:00:00-15:00
+date: 2020-09-01T00:00:00-13:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
