@@ -5,7 +5,7 @@
   url: /engineering-education/stripe-integration-react/
   title: Integrating Stripe with React
   description: Learn how to create a Stripe account and integrate Stripe Payment with your React project.
-  author: lalith-narayan
+  author: lalithnarayan-c
   date: 2020-08-24T00:00:00-10:00
   topics: [Stripe][React][Web Development]
   excerpt_separator: <!--more-->
@@ -132,11 +132,13 @@ To resolve the error, you may enter your public API key.
 
 To verify that the application is in test mode, you will get an alert on the top right corner as shown. 
 
-### Conclusion
-
-We have walked through the entire process of accepting payments with Stripe. After setting up an account and obtaining API keys, we are able to integrate it seamlessly into our application. Stripe has made payments easy and we encourage you to build your applications with integrated payment gateways.
-
 ### Additional Resources
 
 1. [Stripe Documentation](https://stripe.com/docs/api)
 2. Detailed description of [transaction process.](https://en.wikipedia.org/wiki/Payment_gateway) 
+3. React Boilerplate with Stripe integration [code](https://github.com/shreeramneupane/reactstripe)
+
+### Conclusion
+
+We have walked through the entire process of accepting payments with Stripe. After setting up an account and obtaining API keys, we are able to integrate it seamlessly into our application. Stripe has made payments easy and we encourage you to build your applications with integrated payment gateways.
+
