@@ -51,13 +51,13 @@ If already registered, log in to your dashboard with your credentials.
 
 ### Switch to Test Mode on Stripe
 
-This step is important to ensure we are in testing mode. This enables us to test aspects of payments such as receiving payments, sending payments, or approving refunds. On the bottom left of your dashboard, you should find the *Viewing test data* button. Enable that by toggling the button provided. The dashboard is shown for your reference.
+This step is important to ensure we are in testing mode. This enables us to test aspects of payments such as receiving payments, sending payments, or approving refunds. On the bottom left of your dashboard, you should find the **Viewing test data** button. Enable that by toggling the button provided. The dashboard is shown for your reference.
 
 ![Dashboard View](dashboard.jpg)
 *Dashboard View*
 
 ### Obtain Stripe Access Token 
-You will find a section called `Get your test API keys`. Under there, you will find two keys, a **Publishable key**, and a **secret key**. As the name suggests, we need to keep these keys secure. The publishable key is used to send requests, whereas the secret key is stored in the `.env` file at the backend.
+You will find a section called `Get your test API keys`. Under there, you will find two keys, a **Publishable key**, and a **Secret key**. As the name suggests, we need to keep these keys secure. The publishable key is used to send requests, whereas the secret key is stored in the `.env` file at the backend.
 
 ![API Test Keys](api_test_keys.jpg)
 *API Keys on Dashboard*
@@ -71,7 +71,7 @@ Install the library using the following command:
 npm install react-stripe-checkout
 ```
 
-Once installed, create a new component called *CheckoutWithStripe.js* and add it to your main component list. Insert the appropriate details and create your custom functions to add more details to the API call. 
+Once installed, create a new component called `CheckoutWithStripe.js` and add it to your main component list. Insert the appropriate details and create your custom functions to add more details to the API call. 
 
 Here is an example function that you can modify using your custom store details:
 
@@ -120,6 +120,7 @@ Call the component `CheckoutWithStripe` from the payment page.
 
 You should see a button which says `Pay With Card`. An example is given below.
 ![Paywithcard stripe](/articles/stripe-integration-react/paywithcard.jpg)
+*Intermediate Output*
 
 Finally, a dialog box should appear to enter card details:
 
