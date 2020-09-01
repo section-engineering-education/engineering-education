@@ -35,7 +35,7 @@ In this step, you will write up an Express server with Node.js and run it locall
 First, Setup [Express](http://expressjs.com/en/starter/installing.html).
 After the setup you should have one directory `node_modules` and two files `package.json` & `package-lock.json`.
 
-Next, you will write a simple Hello world app.
+Next, you will write a simple "Hello World" app.
 Create an `index.js` file and add the code below to it.
 
 
@@ -116,7 +116,7 @@ app.listen(port, () => {
   });
 ```
 
-Next, start up the server by running `node index.js`
+Next, start up the server by running `node index.js`.
 
 Finally, opening `http://localhost:3000/list_movies` should return the same data found in the `movies.json` file, as expected.
 
@@ -133,11 +133,9 @@ First, get the Express server up and running.
 
 Run `node index.js`
 
-Next, you'll need to expose the port the server is running on.
+Next, you'll need to expose the port the server is running on, which in our case is `port 3000`.
 
-Which in our case is `port 3000`.
-
-To do this we need to run the `ngrok` executable.
+To do this, we need to run the `ngrok` executable.
 
 In the directory where the `ngrok` executable is, run the command below:
 
@@ -160,7 +158,7 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
                               0       0       0.00    0.00    0.00    0.00
 ```
 
-The snippet above might be a little overwhelming but once we break it down you'll feel significantly more comfortable with it.
+The snippet above might be a little overwhelming, but once we break it down you'll feel significantly more comfortable with it.
 
 The first thing you need to note is the URLs to the right of the word "Forwarding".
 
@@ -170,9 +168,9 @@ The only difference is one (HTTPS) uses the [SSL protocol](https://www.ibm.com/s
 
 The next thing to note is the URL to the right of "Web Interface" which is a web variant of what you see above.
 
-The next thing is the counter to the right of "Session Expires" which is how long the exposed URLs will be valid for if you don't stop the Ngrok service.
+Then, you see the counter to the right of "Session Expires", which is how long the exposed URLs will be valid if you don't stop the Ngrok service.
 
-Finally, once you start making requests to the server a listing of every request will appear under the heading "HTTP Requests".
+Finally, once you start making requests to the server, a listing of every request will appear under the heading "HTTP Requests".
 
 You are now ready to test out your server!!!
 
@@ -181,8 +179,8 @@ In the next step, you will use Postman to test out your server.
 ### Step 4 — Test Requests with Postman
 In this step, you are going to use Postman to make test requests to your running server.
 
-On Postman create a new request tab and make a GET call to your endpoint.
-The endpoint is your Ngrok URL followed by /list_movies.
+On Postman, create a new request tab and make a GET call to your endpoint.
+The endpoint is your Ngrok URL followed by `/list_movies`.
 
 This should return the data from the movies.json as shown below.
 
