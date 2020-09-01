@@ -11,7 +11,7 @@
   excerpt_separator: <!--more-->
   images:
 
-    - url: /https://images.app.goo.gl/53Wo8TroqUuzF85i9
+    - url: /engineering-education/stripe-integration-react/hero.jpg
       alt: Stripe React Integration
   ---
 
@@ -118,7 +118,8 @@ export default CheckoutWithStripe
 
 Call the component `CheckoutWithStripe` from the payment page. 
 
-You should see a button which says `Pay with the card`.
+You should see a button which says `Pay With Card`. An example is given below.
+![Paywithcard stripe](/articles/stripe-integration-react/paywithcard.jpg)
 
 Finally, a dialog box should appear to enter card details:
 
@@ -134,3 +135,8 @@ To verify that the application is in test mode, you will get an alert on the top
 ### Conclusion
 
 We have walked through the entire process of accepting payments with Stripe. After setting up an account and obtaining API keys, we are able to integrate it seamlessly into our application. Stripe has made payments easy and we encourage you to build your applications with integrated payment gateways.
+
+### Additional Resources
+
+1. [Stripe Documentation](https://stripe.com/docs/api)
+2. Detailed description of [transaction process.](https://en.wikipedia.org/wiki/Payment_gateway) 
