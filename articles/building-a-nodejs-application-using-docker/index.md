@@ -5,7 +5,7 @@
 In this tutorial, we will build a Node.js application, create an image and also build a container using the image. Enjoy!
 
 
-# Dockerize the Node.js Application
+## Dockerize the Node.js Application
 
 To start this tutorial, we need to make sure Docker and [Node.js](https://nodejs.org/en/download/package-manager/) is installed on our system. If Docker is not, you can refer to the links below to download:
 - [Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntu/)
@@ -19,7 +19,7 @@ In order to dockerize a Node.js Application we need to follow these steps:
 - Building your Docker Image
 - Expose
 
-# Step 1 - Creating a Node.js Application
+## Step 1 - Creating a Node.js Application
 
 First, we will start by creating a directory for our project then install some dependencies for our simple Hello World Website.
 ```bash
@@ -27,7 +27,7 @@ First, we will start by creating a directory for our project then install some d
  cd node-web-app
 ```
 
-## Install NPM and Express Framework
+## Install npm and Express Framework
 
 Install npm and express framework, which is a Node.js framework. Then, initialize npm in our directory.
 ```
@@ -81,7 +81,7 @@ $ node app.js
 ```
 Go to `http://localhost:8080/` in your browser to view it.
 
-# Step 2 - Create A DockerFile
+## Step 2 - Create A DockerFile
 
 Create a file in the directory called `Dockerfile`
 
@@ -142,7 +142,7 @@ npm-debug.log
 ```
 This prevents the local module and debug logs from being copied onto your Docker image.
 
-# Step 3 - Building your Docker Image
+## Step 3 - Building your Docker Image
 
 Building your Docker image is quite easy and can be done using a single command.
 ```
@@ -206,7 +206,7 @@ cisca                         latest              faa3092e5595        4 minutes 
 node                          12-alpine           08a8c8089ab1        2 weeks ago         673MB
 ```
 
-# Step 4 - Run a Container
+## Step 4 - Run a Container
 
 Now we can run the docker image using the command:
 ```
