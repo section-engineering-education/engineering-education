@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/pointers-in-c/hero.jpg
     alt: c pointers c++ variable
 ---
-Pointers are common in the C programming language. Since C does not have built-in [arrays](https://en.wikipedia.org/wiki/Array_data_structure) and [strings](https://en.wikipedia.org/wiki/String_(computer_science), programmers use pointers instead. This article will give you a basic introduction to what pointer variables are.
+Pointers are common in the C programming language. Since C does not have built-in [arrays](https://en.wikipedia.org/wiki/Array_data_structure) and strings, programmers use pointers instead. This article will give you a basic introduction to what pointer variables are.
 <!--more-->
 
 ### An Introduction to Pointers
