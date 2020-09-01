@@ -27,7 +27,7 @@ First, we will start by creating a directory for our project then install some d
  cd node-web-app
 ```
 
-## Install npm and Express Framework
+## Install npm And Express Framework
 
 Install npm and express framework, which is a Node.js framework. Then, initialize npm in our directory.
 ```
@@ -83,29 +83,29 @@ Go to `http://localhost:8080/` in your browser to view it.
 
 ## Step 2 - Create A DockerFile
 
-Create a file in the directory called `Dockerfile`
+Create a file in the directory called `Dockerfile`.
 
 The first thing is to define which image we want to build from. Here we will use version `9` of `node` available from Docker Hub:
 ```
 FROM node:9
 ```
-Next, create the working directory for your application
+Next, create the working directory for your application.
 ```
 # Create app directory
 WORKDIR /app
 ```
-Install the app dependencies using the `npm` binary
+Install the app dependencies using the `npm` binary.
 ```
 # Install app dependencies
 COPY package*.json ./
 
 RUN npm install
 ```
-Copy the rest of the application to the app directory
+Copy the rest of the application to the app directory.
 ```
 COPY /app
 ```
-Expose the port and start the application
+Expose the port and start the application.
 ```
 Expose 8080
 
