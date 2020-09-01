@@ -22,7 +22,7 @@ In order to dockerize a Node.js Application we need to follow these steps:
 # Step 1 - Creating a Node.js Application
 
 First, we will start by creating a directory for our project then install some dependencies for our simple Hello World Website.
-```Bash
+```bash
  mkdir node-web-app
  cd node-web-app
 ```
@@ -112,7 +112,7 @@ Expose 8080
 CMD ["npm", "start"]
 ```
 Your `Dockerfile` should look like this:
-```Bash
+```bash
 FROM node:9
 
 # Create app directory
