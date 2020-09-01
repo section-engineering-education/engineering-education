@@ -1,32 +1,44 @@
-# FLUTTER VS KOTLIN
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/flutter-vs-kotlin/
+title: Flutter vs. Kotlin
+description: This article goes over a comparison of Flutter and Kotlin - talking the advantages and disadvantages of both.
+author: Bavneet Singh
+date: 2020-09-01T00:00:00-12:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
-Mobile application development has become an essential part of the business in recent years. Previously, people used to prefer ReactNative or Flutter to develop cross-platform applications due to their low-cost features. But today, Kotlin has managed to enter into the world of cross-platform development. 
+  - url: /engineering-education/flutter-vs-kotlin/hero.jpg
+    alt: Kotlin vs Flutter image example
+---
+Let us continue from where we left off in the previous article [*Introduction to C++*](/engineering-education/intro-to-c-part1/). That article started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward.
+<!--more-->
+Mobile application development has become an essential part of the software business in recent years. Previously, people used to prefer ReactNative or Flutter to develop cross-platform applications due to their low-cost features. But today, Kotlin has managed to enter into the world of cross-platform development.
 
-Everyone used to prefer React Native for their cross-platform app development but not any longer. Because Flutter has been improved a lot since the past years, it now provides better features than ReactNative. And Kotlin has entered the competition as well.
+Since Flutter has been improved a lot in the past years, it now provides better features than ReactNative.  Kotlin has also entered the space of cross-platform development as well.
 
-For this article, we will be comparing the new languages for cross-platform development. The primary purpose of the article was to help developers distinguish the best cross-development platform for them, depending on their needs and skills.
+In this article, we will be comparing the new languages for cross-platform development. The primary goal of this article is to help developers distinguish the best cross-development platform for them, depending on their needs and skills.
 
 ### PERFORMANCE
+When it come to mobile app development, both Kotlin and Flutter are each superb with some distinctions. Kotlin can compile the code and customize it to the best needs of its user as well as the native apps.
 
-For both Kotlin and Flutter, mobile app development is superb with some distinctions. Kotlin can compile the codes and customize it to the best satisfaction of its users as well as the native apps. 
+Flutter allows reloading functionality, giving the developer a choice of selection if all the different elements are performing well.
 
-Flutter allows reloading functionality, giving a choice of selection if all the different elements are performing okay. 
-
-Developers describe Flutter as the most popular cross-platform mobile framework. Kotlin, however, is described as a statistical-type programming language.
+Developers describe Flutter as one of the most popular cross-platform mobile framework. Kotlin, however, is described as a statistical-type programming language.
 
 ### LANGUAGE
+The main advantage of Kotlin is that its programming language is quite similar to Java. Developers who have worked with Java will find it much easier to work with Kotlin. On the other hand, Flutter uses Dart from Google. Although Dart is remarkably used, it is easier to understand and operate.
 
-The main advantage of Kotlin is that its programming language is quite similar to Java. Developers who have worked with Java find it much easier to work with Kotlin. On the other hand, Flutter uses Dart from Google. Although Dart is remarkably used, it is easier to understand and operate.
-
-### PRICE AND TESTING 
-
+### PRICE AND TESTING
 Both Kotlin and Flutter are free, but the real difference occurs in testing support. While Kotlin tends to support backend development, Flutter works on extensive testing features.
 
 ### UI SUPPORT
-
 Kotlin multi-platform has a unique distinction of lending a freehand to the UI developer to make an app without restrictions and make a truly customized app. On the other hand, Developers can take the help of widgets if they are working with Flutter, which also helps in customized solutions.
 
-### PROS OF KOTLIN 
+### PROS OF KOTLIN
 
 Kotlin is an SDKs, so it is not necessary to shift the complete app to the platform. Due to its similarities with Java, developers find it easier to get a hand on it and use a multi-frame to design a cross-platform app. Since UI creation is not restricted, Developers have the freedom to work on any aspect of the app.
 
@@ -58,7 +70,7 @@ The language Dart used in Flutter is still not common in the industry, which bec
 
 ### COMPANIES USING FLUTTER
 
-According to the [Flutter's Website](https://flutter.dev/showcase) some of the most prominent companies using Flutter are: 
+According to the [Flutter's Website](https://flutter.dev/showcase) some of the most prominent companies using Flutter are:
 
 * GoogleAds - The Google Ads app helps users manage, optimize, and track ad campaigns all from the convenience of an android device.
 
@@ -79,4 +91,3 @@ Both languages are designed to suit the developer's needs and are the most used 
 Both languages are said to be the hottest up-and-coming developments of the mobile application industry.
 
 There is no ultimate winner between both languages. But, it depends on the needs and skills of the programmer. Sometimes the advantages of any framework best suit developers' needs. But, those advantages can be useless for other developers if they lack the skills.
-
