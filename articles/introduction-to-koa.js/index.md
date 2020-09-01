@@ -14,19 +14,19 @@ images:
   - url: /engineering-education/introduction-to-koajs/hero.jpg
     alt: koa koajs javascript JavaScript node nodejs node.js framework
 ---
-In my previous article, an introduction to the [hapi.js framework](https://www.section.io/engineering-education/introduction-to-hapi/), I mentioned [Koa.js](https://www.koajs.com), another major node.js framework. This article will give an introduction to the framework, its features and a tutorial of how to create a simple server using this framework.
+In my previous article, about an introduction to [hapi.js framework](https://www.section.io/engineering-education/introduction-to-hapi/), I mentioned [Koa.js](https://www.koajs.com), another major node.js framework. This article will give an introduction to the framework, its features and a tutorial of how to create a simple server using this framework.
 <!--more-->
 ### What is Koa.js?
-Koa.js is an open source node.js web framework developed and maintained by the team behind express. This framework was build with the aim of making a smaller, more expressive and more robust foundations for web applications and Apis. Koa uses asycn functions that help eliminate callbacks and greatly increase error handling. Koa does not bundle midlewares within its core, and provides a refined suite of methods that make writing servers fast and exciting.
+Koa.js is an open source node.js web framework that was designed by the team behind express. This framework was build with the aim of making smaller, more expressive and robust foundations for web applications and APIs. Koa uses asycnchronus functions to help eliminate the need for callbacks and significantly improve error handling. Koa does not bundle midlewares within its core, and provides a refined suite of methods that fasten the process of making servers and makes it exciting.
 
 ### Koa.js features
-As it is with all frameworks available, Koa.js also has its own unique features that make it work as intended by the developers. 
-Below is a highlight of some of the features.
-1. Koa.js is modern and futuristic - Unlike other Node.js frameworks, Koa.js is built based on ECMAScript 2015 specification which simplifies development of complex applications by providing a bunch of new classes and modules. This helps developers to create maintainable applications.
-2. Koa.js uses ECMAScript 6 generators to simplify synchronous programming and facilitate both upstream and downstream flow of controls. This generators can also be used as functions to stop and resume code execution on the same stack
+As it is with all available frameworks, Koa.js also has its own unique features that make it more expressive and developer-friendly.
+Here are a highlight of some of the features in Koa.
+1. Koa.js is modern and future-proof - Unlike other Node.js frameworks, Koa.js build is based on ES6 which makes development of complex applications simpler by providing a bunch of new classes and modules. This helps developers to create maintainable applications.
+2. Koa.js uses ES6 generators to simplify synchronous programming and facilitate flow of controls. This generators can also be used as functions to control code execution on the same stack
 3. Koa.js has a small footprint as compared to other Node.js frameworks. This helps developers to write thinner and better middlewares.
-4. Koa.js has a built-in catchall for errors that help prevent website crashes. It also simplifies and improves error handling by using middlewares more effectively.
-5. Koa.js encapsulates request and response objects into a single object using Context. This helps developers to build web applications efficiently by using a number of helpful methods and accessors.
+4. Koa.js has a built-in catchall for errors that help prevent website crashes.
+5. Koa.js uses a Context object which is an encapsulation of request and response objects.
 
 ### Who uses Koa.js
 Many companies use Koa.js framework for their websites and web APIs.
