@@ -255,14 +255,16 @@ Generally, everything is the same with exception to Aggregate type-kinds. [Exper
 Like for struct, you can tell Rust to conform to C's ABI's calling convention by prepending `extern "C"` to the function. If you want to play around with Rust's calling conventions I also made an "interactive" example [here](https://repl.it/@ZackJorquera/rust-calling-conventions).
 
 
-# Foreign Function Interface
+### Foreign Function Interface
 
 All the heavy lifting is already done, so pat your self on that back for that one.
 
 An FFI (foreign function interface) can be boiled down to: if you want to talk with another language then you have to play by its rules (defined by its ABI). Luckily, Rust gives you a lot of the tools need to do this like the `#repr(C)` tag and the `extern "C"` function modifier, to name a few.
 
-# Sources and Further reading
+### Sources and Further reading
 - [Notes on Type Layouts and ABIs in Rust](https://gankra.github.io/blah/rust-layouts-and-abis)
 - [Intel MPX Linux AMD64 ABI](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf)
 - [C++ ISO Standard](https://isocpp.org/files/papers/n4296.pdf)
 - [ABI section in Rust Reference](https://doc.rust-lang.org/stable/reference/abi.html)
+
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
