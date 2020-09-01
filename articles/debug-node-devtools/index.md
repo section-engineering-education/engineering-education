@@ -37,7 +37,7 @@ Although Node comes with a [built-in debugger](https://nodejs.org/api/debugger.h
 
 By the end of this article, you will be able to debug your Node app in 4 easy steps.
 
-### Step 1 -- Setting up your app for debugging.
+### Step 1 -- Set up your app for debugging.
 
 ### 1.a -- Set up a local app for debugging.
 
@@ -86,7 +86,7 @@ To open DevTools dedicated to Node.js debugging, click **Open dedicated DevTools
 
 ![opening devtools](open-dev-tools.gif)
 
-### Step 3 -- Setting breakpoints.
+### Step 3 -- Set breakpoints.
 
 To debug your app, navigate to the **Sources** tab. This is where you will be editing your code. Expand the file tree on the left and click the file you want to debug. The selected file opens in the central part of the sources tab. You can open multiple files for debugging. 
 
