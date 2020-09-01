@@ -218,3 +218,6 @@ I encourage you to try to implement other request types and expand your API to a
 [“Hello world example.” expressjs.com](https://expressjs.com/en/starter/hello-world.html)
 
 [“RESTful Web Services - Introduction.”](https://www.tutorialspoint.com/restful/restful_introduction.htm)
+
+---
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
