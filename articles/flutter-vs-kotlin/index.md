@@ -46,44 +46,40 @@ Very few built-in widgets and libraries are available for developers as Kotlin i
 
 ### COMPANIES USING KOTLIN
 
-* Chalk
+- Chalk
 
-* AutoDesk
+- AutoDesk
 
-* Careem
+- Careem
 
-* Yandex
+- Yandex
 
-* Quizlet
+- Quizlet
 
-* TouchLab
+- TouchLab
 
 ### PROS OF FLUTTER
-
 The operating cost and development charges of Flutter are significantly lower than Kotlin. Hot reload functionality of Flutter mobile app development is an important feature. Customized facilities can be easily developed due to a large number of inbuilt widgets.
 
 ### CONS OF FLUTTER
-
 The language Dart used in Flutter is still not common in the industry, which becomes an obstacle for Developers as one needs to learn a new language to develop apps in Flutter. The framework size of Dart is quite large. Thus, the apps are much bigger, which is detrimental to app development in Flutter today.
 
 ### COMPANIES USING FLUTTER
-
 According to the [Flutter's Website](https://flutter.dev/showcase) some of the most prominent companies using Flutter are:
 
-* GoogleAds - The Google Ads app helps users manage, optimize, and track ad campaigns all from the convenience of an android device.
+- GoogleAds - The Google Ads app helps users manage, optimize, and track ad campaigns all from the convenience of an android device.
 
-* Groupon - Groupon uses Flutter to help hundreds of thousands of merchants track campaign performance, manage customer satisfaction, and get efficient support.
+- Groupon - Groupon uses Flutter to help hundreds of thousands of merchants track campaign performance, manage customer satisfaction, and get efficient support.
 
-* Square - The Flutter plugin for our Square Reader SDK enables developers to build apps for merchants that take in-person payments.
+- Square - The Flutter plugin for our Square Reader SDK enables developers to build apps for merchants that take in-person payments.
 
-* eBay - The eBay Motors app is a powerful tool for browsing, buying, and selling vehicles directly from consumer's phones.
+- eBay - The eBay Motors app is a powerful tool for browsing, buying, and selling vehicles directly from consumer's phones.
 
-* Alibaba - Alibaba, the world's biggest online commerce company, used Flutter to create a beautiful app experience for iOS and Android on their Xianyu app.
+- Alibaba - Alibaba, the world's biggest online commerce company, used Flutter to create a beautiful app experience for iOS and Android on their Xianyu app.
 
-* Phillips - Flutter brought intuitive controls to Philips Hue apps, allowing users to set the mood and sync their smart lights to their media quickly and easily.
+- Phillips - Flutter brought intuitive controls to Philips Hue apps, allowing users to set the mood and sync their smart lights to their media quickly and easily.
 
 ### SUMMARY
-
 Both languages are designed to suit the developer's needs and are the most used languages for cross-platform development. Both these platforms are known to be reliable. They aim at decreasing the time and expense of the app development and offer improved app performance.
 
 Both languages are said to be the hottest up-and-coming developments of the mobile application industry.
