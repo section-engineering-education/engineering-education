@@ -36,15 +36,13 @@ The main advantage of Kotlin is that its programming language is quite similar t
 Both Kotlin and Flutter are free, but the real difference occurs in testing support. While Kotlin tends to support backend development, Flutter works on extensive testing features.
 
 ### UI SUPPORT
-Kotlin multi-platform has a unique distinction of lending a freehand to the UI developer to make an app without restrictions and make a truly customized app. On the other hand, Developers can take the help of widgets if they are working with Flutter, which also helps in customized solutions.
+Kotlin as a multi-platform development tool has a unique distinction of lending a freehand to the UI developer to make an app without restrictions and make a truly customized app. On the other hand, developers can take the help of widgets if they are working with Flutter, which also helps in customized solutions.
 
 ### PROS OF KOTLIN
-
-Kotlin is an SDKs, so it is not necessary to shift the complete app to the platform. Due to its similarities with Java, developers find it easier to get a hand on it and use a multi-frame to design a cross-platform app. Since UI creation is not restricted, Developers have the freedom to work on any aspect of the app.
+Kotlin is an SDK, so it is not necessary to shift the complete app to the platform. Due to its similarities with Java, developers find it easier to get a hand on it and use a multi-frame to design a cross-platform app. Since UI creation is not restricted, Developers have the freedom to work on any aspect of the app.
 
 ### CONS OF KOTLIN
-
-Very few in build widgets and libraries are there for developers as Kotlin is still new in the market and is still growing. Once the date-time library comes, the situation will improve. The development cost is quite high, and it will eventually be dearer in the long run. According to [HiddenBrains](https://www.hiddenbrains.com/blog/kotlin-vs-flutter-rule-android.html), The app developer must have highly developed skills to understand each platform and use API to handle Kotlin better.
+Very few built-in widgets and libraries are available for developers as Kotlin is still new on the market and is still growing. Once the date-time library arrives, the situation will improve. The development cost is quite high as well, and it will eventually be dearer in the long run. According to [HiddenBrains](https://www.hiddenbrains.com/blog/kotlin-vs-flutter-rule-android.html), the app developer must have highly developed skills to understand each platform and use APIs to handle Kotlin well.
 
 ### COMPANIES USING KOTLIN
 
