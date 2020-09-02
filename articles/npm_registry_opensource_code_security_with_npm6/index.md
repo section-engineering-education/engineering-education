@@ -116,7 +116,7 @@ As a developer, you spend much less time between pushing a new build and continu
 As you may have noticed, we have introduced
 [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
 and we need to know what it is and what it does. [npx](https://www.npmjs.com/package/npx) is an NPM package runner and it
-helps you to solve specific problems. With npx, it is easier ans smooth to work with npm-based CLI tools.
+helps you to solve specific problems. With npx, it is easier and smooth to work with npm-based CLI tools.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/npx.gif)
 
 [*Image Source*](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you)
@@ -162,4 +162,5 @@ The counts are much larger than the people who just typed `npm install(package)`
    -   You had installed the package before; the package will usually be installed from your local npm cache, so this is not counted.
    -   Build servers usually do not redownload a package they have already used before. Builds that happen in disposable VMs or Docker instances are available in the npm cache of the server.
    -   Any given mirror will only download a given version of a package one time. They are smart and do not redownload a package they have already seen before.
+
 [Check more on how npm download counts works](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts)
