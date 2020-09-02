@@ -12,7 +12,6 @@ On September 29th, 2019, NPM marked 10 years of its existence. NPM has been used
 In June 2019, MPM crossed a million-library mark. With over 1.3 million libraries currently available, NPM registry is now the largest single collection of open source libraries in the world with more than 12 million developers.
 
 On April 23, 2018, NPM users downloaded five billion packages within the last 7 days of that date. On this day 4 years ago, that figure was 50 million, this means 10,000% growth. The average IP downloads were 2200 packages per month.
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/weekly-downloads.jpg)
 
 [*Image Source*](https://twitter.com/seldo/status/988477780441481217)
@@ -32,13 +31,11 @@ The following survey results were conducted by NPM in collaboration with the Nod
 **1. Are you concerned with whether the open-source code you use is secure?**
 
 In this survey, 97% of the respondents used the open-source code. In addition, it turned out 77% of them are concerned about the security of open-source code.
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/overall-concerned.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 We now have a clear image that most developers a greatly concerned about code security. Interestingly, 19% of the respondent have 10+ years of experience in using JavaScript. Moreover, out of this 81% were concerned about open-source code security.
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/concerned-experien-based.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
@@ -48,19 +45,16 @@ This concludes that the longer you use JavaScript the more you become concerned 
 **3. Are you satisfied with the available methods to evaluate the safeness and the quality of open source code?**
 
 It is interesting to note that more than half of JavaScript developers are not satisfied with the tools available to analyze the security and quality of open-source code, which is very alarming.
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/oss-noncerned.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 What about we separate the response dependent on the concern of open source code or their own code (the code you write).
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/opensource-downcode.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 87% are concerned with the security of their own code while 77% had the same on open source code. These figures conclude that a great number of JavaScript developers are concerned about security, be it open source or the code you write.
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/satisfied.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
@@ -70,7 +64,6 @@ The respondents trust open source code more than they do to their own written co
 **3. Which tools and practices do you use to ensure security in your application?**
 
 These survey results were divided into two groups, least experienced (>1 year) and most experienced (10 plus years).
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/least-most-experienced.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
@@ -83,7 +76,6 @@ From these results experienced groups were:
 -   More likely to use automated scans for security flaws.
 
 If all answers are combined, a measure of how many developers uses some form of security practices on codes depending on experience will be:
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/level-of-experience.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
@@ -114,7 +106,6 @@ As a developer, you spend less time waiting between pushing a new build and cont
 **3. Automatic resolution and package-lock.json lock file conflicts.**
 
 `package-lock.json` is a generated file that saves information about your node modules/dependencies trees. It is meant to be committed to your git repositories and has several benefits such as increased reproducibility across teams, reduced network overhead when installing, and making it easier to debug issues in your dependencies. With `npm@6`, your lock file is more stable across the teams on similar platforms as well as across operating systems unlike the later which had unexpected changes and platform differences. You can use `npm install --package-lock-only` to generate a lock file without installing into `node_modules/`.
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/package-lockfile.png)
 
 [*Image Source*](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you)
@@ -125,7 +116,6 @@ As you may have noticed, we have introduced
 [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
 and we need to know what it is and what it does. [npx](https://www.npmjs.com/package/npx) is an NPM package runner and it
 helps you to solve specific problems. It makes working with npm-based CLI tools easy, smooth and seamless.
-
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/npx.gif)
 
 [*Image Source*](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you)
