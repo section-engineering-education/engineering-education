@@ -26,28 +26,27 @@ Let us dive deeper into the concept of hashing by considering the following prob
 
 A solution that may come to mind is an O(n^2) solution. Using two for loops: the outer loop keeping track of the current element, and the inner loop keeping track of the count of the current element. This is a solution, but its time complexity is O(n^2). That needs to be improved.
 
-What if, we could track the number of occurrences of each type of sock, and then find out how many pairs of socks exist. This is an application of the hash table, which preliminarily uses the concept of hashing.
+What if, we could track the number of occurrences of each type of sock, and then find out how many pairs of socks exist. This is an application of the hash table, which uses the concept of hashing.
 
-The creation of the table requires us to parse through the entire array once, which makes it O(n). To check for the viable number of pairs of socks, we need another for loop traversing the dictionary and checking for the number of pairs. The time complexity for this is O(n). Therefore, overall Time Complexity is O(n) + O(n) = O(2n) => O(n).
+The creation of the table requires us to parse through the entire array once, which makes it O(n). To check for the viable number of pairs of socks, we need another for loop traversing the dictionary and checking for the number of pairs. The time complexity for this is O(n). The overall time complexity is represented in this equation O(n) + O(n) = O(2n) => O(n).
 
 There is a significant reduction in time complexity by making use of memory. We have taken a top-down approach, considering the application first. Let us look at the theoretical aspect of hashing and how bloom filters make use of them.
 
 ### Hashing: Theory
-Hashing, as discussed earlier, was developed to optimally store and retrieve data. Various operations can be performed on the Hash table Abstract Data Type(ADT).
+Hashing, as we discussed earlier, was developed to optimally store and retrieve data. Listed below are various operations that can be performed on the hash table Abstract Data Type(ADT).
 
 1. Create Hash Table
 2. Search Hash Table
 3. Insert an element into the table
 4. Delete an element from the table
-5. Delete the hash table.
+5. Delete the hash table
 
 ### Hash Table
-The hash table is derived from the array. In the case of an array, we have indices that start from either 0 or 1. These indices are the keys and the value stored at these places are the values. Similarly, hash tables work on key-value pairs, where our keys are custom-defined. For example, dictionaries in python are examples of hash tables.
+The hash table is derived from the array. In the case of an array, we have indices that start from either 0 or 1. These indices are the keys and the value stored at these places are the values. Similarly, hash tables work on key-value pairs, where our keys are custom-defined. For example, dictionaries in python are a good example of hash tables.
 
-Hash table is a generalization of the array. With an array, we store the element whose key is k at a position k of the array. That means, given a key k, we find the element whose key is k by just looking in the k position of the array. This is called direct addressing
+A hash table is a generalization of the array. With an array, we store the element whose key is k at a position k of the array. That means, given a key k, we find the element whose key is k by just looking in the k position of the array. This is called direct addressing.
 
-The way we index the values determines the position of the value for a given key. If
-we directly search for the kth element by specifying its index k, it is called direct addressing. This is feasible in situations when memory is not a constraint. What if we need extra memory? That is, the number of keys is greater than the number of memory locations possible. In such cases, the flexibility of hash tables can be used.
+The way we index the values determines the position of the value for a given key. If we directly search for the kth element by specifying its index k, again that is called direct addressing. This is feasible in situations when memory is not a constraint. What if we need extra memory? That is, the number of keys is greater than the number of memory locations possible. In such cases, the flexibility of hash tables can be used.
 
 ### Hash Function
 The value is allotted to keys based on the hash function. The hash function can be any function. The only requirement is it allows a new and unique key for different values. If two values get the same key, such a situation is called a collision.
