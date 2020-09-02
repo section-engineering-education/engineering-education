@@ -61,7 +61,7 @@ What about we separate the response dependent on the concern of open source code
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
-The respondents entrust open source code over their own written code, his is because open-source codes have available and ready tools for making sure the code is secure. Could that be majority of Javascript developers are more confident with open source code above the code they write?
+The respondents entrust open source code over their own written code, this is because open-source codes have available and ready tools for making sure the code is secure. Could that be majority of Javascript developers are more confident with open source code above the code they write?
 
 **3. Which tools and practices do you use to ensure security in your application?**
 
@@ -106,12 +106,12 @@ As a developer, you spend much less time between pushing a new build and continu
 
 **3. Automatic resolution and `package-lock.json` lock file conflicts.**
 
-`package-lock.json` is a generated file It saves information about your node dependencies you use. `package-lock.json` file is committed to your Git repository and has several benefits such as increased reproducibility across teams, reduced network overhead when installing, and making it easier to debug issues in your apps. With `npm@6`, your lock file is more stable across the teams on similar platforms as well as across operating systems unlike the later which had unexpected changes and platform differences.Use `npm install --package-lock-only` to generate a lock file without having to install into `node_modules/`.
+`package-lock.json` is a generated file. It saves information about your node dependencies you use. `package-lock.json` file is committed to your Git repository and has several benefits such as increased reproducibility across teams, reduced network overhead when installing, and making it easier to debug issues in your apps. With `npm@6`, your lock file is more stable across the teams on similar platforms as well as across operating systems unlike the later which had unexpected changes and platform differences.Use `npm install --package-lock-only` to generate a lock file without having to install into `node_modules/`.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/package-lockfile.png)
 
 [*Image Source*](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you)
 
-`npm@6` go to an extent of automatically resolving `package-lock.json` conflicts if you happen to run npm install during a conflicted state. [Check to get started with `package-lock.json`](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you). To make this even smoother, `npm@6` have released `npm-merge-drive`, which lets you do all the rebasing and merging and other backflips. To get started with `npm-merge-drive` just run `$ npx npm-merge-driver install --g` one time and all your future merge and rebase conflicts in your git repo will be resolved in the background.[Check to get started with `npm-merge-drive`](https://www.npmjs.com/package/npm-merge-driver).
+`npm@6` go to an extent of automatically resolving `package-lock.json` conflicts if you happen to run npm install during a conflicted state. [Check to get started with `package-lock.json`](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you). To make this even smoother, `npm@6` have released `npm-merge-drive`, which lets you do all the rebasing and merging and other backflips. To get started with `npm-merge-drive` just run `$ npx npm-merge-driver install --g` one time and all your future merge and rebase conflicts in your git repo will be resolved in the background. [Check to get started with `npm-merge-drive`](https://www.npmjs.com/package/npm-merge-driver).
 
 As you may have noticed, we have introduced
 [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
