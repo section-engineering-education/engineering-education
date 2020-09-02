@@ -15,7 +15,7 @@ images:
     alt: Kotlin vs Flutter image example
 ---
 <!--more-->
-Mobile application development has become an essential part of the software business in recent years. Previously, people used to prefer ReactNative or Flutter to develop cross-platform applications due to their low-cost features. But today, Kotlin has managed to enter into the world of cross-platform development.
+Mobile application development has become an essential part of the software business in recent years. Previously, people preferred ReactNative or Flutter to develop cross-platform applications due to their low-cost features. But today, Kotlin has also managed to enter into the world of cross-platform development.
 
 Since Flutter has been improved a lot in the past years, it now provides better features than ReactNative.  Kotlin has also entered the space of cross-platform development as well.
 
