@@ -18,7 +18,7 @@ The power of Node.js is backed by open-source frameworks that form the ecosystem
 Let's have a look at packages that will assist you to extend your Node.js development skills.
 
 ### 1. Express
-[Express.js](https://expressjs.com/) is the fastest, unopinionated, and simplest web framework for Node.js. It is very flexibly designed for building simple pages, multi-page and hybrid applications that provide a robust set of features for web and mobile applications. The framework is minimal. It is the leading Node.js framework designed for building web applications and APIs with robust tooling for HTTP servers.
+[Express.js](https://expressjs.com/) is the fastest, unopinionated, and simplest web framework for Node.js. It is flexibly created to build simple pages, multi-pages and hybrid apps with robust features for web and mobile development. The framework is minimal with undisputed performances. It is the leading Node.js framework designed to help you build web apps and APIs with powerful tooling for HTTP servers.
 
 Node.js frameworks such as [`Sails`](https://www.npmjs.com/package/sails), [`Hapi`](https://www.section.io/engineering-education/introduction-to-hapi/) and [`NestJS`](https://nestjs.com/) are built on Express. Express is available on the NPM registry.
 
@@ -28,21 +28,23 @@ Node.js frameworks such as [`Sails`](https://www.npmjs.com/package/sails), [`Hap
 -   Superhigh test coverage.
 -   HTTP helpers (such as redirection and caching).
 -   Content negation.
--   Executable for generating applications quickly.
+-   Executable for developing apps and APIs faster.
 
 ### 2. AsyncJS
 [Asynchronous](https://en.wikipedia.org/wiki/Async/await) is heavily used in Node.js to ensure non-blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished.
 
-It uses a queue to keep track of tasks, allowing you to append additional tasks, attach extra callbacks, and handle errors with callbacks. This makes it a more versatile and robust solution for complex dependency management.
+It uses queues to monitor your workflow, allowing you to append additional tasks, attach extra callbacks, and handle errors with callbacks. This makes it a more versatile and robust solution for complex dependency management. [gsmplusinfotech]().
 
-AsyncJS provides several functions that include usual functions such as '`map`', '`filter`', '`reduce`',' `filter`' and '`each`' as well as some common patterns for asynchronous flow control functions such as ('`parallel`' , '`series`' and '`waterfall`').
+AsyncJS provides several functions that include usual functions such as '`map`', '`filter`', '`reduce`',' `filter`' and '`each`' as well as some common patterns for asynchronous flow control functions such as ('`parallel`' , '`series`' and '`waterfall`'). [AsyncFunction](https://caolan.github.io/async/v3/global.html#AsyncFunction)
 
 #### Advantages of using AsyncJS in your Node.js App Include
 -   It supports inline functions and text strings.
 -   Error handling from the dependency queue.
 -   Use of AsyncLocalStorge within AsyncJS helps to create asynchronous states within callbacks and promise chain.
 -   A collection of Async functions helps to control the flow through the script.
+-   Help you avoid memory leaks.
 -   Helps to integrate AsyncResource with EvenEmitter.
+-   AsyncJS supports asynchronous functions.
 
 Example of `async/await` in Node.js:
 
@@ -61,9 +63,9 @@ async function myFunction(inputValue) {
 In this scenario, functions 1, 2 and 4 are asynchronous.
 
 #### Other Frameworks Related to AsyncJS Include
--   [`Limiter`](https://www.npmjs.com/package/limiter) - Used for rate-limiting based on request per `sec/hr`.
--   [`Co-async`](https://www.npmjs.com/package/co-async) - Inspired by Async for use with `co` and function generator.
--   [`Neo-async`](https://www.npmjs.com/package/neo-async) - Focus on speed implementation of Async.
+-   [`Limiter`](https://www.npmjs.com/package/limiter) - is used for rate-limiting based on request per `sec/hr`.
+-   [`Co-async`](https://www.npmjs.com/package/co-async) - is inspired by Async for use with `co` and function generator. [Async v3](https://caolan.github.io/async/v3/)
+-   [`Neo-async`](https://www.npmjs.com/package/neo-async) - focus on speed implementation of Async.
 
 ### 3. Browserify
 [Browersify](http://browserify.org/) analyses `require()` calls in your Node.js application to create a bundle that you can serve up to the browser in a single `<script>` tag. `Require()` is used to load modules installed by NPM i.e. `require('module')`. Browsers do not have the `require()` method defined but Node.js does. With Browserify, you can write code that uses `require()` just like you would use it in Node.js code.
@@ -139,15 +141,19 @@ Moment.js supports international languages for different time and date formats w
 -   [`Express-validator`](https://www.npmjs.com/package/express-validator) - Express-validator is an Express middleware for Validator.js.
 
 ### 6. Request
-[Request](https://github.com/request/request/issues/3142) is a simplified HTTP client that makes it possible to make `http` calls. It supports HTTPS and follows redirect by default. Request is a fantastic choice if you want an easy to use library to deal with HTTP requests in a sane way.
+[Request](https://github.com/request/request/issues/3142) is a HTTP client framework for making `http` calls. It supports HTTPS and follows redirects by default. [Request npm](https://www.npmjs.com/package/request)
 
-If you want to use promises, you can check out the request-promise library. It is used to describe a request to a server and get a response.
+If you need to return a Promise, use `request` interface wrappers such as
+-   [request-promise](https://github.com/request/request-promise) - It is used to describe a request to a server and get a response.
+-   [util.promisfy](https://nodejs.org/api/util.html#util_util_promisify_original) - Takes a function following the common error-first callback style, i.e. taking an `(err, value) => ...` callback as the last argument, and returns a version that returns promises.
+-   [request-promise-native](https://github.com/request/request-promise-any) - Use native ES6+ promises
+-   [request-promise-any](https://github.com/request/request-promise-any) - Allows you to use `any-promise` to choose any Promise library you want to use.
 
 #### Request has the following main contractors:
 -   Body - is the data to send with the request.
 -   Cache - is a string with the following instances: default, force-cache, no-cache, no-store, only-if-cached and reload etc.
 -   Credentials - are a string which includes omit and same-origin instance properties.
--   Headers - are the `http` headers to send with the request. It is passed to the headers contractor.
+-   Headers - are the `http` headings sent with the request. Headings are passed to the headers contractor.
 -   Method - are HTTP methods such as `GET` `POST` `DELETE` and `PUT`.
 -   Mode - is a string with one of same-origin, no-cors or cors instances.
 
@@ -164,36 +170,36 @@ With request, you need less code to accomplish the same task if you were using t
 
 #### Other HTTP REST Client Libraries Include
 -   [`Axios`](https://www.npmjs.com/package/axios) - Uses promise-based HTTP client for Node.js and Browsers.
--   [`Method-override`](https://github.com/expressjs/method-override) - Lets you use HTTP verbs such as DELETE and PUT in places where the client does not support it.
+-   [`Method-override`](https://github.com/expressjs/method-override) - Lets you use HTTP methods such as DELETE, POST and GET provided from `getter` options.
 
 #### 7. JSHint
-[JSHint](https://jshint.com/about/) is a static code analysis tool to detect errors and potential problems in JavaScript. Linting tools help Node.js developers to analyze common bugs in their code without their focused attention. Linters analyses the code for them.
+[JSHint](https://jshint.com/about/) is a static analysis tool for Javascript. It detects errors and potential problems in code. Linting tools help Node.js developers to analyze common bugs in their code without their focused attention. Linters analyses the code for them.
 
 JSHint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, and conventions etc.
 
 [`ESLint`](https://www.section.io/engineering-education/node-eslint/) is similar to JShint package, used for linting(enhancing code quality).
 
 ### 8. Morgan
-[Morgan](https://www.npmjs.com/package/morgan) is an HTTP request logger middleware for Node.js applications. Morgan gives you insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers.
+[Morgan](https://www.npmjs.com/package/morgan) is an HTTP request logger middleware for Node.js applications, named after [Dexter](https://en.wikipedia.org/wiki/Dexter_Morgan). Morgan gives you insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers.
 
 You can choose to use [`Winston`](https://www.npmjs.com/package/winston) as an alternative library for logging.
 
 ### 9. Karma
-As a Node.js developer, you need to test your application to make sure it is stable and reliable with good performance. [Karma](https://www.npmjs.com/package/karma) is the tool for this job. The main goal of karma is to bring a productive testing environment to developers.
+As a Node.js developer, you need to test your application to make sure it is stable and reliable with good performance. [Karma](https://www.npmjs.com/package/karma) is the tool for this job. The main aim of karma is to provide developers a productive testing environment.
 
 #### Why You Should Choose Karma
 -   Tests code in real browsers.
 -   Tests code in multiple browsers (desktop, mobile phones and tablets).
 -   It tests on real devices such as mobile phones, tablets or even headless PhantomJS.
 -   Controls the whole testing workflow from your command or IDE.
--   It executes tests locally during development.
--   It executes your tests on a continuous integration server.
 -   Karma executes your tests after every save.
+-   It executes tests locally during development.
+-   It executes your tests on a continuous integration server. [Refer to  Karma](https://www.npmjs.com/package/karma).
 
 #### Other Node.js Testing Libraries Include
--   [`Mocha`](https://www.npmjs.com/package/mocha) - runs on Node.js and browsers to make asynchronous testing simple and fun.
+-   [`Mocha`](https://www.npmjs.com/package/mocha) - helps you to carry out asynchronous tests.
 -   [`Chai`](https://www.chaijs.com/) - is a BDD/TDD assertion library for Node.js and browsers that can be paired with any JavaScript testing framework.
--   [`Jest`](https://jestjs.io/) - is a JavaScript testing framework with a focus on simplicity.
+-   [`Jest`](https://jestjs.io/) - JavaScript testing framework which focuses on simplicity.
 
 ### 10. MySQL
 [MySQL](https://en.wikipedia.org/wiki/MySQL) is a Node.js client for the MySQL protocol. Before using MySQL to connect to your database, ensure you have MySQL installed and configured in your machine. Then create a database and database table that you can work with.
@@ -223,28 +229,29 @@ connection.end();
 //send quit packet to your MySql server
 //end
 ```
+[Code snippet source](https://github.com/mysqljs/mysql).
 
 From the example above:
 -   Every method that you invoke on a database connection is queued and executed in sequence.
 -   To terminate/close the connection use `end()`, this makes sure that all the remaining queries are executed before sending a quit packet to the MySQL server.
 
 #### Other MySQL and Helper Frameworks Include:
--   [`Sequelize`](https://www.npmjs.com/package/sequelize) - a promised based Node.js ORM for Postgres, MySQL, Maria DB, SQLite, and Microsoft SQL Server.
+-   [`Sequelize`](https://www.npmjs.com/package/sequelize) - a promised based Node.js Object-Relation Mapping for MySQL, SQLite, Maria DB, Postgres, and Microsoft SQL Server.
 -   [`Knex.js`](https://knexjs.org/) - is designed to be flexible, portable and fun to run for MSSAL, MySQL, Oracle, MariaDB, SQLite3 and Amazon Redshift.
 
-#### Some MongoDB and Helper Frameworks Include
--   [`Mongoose`](https://www.npmjs.com/package/mongoose) - is a [MongoDB](https://www.mongodb.com/) object modeling tool designed to work in an asynchronous environment.
--   [`Mongoose Paginate v2`](https://www.npmjs.com/package/mongoose-paginate-v2) - is a customizable cursor based pagination plugin for Mongoose.
+#### Some Mongo database and Helper Frameworks Include
+-   [`Mongoose`](https://www.npmjs.com/package/mongoose) - is a [MongoDB](https://www.mongodb.com/) object modeling tool for asynchronous environments.
+-   [`Mongoose Paginate v2`](https://www.npmjs.com/package/mongoose-paginate-v2) - used for pagination query for Mongoose.
 
 ### 11. Nodemon
-[Nodemon](https://www.npmjs.com/package/nodemon) is a monitoring tool and it helps Node.js developers by automatically restarting the application when file changes in the app directory are detected. With Nodemon, you do not need any additional code or development method changes. It is a replacement wrapper for Node.js.
+[Nodemon](https://www.npmjs.com/package/nodemon) is a monitoring tool and it helps Node.js developers by automatically restart an application when file changes in the app directory are detected. With Nodemon, you do not need any additional code or development method changes. It is a replacement wrapper for Node.js.
 
 Nodemon is simple to use. You just need to replace the word node with `nodemon` on the command-line when executing your `script`, i.e. `nodemon ./server.js localhost 300`
 
 #### Example of Other Monitoring Frameworks Include
--   [`PM2`](https://www.npmjs.com/package/pm2) - is a Node.js process manager that allows you to keep applications alive forever and reload them without downtime to facilitate common system admin tasks.
+-   [`PM2`](https://www.npmjs.com/package/pm2) - is a Node.js process manager that allows you to keep application alive forever and reload with no downtime.
 -   [`Trace`](https://github.com/RisingStack/trace-nodejs) - is designed for microservices and is a visualized stack trace platform.
--   [`Forever`](https://www.npmjs.com/package/forever) - is a CLI tool for ensuring that a given Node.js script runs continuously i.e. forever.
+-   [`Forever`](https://www.npmjs.com/package/forever) - is a CLI tool that ensures Node.js scripts runs continuously i.e. forever.
 
 ### 12. Restify
 [Restify](http://restify.com/) is a Node.js web service framework, which is optimized for building semantic and RESTful web services (APIs) that are ready for production use at scale.
@@ -275,6 +282,7 @@ server.listen(8080, function () {
     console.log('%s listening at %s', server.name, server.url);
 });
 ```
+[Code source](https://github.com/restify/node-restify).
 
 ##### ii. Client
 
@@ -290,29 +298,33 @@ client.get('/echo/mark', function (err, req, res, obj) {
     console.log('Server returned: %j', obj);
 });
 ```
+[Code source](https://github.com/restify/node-restify).
+
 ##### iii. Routing
 
 ```js
-function send(req, res, next) {
-    res.send('hello ' + req.params.name);
-    return next();
+var Router = require('restify-router').Router;
+var routerInstance = new  Router();
+var restify = require('restify');
+ 
+function respond(req, res, next) {
+  res.send('hello ' + req.params.name);
+  next();
 }
-server.post('/hello', function create(req, res, next) {
-    res.send(201, Math.random().toString(36).substr(3, 8));
-    return next();
-});
-server.put('/hello', send);
-server.get('/hello/:name', send);
-server.head('/hello/:name', send);
-server.del('hello/:name', function rm(req, res, next) {
-    res.send(204);
-    return next();
+// add a route like you would on a restify server instance
+routerInstance.get('/hello/:name', respond);
+var server = restify.createServer();
+// add all routes registered in the router to this server instance
+routerInstance.applyRoutes(server);
+server.listen(8080, function() {
+  console.log('%s listening at %s', server.name, server.url);
 });
 ```
+[Code source](https://github.com/ukayani/restify-router).
 #### Other Node.js API Frameworks Include:
 -   [`Actionhero`](https://www.npmjs.com/package/actionhero) - is an API framework for both TCP sockets, web sockets, and HTTP clients that creates reusable APIs.
 -   [`FeathersJS`](https://www.npmjs.com/package/@feathersjs/feathers) - is a framework for REST APIs and is a real-time layer for modern applications.
--   [`Loopback`](https://www.npmjs.com/package/loopback) - is a Node.js and Typescript framework for building APIs and microservices.
+-   [`Loopback`](https://loopback.io/doc/en/lb4/Getting-started.html) - is a Node.js and Typescript framework for creating APIs and microservices.
 
 #### 13. Nodemailer
 [Nodemailer](/engineering-education/node-mailer/) is a Node.js application module that allows easy as pie email sending.
@@ -320,39 +332,40 @@ server.del('hello/:name', function rm(req, res, next) {
 **Example of how Nodemailer works**
 
 ```JS
-use strict";
+"use strict";
 const nodemailer = require("nodemailer");
 // async..await is not allowed in global scope, must use a wrapper
 async function main() {
-    // Generate test SMTP service account from ethereal.email
-    // Only needed if you don't have a real mail account for testing
-    let testAccount = await nodemailer.createTestAccount();
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-            user: testAccount.user, // generated ethereal user
-            pass: testAccount.pass, // generated ethereal password
-        },
-    });
-    // send mail with defined transport object
-    let info = await transporter.sendMail({
-        from: '"Fred Foo 👻" <foo@example.com>', // sender address
-        to: "bar@example.com, baz@example.com", // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
-    });
-    console.log("Message sent: %s", info.messageId);
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-    // Preview only available when sending through an Ethereal account
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  // Generate test SMTP service account from ethereal.email
+  // Only needed if you don't have a real mail account for testing
+  let testAccount = await nodemailer.createTestAccount();
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: testAccount.user, // generated ethereal user
+      pass: testAccount.pass, // generated ethereal password
+    },
+  });
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: '"Fred Foo 👻" <foo@example.com>', // sender address
+    to: "bar@example.com, baz@example.com", // list of receivers
+    subject: "Hello ✔", // Subject line
+    text: "Hello world?", // plain text body
+    html: "<b>Hello world?</b>", // html body
+  });
+  console.log("Message sent: %s", info.messageId);
+  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+  // Preview only available when sending through an Ethereal account
+  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 main().catch(console.error);
 ```
+[Code source](https://nodemailer.com/about/).
 
 [Express-Mailer](https://github.com/RGBboy/express-mailer) is a similar module to Nodemailer used to send emails from your application and response object.
 
@@ -360,14 +373,14 @@ main().catch(console.error);
 [Gulp](https://gulpjs.com/) is a toolkit to automate slow and repetitive tasks that are time-consuming in the Node.js development workflow. These tasks include cache-busting, optimization, concatenation, and minifying files etc.
 
 #### Why Gulp
--   It is easy to learn and simple to use.
+-   It is simple to learn and easy to apply.
 -   Its integrations are built into major IDEs such as `.NET`, `PHP`, `Node.js`, and `Java`.
 -   It helps to automate time-consuming tasks in your Node.js development workflow.
 
-Gulp is a similar module to [`GruntJS`](https://www.npmjs.com/package/grunt) which is used to automatically perform frequent tasks such as unit testing and linting.
+Gulp is a similar module to [`GruntJS`](https://www.npmjs.com/package/grunt) which is used to automate common tasks which include compilation, unit testing and linting.
 
 ### 15. Molecular
-[Molecular](https://moleculer.services/) is a fast, modern, and powerful progressive microservices framework for Node.js. It helps Node.js developers build applications that are efficient, reliable, and scalable.
+[Molecular](https://moleculer.services/) is a fast and modern powerful microservices library for Node.js. It helps Node.js developers to build applications that are efficient, reliable, and scalable.
 
 #### Features of Molecular
 -   It uses promise based solutions i.e. Async/Await compatible.
@@ -383,7 +396,7 @@ Gulp is a similar module to [`GruntJS`](https://www.npmjs.com/package/grunt) whi
 **Other Microservices Frameworks for Node.js Includes**
 -   [`Micro`](https://www.npmjs.com/package/micro) - is an Asynchronous HTTP microservices framework.
 -   [`Micro Panda`](https://github.com/zhaoyao91/micro-panda) - is a Node.js toolkit that helps build microservices.
--   [`Seneca`](https://www.npmjs.com/package/seneca) - is a Node.js microservice toolkit with plugins that look after the foundation of your app.
+-   [`Seneca`](https://www.npmjs.com/package/seneca) - is a Node.js microservice toolkit with plugins that helps to organize the logic of your app.
 -   [`ServerLess`](https://github.com/serverless/serverless) - builds web, mobile, and IoT applications with serverless architectures using AWS Lambda, Azure functions, and Google Cloud Functions etc.
 
 ### 16. Agenda
@@ -391,7 +404,7 @@ Gulp is a similar module to [`GruntJS`](https://www.npmjs.com/package/grunt) whi
 
 #### The Agenda Library Offers**
 -   Even backed job queue.
--   Scheduling with configurable priority, concurrency, and repeating.
+-   Schedule and configure priority, concurrency, and repeating.
 -   It has a promised based API.
 -   Agenda is great when developing applications backed by MongoDB.
 -   Agenda aims to keep its codebase small, compact, and light.
