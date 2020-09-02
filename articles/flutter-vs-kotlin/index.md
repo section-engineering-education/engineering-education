@@ -28,7 +28,7 @@ Developers describe Flutter as one of the most popular cross-platform mobile fra
 
 ### Language
 One of the main advantages of Kotlin is that its programming language is quite similar to Java. Therefore developers who have worked with Java in the past will find it much easier to work with Kotlin. 
-On the other hand, Flutter uses Dart from Google. Due to the fact that Dart is widely used, it may offer an easier option for developers to understand and operate Flutter.
+On the other hand, Flutter uses Dart from Google. Due to the fact that Dart is a client-optimized programming language, it may offer an easier option for developers who have strong knowledge of C languages. It is easier to understand and operate due to fast compiling like C languages.
 
 ### Price and Testing
 Kotlin and Flutter are both free, but the real difference occurs in testing support. While Kotlin tends to support backend development, Flutter works on extensive testing of features.
