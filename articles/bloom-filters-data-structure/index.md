@@ -6,7 +6,7 @@ url: /engineering-education/bloom-filters-data-structure/
 title: Bloom Filters - An Introduction
 description: Covering the basics of hashing, bloom filters, and the applications of this data structure. Hashing was developed to optimally store and retrieve data.
 author: lalithnarayan-c
-date: 2020-09-01T00:00:00-13:00
+date: 2020-09-02T00:00:00-13:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,7 @@ Bloom filters are a probabilistic data structure that uses the concept of hashin
 ### Hashing
 [Hashing](https://www.educative.io/edpresso/what-is-hashing) is a data structure designed to store and retrieve information in the most efficient manner. It is useful in performing optimal searches and is predominantly used in the construction of symbol tables.
 
-Let us dive deeper into the concept of hashing by considering the following problem. This problem has been taken from HackerRank to help us understand the need for hashing.
+Let us dive deeper into the concept of hashing by considering the following problem. This problem has been taken from [HackerRank](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup) to help us understand the need for hashing.
 
 ![](/engineering-education/bloom-filters-data-structure/hashingProblem.jpg)
 [*Image Source*](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)
@@ -66,14 +66,14 @@ Let us discuss some of the strategies that complement hash functions and deal wi
 We use the concept of linked lists to resolve collisions. Upon collision for a given key, the new value is linked to the existing value at the location using linked lists. The process of adding elements using a linked list is similar to a chain. Hence, the name [separate chaining](https://courses.cs.washington.edu/courses/cse326/06su/lectures/lecture11.pdf). This method is easy to implement but is memory intensive. Each link adds on a new pointer and therefore additional memory space is required. While using the hash table, if the length of the linked list is too long, then the lookup time increases to O(n) from O(1). This defeats the purpose of implementing a hash table.
 
 #### Open Addressing
-[Open addressing](https://courses.csail.mit.edu/6.006/fall11/lectures/lecture10.pdf) is one such technique which stores all the keys in the hash table, rather than extending values via other data structures. The collision is resolved using a process called probing. If a collision occurs, then the next nearest empty location is filled with the value. Such an algorithm is called linear probing. The disadvantage of linear probing is it causes clustering of values if the number of collisions increases.
+[Open addressing](https://courses.csail.mit.edu/6.006/fall11/lectures/lecture10.pdf) is one such technique which stores all the keys in the hash table, rather than extending values via other data structures. The collision is resolved using a process called probing. If a collision occurs, then the next nearest empty location is filled with the value. Such an algorithm is called [linear probing](https://en.wikipedia.org/wiki/Linear_probing#:~:text=Linear%20probing%20is%20a%20scheme,by%20Gene%20Amdahl%2C%20Elaine%20M.). The disadvantage of linear probing is it causes clustering of values if the number of collisions increases.
 
-A more preferred method is to space the values in the memory location. Thus, the problem of clustering is solved offering all the advantages of optimal hash functions. This type of probing is called quadratic probing. Upon each collision, the memory location selected is farther away from the original key that resulted in the collision.
+A more preferred method is to space the values in the memory location. Thus, the problem of clustering is solved offering all the advantages of optimal hash functions. This type of probing is called [quadratic probing](https://en.wikipedia.org/wiki/Quadratic_probing). Upon each collision, the memory location selected is farther away from the original key that resulted in the collision.
 
 ### Bloom Filters: Introduction
 Bloom filters are an exciting application of the hash tables. They are used to check for membership of elements in a set. You may be wondering, why is membership of any significance to a programmer. Let's consider the example of matching two strings. You may have guessed that checking for passwords from a database is one such use case scenario. The passwords are encrypted and then stored in the database for security reasons. The hashed values are very long strings, usually 70+ characters. In such cases, when two strings need to be compared character by character, string matching algorithms take O(n). Bloom filter, on the other hand, takes O(1) to accomplish the same task.
 
-Additionally, what is the advantage of using a bloom filter? Bloom filters reduce the number of calls made to resources such as servers, databases, by quickly eliminating inputs that don't match with the actual value. Let us understand this in a bit more detail, looking at how bloom filters use hashing.
+Additionally, what is the advantage of using a bloom filter? Bloom filters reduce the number of calls made to resources such as servers and databases, by quickly eliminating inputs that don't match with the actual value. Let us understand this in a bit more detail, by looking at how bloom filters use hashing.
 
 ### Explanation
 Designed by Burton Bloom in the year [1970](https://en.wikipedia.org/wiki/Bloom_filter), a Bloom Filter uses a multiple number of hash functions. The bloom filters start with an array, whose bits are initialized to zero. The input is then passed through m number of hash functions. Let the size of the array be n. The number of hash functions, m, is less than the size of the array, n. When the m different hash functions are applied to the value, we get m different values. All these values are set as the bit 1 in the array.
@@ -84,7 +84,7 @@ To check for the membership of a new input value, the bloom filter first passes 
 
 [*Image Source*](https://yourbasic.org/)
 
-In the above example, we store the hashed bit arrays of x, y, and z. We see that hashed array of w does not match either x, y, or z and therefore does not belong to the set.
+In the example above, we store the hashed bit arrays of x, y, and z. We see that hashed array of w does not match either x, y, or z and therefore does not belong to the set.
 
 You may be wondering about the aspect of probability in this data structure. The data structure is affirming that a given input does not belong to the database, but it cannot guarantee the membership of an element in a set. In a case where the array is empty, that is, the majority of the bits are zero and the hash functions possess the above characteristics, then the probability of letting in an element that is not a member of the set is very low.
 
@@ -93,14 +93,13 @@ The probability of error fills up as the bit array gets filled up. As the name s
 ### Applications of Bloom Filters
 There are several interesting use cases for bloom filters. We will look at two of them. One of which we have looked at earlier. Yes, you guessed it right, Authentication and Authorization. The other use is one-hit (search) wonders.
 
-1. Authentication and Authorization: Bloom filters can check for passwords and reject all of the wrong passwords entered, thus reducing the load on the main database servers. Authorization is the process of giving access to users on a website on the level of authority a user possesses. The admin can access the entire website and make changes, whereas a common user can view the website in read-only mode. Therefore using bloom filters in websites like large e-commerce sites is a viable solution to prevent access from non-authorized entries.
+1. Authentication and Authorization: Bloom filters can check for passwords and reject all of the wrong passwords entered, thus reducing the load on the main database servers. Authorization is the process of giving access to users of a website based on the level of authority a user possesses. The admin can access the entire website and make changes, whereas a common user can view the website in read-only mode. Therefore using bloom filters in websites like large e-commerce sites is a viable solution to prevent access from non-authorized entries.
 
-2. One-search wonders: Search engines keep track of the search phrases and ensure not to cache the phrases until they are searched for repetitively. We can do a little experiment to check this out. Open your incognito tab and go to any search engine you'd like. Type a query related to python, for example, "lists in python". The next time you type lists, it will still show results that are not specific to Python. A couple of searches related to Python will lead to all search results being directed towards Python. After a couple of searches, you will observe that just typing dictionary will lead you to dictionaries in Python. Search engines keep track of the URLs and enable caching of the URLs upon multiple accesses.
+2. One-search wonders: Search engines keep track of the search phrases and ensure not to cache the phrases until they are searched for repetitively. We can do a little experiment to check this out. Open your incognito tab and go to any search engine you'd like. Type a query related to Python, for example, "lists in python". The next time you type lists, it will still show results that are not specific to Python. A couple of searches related to Python will lead to all search results being directed towards Python. After a couple of searches, you will observe that just typing dictionary will lead you to dictionaries in Python. Search engines keep track of the URLs and enable caching of the URLs upon multiple accesses.
 
 ### Conclusion
-We have looked at hashing extensively and have considered the bloom-filter data structure which elegantly rejects elements that don't belong to a set. Further, we have looked at the applications of bloom filters. We hope you enjoyed reading this. Until next time. Be Legendary.
+We have looked at hashing extensively and have considered the bloom-filter data structure which elegantly rejects elements that don't belong to a set. Furthermore, we have looked at the applications of bloom filters and a couple of case scenarios. We hope you enjoyed reading this. Until next time. Be Legendary.
 
 ### Additional Resources
-
 1. [Leetcode interactive tutorial](https://leetcode.com/explore/learn/card/hash-table/)
 2. [Hash Tables: Ransom Note](https://www.hackerrank.com/challenges/ctci-ransom-note/problem)
