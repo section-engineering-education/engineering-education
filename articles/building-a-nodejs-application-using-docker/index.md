@@ -1,6 +1,6 @@
 # Building A Node.js Application Using Docker
 
-[Docker](https://www.docker.com/) allows us to run our applications as *containers*. A container is a standalone executable package which is lightweight and has everything needed to run an application be it libraries, tools, runtime, setting or code.
+[Docker](https://www.docker.com/) allows us to run our applications as *containers*. A container is a standalone executable package which is lightweight and has everything needed to run an application be it libraries, tools, runtime, settings or code.
 
 In this tutorial, we will build a Node.js application, create an image and also build a container using the image. Enjoy!
 
@@ -12,16 +12,16 @@ To start this tutorial, we need to make sure Docker and [Node.js](https://nodejs
 - [Windows](https://docs.docker.com/docker-for-windows/install/)
 - [MacOS](https://docs.docker.com/docker-for-mac/install/)
 
-In order to dockerize a Node.js Application we need to follow these steps:
+In order to dockerize a Node.js application, we need to follow these steps:
 
-- Creating A Node.js Application
-- Create A DockerFile
+- Creating A Node.js application
+- Create A Dockerfile
 - Building your Docker Image
 - Expose
 
 ## Step 1 - Creating a Node.js Application
 
-First, we will start by creating a directory for our project then install some dependencies for our simple Hello World Website.
+First, we will start by creating a directory for our project and then install some dependencies for our simple Hello World website.
 ```bash
  mkdir node-web-app
  cd node-web-app
@@ -29,7 +29,7 @@ First, we will start by creating a directory for our project then install some d
 
 ## Install npm And Express Framework
 
-Install npm and express framework, which is a Node.js framework. Then, initialize npm in our directory.
+Install npm and express, which is a Node.js framework. Then, initialize npm in our directory.
 ```
  npm init
 ```
@@ -131,7 +131,7 @@ Expose 8080
 
 CMD ["npm","start"]
 ```
-*NB: Above you will notice we used two distinct COPY command to reduce the application rebuild time*
+*NB: Above you will notice we used two distinct COPY commands to reduce the application rebuild time*
 
 ## .dockerignore file
 
@@ -148,9 +148,9 @@ Building your Docker image is quite easy and can be done using a single command.
 ```
 docker build -t <docker-image-name> <filepath>
 ```
-*The `-t` flag lets you tag your image so its easier to find later*
+*The `-t` flag lets you tag your image so it's easier to find later*
 
-For Example:
+For example:
 ```
 docker build -t cisca .
 ```
@@ -195,7 +195,7 @@ Successfully tagged cisca:latest
 ```
 You should get something similar to the output above after executing the command. This means that the docker image was created successfully and the app is working fine.
 
-Now that the build is complete you can check your image:
+Now that the build is complete, you can check your image:
 ```
 docker image ls
 ```
