@@ -112,4 +112,6 @@ In the article on [Node.js vs Next.js](https://www.section.io/engineering-educat
 
 
 ## Conclusion
-We have looked at various methods for optimizing websites. Accessing this information gives power to the developer to create search engine optimized sites. We hope this helps you build optimized sites and drive more traffic to your sites. 
+We have looked at various methods for optimizing websites. Accessing this information gives power to the developer to create search engine optimized sites. We hope this helps you build optimized sites and drive more traffic to your sites.
+
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
