@@ -256,13 +256,13 @@ It is easier and handy to set up a server using restify framework.
 
 ##### ii. [Client API](https://www.npmjs.com/package/restify-clients).
 Restify supports three clients namely
--   JsonClient - Restify's highest-level client that maps direct to HTTP (PUT, GET and POST).
+-   JsonClient - Restify's highest-level client that maps direct to HTTP (`PUT`, `GET` and `POST`).
 -   StringClient - deals with raw HTTP by default. JsonClient is built on StringClient
 -   HttPClient - Restify's lowest-level client for steaming with restify.
-To get started install 'restify-clients' extension using command `npm install restify-clients'.
+To get started install `restify-clients` extension using command `npm install restify-clients`.
 
 ##### iii. [Routing](https://github.com/ukayani/restify-router)
-Defines your routes using Router interfaces and apply them to a restify server instances. To get started routing run command `$npm install --save restify-router'.
+Defines your routes using Router interfaces and apply them to a restify server instances. To get started routing run command `$npm install --save restify-router`.
 
 #### Other Node.js API Frameworks Include:
 -   [`Actionhero`](https://www.npmjs.com/package/actionhero) - is an API framework for both TCP sockets, web sockets, and HTTP clients that creates reusable APIs.
