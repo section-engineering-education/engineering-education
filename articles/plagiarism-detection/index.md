@@ -1,43 +1,43 @@
 ---
 layout: engineering-education
-status: TODO
-published: TODO
-slug: Plagiarism detection
+status: publish
+published: true
+slug: /engineering-education/debug-node-devtools/plagiarism-detection/
 title: Plagiarism Detection
 description: Plagiarism Detection is how one can compare two documents and find out how similar they are. This article explores one of the more basic algorithms in finding the similarity of a document.
 author: earl-potters
-date: 2020-05-19T00:00:00-07:00
+date: 2020-09-02T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
 ---
-
+<!--more-->
 
 >**A:** What's worse than someone stealing your work?
 >[the-internet](./theinternet.jpg)
 >**Q.** Someone stealing your work and claiming it's theirs!!!
 
-## Plagarism Detection
+### Plagarism Detection
 
 **Plagiarism** or taking others' ideas without proper credit or representation can feel like someone just kidnapped your idea. Actually, plagiarism derives its latin root from "plagiarius" which literally means "kidnapper". So plagiarism is widely considered bad overall. 
 
 Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know moresi about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/). 
 
-## Overview  
+### Overview  
 
 
 In this article, I will split the content in two parts:
-* Overview of text similarity
-  * Brief Intro
-  * Math Formulation
-  * Example
+- Overview of text similarity
+  - Brief Intro
+  - Math Formulation
+  - Example
 
 
-* Overview of the Algorithm
-  * Installation and setup
-  * Code walk-through
-  * Demo Plagiarism Detector
+- Overview of the Algorithm
+  - Installation and setup
+  - Code walk-through
+  - Demo Plagiarism Detector
   
   
 _Let's get to it!_
@@ -120,22 +120,25 @@ You can see a 3 intersecting circles which contain the set of all words in their
 
 #### Compare and contrast
 As you can figure out, all 3 similarity metrics have their own interpretation of similarity. 
-* Cosine similarity checks the **orientation** of two documents
-* Euclidean distance checks the **distance magnitude** of two documents
-* Total common words checks the **intersection** of two documents. 
+- Cosine similarity checks the **orientation** of two documents
+- Euclidean distance checks the **distance magnitude** of two documents
+- Total common words checks the **intersection** of two documents. 
 
 Looking at the example we can see why cosine similarity is a good metric for judging similarity than using total common words or euclidean distance. 
 
 The reason for that is because total common words is very biased on file sizes while euclidean distance is biased when comparing two different document sizes.
+
 ### Plagiarism Detector Code
 Now we are at the coding step! By now you should know the following things:
 
-* A document can be converted into a document **Vector space model** where the documents are represented as vectors, mostly determined by term frequency.
-* **Cosine Similarity** is an operation on vectors that will allow us to determine the similarity of two documents.
-* We will can display a  **normalized numerical value** between 0-1 that indicates the similarity between two documents.
+- A document can be converted into a document **Vector space model** where the documents are represented as vectors, mostly determined by term frequency.
+- **Cosine Similarity** is an operation on vectors that will allow us to determine the similarity of two documents.
+- We will can display a  **normalized numerical value** between 0-1 that indicates the similarity between two documents.
+
 #### Getting Started
 In this short overview I will assume you are on an **Ubuntu** linux operating system with **Conda** package manager. 
-#####1. Installing Dependencies
+
+##### 1. Installing Dependencies
 
 You we need to install the following: `Pandas` and `scikit-learn`
 
@@ -144,7 +147,7 @@ $ conda install scikit-learn pandas
 ```
 
 
-#####2. Verification
+##### 2. Verification
 To ensure that the packages are installed properly open up your python interpreter and run the follow code.
 ``` python
 # loading python modules
@@ -161,7 +164,7 @@ pd.show_versions()
 #### Code Walkthrough
 Now that we have everything set up it's time to code!
 
-#####1. Load Python Modules
+##### 1. Load Python Modules
 Let's first import important modules
 ```python
 # Load Python Modules
@@ -171,8 +174,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 
 ```
-#####2. Defining data set
+
+##### 2. Defining data set
 Here we define the data. I have set up a list of `tuples(name, data)`.
+
 ```python
 # define data
 corpus = [
@@ -184,9 +189,10 @@ corpus = [
 
 ```
 
-#####3. Process the data/Helper functions 
+##### 3. Process the data/Helper functions 
 _Using Count Vectorize_
 Now we need to process the data. Here is a neat trick to separate the names and data into lists.
+
 ```python
 # split doc_names and doc_data 
 doc_names, doc_data = zip(*corpus)
@@ -201,7 +207,7 @@ doc_data -> ('This is the first document.', \
             'And this is the third one.', \
             'Is this the first document?') 
 ```
-#####4. Vectorize data
+##### 4. Vectorize data
 This is the most crucial step. We need to convert the data into a vector space. Luckily `sklearn` as a function called `CountVectorizer()` that will do the heavy lifting. 
 
 ```python
@@ -228,10 +234,11 @@ df
 
 
 
-######_Now we have our data set in a Model!_
+###### _Now we have our data set in a Model!_
 With the vectorized data from the previous step we can calculate the cosine similarity by using `cosine_similarity` by `sklearn`.
 
-#####5. Create similarity feature aka cosine similarity
+##### 5. Create similarity feature aka cosine similarity
+
 ```python
 # return compute dot product on itself which will give the cosine_similarity matrix
 cosine_matrix = cosine_similarity(document_term_matrix) -> array([[1.        , 0.79056942, 0.54772256, 1.        ],
@@ -246,8 +253,9 @@ df
 ```
 ![table 2](./Screenshot%20from%202020-08-30%2016-45-33.png)
 
-#####6. Test feature
+##### 6. Test feature
 Finally we can print the result and see if we have resonable output.
+
 ```python
 # print pandas table
 print(df_document_term_matrix)
@@ -261,8 +269,9 @@ Your output should look like this.
 ![table 2](./Screenshot%20from%202020-08-30%2016-45-33.png)
 
 
-#####7. Review/Refactor
+##### 7. Review/Refactor
 Here is the refactored original code.
+
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -357,9 +366,7 @@ class Tdif_Vectorizer_Detector(Plagiarism_Checker):
 
 
 
-## Final Demo visualizations
-
-
+### Final Demo visualizations
 
 <iframe height="800px" width="100%" src="https://repl.it/@slyracoon23/Plagarism-Checker?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -369,7 +376,7 @@ Link to my code online is [here](https://repl.it/join/phfqwtnd-slyracoon23).
 Link to the github code is [here](https://github.com/Slyracoon23/plagarism_detector).
 
 
-## References: 
+### References: 
 
 https://ptabdata.blob.core.windows.net/files/2017/IPR2017-01039/v20_EX1020_Salton,%201975.pdf
 
@@ -377,11 +384,3 @@ https://en.wikipedia.org/wiki/Cosine_similarity
 
 
 https://www.machinelearningplus.com/nlp/cosine-similarity/
-
-
-
-
-
-
-
-
