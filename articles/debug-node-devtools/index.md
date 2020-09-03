@@ -31,7 +31,6 @@ Even so, Node.js apps can fail without error messages. This occurs mainly in cas
 Although Node.js comes with a [built-in debugger](https://nodejs.org/api/debugger.html), it's not very flexible. It is a CLI-based debugger where typing things is not an option. Google Chrome DevTools is a non-CLI debugger alternative. It requires no additional installation if you are using a Chromium-based browser like Google Chrome, Chromium and Microsoft Edge, etc.
 
 ### Prerequisites
-
 **Note**: You will need a chromium based browser installed in your computer. You can download Google Chrome from [here](https://www.google.com/chrome/).
 
 By the end of this article, you will be able to debug your Node.js app in 4 easy steps.
@@ -39,7 +38,6 @@ By the end of this article, you will be able to debug your Node.js app in 4 easy
 #### Step 1 -- Set up your app for debugging.
 
 #### 1.a -- Set up a local app for debugging.
-
 Run your Node.js app with the `inspect flag` like this: `node --inspect <filename>`. Example:
 
 ```bash
@@ -84,7 +82,6 @@ To open DevTools dedicated to Node.js debugging, click **Open dedicated DevTools
 ![Opening Devtools](/engineering-education/debug-node-devtools/open-dev-tools.gif)
 
 ### Step 3 -- Set Breakpoints
-
 To debug your app, navigate to the **Sources** tab. This is where you will be editing your code. Expand the file tree on the left and click the file you want to debug. The selected file opens in the central part of the sources tab. You can open multiple files for debugging.
 
 > **Note:** Editing code in DevTools does not change your local or remote files. To make permanent changes you must edit your local or remote files.
@@ -94,7 +91,6 @@ Add breakpoints to your code by clicking on the left side of the line number. On
 ![Breakpoints DevTools](/engineering-education/debug-node-devtools/node-devtools-breakpoints.jpg)
 
 ### Step 4 -- Reload app and Debug
-
 To step through to your code, navigate to the app URL and refresh the app. You can also open the URL in a new window. Upon hitting the reload button, the DevTools window should come into focus. If it doesn't, you can navigate to the DevTools window manually. You can also restart the app instance on a terminal using the `curl` command. Open a **new** terminal or tab and run:
 
 ```bash
@@ -113,5 +109,6 @@ The debugger pauses on your breakpoints while printing to the console, watch, ca
 We have looked at how you can debug a local and remote app using Chrome DevTools. In DevTools, you can observe variable changes and track bugs more easily without printing to the console through watch variables and breakpoints. This also helps prevent security loopholes. By not logging sensitive data, data breaches and hacking can't occur.
 
 Alternatively, if you'd like to debug a Node.js app straight from Visual Studio Code, check out the [following article](/engineering-education/debug-nodejs-vscode/).
+
 ---
 Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
