@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/debug-node-devtools/
 title: Debugging a Node.Js app using Chrome Dev Tools
-description: The article addresses how opening DevTools, setting breakpoints, and restarting app instances for debugging.
+description: The article addresses how opening DevTools, setting breakpoints, and restarting app instances is helpful for debugging. Since Node.js apps can fail without error messages.
 author: geoffrey-mungai
 date: 2020-09-02T00:00:00-10:00
 topics: [Node.js]
