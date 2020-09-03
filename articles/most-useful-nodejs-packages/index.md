@@ -157,8 +157,8 @@ Axios is gaining a lot of populism among many developers. This is due to strong 
 [`Axios-api-versioning`](https://github.com/Weffe/axios-api-versioning),
 [`Axios-vcr`](https://github.com/nettofarah/axios-vcr) and many more.
 
-#### Other HTTP REST Client Librarr Include
--   [`Method-override`](https://github.com/expressjs/method-override) - Lets you use HTTP methods such as DELETE, POST and GET provided from `getter` options.
+#### Other HTTP REST Client Library Include
+-   [`Method-override`](https://github.com/expressjs/method-override) - Lets you use HTTP methods such as `DELETE`, `POST` and `GET` provided from `getter` options.
 
 #### 7. JSHint
 [JSHint](https://jshint.com/about/) is a static analysis tool for Javascript. It detects errors and potential problems in code. Linting tools help Node.js developers to analyze common bugs in their code without their focused attention. Linters analyses the code for them.
