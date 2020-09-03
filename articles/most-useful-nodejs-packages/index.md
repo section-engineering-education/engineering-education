@@ -256,7 +256,7 @@ It is easier and handy to set up a server using restify framework.
 
 ##### ii. [Client API](https://www.npmjs.com/package/restify-clients).
 Restify supports three clients namely
--   JsonClient - Restify's highest-level client that maps direct to HTTP (`PUT`, `GET` and `POST`).
+-   JsonClient - Restify's highest-level client that maps direct to HTTP with `PUT`, `GET` and `POST` methods.
 -   StringClient - deals with raw HTTP by default. JsonClient is built on StringClient.
 -   HttPClient - Restify's lowest-level client for steaming with restify.
 To get started install `restify-clients` extension using command `npm install restify-clients`.
