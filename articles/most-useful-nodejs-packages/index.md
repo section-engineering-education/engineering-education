@@ -118,7 +118,7 @@ Moment.js can still run from the browser. It creates a global moment object, whi
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset ="UTF-8"></meta>
+        <meta charset ="UTF-8"/>
         <title> MomentJS Date Object </title>
     </head>
     <body>
@@ -140,36 +140,24 @@ Moment.js supports international languages for different time and date formats w
 -   [`Validator.js`](https://github.com/validatorjs/validator.js) - Validator.js is a library for string validators and sanitizing.
 -   [`Express-validator`](https://www.npmjs.com/package/express-validator) - Express-validator is an Express middleware for Validator.js.
 
-### 6. Request
-[Request](https://github.com/request/request/issues/3142) is a HTTP client framework for making `http` calls. It supports HTTPS and follows redirects by default. [Request npm](https://www.npmjs.com/package/request)
+### 6. Axios
+[Axios](https://github.com/axios/axios) is an HTTP client API framework that supports promises to perform a request. Requests are used to make a communication with the server, then a framework like Axios will return a response with a promise to whether your request was fulfilled or rejected. Axios performs requests such as `GET`, `POST`, `DELETE` and `PUT`.
 
-If you need to return a Promise, use `request` interface wrappers such as
--   [request-promise](https://github.com/request/request-promise) - It is used to describe a request to a server and get a response.
--   [util.promisfy](https://nodejs.org/api/util.html#util_util_promisify_original) - Takes a function following the common error-first callback style, i.e. taking an `(err, value) => ...` callback as the last argument, and returns a version that returns promises.
--   [request-promise-native](https://github.com/request/request-promise-any) - Use native ES6+ promises
--   [request-promise-any](https://github.com/request/request-promise-any) - Allows you to use `any-promise` to choose any Promise library you want to use.
+**Why you should choose Axios**
+-  Allows you to make simultaneous requests.
+-  Axios supports promised base request.
+-  Transforms responses and requests to JSON data.
+-  Requests and responses interceptions.
+-  Support HTTP requests for Node.js apps.
+-  Supports HTTP requests from the browsers ie [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
+-  Has security support against cross-site request forgery ([XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery)).
 
-#### Request has the following main contractors:
--   Body - is the data to send with the request.
--   Cache - is a string with the following instances: default, force-cache, no-cache, no-store, only-if-cached and reload etc.
--   Credentials - are a string which includes omit and same-origin instance properties.
--   Headers - are the `http` headings sent with the request. Headings are passed to the headers contractor.
--   Method - are HTTP methods such as `GET` `POST` `DELETE` and `PUT`.
--   Mode - is a string with one of same-origin, no-cors or cors instances.
+Axios is gaining a lot of populism among many developers. This is due to strong third-party extensions such as [`Axios-fetch`](https://github.com/lifeomic/axios-fetch), [`Axios-debug-log`](https://github.com/Gerhut/axios-debug-log),
+[`Axios-mock-adapter`](https://github.com/ctimmerm/axios-mock-adapter),
+[`Axios-api-versioning`](https://github.com/Weffe/axios-api-versioning),
+[`Axios-vcr`](https://github.com/nettofarah/axios-vcr) and many more.
 
-**Example of a Simple Request**
-```js
-const request = require('request');
-request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
-    if (err) { return console.log(err); }
-    console.log(body.url);
-    console.log(body.explanation);
-});
-```
-With request, you need less code to accomplish the same task if you were using the HTTP library.
-
-#### Other HTTP REST Client Libraries Include
--   [`Axios`](https://www.npmjs.com/package/axios) - Uses promise-based HTTP client for Node.js and Browsers.
+#### Other HTTP REST Client Librarr Include
 -   [`Method-override`](https://github.com/expressjs/method-override) - Lets you use HTTP methods such as DELETE, POST and GET provided from `getter` options.
 
 #### 7. JSHint
@@ -177,7 +165,7 @@ With request, you need less code to accomplish the same task if you were using t
 
 JSHint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, and conventions etc.
 
-[`ESLint`](https://www.section.io/engineering-education/node-eslint/) is similar to JShint package, used for linting(enhancing code quality).
+[`ESLint`](https://www.section.io/engineering-education/node-eslint/) is similar to JShint package, used for linting (enhancing code quality).
 
 ### 8. Morgan
 [Morgan](https://www.npmjs.com/package/morgan) is an HTTP request logger middleware for Node.js applications, named after [Dexter](https://en.wikipedia.org/wiki/Dexter_Morgan). Morgan gives you insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers.
@@ -246,7 +234,7 @@ From the example above:
 ### 11. Nodemon
 [Nodemon](https://www.npmjs.com/package/nodemon) is a monitoring tool and it helps Node.js developers by automatically restart an application when file changes in the app directory are detected. With Nodemon, you do not need any additional code or development method changes. It is a replacement wrapper for Node.js.
 
-Nodemon is simple to use. You just need to replace the word node with `nodemon` on the command-line when executing your `script`, i.e. `nodemon ./server.js localhost 300`
+Nodemon is simple to use. To get started, install Nodemon globally to your system path by running `npm instal -g nodemon`. OR `npm install --save-dev nodemon` to install as a development dependency. You then need to replace the word node with `nodemon` on the command-line when executing your `script`, i.e. `nodemon ./server.js localhost 300`.
 
 #### Example of Other Monitoring Frameworks Include
 -   [`PM2`](https://www.npmjs.com/package/pm2) - is a Node.js process manager that allows you to keep application alive forever and reload with no downtime.
@@ -261,66 +249,21 @@ Nodemon is simple to use. You just need to replace the word node with `nodemon` 
 -   Debuggable - Trace problems back to the origin. It is built from a post-mortem debugging perspective.
 -   Semantically correct - It has references littered all-over GitHub and the codebase.
 
-#### Restify Examples
+#### Applications Restify 
 
-##### i. Server
+##### i. [Build a server](http://restify.com/docs/server-api/).
+It is easier and handy to set up a server using restify framework.
 
-```js
-var restify = require('restify');
-const server = restify.createServer({
-    name: 'myapp',
-    version: '1.0.0'
-});
-server.use(restify.plugins.acceptParser(server.acceptable));
-server.use(restify.plugins.queryParser());
-server.use(restify.plugins.bodyParser());
-server.get('/echo/:name', function (req, res, next) {
-    res.send(req.params);
-    return next();
-});
-server.listen(8080, function () {
-    console.log('%s listening at %s', server.name, server.url);
-});
-```
-[Code source](https://github.com/restify/node-restify).
+##### ii. [Client API](https://www.npmjs.com/package/restify-clients).
+Restify supports three clients namely
+-   JsonClient - Restify's highest-level client that maps direct to HTTP (PUT, GET and POST).
+-   StringClient - deals with raw HTTP by default. JsonClient is built on StringClient
+-   HttPClient - Restify's lowest-level client for steaming with restify.
+To get started install 'restify-clients' extension using command `npm install restify-clients'.
 
-##### ii. Client
+##### iii. [Routing](https://github.com/ukayani/restify-router)
+Defines your routes using Router interfaces and apply them to a restify server instances. To get started routing run command `$npm install --save restify-router'.
 
-```js
-var assert = require('assert');
-var clients = require('restify-clients');
-var client = clients.createJsonClient({
-    url: 'http://localhost:8080',
-    version: '~1.0'
-});
-client.get('/echo/mark', function (err, req, res, obj) {
-    assert.ifError(err);
-    console.log('Server returned: %j', obj);
-});
-```
-[Code source](https://github.com/restify/node-restify).
-
-##### iii. Routing
-
-```js
-var Router = require('restify-router').Router;
-var routerInstance = new  Router();
-var restify = require('restify');
- 
-function respond(req, res, next) {
-  res.send('hello ' + req.params.name);
-  next();
-}
-// add a route like you would on a restify server instance
-routerInstance.get('/hello/:name', respond);
-var server = restify.createServer();
-// add all routes registered in the router to this server instance
-routerInstance.applyRoutes(server);
-server.listen(8080, function() {
-  console.log('%s listening at %s', server.name, server.url);
-});
-```
-[Code source](https://github.com/ukayani/restify-router).
 #### Other Node.js API Frameworks Include:
 -   [`Actionhero`](https://www.npmjs.com/package/actionhero) - is an API framework for both TCP sockets, web sockets, and HTTP clients that creates reusable APIs.
 -   [`FeathersJS`](https://www.npmjs.com/package/@feathersjs/feathers) - is a framework for REST APIs and is a real-time layer for modern applications.
@@ -331,7 +274,7 @@ server.listen(8080, function() {
 
 **Example of how Nodemailer works**
 
-```JS
+```js
 "use strict";
 const nodemailer = require("nodemailer");
 // async..await is not allowed in global scope, must use a wrapper
