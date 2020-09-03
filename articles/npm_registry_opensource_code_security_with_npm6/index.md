@@ -1,4 +1,4 @@
-Security is everyone's concern. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is an even professional habit that developers acquire are they grow their experience. Security of open-source code is core to NPM's mission with approaches to security at scale to empower NPM users to develop secure code. With NPM, you do not need to worry about the safety of your code.
+Security is everyone's concern. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is an even professional habit that developers acquire are they grow their experience. Makining sure open-source codes are secure is one of the fundermental mission of NPM, with approaches to security at scale to empower NPM users to develop secure code. With NPM, you do not need to worry about the safety of your code.
 
 NPM provides vulnerability-scanning tools that are built-in in your Node.js workflow. These tools are faster and they automatically review every install request you make, check the Node Security Platform vulnerably database, and warn you if you try to us unsafe codes. It even analyzes your dependencies trees to check specifically what has security issues and recommend a replacement or fix the issues automatically. 
 
@@ -28,9 +28,11 @@ This statistical testaments, explain the resilience and commitment of NPM to kee
 
 **Dev statistics response on open-source JavaScript libraries and code security practices**
 
-The following survey findings were carried out by NPM in partnership with the Node.js Foundation and the JS Foundation involving over 16,000 developers. The main aim of this survey is to find out how developers understand the security of the code they write and the open-source code they use. These findings were documented on April 10, 2018. Let us have a quick snippet of this survey report primarily based on on some the questions the respondents were asked. Read on the [Methodology](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db) behind this survey.
+The following survey findings were carried out by NPM in partnership with the Node.js Foundation and the JS Foundation with more than 16,000 Javascript/NPM users in getting involved. The main aim of this survey is to find out how Javascript developers understand security in relation to the open-source code they use and code they write. These findings were documented on April 10, 2018. Let us have a quick snippet of this survey report primarily based on on some the questions the respondents were asked. Read on the [Methodology](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db) behind this survey.
 
-**1. Are you concerned with whether the open-source code you use is secure?**
+**NOTE :** The following questions were picked directly from this [survey questionnaire](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b).
+
+**1. Are you concerned with whether the open-source code you use is secure? [survey questionnaire](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b).**
 
 In this survey, 97% of the respondents used the open-source code. In addition, it turned out 77% of them were worried about the safety of open-source code.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/overall-concerned.png)
@@ -75,7 +77,7 @@ From these results experienced groups were:
 -   More likely to use linter.
 -   More probably to do code review.
 -   More likely to carry out external audits of the code.
--   More likely to participate in automated scans to find security flaws in the code.
+-   More probably to participate in automated scans to find security vulnerabilities in the code they are using.
 
 If all answers are combined, a measure of how many developers uses some form of security practices on codes depending on experience will be:
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/level-of-experience.png)
@@ -85,8 +87,8 @@ If all answers are combined, a measure of how many developers uses some form of 
 **Conclusion**
 -   The best code security practices are common to experienced developers. These practices include code review, linting and testing. 
 -  Practices such as testing, linting, code surveys, and security examines are indicators  of a polished developer.
--   Solid greater parts of JavaScript developers are concerned about the security both the open-source code they use and the code they write.
--   Developers trusts the security of open source code more than the code they write.
+-   Solid greater part of this developers are more likely concerned with the safety of the code they write as well as the open-source code they use.
+-   Developers are more confidence with the safeness of open source code while in doubt with the security of the code they write.
 -   Most developers are not contented with the alternatives available/accessible to them to secure code.
 
 **Using `npm@6` for code, NPM registry, and dependency trees security**
@@ -106,12 +108,20 @@ As a developer, you spend much less time between pushing a new build and continu
 
 **3. Automatic resolution and `package-lock.json` lock file conflicts.**
 
-`package-lock.json` is a generated file. It saves information about your node dependencies you use. `package-lock.json` file is committed to your Git repository and has several benefits such as increased reproducibility across teams, reduced network overhead when installing, and making it easier to debug issues in your apps. With `npm@6`, your lock file is more stable across the teams on similar platforms as well as across operating systems unlike the later which had unexpected changes and platform differences.Use `npm install --package-lock-only` to generate a lock file without having to install into `node_modules/`.
+`package-lock.json` is a generated file. It saves information about your node dependencies you use. `package-lock.json` file is committed to your Git repository.
+
+**`package-lock.json` has the following advantages**
+
+-   Increased reproducibility across teams, reduced network overhead during installation.
+-   It Make it easier to debug an issue in your app. 
+-   With `npm@6`, your lock file is more stable across the teams on similar platforms as well as across operating systems unlike the later which had unexpected changes and platform differences.
+
+Use `npm install --package-lock-only` to create a lock file without having to install into `node_modules/`.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/package-lockfile.png)
 
 [*Image Source*](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you)
 
-`npm@6` go to an extent of automatically resolving `package-lock.json` conflicts if you happen to run npm install during a conflicted state. [Check to get started with `package-lock.json`](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you). To make this even smoother, `npm@6` have released `npm-merge-drive`, which lets you do all the rebasing and merging and other backflips. To get started with `npm-merge-drive` just run `$ npx npm-merge-driver install --g` one time and all your future merge and rebase conflicts in your git repo will be resolved in the background. [Check to get started with `npm-merge-drive`](https://www.npmjs.com/package/npm-merge-driver).
+`npm@6` go to an extent of automatically resolving `package-lock.json` conflicts if you happen to run npm install during a conflicted state. [Check to get started with `package-lock.json`](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you). To make this even more flexible and clear, `npm@6` have unleashed `npm-merge-drive`, which allows you do all the rebasing and merging and other backflips. To start using `npm-merge-drive` run `$ npx npm-merge-driver install --g` and all your future merge and rebase conflicts in your git repository will be resolved in the background. [Check to get started with `npm-merge-drive`](https://www.npmjs.com/package/npm-merge-driver).
 
 As you may have noticed, we have introduced
 [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
@@ -121,16 +131,13 @@ helps you to solve specific problems. With npx, it is easier and smooth to work 
 
 [*Image Source*](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you)
 
-[**`npx`**](https://www.npmjs.com/package/npx) 
-**has the following benefits**
--   You can run project-local binaries with it. That means you don't need to install things like `grunt-cli`, `gulp`, `bower`, and `tsc globally`---you can install them as `devDependencies` and use `npx` to run the local versions without hassle (for example, `$ npm i -D standard && npx standard`).
--   You can do a one-off, temporary installs of command-line utilities that you run rarely, such as generators: `$ npx create-react-app`.
--   You can easily try different versions of these tools with a single install if you need to compare them: `$ npx standard@8 && npx standard@10`.
+**Using [`npx`](https://www.npmjs.com/package/npx) has the following advantages**
+-   You can run project-local binaries with it. That means you don't need to install things like `grunt-cli`, `gulp`, `bower`, and `tsc globally`---you can install them as `devDependencies` and use `npx` to run the local versions without hassle (for example, `$ npm i -D standard && npx standard`).  [Npm blog post](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you).
+-   You can do a one-off, temporary installs of command-line utilities that you run rarely, such as generators: `$ npx create-react-app`. [Npm blog post](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you).
+-   You can easily try different versions of these tools with a single install if you need to compare them: `$ npx standard@8 && npx standard@10`. [Npm blog post](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you).
 -   You can even install the [shell
     auto-fallback](https://t.umblr.com/redirect?z=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fnpx%23shell-auto-fallback&t=MTVkODRiYmJkOWQ0ZTQxMjYwZGU3M2U0OGFiMDAwZTQ3YjAzMjc5YyxSQlc3OFpFUg%3D%3D&b=t%3AnXsLs1P4AptPf1fBr_nFxw&p=https%3A%2F%2Fblog.npmjs.org%2Fpost%2F173240511455%2Fthe-new-npm-cli-a-year-in-review-or-what-you&m=1&ts=1598809717) to
-    not even have to write `$ npx...` in many cases. 
-    
-Refer to [Npm blog post](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you) Or [npx](https://www.npmjs.com/package/npx).
+    not even have to write `$ npx...` in many cases. Refer to [Npm blog post](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you) Or [npx](https://www.npmjs.com/package/npx).
 
 npx is a great tool that you should try in your daily workflow.
 
@@ -152,15 +159,15 @@ Since security is everyone's responsibility, we all need to step in together to 
     in deep and the [methodology
     used.](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db)
 
-2. The NPM downloads stats are naïve by design. They are counts of HTTP 200 responses that are served tarball files ie packages. These numbers include:
+2. The NPM downloads statistics are naive by design. They are counts of HTTP 200 responses that are served tarball files ie packages. These numbers include:
    -   Automated build servers
    -   Downloads by mirrors.
    -   Robots packages download for analysis.
 
 The counts are much larger than the people who just typed `npm install(package)`. This means there some mitigation factors such as.
 
-   -   You had installed the package before; the package will usually be installed from your local npm cache, so this is not counted.
-   -   Build servers usually do not redownload a package they have already used before. Builds that happen in disposable VMs or Docker instances are available in the npm cache of the server.
-   -   Any given mirror will only download a given version of a package one time. They are smart and do not redownload a package they have already seen before.
+   -   If you had installed a package before: the package usually get installed from your local npm cache, so this is not counted.
+   -   Build servers usually do not redownload a package they have already used before. Builds that take place in disposable VMs or Docker instances are available in the npm cache of the server.
+   -   Mirrors downloads a specified version of a package one time. They are smart and do not redownload a package they have already seen before.
 
 [Check more on how npm download counts works](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts)
