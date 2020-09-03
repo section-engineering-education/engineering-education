@@ -251,10 +251,10 @@ Nodemon is simple to use. To get started, install Nodemon globally to your syste
 
 #### Applications Restify 
 
-##### i. [Build a server](http://restify.com/docs/server-api/).
+##### i. [Build a server](http://restify.com/docs/server-api/)
 It is easier and handy to set up a server using restify framework.
 
-##### ii. [Client API](https://www.npmjs.com/package/restify-clients).
+##### ii. [Client API](https://www.npmjs.com/package/restify-clients)
 Restify supports three clients namely
 -   JsonClient - Restify's highest-level client that maps direct to HTTP with `PUT`, `GET` and `POST` methods.
 -   StringClient - deals with raw HTTP by default. JsonClient is built on StringClient.
