@@ -1,6 +1,6 @@
-The ultimate measure of website performance is loading speed, the amount
+The ultimate measure of website performance is loading speed. This is the amount
 of time it takes to load a web page. Web users are relying more on
-mobile to access web content and services. If you run any website, this
+mobile to access web content and services and thus higher demand for more optimized websites. If you run any website, this
 is very evident in the data you have. Users are also demanding better
 web experience thus the need to improve your WordPress website
 performance. To improve overall website performance, several measures
@@ -9,7 +9,7 @@ to speed up WordPress website.
 
 ## Why website speed matter?
 
-If your website takes longer to load, you lose potential visitors even
+If your website takes longer to load, you  are likely to lose potential visitors even
 before they have a chance to interact with your website. Users get
 impatient with websites taking longer to load increasing bounce rate.
 This also means you will have reduced conversions and a decrease in
@@ -17,21 +17,20 @@ revenue. Google uses website speed as one of the parameters in the
 search engine ranking algorithm. Slower websites are ranked lower as
 compared to faster loading websites. Fast loading web pages lead to
 improved user experience, rise in page views, and contribute to higher
-Search Engine rankings.
+search engine rankings.
 
 ## Tools for Testing Website Page Speed
 
-WordPress speed is not dependent on whether it feels slow on the
-developer computer. It might load faster as a result of browser caching
+WordPress speed is not dependent on whether it feels slow on your computer. It might load faster as a result of browser caching
 yet it is very slow for a first-time visitor. Speed testing tools come
-in hand in determining your page speed. It is also worth noting speed
+in hand in determining your page speed. It is also worth noting that speed
 may vary with geographical locations. The faster the website the better.
 Even improving your website speed by milliseconds matters. A load time
 under 2 seconds is recommended.
 
 There are several tools for testing site speed. Some of them are free
 others are paid. Test your speed before optimization and after
-optimization. Most of the tools work by you submitting the website URL,
+optimization. Most of the tools work by you entering the website URL,
 then submit for analysis after which you get test results. They also
 give recommendations on areas you need to work on to improve website
 performance.
@@ -50,9 +49,8 @@ pages that you need to optimize.
 
 ## How to Optimize WordPress Page Speed
 
-The list is not ordered by any criteria. All are good practices for
-website optimization. Not following any one of them would slow down your
-website considerably.
+This list is not ordered by any criteria. All are good practices for
+website optimization. Consider them for your WordPress website optimization.
 
 ### Choose a good hosting platform
 
@@ -66,8 +64,8 @@ server. When the other sites hosted together with yours get traffic
 upsurge, there is a higher likelihood of the server performance being
 impacted thus making your website slow.
 
-VPS (Virtual Private Server) hosting requires you to know server
-configuration and server management. VPS costs from \$5 a month. Some of
+VPS (Virtual Private Server) hosting requires you to be able to do server
+configuration and server management. VPS costs from $5 a month. Some of
 the providers are Amazon, Linode, and Digital Ocean. The VPS approach
 cuts on cost. However, you will be responsible for server optimization
 and if something breaks.
@@ -128,7 +126,7 @@ installed themes and deactivated plugins.
 ### Use well-optimized themes
 
 Don't select some beautiful and impressive looking WordPress themes at
-the expense of performance. Pay special attention to optimization. Your
+the expense of performance. Pay special attention to theme optimization. Your
 WordPress theme should be elegant, lightweight, SEO friendly, fully
 responsive, and mobile optimized.
 
@@ -145,7 +143,7 @@ plugins available for database optimization are
 
 ![](wp-optimize-database-optimization.jpeg)
 
-See above screenshot of WP-Optimize 3.1.2 free version: Database
+See above screenshot of WP-Optimize 3.1.2 free version database
 optimization
 
 ### Use lazy loading for images and videos
@@ -166,15 +164,15 @@ saved in the database. Overtime, post revisions can increase to a point
 whereby they slow your WordPress database. In the screenshot below, post
 revisions have accumulated to 93.
 
-![](wordpress-post-revisions-screenshot.jpeg)
+![WordPress post revisions screenshot](wordpress-post-revisions-screenshot.jpeg)
 
 The solution for post revisions is to clean them from the database. You
 can use the WP-Optimize plugin to clean post revisions as shown in the
 screenshot below.
 
-![](wp-optimize-post-revisions-cleanup.jpeg)
+![WP-Optimize post revisions cleanup](wp-optimize-post-revisions-cleanup.jpeg)
 
-See above screenshot of WP-Optimize 3.1.2 free version: Deleting posts
+See above screenshot of WP-Optimize 3.1.2 free version deleting posts
 revisions
 
 The next step after cleaning post revisions is to limit the number of
@@ -185,7 +183,7 @@ of code on the WordPress wp-config.php file.
 define('WP_POST_REVISIONS', 4 )
 ```
 
-![](wp-config.php-edit.jpg)
+![WordPress wp-config editing](wp-config.php-edit.jpg)
 
 ### Update PHP to the latest version
 
@@ -205,9 +203,7 @@ securely as possible. Refer to
 [Cloudflare](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/).
 Each server stores a copy of 'static' files used to make your web pages.
 When you implement a CDN, users access your website from the server
-geographically closest to them. Among the market leaders in CDN services
-are Cloudflare, Akamai, Amazon CloudFront, IBM Cloud, Internet Services,
-Azure CDN, Google Cloud CDN, and Fastly.
+geographically closest to them.
 
 Page loading speed varies with the geographical locations of your
 hosting company server. For example, if your server is located in
@@ -215,7 +211,9 @@ Sydney, Australia, users in Sydney will have a faster loading speed than
 users located in Germany. Some hosting companies such as
 [Amazon](https://aws.amazon.com/) and [Linode](http://linode.com/) have
 servers in different geographical locations. You are advised to select a
-server that is closest to the majority of your users.
+server that is closest to the majority of your users. Among the market leaders in CDN services
+are Cloudflare, Akamai, Amazon CloudFront, IBM Cloud, Internet Services,
+Azure CDN, Google Cloud CDN, and Fastly.
 
 ### Conclusion
 
