@@ -22,7 +22,7 @@ Continuous Integration allows the development teams to detect problems early. It
 ### Continuous Integration With Jenkins
 Jenkins achieves continuous integration with the help of plugins. It has over a thousand plugins that integrate with every tool in the CI and CD toolchain. Jenkins reduces the development cycle since code gets to build and tested continuously, thus releasing new features to the user faster and with fewer errors. Short time is taken to integrate the code, but before the use of Jenkins integration was done manually thus more time was taken. The use of Jenkins enables integration to take place continuously. The use of Jenkins has helped the developers to get feedback faster after the code has been integrated, this is because if code breaks they can know what the issue is and how it will be solved.
 
- ### Features of Jenkins
+### Features of Jenkins
  - Easy Configuration
  Setting up Jenkins is easy and the web interface makes it is easy for developers to check for any errors, also they get great built-in help.
  - Easy Installation
