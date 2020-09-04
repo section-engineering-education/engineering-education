@@ -190,38 +190,7 @@ As a Node.js developer, you need to test your application to make sure it is sta
 -   [`Jest`](https://jestjs.io/) - JavaScript testing framework which focuses on simplicity.
 
 ## 10. MySQL
-[MySQL](https://en.wikipedia.org/wiki/MySQL) is a Node.js client for the MySQL protocol. Before using MySQL to connect to your database, ensure you have [MySQL installed and configured](https://dev.mysql.com/doc/mysql-getting-started/en/) in your machine. Then create a database and database table that you can work with. [Check instructions on how to create MySQL database and tables](https://www.guru99.com/how-to-create-a-database.html).
-
-### An Example on How to Use MySQL with Node.js
-```js
-//use require() to include MySql library
-var mysqldb = require('mysql');
-//you need to create a connection to the database
-//make sure you replace 'user' and 'password' with your correct values
-//create connection
-var con = mysqldb.createConnection({
-    host: 'localhost',
-    user: 'you',
-    password: 'passwordgoeshere',
-    database: 'mydb'
-});
-con.connect(function(err) {
-  if (err) throw err;
-  con.query("SELECT name1, name2 FROM yourtable", function (err, result, fields){
-    if (err) throw err;
-    console.log(result);
-  });
-  });
-//terminate connection
-//executes the remaining queries
-//send quit packet to your MySql server
-//end
-```
-[Code snippet source](https://github.com/mysqljs/mysql).
-
-From the example above:
--   Every method that you invoke on a database connection is queued and executed in sequence.
--   To terminate/close the connection use `end()`, this makes sure that all the remaining queries are executed before sending a quit packet to the MySQL server.
+[MySQL](https://en.wikipedia.org/wiki/MySQL) is a Node.js client for the MySQL protocol. Before using MySQL to connect to your database, ensure you have [MySQL installed and configured](https://dev.mysql.com/doc/mysql-getting-started/en/) in your machine. Then create a database and database table that you can work with. [Check instructions on how to create MySQL database and tables](https://www.guru99.com/how-to-create-a-database.html). Refer to [Node.js MySQL](https://dev.to/achowba/build-a-simple-app-using-node-js-and-mysql-19me) get started and build a simple app with Node.js and MySQL as well as learn more on [MySQL framework](https://www.npmjs.com/package/mysql). 
 
 ### Other MySQL and Helper Frameworks Include:
 -   [`Sequelize`](https://www.npmjs.com/package/sequelize) - a promised based Node.js Object-Relation Mapping for MySQL, SQLite, Maria DB, Postgres, and Microsoft SQL Server.
