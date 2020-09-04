@@ -199,7 +199,7 @@ var mysqldb = require('mysql');
 //you need to create a connection to the database
 //make sure you replace 'user' and 'password' with your correct values
 //create connection
-var connection = mysqldb.createConnection({
+var con = mysqldb.createConnection({
     host: 'localhost',
     user: 'you',
     password: 'passwordgoeshere',
