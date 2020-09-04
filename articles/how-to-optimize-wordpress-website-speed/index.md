@@ -19,7 +19,7 @@ search engine rankings.
 
 ## Tools for Testing Website Page Speed
 
-WordPress speed is not dependent on whether it feels slow on your computer. It might load faster as a result of browser caching
+WordPress speed is not dependent on whether it feels slow on the developer's computer. It might load faster as a result of browser caching
 yet it is very slow for a first-time visitor. Speed testing tools come
 in hand in determining your page speed. It is also worth noting that speed
 may vary with geographical locations. The faster the website the better.
@@ -103,7 +103,7 @@ size. If you need a transparent image, use PNG. For the rest of the
 images use JPEG. Reducing image size to reduce file is also necessary on
 top of choosing file formats. The main objective is to find a balance
 between File size and quality. Get the lowest file size and acceptable
-quality. Although there exist WordPress image compression plugins,
+quality. Although there exists WordPress image compression plugins,
 compressing images before the upload is recommended. Photoshop,
 [compressor.io](https://compressor.io/) and [BulkResize](https://bulkresizephotos.com/en) are some of the tools used
 for image compression. Image compression plugins include [Imagify](https://imagify.io/wordpress/),
@@ -116,8 +116,7 @@ Smush](https://wordpress.org/plugins/wp-smushit/). Keep your image under
 
 This is a crucial website maintenance task. You should get rid of themes
 and plugins that are not in use. The plugins and themes take space in
-the server causing unnecessary strain. This involves deleting all the
-installed themes and deactivated plugins.
+the server causing unnecessary strain. This involves deleting installed themes that are not in use and deleting deactivated plugins.
 
 ### Use well-optimized themes
 
@@ -183,7 +182,7 @@ define('WP_POST_REVISIONS', 4 )
 
 ### Update PHP to the latest version
 
-PHP is opensource and undergoing active development to improve on
+PHP is open source and undergoing active development to improve on
 performance, fix bugs, enhance security, and other features. Therefore,
 there is no doubt that the latest PHP version is more enhanced in terms
 of performance compared to the previous versions. Keep your PHP version
