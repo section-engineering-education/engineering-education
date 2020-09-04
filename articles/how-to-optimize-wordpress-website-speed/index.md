@@ -26,8 +26,8 @@ may vary with geographical locations. The faster the website the better.
 Even improving your website speed by milliseconds matters. A load time
 under 2 seconds is recommended.
 
-There are several tools for testing site speed. Some of them are free
-others are paid. Test your speed before optimization and after
+There are several tools for testing website speed. Some of them are free
+others are paid. Test your website speed before optimization and after
 optimization. Most of the tools work by you entering the website URL,
 then submit for analysis after which you get test results. They also
 give recommendations on areas you need to work on to improve website
@@ -50,16 +50,15 @@ pages that you need to optimize.
 This list is not ordered by any criteria. All are good practices for
 website optimization. Consider them for your WordPress website optimization.
 
-### Choose a good hosting platform
+### Choose a Good Hosting Platform
 
-Web Hosting services can be categorized into 3;
+Web hosting services can be sorted into three categories;
 
 Shared hosting, VPS hosting, and managed WordPress hosting. Shared
 hosting is the most popular. Companies like Namecheap, Bluehost,
 HostGator, SiteGround, and GoDaddy offer shared hosting. Your website is
 likely to be hosted with more than 200 other websites on the same
-server. When the other sites hosted together with yours get traffic
-upsurge, there is a higher likelihood of the server performance being
+server. When the other sites hosted together with yours get an upsurge in traffic, there is a higher likelihood of the server performance being
 impacted thus making your website slow.
 
 VPS (Virtual Private Server) hosting requires you to be able to do server
