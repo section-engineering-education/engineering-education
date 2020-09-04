@@ -137,9 +137,9 @@ For customizing Bulma, there are four kinds or levels of variables:
 - Initial Variables -- There are global variables with literal values.
 - Derived Variables -- These are derived from other variables.
 - Generic Variables -- HTML elements that carry no CSS class.
-- Element Variables -- variables that are specific to a bulma element.
+- Element Variables -- variables that are specific to a Bulma element.
 
-Now, for customizing these Bulma Variables, let us set up sass and bulma. Sass is a CSS preprocessor that adds extra features like variables and loops. It is an extension to CSS that improves the stylesheet language and reduces repetition.
+Now, for customizing these Bulma Variables, let us set up Sass and Bulma. Sass is a CSS preprocessor that adds extra features like variables and loops. It is an extension to CSS that improves the stylesheet language and reduces repetition.
 
 - Initiate a node project.
 
@@ -147,13 +147,13 @@ Now, for customizing these Bulma Variables, let us set up sass and bulma. Sass i
 npm init
 ```
 
-- Install bulma and sass.
+- Install Bulma and Sass.
 
 ```
 npm i bulma sass
 ```
 
-- Now, to get started, create three files.
+- Now, to get started, create three files below.
   - index.html
   - style.css
   - style.scss
@@ -229,7 +229,7 @@ An exhaustive list of customizable Bulma variables can be found [here](https://b
 
 ### Further Reading
 
-We have learnt the basics of Bulma and how to customize and theme bulma using variables. For further reading, check out the following links.
+We have learnt the basics of Bulma and how to customize and theme Bulma using variables. For further reading, check out the following links.
 
 - [Bulma Expo](https://bulma.io/expo/) -- A list of websites created using Bulma, for inspiration.
 - [Extensions](https://creativebulma.net/products) -- Bulma templates and extra components.
