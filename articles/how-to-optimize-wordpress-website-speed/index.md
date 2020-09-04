@@ -107,10 +107,8 @@ top of choosing file formats. The main objective is to find a balance
 between File size and quality. Get the lowest file size and acceptable
 quality. Although there exist WordPress image compression plugins,
 compressing images before the upload is recommended. Photoshop,
-[compressor.io](https://compressor.io/) and
-[BulkResize](https://bulkresizephotos.com/en) are some of the tools used
-for image compression. Image compression plugins include
-[Imagify](https://imagify.io/wordpress/),
+[compressor.io](https://compressor.io/) and [BulkResize](https://bulkresizephotos.com/en) are some of the tools used
+for image compression. Image compression plugins include [Imagify](https://imagify.io/wordpress/),
 [ShortPixel](https://wordpress.org/plugins/shortpixel-image-optimiser/),
 [Optimole](https://wordpress.org/plugins/optimole-wp/), and [WP
 Smush](https://wordpress.org/plugins/wp-smushit/). Keep your image under
