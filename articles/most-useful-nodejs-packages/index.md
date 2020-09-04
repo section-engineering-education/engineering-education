@@ -118,7 +118,7 @@ Moment.js can still run from the browser. It creates a global moment object, whi
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset ="UTF-8"/>
+        <meta charset="UTF-8"/>
         <title> MomentJS Date Object </title>
     </head>
     <body>
@@ -233,7 +233,9 @@ From the example above:
 ### 11. Nodemon
 [Nodemon](https://www.npmjs.com/package/nodemon) is a monitoring tool and it helps Node.js developers by automatically restart an application when file changes in the app directory are detected. With Nodemon, you do not need any additional code or development method changes. It is a replacement wrapper for Node.js.
 
-Nodemon is simple to use. To get started, install Nodemon globally to your system path by running `npm instal -g nodemon`. OR `npm install --save-dev nodemon` to install as a development dependency. You then need to replace the word node with `nodemon` on the command-line when executing your `script`, i.e. `nodemon ./server.js localhost 300`.
+Nodemon is simple to use. To get started, install Nodemon globally to your system path by running `npm install -g nodemon` or `npm install --save-dev nodemon` to install it locally as a development dependency. 
+
+For global installations, you need to replace the word node with `nodemon` on the command-line when executing your `script`, i.e. `nodemon ./server.js localhost 300` but for local installations, you need to use `npx nodemon`, i.e. `npx nodemon ./server.js localhost 300`.
 
 #### Example of Other Monitoring Frameworks Include
 -   [`PM2`](https://www.npmjs.com/package/pm2) - is a Node.js process manager that allows you to keep application alive forever and reload with no downtime.
