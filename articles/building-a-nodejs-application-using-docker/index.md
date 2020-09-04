@@ -83,7 +83,7 @@ Go to `http://localhost:8080/` in your browser to view it.
 
 ## Step 2 - Create A DockerFile
 
-Create a file in the directory called `Dockerfile`.
+Create a file in the root directory called `Dockerfile`.
 
 The first thing is to define which image we want to build from. Here we will use version `9` of `node` available from Docker Hub:
 ```
