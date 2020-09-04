@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/sparksql-mllibspark-part-3/hero.jpg
-    alt:
+    alt: SparkSQL and MLlib example image
 ---
 Apache Spark is a distributed cluster computing engine for handling big data. It provides a simple interface to program entire clusters with implicit data parallelism, splits the big data into multiple cores or systems and optimally utilizes these computing resources to process this data in a distributed manner. DAG (directed acyclic graph) manages workflows in Spark, which results in fast computation of big data. Spark does not require the users to have high end, expensive systems with great computing power. Therefore it is a great solution for processing big data quickly and without overheating the system.
 <!--more-->
