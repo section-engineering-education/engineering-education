@@ -4,14 +4,14 @@ status: publish
 published: true
 url: /engineering-education/web-developers-guide-seo/
 title: Developer's Guide to Search Engine Optimization
-description: A how-to guide on setting up Rclone to create an encrypted folder where users can store data on Google Drive which will be encrypted before upload.
-author: louise-findlay
+description: A developers guide on implementing various techniques to improve a website's ranking on search engines such as Google.
+author: lalithnarayan-c
 date: 2020-09-03T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/web-developers-guide-seohero.jpg
+  - url: /engineering-education/web-developers-guide-seo/hero.jpg
     alt: web developers guide to SEO
 ---
 Search engine optimization (SEO) is an incredibly important aspect of designing websites. SEO is usually tackled by the marketing department in a given company. But, developers have an equal role to play in ensuring the website is easily found on the search engines.
@@ -101,7 +101,9 @@ The name of the book may change which may lead to a change in the fetched URL. T
 ```html
 <meta property="twitter:property_name" content="canonicalURL">
 ```
+
 ![twitter cards](/engineering-education/web-developers-guide-seo/twittercards.jpg)
+
 *[Image Source](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup)*
 
 Some of the property names that twitter cards use are as follows:
@@ -122,7 +124,7 @@ Server-side rendering enables the crawlers to get all the content including the 
 In this article, [Node.js vs Next.js](/engineering-education/node-versus-next-react-approach/), we looked at in depth how Next.js enables efficient SEO.
 
 ### Conclusion
-We have looked at various methods for optimizing websites. Accessing this information gives power to the developer to create search engine optimized sites. We hope this helps you build optimized sites and drive more traffic to your sites.
+We have looked at various methods for optimizing websites. Accessing this information gives power to the developer to create search engine optimized sites. We hope this helps you build optimized sites and drive more traffic to your sites. Be legendary.
 
 ---
 Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
