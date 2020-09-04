@@ -205,12 +205,13 @@ var connection = mysqldb.createConnection({
     password: 'passwordgoeshere',
     database: 'mydb'
 });
-connection.connect();
-connection.query('SELECT 1 + 1 AS solution', function(error, results, fields) {
-    if (error) throw error;
-    console.log('The solution is: ', results[0].solution);
-});
-connection.end();
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT name1, name2 FROM yourtable", function (err, result, fields){
+    if (err) throw err;
+    console.log(result);
+  });
+  });
 //terminate connection
 //executes the remaining queries
 //send quit packet to your MySql server
@@ -250,7 +251,7 @@ For global installations, you need to replace the word node with `nodemon` on th
 -   Debuggable - Trace problems back to the origin. It is built from a post-mortem debugging perspective.
 -   Semantically correct - It has references littered all-over GitHub and the codebase.
 
-#### Applications Restify 
+#### Applications of Restify 
 
 ##### i. [Build a server](http://restify.com/docs/server-api/)
 It is easier and handy to set up a server using restify framework.
