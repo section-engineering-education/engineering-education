@@ -20,23 +20,23 @@ When a URL is shared, how can we ensure that the experience with the URL is enha
 
 When we place an order on Amazon, the order details and delivery estimate is available to our Google Assistant. Some links provide nice imagery and smooth transitions between apps such as LinkedIn URLs for example.
 
-Search engine optimization is the art of standing out amongst other websites. This art is pioneered by creating an experience that the user seeks repetitively, thereby increasing the websites presence on the internet. We will look at some of the key considerations a developer should keep in mind while designing a website. The techniques aim at simplifying the job of the millions of crawlers that search and [index the internet regularly](https://www.sciencedaily.com/terms/web_crawler.htm).
+Search engine optimization is the art of standing out amongst other websites. This art is pioneered by creating an experience that the user seeks repetitively, thereby increasing the website's presence on the internet. We will look at some of the key considerations a developer should keep in mind while designing a website. The techniques aim at simplifying the job of the millions of crawlers that search and [index the internet regularly](https://www.sciencedaily.com/terms/web_crawler.htm).
 
 We will look at the various aspects of SEO, and consider the important concepts of metadata. Towards the end of the article, you will have a solid grasp of some good SEO techniques.
 
 ### Traditional SEO
-Let's look at some of the methods that can be used to improve SEO. These are factors responsible for ensuring crawlers can easily do their job. Traditional SEO, had an earlier emphasis on HTML meta tags that was used to fill in a set of important keywords. Severe exploitation of this has resulted in search engines disregarding the keywords.
+Let’s look at some of the methods that can be used to improve SEO. These are factors responsible for ensuring crawlers can easily do their job. Traditional SEO, had an earlier emphasis on HTML meta tags that were used to fill in a set of important keywords. Severe exploitation of this has resulted in search engines disregarding the keywords.
 
 Crawlers are bots that go through pages and find the content present there. They then list the various links the website directs to. By doing so, crawlers map the internet and enhance the performance of search engines.
 
 At the same time, the content plays a major role. The amount of time a user spends and the monetization capacity are tracked regularly by the crawlers. Finally, the target niche matters.
 
-Providing unique content that is designed, delivered, and branded has a higher chance of being ranked higher. The investment on User Interface and User Experience [(UI/UX)](https://neilpatel.com/blog/googlebot-optimization/) returns a larger time spent on the site and larger number of clicks which resuls in better SEO.
+Providing unique content that is designed, delivered, and branded has a higher chance of being ranked higher. The investment on User Interface and User Experience [(UI/UX)](https://neilpatel.com/blog/googlebot-optimization/) returns a larger time spent on the site and a larger number of clicks which results in better SEO.
 
 ### PageRank
 The [PageRank](https://en.wikipedia.org/wiki/PageRank) algorithm, named after Larry Page, is the algorithm used to measure and rank the importance of websites. The underlying assumption that ranking algorithms make is as follows: the quality of a site is directly proportional to the number of links to it. Quality links are links those pages that are ranked better.
 
-Now that we have better understanding about the topic, let us look at some pro-SEO dev techniques to boost your page ranking higher and higher.
+Now that we have a better understanding of the topic, let us look at some pro-SEO dev techniques to boost your page ranking higher and higher.
 
 ### Metadata
 
@@ -58,7 +58,7 @@ For example, look at the current tab. Is the title "Developer's Guide to Search 
 Such optimization is required for getting better results from search engines.   
 
 #### 3. Adding Favicons
-Favicons are the tiny icons that appear on the tabs. They don't directly affect SEO. They play a vital role in optimizing the user experience. The favicons represent the brand and therefore have a huge importance. Looking at the favicon on top of the Facebook page helps us (as the audience) easily identify the tab amidst other tabs.
+Favicons are the tiny icons that appear on the tabs. They don't directly affect SEO. They play a vital role in optimizing the user experience. The favicons represent the brand and therefore have huge importance. Looking at the favicon on top of the Facebook page helps us (as the audience) easily identify the tab amidst other tabs.
 
 The favicon also helps in identifying the webpage in bookmark lists as well as the search history. Better and easier identification of websites enables larger time spent on the site thereby optimizing it.
 
