@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/customization-using-bulma/
 title: Customize CSS using Bulma
-description: Bulma is a lightweight, open source CSS framework that has excellent customization features, perfect for rapid development.
+description: Bulma is a lightweight, open source CSS framework that has excellent customization features which is perfect for rapid development.
 author: saiharsha-balasubramaniam
 date: 2020-09-04T00:00:00-08:00
 topics: [Languages]
@@ -16,9 +16,9 @@ images:
 
 **Cascading Style Sheets** is a stylesheet language that is used to describe how a webpage looks and feels visually. To speed up the development of projects, developers use CSS frameworks like Bulma. Let us see why CSS frameworks are useful and learn about Bulma.
 
-### Table of Contents
+## Table of Contents
 
-- [Need for a CSS Framework](#need-for-a-css-framework)
+- [The Need for a CSS Framework](#need-for-a-css-framework)
 - [Bulma](#bulma)
 - [Getting Started](#getting-started)
 - [Column System](#column-system)
@@ -26,9 +26,9 @@ images:
 - [Customizing Variables](#customizing-variables)
 - [Further Reading](#further-reading)
 
-### Need for a CSS Framework
+### The Need for a CSS Framework
 
-CSS is an flexible language, with a ton of customization options. This may sometime prove to be overwhelming for a beginner. When you're out to build a product, a CSS framework helps to accelerate the process of development. It helps to reduce time to production and this may prove crucial to a project. Some other benefits to using a CSS framework include:
+CSS is an flexible language, with a ton of customization options. This may sometimes be overwhelming for a beginner. When you're out to build a product, a CSS framework helps to accelerate the process of development. It helps to reduce time to production, which is crucial for a project. Some other benefits to using a CSS framework include:
 
 - Good CSS frameworks have excellent documentation.
 - Easier to make websites responsive.
@@ -42,7 +42,7 @@ Bulma is a fast, lightweight and customizable CSS framework. Bulma is perfect fo
 - It has an excellent developer community.
 - It can be customized extensively through variables.
 - Bulma uses easy-to-read class names that are easy to remember.
-- It is extremely clean and aesthetic looking.
+- It provides a modern and clean design.
 
 For the above reasons, Bulma is an efficient CSS framework that can be used to create performant websites.
 
@@ -66,6 +66,10 @@ npm install bulma
 ```
 
 - We can also download the `bulma.css` file from [here](https://github.com/jgthms/bulma/tree/master/css) and include it in our webpage using the `<link>` tag.
+
+```html
+<link rel="stylesheet" href="bulma.css" />
+```
 
 ### Column System
 
@@ -98,7 +102,7 @@ The above snippet would create three columns. One column occupies half the space
 
 ### Components
 
-Bulma comes with many in-built UI components. Let us try to create a card component.
+Bulma comes with many in-built UI components. Let's try to create a card component.
 
 ```html
 <div class="card">
@@ -132,10 +136,10 @@ For customizing Bulma, there are four kinds or levels of variables:
 
 - Initial Variables -- There are global variables with literal values.
 - Derived Variables -- These are derived from other variables.
-- Generic Variables -- HTML elements that cary no CSS class.
+- Generic Variables -- HTML elements that carry no CSS class.
 - Element Variables -- variables that are specific to a bulma element.
 
-Now, for customizing these Bulma Variables, let us set up sass and bulma.
+Now, for customizing these Bulma Variables, let us set up sass and bulma. Sass is a CSS preprocessor that adds extra features like variables and loops. It is an extension to CSS that improves the stylesheet language and reduces repetition.
 
 - Initiate a node project.
 
@@ -154,7 +158,7 @@ npm i bulma sass
   - style.css
   - style.scss
 
-Let us now create a html page with a basic button.
+Let us now create a HTML page with a basic button.
 
 ```html
 <!DOCTYPE html>
@@ -181,7 +185,7 @@ Let's say we want to change these colors.
 We can do this by modifying `style.scss`
 
 ```scss
-// Importing Initital Variables
+// Importing Initial Variables
 
 @import "node_modules/bulma/sass/utilities/initial-variables";
 
@@ -196,7 +200,7 @@ $family-sans-serif: "Helvetica", "Arial", sans-serif;
 $primary: $pink;
 $danger: #0000ec;
 
-// Import the rest of bulma
+// Import the rest of Bulma
 
 @import "node_modules/bulma/bulma";
 ```
