@@ -1,18 +1,16 @@
-The ultimate measure of website performance is loading speed. This is the amount
+The ultimate measure of websites performance is loading speed. This is the amount
 of time it takes to load a web page. Web users are relying more on
-mobile to access web content and services and thus higher demand for more optimized websites. If you run any website, this
-is very evident in the data you have. Users are also demanding better
+mobiles to access web content and services and thus higher demand for more optimized websites. If you run any website, this
+is very evident in your analytical. Users are also demanding better
 web experience thus the need to improve your WordPress website
 performance. To improve overall website performance, several measures
 need to be taken. This article is a comprehensive guide on the best ways
 to speed up WordPress website.
 
-## Why website speed matter?
+## Why website speed matters?
 
-If your website takes longer to load, you  are likely to lose potential visitors even
-before they have a chance to interact with your website. Users get
-impatient with websites taking longer to load increasing bounce rate.
-This also means you will have reduced conversions and a decrease in
+If your website takes longer than 2 seconds to load, bounce rate increases.
+This means you will have reduced conversions and a decrease in
 revenue. Google uses website speed as one of the parameters in the
 search engine ranking algorithm. Slower websites are ranked lower as
 compared to faster loading websites. Fast loading web pages lead to
