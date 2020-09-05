@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/huffman-coding-python/
+title: Huffman Coding with Python
+description: Huffman coding is a technique for text compression that uses data structures. This article explains the theory behind Huffman coding and implementation in Python. 
+author: lalithnarayan-c
+date: 2020-09-05T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/huffman-coding-python/hero.jpg
+    alt: huffman python code coding data text compression
+---
+Huffman coding is a lossless way to compress and encode text based on the frequency of the characters in the text.
+
+<!--more-->
 # Huffman Coding
 
 In computer science and information theory, [Huffman code](https://www.sciencedirect.com/topics/computer-science/codeword-length) is a special type of optimal prefix code that is often used for lossless data compression. The algorithm was developed by [David A. Huffman](https://en.wikipedia.org/wiki/Huffman_coding) in the late 19th century as part of his research into computer programming and is commonly found in programming languages such as C, C + +, [Java](https://algs4.cs.princeton.edu/55compression/Huffman.java.html), JavaScript, Python, Ruby, etc. The intuition behind Huffman encoding is as follows. A letter or a symbol that occurs frequently is represented by a shorter code and a symbol that occurs rarely is represented by a longer code. This leads to efficient representation of characters that require less memory to be stored in. Therefore, we can find Huffman coding used in data compression techniques.
