@@ -25,7 +25,7 @@ RDD (Resilient Distributed Datasets), which we explored in the previous article,
 *Note*: In the recent release of Spark 3, the developers have deprecated RDD programming in their Machine Learning libraries.
 
 [Dataframes and Datasets are part of Spark SQL](https://spark.apache.org/docs/latest/sql-programming-guide.html), which is a Spark module for structured data processing. A **Dataset** is a distributed collection of data. Dataset is an interface that adds the benefits such as increased efficiency provided by SparkSQL’s computation engine to RDDs usage of powerful lambda functions and strongly typed data. A **DataFrame** is a *Dataset* organized into named columns.
-Let us see what a dataframe looks like by converting our books dataset (not to be confused with Spark dataset) into a dataframe, and begin coding a book recommender. *Make sure* [*Books*](http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip) *dataset is downloaded and placed in the same folder where you will store your PySpark script.*
+Let us see what a dataframe looks like by converting our books dataset (not to be confused with Spark dataset) into a dataframe, and begin coding a book recommender. *Make sure* [*Books Crossing*](https://www.kaggle.com/somnambwl/bookcrossing-dataset) *dataset is downloaded and placed in the same folder where you will store your PySpark script.*
 
 ```python
 # importing all the libraries we’ll require to build the book recommender
@@ -54,7 +54,7 @@ spark = SparkSession.builder \
 [Spark Session](https://medium.com/@achilleus/spark-session-10d0d66d1d24) is a combined entry point to Spark as well as Spark SQL functionalities. Now, we will use the Spark Session to read ‘BX-Books.csv’ into the Pyspark program as a dataframe.
 
 ```python
-books_df = spark.read.option("delimiter", ";").option("header", "true").csv('./BX-CSV-Dump/BX-Books.csv')
+books_df = spark.read.option("delimiter", ";").option("header", "true").csv('./Dataset/Books.csv')
 books_df.show()
 ```
 
@@ -94,10 +94,10 @@ books_df.createOrReplaceTempView('Table')df = spark.sql("SELECT Publisher from T
 But it is recommended to run SQL programmatically rather than running an SQL query directly, so we will be following that moving forward.
 
 ### Machine Learning using MLlib
-To provide recommendations to the users, we need to use data which contains the ratings of different books provided by a lot of users, including the user we will give recommendations to. So we need to import the ‘BX-Book-Ratings.csv’ file into the program, and perform some type conversions on certain columns to make it appropriate for further computations.
+To provide recommendations to the users, we need to use data which contains the ratings of different books provided by a lot of users, including the user we will give recommendations to. So we need to import the ‘Ratings.csv’ file into the program, and perform some type conversions on certain columns to make it appropriate for further computations.
 
 ```python
-user_ratings_df = spark.read.option("delimiter", ";").option("header", "true").csv('./BX-CSV-Dump/BX-Book-Ratings.csv')
+user_ratings_df = spark.read.option("delimiter", ";").option("header", "true").csv('./Dataset/Ratings.csv')
 # Columns User-ID, ISBN and Book-Rating were in string format, which we convert to int
 ratings_df = user_ratings_df.withColumn("User-ID",
                                         user_ratings_df['User-ID'].\
@@ -171,4 +171,4 @@ Spark is a fast and efficient framework meant for handling big data. We explored
 - Taming big data with Apache Spark and Python- Frank Kane
 - https://spark.apache.org/docs/latest/api/python/pyspark.html
 - https://spark.apache.org/docs/
-- http://www2.informatik.uni-freiburg.de/~cziegler/BX/ for dataset
+- https://www.kaggle.com/somnambwl/bookcrossing-dataset for dataset
