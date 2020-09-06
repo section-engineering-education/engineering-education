@@ -20,10 +20,10 @@ In my previous article, about an introduction to [hapi.js framework](https://www
 Koa.js is an open source node.js web framework that was designed by the team behind express. As their [official website](https://koajs.com) says, the framework aims to be a smaller, more expressive, and more robust foundation for web applications and APIs. Koa uses asynchronous functions to help eliminate the need for callbacks and significantly improve error handling. Koa does not bundle middlewares within its core, and provides a refined suite of methods that fasten the process of making servers and makes it exciting.
 
 ### Koa.js features
-As it is with all available frameworks, Koa.js also has its own unique features that make it more expressive and developer-friendly.
+As with all available frameworks, Koa.js also has its own unique features that make it more expressive and developer-friendly.
 Here are a highlight of some of the features in Koa.
 1. Koa.js is modern and future-proof - Unlike other Node.js frameworks, Koa.js build is based on ES6 which makes development of complex applications simpler by providing a bunch of new classes and modules. This helps developers to create maintainable applications.
-2. Koa.js uses ES6 generators to simplify synchronous programming and facilitate flow of controls. This generators can also be used as functions to control code execution on the same stack
+2. Koa.js uses ES6 generators to simplify synchronous programming and facilitate flow of controls. These generators can also be used as functions to control code execution on the same stack
 3. Koa.js has a small footprint as compared to other Node.js frameworks. This helps developers to write thinner middlewares.
 4. Koa.js has a built-in catchall for errors that help prevent website crashes.
 5. Koa.js uses a Context object which is an encapsulation of request and response objects.
@@ -64,7 +64,7 @@ app.listen(2400, () => {console.log('Server running at PORT 2400')})
 ```
 The code used to create the server is pretty straight forward, just import the koa module and use its listen method. To start the server, run node 'name of your index file' on the terminal.
 
-### creating routes using koa.js
+### Creating routes using koa.js
 Unlike its predecessor, Express, Koa.js does not handle routing by default. Instead it uses a middleware library Known as Koa Router. So, for as to implement routes in our server, we will first need to run 
 
 ```bash
@@ -93,14 +93,14 @@ app.listen(2400, () => console.log('Server running at PORT 2400'))
 ```
 Start the server again and test the route by sending request from the browser.
 
-### Handling responses in Koa.js
+### Handling Responses in Koa.js
 As we mentioned earlier, Koa response objects are embedded in its context object. This means that we access the response object from the context object.
 Lets use a route definition like the one above to demonstrate handling responses.
 
 ```js
 router.get('home', '/', (context) => {
   context.status = 200 //This is the response status
-  coontext.body   = "Welcome to my Koa.js Server" // This is the response body
+  context.body   = "Welcome to my Koa.js Server" // This is the response body
 })
 ```
 ### Handling errors in Koa.js
