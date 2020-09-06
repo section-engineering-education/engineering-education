@@ -25,7 +25,7 @@ images:
 - [Further Reading](#further-reading)
 
 ### The Need for a CSS Framework
-CSS is a flexible language, with a ton of customization options. This may sometimes be overwhelming for a beginner. When you're out to build a product, a CSS framework helps to accelerate the process of development. It helps to reduce time to production, which is crucial for a project. Some other benefits to using a CSS framework include:
+CSS is a flexible language, with a ton of customization options. This may sometimes be overwhelming for a beginner. Yet, when you're out to build a product, a CSS framework can really help in accelerating the development process. It helps to reduce time to production, which is crucial for a project. Some other benefits to using a CSS framework include:
 
 - Good CSS frameworks have excellent documentation.
 - Easier to make websites responsive.
