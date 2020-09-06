@@ -248,3 +248,6 @@ We have just learned the basics of Bulma, how to customize, and theme Bulma usin
 - [Extensions](https://creativebulma.net/products) -- Bulma templates and extra components.
 - [Sass Documentation](https://sass-lang.com/guide)
 - [Learn Bulma](https://scrimba.com/g/gbulma) -- An interactive course to learn Bulma.
+
+---
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
