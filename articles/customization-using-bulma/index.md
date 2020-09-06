@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/customization-using-bulma/hero.jpg
     alt: bulma image example
 ---
-**Cascading Style Sheets** is a stylesheet language that is used to describe how a webpage looks and feels visually. To speed up the development of projects, developers use CSS frameworks like Bulma. Let us see why CSS frameworks are useful and learn more about Bulma as well.
+**Cascading Style Sheets** (CSS) is a stylesheet language that is used to describe how a webpage looks and feels visually. To speed up the development of projects, developers use CSS frameworks like Bulma. Let us see why CSS frameworks are useful and learn more about Bulma as well.
 <!--more-->
 ### Table of Contents
 - [The Need for a CSS Framework](#need-for-a-css-framework)
