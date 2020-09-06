@@ -4,19 +4,18 @@ status: publish
 published: true
 url: /engineering-education/customization-using-bulma/
 title: Customize CSS using Bulma
-description: Bulma is a lightweight, open source CSS framework that has excellent customization features that is perfect for rapid development.
+description: Bulma is a lightweight and open-source CSS framework that has excellent customization features that are perfect for rapid development.
 author: saiharsha-balasubramaniam
-date: 2020-09-04T00:00:00-08:00
+date: 2020-09-06T00:00:00-08:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/customization-using-bulma/hero.jpg
-    alt: bulma
+    alt: bulma image example
 ---
-**Cascading Style Sheets** is a stylesheet language that is used to describe how a webpage looks and feels visually. To speed up the development of projects, developers use CSS frameworks like Bulma. Let us see why CSS frameworks are useful and learn about Bulma.
+**Cascading Style Sheets** is a stylesheet language that is used to describe how a webpage looks and feels visually. To speed up the development of projects, developers use CSS frameworks like Bulma. Let us see why CSS frameworks are useful and learn about Bulma as well.
 <!--more-->
 ### Table of Contents
-
 - [The Need for a CSS Framework](#need-for-a-css-framework)
 - [Bulma](#bulma)
 - [Getting Started](#getting-started)
@@ -26,16 +25,14 @@ images:
 - [Further Reading](#further-reading)
 
 ### The Need for a CSS Framework
-
-CSS is an flexible language, with a ton of customization options. This may sometimes be overwhelming for a beginner. When you're out to build a product, a CSS framework helps to accelerate the process of development. It helps to reduce time to production, which is crucial for a project. Some other benefits to using a CSS framework include:
+CSS is a flexible language, with a ton of customization options. This may sometimes be overwhelming for a beginner. When you're out to build a product, a CSS framework helps to accelerate the process of development. It helps to reduce time to production, which is crucial for a project. Some other benefits to using a CSS framework include:
 
 - Good CSS frameworks have excellent documentation.
 - Easier to make websites responsive.
 - Cross-browser support.
 
 ### Bulma
-
-Bulma is a fast, lightweight and customizable CSS framework. Bulma is perfect for production-grade web applications due to its excellent performance and small size.
+Bulma is a fast, lightweight, and customizable CSS framework. Bulma is perfect for production-grade web applications due to its excellent performance and small size.
 
 - Bulma is based on CSS Flexbox.
 - It has an excellent developer community.
@@ -43,11 +40,10 @@ Bulma is a fast, lightweight and customizable CSS framework. Bulma is perfect fo
 - Bulma uses easy-to-read class names that are easy to remember.
 - It provides a modern and clean design.
 
-For the above reasons, Bulma is an efficient CSS framework that can be used to create performant websites.
+For the reasons listed above, Bulma is an efficient CSS framework that can be used to create performant websites.
 
 ### Getting Started
-
-Let's add Bulma to our web application. We can do this by one of the following ways.
+Let's add Bulma to our web application. We can do this in one of the following ways.
 
 - We can use the Bulma CDN to add Bulma to our webpage. To do so in the website's `<head>`, add the following line.
 
@@ -70,7 +66,7 @@ npm init
 npm install bulma
 ```
 
-- We need to import the bulma module into our CSS file.
+- We need to import the Bulma module into our CSS file.
 
 ```css
 @import "../node_modules/bulma/css/bulma.css";
@@ -83,7 +79,6 @@ npm install bulma
 ```
 
 ### Column System
-
 One of the best features of Bulma is the responsive column grid system. For building a columns layout,
 
 - Every row in Bulma is defined by a `columns` container.
@@ -113,11 +108,10 @@ This snippet would create a responsive column layout with three columns of equal
 
 ![Uneven Three Columns in Bulma](/engineering-education/customization-using-bulma/three-column-uneven.png)
 
-The above snippet would create three columns. One column occupies half the space, and the other two occupy a quarter of the space. For more options on columns, visit [this link](https://bulma.io/documentation/columns/).
+The snippet above would create three columns. One column occupies half the space, and the other two occupy a quarter of the space. For more options on columns, visit [this link](https://bulma.io/documentation/columns/).
 
 ### Components
-
-Bulma comes with many in-built UI components. Let's try to create a card component.
+Bulma comes with many built-in UI components. Let's try to create a card component.
 
 ```html
 <div class="card">
@@ -143,20 +137,19 @@ This code snippet would create a card component that would look like this:
 
 ![Bulma Card](/engineering-education/customization-using-bulma/card.png)
 
-Bulma has many other components which you can find out about [here](https://bulma.io/documentation/components/).
+Bulma has many other components that you can find out about [here](https://bulma.io/documentation/components/).
 
 ### Customizing Variables
-
-For customizing Bulma, there are four kinds or levels of variables:
+In order to customize Bulma, there are four kinds or levels of variables:
 
 - Initial Variables -- These are global variables with literal values.
 - Derived Variables -- These are derived from other variables.
 - Generic Variables -- These are HTML elements that carry no CSS classes.
 - Element Variables -- These are variables that are specific to a Bulma element.
 
-Now, for customizing these Bulma Variables, let us set up Sass and Bulma. [Sass](https://sass-lang.com) is a CSS preprocessor that adds extra features like variables and loops. CSS preprocessors are an extension to CSS that provides additional features and reduces repetition.
+Now, for customizing these Bulma Variables, let us set up Sass and Bulma. [Sass](https://sass-lang.com) is a CSS preprocessor that adds extra features like variables and loops. CSS preprocessors are an extension of CSS that provides additional features and reduces repetition.
 
-- First, initiate a node project.
+- First, initiate a Node.js project.
 
 ```bash
 npm init
@@ -173,7 +166,7 @@ npm i bulma sass
   - style.css
   - style.scss
 
-Finally, let's create a HTML page with a basic button.
+Finally, let's create an HTML page with a basic button.
 
 ```html
 <!DOCTYPE html>
@@ -191,7 +184,7 @@ Finally, let's create a HTML page with a basic button.
 </html>
 ```
 
-Inititally, our output would be a red and a green button. The `is-danger` modifier is by default red, and the `is-primary` modifier is by default green.
+Initially, our output would be a red and a green button. The `is-danger` modifier is by default red, and the `is-primary` modifier is by default green.
 
 ![Bulma Buttons](/engineering-education/customization-using-bulma/buttons.png)
 
@@ -220,7 +213,7 @@ $danger: #0000ec;
 @import "node_modules/bulma/bulma";
 ```
 
-SCSS needs to be compiled back to CSS so the browser can understand it, so we run the following command:
+SCSS needs to be compiled back to CSS so the browser can understand it, we do that by running the following command:
 
 ```bash
 sass style.scss:style.css
@@ -249,9 +242,9 @@ Now, the font of the document is changed to Times New Roman.
 An exhaustive list of customizable Bulma variables can be found [here](https://bulma.io/documentation/customize/variables/).
 
 ### Further Reading
-We have learnt the basics of Bulma and how to customize and theme Bulma using variables. For further reading, check out the following links to learn more.
+We have just learned the basics of Bulma, how to customize, and theme Bulma using variables. For further reading, check out the following links to learn more.
 
 - [Bulma Expo](https://bulma.io/expo/) -- A list of websites created using Bulma, for inspiration.
 - [Extensions](https://creativebulma.net/products) -- Bulma templates and extra components.
 - [Sass Documentation](https://sass-lang.com/guide)
-- [Learn Bulma](https://scrimba.com/g/gbulma) -- An interactive course to learn bulma.
+- [Learn Bulma](https://scrimba.com/g/gbulma) -- An interactive course to learn Bulma.
