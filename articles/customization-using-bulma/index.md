@@ -26,7 +26,7 @@ images:
 - [Customizing Variables](#customizing-variables)
 - [Further Reading](#further-reading)
 
-### The Need for a CSS Framework
+## The Need for a CSS Framework
 
 CSS is an flexible language, with a ton of customization options. This may sometimes be overwhelming for a beginner. When you're out to build a product, a CSS framework helps to accelerate the process of development. It helps to reduce time to production, which is crucial for a project. Some other benefits to using a CSS framework include:
 
@@ -34,7 +34,7 @@ CSS is an flexible language, with a ton of customization options. This may somet
 - Easier to make websites responsive.
 - Cross-browser support.
 
-### Bulma
+## Bulma
 
 Bulma is a fast, lightweight and customizable CSS framework. Bulma is perfect for production-grade web applications due to its excellent performance and small size.
 
@@ -46,22 +46,19 @@ Bulma is a fast, lightweight and customizable CSS framework. Bulma is perfect fo
 
 For the above reasons, Bulma is an efficient CSS framework that can be used to create performant websites.
 
-### Getting Started
+## Getting Started
 
-Let us add Bulma to our web application project. We can do this by one of the following ways.
+Let's add Bulma to our web application. We can do this by one of the following ways.
 
-- We can use the Bulma CDN to add Bulma to our webpage. In the website `<head>`, add the following line.
+- We can use the Bulma CDN to add Bulma to our webpage. To do so in the website's `<head>`, add the following line.
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"/>
 ```
 
 - Download the npm package from the npm repository.
 
-```
+```bash
 npm install bulma
 ```
 
@@ -71,14 +68,14 @@ npm install bulma
 <link rel="stylesheet" href="bulma.css" />
 ```
 
-### Column System
+## Column System
 
 One of the best features of Bulma is the responsive column grid system. For building a columns layout,
 
 - Every row in Bulma is defined by a `columns` container.
 - Every column should be defined as a `column` and should be nested within the `columns` container.
 
-For example,
+For example:
 
 ```html
 <div class="columns">
@@ -88,7 +85,7 @@ For example,
 </div>
 ```
 
-This snippet would create a responsive column layout with 3 columns of equal width. You can also specify the column size by using the size classes.
+This snippet would create a responsive column layout with three columns of equal width. You can also specify the column size by using the size classes.
 
 ```html
 <div class="columns">
@@ -100,7 +97,7 @@ This snippet would create a responsive column layout with 3 columns of equal wid
 
 The above snippet would create three columns. One column occupies half the space, and the other two occupy a quarter of the space. For more options on columns, visit [this link](https://bulma.io/documentation/columns/).
 
-### Components
+## Components
 
 Bulma comes with many in-built UI components. Let's try to create a card component.
 
@@ -128,37 +125,37 @@ This code snippet would create a card component that would look like this:
 
 ![Bulma Card](/engineering-education/customization-using-bulma/card.png)
 
-Bulma has many other components, for which the documentation can be viewed [here](https://bulma.io/documentation/components/).
+Bulma has many other components which you can find out about [here](https://bulma.io/documentation/components/).
 
-### Customizing Variables
+## Customizing Variables
 
 For customizing Bulma, there are four kinds or levels of variables:
 
-- Initial Variables -- There are global variables with literal values.
+- Initial Variables -- These are global variables with literal values.
 - Derived Variables -- These are derived from other variables.
-- Generic Variables -- HTML elements that carry no CSS class.
-- Element Variables -- variables that are specific to a Bulma element.
+- Generic Variables -- These are HTML elements that carry no CSS classes.
+- Element Variables -- These are variables that are specific to a Bulma element.
 
-Now, for customizing these Bulma Variables, let us set up Sass and Bulma. Sass is a CSS preprocessor that adds extra features like variables and loops. It is an extension to CSS that improves the stylesheet language and reduces repetition.
+Now, for customizing these Bulma Variables, let us set up Sass and Bulma. [Sass](https://sass-lang.com) is a CSS preprocessor that adds extra features like variables and loops. CSS preprocessors are an extension to CSS that provides additional features and reduces repetition.
 
-- Initiate a node project.
+- First, initiate a node project.
 
-```
+```bash
 npm init
 ```
 
-- Install Bulma and Sass.
+- Next, install Bulma and Sass.
 
-```
+```bash
 npm i bulma sass
 ```
 
-- Now, to get started, create three files below.
+- Now, to get started, create the three files below.
   - index.html
   - style.css
   - style.scss
 
-Let us now create a HTML page with a basic button.
+Finally, let's create a HTML page with a basic button.
 
 ```html
 <!DOCTYPE html>
@@ -205,13 +202,13 @@ $danger: #0000ec;
 @import "node_modules/bulma/bulma";
 ```
 
-SCSS should be compiled back to CSS, so we run the following command:
+SCSS needs to be compiled back to CSS so the browser can understand it, so we run the following command:
 
-```
+```bash
 sass style.scss:style.css
 ```
 
-Now, the buttons are changed into pink and the blue shade.
+Now, the buttons have changed to pink and blue.
 
 ![Bulma Buttons Themed](/engineering-education/customization-using-bulma/buttons-themed.png)
 
@@ -227,9 +224,9 @@ Now, the font of the document is changed to Times New Roman.
 
 An exhaustive list of customizable Bulma variables can be found [here](https://bulma.io/documentation/customize/variables/).
 
-### Further Reading
+## Further Reading
 
-We have learnt the basics of Bulma and how to customize and theme Bulma using variables. For further reading, check out the following links.
+We have learnt the basics of Bulma and how to customize and theme Bulma using variables. For further reading, check out the following links to learn more.
 
 - [Bulma Expo](https://bulma.io/expo/) -- A list of websites created using Bulma, for inspiration.
 - [Extensions](https://creativebulma.net/products) -- Bulma templates and extra components.
