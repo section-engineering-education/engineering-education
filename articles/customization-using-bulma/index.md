@@ -53,7 +53,16 @@ Let's add Bulma to our web application. We can do this by one of the following w
 - We can use the Bulma CDN to add Bulma to our webpage. To do so in the website's `<head>`, add the following line.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+/>
+```
+
+- Let us initialize the `package.json` file for managing dependencies.
+
+```bash
+npm init
 ```
 
 - Download the npm package from the npm repository.
@@ -62,7 +71,13 @@ Let's add Bulma to our web application. We can do this by one of the following w
 npm install bulma
 ```
 
-- We can also download the `bulma.css` file from [here](https://github.com/jgthms/bulma/tree/master/css) and include it in our webpage using the `<link>` tag.
+- We need to import the bulma module into our CSS file.
+
+```css
+@import "bulma/css/bulma.css";
+```
+
+- We can also download the minified `bulma.min.css` file from [here](https://github.com/jgthms/bulma/blob/master/css/bulma.min.css) and include it in our webpage using the `<link>` tag.
 
 ```html
 <link rel="stylesheet" href="bulma.css" />
@@ -78,22 +93,26 @@ One of the best features of Bulma is the responsive column grid system. For buil
 For example:
 
 ```html
-<div class="columns">
-  <div class="column">1st column</div>
-  <div class="column">2nd column</div>
-  <div class="column">3rd column</div>
+<div class="columns has-text-centered">
+  <div class="column has-background-success">1st column</div>
+  <div class="column has-background-danger">2nd column</div>
+  <div class="column has-background-info">3rd column</div>
 </div>
 ```
+
+![Three Columns in Bulma](/engineering-education/customization-using-bulma/three-column.png)
 
 This snippet would create a responsive column layout with three columns of equal width. You can also specify the column size by using the size classes.
 
 ```html
-<div class="columns">
-  <div class="column is-half">1st column</div>
-  <div class="column is-one-quarter">2nd column</div>
-  <div class="column">3rd column</div>
+<div class="columns has-text-centered">
+  <div class="column has-background-success is-half">1st column</div>
+  <div class="column has-background-danger is-one-quarter">2nd column</div>
+  <div class="column has-background-info">3rd column</div>
 </div>
 ```
+
+![Uneven Three Columns in Bulma](/engineering-education/customization-using-bulma/three-column-uneven.png)
 
 The above snippet would create three columns. One column occupies half the space, and the other two occupy a quarter of the space. For more options on columns, visit [this link](https://bulma.io/documentation/columns/).
 
@@ -216,6 +235,12 @@ If we want to change the primary font to Times New Roman for the entire document
 
 ```scss
 $family-primary: "Times New Roman";
+```
+
+Now, compile the SCSS again by running
+
+```bash
+sass style.scss:style.css
 ```
 
 Now, the font of the document is changed to Times New Roman.
