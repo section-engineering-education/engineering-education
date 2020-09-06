@@ -1,14 +1,14 @@
-The ultimate measure of websites performance is loading speed. This is the amount
+The ultimate measure of website performance is loading speed. This is the amount
 of time it takes to load a web page. Web users are relying more on
-mobiles to access web content and services and thus more demand for optimized websites. If you run any website, this
-is very evident in your analytical data. Users are also demanding better web experience thus the need to improve your WordPress website performance. To improve overall website performance, several measures
+mobiles to access web content and services and thus more demand for optimized websites. If you manage any websites, this
+is very evident in your analytical data. Users are also demanding a better web experience thus there is a need to improve your WordPress website performance. To improve overall website performance, several measures
 need to be taken. This article is a comprehensive guide on the best ways to speed up WordPress website.
 
 ## Why Website Speed Matters?
 
 If your website takes longer than 2 seconds to load, the bounce rate increases.
 This means you will have reduced conversions and a decrease in
-revenue. According to the [Google SEO guide](https://www.google.com/search/howsearchworks/algorithms/), "page speed" of sites is among the parameters considered in the search engine ranking algorithm since January 2018. Slower websites are ranked lower as compared to faster loading websites. Fast loading web pages lead to improved user experience, rise in page views, and contribute to higher search engine rankings.
+revenue. According to the [Google SEO guide](https://www.google.com/search/howsearchworks/algorithms/), "page speed" of sites is among the parameters considered in the search engine ranking algorithm since January 2018. Slower websites are ranked lower than faster websites would be simpler. Fast webpages lead to improved user experience, rise in page views, and contribute to higher search engine rankings.
 
 ## Tools for Testing Website Page Speed
 
@@ -19,9 +19,8 @@ may vary with geographical locations. Therefore, you need to test speed from dif
 Even improving your website speed by milliseconds matters. A load time
 under 2 seconds is recommended.
 
-There are several tools for testing website speed. Some of them are free
-others are paid. Test your website speed before optimization and after
-optimization. Most of the tools work by you entering the website URL,
+There are several tools for testing website speed. Some of them are free and
+others are paid. Test your website speed before and after optimization. Most of the tools work by you entering the website URL,
 then submit for analysis after which you get test results. They also
 give recommendations on areas you need to work on to improve website
 performance.
@@ -48,15 +47,15 @@ website optimization. Consider them for your WordPress website optimization.
 Web hosting services can be sorted into three categories;
 
 Shared hosting, VPS hosting, and managed WordPress hosting. Shared
-hosting is the most popular. Companies like Namecheap, Bluehost,
-HostGator, SiteGround, and GoDaddy offer shared hosting. Your website is
+hosting is the most popular. Companies like [Namecheap](https://www.namecheap.com/), [Bluehost](https://www.bluehost.com/),
+[HostGator](https://www.hostgator.com/), [SiteGround](https://www.siteground.com/), and [GoDaddy](https://uk.godaddy.com/) offer shared hosting. Your website is
 likely to be hosted with more than 200 other websites on the same
 server. When the other sites hosted together with yours get an upsurge in traffic, there is a higher likelihood of the server performance being
 impacted thus making your website slow.
 
 VPS (Virtual Private Server) hosting requires you to be able to do server
 configuration and server management. VPS costs from $5 a month. Some of
-the VPS providers are Amazon, Linode, and Digital Ocean. Amazon, Linode, and Digital Ocean be more complex to configure for beginners. Providers such as [Runcloud](https://runcloud.io/), [SpinupWP](https://spinupwp.com/), and [GridPane](https://gridpane.com/) provide VPS that are easier to manage and made for WordPress. The VPS approach cuts on cost. However, you will be responsible for server optimization and if something breaks.
+the VPS providers are [Amazon](https://aws.amazon.com/?nc2=h_lg), [Linode](https://www.linode.com/), and [Digital Ocean](https://www.digitalocean.com/). Amazon, Linode, and Digital Ocean be more complex to configure for beginners. Providers such as [Runcloud](https://runcloud.io/), [SpinupWP](https://spinupwp.com/), and [GridPane](https://gridpane.com/) provide VPSes that are easier to manage and made for WordPress. The VPS approach cuts on cost. However, you will be responsible for server optimization and if something breaks.
 
 Managed WordPress hosting provides the best hosting with servers
 configured and optimized to run WordPress. Issues such as updates, backups, and other server management tasks are carried out by the hosting provider. This justifies the higher cost compared to VPS hosts. Some of the providers are WPEngine, SiteGround, and Liquid Web.
@@ -87,23 +86,21 @@ content. In their original formats, image files are huge and could be
 more hurting than helping. The most common image formats used for the
 web are png, jpeg, and WebP. The png image format is uncompressed while jpeg is
 a compressed file format. The png is of higher quality thus larger file
-size. WebP combines the features of png and jpeg to let you create richer images that are smaller in file size than both png and jpeg. WebP offers 30% reduction in file size without compromising the quality. Just like png, WebP also provides transparency.
+size. WebP combines the features of png and jpeg to let you create richer images that are smaller in file size than both png and jpeg. WebP offers a 30% reduction in file size without compromising the quality. Just like png, WebP also provides transparency.
 #### WebP vs PNG
-WebP file size is 26% is smaller than png with the same quality.
+The WebP file size is 26% is smaller than png with the same quality.
 
 Due to the smaller file sizes, WebP loads faster than png.
 #### WebP vs JPEG
-WebP file size is 25% to 35% smaller with the same quality.
+The WebP file size is 25% to 35% smaller with the same quality.
 
 Not all browsers can load WebP images. Some browsers will work with jpeg format.
 
 Reducing image size to reduce file is also necessary on
 top of choosing file formats. The main objective is to find a balance
 between file size and quality. Get the lowest file size and acceptable
-quality. Although there exists WordPress image compression plugins,
-compressing images before the upload is recommended. Photoshop,
-[compressor.io](https://compressor.io/) and [BulkResize](https://bulkresizephotos.com/en) are some of the tools used
-for image compression. Image compression plugins include [Imagify](https://imagify.io/wordpress/),
+quality. It is recommended that you compress images before uploading them om WordPress. Photoshop, [compressor.io](https://compressor.io/) and [BulkResize](https://bulkresizephotos.com/en) are some of the tools used
+for image compression. Plugins can be used to compress already uploaded images. Such plugins include [Imagify](https://imagify.io/wordpress/),
 [ShortPixel](https://wordpress.org/plugins/shortpixel-image-optimiser/),
 [Optimole](https://wordpress.org/plugins/optimole-wp/), and [WP
 Smush](https://wordpress.org/plugins/wp-smushit/). Keep your image under
@@ -120,7 +117,7 @@ the server causing unnecessary strain. This involves deleting installed themes t
 Don't select some beautiful and impressive looking WordPress themes at
 the expense of performance. Pay special attention to theme optimization. Your
 WordPress theme should be elegant, lightweight, SEO friendly, fully
-responsive, and mobile optimized.
+responsive, and mobile optimized. Some of the well-optimized WordPress themes are [Astra](https://wpastra.com/), [Udesign](https://dreamthemedesign.com/themes/u-design/), and [X Theme](https://theme.co/x).
 
 ### Optimize WordPress Database
 
@@ -146,7 +143,7 @@ rendering is delayed. Instead of loading all images and videos, Lazy
 loading downloads and render only what is visible to the user's screen.
 As the user scrolls down the page, more content is loaded. This
 significantly increases the loading speed of the content that is visible
-to the user.
+to the user. You can activate lazy-loading using plugins such as [Lazy Load for Images](https://wordpress.org/plugins/lazy-load-for-images/) and [BJ Lazy Load](https://wordpress.org/plugins/bj-lazy-load/). 
 
 ### Limit the Number of Post Revisions
 
@@ -169,7 +166,7 @@ revisions
 
 The next step after cleaning post revisions is to limit the number of
 post revisions saved for each post. This can be done by adding this line
-of code on the WordPress wp-config.php file.
+of code on the WordPress wp-config.php file. Set the post revisions limit to a number of your choice. A maximum of four revisions is recommended. Note that if you limit the revisions to four, you will only be able to access the last for versions of your page or post.
 
 ```php
 define('WP_POST_REVISIONS', 4 )
@@ -179,7 +176,7 @@ define('WP_POST_REVISIONS', 4 )
 
 ### Update PHP to the Latest Version
 
-PHP is open source and undergoing active development to improve on
+PHP is open-source and undergoing active development to improve on
 performance, fix bugs, enhance security, and other features. Therefore,
 there is no doubt that the latest PHP version is more enhanced in terms
 of performance compared to the previous versions. Keep your PHP version
@@ -187,11 +184,11 @@ updated to get the benefits. Currently, WordPress works with PHP 5.6.20 or great
 
 ### Use Content Delivery Network (CDN)
 
-CDN is a network of servers linked together in different locations
+A CDN is a network of servers linked together in different locations
 around the world to deliver content as quickly, cheaply, reliably, and
 securely as possible. Refer to
 [Cloudflare](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/).
-Each server stores a copy of 'static' files used to make your web pages.
+Each server stores a copy of 'static' files used to make your webpages.
 When you implement a CDN, users access your website from the server
 geographically closest to them.
 
@@ -207,8 +204,8 @@ Azure CDN, Google Cloud CDN, and Fastly.
 
 ### Conclusion
 
-Fast website boosts your search engine rankings, improves search
-engine indexing, reduces bounce rate, leads to increased conversion
-rate, and increases time on the website. The overall effect is that you
+Fast websites boost your search engine rankings, improve search
+engine indexing, reduce bounce rate, lead to increased conversion
+rate, and increase time on the website. The overall effect is that you
 get a higher conversion rate and users enjoy visiting your website. I
 hope that the guide was helpful to you. Happy WordPress optimization.
