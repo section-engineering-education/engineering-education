@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/customization-using-bulma/
 title: Customize CSS using Bulma
-description: Bulma is a lightweight, open source CSS framework that has excellent customization features which is perfect for rapid development.
+description: Bulma is a lightweight, open source CSS framework that has excellent customization features that is perfect for rapid development.
 author: saiharsha-balasubramaniam
 date: 2020-09-04T00:00:00-08:00
 topics: [Languages]
@@ -13,10 +13,9 @@ images:
   - url: /engineering-education/customization-using-bulma/hero.jpg
     alt: bulma
 ---
-
 **Cascading Style Sheets** is a stylesheet language that is used to describe how a webpage looks and feels visually. To speed up the development of projects, developers use CSS frameworks like Bulma. Let us see why CSS frameworks are useful and learn about Bulma.
-
-## Table of Contents
+<!--more-->
+### Table of Contents
 
 - [The Need for a CSS Framework](#need-for-a-css-framework)
 - [Bulma](#bulma)
@@ -26,7 +25,7 @@ images:
 - [Customizing Variables](#customizing-variables)
 - [Further Reading](#further-reading)
 
-## The Need for a CSS Framework
+### The Need for a CSS Framework
 
 CSS is an flexible language, with a ton of customization options. This may sometimes be overwhelming for a beginner. When you're out to build a product, a CSS framework helps to accelerate the process of development. It helps to reduce time to production, which is crucial for a project. Some other benefits to using a CSS framework include:
 
@@ -34,7 +33,7 @@ CSS is an flexible language, with a ton of customization options. This may somet
 - Easier to make websites responsive.
 - Cross-browser support.
 
-## Bulma
+### Bulma
 
 Bulma is a fast, lightweight and customizable CSS framework. Bulma is perfect for production-grade web applications due to its excellent performance and small size.
 
@@ -46,7 +45,7 @@ Bulma is a fast, lightweight and customizable CSS framework. Bulma is perfect fo
 
 For the above reasons, Bulma is an efficient CSS framework that can be used to create performant websites.
 
-## Getting Started
+### Getting Started
 
 Let's add Bulma to our web application. We can do this by one of the following ways.
 
@@ -83,7 +82,7 @@ npm install bulma
 <link rel="stylesheet" href="bulma.css" />
 ```
 
-## Column System
+### Column System
 
 One of the best features of Bulma is the responsive column grid system. For building a columns layout,
 
@@ -116,7 +115,7 @@ This snippet would create a responsive column layout with three columns of equal
 
 The above snippet would create three columns. One column occupies half the space, and the other two occupy a quarter of the space. For more options on columns, visit [this link](https://bulma.io/documentation/columns/).
 
-## Components
+### Components
 
 Bulma comes with many in-built UI components. Let's try to create a card component.
 
@@ -146,7 +145,7 @@ This code snippet would create a card component that would look like this:
 
 Bulma has many other components which you can find out about [here](https://bulma.io/documentation/components/).
 
-## Customizing Variables
+### Customizing Variables
 
 For customizing Bulma, there are four kinds or levels of variables:
 
@@ -249,8 +248,7 @@ Now, the font of the document is changed to Times New Roman.
 
 An exhaustive list of customizable Bulma variables can be found [here](https://bulma.io/documentation/customize/variables/).
 
-## Further Reading
-
+### Further Reading
 We have learnt the basics of Bulma and how to customize and theme Bulma using variables. For further reading, check out the following links to learn more.
 
 - [Bulma Expo](https://bulma.io/expo/) -- A list of websites created using Bulma, for inspiration.
