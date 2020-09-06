@@ -74,7 +74,7 @@ npm install bulma
 - We need to import the bulma module into our CSS file.
 
 ```css
-@import "bulma/css/bulma.css";
+@import "../node_modules/bulma/css/bulma.css";
 ```
 
 - We can also download the minified `bulma.min.css` file from [here](https://github.com/jgthms/bulma/blob/master/css/bulma.min.css) and include it in our webpage using the `<link>` tag.
