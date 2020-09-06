@@ -1,28 +1,21 @@
 The ultimate measure of websites performance is loading speed. This is the amount
 of time it takes to load a web page. Web users are relying more on
-mobiles to access web content and services and thus higher demand for more optimized websites. If you run any website, this
-is very evident in your analytical. Users are also demanding better
-web experience thus the need to improve your WordPress website
-performance. To improve overall website performance, several measures
-need to be taken. This article is a comprehensive guide on the best ways
-to speed up WordPress website.
+mobiles to access web content and services and thus more demand for optimized websites. If you run any website, this
+is very evident in your analytical data. Users are also demanding better web experience thus the need to improve your WordPress website performance. To improve overall website performance, several measures
+need to be taken. This article is a comprehensive guide on the best ways to speed up WordPress website.
 
-## Why website speed matters?
+## Why Website Speed Matters?
 
-If your website takes longer than 2 seconds to load, bounce rate increases.
+If your website takes longer than 2 seconds to load, the bounce rate increases.
 This means you will have reduced conversions and a decrease in
-revenue. Google uses website speed as one of the parameters in the
-search engine ranking algorithm. Slower websites are ranked lower as
-compared to faster loading websites. Fast loading web pages lead to
-improved user experience, rise in page views, and contribute to higher
-search engine rankings.
+revenue. According to the [Google SEO guide](https://www.google.com/search/howsearchworks/algorithms/), "page speed" of sites is among the parameters considered in the search engine ranking algorithm since January 2018. Slower websites are ranked lower as compared to faster loading websites. Fast loading web pages lead to improved user experience, rise in page views, and contribute to higher search engine rankings.
 
 ## Tools for Testing Website Page Speed
 
 WordPress speed is not dependent on whether it feels slow on the developer's computer. It might load faster as a result of browser caching
 yet it is very slow for a first-time visitor. Speed testing tools come
 in hand in determining your page speed. It is also worth noting that speed
-may vary with geographical locations. The faster the website the better.
+may vary with geographical locations. Therefore, you need to test speed from different locations. This article will go on to talk about this on the [CDN section](#use-content-delivery-network-(CDN)). The faster the website the better.
 Even improving your website speed by milliseconds matters. A load time
 under 2 seconds is recommended.
 
@@ -36,7 +29,7 @@ performance.
 1.  [PageSpeed Insights by
     Google](https://developers.google.com/speed/pagespeed/insights/)
 
-2.  [isitwp](https://www.isitwp.com/free-website-speed-test-tool-for-wordpress/)
+2.  [IsItWp](https://www.isitwp.com/free-website-speed-test-tool-for-wordpress/)
 
 3.  [GTmetrix](https://gtmetrix.com/)
 
@@ -63,24 +56,20 @@ impacted thus making your website slow.
 
 VPS (Virtual Private Server) hosting requires you to be able to do server
 configuration and server management. VPS costs from $5 a month. Some of
-the providers are Amazon, Linode, and Digital Ocean. The VPS approach
-cuts on cost. However, you will be responsible for server optimization
-and if something breaks.
+the VPS providers are Amazon, Linode, and Digital Ocean. Amazon, Linode, and Digital Ocean be more complex to configure for beginners. Providers such as [Runcloud](https://runcloud.io/), [SpinupWP](https://spinupwp.com/), and [GridPane](https://gridpane.com/) provide VPS that are easier to manage and made for WordPress. The VPS approach cuts on cost. However, you will be responsible for server optimization and if something breaks.
 
 Managed WordPress hosting provides the best hosting with servers
-configured and optimized to run WordPress. Some of the providers are
-WPEngine, SiteGround, and Liquid Web. Managed WordPress hosting comes at
-a higher cost compared to other hosting services.
+configured and optimized to run WordPress. Issues such as updates, backups, and other server management tasks are carried out by the hosting provider. This justifies the higher cost compared to VPS hosts. Some of the providers are WPEngine, SiteGround, and Liquid Web.
 
-### Use effective Caching Plugin
+### Use an Effective Caching Plugin
 
 A cache is a collection of temporarily stored data for quick access upon
 request. Refer to
 [Wikipedia](https://en.wikipedia.org/wiki/Cache_(computing)). WordPress
-pages and Posts are built every time a user visits a page or post. This
-involves retrieval of information to put the page together. When
+pages and posts are built every time a user visits a page or post. This
+involves the retrieval of information to put the page together. When
 multiple users are visiting the website, the process involved can slow
-down the website. Caching is used to remedy this. Caching plugin makes a
+down the website. A caching plugin is used to remedy this. Caching plugin makes a
 copy of a page or a post on the first time load. The page is saved and
 the cached version will be served to subsequent users. Among the most
 popular WordPress caching plugins are [WP Rocket](https://wp-rocket.me/)
@@ -93,15 +82,24 @@ Cache](https://wordpress.org/plugins/wp-super-cache/).
 ### Optimize Images
 
 An image is worth a thousand words. You cannot avoid using images on
-your website. Images increase engagement and bring life to the web
+your website. Images increase engagement and bring life to web
 content. In their original formats, image files are huge and could be
 more hurting than helping. The most common image formats used for the
-web are PNG and JPEG. The PNG image format is uncompressed while JPEG is
-a compressed file format. PNG is of higher quality thus larger file
-size. If you need a transparent image, use PNG. For the rest of the
-images use JPEG. Reducing image size to reduce file is also necessary on
+web are png, jpeg, and WebP. The png image format is uncompressed while jpeg is
+a compressed file format. The png is of higher quality thus larger file
+size. WebP combines the features of png and jpeg to let you create richer images that are smaller in file size than both png and jpeg. WebP offers 30% reduction in file size without compromising the quality. Just like png, WebP also provides transparency.
+#### WebP vs PNG
+WebP file size is 26% is smaller than png with the same quality.
+
+Due to the smaller file sizes, WebP loads faster than png.
+#### WebP vs JPEG
+WebP file size is 25% to 35% smaller with the same quality.
+
+Not all browsers can load WebP images. Some browsers will work with jpeg format.
+
+Reducing image size to reduce file is also necessary on
 top of choosing file formats. The main objective is to find a balance
-between File size and quality. Get the lowest file size and acceptable
+between file size and quality. Get the lowest file size and acceptable
 quality. Although there exists WordPress image compression plugins,
 compressing images before the upload is recommended. Photoshop,
 [compressor.io](https://compressor.io/) and [BulkResize](https://bulkresizephotos.com/en) are some of the tools used
@@ -111,20 +109,20 @@ for image compression. Image compression plugins include [Imagify](https://imagi
 Smush](https://wordpress.org/plugins/wp-smushit/). Keep your image under
 100 KB for the best performance.
 
-### Delete unused themes, plugins, and media files
+### Delete Unused Themes, Plugins, and Media Files
 
 This is a crucial website maintenance task. You should get rid of themes
 and plugins that are not in use. The plugins and themes take space in
 the server causing unnecessary strain. This involves deleting installed themes that are not in use and deleting deactivated plugins.
 
-### Use well-optimized themes
+### Use Well-optimized Themes
 
 Don't select some beautiful and impressive looking WordPress themes at
 the expense of performance. Pay special attention to theme optimization. Your
 WordPress theme should be elegant, lightweight, SEO friendly, fully
 responsive, and mobile optimized.
 
-### Optimize WordPress database
+### Optimize WordPress Database
 
 Over time, the WordPress database will accumulate unnecessary data,
 clutter. This will slow down your website. The clutter could be post
@@ -140,7 +138,7 @@ plugins available for database optimization are
 See above screenshot of WP-Optimize 3.1.2 free version database
 optimization
 
-### Use lazy loading for images and videos
+### Use Lazy Loading for Images and Videos
 
 Lazy loading is a web optimization technique whereby, visible content is
 loaded first while contents appearing down the fold download and
@@ -150,7 +148,7 @@ As the user scrolls down the page, more content is loaded. This
 significantly increases the loading speed of the content that is visible
 to the user.
 
-### Limit the number of post revisions
+### Limit the Number of Post Revisions
 
 WordPress has a very good feature called post revisions. Whenever you
 update a page or a post, another version of the post is created and
@@ -179,15 +177,13 @@ define('WP_POST_REVISIONS', 4 )
 
 ![WordPress wp-config editing](wp-config.php-edit.jpg)
 
-### Update PHP to the latest version
+### Update PHP to the Latest Version
 
 PHP is open source and undergoing active development to improve on
 performance, fix bugs, enhance security, and other features. Therefore,
 there is no doubt that the latest PHP version is more enhanced in terms
 of performance compared to the previous versions. Keep your PHP version
-updated to get the benefits. PHP update can be as simple as selecting
-the latest version for cPanel users. Check with your hosting provider on
-how to update the PHP version.
+updated to get the benefits. Currently, WordPress works with PHP 5.6.20 or greater but the recommended version is 7.4 or greater. Refer [here](https://wordpress.org/about/requirements/). Most hosting providers have PHP version 7+. PHP update can be as simple as selecting the latest version for cPanel users. Check with your hosting provider on how to update PHP version. According to the  PHP [official website](https://www.php.net/supported-versions.php), the latest version is 7.4, released Nov 2019. Each version of PHP is fully supported for two years from its initial stable release to fix bugs and security issues. Check when your PHP version support will end on PHP [official website](https://www.php.net/supported-versions.php).
 
 ### Use Content Delivery Network (CDN)
 
