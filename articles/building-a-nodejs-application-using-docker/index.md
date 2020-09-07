@@ -280,7 +280,7 @@ CONTAINER ID        IMAGE         COMMAND           CREATED              STATUS 
 34fe3040ff6b        cisca        "npm start"       About a minute ago   Exited (1) About a minute ago    0.0.0.0:8080->8080/tcp      intelligent_hofstadter
 ```
 
-This tutorial has helped you with the basics of running a simple Node.js application using Docker and using a Dockerfile to build a Docker image. Here are a couple other articles if you'd like more useful information on how to [get started with Docker](/engineering-education/getting-started-with-docker/) or more basics on [understanding docker concepts](/engineering-education/docker-concepts/) for you to enjoy.
+This tutorial has helped you with the basics of running a simple Node.js application using Docker and using a Dockerfile to build a Docker image. Here are a couple of other articles if you'd like more useful information on how to [get started with Docker](/engineering-education/getting-started-with-docker/) or more basics on [understanding docker concepts](/engineering-education/docker-concepts/) for you to enjoy.
 
 ### Resources
 [Dockerizing a Node.js web app](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
