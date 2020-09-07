@@ -104,7 +104,7 @@ See above screenshot of WP-Optimize 3.1.2 free version database optimization
 
 ### Use Lazy Loading for Images and Videos
 
-Lazy loading is a web optimization technique where visible content is loaded first while content appearing below the fold is only downloaded and rendering when necessary. Instead of loading every image and video on a webpage,lLazy loading downloads and render only what is visible to the user's screen.
+Lazy loading is a web optimization technique where visible content is loaded first while content appearing below the fold is only downloaded and rendering when necessary. Instead of loading every image and video on a webpage, lazy loading downloads and render only what is visible to the user's screen.
 
 As the user scrolls down the page, more content is loaded. This significantly increases the loading speed of the content that is visible
 to the user. 
@@ -135,11 +135,13 @@ define('WP_POST_REVISIONS', 4 )
 
 ### Update PHP to the Latest Version
 
-PHP is open-source and undergoing active development to improve on performance, fix bugs, enhance security, and other features. Therefore, there is no doubt that the latest PHP version is more enhanced in terms of performance compared to the previous versions. Keep your PHP version updated to get the benefits. 
+WordPress is mainly written in PHP which is an open-source server-side scripting language. PHP is installed on your hosting server. PHP is undergoing active development to improve performance, fix bugs, enhance security, and other features. According to the  PHP [official website](https://www.php.net/supported-versions.php), the latest version is 7.4.10, released Nov 2020. Each version of PHP is fully supported for two years from its initial stable release to fix bugs and security issues. Check when your PHP version support will end on PHP [official website](https://www.php.net/supported-versions.php).
 
-Currently, WordPress works with PHP 5.6.20 or greater but the recommended version is 7.4 or greater. Refer [here] for details about WordPress and PHP (https://wordpress.org/about/requirements/). Most hosting providers have PHP version 7+ available. Updating the PHP version of your site can be as simple as selecting the latest version. Check with your hosting provider on how to update PHP version. 
+Most Hosting companies use the latest and most stable versions of PHP on their servers. If your Hosting provider is rinning a slightly lower version of PHP, maybe it is time to consider switching to another hosting provider. [Siteground](https://www.siteground.com/), [Cloudways](https://www.cloudways.com/en/), [Kinsta](https://kinsta.com/), and [WP Engine](https://wpengine.com/) are running PHP version 7.4 or greater. To check PHP version on your WordPress website, you can make use of plugins such as [Version Info](https://wordpress.org/plugins/version-info/), [Query Monitor](https://wordpress.org/plugins/query-monitor/), and [WP Health](https://wordpress.org/plugins/my-wp-health-check/).
 
-According to the  PHP [official website](https://www.php.net/supported-versions.php), the latest version is 7.4, released Nov 2019. Each version of PHP is fully supported for two years from its initial stable release to fix bugs and security issues. Check when your PHP version support will end on PHP [official website](https://www.php.net/supported-versions.php).
+Currently, WordPress works with PHP 5.6.20 or greater but the recommended version is 7.4 or greater. Refer [here](https://wordpress.org/about/requirements/) for more details about WordPress and PHP. Most hosting providers have PHP version 7+ available. Updating the PHP version of your site can be as simple as selecting the latest version. Check with your hosting provider on how to update PHP version.
+
+Later PHP versions are more enhanced in terms of performance compared to the previous versions. Keep your PHP version updated to get the benefits. PHP 7.4 is 3x faster than PHP 5.6. For more insights on different PHP versions, check [Kinsta Blog](https://kinsta.com/blog/php-benchmarks/).
 
 ### Use Content Delivery Network (CDN)
 
