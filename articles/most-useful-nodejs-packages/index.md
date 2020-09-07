@@ -193,32 +193,32 @@ As a Node.js developer, you need to test your application to make sure it is sta
 [MySQL](https://en.wikipedia.org/wiki/MySQL) is a Node.js client for the MySQL protocol. Before using MySQL to connect to your database, ensure you have [MySQL installed and configured](https://dev.mysql.com/doc/mysql-getting-started/en/) in your machine. Then create a database and database table that you can work with. [Check instructions on how to create MySQL database and tables](https://www.guru99.com/how-to-create-a-database.html).
 
 ### An Example on How to Use MySQL with Node.js
+myexample.js
 ```js
 //use require() to include MySql library
-var mysqldb = require('mysql');
+const {createConnection} = require('mysql');
 //you need to create a connection to the database
 //make sure you replace 'user' and 'password' with your correct values
 //create connection
-var con = mysqldb.createConnection({
-    host: 'localhost',
-    user: 'you',
-    password: 'passwordgoeshere',
-    database: 'mydb'
-});
-con.connect(function(err) {
-  if (err) throw err;
-  con.query("SELECT name1, name2 FROM yourtable", function (err, result, fields){
-    if (err) throw err;
-    console.log(result);
-  });
-  });
+const connection = createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "my_database",
+})
+connection.query(`select * from names`, function (err, result, fields) {
+    if (err) {
+        return console.log(err);
+    }
+    return console.log(result);
+})
+connection.end();
 //terminate connection
 //executes the remaining queries
 //send quit packet to your MySql server
 //end
 ```
-[Code snippet source](https://github.com/mysqljs/mysql).
-
+Run `node myexample.js` to get the output.
 From the example above:
 -   Every method that you invoke on a database connection is queued and executed in sequence.
 -   To terminate/close the connection use `end()`, this makes sure that all the remaining queries are executed before sending a quit packet to the MySQL server.
