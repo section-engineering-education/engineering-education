@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/node-vs-nuxt/
 title: Node vs Nuxt - The Key Differences
-description: .
+description: A comparison betweeen Node.js and Nuxt, two of the most popular web technologies.
 author: saiharsha-balasubramaniam
 date: 2020-09-06T00:00:00-12:00
 topics: [Node.js]
@@ -16,7 +16,11 @@ images:
 
 A while ago, traditional server side rendering used to be the norm. All of the HTML is dynamically rendered on the server and sent to the client. Back in those days, websites weren't user-friendly and native.
 
-Today's web consists of single-page applications and universal web-apps. Let us look at the differences between Node.js and Nuxt which are two important technologies used for the web.
+Today's web consists of single-page applications and universal web-apps. Single-page applications are applications that does not reload the entire page every time we click on a link within the browser. It bundles and loads the entire JavaScript onto the client. It then renders parts of the webpage on the client-side, resulting in a fluid user-experience.
+
+Universal applications have parts of the application already rendered by the server. This reduces initial loading times and improves Search Engine Optimization.
+
+Let us look at the differences between Node.js and Nuxt which are two important technologies used for the web.
 
 <!--more-->
 
@@ -33,6 +37,8 @@ Today's web consists of single-page applications and universal web-apps. Let us 
 
 JavaScript is a powerful object-oriented programming language that runs within a browser. To harness the power of JS on the server-side, Node.js was created.
 
+For a more detailed discussion about Node.js, check out [this](https://www.section.io/engineering-education/why-node-js-is-popular/) article by [Geoffrey Mungai](https://www.section.io/engineering-education/authors/geoffrey-mungai/).
+
 Node.js is a server-side JavaScript runtime environment. It is based on the Google V8 engine. Today, it is one of the most popular server-side languages for the web.
 
 Node.js is single threaded and event driven. Node.js is not a framework, but it is an environment. There are many frameworks that are built on top of Node.js, namely Express and Koa. It is also preferred because front-end developers can easily jump into backend development, because they would already know JavaScript.
@@ -41,19 +47,26 @@ Node.js is single threaded and event driven. Node.js is not a framework, but it 
 
 Since traditional server-side rendering fails to provide a smooth user experience, client-side rendering became the new standard for web applications. Client-side rendering involves a single HTML file being sent to the client. Now, the entire JavaScript is downloaded and runs on the client to handle interactivity.
 
+![SSR](/engineering-education/node-vs-nuxt/ssr.png)<br>
+_Figure: Server Side Rendering ([Source](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8))_
+
+![CSR](/engineering-education/node-vs-nuxt/csr.png)<br>
+_Figure: Client Side Rendering ([Source](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8))_
+
 This had a few drawbacks with Search Engine Optimization being the most crucial one. The SEO parser isn't able to parse all the DOM elements due to which SEO takes a hit. Here, pages are rendered both on the client and the server-side. This improves SEO and the initial page load times.
 
-Therefore, Nuxt is a framework that is built on top of Vue.js. It accelerates the development of universal web applications. It is versatile and has support for modules to enable Progressive Web App support, multi language support and more.
+Therefore, Nuxt is a framework that is built on top of Vue.js. Vue.js is a front-end JavaScript framework that is used for building user interfaces. The main advantage Nuxt has over Vue.js would be its support for Universal Rendering and a pre-configured router and store. It accelerates the development of universal web applications. It is versatile and has support for modules to enable Progressive Web App support, multi language support and more.
 
 ### Node.js vs Nuxt
 
-|                     | **Node.js**                                                         | **Nuxt**                                                                     |
-| ------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| What it is?         | Node.js is a server-side JavaScript runtime environment.            | Nuxt is a framework used for building universally rendered web applications. |
-| Primary Use         | Server-side scripting, creating application programming interfaces. | Making single page applications and univerally rendered applications.        |
-| Built on            | Chrome V8 Engine                                                    | Vue.js                                                                       |
-| Languages Supported | JavaScript, TypeScript                                              | JavaScript, TypeScript                                                       |
-| Open-Sourced        | Yes                                                                 | Yes                                                                          |
+|                     | **Node.js**                                                                       | **Nuxt**                                                                                       |
+| ------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| What it is?         | Node.js is a server-side JavaScript runtime environment.                          | Nuxt is a framework used for building universally rendered web applications.                   |
+| Primary Use         | Server-side scripting, creating application programming interfaces.               | Making single page applications and univerally rendered applications.                          |
+| Built on            | Chrome V8 Engine                                                                  | Vue.js                                                                                         |
+| Languages Supported | JavaScript, TypeScript                                                            | JavaScript, TypeScript                                                                         |
+| Open-Sourced        | Yes                                                                               | Yes                                                                                            |
+| When should I use?  | Node.js is ideal for creating web servers and application programming interfaces. | Nuxt can be used to create performant user interfaces with server-side rendering and good SEO. |
 
 ### Create a Node.js App
 
@@ -146,6 +159,75 @@ npm run dev
 ![Web Application](/engineering-education/node-vs-nuxt/nuxt-app.png)
 
 - To modify our web app, we can start editing the `pages/index.vue` file.
+
+```vue
+<!--index.vue-->
+<!--The template tag contains all the page content and markup-->
+<template>
+  <div class="container">
+    <div>
+      <Logo />
+      <h1 class="title">hello-nuxt</h1>
+      <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--green"
+        >
+          Documentation
+        </a>
+        <a
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--grey"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<!--Stylesheets for this page-->
+<style>
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+.links {
+  padding-top: 15px;
+}
+</style>
+```
 
 - We have thus created a Nuxt application.
 
