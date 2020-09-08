@@ -16,9 +16,9 @@ images:
 
 A while ago, traditional server side rendering used to be the norm. All of the HTML is dynamically rendered on the server and sent to the client. Back in those days, websites weren't user-friendly and native.
 
-Today's web consists of single-page applications and universal web-apps. Single-page applications are applications that does not reload the entire page every time we click on a link within the browser. It bundles and loads the entire JavaScript onto the client. It then renders parts of the webpage on the client-side, resulting in a fluid user-experience.
+Today's web consists of single-page applications and universal web-apps. Single-page applications are applications that doesn't reload the entire page every time we click on a link within the browser. It bundles and loads the entire JavaScript onto the client. It then renders parts of the webpage on the client-side, resulting in a fluid user-experience. [React.js](https://reactjs.org/) and [Vue.js](https://vuejs.org/) are technologies that can be used to create single page applications.
 
-Universal applications have parts of the application already rendered by the server. This reduces initial loading times and improves Search Engine Optimization.
+Universal applications have parts of the application already rendered by the server. This reduces initial loading times and improves Search Engine Optimization. [Next.js](https://nextjs.org/) and [Nuxt.js](https://nuxtjs.org/) are technologies that can be used to create universal applications.
 
 Let us look at the differences between Node.js and Nuxt which are two important technologies used for the web.
 
@@ -74,7 +74,7 @@ Let us create a basic Node.js application.
 
 - To start, create a directory called hello-node.
 
-```
+```bash
 mkdir hello-node
 
 cd hello-node
@@ -82,7 +82,7 @@ cd hello-node
 
 - Now, let us initiate a Node.js application by using the Node Package Manager.
 
-```
+```bash
 npm init
 ```
 
@@ -94,7 +94,7 @@ npm init
 
 - For our script, let us install dependencies using the node package manager.
 
-```
+```bash
 npm i emoji-random node-emoji
 ```
 
@@ -136,7 +136,7 @@ std_input.on("data", (data) => {
 
 - To create a Nuxt application, we use the `create-nuxt-app` utility.
 
-```
+```bash
 npx create-nuxt-app hello-nuxt
 ```
 
@@ -146,7 +146,7 @@ npx create-nuxt-app hello-nuxt
 
 - Let us run the application.
 
-```
+```bash
 npm run dev
 ```
 
