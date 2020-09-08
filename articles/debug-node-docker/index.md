@@ -15,11 +15,8 @@ If you have ever worked on a project in a team, your *probably* are familiar wit
  2. <a href="https://www.section.io/engineering-education/docker-concepts/" target="_blank">Understanding Docker Concepts</a>
 
  3. <a href="https://www.section.io/engineering-education/getting-started-with-docker/" target="_blank">Getting Started with Docker</a>
-<!--
- 4. <a href="https://github.com/section-io/engineering-education/pull/280" target="_blank">Running a Node app in a Docker container</a> 
-
-After @damikanye 's article is published I'll add the link
--->
+ 
+ 4. <a href="https://www.section.io/engineering-education/building-a-nodejs-application-using-docker/" target="_blank">Building A Node.js Application Using Docker</a>
 
 ### Prerequisites
 
