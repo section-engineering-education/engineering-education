@@ -90,6 +90,12 @@ npm init
 
 - The above command initializes a project and creates a `package.json` file in the current directory. The package.json file is used to manage dependencies of the application.
 
+- If you don't want to configure the `package.json`, use the following command,
+
+```bash
+npm init -y
+```
+
 - Create a new file `index.js`.
 
 - For our script, let us install dependencies using the node package manager.
@@ -130,6 +136,16 @@ std_input.on("data", (data) => {
 });
 ```
 
+- To run this application, type the following command.
+
+```bash
+node index.js
+```
+
+- Now, the application is waiting to accept user input. Enter `1` to print an emoji.
+
+_Note: Your console must support unicode in order to render the emojis corrently._
+
 - We have thus created a Node.js application.
 
 ### Create a Nuxt App
@@ -139,6 +155,18 @@ std_input.on("data", (data) => {
 ```bash
 npx create-nuxt-app hello-nuxt
 ```
+
+- `create-nuxt-app` interactively prompts us to choose various application configuration choices such as UI framework and the application mode.
+
+  - **Project name** -- This option is to choose the name of our project.
+  - **Programming language** -- We can choose from either JavaScript or TypeScript as the language of our choice. For now, let us choose **JavaScript**.
+  - **Package manager** -- Here, we can choose from the yarn or the npm package manager for our Nuxt app. Let us choose **npm** for now.
+  - **UI framework** -- We can add a UI framework like Bootstrap or Bulma to our project. UI frameworks make it easier to create a responsive front-end for our application. Let us choose **Bulma**.
+  - **Nuxt.js modules** -- We can add support for API requests through the Axios module, PWA support and more. For now, let us not select any of them.
+  - **Lintint tools** -- We can configure Nuxt to use formatters and linting tools. Let us choose **Prettier** for code formatting.
+  - **Testing framework** -- Nuxt.js has support for testing utilities like Jest. Let us choose **None**.
+  - **Rendering mode** -- We can set up our Nuxt application as a Universal application or a Single Page Application. Let us choose **Universal** mode.
+  - **Deployment target** -- This configurs Nuxt to be deployed to a server or for a static hosting service. Let us choose **Server**.
 
 ![Create Nuxt App](/engineering-education/node-vs-nuxt/create-nuxt-app.png)
 
