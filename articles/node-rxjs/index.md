@@ -1,5 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /node-rxjs/
+title: Node.js Rxjs
+description: This is a short tutorial that shows how to use the firebase real-time database to store and listen to changes in the database and sending them to listening to clients in real time.
+author: linus-muema
+date: 2020-08-13T00:00:00-13:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/node-authentication-api/hero.jpg
+    alt: node authentication image example key
+---
 ReactiveX stands for "Reactive Extensions". It is a collection of projects done by the ReactiveX community. They bring Asynchronous programming into different programming languages and platforms. Their observable pattern also helps in making the code less and easier to read. 
 They also have a well-managed error handling mechanism. When compared to the old `try/catch` method, it performs better. Some of these projects include [RxJava](https://github.com/ReactiveX/RxJava), [RxJs](https://github.com/ReactiveX/rxjs), [RxSwift](https://github.com/ReactiveX/RxSwift), etc. 
+<!--more-->
 
 Companies like Github, Netflix, and Microsoft use these projects. 
 
