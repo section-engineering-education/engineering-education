@@ -20,7 +20,7 @@ Websites have become an integral part of the technology landscape. It is importa
 
 ### Table of Contents
 
-- [Componenets of a Web Application](#components-of-a-web-application)
+- [Components of a Web Application](#components-of-a-web-application)
 - [Traditional Server Side Rendering](#traditional-server-side-rendering)
 - [Client Side Rendering](#client-side-rendering)
 - [Universal or Isomorphic Apps](#universal-or-isomorphic-apps)
