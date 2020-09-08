@@ -1,0 +1,1 @@
+This is sample text for a blog on file handling in Node.js. We will be covering the topic extensively.
