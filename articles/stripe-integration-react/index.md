@@ -6,7 +6,7 @@ url: /engineering-education/stripe-integration-react/
 title: Beginner's Guide to Stripe Integration in React
 description: Learn how to create a Stripe account and integrate Stripe Payment with your React project.
 author: lalithnarayan-c
-date: 2020-09-02T00:00:00-10:00
+date: 2020-09-08T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,10 @@ images:
   - url: /engineering-education/stripe-integration-react/hero.jpg
     alt: Stripe React Integration
 ---
-All online stores need a payment gateway, irrespective of the service or product being sold. As such, it is important for developers to ensure the implementation is successful and that payments are secure for customers. In this article, we learn how to set up the Stripe API for all payment purposes. Stripe is the [go-to payment processor](https://stripe.com/en-in/payments/payment-methods-guide) for developers thanks to its developer-friendly API, highest grade of payment processing security, and detailed [documentation](https://stripe.com/docs/api).
+All online stores need a payment gateway, irrespective of the service or product being sold. As such, it is important for developers to ensure the implementation is successful and that payments are secure for customers. In this article, we will learn how to set up the Stripe API for all payment purposes. Stripe is the [go-to payment processor](https://stripe.com/en-in/payments/payment-methods-guide) for developers thanks to its developer-friendly API, highest grade of payment processing security, and detailed [documentation](https://stripe.com/docs/api).
+<!--more-->
 
-## Integration With React
+### Integration With React
 Let's assume that we run an online store and have enough information to process the order: order details, order total, and user details. We will focus on the following:
 
 1. Creating a Stripe Account
@@ -33,7 +34,7 @@ Before we get started with the implementation, let's understand the flow of paym
 4. The token is a point of reference to identify the card. Note that once the card details have been sent to Stripe and stored securely, they are never shared with anyone and only the token is used from that point on for security reasons.
 5. The backend application makes a request to the API with the token in place. The token contains information about the total price to be charged, which is calculated in the frontend part of the application. When we add products to the cart, the price is calculated in the browser, and the API call is made. Any computation on the browser is insecure as developers can easily access the price computed and change its value to 0, before the API call is made. Therefore, it's a good practice to recalculate the price at the backend. With the help of cart items present, we should access the prices of items from databases and recalculate the price and make the API call from the backend.   
 ![Payment Flow](/engineering-education/stripe-integration-react/paymentflow.jpg)
-[*Image Source:*](https://stripe.com/docs/payments/accept-a-payment#web)
+[*Image Source*](https://stripe.com/docs/payments/accept-a-payment#web)
 
 With this information in mind, we can understand the important role Stripe plays. Payment gateways such as Stripe and PayPal garner the trust of millions of users by providing seamlessly integrated solutions.
 
@@ -49,10 +50,10 @@ This step is important to ensure we are in testing mode. This enables us to test
 *Dashboard View*
 
 #### Obtain a Stripe Access Token
-On the Stripe dashboard you will find a section called `Get your test API keys`. Under there, you will find two keys, a **Publishable key**, and a **Secret key**. As the name suggests, we need to keep these keys secure. The publishable key is used to send requests, whereas the secret key is stored in the `.env` file at the backend. Let us talk about the .env file before we proceed. 
+On the Stripe dashboard you will find a section called `Get your test API keys`. Under there, you will find two keys, a **Publishable key**, and a **Secret key**. As the name suggests, we need to keep these keys secure. The publishable key is used to send requests, whereas the secret key is stored in the `.env` file at the backend. Let us talk about the .env file before we proceed.
 
 #### Config Keys
-The cloud services and APIs provide keys for accessing their services. But mentioning these keys in the code is a security threat to the entire application. Hackers can easily use the keys to access your data. Therefore, a [.env file](https://www.section.io/engineering-education/nodejs-environment-variables/#protecting-config-keys) is created which includes all the secret keys in it. When we upload the code base for deploying, .env files are ignored. This is because they are added in the .gitignore file. Any file mentioned in the .gitignore file will not be uploaded. While building an web application that involves both frontend and backend components, we store all the secret information in these .env files. 
+The cloud services and APIs provide keys for accessing their services. But mentioning these keys in the code is a security threat to the entire application. Hackers can easily use the keys to access your data. Therefore, a [.env file](/engineering-education/nodejs-environment-variables/#protecting-config-keys) is created which includes all the secret keys in it. When we upload the code base to be deployed, .env files are ignored. This is because they are added in the .gitignore file. Any file mentioned in the .gitignore file will not be uploaded. While building an web application that involves both frontend and backend components, we store all the secret information in these .env files.
 We will look at an example that demonstrates the use of .env file below.
 
 
@@ -64,7 +65,7 @@ There are many libraries available for integrating React with stripe. We will be
 
 Install the library using the following command:
 
-```
+```bash
 npm install react-stripe-checkout
 ```
 
@@ -113,7 +114,7 @@ class CheckoutWithStripe extends React.Component {
 export default CheckoutWithStripe
 ```
 
-Call the component `CheckoutWithStripe` from the payment page. The `${data.name}` displayed on the console is the token generated, which is sent to the backend. 
+Call the component `CheckoutWithStripe` from the payment page. The `${data.name}` displayed on the console is the token generated, which is sent to the backend.
 
 You should see a button which says `Pay With Card`.
 
@@ -130,38 +131,42 @@ The error says that the API key is invalid.
 
 To resolve the error, you may enter your publishable API key. I haven't included the PUBLISHABLE_KEY in the code for security reasons.  
 
-To resolve the error, you must enter your publishable API key. We have discussed about entering the publishable key which is available on the dashboard. Enter the `PUBLISHABLE_KEY` in the `stripeKey` paramter under `CheckoutWithStripe.js` component. 
+To resolve the error, you must enter your publishable API key. We have discussed about entering the publishable key which is available on the dashboard. Enter the `PUBLISHABLE_KEY` in the `stripeKey` parameter under `CheckoutWithStripe.js` component.
 
 To verify that the application is in test mode, you will get an alert on the top right corner as shown in the image above.
 
 ### Backend Integration
-
 On the backend, there are three steps that we need to implement. We save the secret key in a file called `variables.env`. Let us look at the steps involved in the backend.
 
-1. Create a file called `variables.env`. It should contain the following
-    ```txt 
-    STRIPE_SECRET = "YOUR_STRIPE_SECRET_KEY"
-    ```
+1. Create a file called `variables.env`. It should contain the following:
+```txt
+STRIPE_SECRET = "YOUR_STRIPE_SECRET_KEY"
+```
 
-2. Load the stripe module. Install the stripe module at the backend using the command
-   ```npm
-    npm i stripe
-   ```
-   Once installed, load the module using the below code:
-    ```jsx
-    const require = require('stripe')(process.env.STRIPE_SECRET);
-    ```
-3. Charge the card by making an API call with the token information and amount to be charged, to the [Stripe charges API](https://stripe.com/docs/api/charges/create). The source parameter takes in token generated at the frontend as the input. For reference, I have mentioned it as `${data.name}`. 
-   
-   There are various Stripe Charges API endpoints. They are as follows
-    ```
-    POST /v1/charges
-    GET /v1/charges/:id
-    POST /v1/charges/:id
-    POST /v1/charges/:id/capture
-    GET /v1/charges
-    ```
-    ```jsx
+2. Load the stripe module. Install the stripe module at the backend using the command:
+
+```bash
+npm i stripe
+```
+
+Once installed, load the module using the code below:
+
+```jsx
+const require = require('stripe')(process.env.STRIPE_SECRET);
+```
+
+3. Charge the card by making an API call with the token information and amount to be charged, to the [Stripe charges API](https://stripe.com/docs/api/charges/create). The source parameter takes in the token generated at the frontend as the input. For reference, I have mentioned it as `${data.name}`.
+
+There are various Stripe Charges API endpoints. They are as follows:
+
+```bash
+POST /v1/charges
+GET /v1/charges/:id
+POST /v1/charges/:id
+POST /v1/charges/:id/capture
+GET /v1/charges
+```
+```jsx
         const charge = await stripe.charges.create({
         amount=1000,
         source: `${data.name}`,
@@ -169,8 +174,10 @@ On the backend, there are three steps that we need to implement. We save the sec
         description: "First Test Charge"
 
         });
-    ```
+```
+
 The JSON response, stored in variable `charge`, upon successful transaction is given as follows:
+
 ```json
 {
   "id": "ch_1Go3g4AWIeoDa33qQC9MzAa6",
@@ -264,10 +271,10 @@ The JSON response, stored in variable `charge`, upon successful transaction is g
 ### Additional Resources
 
 1. [Stripe Documentation](https://stripe.com/docs/api)
-2. [Detailed description of transaction process.](https://en.wikipedia.org/wiki/Payment_gateway) 
+2. [Detailed Description of Transaction Process.](https://en.wikipedia.org/wiki/Payment_gateway)
 3. [React Boilerplate with Stripe integration code](https://github.com/shreeramneupane/reactstripe)
 
-#### Conclusion
+### Conclusion
 We have walked through the entire process of accepting payments with Stripe. After setting up an account and obtaining API keys, we are able to integrate it seamlessly into our application. Stripe has made payments easy and we encourage you to build your applications with integrated payment gateways.
 
 ---
