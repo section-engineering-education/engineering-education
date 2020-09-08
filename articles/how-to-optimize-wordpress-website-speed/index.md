@@ -135,7 +135,9 @@ Instead of loading every image and video on a webpage, lazy loading downloads an
 As the user scrolls down the page, more content is loaded. This significantly increases the loading speed of the content that is visible
 to the user. 
 
-You can activate lazy-loading using plugins such as [Lazy Load for Images](https://wordpress.org/plugins/lazy-load-for-images/) and [BJ Lazy Load](https://wordpress.org/plugins/bj-lazy-load/). 
+You can activate lazy-loading using plugins such as [Lazy Load for Images](https://wordpress.org/plugins/lazy-load-for-images/), [Image optimization & Lazy Load](https://wordpress.org/plugins/optimole-wp/), and [Lazy Load – Optimize Images](https://wordpress.org/plugins/rocket-lazy-load/).
+
+WordPress version 5.5 was released on August 11, 2020. One of the new features is lazy loading. Lazy loading is now a standard in WordPress. With WordPress version 5.5, you don't need a plugin to enable lazy loading. Images are lazy-loaded by default. More details on the lazy loading feature can be found on the [WordPress official website](https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/).
 
 ### Limit the Number of Post Revisions
 
