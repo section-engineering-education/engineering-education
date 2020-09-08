@@ -36,6 +36,7 @@ To construct an optimal tree, we use a greedy algorithm. Huffman encoding trees 
 
 The optimal tree upon completion is given in the image below:
 ![optimal Tree](optimaltree.jpg)
+*[Image Source](https://massivealgorithms.blogspot.com/2014/06/greedy-algorithms-set-3-huffman-coding.html)* 
 
 We will develop and implement a program that implements Huffman coding in the next section.  
 ### Code
