@@ -17,7 +17,7 @@ images:
 Huffman coding is a lossless way to compress and encode text based on the frequency of the characters in the text. In computer science and information theory, [Huffman code](https://www.sciencedirect.com/topics/computer-science/codeword-length) is a special type of optimal prefix code that is often used for lossless data compression.
 <!--more-->
 ### Huffman Coding
-The algorithm was developed by [David A. Huffman](https://en.wikipedia.org/wiki/Huffman_coding) in the late 19th century as part of his research into computer programming and is commonly found in programming languages such as C, C + +, [Java](https://algs4.cs.princeton.edu/55compression/Huffman.java.html), JavaScript, Python, Ruby, and more. The thought process behind Huffman encoding is as follows: a letter or a symbol that occurs frequently is represented by a shorter code, and a letter or symbol that occurs rarely is represented by a longer code. This leads to efficient representation of characters that require less memory to be stored in. This means Huffman coding can be used as a data compression technique.
+The algorithm was developed by [David A. Huffman](https://en.wikipedia.org/wiki/Huffman_coding) in the late 19th century as part of his research into computer programming and is commonly found in programming languages such as C, C + +, [Java](https://algs4.cs.princeton.edu/55compression/Huffman.java.html), JavaScript, Python, Ruby, and more. The thought process behind Huffman encoding is as follows: a letter or a symbol that occurs frequently is represented by a shorter code, and a letter or symbol that occurs rarely is represented by a longer code. This leads to an efficient representation of characters that require less memory to be stored. This means Huffman coding can be used as a data compression technique.
 
 In this article, we are going to cover the following:
 
@@ -32,10 +32,10 @@ To compress a file with a sequence of characters, we need a table that gives us 
 To construct an optimal tree, we use a greedy algorithm. Huffman encoding trees return the minimum length character encodings used in data compression. The nodes in the tree represent the frequency of a character's occurrence. The root node represents the length of the string, and traversing the tree gives us the character-specific encodings. Once the tree is constructed, traversing the tree gives us the respective codes for each symbol.
 
 The optimal tree upon completion is given in the image below:
-![optimal Tree](optimaltree.jpg)
-*[Image Source](https://massivealgorithms.blogspot.com/2014/06/greedy-algorithms-set-3-huffman-coding.html)* 
+![optimal Tree](/engineering-education/huffman-coding-python/optimaltree.jpg)
+*[Image Source](https://massivealgorithms.blogspot.com/2014/06/greedy-algorithms-set-3-huffman-coding.html)*
 
-We will develop and implement a program that implements Huffman coding in the next section.  
+We will develop and implement a program that uses Huffman coding in the next section.  
 
 ### Code
 We first define a class called `HuffmanCode` which is initialized with probabilities. Let us look at the flow of the code implemented below:
