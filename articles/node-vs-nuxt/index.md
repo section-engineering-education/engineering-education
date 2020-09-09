@@ -278,3 +278,5 @@ We saw an overview of the differences between Node.js and Nuxt and created a bas
 - [Video Tutorials on Nuxt](https://nuxtjs.org/video-courses)
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [Learn Node.js](https://nodejs.dev/learn)
+
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
