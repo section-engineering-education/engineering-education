@@ -16,7 +16,9 @@ images:
 
 A while ago, traditional server side rendering used to be the norm. All of the HTML is dynamically rendered on the server and sent to the client. Back in those days, websites weren't user-friendly and native.
 
-Today's web consists of single-page applications and universal web-apps. Single-page applications are applications that doesn't reload the entire page every time we click on a link within the browser. It bundles and loads the entire JavaScript onto the client. It then renders parts of the webpage on the client-side, resulting in a fluid user-experience. [React.js](https://reactjs.org/) and [Vue.js](https://vuejs.org/) are technologies that can be used to create single page applications.
+Today's web consists of single-page applications and universal web-apps. Single-page applications are applications that doesn't reload the entire page every time we click on a link within the browser. It bundles and loads the entire JavaScript onto the client. It then renders parts of the webpage on the client-side, resulting in a fluid user-experience. 
+
+[React.js](https://reactjs.org/) and [Vue.js](https://vuejs.org/) are technologies that can be used to create single page applications.
 
 Universal applications have parts of the application already rendered by the server. This reduces initial loading times and improves Search Engine Optimization. [Next.js](https://nextjs.org/) and [Nuxt.js](https://nuxtjs.org/) are technologies that can be used to create universal applications.
 
@@ -41,11 +43,15 @@ For a more detailed discussion about Node.js, check out [this](https://www.secti
 
 Node.js is a server-side JavaScript runtime environment. It is based on the Google V8 engine. Today, it is one of the most popular server-side languages for the web.
 
-Node.js is single threaded and event driven. Node.js is not a framework, but it is an environment. There are many frameworks that are built on top of Node.js, namely Express and Koa. It is also preferred because front-end developers can easily jump into backend development, because they would already know JavaScript.
+Node.js is single threaded and event driven. Node.js is not a framework, but it is an environment. There are many frameworks that are built on top of Node.js, namely Express and Koa. 
+
+It's also preferred because front-end developers can easily jump into backend development, because they would already know JavaScript.
 
 ### Why is Nuxt Needed
 
-Since traditional server-side rendering fails to provide a smooth user experience, client-side rendering became the new standard for web applications. Client-side rendering involves a single HTML file being sent to the client. Now, the entire JavaScript is downloaded and runs on the client to handle interactivity.
+Since traditional server-side rendering fails to provide a smooth user experience, client-side rendering became the new standard for web applications. 
+
+Client-side rendering involves a single HTML file being sent to the client. Now, the entire JavaScript is downloaded and runs on the client to handle interactivity.
 
 ![SSR](/engineering-education/node-vs-nuxt/ssr.png)<br>
 _Figure: Server Side Rendering ([Source](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8))_
@@ -53,9 +59,13 @@ _Figure: Server Side Rendering ([Source](https://medium.com/walmartglobaltech/th
 ![CSR](/engineering-education/node-vs-nuxt/csr.png)<br>
 _Figure: Client Side Rendering ([Source](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8))_
 
-This had a few drawbacks with Search Engine Optimization being the most crucial one. The SEO parser isn't able to parse all the DOM elements due to which SEO takes a hit. Here, pages are rendered both on the client and the server-side. This improves SEO and the initial page load times.
+This had a few drawbacks with Search Engine Optimization being the most crucial one. The SEO parser isn't able to parse all the DOM elements due to which SEO takes a hit. 
 
-Therefore, Nuxt is a framework that is built on top of Vue.js. Vue.js is a front-end JavaScript framework that is used for building user interfaces. The main advantage Nuxt has over Vue.js would be its support for Universal Rendering and a pre-configured router and store. It accelerates the development of universal web applications. It is versatile and has support for modules to enable Progressive Web App support, multi language support and more.
+Here, pages are rendered both on the client and the server-side. This improves SEO and the initial page load times.
+
+Nuxt is a framework that is built on top of Vue.js. Vue.js is a front-end JavaScript framework that is used for building user interfaces. The main advantage Nuxt has over Vue.js would be its support for Universal Rendering and a pre-configured router and store. 
+
+It accelerates the development of universal web applications. It is versatile and has support for modules to enable Progressive Web App support, multi-language support and more.
 
 ### Node.js vs Nuxt
 
@@ -70,7 +80,7 @@ Therefore, Nuxt is a framework that is built on top of Vue.js. Vue.js is a front
 
 ### Create a Node.js App
 
-Let us create a basic Node.js application.
+Let's create a basic Node.js application.
 
 - To start, create a directory called hello-node.
 
@@ -80,7 +90,7 @@ mkdir hello-node
 cd hello-node
 ```
 
-- Now, let us initiate a Node.js application by using the Node Package Manager.
+- Next, initiate a Node.js application by using the Node Package Manager.
 
 ```bash
 npm init
@@ -104,7 +114,7 @@ npm init -y
 npm i emoji-random node-emoji
 ```
 
-- Now, let us start writing our Node.js script that prints a random emoji to the console.
+- Now, let's start writing our Node.js script that prints a random emoji to the console.
 
 ```js
 // Importing process.stdin to take user input
@@ -144,7 +154,7 @@ node index.js
 
 - Now, the application is waiting to accept user input. Enter `1` to print an emoji.
 
-_Note: Your console must support unicode in order to render the emojis corrently._
+_Note: Your console must support unicode in order to render the emojis correctly._
 
 - We have thus created a Node.js application.
 
@@ -159,20 +169,20 @@ npx create-nuxt-app hello-nuxt
 - `create-nuxt-app` interactively prompts us to choose various application configuration choices such as UI framework and the application mode.
 
   - **Project name** -- This option is to choose the name of our project.
-  - **Programming language** -- We can choose from either JavaScript or TypeScript as the language of our choice. For now, let us choose **JavaScript**.
-  - **Package manager** -- Here, we can choose from the yarn or the npm package manager for our Nuxt app. Let us choose **npm** for now.
-  - **UI framework** -- We can add a UI framework like Bootstrap or Bulma to our project. UI frameworks make it easier to create a responsive front-end for our application. Let us choose **Bulma**.
-  - **Nuxt.js modules** -- We can add support for API requests through the Axios module, PWA support and more. For now, let us not select any of them.
-  - **Lintint tools** -- We can configure Nuxt to use formatters and linting tools. Let us choose **Prettier** for code formatting.
-  - **Testing framework** -- Nuxt.js has support for testing utilities like Jest. Let us choose **None**.
-  - **Rendering mode** -- We can set up our Nuxt application as a Universal application or a Single Page Application. Let us choose **Universal** mode.
-  - **Deployment target** -- This configurs Nuxt to be deployed to a server or for a static hosting service. Let us choose **Server**.
+  - **Programming language** -- We can choose from either JavaScript or TypeScript as the language of our choice. For this demo web app, choose **JavaScript**.
+  - **Package manager** -- Here, we can choose from the yarn or the npm package manager for our Nuxt app. Let's choose **npm** for now.
+  - **UI framework** -- We can add a UI framework like Bootstrap or Bulma to our project. UI frameworks make it easier to create a responsive front-end for our application. Let's choose **Bulma**.
+  - **Nuxt.js modules** -- We can add support for API requests through the Axios module, PWA support and more. For now, let's not select any of them.
+  - **Linting tools** -- We can configure Nuxt to use formatters and linting tools. Let's choose **Prettier** for code formatting.
+  - **Testing framework** -- Nuxt.js has support for testing utilities like Jest. We should choose **None** for now.
+  - **Rendering mode** -- We can set up our Nuxt application as a Universal application or a Single Page Application. Let's choose **Universal** mode.
+  - **Deployment target** -- This configures Nuxt to be deployed to a server or static hosting service. Let's choose **Server**.
 
 ![Create Nuxt App](/engineering-education/node-vs-nuxt/create-nuxt-app.png)
 
-- Nuxt creates a folder structure for us. It also takes care of routing. Every `.vue` file under the `pages` folder is a route.
+- Nuxt creates a folder structure for us and also takes care of routing. Every `.vue` file under the `pages` folder is a route.
 
-- Let us run the application.
+- Let's run the application.
 
 ```bash
 npm run dev
@@ -257,7 +267,7 @@ export default {};
 </style>
 ```
 
-- We have thus created a Nuxt application.
+- We've just created a Nuxt application.
 
 ### Further Reading
 
