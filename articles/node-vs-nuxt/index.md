@@ -4,30 +4,25 @@ status: publish
 published: true
 url: /engineering-education/node-vs-nuxt/
 title: Node vs Nuxt - The Key Differences
-description: A comparison betweeen Node.js and Nuxt, two of the most popular web technologies.
+description: A comparison betweeen Node.js and Nuxt, two of the most popular web technologies. Why are they needed, and we create a simple application in both.
 author: saiharsha-balasubramaniam
-date: 2020-09-06T00:00:00-12:00
+date: 2020-09-09T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/node-eslint/hero.jpg
-    alt: linters example image ESLint
+  - url: /engineering-education/node-vs-nuxt/hero.jpg
+    alt: Node.js Nuxt example image
 ---
+A time ago, traditional server side rendering used to be the norm. All of the HTML was dynamically rendered on the server and sent to the client. Back in those days, websites were not user-friendly and native. Today the web consists of single-page applications and universal web-apps. Single-page applications are applications that do not reload the entire page every time we click on a link within the browser.
+<!--more-->
 
-A while ago, traditional server side rendering used to be the norm. All of the HTML is dynamically rendered on the server and sent to the client. Back in those days, websites weren't user-friendly and native.
-
-Today's web consists of single-page applications and universal web-apps. Single-page applications are applications that doesn't reload the entire page every time we click on a link within the browser. It bundles and loads the entire JavaScript onto the client. It then renders parts of the webpage on the client-side, resulting in a fluid user-experience. 
-
-[React.js](https://reactjs.org/) and [Vue.js](https://vuejs.org/) are technologies that can be used to create single page applications.
+Instead it bundles and loads the entire JavaScript onto the client. It then renders parts of the webpage on the client-side, resulting in a fluid user-experience. [React.js](https://reactjs.org/) and [Vue.js](https://vuejs.org/) are technologies that can be used to create single page applications.
 
 Universal applications have parts of the application already rendered by the server. This reduces initial loading times and improves Search Engine Optimization. [Next.js](https://nextjs.org/) and [Nuxt.js](https://nuxtjs.org/) are technologies that can be used to create universal applications.
 
-Let us look at the differences between Node.js and Nuxt which are two important technologies used for the web.
+Let us look at the differences between Node.js and Nuxt which are two important technologies used on the web.
 
-<!--more-->
-
-## Table of Contents
-
+### Table of Contents
 - [Why is Node.js Needed](#why-is-node.js-needed)
 - [Why is Nuxt Needed](#why-is-nuxt-needed)
 - [Node.js-vs-Nuxt](#node.js-vs-nuxt)
@@ -36,50 +31,48 @@ Let us look at the differences between Node.js and Nuxt which are two important 
 - [Further Reading](#further-reading)
 
 ### Why is Node.js Needed
-
 JavaScript is a powerful object-oriented programming language that runs within a browser. To harness the power of JS on the server-side, Node.js was created.
 
-For a more detailed discussion about Node.js, check out [this](https://www.section.io/engineering-education/why-node-js-is-popular/) article by [Geoffrey Mungai](https://www.section.io/engineering-education/authors/geoffrey-mungai/).
+For a more detailed discussion about Node.js, check out [this](/engineering-education/why-node-js-is-popular/) article by [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/).
 
 Node.js is a server-side JavaScript runtime environment. It is based on the Google V8 engine. Today, it is one of the most popular server-side languages for the web.
 
-Node.js is single threaded and event driven. Node.js is not a framework, but it is an environment. There are many frameworks that are built on top of Node.js, namely Express and Koa. 
+Node.js is single threaded and event driven. Node.js is not a framework, but it is an environment. There are many frameworks that are built on top of Node.js, namely Express and Koa.
 
 It's also preferred because front-end developers can easily jump into backend development, because they would already know JavaScript.
 
 ### Why is Nuxt Needed
-
-Since traditional server-side rendering fails to provide a smooth user experience, client-side rendering became the new standard for web applications. 
+Since traditional server-side rendering fails to provide a smooth user experience, client-side rendering became the new standard for web applications.
 
 Client-side rendering involves a single HTML file being sent to the client. Now, the entire JavaScript is downloaded and runs on the client to handle interactivity.
 
 ![SSR](/engineering-education/node-vs-nuxt/ssr.png)<br>
-_Figure: Server Side Rendering ([Source](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8))_
+
+*Figure: [Server Side Rendering](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8)*
 
 ![CSR](/engineering-education/node-vs-nuxt/csr.png)<br>
-_Figure: Client Side Rendering ([Source](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8))_
 
-This had a few drawbacks with Search Engine Optimization being the most crucial one. The SEO parser isn't able to parse all the DOM elements due to which SEO takes a hit. 
+*Figure: [Client Side Rendering](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8)*
+
+This had a few drawbacks with Search Engine Optimization being the most crucial one. The SEO parser isn't able to parse all the DOM elements due to that SEO took a hit.
 
 Here, pages are rendered both on the client and the server-side. This improves SEO and the initial page load times.
 
-Nuxt is a framework that is built on top of Vue.js. Vue.js is a front-end JavaScript framework that is used for building user interfaces. The main advantage Nuxt has over Vue.js would be its support for Universal Rendering and a pre-configured router and store. 
+Nuxt is a framework that is built on top of Vue.js. Vue.js is a front-end JavaScript framework that is used for building user interfaces. The main advantage Nuxt has over Vue.js would be its support for Universal Rendering and a pre-configured router and store.
 
 It accelerates the development of universal web applications. It is versatile and has support for modules to enable Progressive Web App support, multi-language support and more.
 
 ### Node.js vs Nuxt
-
 |                     | **Node.js**                                                                       | **Nuxt**                                                                                       |
 | ------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | What it is?         | Node.js is a server-side JavaScript runtime environment.                          | Nuxt is a framework used for building universally rendered web applications.                   |
-| Primary Use         | Server-side scripting, creating application programming interfaces.               | Making single page applications and univerally rendered applications.                          |
+| Primary Use         | Server-side scripting, creating application programming interfaces.               | Making single page applications and universally rendered applications.                          |
 | Built on            | Chrome V8 Engine                                                                  | Vue.js                                                                                         |
 | Languages Supported | JavaScript, TypeScript                                                            | JavaScript, TypeScript                                                                         |
 | Open-Sourced        | Yes                                                                               | Yes                                                                                            |
 | When should I use?  | Node.js is ideal for creating web servers and application programming interfaces. | Nuxt can be used to create performant user interfaces with server-side rendering and good SEO. |
 
 ### Create a Node.js App
-
 Let's create a basic Node.js application.
 
 - To start, create a directory called hello-node.
@@ -154,12 +147,11 @@ node index.js
 
 - Now, the application is waiting to accept user input. Enter `1` to print an emoji.
 
-_Note: Your console must support unicode in order to render the emojis correctly._
+*Note: Your console must support Unicode in order to render the emojis correctly.*
 
-- We have thus created a Node.js application.
+- We have created a Node.js application.
 
 ### Create a Nuxt App
-
 - To create a Nuxt application, we use the `create-nuxt-app` utility.
 
 ```bash
@@ -188,7 +180,7 @@ npx create-nuxt-app hello-nuxt
 npm run dev
 ```
 
-- The application is initialized and runs on the URL, `localhost:3000`.
+- The application is initialized and runs on `localhost:3000`.
 
 ![Run Nuxt App](/engineering-education/node-vs-nuxt/npm-run-dev.png)
 
@@ -270,8 +262,7 @@ export default {};
 - We've just created a Nuxt application.
 
 ### Further Reading
-
-We saw an overview of the differences between Node.js and Nuxt and created a basic application in both. For learning more about these technologies, take a look at the links below.
+We saw an overview of the differences between Node.js and Nuxt and created a basic application in both. For additional learning about these technologies, take a look at the links below.
 
 - [Reasons to use Nuxt for your web app](https://medium.com/vue-mastery/10-reasons-to-use-nuxt-js-for-your-next-web-application-522397c9366b)
 - [Nuxt Documentation](https://nuxtjs.org/guide)
@@ -279,4 +270,5 @@ We saw an overview of the differences between Node.js and Nuxt and created a bas
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [Learn Node.js](https://nodejs.dev/learn)
 
+---
 Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
