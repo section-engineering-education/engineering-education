@@ -77,16 +77,17 @@ What about we separate the response dependent on the concern of open source code
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
-87% are concerned with the security of their own code while 77% had the same on open source code. These figures conclude that a great number of JavaScript developers are concerned about security, be it open source or the code you write.
+87% are concerned with the security of their own code while 77% had the same on open source code. These figures conclude that a great number of JavaScript developers are concerned about security, be it open source or the code they write themselves.
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/satisfied.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
-The respondents entrust open source code over their own written code, this is because open-source codes have available and ready tools for making sure the code is secure. Could that be majority of Javascript developers are more confident with open source code above the code they write?
+The respondents entrust open source code over their own written code, this is because open-source codes have available and ready tools to make sure the code is secure. Could it be that the majority of JavaScript developers are more confident with open source code over the code they write?
 
 ### 3. Which tools and practices do you use to ensure security in your application?
-
 These survey results were divided into two groups, least experienced (>1 year) and most experienced (10 plus years).
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/least-most-experienced.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
@@ -94,18 +95,19 @@ These survey results were divided into two groups, least experienced (>1 year) a
 From these results experienced groups were:
 -   More likely to use testing frameworks.
 -   More likely to use linter.
--   More probably to do code review.
+-   More probable to do code review.
 -   More likely to carry out external audits of the code.
--   More probably to participate in automated scans to find security vulnerabilities in the code they are using.
+-   More probable to participate in automated scans to find security vulnerabilities in the code they are using.
 
 If all answers are combined, a measure of how many developers uses some form of security practices on codes depending on experience will be:
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/level-of-experience.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 ### Conclusion
--   The best code security practices are common to experienced developers. These practices include code review, linting and testing.
--  Practices such as testing, linting, code surveys, and security examines are indicators  of a polished developer.
+-   The best code security practices are common to experienced developers. These practices include code review, linting, and testing.
+-  Practices such as testing, linting, code surveys, and security exams are indicators of a polished developer.
 -   Solid greater part of this developers are more likely concerned with the safety of the code they write as well as the open-source code they use.
 -   Developers are more confidence with the safeness of open source code while in doubt with the security of the code they write.
 -   Most developers are not contented with the alternatives available/accessible to them to secure code.
