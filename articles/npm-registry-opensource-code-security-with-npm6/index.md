@@ -1,6 +1,23 @@
-Security is everyone's concern. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is an even a professional habit that developers acquire are they grow their experience. Makining sure open-source codes are secure is one of the fundermental mission of NPM, with approaches to security at scale to empower NPM users to develop secure code. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/npm-registry-opensource-code-security-with-npm6/
+title: Open-source packages & Code Security using npm
+description: The article addresses how opening DevTools, setting breakpoints, and restarting app instances is helpful for debugging. Since Node.js apps can fail without error messages.
+author: joseph-chege
+date: 2020-09-10T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-With NPM, you do not need to worry about the safety of your code. NPM provides vulnerability-scanning tools that are built-in in your Node.js workflow. These tools are faster and they automatically review every install request you make, check the Node Security Platform vulnerably database, and warn you if you try to us unsafe codes. It even analyzes your dependencies trees to check specifically what has security issues and recommend a replacement or fix the issues automatically. 
+  - url: /engineering-education/npm-registry-opensource-code-security-with-npm6/hero.jpg
+    alt: Devtools example image Node.js debugger
+---
+Security is everyone's concern. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is an even a professional habit that developers acquire are they grow their experience. Making sure open-source codes are secure is one of the fundamental mission of NPM, with approaches to security at scale to empower NPM users to develop secure code.
+<!--more-->
+
+With NPM, you do not need to worry about the safety of your code. NPM provides vulnerability-scanning tools that are built-in in your Node.js workflow. These tools are faster and they automatically review every install request you make, check the Node Security Platform vulnerably database, and warn you if you try to us unsafe codes. It even analyzes your dependencies trees to check specifically what has security issues and recommend a replacement or fix the issues automatically.
 
 In this article, we will have a look at NPM registry survey statistics, check other developers' responses to Node.js security practices and identify which tools you need to assess your open-source code safely.
 
@@ -85,7 +102,7 @@ If all answers are combined, a measure of how many developers uses some form of 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 ### Conclusion
--   The best code security practices are common to experienced developers. These practices include code review, linting and testing. 
+-   The best code security practices are common to experienced developers. These practices include code review, linting and testing.
 -  Practices such as testing, linting, code surveys, and security examines are indicators  of a polished developer.
 -   Solid greater part of this developers are more likely concerned with the safety of the code they write as well as the open-source code they use.
 -   Developers are more confidence with the safeness of open source code while in doubt with the security of the code they write.
@@ -113,7 +130,7 @@ As a developer, you spend much less time between pushing a new build and continu
 **`package-lock.json` has the following advantages**
 
 -   Increased reproducibility across teams, reduced network overhead during installation.
--   It Make it easier to debug an issue in your app. 
+-   It Make it easier to debug an issue in your app.
 -   With `npm@6`, your lock file is more stable across the teams on similar platforms as well as across operating systems unlike the later which had unexpected changes and platform differences.
 
 Use `npm install --package-lock-only` to create a lock file without having to install into `node_modules/`.
