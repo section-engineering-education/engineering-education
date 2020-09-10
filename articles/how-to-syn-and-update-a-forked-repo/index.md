@@ -1,20 +1,17 @@
 ### Getting started
 
 This article assume that you have a GitHub account. [Check instructions](https://docs.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account) on how to create a GitHub user account. In this article, we shall briefly look at how we can submit work and contributions to a GitHub team project. Before we get started, you need to understand the following terms, as you will constantly come across them in daily GitHub workflow.
--   **Fork** is a copy of a repository of someone else project. Forks allow you have to have a repository of a project that you do not own  to your GitHub account so that you can make some changes without affecting the original repository. Once the changes on your forked repository are valid, you can submit these changes as contributions to the original project. Forks allow you to make your contributions to a team project.
+-   **Fork** is a copy of a repository of someone else project. Forks allows you have to have a repository of a project that you do not own  to your GitHub account so that you can make some changes without affecting the original repository. Once the changes on your forked repository are valid, you can submit these changes as contributions to the original project. Forks allows you to make your contributions to a team project.
 -   **Remote** a repository on GitHub account exists as a remote repository.
--   **Clone** is downloading a copy of the remote repository to your local computer.
--   **Commits** changes you make to your remote repository. Committing saves your edits/changes to your GitHub repository. With GitHub, every commit you make has a specific ID the keeps the record of the changes you have made. If you happen to make a wrong change, you can revert the commit you have made and your remote repository will be as it was before you made the changes. A commit has a commit message that allows you to have a brief description of the changes you are making.
+-   **Clone** is downloading a copy of the remote repository to local computer.
+-   **Commits** changes made to a repository. Committing saves  edits/changes to our GitHub repository. With GitHub, every commit you make has a specific ID the keeps the record of the changes you have made. If you happen to make a wrong change, you can revert the commit and your remote repository will be as it was before you made the changes. A commit has a commit message that allows you to have a brief description of the changes you are making.
 -   **Push** is used to transfer commits made on your local repository to your GitHub remote repository. To push to GitHub you make a push request to update your local commits to your remote repository.
--   **Branch** an be feature branch or base branch. A feature branch typically helps you to isolate your changes from the other team as you make and test your changes. The base branch consists of merged feature branches.
+-   **Branch** a be feature branch or base branch. A feature branch typically helps you to isolate your changes from the other team as you make and test this changes. The base branch consists of merged feature branches.
 -   **Pull** is to notify the project team of the changes you have made from a pushed branch in your GitHub repository or basically requesting the owner of the repository to pull changes you made, thus called a pull request. A collaborator can be assigned to review your pull and propose any potential changes you need to make. Review changes are done with commits. Once changes and reviews are complete a team contributor or you (with access), can merge your branch to the base branch of the original repository.
 -   **Merge** Merging is publishing a pull request after proposed reviews have been made. Merging is done by contributors with push access to the parent repository. You can also merge changes in the original repository to your forked repository.
 
 ### How to fork
-Now that you know, what a fork is, let see how you can fork a repository to start working on your changes and contribute to a team project. Forking a project on github is really easy, you just need to hit the fork button.
-
-On your GitHub account, go to the repositorysitory you want to fork. In this example, we are using https://github.com/section-io/engineering-education.
-To the upper left corner, click on the fork button and you will have successfully forked the repository.
+Now that you know, what a fork is, let's see how you can fork a repository to start working on your changes and contribute to a team project. Forking a project on GitHub is really easy, you just need to hit the fork button. On your GitHub account, go to the repositorysitory you want to fork. In this example, we are referring to https://github.com/section-io/engineering-education. To the upper left corner, click on the fork button and you will have successfully forked the repository.
 ![forking repo](/engineering-education/how-to-syn-and-update-a-forked-repo/forking.png)
 
 Now you have a copy of the original repository with you.
@@ -32,7 +29,7 @@ To make GitHub desktop work easier, make sure you configure [GitHub desktop with
 
 Once done, your GitHub account will load on the GitHub desktop. To start cloning, navigate to File then clone repository.
 ![start cloning](/engineering-education/how-to-syn-and-update-a-forked-repo/start-github-clone.png)
-A clone window will pop up, you will be able to see the repositorysitories in your account, and from there you can choose the repository you want to clone.
+A clone window will pop up, you will be able to see the repositories in your account, and choose the repository you want to clone.
 
 ![cloning window](/engineering-education/how-to-syn-and-update-a-forked-repo/cloning-github-window.png)
 
@@ -57,12 +54,10 @@ http[s]://host.xz[:port]/path/to/repository.git/
 ```
 ![HTTPS](/engineering-education/how-to-syn-and-update-a-forked-repo/https.png)
 
-In this article, we shall use SSH URL protocol using [Git Bash](https://docs.github.com/en/github/using-git) to execute our
-commands. However, to get started with Git Bash, you need to do the following authentication.
+In this article, we shall use SSH URL protocol using [Git Bash](https://docs.github.com/en/github/using-git) to execute git
+commands. However, to get started with Git Bash, you need to do the following authentication. First, [download and install git](https://git-scm.com/downloads), launch Git Bash and sign in to your GitHub account using the following commands.
 
-First, [download and install git](https://git-scm.com/downloads), launch Git Bash and sign in to your GitHub account using the following commands.
-
-NB: remember to press enter after any following 
+**NOTE**: remember to press enter after any following 
 ```bash
 git config --global user.name "you github account username"
 ```
@@ -77,7 +72,7 @@ to confirm username and
 ```bash
 git config --global user.email
 ```
-to confirm email. To connect to your GitHub account you need to generate an SSH key to authenticate the. Run 
+to confirm email. To connect to your GitHub account you need to generate an SSH key. Run 
 ```bash
 ssh-keygen -t rsa -C "your github email" 
 ```
@@ -111,15 +106,13 @@ Receiving objects: 100% (9676/9676), 108.32 MiB | 116.00 KiB/s, done.
 Resolving deltas: 100% (5361/5361), done.
 Updating files: 100% (785/785), done.
 ```
-NOTE: make sure the link you copy is SSH. And remember to use the password you used when generating the SSH key to make authentication for `passphrase for key '/c/Users/you/.ssh/id_rsa\':`
-
-If you do not enter the SSH password, you will run into the following output ***Please make sure you have the correct access rights and the repository exists.***
+**NOTE:** make sure the link you copy is SSH. And remember to use the password you used when generating the SSH key to make authentication for `passphrase for key '/c/Users/you/.ssh/id_rsa\':` If you do not enter the SSH password, you will run into the following output ***Please make sure you have the correct access rights and the repository exists.***
 
 A copy of the remote is now available on your local computer to the location you entered on the Git Bash command with the folder name the same as the name of the repository in the remote repository.In case you want to have a different project folder use the clone command followed by the name of your prefered folder.
 ```bash
 git clone git@github.com:section-io/engineering-education.git folder-name
  ```
-When using a forked folder, the original repository will regularly be updated with commits. These commits are not directly updated to your repository, thus you need to regularly update your fork to keep it up to date with the original repository.
+When using a forked work, the original repository will regularly be updated with commits. These commits are not directly updated to your repository, thus you need to regularly update your fork to keep it up to date with the original repository.
 
 ### Update fork using GitHub web UI
 The process is simple and clear. Go to your forked repository in your GitHub account, you will see the number of commits that the original repository have and not updated to your forked repository.
@@ -129,7 +122,7 @@ Click compare.
 Use switch to base link.
 ![switch to base](/engineering-education/how-to-syn-and-update-a-forked-repo/switch-to-base.png)
 
-If the switch to base is not available, use the dropdown to manually select the repositorysitories to compare. When the comparing selections are correctly selected, you will be able to see the commits that are not updated to your fork.
+If the switch to base is not available, use the dropdown to manually select the repositories to compare. When the comparing selections are correctly selected, you will be able to see the commits that are not updated to your fork.
 
 ![repo comparision](/engineering-education/how-to-syn-and-update-a-forked-repo/repo-comparison.png)
 
@@ -150,7 +143,7 @@ Confirm merge.
 
 ![confirm merge](/engineering-education/how-to-syn-and-update-a-forked-repo/confirm-merge.png)
 
-And you are done; your fork is now updated successfully. The fork is updated on the remote and you now need to update the changes to your local repository. Simply go to your GitHub desktop and make sure your current repository you are working with is selected.
+And you are done, your fork is now updated successfully. The fork is updated on the remote and you now need to update the changes to your local repository. Simply go to your GitHub desktop and make sure your current repository you are working with is selected.
 ![current repo](/engineering-education/how-to-syn-and-update-a-forked-repo/current-repo.png)
 
 You will able to see a "pull origin". What this do is to pull the remote changes to your local repository. 
@@ -161,7 +154,7 @@ Click "pull origin" and your local repository will be the same as the remote rep
 
 ### Summary
 ### Update fork using Git Bash.
-You have successfully forked your interested repository. However, you occasionally need to keep it up to date with the original repository. The original repository is commonly referred to upstream by Git Bash command. To update your fork with the upstream, you need to get the remote to your local repository so that you can fetch available changes made in the original repository and push the changes to your local repository. To get started navigate to your cloned repository(already on your local computer) and open the project folder with Gith bash or open Git Bush and change the directory to point the cloned repository on your local storage. I.e.
+You have successfully forked your interested repository. However, you occasionally need to keep it up to date with the original repository. The original repository is commonly referred to upstream by Git Bash command. To update your fork with the upstream, you need to get the remote to your local repository so that you can fetch available changes made in the original repository and push the changes to your local repository. To get started navigate to your cloned repository(already on your local computer) and open the project folder with Gith Bash or open Git Bush and change the directory to point the cloned repository on your local storage. I.e.
 ```bash
 cd ~/Documents/GitHub/engineering-education
 ```
@@ -348,7 +341,7 @@ Publish the branch to your remote GitHub account and make sure you add a commit 
 
 ![commit to branch](/engineering-education/how-to-syn-and-update-a-forked-repo/commit-to-branch.png)
 
-At this point, your branch content is on your remote GitHub repository, and you need to create a pull request to the origin repository to contribute your changes.
+Your branch content is on your remote GitHub repository, and you need to create a pull request to the origin repository to contribute your changes.
 
 ![branch pull request](/engineering-education/how-to-syn-and-update-a-forked-repo/branch-pull-request.png)
 
@@ -363,7 +356,7 @@ Once a pull request button is hit, you are done, you have submitted your contrib
 Wait for your content to be reviewed and if any further changes are needed, a comment will be left by the reviewer suggesting possible changes you should make under your pull. Make your edits on your text editor and make a commit to update the changes and remember to have a summary of the commit you are making for better referencing.
 
 ### Submit contributions using Git bush.
-Since you have a clone available on your local computer, start working on you contubutions using a text editor. Format your content according to the guidelines of the originla repository. Once done and ready to publish the content, it is advicable to push your changes under a branch and not the master repository. This will help you to work and contibutes changes under differnt topics without branch conflict.
+Since you have a clone available on your local computer, start working on you contubutions using a text editor. Format your content according to the guidelines of the originla repository. Once done and ready to publish the content, it is advicable to push your changes under a branch and not the master repository. This will help you to work and contibutes changes under different topics without branch conflict.
 When the content (topic) is ready, create a branch and make sure you checkout on the branch as it will hold all your changes you are working on. Open GitHub local directory on Git Bash.  
 If you run 
 ```bash
@@ -436,7 +429,7 @@ Push to the branch
 ```bash
 git push origin my-first-contributions
 ```
-Your content is now on your remote forked rep. To start your contibutions to the team, you need to make a pull requst. Go to your GitHub account, under your forked repository.
+Your content is now on your remote forked repository. To start your contibutions to the team, you need to make a pull requst. Go to your GitHub account, under your forked repository.
 ![compare and pull request](/engineering-education/how-to-syn-and-update-a-forked-repo/compare-and-pull-request.png)
 
 Click compare and pull request button.
@@ -444,7 +437,7 @@ Click compare and pull request button.
 And you are done. Wait for your content to be reviewed, make changes where neccessry and your pull request will be merged to the team project. 
 ![done](/engineering-education/how-to-syn-and-update-a-forked-repo/done.png)
 
-Note: every time you are making new contributions, ensure you remote fork and the local repository are up to date. 
+**Note:** every time you are making new contributions, ensure you remote fork and the local repository are up to date. 
 
 ### Key labels used to review a pull request 
 Labels are used in GitHub to address issues and pull requests to help in the organization of the project. When you make a pull request, your contributions review progress is marked with labels. Labels shows the progress of review between project managers.
