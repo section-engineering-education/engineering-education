@@ -21,13 +21,13 @@
 ![Blockchain img](/engineering-education/blockchain-as-a-revolution-inhealthcare/Blockchain-img.jpg)
 [*Image Source: https://www.gettyimages.com/detail/illustration/digital-room-with-padlock-and-word-royalty-free-illustration/748345923?adppopup=true*](https://www.gettyimages.com/detail/illustration/digital-room-with-padlock-and-word-royalty-free-illustration/748345923)
 
-[Blockchain represents great promise for stakeholders in healthcare fields](https://nimbus-t.com/blockchain-opportunities-for-health-care-deloitte-us). Using this technology has the potential to increase the standard of care. In the long run, using a [blockchain network nationwide](https://www.parathon.com/understanding-blockchain-in-healthcare-and-how-it-is-beneficial-to-providers.html) for electronic medical records (EMR) could help achieve better health outcomes for patients and improve efficiencies in healthcare delivery.
+[Blockchain represents great promise for stakeholders in healthcare fields](https://nimbus-t.com/blockchain-opportunities-for-health-care-deloitte-us). Using this technology has the potential to increase the standard of care through its applications in patient data management, drug distribution/prescription e.t.c . In the long run, using a [blockchain network nationwide](https://www.parathon.com/understanding-blockchain-in-healthcare-and-how-it-is-beneficial-to-providers.html) for electronic medical records (EMR) could help achieve better health outcomes for patients and improve efficiencies in healthcare delivery.
 
 ## What is Blockchain?
 A Blockchain [can be defined as a continuously growing list of records, or blocks, which use cryptography to link and secure the individual blocks](https://nodemads.net/service/blockchaineducation). It can also be described as "an open, distributed ledger where transactions record can be verified between two parties and stored permanently," according to Nodemads. Blockchain is a distributed computing system which is secured by design. This makes Blockchain suitable for the performing task such as recording medical records and other management activities, including transaction processing, documenting provenance, voting, identity management, and food traceability. 
 
 ## Advantages of Blockchain in Healthcare 
-***Provenance & Increased Data Integrity:*** [Transactions in the Blockchain network are immutable](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561). This means that once a transaction is approved, it cannot be altered or deleted. Transactions are shared across the network and securely recorded. The data integrity is safe, and time-stamp can be verified by any user. The original author of a transaction in a blockchain network is recorded and remains accessible for the entire life of the blockchain.
+***Provenance & Increased Data Integrity:*** [Transactions in the Blockchain network are immutable](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561). This means that once a transaction is approved, it cannot be altered or deleted because transactions are shared across the network and securely recorded using cryptography. The data integrity is safe, and time-stamp can be verified by any user. The original author of a transaction in a blockchain network is recorded and remains accessible for the entire life of the blockchain.
 
 ***Security:*** Transactions on the blockchain network must first be verified by other blockchain users before they are recorded. Once verified, the transactions are encrypted and linked to a previous transaction using cryptography. [The blockchain is virtually impossible to hack the because  data is stored across a network of devices](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561).
 
@@ -43,7 +43,7 @@ There are numerous applications of Blockchain in healthcare:
 ***Medical History Tracking***
 With Blockchain, patients' treatment history can be tracked anywhere and at any time with no ambiguity, hence providing health practitioners a better context.
 
-_In Data Security: [Do you know that your medical data is worth more than your credit card number in the black market?](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561) According to a report by Protenus Breach Barometer, about 140 million patient health records were hacked between 2015 and 2016._
+_In Data Security: [Do you know that your medical data is worth more than your credit card number in the black market?](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561) According to a report by [Protenus Breach Barometer](https://pages.protenus.com/breach-barometer-report-request), about 140 million patient health records were hacked between 2015 and 2016._
 
 >**Blockchain has the potential to keep private information safe and secure while still being accessible anywhere.**
 
