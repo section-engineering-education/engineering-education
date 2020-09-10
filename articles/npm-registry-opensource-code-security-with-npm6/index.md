@@ -22,22 +22,21 @@ With NPM(short for Node Package Manager), you do not need to worry about the saf
 In this article, we will have a look at NPM registry survey statistics, check other developers' responses to Node.js security practices and identify which tools you need to assess your open-source code safely.
 
 ### NPM registry download statistics
-On September 29th, 2019, NPM marked 10 years of its existence. NPM has been used to develop every kind of application i.e. Web apps, mobile applications, Servers, Internet of things (IoT)/robotic, desktop applications and native mobile applications. This has greatly contributed to the NPM registry popularity. The number of libraries available in the NPM registry influences most developers to choose JavaScript.
+On September 29th, 2019, NPM marked 10 years of its existence. NPM has been used to develop every kind of application i.e. web apps, mobile applications, Servers, Internet of things (IoT)/robotic, desktop applications and native mobile applications. This has greatly contributed to the NPM registry popularity. The number of libraries available in the NPM registry influences most developers to choose JavaScript.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/npm-influnce-statistics.png)
 
 [*Image Source*](https://medium.com/npm-inc/this-year-in-javascript-2018-in-review-and-npms-predictions-for-2019-3a3d7e5298ef#:~:text=npm%20has%20over%2010%20million,packages%20of%20open%20source%20JavaScript.)
 
-In June 2019, MPM crossed a million-libraries mark. With over 1.3 million libraries currently available, NPM registry is now the largest single collection of open source libraries in the world with more than 12 million developers.
+On June 2019, MPM crossed a million-libraries mark. With over 1.3 million libraries currently available, NPM registry is now the largest single collection of open source libraries in the world with more than 12 million developers.
 
 On April 23, 2018, NPM users downloaded five billion packages within the last 7 days of that date. On this day 4 years ago, that figure was 50 million, this means 10,000% growth. The average IP downloads were 2200 packages per month.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/weekly-downloads.jpg)
 
 [*Image Source*](https://twitter.com/seldo/status/988477780441481217)
 
-Up to now, NPM has recorded tremendous growth with over 20 billion average weekly downloads. As am writing this article, the NPM registry recorded 88,820,279,735 libraries downloads last month. NPM registry is now serving around 125 billion requests at a whopping 6 Petabytes per month. [Ahmad Nassri](https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages).
+Up to now, NPM has recorded tremendous growth with over 20 billion average weekly downloads. As am writing this article, the NPM registry recorded 88,820,279,735 libraries downloads last month. NPM registry is now serving around 125 billion requests at a whopping [6 Petabytes per month](https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages).
 
-
-This statistical testaments, explain the resilience and commitment of NPM to keep the world's largest community safe by building a chain of fast reliable tools to help you perceive the safety of JavaScript code you write and share as well as the open-source code to ensure it is safe before you go live.
+This statistical testaments, explain the resilience and commitment of NPM to keep the world's largest community safe by building a chain of fast reliable tools to help you see the safety of JavaScript code you write and share as well as the open-source code to ensure it is safe before you go live.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/popular-languages.PNG)
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2018#technology-_-programming-scripting-and-markup-languages)
@@ -164,18 +163,14 @@ as they happen. Each time a package has changes an HTTP POST payload is sent to 
 
 There is a lot of very useful information on `npm@6`, more than what we can discuss in this article. Consider getting started with `npm@6` and you will be excited to have a faster and safer tool to build amazing applications. `npm@6` have amazing overall security of the NPM ecosystem.
 
-## Conclusion
-
+### Conclusion
 Since security is everyone's responsibility, we all need to step in together to make a huge step forward to ensure the safety of any code we use in our daily workflow, making sure that the world's larges community is even safer. I wish all NPM users the best of luck as they continue to build fast, safe and amazing things.
 
 ### NOTE:
 
-1. The main objective of the survey was to learn more about the
-    JavaScript community and how they interact with NPM concerning code security ethics practices. You may consider looking at the [survey results](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
-    in deep and the [methodology
-    used.](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db)
+1. The main objective of the survey was to learn more about the JavaScript community and how they interact with NPM concerning code security ethics practices. You may consider looking at the [survey results](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b) in deep and the [methodology used.](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db)
 
-2. The NPM downloads statistics are naive by design. They are counts of HTTP 200 responses that are served tarball files ie packages. These numbers include:
+2. The NPM downloads statistics are native by design. They are counts of HTTP 200 responses that are served tarball files i.e. packages. These numbers include:
    -   Automated build servers
    -   Downloads by mirrors.
    -   Robots packages downloads for analysis.
