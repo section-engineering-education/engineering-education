@@ -19,7 +19,9 @@ Bloom filters are a probabilistic data structure that uses the concept of hashin
 ### Hashing
 [Hashing](https://www.educative.io/edpresso/what-is-hashing) is a data structure designed to store and retrieve information in the most efficient manner. It is useful in performing optimal searches and is predominantly used in the construction of symbol tables.
 
-Let us dive deeper into the concept of hashing by considering the following problem. This problem has been taken from [HackerRank](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup) to help us understand the need for hashing.
+Let us dive deeper into the concept of hashing by considering the following problem. This problem has been taken from [HackerRank](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup) to help us understand the need for hashing. 
+
+The problem states that there are `n` number of socks available, and an array is given with numbers representing each sock. We need to find number of pairs of socks a person can wear, that is, are in multiples of 2. For example, if n=7 and the array is [1,1,1,1,1,1,1], then number of pairs is 3. 
 
 ![](/engineering-education/bloom-filters-data-structure/hashingProblem.jpg)
 [*Image Source*](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)
@@ -28,7 +30,7 @@ A solution that may come to mind is an O(n^2) solution. Using two for loops: the
 
 What if, we could track the number of occurrences of each type of sock, and then find out how many pairs of socks exist. This is an application of the hash table, which uses the concept of hashing.
 
-The creation of the table requires us to parse through the entire array once, which makes it O(n). To check for the viable number of pairs of socks, we need another for loop traversing the dictionary and checking for the number of pairs. The time complexity for this is O(n). The overall time complexity is represented in this equation O(n) + O(n) = O(2n) => O(n).
+The creation of the table requires us to parse through the entire array once, which makes it O(n). To check for the viable number of pairs of socks, we need another for loop traversing the dictionary and checking for the number of pairs. The time complexity for this is O(n). The overall time complexity is represented in this equation O(n) + O(n) = O(2n) => O(n). The time complexity represents the amount of time the program execution takes with increase in program size `n`. Instead of being hardware specific, we are being computation specific. The size of the input array gives an idea of the time complexity. If time complexity is O(n^2), then as the size of n increases, the time taken to compute the problem increases quadratically. 
 
 There is a significant reduction in time complexity by making use of memory. We have taken a top-down approach, considering the application first. Let us look at the theoretical aspect of hashing and how bloom filters make use of them.
 
@@ -42,9 +44,7 @@ Hashing, as we discussed earlier, was developed to optimally store and retrieve 
 5. Delete the hash table
 
 ### Hash Table
-The [hash table](https://en.wikipedia.org/wiki/Hash_table) is derived from the array. In the case of an array, we have indices that start from either 0 or 1. These indices are the keys and the value stored at these places are the values. Similarly, hash tables work on key-value pairs, where our keys are custom-defined. For example, [dictionaries in python](https://en.wikipedia.org/wiki/Hash_table#In_programming_languages) are a used for implementing hash tables.
-
-A hash table is a generalization of the array. With an array, we store the element whose key is k at a position k of the array. That means, given a key k, we find the element whose key is k by just looking in the kth position of the array. This is called direct addressing.
+The [hash table](https://en.wikipedia.org/wiki/Hash_table) is derived from the array. In the case of an array, we have indices that start from either 0 or 1. These indices are the keys and the value stored at these places are the values. Similarly, hash tables work on key-value pairs, where our keys are custom-defined. For example, [dictionaries in python](https://en.wikipedia.org/wiki/Hash_table#In_programming_languages) are a used for implementing hash tables. We can get the elements by calling them with their respective indexes. This is called direct addressing.
 
 Direct addressing is feasible in situations when memory is not a constraint. What if we need extra memory? That is, the number of keys is greater than the number of memory locations possible. In such cases, the flexibility of hash tables can be used.
 
