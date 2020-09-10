@@ -11,16 +11,17 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: engineering-education/plagiarism-detection/hero.jpg
+  - url: /engineering-education/plagiarism-detection/hero.jpg
     alt: Devtools example image Node.js debugger
 
 ---
-**Plagiarism** or taking another persons' ideas without proper credit or representation can feel like someone just kidnapped your idea. Actually, plagiarism derives its latin root from "plagiarius" which literally means "kidnapper". So plagiarism is widely considered bad overall.
+**Plagiarism** or taking another persons ideas without proper credit or representation can feel like someone just kidnapped your idea. Actually, plagiarism derives its Latin root from *plagiarius* which literally means "kidnapper". So plagiarism is widely considered bad overall.
 <!--more-->
 
 >**A:** What's worse than someone stealing your work?
->[the-internet](./theinternet.jpg)
->**Q.** Someone stealing your work and claiming it's theirs!!!
+![Funny](/engineering-education/plagiarism-detection/funny.jpg)
+>
+>**Q:** Someone stealing your work and claiming it's theirs!!!
 
 ### Plagiarism Detection
 Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know more about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/).
@@ -99,7 +100,7 @@ Only difference is that `Document 3` is a subsection of `Document 2`. How do you
 
 #### Three Document Similarity example
 
-![plagiarism_blog_post](/engineering-education/debug-node-devtools/plagiarism-detection/plagarism_blog_post.png)
+![plagiarism_blog_post](/engineering-education/plagiarism-detection/plagarism_blog_post.png)
 
 From the example above you can see three similar documents that share a central theme, namely inheritance.
 
@@ -107,39 +108,40 @@ With the example above, I am quantitatively measuring the similarity between the
 
 We have limited our quantitative analysis scope by only looking at three key-words: **'inheritance'**, **'class'** and **'object'**. We have briefly talked about cosine similarity but I want to explain what it means in graphical terms.
 
-To explain what I mean, here is a 3d projection of the 3 documents.
+To explain what I mean, here is a 3D projection of the 3 documents.
 
 #### 3D Document Projection
-![3d Projection](/engineering-education/debug-node-devtools/plagiarism-detection/3d-projection-plagarism-blog.png)
+![3D Projection](/engineering-education/plagiarism-detection/3d-projection-plagarism-blog.png)
 
-As illustrated by this example, we can see that `doc 2` and `doc 3` are closer in orientation than by magnitude. Conversely, `doc 1` and `doc 3` are the closest using the euclidean distance metric.
+As illustrated by this example, we can see that `doc 2` and `doc 3` are closer in orientation by magnitude. Conversely, `doc 1` and `doc 3` are the closest using the Euclidean distance metric.
 
-The graphical representation of common words is a intersection which can be seen as a venn diagram.
+The graphical representation of common words is a intersection which can be seen as a Venn diagram.
 
 #### Document Intersection
-![total common words](/engineering-education/debug-node-devtools/plagiarism-detection/ven-diagrahm.png)
+![total common words](/engineering-education/plagiarism-detection/ven-diagrahm.png)
 
 You can see a 3 intersecting circles which contain the set of all words in their document space. The intersection of circles is the intersection of both word sets.
 
 #### Compare and Contrast
 As you can figure out, all 3 similarity metrics have their own interpretation of similarity.
+
 - Cosine similarity checks the **orientation** of two documents
 - Euclidean distance checks the **distance magnitude** of two documents
 - Total common words checks the **intersection** of two documents.
 
-Looking at the example we can see why cosine similarity is a good metric for judging similarity than using total common words or euclidean distance.
+Looking at the example we can see why cosine similarity is a good metric for judging similarity, rather than using total common words or Euclidean distance.
 
-The reason for that is because total common words is very biased on file sizes while euclidean distance is biased when comparing two different document sizes.
+The reason for that is because total common words is very biased on file sizes while Euclidean distance is biased when comparing two different document sizes.
 
 ### Plagiarism Detector Code
 Now we are at the coding step! By now you should know the following things:
 
 - A document can be converted into a **Vector space model** where the documents are represented as vectors, mostly determined by term frequency.
 - **Cosine Similarity** is an operation on vectors that will allow us to determine the similarity of two documents.
-- We will can display a **normalized numerical value** between 0-1 that indicates the similarity between two documents.
+- We can display a **normalized numerical value** between 0-1 that indicates the similarity between two documents.
 
 #### Getting Started
-In this short overview I will assume you are on an **Ubuntu** linux operating system with **Conda** package manager.
+In this short overview I will assume you are on an **Ubuntu** Linux operating system with **Conda** package manager.
 
 ##### 1. Installing Dependencies
 You we need to install the following: `Pandas` and `scikit-learn`
@@ -147,7 +149,6 @@ You we need to install the following: `Pandas` and `scikit-learn`
 ```Bash
 $ conda install scikit-learn pandas
 ```
-
 
 ##### 2. Verification
 To ensure that the packages are installed properly open up your python interpreter and run the follow code.
@@ -157,7 +158,7 @@ To ensure that the packages are installed properly open up your python interpret
 import sklearn
 import pandas as pd
 
-# Verifiying version
+# Verifying version
 sklearn.show_versions()
 pd.show_versions()
 ```
@@ -201,7 +202,7 @@ Now we need to process the data. Here is a neat trick to separate the names and 
 # split doc_names and doc_data
 doc_names, doc_data = zip(*corpus)
 ```
-output:
+Output:
 ```python
 doc_names -> ('doc_1', 'doc_2', 'doc_3', 'doc_4')
 ```
@@ -235,7 +236,7 @@ df_document_term_matrix = pd.DataFrame(data=document_term_matrix,
                                       index=doc_names)
 df
 ```
-![table](/engineering-education/debug-node-devtools/plagiarism-detection/Screenshot%20from%202020-08-30%2016-40-47.png)
+![table](/engineering-education/plagiarism-detection/screenshot1.png)
 
 ###### *Now we have our Data set in a Model!*
 With the vectorized data from the previous step we can calculate the cosine similarity by using `cosine_similarity` by `sklearn`.
@@ -254,10 +255,10 @@ df_cosine_matrix = pd.DataFrame(data=cosine_matrix,
                     index=doc_names)
 df
 ```
-![table 2](./Screenshot%20from%202020-08-30%2016-45-33.png)
+![table 2](/engineering-education/plagiarism-detection//screenshot2.png)
 
 ##### 6. Test Feature
-Finally we can print the result and see if we have resonable output.
+Finally we can print the result and see if we have reasonable output.
 
 ```python
 # print pandas table
@@ -265,11 +266,16 @@ print(df_document_term_matrix)
 # print pandas table
 print(df_cosine_matrix)
 ```
+
 Your output should look like this.
+
 `df_document_term_matrix`
-![table](./Screenshot%20from%202020-08-30%2016-40-47.png)
-`df_cosine_ matrix`
-![table 2](./Screenshot%20from%202020-08-30%2016-45-33.png)
+
+![table](/engineering-education/plagiarism-detection//screenshot1.png)
+
+`df_cosine_matrix`
+
+![table 2](/engineering-education/plagiarism-detection//screenshot2.png)
 
 
 ##### 7. Review/Refactor
@@ -375,13 +381,12 @@ class Tdif_Vectorizer_Detector(Plagiarism_Checker):
 
 Link to my code online is [here](https://repl.it/join/phfqwtnd-slyracoon23).
 
-Link to the github code is [here](https://github.com/Slyracoon23/plagarism_detector).
+Link to the GitHub code is [here](https://github.com/Slyracoon23/plagarism_detector).
 
 
 ### References:
 https://ptabdata.blob.core.windows.net/files/2017/IPR2017-01039/v20_EX1020_Salton,%201975.pdf
 
 https://en.wikipedia.org/wiki/Cosine_similarity
-
 
 https://www.machinelearningplus.com/nlp/cosine-similarity/
