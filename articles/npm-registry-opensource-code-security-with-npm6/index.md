@@ -41,20 +41,22 @@ This statistical testaments, explain the resilience and commitment of NPM to kee
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2018#technology-_-programming-scripting-and-markup-languages)
 
-## Dev statistics response on open-source JavaScript libraries and code security practices
+### Dev statistics response on open-source JavaScript libraries and code security practices
 
-The following survey findings were carried out by NPM in partnership with the Node.js Foundation and the JS Foundation with more than 16,000 Javascript/NPM users getting involved. The main aim of this survey is to find out how Javascript developers understand security in relation to the open-source code they use and code they write. These findings were documented on April 10, 2018. Let us have a quick snippet of this survey report primarily based on on some the questions the respondents were asked. Read on the [Methodology](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db) behind this survey.
+The following survey findings were carried out by NPM in partnership with the Node.js Foundation and the JS Foundation with more than 16,000 JavaScript/NPM users getting involved. The main aim of this survey was to find out how JavaScript developers understand security in relation to the open-source code they use and code they write. These findings were documented on April 10, 2018. Let us have a quick snippet of this survey report primarily based on some the questions the respondents were asked. Read on the [methodology](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db) behind this survey.
 
-**NOTE :** The following questions were picked directly from this [survey questionnaires](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b).
+**NOTE:** The following questions were picked directly from this [survey questionnaires](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b).
 
 ### 1. Are you concerned with whether the open-source code you use is secure? [survey questionnaire](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b).
 
 In this survey, 97% of the respondents used the open-source code. In addition, it turned out 77% of them were worried about the safety of open-source code.
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/overall-concerned.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
-We now have a clear image that most developers a greatly concerned about code security. Interestingly, 19% of the respondent have 10+ years of experience in using JavaScript. Moreover, out of this 81% were concerned about open-source code security.
+We now have a clear image that most developers are greatly concerned about code security. Interestingly, 19% of the respondent have 10+ years of experience in using JavaScript. Moreover, out of this 81% were concerned about open-source code security.
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/concerned-experien-based.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
@@ -64,11 +66,13 @@ This concludes that, the more time you utilize JavaScript the more you become co
 ## 2. Are you satisfied with the available methods to evaluate the safeness and the quality of open source code?
 
 It is interesting to note that more than half of JavaScript developers are not convinced with the existing tools for analyzing the security and quality of open-source code, which is very alarming.
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/oss-noncerned.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 What about we separate the response dependent on the concern of open source code or their own code (the code you write).
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/opensource-downcode.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
