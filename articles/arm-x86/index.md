@@ -1,8 +1,21 @@
-# ARM vs x86: Explained
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/arm-x86/
+title: ARM vs x86 - Explained
+description: 
+author: mike-white
+date: 2020-09-10T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Recently, Apple [announced their decision to switch from Intel CPUs to their own ARM chips](https://www.theverge.com/2020/6/22/21295475/apple-mac-processors-arm-silicon-chips-wwdc-2020). What's the difference?
-
-The new Apple Silicon chips are based on ARM CPUs, like the CPUs for iPhone and iPad. The Intel chips use Intel's proprietary x86 architecture.
+  - url: /engineering-education/arm-x86/hero.jpg
+    alt: 
+---
+Recently, Apple [announced their decision to switch from Intel CPUs to their own ARM chips](https://www.theverge.com/2020/6/22/21295475/apple-mac-processors-arm-silicon-chips-wwdc-2020). What's the difference? The new Apple Silicon chips are based on ARM CPUs, like the CPUs for iPhone and iPad. The Intel chips use Intel's proprietary x86 architecture.
+<!--more-->
 
 ARM is a RISC architecture, [which we've talked about before](https://www.section.io/engineering-education/what-is-risc/). RISC stands for Reduced Instruction Set Computing. This means that the CPU has a limited number of instructions it can use. As a result, each instruction runs in a single cycle and the instructions are simpler. Meanwhile, x86 is a CISC architecture, which stands for Complex Instruction Set Computing. This means that it has more instructions. Some of these instructions will take more than one cycle to execute. But, there are some instructions that can do the work of many RISC instructions.
 
