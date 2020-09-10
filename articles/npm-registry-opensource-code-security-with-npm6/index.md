@@ -14,16 +14,15 @@ images:
   - url: /engineering-education/npm-registry-opensource-code-security-with-npm6/hero.jpg
     alt: Devtools example image Node.js debugger
 ---
-Security is everyone's concern. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is an even a professional habit that developers acquire are they grow their experience. Making sure open-source codes are secure is one of the fundamental mission of NPM, with approaches to security at scale to empower NPM users to develop secure code.
+Security is a huge concern for everyone. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is even a professional habit that developers acquire as they grow with experience. Making sure open-source codes are secure is one of the fundamental mission of NPM, with approaches to security at scale to empower NPM users to develop secure code.
 <!--more-->
 
-With NPM, you do not need to worry about the safety of your code. NPM provides vulnerability-scanning tools that are built-in in your Node.js workflow. These tools are faster and they automatically review every install request you make, check the Node Security Platform vulnerably database, and warn you if you try to us unsafe codes. It even analyzes your dependencies trees to check specifically what has security issues and recommend a replacement or fix the issues automatically.
+With NPM(short for Node Package Manager), you do not need to worry about the safety of your code. NPM provides vulnerability-scanning tools that are built-in your Node.js workflow. These tools are faster and they automatically review every install request you make, it checks the Node Security Platform vulnerably database, and warns you if you try to use unsafe codes. It even analyzes your dependencies trees to check specifically what has security issues and recommend a replacement or fix the issues automatically.
 
 In this article, we will have a look at NPM registry survey statistics, check other developers' responses to Node.js security practices and identify which tools you need to assess your open-source code safely.
 
-## NPM registry download statistics
-
-On September 29th, 2019, NPM marked 10 years of its existence. NPM has been used to develop every kind of application ie Web apps, mobile applications, Servers, Internet of things (IoT)/robotic, desktop applications and native mobile applications. This has greatly contributed to the NPM registry popularity. The number of libraries available in the NPM registry influences most developers to choose JavaScript.
+### NPM registry download statistics
+On September 29th, 2019, NPM marked 10 years of its existence. NPM has been used to develop every kind of application i.e. Web apps, mobile applications, Servers, Internet of things (IoT)/robotic, desktop applications and native mobile applications. This has greatly contributed to the NPM registry popularity. The number of libraries available in the NPM registry influences most developers to choose JavaScript.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/npm-influnce-statistics.png)
 
 [*Image Source*](https://medium.com/npm-inc/this-year-in-javascript-2018-in-review-and-npms-predictions-for-2019-3a3d7e5298ef#:~:text=npm%20has%20over%2010%20million,packages%20of%20open%20source%20JavaScript.)
