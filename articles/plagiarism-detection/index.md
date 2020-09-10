@@ -2,48 +2,47 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/debug-node-devtools/plagiarism-detection/
+url: /engineering-education/plagiarism-detection/
 title: Plagiarism Detection
 description: Plagiarism Detection is how one can compare two documents and find out how similar they are. This article explores one of the more basic algorithms in finding the similarity of a document.
 author: earl-potters
-date: 2020-09-02T00:00:00-07:00
+date: 2020-09-10T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: engineering-education/debug-node-devtools/plagiarism-detection/hero.jpg
+  - url: engineering-education/plagiarism-detection/hero.jpg
     alt: Devtools example image Node.js debugger
 
 ---
+**Plagiarism** or taking another persons' ideas without proper credit or representation can feel like someone just kidnapped your idea. Actually, plagiarism derives its latin root from "plagiarius" which literally means "kidnapper". So plagiarism is widely considered bad overall.
 <!--more-->
 
 >**A:** What's worse than someone stealing your work?
 >[the-internet](./theinternet.jpg)
 >**Q.** Someone stealing your work and claiming it's theirs!!!
 
-### Plagarism Detection
-**Plagiarism** or taking another persons' ideas without proper credit or representation can feel like someone just kidnapped your idea. Actually, plagiarism derives its latin root from "plagiarius" which literally means "kidnapper". So plagiarism is widely considered bad overall. 
-
-Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know more about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/). 
+### Plagiarism Detection
+Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know more about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/).
 
 ### Overview  
 In this article, I will split the content in two parts:
-- Overview of text similarity
-  - Brief Intro
+- Overview of Text Similarity
+  - Brief Introduction
   - Math Formulation
   - Example
 
 
 - Overview of the Algorithm
-  - Installation and setup
-  - Code walk-through
+  - Installation and Setup
+  - Code Walk-through
   - Demo Plagiarism Detector
-  
-  
+
+
 *Let's get to it!*
 
 ### Text Similarity: Formulating the Problem
-**Text Similarity** is the determining the likeness of two textual documents.
+**Text Similarity** is determining the likeness of two textual documents.
 
 We want to find the numerical value that will indicate how *"close"*  or how similar two text documents are. Let's divide the steps involved in finding how two texts are similar.
 
@@ -54,50 +53,57 @@ We want to find the numerical value that will indicate how *"close"*  or how sim
 >The following steps are actually rather simple but how you go about answering it can vary greatly.
 
 ### Math Formulation
-#### Step 1: 
+#### Step 1:
 
 A popular way of characterizing text documents is by using a [Vector space model](https://en.wikipedia.org/wiki/Vector_space_model). The idea is to represent terms as vectors. A term can be anything: single word, multiple keywords or even a phrase. Each will count as a non-zero vector corresponding to a separate dimension.
 
 According to this [paper](https://ptabdata.blob.core.windows.net/files/2017/IPR2017-01039/v20_EX1020_Salton,%201975.pdf), mathematically we can define a document space as:
 
-$$D_i = (d_{i1}, d_{i2}, ... , d_{it})$$
+`$$D_i = (d_{i1}, d_{i2}, ... , d_{it})$$
 
 $\textit{Where}$
 
 $$ D_i~~represents~the~documents~within~a~document~space\\
-   d_{it}~~represents~the~i^{th}~document's~t^{th}~term $$
+   d_{it}~~represents~the~i^{th}~document's~t^{th}~term $$`
 
 
-Every index term will represent a **dimension** in our vector space. 
-For example, if we were to use the english dictionary as our document we would have as many dimension as the english vocabulary. 
+Every index term will represent a **dimension** in our vector space.
+For example, if we were to use the English dictionary as our document we would have as many dimension as the English vocabulary.
 
 Now that we have our model let's move on!
 
 #### Step 2:
-
-Using this model, we can now apply a operation to evaluate the similarity coefficient. In this article we will use a method called the **Cosine Similarity**. The Cosine similarity metric measures the *cosine angle* of two non-zero vectors.
+Using this model, we can now apply an operation to evaluate the similarity coefficient. In this article we will use a method called the **Cosine Similarity**. The Cosine similarity metric measures the *cosine angle* of two non-zero vectors.
 
 The mathematical definition, as shown from [wiki](https://en.wikipedia.org/wiki/Cosine_similarity), can be defined as:
 
-$$ {\displaystyle {\text{similarity}}=\cos(\theta )={\mathbf {A} \cdot \mathbf {B}  \over \|\mathbf {A} \|\|\mathbf {B} \|}={\frac {\sum \limits _{i=1}^{n}{A_{i}B_{i}}}{{\sqrt {\sum \limits _{i=1}^{n}{A_{i}^{2}}}}{\sqrt {\sum \limits _{i=1}^{n}{B_{i}^{2}}}}}},} $$
+`$$ {\displaystyle {\text{similarity}}=\cos(\theta )={\mathbf {A} \cdot \mathbf {B}  \over \|\mathbf {A} \|\|\mathbf {B} \|}={\frac {\sum \limits _{i=1}^{n}{A_{i}B_{i}}}{{\sqrt {\sum \limits _{i=1}^{n}{A_{i}^{2}}}}{\sqrt {\sum \limits _{i=1}^{n}{B_{i}^{2}}}}}},} $$`
 
-$ where~A_i~and~B_i~are~components~of~vector~A~and~B~respectively$
+
+`$ where~A_i~and~B_i~are~components~of~vector~A~and~B~respectively$`
 
 #### Step 3:
-Finally, the cosine similarity will give an outcome bounded by $ [0,1] $ (Not $[-1,1]$ because the document space is bounded in positive space only). 
+Finally, the cosine similarity will give an outcome bounded by $ [0,1] $ (Not $[-1,1]$ because the document space is bounded in positive space only).
 
 - 1 - very similar
 - 0 - not similar
 
-### Example Plagiarism 
-For this example, I am going to replicate the example from [Selva Prabhakaran](https://www.machinelearningplus.com/nlp/cosine-similarity/). Let us take 3 documents on the topic inheritance. `Document 1` is a snippet from the educba site on [*what is inheritance in programming*](https://www.educba.com/what-is-inheritance-in-programming/). `Document 2` and `Document 3` are from the wikipedia page on [*inheritance(object oriented programming)*](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)). Only difference is that `document 3` is a subsection of `document 2`. How do you think their similarities will compare?
+### Example Plagiarism
+For this example, I am going to replicate the example from [Selva Prabhakaran](https://www.machinelearningplus.com/nlp/cosine-similarity/). Let us take 3 documents on the topic of inheritance.
 
-#### Three Document Simularity example
+`Document 1` is a snippet from the educba site on [*what is inheritance in programming*](https://www.educba.com/what-is-inheritance-in-programming/).
+
+`Document 2` and `Document 3` are from the wikipedia page on [*inheritance(object oriented programming)*](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
+
+Only difference is that `Document 3` is a subsection of `Document 2`. How do you think their similarities will compare?
+
+#### Three Document Similarity example
+
 ![plagiarism_blog_post](/engineering-education/debug-node-devtools/plagiarism-detection/plagarism_blog_post.png)
 
 From the example above you can see three similar documents that share a central theme, namely inheritance.
 
-With the above example, I am quantitatively measuring the similarity between the 3 documents using 3 different metrics: **total common words**(similar but not the same as [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index)), [**euclidean distance**](https://en.wikipedia.org/wiki/Euclidean_distance) and [**cosine similarity**](https://en.wikipedia.org/wiki/Cosine_similarity).
+With the example above, I am quantitatively measuring the similarity between the 3 documents using 3 different metrics: **total common words** (similar but not the same as [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index)), [**Euclidean distance**](https://en.wikipedia.org/wiki/Euclidean_distance) and [**cosine similarity**](https://en.wikipedia.org/wiki/Cosine_similarity).
 
 We have limited our quantitative analysis scope by only looking at three key-words: **'inheritance'**, **'class'** and **'object'**. We have briefly talked about cosine similarity but I want to explain what it means in graphical terms.
 
@@ -113,15 +119,15 @@ The graphical representation of common words is a intersection which can be seen
 #### Document Intersection
 ![total common words](/engineering-education/debug-node-devtools/plagiarism-detection/ven-diagrahm.png)
 
-You can see a 3 intersecting circles which contain the set of all words in their document space. The intersection of circles is the intersection of both word sets. 
+You can see a 3 intersecting circles which contain the set of all words in their document space. The intersection of circles is the intersection of both word sets.
 
 #### Compare and Contrast
-As you can figure out, all 3 similarity metrics have their own interpretation of similarity. 
+As you can figure out, all 3 similarity metrics have their own interpretation of similarity.
 - Cosine similarity checks the **orientation** of two documents
 - Euclidean distance checks the **distance magnitude** of two documents
-- Total common words checks the **intersection** of two documents. 
+- Total common words checks the **intersection** of two documents.
 
-Looking at the example we can see why cosine similarity is a good metric for judging similarity than using total common words or euclidean distance. 
+Looking at the example we can see why cosine similarity is a good metric for judging similarity than using total common words or euclidean distance.
 
 The reason for that is because total common words is very biased on file sizes while euclidean distance is biased when comparing two different document sizes.
 
@@ -133,7 +139,7 @@ Now we are at the coding step! By now you should know the following things:
 - We will can display a **normalized numerical value** between 0-1 that indicates the similarity between two documents.
 
 #### Getting Started
-In this short overview I will assume you are on an **Ubuntu** linux operating system with **Conda** package manager. 
+In this short overview I will assume you are on an **Ubuntu** linux operating system with **Conda** package manager.
 
 ##### 1. Installing Dependencies
 You we need to install the following: `Pandas` and `scikit-learn`
@@ -187,12 +193,12 @@ corpus = [
 
 ```
 
-##### 3. Process the Data/Helper Functions 
+##### 3. Process the Data/Helper Functions
 *Using Count Vectorize*
 Now we need to process the data. Here is a neat trick to separate the names and data into lists.
 
 ```python
-# split doc_names and doc_data 
+# split doc_names and doc_data
 doc_names, doc_data = zip(*corpus)
 ```
 output:
@@ -203,11 +209,11 @@ doc_names -> ('doc_1', 'doc_2', 'doc_3', 'doc_4')
 doc_data -> ('This is the first document.', \
             'This document is the second document.', \
             'And this is the third one.', \
-            'Is this the first document?') 
+            'Is this the first document?')
 ```
 
 ##### 4. Vectorize Data
-This is the most crucial step. We need to convert the data into a vector space. Luckily `sklearn` as a function called `CountVectorizer()` that will do the heavy lifting. 
+This is the most crucial step. We need to convert the data into a vector space. Luckily `sklearn` as a function called `CountVectorizer()` that will do the heavy lifting.
 
 ```python
 #create an instance of the class Countvectorizer that converts a collection of text document to a matrix of token counts
@@ -225,7 +231,7 @@ tokenized_words =  vectorizer.get_feature_names() -> ['and', 'document', 'first'
 
 # output pandas table document_term_matrix
 df_document_term_matrix = pd.DataFrame(data=document_term_matrix,
-                                      columns= tokenized_words, 
+                                      columns= tokenized_words,
                                       index=doc_names)
 df
 ```
@@ -243,8 +249,8 @@ cosine_matrix = cosine_similarity(document_term_matrix) -> array([[1.        , 0
                                                                   [0.54772256, 0.4330127 , 1.        , 0.54772256],
                                                                   [1.        , 0.79056942, 0.54772256, 1.        ]])
 # output pandas table of cosine_matrix
-df_cosine_matrix = pd.DataFrame(data=cosine_matrix, 
-                    columns= doc_names, 
+df_cosine_matrix = pd.DataFrame(data=cosine_matrix,
+                    columns= doc_names,
                     index=doc_names)
 df
 ```
@@ -260,7 +266,7 @@ print(df_document_term_matrix)
 print(df_cosine_matrix)
 ```
 Your output should look like this.
-`df_document_term_matrix` 
+`df_document_term_matrix`
 ![table](./Screenshot%20from%202020-08-30%2016-40-47.png)
 `df_cosine_ matrix`
 ![table 2](./Screenshot%20from%202020-08-30%2016-45-33.png)
@@ -311,11 +317,11 @@ class Plagiarism_Checker():
 
     def get_feature_words(self):
         return  self.vectorizer.get_feature_names()
- 
+
 
     def get_document_term_matrix_dataframe(self):
-        df = pd.DataFrame(data= self.get_document_term_matrix(), 
-                  columns= self.get_feature_words(), 
+        df = pd.DataFrame(data= self.get_document_term_matrix(),
+                  columns= self.get_feature_words(),
                   index=self.doc_names)
 
         return df
@@ -324,11 +330,11 @@ class Plagiarism_Checker():
     def get_cosine_similarity_dataframe(self):
         # compute cosine similarity matrix
         df = pd.DataFrame(data= cosine_similarity(self.get_document_term_matrix()),
-                  columns=self.doc_names, 
+                  columns=self.doc_names,
                   index=self.doc_names)
 
         return df
-   
+
 
 class Count_Vectorizer_Detector(Plagiarism_Checker):
 
@@ -348,13 +354,13 @@ class Tdif_Vectorizer_Detector(Plagiarism_Checker):
         super().__init__(corpus , vectorizer=TfidfVectorizer(smooth_idf=True,use_idf=True) )
 
 
-        
+
 
     def get_tfidf_weights_dataframe(self):
         # print idf values # need to compute self.vectorizer.idf_ if not computed
         df_idf = pd.DataFrame(self.vectorizer.idf_, index=self.get_feature_words(),columns=["idf_weights"])
 
-         # sort ascending 
+         # sort ascending
         df_idf.sort_values(by=['idf_weights'])
 
         return df_idf
@@ -367,12 +373,12 @@ class Tdif_Vectorizer_Detector(Plagiarism_Checker):
 <iframe height="800px" width="100%" src="https://repl.it/@slyracoon23/Plagarism-Checker?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 
-Link to my code online is [here](https://repl.it/join/phfqwtnd-slyracoon23). 
+Link to my code online is [here](https://repl.it/join/phfqwtnd-slyracoon23).
 
 Link to the github code is [here](https://github.com/Slyracoon23/plagarism_detector).
 
 
-### References: 
+### References:
 https://ptabdata.blob.core.windows.net/files/2017/IPR2017-01039/v20_EX1020_Salton,%201975.pdf
 
 https://en.wikipedia.org/wiki/Cosine_similarity
