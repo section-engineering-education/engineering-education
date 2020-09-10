@@ -14,25 +14,25 @@ Moreover, Jupyter Notebook does not support reproducibility. It becomes increasi
 
 Unlike Jupyter Notebook, scripts allow for the organization of code into different parts. For example, you can create multiple small functions with each function specifying what the code doses as follows:
 
-![](creating-multiple-small-functions.png)
+![Creating Multiple Small Functions](/engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/creating-multiple-small-functions.png)
 
 Additionally, these functions can be put into the same class by categorizing them in the same category as functions to process the data, as shown below:
 
-![](categorizing-functions-in-the-same-category.png)
+![Categorizing Functions in the Same Category](/engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/categorizing-functions-in-the-same-category.png)
 
 This makes data processing easier since we can use the functions in the class Preprocess for this purpose.
 
 Scripts are also better than Jupyter Notebook because they encourage experiments. Say you want to experiment with a different method to preprocess data. You can remove or add a function, as shown below, without being worried about breaking the code. Furthermore, in case you happen to break the code, you know exactly where to fix it.
 
-![](experiments.png)
+![Experiments in Script](/engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/experiments.png)
 
 Scripts allow reproducibility, unlike Jupyter Notebook. Functions and classes in scripts make it possible to make a general code that can work with other data. To drop different columns in your new data, you need to change columns_to_drop to column lists that you want to drop. The code will still run smoothly, even in such a case. Furthermore, you can create a pipeline specifying the procedure to train and process the data. With a pipeline, you can use pipeline.fit_transform(data) to apply the same processing to both the test and train data.
-
-In addition, scrip coding is ideal for production, and this prevents a wastage of time in tracking down particular variables in the code just to change their values. Better, you can add tools such as MLFlow to track the experiment or Hhydra.cc to handle configuration. Functions make it easier to assess whether that function produces the expected output. With functions, it is possible to figure out where in the code you need to change to give the desired output. If an error still occurs in running the code, even after all the tests have passed, this would mean that the error is in the data. Thus, if you take care of the data, you will be able to run the code smoothly.
+asdfghjkl
+In addition, scrip coding is ideal for production, and this prevents a wastage of time in tracking down particular variables in the code just to change their values. Better, you can add tools such as [MLFlow](https://mlflow.org/) to track the experiment or [Hhydra.cc](https://hydra.cc/) to handle configuration. Functions make it easier to assess whether that function produces the expected output. With functions, it is possible to figure out where in the code you need to change to give the desired output. If an error still occurs in running the code, even after all the tests have passed, this would mean that the error is in the data. Thus, if you take care of the data, you will be able to run the code smoothly.
 
 ## Conclusion
 
 Jupyter Notebook is a great tool, especially when it comes to teaching. This tool can be used to write small codes and in instances where the production of the code is not required. Also, it can be used to visualize and explore the data. That said, data scientists need to switch to script to avoid the problems associated with Jupyter Notebook. Better yet, data scientists can use both Jupyter Notebook and scripts for different tasks. For instance, they can create functions and classes in scripts and then import them in the notebook. This way, the notebook looks a bit organized. Alternatively, they can write the notebook and turn it into a script. The key is to find ways to solve the setbacks of the Jupyter Notebook.
 
 ## Reference 
-https://towardsdatascience.com/from-jupyter-notebook-to-sc-582978d3c0c
+[From Jupyter Notebook To Scripts](https://towardsdatascience.com/from-jupyter-notebook-to-sc-582978d3c0c)
