@@ -24,7 +24,7 @@ Blatson re-enters the room: "I've just finished interviewing Sir Birch!" he crie
 
 ---
 
-DRY is one of the most important parts of software engineering (at least, I assume it is. I'm a CS major). It stands for Don't Repeat Yourself. The basic premise is that if you start [copying and pasting code](https://www.youtube.com/watch?v=dlrjDvS7wxo), then you may need to do some refactoring.
+DRY is a very important concept in software engineering. It stands for Don't Repeat Yourself. The basic premise is that if you start [copying and pasting code](https://www.youtube.com/watch?v=dlrjDvS7wxo), then you may need to do some refactoring.
 
 The examples in this article are done in various languages.
 
