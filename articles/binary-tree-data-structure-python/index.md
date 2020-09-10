@@ -34,7 +34,7 @@ For more background on the different types of data structures in Python, check o
 
 ## Binary Trees: Introduction
 
-![Binary Tree Diagram](/articles/binary-tree-data-structure-python/binarytree.png)<br>
+![Binary Tree Diagram](/engineering-education/binary-tree-data-structure-python/binarytree.png)<br>
 _Figure: Binary Trees ([Source](https://www.studytonight.com/data-structures/introduction-to-binary-trees))_
 
 A binary tree **node** consists of the following components:
