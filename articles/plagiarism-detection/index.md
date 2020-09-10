@@ -20,6 +20,8 @@ images:
 
 >**A:** What's worse than someone stealing your work?
 ![Funny](/engineering-education/plagiarism-detection/funny.jpg)
+Image Source: [Funny Meme](https://imgur.com/gallery/VrgyDwC)
+
 >
 >**Q:** Someone stealing your work and claiming it's theirs!!!
 
@@ -101,6 +103,8 @@ Only difference is that `Document 3` is a subsection of `Document 2`. How do you
 #### Three Document Similarity example
 
 ![plagiarism_blog_post](/engineering-education/plagiarism-detection/plagarism_blog_post.png)
+Image Source: Author -- Earl Potters
+
 
 From the example above you can see three similar documents that share a central theme, namely inheritance.
 
@@ -112,6 +116,7 @@ To explain what I mean, here is a 3D projection of the 3 documents.
 
 #### 3D Document Projection
 ![3D Projection](/engineering-education/plagiarism-detection/3d-projection-plagarism-blog.png)
+Image Source: Author -- Earl Potters
 
 As illustrated by this example, we can see that `doc 2` and `doc 3` are closer in orientation by magnitude. Conversely, `doc 1` and `doc 3` are the closest using the Euclidean distance metric.
 
@@ -119,6 +124,7 @@ The graphical representation of common words is a intersection which can be seen
 
 #### Document Intersection
 ![total common words](/engineering-education/plagiarism-detection/ven-diagrahm.png)
+Image Source: Author -- Earl Potters
 
 You can see a 3 intersecting circles which contain the set of all words in their document space. The intersection of circles is the intersection of both word sets.
 
@@ -237,6 +243,7 @@ df_document_term_matrix = pd.DataFrame(data=document_term_matrix,
 df
 ```
 ![table](/engineering-education/plagiarism-detection/screenshot1.png)
+Image Source: Author -- Earl Potters
 
 ###### *Now we have our Data set in a Model!*
 With the vectorized data from the previous step we can calculate the cosine similarity by using `cosine_similarity` by `sklearn`.
@@ -256,6 +263,7 @@ df_cosine_matrix = pd.DataFrame(data=cosine_matrix,
 df
 ```
 ![table 2](/engineering-education/plagiarism-detection//screenshot2.png)
+Image Source: Author -- Earl Potters
 
 ##### 6. Test Feature
 Finally we can print the result and see if we have reasonable output.
@@ -272,10 +280,12 @@ Your output should look like this.
 `df_document_term_matrix`
 
 ![table](/engineering-education/plagiarism-detection//screenshot1.png)
+Image Source: Author -- Earl Potters
 
 `df_cosine_matrix`
 
 ![table 2](/engineering-education/plagiarism-detection//screenshot2.png)
+Image Source: Author -- Earl Potters
 
 
 ##### 7. Review/Refactor
