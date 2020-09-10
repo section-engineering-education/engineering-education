@@ -1,6 +1,21 @@
-﻿## Debugging a Node Js app running in Docker.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/debug-node-docker/
+title: Debugging a Node Js app running in Docker
+description: 
+author: geoffrey-mungai
+date: 2020-09-10T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/debug-node-docker/hero.jpg
+    alt: Devtools example image Node.js debugger
+---
 Docker is one of the tools used by many developers today. You don't need to have Node Js installed in your machine to build Node apps. You only need Docker. You can easily run a Node app in Docker. What about debugging? Let's look at how you can debug a Node app running in a Docker container.
+<!--more-->
 
 ### Introduction
 
