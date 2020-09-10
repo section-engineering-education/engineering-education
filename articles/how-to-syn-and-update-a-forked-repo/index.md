@@ -4,8 +4,8 @@ This article assume that you have a GitHub account. [Check instructions](https:/
 -   **Fork** is a copy of a repository of someone else project. Forks allows you have to have a repository of a project that you do not own  to your GitHub account so that you can make some changes without affecting the original repository. Once the changes on your forked repository are valid, you can submit these changes as contributions to the original project. Forks allows you to make your contributions to a team project.
 -   **Remote** a repository on GitHub account exists as a remote repository.
 -   **Clone** is downloading a copy of the remote repository to local computer.
--   **Commits** changes made to a repository. Committing saves  edits/changes to our GitHub repository. With GitHub, every commit you make has a specific ID the keeps the record of the changes you have made. If you happen to make a wrong change, you can revert the commit and your remote repository will be as it was before you made the changes. A commit has a commit message that allows you to have a brief description of the changes you are making.
--   **Push** is used to transfer commits made on your local repository to your GitHub remote repository. To push to GitHub you make a push request to update your local commits to your remote repository.
+-   **Commits** changes made to a repository. Committing saves  edits/changes to our GitHub repository. With GitHub, every commit you make has a specific signature/ID the keeps the record of the changes you have made. If you happen to make a wrong change, you can revert the commit and your remote repository will be as it was before you made the changes. A commit has a commit message that allows you to have a brief description of the changes you are making.
+-   **Push** is used to transfer commits made on local repository to GitHub remote repository. To push to GitHub you make a push request to update your local commits to your remote repository.
 -   **Branch** a be feature branch or base branch. A feature branch typically helps you to isolate your changes from the other team as you make and test this changes. The base branch consists of merged feature branches.
 -   **Pull** is to notify the project team of the changes you have made from a pushed branch in your GitHub repository or basically requesting the owner of the repository to pull changes you made, thus called a pull request. A collaborator can be assigned to review your pull and propose any potential changes you need to make. Review changes are done with commits. Once changes and reviews are complete a team contributor or you (with access), can merge your branch to the base branch of the original repository.
 -   **Merge** Merging is publishing a pull request after proposed reviews have been made. Merging is done by contributors with push access to the parent repository. You can also merge changes in the original repository to your forked repository.
@@ -37,7 +37,7 @@ Alternatively, use the URL from GitHub remote repository, paste on the clone box
 ![cloning progress](/engineering-education/how-to-syn-and-update-a-forked-repo/cloning-progress.png)
 
 #### Cloning using Git Bash
-Git uses protocols to transfer data from a remote server to your local machine. The main used URL protocols include
+Git uses [protocols](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols) to transfer data from a remote server to your local machine. The main used URL protocols include
 -   [SSH](https://docs.github.com/en/github/authenticating-to-github/about-ssh) 
 (Secure Shell) is an authenticated network protocol that needs credentials (password) before making a connection to the hosting server. This is how SSH link look like :
 ```bash
@@ -48,7 +48,7 @@ Example
 git@github.com:section-io/engineering-education.git
 ```
 ![SSH](/engineering-education/how-to-syn-and-update-a-forked-repo/ssh.png)
--   HTTP (Hyper text transfer protocol). The protocol of the web, most commonly used for transferring web page HTML data over the Internet. Git can be configured to communicate over HTTP 
+-   HTTP/HTTPS (Hyper text transfer protocol). The protocol of the web, most commonly used for transferring web page HTML data over the Internet. Git can be configured to communicate over HTTPS with encoded data transmision. [Atlassian](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone)
 ```bash 
 http[s]://host.xz[:port]/path/to/repository.git/
 ```
@@ -476,7 +476,7 @@ Let's look at Lebel's examples used to review engineering-education content.
 <span style="  padding: 10px; border-radius: 25px;background-color: #fffffc" > wontfix </span> This will not be worked on.
 
 ### Conclusion
-The outputs highlighed on this article may no direcly match to want will be printed to your Git Bash as they depend on the the commits already published when making a clone or updating a clone as well as the file changes you have made.
+The outputs highlighed on this article may not direcly match to what will be printed to your Git Bash as they depend on the the commits already published when making a clone or updating a clone as well as the file changes you have made.
 
 ### Refereces
 [GitHub with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
