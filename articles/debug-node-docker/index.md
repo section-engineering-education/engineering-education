@@ -12,15 +12,15 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/debug-node-docker/hero.jpg
-    alt: example image Node.js debugger
+    alt: image Node.js debugger docker
 ---
-Docker is one of the tools used by many developers today. You do not need to have Node.js installed in your machine to build Node.js apps. You only need Docker. You can easily run a Node.js app in Docker. What about debugging? Let us look at how you can debug a Node.js app running in a Docker container.
+Docker is one of the tools used by many developers today. You do not need to have Node.js installed in your machine to build Node.js apps. You only need Docker. Running a Node.js app in Docker can be done easily. What about debugging? Let us look at how you can debug a Node.js app running in a Docker container.
 <!--more-->
 
 ### Introduction
 [Docker](https://www.docker.com/) is used to build, run, and deploy apps in [containers](/engineering-education/history-of-container-technology/). This way, all libraries, and dependencies can be packaged and deployed as a single package. Now you don't need to install Node.js to run or build a Node.js app. You just need Docker.
 
-If you have ever worked on a project in a team, you're *probably* familiar with "It works on my machine" problem. Docker took care of that too.
+If you have ever worked on a project in a team, you're *probably* familiar with the "It works on my machine" problem. Docker took care of that too.
 
  If you are new to Docker, I recommend you go through the following articles. They will give you better understanding on Docker.
 
@@ -60,10 +60,10 @@ To be able to debug a Node.js app running in a Docker container, you need to upd
 CMD ["npm", "start"]
 ```
 
-### Step 2 -- Update your `package.json` configuration
-The next step is to add a Node.js debug command under the scripts part of your package.json file.
+### Step 2 -- Update your package.json configuration
+The next step is to add a Node.js debug command under the scripts part of your `package.json` file.
 
-Your scripts part of your package.json *probably* looks like this:
+Your scripts part of your `package.json` *probably* looks like this:
 
 ```json
   "scripts": {
@@ -136,7 +136,7 @@ You will also require **Docker Extension**. Open the **Extensions** tab and sear
 
 ![Docker extension in VS Code](/engineering-education/debug-node-docker/docker-extension.jpg)
 
-Configure your `launch.json` to look like below. You can create a `launch.json` file by opening Command Pallete and searching for `Debug: Open launch.json`.
+Configure your `launch.json` to look like the snippet below. You can create a `launch.json` file by opening Command Pallete and searching for `Debug: Open launch.json`.
 
 ```json
 {
@@ -192,4 +192,4 @@ On hitting `Enter`, VS Code starts the debug session and pauses on the first bre
 ### Conclusion
 In this tutorial, we looked at how you can debug your Node.js app running in a Docker container. You will need to add a debug script in your package.json to enable debugging in your Node.js app. We have looked at how you can use Nodemon to restart your app after making changes. Nodemon is useful in a development environment but not really useful in a production environment.
 
-Debugging in Chrome DevTools doesn't require many configurations. The only configurations are in the Dockerfile and package.json. It is suitable for one time debugging. On the other hand, VS Code does require extra configurations. It's more suitable for long-term debugging. You won't have to open many windows to debug your app. 
+Debugging in Chrome DevTools doesn't require many configurations. The only configurations are in the Dockerfile and package.json. It is suitable for one time debugging. On the other hand, VS Code does require extra configurations. It's more suitable for long-term debugging. You won't have to open as many windows to debug your app.
