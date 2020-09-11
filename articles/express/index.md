@@ -161,7 +161,37 @@ Any files in the directory "static" are served. `localhost:3000/dummy_file.txt` 
 
 ## Routing 
 
-Express makes request handling easier by mapping requests to different request handlers. A request handler is a function which handles all the requests to a specific path with a specific HTTP verb. In the basic example above we saw how to handle a `GET` request. As an application grows in size the routes as well as the request handlers increase. Lets see how we can use [Routers](http://expressjs.com/en/4x/api.html#router) to split a large app into smaller, maintanable functions. According to the documentation a Router is "an isolated instance of middleware and routes. Routers can be thought of as “mini” applications only capable of performing middleware and routing". 
+Express makes request handling easier by mapping requests to different request handlers. A request handler is a function which handles all the requests to a specific path with a specific HTTP verb. In the basic example above we saw how to handle a `GET` request. As an application grows in size the routes as well as the request handlers increase. Lets see how we can use [Routers](http://expressjs.com/en/4x/api.html#router) to split a large app into smaller, maintanable functions. According to the documentation a Router is "an isolated instance of middleware and routes. Routers can be thought of as “mini” applications only capable of performing middleware and routing".
+
+Routers can be used like middleware functions, they can be “`.use()`d”. A simple example:
+
+```javascript
+//app.js the main file
+
+var express = require("express");
+var apiRouter = require("./routes/api_router");
+
+var app = express();
+
+app.use("/api", apiRouter);
+
+app.listen(3000);
+```
+
+```javascript
+//routes/api_router.js
+var express = require("express");
+var router = express.Router();
+
+
+
+
+```
 
 ### Conclusion 
 The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes and make more descisions about your applications infrastrucutre. 
+
+
+### References
+
+- Express in Action, Manning 2016.              
