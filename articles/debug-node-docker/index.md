@@ -24,13 +24,13 @@ If you have ever worked on a project in a team, you're *probably* familiar with 
 
  If you are new to Docker, I recommend you go through the following articles. They will give you better understanding on Docker.
 
- 1. <a href="https://www.section.io/engineering-education/history-of-container-technology/" target="_blank">A Brief History of Container Technology</a>
+ 1. [A Brief History of Container Technology](https://www.section.io/engineering-education/history-of-container-technology/)
 
- 2. <a href="https://www.section.io/engineering-education/docker-concepts/" target="_blank">Understanding Docker Concepts</a>
+ 2. [Understanding Docker Concepts](https://www.section.io/engineering-education/docker-concepts/)
 
- 3. <a href="https://www.section.io/engineering-education/getting-started-with-docker/" target="_blank">Getting Started with Docker</a>
+ 3. [Getting Started with Docker](https://www.section.io/engineering-education/getting-started-with-docker/)
 
- 4. <a href="https://www.section.io/engineering-education/building-a-nodejs-application-using-docker/" target="_blank">Building A Node.js Application Using Docker</a>
+ 4. [Building A Node.js Application Using Docker](https://www.section.io/engineering-education/building-a-nodejs-application-using-docker/)
 
 ### Prerequisites
 To follow through this tutorial, you will need the following:
@@ -125,7 +125,7 @@ The above command runs your container in detached mode (`-d`) and maps remote po
 
 > Port 9229 is the default debug port for Node.js but you can change it if necessary.
 
-Finish up debugging your app in Chrome DevTools <a href="https://www.section.io/engineering-education/debug-node-devtools/#step-2----open-chrome-devtools" target="_blank">here</a>.
+Finish up debugging your app in Chrome DevTools [here](https://www.section.io/engineering-education/debug-node-devtools/#step-2----open-chrome-devtools).
 
 ### Step 5 -- Debugging with VS Code
 To debug your app in VS Code, make sure **Node: Auto Attach** setting is on. It enables VS Code to connect to your running app. To enable it, open the **Command Pallete**(`Ctrl+Shift+P`) and search for `Debug: Toggle Auto Attach`.
