@@ -27,7 +27,7 @@ On [September 29th, 2019](https://blog.npmjs.org/post/615388323067854848/so-long
 
 [*Image Source*](https://medium.com/npm-inc/this-year-in-javascript-2018-in-review-and-npms-predictions-for-2019-3a3d7e5298ef#:~:text=npm%20has%20over%2010%20million,packages%20of%20open%20source%20JavaScript.)
 
-On [June 2019](https://twitter.com/npmjs/status/1135968692062130176), MPM crossed a million-libraries mark. With over 1.3 million libraries currently available, NPM registry is now the largest single collection of open source libraries in the world with more than 12 million developers.
+On [June 2019](https://twitter.com/npmjs/status/1135968692062130176), NPM crossed a million-libraries mark. With over 1.3 million libraries currently available, NPM registry is now the largest single collection of open source libraries in the world with more than 12 million developers.
 
 On [April 23, 2018](https://twitter.com/seldo/status/988477780441481217), NPM users downloaded five billion packages within the last 7 days of that date. On this day 4 years ago, that figure was 50 million, this means 10,000% growth. The average IP downloads were 2200 packages per month.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/weekly-downloads.jpg)
@@ -43,7 +43,7 @@ This statistical testimonies explains the resilience and commitment of NPM to ke
 
 ### Dev statistics response on open-source JavaScript libraries and code security practices
 
-The following survey findings were carried out by NPM in partnership with the Node.js Foundation and the JS Foundation with more than 16,000 JavaScript/NPM users getting involved. The main aim of this survey was to find out how JavaScript developers understand security in relation to the open-source code they use and code they write. These findings were documented on April 10, 2018. Let us have a quick snippet of this survey report primarily based on some the questions the respondents were asked. Read on the [methodology](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db) behind this survey.
+The following survey findings were carried out by NPM in partnership with the Node.js Foundation and the JS Foundation with more than 16,000 JavaScript/NPM users getting involved. The main aim of this survey was to find out how JavaScript developers understand security in relation to the open-source code they use and code they write. These findings were documented on [April 10, 2018](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b). Let us have a quick snippet of this survey report primarily based on some the questions the respondents were asked. Read on the [methodology](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db) behind this survey.
 
 **NOTE:** The following questions were picked directly from this [survey questionnaires](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b).
 
@@ -108,14 +108,14 @@ If all answers are combined, a measure of how many developers uses some form of 
 ### Conclusion
 -   The best code security practices are common to experienced developers. These practices include code review, linting, and testing.
 -  Practices such as testing, linting, code surveys, and security exams are indicators of a polished developer.
--   Most developers are more likely to be concerned with the safety of the code they write as well as the open-source code they use.
+-   Most developers are concerned with the safeness of the code they write as well as the open-source code they use.
 -   Developers are more confident with the safeness of open source code while having doubt with the security of the code they write themselves.
 -   Most developers are not content with the alternatives available/accessible for them to secure their code.
 
 ## Using `npm@6` for code, NPM registry, and dependency trees security
 `npm@6` is a major update to NPM. It includes built-in security features for open source code. `npm@6` allows NPM registry users to automatically receive warnings if they attempt to try to use unsafe code. NPM automatically reviews any install requests you make against the Node Security Platform database and returns an alert if the code has a vulnerability.
 
-The command `npm audit` allows you to deeply recursively analyze your dependencies trees to identify any unsafe library and recommend a replacement or upgrade to a new version. With `npm@6`, you can run `npm audit fix`, to automatically fix the recommendations made on your dependencies trees audit. If you are using the older version `npm@5`, just type `npm i -g npm@latest` to update to `npm@6` and take full advantage of this powerful built-in automation tool for your workflow, along with other enhancements and features.
+The command `npm audit` allows you to deeply recursively analyze your dependencies trees to identify any unsafe library and recommend a replacement or upgrade to a newer version. With `npm@6`, you can run `npm audit fix`, to automatically fix the recommendations made on your dependencies trees audit. If you are using the older version `npm@5`, just type `npm i -g npm@latest` to update to `npm@6` and take full advantage of this powerful built-in automation tool for your workflow, along with other enhancements and features.
 
 ### Features of `npm@6`
 **1. Speed**
@@ -123,13 +123,16 @@ The command `npm audit` allows you to deeply recursively analyze your dependenci
 `npm@6` speed range between 4x to 17x faster compared with `npm@4`. What this means is that, as a developer, the speed is not just to make exciting things faster, but it allows you to scale your projects beyond what they can do.
 
 **2. CI optimization**
+
 As a developer, you will spend much less time between pushing a new build, continuing deployment, iterating, and sharing changes. This means continuous integration (CI) and continuous deployment (CD) within your workflow with an additional 2x to 3x faster speed.
 
 **3. Automatic resolution and `package-lock.json` lock file conflicts.**
+
 `package-lock.json` is a generated file. It saves information about your Node.js dependencies you use. `package-lock.json` file is committed to your Git repository.
 
 **`package-lock.json` has the following advantages**
--   Increased reproducibility across teams, reduced network overhead during installation.
+-   Increased reproducibility across teams.
+-   Reduced network overhead during installation.
 -   It makes it easier to debug an issue in your app.
 -   With `npm@6`, your lock file is more stable across the teams on similar platforms as well as across operating systems unlike the former which had unexpected changes and platform differences.
 
@@ -164,7 +167,7 @@ For more information go to this [npm blog post](https://blog.npmjs.org/post/1732
 
 -   You can even install the [shell auto-fallback](https://t.umblr.com/redirect?z=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fnpx%23shell-auto-fallback&t=MTVkODRiYmJkOWQ0ZTQxMjYwZGU3M2U0OGFiMDAwZTQ3YjAzMjc5YyxSQlc3OFpFUg%3D%3D&b=t%3AnXsLs1P4AptPf1fBr_nFxw&p=https%3A%2F%2Fblog.npmjs.org%2Fpost%2F173240511455%2Fthe-new-npm-cli-a-year-in-review-or-what-you&m=1&ts=1598809717) to not even have to write `$ npx...` in many cases.
 
-Refer to [Npm blog post](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you) Or [npx](https://www.npmjs.com/package/npx).
+Refer to [Npm blog post](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you) or [npx](https://www.npmjs.com/package/npx).
 
 Npx is a great tool that you should try in your daily workflow.
 
@@ -177,9 +180,7 @@ There is a lot of very useful information on `npm@6`, more than what we have dis
 `npm@6` has an amazing overall security of the NPM ecosystem.
 
 ### Conclusion
-Since security is everyone's responsibility, we all need to work together to make a huge step forward to ensure the safety of any code we use in our daily workflow, making sure that the world's larges community is even safer. I wish all NPM users the best of luck as they continue to build fast, safe and amazing things.
 
-### NOTE:
 1. The main objective of the survey was to learn more about the JavaScript community and how they interact with NPM concerning code security ethics practices. You may consider looking at the [survey results](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b) deeper and the [methodologies used](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db).
 
 2. The NPM downloads statistics are native by design. They are counts of HTTP 200 responses that are served tarball files i.e. packages. These numbers include:
@@ -187,10 +188,12 @@ Since security is everyone's responsibility, we all need to work together to mak
    -   Downloads by mirrors.
    -   Robots packages downloads for analysis.
 
-The counts are much larger than the people who just typed `npm install(package)`. This means there some mitigation factors such as.
+3. The counts are much larger than the people who just typed `npm install(package)`. This means there some mitigation factors such as.
    -   If you had installed a package before: the package usually get installed from your local npm cache, so this is not counted.
    -   Build servers usually do not redownload a package they have already used before. Builds that take place in disposable VMs or Docker instances are available in the npm cache of the server.
    -   Mirrors downloads a specified version of a package one time. They are smart and do not redownload a package they have already seen before.
+
+Since security is everyone's responsibility, we all need to work together to make a huge step forward to ensure the safety of any code we use in our daily workflow, making sure that the world's larges community is even safer. I wish all NPM users the best of luck as they continue to build fast, safe and amazing things.
 
 ### Additional Resources
 [Check more on how npm download counts works](https://blog.npmjs.org/post/92574016600/numeric-precision-matters-how-npm-download-counts)
