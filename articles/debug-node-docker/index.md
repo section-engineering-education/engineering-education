@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/debug-node-docker/
-title: Debugging a Node Js app running in Docker
+title: Debugging a Node.js app running in Docker
 description: This article is about debugging a Node.js app running in a Docker container. You need to add a debug script in your package.json to enable debugging in your Node.js app.
 author: geoffrey-mungai
 date: 2020-09-11T00:00:00-10:00
