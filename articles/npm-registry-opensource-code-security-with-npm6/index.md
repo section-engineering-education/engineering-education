@@ -17,26 +17,26 @@ images:
 Security is a huge concern for everyone. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is even a professional habit that developers acquire as they grow with experience. Making sure open-source codes are secure is one of the fundamental mission of NPM, with approaches to security at scale to empower NPM users to develop secure code.
 <!--more-->
 
-With NPM(short for Node Package Manager), you do not need to worry about the safety of your code. NPM provides vulnerability-scanning tools that are built-in your Node.js workflow. These tools are faster and they automatically review every install request you make, it checks the Node Security Platform vulnerably database, and warns you if you try to use unsafe codes. It even analyzes your dependencies trees to check specifically what has security issues and recommend a replacement or fix the issues automatically.
+With NPM(short for Node Package Manager), you do not need to worry about the safety of your code. NPM provides vulnerability-scanning tools that are built-in your Node.js workflow. These tools are faster and they automatically review every install request you make, and warns you if you try to use unsafe codes. It even analyzes your dependencies trees to check specifically what has security issues and recommend a replacement or fix the issues automatically.
 
 In this article, we will have a look at NPM registry survey statistics, check other developers' responses to Node.js security practices and identify which tools you need to assess your open-source code safely.
 
 ### NPM registry download statistics
-On September 29th, 2019, NPM marked 10 years of its existence. NPM has been used to develop every kind of application i.e. web apps, mobile applications, Servers, Internet of things (IoT)/robotic, desktop applications and native mobile applications. This has greatly contributed to the NPM registry popularity. The number of libraries available in the NPM registry influences most developers to choose JavaScript.
+On [September 29th, 2019](https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages), NPM marked 10 years of its existence. NPM has been used to develop every kind of application i.e. web apps, mobile applications, Servers, Internet of things (IoT)/robotic, desktop applications and native mobile applications. This has greatly contributed to the NPM registry popularity. The number of libraries available in the NPM registry influences most developers to choose JavaScript.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/npm-influnce-statistics.png)
 
 [*Image Source*](https://medium.com/npm-inc/this-year-in-javascript-2018-in-review-and-npms-predictions-for-2019-3a3d7e5298ef#:~:text=npm%20has%20over%2010%20million,packages%20of%20open%20source%20JavaScript.)
 
-On June 2019, MPM crossed a million-libraries mark. With over 1.3 million libraries currently available, NPM registry is now the largest single collection of open source libraries in the world with more than 12 million developers.
+On [June 2019](https://twitter.com/npmjs/status/1135968692062130176), MPM crossed a million-libraries mark. With over 1.3 million libraries currently available, NPM registry is now the largest single collection of open source libraries in the world with more than 12 million developers.
 
-On April 23, 2018, NPM users downloaded five billion packages within the last 7 days of that date. On this day 4 years ago, that figure was 50 million, this means 10,000% growth. The average IP downloads were 2200 packages per month.
+On [April 23, 2018](https://twitter.com/seldo/status/988477780441481217), NPM users downloaded five billion packages within the last 7 days of that date. On this day 4 years ago, that figure was 50 million, this means 10,000% growth. The average IP downloads were 2200 packages per month.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/weekly-downloads.jpg)
 
 [*Image Source*](https://twitter.com/seldo/status/988477780441481217)
 
 Up to now, NPM has recorded tremendous growth with over 20 billion average weekly downloads. As am writing this article, the NPM registry recorded 88,820,279,735 libraries downloads last month. NPM registry is now serving around 125 billion requests at a whopping [6 Petabytes per month](https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages).
 
-This statistical testaments, explain the resilience and commitment of NPM to keep the world's largest community safe by building a chain of fast reliable tools to help you see the safety of JavaScript code you write and share as well as the open-source code to ensure it is safe before you go live.
+This statistical testimonies explains the resilience and commitment of NPM to keep the world's largest community safe by building a chain of fast reliable tools to ensure every JavaScript line of code you write as well as the open-source code you use is safe before you go live.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/popular-languages.PNG)
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2018#technology-_-programming-scripting-and-markup-languages)
@@ -71,7 +71,7 @@ It is interesting to note that more than half of JavaScript developers are not c
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
-What about we separate the response dependent on the concern of open source code or their own code (the code you write).
+Let's separate this responses and compare the security concern between open source code and the code you write.
 
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/opensource-downcode.png)
 
@@ -108,7 +108,7 @@ If all answers are combined, a measure of how many developers uses some form of 
 ### Conclusion
 -   The best code security practices are common to experienced developers. These practices include code review, linting, and testing.
 -  Practices such as testing, linting, code surveys, and security exams are indicators of a polished developer.
--   Solid greater part of this developers are more likely concerned with the safety of the code they write as well as the open-source code they use.
+-   Most developers are more likely to be concerned with the safety of the code they write as well as the open-source code they use.
 -   Developers are more confident with the safeness of open source code while having doubt with the security of the code they write themselves.
 -   Most developers are not content with the alternatives available/accessible for them to secure their code.
 
