@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/string-manipulation/
+title: 
+description: 
+author: nimra-aftab
+date: 2020-09-01T00:00:00-07:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/string-manipulation/hero.jpg
+    alt: c pointers c++ variable
+---
 Recall that there are two types of strings in the C programming language. String *variables* can be modified, but string *literals* cannot. This article will discuss how to safely manipulate string variables.
+<!--more-->
 
 ### String Basics
 String *variables* are an array of characters in 'C'. Strings are always null terminated, so the array needs space for the string **and** the null character (`\0`).
