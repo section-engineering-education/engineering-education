@@ -6,7 +6,7 @@ url: /engineering-education/debug-node-docker/
 title: Debugging a Node Js app running in Docker
 description: This article is about debugging a Node.js app running in a Docker container. You need to add a debug script in your package.json to enable debugging in your Node.js app.
 author: geoffrey-mungai
-date: 2020-09-10T00:00:00-10:00
+date: 2020-09-11T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -24,16 +24,16 @@ If you have ever worked on a project in a team, you're *probably* familiar with 
 
  If you are new to Docker, I recommend you go through the following articles. They will give you better understanding on Docker.
 
- 1. [A Brief History of Container Technology](https://www.section.io/engineering-education/history-of-container-technology/)
+ 1. [A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
 
- 2. [Understanding Docker Concepts](https://www.section.io/engineering-education/docker-concepts/)
+ 2. [Understanding Docker Concepts](/engineering-education/docker-concepts/)
 
- 3. [Getting Started with Docker](https://www.section.io/engineering-education/getting-started-with-docker/)
+ 3. [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
 
- 4. [Building A Node.js Application Using Docker](https://www.section.io/engineering-education/building-a-nodejs-application-using-docker/)
+ 4. [Building a Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
 
 ### Prerequisites
-To follow through this tutorial, you will need the following:
+To follow along with this tutorial, you will need the following:
 
 - A Docker [installation](https://docs.docker.com/engine/install/) on your machine. For Linux users, you can install using [this](/engineering-education/getting-started-with-docker/) guide.
 - [Visual Studio Code](https://code.visualstudio.com/download) and/or a chromium-based browser .eg. [Google Chrome](https://www.google.com/chrome/).
@@ -88,7 +88,7 @@ You have added a script named "start" that executes "`node --inspect=0.0.0.0 ind
 
 > *This step is optional*. It's suitable for a development environment.
 
-[Nodemon](https://nodemon.io/) is a tool for restarting your app every time changes are made to your app. It is very useful in a development environment.
+[Nodemon](https://nodemon.io/) is a tool to restart your app every time a change is made to your app. It is very useful in a development environment.
 
 To use Nodemon with your app, you need to edit your Dockerfile and package.json.
 Add this line below the `RUN npm install` line.
@@ -125,7 +125,7 @@ The above command runs your container in detached mode (`-d`) and maps remote po
 
 > Port 9229 is the default debug port for Node.js but you can change it if necessary.
 
-Finish up debugging your app in Chrome DevTools [here](https://www.section.io/engineering-education/debug-node-devtools/#step-2----open-chrome-devtools).
+Finish up debugging your app in Chrome DevTools [here](/engineering-education/debug-node-devtools/#step-2----open-chrome-devtools).
 
 ### Step 5 -- Debugging with VS Code
 To debug your app in VS Code, make sure **Node: Auto Attach** setting is on. It enables VS Code to connect to your running app. To enable it, open the **Command Pallete**(`Ctrl+Shift+P`) and search for `Debug: Toggle Auto Attach`.
@@ -190,6 +190,6 @@ $ curl http://127.0.0.1:3000
 On hitting `Enter`, VS Code starts the debug session and pauses on the first breakpoint. You can use the continue button on the floating controls bar or `F5` to resume execution. You can also watch variables in the **watch** pane.
 
 ### Conclusion
-In this tutorial, we looked at how you can debug your Node app running in a Docker container. You need to add a debug script in your package.json to enable debugging in your Node.js app. We have looked at how you can use Nodemon to restart your app after making changes. Nodemon is useful in a development environment but not really useful in a production environment.
+In this tutorial, we looked at how you can debug your Node.js app running in a Docker container. You will need to add a debug script in your package.json to enable debugging in your Node.js app. We have looked at how you can use Nodemon to restart your app after making changes. Nodemon is useful in a development environment but not really useful in a production environment.
 
-Debugging in Chrome DevTools doesn't require many configurations. The only configurations are in the Dockerfile and package.json. It is suitable for one time debugging. On the other hand, VS Code needs extra configurations. It's suitable for long-term debugging. You won't have to open many windows to debug your app.
+Debugging in Chrome DevTools doesn't require many configurations. The only configurations are in the Dockerfile and package.json. It is suitable for one time debugging. On the other hand, VS Code does require extra configurations. It's more suitable for long-term debugging. You won't have to open many windows to debug your app. 
