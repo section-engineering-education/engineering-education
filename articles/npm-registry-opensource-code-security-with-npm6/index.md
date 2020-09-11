@@ -21,7 +21,7 @@ With NPM(short for Node Package Manager), you do not need to worry about the saf
 
 In this article, we will have a look at NPM registry survey statistics, check other developers' responses to Node.js security practices and identify which tools you need to assess your open-source code safely.
 
-### NPM registry download statistics
+## NPM registry download statistics
 On [September 29th, 2019](https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages), NPM marked 10 years of its existence. NPM has been used to develop every kind of application i.e. web apps, mobile applications, Servers, Internet of things (IoT)/robotic, desktop applications and native mobile applications. This has greatly contributed to the NPM registry popularity. The number of libraries available in the NPM registry influences most developers to choose JavaScript.
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/npm-influnce-statistics.png)
 
@@ -41,7 +41,7 @@ This statistical testimonies explains the resilience and commitment of NPM to ke
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2018#technology-_-programming-scripting-and-markup-languages)
 
-### Dev statistics response on open-source JavaScript libraries and code security practices
+## Dev statistics response on open-source JavaScript libraries and code security practices
 
 The following survey findings were carried out by NPM in partnership with the Node.js Foundation and the JS Foundation with more than 16,000 JavaScript/NPM users getting involved. The main aim of this survey was to find out how JavaScript developers understand security in relation to the open-source code they use and code they write. These findings were documented on [April 10, 2018](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b). Let us have a quick snippet of this survey report primarily based on some the questions the respondents were asked. Read on the [methodology](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db) behind this survey.
 
@@ -63,7 +63,7 @@ We now have a clear image that most developers are greatly concerned about code 
 
 This concludes that, the more time you utilize JavaScript the more you become concerned about ensuring that the code you use is safe. In short, the attitude to security changes with experience.
 
-## 2. Are you satisfied with the available methods to evaluate the safeness and the quality of open source code?
+### 2. Are you satisfied with the available methods to evaluate the safeness and the quality of open source code?
 
 It is interesting to note that more than half of JavaScript developers are not convinced with the existing tools for analyzing the security and quality of open-source code, which is very alarming.
 
@@ -179,7 +179,7 @@ There is a lot of very useful information on `npm@6`, more than what we have dis
 
 `npm@6` has an amazing overall security of the NPM ecosystem.
 
-### Conclusion
+## Conclusion
 
 1. The main objective of the survey was to learn more about the JavaScript community and how they interact with NPM concerning code security ethics practices. You may consider looking at the [survey results](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b) deeper and the [methodologies used](https://medium.com/npm-inc/javascript-survey-methodology-1f2290ffc3db).
 
@@ -188,7 +188,7 @@ There is a lot of very useful information on `npm@6`, more than what we have dis
    -   Downloads by mirrors.
    -   Robots packages downloads for analysis.
 
-3. The counts are much larger than the people who just typed `npm install(package)`. This means there some mitigation factors such as.
+3. The NPM registry counts are much larger than the people who just typed `npm install(package)`. This means there some mitigation factors such as.
    -   If you had installed a package before: the package usually get installed from your local npm cache, so this is not counted.
    -   Build servers usually do not redownload a package they have already used before. Builds that take place in disposable VMs or Docker instances are available in the npm cache of the server.
    -   Mirrors downloads a specified version of a package one time. They are smart and do not redownload a package they have already seen before.
