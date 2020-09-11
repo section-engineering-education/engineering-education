@@ -2,7 +2,7 @@
 
 [Node.js]() is a javascript run time environment which can be used to create server side applcations and tools. Node.js is fast, portable and written in Javascript. Common tasks such as handling requests, serving files, handling HTTP verbs (`GET`, `POST`, ...) are not directly supported by Node, this is where Node's rich ecosystem comes to our aid. 
 
-**Express.js is a light web framework which which sits on top of Node and it adds functionality ([middleware]() , [routing](), etc)and simplicity to Node.js.**
+**Express.js is a light web framework which which sits on top of Node and it adds functionality ([middleware]() , [routing](), etc) and simplicity to Node.js.**
 
 When creating a Node.js web application, we write a single javascript application which listens to resquests from the browser, based on the request the function will send back some data or a HTML web page. 
 
@@ -159,6 +159,9 @@ app.use(express.static("static") //relative path
 Any files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times. If the file is not there in one directory then the request is passed onto the next `static()` call. 
 
 
+## Routing 
+
+Express makes request handling easier by mapping requests to different request handlers. A request handler is a function which handles all the requests to a specific path with a specific HTTP verb. In the basic example above we saw how to handle a `GET` request. As an application grows in size the routes as well as the request handlers increase. Lets see how we can use [Routers](http://expressjs.com/en/4x/api.html#router) to split a large app into smaller, maintanable functions. According to the documentation a Router is "an isolated instance of middleware and routes. Routers can be thought of as “mini” applications only capable of performing middleware and routing". 
 
 ### Conclusion 
 The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes and make more descisions about your applications infrastrucutre. 
