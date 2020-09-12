@@ -51,14 +51,14 @@ _In Data Security: [Do you know that your medical data is worth more than your c
 >**Blockchain has the potential to keep private information safe and secure while still being accessible anywhere.**
 
 ***Medical Device Usage Tracking***
-The use of  medical devices such as electronic wearables have been on the rise, with new reports revealing that forty percent of medical patients use such devices to track their health. However, this makes it difficult to store all the  daily medical reports from devices for each patients. This is another area where keeping blockchain records can help.
+The use of medical devices such as electronic wearables have been on the rise, with new reports revealing that forty percent of medical patients use such devices to track their health. However, this makes it difficult to store all the  daily medical reports from devices for each patients. Health data tracked from the patient's device can be stored in a blockchain network where it would be timestamped and verified making the data immutable.
 
 ***Drug Supply Chain Tracking***
-According to Hudson River Field Office (HRFO), over fifteen percent of drugs sold in developing countries are counterfeit. In addition, pharmaceutical companies lose about 200 billion dollars annually due to counterfeiting. Blockchain can curb this trend with features like point-by-point, which tracks possibilities and proof of authenticity. This allows users to verify drug authenticity before purchase or consumption.
+According to [Health Research Funding Organization (HRFO)](https://medium.com/ict-market-research-reports/blockchain-technology-in-healthcare-market-e3f9831de63d), over ten to thirty percent of drugs sold in developing countries are counterfeit. In addition, pharmaceutical companies lose about 200 billion dollars annually due to counterfeiting. Blockchain can curb this trend with features like point-by-point, which tracks possibilities and proof of authenticity. This allows users to verify drug authenticity before purchase or consumption.
 
 ### Digital Identity
 ***Patient Identity Validation***
-Blockchain can solve the issue of patient identity theft and can reduce the use of fake IDs by impersonators.
+Blockchain can solve the issue of patient identity theft and can reduce the use of fake IDs by impersonators. since blockchain records are immutable and can verified, this feature can be utilized for patient's identity records and verification, therefore reducing impersonation of patients IDs to purchase medications for drug abuse purpose. 
 
 ***Healthcare Provider Identity Validation***
 Impersonation using fake medical records is a common problem in third world countries and has caused great number of deaths. Blockchain can address these issues with its validation system.
