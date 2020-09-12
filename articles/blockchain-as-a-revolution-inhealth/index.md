@@ -60,9 +60,6 @@ According to [Health Research Funding Organization (HRFO)](https://medium.com/ic
 ***Patient Identity Validation***
 Blockchain can solve the issue of patient identity theft and can reduce the use of fake IDs by impersonators. since blockchain records are immutable and can verified, this feature can be utilized for patient's identity records and verification, therefore reducing impersonation of patients IDs to purchase medications for drug abuse purpose. 
 
-***Healthcare Provider Identity Validation***
-Impersonation using fake medical records is a common problem in third world countries and has caused great number of deaths. Blockchain can address these issues with its validation system.
-
 ***Drug Identity Validation***
 Drug identity can be validated using blockchain technology. Having transparent information about particular drugs can reduce the amount of fake drugs in circulation.
 
