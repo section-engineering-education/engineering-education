@@ -40,6 +40,9 @@ A Blockchain [can be defined as a continuously growing list of records, or block
 There are numerous applications of Blockchain in healthcare:
 
 ### Record Keeping
+![Blockchain img](/engineering-education/blockchain-as-a-revolution-inhealthcare/record-keeping.png)
+[*Image Source: https://www.kamkartway.com/beginner-guide-driver-record-keeping/record-keeping-image/*](https://www.kamkartway.com/beginner-guide-driver-record-keeping/record-keeping-image/)
+
 ***Medical History Tracking***
 With Blockchain, patients' treatment history can be tracked anywhere and at any time with no ambiguity, hence providing health practitioners a better context.
 
