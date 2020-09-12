@@ -226,9 +226,42 @@ app.get(/^\/products\/(\d+)$/, function(req, res) {
 ...
 ```
 
-### Templates
+### Template Engines
 
+Websites are built with HTML, you can dynamically generate HTML pages using Express. Dynamically generated HTML pages are useful when you want to show real time data or change a page's details based on the user. A template engine allows you to use static template files and at runtime replace variables in a template file with Actual data. There are different template engines available like [Pug](https://pugjs.org/), Jade, and [EJS](https://ejs.co/). Lets see a basic template using EJS. 
+
+Install it using npm. `npm install ejs` and create a directory called `views` for storing your templates and HTML files.
+
+```javascript
+//app.js
+var express = require("express");
+
+app.set("view engine", "ejs");
+app.set("views", "views");
+
+app.get("/", function(req, res){   //res.render() renders a view and send the HTML to the client
+        res.render("index", {
+                message: "Hello and Welcome !!!" // this can be any thing you want
+        });
+});
+
+app.listen(3000);
+```
+
+Create a file called `index.ejs` in the views directory.
+
+```html
+<html>
+    <head>
+        <meta charset="utf-8">    
+    </head>
     
+    <body>
+        <%= message %>
+    </body>
+</html>
+```
+If you go to the root (localost:
 
 ### Conclusion 
 The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes and make more descisions about your applications infrastrucutre. 
@@ -237,3 +270,4 @@ The minimalistic philosophy of Express may not be suited for everyone's needs, b
 ### References
 
 - Express in Action, Manning 2016.              
+
