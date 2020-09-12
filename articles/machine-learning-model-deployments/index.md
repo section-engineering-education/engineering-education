@@ -41,6 +41,39 @@ python manage.py startapp digitapp
 pip install keras
 pip install tensorflow
 ```
+# Understanding Django Rest Framework
+
+To Understand What is Rest APi and how it works. You can view this [article](https://www.section.io/engineering-education/rest-api/). Django REST framework is a powerful and flexible toolkit for building Web APIs.
+
+
+1) We need to First Install Django rest framework and we have to create an app to get started. 
+
+2) After Creating an app we can You are able to view a folder structure like this :- 
+
+![folder img](/engineering-education/machine-learning-model-deployments/folder-structure.png)
+
+3) To run this particular app in you system you need to type a command. 
+```python manage.py runserver```. It will run your server and you can view it on the localhost link provided in your terminal after running this command. It is running of port 8000 by default. If you want to change the port you can just add a port number after runserver like this:-
+```python manage.py runserver 7000```
+
+4) If you will open digits folder you can view a file which is by default present there named as `settings.py`. It is a core file in Django projects. It holds all the configuration values that your web app needs to work; database settings, logging configuration, where to find static files, API keys if you work with external APIs, and a bunch of other stuff.
+
+5) You can also see there is one more file named as `urls.py`. To access any view which are creating via urls we can create those urls here in urls.py file. Now What is views?
+
+6) If you will go back and open your digitsapp folder you are able to view multiple files there like  `views.py`, `admin.py`, `models.py`, `apps.py` and `tests.py`
+
+7) We will first look into the `views.py`. A view function, or view for short, is a Python function that takes a Web request and returns a Web response. This response can be the HTML contents of a Web page, or a redirect, or a 404 error, or an XML document, or an image . . . or anything, really. The view itself contains whatever arbitrary logic is necessary to return that response. This code can live anywhere you want, as long as it’s on your Python path. There’s no other requirement–no “magic,” so to speak. For the sake of putting the code somewhere, the convention is to put views in a file called views.py, placed in your project or application directory. You can read more about a view [here](https://docs.djangoproject.com/en/3.1/topics/http/views/)
+
+8) The purpose of `apps.py` file. The Application configuration objects store metadata for an application. Some attributes can be configured in AppConfig subclasses. Others are set by Django and read-only.
+
+9) The `admin.py` file is used to display your models in the Django admin panel. You can also customize your admin panel. Hope this helps you. Django has a builtin admin interface that reads metadata from your models, such as fields, and lets you perform CRUD operations for free
+
+10) `models.py` :- A model is a class that represents table or collection in our DB, ... Models are defined in the app/models.py. To Do the DB operations in our project we can create models.
+
+11) With Django's test-execution framework `tests.py` and assorted utilities, you can simulate requests, insert test data, inspect your application's output and generally verify your code is doing what it should be doing. Basically you can write your test cases here. 
+
+Now You have basic knowledge of Django Rest Framework we can move forward with creating a django API. Exciting !!! 
+
 You have to create a folder named as __scripts__. We are creating this folder to keep our python written files here. You can easily find your python file with __.py__ extension.
 
 If you open the directory you are able to view the folder structure like this:-
