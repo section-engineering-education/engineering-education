@@ -20,7 +20,7 @@ Blatson re-enters the room: "I've just finished interviewing Sir Birch!" he crie
 
 “Ah, you must be one of those [10X detectives](http://antirez.com/news/112) who can solve problems with no effort. Well, not all of us have your “talent”, O greatest detective in Seoul!”, Blatson replies sarcastically. “But seriously, how was *I* supposed to know to be taking notes?”
 
-*This is Part Two of **The Adventures of Merlock and Blatson**. [Pmulhttps://doc.rust-lang.org/book/ch10-02-traits.htmlart One is here](https://www.thinkingmuchbetter.com/main/debugging-bad-detective/).*
+*This is Part Two of **The Adventures of Merlock and Blatson**. [Part One is here](https://www.thinkingmuchbetter.com/main/debugging-bad-detective/).*
 
 ---
 
