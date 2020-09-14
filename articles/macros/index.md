@@ -1,29 +1,41 @@
-# Using Macros - C, Nim, and Rust
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/macros/
+title: Using Macros - C, Nim, and Rust
+description: DRY is a very important concept in software engineering. Sometimes, it seems like some repetition is required, but it isn't. Many languages have macros. Today we'll show you how to use them in C, Nim, and Rust.
+author: mike-white
+date: 2020-09-14T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Macros are cool. A macro is a tool, sometimes embedded into the programming language, that can be used to generate code. This can be very useful for when you need to have some repeating code, but can't use a function.
+  - url: /engineering-education/macros/hero.jpg
+    alt: Macros DRY example image
+---
+Macros are cool. A macro is a tool, sometimes embedded into the programming language, that can be used to generate code. This can be very useful for when you need to have some repeating code, but can not use a function. Unfortunately, macros are imports. Every programming language implements them just a little bit differently. Today, we'll cover some of the popular ones.
+<!--more-->
 
-Unfortunately, macros are imports. Every programming language implements them just a little bit differently. Today, we'll cover some of the popular ones.
-
-## C Macros
-
+### C Macros
 Some programming languages have very simple macros, like C. C has a preprocessor directive called `#define`. It looks something like this:
 
 ```c
 #define LENGTH_OF_ARRAY 5 // this is a define macro
 
 int main() {
-    int numbers[LENGTH_OF_ARRAY]; // intializes the array
-    
+    int numbers[LENGTH_OF_ARRAY]; // initializes the array
+
     int i; // incrementing variable
     for (i = 0; i < LENGTH_OF_ARRAY; i++) {
         numbers[i] = i;
     }
-    
+
     return 0;
 }
 ```
 
-This takes any instance of `LENGTH_OF_ARRAY` and replaces it with the number 5. This can super useful if you want to have a constant variable, because this uses no memory whatsoever.
+This takes any instance of `LENGTH_OF_ARRAY` and replaces it with the number 5. This can be super useful if you want to have a constant variable, because this uses no memory whatsoever.
 
 This can bring problems though. For example, consider the following:
 
@@ -33,7 +45,7 @@ This can bring problems though. For example, consider the following:
 
 int main() {
     printf("%d", 5 * TEN);
-    
+
     return 0;
 }
 ```
@@ -52,7 +64,7 @@ You can fix this by using parentheses.
 #define TEN (5 + 5)
 ```
 
-C Macros can also take parameters! This ...
+C Macros can also take parameters! This…
 
 ```c
 #define ADD(X, Y) (X + Y)
@@ -72,8 +84,7 @@ int add(int a, int b) {
 }
 ```
 
-## Nim Macros
-
+### Nim Macros
 Some programming languages have macros that are super complex, such as Nim. Nim's macros give you fine control over the abstract syntax tree that Nim uses to parse your code. Here's a modified example from [one of the Nim tutorials](https://nim-lang.org/docs/tut3.html).
 
 ```nim
@@ -82,9 +93,9 @@ import macros # import the macro library
 # here's the interesting part
 macro myMacro(arg: untyped): untyped =
   var mt: string = "abcdef"
-  
+
   let mtLit = newLit(mt)
-  
+
   result = quote do:
     echo `arg`
     echo `mtLit`
@@ -97,16 +108,16 @@ Let's focus specifically on the macro code itself.
 ```nim
 macro myMacro(arg: untyped): untyped =
   var mt: string = "abcdef" # a string that the macro has
-  
+
   let mtLit = newLit(mt) # turns the type into a "literal value"
-  
+
   # puts the next couple lines into the code
   result = quote do:
     echo `arg`
     echo `mtLit`
 ```
 
-The macro has its own string. It converts the string into a literal value (a value that's shown in code. Kinda like using `5` instead of making a variable with the value of 5.). The macro creates two `echo` calls (The same as `print` in Python). One prints the value passed into the macro. The other creates the specified string, and prints that out. By calling it with `myMacro("Hallo")`, we get the following code:
+The macro has its own string. It converts the string into a literal value (a value that's shown in code. Kind of like using `5` instead of making a variable with the value of 5.). The macro creates two `echo` calls (The same as `print` in Python). One prints the value passed into the macro. The other creates the specified string, and prints that out. By calling it with `myMacro("Hallo")`, we get the following code:
 
 ```nim
 echo "Hallo"
@@ -115,13 +126,12 @@ echo "abcdef"
 
 Run it, and we get the output we're looking for:
 
-```
+```bash
 Hallo
 abcdef
 ```
 
-## Rust Macros
-
+### Rust Macros
 Rust has a balance between simplicity and complexity. The Rust developers don't give the programmer control of the Abstract Syntax Tree. To do that, they'd need to stabilize it. Their argument is that they may want to add something, like the handy `?` operator. Stabilizing the AST would prevent them from doing that.
 
 There are a few types of Rust macros. There's `derive` macros, which are very useful. They automatically implement traits (known in other languages as interfaces).
@@ -134,7 +144,7 @@ struct MyType {
 }
 ```
 
-That is very useful. There are also attribute macros. These are attributes that are applied to the function, struct, trait, field, etc, they are applied to. They can take their own parameters, and they return the final TokenStream of the output. Here's an example from [The Rust Reference](https://doc.rust-lang.org/reference/procedural-macros.html).
+That is very useful. There are also attribute macros. These are attributes that are applied to the function, struct, trait, field, etc., they are applied to. They can take their own parameters, and they return the final TokenStream of the output. Here's an example from [The Rust Reference](https://doc.rust-lang.org/reference/procedural-macros.html).
 
 ```rust
 // my-macro/src/lib.rs
@@ -276,6 +286,5 @@ impl_default_for_enums!(Weight, Underline);
 
 Perfect! We managed to shorten eleven lines of code into just one!
 
-## Conclusion
-
+### Conclusion
 Macros can be very handy. These were examples of some great languages that use them, but there are surely more. Next time you think all is lost, and you must repeat some code, try a macro. It just might work.
