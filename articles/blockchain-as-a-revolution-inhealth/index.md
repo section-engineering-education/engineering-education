@@ -6,7 +6,7 @@
  title: Blockchain as a Revolution in Health
  description: Learn how Blockchain technology can provide a greater value of care and better health outcomes for patients.
  author: jethro-magaji
- date: 2020-08-24T00:00:00-10:00
+ date: 2020-09-14T00:00:00-10:00
  topics: [Blockchain]
  excerpt_separator: <!--more-->
  images:
