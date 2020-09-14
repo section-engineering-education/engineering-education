@@ -71,7 +71,7 @@ There have been several challenges when coordinating and sharing research or cli
 Although Blockchain technology is not fully mature today, it presents numerous opportunities for healthcare. Some features that can be implemented today, but before blockchain can be adopted by organizations nationwide, it must evolve to address potential behavioral, technical, organizational, and economical considerations.
 
 ### Additional Resources:
-[Blockchain application for health care](http://www.reply.com/en/content/healthcare)
-[Blockchain_opportunities for health care_Deloitte US](http://www2.deloitte.com/us/en/blockchainopportunitiesforhealthcare)
+[Blockchain application for Healthcare](http://www.reply.com/en/content/healthcare)
+[Blockchain Opportunities for Healthcare](http://www2.deloitte.com/us/en/blockchainopportunitiesforhealthcare)
 [Blockchain](http://www.wikipedia.com/en/blockchain)
 [How is Blockchain revolutionizing healthcare](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561)
