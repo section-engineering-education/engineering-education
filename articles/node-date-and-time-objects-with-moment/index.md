@@ -466,12 +466,13 @@ Moment is the most popular date library out there, It simplifies your work with 
 What makes moment even more popular, is its [extensive, available and useful plugins](http://momentjs.com/docs/#/plugins/) that will simplify your peculiarities to deal with dates. This article is just a nutshell of how great moment libraries is. It explains only a small part of this library and gives you a taste of moment application scope. Check [moment official docs](http://momentjs.com/docs/) for more.
 
 ## Resources
-[Moment.js official documentaion](https://momentjs.com/docs/)
-[Moment.js Github repository](https://github.com/moment/moment)
-[Moment.js npm](https://www.npmjs.com/package/moment)
-[Moment.js official website](https://momentjs.com/)
-[Time zone database data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-[ISO 8601 standards](https://en.wikipedia.org/wiki/ISO_8601)
-[Webpack](https://webpack.js.org/)
-[date-fns](https://date-fns.org/)
-[i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
+
+-   [Moment.js official documentaion](https://momentjs.com/docs/)
+-   [Moment.js Github repository](https://github.com/moment/moment)
+-   [Moment.js npm](https://www.npmjs.com/package/moment)
+-   [Moment.js official website](https://momentjs.com/)
+-   [Time zone database data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+-   [ISO 8601 standards](https://en.wikipedia.org/wiki/ISO_8601)
+-   [Webpack](https://webpack.js.org/)
+-   [date-fns](https://date-fns.org/)
+-   [i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
