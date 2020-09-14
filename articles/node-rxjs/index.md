@@ -6,7 +6,7 @@ url: /engineering-education/node-rxjs/
 title: Node.js Rxjs
 description: This article shows developers how to use the RxJs library and will also look at the various operators found in the library.
 author: linus-muema
-date: 2020-09-14T00:00:00-14:00
+date: 2020-09-14T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
