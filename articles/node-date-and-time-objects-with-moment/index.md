@@ -387,6 +387,7 @@ Moment has two time zones instances
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-timezone1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 The above moments will have different UTC time because they were created in different timezones.
+
 2. `moment().tz(String)` converts date to provided timezone.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-timezone2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
