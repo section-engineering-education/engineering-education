@@ -35,7 +35,7 @@ A Blockchain can be defined as a continuously growing list of records, or blocks
 ![Healthcare image](/engineering-education/blockchain-as-a-revolution-inhealthcare/Healthcare-img.jpg)
 [*Image Source*:](https://www.gettyimages.com/detail/photo/nurse-and-surgeon-inspecting-screens-in-operating-royalty-free-image/1202320470)
 
-#### Record Keeping
+#### Record Keeping & Tracking
 ![Blockchain image](/engineering-education/blockchain-as-a-revolution-inhealthcare/record-keeping.png)
 [*Image Source:*](https://www.kamkartway.com/beginner-guide-driver-record-keeping/record-keeping-image/)
 
@@ -52,19 +52,18 @@ The use of medical devices such as electronic wearables have been on the rise, w
 ***Drug Supply Chain Tracking***
 According to [Health Research Funding Organization (HRFO)](https://medium.com/ict-market-research-reports/blockchain-technology-in-healthcare-market-e3f9831de63d), over ten to thirty percent of drugs sold in developing countries are counterfeit. In addition, pharmaceutical companies lose about 200 billion dollars annually due to counterfeiting. Blockchain can curb this trend with features like point-by-point, which tracks possibilities and proof of authenticity. This allows users to verify drug authenticity before purchase or consumption.
 
-#### Digital Identity
-***Patient Identity Validation***
+#### Patient & Drug Identity Validation
+***Digital Identity Validation***
 Blockchain can solve the issue of patient identity theft and can reduce the use of fake IDs by impersonators. Since blockchain records are immutable and can verified, this feature can be utilized for patient's identity records and verification, therefore reducing impersonation of patients IDs to purchase medications for drug abuse purpose.
 
-***Drug Identity Validation***
 Drug identity can be validated using blockchain technology. Having transparent information about particular drugs can reduce the amount of counterfeit drugs in circulation.
 
-#### Financial Transactions
-***Direct Healthcare Service Payment***
+#### Direct Healthcare Service Payment
+***Financial Transactions***
 Blockchain technology has been used extensively for financial transactions, with the most famous use case being [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin), and this model can also be transferred to healthcare.
 
-#### Smart Contracts
-***Backing Research & Treatment of Healthcare Data***
+#### Backing Research & Treatment of Healthcare Data
+***Smart Contracts***
 There have been several logistical challenges when coordinating and sharing research or clinical trials since it requires a collaborative effort across many institutions. Which can lead to theft of intellectual property and dishonesty. Using blockchain can change this by enabling users to authenticate their documents, ensuring the proof of existence. Test results, statistics, and quality reports can be shared amongst researchers without any fear of intellectual property theft.
 
 #### Implementation Challenges and Considerations
