@@ -38,7 +38,7 @@ To start pushing, committing, and pulling, you need clone the repository you hav
 
 ### How to clone
 #### Cloning using GitHub desktop
-If you are using the [GitHub desktop app,](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-github-desktop) cloning a repository is easy as pie. To get started, download [GitHub desktop](https://desktop.github.com/) and install into your computer and [authenticate and configure](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/authenticating-to-github) it with your Github.com account.
+If you are using the [GitHub desktop app,](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-github-desktop) cloning a repository is easy as pie. To get started, download [GitHub desktop](https://desktop.github.com/) and install into your computer and [authenticate and configure](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/authenticating-to-github) it with your Github account.
 ![After sign in](/engineering-education/how-to-syn-and-update-a-forked-repo/after-github-signin.png)
 
 To make GitHub desktop work easier, make sure you configure [GitHub desktop with a text editor](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/configuring-a-default-editor) such as [Visual Studio Code](https://code.visualstudio.com/).
