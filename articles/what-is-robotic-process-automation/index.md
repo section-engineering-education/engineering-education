@@ -1,18 +1,31 @@
-# Introduction to Robotic Process Automation
-## What is Robotic Process Automation?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/what-is-robotic-process-automation/
+title: Introduction to Robotic Process Automation
+description: This article describes RPA. It explains how it differs from traditional automation in terms of features and functionality. It also explains the importance of RPA and why we should consider it for enterprises.
+author: judy-nduati
+date: 2020-09-14T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Robotic process automation is technology or software that is used to mimic the actions of a human being who is interacting with digital systems. Computer software or robots are configured to work or imitate how people interact with the systems for business processes.
+  - url: /engineering-education/what-is-robotic-process-automation/hero.jpg
+    alt: DevOps example image developers
+---
+Robotic process automation (RPA) is technology or software that is used to mimic the actions of a human being who is interacting with digital systems. Computer software or robots are configured to work or imitate how people interact with the systems for business processes.
+<!--more-->
+
+### What is Robotic Process Automation?
 
 ### Types of RPA
-
 There are three types of Robotic Process Automation. Attended RPA, which requires minimal human intervention. Unattended RPA does not require human intervention and hybrid RPA which combines attended and unattended RPA. Unattended automation is the most common, It makes work easier by reducing work like completing data processing tasks in the background.
 
 ### Why RPA?
-
-The importance of RPA has increased with time as it outdoes traditional automation. One of the main advantages of RPA is that it is cheaper to automate in the long run because of the benefits realized. RPA does not interrupt the current systems of an organization. It can be employed without disrupting business processes. Benefits are also realized faster as compared to traditional automation or manual labor. Another major advantage of RPA is that it is quite scalable and adapts easily to ever-changing business environments.
+The importance of RPA has increased with time as it outdoes traditional automation. One of the main advantages of RPA is that it is cheaper to automate in the long run because of the benefits realized. RPA does not interrupt the current systems within an organization. It can be employed without disrupting business processes. Benefits are also realized faster as compared to traditional automation or manual labor. Another major advantage of RPA is that it is quite scalable and adapts easily to ever-changing business environments.
 
 ### Features of RPA
-
 RPA functions with no human interaction. Unattended RPA and hybrid RPA are capable of functioning without human interaction. RPA is agile and does not modify or interrupt previous systems and infrastructure.
 
 - RPA requires less time and effort to implement.
@@ -22,16 +35,17 @@ RPA functions with no human interaction. Unattended RPA and hybrid RPA are capab
 - RPA software is computer coded.
 
 ### Automation vs. RPA
-
 Automation, on the other hand, is when repetitive tasks are automated. Automation is when automatic equipment is introduced to business processes. While RPA functions with no human interaction, traditional automation requires minimal human intervention. As mentioned earlier, RPA does not modify or interrupt previous systems and infrastructure. In automation, the existing systems need to be customized. For customization, APIs are required but they are limited. This makes traditional automation complex and difficult as compared to RPA. These APIs are required for the integration of automation and the existing systems. RPA can be integrated with other applications easily and can be configured in a unique way for different users.
 
-Traditional automation is cheaper during the first stages as compared to RPA which is a bit costly. But in the long run, automation becomes more expensive due to maintenance costs. RPA is hence cheaper because it does not include high maintenance costs and also saves time and effort. Implementation of automation takes a longer time than the implementation of RPA. Feasibility tests and system analysis and design is carried out and it takes long periods of time. RPA is process-driven. It focuses on improving and perfecting the processes to improve or maintain value. Because of the process drove software, RPA requires less time and effort to implement. Programming skills are required in traditional automation. Users have to understand syntax and scripting. RPA, on the other hand, does not necessitate knowledge of programming. RPA is of two types, programmable and no code RPA. Programmable RPA requires developers and programmers who code the instructions that govern how the RPA will function. For no-code RPA, users only need to understand the functionality of the system. This is because it includes flow charts. RPA does not require physical machines because users can assign tasks to virtual machines. In traditional automation, programming is key for scalability and parallel execution. Physical machines are a requirement for parallel execution [javatpoint](https://www.javatpoint.com/rpa-vs-traditional-automation).
+Traditional automation is cheaper during the first stages as compared to RPA which is a bit costly. But in the long run, automation becomes more expensive due to maintenance costs. RPA is therefore cheaper because it does not include high maintenance costs and also saves time and effort. Implementation of automation takes a longer time than the implementation of RPA. Feasibility tests, system analyses, and design is carried out and it takes long periods of time.
+
+RPA is process-driven. It focuses on improving and perfecting the processes to improve or maintain value. Because of the process driven software, RPA requires less time and effort to implement. Programming skills are required in traditional automation. Users have to understand syntax and scripting. RPA, on the other hand, does not require knowledge of programming. RPA is of two types, programmable and no code RPA. Programmable RPA requires developers and programmers who code the instructions that governs how the RPA will function. For no-code RPA, users only need to understand the functionality of the system. This is because it includes flow charts. RPA does not require physical machines because users can assign tasks to virtual machines. In traditional automation, programming is key for scalability and parallel execution. Physical machines are a requirement for [parallel execution](https://www.javatpoint.com/rpa-vs-traditional-automation).
 
 ### Benefits of RPA
 
 - Cost
 
-RPA is quite beneficial in terms of cost, in the long run, it does not interrupt business processes and is highly scalable. RPA reduces the cost of processing about 80%. Most businesses have positive returns on their investments in less than a year [uipath](https://www.uipath.com/rpa/robotic-process-automation).
+RPA is quite beneficial in terms of cost, in the long run, it does not interrupt business processes and is highly scalable. RPA reduces the cost of processing about 80%. Most businesses have positive returns on their investments in less [than a year](https://www.uipath.com/rpa/robotic-process-automation).
 
 - Accuracy
 
@@ -42,8 +56,7 @@ RPA involves robots and software. The accuracy level is very high because they a
 They are reliable because they follow instructions and they execute according to standards and regulations. RPA relieves employees from the pressure that comes with the accumulation of tasks and tiredness.
 
 ### RPA software tools
-
-RPA software tools are the software that organizations and enterprises use to acquire RPA services. All these software have different features and provide different services. RPA tools are of two types, programmable and no code RPA. Programmable RPA requires developers and programmers who code the instructions that govern how the RPA will function [ceoworld](https://ceoworld.biz/2019/10/07/what-is-rpa-and-what-organizations-are-using-it-the-most/). Some examples of RPA software tools in 2020 are;
+RPA software tools are the software that organizations and enterprises use to acquire RPA services. All these software have different features and provide different services. RPA tools are of two types, programmable and no code RPA. Programmable RPA requires developers and programmers who code the instructions that govern how the [RPA will function](https://ceoworld.biz/2019/10/07/what-is-rpa-and-what-organizations-are-using-it-the-most/). Some examples of [RPA software tools](https://www.guru99.com/robotics-process-automation-tools.html) in 2020 are;
 
 1. OutSystems
 2. HelpSystems
@@ -56,13 +69,10 @@ RPA software tools are the software that organizations and enterprises use to ac
 9. G1ANT
 10. WorkFusion
 
-[guru99](https://www.guru99.com/robotics-process-automation-tools.html)
-
 ### RPA Services
+The services offered by RPA include; data management, order processing, salaries and wages processing, email processing, connecting to system APIs, filling forms and moving files to folders, reading and writing databases, extracting structured data from documents, and website scraping.
 
-The services offered by RPA include; data management, order processing, salaries and wages processing, email processing, Connecting to system APIs, filling forms and moving files to folders, Read and write the database Extracting structured data from documents, and website scraping.
-
-### Organizations using RPA.
+### Organizations using RPA
 
 Organizations using RPA are
 
