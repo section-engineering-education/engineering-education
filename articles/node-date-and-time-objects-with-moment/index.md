@@ -4,7 +4,7 @@ Date is one of the critical development functions that developers come across in
 
 Moment is a stand-alone open-source JavaScript framework wrapper for date objects that eliminates native JavaScript date objects, which are cumbersome to use. Moment makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. It comes with a bunch of plugins with useful features such as short date formatter, fiscal quarters, timers, twitter dates, ISO calendars,Google calender API, date ranges, time zones support, date calculations, multi-languages support, localized times, date manipulation functionalities and many other special date utilities.
 
-## Getting started
+## [Getting started](https://momentjs.com/)
 
 Moment is a free to use tool that helps you to tackle date and time problems. To [use Moment](https://momentjs.com/docs/#/use-it/) with Node.js, install the module using the command `npm install moment`. Then simply use `require ()` in your application as in the following example:
 ```js
@@ -334,7 +334,7 @@ ex 2 timezone moment-timezone identifier
 var moment = require('moment-timezone');
 var m1 = moment.tz("2019-11-18 11:55", "Africa/Cairo");
 var m2 = moment.tz("September 23rd 2020 10pm", "MMM Do YYYY hA", "Africa/Cairo");
-var m3 = moment.tz(1342398714100, "Africa/Cairo");
+var m3 = moment.tz(1592398714100, "Africa/Cairo");
 console.log(m1.format());
 console.log(m2.format());
 console.log(m3.format());
@@ -383,42 +383,14 @@ module.exports = {
 
 Moment has two time zones instances
 1. `moment.tz(..., String)` parses date in a given timezone.
-```js
-var moment = require('moment-timezone');
-var m1 = moment.tz("2020-08-10 10:50", "Asia/Taipei");
-var m2 = moment.tz("2020-08-10 10:50", "America/Toronto");
-var m3 = moment.tz("2020-08-10 10:50", "Europe/Vatican");
-var m4 = moment.tz("2020-08-10 10:50", "Atlantic/Cape_Verde");
+2. 
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-timezone1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-console.log(m1.format());
-console.log(m2.format());
-console.log(m3.format());
-console.log(m4.format());
-
-console.log(m1.utc().format());
-console.log(m2.utc().format());
-console.log(m3.utc().format());
-console.log(m4.utc().format());
-```
 The above moments will have different UTC time because they were created in different timezones.
 2. `moment().tz(String)` converts date to provided timezone.
-```js
-var moment = require('moment-timezone');
-var m1 = moment.utc("2020-08-10 10:50").utc("Asia/Beirut");
-var m2 = moment.utc("2020-08-10 10:50").utc("Europe/Paris");
-var m3 = moment.utc("2020-08-10 10:50").utc("Pacific/Fiji");
-var m4  = moment.utc("2020-08-10 10:50").utc("Indian/Reunion");
 
-console.log(m1.format());
-console.log(m2.format());
-console.log(m3.format());
-console.log(m4.format());
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-timezone2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-console.log(m1.utc().format());
-console.log(m2.utc().format());
-console.log(m3.utc().format());
-console.log(m4.utc().format());
-```
 The above moments will have the same UTC time because they were created in the same time zones (default time zone). This moment creates a `moment.utc('2020-08-10 10:50)` as a UTC object and then change its time to specified (default) time zone
 
 ## [Moment.js international language support](https://momentjs.com/docs/#/i18n/loading-into-nodejs/)
