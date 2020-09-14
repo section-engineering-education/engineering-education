@@ -165,7 +165,7 @@ Use switch to base link.
 
 If the switch to base is not available, use the dropdown to manually select the repositories to compare. When the comparing selections are correctly selected, you will be able to see the commits that are not updated to your fork.
 
-![repo comparision](/engineering-education/how-to-syn-and-update-a-forked-repo/repo-comparison.png)
+![repo comparison](/engineering-education/how-to-syn-and-update-a-forked-repo/repo-comparison.png)
 
 Continue to the green button create pull request.
 
