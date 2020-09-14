@@ -55,7 +55,7 @@ Blockchain technology has been used extensively for financial transactions, with
 
 #### Backing Research & Treatment of Healthcare Data
 ***Smart Contracts***
-There have been several logistical challenges when coordinating and sharing research or clinical trials since it requires a collaborative effort across many institutions. Which can lead to theft of intellectual property and dishonesty. Using blockchain can change this by enabling users to authenticate their documents, ensuring the proof of existence. Test results, statistics, and quality reports can be shared amongst researchers without any fear of intellectual property theft.
+There have been several logistical challenges when coordinating and sharing research or clinical trials since it requires a collaborative effort across many institutions. Which can lead to theft of intellectual property and dishonesty. Using blockchain can change this by enabling users to the ability to authenticate their documents, ensuring the proof of existence. Test results, statistics, and quality reports can be shared amongst researchers without any fear of intellectual property theft.
 
 #### Implementation Challenges and Considerations
 Although Blockchain technology is not fully mature today, it presents numerous opportunities for healthcare. Some features that can be implemented today, but before blockchain can be adopted by organizations nationwide, it must evolve to address potential behavioral, technical, organizational, and economical considerations.
