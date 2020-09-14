@@ -6,7 +6,7 @@ url: /engineering-education/macros/
 title: Using Macros - C, Nim, and Rust
 description: DRY is a very important concept in software engineering. Sometimes, it seems like some repetition is required, but it isn't. Many languages have macros. Today we'll show you how to use them in C, Nim, and Rust.
 author: mike-white
-date: 2020-09-14T00:00:00-10:00
+date: 2020-09-14T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -132,7 +132,7 @@ abcdef
 ```
 
 ### Rust Macros
-Rust has a balance between simplicity and complexity. The Rust developers don't give the programmer control of the Abstract Syntax Tree. To do that, they'd need to stabilize it. Their argument is that they may want to add something, like the handy `?` operator. Stabilizing the AST would prevent them from doing that.
+Rust has a balance between simplicity and complexity. The Rust developers don't give the programmer control of the Abstract Syntax Tree (AST). To do that, they'd need to stabilize it. Their argument is that they may want to add something, like the handy `?` operator. Stabilizing the AST would prevent them from doing that.
 
 There are a few types of Rust macros. There's `derive` macros, which are very useful. They automatically implement traits (known in other languages as interfaces).
 
@@ -187,7 +187,7 @@ enum Underline {
 }
 ```
 
-You want to implement the Default trait for these, but that doesn't work on enums. So you want to use a macro that uses `Enum::Default` as the default variant. We can make this conveniently using `macro_rules!`
+You want to implement the default trait for these, but that doesn't work on enums. So you want to use a macro that uses `Enum::Default` as the default variant. We can make this conveniently using `macro_rules!`
 
 ```rust
 macro_rules! impl_default_for_enum {
@@ -287,4 +287,4 @@ impl_default_for_enums!(Weight, Underline);
 Perfect! We managed to shorten eleven lines of code into just one!
 
 ### Conclusion
-Macros can be very handy. These were examples of some great languages that use them, but there are surely more. Next time you think all is lost, and you must repeat some code, try a macro. It just might work.
+Macros can be very handy. These were a few examples of some great languages that use them, but there are surely more. Next time you think all is lost, and you must repeat some code, try a macro. It just might work.
