@@ -4,7 +4,7 @@
  published: true
  url: /engineering-education/blockchain-as-a-revolution-in-health/
  title: Blockchain as a Revolution in Health
- description: Learn how Blockchain technology can provide a greater value of care and better health outcomes for patients.
+ description: Learn how Blockchain technology can provide a greater value of care and better health outcomes for patients and the healthcare industry as a whole.
  author: jethro-magaji
  date: 2020-09-14T00:00:00-10:00
  topics: [Blockchain]
@@ -24,19 +24,19 @@ Blockchain represents great promise for stakeholders in [healthcare fields](http
 ### What is Blockchain?
 A Blockchain can be defined as a continuously growing list of records, or blocks, which use cryptography to link and [secure the individual blocks](https://nodemads.net/service/blockchaineducation). It can also be described as "an open, distributed ledger where transaction records can be verified between two parties and stored permanently," according to Nodemads. Blockchain is a distributed computing system which is secured by design. This makes Blockchain suitable for the performing task such as recording medical records and other management activities, including transaction processing, documenting provenance, voting, identity management, and food traceability.
 
-### Advantages of Blockchain in Healthcare
+### Advantages of Blockchain
 ***Provenance & Increased Data Integrity:*** [Transactions in the Blockchain network are immutable](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561). This means that once a transaction is approved, it cannot be altered or deleted because transactions are shared across the network and securely recorded using cryptography. The data integrity is safe, and time-stamp can be verified by any user. The original author of a transaction in a blockchain network is recorded and remains accessible for the entire life of the blockchain.
 
 ***Security:*** Transactions on the blockchain network must first be verified by other blockchain users before they are recorded. Once verified, the transactions are encrypted and linked to a previous transaction using cryptography. The blockchain is virtually impossible to hack the because data is stored across a [network of devices](https://medium.com/pikciochain/how-is-blockchain-revolutionizing-healthcare-7f6d2a48e561).
 
 ***Transparency:*** Before an existing version is changed, everyone in the blockchain network must agree since the records are shared. An overhaul of the whole network would be required to change a single transaction on a blockchain network, making the data on the network transparent, consistent and largely accurate. All participants can access any transaction on the blockchain as long as they have a private key, as every transaction is decentralized. This makes it easier to share information across multiple platforms.
 
-#### Implementing Blockchain in Healthcare
+#### Implementing these Advantages in Healthcare
 ![Healthcare image](/engineering-education/blockchain-as-a-revolution-inhealthcare/Healthcare-img.jpg)
 [*Image Source*:](https://www.gettyimages.com/detail/photo/nurse-and-surgeon-inspecting-screens-in-operating-royalty-free-image/1202320470)
 
 #### Record Keeping
-![Blockchain img](/engineering-education/blockchain-as-a-revolution-inhealthcare/record-keeping.png)
+![Blockchain image](/engineering-education/blockchain-as-a-revolution-inhealthcare/record-keeping.png)
 [*Image Source:*](https://www.kamkartway.com/beginner-guide-driver-record-keeping/record-keeping-image/)
 
 ***Medical History Tracking***
