@@ -16,9 +16,6 @@
 ---
 
 ### Blockchain as a Revolution in Healthcare
-![Blockchain image](/engineering-education/blockchain-as-a-revolution-inhealthcare/Blockchain-img.jpg)
-[*Image Source*:](https://www.gettyimages.com/detail/illustration/digital-room-with-padlock-and-word-royalty-free-illustration/748345923?adppopup=true)
-
 Blockchain represents great promise for stakeholders in [healthcare fields](https://nimbus-t.com/blockchain-opportunities-for-health-care-deloitte-us). Using this technology has the potential to increase the standard of care through its applications in patient data management, drug distribution/prescription etc. In the long run, using a [blockchain network nationwide](https://www.parathon.com/understanding-blockchain-in-healthcare-and-how-it-is-beneficial-to-providers.html) for electronic medical records (EMR) could help achieve better health outcomes for patients and improve efficiencies in healthcare delivery.
 
 ### What is Blockchain?
@@ -31,14 +28,8 @@ A Blockchain can be defined as a continuously growing list of records, or blocks
 
 ***Transparency:*** Before an existing version is changed, everyone in the blockchain network must agree since the records are shared. An overhaul of the whole network would be required to change a single transaction on a blockchain network, making the data on the network transparent, consistent and largely accurate. All participants can access any transaction on the blockchain as long as they have a private key, as every transaction is decentralized. This makes it easier to share information across multiple platforms.
 
-#### Implementing these Advantages in Healthcare
-![Healthcare image](/engineering-education/blockchain-as-a-revolution-inhealthcare/Healthcare-img.jpg)
-[*Image Source*:](https://www.gettyimages.com/detail/photo/nurse-and-surgeon-inspecting-screens-in-operating-royalty-free-image/1202320470)
-
+### Implementing these Advantages in Healthcare
 #### Record Keeping & Tracking
-![Blockchain image](/engineering-education/blockchain-as-a-revolution-inhealthcare/record-keeping.png)
-[*Image Source:*](https://www.kamkartway.com/beginner-guide-driver-record-keeping/record-keeping-image/)
-
 ***Medical History Tracking***
 With Blockchain, patients' treatment history can be tracked anywhere and at any time with no ambiguity, therefore providing health practitioners a better context of each patient.
 
