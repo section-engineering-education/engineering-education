@@ -4,19 +4,20 @@ status: publish
 published: true
 url: /engineering-education/node-rxjs/
 title: Node.js Rxjs
-description: This article shows developers how to use the RxJs library and some of its operators
+description: This article shows developers how to use the RxJs library and will also look at the various operators found in the library.
 author: linus-muema
-date: 2020-09-08T00:00:00-14:00
+date: 2020-09-14T00:00:00-14:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education//node-rxjs/hero.jpg
-    alt: node authentication image example key
+    alt: RxJs image computer
 ---
-ReactiveX stands for *Reactive Extensions*. It is a collection of projects done by the ReactiveX community. They bring asynchronous programming into different programming languages and platforms. Their observable patterns also helps in making the code smaller(less) and easier to read.
-They also have a well-managed error handling mechanism. When compared to the old `try/catch` method, it performs better. Some of these projects include [RxJava](https://github.com/ReactiveX/RxJava), [RxJs](https://github.com/ReactiveX/rxjs), [RxSwift](https://github.com/ReactiveX/RxSwift), etc.
+ReactiveX stands for *Reactive Extensions*. It is a collection of projects done by the ReactiveX community. They bring asynchronous programming into different programming languages and platforms. Their observable patterns also help in making the code smaller (less) and easier to read.
 <!--more-->
+
+They also have a well-managed error handling mechanism. When compared to the old `try/catch` method, it performs better. Some of these projects include [RxJava](https://github.com/ReactiveX/RxJava), [RxJs](https://github.com/ReactiveX/rxjs), [RxSwift](https://github.com/ReactiveX/RxSwift), etc.
 
 Companies like GitHub, Netflix, and Microsoft use these projects.
 
@@ -49,7 +50,7 @@ From the code above, we import the Observable module. We then create the `Observ
 
 ![observer](/engineering-education/node-rxjs/rx-observer.png)
 
-Another way to create an observable is by using the `innterval` operator. This creates an observable that emits values after a specified duration.
+Another way to create an observable is by using the `interval` operator. This creates an observable that emits values after a specified duration.
 
 ```typescript
 import { interval } from 'rxjs';
@@ -144,3 +145,6 @@ Output:
 ```
 
 These are some of the RxJs operators that you can use on your observables. There are many more operators with different functions. You can get more info from the [official documentation](https://github.com/ReactiveX/rxjs) or use [learnrxjs.io](https://www.learnrxjs.io/). The code samples can be found on [Github](https://github.com/LinusMuema/node-rxjs). Feel free to raise a PR or an issue.
+
+---
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
