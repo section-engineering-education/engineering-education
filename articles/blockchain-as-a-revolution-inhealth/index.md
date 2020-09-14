@@ -3,7 +3,7 @@
  status: publish
  published: true
  url: /engineering-education/blockchain-as-a-revolution-in-health/
- title: Blockchain as a Revolution in Health
+ title: Blockchain as a Revolution in Healthcare
  description: Learn how Blockchain technology can provide a greater value of care and better health outcomes for patients and the healthcare industry as a whole.
  author: jethro-magaji
  date: 2020-09-14T00:00:00-10:00
