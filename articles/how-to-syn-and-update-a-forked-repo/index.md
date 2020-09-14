@@ -81,11 +81,11 @@ In this article, we shall use SSH URL protocol using [Git Bash](https://docs.git
 **NOTE**: remember to press enter after any following
 
 ```bash
-git config --global user.name "you github account username"
+git config --global user.name "your github account username"
 ```
 
 ```bash
-git config --global user.email "you github account email"
+git config --global user.email "your github account email"
 ```
 
 Run
