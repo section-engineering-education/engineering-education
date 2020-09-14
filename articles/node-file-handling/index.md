@@ -23,7 +23,7 @@ For file handling, Node.js offers a module called `fs` (fileSystem). To use the 
 const fileSystem = require('fs')
 ```
 
-The module offers functions to perform basic [CRUD](https://stackify.com/what-are-crud-operations/)(Create, Read, Update, Delete) operations. Let us look at some of the prominent functions used regularly during development. `readFile`, `readFileSync`, `writeFile`, `writeFileSync` are the main functions that we will be looking at for this article. Some of the functionalities the `fs` module provides are given below.
+The module offers functions to perform basic [CRUD](https://stackify.com/what-are-crud-operations/) (Create, Read, Update, Delete) operations. Let us look at some of the prominent functions used regularly during development. `readFile`, `readFileSync`, `writeFile`, `writeFileSync` are the main functions that we will be looking at for this article. Some of the functionalities the `fs` module provides are given below.
 
 1. **unlinkSync**: unlinkSync is used to delete files synchronously.
    ```js
