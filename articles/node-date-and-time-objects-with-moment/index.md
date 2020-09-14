@@ -121,7 +121,7 @@ const timetonow = moment([2020, 0, 29]).toNow();
 const timetonow1= moment([2020, 0, 29]).toNow(true);// remove prefix "in"
 console.log(timetonow,timetonow1)
 ```
-[Time to x](https://momentjs.com/docs/#/displaying/to/)
+[**Time to x**](https://momentjs.com/docs/#/displaying/to/)
 
 Displays dates other than now
 ```js
@@ -136,7 +136,7 @@ const moment = require('moment');
 
 Another special aspect of moment is that it allows you to manipulate dates the way you want the to be displayed. You can add and subtract dates between years, months, days, time, seconds using `add ()` and `subtract()` methods. The following examples show how years, days and weeks can be added or subtracted to and from the current date.
 
-[**addition**](https://momentjs.com/docs/#/manipulating/add/)
+[**Addition**](https://momentjs.com/docs/#/manipulating/add/)
 
 To add time with moment object, parse the time you want to add as the key and the amounts you want to add (years, months, weeks or days)
 ```js
@@ -164,6 +164,7 @@ moment().add(7, 'd');
 This example will return moment date object; you can format the date to be human readable.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-add?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 
 [**Subtraction**](https://momentjs.com/docs/#/manipulating/subtract/)
 
@@ -211,12 +212,13 @@ console.log(moment(
     "I feel good to find section.io/engineering-education to be very resourceful on 2020 ",
      "YYYY-MM-DD" ,true).isValid());
 ```
-[**Detecting invalid/valid dates**](https://www.fwait.com/how-to-validate-date-in-javascript/)
+### [Detecting invalid/valid dates](https://www.fwait.com/how-to-validate-date-in-javascript/)
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-detect-invalid?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### Correcting invalid dates
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-correct-invalid?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-Commonly used flags used when an invalid date is parsed
+
+### Commonly used flags for invalid date.
 
 -   **Overflow** is used when dates have an overflow example. Using the 13th month, 32nd day, 367th day of the year, or 29th day in the month of February in a leap year is invalid and is considered as an overflow moment.
 -   **invalidMonth** applies when an invalid month is used. Example jarnuarry, farbruary and MMMMM are invalid dates.
@@ -255,7 +257,7 @@ var myduration = moment.duration({
 ```
 **Examples**
 
-Ex1 create a duration clone (mutable durations) allows you to get a snapshot of time as some points
+Ex1 [Create a duration clone](https://momentjs.com/docs/#/durations/clone/) (mutable durations) allows you to get a snapshot of time as some points
 ```js
 var moment = require('moment');
 var duration1 = moment.duration();
@@ -264,7 +266,7 @@ console.log(duration1.add(1, 'second'));
 console.log(duration1.asMilliseconds() !== duration2.asMilliseconds());
 console.log(duration2);
 ```
-Ex2 [humanize](https://momentjs.com/docs/#/durations/humanize/) is used to display length of time with duration suffix. Humanize returns a string that describes a duration.
+Ex2 [Humanize](https://momentjs.com/docs/#/durations/humanize/) is used to display length of time with duration suffix. Humanize returns a string that describes a duration.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-durations?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -314,6 +316,7 @@ Moment comparisons take a second argument such as
 -   Parsing hour will check hour
 
 **Example**
+
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-querries?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## [Moment time zone](https://momentjscom.readthedocs.io/en/latest/moment-timezone/01-using-timezones/00-intro/)
@@ -439,9 +442,10 @@ moment.locale('en-my-settings', {
 **Example**
 
 ### Using French as a moment locale in Node.js
+
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-locale?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-## [date-fns Modern date utility libraries](https://date-fns.org/) (a light-weight date library)
+## [date-fns Modern date utility library](https://date-fns.org/) (a light-weight date library)
 
 date-fns is a modern date library with a collection of functions that allows Javascript developers to work with date values. Unlike moment, which is object oriented, date-fns is divided into many small and independent funtions. date-fns allows you to import fuctions, only what you need, unlike moment where you create a moment instance to run funtions from it.
 
