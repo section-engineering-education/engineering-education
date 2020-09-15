@@ -37,7 +37,7 @@ Additionally, these functions can be put into the same class by categorizing the
 
 This makes data processing easier since we can use the functions in the class preprocess for this purpose.
 
-Scripts are also better than Jupyter Notebook because they encourage experimentation. Say you want to experiment with a different method to preprocess data. You can remove or add a function, as shown below, without being worried about breaking the code. Furthermore, even if you happen to break the code, you would know exactly where to fix it.
+Scripts are also better than Jupyter Notebook because they encourage experimentation. Lets say you want to experiment with a different method to preprocess data. You can remove or add a function, as shown below, without being worried about breaking the code. Furthermore, even if you happen to break the code, you would know exactly where to fix it.
 
 ![Experiments in Script](/engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/experiments.png)
 
