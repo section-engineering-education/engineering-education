@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/
 title: Why Data Scientists Need to Move from Jupyter Notebooks to Scripts
 description: Jupyter Notebook is a standard tool in data science because of its ability to allow users to plot and explore data.
-author: judy-nduati
+author: 
 date: 2020-09-15T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
