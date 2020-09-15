@@ -6,7 +6,7 @@ url: /engineering-education/binary-tree-data-structure-python/
 title: Using the Binary Tree Data Structure in Python
 description: Binary Trees are non-linear data structures that are used for lookups and data organization. This article explores ways to implement and use the binary tree data structure in Python.
 author: saiharsha-balasubramaniam
-date: 2020-09-11T00:00:00-12:00
+date: 2020-09-15T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,19 +14,19 @@ images:
     alt: binary trees
 ---
 
-A Binary Tree is a non-linear data structure that is used for searching and data organization. A binary tree is comprised of nodes. Each node a data component, a left child and a right child. Let us dive into the concepts related to trees and implement them in the Python programming language.
+A Binary Tree is a non-linear data structure that is used for searching and data organization. A binary tree is comprised of nodes. Each node is a data component, a left child and a right child. Let us dive into the concepts related to trees and implement them in the Python programming language.
 
 For more background on the different types of data structures in Python, check out the following articles:
 
-- [Introduction to Data Structures](https://www.section.io/engineering-education/data-structures-python-part-1/)
-- [List](https://www.section.io/engineering-education/list-data-structure-python/)
-- [Stack](https://www.section.io/engineering-education/stack-data-structure-python/)
-- [Queue](https://www.section.io/engineering-education/queue-data-structure-python/)
-- [Linked Lists](https://www.section.io/engineering-education/linked-list-data-structure-python/)
+- [Introduction to Data Structures](/engineering-education/data-structures-python-part-1/)
+- [List](/engineering-education/list-data-structure-python/)
+- [Stack](/engineering-education/stack-data-structure-python/)
+- [Queue](/engineering-education/queue-data-structure-python/)
+- [Linked Lists](/engineering-education/linked-list-data-structure-python/)
 
-_Note: Prerequisites -- Make sure you have basic Python knowledge before diving into this article. It also might be a good idea to check out some linear data structures. (links are given above)_
+*Note: Prerequisites -- Make sure you have basic Python knowledge before diving into this article. It also might be a good idea to check out some linear data structures. (links are given above)*
 
-## Table of Contents
+### Table of Contents
 
 - [Binary Trees: Introduction](#binary-trees:-introduction)
 - [Applications of Binary Trees](#applications-of-binary-trees)
@@ -34,10 +34,10 @@ _Note: Prerequisites -- Make sure you have basic Python knowledge before diving 
 - [Practice Binary Trees](#practice-binary-trees)
 - [Conclusion](#conclusion)
 
-## Binary Trees: Introduction
+### Binary Trees: Introduction
 
 ![Binary Tree Diagram](/engineering-education/binary-tree-data-structure-python/binarytree.png)<br>
-_Figure: Binary Trees ([Source](https://www.studytonight.com/data-structures/introduction-to-binary-trees))_
+*Figure: Binary Trees* [Source](https://www.studytonight.com/data-structures/introduction-to-binary-trees)
 
 A binary tree **node** consists of the following components:
 
@@ -54,8 +54,7 @@ There are some key terminologies that are to be known related to a binary tree.
 - **Parent** -- The parent of a node is the node that is one level upward to the node.
 - **Child** -- The children of a node are the nodes that are one level downward to the node.
 
-## Applications of Binary Trees
-
+### Applications of Binary Trees
 - A binary tree is a hierarchical data structure. A file system is organized in the form of a tree.
 
 - Trees can be used for efficient searching, when the elements are organized with some order.
@@ -66,9 +65,9 @@ There are some key terminologies that are to be known related to a binary tree.
 
 - Trees are used to efficiently index databases.
 
-## Implementing a Binary Tree
+### Implementing a Binary Tree
 
-### Initialize a Node Class
+#### Initialize a Node Class
 
 Let us first define the Node class.
 
@@ -109,7 +108,6 @@ root.right = Node(89) # Setting the right child of the root to 89
 ```
 
 ### Traversals
-
 Since a binary tree is a non-linear data structure, there is more than one way to traverse through the tree data. Let us look at the various types of traversals in a binary tree.
 
 - [Inorder Traveral](#inorder-traversal)
@@ -118,7 +116,7 @@ Since a binary tree is a non-linear data structure, there is more than one way t
 
 #### Inorder Traversal
 
-In an inorder traversal, the left child is visited first, followed by the right child, followed by the parent node.
+In an inorder traversal, the left child is visited first, followed by the right child, then followed by the parent node.
 
 ```python
 def inorder(node):
@@ -143,8 +141,7 @@ def inorder(node):
 ```
 
 #### Preorder Traversal
-
-In a preorder traversal, the root node is visited first, followed by the left child, followed by the right child.
+In a preorder traversal, the root node is visited first, followed by the left child, then followed by the right child.
 
 ```python
 def preorder(node):
@@ -169,8 +166,7 @@ def preorder(node):
 ```
 
 #### Postorder Traversal
-
-In a postorder traversal, the left child is visited first, followed by the right child, followed by the root node.
+In a postorder traversal, the left child is visited first, followed by the right child, then followed by the root node.
 
 ```python
 def postorder(node):
@@ -194,9 +190,8 @@ def postorder(node):
 # Postorder traversal: 20 45 34 56 54 89 10
 ```
 
-## Practice Binary Trees
-
-Once you have understood the core concepts of a binary tree, practice the problem sets given below to strengthen your knowledge on trees.
+### Practice Binary Trees
+Once you have understood the core concepts of a binary tree, practice the problem sets given below to strengthen and test your knowledge on trees.
 
 - Flatten Binary Tree to Linked List - [LeetCode](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)
 
@@ -206,6 +201,5 @@ Once you have understood the core concepts of a binary tree, practice the proble
 
 - Binary Trees - [Carnegie Mellon University](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
 
-## Conclusion
-
-Implementing a binary tree in python is pretty simple, as we saw in this article. Binary Trees are extensively used in the applications and software and having a strong knowledge on these would give an edge in interviews.
+### Conclusion
+Implementing a binary tree in python can be pretty simple, as we saw with the examples above in this article. Binary Trees are extensively used in the applications and software and having a strong knowledge on these would give an edge in interviews.
