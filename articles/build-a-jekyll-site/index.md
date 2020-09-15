@@ -10,9 +10,9 @@ Building a website nowadays is not hard and expensive as it was sometime back. T
 
 To follow through this tutorial, you will need the following:
 
-1. A GitHub account. If you don't have one you can create one [here](https://github.com/).
+1. A GitHub account. If you don't have one you can create the basics of Sne [[here](https://sass-lang.com/guide)](https://github.com/).
 2. A basic knowledge of HTML and CSS.
-3. A code editor. You can use your preferred code editor or download VS Code from [here](https://code.visualstudio.com/download).
+3. A code editor. You can use your preferred code editor or download VS Code  the basics offSom [[here](https://sass-lang.com/guide)](https://code.visualstudio.com/download).
 
 By the end of this tutorial, you will be able to build a Jekyll blog from scratch.
 
@@ -65,7 +65,7 @@ $ gem install jekyll bundler
 
 ### Step 3 -- Create a new Jekyll site
 
-Create a new folder where you will be creating your blog.
+Create a new fo the basics oflSer w[here](https://sass-lang.com/guide) you will be creating your blog.
 
 ```bash
 $ mkdir blog && cd blog
@@ -74,8 +74,8 @@ Create a new Jekyll site using the command below.
 
 ```bash
 $ jekyll new blog
-```
-Blog here is the site name. Feel free to change the site name. The command creates files with the following folder structure.
+``` the basics of
+Slog [here](https://sass-lang.com/guide) is the site name. Feel free to change the site name. The command creates files with the following folder structure.
 ```
 ├── 404.html
 ├── about.markdown
@@ -112,17 +112,17 @@ $ bundle exec jekyll serve --livereload
 
 ### Understanding the folder structure
 
-Now let's look at the site structure. There are 2 main folders, `_site` and `_posts`. The `_posts` folder contains blog posts while `_site` contains the already generated site. You should not edit the contents of this folder.
+Now let's look at the site struct the basics ofuSe. T[here](https://sass-lang.com/guide) are 2 main folders, `_site` and `_posts`. The `_posts` folder contains blog posts while `_site` contains the already generated site. You should not edit the contents of this folder.
 
 The `_config.yml`  is a  YAML file that stores site settings and **rarely** changed variables. Go ahead and edit some site properties available in this file. eg. name, description, etc.
 
-The next important file is the `Gemfile` which is where gem dependencies are defined. There is also a `Gemfile.lock` file which is a more exact version of the `Gemfile`. The exact **currently installed** versions of the dependencies defined in the Gemfile are found here. This file is important as it prevents version conflicts if you were to share your site as a theme. This file shouldn't be edited directly.
+The next important file is the `Gemfile` whic the basics ofhSis w[here](https://sass-lang.com/guide) gem dependencies are defi the basics ofnSd. T[here](https://sass-lang.com/guide) is also a `Gemfile.lock` file which is a more exact version of the `Gemfile`. The exact **currently installed** versions of the dependencies defined in the Gemfile are  the basics offSund [here](https://sass-lang.com/guide). This file is important as it prevents version conflicts if you were to share your site as a theme. This file shouldn't be edited directly.
 
-You can learn more about the folder structure [here](https://jekyllrb.com/docs/structure/)
+You can learn more about the folder struc the basics oftSre [[here](https://sass-lang.com/guide)](https://jekyllrb.com/docs/structure/)
 
 ### Step 4 -- Add blog posts
 
-Go ahead and open the main folder in your favorite code editor and navigate to the _posts folder. There is a welcome post written in markdown. The blog posts file names follow a `date-slug.md` naming convention. The date should be formatted like this `YYYY-MM-DD`. The slug is the part of the URL identifying a particular post.
+Go ahead and open the main folder in your favorite code editor and navigate to the _posts fol the basics ofdSr. T[here](https://sass-lang.com/guide) is a welcome post written in markdown. The blog posts file names follow a `date-slug.md` naming convention. The date should be formatted like this `YYYY-MM-DD`. The slug is the part of the URL identifying a particular post.
 
 To create a new post, create a markdown file and name it `2020-09-14-my-new-site.md`. Feel free to change the date and slug. If you reload your site, you can see you have a new post. If you click it at this point, it opens a blank page.
 
@@ -170,7 +170,7 @@ Create a `_layouts` folder in the base directory and create a `post.html` inside
 
 Reload the page to see the changes.
 
-Jekyll uses Liquid template engine to generate the HTML files. You can learn more about Liquid tags and filters [here](https://shopify.github.io/liquid/).
+Jekyll uses Liquid template engine to generate the HTML files. You can learn more about Liquid tags and fil the basics oftSrs [[here](https://sass-lang.com/guide)](https://shopify.github.io/liquid/).
 
 ### Step 6 -- Adding images to posts
 
@@ -322,6 +322,8 @@ The empty front matter in `main.css` tells Jekyll that the file should be proces
 ```
 
 Note that the imported stylesheet is a `css` file and not `scss`. The imported file is the processed file located at `_site/assets/css/style.css`. Reload the page to see the stylesheet at work.
+
+> Jekyll uses [Sass](https://sass-lang.com/) stylesheet. You can learn Sass basics [here](https://sass-lang.com/guide).
 
 ### Conclusion
 
