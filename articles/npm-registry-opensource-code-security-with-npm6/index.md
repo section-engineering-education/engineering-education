@@ -30,6 +30,7 @@ On [September 29th, 2019](https://blog.npmjs.org/post/615388323067854848/so-long
 On [June 2019](https://twitter.com/npmjs/status/1135968692062130176), NPM crossed a million-libraries mark. With over 1.3 million libraries currently available, NPM registry is now the largest single collection of open source libraries in the world with more than 12 million developers.
 
 On [April 23, 2018](https://twitter.com/seldo/status/988477780441481217), NPM users downloaded five billion packages within the last 7 days of that date. On this day 4 years ago, that figure was 50 million, this means 10,000% growth. The average IP downloads were 2200 packages per month.
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/weekly-downloads.jpg)
 
 [*Image Source*](https://twitter.com/seldo/status/988477780441481217)
@@ -37,6 +38,7 @@ On [April 23, 2018](https://twitter.com/seldo/status/988477780441481217), NPM us
 Up to now, NPM has recorded tremendous growth with over 20 billion average weekly downloads. As am writing this article, the NPM registry recorded 88,820,279,735 libraries downloads last month. NPM registry is now serving around 125 billion requests at a whopping [6 Petabytes per month](https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages).
 
 These statistical testimonies explains the resilience and commitment of NPM to keep the world's largest community safe by building a chain of fast reliable tools to ensure every JavaScript line of code you write as well as the open-source code you use is safe before you go live.
+
 ![](/engineering-education/npm-registry-opensource-code-security-with-npm6/popular-languages.PNG)
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2018#technology-_-programming-scripting-and-markup-languages)
