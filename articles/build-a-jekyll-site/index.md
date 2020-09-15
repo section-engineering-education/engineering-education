@@ -241,7 +241,7 @@ And then include your navbar at the top of your post layout file.
 
 Save the files and reload the page to see the changes. The simple navbar in the `navbar.html` file will now be shown in each file using the post layout. You can add the footer the same way.
 
-### Step 8 -- Adding custom styling to your posts
+### Step 8 -- Adding custom styling to your blog
 
 Up to this stage, you are using the default `minima` theme provided by Jekyll. To style the site from scratch, delete the `theme` property in `_config.yml`.
 
