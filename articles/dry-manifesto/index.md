@@ -1,14 +1,27 @@
-# A Something Sort Of Like a DRY-ism-ist Manifesto
-
-Points to whoever can figure out which [Slate Star Codex](https://slatestarcodex.com/) article I'm referencing.
-
 ---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/dry-manifesto/
+title: A Something Sort Of Like a DRY-ism-ist Manifesto
+description: DRY is a very important part of software engineering. Sometimes it seems like you must repeat code even when you don't have to. This tutorial will show you how, using functions, generics, and inheritance.
+author: mike-white
+date: 2020-09-15T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Imagine you're a detective, perhaps in [the midst of Victorian-era London](https://en.wikipedia.org/wiki/Sherlock_Holmes). You're at your apartment at 112Y Caker Street, Seoul. Your plucky assistant, Blatson, immediately has an idea:
+  - url: /engineering-education/dry-manifesto/hero.jpg
+    alt: DRY manifesto example image 
+---
+Imagine you are a detective, perhaps in [the midst of Victorian-era London](https://en.wikipedia.org/wiki/Sherlock_Holmes). You are at your apartment at 112Y Caker Street, Seoul. Your plucky assistant, Blatson, immediately has an idea:
+<!--more-->
+### DRY Manifesto
+>Points to whoever can figure out which [Slate Star Codex](https://slatestarcodex.com/) article I'm referencing.
 
 "It seems like the victim had tuberculosis. It's likely that the murderer caught it as well. We need to find anyone who has tuberculosis."
 
-"Right," you reply. You start looking through your [casebook](https://en.wikipedia.org/wiki/Sherlock_Holmes_(video_game_series)#Gameplay). It's filled with notes of evidence, places, tasks, and dialogue. You look through your casebook, and see if you can find anything that would show illness.
+"Right," you reply. You start looking through your [casebook](https://en.wikipedia.org/wiki/Sherlock_Holmes). It's filled with notes of evidence, places, tasks, and dialogue. You look through your casebook, and see if you can find anything that would show illness.
 
 Blatson re-enters the room: "I've just finished interviewing Sir Birch!" he cries out.
 
@@ -18,17 +31,17 @@ Blatson re-enters the room: "I've just finished interviewing Sir Birch!" he crie
 
 "Yes, I know that," you say with irritation. "I know that because I wrote down everything in my casebook, and in my notes it says that Sir Birch has tuberculosis."
 
-“Ah, you must be one of those [10X detectives](http://antirez.com/news/112) who can solve problems with no effort. Well, not all of us have your “talent”, O greatest detective in Seoul!”, Blatson replies sarcastically. “But seriously, how was *I* supposed to know to be taking notes?”
+“Ah, you must be one of those [10X detectives](http://antirez.com/news/112) who can solve problems with no effort. Well, not all of us have your “talent”, O' greatest detective in Seoul!”, Blatson replies sarcastically. “But seriously, how was *I* supposed to know to be taking notes?”
 
 *This is Part Two of **The Adventures of Merlock and Blatson**. [Part One is here](https://www.thinkingmuchbetter.com/main/debugging-bad-detective/).*
 
 ---
 
-DRY is a very important concept in software engineering. It stands for Don't Repeat Yourself. The basic premise is that if you start [copying and pasting code](https://www.youtube.com/watch?v=dlrjDvS7wxo), then you may need to do some refactoring.
+DRY is a very important concept in software engineering. It stands for *Don't Repeat Yourself*. The basic premise is that if you start [copying and pasting code](https://www.youtube.com/watch?v=dlrjDvS7wxo), then you may need to do some refactoring.
 
 The examples in this article are done in various languages.
 
-## 1. Functions
+### 1. Functions
 
 Say you need to draw a grid, using [Turtle](https://docs.python.org/3/library/turtle.html).
 
@@ -117,8 +130,7 @@ def draw_grid(box_size):
     # ...
 ```
 
-## 2. Loops
-
+### 2. Loops
 You've probably noticed that this is still very long. We have to repeat statements like `draw_grid` over and over again, which makes this code 40 lines long. We can fix that by using loops.
 
 ```python
@@ -168,31 +180,29 @@ def draw_grid(box_size, rows, columns):
 
 If we didn't do this, we'd have to make separate functions for each size. Imagine having to make a `draw_grid8x5` function. It would be a great pain.
 
-## 3. Generics
-
+### 3. Generics
 If you use a [statically-typed language](https://www.section.io/engineering-education/typescript-static-typing/), you may need many types that are very similar. For example, you may need a list of integers, and a list of strings. [Some languages](https://golang.org/) will force you to actually make new types. But most statically-typed languages let you use generics.
 
-A generic type takes a type parameter. Once the code is compiled, there are essential multiple versions of the structure. This can [increase compile times](https://pingcap.com/blog/generics-and-compile-time-in-rust), but it can be worth it in order to save time writing code.
+A generic type takes a type parameter. Once the code is compiled, there are essentially multiple versions of the structure. This can [increase compile times](https://pingcap.com/blog/generics-and-compile-time-in-rust), but it can be worth it in order to save time writing code.
 
 ```java
 // we're using java now
 class MyArrayContainer<E> { // E is a generic parameter that takes a type
     private E[] list;
-    
+
     public MyArrayContainer(E[] list) {
         this.list = list;
     }
-    
+
     public E getElement(int index) {
         return list[index];
     }
 }
 ```
 
-Imagine to create twelve of these classes for all different types. It would be mayhem! That's why generics are such a plus for a language.
+Imagine creating twelve of these classes for all different types. It would be mayhem! That's why generics are such a plus for a language.
 
-## 4. Inheritance
-
+### 4. Inheritance
 Sometimes, we can't reuse code, which is sad. But we can at least reuse function signatures.
 
 A `ShortInteger` type and a `LongInteger` type are both very similar. The same operations can be performed on both. Unfortunately, these operations aren't exactly the same, so we can't reuse everything.
@@ -205,10 +215,10 @@ Luckily, [some languages](https://doc.rust-lang.org/book/ch10-02-traits.html) ca
 // An abstract class is a class that cannot be instantiated by itself
 // Another class must extend it
 abstract class AbstractInteger {
-    
+
     // an abstract method must be implemented in any subclasses
     public abstract void add(int amount);
-    
+
     public void increment() {
         this.add(1);
     }
@@ -216,12 +226,12 @@ abstract class AbstractInteger {
 
 class ShortInteger extends AbstractInteger {
     private short value;
-    
+
     public ShortInteger(short value) {
         super(); // constructs the superclass
         this.value = value;
     }
-    
+
     @Override
     public void add(int amount) {
         this.value += (short) amount;
@@ -233,8 +243,7 @@ class ShortInteger extends AbstractInteger {
 
 Now, not only have we achieved less duplication, we've also achieved [polymorphism](https://www.tutorialspoint.com/java/java_polymorphism.htm)!
 
-## Conclusion
+### Conclusion
+Whenever you catch yourself going for Ctrl-C, try using one of these instead. Your time will thank you for it later.
 
-Whenever you catch yourself going for Ctrl-C, try using one of these. Your time will thank you for it later.
-
-Also, it was [A Something Sort Of Like a Left-Libertarianism-ist Manifesto](https://slatestarcodex.com/2013/12/08/a-something-sort-of-like-left-libertarianism-ist-manifesto/).
+Also, for the extra points - it was [A Something Sort Of Like a Left-Libertarianism-ist Manifesto](https://slatestarcodex.com/2013/12/08/a-something-sort-of-like-left-libertarianism-ist-manifesto/).
