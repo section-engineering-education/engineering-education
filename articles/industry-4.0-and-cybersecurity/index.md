@@ -4,19 +4,17 @@ status: publish
 published: true
 url: /engineering-education/industry-4.0-and-cybersecurity/
 title: Industry 4.0 and Cybersecurity
-description: 
-author: 
+description: An introduction to Industry 4.0 through the enabling technologies, including fundamental principles of security, cybersecurity challenges, threats and insinuations.
+author: collins-agesa
 date: 2020-09-06T00:00:00-08:00
-topics: []
+topics: [Cybersecurity]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/industry-4.0-and-cybersecurity/hero.jpg
     alt: bulma image example
 ---
-Many technologies have emerged in recent times. These technologies include the Internet of Things, Big Data Analytics and  Cyber-Physical Systems. They have enabled new and impactful initiatives such as Industry 4.0. this initiative is revolutionizing the manufacturing industry. Yet, the cybersecurity challenges associated with the technology have never been greater.
+Many technologies have emerged in recent times. These technologies include the Internet of Things, Big Data Analytics and Cyber-Physical Systems. They have enabled new and impactful initiatives such as Industry 4.0. this initiative is revolutionizing the manufacturing industry. Yet, the cybersecurity challenges associated with the technology have never been greater.
 <!--more-->
-
-This article discusses Industry 4.0 through the enabling technologies. It also discusses the fundamental principles of security. We look at the cybersecurity challenges, threats and insinuations. We highlight the current and proposed measures and solutions.
 
 ## Industry 4.0
 
