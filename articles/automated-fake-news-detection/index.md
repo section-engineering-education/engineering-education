@@ -53,7 +53,7 @@ In today's world, it is normal to receive news from online sources through socia
 
 #### Why you should care
 
-![misinformation](/engineering-education/automated-fake-news-detection/misinformation.jpg)
+![misinformation](/articles/automated-fake-news-detection/misinformation.jpg)
 
 At a time when the globe is defined by a pandemic, public health depends on reliable information. Yet we stare down the barrel of an infodemic. An infodemic is a combination of the word information and epidemic. It is an excessive amount of information about a problem that makes the solution more difficult. It also defines a wide and rapid spread of misinformation. This means that our individual health is a collective responsibility. It is tied to the behaviour of other people since news influences behaviour of the audience.
 The World Health Organization has highlighted the dangers of a COVID-19 driven infodemic. It presents as much danger as the virus itself. According to WHO, fake news spreads faster and more easily than the virus.
