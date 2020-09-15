@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/dry-manifesto/
 title: A Something Sort Of Like a DRY-ism-ist Manifesto
-description: DRY is a very important part of software engineering. Sometimes it seems like you must repeat code even when you don't have to. This tutorial will show you how, using functions, generics, and inheritance.
+description: DRY is a very important part of software engineering. This tutorial will show you how, using functions, generics, and inheritance.
 author: mike-white
 date: 2020-09-15T00:00:00-11:00
 topics: []
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/dry-manifesto/hero.jpg
-    alt: DRY manifesto example image 
+    alt: DRY manifesto example image
 ---
 Imagine you are a detective, perhaps in [the midst of Victorian-era London](https://en.wikipedia.org/wiki/Sherlock_Holmes). You are at your apartment at 112Y Caker Street, Seoul. Your plucky assistant, Blatson, immediately has an idea:
 <!--more-->
