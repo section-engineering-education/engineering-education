@@ -45,7 +45,7 @@ Since you need more instructions in ARM, it's possible that executables will be 
 Yes, that's correct. The ARM executable files actually ended up being smaller than the x86 executables. The exact reason why this happened is unclear. It's probably a combination of a few issues:
 
 * ARM has more registers, so fewer instructions are necessary to move between them.
-* x86 has variable-length instructions, which can be up to 120 bits. All ARM instructions are 32 bits ([most of the time](https://developer.arm.com/documentation/ddi0211/i/programmer-s-model/instruction-length)).
+* x86 has variable-length instructions, which can be up to 120 bits. All ARM instructions are 32 bits ([on most machines](https://developer.arm.com/documentation/ddi0211/i/programmer-s-model/instruction-length)).
 * The Rust compiler is using some black magic voodoo to optimize the ARM version. For some reason, it isn't doing this on the x86 version.
 
 ## Conclusion
