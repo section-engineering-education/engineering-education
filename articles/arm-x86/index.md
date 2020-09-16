@@ -50,7 +50,7 @@ Yes, that's correct. The ARM executable files actually ended up being smaller th
 
 ## Conclusion
 
-It seems like ARM is a very good possibility for the future. It's likely that many of the issues here will be resolved in the future. It's possible we end up with something like the 32-bit vs 64-bit era, where programs were compiled for both. It'll be a while until we see what happens, but ARM seems like a very good contender for the future.
+ARM is designed to be small, energy-efficient, and produce less heat. Because of this, it's widely used in mobile devices, like smartphones. That's also why Apple is working on switching its laptops over to ARM. ARM comes with the issues of backwards-compatibility, and possibly speed. We can only wait and see if ARM completely takes over laptops.
 
 ## Cargo Profiles
 
