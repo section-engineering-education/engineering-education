@@ -18,7 +18,6 @@ Robotic process automation (RPA) is technology or software that is used to mimic
 <!--more-->
 
 ### What is Robotic Process Automation?
-
 ### Types of RPA
 There are three types of [Robotic Process Automation](https://en.wikipedia.org/wiki/Robotic_process_automation). Attended RPA, which requires minimal human intervention. Unattended RPA, which does not require human intervention and hybrid RPA which combines attended and unattended RPA. Unattended automation is the most common, it makes work easier by reducing work like completing data processing tasks in the background.
 
@@ -84,3 +83,6 @@ Organizations using RPA are
 - Human Resource
 - Healthcare
 - Customer Relationship Management(CRM)
+
+## Conclusion
+Robotic Process Automation is overtaking traditional automation because of factors such as being easy to adapt and lesser cost. RPA is very helpful to enterprises as we can see how well functions and activities are automated. Businesses have also realized returns on their investments. In the future, it is likely that attended RPA will be replaced by unattended and hybrid RPA. Many enterprises are likely to adopt Robotic Process Automation because of the advantages and characteristics mentioned above. One of the main barriers or hindrances to RPA is the way employees and people, in general, will perceive it. Because of automation, people are likely to lose their jobs. This is because the programs in RPA emulate the way human beings interact with systems hence replacing them. At the same time, RPA creates employment for the people who create the RPA software. In conclusion, we can say that RPA is elevating businesses and making everything easier and better for both enterprises and customers because of high returns and quality products and services, respectively.
