@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/arm-x86/hero.jpg
     alt: 
 ---
-Recently, Apple [announced their decision to switch from Intel CPUs to their own ARM chips](https://www.theverge.com/2020/6/22/21295475/apple-mac-processors-arm-silicon-chips-wwdc-2020). What's the difference? The new Apple Silicon chips are based on ARM CPUs, like the CPUs for iPhone and iPad. The Intel chips use Intel's proprietary x86 architecture.
+Recently, Apple [announced their decision to switch from Intel CPUs to their own ARM chips](https://www.theverge.com/2020/6/22/21295475/apple-mac-processors-arm-silicon-chips-wwdc-2020). What's the difference? The new Apple Silicon chips are based on ARM CPUs, like the current CPUs for the iPhone and iPad. The Intel chips use Intel's proprietary x86 architecture.
 <!--more-->
 
 ARM is a [RISC architecture](https://www.section.io/engineering-education/what-is-risc/). RISC stands for Reduced Instruction Set Computing. This means that the CPU has a limited number of instructions it can use. As a result, each instruction runs in a single cycle and the instructions are simpler. Meanwhile, x86 is a CISC architecture, which stands for Complex Instruction Set Computing. This means that it has many more instructions. The exact number varies depending on how you count them, but x86-64 has [at least 981 instructions](https://stefanheule.com/blog/how-many-x86-64-instructions-are-there-anyway/). ARM, on the other hand, has [closer to 50](https://www.quora.com/How-many-instructions-are-there-in-the-ARM-architecture) (Actual documentation with ARM is hard to find, since it's only semi-open). Some of these instructions will take more than one cycle to execute. However, there are some instructions that can do the work of many RISC instructions.
