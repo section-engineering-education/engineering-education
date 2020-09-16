@@ -31,7 +31,7 @@ There's also an issue of speed. Since ARM has fewer instructions, developers nee
 
 ### Executable Sizes
 
-Since you need more instructions in ARM, it's possible that executables will be larger. To test this, I compiled the [sorting_algos repository](https://github.com/botahamec/sorting_algos) made for our [sorting article.](https://www.section.io/engineering-education/sorting-algorithms/) I ran it on my [Raspberry Pi 4 Model B Rev 1.1](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/). I compiled the same thing on my x86-64 Linux desktop. The Raspberry Pi file size should actually be a little smaller. It's only using a 32-bit operating system (Raspberry Pi OS Lite). So, I cross-compiled to the stable-i686-unknown-linux-gnu toolchain on my desktop. "Stripped" means that I stripped nonessential symbols from the executable. The Cargo profiles I used are at the bottom. Here are the results:
+Since you need more instructions in ARM, it's possible that executables will be larger. To test this, we can compile the [sorting_algos repository](https://github.com/botahamec/sorting_algos) made for our [sorting article.](https://www.section.io/engineering-education/sorting-algorithms/). It was run on a [Raspberry Pi 4 Model B Rev 1.1](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/). The same program was compiled on an x86-64 Linux desktop. The Raspberry Pi file size would normally be a little smaller because of the 32-bit operating system (Raspberry Pi OS Lite). So, the desktop cross-compiled to the stable-i686-unknown-linux-gnu toolchain. "Stripped" means that nonessential symbols were stripped from the executable. The Cargo profiles used for this are at the bottom. Here are the results:
 
 |                                  | x86-32  | ARM-32  |
 | -------------------------------- | ------- | ------- |
@@ -42,7 +42,7 @@ Since you need more instructions in ARM, it's possible that executables will be 
 | Optimized for size (unstripped)  | 1.14 MB | 1.13 MB |
 | Optimized for size (stripped)    | 272 KB  | 206 KB  |
 
-Wait, what? Yes, I double-checked. It seems like the ARM binaries are typically smaller. I tried disassembling the binaries. I hope you can forgive me for deciding not to parse thousands of lines of assembly code. It's probably because of a combination of a few different reasons. Here are some ideas:
+Yes, that's correct. The ARM executable files actually ended up being smaller than the x86 executables. The exact reason why this happened is unclear. It's probably a combination of a few issues:
 
 * ARM has more registers, so fewer instructions are necessary to move between them.
 * x86 has variable-length instructions, which can be up to 120 bits. All ARM instructions are 32 bits ([most of the time](https://developer.arm.com/documentation/ddi0211/i/programmer-s-model/instruction-length)).
