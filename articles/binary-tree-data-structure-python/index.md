@@ -13,9 +13,8 @@ images:
   - url: /engineering-education/binary-tree-data-structure-python/hero.jpg
     alt: binary trees
 ---
-
-A Binary Tree is a non-linear data structure that is used for searching and data organization. A binary tree is comprised of nodes. Each node is a data component, a left child and a right child. Let us dive into the concepts related to trees and implement them in the Python programming language.
-
+A Binary Tree is a non-linear data structure that is used for searching and data organization. A binary tree is comprised of nodes. Each node being a data component, one a left child and the other the right child. Let us dive into the concepts related to trees and implement them in the Python programming language.
+<!--more-->
 For more background on the different types of data structures in Python, check out the following articles:
 
 - [Introduction to Data Structures](/engineering-education/data-structures-python-part-1/)
