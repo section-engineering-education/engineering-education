@@ -51,6 +51,7 @@ In today's world, it is normal to receive news from online sources through socia
 
 #### Why you Should Care
 ![misinformation](/engineering-education/automated-fake-news-detection/misinformation.jpg)
+[*Image Source*](https://unsplash.com/photos/zw3ExyW6x3Y)
 
 At a time when the globe is defined by a pandemic, public health depends on reliable information. Yet we stare down the barrel of an infodemic. An infodemic is a combination of the word information and epidemic. It is an excessive amount of information about a problem that makes the solution more difficult. It also defines a wide and rapid spread of misinformation.
 
@@ -155,28 +156,16 @@ Their quality and quantity is impactful. It is also worth noting that, as much a
 ### References
 1. [Approaches to Identify Fake News:](https://doi.org/10.1007/978-3-030-49264-9_2) A Systematic Literature Review
 
-2. Abdullah-All-Tanvir, E. M. Mahir, S. Akhter and M. R. Huq, "Detecting Fake News using Machine Learning and Deep Learning Algorithms," 2019 7th [International Conference on Smart Computing & Communications:](https://doi.org/10.1109/ICSCC.2019.8843612)
+2. [International Conference on Smart Computing & Communications:](https://doi.org/10.1109/ICSCC.2019.8843612)
 
-(ICSCC), Sarawak, Malaysia, Malaysia, 2019, pp. 1-5, doi
-
-3. S. Girgis, E. Amer and M. Gadallah, ["Deep Learning Algorithms for Detecting Fake News in Online Text,"](https://doi.org/10.1109/ICCES.2018.8639198)
-
-2018 13th International Conference on Computer Engineering and Systems (ICCES), Cairo, Egypt, 2018, pp. 93-97, doi
+3. ["Deep Learning Algorithms for Detecting Fake News in Online Text,"](https://doi.org/10.1109/ICCES.2018.8639198)
 
 4. [News Labeling as Early as Possible: Real or Fake?](http://dx.doi.org/10.1145/3341161.3342957)
 
-T2 - 2019 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining <>
-
 5. [Transformer Model Paper:](https://arxiv.org/abs/1706.03762)
 
-6. Y. Ahn and C. Jeong, ["Natural Language Contents Evaluation System for Detecting Fake News using Deep Learning,"](https://doi.org/10.1109/JCSSE.2019.8864171)
+6. ["Natural Language Contents Evaluation System for Detecting Fake News using Deep Learning,"](https://doi.org/10.1109/JCSSE.2019.8864171)
 
-2019 16th International Joint Conference on Computer Science and Software Engineering (JCSSE), Chonburi, Thailand, 2019, pp. 289-292, doi
+7. ["Hyperpartisan News and Articles Detection Using BERT and ELMo,"](https://doi.org/10.1109/IConDA47345.2019.9034917)
 
-7. G. K. W. Huang and J. C. Lee, ["Hyperpartisan News and Articles Detection Using BERT and ELMo,"](https://doi.org/10.1109/IConDA47345.2019.9034917)
-
-2019 International Conference on Computer and Drone Applications (IConDA), Kuching, Malaysia, 2019, pp. 29-32, doi
-
-8. M. Qazi, M. U. S. Khan and M. Ali, ["Detection of Fake News Using Transformer Model,"](https://doi.org/10.1109/iCoMET48670.2020.9074071)
-
-2020 3rd International Conference on Computing, Mathematics and Engineering Technologies (iCoMET), Sukkur, Pakistan, 2020, pp. 1-6, doi
+8. ["Detection of Fake News Using Transformer Model,"](https://doi.org/10.1109/iCoMET48670.2020.9074071)
