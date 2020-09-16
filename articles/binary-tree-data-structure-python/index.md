@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/binary-tree-data-structure-python/hero.jpg
     alt: binary trees
 ---
-A Binary Tree is a non-linear data structure that is used for searching and data organization. A binary tree is comprised of nodes. Each node being a data component, one a left child and the other the right child. Let us dive into the concepts related to trees and implement them in the Python programming language.
+A Binary Tree is a non-linear data structure that is used for searching and data organization. A binary tree is comprised of nodes. Each node being a data component, one a left child and the other the right child. Let us dive into the concepts related to trees and implement them into the Python programming language.
 <!--more-->
 For more background on the different types of data structures in Python, check out the following articles:
 
@@ -27,7 +27,7 @@ For more background on the different types of data structures in Python, check o
 
 ### Table of Contents
 
-- [Binary Trees: Introduction](#binary-trees:-introduction)
+- [Binary Trees: Introduction](#binary-trees-introduction)
 - [Applications of Binary Trees](#applications-of-binary-trees)
 - [Implementing a Binary Tree](#implementing-a-binary-tree)
 - [Practice Binary Trees](#practice-binary-trees)
@@ -36,7 +36,9 @@ For more background on the different types of data structures in Python, check o
 ### Binary Trees: Introduction
 
 ![Binary Tree Diagram](/engineering-education/binary-tree-data-structure-python/binarytree.png)<br>
-*Figure: Binary Trees* [Source](https://www.studytonight.com/data-structures/introduction-to-binary-trees)
+*Figure: Binary Trees*
+
+[Image Source](https://www.studytonight.com/data-structures/introduction-to-binary-trees)
 
 A binary tree **node** consists of the following components:
 
@@ -44,28 +46,27 @@ A binary tree **node** consists of the following components:
 - Pointer to Left Child
 - Pointer to Right Child
 
-There are some key terminologies that are to be known related to a binary tree.
+Below are some key terminologies related to a binary tree.
 
 - **Node** -- The most elementary unit of a binary tree.
 - **Root** -- The root of a binary is the topmost element. There is only one root in a binary tree.
 - **Leaf** -- The leaves of a binary tree are the nodes which have no children.
 - **Level** -- The level is the generation of the respective node. The root has level 0, the children of the root node is at level 1, the grand-children of the root node is at level 2 and so on.
-- **Parent** -- The parent of a node is the node that is one level upward to the node.
-- **Child** -- The children of a node are the nodes that are one level downward to the node.
+- **Parent** -- The parent of a node is the node that is one level upward of the node.
+- **Child** -- The children of a node are the nodes that are one level downward of the node.
 
 ### Applications of Binary Trees
-- A binary tree is a hierarchical data structure. A file system is organized in the form of a tree.
+- A binary tree is a hierarchical data structure. A file system that is organized in the form of a tree.
 
 - Trees can be used for efficient searching, when the elements are organized with some order.
 
-- The HTML/XML [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) is organized in the form of a tree.
+- The HTML/XML [Document Object Model](/engineering-education/document-object-model/) is organized in the form of a tree.
 
 - Abstract Syntax Trees and Parse Trees are constructed by a compiler as a part of compilation.
 
-- Trees are used to efficiently index databases.
+- Trees are also used to efficiently index databases.
 
 ### Implementing a Binary Tree
-
 #### Initialize a Node Class
 
 Let us first define the Node class.
@@ -107,7 +108,7 @@ root.right = Node(89) # Setting the right child of the root to 89
 ```
 
 ### Traversals
-Since a binary tree is a non-linear data structure, there is more than one way to traverse through the tree data. Let us look at the various types of traversals in a binary tree.
+Since a binary tree is a non-linear data structure, there is more than one way to traverse through the tree data. Let us look at the various types of traversals in a binary tree below.
 
 - [Inorder Traveral](#inorder-traversal)
 - [Preorder Traversal](#preorder-traversal)
@@ -201,4 +202,4 @@ Once you have understood the core concepts of a binary tree, practice the proble
 - Binary Trees - [Carnegie Mellon University](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
 
 ### Conclusion
-Implementing a binary tree in python can be pretty simple, as we saw with the examples above in this article. Binary Trees are extensively used in the applications and software and having a strong knowledge on these would give an edge in interviews.
+Implementing a binary tree in python can be pretty simple, as we saw with the examples above in this article. Binary Trees are extensively used in the applications and software and having a strong knowledge on these would give any developer an edge in an interview.
