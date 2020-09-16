@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/arm-x86/hero.jpg
     alt: arm apple armx86 image example
 ---
-Recently, Apple [announced their decision to switch from Intel CPUs to their own ARM chips](https://www.theverge.com/2020/6/22/21295475/apple-mac-processors-arm-silicon-chips-wwdc-2020). What's the difference? The new Apple Silicon chips are based on ARM CPUs, like the current CPUs for the iPhone and iPad. The Intel chips use Intel's proprietary x86 architecture.
+Recently, Apple [announced their decision to switch from Intel CPUs to their own ARM chips](https://www.theverge.com/2020/6/22/21295475/apple-mac-processors-arm-silicon-chips-wwdc-2020). What is the difference? The new Apple Silicon chips are based on ARM CPUs, like the current CPUs for the iPhone and iPad. The Intel chips use Intel's proprietary x86 architecture.
 <!--more-->
 
 ARM is a [RISC architecture](https://www.section.io/engineering-education/what-is-risc/). RISC stands for Reduced Instruction Set Computing. This means that the CPU has a limited number of instructions it can use. As a result, each instruction runs in a single cycle and the instructions are simpler. Meanwhile, x86 is a CISC architecture, which stands for Complex Instruction Set Computing.
