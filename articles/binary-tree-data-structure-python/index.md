@@ -6,7 +6,7 @@ url: /engineering-education/binary-tree-data-structure-python/
 title: Using the Binary Tree Data Structure in Python
 description: Binary Trees are non-linear data structures that are used for lookups and data organization. This article explores ways to implement and use the binary tree data structure in Python.
 author: saiharsha-balasubramaniam
-date: 2020-09-15T00:00:00-12:00
+date: 2020-09-16T00:00:00-06:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -36,9 +36,7 @@ For more background on the different types of data structures in Python, check o
 ### Binary Trees: Introduction
 
 ![Binary Tree Diagram](/engineering-education/binary-tree-data-structure-python/binarytree.png)<br>
-*Figure: Binary Trees*
-
-[Image Source](https://www.studytonight.com/data-structures/introduction-to-binary-trees)
+*Figure: Binary Trees, [Image Source](https://www.studytonight.com/data-structures/introduction-to-binary-trees)*
 
 A binary tree **node** consists of the following components:
 
@@ -51,14 +49,12 @@ Below are some key terminologies related to a binary tree.
 - **Node** -- The most elementary unit of a binary tree.
 - **Root** -- The root of a binary is the topmost element. There is only one root in a binary tree.
 - **Leaf** -- The leaves of a binary tree are the nodes which have no children.
-- **Level** -- The level is the generation of the respective node. The root has level 0, the children of the root node is at level 1, the grand-children of the root node is at level 2 and so on.
+- **Level** -- The level is the generation of the respective node. The root has level 0, the children of the root node is at level 1, the grandchildren of the root node is at level 2 and so on.
 - **Parent** -- The parent of a node is the node that is one level upward of the node.
 - **Child** -- The children of a node are the nodes that are one level downward of the node.
 
 ### Applications of Binary Trees
-- A binary tree is a hierarchical data structure. A file system that is organized in the form of a tree.
-
-- Trees can be used for efficient searching, when the elements are organized with some order.
+A binary tree is a hierarchical data structure, a file system that is organized in the form of a tree. Trees can be used for efficient searching, when the elements are organized with some order. Some examples include:
 
 - The HTML/XML [Document Object Model](/engineering-education/document-object-model/) is organized in the form of a tree.
 
@@ -81,7 +77,7 @@ class Node:
         self.data = data # Node Data
 ```
 
-Once we have defined the Node class, we can initialize our Binary Tree
+Once we have defined the Node class, we can initialize our Binary Tree:
 
 ```python
 class Node:
@@ -108,11 +104,7 @@ root.right = Node(89) # Setting the right child of the root to 89
 ```
 
 ### Traversals
-Since a binary tree is a non-linear data structure, there is more than one way to traverse through the tree data. Let us look at the various types of traversals in a binary tree below.
-
-- [Inorder Traveral](#inorder-traversal)
-- [Preorder Traversal](#preorder-traversal)
-- [Postorder Traversal](#postorder-traversal)
+Since a binary tree is a non-linear data structure, there is more than one way to traverse through the tree data. Let's look at the various types of traversals in a binary tree, including **inorder traversal**, **preorder traversal**, and **postorder traversal**.
 
 #### Inorder Traversal
 
@@ -141,7 +133,7 @@ def inorder(node):
 ```
 
 #### Preorder Traversal
-In a preorder traversal, the root node is visited first, followed by the left child, then followed by the right child.
+In a preorder traversal, the root node is visited first, followed by the left child, then the right child.
 
 ```python
 def preorder(node):
@@ -166,7 +158,7 @@ def preorder(node):
 ```
 
 #### Postorder Traversal
-In a postorder traversal, the left child is visited first, followed by the right child, then followed by the root node.
+In a postorder traversal, the left child is visited first, followed by the right child, then the root node.
 
 ```python
 def postorder(node):
@@ -202,4 +194,4 @@ Once you have understood the core concepts of a binary tree, practice the proble
 - Binary Trees - [Carnegie Mellon University](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
 
 ### Conclusion
-Implementing a binary tree in python can be pretty simple, as we saw with the examples above in this article. Binary Trees are extensively used in the applications and software and having a strong knowledge on these would give any developer an edge in an interview.
+Implementing a binary tree in Python can be pretty simple, as we saw with the examples above in this article. Binary Trees are extensively used in applications and software, and having a strong knowledge of these concepts will give any developer an edge in an interview.
