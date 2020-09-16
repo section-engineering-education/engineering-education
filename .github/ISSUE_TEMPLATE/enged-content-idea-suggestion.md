@@ -2,7 +2,7 @@
 name: EngEd Content Idea Suggestion
 about: Please complete the fields below to submit a new article idea for review.
 title: ''
-labels: ''
+labels: 'Topic Suggestion'
 assignees: ''
 
 ---
