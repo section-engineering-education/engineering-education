@@ -4,15 +4,15 @@ status: publish
 published: true
 url: /engineering-education/arm-x86/
 title: ARM vs x86 - Explained
-description: 
+description: Apple recently made headlines for their announcement to switch their MacBooks to an ARM instruction set. What does that even mean? ARM has several advantages over x86, which we will find out about.
 author: mike-white
-date: 2020-09-10T00:00:00-11:00
+date: 2020-09-16T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/arm-x86/hero.jpg
-    alt: 
+    alt: arm apple armx86 image example
 ---
 Recently, Apple [announced their decision to switch from Intel CPUs to their own ARM chips](https://www.theverge.com/2020/6/22/21295475/apple-mac-processors-arm-silicon-chips-wwdc-2020). What's the difference? The new Apple Silicon chips are based on ARM CPUs, like the current CPUs for the iPhone and iPad. The Intel chips use Intel's proprietary x86 architecture.
 <!--more-->
