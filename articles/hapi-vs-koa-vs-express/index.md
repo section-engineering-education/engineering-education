@@ -131,11 +131,26 @@ In this section we are going to highlight some of the advantages and disadvantag
 2. Refactoring bigger code bases is very challenging.
 
 ### Framework performance
-In this section, we will compare the frameworks based on the number of hello world request that a server build can handle in one second.
+In this section, we will compare the frameworks based on the number of request that a  hello world server can handle in one second.
 
 Hapi.js handles 29,998 requests per second while Express handles 38,510 requests per second.
 
 Koa.js seems to be best performing since it handles 50,933 requests per second.
+
+### Choosing the right framework for your project
+#### Why choose Express.js
+Express provides a wide range of functionalities for developing web applications such as singl/multi-page applications and even hybrid applications. Express is also easy to test due to middlewares and routes which modularize projects. Express.js framework is also closer to Node.js as compared to the other Frameworks, it is only a thin layer to node.js hence make is best for building applications that require significantly better performance.
+#### Why choose Koa.js
+Koa.js was created to be better than express, therefore, it can do all that express can do and more. From our performance test we saw that Koa performs the best since it can handle many requests per second. This makes it a better choice for web aplications and APIs that serve many clients at a time.
+#### Why choose Hapi.js
+Hapi.js has almost the same capabilities as the other frameworks but its plugin feature is what makes it unique when it comes to selecting frameworks to use. Hapi has a wide variety of plugins that make it a little bit easier to build APIs since almost every common task such as routing, logging, caching, authentication etc have ready built plugins that have been tested.    
+
+Below are some other points that would help when choosing the right framework for a project.
+1. Efficiency demand of the application.
+2. The cost of the project.
+3. Modules available.
+4. Type of the project.
+5. Scalability.
 
 ### Summary
 In this article we have done a comparison of the three major node.js frameworks. We have gone through their histories, popularity, advantages and disadvantages, performance and creating a server. With that, one can now choose the framework which best satisfies his/her needs for his application.  
