@@ -1,9 +1,9 @@
 ### Article Checklist
 #### Preliminary Checks - Formatting and Structure 
-- [ ] Have you used the correct folder and file structure? - See Contribution Guidelines (https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md)
-- [ ] Is your article over 750 words?
 - [ ] Does your article follow any of the suggested structure formats? see the example formats here (https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md#example-format-structure)
 - [ ] Is your article properly formatted in Markdown? - see [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [ ] Have you used the correct folder and file structure? - See Contribution Guidelines (https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md)
+- [ ] Is your article over 750 words?
 - [ ] Have you used our preferred heading structure? - [H3 (###) and up](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#headers)
 - [ ] Does your article provide enough value and detail about your topic? Articles should be clear, accurate, and fully explained.
 - [ ] Can your article be understood by beginners? **Assume the audience is smart but has no prior exposure to the common terminology in your article.**
