@@ -1,8 +1,8 @@
 ### Article Checklist
 #### Preliminary Checks - Formatting and Structure 
-- [ ] Does your article follow any of the suggested structure formats? see the example formats here (https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md#example-format-structure)
+- [ ] Does your article follow any of the suggested structure formats? see the example [formats here](https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md#example-format-structure)
 - [ ] Is your article properly formatted in Markdown? - see [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- [ ] Have you used the correct folder and file structure? - See Contribution Guidelines (https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md)
+- [ ] Have you used the correct folder and file structure? - see [Contribution Guidelines](https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md)
 - [ ] Is your article over 750 words?
 - [ ] Have you used our preferred heading structure? - [H3 (###) and up](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#headers)
 - [ ] Does your article provide enough value and detail about your topic? Articles should be clear, accurate, and fully explained.
@@ -16,8 +16,8 @@
 - [ ] Have you added sources for quotes and images that aren't yours?
 
 ### Technical Checks
-- [ ] Are your code snippets properly formatted for syntax highlighting - see [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [ ] Are your code snippets properly formatted for syntax highlighting - see [syntax guide](https://gohugo.io/content-management/syntax-highlighting/)
 - [ ] Have you used Repl.it for your code snippets?
 
 ### Contribution Guidelines
-For first-time contributors and for more details, see our Contributing Guidelines (https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md)
+For first-time contributors and for more details, see [Contributing Guidelines](https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md)
