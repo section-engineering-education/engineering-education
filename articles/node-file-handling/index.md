@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/node-file-handling/
 title: File handling in Node.js
-description: Covering the basics on file handling in Node.js to perform various CRUD operations. The module offers functions to perform basic CRUD(Create, Read, Update, Delete) operations.
+description: Covering the basics of file handling in Node.js to perform various CRUD operations. The module offers functions to perform basic CRUD(Create, Read, Update, Delete) operations.
 author: lalithnarayan-c
 date: 2020-09-11T00:00:00-10:00
 topics: []
@@ -16,7 +16,21 @@ images:
 ---
 [Node.js](https://nodejs.org/en/) is a server-side environment for executing JavaScript files. Off the browser, Node.js offers more number of features to complement JavaScript functionalities. One of them is file handling. Node.js is built around adding such functionalities that cannot be performed or utilized in a browser. In this article, we will cover file handling extensively, understand the various functionalities Node.js offers, and implement code to read and write to files.
 <!--more-->
-### File System Module
+
+### **Blocking and Non-Blocking I/O**
+
+Node.js is a non-blocking single-threaded server-side JavaScript environment. What do we mean by non-blocking? We will understand these concepts from theoretical and practical perspectives. The theoretical perspective allows us to understand how Node.js works. File handling is the practical side to it, where non-blocking I/O calls are made use of extensively. Node.js runs on a single thread 
+
+File handling is done in two ways: synchronous and asynchronous. In synchronous file handling, all processes wait for the current I/O operation(read or write operation) to finish. Under non-blocking I/O, other processes take over the thread while the read or write operations completely execute. Upon execution, the callback function returns the data. The non-blocking nature of Node.js facilitates non-blocking I/O operations and therefore efficient parallel execution of programs.
+
+### **Applications of File Handling**
+We must understand the significance of the `fs` module and some of the applications where the given module is used. I have always wondered about the use of file handling and what are some of the innovative use cases for file handling apart from reading and writing files on a local machine. Let us look at some of the use cases.
+ 
+1. Logging: While creating scalable systems, feedback is an important aspect. Sub-systems generate log files that are read by other sub-systems and take action on the feedback given. All this is possible by reading and writing into files.
+2. System maintenance: Consider the example of Google servers. The current status of all the operations is communicated to the system's engineer who gets a detailed report in a suitable format. 
+3. Temporary files: Many times while we run programs on the servers, temporary files are created to store some temporary but important information. These temporary files can store data such as event IDs, cookies, etc. This is done to reduce the load on the main memory and balance the load between the main and secondary memory devices. 
+   
+### **File System Module**
 For file handling, Node.js offers a module called `fs` (fileSystem). To use the features of this [module](https://www.w3schools.com/nodejs/nodejs_filesystem.asp), we need to begin with importing it. We import it by using the `require` keyword.
 
 ```js
@@ -30,11 +44,11 @@ The module offers functions to perform basic [CRUD](https://stackify.com/what-ar
     const fs = require('fs');
 
     try {
-    fs.unlinkSync('./fileToBeDeleted.txt');
-    console.log('successfully deleted fileToBeDelted.txt');
+        fs.unlinkSync('./fileToBeDeleted.txt');
+        console.log('successfully deleted fileToBeDelted.txt');
     } catch (error) {
     // handle the error
-    console.log(error)
+        console.log(error)
     }
    ```
    `unlinkSync` takes in the path of the file to be deleted as its parameter.  
@@ -52,12 +66,12 @@ The module offers functions to perform basic [CRUD](https://stackify.com/what-ar
    `unlink` takes the path of the file to be deleted and a callback function as its parameters. The callback function returns the error upon unsuccessful deletion. If deleted, it displays a successfully deleted message.
 
 3. **readFile**: This function is used for reading files asynchronously.
-  `js
+  ```js
     fs.readFile('<directory>', (error, data) => {
     if (error) throw error;
     console.log(data');
     });
-   `
+   ```
    `readFile` takes in the path and a callback function as its parameters.
 
 4. **readFileSync**: Used to read files synchronously in order.  
@@ -103,7 +117,7 @@ The module offers functions to perform basic [CRUD](https://stackify.com/what-ar
    ```
    If the file does not exist, the output will be `false`
 
-### Reading From Files
+### **Reading From Files**
 We will begin by creating a JavaScript file called `fileHandling.js`. For reading files, we will make use of the module `fs`, which stands for the file system. The `fs` module gives us access to the file system of the local machine. Before we begin with reading the file, we will create a sample file that we will read and write to. We will name it `sampleText.txt`.
 
 ```txt
@@ -119,7 +133,7 @@ const textFromFile = fileSystem.readFileSync('./sampleText.txt','utf-8')
 console.log(textFromFile)
 ```
 
-The contents of the `.txt` file is displayed on the console/terminal. `require('fs')` creates an object called `fileSystem` which has all the functionalities required to interact with local files. The readFileSync function returns the text from the file and it is stored in the `textFromFile` variable.
+The contents of the `.txt` file are displayed on the console/terminal. `require('fs')` creates an object called `fileSystem` which has all the functionalities required to interact with local files. The readFileSync function returns the text from the file and it is stored in the `textFromFile` variable.
 
 ### readFile
 Consider the asynchronous counterpart for reading files. As discussed earlier, asynchronous execution does not guarantee order of execution of code. Let us now code to understand this better:
@@ -147,7 +161,7 @@ Read File
 ```
 Let us analyze the output. The order of code executed is not the same as the order in which it has been written. This is the beauty of asynchronous code. The callback function returns `data` upon reading the file.
 
-### Write To Files
+### **Write To Files**
 Let us now consider writing to files. The given snippet of code writes to file synchronously.
 
 ```js
@@ -185,5 +199,5 @@ inside file 2
 
 Upon analysis of the code snippet, we understand that the creation of the two files takes place after the console.log statements have been executed. This demonstrates the asynchronous nature of the code.
 
-### Conclusion
-In this article, we have covered the `fs` module and understood the various functionalities that it provides. This article serves as a go-to guide for developers to glance at the concepts in file handling. Reading and writing files is an important task and I hope you have got a stronghold on the `fs` module.
+### **Conclusion**
+In this article, we have covered the various functionalities of the `fs` module. We have reviewed various applications of file handling, understood the non-blocking feature of Node.js, and how it makes use of it faster file handling. Next time you think of logging some data in your systems, make sure to think of file handling as the go-to solution.
