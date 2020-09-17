@@ -1,6 +1,25 @@
-Firebase offers a cloud-hosted NoSQL database that applications can access. This is Cloud Firestore. NoSQL is a non-tabular database that stored data in objects and documents. They store unstructured data. Cloud Firestore also provides the ability to add realtime listeners to the database. This means that we can get any changes that happen in the database.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/node-rxjs/
+title: Node.js Rxjs
+description: This article shows developers how to use the RxJs library and will also look at the various operators found in the library.
+author: linus-muema
+date: 2020-09-14T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
-## The data structure in Cloud Firestore
+  - url: /engineering-education//node-rxjs/hero.jpg
+    alt: RxJs image computer
+---
+
+Firebase offers a cloud-hosted NoSQL database that applications can access. This is Cloud Firestore. NoSQL is a non-tabular database that stored data in objects and documents. They store unstructured data. Cloud Firestore also provides the ability to add realtime listeners to the database. This means that we can get any changes that happen in the database.
+<!--more-->
+
+
+### The data structure in Cloud Firestore
 Data in Cloud Firestore is organized differently from the realtime database. It is organized in collections and documents. A collection contains documents and cannot contain other collections. A document on the other hand is different. It contains fields, maps and subcollections. Fields can hold data of different types e.g strings, numbers, arrays, etc. For more details on the data type,  you can check the [reference](https://firebase.google.com/docs/firestore/manage-data/data-types). Maps are basically nested data. e.g. `first` and `last` fields are maps.
 
 ```bsh
