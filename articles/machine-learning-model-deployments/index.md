@@ -226,7 +226,7 @@ Now that we have our model trained. We have to take in minde that this model can
 1. We have to save our model. But how?
 If you notice **closely**, the function `run_test_harness` that we have written has a line in there to save our model.
 
-```
+```bash
 model.save('final_model.h5')
 ```
 
