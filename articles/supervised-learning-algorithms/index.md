@@ -1,7 +1,24 @@
-# Supervised Learning Algorithms
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/huffman-coding-python/
+title: Supervised Learning Algorithms
+description: Huffman coding is a technique for text compression that uses data structures. This article explains the theory behind Huffman coding and implementation in Python.
+author: lalithnarayan-c
+date: 2020-09-08T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-<!-- Introduction to machine learning -->
+  - url: /engineering-education/huffman-coding-python/hero.jpg
+    alt: huffman python code coding data text compression
+---
 Artificial intelligence is the art of inducing intelligence into machines. The current era is an exciting one to live in, for the advances in technology are being guided by huge amounts of intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, map services used for navigation are all examples of how AI is being leveraged into generating massive impact. Machine learning is a subset of artificial intelligence. Artificial intelligence is a broader subject that aims to attain artificial general intelligence(AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach to attain human-level intelligence.   
+<!--more-->
+
+### Introduction to machine learning
+
 
 Tom Mitchell defines machine learning as follows: 'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
 1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pairs of values help the algorithm model the function that generates such outputs for given inputs. We will be covering the entire topic of supervised learning in this article.
