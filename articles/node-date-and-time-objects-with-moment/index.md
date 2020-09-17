@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/npm-registry-opensource-code-security-with-npm6/
+title: Open-source packages & Code Security using NPM
+description: This article covers the NPM registry, open-source packages, and code security using npm6. NPM provides vulnerability-scanning tools that are built-in your Node.js workflow.
+author: joseph-chege
+date: 2020-09-14T00:00:00-13:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/npm-registry-opensource-code-security-with-npm6/hero.jpg
+    alt: npm6 Node.js code Security
+---
+
+<!--more-->
+
 Date is one of the critical development functions that developers come across in their development workflow. To achieve this with ease you need great tools such as moment. Moment is that tool every JavaScript developer want to use to achieve date and time object with simplicity.
 
 ## [What is moment?](https://www.npmjs.com/package/moment)
