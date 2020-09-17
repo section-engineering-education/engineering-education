@@ -14,9 +14,10 @@ images:
   - url: /engineering-education/node-firestore/hero.jpg
     alt: Node.js Firebase image computer
 ---
-In this article we will be discussing Firebase, a cloud-hosted NoSQL database that applications can use and access. NoSQL is a non-tabular database that stores data in objects and documents.
-They store unstructured data. Cloud Firestore provides the ability to add real-time listeners to the database. This means that we can get any changes that happen in the database.
+In this article we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data.  It is a good database that was created for faster queries and better scalability than the realtime database.
 <!--more-->
+NoSQL is a non-tabular database that stores data in objects and documents. NoSQL databases store unstructured data. Cloud Firestore provides developers the ability to add real-time listeners to the database. This means that we can get any changes that happen in the database.
+
 ### The Data Structure in Cloud Firestore
 Data in Cloud Firestore is organized differently from the realtime database. It is organized in collections and documents. A collection contains documents and cannot contain other collections. A document on the other hand is different. It contains fields, maps, and subcollections. Fields can hold data of different types e.g. strings, numbers, arrays, etc.
 
@@ -42,7 +43,7 @@ users
 Subcollections are basically collections associated with the document. But even with that relationship, when you delete a document, it does not delete the subcollection. You have to delete the document too.
 
 Now, with a basic understanding we can get into writing some code!
-You can get the code for this tutorial from [Github](https://github.com/LinusMuema/node-firestore)
+You can get the code for this tutorial from [Github](https://github.com/LinusMuema/node-firestore).
 
 In the code, you will find the following packages.
 
@@ -54,7 +55,7 @@ In the code, you will find the following packages.
 
 - `random-words` - this will provide us with random words to save in the database.
 
-First we will start by initializing firebase in our application by using the config provided in the console. We will also need to create a firestore database from the console.
+First we will start by initializing firebase in our application by using the config provided in the console. We will also need to create a firestore database from the console. To get more information on firebase click through to [this previous article](/engineering-education/node-firebase/).
 
 From the code, I have created a function to initialize firebase in the util file. Then we will import the required packages. We use the `firebase.firestore()` method to get an instance of Cloud Firestore database.
 
@@ -141,6 +142,6 @@ db.collection('numbers').doc('random').onSnapshot(doc => {
 
 You get the collection first then the document. Then we call the `onSnapshot` method. This method will be called anytime there is an addition or update to the collection. It emits the document on every change.
 
-Those are some of the basics of Cloud Firestore and how you can use it to store data. It is a good database that was created for faster queries and a better scalability than the realtime database. It is better organised than the realtime database hence easier to work with. But it does not mean that realtime database is out of use. Both databases have their unique functions. You can go ahead and take a short [survey](https://firebase.google.com/docs/firestore/rtdb-vs-firestore#key_considerations) to help you determine the type of database to use.
+Those are some of the basics of Cloud Firestore and how you can use it to store data. It is a good database that was created for faster queries and better scalability than the realtime database. It is better organized than the realtime database hence easier to work with. But it does not mean that realtime database is out of use. Both databases have their unique functions. You can go ahead and take a short [survey](https://firebase.google.com/docs/firestore/rtdb-vs-firestore#key_considerations) to help you determine the type of database to use.
 
 Feel free to raise a PR or issue in the code above with suggestions.
