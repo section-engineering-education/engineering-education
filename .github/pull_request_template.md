@@ -8,6 +8,7 @@
 - [ ] Does your article provide enough value and detail about your topic? Articles should be clear, accurate, and fully explained.
 - [ ] Can your article be understood by beginners? **Assume the audience is smart but has no prior exposure to the common terminology in your article.**
 - [ ] Have you included a hero image? (600X400 pixels (images can be resized in paint) - also please make sure the image is from a site like www.unsplash.com)
+- [ ] In your PR - add a comment that states "This fixes #(enter your Idea Content Form #)" to link and close your Idea Content (issue) when the PR is merged.
       
 
 #### Grammar Checks
