@@ -1,3 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+slug: extending-classes
+title: Constructors and Destructors (C++)
+description: Learn the difference between Constructors and Destructors with the help of code snippets. Understand the usage of explicit call, implicit call and constructor overloading.
+author: kanishkvardhan-a-n
+date: 2020-08-05T00:00:00-05:00
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/extending-classes/hero.jpg
+    alt: extending classes example image
+
+---
+
+<!--more-->
+
 ### Understanding Database Architecture and Models
 
 ![hero-image](/engineering-education/understanding-dbms/hero.jpg)
