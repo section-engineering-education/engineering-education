@@ -1,4 +1,25 @@
-# Express.js
+---
+layout: engineering-education
+status: publish
+published: true
+slug: node-testing
+title: Testing Node.js Applications
+description: Testing Node.js application - Node.js is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. Testing is an important part of that process.
+author: rohan-reddy
+date: 2020-08-13T00:00:00-11:00
+topics: [node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/node-testing/hero.jpg
+    alt: node testing example text image
+---
+[Node.js](http://nodejs.org/) is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. As the size of the application grows, the risk of bugs also grows. An application is not complete until it is tested. A test can be a simple `console.log` to a function to see if it is working as intended.
+<!--more-->
+
+
+
+Express.js
 
 [Node.js](http://nodejs.org/) is a javascript run time environment which is used to create server-side applications and tools. Node.js is fast, portable and written in Javascript. Node does not directly support common tasks such as handling requests, serving files, handling HTTP verbs (`GET`, `POST`, ...), this is where Node's rich ecosystem comes to our aid.  
 
