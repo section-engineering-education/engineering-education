@@ -1,7 +1,22 @@
-## File Handling in C++
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/functions-in-cpp/
+title: File Handling in C++
+description: Functions in C++, what are they? How do they work? In this article we will be going over one of the most fundamental idea in programming.
+author: parampreet-singh
+date: 2020-09-03T00:00:00-12:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/functions-in-cpp/hero.jpg
+    alt: functions Function C++ cpp
+---
 
 If you are a Software Engineer, you may come across File handling at some point in your career. It is the ability to store the output and perform various operations on it, such as update the data or overwrite things in a file. Files are always a vital way to store data.
-
+<!--more-->
 ### Why do you need File Handling?
 
 * **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out. By storing data in files, one can use it anytime.
