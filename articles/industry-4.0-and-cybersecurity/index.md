@@ -181,28 +181,26 @@ Industry 4.0 has the potential to be the undisputed fourth industrial revolution
 
 ## References
 
-1.	Cybersecurity in the context of industry 4.0: A structured classification of critical assets and business impacts https://doi.org/10.1016/j.compind.2019.103165 
+1.	[Cybersecurity in the context of industry 4.0: A structured classification of critical assets and business impacts](https://doi.org/10.1016/j.compind.2019.103165) 
 
-2.	G. Culot, F. Fattori, M. Podrecca and M. Sartor, "Addressing Industry 4.0 Cybersecurity Challenges," in IEEE Engineering Management Review, vol. 47, no. 3, pp. 79-86, 1 thirdquarter,Sept. 2019, doi: https://doi.org/10.1109/EMR.2019.2927559 
+2.	[G. Culot, F. Fattori, M. Podrecca and M. Sartor, "Addressing Industry 4.0 Cybersecurity Challenges," in IEEE Engineering Management Review, vol. 47, no. 3, pp. 79-86, 1 thirdquarter,Sept. 2019](https://doi.org/10.1109/EMR.2019.2927559) 
 
-3.	V. Sklyar and V. Kharchenko, "ENISA Documents in Cybersecurity Assurance for Industry 4.0: IIoT Threats and Attacks Scenarios," 2019 10th IEEE International Conference on Intelligent Data Acquisition and Advanced Computing Systems: Technology and Applications (IDAACS), Metz, France, 2019, pp. 1046-1049, doi:  https://doi.org/10.1109/IDAACS.2019.8924452 
+3.	[V. Sklyar and V. Kharchenko, "ENISA Documents in Cybersecurity Assurance for Industry 4.0: IIoT Threats and Attacks Scenarios," 2019 10th IEEE International Conference on Intelligent Data Acquisition and Advanced Computing Systems: Technology and Applications (IDAACS), Metz, France, 2019, pp. 1046-1049](https://doi.org/10.1109/IDAACS.2019.8924452) 
 
-4.	Chhetri Sujit Rokka, Faezi Sina, Rashid Nafiul, Al Faruque Mohammad Abdullah (2017). Manufacturing Supply Chain and Product Lifecycle Security in the Era of Industry 4.0. Journal of Hardware and Systems Security (2018) 2:51–68. https://doi.org/10.1007/s41635-017-0031-0
+4.	[Chhetri Sujit Rokka, Faezi Sina, Rashid Nafiul, Al Faruque Mohammad Abdullah (2017). Manufacturing Supply Chain and Product Lifecycle Security in the Era of Industry 4.0. Journal of Hardware and Systems Security (2018) 2:51–68.](https://doi.org/10.1007/s41635-017-0031-0)
 
-5.	Mueller Egon, Chen Xiao-Li, Riedel Ralph (2017). Challenges and Requirements for the Application of Industry 4.0: A Special Insight with the Usage of Cyber-Physical System. Chin. J. Mech. Eng. (2017) 30:1050–1057. DOI 10.1007/s10033-017-0164-7
+5.	[Mueller Egon, Chen Xiao-Li, Riedel Ralph (2017). Challenges and Requirements for the Application of Industry 4.0: A Special Insight with the Usage of Cyber-Physical System. Chin. J. Mech. Eng. (2017) 30:1050–1057.](https://doi.org/10.1007/s10033-017-0164-7)
 
-6.	Hackel Bjorn, Hansch Florian, Hertel Michael, Ubelhor Jochen (2018). Assessing IT availability risks in smart factory networks. Business Research. https://doi.org/10.1007/s40685-018-0071-5
-
-
-7.	Bligh-Wall Shaun (2017). Henry Stewart Publications 2398-5100 (2017) Vol. 1, 1 61–68. Cyber Security: A Peer-Reviewed Journal
-
-8.	Sicari S., Rizzardi A., Grieco L.A., Coen-Porisini A. (2015). Security, Privacy & Trust in Internet of Things: the road ahead. DOI: 10.1016/j.comnet.2014.11.008
+6.	[Hackel Bjorn, Hansch Florian, Hertel Michael, Ubelhor Jochen (2018). Assessing IT availability risks in smart factory networks. Business Research.](https://doi.org/10.1007/s40685-018-0071-5)
 
 
-9.	Pereira T., Barreto L., Amaral A. (2017). Network and information security challenges within industry 4.0 paradigm. Procedia Manufacturing 13 https://doi.org/10.1016/j.promfg.2017.09.047
+7.	[Bligh-Wall Shaun (2017). Henry Stewart Publications 2398-5100 (2017) Vol. 1, 1 61–68. Cyber Security: A Peer-Reviewed Journal](https://www.henrystewartpublications.com/sites/default/files/Bligh-Wall.pdf)
 
-10.	Jing Qi, Vasilakos V. Athanasios, Wan Jiafu, Lu Jingwei, Qiu Dechao (2014). Security of the Internet of Things: perspectives and challenges. DOI 10.1007/s11276-014-0761-7 
+8.	[Sicari S., Rizzardi A., Grieco L.A., Coen-Porisini A. (2015). Security, Privacy & Trust in Internet of Things: the road ahead.](https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1016%2Fj.comnet.2014.11.008?_sg%5B0%5D=QWn900O2j3B7dQqU7P4mPIH4xH77C6xmajfDcZ6KIbpSS4qBtDKitfa0Tu6-e1b7TJhk1rKc44fRBFU-Yb-odEIi8g.nRhosgc-2pM4ccwZ8a1Nn73OChNlW0C1Gsr-HTH0GB7jBDcMfkQqBu1LWRYU9wkjqpJlkAzJ8hhkmb_GF4CqyQ)
 
+9.	[Pereira T., Barreto L., Amaral A. (2017). Network and information security challenges within industry 4.0 paradigm. Procedia Manufacturing 13](https://doi.org/10.1016/j.promfg.2017.09.047)
+
+10.	[Jing Qi, Vasilakos V. Athanasios, Wan Jiafu, Lu Jingwei, Qiu Dechao (2014). Security of the Internet of Things: perspectives and challenges.](https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1007%2Fs11276-014-0761-7?_sg%5B0%5D=6-uaFoceyfMUKu3OkXH0XCSCuDynesvXfyCMmQ-mjmWSFf1jNy1jBOSK4T-XekuAVx1pS0nVKX9N20HU0VkFFclFQg.MGvAMDZr-aXcEGgA4tilcKF-6klWMkX5VFw5uwHnvh14ub6XOH8p0T1hxxO64iKijVyd6GaiLiEU42DhPgddcA)
 
 
 
