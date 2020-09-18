@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/how-to-sync-and-update-a-forked-repo/hero.jpg
     alt: How to sync to forked repo
 ---
-This article assumes that you have a GitHub account. [Check these instructions](https://docs.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account) on how to create a GitHub user account. In this article, we shall briefly look at how we can submit work and contributions to a GitHub team project. Before we get started, you need to understand the following terms, as you will constantly come across them in daily GitHub workflow.
+In this article, we shall briefly look at how we can submit work and contributions to a GitHub team project. This article assumes that you have a GitHub account. [Check these instructions](https://docs.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account) on how to create a GitHub user account. Before we get started, you need to understand the following terms, as you will constantly come across them in daily GitHub workflow.
 <!--more-->
 
 ### Getting started
