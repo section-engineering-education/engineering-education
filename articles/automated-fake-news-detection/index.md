@@ -112,9 +112,13 @@ A machine learning approach uses machine learning algorithms to detect misinform
 Datasets are used to refine the algorithms. These datasets may be split as training data or test data.
 I have come across a lot of research where a system combines various machine learning algorithms and data mining. This is often carried out on social media platforms, especially Twitter data. For example, a model may combine machine learning, through Naïve Bayes, Support Vector Machine(SVM), and Natural Language Processing (NLP) to detect fake news. Naïve Bayes and Support Vector Machine are classification models in this process.
 
-Depending on the nature of data, the two classifiers can be applied to a dataset and their performance compared. On the other hand, these classifiers can be used in an ensemble method to enhance each other's results in classification tasks, therefore improving model accuracy. As mentioned above, Naïve Bayes is popular in text classification tasks therefore it's considered for such tasks often. SVM classifies data into two categories. In the context of fake news detection, these categories are likely to be "true" or "false". It is also an algorithm that works well on semi-structured datasets and is very adaptable. Pairing SVM and Naïve Bayes is therefore effective for fake news detection tasks.
+Depending on the nature of the data, the two classifiers can be applied to a dataset and their performance compared. On the other hand, these classifiers can be used in an ensemble method to enhance each other's results in classification tasks, therefore improving model accuracy. As mentioned above, Naïve Bayes is popular in text classification tasks therefore it's considered for such tasks often.
 
-NLP may play a role in extracting features from data. It may also come in handy when attempting to contextualize text data since this is not a strong suit of traditional machine learning models. NLP may also be utilized through [sentiment analysis of the data](/engineering-education/sentiment-analysis/), given sentiment analysis is a subfield of NLP. Sentiment analysis is the process of deriving meaningful patterns in text data. It can provide information on the context of data by describing the sentiments of a given population. For more information on sentiment analysis click the referenced link in the sentence above.    
+SVM classifies data into two categories. In the context of fake news detection, these categories are likely to be "true" or "false". It is also an algorithm that works well on semi-structured datasets and is very adaptable. Pairing SVM and Naïve Bayes is therefore effective for fake news detection tasks.
+
+NLP may play a role in extracting features from data. It may also come in handy when attempting to contextualize text data since this is not a strong suit of traditional machine learning models. NLP may also be utilized through sentiment analysis of the data, given sentiment analysis is a subfield of NLP.
+
+[Sentiment analysis](/engineering-education/sentiment-analysis/) is the process of deriving meaningful patterns in text data. It can provide information on the context of data by describing the sentiments of a given population.  
 
 The accuracy of the results is usually determined by the combinations of models used and the datasets involved. A combination of available toolkits with Bayesian learning may be used to develop a fake news detector. These toolkits include Textblob, Natural Language, and SciPy.
 
@@ -129,7 +133,7 @@ A methodology may involve building classifiers to predict the validity of news b
 
 RNN is a neural network containing loops that allow information to be stored within the network. Previous experiences influence upcoming events in RNNs. The storage of information can be attributed to LSTM. LSTM refers to artificial recurrent neural networks that allow information to persist within them. They are the building blocks for RNN layers. LSTM units provide the ability to “recall” values over a time interval. This influences the relationships between words and their occurrences.
 
-A published paper [referenced below](http://dx.doi.org/10.1145/3341161.3342957) was in an attempt to label fake news as early as possible using Recurrent Neural Networks. The goal was to reduce the time gap between a news release and detection.
+This [published paper](http://dx.doi.org/10.1145/3341161.3342957) was an attempt to label fake news as early as possible using Recurrent Neural Networks. The goal was to reduce the time gap between a news release and detection.
 
 A combination of machine learning and deep learning techniques is feasible. There are many published works that combine the two. The aim is not only to detect fake news, but to also achieve the highest possible accuracy levels in the detection.
 
@@ -152,7 +156,7 @@ I have come across literature where BERT was used to pre-train Korean data and c
 ### Conclusion
 Fake news research has never been more important than it is now. Especially during a time when the world is fighting a pandemic. The approaches explored in this article only scratch the surface. There are so many more approaches and criteria for fake news detection. Datasets also impact the accuracy of fake news detection tasks.
 
-Their quality and quantity are impactful. It is also worth noting that, as much as our focus is on automated approaches, the human element is key to this fight. A combination of human and automated approaches gives rise to a hybrid approach. I hope this article challenges you to join the fight against fake news.
+Their quality and quantity are impactful. It is also worth noting that, as much as our focus is on automated approaches, the human element is key to this fight. A combination of human and automated approaches gives rise to a hybrid approach. I hope this article challenges you to join the fight against fake news by creating better and greater solutions.
 
 ### References
 1. [Approaches to Identify Fake News: A Systematic Literature Review](https://doi.org/10.1007/978-3-030-49264-9_2)
