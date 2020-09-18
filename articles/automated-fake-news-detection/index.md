@@ -36,7 +36,7 @@ Various types of fake news include:
 
 - Clickbait. Often eye-catching content to capture readers at the expense of being factual.
 
-- Satire/parody. This type of content is considered to be fun and humorous thus considered to be entertaining, yet, some readers may interpret the content as fact.
+- Satire/parody. This type of content is considered to be fun and humorous thus considered to be entertaining, yet some readers may interpret the content as fact.
 
 - Propaganda. This is content meant to mislead and influence the reader.
 
