@@ -400,7 +400,7 @@ If you are using Visual Studio Code, your cloned folder should look similar to t
 
 ![editor opened](/engineering-education/how-to-sync-and-update-a-forked-repo/editor-opened.png)
 
-Since we are referring to [Section](https://github.com/section-io/engineering-education) to make your contributions, to start working on your contributions, navigate to the articles folder.
+Since we are trying to make our contributions to [Section](https://github.com/section-io/engineering-education), navigate to the articles folder.
 
 ![articles folder](/engineering-education/how-to-sync-and-update-a-forked-repo/articles-folder.png)
 
