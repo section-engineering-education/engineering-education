@@ -1,12 +1,10 @@
-Performance is an important aspect when building webpages and applications. When developing applications, you need to understand how long your users stay on your page, how often they leave the page as well as the response time. The first 10 seconds are vital to determine if the user leaves or continues interacting with your pages. In addition, you must clearly speed up the value to proposition for these 10 seconds and get the user's attention to spend more time on your page. The key rehearsal that you need to practice is to optimize your page and speed up the response time to your users. Your web page performance will determine the users' value of time. The point is speed. And how do you achieve a good speed reputation? Well, optimization is the way to go. Take performance as task completion (work done in a timely manner) and good user experience.
+Performance is an important aspect when building webpages and applications. When developing applications, you need to understand how long your users interacts with your page, how often they leave the page as well as the response time. The first 10 seconds are vital to determine if a user leaves or continues interacting with your pages. In addition, you must clearly speed up the value for these 10 seconds and get the user's attention to spend more time on your page. The key rehearsal that you need to practice is to optimize your page and speed up the response time to your users. Your web page performance will determine the users' value to time. The point is speed. And how do you achieve a good speed reputation? Well, optimization is the way to go. Take performance as task completion (work done in a timely manner) and good user experience.
 
 Node.js is known to produce super-fast performing and scalable web applications with an event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread. As a developer, you still need your application to be even faster and optimal. I would say Node.js is fire and performance optimization is gasoline, you can imagine how blazing your app shall be. This article will cover techniques, tools, and tips to optimize Node.js apps and achieve high-performance.
 
 ## Asynchronous coding
 
-Node.js is designed with single thread concurrency architectures with non-blocking operations.
-
-Asynchronous is heavily used in Node.js to ensure a non-blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your app, it uses blocking operations that might block your main thread and this will drastically reduce your app performance. Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and extra callbacks without blocking your main thread. Even though you may try to use Asynchronous methods, in some instances, it is possible to find your app making some blocking calls. This commonly possible when using third-party modules, you should keep an eye on the external libraries you are using and take precautions to avoid them to dominate synchronous calls.
+Node.js is designed with single thread concurrency architectures with non-blocking operations. Asynchronous is heavily used in Node.js to ensure a non-blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your web, it uses blocking operations that might block your main thread and this will drastically reduce your web performance. Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and extra callbacks without blocking your main thread. Even though you may try to use Asynchronous methods, in some instances, it is possible to find your web making some blocking calls. This commonly possible when using third-party modules, you should keep an eye on the external libraries you are using and take precautions to avoid them to dominate synchronous calls.
 
 Example: file read operation in both models ([using Node.js file system](https://nodejs.dev/learn/the-nodejs-fs-module))
 
@@ -36,11 +34,11 @@ console.log('waiting for the file to read.....');
 ![Asynchronous](/engineering-education/performance-optimization-techniques-for-node-js/asynchronous.png)
 
 In the above examples;
-Synchronously, all processes are paused until the file reading is over. The readFileSync() will first read the file and store its data in the memory before printing the data and message in the console. Asynchronous will print the console message as the system perform other tasks. The "waiting for the file to read" is printed before the file content even though it was the last command. A callback function will be called when file reading is done. The asynchronous model will have faster execution of our program. Asynchronous helps to avoid the so-called "Call-back Hell".
+Synchronously, all processes are paused until the file reading is over. The `readFileSync()` will first read the file and store its data in the memory before printing the data and message in the console. Asynchronous will print the console message as the system perform other tasks. The "waiting for the file to read" is printed before the file content even though it was the last command. A callback function will be called when file reading is done. The asynchronous model will have faster execution of our program. Asynchronous helps to avoid the so-called "Call-back Hell".
 
 ## Query optimization
 
-Just imagine having more than one million rows data to query from your database, the process generated by this database to get the endpoint of this data will greatly affect your application performance, and displaying this data becomes even slower. Using bad queries will further make your application almost useless to satisfy your user. The solution to this is to perform query optimization
+Just imagine having more than one million rows data to query from your database, the process generated by this database to get the endpoint of this data will greatly affect your application performance, and displaying this data can becomes slower. Using bad queries will further make your application almost useless to satisfy your user. The solution to this is to perform query optimization
 
 ### Basic Tips to improve your database performance/[optimization overview](https://dev.mysql.com/doc/refman/8.0/en/optimize-overview.html)
 
@@ -91,24 +89,24 @@ other Tips
 
 A cache is a memory buffer where frequently accessed data is temporarily stored (that will not be changed in the near future) in order to be accessed more quickly. Cached data is then retrieved without having to access the original data. Caching will improve your app response time and even reduce some costings such as bandwidth and data volumes.
 
-Catching is a great practice to improve your app performance. It you have fewer users; your app performance may not be greatly affected. However, performance problems may arise when the traffic grows and you need to maintain the load balance. When this happens, caching your app regularly will be a great hit to achieve high-performance. Caching can be a little bit hard thus; you need tools to assist you to cache your app efficiently such as
+Catching is a great practice to improve your app performance. It you have fewer users, your app performance may not be greatly affected. However, performance problems may arise when the traffic grows and you need to maintain the load balance. When this happens, caching your app regularly will be a great hit to achieve high-performance. Caching can be a little bit hard thus you need tools to assist you to cache your app efficiently such as
 
-- [Redis cache](https://redis.io/topics/client-side-caching) it is entirely asynchronous with optimal performances to handle cached data requests in a single thread. Consider checking it out, it is a smooth API that will help you do and manage your Client-side and server-side cache.
-- [Memcached](https://memcached.org/) stores data across different nodes with hashing schema that provides hash table functionality in a way that adding or removing a server node does not significantly change the [mapping of the keys to server nodes.](https://npm.runkit.com/memcached).
+- [Redis cache](https://redis.io/topics/client-side-caching) it is entirely asynchronous with optimal performances to handle cached data requests in a single thread. Consider checking it out, it is a smooth API that will help you do and manage your client-side and server-side cache.
+- [Memcached](https://memcached.org/) stores data across different nodes with hashing schema that provides hash table functionality in a way that adding or removing a server node does not significantly change the [mapping of the keys to server nodes](https://npm.runkit.com/memcached).
 - [Node-cache](https://www.npmjs.com/package/node-cache) works almost like Memcached with the set, get, and delete methods. It has a timeout that deletes data from the cache when the time out expires.
 - [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-content-caching) will help to maintain load balance. Nginx will help to cache static files, which will drastically offload the work of the application server. It offers low memory usage and high concurrency.
 
 ## Go session free
 
-Session data are stored in memory. As traffic in your app grows, more sessions will be generated and this might add significant overhead to your server. You need to find a means to store session data or minimize the amount of data stored in the session. Modules such as [Express.js](https://expressjs.com/) can help you create server protocols which are stateless. Stateless protocols do not save store any information from previous visits.
+Session data are stored in memory. As traffic in your app grows, more sessions will be generated and this might add significant overhead to your server. You need to find a means to store session data or minimize the amount of data stored in the session. Modules such as [Express.js](https://expressjs.com/) can help you create server protocols which are stateless. Stateless protocols do not save or store any information from previous visits.
 
 Switch to an external session store such as [Redis](https://redis.io/documentation) , [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-basic-session-persistence), [MongoDB](https://docs.mongodb.com/manual/reference/method/Session/). Where possible, the best option is to store no session state in your server-side and you will get better performance.
 
 ## Script tracing and logging
 
-Logging helps to track your application activities and traffic. when an app is running there might be possibilities to get fatal errors(even though your app is running properly after production), and you need to get this on time, find what code has an error, and fix them even before your user notice that something is faulty in your system.
+Logging helps to track your application activities and traffic. When an app is running there might be possibilities to get fatal errors(even though your app is running properly after production), and you need to get this on time, find what code has an error, and fix them even before your user notice that something is faulty in your system.
 
-The commonly used method for logging in Node.js is `console.log()` logs Standard outputs (stdout) and `console.error()` will log standard errors (stderr). However, there are more efficient, reliable, popular, and scalable libraries/3rd party APIs that will assist you to log scripts in your Node.js app
+The commonly used method for logging in Node.js are `console.log()` logs Standard outputs (stdout) and `console.error()` will log standard errors (stderr). However, there are more efficient, reliable, popular, and scalable libraries/3rd party APIs that will assist you to log scripts in your Node.js app
 
 They include:
 
@@ -159,9 +157,7 @@ logger.error("Danger, Winston!");
 ```
 2. [**Morgan**](https://github.com/expressjs/morgan)
 
-Morgan is an HTTP request logger middleware for Node.js applications. Morgan gives insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers.
-
-Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) do to the access-log or error-log.
+Morgan is an HTTP request logger middleware for Node.js applications. Morgan gives insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) do to the access-log or error-log.
 
 Sample app that will log all requests in the [Apache](https://httpd.apache.org/docs/1.3/logs.html) combined format to one log file per day in the log/ directory using the [rotating-file-stream module](https://www.npmjs.com/package/rotating-file-stream).
 ```js
@@ -197,15 +193,11 @@ Logging best practices
 - Logging should be meaningful
 - Adopt logging at the early stage of app development
 - Divide logs into several log files in case you have an application with huge traffic
-- Logging should be structured and done in level
+- Logging should be structured and done in levels
 
 ## Run parallel
 
-Ensure parallel execution flow when requesting remote services, database calls, and file system access. Parallelizing tasks will greatly reduce latency and minimize blocking operations.
-
-Parallel operation means running multiple things at the same time. You should note that parallel is different from asynchronous. With parallel, you do not have control of what finishes before the other, as your code will be optimized to run all tasks are executed at the same time. Generally, Node.js does not technically execute these multiple tasks at the same time, what happens it that each task is pushed to an asynchronous event loop with no control of which task will finish before the other.
-
-If your execution needs to complete one or more tasks before the other please consider going asynchronous. 
+Ensure parallel execution flow when requesting remote services, database calls, and file system access. Parallelizing tasks will greatly reduce latency and minimize blocking operations. Parallel operation means running multiple things at the same time. You should note that parallel is different from asynchronous. With parallel, you do not have control of what finishes before the other, as your code will be optimized to run all tasks are executed at the same time. Generally, Node.js does not technically execute these multiple tasks at the same time, what happens it that each task is pushed to an asynchronous event loop with no control of which task will finish before the other. If your execution needs to complete one or more tasks before the other please consider going asynchronous. 
 
 For example;
 
@@ -214,7 +206,7 @@ For example;
 - **Tasks** : tasks to be executed such as arrays objects etc.
 - **Callback** : pass all tasks results and execute when all task compilation is completed
 
-An example of user dash board where you functions such as `getUserprofile()`, `getrecentActivity()`, `getNotifications()`, can be execute parallel using async.js
+An example of user a dashboard where functions such as `getUserprofile()`, `getrecentActivity()`, `getNotifications()`, can be execute parallel using async.js
 ```js
 async.parallel([
 	getNotifications,
@@ -253,13 +245,13 @@ Result : {short: "resultOfShortTime", medium: "resultOfMediumTime", long: "resul
 ```
 ## Client-side rendering
 
-Powerful MVC/MVVM has contributed to the growth of single-page apps. Frameworks such as AngularJS, Ember, meteor, and BackboneJS are examples of current powerful MVC technology for client Client-side rendering. These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to high-speed performance.
+Powerful MVC/MVVM has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful MVC technology for client client-side rendering. These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to high-speed performance.
 
 ## Gzip compression
 
-Gzip compresses requests and responses. [Gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html) compresses response before sending them to the browser; hence, the browser takes a short time to fetch them. Gzip also compresses the request to the remote server, which significantly increases web performance
+Gzip compresses HTTP requests and responses. [Gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html) compresses response before sending them to the browser; hence, the browser takes a short time to fetch them. Gzip also compresses the request to the remote server, which significantly increases web performance
 
-When using [ExpressJS](http://expressjs.com/), you can choose to use compression (a Node.js compression middleware that supports deflate and Gzip and serve static content). Using compression library `app.use()` will compression every request that passes [through the middleware will be compressed](https://github.com/expressjs/compression).
+When using [ExpressJS](http://expressjs.com/), you can choose to use [compression](https://github.com/expressjs/compression) (a Node.js compression middleware that supports deflate and Gzip and serve static content). Using compression library `app.use()` will compression every request that passes [through the middleware will be compressed](https://github.com/expressjs/compression).
 
 Example
 ```js
@@ -274,15 +266,13 @@ Check more on how to [connect express with compression](https://github.com/expre
 
 ## Avoid memory leaks
 
-A memory leak occurs when a computer program incorrectly manages memory allocations in a way that memory which is no longer needed is not released ([Wikipedia](https://en.wikipedia.org/wiki/Memory_leak)).
+A memory leak occurs when a computer program incorrectly manages memory allocations in a way that memory which is no longer needed is not released ([Wikipedia](https://en.wikipedia.org/wiki/Memory_leak)). With memory leaks, a loaded page will reserve more and more memory and will slowly occupy your available space to a point where CPU usage is overstretched and severely affecting your application performance. You may choose to restart your application and these issues will magically vanish but this will not be a reliable solution as the problem will repeat itself and the memory will pileup periodically. Memory leaks can come from DOM that has been removed from a page but some variables still make some reference to them, If you happen to remove DOM values make sure to set them to null (when null, the garbage collector will eliminate them) to avoid memory leaks.
 
-With memory leaks, a loaded page will reserve more and more memory and will slowly occupy your available space to a point where CPU usage is overstretched and severely affecting your application performance. You may choose to restart your application and these issues will magically vanish but this will not be a reliable solution as the problem will repeat itself and the memory will pileup periodically. Memory leaks can come from DOM that has been removed from a page but some variables still make some reference to them, If you happen to remove DOM values make sure to set them to null (when null, the garbage collector will eliminate them) to avoid memory leaks
-
-Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web has any memory leaks. Chrome dev tool is simple, it will help you to catch, and debug memory leaks with Open dedicate DevTool for Node.js. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more on hot to detect and solve memory leaks using CromeDevTool.
+Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web has any memory leaks. Chrome dev tool is simple, it will help you to catch, and debug memory leaks with Open dedicate DevTool for Node.js. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more on how to detect and solve memory leaks using CromeDevTool.
 
 ## Real-time monitoring
 
-Monitoring helps to gain insight into your production application to ensure a fast, stable, and reliable system. Insights are critical in helping to detect performance problems within your system. As a developer, you need to know if your system is down even before your customers start to complain about how your system is faulty. Thus, you need real-time alerting so you can be notified immediately.
+Monitoring helps to get insights of your production application to ensure a fast, stable, and reliable system. Insights are critical in helping to detect performance problems within your system. As a developer, you need to know if your system is down even before your customers start to complain about how your system is faulty. Thus, you need real-time alerting so you can be notified immediately.
 
 Proper monitoring also helps get insight into features of your application's behaviour. You need to know how much time does your app takes to run each function in the production environment. Also, if you are using microservices, you need to monitor network connections and lower delays in the communication between two services. The commonly used third party tool to monitor Node.js apps includes
 - [LogicMonitor](https://www.logicmonitor.com/support/about-logicmonitor/overview/what-is-logicmonitor)
@@ -296,19 +286,17 @@ Node.js monitoring frameworks include [Hapi](https://github.com/hapijs/hapi), [R
 
 ## Keeping your code small and light and compact
 
-When developing mobile apps apply the ideas of making your codebase small and compact for both client code and serve code. This will reduce latency and increase speed load time. When it comes to making your code light single page web app is a great consideration. For Example, assume your web has a page with six JavaScript files when this page is accessed on the browser it means a browser will make six HTTP requests to fetch all your files. This will create a block and wait scenario. You then need to minify and concatenate your multiple files into one to avoid scenarios like this.
+When developing mobile apps apply the ideas of making your codebase small and compact for both client code and serve code. This will reduce latency and increase speed load time. When it comes to making your code light, single page web app is a great consideration. For Example, assume your web has a page with six JavaScript files when this page is accessed on the browser it means a browser will make six HTTP requests to fetch all your files. This will create a block and wait scenario. You then need to minify and concatenate your multiple files into one to avoid scenarios like this.
 
-Node.js has a lot of open source libraries and modules. During the development stage, you need to ask yourself why use this framework and not the other, you need to find out if a framework is worth using or if there are other simple ways to write your code. The point is when you consider using a framework it should be worth it.
-
-However, this does not mean choosing frameworks is bad, Frameworks are great, and they are scalable and have undisputed benefits. Consider using a framework if it only simply your code.
+Node.js has a lot of open source libraries and modules. During the development stage, you need to ask yourself why use this framework and not the other, you need to find out if a framework is worth using or if there are other simple ways to write your code. The point is, when you consider using a framework it should be worth. However, this does not mean choosing frameworks is bad, Frameworks are great, and they are scalable and have undisputed benefits. Consider using a framework if it only simply your code.
 
 For example;
 
-When dealing with date objects, it would be advisable to use a library like Moment instead of using JavaScript date object. Not that JavaScript date objects are bad in any way, only that you need to add a lot of code setups just to set up and display a simple date format
+When dealing with date objects, it would be advisable to use a library like Moment instead of using native JavaScript date object. Not that JavaScript date objects are bad in any way, only that you need to add a lot of code setups just to set up and display a simple date format
 
 Example
 
-- Using JavaScript date object
+- Using native JavaScript date object
 ```js
 var NowDate = new Date();
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -329,18 +317,16 @@ var format = require("date-fns/format");
 var today = format(new Date(), "yyyy-M-dd");
 console.log(today);
 ```
-As a developer, which of the above methods would you consider? Remember all these code blocks outputs today's date. When working with Frameworks, consider looking at alternative modules that are relatable to your code context.
+As a developer, which of the above methods would you consider? Remember all these code blocks outputs today's date. When working with frameworks, consider looking at alternative modules that are relatable to your code context.
 
 For example, date-fns is an alternative date object library to moment. Interestingly date-fns is considered more light compared to moment yet they do the same job. As a developer, you need to break that dilemma and choose which library to use more wisely during the development stage. In such a scenario date-fns will improve your buddle size since it is small.
 
 ## Conclusion
 
-Node.js performance optimization is a huge topic with so many grounds.
-
-This article is a tip of an iceberg of some of the common practices you can adopt to get high-performance performance results.
+Node.js performance optimization is a huge topic with so many grounds. This article is a tip of an iceberg of some of the common practices you can adopt to get high-performance performance results.
 
 Other topics practices that you should consider includes
-- Using the Latest stable Node.js updates
+- Using the latest stable Node.js updates
 - CPU profiling
 - Node.js timers to schedule tasks
 - Prioritize access to local variables.
@@ -352,6 +338,4 @@ Other topics practices that you should consider includes
 - Using Standard V8 GC
 - Avoiding global variables
 
-Consider doing some homework and find out which segment of your app needs optimization attention.
-
-However, as you practice these optimization tips do not forget security practices such as [SSL/TLS AND HTTP/2](https://docs.nginx.com/nginx/technical-specs/#http-2-and-ssl-tls).
+Consider doing some homework and find out which segment of your app needs optimization attention. However, as you practice these optimization tips do not forget security practices such as [SSL/TLS AND HTTP/2](https://docs.nginx.com/nginx/technical-specs/#http-2-and-ssl-tls).
