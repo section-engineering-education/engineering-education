@@ -101,7 +101,7 @@ A machine learning approach uses machine learning algorithms to detect misinform
 
 **Decision Tree:** a supervised learning algorithm that has a tree-like flow. It helps in decision making. A useful algorithm for both classification and regression tasks.
 
-Random forest: simply a combination of decision trees.
+**Random forest:** simply a combination of decision trees.
 
 **Support Vector Machine:** a supervised learning algorithm. It examines data for classification and regression analysis. It classifies data into two categories.
 
