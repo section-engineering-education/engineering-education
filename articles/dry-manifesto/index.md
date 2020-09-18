@@ -14,10 +14,13 @@ images:
   - url: /engineering-education/dry-manifesto/hero.jpg
     alt: DRY manifesto example image
 ---
-Imagine you are a detective, perhaps in [the midst of Victorian-era London](https://en.wikipedia.org/wiki/Sherlock_Holmes). You are at your apartment at 112Y Caker Street, Seoul. Your plucky assistant, Blatson, immediately has an idea:
 <!--more-->
+
+> Points to whoever can figure out which [Slate Star Codex](https://slatestarcodex.com/) article the title is referencing.
+
 ### DRY Manifesto
->Points to whoever can figure out which [Slate Star Codex](https://slatestarcodex.com/) article I'm referencing.
+
+Imagine you are a detective, perhaps in [the midst of Victorian-era London](https://en.wikipedia.org/wiki/Sherlock_Holmes). You are at your apartment at 112Y Caker Street, Seoul. Your plucky assistant, Blatson, immediately has an idea:
 
 "It seems like the victim had tuberculosis. It's likely that the murderer caught it as well. We need to find anyone who has tuberculosis."
 
@@ -31,13 +34,13 @@ Blatson re-enters the room: "I've just finished interviewing Sir Birch!" he crie
 
 "Yes, I know that," you say with irritation. "I know that because I wrote down everything in my casebook, and in my notes it says that Sir Birch has tuberculosis."
 
-“Ah, you must be one of those [10X detectives](http://antirez.com/news/112) who can solve problems with no effort. Well, not all of us have your “talent”, O' greatest detective in Seoul!”, Blatson replies sarcastically. “But seriously, how was *I* supposed to know to be taking notes?”
+“Ah, you must be one of those [10X detectives](http://antirez.com/news/112) who can solve problems with no effort. Well, not all of us have your “talent”, O' greatest detective in London!”, Blatson replies sarcastically. “But seriously, how was *I* supposed to know to be taking notes?”
 
 *This is Part Two of **The Adventures of Merlock and Blatson**. [Part One is here](https://www.thinkingmuchbetter.com/main/debugging-bad-detective/).*
 
 ---
 
-DRY is a very important concept in software engineering. It stands for *Don't Repeat Yourself*. The basic premise is that if you start [copying and pasting code](https://www.youtube.com/watch?v=dlrjDvS7wxo), then you may need to do some refactoring.
+DRY is a very important concept in software engineering. It stands for *Don't Repeat Yourself*. As Merlock pointed out, it's a waste of time to try to do the same action repeatedly. If you start [copying and pasting code](https://www.youtube.com/watch?v=dlrjDvS7wxo), then you may need to do some refactoring.
 
 The examples in this article are done in various languages.
 
