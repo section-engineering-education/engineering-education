@@ -23,7 +23,7 @@ Since this is a very broad research area, in this article we’ll look at:
 
 - Manual vs automated fake news detection efforts.
 
-- A brief introduction to machine learning and deep learning techniques to fake news detection.
+- A brief introduction to machine learning and deep learning techniques for fake news detection.
 
 - Bonus: BERT.
 
