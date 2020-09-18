@@ -6,13 +6,13 @@ url: /engineering-education/plagiarism-detection/
 title: Plagiarism Detection
 description: Plagiarism Detection is how one can compare two documents and find out how similar they are. This article explores one of the more basic algorithms in finding the similarity of a document.
 author: earl-potters
-date: 2020-09-10T00:00:00-07:00
+date: 2020-09-18T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/plagiarism-detection/hero.jpg
-    alt: Devtools example image Node.js debugger
+    alt: Plagiarism Detection example image
 
 ---
 **Plagiarism** or taking another persons ideas without proper credit or representation can feel like someone just kidnapped your idea. Actually, plagiarism derives its Latin root from *plagiarius* which literally means "kidnapper". So plagiarism is widely considered bad overall.
@@ -20,10 +20,12 @@ images:
 
 >**A:** What's worse than someone stealing your work?
 ![Funny](/engineering-education/plagiarism-detection/funny.jpg)
-Image Source: [Funny Meme](https://imgur.com/gallery/VrgyDwC)
-
+>
 >
 >**Q:** Someone stealing your work and claiming it's theirs!!!
+>
+>[Image Source:](https://imgur.com/gallery/VrgyDwC)
+
 
 ### Plagiarism Detection
 Anyway, I won't discuss the ethical upset and academic dishonesty plagiarism can bring because that's not what this article is about. If you want to know more about it I recommend you visit this [article](https://www.scribbr.com/category/plagiarism/).
@@ -56,8 +58,8 @@ We want to find the numerical value that will indicate how *"close"*  or how sim
 >The following steps are actually rather simple but how you go about answering it can vary greatly.
 
 ### Math Formulation
-#### Step 1:
 
+#### Step 1:
 A popular way of characterizing text documents is by using a [Vector space model](https://en.wikipedia.org/wiki/Vector_space_model). The idea is to represent terms as vectors. A term can be anything: single word, multiple keywords or even a phrase. Each will count as a non-zero vector corresponding to a separate dimension.
 
 According to this [paper](https://ptabdata.blob.core.windows.net/files/2017/IPR2017-01039/v20_EX1020_Salton,%201975.pdf), mathematically we can define a document space as:
@@ -76,7 +78,7 @@ For example, if we were to use the English dictionary as our document we would h
 Now that we have our model let's move on!
 
 #### Step 2:
-Using this model, we can now apply an operation to evaluate the similarity coefficient. In this article we will use a method called the **Cosine Similarity**. The Cosine similarity metric measures the *cosine angle* of two non-zero vectors.
+Using this model, we can now apply an operation to evaluate the similarity coefficient. In this article we will use a method called the **Cosine Similarity**. The cosine similarity metric measures the *cosine angle* of two non-zero vectors.
 
 The mathematical definition, as shown from [wiki](https://en.wikipedia.org/wiki/Cosine_similarity), can be defined as:
 
@@ -96,26 +98,26 @@ For this example, I am going to replicate the example from [Selva Prabhakaran](h
 
 `Document 1` is a snippet from the educba site on [*what is inheritance in programming*](https://www.educba.com/what-is-inheritance-in-programming/).
 
-`Document 2` and `Document 3` are from the wikipedia page on [*inheritance(object oriented programming)*](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
+`Document 2` and `Document 3` are from the Wikipedia page on [*inheritance(object oriented programming)*](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)).
 
 Only difference is that `Document 3` is a subsection of `Document 2`. How do you think their similarities will compare?
 
-#### Three Document Similarity example
-
+#### Three Document Similarity Example
 ![plagiarism_blog_post](/engineering-education/plagiarism-detection/plagarism_blog_post.png)
 Image Source: Author -- Earl Potters
 
 
 From the example above you can see three similar documents that share a central theme, namely inheritance.
 
-With the example above, I am quantitatively measuring the similarity between the 3 documents using 3 different metrics: **total common words** (similar but not the same as [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index)), [**Euclidean distance**](https://en.wikipedia.org/wiki/Euclidean_distance) and [**cosine similarity**](https://en.wikipedia.org/wiki/Cosine_similarity).
+With the example above, I am quantitatively measuring the similarity between the 3 documents using 3 different metrics: **total common words** (similar but not the same as [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index)), [**Euclidean distance**](https://en.wikipedia.org/wiki/Euclidean_distance) and [**Cosine similarity**](https://en.wikipedia.org/wiki/Cosine_similarity).
 
-We have limited our quantitative analysis scope by only looking at three key-words: **'inheritance'**, **'class'** and **'object'**. We have briefly talked about cosine similarity but I want to explain what it means in graphical terms.
+We have limited our quantitative analysis scope by only looking at three key-words: **'inheritance'**, **'class'**, and **'object'**. We have briefly talked about cosine similarity but I want to explain what it means in graphical terms.
 
 To explain what I mean, here is a 3D projection of the 3 documents.
 
 #### 3D Document Projection
 ![3D Projection](/engineering-education/plagiarism-detection/3d-projection-plagarism-blog.png)
+
 Image Source: Author -- Earl Potters
 
 As illustrated by this example, we can see that `doc 2` and `doc 3` are closer in orientation by magnitude. Conversely, `doc 1` and `doc 3` are the closest using the Euclidean distance metric.
@@ -126,7 +128,7 @@ The graphical representation of common words is a intersection which can be seen
 ![total common words](/engineering-education/plagiarism-detection/ven-diagrahm.png)
 Image Source: Author -- Earl Potters
 
-You can see a 3 intersecting circles which contain the set of all words in their document space. The intersection of circles is the intersection of both word sets.
+You can see 3 intersecting circles that contain the set of all words in their document space. The intersection of circles is the intersection of both word sets.
 
 #### Compare and Contrast
 As you can figure out, all 3 similarity metrics have their own interpretation of similarity.
@@ -157,9 +159,9 @@ $ conda install scikit-learn pandas
 ```
 
 ##### 2. Verification
-To ensure that the packages are installed properly open up your python interpreter and run the follow code.
+To ensure that the packages are installed properly open up your Python interpreter and run the follow code.
 
-``` python
+```Python
 # loading python modules
 import sklearn
 import pandas as pd
@@ -177,7 +179,7 @@ Now that we have everything set up it's time to code!
 ##### 1. Load Python Modules
 Let's first import important modules
 
-```python
+```Python
 # Load Python Modules
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -189,7 +191,7 @@ import pandas as pd
 ##### 2. Defining Data Set
 Here we define the data. I have set up a list of `tuples(name, data)`.
 
-```python
+```Python
 # define data
 corpus = [
         ('doc_1', 'This is the first document.'),
@@ -204,15 +206,15 @@ corpus = [
 *Using Count Vectorize*
 Now we need to process the data. Here is a neat trick to separate the names and data into lists.
 
-```python
+```Python
 # split doc_names and doc_data
 doc_names, doc_data = zip(*corpus)
 ```
 Output:
-```python
+```Python
 doc_names -> ('doc_1', 'doc_2', 'doc_3', 'doc_4')
 ```
-```python
+```Python
 doc_data -> ('This is the first document.', \
             'This document is the second document.', \
             'And this is the third one.', \
@@ -222,7 +224,7 @@ doc_data -> ('This is the first document.', \
 ##### 4. Vectorize Data
 This is the most crucial step. We need to convert the data into a vector space. Luckily `sklearn` as a function called `CountVectorizer()` that will do the heavy lifting.
 
-```python
+```Python
 #create an instance of the class Countvectorizer that converts a collection of text document to a matrix of token counts
 vectorizer = CountVectorizer()
 
@@ -242,7 +244,9 @@ df_document_term_matrix = pd.DataFrame(data=document_term_matrix,
                                       index=doc_names)
 df
 ```
+
 ![table](/engineering-education/plagiarism-detection/screenshot1.png)
+
 Image Source: Author -- Earl Potters
 
 ###### *Now we have our Data set in a Model!*
@@ -250,7 +254,7 @@ With the vectorized data from the previous step we can calculate the cosine simi
 
 ##### 5. Create Similarity feature aka Cosine Similarity
 
-```python
+```Python
 # return compute dot product on itself which will give the cosine_similarity matrix
 cosine_matrix = cosine_similarity(document_term_matrix) -> array([[1.        , 0.79056942, 0.54772256, 1.        ],
                                                                   [0.79056942, 1.        , 0.4330127 , 0.79056942],
@@ -262,13 +266,15 @@ df_cosine_matrix = pd.DataFrame(data=cosine_matrix,
                     index=doc_names)
 df
 ```
+
 ![table 2](/engineering-education/plagiarism-detection//screenshot2.png)
+
 Image Source: Author -- Earl Potters
 
 ##### 6. Test Feature
-Finally we can print the result and see if we have reasonable output.
+Finally we can print the result and see if we have a reasonable output.
 
-```python
+```Python
 # print pandas table
 print(df_document_term_matrix)
 # print pandas table
@@ -280,18 +286,20 @@ Your output should look like this.
 `df_document_term_matrix`
 
 ![table](/engineering-education/plagiarism-detection//screenshot1.png)
+
 Image Source: Author -- Earl Potters
 
 `df_cosine_matrix`
 
 ![table 2](/engineering-education/plagiarism-detection//screenshot2.png)
+
 Image Source: Author -- Earl Potters
 
 
 ##### 7. Review/Refactor
 Here is the refactored original code.
 
-```python
+```Python
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -358,10 +366,11 @@ class Count_Vectorizer_Detector(Plagiarism_Checker):
         super().__init__(corpus, vectorizer= CountVectorizer())
 
 ```
+
 ##### BONUS
 I added tdif vectorizer which also fits with the class above
 
-```python
+```Python
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 class Tdif_Vectorizer_Detector(Plagiarism_Checker):
