@@ -409,3 +409,7 @@ https://ptabdata.blob.core.windows.net/files/2017/IPR2017-01039/v20_EX1020_Salto
 https://en.wikipedia.org/wiki/Cosine_similarity
 
 https://www.machinelearningplus.com/nlp/cosine-similarity/
+
+---
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+
