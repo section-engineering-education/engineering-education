@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/dry-manifesto/
 title: A Something Sort Of Like a DRY-ism-ist Manifesto
-description: DRY is a very important part of software engineering. This tutorial will show you how, using functions, generics, and inheritance.
+description: DRY (Don't Repeat Yourself) is a very important part of software engineering. This tutorial will show you how, using functions, generics, and inheritance.
 author: mike-white
-date: 2020-09-15T00:00:00-11:00
+date: 2020-09-18T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/dry-manifesto/hero.jpg
     alt: DRY manifesto example image
 ---
-<!--more-->
 
 > Points to whoever can figure out which [Slate Star Codex](https://slatestarcodex.com/) article the title is referencing.
 
 ### DRY Manifesto
 
 Imagine you are a detective, perhaps in [the midst of Victorian-era London](https://en.wikipedia.org/wiki/Sherlock_Holmes). You are at your apartment at 112Y Caker Street, Seoul. Your plucky assistant, Blatson, immediately has an idea:
+<!--more-->
 
 "It seems like the victim had tuberculosis. It's likely that the murderer caught it as well. We need to find anyone who has tuberculosis."
 
-"Right," you reply. You start looking through your [casebook](https://en.wikipedia.org/wiki/Sherlock_Holmes). It's filled with notes of evidence, places, tasks, and dialogue. You look through your casebook, and see if you can find anything that would show illness.
+"Right," you reply. You start looking through your casebook. It's filled with notes of evidence, places, tasks, and dialogue. You thumb through it to see if you can find anything that would show illness.
 
 Blatson re-enters the room: "I've just finished interviewing Sir Birch!" he cries out.
 
@@ -34,13 +34,13 @@ Blatson re-enters the room: "I've just finished interviewing Sir Birch!" he crie
 
 "Yes, I know that," you say with irritation. "I know that because I wrote down everything in my casebook, and in my notes it says that Sir Birch has tuberculosis."
 
-“Ah, you must be one of those [10X detectives](http://antirez.com/news/112) who can solve problems with no effort. Well, not all of us have your “talent”, O' greatest detective in London!”, Blatson replies sarcastically. “But seriously, how was *I* supposed to know to be taking notes?”
+“Ah, you must be one of those [10X detectives](http://antirez.com/news/112) who can solve problems with no effort. Well, not all of us have your 'talent', O' greatest detective in London!”, Blatson replies sarcastically. “But seriously, how was *I* supposed to know to be taking notes?”
 
 *This is Part Two of **The Adventures of Merlock and Blatson**. [Part One is here](https://www.thinkingmuchbetter.com/main/debugging-bad-detective/).*
 
 ---
 
-DRY is a very important concept in software engineering. It stands for *Don't Repeat Yourself*. As Merlock pointed out, it's a waste of time to try to do the same action repeatedly. If you start [copying and pasting code](https://www.youtube.com/watch?v=dlrjDvS7wxo), then you may need to do some refactoring.
+DRY is a very important concept in software engineering. It stands for *Don't Repeat Yourself*. As Merlock pointed out, it's a waste of time to try to do the same action repeatedly. If you start copying and pasting code, then you may need to do some refactoring.
 
 The examples in this article are done in various languages.
 
@@ -63,7 +63,7 @@ turtle.forward(20)
 # ...
 ```
 
-This can get messy very quickly. Imagine if you wanted to change the size of the boxes! You'd need to rewrite all that code. [Writing a lot of code in the first place is bad anyway](https://github.com/AceLewis/my_first_calculator.py/blob/master/my_first_calculator.py). It can also increase the size of files. People don't like to download programs that are 20 GB in size. So we can create functions so that we don't need to repeat code.
+This can get messy very quickly. Imagine if you wanted to change the size of the boxes! You'd need to rewrite all that code. [Writing a lot of code in the first place is bad anyway](https://github.com/AceLewis/my_first_calculator.py/blob/master/my_first_calculator.py). It can also increase the size of files. People don't like to download programs that are 20 GB in size. As an alternative, we can create functions so that we don't need to repeat code.
 
 ```python
 def draw_box():
@@ -184,7 +184,7 @@ def draw_grid(box_size, rows, columns):
 If we didn't do this, we'd have to make separate functions for each size. Imagine having to make a `draw_grid8x5` function. It would be a great pain.
 
 ### 3. Generics
-If you use a [statically-typed language](https://www.section.io/engineering-education/typescript-static-typing/), you may need many types that are very similar. For example, you may need a list of integers, and a list of strings. [Some languages](https://golang.org/) will force you to actually make new types. But most statically-typed languages let you use generics.
+If you use a [statically-typed language](/engineering-education/typescript-static-typing/), you may need many types that are very similar. For example, you may need a list of integers, and a list of strings. [Some languages](https://golang.org/) will force you to actually make new types. But most statically-typed languages let you use generics.
 
 A generic type takes a type parameter. Once the code is compiled, there are essentially multiple versions of the structure. This can [increase compile times](https://pingcap.com/blog/generics-and-compile-time-in-rust), but it can be worth it in order to save time writing code.
 
