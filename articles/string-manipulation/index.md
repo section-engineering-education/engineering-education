@@ -6,7 +6,7 @@ url: /engineering-education/string-manipulation/
 title: String Manipulation
 description: The article discusses how to modify strings in the C programming language. This includes discussing functions from the string library.
 author: nimra-aftab
-date: 2020-09-11T00:00:00-07:00
+date: 2020-09-18T00:00:00-16:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -26,6 +26,7 @@ char mystr[4] = "bye"; // '\0' is appended automatically to the end
 char mystr2[4] = {'b', 'y', 'e', '\0'};
 ```
 We can change characters in a string by modifying the array elements:
+
 ``` c
 mystr[0] = 'e'; // mystr is now "eye" instead of "bye"
 ```
@@ -38,9 +39,10 @@ char mystr[6] = "hello";
 char newstr[6];
 newstr = mystr; // THIS IS INCORRECT.
 ```
+
 Notice that `newstr ` is an array name. It is **illegal** to use an array name on the left side of the assignment operator (`=`). The only exception to this rule is when we initialize a string **at the same time** as we declare it. So `char mystr[6] = "hello"` is acceptable, but `newstr = mystr` is not.
 
-Luckily, there is a string function in 'C' that can help us copy strings.
+Luckily, there is a string function in 'C' that can help us to copy strings.
 
 ### Introducing the String Library
 The string library has functions that can help us manipulate strings. You'll need to add `#include <string.h>` at the beginning of your program to access these functions.
