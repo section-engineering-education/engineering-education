@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/string-manipulation/
-title: String Manipulation
+title: String Manipulation in C
 description: The article discusses how to modify strings in the C programming language. This includes discussing functions from the string library.
 author: nimra-aftab
 date: 2020-09-18T00:00:00-16:00
