@@ -422,7 +422,7 @@ It is now simple from here, create a branch that will have your changes.
 
 ![creating branch](/engineering-education/how-to-sync-and-update-a-forked-repo/creating-branch.png)
 
-Since we have our changes ready, we need to switch these changes to the branch we have created. i.e. "the changes on your folder and your work in progress will follow to the new branch" and click switch to branch.
+Since we have our changes ready, we need to merge these changes to the branch we have created. i.e. "the changes on your folder and your work in progress will follow to the new branch" and click switch to branch.
 
 ![switch to branch](/engineering-education/how-to-sync-and-update-a-forked-repo/switch-to-branch.png)
 
