@@ -14,7 +14,7 @@ images:
     alt: css grid
 ---
 
-CSS Grid is a two-dimensional positioning layout system in CSS, that can be used to create responsive interfaces for the web. Similar to flexbox, CSS rules are applied to the parent container and the children.
+CSS Grid is a two-dimensional positioning layout system in CSS, that can be used to create responsive interfaces for the web. Similar to Flexbox, CSS rules are applied to the parent container and the children.
 
 CSS Flexbox is a one dimension positioning system. Check out [this](https://www.section.io/engineering-education/css-flexbox/#conclusion) article to learn more about CSS Flexbox.
 
@@ -27,46 +27,74 @@ CSS Flexbox is a one dimension positioning system. Check out [this](https://www.
 
 ## Introduction & History
 
-Using CSS for laying out items on a webpage has always been a tricky affair. We used tables and floats to position items before. They were inefficient hacks and they weren't intuitive.
+Using CSS for web layouts has always been a tricky affair. We used tables and floats to position items before. They were inefficient hacks and they weren't intuitive.
 
-Therefore, CSS Flexbox was introduced and it made positioning easier. But as the complexity of your website layout increased, flexbox wasn't the best option. It was designed for one-dimensional website layouts. Thus, CSS grid solves that problem by introducing features for building two-dimensional layouts.
+Therefore, CSS Flexbox was introduced and it made positioning easier. But as the complexity of your website layout increased, Flexbox wasn't the best option. It was designed for one-dimensional website layouts. Thus, CSS grid solves that problem by introducing features for building two-dimensional layouts.
 
-Let us look into some basic terminology used in grid and dive into building a layout using the CSS grid system.
+Let's look into some basic terminology used in grid and dive into building a layout using the CSS grid system.
 
 ## Terminology
 
-### grid container
+### Grid Container
 
 This container acts as the parent of all the grid elements.
 
+![Grid Container](/engineering-education/css-grid/grid-basic.png)
+
 ```html
 <div class="grid-parent-container">
-  <div class="grid-child child-1"></div>
-  <div class="grid-child child-2"></div>
-  <div class="grid-child child-3"></div>
-  <div class="grid-child child-4"></div>
-  <div class="grid-child child-5"></div>
+  <div class="grid-child child-1">Grid Child 1</div>
+  <div class="grid-child child-2">Grid Child 2</div>
+  <div class="grid-child child-3">Grid Child 3</div>
+  <div class="grid-child child-4">Grid Child 4</div>
+  <div class="grid-child child-5">Grid Child 5</div>
 </div>
+<style>
+  .grid-child {
+    background-color: #d0d1cd;
+  }
+
+  .grid-parent-container {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+</style>
 ```
 
 In this example, a parent `grid-container` wraps around five children grid containers.
 
-### grid children
+### Grid Children
 
 The direct children of the `grid-parent-container`.
+
+![Grid Children](/engineering-education/css-grid/grid-sub-child.png)
 
 ```html
 <div class="grid-parent-container">
   <div class="grid-child child-1">
-    <div class="sub-child"></div>
+    Grid Child 1
+    <div class="sub-child">Grid Sub Child 1</div>
   </div>
-  <div class="grid-child child-2"></div>
+  <div class="grid-child child-2">Grid Child 2</div>
   <div class="grid-child child-3">
-    <div class="sub-child"></div>
+    Grid Child 3
+    <div class="sub-child">Grid Sub Child 3</div>
   </div>
-  <div class="grid-child child-4"></div>
-  <div class="grid-child child-5"></div>
+  <div class="grid-child child-4">Grid Child 4</div>
+  <div class="grid-child child-5">Grid Child 5</div>
 </div>
+<style>
+  .grid-child {
+    background-color: #d0d1cd;
+  }
+
+  .grid-parent-container {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+</style>
 ```
 
 In this example, the `sub-child` does not count as grid-children. Only the **direct children** of the `parent-container` count as grid-children.
@@ -111,21 +139,62 @@ The `display: inline-grid` property defines the parent grid container to be elem
 
 These properties define how the rows and columns of the grid layout are arranged. They set the grid-track size.
 
-```css
-.grid-parent-container {
-  grid-template-columns: 100px 50px auto 50px 100px;
-  grid-template-rows: 25% 50% 25%;
-}
+```html
+<style>
+  .grid-child {
+    background-color: #d0d1cd;
+  }
+  .grid-parent-container {
+    grid-template-columns: 200px 100px auto 100px 200px;
+    grid-template-rows: 25% 50% 25%;
+  }
+</style>
+<div class="grid-parent-container">
+  <div class="grid-child-1 grid-child">Grid Child 1</div>
+  <div class="grid-child-2 grid-child">Grid Child 2</div>
+  <div class="grid-child-3 grid-child">Grid Child 3</div>
+  <div class="grid-child-4 grid-child">Grid Child 4</div>
+  <div class="grid-child-5 grid-child">Grid Child 5</div>
+  <div class="grid-child-6 grid-child">Grid Child 6</div>
+  <div class="grid-child-7 grid-child">Grid Child 7</div>
+  <div class="grid-child-8 grid-child">Grid Child 8</div>
+  <div class="grid-child-9 grid-child">Grid Child 9</div>
+  <div class="grid-child-10 grid-child">Grid Child 10</div>
+  <div class="grid-child-11 grid-child">Grid Child 11</div>
+  <div class="grid-child-12 grid-child">Grid Child 12</div>
+  <div class="grid-child-13 grid-child">Grid Child 13</div>
+  <div class="grid-child-14 grid-child">Grid Child 14</div>
+  <div class="grid-child-15 grid-child">Grid Child 15</div>
+</div>
 ```
 
 The above code creates a grid of 3 rows of 25%, 50% and 25% size of the parent container, and 5 columns of 100px, 50px, 50px and 100px. The middle column would automatically take up the rest of the space.
 
+![Grid Template Areas](/engineering-education/css-grid/grid-template.png)
+
 We can also use the `fr` unit. One fr or fraction takes up a fraction of the free space available in the grid container.
 
-```css
-.grid-parent-container {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
+![Grid Fraction](/engineering-education/css-grid/grid-fr.png)
+
+```html
+<style>
+  .grid-child {
+    background-color: #d0d1cd;
+  }
+
+  .grid-parent-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+</style>
+<div class="grid-parent-container">
+  <div class="grid-child-1 grid-child">Grid Child 1</div>
+  <div class="grid-child-2 grid-child">Grid Child 2</div>
+  <div class="grid-child-3 grid-child">Grid Child 3</div>
+  <div class="grid-child-4 grid-child">Grid Child 4</div>
+</div>
 ```
 
 The above code creates four columns of one fraction space each. In this case, they take up 25% space each.
@@ -303,7 +372,7 @@ This above snippet can be added in a style tag within the HTML file or can be ad
 
 ## Further Reading
 
-Thus, we have seen the basics of the CSS grid module and learnt how to build a basic grid layout. For a more in-depth dive into grid, check out the resources below.
+Thus, we've seen the basics of the CSS grid module and learnt how to build a basic grid layout. For a more in-depth dive into grid, check out the resources below.
 
 - [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) - Mozilla Developer Network
 - [CSS Grid Layout: A New Layout Module for the Web](https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/) - Webkit Blog
