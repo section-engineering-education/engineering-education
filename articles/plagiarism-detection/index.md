@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/plagiarism-detection/
-title: Plagiarism Detection
+title: Automated Plagiarism Detection Bot
 description: Plagiarism Detection is how one can compare two documents and find out how similar they are. This article explores one of the more basic algorithms in finding the similarity of a document.
 author: earl-potters
 date: 2020-09-18T00:00:00-08:00
@@ -267,7 +267,7 @@ df_cosine_matrix = pd.DataFrame(data=cosine_matrix,
 df
 ```
 
-![table 2](/engineering-education/plagiarism-detection//screenshot2.png)
+![table 2](/engineering-education/plagiarism-detection/screenshot2.png)
 
 Image Source: Author -- Earl Potters
 
@@ -285,13 +285,13 @@ Your output should look like this.
 
 `df_document_term_matrix`
 
-![table](/engineering-education/plagiarism-detection//screenshot1.png)
+![table](/engineering-education/plagiarism-detection/screenshot1.png)
 
 Image Source: Author -- Earl Potters
 
 `df_cosine_matrix`
 
-![table 2](/engineering-education/plagiarism-detection//screenshot2.png)
+![table 2](/engineering-education/plagiarism-detection/screenshot2.png)
 
 Image Source: Author -- Earl Potters
 
