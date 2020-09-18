@@ -5,8 +5,8 @@ published: true
 url: /engineering-education/automated-fake-news-detection/
 title: Introduction to Automated Fake News Detection
 description: Fake news refers to information content which is false, misleading or whose source cannot be verified. This content may be generated to intentionally damage reputation, deceive, to gain attention.
-author:
-date: 2020-09-16T00:00:00-14:00
+author: collins-ayuya
+date: 2020-09-18T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,23 +14,23 @@ images:
   - url: /engineering-education/automated-fake-news-detection/hero.jpg
     alt: fake news example image
 ---
-Misinformation presents a huge challenge in online society. As a result, there have been many attempts to identify and classify misinformation. Specifically, in social networking sites, blogs, as well online newspapers.
+Misinformation presents a huge challenge in online society. As a result, there have been many attempts to identify and classify misinformation. Specifically, in social networking sites, blogs, as well as online newspapers.
 <!--more-->
 
 Since this is a very broad research area, in this article we’ll look at:
 
-- What is fake news and why you should care.
+- What is fake news and why you should care?
 
 - Manual vs automated fake news detection efforts.
 
-- Brief introduction to machine learning and deep learning techniques to fake news detection.
+- A brief introduction to machine learning and deep learning techniques to fake news detection.
 
 - Bonus: BERT.
 
 The goal is to give you a gentle introduction to automated fake news detection. This should hopefully challenge you to join the fight.
 
 ### What is Fake News
-Fake news refers to information content which is false, misleading or whose source cannot be verified. This content may be generated to intentionally damage reputations, deceive, or to gain attention. The term rose to popularity during the 2016 US Presidential Elections. It was reported that fake news likely influenced the [results of the elections](https://news.stanford.edu/2017/01/18/stanford-study-examines-fake-news-2016-presidential-election/).
+Fake news refers to information content that is false, misleading or whose source cannot be verified. This content may be generated to intentionally damage reputations, deceive, or to gain attention. The term rose to popularity during the 2016 US Presidential Elections. It was reported that fake news likely influenced the [results of the elections](https://news.stanford.edu/2017/01/18/stanford-study-examines-fake-news-2016-presidential-election/).
 
 Various types of fake news include:
 
@@ -45,17 +45,18 @@ Various types of fake news include:
 - Unreliable news. Journalists may publish news whose sources are unverified, or without carrying out any form of fact checking themselves.
 
 #### How Fake News Works
-Social media platforms are incredibly influential. According to [internet live stats](https://www.internetlivestats.com/twitter-statistics/) the estimation of daily number of tweets is about 500 million. These platforms are ubiquitous. They are the go-to environment to share thoughts, feelings, opinions and intentions. This provides ideal conditions to distribute news with minimal guidelines and restrictions.
+Social media platforms are incredibly influential. According to [internet live stats](https://www.internetlivestats.com/twitter-statistics/) the estimated daily number of tweets is about 500 million. These platforms are ubiquitous. They are the go-to environment to share thoughts, feelings, opinions, and intentions. This provides ideal conditions to distribute news with minimal guidelines and restrictions.
 
-In today's world, it is normal to receive news from online sources through social media. News is often subjective to readers. We often choose to ingest content that appeals to the different emotions we have. So, considering this, the information that gets the most reach may not be real or accurate news. Additionally, real news may be twisted in transmission. A reader may end up with different version of the same news. This may lead to an information overload.
+In today’s world, it is normal to receive news from online sources through social media. News is often subjective to readers. We often choose to ingest content that appeals to the different emotions we have. So, considering this, the information that gets the most reach may not be real or accurate news. Additionally, real news may be twisted in transmission. A reader may end up with different versions of the same news. This may lead to information overload.
 
 #### Why you Should Care
-![misinformation](/articles/automated-fake-news-detection/misinformation.jpg)
+![misinformation](/engineering-education/automated-fake-news-detection/misinformation.jpg)
+
 [*Image Source*](https://unsplash.com/photos/zw3ExyW6x3Y)
 
 At a time when the globe is defined by a pandemic, public health depends on reliable information. Yet we stare down the barrel of an infodemic. An infodemic is a combination of the word information and epidemic. It is an excessive amount of information about a problem that makes the solution more difficult. It also defines a wide and rapid spread of misinformation.
 
-This means that our individual health is a collective responsibility. It is tied to the behavior of other people since news influences behavior of the audience.
+This means that our individual health is a collective responsibility. It is tied to the behavior of other people since news influences the behavior of the audience.
 The World Health Organization has highlighted the dangers of a COVID-19 driven infodemic. It presents as much danger as the virus itself. According to WHO, fake news spreads faster and more easily than the virus.
 
 
@@ -70,10 +71,10 @@ Examples of challenges of such an infodemic include:
 - Encouraging unfounded remedies. Some touted remedies are harmless, others are comical, while others can be quite hazardous.
 
 #### What’s being done to combat fake news
-Companies like Facebook, Twitter, TikTok, Google, Pinterest, Tencent, YouTube and others are working with WHO to mitigate the spread of rumors. Their efforts are geared at filtering out content that is a danger to public health. There are ways to contribute to this fight. But first, we need to understand the types of fake news detection being used. We will look at it from the perspective of being either manual or automatic.
+Companies like Facebook, Twitter, TikTok, Google, Pinterest, Tencent, YouTube, and others are working with WHO to mitigate the spread of rumors. Their efforts are geared at filtering out content that is a danger to public health. There are ways to contribute to this fight. But first, we need to understand the types of fake news detection being used. We will look at it from the perspective of being either manual or automatic.
 
 ### Manual Fake News Detection
-Manual fake news detection often involves all the techniques and procedures a person can use to verify news. It could involve visiting fact checking sites. It could be crowdsourcing real news to compare with unverified news. But, the amount of data generated online daily is overwhelming. Also noting how fast information spreads online, manual fact checking quickly becomes ineffective. Manual fact checking struggles to scale with the volume of data generated. Hence validating the purpose of automated fake news detection.
+Manual fake news detection often involves all the techniques and procedures a person can use to verify the news. It could involve visiting fact checking sites. It could be crowdsourcing real news to compare with unverified news. But, the amount of data generated online daily is overwhelming. Also noting how fast information spreads online, manual fact checking quickly becomes ineffective. Manual fact checking struggles to scale with the volume of data generated. Hence validating the purpose of automated fake news detection.
 
 ### Automated Fake News Detection
 Automated detection systems provide value in terms of automation and scalability. There are various techniques and approaches implemented in fake news detection research. And it is worth noting that these approaches often overlap depending on perspective. From my personal perspective, I choose to discuss only two approaches.
@@ -111,24 +112,24 @@ Random forest: simply a combination of decision trees.
 Datasets are used to refine the algorithms. These datasets may be split as training data or test data.
 I have come across a lot of research where a system combines various machine learning algorithms and data mining. This is often carried out on social media platforms, especially Twitter data. For example, a model may combine machine learning, through Naïve Bayes, Support Vector Machine(SVM), and Natural Language Processing (NLP) to detect fake news. Naïve Bayes and Support Vector Machine are classification models in this process.
 
-Depending on the nature of data, the two classifiers can be applied to a dataset and their performance compared. On the other hand, these classifiers can be used in an ensemble method to enhance each other's results in classification tasks, therefore improving model accuracy. As mentioned above, Naïve Bayes is popular in text classification tasks therefore its considered for such tasks often. SVM classifies data into two categories. In the context of fake news detection, these categories are likely to be "true" or "false". It is also an algorithm that works well on semi-structured datasets and is very adaptable. Pairing SVM and Naïve Bayes is therefore effective for fake news detection tasks.
+Depending on the nature of data, the two classifiers can be applied to a dataset and their performance compared. On the other hand, these classifiers can be used in an ensemble method to enhance each other's results in classification tasks, therefore improving model accuracy. As mentioned above, Naïve Bayes is popular in text classification tasks therefore it's considered for such tasks often. SVM classifies data into two categories. In the context of fake news detection, these categories are likely to be "true" or "false". It is also an algorithm that works well on semi-structured datasets and is very adaptable. Pairing SVM and Naïve Bayes is therefore effective for fake news detection tasks.
 
-NLP may play a role in extracting features from data. It may also come in handy when attempting to contextualize text data since this is not a strong suit of traditional machine learning models. NLP may also be utilized through [sentiment analysis of the data](/engineering-education/sentiment-analysis/), given sentiment analysis is a subfield of NLP. Sentiment analysis is the process of deriving meaningful patterns in text data. It can provide information on the context of data through describing the sentiments of a given population. For more information on sentiment analysis click the referenced link in the sentence above.    
+NLP may play a role in extracting features from data. It may also come in handy when attempting to contextualize text data since this is not a strong suit of traditional machine learning models. NLP may also be utilized through [sentiment analysis of the data](/engineering-education/sentiment-analysis/), given sentiment analysis is a subfield of NLP. Sentiment analysis is the process of deriving meaningful patterns in text data. It can provide information on the context of data by describing the sentiments of a given population. For more information on sentiment analysis click the referenced link in the sentence above.    
 
 The accuracy of the results is usually determined by the combinations of models used and the datasets involved. A combination of available toolkits with Bayesian learning may be used to develop a fake news detector. These toolkits include Textblob, Natural Language, and SciPy.
 
-But a challenge exists with some of these traditional machine learning approaches. They treat fake news detection as a binary classification task. These models alone struggle to contextualize text data. They need structured/labelled data. In fact, machine learning models struggle to solve complex queries with huge amounts of data. This is where deep learning models come into play.
+But a challenge exists with some of these traditional machine learning approaches. They treat fake news detection as a binary classification task. These models alone struggle to contextualize text data. They need structured/labeled data. In fact, machine learning models struggle to solve complex queries with huge amounts of data. This is where deep learning models come into play.
 
 #### Deep Learning Approach
 Deep learning algorithms function similar to machine learning algorithms. But there is a key difference. Deep learning algorithms have layers that interpret data differently. Artificial neural networks refer to the network of such algorithms.
 
 Purely deep learning perspectives towards fake news detection have been explored in many cases. I have provided links to some of these published works at the end of the article.
 
-A methodology may involve building classifiers to predict validity of news based only on news content. This may be achieved using Recurrent Neural Network (RNN) models and long-short term memories (LSTM). For more information on RNN click on this [article](/engineering-education/text-generation-nn/), which explains text generation with RNN + TensorFlow.
+A methodology may involve building classifiers to predict the validity of news based only on news content. This may be achieved using Recurrent Neural Network (RNN) models and long-short term memories (LSTM). For more information on RNN click on this [article](/engineering-education/text-generation-nn/), which explains text generation with RNN + TensorFlow.
 
-RNN is a neural network containing loops that allow information to be stored within the network. Previous experiences influence upcoming events in RNNs. The storage of information can be attributed to LSTM. LSTM refer to artificial recurrent neural networks which allow information to persist within them. They are the building blocks for RNN layers. LSTM units provide the ability to “recall” values over a time interval. This influences the relationships between words and their occurrences.
+RNN is a neural network containing loops that allow information to be stored within the network. Previous experiences influence upcoming events in RNNs. The storage of information can be attributed to LSTM. LSTM refers to artificial recurrent neural networks that allow information to persist within them. They are the building blocks for RNN layers. LSTM units provide the ability to “recall” values over a time interval. This influences the relationships between words and their occurrences.
 
-A published paper [referenced below](http://dx.doi.org/10.1145/3341161.3342957) was on an attempt to label fake news as early as possible using Recurrent Neural Networks. The goal was to reduce the time gap between news release and detection.
+A published paper [referenced below](http://dx.doi.org/10.1145/3341161.3342957) was in an attempt to label fake news as early as possible using Recurrent Neural Networks. The goal was to reduce the time gap between a news release and detection.
 
 A combination of machine learning and deep learning techniques is feasible. There are many published works that combine the two. The aim is not only to detect fake news, but to also achieve the highest possible accuracy levels in the detection.
 
@@ -149,12 +150,12 @@ For fake news detection (and most NLP tasks) BERT is my ideal choice. Here’s w
 I have come across literature where BERT was used to pre-train Korean data and create a pre-trained model to judge fake news. In another study, it was used to classify [hyper-partisan news](https://doi.org/10.1109/IConDA47345.2019.9034917).
 
 ### Conclusion
-Fake news research has never been more important than it is now. Especially during a time when the world is fighting a pandemic. The approaches explored in this article only scratch the surface. There are so many more approaches and criteria to fake news detection. Datasets also impact the accuracy of fake news detection tasks.
+Fake news research has never been more important than it is now. Especially during a time when the world is fighting a pandemic. The approaches explored in this article only scratch the surface. There are so many more approaches and criteria for fake news detection. Datasets also impact the accuracy of fake news detection tasks.
 
-Their quality and quantity is impactful. It is also worth noting that, as much as our focus is on automated approaches, the human element is key to this fight. A combination of human and automated approaches gives rise to a hybrid approach. I hope this article challenges you to join the fight against fake news.
+Their quality and quantity are impactful. It is also worth noting that, as much as our focus is on automated approaches, the human element is key to this fight. A combination of human and automated approaches gives rise to a hybrid approach. I hope this article challenges you to join the fight against fake news.
 
 ### References
-1. [Approaches to Identify Fake News: A Systematic Literature Review](https://doi.org/10.1007/978-3-030-49264-9_2) 
+1. [Approaches to Identify Fake News: A Systematic Literature Review](https://doi.org/10.1007/978-3-030-49264-9_2)
 
 2. [International Conference on Smart Computing & Communications:](https://doi.org/10.1109/ICSCC.2019.8843612)
 
@@ -169,3 +170,6 @@ Their quality and quantity is impactful. It is also worth noting that, as much a
 7. [Hyperpartisan News and Articles Detection Using BERT and ELMo](https://doi.org/10.1109/IConDA47345.2019.9034917)
 
 8. [Detection of Fake News Using Transformer Model](https://doi.org/10.1109/iCoMET48670.2020.9074071)
+
+---
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
