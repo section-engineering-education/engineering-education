@@ -449,7 +449,9 @@ Once the pull request button is hit, you are done, you have submitted your contr
 Wait for your content to be reviewed and if any further changes are needed, a comment will be left by the reviewer suggesting possible changes you should make under your pull. Make your edits on your text editor and make a commit to update the changes and remember to have a summary of the commit you are making for better referencing.
 
 ### Submit contributions using Git bash.
-Since you have a clone available on your local computer, start working on you contributions using a text editor. Format your content according to the guidelines of the original repository. Once you are done and ready to publish the content, it is advisable to push your changes under a branch and not to the master repository. This will help you to work and contribute changes under different topics without branch or merge conflicts.
+Since you have a clone available on your local computer, start working on you contributions using a text editor. Format your content according to the guidelines of the original repository.
+
+Once you are done and ready to publish the content, it is advisable to push your changes under a branch and not to the master repository. This will help you to work and contribute changes under different topics without branch or merge conflicts.
 
 When the content (topic) is ready, create a branch and make sure you checkout on the branch as it will hold all your changes you are working on. Open GitHub local directory on Git Bash.  
 
