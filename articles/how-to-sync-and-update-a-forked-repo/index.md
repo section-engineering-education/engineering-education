@@ -205,7 +205,11 @@ Click "pull origin" and your local repository will be updated and the same as th
 
 ### Summary
 ### Updating a fork using Git Bash.
-You have successfully forked your interested repository. However, you occasionally need to keep it up to date with the original repository. The original repository is commonly referred to upstream by Git Bash command. To update your fork with the upstream, you need to get the remote to your local repository so that you can fetch available changes made in the original repository and push the changes to your local repository. To get started navigate to your cloned repository (already on your local computer) and open the project folder with Git Bash or open Git Bash and change the directory to point the cloned repository on your local storage. i.e.
+You have successfully forked your interested repository. However, you occasionally need to keep it up to date with the original repository. The original repository is commonly referred to upstream by Git Bash command.
+
+To update your fork with the upstream, you need to get the remote to your local repository so that you can fetch available changes made in the original repository and push the changes to your local repository.
+
+To get started navigate to your cloned repository (already on your local computer) and open the project folder with Git Bash or open Git Bash and change the directory to point the cloned repository on your local storage. i.e.
 
 ```bash
 cd ~/Documents/GitHub/engineering-education
