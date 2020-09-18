@@ -50,7 +50,7 @@ Social media platforms are incredibly influential. According to [internet live s
 In today's world, it is normal to receive news from online sources through social media. News is often subjective to readers. We often choose to ingest content that appeals to the different emotions we have. So, considering this, the information that gets the most reach may not be real or accurate news. Additionally, real news may be twisted in transmission. A reader may end up with different version of the same news. This may lead to an information overload.
 
 #### Why you Should Care
-![misinformation](/engineering-education/automated-fake-news-detection/misinformation.jpg)
+![misinformation](/articles/automated-fake-news-detection/misinformation.jpg)
 [*Image Source*](https://unsplash.com/photos/zw3ExyW6x3Y)
 
 At a time when the globe is defined by a pandemic, public health depends on reliable information. Yet we stare down the barrel of an infodemic. An infodemic is a combination of the word information and epidemic. It is an excessive amount of information about a problem that makes the solution more difficult. It also defines a wide and rapid spread of misinformation.
@@ -124,7 +124,7 @@ Deep learning algorithms function similar to machine learning algorithms. But th
 
 Purely deep learning perspectives towards fake news detection have been explored in many cases. I have provided links to some of these published works at the end of the article.
 
-A methodology may involve building classifiers to predict validity of news based only on news content. This may be achieved using Recurrent Neural Network (RNN) models and long-short term memories (LSTM). For more information on RRN click on this [article](/engineering-education/text-generation-nn/), which explains text generation with RNN + TensorFlow.
+A methodology may involve building classifiers to predict validity of news based only on news content. This may be achieved using Recurrent Neural Network (RNN) models and long-short term memories (LSTM). For more information on RNN click on this [article](/engineering-education/text-generation-nn/), which explains text generation with RNN + TensorFlow.
 
 RNN is a neural network containing loops that allow information to be stored within the network. Previous experiences influence upcoming events in RNNs. The storage of information can be attributed to LSTM. LSTM refer to artificial recurrent neural networks which allow information to persist within them. They are the building blocks for RNN layers. LSTM units provide the ability to “recall” values over a time interval. This influences the relationships between words and their occurrences.
 
@@ -154,18 +154,18 @@ Fake news research has never been more important than it is now. Especially duri
 Their quality and quantity is impactful. It is also worth noting that, as much as our focus is on automated approaches, the human element is key to this fight. A combination of human and automated approaches gives rise to a hybrid approach. I hope this article challenges you to join the fight against fake news.
 
 ### References
-1. [Approaches to Identify Fake News:](https://doi.org/10.1007/978-3-030-49264-9_2) A Systematic Literature Review
+1. [Approaches to Identify Fake News: A Systematic Literature Review](https://doi.org/10.1007/978-3-030-49264-9_2) 
 
 2. [International Conference on Smart Computing & Communications:](https://doi.org/10.1109/ICSCC.2019.8843612)
 
-3. ["Deep Learning Algorithms for Detecting Fake News in Online Text,"](https://doi.org/10.1109/ICCES.2018.8639198)
+3. [Deep Learning Algorithms for Detecting Fake News in Online Text](https://doi.org/10.1109/ICCES.2018.8639198)
 
 4. [News Labeling as Early as Possible: Real or Fake?](http://dx.doi.org/10.1145/3341161.3342957)
 
 5. [Transformer Model Paper:](https://arxiv.org/abs/1706.03762)
 
-6. ["Natural Language Contents Evaluation System for Detecting Fake News using Deep Learning,"](https://doi.org/10.1109/JCSSE.2019.8864171)
+6. [Natural Language Contents Evaluation System for Detecting Fake News using Deep Learning](https://doi.org/10.1109/JCSSE.2019.8864171)
 
-7. ["Hyperpartisan News and Articles Detection Using BERT and ELMo,"](https://doi.org/10.1109/IConDA47345.2019.9034917)
+7. [Hyperpartisan News and Articles Detection Using BERT and ELMo](https://doi.org/10.1109/IConDA47345.2019.9034917)
 
-8. ["Detection of Fake News Using Transformer Model,"](https://doi.org/10.1109/iCoMET48670.2020.9074071)
+8. [Detection of Fake News Using Transformer Model](https://doi.org/10.1109/iCoMET48670.2020.9074071)
