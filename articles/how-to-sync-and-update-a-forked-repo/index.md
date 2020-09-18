@@ -581,3 +581,6 @@ The outputs highlighted on this article may not directly match to what will be p
 [GitHub desktop](https://docs.github.com/en/github/getting-started-with-github/github-desktop#about-github-desktop)
 
 [Best Text Editors](https://www.techradar.com/best/best-text-editors)
+
+---
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
