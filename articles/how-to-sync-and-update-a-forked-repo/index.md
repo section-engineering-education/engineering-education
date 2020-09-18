@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-syn-and-update-a-forked-repo/
+url: /engineering-education/how-to-sync-and-update-a-forked-repo/
 title: How to Sync and Update a Forked Repository
 description: This article shows you how to sync and update a forked repo using Github desktop and git bash with examples.
 author: joseph-chege
