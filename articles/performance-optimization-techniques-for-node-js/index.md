@@ -212,9 +212,10 @@ async.parallel([
 	getNotifications,
 	getUserprofile,
 	getrecentActivity
-	],function(err ,results){
+	],
+  function(err ,results){
 		if(err){
-			return console.error(err);
+		 return console.error(err);
 		}
 		//task results
 	});
@@ -245,7 +246,7 @@ Result : {short: "resultOfShortTime", medium: "resultOfMediumTime", long: "resul
 ```
 ## Client-side rendering
 
-Powerful MVC/MVVM has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful MVC technology for client client-side rendering. These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to high-speed performance.
+Powerful MVC/[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) technology for client client-side rendering. These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to high-speed performance.
 
 ## Gzip compression
 
