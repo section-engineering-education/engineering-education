@@ -23,11 +23,15 @@ When creating a Node.js web application, we write a single JavaScript applicatio
 
 ![flow of a request](/engineering-education/express/node.png)
 
+[Image Credit](https://www.manning.com/books/express-in-action)
+
 A *request handler* is a JavaScript function which takes a request and sends an appropriate response.
 
 Node.js APIs can get complex and writing how to handle a single request can end up being to 50 lines of code. Express makes it easier to write web applications with Node.js.
 
 ![flow with express](/engineering-education/express/express.png)
+
+[Image Credit](https://www.manning.com/books/express-in-action)
 
 ### Advantages of using Express with Node.js
 - Express lets you take away a lot of Node.js complexities while adding helpful functions to a Node.js HTTP server.
