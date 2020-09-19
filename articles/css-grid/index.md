@@ -31,6 +31,8 @@ Using CSS for web layouts has always been a tricky affair. We used tables and fl
 
 Therefore, CSS Flexbox was introduced and it made positioning easier. But as the complexity of your website layout increased, Flexbox wasn't the best option. It was designed for one-dimensional website layouts. Thus, CSS grid solves that problem by introducing features for building two-dimensional layouts.
 
+If we try to build a two-dimensional layout using CSS Flexbox, it would become extremely complex for layouts that have a lot of rows and columns. Making it responsive would have cluttered, unclean code. CSS Grid results in cleaner code.
+
 Let's look into some basic terminology used in grid and dive into building a layout using the CSS grid system.
 
 ## Terminology
@@ -197,7 +199,9 @@ We can also use the `fr` unit. One fr or fraction takes up a fraction of the fre
 </div>
 ```
 
-The above code creates four columns of one fraction space each. In this case, they take up 25% space each.
+In the above code, the `row-gap` defines the gap between grid rows and the `column-gap` defines the gap between grid columns.
+
+The above code creates four columns of one fraction space each. In this case, they each take up 25% space.
 
 ### grid-template-areas
 
@@ -268,8 +272,7 @@ Here, we have the `grid-parent-container`. This is the wrapper for the grid layo
 Let us write the CSS and define our grid layout.
 
 ```css
-/* The grid-area defines the names of the grid areas that would be speicified 
-in the grid-template-areas in the parent container */
+/* The grid-area defines the names of the grid areas that would be specified in the grid-template-areas in the parent container */
 .small-img1 {
   grid-area: small-img1;
 }
