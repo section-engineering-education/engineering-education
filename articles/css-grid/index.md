@@ -27,11 +27,11 @@ CSS Flexbox is a one dimension positioning system. Check out [this](https://www.
 
 ## Introduction & History
 
-Using CSS for web layouts has always been a tricky affair. We used tables and floats to position items before. They were inefficient hacks and they weren't intuitive.
+Using CSS for web layouts has always been a tricky affair. We used tables and floats to position items before. They were inefficient hacks weren't intuitive.
 
-Therefore, CSS Flexbox was introduced and it made positioning easier. But as the complexity of your website layout increased, Flexbox wasn't the best option. It was designed for one-dimensional website layouts. Thus, CSS grid solves that problem by introducing features for building two-dimensional layouts.
+Therefore, CSS Flexbox was introduced and it made positioning easier. But as the complexity of website layouts increased, Flexbox wasn't always the best option. It was designed for one-dimensional layouts. Thus, CSS Grid was developed to solve that problem by introducing features for building two-dimensional layouts.
 
-If we try to build a two-dimensional layout using CSS Flexbox, it would become extremely complex for layouts that have a lot of rows and columns. Making it responsive would have cluttered, unclean code. CSS Grid results in cleaner code.
+If we try to build a two-dimensional layout using CSS Flexbox, it would become extremely complicated because the layout wou;d have a lot of rows and columns. Making it responsive would create cluttered and unclean code. CSS Grid results in cleaner code for these type of layouts.
 
 Let's look into some basic terminology used in grid and dive into building a layout using the CSS grid system.
 
@@ -242,7 +242,7 @@ Our goal is to generate a simple image grid as shown.
 
 ![Image Grid](/engineering-education/css-grid/image-grid.png)
 
-Let us start by defining our page's HTML.
+We start by defining our page's HTML.
 
 ```html
 <div class="grid-parent-container">
@@ -269,7 +269,7 @@ Let us start by defining our page's HTML.
 
 Here, we have the `grid-parent-container`. This is the wrapper for the grid layout we made. The images are fetched using a random image generator, [Unsplash](https://unsplash.com/).
 
-Let us write the CSS and define our grid layout.
+Next, write the CSS and define our grid layout.
 
 ```css
 /* The grid-area defines the names of the grid areas that would be specified in the grid-template-areas in the parent container */
@@ -375,7 +375,7 @@ This above snippet can be added in a style tag within the HTML file or can be ad
 
 ## Further Reading
 
-Thus, we've seen the basics of the CSS grid module and learnt how to build a basic grid layout. For a more in-depth dive into grid, check out the resources below.
+We've seen the basics of the CSS grid module and learnt how to build a basic grid layout. For a more in-depth dive into grid, check out the resources below.
 
 - [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) - Mozilla Developer Network
 - [CSS Grid Layout: A New Layout Module for the Web](https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/) - Webkit Blog
