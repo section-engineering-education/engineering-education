@@ -14,7 +14,9 @@ images:
   - url: /engineering-education/express/hero.jpg
     alt: expressjs example text image
 ---
-[Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. Node.js is fast, portable and written in JavaScript but it doesn't directly support common tasks such as handling requests, serving files and handling HTTP methods such as `GET` and `POST` but this is where Node.js's [rich ecosystem](https://www.section.io/engineering-education/most-useful-nodejs-packages/) comes to our aid.
+[Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. 
+
+Node.js is fast, portable and written in JavaScript but it doesn't directly support common tasks such as handling requests, serving files and handling HTTP methods such as `GET` and `POST` but this is where Node.js's [rich ecosystem](https://www.section.io/engineering-education/most-useful-nodejs-packages/) comes to our aid.
 <!--more-->
 
 **Express.js (Express) is a light web framework which sits on top of Node.js and it adds functionality ([middleware](https://expressjs.com/en/guide/writing-middleware.html), [routing](https://en.wikipedia.org/wiki/Routing), etc.) and simplicity to Node.js.**
@@ -35,9 +37,15 @@ Node.js APIs can get complex and writing how to handle a single request can end 
 
 ### Advantages of using Express with Node.js
 - Express lets you take away a lot of Node.js complexities while adding helpful functions to a Node.js HTTP server.
+
 - Instead of a large request handler function, Express allows us to handle requests by writing many small modular and maintainable functions.
+
 - Express is *not opinionated*, meaning Express does not enforce any "right way" of doing things. You can use any compatible middleware, and you can structure the app as you wish, making it flexible.
-- We can integrate with a [template rendering engine](https://www.digitalocean.com/community/tutorials/nodejs-express-template-engines)(also called as view rendering engine in some articles) of our choice like Jade, Pug, EJS, etc. A template engine enables you to use static template files and at runtime change the values of variables in those files.
+
+- We can integrate with a [template rendering engine](https://www.digitalocean.com/community/tutorials/nodejs-express-template-engines)(also called as view rendering engine in some articles) of our choice like Jade, Pug, EJS, etc. 
+
+  A template engine enables you to use static template files and at runtime change the values of variables in those files.
+
 - You can set up ["middleware"](https://expressjs.com/en/guide/using-middleware.html) for request processing.
 
 ### Basic Express App
@@ -65,13 +73,21 @@ app.listen(3000, function(){
   });
 ```
 
-The code above creates a basic Express application. To run this script, go to your command prompt and enter the command `node app.js` in the project directory. In the console, we can see `Application started and Listening on port 3000` and if we visit `http://localhost:3000/` we can see `HELLO WORLD`.
+The code above creates a basic Express application. To run this script, go to your command prompt and enter the command `node app.js` in the project directory. 
+
+In the console, we can see `Application started and Listening on port 3000` and if we visit `http://localhost:3000/` we can see `HELLO WORLD`.
 
 Let's look at what the code above does.
 
-The first line imports the express module. The second line creates an Express application by calling the top-level `express()` function. Our `app` variable (express application) has methods for handling requests and configuring how the application behaves. We can create multiple apps this way, each with their own requests and responses.
+The first line imports the express module. The second line creates an Express application by calling the top-level `express()` function. 
 
-Lets examine the code in section two. `app.get()` is a function, called *route definition*, which tells the express app how to handle an HTTP `GET` request to our server. This function takes two main parameters, the first is the route or path which is the relative path from the root of the server; the second is a function that is invoked whenever there is a request to that path. In this case, we are listening for `GET` requests to `/` which is the root of the website.
+Our `app` variable (express application) has methods for handling requests and configuring how the application behaves. We can create multiple apps this way, each with their own requests and responses.
+
+Lets examine the code in section two. `app.get()` is a function, called *route definition*, which tells the express app how to handle an HTTP `GET` request to our server. 
+
+This function takes two main parameters, the first is the route or path which is the relative path from the root of the server; the second is a function that is invoked whenever there is a request to that path. 
+
+In this case, we are listening for `GET` requests to `/` which is the root of the website.
 
 The second parameter, the callback function, has two arguments `req` and `res`. `req` represents the **request** sent from the browser to the server. `res` represents the **response** that the server sends back.
 
@@ -83,7 +99,9 @@ The code in section three starts a server on the port 3000. You can go to `local
 
 Middleware is a set of functions that sit between a raw request and the final intended route. Middleware functions have access to *all* the HTTP requests coming to the server. Middleware can handle tasks such as logging, sending static files, authorization and session management, etc.  
 
-In Node.js, the request and response objects are passed to one function (request handler) that we write, in Express these objects are passed through a set of functions, called the **middleware stack**. Express will start at the first function in the stack and execute in order down the stack.
+In Node.js, the request and response objects are passed to one function (request handler) that we write, in Express these objects are passed through a set of functions, called the **middleware stack**. 
+
+Express will start at the first function in the stack and execute in order down the stack.
 
 Every function in the stack takes three arguments `request`, `response` and `next`. `next` is a function, that when called Express executes the next function in the stack. This is a subtle difference between middleware and a route handler which we saw above.
 
@@ -144,15 +162,23 @@ app.listen(3000, function() {
 
 ```
 
-If we run this file using `node app.js` and go to `localhost:3000/dummy_file.txt`, we can see on the screen `file1`. If we go to the URL `localhost:3000`, we see an error `Cannot GET /` because we did not configure a route handler for that path. Let's look at the code.
+If we run this file using `node app.js` and go to `localhost:3000/dummy_file.txt`, we can see on the screen `file1`. 
 
-The logger logs every request that comes into the server. `app.use` is used to define a middleware function, it takes a function. The `next()` function call tells Express to move onto the next function in the stack (remove the `next()` call in your script, you will notice that it takes forever for the page to load, this is because the request gets stuck on this middleware function).
+If we go to the URL `localhost:3000`, we see an error `Cannot GET /` because we did not configure a route handler for that path. Let's look at the code.
 
-We are using the [path module](https://nodejs.org/api/path.html) to join the relative URL (from the request) and the directory name. The [fs module](https://nodejs.org/api/fs.html) provides an API for interacting with the file system. We are checking if the file exists, if it does not, we will go to next function in the stack if it does we will return that file using `res.sendFile`.
+The logger logs every request that comes into the server. `app.use` is used to define a middleware function, it takes a function. 
+
+The `next()` function call tells Express to move onto the next function in the stack (remove the `next()` call in your script, you will notice that it takes forever for the page to load, this is because the request gets stuck on this middleware function).
+
+We are using the [path module](https://nodejs.org/api/path.html) to join the relative URL (from the request) and the directory name. 
+
+The [fs module](https://nodejs.org/api/fs.html) provides an API for interacting with the file system. We are checking if the file exists, if it does not, we will go to next function in the stack if it does we will return that file using `res.sendFile`.
 
 
 #### Using Third-Party Middleware
-We can write our own middleware functions or import them similar to how we imported our modules in Node.js using `require`. Let's use a popular open-source logger called [morgan](http://expressjs.com/en/resources/middleware/morgan.html) instead of writing our own logging function.
+We can write our own middleware functions or import them similar to how we imported our modules in Node.js using `require`. 
+
+Let's use a popular open-source logger called [morgan](http://expressjs.com/en/resources/middleware/morgan.html) instead of writing our own logging function.
 
 Install it using npm.
 
@@ -179,14 +205,20 @@ Express comes with **`express.static`** middleware bundled with it, it can be us
 app.use(express.static("static") //relative path
 ```
 
-Any requested files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times. If the file is not in the one directory, then the request is passed onto the next `static()` call. When your app gets a request like `/hello.html`, it returns the hello.html file in the public directory.
+Any requested files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times. 
+
+If the file is not in the one directory, then the request is passed onto the next `static()` call. When your app gets a request like `/hello.html`, it returns the hello.html file in the public directory.
 
 ### Routing
-Express makes request handling easier by mapping requests to different request handlers. A request handler is a function which handles all the requests to a specific path with a specific HTTP method. In the basic example above, we saw how to handle a `GET` request. As an application grows in size the routes grow as well as do the request handlers.
+Express makes request handling easier by mapping requests to different request handlers. A request handler is a function which handles all the requests to a specific path with a specific HTTP method. 
 
-Lets see how we can use [Routers](http://expressjs.com/en/4x/api.html#router) to split a large app into smaller, maintainable functions. According to the documentation, a Router is "an isolated instance of middleware and routes. Routers can be thought of as “mini” applications only capable of performing middleware and routing".
+In the basic example above, we saw how to handle a `GET` request. As an application grows in size the routes grow as well as do the request handlers.
 
-Routers can be used like middleware functions, they can be “`.use()`d”. A simple example:
+Lets see how we can use [Routers](http://expressjs.com/en/4x/api.html#router) to split a large app into smaller, maintainable functions. 
+
+According to the documentation, a Router is "an isolated instance of middleware and routes. Routers can be thought of as “mini” applications only capable of performing middleware and routing".
+
+Routers can be used like middleware functions, they can be "`.use()`d". A simple example:
 
 ```JavaScript
 //app.js the main file
@@ -220,7 +252,9 @@ When you start the app and visit the URL `localhost:3000/api/route1` you can see
 
 **Grabbing route parameters**
 
-Suppose you are building a website for a company that showcases their products, each product has a *productID*. You want the URL for product 1 to be `/product/1`. Instead of defining a route for every product, you can define a single route for everything in the form of `product/productID` and then return a file based on the productID.
+Suppose you are building a website for a company that showcases their products, each product has a *productID*. You want the URL for product 1 to be `/product/1`. 
+
+Instead of defining a route for every product, you can define a single route for everything in the form of `product/productID` and then return a file based on the productID.
 
 ```JavaScript
 var express = require("express");
@@ -236,7 +270,9 @@ app.get("/product/:productId", function(req, res){
 
 **Using Regular Expressions to match routes**
 
-[Regular Expressions (RE)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) are patterns used to match character combinations in strings. We can use RE to match parameters and define our routes. For example in the example above if we wanted the productId to be only an integer we can try the following:
+[Regular Expressions (RE)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) are patterns used to match character combinations in strings. We can use RE to match parameters and define our routes. 
+
+For example, using the example above if we wanted the productId to be only an integer we can try the following:
 
 ```JavaScript
 ...
@@ -248,7 +284,11 @@ app.get(/^\/products\/(\d+)$/, function(req, res) {
 ```
 
 ### Template Engines
-Websites are built with HTML, you can dynamically generate HTML pages using Express. Dynamically generated HTML pages are useful when you want to show real time data or change a page's details based on the user. A template engine allows you to use static template files and at runtime replace variables in a template file with actual data. There are different template engines available like [Pug](https://pugjs.org/), Jade, and [EJS](https://ejs.co/). Let's see a basic template using EJS.
+Websites are built with HTML, you can dynamically generate HTML pages using Express. Dynamically generated HTML pages are useful when you want to show real time data or change a page's details based on the user. 
+
+A template engine allows you to use static template files and at runtime replace variables in a template file with actual data. 
+
+There are different template engines available like [Pug](https://pugjs.org/), Jade, and [EJS](https://ejs.co/). Let's see a basic template using EJS.
 
 First let's install it using npm. Type `npm install ejs` and then create a directory called `views` to store your templates and HTML files.
 
@@ -288,7 +328,9 @@ If you go to the webpage you can see `Hello and Welcome !!!`. You can write Java
 Testing is an important part of developing software. Read [this article](/engineering-education/node-testing/) where I discuss testing Node.js applications using Mocha and Chai.
 
 ### Conclusion
-The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes while you are making those decisions about your applications infrastructure. One of the best practice is to have a directory structure like this or something similar to this for your Express app
+The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes while you are making those decisions about your applications infrastructure. 
+
+One of the best practices is to have a directory structure like this or something similar to this for your Express app
 
 ```bash
 app/
