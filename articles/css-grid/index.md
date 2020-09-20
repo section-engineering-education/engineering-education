@@ -135,7 +135,11 @@ The grid area is the area surrounded by any four grid lines. A grid area is comp
 
 Here, the `display: grid` property defines the parent grid container to be element with class 'grid-parent-container'. This generates a block level grid. This means that the grid takes up the entire line and other elements cannot co-exist with the grid.
 
-The `display: inline-grid` property defines the parent grid container to be element with class 'inline-grid-parent-container'. This generates an inline-level-grid. Other elemenets can take up the free space on the same line.
+![Grid](/articles/css-grid/display-grid.png)
+
+The `display: inline-grid` property defines the parent grid container to be element with class 'inline-grid-parent-container'. This generates an inline-level-grid. Other elemenets can take up the free space on the same line. The grid elements take up space according to its contents.
+
+![Inline Grid](/articles/css-grid/inline-grid.png)
 
 ### grid-template-rows & grid-template-columns
 
@@ -147,6 +151,9 @@ These properties define how the rows and columns of the grid layout are arranged
     background-color: #d0d1cd;
   }
   .grid-parent-container {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 20px;
     grid-template-columns: 200px 100px auto 100px 200px;
     grid-template-rows: 25% 50% 25%;
   }
@@ -207,30 +214,47 @@ The above code creates four columns of one fraction space each. In this case, th
 
 This property defines the grid template. It defines which page elements are placed in which grid in the layout.
 
-```css
-.child-1 {
-  grid-area: area-1;
-}
+Add the below code between style tags in your HTML file.
 
-.child-2 {
-  grid-area: area-2;
-}
+```html
+<style>
+  .child-1 {
+    grid-area: area-1;
+  }
 
-.child-3 {
-  grid-area: area-3;
-}
+  .child-2 {
+    grid-area: area-2;
+  }
 
-.grid-parent-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "area-1 area-2 area-2"
-    "area-1 area-3 area-3";
-}
+  .child-3 {
+    grid-area: area-3;
+  }
+
+  .grid-child {
+    background-color: #d0d1cd;
+  }
+
+  .grid-parent-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 20px;
+    grid-template-areas:
+      "area-1 area-2 area-2"
+      "area-1 area-3 area-3";
+  }
+</style>
+<div class="grid-parent-container">
+  <div class="child-1 grid-child">Grid Child 1</div>
+  <div class="child-2 grid-child">Grid Child 2</div>
+  <div class="child-3 grid-child">Grid Child 3</div>
+</div>
 ```
 
 The above snippet will create a grid that is three columns wide and two rows tall. The top row will be comprised of area-1 and two cells of area-2. The bottom row will be composed of a cell of area-1 and two cells of area-3.
+
+![Grid Areas](/articles/css-grid/grid-areas.png)
 
 The syntax of `grid-template-areas` provides a visualization of the defined grid structure.
 
@@ -238,7 +262,7 @@ _Note: There is more terminology related to CSS Grid. We have covered only the i
 
 ## Let's Code
 
-Our goal is to generate a simple image grid as shown.
+Our goal is to generate a simple image grid as shown. We have used random [unsplash](https://unsplash.com/) images. The result may be different for every user.
 
 ![Image Grid](/engineering-education/css-grid/image-grid.png)
 
@@ -271,40 +295,42 @@ Here, we have the `grid-parent-container`. This is the wrapper for the grid layo
 
 Let us write the CSS and define our grid layout.
 
-```css
-/* The grid-area defines the names of the grid areas that would be specified in the grid-template-areas in the parent container */
-.small-img1 {
-  grid-area: small-img1;
-}
-.medium-img1 {
-  grid-area: medium-img1;
-}
-.large-img1 {
-  grid-area: large-img1;
-}
-.medium-img2 {
-  grid-area: medium-img2;
-}
-.small-img2 {
-  grid-area: small-img2;
-}
-.large-img2 {
-  grid-area: large-img2;
-}
+```html
+<style>
+  /* The grid-area defines the names of the grid areas that would be specified in the grid-template-areas in the parent container */
+  .small-img1 {
+    grid-area: small-img1;
+  }
+  .medium-img1 {
+    grid-area: medium-img1;
+  }
+  .large-img1 {
+    grid-area: large-img1;
+  }
+  .medium-img2 {
+    grid-area: medium-img2;
+  }
+  .small-img2 {
+    grid-area: small-img2;
+  }
+  .large-img2 {
+    grid-area: large-img2;
+  }
 
-/* Parent Grid Container */
-.grid-parent-container {
-  display: grid;
-  justify-items: center; /* Centers the grid items on the row axis */
-  align-items: center; /* Centers the grid items on the column axis */
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /* three row and four column grid */
-  grid-template-areas:
-    "small-img1 large-img1 medium-img2 large-img2"
-    "medium-img1 large-img1 medium-img2 large-img2"
-    "medium-img1 large-img1 small-img2 large-img2";
-  /* The above option defines where every grid-area should be laid out within the grid */
-}
+  /* Parent Grid Container */
+  .grid-parent-container {
+    display: grid;
+    justify-items: center; /* Centers the grid items on the row axis */
+    align-items: center; /* Centers the grid items on the column axis */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* three row and four column grid */
+    grid-template-areas:
+      "small-img1 large-img1 medium-img2 large-img2"
+      "medium-img1 large-img1 medium-img2 large-img2"
+      "medium-img1 large-img1 small-img2 large-img2";
+    /* The above option defines where every grid-area should be laid out within the grid */
+  }
+</style>
 ```
 
 This above snippet can be added in a style tag within the HTML file or can be added as an external stylesheet. The complete code is as follows.
