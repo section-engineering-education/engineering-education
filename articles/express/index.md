@@ -55,10 +55,10 @@ Let's create a basic Express example app. To use Express, we first need to insta
 $ npm install express --save
 ```
 
-Next, let's write the code for our example app.
+Next, let's write the code for our example app. Create a file `app.js`.
 
 ```JavaScript
-//app.js
+//in app.js
 var express = require("express");
 var app = express();
 
@@ -105,7 +105,7 @@ Express will start at the first function in the stack and execute in order down 
 
 Every function in the stack takes three arguments `request`, `response` and `next`. `next` is a function, that when called Express executes the next function in the stack. This is a subtle difference between middleware and a route handler which we saw above.
 
-Let's look at a basic static file server to understand middleware. Initialize an npm project and install express. Create a directory named `static` and copy-paste *any* available static files into the folder (text, images, etc.).
+Let's look at a basic static file server to understand middleware. Initialize a new npm project . Create a directory named `static` and copy-paste *any* available static files into the folder (text, images, etc.). Execute the following commands in the terminal. `touch` command creates an empty file. 
 
 ```bash
 $ npm init -y
@@ -194,15 +194,16 @@ var express = require("express");
 var logger_morgan = require("morgan");
 
 var app = express();
-...
+
 app.use(logger_morgan("short")); // logs short notation of requests
-...
+
+app.listen(3000);
 ```
 
 Express comes with **`express.static`** middleware bundled with it, it can be used to serve static files instead of the function in the previous section. It provides better security and performance than the function we wrote.
 
 ```JavaScript
-app.use(express.static("static") //relative path
+app.use(express.static("static"); //relative path
 ```
 
 Any requested files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times. 
@@ -218,7 +219,7 @@ Lets see how we can use [Routers](http://expressjs.com/en/4x/api.html#router) to
 
 According to the documentation, a Router is "an isolated instance of middleware and routes. Routers can be thought of as “mini” applications only capable of performing middleware and routing".
 
-Routers can be used like middleware functions, they can be "`.use()`d". A simple example:
+Routers can be used like middleware functions, they can be added to middleware stack using the `app.use()` function. A simple example:
 
 ```JavaScript
 //app.js the main file
@@ -232,6 +233,7 @@ app.use("/api", apiRouter);
 
 app.listen(3000);
 ```
+Create a folder called `routes` and a file called `api_router.js` inside it.
 
 ```JavaScript
 //routes/api_router.js
@@ -265,7 +267,8 @@ var app = express();
 app.get("/product/:productId", function(req, res){
     var pid = parseInt(req.params.userid, 10);
     //res.send   manipulate string to get file with name as productID or something and use a static file server
-    };
+    });
+app.listen(3000);
 ```
 
 **Using Regular Expressions to match routes**
@@ -275,12 +278,17 @@ app.get("/product/:productId", function(req, res){
 For example, using the example above if we wanted the productId to be only an integer we can try the following:
 
 ```JavaScript
-...
+var express = require("express")
+app = express();
+
 app.get(/^\/products\/(\d+)$/, function(req, res) {
     var productId = parseInt(req.params[0], 10);
-    ...
+    console.log("The user is asking for product"+productId);
+    //we can send a file related to request 
+    var filename = "product" + productId + ".html"; // change this based on your setup
+    res.sendFile(filename);    
 });
-...
+app.listen(3000);
 ```
 
 ### Template Engines
@@ -295,6 +303,7 @@ First let's install it using npm. Type `npm install ejs` and then create a direc
 ```JavaScript
 //app.js
 var express = require("express");
+var app = express();
 
 app.set("view engine", "ejs"); //set view engine to ejs
 app.set("views", "views");     //set views directory
