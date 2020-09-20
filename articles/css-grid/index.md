@@ -27,11 +27,13 @@ CSS Flexbox is a one dimension positioning system. Check out [this](https://www.
 
 ## Introduction & History
 
-Using CSS for web layouts has always been a tricky affair. We used tables and floats to position items before. They were inefficient hacks weren't intuitive.
+Using CSS for web layouts has always been a tricky affair. We used tables and floats to position items before. They were inefficient hacks and weren't intuitive.
 
-Therefore, CSS Flexbox was introduced and it made positioning easier. But as the complexity of website layouts increased, Flexbox wasn't always the best option. It was designed for one-dimensional layouts. Thus, CSS Grid was developed to solve that problem by introducing features for building two-dimensional layouts.
+Therefore, CSS Flexbox was introduced and it made positioning easier. But as the complexity of website layouts increased, Flexbox wasn't always the best option. It was designed for one-dimensional layouts. 
 
-If we try to build a two-dimensional layout using CSS Flexbox, it would become extremely complicated because the layout wou;d have a lot of rows and columns. Making it responsive would create cluttered and unclean code. CSS Grid results in cleaner code for these type of layouts.
+Thus, CSS Grid was developed to solve that problem by introducing features for building two-dimensional layouts.
+
+If we try to build a two-dimensional layout using CSS Flexbox, it would become extremely complicated because the layout would have a lot of rows and columns. Making it responsive would create cluttered and unclean code. CSS Grid results in cleaner code for these type of layouts.
 
 Let's look into some basic terminology used in grid and dive into building a layout using the CSS grid system.
 
@@ -133,11 +135,15 @@ The grid area is the area surrounded by any four grid lines. A grid area is comp
 }
 ```
 
-Here, the `display: grid` property defines the parent grid container to be element with class 'grid-parent-container'. This generates a block level grid. This means that the grid takes up the entire line and other elements cannot co-exist with the grid.
+Here, the `display: grid` property defines the parent grid container to be element with class 'grid-parent-container'. 
+
+This generates a block level grid. This means that the grid takes up the entire line and other elements cannot co-exist with the grid.
 
 ![Grid](/articles/css-grid/display-grid.png)
 
-The `display: inline-grid` property defines the parent grid container to be element with class 'inline-grid-parent-container'. This generates an inline-level-grid. Other elemenets can take up the free space on the same line. The grid elements take up space according to its contents.
+The `display: inline-grid` property defines the parent grid container to be an element with the class 'inline-grid-parent-container'. This generates an inline-level-grid. 
+
+Other elements can take up the free space on the same line. The grid elements take up space according to its contents.
 
 ![Inline Grid](/articles/css-grid/inline-grid.png)
 
@@ -177,7 +183,7 @@ These properties define how the rows and columns of the grid layout are arranged
 </div>
 ```
 
-The above code creates a grid of 3 rows of 25%, 50% and 25% size of the parent container, and 5 columns of 100px, 50px, 50px and 100px. The middle column would automatically take up the rest of the space.
+The above code creates a grid of three rows of 25%, 50% and 25% size of the parent container, and five columns of 100px, 50px, 50px and 100px. The middle column would automatically take up the rest of the space.
 
 ![Grid Template Areas](/engineering-education/css-grid/grid-template.png)
 
@@ -258,11 +264,11 @@ The above snippet will create a grid that is three columns wide and two rows tal
 
 The syntax of `grid-template-areas` provides a visualization of the defined grid structure.
 
-_Note: There is more terminology related to CSS Grid. We have covered only the important ones so that we get a basic understanding of the grid features. For a more detailed overview of all grid features, visit this [MDN link](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)_
+_Note: There is more terminology related to CSS Grid. We have only covered the most important ones so that we get a basic understanding of the grid features. For a more detailed overview of all grid features, visit this [MDN link](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)_
 
 ## Let's Code
 
-Our goal is to generate a simple image grid as shown. We have used random [unsplash](https://unsplash.com/) images. The result may be different for every user.
+Our goal is to generate a simple image grid as shown. We have used random [Unsplash](https://unsplash.com/) images. The result may be different for every user.
 
 ![Image Grid](/engineering-education/css-grid/image-grid.png)
 
@@ -333,7 +339,7 @@ Next, write the CSS and define our grid layout.
 </style>
 ```
 
-This above snippet can be added in a style tag within the HTML file or can be added as an external stylesheet. The complete code is as follows.
+The above snippet can be added in a style tag within the HTML file or can be added as an external stylesheet. The complete code is as follows.
 
 ```html
 <!DOCTYPE html>
