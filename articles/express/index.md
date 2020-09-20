@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/express/hero.jpg
     alt: expressjs example text image
 ---
-[Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. Node.js is fast, portable and written in JavaScript but Node.js does not directly support common tasks such as handling requests, serving files, handling HTTP methods such as `GET` and `POST` this is where Node.js's [rich ecosystem](https://www.section.io/engineering-education/most-useful-nodejs-packages/) comes to our aid.
+[Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. Node.js is fast, portable and written in JavaScript but Node.js does not directly support common tasks such as handling requests, serving files and handling HTTP methods such as `GET` and `POST` this is where Node.js's [rich ecosystem](https://www.section.io/engineering-education/most-useful-nodejs-packages/) comes to our aid.
 <!--more-->
 
 **Express.js (Express) is a light web framework which sits on top of Node.js and it adds functionality ([middleware](https://expressjs.com/en/guide/writing-middleware.html), [routing](https://en.wikipedia.org/wiki/Routing), etc.) and simplicity to Node.js.**
