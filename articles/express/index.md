@@ -206,9 +206,13 @@ Express comes with **`express.static`** middleware bundled with it, it can be us
 app.use(express.static("static"); //relative path
 ```
 
-Any requested files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times. 
+Any requested files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times to use multiple static asset directories. For example, consider we have two directories `static` and `public` with static files and we wrote the following code:
+```JavaScript
+app.use(express.static("static");
+app.use(express.static("public");
+```
+Suppose you make a request like `localhost:3000/hello.html`, Express looks up the files in the `static` directory then `public` directory if the file exists then returns `hello.html`.
 
-If the file is not in the one directory, then the request is passed onto the next `static()` call. When your app gets a request like `/hello.html`, it returns the hello.html file in the public directory.
 
 ### Routing
 Express makes request handling easier by mapping requests to different request handlers. A request handler is a function which handles all the requests to a specific path with a specific HTTP method. 
