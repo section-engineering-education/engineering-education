@@ -335,3 +335,4 @@ Additional important Jekyll concepts and practices can be found below.
 - [Permalinks in a Jekyll site](https://jekyllrb.com/docs/permalinks/)
 - [Deploying a Jekyll site](https://jekyllrb.com/docs/deployment/)
 - [Using Jekyll template themes.](https://jekyllrb.com/docs/themes/)
+- [Useful Jekyll Plugins](http://planetjekyll.github.io/plugins/)
