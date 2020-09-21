@@ -21,9 +21,9 @@ If you are a Software Engineer, you may come across File handling at some point 
 
 - **Larger Storage Capacity**: Storing a large amount of data or test cases (to make sure that your code runs in every condition) is a tedious task, and by using files, a developer can store that data easily.
 
-- **Portability**: With files, Developers can transfer these data without worrying about data loss.
+- **Portability**: With files, developers can transfer the data without worrying about data loss.
 
-In this article, we will walk through on how to implement the File Handling function in C++, and we will cover the key working pointer of File handling such as:
+In this article, we will walk through how to implement the File Handling function in C++, and we will cover the key working pointers of File handling such as:
 
 - Opening a File
 - Writing to a File
