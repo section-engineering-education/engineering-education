@@ -15,10 +15,13 @@ images:
     alt: Database Architecture and Models example image
 
 ---
-Computers have made our lives easier in handling compound calculations and solving complex problems. Hands down computers are one of the best inventions of mankind. While using computers and instilling them in our lives has made our work a piece of cake, maintaining them can be difficult to accomplish. Computers are nothing more but a series of electrical and electronic circuits that run together to form a single working unit called the **CPU(short for Central Processing Unit)**. One such component of the CPU is the **Memory Unit**.
+Computers have made our lives easier in handling complicated calculations and solving complex problems. Hands down computers are one of the best inventions of mankind. While using computers and instilling them in our lives has made our work a piece of cake, maintaining them can be a difficult to accomplish.
 <!--more-->
 ### Central Processing Unit
-This particular unit is responsible for storing everything the computer does or processes in the form of bytes. Now as humans, we may not understand bytes or binaries. But the computer does, and it stores these instruction as data. The computer processes this data and generates the correct facts and figures in the form of output. This corresponds to only one instruction. As a matter of fact, the computer is capable of processing millions of instructions in any given second.
+Computers are nothing more but a series of electrical and electronic circuits that run together to form a single working unit called the **CPU (short for Central Processing Unit)**. One such component of the CPU is the **Memory Unit**.
+This particular unit is responsible for storing everything the computer does or processes in the form of bytes.
+
+Now as humans, we may not understand bytes or binaries. But the computer does, and it stores these instruction as data. The computer processes this data and generates the correct facts and figures in the form of output. This corresponds to only one instruction. As a matter of fact, the computer is capable of processing millions of instructions in any given second.
 
 Now, handling and maintaining this many instructions can be a little tough and messy. This is where the [database](https://en.wikipedia.org/wiki/Database) comes into the picture. In simple words, a database is a collection of data that is neatly organized and arranged. There is certain software which help us do this. These type of software are called **Database Management Systems(or DBMS in short)**. Some of the DBMS software are [Oracle Database](https://www.oracle.com/in/database/), [Microsoft Access](https://www.microsoft.com/en-in/microsoft-365/access), [MySQL](https://www.mysql.com/) etc.
 
@@ -40,12 +43,12 @@ A model is a representation of something in its abstract form. Likewise, **a dat
 - **Hierarchical Model**
 This [model](https://en.wikipedia.org/wiki/Hierarchical_database_model) was first developed by *IBM(International Business Machines)* around the year *1960*. The model sorts the data in a *tree-like* structure. Each data element can be represented as a single node. Each child node is also called dependents. The node without any parent node is called the root node. A parent node can have n-child nodes, while a child node can have only one parent node. Thus, it symbolizes **one-to-one** and **one-to-many** relationships. This type of database model consists of records and the collection of similar types of records are known as record-type. These records are joined together through links.
 
-    Hierarchical data models are easy to understand. The node representation in the form of a tree-like structure makes the data easily accessible. But since the nodes are connected through links it makes the hierarchical model fixed. This prevents the possibility of expansion and modification of the structure. This is because once the connection is made between any two nodes, they are permanently linked. Thus, making it one of the major drawbacks of hierarchical models.
+Hierarchical data models are easy to understand. The node representation in the form of a tree-like structure makes the data easily accessible. But since the nodes are connected through links it makes the hierarchical model fixed. This prevents the possibility of expansion and modification of the structure. This is because once the connection is made between any two nodes, they are permanently linked. Thus, making it one of the major drawbacks of hierarchical models.
 
 - **Network Model**
 This [model](https://en.wikipedia.org/wiki/Network_model) was introduced by *CODASYL(Conference on Data System Languages)* in *1969*. A lot of its features are like the hierarchical model. The collection of similar types of records are called record-type. The data elements (nodes) are connected through links. But unlike the hierarchical model, links not only connect similar nodes but also connect two records. In a way, the records now act as the nodes. Thus, the nodes are linked to other nodes without any hierarchy. Because of this, any node can be accessed from any one of the many paths. This forms a graph-like structure for the network model.
 
-    Since the network model follows a graph-like structure, the possibility of a child node having many parent nodes is high. So technically this model symbolizes a **many-to-many** relationship. Because of the graph structure, the arrangement of the database can be compound and complex. The links traverse through many nodes and if any one single link is damaged it can cause complexities to the whole structure. Therefore, the network model needs to be highly maintained.
+Since the network model follows a graph-like structure, the possibility of a child node having many parent nodes is high. So technically this model symbolizes a **many-to-many** relationship. Because of the graph structure, the arrangement of the database can be compound and complex. The links traverse through many nodes and if any one single link is damaged it can cause complexities to the whole structure. Therefore, the network model needs to be highly maintained.
 
 - **Relational Model**
 This [model](https://en.wikipedia.org/wiki/Relational_model) was introduced by *E.F.Codd* in *1969*. One of the main properties that distinguish this model from the others is that there are no actual connections between the data elements. The data elements are arranged in the form of tables. The row part of the table describes the entity. The column part of the table describes the attribute of that entity. Each table is called a relation. Unlike other data-models, the tables are related to each other through a common attribute in relational models.
@@ -54,9 +57,11 @@ The relational model makes data sorting easier. This helps to improve the databa
 
 ### Conclusion
 
-In this article we learned the concepts of database (Database Management Systems) and three types of build architecture. We studied the different aspects of the Hierarchical Data model, Network Data model, and Relational Data model.
+In this article we learned the concepts of a database (Database Management Systems) and three types of build architecture. We studied the different aspects of the Hierarchical Data model, Network Data model, and Relational Data model.
 
 ### Additional Resources
 [Database Management System](https://www.tutorialspoint.com/dbms/index.htm)
+
 [DBMS-Architecture](https://www.javatpoint.com/dbms-architecture)
+
 [Database | Oracle](https://www.oracle.com/database/what-is-database.html)
