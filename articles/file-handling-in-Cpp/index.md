@@ -17,9 +17,9 @@ images:
 If you are a Software Engineer, you may come across File handling at some point in your career. It is the ability to store the output and perform various operations on it, such as updating the data or overwriting things in a file. Files are always a vital way to store data.
 <!--more-->
 ### Why do you need File Handling?
-- **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out. By storing data in files, one can use it anytime.
+- **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out. But by storing data in files, one can use it anytime.
 
-- **Larger Storage Capacity**: Storing a large amount of data or test cases (to make sure that your code runs on every condition) is a task, and by using files, one can store it easily.
+- **Larger Storage Capacity**: Storing a large amount of data or test cases (to make sure that your code runs in every condition) is a task, and by using files, one can store it easily.
 
 - **Portability**: With files, Developers can transfer these data without worrying about data loss.
 
