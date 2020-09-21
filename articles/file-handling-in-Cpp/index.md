@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/file-handling-in-Cpp/hero.jpg
     alt: functions Function C++ cpp
 ---
-If you are a Software Engineer, you may come across File handling at some point in your career. It is the ability to store the output and perform various operations on it, such as update the data or overwrite things in a file. Files are always a vital way to store data.
+If you are a Software Engineer, you may come across File handling at some point in your career. It is the ability to store the output and perform various operations on it, such as updating the data or overwriting things in a file. Files are always a vital way to store data.
 <!--more-->
 ### Why do you need File Handling?
 - **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out. By storing data in files, one can use it anytime.
