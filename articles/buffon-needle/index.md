@@ -1,4 +1,4 @@
-# Buffon's Needle 
+# Simulation of Buffon's Needle problem in Python
 
 Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used for daily purposes. The pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. Now imagine getting to look at pi from a different perspective. What if I told you, we could estimate pi from a probability problem. 
 
