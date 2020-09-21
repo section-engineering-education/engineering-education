@@ -2,34 +2,31 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/css-flexbox/
+url: /engineering-education/css-grid/
 title: Create Two-Dimensional Layouts for Websites using CSS Grid
 description: CSS Grid is a two-dimensional positioning layout system in CSS, that can be used to create responsive interfaces for the web.
 author: saiharsha-balasubramaniam
-date: 2020-09-16T00:00:00-08:00
+date: 2020-09-21T00:00:00-08:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/css-grid/hero.jpg
     alt: css grid
 ---
-
 CSS Grid is a two-dimensional positioning layout system in CSS, that can be used to create responsive interfaces for the web. Similar to Flexbox, CSS rules are applied to the parent container and the children.
 
-CSS Flexbox is a one dimension positioning system. Check out [this](https://www.section.io/engineering-education/css-flexbox/#conclusion) article to learn more about CSS Flexbox.
+CSS Flexbox is a one dimensional positioning system. Check out [this](/engineering-education/css-flexbox) article to learn more about CSS Flexbox.
 
-## Table of Contents
-
+### Table of Contents
 - [Introduction & History](#introduction-&-history)
 - [Terminology](#terminology)
-- [Let's Code](#let's-code)
+- [Let's Code](#lets-code)
 - [Further Reading](#further-reading)
 
-## Introduction & History
+### Introduction & History
+Using CSS for web layouts has always been a tricky affair. We used tables and floats to position items before. These were inefficient hacks and weren't intuitive.
 
-Using CSS for web layouts has always been a tricky affair. We used tables and floats to position items before. They were inefficient hacks and weren't intuitive.
-
-Therefore, CSS Flexbox was introduced and it made positioning easier. But as the complexity of website layouts increased, Flexbox wasn't always the best option. It was designed for one-dimensional layouts. 
+Therefore, CSS Flexbox was introduced and it made positioning much easier. But as the complexity of website layouts increased, Flexbox wasn't always the best option. It was designed for one-dimensional layouts.
 
 Thus, CSS Grid was developed to solve that problem by introducing features for building two-dimensional layouts.
 
@@ -37,9 +34,9 @@ If we try to build a two-dimensional layout using CSS Flexbox, it would become e
 
 Let's look into some basic terminology used in grid and dive into building a layout using the CSS grid system.
 
-## Terminology
+### Terminology
 
-### Grid Container
+#### Grid Container
 
 This container acts as the parent of all the grid elements.
 
@@ -68,8 +65,7 @@ This container acts as the parent of all the grid elements.
 
 In this example, a parent `grid-container` wraps around five children grid containers.
 
-### Grid Children
-
+#### Grid Children
 The direct children of the `grid-parent-container`.
 
 ![Grid Children](/engineering-education/css-grid/grid-sub-child.png)
@@ -105,27 +101,23 @@ In this example, the `sub-child` does not count as grid-children. Only the **dir
 
 ![CSS Grid Terminology](/engineering-education/css-grid/grid-terminology.png)
 
-_Figure: CSS Grid Diagram - [Source](https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/)_
+*Figure: CSS Grid Diagram - [Source](https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/)*
 
-### grid-line
-
+#### grid-line
 The lines that divide the grid into boxes are called the grid lines. They're divided into row grid lines and column grid lines.
 
-### grid-cell
+#### grid-cell
+A grid cell is the most elementary unit of a grid. It is made up of two adjacent rows and column grid lines.
 
-A grid cell is the most elementary unit of a grid. It is made up of two adjacent row and column grid lines.
-
-### grid-track
-
+#### grid-track
 The grid track is the area between two adjacent row grid lines or adjacent column grid lines.
 
-### grid-area
-
+#### grid-area
 The grid area is the area surrounded by any four grid lines. A grid area is comprised of one or more grid cells.
 
-### display
+#### display
 
-```css
+```CSS
 .grid-parent-container {
   display: grid;
 }
@@ -135,20 +127,19 @@ The grid area is the area surrounded by any four grid lines. A grid area is comp
 }
 ```
 
-Here, the `display: grid` property defines the parent grid container to be element with class 'grid-parent-container'. 
+Here, the `display: grid` property defines the parent grid container to be the element with class 'grid-parent-container'.
 
 This generates a block level grid. This means that the grid takes up the entire line and other elements cannot co-exist with the grid.
 
-![Grid](/articles/css-grid/display-grid.png)
+![Grid](/engineering-education/css-grid/display-grid.png)
 
-The `display: inline-grid` property defines the parent grid container to be an element with the class 'inline-grid-parent-container'. This generates an inline-level-grid. 
+The `display: inline-grid` property defines the parent grid container to be an element with the class 'inline-grid-parent-container'. This generates an inline-level-grid.
 
 Other elements can take up the free space on the same line. The grid elements take up space according to its contents.
 
-![Inline Grid](/articles/css-grid/inline-grid.png)
+![Inline Grid](/engineering-education/css-grid/inline-grid.png)
 
-### grid-template-rows & grid-template-columns
-
+#### grid-template-rows & grid-template-columns
 These properties define how the rows and columns of the grid layout are arranged. They set the grid-track size.
 
 ```html
@@ -212,15 +203,14 @@ We can also use the `fr` unit. One fr or fraction takes up a fraction of the fre
 </div>
 ```
 
-In the above code, the `row-gap` defines the gap between grid rows and the `column-gap` defines the gap between grid columns.
+In the code above, the `row-gap` defines the gap between grid rows and the `column-gap` defines the gap between grid columns.
 
 The above code creates four columns of one fraction space each. In this case, they each take up 25% space.
 
-### grid-template-areas
-
+#### grid-template-areas
 This property defines the grid template. It defines which page elements are placed in which grid in the layout.
 
-Add the below code between style tags in your HTML file.
+Add the code below between style tags in your HTML file.
 
 ```html
 <style>
@@ -260,14 +250,13 @@ Add the below code between style tags in your HTML file.
 
 The above snippet will create a grid that is three columns wide and two rows tall. The top row will be comprised of area-1 and two cells of area-2. The bottom row will be composed of a cell of area-1 and two cells of area-3.
 
-![Grid Areas](/articles/css-grid/grid-areas.png)
+![Grid Areas](/engineering-education/css-grid/grid-areas.png)
 
 The syntax of `grid-template-areas` provides a visualization of the defined grid structure.
 
-_Note: There is more terminology related to CSS Grid. We have only covered the most important ones so that we get a basic understanding of the grid features. For a more detailed overview of all grid features, visit this [MDN link](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)_
+*Note: There is more terminology related to CSS Grid. We have only covered the most important ones so that we get a basic understanding of the grid features. For a more detailed overview of all grid features, visit this [MDN link](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)*
 
-## Let's Code
-
+### Let's Code
 Our goal is to generate a simple image grid as shown. We have used random [Unsplash](https://unsplash.com/) images. The result may be different for every user.
 
 ![Image Grid](/engineering-education/css-grid/image-grid.png)
@@ -297,9 +286,9 @@ We start by defining our page's HTML.
 </div>
 ```
 
-Here, we have the `grid-parent-container`. This is the wrapper for the grid layout we made. The images are fetched using a random image generator, [Unsplash](https://unsplash.com/).
+Here, we have the `grid-parent-container`. This is the wrapper for the grid layout we made. The images are fetched using a random image generator, from [Unsplash](https://unsplash.com/).
 
-Next, write the CSS and define our grid layout.
+Next, we will write the CSS and define our grid layout.
 
 ```html
 <style>
@@ -405,9 +394,8 @@ The above snippet can be added in a style tag within the HTML file or can be add
 </html>
 ```
 
-## Further Reading
-
-We've seen the basics of the CSS grid module and learnt how to build a basic grid layout. For a more in-depth dive into grid, check out the resources below.
+### Further Reading
+We've seen the basics of the CSS grid module and learned how to build a basic grid layout. For a more in-depth dive into grid, check out the resources below.
 
 - [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) - Mozilla Developer Network
 - [CSS Grid Layout: A New Layout Module for the Web](https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/) - Webkit Blog
