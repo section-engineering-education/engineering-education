@@ -28,7 +28,7 @@ In this article, we will walk through how to implement the File Handling functio
 - Opening a File
 - Writing to a File
 - Reading from a File
-- Close a file
+- Closing a file
 
 To perform File Handling functions, we need to add another library; fstream. The library holds all the functions related to File Handling. Here's how to include it.
 
@@ -44,13 +44,14 @@ ifstream fin;
 fin.open("index.txt")
 ```
 
-That was simple as we just used a function **open** to open a file name "index.txt." but you guys must be wondering what is ``` ifstream```
+That was simple as we just used the function **open** to open a file name "index.txt." but you as the reader may be wondering what is ` ifstream`
 
-**ifstream** is the type we use to declare an object. Just equivalent to the datatypes that we use in usual functions. For example: int.
-**fin** is the name of the variable. One can name it anything they want.
+**ifstream** is the type we use to declare an object. Very similar to the datatypes that we use in other functions. Such as: int.
+
+**fin** is the name of the variable. A developer can name it anything they want.
 
 ### Writing in a File
-Writing to a file is comparatively easier than even Opening a File. Instead of using **cout**, we just need to use the name of the variable that we recently selected. Here's how to do it:
+Writing to a file is easier than even opening a file. Instead of using **cout**, we just need to use the name of the variable that we recently selected. Here's how to do it:
 
 ```C
 fin<<"Section.io is a great platform to learn about new technologies."<<endl;
@@ -67,15 +68,15 @@ cout<<data;
 ```
 
 ### Close a File
-
-Closing a file is the easiest of all the actions we did so far. Here's how to do it:
+Closing a file is the easiest of all the actions we've done so far. Here's how to do it:
 
 ```C
 fin.close();
 ```
+
 It's just that simple.
 
-So far, we have covered everything that a beginner needs to know about File handling, or you can say everything that you will ever use. Now let's write a program to implement whatever we have covered so far to get a clear picture.
+So far, we have covered everything that a beginner needs to know about file handling, or you could say everything that you will ever use. Now let's write a program to implement what we have just covered to get a clearer picture.
 
 ```C
 #include<iostream>
@@ -99,4 +100,5 @@ return 0;
 }
 ```
 
-With this, we come to the end of this article. We get to cover the most important and used function/actions in File handling. Things we covered is the extent to which a developer needs to know and what colleges teach.
+### Conclusion
+With this, we've come to the end of this article. We got to cover the most important and used function/actions in file handling. The things we have just covered is the extent to which a developer would need to know and what basic colleges teach.
