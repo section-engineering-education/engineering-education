@@ -6,7 +6,7 @@ url: /engineering-education/file-handling-in-Cpp/
 title: File Handling in C++
 description: Functions in C++, what are they? How do they work? In this article we will be going over one of the most fundamental idea in programming.
 author: parampreet-singh
-date: 2020-09-03T00:00:00-12:00
+date: 2020-09-21T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
