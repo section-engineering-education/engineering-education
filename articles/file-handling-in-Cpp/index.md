@@ -14,32 +14,29 @@ images:
   - url: /engineering-education/file-handling-in-Cpp/hero.jpg
     alt: functions Function C++ cpp
 ---
-
 If you are a Software Engineer, you may come across File handling at some point in your career. It is the ability to store the output and perform various operations on it, such as update the data or overwrite things in a file. Files are always a vital way to store data.
 <!--more-->
 ### Why do you need File Handling?
+- **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out. By storing data in files, one can use it anytime.
 
-* **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out. By storing data in files, one can use it anytime.
+- **Larger Storage Capacity**: Storing a large amount of data or test cases (to make sure that your code runs on every condition) is a task, and by using files, one can store it easily.
 
-* **Larger Storage Capacity**: Storing a large amount of data or test cases (to make sure that your code runs on every condition) is a task, and by using files, one can store it easily.
-
-* **Portability**: With files, Developers can transfer these data without worrying about data loss.
+- **Portability**: With files, Developers can transfer these data without worrying about data loss.
 
 In this article, we will walk through on how to implement the File Handling function in C++, and we will cover the key working pointer of File handling such as:
 
-* Opening a File
-* Writing to a File
-* Reading from a File
-* Close a file
+- Opening a File
+- Writing to a File
+- Reading from a File
+- Close a file
 
 To perform File Handling functions, we need to add another library; fstream. The library holds all the functions related to File Handling. Here's how to include it.
 
-```#include<fstream>```
+`#include<fstream>`
 
-Let's straight dive into learning.
+Let's dive straight into learning.
 
 ### Opening a File
-
 One of the most common actions in File Handling is opening a File. Let's see how to do it:
 
 ```C
@@ -53,7 +50,6 @@ That was simple as we just used a function **open** to open a file name "index.t
 **fin** is the name of the variable. One can name it anything they want.
 
 ### Writing in a File
-
 Writing to a file is comparatively easier than even Opening a File. Instead of using **cout**, we just need to use the name of the variable that we recently selected. Here's how to do it:
 
 ```C
@@ -61,7 +57,6 @@ fin<<"Section.io is a great platform to learn about new technologies."<<endl;
 ```
 
 ### Reading from a File
-
 We first need to declare a variable similar to the type of data in our file. Then run a while loop until the very end of the file and cout all the data. It sounds a bit complex, but it isn't. Here's how to do it:
 
 ```C
