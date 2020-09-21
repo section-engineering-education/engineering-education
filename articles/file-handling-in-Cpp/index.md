@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/functions-in-cpp/
+url: /engineering-education/file-handling-in-Cpp/
 title: File Handling in C++
 description: Functions in C++, what are they? How do they work? In this article we will be going over one of the most fundamental idea in programming.
 author: parampreet-singh
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/functions-in-cpp/hero.jpg
+  - url: /engineering-education/file-handling-in-Cpp/hero.jpg
     alt: functions Function C++ cpp
 ---
 
@@ -23,7 +23,7 @@ If you are a Software Engineer, you may come across File handling at some point 
 
 * **Larger Storage Capacity**: Storing a large amount of data or test cases (to make sure that your code runs on every condition) is a task, and by using files, one can store it easily.
 
-* **Portability**: With files, Developers can transfer these data without worrying about data loss. 
+* **Portability**: With files, Developers can transfer these data without worrying about data loss.
 
 In this article, we will walk through on how to implement the File Handling function in C++, and we will cover the key working pointer of File handling such as:
 
@@ -32,7 +32,7 @@ In this article, we will walk through on how to implement the File Handling func
 * Reading from a File
 * Close a file
 
-To perform File Handling functions, we need to add another library; fstream. The library holds all the functions related to File Handling. Here's how to include it. 
+To perform File Handling functions, we need to add another library; fstream. The library holds all the functions related to File Handling. Here's how to include it.
 
 ```#include<fstream>```
 
@@ -44,7 +44,7 @@ One of the most common actions in File Handling is opening a File. Let's see how
 
 ```C
 ifstream fin;
-fin.open("index.txt") 
+fin.open("index.txt")
 ```
 
 That was simple as we just used a function **open** to open a file name "index.txt." but you guys must be wondering what is ``` ifstream```
@@ -89,7 +89,7 @@ So far, we have covered everything that a beginner needs to know about File hand
 using namespace std;
 
 int main() {
-ifstream file; 
+ifstream file;
 string file_data;
 
 file.open("index.md"); //Opening a File
@@ -105,4 +105,3 @@ return 0;
 ```
 
 With this, we come to the end of this article. We get to cover the most important and used function/actions in File handling. Things we covered is the extent to which a developer needs to know and what colleges teach.
-
