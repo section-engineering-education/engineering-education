@@ -207,7 +207,7 @@ To understand time zone helpers more assume you have a system where you set an e
 - zonedTimeToUtc returns a given date equivalent to the time zone UTC (parses date in a given time zone)
 - utcToZonedTime return local time from a UTC (converts date to the provided time zone)
 
-## [Use cases](https://github.com/marnusw/date-fns-tz)
+## [Use cases](https://github.com/marnusw/date-fns-tz) 
 `npm install date-fns date-fns-tz`
 
 zonedTimeToUtc 
@@ -403,27 +403,29 @@ const {format} = require('date-fns');
 const today =format(new Date(),'dd.MM.yyyy');
 console.log(today);
 ```
-![image title](/engineering-education/new-folder-name/image-name.jpg)
-![image title](/engineering-education/new-folder-name/image-name.jpg)
+moment@2.28.0
+![moment](/engineering-education/javascript-dates-manipulation-with-date-fnse/moment.png)
+[Credit:bundlephobia](https://bundlephobia.com/)
+
+date-fns@2.16.1
+![date-fns](/engineering-education/javascript-dates-manipulation-with-date-fns/date-fns.png)
+[Credit:bundlephobia](https://bundlephobia.com/)
 Nevertheless, if you love working with MomentJS, its size should not be a big worry. You can [configure moment with webpack](https://stackoverflow.com/a/25426019/1775026) or remove data that you aren't using such as locale plugins and this will significantly reduce MomentJS buddle size. MomentJS fit well when working with a big project because you will end up using much of moment functionalities thus the buddle size won't matter, but if you just want to load simple dates that require one or two methods then date-fns will definitely work on your favor. If you are dealing with time zones, I would advise you to check out momentJS. Its time zone functionalities are extensive compared to those of date-fns, and momentJS has more locale support functionalities that may help you to extend more global reach with your date instances.
 
-Statistical Comparison
-
-Size packages bundle size
-![image title](/engineering-education/new-folder-name/image-name.jpg)
-Image source
+### Statistical Comparison
 
 NPM download stats npm download stats
-![image title](/engineering-education/new-folder-name/image-name.jpg)
-Image source
+![npm-download-insights](/engineering-education/javascript-dates-manipulation-with-date-fns/npm-download-insights.png)
+[Credit:nodejs libhunt](https://nodejs.libhunt.com/compare-moment-vs-date-fns)
 
-GitHub stats Image source
-![image title](/engineering-education/new-folder-name/image-name.jpg)
+GitHub stats
+![github-stats.png](/engineering-education/javascript-dates-manipulation-with-date-fns/github-stats.png)
+[Credit:npmtrends](https://www.npmtrends.com/date-fns-vs-moment)
+
 Popularity and activity popularity and activity
-![image title](/engineering-education/new-folder-name/image-name.jpg)
-Image source
+![popularity-and-activity](/engineering-education/javascript-dates-manipulation-with-date-fns/popularity-and-activity.png)
+[Credit:npmtrends](https://www.npmtrends.com/date-fns-vs-moment)
 
-What is matter a lot is to meet your demand
 
 # Other date manipulating framework alternatives worth checking out.
 
@@ -436,6 +438,7 @@ What is matter a lot is to meet your demand
 - 🌐 I18n support
 - 📦 2kb mini library
 - 👫 All browsers supported
+[Credit:iamkun](https://github.com/iamkun/dayjs)
 
 ## [Luxon](https://github.com/moment/luxon)
 
@@ -444,6 +447,7 @@ Luxon is a library that makes it easier to work with dates and times in JavaScri
 - Immutable, chainable, unambiguous API.
 - Parsing and formatting for common and custom formats.
 - Native time zone and Intl support (no locale or tz files).
+[Credit:moment/luxon](https://github.com/moment/luxon)
 
 ## [Fecha](https://github.com/taylorhakes/fecha)
 
@@ -452,6 +456,7 @@ Lightweight date formatting and parsing (~2KB). Meant to replace the parsing and
 - Date Parsing
 - Date Formatting
 - Date Manipulation
+[Credit:taylorhakes](https://github.com/taylorhakes/fecha)
 
 ## [Timeago.js](https://github.com/albert-gonzalez/easytimer.js)
 
@@ -461,6 +466,7 @@ Lightweight date formatting and parsing (~2KB). Meant to replace the parsing and
 - Real-time render supported.
 - Node and browser supported.
 - Well tested.
+[Credit:albert-gonzalez](https://github.com/albert-gonzalez/easytimer.js)
 
 ## [Easytimer.js](https://github.com/hustcc/timeago.js)
 
@@ -472,7 +478,23 @@ EasyTimer.js is a simple library for counting time in five different units: tent
 - A custom callback can be defined and it will be executed every timer refresh.
 - Two timer modes: Regular and Countdown.
 - Configurable start and target values.
+[Credit:hustcc](https://github.com/hustcc/timeago.jst)
 
 # Conclusion
 
 Date-fns is a great library that you should put on your checklist if you have a project that needs some date manipulations. I have good support and well maintained. As you may find out in the [date-fns official documentation](https://date-fns.org/), this article is meant to introduce you to some of the common functions to give you a taste of this library's scope. What libraries like momenjs and date-fns can do, can still be achieved with naïve JavaScript. However, the make working with date objects fun and easier with improved code readability.
+
+## Resources
+-  [Date-fns official website](https://date-fns.org/)
+-  [Date-fns Github repository](https://github.com/date-fns/date-fns.git)
+-  [Date-fns npm](https://npmjs.org/package/date-fns)
+-  [Date-fns getting started](https://date-fns.org/docs/Getting-Started)
+-  [Date-fns locale](https://date-fns.org/v2.16.1/docs/I18n-Contribution-Guide)
+-  [Date-fns time-Zones](https://date-fns.org/v2.16.1/docs/Time-Zones)
+-  [Date-fns date-fns-tz](https://github.com/marnusw/date-fns-tz)
+-  [Time zone database data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+-  [ISO 8601 standards](https://en.wikipedia.org/wiki/ISO_8601)
+-  [Unicode data](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)
+-  [Webpack](https://webpack.js.org/)
+-  [MomentJS](https://github.com/moment/moment.git)
+-  [i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
