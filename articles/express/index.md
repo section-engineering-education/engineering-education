@@ -16,7 +16,7 @@ images:
 ---
 [Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. 
 
-Node.js is fast, portable and written in JavaScript but it doesn't directly support common tasks such as handling requests, serving files and handling HTTP methods such as `GET` and `POST` but this is where Node.js's [rich ecosystem](https://www.section.io/engineering-education/most-useful-nodejs-packages/) comes to our aid.
+Node.js is fast, portable and written in JavaScript but it doesn't directly support common tasks such as handling requests, serving files and handling HTTP methods such as `GET` and `POST`. This is where Node.js's [rich ecosystem](https://www.section.io/engineering-education/most-useful-nodejs-packages/) comes to our aid.
 <!--more-->
 
 **Express.js (Express) is a light web framework which sits on top of Node.js and it adds functionality ([middleware](https://expressjs.com/en/guide/writing-middleware.html), [routing](https://en.wikipedia.org/wiki/Routing), etc.) and simplicity to Node.js.**
@@ -55,7 +55,7 @@ Let's create a basic Express example app. To use Express, we first need to insta
 $ npm install express --save
 ```
 
-Next, let's write the code for our example app. Create a file `app.js`.
+Next, let's write the code for our example app. Create a file called `app.js`.
 
 ```JavaScript
 //in app.js
@@ -105,7 +105,9 @@ Express will start at the first function in the stack and execute in order down 
 
 Every function in the stack takes three arguments `request`, `response` and `next`. `next` is a function, that when called Express executes the next function in the stack. This is a subtle difference between middleware and a route handler which we saw above.
 
-Let's look at a basic static file server to understand middleware. Initialize a new npm project . Create a directory named `static` and copy-paste *any* available static files into the folder (text, images, etc.). Execute the following commands in the terminal. `touch` command creates an empty file. 
+Let's look at a basic static file server to understand middleware. Initialize a new npm project. Then create a directory named `static` and copy-paste *any* available static files into the folder (text, images, etc.). 
+
+Execute the following commands in the terminal. The `touch` command creates an empty file. 
 
 ```bash
 $ npm init -y
@@ -206,7 +208,10 @@ Express comes with **`express.static`** middleware bundled with it, it can be us
 app.use(express.static("static"); //relative path
 ```
 
-Any requested files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. We can call `static()` multiple times to use multiple static asset directories. For example, consider we have two directories `static` and `public` with static files and we wrote the following code:
+Any requested files in the directory "static" are served. `localhost:3000/dummy_file.txt` will show the same result as above. 
+
+We can call `static()` multiple times to use multiple static asset directories. For example, consider we have two directories `static` and `public` with static files and we wrote the following code:
+
 ```JavaScript
 app.use(express.static("static");
 app.use(express.static("public");
