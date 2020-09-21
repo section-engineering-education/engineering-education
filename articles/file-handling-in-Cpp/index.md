@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/file-handling-in-Cpp/
 title: File Handling in C++
-description: Functions in C++, what are they? How do they work? In this article we will be going over one of the most fundamental idea in programming.
+description: In this article, we will walk through how to implement the File Handling function in C++, and we will cover the key working pointers of file handling.
 author: parampreet-singh
 date: 2020-09-21T00:00:00-12:00
 topics: [Languages]
@@ -37,7 +37,7 @@ To perform File Handling functions, we need to add another library; fstream. The
 Let's dive straight into learning.
 
 ### Opening a File
-One of the most common actions in File Handling is opening a File. Let's see how to do it:
+One of the most common actions in File Handling is opening a file. Let's see how to do it:
 
 ```C
 ifstream fin;
