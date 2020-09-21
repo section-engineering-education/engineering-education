@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/huffman-coding-python/
 title: Supervised Learning Algorithms
-description: Huffman coding is a technique for text compression that uses data structures. This article explains the theory behind Huffman coding and implementation in Python.
+description: 
 author: lalithnarayan-c
 date: 2020-09-08T00:00:00-10:00
 topics: []
@@ -18,8 +18,6 @@ Artificial intelligence is the art of inducing intelligence into machines. The c
 <!--more-->
 
 ### Introduction to machine learning
-
-
 Tom Mitchell defines machine learning as follows: 'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
 1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pairs of values help the algorithm model the function that generates such outputs for given inputs. We will be covering the entire topic of supervised learning in this article.
 2. Unsupervised Learning: In this type of learning, algorithms are only fed in input data variables. The algorithms make sense of data based on patterns that the algorithm detects. For example, given a dataset of black and red cards, clustering algorithms will find all cards similar to black and place them in one set. On the other set, the red cards are placed. Thereby, a [decision boundary](https://en.wikipedia.org/wiki/Decision_boundary#:~:text=A%20decision%20boundary%20is%20the,are%20not%20always%20clear%20cut.) is formed. [Clustering](https://www.section.io/engineering-education/clustering-algorithms/) is one such example of unsupervised learning.  
