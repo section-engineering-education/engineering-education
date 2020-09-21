@@ -400,3 +400,6 @@ We've seen the basics of the CSS grid module and learned how to build a basic gr
 - [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) - Mozilla Developer Network
 - [CSS Grid Layout: A New Layout Module for the Web](https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/) - Webkit Blog
 - [CSS Grid Garden](https://cssgridgarden.com/) - A site to learn and play with CSS grids.
+
+---
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
