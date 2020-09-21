@@ -449,19 +449,19 @@ Moment is mutable while date-fns is immutable. Moment keeps changing its own sat
 
 -   Size
 ![packages bandle size](/engineering-education/node-date-and-time-objects-with-moment/size.png)
-*[Image sourse](https://medium.com/@k2u4yt/momentjs-vs-date-fns-6bddc7bfa21e#:~:text=One%20of%20the%20biggest%20difference,momentjs%20change%20its%20own%20state.)*
+*[Image source](https://medium.com/@k2u4yt/momentjs-vs-date-fns-6bddc7bfa21e#:~:text=One%20of%20the%20biggest%20difference,momentjs%20change%20its%20own%20state.)*
 
 -   NPM download stats
 ![npm download stats](/engineering-education/node-date-and-time-objects-with-moment/npm-download-insights.png)
-*[Image sourse](https://nodejs.libhunt.com/compare-moment-vs-date-fns)*
+*[Image source](https://nodejs.libhunt.com/compare-moment-vs-date-fns)*
 
 -   Github stats
 ![github stats](/engineering-education/node-date-and-time-objects-with-moment/github-stats.png)
-*[Image sourse](https://www.npmtrends.com/date-fns-vs-moment)*
+*[Image source](https://www.npmtrends.com/date-fns-vs-moment)*
 
 -   Popularity and activity
 ![popularity and activity](/engineering-education/node-date-and-time-objects-with-moment/popularity-and-activity.png)
-*[Image sourse](https://www.npmtrends.com/date-fns-vs-moment)*
+*[Image source](https://www.npmtrends.com/date-fns-vs-moment)*
 
 Object-oriented moment and Function date-fns are both awesome date libraries. The choice depends on your taste. They both achieve date object with ease, more than what Native Javascript date object can offer.
 
