@@ -1,46 +1,64 @@
-﻿## Building a blog from scratch using Jekyll
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/debug-node-docker/
+title: Building a Blog Website from scratch using Jekyll
+description:
+author: geoffrey-mungai
+date: 2020-09-22T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
-Building a website nowadays is not hard and expensive as it was sometime back. These days, you don't have to have to learn a crazy programming language to have your site up and running. Instead, you can go the Jamstack way. Let's will look at building and deploying a Jekyll site.
-
+  - url: /engineering-education/debug-node-docker/hero.jpg
+    alt: image Node.js debugger docker
+---
+Building a website nowadays is not as hard or expensive as it was in past years. These days, you don't have to have to learn a crazy programming language to have your site up and running. Instead, you can go the Jamstack route. In this article we will look at building and deploying a Jekyll site.
+<!--more-->
 ### Introduction
-
-[Jekyll](https://jekyllrb.com/) is a [Jamstack](https://jamstack.org/) static website generator. Jamstack is a **concept** of building websites that don't depend on web servers and *databases*. Jekyll was released back in 2008 and has been one of the most convenient ways of building [all types of sites](https://jekyllrb.com/showcase/). It's written in [Ruby](https://www.ruby-lang.org/en/) and uses Liquid template engine to render pages.
+[Jekyll](https://jekyllrb.com/) is a [Jamstack](https://jamstack.org/) static website generator. Jamstack is a **concept** of building websites that don't depend on web servers and *databases*. Jekyll was released back in 2008 and has been one of the most convenient ways of building [all types of sites](https://jekyllrb.com/showcase/). It's written in [Ruby](https://www.ruby-lang.org/en/) and uses the Liquid template engine to render pages.
 
 ### Prerequisites
-
 To follow through this tutorial, you will need the following:
 
-1. A GitHub account. If you don't have one you can create the basics of Sne [[here](https://sass-lang.com/guide)](https://github.com/).
+1. A GitHub [account](https://github.com/). If you don't have one you can create the basics of Sne [here](https://sass-lang.com/guide).
 2. A basic knowledge of HTML and CSS.
-3. A code editor. You can use your preferred code editor or download VS Code  the basics offSom [[here](https://sass-lang.com/guide)](https://code.visualstudio.com/download).
+3. A code editor. You can use your preferred code editor or download VS Code [here](https://code.visualstudio.com/download).
 
 By the end of this tutorial, you will be able to build a Jekyll blog from scratch.
 
 ### Step 1 -- Install Ruby
-
-Since Jekyll is written in Ruby, you will need a Ruby installation in your machine to run Jekyll. 
+Since Jekyll is written in Ruby, you will need a Ruby installation on your machine to run Jekyll.
 
 In Linux, you can install it using [Snap](https://snapcraft.io/) or [Apt](https://wiki.debian.org/Apt) package manager.
 
 1. **Install using apt package manager**.
-First, update your apt repositories to look for the latest ruby version.
+First, update your apt repositories to look for the latest Ruby version.
+
 	```bash
 	sudo apt-get update
 	```
-	Then install Ruby.
+Then install Ruby.
+
 	```bash
 	$ sudo apt-get install ruby-full
 	```
+
 2. **Install using Snap package manager**.
+
 	```bash
 	$ sudo snap install ruby --classic
 	```
+
 If you are running macOS, you can install Ruby using [Homebrew](https://brew.sh/).
+
 ```bash
 $ brew install ruby
 ```
-If you are running on Windows, install Ruby using [Ruby Installer](https://rubyinstaller.org/).
-To confirm Ruby installation, run the command `ruby -v` in a terminal. The output is similar and may vary from the one below.
+
+If you are running Windows, install Ruby using [Ruby Installer](https://rubyinstaller.org/).
+To confirm the Ruby installation, run the command `ruby -v` in a terminal. The output will be similar but may vary from the one below.
 
 ```bash
 ruby 2.7.0p0 (2019-12-25 revision 647ee6f091)
@@ -56,15 +74,13 @@ export PATH="$HOME/gems/bin:$PATH"
 ```
 
 ### Step 2 -- Install Jekyll
-
-Jekyll comes as a [Ruby Gem](https://guides.rubygems.org/what-is-a-gem/) and can be installed in any system running Ruby. Run the command below in a terminal to install Jekyll. 
+Jekyll comes as a [Ruby Gem](https://guides.rubygems.org/what-is-a-gem/) and can be installed in any system running Ruby. Run the command below in a terminal to install Jekyll.
 
 ```bash
 $ gem install jekyll bundler
 ```
 
 ### Step 3 -- Create a new Jekyll site
-
 Create a new fo the basics oflSer w[here](https://sass-lang.com/guide) you will be creating your blog.
 
 ```bash
@@ -96,7 +112,7 @@ Configuration file: /home/cwilv/Documents/jekyll/blog/_config.yml
             Source: /home/cwilv/Documents/jekyll/blog
        Destination: /home/cwilv/Documents/jekyll/blog/_site
  Incremental build: disabled. Enable with --incremental
-      Generating... 
+      Generating...
        Jekyll Feed: Generating feed for posts
                     done in 0.207 seconds.
  Auto-regeneration: enabled for '/home/cwilv/Documents/jekyll/blog'
@@ -105,7 +121,7 @@ Configuration file: /home/cwilv/Documents/jekyll/blog/_config.yml
 
 ```
 
-The command builds your site and you can access the site at http://127.0.0.1:4000 by default.  You can run the site using the `--livereload` flag to auto-reload the site after making changes to it. 
+The command builds your site and you can access the site at http://127.0.0.1:4000 by default.  You can run the site using the `--livereload` flag to auto-reload the site after making changes to it.
 ```bash
 $ bundle exec jekyll serve --livereload
 ```
@@ -150,7 +166,7 @@ categories: # the categories of this post. You can separate multiple categories 
 ---
 ```
 
-You can then go ahead and add some text below the front matter. Save the file and reload the page. Your post should be showing now. 
+You can then go ahead and add some text below the front matter. Save the file and reload the page. Your post should be showing now.
 
 ### Step 5 -- Applying a custom layout
 
@@ -186,7 +202,7 @@ Copy 2 images to this directory and name one `hero.jpg` and the other `new-site.
     |           └── new-site.jpg
 ```
 
-Let's add the hero image to your post. Add a `hero` property at the bottom of your front matter in your post markdown file. 
+Let's add the hero image to your post. Add a `hero` property at the bottom of your front matter in your post markdown file.
 
 ```yaml
 hero: /assets/images/welcome/hero.jpg
@@ -210,7 +226,7 @@ Save and reload the page. The hero image is displayed at the top and the other i
 
 ### Step 7 -- Add navigation to your posts
 
-Up to this stage, your post doesn't have a navbar or a footer. These parts are an essential part of your site and should be on every page. 
+Up to this stage, your post doesn't have a navbar or a footer. These parts are an essential part of your site and should be on every page.
 
 Create an `_includes` folder in your base directory and create a `navbar.html` file inside. Put the following content inside it.
 
@@ -233,7 +249,7 @@ li{
 </ul>
 ```
 
-And then include your navbar at the top of your post layout file. 
+And then include your navbar at the top of your post layout file.
 
 ```html
 {% include navbar.html %}
@@ -290,7 +306,7 @@ layout: default
 <h3><a href="/about">About</a></h3>
 ```
 
-Since Jekyll allows layout nesting, you can use a layout in another layout. If you reload the site at this point, it's not broken but it's just plain HTML. Let's style the home page. 
+Since Jekyll allows layout nesting, you can use a layout in another layout. If you reload the site at this point, it's not broken but it's just plain HTML. Let's style the home page.
 
 Create a `_sass` folder in your base directory and create a `main.scss` inside it. Also create a `css` folder inside the `assets` folder and create a `styles.scss`. Put the following content inside files.
 
@@ -313,9 +329,9 @@ a{
     color: rgb(2, 170, 38);
     text-decoration: none;
 }
-``` 
+```
 
-The empty front matter in `main.css` tells Jekyll that the file should be processed. Now, import the stylesheet in `default.html`. Put the following line between the `head` tags in `default.html`. 
+The empty front matter in `main.css` tells Jekyll that the file should be processed. Now, import the stylesheet in `default.html`. Put the following line between the `head` tags in `default.html`.
 
 ```html
 <link rel="stylesheet" href="/assets/css/styles.css">
