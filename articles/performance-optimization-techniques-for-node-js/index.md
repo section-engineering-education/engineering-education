@@ -277,14 +277,14 @@ Result : {short: "resultOfShortTime", medium: "resultOfMediumTime", long: "resul
 ```
 
 ### Client-side rendering
-Powerful MVC/[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) technology for client client-side rendering.
+Powerful MVC/[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [Meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) technology for client client-side rendering.
 
-These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to a higher-speed and performance.
+These frameworks return dynamic data as JSON and display them on a webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to a higher-speed and performance.
 
 ### Gzip compression
 Gzip compresses HTTP requests and responses. [Gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html) compresses responses before sending them to the browser, therefore, the browser takes a shorter time to fetch them. Gzip also compresses the request to the remote server, which significantly increases web performance.
 
-When using [ExpressJS](http://expressjs.com/), you can choose to use [compression](https://github.com/expressjs/compression) (a Node.js compression middleware that supports deflate and Gzip and serve static content). Using compression library `app.use()` will compress every request that passes [through the middleware](https://github.com/expressjs/compression).
+When using [ExpressJS](http://expressjs.com/), you can choose to use [compression](https://github.com/expressjs/compression) (a Node.js compression middleware that supports deflate and Gzip and serve static content). Using the [compression](https://github.com/expressjs/compression) library `app.use()` will compress every request that passes through the middleware.
 
 Example
 
@@ -300,18 +300,18 @@ app.use(compression());
 Here is more details on how to [connect express with compression](https://github.com/expressjs/compression#examples).
 
 ### Avoid memory leaks
-A [memory leak](https://en.wikipedia.org/wiki/Memory_leak) occurs when a computer program incorrectly manages memory allocations in a way that memory is no longer needed and is not released. With memory leaks, a loaded page will reserve more and more memory and will slowly occupy your available space to a point where CPU usage is overstretched and has severely affected your application performance.
+A [memory leak](https://en.wikipedia.org/wiki/Memory_leak) occurs when a computer program incorrectly manages memory allocations in a way that memory is no longer needed and is not released. With memory leaks, a loaded page will reserve more and more memory and will slowly occupy your available space to a point where CPU usage is overstretched and is severely affecting your application performance.
 
-You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution as the problem will repeat itself and the memory will pile up periodically. Memory leaks can come from DOM that has been removed from a page but some variables still make some reference to them, If you happen to remove DOM values make sure to set them to null (when null, the garbage collector will eliminate them) and avoid memory leaks.
+You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution as the problem will repeat itself and the memory will pile up periodically. Memory leaks can come from [DOM](/engineering-education/document-object-model/) that has been removed from a page but some variables still make some reference to them, if you happen to remove DOM values make sure to set them to null (when null, the garbage collector will eliminate them) and avoid memory leaks.
 
 Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome dev tool is simple, it will help you to catch, and debug memory leaks with a dedicated DevTool for Node.js. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more on how to detect and solve memory leaks using ChromeDevTool.
 
 ### Real-time monitoring
-Monitoring helps get insights of your production application to better ensure a fast, stable, and reliable system. Insights are critical in helping detect performance problems within your system.
+Monitoring help get insights of your production application to better ensure a fast, stable, and reliable system. Insights are critical in helping detect performance problems within your system.
 
-As a developer, you need to know when your system is down before your customers start complaining about your faulty system. That is why you need real-time alerting so you can be notified immediately.
+As a developer, you need to know when your system is down before your customers start complaining about your faulty system. That is why you need real-time alerts so you can be notified immediately.
 
-Proper monitoring also helps get insight into features of your application's behavior. You need to know how much time your app takes to run each function in the production environment. Also, if you are using microservices, you need to monitor network connections and lower delays in the communication between the two services. A few commonly used third party tool to monitor Node.js apps includes
+Proper monitoring also help get insight into the features of your application's behavior. You need to know how much time your app takes to run each function in the production environment. Also, if you are using microservices, you need to monitor network connections and lower delays in the communication between the two services. A few commonly used third party toosl to monitor Node.js apps includes
 
 - [LogicMonitor](https://www.logicmonitor.com/support/about-logicmonitor/overview/what-is-logicmonitor)
 - [Monitis](https://www.monitis.com/)
@@ -322,16 +322,16 @@ You may consider using [Google analytics](https://analytics.google.com/analytics
 
 Node.js monitoring frameworks include [Hapi](https://github.com/hapijs/hapi), [Restify](http://restify.com/), [Derby](https://derbyjs.com/), [Express](https://expressjs.com/), [Koa](https://koajs.com/) and [Mocha](https://mochajs.org/).
 
-### Keeping your code small and light and compact
+### Keeping your code light and compact
 When developing mobile apps, make sure you apply the concept of making your codebase small and compact for both the client code and server code. This will reduce latency and increase speed for load times.
 
-When it comes to making your code light, a single page web app is a great to consider. For example, assume your web app has a page with six JavaScript files when this page is accessed on the browser that means a browser will make six HTTP requests to fetch all your files. This will create a block and wait scenario. This is a good example of when you could minimize and link your multiple files into one to avoid scenarios like this.
+When it comes to making your code light, a single page web app is a great choice to consider. For example, let's assume your web app has a page with six JavaScript files when this page is accessed on the browser, that browser will make six HTTP requests to fetch all your files. This will create a block and wait scenario. This is a good example of when you could minimize and link your multiple files into one to avoid scenarios like this.
 
-Node.js has a lot of open source libraries and modules. During the development stage, you need to ask yourself why use this framework and not another, you need to find out if a framework is worth using or if there are other simple ways to write your code.
+Node.js has a lot of open source libraries and modules. During the development stage, you need to ask yourself why are you using this framework over another, you need to find out if a framework is worth using or if there are other simple ways to write your code.
 
-The point is, when you consider using a framework it should be well worth it. However, this does not mean choosing frameworks is bad, Frameworks are great, and they are scalable and have undisputed benefits. Consider using a framework only if it will simply your code.
+The point is, when you consider using a framework it should be well worth it. However, this does not mean choosing frameworks is bad, frameworks are great, they are scalable and have undisputed benefits. Consider using a framework only if it will simply your code.
 
-When dealing with date objects, it would be advisable to use a library [like Moment](https://momentjs.com/docs/#/use-it/) instead of using the native JavaScript date object. Not because JavaScript date objects are bad in any way, but you will need to add a lot of code setups just to set up and display a simple date format.
+When dealing with date objects, it would be advisable to use a library like [Moment](https://momentjs.com/docs/#/use-it/) instead of using the native JavaScript date object. Not because JavaScript date objects are bad in any way, but you will need to add a lot of code setups just to set up and display a simple date format.
 
 For example:
 
@@ -371,7 +371,7 @@ For example, date-fns is an alternative date object library to moment. Interesti
 As a developer, you need to understand that dilemma and wisely choose which library to use during the development stage. In such a scenario date-fns will improve your bundle size since it is smaller and help avoid performance overhead.
 
 ### Conclusion
-Node.js performance optimization is a broad topic with much ground to cover. This article only covered the tip of the iceberg of some of the common practices you can adopt to get higher-performance results.
+Node.js performance optimization is a broad topic with much ground to cover. This article only covered the tip of the iceberg about some of the common practices you can adopt to get higher-performance results.
 
 Other common practices that you should consider include:
 - Using the latest stable [Node.js updates](https://nodejs.org/en/)
