@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/performance-optimization-techniques-for-node-js/hero.jpg
     alt: Performance optimization tips Node.js
 ---
-Performance is an important aspect when building webpages and applications. When developing applications, you need to understand how long your users interact with your app, how often they leave as well as the response time.
+Performance is an important aspect when building webpages and applications. When developing applications, you need to understand how long your users interact with your app, how often they leave, and the response time as well.
 <!--more-->
 
 The first 10 seconds are vital to determine if a user will leave or continue interacting with your web pages. In addition, you must clearly speed up the page and bring value within these 10 seconds and get the user's attention to spend more time on your page.
