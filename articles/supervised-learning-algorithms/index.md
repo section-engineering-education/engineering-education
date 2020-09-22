@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/supervised-learning-algorithms/hero.jpg
-    alt: huffman python code coding data text compression
+    alt: Supervised Learning Algorithms image
 ---
 Artificial intelligence is the art of embedding intelligence into machines. The current era is an exciting one to live in, due to the advances in technology being guided by huge amounts of data and intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, and map services used for navigation are all examples of how AI is being leveraged and creating a massive impact. Machine learning is a subset of artificial intelligence. Artificial intelligence is a broader subject that aims to attain artificial general intelligence(AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach to attain human-level intelligence.   
 <!--more-->
@@ -25,7 +25,6 @@ Tom Mitchell defines machine learning as follows: 'Machine learning is the study
 
 3. Reinforcement Learning: Reinforcement learning is a subset of machine learning that deals with agents performing actions in a simulated environment. The outcome of the actions carries a reward. The objective is to optimize the reward obtained through actions in the environment. Most of the living ecosystem is best modeled by a reward-based mechanism. For example, a child likes to eat candy again and again, because it provides a dopamine rush (every time) that is the reward.
 
-<!-- supervised learning -->
 ### Supervised Learning
 Let us look at a few of the applications of supervised learning before we dive into the algorithms. Supervised learning tasks require datasets with input-output pairs. Consider the example of trying to classify the digits. Given an image of a digit, what is the number? [MNIST digits](http://yann.lecun.com/exdb/mnist/) dataset is one of the earliest datasets that helped automate the processes of postal services.
 
@@ -33,11 +32,10 @@ Another example of supervised learning is predicting the price of houses given t
 
 Supervised learning is mainly classified into two types: Classification and Regression. Let us look at the both these algorithms categories.  
 
-<!-- classification -->
 #### Classification
 Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. Predicting a disease, predicting the digits output labels such as Yes or No, or 1,2,3, respectively. We can also have scenarios where multiple outputs are required. Consider the example of self-driving cars.
 
-The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of a multi-class classification. We will look at some of the key algorithms underneath the classification algorithms.
+The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of a multi-class classification. We will look at some of the key algorithms underneath the *classification algorithms*.
 
 1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc.
 
@@ -84,9 +82,9 @@ The accuracy of the classifier is 98.33%. This is tested on the test dataset. 98
 
 2. Support Vector Machines(SVM): SVMs are maximum margin classifiers that are optimized to find an N-dimensional hyperplane in an N-dimensional space. The objective is to find the hyperplane that has the maximum margin from all the classes.  Let us understand a few of the concepts and terminologies used in SVM.
 
-   1. Support Vector: Vectors that are closest to the hyperplane are called support vectors.
-   2. Margin: Margin is defined as the distance between data points and the hyperplane.
-   3. Hyperplane: The decision boundary which satisfies the maximum margin condition is called the hyperplane.
+   - Support Vector: Vectors that are closest to the hyperplane are called support vectors.
+   - Margin: Margin is defined as the distance between data points and the hyperplane.
+   - Hyperplane: The decision boundary which satisfies the maximum margin condition is called the hyperplane.
 
 The reasoning behind SVM is to find the hyperplane with maximum distance from the support vectors. The hyperplane may be a linear decision boundary or a non-linear decision boundary. When dealing with non-linear planes, the dataset is projected into higher dimensions to create linear boundaries. For example, consider the following image
 
@@ -96,9 +94,9 @@ The reasoning behind SVM is to find the hyperplane with maximum distance from th
 
 The input space is transformed using kernels. SVM kernels are functions that take low-dimensional input space and transform them into higher dimensional space where the data is linearly separable. Some of the kernels commonly used are:
 
-   1. Linear Kernel
-   2. Polynomial Kernel
-   3. Radial Basis Function Kernel
+   - Linear Kernel
+   - Polynomial Kernel
+   - Radial Basis Function Kernel
 
 Let us look at implementing SVM using `sklearn`.
 
@@ -121,11 +119,10 @@ Let us look at implementing SVM using `sklearn`.
     print(classifier.score(X_test,y_test))
    ```
 
-<!-- regression -->
 ### Regression
 Regression algorithms are another subset of machine learning algorithms used to predict continuous numeric responses. As seen in an earlier example, predicting house rent given different factors is an example of regression. Let's look at the regression algorithm and use ridge regression as an example.
 
-1. Linear Regression: Linear regression is a simple yet effective method used in a large number of applications. Let us say we have an input feature vector `x`. The output feature vector `y` is the predicted entity. We use the sum of least squares to compute the relation between the target and input variables. Linear regression can be implemented using sklearn. Let us look at the implementation below:
+3. Linear Regression: Linear regression is a simple yet effective method used in a large number of applications. Let us say we have an input feature vector `x`. The output feature vector `y` is the predicted entity. We use the sum of least squares to compute the relation between the target and input variables. Linear regression can be implemented using sklearn. Let us look at the implementation below:
 
     ```python
     # Import necessary modules
