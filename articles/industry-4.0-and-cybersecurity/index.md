@@ -6,7 +6,7 @@ url: /engineering-education/industry-4.0-and-cybersecurity/
 title: Industry 4.0 and Cybersecurity
 description: An introduction to Industry 4.0 through the enabling technologies, cybersecurity challenges, threats, insinuations and potential solutions.
 author: collins-agesa
-date: 2020-09-21T00:00:00-12:00
+date: 2020-09-22T00:00:00-07:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -17,58 +17,56 @@ Industrial revolutions describe transitional periods that welcome new manufactur
 <!--more-->
 The fourth revolution, like its predecessors, is evolving business practices in the manufacturing industry. New business models and services are emerging. The nature of manufacturing products has changed. Manufacturing systems are becoming not only fully autonomous but also ever-increasingly intelligent. Supply chains are becoming more flexible. Products are more flexible and precise as per requirements of the consumer. However, the cybersecurity challenges associated with the fourth industrial revolution has never been greater.
 
-Breaches may lead to lower quality or quantity of production. Brand reputation may be impacted. Environmental and equipment damage may be caused. Hefty financial and legal consequences may arise. Trade secrets may be lost through breaches. Industry 4.0 cybersecurity cannot be ignored.
+Breaches may lead to a lower quality or quantity of production. Brand reputation may be impacted. Environmental and equipment damage may happen. Hefty financial and legal consequences may arise. Trade secrets may be lost through breaches. With all this said, Industry 4.0 cybersecurity cannot be ignored.
 
 ### Industry 4.0
 Industry 4.0 had been a concept of German origin as a government initiative.  Dubbed as the fourth industrial revolution, it was first introduced as Industry 4.0 in 2011. The general goal was to improve competitiveness of the manufacturing industry. It was also to advance the new generation of smart manufacturing systems.
 
-But what does it do differently from the previous industrial revolution? Let us briefly glance at the third industrial revolution, which was known as the digital revolution. Computerization was the key aim of this period in industrial history since digital systems replaced mechanical and analog ones. This naturally came after electrification of the manufacturing floor. The use of computer systems in the manufacturing industry started with recordkeeping systems as well as accounting systems.
+But what does it do differently from the previous industrial revolution? Let us briefly glance at the third industrial revolution, which was known as the digital revolution. Computerization was the key aim of this period in industrial history since digital systems replaced mechanical and analog ones. This naturally came after the electrification of the manufacturing floor. The use of computer systems in the manufacturing industry started with recordkeeping systems as well as accounting systems.
 
-The digital revolution, also known as the information age is dated between 1950 and 1970 and it has to be appreciated that it was a result of strides in computers and communication technology and has arguably advanced to include automation and communications since the 1970s. However, there have been no disruptive leaps forward in an industrial level since then. Rather, progress had been at the consumer level, with the ubiquity of mobile devices and emergence of e-commerce.
+The digital revolution, also known as the information age is dated between 1950 and 1970 and it has to be appreciated that it was a result of strides in computers and communication technology and has arguably advanced to include automation and communications since the 1970s. However, there have been no disruptive leaps forward on an industrial level since then. Rather, progress has been at the consumer level, with the ubiquity of mobile devices and emergence of e-commerce.
 
 With this introduction to the third industrial revolution which attained automation using computer systems, comparing industry 4.0 to the third industrial revolution it can be distinguished that in the fourth and current industrial revolution, the focus of design principles is on connectivity and interconnection, information transparency, decentralization among others.
 
-Therefore, Industry 4.0 as an initiative can be described as a new paradigm that uses various technologies to create production systems of the future. This system is meant to be automated, integrated, flexible and highly customizable. We refer to these technologies as enabling technologies. They include; Internet of Things (IoT), Cyber-Physical Systems, Smart Factory and the Cloud. We can also argue that interoperability is a key enabler of Industry 4.0 since these technologies collaborate and are integrated. There are more enabling technologies but we shall only delve into the four.
-
+Therefore, Industry 4.0 as an initiative can be described as a new paradigm that uses various technologies to create production systems of the future. This system is meant to be automated, integrated, flexible and highly customizable. We refer to these technologies as enabling technologies. They include; the Internet of Things (IoT), Cyber-Physical Systems, Smart Factories, and the Cloud. We can also argue that interoperability is a key enabler of Industry 4.0 since these technologies collaborate and are integrated. There are more enabling technologies but we shall only delve into these four.
 
 ### Industry 4.0 Enabling Technologies
 
 #### Internet of Things (IoT)
-The Internet of Things (IoT) refers to a network of interconnected objects. These objects are physical devices and are billions in number globally. From the term IoT, there are two parts; the internet and things. The connection is through the internet. Things are the billions of physical devices. This interconnection via the internet allows for a cooperation and interaction in collecting, sharing and exchange of data. Due to cheap processors and wireless networks, it is easy to convert a physical object into part of the Internet of Things. Devices may be cars, sensors, buildings, machines and so forth.
+The Internet of Things (IoT) refers to a network of interconnected objects. These objects are physical devices and are billions in number globally. From the term IoT, there are two parts; the internet and things. The connection is through the internet. Things refer to the billions of physical devices. This interconnection via the internet allows for a cooperation and interaction in collecting, sharing, and exchanging of data. Due to cheap processors and wireless networks, it is easy to convert a physical object into part of the Internet of Things. Devices may be cars, sensors, buildings, machines and so forth.
 
 The Internet of Things can be divided into Consumer IoT and Industrial IoT(IIoT). Consumer IoT defines smart connected product systems targeting an individual consumer. IIoT is centered around machine connectivity with an aim to not only improve asset performance and product quality but also step up accountability throughout the systems.
 
 The overall expectation from IoT is to facilitate advanced connectivity of things, services and systems that surpasses [machine-to-machine (M2M) communications](https://internetofthingsagenda.techtarget.com/definition/machine-to-machine-M2M) and other legacy technologies of a similar purpose.
 
-In the landscape of Industry 4.0 the Internet of Things is expected to encompass a variety of protocols and applications. The economic impact anticipated from IoT in manufacturing is in the trillions of dollars. Nonetheless, advancement in connectivity of things, services and systems in the Internet of Things creates new loopholes and challenges in terms of security. The straightforward connectivity to the internet as well as easy conversion of everyday objects to things show that IoT is highly scalable in nature. This scalability means IoT requires very versatile infrastructure to combat security threats.
+In the landscape of Industry 4.0 the Internet of Things is expected to encompass a variety of protocols and applications. The economic impact anticipated from IoT in manufacturing is in the trillions of dollars. Nonetheless, the advancement in the connectivity of things, services and systems in the Internet of Things creates new loopholes and challenges in terms of security. The straightforward connectivity to the internet as well as easy conversion of everyday objects to things show that IoT is highly scalable in nature. This scalability means IoT requires very versatile infrastructure to combat security threats.
 
-Since IoT depends on the internet as its backbone it is safe to deduce that the inherent security matters plaguing the internet shall prevail in IoT. Resultantly, a number of [security challenges](https://www.iotforall.com/iot-application-security/) manifest in IoT. These include authentication, access control, trust, confidentiality, non-repudiation, privacy, secure middleware. The Internet of Things can be interpreted as the technical infrastructure for the accomplishment and attainment of Cyber-Physical Systems.
+Since IoT depends on the internet as its backbone it is safe to deduce that the inherent security matters plaguing the internet shall prevail in IoT. As a result, a number of [security challenges](https://www.iotforall.com/iot-application-security/) can manifest in IoT. These include authentication, access control, trust, confidentiality, non-repudiation, privacy, secure middleware. Yet, the Internet of Things can be interpreted as the technical infrastructure (an important part) towards the accomplishment and attainment of Cyber-Physical Systems.
 
 #### Cyber-Physical Systems
 Cyber-physical systems are simply a new generation of integrations of physical processes with computation and networking processes. This is integrating cyberspace with the physical world. Cyberspace refers to widespread interconnected digital technology characterized by communication and computing infrastructure.
 
-Cyber-Physical Systems have numerous applications in the following sectors; manufacturing, energy, infrastructure, consumer, communication, military, robotics, smart buildings, healthcare, infrastructure, and transportation among others. Noteworthy applications include autonomous driving and smart grid. Communications in these systems take place through the internet. This would mean that connectivity is provided over standard protocols, namely Internet Protocol and Transmission Control Protocol. The protocols possess notorious vulnerabilities. An example is the [Man-in-the-Middle attack](https://us.norton.com/internetsecurity-wifi-what-is-a-man-in-the-middle-attack.html). For more detailed information on Man-in-the-midle attacks, you can read [this article](/engineering-education/man-in-the-middle-attack/).
+Cyber-Physical Systems have numerous applications in the following sectors; manufacturing, energy, infrastructure, consumer, communication, military, robotics, smart buildings, healthcare, infrastructure, and transportation among others. Noteworthy applications include autonomous driving and smart grid. Communications in these systems take place through the internet. This would mean that connectivity is provided over standard protocols, namely Internet Protocol and Transmission Control Protocol. These protocols possess notorious vulnerabilities. An example is the [Man-in-the-Middle attack](https://us.norton.com/internetsecurity-wifi-what-is-a-man-in-the-middle-attack.html). For more detailed information on Man-in-the-middle attacks, you can read [this article](/engineering-education/man-in-the-middle-attack/).
 
 It is common to find these protocols in use in these systems without any additional protection against the aforementioned vulnerabilities. Coupled with additional security challenges, Cyber-Physical Systems are challenged in upholding the [fundamental principles of information security (Confidentiality, Integrity, and Availability)](https://www.techopedia.com/2/27825/security/the-basic-principles-of-it-security)
 
-Regardless, thanks to the implementation of IoT technologies, Cyber-Physical Systems effortlessly map the virtual world to physical systems. This, for instance, helps realize Smart Factories as a result of integration of the digital and real worlds.
+Regardless, thanks to the implementation of IoT technologies, Cyber-Physical Systems effortlessly map the virtual world to physical systems. This, for instance, helps create Smart Factories as a result of integration of the digital and real worlds.
 
 #### Smart Factories
-Smart Factory describes an environment where equipment and machinery have the ability to enhance manufacturing processes. It is a critical vision of Industry 4.0. The enhancement may be achieved via self-optimization as well as automation. Nonetheless, this is not only focused on the manufacturing and production process, but also betters various stages of the supply chain.
+Smart Factory describes an environment where equipment and machinery have the ability to enhance manufacturing processes. It is a critical step towards Industry 4.0. The enhancement may be achieved via self-optimization as well as automation. Nonetheless, this is not only focused on the manufacturing and production process, but also improves various stages of the supply chain.
 
-A smart factory can generally constitute a number of technologies of production, information, and communication. The key offering is the potential to be integrated across the whole manufacturing supply chain. The Internet of Things is key for connectivity of these distinct sections of production though it is worth appreciating that it is not the only means of connectivity that may be applied.
+A smart factory can generally constitute a number of technologies of production, information, and communication. The key offering is the potential to be integrated across the whole manufacturing supply chain. The Internet of Things is key for connectivity of these distinct sections of production though it is worth noting that it is not the only means of connectivity that may be applied.
 
-As a result, suppliers, vendors, and customers are more and more integrated into the production infrastructure. This breeds complex Information Technology-dependent smart factory networks between companies.
+As a result, suppliers, vendors, and customers are more and more integrated into the production infrastructure. This creates complex information technology-dependent smart factory networks between companies.
 
 Major benefits include increased efficiency and flexibility of production of personalized goods. Flexibility would involve allowing manufacturers to make last minute changes in various stages of production, as well as producing unique, user defined or one-off products. The decision making and transparency of the manufacturing process is optimized. Effectiveness of manufacturing and production is also greatly increased.
 
 #### Big Data Analytics
-IIoT systems produce massive amounts of data. The data is produced by smart sensor networks, devices, and log files etcetera in manufacturing systems. Hence, with such different and diverse sources of data, it is expected that the data may be of great diversity and is either [structured or unstructured](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) or both.
+IIoT systems produce massive amounts of data. The data is produced by smart sensor networks, devices, and log files etcetera in manufacturing systems. Hence, with such different and diverse sources of data, it is expected that the data may be greatly diversified and will be either [structured or unstructured](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) or both.
 
 Big data is [characterized](https://www.vapulus.com/en/five-characteristics-of-big-data/) by volume, veracity, velocity, variety, validity and volatility. These manufacturing systems therefore generate a high volume of data, high variety and high veracity as well thanks to the collaboration with the Internet of Things and Cyber-Physical Systems.
 
-Big data analytics gets massive amounts of data from factories, suppliers, product designers, clients, and customers. Although big data provides unrivalled value in advancing Industry 4.0 as well as other emerging technologies, its distributed structure yields a number of challenges. Most notably the security of data, privacy, and access control as well as data storage.
-
+Big data analytics gets massive amounts of data from factories, suppliers, product designers, clients, and customers. Although big data provides unrivalled value in advancing Industry 4.0 as well as other emerging technologies, its distributed structure also yields a number of challenges. Most notably the security of data, privacy, and access control as well as data storage.
 
 ### Industry 4.0 vs Industrial Internet of Things
 Industry 4.0 is often used almost synonymously with Industrial Internet of Things (IIoT). They are similar in principle since both work towards a connected industrial world. Though it is worth noting that they are different. IIoT covers a broader spectrum in an industrial sense and is concerned with connection of assets. On the other hand, industry 4.0 is not only concerned with connection of assets but also the complete value chain digitization. Industry 4.0 is mainly centered on the manufacturing sector and is more often than not characterized as initiatives by either the government or institutions.
@@ -77,10 +75,7 @@ An [asset](https://en.wikipedia.org/wiki/Asset_(computer_security) is any data, 
 
 A [study]( https://doi.org/10.1109/IDAACS.2019.8924452) conducted determined the most important Industry 4.0 cybersecurity assets to be Industrial Control Systems (ICS), IIoT gateways, then followed by sensors, and actuators.
 
-
 ### Benefits and Potential of Industry 4.0
-The current digital transformation by enabling technologies like IoT and the Cloud claims credit for most technology innovations and trends. But what do these have to offer in Industry 4.0?
-
 #### New Business Models
 Industry 4.0 is introducing new models of operation for enterprises. An example in smart manufacturing is the Factory-as-a-Service (FaaS) business model. It allows service providers to present their clients with virtual factories.
 
@@ -95,9 +90,7 @@ Collaborative operations and sharing across the system is made possible. As a re
 
 **Quality of services and products**. A FaaS business model, for example, offers clients the highest level of flexibility in the creation of their desired products. Production of various products is very deliberate and is backed by data (market data, product data, customer data etc.) therefore leading to reduced inventory levels and more sales. Real time data analysis is leveraged to ensure improved quality all round.
 
-
 ### Industry 4.0 Cybersecurity Challenges and Implications
-
 #### Why should you care about Industry 4.0 Cybersecurity?
 Before the advent of Industry 4.0, the goal of cybersecurity involved defending organizational parameters. It's very commonly involved in protecting a private computer network. The methods used to prevent breaches include the use of firewalls, anti-malware software, intrusion detection systems among others. Even so, this approach to cybersecurity is becoming more obsolete by the day especially in an industrial context. Industry 4.0 aims to blur the boundaries between the digital and the physical worlds.
 
@@ -112,16 +105,15 @@ From the perspective of a practitioner (a manager, engineer, cybersecurity exper
 4.	**Playing catch-up.** Even prior to Industry 4.0, cybersecurity threats tended to be one step ahead of potential solutions or preventive measures. It is common to set up preventive measures in a private network such as firewalls and intrusion detection systems that react to new threats that bypass such measures. However, with Industry 4.0, given the systems cut across industries and have possibly thousands of different devices and networks interacting with each other, the types of threats to anticipate increase. The possibility of new threats increases exponentially. For example, emerging threats may target a specific device among thousands in a network. This is incredibly difficult to anticipate.     
 
 #### Financial Cost and Damage
-Due to prevalence of cyber threats in Industrial Control Systems, proactive Cybersecurity actions are taken by stakeholders and enterprises across the supply chain. This means that Cybersecurity has increased priority among various industries, particularly those implementing Industry 4.0.
+Due to the prevalence of cyber threats in Industrial Control Systems, proactive Cybersecurity actions are taken by stakeholders and enterprises across the supply chain. This means that Cybersecurity has increased priority among various industries, particularly those implementing Industry 4.0.
 
-A financial cost is attached to this prioritization and proactivity. Risk assessment, identifying of ever changing and growing threat landscape, as well as placement of measures to prevent and mitigate is increasingly costly to enterprises, considering in a proactive approach, threats might not exactly translate into a reality.
+There is a financial cost is attached to this prioritization and proactive implementation. Risk assessment, identifying of ever changing and growing threat landscape, as well as placement of measures to prevent and mitigate is increasingly costly to enterprises, considering in a proactive approach, threats might not exactly translate into a reality.
 
-Alternatively, a reactive approach may be more costly since critical information may be compromised, corrupted or ultimately destroyed. For example, consider a ransomware attack, where enterprises and users are at the mercy of attackers. Attacks on Cyber-Physical Systems may lead to the physical damage of critical equipment.
+Alternatively, a reactive approach may be more costly since critical information may be compromised, corrupted, or ultimately destroyed. For example, consider a ransomware attack, where enterprises and users are at the mercy of attackers. Attacks on Cyber-Physical Systems may lead to the physical damage of critical equipment.
 
-Personnel may end up getting hurt through machine malfunction failure or explosions. The physical environment around these systems may be impacted, for example in the case of a fire. Tarnished reputations may lead to reduction of profits and lawsuits may result out of these type of attacks on the grounds of failure to protect data or recover from breaches. Furthermore, incident response may be expensive depending on urgency and severity of the attack.
+Personnel may end up getting hurt through machine malfunction failures or explosions. The physical environment around these systems may be impacted, for example in the case of a fire. Tarnished reputations may lead to reduction of profits and lawsuits may result out of these type of attacks on the grounds of failure to protect data or recover from breaches. Furthermore, incident response may be expensive depending on urgency and severity of the attack.
 
-The financial aspect of preventing, mitigating and responding to attacks cannot be ignored in today’s Industry 4.0 world.
-
+The financial aspect of preventing, mitigating, and responding to attacks cannot be ignored in today’s Industry 4.0 world.
 
 ### Threats Facing Industry 4.0
 Interconnection of multiple systems leads to increased system complexity. Naturally, increasing complexity alludes to an increase in security vulnerabilities. Let's look at a few major threats to 4.0 systems.
@@ -133,44 +125,39 @@ System downtime and unavailability is also a consequence. This ends up being ext
 
 For more detailed information on what a Denial of Service attack is, feel free to [read this article](/engineering-education/denial-of-service/).
 
-#### Enterprise Cyber-Espionage, Confidential Information and Intellectual Property
-In this competitive industrial landscape, there is incentive in acquiring key information about the competitor. Thanks to the interconnected nature of the Industry 4.0 systems, various competitors may interact and collaborate to achieve various production goals. Increased interconnection of physical systems, and the vast nature of these networks means data is widespread across these systems, proving that there are more points of attack than ever to access confidential information. For example, attackers may eavesdrop, through executing a Man-In-The-Middle attack.
+#### Enterprise Cyber-Espionage, Confidential Information, and Intellectual Property
+In this competitive industrial landscape, there is incentive in acquiring key information about the competitor. Thanks to the interconnected nature of the Industry 4.0 systems, various competitors may interact and collaborate to achieve various production goals. Increased interconnection of physical systems, and the vast nature of these networks means data is widespread across these systems, proving that there are more points of attack than ever to access confidential information. For example, attackers may eavesdrop, through executing a [Man-In-The-Middle attack](/engineering-education/man-in-the-middle-attack/).
 
 Furthermore, the evolution of cybercrime has bred increasingly organized groups of cyber criminals who find an incentive in targeting various industries and accessing critical information and intellectual property. Solutions to these increasingly common fears and problems should be geared towards guaranteeing transparency and trust across these platforms, systems and networks.
 
 #### Incidents and Attacks
-Typical malware and virus outbreaks have been one of the biggest threats to Industry 4.0 systems. Another threat that has grown in popularity is the ransomware attack, where data is ransomed and encrypted until a specific condition given by the threat actor is satisfied.  
+Typical malware and virus outbreaks have been one of the biggest threats to Industry 4.0 systems. Another threat that has grown in popularity is the ransomware attack, where data is ransomed and encrypted until a specific condition given by the attacker is satisfied.  
 
 Since this new era of smart manufacturing is ever evolving, employees shall be forced to become more competent with technology. Nonetheless, it is very simple for employees to make errors or act unintentionally and put the security of the enterprise in jeopardy.
 
 On the other hand, employees may act maliciously and sabotage the systems intentionally. Acts of vandalism are an example of physical attacks on systems. Also, considering the collaborative ethos of Industry 4.0, several partners along the value chain interact. This easily provides a chance for threats from third parties. In addition to denial of service, breaches may also lead to the leaking of personal data, manipulation of information, hardware, and software.
 
-However, not all credit to threats goes to nefarious persons or groups. Factors such as hardware failure as well as errors in industrial software are an issue and their ramifications iterate how critical the security of these systems is. Sensors and actuators may malfunction. Network and power outages may cause system downtime. Natural disasters pose a threat also.
+However, not all threats can come from nefarious persons or groups. Factors such as hardware failure as well as errors in industrial software is an issue and their ramifications iterate how critical the security of these systems is. Sensors and actuators may malfunction. Network and power outages may cause system downtime. Natural disasters pose a threat also.
 
-### Industry 4.0 Cybersecurity Approaches, Measures and Solutions
-The discussed challenges and threats have the potential to cripple whole manufacturing processes. In turn, this impacts the rest of the supply chain. These challenges threaten the general potential of the technology. It jeopardizes technology implementation and impact. This is further evident when assessing the cost and risk associated. Hence, managing, solving, and preventing some of these challenges has to be a priority. Enterprises and all key participants in Industry 4.0 need to be proactive. Below will we discuss a few potential solutions.
+### Industry 4.0 Cybersecurity Approaches, Measures, and Solutions
+#### Investment
+Security is usually characterized by financial investment without a return on that investment. Especially considering a preventive approach in an organizational setting. Yet, investing in a proactive approach is better than a reactive one. Financial investments may be used to onboard competent Cybersecurity personnel, set up physical systems to prevent incidents, or software to do the same.
 
-### Investment
-Security is usually characterized by financial investment without a return on that investment. Especially considering a preventive approach in an organizational setting. Yet, investing in a proactive approach is better than a reactive one. Financial investments may be used to onboard competent Cybersecurity personnel, set up physical systems to prevent incidents or software approaches to do the same.
+A reactive approach is whereby an enterprise is responding to a threat or challenge. This may turn out to be more expensive. Consider a situation whereby potential industry-leading trade secrets, plans, and methods are leaked or intercepted. Or a scenario whereby an Industry 4.0 system experiences end to end downtime. Or finally, a situation involving a ransomware attack in IIoT. These would be expensive to recover from. These examples showcase how investment into Industry 4.0 security is necessary.
 
-A reactive approach is whereby an enterprise is responding to a threat or challenge. This may turn out to be more expensive. Consider a situation whereby potential industry-leading trade secrets, plans, and methods are leaked or intercepted. Or a scenario whereby an Industry 4.0 system experiences end to end downtime. Or finally, a situation involving a ransomware attack in IIoT. These would be expensive to recover from. Investment into Industry 4.0 security is necessary.
+#### Data Security as a Standard and Solutions for Massive Heterogeneous Data
+Industry 4.0 systems, generate colossal heterogeneous data at any given moment. Data management and storage may increase the measure of vulnerability and risk. Organizing all this information requires the data to be secure first. There has to be a solid data security plan and there is an efficient solution to this challenge. Definition and development of secure data protocols is key. These protocols would allow interpretation, processing, and organization of the data.
 
-### Data Security as a Standard and Solutions for Massive Heterogeneous Data
-Industry 4.0 systems, generate colossal heterogeneous data any given moment. Data management and storage may elevate the measure of vulnerability and risk. Organizing all this information requires the data to be secure first. There has to be a solid data security plan and there is an efficient solution to this challenge. Definition and development of secure data protocols is key. These protocols would allow interpretation, processing, and organization of data.
-
-### Standard Security Solutions
-Use of simple, well-known solutions may reduce chances of breaches. This is applicable in specific use cases. As with standard IT systems, access authentication, access control and key management. A few common information security measures come to mind. The use of application protection, anti-malware and antivirus are examples. One can track network usage, traffic, and logs and put in place network segmentation. Security training of personnel is a valid solution
+#### Standard Security Solutions
+Use of simple, well-known solutions may reduce chances of breaches. This is applicable in specific use cases. As with standard IT systems, access authentication, access control and key management. A few common information security measures come to mind. The use of application protection, anti-malware and antivirus are examples. One can track network usage, traffic, and logs and put in place network segmentation. Security training of personnel is a valid solution as well.
 
 Patching systems is also an option. This may prove useful to ensure industrial systems are up to date and secure. Additionally, regular system audits and frequent penetration testing are worthy measures.
 
-### Industry 4.0 Security Policy and Strategy
-Policy and strategy are key tools in the fight to actualize Industry 4.0's full potential. These are measures undertaken to ensure the security of Industry 4.0 organizations. They include reaction and response to cyber-attacks and cyber threats. Standardization across various Industry 4.0 stakeholders will allow for homogeneous response strategies. This also births a unanimous mindset towards an effective architecture and implementation.
-
-### Research Efforts
+#### Research Efforts
 The integration of these emerging technologies has brought rapid changes to industries. The changes have brought about huge technological, social, and economic impact. This means that we need more extensive research. Research can drive development of improved system architectures. It may help uphold transparency and trust through the value chain. This should be achieved without compromising the principles of security.
 
 ### Final Note
-Industry 4.0 has the potential to be the undisputed fourth industrial revolution. Yet, there is some way to go before it lives up to its full potential and application. Managing or solving the discussed challenges is key to the longevity of Industry 4.0.
+Industry 4.0 has the potential to be the undisputed fourth industrial revolution. Yet, there is some distance to go before it lives up to its full potential and application. Managing or solving the discussed challenges is key to the longevity of Industry 4.0.
 
 We should not underestimate the need for further research. It would go a long way to understand how to design Industry 4.0 infrastructure. Research would also boost efforts to execute, secure, and deploy effective infrastructure. Standardized policies and reworked cybersecurity frameworks that can accommodate Industry 4.0 systems from end to end need to be set in place for the success of this initiative.
 
