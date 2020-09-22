@@ -328,7 +328,7 @@ For example, date-fns is an alternative date object library to moment. Interesti
 Node.js performance optimization is a huge topic with so many grounds. This article is a tip of an iceberg of some of the common practices you can adopt to get high-performance performance results.
 
 Other topics practices that you should consider includes
-- Using the latest stable Node.js updates
+- Using the latest stable [Node.js updates](https://nodejs.org/en/)
 - CPU profiling
 - Node.js timers to schedule tasks
 - Prioritize access to local variables.
