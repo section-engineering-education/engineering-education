@@ -58,7 +58,7 @@ LIMIT will return only the specified number of records. When using LIMIT, ensure
 
 - Avoid columns [text joins.](https://dev.mysql.com/doc/internals/en/optimizer-joins.html)
 
-Joins with strings/tests are considered much slower compared to numeric columns. The solution to this is to always make sure foreign key stings have an equivalent numeric representation where join can be performed.
+Joins with strings/tests are considered much slower compared to numeric columns. The solution to this is to always make sure foreign key strings have an equivalent numeric representation where join can be performed.
 
 Example:
 ```sql
@@ -105,7 +105,7 @@ Switch to an external session store such as [Redis](https://redis.io/documentati
 
 Logging helps to track your application activities and traffic. When an app is running there might be possibilities to get fatal errors(even though your app is running properly after production testing), and you need to get this on time, find what code has an error, and fix them even before your user notice that something is faulty in your system.
 
-The commonly used method for logging in Node.js are `console.log()` logs Standard outputs (stdout) and `console.error()` will log standard errors (stderr). However, there are more efficient, reliable, popular, and scalable libraries/3rd party APIs that will assist you to log scripts in your Node.js app
+The commonly used method for logging in Node.js are `console.log()` logs Standard outputs (stdout) and `console.error()` will log standard errors (stderr). However, there are more efficient, reliable, popular, and scalable libraries/3rd party APIs that will assist you to log scripts in your Node.js app.
 
 They include:
 
@@ -251,7 +251,7 @@ Powerful MVC/[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93vie
 
 ### Gzip compression
 
-Gzip compresses HTTP requests and responses. [Gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html) compresses response before sending them to the browser hence, the browser takes a short time to fetch them. Gzip also compresses the request to the remote server, which significantly increases web performance
+Gzip compresses HTTP requests and responses. [Gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html) compresses response before sending them to the browser hence, the browser takes a short time to fetch them. Gzip also compresses the request to the remote server, which significantly increases web performance.
 
 When using [ExpressJS](http://expressjs.com/), you can choose to use [compression](https://github.com/expressjs/compression) (a Node.js compression middleware that supports deflate and Gzip and serve static content). Using compression library `app.use()` will compression every request that passes [through the middleware will be compressed](https://github.com/expressjs/compression).
 
@@ -294,7 +294,7 @@ Node.js has a lot of open source libraries and modules. During the development s
 
 For example
 
-When dealing with date objects, it would be advisable to use a library like Moment instead of using native JavaScript date object. Not that JavaScript date objects are bad in any way, only that you need to add a lot of code setups just to set up and display a simple date format
+When dealing with date objects, it would be advisable to use a library like Moment instead of using native JavaScript date object. Not that JavaScript date objects are bad in any way, only that you need to add a lot of code setups just to set up and display a simple date format.
 
 Example
 
@@ -334,7 +334,7 @@ Other topics practices that you should consider includes
 - Prioritize access to local variables.
 - Avoid using too much memory
 - Eliminate unused components of .js libraries
-- Removing unused lines of codes,
+- Removing unused lines of codes
 - Having a well-defined execution context
 - [Load balancing](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-basic-load-balancing)
 - [Memory optimization](https://redis.io/topics/memory-optimization)
