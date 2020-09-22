@@ -184,7 +184,7 @@ logger.error("Danger, Winston!");
 #### 2. Morgan
 [Morgan](https://github.com/expressjs/morgan) is an HTTP request logger middleware for Node.js applications. Morgan gives insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) carry out to the access-log or error-log.
 
-Sample app that will log all requests in the [Apache](https://httpd.apache.org/docs/1.3/logs.html) combined format to one log file per day in the log/ directory using the [rotating-file-stream module](https://www.npmjs.com/package/rotating-file-stream).
+Below we have an example app that will log all requests in the [Apache](https://httpd.apache.org/docs/1.3/logs.html) combined format to one log file per day in the log/ directory using the [rotating-file-stream module](https://www.npmjs.com/package/rotating-file-stream).
 
 ```js
 var express = require("express");
