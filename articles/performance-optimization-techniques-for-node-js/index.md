@@ -18,10 +18,10 @@ Performance is an important aspect when building webpages and applications. When
 
 The key rehearsal that you need to practice is optimizing your page and speeding up the response time for your users. Your web page performance will determine the amount of value the user gets in regards to time. The point is speed. And how do you achieve a good speed reputation? Well, optimization is the way to go. Lets take performance as task completion (work done in a timely manner) and a good user experience.
 
-Node.js is known to produce super-fast performing and scalable web applications with an event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread. As a developer, you still need your application to be even faster and fully optimized. One could say that Node.js is the fire and performance optimization is the gasoline, imagine how blazing fast your app could be. This article will cover techniques, tools, and tips to optimize Node.js apps and achieve a higher-performance.
+Node.js is known to produce super-fast performing and scalable web applications with an event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread. As a developer, you still need your application to be even faster and fully optimized. One could say that Node.js is the fire and performance optimization is the gasoline, imagine how blazing fast your app could be. This article will cover techniques, tools, and tips to optimize Node.js apps and achieve higher-performance.
 
 ### Asynchronous coding
-Node.js is designed with single thread concurrency architectures with non-blocking operations. Asynchronous is heavily used in Node.js to ensure a non-blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your web page, it uses blocking operations that might block your main thread and this will drastically reduce your web pages performance.
+Node.js is designed with single thread concurrency architectures with non-blocking operations. Asynchronous is heavily used in Node.js to ensure a non-blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your web page, it uses blocking operations that might block your main thread and this will drastically reduce your web page performance.
 
 Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and add extra callbacks without blocking your main thread. Even though you may try to use Asynchronous methods, in some instances, it is possible to find your web page making some blocking calls. This is common when using third-party modules, you should keep an eye on the external libraries you are using and take precautions to avoid them dominating synchronous calls.
 
@@ -115,7 +115,7 @@ A cache is a memory buffer where frequently accessed data is temporarily stored 
 
 Catching is a great practice to improve your app performance. It you have fewer users, your app performance may not be greatly affected. However, performance problems may arise when the traffic grows and you need to maintain the load balance. When this happens, caching your app regularly will be a great technique to achieve higher-performance. Caching can be a little bit hard thus you need tools to cache your app efficiently such as:
 
-- [Redis cache](https://redis.io/topics/client-side-caching) it is entirely asynchronous with optimal performances to handle cached data requests in a single thread. Consider checking it out, it is a smooth API that will help you manage your client-side and server-side cache.
+- [Redis cache](https://redis.io/topics/client-side-caching) it is entirely asynchronous with optimal performance to handle cached data requests in a single thread. Consider checking it out, it is a smooth API that will help you manage your client-side and server-side cache.
 - [Memcached](https://memcached.org/) stores data across different nodes with a hashing schema that provides a hash table functionality in a way that adding or removing a server node does not significantly change the [mapping of the keys to server nodes](https://npm.runkit.com/memcached).
 - [Node-cache](https://www.npmjs.com/package/node-cache) works almost like Memcached with the set, get, and delete methods. It has a timeout that deletes data from the cache when the time out expires.
 - [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-content-caching) will help maintain load balance. Nginx will help cache static files, that will drastically offload the work of the application server. It offers low memory usage and high concurrency.
@@ -279,7 +279,7 @@ Result : {short: "resultOfShortTime", medium: "resultOfMediumTime", long: "resul
 ### Client-side rendering
 Powerful MVC/[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) technology for client client-side rendering.
 
-These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to a higher-speed performance.
+These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to a higher-speed and performance.
 
 ### Gzip compression
 Gzip compresses HTTP requests and responses. [Gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html) compresses responses before sending them to the browser, therefore, the browser takes a shorter time to fetch them. Gzip also compresses the request to the remote server, which significantly increases web performance.
@@ -368,10 +368,10 @@ Remember all these code blocks outputs today's date. When working with framework
 
 For example, date-fns is an alternative date object library to moment. Interestingly date-fns is considered more light-weight compared to moment yet they do the same job.
 
-As a developer, you need to understand that dilemma and wisely choose which library to use during the development stage. In such a scenario date-fns will improve your buddle size since it is small thus avoiding performance overheads.
+As a developer, you need to understand that dilemma and wisely choose which library to use during the development stage. In such a scenario date-fns will improve your bundle size since it is smaller and help avoid performance overhead.
 
 ### Conclusion
-Node.js performance optimization is a huge topic with much ground to cover. This article should serve as the tip of the iceberg to some of the common practices you can adopt to get higher-performance results.
+Node.js performance optimization is a broad topic with much ground to cover. This article only covered the tip of the iceberg of some of the common practices you can adopt to get higher-performance results.
 
 Other common practices that you should consider include:
 - Using the latest stable [Node.js updates](https://nodejs.org/en/)
