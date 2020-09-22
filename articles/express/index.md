@@ -274,7 +274,7 @@ var app = express();
 //use a colon to grab a parameter
 
 app.get("/product/:productId", function(req, res){
-    var pid = parseInt(req.params.userid, 10);
+    var pid = parseInt(req.params.productId, 10);
     //res.send   manipulate string to get file with name as productID or something and use a static file server
     });
 app.listen(3000);
@@ -299,6 +299,8 @@ app.get(/^\/products\/(\d+)$/, function(req, res) {
 });
 app.listen(3000);
 ```
+
+For full code visit this [gist](https://gist.github.com/rohanreddych/137c59f7e57edbfbc839dcd440f0daeb).
 
 ### Template Engines
 Websites are built with HTML, you can dynamically generate HTML pages using Express. Dynamically generated HTML pages are useful when you want to show real time data or change a page's details based on the user. 
