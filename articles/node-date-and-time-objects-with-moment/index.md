@@ -107,7 +107,7 @@ Moment helps you format dates that exist between two dates such as:
 
 [**Time from now**](https://momentjs.com/docs/#/displaying/fromnow/)
 
-Commonly known as time age. `fromnow()` handles relative dates and display date with the suffix "ago". This will display the time that has elapsed since the beginning of the date parsed.
+Commonly known as time ago. `fromnow()` handles relative dates and display date with the suffix "ago". This will display the time that has elapsed since the beginning of the date parsed.
 
 ```js
 const moment = require('moment');
@@ -225,7 +225,7 @@ To find the differences between two or more dates the `diff()` method is used. T
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-difference?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 
-#### [Date validation]
+#### Date validation
 As a developer, it is annoying to return a date and it ends up being [invalid](https://momentjs.com/docs/#/customization/invalid-date/). Moment has been simplified to solve this problem. Many applications will prompt a user to enter a date and you need to know how you will get these dates as [valid](https://momentjs.com/docs/#/parsing/is-valid/).
 
 If you provide instructions to the user, i.e. input a specific date format such as y,m,d, there are high chances that some users will tend to ignore these instructions and they could provide dates will different formats.
