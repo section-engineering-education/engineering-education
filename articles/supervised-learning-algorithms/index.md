@@ -14,10 +14,12 @@ images:
   - url: /engineering-education/supervised-learning-algorithms/hero.jpg
     alt: Supervised Learning Algorithms image
 ---
-Artificial intelligence is the art of embedding intelligence into machines. The current era is an exciting one to live in, due to the advances in technology being guided by huge amounts of data and intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, and map services used for navigation are all examples of how AI is being leveraged and creating a massive impact. Machine learning is a subset of artificial intelligence. Artificial intelligence is a broader subject that aims to attain artificial general intelligence(AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach to attain human-level intelligence.   
+Artificial intelligence is the art of embedding intelligence into machines. The current era is an exciting one to live in, due to the advances in technology being guided by huge amounts of data and intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, and map services used for navigation are all examples of how AI is being leveraged and creating a massive impact.
 <!--more-->
 ### Introduction to Machine Learning
-Tom Mitchell defines machine learning as follows: 'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
+Machine learning is a subset of artificial intelligence. Artificial intelligence is a broader subject that aims to attain artificial general intelligence(AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach to attain human-level intelligence.   
+
+[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as follows: 'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
 
 1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pairs of values help the algorithm model the function that generates such outputs for any given inputs. We will be covering the entire topic of supervised learning in this article.
 
