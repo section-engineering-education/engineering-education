@@ -30,7 +30,7 @@ Machine learning is a subset of artificial intelligence. Artificial intelligence
 ### Supervised Learning
 Let us look at a few of the applications of supervised learning before we dive into the algorithms. Supervised learning tasks require datasets with input-output pairs. Consider the example of trying to classify the digits. Given an image of a digit, what is the number? [MNIST digits](http://yann.lecun.com/exdb/mnist/) dataset is one of the earliest datasets that helped automate the processes of postal services.
 
-Another example of supervised learning is predicting the price of houses given the features. The features can include size, location, facilities, etc. The input consists of the features and the output consists of the price. Algorithms that predict continuous values of data are called regression-based algorithms.
+Another use case example of supervised learning is predicting the price of houses given a few features. The features can include size, location, facilities, etc. The input consists of the features and the output consists of the price. Algorithms that predict continuous values of data are called regression-based algorithms.
 
 Supervised learning is mainly classified into two types: Classification and Regression. Let us look at the both these algorithms categories.  
 
