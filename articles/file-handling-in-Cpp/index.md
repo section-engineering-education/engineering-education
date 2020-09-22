@@ -14,23 +14,23 @@ images:
   - url: /engineering-education/file-handling-in-Cpp/hero.jpg
     alt: functions Function C++ cpp
 ---
-If you are a Software Engineer, you may come across File handling at some point in your career. It is the ability to store the output and perform various operations on it, such as updating the data or overwriting things in a file. Files are always a vital way to store data.
+If you are a Software Engineer, you may come across File handling or file input/output at some point in your career. It is the ability to store the output and perform various operations on it, such as updating the data or reading/writing text to a file. Files are always a vital way to store data.
 <!--more-->
 ### Why do you need File Handling?
-- **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out. But by storing data in files, one can use it anytime.
+- **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out by storing data in files, one can use those files anytime.
 
 - **Larger Storage Capacity**: Storing a large amount of data or test cases (to make sure that your code runs in every condition) is a tedious task, and by using files, a developer can store that data easily.
 
 - **Portability**: With files, developers can transfer the data without worrying about data loss.
 
-In this article, we will walk through how to implement the File Handling function in C++, and we will cover the key working pointers of File handling such as:
+In this article, we will walk through how to implement a file handling function in C++, and we will cover the key properties and challenges when it comes to file handling.
 
 - Opening a File
 - Writing to a File
 - Reading from a File
-- Closing a file
+- Closing and Saving a file
 
-To perform File Handling functions, we need to add another library; fstream. The library holds all the functions related to File Handling. Here's how to include it.
+To perform file handling functions, we need to add another library: fstream. This library holds all the functions related to handling files. Here's how to include it.
 
 `#include<fstream>`
 
@@ -44,13 +44,13 @@ ifstream fin;
 fin.open("index.txt")
 ```
 
-That was simple as we just used the function **open** to open a file name "index.txt." but you as the reader may be wondering what is ` ifstream`
+That was simple as we just used the function **open** to open a file name "index.txt." Here we use the ` ifstream` object to open our file.
 
-**ifstream** is the type we use to declare an object. Very similar to the datatypes that we use in other functions. Such as: int.
+**ifstream** is the type we use to declare an object. Very similar to the datatypes that we use in other functions, such as: int, float, bool or string.
 
-**fin** is the name of the variable. A developer can name it anything they want.
+**fin** is the name of the variable. We could name it anything we want.
 
-### Writing in a File
+### Writing to a File
 Writing to a file is easier than even opening a file. Instead of using **cout**, we just need to use the name of the variable that we recently selected. Here's how to do it:
 
 ```C
@@ -58,7 +58,7 @@ fin<<"Section.io is a great platform to learn about new technologies."<<endl;
 ```
 
 ### Reading from a File
-We first need to declare a variable similar to the type of data in our file. Then run a while loop until the very end of the file and cout all the data. It sounds a bit complex, but it isn't. Here's how to do it:
+We first need to declare a variable similar to the type of data in our file. Then we can run a while loop until the very end of the file and cout all the data. It sounds a bit complex, but it isn't. Here's how to do it:
 
 ```C
 string data;
@@ -104,7 +104,7 @@ In the above program , we implemented everything that we have covered so far. Le
 
 - **Opening a File**
 
-To open a file, we used a function ```file.open("index.md")``` that open a file named **index.md**. That how's simple the command is to open a file in File Handling.
+To open a file, we used a function ```file.open("index.md")``` that opens a file named **index.md**. 
 
 - **Writing to a File**
 
@@ -124,4 +124,4 @@ cout<<data;
 Closing a file is as simple as opening a file. You just need to use the name of the file object followed by the close function. In the above program, we wrote it as ```file.close();```, where file is the object name and **.close()** is the function. 
 
 ### Conclusion
-With this, we've come to the end of this article. We got to cover the most important and used function/actions in file handling. The things we have just covered is the extent to which a developer would need to know and what basic colleges teach.
+With this, we've come to the end of this article. We got to cover the most important and used function/actions in file handling. What we have just covered is the extent to which a developer would need to know and what basic college classes teach.
