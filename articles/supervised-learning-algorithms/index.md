@@ -32,12 +32,12 @@ Let us look at a few of the applications of supervised learning before we dive i
 
 Another use case example of supervised learning is predicting the price of houses given a few features. The features can include size, location, facilities, etc. The input consists of the features and the output consists of the price. Algorithms that predict continuous values of data are called regression-based algorithms.
 
-Supervised learning is mainly classified into two types: Classification and Regression. Let us look at the both these algorithms categories.  
+Supervised learning is mainly classified into two types: Classification and Regression. Let us take a closer look at the both these algorithms categories.  
 
 #### Classification
-Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. Predicting a disease, predicting the digits output labels such as Yes or No, or 1,2,3, respectively. We can also have scenarios where multiple outputs are required. Consider the example of self-driving cars.
+Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digits output labels such as Yes or No, or 1,2,3, respectively. We can also have scenarios where multiple outputs are required. For this we can consider the example of self-driving cars.
 
-The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of a multi-class classification. We will look at some of the key algorithms underneath the *classification algorithms*.
+The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of a multi-class classification. We will now look at some of the key algorithms underneath the *classification algorithms*.
 
 1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc.
 
