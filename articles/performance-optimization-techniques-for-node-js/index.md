@@ -155,6 +155,7 @@ logger.warn("Warning message");
 logger.error("Error message");
 ```
 [**Winston logger with file transport**](https://github.com/winstonjs/winston#multiple-transports-of-the-same-type)
+
 ```js
 const winston = require("winston");
 // Logger configuration
@@ -179,11 +180,12 @@ logger.info("Hello, Winston!");
 logger.warn("Heads up, Winston!");
 logger.error("Danger, Winston!");
 ```
-#### 2. Morgan
 
-[Morgan](https://github.com/expressjs/morgan) is an HTTP request logger middleware for Node.js applications. Morgan gives insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) do to the access-log or error-log.
+#### 2. Morgan
+[Morgan](https://github.com/expressjs/morgan) is an HTTP request logger middleware for Node.js applications. Morgan gives insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) carry out to the access-log or error-log.
 
 Sample app that will log all requests in the [Apache](https://httpd.apache.org/docs/1.3/logs.html) combined format to one log file per day in the log/ directory using the [rotating-file-stream module](https://www.npmjs.com/package/rotating-file-stream).
+
 ```js
 var express = require("express");
 var morgan = require("morgan");
@@ -201,6 +203,7 @@ app.get("/", function (req, res) {
   res.send("hello, world!");
 });
 ```
+
 [Code Source](https://www.npmjs.com/package/morgan#log-file-rotation)
 
 #### 3. Bunyan
@@ -211,27 +214,27 @@ var log = bunyan.createLogger({ name: "myapp" });
 log.info("hi");
 log.warn({ lang: "fr" }, "au revoir");
 ```
-Check more to [get started with Bunyan](https://github.com/trentm/node-bunyan#introduction)
+
+Click this link for more details to [get started with Bunyan](https://github.com/trentm/node-bunyan#introduction).
 
 #### Logging best practices
-
-- Logging should be meaningful
+- Logging should be meaningful and have a purpose
 - Adopt logging at the early stage of app development
 - Divide logs into several log files in case you have an application with huge traffic
 - Logging should be structured and done in levels
 
 ### Run parallel
+Ensure parallel execution flow when requesting remote services, database calls, and file system access. Parallelizing tasks will greatly reduce latency and minimize any blocking operations. Parallel operation means running multiple things at the same time. You should note that parallel is different from asynchronous. With parallel, you do not have control of what finishes before the other, as your code will be optimized to run tasks at the same time. Generally, Node.js does not technically execute these multiple tasks at the same time, what happens it that each task is pushed to an asynchronous event loop with no control of which task will finish before the other. If your execution needs to complete one or more tasks before the other please consider going asynchronous.
 
-Ensure parallel execution flow when requesting remote services, database calls, and file system access. Parallelizing tasks will greatly reduce latency and minimize blocking operations. Parallel operation means running multiple things at the same time. You should note that parallel is different from asynchronous. With parallel, you do not have control of what finishes before the other, as your code will be optimized to run tasks at the same time. Generally, Node.js does not technically execute these multiple tasks at the same time, what happens it that each task is pushed to an asynchronous event loop with no control of which task will finish before the other. If your execution needs to complete one or more tasks before the other please consider going asynchronous.
+For example:
 
-For example
-
-[Async.js](https://caolan.github.io/async/v3/) is used to run functions parallel `async.parellel(tasks, callback)`.
+[Async.js](https://caolan.github.io/async/v3/) is used to run parallel functions  `async.parellel(tasks, callback)`.
 
 - **Tasks** : tasks to be executed such as arrays objects etc.
 - **Callback** : pass all tasks results and execute when all task compilation is completed
 
-An example of user a dashboard where functions such as `getUserprofile()`, `getrecentActivity()`, `getNotifications()`, can be execute parallel using async.js
+An example of using a dashboard where functions such as `getUserprofile()`, `getrecentActivity()`, `getNotifications()`, can execute parallel using async.js
+
 ```js
 async.parallel([
 	getNotifications,
@@ -245,7 +248,9 @@ async.parallel([
 		//task results
 	});
 ```
+
 **Simple example using async.parallel**
+
 ```js
 const async = require('async')
 function runInParallel() {
@@ -265,21 +270,24 @@ async.parallel(
 );
 }
 ```
+
 OUTPUT
-```
+```bash
 Result : {short: "resultOfShortTime", medium: "resultOfMediumTime", long: "resultOfLongTime"}.
 ```
-### Client-side rendering
 
-Powerful MVC/[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) technology for client client-side rendering. These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to high-speed performance.
+### Client-side rendering
+Powerful MVC/[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) technology for client client-side rendering.
+
+These frameworks return dynamic data as JSON and display them on webpage UI rendered on the client-side. What this means is that no mark-ups layout will be sent with each request. Plain JSON will be sent and then rendered on the client-side making the page static on page reload. This saves on bandwidth, which translates to a higher-speed performance.
 
 ### Gzip compression
+Gzip compresses HTTP requests and responses. [Gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html) compresses responses before sending them to the browser, therefore, the browser takes a shorter time to fetch them. Gzip also compresses the request to the remote server, which significantly increases web performance.
 
-Gzip compresses HTTP requests and responses. [Gzip](https://nginx.org/en/docs/http/ngx_http_gzip_module.html) compresses response before sending them to the browser hence, the browser takes a short time to fetch them. Gzip also compresses the request to the remote server, which significantly increases web performance.
-
-When using [ExpressJS](http://expressjs.com/), you can choose to use [compression](https://github.com/expressjs/compression) (a Node.js compression middleware that supports deflate and Gzip and serve static content). Using compression library `app.use()` will compression every request that passes [through the middleware will be compressed](https://github.com/expressjs/compression).
+When using [ExpressJS](http://expressjs.com/), you can choose to use [compression](https://github.com/expressjs/compression) (a Node.js compression middleware that supports deflate and Gzip and serve static content). Using compression library `app.use()` will compress every request that passes [through the middleware](https://github.com/expressjs/compression).
 
 Example
+
 ```js
 var compression = require("compression");
 var express = require("express");
@@ -288,41 +296,47 @@ var app = express();
 app.use(compression());
 // add all routes
 ```
-Check more on how to [connect express with compression](https://github.com/expressjs/compression#examples).
+
+Here is more details on how to [connect express with compression](https://github.com/expressjs/compression#examples).
 
 ### Avoid memory leaks
+A [memory leak](https://en.wikipedia.org/wiki/Memory_leak) occurs when a computer program incorrectly manages memory allocations in a way that memory is no longer needed and is not released. With memory leaks, a loaded page will reserve more and more memory and will slowly occupy your available space to a point where CPU usage is overstretched and has severely affected your application performance.
 
-A memory leak occurs when a computer program incorrectly manages memory allocations in a way that memory which is no longer needed is not released ([Wikipedia](https://en.wikipedia.org/wiki/Memory_leak)). With memory leaks, a loaded page will reserve more and more memory and will slowly occupy your available space to a point where CPU usage is overstretched and severely affecting your application performance. You may choose to restart your application and these issues will magically vanish but this will not be a reliable solution as the problem will repeat itself and the memory will pile up periodically. Memory leaks can come from DOM that has been removed from a page but some variables still make some reference to them, If you happen to remove DOM values make sure to set them to null (when null, the garbage collector will eliminate them) to avoid memory leaks.
+You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution as the problem will repeat itself and the memory will pile up periodically. Memory leaks can come from DOM that has been removed from a page but some variables still make some reference to them, If you happen to remove DOM values make sure to set them to null (when null, the garbage collector will eliminate them) and avoid memory leaks.
 
-Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web has any memory leaks. Chrome dev tool is simple, it will help you to catch, and debug memory leaks with Open dedicate DevTool for Node.js. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more on how to detect and solve memory leaks using CromeDevTool.
+Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome dev tool is simple, it will help you to catch, and debug memory leaks with a dedicated DevTool for Node.js. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more on how to detect and solve memory leaks using ChromeDevTool.
 
 ### Real-time monitoring
+Monitoring helps get insights of your production application to better ensure a fast, stable, and reliable system. Insights are critical in helping detect performance problems within your system.
 
-Monitoring helps to get insights of your production application to ensure a fast, stable, and reliable system. Insights are critical in helping to detect performance problems within your system. As a developer, you need to know when your system is down even before your customers start to complain about how your system is faulty. Thus, you need real-time alerting so you can be notified immediately.
+As a developer, you need to know when your system is down before your customers start complaining about your faulty system. That is why you need real-time alerting so you can be notified immediately.
 
-Proper monitoring also helps get insight into features of your application's behaviour. You need to know how much time does your app takes to run each function in the production environment. Also, if you are using microservices, you need to monitor network connections and lower delays in the communication between two services. The commonly used third party tool to monitor Node.js apps includes
+Proper monitoring also helps get insight into features of your application's behavior. You need to know how much time your app takes to run each function in the production environment. Also, if you are using microservices, you need to monitor network connections and lower delays in the communication between the two services. A few commonly used third party tool to monitor Node.js apps includes
+
 - [LogicMonitor](https://www.logicmonitor.com/support/about-logicmonitor/overview/what-is-logicmonitor)
 - [Monitis](https://www.monitis.com/)
 - [Newrelic](https://newrelic.com/products/application-monitoring)
 - [Stackify](https://stackify.com/retrace/)
 
-You may consider using [Google analytics](https://analytics.google.com/analytics/academy/course/6) to get insights such as user visits, traffic, and traffic sources, bounce rate, user retention rate, sessions, and session durations as well as page views.
+You may consider using [Google analytics](https://analytics.google.com/analytics/academy/course/6) to get insights such as user visits, traffic, traffic sources, bounce rate, user retention rate, sessions, session durations as well as page views.
 
 Node.js monitoring frameworks include [Hapi](https://github.com/hapijs/hapi), [Restify](http://restify.com/), [Derby](https://derbyjs.com/), [Express](https://expressjs.com/), [Koa](https://koajs.com/) and [Mocha](https://mochajs.org/).
 
 ### Keeping your code small and light and compact
+When developing mobile apps, make sure you apply the concept of making your codebase small and compact for both the client code and server code. This will reduce latency and increase speed for load times.
 
-When developing mobile apps apply the ideas of making your codebase small and compact for both client code and serve code. This will reduce latency and increase speed load time. When it comes to making your code light, single page web app is a great consideration. For Example, assume your web has a page with six JavaScript files when this page is accessed on the browser it means a browser will make six HTTP requests to fetch all your files. This will create a block and wait scenario. You then need to minify and concatenate your multiple files into one to avoid scenarios like this.
+When it comes to making your code light, a single page web app is a great to consider. For example, assume your web app has a page with six JavaScript files when this page is accessed on the browser that means a browser will make six HTTP requests to fetch all your files. This will create a block and wait scenario. This is a good example of when you could minimize and link your multiple files into one to avoid scenarios like this.
 
-Node.js has a lot of open source libraries and modules. During the development stage, you need to ask yourself why use this framework and not the other, you need to find out if a framework is worth using or if there are other simple ways to write your code. The point is, when you consider using a framework it should be worth. However, this does not mean choosing frameworks is bad, Frameworks are great, and they are scalable and have undisputed benefits. Consider using a framework if it only simply your code.
+Node.js has a lot of open source libraries and modules. During the development stage, you need to ask yourself why use this framework and not another, you need to find out if a framework is worth using or if there are other simple ways to write your code.
 
-For example
+The point is, when you consider using a framework it should be well worth it. However, this does not mean choosing frameworks is bad, Frameworks are great, and they are scalable and have undisputed benefits. Consider using a framework only if it will simply your code.
 
-When dealing with date objects, it would be advisable to use a library like Moment instead of using native JavaScript date object. Not that JavaScript date objects are bad in any way, only that you need to add a lot of code setups just to set up and display a simple date format.
+When dealing with date objects, it would be advisable to use a library [like Moment](https://momentjs.com/docs/#/use-it/) instead of using the native JavaScript date object. Not because JavaScript date objects are bad in any way, but you will need to add a lot of code setups just to set up and display a simple date format.
 
-Example
+For example:
 
 - Using native JavaScript date object
+
 ```js
 var NowDate = new Date();
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -331,27 +345,35 @@ var sMonth = NowDate.getMonth() + 1;
 var sYear = NowDate.getFullYear();
 console.log(sYear + '-' + sMonth + '-' + sDay);
 ```
-- [Using Moment](https://momentjs.com/docs/#/use-it/)
+
+- Using Moment
+
 ```js
 var moment = require('moment')
 var today = moment();
 console.log(today.format('YYYY-M-D'));
 ```
+
 - [Using date-fns](https://date-fns.org/docs/Getting-Started)
+
 ```js
 var format = require("date-fns/format");
 var today = format(new Date(), "yyyy-M-dd");
 console.log(today);
 ```
-As a developer, which of the above methods would you consider? Remember all these code blocks outputs today's date. When working with frameworks, consider looking at alternative modules that are relatable to your code context.
 
-For example, date-fns is an alternative date object library to moment. Interestingly date-fns is considered more light compared to moment yet they do the same job. As a developer, you need to break that dilemma and choose which library to use more wisely during the development stage. In such a scenario date-fns will improve your buddle size since it is small thus avoiding performance overheads.
+As a developer, which of the example methods above would you consider?
+
+Remember all these code blocks outputs today's date. When working with frameworks, consider looking at alternative modules that are relatable to your code context and that may be a better fit.
+
+For example, date-fns is an alternative date object library to moment. Interestingly date-fns is considered more light-weight compared to moment yet they do the same job.
+
+As a developer, you need to understand that dilemma and wisely choose which library to use during the development stage. In such a scenario date-fns will improve your buddle size since it is small thus avoiding performance overheads.
 
 ### Conclusion
+Node.js performance optimization is a huge topic with much ground to cover. This article should serve as the tip of the iceberg to some of the common practices you can adopt to get higher-performance results.
 
-Node.js performance optimization is a huge topic with so many grounds. This article is a tip of an iceberg of some of the common practices you can adopt to get high-performance performance results.
-
-Other topics practices that you should consider includes
+Other common practices that you should consider include:
 - Using the latest stable [Node.js updates](https://nodejs.org/en/)
 - CPU profiling
 - Node.js timers to schedule tasks
@@ -365,4 +387,4 @@ Other topics practices that you should consider includes
 - Using Standard V8 GC
 - Avoiding global variables
 
-Consider doing some homework and find out which segment of your app needs optimization attention. However, as you practice these optimization tips do not forget security practices such as [SSL/TLS AND HTTP/2](https://docs.nginx.com/nginx/technical-specs/#http-2-and-ssl-tls).
+Consider doing some work on your own and find out which segment of your app needs to be optimized. However, as you practice these optimization tips do not forget security practices such as [SSL/TLS AND HTTP/2](https://docs.nginx.com/nginx/technical-specs/#http-2-and-ssl-tls).
