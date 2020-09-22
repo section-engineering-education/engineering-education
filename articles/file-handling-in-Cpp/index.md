@@ -89,7 +89,7 @@ ifstream file;
 string file_data;
 
 file.open("index.md"); //Opening a File
-fin<<"Section.io is a great platform to learn about new technologies." //Writing in a File
+fin<<"Section.io is a great platform to learn about new technologies."; //Writing in a File
 
 while(file >> file_data) { //Redaing from a File
 cout<<data;
@@ -99,6 +99,29 @@ file.close(); //Closing a File
 return 0;
 }
 ```
+
+In the above program , we implemented everything that we have covered so far. Let's break it down and see what's going on in the above program.
+
+- **Opening a File**
+
+To open a file, we used a function ```file.open("index.md")``` that open a file named **index.md**. That how's simple the command is to open a file in File Handling.
+
+- **Writing to a File**
+
+Writing in a file is same as the way we used to write in regular program with a minor change. In place of **cout** you just need to use the name of the varaible you choose for the file object. In the above program, we wrote it as ```fin<<"Section.io is a great platform to learn about new technologies."```, where **fin** is the name of the variable followed by what we want to write in the file.
+
+- **Reading from a File**
+
+To read from a file, we would run a loop until we read all of the data from the file and print it simultaneously. In the case of above program we print the data until the very end of the File. Here's how we implemented it:
+```C
+while(file >> file_data) { 
+cout<<data;
+}
+```
+
+- **Closing a File**
+
+Closing a file is as simple as opening a file. You just need to use the name of the file object followed by the close function. In the above program, we wrote it as ```file.close();```, where file is the object name and **.close()** is the function. 
 
 ### Conclusion
 With this, we've come to the end of this article. We got to cover the most important and used function/actions in file handling. The things we have just covered is the extent to which a developer would need to know and what basic colleges teach.
