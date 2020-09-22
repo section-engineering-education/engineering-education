@@ -13,19 +13,21 @@ images:
   - url: /engineering-education/performance-optimization-techniques-for-node-js/hero.jpg
     alt: Performance optimization tips Node.js
 ---
-Performance is an important aspect when building webpages and applications. When developing applications, you need to understand how long your users interacts with your app, how often they leave as well as the response time. The first 10 seconds are vital to determine if a user will leave or continue interacting with your web pages. In addition, you must clearly speed up the value for these 10 seconds and get the user's attention to spend more time on your page.
+Performance is an important aspect when building webpages and applications. When developing applications, you need to understand how long your users interact with your app, how often they leave as well as the response time.
 <!--more-->
 
-The key rehearsal that you need to practice is optimizing your page and speeding up the response time for your users. Your web page performance will determine the amount of value the user gets in regards to time. The point is speed. And how do you achieve a good speed reputation? Well, optimization is the way to go. Lets take performance as task completion (work done in a timely manner) and a good user experience.
+The first 10 seconds are vital to determine if a user will leave or continue interacting with your web pages. In addition, you must clearly speed up the page and bring value within these 10 seconds and get the user's attention to spend more time on your page.
 
-Node.js is known to produce super-fast performing and scalable web applications with an event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread. As a developer, you still need your application to be even faster and fully optimized. One could say that Node.js is the fire and performance optimization is the gasoline, imagine how blazing fast your app could be. This article will cover techniques, tools, and tips to optimize Node.js apps and achieve higher-performance.
+This is where optimizing your page and speeding up the response time becomes important for your users experience. Node.js is known to produce super-fast performing and scalable web applications with an event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread.
+
+As a developer, you need your application to be fast and fully optimized. One could say that Node.js is the fire and performance optimization is the gasoline, imagine how blazing fast your app could be. This article will cover techniques, tools, and tips to optimize Node.js apps and achieve higher-performance.
 
 ### Asynchronous coding
-Node.js is designed with single thread concurrency architectures with non-blocking operations. Asynchronous is heavily used in Node.js to ensure a non-blocking operations flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your web page, it uses blocking operations that might block your main thread and this will drastically reduce your web page performance.
+Node.js is designed with single thread concurrency architectures with non-blocking operations. Asynchronous is heavily used in Node.js to ensure a non-blocking operational flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your web page, it uses blocking operations that might block your main thread and this will drastically reduce your web page performance.
 
-Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and add extra callbacks without blocking your main thread. Even though you may try to use Asynchronous methods, in some instances, it is possible to find your web page making some blocking calls. This is common when using third-party modules, you should keep an eye on the external libraries you are using and take precautions to avoid them dominating synchronous calls.
+Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and add extra callbacks without blocking your main thread. Even though you may try to use Asynchronous methods, in some instances, it is possible to find your web page making some blocking calls. This is common when using third-party modules, you should keep an eye on the external libraries you are using and take precautions to avoid them dominating with synchronous calls.
 
-Example: file read operation in both models [using Node.js file system](https://nodejs.dev/learn/the-nodejs-fs-module)
+Take a look at the example below: We used the file read operation in both models [using Node.js file system](https://nodejs.dev/learn/the-nodejs-fs-module)
 
 #### Synchronous
 ```js
@@ -54,32 +56,30 @@ console.log('waiting for the file to read.....');
 
 ![Asynchronous](/engineering-education/performance-optimization-techniques-for-node-js/asynchronous.png)
 
-In the examples above:
-
 With the synchronous snippet, all processes are paused until the file reading is over. The `readFileSync()` will first read the file and store its data in the memory before printing the data and message in the console.
 
-Asynchronous will print the console message as the system perform other tasks. The "waiting for the file to read" is printed before the file content even though it was the last command. A callback function will be called when file reading is done. The asynchronous model will have faster execution of our program and avoid the so-called "Call-back Hell".
+Asynchronous will print the console message as the system performs other tasks. The "waiting for the file to read" is printed before the file content even though it was the last command. A callback function will be called when the file reading is done. The asynchronous model will have faster execution of our program and avoid the so-called "Call-back Hell".
 
 ### Query optimization
-Just imagine having more than one million rows data to query from your database table, the process generated by this database to get the endpoint of this data will greatly affect your application performance, and displaying this data can make it even slower. Using bad queries will make your application almost useless ( and will leave your users dissatisfied). The solution to this is to perform a query optimization.
+Just imagine having more than one million rows of data to query from your database table, the process generated by this database to get the endpoint of this data will greatly affect your application performance, and displaying this data can make it even slower. Using bad queries will make your application almost useless (and will leave your users dissatisfied). The solution to this is to perform a query optimization.
 
 #### Basic tips to improve your database performance/[optimization overview](https://dev.mysql.com/doc/refman/8.0/en/optimize-overview.html)
 
-- Database and table [indexing](https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html)/structure. Proper indexing will speed up data retrieval between your databases and tables to select and sort rows faster. Proper indexing will help you to avoid columns from overlapping.
+- Database and table indexing/structure. Proper [indexing](https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html) will speed up data retrieval between your databases and tables to select and sort rows faster. Proper indexing will help you avoid columns from overlapping.
 
 - Avoid [SELECT](https://dev.mysql.com/doc/refman/8.0/en/select-optimization.html)
 
-This would be the most obvious thing you will use to select your columns, right? Yet, you should not overlook how cumbersome this query can be, to list down columns you have in a table. Go for a more distinct approach using the SELECT statement to query only the data you need and avoid extra fetching loads to your database.
+This would be the most obvious thing you would use to select your columns, right? Yet, you should not overlook how cumbersome this query can be, to list down columns you have in a table. Go for a more distinct approach using the SELECT statement to query only the data you need and avoid extra fetching loads to your database.
 
 - Use the [clause WHERE](https://dev.mysql.com/doc/refman/8.0/en/where-optimization.html)
 
-The goal of the query to pull the required records from your database. WHERE clause helps to filter the records and limit the number of records to be pulled based on conditions. WHERE replaces the HAVING clause that selects records before filtering the dataset. In SQL operations, WHERE statements are faster as it reduces that data being processed by the database engine.
+The goal of the query is to pull the required records from your database. WHERE clause helps to filter the records and limits the number of records to be pulled based on conditions. WHERE replaces the HAVING clause that selects records before filtering the dataset. In SQL operations, WHERE statements are faster as it reduces that data being processed by the database engine.
 
 - [Use LIMIT](https://dev.mysql.com/doc/refman/8.0/en/limit-optimization.html) to sample the query results
 
 LIMIT will return only the specified number of records. While using LIMIT, ensure that the results are desirable and meaningful when a limit is imposed on the dataset.
 
-- Avoid columns [text joins](https://dev.mysql.com/doc/internals/en/optimizer-joins.html)
+- To avoid columns use [text joins](https://dev.mysql.com/doc/internals/en/optimizer-joins.html)
 
 Joins with strings/tests are considered much slower when compared to numeric columns. The solution to this is to always make sure foreign key strings have an equivalent numeric representation where join can be performed.
 
@@ -96,13 +96,13 @@ WHERE color_id = 2
 
 The second query will execute faster than the first query due to the numeric representation.
 
-- Running queries during off-peak hours.
+- Running queries during off-peak hours
 
 In the production database, analytical and database management queries should be executed when the concurrent users are at their lowest peak. Typically at night around 3 to 5 am.
 
 #### Other Tips
 - Avoid SELECT DISTRICT
-- Statements such [INSERT](https://dev.mysql.com/doc/refman/8.0/en/insert-optimization.html) and [UPDATE](https://dev.mysql.com/doc/refman/8.0/en/update-optimization.html) should be well optimized
+- Statements such as [INSERT](https://dev.mysql.com/doc/refman/8.0/en/insert-optimization.html) and [UPDATE](https://dev.mysql.com/doc/refman/8.0/en/update-optimization.html) should be well optimized
 - Avoid sub-optimal queries as they execute row by row which slows down your engine
 - [Table optimazition](https://dev.mysql.com/doc/refman/8.0/en/optimize-table.html)
 - [Sub query optimation](https://dev.mysql.com/doc/refman/8.0/en/optimizing-subqueries.html)
@@ -113,7 +113,7 @@ In the production database, analytical and database management queries should be
 ### Caching
 A cache is a memory buffer where frequently accessed data is temporarily stored (data that will not be changed in the near future) in order to be accessed more quickly. Cached data is then retrieved without having to access the origin. Caching will improve your app response time and even reduce some costs such as bandwidth and data volumes.
 
-Catching is a great practice to improve your app performance. It you have fewer users, your app performance may not be greatly affected. However, performance problems may arise when the traffic grows and you need to maintain the load balance. When this happens, caching your app regularly will be a great technique to achieve higher-performance. Caching can be a little bit hard thus you need tools to cache your app efficiently such as:
+Catching is a great practice to improve your app performance. If you have a fewer number of users, your app performance may not be greatly affected. However, performance problems may arise when the traffic grows and you need to maintain the load balance. When this happens, caching your app regularly will be a great technique to achieve higher-performance. Caching can be a little bit hard thus you need tools to cache your app efficiently such as:
 
 - [Redis cache](https://redis.io/topics/client-side-caching) it is entirely asynchronous with optimal performance to handle cached data requests in a single thread. Consider checking it out, it is a smooth API that will help you manage your client-side and server-side cache.
 - [Memcached](https://memcached.org/) stores data across different nodes with a hashing schema that provides a hash table functionality in a way that adding or removing a server node does not significantly change the [mapping of the keys to server nodes](https://npm.runkit.com/memcached).
@@ -121,14 +121,14 @@ Catching is a great practice to improve your app performance. It you have fewer 
 - [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-content-caching) will help maintain load balance. Nginx will help cache static files, that will drastically offload the work of the application server. It offers low memory usage and high concurrency.
 
 ### Go session free
-Session data is stored in memory. As traffic in your app grows, more sessions will be generated and this might add significant overhead to your server. You need to find a means to store session data or minimize the amount of data stored in the session. Modules such as [Express.js](https://expressjs.com/) can help you create server protocols which are stateless. Stateless protocols do not save or store any information from previous visits.
+Session data is stored in memory. As traffic in your app grows, more sessions will be generated and this might add significant overhead to your server. You need to find a means to store session data or minimize the amount of data stored in the session. Modules such as [Express.js](https://expressjs.com/) can help you create server protocols that are stateless. Stateless protocols do not save or store any information from previous visits.
 
 Switch to an external session store such as [Redis](https://redis.io/documentation), [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-basic-session-persistence), [MongoDB](https://docs.mongodb.com/manual/reference/method/Session/). Whenever possible, the best option would be to store no session state on your server-side and you should get better performance.
 
 ### Script tracing and logging
 Logging helps to track your application activities and traffic. When an app is running there might be possibilities to get fatal errors(even though your app is running properly after production testing), and you need to get this feedback in a timely manner, find out what code has the error(s), and fix them even before your user notices that something is faulty with your system.
 
-Commonly used method for logging in Node.js are `console.log()` which logs Standard outputs, (stdout) and `console.error()` which will log standard errors (stderr). However, there are more efficient, reliable, popular, and scalable libraries/3rd party APIs that will assist you in logging scripts in your Node.js app.
+Commonly used methods for logging in Node.js are `console.log()` which logs Standard outputs, (stdout) and `console.error()` which will log standard errors (stderr). However, there are more efficient, reliable, popular, and scalable libraries/3rd party APIs that will assist you in logging scripts in your Node.js app.
 
 They include:
 
@@ -304,14 +304,14 @@ A [memory leak](https://en.wikipedia.org/wiki/Memory_leak) occurs when a compute
 
 You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution as the problem will repeat itself and the memory will pile up periodically. Memory leaks can come from [DOM](/engineering-education/document-object-model/) that has been removed from a page but some variables still make some reference to them, if you happen to remove DOM values make sure to set them to null (when null, the garbage collector will eliminate them) and avoid memory leaks.
 
-Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome dev tool is simple, it will help you to catch, and debug memory leaks with a dedicated DevTool for Node.js. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more on how to detect and solve memory leaks using ChromeDevTool.
+Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome dev tool is simple, it will help you to catch, and debug memory leaks with a dedicated DevTool for Node.js. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more about how to detect and solve memory leaks using ChromeDevTool.
 
 ### Real-time monitoring
-Monitoring help get insights of your production application to better ensure a fast, stable, and reliable system. Insights are critical in helping detect performance problems within your system.
+Monitoring help get insights into your production application to better ensure a fast, stable, and reliable system. Insights are critical in helping detect performance problems within your system.
 
 As a developer, you need to know when your system is down before your customers start complaining about your faulty system. That is why you need real-time alerts so you can be notified immediately.
 
-Proper monitoring also help get insight into the features of your application's behavior. You need to know how much time your app takes to run each function in the production environment. Also, if you are using microservices, you need to monitor network connections and lower delays in the communication between the two services. A few commonly used third party toosl to monitor Node.js apps includes
+Proper monitoring also helps get insight into the features of your application's behavior. You need to know how much time your app takes to run each function in the production environment. Also, if you are using microservices, you need to monitor network connections and lower delays in the communication between the two services. A few commonly used third party tools to monitor Node.js apps includes
 
 - [LogicMonitor](https://www.logicmonitor.com/support/about-logicmonitor/overview/what-is-logicmonitor)
 - [Monitis](https://www.monitis.com/)
@@ -320,7 +320,7 @@ Proper monitoring also help get insight into the features of your application's 
 
 You may consider using [Google analytics](https://analytics.google.com/analytics/academy/course/6) to get insights such as user visits, traffic, traffic sources, bounce rate, user retention rate, sessions, session durations as well as page views.
 
-Node.js monitoring frameworks include [Hapi](https://github.com/hapijs/hapi), [Restify](http://restify.com/), [Derby](https://derbyjs.com/), [Express](https://expressjs.com/), [Koa](https://koajs.com/) and [Mocha](https://mochajs.org/).
+Node.js monitoring frameworks include [Hapi](https://github.com/hapijs/hapi), [Restify](http://restify.com/), [Derby](https://derbyjs.com/), [Express](https://expressjs.com/), [Koa](https://koajs.com/), and [Mocha](https://mochajs.org/).
 
 ### Keeping your code light and compact
 When developing mobile apps, make sure you apply the concept of making your codebase small and compact for both the client code and server code. This will reduce latency and increase speed for load times.
@@ -329,7 +329,7 @@ When it comes to making your code light, a single page web app is a great choice
 
 Node.js has a lot of open source libraries and modules. During the development stage, you need to ask yourself why are you using this framework over another, you need to find out if a framework is worth using or if there are other simple ways to write your code.
 
-The point is, when you consider using a framework it should be well worth it. However, this does not mean choosing frameworks is bad, frameworks are great, they are scalable and have undisputed benefits. Consider using a framework only if it will simply your code.
+The point is when you consider using a framework it should be well worth it. However, this does not mean choosing frameworks is bad, frameworks are great, they are scalable and have undisputed benefits. Consider using a framework only if it will simplify your code.
 
 When dealing with date objects, it would be advisable to use a library like [Moment](https://momentjs.com/docs/#/use-it/) instead of using the native JavaScript date object. Not because JavaScript date objects are bad in any way, but you will need to add a lot of code setups just to set up and display a simple date format.
 
