@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/top-ten-in-demand-technologies-to-learn/
 title: Top 10 In-Demand Technologies to Learn
-description: Technology is growing at a tremendous rate. This article describes 10 demanding technologies to learn and earn skills.
+description: Technology is growing at a tremendous rate. This article describes 10 demanding technologies to learn and focus on building skills.
 author: judy-nduati
-date: 2020-09-11T00:00:00-13:00
+date: 2020-09-22T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -15,27 +15,22 @@ images:
     alt:  example image developers
 
 ---
-Technology is evolving fast. IT professionals are keeping themselves updated with the current trends. 
-As an IT professional, it is almost like a survival tactic to keep yourself updated with the ever-evolving technologies and market trends. This means deciding what you want in the future, the jobs you qualify to do, and the [skills you need to gather](https://www.simplilearn.com/top-technology-trends-and-jobs-article).
+Technology is evolving fast. As an IT professional, keeping yourself updated with the ever-evolving technologies and market trends is a survival tactic. This means understanding where the technology ecosystem is heading, deciding where you want to contribute, and [acquiring the skills](https://www.simplilearn.com/top-technology-trends-and-jobs-article) to get there.
 <!--more-->
-Technology has helped out in almost every aspect of life. It is changing the world at a tremendous rate and advancing towards making it a better place to live in. Technology has come a long way in recent decades. It's development has paved the way for expanding the world's outlook leading to some groundbreaking innovations.
 
-Here are ten technologies in-demand that enable IT professionals to gain skills.
+Here are ten in-demand technologies that IT professionals should have on their radars.
 
 ### 1. Artificial Intelligence
-Artificial Intelligence or AI is the simulation of intelligence in programmed computer systems to mimic their actions perform tasks such as object recognition, voice recognition, facial recognition, decision-making, and patterns. AI can perform these tasks more quickly and accurately than human beings. AI to pertains machines working and behaving like humans or acting like humans.
+Artificial Intelligence (AI) is the simulation of intelligence in programmed computer systems, often performing tasks such as object recognition, voice recognition, facial recognition, decision-making, and pattern detection. AI can perform these tasks more quickly and accurately than human beings.
 
-AI is being used in almost every business sector to reduce human intervention. In cybersecurity, it detects breaches and increases security analyst's efficiency. It also reduces the time they spend analyzing fake positives, and improves productivity.
+AI is being used in almost every business sector to reduce human intervention. For example, in cybersecurity, AI is used to detect breaches and increase security analysts' efficiency, reducing the time they spend analyzing false positives and improving productivity.
 
-AI, in simpler terms, means automation. Automation creates more jobs as well as do away with them. 
-According to [Simplilearn](https://www.simplilearn.com/top-technology-trends-and-jobs-article). Automation will get rid of 73 million jobs and create 23 million jobs. The jobs created by AI will be development, programming, testing, support, and maintenance.
+AI, in simpler terms, often means automation. Automation, while eliminating some human task-oriented jobs, creates new opportunities as well. According to [Simplilearn](https://www.simplilearn.com/top-technology-trends-and-jobs-article), automation will get rid of 73 million jobs and create 23 million jobs. The jobs created by AI will be around development, programming, testing, support, and maintenance.
 
 ### 2. Cyber Security
-Cybersecurity is a significant concern for most companies. Learning Cyber Security gives you the know-how to protect networks, computers from [cyber-attacks](https://www.geeksforgeeks.org/top-10-technology-trends-that-you-can-learn-in-2020/).
-It also gives technical skills necessary to prevent malicious individuals from destroying data.
-Top organizations increase security budgets year over year to stop malicious threats, cyber-attacks, remove vulnerabilities, defend against security breaches, and protect their data from data breaches, data manipulation, and data theft.
+Cyber security is top of mind for most companies. [Developing skills in the area of cyber security](https://www.geeksforgeeks.org/top-10-technology-trends-that-you-can-learn-in-2020/) helps you to protect networks, computers, and sensitive data from security breaches. Organizations are increasing security budgets year over year to deal with malicious threats, remove vulnerabilities, defend against security breaches, and protect their data from data breaches, data manipulation, and data theft.
 
-Learning cybersecurity will be very beneficial to any developers because cybersecurity jobs are in demand,; security jobs are more than other tech fields. This is evidence that more cybersecurity professionals are needed.
+As the modern threat landscape continues to mature, the demand for cyber security skills will continue to grow and increase in importance.
 
 ### 3. UI/UX Design
 User Interface and User Experience design, or UI/UX design. It is a design-centric approach that offers practical skills. A UI designers concern is about how the product appears. UI designers design interfaces for web apps and mobile apps to be visually appealing. Also, have a good flow, and enable users to navigate easily. UX designer is more concerned about how the product feels. They do research and test element behaviors on the interface to make sure that the [flow is good](https://www.fastcompany.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry).
