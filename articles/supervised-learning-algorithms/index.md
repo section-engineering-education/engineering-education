@@ -148,7 +148,7 @@ Regression algorithms are another subset of machine learning algorithms used to 
     print(linear_regression.score(X_test,y_test))
     ```
 
-The output of the print statement will be 0.55. The scoring metric used for linear regression is the R^2 metric. Pronounced as R-squared, it tells us about the effectiveness of the curve fitting. The closer the value of R-squared is to 1, the higher chances of good curve fitting. Curve fitting may lead to overfitting when the number of features considered is less. Overfitting refers to a scenario where the model performs very well on the data it has seen. But its performance drops when it works on unseen data. Underfitting is also a possibility when we don't have sufficient data to train the model(s) with.
+The output of the print statement will be 0.55. The scoring metric used for linear regression is the R^2 metric. Pronounced as R-squared, it tells us about the effectiveness of the curve fitting on the graph. The closer the value of R-squared is to 1, the higher chances of good curve fitting. Curve fitting may lead to overfitting when the number of features considered is less. Overfitting refers to a scenario where the model performs very well on the data it has seen. But its performance drops when it works on unseen data. Underfitting is also a possibility when we don't have sufficient data to train the model(s) with.
 
 ### Conclusion
 We have looked at supervised learning and went over a few code snippets to implement these algorithms using scikit-learn. Scikit-learn is a very powerful and elegantly written library. I hope this serves as an introduction to your machine learning journey.
