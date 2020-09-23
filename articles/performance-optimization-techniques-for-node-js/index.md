@@ -70,15 +70,33 @@ Just imagine having more than one million rows of data to query from your databa
 - Avoid [SELECT](https://dev.mysql.com/doc/refman/8.0/en/select-optimization.html)
 
 This would be the most obvious thing you would use to select your columns, right? Yet, you should not overlook how cumbersome this query can be, to list down columns you have in a table. Go for a more distinct approach using the SELECT statement to query only the data you need and avoid extra fetching loads to your database.
+For example, assume you have a table Customers with fields FirstName, LastName City, State, Zip, PhoneNumber and Notes. To SELECT fields FirstName, LastName, City, State and Zip, the following two queries might be used.
 
+query1
+```sql
+SELECT *
+FROM Customers
+```
+query2
+```sql
+SELECT FirstName, LastName, Address, City, State, Zip
+FROM Customers
+```
+query1 will pull all the fields in this table even though we don't need all.
+query2 will pull the required fields hence query2 will be the more efficient way to perform the SELECT statement.
+The same idea should apply when using INSERT and UPDATE statements.
 - Use the [clause WHERE](https://dev.mysql.com/doc/refman/8.0/en/where-optimization.html)
 
 The goal of the query is to pull the required records from your database. WHERE clause helps to filter the records and limits the number of records to be pulled based on conditions. WHERE replaces the HAVING clause that selects records before filtering the dataset. In SQL operations, WHERE statements are faster as it reduces that data being processed by the database engine.
 
 - [Use LIMIT](https://dev.mysql.com/doc/refman/8.0/en/limit-optimization.html) to sample the query results
 
-LIMIT will return only the specified number of records. While using LIMIT, ensure that the results are desirable and meaningful when a limit is imposed on the dataset.
-
+LIMIT will return only the specified number of records. While using LIMIT, ensure that the results are desirable and meaningful when a limit is imposed on the dataset. For example, if our table Customer has 500 records and we only need the first 100 records, LIMIT will be an efficient way to sample out the desirable results by avoiding the selection of the extra 400 records.
+Here is an example:
+```sql
+SELECT FirstName, LastName, Address, City, State, Zip
+FROM Customers LIMIT 100
+```
 - To avoid columns use [text joins](https://dev.mysql.com/doc/internals/en/optimizer-joins.html)
 
 Joins with strings/tests are considered much slower when compared to numeric columns. The solution to this is to always make sure foreign key strings have an equivalent numeric representation where join can be performed.
@@ -101,12 +119,34 @@ The second query will execute faster than the first query due to the numeric rep
 In the production database, analytical and database management queries should be executed when the concurrent users are at their lowest peak. Typically at night around 3 to 5 am.
 
 #### Other Tips
-- Avoid SELECT DISTRICT
+- Avoid SELECT DISTINCT.
+
+SELECT DISTINCT removes duplicate records by GROUPing them to create distinct results. In our table Customers 
+```sql
+SELECT DISTINCT FirstName, LastName, State, Zip FROM Customers
+```
+may tend to group together some common first and last names such as David Smith. This will cause an inaccurate number of records. This query can be slow to execute when a table has a large number of Customers with  'David Smith' name.
+Go for a more accurate and efficient query such as 
+```sql
+SELECT DISTINCT FirstName, LastName, State, Zip FROM Customers
+```
+and the number of records will be accurate.
 - Statements such as [INSERT](https://dev.mysql.com/doc/refman/8.0/en/insert-optimization.html) and [UPDATE](https://dev.mysql.com/doc/refman/8.0/en/update-optimization.html) should be well optimized
 - Avoid sub-optimal queries as they execute row by row which slows down your engine
 - [Table optimazition](https://dev.mysql.com/doc/refman/8.0/en/optimize-table.html)
 - [Sub query optimation](https://dev.mysql.com/doc/refman/8.0/en/optimizing-subqueries.html)
-- Use wildcard (%) character appropriately
+- Use wildcard (%) character appropriately. 
+
+If we want to SELECT customers who their FirstName start with 'Avi'
+query1
+```sql
+SELECT FirstName from Customers where FirstName like ‘%avi%’
+```
+query2
+```sql
+SELECT FirstName from Customers where FirstName like ‘avi%’
+```
+query1 will pull the FirstNames such as Avishek, Avinash, Avik. This method is inefficient as it may pull unexpected results where the FirstNames has 'Avi' such as David, Xavier, Davin. query2 would be more efficient to perform this wildcard
 - Avoid over normalization and use numeric for primary keys
 - Avoid looping statements looping queries will slow your sequence
 
