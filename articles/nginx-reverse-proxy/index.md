@@ -1,10 +1,10 @@
 # Deploying Multiple Applications to VM with NGINX as a Reverse Proxy
 
 ## Introduction
-Ever wondered how multiple applications are being deployed to the same machine, and how traffic is routed to the corresponding applications?
+Ever wondered how more than one application are being deployed to the same machine, and how traffic is being routed to the corresponding applications?
 Keep reading to know all about it!
-## Goals (Optional)
-By the end of the article, one would be able to 
+## Goals
+By the end of the article, one would be able to understand
 - What a Reverse Proxy is?
 - What NGINX is?
 - How does it help in managing multiple applications?
@@ -14,17 +14,17 @@ By the end of the article, one would be able to
 A reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the server itself.   
 
 ### NGINX
-We will be using NGINX which would be serving the purpose of a Reverse Proxy. NGINX, is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. 
+We will be using NGINX which would be serving the purpose of a Reverse Proxy. NGINX, is a web server that can be used as a reverse proxy, load balancer, mail proxy and HTTP cache. 
 
 ### Example
 ![image](./reverse_proxy_working.png)
 
-This is an example of an architecture, where the there two apps running in the background, but the clients have no idea about them. The clients know only about NGINX which acts as a reverse proxy and sends the request to the appropriate application.
+This is an example of an architecture, where two apps are running in the background, but clients have no idea about them. Clients only know about NGINX which acts as a reverse proxy that sends the request to the appropriate application.
 
 
-Now that you know a broad idea of what we are about to build, let us jump right in!
+Now that you have a broad idea of what we are about to build, let us jump right in!
 
-## Goals
+## Aim
 1. Deploy two applications and have it managed by NGINX.
 
 ## Setup & Pre-Requisites:
@@ -32,13 +32,6 @@ Now that you know a broad idea of what we are about to build, let us jump right 
 1. For this example, I have two sameple NodeJS servers. One can have any kind of application running on different ports. 
 **NOTE:** Do not run your application on Port 80 or 443. Will be explained later why this must not be done.
 2. I have installed NGINX on my local machine, the same could be done on any Virtual Machine where the applications are expected to be deployed.
-<!-- 3. An SSH key to connect to your deployed VM.
-4. A GitHub Account with two sample repos that could be deployed( one could come up with any number of repos/projects to deploy, to keep it simple I am going with just 2 repos)
-5. One could go with any Project choice of their own, for this example I will be deploying a React App and Node App, knowledge about building their app of interest is expected.
-6. Not necessary but if known would be helpful: 
-     Basic Linux Commands
-     Basic idea about what Docker. -->
-
 
 ## Step 1: Start two apps running in different ports
 As I've mentioned earlier, I got two Node Apps running on two different ports as show below.  
@@ -77,14 +70,14 @@ Add these configurations inside the HTTP block.
 ```
 server {       
      listen       80;
-     server_name  server.localhost;
+     server_name  server.domain;
      location / {
           proxy_pass "http://localhost:3000" ;
      }
 }
 server {       
      listen       80;
-     server_name  client.localhost;
+     server_name  client.domain;
 
      location / {
           proxy_pass "http://localhost:3001" ;
@@ -124,8 +117,9 @@ server{
 ```
 
 **NOTE** 
-These are the basic minimum configurations requried to successfully configure NGINX for reverse proxying. Feel free to explore other config parameters as well.
+These are the basic minimum configurations requried to successfully configure NGINX for reverse proxying. Feel free to explore other config parameters as well. 
 
+Change the domain name to your domain.
 For SSL Certificate and Key, you can get them from your SSL provider. If you dont have one, Use this free service [LetsEncrypt](https://letsencrypt.org/) . Follow their documentation to get Free SSL instantly!
 
 
@@ -147,4 +141,7 @@ Here is the end result,
 
 Congratulations! You did it! :tada:
 
-In large systems, the system is highly dependent on the micro-services architecture where each service would be served by an application. Hope this article covered how to manage those independently deployed applications as a whole with the help of NGINX as a Reverse Proxy.
+In large systems, the system is highly dependent on the micro-services architecture where each service would be served by an application. In that case managing apps would be an essential skill to know.
+
+ Hope this article covered how to manage those independently deployed applications as a whole with the help of NGINX as a Reverse Proxy.
+ Thanks for reading
