@@ -57,48 +57,48 @@ moment().format("[Today is] dddd"); // "Today is Saturday"
 Moment [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) represents date tokens. The common Moment token format representations are:
 
 **Month**
-- M - 1, 2, 3, 4 …10, 11 and 12
-- Mo - 1st, 2nd, 3rd, 4th, …10th, 11th, 13th and 12th
-- MM - 01, 02, 03, 04 …10, 11 and 12
-- MMM – Jan, Feb, Mar, Apr...Oct, Nov and Dec
-- MMMM – January, February, March, April...October, November and December
+- M - 1, 2, 3, 4 ...10, 11 and 12
+- Mo - 1st, 2nd, 3rd, 4th ...10th, 11th, 13th and 12th
+- MM - 01, 02, 03, 04 ...10, 11 and 12
+- MMM – Jan, Feb, Mar, Apr ...Oct, Nov and Dec
+- MMMM – January, February, March, April ...October, November and December
 
 **Day of month**
-- D – 1, 2, 3, 4...28, 29, 30 and 31
-- Do - 1st, 2nd, 3rd, 4th...29th, 30th and 31st
-- DD - 01, 02, 03, 04...28, 29, 30 and 31
+- D – 1, 2, 3, 4 ...28, 29, 30 and 31
+- Do - 1st, 2nd, 3rd, 4th ...29th, 30th and 31st
+- DD - 01, 02, 03, 04 ...28, 29, 30 and 31
 
 **Day of year**
-- DD – 1, 2, 3, 4... 362, 363, 364 and 365
-- DDDo - 1st, 2nd, 3rd, 4th…362nd, 363rd, 364th and 365th
-- DDDD – 001, 002, 003, 004...362, 363, 364 and 365
+- DDD – 1, 2, 3, 4 ...362, 363, 364 and 365
+- DDDo - 1st, 2nd, 3rd, 4th ...362nd, 363rd, 364th and 365th
+- DDDD – 001, 002, 003, 004 ...362, 363, 364 and 365
 
 **Day of week**
-- d – 00, 01, 02, 03, 04, 05 and 06 
-- do - 0st ,1st, 2nd, 3rd, 4th, 5th and 6th
+- d – 0, 1, 2, 3, 4, 5 and 6 
+- do - 0st, 1st, 2nd, 3rd, 4th, 5th and 6th
 - dd – Su, Mo, Tu, We, Th, Fr, and Sa
-- ddd – Sun, ,Mon, Tue, Wed, Thu, Fri and Sat
+- ddd – Sun, Mon, Tue, Wed, Thu, Fri and Sat
 - dddd – Sunday, Monday, Tuesday, Wednesday, Thursday, Friday and Saturday
 
 **Year**
-- YY - …17, 18, 19, 20, 21, 22 and 23...
-- YYYY- …2017, 2018, 2019, 2020, 2021, 2022 and 2023....
+- YY - ...17, 18, 19, 20, 21, 22 and 23...
+- YYYY- ...2017, 2018, 2019, 2020, 2021, 2022 and 2023....
 
 **Hour(23 hrs)**
-- H – 0, 1, 2, 3, 4 … 19, 20, 21, 22 and 23
-- HH – 00, 01, 02, 03, 04... 19, 20, 21, 22 and 23
+- H – 0, 1, 2, 3, 4 ...19, 20, 21, 22 and 23
+- HH – 00, 01, 02, 03, 04 ...19, 20, 21, 22 and 23
 
 **Hour (12 hrs)**
-- h – 1, 2, 3, 4 … 10, 11 and 12
-- hh – 01, 02, 03, 04... 10, 11 and 12
+- h – 1, 2, 3, 4 ...10, 11 and 12
+- hh – 01, 02, 03, 04 ...10, 11 and 12
 
 **Minute**
-- m - 0, 1, 2, 4... 54, 55, 55, 57, 58 and 59
-- mm - 00, 01, 02, 04... 54, 55, 56, 57, 58 and 59
+- m - 0, 1, 2, 4 ...54, 55, 55, 57, 58 and 59
+- mm - 00, 01, 02, 04 ...54, 55, 56, 57, 58 and 59
 
 **Second**
-- s – 0, 1, 2, 3, 4 … 54, 55, 56, 57, 58 and 59
-- ss – 00, 01, 02, 03, 04... 54, 55, 55, 56, 57, 58 and 59
+- s – 0, 1, 2, 3, 4 ...54, 55, 56, 57, 58 and 59
+- ss – 00, 01, 02, 03, 04 ...54, 55, 55, 56, 57, 58 and 59
 
 #### Displaying formatted dates
 Moment helps display [date with specified formats](https://momentjs.com/docs/#/displaying/). `moment()` returns a date and `format()` converts the date string tokens and replaces them with specified format values, which are readable.
@@ -158,7 +158,7 @@ Displays dates other than now.
 ```js
 const moment = require('moment');
  const a = moment([2020, 4, 12]);
- const a = moment([2020, 8, 13]);
+ const b = moment([2020, 8, 13]);
  const c = a.to(b)
  console.log(c)
 ```
@@ -344,7 +344,7 @@ console.log(moment('2020-08-12').isBefore('2020-09-20'));
 console.log(moment('2020-08-12').isBefore('2020-07-11'));
 ```
 
-Eg2 check if a moment [is same to](https://momentjs.com/docs/#/query/is-same/) another moment.
+Eg2 check if a moment [is same as](https://momentjs.com/docs/#/query/is-same/) another moment.
 
 ```js
 const moment = require('moment');
