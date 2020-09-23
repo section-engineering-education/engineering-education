@@ -169,13 +169,10 @@ Another special aspect of moment is that it allows you to [manipulate dates](htt
 
 [**Addition**](https://momentjs.com/docs/#/manipulating/add/)
 
-To add time with moment object, parse the time you want to add as the key and the amounts you want to add (years, months, weeks or days).
+Moment mutates the original moment by adding time. To add time with moment object, parse the time you want to add as the key and the amounts you want to add (years, months, weeks or days).
 
 ```js
-moment().add(Number, String);
-moment().add(Duration);
-moment().add(Object);
-
+//To add time, pass the key of what time you want to add, and the amount you want to add.
 moment().add(7, 'years');
 moment().add(7, 'months');
 moment().add(7, 'days');
@@ -184,11 +181,12 @@ moment().add(7, 'days');
 Moment supports abbreviations such as years(y), months(M), weeks(w), days(d), minutes(M), etc.
 
 ```js
+//There are some shorthand keys as well if you're into that whole brevity thing.
 moment().add(7, 'y');
 moment().add(7, 'M');
 moment().add(7, 'd');
 ```
-
+Check out more [shorthand keys](https://momentjs.com/docs/#/manipulating/add/)😉
 **Example**
 
 ```js
