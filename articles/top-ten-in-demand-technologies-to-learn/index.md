@@ -28,28 +28,27 @@ AI is being used in almost every business sector to reduce human intervention. F
 AI, in simpler terms, often means automation. Automation, while eliminating some human task-oriented jobs, creates new opportunities as well. According to [Simplilearn](https://www.simplilearn.com/top-technology-trends-and-jobs-article), automation will get rid of 73 million jobs and create 23 million jobs. The jobs created by AI will be around development, programming, testing, support, and maintenance.
 
 ### 2. Cyber Security
-Cyber security is top of mind for most companies. [Developing skills in the area of cyber security](https://www.geeksforgeeks.org/top-10-technology-trends-that-you-can-learn-in-2020/) helps you to protect networks, computers, and sensitive data from security breaches. Organizations are increasing security budgets year over year to deal with malicious threats, remove vulnerabilities, defend against security breaches, and protect their data from data breaches, data manipulation, and data theft.
+Cyber security is top of mind for most companies. [Developing skills in the area of cyber security](https://www.geeksforgeeks.org/top-10-technology-trends-that-you-can-learn-in-2020/) helps you to protect networks, computers, and sensitive data from security breaches. Organizations are increasing security budgets year over year to deal with malicious threats, remove vulnerabilities, defend against data breaches, data manipulation, and data theft.
 
 As the modern threat landscape continues to mature, the demand for cyber security skills will continue to grow and increase in importance.
 
 ### 3. UI/UX Design
-User Interface and User Experience design, or UI/UX design. It is a design-centric approach that offers practical skills. A UI designers concern is about how the product appears. UI designers design interfaces for web apps and mobile apps to be visually appealing. Also, have a good flow, and enable users to navigate easily. UX designer is more concerned about how the product feels. They do research and test element behaviors on the interface to make sure that the [flow is good](https://www.fastcompany.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry).
+User Interface and User Experience design, or UI/UX, is a design-centric approach to development. A UI designer's concern is about how the product appears. UI designers design interfaces for web apps and mobile apps to be visually appealing and enable users to navigate easily. UX designers are more concerned about how users interact with the product. They do research and test element behaviors on the interface to make sure that the [flow is good](https://www.fastcompany.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry).
 
 UI is suitable for those who want to focus on visuals, layout, the general look, and the product feel. While, UX will suit those who want to use analysis and testing to help users meet their needs.
 
 ### 4. Internet of Things
-IoT is a system of interconnected objects communicating over a network. IoT enables the transfer of data over a network without requiring human intervention. IoT connects objects to the internet and allows communication to take place. Whether its the curtains, cars, door, refrigerator, and home appliances. Sensors installed to objects communicate and send data to the cloud.
+IoT is a system of interconnected objects communicating over a network. IoT connects objects to the internet and allows communication to take place, whether its the curtains, cars, door, refrigerator, or home appliances. Sensors installed within objects communicate and send data to the cloud.
 
-According to [geeks for geeks](https://www.geeksforgeeks.org/introduction-to-internet-of-things-iot-set-1/), IoT will soon turn Nature into Smart Nature. According to statistics recorded in 2017. The number of devices using IoT reached 8.4 billion. The number of IoT devices is expected to reach [30 billion](https://www.simplilearn.com/top-technology-trends-and-jobs-article) in the year 2020. Learning IoT is vital because there are more IT workers needed.
+According to [geeks for geeks](https://www.geeksforgeeks.org/introduction-to-internet-of-things-iot-set-1/), IoT will soon turn Nature into Smart Nature. According to statistics recorded in 2017, the number of devices using IoT reached 8.4 billion. The number of IoT devices is expected to reach [30 billion](https://www.simplilearn.com/top-technology-trends-and-jobs-article) in the year 2020.
 
 ### 5. Robotics Process Automation
-Like AI, Robotics Process Automation (RPA) revolutionizes the way organizations work today. Robotic process automation is technology or software that mimics the actions of a human being interacting with digital systems. 
-Computer software or robots are configured to work and imitate how people interact with the systems for business processes. RPA is an evolving technology. It involves tasks that are repetitive thus automating them. Companies such as data entry, analytics, and the manufacturing sector have adopted RPA technology. Using RPA time we can reduce human error, save time, and reduce operating costs.
+Like AI, Robotics Process Automation (RPA) revolutionizes the way organizations work today. Robotics process automation is technology or software that mimics the repetitive actions of a human being interacting with digital systems. Many companies dealing in such activities as data entry, analytics, and manufacturing have adopted RPA technology. Using RPA, we can reduce human error, save time, and reduce operating costs.
 
-Skills needed to become an RPA developer are Python, Java, AI and ML, MySQL, and Scala.
+Some of the skills needed to become an RPA developer are Python, Java, AI and ML, MySQL, and Scala.
 
 ### 6. Virtual Reality and Augmented Reality
-Virtual Reality (VR) is the technology that immerses the user in an environment that makes you believe that you are  in a different world. The VR headset blocks out your real worldview. It then substitutes to a digital world that is designed to fool your senses. VR is relevant to gamers, real estate agents, 3D artists, and architects. AR is an enhancement of your real world with a set of magical virtual objects in it. VR and AR are changing the way we use screens creating and viewing new exciting experiences. To get started with these technologies, you need programming skills and a forward-thinking mindset.
+Virtual Reality (VR) is a technology that immerses the user in an environment that makes it appear that you are in a different world. The VR headset blocks out your real worldview, substituting it with a digital world that is designed to fool your senses. VR is relevant to gamers, real estate agents, 3D artists, and architects. AR is an enhancement of your real world with a set of magical virtual objects in it. VR and AR are changing the way we use screens, creating and viewing new exciting experiences. To get started with these technologies, you need programming skills and a forward-thinking mindset.
 
 ### 7. Cognitive Cloud Computing
 Cognitive Cloud Computing is one of the next big things in the IT industry. This technology uses the idea of Man and Machine together in one. It can converse in natural language and help in decision-making. It has made computers smart enough to function like human brains. Businesses are deploying cloud computing applications and solutions in their processes.
@@ -57,10 +56,10 @@ Cognitive Cloud Computing is one of the next big things in the IT industry. This
 ### 8. BlockChain
 Blockchain is another leading emerging technology. Blockchain is a list of records called blocks linked together using cryptography. It facilitates transactions of cryptocurrencies such as Bitcoin. Blockchain increases security and speeds up [exchange of information](https://www.geeksforgeeks.org/blockchain-technology-introduction/).
 
-Blockchain engineer's jobs are in demand. To become a Blockchain developer python, internet security, cryptography, c/c++, No SQL and relational DB skills are necessary.
+Blockchain engineering jobs are in high demand. To become a Blockchain developer, Python, internet security, cryptography, c/c++, No SQL and relational DB skills are necessary.
 
 ### 9. Big Data Analytics
-Big Data refers to large amounts of data used to reveal patterns, trends, insights, and associations if well analyzed. Hadoop and Spark are frameworks for solving Big Data problems and analyzing the data. It is important to have Big Data knowledge and [skills](https://www.edureka.co/big-data-hadoop-training-certification).
+Big Data refers to large amounts of data used to reveal patterns, trends, insights, and associations. Hadoop and Spark are sample frameworks for solving Big Data problems and analyzing the data. It is important to have Big Data knowledge and [skills](https://www.edureka.co/big-data-hadoop-training-certification).
 
 ### 10. Edge Computing
-Edge Computing is a technology that brings computation and data storage closer to a [centralized location](https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/). This technology processes sensitive data in remote locations to centralized datacenters. Bringing computation at the edge of the network gives faster insights, low latency and, [saves the bandwidth](https://www.ibm.com/cloud/what-is-edge-computing).
+Edge Computing is a technology that brings computation and data storage closer to end users or devices. Bringing computation at the edge of the network gives faster insights, lowers latency and, [saves on bandwidth](https://www.ibm.com/cloud/what-is-edge-computing).
