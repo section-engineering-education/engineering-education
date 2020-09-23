@@ -265,17 +265,17 @@ When you start the app and visit the URL `localhost:3000/api/route1` you can see
 
 Suppose you are building a website for a company that showcases their products, each product has a *productID*. You want the URL for product 1 to be `/product/1`. 
 
-Instead of defining a route for every product, you can define a single route for everything in the form of `product/productID` and then return a file based on the productID.
+Instead of defining a route for every product, you can define a single route for everything in the form of `product/productID` and then return a file based on the productID. Here's a rough example below that you can modify for your use case. 
 
 ```JavaScript
 var express = require("express");
 var app = express();
 
-//use a colon to grab a parameter
+// use a colon to grab a parameter
 
 app.get("/product/:productId", function(req, res){
     var pid = parseInt(req.params.productId, 10);
-    //res.send   manipulate string to get file with name as productID or something and use a static file server
+    //Use res.send to manipulate string to get file with name as productID or something and use a static file server
     });
 app.listen(3000);
 ```
@@ -284,7 +284,7 @@ app.listen(3000);
 
 [Regular Expressions (RE)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) are patterns used to match character combinations in strings. We can use RE to match parameters and define our routes. 
 
-For example, using the example above if we wanted the productId to be only an integer we can try the following:
+For example, using the example above, if we wanted the productId to be only an integer we can try the following:
 
 ```JavaScript
 var express = require("express")
@@ -300,7 +300,7 @@ app.get(/^\/products\/(\d+)$/, function(req, res) {
 app.listen(3000);
 ```
 
-For full code visit this [gist](https://gist.github.com/rohanreddych/137c59f7e57edbfbc839dcd440f0daeb).
+For the full example code, visit this [gist](https://gist.github.com/rohanreddych/137c59f7e57edbfbc839dcd440f0daeb).
 
 ### Template Engines
 Websites are built with HTML, you can dynamically generate HTML pages using Express. Dynamically generated HTML pages are useful when you want to show real time data or change a page's details based on the user. 
