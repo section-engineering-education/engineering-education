@@ -18,7 +18,7 @@ Performance is an important aspect when building webpages and applications. When
 
 The first 10 seconds are vital to determine if a user will leave or continue interacting with your web pages. In addition, you must clearly speed up the page and bring value within these 10 seconds and get the user's attention to spend more time on your page.
 
-This is where optimizing your page and speeding up the response time becomes important for your users experience. Node.js is known to produce super-fast performing and scalable web applications with an event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread.
+This is where optimizing your page and speeding up the response time becomes important to maintain good user experience. Node.js is known to produce super-fast performing and scalable web applications with an event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread.
 
 As a developer, you need your application to be fast and fully optimized. One could say that Node.js is the fire and performance optimization is the gasoline, imagine how blazing fast your app could be. This article will cover techniques, tools, and tips to optimize Node.js apps and achieve higher-performance.
 
