@@ -113,8 +113,8 @@ Commonly known as time ago. `fromNow()` handles relative dates and display date 
 
 ```js
 const moment = require('moment');
-//Calculate time since October 9, 2020
-const timeago = moment([2020, 9, 10]).fromNow();
+//Calculate time since September 9, 2020
+const timeago = moment([2020, 08, 9]).fromNow();
 console.log(timeago);
 ```
 
@@ -122,10 +122,9 @@ To eliminate the suffix parse a Boolean value `true` to the `fromNow()` function
 
 ```js
 const moment = require('moment');
-//Calculate time since October 9, 2020
-const timeago = moment([2020, 9, 10]).fromNow(true);
-console.log(timeago+
-" years from now")  ;
+//Calculate time since September 9, 2020
+const timeago = moment([2020, 08, 9]).fromNow(true);// remove suffix "ago"
+console.log(timeago)  ;
 ```
 
 [**Time from x**](https://momentjs.com/docs/#/displaying/from/)
@@ -145,11 +144,11 @@ console.log(c)
 Similar to `fromNow()`, but `toNow()` gives you the opposite intervals with the current time.
 
 ```js
-const moment = require('moment');
+const moment = require("moment");
 const a = moment([2020, 7, 29]).toNow();
-const b = moment([2020, 8, 29]).toNow(true);// remove prefix "in"
-console.log(a)
-console.log(b)
+const b = moment([2020, 7, 29]).toNow(true); // remove prefix "in"
+console.log(a);
+console.log(b);
 ```
 
 [**Time to x**](https://momentjs.com/docs/#/displaying/to/)
