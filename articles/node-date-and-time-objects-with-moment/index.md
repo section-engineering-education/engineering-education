@@ -27,7 +27,7 @@ const moment = require('moment');
 ```
 
 Moment also run on browsers. It creates a global moment object, which is used to access date with `<script>` tag.
-Moment has gained good reputation for being able to deliver its objective. In this article we shall look at:
+Moment has gained a good reputation for being able to deliver its objective. In this article we shall look at:
 
 -   date formatting
 -   date parsing
