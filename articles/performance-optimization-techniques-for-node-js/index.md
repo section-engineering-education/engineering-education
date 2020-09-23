@@ -138,6 +138,7 @@ and the number of records will be accurate.
 - Use wildcard (%) character appropriately. 
 
 If we want to SELECT customers who their FirstName start with 'Avi'
+
 query1
 ```sql
 SELECT FirstName from Customers where FirstName like ‘%avi%’
