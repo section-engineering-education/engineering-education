@@ -5,13 +5,13 @@ At times during the development process, we constantly jump into date objects �
 Date-fns is a lightweight 🚀 date library that provides comprehensive functions toolset for date formatting and manipulation with a lot of simplicity. It is a simple to use API with many small functions to work with dates. Date-fns is termed to be [Lodash](https://lodash.com/) for dates with [over 140 fuctions](https://date-fns.org/v2.7.0/docs/Getting-Started) to work with. 
 
 ### Why date-fns ⚡
-- **Immutable and pure** - date-fns has pure built-in functions that return a new date instance rather than modifying the parsed date. This helps to reduce and to prevent bugs.
-- **Native Date date** - fns uses existing native JavaScript date API.
-- **Modular** - you pick what you need, date-fns only import the function you need rather than the whole API functions pack, with modern modules such as [webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/guide/en/) and [Browserify](http://browserify.org/) with tree shaking algorithm support.
+- **Immutable and pure** - date-fns has pure built-in functions that return a new date instance rather than modifying the parsed date. This helps to reduce and to prevent bugs
+- **Native Date date** - fns uses existing native JavaScript date API
+- **Modular** - you pick what you need, date-fns only import the function you need rather than the whole API functions pack, with modern modules such as [webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/guide/en/) and [Browserify](http://browserify.org/) with tree shaking algorithm support
 - **Fast** - date-fns is a small API that is very light, thus guarantees users' the best experience.
 - **Documentation** - what is better without good Docs? Date-fns has well-outlined documentation which very clear and simple to follow along with example use-cases (code snippets) for every date function.
-- **I18n** - perhaps you want to display dates with your users' favorite locale. Date-fns have a dozen locales that you can choose to use whenever you need them.
-- **Typescript and Flow** - supports both typescript and flow.
+- **I18n** - perhaps you want to display dates with your users' favorite locale. Date-fns have a dozen locales that you can choose to use whenever you need them
+- **Typescript and Flow** - supports both typescript and flow
 
 [Check more benefits of date fns](https://date-fns.org/)
 
@@ -23,11 +23,11 @@ Date-fns is available in the [npm packages collection](https://www.npmjs.com/pac
 - Date locale
 - Time zones
 - Date arithmetic
-- Date comparisons, and other important applications of date-fns functions.
+- Date comparisons, and other important applications of date-fns functions
 
 ### Date format
 
-Date formatting is key when displaying a date. Formatting helps to display human-readable dates. Date format replaces the individual date tokens to a format string, which specifies the part of the date token you want to format and how the token will be displayed. To understand this more let's have a look and date token representation patterns that you can choose to display as formats 
+Date formatting is key when displaying a date. Formatting helps to display human-readable dates. Date format replaces the individual date tokens to a format string, which specifies the part of the date token you want to format and how the token will be displayed. To understand this more let's have a look and date token representation patterns that you can choose to display as formats.
 
 **Note:** some of these [Unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) are different from other date libraries such as MomentJS
 
@@ -125,7 +125,7 @@ The above examples will display the date parsed with several date formats. You [
 
 ```js
 format(date, 'DD.MM.YYYY'); ❌ 
-format(date, 'dd.MM.yyyy'); ✔️
+format(date, 'dd.MM.yyyy'); ✔
 ```
 ### Date arithmetic (additions, subtractions)
 
@@ -156,17 +156,17 @@ Here you import sub-functions to perform subtractions. Similarly, you can choose
 ```js
 const date = new Date('2020.09.29 10:12:00');
 //sub days
-const sub2 = subDays(date, 4);
+const a = subDays(date, 4);
 //sub months
-const sub3 = subMonths(date, 3);
+const b = subMonths(date, 3);
 //sub years
-const sub4 = subYears(date, 3);
+const c = subYears(date, 3);
 //sub minutes
-const sub5 = subMinutes(date, 40);
-console.log(format(sub2, 'dd MMMM yyyy HH:mm'));
-console.log(format(sub3, 'dd MMMM yyyy HH:mm'));
-console.log(format(sub4, 'dd MMMM yyyy HH:mm'));
-console.log(format(sub5, 'dd MMMM yyyy HH:mm'));
+const d = subMinutes(date, 40);
+console.log(format(a, 'dd MMMM yyyy HH:mm'));
+console.log(format(b, 'dd MMMM yyyy HH:mm'));
+console.log(format(c, 'dd MMMM yyyy HH:mm'));
+console.log(format(d, 'dd MMMM yyyy HH:mm'));
 ```
 ### Date locale
 
@@ -174,10 +174,10 @@ Users who typically visit your website may come across the different  world, ass
 
 For example, let's have a simple date parsed and outputted in French Locale
 ```js
-const newYears = new Date('2019/01/01');
+const date = new Date('2019/01/01');
 const frenchLocale = require('date-fns/locale/fr');
 const format = require('date-fns/format');
-const formattedDate = format(newYears, 'EEEE,MMMM do, yyyy hh:mm a', {
+const formattedDate = format(date, 'EEEE,MMMM do, yyyy hh:mm a', {
     locale: frenchLocale
 });
 console.log(formattedDate);
@@ -192,7 +192,7 @@ console.log(formattedDate);
 
 Date-fns supports[ time zone data](https://date-fns.org/v2.16.1/docs/Time-Zones) for working with UTC or ISO date strings. This will help you to display the date and time in local time of your users. The difficulty comes when working with another time zone's local time, like showing the local time of an event in LA at 8 pm PST on a Node server in Europe or a user's machine set to EST. In this case, there are two relevant pieces of information:
 - A fixed moment in time in the form of a timestamp, UTC or ISO date string, and
-- The time zone descriptor, usually an offset or [IANA](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) time zone name (e.g. America/Los_Angeles).
+- The time zone descriptor, usually an offset or [IANA](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) time zone name (e.g. America/Los_Angeles)
 
 #### Time zone helpers
 
@@ -322,10 +322,10 @@ Date-fns provides you with [date validation helpers](https://date-fns.org/v2.16.
 By default, date-fns returns a Boolean variable true if he date parsed is indeed a valid date or false if the date string parsed is not a valid date.
 ```js
 const { isValid } = require("date-fns");
-const validate1 = isValid(new Date('2020, 09, 21'))
-const validate2 = isValid(new Date('2020, 02, 30'))
-console.log((validate1))
-console.log((validate2))
+const valid_date1 = isValid(new Date('2020, 09, 21'))
+const valid_date2 = isValid(new Date('2020, 02, 30'))
+console.log((valid_date1))
+console.log((valid_date2))
 ```
 However, in the above example, you will be surprised to find out the `new Date ('2020, 02, 30')` returns true yet the date itself is obviously invalid. February 30, there is no date with a February 30th day. Interestingly, this is not a bug in date-fns. To elaborate this more enter a `new Date ('2020, 02, 30')` on your browser's console (in my case am using google chrome console).
 
