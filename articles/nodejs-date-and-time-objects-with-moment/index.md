@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-date-and-time-objects-with-moment/
-title: Working with Moment.js date libraries
+url: /engineering-education/nodejs-date-and-time-objects-with-moment/
+title: Working with Moment.js Date Libraries
 description: Date and time Objects are those development difficulties that we jump into at some point when developing Node.js/JavaScript applications. This article discusses how to handle these objects with Moment.js library.
 author: joseph-chege
 date: 2020-09-23T00:00:00-10:00
@@ -11,23 +11,23 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-date-and-time-objects-with-moment/hero.png
+  - url: /engineering-education/nodejs-date-and-time-objects-with-moment/hero.png
     alt: Moment date library
 ---
-Date is a crucial development function that developers come across in their development workflow. To achieve this with ease you need great tools such as moment. Moment is the tool every JavaScript developer wants to use to achieve date and time object with simplicity.
+Date is a crucial development function that developers come across in their development workflow. To achieve this with ease you need great tools such as Moment.js. Moment.js is the tool every JavaScript developer wants to use to achieve date and time object with simplicity.
 <!--more-->
-### What is moment?
-[Moment](https://www.npmjs.com/package/moment) is a stand-alone open-source JavaScript framework wrapper for date objects that eliminates native JavaScript date objects, which are cumbersome to use. Moment makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. It comes with many plugins with useful features such as a short date formatter, fiscal quarters, timers, twitter dates, ISO calendars, Google calendar API, date ranges, time zones support, date calculations, multi-languages support, localized time, date manipulation functionalities, and many other special date utilities.
+### What is Moment.js?
+[Moment.js](https://www.npmjs.com/package/moment) is a stand-alone open-source JavaScript framework wrapper for date objects that eliminates native JavaScript date objects, which are cumbersome to use. Moment.js makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. It comes with many plugins with useful features such as a short date formatter, fiscal quarters, timers, twitter dates, ISO calendars, Google Calendar API, date ranges, time zones support, date calculations, multi-languages support, localized time, date manipulation functionalities, and many other special date utilities.
 
-### Getting started
-[Moment](https://momentjs.com/) is a free to use tool that helps you tackle date and time problems. To [use Moment](https://momentjs.com/docs/#/use-it/) with Node.js, install the module using the command `npm install moment`. Then simply use `require ()` in your application as in the following example:
+### Getting Started
+[Moment.js](https://momentjs.com/) is a free tool that helps you tackle date and time problems. To [use Moment.js](https://momentjs.com/docs/#/use-it/) with Node.js, install the module using the command `npm install moment`. Then simply use `require ()` in your application as in the following example:
 
 ```js
 const moment = require('moment');
 ```
 
-Moment also runs on browsers. It creates a global moment object, which is used to access date with `<script>` tag.
-Moment has gained a good reputation for being able to deliver its objective. In this article we shall look at:
+Moment.js also runs on browsers. It creates a global moment object, which is used to access date with `<script>` tag.
+Moment.js has gained a good reputation for being able to deliver its objective. In this article we shall look at:
 
 -   date formatting
 -   date parsing
@@ -37,15 +37,16 @@ Moment has gained a good reputation for being able to deliver its objective. In 
 -   time zones
 -   date international languages support
 
-#### Date parsing
-[Date parsing](https://momentjs.com/docs/#/parsing/) means converting some date and time information into a moment object, which lets you use the moment framework. Moment creates a wrapper for a date object. This wrapper will then be called with a `moment(supported inputs)`.
+#### Date Parsing
+[Date parsing](https://momentjs.com/docs/#/parsing/) means converting some date and time information into a moment object, which lets you use the Moment.js framework. Moment.js creates a wrapper for a date object. This wrapper will then be called with `moment(supported inputs)`.
 
 **Example**
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/mparsing?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<br><br>
 
-#### Formatting dates
-[Formats](https://momentjs.com/docs/#/displaying/format/) are the display options that replaces the corresponding moment default values. Formats helps to display human readable dates. Some commonly used moment formats includes:
+#### Formatting Dates
+[Formats](https://momentjs.com/docs/#/displaying/format/) are the display options that replace the corresponding moment default values. Formats helps to display human readable dates. Some commonly used moment formats includes:
 
 ```js
 moment().format(); //2020-08-14T08:03:20-10:43
@@ -54,7 +55,7 @@ moment().format("ddd, hA"); // "Sat, 10AM"
 moment().format("[Today is] dddd"); // "Today is Saturday"
 ```
 
-Moment [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) represent date tokens. The common Moment token format representations are:
+Moment.js [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) represent date tokens. The common Moment.js token format representations are:
 
 **Month**
 - M - 1, 2, 3, 4 ...10, 11 and 12
@@ -100,16 +101,16 @@ Moment [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#D
 - s – 0, 1, 2, 3, 4 ...54, 55, 56, 57, 58 and 59
 - ss – 00, 01, 02, 03, 04 ...54, 55, 55, 56, 57, 58 and 59
 
-#### Displaying formatted dates
-Moment helps display [date with specified formats](https://momentjs.com/docs/#/displaying/). `moment()` returns a date and `format()` converts the date string tokens and replaces them with specified format values, which are readable.
+#### Displaying Formatted Dates
+Moment.js helps display [date with specified formats](https://momentjs.com/docs/#/displaying/). `moment()` returns a date and `format()` converts the date string tokens and replaces them with specified format values, which are readable.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-format?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Moment helps you format dates that exist between two dates such as:
+Moment.js helps you format dates that exist between two dates such as:
 
 [**Time from now**](https://momentjs.com/docs/#/displaying/fromnow/)
 
-Commonly known as time ago. `fromNow()` handles relative dates and displays date with the suffix "ago". This will display the time that has elapsed since the beginning of the date parsed.
+Commonly known as time ago, `fromNow()` handles relative dates and displays date with the suffix "ago". This will display the time that has elapsed since the beginning of the date parsed.
 
 ```js
 const moment = require('moment');
@@ -118,7 +119,7 @@ const timeago = moment([2020, 08, 9]).fromNow();
 console.log(timeago);
 ```
 
-To eliminate the suffix parse a Boolean value `true` to the `fromNow()` function.
+To eliminate the suffix, parse a Boolean value `true` to the `fromNow()` function.
 
 ```js
 const moment = require('moment');
@@ -163,12 +164,12 @@ const c = a.to(b)
 console.log(c)
 ```
 
-#### Date manipulating
-Another special aspect of moment is that it allows you to [manipulate dates](https://momentjs.com/docs/#/manipulating/) the way you want them to be displayed. You can add and subtract dates between years, months, days, time, and seconds using `add ()` and `subtract()` methods. The following examples show how years, days, and weeks can be added or subtracted to and from the current date.
+#### Date Manipulation
+Another special aspect of Moment.js is that it allows you to [manipulate dates](https://momentjs.com/docs/#/manipulating/) the way you want them to be displayed. You can add and subtract dates between years, months, days, time, and seconds using `add ()` and `subtract()` methods. The following examples show how years, days, and weeks can be added or subtracted to and from the current date.
 
 [**Addition**](https://momentjs.com/docs/#/manipulating/add/)
 
-Moment mutates the original moment by adding time. To add time with moment object, parse the time you want to add as the key and the amounts you want to add (years, months, weeks or days).
+Moment.js mutates the original moment by adding time. To add time with moment object, parse the time you want to add as the key and the amounts you want to add (years, months, weeks or days).
 
 ```js
 //To add time, pass the key of what time you want to add, and the amount you want to add.
@@ -177,7 +178,7 @@ moment().add(7, 'months');
 moment().add(7, 'days');
 ```
 
-Moment supports abbreviations such as years(y), months(M), weeks(w), days(d), minutes(M), etc.
+Moment supports abbreviations such as years(y), months(M), weeks(w), days(d), minutes(m), etc.
 
 ```js
 //There are some shorthand keys as well if you're into that whole brevity thing.
@@ -218,21 +219,23 @@ This works exactly as addition only that `add()` is replaced with `subtract()` a
  This example will return moment object date; you can format the date to a more human readable date.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-substract?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<br><br>
 
-#### Calculating date differences with moment
-You can find the [differences between two dates](https://momentjs.com/docs/#/displaying/difference/) with moment. The difference is returned in milliseconds but you can format it the way you want the date-time unit to be displayed.
+#### Calculating Date Differences with Moment.js
+You can find the [differences between two dates](https://momentjs.com/docs/#/displaying/difference/) with Moment.js. The difference is returned in milliseconds but you can format it the way you want the date-time unit to be displayed.
 
-To find the differences between two or more dates the `diff()` method is used. This method takes date as the first argument and calculates the unit of time difference from an optimal second argument.
+To find the differences between two or more dates, the `diff()` method is used. This method takes date as the first argument and calculates the unit of time difference from an optimal second argument.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-difference?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<br><br>
 
 
-#### Date validation
-As a developer, it is annoying to return a date and it ends up being [invalid](https://momentjs.com/docs/#/customization/invalid-date/). Moment has been simplified to solve this problem. Many applications will prompt a user to enter a date and you need to know how you will get these dates as [valid](https://momentjs.com/docs/#/parsing/is-valid/).
+#### Date Validation
+As a developer, it is annoying to return a date that ends up being [invalid](https://momentjs.com/docs/#/customization/invalid-date/). Moment.js has been simplified to solve this problem. Many applications will prompt a user to enter a date and you need to know how you will get these dates as [valid](https://momentjs.com/docs/#/parsing/is-valid/).
 
-If you provide instructions to the user, i.e. input a specific date format such as y,m,d, there are high chances that some users will tend to ignore these instructions and they could provide dates will different formats.
+If you provide instructions to the user, i.e. input a specific date format such as y,m,d, there are high chances that some users will tend to ignore these instructions and they could provide dates with different formats.
 
-As a developer, it is your job to get the [invalid date format](https://momentjs.com/docs/#/utilities/invalid/) and validate them to the required format. Moment is a tool that will help you solve these circumstances. Moment uses `isValid()` method, which will return true if the date is valid and false if the date is invalid.
+As a developer, it is your job to get the [invalid date format](https://momentjs.com/docs/#/utilities/invalid/) and validate them to the required format. Moment.js is a tool that will help you solve these circumstances. Moment.js uses `isValid()` method, which will return true if the date is valid and false if the date is invalid.
 
 ```js
 const moment = require('moment');
@@ -258,22 +261,24 @@ console.log(moment(
      "YYYY-MM-DD" ,true).isValid());
 ```
 
-### Detecting invalid/valid dates
+### Detecting Invalid/Valid Dates
 Here is an example of [detecting invalid/valid dates](https://www.fwait.com/how-to-validate-date-in-javascript/)
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-detect-invalid?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<br><br>
 
-### Correcting invalid dates
+### Correcting Invalid Dates
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-correct-invalid?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<br><br>
 
-### Commonly used flags for invalid date
+### Commonly Used Flags for Invalid Date
 -   **Overflow:** used when dates have an overflow example. Using the 13th month, 32nd day, 367th day of the year, or 29th day in the month of February in a leap year is invalid and is considered as an overflow moment.
 -   **invalidMonth:** applies when an invalid month is used. Example jarnuarry, farbruary and MMMMM are invalid dates.
 -   **empty:** input date contains nothing i.e. `moment()`.
 -   **nullput:** applies to a null moment input `moment(null);`.
 -   **invalidFormat:** set when the list of formats is empty. `moment(12-07-2020,[]);`
 
-### Moment date durations
-Moment offers [duration objects](https://momentjs.com/docs/#/durations/). Durations have no defined beginning and end date, they are defined as a length of time taken in a moment. Creating a duration moment is simple, call a `moment.duration()` with the time length as the argument.
+### Moment.js Date Durations
+Moment.js offers [duration objects](https://momentjs.com/docs/#/durations/). Durations have no defined beginning and end date, they are defined as a length of time taken in a moment. Creating a duration moment is simple, call a `moment.duration()` with the time length as the argument.
 
 ```js
 const moment = require('moment');
@@ -281,7 +286,7 @@ const myduration =  moment.duration(10);
 console.log(myduration);
 ```
 
-By default, moment will return duration in milliseconds, however you can parse any unit of measurement of choice as the second argument.
+By default, Moment.js will return duration in milliseconds, however you can parse any unit of measurement of choice as the second argument.
 
 ```js
 const moment = require('moment');
@@ -307,7 +312,7 @@ const myduration = moment.duration({
 
 **Examples**
 
-Eg1: [Creating a duration clone](https://momentjs.com/docs/#/durations/clone/) (mutable durations) allows you to get a snapshot of time as some points.
+Example 1: [Creating a duration clone](https://momentjs.com/docs/#/durations/clone/) (mutable durations) allows you to get a snapshot of time as some points.
 
 ```js
 const moment = require('moment');
@@ -318,13 +323,13 @@ console.log(duration1.asMilliseconds() !== duration2.asMilliseconds());
 console.log(duration2);
 ```
 
-Eg2: [Humanize](https://momentjs.com/docs/#/durations/humanize/) is used to the display length of time with duration suffix. Humanize returns a string that describes a duration.
+Example 2: [Humanize](https://momentjs.com/docs/#/durations/humanize/) is used to the display length of time with duration suffix. Humanize returns a string that describes a duration.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-durations?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 [Humanize](https://momentjs.com/docs/#/durations/humanize/) calculates the unit of time parsed and if the unit exceeds the next unit, the next unit will be returned.
 
-I.e. 24 hours will return as a day since one day is equivalent to 24 hours. However, if you only need the specified unit to be returned a second argument (UNIT) is parsed.
+Note: 24 hours will return as a day since one day is equivalent to 24 hours. However, if you only need the specified unit to be returned a second argument (UNIT) is parsed.
 
 **Example**
 
@@ -333,12 +338,12 @@ const moment = require('moment');
 console.log(moment.duration(27, "hours").asHours());
 ```
 
-### Date queries
-[Moment date queries](https://momentjs.com/docs/#/query/) provide comparison methods such as `isBefore()`, `isAfter()`, `isSame()`, `isBetween()` and `isLeapYear()`. These methods return a Boolean value from the moments comparisons used. If a Moment is not defined, it will return the current time as the default moment.
+### Date Queries
+[Moment.js date queries](https://momentjs.com/docs/#/query/) provide comparison methods such as `isBefore()`, `isAfter()`, `isSame()`, `isBetween()` and `isLeapYear()`. These methods return a Boolean value from the moments comparisons used. If a moment is not defined, it will return the current time as the default moment.
 
 **Examples**
 
-Eg1: check if a moment [is before](https://momentjs.com/docs/#/query/is-before/) other moments.
+Example 1: check if a moment [is before](https://momentjs.com/docs/#/query/is-before/) other moments.
 
 ```js
 const moment = require('moment');
@@ -346,14 +351,15 @@ console.log(moment('2020-08-12').isBefore('2020-09-20'));
 console.log(moment('2020-08-12').isBefore('2020-07-11'));
 ```
 
-Eg2 check if a moment [is same as](https://momentjs.com/docs/#/query/is-same/) another moment.
+Example 2: check if a moment [is same as](https://momentjs.com/docs/#/query/is-same/) another moment.
 
 ```js
 const moment = require('moment');
 console.log(moment('2020-08-12').isSame('2020-08-12'));
 console.log(moment('2020-08-12').isSame('2020-07-11'));
 ```
-Eg3 check if a moment [is between](https://momentjs.com/docs/#/query/is-between/) other moments.
+
+Example 3: check if a moment [is between](https://momentjs.com/docs/#/query/is-between/) other moments.
 
 ```js
 const moment = require('moment');
@@ -364,7 +370,7 @@ console.log(moment('2020-08-20').isBetween('2020-08-20', '2020-08-20', undefined
 //moment(undefined) evaluates as moment() and returns the current moment
 ```
 
-Moment comparisons take a second argument such as
+Moment.js comparisons take a second argument such as
 
 -   Parsing year will check year
 -   Parsing month will check month
@@ -375,18 +381,19 @@ Moment comparisons take a second argument such as
 **Example**
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-querries?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<br><br>
 
-### Moment time zone
-Moment supports [time zone data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). To use [moment time zone](https://momentjscom.readthedocs.io/en/latest/moment-timezone/01-using-timezones/00-intro/) you need `moment@2.9.0` or higher. To get started with moment time zone, `npm install moment-timezone`. `moment.tz` constructor is used to taking all the arguments as moment constructors and take `tz` argument as time zone identifier.
+### Moment.js Time Zone
+Moment.js supports [time zone data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). To use [moment time zone](https://momentjscom.readthedocs.io/en/latest/moment-timezone/01-using-timezones/00-intro/) you need `moment@2.9.0` or higher. To get started with moment time zone, `npm install moment-timezone`. `moment.tz` constructor is used to taking all the arguments as moment constructors and take `tz` argument as time zone identifier.
 
-Eg 1 simple moment-timezone.
+Example 1: simple moment-timezone.
 
 ```js
 const moment = require('moment-timezone');
 //console.log current time in Los_Angeles America
 console.log(moment().tz("America/Los_Angeles").format());
 ```
-Eg 2 timezone moment-timezone identifier.
+Example 2: timezone moment-timezone identifier.
 
 ```js
 const moment = require('moment-timezone');
@@ -399,7 +406,7 @@ console.log(b.format());
 console.log(c.format());
 ```
 
-Eg3 moment-timezone with array, strings and object with no offset.
+Example 3: moment-timezone with array, strings and object with no offset.
 
 ```js
 const moment = require('moment-timezone');
@@ -419,7 +426,7 @@ console.log(moment.tz(str, "America/Toronto").format());
 console.log(moment.tz(obj, "America/Toronto").format());
 ```
 
-Moment time zones are bundled with [webpacks](https://momentjscom.readthedocs.io/en/latest/moment-timezone/00-use-it/04-webpack/) to remove unwanted data and leaves only zone and date range data.
+Moment.js time zones are bundled with [webpacks](https://momentjscom.readthedocs.io/en/latest/moment-timezone/00-use-it/04-webpack/) to remove unwanted data and leaves only zone and date range data.
 
 [`moment-timezone-data-webpack-plugin`](https://momentjs.com/docs/#/use-it/webpack/) helps bundle timezone data to a minimal possible size to around 900 KBs and can be significantly reduced to between [1MB to 35KBs minified plus gzipped](https://github.com/gilmoreorless/moment-timezone-data-webpack-plugin).
 
@@ -446,7 +453,7 @@ module.exports = {
 
 [*Webpack Code Source*](https://momentjscom.readthedocs.io/en/latest/moment-timezone/00-use-it/04-webpack/)
 
-Moment has two time zones instances
+Moment.js has two time zones instances
 1. `moment.tz(..., String)` parses date in a given timezone.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-timezone1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
@@ -459,9 +466,9 @@ The above moments will have different UTC time because they were created in diff
 
 The above moments will have the same UTC time because they were created in the same time zones (default time zone). This moment creates a `moment.utc('2020-08-10 10:50)` as a UTC object and then changes its time to specified (default) time zone
 
-### Moment.js
+### Moment.js Language Support
 Moment.js offers [international language support](https://momentjs.com/docs/#/i18n/loading-into-nodejs/)
-When it comes to [multiple languages support](https://momentjscom.readthedocs.io/en/latest/moment/06-i18n/00-intro/) on date objects, moment is great.
+When it comes to [multiple languages support](https://momentjscom.readthedocs.io/en/latest/moment/06-i18n/00-intro/) on date objects, Moment.js is great.
 
 By default, `moment.locale` uses the [English language](https://momentjscom.readthedocs.io/en/latest/moment-timezone/01-using-timezones/05-default-timezone/) (United States) strings to return a moment objects with [i18n](https://momentjs.com/docs/#/i18n/).
 
@@ -486,46 +493,47 @@ moment.locale('en-my-settings', {
 
 ### Using French as a moment locale in Node.js
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-locale?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<br><br>
 
 #### Date-fns Modern date utility library (a light-weight date library)
-[Date-fns is a modern date library](https://date-fns.org/) with a collection of functions that allows JavaScript developers to work with date values. Unlike moment, which is object oriented, date-fns is divided into many small and independent functions. Date-fns allows you to import functions, only those that you need, unlike moment where you create a moment instance to run functions from it.
+[Date-fns is a modern date library](https://date-fns.org/) with a collection of functions that allows JavaScript developers to work with date values. Unlike Moment.js, which is object oriented, date-fns is divided into many small and independent functions. Date-fns allows you to import functions, only those that you need, unlike Moment.js where you create a moment instance to run functions from it.
 
-The big difference between date-fns and moment is its mutability and size. Moment package size is huge when compared to that of date-fns. This is because moment will load all functions when you create a moment instance while date-fns will only load the functions that you really need.
+The big difference between date-fns and Moment.js is its mutability and size. Moment.js package size is huge when compared to that of date-fns. This is because moment will load all functions when you create a moment instance while date-fns will only load the functions that you really need.
 
-However, when it comes to backend applications with Node.js, the package size does not matter that much, its not a big concern, you can use moment just like date-fns. But if you are using a backend browser, the package size will be very important. Moment size can still be optimized to [reduce its bundle size to less than 22KBs.](https://github.com/jmblog/how-to-optimize-momentjs-with-webpack) .
+However, when it comes to backend applications with Node.js, the package size does not matter that much, its not a big concern, you can use Moment.js just like date-fns. But if you are using a backend browser, the package size will be very important. Moment.js size can still be optimized to [reduce its bundle size to less than 22KBs.](https://github.com/jmblog/how-to-optimize-momentjs-with-webpack) .
 
-Moment is mutable while date-fns is immutable. Moment keeps changing its own date while date-fns always returns a new Date instance.
+Moment.js is mutable while date-fns is immutable; Moment.js keeps changing its own date while date-fns always returns a new Date instance.
 
-#### Statistical differences
--   Size
-![packages bundle size](/engineering-education/node-date-and-time-objects-with-moment/size.png)
-
+#### Statistical Differences
+- Size   
+![packages bundle size](/engineering-education/nodejs-date-and-time-objects-with-moment/size.png)
+<br>
 *[Image source](https://medium.com/@k2u4yt/momentjs-vs-date-fns-6bddc7bfa21e#:~:text=One%20of%20the%20biggest%20difference,momentjs%20change%20its%20own%20state.)*
 
 -   NPM download stats
-![npm download stats](/engineering-education/node-date-and-time-objects-with-moment/npm-download-insights.png)
-
+![npm download stats](/engineering-education/nodejs-date-and-time-objects-with-moment/npm-download-insights.png)
+<br>
 *[Image source](https://nodejs.libhunt.com/compare-moment-vs-date-fns)*
 
 -   GitHub stats
-![github stats](/engineering-education/node-date-and-time-objects-with-moment/github-stats.png)
-
+![github stats](/engineering-education/nodejs-date-and-time-objects-with-moment/github-stats.png)
+<br>
 *[Image source](https://www.npmtrends.com/date-fns-vs-moment)*
 
 -   Popularity and activity
-![popularity and activity](/engineering-education/node-date-and-time-objects-with-moment/popularity-and-activity.png)
-
+![popularity and activity](/engineering-education/nodejs-date-and-time-objects-with-moment/popularity-and-activity.png)
+<br>
 *[Image source](https://www.npmtrends.com/date-fns-vs-moment)*
 
-Object-oriented moment and Function date-fns are both awesome date libraries. The choice depends on your personal taste. They both achieve date object with ease, more than what Native JavaScript date object can offer.
+Object-oriented Moment.js and Function date-fns are both awesome date libraries. The choice depends on your personal taste. They both achieve date object with ease, more than what native JavaScript date object can offer.
 
 ### Conclusion
-Moment is the most popular date library out there, it simplifies your work with great results for client-side date manipulations and validations while parsing and displaying dates that are human-readable with the timezone of your choice as well as favoring your locale.
+Moment.js is the most popular date library out there, it simplifies your work with great results for client-side date manipulations and validations while parsing and displaying dates that are human-readable with the timezone of your choice as well as favoring your locale.
 
-What makes moment even more popular, is its [extensive, available, and useful plugins](http://momentjs.com/docs/#/plugins/) that will simplify your specific needs to deal with dates. This article demonstrates how great moment libraries in a small nutshell. It explains only a small part of this library and gives you a taste of the moment application scope. Check [moment official docs](http://momentjs.com/docs/) for more.
+What makes Moment.js even more popular, is its [extensive, available, and useful plugins](http://momentjs.com/docs/#/plugins/) that will simplify your specific needs to deal with dates. This article explains only a small part of this library and gives you a taste of the Moment.js application scope. Check [Moment.js official docs](http://momentjs.com/docs/) for more.
 
 ### Resources
--   [Moment.js official documentaion](https://momentjs.com/docs/)
+-   [Moment.js official documentation](https://momentjs.com/docs/)
 -   [Moment.js Github repository](https://github.com/moment/moment)
 -   [Moment.js npm](https://www.npmjs.com/package/moment)
 -   [Moment.js official website](https://momentjs.com/)
