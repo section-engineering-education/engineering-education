@@ -136,8 +136,8 @@ Compares two dates other than now with the parameters of actual moments.
 const moment = require('moment');
 const a = moment([2020, 4, 12]);
 const b = moment([2020, 8, 13]);
-const timex =  a.from(b)
-console.log(timex)
+const c =  a.from(b)
+console.log(c)
 ```
 
 [**Time to now**](https://momentjs.com/docs/#/displaying/tonow/)
@@ -146,8 +146,8 @@ Similar to `fromNow()`, but `toNow()` gives you the opposite intervals with the 
 
 ```js
 const moment = require('moment');
-const a = moment([2020, 0, 29]).toNow();
-const b = moment([2020, 0, 29]).toNow(true);// remove prefix "in"
+const a = moment([2020, 7, 29]).toNow();
+const b = moment([2020, 8, 29]).toNow(true);// remove prefix "in"
 console.log(a)
 console.log(b)
 ```
