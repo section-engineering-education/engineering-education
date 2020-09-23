@@ -23,7 +23,7 @@ Date is one of the crucial development functions that developers come across in 
 [Moment](https://momentjs.com/) is a free to use tool that helps you tackle date and time problems. To [use Moment](https://momentjs.com/docs/#/use-it/) with Node.js, install the module using the command `npm install moment`. Then simply use `require ()` in your application as in the following example:
 
 ```js
-var moment = require(moment);
+const moment = require('moment');
 ```
 
 Moment also run on browsers. It creates a global moment object, which is used to access date with `<script>` tag.
@@ -54,7 +54,7 @@ moment().format("ddd, hA"); // "Sat, 10AM"
 moment().format("[Today is] dddd"); // "Today is Saturday"
 ```
 
-Moment [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) \ represent date tokens. Common Moment token format representations are:
+Moment [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) represents date tokens. The common Moment token format representations are:
 
 **Month**
 - M - 1, 2, 3, 4 …10, 11 and 12
@@ -74,8 +74,8 @@ Moment [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#D
 - DDDD – 001, 002, 003, 004...362, 363, 364 and 365
 
 **Day of week**
-- d – 01, 02, 04, 04, 0 06 07
-- do - 0st ,1st, 2nd, 3rd, 4th, 5th, 6th and 7th
+- d – 00, 01, 02, 03, 04, 05 and 06 
+- do - 0st ,1st, 2nd, 3rd, 4th, 5th and 6th
 - dd – Su, Mo, Tu, We, Th, Fr, and Sa
 - ddd – Sun, ,Mon, Tue, Wed, Thu, Fri and Sat
 - dddd – Sunday, Monday, Tuesday, Wednesday, Thursday, Friday and Saturday
@@ -84,15 +84,17 @@ Moment [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#D
 - YY - …17, 18, 19, 20, 21, 22 and 23...
 - YYYY- …2017, 2018, 2019, 2020, 2021, 2022 and 2023....
 
-**Hour**
+**Hour(23 hrs)**
 - H – 0, 1, 2, 3, 4 … 19, 20, 21, 22 and 23
 - HH – 00, 01, 02, 03, 04... 19, 20, 21, 22 and 23
-- h – 1, 2, 3, 4 … 19, 20, 21, 22 and 23
-- hh – 01, 02, 03, 04... 19, 20, 21, 22 and 23
+
+**Hour (12 hrs)**
+- h – 1, 2, 3, 4 … 10, 11 and 12
+- hh – 01, 02, 03, 04... 10, 11 and 12
 
 **Minute**
-- M - 0, 1, 2, 4... 54, 55, 55, 57, 58 and 59
-- Mm - 00, 01, 02, 04... 54, 55, 56, 57, 58 and 59
+- m - 0, 1, 2, 4... 54, 55, 55, 57, 58 and 59
+- mm - 00, 01, 02, 04... 54, 55, 56, 57, 58 and 59
 
 **Second**
 - s – 0, 1, 2, 3, 4 … 54, 55, 56, 57, 58 and 59
@@ -107,11 +109,11 @@ Moment helps you format dates that exist between two dates such as:
 
 [**Time from now**](https://momentjs.com/docs/#/displaying/fromnow/)
 
-Commonly known as time ago. `fromnow()` handles relative dates and display date with the suffix "ago". This will display the time that has elapsed since the beginning of the date parsed.
+Commonly known as time ago. `fromNow()` handles relative dates and display date with the suffix "ago". This will display the time that has elapsed since the beginning of the date parsed.
 
 ```js
 const moment = require('moment');
-//moment('2020.01.01', 'YYYY.MM.DD').fromNow();
+//Calculate time since October 9, 2020
 const timeago = moment([2020, 9, 10]).fromNow();
 console.log(timeago);
 ```
@@ -120,7 +122,7 @@ To eliminate the suffix parse a Boolean value `true` to the `fromNow()` function
 
 ```js
 const moment = require('moment');
-//moment('2020.01.01', 'YYYY.MM.DD').fromNow();
+//Calculate time since October 9, 2020
 const timeago = moment([2020, 9, 10]).fromNow(true);
 console.log(timeago+
 " years from now")  ;
@@ -132,8 +134,8 @@ Compares two dates other than now with the parameters of actual moments.
 
 ```js
 const moment = require('moment');
-var a = moment([2020, 4, 12]);
-var b = moment([2020, 8, 13]);
+const a = moment([2020, 4, 12]);
+const b = moment([2020, 8, 13]);
 const timex =  a.from(b)
 console.log(timex)
 ```
@@ -144,9 +146,10 @@ Similar to `fromNow()`, but `toNow()` gives you the opposite intervals with the 
 
 ```js
 const moment = require('moment');
-const timetonow = moment([2020, 0, 29]).toNow();
-const timetonow1= moment([2020, 0, 29]).toNow(true);// remove prefix "in"
-console.log(timetonow,timetonow1)
+const a = moment([2020, 0, 29]).toNow();
+const b = moment([2020, 0, 29]).toNow(true);// remove prefix "in"
+console.log(a)
+console.log(b)
 ```
 
 [**Time to x**](https://momentjs.com/docs/#/displaying/to/)
@@ -155,10 +158,10 @@ Displays dates other than now.
 
 ```js
 const moment = require('moment');
- const m1 = moment([2020, 4, 12]);
- const m2 = moment([2020, 8, 13]);
- const timex = m1.to(m2)
- console.log(timex)
+ const a = moment([2020, 4, 12]);
+ const a = moment([2020, 8, 13]);
+ const c = a.to(b)
+ console.log(c)
 ```
 
 #### Date manipulating
@@ -191,8 +194,8 @@ moment().add(7, 'd');
 ```js
  const moment = require('moment');
  //add 7 days from now
- const add = moment().add(7, 'days');
- console.log(add)
+ const sum = moment().add(7, 'days');
+ console.log(sum)
 ```
 
 This example will return moment date object; you can format the date to be more readable.
@@ -230,7 +233,7 @@ As a developer, it is annoying to return a date and it ends up being [invalid](h
 
 If you provide instructions to the user, i.e. input a specific date format such as y,m,d, there are high chances that some users will tend to ignore these instructions and they could provide dates will different formats.
 
-As a developer, it is your job to get the [invalid date format](https://momentjs.com/docs/#/utilities/invalid/) and validate them to the required format. Moment is a tool that will help you solve such circumstances. Moment uses `isvalid()` method, which will return true if the date is valid and false if the date is invalid.
+As a developer, it is your job to get the [invalid date format](https://momentjs.com/docs/#/utilities/invalid/) and validate them to the required format. Moment is a tool that will help you solve such circumstances. Moment uses `isValid()` method, which will return true if the date is valid and false if the date is invalid.
 
 ```js
 const moment = require('moment');
@@ -274,25 +277,24 @@ Here is an example on [detecting invalid/valid dates](https://www.fwait.com/how-
 Moment offers [duration objects](https://momentjs.com/docs/#/durations/). Durations have no defined beginning and end date, they are defined as a length of time taken in a moment. Creating a duration moment is simple, call a `moment.duration()` with the time length as the argument.
 
 ```js
-var moment = require('moment');
-var myduration =  moment.duration(10);
+const moment = require('moment');
+const myduration =  moment.duration(10);
 console.log(myduration);
 ```
 
-By default moment, return duration in milliseconds, however you can pass your favorite unit of measurement as the second argument
+By default, moment will return duration in milliseconds, however you can parse unit of measurement 0f your choice as the second argument
 
 ```js
-var moment = require('moment');
-var myduration =  moment.duration(10, 'seconds');
+const moment = require('moment');
+const myduration =  moment.duration(10, 'seconds');
 console.log(myduration);
 ```
 
 Alternatively, parse the object of values with many units of measurement
 
 ```js
-//const { months } = require('moment');
-var moment = require('moment');
-var myduration = moment.duration({
+const moment = require('moment');
+const myduration = moment.duration({
   milliseconds:'29',
   seconds: '29',
   minutes: '29',
@@ -309,9 +311,9 @@ var myduration = moment.duration({
 Eg1: [Creating a duration clone](https://momentjs.com/docs/#/durations/clone/) (mutable durations) allows you to get a snapshot of time as some points
 
 ```js
-var moment = require('moment');
-var duration1 = moment.duration();
-var duration2 = duration1.clone();
+const moment = require('moment');
+const duration1 = moment.duration();
+const duration2 = duration1.clone();
 console.log(duration1.add(1, 'second'));
 console.log(duration1.asMilliseconds() !== duration2.asMilliseconds());
 console.log(duration2);
@@ -328,7 +330,7 @@ I.e. 24 hours will return as day since one day is equivalent to 24 hours. The le
 **Example**
 
 ```js
-var moment = require('moment');
+const moment = require('moment');
 console.log(moment.duration(27, "hours").asHours());
 ```
 ### Date queries
@@ -339,7 +341,7 @@ console.log(moment.duration(27, "hours").asHours());
 Eg1: check if a moment [is before](https://momentjs.com/docs/#/query/is-before/) other moments.
 
 ```js
-var moment = require('moment');
+const moment = require('moment');
 console.log(moment('2020-08-12').isBefore('2020-09-20'));
 console.log(moment('2020-08-12').isBefore('2020-07-11'));
 ```
@@ -347,14 +349,14 @@ console.log(moment('2020-08-12').isBefore('2020-07-11'));
 Eg2 check if a moment [is same to](https://momentjs.com/docs/#/query/is-same/) another moment.
 
 ```js
-var moment = require('moment');
+const moment = require('moment');
 console.log(moment('2020-08-12').isSame('2020-08-12'));
 console.log(moment('2020-08-12').isSame('2020-07-11'));
 ```
 Eg3 check if a moment [is between](https://momentjs.com/docs/#/query/is-between/) other moments.
 
 ```js
-var moment = require('moment');
+const moment = require('moment');
 console.log(moment('2020-08-18').isBetween('2020-08-17', '2020-08-25'));
 console.log(moment('2020-08-18').isBetween('2020-08-20', '2020-08-19'));
 console.log(moment('2020-08-18').isBetween('2010-08-17', undefined));
@@ -375,33 +377,33 @@ Moment comparisons take a second argument such as
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-querries?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### Moment time zone
-Moment supports [time zone data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). To use [moment time zone](https://momentjscom.readthedocs.io/en/latest/moment-timezone/01-using-timezones/00-intro/) you need `moment@2.9.0` plus. To get started with moment time zone, `npm install moment-timezone`. `moment.tz` constructor is used to take all the arguments as moment constructors and take `tz` argument as time zone identifier.
+Moment supports [time zone data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). To use [moment time zone](https://momentjscom.readthedocs.io/en/latest/moment-timezone/01-using-timezones/00-intro/) you need `moment@2.9.0` or higher. To get started with moment time zone, `npm install moment-timezone`. `moment.tz` constructor is used to take all the arguments as moment constructors and take `tz` argument as time zone identifier.
 
 Eg 1 simple moment-timezone.
 
 ```js
-var moment = require('moment-timezone');
-//console.log(matchZones);
+const moment = require('moment-timezone');
+//console.log current time in Los_Angeles America
 console.log(moment().tz("America/Los_Angeles").format());
 ```
 eg 2 timezone moment-timezone identifier.
 
 ```js
-var moment = require('moment-timezone');
-var m1 = moment.tz("2019-11-18 11:55", "Africa/Cairo");
-var m2 = moment.tz("September 23rd 2020 10pm", "MMM Do YYYY hA", "Africa/Cairo");
-var m3 = moment.tz(1592398714100, "Africa/Cairo");
-console.log(m1.format());
-console.log(m2.format());
-console.log(m3.format());
-//console.log (moment().tz("Africa/Cairo").format());
+const moment = require('moment-timezone');
+const a = moment.tz("2019-11-18 11:55", "Africa/Cairo");
+const b = moment.tz("September 23rd 2020 10pm", "MMM Do YYYY hA", "Africa/Cairo");
+const c = moment.tz(1592398714100, "Africa/Cairo");
+//console.log current time in Cairo Africa with diffrent fromats
+console.log(a.format());
+console.log(b.format());
+console.log(c.format());
 ```
 
 Eg3 moment-timezone with array, strings and object with no offset.
 
 ```js
-var moment = require('moment-timezone');
-var arr = [2020, 4, 8],
+const moment = require('moment-timezone');
+const arr = [2020, 4, 8],
   str = "2020-08-07",
   obj = {
     year: 2020,
