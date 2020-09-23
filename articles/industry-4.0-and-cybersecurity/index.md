@@ -135,7 +135,7 @@ System downtime and unavailability is also a consequence. This ends up being ext
 
 For more detailed information on what a Denial of Service attack is, feel free to [read this article](/engineering-education/denial-of-service/).
 
-#### Enterprise Cyber-Espionage, Confidential Information, and Intellectual Property
+#### Enterprise Cyber-Espionage
 In this competitive industrial landscape, there is incentive in acquiring key information about the competitor. Thanks to the interconnected nature of the Industry 4.0 systems, various competitors may interact and collaborate to achieve various production goals. Increased interconnection of physical systems, and the vast nature of these networks means data is widespread across these systems, proving that there are even more points of attack and access confidential information. For example, attackers may eavesdrop, through executing a [Man-In-The-Middle attack](/engineering-education/man-in-the-middle-attack/).
 
 Furthermore, the evolution of cybercrime has bred increasingly organized groups of cyber criminals who find an incentive in targeting various industries and accessing critical information and intellectual property. Solutions to these increasingly common fears and problems should be geared towards guaranteeing transparency and trust across these platforms, systems, and networks.
