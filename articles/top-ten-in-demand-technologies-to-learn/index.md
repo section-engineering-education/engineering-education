@@ -63,3 +63,6 @@ Big Data refers to large amounts of data used to reveal patterns, trends, insigh
 
 ### 10. Edge Computing
 Edge Computing is a technology that brings computation and data storage closer to end users or devices. Bringing computation at the edge of the network gives faster insights, lowers latency and, [saves on bandwidth](https://www.ibm.com/cloud/what-is-edge-computing).
+
+### Conclusion
+Although the technology industry is evolving at a tremendous rate, the IT industry is very competitive and getting a job tough. Keeping your self updated with current market trends and skills offer a promising career and future. If you continue learning more technologies and new tools, you acquire more skills. Chances to grab your dream job also increases. All ten technologies are suffering from a shortage of skilled workers. Its time to choose one technology, get trained and earn skills to solve real-world problems.
