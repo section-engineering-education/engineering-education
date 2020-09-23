@@ -157,10 +157,10 @@ Displays dates other than now.
 
 ```js
 const moment = require('moment');
- const a = moment([2020, 4, 12]);
- const b = moment([2020, 8, 13]);
- const c = a.to(b)
- console.log(c)
+const a = moment([2020, 4, 12]);
+const b = moment([2020, 8, 13]);
+const c = a.to(b)
+console.log(c)
 ```
 
 #### Date manipulating
