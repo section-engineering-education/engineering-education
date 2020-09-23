@@ -185,13 +185,14 @@ moment().add(7, 'y');
 moment().add(7, 'M');
 moment().add(7, 'd');
 ```
-Check out more [shorthand keys](https://momentjs.com/docs/#/manipulating/add/)😉
+Check out more [shorthand keys](https://momentjs.com/docs/#/manipulating/add/)
+
 **Example**
 
 ```js
  const moment = require('moment');
  //add 7 days from now
- const sum = moment().add(7, 'days');
+ const sum = moment().add(7, 'd');
  console.log(sum)
 ```
 
