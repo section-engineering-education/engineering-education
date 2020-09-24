@@ -16,6 +16,8 @@ images:
 
 Node.js is a popular server-side language that is used by millions of developers worldwide. While building Node.js projects, we use various packages that make development easier. All of these packages are managed by the Node Package Manager.
 
+To learn more about Node.js, check out [this](/engineering-education/history-of-nodejs/) amazing article about Node.js by [Section.io](https://section.io) contributor, [Jethro Magaji](/engineering-education/authors/jethro-magaji/).
+
 <!--more-->
 
 ### Table of Contents
@@ -29,13 +31,12 @@ Node.js is a popular server-side language that is used by millions of developers
 
 ### Introduction
 
-A package manager is a software that manages versions, packages and dependencies for your project. When a project grows in scale, a package manager helps to manage dependencies. It works perfectly across versions and even in collaborative projects. It cuts costs by reducing dependency problems across developer teams.
+A package manager is software that manages versions, packages and dependencies for your project. When a project grows in scale, a package manager helps to manage dependencies. It works perfectly across versions and even in collaborative projects. It cuts costs by reducing dependency problems across developer teams.
 
-To install Node.js packages, we use the [NPM registry](https://www.npmjs.com/), which is a centralized repository of packages. In this article we will learn how to create a Node.js package and deploy it on the NPM registry for public use.
+To install Node.js packages, we use the [NPM registry](https://www.npmjs.com/), which is a centralized repository of packages. In this article, we will learn how to create a Node.js package and deploy it on the NPM registry for public use.
 
 For more background on Node.js and various related technologies, check out some amazing [Section.io](https://www.section.io/) articles below:
 
-- [History of Node.js](/engineering-education/history-of-nodejs/)
 - [Most Useful Node.js Packages](/engineering-education/most-useful-nodejs-packages/)
 - [Building a Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
 - [Linting in Node.js using ESLint](/engineering-education/node-eslint/)
@@ -43,7 +44,7 @@ For more background on Node.js and various related technologies, check out some 
 
 ### Create an NPM Account
 
-To start up, let us create an NPM account.
+To start up, let's create an NPM account.
 
 - Go to the [npmjs website](https://www.npmjs.com/) and click on the **sign up** button.
 
@@ -53,13 +54,13 @@ To start up, let us create an NPM account.
 
 ![Create NPM Account](/engineering-education/npm-packages/npm-signup.png)
 
-- Now, you have to verify your account. Check your email ID that you provided and click on the verification email. This will verify your npm account.
+- Now, you have to verify your account. Check the inbox of the email address that you provided and click on the verification email. This will verify your npm account.
 
 - You have successfully created an NPM account, and can start publishing packages.
 
 - You need to sign in to your npm account in your console to start publishing packages.
 
-- To do this, open a new folder and start your terminal. Enter the command,
+- To do this, open a new folder and start your terminal. Enter the command:
 
 ```bash
 npm login
@@ -75,7 +76,7 @@ npm login
 
 - Every package published to the NPM registry should have a **`package.json`** file. Let us start by initializing a project.json file.
 
-- The minimum requirements of a `package.json` file is a name and a version. Let us enter those information into the file.
+- The minimum requirements of a `package.json` file is a name and a version. Let's enter those information into the file.
 
 ```json
 {
@@ -84,11 +85,13 @@ npm login
 }
 ```
 
-- In our sample NPM package, we are going to use the axios package for making API calls. Install it by using this command
+- In our sample NPM package, we are going to use the axios package for making API calls. Install it by using this command:
 
 ```bash
 npm i axios
 ```
+
+_Note: To learn more about Axios, check out its NPM package page [here](https://www.npmjs.com/package/axios)._
 
 - We'll be using the [clist API](https://clist.by/) that returns a list of contests like hackathons, programming contests, etc..,
 
@@ -127,7 +130,7 @@ Now that we've programmed the package, it's time to deploy it.
 
 ### Deployment
 
-- To deploy the package, enter the command,
+- To deploy the package, enter the command:
 
 ```bash
 npm publish
@@ -141,7 +144,7 @@ npm publish
 
 - Let us install and test our package.
 
-- Open a new folder and initialize a **`package.json`** by using the command,
+- Open a new folder and initialize a **`package.json`** by using the command:
 
 ```bash
 npm init -y
@@ -170,13 +173,13 @@ clist()
   });
 ```
 
-- Run this file by using the command,
+- Run this file by using the command:
 
 ```bash
 node index.js
 ```
 
-- The contest data from our NPM package would be printed out on the console. We can do various other things using the retrieved data.
+- The contest data from our NPM package would be printed out on the console. The retrieved data can be used to dynamically render elements on our front-end, store them in a database or process the data further. The possibilities are endless.
 
 ![Result](/engineering-education/npm-packages/result.png)
 
