@@ -7,7 +7,7 @@ Date-fns is a lightweight 🚀 date library that provides comprehensive function
 ### Why Date-fns ⚡
 - **Immutable and pure** - date-fns has pure built-in functions that return a new date instance rather than modifying the parsed date. This helps to reduce and to prevent bugs
 - **Native Date** - date-fns uses existing native JavaScript date API
-- **Modular** - you pick what you need, date-fns only import the function you need rather than the whole API functions pack with modern. It works well with module buddlers such as [webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/guide/en/) and [Browserify](http://browserify.org/) and supports tree shaking algorithm 
+- **Modular** - you pick what you need, date-fns only import the function you need rather than the whole API functions pack. It works well with module bundlers such as [webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/guide/en/) and [Browserify](http://browserify.org/) and supports tree-shaking algorithm 
 - **Fast** - date-fns is a small API that is very light, thus guarantees users' the best experience
 - **Documentation** - what is better without good Docs? Date-fns has well-outlined documentation which very clear and simple to follow along with example use-cases (code snippets) for every date function
 - **I18n** - perhaps you want to display dates with your users' favorite locale. Date-fns have a dozen locales to work with whenever you need them
@@ -17,7 +17,7 @@ Date-fns is a lightweight 🚀 date library that provides comprehensive function
 
 ### Getting Started with Date-fns
 
-Date-fns is available in the [npm packages collection](https://www.npmjs.com/package/date-fns). And if then you have [Node.js installed](http://nodejs.org/), install date-fns using the following command `npm install date-fns`. Alternatively, if you are using yarn `yarn add date-fns` will get you strated. Date-fns can be used with both [CommonJS Modules](https://nodejs.org/api/modules.html) and [ES modules](https://nodejs.org/api/esm.html). In this article, we shall dive into CommonJS modules system use case with date instances such as:
+Date-fns is available in the [npm packages collection](https://www.npmjs.com/package/date-fns). And if then you have [Node.js installed](http://nodejs.org/), install date-fns using the following command `npm install date-fns`. Alternatively, if you are using yarn `yarn add date-fns` will get you started. Date-fns can be used with both [CommonJS Modules](https://nodejs.org/api/modules.html) and [ES modules](https://nodejs.org/api/esm.html). In this article, we shall dive into CommonJS module with date instances such as:
 - Displaying dates
 - Date formatting
 - Date locale
@@ -70,7 +70,7 @@ Hour (0-23)
 
 Hour (1-12)
 - h – 1, 2, 3, 4, ..., 11 and 12
-- ho – 1th, 2nd, 3rd, 4th, ..., 11th and 12th
+- ho – 1st, 2nd, 3rd, 4th, ..., 11th and 12th
 - hh – 01, 02, 03, 04, ..., 11 and 12
 
 Minute
@@ -141,7 +141,7 @@ Syntax
 - date - The date to be changed
 - amount - Amount of days to be added
 
-Let's perform simple date [addition](https://date-fns.org/v2.16.1/docs/add). To get started, import the required functions, then add the unit of time to the base date. Specify the operation you want to perform as the first argument followed but the number of units to add. You can include the format function to format the date returned specified.
+Let's perform simple date [addition](https://date-fns.org/v2.16.1/docs/add). To get started, import the required functions, then add the unit of time to the base date. Specify the operation you want to perform as the first argument followed by the number of units to add. You can include the format function to format the date returned specified.
 
 Example:
 
@@ -173,7 +173,7 @@ console.log(format(d, 'dd MMMM yyyy HH:mm'));
 
 ### Date Locale
 
-Users who typically visit your website may come across the different parts of the world, assume they do not speak your native language, so how will you implement specific or multiple locale to engage your users? Well, formatting dates was easy. How about locale? It cannot be that hard with date-fns, it is easy as pie. All you need is to import the locale plugin from date-fns. Date-fns support [I18n](https://date-fns.org/docs/I18n#supported-languages) with a simple way to internationalize date functions and display localized formatted dates. You need to use the `require locale` and pass the optional locales as the argument.
+Users who typically visit your website may come across the different parts of the world, assume they do not speak your native language, so how will you implement specific or multiple locales to engage your users? Well, formatting dates was easy. How about locale? It cannot be that hard with date-fns, it is easy as pie. All you need is to import the locale plugin from date-fns. Date-fns support [I18n](https://date-fns.org/docs/I18n#supported-languages) with a simple way to internationalize date functions and display localized formatted dates. You need to use the `require locale` and pass the optional locales as the argument.
 
 For example, let's have a simple date parsed and returned
  in French Locale.
@@ -194,7 +194,7 @@ console.log(formattedDate);
 
 ### Date Time Zones
 
-Date-fns supports[ time zone data](https://date-fns.org/v2.16.1/docs/Time-Zones) to work with UTC or ISO date strings. This will help you to display the date and time in local time of your users. The difficulty comes when working with another time zone's local time, like showing the local time of an event in LA at 8 pm PST on a Node server in Europe or a user's machine set to EST. In this case, there are two relevant pieces of information:
+Date-fns supports[ time zone data](https://date-fns.org/v2.16.1/docs/Time-Zones) to work with UTC or ISO date strings. This will help you to display the date and time in the local time of your users. The difficulty comes when working with another time zone's local time, like showing the local time of an event in LA at 8 pm PST on a Node server in Europe or a user's machine set to EST. In this case, there are two relevant pieces of information:
 - A fixed moment in time in the form of a timestamp, UTC or ISO date string, and
 - The time zone descriptor, usually an offset or [IANA](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) time zone name (e.g. America/Los_Angeles)
 
@@ -281,7 +281,7 @@ console.log(isBefore(date1, date3));
 
 Checks if the given date is [in the future](https://date-fns.org/v2.16.1/docs/isFuture) in comparison to the date/time now.
 
-**Note:** if the comparing date is the time right now the `isFuture` will return this as false. In such a case, date-fns will interprete the now date as the present time and not a future time.
+**Note:** if the comparing date is the time right now the `isFuture` will return this as false. In such a case, date-fns will interpret the 'now' date as the present time and not a future time.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-isfuture?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -335,7 +335,7 @@ console.log((valid_date2))
 ```
 However, in the above example, you will be surprised to find out the `new Date ('2020, 02, 30')` returns true yet the date itself is obviously invalid. There is no date with a February 30th day. Interestingly, this is not a bug in date-fns. To elaborate this more enter a `new Date ('2020, 02, 30')` on your browser's console (in my case am using google chrome console).
 
-This date instance will be interpreted as `Sun Mar 01 2020 00:00:00 '2020, 02, 30'`. February ends on 29th ( 2020 is a leap year) and the extra day will be added to represent the date of the next month, which indeed will be valid.
+This date instance will be interpreted as `Sun Mar 01, 2020, 00:00:00 '2020, 02, 30'`. February ends on 29th ( 2020 is a leap year) and the extra day will be added to represent the date of the next month, which indeed will be valid.
 To avoid such instances parse the date before checking isValid().
 
 Example:
@@ -385,7 +385,7 @@ Head out to [date-fns docs to check out more interval helpers](https://date-fns.
 
 ### 🎁Comparison Between Moment.js and Date-fns
 
-Moment is a stand-alone open-source JavaScript framework wrapper for date objects that eliminates native JavaScript date objects, which are cumbersome to use. Moment.js makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. Unlike date-fns, its biggest downtime is that its API size is huge.
+Moment.js is a stand-alone open-source JavaScript framework wrapper for date objects that eliminates native JavaScript date objects, which are cumbersome to use. Moment.js makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. Unlike date-fns, its biggest downtime is that its API size is huge.
 
 As we have seen in the above examples, date-fns is a collection of many small and independent functions allowing you to import functions that you only need, unlike Moment.js where you create a moment instance to run functions from it. With Moment.js, there isn't a way to import a specified function. That's means you have to import the whole API chain even when loading a simple date thus creating performance overheads.
 
@@ -449,7 +449,7 @@ Nevertheless, if you love working with MomentJS, its size should not be a big wo
 
 #### Fecha
 
-[Fecha](https://github.com/taylorhakes/fecha) is a lightweight date formatting and parsing (~2KB). Meant to replace the parsing and formatting functionality of moment.js.
+[Fecha](https://github.com/taylorhakes/fecha) is a lightweight date formatting and parsing (~2KB). Meant to replace the parsing and formatting functionality of Moment.js.
 - Size (Min. and Gzipped) 2.1KBs
 - Date Parsing
 - Date Formatting
@@ -470,9 +470,9 @@ Nevertheless, if you love working with MomentJS, its size should not be a big wo
 
 Easy to use Timer/Chronometer/Countdown library compatible with AMD, ES6 and Typescript
 
-[Easytimer.js](https://github.com/hustcc/timeago.js) is a simple library for counting time in five different units: tenth of seconds, seconds, minutes, hours and days. It has interesting features:
-- The refresh interval can be configured in tenth of seconds, seconds, minutes and hours.
-- Dispatches events when timer starts, stops, pauses and when every type of unit changes.
+[Easytimer.js](https://github.com/hustcc/timeago.js) is a simple library for counting time in five different units: a tenth of seconds, seconds, minutes, hours and days. It has interesting features:
+- The refresh interval can be configured in a tenth of seconds, seconds, minutes and hours.
+- Dispatches events when the timer starts, stops, pauses and when every type of unit changes.
 - A custom callback can be defined and it will be executed every timer refresh.
 - Two timer modes: Regular and Countdown.
 - Configurable start and target values.
@@ -480,19 +480,19 @@ Easy to use Timer/Chronometer/Countdown library compatible with AMD, ES6 and Typ
 
 ### Conclusion
 
-Date-fns is a great library that you should put on your checklist if you have a project that needs some date manipulations. It has good support and well maintained. As you may find out in the [date-fns official documentation](https://date-fns.org/), this article is meant to introduce you to some of the common functions to give you a taste of this library's scope. What libraries like Moment.js and date-fns can do, can still be achieved with native JavaScript. However, they makes working with date objects fun and easier with improved code readability.
+Date-fns is a great library that you should put on your checklist if you have a project that needs some date manipulations. It has good support and well maintained. As you may find out in the [date-fns official documentation](https://date-fns.org/), this article is meant to introduce you to some of the common functions to give you a taste of this library's scope. What libraries like Moment.js and date-fns can do, can still be achieved with native JavaScript. However, they make working with date objects fun and easier with improved code readability.
 
 ### Resources
 -  [Date-fns official website](https://date-fns.org/)
--  [Date-fns Github repository](https://github.com/date-fns/date-fns.git)
+-  [Date-fns GitHub repository](https://github.com/date-fns/date-fns.git)
 -  [Date-fns npm](https://npmjs.org/package/date-fns)
--  [Date-fns getting started](https://date-fns.org/docs/Getting-Started)
+-  [Date-fns getting started docs](https://date-fns.org/docs/Getting-Started)
 -  [Date-fns locale](https://date-fns.org/v2.16.1/docs/I18n-Contribution-Guide)
--  [Date-fns time-Zones](https://date-fns.org/v2.16.1/docs/Time-Zones)
+-  [Date-fns time-zones](https://date-fns.org/v2.16.1/docs/Time-Zones)
 -  [Date-fns date-fns-tz](https://github.com/marnusw/date-fns-tz)
 -  [Time zone database data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 -  [ISO 8601 standards](https://en.wikipedia.org/wiki/ISO_8601)
 -  [Unicode data](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)
 -  [Webpack](https://webpack.js.org/)
--  [MomentJS](https://github.com/moment/moment.git)
+-  [Moment.js](https://github.com/moment/moment.git)
 -  [i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
