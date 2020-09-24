@@ -175,6 +175,6 @@ toast.setOnClickListener { showToast() }
 snackbar.setOnClickListener { showSnackbar(parent_view) }
 ```
 
-As you can see from the various examples above, Kotlin extensions make it easier to work with different classes. They help us to write cleaner and better code. It also ensures scalability. When we have organized code we can be able to change various parts, for example, move from `Glide` to `Picasso`. We only need to change the nature of the function and everything in the code changes accordingly 😎. You can go ahead and try them out with other classes like `String`, `Button` and even `Fragment` classes.
+As you can see from the various examples above, Kotlin extensions make it easier to work with different classes. They help us to write cleaner and better code. When we have organized code we can be able to change various parts, for example, move from `Glide` to `Picasso`. We only need to change the nature of the function and everything in the code changes accordingly 😎.  It also ensures scalability. You can go ahead and try them out with other classes like `String`, `Button` and even `Fragment` classes.
 
 Feel free to raise any PR on GitHub or issue. The sample apk for this can be found [here](https://drive.google.com/file/d/1kyY_hm-SSqrYbIqEWJlccRVBobIw_5dv/view?usp=sharing)
