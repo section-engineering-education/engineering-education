@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: event-loop-explained
+url: /engineering-education/event-loop-explained/
 title: The Event Loop Explained
 description: The event loop is not just for JavaScript. It is the standard that defines how a web browser front end works. Understanding the event loop is the first step to creating great web-based software.
 author: nadiv-gold-edelstein

@@ -70,7 +70,9 @@ git remote add section http://github.com/section-io/engineering-education
 
 ### then use this every time before contributing a new article
 git fetch section
+
 git pull --rebase section master
+
 git push origin
 
 Here is a [link](https://www.youtube.com/watch?v=nT8KGYVurIU&t=47s) to a short video further explaining what a **pull request** is and how to **fork** a Github repository.
@@ -82,7 +84,12 @@ Please use on all future articles before submitting a PR (pull request)
 
 http://www.hemingwayapp.com/
 
-Include a short Author Biography and Headshot image to be included at the end of your articles.
+To review your Code Snippets or examples before submitting take full advantage of this free online tool as well, use it to run and compile any code snippets to be include in the article.
+
+https://repl.it/
+
+
+Be sure to include a short Author Biography and Headshot image to be included at the end of your articles. (Only once for 1st time contributors) 
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team.
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: install-a-gui-on-an-ubuntu-server-1804
+url: /engineering-education/install-a-gui-on-an-ubuntu-server-1804/
 title: How to Install a GUI on an Ubuntu Server 18.04 for Easier Remote Management
 description: A tutorial on installing Xfce or LXDE GUIs onto an Ubuntu Server 18.04 Installation for Easier Remote Management - Linux-based Virtual Private Server (VPS) runs off of a command line with no graphical user interface (GUI).
 author: gregory-manley
