@@ -96,9 +96,9 @@ The reasoning behind SVM is to find the hyperplane with the maximum distance fro
 
 The input space is transformed using kernels. SVM kernels are functions that take low-dimensional input space and transform them into higher dimensional space where the data is linearly separable. Some of the kernels commonly used are:
 
-   - Linear Kernel
-   - Polynomial Kernel
-   - Radial Basis Function Kernel
+- Linear Kernel
+- Polynomial Kernel
+- Radial Basis Function Kernel
 
 Let us look at implementing SVM using `sklearn`.
 
