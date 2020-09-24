@@ -30,29 +30,14 @@ Asynchronous coding will allow you to use queues to monitor your workflow, allow
 Take a look at the example below: We used the file read operation in both models [using Node.js file system](https://nodejs.dev/learn/the-nodejs-fs-module)
 
 #### Synchronous
-```js
-var fs = require('fs');
-var content = fs.readFileSync("app.js", "utf8");
-console.log(content);
-console.log('waiting for the file to read.........');
-```
+
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/Synchronous?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ![Synchronous](/engineering-education/performance-optimization-techniques-for-node-js/synchronous.png)
 
 #### Asynchronous
-```js
-//inlude file system module
-var fs = require('fs');
-//readFile() reads the file
-fs.readFile("app.js", "utf8", function (err, content) {
-    if (err) {
-        return console.log(err);
-    }
-    //read the file
-    console.log(content);
-});
-console.log('waiting for the file to read.....');
-```
+
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/Asynchronous?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ![Asynchronous](/engineering-education/performance-optimization-techniques-for-node-js/asynchronous.png)
 
@@ -197,30 +182,7 @@ logger.error("Error message");
 ```
 [**Winston logger with file transport**](https://github.com/winstonjs/winston#multiple-transports-of-the-same-type)
 
-```js
-const winston = require("winston");
-// Logger configuration
-const logConfiguration = {
-  transports: [
-    new winston.transports.Console({
-      level: "verbose",
-    }),
-    new winston.transports.File({
-      level: "error",
-      filename: "./logs/example-3.log",
-    }),
-  ],
-};
-//Create logging configurations
-const logger = winston.createLogger(logConfiguration);
-// Log some messages
-logger.silly("Trace message, Winston!");
-logger.debug("Debug message, Winston!");
-logger.verbose("A bit more info, Winston!");
-logger.info("Hello, Winston!");
-logger.warn("Heads up, Winston!");
-logger.error("Danger, Winston!");
-```
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/winston-logger-with-file-transport?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 #### 2. Morgan
 [Morgan](https://github.com/expressjs/morgan) is an HTTP request logger middleware for Node.js applications. Morgan gives insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) carry out to the access-log or error-log.
@@ -322,27 +284,7 @@ async.parallel(
 ```
 **Using an object instead of an array**
 
-```js
-const async = require("async");
-// an example using an object instead of an array
-async.parallel({
-  task1: function(callback) {
-    setTimeout(function() {
-      console.log('Task One');
-      callback(null, 1);
-    }, 200);
-  },
-  task2: function(callback) {
-    setTimeout(function() {
-      console.log('Task Two');
-      callback(null, 2);
-    }, 100);
-    }
-}, function(err, results) {
-  console.log(results);
-  // results now equals to: {task2: 2, task1: 1}
-});
-```
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/asyncparallel-with-an-object?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### Client-side Rendering
 Powerful MVC/[MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) has contributed to the growth of single-page apps. Frameworks such as [AngularJS](https://angularjs.org/), [Ember](https://emberjs.com/), [Meteor](https://docs.meteor.com/#/full/), and [BackboneJS](https://backbonejs.org/) are examples of current powerful [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) technology for client client-side rendering.
