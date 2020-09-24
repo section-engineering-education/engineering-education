@@ -47,7 +47,7 @@ Manhattan distance takes the absolute distance between two points, whereas Eucli
 
 *[Image Source](https://www.ieee.ma/uaesb/pdf/distances-in-classification.pdf)*
 
-All machine learning algorithms have hyperparameters to deal with. In K-NN, the parameter is `k`. It is initialized to an integer depending on the number of classes in the dataset known apriori to fitting. `k` signifies the number of nearest points the algorithm considers while creating decision boundaries.  
+All machine learning algorithms have hyperparameters to deal with. In K-NN, the parameter is `k`. It is initialized to an integer depending on the number of classes in the dataset known prior to(before) fitting. `k` signifies the number of nearest points the algorithm considers while creating decision boundaries.  
 
 ![knnexample](/engineering-education/supervised-learning-algorithms/knnexample.jpg)
 
@@ -122,7 +122,7 @@ Let us look at implementing SVM using `sklearn`.
    ```
 
 ### Regression
-Regression algorithms are another subset of machine learning algorithms used to predict continuous numeric responses. As seen in an earlier example, predicting house rent given different factors is an example of regression. Let's look at the regression algorithm and use ridge regression as an example.
+Regression algorithms are another subset of machine learning algorithms used to predict continuous numeric responses. As seen in an earlier example, predicting house rent given different factors is an example of regression. Let's look at the regression algorithm and use linear regression as an example.
 
 3. Linear Regression: Linear regression is a simple yet effective method used in a large number of applications. Let us say we have an input feature vector `x`. The output feature vector `y` is the predicted entity. We use the sum of least squares to compute the relation between the target and input variables. Linear regression can be implemented using sklearn. Let us look at the implementation below:
 
