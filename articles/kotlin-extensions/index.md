@@ -1,7 +1,21 @@
-### Kotlin Extensions
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/kotlin-extensions/
+title: Kotlin Extensions
+description: This article will show a developer how to use Kotlin extensions, understanding when and how to use them.
+author: linus-muema
+date: 2020-09-24T00:00:00-10:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/kotlin-extensions/hero.jpg
+    alt: Node.js Firebase image computer
+---
 As Kotlin was introduced in android, it came along with new features. One of the features was Kotlin extensions. This solved a large problem that developers faced: code redundancy. It is not a good practice to have code repeating itself. On a large scale, this leads to slow performance. The code also becomes dirty and unscalable.
-
+<!--more-->
 This article will show you how to use Kotlin extensions. It will help you understand when and how to use them.
 
 You can get the entire code for this tutorial on [Github](https://github.com/LinusMuema/kotlin/tree/extensions). A basic understanding of Kotlin & Android is also needed.
