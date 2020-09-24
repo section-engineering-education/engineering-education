@@ -190,13 +190,13 @@ logger.error("Error message");
 Below we have an example app that will log all requests in the [Apache](https://httpd.apache.org/docs/1.3/logs.html) combined format to one log file per day in the log/ directory using the [rotating-file-stream module](https://www.npmjs.com/package/rotating-file-stream).
 
 ```js
-var express = require("express");
-var morgan = require("morgan");
-var path = require("path");
-var rfs = require("rotating-file-stream");
-var app = express();
+const express = require("express");
+const morgan = require("morgan");
+const path = require("path");
+const rfs = require("rotating-file-stream");
+const app = express();
 // create a rotating write stream
-var accessLogStream = rfs.createStream("access.log", {
+const accessLogStream = rfs.createStream("access.log", {
   interval: "1d", // rotate daily
   path: path.join(__dirname, "log"),
 });
@@ -212,8 +212,8 @@ app.get("/", function (req, res) {
 #### 3. Bunyan
 [Bunyan](https://github.com/trentm/node-bunyan) is a lightweight logger that creates log records as JSON.
 ```js
-var bunyan = require("bunyan");
-var log = bunyan.createLogger({ name: "myapp" });
+const bunyan = require("bunyan");
+const log = bunyan.createLogger({ name: "myapp" });
 log.info("hi");
 log.warn({ lang: "fr" }, "au revoir");
 ```
@@ -299,9 +299,9 @@ When using [ExpressJS](http://expressjs.com/), you can choose to use [compressio
 Example
 
 ```js
-var compression = require("compression");
-var express = require("express");
-var app = express();
+const compression = require("compression");
+const express = require("express");
+const app = express();
 // compress all responses
 app.use(compression());
 // add all routes
@@ -348,27 +348,27 @@ For example:
 - Using native JavaScript date object
 
 ```js
-var NowDate = new Date();
-var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-var sDay = NowDate.getDate();
-var sMonth = NowDate.getMonth() + 1;
-var sYear = NowDate.getFullYear();
+const NowDate = new Date();
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const sDay = NowDate.getDate();
+const sMonth = NowDate.getMonth() + 1;
+const sYear = NowDate.getFullYear();
 console.log(sYear + '-' + sMonth + '-' + sDay);
 ```
 
 - Using Moment.js
 
 ```js
-var moment = require('moment')
-var today = moment();
+const moment = require('moment')
+const today = moment();
 console.log(today.format('YYYY-M-D'));
 ```
 
 - [Using date-fns](https://date-fns.org/docs/Getting-Started)
 
 ```js
-var format = require("date-fns/format");
-var today = format(new Date(), "yyyy-M-dd");
+const format = require("date-fns/format");
+const today = format(new Date(), "yyyy-M-dd");
 console.log(today);
 ```
 
