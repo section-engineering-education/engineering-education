@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/debug-node-docker/
-title: This tutorial guides beginners on how to build a blog website from scratch using Jekyll using HTML and CSS.
-description:
+title: Building a Blog site from Scratch using Jekyll
+description: This tutorial guides beginners on how to build a blog website from scratch using Jekyll using HTML and CSS.
 author: geoffrey-mungai
 date: 2020-09-24T00:00:00-10:00
 topics: []
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/debug-node-docker/hero.jpg
     alt: image build a Jekyll site
 ---
-Building a website nowadays is not as hard or expensive as it was in past. These days, you don't have to learn a crazy programming language to have your site up and running. Instead, you can go the Jamstack way. In this article we will look at building and deploying a Jekyll site.
+Building a website nowadays is not as hard or expensive as it was in the past. These days, you don't have to learn a crazy programming language to have your site up and running. Instead, you can go the Jamstack way. In this article, we go through how to build and deploy a Jekyll site.
 <!--more-->
 ### Introduction
 [Jekyll](https://jekyllrb.com/) is a [Jamstack](https://jamstack.org/) static website generator. Jamstack is a **concept** of building websites that don't depend on web servers and *databases*. Jekyll was released back in 2008 and has been one of the most convenient ways of building [all types of sites](https://jekyllrb.com/showcase/). It's written in [Ruby](https://www.ruby-lang.org/en/) and uses [Liquid](https://shopify.github.io/liquid/) template engine to render web pages.
