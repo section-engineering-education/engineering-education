@@ -13,7 +13,7 @@ Date-fns is a lightweight 🚀 date library that provides comprehensive function
 - **I18n** - perhaps you want to display dates with your users' favorite locale. Date-fns have a dozen locales to work with whenever you need them
 - **Typescript and Flow** - supports both typescript and flow
 
-[Check more benefits of date fns](https://date-fns.org/)
+[Check more benefits of date fns](https://date-fns.org/).
 
 ### Getting Started with Date-fns
 
@@ -29,7 +29,7 @@ Date-fns is available in the [npm packages collection](https://www.npmjs.com/pac
 
 Date formatting is key when displaying a date. Formatting helps to display human-readable dates. Date format replaces the individual date tokens to a format string, which specifies the part of the date token you want to format and how the token will be displayed. To understand this more let's have a look at some date token representation patterns that you can choose to display as formats.
 
-**Note:** some of these [Unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) are different from other date libraries such as Moment.js
+**Note:** some of these [Unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) are different from other date libraries such as Moment.js.
 
 Calendar Year
 - y - 0, 1, 2, 3, 4, ..., 17, 18, 1900, 2000, 2001, 2022, 2023, ...
@@ -121,7 +121,7 @@ console.log(`${format(date, 'EEEE do HH:mm ')}`);
 console.log(`${format(date, 'EEEE,MMMM do, yyyy ppppp')}`);
 console.log(`${format(date, 'do  MMMM yyyy OOOO')}`); 
 ```
-The above examples will display the date parsed with several date formats. You [check out more date formats](https://date-fns.org/v2.16.1/docs/format) you can play with and get more ideas of how date-fns formats works.
+The above examples will display the date parsed with several date formats. [Check out more date formats](https://date-fns.org/v2.16.1/docs/format) you can play with and get more ideas of how date-fns formats works.
 
 **Note:** we have only imported the `format` function as it is what we need for the moment, that's one of the dynamic features of date-fns. When formatting date-fns token values try to avoid some [common mistakes](https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md) such as:
 
@@ -141,7 +141,7 @@ Syntax
 - date - The date to be changed
 - amount - Amount of days to be added
 
-Let's perform simple date [addition](https://date-fns.org/v2.16.1/docs/add). To get started, import the required functions, then add the unit of time to the base date. Specify the operation you want to perform as the first argument followed by the number of units to add. You can include the format function to format the date returned specified.
+Let's perform simple date [addition](https://date-fns.org/v2.16.1/docs/add). To get started, import the `add` functions, then add the unit of time to the base date. Specify the operation you want to perform as the first argument followed by the number of units to add. Include the format function to format the date returned.
 
 Example:
 
@@ -173,8 +173,8 @@ console.log(format(d, 'dd MMMM yyyy HH:mm'));
 
 ### Date Locale
 
-Users who typically visit your website may come across the different parts of the world, assume they do not speak your native language, so how will you implement specific or multiple locales to engage your users? Well, formatting dates was easy. How about locale? It cannot be that hard with date-fns, it is easy as pie. All you need is to import the locale plugin from date-fns. Date-fns support [I18n](https://date-fns.org/docs/I18n#supported-languages) with a simple way to internationalize date functions and display localized formatted dates. You need to use the `require locale` and pass the optional locales as the argument.
-
+Users who typically visit your website may come across the different parts of the world, assume they do not speak your native language, so how will you implement specific or multiple locales to engage your users? Well, formatting dates was easy. How about locale? It cannot be that hard with date-fns, it is easy as pie. All you need is to import the locale plugin from date-fns. Date-fns support [I18n](https://date-fns.org/docs/I18n#supported-languages) with a simple way to internationalize date functions and display localized formatted dates. You need to use the `require('date-fns/locale');` and pass the optional locales as the argument.
+I.e `require('date-fns/locale/fr');` )('`fr` for frech').
 For example, let's have a simple date parsed and returned
  in French Locale.
 ```js
@@ -244,7 +244,8 @@ Syntax
 -   Date - the date that should be after the second date (as the first argument)
 -   DateToCompare - the second date to be compared with the first date. (As the second argument)
 
-Eg1
+Example1
+
 Import the funtions you need.
 ```js
 const { isAfter,addHours, subHours } = require('date-fns');
@@ -257,7 +258,7 @@ const date3 = subHours(new Date(), 5);
 console.log(isAfter(date1, date2));
 console.log(isAfter(date1, date3));
 ```
-Eg2
+Example2
 
 ```JS
 const { isAfter, isFuture, addHours } = require("date-fns");
@@ -319,7 +320,7 @@ Checks if a given string [value is an instance of a date](https://date-fns.org/v
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-isdate?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Check out more Comparison functions and helpers such as [isPast](https://date-fns.org/v2.16.1/docs/isPast), [isEqual](https://date-fns.org/v2.16.1/docs/isEqual), [isExits](https://date-fns.org/v2.16.1/docs/isExists), [isMatch](https://date-fns.org/v2.16.1/docs/isMatch) and many more.
+Check out more comparison functions and helpers such as [isPast](https://date-fns.org/v2.16.1/docs/isPast), [isEqual](https://date-fns.org/v2.16.1/docs/isEqual), [isExits](https://date-fns.org/v2.16.1/docs/isExists), [isMatch](https://date-fns.org/v2.16.1/docs/isMatch) and many more.
 
 ### Date Validation
 
@@ -336,7 +337,7 @@ console.log((valid_date2))
 However, in the above example, you will be surprised to find out the `new Date ('2020, 02, 30')` returns true yet the date itself is obviously invalid. There is no date with a February 30th day. Interestingly, this is not a bug in date-fns. To elaborate this more enter a `new Date ('2020, 02, 30')` on your browser's console (in my case am using google chrome console).
 
 This date instance will be interpreted as `Sun Mar 01, 2020, 00:00:00 '2020, 02, 30'`. February ends on 29th ( 2020 is a leap year) and the extra day will be added to represent the date of the next month, which indeed will be valid.
-To avoid such instances parse the date before checking isValid().
+To avoid such instances parse the date before checking the `isValid()`.
 
 Example:
 
@@ -344,7 +345,7 @@ Example:
 
 ### Differences Between Dates
 
-Date-fns provides several functions to manipulate and calculate the differences that exits between two given dates. These functions represent difference calculations between several units of time such as
+Date-fns provides several functions to manipulate and calculate the differences that exits between two given dates. These functions represent difference calculations between several units of time such as:
 - [differenceInSeconds](https://date-fns.org/v2.16.1/docs/differenceInSeconds) (number of seconds between given dates)
 - [differenceInMinutes](https://date-fns.org/v2.16.1/docs/differenceInMinutes) (number of minutes between given dates)
 - [differenceInDays](https://date-fns.org/v2.16.1/docs/differenceInDays) (number of days between given dates)
@@ -370,7 +371,7 @@ console.log(workdaysBetween);
 
 Date-fns provides you with interval helpers to combine two dates and determine the time interval between them. An interval object has two properties:
 - Start - the start of the interval
-- end - the end of the interval
+- End - the end of the interval
 
 This interval helper includes
 - [areIntervalsOverlapping](https://date-fns.org/v2.16.1/docs/areIntervalsOverlapping) - checks if the given time interval overlaps another time interval
@@ -414,38 +415,38 @@ Nevertheless, if you love working with MomentJS, its size should not be a big wo
 
 - NPM download stats npm download stats
 ![npm-download-insights](/engineering-education/javascript-dates-manipulation-with-date-fns/npm-download-insights.png)
-[Credit: nodejs libhunt](https://nodejs.libhunt.com/compare-moment-vs-date-fns)
+[Credit: nodejs libhunt](https://nodejs.libhunt.com/compare-moment-vs-date-fns).
 
 - GitHub stats
 ![github-stats.png](/engineering-education/javascript-dates-manipulation-with-date-fns/github-stats.png)
-[Credit: npmtrends](https://www.npmtrends.com/date-fns-vs-moment)
+[Credit: npmtrends](https://www.npmtrends.com/date-fns-vs-moment).
 
 - Popularity and activity popularity and activity
 ![popularity-and-activity](/engineering-education/javascript-dates-manipulation-with-date-fns/popularity-and-activity.png)
-[Credit: npmtrends](https://www.npmtrends.com/date-fns-vs-moment)
+[Credit: npmtrends](https://www.npmtrends.com/date-fns-vs-moment).
 
 
 ### Other Date Manipulating Framework Alternatives Worth Checking Out.
 
 #### DayJS
 
-⏰ [Day.js](https://github.com/iamkun/dayjs) is a 2KBs immutable date library alternative to Moment.js with the same modern API
+⏰ [Day.js](https://github.com/iamkun/dayjs) is a 2KBs immutable date library alternative to Moment.js with the same modern API.
 - 🕒 Familiar Moment.js API & patterns
 - 💪 Immutable
 - 🔥 Chainable
 - 🌐 I18n support
 - 📦 2kb mini library
 - 👫 All browsers supported
-[Credit: iamkun](https://github.com/iamkun/dayjs)
+[Credit: iamkun](https://github.com/iamkun/dayjs).
 
 #### Luxon
 
-[Luxon](https://github.com/moment/luxon) is a library that makes it easier to work with dates and times in JavaScript. If you want, add and subtract them, format and parse them, ask them hard questions, and so on, Luxon provides a much easier and comprehensive interface than the native types it wraps with features such as
-- DateTime, Duration, and Interval types.
-- Immutable, chainable, unambiguous API.
-- Parsing and formatting for common and custom formats.
-- Native time zone and Intl support (no locale or tz files).
-[Credit: moment/luxon](https://github.com/moment/luxon)
+[Luxon](https://github.com/moment/luxon) is a library that makes it easier to work with dates and times in JavaScript. If you want, add and subtract them, format and parse them, ask them hard questions, and so on, Luxon provides a much easier and comprehensive interface than the native types it wraps with features such as:
+- DateTime, Duration, and Interval types
+- Immutable, chainable, unambiguous API
+- Parsing and formatting for common and custom formats
+- Native time zone and Intl support (no locale or tz files)
+[Credit: moment/luxon](https://github.com/moment/luxon).
 
 #### Fecha
 
@@ -454,29 +455,27 @@ Nevertheless, if you love working with MomentJS, its size should not be a big wo
 - Date Parsing
 - Date Formatting
 - Date Manipulation
-[Credit: taylorhakes](https://github.com/taylorhakes/fecha)
+[Credit: taylorhakes](https://github.com/taylorhakes/fecha).
 
 ## Timeago.js
 
 🕗 ⌛ [timeago.js](https://github.com/albert-gonzalez/easytimer.js) is a nano library(less than 2 kb) used to format datetime with *** time ago statement. eg: '3 hours ago'.
-- i18n supported.
-- Time ago and time in supported.
-- Real-time render supported.
-- Node and browser supported.
-- Well tested.
-[Credit: albert-gonzalez](https://github.com/albert-gonzalez/easytimer.js)
+- i18n supported
+- Time ago and time in supported
+- Real-time render supported
+- Node and browser supported
+- Well tested
+[Credit: albert-gonzalez](https://github.com/albert-gonzalez/easytimer.js).
 
 #### Easytimer.js
 
-Easy to use Timer/Chronometer/Countdown library compatible with AMD, ES6 and Typescript
-
-[Easytimer.js](https://github.com/hustcc/timeago.js) is a simple library for counting time in five different units: a tenth of seconds, seconds, minutes, hours and days. It has interesting features:
-- The refresh interval can be configured in a tenth of seconds, seconds, minutes and hours.
-- Dispatches events when the timer starts, stops, pauses and when every type of unit changes.
-- A custom callback can be defined and it will be executed every timer refresh.
-- Two timer modes: Regular and Countdown.
-- Configurable start and target values.
-[Credit: hustcc](https://github.com/hustcc/timeago.jst)
+Easy to use Timer/Chronometer/Countdown library compatible with AMD, ES6 and Typescript. [Easytimer.js](https://github.com/hustcc/timeago.js) is a simple library for counting time in five different units: a tenth of seconds, seconds, minutes, hours and days. It has interesting features:
+- The refresh interval can be configured in a tenth of seconds, seconds, minutes and hours
+- Dispatches events when the timer starts, stops, pauses and when every type of unit changes
+- A custom callback can be defined and it will be executed every timer refresh
+- Two timer modes: Regular and Countdown
+- Configurable start and target values
+[Credit: hustcc](https://github.com/hustcc/timeago.jst).
 
 ### Conclusion
 
