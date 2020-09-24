@@ -6,7 +6,7 @@ url: /engineering-education/supervised-learning-algorithms/
 title: Supervised Learning Algorithms
 description: Introduction to supervised learning algorithms such as classification and regression algorithms.
 author: lalithnarayan-c
-date: 2020-09-22T00:00:00-10:00
+date: 2020-09-24T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,16 +14,16 @@ images:
   - url: /engineering-education/supervised-learning-algorithms/hero.jpg
     alt: Supervised Learning Algorithms image
 ---
-Artificial intelligence is the art of embedding intelligence into machines. The current era is an exciting one to live in, due to the advances in technology being guided by huge amounts of data and intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, and map services used for navigation are all examples of how AI is being leveraged and creating a massive impact.
+Artificial intelligence is the art of embedding intelligence into machines. The current era is an exciting one to live in, due to the advances in technology being guided by huge amounts of data and intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, and map services used for navigation are all examples of how AI is being leveraged and is creating a massive impact.
 <!--more-->
 ### Introduction to Machine Learning
-Machine learning is a subset of artificial intelligence. Artificial intelligence is a broader subject that aims to attain artificial general intelligence (AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach to attain human-level intelligence.   
+Machine learning is a subset of artificial intelligence. Artificial intelligence is a broader subject that aims to attain artificial general intelligence (AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach of attaining human-level intelligence.   
 
-[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as follows: 'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
+[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as  follows: 'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
 
-1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pairs of values help the algorithm model the function that generates such outputs for any given inputs. We will be covering the entire topic of supervised learning in this article.
+1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pair of values help the algorithm model the function that generates such outputs for any given inputs. We will be covering the entire topic of supervised learning in this article.
 
-2. Unsupervised Learning: In this type of learning, algorithms are only fed in input data variables. The algorithms make sense of data based on patterns that the algorithm detects. For example, given a dataset of black and red cards, clustering algorithms will find all cards similar to black and place them in one set. On the other set, the red cards are placed. Thereby, a [decision boundary](https://en.wikipedia.org/wiki/Decision_boundary#:~:text=A%20decision%20boundary%20is%20the,are%20not%20always%20clear%20cut.) is formed. [Clustering](/engineering-education/clustering-algorithms/) is one such example of unsupervised learning.  
+2. Unsupervised Learning: In this type of learning, algorithms are only fed in as input data variables. The algorithms make sense of the data based on patterns that the algorithm detects. For example, given a dataset of black and red cards, clustering algorithms will find all cards similar to black and place them in one set. In the other set, the red cards are placed. Thereby, a [decision boundary](https://en.wikipedia.org/wiki/Decision_boundary#:~:text=A%20decision%20boundary%20is%20the,are%20not%20always%20clear%20cut.) is formed. [Clustering](/engineering-education/clustering-algorithms/) is one such example of unsupervised learning.  
 
 3. Reinforcement Learning: Reinforcement learning is a subset of machine learning that deals with agents performing actions in a simulated environment. The outcome of the actions carries a reward. The objective is to optimize the reward obtained through actions in the environment. Most of the living ecosystem is best modeled by a reward-based mechanism. For example, a child likes to eat candy again and again, because it provides a dopamine rush (every time) that is the reward.
 
@@ -32,16 +32,16 @@ Let us look at a few of the applications of supervised learning before we dive i
 
 Another use case example of supervised learning is predicting the price of houses given a few features. The features can include size, location, facilities, etc. The input consists of the features and the output consists of the price. Algorithms that predict continuous values of data are called regression-based algorithms.
 
-Supervised learning is mainly classified into two types: Classification and Regression. Let us take a closer look at the both these algorithms categories.  
+Supervised learning is mainly classified into two types: Classification and Regression. Let us take a closer look at both these algorithm categories.  
 
 #### Classification
-Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digits output labels such as Yes or No, or 1,2,3, respectively. We can also have scenarios where multiple outputs are required. For this we can consider the example of self-driving cars.
+Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digit output labels such as Yes or No, or 1,2,3, respectively. We can also have scenarios where multiple outputs are required. For this we can consider the example of self-driving cars.
 
 The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of a multi-class classification. We will now look at some of the key algorithms underneath the *classification algorithms*.
 
 1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc.
 
-Manhattan distance takes the absolute distance between two points, whereas Euclidean distance takes the square root of the sum of squares of the distance between the two points.
+Manhattan distance takes the absolute distance between two points, whereas Euclidean distance takes the square root of the sum of the squares of the distance between the two points.
 
 ![distance metrics](/engineering-education/supervised-learning-algorithms/distance.jpg)
 
@@ -80,15 +80,15 @@ All machine learning algorithms have hyperparameters to deal with. In K-NN, the 
    ```txt
     0.9833333333333333
    ```
-The accuracy of the classifier is 98.33%. This is tested on the test dataset. 98.33% is good accuracy, but the dataset is a simple one. 10 years ago, this number would have been a considered good one.
+The accuracy of the classifier is 98.33%. This is tested on the test dataset. 98.33% is a good accuracy percentage, but the dataset is a simple one. 10 years ago, this number would have been a considered good one.
 
-2. Support Vector Machines(SVM): SVMs are maximum margin classifiers that are optimized to find an N-dimensional hyperplane in an N-dimensional space. The objective is to find the hyperplane that has the maximum margin from all the classes.  Let us understand a few of the concepts and terminologies used in SVM.
+2. Support Vector Machines(SVM): SVMs are maximum margin classifiers that are optimized to find an N-dimensional hyperplane in an N-dimensional space. The objective is to find the hyperplane that has the maximum margin from all the classes. Let's understand a few of the concepts and terminologies used in SVM.
 
-   - Support Vector: Vectors that are closest to the hyperplane are called support vectors.
-   - Margin: Margin is defined as the distance between data points and the hyperplane.
-   - Hyperplane: The decision boundary which satisfies the maximum margin condition is called the hyperplane.
+- Support Vector: Vectors that are closest to the hyperplane are called support vectors.
+- Margin: Margin is defined as the distance between data points and the hyperplane.
+- Hyperplane: The decision boundary which satisfies the maximum margin condition is called the hyperplane.
 
-The reasoning behind SVM is to find the hyperplane with maximum distance from the support vectors. The hyperplane may be a linear decision boundary or a non-linear decision boundary. When dealing with non-linear planes, the dataset is projected into higher dimensions to create linear boundaries. For example, consider the following image
+The reasoning behind SVM is to find the hyperplane with the maximum distance from the support vectors. The hyperplane may be a linear decision boundary or a non-linear decision boundary. When dealing with non-linear planes, the dataset is projected into higher dimensions to create linear boundaries. For example, consider the following image.
 
 ![nonlinearmapping](/engineering-education/supervised-learning-algorithms/svm.jpg)
 
@@ -148,7 +148,11 @@ Regression algorithms are another subset of machine learning algorithms used to 
     print(linear_regression.score(X_test,y_test))
     ```
 
- The output of the print statement will be 0.55. The scoring metric used for linear regression is the R^2 metric. Pronounced as R-squared, it tells us about the effectiveness of the curve-fitting on the graph. The curve is a synonym for the equation that models the actual data. Since we are trying to model the actual data with an equation, we name the process curve fitting. The curve need not have any bends as well, that is, it can be linear or non-linear. The complexity of the data is a parameter that decides the degree of the equation. The scoring metric helps us decide a suitable complexity(degree of the equation) used to model the data. The closer the value of the scoring metric, R-squared, is to 1, the higher chances of good curve fitting. Curve fitting may lead to overfitting when the number of features considered is less. Overfitting refers to a scenario where the model performs very well on the data it has seen. But its performance drops when it works on unseen data. Underfitting is also a possibility when we don't have sufficient data to train the model(s) with.
+The output of the print statement will be 0.55. The scoring metric used for linear regression is the R^2 metric. Pronounced as R-squared, it tells us about the effectiveness of the curve-fitting on the graph. The curve is a synonym for the equation that models the actual data. Since we are trying to model the actual data with an equation, we name the process curve fitting.
+
+The curve needs to not have any bends as well, that is, it can be linear or non-linear. The complexity of the data is a parameter that decides the degree of the equation. The scoring metric helps us decide a suitable complexity(degree of the equation) used to model the data. The closer the value of the scoring metric, R-squared, is to 1, the higher chances of good curve fitting.
+
+Curve fitting may lead to overfitting when the number of features considered is less. Overfitting refers to a scenario where the model performs very well on the data it has seen. But its performance drops when it works on unseen data. Underfitting is also a possibility when we don't have sufficient data to train the model(s) with.
 
 ### Conclusion
 We have looked at supervised learning and went over a few code snippets to implement these algorithms using scikit-learn. Scikit-learn is a very powerful and elegantly written library. I hope this serves as an introduction to your machine learning journey.
