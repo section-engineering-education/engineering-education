@@ -74,7 +74,7 @@ npm login
 
 ### Let's Code
 
-- Every package published to the NPM registry should have a **`package.json`** file. Let us start by initializing a project.json file.
+- Every package published to the NPM registry should have a **`package.json`** file. Let's start by initializing a project.json file.
 
 - The minimum requirements of a `package.json` file is a name and a version. Let's enter those information into the file.
 
@@ -142,7 +142,7 @@ npm publish
 
 ### Using the Package
 
-- Let us install and test our package.
+- Let's install and test our package.
 
 - Open a new folder and initialize a **`package.json`** by using the command:
 
@@ -152,7 +152,7 @@ npm init -y
 
 _Note: The -y option creates a package.json without an interactive process_
 
-- Now, let us install our published npm package.
+- Now, let's install our published npm package.
 
 ```bash
 npm i clist-node
