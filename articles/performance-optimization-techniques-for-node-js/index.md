@@ -277,44 +277,71 @@ For example:
 An example of using a dashboard where functions such as `getUserprofile()`, `getrecentActivity()`, `getNotifications()`, can execute parallel using async.js.
 
 ```js
-async.parallel([
-	getNotifications,
-	getUserprofile,
-	getrecentActivity
-	],
-  function(err ,results){
-		if(err){
-		 return console.error(err);
-		}
-		//task results
-	});
+async.parallel(
+    [
+        getNotifications, 
+        getUserprofile, 
+        getrecentActivity
+    ], 
+    function (err,results){
+        if (err) {
+            return console.error(err);
+        }
+  //task results
+});
 ```
 
-**Simple example using async.parallel**
+**Simple example using async.parallel with an array**
 
 ```js
-const async = require('async')
-function runInParallel() {
-
+const async = require("async");
 async.parallel(
   [
-    (constshort = shortTimeFunction),
-    (medium = mediumTimeFunction),
-    (long = longTimeFunction),
+    function (callback) {
+      setTimeout(function () {
+        console.log("Task One");
+        callback(null, 1);
+      }, 200);
+    },
+    function (callback) {
+      setTimeout(function () {
+        console.log("Task Two");
+        callback(null, 2);
+      }, 100);
+    },
   ],
   function (err, results) {
     if (err) {
-      return console.error(err);
-    }
+        return console.error(err);
+      }
     console.log(results);
+  // tasks execution order(Task Two then Task One).
+// the results array will be [ 1, 2 ] even though the second function had a shorter timeout.
   }
 );
-}
 ```
+**Using an object instead of an array**
 
-OUTPUT
-```bash
-Result : {short: "resultOfShortTime", medium: "resultOfMediumTime", long: "resultOfLongTime"}.
+```js
+const async = require("async");
+// an example using an object instead of an array
+async.parallel({
+  task1: function(callback) {
+    setTimeout(function() {
+      console.log('Task One');
+      callback(null, 1);
+    }, 200);
+  },
+  task2: function(callback) {
+    setTimeout(function() {
+      console.log('Task Two');
+      callback(null, 2);
+    }, 100);
+    }
+}, function(err, results) {
+  console.log(results);
+  // results now equals to: {task2: 2, task1: 1}
+});
 ```
 
 ### Client-side Rendering
