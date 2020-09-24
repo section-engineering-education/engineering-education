@@ -35,7 +35,7 @@ Another use case example of supervised learning is predicting the price of house
 Supervised learning is mainly classified into two types: Classification and Regression. Let us take a closer look at both these algorithm categories.  
 
 #### Classification
-Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digit output labels such as Yes or No, or 1,2,3, respectively. We can also have scenarios where multiple outputs are required. For this we can consider the example of self-driving cars.
+Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digit output labels such as Yes or No, or 1,2,3, respectively. We can also have scenarios where multiple outputs are required. For this use case, we can consider the example of self-driving cars.
 
 The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of a multi-class classification. We will now look at some of the key algorithms underneath the *classification algorithms*.
 
