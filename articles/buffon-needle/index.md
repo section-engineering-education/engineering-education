@@ -161,3 +161,33 @@ simulation.plot()
 
 ### Conclusion
 In this article, we estimated the value of $\pi$ using a problem so elegantly posed. What is truly exciting is the fact that $\pi$ is connected to a probability question. Do connect with me on [LinkedIn](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) and let me know what you think is the relation between $\pi$ and the given problem. Think about the practicality of the value of $\pi$. Mathematics reveals secrets in simple and elegant problems such as this one. I hope you enjoyed reading this one as much as I enjoyed writing it.
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
