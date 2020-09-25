@@ -14,7 +14,9 @@ images:
   - url: /engineering-education/hapi-vs-koa-vs-express/hero.jpg
     alt: koa koa.js Node.js express hapi framework
 ---
-Node.js has various frameworks, each of which is catered to the varying demands of users and developers. This article will give a comparison between the three major Node.js frameworks, [Express](https://expressjs.com), [Hapi](https://hapi.dev) and [Koa](https://koajs.com). In this comparison, we will look at the differences between the three frameworks, their histories, advantages and disadvantages, popularity, support and performance.
+Node.js has various frameworks, each of which is catered to the varying demands of users and developers. This article will give a comparison between the three major Node.js frameworks, [Express](https://expressjs.com), [Hapi](https://hapi.dev) and [Koa](https://koajs.com). 
+
+In this comparison, we will look at the differences between the three frameworks, their histories, advantages and disadvantages, popularity, support and performance.
 <!--more-->
 For more background on the frameworks, check out the following articles to get a more in depth look before we begin:
 
@@ -26,33 +28,44 @@ For more background on the frameworks, check out the following articles to get a
 Before we start our in-depth comparison of each framework, let's take a look at how they got started.
 
 #### Hapi.js
-Hapi.js was created by the mobile team at Walmart Labs — led by Eran Hammer to handle their traffic for events like Black Friday, since it's one of the busiest shoping days in the U.S. calendar.
-Hapi's initial commit was made on August 5th, 2011 and after 5,619 commits, it is currently at version 20.0.0. It was originally built using the Express framework before the challenges that drove Walmart to make Hapi, its stand-alone framework. Refer to my [introduction to Hapi.js framework](/engineering-education/introduction-to-hapi/) for a detailed look at Hapi.js.
+Hapi.js was created by the mobile team at Walmart Labs — led by Eran Hammer to handle their traffic for events like Black Friday, since it's one of the busiest shoping days in the U.S. calendar
+.
+Hapi's initial commit was made on August 5th, 2011 and after 5,619 commits, it is currently at version 20.0.0. It was originally built using the Express framework before the challenges that drove Walmart to make Hapi, its stand-alone framework. 
+
+Refer to my [introduction to Hapi.js framework](/engineering-education/introduction-to-hapi/) for a detailed look at Hapi.js.
 
 #### Koa.js
-Koa's initial commit was made on August 17th, 2013 by TJ Holowaychuk. The framework was built by the team behind express with the aim of making it smaller, more expressive, and robust. Koa.js is currently at version 2.13.0 with 1,086 commits. Koa.js is also known for having a smaller footprint compared to other frameworks. Refer to my [introduction to koa.js framework](/engineering-education/introduction-to-koajs/) for a detailed look at Koa.js.
+Koa's initial commit was made on August 17th, 2013 by TJ Holowaychuk. The framework was built by the team behind express with the aim of making it smaller, more expressive, and robust. Koa.js is currently at version 2.13.0 with 1,086 commits. 
+
+Koa.js is also known for having a smaller footprint compared to other frameworks. Refer to my [introduction to koa.js framework](/engineering-education/introduction-to-koajs/) for a detailed look at Koa.js.
 
 #### Express.js
-The Express framework is the oldest of the three. Its initial commit was made by TJ Holowaychuk on June 26th, 2009 and its first release was on the 2nd of January 2010 after around 660 commits. The two main contributors at the time of its first release were TJ Holowaychuk and Ciaron Jessup. Express.js is currently at version 4.17.1 after 280 releases and 5,592 commits.
+The Express framework is the oldest of the three. Its initial commit was made by TJ Holowaychuk on June 26th, 2009 and its first release was on the 2nd of January 2010 after around 660 commits. 
+
+The two main contributors at the time of its first release were TJ Holowaychuk and Ciaron Jessup. Express.js is currently at version 4.17.1 after 280 releases and 5,592 commits.
 
 ### Framework popularity
-All these frameworks are widely used by developers worldwide, but still, one might need to know which framework is most popular than the other(s). Our popularity comparison will be based on statistics from GitHub and [npm](https://www.npmjs.com)
+All these frameworks are widely used by developers worldwide, but still, one might need to know which framework is the most popular. Our popularity comparison will be based on statistics from GitHub and [npm](https://www.npmjs.com)
 
 #### Hapi.js
 Hapi.js's GitHub repository has 12.7k stars, 205 contributors, 1.3k forks and 332 releases.
+
 According to [npm](https://www.npmjs.com/package/hapi), 1,470 packages depend on Hapi.js.
 #### Koa.js
 Koa.js's GitHub repository has 29.9k stars, 218 contributors and 2.8k forks.
+
 According to [npm](https://www.npmjs.com/package/koa), 4,678 packages depend on Koa.js.
 #### Express.js
 Express.js's GitHub repository has 50k stars, 205 contributors, 8.3k forks and 280 releases.
+
 According to [npm](https://www.npmjs.com/package/express), 45,743 packages depend on Express.js.
 
 ### Creating a server
 In this section we will have a look at how the frameworks differ in creating a server. Unlike Hapi, both Koa and Express use a similar logic to create a server.
 
 In Express, you first import the express module, then, instantiate the module and store it in a variable. Then use its listen method to start a server at a certain port.
-Lets see a code example to illustrate this.
+
+Let's see a code example to illustrate this.
 
 ```JavaScript
 const express = require('express')
@@ -61,6 +74,7 @@ const app = express()
 app.listen(2400, () => {console.log('Server started at port 2400')})
 ```
 As we mentioned earlier, Koa uses the same logic as Express. We import the Koa module, instantiate and store it in a variable and then use its listen method to start the server.
+
 The code snippet below shows how we start a server using Koa.js.
 
 ```JavaScript
@@ -70,8 +84,9 @@ const app = koa()
 app.listen(2400, () => {console.log('Server started at port 2400')})
 ```
 
-Now let's look at how Hapi stands out. In Hapi, we import the hapi module, then, instead of instantiating the module, we use its server method to create a server and then use its connection method to connect the server to a specific port. Then we use the start method to start the server.
-Lets see a code example.
+Now let's look at how Hapi stands out. In Hapi, we import the hapi module, then, instead of instantiating the module, we use its server method to create a server and then use its connection method to connect the server to a specific port. 
+
+Then we use the start method to start the server. Let's see a code example.
 
 ```JavaScript
 const hapi = require('hapi')
@@ -115,8 +130,8 @@ In this section we are going to highlight some of the advantages and disadvantag
 
 ##### Disadvantages
 1. Koa has a relatively small community.
-2. It is not compatible with middleware builds using Express style.
-3. Koa uses ES6 generators which are not compatible with middleware from other framework.
+2. It is not compatible with Express middleware.
+3. Koa uses ES6 generators which are not compatible with middleware from other frameworks.
 
 #### Express.js
 ##### Advantages
@@ -140,15 +155,24 @@ Koa.js seems to be best in terms of performance since it handles 50,933 requests
 ### Choosing the right framework for your project
 
 #### Why choose Express.js
-Express provides a wide range of functionalities for developing web applications such as single/multi-page applications and even hybrid applications. Express is also easy to test due to its middleware and routes which modularize projects. Express.js is also closer to Node.js when compared to the other frameworks, it is only a thin layer to Node.js hence making it the best for building applications that require the best performance.
+Express provides a wide range of functionalities for developing web applications such as single/multi-page applications and even hybrid applications. 
+
+Express is also easy to test due to its middleware and routes which modularize projects. 
+
+Express.js is also closer to Node.js when compared to the other frameworks, it is only a thin layer to Node.js hence making it the best for building applications that require the best performance.
 
 #### Why choose Koa.js
-Koa.js was created to be better than Express, therefore, it can do all that express can do and more. From our performance test we saw that Koa performs the best since it can handle many requests per second. This makes it a better choice for web applications and APIs that serve many clients at a time.
+Koa.js was created to be better than Express, therefore, it can do all that Express can do and more. From our performance test, we saw that Koa performs the best since it can handle many requests per second. T
+
+This makes it a better choice for web applications and APIs that serve many clients at a time.
 
 #### Why choose Hapi.js
-Hapi.js has almost the same capabilities as the other frameworks but its plugin feature is what makes it unique when it comes to selecting frameworks to use. Hapi has a wide variety of plugins that make it a little bit easier to build APIs with since almost every common task such as routing, logging, caching and authentication etc. have all-ready built plugins that have been tested.    
+Hapi.js has almost the same capabilities as the other frameworks but its plugin feature is what makes it unique when it comes to selecting frameworks to use. 
 
-Below are some other points that would help when choosing the right framework for a project.
+Hapi has a wide variety of plugins that make it a little bit easier to build APIs with since almost every common task such as routing, logging, caching and authentication etc. have built-in plugins that have been tested.    
+
+Below are some other points that would help when choosing the right framework for a project:
+
 1. Efficiency demand of the application.
 2. The cost of the project.
 3. Modules available.
@@ -156,4 +180,6 @@ Below are some other points that would help when choosing the right framework fo
 5. Scalability.
 
 ### Summary
-In this article we have done a comparison of the three major Node.js frameworks. We have gone through their histories, popularity, advantages and disadvantages, performance and created a server with each. With that, a developers can now choose the framework which best satisfies his/her needs for their application.  
+In this article we have done a comparison of the three major Node.js frameworks. We have gone through their histories, popularity, advantages and disadvantages, performance and created a server with each. 
+
+With that, a developer can now choose the framework which best satisfies his/her needs for their application.  
