@@ -99,7 +99,7 @@ We are going to do the list implementation of a heap. In this, the heap's level-
 
 _Figure: Level-Order Traversal ([Source](https://www.quora.com/What-is-level-order-traversal-in-a-binary-tree))_
 
-_Note - Level-Order Traversal is a recursive traversal where the root is processed first, followed by the children of the root. This is followed by the grandchildren of the root till all the nodes are processed._
+_Note - Level-Order Traversal is a recursive traversal where the root is processed first, followed by the children of the root. This is followed by the grandchildren of the root till all the nodes are processed. In the above diagram, the root node is processed first, followed by the left child, right child and so on. The final level order traversal would be: 10 4 8 50 24 5 12 18. For an overview of what a level order traversal, is check out [this](https://www.quora.com/What-is-level-order-traversal-in-a-binary-tree) Quora page._
 
 In the array representation of a heap, for an element in array index i,
 
@@ -169,8 +169,8 @@ We have successfully implemented a heap using a list. Now, let us use the **`hea
 
 ```python
 import heapq
-class Minheap:
-    def __init__(self, minheap):
+class MinHeap:
+    def __init__(self, minheap): # minheap is the list that we can to convert to a heap
         heapq.heapify(minheap) # Use the heapify function to convert list to a heap
         self.minheap = minheap
 
