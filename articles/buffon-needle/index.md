@@ -22,7 +22,7 @@ A very famous problem called the [Buffon's needle](https://en.wikipedia.org/wiki
 
 What's fascinating is the relation between the problem proposed and the mathematical constant pi. This is all under the study of [geometric probability](https://en.wikipedia.org/wiki/Geometric_probability), which has dealt with various mind-boggling problems such as [Bertrand's paradox](http://orca.cf.ac.uk/3803/1/Shackel%20Bertrand%27s%20paradox%205.pdf).
 
-Now to the problem and hand - the probability that the needle will touch either of the lines is given by the solution as follows:
+Now to the problem at hand - the probability that the needle will touch either of the lines is given by the solution as follows:
 
 $P = \frac{2}{\pi} \frac{l}{t}$
 
