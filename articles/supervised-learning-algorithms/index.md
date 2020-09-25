@@ -17,9 +17,9 @@ images:
 Artificial intelligence is the art of embedding intelligence into machines. The current era is an exciting one to live in, due to the advances in technology being guided by huge amounts of data and intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, and map services used for navigation are all examples of how AI is being leveraged and is creating a massive impact.
 <!--more-->
 ### Introduction to Machine Learning
-Machine learning is a subset of artificial intelligence. Artificial intelligence is a broader subject that aims to attain artificial general intelligence (AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach of attaining human-level intelligence.   
+Machine learning is a subset of artificial intelligence. Artificial intelligence deals with automating knowledge or judgment tasks on an application level. Considering the overall vision, artificial intelligence aims to attain artificial general intelligence (AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach of attaining human-level intelligence.   
 
-[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as  follows: 'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
+[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as follows: 'Machine learning is the study of computer algorithms to extract patterns from data'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
 
 1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pair of values help the algorithm model the function that generates such outputs for any given inputs. We will be covering the entire topic of supervised learning in this article.
 
@@ -35,19 +35,17 @@ Another use case example of supervised learning is predicting the price of house
 Supervised learning is mainly classified into two types: Classification and Regression. Let us take a closer look at both these algorithm categories.  
 
 #### Classification
-Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digit output labels such as Yes or No, or 1,2,3, respectively. We can also have scenarios where multiple outputs are required. For this use case, we can consider the example of self-driving cars.
+Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digit output labels such as Yes or No, or 'A','B','C',  respectively. We can also have scenarios where multiple outputs are required. For this use case, we can consider the example of self-driving cars.
 
-The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of a multi-class classification. We will now look at some of the key algorithms underneath the *classification algorithms*.
+The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of multi-class classification. We will now look at some of the key algorithms underneath the *classification algorithms*.
 
-1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc.
-
-Manhattan distance takes the absolute distance between two points, whereas Euclidean distance takes the square root of the sum of the squares of the distance between the two points.
+1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc. 
 
 ![distance metrics](/engineering-education/supervised-learning-algorithms/distance.jpg)
 
 *[Image Source](https://www.ieee.ma/uaesb/pdf/distances-in-classification.pdf)*
 
-All machine learning algorithms have hyperparameters to deal with. In K-NN, the parameter is `k`. It is initialized to an integer depending on the number of classes in the dataset known prior to(before) fitting. `k` signifies the number of nearest points the algorithm considers while creating decision boundaries.  
+All machine learning algorithms have hyperparameters to deal with. In K-NN, the parameter is `k`. It is initialized to an integer depending on the number of classes in the dataset known before fitting. `k` signifies the number of nearest points the algorithm considers while creating decision boundaries.  
 
 ![knnexample](/engineering-education/supervised-learning-algorithms/knnexample.jpg)
 
