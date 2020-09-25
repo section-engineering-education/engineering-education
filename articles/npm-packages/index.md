@@ -74,9 +74,9 @@ npm login
 
 ### Let's Code
 
-- Every package published to the NPM registry should have a **`package.json`** file. Let's start by initializing a project.json file.
+- Every package published to the NPM registry should have a **`package.json`** file. Let's start by initializing a package.json file.
 
-- The minimum requirements of a `package.json` file is a name and a version. Let's enter those information into the file.
+- The minimum requirements of a `package.json` file is a name and a version. Let's enter those pieces of information into the file.
 
 ```json
 {
@@ -84,6 +84,8 @@ npm login
   "version": "1.0.0"
 }
 ```
+
+- Enter a different name in package.json because every NPM package should have a unique name.
 
 - In our sample NPM package, we are going to use the axios package for making API calls. Install it by using this command:
 
@@ -125,6 +127,8 @@ module.exports = async function getContests() {
   return result; // The contest data is returned
 };
 ```
+
+_Note: This package requires an API key to run. Therefore, it might not run directly if you install it_
 
 Now that we've programmed the package, it's time to deploy it.
 
@@ -187,7 +191,7 @@ node index.js
 
 ### Further Reading
 
-For more knowledge on NPM Packages and JavaScript, check out the below articles.
+For more knowledge on NPM packages and JavaScript, check out the below articles.
 
 - [NPM Documentation](https://docs.npmjs.com/)
 - [Async/Await vs Promises in JS](https://levelup.gitconnected.com/async-await-vs-promises-4fe98d11038f)
