@@ -21,11 +21,17 @@ This establishes a connection with the host whose IP is: 219.123.101.201 and the
 ### SSH in NodeJs
 We are going to build an application that connects to a virtual machine and extracts information on the filesystem health of the VM. The application monitors the disk utilization in the VM and flags the partitions that have a disk utilization greater than 90%. This is useful for system administrators as it tells which partitions need to be monitored and increased in size before an actual failure of the system due to low space. 
 
-Node has an array of libraries for establishing an SSH connection. In this article, we are going to use [simple-ssh](https://www.npmjs.com/package/simple-ssh). Simple-ssh is a robust and easy to use library that allows us to connect to a VM and execute Linux commands using Node.
+Node has an array of libraries for establishing an SSH connection. In this article, we are going to use [simple-ssh](https://www.npmjs.com/package/simple-ssh). Simple-ssh is a robust and easy to use library that allows us to connect to a VM and execute Linux commands using Node. 
 
-Install the library by running the following command:
+To install and setup Node, follow [this tutorial](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages) 
+
+Install the simple-ssh library by running the following command:
 
 `npm install simple-ssh`
+
+Install the node-csv-parse library(to parse the output of the `df -h` command) by running the following command:
+
+`npm install node-csv-parse`
 
 ### Code
 ```node
@@ -35,13 +41,18 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
+
+const SSH = require('simple-ssh');
+
+// parser to parse the data(separated by tabs and spaces)
+const parser = require('node-csv-parse');
 ```
 
 The `readline` library allows users to provide input using the command line. We are going to take the VM host details such as hostname, username, and password as input from the user. This is required to establish a secure connection with the remote host. 
 
 ```node
 // function to get input from user
-function get_input() {
+function getInput() {
 
 	rl.question("What is the host? ", function(host) {
 	    rl.question("What is the user? ", function(user) {
@@ -56,15 +67,14 @@ function get_input() {
 }
 ```
 
-the `get_input()` function takes input from the user. The hostname, username, and password of the VM are stored in the `host`, `user`, and `password` variables and are passed to the ssh() function as parameters.
+the `getInput()` function takes input from the user. The hostname, username, and password of the VM are stored in the `host`, `user`, and `password` variables and are passed to the ssh() function as parameters.
 
 ```node
 // function to ssh into a remote host.
 function ssh(host, user ,password){
 
 	console.log('inside the system')
-	var SSH = require('simple-ssh');
-	var ssh = new SSH({
+	var ssh_options = new SSH({
 	    host: host,
 	    user: user,
 	    pass: password
@@ -72,7 +82,6 @@ function ssh(host, user ,password){
 	// execute the df -h command to find out disk utilization
 	ssh.exec('df -h', {
 	    out: function(stdout) {
-	    	// console.log(stdout);
 	        parse(stdout);
 	    }
 	}).start();
@@ -92,9 +101,11 @@ The output of the df command is hard to read and understand. Therefore, we need 
 const threshold = 90;
 // function to parse the raw data from the df -h command.
 function parse(data){
-	// parser to parse the data(separated by tabs and spaces)
-	var parser = require('node-csv-parse');
 	
+	// the parser function takes the data that needs to be parsed as the input and returns the parsed data as the output.
+	// the delimiter specifies how the data is separated into columns. For example, if there is a '-' separating the columns in the
+	// data, then the delimiter would be '-'. In this case, there is a space(' ') separating the columns. Hence, the delimiter is ' '
+	// The trim value specifies whether the extra spaces in the data need to be removed or not.
 	var parsed = parser(data, {
 		delimiter: ' ',
 		trim: true
@@ -103,43 +114,47 @@ function parse(data){
 	var finalData = [];
 
 	// go through every row in the data and add another column for threshold.
-	// Also, check to see if CPU utilization percentage has exceeded threshhold or not.
+	// Also, check to see if CPU utilization percentage has exceeded threshold or not.
 	for(var i = 0; i < parsed.length; i++){
+		// Split the data based on space so that we get the individual columns.
 		var temp = parsed[i][0].split(' ');
 		
 		// remove all the empty spaces in the array
 		temp = temp.filter(function(str) {
+			// This line removes all the empty spaces in the array
     		return /\S/.test(str);
 		});
 		
+		// If this is the first record, then it is the column header. Therefore, for the column header, we need to add another column
+		// called Threshold exceeded? which tells us whether the limit has exceeded or not.
 		if(i == 0){
 			temp.pop();
-			temp.push('Threshhold exceeded?');
+			temp.push('Threshold exceeded?');
 		}
+		// If this is not the first row, then we can check to see if it has exceeded the threshold or not.
 		else{
-			if(parseInt(temp[4]) >= threshhold){
+			if(parseInt(temp[4]) >= threshold){
 				temp.push('YES');
 			}
 			else{
 				temp.push('NO');
 			}
 		}
-		// console.log(temp);
 		finalData.push(temp);
 	}
-	//console.log(parser(data).asRows());
 
+	// Print the final data as a neat table on the terminal
 	console.table(finalData);
 }
 
 ```
 
-In the `parse()` function, we go through every row in the data and see if the CPU utilization percentage has exceeded the threshold or not. For this, we add another column to the data called `Threshold exceeded?`. This column has two values, "yes" or "no" and tells the user whether the threshold has exceeded or not. 
+In the `parse()` function, we go through every row in the data and see if the CPU utilization percentage has exceeded the threshold or not. For this, we add another column to the data called `ThreshogetInputld exceeded?`. This column has two values, "yes" or "no" and tells the user whether the threshold has exceeded or not. 
 
 ```node
 
 function main(){
-	get_input();
+	getInput();
 }
 
 main();
