@@ -34,7 +34,7 @@ $\pi = \frac{2}{P} \frac{l}{t}$
 
 The probability of intersection, P, is defined as the number of intersections by the total number of tosses of the needle.
 
-![buffon needle](/engineering-education/buffon-needle/Buffon_needle.svg)
+![buffon needle](/engineering-education/buffon-needle/buffon_needle_descr.jpg)
 
 **[Image Source](https://commons.wikimedia.org/w/index.php?curid=13210701)**
 
