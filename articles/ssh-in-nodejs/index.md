@@ -62,7 +62,7 @@ function getInput() {
 	   		rl.close();
 	    	
 	    	});
-		});
+	    });
 	});
 }
 ```
