@@ -20,7 +20,7 @@ Fast queries are about response time. The goal is to have queries return the req
 
 #### Optimizing Queries with EXPLAIN
 
-The EXPLAIN statement provides information about how MySQL executes a statement. EXPLAIN works alongside SELECT, DELETE, INSERT, REPLACE, and UPDATE statements. It displays information from a built-in MySQL optimizer regarding the statement execution plan, and the number of rows scanned in each table. Thus we can determine the cost of the query. For more information about EXPLAIN, check [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html). The query below shows how EXPLAIN works with the SELECT statement.
+The EXPLAIN statement provides information about how MySQL executes a statement. According to [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html), EXPLAIN works alongside SELECT, DELETE, INSERT, REPLACE, and UPDATE statements. It displays information from a built-in MySQL optimizer regarding the statement execution plan and the number of rows scanned in each table. Thus we can determine the cost of the query. The query below shows how EXPLAIN works with the SELECT statement.
 ~~~~sql
 EXPLAIN SELECT * FROM world_x.city LIMIT 5000;
 ~~~~
@@ -97,7 +97,7 @@ SELECT ID, Name, District FROM city LIMIT 10;
 MySQL Query Caching
 MySQL Query Caching MySQL provides database caching functionality. SELECT statement text and the retrieved result are stored in the cache. When you make a similar query to the one already in the cache, MySQL will respond and give a query already in the cache. In this way, fewer resources are used, and your query ran faster. This best works with a database that more select queries are made. Once the table is updated, the cached query and result become invalid. Thus, caching may not work with an application that updates the table frequently.
 
-The command below is used to check if query cache enabled in MySQL.
+The command below is used to check if query cache is enabled in MySQL.
 ~~~~sql
 SHOW VARIABLES LIKE 'have_query_cache';
 ~~~~
