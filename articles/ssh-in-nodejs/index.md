@@ -149,7 +149,7 @@ function parse(data){
 
 ```
 
-In the `parse()` function, we go through every row in the data and see if the CPU utilization percentage has exceeded the threshold or not. For this, we add another column to the data called `ThreshogetInputld exceeded?`. This column has two values, "yes" or "no" and tells the user whether the threshold has exceeded or not. 
+In the `parse()` function, we go through every row in the data and see if the CPU utilization percentage has exceeded the threshold or not. For this, we add another column to the data called `Threshold exceeded?`. This column has two values, "yes" or "no" and tells the user whether the threshold has exceeded or not. 
 
 ```node
 
