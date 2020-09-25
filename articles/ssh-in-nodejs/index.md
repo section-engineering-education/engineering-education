@@ -59,7 +59,7 @@ function getInput() {
 	    	rl.question("What is the password? ", function(password) {	
 	    		
 	    		ssh(host, user ,password);
-	   			rl.close();
+	   		rl.close();
 	    	
 	    	});
 		});
@@ -122,7 +122,7 @@ function parse(data){
 		// remove all the empty spaces in the array
 		temp = temp.filter(function(str) {
 			// This line removes all the empty spaces in the array
-    		return /\S/.test(str);
+    			return /\S/.test(str);
 		});
 		
 		// If this is the first record, then it is the column header. Therefore, for the column header, we need to add another column
