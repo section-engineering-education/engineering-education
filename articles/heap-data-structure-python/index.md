@@ -6,16 +6,14 @@ url: /engineering-education/heap-data-structure-python/
 title: Using the Heap Data Structure in Python
 description: Heaps are special binary trees that have a special property. The key present at the root node of every sub-tree must be the greatest or minimum among all the keys.
 author: saiharsha-balasubramaniam
-date: 2020-09-22T00:00:00-06:00
+date: 2020-09-25T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/heap-data-structure-python/hero.jpg
     alt: binary heaps
 ---
-
 A binary heap is a special data structure that resembles a binary tree. It differs by the property that the root of any subtree should be the smallest or the largest element.
-
 <!--more-->
 
 There are two main types of heaps.
@@ -23,7 +21,7 @@ There are two main types of heaps.
 - **Minheap** -- In a minheap, the root of every subtree is the smallest element.
 - **Maxheap** -- In a maxheap, the root of every subtree is the largest element.
 
-In this article, let us take a look at heaps and dive into programming heaps in Python.
+In this article, let's take a look at heaps and dive into programming heaps in Python.
 
 For more background on the different types of data structures in Python, check out the following articles:
 
@@ -34,10 +32,9 @@ For more background on the different types of data structures in Python, check o
 - [Linked Lists](/engineering-education/linked-list-data-structure-python/)
 - [Binary Trees](/engineering-education/binary-tree-data-structure-python/)
 
-_Note: Prerequisites -- Make sure you have basic Python knowledge before diving into this article. It also might be a good idea to check out some linear data structures. (links are given above)_
+*Note: Prerequisites -- Make sure you have basic Python knowledge before diving into this article. It also might be a good idea to check out some linear data structures. (links are given above)*
 
 ### Table of Contents
-
 - [Heaps: Introduction](#heaps:-introduction)
 - [Applications of Heaps](#applications-of-heaps)
 - [Implementing a Heap](#implementing-a-heap)
@@ -45,7 +42,6 @@ _Note: Prerequisites -- Make sure you have basic Python knowledge before diving 
 - [Conclusion](#conclusion)
 
 ### Heaps: Introduction
-
 Heaps are complete binary trees. Complete binary trees satisfy the following conditions:
 
 - All levels are filled, except the last.
@@ -53,22 +49,20 @@ Heaps are complete binary trees. Complete binary trees satisfy the following con
 
 ![Complete Binary Tree](/engineering-education/heap-data-structure-python/complete-binary-tree.png)
 
-_Figure: Complete Binary Tree ([Source](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html))_
+*[Figure: Complete Binary Tree](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html)*
 
 Heaps satisfy the heap property. This means that the root of every subtree should be the greatest or smallest element in the subtree, recursively.
 
 ### Applications of Heaps
-
 - Priority Queues can be implemented using heaps. The root of a heap always contains the maximum or the minimum value, based on the heap type. Therefore, a min-priority queue is implemented using a minheap. A max-priority queue is implemented using a maxheap. The element with the highest priority can be retrieved in O(1) time.
 
-- Statistics -- If we want to get order statistics, heaps serve as a great choice. If we want the kth smallest or largest element, we can pop the heap k times to retrieve them.
+- Statistics -- If we want to get ordered statistics, heaps serve as a great choice. If we want the kth smallest or largest element, we can pop the heap k times to retrieve them.
 
-- Heaps are used to implement various graph algorithms like Dijkstra's algorithm and Prim's algorithm.
+- Heaps are used in implementing various graph algorithms like Dijkstra's algorithm and Prim's algorithm.
 
 ### Implementing a Heap
 
 #### Heap Operations
-
 A heap has the following methods:
 
 - **`getMax()`**
@@ -78,13 +72,13 @@ A heap has the following methods:
 
 - **`insert(k)`**
 
-  - This operation insert the key **k** into the heap.
+  - This operation inserts the key **k** into the heap.
   - Then it rearranges the heap to restore the heap property.
   - Time Complexity - O(log n).
 
 - **`heapify()`**
 
-  - This operation restored the heap property by rearranging the heap.
+  - This operation restores the heap property by rearranging the heap.
   - Time complexity - O(log n).
 
 - **`printHeap()`**
@@ -92,14 +86,13 @@ A heap has the following methods:
   - Prints the heap's level order traversal.
 
 #### Maxheap using List
-
 We are going to do the list implementation of a heap. In this, the heap's level-order traversal would be stored as an array/list.
 
 ![Level Order Traversal](/engineering-education/heap-data-structure-python/level-order-traversal.png)
 
-_Figure: Level-Order Traversal ([Source](https://www.quora.com/What-is-level-order-traversal-in-a-binary-tree))_
+*[Figure: Level-Order Traversal](https://qph.fs.quoracdn.net/main-qimg-0ddd0cbca44f70d7845cc2caba5a0853)*
 
-_Note - Level-Order Traversal is a recursive traversal where the root is processed first, followed by the children of the root. This is followed by the grandchildren of the root till all the nodes are processed. In the above diagram, the root node is processed first, followed by the left child, right child and so on. The final level order traversal would be: 10 4 8 50 24 5 12 18. For an overview of what a level order traversal, is check out [this](https://www.quora.com/What-is-level-order-traversal-in-a-binary-tree) Quora page._
+*Note - Level-Order Traversal is a recursive traversal where the root is processed first, followed by the children of the root. This is followed by the grandchildren of the root until all the nodes are processed. In the diagram above, the root node is processed first, followed by the left child, right child and so on. The final level order traversal would be: 10 4 8 50 24 5 12 18. For an overview of what a level order traversal is, check out [this](https://www.quora.com/What-is-level-order-traversal-in-a-binary-tree) Quora page.*
 
 In the array representation of a heap, for an element in array index i,
 
@@ -109,7 +102,7 @@ In the array representation of a heap, for an element in array index i,
 
 Let us first define the Heap class.
 
-```python
+```Python
 class MaxHeap:
     def __init__(self):
         self.heap = []
@@ -117,7 +110,7 @@ class MaxHeap:
 
 This initiates a heap as a list. Now, let us define our methods.
 
-```python
+```Python
 class MaxHeap:
     def __init__(self):
         # Initialize a heap using list
@@ -164,10 +157,9 @@ class MaxHeap:
 ```
 
 #### Minheap using Heapq
-
 We have successfully implemented a heap using a list. Now, let us use the **`heapq`** library in Python to implement a minheap.
 
-```python
+```Python
 import heapq
 class MinHeap:
     def __init__(self, minheap): # minheap is the list that we can to convert to a heap
@@ -188,15 +180,16 @@ class MinHeap:
 ```
 
 ### Practice Heaps
+To get a better understanding of heaps, read a few in depth articles below and solve the following problems.
 
-To get a better understanding of heaps, read a little in depth about heaps and solve the following problems.
-
-- `Heapq` Library -- [Python Official Documentation](https://docs.python.org/3/library/heapq.html)
-- Heap Sort -- [GeeksforGeeks](https://www.geeksforgeeks.org/heap-sort/)
-- K Largest Elements -- [GeeksforGeeks](https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/)
-- Building a Heap -- [GeeksforGeeks](https://www.geeksforgeeks.org/time-complexity-of-building-a-heap/)
-- Problems on Heaps -- [LeetCode](https://leetcode.com/tag/heap/)
+- [`Heapq` Library ](https://docs.python.org/3/library/heapq.html)
+- [Heap Sort](https://www.geeksforgeeks.org/heap-sort/)
+- [K Largest Elements](https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/)
+- [Building a Heap](https://www.geeksforgeeks.org/time-complexity-of-building-a-heap/)
+- [Problems on Heaps](https://leetcode.com/tag/heap/)
 
 ### Conclusion
-
 Heaps are extremely versatile and useful data structures that are used along with other data structures like Graphs and Trees to improve the efficiency of various operations. Once we have mastered heaps, we can move on to advanced data structures like Graphs.
+
+---
+Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
