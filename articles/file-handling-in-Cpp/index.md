@@ -41,7 +41,7 @@ One of the most common actions in File Handling is opening a file. Let's see how
 
 ```C
 ifstream fin;
-fin.open("index.txt")
+fin.open("index.txt");
 ```
 
 That was simple as we just used the function **open** to open a file name "index.txt." Here we use the ` ifstream` object to open our file.
@@ -49,6 +49,43 @@ That was simple as we just used the function **open** to open a file name "index
 **ifstream** is the type we use to declare an object. Very similar to the datatypes that we use in other functions, such as: int, float, bool or string.
 
 **fin** is the name of the variable. We could name it anything we want.
+
+Note: The one thing to keep in mind is that if the file we are trying to open doesn't exist on our computer, then this programs automatically create a new one with the same name or delete everything in it if something does exist in it. We can also opt this option whenever we need to create a file. You can also give a second argument to specify how you want to handle your file:
+* ios::app   -- Append to the file
+* ios::trunc -- Delete everything in the file
+
+In case, you want to append the file. Here's how you would do it:
+```C
+ifstream fin;
+fin.open("index.txt", ios::app);
+```
+
+You won't always know what file to open, so we can also opt-in for this option for asking the name of the file. Here's how we can do it:
+
+```C
+string filename;
+cout<<"Enter the name of the File?";
+cin>>filename
+ifstream fin;
+fin.open(filename.data());
+```
+
+Here in this code, we just asked for the name of the file, and proceed with the same steps we did above.
+
+One of the most common errors we face while opening a File is; what if a file is already open before we are using it. We need to ensure that doesn't happen because otherwise, we would not be able to open it, and our file can get corrupted, and we may lose all of our existing data. Here's how we can ensure that doesn't happen:
+
+```C
+while(!infile.Is_open()){
+cout<<"File doesn't Found!"<<endl;
+cout<<"Enter the File name again?"<<endl;
+cin>>filename;
+iafile.clear();
+infile.open(filename.data());
+}
+```
+In the above function, we checked to see if our file isn't already open and if that's the case, we would go into the loop and ask the user again for the correct name of the file. With that, we would use a function ```iafile.open();``` that remove all the error conditions that we might have faced while opening a file and ensure that our file doesn't get corrupted.
+
+
 
 ### Writing to a File
 Writing to a file is easier than even opening a file. Instead of using **cout**, we just need to use the name of the variable that we recently selected. Here's how to do it:
@@ -86,9 +123,21 @@ using namespace std;
 
 int main() {
 ifstream file;
+string filename;
 string file_data;
 
-file.open("index.md"); //Opening a File
+cout<<"Enter the name of the file?"<<endl; //Opening a File
+cin>>filename;
+file.open(filename.data()); 
+
+while(!infile.Is_open()){ //If our file is already open
+cout<<"File doesn't Found!"<<endl;
+cout<<"Enter the File name again?"<<endl;
+cin>>filename;
+iafile.clear();
+infile.open(filename.data());
+}
+
 fin<<"Section.io is a great platform to learn about new technologies."; //Writing in a File
 
 while(file >> file_data) { //Redaing from a File
@@ -104,7 +153,7 @@ In the above program , we implemented everything that we have covered so far. Le
 
 - **Opening a File**
 
-To open a file, we used a function ```file.open("index.md")``` that opens a file named **index.md**. 
+To open a file, we asked the user for the name of the file. And if the file is already opened, we ensure that our file doesn't get corrupted by using the the while loop.
 
 - **Writing to a File**
 
