@@ -19,7 +19,7 @@ Artificial intelligence is the art of embedding intelligence into machines. The 
 ### Introduction to Machine Learning
 Machine learning is a subset of artificial intelligence. Artificial intelligence deals with automating knowledge or judgment tasks on an application level. Considering the overall vision, artificial intelligence aims to attain artificial general intelligence (AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach of attaining human-level intelligence.   
 
-[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as follows: 'Machine learning is the study of computer algorithms to extract patterns from data'. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
+[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as follows:  'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. One of the main objectives of machine learning is to extract patterns from data. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
 
 1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pair of values help the algorithm model the function that generates such outputs for any given inputs. We will be covering the entire topic of supervised learning in this article.
 
