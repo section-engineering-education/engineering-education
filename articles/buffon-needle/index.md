@@ -1,14 +1,30 @@
-# Simulation of Buffon's Needle problem in Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/buffon-needle/
+title: Simulation of Buffon's Needle problem in Python
+description:
+author: lalithnarayan-c
+date: 2020-09-24T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used for daily purposes. The pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. Now imagine getting to look at pi from a different perspective. What if I told you, we could estimate pi from a probability problem. 
-
+  - url: /engineering-education/buffon-needle/hero.jpg
+    alt: Simulation of Buffon's Needle image
+---
+Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used daily. The pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. Now imagine getting to look at pi from a different perspective. What if I told you, we could estimate pi from a probability problem.
+<!--more-->
 A very famous problem called the Buffon's needle was posed by French naturalist, mathematician, and cosmologist, Georges-Louis Leclerc, Conte de Buffon. He proposed the problem as follows:
 
 > Suppose we have a floor made of parallel strips of wood, each the same width, and we drop a needle onto the floor. What is the probability that the needle will lie across a line between two strips?
 
-What fascinates me is the relation between the problem proposed and the mathematical constant pi. It comes under the study of [geometric probability](https://en.wikipedia.org/wiki/Geometric_probability), which has dealt with various mind-boggling problems such as Bertrand's paradox. Bertrand's paradox is a problem that discusses the importance of defining the context for a probabilistic analysis of a problem. If you are more interested, I suggest you look into the following [link](http://orca.cf.ac.uk/3803/1/Shackel%20Bertrand%27s%20paradox%205.pdf). 
+What fascinates me is the relation between the problem proposed and the mathematical constant pi. It is under the study of [geometric probability](https://en.wikipedia.org/wiki/Geometric_probability), which has dealt with various mind-boggling problems such as Bertrand's paradox.
 
-The probability that the needle touches either of the lines is given by the solution as follows:
+Bertrand's paradox is a problem that discusses the importance of defining the context for a probabilistic analysis of a problem. If you are more interested, I suggest you follow this [link](http://orca.cf.ac.uk/3803/1/Shackel%20Bertrand%27s%20paradox%205.pdf).
+
+Now to the proablem and thand - the probability that the needle will touch either of the lines is given by the solution as follows:
 
 $P = \frac{2}{\pi} \frac{l}{t}$
 
@@ -16,35 +32,34 @@ The value of $\pi$ can be estimated by re-arranging the equation as follows:
 
 $\pi = \frac{2}{P} \frac{l}{t}$
 
-The probability of intersection, P, is defined as the number of intersections by the total number of tosses of the needle. 
+The probability of intersection, P, is defined as the number of intersections by the total number of tosses of the needle.
 
-![buffon needle](Buffon_needle.svg)
+![buffon needle](/engineering-education/buffon-needle/Buffon_needle.svg)
 
 **[Image Source](https://commons.wikimedia.org/w/index.php?curid=13210701)**
 
-We have defined thickness `t` to be 1 and the length `l` to be 0.5. 
+We have defined thickness `t` to be 1 and the length `l` to be 0.5.
 
 ### Code
-
-Let us look at the code to simulate Buffon's Needle problem.
-We will define two classes, one to define the blueprint for **Needle** and the second to define the blueprint for the **Simulation**. The two classes are named as `DefineNeedle` and  `BuffonSimulation` respectively. 
+Let's take a look at the code to simulate Buffon's Needle problem.
+We will define two classes, one to define the blueprint for **Needle** and the second to define the blueprint for the **Simulation**. The two classes are named as `DefineNeedle` and  `BuffonSimulation` respectively.
 
 Let us look at the first class, `DefineNeedle`:
-1. We define the `__init__` method where we initialize the variables. We store the coordinates of the needle in the cartesian coordinate system and the complex system. 
+1. We define the `__init__` method where we initialize the variables. We store the coordinates of the needle in the cartesian coordinate system and the complex system.
 2. In the variable `end_points`, we store the extreme points of the needle using the coordinates of the needle in the complex system. It is calculated as follows
-   1. Compute $(x- \frac{l}{2}*\cos(\theta), y-\frac{l}{2}*\sin(\theta))$ 
+   1. Compute $(x- \frac{l}{2}*\cos(\theta), y-\frac{l}{2}*\sin(\theta))$
    2. Compute $(x+ \frac{l}{2}*\cos(\theta), y+\frac{l}{2}*\sin(\theta))$
    3. Hence, we store these two co-ordinates in an array called `end_points`. `end_points` is a `2X2` array consisting of two rows of the coordinates computed above.
-3. We define a new method called `intersects_with_y` to check if a given needle intersects with the horizontal lines. 
+3. We define a new method called `intersects_with_y` to check if a given needle intersects with the horizontal lines.
 
 Now we shall look at the second class, `BuffonSimulation`:
-1. We defined the `__init__` method. The variables declared are `floor`, `boards`, `list_of_needle_objects` and `number_of_intersections`. We will use the library `matplotlib` extensively in this project. We import the `pyplot` library from `matplotlib` in the first line of code. In the `__init__` method, we define the fig variable, which initializes the figure. 
+1. We defined the `__init__` method. The variables declared are `floor`, `boards`, `list_of_needle_objects` and `number_of_intersections`. We will use the library `matplotlib` extensively in this project. We import the `pyplot` library from `matplotlib` in the first line of code. In the `__init__` method, we define the fig variable, which initializes the figure.
 2. The next method we define is `plot_floor_boards`, which is used to set the 0 & 1 vertical lines in the plot.
-3.  `toss_needles` method uses the object `needle_object` of the class `DefineNeedle`. Using the `endpoints` variable, we obtain the x and y coordinates respectively. Further, we check if the needle intersects with the two floor_boards defined in the earlier method. If it intersects, the needle is plotted in green. Else, it is plotted in red.
-4.  `estimate_pi` is the function that computes the value of pi using the formula given above. The length of the needle is 0.5, the width is. Therefore, the formula reduces to the inverse of the probability. Try it out using a piece of paper to get convinced. 
-5.  `plot_needles` is used for plotting the needles and the information that goes along with it. We update the plot once every 200 needles. The information is displayed below the plot. 
+3.  `toss_needles` method uses the object `needle_object` of the class `DefineNeedle`. Using the `endpoints` variable, we obtain the x and y coordinates respectively. Next, we check if the needle intersects with the two floor_boards defined in the earlier method. If it intersects, the needle is plotted in green. Otherwise, it is plotted in red.
+4.  `estimate_pi` is the function that computes the value of pi using the formula given above. The length of the needle is 0.5, the width is. Therefore, the formula reduces to the inverse of the probability. Try it out using a piece of paper to see it for yourself.
+5.  `plot_needles` is used for plotting the needles and the information that goes along with it. We update the plot once every 200 needles. The information is displayed below the plot.
 
-We create an object of the `BuffonSimulation` and call the `plot` method in the `main` function. Finally, we call the `main` function to run the entire code. A repl.it link is provided so that you can run and check the results for yourself.
+We create an object of the `BuffonSimulation` and call the `plot` method in the `main` function. Finally, we call the `main` function to run the entire code. A repl.it link is provided so that you can run and check the results.
 
 ```py
 import matplotlib.pyplot as plt
@@ -145,5 +160,4 @@ simulation.plot()
 <iframe height="400px" width="100%" src="https://repl.it/repls/MediumblueCornyManagement?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### Conclusion
-
-In this article, we estimated the value of $\pi$ using a problem so elegantly posed. I am excited by the fact that $\pi$ is connected to a probability question. Do connect with me on [LinkedIn](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) and let me know what you think is the relation between $\pi$ and the given problem. Think about the practicality of the value of $\pi$. Mathematics reveals secrets in simple and elegant problems such as this one. I hope you enjoyed reading this one as much as I enjoyed writing it. 
+In this article, we estimated the value of $\pi$ using a problem so elegantly posed. What is truly exciting is the fact that $\pi$ is connected to a probability question. Do connect with me on [LinkedIn](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) and let me know what you think is the relation between $\pi$ and the given problem. Think about the practicality of the value of $\pi$. Mathematics reveals secrets in simple and elegant problems such as this one. I hope you enjoyed reading this one as much as I enjoyed writing it.
