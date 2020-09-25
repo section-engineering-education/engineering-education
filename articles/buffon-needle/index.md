@@ -52,8 +52,6 @@ Let us look at the first class, `DefineNeedle`:
    3. Hence, we store these two co-ordinates in an array called `end_points`. `end_points` is a `2X2` array consisting of two rows of the coordinates computed above.
 3. We define a new method called `intersects_with_y` to check if a given needle intersects with the horizontal lines.
 
-$(x- \frac{l}{2}*\cos(\theta), y-\frac{l}{2}*\sin(\theta))$
-
 Now we shall look at the second class, `BuffonSimulation`:
 1. We defined the `__init__` method. The variables declared are `floor`, `boards`, `list_of_needle_objects` and `number_of_intersections`. We will use the library `matplotlib` extensively in this project. We import the `pyplot` library from `matplotlib` in the first line of code. In the `__init__` method, we define the fig variable, which initializes the figure.
 2. The next method we define is `plot_floor_boards`, which is used to set the 0 & 1 vertical lines in the plot.
