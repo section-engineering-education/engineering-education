@@ -47,10 +47,12 @@ We will define two classes, one to define the blueprint for **Needle** and the s
 Let us look at the first class, `DefineNeedle`:
 1. We define the `__init__` method where we initialize the variables. We store the coordinates of the needle in the cartesian coordinate system and the complex system.
 2. In the variable `end_points`, we store the extreme points of the needle using the coordinates of the needle in the complex system. It is calculated as follows
-   1. Compute $(x- \frac{l}{2}*\cos(\theta), y-\frac{l}{2}*\sin(\theta))$
-   2. Compute $(x+ \frac{l}{2}*\cos(\theta), y+\frac{l}{2}*\sin(\theta))$
+   1. Compute `$ (x- \frac{l}{2}*\cos(\theta), y-\frac{l}{2}*\sin(\theta)) $`
+   2. Compute `$ (x+ \frac{l}{2}*\cos(\theta), y+\frac{l}{2}*\sin(\theta)) $`
    3. Hence, we store these two co-ordinates in an array called `end_points`. `end_points` is a `2X2` array consisting of two rows of the coordinates computed above.
 3. We define a new method called `intersects_with_y` to check if a given needle intersects with the horizontal lines.
+
+$(x- \frac{l}{2}*\cos(\theta), y-\frac{l}{2}*\sin(\theta))$
 
 Now we shall look at the second class, `BuffonSimulation`:
 1. We defined the `__init__` method. The variables declared are `floor`, `boards`, `list_of_needle_objects` and `number_of_intersections`. We will use the library `matplotlib` extensively in this project. We import the `pyplot` library from `matplotlib` in the first line of code. In the `__init__` method, we define the fig variable, which initializes the figure.
