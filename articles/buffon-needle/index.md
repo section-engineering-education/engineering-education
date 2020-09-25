@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/buffon-needle/
 title: Simulation of Buffon's Needle problem in Python
-description:
+description: In this article we will speak about Buffon's Needle problem in Python by running a simulation and exploing pi.
 author: lalithnarayan-c
-date: 2020-09-24T00:00:00-10:00
+date: 2020-09-25T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,17 +14,15 @@ images:
   - url: /engineering-education/buffon-needle/hero.jpg
     alt: Simulation of Buffon's Needle image
 ---
-Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used daily. The pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. Now imagine getting to look at pi from a different perspective. What if I told you, we could estimate pi from a probability problem.
+Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used daily. The pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. With this article we will get to look at pi from a different perspective. What if I told you, we could estimate pi with a probability problem.
 <!--more-->
-A very famous problem called the Buffon's needle was posed by French naturalist, mathematician, and cosmologist, Georges-Louis Leclerc, Conte de Buffon. He proposed the problem as follows:
+A very famous problem called the [Buffon's needle](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem) was posed by French naturalist, mathematician, and cosmologist, Georges-Louis Leclerc, Conte de Buffon. He proposed the problem as follows:
 
-> Suppose we have a floor made of parallel strips of wood, each the same width, and we drop a needle onto the floor. What is the probability that the needle will lie across a line between two strips?
+> Lets suppose we have a floor made of parallel strips of wood, each the same width, and we drop a needle onto the floor. What is the probability that the needle will lie across a line between two strips?
 
-What fascinates me is the relation between the problem proposed and the mathematical constant pi. It is under the study of [geometric probability](https://en.wikipedia.org/wiki/Geometric_probability), which has dealt with various mind-boggling problems such as Bertrand's paradox.
+What's fascinating is the relation between the problem proposed and the mathematical constant pi. This is all under the study of [geometric probability](https://en.wikipedia.org/wiki/Geometric_probability), which has dealt with various mind-boggling problems such as [Bertrand's paradox](http://orca.cf.ac.uk/3803/1/Shackel%20Bertrand%27s%20paradox%205.pdf).
 
-Bertrand's paradox is a problem that discusses the importance of defining the context for a probabilistic analysis of a problem. If you are more interested, I suggest you follow this [link](http://orca.cf.ac.uk/3803/1/Shackel%20Bertrand%27s%20paradox%205.pdf).
-
-Now to the proablem and thand - the probability that the needle will touch either of the lines is given by the solution as follows:
+Now to the problem and hand - the probability that the needle will touch either of the lines is given by the solution as follows:
 
 $P = \frac{2}{\pi} \frac{l}{t}$
 
@@ -59,7 +57,7 @@ Now we shall look at the second class, `BuffonSimulation`:
 4.  `estimate_pi` is the function that computes the value of pi using the formula given above. The length of the needle is 0.5, the width is 1. Therefore, the formula reduces to the inverse of the probability. Try it out using a piece of paper to see it for yourself.
 5.  `plot_needles` is used for plotting the needles and the information that goes along with it. We update the plot once every 200 needles. The information is displayed below the plot.
 
-We create an object of the `BuffonSimulation` and call the `plot` method in the `main` function. Finally, we call the `main` function to run the entire code. A repl.it link is provided so that you can run and check the results.
+We create an object of the `BuffonSimulation` and call the `plot` method in the `main` function. Finally, we call the `main` function to run the entire code. A repl.it link is provided at the end so that you can check the results.
 
 ```py
 import matplotlib.pyplot as plt
@@ -160,7 +158,7 @@ simulation.plot()
 <iframe height="400px" width="100%" src="https://repl.it/repls/MediumblueCornyManagement?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### Conclusion
-In this article, we estimated the value of $\pi$ using a problem so elegantly posed. What is truly exciting is the fact that $\pi$ is connected to a probability question. Do connect with me on [LinkedIn](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) and let me know what you think is the relation between $\pi$ and the given problem. Think about the practicality of the value of $\pi$. Mathematics reveals secrets in simple and elegant problems such as this one. I hope you enjoyed reading this one as much as I enjoyed writing it.
+In this article, we estimated the value of $\pi$ using an elegant problem. What is truly exciting is the fact that $\pi$ is connected to a probability question. Do connect with me on [LinkedIn](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) and let me know what you think is the relation between $\pi$ and the given problem. Think about the practicality of the value of $\pi$. Mathematics reveals secrets in simple and elegant problems such as this one. I hope you enjoyed reading this one as much as I enjoyed writing it.
 
 <!-- MathJax script -->
 <script type="text/javascript" async
