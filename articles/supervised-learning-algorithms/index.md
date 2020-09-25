@@ -6,7 +6,7 @@ url: /engineering-education/supervised-learning-algorithms/
 title: Supervised Learning Algorithms
 description: Introduction to supervised learning algorithms such as classification and regression algorithms.
 author: lalithnarayan-c
-date: 2020-09-24T00:00:00-10:00
+date: 2020-09-25T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,9 @@ Artificial intelligence is the art of embedding intelligence into machines. The 
 ### Introduction to Machine Learning
 Machine learning is a subset of artificial intelligence. Artificial intelligence deals with automating knowledge or judgment tasks on an application level. Considering the overall vision, artificial intelligence aims to attain artificial general intelligence (AGI). Human intelligence is an example of AGI. The entire field of AI is working towards one goal: AGI. Machine learning, on the other hand, focuses on the statistical approach of attaining human-level intelligence.   
 
-[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as follows:  'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. One of the main objectives of machine learning is to extract patterns from data. The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
+[Tom Mitchell](https://en.wikipedia.org/wiki/Tom_M._Mitchell) defines machine learning as follows: 'Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience'. One of the main objectives of machine learning is to extract patterns from data.
+
+The method of feeding experience to the algorithm is the basis for the primary categorization of algorithms. Under machine learning, we mainly study three types of algorithms:
 
 1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pair of values help the algorithm model the function that generates such outputs for any given inputs. We will be covering the entire topic of supervised learning in this article.
 
@@ -35,11 +37,11 @@ Another use case example of supervised learning is predicting the price of house
 Supervised learning is mainly classified into two types: Classification and Regression. Let us take a closer look at both these algorithm categories.  
 
 #### Classification
-Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digit output labels such as Yes or No, or 'A','B','C',  respectively. We can also have scenarios where multiple outputs are required. For this use case, we can consider the example of self-driving cars.
+Classification algorithms are a type of supervised learning algorithms that predict outputs from a discrete sample space. For example, predicting a disease, predicting digit output labels such as Yes or No, or 'A','B','C', respectively. We can also have scenarios where multiple outputs are required. For this use case, we can consider the example of self-driving cars.
 
 The various objects found on the road need to be classified according to their categories and also need to be classified as safe or unsafe. This scenario is an example of multi-class classification. We will now look at some of the key algorithms underneath the *classification algorithms*.
 
-1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc. 
+1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc.
 
 ![distance metrics](/engineering-education/supervised-learning-algorithms/distance.jpg)
 
@@ -122,7 +124,7 @@ Let us look at implementing SVM using `sklearn`.
 ### Regression
 Regression algorithms are another subset of machine learning algorithms used to predict continuous numeric responses. As seen in an earlier example, predicting house rent given different factors is an example of regression. Let's look at the regression algorithm and use linear regression as an example.
 
-3. Linear Regression: Linear regression is a simple yet effective method used in a large number of applications. Let us say we have an input feature vector `x`. The output feature vector `y` is the predicted entity. We use the sum of least squares to compute the relation between the target and input variables. Linear regression can be implemented using sklearn. Let us look at the implementation below:
+3. Linear Regression: Linear regression is a simple yet effective method used in a large number of applications. Let's say we have an input feature vector `x`. The output feature vector `y` is the predicted entity. We use the sum of least squares to compute the relation between the target and input variables. Linear regression can be implemented using sklearn. Let us look at the implementation below:
 
     ```python
     # Import necessary modules
