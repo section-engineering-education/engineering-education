@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/buffon-needle/
 title: Simulation of Buffon's Needle problem in Python
-description: In this article we will speak about Buffon's Needle problem in Python by running a simulation and exploing pi.
+description: In this article we will speak about Buffon's Needle problem in Python by running a simulation and exploring pi.
 author: lalithnarayan-c
-date: 2020-09-25T00:00:00-10:00
+date: 2020-09-25T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/buffon-needle/hero.jpg
     alt: Simulation of Buffon's Needle image
 ---
-Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used daily. The pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. With this article we will get to look at pi from a different perspective. What if I told you, we could estimate pi with a probability problem.
+Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used daily. Pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. With this article we will get to look at pi from a different perspective. What if I told you, we could estimate pi with a probability problem.
 <!--more-->
-A very famous problem called the [Buffon's needle](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem) was posed by French naturalist, mathematician, and cosmologist, Georges-Louis Leclerc, Conte de Buffon. He proposed the problem as follows:
+A very famous problem called the [Buffon's needle](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem) was posed by French naturalist, mathematician, and cosmologist, [Georges-Louis Leclerc](https://en.wikipedia.org/wiki/Georges-Louis_Leclerc,_Comte_de_Buffon), Conte de Buffon. He proposed the problem as follows:
 
 > Lets suppose we have a floor made of parallel strips of wood, each the same width, and we drop a needle onto the floor. What is the probability that the needle will lie across a line between two strips?
 
@@ -158,7 +158,9 @@ simulation.plot()
 <iframe height="400px" width="100%" src="https://repl.it/repls/MediumblueCornyManagement?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### Conclusion
-In this article, we estimated the value of $\pi$ using an elegant problem. What is truly exciting is the fact that $\pi$ is connected to a probability question. Do connect with me on [LinkedIn](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) and let me know what you think is the relation between $\pi$ and the given problem. Think about the practicality of the value of $\pi$. Mathematics reveals secrets in simple and elegant problems such as this one. I hope you enjoyed reading this one as much as I enjoyed writing it.
+In this article, we estimated the value of $\pi$ using an elegant problem. What is truly exciting is the fact that $\pi$ is connected to a probability question. Think about the practicality of the value of $\pi$. Mathematics reveals secrets in simple and elegant problems such as this one. I hope you enjoyed reading this one as much as I enjoyed writing it.
+
+Do connect with me on [LinkedIn](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) and let me know what you think is the relation between $\pi$ and the given problem. 
 
 <!-- MathJax script -->
 <script type="text/javascript" async
