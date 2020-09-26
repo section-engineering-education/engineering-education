@@ -1,4 +1,3 @@
-# Introducing GPT-3
 
 ![hero](/engineering-education/introducing-gpt3/hero.jpg)
 
