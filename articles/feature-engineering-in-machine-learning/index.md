@@ -1,4 +1,3 @@
-# Feature Engineering in Machine Learning: An Overview
 
 ![hero](/engineering-education/feature-engineering-in-machine-learning/hero.jpg)
 
