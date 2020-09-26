@@ -15,7 +15,7 @@ Date-fns is a lightweight 🚀 library that provides comprehensive functions for
 [Check more benefits of date fns](https://date-fns.org/).
 
 ### Getting Started with Date-fns
-Date-fns is available in the [npm packages collection](https://www.npmjs.com/package/date-fns). And if then you have [Node.js installed](http://nodejs.org/), install date-fns using the following command `npm install date-fns`. Alternatively, if you are using yarn `yarn add date-fns` will get you started. Date-fns can be used with both [CommonJS Modules](https://nodejs.org/api/modules.html) and [ES modules](https://nodejs.org/api/esm.html). In this article, we will dive into CommonJS module with date instances such as:
+Date-fns is available in the [npm packages collection](https://www.npmjs.com/package/date-fns). And if  you have [Node.js installed](http://nodejs.org/), install date-fns using command `npm install date-fns`. Or, if you are using yarn `yarn add date-fns` will get you started. Date-fns can be used with both [CommonJS Modules](https://nodejs.org/api/modules.html) and [ES modules](https://nodejs.org/api/esm.html). In this article, we will dive into CommonJS module with date instances such as:
 - Displaying dates
 - Date formatting
 - Date locale
@@ -24,7 +24,7 @@ Date-fns is available in the [npm packages collection](https://www.npmjs.com/pac
 - Date comparisons, and other important applications of date-fns functions
 
 ### Date Format
-Date formatting is key when displaying a date. Formatting helps to display human-readable dates. Date format replaces the individual date tokens to a format string, which specifies the part of the date token you want to format and how the token will be displayed. To understand this more let's have a look at some date token representation patterns that you can choose to display as formats.
+Date formatting is key when displaying a date. Formatting helps to display human-readable dates. Date format replaces the individual date tokens to a format string. Formats  specifies the part of the date token you want to format and how the token will be displayed. To understand this more let's have a look at some date token representation patterns that you can choose to display as formats.
 
 **Note:** some of these [Unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) are different from other date libraries such as Moment.js.
 
@@ -152,11 +152,12 @@ Import sub function as shown in the example below. Similarly, you can choose for
 const date = new Date('2020.09.29 10:12:00');
 //sub days
 const a = subDays(date, 4);
-//sub months
-const b = subMonths(date, 3);
-//sub years
 //sub minutes
-const d = subMinutes(date, 40);
+const b = subMinutes(date, 40);
+//sub months
+const c = subMonths(date, 3);
+//sub years
+const d = subYears(date, 2);
 console.log(format(a, 'dd MMMM yyyy HH:mm'));
 console.log(format(b, 'dd MMMM yyyy HH:mm'));
 console.log(format(c, 'dd MMMM yyyy HH:mm'));
