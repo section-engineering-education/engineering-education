@@ -161,7 +161,7 @@ Express is also easy to test due to its middleware and routes which modularize p
 Express.js is also closer to Node.js when compared to the other frameworks, it is only a thin layer to Node.js hence making it the best for building applications that require the best performance.
 
 #### Why choose Koa.js
-Koa.js was created to be better than Express, therefore, it can do all that Express can do and more. From our performance test, we saw that Koa performs the best since it can handle many requests per second. T
+Koa.js was created to be better than Express, therefore, it can do all that Express can do and more. From our performance test, we saw that Koa performs the best since it can handle many requests per second. 
 
 This makes it a better choice for web applications and APIs that serve many clients at a time.
 
