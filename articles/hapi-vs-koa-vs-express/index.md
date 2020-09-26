@@ -109,11 +109,10 @@ In this section we are going to highlight some of the advantages and disadvantag
 #### Hapi.js
 ##### Advantages
 1. Hapi enables one to build a scalable web application or API.
-2. Hapi uses plugins which helps in scaling.
-3. Hapi can also be used in conjunction with front-end frameworks like Vue and React to build single-page web applications.
-4. Hapi provides a deeper control over request handling through the use of context.
-5. Hapi provides input/output validation, routing and caching, hence making it a good choice for building REST APIs.
-6. Hapi provides good plugins such as Yar, Good and Catbox etc.
+2. Hapi uses plugins which breaks applications in to smaller pieces thus help in scaling.
+3. Hapi provides a deeper control over request handling through the use of context.
+4. Hapi provides input/output validation, routing and caching, hence making it a good choice for building REST APIs.
+5. Hapi provides good plugins such as [Yar](https://hapi.dev/module/yar/), [Good](https://hapi.dev/module/good/) and [Catbox](https://hapi.dev/module/catbox/) etc.
 
 ##### Disadvantages
 1. Refactoring in Hapi is manual.
@@ -122,11 +121,12 @@ In this section we are going to highlight some of the advantages and disadvantag
 
 #### Koa.js
 ##### Advantages
-1. Koa has a small footprint hence making it very light weight.
+1. Koa has a small footprint(about 600 lines of code) hence making it very light weight.
 2. Koa has a good overall user experience.
 3. Koa uses try/catch which improves error handling.
 4. Koa has a cleaner and more readable asynchronous code.
 5. Koa does not use callbacks hence facilitating upstream and downstream flow of controls.
+6. Refactoring larger code bases in Koa is easier due to modularization. 
 
 ##### Disadvantages
 1. Koa has a relatively small community.
@@ -142,7 +142,7 @@ In this section we are going to highlight some of the advantages and disadvantag
 5. Express has a low learning curve.
 
 ##### Disadvantages
-1. Express requires a lot of manual labor.
+1. Express requires a lot of manual labor since endpoints, middlewares etc need to be created and tested manually.
 2. Refactoring larger code bases is very challenging.
 
 ### Framework performance
