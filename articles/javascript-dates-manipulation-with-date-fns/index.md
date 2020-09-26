@@ -83,7 +83,7 @@ Second
 [Check more Unicode date format for Date-fns](https://date-fns.org/v2.16.1/docs/Unicode-Tokens)
 
 ### Parsing and Displaying Date
-As we have explained, date-fns is a collection of many small functions. Use `require('date-fn');` to get started. To start [parsing and displaying](https://date-fns.org/v2.16.1/docs/parse) any date you need to import the functions you require, thus you don't have to import the whole API (work with only what you need). Let's display a simple today's date.
+As we have explained, date-fns is a collection of many small functions. Use `require('date-fn');` to get started. To start [parsing and displaying](https://date-fns.org/v2.16.1/docs/parse) dates you need to import the functions you require, thus you don't have to import the whole API (work with only what you need). Let's display a simple today's date.
 ```js
 //import the funtion you want to use
 const {format} = require('date-fns');
@@ -94,7 +94,7 @@ const {format} = require('date-fns');
 const today =format(new Date(),'dd.MM.yyyy');
 console.log(today);
 ```
-This will display the default current date with the date-fns default format. Now, this is where date format comes in to display the date token to a more human-readable and look exactly the way you want (return the date parsed from string using the given format string).
+This will display the default current date with the date-fns default format. `format` displays the date token to a more human-readable and look exactly the way you want (return the date parsed from string using the given format string).
 
 ### Displaying Formatted Date
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-format?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
@@ -118,7 +118,7 @@ console.log(`${format(date, 'do  MMMM yyyy OOOO')}`);
 ```
 The above examples will display the date parsed with several date formats. [Check out more date formats](https://date-fns.org/v2.16.1/docs/format) you can play with and get more ideas of how date-fns formats works.
 
-**Note:** we have only imported the `format` function as it is what we need for the moment, that's one of the dynamic features of date-fns. When formatting date-fns token values try to avoid some [common mistakes](https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md) such as:
+**Note:** we have only imported the `format` function as it is what we need, that's one of the dynamic features of date-fns. When formatting date-fns token values try to avoid some [common mistakes](https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md) such as:
 
 ```js
 format(date, 'DD.MM.YYYY'); ❌
@@ -165,7 +165,7 @@ console.log(format(d, 'dd MMMM yyyy HH:mm'));
 ```
 
 ### Date Locale
-Users who typically visit your website may come across the different parts of the world. Assuming they do not speak your native language, so how will you implement specific or multiple locales to engage your users? Well, formatting dates was easy. How about locale? It cannot be that hard with date-fns, it is easy as pie. All you need is to import the locale plugin from date-fns. Date-fns support [I18n](https://date-fns.org/docs/I18n#supported-languages) with a simple way to internationalize date functions and display localized formatted dates. You need to use the `require('date-fns/locale');` and pass the optional locales as the argument.
+Users who visits your website may come across different parts of the world. Assuming they do not speak your native language, so how will you implement specific or multiple locales to engage your users? Well, formatting dates was easy. How about locale? It cannot be that hard with date-fns, it is easy as pie. All you need is to import the locale plugin from date-fns. Date-fns support [I18n](https://date-fns.org/docs/I18n#supported-languages) to internationalize date functions and display localized formatted dates. You need to use the `require('date-fns/locale');` and pass the optional locales as the argument.
 I.e `require('date-fns/locale/fr');` )('`fr` for frech').
 For example, let's have a simple date parsed and returned
  in French Locale.
@@ -190,7 +190,7 @@ Date-fns supports[ time zone data](https://date-fns.org/v2.16.1/docs/Time-Zones)
 - The time zone descriptor, usually an offset or [IANA](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) time zone name (e.g. America/Los_Angeles)
 
 #### Time Zone Helpers
-To understand [time zone helpers](https://github.com/marnusw/date-fns-tz#time-zone-helpers) more assume you have a system where you set an event to start at a specific time and your system local time should be shown when the site is accessed anywhere in the world.
+To understand [time zone helpers](https://github.com/marnusw/date-fns-tz#time-zone-helpers),  assume you have a system where you set an event to start at a specific time and your system local time should be shown when the site is accessed anywhere in the world.
 
 - zonedTimeToUtc returns a given date equivalent to the time zone UTC (parses date in a given time zone)
 - utcToZonedTime return local time from a UTC (converts date to the provided time zone)
@@ -366,9 +366,9 @@ This interval helper includes
 Head out to [date-fns docs to check out more interval helpers](https://date-fns.org/v2.16.1/docs/Interval) and how you can apply them to your application.
 
 ### 🎁Comparison Between Moment.js and Date-fns
-Moment.js is a stand-alone open-source JavaScript framework wrapper for date objects that eliminates native JavaScript date objects, which are cumbersome to use. Moment.js makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. Unlike date-fns, its biggest downtime is that its API size is huge.
+Moment.js is a stand-alone open-source JavaScript framework wrapper for date objects. It eliminates native JavaScript date objects, which are cumbersome to use. Moment.js makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. Unlike date-fns, its biggest downtime is that its API size is huge.
 
-As we have seen in the above examples, date-fns is a collection of many small and independent functions allowing you to import functions that you only need, unlike Moment.js where you create a moment instance to run functions from it. With Moment.js, there isn't a way to import a specified function. That's means you have to import the whole API chain even when loading a simple date thus creating performance overheads.
+As we have seen in the above examples, date-fns is a collection of many small and independent functions allowing you to import functions that you only need. Unlike Moment.js where you create a moment instance to run functions from it. With Moment.js, there isn't a way to import a specified function. That's means you have to import the whole API chain even when loading a simple date thus creating performance overheads.
 
 Example:
 ```js
@@ -389,7 +389,7 @@ moment@2.28.0
 date-fns@2.16.1
 ![date-fns](/engineering-education/javascript-dates-manipulation-with-date-fns/date-fns.png)
 [Credit: bundlephobia](https://bundlephobia.com/)
-Nevertheless, if you love working with MomentJS, its size should not be a big worry. You can [configure Moment.js with webpack](https://stackoverflow.com/a/25426019/1775026) to remove data that you aren't using such as locale plugins and this will significantly reduce Moment.js buddle size. Moment.js fits well when working with a big project because you will end up using much of Moment.js functionalities thus the buddle size won't matter, but if you just want to load simple dates that require one or two methods then date-fns will definitely work on your favor. If you are dealing with time zones, I would advise you to check out moment.js. Its [time zone functionalities](https://momentjs.com/timezone/docs/) are extensive compared to those of date-fns, and Moment.js has more [locale support functionalities](https://momentjs.com/docs/#/i18n/) to extend more global reach with your date instances.
+Even so, if you love working with MomentJS, its size should not be a big worry. You can [configure Moment.js with webpack](https://stackoverflow.com/a/25426019/1775026) to remove data that you aren't using such as locale plugins and this will significantly reduce Moment.js buddle size. Moment.js fits well when working with a big project because you will end up using much of Moment.js functionalities thus the buddle size won't matter. If you just want to load simple dates that need one or two methods then date-fns will definitely work on your favor. If you are dealing with time zones, I would tell you to check out moment.js. Its [time zone functionalities](https://momentjs.com/timezone/docs/) are extensive compared to those of date-fns. Moment.js has more [locale support functionalities](https://momentjs.com/docs/#/i18n/) to extend more global reach with your date instances.
 
 #### Statistical Comparison
 - NPM download stats npm download stats
@@ -442,7 +442,6 @@ Nevertheless, if you love working with MomentJS, its size should not be a big wo
 - Well tested
 
 [Credit: hustcc](https://github.com/hustcc/timeago.js)
-
 
 #### Easytimer.js
 Easy to use Timer/Chronometer/Countdown library compatible with AMD, ES6 and Typescript. [Easytimer.js](https://github.com/albert-gonzalez/easytimer.js) is a simple library for counting time in five different units: a tenth of seconds, seconds, minutes, hours and days. It has interesting features:
