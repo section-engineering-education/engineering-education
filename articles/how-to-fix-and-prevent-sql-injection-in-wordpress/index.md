@@ -71,7 +71,7 @@ WordPress is the most popular open-source Content Management System (CMS) runnin
 ##### What are WordPress Core files?
 
 This are the files that make up the open-source CMS project. Below is an image of what [WordPress core files](https://wpsupergeek.com/what-are-the-wordpress-core-files/#:~:text=When%20you%20install%20WordPress%2C%20you,admin%20interface%20of%20your%20website.&amp;text=Core%20files%20make%20up%20the,themes%2C%20plugins%2C%20and%20images.) look-like.
-![](RackMultipart20200924-4-vev2ug_html_234a53423f395fab.png)
+![wordpress-core-files](/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/wordpress-core-files.png)
 Ask yourself, is WordPress Core running on the updated patch?
 
 As we have found out, your WordPress site is secure from any SQL injection if your core files are updated. Nevertheless, use of third-party plugins and themes change the narrative and exposes you exponentially. We shall list the most prone WordPress plugin installation areas that you be on the look-out. They include;
