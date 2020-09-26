@@ -124,6 +124,7 @@ The above examples will display the date parsed with several date formats. [Chec
 format(date, 'DD.MM.YYYY'); ❌
 format(date, 'dd.MM.yyyy'); ✔
 ```
+These mistakes commonly occur if the Unicode patterns do not match to the correct date-fns Unicode tokens.
 
 ### Date Arithmetic (additions, subtractions)
 It is hard to do arithmetic calculations for dates. Date-fns simplifies addition and subtraction of dates between years, months, days, weeks and seconds using simple functions such as `addDays`, `addWeeks`, `addMonths`, `subDays`, `subWesks`, `subMonths` etc.
