@@ -1,4 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: false
+url: /engineering-education/introduction-to-scrum/
+title: Introduction to Scrum
+description: In this article we will speak about the Scrum agile framework used for development purposes.
+author:
+date: 2020-09-27T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-scrum/hero.jpg
+    alt: Introduction to scrum
+---
 ### Introduction
 Scrum is an agile framework for developing products. The framework is mostly used for software development. Scrum has been in use since the early 1990s. It is a flexible and holistic approach to project management around continuous improvement, continuous learning, and adjustment to the changing market, user requirements, and technology. Typically, Scrum has a small team that is made of a highly adaptive and flexible individual. Agile is an iterative approach to project management that help a team deliver a product to the customer faster, in different iterations, whereby customer feedback is critical in every iteration. There are several agile frameworks, such as Kanban and Scrum. The article will cover an introduction to the Scrum framework, what Scrum is, uses of the Scrum, scrum members and their roles, scrum events, and scrum artifacts.
 
