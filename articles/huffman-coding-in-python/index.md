@@ -172,7 +172,7 @@ We have a couple of auxiliary functions such as `find_position` and `characteris
 
 The second auxiliary function defined is `characteristics_huffman_code`. This function generates the mean length of the codes, entropy, variance, and efficiency. Let us look at each of these in detail
 
-![huffman code output](/engineering-education/huffman-coding-python/code_output.jpg)
+![huffman code output](/engineering-education/huffman-coding-python/Code_Output.jpg)
 
 ### Performance of Huffman Code
 1. Average Length: It is defined as the [average number of bits](https://pdfs.semanticscholar.org/8ee2/a74ee0371c40dd751392762572409767d5db.pdf) required to represent a character in the string.
