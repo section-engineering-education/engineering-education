@@ -1,3 +1,5 @@
+# Introduction to Deep Learning
+## Introduction
 Deep Learning is becoming popular among IT enthusiasts because of its promising benefits. It enables image recognition, natural language processing, and voice recognition to take place. You have ever wondered how machines work and function like the human brain? Well, this is all about deep learning. Deep learning is a potent tool, and once you read this article, you will understand what DL is and how it works.
 
 ### What is Deep Learning?
