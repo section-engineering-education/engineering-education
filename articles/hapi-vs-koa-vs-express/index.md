@@ -63,44 +63,62 @@ According to [npm](https://www.npmjs.com/package/express), 45,743 packages depen
 ### Creating a server
 In this section we will have a look at how the frameworks differ in creating a server. Unlike Hapi, both Koa and Express use a similar logic to create a server.
 
+
 In Express, you first import the express module, then, instantiate the module and store it in a variable. Then use its listen method to start a server at a certain port.
 
 Let's see a code example to illustrate this.
 
-```JavaScript
-const express = require('express')
-const app = express()
+Make sure to run 
+```bash
+npm install express
+```
+to install express module.
 
-app.listen(2400, () => {console.log('Server started at port 2400')})
+Then
+```JavaScript
+const express = require('express');
+const app = express();
+
+app.listen(2400, () => {console.log('Server started at port 2400')});
 ```
 As we mentioned earlier, Koa uses the same logic as Express. We import the Koa module, instantiate and store it in a variable and then use its listen method to start the server.
 
 The code snippet below shows how we start a server using Koa.js.
 
-```JavaScript
-const koa = require('koa')
-const app = koa()
+First run 
+```bash
+npm install koa
+```
+to install koa module.
 
-app.listen(2400, () => {console.log('Server started at port 2400')})
+Then
+```JavaScript
+const koa = require('koa');
+const app = new koa();
+
+app.listen(2400, () => {console.log('Server started at port 2400')});
 ```
 
-Now let's look at how Hapi stands out. In Hapi, we import the hapi module, then, instead of instantiating the module, we use its server method to create a server and then use its connection method to connect the server to a specific port. 
+Now let's look at how Hapi stands out. In Hapi, we import the hapi module, then, instead of instantiating the module, we use its server method to create a server by passing an object containing the port and host name.
 
 Then we use the start method to start the server. Let's see a code example.
 
+Run 
+```bash
+npm install @hapi/hapi
+```
+to install hapi module.
+
+Then
 ```JavaScript
-const hapi = require('hapi')
-const server = new hapi.Server()
+const hapi = require('@hapi/hapi');
+const server = hapi.server({
+    port: 3000,
+    host: 'localhost'
+});
 
-server.connection({
-    host: 'localhost',
-    port: '2400'
-})
-
-server.start(error => {
-    if (error) throw error
-    else console.log('Server running at PORT 2400');
-})
+server.start();
+console.log('Server running on %s', server.info.uri);
 ```
 
 ### Framework advantages and disadvantages
