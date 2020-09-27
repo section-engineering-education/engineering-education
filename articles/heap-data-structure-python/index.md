@@ -4,16 +4,16 @@ status: publish
 published: true
 url: /engineering-education/heap-data-structure-python/
 title: Using the Heap Data Structure in Python
-description: Heaps are special binary trees that have a special property. The key present at the root node of every sub-tree must be the greatest or minimum among all the keys.
+description: Heaps are special binary trees that have a special property. The key present at the root node of every sub-tree must be either the greatest or minimum among all the keys.
 author: saiharsha-balasubramaniam
-date: 2020-09-25T00:00:00-13:00
+date: 2020-09-27T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/heap-data-structure-python/hero.jpg
     alt: binary heaps
 ---
-A binary heap is a special data structure that resembles a binary tree. It differs by the property that the root of any subtree should be the smallest or the largest element.
+A binary heap is a special data structure that resembles a binary tree. It differs in the sense that the root of any subtree should be the smallest or the largest element.
 <!--more-->
 
 There are two main types of heaps.
@@ -58,7 +58,7 @@ Heaps satisfy the heap property. This means that the root of every subtree shoul
 
 - Statistics -- If we want to get ordered statistics, heaps serve as a great choice. If we want the kth smallest or largest element, we can pop the heap k times to retrieve them.
 
-- Heaps are used in implementing various graph algorithms like Dijkstra's algorithm and Prim's algorithm.
+- Heaps are used in implementing various graph algorithms like [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) and [Prim's algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm).
 
 ### Implementing a Heap
 
@@ -157,7 +157,7 @@ class MaxHeap:
 ```
 
 #### Minheap using Heapq
-We have successfully implemented a heap using a list. Now, let us use the **`heapq`** library in Python to implement a minheap.
+We have successfully implemented a heap using a list. Now, let's use the **`heapq`** library in Python to implement a minheap.
 
 ```Python
 import heapq
