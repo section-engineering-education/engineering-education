@@ -121,7 +121,7 @@ In this section we are going to highlight some of the advantages and disadvantag
 
 #### Koa.js
 ##### Advantages
-1. Koa has a small footprint(about 600 lines of code) hence making it very light weight.
+1. Koa has a small footprint (about 600 lines of code) hence making it very light weight.
 2. Koa uses try/catch which improves error handling.
 3. Koa has a cleaner and more readable asynchronous code.
 4. Koa does not use callbacks hence facilitating upstream and downstream flow of controls.
