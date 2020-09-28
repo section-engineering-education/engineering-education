@@ -18,7 +18,7 @@ In order to achieve a level of consistent style and increasingly elevated qualit
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
 - Prepared Markdown (.md) file. (Note: All articles must be submitted in properly-formatted Markdown.)
 - PayPal account. (At this time, we only service payments through PayPal. If you don’t have a PayPal account, please check whether [PayPal is available in your region](https://www.paypal.com/en/webapps/mpp/country-worldwide).)
-- To expedite reviews, publishing, and payouts for articles, we request that all first drafts are submitted error-free (pre-checked for English grammar, technically accurate,   properly cited, etc.) and meet our suggested article guidelines as outlined below.
+- To expedite reviews, publishing, and payouts for articles, we request that all first drafts are submitted error-free (pre-checked for English grammar, technically accurate,   properly cited, etc.) and meet our suggested article guidelines as outlined below. Here is a [free tool](https://writeandimprove.com/?lang=en-GB) to help improve your writing skills. 
 
 All contributors are expected to review and adhere to [Our Code of Conduct](https://github.com/section-io/engineering-education/blob/master/CODE_OF_CONDUCT.md) before submitting articles.
 
@@ -115,6 +115,14 @@ When framing your tutorial it would help to identify your audience - who is this
 Tell the audience what a successful task looks like - and guide them through the process.
 Make the tutorial as user-friendly as possible - by including screenshots, tips, code examples, anything you think would benefit the audience as they try to replicate the tutorial.
 Don’t forget to get the audience involved by asking for feedback - or leave a call to action - for the reader to try out the skill they just learned about.
+
+- Make examples concrete
+- Audience should learn by doing
+- Clear understanding of how to start
+- Should require minimum explanation
+- Immediate sense of accomplishment
+
+For some more information on how to write software documentation [watch this video](https://youtu.be/t4vKPhjcMZg?t=536).
 
 ## Tutorial Format Example
 
