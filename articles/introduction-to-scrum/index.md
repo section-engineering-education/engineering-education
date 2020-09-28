@@ -15,7 +15,12 @@ images:
     alt: Introduction to scrum
 ---
 ### Introduction
-Scrum is an agile framework for developing products. The framework is mostly used for software development. Scrum has been in use since the early 1990s. It is a flexible and holistic approach to project management around continuous improvement, continuous learning, and adjustment to the changing market, user requirements, and technology. Typically, Scrum has a small team that is made of a highly adaptive and flexible individual. Agile is an iterative approach to project management that help a team deliver a product to the customer faster, in different iterations, whereby customer feedback is critical in every iteration. There are several agile frameworks, such as Kanban and Scrum. The article will cover an introduction to the Scrum framework, what Scrum is, uses of the Scrum, scrum members and their roles, scrum events, and scrum artifacts.
+Scrum is an agile framework for developing products. The framework is mostly used for software development. Scrum has been in use since the early 1990s. It is a flexible and holistic approach to project management.  Scrum focus on continuous improvement,  learning, and adjustment to the changing market, user requirements, and technology. Typically, Scrum has a small team made of a highly adaptive and flexible individual. Agile is an iterative approach to project management. Agile helps a team deliver a product to the customer faster, in different iterations. Customer feedback is critical in every iteration. There are several agile frameworks, such as Kanban and Scrum. The article will cover:
+- [Introduction to Scrum](#Scrum-Overview)
+- [Scrum Roles](#Scrum-Team)
+- [Scrum Events](#Scrum-Events)
+- [Scrum Artifacts](#Scrum-Artifacts)
+- [Why Use Scrum?](#Why-Use-Scrum?)
 
 ### Scrum Overview
 Scrum is lightweight, simple to understand, but challenging to master. Scrum involves a set of events, tools, and roles that work together to help teams structure and manage a project.
@@ -49,16 +54,16 @@ The scrum master is a servant leader responsible for protecting the team and the
 There are five different formal meetings or events in the Scrum. Each event is time-bound to a maximum duration. Strict Scrum events reduce the need for having meetings not defined in the scrum framework. The events are created to foster transparency and inspection within the Scrum Team.
 
 #### The Sprint
-Sprint is the backbone of Scrum. It takes 1 to 4 weeks. During this period, a potentially shippable product increment is created. A list of product backlog items, selected during sprint planning, are worked on during each Sprint. A new Sprint starts immediately after the end of the previous one. If a sprint took more than a month, the definition or market of what is being developed might change, increasing complexity and risk. Each successful Sprint constitutes an increment in the final product. Can a sprint be canceled? Yes, a sprint can only be canceled by the product owner. In such a scenario, completed and "done" product backlog items are reviewed, and incomplete items are re-estimated and put back on the product backlog. Cancellation of a sprint is rare and should be avoided. Sprint cancellations are traumatic to the scrum team.
+Sprint is the backbone of Scrum. It takes 1 to 4 weeks. During this period, a potentially shippable product increment is created. A list of product backlog items, selected during sprint planning, are worked on during each Sprint. A new Sprint starts immediately after the end of the previous one. If a sprint took more than a month, the definition or market of what is being developed might change, increasing complexity and risk. Each successful Sprint constitutes an increment in the final product. Can a sprint be canceled? Yes, a sprint can only be canceled by the product owner. In such a scenario, completed and "done" product backlog items are reviewed. Incomplete items are re-estimated and put back on the product backlog. Cancellation of a sprint is rare and should be avoided. Sprint cancellations are traumatic to the scrum team.
 
 #### Sprint Planning
 The development team, product owner, and scrum master discuss the items to be worked on during the Sprint. The scrum team creates a sprint goal. Top priority product backlog items to be worked on during the spring are selected. The primary purpose of the Sprint planning is to address "What can be done during the upcoming sprint?" and "How will work needed to deliver the increment will be done." Sprint planning takes a maximum of 8 hours for a one-month Sprint.
 
 #### Daily Scrum
-It is a 15 minute Stand up meeting for the development team held daily at the same place and time. The team discuss what they have completed in the last 24 hours and plan for the next 24 hours work—the development team checks on the progress towards the sprint goal.
+It is a 15 minute Stand up meeting for the development team held daily at the same place and time. The team discuss what they have completed in the last 24 hours and plan for the next 24 hours work. Check on the progress towards the sprint goals is also done in the stand-up meeting.
 
 #### Sprint Review
-It is held at the end of the print to review the increment. The team demonstrates the completed work to the product owner and the key stakeholders. It is meant to get feedback and encourage collaboration. It takes at most four hours for a one-month Sprint. The Development team discuss what went well during the sprint, the challenges encountered, and how they were addressed. They also discuss how they will improve the process in the future. Sprint review provides important input to the upcoming Sprint planning. The deliverable of the Sprint Review is an updated product backlog items for the coming Sprint.
+It is held at the end of the print to review the increment. The team demonstrates the completed work to the product owner and the key stakeholders. It is meant to get feedback and encourage collaboration. It takes at most four hours for a one-month Sprint. The Development team discuss what went well during the Sprint, the challenges encountered, and how they were addressed. They also discuss how they will improve the process in the future. Sprint review provides important input to the upcoming Sprint planning. The deliverable of the Sprint Review is an updated product backlog items for the coming Sprint.
 
 #### Sprint Retrospective
 Sprint Retrospective takes place before the next sprint planning. It takes at most three hours for a three months Sprint. The scrum team discusses the following:
@@ -87,7 +92,7 @@ The sum of all product backlog completed and "done" during a Sprint is referred 
 ### Why Use Scrum?
 There are many reasons why we should use Scrum:
 
-- Faster release of usable products to the users and customers. After every increment, the customer can have an early release of the product. This is unlike in the traditional [waterfall approach](https://en.wikipedia.org/wiki/Waterfall_model), where the product cannot be shipped to the customer until the last stage of development.
+- Faster release of usable products to the users and customers. After every increment, the customer can have an early release of the product. This is unlike in the traditional [waterfall approach](https://en.wikipedia.org/wiki/Waterfall_model). The product is shipped to the customer after the last stage of development in Waterfall.
 - Scrum saves time and cost: With reduced meetings and small manageable teams, Scrum reduces cost and time.
 - Scrum encourages teamwork: There is a sense of responsibility in the self-organizing team. Collaboration and daily stand up meetings give every member a chance to have their ideas addressed.
 - It is easy to learn and use: As discussed, there are only three roles in the framework, thus easy to learn and use.
