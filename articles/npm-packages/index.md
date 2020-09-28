@@ -50,13 +50,13 @@ To get started, let's create an NPM account.
 
 ![npmjs Webpage](/engineering-education/npm-packages/npmjs-homepage.png)
 
-_[Image Source](https://www.npmjs.com/)_
+*[Image Source](https://www.npmjs.com/)*
 
 - Enter a username, email address, and password.
 
 ![Create NPM Account](/engineering-education/npm-packages/npm-signup.png)
 
-_[Image Source](https://www.npmjs.com/)_
+*[Image Source](https://www.npmjs.com/)*
 
 - Now, you have to verify your account. Check the inbox of the email address that you provided and click on the verification email. This will verify your npm account.
 
@@ -97,7 +97,7 @@ npm login
 npm i axios
 ```
 
-_Note: To learn more about Axios, check out its NPM package page [here](https://www.npmjs.com/package/axios)._
+*Note: To learn more about Axios, check out its NPM package page [here](https://www.npmjs.com/package/axios).*
 
 - We'll be using the [clist API](https://clist.by/) that returns a list of contests like hackathons, programming contests, etc..,
 
@@ -132,7 +132,7 @@ module.exports = async function getContests() {
 };
 ```
 
-_Note: This package requires an API key to run. Therefore, it might not run directly if you install it._
+*Note: This package requires an API key to run. Therefore, it might not run directly if you install it.*
 
 Now that we've programmed the package, it's time to deploy it.
 
@@ -158,7 +158,7 @@ npm publish
 npm init -y
 ```
 
-_Note: The -y option creates a package.json without an interactive process._
+*Note: The -y option creates a package.json without an interactive process.*
 
 - Now, let's install our published npm package.
 
