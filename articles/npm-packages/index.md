@@ -4,24 +4,21 @@ status: publish
 published: true
 url: /engineering-education/npm-packages/
 title: Create and Deploy NPM Packages
-description: Introduction to node modules and a hands-on about how to create and deploy a node module to the npm registry.
+description: Introduction to Node.js modules and a hands-on on how to create and deploy a Node.js module to the npm registry.
 author: saiharsha-balasubramaniam
-date: 2020-09-23T00:00:00-12:00
+date: 2020-09-28T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/npm-packages/hero.jpg
-    alt: NPM
+    alt: NPM Node Package Manager
 ---
-
 Node.js is a popular server-side language that is used by millions of developers worldwide. While building Node.js projects, we use various packages that make development easier. All of these packages are managed by the Node Package Manager.
+<!--more-->
 
 To learn more about Node.js, check out [this](/engineering-education/history-of-nodejs/) amazing article about Node.js by [Section.io](https://section.io) contributor, [Jethro Magaji](/engineering-education/authors/jethro-magaji/).
 
-<!--more-->
-
 ### Table of Contents
-
 - [Introduction](#introduction)
 - [Create an NPM Account](#create-an-npm-account)
 - [Let's Code](#let's-code)
@@ -30,12 +27,11 @@ To learn more about Node.js, check out [this](/engineering-education/history-of-
 - [Further Reading](#further-reading)
 
 ### Introduction
-
 A package manager is software that manages versions, packages and dependencies for your project. When a project grows in scale, a package manager helps to manage dependencies. It works perfectly across versions and even in collaborative projects. It cuts costs by reducing dependency problems across developer teams.
 
 To install Node.js packages, we use the [NPM registry](https://www.npmjs.com/), which is a centralized repository of packages. In this article, we will learn how to create a Node.js package and deploy it on the NPM registry for public use.
 
-For more background on Node.js and various related technologies, check out some amazing [Section.io](https://www.section.io/) articles below:
+For more background on Node.js and various related technologies, check out some amazing [Section.io](/engineering-education/) articles below:
 
 - [Most Useful Node.js Packages](/engineering-education/most-useful-nodejs-packages/)
 - [Building a Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
@@ -43,22 +39,25 @@ For more background on Node.js and various related technologies, check out some 
 - [APIs in Node.js vs Python - A Comparison](/engineering-education/node-vs-python/)
 
 ### Create an NPM Account
-
-To start up, let's create an NPM account.
+To get started, let's create an NPM account.
 
 - Go to the [npmjs website](https://www.npmjs.com/) and click on the **sign up** button.
 
 ![npmjs Webpage](/engineering-education/npm-packages/npmjs-homepage.png)
 
-- Enter a username, email address and password.
+*[Image Source](https://www.npmjs.com/)*
+
+- Enter a username, email address, and password.
 
 ![Create NPM Account](/engineering-education/npm-packages/npm-signup.png)
+
+*[Image Source](https://www.npmjs.com/)*
 
 - Now, you have to verify your account. Check the inbox of the email address that you provided and click on the verification email. This will verify your npm account.
 
 - You have successfully created an NPM account, and can start publishing packages.
 
-- You need to sign in to your npm account in your console to start publishing packages.
+- You need to sign in to your npm account on your console to start publishing packages.
 
 - To do this, open a new folder and start your terminal. Enter the command:
 
@@ -73,7 +72,6 @@ npm login
 - We have successfully signed in.
 
 ### Let's Code
-
 - Every package published to the NPM registry should have a **`package.json`** file. Let's start by initializing a package.json file.
 
 - The minimum requirements of a `package.json` file is a name and a version. Let's enter those pieces of information into the file.
@@ -93,7 +91,7 @@ npm login
 npm i axios
 ```
 
-_Note: To learn more about Axios, check out its NPM package page [here](https://www.npmjs.com/package/axios)._
+*Note: To learn more about Axios, check out its NPM package page [here](https://www.npmjs.com/package/axios).*
 
 - We'll be using the [clist API](https://clist.by/) that returns a list of contests like hackathons, programming contests, etc..,
 
@@ -116,7 +114,7 @@ module.exports = async function getContests() {
       "https://clist.by/api/v1/json/contest/?username=" + username + "&api_key=" + api_key + "&limit=20&end__gt=2020-09-19T00%3A00%3A00"
     )
     .then((response) => { // If the GET request is successful, this block is executed
-      return response; // The response of the API call is passed on to the next then block
+      return response; // The response of the API call is passed on to the next block
     })
     .then((contests) => { // In this block, we store the response data into a variable 'result'
       result = contests.data.objects;
@@ -128,12 +126,11 @@ module.exports = async function getContests() {
 };
 ```
 
-_Note: This package requires an API key to run. Therefore, it might not run directly if you install it_
+*Note: This package requires an API key to run. Therefore, it might not run directly if you install it.*
 
 Now that we've programmed the package, it's time to deploy it.
 
 ### Deployment
-
 - To deploy the package, enter the command:
 
 ```bash
@@ -142,10 +139,9 @@ npm publish
 
 ![NPM Publish](/engineering-education/npm-packages/npm-publish.png)
 
-- In a while, you'll get an email from the NPM registry indicating that your package has been successfully published!
+- In a moment, you'll get an email from the NPM registry indicating that your package has been successfully published!
 
 ### Using the Package
-
 - Let's install and test our package.
 
 - Open a new folder and initialize a **`package.json`** by using the command:
@@ -154,7 +150,7 @@ npm publish
 npm init -y
 ```
 
-_Note: The -y option creates a package.json without an interactive process_
+*Note: The -y option creates a package.json without an interactive process.*
 
 - Now, let's install our published npm package.
 
@@ -190,9 +186,11 @@ node index.js
 - We have successfully deployed and tested our NPM package!
 
 ### Further Reading
-
 For more knowledge on NPM packages and JavaScript, check out the below articles.
 
 - [NPM Documentation](https://docs.npmjs.com/)
 - [Async/Await vs Promises in JS](https://levelup.gitconnected.com/async-await-vs-promises-4fe98d11038f)
 - HTTP Requests - [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+
+---
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
