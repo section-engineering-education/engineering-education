@@ -20,7 +20,7 @@ Fast queries are about response time. The goal is to have queries return the req
 
 #### Optimizing Queries with EXPLAIN
 
-The EXPLAIN statement provides information about how MySQL executes a statement. According to [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html), EXPLAIN works alongside SELECT, DELETE, INSERT, REPLACE, and UPDATE statements. It displays information from a built-in MySQL optimizer regarding the statement execution plan and the number of rows scanned in each table. Thus we can determine the cost of the query. The query below shows how EXPLAIN works with the SELECT statement.
+The EXPLAIN statement provides information about how MySQL executes a statement. According to [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html), EXPLAIN works alongside SELECT, DELETE, INSERT, REPLACE, and UPDATE statements. It displays information from a built-in MySQL optimizer regarding the statement execution plan, and the number of rows scanned in each table. Thus we can determine the cost of the query. The query below shows how EXPLAIN works with the SELECT statement.
 ~~~~sql
 EXPLAIN SELECT * FROM world_x.city LIMIT 5000;
 ~~~~
@@ -106,24 +106,41 @@ If the query cache is not set, set the query cache by following guidelines on [M
 
 #### Converting OUTER JOINs to INNER JOINs
 
-An INNER JOIN returns rows that contain columns from both tables. Unlike INNER JOIN, OUTER JOIN returns rows where no matches have been found on both tables. Therefore, OUTER JOIN does more work than inner join, increasing total execution time. Use INNER JOIN whenever possible. It would be a waste of performance to use OUTER JOIN when you don't need the data outside specified columns.
+An INNER JOIN returns rows that contain columns from both tables. Unlike INNER JOIN, OUTER JOIN returns rows where no matches have been found on both tables. Therefore, OUTER JOIN does more work than inner join, increasing total execution time. Use INNER JOIN whenever possible. It would be a waste of performance to use OUTER JOIN when you don't need the data outside specified columns. We have a sample database with two tables as follows:
+1. student - student_id, first_name, last_name
+2. orders - id, date, amount, customer_id
+
+An INNER JOIN query to the table would be as shown below.
+~~~~sql
+SELECT  C.id, C.name, O.amount, O.date FROM customers C
+  INNER JOIN orders O ON O.customer_id = C.id;
+~~~~
+An OUTER JOIN query to the table would be as shown below.
+
+*NOTE: MySQL does not support FULL OUTER JOIN, but other SQL dialects such as [PostgreSQL](https://www.postgresql.org/) do.*
+~~~~sql
+SELECT  C.id, C.name, O.amount, O.date FROM customers C
+  FULL OUTER JOIN orders O ON O.customer_id = C.id;
+~~~~
 
 #### Optimize Like Statements with Union Clause
 
-The OR operator is used to combining two Boolean expressions and return true when either of the condition is met. When using comparison operator 'or' in a query, MySQL optimizer may incorrectly choose a full table scan to retrieve the result set. This makes the query run slower.
-
-Union clause runs faster and gives the same result.
+The OR operator is used to combining two Boolean expressions and return true when either of the condition is met. When using comparison operator 'or' in a query, MySQL optimizer may incorrectly choose a full table scan to retrieve the result set. This makes the query run slower. Union clause runs faster and gives the same result.
 
 Consider the query below:
 
 ~~~~sql
 SELECT * FROM city WHERE Name like 'C%' or District LIKE 'C%';
 ~~~~
-Below is the optimized version of the query above using the union operator.
+Below are the optimized versions of the query above using the UNION ALL and UNION operators respectively.
 ~~~~sql
 SELECT * FROM city WHERE Name LIKE 'C%' UNION ALL SELECT * FROM city WHERE District LIKE 'C%';
 ~~~~
 
+~~~~sql
+SELECT * FROM city WHERE Name LIKE 'C%' UNION SELECT * FROM city WHERE District LIKE 'C%';
+~~~~
+The first query above we have used UNION ALL while the second one we have used UNION. By default, UNION returns distinct rows while UNION ALL allows duplicate rows. UNION generally runs faster than UNION ALL.
 ### Conclusion
 
 MySQL development is ongoing. More tips to optimize queries are developed every day. This article is a guide on how to make better queries and make more stable database applications. Query with no doubt.
