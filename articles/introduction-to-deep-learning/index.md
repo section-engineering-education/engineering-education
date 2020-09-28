@@ -4,7 +4,7 @@ Deep Learning is becoming popular among IT enthusiasts because of its promising 
 
 ### What is Deep Learning?
 
-![Venn diagram](/engineering-education/introduction-to-cloud-computing/ai-ml-dl)<br>
+![Venn diagram](/engineering-education/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
 [\*Image source\*](https://www.google.com/search?q=venn+diagram+ai+ml+dl&amp;rlz=1C1CHBF_enKE891KE892&amp;sxsrf=ALeKk019OE6-0Yl0leowWVixwzGksI4k2Q:1600184664101&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwin6-mzwOvrAhWUtXEKHYszBV8Q_AUoAXoECA4QAw&amp;biw=1707&amp;bih=730#imgrc=3mrRFqwqrNIOhM&amp;imgdii=7qS9cc31c_3s3M)
 
 Deep Learning is a subset of Machine Learning that learns features and tasks directly from data such as image, text, or sound. On the other hand, Machine Learning is a subset of Artificial Intelligence. AI is the capability of machines and computers to mimic human intelligence and behaviour. AI is accomplished by studying how the human brain thinks, learns, and works while trying to solve a problem. ML is a branch of AI that gives machines and computers the ability to learn data without being programmed.
@@ -73,7 +73,7 @@ Entertainment industries such as [Netflix](https://www.netflix.com/ke-en/) recom
 ### Working of Neural networks
 
 Neural Networks are algorithms modeled to function like the human brain. Neural Networks is a system of hardware and software patterned after neurons operation in the human mind. Neurons are decision-makers.
-![Neural Networks](/engineering-education/introduction-to-cloud-computing/neural-networks)<br>
+![Neural Networks](/engineering-education/introduction-to-deep-learning/neural-networks.jpg)<br>
 [\*image source\*](https://medium.com/coinmonks/the-artificial-neural-networks-handbook-part-1-f9ceb0e376b4)
 
 Neural networks comprise of the input layer, hidden layers, and the output layer. The input layer is where the neural network receives the data represented with numbers. Any data can be represented as a number, whether it is words, sound, or image. Each input neuron represents a single feature. Once the features have data, it is sent to every neuron in the next layer, which is the hidden layer. There are many hidden layers. Each hidden layer mathematically combines all the numbers it gets. The major goal is measuring whether the data inputted has various components. Each neuron then sends its number to the next layer neuron, either a hidden or output layer. The output layer is where the final layer, outputs get combined mathematically to solve the problems. Neural networks work with numbers. Math is the key to Neural Networks, Artificial intelligence, and its branches [machine learning and deep learning](http://neuralnetworksanddeeplearning.com/chap1.html).
