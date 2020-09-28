@@ -17,7 +17,7 @@ images:
 If you are a Software Engineer, you may come across File handling or file input/output at some point in your career. It is the ability to store the output and perform various operations on it, such as updating the data or reading/writing text to a file. Files are always a vital way to store data.
 <!--more-->
 ### Why do you need File Handling?
-- **Reusability**: Generally, developers work with big data, and it's always not efficient to write everything out by storing data in files, one can use those files anytime.
+- **Reusability**: Generally, developers work with big data. It's not always efficient to write everything out by storing data in files but we can use those files anytime.
 
 - **Larger Storage Capacity**: Storing a large amount of data or test cases (to make sure that your code runs in every condition) is a tedious task, and by using files, a developer can store that data easily.
 
@@ -44,13 +44,13 @@ ifstream fin;
 fin.open("index.txt");
 ```
 
-That was simple as we just used the function **open** to open a file name "index.txt." Here we use the ` ifstream` object to open our file.
+That was simple. We just used the function **open** to open a file name "index.txt." Here we use the ` ifstream` object to open our file.
 
 **ifstream** is the type we use to declare an object. Very similar to the datatypes that we use in other functions, such as: int, float, bool or string.
 
 **fin** is the name of the variable. We could name it anything we want.
 
-Note: The one thing to keep in mind is that if the file we are trying to open doesn't exist on our computer, then this programs automatically create a new one with the same name or delete everything in it if something does exist in it. We can also opt this option whenever we need to create a file. You can also give a second argument to specify how you want to handle your file:
+Note: The one thing to keep in mind is that if the file we are trying to open doesn't exist on our computer, then this program automatically creates a new one with the same name or deletes everything in it. We can also opt to use this option whenever we need to create a file. You can also give a second argument to specify how you want to handle your file:
 * ios::app   -- Append to the file
 * ios::trunc -- Delete everything in the file
 
@@ -72,7 +72,7 @@ fin.open(filename.data());
 
 Here in this code, we just asked for the name of the file, and proceed with the same steps we did above.
 
-One of the most common errors we face while opening a File is; what if a file is already open before we are using it. We need to ensure that doesn't happen because otherwise, we would not be able to open it, and our file can get corrupted, and we may lose all of our existing data. Here's how we can ensure that doesn't happen:
+One of the most common errors we face while opening a File is: what if a file is already open before we are using it. We need to ensure that doesn't happen because otherwise we would not be able to open it, our file can get corrupted, and we may lose all of our existing data. Here's how we can ensure that doesn't happen:
 
 ```C
 while(!infile.Is_open()){
