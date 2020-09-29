@@ -142,7 +142,8 @@ After editing, save your changes. Use the ```nginx -t``` command to test your ch
 Open the browser and enter the URLs to find your applications running on the corresponding URLs configured.
 
 **Important Note**
-> It is important to note that the clients see your applications as a whole where the face of it being NGINX running at port 80 or 443 according to the protocol used. Once the request reaches NGINX, it is being internally routed to the corresponding application, There is no need to open all of your PORTS, in this case, 3000 & 3001 to the internet. Just enabling 80 and 443 would be sufficient as NGINX routes the traffic internally. This is a highly secure architecture as each application need not be taken care individually rather the single entry point i.e NGINX is the only place which needs to be focussed.
+> Using NGINX secures your server because it routes the traffic internally. Instead of having to open up all of your ports, in this case 3000 and 3001, to the internet, just 80 and 443 will do the trick.  
+> This is because all traffic passes through the secure NGINX server (like a gateway) and is redirected to the correct application. Using a reverse proxy like NGINX is much more secure that opening up several ports for every application you deploy because of the increased risk a hacker will use an open port for malicious activity.
 
 ## Conclusion
 
