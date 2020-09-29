@@ -40,6 +40,7 @@ Student {
         lastName: Brooks,
         username: alex09_b,
         Courses: [{name: Web Dev}, {name: React js}]
+    }
 ```
 Some of the common NoSQL databases include [MongoDB](https://www.mongodb.com/what-is-mongodb), [Apache Cassandra](https://cassandra.apache.org/doc/latest/getting_started/index.html), [Google Cloud BigTable](https://cloud.google.com/bigtable), [Apache HBase](https://hbase.apache.org/), and [Redis](https://redis.io/).
 
