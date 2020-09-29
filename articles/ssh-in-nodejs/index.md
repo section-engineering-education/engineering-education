@@ -183,9 +183,8 @@ function main(){
 main();
 ```
 
-### Further reading
-1. **df command**: (https://www.geeksforgeeks.org/df-command-linux-examples/)
-2. **readline library**: (https://www.geeksforgeeks.org/node-js-readline-module/)
+### Conclusion and Further reading
+To recap, SSH is a protocol that allows users to access a remote system, and is a very useful tool for developers and system administrators. We explored how SSH works and how to use SSH in your local system using the terminal. We understood how we can leverage the power of NodeJs to write an application that uses `simple-ssh`(A library that allows users to use SSH in Node) to SSH into a virtual machine, monitor the system disk usage, and display it to the user in a presentable format. Now that you know how SSH works and how to use it in Node, you can write your own application to do much more. 
 
 ---
 Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
