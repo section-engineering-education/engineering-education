@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-Firebase offers a cloud-hosted NoSQL database that applications can access. This is Cloud Firestore. NoSQL is a non-tabular database that stored data in objects and documents. They store unstructured data. Cloud Firestore also provides the ability to add realtime listeners to the database. This means that we can get any changes that happen in the database. In this article, we will look at:
-
-- [Data structure in Cloud Firestore](#Data-Structure)
-- [Basic Read and Write Operations](#Basic-Operations)
-- [Adding Listeners](#Realtime-Listeners)
-- [Realtime vs Cloud Firestore](#Cloud-Firestore-vs-Realtime-Database)
-- [Conclusion](#Conclusion)
-
-### Data Structure
-Data in Cloud Firestore is organized differently from the realtime database. It is organized in collections and documents. A collection contains documents and cannot contain other collections. A document on the other hand is different. It contains fields, maps and subcollections. Fields can hold data of different types e.g strings, numbers, arrays, etc. For more details on the data type,  you can check the [reference](https://firebase.google.com/docs/firestore/manage-data/data-types). Maps are basically nested data. e.g. `first` and `last` fields are maps.
-
-```bsh
-=======
 ---
 layout: engineering-education
 status: publish
@@ -28,19 +14,21 @@ images:
   - url: /engineering-education/node-firestore/hero.jpg
     alt: Node.js Firebase image computer
 ---
+
 In this article we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data.  It is a good database that was created for faster queries and better scalability than the realtime database.
 <!--more-->
-NoSQL is a non-tabular database that stores data in objects and documents. NoSQL databases store unstructured data. Cloud Firestore provides developers the ability to add real-time listeners to the database. This means that we can get any changes that happen in the database.
+NoSQL is a non-tabular database that stores data in objects and documents. NoSQL databases store unstructured data. Cloud Firestore provides developers the ability to add real-time listeners to the database. This means that we can get any changes that happen in the database. In this article, we will look at:
 
-### The Data Structure in Cloud Firestore
-Data in Cloud Firestore is organized differently from the realtime database. It is organized in collections and documents. A collection contains documents and cannot contain other collections. A document on the other hand is different. It contains fields, maps, and subcollections. Fields can hold data of different types e.g. strings, numbers, arrays, etc.
+- [Data structure in Cloud Firestore](#Data-Structure)
+- [Basic Read and Write Operations](#Basic-Operations)
+- [Adding Listeners](#Realtime-Listeners)
+- [Realtime vs Cloud Firestore](#Cloud-Firestore-vs-Realtime-Database)
+- [Conclusion](#Conclusion)
 
-For more details on the data type,  you can check the [reference](https://firebase.google.com/docs/firestore/manage-data/data-types).
+### Data Structure
+Data in Cloud Firestore is organized differently from the realtime database. It is organized in collections and documents. A collection contains documents and cannot contain other collections. A document on the other hand is different. It contains fields, maps and subcollections. Fields can hold data of different types e.g strings, numbers, arrays, etc. For more details on the data type,  you can check the [reference](https://firebase.google.com/docs/firestore/manage-data/data-types). Maps are basically nested data. e.g. `first` and `last` fields are maps.
 
-Maps are basically nested data. e.g. `first` and `last` fields are maps.
-
-```bash
->>>>>>> 84937fcb4d9f558e1de3ace4aac3282d9e662bbc
+```bsh
 users
     |-user_id_one
         |-name :
@@ -57,13 +45,8 @@ users
 
 Subcollections are basically collections associated with the document. But even with that relationship, when you delete a document, it does not delete the subcollection. You have to delete the document too.
 
-<<<<<<< HEAD
 ### Basic Operations
 Now we can get into writing code! You can get the code for this tutorial from [Github](https://github.com/LinusMuema/node-firestore)
-=======
-Now, with a basic understanding we can get into writing some code!
-You can get the code for this tutorial from [Github](https://github.com/LinusMuema/node-firestore).
->>>>>>> 84937fcb4d9f558e1de3ace4aac3282d9e662bbc
 
 In the code, you will find the following packages.
 
@@ -91,22 +74,14 @@ The fist thing we will do is add data to the database. We get a reference to the
 const reference = db.doc('numbers/random')
 ```
 
-<<<<<<< HEAD
 Using the `random-words` and `Math.random` method in javascript, I will create the random data to be added to the database.
-=======
-Using the `random-words` and `Math.random` method in JavaScript, I will create the random data to be added to the database.
->>>>>>> 84937fcb4d9f558e1de3ace4aac3282d9e662bbc
 
 ```JavaScript
 const data = {name: string(), number: (Math.random() * 101)}
 ```
 
-<<<<<<< HEAD
 #### Adding data
 Then I create a route to add the random data to the database. We use the `reference.set()` method and pass in the data as an arguement. This, like the realtime database, returns a promise. We can then check for success or catch the errors accordingly.
-=======
-Then I created a route to add the random data to the database. We use the `reference.set()` method and pass in the data as an argument. This, like the realtime database, returns a promise. We can then check for success or catch the errors accordingly.
->>>>>>> 84937fcb4d9f558e1de3ace4aac3282d9e662bbc
 
 ```JavaScript
 app.use('/add', (req, res) => {
@@ -118,12 +93,8 @@ app.use('/add', (req, res) => {
 
 The change in the database does not automatically show. This is because it is not a realtime database.
 
-<<<<<<< HEAD
 #### Reading data
 Next up, we will try and read data from the same document. Here, we use the `reference.get()` method which also returns a promise. We check if document is not `undefined` and also if it exists. Sometimes you can pass the wrong path especially if the path is generated dynamically. If it all checks out, we use `document.data()` method to get the data. We then send it as a response.
-=======
-Next up, we will try and read data from the same document. Here, we use the `reference.get()` method which also returns a promise. We check if the document is not `undefined` and also if it exists. Sometimes you can pass the wrong path especially if the path is generated dynamically. If it all checks out, we use the  `document.data()` method to get the data. We then send it as a response.
->>>>>>> 84937fcb4d9f558e1de3ace4aac3282d9e662bbc
 
 ```JavaScript
 app.use('/get', (req, res) => {
@@ -135,19 +106,6 @@ app.use('/get', (req, res) => {
 })
 ```
 
-<<<<<<< HEAD
-=======
-Another operation is deleting. We can delete the data from the doc using the`reference.delete()` method.
-
-```JavaScript
-app.use('/delete', (req, res) => {
-    reference.delete()
-        .then(() => {res.status(200).json({message: 'Deleted document successfully'})})
-        .catch(error => {res.status(500).json({message: 'An error occurred', error})})
-})
-```
-
->>>>>>> 84937fcb4d9f558e1de3ace4aac3282d9e662bbc
 Sometimes you may want to filter out data. This and other operations can be done using [queries](https://firebase.google.com/docs/firestore/query-data/queries). Suppose we have many documents in the `numbers` collection. And we want the numbers that exceed a particular value. We can use a simple query.
 
 ```JavaScript
@@ -160,7 +118,6 @@ app.use('/query', (req, res) => {
         .catch(error => {res.status(500).json({message: 'An error occurred', error})})
 })
 ```
-<<<<<<< HEAD
 First, I create a query. With queries, we get the collection first then call the `where` method. This `where` method takes in three parameters. First, is the field we are checking. Second is the comparison operator. The operator takes the form of the normal javascript operators. `==` to mean `equals to`, `>=`to mean `equals or greater than`, etc. Some, however, are more advanced. For instance we have `array-contains` to check if the field (which is an array) contains the specified value. The third is the value we are using to compare.
 
 In our code, we are getting the documents that have the field `number` greater than or equal to `50`. You can read more about queries [here](https://firebase.google.com/docs/firestore/query-data/queries).
@@ -177,16 +134,6 @@ app.use('/delete', (req, res) => {
 ```
 
 ### Realtime Listeners
-=======
-First, I created a query. With queries, we get the collection first then call the `where` method. This `where` method takes in three parameters. First, is the field we are checking. Second is the comparison operator. The operator takes the form of the normal JavaScript operators. `==` to mean `equals to`, `>=`to mean `equals or greater than`, etc. Some, however, are more advanced.
-
-For instance we have `array-contains` to check if the field (which is an array) contains the specified value.
-
-The third is the value we are using to compare.
-
-In our code, we are getting the documents that have the field `number` greater than or equal to `50`. You can read more about queries [here](https://firebase.google.com/docs/firestore/query-data/queries).
-
->>>>>>> 84937fcb4d9f558e1de3ace4aac3282d9e662bbc
 But what if you want realtime changes. Cloud Firestore allows you to attach listeners.
 
 ```JavaScript
@@ -197,7 +144,6 @@ db.collection('numbers').doc('random').onSnapshot(doc => {
 ```
 
 You get the collection first then the document. Then we call the `onSnapshot` method. This method will be called anytime there is an addition or update to the collection. It emits the document on every change.
-<<<<<<< HEAD
 
 ### Cloud Firestore vs Realtime Database
 The main question now is, "Why Cloud Firestore and not Realtime database?" These two databases are very different. Some may only see the data structure only but there are more.
@@ -215,9 +161,5 @@ The main question now is, "Why Cloud Firestore and not Realtime database?" These
 
 ### Conclusion
 Those are some of the basics of Cloud Firestore and how you can use it to store data. It is a good database that was created for faster queries and a better scalability than the realtime database. It is better organised than the realtime database hence easier to work with. But it does not mean that realtime database is out of use. Both databases have their unique functions. You can go ahead and take a short [survey](https://firebase.google.com/docs/firestore/rtdb-vs-firestore#key_considerations) to help you determine the type of database to use.
-=======
-
-Those are some of the basics of Cloud Firestore and how you can use it to store data. It is a good database that was created for faster queries and better scalability than the realtime database. It is better organized than the realtime database hence easier to work with. But it does not mean that realtime database is out of use. Both databases have their unique functions. You can go ahead and take a short [survey](https://firebase.google.com/docs/firestore/rtdb-vs-firestore#key_considerations) to help you determine the type of database to use.
->>>>>>> 84937fcb4d9f558e1de3ace4aac3282d9e662bbc
 
 Feel free to raise a PR or issue in the code above with suggestions.
