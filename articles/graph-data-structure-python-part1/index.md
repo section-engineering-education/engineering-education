@@ -49,7 +49,7 @@ Graphs are non-linear data structures made up of two major components:
 
 - **Edges** -- Edges represent the relationship between the vertices in the graph. Edges may or may not have a value associated with them. For example, if we represent a list of cities using a graph, the edges would represent the distance between cities.
 
-![Graph Diagram](/articles/graph-data-structure-python-part1/graph.png)
+![Graph Diagram](/engineering-education/graph-data-structure-python-part1/graph.png)
 
 _Figure: Graph ([Source](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html))_
 
@@ -85,7 +85,7 @@ There are many types of graphs, based on weights, direction, interconnectivity a
 
 - That is, `edge (X, Y) == edge (Y, X)`.
 
-![Undirected Graph](/articles/graph-data-structure-python-part1/undirected-graph.png)
+![Undirected Graph](/engineering-education/graph-data-structure-python-part1/undirected-graph.png)
 
 _Figure: Undirected Graph ([Source](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/))_
 
@@ -97,7 +97,7 @@ _Figure: Undirected Graph ([Source](https://pediaa.com/what-is-the-difference-be
 
 - That is, `edge (X, Y) != edge (Y, X)`.
 
-![Directed Graphs](/articles/graph-data-structure-python-part1/directed-graph.png)
+![Directed Graphs](/engineering-education/graph-data-structure-python-part1/directed-graph.png)
 
 _Figure: Directed Graph ([Source](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/))_
 
@@ -112,7 +112,7 @@ _Figure: Directed Graph ([Source](https://pediaa.com/what-is-the-difference-betw
   - `v` -> Destination vertex
   - `w` -> Weight associated to go from u to v.
 
-![Weighted Graphs](/articles/graph-data-structure-python-part1/weighted-graph.png)
+![Weighted Graphs](/engineering-education/graph-data-structure-python-part1/weighted-graph.png)
 
 _Figure: Weighted Graph ([Source](https://www.clipartmax.com/middle/m2i8Z5i8G6b1b1b1_directed-weighted-ex1-directed-weighted-graph/))_
 
@@ -123,7 +123,7 @@ _Figure: Weighted Graph ([Source](https://www.clipartmax.com/middle/m2i8Z5i8G6b1
   - `u` -> Source vertex
   - `v` -> Destination vertex
 
-![Unweighted Graphs](/articles/graph-data-structure-python-part1/unweighted-graph.png)
+![Unweighted Graphs](/engineering-education/graph-data-structure-python-part1/unweighted-graph.png)
 
 _Figure: Unweighted Graph ([Source](https://www.researchgate.net/figure/Unweighted-Undirected-Graph_fig3_327864836))_
 
@@ -137,9 +137,9 @@ _Figure: Unweighted Graph ([Source](https://www.researchgate.net/figure/Unweight
 
 - It has X vertices and X-1 edges.
 
-![Tree - Graphs](/articles/graph-data-structure-python-part1/tree-graph.png)
+![Tree - Graphs](/engineering-education/graph-data-structure-python-part1/tree-graph.png)
 
-_Figure: Tree ([Source](<https://en.wikipedia.org/wiki/Tree_(graph_theory)>))_
+*Figure: Tree ([Source](https://en.wikipedia.org/wiki/Tree_(graph_theory)))*
 
 ##### Rooted Tree
 
@@ -149,7 +149,7 @@ _Figure: Tree ([Source](<https://en.wikipedia.org/wiki/Tree_(graph_theory)>))_
 
 - If edges point towards the root, it is called an **anti-arborescence / in-tree**.
 
-![Rooted Tree](/articles/graph-data-structure-python-part1/rooted-trees.png)
+![Rooted Tree](/engineering-education/graph-data-structure-python-part1/rooted-trees.png)
 
 _Figure: Rooted Tree_
 
@@ -161,7 +161,7 @@ _Figure: Rooted Tree_
 
 - All arborescences are DAGs, but not all DAGs are arborescences.
 
-![Directed Acyclic Graph](/articles/graph-data-structure-python-part1/dag.png)
+![Directed Acyclic Graph](/engineering-education/graph-data-structure-python-part1/dag.png)
 
 _Figure: Directed Acyclic Graph ([Source](https://en.wikipedia.org/wiki/Directed_acyclic_graph))_
 
@@ -171,7 +171,7 @@ _Figure: Directed Acyclic Graph ([Source](https://en.wikipedia.org/wiki/Directed
 
 - A complete graph `n` vertices has `(n*(n-1)) / 2` edges and is represented by Kn.
 
-![Complete Graph](/articles/graph-data-structure-python-part1/complete-graph.png)
+![Complete Graph](/engineering-education/graph-data-structure-python-part1/complete-graph.png)
 
 _Figure: Complete Graph ([Source](https://www.geeksforgeeks.org/mathematics-graph-theory-basics/))_
 
