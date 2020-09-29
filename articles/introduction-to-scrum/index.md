@@ -29,7 +29,9 @@ Typically, Scrum has a small team made of a highly adaptive and flexible individ
 ### Scrum Overview
 Scrum is lightweight, simple to understand, but challenging to master. Scrum involves a set of events, tools, and roles that work together to help teams structure and manage a project.
 
-It is used in different fields, including marketing, manufacturing, and software development. In this article, we will use examples in software development. In software development, requirements, market, development, and other external factors change. Scrum embraces the changes as a product is built in a series of iterations called sprints. Big projects are broken into small pieces that are delivered in several sprints making the project more manageable. Risk and cost are also reduced, as it is easier to identify risks in the early development stages. Every Sprint is released to users, and feedback is collected. Speed to market is also increased. Scrum is all about continuous learning and adapting to changes. The team does not know everything about the project. Therefore, adaptation to changes is critical.
+It is used in different fields, including marketing, manufacturing, and software development. In this article, we will use examples in software development. Within software development requirements, market, development, and other external factors change quite often. Scrum embraces the changes as the product is built in a series of iterations called sprints.
+
+Big projects are broken into small pieces that are delivered in several sprints making the project more manageable. Risk and cost are also reduced, as it is easier to identify risks in the early development stages. Every Sprint is released to users, and feedback is collected. Speed to market is also increased. Scrum is all about continuous learning and adapting to changes. The team does not know everything about the project. Therefore, adaptation to changes is critical.
 
 ### Scrum Team
 There are three different roles in Scrum, namely:
@@ -43,7 +45,7 @@ The team is cross-functional and self-organizing. The team decides how best to a
 The product owner plays in the part of a client or stakeholder. He/She is one person and not a group of people. He or she is responsible for managing the product backlog by clearly expressing items. They ensure that the product backlog items are clear for the development team.
 
 #### The Development Team
-It is a team with the necessary skills to create a product increment by itself. That is why it is said to cross-functional and self-organizing. Members lay multiple roles such as design, business analysis, operations, programming, and testing. Thus, the team recognizes no title for its members. Team members may have some particular competencies and areas of specialization, but they are accountable as one. The team size ranges from three to nine members.
+It is a team with the necessary skills to create a product increment by itself. That is why it is said to be cross-functional and self-organizing. Members lay multiple roles such as design, business analysis, operations, programming, and testing. Thus, the team recognizes no title for its members. Team members may have some particular competencies and areas of specialization, but they are accountable as one. The team size ranges from three to nine members.
 
 ### The Scrum Master
 The scrum master is a servant leader responsible for protecting the team and the process. The scrum master helps everyone understands the Scrum framework as defined in the [Scrum guide](https://www.scrumguides.org/scrum-guide.html). Other roles include:
