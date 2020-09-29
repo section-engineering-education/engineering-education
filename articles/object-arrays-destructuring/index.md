@@ -34,11 +34,16 @@ person.name = "Geoffrey";
 person.role = "Student";
 ```
 The first line creates an empty object `person` while the following lines add the properties `name` and `role` to the object. 
+
 > Assignment using dot notation is only applicable when using **strings** as the property keys.
 
 ### Assignment using square brackets
 
-There are some cases where using dots can't be applied. A good example of this is when you want to add a property to an object using invalid identifiers as the key or when property names are not determined until runtime. When you try to execute the code below, you get a syntax error.
+There are some cases where using dots can't be applied. Here are some good examples: 
+- When adding a property to an object using a key containing invalid identifiers.
+- When property names are not determined until runtime. 
+
+When you try to execute the code below, you get a syntax error.
 
 ```javascript
 var person = {};
@@ -55,39 +60,49 @@ person[1] = "Head";
 ```
 
 When you use brackets, the invalid identifiers are stringified. Try adding a property with a `string` key to the `person` object using brackets.
+
 ```javascript
 var person = {};
 
 person[hobby] = "coding";
 ```
 When you execute the code above you get an error. `Uncaught ReferenceError: hobby is not defined
-`. This is because anything without quotation marks should be a JavaScript keyword, a number, a boolean or defined somewhere. You can therefore solve the error by either defining `hobby` or using by simply using quotation marks.
+`. This is because anything without quotation marks in JavaScript should be either: 
+- a JavaScript keyword
+- number
+- boolean
+- defined somewhere. 
+
+You can therefore solve the error by either defining `hobby` or using by simply using quotation marks.
 
 ```javascript
-//By defining hobby
+// by defining hobby
 var person = {};
 var hobby = "myHobby";
 
 person[hobby] = "coding"; 
 ```
+
 ```javascript
-// By using quotation marks
+// by using quotation marks
 var person = {};
 
 person["hobby"] = "coding";
 ```
+
 All the keys in the square bracket notation except symbols are converted to strings. This is because objects property names in JavaScript should be a string or a symbol. 
 
 ### Accessing object properties
         
-Objects properties can be accessed by use of **dot notation** or **square brackets notation**. 
+Objects properties can be accessed by the use of **dot notation** or **square brackets notation**. 
 
 ```javascript
-// acess using dot nation
+// access using dot nation
 person.name;
 // access using bracket notation
 person["name"];
 ```
+
 > Properties with multi-word keys can't be accessed using the dot notation. They can only be accessed using bracket notation.
 
 Properties in objects can be deleted using the `delete` operator.
@@ -98,7 +113,7 @@ delete person.role;
 
 ### 2. Arrays
 
-Arrays are variables that are used to store multiple items and ordered collections. They use zero-based indexing meaning that the first item in the array is index 0. Arrays can be created using the `var`, `let` or `const` keywords.
+Arrays are variables used to store multiple items and ordered collections. They use zero-based indexing meaning that the first item in the array is index 0. Arrays can be created using the `var`, `let` or `const` keywords.
 
 ```javascript
 var fruits = [
@@ -123,11 +138,13 @@ The unshift() method adds the items at the beginning of the `fruits` array and r
 To add items in between other items, [splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) method is used. The index of the items before and after the position you want to add the item is passed in the splice() method.
 
 ```javascript
-fruits.splice(1, 0, "Oranges"); //adds oranges before plums
+fruits.splice(1, 0, "Oranges"); // adds oranges before plums
 ```
+
 `Oranges` will be added between the second and the first fruit in the array.
  
 To add items at the end of the array, use [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) method.
+
 
 ```javascript
 fruits.push("Apples");
@@ -138,9 +155,9 @@ You can remove the last item in the array by using the [pop()](https://developer
 ### Accessing items in an array
 
 Items in an array can be accessed by using the bracket notation and passing the item index.
-
+ 
 ```javascript
-fruits[0]; //returns Watermelon
+fruits[0]; // returns Watermelon
 ``` 
 
 ### Difference between objects and arrays.
@@ -160,6 +177,7 @@ var fruits = [
 
 var [fruit1, fruit2, fruit3] = fruits;
 ```
+
 All the fruit items in `fruits` array above are mapped onto each variable defined in the last line. For example, `"Bananas"` is mapped onto `fruit1`. You can also skip values you are not interested in like this:
 
 ```javascript
@@ -197,6 +215,7 @@ var person = {
 
 const {name, role} = person;
 ```
+
 The above method only works when the variable names are the same as the object property names. To assign object properties to new variable names, declare them like this.
 
 ```javascript
@@ -230,4 +249,4 @@ let b = 2;
 
 ### Conclusion
 
-Objects are a data-type that has properties or preferences associated with it. If you have worked with JSON data, you have already worked with objects. Arrays are a data-type used to store related items or creating ordered lists. Since objects and arrays build a fraction of a web developer's code, understanding the basic concepts around these data types is important. 
+Objects are a data-type that has properties or preferences associated with it. If you have worked with JSON data, you have already worked with objects. Arrays are a data-type used to store related items or creating ordered lists. Since objects and arrays make up a fraction of a web developer's code, understanding the basic concepts around these data types is important. 
