@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/ssh-in-nodejs/
-title: Basics of SSH and building an application in Node.js
+title: Basics of SSH and Building an Application in Node.js
 description: In this article, we are going to explore the basics of SSH and build an application in Node.js to connect to a virtual machine and monitor system health.
 author: adith-bharadwaj
-date: 2020-09-28T00:00:00-11:00
+date: 2020-09-29T00:00:00-11:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -173,7 +173,7 @@ function parse(data){
 
 ```
 
-In the `parse()` function, we go through every row in the data and see if the CPU utilization percentage has exceeded the threshold or not. For this, we add another column to the data called `Threshold exceeded?`. This column has two values, "yes" or "no" and tells the user whether the threshold has exceeded or not.
+In the `parse()` function, we go through every row in the data and see if the CPU utilization percentage has exceeded the threshold or not. For this, we add another column to the data called `Threshold exceeded?`. This column has two values, "yes" or "no" and tells the user whether the threshold was exceeded or not.
 
 ```node.js
 function main(){
@@ -184,7 +184,7 @@ main();
 ```
 
 ### Conclusion and Further reading
-To recap, SSH is a protocol that allows users to access a remote system, and is a very useful tool for developers and system administrators. We explored how SSH works and how to use SSH in your local system using the terminal. We understood how we can leverage the power of NodeJs to write an application that uses `simple-ssh`(A library that allows users to use SSH in Node) to SSH into a virtual machine, monitor the system disk usage, and display it to the user in a presentable format. Now that you know how SSH works and how to use it in Node, you can write your own application to do much more. 
+To recap, SSH is a protocol that allows users to access a remote system, and is a very useful tool for developers and system administrators. We explored how SSH works and how to use SSH in your local system using the terminal. We understood how we can leverage the power of Node.js to write an application that uses `simple-ssh` (A library that allows users to use SSH in Node.js) to SSH into a virtual machine, monitor the system disk usage, and display it to the user in a presentable format. Now that you know how SSH works and how to use it in Node.js, you can write your own application to do much more.
 
 ---
 Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
