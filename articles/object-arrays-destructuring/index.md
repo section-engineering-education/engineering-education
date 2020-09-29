@@ -12,7 +12,7 @@ If you are using a chromium-based browser, you can [run the JavaScript code in y
 
 Objects are variables that have properties associated with them. They are used to represent "things" in your code .eg. a character, a car,  a building, etc. If you have worked with JSON data you have already worked with objects. Comparing to a real-life situation, let's use a person as the example object. A person has at-least 1 name. The person's name is one property of this object.
 
-**Creating objects and assigning object properties**
+### Creating objects and assigning object properties
 
 Objects can be created using `var`, `let` or `const` keywords. Let's create a `person` object and some properties. 
 
@@ -25,7 +25,7 @@ var person = {
 
 The `name` and `role` above are the keys to each property and are required when accessing the properties. There are other methods of assigning object properties where the above method is not applicable. A good example of this is when you want to add a function output to an object but the object is defined higher in the code tree. 
 
-**Assignment using dot notation**
+### Assignment using dot notation
 
 ```javascript
 var person = {};
@@ -36,7 +36,7 @@ person.role = "Student";
 The first line creates an empty object `person` while the following lines add the properties `name` and `role` to the object. 
 > Assignment using dot notation is only applicable when using **strings** as the property keys.
 
-**Assignment using square brackets**
+### Assignment using square brackets
 
 There are some cases where using dots can't be applied. A good example of this is when you want to add a property to an object using invalid identifiers as the key or when property names are not determined until runtime. When you try to execute the code below, you get a syntax error.
 
@@ -78,7 +78,7 @@ person["hobby"] = "coding";
 ```
 All the keys in the square bracket notation except symbols are converted to strings. This is because objects property names in JavaScript should be a string or a symbol. 
 
-**Accessing object properties**
+### Accessing object properties
         
 Objects properties can be accessed by use of **dot notation** or **square brackets notation**. 
 
@@ -110,7 +110,7 @@ var fruits = [
 
 In arrays, unlike objects, keys are auto-generated. Each item is given a numeric key according to the position in the array.
 
-**Adding items to arrays**
+### Adding items to arrays
 
 Items can be added at the beginning, between and the end of the array. Items can be added at the beginning of an array by using [unshift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) method.
 
@@ -135,7 +135,7 @@ fruits.push("Apples");
 
 You can remove the last item in the array by using the [pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) method and the first using the [shift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift).
 
-**Accessing items in an array**
+### Accessing items in an array
 
 Items in an array can be accessed by using the bracket notation and passing the item index.
 
