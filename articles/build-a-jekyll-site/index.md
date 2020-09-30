@@ -31,10 +31,7 @@ To follow through this tutorial, you will need:
 By the end of this tutorial, you will be able to build a Jekyll blog from scratch.
 
 ### Step 1 -- Install Ruby
-Since Jekyll is written in Ruby, you will need a Ruby installation on your machine to run Jekyll.
-
-In Linux, you can install it using [Snap](https://snapcraft.io/) or [Apt](https://wiki.debian.org/Apt) package manager.
-
+Since Jekyll is written in Ruby, you will need a Ruby installation on your machine to run Jekyll. In Linux, you can install it using [Snap](https://snapcraft.io/) or [Apt](https://wiki.debian.org/Apt) package manager.
 
 1. **Install using apt package manager**.
 
@@ -62,17 +59,14 @@ If you are running macOS, you can install Ruby using [Homebrew](https://brew.sh/
 $ brew install ruby
 ```
 
-If you are running Windows, install Ruby using [Ruby Installer](https://rubyinstaller.org/).
-
+If you are running Windows, install Ruby using Ruby Installer. Install the latest Ruby Installer with Dev kit from [here](https://rubyinstaller.org/downloads/).
 To confirm the Ruby installation, run the command `ruby -v` in a terminal. The output should be similar but may vary from the one below.
 
 ```
 ruby 2.7.0p0 (2019-12-25 revision 647ee6f091)
 ```
 
-For Linux, you'll need to set up a gem installation directory to prevent permission errors.
-
-Add the lines below at the bottom of the `.bashrc` file located in the home folder.
+For Linux, you'll need to set up a gem installation directory to prevent permission errors. Add the lines below at the bottom of the `.bashrc` file located in the home folder.
 
 ```bash
 export GEM_HOME="$HOME/gems"
@@ -104,16 +98,12 @@ $ gem install jekyll bundler
 ```
 
 ### Step 3 -- Create a new Jekyll site
-Create a new folder where you will be creating your blog.
-
-```bash
-$ mkdir blog && cd blog
-```
 
 Create a new Jekyll site using the command below.
 
 ```bash
 $ jekyll new blog
+$ cd blog
 ```
 
 `blog` is the site name. Feel free to change the site name. The command creates files with the following folder structure.
@@ -136,24 +126,37 @@ We'll look at this structure in depth later. Let's run the site now. Run the fol
 $ bundle exec jekyll serve
 ```
 
-The command builds your site and you can access the site at http://127.0.0.1:4000 by default. You can run the site using the `--livereload` flag to auto-reload the site after making changes to it.
+The command builds your site and you can access the site at http://127.0.0.1:4000 by default. You can run the site using the `--livereload` flag to auto-reload the site after making changes.
 
 ```bash
 $ bundle exec jekyll serve --livereload
 ```
 
+If you encounter: `Unable to load the EventMachine C extension; To use the pure-ruby reactor, require 'em/pure_ruby'` error, reinstall the Event Machine.
+
+```bash
+$ gem uninstall eventmachine
+$ gem install eventmachine --platform ruby
+$ bundle exec jekyll serve --livereload
+```
+
 ### Understanding the Folder Structure
-Now, let's look at the site structure. There are 2 main folders, `_site` and `_posts`. The `_posts` folder contains blog posts while `_site` contains the generated site. You should not edit the contents of this folder.
+Now, let's look at the site structure. There are 2 main folders, `_site` and `_posts`. The `_posts` folder contains blog posts while `_site` contains the generated site. You should not edit the contents of the `_site` folder. The `_config.yml`  is a  YAML file that stores site settings and **rarely** changed variables. Go ahead and edit some site properties available in this file. For example, name, description, etc.
 
-The `_config.yml`  is a  YAML file that stores site settings and **rarely** changed variables. Go ahead and edit some site properties available in this file. For example, name, description, etc.
-
-The next important file is the `Gemfile`. The site dependencies are defined here. There is also a `Gemfile.lock` file which is a more detailed version of the `Gemfile`. The specific versions of the **currently installed** dependencies defined in the Gemfile are recorded in this file. 
+The next important file is the `Gemfile`. The site dependencies are defined here. There is also a `Gemfile.lock` file which is a more detailed version of the `Gemfile`. The specific versions of the **currently installed** dependencies defined in the Gemfile are recorded in this file.
 
 This file is important as it prevents version conflicts if you were to share your site as a theme. This file shouldn't be edited directly.
 
 You can learn more about the folder structure [here](https://jekyllrb.com/docs/structure/).
 
 ### Step 4 -- Add blog posts
+Jekyll blog posts and pages are written in [Markdown](https://www.markdownguide.org/getting-started/). Markdown is a markup language which uses plain-text formatting syntax. For example, heading in markdown are made by a set preceding `#` sign(s). Below is a `h3` HTML equivalent in markdown.
+
+```markdown
+### This is a third level heading
+```
+You can learn common markdown syntax [here](https://www.markdownguide.org/cheat-sheet/).
+
 Open the main folder in your favorite code editor and navigate to the `_posts` folder. 
 
 There is a welcome post written in markdown. The blog posts file names follow a `date-slug.md` naming convention. The date should be formatted like this `YYYY-MM-DD`. The slug is the part of the URL identifying a particular post.
@@ -220,7 +223,7 @@ Copy 2 images to this directory and name one `hero.jpg` and the other `new-site.
 |           └── new-site.jpg
 ```
 
-Let's add the hero image to your post. Add a `hero` property at the bottom of your front matter in your post markdown file.
+Let's add the hero image to one of your markdown files in the `_posts` folder. Add a `hero` property at the bottom of your front matter in your post markdown file.
 
 ```yaml
 hero: /assets/images/welcome/hero.jpg
@@ -283,8 +286,9 @@ If you reload your site, it probably looks broken right now. Let's go ahead and 
 
 Put the following content inside the files.
 
-\# default.html
 ```jinja
+<!--default.html-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -298,16 +302,18 @@ Put the following content inside the files.
 </html>
 ```
 
-\# page.html
-```html
+```jinja
+<!--page.html-->
+
 ---
 layout: default
 ---
 {{content}}
 ```
 
-\# home.html
 ```jinja
+<!--home.html-->
+
 ---
 layout: default
 ---
@@ -321,6 +327,8 @@ layout: default
 ```
 
 Since Jekyll allows layout nesting, you can use a layout in another layout. If you reload the site at this point, it's not broken but it's just plain HTML. Let's style the home page.
+
+> Jekyll uses [Sass](https://sass-lang.com/) stylesheet. You can learn Sass basics [here](https://sass-lang.com/guide).
 
 Create a `_sass` folder in your base directory and create a `main.scss` inside it. Also create a `css` folder inside the `assets` folder and create a `styles.scss`. Put the following content inside files.
 
@@ -345,15 +353,13 @@ a{
 }
 ```
 
-The empty front matter in `main.css` tells Jekyll that the file should be processed. Now, import the stylesheet in `default.html`. Put the following line between the `head` tags in `default.html`.
+The empty front matter in `main.css` tells Jekyll that the file should be processed. Now, you need to import the stylesheet in `default.html`. Put the following line between the `head` tags in `default.html`.
 
 ```html
 <link rel="stylesheet" href="/assets/css/styles.css">
 ```
 
-Note that the imported stylesheet is a `css` file and not `scss`. The imported file is the processed file located at `_site/assets/css/style.css`. Reload the page to see the stylesheet at work.
-
-> Jekyll uses [Sass](https://sass-lang.com/) stylesheet. You can learn Sass basics [here](https://sass-lang.com/guide).
+Note that the imported stylesheet is a `css` file and not `scss`. This is because most browsers don't support sass. Therefore, Jekyll converts the sass stylesheet to a css file compatible with all browsers. The imported file is located at `_site/assets/css/style.css`. Reload the page to see the stylesheet at work.
 
 ### Conclusion
 Nowadays, you don't need expert-level programming skills to build your blog site. You can install Jekyll and build a static site without much hassle. The only skills required to create a Jekyll powered site are HTML and CSS skills. 
