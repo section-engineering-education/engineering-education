@@ -14,10 +14,14 @@ images:
   - url: /engineering-education/debug-node-docker/hero.jpg
     alt: image build a Jekyll site
 ---
-Building a website nowadays is not as hard or expensive as it was in the past. These days, you don't have to learn a crazy programming language to have your site up and running. Instead, you can go the Jamstack way. In this article, we go through how to build and deploy a Jekyll site.
+Building a website nowadays is not as hard or expensive as it was in the past. These days, you don't have to learn a crazy programming language to have your site up and running. 
+
+Instead, you can go the Jamstack way. In this article, we go through how to build and deploy a Jekyll site.
 <!--more-->
 ### Introduction
-[Jekyll](https://jekyllrb.com/) is a [Jamstack](https://jamstack.org/) static website generator. Jamstack is a **concept** of building websites that don't depend on web servers and *databases*. Jekyll was released back in 2008 and has been one of the most convenient ways of building [all types of sites](https://jekyllrb.com/showcase/). It's written in [Ruby](https://www.ruby-lang.org/en/) and uses [Liquid](https://shopify.github.io/liquid/) template engine to render web pages.
+[Jekyll](https://jekyllrb.com/) is a [Jamstack](https://jamstack.org/) static website generator. Jamstack is a **concept** of building websites that don't depend on web servers and *databases*. 
+
+Jekyll was released back in 2008 and has been one of the most convenient ways of building [all types of sites](https://jekyllrb.com/showcase/). It's written in [Ruby](https://www.ruby-lang.org/en/) and uses [Liquid](https://shopify.github.io/liquid/) template engine to render web pages.
 
 ### Prerequisites
 To follow through this tutorial, you will need:
@@ -59,6 +63,7 @@ $ brew install ruby
 ```
 
 If you are running Windows, install Ruby using [Ruby Installer](https://rubyinstaller.org/).
+
 To confirm the Ruby installation, run the command `ruby -v` in a terminal. The output should be similar but may vary from the one below.
 
 ```
@@ -66,6 +71,7 @@ ruby 2.7.0p0 (2019-12-25 revision 647ee6f091)
 ```
 
 For Linux, you'll need to set up a gem installation directory to prevent permission errors.
+
 Add the lines below at the bottom of the `.bashrc` file located in the home folder.
 
 ```bash
@@ -141,12 +147,16 @@ Now, let's look at the site structure. There are 2 main folders, `_site` and `_p
 
 The `_config.yml`  is a  YAML file that stores site settings and **rarely** changed variables. Go ahead and edit some site properties available in this file. For example, name, description, etc.
 
-The next important file is the `Gemfile`. The site dependencies are defined here. There is also a `Gemfile.lock` file which is a more detailed version of the `Gemfile`. The specific versions of the **currently installed** dependencies defined in the Gemfile are recorded in this file. This file is important as it prevents version conflicts if you were to share your site as a theme. This file shouldn't be edited directly.
+The next important file is the `Gemfile`. The site dependencies are defined here. There is also a `Gemfile.lock` file which is a more detailed version of the `Gemfile`. The specific versions of the **currently installed** dependencies defined in the Gemfile are recorded in this file. 
+
+This file is important as it prevents version conflicts if you were to share your site as a theme. This file shouldn't be edited directly.
 
 You can learn more about the folder structure [here](https://jekyllrb.com/docs/structure/).
 
 ### Step 4 -- Add blog posts
-Open the main folder in your favorite code editor and navigate to the `_posts` folder. There is a welcome post written in markdown. The blog posts file names follow a `date-slug.md` naming convention. The date should be formatted like this `YYYY-MM-DD`. The slug is the part of the URL identifying a particular post.
+Open the main folder in your favorite code editor and navigate to the `_posts` folder. 
+
+There is a welcome post written in markdown. The blog posts file names follow a `date-slug.md` naming convention. The date should be formatted like this `YYYY-MM-DD`. The slug is the part of the URL identifying a particular post.
 
 To create a new post, create a markdown file and name it `2020-09-14-my-new-site.md`. Feel free to change the date and slug. If you reload your site, you can see you have a new post. If you click it at this point, it opens a blank page.
 
@@ -346,7 +356,9 @@ Note that the imported stylesheet is a `css` file and not `scss`. The imported f
 > Jekyll uses [Sass](https://sass-lang.com/) stylesheet. You can learn Sass basics [here](https://sass-lang.com/guide).
 
 ### Conclusion
-Nowadays, you don't need expert-level programming skills to build your blog site. You can install Jekyll and build a static site without much hassle. The only skills required to create a Jekyll powered site are HTML and CSS skills. Put some of these skills to the test and start by building your simple Jekyll static site.
+Nowadays, you don't need expert-level programming skills to build your blog site. You can install Jekyll and build a static site without much hassle. The only skills required to create a Jekyll powered site are HTML and CSS skills. 
+
+Put some of these skills to the test and start by building your simple Jekyll static site.
 
 ### Additional Resources
 Additional important Jekyll concepts and practices can be found below.
