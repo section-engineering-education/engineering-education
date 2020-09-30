@@ -25,35 +25,35 @@ This article will guide you on using common async flow functions such as Serial,
 
 #### Parallel
 
-[Parallel](https://caolan.github.io/async/v3/docs.html#parallel) tasks mean running multiple functions at the same time without waiting for the previous functions to complete. Once these tasks are completed, the final results are passed to the final callback, which returns an array. With async.parallel, you do not control what finishes before the other, as your code will be optimized to run tasks simultaneously. Generally, Javascript does not technically execute these multiple tasks simultaneously. What happens it that each task is pushed to an asynchronous event loop with no control of which task will finish before the other but still maintaining a single thread operation.
+[Parallel](https://caolan.github.io/async/v3/docs.html#parallel) tasks mean running multiple functions at the same time without waiting for the previous functions to complete. Once these tasks are completed, their results are passed to the main callback, which returns an array of results. With async.parallel, you do not control what finishes before the other, as your code will be optimized to run tasks simultaneously. Generally, Javascript does not technically execute these multiple tasks simultaneously. What happens it that each task is pushed to an asynchronous event loop with no control of which task will finish before the other but still maintaining a single thread operation.
 
 ##### Parameters
 
-- Tasks - a collection of functions to run. It can be an array, an object or any iterable.
-- Callback - This is the callback where all the task results are passed and executed once all the task execution has completed.
+- Tasks - collection tasks to run asynchronously.
+- Callback - function that runs once the tasks are successfully executed or when one on the tasks returns an error.
 
 **Syntax:** `async.parallel(tasks, callback)`
 
-`async.parallel` method is used to run a collection of tasks in parallel. All the collection of these functions will be the first argument to the `async.parallel`. Each function is passed to a callback, which will be called on completion.
+`async.parallel` method is used to run a collection of tasks in parallel. All the collection of these functions will be the first argument to the `async.parallel`. Each function is passed to a callback. The callback will be called on tasks completion.
 
 The async.parallel second argument will return the results of all the functions declared in the first argument. The final callback results can be an array if the asynchronous functions passed on the first argument are arrays. Else, an object result will be invoked if the object properties were declared.
 Example of `async.parallel` array.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-parallel-array?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-You can also use objects instead of arrays. Each object property will run as a function, and the task results will be passed to the final callback, which will return an object result instead of an array
+You can also use objects instead of arrays. Each object property will execute as a function, and its task results will be passed to the main callback, which will return an object result.
 Example of using objects instead of an array.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-parallel-objects?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-**Note:** if your task has no timers or does not perform any I/O, the code will be executed in series, and every task will happen one after the other. If one of a function returns an error to its callback. The final callback will immediately be called to null or with the value of the error results.
+**Note:** if your task has no timers or does not perform any I/O, the code will run in series, and every task will happen one after the other. If one of the functions returns an error to its callback. The final callback will immediately be invoked to null or with the value of the error output.
 
-[Race](https://caolan.github.io/async/v3/docs.html#race) is a close relative to parallel. `async.race` runs a collection of tasks parallel. There is a small difference between race and parallel. As soon as any given function executes successfully or an error is passed to its callback, the main callback is invoked immediately.
+[Race](https://caolan.github.io/async/v3/docs.html#race) is a close relative to parallel. `async.race` runs a collection of tasks parallel. There is a small difference between race and parallel. As soon as any given function executes successfully, the main callback is invoked immediately with the results of that function.
 
 ##### Parameters
 
-- Tasks - an array containing a collection of functions to run asynchronously, each function can complete with an optimal result value.
-- Callback - a final function that runs once the tasks are successfully executed or when one on the tasks returns an error. In a race, this function will get the results or an error of the first function that executes successfully.
+- Tasks - an array containing multiple tasks to run asynchronously, every function can execute successfully with an optimal result value.
+- Callback - function that runs once the tasks are successfully executed or when one on the tasks returns an error. In a race, this function will get the results or an error of the first function that executes successfully.
 
 **Syntax:** `async.race(tasks, callback)`
 
@@ -61,12 +61,12 @@ Example of using objects instead of an array.
 
 #### Queue
 
-A [queue](https://caolan.github.io/async/v3/docs.html#queue) can be used to run tasks asynchronously. A queue is created with a specified concurrency. Queue tasks are executed parallel but with a concurrency limit. A queue object is created based on an asynchronous function and passed to a worker. If all workers are in progress, the task is queued until one becomes available. Once a worker completes a task, that task's callback is called.
+A [queue](https://caolan.github.io/async/v3/docs.html#queue) can be used to run tasks asynchronously. A queue is created with a specified concurrency. Queue tasks are executed parallel but with a concurrency limit. A queue object is completed based on an asynchronous operation and passed to a worker. If all workers are in progress, the task is queued until one becomes available. When a worker completes a task, the task callback is called.
 
 #### Parameters
 
 - Worker - workers are invoked with tasks and callbacks. Worker is an asynchronous function. It processes all tasks assigned to the queue. Tasks and callbacks are the main parameters processed by a worker.
-- Concurrency -determines how many worker functions should run in parallel during the lifecycle of a queue.
+- Concurrency - determines the number of worker functions to run parallel during the lifecycle of a queue.
 
 **Syntax:** `async.queue (tasks, concurrency)`
 
@@ -74,18 +74,17 @@ A [queue](https://caolan.github.io/async/v3/docs.html#queue) can be used to run 
 These [queue objects](https://caolan.github.io/async/v3/docs.html#QueueObject) include.
 
 - Push - it is an async function that adds a task to a queue to be processed within the workers. Once the workers finish processing these tasks, they are called within a callback, which can take a single task or an array of tasks. A push is invoked with a `queue.push(task, [callback])`.
-- Drain - it sets a callback to be called after the last task item of the queue has finished and passed to a worker. If the callback is omitted, `q.drain()` returns a promise for the next occurrence.
-- Upshift - adds a task to the front of a queue. Upshift is invoked with a `queue.unshift(task, [callback])`.
+- Drain - it specifies a callback to be called after the last task item of the queue has finished and passed to a worker. Invoked with a `q.drain()` 
+- Upshift - add a task to the beginning of a queue. The upshift is called with `queue.unshift (task, [callback])`.
 
 Other common queue objects that can be included in the async queue includes:
 
-- Pause - it is a function that pauses a queue from processing tasks until `resume()` is called. Pause is invoke with a `queue.pause()`.
+- Pause - suspends the queue from processing tasks until `resume ()` is invoked. Pause is called with `queue.pause ()`.
 - Paused - takes a Boolean value that determines if a queue is in a paused state.
-- Resume - a function that resumes paused queued tasks when the queue process was invoked. Invoke with `queue.resume()`.
+- Resume - resumes a paused queue task when the queue process was Called. Called with `queue.resume()`.
+- Kill - it empties the remaining tasks in the queue and forces the queue process to run idle. When this function is called, no more tasks will be pushed to the queue. Invoke with `queue.kill()`.
 
-Kill it empties remaining tasks in the queue and forces the queue process to run idle. When this function is called, no more tasks will be pushed to the queue Invoke with `queue.kill()`.
-
-A queue can take [priority](https://caolan.github.io/async/v3/docs.html#priorityQueue) tasks. But this time, `async.queue` is replaced with `async.queue priority`. `async.Priorityqueue` is the same as `async.queue` only that a priority can be assigned to a task. A queue is completed in ascending priority order and does not support the unshift object property of a queue.
+A queue can take [priority](https://caolan.github.io/async/v3/docs.html#priorityQueue) tasks. But this time, `async.queue` is replaced with `async.queue priority`. `async.Priorityqueue` assigns a priority to a task. A queue is completed in ascending priority order and does not support the unshift object property of a queue.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-queue?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -106,18 +105,18 @@ Async [series](https://caolan.github.io/async/v3/docs.html#series) is used to ru
 
 ##### Parameters
 
-- Tasks - take multiple functions to run. It can be array, object, or any other iterable property.
-- Callback - a function that takes the results of the tasks returned as an array or an object. It contains all the results arguments passed to the task callbacks. It is the final callback and returns results or an error, invoked with `(err, result)`.
+- Tasks - take multiple tasks to run asynchronously.
+- Callback - a function that takes the results of the tasks returned as an array or an object. Contains all the result arguments that were passed to the task callbacks. It is the final callback and returns results or an error, invoked with `(err, result)`.
 
 **Syntax:** `async.series(tasks, callback)`
 
-If the tasks execute correctly, the callback receives an array result of the completed tasks. Objects can still be used instead of arrays, and each object property will be run as a function. That function results will be passed to the final callback as an object instead of an array. An object is a more readable way to handle the results of a series of tasks.
+If the tasks execute correctly, the callback receives an array result of the completed tasks. Objects can still be used instead of arrays, and each object property runs as a function. That function results will be handed over to the main callback as an object property. An object is a better readable mode to handle the results of a series of tasks.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-series-array?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-series-object?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 **Note:** according to [ECMAScript language specifications](http://www.ecma-international.org/ecma-262/5.1/#sec-8.6), the order of execution of object properties is not defined or specified. This means that the functions will not be executed in the same order as you specified. If you rely on the order of execution of the series functions to work on all platforms, consider using an array instead of an object, as shown in the example below.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-series-object?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-series-array?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 #### Waterfall
 
@@ -125,7 +124,7 @@ A [waterfall](https://caolan.github.io/async/v3/docs.html#waterfall) runs an arr
 
 ##### Parameters
 
-- Tasks - takes an array of asynchronous functions to run. The results of each function are passed as an argument for the next task.
+- Tasks - an array of tasks to perform asynchronously. The result of each task is passed as an argument to the next task.
 - Callback - returns the results of all the completed functions. These will be the result of the final task passed.
 
 **Syntax:** `async.waterfall(tasks, callback)`
@@ -142,4 +141,4 @@ Example2 with named functions
 
 ### Conclusion
 
-Async.js will help you manage the flow of your tasks. It helps to keep your code light and clean. It makes it even easier for error handling and code debugging. Async.js makes you realize how simple your code can be to avoid syntactical messes of [promises](https://devdocs.io/javascript/global_objects/promise) and [callbacks](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function). Thus avoiding possibilities of running into a [callback hell](http://callbackhell.com/) situation.
+Async.js will help you manage the flow of your tasks. It helps to keep your code light and clean. It makes it even easier to debug and handle error within your script. Async.js makes you realize how simple your code can be to avoid possibilities of running into a [callback hell](http://callbackhell.com/) situation.
