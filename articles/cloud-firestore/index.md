@@ -17,7 +17,9 @@ images:
 
 In this article, we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data with.  It is a good database that was created for faster queries and better scalability than the realtime database.
 <!--more-->
-NoSQL is a non-tabular database that stores data in objects and documents. NoSQL databases store unstructured data. Cloud Firestore provides developers the ability to add real-time listeners to the database. This means that we can get any changes that happen in the database. In this article, we will look at:
+NoSQL is a non-tabular database that stores data in objects and documents. NoSQL databases store unstructured data. Cloud Firestore provides developers the ability to add real-time listeners to the database. This means that we can get any changes that happen in the database.
+
+In this article, we will look at:
 
 - [Data structure in Cloud Firestore](#Data-Structure)
 - [Basic Read and Write Operations](#Basic-Operations)
@@ -48,9 +50,9 @@ users
 Subcollections are collections associated with the document. But even with that relationship, when you delete a document, it does not delete the subcollection. You have to delete the document as well.
 
 ### Basic Operations
-Let begin writing some code! You can get the code for this tutorial from [Github](https://github.com/LinusMuema/node-firestore)
+Let's begin writing some code! You can access the full code for this tutorial on [Github](https://github.com/LinusMuema/node-firestore).
 
-Within the code, you will find the following packages.
+Within the code, you will find the following packages:
 
 - `express` - to manage routing in the application.
 
@@ -83,7 +85,7 @@ const data = {name: string(), number: (Math.random() * 101)}
 ```
 
 #### Adding data
-Then we create a route to add the random data to the database. We use the `reference.set()` method and pass in the data as an argument. This, like the realtime database, returns a promise. We can then check if it was a success or catch the errors accordingly.
+Next, we create a route to add the random data to the database. We use the `reference.set()` method and pass in the data as an argument. This, like the realtime database, returns a promise. We can then check if it was a success or catch the errors accordingly.
 
 ```JavaScript
 app.use('/add', (req, res) => {
