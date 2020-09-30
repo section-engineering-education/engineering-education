@@ -1,10 +1,10 @@
 
-It is not like the early times when data was stored on papers and cabinet. Data is now all around us. Information is the backbone of almost every modern business models. With the current steep growth of the database technology, as a developer building an application to store some data online, and already know what a database is, the big question you should be asking yourself is which database model will fit your application model. Knowing which database structure to use is critical to building outstanding applications.
-SQL or NoSQL? That is what we will dive in briefly, to understand their structures, explore them deeply, and understand how they work. These two databases do one thing, to store data, but the approach to do this may differ.
+Unlike the early times when data was stored on papers and cabinets, data is now all around us. Data is the backbone of almost every modern business models. With the current steep growth of the database technology, as a developer building an application to store some data online, and already know what a database is. The big question you should be asking yourself is which database model will fit your application model. Knowing which database structure to use is critical to building outstanding applications.
+SQL or NoSQL? We will dive into this two database and understand their structures, explore them in-depth, and understand how they work. These two database structures do one thing, to store data, but the approach to do this may differ.
 
 ### What SQL
 
-SQL is the most popular database structure. Which I too know at one instance heard of it. SQL (commonly pronounced as "see quell") stands for the structured query language.  SQL is a language used for writing query statements to interact and communicate with relational databases. A relational database is a database that has a tabular schema to store data in terms of rows, and columns. Each column contains data and each row is called a record. The data in the tables can be related to each other hence the 'relational database'. A collection of these multiple tables in a database is what we are calling a schema. A relation is simply a decorative phrase for a table.
+SQL is the most popular database structure. Which I too know at one instance heard of it. SQL (commonly pronounced as "see quell") stands for the structured query language.  SQL is a language used for writing query statements to interact and communicate with relational databases. A relational database is a database that has a tabular schema to store data in terms of rows, and columns. Each column contains data that are called attributes and each row is called a record. The data in the tables can be related to each other hence the 'relational database'. A collection of these multiple tables in a database is what we are calling a schema. A relation is simply a decorative phrase for a table.
 Relations can exit in different ways such as
 - One to one 
 - One to many
@@ -13,13 +13,13 @@ Relations can exit in different ways such as
 SQL statements will help you to perform CRUD operations such as CREATE, READ, UPDATE, and DELETE. These operations will help you to retrieve and modify data.
 If we were to have a student info database with table student and course, this is how we can represent a relation in an SQL database.
 
-![image title](\tables.png)
+![SQL database table](/engineering-education/sql-or-nosql-when-to-choose-what/tables.png)
 
-![image title](\sql.png)
+![SQL](/engineering-education/sql-or-nosql-when-to-choose-what/sql.png)
 
 SQL is a simple language that is extremely powerful. You can create multiple databases with multiple tables to store data with foreign key mapping. Each row in SQL database has its specific value character such as text and intergers.
 
-![image title](\relatiomal.png)
+![Relations](/engineering-education/sql-or-nosql-when-to-choose-what/relations.png)
 
 SQL databases need a server that runs a database management system (DBMS). Some of the common SQL databases include [MySQL](https://www.mysql.com/why-mysql/), [Oracle Database](https://www.oracle.com/database/), [PostgreSQL](https://www.postgresql.org/about/), [Microsoft SQL Server](https://www.microsoft.com/en-gb/sql-server/), and [MariaDB](https://mariadb.org/documentation/).
 
@@ -34,13 +34,15 @@ If we refer back to SQL, the collection would be the table and the object will b
 Like SQL, NoSQL has a unique id that uniquely identifies a specific object within a collection. Nested objects and array are supported where an object can be inside another object. If we were to represent the SQL student info database in NoSQL, this how it would look like:
 
 ```json
-Student {
-        _id: Objectld('14s5gg98we9d’),
-        firstName: Alex,
-        lastName: Brooks,
-        username: alex09_b,
-        Courses: [{name: Web Dev}, {name: React js}]
+{
+"Student" {
+        "_id: Objectld('14s5gg98we9d’)",
+        "firstName: Alex",
+        "lastName: Brooks",
+        "username: alex09_b",
+        "Courses": [{"name": "Web Dev"}, {"name": "React js"}]
     }
+}
 ```
 Some of the common NoSQL databases include [MongoDB](https://www.mongodb.com/what-is-mongodb), [Apache Cassandra](https://cassandra.apache.org/doc/latest/getting_started/index.html), [Google Cloud BigTable](https://cloud.google.com/bigtable), [Apache HBase](https://hbase.apache.org/), and [Redis](https://redis.io/).
 
@@ -48,11 +50,13 @@ Some of the common NoSQL databases include [MongoDB](https://www.mongodb.com/wha
 
 #### Relation
 
-SQL employs a kind of relationship that exists between two or more database tables. As we have explained above, NoSQL is non-relational. To get this point correct, think of two towns let's say town A and town B. Take town A, where the residents understand only one language. They use it to do all sorts of communication and interaction around them day in day out. To change the language of this town will bring a lot of confusion and disruptions among the residents. Take town B, the residents speak different languages. Everyone communicates and interacts with the world around them differently. There is no universal way to understand each other. When a new resident is introduced to this town, the language of this new resident will affect no one.
+SQL employs a kind of relationship that exists between two or more database tables. As we have explained above, NoSQL is non-relational.
+
+To understand  this point, think of two towns. Let's say town A and town B. Take town A, where the residents understand only one language. They use it to do all sorts of communication and interaction around them day in day out. To change the language of this town will bring a lot of confusion and disruptions among the residents. Take town B, the residents speak different languages. Everyone communicates and interacts with the world around them differently. There is no universal way to understand each other. When a new resident is introduced to this town, the language of this new resident will affect no one.
 
 Town A represents the relational SQL, and Town B represents the non-relational NoSQL. SQL is powerful and versatile. On the other hand, they are restrictive and structured with a predefined schema. If you choose to use them, your data must use and follow the same structure. And as in Town A, changing its structure would be difficult. It will disrupt your whole system. The language of SQL is tabular with rows and columns, you can only follow that structure.
 
-NoSQL on the hand, Just like town B, it has a dynamic unstructured schema that is flexible to any new resident. Its data can be stored in many ways. This data can be
+NoSQL on the other hand, like town B, it has a dynamic unstructured schema that is flexible to any new resident. Its data can be stored in many ways. This data can be
 - Document-oriented
 - Column-oriented
 - Graph base or
@@ -67,13 +71,15 @@ It is extremely flexible
 
 Schema is a blueprint of how data is organized in a database. These two database models have a completely different database schema representation. To understand this further check out this joke.
 
-![image title](\database-admins.jpg)
+![Databases schema](/engineering-education/sql-or-nosql-when-to-choose-what/database-admins.jpg)
 
 If these admins walked into an SQL bar, they would have defiantly found a table to enjoy their drink from. This means NoSQL has no tabular schema and SQL does.
 
 #### Scalability
 
-Assume and figure out a building near your neighbourhood. Be the architecture and check the possibility of adding more floors to the existing building to host more rooms. Would you propose adding more floors to the existing building or would you build a new one? If you will add more floors, what are the chances of this building to remain stable? That the case here. SQL is scaled vertically, which means that a server capacity can be increased by increasing specks such as, CPU, RAM and disk size (HDD or SDD) (more floors will be added to the existing building). Vertical scaling adds more power to your existing server. The downside of that of course is that there will be a limit point hit on how much power you can stretch your server. That is one of the restrictions of a SQL database approach that makes scaling to be super hard.
+Think of a building near your neighbourhood. Be the architect and check the possibility of adding more floors to the existing building to host more rooms. Would you propose adding more floors to the existing building or would you build a new one? If you will add more floors, what are the chances of this building to remain stable? That the case here.
+
+SQL is scaled vertically, which means that a server capacity can be increased by increasing specks such as, CPU, RAM and disk size (HDD or SDD) (more floors will be added to the existing building). Vertical scaling adds more power to your existing server. The downside of that of course is that there will be a limit point hit on how much power you can stretch your server. That is one of the restrictions of an SQL database approach that makes scaling to be hard.
 
 To the contrary, NoSQL databases are scaled horizontally. You don't need to worry much of RAMs CUPs, and disk size (create more buildings next to your neighbourhood), split the data across multiple servers. NoSQL will help you handle large and constantly changing data.
 
@@ -108,16 +114,16 @@ Let’s look at the 2020 [annual developer survey](https://insights.stackoverflo
 
 - *[Most popular](https://insights.stackoverflow.com/survey/2020#technology-databases-all-respondents4) databases*
 
-![image title](\most-popular.png)
+![most popular databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-popular.png)
 
 - *[Most popular databases among professional](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4) developers*
 
-![image title](\popular-among-professionals%20.png)
+![most popular databases among professionals](/engineering-education/sql-or-nosql-when-to-choose-what/popular-among-professionals.png)
 
 - *[Most loved](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-loved4) databases*
 
-![image title](\most-loved.png)
+![most loved databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-loved.png)
 
 - *[Most wanted](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4) databases*
 
-![image title](\most-wanted.png)
+![most wonted databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-wanted.png)
