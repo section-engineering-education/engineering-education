@@ -4,7 +4,7 @@
 Ever wondered how more than one application is deployed to the same machine, and how traffic is routed to the corresponding applications?
 Keep reading to find out.
 ## Goals
-By the end of the article, you'll understand would flow better.
+By the end of the article, you'll understand
 - What a Reverse Proxy is?
 - What NGINX is?
 - How does NGINX help in managing multiple applications?
