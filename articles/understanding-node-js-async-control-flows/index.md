@@ -29,12 +29,13 @@ This article will guide you on using common async flow functions such as Serial,
 
 ##### Parameters
 
-- Tasks - a collection of functions to run. It can be an array, an object or any iterable
-- Callback - This is the callback where all the task results are passed and executed once all the task execution has completed
+- Tasks - a collection of functions to run. It can be an array, an object or any iterable.
+- Callback - This is the callback where all the task results are passed and executed once all the task execution has completed.
 
 **Syntax:** `async.parallel(tasks, callback)`
-`async.parallel` method is used to run a collection of tasks in parallel.
-All the collection of these functions will be the first argument to the `async.parallel`. Each function is passed to a callback, which will be called on completion.
+
+`async.parallel` method is used to run a collection of tasks in parallel. All the collection of these functions will be the first argument to the `async.parallel`. Each function is passed to a callback, which will be called on completion.
+
 The async.parallel second argument will return the results of all the functions declared in the first argument. The final callback results can be an array if the asynchronous functions passed on the first argument are arrays. Else, an object result will be invoked if the object properties were declared.
 Example of `async.parallel` array.
 
@@ -45,8 +46,7 @@ Example of using objects instead of an array.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-parallel-objects?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-**Note:** if your task has no timers or does not perform any I/O, the code will be executed in series, and every task will happen one after the other.
-If one of a function returns an error to its callback. The final callback will immediately be called to null or with the value of the error results.
+**Note:** if your task has no timers or does not perform any I/O, the code will be executed in series, and every task will happen one after the other. If one of a function returns an error to its callback. The final callback will immediately be called to null or with the value of the error results.
 
 [Race](https://caolan.github.io/async/v3/docs.html#race) is a close relative to parallel. `async.race` runs a collection of tasks parallel. There is a small difference between race and parallel. As soon as any given function executes successfully or an error is passed to its callback, the main callback is invoked immediately.
 
@@ -72,19 +72,20 @@ A [queue](https://caolan.github.io/async/v3/docs.html#queue) can be used to run 
 
 `async.queue` returns a queue object that manages a task. These object properties can be attached to callbacks to listen to specific tasks during the queue lifecycle.
 These [queue objects](https://caolan.github.io/async/v3/docs.html#QueueObject) include.
+
 - Push - it is an async function that adds a task to a queue to be processed within the workers. Once the workers finish processing these tasks, they are called within a callback, which can take a single task or an array of tasks. A push is invoked with a `queue.push(task, [callback])`.
 - Drain - it sets a callback to be called after the last task item of the queue has finished and passed to a worker. If the callback is omitted, `q.drain()` returns a promise for the next occurrence.
 - Upshift - adds a task to the front of a queue. Upshift is invoked with a `queue.unshift(task, [callback])`.
 
 Other common queue objects that can be included in the async queue includes:
+
 - Pause - it is a function that pauses a queue from processing tasks until `resume()` is called. Pause is invoke with a `queue.pause()`.
 - Paused - takes a Boolean value that determines if a queue is in a paused state.
 - Resume - a function that resumes paused queued tasks when the queue process was invoked. Invoke with `queue.resume()`.
 
 Kill it empties remaining tasks in the queue and forces the queue process to run idle. When this function is called, no more tasks will be pushed to the queue Invoke with `queue.kill()`.
 
-A queue can take [priority](https://caolan.github.io/async/v3/docs.html#priorityQueue) tasks. But this time, `async.queue` is replaced with `async.queue priority`.
-`async.Priorityqueue` is the same as `async.queue` only that a priority can be assigned to a task. A queue is completed in ascending priority order and does not support the unshift object property of a queue.
+A queue can take [priority](https://caolan.github.io/async/v3/docs.html#priorityQueue) tasks. But this time, `async.queue` is replaced with `async.queue priority`. `async.Priorityqueue` is the same as `async.queue` only that a priority can be assigned to a task. A queue is completed in ascending priority order and does not support the unshift object property of a queue.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-queue?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -96,6 +97,7 @@ Unlike `async.queue`, the task takes three parameters, namely
 - The callback function
 
 **Syntax:** `async.Priorityqueue (tasks, concurrency)`
+
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-Priorityqueue?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 #### SERIES
