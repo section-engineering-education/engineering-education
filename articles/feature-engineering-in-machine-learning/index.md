@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 # Feature Engineering in Machine Learning: An Overview
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
-# Feature Engineering in Machine Learning: An Overview
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 ![hero](/engineering-education/feature-engineering-in-machine-learning/hero.jpg)
 
@@ -25,15 +19,8 @@ This article is meant to be most useful to anyone new to the machine learning sp
 
 • Compare automated and manual feature engineering.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ### Introduction to Machine Learning
-=======
-## Introduction to Machine Learning
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
-## Introduction to Machine Learning
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 Machine learning is a subset of artificial intelligence. It refers to giving computers ability to learn without explicitly being programmed. This means that computer systems learn from data. Machine learning uses algorithms to find patterns in data. The patterns help the system improve at the given task. Improvement is often an iterative task. Data is used to train machine learning algorithms. Training results in machine learning models. We may define machine learning models as the output of training machine learning algorithms. Examples of machine learning models include:
 
@@ -41,15 +28,7 @@ Machine learning is a subset of artificial intelligence. It refers to giving com
 
 • **Regression models** – unlike classification models, these tasks give output variables that take continuous values. An example of such a model is a linear regression model.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #### Machine Learning Categories
-=======
-### Machine Learning Categories
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
-### Machine Learning Categories
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 There are three types of machine learning:
 
@@ -61,15 +40,7 @@ There are three types of machine learning:
 
 We are now acquainted with machine learning. But, in order to understand what feature engineering is, we need to have an overview of the entire machine learning process.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #### Machine Learning Process
-=======
-### Machine Learning Process
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
-### Machine Learning Process
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 It is important to understand the machine learning lifecycle. These are more or less the steps of the machine learning process:
 
@@ -87,15 +58,7 @@ It is important to understand the machine learning lifecycle. These are more or 
 
 • **Performance monitoring**- a model should always be monitored after deployment. This ensures the model works correctly. It also provides the chance to update models or carry out maintenance on them.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### Feature Engineering
-=======
-## Feature Engineering
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
-## Feature Engineering
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 As mentioned previously, feature engineering falls in data preparation stage of the machine learning process. Let us finally define feature engineering. Feature engineering is the process of creating new input features for machine learning. Features are extracted from raw data. These features are then transformed into formats compatible with the machine learning process. Domain knowledge of data is key to the process. It, along with programming and math skills, is required to perform feature engineering. The correct features make machine learning algorithms successful.
 
@@ -109,29 +72,14 @@ Features influence results of predictive models. I highlight two points on the i
 
 2. **Increased accuracy**. Feature engineering is a broad process. It involves transforming variables into suitable formats. It involves creation of new variables from existing ones. Filling in missing values, among other processes, is also under this umbrella. These processes ultimately influence accuracy of the model. When done correctly, with the correct data, it increases the accuracy of the models.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #### Features and Techniques
 =======
-### Features and Techniques
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
-### Features and Techniques
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 We have defined what a feature is. But, for wholesome understanding, it is important that we delve deeper to understand what kinds of features exist. After that, we finally go over a few feature engineering techniques.
 
 Below are three general types of features.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ##### Examples of Features
-=======
-#### Examples of Features
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
-#### Examples of Features
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 • **Categorical features**. These are features derived from categorical data. Categorical data is data that is grouped into categories. It is often in non-numerical form. An example of such data is, type of pet. This could be a dog, cat, snake, hamster and so forth.
 
@@ -141,8 +89,6 @@ Below are three general types of features.
 
 Understanding of features puts us in a good position to get into feature engineering techniques.  Let’s briefly define 5 techniques.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ##### 5 Feature Engineering Techniques
 
 ###### Imputation
@@ -166,36 +112,6 @@ Overfitting refers to when a model contains more parameters than can be accounte
 This simply refers to splitting of a feature into two or more parts. This may be done to create new features or to aid an algorithm to get a better understanding of the dataset.
 
 #### Feature Engineering vs Feature Selection
-=======
-=======
->>>>>>> acc081e... Revert "Deleted wrong index file"
-#### 5 Feature Engineering Techniques
-
-##### Imputation
-
-It is common to deal with incomplete datasets. As we mentioned previously, feature engineering involves handling missing values. The technique responsible for this is imputation.
-
-##### Outliers
-
-Outliers are datapoints observed to be too far from the rest. They distort the results of the models therefore they must be handled. This technique deals with first identifying then trimming the outliers.
-
-##### Log Transform
-
-Skewness refers to the measure of how asymmetric a data distribution can be. When a dataset is skewed, it impacts performance of a model. Log transform comes in to fix skewness of dataset. It has a purpose to make the dataset distribution as close to normal as possible. This technique also reduces the impact of outliers. It is worth noting that this technique works only with positive values.
-
-##### Binning
-
-Overfitting refers to when a model contains more parameters than can be accounted for by dataset. Noisy data contributes to overfitting. As a result, we use binning technique to smooth noisy data. This involves dividing features into different bins. These features may be numerical or categorical.
-
-##### Feature Split
-
-This simply refers to splitting of a feature into two or more parts. This may be done to create new features or to aid an algorithm to get a better understanding of the dataset.
-
-### Feature Engineering vs Feature Selection
-<<<<<<< HEAD
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 We have already defined and explored the feature engineering process. Nonetheless, it is common to have newbies use feature engineering and feature selection interchangeably.
 As we learnt, feature engineering creates new features from raw data. However, feature selection is a process that involves selection of features of the highest influence on the target variable, from a set of existing features. This means the selection is a subset of existing features. The benefits of feature selection include:
@@ -208,15 +124,8 @@ As we learnt, feature engineering creates new features from raw data. However, f
 
 Feature engineering is often applied first for generation of additional features. Feature selection follows to reduce features to only the most influential ones.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 #### Automated vs Manual Feature Engineering
-=======
-### Automated vs Manual Feature Engineering
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
-### Automated vs Manual Feature Engineering
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 If you’re concerned that feature engineering is an intimidating process, you are right to be. However, there is a solution to ease these concerns.
 As mentioned previously, feature engineering is often a difficult and time-consuming task. Domain experience is also important. Manual feature engineering is prone to errors. Furthermore, this process must start from scratch for every dataset. Resultant features may be subjective to the engineer creating them. This is a sticking point for most companies who find value in these techniques but may not have the resources to hire an experienced team of data scientists. It is also an obstacle for practitioners who may be dealing with strict deadlines or multiple data science problems therefore time is of the essence. With some of these high stakes involved, errors in such environments can discredit the whole problem-solving process.
@@ -225,25 +134,12 @@ In response to the above obstacle, automated machine learning (AutoML) framework
 
 Automated feature engineering automatically creates viable features from a dataset. The best of these features can be used for training. This greatly assists data scientists avoid the struggles of the manual process. It also offers an aspect of reusability of feature engineering approaches. Let us not mention the precious time that is saved through automating the process.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### It’s a Wrap
 
 Feature engineering is key to building effective machine learning models. It is often the difference between an average model and a successful model. In addition to introducing machine learning, we have dissected feature engineering in this post. I am confident you now know what feature engineering is, why it is important and a few techniques associated with it. I do hope this lengthy article makes it less intimidating to approach feature engineering (and machine learning as a whole). Good luck!
 
+
 ### References
-=======
-=======
->>>>>>> acc081e... Revert "Deleted wrong index file"
-## It’s a Wrap
-
-Feature engineering is key to building effective machine learning models. It is often the difference between an average model and a successful model. In addition to introducing machine learning, we have dissected feature engineering in this post. I am confident you now know what feature engineering is, why it is important and a few techniques associated with it. I do hope this lengthy article makes it less intimidating to approach feature engineering (and machine learning as a whole). Good luck!
-
-## References
-<<<<<<< HEAD
->>>>>>> 6980588... Article on Feature Engineering in ML
-=======
->>>>>>> acc081e... Revert "Deleted wrong index file"
 
 1. [Feature engineering for detecting spammers on Twitter: Modelling and analysis](https://doi.org/10.1177%2F0165551516684296)
 
