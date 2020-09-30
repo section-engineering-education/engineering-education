@@ -65,7 +65,8 @@ As mentioned previously, feature engineering falls in data preparation stage of 
 This is one of the most effective ways to improve model performance. But what is a feature?  According to Wikipedia, a [feature](https://en.wikipedia.org/wiki/Feature_engineering) is a property shared by all the independent units on which analysis is to be done. It is a characteristic that might assist in problem solving.
 As beneficial as this process is, it is often described as being time consuming. It also is a difficult process. Furthermore, it requires domain expertise for the data in being analysed. So, why exactly do we need this process?
 
-Need for feature engineering
+#### Need for feature engineering
+
 Features influence results of predictive models. I highlight two points on the importance of this process:
 
 1. **Reduced complexity**. Algorithms are fed raw data in order to build these models. However, these algorithms make predictions without a clear guide. Feature engineering guides these algorithms. But what is the benefit of this? For starters, with correct features, model complexity will reduce. Correct scope and purpose of the model makes the process more efficient. This makes it simpler to understand, build, modify and maintain models.
@@ -73,7 +74,6 @@ Features influence results of predictive models. I highlight two points on the i
 2. **Increased accuracy**. Feature engineering is a broad process. It involves transforming variables into suitable formats. It involves creation of new variables from existing ones. Filling in missing values, among other processes, is also under this umbrella. These processes ultimately influence accuracy of the model. When done correctly, with the correct data, it increases the accuracy of the models.
 
 #### Features and Techniques
-=======
 
 We have defined what a feature is. But, for wholesome understanding, it is important that we delve deeper to understand what kinds of features exist. After that, we finally go over a few feature engineering techniques.
 
