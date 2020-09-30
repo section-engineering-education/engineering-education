@@ -53,7 +53,7 @@ If your article is about serving ML models with Django, then the reader should h
 
 The details your article gives should help further grow the readers’ skills as they practice on their own projects.
 
-## Review, Approval, & Payment processes
+## Review, approval, & payment processes
 Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. 
 
 Note: articles requiring very few edits will be given priority in the review queue, and we reserve the right to refuse any articles that do not adhere to quality standards.PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
@@ -75,9 +75,9 @@ All submitted articles should be BOLD & CLEAR, free of any lengthy, complex sent
 
 All other formats payout will be as follows:
 
-Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
-Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
-Articles with (3+) and up rounds of revisions) we will consider closing the PR 
+- Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
+- Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
+- Articles with (3+) and up rounds of revisions) we will consider closing the PR 
 
 What counts as a round of revision*? 
 - Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation. 
