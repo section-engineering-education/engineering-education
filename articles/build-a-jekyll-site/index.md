@@ -332,17 +332,18 @@ Since Jekyll allows layout nesting, you can use a layout in another layout. If y
 
 Create a `_sass` folder in your base directory and create a `main.scss` inside it. Also create a `css` folder inside the `assets` folder and create a `styles.scss`. Put the following content inside files.
 
-\# styles.scss
 ```scss
+// styles.scss
+
 ---
 ---
 
 @import "main";
 ```
 
-\# main.scss
-
 ```scss
+// main.scss
+
 body {
   background-color: rgb(20, 20, 20);
   color: #fff;
