@@ -132,11 +132,11 @@ A [waterfall](https://caolan.github.io/async/v3/docs.html#waterfall) runs an arr
 
 The callback of each task contains a null first argument and the results of the subsequent argument. Each function takes the results argument of the previous callback as the first parameter and the final callback.
 
-Example1 using undefined funtions
+Example1 using undefined functions
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-waterfall-undefined?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Example2 with named funtions
+Example2 with named functions
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/waterfall-with-funtions?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
