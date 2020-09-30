@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-firestore/
+url: /engineering-education/cloud-firestore/
 title: Node.js Firestore
 description: This is a short article that shows developers how Cloud Firestore (a NoSQL database that applications can access) works and some of its basic operations.
 author: linus-muema
-date: 2020-09-17T00:00:00-10:00
-topics: [Node.js]
+date: 2020-09-30T00:00:00-10:00
+topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-firestore/hero.jpg
-    alt: Node.js Firebase image computer
+  - url: /engineering-education/cloud-firestore/hero.jpg
+    alt: Clous Firebase image computer
 ---
 
 In this article we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data.  It is a good database that was created for faster queries and better scalability than the realtime database.
@@ -26,9 +26,11 @@ NoSQL is a non-tabular database that stores data in objects and documents. NoSQL
 - [Conclusion](#Conclusion)
 
 ### Data Structure
-Data in Cloud Firestore is organized differently from the realtime database. It is organized in collections and documents. A collection contains documents and cannot contain other collections. A document on the other hand is different. It contains fields, maps and subcollections. Fields can hold data of different types e.g strings, numbers, arrays, etc. For more details on the data type,  you can check the [reference](https://firebase.google.com/docs/firestore/manage-data/data-types). Maps are basically nested data. e.g. `first` and `last` fields are maps.
+Data in Cloud Firestore is organized differently from the realtime database. It is organized in collections and documents. A collection contains documents and cannot contain other collections. A document on the other hand is different. It contains fields, maps and subcollections. Fields can hold data of different types e.g. strings, numbers, arrays, etc.
 
-```bsh
+For more details on the data type,  you can check the [reference](https://firebase.google.com/docs/firestore/manage-data/data-types). Maps are basically nested data. e.g. `first` and `last` fields are maps.
+
+```bash
 users
     |-user_id_one
         |-name :
@@ -43,7 +45,7 @@ users
         |-born : 2003
 ```
 
-Subcollections are basically collections associated with the document. But even with that relationship, when you delete a document, it does not delete the subcollection. You have to delete the document too.
+Subcollections are collections associated with the document. But even with that relationship, when you delete a document, it does not delete the subcollection. You have to delete the document too.
 
 ### Basic Operations
 Now we can get into writing code! You can get the code for this tutorial from [Github](https://github.com/LinusMuema/node-firestore)
