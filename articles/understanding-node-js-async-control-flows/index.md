@@ -2,15 +2,15 @@ Javascript has embraced asynchronous with single thread processing. Every task e
 
 To understand how asynchronous work, I want to paint this picture on your mind. Imagine you want to make some lovely scrambled eggs for your breakfast. Do you just walk into the kitchen and get some scrambled eggs? Or are there some several steps you need to follow to make those lovely scrambled eggs? It would typically be best if you took several steps/action before you assumably enjoy your scrambled eggs breakfast. If you are like me, there is how I will make my eggs.
 
-- 1. Whisk two eggs with some milk, cream, and a pinch of salt together.
-- 2. Heat my nonstick frying pan for a minute.
-- 3. Add some butter and let it melt.
-- 4. Pour in my egg mixture without stirring for 20 seconds.
-- 5. Stir the stir while folding and lifting the mixture over with a wooden spoon.
-- 6. Let the eggs sit for another 20 seconds, then stir and fold again.
-- 7. Repeat until the eggs are soft and slightly runny.
-- 8. Remove from heat and let it sit for 10 seconds.
-- 9. Give it a final stir and serve the eggs with some fresh veggies.
+1. Whisk two eggs with some milk, cream, and a pinch of salt together.
+2. Heat my nonstick frying pan for a minute.
+3. Add some butter and let it melt.
+4. Pour in my egg mixture without stirring for 20 seconds.
+5. Stir the stir while folding and lifting the mixture over with a wooden spoon.
+6. Let the eggs sit for another 20 seconds, then stir and fold again.
+7. Repeat until the eggs are soft and slightly runny.
+8. Remove from heat and let it sit for 10 seconds.
+9. Give it a final stir and serve the eggs with some fresh veggies.
 
 If you look at these steps, there are some breaks that you need to wait before proceeding to the next step. You won't blindly skip those time intervals and hope to get some lovely eggs. Are we still talking about javascript? Please don't eat your eggs. We need to first talk about javascript. Javascript is threaded. Everything is executed in the order of how your code is written. If we write the scrambled eggs steps in javascript, this is how it would look like.
 
