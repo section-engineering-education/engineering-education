@@ -80,10 +80,10 @@ Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD 
 Articles with (3+) and up rounds of revisions) we will consider closing the PR 
 
 What counts as a round of revision*? 
-**Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation. 
-Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
-Instances when the content is too difficult to understand.
-PRs that may lack sufficient unique* value - (any and all comments made by reviewers to draw out more value from the article are great and encouraged but should be limited)**
+- Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation. 
+- Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
+- Instances when the content is too difficult to understand.
+- PRs that may lack sufficient unique* value - (any and all comments made by reviewers to draw out more value from the article are great and encouraged but should be limited)
 
 
 *by unique we mean content that can NOT simply be found by looking up the official documentation.
