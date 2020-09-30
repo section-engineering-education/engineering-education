@@ -132,7 +132,7 @@ server{
 These are the basic minimum configurations required to successfully configure NGINX for reverse proxying. Feel free to explore other config parameters as well. 
 
 Change the domain name to your domain.
-For SSL Certificate and Key, you can get them from your SSL provider. If you don't have one, Use this free service [LetsEncrypt](https://letsencrypt.org/). Follow their documentation to get Free SSL instantly!
+For **a** SSL Certificate and Key, you can **obtain them** from your SSL provider. If you don't have one, Use this free service [LetsEncrypt](https://letsencrypt.org/). Follow their documentation to get Free SSL instantly!
 
 
 
