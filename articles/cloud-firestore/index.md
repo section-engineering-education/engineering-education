@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/cloud-firestore/
-title: Node.js Firestore
+title: Cloud Firestore
 description: This is a short article that shows developers how Cloud Firestore (a NoSQL database that applications can access) works and some of its basic operations.
 author: linus-muema
 date: 2020-09-30T00:00:00-10:00
@@ -15,7 +15,7 @@ images:
     alt: Clous Firebase image computer
 ---
 
-In this article we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data.  It is a good database that was created for faster queries and better scalability than the realtime database.
+In this article we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data with.  It is a good database that was created for faster queries and better scalability than the realtime database.
 <!--more-->
 NoSQL is a non-tabular database that stores data in objects and documents. NoSQL databases store unstructured data. Cloud Firestore provides developers the ability to add real-time listeners to the database. This means that we can get any changes that happen in the database. In this article, we will look at:
 
@@ -70,13 +70,13 @@ require("firebase/firestore");
 const db = firebase.firestore()
 ```
 
-The fist thing we will do is add data to the database. We get a reference to the document we want to add data to. We call the `.doc` method and pass in the path we want to write to. In this case, we want to get the `numbers` collection and write to the `random` document.
+The first thing we will do is add data to the database. We get a reference to the document we want to add data to. We call the `.doc` method and pass in the path we want to write to. In this case, we want to get the `numbers` collection and write to the `random` document.
 
 ```JavaScript
 const reference = db.doc('numbers/random')
 ```
 
-Using the `random-words` and `Math.random` method in JavaScript, we will create the random data to be added to the database.
+Using the `random-words` and `Math.random` method in JavaScript, we will create random data to be added to the database.
 
 ```JavaScript
 const data = {name: string(), number: (Math.random() * 101)}
