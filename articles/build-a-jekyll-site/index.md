@@ -37,21 +37,21 @@ Since Jekyll is written in Ruby, you will need a Ruby installation on your machi
 
 First, update your apt repositories to look for the latest Ruby version.
 
-	```bash
-	$ sudo apt-get update
-	```
+```bash
+$ sudo apt-get update
+```
 
 Then install Ruby.
 
-	```bash
-	$ sudo apt-get install ruby-full
-	```
+```bash
+$ sudo apt-get install ruby-full
+```
 
 2. **Install using Snap package manager**.
 
-	```bash
-	$ sudo snap install ruby --classic
-	```
+```bash
+$ sudo snap install ruby --classic
+```
 
 If you are running macOS, you can install Ruby using [Homebrew](https://brew.sh/).
 
