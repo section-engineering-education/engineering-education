@@ -15,7 +15,7 @@ images:
     alt: Clous Firebase image computer
 ---
 
-In this article we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data with.  It is a good database that was created for faster queries and better scalability than the realtime database.
+In this article, we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data with.  It is a good database that was created for faster queries and better scalability than the realtime database.
 <!--more-->
 NoSQL is a non-tabular database that stores data in objects and documents. NoSQL databases store unstructured data. Cloud Firestore provides developers the ability to add real-time listeners to the database. This means that we can get any changes that happen in the database. In this article, we will look at:
 
