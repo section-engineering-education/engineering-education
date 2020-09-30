@@ -88,7 +88,7 @@ What counts as a round of revision?
 
 *by unique we mean content that can NOT simply be found by looking up the official documentation.
 
-Note: To test this new tier system - we will start by calling a “round of revision” - any back-and-forth.
+Note: To test this new tier system - we will start by calling a “round of revision” - any major back-and-forth between reviewer and contributor.
 
 We will highlight articles that are of good consistent quality - to have as examples of the overall quality and style we are looking for. 
 
