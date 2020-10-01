@@ -246,6 +246,7 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
 We are done!
 Let's run the app.
 
+
 ![GoogleSignUp](articles/google-authentication-for-android/finalone.jpg)
 
 ![GoogleSignUp](articles/google-authentication-for-android/finaltwo.jpg)
