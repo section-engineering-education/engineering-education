@@ -21,7 +21,7 @@ This article will go over how to use Kotlin extensions. It will help a developer
 
 The entire code for this tutorial can be found on [Github](https://github.com/LinusMuema/kotlin/tree/extensions). A basic understanding of Kotlin & Android will also be needed.
 
-Kotlin extensions allow you to extend a specific class. You do this without inheriting or changing the class itself. This means that you can add a new functionality to a class without changing the class.
+Kotlin extensions allow you to extend a specific class. You do this without inheriting or changing the class itself. This means that you can add new functionality to a class without changing the class.
 
 Take this case for instance. You have 10 `ImageView` classes that need to have images from a URL. We could assume that you would use [Glide](https://bumptech.github.io/glide/) or any other library. The most common way would be to write the code for each one of the images.
 
