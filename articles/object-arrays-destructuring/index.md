@@ -40,7 +40,9 @@ The first line creates an empty object `person` while the following lines add th
 ### Assignment using square brackets
 
 There are some cases where using dots can't be applied. Here are some good examples: 
-- When adding a property to an object using a key containing invalid identifiers.
+- When adding a property to an object using a key starting with an invalid identifier like:
+	- a sign or a symbol
+	- a number.
 - When property names are not determined until runtime. 
 
 When you try to execute the code below, you get a syntax error.
@@ -135,13 +137,17 @@ fruits.unshift("Watermelon","Plums");
 
 The unshift() method adds the items at the beginning of the `fruits` array and returns the length of the array. The first item in your unshift method will be first in the resultant array. 
 
-To add items in between other items, [splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) method is used. The index of the items before and after the position you want to add the item is passed in the splice() method.
+To add items in between other items, [splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) method is used. The splice() method takes 3 arguments:
+
+- position to insert the new item
+- number of items to remove from the array
+- the item(s) to insert into the array. 
 
 ```javascript
-fruits.splice(1, 0, "Oranges"); // adds oranges before plums
+fruits.splice(1, 0, "Oranges"); // adds oranges at index 1
 ```
 
-`Oranges` will be added between the second and the first fruit in the array.
+`Oranges` will be added at index 1 and 0 (zero) items will be removed from the array.
  
 To add items at the end of the array, use [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) method.
 
