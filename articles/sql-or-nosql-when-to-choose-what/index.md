@@ -1,11 +1,24 @@
 
-Unlike the early times when data was stored on papers and cabinets, data is now all around us. Data is the backbone of almost every modern business model. As a developer, you would be building applications that stores some data online. The big question you should be asking yourself is which database model will fit your application model. 
+Unlike the early times when data was stored on papers and cabinets, data is now all around us, stored online with advanced technologies. Data is the backbone of almost every modern business model. As a developer, you would be building applications that store some data online. The big question you should be asking yourself is which database model will fit your application model. 
 
-Knowing which database structure to use is critical to building outstanding applications. SQL or NoSQL? We will dive into these two databases, understand their structures, explore them in-depth, and understand how they work. Both SQL and NoSQL database structures store data, but the approach they take to do this differs.
+Knowing which database structure to use is critical to building outstanding applications. SQL or NoSQL? We will dive into these two databases, understand their structures, explore them in-depth, and understand how they work.
+
+### Table of Contents
+
+- [What is SQL?](#what-is-sql)
+- [What is NoSQL?](#what-is-nosql)
+- [SQL vs NoSQL (High-Level Differences)](#sql-vs-nosql-high-level-differences)
+  - [Relation](#relation)
+  - [Schema](#schema)
+  - [Scalability](#scalability)
+- [SQL vs NoSQL (When to Choose What)](#sql-vs-nosql-when-to-choose-what)
+  - [When to use SQL?](#when-to-use-sql)
+  - [When to use NoSQL?](#when-to-use-nosql)
+- [StackOverflow Database Insights](#stackoverflow-database-insights)
 
 ### What is SQL?
 
-SQL is the most popular database structure. SQL (commonly pronounced as 'see quell') stands for the structured query language. SQL is a language used for writing query statements to interact and communicate with relational databases. A relational database is a database that has a tabular schema to store data in terms of rows and columns. Each column contains data that are called attributes, and each row is called a record. The data in the tables can be related to each other hence the 'relational database'. A collection of these multiple tables in a database is what we are calling a schema. A relation is simply a decorative phrase for a table.
+SQL is the most popular database structure. SQL (commonly pronounced as 'see quell') stands for the Structured Query Language. SQL is a language used for writing query statements to interact and communicate with relational databases. A relational database is a database that has a tabular schema to store data in terms of rows and columns. Each column contains data that are called attributes, and each row is called a record. The data in the tables can be related to each other hence the 'relational database'. A collection of these multiple tables in a database is what we are calling a schema. A relation is simply a decorative phrase for a table.
 Relations can exit in different ways, such as:
 
 - One to one 
@@ -87,7 +100,7 @@ If these admins walked into an SQL bar, they would have defiantly found a table 
 
 Think of a building near your neighborhood. Be the architect and check the possibility of adding more floors to the existing building to host more rooms. Would you propose adding more floors to the existing building, or would you build a new one? If you will add more floors, what are the chances of this building to remain stable? That the case here.
 
-SQL is scaled vertically. This means that a server capacity can be increased by increasing specks such as CPU, RAM, and disk size (HDD or SDD) (more floors will be added to the existing building). Vertical scaling adds more power to your existing server. Of course, the downside of that is that there will be a limit point hit on how much power you can stretch your server. That is one of the restrictions of an SQL database approach that makes scaling hard.
+SQL is scaled vertically. This means that a server capacity can be increased by increasing specks such as CPU, RAM, and disk size (more floors will be added to the existing building). Vertical scaling adds more power to your existing server. Of course, the downside of that is that there will be a limit point hit on how much power you can stretch your server. That is one of the restrictions of an SQL database approach that makes scaling hard.
 
 On the contrary, NoSQL databases are scaled horizontally. You don't need to worry much about RAMs, CPUs, and disk size (create more buildings next to your neighborhood). Split the data across multiple servers. NoSQL will help you handle large and constantly changing data.
 
@@ -96,14 +109,6 @@ On the contrary, NoSQL databases are scaled horizontally. You don't need to worr
 How do you decide which database model to choose? Which is better? Which database fits your business/application model? These two databases are great, and they can leave you in a dilemma of not knowing which to choose. Why chose this and not the other, and it is okay to be in that position.
 
 Let’s check some of the factors that will help you decide what fits your needs.
-
-#### When to use NoSQL?
-
-- Fits well when a business model has a rapid growth of data, and the database has no clear schema definitions, especially when dealing with unstructured information. Rapid data growth needs highly flexible data models to scale out the needs of that application.
-- If your business model has no defined schema or the data requirements and the schemas are constantly evolving.
-- When dealing with IoT technology, NoSQL will be a great fit as it offers real-time insights for sensor data.
-- Real-time transaction pieces of information such as customer behaviors, analytics information, financial markets, and trading activities would be great under NoSQL.  NoSQL will help you to check and watch real-time information transactions.
-- When dealing with millions and millions of rows and columns, NoSQL will be a significant consideration. It provides fast read and writes access to big data.
 
 #### When to use SQL?
 
@@ -120,22 +125,42 @@ Let’s check some of the factors that will help you decide what fits your needs
     - I (**Isolation**) a transaction is securely and independently processed without interfering with another transaction.
     - D (**Durability**) if a transaction process is completed successfully, all its changes are stored permanently.
 
-- If your system values data integrity, then worry out. SQL database system is designed to change the data type to the way you want them to be, i.e., integer, varchar, text, Boolean, date value, etc.
+- If your system values data integrity consistency, then worry out. SQL database system is designed to handle specific data types to the way you want them to be, i.e., integer, varchar, text, Boolean, date value, etc.
 
-Let’s look at the 2020 [annual developer survey](https://insights.stackoverflow.com/survey) trends conducted by StackOverflow, involving over 65,000 respondents from over 180 countries.
+#### When to use NoSQL?
+
+- Fits well when a business model has a rapid growth of data, and the database has no clear schema definitions, especially when dealing with unstructured information. Rapid data growth needs highly flexible data models to scale out the needs of that application.
+- If your business model has no defined schema or the data requirements and the schemas are constantly evolving.
+- When dealing with IoT technology, NoSQL will be a great fit as it offers real-time insights for sensor data.
+- Real-time transaction pieces of information such as customer behaviors, analytics information, financial markets, and trading activities would be great under NoSQL.  NoSQL will help you to check and watch real-time information transactions.
+- When dealing with millions and millions of rows and columns, NoSQL will be a significant consideration. It provides fast read and writes access to big data.
+
+### StackOverflow Database Insights
+
+Let’s look at the 2020 [annual developer survey](https://insights.stackoverflow.com/survey) trends conducted by StackOverflow, involving over 65,000 respondents from over 180 countries. These are the insights the respondents gave regarding the databases they use.
 
 - *[Most popular](https://insights.stackoverflow.com/survey/2020#technology-databases-all-respondents4) databases*
 
-![most popular databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-popular.png)
+![Most popular databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-popular.png)
+
+Relational MYSQL, MariaDB, and Microsoft SQL Server dominate the list.
 
 - *[Most popular databases among professional](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4) developers*
 
-![most popular databases among professionals](/engineering-education/sql-or-nosql-when-to-choose-what/popular-among-professionals.png)
+![Most popular databases among professionals](/engineering-education/sql-or-nosql-when-to-choose-what/popular-among-professionals.png)
 
 - *[Most loved](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-loved4) databases*
 
-![most loved databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-loved.png)
+![Most loved databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-loved.png)
+
+Taking the list of the most loved database technologies, non-relation databases such as Redis and MongoDB seem to be the most loved databases.
 
 - *[Most wanted](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4) databases*
 
-![most wanted databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-wanted.png)
+![Most wanted databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-wanted.png)
+
+Given MongoDB is still young, it is a database technology that most developers want to learn about.
+
+### Conclusion
+
+Both SQL and NoSQL database structures store data, but the approach they take to do this differs. They have their pros and cons. Taking advantage of their strengths would be the way to go. It would be best if you outlined your application model and then decide which database model will fit your data structure. It should be a futuristic decision because to migrate from SQL to NoSQL and vice verse can be a serious challenge, which is time-consuming and, at times costly.
