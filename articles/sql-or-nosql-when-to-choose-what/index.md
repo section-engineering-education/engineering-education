@@ -100,7 +100,7 @@ If these admins walked into an SQL bar, they would have defiantly found a table 
 
 Think of a building near your neighborhood. Be the architect and check the possibility of adding more floors to the existing building to host more rooms. Would you propose adding more floors to the existing building, or would you build a new one? If you will add more floors, what are the chances of this building to remain stable? That the case here.
 
-SQL is scaled vertically. This means that a server capacity can be increased by increasing specks such as CPU, RAM, and disk size (more floors will be added to the existing building). Vertical scaling adds more power to your existing server. Of course, the downside of that is that there will be a limit point hit on how much power you can stretch your server. That is one of the restrictions of an SQL database approach that makes scaling hard.
+SQL is scaled vertically. This means that a server capacity can be increased by increasing specks such as [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [RAM](https://en.wikipedia.org/wiki/Random-access_memory), and disk size (more floors will be added to the existing building). Vertical scaling adds more power to your existing server. Of course, the downside of that is that there will be a limit point hit on how much power you can stretch your server. That is one of the restrictions of an SQL database approach that makes scaling hard.
 
 On the contrary, NoSQL databases are scaled horizontally. You don't need to worry much about RAMs, CPUs, and disk size (create more buildings next to your neighborhood). Split the data across multiple servers. NoSQL will help you handle large and constantly changing data.
 
