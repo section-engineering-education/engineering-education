@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/cloud-firestore/
-title: Cloud Firestore
+title: Getting Started with Cloud Firestore
 description: This is a short article that shows developers how Cloud Firestore (a NoSQL database that applications can access) works and some of its basic operations.
 author: linus-muema
-date: 2020-09-30T00:00:00-10:00
+date: 2020-10-01T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/cloud-firestore/hero.jpg
-    alt: Clous Firebase image computer
+    alt: Cloud Firebase image computer
 ---
 
 In this article, we will be discussing Firestore, a cloud-hosted NoSQL database that applications can access and use to store or sync data with.  It is a good database that was created for faster queries and better scalability than the realtime database.
@@ -21,11 +21,11 @@ NoSQL is a non-tabular database that stores data in objects and documents. NoSQL
 
 In this article, we will look at:
 
-- [Realtime vs Cloud Firestore](#Cloud-Firestore-vs-Realtime-Database)
-- [Data structure in Cloud Firestore](#Data-Structure)
-- [Basic Read and Write Operations](#Basic-Operations)
-- [Adding Listeners](#Realtime-Listeners)
-- [Conclusion](#Conclusion)
+- [Realtime vs Cloud Firestore](#cloud-firestore-vs-realtime-database)
+- [Data structure in Cloud Firestore](#data-structure)
+- [Basic Read and Write Operations](#basic-operations)
+- [Adding Listeners](#realtime-listeners)
+- [Conclusion](#conclusion)
 
 ### Cloud Firestore vs Realtime Database
 The main question now is, "Why Cloud Firestore and not Realtime database?" These two databases are very different. Some developers may only see the data structure aspect but there are more.
