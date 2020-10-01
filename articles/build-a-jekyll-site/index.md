@@ -328,9 +328,9 @@ layout: default
 
 Since Jekyll allows layout nesting, you can use a layout in another layout. If you reload the site at this point, it's not broken but it's just plain HTML. Let's style the home page.
 
-> Jekyll uses [Sass](https://sass-lang.com/) stylesheet. You can learn Sass basics [here](https://sass-lang.com/guide).
+> Jekyll uses [Sass](https://sass-lang.com/) stylesheets. You can learn Sass basics [here](https://sass-lang.com/guide).
 
-Create a `_sass` folder in your base directory and create a `main.scss` inside it. Also create a `css` folder inside the `assets` folder and create a `styles.scss`. Put the following content inside files.
+Create a `_sass` folder in your base directory and create a `main.scss` inside it. Also create a `css` folder inside the `assets` folder and create a `styles.scss`. Put the following content inside the files.
 
 ```scss
 // styles.scss
