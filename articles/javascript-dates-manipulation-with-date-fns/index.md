@@ -6,7 +6,7 @@ url: /engineering-education/javascript-dates-manipulation-with-date-fns/
 title: Javascript Dates Manipulation with Date-fns
 description: This article will cover the basic applications of date-fns, date-fns is a lightweight library that provides comprehensive functions for date formatting and manipulation.
 author: joseph-chege
-date: 2020-09-28T00:00:00-13:00
+date: 2020-10-01T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -24,15 +24,15 @@ Date-fns is a lightweight 🚀 library that provides comprehensive functions for
 - **Immutable and pure** - date-fns has pure built-in functions that return a new date instance rather than modifying the parsed date. This helps reduce and prevent bugs.
 - **Native Date** - date-fns uses existing native JavaScript date API.
 - **Modular** - you pick what you need, date-fns only imports the functions you need rather than the whole API functions pack. It works well with module bundlers such as [webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/guide/en/), and [Browserify](http://browserify.org/). It also supports the tree-shaking algorithm.
-- **Fast** - date-fns is a small API that is very light, thus guarantees users the best experience.
-- **Documentation** - Date-fns has well-outlined documentation with very clear and simple instructions to follow along. It also has use-case example (code snippets) for every date function.
+- **Fast** - date-fns is a small API that is very light, thus guaranteeing users the best experience.
+- **Documentation** - date-fns has well-outlined documentation with very clear and simple instructions to follow along. It also has use-case examples (code snippets) for every date function.
 - **I18n** - perhaps you want to display dates with your users' favorite locale. Date-fns has a dozen locales to work with whenever you need them.
 - **Typescript and Flow** - supports both typescript and flow.
 
 For more benefits on date-fns [check this article out](https://date-fns.org/).
 
 ### Getting Started with Date-fns
-Date-fns is available in the [npm packages collection](https://www.npmjs.com/package/date-fns). If  you have [Node.js installed](http://nodejs.org/), you can install date-fns using the command `npm install date-fns`.
+Date-fns is available in the [npm packages collection](https://www.npmjs.com/package/date-fns). If you have [Node.js installed](http://nodejs.org/), you can install date-fns using the command `npm install date-fns`.
 
 If you are using yarn `yarn add date-fns` will get you started. Date-fns can be used with both [CommonJS Modules](https://nodejs.org/api/modules.html) and [ES modules](https://nodejs.org/api/esm.html).
 
@@ -46,7 +46,7 @@ In this article, we will dive into the CommonJS module with date instances such 
 - Date comparisons, and other important applications of date-fns functions
 
 ### Date Format
-Date formatting is key when displaying a date. Formatting helps to display human-readable dates. Date format replaces the individual date tokens to a format string. Formats  specifies the part of the date token you want to format and how the token will be displayed. To understand this better let's have a look at some date token representation patterns that you can choose to display as formats.
+Date formatting is key when displaying a date. Formatting helps display human-readable dates. Date format replaces the individual date tokens to a format string. Formats specify the part of the date token you want to format and how the token will be displayed. To understand this better let's have a look at some date token representation patterns that you can choose to display as formats.
 
 **Note:** Some of these [Unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) are different from other date libraries such as Moment.js.
 
@@ -316,7 +316,7 @@ console.log(isBefore(date1, date3));
 #### isFuture
 Checks if the given date is [in the future](https://date-fns.org/v2.16.1/docs/isFuture) in comparison to the date/time now.
 
-**Note:** if the date we are comparing is the time right now the `isFuture` will return this as false. In such a case, date-fns will interpret the 'now' date as the present time and not a future time.
+**Note:** if the date we are comparing is the time right now, `isFuture` will return this as false. In such a case, date-fns will interpret the 'now' date as the present time and not a future time.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-isfuture?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -340,7 +340,7 @@ console.log(arrDesc.sort(compareDesc));
 There are many comparison function options such as:
 
 #### isWeekend
-Checks if a given date is a [is a weekend](https://date-fns.org/v2.16.1/docs/isWeekend).
+Checks if a given date [is a weekend](https://date-fns.org/v2.16.1/docs/isWeekend).
 
 ```js
 const { isWeekend, addHours, subHours } = require("date-fns");
@@ -383,7 +383,7 @@ Lets run through another example:
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-isvalid?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ### Differences Between Dates
-Date-fns provides several functions to manipulate and calculate the differences that exits between two given dates. These functions represent difference calculations between several units of time such as:
+Date-fns provides several functions to manipulate and calculate the differences that exists between two given dates. These functions represent the difference between calculations for several units of time such as:
 
 - [differenceInSeconds](https://date-fns.org/v2.16.1/docs/differenceInSeconds) (number of seconds between given dates)
 - [differenceInMinutes](https://date-fns.org/v2.16.1/docs/differenceInMinutes) (number of minutes between given dates)
@@ -396,7 +396,7 @@ Each unit will get the number of the given unit differences between two dates.
 
 For example:
 
-Calculating the difference of days and the number of business days that exits between now and Christmas.
+Calculating the difference of days and the number of business days that exists between now and Christmas.
 
 ```js
 const {differenceInDays ,differenceInBusinessDays} = require("date-fns");
@@ -422,7 +422,7 @@ This interval helper includes
 - [eachYearOfInterval](https://date-fns.org/v2.16.1/docs/eachYearOfInterval) - gives an array of years that exist within a specified interval
 - [isWithiIterval](https://date-fns.org/v2.16.1/docs/isWithinInterval) - determines if a given date is within a specified interval
 
-Head out to [date-fns docs to check out more interval helpers](https://date-fns.org/v2.16.1/docs/Interval) and how you can apply them to your application.
+Head to the [date-fns docs to check out more interval helpers](https://date-fns.org/v2.16.1/docs/Interval) and how you can apply them to your application.
 
 ### Comparison Between Moment.js and Date-fns 🎁
 Moment.js is a stand-alone open-source JavaScript framework wrapper for date objects. It eliminates native JavaScript date objects, which are cumbersome to use. Moment.js makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. Unlike date-fns, its biggest downside is that its API size is huge. For more information on Moment.js, check out [this article](/engineering-education/nodejs-date-and-time-objects-with-moment/).
@@ -454,7 +454,7 @@ console.log(today);
 
 [Source: bundlephobia](https://bundlephobia.com/)
 
-Even so, if you love working with Moment.js, its size should not be a big concern. You can [configure Moment.js with webpack](https://stackoverflow.com/a/25426019/1775026) to remove data that you aren't using such as locale plugins and this will significantly reduce Moment.js bundle size.
+Even so, if you love working with Moment.js, its size should not be a big concern. You can [configure Moment.js with webpack](https://stackoverflow.com/a/25426019/1775026) to remove data that you aren't using, such as locale plugins, and this will significantly reduce Moment.js bundle size.
 
 Moment.js fits well when working with a big project because you will end up using much of Moment.js functionalities therefore the bundle size won't matter. If you just want to load simple dates that need one or two methods then date-fns will definitely work in your favor.
 
@@ -520,7 +520,7 @@ If you are dealing with time zones, I would suggest you check out Moment.js. Its
 Easy to use Timer/Chronometer/Countdown library compatible with AMD, ES6, and Typescript. [Easytimer.js](https://github.com/albert-gonzalez/easytimer.js) is a simple library for counting time in five different units: a tenth of seconds, seconds, minutes, hours, and days. It has interesting features:
 - The refresh interval can be configured in a tenth of seconds, seconds, minutes, and hours.
 - Dispatches events when the timer starts, stops, pauses and when every type of unit changes.
-- A custom callback can be defined and it will be executed every timer refresh.
+- A custom callback can be defined and it will be executed with every timer refresh.
 - Two timer modes: Regular and Countdown.
 - Configurable start and target values.
 
