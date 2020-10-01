@@ -256,3 +256,6 @@ let b = 2;
 ### Conclusion
 
 Objects are a data-type that has properties or preferences associated with it. If you have worked with JSON data, you have already worked with objects. Arrays are a data-type used to store related items or creating ordered lists. Since objects and arrays make up a fraction of a web developer's code, understanding the basic concepts around these data types is important. 
+
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
