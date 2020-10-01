@@ -183,7 +183,7 @@ The final concept to be covered under matrices is the selection of elements. Mat
 
 ```r
 x <- matrix(1:16, brow=TRUE, nrow=4) # matrix definition
-x[1:2,1:2] # selection operation
+x[1:2,1:2] # selection operationgit 
 ```
 The output is given as follows:
 ```txt
@@ -312,4 +312,4 @@ Using the names, we can select the elements. To select the text using the name, 
 The general syntax is name of the variable, followed by`$`, followed by the name assigned: `name_of_the_list_variable$name_assigned_to_element`. 
 
 ### Conclusion
-With the concept of lists, we have learned the basics of R programming. It is a potent tool used extensively in the data science community. Try out the code given to gain maximum value from the tutorial. 
+In this article, we have learned the basics of R programming. It is a potent tool used extensively in the data science community. Try out the code given to gain maximum value from the tutorial. Also, try out [Repl.it](https://repl.it/languages/rlang) and use it often. It provides hassle-free access to faster experimentation and prototyping. 
