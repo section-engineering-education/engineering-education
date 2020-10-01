@@ -21,11 +21,26 @@ NoSQL is a non-tabular database that stores data in objects and documents. NoSQL
 
 In this article, we will look at:
 
+- [Realtime vs Cloud Firestore](#Cloud-Firestore-vs-Realtime-Database)
 - [Data structure in Cloud Firestore](#Data-Structure)
 - [Basic Read and Write Operations](#Basic-Operations)
 - [Adding Listeners](#Realtime-Listeners)
-- [Realtime vs Cloud Firestore](#Cloud-Firestore-vs-Realtime-Database)
 - [Conclusion](#Conclusion)
+
+### Cloud Firestore vs Realtime Database
+The main question now is, "Why Cloud Firestore and not Realtime database?" These two databases are very different. Some developers may only see the data structure aspect but there are more.
+
+1. **Data Structure** - with the Realtime database, data is stored in nodes or rather, a large json tree. This allows for flexibility but designing the data model can be difficult. With Cloud Firestore, data is strictly in documents and collections. This gives developers an easier time designing the data model.
+
+2. **Platform Support** - realtime databases supports offline support for mobile platforms only i.e. Android and iOS clients. Cloud Firestore on the other hand, supports all mobile platforms and web clients. This means that a developer can have offline support for your website. This will greatly help clients with a bad network connection.
+
+3. **Querying** - with Realtime databases, queries are limited to either `filtering` or `sorting`. These queries return an entire subtree. Cloud Firestore supports queries with both `filtering` and `sorting` which return entire documents. This means that there are no chances of getting incomplete data.
+
+4. **Scalability** - this is a great factor to consider when creating a product. Cloud Firestore is undoubtedly the best at this. Realtime databases give developers around `200,000` connections at the same time i.e. `1000` operations per second. With Cloud Firestore, scaling is done automatically. Connections can increase as the client base grows. This is one of the major advantages of Cloud Firestore.
+
+5. **Rules & Validation** - in a realtime database, the rules and validation are separate. This means that we can easily bypass some rules as some validations pass. This provides a less secure database unlike the Cloud Firestore which has both in the same place. The Cloud Firestore rules are also easier to read and understand.
+
+6. **Realtime operations** - The realtime listeners in both databases differ in operation. For realtime databases, the listeners emit data once the operation is complete. Cloud Firestore listeners store the snapshot of data in the application's cache. The data is emitted almost immediately. The snapshot in the cache usually has metadata to show the state of the operation. First, the snapshot is generated and the data is emitted. Once the operation in the database is done, the metadata is updated to denote the operation's response. This gives the developer the freedom to work around these factors. One can decide to show the response on the first data emission or wait for the operation to complete.
 
 ### Data Structure
 Data in Cloud Firestore is organized differently than the realtime database. It is organized in collections and documents. A collection contains documents and cannot contain other collections. A document on the other hand is different. It contains fields, maps, and subcollections. Fields can hold data of different types, for example strings, numbers, arrays, etc.
@@ -153,21 +168,6 @@ db.collection('numbers').doc('random').onSnapshot(doc => {
 ```
 
 We get the collection first then the document. Then we call the `onSnapshot` method. This method will be called anytime there is an addition or update to the collection. It emits the document with every change.
-
-### Cloud Firestore vs Realtime Database
-The main question now is, "Why Cloud Firestore and not Realtime database?" These two databases are very different. Some developers may only see the data structure aspect but there are more.
-
-1. **Data Structure** - with the Realtime database, data is stored in nodes or rather, a large json tree. This allows for flexibility but designing the data model can be difficult. With Cloud Firestore, data is strictly in documents and collections. This gives developers an easier time designing the data model.
-
-2. **Platform Support** - realtime databases supports offline support for mobile platforms only i.e. Android and iOS clients. Cloud Firestore on the other hand, supports all mobile platforms and web clients. This means that a developer can have offline support for your website. This will greatly help clients with a bad network connection.
-
-3. **Querying** - with Realtime databases, queries are limited to either `filtering` or `sorting`. These queries return an entire subtree. Cloud Firestore supports queries with both `filtering` and `sorting` which return entire documents. This means that there are no chances of getting incomplete data.
-
-4. **Scalability** - this is a great factor to consider when creating a product. Cloud Firestore is undoubtedly the best at this. Realtime databases give developers around `200,000` connections at the same time i.e. `1000` operations per second. With Cloud Firestore, scaling is done automatically. Connections can increase as the client base grows. This is one of the major advantages of Cloud Firestore.
-
-5. **Rules & Validation** - in a realtime database, the rules and validation are separate. This means that we can easily bypass some rules as some validations pass. This provides a less secure database unlike the Cloud Firestore which has both in the same place. The Cloud Firestore rules are also easier to read and understand.
-
-6. **Realtime operations** - The realtime listeners in both databases differ in operation. For realtime databases, the listeners emit data once the operation is complete. Cloud Firestore listeners store the snapshot of data in the application's cache. The data is emitted almost immediately. The snapshot in the cache usually has metadata to show the state of the operation. First, the snapshot is generated and the data is emitted. Once the operation in the database is done, the metadata is updated to denote the operation's response. This gives the developer the freedom to work around these factors. One can decide to show the response on the first data emission or wait for the operation to complete.
 
 ### Conclusion
 Those are some of the basics of Cloud Firestore and how we can use it to store data. It is a good database that was created for faster queries and better scalability than the realtime database. It is better organized than the realtime database hence easier to work with. But that does not mean that a realtime database is obsolete. Both databases have their unique functions. Before starting a project take this short [survey](https://firebase.google.com/docs/firestore/rtdb-vs-firestore#key_considerations) to help determine the best type of database to use.
