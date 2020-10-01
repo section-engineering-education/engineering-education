@@ -6,7 +6,7 @@ url: /engineering-education/kotlin-extensions/
 title: Kotlin Extensions
 description: This article will show a developer how to use Kotlin extensions, understanding when and how to use them.
 author: linus-muema
-date: 2020-09-24T00:00:00-10:00
+date: 2020-10-01T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,9 @@ images:
   - url: /engineering-education/kotlin-extensions/hero.jpg
     alt: kotlin extensions image
 ---
-As Kotlin was introduced into Android, it came along with new features. One of the features was Kotlin extensions. Extensions solved a large problem that developers faced: code redundancy. It is not good practice to have code repeating itself. On a larger scale, this would lead to slower performance. At which point the code can become dirty and unscalable.
+When Kotlin was introduced into Android, it came along with new features. One of the features was Kotlin extensions. Extensions solved a large problem that developers faced: code redundancy. It is not a good practice to have code repeating itself. On a larger scale, this would lead to slower performance. At which point the code can become dirty and unscalable.
 <!--more-->
+
 This article will go over how to use Kotlin extensions. It will help a developer understand how and when to use them.
 
 The entire code for this tutorial can be found on [Github](https://github.com/LinusMuema/kotlin/tree/extensions). A basic understanding of Kotlin & Android will also be needed.
@@ -69,7 +70,7 @@ fun ImageView.loadDrawable(id: Int) {
 imageView.loadDrawable(R.drawable.ic_android)
 ```
 
-The xml for the two images :
+The xml for the two images are shown below:
 
 ```xml
 <LinearLayout
@@ -105,9 +106,9 @@ fun TextView.randomText(){
 }
 ```
 
-In the code above, we first created a string of characters from a-z in both cases. Then we also concatenate the numbers from 0 to 9. This is done using the range operator in Kotlin. You can read more about the operator in the [official documentation](https://kotlinlang.org/docs/reference/ranges.html). This reduces the lines of code we would have written if we used the loop structures.
+In the code above, we first created a string of characters from A-Z in both cases. Then we also concatenate the numbers from 0 to 9. This is done using the range operator in Kotlin. You can read more about the operator in the [official documentation](https://kotlinlang.org/docs/reference/ranges.html). This reduces the lines of code we would have written if we used the loop structures.
 
-Then we create a list with 5 items. Then get random characters from the string. Use the `joinToString` function to create a new string of 5 characters. None of them are meant to have any semantic meaning. We are using it to populate the TextView. The extension function `randomText` adds the random string to our TextView.
+We then create a list with 5 items. Then get random characters from the string. Use the `joinToString` function to create a new string of 5 characters. None of them are meant to have any semantic meaning. We are using it to populate the TextView. The extension function `randomText` adds the random string to our TextView.
 
 ```xml
 <!-- activity_main.xml -->
@@ -123,7 +124,7 @@ Then we create a list with 5 items. Then get random characters from the string. 
 random.randomText()
 ```
 
-We can also use it to make it easier to perform specific actions in activities and fragments. Any component that has access to the context can show `Toast`. `Snackbars` are also a common feature. To create the extension classes for them:
+We can also use it to make it easier to perform specific actions in activities and fragments. Any component that has access to the context can show `Toast`. `Snackbars` are also a common feature to display messages and short pieces of information. To create the extension classes for them below:
 
 ```kotlinlang
 fun Context.showToast(){
@@ -135,7 +136,7 @@ fun showSnackbar(view: View){
 }
 ```
 
-We create an extension function for the `Context` class. As you can see, the Toast line is long and could get dirty if repeated multiple times in an activity. The extension function can be used to clean our code. The `showSnackbar` function however needs the parent view to show in the appropriate activity. Similar to Toast, it is long and can easily make the code unreadable.
+We created an extension function for the `Context` class. As you can see, the Toast line is long and could get messy if repeated multiple times in an activity. The extension function can be used to clean our code. The `showSnackbar` function however needs the parent view to show in the appropriate activity. Similar to Toast, it is long and can easily make the code unreadable.
 
 To show them, I have created two buttons:
 
@@ -175,6 +176,7 @@ toast.setOnClickListener { showToast() }
 snackbar.setOnClickListener { showSnackbar(parent_view) }
 ```
 
-As you can see from the various examples above, Kotlin extensions make it easier to work with different classes. They help us to write cleaner and better code. When we have organized code we can be able to change various parts, for example, move from `Glide` to `Picasso`. We only need to change the nature of the function and everything in the code changes accordingly 😎.  It also ensures scalability. You can go ahead and try them out with other classes like `String`, `Button` and even `Fragment` classes.
+### Conclusion
+As you can see from the various examples above, Kotlin extensions make it easier to work with different classes. They help us to write cleaner and better code. Organized code allows us to be able to change various parts, for example, move from `Glide` to `Picasso`. We only need to change the nature of the function and everything in the code changes accordingly 😎.  It also ensures scalability. You can go ahead and try them out with other classes like `String`, `Button` and even `Fragment` classes.
 
 Feel free to raise any PR on GitHub or issue. The sample apk for this can be found [here](https://drive.google.com/file/d/1kyY_hm-SSqrYbIqEWJlccRVBobIw_5dv/view?usp=sharing)
