@@ -45,14 +45,39 @@ Not only that, notebook makes it challenging to use new data with slightly diffe
 
 Unlike notebook, scripts allow a developer to better organize their code into various parts. For instance, you can create multiple small functions while ensuring that each function specifies what the code will do - as follows:
 
-![Creating Multiple Small Functions](/engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/creating-multiple-small-functions.png)
+```py
+def extract_emotion(df):
+```Extract different types of emotions in emotion dictionary into multiple columns```
+emotion=pd.DataFrame.from_dict(list(df.emotion.apply(lambda row: row['document']['emotion'])))
+df = pd.contact ([df,emotion], axis=1)
+df.drop('emotion', axis=1, inplace=true)
+return df
+def drop_columns(self, df):
+```Drop unnecessary columns ```
+df.drop(self.columns_to_drop, axis=1, inplace=True)
+return df
+def extract_date_hour_minute(self, string: str):
+```Extract data hour and monite from datetime string```
+try:
+return string [:16]
+except TypeError:
+return np.nan```
 
 Furthermore, a developer may want to put these functions into the same class by categorizing them into the same category as functions to process the data. This makes data processing easier since the functions in the class preprocess can be used for this purpose.
 
 Scripts are also better than notebook because they encourage experimentation. Let's say a data engineer wants to experiment with a slightly different method to preprocess the data. He or she can remove or add a function, as shown below, without being worried about breaking the code. Furthermore, even if they happen to break the code, they would know exactly where to fix it.
-
-![Experiments in Script](/engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/experiments.png)
-
+```py
+def process(self, df):
+df = df.dropna(subset=self.dropna_columns)
+#df=self.remove_non_relevant_title(df)
+df=self.remove_non_gold_concept(df)
+df=self.romove_extract_text_characters(df)
+df=self.extract_sentiment(df)
+df=self.extract_emotion(df)
+df=self.drop_columns(df)
+df=self.transform_df_datetime_column(df)
+return df
+ ```
 Besides, script coding is ideal for production and can cut down the time taken to track down particular variables in the code simply to change their values. Even better, tools such as [MLFlow](https://mlflow.org/) can be added to track the experiment.
 
 [Hhydra.cc](https://hydra.cc/) can also be added to handle configurations. Functions facilitate the assessment of the function to determine if it is producing the expected output or not. They also make it possible to figure out where in the code you may need to make adjustments to achieve the desired result.
