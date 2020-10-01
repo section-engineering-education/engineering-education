@@ -7,7 +7,7 @@ title: Kotlin Extensions
 description: This article will show a developer how to use Kotlin extensions, understanding when and how to use them.
 author: linus-muema
 date: 2020-10-01T00:00:00-10:00
-topics: [Node.js]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -21,6 +21,7 @@ This article will go over how to use Kotlin extensions. It will help a developer
 
 The entire code for this tutorial can be found on [Github](https://github.com/LinusMuema/kotlin/tree/extensions). A basic understanding of Kotlin & Android will also be needed.
 
+### How to use extensions in Kotlin
 Kotlin extensions allow you to extend a specific class. You do this without inheriting or changing the class itself. This means that you can add new functionality to a class without changing the class.
 
 Take this case for instance. You have 10 `ImageView` classes that need to have images from a URL. We could assume that you would use [Glide](https://bumptech.github.io/glide/) or any other library. The most common way would be to write the code for each one of the images.
@@ -171,7 +172,7 @@ To show them, I have created two buttons:
 
 Then we set the `OnClickListeners` in the activity file and show the specific items.
 
-```kotlinlang
+```kotlin
 toast.setOnClickListener { showToast() }
 snackbar.setOnClickListener { showSnackbar(parent_view) }
 ```
