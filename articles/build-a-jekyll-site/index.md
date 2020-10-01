@@ -2,26 +2,26 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/debug-node-docker/
+url: /engineering-education/build-a-jekyll-site/
 title: Building a Blog site from Scratch using Jekyll
 description: This tutorial guides beginners on how to build a blog website from scratch using Jekyll using HTML and CSS.
 author: geoffrey-mungai
-date: 2020-09-24T00:00:00-10:00
+date: 2020-10-01T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/debug-node-docker/hero.jpg
+  - url: /engineering-education/build-a-jekyll-site/hero.jpg
     alt: image build a Jekyll site
 ---
-Building a website nowadays is not as hard or expensive as it was in the past. These days, you don't have to learn a crazy programming language to have your site up and running. 
-
-Instead, you can go the Jamstack way. In this article, we go through how to build and deploy a Jekyll site.
+Building a website nowadays is not as hard or expensive as it was in the past. These days, you do not have to learn a crazy programming language to have your site up and running.
 <!--more-->
-### Introduction
-[Jekyll](https://jekyllrb.com/) is a [Jamstack](https://jamstack.org/) static website generator. Jamstack is a **concept** of building websites that don't depend on web servers and *databases*. 
+Instead, you can go the Jamstack way. In this article, we go through how to build and deploy a Jekyll site.
 
-Jekyll was released back in 2008 and has been one of the most convenient ways of building [all types of sites](https://jekyllrb.com/showcase/). It's written in [Ruby](https://www.ruby-lang.org/en/) and uses [Liquid](https://shopify.github.io/liquid/) template engine to render web pages.
+### Introduction
+[Jekyll](https://jekyllrb.com/) is a [Jamstack](https://jamstack.org/) static website generator. Jamstack is a **concept** of building websites that don't depend on web servers and *databases*.
+
+Jekyll was released back in 2008 and has been one of the most convenient ways of building [all types of sites](https://jekyllrb.com/showcase/). It's written in [Ruby](https://www.ruby-lang.org/en/) and uses the [Liquid](https://shopify.github.io/liquid/) template engine to render web pages.
 
 ### Prerequisites
 To follow through this tutorial, you will need:
@@ -62,7 +62,7 @@ $ brew install ruby
 If you are running Windows, install Ruby using Ruby Installer. Install the latest Ruby Installer with Dev kit from [here](https://rubyinstaller.org/downloads/).
 To confirm the Ruby installation, run the command `ruby -v` in a terminal. The output should be similar but may vary from the one below.
 
-```
+```bash
 ruby 2.7.0p0 (2019-12-25 revision 647ee6f091)
 ```
 
@@ -73,7 +73,7 @@ export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 ```
 
-You can use the  `echo` command to append the above lines at the bottom of the `.bashrc` file.
+You can use the `echo` command to append the above lines at the bottom of the `.bashrc` file.
 
 ```bash
 $ echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
@@ -90,7 +90,6 @@ $ source ~/.bashrc
 ```
 
 ### Step 2 -- Install Jekyll
-
 Jekyll comes as a [Ruby Gem](https://guides.rubygems.org/what-is-a-gem/) and can be installed in any system running Ruby. Run the command below in a terminal to install Jekyll.
 
 ```bash
@@ -98,7 +97,6 @@ $ gem install jekyll bundler
 ```
 
 ### Step 3 -- Create a new Jekyll site
-
 Create a new Jekyll site using the command below.
 
 ```bash
@@ -108,7 +106,7 @@ $ cd blog
 
 `blog` is the site name. Feel free to change the site name. The command creates files with the following folder structure.
 
-```
+```bash
 ├── 404.html
 ├── about.markdown
 ├── _config.yml
@@ -141,7 +139,7 @@ $ bundle exec jekyll serve --livereload
 ```
 
 ### Understanding the Folder Structure
-Now, let's look at the site structure. There are 2 main folders, `_site` and `_posts`. The `_posts` folder contains blog posts while `_site` contains the generated site. You should not edit the contents of the `_site` folder. The `_config.yml`  is a  YAML file that stores site settings and **rarely** changed variables. Go ahead and edit some site properties available in this file. For example, name, description, etc.
+Now, let's look at the site structure. There are 2 main folders, `_site` and `_posts`. The `_posts` folder contains blog posts while `_site` contains the generated site. You should not edit the contents of the `_site` folder. The `_config.yml` is a YAML file that stores site settings and **rarely** changed variables. Go ahead and edit some site properties available in this file. For example, name, description, etc.
 
 The next important file is the `Gemfile`. The site dependencies are defined here. There is also a `Gemfile.lock` file which is a more detailed version of the `Gemfile`. The specific versions of the **currently installed** dependencies defined in the Gemfile are recorded in this file.
 
@@ -150,14 +148,15 @@ This file is important as it prevents version conflicts if you were to share you
 You can learn more about the folder structure [here](https://jekyllrb.com/docs/structure/).
 
 ### Step 4 -- Add blog posts
-Jekyll blog posts and pages are written in [Markdown](https://www.markdownguide.org/getting-started/). Markdown is a markup language which uses plain-text formatting syntax. For example, heading in markdown are made by a set preceding `#` sign(s). Below is a `h3` HTML equivalent in markdown.
+Jekyll blog posts and pages are written in [Markdown](https://www.markdownguide.org/getting-started/). Markdown is a markup language which uses plain-text formatting syntax. For example, headings in markdown are made by a set preceding `#` sign(s). Below is a `h3` HTML equivalent in markdown.
 
 ```markdown
 ### This is a third level heading
 ```
+
 You can learn common markdown syntax [here](https://www.markdownguide.org/cheat-sheet/).
 
-Open the main folder in your favorite code editor and navigate to the `_posts` folder. 
+Open the main folder in your favorite code editor and navigate to the `_posts` folder.
 
 There is a welcome post written in markdown. The blog posts file names follow a `date-slug.md` naming convention. The date should be formatted like this `YYYY-MM-DD`. The slug is the part of the URL identifying a particular post.
 
@@ -165,7 +164,7 @@ To create a new post, create a markdown file and name it `2020-09-14-my-new-site
 
 Add the following content inside the new post markdown file.
 
-```yml
+```yaml
 ---
 layout: post
 title: "Welcome to my new site!"
@@ -176,7 +175,7 @@ categories: technology
 
 The content above is called the front matter and uses YAML syntax. It's found at the top of the page and is used to maintain metadata for the page. Let's look at the front matter.
 
-```yml
+```yaml
 ---
 layout: # specifies the layout to use for this file
 title: # post name
@@ -215,7 +214,7 @@ $ mkdir -p assets/images/welcome
 
 Copy 2 images to this directory and name one `hero.jpg` and the other `new-site.jpg`. You can download free stock photos from [Unsplash](https://unsplash.com/). The folder structure looks like this:
 
-```
+```bash
 ├── assets
 │   └── images
 │       └── welcome
@@ -246,7 +245,7 @@ In your post layout file, add the hero image at the top.
 Save and reload the page. The hero image is displayed at the top and the other image appears at the bottom.
 
 ### Step 7 -- Add navigation to your posts
-Up to this stage, your post doesn't have a navbar or a footer. These parts are an essential part of your site and should be on every page.
+Up to this stage, the post doesn't have a navbar or a footer. These parts are an essential part of any site and should be on every page.
 
 Create an `_includes` folder in your base directory and create a `navbar.html` file inside. Put the following content inside it.
 
@@ -276,7 +275,7 @@ And then include your navbar at the top of your post layout file.
 Save the files and reload the page to see the changes. The simple navbar in the `navbar.html` file will now be shown in each file that adopts the post layout. You can add the footer the same way.
 
 ### Step 8 -- Adding custom styling to your blog
-Up to this stage, you are using the default `minima` theme provided by Jekyll. To style the site from scratch, delete the `theme` property in `_config.yml`.
+Up to this stage, you've been using the default `minima` theme provided by Jekyll. To style the site from scratch, delete the `theme` property in `_config.yml`.
 
 If you reload your site, it probably looks broken right now. Let's go ahead and rectify that. Create the following files under `_layouts`.
 
@@ -360,10 +359,10 @@ The empty front matter in `main.css` tells Jekyll that the file should be proces
 <link rel="stylesheet" href="/assets/css/styles.css">
 ```
 
-Note that the imported stylesheet is a `css` file and not `scss`. This is because most browsers don't support sass. Therefore, Jekyll converts the sass stylesheet to a css file compatible with all browsers. The imported file is located at `_site/assets/css/style.css`. Reload the page to see the stylesheet at work.
+Note that the imported stylesheet is a `css` file and not `scss`. This is because most browsers don't support sass. Therefore, Jekyll converts the sass stylesheet to a CSS file compatible with all browsers. The imported file is located at `_site/assets/css/style.css`. Reload the page to see the stylesheet at work.
 
 ### Conclusion
-Nowadays, you don't need expert-level programming skills to build your blog site. You can install Jekyll and build a static site without much hassle. The only skills required to create a Jekyll powered site are HTML and CSS skills. 
+Nowadays, you don't need expert-level programming skills to build your blog site. You can install Jekyll and build a static site without much hassle. The only skills required to create a Jekyll powered site are HTML and CSS skills.
 
 Put some of these skills to the test and start by building your simple Jekyll static site.
 
@@ -373,5 +372,8 @@ Additional important Jekyll concepts and practices can be found below.
 - [Jekyll data files](https://jekyllrb.com/docs/datafiles/)
 - [Permalinks in a Jekyll site](https://jekyllrb.com/docs/permalinks/)
 - [Deploying a Jekyll site](https://jekyllrb.com/docs/deployment/)
-- [Using Jekyll template themes.](https://jekyllrb.com/docs/themes/)
+- [Using Jekyll template themes](https://jekyllrb.com/docs/themes/)
 - [Useful Jekyll Plugins](http://planetjekyll.github.io/plugins/)
+
+---
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
