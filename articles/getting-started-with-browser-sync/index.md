@@ -1,36 +1,19 @@
-
 ---
-
 layout: engineering-education
-
 status: review
-
 published: false
-
 url: /engineering-education/getting-started-with-browser-sync/
-
 title: Getting Started with Browser-sync
-
 description: The basic concept of browser-sync, installing browser-sync and using it serve your files while building a website project
-
 author: aransiola-ayodele-leom
-
 date: 2020-09-24T00:00:27-21
-
 topic: [Browser-sync]
-
 excerpt_separator: <!--more-->
-
 images:
 
-- url: /engineering-education/getting-started-with-browser-sync/hero.jpg
-
-alt: Computers in a workspace displaying code
-
+    - url: /engineering-education/getting-started-with-browser-sync/hero.jpg
+    alt: Computers in a workspace displaying code
 ---
-
-# Getting Started with Browser-sync
-
 Browser-sync is an automation tool that allows you to keep multiple browsers & devices in sync when building websites. It also provides a platform for fast network applications
 
 >I've been trying out different local servers just to replace the hassle of using live servers. I found that [Browser-sync](https://www.browsersync.io/) was the best because it has so many useful features. A stitch in time saves nine which really sums it up.
