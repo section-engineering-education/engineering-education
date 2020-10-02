@@ -47,7 +47,7 @@ func main() {
 }
 ```
 
-The function `add_numbers()` takes 2 parameters: the two numbers to be added, and returns the sum of the two numbers. The two numbers are specified as `int` in the above example, but the parameters can be of any data type permissible in Go. The return type is also specified as int because the sum of two integers is also an integer.  
+The function `add_numbers()` takes 2 parameters: the two numbers to be added, and returns the sum of the two numbers. The two numbers are specified as `int` in the above example, but the parameters can be of any data type permissible in Go. For more information on Go datatypes, please visit this [link](https://www.section.io/engineering-education/golang-part-2-programming-basics/). The return type is also specified as int because the sum of two integers is also an integer.  
 
 A function can be ["called"](https://www.digitalocean.com/community/tutorials/how-to-define-and-call-functions-in-go) or "invoked" by specifying the name of the function and passing the required parameters. In the above example, we call the `add_numbers()` function by passing two integers as parameters.  
 
