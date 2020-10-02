@@ -87,11 +87,11 @@ import "fmt"
 
 func main() {
     var test[10] int
-    for i: = 0; i < 10; i++ {
+    for i := 0; i < 10; i++ {
         test[i] = i
     }
 
-    for i: = 0; i < 10; i++ {
+    for i := 0; i < 10; i++ {
         fmt.Println(test[i])
     }
 }
@@ -127,7 +127,7 @@ type Student struct {
 
 func main() {
     var s1 = Student {
-        "Adith", 1, 99.5
+        "Adith", 1, 99.5,
     }
     fmt.Println(s1)
     fmt.Println(s1.name)
@@ -164,7 +164,7 @@ func get_details() {
     var array[5] Student
     fmt.Println("Enter the details of 5 students")
 
-    for i: = 0; i < 5; i++ {
+    for i := 0; i < 5; i++ {
         fmt.Println("Enter the name: ")
         fmt.Scanln( & array[i].name)
         fmt.Println("Enter the age: ")
@@ -174,7 +174,7 @@ func get_details() {
     }
 
     fmt.Println("The details of the 5 students are as follows: ")
-    for i: = 0; i < 5; i++ {
+    for i := 0; i < 5; i++ {
         fmt.Println("Name:", array[i].name)
         fmt.Println("Age: ", array[i].age)
         fmt.Println("Score: ", array[i].score)
