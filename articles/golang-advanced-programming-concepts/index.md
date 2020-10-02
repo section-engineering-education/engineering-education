@@ -1,6 +1,14 @@
 
 *Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In the [first article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In the [second article](/engineering-education/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc.., In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
 
+### prerequisites
+The first two articles in the series cover all the prerequisites mentioned below: 
+
+1. Golang installed on your system(The first article covers this in detail)
+2. Basic understanding of the Go workspace
+3. basic understanding of Go commands and Linux commands
+4. Knowledge of programming concepts like loops, variables, data types. 
+
 ### Table of Contents
 
 - [Functions](#functions)
@@ -48,6 +56,9 @@ The `main()` function is a special type of function. It serves as the entry poin
 ### Arrays
 
 An [array](https://www.geeksforgeeks.org/arrays-in-go/) is a collection of multiple values or items of the same data type. This makes it easier to find a value by referencing its position relative to the start of the array (index 0). In other words, if there are 10 items of the same data type numbered from 0 to 9 (array indexes always start from 0), we can get the 6th item by simply looking at index 5 in the array. For example, if the user wants to store the scores obtained by 100 students in a test, he can use an integer array of length 100. 
+
+![Array](/engineering-education/golang-advanced-programming-concepts/array.png)
+_Figure: Arrays ([Source](https://stackabuse.com/remove-element-from-an-array-in-java/))_
 
 The syntax for creating an array is as follows:
 
@@ -152,18 +163,20 @@ We are going to write a program to create a `struct` called "Student", get the d
 package main
 
 import "fmt"
-
+// define a structure for student details with name, age, and score
 type Student struct {
     name string
     age int
     score float64
 }
 
+// function to get the details of 10 students from the user on the command line.
 func get_details() {
-
+    // create an array of 5 students
     var array[5] Student
     fmt.Println("Enter the details of 5 students")
-
+    // get the details of the students from the user
+    // we create a for loop that iterates 5 times
     for i := 0; i < 5; i++ {
         fmt.Println("Enter the name: ")
         fmt.Scanln( & array[i].name)
@@ -172,7 +185,7 @@ func get_details() {
         fmt.Println("Enter the score: ")
         fmt.Scanln( & array[i].score)
     }
-
+    // print the details of all 5 students
     fmt.Println("The details of the 5 students are as follows: ")
     for i := 0; i < 5; i++ {
         fmt.Println("Name:", array[i].name)
@@ -180,7 +193,7 @@ func get_details() {
         fmt.Println("Score: ", array[i].score)
     }
 }
-
+// execute get_details in the main function
 func main() {
     get_details()
 }
@@ -188,7 +201,8 @@ func main() {
 
 The function `get_details()` gets the details of 5 students from the user and displays them on the terminal using a `for` loop. We create an array of type Student with length 5. This array stores the details of all 5 students. 
 
-### Further reading
+### Conclusion and further reading
+In conclusion, we explored some advanced programming concepts in this article. We looked at functions and how they can help us avoid repetitive code and make the program modular. We then explored arrays and how they can be used to store and work with similar data. We also understood what structures are and how they can be used to store data belonging to different types. Finally, we wrote a program to get the details of 5 students from the user by using everything we learned in this article. Congratulations! you can now write your own programs in Golang.  
 
 - [Go language specification](https://golang.org/ref/spec)
 - [Tour of Go](https://tour.golang.org/basics/1)
