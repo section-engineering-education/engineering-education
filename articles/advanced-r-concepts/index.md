@@ -1,9 +1,17 @@
 # Advanced Programming Concepts in R
 
-In the first article, we have covered the basics of the R programming language. In this article, we will look at some of the advanced aspects of the R programming language. Going through this article will enhance their ability to implement OOPs concepts. We will consider the following topics in this article:
+In the first article, we have covered the basics of the R programming language. In this article, we will look at some of the advanced aspects of the R programming language. Going through this article will enhance one's ability to implement Object-Oriented Programming(OOP) concepts and write modular code. We will cover the following topics in this article:
+
+1. Dataframes
+2. Typecasting
+3. File handling
+4. Working with inbuilt datasets
+5. Conditional Statements
+6. Loop Statements
 
 ### **Dataframes**: 
-R is a programming language primarily built for statistical analysis. Therefore, one needs to pay attention to large datasets while learning R. Dataframes facilitate the process of storing large datasets in a local variable. Let us look at an example to define a dataframe. We will describe several vectors storing different data types. These vectors will help us build the dataframe.  
+R is a programming language built for statistical analysis of large datasets. Therefore, one needs to learn to handle large datasets while learning R. Dataframes facilitate the process of storing large datasets in a local variable. Let us look at an example to define a dataframe. We will describe several vectors storing different data types. These vectors will help us build the dataframe.  
+
 ```r
 vector_1 <- c("a","b","c","d","e")
 vector_2 <- c("A","B","C","D","E")
@@ -14,7 +22,7 @@ vector_5 <- c(TRUE,TRUE,TRUE,FALSE,FALSE)
 new_data_frame <- data.frame(vector_1, vector_2, vector_3, vector_4, vector_5)
 new_data_frame
 ```
-Hence, we have defined a new dataframe called `new_data_frame`. The output of the above code is as follows:
+Hence, we have defined a new dataframe called `new_data_frame.` To define a new dataframe, we use the `data.frame` method and pass the vectors as arguments. The output of the above code is as follows:
 ```txt
     vector_1 vector_2 vector_3 vector_4 vector_5
 1        a        A        1        2     TRUE
@@ -23,7 +31,10 @@ Hence, we have defined a new dataframe called `new_data_frame`. The output of th
 4        d        D        4        8    FALSE
 5        e        E        5       10    FALSE
 ```
-R provides several functions to understand and analyze the dataframes. A few such functions are:
+R provides several functions to understand and analyze the dataframes. Analysis of dataframes is necessary to perform pre-processing on the dataset. There are primarily two types of analysis: Statistcal and Categorical. 
+
+Statistical analysis deals with all the continous values(numbers) in the dataset, whereas categorical analysis deals with categories.
+  A few such functions are:
 
 1. head(): Prints out the first six observations of the dataframe 
 2. str(): Prints the structure of the dataframe. The structure includes information about the dataframe and the data-types present in each vector. Observe that the dataframe auto-assigns the data type to the vectors.
@@ -127,7 +138,7 @@ While reading the files, ensure that the file directory is correctly mentioned i
 
 ### **Accessing inbuilt Datasets**: 
 
-At this instant, you are in a position to effectively use R as a tool. While learning various machine learning algorithms, the best place to start is the in-built datasets. These are small in size and are cleaned thoroughly. These datasets were the benchmark datasets around a decade ago. A few of the datasets that R provides are as follows:
+At this instant, you are in a position to use R as a tool effectively. While learning various machine learning algorithms, the best place to start is the in-built datasets. These are small in size and are cleaned thoroughly. These datasets were the benchmark datasets around a decade ago. A few of the datasets that R provides are as follows:
 1. airquality dataset:
 ```r
  head(airquality)
@@ -222,7 +233,7 @@ while (iter>3){
     iter<iter-1
 }
 ``` 
-The ouput of the above is as follows:
+The output of the above is as follows:
 
 ```txt
 10
