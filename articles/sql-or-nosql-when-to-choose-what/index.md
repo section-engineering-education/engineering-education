@@ -34,7 +34,12 @@ If we were to have a student info database with table student and course, this i
 
 ![SQL database table](/engineering-education/sql-or-nosql-when-to-choose-what/tables.png)
 
-![SQL](/engineering-education/sql-or-nosql-when-to-choose-what/sql.png)
+*SQL Relation output*
+
+| ID | first_name | last_name | username | courses                 |
+|----|------------|-----------|----------|-------------------------|
+| 1  | Alex       | Brooks    | alex09_b | Web Dev,React js        |
+| 2  | Ammy       | Jonathan  | amy      | Photoshop, UI/UX Design |
 
 SQL is a simple language that is extremely powerful. You can create multiple databases with multiple tables to store data with foreign key mapping. Each row in the SQL database has its specific value characters, such as text and integers.
 
