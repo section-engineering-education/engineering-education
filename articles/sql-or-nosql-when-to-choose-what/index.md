@@ -49,6 +49,8 @@ If we were to have a student info database, this is how we can represent a relat
 
 ![SQL database table](/engineering-education/sql-or-nosql-when-to-choose-what/tables.png)
 
+[*Image Source*](http://cdn.ipenywis.com/upload/images/123abd458.png)
+
 *SQL Relation output*
 
 | ID | first_name | last_name | username | courses                 |
