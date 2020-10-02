@@ -6,12 +6,12 @@ url: /engineering-education/mysql-query-performance-optimization-tips/
 title: MySQL Query Performance Optimization Tips
 description: This article will focus on the optimization of individual SQL statements and database structure as data volume grows.
 author: benson-kariuki
-date: 2020-09-29T00:00:00-13:00
+date: 2020-10-01T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/mysql-query-performance-optimization-tips/hero.jpg
-    alt:
+    alt: MySQL query optimizing tips image
 ---
 This article goes through common tips for optimizing MySQL queries. As data volume in your database grows, retrieving data from the database and other database operations become complex. This also requires more computing resources.
 <!--more-->
@@ -44,25 +44,27 @@ EXPLAIN SELECT * FROM world_x.city LIMIT 5000;
 MySQL EXPLAIN query output
 
 #### MySQL Query Log
-In MySQL, slow queries are logged in an inbuilt query log. Once you find the slow queries in the query log, use the EXPLAIN statement to determine why the queries are slow and optimize them.
+In MySQL, slow queries are logged in an built-in query log. Once you find the slow queries in the query log, use the EXPLAIN statement to determine why the queries are slow and optimize them.
 
 #### Optimizing Database Schema
 The database structure is very crucial in performance optimization. There are several ways in which we can optimize database structure, including:
 
-- Limit the number of columns: MySQL has a limit of 4096 columns per table. Use fewer columns for better performance. If possible, do not use more than a hundred columns unless your business logic requires that. Tables with more columns require more CPU time to process.
+- Limiting the number of columns: MySQL has a limit of 4096 columns per table. Use fewer columns for better performance. If possible, do not use more than a hundred columns unless your business logic requires that. Tables with more columns require more CPU time to process.
 - Normalize Tables: Normalizing keeps all data non-redundant. The database that is in this state is called 3NF (third normal form). The 3NF ensures that lengthy values such as names, addresses, categories, and contact details are not repeated. Instead, they are represented as IDs across multiple smaller tables. For more details on database normalization, refer [here](https://www.guru99.com/database-normalization.html).
-- Use the Most Appropriate Data Types: There are more than 20 different data types in MySQL designed for different uses.  Some of the data types include Timestamp, DateTime, Integer, ENUM, Float, Double, Char, LongText, and Text. Tables should be designed to minimize space used on a disk. Tables that occupy less disk space results in smaller indexes that can be processed in a shorter duration. For example, if a table will host less than 100 records, you should use the TINYINT data type for the unique id as it takes less space than INT.
+- Use the Most Appropriate Data Types: There are more than 20 different data types in MySQL designed for different uses.  Some of the data types include Timestamp, DateTime, Integer, ENUM, Float, Double, Char, LongText, and Text. Tables should be designed to minimize space used on a disk. Tables that occupy less disk space results in smaller indexes that can be processed in a shorter duration. For example, if a table will host less than 100 records, you should use the TINYINT data type for the unique ID as it takes less space than INT.
 - Avoid Null Values. Declare columns to be NOT NULL where possible. This enables better use of indexes. NULL values increase the processing power needed for testing whether each value is NULL, making SQL operations slower.
 
 #### Use Indexes
 Think of records as content in a book. If you want to learn on a particular subtopic, you would go to the index pages, look for the subtopic you want, then get the page where the subtopic is. Indexes work the same way. They are used to find rows with specific column values much faster. Without using an index, MySQL must begin searching in the first row and go through the whole table to find the required records. Tables with a huge amount of data are more costly to query.
 
-With the use of an index, MySQL can faster determine the position to seek in the middle of the data file. This is done without going through all the rows and is much faster than reading every row sequentially. Refer to [MySQL developer](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html) guide for more information on indexes.
+With the use of an index, MySQL can faster determine the position to seek in the middle of the data file. This is done without going through all the rows and is much faster than reading every row sequentially. Refer to the [MySQL developer](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html) guide for more information on indexes.
 
 You can create a single-column or multiple column indexes, as shown below, respectively.
+
 ```sql
 CREATE INDEX tablename_columnname_idx ON tablename (columnname);
 ```
+
 ```sql
 CREATE INDEX tablename_column1name_column2name_idx ON tablename (column1name, column2name);
 ```
@@ -70,7 +72,7 @@ CREATE INDEX tablename_column1name_column2name_idx ON tablename (column1name, co
 #### Use Wildcards at the End of a Phrase
 In MySQL, wildcards are used in conjunction with the LIKE operator and NOT LIKE operator. They are used to search for data matching some search criteria. You can learn more about wildcards [here](https://www.guru99.com/wildcards.html).
 
-Wildcards result in the most expansive scan when searching for data, which is very inefficient. Leading wildcards are the most inefficient, especially when combined with ending wild cards. In such a case, MySQL has to search all the records for a match. Thus you should avoid leading wild cards. See the queries bellow, one using a leading wildcard and another one using an ending wildcard.
+Wildcards result in the most expansive scan when searching for data, which is very inefficient. Leading wildcards are the most inefficient, especially when combined with ending wild cards. In such a case, MySQL has to search all the records for a match. Thus you should avoid leading wild cards. See the queries below, one is using a leading wildcard and another one is using an ending wildcard.
 
 ```sql
 SELECT * FROM city WHERE name LIKE '%Al%';
@@ -81,7 +83,7 @@ SELECT * FROM city WHERE name LIKE 'Al%';
 ```
 
 #### Specify Columns in SELECT Function
-SELECT * (select all) is used as a shortcut to query all columns available in a table.  This requires more resources than using a SELECT statement with only the columns you need for that specific query. For example, a customer table with 20 different columns and a hundred thousand entries. If you want to select a city with ID and Name only; try to use
+SELECT * (select all) is used as a shortcut to query all columns available in a table. This requires more resources than using a SELECT statement with only the columns you need for that specific query. For example, a customer table with 20 different columns and a hundred thousand entries. If you want to select a city with ID and Name only; try to use
 
 ```sql
 SELECT ID, Name, District FROM city;
@@ -107,7 +109,7 @@ SELECT DISTINCT col1, col2 FROM table;
 ```
 
 #### Use LIMIT
-Sometimes we need a specified number of rows from a result set. LIMIT clause is used in the query to specify the number of rows instead of fetching the whole result set. Fetching the entire result set requires more resources compared to fetching a specified number of rows. See the queries below, one without LIMIT, another one with the LIMIT clause.
+Sometimes we need a specified number of rows from a result set. The LIMIT clause is used in the query to specify the number of rows instead of fetching the whole result set. Fetching the entire result set requires more resources compared to fetching a specified number of rows. See the queries below, one without LIMIT, another one with the LIMIT clause.
 
 ```sql
 SELECT ID, Name, District FROM city;
@@ -153,7 +155,7 @@ SELECT  C.id, C.name, O.amount, O.date FROM customers C
 ```
 
 #### Optimize LIKE Statements with UNION Clause
-The OR operator is used to combine two Boolean expressions and return true when either of the condition is met. When using comparison operator 'or' in a query, MySQL optimizer may incorrectly choose a full table scan to retrieve the result set. This makes the query run slower. A UNION clause runs faster and gives the same result.
+The OR operator is used to combine two Boolean expressions and return true when either of the conditions is met. When using comparison operator 'or' in a query, MySQL optimizer may incorrectly choose a full table scan to retrieve the result set. This makes the query run slower. A UNION clause runs faster and gives the same result.
 
 Consider the query below:
 
