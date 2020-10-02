@@ -3,7 +3,7 @@
 **Prerequisites:**
 - Github account
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
-- Prepared markdown (.md) file. (Note: All articles must be submitted in properly-formatted markdown.) 
+- Prepared markdown (.md) file. (Note: All articles must be submitted in properly-formatted markdown. See [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)) 
 
 ### Fork the repository
 In order to upload your prepared .md file to Github, first, click the **Fork** option in the upper right-hand corner (pictured below).
@@ -43,16 +43,15 @@ Within that article folder, upload your prepared .md file containing article con
 ```
 ![image title](/engineering-education/new-folder-name/image-name.jpg)
 ```
-If you have a Header image in mind - (for the hero image) -feel free to include it your PR as well - please try to keep images as close to 600X400 pixels (images can be resized in paint) - also please make sure the image is from a site like www.unsplash.com
+If you have a header (hero) image in mind, feel free to include it your PR as well. Please try to keep images as close to 600X400 pixels (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)) and make sure you have the appropriate copyright to use it. Sites like [Unsplash](https://unsplash.com) have Creative Commons images which you can use for free.
 
-Any images within the article need to be host on our site - place the image in the proper folder - and have the proper image paths in the article similar to the hero image. 
-With proper citation if required.
+Any images within the article need to be hosted on our site - place the image in the proper folder) - and have the proper image paths in the article similar to the hero image and have citations (attribution) if required.
 
 Your folder should look similar to this:
 
 ![folder contents](/images/folder-contents.png)
 
-Once your files are properly uploaded and organized, add, commit, and push your changes to your forked remote Github repository either using the command line or Github tooling within your text editor.
+Once your files are properly uploaded and organized, add, commit, and push your changes to your forked remote Github repository either using the command line or the Github tools within your text editor.
 
 ### Create pull request
 Open Github. You should see a message indicating your pushed changes with a button to 'Compare & pull request'.
@@ -65,10 +64,10 @@ Open a pull request that includes the name of your article and a description of 
 
 ***Note***: Make sure your repository is up to date with the EngEd repository before contributing new articles.
 
-### only need to do this once
+### do this once
 git remote add section http://github.com/section-io/engineering-education 
 
-### then use this every time before contributing a new article
+### then use this every time before contributing a new article to keep it up to date
 git fetch section
 
 git pull --rebase section master
@@ -77,19 +76,12 @@ git push origin
 
 Here is a [link](https://www.youtube.com/watch?v=nT8KGYVurIU&t=47s) to a short video further explaining what a **pull request** is and how to **fork** a Github repository.
 
-Before submitting your article make sure you take advantage of this useful tool that helps with word count, formatting, and grammar/readability.
-Helps make any writing BOLD & CLEAR
-It highlights lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it.
-Please use on all future articles before submitting a PR (pull request)
+Before submitting your article make sure you take advantage of this useful tool, [Hemingway](http://www.hemingwayapp.com) that helps with word count, formatting, and grammar/readability.
 
-http://www.hemingwayapp.com/
+By highlighting lengthy, complex sentences and common errors, it helps make any writing BOLD & CLEAR. If you see a yellow sentence, you may want to shorten or split it. Please use on all future articles before submitting a PR (pull request).
 
-To review your Code Snippets or examples before submitting take full advantage of this free online tool as well, use it to run and compile any code snippets to be include in the article.
+To review your Code Snippets or examples before submitting, take full advantage of the free online tool, [repl.it](https://repl.it). Use it to run and compile any code snippets to be included in your article.
 
-https://repl.it/
+Finally, if you're a first time contributor, be sure to include a short Author Biography and Headshot image to be included at the end of your articles. We want to credit you for your hard work.
 
-
-Be sure to include a short Author Biography and Headshot image to be included at the end of your articles. (Only once for 1st time contributors) 
-
-Congratulations! Your article is now ready to be submitted for review and approval by the Section team.
-
+Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a PR and we'll be happy to review it.
