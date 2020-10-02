@@ -12,10 +12,10 @@ By the end of the article, you'll understand
 
 ### Reverse Proxy
 A reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the server  itself.  
- Refer [this article](https://www.section.io/engineering-education/what-are-reverse-proxies/) to better understand what Reverse Proxies are.
+ Refer to [this article](https://www.section.io/engineering-education/what-are-reverse-proxies/) to better understand what Reverse Proxies are.
 
 ### NGINX
-We will be using NGINX which would be serving the purpose of a Reverse Proxy. NGINX is a web server that can be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and publicly released in 2004. Nginx is free and open-source software, released under the terms of the 2-clause BSD license. A large fraction of web servers use NGINX, often as a load balancer.
+We will be using NGINX as a Reverse Proxy. NGINX is a web server that can be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and publicly released in 2004. Nginx is free and open-source software, released under the terms of the 2-clause BSD license. A large fraction of web servers use NGINX, often as a load balancer.
 
 To know more about NGINX, check out the [Wiki](https://en.wikipedia.org/wiki/Nginx).
 
@@ -27,10 +27,10 @@ Some of the other Reverse Proxies available are:
 ### Reverse Proxy Example
 ![image](./reverse_proxy_working.png)
 
-This is an example of an architecture, where two apps are running in the background, but clients have no idea about them. Clients only know about NGINX which acts as a reverse proxy that sends the request to the appropriate application.
+This is an example of an architecture, where two apps are running in the background, but the clients have no idea about them. The Clients only know about NGINX which acts as a reverse proxy that sends the request to the appropriate application.
 
 
-Now that you have a broad idea of what we are about to build, let us jump right in!
+Now that you have a broad idea of what we are about to build, Let's jump right in!
 
 ## Aim
 1. Deploy two applications and have it managed by NGINX.
@@ -38,13 +38,13 @@ Now that you have a broad idea of what we are about to build, let us jump right 
 ## Setup & Pre-Requisites:
 
 1. For this example, I have two sample Express Applications. One can have any kind of application running on different ports. 
-**NOTE:** Do not run your application on Port 80 or 443. Will be explained later why this must not be done.  
+**NOTE:** Do not run your application on Port 80 or 443. It will be explained later why this must not be done.  
 Refer the official ExpressJS Documentation for Getting Started. [Docs](https://expressjs.com/en/starter/installing.html)
-2. I have installed NGINX on my local machine, the same could be done on any Virtual Machine where the applications are expected to be deployed.  
-Here is the Documentatino on how to install NGINX on your machine. [Docs](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) . 
+2. I have installed NGINX on my local machine, but the same could be done on any Virtual Machine where the applications are expected to be deployed.  
+Here is the Documentation on how to install NGINX on your machine. [Docs](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) . 
 
 ## Step 1: Start two apps running in different ports
-As I've mentioned earlier, I got two Node Apps running on two different ports as shown below.  
+As I've mentioned earlier, I've got two Node Apps running on two different ports as shown below.  
 
 **Server app running on Port 3000**
 
@@ -55,7 +55,7 @@ As I've mentioned earlier, I got two Node Apps running on two different ports as
 ![image](./client1.png)
 
 Now that we have our apps up and running, we don't want our users to use these applications by typing their PORTS explicitly, so we need to map it with something which is more human-readable. In this example, I will be using subdomains to distinguish between them. Again one is free to use whichever distinguishing element suitable as per their requirement.
-Other example could be  a particular route like domain/client and domain/server. The only condition for the distinguishing element is to follow a Valid URL Regular Expression. Learn about Regex from [here](https://regexr.com/).
+Another example could be a particular route like domain/client and domain/server. The only condition for the distinguishing element is to follow a Valid URL Regular Expression. Learn about Regex from [here](https://regexr.com/).
 
 
 ## Step 2: Add DNS records
@@ -132,13 +132,13 @@ server{
 These are the basic minimum configurations required to successfully configure NGINX for reverse proxying. Feel free to explore other config parameters as well. 
 
 Change the domain name to your domain.
-For **a** SSL Certificate and Key, you can **obtain them** from your SSL provider. If you don't have one, Use this free service [LetsEncrypt](https://letsencrypt.org/). Follow their documentation to get Free SSL instantly!
+For a SSL Certificate and Key, you can obtain them from your SSL provider. If you don't have one, Use this free service [LetsEncrypt](https://letsencrypt.org/). Follow their documentation to get Free SSL instantly!
 
 
 
 ## Step 5 - Save and Restart
 
-After editing, save your changes. Use the ```nginx -t``` command to test your changes before actually reloading NGINX. It is good practice do that to make sure your server doesn't crash if there were any errors in your config file. Once you get a message that the test is successful, you can go ahead and restart NGINX.
+After editing, save your changes. Use the ```nginx -t``` command to test your changes before actually reloading NGINX. It is good practice do that to make sure your server doesn't crash if there were any errors in your config file. Once you get a message that the test is successful, you can go ahead and restart NGINX.  
 Open the browser and enter the URLs to find your applications running on the corresponding URLs configured.
 
 **Important Note**
@@ -155,7 +155,7 @@ Here is the end result,
 Congratulations! You did it! :tada:
 
 In large systems, the system is highly dependent on the micro-services architecture where each service would be served by an application. In that case, managing apps would be an essential skill to know.
-The microservices architecture is dicussed [here](https://microservices.io/patterns/microservices.html) in detail.
+The microservices architecture is discussed [here](https://microservices.io/patterns/microservices.html) in detail.
 
  Hope this article helped you to manage those independently deployed applications as a whole with the help of NGINX as a Reverse Proxy.
  Thanks for reading
