@@ -6,7 +6,7 @@ url: /engineering-education/introduction-to-scrum/
 title: Introduction to Scrum
 description: In this article we will speak about the Scrum agile framework used for development purposes.
 author: benson-kariuki
-date: 2020-09-29T00:00:00-11:00
+date: 2020-10-02T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
