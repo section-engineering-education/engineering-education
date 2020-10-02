@@ -36,12 +36,13 @@ Let us create a function to add two numbers and return the result.
 package main
 
 import "fmt"
-
+// functon to add two numbers
 func add_numbers(x int, y int) int {
     return x + y
 }
 
 func main() {
+    // call the function and store the result in variable "x"
     var x = add_numbers(1, 2)
     fmt.Println(x)
 }
@@ -76,11 +77,11 @@ import "fmt"
 
 func main() {
     var test[10] int
-        // assigning the value 10 to the first index in the array
+    // assigning the value 10 to the first index in the array
     test[0] = 10
-        // assigning the value 20 to the second index
+    // assigning the value 20 to the second index
     test[1] = 20
-        // printing the first element
+    // printing the first element
     fmt.Println(test[0])
 
     var test2[1] string
@@ -97,11 +98,12 @@ package main
 import "fmt"
 
 func main() {
+    // create an array of size 10
     var test[10] int
     for i := 0; i < 10; i++ {
         test[i] = i
     }
-
+    // print the values in the array
     for i := 0; i < 10; i++ {
         fmt.Println(test[i])
     }
@@ -129,7 +131,7 @@ Example:
 package main
 
 import "fmt"
-
+// create a structure called student to store their name, age, and score
 type Student struct {
     name string
     age int
@@ -137,9 +139,11 @@ type Student struct {
 }
 
 func main() {
+    // create s1 of type student
     var s1 = Student {
         "Adith", 1, 99.5,
     }
+    // print the details of the student
     fmt.Println(s1)
     fmt.Println(s1.name)
     fmt.Println(s1.age)
