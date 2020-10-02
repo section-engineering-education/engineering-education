@@ -170,21 +170,29 @@ Let’s look at the 2020 [Annual Developer Survey](https://insights.stackoverflo
 
 ![Most Popular Databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-popular.png)
 
+[*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-databases-all-respondents4)
+
 Relational MYSQL, MariaDB, and Microsoft SQL Server dominate the list.
 
 - *[Most Popular Databases Among Professionals](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4) developers*
 
 ![Most Popular Databases Among Professionals](/engineering-education/sql-or-nosql-when-to-choose-what/popular-among-professionals.png)
 
+[*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4)
+
 - *[Most Loved](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-loved4) databases*
 
 ![Most Loved Databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-loved.png)
+
+[*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-loved4)
 
 Taking the list of the most loved database technologies, non-relation databases such as Redis and MongoDB seem to be among the most loved databases.
 
 - *[Most Wanted](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4) databases*
 
 ![Most Wanted Databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-wanted.png)
+
+[*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4)
 
 Given MongoDB is still young, it is a database technology that most developers want to learn more about.
 
