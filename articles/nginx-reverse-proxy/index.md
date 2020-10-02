@@ -30,7 +30,7 @@ Some of the other Reverse Proxies available are:
 This is an example of an architecture, where two apps are running in the background, but the clients have no idea about them. The Clients only know about NGINX which acts as a reverse proxy that sends the request to the appropriate application.
 
 
-Now that you have a broad idea of what we are about to build, Let's jump right in!
+Now that you have a broad idea of what we are about to build, let's jump right in!
 
 ## Aim
 1. Deploy two applications and have it managed by NGINX.
@@ -39,12 +39,12 @@ Now that you have a broad idea of what we are about to build, Let's jump right i
 
 1. For this example, I have two sample Express Applications. One can have any kind of application running on different ports. 
 **NOTE:** Do not run your application on Port 80 or 443. It will be explained later why this must not be done.  
-Refer the official ExpressJS Documentation for Getting Started. [Docs](https://expressjs.com/en/starter/installing.html)
+Refer the official ExpressJS documentation for Getting Started. [Docs](https://expressjs.com/en/starter/installing.html)
 2. I have installed NGINX on my local machine, but the same could be done on any Virtual Machine where the applications are expected to be deployed.  
-Here is the Documentation on how to install NGINX on your machine. [Docs](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) . 
+Here is the documentation on how to install NGINX on your machine. [Docs](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) . 
 
 ## Step 1: Start two apps running in different ports
-As I've mentioned earlier, I've got two Node Apps running on two different ports as shown below.  
+As I've mentioned earlier, I've got two Node.js Apps running on two different ports as shown below.  
 
 **Server app running on Port 3000**
 
