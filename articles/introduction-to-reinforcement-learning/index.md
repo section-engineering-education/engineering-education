@@ -1,5 +1,13 @@
+### Table of Contents
+1. Introduction
+2. Key Concepts
+3. Most used Reinforcement Learning Algorithms
+4. Applications of Reinforcement Learning
+5. Final Thoughts
+6. References
+
 In **Reinforcement Learning (RL)**, agents are trained to maximize the total rewards. In a simpler term, the RL agent is rewarded for correct moves and punished for the wrong ones. In turn, the agent tries to maximize the right moves while minimizing the wrong moves. 
-In literature, RL is known as a semi-supervised learning model in machine learning, a technique which allows an agent to take actions and interact with an environment so as to maximize the total rewards for completing a task. 
+In literature, RL is known as a semi-supervised learning model in machine learning, a technique which allows an agent to take actions and interact with an environment to maximize the total rewards for completing a task. 
 When compared to other unsupervised learning methods, RL is different in terms of its goals. While the goal in unsupervised learning is to find similarities and differences between data points, reinforcement learning's goal is to find a suitable action model that would maximize the total cumulative reward of the agent.
 Reinforcement Learning, as stated above employs a system of **rewards** and **penalties** to compel the computer to solve a problem on its own. Human involvement is limited to changing the environment and tweaking the system of rewards and penalties. As the computer maximizes its reward, it is prone to seek unexpected ways of doing it. Human involvement is focused on preventing it from exploiting the system and motivating the machine to perform the task in the way expected. 
 RL is important especially when there is no sure way of performing a task. However, there are rules which the model has to follow to perform its duties correctly.
@@ -10,9 +18,10 @@ In RL we have key concepts that have to be defined. They include agents, state, 
 2.	**State**. The state represents the decision-making factors under consideration being observed by the agent.
 3.	**Action**. An action represents an optimal action being selected by the agent, which may change or affect the state and reward.
 4.	**Reward**. A reward in RL represents the gains and losses in network performance for taking a particular action on a particular state in the previous time instance.
-5.	**Environment**. The environment is where the agent acts in. As to how the environment reacts to certain actions is defined by a model which we may or may not know.
+5.	**Environment**. The environment is where the agent acts. As to how the environment reacts to certain actions is defined by a model which we may or may not know.
 
-![rl-architecture](/engineering-education/introduction-to-reinforcement-learning/rl-architecture.png)
+![rl-architecture](/engineering-education/introduction-to-reinforcement-learning/rl-architecture.png)<br>
+*[Image Source: Springer Link](https://link.springer.com/chapter/10.1007/978-981-15-4095-0_2)*
 
 ### Most used Reinforcement Learning Algorithm
 There are a couple of RL algorithms used in solving problems today. They include Q-learning, [Policy Gradients (PG)](/https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf/) and [Actor-Critics](/https://papers.nips.cc/paper/1786-actor-critic-algorithms.pdf/). Nonetheless, in this article, we tackle the popular Q-learning algorithm which has been used to solve many RL problems. 
@@ -21,12 +30,13 @@ There are a couple of RL algorithms used in solving problems today. They include
 In the simplest form, Q-learning can be described as a value-based reinforcement learning algorithm used to find an optimal action-selection policy using a Q-function. The main goal is to maximize the value function Q by selecting the best of all possible actions.
 
 ![q-learning](/engineering-education/introduction-to-reinforcement-learning/q-learning.PNG)
+*[Image Source: Springer Link](https://link.springer.com/chapter/10.1007/978-981-15-4095-0_2)*
 
 The Q-function uses the Bellman’s equation taking in two inputs: state (s) and action (a).
 Using the above Q-function, we get the values of Q to be stored in the cells of the Q-table which is basically a look-up table where we store then calculate the maximum expected future rewards for actions at each state.
 As all the values in the Q-table are initially set to zero, this makes the first action the agent takes to be completely random. The values in the table are then updated iteratively for each state-action pair until the function Q eventually converges to Qnew.
 
-There is also a need to balance the agent's exploration and exploitation efforts as it must take random actions which ought to bring greater returns in the long rum. Without this balance, the agent might just opt for an immediate reward every time. This is achieved by using the [epsilon-greedy algorithm](/https://jamesmccaffrey.wordpress.com/2017/11/30/the-epsilon-greedy-algorithm/).
+There is also a need to balance the agent's exploration and exploitation efforts as it must take random actions which ought to bring greater returns in the long run. Without this balance, the agent might just opt for an immediate reward every time. This is achieved by using the [epsilon-greedy algorithm](/https://jamesmccaffrey.wordpress.com/2017/11/30/the-epsilon-greedy-algorithm/).
 The algorithm works in such a way that as the agent keeps progressing further and further into the particular task, it will lean more into exploiting the knowledge it has already gatheredrather than investigating the environment. 
 
 That's Q-learning in a nutshell. 
