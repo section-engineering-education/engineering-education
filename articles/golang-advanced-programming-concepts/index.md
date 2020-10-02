@@ -1,13 +1,17 @@
 
 *Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In the [first article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In the [second article](/engineering-education/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc.., In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
 
-### prerequisites
+### Prerequisites
+
 The first two articles in the series cover all the prerequisites mentioned below: 
 
-1. Golang installed on your system(The first article covers this in detail)
-2. Basic understanding of the Go workspace
-3. basic understanding of Go commands and Linux commands
-4. Knowledge of programming concepts like loops, variables, data types. 
+1. Golang installed on your system (The first article covers this in detail).
+
+2. Basic understanding of the Go workspace.
+
+3. Basic understanding of Go commands and Linux commands.
+
+4. Knowledge of programming concepts like loops, variables, data types.
 
 ### Table of Contents
 
