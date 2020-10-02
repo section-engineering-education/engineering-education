@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: how-much-data-online
+url: /engineering-education/how-much-data-online/
 title: How Much Data Is on the Internet?
 description: How much data is on the Internet, how much information is online, and how is data on the internet stored?
 author: gregory-manley

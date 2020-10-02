@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: simple-guide-to-using-apis-nodejs
+url: /engineering-education/simple-guide-to-using-apis-nodejs/
 title: Getting to Grips with APIs - Using Node.js and EJS
 description: Using the Goodreads API and goodreads-api-node wrapper to search for books, display the results as book titles and create book pages when a book title is clicked upon.
 author: louise-findlay
@@ -17,9 +17,9 @@ images:
 Have you always wanted to use data from an API (Application Programming Interface) but never knew how? This tutorial will guide you through how to work with your first API using [Node.js](https://nodejs.org) and [EJS](https://ejs.co) templating to create a dynamic web app. Don't worry if you've never used JSON before or know very little JavaScript, the guide is aimed at you.
 <!--more-->
 
-So you've created your [first NodeJS web app](/engineering-education/templating-your-static-site/) but now you want to build on those skills by working with an API. Using your existing knowledge of EJS templating and Node.js, you will be able to work with the Goodreads API to be able to search for, list and return details about books.
+So you've created your [first NodeJS web app](/engineering-education/static-site-dynamic-nodejs-web-app/) but now you want to build on those skills by working with an API. Using your existing knowledge of EJS templating and Node.js, you will be able to work with the Goodreads API to be able to search for, list and return details about books.
 
-**Note:** Don't already have a basic NodeJS web app deployed? Check out my [Converting a Static Site to a Dynamic NodeJS Web App tutorial](/engineering-education/templating-your-static-site/) which will introduce you to full-stack development.
+**Note:** Don't already have a basic NodeJS web app deployed? Check out my [Converting a Static Site to a Dynamic NodeJS Web App tutorial](/engineering-education/static-site-dynamic-nodejs-web-app/) which will introduce you to full-stack development.
 
 ### Obtaining your API Keys
 
@@ -333,10 +333,12 @@ Finally, we just need to create a `book.ejs` to determine the content of the boo
 
 This will show the book title, year it is was published and the book description.
 
-Congratulations, you've just work with your first API using Node.js and EJS templating. Why not try it out? Search for a book and click on any of the titles. A new page will load with details of the result you clicked from the Goodreads API.
+Congratulations, you've just worked with your first API using Node.js and EJS templating. Why not try it out? Search for a book and click on any of the titles. A new page will load with details of the result you clicked from the Goodreads API. 
+
+Looking to deploy it to the web? Check out my [guide to deploying a Node.js web app using DigitalOcean](/engineering-education/deploying-nodejs-web-app)
 
 ### **Next Steps:**
-If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle or use your new-found knowledge, to work with different APIs like [Unsplash](https://unsplash.com/developers) or [Spotify](https://developer.spotify.com/documentation/web-api/).
+If you're looking to expand, why not look at altering the book URL to include the title such as /book/booktitle. Want to access a user's owned books through their Goodreads account, check out [part 2](/engineering-education/simple-guide-to-using-apis-part2) which will teach you how to authenticate with the Goodreads API
 
 Looking for more example code? Check out [LibraryTrackr](https://github.com/louisefindlay23/library-trackr), a NodeJS web app I'm developing aimed at solving library management (both print and eBook) for bibliophiles.
 

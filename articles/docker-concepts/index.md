@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: docker-concepts
+url: /engineering-education/docker-concepts/
 title: Understanding Docker Concepts
 description: The basic concepts of Docker, technology and has helped drive the trend towards containerization and micro-services in software development that’s known as cloud-native development.
 author: francisca-adekanye
