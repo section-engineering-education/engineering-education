@@ -20,7 +20,6 @@ images:
 In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
 
 ### Prerequisites
-
 1. Golang installed on your system (The first article covers this in detail).
 
 2. Basic understanding of the Go workspace.
