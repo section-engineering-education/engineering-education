@@ -30,12 +30,12 @@ package main
 import "fmt"
 
 func add_numbers(x int, y int) int {
-	return x + y
+    return x + y
 }
 
 func main() {
-	var x = add_numbers(1, 2)
-        fmt.Println(x)
+    var x = add_numbers(1, 2)
+    fmt.Println(x)
 }
 ```
 
@@ -64,17 +64,17 @@ package main
 import "fmt"
 
 func main() {
-	var test[10] int
-	// assigning the value 10 to the first index in the array
-	test[0] = 10
+    var test[10] int
+        // assigning the value 10 to the first index in the array
+    test[0] = 10
         // assigning the value 20 to the second index
-        test[1] = 20
-	// printing the first element
-	fmt.Println(test[0])
-	
-	var test2[1] string
-	test2[0] = "hello"
-	fmt.Println(test2[0])
+    test[1] = 20
+        // printing the first element
+    fmt.Println(test[0])
+
+    var test2[1] string
+    test2[0] = "hello"
+    fmt.Println(test2[0])
 }
 ```
 
@@ -86,14 +86,14 @@ package main
 import "fmt"
 
 func main() {
-	var test[10] int
-	for i := 0; i < 10; i++{
-		test[i] = i
-	}
-	
-	for i := 0; i < 10; i++{
-		fmt.Println(test[i])
-	}
+    var test[10] int
+    for i: = 0; i < 10; i++ {
+        test[i] = i
+    }
+
+    for i: = 0; i < 10; i++ {
+        fmt.Println(test[i])
+    }
 }
 ```
 
@@ -120,19 +120,21 @@ package main
 import "fmt"
 
 type Student struct {
-	name string
-	age int
-	score float64
+    name string
+    age int
+    score float64
 }
 
 func main() {
-    var s1 = Student{"Adith", 1, 99.5}	
+    var s1 = Student {
+        "Adith", 1, 99.5
+    }
     fmt.Println(s1)
     fmt.Println(s1.name)
     fmt.Println(s1.age)
     fmt.Println(s1.score)
-	
-    var s2 = Student{}
+
+    var s2 = Student {}
     s2.name = "Bharadwaj"
     fmt.Println(s2.name)
 }
@@ -152,35 +154,35 @@ package main
 import "fmt"
 
 type Student struct {
-	name string
-	age int
-	score float64
+    name string
+    age int
+    score float64
 }
 
-func get_details(){
-	
-	var array[5] Student
-	fmt.Println("Enter the details of 5 students")
-	
-	for i := 0; i < 5; i++{
-		fmt.Println("Enter the name: ")
-		fmt.Scanln(&array[i].name)
-		fmt.Println("Enter the age: ")
-		fmt.Scanln(&array[i].age)
-		fmt.Println("Enter the score: ")
-		fmt.Scanln(&array[i].score)
-	}
+func get_details() {
 
-	fmt.Println("The details of the 5 students are as follows: ")
-	for i := 0; i < 5; i++{
-		fmt.Println("Name:", array[i].name)	
-		fmt.Println("Age: ", array[i].age)
-		fmt.Println("Score: ", array[i].score)
-	}
+    var array[5] Student
+    fmt.Println("Enter the details of 5 students")
+
+    for i: = 0; i < 5; i++ {
+        fmt.Println("Enter the name: ")
+        fmt.Scanln( & array[i].name)
+        fmt.Println("Enter the age: ")
+        fmt.Scanln( & array[i].age)
+        fmt.Println("Enter the score: ")
+        fmt.Scanln( & array[i].score)
+    }
+
+    fmt.Println("The details of the 5 students are as follows: ")
+    for i: = 0; i < 5; i++ {
+        fmt.Println("Name:", array[i].name)
+        fmt.Println("Age: ", array[i].age)
+        fmt.Println("Score: ", array[i].score)
+    }
 }
 
 func main() {
-	get_details()
+    get_details()
 }
 ```
 
