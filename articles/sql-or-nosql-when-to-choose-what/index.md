@@ -26,9 +26,11 @@ Relations can exit in different ways, such as:
 - Many to Many - exits when a record in table A relates to many records of table B and vice versa. 
 
 SQL statements will help you perform CRUD operations such as CREATE, READ, UPDATE, and DELETE. These operations will help you to retrieve and modify data. Here is an example of an SQL statement;
+
 ```sql
 SELECT * FROM TABLE1.
 ```
+
 This statement will query and display all the records of Table1.
 If we were to have a student info database with table student and course, this is how we can represent a relation in an SQL database.
 
