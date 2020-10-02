@@ -21,11 +21,15 @@ Knowing which database structure to use is critical to building outstanding appl
 SQL is the most popular database structure. SQL (commonly pronounced as 'see quell') stands for the Structured Query Language. SQL is a language used for writing query statements to interact and communicate with relational databases. A relational database is a database that has a tabular schema to store data in terms of rows and columns. Each column contains data that are called attributes, and each row is called a record. The data in the tables can be related to each other hence the 'relational database'. A collection of these multiple tables in a database is what we are calling a schema. A relation is simply a decorative phrase for a table.
 Relations can exit in different ways, such as:
 
-- One to One 
-- One to Many
-- Many to Many
+- One to One - exits when a record in table A can only relate to one record of table B.
+- One to Many - exits when a record of table A relates to one or more records of table B.
+- Many to Many - exits when a record in table A relates to many records of table B and vice versa. 
 
-SQL statements will help you perform CRUD operations such as CREATE, READ, UPDATE, and DELETE. These operations will help you to retrieve and modify data.
+SQL statements will help you perform CRUD operations such as CREATE, READ, UPDATE, and DELETE. These operations will help you to retrieve and modify data. Here is an example of an SQL statement;
+```sql
+SELECT * FROM TABLE1.
+```
+This statement will query and display all the records of Table1.
 If we were to have a student info database with table student and course, this is how we can represent a relation in an SQL database.
 
 ![SQL database table](/engineering-education/sql-or-nosql-when-to-choose-what/tables.png)
