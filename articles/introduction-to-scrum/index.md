@@ -33,6 +33,10 @@ It is used in different fields, including marketing, manufacturing, and software
 
 Big projects are broken into small pieces that are delivered in several Sprints making the project easier to manage. Risk and cost are also reduced, as it is easier to identify risks in the early development stages. Every Sprint is released to users, and feedback is collected. Speed to market is also increased. Scrum is all about continuous learning and adapting to changes. The team does not know everything about the project. Therefore, adaptation to changes is critical.
 
+The image below is a graphical summary of the Scrum framework. If your organization would use Scrum, where would your input be? After going through this article, I bet you will be able to answer the question.
+
+![Scrum Framework](/engineering-education/introduction-to-scrum/scrum_framework.jpg)
+
 ### Scrum Team
 According to the [Scrum Guide](https://www.scrumguides.org/scrum-guide.html#team), the roles in Scrum are:
 - Product Owner
