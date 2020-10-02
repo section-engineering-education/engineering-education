@@ -1,5 +1,5 @@
 
-*Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In the [first article](https://www.section.io/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In the [second article](https://www.section.io/engineering-education/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc.., In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
+*Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In the [first article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In the [second article](/engineering-education/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc.., In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
 
 ### Table of Contents
 
@@ -47,7 +47,7 @@ The `main()` function is a special type of function. It serves as the entry poin
 
 ### Arrays
 
-An [array](https://www.geeksforgeeks.org/arrays-in-go/https://www.geeksforgeeks.org/arrays-in-go/) is a collection of multiple values or items of the same data type. This makes it easier to find a value by referencing its position relative to the start of the array (index 0). In other words, if there are 10 items of the same data type numbered from 0 to 9 (array indexes always start from 0), we can get the 6th item by simply looking at index 5 in the array. For example, if the user wants to store the scores obtained by 100 students in a test, he can use an integer array of length 100. 
+An [array](https://www.geeksforgeeks.org/arrays-in-go/) is a collection of multiple values or items of the same data type. This makes it easier to find a value by referencing its position relative to the start of the array (index 0). In other words, if there are 10 items of the same data type numbered from 0 to 9 (array indexes always start from 0), we can get the 6th item by simply looking at index 5 in the array. For example, if the user wants to store the scores obtained by 100 students in a test, he can use an integer array of length 100. 
 
 The syntax for creating an array is as follows:
 
