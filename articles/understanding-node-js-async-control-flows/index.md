@@ -19,7 +19,7 @@ If you look at these steps, there are some breaks that you need to wait before p
 Javascript served me the eggs even before heating the pan and pouring the mixture to cook. And there is nothing wrong with javascript. It did what we instructed it to do in a ‘`synchronous process`. It will execute the timeout functions but won't wait to finish because we didn't tell it to. Imagine this coded concept was implemented in a bank system. This can lead to a case where a user can withdraw some money even before he/she deposits it. This where `control flow` comes in.
 
 ### Control flows
-[Control flow](https://caolan.github.io/async/v3/docs.html#controlflow) is the order in which individual statements, instructions, or function calls of an imperative program are executed or evaluated. ([Wikipedia](https://en.wikipedia.org/wiki/Control_flow))
+[Control flow](https://en.wikipedia.org/wiki/Control_flow) is the order in which individual statements, instructions, or function calls of an imperative program are executed or evaluated.
 
 This article goes through `async flow` functions using [Async.js](https://caolan.github.io/async/v3/) to control the flow of task executions. The functions include Serial, Parallel, Waterfall, Queues, etc.
 
