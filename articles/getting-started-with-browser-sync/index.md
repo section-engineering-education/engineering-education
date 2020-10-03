@@ -14,15 +14,16 @@ images:
     - url: /engineering-education/getting-started-with-browser-sync/hero.jpg
     alt: Computers in a workspace displaying code
 ---
+# Getting Started with Browser-sync
 Browser-sync is an automation tool that allows you to keep multiple browsers & devices in sync when building websites. It also provides a platform for fast network applications
 
 >I've been trying out different local servers just to replace the hassle of using live servers. I found that [Browser-sync](https://www.browsersync.io/) was the best because it has so many useful features. A stitch in time saves nine which really sums it up.
 
->Browser-sync is awesomely fast, with incredible features you can use. Browser-sync allows you to preview your work simultaneously on different devices, provided you are connected to the same network.
+>Browser-sync is awesomely fast, with incredible features you can use. Browser-sync allows you to also check your work preview simultaneously on different devices, provided you are connected to the same network.
 
 ![Internal-UI-Interface](/engineering-education/getting-started-with-browser-sync/browsersync-dashboard.png)
 
-In the above image, you will see the awesome features Browser-sync provides. Install and enjoy it seamlessly watching over your files for changes. It also records your test URLs so you can push changes back out to all devices with a single click.
+In the above image, you will see different features, these are the awesome things Browser-sync provides you. Install on your computer and enjoy a seamless watch over your files. It also records your test URLs so you can push them back out to all devices with a single click.
 
 In this article, I will provide the steps to install Browser-sync for Linux. The instructions for other operating systems can be seen in their documentation [here](https://www.browsersync.io/docs)
 
@@ -86,17 +87,17 @@ _A server_ is a software or hardware device that accepts and responds to request
 
 On the Internet, the term "server" commonly refers to the system that receives requests for web files or data and sends those files back to the client (your computer). Since your project is yet to be hosted on a live server (thus accessible over the internet), your computer serves as a local server that receives requests and fetches your web files.
 
-A _Proxy Server_ acts as the gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
+A _Proxy Server_ acts as the gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse. [Read-more](https://www.varonis.com/blog/what-is-a-proxy-server/)
 
 If you look back at your previous command, it sounds like this: hey _browser-sync_ please _start_ a _server_ in this _directory_ and make a request for all the _files_ for me. If I make any changes, update it and show me how it looks like :smile:
 
 ***Next Step***
 
-The image below has a "\*\*/*\*" instead of the single asterisk "\*" used in the first command, the reason is: after using the first command (browser-sync start --server --directory --files "*") and you switch off your computer or close the terminal, or the working environment and all. To get a complete synchronization and watch over your files again, you have to use “**/*”.
+The image below has a "\*\*/*\*" instead of the single asterisk "\*" used in the first command, the reason is: When next you want to work on your project after the first time, you will have to use this command ```browser-sync start --server --directory --files "**/*"``` to start the Browser-sync.
 
 ![Watching-over-your-files-again](/engineering-education/getting-started-with-browser-sync/watching-files.png)
 
-Did you notice that each URL has both internal and external URLs? That is the power of Browser-sync.
+Did you notice that each URL has both internal and external URLs? The internal URL will be used to access the project in your browser, while the external URL will be used to access the project on an external device. That is the power of Browser-sync.
 
 Your files are ready and have been served. After the above command, the next interface you will see is similar to the one below
 
@@ -114,7 +115,7 @@ Click on the index file to see your project.
 
 4. URL history: Browser-sync logs all browsing history so you can push a test URL to all devices.
 
-5. Compatibility: Browser-sync is compatible with many task runners like Gulp and Grunt and it is cross-platform enabled.
+5. Compatibility: Browser-sync is compatible with many task runners like [GULP](https://browsersync.io/docs/gulp) and [Grunt](https://browsersync.io/docs/grunt) and it is cross-platform enabled.
 
 ### Conclusion
 
