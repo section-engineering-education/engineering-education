@@ -16,14 +16,14 @@ images:
 Performance is an important aspect when building webpages and applications. You need to understand how long your users interact with your app, how often they leave, and the response time as well.
 <!--more-->
 
-The first 10 seconds are vital to determine if a user will leave or continue interacting with your web pages. You must clearly speed up the page, bring value within these 10 seconds and get the user's attention to spend more time on your page.
+The first 10 seconds are vital to determine if a user will leave or continue interacting with your web pages. You must clearly speed up the page, bring value within these 10 seconds, and get the user's attention to spend more time on your page.
 
-This is where optimizing your page and speeding up the response time becomes important to maintain good user experience. Node.js is known to produce super-fast performing and scalable web applications. Node.js uses event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread.
+This is where optimizing your page and speeding up the response time becomes important to maintain a good user experience. Node.js is known to produce super-fast performing and scalable web applications. Node.js uses event-driven architecture and non-blocking (asynchronous) tasks that run on a single thread.
 
-As a developer, you need your application to be fast and fully optimized. One could say that Node.js is the fire and performance optimization is the gasoline. Imagine how blazing fast your app could be. This article will cover techniques, tools, and tips to optimize Node.js apps and achieve higher-performance.
+As a developer, you need your application to be fast and fully optimized. One could say that Node.js is the fire and performance optimization is the gasoline. Imagine how blazing fast your app could be. This article will cover techniques, tools, and tips to optimize Node.js apps to achieve higher-performance.
 
 ### Asynchronous Coding
-Node.js is designed with single thread concurrency architectures with non-blocking operations. Asynchronous coding is heavily used in Node.js to ensure a non-blocking operational flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your web page. It uses blocking operations that might block your main thread and this will drastically reduce your web page performance.
+Node.js is designed with single thread concurrency architectures. Asynchronous coding is heavily used in Node.js to ensure a non-blocking operational flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your web page. It uses blocking operations that might block your main thread and this will drastically reduce your web page performance.
 
 Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and add extra callbacks without blocking your main thread. Even though you may try to use Asynchronous methods, in some instances, it is possible to find your web page making some blocking calls. This is common when using third-party modules. You should keep an eye on the external libraries you are using and take precautions to avoid them dominate synchronous calls.
 
@@ -53,59 +53,52 @@ This would be the most obvious thing you would use to select your columns, right
 For example, assume you have a table Customers with fields FirstName, LastName City, State, Zip, PhoneNumber, and Notes. To SELECT fields FirstName, LastName, City, State, and Zip, the following two queries might be used.
 
 query1
+
 ```sql
 SELECT *
 FROM Customers
 ```
+
 query2
+
 ```sql
 SELECT FirstName, LastName, Address, City, State, Zip
 FROM Customers
 ```
+
 The first query will pull all the fields in this table even though we don't need all.
 The second query will pull the required fields hence The second query will be the more efficient way to perform the SELECT statement.
 The same idea should apply when using INSERT and UPDATE statements.
 
 - Use the clause WHERE
 
-The goal of the query is to pull the required records from your database. The WHERE clause helps to filter the records and limits the number of records to be pulled based on conditions. WHERE replaces the HAVING clause that selects records before filtering the dataset. In SQL operations, WHERE statements are faster as it reduces that data being processed by the database engine.
+The goal of the query is to pull the required records from your database. The WHERE clause helps to filter the records and limits the number of records to be pulled based on conditions. WHERE replaces the HAVING clause that selects records before filtering the dataset. In SQL operations, WHERE statements are faster as it reduces the data being processed by the database engine.
 
 - Use LIMIT to sample the query results
 
 LIMIT will return only the specified number of records. While using LIMIT, ensure that the results are desirable and meaningful when a limit is imposed on the dataset. For example, if our table Customer has 500 records and we only need the first 100 records. LIMIT will be an efficient way to sample out the desirable results by avoiding the selection of the extra 400 records.
 Here is an example:
+
 ```sql
 SELECT FirstName, LastName, Address, City, State, Zip
 FROM Customers LIMIT 100
 ```
-- To avoid columns use [text joins](https://dev.mysql.com/doc/internals/en/optimizer-joins.html)
-
-Joins with strings/tests are considered much slower when compared to numeric columns. The solution to this is to always make sure foreign key strings have an equivalent numeric representation where join can be performed.
-
-Here is an example:
-
-```sql
-SELECT from cars
-WHERE color = 'red'
-```
-```sql
-SELECT from cars
-WHERE color_id = 2
-```
-
-The second query will execute faster than the first query due to the numeric representation.
 
 - Avoid SELECT DISTINCT
 
-SELECT DISTINCT removes duplicate records by GROUPing them to create distinct results. In our table Customers 
+SELECT DISTINCT removes duplicate records by GROUPing them to create distinct results. In our table Customers
+
 ```sql
 SELECT DISTINCT FirstName, LastName, State, Zip FROM Customers
 ```
-may tend to group together some common first and last names such as David Smith. This will cause an inaccurate number of records. This query can be slow to execute when a table has a large number of Customers with the name 'David Smith' .
-Go for a more accurate and efficient query such as 
+
+may tend to group together some common first and last names such as David Smith. This will cause an inaccurate number of records. This query can be slow to execute when a table has a large number of Customers with the name 'David Smith'.
+Go for a more accurate and efficient query such as
+
 ```sql
 SELECT FirstName, LastName, State, Zip FROM Customers
 ```
+
 and the number of records will be accurate.
 
 - Use wildcard (%) character appropriately
@@ -113,14 +106,18 @@ and the number of records will be accurate.
 If we want to SELECT customers whose first names start with 'Avi',
 
 query1
+
 ```sql
 SELECT FirstName from Customers where FirstName like ‘%avi%’
 ```
+
 query2
+
 ```sql
 SELECT FirstName from Customers where FirstName like ‘avi%’
 ```
-The first query will pull the FirstNames such as Avishek, Avinash, Avik. This method is inefficient as it may pull unexpected results where the FirstNames has 'Avi' such as David, Xavier, Davin. The second query would be more efficient to perform this wildcard.
+
+The first query will pull the FirstNames such as Avishek, Avinash, or Avik. This method is inefficient as it may pull unexpected results where the FirstNames has 'Avi' such as David, Xavier, or Davin. The second query would be more efficient to perform this wildcard.
 
 - Running queries during off-peak hours
 
@@ -129,24 +126,24 @@ In the production database, analytical and database management queries should be
 Check out this [MySQL query performance optimization](/engineering-education/mysql-query-performance-optimization-tips/) article. It got useful Mysql tips that will improve your query writing techniques.
 
 ### Caching
-A cache is a memory buffer where frequently accessed data is temporarily stored (data that will not be changed in the near future) to be accessed more quickly. Cached data is then retrieved without having to access the origin. Caching will improve your app response time and even reduce some costs such as bandwidth and data volumes.
+A cache is a memory buffer where frequently accessed data is temporarily stored to be accessed more quickly. Cached data is then retrieved without having to access the origin. Caching will improve your app response time and even reduce some costs such as bandwidth and data volumes.
 
 Caching is a great practice to improve your app performance. If you have a low number of users, your app performance may not be greatly affected. However, performance problems may arise when the traffic grows and you need to maintain the load balance. When this happens, caching your app regularly will be a great technique to achieve higher-performance. Caching can be a little bit hard thus you need tools to cache your app efficiently such as:
 
 - [Redis cache](https://redis.io/topics/client-side-caching) it is entirely asynchronous with optimal performance to handle cached data requests in a single thread. Consider checking it out. It is a smooth API that will help you manage your client-side and server-side cache.
 - [Memcached](https://memcached.org/) stores data across different nodes. It uses a hashing schema that provides a hash table functionality. These ensure that adding, or removing a server node does not significantly change the [mapping of the keys to server nodes](https://npm.runkit.com/memcached).
-- [Node-cache](https://www.npmjs.com/package/node-cache) works almost like Memcached with the set, get, and delete methods. It has a timeout that deletes data from the cache when the time out expires.
+- [Node-cache](https://www.npmjs.com/package/node-cache) works almost like Memcached with the set, get, and delete methods. It has a timeout that deletes data from the cache when the timeout expires.
 - [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-content-caching) will help maintain load balance. Nginx will help cache static files, that will drastically offload the work of the application server. It offers low memory usage and high concurrency.
 
 ### Go Session Free
-Session data is stored in memory. As traffic in your app grows, more sessions will be generated and this might add significant overhead to your server. You need to find a means to store session data or minimize the amount of data stored in the session. Modules such as [Express.js](https://expressjs.com/) can help you create stateless server protocols. Stateless protocols do not save or store any information from previous visits.
+Session data is stored in memory. As traffic in your app grows, more sessions will be generated and this might add significant overhead to your server. You need to find the means to store session data or minimize the amount of data stored in a session. Modules such as [Express.js](https://expressjs.com/) can help you create stateless server protocols. Stateless protocols do not save, or store any information from previous visits.
 
-Switch to an external session store such as [Redis](https://redis.io/documentation), [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-basic-session-persistence) or [MongoDB](https://docs.mongodb.com/manual/reference/method/Session/). Whenever possible, the best option would be to store no session state on your server-side to better performance.
+Switch to an external session store such as [Redis](https://redis.io/documentation), [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-basic-session-persistence) or [MongoDB](https://docs.mongodb.com/manual/reference/method/Session/). Whenever possible, the best option would be to store no session state on your server-side for better performance.
 
 ### Script Tracing and Logging
-Logging helps to track your application activities and traffic. When an app is running, it is possible to get fatal errors (even though your app is running properly after production testing). You need to get this feedback on time, find out what code has the error(s), and fix them before your user notices something is faulty in your system.
+Logging helps to track your application activities and traffic. When an app is running, it is possible to get fatal errors (even though your app was running properly after production testing). You need to get this feedback on time, find out what code has the error(s), and fix them before your user notices something is faulty in your system.
 
-Commonly used methods for logging in Node.js are `console.log()` which logs Standard outputs (stdout), and `console.error()`. They will log standard errors (stderr). However, there are more efficient, and scalable libraries/3rd party APIs that will assist you in logging scripts in your Node.js app.
+Commonly used methods for logging in Node.js are `console.log()` which logs Standard outputs (stdout), and `console.error()`. They will log standard errors. However, there are more efficient, and scalable libraries/3rd party APIs that will assist you in logging Node.js scripts.
 
 They include:
 
@@ -172,6 +169,7 @@ logger.info("Information message");
 logger.warn("Warning message");
 logger.error("Error message");
 ```
+
 [**Winston logger with file transport**](https://github.com/winstonjs/winston#multiple-transports-of-the-same-type)
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/winston-logger-with-file-transport?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
@@ -203,6 +201,7 @@ app.get("/", function (req, res) {
 
 #### 3. Bunyan
 [Bunyan](https://github.com/trentm/node-bunyan) is a lightweight logger that creates log records as JSON.
+
 ```js
 const bunyan = require("bunyan");
 const log = bunyan.createLogger({ name: "myapp" });
@@ -219,16 +218,17 @@ Click this link for more details to [get started with Bunyan](https://github.com
 - Logging should be structured and done in levels
 
 ### Run Parallel
-Ensure parallel execution flow when requesting remote services, database calls, and file system access. Parallelizing tasks will greatly reduce latency and minimize any blocking operations. Parallel operation means running multiple things at the same time. You should note that parallel is different from asynchronous. With parallel, you do not have control of what finishes before the other, as your code will be optimized to run tasks at the same time. Generally, Node.js does not technically execute these multiple tasks at the same time. What happens it that each task is pushed to an asynchronous event loop with no control of which task will finish before the other. If your execution needs to complete one or more tasks before the other please consider going asynchronous.
+Ensure parallel execution flow when requesting remote services, database calls, and file system access. Parallelizing tasks will greatly reduce latency and minimize any blocking operations. Parallel operation means running multiple things at the same time. With parallel, you do not have control of what finishes before the other, as your code will be optimized to run tasks at the same time. Generally, Node.js does not technically execute these multiple tasks at the same time. What happens it that each task is pushed to an asynchronous event loop with no control of which task will finish before the other. If your execution needs to complete one or more tasks before the other please consider going asynchronous.
 
 For example:
 
-[Async.js](https://caolan.github.io/async/v3/) is used to run parallel functions  `async.parallel(tasks, callback)`.
-
-- **Tasks**: tasks to be executed such as arrays, objects, etc
-- **Callback**: pass all tasks results and execute when all task compilation is completed
+[Async.js](https://caolan.github.io/async/v3/) is used to run parallel functions.
 
 **Simple example using async.parallel with an array**
+Syntax: `async.parallel(tasks, callback)`.
+**Parameters**
+- Tasks: tasks to be executed such as arrays, objects, etc
+- Callback: pass all tasks results and execute when all tasks compilation is completed
 
 ```js
 const async = require("async");
@@ -256,6 +256,7 @@ async.parallel(
   }
 );
 ```
+
 **Using an object instead of an array**
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/asyncparallel-with-an-object?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
@@ -286,9 +287,9 @@ app.use(compression());
 ### Avoid Memory Leaks
 A [memory leak](https://en.wikipedia.org/wiki/Memory_leak) occurs when a computer program incorrectly manages memory allocations in a way that memory which is no longer needed is not released. With memory leaks, a loaded page will reserve more and more memory. These will slowly occupy your available space to a point where CPU usage is overstretched. Such scenarios will severely affect your application performance.
 
-You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution. The problem will repeat itself and the memory will pile up periodically. Memory leaks can come from a [DOM](/engineering-education/document-object-model/) that has been removed from a page but some variables still make some reference to them. If you happen to remove [DOM](/engineering-education/document-object-model/) values, make sure to set them to null (when null, the garbage collector will eliminate them) and avoid memory leaks.
+You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution. The problem will repeat itself and the memory will pile up periodically. Memory leaks can come from a [DOM](/engineering-education/document-object-model/) that has been removed from a page but some variables still make some reference to them. If you happen to remove [DOM](/engineering-education/document-object-model/) values, make sure to set them to null. When null, the garbage collector will eliminate them and avoid memory leaks.
 
-Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome Dev Tools is simple. It will help you catch and debug memory leaks. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more about how to detect and solve memory leaks using Chrome Dev Tools.
+Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome Dev Tools will help you catch and debug memory leaks. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more about how to detect and solve memory leaks using Chrome Dev Tools.
 
 ### Real-time Monitoring
 Monitoring helps get insights into your production application to ensure a stable and reliable system. Insights are critical in helping detect performance problems within your system.
@@ -307,13 +308,15 @@ You may consider using [Google Analytics](https://analytics.google.com/analytics
 Node.js monitoring frameworks include [Hapi](https://github.com/hapijs/hapi), [Restify](http://restify.com/), [Derby](https://derbyjs.com/), [Express](https://expressjs.com/), [Koa](https://koajs.com/), and [Mocha](https://mochajs.org/).
 
 ### Keeping your Code Light and Compact
-When developing mobile apps, make sure you apply the concept of making your codebase small and compact for both the client code and server code. This will reduce latency and increase speed for load times.
+When developing mobile and web apps, make sure you apply the concept of making your codebase small and compact for both the client code and server code. This will reduce latency and increase speed for load time.
 
 When it comes to making your code light, a single page web app is a great choice to consider. For example, let's assume your web app has a page with six JavaScript files. When this page is accessed in the browser, that browser will make six HTTP requests to fetch all your files. This will create a block and wait scenario. This is a good example of when you could minimize and link your multiple files into one to avoid scenarios like this.
 
 Node.js has a lot of open source libraries and modules. During the development stage, you need to ask yourself why are you using this framework over another. You need to find out if a framework is worth using or if there are other simpler ways to write your code.
 
 The point is when you consider using a framework it should be well worth it. This does not mean choosing frameworks is bad. Frameworks are great. They are scalable and have undisputed benefits. Consider using a framework only if it will simplify your code.
+
+**Example**
 
 When dealing with date objects, it would be advisable to use a library like [Moment.js](engineering-education/nodejs-date-and-time-objects-with-moment/) instead of using the native JavaScript date object. Not because JavaScript date objects are bad in any way, but you will need to add a lot of code setups just to set up and display a simple date format.
 
@@ -348,9 +351,9 @@ console.log(today);
 
 As a developer, which of the example methods above would you consider?
 
-Remember all these code blocks outputs today's date. When working with frameworks. Consider looking at alternative modules that are relatable to your code context and that may be a better fit.
+Remember all these code blocks outputs today's date. When working with frameworks. Consider looking at alternative modules that are relatable to your code context.
 
-For example, date-fns is an alternative date object library to Moment.js. Interestingly, date-fns is considered more light-weight compared to Moment.js yet, they do the same job.
+For example, date-fns is an alternative date object library to Moment.js. Date-fns is considered more light-weight compared to Moment.js yet, they do the same job.
 
 As a developer, you need to understand that dilemma and wisely choose which library to use during the development stage. In such a scenario, date-fns will improve your bundle size since it is smaller and help avoid performance overhead.
 
