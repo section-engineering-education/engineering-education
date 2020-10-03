@@ -25,7 +25,7 @@ As a developer, you need your application to be fast and fully optimized. One co
 ### Asynchronous Coding
 Node.js is designed with single thread concurrency architectures. Asynchronous coding is heavily used in Node.js to ensure a non-blocking operational flow. Asynchronous I/O permits other processing to continue even before the first transmission has finished. Synchronous coding can potentially lock your web page. It uses blocking operations that might block your main thread and this will drastically reduce your web page performance.
 
-Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and add extra callbacks without blocking your main thread. Even though you may try to use Asynchronous methods, in some instances, it is possible to find your web page making some blocking calls. This is common when using third-party modules. You should keep an eye on the external libraries you are using and take precautions to avoid them dominate synchronous calls.
+Asynchronous coding will allow you to use queues to monitor your workflow, allowing you to append additional tasks and add extra callbacks without blocking your main thread. Even though you may try to use Asynchronous methods, in some instances, it is possible to find your web page making some blocking calls. This is common when using third-party modules. You should keep an eye on the external libraries you are using and take precautions to avoid them dominating synchronous calls.
 
 Take a look at the example below: We used the file read operation in both models using the [Node.js file system](engineering-education/node-file-handling/)
 
@@ -76,7 +76,7 @@ The goal of the query is to pull the required records from your database. The WH
 
 - Use LIMIT to sample the query results
 
-LIMIT will return only the specified number of records. While using LIMIT, ensure that the results are desirable and meaningful when a limit is imposed on the dataset. For example, if our table Customer has 500 records and we only need the first 100 records. LIMIT will be an efficient way to sample out the desirable results by avoiding the selection of the extra 400 records.
+LIMIT will return only the specified number of records. While using LIMIT, ensure that the results are desirable and meaningful when a limit is imposed on the dataset. For example, if our table Customer has 500 records and we only need the first 100 records, LIMIT will be an efficient way to sample out the desirable results by avoiding the selection of the extra 400 records.
 Here is an example:
 
 ```sql
@@ -123,14 +123,14 @@ The first query will pull the FirstNames such as Avishek, Avinash, or Avik. This
 
 In the production database, analytical and database management queries should be executed when the concurrent users are at their lowest peak. Typically at night around 3 to 5 am.
 
-Check out this [MySQL query performance optimization](/engineering-education/mysql-query-performance-optimization-tips/) article. It got useful Mysql tips that will improve your query writing techniques.
+Check out this [MySQL query performance optimization](/engineering-education/mysql-query-performance-optimization-tips/) article. It has useful Mysql tips that will improve your query writing techniques.
 
 ### Caching
 A cache is a memory buffer where frequently accessed data is temporarily stored to be accessed more quickly. Cached data is then retrieved without having to access the origin. Caching will improve your app response time and even reduce some costs such as bandwidth and data volumes.
 
 Caching is a great practice to improve your app performance. If you have a low number of users, your app performance may not be greatly affected. However, performance problems may arise when the traffic grows and you need to maintain the load balance. When this happens, caching your app regularly will be a great technique to achieve higher-performance. Caching can be a little bit hard thus you need tools to cache your app efficiently such as:
 
-- [Redis cache](https://redis.io/topics/client-side-caching) it is entirely asynchronous with optimal performance to handle cached data requests in a single thread. Consider checking it out. It is a smooth API that will help you manage your client-side and server-side cache.
+- [Redis cache](https://redis.io/topics/client-side-caching) is entirely asynchronous with optimal performance to handle cached data requests in a single thread. Consider checking it out. It is a smooth API that will help you manage your client-side and server-side cache.
 - [Memcached](https://memcached.org/) stores data across different nodes. It uses a hashing schema that provides a hash table functionality. These ensure that adding, or removing a server node does not significantly change the [mapping of the keys to server nodes](https://npm.runkit.com/memcached).
 - [Node-cache](https://www.npmjs.com/package/node-cache) works almost like Memcached with the set, get, and delete methods. It has a timeout that deletes data from the cache when the timeout expires.
 - [Nginx](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/#configuring-content-caching) will help maintain load balance. Nginx will help cache static files, that will drastically offload the work of the application server. It offers low memory usage and high concurrency.
@@ -175,7 +175,7 @@ logger.error("Error message");
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/winston-logger-with-file-transport?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 #### 2. Morgan
-[Morgan](https://github.com/expressjs/morgan) is an HTTP request logger middleware for Node.js applications. Morgan gives insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) carry out to the access-log or error-log.
+[Morgan](https://github.com/expressjs/morgan) is an HTTP request logger middleware for Node.js applications. Morgan gives insight on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers. Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) carry out to the access-log or error-log.
 
 Below we have an example app that will write one log file per day in the log/directory using the [rotating-file-stream module](https://www.npmjs.com/package/rotating-file-stream).
 
@@ -284,17 +284,17 @@ app.use(compression());
 // add all routes
 ```
 
-"Here are more details on how to [connect express with compression](https://github.com/expressjs/compression#examples).
+Here are more details on how to [connect express with compression](https://github.com/expressjs/compression#examples).
 
 ### Avoid Memory Leaks
 A [memory leak](https://en.wikipedia.org/wiki/Memory_leak) occurs when a computer program incorrectly manages memory allocations in a way that memory which is no longer needed is not released. With memory leaks, a loaded page will reserve more and more memory. These will slowly occupy your available space to a point where CPU usage is overstretched. Such scenarios will severely affect your application performance.
 
-You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution. The problem will repeat itself and the memory will pile up periodically. Memory leaks can come from a [DOM](/engineering-education/document-object-model/) that has been removed from a page but some variables still make some reference to them. If you happen to remove [DOM](/engineering-education/document-object-model/) values, make sure to set them to null. When null, the garbage collector will eliminate them and avoid memory leaks.
+You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution. The problem will repeat itself and the memory will pile up periodically. Memory leaks can come from a [DOM](/engineering-education/document-object-model/) that has been removed from a page but some variables still have a reference to them. If you happen to remove [DOM](/engineering-education/document-object-model/) values, make sure to set them to null. When null, the garbage collector will eliminate them and avoid memory leaks.
 
 Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome Dev Tools will help you catch and debug memory leaks. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more about how to detect and solve memory leaks using Chrome Dev Tools.
 
 ### Real-time Monitoring
-Monitoring helps get insights into your production application to ensure a stable and reliable system. Insights are critical in helping detect performance problems within your system.
+Monitoring helps get insight into your production application to ensure a stable and reliable system. Insight is critical in helping detect performance problems within your system.
 
 As a developer, you need to know when your system is down before your customers start complaining about your faulty system. That is why you need real-time alerts so you can be notified immediately.
 
@@ -305,12 +305,12 @@ Proper monitoring also helps get insight into the features of your application's
 - [Newrelic](https://newrelic.com/products/application-monitoring)
 - [Stackify](https://stackify.com/retrace/)
 
-You may consider using [Google Analytics](https://analytics.google.com/analytics/academy/course/6) to get insights such as user visits, traffic, traffic sources, bounce rate, user retention rate, sessions, session durations as well as page views.
+You may consider using [Google Analytics](https://analytics.google.com/analytics/academy/course/6) to get insight such as user visits, traffic, traffic sources, bounce rate, user retention rate, sessions, session durations as well as page views.
 
 Node.js monitoring frameworks include [Hapi](https://github.com/hapijs/hapi), [Restify](http://restify.com/), [Derby](https://derbyjs.com/), [Express](https://expressjs.com/), [Koa](https://koajs.com/), and [Mocha](https://mochajs.org/).
 
 ### Keeping your Code Light and Compact
-When developing mobile and web apps, make sure you apply the concept of making your codebase small and compact for both the client code and server code. This will reduce latency and increase speed for load time.
+When developing mobile and web apps, make sure you apply the concept of making your codebase small and compact for both the client code and server code. This will reduce latency and load times.
 
 When it comes to making your code light, a single page web app is a great choice to consider. For example, let's assume your web app has a page with six JavaScript files. When this page is accessed in the browser, that browser will make six HTTP requests to fetch all your files. This will create a block and wait scenario. This is a good example of when you could minimize and link your multiple files into one to avoid scenarios like this.
 
