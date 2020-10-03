@@ -225,7 +225,9 @@ For example:
 [Async.js](https://caolan.github.io/async/v3/) is used to run parallel functions.
 
 **Simple example using async.parallel with an array**
+
 Syntax: `async.parallel(tasks, callback)`.
+
 **Parameters**
 - Tasks: tasks to be executed such as arrays, objects, etc
 - Callback: pass all tasks results and execute when all tasks compilation is completed
