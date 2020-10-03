@@ -129,7 +129,7 @@ GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DE
 googleSignIn = (Button) findViewById(R.id.googleSignIn);
         googleSignIn.setOnClickListener(new View.OnClickListener()
         {
-@@ -145,9 +141,9 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
+         googleSignIn = (Button) findViewById(R.id.googleSignIn);
     }
 ```
 
@@ -161,7 +161,23 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
  private void handleSignInResult(Task<GoogleSignInAccount> completedTask)
     {
         try {
-@@ -193,9 +187,9 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            Toast.makeText(MainActivity.this,"Signed In Successfully",Toast.LENGTH_SHORT).show();
+            FirebaseGoogleAuth(account);
+        }
+        catch (ApiException e){
+            Toast.makeText(MainActivity.this,"Sign In Failed",Toast.LENGTH_SHORT).show();
+            FirebaseGoogleAuth(null);
+
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Intent mainIntent = new Intent(MainActivity.this, Home.class);
+                    startActivity(mainIntent);
+                }
+            }, 500);
         }
     }
 ```
