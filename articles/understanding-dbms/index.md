@@ -15,10 +15,10 @@ images:
     alt: Database Architecture and Models example image
 
 ---
-Computers have made our lives easier in handling complicated calculations and solving complex problems. Hands down computers are one of the best inventions of mankind. While using computers and instilling them in our lives has made our work a piece of cake, maintaining them can be a difficult to accomplish.
+Computers have made our lives easier in handling complicated calculations and solving complex problems. Hands down computers are one of the best inventions of mankind. While using computers and instilling them in our lives has made our work a piece of cake, maintaining them can be difficult to accomplish.
 <!--more-->
-### Central Processing Unit
-Computers are nothing more but a series of electrical and electronic circuits that run together to form a single working unit called the **CPU (short for Central Processing Unit)**. One such component of the CPU is the **Memory Unit**.
+### Memory Unit
+Computers are constructed around an integral part called the **Motherboard**. Onto the motherboard, various working components are fixed such as processors, slots, controllers, buses etc. The computer would not be totally functional if the motherboard had one faulty component. For the computer to run properly all the components rely on each other and work together. One such component is the **Memory Unit**.
 This particular unit is responsible for storing everything the computer does or processes in the form of bytes.
 
 Now as humans, we may not understand bytes or binaries. But the computer does, and it stores these instruction as data. The computer processes this data and generates the correct facts and figures in the form of output. This corresponds to only one instruction. As a matter of fact, the computer is capable of processing millions of instructions in any given second.
