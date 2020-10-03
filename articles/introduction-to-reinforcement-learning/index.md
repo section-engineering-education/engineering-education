@@ -62,6 +62,7 @@ That's Q-learning in a nutshell.
 ### Applications of Reinforcement Learning
 
 #### Games
+
 Reinforcement Learning is quite widely used in building AI for playing computer games. In 2016, Deepmind Technologies, a UK based Artificial Intelligence and Research Company built AlphaGo, an RL controlled computer program that plays the board game, Go (an ancient Chinese board game). The computer program was able to beat Lee Sedol, a Korean Go world champion 4-1 in a 5 match game. Feel free to [read more on the AlphaGo case study](https://deepmind.com/research/case-studies/alphago-the-story-so-far/).
 
 Subsequent versions of AlphaGo such as AlphaGo Zero and MuZero became even more powerful as they were completely self-taught using RL without learning from human games and being taught the game rules respectively.
