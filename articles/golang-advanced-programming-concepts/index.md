@@ -35,7 +35,7 @@ The first two articles in the series cover all the prerequisites mentioned above
 - [Arrays](#arrays)
 - [Structures](#structures)
 - [Putting It All Together](#putting-it-all-together)
-- [Further Reading](#further-reading)
+- [Further Reading](#conclusion-and-further-reading)
 
 ### Functions
 A [function](https://www.tutorialspoint.com/computer_programming/computer_programming_functions.htm) can be defined as a set of reusable code that can be used to perform a particular task based on the requirements of the user. In other words, if there are a lot of repetitive tasks in the program, the user can create a function for that particular task.
