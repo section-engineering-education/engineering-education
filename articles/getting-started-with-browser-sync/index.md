@@ -186,4 +186,4 @@ Click on the index file to see your project.
 
 This is a little out of what Browser-sync has to offer. To find out more about what you can do with Browser-sync, check out their detailed [documentation](https://www.browsersync.io/docs).
 
-Thank you for reading.
+Thank you for reading!.
