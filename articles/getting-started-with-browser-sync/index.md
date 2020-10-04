@@ -40,10 +40,14 @@ Browser-sync is an automation tool that allows you to keep multiple browsers & d
 >I've been trying out different local servers just to replace the hassle of using live servers. I found that [Browser-sync](https://www.browsersync.io/) was the best because it has so many useful features. A stitch in time saves nine which really sums it up.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >Browser-sync is awesomely fast, with incredible features you can use. Browser-sync allows you to also check your work preview simultaneously on different devices, provided you are connected to the same network.
 =======
 >Browser-sync is awesomely fast, with incredible features for your use. Browser-sync allows you to also check your work preview simultaneously on different devices, provided you are connected to the same network.
 >>>>>>> 872e5832c66ee31a22aaa2789d459dcbec2f79e8
+=======
+>Browser-sync is awesomely fast, with incredible features for your use. Browser-sync allows you to also check your work preview simultaneously on different devices, provided you are connected to the same network.
+>>>>>>> parent of df9075d... Major readability revision
 
 ![Internal-UI-Interface](/engineering-education/getting-started-with-browser-sync/browsersync-dashboard.png)
 
@@ -124,8 +128,11 @@ If you look back at your previous command, it sounds like this: hey _browser-syn
 
 The image below has a "\*\*/*\*" instead of the single asterisk "\*" used in the first command, the reason is: When next you want to work on your project after the first time, you will have to use this command ```browser-sync start --server --directory --files "**/*"``` to start the Browser-sync.
 
+  
+
 ![Watching-over-your-files-again](/engineering-education/getting-started-with-browser-sync/watching-files.png)
 
+<<<<<<< HEAD
 Did you notice that each URL has both internal and external URLs? The internal URL will be used to access the project in your browser, while the external URL will be used to access the project on an external device. That is the power of Browser-sync.
 
   
@@ -135,6 +142,10 @@ Did you notice that each URL has both internal and external URLs? The internal U
   
 Did you notice that each URL has both internal and external URLs? 
 The internal URL will be used to access the project in your browser, while the external URL will be used to access the project on an external device. That is the power of Browser-sync.
+=======
+  
+Did you notice that each URL has both internal and external URLs? That is the power of Browser-sync.
+>>>>>>> parent of df9075d... Major readability revision
 
 Your files are ready and have been served. After the above command, the next interface you will see is similar to the one below
 
@@ -152,7 +163,11 @@ Click on the index file to see your project.
 
 4. URL history: Browser-sync logs all browsing history so you can push a test URL to all devices.
 
+<<<<<<< HEAD
 5. Compatibility: Browser-sync is compatible with many task runners like [GULP](https://browsersync.io/docs/gulp) and [Grunt](https://browsersync.io/docs/grunt) and it is cross-platform enabled.
+=======
+5. Compatibility: Browser-sync is compatible with many task runners like GULP and Grunt and it is cross-platform enabled.
+>>>>>>> parent of df9075d... Major readability revision
 
 ### Conclusion
 
