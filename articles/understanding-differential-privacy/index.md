@@ -32,7 +32,7 @@ In this digital era, most of the companies are data-driven. Our data is harveste
 
 In the late 2000s, Netflix ran a competition for building a recommendation system. To build, they released a large dataset by anonymizing the data which didn’t leak the movie names or users' ratings. Two professors from the University of Texas [de-anonymized](https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf) them completely by comparing them with IMDB ratings,  thus revealing the personal information about the dataset. Data privacy is compromised! Similarly, one such data breach of health records happened in 1997 too.
 
-This sort of data leakage is very alarming both to the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). Well, there is an alternative to use Federated learning, where we bring the model to the data instead of vice-versa. Fundamentally, we must understand the concept of Differential privacy to check for leakage in data.
+This sort of data leakage is very alarming both to the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). Well, there is an alternative to use Federated learning, where we bring the model to the data instead of vice-versa. Fundamentally, we must understand the concept of Differential Privacy to check for leakage in data.
 
 ### Differential Privacy
 
@@ -40,7 +40,7 @@ This sort of data leakage is very alarming both to the users as well as organiza
 
 *Anything that can be learned from a statistical database can be learned without accessing the database*
 
-This definition does not hold true always. We need to consider two things, first is people and the second is data. We need to protect people's rights as well as predict rightly using their data. In certain cases, the whole database must be kept private, to protect the information, because there are chances of data leaks.
+This definition does not hold always. We need to consider two things, first is people and the second is data. We need to protect people's rights as well as predict rightly using their data. In certain cases, the whole database must be kept private, to protect the information, because there are chances of data leaks.
 
 #### Modern definition
 
@@ -63,7 +63,7 @@ Similarly, there are other types of differencing attacks using various other fun
 
 ### Implementing differential privacy
 
-Now, we are going to implement Differential privacy for a simple database query. The database has only 1 column with boolean types. The boolean type denotes if a person possesses some private attribute or not (like, if a person has a particular disease or not). And, we are going to learn, if the database is differentially private or not.
+Now, we are going to implement Differential privacy for a simple database query. The database has only 1 column with boolean types. The boolean type denotes if a person possesses some private attribute or not (example, if a person has a particular disease or not). And, we are going to learn, if the database is differentially private or not.
 
 #### Creating a database
 
@@ -96,7 +96,7 @@ To demonstrate Differential privacy, we try to manually omit certain values from
 Out[1]: tensor([ True, False, False,  ..., False, False, False])
 ```
 
-Now, we create a set of such databases (Parallel databases), where index `i` is removed from each of the database.
+Now, we create a set of such databases (Parallel databases), where index `i` is removed from each of the databases.
 
 ```python
   def get_parallel_dbs(db):
@@ -249,15 +249,15 @@ There are several such use-cases, where differential privacy is used. In the nea
 
 ### Conclusion
 
-We have had an overview of what Differential privacy is, and its importance in helping us preserve privacy. This blog serves only as an introduction to differential privacy, more about it can be found in the below-referenced articles. To understand the concepts, you must try implementing them, [this](https://github.com/udacity/private-ai/blob/master/completed) would be a starting point.
+We have had an overview of what Differential privacy is, and its importance in helping us preserve privacy. This blog serves only as an introduction to differential privacy, more about it can be found in the referenced articles below. To understand the concepts, you must try implementing them, [this](https://github.com/udacity/private-ai/blob/master/completed) would be a starting point.
 
 To summarize:
 
-- We learnt the importance of privacy
-- We learnt what differential privacy is
-- We implemented privacy leakage in databases, to prove the need of differential privacy
-- We studied various methods to resolve data leakages
-- We learnt a few use-cases of differential privacy
+- We learnt the importance of privacy.
+- We learnt what differential privacy is.
+- We implemented privacy leakage in databases, to prove the need for differential privacy.
+- We studied various methods to resolve data leakages.
+- We learnt a few use-cases of differential privacy.
 
 ### Further reading
 
