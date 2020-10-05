@@ -80,6 +80,8 @@ Create a simple database containing 5000 entries consisting of values True/False
   db
 ```
 
+**Output:**
+
 ```bash
 Out[0]: tensor([0, 1, 0,  ..., 0, 1, 1], dtype=torch.uint8)
 ```
@@ -92,6 +94,8 @@ To demonstrate Differential privacy, we try to manually omit certain values from
   
   get_parallel_db(db, 3)
 ```
+
+**Output:**
 
 ```bash
 Out[1]: tensor([ True, False, False,  ..., False, False, False])
@@ -109,6 +113,8 @@ Now, we create a set of such databases (Parallel databases), where index `i` is 
 
   get_parallel_dbs(db)
 ```
+
+**Output:**
 
 ```bash
 Out[2]: [tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, False,
@@ -149,6 +155,8 @@ Finding the sum of all values in the Original database (without removing values)
   print(full_db_result)
 ```
 
+**Output:**
+
 ```bash
 Out[4]: tensor(2454)
 ```
@@ -166,6 +174,8 @@ Finding the sum of all values in New database (each containing 1 missing value)
           sensitivity = db_distance # Measure if privacy has been leaked
   print(sensitivity)
 ```
+
+**Output:**
 
 ```bash
 >> tensor(1)
