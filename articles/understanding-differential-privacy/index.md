@@ -15,6 +15,7 @@ images:
 ---
 
 In this article, we will get an overview of resolving the privacy issue using Differential privacy. You will understand the basics of how privacy is preserved in Databases used for Machine learning and Deep learning. Though understanding differential privacy requires a Mathematics background, this article covers a very basic overview of the concepts. You will also be coding a sample database and check if it is differentially private or not.
+<!--more-->
 
 ### Table of contents
 
