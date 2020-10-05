@@ -1,11 +1,11 @@
-# Introduction to Deep Learning
-## Introduction
+### Introduction
 Deep Learning is becoming popular among IT enthusiasts because of its promising benefits. It enables image recognition, natural language processing, and voice recognition to take place. You have ever wondered how machines work and function like the human brain? Well, this is all about deep learning. Deep learning is a potent tool, and once you read this article, you will understand what DL is and how it works.
 
 ### What is Deep Learning?
 
 ![Venn diagram](/engineering-education/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
-[\*Image source\*](https://www.google.com/search?q=venn+diagram+ai+ml+dl&amp;rlz=1C1CHBF_enKE891KE892&amp;sxsrf=ALeKk019OE6-0Yl0leowWVixwzGksI4k2Q:1600184664101&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwin6-mzwOvrAhWUtXEKHYszBV8Q_AUoAXoECA4QAw&amp;biw=1707&amp;bih=730#imgrc=3mrRFqwqrNIOhM&amp;imgdii=7qS9cc31c_3s3M)
+[\*Image source\*](https://towardsdatascience.com/cousins-of-artificial-intelligence-dda4edc27b55
+)
 
 Deep Learning is a subset of Machine Learning that learns features and tasks directly from data such as image, text, or sound. On the other hand, Machine Learning is a subset of Artificial Intelligence. AI is the capability of machines and computers to mimic human intelligence and behaviour. AI is accomplished by studying how the human brain thinks, learns, and works while trying to solve a problem. ML is a branch of AI that gives machines and computers the ability to learn data without being programmed.
 
