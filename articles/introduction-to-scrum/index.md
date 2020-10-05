@@ -49,7 +49,7 @@ The team is cross-functional and self-organizing in the sense that it does not r
 The product owner plays in the part of a client or stakeholder. He/She is one person and not a group of people. He or she is responsible for managing the product backlog by clearly expressing items that need to be addressed. The product owner ensures that the product backlog items are clear for the development team.
 
 #### The Development Team
-It is a team with the necessary skills to create a product increment by itself. That is why it is said to be cross-functional and self-organizing. Members lay multiple roles such as design, business analysis, operations, programming, and testing. Thus, the team recognizes no title for any of its members. Team members may have some particular competencies and areas of specialization, but they are accountable as one. The team size can range from three to nine members.
+It is a team with the necessary skills to create a product increment by itself. That is why it is said to be cross-functional and self-organizing. Members lay multiple roles such as design, business analysis, operations, programming, and testing. Thus, the team recognizes no title for any of its members. Team members may have some particular competencies and areas of specialization, but they are accountable as one. The team size can consist from three to nine members.
 
 ### The Scrum Master
 The scrum master is a ["servant leader"](https://www.investopedia.com/terms/s/servant-leadership.asp) responsible for protecting the team and the process. The scrum master helps everyone understands the scrum framework as defined in the [scrum guide](https://www.scrumguides.org/scrum-guide.html). Other responsibilities include:
@@ -75,7 +75,7 @@ The scrum team discuss the items to be worked on during the sprint and creates a
 It is a fifteen-minute Stand-up event for the development team held daily. Preferably, it should be held at the same venue and time. The team discusses what they have completed in the last 24 hours and plan for the next 24 hours' work. A check on the progress towards the sprint goals is also done in the stand-up meeting.
 
 #### Sprint Review
-Sprint Review is held towards the end of the Sprint. The team demonstrates the completed work to the product owner and the partners. It is meant to get feedback and encourage collaboration. It takes at most four hours for a one-month sprint. The development team discuss what worked out during the sprint, the challenges encountered, and how they were addressed. They also discuss how they will improve the process in the future. Sprint review provides important input to the upcoming sprint planning. The deliverable of a Sprint Review is an updated product backlog items for the coming sprint.
+Sprint Review is held towards the end of the Sprint. The team showcases the completed work to the product owner and the partners. It is meant to get feedback and encourage collaboration. It takes at most four hours for a one-month sprint. The development team discuss what worked out during the sprint, the challenges encountered, and how they were addressed. They also discuss how they will improve the process in the future. Sprint review provides important input to the upcoming sprint planning. The deliverable of a Sprint Review is an updated product backlog items for the coming sprint.
 
 #### Sprint Retrospective
 The event happens before the next sprint planning. It takes at most three hours for a one-month Sprint. The scrum team discusses the following:
@@ -90,7 +90,7 @@ Scrum Team members make actionable commitments. The deliverables of this meeting
 In Scrum, artifacts are there to ensure and maximize the transparency of information. Every team member must have the same interpretation of an artifact.
 
 #### Product Backlog
-The product backlog consists of a list of features, functions, enhancements, and fixes needed. It is the only source of requirements for the Scrum Team. The product owner is responsible for its content, availability, and ordering. Since the requirement never stops changing, so does the product backlog. All the requirements are broken down, with the most prioritized at the top.
+The product backlog consists of a list of features, functions, enhancements, and fixes needed. It is the only source of requirements for the Scrum Team. The [product owner is responsible](https://www.slideshare.net/IngoMatzner/scrum-in-30min-88049147) for its content, availability, and ordering. Since the requirement never stops changing, so does the product backlog. All the requirements are broken down, with the most prioritized at the top.
 
 #### Sprint Backlog
 The current sprint backlog items are selected from high priority features in the product backlog. It is the output of the sprint planning event. The sprint backlog is modified throughout the sprint. Burndown charts are used to monitor sprint progress. A burndown chart shows the relationship between work left to do and time. See the diagram below.
@@ -110,7 +110,7 @@ There are many reasons why we should use Scrum:
 - It is easy to learn and use: As discussed, there are only three roles in the framework, thus easy to learn and implement.
 
 ### Conclusion
-Scrum framework rules, artifacts, roles, and events are easy to understand. Each successful Sprint makes the team motivated and keeps the user happy as the progress is seen in short durations. Scrum is indeed an excellent agile project management framework for any organization. However, it takes time to master Scrum, but the long-term benefits outweigh the learning curve. Online collaboration tools to help you master scrum faster are also available. Some of them include [ScrumDo](https://www.scrumdo.com/), [Quickscrum](https://www.quickscrum.com/), [Scrumwise](https://www.scrumwise.com/), [Tuleap](https://www.tuleap.org/), [Targetprocess](https://www.targetprocess.com/), and [Vivifyscrum](https://www.vivifyscrum.com/).
+Scrum framework rules, artifacts, roles, and events are easy to understand. Each successful Sprint makes the team motivated and keeps the user happy as the progress is seen in short durations. Scrum is indeed an excellent agile project management framework for any organization. However, it takes time to master Scrum, but the long-term benefits are well worth getting through the learning curve. Online collaboration tools to help you master scrum faster are also available. Some of them include [ScrumDo](https://www.scrumdo.com/), [Quickscrum](https://www.quickscrum.com/), [Scrumwise](https://www.scrumwise.com/), [Tuleap](https://www.tuleap.org/), [Targetprocess](https://www.targetprocess.com/), and [Vivifyscrum](https://www.vivifyscrum.com/).
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
