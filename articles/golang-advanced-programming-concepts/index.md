@@ -20,7 +20,7 @@ images:
 In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
 
 ### Prerequisites
-1. Golang installed on your system (The first article covers this in detail).
+1. Have Golang installed on your system (The first article covers this in detail).
 
 2. Basic understanding of the Go workspace.
 
@@ -73,7 +73,7 @@ func main() {
 
 The function `add_numbers()` takes 2 parameters: the two numbers to be added, and returns the sum of the two numbers. The two numbers are specified as `int` in the above example, but the parameters can be of any data type permissible in Go.
 
-For more information on Go datatypes, please visit this [link](/engineering-education/golang-part-2-programming-basics/). The return type is also specified as int because the sum of two integers is also an integer.  
+For more information on Go datatypes, please visit this [link](/engineering-education/golang-part-2-programming-basics/). The return type is also specified as `int` because the sum of two integers is also an integer.  
 
 A function can be ["called"](https://www.digitalocean.com/community/tutorials/how-to-define-and-call-functions-in-go) or "invoked" by specifying the name of the function and passing the required parameters. In the example above, we call the `add_numbers()` function by passing two integers as parameters.  
 
@@ -117,7 +117,7 @@ func main() {
 }
 ```
 
-In the example above, we create an array of integers called "test" with a length of 10. We then assign the values 10 and 20 to the first and second index, respectively. We can retrieve and print the first value by referring to the index 0.
+In the example above, we created an array of integers called "test" with a length of 10. We then assigned the values 10 and 20 to the first and second index, respectively. We can retrieve and print the first value by referring to the index 0.
 
 ```go
 package main
@@ -137,7 +137,7 @@ func main() {
 }
 ```
 
-We can also use loops to assign values to the array. In the example above, we assign values from 0 to 9 to the elements in the array and then print them on the screen.
+We can also use loops to assign values to the array. In the example above, we assigned values from 0 to 9 to the elements in the array and then printed them on the screen.
 
 ### Structures
 A [structure](https://medium.com/rungo/structures-in-go-76377cc106a2), also called struct, is similar to a [class](https://en.wikipedia.org/wiki/Class_(computer_programming)) in the [object-oriented](https://searchapparchitecture.techtarget.com/definition/object-oriented-programming-OOP) paradigm.
