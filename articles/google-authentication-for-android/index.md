@@ -12,7 +12,7 @@ In 2019, one of the top ten User Experience (UX) trends were using third-party a
 * [Firebase](https://firebase.google.com/)- A platform developed by Google for creating mobile and web applications.
 * [Dependency](https://developer.android.com/studio/build/dependencies)- A platform developed by Google for creating mobile and web applications.
 * [Json](https://www.json.org/json-en.html)- (JavaScript Object Notation) is a lightweight data-interchange format.
-* [FirebaseAuth](https://firebase.google.com/docs/auth#:~:text=Firebase%20Authentication%20provides%20backend%20services,Facebook%20and%20Twitter%2C%20and%20more.)- Provides backend services, SDKs, and UI libraries to authenticate users to your application. 
+* [FirebaseAuth](https://firebase.google.com/docs/auth#:~:text=Firebase%20Authentication%20provides%20backend%20services,Facebook%20and%20Twitter%2C%20and%20more.)- Provides backend services, SDKs, and UI libraries to authenticate users to your application.
 
 ### Prerequisites
 * [Google](https://www.google.com/account/about/) account
@@ -44,7 +44,6 @@ Add the following dependency in your **app** module `build.gradle` file:
 dependencies {
   implementation 'com.shobhitpuri.custombuttons:google-signin:1.1.0'
 }
-
 ```
 
 Click on *Sync Now*.
@@ -67,7 +66,6 @@ app:layout_constraintStart_toStartOf="parent"
 app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 ```
 **Note: `app:isDarkTheme="{Boolean}"` : To switch between blue theme and gray-white for the button. The library handles the changing of text color and background color. It also handles the change of color on button press or button clicks.**
 
@@ -82,7 +80,6 @@ Set up and connect your project on Firebase by following instructions stated by 
 ```gradle
   implementation 'com.google.firebase:firebase-auth:19.4.0'
   implementation 'com.google.android.gms:play-services-auth:18.1.0'
-
 ```
 In our `MainActivity.java` add the following lines of code;
 
@@ -96,13 +93,13 @@ private Button googleSignIn;
 private int RC_SIGN_IN = 1
 ```
 
- * In the activity's `onCreate` method, initiate `FirebaseAuth` which is used to Authenticate users
+* In the activity's `onCreate` method, initiate `FirebaseAuth` which is used to Authenticate users
 
  ```java
  //Initializing Auth
 firebaseAuth = FirebaseAuth.getInstance();
-
 ```
+
 * Next, configure Google Sign In to request the data required by the app. We will create the **GoogleSignInOptions** object with the `requestEmail` option.
 
 ```java
@@ -110,7 +107,6 @@ firebaseAuth = FirebaseAuth.getInstance();
 GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
 .requestEmail()
 .build();
-
 ```
 
 * Next, we will create a **GoogleSignInClient** object.
@@ -133,7 +129,7 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
     }
 ```
 
-* Get the `GoogleSignInAccount` object for the user in the activity's **onActivityResult** method.
+* Get the GoogleSignInAccount object for the user in the `onActivityResult` method.
 
 ```java
 @Override
@@ -152,8 +148,6 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
 ```
 
 **Note: The `GoogleSignInAccount` object contains information about the signed-in user.**
-
-
 
 * Next, create a `handleSignInResult` method which will give out instructions on actions to be done if the process is successful . For instance, we would like to notify a user whether they have signed in or not, and if successful they should be able to access the next activity.
 
@@ -233,8 +227,7 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
     }
 
 ```
-We are done!
-Let's run the app.
+We are done! Let us run the app.
 
 
 ![GoogleSignUp](/engineering-education/google-authentication-for-android/finalone.jpg)
