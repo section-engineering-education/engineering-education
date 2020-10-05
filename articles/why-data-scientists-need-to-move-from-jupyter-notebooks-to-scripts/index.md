@@ -6,7 +6,7 @@ url: /engineering-education/why-data-scientists-need-to-move-from-jupyter-notebo
 title: Why Data Scientists Need to Move from Jupyter Notebooks to Scripts
 description: Jupyter Notebook is a standard tool in data science because of its ability to allow users to plot and explore data.
 author: eric-kahuha
-date: 2020-09-30T00:00:00-10:00
+date: 2020-10-05T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -61,11 +61,13 @@ def extract_date_hour_minute(self, string: str):
 try:
 return string [:16]
 except TypeError:
-return np.nan```
+return np.nan
+```
 
 Furthermore, a developer may want to put these functions into the same class by categorizing them into the same category as functions to process the data. This makes data processing easier since the functions in the class preprocess can be used for this purpose.
 
 Scripts are also better than notebook because they encourage experimentation. Let's say a data engineer wants to experiment with a slightly different method to preprocess the data. He or she can remove or add a function, as shown below, without being worried about breaking the code. Furthermore, even if they happen to break the code, they would know exactly where to fix it.
+
 ```py
 def process(self, df):
 df = df.dropna(subset=self.dropna_columns)
@@ -78,6 +80,7 @@ df=self.drop_columns(df)
 df=self.transform_df_datetime_column(df)
 return df
  ```
+ 
 Besides, script coding is ideal for production and can cut down the time taken to track down particular variables in the code simply to change their values. Even better, tools such as [MLFlow](https://mlflow.org/) can be added to track the experiment.
 
 [Hhydra.cc](https://hydra.cc/) can also be added to handle configurations. Functions facilitate the assessment of the function to determine if it is producing the expected output or not. They also make it possible to figure out where in the code you may need to make adjustments to achieve the desired result.
