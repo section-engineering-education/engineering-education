@@ -7,7 +7,7 @@ title: Assembly Part 1 - Let's Learn Assembly!
 description: In computer programming, assembly language, often abbreviated asm, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
 author: mike-white
 date: 2020-06-23T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -201,4 +201,4 @@ section .text
 Now we don't need any RAM at all!... except to store the actual program in memory. We also don't need to specify the size of the operation. The size of `eax` is always four bytes.
 
 ### Conclusion
-This concludes the basics of Assembly. Keep an eye out for the next article to see how we can write an actual program using Assembly.
+This concludes the basics of Assembly. Check out my next article on [how to write an actual program using Assembly](/engineering-education/assembly-part-2/).

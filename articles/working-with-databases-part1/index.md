@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: working-with-databases-part1
+url: /engineering-education/working-with-databases-part1/
 title: Getting to Grips with Databases - Part 1
 description: Using MongoDB, this article proves that all you need to work with a database is some basic knowledge about the command line and JSON.
 author: louise-findlay
@@ -29,7 +29,10 @@ To run MongoDB locally, first you'll have to install the Community Server from t
 
 Click OK to exit all the dialog boxes.
 
-![mongo-shell.png](/engineering-education/working-with-databases-part1/mongo-shell.png)
+```console
+$ mongo
+Mongo Shell version v4.2.3
+```
 
 ### Testing the Install
 To test that the installation has worked correctly, open a terminal window, and type `mongo`. If a message starting with `MongoDB shell version` appears then the installation has been successful. Now you're ready to create your first database.
@@ -41,7 +44,11 @@ To add some data, type `db.books.insert( { name: "Harry Potter and the Chamber o
 
 This will create a collection called Books (because there isn't already one) and add an entry with the book's name and genre. You can check this by typing `db.books.find()`.
 
-![firstdb-entry.png](/engineering-education/working-with-databases-part1/firstdb-entry.png)<br>
+```json
+db.books.find()
+{ "_id" : ObjectId("5ed79cc24096aca107f150fc"), "name" : "Harry Potter and the Chamber of Secrets", "genre" : "Fantasy" }
+```
+
 Collections are groups of related data so one database can have multiple collections in it. Data is added through keys and values and stored in the database in JSON format. If you've worked with APIs before, chances are you've encountered JSON.
 
 To show all collections in the database, type `show collections`. To delete the collection, type `db.books.drop()`.
@@ -51,8 +58,16 @@ Once you've created a few more entries, you'll probably want to find a specific 
 
 Make sure the key-value is unique. For example, `db.books.findOne( { "name" : "Harry Potter and the Chamber of Secrets" } )` searches for an entry in the books collection with the name of Harry Potter and the Chamber of Secrets.
 
-![find-entry.png](/engineering-education/working-with-databases-part1/find-entry.png)<br>
+```json
+db.books.findOne( { "name" : "Harry Potter and the Chamber of Secrets" } )
+{
+	"_id" : ObjectID("5ed79cc24096aca107f150fc"),
+	"name" : "Harry Potter and the Chamber of Secrets",
+	"genre" : "Fantasy"
+}
+```
+
 If you're looking to delete entries instead, use the `deleteOne()` and `deleteMany()` commands. For example, `db.books.deleteMany( { "genre": "Sci-Fi" } )` deletes entries in the books collection that have the Sci-Fi genre.
 
 ### Database Complete
-Congratulations, you've now created your first database and can add, delete, and find collections and entries in it. To learn how you can incorporate your newfound database knowledge on a website, look out for Getting to Grips with Databases Part 2: Develop Your First Data-Driven Website.
+Congratulations, you've now created your first database and can add, delete, and find collections and entries in it. To learn how you can incorporate your newfound database knowledge on a website, check out [Getting to Grips with Databases Part 2: Develop Your First Data-Driven Website](/engineering-education/working-with-databases-part2/).

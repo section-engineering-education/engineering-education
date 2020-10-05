@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: how-to-start-competitive-programming
+url: /engineering-education/how-to-start-competitive-programming/
 title: How to Get Started with Competitive Programming
 description: Competitive programming is a mind sport usually held over the Internet or a local network, involving participants trying to program according to provided specifications.
 author: aman-saxena
