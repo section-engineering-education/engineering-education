@@ -31,7 +31,7 @@ Once you have narrowed your topic search to one you would like to write about, f
 Once your topic has been approved and you have a final draft of your article ready  to submit, follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
 
 ## Submitting your article
-Ensure all article submissions are pre-checked for English grammar technically accurate, and delivered under the assertion that the content is original to you and includes proper citations (including sourced images).
+Ensure all article submissions are pre-checked for English grammar technically accurate, and delivered under the assertion that the content is original to you and includes proper citations (including sourced images) and has not been published somewhere else.
 
 
 Before submitting your article, we request that you cross-check the readability of your content using this [free tool](http://www.hemingwayapp.com/). This check helps make your writing BOLD & CLEAR by calling attention to any lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it. 
