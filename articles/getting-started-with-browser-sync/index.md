@@ -14,7 +14,7 @@ images:
     - url: /engineering-education/getting-started-with-browser-sync/hero.jpg
     alt: Computers in a workspace displaying code
 ---
-Browser-sync is an automation tool that allows you to keep multiple browsers & devices in sync when building websites. It also provides a platform for fast network applications
+Browser-sync is an automation tool that allows you to keep multiple browsers & devices in sync when building websites.
 
 >I've been trying out different local servers just to replace the hassle of using live servers. I found that [Browser-sync](https://www.browsersync.io/) was the best because it has so many useful features. A stitch in time saves nine which really sums it up.
 
@@ -22,9 +22,9 @@ Browser-sync is an automation tool that allows you to keep multiple browsers & d
 
 ![Internal-UI-Interface](/engineering-education/getting-started-with-browser-sync/browsersync-dashboard.png)
 
-In the above image, you will see the awesome features, these are the awesome things Browser-sync provides. Install on your computer and enjoy it seamless watch over your files. It also records your test URLs so you can push them back out to all devices with a single click.
+In the above image, you will see the awesome features Browser-sync provides. Install and enjoy it seamlessly watching over your files for changes. It also records your test URLs so you can push changes back out to all devices with a single click.
 
-I will give the steps to install Browser-sync for Linux. The steps to install on other operating systems can be seen in their documentation [here](https://www.browsersync.io/docs)
+In this article, I will provide the steps to install Browser-sync for Linux. The instructions for other operating systems can be seen in their documentation [here](https://www.browsersync.io/docs)
 
   
 ### Linux Installation
@@ -45,7 +45,7 @@ node -v
 
 ```
 
-Once you have successfully installed the nodejs package on your computer, let’s get you started on how to install Browser-sync.
+Once you have successfully installed the `nodejs` package on your computer, let’s get you started on how to install Browser-sync.
 
 ```bash
 
@@ -53,7 +53,9 @@ npm install -g browser-sync
 
 ```
 
-The above command will get Browser-sync installed on your computer. After that, change the directory to where your project file is located. Looking at the image below, the project file is located on my Desktop. So, I do a ```cd Desktop/Vue project``` in my terminal. This takes me to the Desktop directory of my computer and inside the Vue project folder.
+The above command will get Browser-sync installed on your computer. After that, change the directory to where your project file is located. 
+
+Looking at the image below, the project file is located on my Desktop. So, I do a ```cd Desktop/Vue project``` in my terminal. This takes me to the Desktop directory of my computer and inside the Vue project folder.
 
 ![Change-directory](/engineering-education/getting-started-with-browser-sync/cd.png)
 
@@ -66,9 +68,9 @@ browser-sync start --server --directory --files "*"
 
 ```
 
-The above command calls for Browser-sync and requests the server to start, then the ```--directory --files``` part tells the server to watch over the files in the directory. Including the "*" means, watch over any changes I make into any file in this directory/folder.
+The above command calls for Browser-sync and requests the server to start. Next, the ```--directory --files``` part tells the server to watch over the files in the directory. Including the `"*"` means, watch over any changes I make into any file in this directory/folder.
 
-Using Browser-sync for dynamic sites when you are already running a local server (i.e Xampp) with PHP or a similar scripting language, the process is very similar. Although it will require to run Browser-sync in proxy mode. This can be done using the command below:
+Using Browser-sync for dynamic sites (when you are already running a local server (i.e Xampp) with PHP or a similar scripting language), the process is very similar. Although, it will require to run Browser-sync in proxy mode. This can be done using the command below:
 
 ```bash
 
@@ -82,25 +84,23 @@ Before going to the next step, I will briefly discuss ***servers and proxy serve
 
 ### Server & Proxy Server
 
-_A server_ is a software or hardware device that accepts and responds to requests made over a network.
+A server is a software or hardware device that accepts and responds to requests made over a network.
 
-On the Internet, the term "server" commonly refers to the system that receives requests for web files or data and sends those files back to the client (your computer). Since your project is yet to be hosted on a live server (internet). In this regard, your computer serves as a local server that receives requests and fetches your web files.
+On the Internet, the term "server" commonly refers to the system that receives requests for web files or data and sends those files back to the client (your computer). Since your project is yet to be hosted on a live server (thus accessible over the internet), your computer serves as a local server that receives requests and fetches your web files.
 
-A _Proxy Server_ acts as the gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse. [Read-more](https://www.varonis.com/blog/what-is-a-proxy-server/)
+A [proxy server](https://www.varonis.com/blog/what-is-a-proxy-server/) acts as the gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
 
 If you look back at your previous command, it sounds like this: hey _browser-sync_ please _start_ a _server_ in this _directory_ and make a request for all the _files_ for me. If I make any changes, update it and show me how it looks like :smile:
 
 ***Next Step***
 
-The image below has a "\*\*/*\*" instead of the single asterisk "\*" used in the first command, the reason is: When next you want to work on your project after the first time, you will have to use this command ```browser-sync start --server --directory --files "**/*"``` to start the Browser-sync.
-
+The image below has a "\*\*/*\*" instead of the single asterisk "\*" used in the first command, the reason is: When you next want to work on your project, you will have to use this command ```browser-sync start --server --directory --files "**/*"``` to start a Browser-sync server.
 
 ![Watching-over-your-files-again](/engineering-education/getting-started-with-browser-sync/watching-files.png)
 
-Did you notice that each URL has both internal and external URLs? 
-The internal URL will be used to access the project in your browser, while the external URL will be used to access the project on an external device. That is the power of Browser-sync.
+Did you notice that each URL has both internal and external URLs? The internal URL will be used to access the project in your browser, while the external URL will be used to access the project on an external device. That's one of the best features of Browser-sync.
 
-Your files are ready and have been served. After the above command, the next interface you will see is similar to the one below
+Your files are ready and have been served. After the above command, the next interface you will see is similar to the one below:
 
 ![running-browser-sync](/engineering-education/getting-started-with-browser-sync/final-interface.png)
 
@@ -116,10 +116,8 @@ Click on the index file to see your project.
 
 4. URL history: Browser-sync logs all browsing history so you can push a test URL to all devices.
 
-5. Compatibility: Browser-sync is compatible with many task runners like [GULP](https://browsersync.io/docs/gulp) and [Grunt](https://browsersync.io/docs/grunt) and it is cross-platform enabled.
+5. Compatibility: Browser-sync is compatible with many task runners like [Gulp](https://browsersync.io/docs/gulp) and [Grunt](https://browsersync.io/docs/grunt) and is cross-platform.
 
 ### Conclusion
 
-This is a little out of what Browser-sync has to offer. To find out more about what you can do with Browser-sync, check out their detailed [documentation](https://www.browsersync.io/docs).
-
-Thank you for reading.
+You've seen an overview of what Browser-sync can do and how to get started. To find out more, check out their detailed [documentation](https://www.browsersync.io/docs). Thank you for reading.
