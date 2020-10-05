@@ -132,3 +132,6 @@ Willies Ogola is pursuing his Master's in Computer Science in Hubei University o
 His research direction is on Artificial Intelligence (Reinforcement Learning & Generative Adversarial Networks) for use in Wireless Sensor Networks for intrusion detection. He also really likes researching reading alot during his free time and is passionate about technology.
 
 ![willies-ogola](/engineering-education/introduction-to-reinforcement-learning/willies-ogola.jpg)
+
+---
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
