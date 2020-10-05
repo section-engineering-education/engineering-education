@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: publish
-published: false
+published: true
 url: /engineering-education/introduction-to-scrum/
 title: Introduction to Scrum
 description: In this article we will speak about the Scrum agile framework used for software development purposes.
