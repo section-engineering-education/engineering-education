@@ -240,3 +240,6 @@ In conclusion, we explored some advanced programming concepts in this article. W
 - [Go language specification](https://golang.org/ref/spec)
 - [Tour of Go](https://tour.golang.org/basics/1)
 - [Go by example](https://gobyexample.com/)
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
