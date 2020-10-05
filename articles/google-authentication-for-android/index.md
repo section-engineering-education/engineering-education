@@ -122,6 +122,8 @@ GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DE
 .requestEmail()
 .build();
 ```
+**Note: `The R.string.default_web_client_id` is automatically added once you build and run the application on a device or emulator**
+
 
 * Set an onClick listener on the Google Sign Up button which will pass the SignIn method.
 
@@ -158,34 +160,23 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
 * Next, create a `handleSignInResult` method which will give out instructions on actions to be done if the process is successful . For instance, we would like to notify a user whether they have signed in or not, and if successful they should be able to access the next activity.
 
 ```java
- private void handleSignInResult(Task<GoogleSignInAccount> completedTask)
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask)
     {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            Toast.makeText(MainActivity.this,"Signed In Successfully",Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(account);
-        }
-        catch (ApiException e){
+        } catch (ApiException e) {
             Toast.makeText(MainActivity.this,"Sign In Failed",Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(null);
-
-            new Handler().postDelayed(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    Intent mainIntent = new Intent(MainActivity.this, Home.class);
-                    startActivity(mainIntent);
-                }
-            }, 500);
         }
+
     }
 ```
 
 * Afterwards, we create a `FirebaseGoogleAuth` method in which we will get an ID token from the `GoogleSignInAccount` object. Exchange it for a Firebase credential, hence enabling us to authenticate with Firebase:
 
 ```java
- private void FirebaseGoogleAuth(GoogleSignInAccount account)
+    private void FirebaseGoogleAuth(GoogleSignInAccount account)
     {
         //check if account is null
         if (account != null)
@@ -198,12 +189,12 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
                 {
                     if (task.isSuccessful())
                     {
-
+                        Toast.makeText(MainActivity.this, "Authentication Succesful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MainActivity.this, Home.class));
                         finish();
 
                     } else {
-                        Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                         FirebaseUser user = firebaseAuth.getCurrentUser();
                         updateUI(user);
                     }
@@ -226,8 +217,6 @@ googleSignIn = (Button) findViewById(R.id.googleSignIn);
         {
             String personName = account.getDisplayName();
             String personEmail = account.getEmail();
-
-            Toast.makeText(MainActivity.this, personName + personEmail, Toast.LENGTH_SHORT).show();
         }
 
     }
