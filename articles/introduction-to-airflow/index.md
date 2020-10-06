@@ -44,27 +44,40 @@ According to the documentation, an operator describes a single task in a workflo
 
 Since Airflow is written completely in Python, we can use [pip](https://pip.pypa.io/en/stable/) (The package manager for Python). You can install Airflow on your local system by running the following command on the terminal:
 
-`pip3 install apache-airflow`
+```bash
+pip3 install apache-airflow
+```
 
 Airflow configuration files and database info will be stored in the environment variable called AIRFLOW_HOME. By default, Airflow will create the directory ~/airflow/, but you can change the default path to a directory of your choice. To change the airflow home path, enter the following command on the terminal:
 
-`export AIRFLOW_HOME=<the path to the directory of your choice>`
+```bash
+export AIRFLOW_HOME=<the path to the directory of your choice>
+```
 
-Example: `export AIRFLOW_HOME=~/adith/airflow`
+Example: 
+```bash
+export AIRFLOW_HOME=~/adith/airflow
+```
 
 Airflow uses a database in the back-end to store metadata and other workflow-related information. By default, [SQLite](https://www.sqlite.org/index.html), a lightweight, and beginner-friendly database is used by Airflow. You can change the default settings to a database of your choice by following [this documentation](https://airflow.apache.org/docs/stable/howto/initialize-database.html). Since SQLite is a beginner-friendly database, we are going to stick with that. 
 
 To initialize the database, type the following command in the terminal:
 
-`airflow initdb`
+```bash
+airflow initdb
+```
 
 As mentioned earlier, Airflow provides an aesthetic web UI that allows us to view and monitor the dags. To initialize the web server and start the web UI, type the following command on the terminal:
 
-`airflow webserver` 
+```bash
+airflow webserver
+``` 
 
 This starts the server on your localhost. By default, Airflow uses port 8080. To run the UI in a different port, run the following command:
 
-`airflow webserver -p 8123`
+```bash
+airflow webserver -p 8123
+```
 
 This starts the web UI in port 8123. To access it, go to a web browser of your choice and type: `http://localhost:8123`
 
@@ -72,7 +85,13 @@ Congratulations! You have successfully installed and run Apache Airflow on your 
 
 ### Conclusion and Further Reading
 
-In conclusion, Airflow is a powerful framework to automate the process of workflow management and scheduling. Airflow can be used in a wide array of use cases such as data warehousing: To clean, organize, and store data in a data warehouse, machine learning: To automate and monitor various machine learning workflows, email reporting: To automate the process of generating reports and sending them through emails, etc. Another advantage is that Airflow is open source and has a great community of developers to support and contribute to the project. If you require a new operator or a new feature, you can customize and add your code making it highly extensible. Whether you are a software developer, data engineer, or a data scientist, it would be quite helpful to learn and explore Airflow. In this article, we covered the basics of airflow and its installation. In the next article, we are going to write our very own application and run it using Airflow. 
+In conclusion, Airflow is a powerful framework to automate the process of workflow management and scheduling. Airflow can be used in a wide array of use cases such as: 
+
+1. data warehousing: To clean, organize, and store data in a data warehouse
+2. machine learning: To automate and monitor various machine learning workflows
+3. email reporting: To automate the process of generating reports and sending them through emails, etc. 
+
+Another advantage is that Airflow is open source and has a great community of developers to support and contribute to the project. If you require a new operator or a new feature, you can customize and add your code making it highly extensible. Whether you are a software developer, data engineer, or a data scientist, it would be quite helpful to learn and explore Airflow. In this article, we covered the basics of airflow and its installation. In the next article, we are going to write our very own application and run it using Airflow. 
 
 
 
