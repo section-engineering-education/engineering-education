@@ -23,7 +23,7 @@ Basic understanding of machine learning concepts. For an introduction to machine
 
 [Wikipedia](https://en.wikipedia.org/wiki/Bias) describes bias as the disproportionate weight favoring or disfavouring an idea or thing in a closed-minded, unfair, or prejudicial way. Creators of machine learning models often unknowingly impart their various biases into their models. When this happens, it gives rise to what we refer to as algorithmic bias. Algorithmic bias refers to the methods in which algorithms portray bias of either their input data or their creators.
 
-In today’s world, machine learning models are used at such a large scale. They arguably drive our technology-dependent lives. Even so, if models happen to be biased, then biases are being mass-produced. It is an issue that may often end up being [ignored](https://www.technologyreview.com/2017/07/12/150510/biased-algorithms-are-everywhere-and-no-one-seems-to-care/) due to several reasons. One of the reasons could be that it is those underrepresented who are hit the hardest with the consequences of bias. We are also a bit too willing to trust the outcomes that these mathematical models make. It could also be that the creators of models and regulators may show little interest to monitor and inspect algorithms for inherent bias. They have little to no incentive to do so.
+In today’s world, machine learning models are used on such a large scale. They arguably drive our technology-dependent lives. Even so, if models happen to be biased, then biases are being mass-produced. It is an issue that may often end up being [ignored](https://www.technologyreview.com/2017/07/12/150510/biased-algorithms-are-everywhere-and-no-one-seems-to-care/) due to several reasons. One of the reasons could be that it is those underrepresented who are hit the hardest with the consequences of bias. We are also a bit too willing to trust the outcomes that these mathematical models make. It could also be that the creators of models and regulators may show little interest to monitor and inspect algorithms for inherent bias. They have little to no incentive to do so.
 
 It is especially sensitive when dealing with algorithms that involve race, sexual orientation, age, gender, and physical ability. Bias portrayed by these algorithms amplifies the societal issues that plague our current time, which artificial intelligence should be helping to reduce.
 
@@ -35,23 +35,23 @@ Various types of bias occur in models and datasets that ultimately impact machin
 
 #### Exclusion Bias
 
-In the machine learning process, data has to be cleaned before being used for testing and training steps. As a result of cleaning data, we often remove features that we consider not to be relevant. This in effect may impart exclusion bias. The removed features may end up being underrepresented when the data is applied to a real-world problem.
+In the machine learning process, data has to be cleaned before being used for testing and training steps. As a result of cleaning data, we often remove features that we consider not to be relevant. This in effect may impart exclusion bias. The removed features may end up being underrepresented when the data is applied to a real-world problem. Consider sales data from two regions. 97% of sales data is from region A, and 3% from region B. One may choose to delete data from region B thinking it is irrelevant. Consequently, the model may not deduce that region B customers purchase 5 times as much as region A customers. 
 
 #### Sample Bias
 
-Sample data used to train models needs to replicate a real-world scenario as much as possible. Failure to do so means that models are exposed to just a part of the problem space. These models are trained to predict based on data they are fed. Consequently, you can expect the bias to manifest if sample data does not represent the whole problem space.
+Sample data used to train models needs to replicate a real-world scenario as much as possible. Failure to do so means that models are exposed to just a part of the problem space. These models are trained to predict based on data they are fed. Consequently, you can expect the bias to manifest if sample data does not represent the whole problem space. An example of sample bias is facial recognition software primarily trained on images of white men. When encountering people of different ethnicities or gender, the performance is quite poor and bias manifests.  
 
 #### Prejudicial Bias
 
-This kind of bias occurs due to cultural stereotypes the people in the machine learning process have. Gender, social standing, gender among others may slither into a model. The consequence is skewed results against people of a particular group.
+This kind of bias occurs due to cultural stereotypes the people in the machine learning process have. Gender, social standing, gender among others may slither into a model. The consequence is skewed results against people of a particular group. A good example of this is a tool to automate the hiring of talent. Imagine a scenario where the system is fed mostly male resumes as training data. The system will learn that men are preferable to women. As a result, female applicants end up at a considerable disadvantage. This is a real-life example that we shall explore later on.
 
 #### Algorithmic Bias
 
-Algorithmic bias represents errors that create unfair outcomes in a machine learning model. These errors are often repeatable and systematic. This kind of bias is associated with algorithm design and training.
+Algorithmic bias represents errors that create unfair outcomes in a machine learning model. These errors are often repeatable and systematic. This kind of bias is associated with algorithm design and training. For example, errors could be in the form of pre-existing biases by system designers. Regardless of the model used, there will be bias in the system. Another example is facial recognition technology. Consider facial recognition technology with difficulty identifying black people. This technology is applicable to self-driving cars. In the context of preventing a crash, there has always been a conversation about who the car would choose to save (considering both passengers and pedestrians). However, if the system fails to recognize the faces of black people, it would likely result in casualties. A black pedestrian may have a higher chance of being run over. A black passenger may not be recognized hence the car may not prioritize the safety of the passenger.       
 
 #### Measurement Bias
 
-Measurement bias occurs when data collected for training is different from data collected during production. This could be as a result of an issue with the measurement/observation device. Data ends up skewed in a particular direction since training data used no longer represents real data.
+Measurement bias occurs when data collected for training is different from data collected during production. This could be as a result of an issue with the measurement/observation device. Data ends up skewed in a particular direction since the training data used no longer represents real data. An example of measurement bias may involve a data collection device such as a camera. Training data may be collected by one camera, with its own settings and configurations such as brightness or exposure settings. Production data may be collected by a different camera with different settings. As a result, data is distorted when compared to production data.  
 
 ### Why is it Important to Prevent Bias?
 
