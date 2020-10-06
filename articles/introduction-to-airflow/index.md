@@ -87,9 +87,9 @@ Congratulations! You have successfully installed and run Apache Airflow on your 
 
 In conclusion, Airflow is a powerful framework to automate the process of workflow management and scheduling. Airflow can be used in a wide array of use cases such as: 
 
-1. data warehousing: To clean, organize, and store data in a data warehouse
-2. machine learning: To automate and monitor various machine learning workflows
-3. email reporting: To automate the process of generating reports and sending them through emails, etc. 
+1. [Data warehousing](https://www.tutorialspoint.com/dwh/dwh_data_warehousing.htm): To clean, organize, and store data in a data warehouse
+2. [Machine learning](https://en.wikipedia.org/wiki/Machine_learning): To automate and monitor various machine learning workflows
+3. [Email reporting](https://towardsdatascience.com/email-automation-with-python-72c6da5eef52): To automate the process of generating reports and sending them through emails, etc. 
 
 Another advantage is that Airflow is open source and has a great community of developers to support and contribute to the project. If you require a new operator or a new feature, you can customize and add your code making it highly extensible. Whether you are a software developer, data engineer, or a data scientist, it would be quite helpful to learn and explore Airflow. In this article, we covered the basics of airflow and its installation. In the next article, we are going to write our very own application and run it using Airflow. 
 
