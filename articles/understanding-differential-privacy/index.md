@@ -58,13 +58,18 @@ Assume, we have a small database of 5000 entries with 0 or 1 as a value for each
 
 ### Differencing attacks
 
-In continuation with the previous example, let's say we want to find if a specific person has cancer or not, so what we do is, find the sum of all the values, and then find the sum of all values after removing that person. On finding the difference between both the summations, we get the exact value of that person, thus we will know if he has cancer or not. This is one of the simplest differencing attacks, using summation.
+In continuation with the previous explanation, let's say we want to check if privacy has been preserved for every individual in the database, so what we do is
 
-Similarly, there are other types of differencing attacks using various other functions like mean(), median(), and so on. This measure of how much data is leaked through a query can be measured with **sensitivity.**
+- Find the sum of all the values before removal of 1 persons' data (the original values)
+- Then find the sum of all values after removing that person (a new database with 1 missing value)
+- On finding the difference between both the summations, we get the exact detail of that person
+Thus we will know if he has cancer or not. This shows that the privacy of that individual has been leaked. This is one of the simplest differencing attacks, using a summation query.
+
+Similarly, there are other types of differencing attacks using various other functions like mean(), median(), and so on. This measure of how much data is leaked through a query can be measured with **sensitivity.** In simple terms, it can be said as the largest possible difference for that one row, for any dataset. For our example, the sensitivity is 1, which means that adding or removing a single row from the dataset will change the count by at most 1.
 
 ### Implementing differential privacy
 
-Now, we are going to implement Differential privacy for a simple database query. The database has only 1 column with boolean types. The boolean type denotes if a person possesses some private attribute or not (example, if a person has a particular disease or not). And, we are going to learn, if the database is differentially private or not.
+Now, we are going to implement Differential privacy for a simple database query using a summation differencing attack. The database has only 1 column with boolean types. The boolean type denotes if a person possesses some private attribute or not (for example, if a person has a particular disease or not). And, we are going to learn, if the database is differentially private or not.
 
 #### Creating a database
 
@@ -90,7 +95,8 @@ To demonstrate Differential privacy, we try to manually omit certain values from
 
 ```python
   def get_parallel_db(db, remove_index):
-      return torch.cat((db[0:remove_index], db[remove_index+1:]))
+      return torch.cat((db[0:remove_index], db[remove_index+1:])) # torch.cat() concatenates two different sequence of tensors.
+      # Here, we slice tensor db from (0, remove_index) and (remove_index + 1, len(db)), and then concatenate both the tensors into 1 single tensor
   
   get_parallel_db(db, 3)
 ```
