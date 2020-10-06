@@ -71,6 +71,14 @@ Similarly, there are other types of differencing attacks using various other fun
 
 Now, we are going to implement Differential privacy for a simple database query using a summation differencing attack. The database has only 1 column with boolean types. The boolean type denotes if a person possesses some private attribute or not (for example, if a person has a particular disease or not). And, we are going to learn, if the database is differentially private or not.
 
+#### Installation
+
+It is recommended to use [Google Colab](colab.research.google.com) to get started right away. If you wish to run the below codes in your local system, download [Anaconda](https://www.anaconda.com/download) by referring to the [Anaconda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html).
+
+The libraries to be installed in Conda are
+
+- [x] [PyTorch](https://anaconda.org/pytorch/pytorch)
+
 #### Creating a database
 
 Create a simple database containing 5000 entries consisting of values True/False (1/0). Here, we randomly generate boolean values using `torch.rand()`
