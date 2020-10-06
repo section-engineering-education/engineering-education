@@ -11,11 +11,13 @@ By the end of the article, you'll understand
 - How to leverage NGINX as a Reverse Proxy?
 
 ### Reverse Proxy
+According to Wikipedia,   
 A reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the server  itself.  
  Refer to [this article](https://www.section.io/engineering-education/what-are-reverse-proxies/) to better understand what Reverse Proxies are.
 
 ### NGINX
-We will be using NGINX as a Reverse Proxy. NGINX is a web server that can be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and publicly released in 2004. Nginx is free and open-source software, released under the terms of the 2-clause BSD license. A large fraction of web servers use NGINX, often as a load balancer.
+We will be using NGINX as a Reverse Proxy. According to Wikipedia,   
+NGINX is a web server that can be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and publicly released in 2004. Nginx is free and open-source software, released under the terms of the 2-clause BSD license. A large fraction of web servers use NGINX, often as a load balancer.
 
 To know more about NGINX, check out the [Wiki](https://en.wikipedia.org/wiki/Nginx).
 
@@ -72,8 +74,10 @@ My Localhost Config, in this case, would be
 There are two standard protocols HTTP and HTTPS. The default port for HTTP is 80 and HTTPS is 443. This is the reason we must not run our applications on these ports because our NGINX server would be running on these two ports. All the requests the client makes would either be redirected to Port 80 or 443 from where it would be redirected internally to the corresponding application.
 
 ## Step 4 - Configure NGINX at 80 for HTTP and 443 for HTTPS
-Now that we have our apps running and our DNS records ready. We can start configuring our NGINX Reverse Proxy to make it all work.
-Navigate into the Nginx folder and locate  ```nginx.conf``` .
+Now that we have our apps running and our DNS records ready. We can start configuring our NGINX Reverse Proxy to make it all work.  
+By default, the configuration file is named nginx.conf and placed in the directory /usr/local/nginx/conf, /etc/nginx, or /usr/local/etc/nginx for Linux and Debian Based systems.
+On Windows, the file is placed inside the installation folder, nginx/conf/nginx.conf.
+
 
 Add these configurations inside the HTTP block.
 
@@ -100,7 +104,7 @@ server {
 ### Step 4.2 - HTTPS
 
 ```
-server{
+server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
 
@@ -113,7 +117,7 @@ server{
     ssl_certificate <location of SSL certificate>
     ssl_certificate_key <location of SSL certificate Key>
 }
-server{
+server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
 
@@ -159,3 +163,10 @@ The microservices architecture is discussed [here](https://microservices.io/patt
 
  Hope this article helped you to manage those independently deployed applications as a whole with the help of NGINX as a Reverse Proxy.
  Thanks for reading
+
+
+ ## References
+
+ - [Nginx Beginner Guide](http://nginx.org/en/docs/beginners_guide.html#:~:text=By%20default%2C%20the%20configuration%20file,%2Flocal%2Fetc%2Fnginx%20)
+ - [Wiki article on Reverse Proxy](https://en.wikipedia.org/wiki/Reverse_proxy)
+ - [Wiki article on NGINX](https://en.wikipedia.org/wiki/Nginx)
