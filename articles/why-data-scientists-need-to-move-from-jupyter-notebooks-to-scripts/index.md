@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/hero.jpg
     alt: Moving from Jupyter to Scripts
 ---
-[Jupyter notebook](https://jupyter.org/) is a great tool for evaluating and exploring data. Data engineers rely on Jupyter notebook to perform their daily tasks of data analysis. Interestingly, the notebook is the first tool that engineers get introduced to in a data science course.
+[Jupyter notebook](https://jupyter.org/) is a great tool for evaluating and exploring data. Data scientists rely on Jupyter notebook to perform their daily tasks of data analysis. Interestingly, the notebook is the first tool that analysts get introduced to in a data science course.
 <!--more-->
 
 ### Introduction
@@ -26,20 +26,20 @@ The features of the Jupyter Notebook slightly differs from non-web applications 
 With Jupyter, the syntax is automatically highlighted upon a user entering the code. Moreover, bold formatting and colors help users know if they are indenting the code properly or not. If, for instance, a user writes the print command outside the scope of a loop the color of the print keyword is expected to change.
 
 ### Issues with Jupyter Notebook
-Most data engineers run Jupyter locally, and there are numerous concerns associated with this practice. One problem is dependencies. In some cases, the notebook imports libraries that are only installed on the computer of a data engineer(locally). The issue with such a scenario is that a data scientist using a different version of the same library, such as NumPy, may experience the setback of the actual production calculations not agreeing with those in the research.
+Most data analysts run Jupyter locally, and there are numerous concerns associated with this practice. One problem is dependencies. In some cases, the notebook imports libraries that are only installed on the computer of a data analyst (locally). The issue with such a scenario is that a data scientist using a different version of the same library, such as NumPy, may experience the setback of the actual production calculations not agreeing with those in the research.
 
 Additionally, it is not possible to reproduce the outcomes from Jupyter Notebook received from a local execution. It is not common for the notebook to comply with Continuous Integration (CI) standards executed by a build server or undergo a build procedure.
 
 Notebook results performed by one machine might differ when running on another computer in the same group bearing in mind that the machines might have some caching differences.
 
-While data engineers can depend on notebook for literate programming, graphing, exploration, and learning, they should not rely on it as the exclusive tool for writing all code. A few reasons being that Jupyter Notebook lack a built-in testing framework, an integrated terminal, auto-formatting code across projects, and has a poor debugging and file browsing.
+While data scientists can depend on notebook for literate programming, graphing, exploration, and learning, they should not rely on it as the exclusive tool for writing all code. A few reasons being that Jupyter Notebook lack a built-in testing framework, an integrated terminal, auto-formatting code across projects, and has a poor debugging and file browsing.
 
 Interestingly, this lack of [tools](https://www.veracode.com/security/integrated-development-environment) contributes to the difficulties experienced while writing actual programs with many scripts in notebook.
 
 Breaking out of the notebook would require a programmer to remember much of the information in their head. Notably, codes in Jupyter Notebook are treated as entire scripts made up of several classes and functions rather than blocks of code. Real programs contain several interlocking pieces that form a cycle, while the notebook contains a linear path executed from top to bottom.
 
 ### Advantages of Scripts
-Data analysis is more significant when data engineers can explain what they have done to others and they reproduce the data themselves to double-check. However, this isn't easy when it comes to Jupyter Notebook, as it does not support reproducibility.
+Data analysis is more significant when data scientists can explain what they have done to others and they reproduce the data themselves to double-check. However, this isn't easy when it comes to Jupyter Notebook, as it does not support reproducibility.
 
 Not only that, notebook makes it challenging to use new data with slightly different structures. However, with scripts, reproducing data is more straightforward. Adding comments to the code is also possible, and this ensures that a data scientist can explain what is happening at all stages of the process. This way, anyone can check the work being done.
 
@@ -83,12 +83,12 @@ return df
  
 Besides, script coding is ideal for production and can cut down the time taken to track down particular variables in the code simply to change their values. Even better, tools such as [MLFlow](https://mlflow.org/) can be added to track the experiment.
 
-[Hhydra.cc](https://hydra.cc/) can also be added to handle configurations. Functions facilitate the assessment of the function to determine if it is producing the expected output or not. They also make it possible to figure out where in the code you may need to make adjustments to achieve the desired result.
+[Hydra.cc](https://hydra.cc/) can also be added to handle configurations. Functions facilitate the assessment of the function to determine if it is producing the expected output or not. They also make it possible to figure out where in the code you may need to make adjustments to achieve the desired result.
 
 An error occurring when running the code even after all the tests have passed would mean that the error is within the data. This would require a data scientist to polish up the data to run the code smoothly.
 
 ### Conclusion
-Jupyter Notebook can be a great tool for data engineers, especially when it comes to teaching. Engineers can perfectly rely on this tool to write small code snippets and in certain instances where the production of the code may not be required. Data scientists can also use the notebook to visualize and explore the data.
+Jupyter Notebook can be a great tool for data scientist, especially when it comes to teaching. Analysts can perfectly rely on this tool to write small code snippets and in certain instances where the production of the code may not be required. Data scientists can also use the notebook to visualize and explore the data.
 
 Despite that, data scientists need to think about switching to script to avoid the problems associated with Jupyter Notebook. Better yet, data scientists can learn to use both Jupyter Notebook and scripts depending on the task at hand. For instance, they can use scripts to create functions and classes which can then be imported into notebook.
 
