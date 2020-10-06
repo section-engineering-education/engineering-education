@@ -6,7 +6,7 @@ url: /engineering-education/why-data-scientists-need-to-move-from-jupyter-notebo
 title: Why Data Scientists Need to Move from Jupyter Notebooks to Scripts
 description: Jupyter Notebook is a standard tool in data science because of its ability to allow users to plot and explore data.
 author: eric-kahuha
-date: 2020-10-05T00:00:00-10:00
+date: 2020-10-06T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -21,7 +21,7 @@ images:
 Historically, data science courses have relied on the notebook as a medium to teach. This is partly because beginners find writing code in Jupyter notebooks cells more comfortable than writing scripts with classes and functions. The ability to allow users to explore and plot data has earned the notebook recognition as a standard tool in data science. Despite these benefits, data scientists associate Jupyter Notebook with some setbacks.
 
 ### Jupyter Notebook Vs IDEs
-The features of the Jupyter Notebook slightly differs from non-web applications such as the Integrated Development Environment (IDEs). For instance, the notebook cannot perform offline as it relies on the internet to run. Even in this case, it is a tool of choice for many beginners who like the notebooks rich formatting and a user-friendly interface.
+The features of the Jupyter Notebook slightly differs from non-web applications such as the Integrated Development Environment (IDEs). For instance, the notebook cannot perform offline as it relies on the Internet to run. Even in this case, it is a tool of choice for many beginners who like the notebooks rich formatting and a user-friendly interface.
 
 With Jupyter, the syntax is automatically highlighted upon a user entering the code. Moreover, bold formatting and colors help users know if they are indenting the code properly or not. If, for instance, a user writes the print command outside the scope of a loop the color of the print keyword is expected to change.
 
@@ -39,7 +39,7 @@ Interestingly, this lack of [tools](https://www.veracode.com/security/integrated
 Breaking out of the notebook would require a programmer to remember much of the information in their head. Notably, codes in Jupyter Notebook are treated as entire scripts made up of several classes and functions rather than blocks of code. Real programs contain several interlocking pieces that form a cycle, while the notebook contains a linear path executed from top to bottom.
 
 ### Advantages of Scripts
-Data analysis is more significant when data scientists can explain what they have done to others and they reproduce the data themselves to double-check. However, this isn't easy when it comes to Jupyter Notebook, as it does not support reproducibility.
+Data analysis is more significant when data scientists can explain what they have done to others and they can reproduce the data themselves to double-check. However, this isn't easy when it comes to Jupyter Notebook, as it does not support reproducibility.
 
 Not only that, notebook makes it challenging to use new data with slightly different structures. However, with scripts, reproducing data is more straightforward. Adding comments to the code is also possible, and this ensures that a data scientist can explain what is happening at all stages of the process. This way, anyone can check the work being done.
 
@@ -66,7 +66,7 @@ return np.nan
 
 Furthermore, a developer may want to put these functions into the same class by categorizing them into the same category as functions to process the data. This makes data processing easier since the functions in the class preprocess can be used for this purpose.
 
-Scripts are also better than notebook because they encourage experimentation. Let's say a data engineer wants to experiment with a slightly different method to preprocess the data. He or she can remove or add a function, as shown below, without being worried about breaking the code. Furthermore, even if they happen to break the code, they would know exactly where to fix it.
+Scripts are also better than notebook because they encourage experimentation. Let's say a data scientist wants to experiment with a slightly different method to preprocess the data. He or she can remove or add a function, as shown below, without being worried about breaking the code. Furthermore, even if they happen to break the code, they would know exactly where to fix it.
 
 ```py
 def process(self, df):
@@ -80,7 +80,7 @@ df=self.drop_columns(df)
 df=self.transform_df_datetime_column(df)
 return df
  ```
- 
+
 Besides, script coding is ideal for production and can cut down the time taken to track down particular variables in the code simply to change their values. Even better, tools such as [MLFlow](https://mlflow.org/) can be added to track the experiment.
 
 [Hydra.cc](https://hydra.cc/) can also be added to handle configurations. Functions facilitate the assessment of the function to determine if it is producing the expected output or not. They also make it possible to figure out where in the code you may need to make adjustments to achieve the desired result.
