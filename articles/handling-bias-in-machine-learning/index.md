@@ -17,21 +17,21 @@ In this article, we cover:
 
 ### Prerequisites
 
-Basic understanding of machine learning concepts.
+Basic understanding of machine learning concepts. For an introduction to machine learning, check out this [article](https://www.section.io/engineering-education/supervised-learning-algorithms/). I also briefly covered the basics of machine learning in a previous [article](https://www.section.io/engineering-education/automated-fake-news-detection/).
 
 ### Bias in Machine Learning
 
-[Wikipedia](https://en.wikipedia.org/wiki/Bias) describes bias as the disproportionate weight favouring or disfavouring an idea or thing in a closed-minded, unfair or prejudicial way. Creators of machine learning models often unknowingly impart their various biases into their models. When this happens, it gives rise to what we refer to as algorithmic bias. Algorithmic bias refers to the methods in which algorithms portray bias of either their input data or their creators.
+[Wikipedia](https://en.wikipedia.org/wiki/Bias) describes bias as the disproportionate weight favoring or disfavouring an idea or thing in a closed-minded, unfair, or prejudicial way. Creators of machine learning models often unknowingly impart their various biases into their models. When this happens, it gives rise to what we refer to as algorithmic bias. Algorithmic bias refers to the methods in which algorithms portray bias of either their input data or their creators.
 
-In today’s world, machine learning models are used at such a large scale. They arguably drive our technology-dependent lives. Even so, if models happen to be biased, then biases are being mass-produced. It is an issue that may often end up being [ignored](https://www.technologyreview.com/2017/07/12/150510/biased-algorithms-are-everywhere-and-no-one-seems-to-care/) due to a number of reasons. One of the reasons could be that it is the underrepresented who are hit the hardest with the consequences of bias. We are also a bit too willing to trust the outcomes that these mathematical models make. It could also be that the creators of models and regulators may show little interest to monitor and inspect algorithms for inherent bias. They have little to no incentive to do so.
+In today’s world, machine learning models are used at such a large scale. They arguably drive our technology-dependent lives. Even so, if models happen to be biased, then biases are being mass-produced. It is an issue that may often end up being [ignored](https://www.technologyreview.com/2017/07/12/150510/biased-algorithms-are-everywhere-and-no-one-seems-to-care/) due to several reasons. One of the reasons could be that it is those underrepresented who are hit the hardest with the consequences of bias. We are also a bit too willing to trust the outcomes that these mathematical models make. It could also be that the creators of models and regulators may show little interest to monitor and inspect algorithms for inherent bias. They have little to no incentive to do so.
 
-It is especially sensitive when dealing with algorithms that involve race, sexual orientation, age, gender and physical ability. Bias portrayed by these algorithms amplify the societal issues that plague our current time, which artificial intelligence should in fact be helping to reduce.
+It is especially sensitive when dealing with algorithms that involve race, sexual orientation, age, gender, and physical ability. Bias portrayed by these algorithms amplifies the societal issues that plague our current time, which artificial intelligence should be helping to reduce.
 
 We will look at why it is important to prevent bias but first, let’s look at a few types of bias.
 
 ### Types of Bias
 
-There are various types of bias that occur in models and datasets that ultimately impact machine learning development. Let’s define a few.
+Various types of bias occur in models and datasets that ultimately impact machine learning development. Let’s define a few.
 
 #### Exclusion Bias
 
@@ -39,7 +39,7 @@ In the machine learning process, data has to be cleaned before being used for te
 
 #### Sample Bias
 
-Sample data used to train models needs to replicate a real-world scenario as much as possible. Failure to do so means that models are exposed to just a part of the problem space. These models are trained to predict based on data they are fed. Consequently, you can expect bias to manifest if sample data does not represent the whole problem space.
+Sample data used to train models needs to replicate a real-world scenario as much as possible. Failure to do so means that models are exposed to just a part of the problem space. These models are trained to predict based on data they are fed. Consequently, you can expect the bias to manifest if sample data does not represent the whole problem space.
 
 #### Prejudicial Bias
 
@@ -55,15 +55,15 @@ Measurement bias occurs when data collected for training is different from data 
 
 ### Why is it Important to Prevent Bias?
 
-We trust machine learning algorithms every day. They make even the smallest decisions for us. But when the stakes are raised and you’re say, denied a bank loan by a biased algorithm, the individual consequences are much more sobering. The responsibility and influence of these algorithms is impressive. However, assuming a huge number of algorithms are biased, it becomes scary. These models, if not inspected, monitored, regulated and maintained run the risk of amplifying human biases.
+We trust machine learning algorithms every day. They make even the smallest decisions for us. But when the stakes are raised and you’re denied a bank loan by a biased algorithm, the individual consequences are much more sobering. The responsibility and influence of these algorithms are impressive. However, assuming a huge number of algorithms are biased, it becomes scary. These models, if not inspected, monitored, regulated, and maintained run the risk of amplifying human biases.
 
 #### Decision Making
 
-Machine learning models are injected into numerous systems that are trusted to make decisions. These systems are used in large scale. For example, systems that make hiring decisions or systems that decide who can get a financial loan. But these systems may have underlying biases that end up excluding deserving candidates for job opportunities, financial plans and general quality of life opportunities.
+Machine learning models are injected into numerous systems that are trusted to make decisions. These systems are used on large scale. For example, systems that make hiring decisions or systems that decide who can get a financial loan. But these systems may have underlying biases that end up excluding deserving candidates for job opportunities, financial plans, and general quality of life opportunities.
 
-In real sense, biases end up being mass produced. And the trust in mathematical models being accurate does not help the situation at all. In addition to that, most of these models may be complex or lack transparency in their operation.
+In a real sense, biases end up being mass-produced. And the trust in mathematical models being accurate does not help the situation at all. In addition to that, most of these models may be complex or lack transparency in their operation.
 
-As a result of the trust in mathematical models and the acceptance of lack of transparency behind the operation of the models, developers of such models may not show keenness to monitor or test models for inherent biases.
+As a result of the trust in mathematical models and the acceptance of a lack of transparency behind the operation of the models, developers of such models may not show keenness to monitor or test models for inherent biases.
 
 #### Influence of Algorithms
 
@@ -89,23 +89,23 @@ Below are a couple of examples to show the disastrous consequences of bias.
 
 #### COMPAS and Racial Bias
 
-[COMPAS](https://en.wikipedia.org/wiki/COMPAS_(software)) refers to Correctional Offender Management Profiling for Alternative Sanctions. It is a decision support tool used by courts in the United States to assess sentencing and parole of convicts. It aims to identify inmates with a low likelihood of committing offences again.
+[COMPAS](https://en.wikipedia.org/wiki/COMPAS_(software)) refers to Correctional Offender Management Profiling for Alternative Sanctions. It is a decision support tool used by courts in the United States to assess sentencing and parole of convicts. It aims to identify inmates with a low likelihood of committing offenses again.
 
-The likelihood of a defendant to re-offend is estimated based on their response to [137 survey questions](https://www.documentcloud.org/documents/2702103-Sample-Risk-Assessment-COMPAS-CORE.html) though, it does not include the question of race. The algorithm has been able to make successful predictions on recidivism. However, when it failed in its predictions, the results for black and white offenders differed. It showed that black offenders were viewed as twice as likely to be labelled as higher risk to re-offend as compared to white offenders. COMPAS software also labelled white offenders as lower risk, compared to black offenders, even though their criminal histories display higher likelihood to re-offend. To read more on COMPAS and racial bias check out this [post](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing).
+The likelihood of a defendant to re-offend is estimated based on their response to [137 survey questions](https://www.documentcloud.org/documents/2702103-Sample-Risk-Assessment-COMPAS-CORE.html) though, it does not include the question of race. The algorithm has been able to make successful predictions on recidivism. However, when it failed in its predictions, the results for black and white offenders differed. It showed that black offenders were viewed as twice as likely to be labeled as a higher risk to re-offend as compared to white offenders. COMPAS software also labeled white offenders as lower risk, compared to black offenders, even though their criminal histories display a higher likelihood to re-offend. To read more on COMPAS and racial bias check out this [post](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing).
 
 #### Recruiting Tool and Gender Bias
 
-A [project](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G) by Amazon had to be scrapped because it portrayed prejudice against women. The project involved developing of a tool that would automate hiring and screening of job applications. The company noted that the tool was not evaluating candidates in a gender-neutral manner. The models involved were trained to observe patterns in over a decade’s worth of resumes submitted to Amazon. However, most of these resumes came from men. Resultantly, the system learnt that men were preferrable hires. It is apparent that the training data given to the model had some element of bias.
+A [project](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G) by Amazon had to be scrapped because it portrayed prejudice against women. The project involved developing a tool that would automate the hiring and screening of job applications. The company noted that the tool was not evaluating candidates in a gender-neutral manner. The models involved were trained to observe patterns in over a decade’s worth of resumes submitted to Amazon. However, most of these resumes came from men. Resultantly, the system learned that men were preferable hires. The training data given to the model had some element of bias.
 
 Similar cases may take place in other sectors that make use of biased algorithms. For example, application for financial services which may marginalize the underrepresented. The usage of algorithms in healthcare to diagnose and cure diseases may alienate an underrepresented population.
 
 ### Techniques to Handle Bias
 
-Good news; it is not all bleak. There are numerous ways to prevent, anticipate and reduce bias in our algorithms. We look at a few technical ways to handle bias.
+Good news; it is not all bleak. There are numerous ways to prevent, anticipate, and reduce bias in our algorithms. We look at a few technical ways to handle bias.
 
 #### Selecting a Diverse Training Dataset
 
-Training data should be as diverse as possible. It should include as many relevant groups of data as possible. The reasoning behind this is that the more inclusive the dataset, the less likely it is to turn a blind eye to a given data group. For example, a model with diverse data in social, racial or economic grounds is less likely to exhibit bias in any of the mentioned groups of data. However, a model with enough social and economic data being used in real world scenarios where racial data is factored in, is very likely to portray some form of racial bias.
+Training data should be as diverse as possible. It should include as many relevant groups of data as possible. The reasoning behind this is that the more inclusive the dataset, the less likely it is to turn a blind eye to a given data group. For example, a model with diverse data on social, racial, or economic grounds is less likely to exhibit bias in any of the mentioned groups of data. However, a model with enough social and economic data being used in real-world scenarios where racial data is factored in is very likely to portray some form of racial bias.
 
 #### Choosing the Correct Model
 
@@ -113,9 +113,9 @@ Machine learning models have the goal of making predictions. However, these mode
 
 #### Monitoring and Reviewing
 
-I would be beyond surprised if research teams and companies create biased models intentionally. Most of the models depicting bias probably worked as intended in controlled environments. However, when applied to real world problems, biases manifest. This could mean that the satisfactory performance of the models in testing and training was enough to provide false belief that the models are ready to be used in real life situations.
+I would be beyond surprised if research teams and companies create biased models intentionally. Most of the models depicting bias probably worked as intended in controlled environments. However, when applied to real-world problems, biases manifest. This could mean that the satisfactory performance of the models in testing and training was enough to provide the false belief that the models are ready to be used in real-life situations.
 
-A wiser way to approach such a scenario is training the model on real world datasets. This should be accompanied by reviewing the performance of the model to see if any bias is exhibited. Real world data may provide unanticipated variables that may expose the bias of the model when applied to the real world.
+A wiser way to approach such a scenario is training the model on real-world datasets. This should be accompanied by reviewing the performance of the model to see if any bias is exhibited. Real-world data may provide unanticipated variables that may expose the bias of the model when applied to the real world.
 
 ### Wrapping Up
 
@@ -141,7 +141,7 @@ Bias is a huge issue in today’s society from a social and cultural perspective
 
 9. [Bias in machine learning, and how to stop it](https://www.techrepublic.com/article/bias-in-machine-learning-and-how-to-stop-it/)
 
-10. [A review of possible effects of cognitive biases on interpretation of rule-based machine learning models] (https://arxiv.org/pdf/1804.02969.pdf)
+10. [A review of possible effects of cognitive biases on interpretation of rule-based machine learning models](https://arxiv.org/pdf/1804.02969.pdf)
 
 11. [How to prevent bias in machine learning](https://becominghuman.ai/how-to-prevent-bias-in-machine-learning-fbd9adf1198)
 
