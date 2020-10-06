@@ -88,7 +88,7 @@ Besides, script coding is ideal for production and can cut down the time taken t
 An error occurring when running the code even after all the tests have passed would mean that the error is within the data. This would require a data scientist to polish up the data to run the code smoothly.
 
 ### Conclusion
-Jupyter Notebook can be a great tool for data scientist, especially when it comes to teaching. Analysts can perfectly rely on this tool to write small code snippets and in certain instances where the production of the code may not be required. Data scientists can also use the notebook to visualize and explore the data.
+Jupyter Notebook can be a great tool for data scientists, especially when it comes to teaching. Analysts can perfectly rely on this tool to write small code snippets and in certain instances where the production of the code may not be required. Data scientists can also use the notebook to visualize and explore the data.
 
 Despite that, data scientists need to think about switching to script to avoid the problems associated with Jupyter Notebook. Better yet, data scientists can learn to use both Jupyter Notebook and scripts depending on the task at hand. For instance, they can use scripts to create functions and classes which can then be imported into notebook.
 
