@@ -31,7 +31,7 @@ In this article, we will get an overview of resolving the privacy issue using Di
 
 In this digital era, most of the companies are data-driven. Our data is harvested to keep growing their economic incentives, in exchange for services provided to us. Research institutions often use and share data containing confidential information about individuals. Improper disclosure of such data can have adverse consequences for a data subject’s private information, or even lead to civil liability or bodily harm.
 
-In the late 2000s, Netflix ran a competition for building a recommendation system. To build, they released a large dataset by anonymizing the data which didn’t leak the movie names or users' ratings. Two professors from the University of Texas [de-anonymized](https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf) them completely by comparing them with IMDB ratings,  thus revealing the personal information about the dataset. Data privacy is compromised! Similarly, one such data breach of health records happened in 1997 too.
+In the late 2000s, Netflix ran a competition for building a recommendation system. To build, they released a large dataset by anonymizing the data which didn’t leak the movie names or users' ratings. Two professors from the University of Texas [de-anonymized](https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf) them completely by comparing them with IMDB ratings, thus revealing the personal information about the dataset. Data privacy is compromised! Similarly, one such data breach of health records happened in 1997 too.
 
 This sort of data leakage is very alarming both to the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). Well, there is an alternative to use Federated learning, where we bring the model to the data instead of vice-versa. Fundamentally, we must understand the concept of Differential Privacy to check for leakage in data.
 
@@ -192,7 +192,7 @@ Database administrators have all rights to query anything from the database, but
 #### 1) Local Differential Privacy
 
 - Adding noise to the function inputs. This is done by the users, who share their data and add to the database. It is more secure, in case the Database Administrators is not trustworthy.
-- Adding Noise before appending to the database
+- Adding Noise before appending to the database.
 
 #### 2) Global Differential Privacy
 
