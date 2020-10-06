@@ -115,7 +115,7 @@ Unlike in neural networks which consists of one or two layers, deep neural netwo
 
 ### Some well-known applications of deep learning include:
 
-**Automated driving*** 
+**Automated driving**
 Companies such as Waymo and Tesla are using deep learning in their self-driving cars to detect stop signs, traffic lights and pedestrians which help prevent accidents. 
 
 **Image recognition**
