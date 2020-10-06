@@ -2,6 +2,7 @@
 This article is a comprehensive tutorial on MySQL database optimization using Indexes. If you have interacted with any SQL based relational database, maybe you have come across indexes. Unfortunately, most beginners in SQL based databases don't know how to use Indexes. This article will help you not only to understand them but also to implement them.
 
 ### Prerequisites
+The target reader for this article is anyone who wants to learn about MySQL indexes. You may need prior knowledge in any SQL based relational database. The demos used here will work in both [Maria DB](https://mariadb.org/) and [MySQL](https://www.mysql.com/). Prior Knowledge of [MySQL](https://www.mysql.com/) database is essential. Free MySQL tutorials for beginners are available on [MySQL tutorial](https://www.mysqltutorial.org/) and [Tutorialspoint](https://www.tutorialspoint.com/mysql/index.htm). I would recommend you go through the related article on [MySQL Query Performance Optimization Tips](https://www.section.io/engineering-education/mysql-query-performance-optimization-tips/).
 
 ### Introduction to MySQL Indexes
 An index is a data structure used to locate data without scanning all the rows in a table for a given query. Indexes help retrieve data faster. Indexes are not visible to the users. They help speed up queries that require a search. 
