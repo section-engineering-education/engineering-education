@@ -16,7 +16,7 @@ A typical workflow looks like this:
 <li>Analyze the data and send the report by email.</li>
 </ul>
 
-Airflow automates the process of monitoring, scheduling, and distributing these tasks in a workflow across nodes. To accomplish this, Airflow provides a framework and a rich library to define these tasks in Python. It provides an aesthetic UI to view and monitor workflows in a web-based application and is extensible through plugins. 
+Airflow automates the process of monitoring, scheduling, and distributing these tasks in workflow across nodes. To accomplish this, Airflow provides a framework and a rich library to define these tasks in Python. It provides an aesthetic UI to view and monitor workflows in a web-based application and is extensible through plugins. 
 
 ![pipeline](/engineering-education/introduction-to-airflow/pipelines.png)
 
@@ -52,7 +52,7 @@ Airflow configuration files and database info will be stored in the environment 
 
 Example: `export AIRFLOW_HOME=~/adith/airflow`
 
-Airflow uses a database in the back-end to store metadata and other workflow related information. By default, [SQLite](https://www.sqlite.org/index.html), a lightweight, and beginner-friendly database is used by Airflow. You can change the default settings to a database of your choice by following [this documentation](https://airflow.apache.org/docs/stable/howto/initialize-database.html). Since SQLite is a beginner-friendly database, we are going to stick with that. 
+Airflow uses a database in the back-end to store metadata and other workflow-related information. By default, [SQLite](https://www.sqlite.org/index.html), a lightweight, and beginner-friendly database is used by Airflow. You can change the default settings to a database of your choice by following [this documentation](https://airflow.apache.org/docs/stable/howto/initialize-database.html). Since SQLite is a beginner-friendly database, we are going to stick with that. 
 
 To initialize the database, type the following command in the terminal:
 
@@ -72,7 +72,7 @@ Congratulations! You have successfully installed and run Apache Airflow on your 
 
 ### Conclusion and Further Reading
 
-In conclusion, Airflow is a powerful framework to automate the process of workflow management and scheduling. Airflow can be used in a wide array of use cases such as data warehousing: To clean, organize, and store data in a data warehouse, machine learning: To automate and monitor various machine learning workflows, email reporting: To automate the process of generating reports and sending them through emails, etc. Another advantage is that Airflow is open source and has a great community of developers to support and contribute to the project. If you require a new operator or a new feature, you can customize and add your own code making it highly extensible. Whether you are a software developer, data engineer, or a data scientist, it would be quite helpful to learn and explore Airflow. In this article, we covered the basics of airflow and its installation. In the next article, we are going to write our very own application and run it using Airflow. 
+In conclusion, Airflow is a powerful framework to automate the process of workflow management and scheduling. Airflow can be used in a wide array of use cases such as data warehousing: To clean, organize, and store data in a data warehouse, machine learning: To automate and monitor various machine learning workflows, email reporting: To automate the process of generating reports and sending them through emails, etc. Another advantage is that Airflow is open source and has a great community of developers to support and contribute to the project. If you require a new operator or a new feature, you can customize and add your code making it highly extensible. Whether you are a software developer, data engineer, or a data scientist, it would be quite helpful to learn and explore Airflow. In this article, we covered the basics of airflow and its installation. In the next article, we are going to write our very own application and run it using Airflow. 
 
 
 
