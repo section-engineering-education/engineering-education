@@ -129,37 +129,37 @@ Updates for your WordPress site are very vital in keeping ahead of the day to da
 
 ##### Fix WordPress SQLi Attack: Use a Firewall
 
-A firewall detects and shields your website from SQLi and other attacks, depending on your firewall service provider's features. There are several firewall security solutions on the internet; look-out for one that suits your WP security needs.
+A firewall detects and shields your website from SQLi and other attacks, depending on your firewall service provider's features. There are several WordPress firewall security solutions on the internet such as [Sucuri](https://wordpress.org/plugins/sucuri-scanner/), [WordFence](https://wordpress.org/plugins/wordfence/), [iThemes](https://wordpress.org/plugins/better-wp-security/), [Cerber Security](https://wordpress.org/plugins/wp-cerber/), and [All In One Wp Security](https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/). Besides, check with your hosting provider, they may have one already. 
 
 ##### Fix WordPress SQLi Attack: Pentesting
 
-[Pentesting/penetration testing](https://www.cloudflare.com/learning/security/glossary/what-is-penetration-testing/) or rather website security audit is vital to keep your WP site away from possible SQLi attacks. WordPress Pentesting involves making simulated SQLi attacks on your site to make all loopholes are covered. This process ensures all loopholes are found and sealed before an attacker finds and takes advantage of it.
+[Pentesting/penetration testing](https://www.cloudflare.com/learning/security/glossary/what-is-penetration-testing/) or rather a website security audit is vital to keep your WP site protected. WordPress Pentesting involves making simulated SQLi attacks on your site to make sure all loopholes are covered. This process ensures all loopholes are found and sealed before an attacker finds and takes advantage of them.
 
 ### How to Prevent SQLi in WordPress
 
-As they say, prevention is better than cure. Don't wait to prove if that is right or wrong with a successful SQLi on your WordPress website. Proper site maintenance practices will save you from SQLi attacks. These practices include regular updates for WordPress core files, plugins updates, using reputable plugins, avoid nulled themes, and minimal user inputs fields as much as possible.
+As they say, prevention is better than cure. Don't wait to prove if that is right or wrong with a successful SQLi. Proper site maintenance practices will save you from SQLi attacks. These practices include regular updates for WordPress core files, plugins updates, using reputable plugins, avoid nulled themes, and minimal user inputs fields such as subscription pop-up forms as much as possible.
 
-Normalize the use of ready-made commands for your database operations. WordPress has prepared statements for database operations that are well structured to mitigate risk on your website. Ensure your website is enabled for context data filtering, such as only allowing digits for phone number fields.
+[WordPress has prepared statements for database operations](https://developer.wordpress.org/reference/classes/wpdb/) that are well structured to mitigate risk on your website. Ensure context data filtering is enabled on your website, such as only allowing digits for phone number fields.
 
-##### Use Secure WordPress themes &amp; Plugins.
+##### Use Secure WordPress themes and Plugins.
 
-Themes and plugins are unavoidable while using the WordPress CMS; hence they are the silver lining to the open-source project. Nevertheless, ensure you are using reputable plugins and themes from the WordPress repository. If you plan to use premium plugins and themes, you want to look for such at top-rated repositories such as [Envato Market.](https://envato.com/)
+Themes and plugins are unavoidable while using the WordPress CMS; hence they are the silver lining to the open-source project. Nevertheless, ensure you are using reputable plugins and themes from the WordPress repository. If you plan to use premium plugins and themes, you want to look for them at top-rated repositories such as [Envato Market.](https://envato.com/)
 
-Be more vigilant with contact form and subscription plugins as they pose user input threat to your site.
+Be more vigilant with contact form and subscription plugins as any user input poses a threat to your site.
 
 ##### Mask your WordPress version
 
-This may seem nagging, but you may want to give hackers a hard time cracking your website. To hide your WP version, use the code below;
+Another way to give hackers a hard time cracking your website is to hide your WP version. To do so, use the code below:
 
 ```php
 remove_action(‘wp_head’, ‘wp_generator’);
 ```
 
-##### Minimize user privileges for the database user
+##### Minimize users privileges for the database user
 
 Grant the minimum possible user privileges for users connecting to your database, but they also must have the right privileges to execute actions on the database.
 
-NB: Never use the root user (it has all access to all databases) to access the database as this poses more risk to your website if hackers target your site.
+NB: Never use the root user (because it has all access) to access the database as this poses more risk to your website if hackers target your site.
 
 ##### Verify data entered by the user
 
