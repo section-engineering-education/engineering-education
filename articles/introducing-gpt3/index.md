@@ -16,33 +16,29 @@ images:
 ---
 Generative pre-trained transformers are language models that produce human-like text. These models make it easier to develop machine learning applications while also providing a way in for people with little tech background to develop applications.
 <!--more-->
-
 GPT-2 was massive, with about 1.5 billion parameters. The magnitude of this new model blows its predecessor out of the water boasting of 175 billion parameters. For all the hype surrounding GPT-3, it is necessary to take a closer look.
 
 ### Contents
-
 1. Potential of GPT-3
 2. Applications of the GPT-3
 3. How GPT-3 compares to BERT
 4. Limitations and dangers of GPT-3
 
 ### Prerequisites
-
 You only need basic understanding of machine learning and natural language processing concepts.
 
 ### A few terms
-
 **Natural Language Processing**- an arm of artificial intelligence dedicated to enable computers to understand human language and respond appropriately.
 
-**Transformers**-[Wikipedia](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)#:~:text=The%20Transformer%20is%20a%20deep%20learning%20model%20introduced,for%20tasks%20such%20as%20translation%20and%20text%20summarization.) describes transformers as deep learning models designed to handle sequential data for natural language tasks. They are the building blocks of state-of-the-art NLP architectures.
+**Transformers**-[Wikipedia](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model) describes transformers as deep learning models designed to handle sequential data for natural language tasks. They are the building blocks of state-of-the-art NLP architectures.
 
-**Language models**- given a set of words, these models have the ability to predict next words.
+**Language models**-given a set of words, these models have the ability to predict next words.
 
-**BERT**- Google’s pre-trained language model which produces state-of-the-art performance in a range of NLP tasks.
+**BERT**-Google’s pre-trained language model which produces state-of-the-art performance in a range of NLP tasks.
 
-**GPT**- generative pre-trained transformers which produce human-like text.
+**GPT**-generative pre-trained transformers which produce human-like text.
 
-**GPU**- graphics processing unit.
+**GPU**-graphics processing unit.
 
 ### GPT-3
 There’s a good chance I could have used GPT-3 to generate this article and you would never realize it. Whether impressive or scary, this embodies the strides that language models have made. In a previous [article]( https://www.section.io/engineering-education/automated-fake-news-detection/), I mentioned how BERT had revolutionized the field of NLP. The base BERT model has about [110 million parameters]( https://yashuseth.blog/2019/06/12/bert-explained-faqs-understand-bert-working/#:~:text=BERT%20is%20a%20multi-layer%20bidirectional%20Transformer%20encoder.%20There,layers%2C%2016%20attention%20heads%20and%2C%20340%20million%20parameters.).
@@ -118,11 +114,9 @@ GPT-3 is an [autoregressive model](https://365datascience.com/autoregressive-mod
 BERT is a bidirectional model. These language models are able to be trained based on the set of words in a sentence. Models like GPT-3 are reliant on previous values to make predictions. Bidirectional models learn context of a word based on the words around it as opposed to just the word before or after the word in consideration.
 
 #### Size
-
 As we had mentioned, the largest BERT architecture has 340 million parameters. Against the 175 billion parameters of GPT-3, BERT is about 500 times smaller. This shows how massive GPT-3 is.
 
 #### Fine tuning
-
 We described fine tuning as having to use a large dataset to train a model. BERT requires fine tuning where data to train the model needs to be gathered by users. On the other hand, we mentioned that GPT-3 is a few-shot learner. The model is given a few examples in the form of input and expected to make predictions. GPT-3 can go as far as being a zero-shot learner. This is a key difference between these two language models.
 
 #### Availability
@@ -132,11 +126,9 @@ BERT has always been open source, meaning users can get their hands on the model
 ### Limitations and Dangers
 
 #### Model size
-
 We mentioned that this model boasts of 175 billion parameters. Assuming each parameter requires around 4 bytes of memory, this amounts to around [700 GB](https://lambdalabs.com/blog/demystifying-gpt-3/). The average person will likely run out of memory attempting to run the model. The sheer size of the model makes it impractical to use for the average researcher, hobbyist or practitioner.
 
 #### Access and cost
-
 OpenAI showed that we are in a time of commercial AI when they switched to a [for-profit](https://openai.com/blog/openai-lp/) company from a non-profit to fund the costs of their research. AI research is being commercialized. This may work for the big companies since they can afford to purchase or subscribe to access such a model. Just recently, Microsoft acquired an [exclusive license](https://www.theverge.com/2020/9/22/21451283/microsoft-openai-gpt-3-exclusive-license-ai-language-research) to GPT-3. However, this a sticking point for the average practitioner. Aside from a free 3-month trial period, the [pricing tiers](https://www.reddit.com/r/GPT3/comments/ikorgs/oa_api_preliminary_beta_pricing_announced/) for the model range from a $100 a month, to a $400 a month package and ultimately a custom pricing option. These tiers, aside from the custom pricing plan, offer a finite number of tokens. Meaning that if you exhaust your tokens, you have to pay for more.
 
 People developing products atop of GPT-3 would have to charge more or be creative in their pricing as a result. Especially considering use of other language models does not cost a thing since they are open source. The computational requirements of GPT-3 make sure that it is very expensive to run and maintain the model.
@@ -144,28 +136,23 @@ People developing products atop of GPT-3 would have to charge more or be creativ
 Access to the model is restricted. Access has been through a limited closed beta. The closed beta is set to continue until stated otherwise, even after releasing their pricing model.
 
 #### Computational requirements
-
 It is noted that the size of state-of-the-art language models is increasing annually by a factor of 10 at the very least. [BERT large](https://arxiv.org/abs/1810.04805) was released in 2018 and has 355 million parameters. [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) was released in 2019 and has 1.5 billion parameters. GPT-3 has 175 billion parameters. Model sizes are therefore outpacing GPU memory. A competent GPU is quite costly. Check out the prices of a few NVIDIA GPUs [here](https://www.nvidia.com/en-gb/shop/geforce/gpu/?page=1&limit=9&locale=en-gb&category=GPU&gpu=RTX%202080%20Ti). Even with such GPUs, you may struggle to run some of these language models. Considering GPT-3, the computational resources required make its use impractical for the everyday researcher.
 
 #### Silly errors, unexpected poor performance
-
 GPT-3 can make silly mistakes while generating output. Especially considering input that requires use of common sense. Generated output samples may repeat themselves within the same document. This renders the output incoherent more so in lengthy passages. The model may also deviate from the themes of the generated text in lengthy passages. It basically loses the plot.
 
 However impressive the output of GPT-3 is, it can also generate text of very poor quality. This means sometimes it offers completely average performance. Considering a model of its size and training, this becomes baffling.
 
 #### Racial and gender bias
-
 GPT-3 occasionally exhibits bias in its generated text. The model is trained on all kinds of raw data therefore negative responses and biases may not be filtered out. This results in the occasional sexist as well as racist output. Check out this [Twitter thread]( https://twitter.com/AnimaAnandkumar/status/1271137176529416193) as an example of sexist and racial bias. Here’s a second [example](https://twitter.com/an_open_mind/status/1284487376312709120) where the model is prompted to write tweets from one word. The words included black, women, Jews and holocaust.
 
 #### Fake news generation
-
 We have mentioned how the greatest strength of GPT-3 is text generation. The model is capable of generating articles, passages, transcripts and other forms of writing that are incredibly convincing. It can mimic famous people. The model can also generate text around topics that may be sensitive in a cultural, societal or economic sense and cause panic, outrage or tension. The model has no moral stand or obligation to uphold. And since the generated text is often very well written, it becomes so easy for people to believe the text to be fact. This is how fake news is generated and spread. GPT-2 sparked all sorts of controversy when it was released due to the ability to deceive. GPT-3, being much larger than its predecessor, is judged on the same scale. I wrote an article about [fake news detection]( https://www.section.io/engineering-education/automated-fake-news-detection/) in case you would want to read more on the topic.
 
 ### It’s a Wrap
 GPT-3 is the most impressive stride in NLP in 2020. We have discussed its incredible potential and seen some mind-blowing examples of potential uses. It could revolutionize a number of professions. However, beyond the hype, it has a not-so-attractive side. It is plagued with bias, silly mistakes, mediocre performance and an impressive yet dangerous ability to generate convincing text. The model needs a lot of improvements to live up to the hype it has generated. I do hope that someday it can be open sourced. But, as it stands, the model will continue to be commercialized for the foreseeable future.
 
 ### References
-
 1. [Language models are few shot learners](https://arxiv.org/pdf/2005.14165.pdf)
 
 2. [Why GPT-3 Matters](https://bmk.sh/2020/05/29/GPT-3-A-Brief-Summary/)
