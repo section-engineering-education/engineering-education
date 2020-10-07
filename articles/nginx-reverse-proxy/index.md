@@ -11,15 +11,15 @@ By the end of the article, you'll understand
 - How to leverage NGINX as a Reverse Proxy?
 
 ### Reverse Proxy
-According to Wikipedia,   
-A reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the server  itself.  
+According to [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)  ,   
+A reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the server  itself.    
+
  Refer to [this article](https://www.section.io/engineering-education/what-are-reverse-proxies/) to better understand what Reverse Proxies are.
 
 ### NGINX
-We will be using NGINX as a Reverse Proxy. According to Wikipedia,   
+We will be using NGINX as a Reverse Proxy. According to [Wikipedia](https://en.wikipedia.org/wiki/Nginx),   
 NGINX is a web server that can be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and publicly released in 2004. Nginx is free and open-source software, released under the terms of the 2-clause BSD license. A large fraction of web servers use NGINX, often as a load balancer.
 
-To know more about NGINX, check out the [Wiki](https://en.wikipedia.org/wiki/Nginx).
 
 Some of the other Reverse Proxies available are:
 - [Apache](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html)
