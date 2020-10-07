@@ -2,25 +2,23 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-jekyll-site/
-title: Objects, Arrays and Destructuring in JavaScript
-description: This article goes over objects an arrays and destructuring in JavaScript, to help developers have a better understanding of the basics.
+url: /engineering-education/object-arrays-destructuring/
+title: Objects, Arrays, and Destructuring in JavaScript
+description: This article goes over objects, arrays, and destructuring in JavaScript, to help developers have a better understanding of the basics.
 author: geoffrey-mungai
-date: 2020-10-02T00:00:00-11:00
+date: 2020-10-06T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-a-jekyll-site/hero.jpg
-    alt: image build a Jekyll site
+  - url: /engineering-education/object-arrays-destructuring/hero.jpg
+    alt: object arrays destructuring example image
 ---
-Objects and arrays are some of the common data types used in JavaScript. Despite being commonly used, many developers have little understanding of the basic concepts of the two data types. The use of objects in places of arrays and vice-versa is common among developers. Let's look at the two data types, their differences and destructuring in each.
+Objects and arrays are some of the common data types used in JavaScript. Despite being commonly used, many developers have little understanding of the basic concepts of the two data types. The use of objects in place of arrays and vice-versa is common among developers. Let us look at the two data types, their differences, and destructuring in each.
 <!--more-->
 
 ### Introduction
-When building a simple JavaScript dinosaur game, the realization of why a good understanding of basic concepts is important. I had to create a character but I had no idea whether to use an object or an array. I had to google things to find out.
-
-If you are using a chromium-based browser, you can [run the JavaScript code in your browser](https://developers.google.com/web/tools/chrome-devtools/console/javascript). By the end of this tutorial, you'll understand the basics of objects and arrays, their differences, and destructuring in each.
+This article is meant to serve as an introduction to the basic concepts of objects and arrays when working with JavaScript. If you are using a chromium-based browser, you can [run the JavaScript code in your browser](https://developers.google.com/web/tools/chrome-devtools/console/javascript). By the end of this tutorial, you'll understand the basics of objects and arrays, their differences, and destructuring in each.
 
 ### 1. Objects
 Objects are variables that have properties associated with them. They are used to represent "things" in your code. For example, a character, a car, a building, etc. If you have worked with JSON data you have already worked with objects. Comparing it to a real-life situation, let's use a person as the example object. A person has at-least 1 name. The person's name is one property of this object.
@@ -51,7 +49,7 @@ The first line creates an empty object `person` while the following lines add th
 > Assignment using dot notation is only applicable when using **strings** as the property keys.
 
 ### Assignment using square brackets
-There are some cases where using dots can't be applied. Here are some good examples:
+There are some cases where using dot notation can't be applied. Here are some good examples:
 - When adding a property to an object using a key starting with an invalid identifier like:
 	- a sign or a symbol
 	- a number
@@ -105,7 +103,7 @@ var person = {};
 person["hobby"] = "coding";
 ```
 
-All the keys in the square bracket notation except symbols are converted to strings. This is because objects property names in JavaScript should be a string or a symbol.
+All the keys in the square bracket notation (except symbols) are converted to strings. This is because objects property names in JavaScript should be a string or a symbol.
 
 ### Accessing object properties
 Objects properties can be accessed by the use of **dot notation** or **square brackets notation**.
@@ -139,7 +137,7 @@ var fruits = [
 In arrays, unlike objects, keys are auto-generated. Each item is given a numeric key according to the position in the array.
 
 ### Adding items to arrays
-Items can be added at the beginning, between and the end of the array. Items can be added at the beginning of an array by using the [unshift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) method.
+Items can be added at the beginning, between, and the end of the array. Items can be added at the beginning of an array by using the [unshift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) method.
 
 ```JavaScript
 fruits.unshift("Watermelon","Plums");
@@ -261,7 +259,7 @@ let b = 2;
 ```
 
 ### Conclusion
-Objects are a data-type that has properties or preferences associated with it. Arrays are a data-type used to store related items or creating ordered lists. Since objects and arrays make up a fraction of a web developer's code, understanding the basic concepts around these data types is important.
+Objects are a data-type that has properties or preferences associated with it. Arrays are a data-type used to store related items or creating ordered lists. Since objects and arrays make up a fraction of a web developer's code, understanding the basic concepts around these data types and how they work is important to understand.
 
 ---
 Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
