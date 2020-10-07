@@ -1,9 +1,25 @@
-# Deploying Multiple Applications to VM with NGINX as a Reverse Proxy
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nginx-reverse-proxy/
+title: Deploying Multiple Applications to VM with NGINX as a Reverse Proxy
+description:
+author:
+date: 2020-10-07T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-## Introduction
+  - url: /engineering-education/nginx-reverse-proxy/hero.jpg
+    alt:
+---
 Ever wondered how more than one application is deployed to the same machine, and how traffic is routed to the corresponding applications?
 Keep reading to find out.
-## Goals
+<!--more-->
+### Introduction
+
+### Goals
 By the end of the article, you'll understand
 - What a Reverse Proxy is?
 - What NGINX is?
@@ -34,18 +50,18 @@ This is an example of an architecture, where two apps are running in the backgro
 
 Now that you have a broad idea of what we are about to build, let's jump right in!
 
-## Aim
+### Aim
 1. Deploy two applications and have it managed by NGINX.
 
-## Setup & Pre-Requisites:
+### Setup & Pre-Requisites:
 
-1. For this example, I have two sample Express Applications. One can have any kind of application running on different ports. 
+1. For this example, I have two sample Express Applications. One can have any kind of application running on different ports.
 **NOTE:** Do not run your application on Port 80 or 443. It will be explained later why this must not be done.  
 Refer the official ExpressJS documentation for Getting Started. [Docs](https://expressjs.com/en/starter/installing.html)
 2. I have installed NGINX on my local machine, but the same could be done on any Virtual Machine where the applications are expected to be deployed.  
-Here is the documentation on how to install NGINX on your machine. [Docs](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) . 
+Here is the documentation on how to install NGINX on your machine. [Docs](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) .
 
-## Step 1: Start two apps running in different ports
+### Step 1: Start two apps running in different ports
 As I've mentioned earlier, I've got two Node.js Apps running on two different ports as shown below.  
 
 **Server app running on Port 3000**
@@ -60,7 +76,7 @@ Now that we have our apps up and running, we don't want our users to use these a
 Another example could be a particular route like domain/client and domain/server. The only condition for the distinguishing element is to follow a Valid URL Regular Expression. Learn about Regex from [here](https://regexr.com/).
 
 
-## Step 2: Add DNS records
+### Step 2: Add DNS records
 This is the part where one would add the DNS records in their DNS management dashboard. If you are running Nginx locally, you can skip this step.
 
 The general DNS Configurations would be something like
@@ -73,7 +89,7 @@ My Localhost Config, in this case, would be
 
 There are two standard protocols HTTP and HTTPS. The default port for HTTP is 80 and HTTPS is 443. This is the reason we must not run our applications on these ports because our NGINX server would be running on these two ports. All the requests the client makes would either be redirected to Port 80 or 443 from where it would be redirected internally to the corresponding application.
 
-## Step 4 - Configure NGINX at 80 for HTTP and 443 for HTTPS
+### Step 4 - Configure NGINX at 80 for HTTP and 443 for HTTPS
 Now that we have our apps running and our DNS records ready. We can start configuring our NGINX Reverse Proxy to make it all work.  
 By default, the configuration file is named nginx.conf and placed in the directory /usr/local/nginx/conf, /etc/nginx, or /usr/local/etc/nginx for Linux and Debian Based systems.
 On Windows, the file is placed inside the installation folder, nginx/conf/nginx.conf.
@@ -81,7 +97,7 @@ On Windows, the file is placed inside the installation folder, nginx/conf/nginx.
 
 Add these configurations inside the HTTP block.
 
-### Step 4.1 - HTTP
+#### Step 4.1 - HTTP
 
 ```
 server {       
@@ -101,7 +117,7 @@ server {
 }
 ```
 
-### Step 4.2 - HTTPS
+#### Step 4.2 - HTTPS
 
 ```
 server {
@@ -132,16 +148,15 @@ server {
 }
 ```
 
-**NOTE** 
-These are the basic minimum configurations required to successfully configure NGINX for reverse proxying. Feel free to explore other config parameters as well. 
+**NOTE**
+These are the basic minimum configurations required to successfully configure NGINX for reverse proxying. Feel free to explore other config parameters as well.
 
 Change the domain name to your domain.
 For a SSL Certificate and Key, you can obtain them from your SSL provider. If you don't have one, Use this free service [LetsEncrypt](https://letsencrypt.org/). Follow their documentation to get Free SSL instantly!
 
 
 
-## Step 5 - Save and Restart
-
+### Step 5 - Save and Restart
 After editing, save your changes. Use the ```nginx -t``` command to test your changes before actually reloading NGINX. It is good practice do that to make sure your server doesn't crash if there were any errors in your config file. Once you get a message that the test is successful, you can go ahead and restart NGINX.  
 Open the browser and enter the URLs to find your applications running on the corresponding URLs configured.
 
@@ -149,8 +164,7 @@ Open the browser and enter the URLs to find your applications running on the cor
 > Using NGINX secures your server because it routes the traffic internally. Instead of having to open up all of your ports, in this case 3000 and 3001, to the internet, just 80 and 443 will do the trick.  
 > This is because all traffic passes through the secure NGINX server (like a gateway) and is redirected to the correct application. Using a reverse proxy like NGINX is much more secure that opening up several ports for every application you deploy because of the increased risk a hacker will use an open port for malicious activity.
 
-## Conclusion
-
+### Conclusion
 Here is the end result,
 
 ![image](./client2.png)
@@ -165,8 +179,7 @@ The microservices architecture is discussed [here](https://microservices.io/patt
  Thanks for reading
 
 
- ## References
-
+### References
  - [Nginx Beginner Guide](http://nginx.org/en/docs/beginners_guide.html#:~:text=By%20default%2C%20the%20configuration%20file,%2Flocal%2Fetc%2Fnginx%20)
  - [Wiki article on Reverse Proxy](https://en.wikipedia.org/wiki/Reverse_proxy)
  - [Wiki article on NGINX](https://en.wikipedia.org/wiki/Nginx)
