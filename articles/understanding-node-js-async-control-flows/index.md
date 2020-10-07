@@ -1,4 +1,22 @@
-Javascript has embraced asynchronous programming with single thread processing. Every task executes in the order the code is written. Embracing asynchronous promises and callbacks ensure non-blocking operations flow. Asynchronous permits other processing to continue even before the first transmission has finished. This makes it a more versatile and robust solution for event looping on long-running code. Utility modules like [Async.js](https://github.com/caolan/async) provide functions for working with asynchronous flow control.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-node-js-async-control-flows/
+title: Understanding Node.js Asynchronous Control Flows
+description: This article goes through async flow functions using Async.js to control the flow of task executions. Including Serial, Parallel, Waterfall, Queues, etc.
+author: joseph-chege
+date: 2020-10-01T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-node-js-async-control-flows/hero.jpg
+    alt: Node.js async control flows
+---
+Javascript has embraced asynchronous programming with single thread processing. Every task executes in the order the code is written. Embracing asynchronous promises and callbacks ensure non-blocking operations flow. Asynchronous permits other processing to continue even before the first transmission has finished.
+<!--more-->
+This makes it a more versatile and robust solution for event looping on long-running code. Utility modules like [Async.js](https://github.com/caolan/async) provide functions for working with asynchronous flow control.
 
 To understand how asynchronous programming works, we can use the following example. Suppose you are making scrambles eggs for breakfast. There are several actions/steps to follow. Below is a sample recipe.
 
@@ -12,11 +30,11 @@ To understand how asynchronous programming works, we can use the following examp
 8. Remove from heat and let it sit for 10 seconds.
 9. Give it a final stir and serve the eggs with some fresh veggies.
 
-If you look at these steps, there are some breaks that you need to wait before proceeding to the next step. You can't skip those time intervals and hope to get some lovely eggs. Javascript is threaded. Everything is executed in the order of how your code is written. If we wrote the scrambled eggs steps in javascript, this is how it would look like.
+If you look at these steps, there are some breaks that you need to wait before proceeding to the next step. You can't skip those time intervals and hope to get some lovely eggs. JavaScript is threaded. Everything is executed in the order of how your code is written. If we wrote the scrambled eggs steps in JavaScript, this is how it would look like.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/someScrabbledEggs?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Javascript served me the eggs even before heating the pan and pouring the mixture to cook. And there is nothing wrong with javascript. It did what we instructed it to do in a ‘`synchronous process`. It will execute the timeout functions but won't wait to finish because we didn't tell it to. Imagine this coded concept was implemented in a bank system. This can lead to a case where a user can withdraw some money even before he/she deposits it. This where `control flow` comes in.
+JavaScript served me the eggs even before heating the pan and pouring the mixture to cook. And there is nothing wrong with JavaScript. It did what we instructed it to do in a ‘`synchronous process`. It will execute the timeout functions but won't wait to finish because we didn't tell it to. Imagine this coded concept was implemented in a bank system. This can lead to a case where a user can withdraw some money even before he/she deposits it. This where `control flow` comes in.
 
 ### Control flows
 [Control flow](https://en.wikipedia.org/wiki/Control_flow) is the order in which individual statements, instructions, or function calls of an imperative program are executed or evaluated.
