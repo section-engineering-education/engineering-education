@@ -72,7 +72,7 @@ These are the files that make up the open-source CMS project. Below is an image 
 ![wordpress-core-files](/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/wordpress-core-files.png)
 Are your WordPress core files running on the latest version?
 
-As we have found out, your WordPress site is secure from any SQLi if your core files are updated. Nevertheless, the use of third-party plugins and themes change the narrative and exposes you exponentially. We shall list the most prone WordPress plugin installation areas that you be on the look-out. They include;
+As we have found out, your WordPress site is secure from any SQLi if your core files are updated. Nevertheless, the use of third-party plugins and themes change the narrative and can expose you exponentially. Here are a list of the most prone types of WordPress plugins that you should be on the look out for. They include;
 
 1. Subscription pop-ups
 2. Login/Signup forms
@@ -84,7 +84,7 @@ As we have found out, your WordPress site is secure from any SQLi if your core f
 8. Blog comment forms
 9. Search parameters
 
-The [Exploit-DB website](https://www.exploit-db.com/search?q=) provides a detailed context of vulnerabilities happening in WordPress plugins. Furthermore, it points out how the attacks affected victim websites and the solution deployed.  
+The [Exploit-DB website](https://www.exploit-db.com/search?q=) provides a detailed context of vulnerabilities occuring in WordPress plugins. Furthermore, it points out how the attacks affected victim websites and the solution deployed.  
 
 ### How to Detect and Fix WordPress SQLi Attack?
 
@@ -96,7 +96,7 @@ Proceed to sanitize the UDF files the attacker used to obtain the OS Shell. Besi
 
 ##### Fix WordPress SQLi Attack: Database Clean Up
 
-A database clean-up is required to fix any possible SQLi on your site's database. Here are steps to so as well with the function cheat-sheet.
+A database clean-up is required to fix any possible SQLi on your site's database. Here are steps to do so as well as the function cheatsheet.
 
 Step 1: Look up all your tables using the command show tables; Look out for a table named Sqlmap.
 
@@ -125,7 +125,7 @@ UPDATE users SET pass = concat('ZZZ', sha(concat(pass, md5(rand()))));
 
 ##### Fix WordPress SQLi Attack: Vital updates
 
-Updates for your WordPress site are very vital in keeping ahead of the day to day vulnerabilities. Make sure to update your WordPress Core files often as well as your theme and plugins. Avoid using nulled themes on your WP site. Also, make sure to use reputable plugins on your site.
+Updates for your WordPress site are very vital in keeping ahead of the day to day vulnerabilities. Make sure to update your WordPress Core files often as well as your theme and plugins. Avoid using [nulled themes or nulled plugins](https://wordpress.stackexchange.com/questions/232041/what-are-nulled-themes/) on your WP site. Also, make sure to use reputable plugins on your site.
 
 ##### Fix WordPress SQLi Attack: Use a Firewall
 
