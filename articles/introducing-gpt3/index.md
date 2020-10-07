@@ -43,7 +43,7 @@ You only need basic understanding of machine learning and natural language proce
 ### GPT-3
 There’s a good chance I could have used GPT-3 to generate this article and you would never realize it. Whether impressive or scary, this embodies the strides that language models have made. In a previous [article](/engineering-education/automated-fake-news-detection/), I mentioned how BERT had revolutionized the field of NLP. The base BERT model has about [110 million parameters]( https://yashuseth.blog/2019/06/12/bert-explained-faqs-understand-bert-working/#:~:text=BERT%20is%20a%20multi-layer%20bidirectional%20Transformer%20encoder.%20There,layers%2C%2016%20attention%20heads%20and%2C%20340%20million%20parameters.).
 
-The largest BERT architecture boasts of 340 million parameters. Compared to GPT-3’s 175 billion parameters, the scale of this new language model becomes apparent. BERT is incredibly impressive in its NLP tasks. However, the difference in comparison with GPT-3 naturally brings about huge expectations on GPT-3.
+The largest BERT architecture boasts of around 340 million parameters. Compared to GPT-3’s 175 billion parameters, the scale of this new language model becomes apparent. BERT is incredibly impressive in its NLP tasks. However, the difference in comparison with GPT-3 naturally brings about huge expectations on GPT-3.
 
 As mentioned in the introduction, GPT-3 is the third iteration of generative pretrained transformers, which produce human-like text. It has been developed by [OpenAI]( https://openai.com/) and is arguably their most controversial product yet. We shall get more into that later.
 
