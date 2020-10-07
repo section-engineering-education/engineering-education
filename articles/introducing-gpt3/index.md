@@ -1,9 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introducing-gpt3/
+title: Introduction to GPT3
+description:
+author: collins-ayuya
+date: 2020-10-07T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero](/engineering-education/introducing-gpt3/hero.jpg)
+  - url: /engineering-education/introducing-gpt3/hero.jpg
+    alt: 
+---
+Generative pre-trained transformers are language models that produce human-like text. These models make it easier to develop machine learning applications while also providing a way in for people with little tech background to develop applications.
+<!--more-->
 
-[Image source](https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)
-
-Generative pre-trained transformers are language models that produce human-like text. These models make it easier to develop machine learning applications while also providing a way in for people with little tech background to develop applications. GPT-2 was massive, with about 1.5 billion parameters. The magnitude of this new model blows its predecessor out of the water boasting of 175 billion parameters. For all the hype surrounding GPT-3, it is necessary to take a closer look.
+GPT-2 was massive, with about 1.5 billion parameters. The magnitude of this new model blows its predecessor out of the water boasting of 175 billion parameters. For all the hype surrounding GPT-3, it is necessary to take a closer look.
 
 ### Contents
 
