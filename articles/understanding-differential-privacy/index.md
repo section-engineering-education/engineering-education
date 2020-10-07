@@ -30,19 +30,19 @@ In this digital era, most companies are data-driven. Our data is harvested to he
 
 In the late 2000s, Netflix ran a competition for building a recommendation system. To build it, they released a large dataset by anonymizing the data which didn’t leak the movie names or users' ratings. Two professors from the University of Texas [de-anonymized](https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf) them completely by comparing them with IMDB ratings, thus revealing the personal information about the dataset. This a great example of how data privacy has been compromised! Similarly, one such [data breach of health records happened in 1997](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1748-720X.1997.tb01885.x), where medical records of the governor of Massachusetts were identified by matching anonymized medical encounter data with voter registration records.
 
-This sort of data leakage is very alarming both to the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). An alternative, being Federated learning, where we bring the model to the data instead of or vice-versa. Fundamentally, we must understand the concept of Differential Privacy to check for leakage in data.
+This sort of data leakage is very alarming to both the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). An alternative, being [federated learning](https://en.wikipedia.org/wiki/Federated_learning), where we bring the model to the data instead of or vice-versa. For the scope of this article we will mainly focus on the concept of differential privacy to check for leakage in data.
 
 ### Differential Privacy
 
 #### Former definition
 *Anything that can be learned from a statistical database can be learned without accessing the database*
 
-This definition does not hold. We need to consider two things, first is people and the second is data. We need to protect people's rights as well while correctly predicting using their data. In certain cases, the whole database must be kept private, to protect the information, because there are chances of data leaks.
+This definition does not hold. We need to consider two things, first is people and the second is data. We need to protect people's rights while (correctly predicting) using their data. In certain cases, the whole database must be kept private, to protect the information, because there are chances of data leaks.
 
 #### Modern definition
 *It’s a promise made by a data holder to a data subject, that “You will not be affected, adversely or otherwise, by allowing your data to be used for study analysis, no matter what other studies, datasets or information is available” - Cynthia Dwork (Godfather of Differential Privacy)*
 
-A simpler way to understand this modern definition is to:
+A simpler way to understand this modern definition is to go over an example:
 
 Assume, we have a small database of 5000 entries with 0 or 1 as a value for each row, specifying certain property like 'people with cancer' as 1, and 'people without cancer' as 0. So, here our goal would be "Even if we removed detail of 1 person, the query of the database must not change” then the privacy of the information is protected. We will see its implementation very shortly.
 
@@ -120,7 +120,7 @@ Now, we create a set of such databases (parallel databases), where index `i` is 
 
 **Output:**
 
-`bash
+```bash
 Out[2]: [tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, False,
          False,  True, False, False,  True,  True, False, False, False]),
  tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, False,
@@ -129,7 +129,7 @@ Out[2]: [tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, 
          False,  True, False, False,  True,  True, False, False, False]), .................
  tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, False,
          False,  True, False, False,  True,  True, False, False, False]),
-`
+```
 
 Next, we create a set of databases based on the users' input.
 
