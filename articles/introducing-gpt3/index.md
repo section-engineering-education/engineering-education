@@ -30,15 +30,15 @@ You only need basic understanding of machine learning and natural language proce
 ### A few terms
 **Natural Language Processing**- an arm of artificial intelligence dedicated to enable computers to understand human language and respond appropriately.
 
-**Transformers**-[Wikipedia](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model) describes transformers as deep learning models designed to handle sequential data for natural language tasks. They are the building blocks of state-of-the-art NLP architectures.
+**Transformers** - [Wikipedia](https://bit.ly/36GaRsO) describes transformers as deep learning models designed to handle sequential data for natural language tasks. They are the building blocks of state-of-the-art NLP architectures.
 
-**Language models**-given a set of words, these models have the ability to predict next words.
+**Language models** - given a set of words, these models have the ability to predict next words.
 
-**BERT**-Google’s pre-trained language model which produces state-of-the-art performance in a range of NLP tasks.
+**BERT** - Google’s pre-trained language model which produces state-of-the-art performance in a range of NLP tasks.
 
-**GPT**-generative pre-trained transformers which produce human-like text.
+**GPT** - generative pre-trained transformers which produce human-like text.
 
-**GPU**-graphics processing unit.
+**GPU** - graphics processing unit.
 
 ### GPT-3
 There’s a good chance I could have used GPT-3 to generate this article and you would never realize it. Whether impressive or scary, this embodies the strides that language models have made. In a previous [article](/engineering-education/automated-fake-news-detection/), I mentioned how BERT had revolutionized the field of NLP. The base BERT model has about [110 million parameters]( https://yashuseth.blog/2019/06/12/bert-explained-faqs-understand-bert-working/#:~:text=BERT%20is%20a%20multi-layer%20bidirectional%20Transformer%20encoder.%20There,layers%2C%2016%20attention%20heads%20and%2C%20340%20million%20parameters.).
