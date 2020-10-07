@@ -1,8 +1,10 @@
-# How to setup code formatting of Node JS app using Prettier and ESLint
+# How to setup code formatting of Node JS app using Prettier and ESLint?
 
- - One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. These stages consist of enormous chunks of code that not only require a great amount of time for formatting but also differ in style with different individuals in the team. Have you ever wondered to cut short this formatting time with just one-click? Any alternatives to prevent this monotonous task? For getting rid away with the hassles of writing clean code and maintaining consistency across a project on specific code style guidelines, **Prettier** is one of the most prominent tools out there in which you can bank upon! With Prettier editor integration, you can just press that magic key binding and poof, the code is formatted. Prettier, along with the support of **ESLint**, is a deadly combination that increases productivity manifolds.
+ One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. These stages consist of enormous chunks of code that not only require a great amount of time for formatting but also differ in style with different individuals in the team. Have you ever wondered to cut short this formatting time with just one-click? Any alternatives to prevent this monotonous task? 
+ 
+ For getting rid away with the hassles of writing clean code and maintaining consistency across a project on specific code style guidelines, **Prettier** is one of the most prominent tools out there in which you can bank upon! With Prettier editor integration, you can just press that magic key binding and boom, the code is formatted. Prettier, along with the support of **ESLint**, is a deadly combination that increases productivity manifolds.
 
- - This guide includes step-by-step instructions so that you have a comfortable experience in beginning your open source deployment. Without further ado, let's get started by answering all the why(s), what(s) & how(s)!
+ This guide includes step-by-step instructions so that you have a comfortable experience in beginning your open source deployment. Without further ado, let's get started by answering all the why(s), what(s) & how(s)!
 
 ## Table of Contents
 
@@ -18,7 +20,7 @@
 
 ## What is Prettier?
   
- - Prettier is an opinionated code formatter with support for JavaScript, GraphQL, Angular and other popular Community Plugins. It is highly established in the open-source ecosystem with more than 2 million dependent repositories on GitHub. You can measure its efficiency by the fact that it has more than 6000 dependent packages on npm. Many of the technology giants like Facebook, React, Dropbox and PayPal, etc. use it quite extensively. It also has support for various IDE, viz. VS Code, Web Storm, Atom and Vim.
+Prettier is an opinionated code formatter with support for JavaScript, GraphQL, Angular and other popular Community Plugins. It is highly established in the open-source ecosystem with more than 2 million dependent repositories on GitHub. You can measure its efficiency by the fact that it has more than 6000 dependent packages on npm. Many of the technology giants like Facebook, React, Dropbox and PayPal, etc. use it quite extensively. It also has support for various IDE, viz. VS Code, Web Storm, Atom and Vim.
 
 ![gif-1](./implement.gif)
 [Prettier Magic](https://glebbahmutov.com/blog/images/prettier/projectA.gif)
@@ -52,33 +54,42 @@
 
 - For this, first install prettier on your system. For installing it in your IDE/Editor, go to the integrations page on the website and download the corresponding plugin. In VS Code go to View ->Extensions, Search for prettier code formatter, Click Install and you're done. Go to **.vscode/settings.json**, it will open your ide setting in JSON format. Add the following snippet to format all the files with a single click:
 
+```
   {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   }
+```
 
 ![vscode extsn. image](./vscodeext.png)
 
 - For installing prettier in projects, we will install the prettier CLI and add it as a dev dependency. Simply, go to the **VS Code** terminal and install the packages.
 
+```
   npm install --save-dev --save-exact prettier (using NPM)
   yarn add prettier --dev --exact (using Yarn)
-
+```
 ![install image](./install.png)
 
 - Then, create an empty config JSON file (file A) and create a .prettierignore file (file B) to let editors and other tooling know you are using Prettier and which files to not format.
-  echo {}> .prettierrc.json         ... File A
 
+```
+  echo {}> .prettierrc.json         ... File A
+```
+
+```
   # Ignore artifacts:          
   package-lock.json
   .next
   node_modules/                     ... File B
+```
 
 - Once you're done with writing your code files in the project, it's now time to format all the files you have. 
 
+```
   npx prettier --write .    (using NPM)
   yarn prettier --write .   (using Yarn)
-
+```
 ![format image](./format.png)
 
 ## How to configure Prettier to work with ESLint?
@@ -87,16 +98,19 @@
 
 - After installing Prettier and ESLint, install the following packages: 
 
+```
   npm i prettier eslint-config-prettier eslint-plugin-prettier -D
-
+```
 ![plugin image](./eslintconf.png)
 
 - Now, Update “extends” in your .eslintrc file as follows:
 
+```
   "extends": [ "airbnb", "plugin:prettier/recommended" ]
-
+```
 - If you want to modify the default Prettier configuration, just create a **.prettierrc** file in *“eslint-app”* directory, for example:
 
+```
   {
     // Use single quotes instead of double quotes.
     "singleQuote": false,
@@ -128,15 +142,16 @@
      // add many more as required!
     
   }
-
+```
 ![config. image](./prettierconf.png)
 
 ## How to format all your code with just one-click?
 
 - Instead of running Prettier from the command line (prettier --write), checking formatting in CI, or running it from the editor, you can run Prettier as a pre-commit hook as well. This makes sure all your commits are formatted, without having to wait for your CI build to finish in a single click! 
 
-- In order to do that, add the following snippet to your *package.json* to have ESLint and Prettier run before each commit, via **lint-staged** and **husky**(Remember during lint-staged ESLint should be run before Prettier to keep the code format as it is in the actual order):
+- In order to do that, add the following snippet to your *package.json* to have ESLint and Prettier run before each commit, via [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky)(Remember during lint-staged ESLint should be run before Prettier to keep the code format as it is in the actual order):
 
+```
   {
     "husky": {
       "hooks": {
@@ -147,7 +162,7 @@
       "**/*": "prettier --write --ignore-unknown"
     }
   }
-
+```
 ![githook image](./githook.png)
 
 - And... **Voila!** With just a single click, you're done! Although setting these things up is a little tricky task but it just has *one-time* cost and the time-saving benefits compound over the period is quite worthy.
