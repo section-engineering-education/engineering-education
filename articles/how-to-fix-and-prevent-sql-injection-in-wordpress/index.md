@@ -1,15 +1,15 @@
 ### Introduction
-SQLi in [WordPress](https://kinsta.com/knowledgebase/what-is-wordpress/) is [ranked the second most critical vunerability](secure.wphackedhelp.com). [Updating your WordPress website](https://wordpress.org/support/article/updating-wordpress/) can shield you from SQLi, however third-party themes and plugins still pose a big threat. SQLi is the manipulation of a security flaw in database systems. WordPress as a platform runs server-side scripts in PHP. Hence, SQL and PHP make WordPress websites vulnerable to attackers via inserting malicious URLs embedded with commands that trigger behaviours from the database. Consequently,  sensitive information from your database is exposed or leaked to hackers which they can use to manipulate your WordPress website.
+SQLi in [WordPress](https://kinsta.com/knowledgebase/what-is-wordpress/) is [ranked the second most critical vulnerability](secure.wphackedhelp.com). [Updating your WordPress website](https://wordpress.org/support/article/updating-wordpress/) can shield you from SQLi; however, third-party themes and plugins still pose a significant threat. SQLi is the manipulation of a security flaw in database systems. WordPress, as a platform, runs server-side scripts in PHP. Hence, SQL and PHP make WordPress websites vulnerable to attackers via inserting malicious URLs embedded with commands that trigger the database's behaviors. Consequently, your database's sensitive information is exposed or leaked to hackers, which they can use to manipulate your WordPress website.
 
 #### What is SQLi?
 
-SQLi is the injection or insertion of SQL code usually via data transmitted from a website. When an SQLi attack is deployed successfully, it gives them access to sensitive information as well as ability to add/edit/delete data from a database. Generally, SQLi gives an attacker the possibility to execute all actions related to a database. SQLI takes advantage of PHP and SQL database hence posing a big risk to WordPress. Other than PHP, [the ASP language](https://www.w3schools.com/asp/default.ASP) is also prone to SQLi.
+SQLi is the injection or insertion of SQL code, usually via data transmitted from a website. When an SQLi attack is deployed successfully, it gives them access to sensitive information and the ability to add/edit/delete data from a database. Generally, SQLi provides an attacker with the possibility to execute all actions related to a database. SQLi takes advantage of PHP, and SQL database hence poses a significant risk to WordPress. Other than PHP, [the ASP language](https://www.w3schools.com/asp/default.ASP) is also prone to SQLi.
 
-An attacker makes use of data input by the user in to the database that isn't sufficiently masked and contains meta characters i.e. semicolons, quotation marks and double hyphens. These parameters have specific functions with which the SQL interpreter uses to execute external commands. SQLi targets old interfaces which often do not necessarily mask key parameters such as ASP and PHP which make them a perfect target for an SQLi attack.
+An attacker uses data input by the user into the database that isn't sufficiently masked and contains meta-characters, i.e. semicolons, quotation marks, and double hyphens. These parameters have specific functions with which the SQL interpreter uses to execute external commands. SQLi targets old interfaces that often do not necessarily mask key parameters such as ASP and PHP, making them a perfect target for an SQLi attack.
 
 ### Types of SQLi Attacks
 
-Now we know the basics of SQLi, let's dive into the various types of attacks and why they happen. There are several types of SQLi attacks and they are classified depending on their technique. They are;
+Now we know the basics of SQLi, let's dive into the various types of attacks and why they happen. There are several types of SQLi attacks, and they are classified depending on their technique. They are:
 
 #### In-Band SQLi
 
@@ -25,13 +25,13 @@ Now we know the basics of SQLi, let's dive into the various types of attacks and
 
 ### Inferential/Blind SQLi
 
-In some scenarios the attacker will generate an error in an SQL query but the response may not be transmitted as he may expect to a webpage. The attacker will need to probe further into the error.
+In some scenarios, the attacker will generate an error in an SQL query, but the response may not be transmitted as he may expect to a webpage. The attacker will need to probe further into the error.
 
-In this type of SQLi, the attacker needs to send various queries to the database and see how it analyses data hence known as an Inferential attack or Blind SQLi. We shall look into two types of blind SQLi attacks namely: boolean SQLi and time-based SQLi.
+In this type of SQLi, the attacker needs to send various queries to the database and see how it analyses data hence known as an Inferential attack or Blind SQLi. We shall look into two types of blind SQLi attacks, namely: boolean SQLi and time-based SQLi.
 
 #### Boolean SQLi
 
-An attacker will send SQL request with an intent to list the database. If it results in an SQL error that has not been handled internally within the application, the webpage displays an error, loads partially or a blank page. In a boolean attack, the attacker will assess what part of a user's input are susceptible to SQLi through two versions of a boolean clause. They are;
+An attacker will send an SQL request with an intent to list the database. If it results in an SQL error that has not been handled internally within the application, the webpage displays an error, loads partially, or a blank page. In a boolean attack, the attacker will assess what part of a user's input is susceptible to SQLi through two versions of a boolean clause. They are:
 ~~~~ sql
 “and 1=1”
 ~~~~
@@ -43,7 +43,7 @@ If the application works as expected on the first clause but works anomaly with 
 
 #### Time-based SQLi
 
-This attack is used to determine if a vulnerability exists in an SQL database. A pre-defined time function is put in place by an attacker targeting the database management system. For instance, the function sleep() in MySQL instructs a database to wait for a number of seconds. See below;
+This attack is used to determine if a vulnerability exists in an SQL database. A pre-defined time function is put in place by an attacker targeting the database management system. For instance, the function sleep() in MySQL instructs a database to wait for several seconds. See below;
 ~~~~sql
 select * from comments WHERE post_id=1-SLEEP(15);
 ~~~~ 
@@ -52,27 +52,27 @@ if the query results in a delay, then the database is vulnerable to an attack.
 
 ### In-Band SQLi
 
-This is by far the simplest form of SQLi. An attacker uses the same channel to input malicious SQL codes as well gather results on the same. Let's look into twotypes of In-Band SQLi namely: Error-based SQLi and Union-based SQLi.
+This type of SQLi is, by far, the simplest form of SQLi. An attacker uses the same channel to input malicious SQL codes and gathers results on the same. Let's look into two types of In-Band SQLi, namely: Error-based SQLi and Union-based SQLi.
 
 #### Error- Based Injection
 
-This type of an attack is used in the earlier phases of SQLi. The attacker uses the error-based injection to learn more about the database structure and table names as used in the web application. For example, once an attack has been initiated the corresponding error messages may include table names and column table names. The information can be useful to further the attack.
+This type of attack is used in the earlier phases of SQLi. The attacker uses the error-based injection to learn more about the database structure and table names used in the web application. For example, once an attack has been initiated, the corresponding error messages may include table names and column table names. The information can be useful to further the attack.
 
 #### Union Based Injection
 
-This type of injection uses the [SQL UNION command](https://www.w3schools.com/sql/sql_union.asp#:~:text=The%20SQL%20UNION%20Operator,also%20have%20similar%20data%20types) to append or combine requests which are then displayed as a partial HTTP response. This type of SQLi attack targets a band where the UNION operator is able to simultaneously extract data from several table with the database. Besides, for the attack to be successful the table must have the same type of data and same number of columns. Hackers manipulate the SELECT statement to collect the information they are looking out for.
+This injection type uses the [SQL UNION command](https://www.w3schools.com/sql/sql_union.asp#:~:text=The%20SQL%20UNION%20Operator,also%20have%20similar%20data%20types) to append or combine requests, which are then displayed as a partial HTTP response. This SQLi attack targets a band where the UNION operator can simultaneously extract data from several tables within the database. Besides, for the attack to be successful, the table must have the same type of data and the same number of columns. Hackers manipulate the SELECT statement to collect the information they are looking out for.
 
 #### WordPress Plugins Vulnerability
 
-WordPress is the most popular open-source Content Management System (CMS) running millions of websites. It's approximated the [CMS enjoys a 61% market share](https://kinsta.com/blog/wordpress-statistics/). Your WordPress website is secure from SQLi only if the WordPress core files are up-to-date.
+WordPress is the most popular open-source Content Management System (CMS), running millions of websites. It's approximated the [CMS enjoys a 61% market share](https://kinsta.com/blog/wordpress-statistics/). Your WordPress website is secure from SQLi only if the WordPress core files are up-to-date.
 
 ##### What are WordPress Core files?
 
-This are the files that make up the open-source CMS project. Below is an image of what [WordPress core files](https://wpsupergeek.com/what-are-the-wordpress-core-files/#:~:text=When%20you%20install%20WordPress%2C%20you,admin%20interface%20of%20your%20website.&amp;text=Core%20files%20make%20up%20the,themes%2C%20plugins%2C%20and%20images.) look-like.
+These are the files that make up the open-source CMS project. Below is an image of what [WordPress core files](https://wpsupergeek.com/what-are-the-wordpress-core-files/#:~:text=When%20you%20install%20WordPress%2C%20you,admin%20interface%20of%20your%20website.&amp;text=Core%20files%20make%20up%20the,themes%2C%20plugins%2C%20and%20images.) look-like.
 ![wordpress-core-files](/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/wordpress-core-files.png)
 Ask yourself, is WordPress Core running on the updated patch?
 
-As we have found out, your WordPress site is secure from any SQLi if your core files are updated. Nevertheless, use of third-party plugins and themes change the narrative and exposes you exponentially. We shall list the most prone WordPress plugin installation areas that you be on the look-out. They include;
+As we have found out, your WordPress site is secure from any SQLi if your core files are updated. Nevertheless, the use of third-party plugins and themes change the narrative and exposes you exponentially. We shall list the most prone WordPress plugin installation areas that you be on the look-out. They include;
 
 1. Subscription pop-ups
 2. Login/Signup forms
@@ -90,9 +90,9 @@ The [Exploit-DB website](https://www.exploit-db.com/search?q=) provides a detail
 
 ##### Fix WordPress SQLi Attack: Damage Control
 
-An attacker targets the database at any given point as that is the only source for information on your website. Firstly, disable admin privileges on your database. Henceforth, the attacker is tied down a read-only database that is not of much help to them.
+An attacker targets the database at any given point, as that is the only source for information on your website. Firstly, disable admin privileges on your database. Henceforth, the attacker is tied down to a read-only database that is not of much help.
 
-Proceed to sanitize the UDF files the attacker used to obtain the OS Shell. In addition, change your encrypted password to more stronger values. Finally, check if the port 3306 is open on the internet and if so, block it.
+Proceed to sanitize the UDF files the attacker used to obtain the OS Shell. Besides, change your encrypted password to stronger values. Finally, check if the port 3306 is open on the internet and, if so, block it.
 
 ##### Fix WordPress SQLi Attack: Database Clean Up
 
@@ -105,7 +105,7 @@ Step 2: If the table Sqlmap is present, it has been used against your website. D
 DROP TABLE Sqlmap;
 ~~~~
 
-Step 3: Look out for new/foreign users in your db using the following code
+Step 3: Look out for new/foreign users in your database using the following code
 
 ~~~~sql
 Select * FROM users  AS u AND u.created > UNIX_TIMESTAMP(STR_TO_DATE('sept 22 2020', '%M %d %Y '));
@@ -125,52 +125,52 @@ UPDATE users SET pass = concat('ZZZ', sha(concat(pass, md5(rand()))));
 
 ##### Fix WordPress SQLi Attack: Vital updates
 
-Updates for your WordPress site are very vital in keeping ahead of day to day vulnerabilities. Make sure to update your WordPress Core files oftenly as well as your theme and plugins. Avoid using nulled themes on your WP site. In addition, make sure to use reputable plugins on your site.
+Updates for your WordPress site are very vital in keeping ahead of the day to day vulnerabilities. Make sure to update your WordPress Core files often as well as your theme and plugins. Avoid using nulled themes on your WP site. Also, make sure to use reputable plugins on your site.
 
 ##### Fix WordPress SQLi Attack: Use a Firewall
 
-A firewall detects and shields your website from SQLi as well other attacks depending on the features of your firewall service provider. There are quite of firewall security solutions on the internet; look out for one that suits your WP security needs.
+A firewall detects and shields your website from SQLi and other attacks, depending on your firewall service provider's features. There are several firewall security solutions on the internet; look-out for one that suits your WP security needs.
 
 ##### Fix WordPress SQLi Attack: Pentesting
 
-[Pentesting/penetration testing](https://www.cloudflare.com/learning/security/glossary/what-is-penetration-testing/) or rather website security audit is a vital operation to keep your WP site away from possible SQLi attacks. WordPress Pentesting involves doing simulated SQLi attacks on your site to make all loopholes are covered. This process ensures all loopholes are found and sealed before an attacker finds and takes advantage of the same.
+[Pentesting/penetration testing](https://www.cloudflare.com/learning/security/glossary/what-is-penetration-testing/) or rather website security audit is vital to keep your WP site away from possible SQLi attacks. WordPress Pentesting involves making simulated SQLi attacks on your site to make all loopholes are covered. This process ensures all loopholes are found and sealed before an attacker finds and takes advantage of it.
 
 ### How to Prevent SQLi in WordPress
 
-As they say, prevention is better than cure. Don't wait to prove if that is right or wrong with a successful SQLi on your WordPress website. Proper site maintenance practices will save you from SQLi attacks. These practices include regular updates for WordPress core files, plugins updates, use of reputable plugins, avoid nulled themes and minimal user inputs fields as much as possible.
+As they say, prevention is better than cure. Don't wait to prove if that is right or wrong with a successful SQLi on your WordPress website. Proper site maintenance practices will save you from SQLi attacks. These practices include regular updates for WordPress core files, plugins updates, using reputable plugins, avoid nulled themes, and minimal user inputs fields as much as possible.
 
-Normalize use of ready-made commands for your database operations. WordPress has prepared statements for database operations which are well structured to mitigate risk on your website. Ensure your website is enabled for context data filtering such as only allowing digits for phone number fields.
+Normalize the use of ready-made commands for your database operations. WordPress has prepared statements for database operations that are well structured to mitigate risk on your website. Ensure your website is enabled for context data filtering, such as only allowing digits for phone number fields.
 
-##### Use Secure WordPress themes &amp; Plugins
+##### Use Secure WordPress themes &amp; Plugins.
 
-Themes and plugins are unavoidable while using the WordPress CMS hence they are the silver lining to the open source project. Nevertheless, ensure you are using reputable plugins and themes from the WordPress repository. If you are going to use premium plugins and themes you want to look for such at top rated repositories such as [Envato Market.](https://envato.com/)
+Themes and plugins are unavoidable while using the WordPress CMS; hence they are the silver lining to the open-source project. Nevertheless, ensure you are using reputable plugins and themes from the WordPress repository. If you plan to use premium plugins and themes, you want to look for such at top-rated repositories such as [Envato Market.](https://envato.com/)
 
 Be more vigilant with contact form and subscription plugins as they pose user input threat to your site.
 
 ##### Mask your WordPress version
 
-This may seem nagging but you may want to give hackers a hard time cracking your website. To hide your WP version, use the code below;
+This may seem nagging, but you may want to give hackers a hard time cracking your website. To hide your WP version, use the code below;
 
 ```php
 remove_action(‘wp_head’, ‘wp_generator’);
 ```
 
-##### Minimize user privileges for database user
+##### Minimize user privileges for the database user
 
-Grant the minimum possible user privileges for users connecting to your database but they also must have the right privileges to execute actions on the database.
+Grant the minimum possible user privileges for users connecting to your database, but they also must have the right privileges to execute actions on the database.
 
-NB: Never use the root user (has all access to all databases) to access the database as this pose more risk to your website in case hackers targeted your site.
+NB: Never use the root user (it has all access to all databases) to access the database as this poses more risk to your website if hackers target your site.
 
 ##### Verify data entered by the user
 
-This is one of the best ways to outsmart a possible SQLi in your database. Different programming languages have different functions to verify data from query responses. In this article, we shall look at PHP language.
+This is one of the best ways to outsmart a possible SQLi in your database. Different programming languages have different functions to verify data from query responses. In this article, we shall look at the PHP language.
 
-For number data type use; 
+For numbers data type use; 
 ``` php
 ctype_digit ()
 ```
 
-For text string use;
+For text strings use;
 ``` php
  ctype_alpha ()
  ```
@@ -191,4 +191,4 @@ Where $ id is an integer.
 
 ### Summary
 
- A WordPress web developer should be able to keep abreast of recent tricks and loopholes that hackers are taking advantage of. Ensure you implement clean coding practices on your WordPress website project and mitigate possible SQLi attacks. All SQLi exploits happening day-to-day are all listed on [Exploit-DB](https://www.exploit-db.com/search?q=) platform.
+A WordPress web developer should keep abreast of recent tricks and loopholes that hackers are manipulating. Ensure you implement clean coding practices on your WordPress website project and mitigate possible SQLi attacks. All SQLi exploits happening day-to-day are all listed on the [Exploit-DB](https://www.exploit-db.com/search?q=) platform.
