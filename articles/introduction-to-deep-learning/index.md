@@ -1,7 +1,24 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-deep-learning/
+title: Introduction to Deep Learning
+description: 
+author: judy-nduati
+date: 2020-09-16T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-deep-learning/hero.jpg
+    alt: 
+---
 Deep Learning is becoming popular among IT enthusiasts because of its promising benefits. It enables Image Recognition, Natural Language Processing, and Voice Recognition to take place. You have ever wondered how machines work and function like the human brain? Well, this is all about Deep Learning. Deep Learning is a potent tool, and once you read this article, you will understand what DL is and how it works.
+<!--more-->
 
+
+### Introduction
 ### What is Deep Learning?
 
 ![Venn diagram](/engineering-education/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
