@@ -29,11 +29,11 @@ In this article, we will get an overview of resolving the privacy issue using Di
 
 ### Introduction
 
-In this digital era, most of the companies are data-driven. Our data is harvested to keep growing their economic incentives, in exchange for services provided to us. Research institutions often use and share data containing confidential information about individuals. Improper disclosure of such data can have adverse consequences for a data subject’s private information, or even lead to civil liability or bodily harm.
+In this digital era, most of the companies are data-driven. Our data is harvested to keep growing their economic incentives, in exchange for services provided to us. Research institutions often use and share data containing confidential information about individuals. Improper disclosure of such data can have adverse consequences for a data subject’s private information, or even lead to civil liability or [bodily harm](https://tinyurl.com/y37fnb94) related to [physical or mental health](https://fas.org/sgp/crs/misc/R45631.pdf).
 
-In the late 2000s, Netflix ran a competition for building a recommendation system. To build, they released a large dataset by anonymizing the data which didn’t leak the movie names or users' ratings. Two professors from the University of Texas [de-anonymized](https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf) them completely by comparing them with IMDB ratings, thus revealing the personal information about the dataset. Data privacy is compromised! Similarly, one such data breach of health records happened in 1997 too.
+In the late 2000s, Netflix ran a competition for building a recommendation system. To build, they released a large dataset by anonymizing the data which didn’t leak the movie names or users' ratings. Two professors from the University of Texas [de-anonymized](https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf) them completely by comparing them with IMDB ratings, thus revealing the personal information about the dataset. Data privacy is compromised! Similarly, one such [data breach of health records happened in 1997](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1748-720X.1997.tb01885.x), where medical records of the governor of Massachussetts were identified by matching anonymized medical encounter data with voter registration records.
 
-This sort of data leakage is very alarming both to the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). Well, there is an alternative to use Federated learning, where we bring the model to the data instead of vice-versa. Fundamentally, we must understand the concept of Differential Privacy to check for leakage in data.
+This sort of data leakage is very alarming both to the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). There is an alternative to use Federated learning, where we bring the model to the data instead of vice-versa. Fundamentally, we must understand the concept of Differential Privacy to check for leakage in data.
 
 ### Differential Privacy
 
@@ -41,14 +41,14 @@ This sort of data leakage is very alarming both to the users as well as organiza
 
 *Anything that can be learned from a statistical database can be learned without accessing the database*
 
-This definition does not hold always. We need to consider two things, first is people and the second is data. We need to protect people's rights as well as predict rightly using their data. In certain cases, the whole database must be kept private, to protect the information, because there are chances of data leaks.
+This definition does not hold anyway. We need to consider two things, first is people and the second is data. We need to protect people's rights as well as predict rightly using their data. In certain cases, the whole database must be kept private, to protect the information, because there are chances of data leaks.
 
 #### Modern definition
 
 *It’s a promise made by a data holder to a data subject, that “You will not be affected, adversely or otherwise, by allowing your data to be used for study analysis, no matter what other studies, datasets or information is available”
 -Cynthia Dwork (Godfather of Differential Privacy)*
 
-A simple way to explain the modern definition is
+A simple way to explain the modern definition is:
 
 Assume, we have a small database of 5000 entries with 0 or 1 as a value for each row, specifying certain property like 'people with cancer' as 1, and 'people without cancer' as 0. So, here our goal is "Even if we remove detail of 1 person, the query of the database must not change” then the privacy of the information is protected. We will see its implementation very shortly.
 
@@ -65,7 +65,7 @@ In continuation with the previous explanation, let's say we want to check if pri
 - On finding the difference between both the summations, we get the exact detail of that person
 Thus we will know if he has cancer or not. This shows that the privacy of that individual has been leaked. This is one of the simplest differencing attacks, using a summation query.
 
-Similarly, there are other types of differencing attacks using various other functions like mean(), median(), and so on. This measure of how much data is leaked through a query can be measured with **sensitivity.** In simple terms, it can be said as the largest possible difference for that one row, for any dataset. For our example, the sensitivity is 1, which means that adding or removing a single row from the dataset will change the count by at most 1.
+Similarly, there are other types of differencing attacks using various other functions like `mean()`, `median()`, and so on. This measure of how much data is leaked through a query can be measured with **sensitivity.** In simple terms, it can be said as the largest possible difference for that one row, for any dataset. For our example, the sensitivity is 1, which means that adding or removing a single row from the dataset will change the count by at most 1.
 
 ### Implementing differential privacy
 
