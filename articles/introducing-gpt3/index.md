@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/introducing-gpt3/
 title: Introduction to GPT3
-description:
+description: This article serves as an introduction to GPT3, the third iteration of generative pretrained transformers, which produce human-like text.
 author: collins-ayuya
 date: 2020-10-07T00:00:00-15:00
 topics: []
