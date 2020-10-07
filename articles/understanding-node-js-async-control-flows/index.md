@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/understanding-node-js-async-control-flows/hero.jpg
     alt: Node.js async control flows
 ---
-Javascript has embraced asynchronous programming with single thread processing. Every task executes in the order the code is written. Embracing asynchronous promises and callbacks ensure non-blocking operations flow. Asynchronous permits other processing to continue even before the first transmission has finished.
+JavaScript has embraced asynchronous programming with single thread processing. Every task executes in the order the code is written. Embracing asynchronous promises and callbacks ensure non-blocking operations flow. Asynchronous permits other processing to continue even before the first transmission has finished.
 <!--more-->
 This makes it a more versatile and robust solution for event looping on long-running code. Utility modules like [Async.js](https://github.com/caolan/async) provide functions for working with asynchronous flow control.
 
