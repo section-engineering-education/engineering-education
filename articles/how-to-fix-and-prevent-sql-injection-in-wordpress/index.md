@@ -1,9 +1,9 @@
 ### Introduction
-SQLi in [WordPress](https://kinsta.com/knowledgebase/what-is-wordpress/) is [ranked the second most critical vulnerability](secure.wphackedhelp.com). [Updating your WordPress website](https://wordpress.org/support/article/updating-wordpress/) can shield you from SQLi; however, third-party themes and plugins still pose a significant threat. SQLi is the manipulation of a security flaw in database systems. WordPress, as a platform, runs server-side scripts in PHP. Hence, SQL and PHP make WordPress websites vulnerable to attackers via inserting malicious URLs embedded with commands that trigger the database's behaviors. Consequently, your database's sensitive information is exposed or leaked to hackers, which they can use to manipulate your WordPress website.
+SQLi in [WordPress](https://kinsta.com/knowledgebase/what-is-wordpress/) is [ranked the second most critical vulnerability](secure.wphackedhelp.com). [Updating your WordPress website](https://wordpress.org/support/article/updating-wordpress/) can shield you from SQLi; however, third-party themes and plugins still pose a significant threat. SQLi is the manipulation of a security flaw in database systems. WordPress, as a platform, runs server-side scripts in PHP. Hence, SQL and PHP make WordPress websites vulnerable to attackers. They could insert malicious URLs (which are embedded with commands) that trigger unwanted behaviours from your database. Consequently, your database's sensitive information is exposed or leaked to hackers, which they can use to manipulate your WordPress website.
 
 #### What is SQLi?
 
-SQLi is the injection or insertion of SQL code, usually via data transmitted from a website. When an SQLi attack is deployed successfully, it gives them access to sensitive information and the ability to add/edit/delete data from a database. Generally, SQLi provides an attacker with the possibility to execute all actions related to a database. SQLi takes advantage of PHP, and SQL database hence poses a significant risk to WordPress. Other than PHP, [the ASP language](https://www.w3schools.com/asp/default.ASP) is also prone to SQLi.
+SQL injection (SQLi) is the injection or insertion of SQL code, usually via data transmitted from a website. When an SQLi attack is deployed successfully, it gives them access to sensitive information and the ability to add/edit/delete data from a database. Basically, every action you can take regarding a database can be executed by the attacker. Other than PHP, [the ASP language](https://www.w3schools.com/asp/default.ASP) is also prone to SQLi.
 
 An attacker uses data input by the user into the database that isn't sufficiently masked and contains meta-characters, i.e. semicolons, quotation marks, and double hyphens. These parameters have specific functions with which the SQL interpreter uses to execute external commands. SQLi targets old interfaces that often do not necessarily mask key parameters such as ASP and PHP, making them a perfect target for an SQLi attack.
 
@@ -32,7 +32,7 @@ In this type of SQLi, the attacker needs to send various queries to the database
 #### Boolean SQLi
 
 An attacker will send an SQL request with an intent to list the database. If it results in an SQL error that has not been handled internally within the application, the webpage displays an error, loads partially, or a blank page. In a boolean attack, the attacker will assess what part of a user's input is susceptible to SQLi through two versions of a boolean clause. They are:
-~~~~ sql
+~~~~sql
 “and 1=1”
 ~~~~
 ~~~~ sql
@@ -52,7 +52,7 @@ if the query results in a delay, then the database is vulnerable to an attack.
 
 ### In-Band SQLi
 
-This type of SQLi is, by far, the simplest form of SQLi. An attacker uses the same channel to input malicious SQL codes and gathers results on the same. Let's look into two types of In-Band SQLi, namely: Error-based SQLi and Union-based SQLi.
+This type of SQLi is, by far, the simplest form of SQLi. An attacker uses the same channel to input malicious SQL codes and gathers results on the same. Let's look into two types of In-Band SQLi, namely: Error - based SQLi and Union - based SQLi.
 
 #### Error- Based Injection
 
@@ -68,9 +68,9 @@ WordPress is the most popular open-source Content Management System (CMS), runni
 
 ##### What are WordPress Core files?
 
-These are the files that make up the open-source CMS project. Below is an image of what [WordPress core files](https://wpsupergeek.com/what-are-the-wordpress-core-files/#:~:text=When%20you%20install%20WordPress%2C%20you,admin%20interface%20of%20your%20website.&amp;text=Core%20files%20make%20up%20the,themes%2C%20plugins%2C%20and%20images.) look-like.
+These are the files that make up the open-source CMS project. Below is an image of what [WordPress core files](https://wpsupergeek.com/what-are-the-wordpress-core-files/#:~:text=When%20you%20install%20WordPress%2C%20you,admin%20interface%20of%20your%20website.&amp;text=Core%20files%20make%20up%20the,themes%2C%20plugins%2C%20and%20images.) look like.
 ![wordpress-core-files](/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/wordpress-core-files.png)
-Ask yourself, is WordPress Core running on the updated patch?
+Are your WordPress core files running on the latest version?
 
 As we have found out, your WordPress site is secure from any SQLi if your core files are updated. Nevertheless, the use of third-party plugins and themes change the narrative and exposes you exponentially. We shall list the most prone WordPress plugin installation areas that you be on the look-out. They include;
 
