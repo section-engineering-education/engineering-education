@@ -6,8 +6,8 @@ url: /engineering-education/understanding-node-js-async-control-flows/
 title: Understanding Node.js Asynchronous Control Flows
 description: This article goes through async flow functions using Async.js to control the flow of task executions. Including Serial, Parallel, Waterfall, Queues, etc.
 author: joseph-chege
-date: 2020-10-01T00:00:00-10:00
-topics: []
+date: 2020-10-07T00:00:00-10:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
@@ -34,7 +34,7 @@ If you look at these steps, there are some breaks that you need to wait before p
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/someScrabbledEggs?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-JavaScript served me the eggs even before heating the pan and pouring the mixture to cook. And there is nothing wrong with JavaScript. It did what we instructed it to do in a ‘`synchronous process`. It will execute the timeout functions but won't wait to finish because we didn't tell it to. Imagine this coded concept was implemented in a bank system. This can lead to a case where a user can withdraw some money even before he/she deposits it. This where `control flow` comes in.
+JavaScript served me the eggs even before heating the pan and pouring the mixture to cook. And there is nothing wrong with JavaScript. It did what we instructed it to do in a ‘`synchronous process`. It will execute the timeout functions but won't wait to finish because we didn't tell it to. Imagine this coded concept was implemented in a bank system. This can lead to a case where a user can withdraw some money even before he/she deposits it. This is where `control flow` comes in.
 
 ### Control flows
 [Control flow](https://en.wikipedia.org/wiki/Control_flow) is the order in which individual statements, instructions, or function calls of an imperative program are executed or evaluated.
@@ -42,7 +42,9 @@ JavaScript served me the eggs even before heating the pan and pouring the mixtur
 This article goes through `async flow` functions using [Async.js](https://caolan.github.io/async/v3/) to control the flow of task executions. The functions include Serial, Parallel, Waterfall, Queues, etc.
 
 #### Parallel
-[Parallel](https://caolan.github.io/async/v3/docs.html#parallel) tasks mean running many functions at the same time without waiting for the previous functions to complete. Once these tasks are completed, their results are passed to a main callback, which returns an array of results. With `async.parallel`, you do not control what finishes before the other. Your code will be optimized to run tasks simultaneously. Generally, Javascript does not technically execute these many tasks simultaneously. What happens is that each task is pushed to an asynchronous event loop without control of which task will finish before the other. It still maintains a single thread operation.
+[Parallel](https://caolan.github.io/async/v3/docs.html#parallel) tasks mean running many functions at the same time without waiting for the previous functions to complete. Once these tasks are completed, their results are passed to a main callback, which returns an array of results.
+
+With `async.parallel`, you do not control what finishes before the other. Your code will be optimized to run tasks simultaneously. Generally, JavaScript does not technically execute these many tasks simultaneously. What happens is that each task is pushed to an asynchronous event loop without control of which task will finish before the other. It still maintains a single thread operation.
 
 ##### Parameters
 - `Tasks` - a collection of tasks to run asynchronously.
@@ -52,7 +54,7 @@ This article goes through `async flow` functions using [Async.js](https://caolan
 
 A collection of functions will be the first argument to the `async.parallel`. Each function is passed to a callback. The callback will be called on tasks completion.
 
-The `async.parallel` second argument will return the results of all the functions passed as `tasks`. The final callback returns an array if the asynchronous functions passed on the first argument are arrays. Else, an object result will be invoked if the object properties were declared.
+The `async.parallel` second argument will return the results of all the functions passed as `tasks`. The final callback returns an array if the asynchronous functions passed on the first argument are arrays. Otherwise, an object result will be invoked if the object properties were declared.
 
 Example of `async.parallel` array.
 
@@ -91,7 +93,7 @@ These [queue object properties](https://caolan.github.io/async/v3/docs.html#Queu
 
 - Push - it is an async function that adds a task to a queue to be processed within the workers. Once the workers finish processing these tasks, they are called within a callback. The callback can take a single task or an array of tasks. A push is invoked with a `queue.push(task, [callback])`.
 - Drain - it specifies a callback to be called after the last task item of the queue has finished and passed to a worker. Invoked with a `q.drain()`
-- Upshift - it adds a task to the beginning of a queue. The upshift is called with `queue.unshift (task, [callback])`.
+- Upshift - it adds a task to the beginning of a queue. The upshift is called with the `queue.unshift (task, [callback])`.
 
 Other queue objects that can be included in the async queue include:
 
@@ -115,7 +117,7 @@ Unlike `async.queue`, the task takes three parameters:
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-Priorityqueue?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 #### Series
-[Async series](https://caolan.github.io/async/v3/docs.html#series) is used to run a collection of task executions in a sequence. It comes in rescue when tasks do not depend on the results of the previous task. If any function within the series functions returns an error to its callback, the whole series stops. No more functions will be executed. The final callback will immediately be called with the error.
+[Async series](https://caolan.github.io/async/v3/docs.html#series) is used to run a collection of task executions in a sequence. It comes to the rescue when tasks do not depend on the results of the previous task. If any function within the series functions returns an error to its callback, the whole series stops. No more functions will be executed. The final callback will immediately be called with the error.
 
 ##### Parameters
 - `Tasks` - takes multiple tasks to run asynchronously.
@@ -152,3 +154,6 @@ Example 2 with named functions
 
 ### Conclusion
 Async.js will help you manage the flow of your tasks. It helps to keep your code light and clean. It makes it even easier to debug and handle errors within your script. Async.js makes you realize how simple your code can be to avoid running into a [callback hell](http://callbackhell.com/).
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
