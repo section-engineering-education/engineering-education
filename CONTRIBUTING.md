@@ -31,7 +31,7 @@ Once you have narrowed your topic search to one you would like to write about, f
 Once your topic has been approved and you have a final draft of your article ready  to submit, follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
 
 ## Submitting your article
-Ensure all article submissions are pre-checked for English grammar technically accurate, and delivered under the assertion that the content is original to you and includes proper citations (including sourced images).
+Ensure all article submissions are pre-checked for English grammar technically accurate, and delivered under the assertion that the content is original to you and includes proper citations (including sourced images) and has not been published somewhere else.
 
 
 Before submitting your article, we request that you cross-check the readability of your content using this [free tool](http://www.hemingwayapp.com/). This check helps make your writing BOLD & CLEAR by calling attention to any lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it. 
@@ -53,10 +53,46 @@ If your article is about serving ML models with Django, then the reader should h
 
 The details your article gives should help further grow the readers’ skills as they practice on their own projects.
 
-## Review and approval processes
-Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. Note: articles requiring very few edits will be given priority in the review queue, and we reserve the right to refuse any articles that do not adhere to quality standards.PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
+## Review, approval, & payment processes
+Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. 
+
+Note: Articles requiring very few edits will be given priority in the review queue, and we reserve the right to refuse any articles that do not adhere to quality standards.PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
 
 As a community, we are continually striving to add value to our content pool through trusted pieces of content that help enrich the larger engineering community.
+
+To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *9/30/20*
+
+We will be increasing the payouts of our Tech Tutorials up to $250.00 USD (for articles that need little to no extra revisions). 
+
+Our new tiered pay structure will incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
+
+Articles are expected to be clearly understood, well-written, pre-checked for English grammatical issues, and technically accurate (with code tested).
+
+We request articles to be cross-checked for readability. 
+All submitted articles should be BOLD & CLEAR, free of any lengthy, complex sentences, and/or common errors.
+
+(Waiving for 1st-time contributors - to help them get familiar with the process, style, and quality we expect.)
+
+All other formats payout will be as follows:
+
+- Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
+- Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
+- Articles with (3+) and up rounds of revisions) we will consider closing the PR 
+
+What counts as a round of revision? 
+- Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation. 
+- Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
+- Instances when the content is too difficult to understand.
+- PRs that may lack sufficient unique* value - (any and all comments made by reviewers to draw out more value from the article are great and encouraged but should be limited)
+
+
+*by unique we mean content that can NOT simply be found by looking up the official documentation.
+
+Note: To test this new tier system - we will start by calling a “round of revision” - any major back-and-forth between reviewer and contributor.
+
+We will highlight articles that are of good consistent quality - to have as examples of the overall quality and style we are looking for. 
+
+*Use your EngEd community as a resource - get to know each other and ask for a revision from a fellow contributor before submitting a final draft.*
 
 *Below you will find MORE examples to reference and help guide you write fantastic content!*
 
