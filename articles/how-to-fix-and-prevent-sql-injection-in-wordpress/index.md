@@ -90,7 +90,7 @@ As we have found out, your WordPress site is secure from any SQLi if your core f
 8. Blog comment forms
 9. Search parameters
 
-The [Exploit-DB website](https://www.exploit-db.com/search?q=) provides a detailed context of vulnerabilities occuring in WordPress plugins. Furthermore, it points out how the attacks affected victim websites and the solution deployed.  
+The [Exploit-DB website](https://www.exploit-db.com/search?q=) provides a detailed context of vulnerabilities occurring in WordPress plugins. Furthermore, it points out how the attacks affected victim websites and the solution deployed.  
 
 ### How to Detect and Fix WordPress SQLi Attack?
 
@@ -137,7 +137,7 @@ A firewall detects and shields your website from SQLi and other attacks, dependi
 [Pentesting/penetration testing](https://www.cloudflare.com/learning/security/glossary/what-is-penetration-testing/) or rather a website security audit is vital to keep your WP site protected. WordPress Pentesting involves making simulated SQLi attacks on your site to make sure all loopholes are covered. This process ensures all loopholes are found and sealed before an attacker finds and takes advantage of them.
 
 ### How to Prevent SQLi in WordPress
-As they say, prevention is better than cure. Don't wait to prove if that is right or wrong with a successful SQLi. Proper site maintenance practices will save you from SQLi attacks. These practices include regular updates for WordPress core files, plugins updates, using reputable plugins, avoid nulled themes, and minimal user inputs fields such as subscription pop-up forms as much as possible.
+As they say, prevention is better than cure. Don't wait to prove if that's right or wrong with a successful SQLi. Proper site maintenance practices will save you from SQLi attacks. These practices include regular updates for WordPress core files, plugins updates, using reputable plugins, avoid nulled themes, and minimise user input such as subscription pop-up forms as much as possible.
 
 [WordPress has prepared statements for database operations](https://developer.wordpress.org/reference/classes/wpdb/) that are well structured to mitigate risk on your website. Ensure context data filtering is enabled on your website, such as only allowing digits for phone number fields.
 
@@ -153,7 +153,7 @@ Another way to give hackers a hard time cracking your website is to hide your WP
 remove_action(‘wp_head’, ‘wp_generator’);
 ```
 
-##### Minimize users privileges for the database user
+##### Minimize database user privileges
 Grant the minimum possible user privileges for users connecting to your database, but they also must have the right privileges to execute actions on the database.
 
 NB: Never use the root user (because it has all access) to access the database as this poses more risk to your website if hackers target your site.
@@ -161,7 +161,7 @@ NB: Never use the root user (because it has all access) to access the database a
 ##### Verify data entered by the user
 This is one of the best ways to outsmart a possible SQLi in your database. Different programming languages have different functions to verify data from query responses. In this article, we shall look at the PHP language.
 
-For numbers data type use;
+For numbers use;
 ``` php
 ctype_digit ()
 ```
