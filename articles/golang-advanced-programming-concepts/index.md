@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/golang-advanced-programming-concepts/
-title: Advanced Programming Concepts with Golang
-description: This article, will go over advanced programming concepts in Golang such as functions, structures, and arrays.
+title: Advanced Programming Concepts with Go
+description: This article will go over advanced programming concepts in Go such as functions, structures, and arrays.
 author: adith-bharadwaj
 date: 2020-10-08T00:00:00-11:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/golang-advanced-programming-concepts/hero.jpg
-    alt: Golang example image google
+    alt: Go example image google
 ---
 *Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In our [first introduction article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In our [second article](/engineering-education/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc...
 <!--more-->
@@ -20,7 +20,7 @@ images:
 In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
 
 ### Prerequisites
-1. Have Golang installed on your system (The first article covers this in detail).
+1. Have Go installed on your system (The first article covers this in detail).
 
 2. Basic understanding of the Go workspace.
 
@@ -38,11 +38,9 @@ The first two articles in the series cover all the prerequisites mentioned above
 - [Further Reading](#conclusion-and-further-reading)
 
 ### Functions
-A [function](https://www.tutorialspoint.com/computer_programming/computer_programming_functions.htm) can be defined as a set of reusable code that can be used to perform a particular task based on the requirements of the user. In other words, if there are a lot of repetitive tasks in the program, the user can create a function for that particular task.
+A [function](https://www.tutorialspoint.com/computer_programming/computer_programming_functions.htm) can be defined as a set of reusable code that can be used to perform a particular task based on the requirements of the user. In other words, if there are a lot of repetitive tasks in the program, the user can create a function for that particular task, then execute the function instead of writing the same piece of code multiple times.
 
-Then execute the function instead of writing the same piece of code multiple times. By creating functions, the user can avoid repetitive code and make the program easier to read and understand. By grouping similar tasks, the code becomes more [modular](https://en.wikipedia.org/wiki/Modular_programming) and more intuitive to understand by other developers.
-
-Thereby increasing productivity and efficiency within the team. Therefore, functions are extremely powerful, and it is generally considered good practice to use functions in your program.
+By creating functions, the user can avoid repetitive code and make the program easier to read and understand. By grouping similar tasks, the code becomes more [modular](https://en.wikipedia.org/wiki/Modular_programming) and more intuitive to understand by other developers, thereby increasing productivity and efficiency within the team. Therefore, functions are extremely powerful, and it is generally considered good practice to use functions in your program.
 
 The syntax for creating functions in Go is as follows:
 
@@ -144,7 +142,7 @@ A [structure](https://medium.com/rungo/structures-in-go-76377cc106a2), also call
 
 For those that are not familiar with OOP or object-oriented programming, structs are user-defined types that are used to group similar fields of the same or different data types together.
 
-For instance, details about a student such as his name, score, age, etc. are values of different data types. It makes sense to group them instead of creating different variables for each of them.  
+For instance, details about a student such as name, score, age, etc. are values of different data types. It makes sense to group them instead of creating different variables for each of them.  
 
 The syntax for creating a struct is as follows:
 
@@ -235,7 +233,7 @@ func main() {
 The function `get_details()` gets the details of 5 students from the user and displays them on the terminal using a `for` loop. We created an array of type `Student` with length 5. This array stores the details of all 5 students.
 
 ### Conclusion and further reading
-In conclusion, we explored some advanced programming concepts in this article. We looked at functions and how they can help us avoid repetitive code and make the program modular. We then explored arrays and how they can be used to store and work with similar data. We also understood what structures are and how they can be used to store data belonging to different types. Finally, we wrote a program to get the details of 5 students from the user by using everything we learned in this article. Congratulations! You can now write your own programs in Golang.  
+We explored some advanced programming concepts in this article by looking at functions and how they can help us avoid repetitive code and make the program modular. We then explored arrays and how they can be used to store and work with similar data. We also learned what structures are and how they can be used to store data belonging to different types. Finally, we wrote a program to get the details of 5 students from the user by using everything we learned in this article. Congratulations! You can now write your own programs in Go.  
 
 - [Go language specification](https://golang.org/ref/spec)
 - [Tour of Go](https://tour.golang.org/basics/1)
