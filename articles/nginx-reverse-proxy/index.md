@@ -114,8 +114,8 @@ server {
         proxy_pass "http://localhost:3000/";
     }
 
-    ssl_certificate <location of SSL certificate>
-    ssl_certificate_key <location of SSL certificate Key>
+    ssl_certificate <location of SSL certificate>;
+    ssl_certificate_key <location of SSL certificate Key>;
 }
 server {
     listen 443 ssl http2;
@@ -127,8 +127,8 @@ server {
         proxy_pass "http://localhost:3001/";
     }
 
-    ssl_certificate <location of SSL certificate>
-    ssl_certificate_key <location of SSL certificate Key>
+    ssl_certificate <location of SSL certificate>;
+    ssl_certificate_key <location of SSL certificate Key>;
 }
 ```
 
