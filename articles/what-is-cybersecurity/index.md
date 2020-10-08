@@ -49,17 +49,17 @@ Other cyber attacks include [Denial- of- service](https://www.section.io/enginee
 ## Cybersafety tips - protect yourself from cyberattacks
 
 - Use Complex passwords and change them occasionally.
-- Install Antivirus
-- Install Anti-Malware and antispyware programs
-- Perform periodic system backup
+- Install Antivirus.
+- Install Anti-Malware and Anti-Spyware programs.
+- Perform periodic system backup.
 - Install Firewall: The word firewall is thrown around the internet, but so many people don't know how they work or what they mean. The growth of the internet made them vital to protecting computers. The primary use for a firewall is simple: Keep the bad guys out.
 - Be careful with your email: Cybercriminals can take advantage of your emails in various ways. They can attach viruses in your email, which is triggered when you open the attached file. Importantly, only read or open emails from people you know. If the email sent to you isn’t recognized, try to delete it immediately.
-- Do not open email attachments from unknown senders
-- Be cautious when using the internet
-- Avoid using unsecured WiFi networks in public places
+- Be cautious when using the internet.
+- Avoid using unsecured WiFi networks in public places.
 - Use only trusted sites, especially sites with https://, the "s" means is a secured site. 
 
 ## Conclusion
+
 We have to leverage cybersecurity to create better lives. The average person deals and conducts transactions online without fully understanding how and what they're doing. Cybersecurity is like the brakes on a car. It doesn’t stop you from where you’re going; it allows you to control the way there.
 
 ### Resources
