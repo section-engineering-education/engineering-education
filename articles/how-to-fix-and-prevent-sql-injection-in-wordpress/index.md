@@ -68,13 +68,13 @@ This type of SQLi is, by far, the simplest form of SQLi. An attacker uses the sa
 This type of attack is used in the earlier phases of SQLi. The attacker uses the error-based injection to learn more about the database structure and table names used in the web application. For example, once an attack has been initiated, the corresponding error messages may include table names and column table names. The information can be useful to further the attack.
 
 #### Union Based Injection
-This injection type uses the [SQL UNION command](https://www.w3schools.com/sql/sql_union.asp#:~:text=The%20SQL%20UNION%20Operator,also%20have%20similar%20data%20types) to append or combine requests, which are then displayed as a partial HTTP response. This SQLi attack targets a band where the UNION operator can simultaneously extract data from several tables within the database. Besides, for the attack to be successful, the table must have the same type of data and the same number of columns. Hackers manipulate the SELECT statement to collect the information they are looking out for.
+This injection type uses the [SQL UNION command](https://www.w3schools.com/sql/sql_union.asp) to append or combine requests, which are then displayed as a partial HTTP response. This SQLi attack targets a band where the UNION operator can simultaneously extract data from several tables within the database. Besides, for the attack to be successful, the table must have the same type of data and the same number of columns. Hackers manipulate the SELECT statement to collect the information they are looking out for.
 
 #### WordPress Plugins Vulnerability
 WordPress is the most popular open-source Content Management System (CMS), running millions of websites. It's approximated the [CMS enjoys a 61% market share](https://kinsta.com/blog/wordpress-statistics/). Your WordPress website is secure from SQLi only if the WordPress core files are up-to-date.
 
 ##### What are WordPress Core files?
-These are the files that make up the open-source CMS project. Below is an image of what [WordPress core files](https://wpsupergeek.com/what-are-the-wordpress-core-files/#:~:text=When%20you%20install%20WordPress%2C%20you,admin%20interface%20of%20your%20website.&amp;text=Core%20files%20make%20up%20the,themes%2C%20plugins%2C%20and%20images.) look like.
+These are the files that make up the open-source CMS project. Below is an image of what [WordPress core files](https://wpsupergeek.com/what-are-the-wordpress-core-files) look like.
 ![wordpress-core-files](/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/wordpress-core-files.png)
 Are your WordPress core files running on the latest version?
 
