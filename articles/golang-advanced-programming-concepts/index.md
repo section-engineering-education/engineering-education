@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/golang-advanced-programming-concepts/hero.jpg
-    alt: Go example image google
+    alt: Go example image
 ---
 *Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In our [first introduction article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In our [second article](/engineering-education/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc...
 <!--more-->
