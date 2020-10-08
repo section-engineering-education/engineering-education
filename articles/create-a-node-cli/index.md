@@ -1,4 +1,3 @@
-
 # Creating Command Line Interfaces using Node.js
 
 The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands. These commands are passed as input strings of text. A lot of tools used by developers have a terminal CLI or command line interface to go with the product. Using the command line is easy and direct hence why a lot of people prefer using it.
@@ -24,6 +23,7 @@ The shebang tells the operating system what type of code is in the script. It al
 ```python
 #!/usr/bin/env py
 ```
+
 The shebang, is only applicable in Unix/Linux operating systems.
 It should always be the first line of the entry file.
 
@@ -121,8 +121,8 @@ We will be making use of the command option to allow us to invoke a function whe
 ```javascript
 const argv = require("yargs");
 argv.command(
- "name of command",
- "description of the command",
+  "name of command",
+  "description of the command",
   functionA,
   functionB
 ).argv;
@@ -135,17 +135,17 @@ In our project we need two commands, let's set them up
 ```javascript
 const argv = require("yargs");
 argv.command(
- "joke",
- "Fetching your joke",
- (yargs) => {},
- (argv) => {}
+  "joke",
+  "Fetching your joke",
+  (yargs) => {},
+  (argv) => {}
 ).argv;
 
 argv.command(
- "quote",
- "Fetching a quote",
- (yargs) => {},
- (argv) => {}
+  "quote",
+  "Fetching a quote",
+  (yargs) => {},
+  (argv) => {}
 ).argv;
 ```
 
@@ -154,21 +154,21 @@ Finally, let's pass in our functions to enable the jokes and quotes to be displa
 ```javascript
 const argv = require("yargs");
 argv.command(
- "joke",
- "Fetching your joke",
- (yargs) => {},
- (argv) => {
- getJoke();
- }
+  "joke",
+  "Fetching your joke",
+  (yargs) => {},
+  (argv) => {
+    getJoke();
+  }
 ).argv;
 
 argv.command(
- "quote",
- "Fetching a quote",
- (yargs) => {},
- (argv) => {
- getQuotes();
- }
+  "quote",
+  "Fetching a quote",
+  (yargs) => {},
+  (argv) => {
+    getQuotes();
+  }
 ).argv;
 ```
 
@@ -191,67 +191,69 @@ node index.js quote
 Our full code now looks like this:
 
 ```javascript
+#!/usr/bin/env node
+
 const axios = require("axios");
 const chalk = require("chalk");
 const argv = require("yargs");
 
-let url = "";
 argv.command(
- "joke",
- "Fetching your joke",
- (yargs) => {},
- (argv) => {
- getJoke();
- }
+  "joke",
+  "Fetching your joke",
+  (yargs) => {},
+  (argv) => {
+    getJoke();
+  }
 ).argv;
 
 argv.command(
- "quote",
- "Fetching a quote",
- (yargs) => {},
- (argv) => {
- getQuote();
- }
+  "quote",
+  "Fetching a quote",
+  (yargs) => {},
+  (argv) => {
+    getQuote();
+  }
 ).argv;
 
 function getJoke() {
-  url = "https://official-joke-api.appspot.com/random_joke";
- axios.get({
- url: url,
- })
- .then((res) => {
- const setup = chalk.cyan(res.data.setup);
- const punchline = chalk.green(res.data.punchline);
- console.log(`${setup} - ${punchline}`);
- })
- .catch((err) => {
- const log = chalk.red(err);
- console.log(log);
- });
+  axios({
+    method: "get",
+    url: "https://official-joke-api.appspot.com/random_joke",
+  })
+    .then((res) => {
+      const setup = chalk.cyan(res.data.setup);
+      const punchline = chalk.green(res.data.punchline);
+      console.log(`${setup} - ${punchline}`);
+    })
+    .catch((err) => {
+      const log = chalk.red(err);
+      console.log(log);
+    });
 }
 
 function getQuote() {
- axios({
-    method: 'get',
+  axios({
+    method: "get",
     url: "http://quotes.stormconsultancy.co.uk/random.json",
-}).then((res)=> {
-    const randomQuote = chalk.cyan(res.data.quote);
-    const randomAuthor = chalk.green(res.data.author);
-    const log = `${randomQuote} - ${randomAuthor}`;
-    console.log(log);
-}).catch((err)=>{
-    const errorLog = chalk.red(err);
-    console.log(errorLog);
-})
+  })
+    .then((res) => {
+      const randomQuote = chalk.cyan(res.data.quote);
+      const randomAuthor = chalk.green(res.data.author);
+      const log = `${randomQuote} - ${randomAuthor}`;
+      console.log(log);
+    })
+    .catch((err) => {
+      const errorLog = chalk.red(err);
+      console.log(errorLog);
+    });
 }
 argv.help();
-
 ```
 
 The result will look like this:
 ![image title](terminal.png)
 
-we added the help command to provide a default ```--help/help``` flag to give application options.
+we added the help command to provide a default `--help/help` flag to give application options.
 
 ### Conclusion
 
