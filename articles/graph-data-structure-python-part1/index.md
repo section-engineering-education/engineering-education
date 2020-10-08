@@ -14,13 +14,10 @@ images:
     alt: graphs
 ---
 
-Graphs are complex, non-linear data structures that are characterized by a group of vertices, connected by edges.
-
+In this article, let us look into the basics of graphs, the different types of graphs and their representation.
 <!--more-->
 
-In this article, let us look into the basics of graphs, the different types of graphs and their representation.
-
-For more background on the different types of data structures in Python, check out the following articles:
+Graphs are complex, non-linear data structures that are characterized by a group of vertices, connected by edges. For more information on the different types of data structures in Python, check out the following articles:
 
 - [Introduction to Data Structures](/engineering-education/data-structures-python-part-1/)
 - [List](/engineering-education/list-data-structure-python/)
@@ -29,8 +26,6 @@ For more background on the different types of data structures in Python, check o
 - [Linked Lists](/engineering-education/linked-list-data-structure-python/)
 - [Binary Trees](/engineering-education/binary-tree-data-structure-python/)
 - [Heaps](/engineering-education/heap-data-structure-python/)
-
-_Note: **Prerequisites** - Make sure you have some basic Python knowledge before diving into this article. It is a good idea to check out linear data structures like Lists and Linked Lists. (links are given above)_
 
 ### Table of Contents
 
@@ -61,13 +56,13 @@ Graphs are used everywhere, even in the fields of physics and chemistry. A few a
 
 - Directed Graphs are used in Google's Page Ranking Algorithm.
 
-- Social Networking uses graphs to represent different users as vertices and edges to represent connections between users.
+- Social Networks uses graphs to represent different users as vertices and edges to represent connections between them.
 
-- In a mapping application, graphs are used to represent places. They use shortest path algorithms to calculate the shortest distance between points on the map.
+- In a mapping application, graphs are used to represent places and the path (distance) between them.
 
 ### Types of Graphs
 
-There are many types of graphs, based on weights, direction, interconnectivity and special properties. Let us now look at the most common types of graphs.
+There are many types of graphs, based on weights, direction, interconnectivity and special properties. Let us look at the most common types of graphs.
 
 - [Based on Direction](#based-on-direction)
 - [Based on Weights](#based-on-weights)
