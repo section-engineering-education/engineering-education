@@ -32,7 +32,7 @@ Python is used to perform many tasks, among the most critical being data analyti
 
 With Julia, data scientists can write projects from other languages and compile them by sending strings. This happens because Julia is a versatile programming language with universally executable code in [LaTeX](https://www.latex-project.org/), C, Python, and R. Besides, it takes less time to execute complex and big codes in Julia than in Python. RCall and PyCall are very significant, given that Julia is disadvantaged in terms of packages. This way, you can be able to call on R and Python when the need arises. Important to note is that Python is a reliable tool for web development, automation and scripting. Thus, for a general-purpose language, Python is the better option.
 
-### Tolling and Community Support
+### Tooling and Community Support
 
 Any programing language requires tooling support. Over the years, Python users have enjoyed an active and supportive programming community with enhanced tool support, interfaces and systems built by this community. The support for Julia is still at its first developmental stages. In this case, support for significant resources and debugging tools is minimal.
 
