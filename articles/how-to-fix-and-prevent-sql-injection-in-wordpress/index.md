@@ -6,7 +6,7 @@ url: /engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/
 title: How to fix and Prevent SQL Injection in WordPress
 description: Introduction to SQLi in WordPress, SQL injection (SQLi) is the injection or insertion of SQL code, usually via data transmitted from a website.
 author: james-kahwai
-date: 2020-10-08T00:00:00-10:00
+date: 2020-10-08T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -24,7 +24,7 @@ Consequently, your database's sensitive information is exposed or leaked to hack
 #### What is SQLi?
 SQL injection (SQLi) is the injection or insertion of SQL code, usually via [data transmitted from a website](http://web.archive.org/web/20200817021102/https://secure.wphackedhelp.com/blog/wordpress-sql-injection-prevention). When an SQLi attack is deployed successfully, it gives them access to sensitive information and the ability to add/edit/delete data from a database.
 
-Basically, every action you can take regarding a database can be executed by the attacker. Other than PHP, [the ASP language](https://www.w3schools.com/asp/default.ASP) is also prone to SQLi.
+Every action you can take regarding a database can be executed by the attacker. Other than PHP, [the ASP language](https://www.w3schools.com/asp/default.ASP) is also prone to SQLi.
 
 An attacker uses data input by the user into the database that isn't sufficiently masked and contains meta-characters, i.e. semicolons, quotation marks, and double hyphens. These parameters have specific functions with which the SQL interpreter uses to execute external commands.
 
@@ -92,7 +92,7 @@ Are your WordPress core files running on the latest version?
 
 As we have found out, your WordPress site is secure from any SQLi if your core files are updated. Nevertheless, the use of third-party plugins and themes change the narrative and can expose you exponentially.
 
-Here are a list of the most prone types of WordPress plugins that you should be on the look out for. They include;
+Here is a list of the most prone types of WordPress plugins that you should be on the lookout for. They include;
 
 1. Subscription pop-ups
 2. Login/Signup forms
@@ -155,7 +155,7 @@ A firewall detects and shields your website from SQLi and other attacks, dependi
 ### How to Prevent SQLi in WordPress
 As they say, prevention is better than cure. Don't wait to prove if that's right or wrong with a successful SQLi. Proper site maintenance practices will save you from SQLi attacks.
 
-These practices include regular updates for WordPress core files, plugins updates, using reputable plugins, avoid nulled themes, and minimise user input such as subscription pop-up forms as much as possible.
+These practices include regular updates for WordPress core files, plugins updates, using reputable plugins, avoid nulled themes, and minimize user input such as subscription pop-up forms as much as possible.
 
 [WordPress has prepared statements for database operations](https://developer.wordpress.org/reference/classes/wpdb/) that are well structured to mitigate risk on your website. Ensure context data filtering is enabled on your website, such as only allowing digits for phone number fields.
 
@@ -182,12 +182,12 @@ NB: Never use the root user (because it has all access) to access the database a
 This is one of the best ways to outsmart a possible SQLi in your database. Different programming languages have different functions to verify data from query responses. In this article, we shall look at the PHP language.
 
 For numbers use;
-``` php
+```php
 ctype_digit ()
 ```
 
 For text strings use;
-``` php
+```php
  ctype_alpha ()
  ```
 ##### Delimit the value of your queries
@@ -208,3 +208,6 @@ Where $ id is an integer.
 A WordPress web developer should keep abreast of recent tricks and loopholes that hackers are manipulating. Ensure you implement clean coding practices on your WordPress website project and mitigate possible SQLi attacks.
 
 All SQLi exploits happening day-to-day are all listed on the [Exploit-DB](https://www.exploit-db.com/search?q=) platform.
+
+---
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
