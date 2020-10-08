@@ -7,10 +7,10 @@ The data science industry has many synonyms associated with it. The terms artifi
 3. Data Analysts
 4. Data Architect
 
-The roles mentioned above are all equally exciting and challenging. Each one has its own set of requirements, and I hope reading this article will allow you to choose the role of your dreams. Let's begin.
+The roles mentioned above are all equally exciting and challenging. Each one has its own set of requirements, and I hope reading this article will help you to choose the role of your dreams. Let's begin.
 
 ### Machine Learning Engineer
-Machine learning engineers deal predominantly with the implementation of the existing algorithms. Algorithm discovery is a crucial step performed by ML Scientists. The team of ML engineers works on ensuring the algorithms work under the constraints posed by the problem. For example, consider the [Generative Pre-Trained](https://openai.com/blog/better-language-models/)(GPT) Language Model. It is responsible for the ImageNet moment in the field of Natural Language Processing. The imagenet moment refers to the transfer learning capabilities that GPT brings along. The source code and architecture details for GPT is available via various open-source channels. 
+Machine learning engineers deal predominantly with the implementation of the existing algorithms. Algorithm discovery is a crucial step performed by ML Scientists. The team of ML engineers works on ensuring the algorithms work under the constraints posed by the problem. For example, consider the [Generative Pre-Trained](https://openai.com/blog/better-language-models/)(GPT) Language Model. It is responsible for the ImageNet moment in the field of Natural Language Processing. The Imagenet moment refers to the transfer learning capabilities that GPT brings along. The source code and architecture details for GPT is available via various open-source channels. 
 
 When a company has a particular use case for a specific product, this algorithm needs to be modified or extended. The job of an ML engineer is to tweak the model according to the current application at hand. During the adaptation of existing algorithms, multiple changes are applicable. They are:
 
