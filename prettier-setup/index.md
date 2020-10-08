@@ -1,10 +1,10 @@
 # How to setup code formatting of Node JS app using Prettier and ESLint?
 
- One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. These stages consist of enormous chunks of code that not only require a great amount of time for formatting but also differ in style with different individuals in the team. Have you ever wondered to cut short this formatting time with just one-click? Any alternatives to prevent this monotonous task? 
+ In open-source development, handling a large number of files across every development stage is a quite tedious task. These stages consist of enormous chunks of code that not only require a great amount of time for formatting but also differ in style with different individuals in the team. Have you ever wondered to cut short this formatting time with just one-click? Any alternatives to prevent this monotonous task? 
  
- For getting rid away with the hassles of writing clean code and maintaining consistency across a project on specific code style guidelines, **Prettier** is one of the most prominent tools out there in which you can bank upon! With Prettier editor integration, you can just press that magic key binding and boom, the code is formatted. Prettier, along with the support of **ESLint**, is a deadly combination that increases productivity manifolds.
+ For getting rid away with the hassles of writing clean code and maintaining consistency across a project on specific code style guidelines, **Prettier** is one of the most prominent tools out there in which you can bank upon! With Prettier and githook integration, you the code is formatted within a single-click. Prettier, along with the support of **ESLint**, is a deadly combination that increases productivity manifolds.
 
- This guide includes step-by-step instructions so that you have a comfortable experience in beginning your open source deployment. Without further ado, let's get started by answering all the why(s), what(s) & how(s)!
+ This guide includes all the extensive information to get used to the code formatting style in the open source circuit. Let's get started by answering in-detail all the why(s), what(s) & how(s)!
 
 ## Table of Contents
 
@@ -41,18 +41,17 @@ Prettier is an opinionated code formatter with support for JavaScript, GraphQL, 
 [Supports multiple languages](https://glebbahmutov.com/blog/images/prettier/format-css.gif)
 
 ## How does it work?
-
-- Prettier takes in all your code, removes all formatting, and re-formats the code according to its style guidelines. It scans all the files for style issues and automatically reformats the code to ensure that consistent rules are being followed for indentation, line break, spacing, semicolons, single quotes vs double quotes, etc.
+- When code is run through Prettier, it removes all the formatting initially & and then according to the style guidelines reformatting of the code takes place. It scans all the files for style issues and automatically reformats the code to make sure that consistent rules are being followed for semicolons, indentation, line break, spacing, double quotes vs single quotes, etc.
 
 ![AST Image](./ast.png)
 
-- Internally, all the javascript code is converted into **Abstract Syntax Tree** (AST) and then formatted back. So it ensures that there would not be any breaking changes to the code that was written. Initially, an abstract representation of this AST is generated and then all the commands are executed sequentially. For the user, everything gets formatted magically and he does not have to worry about all the processes. It is super fast and quite productive.
+- Internally, all the javascript code is converted into **Abstract Syntax Tree** (AST) and then formatted back. Hence, the abstract syntactic structure of source code is preserved. Initially, an abstract representation of this AST is generated and then all the commands are executed sequentially. For the user, everything gets formatted magically and he does not have to worry about all the processes. It is super fast and quite productive.
 
 ## How to install Prettier?
 
-- Install the exact version of Prettier locally in your project. This will keep everybody on the same page, following the same rules. Even a patch release of Prettier can result in slightly different formatting, so you wouldn’t want different team members using different versions and formatting each other’s changes back and forth. 
+- Install the exact version of Prettier locally in your project. This will keep everybody on the same page, following the same rules. Even a slightly different version of Prettier may result in entirely different formatting, which may cause hinderance with different team members using different versions and formatting each other’s changes back and forth. 
 
-- For this, first install prettier on your system. For installing it in your IDE/Editor, go to the integrations page on the website and download the corresponding plugin. In VS Code go to View ->Extensions, Search for prettier code formatter, Click Install and you're done. Go to **.vscode/settings.json**, it will open your ide setting in JSON format. Add the following snippet to format all the files with a single click:
+- For this, first install prettier on your system. For installing it in your IDE/Editor, visit the extensions and download the corresponding plugin. In VS Code go to View ->Extensions, Search for prettier code formatter, Click Install. Go to **.vscode/settings.json**, that will open ide setting page in JSON format. Add the following snippet to format all the files with a single click:
 
 ```
   {
@@ -94,7 +93,7 @@ Prettier is an opinionated code formatter with support for JavaScript, GraphQL, 
 
 ## How to configure Prettier to work with ESLint?
 
-- ESLint is a programming tool that analyzes and checks source code. It flags programming errors, indentation errors, formatting errors, bugs, and suspicious constructs. The linting feature of ESLint & efficient formatting of Prettier is a deadly combination that increases productivity manifolds. To do the same, first install ESLint on your system. Here is a wonderful [tutorial](https://www.section.io/engineering-education/node-eslint/#eslint-and-node) you can refer to, for installing ESLint.
+- ESLint is a programming tool that analyzes and checks source code. Apart from removing programming, indentation and formatting errors, it also removes bugs and undesirable practices in code formatting. The linting feature of ESLint & efficient formatting of Prettier is a deadly combination that increases productivity manifolds. To do the same, first install ESLint on your system. Here is a wonderful [tutorial](https://www.section.io/engineering-education/node-eslint/#eslint-and-node) you can refer to, for installing ESLint.
 
 - After installing Prettier and ESLint, install the following packages: 
 
@@ -119,23 +118,23 @@ Prettier is an opinionated code formatter with support for JavaScript, GraphQL, 
      * Print trailing commas wherever possible.
      * Valid options:
      *   - "none" - no trailing commas
-     *   - "es5" - trailing commas where valid in ES5 (objects, arrays, etc)
-     *   - "all" - trailing commas wherever possible (function arguments)
+     *   - "es5" - It prints trailing commas where valid in ES5 (ex: objects, arrays, etc)
+     *   - "all" - It prints trailing commas wherever possible (ex: function arguments)
      */
     "trailingComma": "es5",
     
     /**
-     * Do not print semicolons, except at the beginning of lines which may need them.
+     * To not print the corresponding semicolons, except at the beginning of lines which may need them.
      * Valid options:
-     * - true - add a semicolon at the end of every line
-     * - false - only add semicolons at the beginning of lines that may introduce ASI failures
+     * - true - It adds a semicolon at the end of every line
+     * - false - It only adds semicolons at the very beginning of lines that introduce ASI failures
      */
     "noSemi": true,
 
     /**
-     * Do not print spaces between brackets.
-     * If true, puts the > of a multi-line JSX element at the end of the last line instead of being
-     * alone on the next line
+     * To not print the spaces between brackets.
+     * If false, puts the > of a multi-line JSX element at the end of the next line instead of being
+     * alone on the last
      */
     "jsxBracketSameLine": false,
      
