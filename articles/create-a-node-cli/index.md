@@ -1,11 +1,11 @@
 
 # Creating Command Line Interfaces using Node.js
 
-The command line or the terminal is a powerful tool used by a lot of developers. It allows us to interact with the operating system using commands. These commands are passed as input strings of text. A lot of tools used by developers have a terminal CLI or command line interface to go with the product. Using the command line is easy and direct hence why a lot of people prefer using it.
+The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands. These commands are passed as input strings of text. A lot of tools used by developers have a terminal CLI or command line interface to go with the product. Using the command line is easy and direct hence why a lot of people prefer using it.
 Creating a CLI application is not a challenging task. This advantage has helped make them more popular.
 Some of the most popular command line interface applications are project generators like [create-react-app](https://www.npmjs.com/package/create-react-app) for generating React.js application boilerplate, [angular CLI](https://www.npmjs.com/package/@angular/cli) for creating an Angular.js project and [Vue CLI](https://www.npmjs.com/package/@vue/cli) for Vue.js applications.
 
-The above examples are a bit more complex in functionality and can be confusing. Yet, the basics are still the same. One thing all the above have in common is that they are all made using Node.js.
+The above examples are a bit more complex in functionality and can be confusing. Yet, the basics are still the same. They all have Node.js as a common factor.
 
 Getting started with CLI applications using Node.js couldn't be easier. To tackle the basics, let's create a simple CLI application that takes two arguments `joke` or `quote` and generates a joke or a quote.
 
@@ -54,28 +54,6 @@ Let's go ahead and install them:
     npm i axios chalk yargs
 ```
 
-Your package.json file should now looks like this:
-
-```javascript
-{
- "name": "Section",
- "version": "1.0.0",
- "description": "",
- "main": "index.js",
- "scripts": {
- "test": "echo \"Error: no test specified\" && exit 1"
- },
- "keywords": [],
- "author": "",
- "license": "ISC",
- "dependencies": {
- "axios": "^0.20.0",
- "chalk": "^4.1.0",
- "yargs": "^16.0.3"
- }
-}
-```
-
 ### Getting the jokes and quotes
 
 Lets setup the jokes and quotes. We will be using a [quote-generator-api](https://quotes.rest/) and [jokes-generator-api](https://official-joke-api.appspot.com/). We will fetch the individual jokes and display them on the terminal when the user asks for them.
@@ -108,23 +86,18 @@ function getJoke() {
 }
 
 function getQuote() {
-  url = "https://quotes.rest/qod";
- axios({
- method: "get",
- url: url,
- headers: { Accept: "application/json" },
- })
- .then((res) => {
- const quote = res.data.contents.quotes[0].quote;
- const author = res.data.contents.quotes[0].author;
- const log = chalk.cyan(`${quote} - ${author}`);
- console.log(log);
- })
- .catch((err) => {
- const log = chalk.red(err);
- console.log(log);
- });
-}
+axios({
+    method: 'get',
+    url: "http://quotes.stormconsultancy.co.uk/random.json",
+}).then((res)=> {
+    const randomQuote = chalk.cyan(res.data.quote);
+    const randomAuthor = chalk.green(res.data.author);
+    const log = `${randomQuote} - ${randomAuthor}`;
+    console.log(log);
+}).catch((err)=>{
+    const errorLog = chalk.red(err);
+    console.log(errorLog);
+})
 ```
 
 Note: We are using chalk to color our logs to get a nice feel and a colorful output. We setup an empty string called url so that when the user selects quotes, we load in the quote api url and same goes for jokes.
@@ -243,8 +216,7 @@ argv.command(
 
 function getJoke() {
   url = "https://official-joke-api.appspot.com/random_joke";
- axios({
- method: "get",
+ axios.get({
  url: url,
  })
  .then((res) => {
@@ -259,21 +231,18 @@ function getJoke() {
 }
 
 function getQuote() {
-  url = "https://quotes.rest/qod";
  axios({
- method: "get",
- url: url,
- headers: { Accept: "application/json" },
- })
- .then((res) => {
- const quote = chalk.cyan(res.data.contents.quotes[0].quote);
- const author = chalk.green(res.data.contents.quotes[0].author);
- console.log(`${quote} - ${author}`);
- })
- .catch((err) => {
- const log = chalk.red(err);
- console.log(log);
- });
+    method: 'get',
+    url: "http://quotes.stormconsultancy.co.uk/random.json",
+}).then((res)=> {
+    const randomQuote = chalk.cyan(res.data.quote);
+    const randomAuthor = chalk.green(res.data.author);
+    const log = `${randomQuote} - ${randomAuthor}`;
+    console.log(log);
+}).catch((err)=>{
+    const errorLog = chalk.red(err);
+    console.log(errorLog);
+})
 }
 argv.help();
 
