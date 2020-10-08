@@ -17,7 +17,7 @@ images:
 SQLi in [WordPress](https://kinsta.com/knowledgebase/what-is-wordpress/) is [ranked the second most critical vulnerability](secure.wphackedhelp.com). [Updating your WordPress website](https://wordpress.org/support/article/updating-wordpress/) can shield you from SQLi; however, third-party themes and plugins still pose a significant threat.
 <!--more-->
 ### Introduction
-SQLi is the manipulation of a security flaw in database systems. WordPress, as a platform, runs server-side scripts in PHP. Hence, SQL and PHP make WordPress websites vulnerable to attackers. They could insert malicious URLs (which are embedded with commands) that trigger unwanted behaviours from your database. 
+SQLi is the manipulation of a security flaw in database systems. WordPress, as a platform, runs server-side scripts in PHP and uses SQL databases. Hence, SQL and PHP make WordPress websites vulnerable to attackers. They could insert malicious URLs (which are embedded with commands) that trigger unwanted behaviours from your database. 
 
 Consequently, your database's sensitive information is exposed or leaked to hackers, which they can use to manipulate your WordPress website.
 
@@ -67,10 +67,10 @@ This attack is used to determine if a vulnerability exists in an SQL database. A
 select * from comments WHERE post_id=1-SLEEP(15);
 ~~~~
 
-if the query results in a delay, then the database is vulnerable to an attack.
+If the query results in a delay, then the database is vulnerable to an attack.
 
 ### In-Band SQLi
-This type of SQLi is, by far, the simplest form of SQLi. An attacker uses the same channel to input malicious SQL codes and gathers results on the same. Let's look into two types of In-Band SQLi, namely: Error-based SQLi and Union-based SQLi.
+This type of SQLi is, by far, the simplest. An attacker uses the same channel to input malicious SQL codes and gathers results on the same. Let's look into two types of In-Band SQLi, namely: Error-based SQLi and Union-based SQLi.
 
 #### Error-Based Injection
 This type of attack is used in the earlier phases of SQLi. The attacker uses the error-based injection to learn more about the database structure and table names used in the web application. 
@@ -111,19 +111,19 @@ The [Exploit-DB website](https://www.exploit-db.com/search?q=) provides a detail
 ##### Fix WordPress SQLi Attack: Damage Control
 An attacker targets the database at any given point, as that is the only source for information on your website. Firstly, disable admin privileges on your database. Henceforth, the attacker is tied down to a read-only database that is not of much help.
 
-Proceed to sanitize the UDF files the attacker used to obtain the OS Shell. Besides, change your encrypted password to stronger values. Finally, check if the port 3306 is open on the internet and, if so, block it.
+Proceed to sanitize the UDF files the attacker used to obtain the OS Shell. Also, change your encrypted password to stronger values. Finally, check if the port 3306 is open on the internet and, if so, block it.
 
 ##### Fix WordPress SQLi Attack: Database Clean Up
 A database clean-up is required to fix any possible SQLi on your site's database. Here are steps to do so as well as the function cheatsheet.
 
 Step 1: Look up all your tables using the command show tables; Look out for a table named Sqlmap.
 
-Step 2: If the table Sqlmap is present, it has been used against your website. Delete the Sqlmap table using the command
+Step 2: If the table Sqlmap is present, it has been used against your website. Delete the Sqlmap table using the command:
 ~~~~sql
 DROP TABLE Sqlmap;
 ~~~~
 
-Step 3: Look out for new/foreign users in your database using the following code
+Step 3: Look out for new/foreign users in your database using the following code:
 
 ~~~~sql
 Select * FROM users  AS u AND u.created > UNIX_TIMESTAMP(STR_TO_DATE('sept 22 2020', '%M %d %Y '));
@@ -136,7 +136,7 @@ Step 4: Delete any rogue users using the command below:
 DROP USER 'malicious'@'localhost';
 ~~~~
 
-Step 5: Change and secure your passwords using the command below.
+Step 5: Change and secure your passwords using the command below:
 ~~~~sql
 UPDATE users SET pass = concat('ZZZ', sha(concat(pass, md5(rand()))));
 ~~~~
@@ -147,7 +147,7 @@ Updates for your WordPress site are very vital in keeping ahead of the day to da
 Avoid using [nulled themes or nulled plugins](https://wordpress.stackexchange.com/questions/232041/what-are-nulled-themes/) on your WP site. Also, make sure to use reputable plugins on your site.
 
 ##### Fix WordPress SQLi Attack: Use a Firewall
-A firewall detects and shields your website from SQLi and other attacks, depending on your firewall service provider's features. There are several WordPress firewall security solutions on the internet such as [Sucuri](https://wordpress.org/plugins/sucuri-scanner/), [WordFence](https://wordpress.org/plugins/wordfence/), [iThemes](https://wordpress.org/plugins/better-wp-security/), [Cerber Security](https://wordpress.org/plugins/wp-cerber/), and [All In One Wp Security](https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/). Besides, check with your hosting provider, they may have one already.
+A firewall detects and shields your website from SQLi and other attacks, depending on your firewall service provider's features. There are several WordPress firewall security solutions on the internet such as [Sucuri](https://wordpress.org/plugins/sucuri-scanner/), [WordFence](https://wordpress.org/plugins/wordfence/), [iThemes](https://wordpress.org/plugins/better-wp-security/), [Cerber Security](https://wordpress.org/plugins/wp-cerber/), and [All In One Wp Security](https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/). You should also check with your hosting provider, they may have one already.
 
 ##### Fix WordPress SQLi Attack: Pentesting
 [Pentesting/penetration testing](https://www.cloudflare.com/learning/security/glossary/what-is-penetration-testing/) or rather a website security audit is vital to keep your WP site protected. WordPress Pentesting involves making simulated SQLi attacks on your site to make sure all loopholes are covered. This process ensures all loopholes are found and sealed before an attacker finds and takes advantage of them.
