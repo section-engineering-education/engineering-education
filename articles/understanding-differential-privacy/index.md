@@ -63,83 +63,85 @@ Similarly, there are other types of differencing attacks using various other fun
 ### Implementing differential privacy
 Now, we are going to implement differential privacy for a simple database query using a summation differencing attack. The database has only 1 column with Boolean types. The Boolean type denotes if a person possesses some private attribute or not (for example, if a person has a particular disease or not). And, we are going to learn, if the database is differentially private or not.
 
-#### Installation
-It is recommended to use [Google Colab](colab.research.google.com) to get started right away. If you wish to run the below codes in your local system, download [Anaconda](https://www.anaconda.com/download) by referring to the [Anaconda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html).
-
-The libraries to be installed in Anaconda are
-
-- [x] [PyTorch](https://anaconda.org/pytorch/pytorch)
-
 #### Creating a database
-Create a simple database containing 5000 entries consisting of values True/False (1/0). Here, we randomly generate Boolean values using `torch.rand()`
+Create a simple database containing 5000 entries consisting of values 0s and 1s. Here, we randomly generate binary values using `random.choice()`
 
 ```python
-  import torch
+  import random
 
   # the number of entries in our database
   num_entries = 5000
 
-  db = torch.rand(num_entries) > 0.5
-  db
+  original_database = [] # The original database containing 0s and 1s
+
+  for i in range(num_entries):
+    original_database.append(random.choice([0,1])) # Generate random number from choice of 0 and 1
+
+  print(original_database)
 ```
 
 **Output:**
 
 ```bash
-Out[0]: tensor([0, 1, 0,  ..., 0, 1, 1], dtype=torch.uint8)
+Out[0]: [1, 1, 0, 0, 1, .., 0, 1, 1]
 ```
 
-To demonstrate differential privacy, we try to manually omit certain values from the database, and check if privacy is till preserved or not. So, we create a method to accept `remove_index` as an argument and remove it from the database.
+To demonstrate differential privacy, we try to manually omit certain values from the database, and check if privacy is still preserved or not. So, we create a method to accept `remove_index` as an argument and remove it from the database.
 
 ```python
-  def get_parallel_db(db, remove_index):
-      return torch.cat((db[0:remove_index], db[remove_index+1:])) # torch.cat() concatenates two different sequence of tensors.
-      # Here, we slice tensor db from (0, remove_index) and (remove_index + 1, len(db)), and then concatenate both the tensors into 1 single tensor
+  def create_database_with_missing_value(database,remove_index):
+    database_before = database[0:remove_index] # List slicing till remove_index (0, remove_index)
+    database_after = database[remove_index+1:] # List slicing after remove_index (remove_index + 1, len(original_database))
+    return database_before + database_after # Concatenating both the lists
 
-  get_parallel_db(db, 3)
+  create_database_with_missing_value(original_database, 3) # A sample output on removal of 3rd index
 ```
 
 **Output:**
 
 ```bash
-Out[1]: tensor([ True, False, False,  ..., False, False, False])
+Out[1]: [ 1, 1, 0, 1, 0..., 0, 0, 0]
 ```
 
 Now, we create a set of such databases (parallel databases), where index `i` is removed from each of the databases.
 
 ```python
-  def get_parallel_dbs(db):
-      parallel_dbs = list() # A list containing all the databases
-      for i in range(len(db)):
-          pdb = get_parallel_db(db, i) # Create a database after removing index i from it
-          parallel_dbs.append(pdb) # Append the new database to the list of databases
-      return parallel_dbs
+  def create_set_of_databases(database):
+    databases = list() # Contains lists of list - A set of databases
 
-  get_parallel_dbs(db)
+    for i in range(len(database)):
+      new_database = create_database_with_missing_value(database,i) # Create a database after removing index i from it
+      databases.append(new_database) # Append the new database to the list of databases
+
+    return databases
+
+  print(create_set_of_databases(original_database))
 ```
 
 **Output:**
 
 ```bash
-Out[2]: [tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, False,
-         False,  True, False, False,  True,  True, False, False, False]),
- tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, False,
-         False,  True, False, False,  True,  True, False, False, False]),
- tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, False,
-         False,  True, False, False,  True,  True, False, False, False]), .................
- tensor([ True,  True,  True, False,  True,  True,  True,  True,  True, False,
-         False,  True, False, False,  True,  True, False, False, False]),
+Out[2]: [[ 1, 1, 1, 0, 1, 1, 1, 1, 1, ...., 0, 0, 1, 0, 0, 1, 1, 0, 0, 0],
+        [ 1, 1, 1, 0, 1, 1, 1, 1, 1, ...., 0, 0, 1, 0, 0, 1, 1, 0, 0, 0],
+        [ 1, 1, 1, 0, 1, 1, 1, 1, 1, ...., 0, 0, 1, 0, 0, 1, 1, 0, 0, 0],
+        .................
+        [ 1, 1, 1, 0, 1, 1, 1, 1, 1, ...., 0, 0, 1, 0, 0, 1, 1, 0, 0, 0]]
 ```
 
-Next, we create a set of databases based on the users' input.
+Next, we create a set of databases based on the users' input. Modularizing the previous snippets as `create_database(num_entries)`
 
 ```python
-  def create_db_and_parallels(num_entries):
-      db = torch.rand(num_entries) > 0.5
-      pdbs = get_parallel_dbs(db)
-      return db, pdbs
+  def create_databases(num_entries):
+  
+    original_database = [] # A list containing binary values
+    for i in range(num_entries):
+      original_database.append(random.choice([0,1])) # Generate random choices and append to the list
 
-  db, pdbs = create_db_and_parallels(5000) # Create 5000 different parallel databases with each database having 1 missing value
+    databases = get_set_of_databases(original_database) # Create a set of databases, having 1 missing value in each
+
+    return original_database, databases
+
+  original_database, databases = create_set_of_databases(5000) # Create 5000 different set of databases with each database having 1 missing value
 ```
 
 #### Evaluating differential privacy of a function
@@ -147,44 +149,60 @@ Seeing as we have created a sample database for demonstration of differential pr
 
 As we mentioned before, the evaluation of privacy leakage is measured in terms of `sensitivity`. On iterating through each row of the database, we measure the difference in the output of the query.
 
-Finding the sum of all values in the original database (without removing values)
+Finding the mean and sum of all values in the original database (without removing values)
 
 ```python
-  # A query to find the sum of values in each of the databases
-  def query(db):
-      return db.sum()
+  # A query to find the mean of values in each of the databases
+  def query_mean(db):
+      return sum(db)/len(db)
 
-  full_db_result = query(db) # Store the summation
+  # A query to find the sum of values in each of the databases
+  def query_sum(db):
+    return sum(db)
+
+  full_db_result = query_mean(db) # Store the mean
   print(full_db_result)
 ```
 
 **Output:**
 
 ```bash
-Out[4]: tensor(2454)
+Out[4]: 0.5130
 ```
 
-Finding the sum of all values in new database (each containing 1 missing value)
+Performing the query for all values in new database (each containing 1 missing value)
 
 ```python
-  sensitivity = 0 # Assume there is no leakage
-  for pdb in pdbs:
-      pdb_result = query(pdb) # Query each new database
+  def sensitivity(query,num_entries):
+    original_db,dbs = create_db_and_parallels(num_entries)
+    sensitive = 0 # Assume there is no leakage
 
-      db_distance = torch.abs(pdb_result - full_db_result) # Compare the new database with original database
+    full_db_result = query_mean(original_db) # Query each new database
 
-      if(db_distance > sensitivity):
-          sensitivity = db_distance # Measure if privacy has been leaked
-  print(sensitivity)
+    for db in dbs:
+      db_distance = abs(query_mean(db) - full_db_result) # Compare the new database with original database
+
+    if(db_distance > sensitive):
+      sensitive = db_distance # Measure if privacy has been leaked
+
+    return sensitive
+```
+
+Now, let us compare how sensitivity varies for different differential attacks query.
+
+```python
+  print('Sensitivity using Sum query:', sensitivity(query_sum, 5000))
+  print('Sensitivity using Mean query: ', sensitivity(query_mean, 5000))
 ```
 
 **Output:**
 
 ```bash
->> tensor(1)
+>> Sensitivity using Sum query: 1
+>> Sensitivity using Mean query: 0.00010106021204242532
 ```
 
-This demonstrates that the new set of databases containing 1 missing value in each of the databases has leaked information about the missing value. Thus, we can conclude that the privacy of that person has been leaked.
+This demonstrates that the new set of databases containing 1 missing value in each of the databases has leaked information about the missing value. Thus, we can conclude that the privacy of that person has been leaked. The lower the value of sensitivity shows less privacy leakage.
 
 Now, let's look at how the leakage can be resolved.
 
@@ -223,7 +241,7 @@ This is known as **plausible deniability,** it is a condition in which a subject
 Below we have a code snippet that shows the implementation of plausible deniability:
 
 ```python
-import torch
+import torch # For installation, refer this https://anaconda.org/pytorch/pytorch
 
 # Number of entries in the sample database
 num_entries = 5000
@@ -241,9 +259,22 @@ def query(db):
   # Removing the skew in the second coin flip
   db_result = torch.mean(augmented_database.float()) * 2 -0.5
   return db_result,true_result
+
+db,_ = create_databases(5000)
+db = torch.Tensor(db)
+private_result,true_result = query(db)
+print("With Noise: ",private_result)
+print("Without Noise: ",true_result)
 ```
 
-The code above shows a demonstration on how randomized response noise can be added to perform plausible deniability
+**Output:**
+
+```bash
+With Noise:  tensor(0.4880)
+Without Noise:  tensor(0.4892)
+```
+
+The code above shows a demonstration on how randomized response noise can be added to perform plausible deniability. On adding noise, we can reduce the sensitivity of the query (reducing the data leakage)
 
 > Differential privacy always requires some noise added to the queries to protect from differential attacks
 
