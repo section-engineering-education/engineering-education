@@ -62,9 +62,9 @@ select * from comments WHERE post_id=1-SLEEP(15);
 if the query results in a delay, then the database is vulnerable to an attack.
 
 ### In-Band SQLi
-This type of SQLi is, by far, the simplest form of SQLi. An attacker uses the same channel to input malicious SQL codes and gathers results on the same. Let's look into two types of In-Band SQLi, namely: Error - based SQLi and Union - based SQLi.
+This type of SQLi is, by far, the simplest form of SQLi. An attacker uses the same channel to input malicious SQL codes and gathers results on the same. Let's look into two types of In-Band SQLi, namely: Error-based SQLi and Union-based SQLi.
 
-#### Error- Based Injection
+#### Error-Based Injection
 This type of attack is used in the earlier phases of SQLi. The attacker uses the error-based injection to learn more about the database structure and table names used in the web application. For example, once an attack has been initiated, the corresponding error messages may include table names and column table names. The information can be useful to further the attack.
 
 #### Union Based Injection
