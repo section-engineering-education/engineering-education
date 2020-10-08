@@ -135,9 +135,9 @@ A great example would be the IBM’s financial trading platform which uses a RL 
 
 
 ### Final Thoughts
-This article’s aim was to provide a brief, concise yet comprehensive introduction to one of the most important subfield of AI, Reinforcement Learning. Hopefully, this article has triggered some curiosity that will drive you to dive in a little deeper into researching more on this subfield of AI.
+Reinforcement Learning is one of the most important subfield of Artificial Intelligence. Hopefully, this article has made you curious to dive deep into Reinforcement Learning.
 
-If Machine Learning is still new to you, feel free to [download and read this e-book on the introduction to machine learning](/https://books.google.co.ke/books?hl=en&lr=&id=u8OWDwAAQBAJ&oi=fnd&pg=PR6&dq=introduction+to+machine+learning&ots=huhHR1ZCOT&sig=9hlNXYWvRqWRJgY_6P_QurJn3ac&redir_esc=y#v=onepage&q=introduction%20to%20machine%20learning&f=false/).
+If Machine Learning is still new to you, feel free to [download and read this e-book on Machine Learning](/https://books.google.co.ke/books?hl=en&lr=&id=u8OWDwAAQBAJ&oi=fnd&pg=PR6&dq=introduction+to+machine+learning&ots=huhHR1ZCOT&sig=9hlNXYWvRqWRJgY_6P_QurJn3ac&redir_esc=y#v=onepage&q=introduction%20to%20machine%20learning&f=false/).
 
 ### References
 
