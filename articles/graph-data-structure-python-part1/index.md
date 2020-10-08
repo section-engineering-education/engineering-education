@@ -72,13 +72,9 @@ There are many types of graphs, based on weights, direction, interconnectivity a
 
 ##### Undirected Graphs
 
-- In an undirected graph, the edges have no path or direction.
+In an undirected graph, the edges have no path or direction. If there is a path from vertex X to vertex Y, then there is a path from vertex Y to vertex X. Edge (X, Y) represents the edge connecting vertex X to vertex Y.
 
-- If there is a path from vertex X to vertex Y, then there is a path from vertex Y to vertex X.
-
-- edge (X, Y) represents the edge connecting vertex X to vertex Y.
-
-- That is, `edge (X, Y) == edge (Y, X)`.
+That is, `edge (X, Y) == edge (Y, X)`.
 
 ![Undirected Graph](/engineering-education/graph-data-structure-python-part1/undirected-graph.png)
 
@@ -86,11 +82,9 @@ _Figure: Undirected Graph ([Source](https://pediaa.com/what-is-the-difference-be
 
 ##### Directed Graphs
 
-- In a directed graph or digraph, the edges have orientation.
+In a directed graph or digraph, the edges have orientation. If there is a path from vertex X to vertex Y, then there necessarily need not exist a path from vertex Y to vertex X.
 
-- If there is a path from vertex X to vertex Y, then there necessarily need not exist a path from vertex Y to vertex X.
-
-- That is, `edge (X, Y) != edge (Y, X)`.
+That is, `edge (X, Y) != edge (Y, X)`.
 
 ![Directed Graphs](/engineering-education/graph-data-structure-python-part1/directed-graph.png)
 
@@ -100,12 +94,11 @@ _Figure: Directed Graph ([Source](https://pediaa.com/what-is-the-difference-betw
 
 ##### Weighted Graphs
 
-- A weighted graph has a value associated with every edge.
-- The value may represent quantities like cost, distance, time, etc.., depending on the graph.
-- An edge of a weighted graph is represented as, `(u, v, w)`.
-  - `u` -> Source vertex
-  - `v` -> Destination vertex
-  - `w` -> Weight associated to go from u to v.
+A weighted graph has a value associated with every edge. The value may represent quantities like cost, distance, time, etc.., depending on the graph. An edge of a weighted graph is represented as, `(u, v, w)`.
+
+- `u` -> Source vertex
+- `v` -> Destination vertex
+- `w` -> Weight associated to go from u to v.
 
 ![Weighted Graphs](/engineering-education/graph-data-structure-python-part1/weighted-graph.png)
 
@@ -113,10 +106,10 @@ _Figure: Weighted Graph ([Source](https://www.clipartmax.com/middle/m2i8Z5i8G6b1
 
 ##### Unweighted Graphs
 
-- An unweighted graph does not have a value associated with every edge.
-- An edge of an unweighted graph is represented as, `(u, v)`.
-  - `u` -> Source vertex
-  - `v` -> Destination vertex
+An unweighted graph does not have a value associated with every edge. An edge of an unweighted graph is represented as, `(u, v)`.
+
+- `u` -> Source vertex
+- `v` -> Destination vertex
 
 ![Unweighted Graphs](/engineering-education/graph-data-structure-python-part1/unweighted-graph.png)
 
@@ -126,11 +119,9 @@ _Figure: Unweighted Graph ([Source](https://www.researchgate.net/figure/Unweight
 
 ##### Trees
 
-- An undirected graph with zero cycles is called a tree.
+An undirected graph with zero cycles is called a tree. A cycle in a graph is a sequence with the first and last vertices in the sequence repeating.
 
-- A cycle in a graph is a sequence with the first and last vertices in the sequence repeating.
-
-- It has X vertices and X-1 edges.
+It has X vertices and X-1 edges.
 
 ![Tree - Graphs](/engineering-education/graph-data-structure-python-part1/tree-graph.png)
 
@@ -138,11 +129,7 @@ _Figure: Unweighted Graph ([Source](https://www.researchgate.net/figure/Unweight
 
 ##### Rooted Tree
 
-- A rooted tree is a tree which has a designated root node.
-
-- If edges point away from the root, it is called an **arborescence / out-tree**.
-
-- If edges point towards the root, it is called an **anti-arborescence / in-tree**.
+A rooted tree is a tree which has a designated root node. If edges point away from the root, it is called an **arborescence / out-tree**. If edges point towards the root, it is called an **anti-arborescence / in-tree**.
 
 ![Rooted Tree](/engineering-education/graph-data-structure-python-part1/rooted-trees.png)
 
@@ -150,11 +137,7 @@ _Figure: Rooted Tree_
 
 ##### Directed Acyclic Graphs
 
-- Directed Acyclic Graphs or DAGs are directed graphs with no cycles.
-
-- They represent structures with dependencies.
-
-- All arborescences are DAGs, but not all DAGs are arborescences.
+Directed Acyclic Graphs or DAGs are directed graphs with no cycles. They represent structures with dependencies. All arborescences are DAGs, but not all DAGs are arborescences.
 
 ![Directed Acyclic Graph](/engineering-education/graph-data-structure-python-part1/dag.png)
 
@@ -162,9 +145,7 @@ _Figure: Directed Acyclic Graph ([Source](https://en.wikipedia.org/wiki/Directed
 
 ##### Complete Graphs
 
-- Complete graphs have a unique edge between every pair of vertices.
-
-- A complete graph `n` vertices has `(n*(n-1)) / 2` edges and is represented by Kn.
+Complete graphs have a unique edge between every pair of vertices. A complete graph `n` vertices has `(n*(n-1)) / 2` edges and is represented by Kn.
 
 ![Complete Graph](/engineering-education/graph-data-structure-python-part1/complete-graph.png)
 
@@ -180,9 +161,7 @@ There are multiple ways of using data structures to represent a graph. The three
 
 #### Adjacency Matrix
 
-- An Adjacency Matrix is a very simple way to represent a graph.
-
-- The element `**A[i][j]**` represents the cost of moving from vertex `i` to vertex `j`.
+An Adjacency Matrix is a very simple way to represent a graph. The element `**A[i][j]**` represents the cost of moving from vertex `i` to vertex `j`.
 
 - Example,
 
@@ -192,9 +171,7 @@ graph = [[0, 1, 2],
          [4, 5, 0]]
 ```
 
-- The above adjacency matrix represents a graph that has 3 vertices. The cost of moving from vertex 0 to vertex 1 is 1, the cost of moving from vertex 0 to vertex 2 is 2, and so on.
-
-- Usually, the cost of travelling from a vertex to itself is zero.
+The above adjacency matrix represents a graph that has 3 vertices. The cost of moving from vertex 0 to vertex 1 is 1, the cost of moving from vertex 0 to vertex 2 is 2, and so on. Usually, the cost of travelling from a vertex to itself is zero.
 
 - **Advantages and Disadvantages of Adjacency Matrix**
 
@@ -206,11 +183,7 @@ graph = [[0, 1, 2],
 
 #### Adjacency List
 
-- An adjacency list represents a graph as a list that has vertex-edge mappings.
-
-- Example, A → [(B, 4), (C, 1)] represents an adjacency list where the vertex A is connected to B (weight 4) and C (weight 1).
-
-- This works really well for sparse graphs.
+An adjacency list represents a graph as a list that has vertex-edge mappings. Example, A → [(B, 4), (C, 1)] represents an adjacency list where the vertex A is connected to B (weight 4) and C (weight 1). This works really well for sparse graphs.
 
 - **Advantages and Disadvantages of Adjacency List**
 
@@ -222,16 +195,14 @@ graph = [[0, 1, 2],
 
 #### Edge List
 
-- An edge list represents the graph as an unstructures list of edges.
-
-- Example,
+An edge list represents the graph as an unstructures list of edges. Example,
 
 ```python
 graph = [(C, A, 4), (A, C, 1), (B, C, 6),
          (A, B, 4), (C, B, 1), (C, D, 2)]
 ```
 
-- Not widely used because this representation lacks structure.
+They are not widely used because this representation lacks structure.
 
 - **Advantages and Disadvantages of Edge List**
 
