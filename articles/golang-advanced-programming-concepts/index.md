@@ -6,7 +6,7 @@ url: /engineering-education/golang-advanced-programming-concepts/
 title: Advanced Programming Concepts with Golang
 description: This article, will go over advanced programming concepts in Golang such as functions, structures, and arrays.
 author: adith-bharadwaj
-date: 2020-10-02T00:00:00-11:00
+date: 2020-10-08T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -40,7 +40,7 @@ The first two articles in the series cover all the prerequisites mentioned above
 ### Functions
 A [function](https://www.tutorialspoint.com/computer_programming/computer_programming_functions.htm) can be defined as a set of reusable code that can be used to perform a particular task based on the requirements of the user. In other words, if there are a lot of repetitive tasks in the program, the user can create a function for that particular task.
 
-Then execute the function instead of writing the same piece of code multiple times. By creating functions, the user can avoid repetitive code and make the program easier to read and understand. By grouping similar tasks, the code becomes more [modular](https://en.wikipedia.org/wiki/Modular_programming) and more intuitive to other developers.
+Then execute the function instead of writing the same piece of code multiple times. By creating functions, the user can avoid repetitive code and make the program easier to read and understand. By grouping similar tasks, the code becomes more [modular](https://en.wikipedia.org/wiki/Modular_programming) and more intuitive to understand by other developers.
 
 Thereby increasing productivity and efficiency within the team. Therefore, functions are extremely powerful, and it is generally considered good practice to use functions in your program.
 
@@ -232,7 +232,7 @@ func main() {
 }
 ```
 
-The function `get_details()` gets the details of 5 students from the user and displays them on the terminal using a `for` loop. We created an array of type Student with length 5. This array stores the details of all 5 students.
+The function `get_details()` gets the details of 5 students from the user and displays them on the terminal using a `for` loop. We created an array of type `Student` with length 5. This array stores the details of all 5 students.
 
 ### Conclusion and further reading
 In conclusion, we explored some advanced programming concepts in this article. We looked at functions and how they can help us avoid repetitive code and make the program modular. We then explored arrays and how they can be used to store and work with similar data. We also understood what structures are and how they can be used to store data belonging to different types. Finally, we wrote a program to get the details of 5 students from the user by using everything we learned in this article. Congratulations! You can now write your own programs in Golang.  
