@@ -12,7 +12,7 @@ Machine learning is a technological tool that uses algorithmic interpretations. 
 
 Machine learning uses Artificial Intelligence (AI) techniques that assist in decision making. Conventional algorithms in AI aid in performing mathematical computation and predictions. Machine learning depends on fed structured data. Conventional algorithms aids in achieving data mining and predictive analytics in a search.
 
-Unlike machine learning, AI can use [unstructured data](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) and still be able to function. Deep learning does mimic the human brain&#39;s workings. This is because it uses this data to perform the processing of data. Machine learning aids in the detection of objects, language translation, and decision making. Machine learning is also able to recognize speech and make prompt decisions. The AI makes this possible this allows in no aspect of human supervision.
+Unlike machine learning, AI can use [unstructured data](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) and still be able to function. Deep learning does mimic the human brain's workings. This is because it uses this data to perform the processing of data. Machine learning aids in the detection of objects, language translation, and decision making. Machine learning is also able to recognize speech and make prompt decisions. The AI makes this possible this allows in no aspect of human supervision.
 
 ### Deep Learning
 
@@ -24,7 +24,7 @@ This is to means that the algorithms used are complex and are from neural networ
 
 Deep learning uses algorithms whose functionality is like that of machine learning. One major distinction on each layer is that it has a different interpretation of data. The [neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) learn where data is fetched.
 
-The neurons in the network undertake two tasks. The first includes understanding which feature is optimal for performing a specific task. The second one involves classifying data after many iterations of the learning process. In case there is a mistake, the deep learning model&#39;s accuracy increases. Deep learning is, thus, a more complex and more capable version of machine learning.
+The neurons in the network undertake two tasks. The first includes understanding which feature is optimal for performing a specific task. The second one involves classifying data after many iterations of the learning process. In case there is a mistake, the deep learning model's accuracy increases. Deep learning is, thus, a more complex and more capable version of machine learning.
 
 ### Machine Learning vs. Deep Learning
 
