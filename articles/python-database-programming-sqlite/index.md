@@ -109,7 +109,7 @@ The SELECT statement is the most important and complex one in SQLite. here what 
 
 Now let's create a complex example to let you get the idea 
 ```python
-cur.execute('''SELECT NAME FROM STUDENTS WHERE ID<3 ORDER BY AGE DESC''')  
+cur.execute('''SELECT NAME FROM STUDENTS WHERE ID<3 ORDER BY AGE ASC''')  
 result = cur.fetchall()
 print(result)
 ```
