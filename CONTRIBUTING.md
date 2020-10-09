@@ -11,7 +11,7 @@ Articles do not need to be Section-specific or strongly Section-related. This is
 
 In order to participate in the program, all members will be required to agree to established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (Agreement is included as part of the enrollment process.)
 
-In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed.
+In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed. (1st time contributors-submit only one article to get familiar with the process and style-once published, you can then submit any number of articles.)
 
 ## Requirements for New Contributors
 - GitHub account
