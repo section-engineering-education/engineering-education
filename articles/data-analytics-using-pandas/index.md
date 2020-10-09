@@ -10,7 +10,7 @@
  
 ### Prerequisites
 
-1. A Basic understanding of programming in [Python](https://www.learnpython.org/)
+1. A Basic understanding of programming in [Python](https://www.section.io/engineering-education/data-structures-python-part-1/)
 
 2. Basic knowledge of [data analytics](https://data-flair.training/blogs/data-analytics-tutorial/)
 
@@ -49,7 +49,7 @@ data = pd.read_csv("winequality-red.csv")
 ```
 The first line imports the Pandas library and gives it an Alias called `pd`. Henceforth, every time we use `pd`, we will be referring to pandas. the `read_csv` function is used to read a [CSV](https://www.howtogeek.com/348960/what-is-a-csv-file-and-how-do-i-open-it/) (comma separated values) file and stored the contents in a variable called `data`.
 
-Pandas stores the read data in a data structure called a [Data Frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html). According to the official documentation, a data frame is a Two-dimensional, size-mutable, potentially heterogeneous tabular data structure that also contains labeled axes (rows and columns). In simple terms, a data frame is like a table that contains named columns and rows of data similar to a table in a database. A data frame is powerful and has a lot of in-built functions that allow us to manipulate data. We are going to look at some of these functions. In the above example, the wine dataset is read and stored in a data frame called data. 
+Pandas stores the read data in a data structure called a [Data Frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html). According to the official documentation, a data frame is a Two-dimensional, size-mutable, potentially heterogeneous tabular data structure that also contains labeled axes (rows and columns).It is similar to a [2D array](https://www.tutorialspoint.com/python_data_structure/python_2darray.htm) in python. By "size-mutable", it means that we can modify the size of the data frame at any time. By "heterogeneous", it means that it can have data of different [types](https://www.w3schools.com/python/python_datatypes.asp). In simple terms, a data frame is like a table that contains named columns and rows of data similar to a table in a database. A data frame is powerful and has a lot of in-built functions that allow us to manipulate data. We are going to look at some of these functions. In the above example, the wine dataset is read and stored in a data frame called data. 
 
 ```python
 data.head()
