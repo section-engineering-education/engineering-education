@@ -1,5 +1,5 @@
 # Python Database Programming : SQLite
-SQLite is a lightweight database that can provide a relational database management system with zero-configuration, In general, it is a server-less database that you can use within almost all programming languages including Python.
+SQLite is an open-source and simple database engine that allows you to create a relational database and interact with it, In general, it is very lightweight and can be used within almost all programming languages including Python.
 
 ## Why SQLite?
 - Scalability
@@ -22,7 +22,7 @@ for **Linux** users you can use :
 ```
 sudo apt-get install sqlite
 ```
-we are going to use **DB Browser for SQLite**, you can download it from [here](https://sqlitebrowser.org/dl/)
+In this tutorial, we will use **DB Browser for SQLite**, you can download it from [here](https://sqlitebrowser.org/dl/)
 
 You are ready to go, Let's get started!
 
@@ -52,7 +52,7 @@ Create_Students_Table ='''CREATE TABLE STUDENTS(
                          )'''
 cur.execute(Create_Students_Table)   
 ```
-A database cursor is a control structure that enables traversal over the records in a database, using the methods of it allow you to execute SQL statements, fetch data from the result sets, and call procedures.
+A database cursor is a control structure that is used to execute statements in order to communicate with the SQLite database and fetch data from it.
 
 **Now let's make a look at how our database looks like** 
 
@@ -63,7 +63,7 @@ Open **DB Browser for SQLite** then click on open database, after choosing our f
 ## Database Queries :
 
 ### INSERT 
-To insert records into your SQLite database. you have to store your **INSERT INTO** query in a string. after that, you can pass the query string to the execute. Let’s insert three records into the **Students** table
+To insert records into your SQLite database. you need to store your **INSERT INTO** query in a string. after that, you can pass the query string to the execute. Let’s insert three records into the **Students** table
 ```python
 Insert_Students ='''INSERT INTO STUDENTS(ID,NAME,AGE)
                     VALUES('1','Ahmad',20),
@@ -72,7 +72,7 @@ Insert_Students ='''INSERT INTO STUDENTS(ID,NAME,AGE)
                  '''
 cur.execute(Insert_Students)
 ```
-To take a look at our data just click on **Browse Data**
+To take a look at our data just click on **Browse Data** and here they are!
 
 ![](https://github.com/ahmadmardeni1/Python-Database-Programming-SQLite/blob/main/DB%20Browser%20for%20SQLite%203.jpg)
 
@@ -102,7 +102,7 @@ the result will be :
 ```
 The SELECT statement is the most important and complex one in SQLite. here what you can use to make it a more specific statement:
 - Use **ORDER BY** clause to sort the result set
-- Use **DISTINCT** clause to remove the duplicate rows in the result set.
+- Use **DISTINCT** clause to delete the duplicate rows in the results.
 - Use **WHERE** clause to make a condition while fetching the data from tables.
 - Use **GROUP BY** to gather data from multiple records and group the results by columns.
 - Use **HAVING** with **GROUP BY** clause in order to filter the result based on a condition.
@@ -136,7 +136,7 @@ Now, if we execute the SELECT query(SELECT * FROM STUDENTS), we can see the foll
 [(1, 'Ahmad', 20), (2, 'James', 35), (3, 'Eva', 19)]
 ```
 ## DELETE
-so far, You have learned how to **insert** a new row into a table, **update** an existing data, and **SELECT** data from a table. Sometimes, you need to delete data from a table. Let's learn how to do it.
+so far, we covered how to **insert** a new data into a table, **update** an existing row, and **SELECT** data from a table. Sometimes, you need to delete data from a table. Let's learn how to do it.
 As an example, try to delete the student with an id of 3:
 ```python
 Delete_Student = '''DELETE FROM STUDENTS WHERE id = 3'''
@@ -146,7 +146,7 @@ Now, if you take a look at **STUDENTS** table, you’ll see that the Third stude
 ```
 [(1, 'Ahmad', 20), (2, 'James', 35)]
 ```
-In the end, we have to commit our changes in the database. Not calling this method, will make anything you did after the last commit() not visible for the other database connection. please make sure you call this method before closing the connection. 
+In the end, we have to commit our changes in the database. Not calling this method, will make anything you did after the last commit() not visible for the other database connection. so you have to make sure that you used this method before closing the connection.
 
 ```python
 connection.commit()
@@ -155,8 +155,8 @@ Then we have to close the connection to the database by using :
 ```python
 connection.close()
 ```
-When the connection is closed then any outstanding transaction is rolled back. (The ROLLBACK statement cancels the database changes that are made by the current transaction) If there is no outstanding transaction open then nothing happens.
-That means you do not need to worry too much about always closing the database before the end of the program, and you should make sure to start the transactions and commit them at appropriate points.
+When the connection is closed then ROLLBACK will happen in the next connection to the database to any outstanding transaction. (The ROLLBACK statement canceling transaction which did some changes to the database).
+That means you have to make attention to start the transactions and commit them at appropriate points without worrying about closing the connection.
 
 ## Conclusion
 In this tutorial, you’ve learned how to use Python SQLite library, how to interact with it, and execute queries within a python application.
