@@ -1,4 +1,4 @@
- Data science and data analytics are some of the hottest topics in the industry. The ability to analyze and make predictions based on data is nothing short of extraordinary. *Python is one of the most popular languages among the data science community due to its ease of use and rich collection of libraries built to work with data. Pandas is one such library that makes handling data easy and efficient*. In this tutorial, we are going to understand how Pandas can be used to explore and draw insights from data. 
+ Data science and Data Analytics are some of the hottest topics in the industry. The ability to analyze and make predictions based on data is nothing short of extraordinary. *Python is one of the most popular languages among the data science community. This is due to its ease of use and rich collection of libraries built to work with data. Pandas is one such library that makes handling data easy and efficient*. In this tutorial, we are going to understand how Pandas can be used to explore and draw insights from data. 
 
 ### Table of Contents	 
   
@@ -16,11 +16,13 @@
 
 ### What is Pandas?
 
-According to the [official documentation](https://pandas.pydata.org/docs/), pandas is a fast, powerful, flexible, and easy to use open-source data analysis and manipulation tool, built on top of the Python programming language. Pandas is usually used in conjunction with Jupyter notebooks, making it more powerful and efficient for [exploratory data analysis](https://towardsdatascience.com/exploratory-data-analysis-in-python-c9a77dfa39ce). If you are new to Jupyter notebooks, [this](https://www.section.io/engineering-education/introduction-to-jupyter-notebooks/) article walks you through the installation and basics of Jupyter notebooks. 
+According to the official documentation, pandas is a fast, powerful, flexible, and easy to use open-source data analysis and manipulation tool. It is built on top of the Python programming language. Pandas is usually used in conjunction with Jupyter notebooks, making it more powerful and efficient for [exploratory data analysis](https://towardsdatascience.com/exploratory-data-analysis-in-python-c9a77dfa39ce). If you are new to Jupyter notebooks, [this](https://www.section.io/engineering-education/introduction-to-jupyter-notebooks/) article walks you through the installation and basics of Jupyter notebooks. 
 
 Pandas provides a robust collection of functions that make it easy to process and read data. In this tutorial, we are going to explore some useful functions and techniques that are an integral part of a data scientist's toolset. You can install Pandas by using Python's package manager, [pip](https://pip.pypa.io/en/stable/). Enter the following command on the terminal:
 
-`pip3 install pandas`
+```bash
+pip3 install pandas
+```
 
 Alternatively, if you want to install Pandas using a different method, [this](https://pandas.pydata.org/docs/getting_started/install.html) tutorial walks you through the various ways in which you can install Pandas. 
 
@@ -30,7 +32,9 @@ Now that we have Pandas installed on our system, we can delve into data explorat
 
 Create a Jupyter notebook by running the following command on the terminal:
 
-`jupyter notebook`
+```bash
+jupyter notebook
+```
 
 It will open a browser window and display the Jupyter notebook UI. 
 
@@ -101,7 +105,7 @@ data.head(10)
 
 ![Quality](/engineering-education/data-analytics-using-pandas/fifth.png)
 
-We create two new columns, 'good_wine' and 'bad_wine' as shown in the above example. The 'good_wine' column will have `True` wherever the 'quality' of the wine is greater than 5, and the 'bad_wine' will have `True` wherever the 'quality' is less than or equal to 5. 
+We create two new columns, 'good_wine' and 'bad_wine' as shown in the above example. The 'good_wine' column will have `True` wherever the 'quality' of the wine is greater than 5. The 'bad_wine' will have `True` wherever the 'quality' is less than or equal to 5. 
 
 ![Sort](/engineering-education/data-analytics-using-pandas/sixth.png)
 
