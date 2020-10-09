@@ -17,7 +17,7 @@ images:
 Generative pre-trained transformers are language models that produce human-like text. These models make it easier to develop machine learning applications while also providing a way in for people with little tech background to develop applications. GPT-3 is the third iteration of generative pretrained transformers, which produce human-like text.
 <!--more-->
 GPT-2 was massive, with about 1.5 billion [parameters](https://bit.ly/2FlKJII). The magnitude of this new model blows its predecessor out of the water boasting of 175 billion parameters. For all the hype surrounding GPT-3, it is necessary to take a closer look.
-
+TEST
 ### Contents
 1. Potential of GPT-3
 2. Applications of the GPT-3
