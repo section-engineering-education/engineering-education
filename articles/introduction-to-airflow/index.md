@@ -32,7 +32,7 @@ A typical workflow looks like this:
 <li>Analyze the data and send the report by email.</li>
 </ul>
 
-Airflow automates the process of monitoring, scheduling, and distributing these tasks in workflow across nodes. To accomplish this, Airflow provides a framework and a rich library to define these tasks in Python. It provides an aesthetic UI to view and monitor workflows in a web-based application and is extensible through plugins.
+Airflow automates the process of monitoring, scheduling, and distributing these tasks in workflow across nodes. In this context, a node is a computer or a [virtual machine](https://www.vmware.com/topics/glossary/content/virtual-machine). To accomplish this, Airflow provides a framework and a rich library to define these tasks in Python. It provides an aesthetic UI to view and monitor workflows in a web-based application and is extensible through plugins.
 
 ![pipeline](/engineering-education/introduction-to-airflow/pipelines.png)
 
@@ -54,7 +54,7 @@ According to the documentation, an operator describes a single task in a workflo
 
 [EmailOperator](https://airflow.apache.org/docs/stable/_api/airflow/operators/email_operator/index.html#airflow.operators.email_operator.EmailOperator) - This operator can be used to send emails to one or more recipients.
 
-[SimpleHttpOperator](https://airflow.apache.org/docs/stable/_api/airflow/operators/http_operator/index.html#airflow.operators.http_operator.SimpleHttpOperator) - This operator is used to send HTTP requests.
+[SimpleHttpOperator](https://airflow.apache.org/docs/stable/_api/airflow/operators/http_operator/index.html#airflow.operators.http_operator.SimpleHttpOperator) - This operator is used to send HTTP requests. Navigate to [this](https://www.tutorialspoint.com/http/http_requests.htm) link to understand more about HTTP requests. 
 
 ### Installing Airflow
 
@@ -64,7 +64,7 @@ Since Airflow is written completely in Python, we can use [pip](https://pip.pypa
 pip3 install apache-airflow
 ```
 
-Airflow configuration files and database info will be stored in the environment variable called AIRFLOW_HOME. By default, Airflow will create the directory ~/airflow/, but you can change the default path to a directory of your choice. To change the airflow home path, enter the following command on the terminal:
+Airflow configuration files and database info will be stored in the environment variable called AIRFLOW_HOME. According to [Wikipedia](https://en.wikipedia.org/wiki/PATH_(variable)), an environment variable or PATH variable on Unix-like operating systems specifies a set of directories where executable programs are located. In general, each executing process or user session has its own PATH setting.  By default, Airflow will create the directory ~/airflow/, but you can change the default path to a directory of your choice. To change the airflow home path, enter the following command on the terminal:
 
 ```bash
 export AIRFLOW_HOME=<the path to the directory of your choice>
@@ -75,7 +75,7 @@ Example:
 export AIRFLOW_HOME=~/adith/airflow
 ```
 
-Airflow uses a database in the back-end to store metadata and other workflow-related information. By default, [SQLite](https://www.sqlite.org/index.html), a lightweight, and beginner-friendly database is used by Airflow. You can change the default settings to a database of your choice by following [this documentation](https://airflow.apache.org/docs/stable/howto/initialize-database.html). Since SQLite is a beginner-friendly database, we are going to stick with that.
+Airflow uses a database in the back-end to store [metadata](https://whatis.techtarget.com/definition/metadata) and other workflow-related information. In simple terms, metadata is data that describes other data. For example, metadata can be the number of rows or columns in the database, when the database was created, etc. By default, [SQLite](https://www.sqlite.org/index.html), a lightweight, and beginner-friendly database is used by Airflow. You can change the default settings to a database of your choice by following [this documentation](https://airflow.apache.org/docs/stable/howto/initialize-database.html). Since SQLite is a beginner-friendly database, we are going to stick with that.
 
 To initialize the database, type the following command in the terminal:
 
@@ -83,13 +83,13 @@ To initialize the database, type the following command in the terminal:
 airflow initdb
 ```
 
-As mentioned earlier, Airflow provides an aesthetic web UI that allows us to view and monitor the dags. To initialize the web server and start the web UI, type the following command on the terminal:
+As mentioned earlier, Airflow provides an aesthetic web UI that allows us to view and monitor the DAGs. To initialize the web server and start the web UI, type the following command on the terminal:
 
 ```bash
 airflow webserver
 ```
 
-This starts the server on your localhost. By default, Airflow uses port 8080. To run the UI in a different port, run the following command:
+This starts the server on your localhost. By default, Airflow uses [port](https://en.wikipedia.org/wiki/Port_(computer_networking)) 8080. A port is an endpoint which allows external devices to communicate with the computer.To run the UI in a different port, run the following command:
 
 ```bash
 airflow webserver -p 8123
