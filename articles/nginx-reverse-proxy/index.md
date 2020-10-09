@@ -160,7 +160,11 @@ Follow their documentation to get Free SSL instantly!
 After editing, save your changes. Use the `nginx -t` command to test your changes before actually reloading NGINX. It is good practice do this to make sure your server won't crash if there were any errors in your config file.
 
 Once you get a message that the test is successful, you can go ahead and restart NGINX.  
+Use this command ```nginx -s reload``` to restart NGINX.  
 Open the browser and enter the URLs to find your applications running on the corresponding URLs configured.
+For the above example, the URLs are
+- client.localhost
+- server.localhost
 
 **Important Note**
 > Using NGINX secures your server because it routes the traffic internally. Instead of having to open up all of your ports, in this case 3000 and 3001, to the internet, just 80 and 443 will do the trick.  
