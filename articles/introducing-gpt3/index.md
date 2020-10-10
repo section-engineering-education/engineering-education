@@ -131,7 +131,7 @@ BERT is a bidirectional model. These language models are able to be trained base
 To showcase how massive GPT-3 is, the largest BERT architecture has 340 million parameters. Compared to the 175 billion parameters of GPT-3, BERT is about 500 times smaller.
 
 #### Fine tuning
-We described fine tuning as having to use a large dataset to train a model. BERT is a model that requires fine tuning. On the other hand, GPT-3 is a few-shot learner. The model can be given a few examples in the form of input and expected to make predictions. GPT-3 can go as far as being a zero-shot learner in some cases. This is a key difference between these two language models.
+We described fine tuning as having to use a large dataset to train a model. BERT is a model that requires fine tuning. On the other hand, GPT-3 (as we mentioned) is a few-shot learner. The model can be given a few examples in the form of input and expected to make predictions. GPT-3 can go as far as being a zero-shot learner in some cases. This is a key difference between these two language models.
 
 #### Availability
 BERT has always been [open source](https://en.wikipedia.org/wiki/Open-source_software), meaning users can get their hands on the model and tinker with it to their liking. However, GPT-3 is commercially available through an API.
