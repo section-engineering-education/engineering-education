@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/sql-or-nosql-when-to-choose-what/hero.jpg
     alt: date-fns library JavaScript
 ---
-Unlike the early days when data was stored on papers and in cabinets, data is now all around us, stored online with advanced technologies. Data is the backbone of almost every modern busines. As a developer, you could be building applications that store some data online. The big question you should be asking yourself is which database model will fit your application model.
 <!--more-->
-Knowing which database structure to use is critical in building outstanding applications. SQL or NoSQL? We will dive into these two databases, understand their structures, explore them in-depth, and understand how they work.
+Knowing which database structure to use is critical in building outstanding applications. SQL or NoSQL? We will dive into these two databases, understand their structures, explore them in-depth, and understand how they work. The guide will give you an overview of which database structure will fit your application model.
 
 ### Table of Contents
+- [Table of Contents](#table-of-contents)
 - [What is SQL?](#what-is-sql)
 - [What is NoSQL?](#what-is-nosql)
 - [SQL vs NoSQL (High-Level Differences)](#sql-vs-nosql-high-level-differences)
@@ -29,9 +29,10 @@ Knowing which database structure to use is critical in building outstanding appl
   - [When to use SQL?](#when-to-use-sql)
   - [When to use NoSQL?](#when-to-use-nosql)
 - [StackOverflow Database Insights](#stackoverflow-database-insights)
+- [Conclusion](#conclusion)
 
 ### What is SQL?
-SQL is the most popular database structure. SQL (commonly pronounced as 'see quell') stands for the Structured Query Language. SQL is a language used for writing query statements to interact and communicate with relational databases. A relational database is a database that has a tabular schema to store data in terms of rows and columns. Each column contains data that are called attributes, and each row is called a record. The data in the tables can be related to each other hence the 'relational database'. A collection of these multiple tables in a database is what we are calling a schema. A relation is simply a decorative phrase for a table.
+SQL is the most popular database structure. SQL (commonly pronounced as 'see quell') stands for the Structured Query Language. SQL is a language used for writing query statements to interact and communicate with relational databases. A relational database is a database that has a tabular **schema** to store data in terms of rows and columns. Each column contains data that are called **attributes**, and each row is called a **record**. The data in the tables can be related to each other, hence the 'relational database'. A collection of these multiple tables in a database is called a **schema**. A relation is simply a decorative phrase for a table.
 Relations can exit in different ways, such as:
 
 - One to One - exits when a record in table A can only relate to one record of table B.
@@ -44,32 +45,34 @@ SQL statements will help you perform CRUD operations such as CREATE, READ, UPDAT
 SELECT * FROM TABLE1.
 ```
 
-This statement will query and display all the records of Table1.
-If we were to have a student info database, this is how we can represent a relation in an SQL database.
+This statement will query and display all the **records** of Table1.
+If we were to have a student information database, this is how we would represent a relation in an SQL database.
 
 ![SQL database table](/engineering-education/sql-or-nosql-when-to-choose-what/tables.png)
 
 [*Image Source*](http://cdn.ipenywis.com/upload/images/123abd458.png)
 
-*SQL Relation output*
+*SQL Relation Output*
 
 | ID | first_name | last_name | username | courses                 |
 |----|------------|-----------|----------|-------------------------|
-| 1  | Alex       | Brooks    | alex09_b | Web Dev,React js        |
+| 1  | Alex       | Brooks    | alex09_b | Web Dev, React JS        |
 | 2  | Amy        | Jonathan  | amy      | Photoshop, UI/UX Design |
 
-SQL is a simple language that is extremely powerful. You can create multiple databases with multiple tables to store data with foreign key mapping. Each row in the SQL database has its specific value characters, such as text and integers.
+SQL is a simple language that is extremely powerful. You can create multiple databases with multiple tables to store data with foreign key mapping. A foreign key is a field that links two related tables to ensure referential integrity. A table with a foreign key column is called a child table. In the student information database, "SQL Relation Output" is a child table of tables Student and Course.
+
+Each row in an SQL database has specific value characters, such as texts, varchar, and integers.
 
 ![Relations](/engineering-education/sql-or-nosql-when-to-choose-what/relations.png)
 
-SQL databases need a server that runs a database management system (DBMS). Some of the common SQL databases include [MySQL](https://www.mysql.com/why-mysql/), [Oracle Database](https://www.oracle.com/database/), [PostgreSQL](https://www.postgresql.org/about/), [Microsoft SQL Server](https://www.microsoft.com/en-gb/sql-server/), and [MariaDB](https://mariadb.org/documentation/).
+SQL databases need a server that runs a database management system (DBMS). DBMS is a software interface that connects end-users and database to manage and manipulate data in a structured way. Some of the common SQL databases include [MySQL](https://www.mysql.com/why-mysql/), [Oracle Database](https://www.oracle.com/database/), [PostgreSQL](https://www.postgresql.org/about/), [Microsoft SQL Server](https://www.microsoft.com/en-gb/sql-server/), and [MariaDB](https://mariadb.org/documentation/).
 
 ### What is NoSQL?
-NoSQL does not mean 'no SQL.' It is a non-SQL database structure with a non-relational mechanism for storing and retrieving data. Its data model does not have tabular schema as used in relational databases.
+It is a non-SQL database structure with a non-relational mechanism for storing and retrieving data. Its data model does not have tabular **schema** as used in relational databases.
 
 You do not need to create tables (no rows or columns). NoSQL databases store and manage data in ways that allow high operational speed and great flexibility. It is used to build real-time web apps and big data to handle large quantities of unstructured and semi-structured data.
 
-They are designed to perform high levels of read and write while scaling horizontally. JSON is a common representation of non-structured data. NoSQL example context:
+They are designed to perform high levels of read and write while scaling horizontally. JSON is a common representation of non-structured data. JSON (JavaScript Object Notation) is a schema-less data presentation format with readable texts for storing and transmitting data between servers and web apps. NoSQL example context:
 
 ```sql
 Database --> Collection(s) --> Objects(s)
@@ -77,7 +80,7 @@ Database --> Collection(s) --> Objects(s)
 
 If we refer back to SQL, the collection would be the table, and the object will be the rows and columns. Just like SQL, where a database has several tables, NoSQL creates multiple collections. In this case, there are no relations between the collections. Rows and columns will be the objects of the NoSQL.
 
-Like SQL, NoSQL has a unique ID that uniquely identifies a specific object within a collection. Nested objects and array are supported where an object can be inside another object. If we were to represent the SQL student info database in NoSQL, this how it would look like:
+Like SQL, NoSQL has a unique ID that uniquely identifies a specific object within a collection. Nested objects and array are supported where an object can be inside another object. If we were to represent the SQL student information database in NoSQL, this how it would look like:
 
 ```json
 {
@@ -86,7 +89,7 @@ Like SQL, NoSQL has a unique ID that uniquely identifies a specific object withi
         "firstName": "Alex",
         "lastName": "Brooks",
         "username": "alex09_b",
-        "Courses": "[{"name": "Web Dev"}, {"name": "React js"}]"
+        "Courses": "[{"name": "Web Dev"}, {"name": "React JS"}]"
     }
 }
 ```
@@ -138,32 +141,29 @@ Vertical scaling adds more power to your existing server. Of course, the downsid
 On the contrary, NoSQL databases are scaled horizontally. You don't need to worry much about RAMs, CPUs, and disk size (create more buildings around your neighborhood). Split the data across multiple servers. NoSQL will help you handle large and constantly changing data.
 
 ### SQL vs NoSQL (When to Choose What)
-How do you decide which database model to choose? Which is better? Which database fits your business/application model? These two databases are great, and this can leave you in a dilemma of not knowing which to choose. Why choose this and not the other, and it is okay to be in that position.
-
-Let’s check some of the factors that will help you decide what fits your needs.
+How do you decide which database model to choose? The quickest answer to this question depends on your project. Below are use-cases to consider the database pattern applications.
 
 #### When to use SQL?
-- The biggest win for SQL is when the legacy of your system needs a relational structure. SQL will be a natural fit. SQL thrives in circumstances that need high-quality and well-managed relational database systems that are easy to setup.
+- The legacy of SQL is when your system needs a structured relational system. SQL thrives in circumstances that need high-quality and well-managed relational database systems.
 
-- If your application requires multi-row transactions such as accounting and budget systems.
+- Multi-row transactions with complex queries and reporting such as accounting and budget systems.
 
-- Pre-defined data structure with multi-row transactions which have set schemas such as inventory system that have distinct entities. SQL will be a good match as it provides perfect nominalizations and simple queries that comply with ACID.
+- Pre-defined data structure with multi-row transactions which have set **schemas** such as inventory system that have distinct entities. SQL provides perfect nominalizations and simple queries that comply with ACID.
+  - ACID represents:
 
-- ACID represents:
+    - A: (**Atomicity**) a database process transaction is either wholly executed or not executed at all.
+    - C: (**Consistency**) only valid data is recorded to the database, and if a transaction was invalid, this database reverts to its former state. The inconsistent transaction is aborted, and an error is created into the error log.
+    - I: (**Isolation**) a transaction is securely and independently processed without interfering with another transaction.
+    - D: (**Durability**) if a transaction process is completed successfully, all its changes are stored permanently.
 
-    - A (**Atomicity**) a database process transaction is either wholly executed or not executed at all.
-    - C (**Consistency**) only valid data is recorded to the database, and if a transaction was invalid, this database reverts to its former state. The inconsistent transaction is aborted, and an error is created into the error log.
-    - I (**Isolation**) a transaction is securely and independently processed without interfering with another transaction.
-    - D (**Durability**) if a transaction process is completed successfully, all its changes are stored permanently.
-
-- If your system values data integrity consistency, then SQL is a great choice. A SQL database system is designed to handle specific data types the way you want them to be, i.e., integer, varchar, text, Boolean, date value, etc.
+- Data integrity consistency. An SQL database system is designed to handle specific data types, i.e., integer, varchar, text, Boolean, date value, etc.
 
 #### When to use NoSQL?
-- NoSQL fits well when a business model has a rapid growth of data, and the database has no clear schema definitions, especially when dealing with unstructured information. Rapid data growth needs highly flexible data models to scale out the needs of that application.
-- If your business model has no defined schema, or the data requirements and the schemas are constantly evolving, NoSQL can be a good choice.
-- When dealing with IoT technology, NoSQL will be a great fit as it offers real-time insights for sensor data.
-- Real-time transaction pieces of information such as customer behaviors, analytics information, financial markets, and trading activities would be great under NoSQL. NoSQL will help you check and watch real-time information transactions.
-- When dealing with millions and millions of rows and columns, NoSQL will be a significant consideration. It provides fast read and writes access to big data.
+- Rapid growth of data especially when dealing with unstructured information. Rapid data growth needs highly flexible data models to scale out the needs of that application.
+- The application model has no defined **schema**, or the data requirements and the schemas are constantly evolving.
+- When dealing with IoT technology, NoSQL offers real-time insights for sensor data.
+- Real-time transaction pieces of information such as customer behaviors, analytics information, financial markets, and trading activities. NoSQL check and watch real-time information transactions.
+- NoSQL provides fast reads and writes access to big data.
 
 ### StackOverflow Database Insights
 Let’s look at the 2020 [Annual Developer Survey](https://insights.stackoverflow.com/survey) trends conducted by StackOverflow, involving over 65,000 respondents from over 180 countries. These are the insights the respondents gave regarding the databases they use.
@@ -196,10 +196,10 @@ Taking the list of the most loved database technologies, non-relation databases 
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4)
 
-Given MongoDB is still young, it is a database technology that most developers want to learn more about.
+MongoDB is a database technology that most developers want to learn more about.
 
 ### Conclusion
-Both SQL and NoSQL database structures store data, but the approach they take to do this differs. They both have their pros and cons. Taking advantage of their strengths would be the way to go. It would be best if you outlined your application model first and then decide which database model will fit your data structure. It should be a forward thinking decision because to migrate from SQL to NoSQL and vice verse can be a serious challenge, which is time-consuming and, at times costly.
+Both SQL and NoSQL database structures store data, but the approach they take to do this differs. Outline the application to decide the database model that fit data structures such as schema, relation, scalability and data size. Migrating from one to the other is costly and time-consuming, and hence the differences should be considered while architecting software.
 
 ---
 Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
