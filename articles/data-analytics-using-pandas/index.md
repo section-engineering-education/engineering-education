@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/data-analytics-using-pandas/
 title: Introduction to Data analysis using Pandas
-description: In this tutorial, we are going to understand how Pandas can be used to explore and draw insights from data.
+description: In this tutorial we will learn how Pandas provide a robust collection of functions that make it easy to process and read data.
 author: adith-bharadwaj
 date: 2020-10-10T00:00:00-16:00
 topics: []
