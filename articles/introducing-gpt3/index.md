@@ -191,7 +191,7 @@ GPT-3 is the most impressive stride in NLP in 2020. We have discussed its incred
 
 7. [GPT-3 Vs BERT For NLP Tasks](https://analyticsindiamag.com/gpt-3-vs-bert-for-nlp-tasks/)
 
-8. [21 OpenAI GPT-3 Demos and Examples to Convince You that AI Threat is Real, or is it ? [Including Twitter Posts](https://machinelearningknowledge.ai/openai-gpt-3-demos-to-convince-you-that-ai-threat-is-real-or-is-it/)
+8. [21 OpenAI GPT-3 Demos and Examples to Convince You that AI Threat is Real, or is it ? Including Twitter Posts](https://machinelearningknowledge.ai/openai-gpt-3-demos-to-convince-you-that-ai-threat-is-real-or-is-it/)
 
 9. [GPT-3 Technical Overview](https://lambdalabs.com/blog/demystifying-gpt-3/)
 
