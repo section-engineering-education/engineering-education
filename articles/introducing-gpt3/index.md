@@ -6,7 +6,7 @@ url: /engineering-education/introducing-gpt3/
 title: Introduction to GPT3
 description: This article serves as an introduction to GPT3, the third iteration of generative pretrained transformers, which produce human-like text.
 author: collins-ayuya
-date: 2020-10-09T00:00:00-15:00
+date: 2020-10-10T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -128,33 +128,33 @@ GPT-3 is an [autoregressive model](https://365datascience.com/autoregressive-mod
 BERT is a bidirectional model. These language models are able to be trained based on the set of words in a sentence. Models like GPT-3 are reliant on previous values to make predictions. Bidirectional models learn context of a word based on the words around it as opposed to just the word before or after the word in consideration.
 
 #### Size
-As we had mentioned, the largest BERT architecture has 340 million parameters. Against the 175 billion parameters of GPT-3, BERT is about 500 times smaller. This shows how massive GPT-3 is.
+To showcase how massive GPT-3 is, the largest BERT architecture has 340 million parameters. Compared to the 175 billion parameters of GPT-3, BERT is about 500 times smaller.
 
 #### Fine tuning
-We described fine tuning as having to use a large dataset to train a model. BERT requires fine tuning, which means data needs to be gathered by users to train the model . On the other hand, we mentioned that GPT-3 is a few-shot learner. The model is given a few examples in the form of input and expected to make predictions. GPT-3 can go as far as being a zero-shot learner. This is a key difference between these two language models.
+We described fine tuning as having to use a large dataset to train a model. BERT is a model that requires fine tuning. On the other hand, GPT-3 is a few-shot learner. The model can be given a few examples in the form of input and expected to make predictions. GPT-3 can go as far as being a zero-shot learner in some cases. This is a key difference between these two language models.
 
 #### Availability
-BERT has always been open source, meaning users can get their hands on the model and tinker with it to their liking. However, GPT-3 is not open source. Through an API, it is commercially available.
+BERT has always been [open source](https://en.wikipedia.org/wiki/Open-source_software), meaning users can get their hands on the model and tinker with it to their liking. However, GPT-3 is commercially available through an API.
 
 ### Limitations and dangers
 #### Model size
-We mentioned that this model boasts of 175 billion parameters. Assuming each parameter requires around 4 bytes of memory, this amounts to around [700 GB](https://lambdalabs.com/blog/demystifying-gpt-3/). The average person will likely run out of memory attempting to run the model. The sheer size of the model makes it impractical to use for the average researcher, hobbyist or practitioner.
+We mentioned that this model boasts of 175 billion parameters. Assuming each parameter requires around 4 bytes of memory, this amounts to around [700 GB](https://lambdalabs.com/blog/demystifying-gpt-3/). The average person will likely run out of memory attempting to run the model. The sheer size of the model makes it impractical to use for the average researcher, hobbyist, or practitioner.
 
 #### Access and cost
-OpenAI showed that we are in a time of commercial AI when they switched to a [for-profit](https://openai.com/blog/openai-lp/) company from a non-profit to fund the costs of their research. AI research is being commercialized. This may work for the big companies since they can afford to purchase or subscribe to access such a model.
+OpenAI showed that we are in a time of commercial AI when they switched to a [for-profit](https://openai.com/blog/openai-lp/) company from a non-profit to fund the costs of their research. AI research is being commercialized. This may work well for the big companies since they can afford to purchase or subscribe to access such a model.
 
 Just recently, Microsoft acquired an [exclusive license](https://www.theverge.com/2020/9/22/21451283/microsoft-openai-gpt-3-exclusive-license-ai-language-research) to GPT-3.
 
-Aside from a free 3-month trial period, the [pricing tiers](https://www.reddit.com/r/GPT3/comments/ikorgs/oa_api_preliminary_beta_pricing_announced/) for the model range from a $100 a month, to a $400 a month package and ultimately a custom pricing option. These tiers, aside from the custom pricing plan, offer a finite number of tokens. Meaning that if you exhaust your tokens, you have to pay for more.
+Aside from a free 3-month trial period, the [pricing tiers](https://www.reddit.com/r/GPT3/comments/ikorgs/oa_api_preliminary_beta_pricing_announced/) for the model range from a $100 a month, to a $400 a month package, and ultimately a custom pricing option. These tiers, aside from the custom pricing plan, offer a finite number of tokens. Meaning that if you exhaust your tokens, you have purchase more.
 
-People developing products atop of GPT-3 would have to charge more or be creative in their pricing as a result. Especially considering use of other language models does not cost a thing since they are open source. The computational requirements of GPT-3 make sure that it is very expensive to run and maintain the model.
+This may result in people developing products atop of GPT-3 having to charge more or be creative with their pricing. Especially considering that using other language models does not cost a thing since they are open source. The computational requirements of GPT-3 make it very expensive to run and maintain the model.
 
-Access to the model is restricted. Access has been through a limited closed beta. The closed beta is set to continue until stated otherwise, even after releasing their pricing model.
+Access to the model is restricted. Access has currently been through a limited closed beta. The closed beta is set to continue until stated otherwise, even after releasing their pricing model.
 
 #### Computational requirements
-It is noted that the size of state-of-the-art language models is increasing annually by a factor of 10 at the very least. [BERT large](https://arxiv.org/abs/1810.04805) was released in 2018 and has 355 million parameters. [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) was released in 2019 and has 1.5 billion parameters. GPT-3 has 175 billion parameters. Model sizes are therefore outpacing GPU memory. A competent GPU is quite costly.
+It is noted that the size of state-of-the-art language models is increasing annually by a factor of 10 at the very least. [BERT large](https://arxiv.org/abs/1810.04805) was released in 2018 and has 355 million parameters. [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) was released in 2019 and has 1.5 billion parameters. GPT-3 has 175 billion parameters. Model sizes are therefore outpacing GPU memory and a competent GPU is costly.
 
-Check out the prices of a few NVIDIA GPUs [here](https://www.nvidia.com/en-gb/shop/geforce/gpu/?page=1&limit=9&locale=en-gb&category=GPU&gpu=RTX%202080%20Ti). Even with such GPUs, you may struggle to run some of these language models. Considering GPT-3, the computational resources required make its use impractical for the everyday researcher.
+Check out the prices of a few NVIDIA GPUs [here](https://www.nvidia.com/en-gb/shop/geforce/gpu/?page=1&limit=9&locale=en-gb&category=GPU&gpu=RTX%202080%20Ti). Even with such GPUs, you may struggle to run some of these language models. Taking the computational resources required for GPT3 into consideration, makes it impractical for the everyday researcher.
 
 #### Silly errors, unexpected poor performance
 GPT-3 can make silly mistakes while generating output. Especially considering input that requires use of common sense. Generated output samples may repeat themselves within the same document. This renders the output incoherent more so in lengthy passages. The model may also deviate from the themes of the generated text in lengthy passages. It basically loses the plot.
@@ -164,12 +164,14 @@ However impressive the output of GPT-3 is, it can also generate text of very poo
 #### Racial and gender bias
 GPT-3 occasionally exhibits bias in its generated text. The model is trained on all kinds of raw data therefore negative responses and biases may not be filtered out. This results in the occasional sexist as well as racist output.
 
-Check out this [Twitter thread]( https://twitter.com/AnimaAnandkumar/status/1271137176529416193) as an example of sexist and racial bias. Here’s a second [example](https://twitter.com/an_open_mind/status/1284487376312709120) where the model is prompted to write tweets from one word. The words included black, women, Jews and holocaust.
+Check out this [Twitter thread]( https://twitter.com/AnimaAnandkumar/status/1271137176529416193) as an example of sexist and racial bias. Here’s a second [example](https://twitter.com/an_open_mind/status/1284487376312709120) where the model is prompted to write tweets from one word. The words included black, women, Jews, and holocaust.
 
 #### Fake news generation
-We have mentioned how the greatest strength of GPT-3 is text generation. The model is capable of generating articles, passages, transcripts and other forms of writing that are incredibly convincing. It can mimic famous people. The model can also generate text around topics that may be sensitive in a cultural, societal, or economic sense and cause panic, outrage or tension.
+We have mentioned how the greatest strength of GPT-3 is text generation. The model is capable of generating articles, passages, transcripts, and other forms of writing that are incredibly convincing. It can mimic famous people. The model can also generate text around topics that may be sensitive in a cultural, societal, or economic sense and cause panic, outrage or tension.
 
-The model has no moral stand or obligation to uphold. And since the generated text is often very well written, it becomes so easy for people to believe the text to be fact. This is how fake news is generated and spread. GPT-2 sparked all sorts of controversy when it was released due to the ability to deceive. GPT-3, being much larger than its predecessor, is judged on the same scale. I wrote an article about [fake news detection](/engineering-education/automated-fake-news-detection/) in case you would want to read more on the topic.
+The model has no moral stand or obligation to uphold. And since the generated text is often very well written, it becomes easy for people to believe the text to be fact. This is how fake news is generated and spread.
+
+GPT-2 sparked all sorts of controversy when it was released due to the ability to deceive. GPT-3, being much larger than its predecessor, is judged on a similar scale. I wrote an article about [fake news detection](/engineering-education/automated-fake-news-detection/) in case you would want to read more on the topic.
 
 ### It’s a Wrap
 GPT-3 is the most impressive stride in NLP in 2020. We have discussed its incredible potential and seen some mind-blowing examples of potential uses. It could revolutionize a number of professions. However, beyond the hype, it has a not-so-attractive side. It is plagued with bias, silly mistakes, mediocre performance, and an impressive yet dangerous ability to generate convincing text. The model needs a lot of improvements to live up to the hype it has generated. I do hope that someday it can be open sourced. But, as it stands, the model will continue to be commercialized for the foreseeable future.
