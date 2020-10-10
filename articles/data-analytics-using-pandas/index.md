@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/data-analytics-using-pandas/hero.jpg
-    alt: airflow example image
+    alt: pandas example image
 ---
 Data Science and Data Analytics are some of the hottest topics in the Computer Science industry. The ability to analyze and make predictions based on data is nothing short of extraordinary.
 <!--more-->
