@@ -35,9 +35,9 @@ Knowing which database structure to use is critical in building outstanding appl
 SQL is the most popular database structure. SQL (commonly pronounced as 'see quell') stands for the Structured Query Language. SQL is a language used for writing query statements to interact and communicate with relational databases. A relational database is a database that has a tabular **schema** to store data in terms of rows and columns. Each column contains data that are called **attributes**, and each row is called a **record**. The data in the tables can be related to each other, hence the 'relational database'. A collection of these multiple tables in a database is called a **schema**. A relation is simply a decorative phrase for a table.
 Relations can exit in different ways, such as:
 
-- One to One - exits when a record in table A can only relate to one record of table B.
-- One to Many - exits when a record of table A relates to one or more records of table B.
-- Many to Many - exits when a record in table A relates to many records of table B and vice versa.
+- One to One - exists when a record in table A can only relate to one record of table B.
+- One to Many - exists when a record of table A relates to one or more records of table B.
+- Many to Many - exists when a record in table A relates to many records of table B and vice versa.
 
 SQL statements will help you perform CRUD operations such as CREATE, READ, UPDATE, and DELETE. These operations will help you retrieve and modify data. Here is an example of a SQL statement;
 
@@ -45,8 +45,7 @@ SQL statements will help you perform CRUD operations such as CREATE, READ, UPDAT
 SELECT * FROM TABLE1.
 ```
 
-This statement will query and display all the **records** of Table1.
-If we were to have a student information database, this is how we would represent a relation in an SQL database.
+This statement will query and display all the **records** of Table1. If we were to have a student information database, this is how we would represent a relation in an SQL database.
 
 ![SQL database table](/engineering-education/sql-or-nosql-when-to-choose-what/tables.png)
 
@@ -65,7 +64,7 @@ Each row in an SQL database has specific value characters, such as texts, varcha
 
 ![Relations](/engineering-education/sql-or-nosql-when-to-choose-what/relations.png)
 
-SQL databases need a server that runs a database management system (DBMS). DBMS is a software interface that connects end-users and database to manage and manipulate data in a structured way. Some of the common SQL databases include [MySQL](https://www.mysql.com/why-mysql/), [Oracle Database](https://www.oracle.com/database/), [PostgreSQL](https://www.postgresql.org/about/), [Microsoft SQL Server](https://www.microsoft.com/en-gb/sql-server/), and [MariaDB](https://mariadb.org/documentation/).
+SQL databases need a server that runs a database management system (DBMS). DBMS is a software interface that connects end-users and databases to manage and manipulate data in a structured way. Some of the common SQL databases include [MySQL](https://www.mysql.com/why-mysql/), [Oracle Database](https://www.oracle.com/database/), [PostgreSQL](https://www.postgresql.org/about/), [Microsoft SQL Server](https://www.microsoft.com/en-gb/sql-server/), and [MariaDB](https://mariadb.org/documentation/).
 
 ### What is NoSQL?
 It is a non-SQL database structure with a non-relational mechanism for storing and retrieving data. Its data model does not have tabular **schema** as used in relational databases.
@@ -101,7 +100,7 @@ Some of the common NoSQL databases include [MongoDB](https://www.mongodb.com/wha
 #### Relation
 SQL employs a kind of relationship that exists between two or more database tables. As we have explained above, NoSQL is non-relational.
 
-To understand this point, think of two towns. Let's say town A and town B. Take town A, where the residents understand only one language. They use it to do all sorts of communication and interaction around them day in day out. To change the language of this town will bring a lot of confusion and disruptions among the residents.
+To understand this point, think of two towns. Let's say town A, and town B. Take town A, where the residents understand only one language. They use it to do all sorts of communication and interaction around them day in day out. To change the language of this town will bring a lot of confusion and disruptions among the residents.
 
 Take town B, where the residents speak different languages. Everyone communicates and interacts with the world around them differently. There is no universal way to understand each other. When a new resident is introduced to this town, this new resident's language will affect no one.
 
@@ -146,7 +145,7 @@ How do you decide which database model to choose? The quickest answer to this qu
 #### When to use SQL?
 - The legacy of SQL is when your system needs a structured relational system. SQL thrives in circumstances that need high-quality and well-managed relational database systems.
 
-- Multi-row transactions with complex queries and reporting such as accounting and budget systems.
+- Multi-row transactions with complex queries and reporting, such as accounting and budget systems.
 
 - Pre-defined data structure with multi-row transactions which have set **schemas** such as inventory system that have distinct entities. SQL provides perfect nominalizations and simple queries that comply with ACID.
   - ACID represents:
@@ -159,8 +158,8 @@ How do you decide which database model to choose? The quickest answer to this qu
 - Data integrity consistency. An SQL database system is designed to handle specific data types, i.e., integer, varchar, text, Boolean, date value, etc.
 
 #### When to use NoSQL?
-- Rapid growth of data especially when dealing with unstructured information. Rapid data growth needs highly flexible data models to scale out the needs of that application.
-- The application model has no defined **schema**, or the data requirements and the schemas are constantly evolving.
+- Rapid growth of data, especially when dealing with unstructured information. Rapid data growth needs highly flexible data models to scale out the needs of that application.
+- The application model has no defined **schema** or the data requirements, and the schemas are constantly evolving.
 - When dealing with IoT technology, NoSQL offers real-time insights for sensor data.
 - Real-time transaction pieces of information such as customer behaviors, analytics information, financial markets, and trading activities. NoSQL check and watch real-time information transactions.
 - NoSQL provides fast reads and writes access to big data.
@@ -199,7 +198,7 @@ Taking the list of the most loved database technologies, non-relation databases 
 MongoDB is a database technology that most developers want to learn more about.
 
 ### Conclusion
-Both SQL and NoSQL database structures store data, but the approach they take to do this differs. Outline the application to decide the database model that fit data structures such as schema, relation, scalability and data size. Migrating from one to the other is costly and time-consuming, and hence the differences should be considered while architecting software.
+Both SQL and NoSQL database structures store data, but the approach they take to do this differs. Outline the application to decide the database model that fits data structures such as schema, relation, scalability, and data size. Migrating from one to the other is costly and time-consuming, and hence the differences should be considered while architecting software.
 
 ---
 Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
