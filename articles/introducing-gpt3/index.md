@@ -18,7 +18,7 @@ Generative pre-trained transformers are language models that produce human-like 
 <!--more-->
 GPT-2 was massive, with about 1.5 billion [parameters](https://bit.ly/2FlKJII). The magnitude of this new model blows its predecessor out of the water boasting of 175 billion parameters. For all the hype surrounding GPT-3, it is necessary to take a closer look.
 
-### Contents
+### Table of Contents
 1. Potential of GPT-3
 2. Applications of the GPT-3
 3. How GPT-3 compares to BERT
