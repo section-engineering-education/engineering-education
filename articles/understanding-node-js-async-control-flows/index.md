@@ -58,7 +58,9 @@ The functions include serial, parallel, waterfall, queues, etc.
 #### Parallel
 [Parallel](https://caolan.github.io/async/v3/docs.html#parallel) tasks mean running many functions at the same time without waiting for the previous functions to complete. Once these tasks are completed, their results are passed to a main callback, that returns an array of results.
 
-With `async.parallel`, you do not control what function finishes before the other. Your code will be optimized to run tasks simultaneously. Generally, JavaScript does not execute these many tasks simultaneously. What happens is that each task is pushed to an asynchronous event loop without control of which task will finish before the other. It still maintains a [single thread operation](https://www.tutorialspoint.com/single-threaded-and-multi-threaded-processes).
+With `async.parallel`, you do not control what function finishes before the other. Your code will be optimized to run tasks simultaneously. Generally, JavaScript does not execute these many tasks simultaneously.
+
+What happens is that each task is pushed to an asynchronous event loop without control of which task will finish before the other. It still maintains a [single thread operation](https://www.tutorialspoint.com/single-threaded-and-multi-threaded-processes).
 
 ##### Parallel Parameters
 - `Tasks` - a collection of tasks to run asynchronously.
@@ -80,7 +82,9 @@ You can also use objects instead of arrays. Each object property will execute as
 ###### Example of using objects instead of an array.
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-parallel-objects?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-**Note:** If your task has no timers or does not perform any I/O, the code will run in series. Every task will be executed one after the other. If one of the functions returns an error to its callback. The final callback will immediately be invoked to null or with the error output.
+**Note:** If your task has no timers or does not perform any I/O, the code will run in series. Every task will be executed one after the other.
+
+If one of the functions returns an error to its callback. The final callback will immediately be invoked to null or with the error output.
 
 #### Race
 [Race](https://caolan.github.io/async/v3/docs.html#race) is a close relative to parallel. `async.race` runs a collection of tasks in parallel. There is a small difference between race and parallel. Using race as soon as any function executes successfully, the main callback is invoked immediately with the results.
