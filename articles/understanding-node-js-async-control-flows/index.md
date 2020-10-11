@@ -44,7 +44,7 @@ There is nothing wrong with JavaScript.
 
 It did what we instructed it to do in a ‘`synchronous process`. It will execute the timeout functions but won't wait to finish because we didn't tell it to.
 
-Imagine this coded concept was implemented in a bank system. This could lead to a case where a user may withdraw some money even before he/she deposits it. This is where `control flow` comes into play.
+Imagine this coded concept being implemented in a bank system. This could lead to a case where a user may withdraw some money even before he/she deposits it. This is where `control flow` comes into play.
 
 ### Control flows
 [Control flow](https://en.wikipedia.org/wiki/Control_flow) is the order in which individual statements, instructions, or function calls of an imperative program are executed or evaluated.
