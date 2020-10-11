@@ -14,11 +14,13 @@ images:
   - url: /engineering-education/understanding-node-js-async-control-flows/hero.jpg
     alt: Node.js async control flows
 ---
-Asynchronous control flows permit other processing to continue even before the first transmission has finished. JavaScript has embraced asynchronous programming with single thread processing. Every task executes in the order the code has been written. Embracing asynchronous promises and callbacks ensure [non-blocking operations flow](https://stackoverflow.com/questions/10570246/what-is-non-blocking-or-asynchronous-i-o-in-node-js).
+Asynchronous control flows permit other processing to continue even before the first transmission has finished. JavaScript has embraced asynchronous programming with single thread processing. Every task executes in the order the code has been written. Embracing asynchronous [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and callbacks ensure [non-blocking operations flow](https://stackoverflow.com/questions/10570246/what-is-non-blocking-or-asynchronous-i-o-in-node-js).
 <!--more-->
 This makes it a more versatile and robust solution for [event looping](/engineering-education/event-loop-explained/) on long-running code. Utility modules like [Async.js](https://github.com/caolan/async) provide functions for working with asynchronous flow control.
 
-To understand how asynchronous programming works, we can use the following example. Suppose you are making scrambles eggs for breakfast. There are several actions/steps to follow. Below is a sample recipe.
+To understand how asynchronous programming works, we can use the following example. Suppose you are making scrambles eggs for breakfast. There are several actions/steps to follow.
+
+Below is a sample recipe.
 
 1. Whisk two eggs with some milk, cream, and a pinch of salt.
 2. Heat a frying pan for a minute.
@@ -38,7 +40,7 @@ If we wrote the scrambled eggs steps in JavaScript, this is how it would look.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/someScrabbledEggs?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-JavaScript served me the eggs even before heating the pan and pouring the mixture to cook.
+JavaScript served us the eggs even before heating the pan and pouring the mixture to cook.
 
 There is nothing wrong with JavaScript.
 
@@ -49,7 +51,9 @@ Imagine this coded concept being implemented in a bank system. This could lead t
 ### Control flows
 [Control flow](https://en.wikipedia.org/wiki/Control_flow) is the order in which individual statements, instructions, or function calls of an imperative program are executed or evaluated.
 
-This article goes through `async flow` functions using [Async.js](https://caolan.github.io/async/v3/) to control the flow of task executions. The functions include serial, parallel, waterfall, queues, etc.
+This article goes through `async flow` functions using [Async.js](https://caolan.github.io/async/v3/) to control the flow of task executions.
+
+The functions include serial, parallel, waterfall, queues, etc.
 
 #### Parallel
 [Parallel](https://caolan.github.io/async/v3/docs.html#parallel) tasks mean running many functions at the same time without waiting for the previous functions to complete. Once these tasks are completed, their results are passed to a main callback, that returns an array of results.
@@ -90,7 +94,9 @@ You can also use objects instead of arrays. Each object property will execute as
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-race?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 #### Queue
-A [queue](https://caolan.github.io/async/v3/docs.html#queue) can be used to run tasks asynchronously. It is created with a specified [concurrency](https://en.wikipedia.org/wiki/Concurrency_(computer_science)). Tasks are executed in parallel but with a concurrency limit. A queue object is completed based on an asynchronous operation and passed to a worker. If all workers are in progress, the task is queued until one becomes available. When a worker completes a task, the task callback is called.
+A [queue](https://caolan.github.io/async/v3/docs.html#queue) can be used to run tasks asynchronously. It is created with a specified [concurrency](https://en.wikipedia.org/wiki/Concurrency_(computer_science)). Tasks are executed in parallel but with a concurrency limit.
+
+A queue object is completed based on an asynchronous operation and passed to a worker. If all workers are in progress, the task is queued until one becomes available. When a worker completes a task, the task callback is called.
 
 #### Queue Parameters
 - `Worker` - workers are invoked with tasks and callbacks. A worker is an asynchronous function. It processes all tasks assigned to the queue. Tasks and callbacks are the main parameters processed by a worker.
@@ -99,6 +105,7 @@ A [queue](https://caolan.github.io/async/v3/docs.html#queue) can be used to run 
 **Syntax:** `async.queue (tasks, concurrency)`
 
 `async.queue` returns a queue object that manages a task. These object properties can be attached to callbacks then listens to tasks during the queue lifecycle.
+
 These [queue object properties](https://caolan.github.io/async/v3/docs.html#QueueObject) include:
 
 - Push - it is an async function that adds a task to a queue to be processed within the workers. Once the workers finish processing these tasks, they are called within a callback. The callback can take a single task or an array of tasks. A push is invoked with a `queue.push(task, [callback])`.
