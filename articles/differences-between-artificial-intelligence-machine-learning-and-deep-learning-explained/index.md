@@ -121,7 +121,7 @@ DL has also been used to:
 DL has been used in speech recognition such as Amazon Alexa, Google Assistant and Apple's Siri. Sound waves, consist of words, converted into waveforms of different frequencies. The algorithm recognizes these sequential waveform inputs and processes them.
 
 #### Final Thoughts
-It's now clear that AI, ML and DL, though used interchangeably, are not the same. Artificial Intelligence encompasses them all. Deep Learning is a sub-field of ML while ML is a sub-field of AI.
+Artificial Intelligence is a general term that encompasses Machine Learning and Deep Learning. Deep Learning (DL) and Machine Learning (ML) are both sub-fields of Artificial Intelligence. It is important to note that even though both ML and DL revolve around data in order to effectively deliver, their use cases are not the same. DL is ideal for complex tasks such as image recognition and speech recognition as such tasks require a lot of data where most of the data is unstructured. This is one place where DL excels as it utilizes the many layers within neural networks to extract different features. ML is suitable for solving simple tasks where data is labeled and structured. A simple example of its use case would be to classify whether a ball is green or yellow. You definitely don't need to use DL here as the task is too simple and does not require a lot of data during training. 
 
 ### References
 1. Michie, D., Spiegelhalter, D. J., & Taylor, C. C. (1994). Machine learning. Neural and Statistical Classification, 13(1994), 1-298.
