@@ -1,5 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/job-scheduling-in-nodejs/
+title: Hapi vs Koa vs Express
+description: In this article we do a comparative analysis of three Node.js frameworks - we explore their advantages, disadvantages, and show an example of how to run a server in each.
+author: peter-kayere
+date: 2020-09-28T00:00:00-08:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/job-scheduling-in-nodejs/hero.jpg
+    alt: koa koa.js Node.js express hapi framework
+---
 When building web applications and APIs in Node.js, we sometimes come across tasks that need to be done repeatedly. This can be at a specific time everyday, month or even year depending on the task. Some of these tasks are:
+<!--more-->
+### Introduction
 
 1. Sending periodic emails to customers.
 2. Backing up organization's data.
@@ -140,7 +157,7 @@ In this step, we are going to use the schedule method we created above to schedu
 ```Javascript
 cron.schedule('*/10 * * * *', sendEmail("Hey there, this email was sent to you automatically"));
 ```
-And that's it! 
+And that's it!
 
 This is the expected log message
 ```bash
