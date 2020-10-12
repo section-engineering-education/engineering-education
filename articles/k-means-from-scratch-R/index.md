@@ -235,4 +235,4 @@ Every algorithm has its own set of advantages and disadvantages. Understanding t
     
 ### Conclusion
 
-We have implemented the K-means clustering algorithm using essential functions in R. All algorithms can be broken down into smaller pieces and be implemented from scratch. Understanding the theory and intuition behind the algorithms helps one make better decisions during building applications. 
+That was a fantastic journey implementing the K-means algorithm from scratch. Pat yourselves on the back. Do connect with me on [Linkedin](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) to share what you think about the article. Your feedback is highly appreciated. All algorithms can be broken down into smaller pieces and be implemented from scratch. Understanding the theory and intuition behind the algorithms helps one make better decisions during building applications. 
