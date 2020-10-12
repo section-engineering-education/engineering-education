@@ -168,12 +168,5 @@ If Machine Learning is still new to you, feel free to [download and read this e-
 8.	Watkins, C. J., & Dayan, P. (1992). Q-learning. Machine learning, 8(3-4), 279-292.
 9. Dang, Q. V. (2019, December). Reinforcement Learning in Stock Trading. In International Conference on Computer Science, Applied Mathematics and Applications (pp. 311-322). Springer, Cham.
 
-
-### Author Biography & Headshot image
-Willies Ogola is pursuing his Master's in Computer Science in Hubei University of Technology, China.  
-His research direction is on Artificial Intelligence and Embedded Systems. He likes researching during his free time and is passionate about technology.
-
-![willies-ogola](/engineering-education/introduction-to-reinforcement-learning/willies-ogola.jpg)
-
 ---
 Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
