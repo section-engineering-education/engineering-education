@@ -94,7 +94,7 @@ _Figure: Directed Graph ([Source](https://pediaa.com/what-is-the-difference-betw
 
 ##### Weighted Graphs
 
-A weighted graph has a value associated with every edge. The value may represent quantities like cost, distance, time, etc.., depending on the graph. An edge of a weighted graph is represented as, `(u, v, w)`.
+A weighted graph has a value associated with every edge. The value may represent quantities like cost, distance, time, etc., depending on the graph. An edge of a weighted graph is represented as, `(u, v, w)`.
 
 - `u` -> Source vertex
 - `v` -> Destination vertex
@@ -137,7 +137,7 @@ _Figure: Rooted Tree_
 
 ##### Directed Acyclic Graphs
 
-Directed Acyclic Graphs or DAGs are directed graphs with no cycles. They represent structures with dependencies. All arborescences are DAGs, but not all DAGs are arborescences.
+Directed Acyclic Graphs or DAGs are graphs with no directed cycles. They represent structures with dependencies. All arborescences are DAGs, but not all DAGs are arborescences.
 
 ![Directed Acyclic Graph](/engineering-education/graph-data-structure-python-part1/dag.png)
 
@@ -161,7 +161,9 @@ There are multiple ways of using data structures to represent a graph. The three
 
 #### Adjacency Matrix
 
-An Adjacency Matrix is a very simple way to represent a graph. The element `**A[i][j]**` represents the cost of moving from vertex `i` to vertex `j`.
+An Adjacency Matrix is a very simple way to represent a graph. In a weighted graph, the element `**A[i][j]**` represents the cost of moving from vertex `i` to vertex `j`. 
+
+In an unweighted graph, the element `**A[i][j]**` represents a boolean value which determines if a path exists from vertex `i` to vertex `j`. If A[i][j] == 0, there exists no path from vertex i to vertex j. If A[i][j] == 1, there exists a path from vertex i to vertex j.
 
 - Example,
 
