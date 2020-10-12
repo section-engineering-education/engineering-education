@@ -86,16 +86,17 @@ const cron = require('node-cron');
 To schedule a task, we pass in our *crontab* expression and the function we want to schedule on a schedule method. In this example, we  pass the default `cron` expression which will schedule the task to run every minute.
 
 ```Javascript
-cron.schedule('* * * * *', () => {console.log("Task is running every minute")});
+cron.schedule('* * * * *', () => {console.log("Task is running every minute " + new Date())});
 ```
 The console output is as shown
 
 ```bash
+brain@Brain MINGW64 /c/Projects/node-cron example (master)
 $ node index
 Server started at port 2400
-Task is running every minute
-Task is running every minute
-Task is running every minute
+Every minute task ran on Mon Oct 12 2020 14:36:00 GMT+0300 (East Africa Time)
+Every minute task ran on Mon Oct 12 2020 14:37:00 GMT+0300 (East Africa Time)
+Every minute task ran on Mon Oct 12 2020 14:38:00 GMT+0300 (East Africa Time)
 ...
 ```
 ### Step 4 — Creating The Email Function
@@ -104,21 +105,23 @@ Let's create the function that will send emails.  First, import the node-mailer 
 ```Javascript
 const mailer = require('nodemailer');
 ```
-
-Then create a function and give it a name of your choice.
-In the function, we will create a transporter through nodemailer's `createTransport` method. We will then use the `sendMail` method to send the email.
+Then create a transporter through nodemailer's `createTransport` method.
+```Javascript
+// Creating a transporter
+const transporter = mailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    auth: {
+        user: 'your-username',
+        pass: 'your-password'
+    }
+});
+```
+Now create a function and give it a name of your choice.
+In the function, We will use the transporter's `sendMail` method to send the email.
 
 ```Javascript
 function sendEmail(message){
-    // Creating a transporter
-    const transporter = mailer.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
-        auth: {
-            user: 'your-username',
-            pass: 'your-password'
-        }
-    });
     //sending the email
     transporter.sendMail({
         from: '"Peter" <peter@kayere.com>',
@@ -126,18 +129,26 @@ function sendEmail(message){
         subject: 'Scheduled Email',
         text: message
     })
-        .then(_ => {console.log("Email has been sent")})
+        .then(_ => {console.log("Email sent on " + new Date())})
         .catch(error => {console.log(error)});
 }
 ```
 
 ### Step 5 — Scheduling The Email
-In this step, we are going to use the schedule method we created above to schedule the `sendEmail` function. We will schedule the function to run at midnight every Sunday. To represent this using the *crontab* syntax, we will pass zeros for the minutes and hours asterisk and Sunday for the day. This is how we will do it.
+In this step, we are going to use the schedule method we created above to schedule the `sendEmail` function. We will schedule the function to run after every 10 minutes. To represent this using the *crontab* syntax, we will pass `*/10` for the minutes asterisk. This is how.
 
 ```Javascript
-cron.schedule('0 0 * * sunday', sendEmail("Hey there, this email was sent to you automatically"));
+cron.schedule('*/10 * * * *', sendEmail("Hey there, this email was sent to you automatically"));
 ```
-And that's it! Expect to see the log message on Sunday midnight. You can as well use a closer day for testing purpose.
+And that's it! 
+
+This is the expected log message
+```bash
+$ node index
+Server started at port 2400
+Email sent on Mon Oct 12 2020 14:40:00 GMT+0300 (East Africa Time)
+Email sent on Mon Oct 12 2020 14:50:00 GMT+0300 (East Africa Time)
+```
 
 ### Conclusion
 In this article, we have gone through some of the basic syntax of `node-cron` module. We have also built an application that sends an email every Sunday. This is helpful when we want to automate tasks. It helps the development process and scaling of the application. One does not need to perform the tasks manually. The full code of the application can be found on [github](https://github.com/kayere/node-cron-example.git).
