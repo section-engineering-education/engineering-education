@@ -4,15 +4,15 @@ status: publish
 published: true
 url: /engineering-education/nginx-reverse-proxy/
 title: Deploying Multiple Applications to VM with NGINX as a Reverse Proxy
-description:
-author:
-date: 2020-10-07T00:00:00-10:00
+description: Introduction to the NGINX web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
+author: harish-ramesh-babu
+date: 2020-10-12T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/nginx-reverse-proxy/hero.jpg
-    alt:
+    alt: nginx reverse proxy image example
 ---
 Ever wondered how more than one application is deployed to the same machine, and how traffic is routed to the corresponding applications?
 Keep reading to find out.
@@ -32,24 +32,21 @@ Refer to [this article](/engineering-education/what-are-reverse-proxies/) to bet
 
 ### NGINX
 We will be using NGINX as a Reverse Proxy. According to [Wikipedia](https://en.wikipedia.org/wiki/Nginx),   
-NGINX is a web server that can be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and was publicly released in 2004. Nginx is a free and open-source software, released under the terms of the [2-clause BSD license](https://opensource.org/licenses/BSD-2-Clause). A large fraction of web servers use NGINX, often as a load balancer.
+NGINX is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The software was created by Igor Sysoev and was publicly released in 2004. Nginx is a free and open-source software, released under the terms of the [2-clause BSD license](https://opensource.org/licenses/BSD-2-Clause). A large fraction of web servers use NGINX, often as a load balancer.
 
-
-Some of the other Reverse Proxies available are:
+Some other examples Reverse Proxies available are:
 - [Apache](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html)
 - [Varnish](https://varnish-cache.org/intro/)
-
 
 ### Reverse Proxy Example
 ![image](/engineering-education/nginx-reverse-proxy/reverse_proxy_working.png)
 
 This is an example of an architecture, where two apps are running in the background, but the clients have no idea about them. The clients only know about NGINX which acts as a reverse proxy that sends the request to the appropriate application.
 
-
 Now that you have a broader idea of what we are about to build, let's jump right in!
 
 ### Aim
-- Deploy two applications and have it managed by NGINX.
+- Deploy two applications and have them managed by NGINX.
 
 ### Setup & Pre-Requisites:
 1. For this example, we have two sample Express Applications. One can have any kind of application running on different ports.
@@ -59,7 +56,7 @@ Refer the official [ExpressJS documentation]((https://expressjs.com/en/starter/i
 Here is the [documentation]((https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) on how to install NGINX on your machine.
 
 ### Step 1: Start two apps running in different ports
-As we've mentioned earlier, we've got two Node.js Apps running on two different ports as shown below.  
+As we've mentioned earlier, we've got two Node.js Apps running on two different ports as shown below.
 
 **Server app running on Port 3000**
 
@@ -69,30 +66,31 @@ As we've mentioned earlier, we've got two Node.js Apps running on two different 
 
 ![image](/engineering-education/nginx-reverse-proxy/client1.png)
 
-Now that we have our apps up and running, we don't want our users to use these applications by typing their PORTS explicitly, so we need to map it with something that is more human-readable. In this example, we will be using subdomains to distinguish between them. Again one is free to use whichever distinguishing element suitable as per their requirement.
+Now that we have our apps up and running, we don't want our users to use these applications by typing their PORTS explicitly, so we need to map it with something that is more human-readable.
+
+In this example, we will be using subdomains to distinguish between them. Again one is free to use whichever distinguishing element suitable as per requirements.
 
 Another example could be a particular route like domain/client and domain/server. The only condition for the distinguishing element is to follow a valid URL regular expression. To learn about Regex you can click [here](https://regexr.com/).
-
 
 ### Step 2: Add DNS records
 This is the part where one would add the DNS records in their DNS management dashboard. If you are running Nginx locally, you can skip this step.
 
-The general DNS Configurations would be something like
+The general DNS Configurations would be something like:
 - Server app mapped to the server.domain
 - Client app mapped to the client.domain
 
-My Localhost Config, in this case, would be
+My Localhost Config, in this case, would be:
 - Server mapped to server.localhost
 - Client mapped to client.localhost
 
-There are two standard protocols HTTP and HTTPS. The default port for HTTP is 80 and HTTPS is 443. This is the reason we must not run our applications on these ports because our NGINX server would be running on these two ports. All the requests the client makes would either be redirected to port 80 or 443 from where it would be redirected internally to the corresponding application.
+There are two standard protocols HTTP and HTTPS. The default port for HTTP is 80 and HTTPS is 443. The reason we must not run our applications on these ports is due to our NGINX server running on these two ports. All the requests the client makes would either be redirected to port 80 or 443 from where it would be redirected internally to the corresponding application.
 
 ### Step 3 - Configure NGINX at 80 for HTTP and 443 for HTTPS
 Now that we have our apps running and our DNS records ready. We can start configuring our NGINX Reverse Proxy to make it all work.  
 
-By default, the configuration file is named nginx.conf and placed in the directory /usr/local/nginx/conf, /etc/nginx, or /usr/local/etc/nginx for Linux and Debian Based systems.
+By default, the configuration file is named `nginx.conf` and placed in the directory `/usr/local/nginx/conf`, `/etc/nginx`, or `/usr/local/etc/nginx` for Linux and Debian Based systems.
 
-On Windows, the file is placed inside the installation folder, nginx/conf/nginx.conf.
+On Windows, the file is placed inside the installation folder, `nginx/conf/nginx.conf`.
 
 Add these configurations inside the HTTP block.
 
@@ -152,17 +150,19 @@ These are the basic minimum configurations required to successfully configure NG
 
 Make sure to change the domain name to your domain. For a SSL Certificate and Key, you can obtain them from your SSL provider.
 
-If you don't have one, Use this free service [LetsEncrypt](https://letsencrypt.org/).
+If you don't have one, use this free service [LetsEncrypt](https://letsencrypt.org/).
 
-Follow their documentation to get Free SSL instantly!
+Follow their documentation to get free SSL instantly!
 
 ### Step 4 - Save and Restart
 After editing, save your changes. Use the `sudo nginx -t` command to test your changes before actually reloading NGINX. It is good practice do this to make sure your server won't crash if there were any errors in your config file.
 
 Once you get a message that the test is successful, you can go ahead and restart NGINX.  
-Use this command ```sudo nginx -s reload``` to restart NGINX.  
+Use this command `sudo nginx -s reload` to restart NGINX.  
+
 Open the browser and enter the URLs to find your applications running on the corresponding URLs configured.
-For the above example, the URLs are
+
+For the example above, the URLs are:
 - client.localhost
 - server.localhost
 
@@ -192,5 +192,5 @@ Thanks for reading!
  - [Wiki article on Reverse Proxy](https://en.wikipedia.org/wiki/Reverse_proxy)
  - [Wiki article on NGINX](https://en.wikipedia.org/wiki/Nginx)
 
- ---
- Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+---
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
