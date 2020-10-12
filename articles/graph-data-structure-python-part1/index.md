@@ -82,7 +82,7 @@ _Figure: Undirected Graph ([Source](https://pediaa.com/what-is-the-difference-be
 
 ##### Directed Graphs
 
-In a directed graph or digraph, the edges have orientation. If there is a path from vertex X to vertex Y, then there necessarily need not exist a path from vertex Y to vertex X.
+In a directed graph or digraph, the edges have an orientation. If there is a path from vertex X to vertex Y, then there necessarily need not exist a path from vertex Y to vertex X.
 
 That is, `edge (X, Y) != edge (Y, X)`.
 
@@ -145,7 +145,7 @@ _Figure: Directed Acyclic Graph ([Source](https://en.wikipedia.org/wiki/Directed
 
 ##### Complete Graphs
 
-Complete graphs have a unique edge between every pair of vertices. A complete graph `n` vertices has `(n*(n-1)) / 2` edges and is represented by Kn.
+Complete graphs have a unique edge between every pair of vertices. A complete graph `n` vertices have `(n*(n-1)) / 2` edges and are represented by Kn.
 
 ![Complete Graph](/engineering-education/graph-data-structure-python-part1/complete-graph.png)
 
@@ -179,8 +179,8 @@ The above adjacency matrix represents a graph that has 3 vertices. The cost of m
 
 | Advantages                                         | Disadvantages                                     |
 | -------------------------------------------------- | ------------------------------------------------- |
-| Space efficient for dense graph representation.    | Space Complexity of this Data Structure - O(V^2). |
-| Time complexity of getting an edge weight is O(1). | Iterating through the edges takes O(V^2) time.    |
+| Space-efficient for dense graph representation.    | Space Complexity of this Data Structure - O(V^2). |
+| The time complexity of getting an edge weight is O(1). | Iterating through the edges takes O(V^2) time.    |
 | Simplest Graph Representation.                     |                                                   |
 
 #### Adjacency List
@@ -191,13 +191,13 @@ An adjacency list represents a graph as a list that has vertex-edge mappings. Ex
 
 | Advantages                             | Disadvantages                            |
 | -------------------------------------- | ---------------------------------------- |
-| Space efficient for sparse graphs.     | Less space efficient for dense graphs.   |
+| Space-efficient for sparse graphs.     | Less space efficient for dense graphs.   |
 | Iterating over the edges is efficient. | Edge weight lookup is O(E). (worse case) |
 |                                        | Slightly more complex to represent.      |
 
 #### Edge List
 
-An edge list represents the graph as an unstructures list of edges. Example,
+An edge list represents the graph as an unstructured list of edges. Example,
 
 ```python
 graph = [(C, A, 4), (A, C, 1), (B, C, 6),
@@ -210,7 +210,7 @@ They are not widely used because this representation lacks structure.
 
 | Advantages                             | Disadvantages                            |
 | -------------------------------------- | ---------------------------------------- |
-| Space efficient for sparse graphs.     | Less space efficient for dense graphs.   |
+| Space-efficient for sparse graphs.     | Less space efficient for dense graphs.   |
 | Iterating over the edges is efficient. | Edge weight lookup is O(E). (worse case) |
 | Extremely simple representation.       | This representation lacks structure.     |
 
