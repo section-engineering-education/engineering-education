@@ -141,3 +141,6 @@ And that's it! Expect to see the log message on Sunday midnight. You can as well
 
 ### Conclusion
 In this article, we have gone through some of the basic syntax of `node-cron` module. We have also built an application that sends an email every Sunday. This is helpful when we want to automate tasks. It helps the development process and scaling of the application. One does not need to perform the tasks manually. The full code of the application can be found on [github](https://github.com/kayere/node-cron-example.git).
+
+---
+Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
