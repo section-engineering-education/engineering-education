@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/introduction-to-deep-learning/hero.jpg
     alt:
 ---
-Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to its promising benefits. It is a method that enables image recognition, natural language processing, and voice recognition to take place. Have you ever wondered how machines function like the human brain? Well, this thanks to the concept of Deep Learning. Deep Learning is a potent tool, and once you read this article, you will have a better understanding of what DL is and how it works.
+Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to its promising benefits. It is a method that enables image recognition, natural language processing, and voice recognition to take place. Have you ever wondered how machines function like the human brain? Well, thanks to the concept of Deep Learning. Deep Learning is a potent tool, and once you read this article, you will have a better understanding of what DL is and how it works.
 <!--more-->
 ### Introduction
 ### What is Deep Learning?
@@ -37,31 +37,37 @@ Deep Learning algorithms strive to reason the same as humans by studying data wi
 ### Machine Learning VS Deep Learning
 Deep Learning and machine learning are both types of AI that classify data and train models.
 
-1. Data presentation in the system. Machine Learning algorithms require structured data, while Deep Learning relies on layers of Neural Networks. For example, you have several animal images, such as birds and pets. A person would label each image to help a Machine Learning algorithm difference the pictures. Deep Learning is a bit complex. This is because using the same dataset. Deep Learning algorithms toil to evaluate variations between categories and classify them.
+1. Data presentation in the system. Machine Learning algorithms need structured data to solve data problems. Deep Learning relies on layers of Neural Networks. 
+Example: you have several animal images, such as birds and pets. A person would label each image to help an ML algorithm differentiate the images. Deep Learning is a bit complex. This is because using the same dataset. Deep Learning algorithms toil to evaluate variations between categories and classify them.
 
-2. A Machine Learning algorithm takes a minute to a few hours to finish execution. On the other hand, Deep Learning algorithms go up to weeks to halt the execution. This is due to the complexity of Neural Networks, requiring a large number of weights and more parameters.
+2. A Machine Learning algorithm takes a minute to a few hours to finish execution. Deep Learning, unlike machine learning algorithms, goes up to weeks to halt the execution. This is due to the complexity of Neural Networks. Neural networks need a large number of weights and more parameters.
 
-3. The performance of Machine Learning Algorithms is useful when the dataset is small or medium. Deep Learning algorithms fail to perform well on such datasets. DL algorithms instead perform exceptionally well for bigger datasets.
+3. The performance of ML algorithms is good when the dataset is small or medium. Deep Learning algorithms fail to perform well on such datasets. DL algorithms instead perform exceptionally well for bigger datasets.
 
-4.	Machine Learning algorithms can perform on inexpensive. Contrarily, Deep Learning is a potent tool. It performs well on a powerful machine. The machine is equipped with multiple GPUs, thus [providing high performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
+4.	Machine Learning algorithms can perform on inexpensive. Deep Learning is a potent tool. It performs well on a powerful machine equipped with multiple GPUs, thus [providing high performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
 
-5. Machine Learning algorithms are trained to study and understand labeled data in a dataset. Deep Learning algorithms require no human intervention. This is because layers in Neural Networks place data in different concepts. Neural Networks also enable DL algorithms to learn independently.
+5. Machine Learning algorithms study and understand labeled data in a dataset. Deep Learning algorithms require no human intervention. This is because layers in Neural Networks place data in different concepts. Neural Networks also enable DL algorithms to learn independently.
 
-6. Through Virtual Assistant solutions, Machine Learning and Deep Learning automate tasks on applications.
-
-7.	Deep Learning is an essential bit of Machine Learning. It gives solutions to many problems in Image Recognition, speech recognition, and NLP. Deep Learning performs well with images, text, sound recognition compared to Machine Learning.
+6. Deep Learning is an essential bit of Machine Learning. It gives solutions to many problems in Image Recognition, speech recognition, and NLP. Deep Learning performs well with images, text, sound recognition compared to Machine Learning.
 
 ### How Deep Learning Works
-The functioning of the brain influences deep Learning algorithms. Neural Networks are necessary to achieve deep learning. Neural Networks are made up of layers and nodes similar to how the brain is made up of neurons.
+The functioning of the brain influences deep Learning algorithms. Neural Networks are made up of layers and nodes, as well as the brain comprises of neurons.
 
-Neural Networks consist of the input layer, hidden layer, and output layer. There are many hidden layers that perform mathematical computations on the information. The output layer gives the result. It identifies the object based on computation from the distributive  [weights of all layers](https://www.modev.com/blog/how-deep-learning-works).
+Neural Networks consist of: 
++ Input layer 
++ Hidden layers
++ Output layer
 
-A good example is you have a house image to recognize. The first layer might focus on borderlines. Another layer focus on the object colors, and another the physical measurements of the image.
+The input layer receives inputted data. Hidden layers perform mathematical computations on the information. The output layer gives the result. The problem is solved based on computation from the distributive  [weights of all layers](https://www.modev.com/blog/how-deep-learning-works).
+
+A good example is the recognition of a house image. The first layer might focus on borderlines. Another layer focus on the object colors, and another the measurements of the image.
 
 Deep Learning systems need a powerful software. This is because they process huge amounts of data and complex computations.
 
 ### Why we need Deep Learning
-Deep Learning is revolutionizing so many fields to solve data problems. Deep Learning is an excellent and powerful tool. It helps many organizations and developers create exciting AI applications. Think of successful surgeries without causing human loss due to surgical errors. Think of a world with no accident due to smart cars. In several years to come, the world will be on another level due to Deep Learning.
+Deep Learning is revolutionizing so many fields to solve data problems.
+Deep Learning is an excellent and powerful tool. It helps many organizations and developers create exciting AI applications.
+Think of successful surgeries, causing little or no deaths due to surgical errors. Think of a world with no accident due to smart cars. In several years to come, the world will be on another level due to Deep Learning.
 
 ### Applications of Deep Learning
 There is massive excitement about artificial intelligence and its subsets. Here are Deep Learning applications that will govern the world.
@@ -76,7 +82,8 @@ Machines are taught to understand complexities associated with languages such as
 
 3. Healthcare
 
-Deep Learning is completely revolutionizing the healthcare and the medical industries. According to [Medium](https://medium.com/breathe-publication/top-15-deep-learning-applications-that-will-rule-the-world-in-2018-and-beyond-7c6130c43b01), AI has enabled healthcare and medical industries to advance tremendously. DL is being used by clinical researchers to find a cure for untreatable diseases. It helps with a speedy diagnostic of dangerous conditions. Many cancer tests, such as the Pap test Mammograms, use Deep Learning to examine cells image using a microscope.
+Deep Learning is completely revolutionizing the healthcare and the medical industries. According to [Medium](https://medium.com/breathe-publication/top-15-deep-learning-applications-that-will-rule-the-world-in-2018-and-beyond-7c6130c43b01), AI has enabled healthcare and medical industries to advance tremendously.
+Clinical researchers use DL to find a cure for untreatable diseases. DL helps with a speedy diagnostic of dangerous conditions. Many cancer tests, such as the Pap test and Mammograms, use DL to examine cells image using a microscope.
 
 4. Virtual Assistants
 
@@ -84,7 +91,7 @@ Siri and Google Assistants are approved deep learning virtual assistants. Deep L
 
 5. Fraud Detection
 
-Banking and financial sectors are benefiting from Deep Learning to detect transaction fraud. [Autoencoders](https://www.mygreatlearning.com/blog/deep-learning-applications/) in Tensorflow are being used to catch credit card deceits, thus saving a lot of money from fraudsters. Fraud prevention is done based on recognizing patterns in customer transactions.
+Banking and financial sectors are benefiting from Deep Learning to detect transaction fraud. [Autoencoders](https://www.mygreatlearning.com/blog/deep-learning-applications/) in Tensorflow are being used to catch credit card fraud, thus saving a lot of money from fraudsters. Fraud prevention is done based on recognizing patterns in customer transactions.
 
 6. Image Recognition
 
@@ -100,12 +107,16 @@ Neural Networks are algorithms modeled to function like the human brain. Neural 
 ![Neural Networks](/engineering-education/introduction-to-deep-learning/neural-networks.jpg)<br>
 [\*image source\*](https://medium.com/coinmonks/the-artificial-neural-networks-handbook-part-1-f9ceb0e376b4)
 
-Neural Networks comprise the input layer, hidden layers, and the output layer. The input layer is where the neural network acquire constituted in numeric values. Any data can be represented as a number, whether it is words, sound, or image. Each input neuron represents a single feature.
+Neural Networks comprise of the input layer, hidden layers, and the output layer.
 
-When the neurons have data, it is redirected to other neurons in the next layer (hidden layer). There are many hidden layers. Every hidden layer numerically combines all the figures it receives. The major goal is measuring whether the data inputted has various components. Each neuron then sends its number to the next layer neuron, either a hidden or output layer.
+The input layer is where the neural network acquires data in numeral values between 0 and 1. Any data can be represented as a number, whether it is words, sound, or image. Each input neuron represents a single feature.
 
-The output layer is where the final layer results get combined mathematically to solve the problems. Neural Networks work with numbers. Math is the key to Neural Networks, Artificial intelligence, and its techniques [Machine Learning and Deep Learning](http://neuralnetworksanddeeplearning.com/chap1.html).
+When the neurons have data, it is redirected to other neurons in the next layer (hidden layer). There are many hidden layers. Every hidden layer numerically combines all the figures it receives.
+
+The major goal is measuring whether the inputted data has various components. Each neuron then sends data to neurons in the output layer.
+
+The output layer predicts the outcome. Neural Networks work with numbers. Math is the key to Neural Networks, Artificial intelligence, and its techniques; [Machine Learning and Deep Learning](http://neuralnetworksanddeeplearning.com/chap1.html).
 
 ### Conclusion
 Deep Learning is an extensible and a complex field. It functions with the help of Neural Networks to mimic human behavior. DL solves complex data problems. Problems in pattern recognition, Image Recognition, speech recognition, and NLP. Applications tasks get automated. This helps to save time for people as they do not have to perform repetitive actions. Deep Learning is a promising technology. DL is being applied in healthcare, entertainment, financial sectors, etc.
-To get solutions to different problems and reduce the risk of human error to add an absolute advantage.
+To solve different problems and reduce the risk of human error to add an absolute advantage.
