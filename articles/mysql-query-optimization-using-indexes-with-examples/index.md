@@ -13,7 +13,7 @@ Imagine trying to find a specific book on a shelf in a multistoried library. It 
 
 It may not be too hard for MySQL to search row by row from a single table with a few thousands of rows for the required information. When the data grows to millions of records, it will take some considerable amount of time to search row by row for a particular record. What about when we have millions of records in several tables whereby we have to use JOINs to get the desired results? Searching row by row becomes even slower. By the use of indexes, we can speed up the queries.
 
-Data in an indexed column is stored in some order, in a separate location called index. Numeric data types are stored in numeric order, text data types are stored in alphabetical order, and date data types are in date order. This way, data search is easier and faster.
+Data in an indexed column is stored in some order, in a separate location called the index. Numeric data types are stored in numeric order, text data types are stored in alphabetical order, and date data types are in date order. This way, data search is easier and faster.
 
 ### How to choose best indexes for MySQL query optimization
 We need to know which operations use indexes so that we be able to choose the best indexes. MySQL uses indexes in the following operations:
@@ -173,7 +173,7 @@ mysql> SELECT MIN(Wage) FROM Employees;
 ~~~~
 The queries above took between 0.72 sec and 0.62 sec to execute. Let's create indexes, do a second test, and compare the time taken.
 #### Create indexes
-The queries above, the `WHERE` clause is using City, DOB, and Wage columns  to select the desired results. Therefore, we will create indexes for the three columns only.
+In the queries above, the `WHERE` clause is using City, DOB, and Wage columns  to select the desired results. Therefore, we will create indexes for the three columns only.
 ~~~~sql
 mysql> CREATE INDEX State_idx ON Employees (State);
 Query OK, 0 rows affected (7.87 sec)
