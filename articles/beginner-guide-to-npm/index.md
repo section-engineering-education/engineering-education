@@ -4,10 +4,10 @@ To use these packages, you need NPM CLI. It is a Node.js built-in command interf
 
 In this guide, we will cover the basics of NPM, see what we can achieve with it, and understand the whole concept of NPM. This guide is beginner-friendly. We will show you how to install, uninstall, and update packages, managing dependencies in package.json, and more NPM tooling that you should not take for granted.
 
-### Getting started with NPM
+### Getting Started with NPM
 NPM is entirely written on JavaScript. It is the cornerstone for modern web app development to any developer entirely using Node.js. To get started with NPM CLI, you need Node.js installed and running on your computer.
 
-### Node.js installation and setup
+### Node.js Installation and Setup
 NPM is bundled with Node.js. If you install Node.js appropriately, you automatically get NPM installed.
 -  Windows
 
@@ -38,7 +38,7 @@ $ npm -v
 6.14.6 ## installed npm version
 ```
 
-### Updating npm
+### Updating NPM
 NPM is a different package from Node.js. It is updated regularly. Once installed, you need to update to a newer version regularly. Check out the [latest version](https://www.npmjs.com/package/npm) of NPM. If you have an old version, download the Node.js installer. Rerun it. The latest version will automatically replace the older version.
 Or, use the following command to update NPM to the newest version.
 
@@ -46,7 +46,7 @@ Or, use the following command to update NPM to the newest version.
 npm install -g npm@latest
 ```
 
-### Initializing your first project with NPM
+### Initializing your First Project with NPM
 NPM triggers the initialization of a project. It prompts you the aspects of your project. These aspects will frame out your project. To initialize your first project with NPM, create a project folder, and change the directory to it. Once done, you are ready to initialize your first project with:
 
 ```bash
@@ -123,7 +123,8 @@ Is this OK? (yes)
 
 A `package.json` file is automatically generated to save aspects of your project.
 
-![Package.json File](\package-json.png)
+![Package.json File](/engineering-education/beginner-guide-to-npm/package-json.png)
+
 
 Alternatively, add a `--yes` flag to `npm init` to generate the `package.json`file with the default NPM value.
 
@@ -135,7 +136,7 @@ npm init --yes ## triggers the initialization of a project default NPM value
 
 You can change the file aspect later or rerun `npm init` to overwrite the `package.json` file with newer values.
 
-#### Breaking down the package.json metadata properties
+#### Breaking Down the Package.json Metadata Properties
 - Name - the name of your project. Has maximum 214 character all lowercase with leading period(.) or underscore(-).
 - Version - the initial/current version on your project using semantic versioning.
 - Description - a short description of what your project does. It gives a hit of what your project is about.
@@ -148,10 +149,10 @@ You can change the file aspect later or rerun `npm init` to overwrite the `packa
 - Dependencies - packages the project needs to run on production.
 - DevDependencies - package the project needs to use for development purposes such as testing libraries.
 
-### Installing packages
+### Installing Packages
 Packages installation is one of the basic commands you will continuously use to add your project packages. NPM has two ways to install a package in your system. Local and global mode.
 
-#### Installing packages locally
+#### Installing Packages Locally
 Local packages are installed in the `node_module` folder of your current working project directory. `npm install` is the standard NPM command to install a package of your choice. Alias, `npm i` can be used, where `i` replace install.
 
 Usage:
@@ -178,7 +179,7 @@ found 0 vulnerabilities
 
 This command will install lodash to the `node_module` folder. At first, our project didn’t have a `node_module` folder. The folder will be created once you install the first package.
 
-![Node_module Folder](\node-module.png)
+![Node_module Folder](/engineering-education/beginner-guide-to-npm/node-module.png)
 
 Try another package:
 
@@ -227,7 +228,7 @@ A devDependencies scaffold will be added to the package.json file.
   }
 ```
 
-#### Package.json Dependencies management
+#### Package.json Dependencies Management
 The main aim of using `package.json` is to define your application's dependencies. For instance, if you have cloned someone else project to your local computer, this project will not execute as intended. You have not installed the necessary packages to run this app. This project has a `package.json` file with a dependencies scaffold that indicates the packages the project needs. Thus, you need to go ahead and install these packages. Assuming the project has several packages, it might be tiresome to do that. NPM resolves this hassle for you. Run `npm i` (alias `i` replace install) inside the cloned project's root directory. `npm i` fetch plus install individual needed packages specified in the project `package.json` dependencies.
 
 For example:
@@ -267,7 +268,7 @@ Run the command `npm i`. The `node_module` folder will be recreated. And if you 
 
 **NOTE:** the packages under the devDependencies scaffold are not listed. As explained earlier, we don't need them to run our app. NPM will not list them as `required`.
 
-#### Installing a specific package version
+#### Installing a Specific Package Version
 Assume the lodash version installed earlier has a bug, but an older version is stable. You can append `@` to stress and specify the variant of the package to install.
 
 For example:
@@ -289,7 +290,7 @@ Lodash version 4.17.19 will be installed and updated on the package.json file.
    "lodash": "^4.17.19", ## lodash version recorded in the package.json file
 ```
 
-#### Updating a package
+#### Updating a Package
 Assuming the express bug is now fixed. you can update the package to the latest version available in the NPM registry.
 
 Check if express has an update with `npm outdate`.
@@ -315,7 +316,7 @@ found 0 vulnerabilities
 
 **NOTE:** `npm update` will update to the wanted version. It will update all outdated versions in the entire dependencies tree.
 
-#### Uninstalling a local package
+#### Uninstalling a Local Package
 Let say you installed a package, and you no longer need it, or it has compatibility issues. NPM is a package manager and will help uninstall a package with `npm uninstall <module>`. Assuming you want to uninstall the moment package from the project dependencies:
 
 Usage:
@@ -332,7 +333,7 @@ found 0 vulnerabilities
 
 Moment will be removed from the dependencies trees.
 
-#### Installing global packages
+#### Installing Global Packages
 Packages installed globally are saved on your system and not on your project's local path. A global package can be accessed and used by any project. Which means they aren't added to the `package.json` file. Global packages end up in your PATH environment variable. NPM save global packages in `{prefix}/lib/node_modules` and drop executable files in {prefix}/bin. Where `{prefix}` is `/usr/local/` or `/usr/`. To install a package globally, add a flag `--global` to command `npm install`. The flag `--global` can be an alias to `--g`.
 
 Usage:
@@ -352,7 +353,7 @@ npm install uglify-js mocha jshint --global ## installing multiple packages glob
 
 These packages are installed to `\Users\kim\.node_modules_global` path and not saved in our project dependencies.
 
-![Node_modules_global Path](\globals-path.png)
+![Node_modules_global Path](/engineering-education/beginner-guide-to-npm/globals-path.png)
 
 Let's list the packages installed globally.
 
@@ -408,7 +409,7 @@ NPM will always try to avoid the installation of a deprecated version. NPM will 
 ### Package-lock.json
 Earlier on, we saw a `package-lock.json` file created in our project.
 
-![Package-lock.json File](\packag-lock-json.png)
+![Package-lock.json File](/engineering-education/beginner-guide-to-npm/packag-lock-json.png)
 
 This file ensures that all packages version remain uniform across computers where the project is cloned. It saves information about the dependencies and package versions you use in your project.
 
@@ -440,7 +441,7 @@ I want you to go ahead and erase `node_module` directory and execute `npm instal
 
 When a package is installed, it is saved with a caret (`^`) before the version number in the dependencies scaffold. The caret tells NPM always install the highest version available for this package that matches the major version available in the project's dependencies. In our case, it will be anything below 3.0.0 (`Major`.`Minor`.`Minor`). This is called semantic versioning. But if the `package-lock.json` file is available in that project, NPM will match the version specified in the lock file.
 
-##### Package-lock.json has the following advantages:
+**Package-lock.json has the following advantages:**
 - Increased reproducibility across teams.
 - Reduced network overhead during installation.
 - It makes it easier to debug an issue in your app.
