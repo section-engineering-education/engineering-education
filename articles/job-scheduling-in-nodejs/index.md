@@ -25,14 +25,14 @@ This article goes through the basic syntax of `node-cron`. We will build a simpl
 
 Without further ado, let's dive in.
 
-#### `node-cron` Syntax
+#### node-cron syntax
 It is a package used to schedule tasks(functions or commands) in Node.js. Its name is derived from the Greek word 'Chronos' meaning time.
 
 These tasks can be scheduled to either run once or repeatedly.
 `node-cron` uses the *crontab*(cron table) syntax to represent different units of time.
 
 This is what the *crontab* syntax looks like.
-```
+```bash
  # ┌────────────── second (optional) (0-59)
  # │ ┌──────────── minute (0-59)
  # │ │ ┌────────── hour (0-23)
@@ -94,7 +94,7 @@ node index
 
 This is the expected output from the console:
 
-```
+```bash
 Server started at port 2400
 ```
 
