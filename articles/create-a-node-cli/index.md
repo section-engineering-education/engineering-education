@@ -1,6 +1,9 @@
 # Creating Command Line Interfaces using Node.js
 
-The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands. These commands are passed as input strings of text. A lot of tools used by developers have a terminal CLI or command line interface to go with the product. Using the command line is easy and direct hence why a lot of people prefer using it.
+The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands.These commands are passed as input strings of text.
+
+A lot of tools used by developers have a terminal CLI or command line interface. Using the command line is easy and direct hence why a lot of people prefer using it.
+
 Creating a CLI application is not a challenging task. This advantage has helped make them more popular.
 Some of the most popular command line interface applications are project generators like [create-react-app](https://www.npmjs.com/package/create-react-app) for generating React.js application boilerplate, [angular CLI](https://www.npmjs.com/package/@angular/cli) for creating an Angular.js project and [Vue CLI](https://www.npmjs.com/package/@vue/cli) for Vue.js applications.
 
@@ -100,9 +103,9 @@ axios({
 })
 ```
 
-Note: We are using chalk to color our logs to get a nice feel and a colorful output. We setup an empty string called url so that when the user selects quotes, we load in the quote api url and same goes for jokes.
+Note: We are using chalk to color our logs and get a colorful output. We setup an empty string called url so that when the user selects quotes, we load in the quote api url and the same goes for jokes.
 
-For now, the code won't work because we are not calling any of the functions anywhere.
+For now, the code won't work because we're not calling any of the functions..
 
 ## Understanding option/command/argument parsing
 
