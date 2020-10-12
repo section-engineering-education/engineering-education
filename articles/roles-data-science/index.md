@@ -109,7 +109,7 @@ Having considered the various responsibilities, let's look at some of the techno
    - Machine Learning Frameworks: [Tensorflow](https://www.tensorflow.org/), [PyTorch](https://pytorch.org/), [MxNet](https://mxnet.apache.org/), [Caffe](http://caffe.berkeleyvision.org/)
    - Parallel and Distributed Programming Frameworks: [CUDA](https://developer.nvidia.com/cuda-downloads), [OpenGL](https://www.opengl.org/)
 3. Data Analysts Tools:
-   - Exploratory Data Analysis:
+   - Exploratory Data Analysis Tools: [Excel](https://www.microsoft.com/en-us/microsoft-365/excel), [Matlpotlib](https://matplotlib.org/), [Seaborn(https://seaborn.pydata.org/) [H20](https://www.h2o.ai/)
    - Databases Management Systems:
       - SQL based systems: [MySql](https://www.mysql.com/), [PostgreSQL](https://www.postgresql.org/)
       - NoSQL based systems: [mongoDB](https://www.mongodb.com/), [Redis](https://redis.io/), [Cassandra](http://cassandra.apache.org/)
