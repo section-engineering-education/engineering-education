@@ -42,7 +42,7 @@ Graphs are non-linear data structures made up of two major components:
 
 - **Vertices** -- Vertices are entities in a graph. Every vertex has a value associated with it. For example, if we represent a list of cities using a graph, the vertices would represent cities.
 
-- **Edges** -- Edges represent the relationship between the vertices in the graph. Edges may or may not have a value associated with them. For example, if we represent a list of cities using a graph, the edges would represent the distance between cities.
+- **Edges** -- Edges represent the relationship between the vertices in the graph. Edges may or may not have a value associated with them. For example, if we represent a list of cities using a graph, the edges would represent the path between cities.
 
 ![Graph Diagram](/engineering-education/graph-data-structure-python-part1/graph.png)
 
