@@ -162,8 +162,7 @@ npm install <module> ##  <module> in the package to install
 npm i <module> ## alias i replaces install
 ```
 
-Substitute `<module>` with the package's name to install. For instance, to install [lodash](https://lodash.com/) (a modern JavaScript utility library delivering modularity, performance & extras.
-), run the following command:
+Substitute `<module>` with the package's name to install. For instance, to install [lodash](https://lodash.com/) (a modern JavaScript utility library delivering modularity, performance & extras), run the following command:
 
 ```bash
 npm install lodash ## install our first package (lodash)
@@ -365,7 +364,7 @@ C:\Users\kim\.node_modules_global
 `-- uglify-js@3.11.1
 ```
 
-**NOTE:** if you are using a *nix system, you need user permission to install a package globally in your system, or the installation will fail with `EACCES`. Thus, it would be best to use `sudo` to install packages globally.
+**NOTE:** if you are using a *[nix system](https://en.wikipedia.org/wiki/NixOS), you need user permission to install a package globally in your system, or the installation will fail with `EACCES`. Thus, it would be best to use `sudo` to install packages globally.
 
 Usage:
 
