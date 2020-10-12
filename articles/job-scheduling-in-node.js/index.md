@@ -1,18 +1,18 @@
- ### Introduction
+### Introduction
 When building web applications and APIs in Node.js, we sometimes come across tasks that need to be done repeatedly. This can be at a specific time everyday, month or even year depending on the task. Some of these tasks are:
 
 1. Sending periodic emails to customers.
 2. Backing up organization's data.
 3. Clearing logs from databases etc.
 
-This article goes through the basic syntax of Node-cron. We will build a simple application that sends periodic emails.
+This article goes through the basic syntax of `node-cron`. We will build a simple application that sends periodic emails.
 
 Without further ado, let's dive in.
 
-#### Node-cron Syntax
+#### `node-cron` Syntax
 It is a package used to schedule tasks(functions or commands) in Node.js. Its name is derived from the Greek word 'Chronos' meaning time.
 These tasks can be scheduled to either run once or repeatedly.
-Node-cron uses the *crontab*(cron table) syntax to represent different units of time.
+`node-cron` uses the *crontab*(cron table) syntax to represent different units of time.
 
 This is how the *crontab* syntax looks like.
 ```
@@ -26,7 +26,8 @@ This is how the *crontab* syntax looks like.
  # │ │ │ │ │ │
  # * * * * * *
 ```
-Each asterisk acts as a place holder for the specified time units. By default the schedule method runs every minute when no values are passed. Check out node-cron package at [npm](https://www.npmjs.com/package/node-cron) for more syntax details.
+Each asterisk acts as a place holder for the specified time units. By default the schedule method runs every minute when no values are passed. Check out [node-cron](https://www.npmjs.com/package/node-cron) package at npm for more syntax details.
+
 It's now time to build our application.
 
 ### Prerequisites
@@ -64,7 +65,7 @@ Next up, set the server to listen to port 2400. **Note: You can use a port numbe
 app.listen(2400, () => {console.log("Server started at port 2400")});
 ```
 
-That's all we need for our server now. To start the server type 'node <entry point file>.js' on the terminal as shown
+That's all we need for our server now. To start the server type 'node <entry point file>' on the terminal as shown
 
 ```bash
 node index
@@ -82,7 +83,7 @@ Now that we have our server up and running. Let's see how to schedule a simple t
 const cron = require('node-cron');
 ```
 
-To schedule a task, we pass in our *crontab* expression and the function we want to schedule on a schedule method. In this example, we  pass the default cron expression which will schedule the task to run every minute.
+To schedule a task, we pass in our *crontab* expression and the function we want to schedule on a schedule method. In this example, we  pass the default `cron` expression which will schedule the task to run every minute.
 
 ```Javascript
 cron.schedule('* * * * *', () => {console.log("Task is running every minute")});
