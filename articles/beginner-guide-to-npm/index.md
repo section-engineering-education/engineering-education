@@ -1,6 +1,6 @@
-The whole ecosystem of Node.js is based on tools such as NPM. NPM is a Node.js package manager. It provides you we a bunch of open source packages. This extensive ecosystem of open source libraries makes Node.js a popular technology.
+The whole ecosystem of Node.js is based on tools such as NPM. NPM is a Node.js package manager. It provides a bunch of open source packages. This extensive ecosystem of open source libraries makes Node.js a popular technology.
 
-To use these packages, you need NPM CLI. It is a Node.js built-in command interface. It allows you to install and interact with packages that you want to use in your project. Most developers understand NPM as a package installation pathway. But there is a lot this tool offer than basic package installations.
+To use these packages, you need NPM CLI. It is a Node.js built-in command interface. It allows you to install and interact with packages for your Node.js/JavaScript project. Most developers understand NPM as an installation pathway. But there is a lot this tool offer than basic package installations.
 
 In this guide, we will cover the basics of NPM, see what we can achieve with it, and understand the whole concept of NPM. This guide is beginner-friendly. We will show you how to install, uninstall, and update packages, managing dependencies in package.json, and more NPM tooling that you should not take for granted.
 
@@ -22,6 +22,7 @@ curl -sL https://deb.nodesource.com/setup_14.x
 sudo -E bash -
 sudo apt-get install -y nodejs
 ```
+-  Check out more more [NPM installation options](https://nodejs.org/en/download/package-manager/)
 
 Once Node.js installed, verify if the installation was successful. Run `node –v` on your command-line tool to get the Node.js version installed.
 
@@ -38,7 +39,7 @@ $ npm -v
 ```
 
 ### Updating npm
-NPM is a different package from Node.js. It is updated regularly. Once installed, you need to update to a newer version regularly. Check out the latest version of NPM. If you have an old version, download the Node.js installer. Rerun it. The latest version will automatically replace the older version.
+NPM is a different package from Node.js. It is updated regularly. Once installed, you need to update to a newer version regularly. Check out the [latest version](https://www.npmjs.com/package/npm) of NPM. If you have an old version, download the Node.js installer. Rerun it. The latest version will automatically replace the older version.
 Or, use the following command to update NPM to the newest version.
 
 ```bash
@@ -68,7 +69,7 @@ save it as a dependency in the package.json file.
 Press ^C at any time to quit.
 ```
 
-Hit enter to roll out a prompt that will ask you the project aspect in the following order:
+Hit enter to roll out a prompt that will ask the project aspect in the following order:
 
 ```bash
 package name: (myapp)
@@ -135,7 +136,7 @@ npm init --yes ## triggers the initialization of a project default NPM value
 You can change the file aspect later or rerun `npm init` to overwrite the `package.json` file with newer values.
 
 #### Breaking down the package.json metadata properties
-- Name - the name of your project. Has a maximum character of all lowercase with loading period or underscore.
+- Name - the name of your project. Has maximum 214 character all lowercase with leading period(.) or underscore(-).
 - Version - the initial/current version on your project using semantic versioning.
 - Description - a short description of what your project does. It gives a hit of what your project is about.
 - Main - the project main/entry file.
@@ -148,10 +149,10 @@ You can change the file aspect later or rerun `npm init` to overwrite the `packa
 - DevDependencies - package the project needs to use for development purposes such as testing libraries.
 
 ### Installing packages
-Packages installation is one of the basic commands that you will continuously use to add your project packages. NPM has two ways to install a package in your system. Local and global mode.
+Packages installation is one of the basic commands you will continuously use to add your project packages. NPM has two ways to install a package in your system. Local and global mode.
 
 #### Installing packages locally
-Local packages are installed in the `node_module` folder on your current working project directory. `npm install` is the standard NPM command to install a package of your choice. Alias, `npm i` can be used, where `i` replace install.
+Local packages are installed in the `node_module` folder of your current working project directory. `npm install` is the standard NPM command to install a package of your choice. Alias, `npm i` can be used, where `i` replace install.
 
 Usage:
 
@@ -160,7 +161,8 @@ npm install <module> ##  <module> in the package to install
 npm i <module> ## alias i replaces install
 ```
 
-Substitute `<module>` with the package's name to install. For instance, to install lodash, run the following command:
+Substitute `<module>` with the package's name to install. For instance, to install [lodash](https://lodash.com/) (a modern JavaScript utility library delivering modularity, performance & extras.
+), run the following command:
 
 ```bash
 npm install lodash ## install our first package (lodash)
@@ -193,7 +195,7 @@ Every NPM package will be installed in the `node_module` folder.  `npm install <
   }
   ```
 
-The packages we installed are saved as an entry in the dependencies field. The dependencies field save any package required by your app to run. It is possible to save a package as devDependencies. A flag `--save-dev` is added to the `npm install  <module>`. This will save the package as devDependencies. DevDependencies are the packages that are not required by your app to run. These packages are used for development purposes such as testing, local server speeding for development purposes, transpiring code, etc.
+The packages we installed are saved as an entry in the dependencies field. The dependencies field save any package required by your app to run. It is possible to save a package as devDependencies. A flag `--save-dev` is added to the `npm install  <module>`. This will save the package as devDependencies. DevDependencies are the packages that are not required by the app to run. These packages are used for development purposes such as testing, local server speeding for development purposes, transpiring code, etc.
 
 Usage:
 
@@ -259,7 +261,7 @@ npm ERR! missing: moment@2.29.1, required by myapp@2.1.0
 npm ERR! missing: mongoose@5.10.9, required by myapp@2.1.0
 ```
 
-This indicates that we don't have these packages installed. Yet the project needs them. The packages are saved in the dependencies scaffold, and we can install any time you need them.
+This indicates that we don't have these packages installed. Yet the project needs them. The packages are saved in the dependencies scaffold, and can be installed any time you need them.
 
 Run the command `npm i`. The `node_module` folder will be recreated. And if you rerun `npm list --depth=0`, your project packages will be resolved. It becomes more comfortable to share your code without restructuring project dependencies.
 
@@ -311,7 +313,7 @@ updated 1 package and audited 152 packages in 14.805s
 found 0 vulnerabilities
 ```
 
-**NOTE:** `npm update` will update to the wanted version. It will update all outdated versions in the entre dependencies tree.
+**NOTE:** `npm update` will update to the wanted version. It will update all outdated versions in the entire dependencies tree.
 
 #### Uninstalling a local package
 Let say you installed a package, and you no longer need it, or it has compatibility issues. NPM is a package manager and will help uninstall a package with `npm uninstall <module>`. Assuming you want to uninstall the moment package from the project dependencies:
@@ -340,7 +342,7 @@ npm install --global <module>
 npm i --g <module>
 ```
 
-For example, Let's install the jshint, uglify, and mocha packages globally.
+For example, let's install the jshint, uglify, and mocha packages globally.
 
 Usage:
 
@@ -352,7 +354,7 @@ These packages are installed to `\Users\kim\.node_modules_global` path and not s
 
 ![Node_modules_global Path](\globals-path.png)
 
-let's list the packages installed globally.
+Let's list the packages installed globally.
 
 ```bash
 npm list -g --depth=0
@@ -362,7 +364,7 @@ C:\Users\kim\.node_modules_global
 `-- uglify-js@3.11.1
 ```
 
-**NOTE:** if you are using a *nix system, you need user permission to install a package globally in your system, or the installation will fail with `EACCES`. Thus it would be best to use `sudo` to install packages globally.
+**NOTE:** if you are using a *nix system, you need user permission to install a package globally in your system, or the installation will fail with `EACCES`. Thus, it would be best to use `sudo` to install packages globally.
 
 Usage:
 
@@ -370,7 +372,7 @@ Usage:
 sudo npm install -g jshint ## sudo to override permission error for superuser
 ```
 
-Just like local installation mode, you can uninstall, update, or install a specif version globally.
+Just like local installation mode, you can uninstall, update, or install a specific version globally.
 
 Usage:
 
@@ -380,9 +382,10 @@ npm update --global ## update global packages
 npm install <module>@1.0.0 --global ## install a specific package version globally
 ```
 
-**NOTE:** `npm install....` and `npm update` will try to avoid installing a deprecated package version. NPM will try to find a matching version is possible.
+**NOTE:** `npm install...` and `npm update` will try to avoid installing a deprecated package version. NPM will try to find a matching version is possible.
 
 For example:
+
 If package `a` with the following module versions.
 
 ```bash
@@ -467,13 +470,16 @@ NPM will list down the vulnerabilities available in the version you have install
 
 ```bash
 found 2 vulnerabilities (1 low, 1 moderate)
+run `npm audit fix` to fix them, or `npm audit` for details
 ```
+
+Run
 
 ```bash
 npm audit ## check package vulnerabilities
 ```
 
-analyze the entire dependencies tress. It will output a security report and recommend what to do.
+to analyze the entire dependencies tress. It will output a security report and recommend what to do.
 
 ```bash
 $ npm audit
@@ -511,11 +517,9 @@ fixed 2 of 2 vulnerabilities in 152 scanned packages
 ```
 
 ### Cache
-When you install a package, NPM saves a copy of that package on your local computer. A cache is a memory buffer that stores data so that future requests for that data can be served faster. When installing a package you have used before, NPM will not hit the network. The package is usually installed from your local NPM cache. With time, you may end up installing many packages. The NPM cache directory will be cluttered with these old packages. Having a package cached doesn't mean you are using it. It would be useful to clean the NPM cache regularly to avoid junks on your laptop.
+When you install a package, NPM saves a copy of that package on your local computer. A cache is a memory buffer that stores data so that future requests for that data can be served faster. When installing a package you have used before, NPM will not hit the network. The package is usually installed from your local NPM cache. With time, you may end up installing many packages. The NPM cache directory will be cluttered with old packages. It would be useful to clean the NPM cache regularly to avoid junks on your computer.
 
 The following command will purge the cache in your project workflow.
-
-NPM
 
 ```bash
 npm cache clean --force
