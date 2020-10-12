@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/understanding-node-js-async-control-flows/
-title: Understanding Node.js Asynchronous Control Flows
+title: Understanding Asynchronous Control Flows in Node.js Using Async.js
 description: This article goes through Async flow functions using Async.js to control the flow of task executions. Including serial, parallel, waterfall, & queues.
 author: joseph-chege
-date: 2020-10-11T00:00:00-10:00
+date: 2020-10-12T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,7 @@ Asynchronous control flows permit other processing to continue even before the f
 <!--more-->
 This makes it a more versatile and robust solution for [event looping](/engineering-education/event-loop-explained/) on long-running code. Utility modules like [Async.js](https://github.com/caolan/async) provide functions for working with asynchronous flow control.
 
-To understand how asynchronous programming works, we can use the following example. Suppose you are making scrambles eggs for breakfast. There are several actions/steps to follow.
+To understand how asynchronous programming works, we can use the following example. Suppose you are making scrambled eggs for breakfast. There are several actions/steps to follow.
 
 Below is a sample recipe.
 
@@ -38,13 +38,13 @@ JavaScript is threaded, meaning everything is executed in the order your code is
 
 If we wrote the scrambled eggs steps in JavaScript, this is how it would look.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/someScrabbledEggs?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/someScrabbledEggs?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><br><br>
 
 JavaScript served us the eggs even before heating the pan and pouring the mixture to cook.
 
 There is nothing wrong with JavaScript.
 
-It did what we instructed it to do in a ‘`synchronous process`. It will execute the timeout functions but won't wait to finish because we didn't tell it to.
+It did what we instructed it to do in a `synchronous process`. It will execute the timeout functions but won't wait to finish because we didn't tell it to.
 
 Imagine this coded concept being implemented in a bank system. This could lead to a case where a user may withdraw some money even before he/she deposits it. This is where `control flow` comes into play.
 
@@ -68,7 +68,7 @@ What happens is that each task is pushed to an asynchronous event loop without c
 
 **Syntax:** `async.parallel(tasks, callback)`
 
-A collection of functions will be the first argument to the `async.parallel`. Each function is passed to a callback. The callback will be called on tasks completion.
+A collection of functions will be the first argument to the `async.parallel`. Each function is passed to a callback. The callback will be called upon a task's completion.
 
 The `async.parallel` second argument will return the results of all the functions passed as `tasks`. The final callback returns an array if the asynchronous functions passed on the first argument are arrays.
 
@@ -112,16 +112,16 @@ A queue object is completed based on an asynchronous operation and passed to a w
 
 These [queue object properties](https://caolan.github.io/async/v3/docs.html#QueueObject) include:
 
-- Push - it is an async function that adds a task to a queue to be processed within the workers. Once the workers finish processing these tasks, they are called within a callback. The callback can take a single task or an array of tasks. A push is invoked with a `queue.push(task, [callback])`.
-- Drain - it specifies a callback to be called after the last task item of the queue has finished and passed to a worker. Invoked with a `q.drain()`
-- Unshift - it adds a task to the beginning of a queue. The unshift is called with the `queue.unshift (task, [callback])`.
+- **Push** - it is an async function that adds a task to a queue to be processed within the workers. Once the workers finish processing these tasks, they are called within a callback. The callback can take a single task or an array of tasks. A push is invoked with a `queue.push(task, [callback])`.
+- **Drain** - it specifies a callback to be called after the last task item of the queue has finished and passed to a worker. Invoked with a `q.drain()`
+- **Unshift** - it adds a task to the beginning of a queue. The unshift is called with the `queue.unshift (task, [callback])`.
 
 Other queue objects that can be included in the async queue include:
 
-- Pause - suspends the queue from processing tasks until `resume()` is invoked. Pause is called with `queue.pause ()`.
-- Paused - takes a Boolean value that determines if a queue is in a paused state.
-- Resume - resumes a paused queue task when the queue process was called. Called with `queue.resume()`.
-- Kill - it empties the remaining tasks in the queue and forces the queue process to run idle. When this function is called, no more tasks will be pushed to the queue. Invoked with `queue.kill()`.
+- **Pause** - suspends the queue from processing tasks until `resume()` is invoked. Pause is called with `queue.pause ()`.
+- **Paused** - takes a Boolean value that determines if a queue is in a paused state.
+- **Resume** - resumes a paused queue task when the queue process was called. Called with `queue.resume()`.
+- **Kill** - it empties the remaining tasks in the queue and forces the queue process to run idle. When this function is called, no more tasks will be pushed to the queue. Invoked with `queue.kill()`.
 
 <iframe height="400px" width="100%" src="https://repl.it/@kimkimani/async-queue?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
