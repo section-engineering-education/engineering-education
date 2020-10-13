@@ -1,10 +1,24 @@
-# Creating Command Line Interfaces using Node.js
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/create-a-node-cli/
+title: Creating Command Line Interfaces using Node.js
+description:
+author:
+date: 2020-10-13T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands.These commands are passed as input strings of text.
-
+  - url: /engineering-education/create-a-node-cli/hero.jpg
+    alt:  example image
+---
+The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands. These commands are passed as input strings of text.
+<!--more-->
 A lot of tools used by developers have a terminal CLI or command line interface. Using the command line is easy and direct hence why a lot of people prefer using it.
 
-Creating a CLI application is not a challenging task. This advantage has helped make them more popular. 
+Creating a CLI application is not a challenging task. This advantage has helped make them more popular.
 
 Some of the most popular command line interface applications are project generators like [create-react-app](https://www.npmjs.com/package/create-react-app) for generating a React.js boilerplate application, [angular CLI](https://www.npmjs.com/package/@angular/cli) for creating an Angular.js project and [Vue CLI](https://www.npmjs.com/package/@vue/cli) for Vue.js applications.
 
@@ -45,7 +59,7 @@ NOTE: passing the `-y` flag to npm init, will instantiate a new npm project and 
 
 This will generate our package.json file.
 
-Next up, let's install all the packages we will make use of in the project. 
+Next up, let's install all the packages we will make use of in the project.
 
 - [axios](https://www.npmjs.com/package/axios) for making our network requests.
 - [chalk](https://www.npmjs.com/package/chalk) for making our user interface better looking and stylish.
@@ -258,7 +272,7 @@ We also added the help command to provide a default `--help/help` flag to give o
 
 ### Conclusion
 
-In this article, we went through how to setup a CLI script using Node.js. We also went through what the shebang is and why it is important in CLI applications. 
+In this article, we went through how to setup a CLI script using Node.js. We also went through what the shebang is and why it is important in CLI applications.
 
 Finally, we learned how to pass arguments and commands to the application. As a bonus, we used chalk to make our output looks nice and colorful.
 
