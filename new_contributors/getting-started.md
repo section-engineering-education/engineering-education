@@ -33,4 +33,4 @@ Your article can range anywhere from:
 
 Those listed above are simply a few possible topic ideas to give you an idea.
 
-We hope this helps - and we're always happy to help if you have any questions on the process or the program in general ping us in the Slack EngEd channel.
+We hope this helps get you started off on the right foot - and we're always happy to help if you have any questions on the process or the program in general ping us in the Slack EngEd channel.
