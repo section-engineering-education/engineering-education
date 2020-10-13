@@ -95,9 +95,21 @@ That's Q-learning in a nutshell.
 #### Policy Gradients (PG)
 Alongside Q-learning, the Policy Gradient method is another type of reinforcement learning technique.
 
-It relies on optimizing policies in the long term cumulative reward.
+Policy Gradients have a separate objective from Q-learning. 
 
-They estimate their values on an infinite number of states and actions. This makes them suitable for handling high dimensional continuous action spaces.
+* Q-learning predicts q-values rather than predict what actions to take. Policy Gradients deal directly with choosing actions. They learn policies directly from data thus no need of computing values for each state. The policy network returns a matrix of probabilities for taking each possible action.
+
+Mathematically, this policy is represented by π (s|a).
+
+* Q-learning does not work with large or continuous action spaces. We would need an infinitely large Q-table to keep track of all the Q-values. Thus are only suitable for estimating values on a finite number of states and actions space. Policy Gradients work well on large and continuous action spaces. This makes them ideal for handling high dimensional continuous action spaces where Q-learning cannot.
+
+This technique works by:
+1. A random policy (π) is first selected.
+2. Some actions are then sampled from the environment.
+3. Probability is increased for taking actions whose rewards are better.
+4. Probability is reduced for taking actions whose rewards are worse.
+
+It's as simple as that.
 
 They are of two types:
 
@@ -114,43 +126,63 @@ Due to these differences, SPG may need more samples to compute in cases of high 
 
 *[Image Source: Berkeley](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/f17docs/lecture_5_actor_critic_pdf)*
 
-Actor-Critics (AC) method consists of two models: An Actor and A Critic.
+Actor-Critics (AC) method consists of two separate models as shown above: 
+1. An Actor
+2. A Critic
 
-The actor learns the policy function while the critic learns the value function. They tends to learn both the policy and the value function.  
+**Actor**
+The actor model takes in the current environment state, determines and outputs the desired action.
 
-The actor's role is to parameterize the selection of actions.
-The critic's role is to criticize whether the actions performed by the actor are good or bad. The actor then updates its parameters based on the critic’s appraisal.
+**Critic**
+The critic takes plays the evaluation role. It takes in the environment state and the action (from the actor model) returning a score that tells us how good the action is for the state. This returned score is the Q-value.  
 
-AC models tend to need much less training time compared to the PG methods.
+This is the idea behind Actor Critics models.
 
-We can typically see some of AC models being used in the fields of both biology and psychology.
+Let's consider an example that demonstrates the actor critic network.
+
+Let's take the examples of a child playing in the backyard with the parent monitoring the child. The child is playing, running around exploring all options in this environment. The child can play in the durt, ride the swing, play with water etc. The role the parent plays is to monitor the child and either criticize or reward it's actions. Always taking the environment into account. 
+
+AC are advantageous compared to PG methods. They tend to need much less training time compared to PG methods.
+
+Some typical use cases of AC models are in the fields of biology and psychology.
 
 ### Applications of Reinforcement Learning
 #### Games
-The use of AI in building computer games has been increasing over the past couple of years.
-This is because games (by their very nature) provide varying challenges. This allows RL algorithms to showcase their weaknesses and/or strengths by playing games.
+The use of AI in computer games has been on the increase over the past couple of years.
 
-In 2016, Deepmind Technologies built [AlphaGo](/https://deepmind.com/research/case-studies/alphago-the-story-so-far/). A RL controlled computer program that plays the board game, Go (an ancient Chinese board game). The computer program was able to beat Lee Sedol, a Korean Go world champion 4-1 in a 5 match game.
+In 2016, Deepmind Technologies built [AlphaGo](/https://deepmind.com/research/case-studies/alphago-the-story-so-far/). An RL controlled computer program that plays the board game, Go (an ancient Chinese board game). 
+AlphaGo contains two networks:
+1. A Policy Network which is trained on high level games to immitate the best players. 
+2. A Value network which evaluates the current board position and establishes the probability of winning in that position.
+
+The computer program was able to beat Lee Sedol, a human professional Go champion 4-1 in a 5 match game.
 
 Later versions of AlphaGo such as AlphaGo Zero and MuZero became even more powerful. They were completely self-taught using RL. This was significant as they were learning to play games without being taught the game rules.
 
+For a deeper understanding of the AlphaGo story, watch its [full documentary](/https://www.youtube.com/watch?v=WXuK6gekU1Y&t=788s/)
 
 #### Robotics
-RL robots control Google’s data center to manage part of its [cooling infrastructure.](/https://deepmind.com/blog/article/safety-first-ai-autonomous-data-centre-cooling-and-industrial-control/)
+In industries, RL-controlled robots are used to perform various tasks. 
 
-The AI robots exploits a similar approach to that used in AlphaGo, AlphaGo Zero and MuZero. This is by learning through trial and error.
+For example, at Google's DeepMind, they developed an AI powered recommendation system. This system was meant to improve the energy efficiency of their data centre.
+An AI robots was given control over their data center in order to manage part of its [cooling infrastructure](/https://deepmind.com/blog/article/safety-first-ai-autonomous-data-centre-cooling-and-industrial-control/).
 
-The algorithm worked by:
-1. Feeding it information gathered from the cooling data centers.
-2. Leaving it to determine which cooling configurations would reduce energy consumption.
+The AI robots exploits the RL technique, a similar approach to that used in AlphaGo, AlphaGo Zero and MuZero. This is by learning through trial and error.
 
-Google’s data center energy spending reduced by up to 40%.
+The algorithm works by:
+1. Taking snapshots of the data centre cooling system every five minutes.
+2. Feeding the data collected into a neural network that predicts the future energy efficiency.
+3. Actions that minimize energy are selected by the AI robot.
+4. The optimal actions selected are implemented in the data centre.
+
+The use of AI robots in their data center led to a decrease in energy spending by up to 40%.
 
 #### Trading and Finance
 RL agents are used to predict stock prices as well as predicting future sales. They can decide on whether to buy, hold or sell a particular stock.
 
-A great example would be the IBM’s financial trading platform which uses a RL agent for trading. It computes a reward based on the profit or losses made in every financial transaction.
+Horizon's [Active AI Global ETF](/https://www.horizonsetfs.com/etf/mind/) & EquBot's [AI based ETF](/https://equbot.com/) are examples of RL softwares used in trade and finance.
 
+Another great example is the IBM’s [financial trading platform](/https://www.ibm.com/blogs/research/2020/07/ibm-research-at-icml-2020/) which uses a RL agent for trading. It computes a reward based on the profit or losses made in every financial transaction.
 
 ### Final Thoughts
 Reinforcement Learning is one of the most important subfield of Artificial Intelligence. Hopefully, this article has made you curious to dive deep into Reinforcement Learning.
