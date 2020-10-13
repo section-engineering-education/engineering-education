@@ -121,7 +121,21 @@ console.log(today);
 This will display the default current date with the date-fns default format. `format` displays the date token to a more human-readable and looks exactly the way you want it (return the date parsed from string using the given format string).
 
 ### Displaying Formatted Date
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-format?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+```js
+const {format} = require('date-fns');
+const date = new Date();
+console.log(date);
+console.log(`${format(date, 'dd.MM.yyyy')}`);
+console.log(`${format(date, 'yyyy-MM-dd').toString()}`);
+console.log(`today is ${format(date, 'EEEE, MMMM yyyy')}`);
+console.log(`today is  ${format(date, 'EEEE,MMMM do, yyyy hh:mm a')}`);
+console.log(`Today's date: ${format(date, 'MMMM, yyyy')}`);
+console.log(`Today's date: ${format(date, 'MMMM.do.')}`);
+console.log(`Today's date: ${format(date, 'EEEE do HH:mm ')}`);
+console.log(`${format(date, 'EEEE,MMMM do, yyyy ppppp')}`);
+console.log(`${format(date, 'do  MMMM yyyy OOOO')}`);
+```
 
 Alternatively, you can parse a default date value such as:
 
@@ -165,7 +179,23 @@ Let's perform simple date [addition](https://date-fns.org/v2.16.1/docs/add). To 
 
 Example:
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-add?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+//import the reqqiureds  funtions
+const {addMinutes,addHours,addDays,addMonths,addYears,format} = require('date-fns');
+const date = new Date('2020.09.29 10:12:00');
+//add days
+const sum1 = addDays(date, 4);
+//add months
+const sum2 = addMonths(date, 3);
+//add years
+const sum3 = addYears(date, 3);
+//add minutes
+const sum4 = addMinutes(date, 40);
+console.log(format(sum1, 'dd MMMM yyyy HH:mm'));
+console.log(format(sum2, 'dd MMMM yyyy HH:mm'));
+console.log(format(sum3, 'dd MMMM yyyy HH:mm'));
+console.log(format(sum4, 'dd MMMM yyyy HH:mm'));
+```
 
 **Note:** Date units added/subtracted with positive decimals will be rounded off with `math.floor` and decimals less than zero will be rounded using `math.cell`.
 
@@ -215,7 +245,25 @@ console.log(formattedDate);
 ```
 **Multiple locales example:**
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-ocae?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const newYears = new Date();
+const format = require('date-fns/format');
+const frenchLocale = require('date-fns/locale/fr');
+const russionaLocale = require('date-fns/locale/ca');
+const spanishLocale = require('date-fns/locale/es');
+const USLocale = require('date-fns/locale/en-US');
+const eo = require('date-fns/locale/eo');
+console.log( format(newYears, 'EEEE,MMMM do, yyyy hh:mm a', {
+    locale: frenchLocale}));
+console.log( format(newYears, 'EEEE,MMMM do, yyyy hh:mm a', {
+    locale: eo}));
+console.log( format(newYears, 'EEEE,MMMM do, yyyy hh:mm a', {
+    locale: russionaLocale}));
+console.log( format(newYears, 'EEEE,MMMM do, yyyy hh:mm a', {
+    locale: spanishLocale}));
+console.log( format(newYears, 'EEEE,MMMM do, yyyy hh:mm a', {
+    locale: USLocale}));
+```
 
 Check official doc to have a look at [supported locale/supported-languages](https://date-fns.org/v2.16.1/docs/I18n-Contribution-Guide)
 
@@ -318,7 +366,15 @@ Checks if the given date is [in the future](https://date-fns.org/v2.16.1/docs/is
 
 **Note:** if the date we are comparing is the time right now, `isFuture` will return this as false. In such a case, date-fns will interpret the 'now' date as the present time and not a future time.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-isfuture?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const { isFuture, addHours, subHours } = require("date-fns");
+const date1 = new Date();
+const date2 = addHours(new Date(), 5);
+const date3 = subHours(new Date(), 5);
+console.log(isFuture(date1));
+console.log(isFuture(date2));
+console.log(isFuture(date3));
+```
 
 #### ASC and Desc
 Compares a collection of dates and sort them in [ascending](https://date-fns.org/v2.16.1/docs/compareAsc) or [descending](https://date-fns.org/v2.16.1/docs/compareDesc) order.
@@ -353,7 +409,31 @@ console.log(isWeekend(date2));
 #### isDate
 Checks if a given string [value is an instance of a date](https://date-fns.org/v2.16.1/docs/isDate) and returns true is the date provided is actually a date value.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-isdate?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const { isDate} = require("date-fns");
+// Will return true as the string provided is a date instance
+const date1 = new Date("2020,09,19");
+// Will return true as the string provided is a date instance
+const date2 = new Date(2020,09,18);
+// Will return true as NaN represent an invalid date to return true
+const date3 = new Date(NaN);
+// Will return false as the string provided is not a date instance new Date() is not included
+const date4 = "2020,09,18";
+// Will return true as the string 2020 is a date instance
+const date5 = new Date("2020");
+// Will return true as new Date() will return the current date which is a date instance
+const date6 = new Date();
+// Will return false as the string "not a date" is a date instance
+const date7 = "not a date";
+
+console.log(isDate(date1));
+console.log(isDate(date2));
+console.log(isDate(date3));
+console.log(isDate(date4));
+console.log(isDate(date5));
+console.log(isDate(date6));
+console.log(isDate(date7));
+```
 
 Check out more comparison functions and helpers such as [isPast](https://date-fns.org/v2.16.1/docs/isPast), [isEqual](https://date-fns.org/v2.16.1/docs/isEqual), [isExits](https://date-fns.org/v2.16.1/docs/isExists), [isMatch](https://date-fns.org/v2.16.1/docs/isMatch), and many more.
 
@@ -380,7 +460,17 @@ To avoid such instances parse the date before checking the `isValid()`.
 
 Lets run through another example:
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/date-fns-isvalid?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const {isValid,parse} = require("date-fns");
+
+const validate1 = parse('29.02.2020', 'dd.MM.yyyy', new Date());
+const validate2 = parse('30.02.2020', 'dd.MM.yyyy', new Date());
+
+console.log(validate1);
+console.log(validate2);
+console.log(isValid(validate1));
+console.log(isValid(validate2));
+```
 
 ### Differences Between Dates
 Date-fns provides several functions to manipulate and calculate the differences that exists between two given dates. These functions represent the difference between calculations for several units of time such as:
