@@ -1,10 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/feature-engineering-in-machine-learning/
+title: Feature Engineering in Machine Learning
+description: This article will go over  development.
+author: collins-ayuya
+date: 2020-10-13T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-# Feature Engineering in Machine Learning: An Overview
-
-![hero](/engineering-education/feature-engineering-in-machine-learning/hero.jpg)
-
-[Image source](https://images.unsplash.com/photo-1581093806997-124204d9fa9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)
-
+  - url: /engineering-education/feature-engineering-in-machine-learning/hero.jpg
+    alt: feature engineering machine learning image
+---
+We are increasingly dependent on machine learning in our daily lives. An example is in the every-day products we use. However, these algorithms are created by human beings. As a result, algorithms may contain the same biases humans possess. An algorithm displaying for example, sexist, or racist bias has the potential to cause more harm than good.
+<!--more-->
 The features used in a machine learning model are often the difference between model success, mediocrity and failure. Therefore, it is not enough building models, but also making sure they offer the best possible performance. The process of feature engineering serves this purpose.
 
 This article is meant to be most useful to anyone new to the machine learning space. It intends to provide a light overview of feature engineering concepts in machine learning. The contents include:
