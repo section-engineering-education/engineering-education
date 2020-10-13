@@ -226,6 +226,6 @@ The repl.it link is included so that you can see the output. Observe the decreas
 ![cost vs iterations](loss_vs_iterations.jpg)
 ### Conclusion
 
-In this article, we have coded a linear classifier from scratch. I would like to congratulate you on making it this far. As a recap, I have attached the flow_chart of how the data is fit to linear_model. I hope this helps conclude this article on a good note.
+In this article, we have coded a linear classifier from scratch. I would like to congratulate you on making it this far. As a recap, I have attached the flow chart of how the data is fit to linear model. I hope this helps conclude this article on a good note.
 
 ![fitting a linear classifier](flow_chart.jpg)
