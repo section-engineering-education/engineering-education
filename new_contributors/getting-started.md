@@ -15,7 +15,7 @@ To submit your article you will need to fork over the public repository. You can
 
 After your article is submit it will enter our queue to be reviewed by our Peer Review or Tech Review Committee.
 
-We recently implemented a tiered payout structure that is [outlined here](https://github.com/section-io/engineering-education/blob/testing-folder-structure/new_contributors/CONTRIBUTING.md#review-approval--payment-processes).
+We recently implemented a tiered payout structure that is [outlined here](/engineering-education/blob/testing-folder-structure/new_contributors/CONTRIBUTING.md#review-approval--payment-processes).
 
 *Note: Articles requiring very few edits will be given priority in the review queue, and we reserve the right to refuse any articles that do not adhere to quality standards. PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).*
 
