@@ -103,7 +103,7 @@ axios({
 })
 ```
 
-Note: We are using chalk to color our logs and get a colorful output. We setup an empty string called url so that when the user selects quotes, we load in the quote api url and the same goes for jokes.
+Note: We are using chalk to color our logs and get a colorful output. We setup an empty string called url so that when the user selects quotes, we load in the quote API url and the same goes for jokes.
 
 For now, the code won't work because we're not calling any of the functions..
 
@@ -111,11 +111,12 @@ For now, the code won't work because we're not calling any of the functions..
 
 A good example of option parsing is when we passed _-y_ to our _npm init_ command to set everything to default.
 The commands used in CLI applications often come with other options or flags. They extend the functionality of the application like in the example above.
+
 A common application of options is when asking for user input which determines the output of the application.
 
 Node.js comes with an in-built app interface for the process module called **process.argv**. It takes in the arguments passed, invokes a method and returns an array with all the arguments passed into the main process.
 
-Using _process.arg_ might be tedious and not beginner friendly. So we will use [yargs](https://www.npmjs.com/package/yargs) to help us process the options.
+Using _process.arg_ might be tedious and not beginner friendly so we will use [yargs](https://www.npmjs.com/package/yargs) to help us process the options.
 
 Yargs offers a lot of options that make it very powerful and widely used. Some of them include `.command()`, `.help()`, `.example()`, `.usage()` and others. To read more on the different capabilities of the options see the yargs [docs](https://github.com/yargs/yargs).
 
@@ -256,5 +257,5 @@ We added the help command to provide a default `--help/help` flag to give applic
 
 ### Conclusion
 
-In this article we went through how to setup a CLI script using Node.js. We also went through what the shebang is and why it is important in CLI applications. Finally, we learned how to pass arguments and commands to the application. As a bonus, we used chalk to make out outputs looks nice and presentable.
+In this article, we went through how to setup a CLI script using Node.js. We also went through what the shebang is and why it is important in CLI applications. Finally, we learned how to pass arguments and commands to the application. As a bonus, we used chalk to make out outputs looks nice and presentable.
 You can get the full code [here](https://github.com/katungi/Node-CLI-Section)
