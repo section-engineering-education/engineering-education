@@ -6,7 +6,7 @@ url: /engineering-education/understanding-node-js-async-control-flows/
 title: Understanding Asynchronous Control Flows in Node.js Using Async.js
 description: This article goes through Async flow functions using Async.js to control the flow of task executions. Including serial, parallel, waterfall, & queues.
 author: joseph-chege
-date: 2020-10-13T00:00:00-10:00
+date: 2020-10-13T00:00:00-13:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
