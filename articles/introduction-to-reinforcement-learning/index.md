@@ -95,13 +95,13 @@ That's Q-learning in a nutshell.
 #### Policy Gradients (PG)
 Alongside Q-learning, the Policy Gradient method is another type of reinforcement learning technique.
 
-Policy Gradients have a separate objective from Q-learning. 
+Policy Gradients have a separate goal from Q-learning. 
 
 * Q-learning predicts q-values rather than predict what actions to take. Policy Gradients deal directly with choosing actions. They learn policies directly from data thus no need of computing values for each state. The policy network returns a matrix of probabilities for taking each possible action.
 
 Mathematically, this policy is represented by π (s|a).
 
-* Q-learning does not work with large or continuous action spaces. We would need an infinitely large Q-table to keep track of all the Q-values. Thus are only suitable for estimating values on a finite number of states and actions space. Policy Gradients work well on large and continuous action spaces. This makes them ideal for handling high dimensional continuous action spaces where Q-learning cannot.
+* Q-learning does not work with large or continuous action spaces. We would need an infinitely large Q-table to keep track of all the Q-values. Thus are only suitable for estimating values on a finite number of states and actions space. Policy Gradients work well on large and continuous action spaces. This makes them ideal for handling high dimensional continuous action spaces.
 
 This technique works by:
 1. A random policy (π) is first selected.
@@ -140,7 +140,7 @@ This is the idea behind Actor Critics models.
 
 Let's consider an example that demonstrates the actor critic network.
 
-Let's take the examples of a child playing in the backyard with the parent monitoring the child. The child is playing, running around exploring all options in this environment. The child can play in the durt, ride the swing, play with water etc. The role the parent plays is to monitor the child and either criticize or reward it's actions. Always taking the environment into account. 
+Let's take the examples of a child playing in the backyard with the parent monitoring the child. The child is playing, running around exploring all options in this environment. The child can play in the durt, ride the swing, play with water etc. The role the parent plays is to watch the child and either criticize or reward it's actions. Always taking the environment into account. 
 
 AC are advantageous compared to PG methods. They tend to need much less training time compared to PG methods.
 
