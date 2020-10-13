@@ -4,7 +4,8 @@ The command line or the terminal is a powerful tool used by a lot of developers.
 
 A lot of tools used by developers have a terminal CLI or command line interface. Using the command line is easy and direct hence why a lot of people prefer using it.
 
-Creating a CLI application is not a challenging task. This advantage has helped make them more popular.
+Creating a CLI application is not a challenging task. This advantage has helped make them more popular. 
+
 Some of the most popular command line interface applications are project generators like [create-react-app](https://www.npmjs.com/package/create-react-app) for generating React.js application boilerplate, [angular CLI](https://www.npmjs.com/package/@angular/cli) for creating an Angular.js project and [Vue CLI](https://www.npmjs.com/package/@vue/cli) for Vue.js applications.
 
 The above examples are a bit more complex in functionality and can be confusing. Yet, the basics are still the same. They all have Node.js as a common factor.
@@ -14,6 +15,7 @@ Getting started with CLI applications using Node.js couldn't be easier. To tackl
 ## The Shebang
 
 First things first, the starting point of any CLI application point is a line called the Shebang.
+
 In Node.js the shebang looks something like this:
 
 ```javascript
@@ -27,8 +29,7 @@ The shebang tells the operating system what type of code is in the script. It al
 #!/usr/bin/env py
 ```
 
-The shebang, is only applicable in Unix/Linux operating systems.
-It should always be the first line of the entry file.
+The shebang, is only applicable in Unix/Linux operating systems. It should always be the first line of the entry file.
 
 ### Project Setup
 
@@ -44,8 +45,7 @@ NOTE: passing the `-y` flag to npm init, will instantiate a new npm project and 
 
 This will generate our package.json file.
 
-Next up let's install all the packages we will make use of in the project.
-We will make use of the following:
+Next up, let's install all the packages we will make use of in the project. 
 
 - [axios](https://www.npmjs.com/package/axios) for making our network requests.
 - [chalk](https://www.npmjs.com/package/chalk) for making our user interface better looking and stylish.
@@ -103,7 +103,7 @@ axios({
 })
 ```
 
-Note: We are using chalk to color our logs and get a colorful output. We setup an empty string called url so that when the user selects quotes, we load in the quote API url and the same goes for jokes.
+Note: We are using chalk to color our logs and get a colorful output. We setup an empty string called url so that when the user selects quotes, we load in the quote API URL and the same goes for jokes.
 
 For now, the code won't work because we're not calling any of the functions..
 
@@ -257,5 +257,8 @@ We added the help command to provide a default `--help/help` flag to give applic
 
 ### Conclusion
 
-In this article, we went through how to setup a CLI script using Node.js. We also went through what the shebang is and why it is important in CLI applications. Finally, we learned how to pass arguments and commands to the application. As a bonus, we used chalk to make out outputs looks nice and presentable.
+In this article, we went through how to setup a CLI script using Node.js. We also went through what the shebang is and why it is important in CLI applications. 
+
+Finally, we learned how to pass arguments and commands to the application. As a bonus, we used chalk to make out outputs looks nice and presentable.
+
 You can get the full code [here](https://github.com/katungi/Node-CLI-Section)
