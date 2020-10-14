@@ -10,12 +10,14 @@ date: 2020-10-13T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/create-a-node-cli/hero.jpg
-    alt:  example image
+    alt: example image
 ---
+
 The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands. These commands are passed as input strings of text.
+
 <!--more-->
+
 A lot of tools used by developers have a terminal CLI or command line interface. Using the command line is easy and direct hence why a lot of people prefer using it.
 
 Creating a CLI application is not a challenging task. This advantage has helped make them more popular.
@@ -75,7 +77,7 @@ Let's go ahead and install them:
 
 Let's setup the jokes and quotes. We will be using a [quote-generator-api](https://quotes.rest/) and [jokes-generator-api](https://official-joke-api.appspot.com/). We will fetch the individual jokes and display them on the terminal when the user asks for them.
 
-Let's create a file called ```index.js``` which will be the entry point to our application.
+Let's create a file called `index.js` which will be the entry point to our application.
 
 We will create two functions that will do the fetching using axios.
 
@@ -195,24 +197,6 @@ const axios = require("axios");
 const chalk = require("chalk");
 const argv = require("yargs");
 
-argv.command(
-  "joke",
-  "Fetching your joke",
-  (yargs) => {},
-  (argv) => {
-    getJoke();
-  }
-).argv;
-
-argv.command(
-  "quote",
-  "Fetching a quote",
-  (yargs) => {},
-  (argv) => {
-    getQuote();
-  }
-).argv;
-
 function getJoke() {
   axios({
     method: "get",
@@ -244,6 +228,24 @@ function getQuote() {
       const errorLog = chalk.red(err);
       console.log(errorLog);
     });
+
+  argv.command(
+    "joke",
+    "Fetching your joke",
+    (yargs) => {},
+    (argv) => {
+      getJoke();
+    }
+  ).argv;
+
+  argv.command(
+    "quote",
+    "Fetching a quote",
+    (yargs) => {},
+    (argv) => {
+      getQuote();
+    }
+  ).argv;
 }
 argv.help();
 ```
