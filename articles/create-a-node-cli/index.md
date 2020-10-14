@@ -87,13 +87,10 @@ We will create two functions that will do the fetching using axios.
 const axios = require("axios");
 const chalk = require("chalk");
 
-let url = "";
-
 function getJoke() {
-  url = "https://official-joke-api.appspot.com/random_joke";
  axios({
  method: "get",
- url: url,
+ url: "https://official-joke-api.appspot.com/random_joke",
  })
  .then((res) => {
  const setup = chalk.cyan(res.data.setup);
