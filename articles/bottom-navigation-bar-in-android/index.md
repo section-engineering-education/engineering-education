@@ -2,7 +2,7 @@
 This guide will go over integrating a Bottom Navigation Bar in android applications.
 
 ### Introduction
-A **Bottom Navigation Bar** is a navigation component which enables users to explore and change to different views in an application.
+A **Bottom Navigation Bar** is a navigation component that enables users to explore and change to different views in an application.
 Selecting a bottom navigation icon enables users to switch to a selected view or refresh an active view.
 Bottom Navigation Bars make applications more User Friendly. It also eases the development processes by making code more organized.
 A Bottom Navigation Bar is used when an application has the following:
@@ -30,7 +30,7 @@ A Bottom Navigation bar is made up of a container which contains the following:
 ![Structure of a Bottom Navigation Bar](/engineering-education/bottom-navigation-bar-in-android/structure.png)
 
 ### Terminologies
- * [Bottom Navigation Bar](https://material.io/develop/android/components/bottom-navigation)- A navigation component which enables users to explore and change to different views in applications.
+ * [Bottom Navigation Bar](https://material.io/develop/android/components/bottom-navigation)- A navigation component that enables users to explore and change to different views in applications.
  * [Dependency](https://developer.android.com/studio/build/dependencies)-  A statement SDK that allows us to add an external library into our projects.
  * [Fragment](https://developer.android.com/reference/android/app/Fragment)-A Fragment is a sub-activity which enables more modular activity design.
 * [FragmentManager](https://developer.android.com/reference/android/app/FragmentManager)- A class used to manage and handle transactions in fragments.
@@ -132,7 +132,7 @@ In your XML Layout file, add a Bottom Navigation Bar.
 A FrameLayout is used to serve as a container for the different fragments.
 * **Note: An error for app:menu=”@menu/bottom_nav_menu" is seen.This is because it does not exist. To solve this, click Alt+Enter and select on “Create resource file for bottom_nav_menu.xml“**
 
-![Create resource file](/engineering-education/google-authentication-for-android/createmenu.png)
+![Create a resource file](/engineering-education/google-authentication-for-android/createmenu.png)
 
 This menu will pop up.
 
@@ -145,7 +145,7 @@ The error is fixed.
 #### Step 3 - Adding Details and Icons to the Bottom Navigation Bar.
 First, let us add the icons required.
 
-In `res/drawable` directory, right-click on the `drawable` folder. Select *new* and then select **Vector Asset**.
+In the `res/drawable` directory, right-click on the `drawable` folder. Select *new* and then select **Vector Asset**.
 
 ![Vector Asset](/engineering-education/google-authentication-for-android/vector.png)
 
@@ -159,7 +159,7 @@ In `res/drawable` directory, right-click on the `drawable` folder. Select *new* 
 
 * Opacity-Deals with the visibility of the icon.
 
-Select on the icon next to clipart.A list of different cliparts is displayed.
+Select on the icon next to clipart. A list of different cliparts is displayed.
 
 ![Clipart List](/engineering-education/google-authentication-for-android/list.png)
 
@@ -168,9 +168,9 @@ One can search for a clipart in the search bar and can also choose whether the d
 We will use the outlined design.
 
 
-![Favourites](/engineering-education/google-authentication-for-android/favourites.png)
+![Favorites](/engineering-education/google-authentication-for-android/favorites.png)
 
-Once a clipart is selected, select on *OK* then *Next* and finally *Finish.*
+Once a clipart is selected, select on *OK* then *Next*, and finally *Finish.*
 
 We have created an icon.
 
@@ -198,7 +198,7 @@ Add the following lines of code:
 
  android:icon="@drawable/ic_baseline_favorite_border_24"
 
- android:title="Favourites"/>
+ android:title="Favorites"/>
 
  <item
 
@@ -390,7 +390,7 @@ Let’s run the app.
 
 ![Home](/engineering-education/google-authentication-for-android/myhome.jpg)
 
-![Favourites](/engineering-education/google-authentication-for-android/favourites.jpg)
+![Favorites](/engineering-education/google-authentication-for-android/favourites.jpg)
 
 ![Search](/engineering-education/google-authentication-for-android/search.jpg)
 
