@@ -2,7 +2,7 @@
 #### Idea Approval:
 - Student can enroll to the EngEd program via our [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 - We recommend all students start by reading the recently [published articles](/engineering-education/) to get a better sense of style and tonality the student
-- The student can then submit a topic idea using this [Idea Content Form](https://docs.google.com/forms/d/e/1FAIpQLSefSiWF5mK8tt-V8sJa2LaqQbFoInEXBJO2GKESD7ycgBxU0A/viewform?usp=sf_link) to be approved.
+- The student can then submit a topic idea using this [Idea Content Form](https://github.com/section-io/engineering-education/issues/new/choose) to be approved.
 - Idea Content Form submission triggers posted notification in our community Slack channel for others to see.
 - The Section team reviews topic and gives yay/nay, or will ask further qualifying questions
 - After the topic has been approved , the student can then go off and write the article [students may have other questions in between - e.g. -- [How do I submit a PR - branches - hero image](/engineering-education/blob/master/CONTRIBUTING.md)
