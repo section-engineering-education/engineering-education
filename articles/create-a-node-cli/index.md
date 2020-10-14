@@ -75,6 +75,8 @@ Let's go ahead and install them:
 
 Let's setup the jokes and quotes. We will be using a [quote-generator-api](https://quotes.rest/) and [jokes-generator-api](https://official-joke-api.appspot.com/). We will fetch the individual jokes and display them on the terminal when the user asks for them.
 
+Let's create a file called ```index.js``` which will be the entry point to our application.
+
 We will create two functions that will do the fetching using axios.
 
 ```javascript
@@ -133,7 +135,7 @@ Node.js comes with an in-built app interface for the process module called `proc
 
 Using _process.arg_ might be tedious and not beginner friendly so we will use [yargs](https://www.npmjs.com/package/yargs) to help us process the options.
 
-Yargs offers a lot of options that make it very powerful and widely used. Some of them include `.command()`, `.help()`, `.example()`, `.usage()` and others. To read more on the different capabilities of the options see the yargs [docs](https://github.com/yargs/yargs).
+Yargs offers a lot of options that make it very powerful and widely used. Some of them include `.command()`, `.help()`, `.example()`, `.usage()` and others. To read more on the different capabilities of the options, see the yargs [docs](https://github.com/yargs/yargs).
 
 We will be making use of the command option to allow us to invoke a function when the set command is triggered. The syntax for this is:
 
@@ -150,25 +152,6 @@ argv.command(
 Note: _functionA_ will define the command arguments, then _functionB_ will implement the function.
 
 In our project we need two commands, let's set them up
-
-```javascript
-const argv = require("yargs");
-argv.command(
-  "joke",
-  "Fetching your joke",
-  (yargs) => {},
-  (argv) => {}
-).argv;
-
-argv.command(
-  "quote",
-  "Fetching a quote",
-  (yargs) => {},
-  (argv) => {}
-).argv;
-```
-
-Finally, let's pass in our functions to enable the jokes and quotes to be displayed.
 
 ```javascript
 const argv = require("yargs");
