@@ -228,25 +228,25 @@ function getQuote() {
       const errorLog = chalk.red(err);
       console.log(errorLog);
     });
-
-  argv.command(
-    "joke",
-    "Fetching your joke",
-    (yargs) => {},
-    (argv) => {
-      getJoke();
-    }
-  ).argv;
-
-  argv.command(
-    "quote",
-    "Fetching a quote",
-    (yargs) => {},
-    (argv) => {
-      getQuote();
-    }
-  ).argv;
 }
+
+argv.command(
+  "joke",
+  "Fetching your joke",
+  (yargs) => {},
+  (argv) => {
+    getJoke();
+  }
+).argv;
+
+argv.command(
+  "quote",
+  "Fetching a quote",
+  (yargs) => {},
+  (argv) => {
+    getQuote();
+  }
+).argv;
 argv.help();
 ```
 
