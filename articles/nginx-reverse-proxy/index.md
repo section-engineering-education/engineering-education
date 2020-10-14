@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/nginx-reverse-proxy/
-title: Deploying Multiple Applications to VM with NGINX as a Reverse Proxy
+title: Deploying Multiple Applications to VMs with NGINX as a Reverse Proxy
 description: Introduction to the NGINX web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 author: harish-ramesh-babu
-date: 2020-10-12T00:00:00-10:00
+date: 2020-10-14T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -48,12 +48,16 @@ Now that you have a broader idea of what we are about to build, let's jump right
 ### Aim
 - Deploy two applications and have them managed by NGINX.
 
-### Setup & Pre-Requisites:
-1. For this example, we have two sample Express Applications. One can have any kind of application running on different ports.
-**NOTE:** Do not run your application on Port 80 or 443. It will be explained later why this must not be done.  
-Refer the official [ExpressJS documentation]((https://expressjs.com/en/starter/installing.html) for help getting started.
-2. We have installed NGINX on our local machine, but the same could be done on any Virtual Machine where the applications are expected to be deployed.  
-Here is the [documentation]((https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) on how to install NGINX on your machine.
+#### Setup & Pre-Requisites:
+- For this example, we have two sample Express Applications. One can have any kind of application running on different ports.
+
+**NOTE:** Do not run your application on Port 80 or 443.
+We will explaining later why this must not be done.  
+Refer the official [ExpressJS documentation](https://expressjs.com/en/starter/installing.html) for help getting started.
+
+- We have installed NGINX on our local machine, but the same could be done on any Virtual Machine where the applications are expected to be deployed.  
+
+Here is the [documentation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) on how to install NGINX on your machine.
 
 ### Step 1: Start two apps running in different ports
 As we've mentioned earlier, we've got two Node.js Apps running on two different ports as shown below.
@@ -68,7 +72,7 @@ As we've mentioned earlier, we've got two Node.js Apps running on two different 
 
 Now that we have our apps up and running, we don't want our users to use these applications by typing their PORTS explicitly, so we need to map it with something that is more human-readable.
 
-In this example, we will be using subdomains to distinguish between them. Again one is free to use whichever distinguishing element suitable as per requirements.
+In this example, we will be using subdomains to distinguish between them. Again one is free to use whichever element is suitable as per requirements.
 
 Another example could be a particular route like domain/client and domain/server. The only condition for the distinguishing element is to follow a valid URL regular expression. To learn about Regex you can click [here](https://regexr.com/).
 
@@ -83,7 +87,7 @@ My Localhost Config, in this case, would be:
 - Server mapped to server.localhost
 - Client mapped to client.localhost
 
-There are two standard protocols HTTP and HTTPS. The default port for HTTP is 80 and HTTPS is 443. The reason we must not run our applications on these ports is due to our NGINX server running on these two ports. All the requests the client makes would either be redirected to port 80 or 443 from where it would be redirected internally to the corresponding application.
+There are two standard protocols HTTP and HTTPS. The default port for HTTP is 80 and HTTPS is 443. *The reason we must not run our applications on these ports is because our NGINX server is running on these two ports.* All the requests the client makes would either be redirected to port 80 or 443 from where it would be redirected internally to the corresponding application.
 
 ### Step 3 - Configure NGINX at 80 for HTTP and 443 for HTTPS
 Now that we have our apps running and our DNS records ready. We can start configuring our NGINX Reverse Proxy to make it all work.  
@@ -96,7 +100,7 @@ Add these configurations inside the HTTP block.
 
 #### Step 3.1 - HTTP
 
-```
+```bash
 server {       
      listen       80;
      server_name  server.domain;
@@ -116,7 +120,7 @@ server {
 
 #### Step 3.2 - HTTPS
 
-```
+```bash
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
@@ -145,8 +149,7 @@ server {
 }
 ```
 
-**NOTE**
-These are the basic minimum configurations required to successfully configure NGINX for reverse proxying. Feel free to explore other config parameters as well.
+**NOTE:** These are the minimum configurations required to successfully implement NGINX for reverse proxying. Feel free to explore other config parameters as well.
 
 Make sure to change the domain name to your domain. For a SSL Certificate and Key, you can obtain them from your SSL provider.
 
@@ -155,9 +158,10 @@ If you don't have one, use this free service [LetsEncrypt](https://letsencrypt.o
 Follow their documentation to get free SSL instantly!
 
 ### Step 4 - Save and Restart
-After editing, save your changes. Use the `sudo nginx -t` command to test your changes before actually reloading NGINX. It is good practice do this to make sure your server won't crash if there were any errors in your config file.
+After editing, save your changes. Use the `sudo nginx -t` command to test your changes before actually reloading NGINX. It is good practice do this to make sure your server won't crash, if there were any errors in your config file.
 
-Once you get a message that the test is successful, you can go ahead and restart NGINX.  
+Once you get a message that the test is successful, you can go ahead and restart NGINX.
+
 Use this command `sudo nginx -s reload` to restart NGINX.  
 
 Open the browser and enter the URLs to find your applications running on the corresponding URLs configured.
@@ -169,10 +173,10 @@ For the example above, the URLs are:
 **Important Note**
 > Using NGINX secures your server because it routes the traffic internally. Instead of having to open up all of your ports, in this case 3000 and 3001, to the internet, just 80 and 443 will do the trick.  
 
-> This is because all traffic passes through the secure NGINX server (like a gateway) and is redirected to the correct application. Using a reverse proxy like NGINX is much more secure that opening up several ports for every application you deploy because of the increased risk a hacker will use an open port for malicious activity.
+> This is because all traffic passes through the secure NGINX server (like a gateway) and is redirected to the correct application. Using a reverse proxy like NGINX is more secure that opening up several ports for every application you deploy because of the increased risk a hacker will use an open port for malicious activity.
 
 ### Conclusion
-Here is the end result,
+Here is the end result:
 
 ![image](/engineering-education/nginx-reverse-proxy/client2.png)
 
@@ -180,10 +184,11 @@ Here is the end result,
 
 Congratulations! You did it! :tada:
 
-In large systems, the system is highly dependent on the micro-services architecture where each service would be served by an application. In that case, managing apps would be an essential skill to know.
+In large systems, the system is highly dependent on the micro-services architecture where each service would be served by an application. In that case, managing multiple apps would be an essential skill to know.
+
 The microservices architecture is discussed [here](https://microservices.io/patterns/microservices.html) in detail.
 
-Hope this article helped you to manage those independently deployed applications as a whole with the help of NGINX as a Reverse Proxy.
+Hope this article helped you to manage those independently deployed applications as a whole with the help of NGINX as a reverse proxy.
 
 Thanks for reading!
 
