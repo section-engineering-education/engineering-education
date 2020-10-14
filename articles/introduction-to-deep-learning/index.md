@@ -14,12 +14,13 @@ images:
   - url: /engineering-education/introduction-to-deep-learning/hero.jpg
     alt:
 ---
-Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to its promising benefits. It is a method that enables image recognition, natural language processing, and voice recognition to take place. Have you ever wondered how machines function like the human brain? Well, thanks to the concept of Deep Learning. Deep Learning is a potent tool, and once you read this article, you will have a better understanding of what DL is and how it works.
+Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to its promising benefits. It is a method that enables image recognition, natural language processing(NLP), and voice recognition to take place. Have you ever wondered how machines function like the human brain? Well, that is thanks to the concept of Deep Learning. Deep Learning is a potent tool, and once you read this article, you will have a better understanding of what DL is and how it works.
 <!--more-->
 ### Introduction
 ### What is Deep Learning?
 
 ![Venn diagram](/engineering-education/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
+
 [*Image source*](https://towardsdatascience.com/cousins-of-artificial-intelligence-dda4edc27b55)
 
 Deep Learning is a subset of machine learning(ML), DL learns features and tasks directly from data such as images, text, or sound.
@@ -34,33 +35,33 @@ Neural Networks design depends on the composition of the brainpower. Neural Netw
 
 Deep Learning algorithms strive to reason the same as humans by studying data with a particular [logical framework](https://medium.com/tebs-lab/introduction-to-deep-learning-a46e92cb0022).
 
-### Machine Learning VS Deep Learning
+### Machine Learning vs. Deep Learning
 Deep Learning and machine learning are both types of AI that classify data and train models.
 
-1. Data presentation in the system. Machine Learning algorithms need structured data to solve data problems. Deep Learning relies on layers of Neural Networks. 
+1. Data presentation in the system. Machine Learning algorithms need structured data to solve data problems. Deep Learning relies on layers of Neural Networks.
 Example: you have several animal images, such as birds and pets. A person would label each image to help an ML algorithm differentiate the images. Deep Learning is a bit complex. This is because using the same dataset. Deep Learning algorithms toil to evaluate variations between categories and classify them.
 
-2. A Machine Learning algorithm takes a minute to a few hours to finish execution. Deep Learning, unlike machine learning algorithms, goes up to weeks to halt the execution. This is due to the complexity of Neural Networks. Neural networks need a large number of weights and more parameters.
+2. A Machine Learning algorithm can take a minute or up to a few hours to finish execution. Deep Learning algorithms can go up to weeks to halt the execution. This is due to the complexity of Neural Networks. Neural networks need a large number of weights and more parameters.
 
-3. The performance of ML algorithms is good when the dataset is small or medium. Deep Learning algorithms fail to perform well on such datasets. DL algorithms instead perform exceptionally well for bigger datasets.
+3. The performance of ML algorithms is better when the dataset is small or medium. Deep Learning algorithms fail to perform well on such datasets. DL algorithms instead perform exceptionally well for bigger datasets.
 
 4.	Machine Learning algorithms can perform on inexpensive. Deep Learning is a potent tool. It performs well on a powerful machine equipped with multiple GPUs, thus [providing high performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
 
 5. Machine Learning algorithms study and understand labeled data in a dataset. Deep Learning algorithms require no human intervention. This is because layers in Neural Networks place data in different concepts. Neural Networks also enable DL algorithms to learn independently.
 
-6. Deep Learning is an essential bit of Machine Learning. It gives solutions to many problems in Image Recognition, speech recognition, and NLP. Deep Learning performs well with images, text, sound recognition compared to Machine Learning.
+6. Deep Learning is an essential part of Machine Learning. It provides solutions to many problems in image recognition, speech recognition, and NLP. Deep Learning performs well with images, text, sound recognition as compared to Machine Learning.
 
 ### How Deep Learning Works
 The functioning of the brain influences deep Learning algorithms. Neural Networks are made up of layers and nodes, as well as the brain comprises of neurons.
 
-Neural Networks consist of: 
-+ Input layer 
-+ Hidden layers
-+ Output layer
+Neural Networks consist of:
+- Input layer
+- Hidden layers
+- Output layer
 
-The input layer receives inputted data. Hidden layers perform mathematical computations on the information. The output layer gives the result. The problem is solved based on computation from the distributive  [weights of all layers](https://www.modev.com/blog/how-deep-learning-works).
+The input layer receives input data. Hidden layers perform mathematical computations on the information. The output layer gives the result. The problem is solved based on computation from the distributive [weights of all layers](https://www.modev.com/blog/how-deep-learning-works).
 
-A good example is the recognition of a house image. The first layer might focus on borderlines. Another layer focus on the object colors, and another the measurements of the image.
+A good example to use is the recognition of a house image. The first layer might focus on borderlines. Another layer focus on the object colors, and another the measurements of the image.
 
 Deep Learning systems need a powerful software. This is because they process huge amounts of data and complex computations.
 
