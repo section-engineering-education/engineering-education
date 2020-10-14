@@ -347,7 +347,7 @@ public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 #### Step-5 Creating A Fragment.
 A fragment is a sub-activity.
 Fragments are used in bottom navigation bars to simplify the reuse of components and logic in different layouts.
-* First, navigate to the `java` package and right-click. Select *new* and navigate to **Fragment** and select **Fragment(Blank)**.
+First, navigate to the `java` package and right-click. Select *new* and navigate to **Fragment** and select **Fragment(Blank)**.
 Name the Fragment and select *finish*.
 
 ![Home Fragment](/engineering-education/google-authentication-for-android/fragment.png)
@@ -376,7 +376,7 @@ ft.replace(R.id.container_fragment, home);
 ft.commit();
 ```
 
-Lastly, add the following lines of code in the beginning of the `onNavigationItemSelected` method.
+Lastly, add the following lines of code at the beginning of the `onNavigationItemSelected` method.
 
 ```java
 FragmentManager fragmentManager = getSupportFragmentManager();
