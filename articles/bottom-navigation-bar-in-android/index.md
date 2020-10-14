@@ -400,7 +400,7 @@ Let’s run the app.
 Access the Source code [here](https://github.com/BrianaNzivu/BottomNavigationBar).
 
 
-Download the Application [here] (https://drive.google.com/file/d/1qeb3z7RfXaMfMl9I4AhQQYDrbhmem2n0/view?usp=sharing).
+Download the Sample Application [here] (https://drive.google.com/file/d/1qeb3z7RfXaMfMl9I4AhQQYDrbhmem2n0/view?usp=sharing).
 
 
 
