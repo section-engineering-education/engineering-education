@@ -7,6 +7,7 @@ assignees: ''
 
 ---
 **Be sure to include all needed prerequisites the audience would need to follow your article, by including links to other helpful material and resources.**
+
 Here is an example of a [Software Review](/engineering-education/introduction-to-jupyter-notebooks/).
 
 NOTE: We encourage you to reach out to your peer community to get your article reviewed for basic grammar and syntax issues before submitting to cut down on the rounds of revisions.
