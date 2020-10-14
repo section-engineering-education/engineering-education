@@ -42,8 +42,19 @@ Moment.js has gained a good reputation for being able to deliver its objective. 
 
 **Example**
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/mparsing?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<br><br>
+```js
+const moment = require('moment');
+// current date and time
+const m = moment();
+//default moment date and time timezone(local mode)
+console.log(m);
+//using a format
+console.log(m.format());
+console.log(m.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+//UTC date and time mode
+console.log(m.utc());
+console.log(m.utc().format());
+```
 
 #### Formatting Dates
 [Formats](https://momentjs.com/docs/#/displaying/format/) are the display options that replace the corresponding moment default values. Formats helps to display human readable dates. Some commonly used moment formats includes:
@@ -104,7 +115,19 @@ Moment.js [unicode patterns](https://www.unicode.org/reports/tr35/tr35-dates.htm
 #### Displaying Formatted Dates
 Moment.js helps display [date with specified formats](https://momentjs.com/docs/#/displaying/). `moment()` returns a date and `format()` converts the date string tokens and replaces them with specified format values, which are readable.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-format?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const moment = require('moment');
+const today = moment();
+console.log(today.format());
+console.log(today.format("ddd, hA"));
+console.log(today.format("[Today is] dddd"));
+console.log(today.format('YYYY MM DD'));
+console.log(today.format('DD.MM.YYYY HH:mm'));
+console.log(
+    "Today is " +
+    today.format('dddd, MMMM Do YYYY, h:mm:ss a')
+);
+```
 
 Moment.js helps you format dates that exist between two dates such as:
 
@@ -200,8 +223,15 @@ Check out more [shorthand keys](https://momentjs.com/docs/#/manipulating/add/)
 
 This example will return moment date object; you can format the date to be more readable.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-add?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
+```js
+const moment = require('moment');
+//add 7 days from now
+const now = moment()
+const add = now.add(7, 'd');
+//with moment keys can be appriviated
+console.log(add.format('dddd Do MMMM, YYYY'));
+console.log(add.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+```
 
 [**Subtraction**](https://momentjs.com/docs/#/manipulating/subtract/)
 
@@ -218,17 +248,34 @@ This works exactly as addition only that `add()` is replaced with `subtract()` a
 
  This example will return moment object date; you can format the date to a more human readable date.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-substract?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<br><br>
+```js
+const moment = require('moment');
+//subtract 7 days from now
+const now = moment()
+const subtract = now.subtract(7, 'd');
+//with moment keys can be appriviated
+console.log(subtract.format('dddd Do MMMM, YYYY'));
+console.log(subtract.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+```
 
 #### Calculating Date Differences with Moment.js
 You can find the [differences between two dates](https://momentjs.com/docs/#/displaying/difference/) with Moment.js. The difference is returned in milliseconds but you can format it the way you want the date-time unit to be displayed.
 
 To find the differences between two or more dates, the `diff()` method is used. This method takes date as the first argument and calculates the unit of time difference from an optimal second argument.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-difference?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<br><br>
-
+```js
+const moment = require('moment');
+const date1 = moment('2020-09-04');
+const date2 = moment('2020-07-21');
+console.log(`difference is ${date1.diff(date2)} `);
+console.log(`difference is ${date1.diff(date2, 'milliseconds')} millisecond(s)`);
+console.log(`difference is ${date1.diff(date2, 'minutes')} minute(s)`);
+console.log(`difference is ${date1.diff(date2, 'hours')} hour(s)`);
+console.log(`difference is ${date1.diff(date2, 'days')} day(s)`);
+console.log(`difference is ${date1.diff(date2, 'weeks')} week(s)`);
+console.log(`difference is ${date1.diff(date2, 'months')} month(s)`);
+console.log(`difference is ${date1.diff(date2, 'years')} year(s)`);
+```
 
 #### Date Validation
 As a developer, it is annoying to return a date that ends up being [invalid](https://momentjs.com/docs/#/customization/invalid-date/). Moment.js has been simplified to solve this problem. Many applications will prompt a user to enter a date and you need to know how you will get these dates as [valid](https://momentjs.com/docs/#/parsing/is-valid/).
@@ -263,12 +310,63 @@ console.log(moment(
 
 ### Detecting Invalid/Valid Dates
 Here is an example of [detecting invalid/valid dates](https://www.fwait.com/how-to-validate-date-in-javascript/)
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-detect-invalid?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<br><br>
+
+```js
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div>
+		<input type="text" placeholder="MM" id="month">
+        <input type="text" placeholder="DD" id="date">
+        <input type="text" placeholder="YYYY" id="year">
+        <button>Check</button>
+        <h1>Result</h1>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+<script src="script.js"></script>
+  </body>
+</html>
+```
 
 ### Correcting Invalid Dates
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-correct-invalid?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<br><br>
+```js
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<h2> Input Dates </h2>
+    <div id = "input1"> 14 / 1 / 2020 </div>
+    <div id = "input2"> 1 / 14 / 2020 </div>
+
+<h2> Output Dates(1 format) </h2>
+    <div id = "output1" > </div>
+    <div id = "output2" > </div>
+
+<h2> Output(multiple formats) </h2>
+    <div id = "output3" > </div>
+    <div id = "output4" > </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+```
 
 ### Commonly Used Flags for Invalid Date
 -   **Overflow:** used when dates have an overflow example. Using the 13th month, 32nd day, 367th day of the year, or 29th day in the month of February in a leap year is invalid and is considered as an overflow moment.
@@ -325,7 +423,33 @@ console.log(duration2);
 
 Example 2: [Humanize](https://momentjs.com/docs/#/durations/humanize/) is used to the display length of time with duration suffix. Humanize returns a string that describes a duration.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-durations?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const moment = require('moment');
+//suffix-less(a few seconds)
+console.log(moment.duration(1, "seconds").humanize());
+// add second parameter "true" If you want an oriented duration i.e. in a few seconds(with suffix)
+console.log(moment.duration(1, "seconds").humanize(true));
+//For suffixes before now, pass in a negative number.
+console.log(moment.duration(-1, "seconds").humanize(true));
+
+console.log(moment.duration(1, "minutes").humanize());
+console.log(moment.duration(1, "minutes").humanize(true));
+console.log(moment.duration(-1, "minutes").humanize(true));
+
+console.log(moment.duration(24, "hours").humanize());
+console.log(moment.duration(24, "hours").humanize(true));
+console.log(moment.duration(-24, "hours").humanize(true));
+
+//Humanize output can be configured with relative time thresholds. To specify thresholds for a particular invocation of humanize, pass them as a sole argument or after suffix arg:
+console.log(moment.duration(-1, 'week').humanize(true, {
+  d: 7,
+  w: 4
+}));
+console.log(moment.duration(-1, 'week').humanize({
+  d: 7,
+  w: 4
+}));
+```
 
 [Humanize](https://momentjs.com/docs/#/durations/humanize/) calculates the unit of time parsed and if the unit exceeds the next unit, the next unit will be returned.
 
@@ -380,8 +504,31 @@ Moment.js comparisons take a second argument such as
 
 **Example**
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-querries?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<br><br>
+```js
+const moment1 = require('moment');
+const moment2 = require('moment-timezone');
+//year copmarision
+console.log(moment1('2020-07-29').isSame('2020-09-11', 'year'));
+console.log(moment1('2019-07-29').isSame('2012-09-11', 'year'));
+
+//month copmarision
+console.log(moment1('2020-09-12').isSame('2020-09-03', 'month'));
+console.log(moment1('2020-09-10').isSame('2020-08-02', 'month'));
+
+//day copmarision
+console.log(moment1('2020-08-29').isSame('2020-08-29', 'day'));
+console.log(moment1('2020-07-29').isSame('2020-07-28', 'day'));
+
+//hour copmarision
+console.log(moment1('2020-08-29 12:00:00').isSame('2020-08-29 12:00:00', 'hour'));
+console.log(moment1('2020-08-29 12:00:00').isSame('2020-08-29 11:00:00', 'hour'));
+
+//utc/timezone comparision
+var a = moment2.tz("2018-11-08T12:00:00", "UTC").isSame(moment2.tz("2018-11-09T10:00:00", "Australia/Sydney"), "day");
+var b =  moment2.tz("2018-11-09T10:00:00", "Australia/Sydney").isSame(moment2.tz("2018-11-08T12:00:00", "UTC"), "day");
+console.log(a);
+console.log(b);
+```
 
 ### Moment.js Time Zone
 Moment.js supports [time zone data](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). To use [moment time zone](https://momentjscom.readthedocs.io/en/latest/moment-timezone/01-using-timezones/00-intro/) you need `moment@2.9.0` or higher. To get started with moment time zone, `npm install moment-timezone`. `moment.tz` constructor is used to taking all the arguments as moment constructors and take `tz` argument as time zone identifier.
@@ -456,13 +603,45 @@ module.exports = {
 Moment.js has two time zones instances
 1. `moment.tz(..., String)` parses date in a given timezone.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-timezone1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const moment = require('moment-timezone');
+const m1 = moment.tz("2020-08-10 10:50", "Asia/Taipei");
+const m2 = moment.tz("2020-08-10 10:50", "America/Toronto");
+const m3 = moment.tz("2020-08-10 10:50", "Europe/Vatican");
+const m4 = moment.tz("2020-08-10 10:50", "Atlantic/Cape_Verde");
+
+console.log(m1.format());
+console.log(m2.format());
+console.log(m3.format());
+console.log(m4.format());
+
+console.log(m1.utc().format());
+console.log(m2.utc().format());
+console.log(m3.utc().format());
+console.log(m4.utc().format());
+```
 
 The above moments will have different UTC time because they were created in different timezones.
 
 2. `moment().tz(String)` converts date to provided timezone.
 
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-timezone2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```js
+const moment = require('moment-timezone');
+const m1 = moment.utc("2020-08-10 10:50").utc("Asia/Beirut");
+const m2 = moment.utc("2020-08-10 10:50").utc("Europe/Paris");
+const m3 = moment.utc("2020-08-10 10:50").utc("Pacific/Fiji");
+const m4  = moment.utc("2020-08-10 10:50").utc("Indian/Reunion");
+
+console.log(m1.format());
+console.log(m2.format());
+console.log(m3.format());
+console.log(m4.format());
+
+console.log(m1.utc().format());
+console.log(m2.utc().format());
+console.log(m3.utc().format());
+console.log(m4.utc().format());
+```
 
 The above moments will have the same UTC time because they were created in the same time zones (default time zone). This moment creates a `moment.utc('2020-08-10 10:50)` as a UTC object and then changes its time to specified (default) time zone
 
@@ -492,8 +671,78 @@ moment.locale('en-my-settings', {
 **Example**
 
 ### Using French as a moment locale in Node.js
-<iframe height="400px" width="100%" src="https://repl.it/@kimkimani/m-locale?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-<br><br>
+```js
+const moment = require('moment');
+moment.locale('fr', {
+    months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split('_'),
+    monthsShort: 'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split('_'),
+    monthsParseExact: true,
+    weekdays: 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split('_'),
+    weekdaysShort: 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
+    weekdaysMin: 'Di_Lu_Ma_Me_Je_Ve_Sa'.split('_'),
+    weekdaysParseExact: true,
+    longDateFormat: {
+        LT: 'HH:mm',
+        LTS: 'HH:mm:ss',
+        L: 'DD/MM/YYYY',
+        LL: 'D MMMM YYYY',
+        LLL: 'D MMMM YYYY HH:mm',
+        LLLL: 'dddd D MMMM YYYY HH:mm'
+    },
+    calendar: {
+        sameDay: '[Aujourd’hui à] LT',
+        nextDay: '[Demain à] LT',
+        nextWeek: 'dddd [à] LT',
+        lastDay: '[Hier à] LT',
+        lastWeek: 'dddd [dernier à] LT',
+        sameElse: 'L'
+    },
+    relativeTime: {
+        future: 'dans %s',
+        past: 'il y a %s',
+        s: 'quelques secondes',
+        m: 'une minute',
+        mm: '%d minutes',
+        h: 'une heure',
+        hh: '%d heures',
+        d: 'un jour',
+        dd: '%d jours',
+        M: 'un mois',
+        MM: '%d mois',
+        y: 'un an',
+        yy: '%d ans'
+    },
+    dayOfMonthOrdinalParse: /\d{1,2}(er|e)/,
+    ordinal: function (number) {
+        return number + (number === 1 ? 'er' : 'e');
+    },
+    meridiemParse: /PD|MD/,
+    isPM: function (input) {
+        return input.charAt(0) === 'M';
+    },
+    // In case the meridiem units are not separated around 12, then implement
+    // this function (look at locale/id.js for an example).
+    // meridiemHour : function (hour, meridiem) {
+    //     return /* 0-23 hour, given meridiem token and hour 1-12 */ ;
+    // },
+    meridiem: function (hours, minutes, isLower) {
+        return hours < 12 ? 'PD' : 'MD';
+    },
+    week: {
+        dow: 1, // Monday is the first day of the week.
+        doy: 4 // Used to determine first week of the year.
+    }
+});
+
+console.log(moment(1316116057189).fromNow());
+// il y a une heure
+
+console.log(moment().format('HH:mm'));
+console.log(moment().format('HH:mm:ss'));
+console.log(moment().format('[Demain à] LT DD/MM/YYYY'));
+console.log(moment().format('dddd [dernier à] LT dddd Do MMMM, YYYY'));
+console.log(moment().format('[Aujourd’hui à] LT dddd D MMMM YYYY HH:mm'));
+```
 
 #### Date-fns Modern date utility library (a light-weight date library)
 [Date-fns is a modern date library](https://date-fns.org/) with a collection of functions that allows JavaScript developers to work with date values. Unlike Moment.js, which is object oriented, date-fns is divided into many small and independent functions. Date-fns allows you to import functions, only those that you need, unlike Moment.js where you create a moment instance to run functions from it.
