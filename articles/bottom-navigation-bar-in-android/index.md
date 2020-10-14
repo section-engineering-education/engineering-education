@@ -141,6 +141,7 @@ This menu will pop up.
 Select *OK*.
 The error is fixed.
 
+
 #### Step 3 - Adding Details and Icons to the Bottom Navigation Bar.
 First, let us add the icons required.
 
