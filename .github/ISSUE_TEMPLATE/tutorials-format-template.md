@@ -6,8 +6,23 @@ labels: ''
 assignees: ''
 
 ---
+Here is an example of a [Tutorial](/engineering-education/templating-your-static-site/).
 
-## Tutorials Format:
+**Be sure to include all needed prerequisites the audience would need to follow your article, by including links to other helpful material and resources.**
+
+NOTE: We encourage you to reach out to your peer community to get your article reviewed for basic grammar and syntax issues before submitting to cut down on the rounds of revisions.
+
+### Tutorial Format Example
+- Title
+- Introduction
+- Goals (Optional)
+- Prerequisites
+- Step 1 — What to do first
+- Step 2 — What to do next
+- Step n — What to do last
+- Conclusion
+
+### Tutorials Format:
 To ensure the audience is getting the best experience - make sure you research other tutorials on the subject - this will help make you write a more complete and unique tutorial with a higher chance of being found and helping someone out. This also helps to narrow your focus as you research and begin to write. A bit of history about the technology being referenced or talked about might be helpful for the beginner audience.
 
 
@@ -24,14 +39,3 @@ Don’t forget to get the audience involved by asking for feedback - or leave a 
 - Immediate sense of accomplishment
 
 For some more information on how to write software documentation [watch this video](https://youtu.be/t4vKPhjcMZg?t=536).
-
-## Tutorial Format Example
-
-- Title
-- Introduction
-- Goals (Optional)
-- Prerequisites
-- Step 1 — What to do first
-- Step 2 — What to do next
-- Step n — What to do last
-- Conclusion
