@@ -43,6 +43,8 @@
 	- Formatting [add front matter - check that description is around 150 characters - add hero image (if needed)]
 
 	- Check all links work and lead to the intended website
+	
+	- Check if the PR needs an issue (Idea Content Form) linked
 
 	- Check image path(s)
 
