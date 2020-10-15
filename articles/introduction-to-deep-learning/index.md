@@ -25,11 +25,11 @@ Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to 
 
 Deep Learning is a subset of machine learning(ML), DL learns features and tasks directly from data such as images, text, or sound.
 
-To take it further, machine learning is a subset of artificial intelligence(AI). AI is the capability of machines and computers to mimic human intelligence and behavior.
+Machine learning is a subset of artificial intelligence(AI) that allow computer programs to learn data and predict accurate outcomes without being programmed to do so. ML is applied in image recognition, speech recognition, and fraud detection, to name a few. Machine learning takes a statistical approach to obtain patterns from data.
 
-AI is accomplished by studying how the human brain operates while trying to solve a problem. ML is a branch of AI that gives machines and computers the ability to learn data without being programmed.
+AI is the capability of machines and computers to mimic human intelligence and behavior.AI is accomplished by studying how the human brain operates while trying to solve a problem.
 
-Deep Learning is a machine learning technique that automatically extracts the useful pieces of information or makes decisions using neural networks. Deep Learning is more than a set of tools to solve practical problems. DL was made to imitate how the human brain works while making decisions.
+Deep Learning is a machine learning technique that automatically extracts the useful pieces of information or makes decisions using neural networks. Deep Learning is more than a set of tools to solve practical problems.
 
 Neural Networks design depends on the composition of the brainpower. Neural Networks are trained to learn models, identify patterns, and arrange non-identical kinds of information as the human brain does.
 
@@ -38,21 +38,19 @@ Deep Learning algorithms strive to reason the same as humans by studying data wi
 ### Machine Learning vs. Deep Learning
 Deep Learning and machine learning are both types of AI that classify data and train models.
 
-1. Machine Learning algorithms need structured data to solve data problems. Deep Learning relies on layers of Neural Networks.
-Example: you have several animal images, such as birds and pets. A person would label each image to help an ML algorithm differentiate the images. Deep Learning is a bit complex. This is because using the same dataset. Deep Learning algorithms toil to evaluate variations between categories and classify them.
+1. Machine Learning algorithms require extensive data pre-processing and manual feature extraction. Deep Learning relies on layers of Neural Networks and performs feature extraction automatically.
 
-2. A Machine Learning algorithm can take a minute or up to a few hours to finish execution. Deep Learning algorithms can go up to weeks to halt the execution. This is due to the complexity of Neural Networks. Neural networks need a large number of weights and more parameters.
+2. Machine Learning  is used when there is a lack of computational power available or a small dataset. A deep learning algorithm's performance improves with the size of the dataset. Therefore, deep learning algorithms are fed petabytes of data, which required weeks of training. ML can be trained for weeks, but nothing useful will come out of it.
 
-3. The performance of ML algorithms is better when the dataset is small or medium. Deep Learning algorithms fail to perform well on such datasets. DL algorithms instead perform exceptionally well for bigger datasets.
 
-4.	Machine Learning algorithms can perform on low-end machines. Deep Learning performs well on a powerful machine equipped with multiple GPUs, thus [providing high performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
+3. Machine Learning algorithms can perform on low-end machines. Deep Learning performs well on a powerful machine equipped with multiple GPUs, thus [providing high performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
 
-5. Machine Learning algorithms study and understand labeled data in a dataset. Deep Learning algorithms require no human intervention. This is because layers in Neural Networks place data in different concepts. Neural Networks also enable DL algorithms to learn independently.
+4. Classification requires labeled data. Be it ML or DL, we need to label data for classification tasks.
 
-6. Deep Learning is an essential part of Machine Learning. It provides solutions to many problems in image recognition, speech recognition, and NLP. Deep Learning performs well with images, text, sound recognition as compared to Machine Learning.
+5. Deep Learning is an essential part of Machine Learning. It provides solutions to many problems in image recognition, speech recognition, and NLP. Deep Learning performs well with images, text, sound recognition as compared to Machine Learning.
 
 ### How Deep Learning Works
-Deep Learning algorithms are inspired by how the human brain functions. Neural Networks are made up of layers and nodes, as well as the brain comprises of neurons.
+Deep Learning algorithms are inspired by how the human brain functions. Neural Networks are made up of layers and nodes, as the brain comprises neurons.
 
 Neural Networks consist of:
 - Input layer
@@ -61,9 +59,15 @@ Neural Networks consist of:
 
 The input layer receives input data. Hidden layers perform mathematical computations on the information. The output layer gives the result. The problem is solved based on computation from the distributive [weights of all layers](https://www.modev.com/blog/how-deep-learning-works).
 
-A good example to use is the recognition of a house image. The first layer might focus on borderlines. Another layer focus on the object colors, and another the measurements of the image.
+A good example using CNN for feature extraction of images. CNN architecture for image classification is in two parts, feature extractor, and classifier.
 
-Deep Learning systems need a powerful software. This is because they process huge amounts of data and complex computations.
+![CNN Feature extraction process](/engineering-education/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
+
+[*Image source*](https://towardsdatascience.com/cousins-of-artificial-intelligence-dda4edc27b55)
+
+Deep Learning systems require the following:
+1. Loads of data
+2. Computational power to process tons of data.
 
 ### Why we need Deep Learning
 Deep Learning is revolutionizing so many fields to solve data problems.
@@ -95,7 +99,7 @@ Virtual assistants use Deep Learning to learn about you, from what you search mo
 
 5. Fraud Detection
 
-Banking and financial sectors are benefiting from Deep Learning to detect transaction fraud. [Autoencoders](https://www.mygreatlearning.com/blog/deep-learning-applications/) in Tensorflow are being used to catch credit card fraud, thus saving a lot of money from fraudsters. Fraud prevention is done by recognizing patterns in customer transactions.
+The banking and financial sectors are benefiting from Deep Learning to detect transaction fraud. [Autoencoders](https://www.mygreatlearning.com/blog/deep-learning-applications/) in Tensorflow are being used to catch credit card fraud, thus saving a lot of money from fraudsters. Fraud prevention is done by recognizing patterns in customer transactions.
 
 6. Image Recognition
 
@@ -108,18 +112,21 @@ Entertainment industries such as [Netflix](https://www.netflix.com/ke-en/) recom
 Deep Learning is revolutionizing the filmmaking process. Cameras can learn body language and conduct voice synthesis. Deep Learning also helps to emulate someone's voice to imbibe in virtual characters.
 
 ### Working of Neural Networks
-Neural Networks are algorithms modeled to function like the human brain. Neural Networks is a system of hardware and software patterned after neurons operation in the human mind. Neurons are decision-makers.
+Neural Networks are algorithms inspired by the human brain. Neural Networks is a system of hardware and software patterned after neurons operation in the human mind.
 
-![Neural Networks](/engineering-education/introduction-to-deep-learning/neural-networks.jpg)<br>
-[\*image source\*](https://medium.com/coinmonks/the-artificial-neural-networks-handbook-part-1-f9ceb0e376b4)
+![Neural Networks](/engineering-education/introduction-to-deep-learning/fep.png)<br>
+[\*image source\*](https://www.quora.com/How-can-I-use-CNN-for-feature-extraction-of-images)
 
-Neural Networks comprise of the input layer, hidden layers, and the output layer.
+Neural Networks are made up of:
+1. Input Layer
+2. Hidden Layer
+3. Output Layer
 
-The input layer is where the neural network acquires data in numeral values between 0 and 1. Any data can be represented as a number, whether it is words, sound, or image. Each input neuron represents a single feature.
+The input layer is where the neural network acquires data. Feature extractors such as Scale Invariant Feature Transform (SIFT) and Speeded up Robust Features (SURF) vectors are used in data classification. Each input neuron represents a single feature.
 
-When the neurons have data, it is redirected to other neurons in the next layer (hidden layer). There are many hidden layers. Every hidden layer numerically combines all the figures it receives.
+When the neurons have data, it is redirected to other neurons in the next layer (hidden layer). There are many hidden layers. The hidden layers learn the mapping function between the input and the output. The mapping function can be thought of as the intelligence that, once learned, can be used to perform the task.
 
-The major goal is measuring whether the inputted data has various components. Each neuron then sends data to neurons in the output layer.
+Each neuron in the hidden layer then sends data to neurons in the output layer. Theoretically speaking, the goal of each neural network is defined by the loss function.
 
 The output layer predicts the outcome. Neural Networks work with numbers. Math is the key to Neural Networks, Artificial intelligence, and its techniques; [Machine Learning and Deep Learning](http://neuralnetworksanddeeplearning.com/chap1.html).
 
