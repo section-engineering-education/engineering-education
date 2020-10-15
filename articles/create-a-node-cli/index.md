@@ -115,7 +115,8 @@ axios({
 }).catch((err)=>{
     const errorLog = chalk.red(err);
     console.log(errorLog);
-})
+});
+}
 ```
 
 Note: We are using chalk to color our logs and get a colorful output. We setup an empty string called `url` so that when the user selects quotes, we load in the quote API URL and the same goes for jokes.
