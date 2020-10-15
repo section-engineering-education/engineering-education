@@ -136,6 +136,8 @@ Using _process.arg_ might be tedious and not beginner friendly so we will use [y
 
 Yargs offers a lot of options that make it very powerful and widely used. Some of them include `.command()`, `.help()`, `.example()`, `.usage()` and others. To read more on the different capabilities of the options, see the yargs [docs](https://github.com/yargs/yargs).
 
+Sidenote: Yargs works with Node.js versions higher than version 8. It does not work with version 8 or lower.
+
 We will be making use of the command option to allow us to invoke a function when the set command is triggered. The syntax for this is:
 
 ```javascript
