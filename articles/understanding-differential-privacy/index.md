@@ -6,14 +6,14 @@ url: /engineering-education/understanding-differential-privacy/
 title: Understanding Differential Privacy
 description: Introduction to differential privacy and methods used to preserve privacy in databases.
 author: srishilesh-p-s
-date: 2020-10-07T00:00:00-12:00
+date: 2020-10-15T00:00:00-08:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/understanding-differential-privacy/hero.png
     alt: Understanding Differential Privacy
 ---
-In this article, we will get an overview of resolving the privacy issue using differential privacy. You will understand the basics of how privacy is preserved in databases used for machine learning and deep learning. Although, understanding differential privacy requires a mathematical background, this article will cover a very basic overview of the concepts. We will also be coding a sample database and check if it is differentially private or not.
+In this article, we will get an overview on resolving the privacy issue using differential privacy. You will understand the basics of how privacy is preserved in databases used for machine learning and deep learning. Although understanding differential privacy requires a mathematical background, this article will cover a very basic overview of the concepts. We will also be coding a sample database and check if it is differentially private or not.
 <!--more-->
 
 ### Table of contents
@@ -30,14 +30,14 @@ In this digital era, most companies are data-driven. Our data is harvested to he
 
 In the late 2000s, Netflix ran a competition for building a recommendation system. To build it, they released a large dataset by anonymizing the data which didn’t leak the movie names or users' ratings. Two professors from the University of Texas [de-anonymized](https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf) them completely by comparing them with IMDB ratings, thus revealing the personal information about the dataset. This a great example of how data privacy has been compromised! Similarly, one such [data breach of health records happened in 1997](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1748-720X.1997.tb01885.x), where medical records of the governor of Massachusetts were identified by matching anonymized medical encounter data with voter registration records.
 
-This sort of data leakage is very alarming to both the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). An alternative, being [federated learning](https://en.wikipedia.org/wiki/Federated_learning), where we bring the model to the data instead of or vice-versa. For the scope of this article we will mainly focus on the concept of differential privacy to check for leakage in data.
+This sort of data leakage is very alarming to both the users as well as organizations. To resolve this, we can either completely randomize the way the data is sent, using keys that are only decipherable at either end (Differential Learning). An alternative, being [federated learning](https://en.wikipedia.org/wiki/Federated_learning), where we bring the model to the data instead of or vice-versa. For the scope of this article, we will mainly focus on the concept of differential privacy to check for leakage in data.
 
 ### Differential Privacy
 
 #### Former definition
 *Anything that can be learned from a statistical database can be learned without accessing the database*
 
-This definition does not hold. We need to consider two things, first is people and the second is data. We need to protect people's rights while (correctly predicting) using their data. In certain cases, the whole database must be kept private, to protect the information, because there are chances of data leaks.
+This definition does not hold. We need to consider two things, the first is people and the second is data. We need to protect people's rights while (correctly predicting) using their data. In certain cases, the whole database must be kept private, to protect the information, because there are chances of data leaks.
 
 #### Modern definition
 *It’s a promise made by a data holder to a data subject, that “You will not be affected, adversely or otherwise, by allowing your data to be used for study analysis, no matter what other studies, datasets or information is available” - Cynthia Dwork (Godfather of Differential Privacy)*
@@ -170,7 +170,7 @@ Finding the mean and sum of all values in the original database (without removin
 Out[4]: 0.5130
 ```
 
-Performing the query for all values in new database (each containing 1 missing value)
+Performing the query for all values in the new database (each containing 1 missing value)
 
 ```python
   def sensitivity(query,num_entries):
@@ -188,7 +188,7 @@ Performing the query for all values in new database (each containing 1 missing v
     return sensitive
 ```
 
-Now, let us compare how sensitivity varies for different differential attacks query.
+Now, let us compare how sensitivity varies for different differential attacks queries.
 
 ```python
   print('Sensitivity using Sum query:', sensitivity(query_sum, 5000))
@@ -236,12 +236,12 @@ Imagine, we are conducting research in our neighborhood, to find out how many pe
 
 Some people do not wish to disclose their private information to the public, therefore the questions posted by the social scientist must be formatted as such that the people are forced to answer the question honestly.
 
-This is known as **plausible deniability,** it is a condition in which a subject can safely and believably deny knowledge of any particular truth that may exist because the subject is deliberately made unaware of said truth to benefit or shield the subject from any responsibility associated with the knowledge of such truth.
+This is known as [**plausible deniability,**](https://en.wikipedia.org/wiki/Plausible_deniability#:~:text=Plausible%20deniability%20is%20the%20ability,confirm%20their%20participation%2C%20even%20if) it is a condition in which a subject can safely and believably deny knowledge of any particular truth that may exist because the subject is deliberately made unaware of said truth to benefit or shield the subject from any responsibility associated with the knowledge of such truth.
 
 Below we have a code snippet that shows the implementation of plausible deniability:
 
 ```python
-import torch # For installation, refer this https://anaconda.org/pytorch/pytorch
+import torch # For installation, refer to this https://anaconda.org/pytorch/pytorch
 
 # Number of entries in the sample database
 num_entries = 5000
@@ -274,21 +274,21 @@ With Noise:  tensor(0.4880)
 Without Noise:  tensor(0.4892)
 ```
 
-The code above shows a demonstration on how randomized response noise can be added to perform plausible deniability. On adding noise, we can reduce the sensitivity of the query (reducing the data leakage)
+The code above shows a demonstration of how randomized response noise can be added to perform plausible deniability. On adding noise, we can reduce the sensitivity of the query (reducing the data leakage).
 
 > Differential privacy always requires some noise added to the queries to protect from differential attacks
 
 ### Differential privacy in real life
 #### 1) Google and Apple
-Tech giants like Google and Apple use it in every one of their services. For example, they collect your web searches or purchase history to improve your recommendations.
+Tech giants like Google and Apple use it in every one of their services. For example, they collect your web searches or purchase history to improve the recommendations they give.
 
 #### 2) Hospitals
 Hospitals collect personal data from several patients. Now, let's say we decide to predict if a person has diabetes based on symptoms that other patients had. We must ensure that we must never leak information about any patient while working on our prediction models.
 
-There are several such use-cases, where differential privacy is used. In the near future, we will find this everywhere.
+There are several such use-cases, where differential privacy is used. In the near future, we will find  more use case like these everywhere.
 
 ### Conclusion
-We have had an overview of what differential privacy is, and its importance in helping us preserve privacy. This blog serves only as an introduction to differential privacy, more about it can be found in the referenced articles below. To best understand the concepts, we must try implementing them, [this link](https://github.com/udacity/private-ai/blob/master/completed) would be a good starting point.
+We had an overview of what differential privacy is, and its importance in helping us preserve privacy. This blog serves only as an introduction to differential privacy, more about it can be found in the referenced articles below. To best understand the concepts, we must try implementing them, [this link](https://github.com/udacity/private-ai/blob/master/completed) would be a good starting point.
 
 To summarize:
 - We learned the importance of privacy.
