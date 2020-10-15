@@ -113,10 +113,12 @@ cur.execute('''SELECT * FROM STUDENTS''')
 result = cur.fetchall()
 print(result)
 ```
-the result will be :
-```
+The result will be:
+
+```python
 [(1, 'Ahmad', 20), (2, 'James', 22), (3, 'Eva', 19)]
 ```
+
 Treat the cursor as an iterator:
 
 ```python
