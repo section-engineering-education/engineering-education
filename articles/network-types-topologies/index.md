@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/network-types-topologies/hero.jpg
     alt:  example image
 ---
-Computers are used in almost every aspect of life. They are easy to work with, can handle multiple tasks and output accurate results. This makes agencies, enterprises, businesses and workplaces depend on them. But the fact that they can also store and share data with other computers makes them even more useful.
+Computers are used in almost every aspect of life. They are easy to work with, can handle multiple tasks, and output accurate results. This makes agencies, enterprises, businesses, and workplaces dependent on them. Yet, the fact that they can also store and share data with other computers makes more useful.
 <!--more-->
 This enables people to secure their data and access them from anywhere around the world. For this to be possible, computers are interlinked with one another. This interconnection between two or more computers forms a [computer network](https://en.wikipedia.org/wiki/Computer_network). They are categorized based on their:
 
