@@ -1,12 +1,26 @@
-### Introduction to Network Types and Network Topologies
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/network-types-topologies/
+title: Introduction to Network Types and Network Topologies
+description:
+author: kanishkvardhan-a-n
+date: 2020-10-16T00:00:00-05:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero-image](/engineering-education/network-types-topologies/hero.jpg)
-Photo by [Anastasia Dulgier](https://unsplash.com/@dulgier?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/network?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+  - url: /engineering-education/network-types-topologies/hero.jpg
+    alt:  example image
+---
+Computers are used in almost every aspect of life. They are easy to work with, can handle multiple tasks and output accurate results. This makes agencies, enterprises, businesses and workplaces depend on them. But the fact that they can also store and share data with other computers makes them even more useful.
+<!--more-->
+This enables people to secure their data and access them from anywhere around the world. For this to be possible, computers are interlinked with one another. This interconnection between two or more computers forms a [computer network](https://en.wikipedia.org/wiki/Computer_network). They are categorized based on their:
 
-Computers are used in almost every aspect of life. They are easy to work with, can handle multiple tasks and output accurate results. This makes agencies, enterprises, businesses and workplaces depend on them. But the fact that they can also store and share data with other computers makes them even more useful. This enables people to secure their data and access them from anywhere around the world. For this to be possible, computers are interlinked with one another. This interconnection between two or more computers forms a [computer network](https://en.wikipedia.org/wiki/Computer_network). They are categorized based on their:
--  geographical spread of network strength
--  type of usage and applications
--  mode of transmission and some other factors. 
+-  Geographical spread of network strength.
+-  Type of usage and applications.
+-  Mode of transmission and some other factors.
 
 A typical networking setup requires two types of devices: **Servers and Workstations.**
 Servers are the computers that are responsible for powering the network. Workstations are the devices that make up the network. Some of the devices are printers, laptops, smartphones, etc. Data transfer and resource sharing is done from the servers. The shared materials are downloaded on the workstations in the form of data packets. While some can be used across countries, some can merely be used within a building. Here are some of the most popular types of networks in use.
@@ -14,7 +28,7 @@ Servers are the computers that are responsible for powering the network. Worksta
 #### Network Types
 
 - **Local Area Network(LAN)**
-Computer networks that are restricted to a small localized area are called [LANs](https://en.wikipedia.org/wiki/Local_area_network). These types of networks are used to share resources and transfer data within buildings such as schools, offices, net cafes, etc. Routers, Switches, hubs are some of the devices used to operate LAN. All the devices that are powered by LAN, are near to each other and present in the same room or building. Because of this reason, cables are used as a transmission medium. Ethernet cables are supported by many devices which have the same interface. They are also the most commonly used cables for connecting modems, routers, etc. Their signal strength is consistent and the communication network is also stable. Thus making them a practical choice for using wired LAN. 
+Computer networks that are restricted to a small localized area are called [LANs](https://en.wikipedia.org/wiki/Local_area_network). These types of networks are used to share resources and transfer data within buildings such as schools, offices, net cafes, etc. Routers, Switches, hubs are some of the devices used to operate LAN. All the devices that are powered by LAN, are near to each other and present in the same room or building. Because of this reason, cables are used as a transmission medium. Ethernet cables are supported by many devices which have the same interface. They are also the most commonly used cables for connecting modems, routers, etc. Their signal strength is consistent and the communication network is also stable. Thus making them a practical choice for using wired LAN.
 
 ![Example of LAN](/engineering-education/network-types-topologies/lan.jpg)
 
@@ -39,9 +53,9 @@ This type of network is currently the one mostly used. [WAN](https://en.wikipedi
 
 #### Network Topologies
 Arrangement of components or parts in a specific way is called a **Topology.** In [network topologies](https://en.wikipedia.org/wiki/Network_topology), the components are arranged in a systematic order for *smooth data flow* in a communication network. Here, the components may be devices, workstations, etc which are also referred to as **nodes**. Many topologies are used based on their applications, structure and efficiency. While some are used by commercial establishments and industrial sectors, some are used by schools and for household purposes.
-  
+
 - **Linear Topology**
-This type of topology also goes by the name **Bus Topology**. The name itself states that, *the nodes or components of a system are connected in a linear manner*. All the nodes are connected to one bus(cable) in which the data runs linearly from the start point to the endpoint. Terminators are attached at both ends to define the length of the bus. All the nodes are connected to the bus within the two terminators. So there is a *bidirectional* flow of data. 
+This type of topology also goes by the name **Bus Topology**. The name itself states that, *the nodes or components of a system are connected in a linear manner*. All the nodes are connected to one bus(cable) in which the data runs linearly from the start point to the endpoint. Terminators are attached at both ends to define the length of the bus. All the nodes are connected to the bus within the two terminators. So there is a *bidirectional* flow of data.
 The arrangement of bus topology is very simple and direct. Since only one transmission medium is used, the data is easily accessible. Due to its simple architecture, the extension of bus topology becomes easier. Since a single cable is used, when two workstations send data simultaneously they may hit one another. This leads to an increase in network traffic. Also, adding new devices and components may slow down the data transfer rate.
 
 ![Linear Topology](/engineering-education/network-types-topologies/bus.jpg)
@@ -53,19 +67,19 @@ Like linear topology, the structure and arrangement of nodes are very simple. Du
 ![Ring Topology](/engineering-education/network-types-topologies/ring.jpg)
 
 - **Mesh Topology**
-Mesh topology is the solution to the problem with ring topology. Unlike ring topology, here *every node is connected with every other node present in the network*. In the case of a single node failure, the rest of the system can still be functional. Since one node connects many other nodes, data is shared through any one of the many paths available. This makes mesh arrangement a suitable network for industries and business establishments. A mesh topology in which all the nodes are connected to each other is called full connectivity, and the mesh topology in which only some nodes are connected to each other is called partial connectivity. 
+Mesh topology is the solution to the problem with ring topology. Unlike ring topology, here *every node is connected with every other node present in the network*. In the case of a single node failure, the rest of the system can still be functional. Since one node connects many other nodes, data is shared through any one of the many paths available. This makes mesh arrangement a suitable network for industries and business establishments. A mesh topology in which all the nodes are connected to each other is called full connectivity, and the mesh topology in which only some nodes are connected to each other is called partial connectivity.
 Mesh topology increases the network flow and data can be shared faster. It also records a lesser number of network breakages and system breakdowns. But since all the nodes are connected to each other, each node low key acts as a router to another node and so on. This increases power consumption to a larger extent. Mesh topology needs lots of proper planning and requires high maintenance. Due to many links, high network latency may be an issue.
 
 ![Mesh Topology](/engineering-education/network-types-topologies/mesh.jpg)
 
 - **Star Topology**
 *This topology consists of an extra part, i.e hub or switch, in the center of the topology which connects all the nodes*. A hub or switch is a networking device that transfers data from one device to another device. It acts as a transmission medium. While both are used depending on their operations, some [differences](https://www.geeksforgeeks.org/difference-between-hub-and-switch/) may affect the way they perform. This is the most commonly used topology.
-In an emergency of network failure, identifying the damaged node becomes easier. This is because a single hub connects all the nodes. Here, the damaged node will be shut down and the rest of the nodes can still be functional. But if a hub is damaged then all the nodes connected to that hub will be shut down for reconstruction. 
+In an emergency of network failure, identifying the damaged node becomes easier. This is because a single hub connects all the nodes. Here, the damaged node will be shut down and the rest of the nodes can still be functional. But if a hub is damaged then all the nodes connected to that hub will be shut down for reconstruction.
 
 ![Star Topology](/engineering-education/network-types-topologies/star.jpg)
-  
+
 - **Tree Topology**
-Tree topology is a special kind of bus topology. Here *central nodes or central hubs are connected to the main bus*. These nodes or hubs are also called as **root nodes**. The other peripheral nodes are connected to those nodes or hubs. These peripheral nodes are called as **descendant nodes**. Like the bus topology, terminators are attached at both ends to define the length of the main bus. This type of topology is used where the data has to be shared in a hierarchical manner. 
+Tree topology is a special kind of bus topology. Here *central nodes or central hubs are connected to the main bus*. These nodes or hubs are also called as **root nodes**. The other peripheral nodes are connected to those nodes or hubs. These peripheral nodes are called as **descendant nodes**. Like the bus topology, terminators are attached at both ends to define the length of the main bus. This type of topology is used where the data has to be shared in a hierarchical manner.
 If one branch or one descendant node has problems it will not affect the entire network. Adding more branches to the main bus becomes easier. But the main bus connects many sub-branches and if it has any complications, then it affects the whole network. This may also lead to network shut down. Thus, it becomes hard to arrange and group the nodes. Also, it costs very much to install this type of topology.
 
 ![Tree Topology](/engineering-education/network-types-topologies/tree.jpg)
