@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/understanding-differential-privacy/
 title: Understanding Differential Privacy
-description: Introduction to differential privacy and methods used to preserve privacy in databases.
+description: Introduction to differential privacy and methods used to preserve privacy in databases and how it is used with machine learning, and deep learning.
 author: srishilesh-p-s
 date: 2020-10-15T00:00:00-08:00
 topics: [Security]
@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/understanding-differential-privacy/hero.png
     alt: Understanding Differential Privacy
 ---
-In this article, we will get an overview on resolving the privacy issue using differential privacy. You will understand the basics of how privacy is preserved in databases used for machine learning and deep learning. Although understanding differential privacy requires a mathematical background, this article will cover a very basic overview of the concepts. We will also be coding a sample database and check if it is differentially private or not.
+In this article, we will get an overview on resolving the privacy issue using differential privacy. You will understand the basics on how privacy is preserved in databases, used with machine learning, and deep learning. Although understanding differential privacy requires a mathematical background, this article will cover a very basic overview of the concepts. We will also be coding a sample database and check if it is differentially private or not.
 <!--more-->
 
 ### Table of contents
