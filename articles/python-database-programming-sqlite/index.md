@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/python-database-programming-sqlite/hero.jpg
+  - url: /engineering-education/python-database-programming-sqlite/hero.png
     alt:
 ---
 SQLite is an open-source and simple database engine that allows you to create a relational database and interact with it, In general, it is very lightweight and can be used within almost all programming languages including Python.
@@ -82,7 +82,7 @@ A database cursor is a control structure that is used to execute statements in o
 
 Open the **DB Browser for SQLite** then click on open database, after choosing our file `database.db` you will see what tables it contains.
 
-![](https://github.com/ahmadmardeni1/Python-Database-Programming-SQLite/blob/main/DB%20Browser%20for%20SQLite%202%20(2).jpg)
+![](/engineering-education/python-database-programming-sqlite/first-pic.jpg)
 
 ### Database Queries
 #### INSERT
@@ -101,7 +101,7 @@ cur.execute(Insert_Students)
 
 To take a look at our data just click on **Browse Data** and here they are!
 
-![](https://github.com/ahmadmardeni1/Python-Database-Programming-SQLite/blob/main/DB%20Browser%20for%20SQLite%203.jpg)
+![](/engineering-education/python-database-programming-sqlite/second-pic.jpg)
 
 #### SELECT
 Now if we want to retrieve data after executing a SELECT statement, we have to treat the cursor as an iterator, or we can call fetchall() to get a list of the matching rows.
