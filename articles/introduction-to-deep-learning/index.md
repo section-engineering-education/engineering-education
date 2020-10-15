@@ -38,21 +38,21 @@ Deep Learning algorithms strive to reason the same as humans by studying data wi
 ### Machine Learning vs. Deep Learning
 Deep Learning and machine learning are both types of AI that classify data and train models.
 
-1. Data presentation in the system. Machine Learning algorithms need structured data to solve data problems. Deep Learning relies on layers of Neural Networks.
+1. Machine Learning algorithms need structured data to solve data problems. Deep Learning relies on layers of Neural Networks.
 Example: you have several animal images, such as birds and pets. A person would label each image to help an ML algorithm differentiate the images. Deep Learning is a bit complex. This is because using the same dataset. Deep Learning algorithms toil to evaluate variations between categories and classify them.
 
 2. A Machine Learning algorithm can take a minute or up to a few hours to finish execution. Deep Learning algorithms can go up to weeks to halt the execution. This is due to the complexity of Neural Networks. Neural networks need a large number of weights and more parameters.
 
 3. The performance of ML algorithms is better when the dataset is small or medium. Deep Learning algorithms fail to perform well on such datasets. DL algorithms instead perform exceptionally well for bigger datasets.
 
-4.	Machine Learning algorithms can perform on inexpensive. Deep Learning is a potent tool. It performs well on a powerful machine equipped with multiple GPUs, thus [providing high performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
+4.	Machine Learning algorithms can perform on low-end machines. Deep Learning performs well on a powerful machine equipped with multiple GPUs, thus [providing high performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
 
 5. Machine Learning algorithms study and understand labeled data in a dataset. Deep Learning algorithms require no human intervention. This is because layers in Neural Networks place data in different concepts. Neural Networks also enable DL algorithms to learn independently.
 
 6. Deep Learning is an essential part of Machine Learning. It provides solutions to many problems in image recognition, speech recognition, and NLP. Deep Learning performs well with images, text, sound recognition as compared to Machine Learning.
 
 ### How Deep Learning Works
-The functioning of the brain influences deep Learning algorithms. Neural Networks are made up of layers and nodes, as well as the brain comprises of neurons.
+Deep Learning algorithms are inspired by how the human brain functions. Neural Networks are made up of layers and nodes, as well as the brain comprises of neurons.
 
 Neural Networks consist of:
 - Input layer
@@ -75,7 +75,7 @@ There is massive excitement about artificial intelligence and its subsets. Here 
 
 1. Self-driven cars
 
-Companies such as Google are building driver assistance services. Also, they are teaching computers how to use digital sensors instead of human sensors. These companies train Deep Learning algorithms to use [large amounts of data](https://medium.com/breathe-publication/top-15-deep-learning-applications-that-will-rule-the-world-in-2018-and-beyond-7c6130c43b01).
+Companies such as Google are building driver assistance services. Also, they are teaching computers how to use digital sensors instead of human sensors. In the automotive sector, researchers and developers are diligently working on deep learning-based techniques for self-driven cars.
 
 2. Natural Language Processing
 
@@ -83,24 +83,29 @@ Machines are taught to understand complexities associated with languages such as
 
 3. Healthcare
 
-Deep Learning is completely revolutionizing the healthcare and the medical industries. According to [Medium](https://medium.com/breathe-publication/top-15-deep-learning-applications-that-will-rule-the-world-in-2018-and-beyond-7c6130c43b01), AI has enabled healthcare and medical industries to advance tremendously.
+Deep Learning is completely revolutionizing the healthcare and the medical industries. AI has enabled healthcare and medical industries to [advance tremendously](https://medium.com/breathe-publication/top-15-deep-learning-applications-that-will-rule-the-world-in-2018-and-beyond-7c6130c43b01).
+
 Clinical researchers use DL to find a cure for untreatable diseases. DL helps with a speedy diagnostic of dangerous conditions. Many cancer tests, such as the Pap test and Mammograms, use DL to examine cells image using a microscope.
 
 4. Virtual Assistants
 
-Siri and Google Assistants are approved deep learning virtual assistants. Deep Learning enables virtual assistants to learn and understand commands given by a user. Virtual assistants then execute by providing the appropriate answer naturally. Virtual assistants use Deep Learning to learn about you, from what you search most.
+Siri and Google Assistants are approved deep learning virtual assistants. Deep Learning enables virtual assistants to learn and understand commands given by a user. Virtual assistants then execute by providing the appropriate answer naturally.
+
+Virtual assistants use Deep Learning to learn about you, from what you search most.
 
 5. Fraud Detection
 
-Banking and financial sectors are benefiting from Deep Learning to detect transaction fraud. [Autoencoders](https://www.mygreatlearning.com/blog/deep-learning-applications/) in Tensorflow are being used to catch credit card fraud, thus saving a lot of money from fraudsters. Fraud prevention is done based on recognizing patterns in customer transactions.
+Banking and financial sectors are benefiting from Deep Learning to detect transaction fraud. [Autoencoders](https://www.mygreatlearning.com/blog/deep-learning-applications/) in Tensorflow are being used to catch credit card fraud, thus saving a lot of money from fraudsters. Fraud prevention is done by recognizing patterns in customer transactions.
 
 6. Image Recognition
 
-Image Recognition using Deep Learning aims to recognize and learn content in images. Also, Deep Learning aims to understand their surrounding. Image Recognition is mostly used in gaming and social media.
+Image Recognition using Deep Learning aims to recognize and learn content in images. Also, Deep Learning aims to understand the surrounding of the image. Image Recognition is mostly used in gaming and social media.
 
 7. Entertainment
 
-Entertainment industries such as [Netflix](https://www.netflix.com/ke-en/) recommends to their viewers what they need. Deep Learning enables the entertainment industry to understand the consumer's behavior. This helps to provide an exciting experience to clients. Deep Learning is revolutionizing the filmmaking process. Cameras can learn body language and conduct voice synthesis. Deep Learning also helps to emulate someone's voice to imbibe in virtual characters.
+Entertainment industries such as [Netflix](https://www.netflix.com/ke-en/) recommends to their viewers what they need. Deep Learning enables the entertainment industry to understand the consumer's behavior. This helps to provide an exciting experience to clients.
+
+Deep Learning is revolutionizing the filmmaking process. Cameras can learn body language and conduct voice synthesis. Deep Learning also helps to emulate someone's voice to imbibe in virtual characters.
 
 ### Working of Neural Networks
 Neural Networks are algorithms modeled to function like the human brain. Neural Networks is a system of hardware and software patterned after neurons operation in the human mind. Neurons are decision-makers.
