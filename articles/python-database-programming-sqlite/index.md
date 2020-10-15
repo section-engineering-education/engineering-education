@@ -6,13 +6,13 @@ url: /engineering-education/python-database-programming-sqlite/
 title: Python Database Programming - SQLite
 description: In this tutorial we will learn how to use the Python SQLite library, how to interact with it, and execute queries within a Python application.
 author: ahmad-mardeni
-date: 2020-10-13T00:00:00-14:00
+date: 2020-10-15T00:00:00-14:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/python-database-programming-sqlite/hero.png
-    alt:
+    alt: SQLite example image Python SQLite library
 ---
 SQLite is an open-source and simple database engine that allows you to create a relational database and interact with it, In general, it is very lightweight and can be used within almost all programming languages including Python.
 <!--more-->
