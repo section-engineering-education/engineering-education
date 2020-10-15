@@ -288,9 +288,7 @@ Pat yourselves on the back for having made this far. From now on, we will work w
     5
     4
     ```
-    When the variable `iter` equals three, the condition fails. Therefore, the print statement stops executing.
-
-
+When the variable `iter` equals three, the condition fails. Therefore, the print statement stops executing.
 
 ### **Functions**
 Functions are important aspects of all programming languages. They help modularize the code. They help implement various programming paradigms such as Don't Repeat Yourself- [DRY](https://www.section.io/engineering-education/dry-manifesto) and modularity.  
@@ -309,8 +307,8 @@ To call the function, we pass the parameter to the function name directly:
 ```r
 function_name(10)
 ```
+
 In cases when multiple values need to be returned, we use lists. This way, a single entity with various outputs is being returned. I suggest you try this last point out as a challenge.
 
 ### Conclusion
-
 In this article, we have dealt with the advanced topics of the R programming language. At this point, you have the skills to master machine learning algorithms and perform various data science experiments. Adios.
