@@ -10,7 +10,7 @@ Then you are ready to suggests a topic idea to be approved [via this form](https
 
 Once the article topic has been approved by our team, you may begin to write your article. Only submit your article as a PR once is it ready to be reviewed and published.
 
-To submit your article you will need to fork over the public repository. You can follow these [step-by-step instructions](/section-io/engineering-education/blob/testing-folder-structure/new_contributors/UPLOAD_INSTRUCTIONS.md) for help with this step.
+To submit your article you will need to fork over the public repository. You can follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md) for help with this step.
 
 After your article is submit it will enter our queue to be reviewed by our Peer Review or Tech Review Committee.
 
