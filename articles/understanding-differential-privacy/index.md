@@ -167,7 +167,7 @@ Finding the mean and sum of all values in the original database (without removin
 **Output:**
 
 ```bash
-Out[4]: 0.5130
+Out[3]: 0.5130
 ```
 
 Performing the query for all values in the new database (each containing 1 missing value)
@@ -198,8 +198,8 @@ Now, let us compare how sensitivity varies for different differential attacks qu
 **Output:**
 
 ```bash
->> Sensitivity using Sum query: 1
->> Sensitivity using Mean query: 0.00010106021204242532
+Out[4]: Sensitivity using Sum query: 1
+Sensitivity using Mean query: 0.00010106021204242532
 ```
 
 This demonstrates that the new set of databases containing 1 missing value in each of the databases has leaked information about the missing value. Thus, we can conclude that the privacy of that person has been leaked. The lower the value of sensitivity shows less privacy leakage.
@@ -270,7 +270,7 @@ print("Without Noise: ",true_result)
 **Output:**
 
 ```bash
-With Noise:  tensor(0.4880)
+Out[5]: With Noise:  tensor(0.4880)
 Without Noise:  tensor(0.4892)
 ```
 
