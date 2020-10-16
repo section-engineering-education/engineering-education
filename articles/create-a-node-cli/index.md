@@ -171,7 +171,7 @@ argv.command(
   "Fetching a quote",
   (yargs) => {},
   (argv) => {
-    getQuotes();
+    getQuote();
   }
 ).argv;
 ```
