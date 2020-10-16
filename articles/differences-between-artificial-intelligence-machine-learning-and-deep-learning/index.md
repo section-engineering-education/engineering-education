@@ -5,8 +5,8 @@ published: true
 url: /engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/
 title: Differences between Artificial Intelligence, Machine Learning and Deep Learning
 description: This article explores Artificial Intelligence, Machine Learning and Deep Learning to better understand use cases in each.
-author:
-date: 2020-10-16T00:00:00-10:00
+author: willies-ogola
+date: 2020-10-16T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
