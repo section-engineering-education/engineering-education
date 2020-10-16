@@ -1,6 +1,22 @@
-### Introduction
-These three terms; Artificial Intelligence, Machine learning, and Deep Learning are often confusing. Although used interchangeably, these terminologies refer to different things. The difference between them is :
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/
+title: Deploying Your First Node.js Web App
+description: This guide will walk you through how to deploy a Node.js web app to DigitalOcean.
+author:
+date: 2020-07-15T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/hero.jpeg
+    alt: header image nodejs
+---
+These three terms; Artificial Intelligence, Machine learning, and Deep Learning are often confusing. Although used interchangeably, these terminologies refer to different things. The difference between them is:
+<!--more-->
+### Introduction
 **Artificial Intelligence (AI)** incorporates human intelligence to machines.
 **Machine Learning (ML)** gives computers the ability to learn without programming it.
 **Deep Learning (DL)** uses neural networks to identify patterns within a structure.
@@ -23,9 +39,9 @@ Artificial Intelligence incorporates human intelligence to machines. AI machines
 
 AI is generally divided into 3 main categories:
 
-* Artificial Narrow Intelligence (ANI)
-* Artificial General Intelligence (AGI)
-* Artificial Super Intelligence (ASI)
+- Artificial Narrow Intelligence (ANI)
+- Artificial General Intelligence (AGI)
+- Artificial Super Intelligence (ASI)
 
 We will go through each of these three categories.
 
@@ -121,7 +137,7 @@ DL has also been used to:
 DL has been used in speech recognition such as Amazon Alexa, Google Assistant and Apple's Siri. Sound waves, consist of words, converted into waveforms of different frequencies. The algorithm recognizes these sequential waveform inputs and processes them.
 
 #### Final Thoughts
-Artificial Intelligence is a general term that encompasses Machine Learning and Deep Learning. Deep Learning (DL) and Machine Learning (ML) are both sub-fields of Artificial Intelligence. It is important to note that even though both ML and DL revolve around data in order to effectively deliver, their use cases are not the same. DL is ideal for complex tasks such as image recognition and speech recognition as such tasks require a lot of data where most of the data is unstructured. This is one place where DL excels as it utilizes the many layers within neural networks to extract different features. ML is suitable for solving simple tasks where data is labeled and structured. A simple example of its use case would be to classify whether a ball is green or yellow. You definitely don't need to use DL here as the task is too simple and does not require a lot of data during training. 
+Artificial Intelligence is a general term that encompasses Machine Learning and Deep Learning. Deep Learning (DL) and Machine Learning (ML) are both sub-fields of Artificial Intelligence. It is important to note that even though both ML and DL revolve around data in order to effectively deliver, their use cases are not the same. DL is ideal for complex tasks such as image recognition and speech recognition as such tasks require a lot of data where most of the data is unstructured. This is one place where DL excels as it utilizes the many layers within neural networks to extract different features. ML is suitable for solving simple tasks where data is labeled and structured. A simple example of its use case would be to classify whether a ball is green or yellow. You definitely don't need to use DL here as the task is too simple and does not require a lot of data during training.
 
 ### References
 1. Michie, D., Spiegelhalter, D. J., & Taylor, C. C. (1994). Machine learning. Neural and Statistical Classification, 13(1994), 1-298.
