@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/roles-data-science/hero.jpg
     alt: data science industry roles
 ---
-The data science industry has many synonyms associated with it. The terms artificial intelligence(AI), machine learning (ML), and data science are used interchangeably. The growth of the industry has led to phenomenal progress in the field of tech.
+The data science industry has many synonyms associated with it. The terms artificial intelligence (AI), machine learning (ML), and data science are used interchangeably. The growth of the industry has led to phenomenal progress in the field of tech.
 <!--more-->
 Machine learning and data science's tremendous development has resulted in many jobs. One needs to be careful while preparing for roles involving data science and machine learning. In this article we will go over the responsibilities and various technologies associated with each position.
 
@@ -32,7 +32,7 @@ Machine learning engineers deal predominantly with the implementation of the exi
 
 For example, consider the [Generative Pre-Trained](https://openai.com/blog/better-language-models/)(GPT) Language Model. It is responsible for the ImageNet moment in the field of Natural Language Processing(NLP). The Imagenet moment refers to the transfer learning capabilities that GPT brings along. The source code and architecture details for GPT is available via various open-source channels.
 
-When a company has a particular use case for a specific product, this algorithm needs to be modified or extended. The job of an ML engineer is to tweak the model according to the current application at hand. During the adaptation of existing algorithms, multiple changes are applicable.
+When a company has a particular use case for a specific product, this algorithm needs to be modified or extended. The job of an ML engineer is to tweak the model according to the current application at hand. During the adaptation of existing algorithms, multiple changes are possible.
 
 They are the following:
 
@@ -59,8 +59,8 @@ Consider the example shown above. The word vectors are representations for words
 king + woman - man -> queen
 ```
 
-#### Framing the Problem
-Given a problem statement, what are some of the [Key Performance Indicators](https://en.wikipedia.org/wiki/Performance_indicator)(KPIs) suitable for the problem? How do we define the problem such that it optimizes the use case and generalizes over all edge cases?
+#### Importance of Problem-Framing
+One way ML scientists bring value is through framing difficult problems so that they can be solved and managed effectively and efficiently. Given a problem statement, what are some of the [Key Performance Indicators](https://en.wikipedia.org/wiki/Performance_indicator)(KPIs) suitable for the problem? How do we define the problem such that it optimizes the use case and generalizes over all edge cases?
 
 For example, how do we formulate the problem of self-driving cars? The research in this field has advanced a lot.
 
