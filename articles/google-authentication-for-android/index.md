@@ -139,7 +139,7 @@ GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DE
 .build();
 ```
 
-**Note: `The R.string.default_web_client_id` is automatically added once you build and run the application on a device or emulator**
+**Note: `The R.string.default_web_client_id` is automatically added once you build and run the application on a device or emulator**.
 
 
 Set an onClick listener on the Google Sign Up button which will pass the SignIn method.
