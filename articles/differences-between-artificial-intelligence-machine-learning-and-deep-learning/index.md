@@ -156,3 +156,7 @@ ML is suitable for solving simple tasks where data is labeled and structured. A 
 1. [Machine learning. Neural and Statistical Classification](https://dl.acm.org/doi/book/10.5555/212782#:~:text=HomeBrowse%20by%20TitleBooks,June%201995).
 2. [Deep learning (Vol. 1). Cambridge: MIT press](https://mitpress.mit.edu/books/deep-learning).
 3. [Artificial intelligence: a modern approach](http://aima.cs.berkeley.edu/).
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+
