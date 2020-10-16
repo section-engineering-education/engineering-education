@@ -1,30 +1,30 @@
 # Introduction to R Programming
 
-The data science community has been growing over the past decade. The tools used in the industry have been powering this unprecedented growth. Hence, learning a programming language like R empowers us to contribute to the field. This article will clarify all the basic concepts of R and look at the various concepts. Going through the article should give you sufficient information to start coding in R. 
+The data science community has been growing over the past decade. The tools used in industry have been powering this unprecedented growth. Hence, learning a programming language like R empowers us to contribute to the field. This article will clarify all the basic concepts of R and cover vectors, matrices, factors and lists in detail. Going through this tutorial will familiarize you with the building blocks of an R program.
 
 ### What is R?
 
-R is a software environment developed for statistical and graphical computing. Developed at the Bell Labs, it is a modified implementation of [S language](https://en.wikipedia.org/wiki/S_%28programming_language%29). It provides many statistical techniques such as [linear modeling](https://techvidvan.com/tutorials/r-generalized-linear-models/), [non-linear modeling](https://analyticsindiamag.com/hands-on-guide-for-non-linear-regression-models-in-r/), [statistical tests](http://r-statistics.co/Statistical-Tests-in-R.html), [classification, and clustering](https://www.geeksforgeeks.org/introduction-to-machine-learning-in-r/) algorithms, etc. One of the greatest strengths of the R language is the large community that uses it. Therefore, many optimized libraries are readily available to make the lives of early programmers simple. 
+R is a software environment developed for statistical and graphical computing. Developed at Bell Labs, it is a modified implementation of the [S language](https://en.wikipedia.org/wiki/S_%28programming_language%29). It provides many statistical techniques such as [linear modeling](https://techvidvan.com/tutorials/r-generalized-linear-models/), [non-linear modeling](https://analyticsindiamag.com/hands-on-guide-for-non-linear-regression-models-in-r/), [statistical tests](http://r-statistics.co/Statistical-Tests-in-R.html), [classification, and clustering](https://www.geeksforgeeks.org/introduction-to-machine-learning-in-r/) algorithms, etc. One of the greatest strengths of the R language is the large community that uses it. Therefore, many optimized libraries are readily available to make the lives of early programmers simple. 
 
 ### RStudio
 
-Before we begin, we need to ensure if the R interpreter is installed on our local machine. In this article, we will focus on programming concepts. You can use online editors like [Repl.it](https://repl.it/languages/rlang) for this tutorial. For further information on installation, refer to this [article](https://techvidvan.com/tutorials/install-r/).
+Before we begin, we need to ensure that the R interpreter is installed on our local machine. In this article, we will focus on programming concepts. You can use online editors like [Repl.it](https://repl.it/languages/rlang) for this tutorial. For further information on installation, refer to this [article](https://techvidvan.com/tutorials/install-r/).
 
-The RStudio interface has four components that we make use of most. The RStudio terminal is shown below.
+The RStudio interface has four components that we make use of most. Below is a preview of what the RStudio interface looks like.
 
 ![rstuido](rstudio.jpg)
 
 The four components are as follows:
 
-1. **Editor**: The editor is used to create R scripts. R scripts are executed using the run button or the console. The run button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
+1. **Editor**: The editor is used to create R scripts. R scripts are executed using the run button or the console. The `run` button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
    1. Set the current working directory to the directory, including the R script. Use the command `setwd(dir)` to set the working directory to the directory of your choice. Use `getwd()` to get the current working directory
-   2. We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section.
+   2. We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section. The `source(filename)` is executed via the console.
    ![](R-Script.jpg)
-2. **Console and Terminal**: The console in R is similar to the IDLE in Python. We can execute any command here. For this tutorial, you may use the console.
+2. **Console and Terminal**: The **console** in R is similar to IDLE in Python. We can execute any command here. For this tutorial, you may use the **console**.
    ![](console.jpg)
-3. **Environment Variables**: It gives us a list of all the variables stored and the corresponding variables stored in them. These variables are created at the time of execution of the R scripts.
+3. **Environment Variables**: The **enironment variables window** list all the variables created during program execution and their corresponding values. It is used to understand the dimensionality and data-types of the data being used by a program.
    ![](environment.jpg)
-4. **Plots, Package manager, and Help Section**: Plots section generates any plots that have been specified in the R script. The package manager gives us a list of packages installed and lets us install packages if required.  Finally, the help section is a go-to for developers of all caliber. The ability to go through official docs through the RStudio empowers programmers and saves them much time. 
+4. **Plots, Package manager, and Help Section**: The plots section generates any plots that have been specified in the R script. The **Package Manager** gives us a list of packages installed and lets us install packages if required.  Finally, the help section is a go-to for developers of all levels. The ability to go through official docs through the RStudio empowers programmers and saves them much time. 
    ![](plot.jpg)
 
 
