@@ -125,7 +125,7 @@ The commands used in CLI applications often come with other options or flags. Th
 
 A common application of options is when asking for user input that determines the output of the application.
 
-Node.js comes with an built-in app interface for the process module called `process.argv`. It takes in the arguments passed, invokes a method, and returns an array with all the arguments passed into the main process.
+Node.js comes with a built-in app interface for the process module called `process.argv`. It takes in the arguments passed, invokes a method, and returns an array with all the arguments passed into the main process.
 
 Using `process.arg` might be tedious and not beginner friendly so we will use [yargs](https://www.npmjs.com/package/yargs) to help us process the options.
 
