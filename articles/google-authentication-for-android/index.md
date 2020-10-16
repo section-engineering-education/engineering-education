@@ -90,7 +90,7 @@ app:layout_constraintTop_toTopOf="parent" />
 
 ![Layout Resource File](/engineering-education/google-authentication-for-android/xml.png)
 
-#### Step 3 - Setting up Firebase.
+#### Step 3 - Setting up Firebase
 Set up and connect your project on Firebase by following instructions stated by Google [here](https://firebase.google.com/docs/android/setup).
 
 #### Step 4 – Lets Code
