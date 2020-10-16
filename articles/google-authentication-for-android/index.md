@@ -86,7 +86,7 @@ app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-**Note: Type `app:isDarkTheme="{Boolean}"`: To switch between blue theme and gray-white for the button. The [library handles](https://android-arsenal.com/details/1/7099) the changing of text color and background color. It also handles the change of color on button press or button clicks.**
+**Note: Type `app:isDarkTheme="{Boolean}"`: To switch between blue theme and a gray-white theme for the button. The [library will handle](https://android-arsenal.com/details/1/7099) the changing of text color and background color. It also handles the change of color on button press or button clicks.**
 
 ![Layout Resource File](/engineering-education/google-authentication-for-android/xml.png)
 
