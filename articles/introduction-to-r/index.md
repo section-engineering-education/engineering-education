@@ -16,7 +16,7 @@ The RStudio interface has four components that we make use of most. Below is a p
 
 The four components are as follows:
 
-1. **Editor**: The editor is used to create R scripts. R scripts are executed using the run button or the console. The `run` button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
+1. **Editor**: The editor is used to create R scripts. R scripts are executed using the **run** button or the console. The **run** button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
    1. Set the current working directory to the directory, including the R script. Use the command `setwd(dir)` to set the working directory to the directory of your choice. Use `getwd()` to get the current working directory
    2. We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section. The `source(filename)` is typed and executed via the console, which we cover in the next point.
    ![](R-Script.jpg)
