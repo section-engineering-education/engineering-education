@@ -25,13 +25,13 @@ Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to 
 
 Deep Learning is a subset of machine learning(ML), DL learns features and tasks directly from data such as images, text, or sound.
 
-Machine learning is a subset of artificial intelligence(AI) that allow computer programs to learn data and predict accurate outcomes without being programmed to do so. ML is applied in image recognition, speech recognition, and fraud detection, to name a few. Machine learning takes a statistical approach to obtain patterns from data.
+Machine learning is a subset of artificial intelligence(AI) that allows computer programs to learn data and predict accurate outcomes without being programmed to do so. ML is applied in image recognition, speech recognition, and fraud detection, to name a few. Machine learning takes a statistical approach to obtain patterns from data.
 
-AI is the capability of machines and computers to mimic human intelligence and behavior.AI is accomplished by studying how the human brain operates while trying to solve a problem.
+AI is the capability of machines and computers to mimic human intelligence and, behaviour. AI is accomplished by studying how the human brain operates while trying to solve a problem.
 
 Deep Learning is a machine learning technique that automatically extracts the useful pieces of information or makes decisions using neural networks. Deep Learning is more than a set of tools to solve practical problems.
 
-Neural Networks design depends on the composition of the brainpower. Neural Networks are trained to learn models, identify patterns, and arrange non-identical kinds of information as the human brain does.
+Neural Networks design depends on the composition of the brainpower. Neural Networks learn models, identify patterns, and arrange non-identical kinds of information as the human brain does.
 
 Deep Learning algorithms strive to reason the same as humans by studying data with a particular [logical framework](https://medium.com/tebs-lab/introduction-to-deep-learning-a46e92cb0022).
 
@@ -45,7 +45,7 @@ Deep Learning and machine learning are both types of AI that classify data and t
 
 3. Machine Learning algorithms can perform on low-end machines. Deep Learning performs well on a powerful machine equipped with multiple GPUs, thus [providing high performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
 
-4. Classification requires labeled data. Be it ML or DL, we need to label data for classification tasks.
+4. Classification requires labeled data. Be it ML or DL; we need to label data for classification tasks.
 
 5. Deep Learning is an essential part of Machine Learning. It provides solutions to many problems in image recognition, speech recognition, and NLP. Deep Learning performs well with images, text, sound recognition as compared to Machine Learning.
 
@@ -57,7 +57,7 @@ Neural Networks consist of:
 - Hidden layers
 - Output layer
 
-The input layer receives input data. Hidden layers perform mathematical computations on the information. The output layer gives the result. The problem is solved based on computation from the distributive [weights of all layers](https://www.modev.com/blog/how-deep-learning-works).
+The input layer receives input data. Hidden layers perform mathematical computations on the information. Finally, the output layer gives the result. The problem is solved based on calculation  from the distributive [weights of all layers](https://www.modev.com/blog/how-deep-learning-works).
 
 A good example using CNN for feature extraction of images. CNN architecture for image classification is in two parts, feature extractor, and classifier.
 
@@ -103,11 +103,11 @@ The banking and financial sectors are benefiting from Deep Learning to detect tr
 
 6. Image Recognition
 
-Image Recognition using Deep Learning aims to recognize and learn content in images. Also, Deep Learning aims to understand the surrounding of the image. Image Recognition is mostly used in gaming and social media.
+Image Recognition using Deep Learning aims to recognize and learn content in images. Also, Deep Learning seeks to understand the surrounding of the image. Image Recognition is used in gaming and social media.
 
 7. Entertainment
 
-Entertainment industries such as [Netflix](https://www.netflix.com/ke-en/) recommends to their viewers what they need. Deep Learning enables the entertainment industry to understand the consumer's behavior. This helps to provide an exciting experience to clients.
+Entertainment industries such as [Netflix](https://www.netflix.com/ke-en/) recommends to their viewers what they need. Deep Learning enables the entertainment industry to understand the consumer's behaviour. Applying DL to the entertainment industry provides an exciting experience to clients.
 
 Deep Learning is revolutionizing the filmmaking process. Cameras can learn body language and conduct voice synthesis. Deep Learning also helps to emulate someone's voice to imbibe in virtual characters.
 
@@ -126,10 +126,10 @@ The input layer is where the neural network acquires data. Feature extractors su
 
 When the neurons have data, it is redirected to other neurons in the next layer (hidden layer). There are many hidden layers. The hidden layers learn the mapping function between the input and the output. The mapping function can be thought of as the intelligence that, once learned, can be used to perform the task.
 
-Each neuron in the hidden layer then sends data to neurons in the output layer. Theoretically speaking, the goal of each neural network is defined by the loss function.
+Neurons in the hidden layer then send data to neurons in the output layer. Theoretically speaking, the goal of each neural network is defined by the loss function.
 
 The output layer predicts the outcome. Neural Networks work with numbers. Math is the key to Neural Networks, Artificial intelligence, and its techniques; [Machine Learning and Deep Learning](http://neuralnetworksanddeeplearning.com/chap1.html).
 
 ### Conclusion
-Deep Learning is an extensible and a complex field. It functions with the help of Neural Networks to mimic human behavior. DL solves complex data problems. Problems in pattern recognition, Image Recognition, speech recognition, and NLP. Applications tasks get automated. This helps to save time for people as they do not have to perform repetitive actions. Deep Learning is a promising technology. DL is being applied in healthcare, entertainment, financial sectors, etc.
+Deep Learning is an extensible and a complex field. It functions with the help of Neural Networks to mimic human behaviour. DL solves complex data problems. Problems in pattern recognition, Image Recognition, speech recognition, and NLP. Applications tasks get automated. This helps to save time for people as they do not have to perform repetitive actions. Deep Learning is a promising technology. DL is being applied in healthcare, entertainment, financial sectors, etc.
 To solve different problems and reduce the risk of human error to add an absolute advantage.
