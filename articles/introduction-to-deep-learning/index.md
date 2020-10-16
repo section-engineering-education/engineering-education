@@ -111,15 +111,15 @@ Deep Learning is revolutionizing the filmmaking process. Cameras can learn body 
 ### Machine Learning vs. Deep Learning
 Deep Learning and machine learning are both types (or subsets) of AI that classify data and train models. Below we will compare a few tasks or features of each.
 
-- Machine Learning algorithms require extensive data, pre-processing, and manual feature extraction. While, Deep Learning relies on layers of neural networks and performs feature extraction automatically.
+- Machine Learning algorithms require extensive data, pre-processing, and manual feature extraction. While, Deep Learning relies on its layers of neural networks and performs feature extraction automatically.
 
-- Machine Learning can be used when there is a lack of computational power available or a small dataset. As opposed to deep learning algorithm's performance that improves with the increased size of a dataset. Which is why deep learning algorithms are fed petabytes of data, which can require weeks of training. ML can be trained for weeks, but nothing useful will come out of it.
+- Machine Learning can be used when there is a lack of computational power available or a small dataset. As opposed to Deep Learning's performance that improves with the increased size of a dataset. That is why deep learning algorithms are fed petabytes of data, which can require weeks of training.
 
 - Machine Learning algorithms can perform well on low-end machines. While Deep Learning performs better on a powerful machine equipped with multiple GPUs, [providing higher performance](https://hackr.io/blog/machine-learning-vs-deep-learning).
 
-- Although different Deep Learning is an essential part of Machine Learning. It provides solutions to many problems within image recognition, speech recognition, and NLP. Deep Learning performs better with images, text, and sound recognition when compared to Machine Learning.
+- Although different Deep Learning is an essential part of Machine Learning. It provides solutions to many problems within image recognition, speech recognition, and NLP. Deep Learning performs better with images, text, and sound recognition when compared to Machine Learning alone.
 
-- Be it ML or DL; we need to label data for classification type tasks. Classification tasks requires labeled data.
+- Be it ML or DL; we need to label all data for classification type tasks. Classification tasks requires labeled data.
 
 To get a more detailed understanding of the differences between ML, DL, and AI take a look at [this article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
 
