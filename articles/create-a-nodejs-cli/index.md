@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/create-a-nodejs-cli/hero.png
-    alt: example image Node.js CLI 
+    alt: example image Node.js CLI
 ---
 The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands. These commands are passed as input strings of text.
 <!--more-->
@@ -47,7 +47,7 @@ To get started, let's setup our project and Node.js environment.
 
 In the terminal, enter:
 
-```terminal
+```bash
 mkdir node-cli
 cd node-cli
 npm init -y
@@ -65,7 +65,7 @@ Next up, let's install all the packages we will make use of in the project.
 
 Let's go ahead and install them:
 
-```terminal
+```bash
     npm i axios chalk yargs
 ```
 
@@ -172,11 +172,11 @@ argv.command(
 
 To get a joke or quote run:
 
-```terminal
+```bash
 node index.js joke
 ```
 
-```terminal
+```bash
 node index.js quote
 ```
 
@@ -253,7 +253,7 @@ In this article, we went through how to setup a CLI script using Node.js. We als
 
 Finally, we learned how to pass arguments and commands to the application. As a bonus, we used chalk to make our output looks nice and colorful.
 
-You can get the full code [here](https://github.com/katungi/Node-CLI-Section)
+You can get the full code [here](https://github.com/katungi/Node-CLI-Section).
 
 ---
 Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
