@@ -23,7 +23,7 @@ Some of the most popular command line interface applications are project generat
 
 The above examples are a bit more complex in functionality and can be confusing. Yet, the basics are still the same. They all have Node.js as a common factor.
 
-Getting started with CLI applications using Node.js couldn't be easier. To tackle the basics, let's create a simple CLI application that takes two arguments `joke` or `quote` and generates a joke or a quote.
+Getting started with CLI applications using Node.js couldn't be easier. To tackle the basics, let's create a simple CLI application that takes two arguments `joke` or `quote`, and generates a joke or a quote.
 
 ### The Shebang
 First things first, the starting point of any CLI application point is a line called the Shebang.
