@@ -1,42 +1,61 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/google-authentication-for-android/
+title: Google Authentication in Android Applications
+description: This guide will go over how to integrate Google authentication into Android applications with examples.
+author: briana-nzivu
+date: 2020-10-16T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/google-authentication-for-android/hero.jpg
+    alt: example image Google Authentication
+---
+[Authentication enables organizations](https://medium.com/@harsha.thirimanna/authentication-3a3556caf98f) to keep their networks secure by permitting only authenticated users (or processes) to access its protected resources. This shows how important it is to authenticate users. User authentication can be done in various ways.
+<!--more-->
 ### Google authentication in Android applications
-This guide will go over integrating Google authentication in android applications.
+This guide will go over integrating Google authentication in Android applications.
 
-### Introduction.
-**Authentication** is the process of signing up a user in applications. 
-Authentication enables companies to keep their resources secure by restricting access only to authenticated users. User Authentication is done in various ways.
+### Introduction
+**Authentication** is the process or action of verifying the identity of a user or process.
+
 Third-party authentication and filling forms are the most popular.
-In 2019, one of the top ten User Experience (UX) trends were using third-party authentication options like Google, Facebook, Twitter, GitHub, etc. This was due to the minimized effort and time required to authenticate a user.
+In 2019, one of the top ten user experience (UX) trends was using third-party authentication options like Google, Facebook, Twitter, GitHub, etc. This was due to the minimized effort and time required to authenticate a user.
 
-## Terminologies
-* Authentication- The process of signing up a user in applications.
-* [Firebase](https://firebase.google.com/)- A platform developed by Google for creating mobile and web applications. 
-* [Dependency](https://developer.android.com/studio/build/dependencies)-  A statement SDK that allow us to add external libraries into our projects.
-* [Json](https://www.json.org/json-en.html)- (JavaScript Object Notation) is a lightweight, human-readable, data-interchange open standard used in Software applications.
-* [FirebaseAuth](https://firebase.google.com/docs/auth#:~:text=Firebase%20Authentication%20provides%20backend%20services,Facebook%20and%20Twitter%2C%20and%20more.)- A Firebase product which provides back-end services and SDK’s for Authentication.
+#### Terminologies
+- Authentication - The process or action of verifying the identity of a user or process.
+- [Firebase](https://firebase.google.com/) - A platform developed by Google used to create mobile and web applications. For more information on [Firebase check this](/engineering-education/node-firebase/) article out.
+- [Dependency](https://developer.android.com/studio/build/dependencies) - A platform developed by Google used to create mobile and web applications.
+- [Json](https://www.json.org/json-en.html) - (JavaScript Object Notation) is a lightweight data-interchange format.
+- [FirebaseAuth](https://firebase.google.com/docs/auth#:~:text=Firebase%20Authentication%20provides%20backend%20services,Facebook%20and%20Twitter%2C%20and%20more.) - Provides backend services, SDKs, and UI libraries to authenticate users to your application.
 
 ### Prerequisites
-* [Google](https://www.google.com/account/about/) account
-* [Android Studio](https://developer.android.com/studio) installed.
+Users should ideally have a:
+- [Google](https://www.google.com/account/about/) account
+- [Android Studio](https://developer.android.com/studio) installed.
 
-#### Step 1 – Create a new Project.
+#### Step 1 – Create a new project
 In this step, we will [create](https://developer.android.com/studio/projects/create-project) a new Android Studio project.
 
-* Open Android Studio. Select *Start a new Android Studio project* and click on next.
+- Open Android Studio. Select *Start a new Android Studio project* and click on next.
 
 ![Open Android Studio](/engineering-education/google-authentication-for-android/empty.png)
 
-* Select *Empty Activity* and click on next.
+- Select *Empty Activity* and click on next.
 
 ![Select on Empty Activity](/engineering-education/google-authentication-for-android/name.png)
 
-* We will name the project **GoogleSignUp**. Click on *Finish* and wait for the project to build.
+- We will name the project **GoogleSignUp**. Click on *Finish* and wait for the project to build.
 
 ![Empty Activity](/engineering-education/google-authentication-for-android/newproject.png)
 
-#### Step 2 – Creating the Google Sign Up Button.
-In this step, we will add a google sign in button to our activity's resource file.
+#### Step 2 – Creating the Google sign up button
+In this step, we will add a Google sign in button to our activity's resource file.
 
-**Note: We will use a pre-built button. The button can still be customized according to the developer's preference.**
+**Note: We will use an optional pre-built button. The button can still be customized according to the developer's preference.**
 
 Add the following dependency in your **app** module `build.gradle` file:
 
@@ -48,8 +67,7 @@ dependencies {
 
 Click on *Sync Now*.
 
-
-In your XML Layout, add the button.
+In your XML layout, add the button.
 
 ```xml
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -67,105 +85,100 @@ app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-**Note: app:isDarkTheme="{Boolean}"  is used to switch between the blue and gray-white theme for the button.**
+
+**Note: `app:isDarkTheme="{Boolean}"`: To switch between blue theme and gray-white for the button. The [library handles](https://android-arsenal.com/details/1/7099) the changing of text color and background color. It also handles the change of color on button press or button clicks.**
 
 ![Layout Resource File](/engineering-education/google-authentication-for-android/xml.png)
 
-#### Step 3 -Setting up Firebase.
+#### Step 3 - Setting up Firebase.
 Set up and connect your project on Firebase by following instructions stated by Google [here](https://firebase.google.com/docs/android/setup).
 
-#### Step 4 – Lets Code.
-* Add the following dependencies to your **app** module `build.gradle` and sync the project;
+#### Step 4 – Lets Code
+Add the following dependencies to your **app** module `build.gradle` and sync the project.
 
 ```gradle
   implementation 'com.google.firebase:firebase-auth:19.4.0'
   implementation 'com.google.android.gms:play-services-auth:18.1.0'
 ```
-In our `MainActivity.java` add the following lines of code;
 
-* First, initialize the views for the Authentication process.
+In our `MainActivity.java` we will add the following lines of code.
+
+First, initialize the views for the authentication process.
 
 ```java
 //Initializing the views required for the Authentication process.
 private GoogleSignInClient mGoogleSignInClient;
 private FirebaseAuth firebaseAuth;
 private Button googleSignIn;
-private int RC_SIGN_UP = 1
+private int RC_SIGN_IN = 1
 ```
 
-* In the activity's `onCreate` method, initiate `FirebaseAuth` which is used to Authenticate users
+In the activity's `onCreate` method, initiate `FirebaseAuth` that is used to Authenticate users.
 
  ```java
  //Initializing Auth
 firebaseAuth = FirebaseAuth.getInstance();
 ```
 
-* Next, configure Google Sign In to request the data required by the app. Create a **GoogleSignInOptions** object with the `requestEmail` which will request for the user’s email in the requestEmail option.
+Next, configure Google Sign In to request the data required by the app. We will create the **GoogleSignInOptions** object with the `requestEmail` option.
 
-```java
-// Configure googleSignInOptions to request the email address, basic under details and user's ID.
-GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+```JavaScript
+// Configure sign-in to request the user's ID, email address, and basic under details.
+GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
 .requestEmail()
 .build();
 ```
 
-* Next, we will create a **GoogleSignInClient** object.
+Next, we will create a **GoogleSignInClient** object.
 
 ```java
-// Build a GoogleSignInClient with the options specified in googleSignInOptions .
-GoogleSignInOptions googleSignInOptions  = new
-GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+// Build a GoogleSignInClient with the options specified by gso.
+GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
 .requestIdToken(getString(R.string.default_web_client_id))
 .requestEmail()
 .build();
 ```
+
 **Note: `The R.string.default_web_client_id` is automatically added once you build and run the application on a device or emulator**
 
 
-* Set an onClick listener on the Google Sign Up button which will pass the SignUp method.
+Set an onClick listener on the Google Sign Up button which will pass the SignIn method.
 
-```java
-        googleSignIn = (Button) findViewById(R.id.googleSignIn);
+```JavaScript
+googleSignIn = (Button) findViewById(R.id.googleSignIn);
         googleSignIn.setOnClickListener(new View.OnClickListener()
         {
-            @Override
-            public void onClick(View v) {
-                signUp();
-            }
-
-            private void signUp()
-            {
-                Intent signIn = mGoogleSignInClient.getSignInIntent();
-                startActivityForResult(signIn,RC_SIGN_UP);
-            }
-        });
-```
-
-* Get the GoogleSignInAccount object for the user in the `onActivityResult` method.
-
-```java
-@Override
-protected void onActivityResult(int getCode, int endCode, @Nullable Intent data)
-{
-    super.onActivityResult(getCode, endCode, data);
-    //Google Sign Up
-    if(getCode ==RC_SIGN_UP)
-    {
-        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-        handleSignUpResult(task);
+         googleSignIn = (Button) findViewById(R.id.googleSignIn);
     }
-}
 ```
 
-**Note: The `GoogleSignInAccount` object contains contains the signed-in user’s information.**
+Get the `GoogleSignInAccount` object for the user in the `onActivityResult` method.
 
-* Next, create a `handleSignInResult` method which will give out instructions on actions to be done if the process is successful . For instance, we would like to notify a user whether they have signed in or not, and if successful they should be able to access the next activity.
+```JavaScript
+@Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        //Google Sign Up
+        if(requestCode ==RC_SIGN_IN)
+        {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
 
-```java
-        private void handleSignUpResult(Task<GoogleSignInAccount> myCompletedTask)
+        }
+
+    }
+```
+
+**Note: The `GoogleSignInAccount` object contains information about the signed-in user.**
+
+Next, create a `handleSignInResult` method that will give out instructions on actions to be done if the process is successful. For instance, we would like to notify a user whether they have signed in or not, and if successful they should be able to access the next activity.
+
+```JavaScript
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask)
     {
         try {
-            GoogleSignInAccount account = myCompletedTask.getResult(ApiException.class);
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             FirebaseGoogleAuth(account);
         } catch (ApiException e) {
             Toast.makeText(MainActivity.this,"Sign In Failed",Toast.LENGTH_SHORT).show();
@@ -175,16 +188,16 @@ protected void onActivityResult(int getCode, int endCode, @Nullable Intent data)
     }
 ```
 
-* Afterwards, we create a `FirebaseGoogleAuth` method in which we will get an ID token from the `GoogleSignInAccount` object. Exchange it for a Firebase credential, hence enables us to authenticate with Firebase:
+Afterwards, we create a `FirebaseGoogleAuth` method to receive an ID token from the `GoogleSignInAccount` object. Exchange it for a Firebase credential, that enables us to authenticate with Firebase.
 
 ```java
-      private void FirebaseGoogleAuth(GoogleSignInAccount myAccount)
+    private void FirebaseGoogleAuth(GoogleSignInAccount account)
     {
         //check if account is null
-        if (myAccount != null)
+        if (account != null)
         {
-            AuthCredential myAuthCredential = GoogleAuthProvider.getCredential(myAccount.getIdToken(), null);
-            firebaseAuth.signInWithCredential(myAuthCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
+            AuthCredential authCredential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+            firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
             {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task)
@@ -197,8 +210,8 @@ protected void onActivityResult(int getCode, int endCode, @Nullable Intent data)
 
                     } else {
                         Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
-                        FirebaseUser mUser = firebaseAuth.getCurrentUser();
-                        updateUI(mUser);
+                        FirebaseUser user = firebaseAuth.getCurrentUser();
+                        updateUI(user);
                     }
                 }
             });
@@ -209,28 +222,36 @@ protected void onActivityResult(int getCode, int endCode, @Nullable Intent data)
     }
 ```
 
-* Let us create a `UpdateUI` method that will be used to display the UI for the Google Account options.
+Let's create an `UpdateUI` method that will be used to display the UI for the Google account options.
 
 ```java
- private void updateUI(FirebaseUser firebaseUser)
-{
-    GoogleSignInAccount mAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-    if (mAccount != null)
+ private void updateUI(FirebaseUser fUser)
     {
-        String mPersonName = mAccount.getDisplayName();
-        String mPersonEmail = mAccount.getEmail();
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+        if (account != null)
+        {
+            String personName = account.getDisplayName();
+            String personEmail = account.getEmail();
+        }
+
     }
-}
+
 ```
-We are done! Let us run the app.
 
+We are done! Let's run the app to test it out.
 
+#### Screen one
 ![GoogleSignUp](/engineering-education/google-authentication-for-android/finalone.jpg)
 
+#### Screen two
 ![GoogleSignUp](/engineering-education/google-authentication-for-android/finaltwo.jpg)
 
+#### Screen three
 ![GoogleSignUp](/engineering-education/google-authentication-for-android/finalthree.jpg)
 
-Access the Source code [here](https://github.com/BrianaNzivu/googlesignup).
+You can access the full source code [here](https://github.com/BrianaNzivu/googlesignup).
 
-Download the Application [here] (https://drive.google.com/file/d/1qeb3z7RfXaMfMl9I4AhQQYDrbhmem2n0/view?usp=sharing).
+You can download the application [here](https://drive.google.com/file/d/1qeb3z7RfXaMfMl9I4AhQQYDrbhmem2n0/view?usp=sharing).
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
