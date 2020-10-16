@@ -17,7 +17,6 @@ images:
 These three terms: Artificial Intelligence  (AI), Machine learning (ML), and Deep Learning (DL) are often confusing. Although used interchangeably, these terminologies refer to different things. This article will explain the differences of each.
 <!--more-->
 ### Introduction
-
 **Artificial Intelligence (AI):** incorporates human intelligence to machines.
 **Machine Learning (ML):** gives computers the ability to learn without programming it.
 **Deep Learning (DL):** uses neural networks to identify patterns within a structure.
