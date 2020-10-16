@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/google-authentication-for-android/
 title: Google Authentication in Android Applications
-description: This guide will go over how to integrate Google authentication into Android applications with examples.
+description: This guide will go over how to integrate Google authentication into Android applications with code examples.
 author: briana-nzivu
-date: 2020-10-16T00:00:00-16:00
+date: 2020-10-16T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
