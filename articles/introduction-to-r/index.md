@@ -1,6 +1,6 @@
 # Introduction to R Programming
 
-The data science community has been growing over the past decade. The tools used in industry have been powering this unprecedented growth. Hence, learning a programming language like R empowers us to contribute to the field. This article will clarify all the basic concepts of R and cover vectors, matrices, factors and lists in detail. Going through this tutorial will familiarize you with the building blocks of an R program.
+The data science community has been growing over the past decade. The tools used in industry have been powering this unprecedented growth. Hence, learning a programming language like R empowers us to contribute to the field. This article will clarify all the basic concepts of R and cover vectors, matrices, factors, and lists in detail. Going through this tutorial will familiarize you with the building blocks of an R program.
 
 ### What is R?
 
@@ -18,11 +18,11 @@ The four components are as follows:
 
 1. **Editor**: The editor is used to create R scripts. R scripts are executed using the run button or the console. The `run` button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
    1. Set the current working directory to the directory, including the R script. Use the command `setwd(dir)` to set the working directory to the directory of your choice. Use `getwd()` to get the current working directory
-   2. We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section. The `source(filename)` is executed via the console.
+   2. We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section. The `source(filename)` is typed and executed via the console, which we cover in the next point.
    ![](R-Script.jpg)
 2. **Console and Terminal**: The **console** in R is similar to IDLE in Python. We can execute any command here. For this tutorial, you may use the **console**.
    ![](console.jpg)
-3. **Environment Variables**: The **enironment variables window** list all the variables created during program execution and their corresponding values. It is used to understand the dimensionality and data-types of the data being used by a program.
+3. **Environment Variables**: The **environment variables window** list all the variables created during program execution and their corresponding values. It is used to understand the dimensionality and data-types of the data being used by a program.
    ![](environment.jpg)
 4. **Plots, Package manager, and Help Section**: The plots section generates any plots that have been specified in the R script. The **Package Manager** gives us a list of packages installed and lets us install packages if required.  Finally, the help section is a go-to for developers of all levels. The ability to go through official docs through the RStudio empowers programmers and saves them much time. 
    ![](plot.jpg)
@@ -83,7 +83,7 @@ a %% b # modulus(returns the remainder after division)
 ```
 ##### Naming Indices
 
-R lets us identify each index with a custom name. For example, let us define a vector `first_quarter` and initialize it with numbers 1,2 and 3. We represent another vector `first_quarter_names` with names of the first three months. 
+R lets us identify each index with a custom name. For example, let us define a vector `first_quarter` and initialize it with numbers 1,2, and 3. We represent another vector, `first_quarter_names`, with names of the first three months. 
 
 Using the `names` function, we can assign unique indexes to elements of `first_quarter.` This helps in customizing the index names, which is useful in cases dealing with large amounts of data.
 
@@ -183,7 +183,7 @@ The final concept to be covered under matrices is the selection of elements. Mat
 
 ```r
 x <- matrix(1:16, brow=TRUE, nrow=4) # matrix definition
-x[1:2,1:2] # selection operationgit 
+x[1:2,1:2] # selection operation
 ```
 The output is given as follows:
 ```txt
