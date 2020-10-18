@@ -4,7 +4,7 @@ description: This tutorial will give readers a detailed guide on packages in pyt
 
 ### Building A Python Package And Publishing It on PyPI
 
-![Package](/engineering-education/building-a-python-package-and-publishing-on-pypi/img.jpg)
+![Package](https://github.com/jamessandy/engineering-education/blob/master/articles/building-a-python-package-and-publishing-on-pypi/img.jpg)
 
 If you are already building stuff with python you will notice a lot of installing and importing of packages, pythons allow you to reuse code and share your code to save time and energy. So in very simple terms, a  python package is a collection of related modules, it is a module that contains a file name *__init__.py*. Maybe you’ve been wanting to build your own package or just interested in knowing how it is built, this tutorial will give you a walk down.
 
@@ -43,7 +43,7 @@ The function above is called *cal_lcm* and it will take in two arguments and cal
 ```txt
 This is a simple program that helps you calculate the Lowest common multiple of two numbers
 ```
-The third step, will be adding an open-source license to our package, there are several open source licenses  available which you can check out [here]( https://opensource.org/licenses) but for this tutorial, we will be using the MIT open source license which you can see[here] (https://opensource.org/licenses/MIT), so create a file, save it as *License.txt*  and add the text from the MIT Licenses below
+The third step, will be adding an open-source license to our package, there are several open source licenses  available which you can check out [here]( https://opensource.org/licenses) but for this tutorial, we will be using the MIT open source license which you can see[here](https://opensource.org/licenses/MIT), so create a file, save it as *License.txt*  and add the text from the MIT Licenses below
 
 ```txt
 Copyright <YEAR> <COPYRIGHT HOLDER>
