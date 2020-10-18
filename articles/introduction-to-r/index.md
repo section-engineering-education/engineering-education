@@ -1,10 +1,23 @@
-# Introduction to R Programming
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-r/
+title: Introduction to R Programming
+description:
+author: lalithnarayan-c
+date: 2020-10-18T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-r/hero.jpg
+    alt:
+---
 The data science community has been growing over the past decade. The tools used in industry have been powering this unprecedented growth. Hence, learning a programming language like R empowers us to contribute to the field. This article will clarify all the basic concepts of R and cover vectors, matrices, factors, and lists in detail. Going through this tutorial will familiarize you with the building blocks of an R program.
-
+<!--more-->
 ### What is R?
-
-R is a software environment developed for statistical and graphical computing. Developed at Bell Labs, it is a modified implementation of the [S language](https://en.wikipedia.org/wiki/S_%28programming_language%29). It provides many statistical techniques such as [linear modeling](https://techvidvan.com/tutorials/r-generalized-linear-models/), [non-linear modeling](https://analyticsindiamag.com/hands-on-guide-for-non-linear-regression-models-in-r/), [statistical tests](http://r-statistics.co/Statistical-Tests-in-R.html), [classification, and clustering](https://www.geeksforgeeks.org/introduction-to-machine-learning-in-r/) algorithms, etc. One of the greatest strengths of the R language is the large community that uses it. Therefore, many optimized libraries are readily available to make the lives of early programmers simple. 
+R is a software environment developed for statistical and graphical computing. Developed at Bell Labs, it is a modified implementation of the [S language](https://en.wikipedia.org/wiki/S_%28programming_language%29). It provides many statistical techniques such as [linear modeling](https://techvidvan.com/tutorials/r-generalized-linear-models/), [non-linear modeling](https://analyticsindiamag.com/hands-on-guide-for-non-linear-regression-models-in-r/), [statistical tests](http://r-statistics.co/Statistical-Tests-in-R.html), [classification, and clustering](https://www.geeksforgeeks.org/introduction-to-machine-learning-in-r/) algorithms, etc. One of the greatest strengths of the R language is the large community that uses it. Therefore, many optimized libraries are readily available to make the lives of early programmers simple.
 
 ### RStudio
 
@@ -24,7 +37,7 @@ The four components are as follows:
    ![](console.jpg)
 3. **Environment Variables**: The **environment variables window** list all the variables created during program execution and their corresponding values. It is used to understand the dimensionality and data-types of the data being used by a program.
    ![](environment.jpg)
-4. **Plots, Package manager, and Help Section**: The plots section generates any plots that have been specified in the R script. The **Package Manager** gives us a list of packages installed and lets us install packages if required.  Finally, the help section is a go-to for developers of all levels. The ability to go through official docs through the RStudio empowers programmers and saves them much time. 
+4. **Plots, Package manager, and Help Section**: The plots section generates any plots that have been specified in the R script. The **Package Manager** gives us a list of packages installed and lets us install packages if required.  Finally, the help section is a go-to for developers of all levels. The ability to go through official docs through the RStudio empowers programmers and saves them much time.
    ![](plot.jpg)
 
 
@@ -33,11 +46,11 @@ The four components are as follows:
 In this article, we will be covering the following concepts:
 
 1. Variables, Data Types, and Operations
-2. Vectors 
+2. Vectors
 3. Matrices
 4. Factors
 5. Lists
-   
+
 #### Variables, Data Types and Operations
 
 R includes the following atomic data-types: logical, numeric, integer, complex, and character. Abstract data types such as lists, stacks, etc., are defined using these atomic data-types. Variables are memory locations that store values during the execution of a computer program. To define a variable in R, we use the reverse-arrow(<-) operator. Let us look at the code to declare variables.
@@ -79,11 +92,11 @@ a + b # addition
 a - b # subtraction
 a * b # multiplication
 a/ b # division
-a %% b # modulus(returns the remainder after division) 
+a %% b # modulus(returns the remainder after division)
 ```
 ##### Naming Indices
 
-R lets us identify each index with a custom name. For example, let us define a vector `first_quarter` and initialize it with numbers 1,2, and 3. We represent another vector, `first_quarter_names`, with names of the first three months. 
+R lets us identify each index with a custom name. For example, let us define a vector `first_quarter` and initialize it with numbers 1,2, and 3. We represent another vector, `first_quarter_names`, with names of the first three months.
 
 Using the `names` function, we can assign unique indexes to elements of `first_quarter.` This helps in customizing the index names, which is useful in cases dealing with large amounts of data.
 
@@ -123,9 +136,9 @@ matrix(1:16, bycol=TRUE, ncol=4)
 matrix(1:16, byrow=TRUE, nrow=4)
 ```
 
-If the vector's length is not a multiple of the number of rows/columns mentioned in the function, then R displays a warning and fills up the remaining spaces with the first few elements of the list. 
+If the vector's length is not a multiple of the number of rows/columns mentioned in the function, then R displays a warning and fills up the remaining spaces with the first few elements of the list.
 
-For example 
+For example
 
 ```r
 matrix(1:16, byrow=TRUE, nrow=3 )
@@ -140,7 +153,7 @@ Warning message: data length [16] is not a sub-multiple or multiple of the numbe
 ```
 ##### Naming Matrices
 
-Just like vectors, matrices also have the option to name the rows and columns. The functions available are `rownames()` and `colnames()` respectively. They take in a vector containing the names corresponding to the indices. Consider the following example: 
+Just like vectors, matrices also have the option to name the rows and columns. The functions available are `rownames()` and `colnames()` respectively. They take in a vector containing the names corresponding to the indices. Consider the following example:
 
 ```r
 new_matrix <- matrix(1:4, byrow=TRUE, ncol=2)
@@ -149,9 +162,9 @@ rownames(newm_matrix) <- c("row 1","row 2","row 3")
 ```
 ##### Summing Entries
 
-Let's say you want to compute the average of the entries in your matrix. We begin by adding them up and then dividing by the total number of entries. R offers functions to add the entire rows or columns. They are `rowSums,` `colSums.` These functions take the matrix as their input and output a vector containing the sums. 
+Let's say you want to compute the average of the entries in your matrix. We begin by adding them up and then dividing by the total number of entries. R offers functions to add the entire rows or columns. They are `rowSums,` `colSums.` These functions take the matrix as their input and output a vector containing the sums.
 
-Example: 
+Example:
 ```r
 x <- matrix(1:9, byrow = TRUE, nrow=3)
 row_sum <- rowSums(x)
@@ -160,8 +173,8 @@ col_sum <- colSums(x)
 
 ##### Inserting new rows and columns to existing matrices
 
-Let us consider the situation where we need to modify a matrix by adding extra rows or columns. R provides two functions called `cbind()` and `rbind()` to do the same. 
-The input to the function is the matrix to be modified followed by the vector to be inserted. Consider the example given below: 
+Let us consider the situation where we need to modify a matrix by adding extra rows or columns. R provides two functions called `cbind()` and `rbind()` to do the same.
+The input to the function is the matrix to be modified followed by the vector to be inserted. Consider the example given below:
 ```r
 x <- matrix(1:9, byrow = TRUE, nrow=3)
 new_matrix_with_additional_column <- cbind(x, c(1,2,3))
@@ -193,7 +206,7 @@ x
 [2,]    5    6    7    8
 [3,]    9   10   11   12
 [4,]   13   14   15   16
- 
+
  x[1:2,1:2]
      [,1] [,2]
 [1,]    1    2
@@ -205,7 +218,7 @@ With the solid knowledge of vectors, matrices, and various data types, let's shi
 #### Factors
 In the case of supervised learning algorithms, we use factors. [classification](https://www.section.io/engineering-education/supervised-learning-algorithms/) algorithms have discrete output variables, whereas regression algorithms have continuous output variables. We can use vectors and matrices to store continuous output variables. But in the case of categorical values, we use factors.
 
-R provides us with the function factor to deal with categorical values. Examples are the best way to understand the implementation. 
+R provides us with the function factor to deal with categorical values. Examples are the best way to understand the implementation.
 
 ```r
 factor_vector <- c("Big","Small","Medium")
@@ -226,7 +239,7 @@ factored_vector
 ```
 We obtain the desired output.
 ```txt
-[1] Big Small Medium 
+[1] Big Small Medium
 Levels: Small < Medium < Big
 ```
 The final function one must know under factors, which is used quite frequently, is `summary().` The summary function summarizes factors and gives the total number of occurrences of a particular category in the initial `factor_vector.`
@@ -239,7 +252,7 @@ summary(factored_vector)
 ```
 The following code outputs:
 ```txt
-Small Medium Big 
+Small Medium Big
     1     1     1
 ```
 
@@ -248,7 +261,7 @@ Small Medium Big
 Lists are data structures similar to structures in C. They can hold elements belonging to various data types. Lists are the data structure that completes the R-ecosystem by providing many features. Let us look at lists and the functions it offers.
 
 
-Let us begin by declaring a list. 
+Let us begin by declaring a list.
 
 ```r
 vector_to_be_inserted_in_list <- c(1:5)
@@ -276,7 +289,7 @@ The list is displayed as given below. The entire output displayed below is the l
 [4,]   13   14   15   16
 ```
 
-We can get the elements of the list using indexes. To get the matrix, type in `new_list[3]` in the console. 
+We can get the elements of the list using indexes. To get the matrix, type in `new_list[3]` in the console.
 
 Lists also allow us to name the elements. The `names` function is used for the same.
 
@@ -309,7 +322,7 @@ $matrix
 
 Using the names, we can select the elements. To select the text using the name, we use the following command: `new_list$text.`
 
-The general syntax is name of the variable, followed by`$`, followed by the name assigned: `name_of_the_list_variable$name_assigned_to_element`. 
+The general syntax is name of the variable, followed by`$`, followed by the name assigned: `name_of_the_list_variable$name_assigned_to_element`.
 
 ### Conclusion
-In this article, we have learned the basics of R programming. It is a potent tool used extensively in the data science community. Try out the code given to gain maximum value from the tutorial. Also, try out [Repl.it](https://repl.it/languages/rlang) and use it often. It provides hassle-free access to faster experimentation and prototyping. 
+In this article, we have learned the basics of R programming. It is a potent tool used extensively in the data science community. Try out the code given to gain maximum value from the tutorial. Also, try out [Repl.it](https://repl.it/languages/rlang) and use it often. It provides hassle-free access to faster experimentation and prototyping.
