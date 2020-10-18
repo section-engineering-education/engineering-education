@@ -14,11 +14,12 @@ images:
   - url: /engineering-education/history-of-nodejs/hero.jpg
     alt: hero example image computer Node.js
 ---
-When I first heard about GatsbyJs I was pretty confused and related it to the famous ***‘J Gatsby’*** of the movie [“The Great Gatsby”](https://www.imdb.com/title/tt1343092/), my goal for this article is not to confuse you but to get you started in building your very first static site using GatsbyJs.
+When I first heard about GatsbyJs I was pretty confused about what it was and how to get started, but as time went by i learnt it and found out it's awesome, my goal for this article is not to confuse you but to get you started in building your very first static site using GatsbyJs.
 <!--more-->
 A paradigm shift has begun in the web development world, where static sites are now becoming a trend over good old dynamic sites. Building a dynamic site that require you to worry about setting up a server and/or maintain it is now obsolete.
 
-and it's not an issue when building static sites because cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), [Gaysby Cloud](https://www.gatsbyjs.com/cloud/) etc. think you shouldn’t be doing so and they want software development to be fast, easy, scalable and fun not only for the developers but also for the clients because slow dynamic sites can cause high page bounce rate from users, so that’s where GatsbyJs comes in; a powerful and easy static site generator.
+This is not an issue when building static sites because cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), [Gaysby Cloud](https://www.gatsbyjs.com/cloud/) etc. wants software development to be easy, fast and scalable for developers. 
+Compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes in; a powerful and easy static site generator.
 
 ![GatsbyJs image](/engineering-education/how-to-build-astatic-site-with-gatsbyjs/gatsbyjs.png)
 [*Image Source: https://www.datocms.com/blog/gatsbyjs-plugin-just-landed](https://www.datocms.com/blog/gatsbyjs-plugin-just-landed)
@@ -33,7 +34,7 @@ and it's not an issue when building static sites because cloud service companies
 - It has a great [community of developers](https://www.gatsbyjs.com/contributing/community/)
 
 ### Prerequisite Knowledge
-In order to get stared with GatsbyJs, you will need some knowledge of the followings:
+In order to get started with GatsbyJs, you will need some knowledge of the followings:
 - [React.js](https://reactjs.org/) (the basics, components, etc.)
 - [Nodejs](https://nodejs.org/en/) (the basics, [npm](https://www.npmjs.com/), etc)
 - [GraphQL](https://graphql.org/) (the basics and advanced)
@@ -52,7 +53,7 @@ Next, in your terminal type in
 `Users/yourname: npm install –global gatsby-cli`
 You just installed Gatsby and its command line interface globally in your computer, this is the way for you to interact with Gatsby using the command line interface.
 
-In order to confirm ypu have Gatsby installed, type in
+In order to confirm you have Gatsby installed, type in
 `Users/yourname: gatsby –version`
 
 ### Creating a new GatsbyJs site
