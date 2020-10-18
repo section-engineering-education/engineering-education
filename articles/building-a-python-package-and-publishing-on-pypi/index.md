@@ -1,4 +1,5 @@
 title: Building a python package and publishing on PyPi
+
 description: This tutorial will give readers a detailed guide on packages in python and how to build one, it will take them through on how to write and structure their code, structure and package it, and finally how to publish it on PyPI for their general python community. It will help developers know how to push as their efficient chunk of codes so other devs can use it too.
 
 ### Building A Python Package And Publishing It on PyPI
@@ -42,19 +43,7 @@ The function above is called *cal_lcm* and it will take in two arguments and cal
 ```txt
 This is a simple program that helps you calculate the Lowest common multiple of two numbers
 ```
-
-The next step will be to create another file which we will call *CHANGELOG*, the changelog is a file that updates users on what changes are made when a new version of the package is released. So create a file save it as *CHANGELOG.txt* and add the text below 
-
-``txt
- Change log
-
-========
-0.0.0.1 (15/10/2020)
--------------
-- First release
-```
-
-The fourth step, will be adding an open-source license to our package, there are several open source licenses available which you can check out [here](https://opensource.org/licenses) but for this tutorial, we will be using the MIT open source license which you can see [here](https://opensource.org/licenses/MIT), so create a file, save it as *License.txt*  and add the text from the MIT Licenses below
+The third step, will be adding an open-source license to our package, there are several open source licenses  available which you can check out [here]( https://opensource.org/licenses) but for this tutorial, we will be using the MIT open source license which you can see[here] (https://opensource.org/licenses/MIT), so create a file, save it as *License.txt*  and add the text from the MIT Licenses below
 
 ```txt
 Copyright <YEAR> <COPYRIGHT HOLDER>
