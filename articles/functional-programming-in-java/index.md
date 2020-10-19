@@ -1,11 +1,14 @@
-# Functional Programming in Java 
+title: Functional Programming in Java
 
-**Introduction**
+description: A beginners guide to functional programming in Java. This includes immutable Collections, lambda expressions,
+Stream api, and method reference.
+
+### Introduction
 
 In this article, we will go over functional programming in Java. For the purpose of the article, it will be assumed that
 you have foundational knowledge up to Java 7. All the features I will talk about have been introduced in Java 8 onward.
 
-**What is Functional Programming**
+### What is Functional Programming
 
 To begin, it is important to have a solid understanding of functional programming and its advantages. Functional
 Programming is a programming paradigm centered on the structure and use of functions. At the same time, it puts emphasis
@@ -24,7 +27,7 @@ strictly object-oriented, does not have a feature to create a function outside o
 which are identical to functions, but associated with a class or object. For the purposes of this guide, this distinction
 is not very significant, and the terms “function” and “method” may be used interchangeably.
 
-**An Overview of Java’s Support for Functional Programming**
+### An Overview of Java’s Support for Functional Programming
 
 Java was never initially developed to support functional programming. You could definitely create pure functions, and have 
 immutable objects and data structures, but there was no real way to use functions as objects, and subsequently, create 
@@ -32,7 +35,7 @@ higher-order functions. Java 8 however, provided the tools necessary to use thes
 to help the life of a Java developer. These tools include the introduction of UnmodifiableCollections, the lambda 
 expression, Streams and method reference.
 
-**Unmodifiable Collections**
+### Unmodifiable Collections
 
 Ordinary Collections such as Lists are mutable by nature, and so if one is not careful, an unwanted modification can be
 made. Within the Collections class, there exists many static methods used to create UnmodifiableCollections out of 
@@ -79,7 +82,7 @@ List<String> strings = List.of("Hello", "World");
 There are many other static methods within the Collection subclasses of this fashion, such as corresponding methods for 
 Maps and Sets.
 
-**Lambda Expressions**
+### Lambda Expressions
 
 A lambda expression can be defined as an expression used to create a method in-line. These lambda expressions have
 object-like qualities in that they are passed into higher-order functions (in fact, they are actually their own objects
@@ -116,7 +119,7 @@ At this point, you may be wondering why we omit the types of the parameter and r
 statically typed language, it may not be very intuitive to you why this is the case. Yet, lambda expressions are indeed 
 strongly and statically typed, even though types aren't shown, this will be explained in more detail later.
 
-**Lambda Expressions vs Anonymous Inner Classes**
+### Lambda Expressions vs Anonymous Inner Classes
 
 Lambda expressions, being a way to create “methods” in-line, draws some comparison to anonymous inner-classes, a way to 
 build objects on the fly. To review, anonymous inner-classes are often used to pass event listeners into swing components:
@@ -140,7 +143,7 @@ expressions work in almost the exact same way; they are also used to create obje
 objects are essentially instances of wrapper classes for the methods we are interested in using. Behind the scenes, 
 lambda expressions are implementations of what are called “functional interfaces”.
 
-**Functional Interfaces**
+### Functional Interfaces
 
 Functional interfaces are essentially interfaces that contain one unimplemented method. This allows the compiler to map 
 lambda expressions into them. The idea is that they represent a functionality and not some kind of entity.
@@ -168,7 +171,7 @@ would expect this, even without explicitly saying that it should as with normal 
 have their argument and return types as generics. In this case the type of the arguments and return value would be
 specified by the method accepting it.
 
-**Stream api**
+### Stream api
 
 One common use of lambda expressions is to be passed into higher order functions to manipulate the values within data
 structures. It would be impossible to talk about this application without mentioning streams. A stream in this context 
@@ -210,7 +213,7 @@ method with the argument: “Collectors.toList()”, to collect each element in 
 
 Note: to perform these operations asynchronously, invoke the parallelStream method instead of the stream method.
 
-**Some Common Stream Methods**
+### Some Common Stream Methods
 
 The Stream interface has a large amount of methods to provide useful tools when manipulating data. Some of the more commonly
 used methods I will go into detail about are the map, forEach and reduce methods of the Stream interface. If you are
@@ -229,7 +232,7 @@ single result. For example, you may pass a lambda expression to add two elements
 reduce method would repeatedly add two elements in the stream, and return the sum of all the elements. Note: the lambda 
 expression passed must take two elements of the stream as arguments.
 
-**Method Reference**
+### Method Reference
 
 Going back to our description of lambda expressions, a lambda expression is an expression used to create a “method” on
 the fly. The one drawback is that lambda expressions lack the re-usability of normal methods. The question then arises,
@@ -280,7 +283,7 @@ Here, we first create a stream out of the list of names, then we call the map me
 String as the name field. Then we call the forEach method to invoke the introduce method of each Person. 
 
 
-**Summary and Conclusion**
+### Summary and Conclusion
 
 To summarize this article, we went over the basic idea behind functional programming, and some tools Java gives us
 to code in this style. This includes UnmodifiableCollections, functional interfaces, lambda expressions, stream api and 
