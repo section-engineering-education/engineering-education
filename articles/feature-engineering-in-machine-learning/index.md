@@ -99,7 +99,11 @@ Below are three general types of features.
 
 - **Image features**. Images are converted into suitable formats for analysis. The result is image-based features. Features can be extracted through the use of image feature extraction algorithms like ORB and Vantage Point Tree. ORB (Oriented FAST and Rotated BRIEF) algorithm finds the "corners" of the image. It picks out features as image areas with high contrast. After detecting features, the extracted point are converted into binary feature vectors, which are strings of 0s and 1s between 128 and 526. Vantage Point Tree is a method that does analysis on image contents and compresses information into a 32-bit integer. It is capable of finding nearly identical images to a query image. To read more on these feature extraction algorithms check out this [article](https://towardsdatascience.com/comparing-the-feature-extraction-algorithms-for-images-e27c3c662874).
 
-Feature extraction in machine learning occurs differently from feature extraction in deep learning. In machine learning, it is often a manual process. For example, features from an image, like parts of a car, would need to be extracted manually by a practitioner to be fed to a model. In deep learning, feature extraction takes place automatically during the learning process. Consider a convolutional neural network. The first layer of the network learns small details from a given image. The subsequent layers combine previous information to compile more complex information. In a CNN, feature extraction is done by use of a filter. A convolution kernel acts as a filter. Convolution describes a mathematical process describing a rule of combining two functions to form a third function. Input data (or feature map) and the kernel are combined to produce a transformed feature map. The feature map is filtered for useful information such as edges as an example. Convolutional networks adjust automatically to identify the best features for a given task. For more on convolutional neural networks read this [post](https://developer.nvidia.com/discover/convolutional-neural-network).   
+Feature extraction in machine learning occurs differently from feature extraction in deep learning. In machine learning, it is often a manual process. For example, features from an image, like parts of a car, would need to be extracted manually by a practitioner to be fed to a model. In deep learning, feature extraction takes place automatically during the learning process. Consider a convolutional neural network.
+
+The first layer of the network learns small details from a given image. The subsequent layers combine previous information to compile more complex information. In a CNN, feature extraction is done by use of a filter. A convolution kernel acts as a filter. Convolution describes a mathematical process describing a rule of combining two functions to form a third function. Input data (or feature map) and the kernel are combined to produce a transformed feature map.
+
+The feature map is filtered for useful information such as edges as an example. Convolutional networks adjust automatically to identify the best features for a given task. For more on convolutional neural networks read this [post](https://developer.nvidia.com/discover/convolutional-neural-network).   
 
 Understanding of features puts us in a better position to dive into feature engineering techniques.  
 
@@ -133,7 +137,9 @@ This means the selection is a subset of existing features. The benefits of featu
 
 - Reduction in [data dimensionality](https://www.statisticshowto.com/dimensionality/#:~:text=Dimensionality%20in%20statistics%20refers%20to,one%20column%20representing%20each%20dimension.). The result is reduced complexity of the model. This in turn means a model can be trained faster. High dimensional data refers to data with so many dimensions that calculations become incredibly difficult. The number of features may end up exceeding the number of observations.
 
-When you keep adding more variables to a multivariate model, it becomes increasingly difficult to predict certain quantities. An increase in variables leads to an exponential decrease in predictive power. This is what we refer to as the curse of dimensionality. More is not always better. This explains why machine learning models with high dimensional data offer poor performance. It is important to reduce the dimensionality of data for better performance.
+When you keep adding more variables to a multivariate model, it becomes increasingly difficult to predict certain quantities. An increase in variables leads to an exponential decrease in predictive power. This is what we refer to as the curse of dimensionality. More is not always better.
+
+This explains why machine learning models with high dimensional data offer poor performance. It is important to reduce the dimensionality of data for better performance.
 
 - Reduction in overfitting. We mentioned the higher number of parameters in data, the higher the chance of overfitting. Reducing features through feature selection reduces these parameters. As a result, overfitting is reduced.
 
@@ -155,7 +161,9 @@ A framework worth checking out for automated machine learning is [Auto_ml](https
 Automated feature engineering automatically creates viable features from a dataset. The best of these features can be used for training. This greatly assists data scientists in avoiding the struggles of the manual process. It also offers an aspect of the reusability of feature engineering approaches. Let's not forget to mention the precious time that is saved by automating the process.
 
 ### It’s a Wrap
-Feature engineering is key to building effective machine learning models. It is often the difference between an average model and a successful model. In addition to introducing machine learning, we have dissected feature engineering in this post. I am confident you now know what feature engineering is, why it is important, and a few techniques associated with it. I do hope this lengthy article makes it less intimidating to approach feature engineering (and machine learning as a whole). Good luck!
+Feature engineering is key to building effective machine learning models. It is often the difference between an average model and a successful model. In addition to introducing machine learning, we have dissected feature engineering in this post. I am confident you now know what feature engineering is, why it is important, and a few techniques associated with it. I do hope this lengthy article makes it less intimidating to approach feature engineering (and machine learning as a whole).
+
+Good luck!
 
 
 ### References
