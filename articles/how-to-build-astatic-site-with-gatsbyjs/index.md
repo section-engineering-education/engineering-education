@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/how-to-build-astatic-site-with-gatsbyjs/hero.png
     alt: hero example image computer Node.js
 ---
-When I first heard about GatsbyJs I was confused about what it was and how to get started, but as time went on I learned more about it and found out it is awesome, my goal for this article is not to confuse you about GatsbyJs, but to get you started in building your very first static site using GatsbyJs.
+When I first heard about GatsbyJs, I was confused about what it was and how I would get started. As time went on, I learned more about it, and found out it is awesome. My goal for this article is not to confuse you about GatsbyJs, but to help you get started with building your very first static site using GatsbyJs.
 <!--more-->
-A paradigm shift has begun in the web development world, where static sites are now becoming more of a trend over good old dynamic sites. Building a dynamic site that requires you to worry about setting up a server and/or maintaining it, is now obsolete.
+A paradigm shift has begun in the web development world, where static sites are now becoming more of a trend over dynamic sites. Building a dynamic site that required you setting it up and/or maintaining it, is now obsolete.
 
-This is not an issue when building static sites due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gaysby Cloud](https://www.gatsbyjs.com/cloud/) etc. have worked on making software development easier, faster, and more scalable for developers.
+This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gaysby Cloud](https://www.gatsbyjs.com/cloud/) etc. Having worked on making software development easier, faster, and more scalable for developers.
 
 Compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes in; a powerful and easy static site generator.
 
@@ -32,8 +32,8 @@ Compared to static sites, dynamic sites are slow to load and can cause high boun
 **Advantages**
 - It's [faster](https://www.gatsbyjs.com/contributing/how-to-pitch-gatsby/) to create a static site with GatsbyJs.
 - It's easy to set up.
-- It's scalable
-- It has a great [community of developers](https://www.gatsbyjs.com/contributing/community/)
+- It's scalable.
+- It has a great [community of developers](https://www.gatsbyjs.com/contributing/community/).
 
 ### Prerequisites
 In order to get started with GatsbyJs, you will need some background knowledge on the following:
@@ -41,30 +41,39 @@ In order to get started with GatsbyJs, you will need some background knowledge o
 - [Nodejs](https://nodejs.org/en/) (the basics, [npm](https://www.npmjs.com/), etc)
 - [GraphQL](https://graphql.org/) (the basics and advanced)
 
-However there’s no problem if don’t have any knowledge on these technologies, this article will help you get started with GatsbyJs, so stick around and check them out later if you are really interested in advancing your knowledge.
+However there’s no problem if you don’t have any knowledge on these technologies, this article will help you get started with GatsbyJs, so stick around and check the links out later if you are really interested in advancing your knowledge.
 
 ### Installations
 First of all, you'll need to install [Node.js](https://nodejs.org/en/) in your computer.
 Go to the [official Node.js website](https://nodejs.org/en/) to download the Node.js version for your operating system.
 
 After installing it, open up your terminal and type in:
-`Users/yourname: node –version`
+
+```bash
+Users/yourname: node –version
+```
 
 and
 
-`Users/yourname: npm –version`
+```bash
+Users/yourname: npm –version
+```
 
 These commands will give you the version of Node.js and node package manager respectively.
 
 Next, in your terminal type in:
 
-`Users/yourname: npm install –global gatsby-cli`
+```bash
+Users/yourname: npm install –global gatsby-cli
+```
 
 You just installed Gatsby and its command line interface globally in your computer, this is the first step to interact with Gatsby using the command line interface.
 
 In order to confirm you have Gatsby installed, type in:
 
-`Users/yourname: gatsby –version`
+```bash
+Users/yourname: gatsby –version
+```
 
 ### Creating a new GatsbyJs site
 Now let's create a static site using GatsbyJs.
@@ -77,12 +86,17 @@ Create a **my-first-gatsby-site** folder, and then in your terminal type in
 In order to see the new site, you have created, check it out using these commands.
 
 First, go into the file directory you have just created:
-`Users/my-first-gatsby-site: cd first-gatsby-site`
 
-Next `Users/my-first-gatsby-site /first-gatsby-site: npm run develop`
+```bash
+Users/my-first-gatsby-site: cd first-gatsby-site
+```
+
+Next:
+```bash
+Users/my-first-gatsby-site /first-gatsby-site: npm run develop
+```
 
 You will then get a success message saying *“your site is running at”* :
-
 `http://localhost:8000`
 
 You can now open up your web browser and access `http://localhost:8000`:
