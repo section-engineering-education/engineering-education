@@ -82,6 +82,6 @@ By highlighting lengthy, complex sentences and common errors, it helps make any 
 
 To review your Code Snippets or examples before submitting, take full advantage of the free online tool, [repl.it](https://repl.it). Use it to run and compile any code snippets to be included in your article.
 
-Finally, if you're a first time contributor, be sure to include a short Author Biography and Headshot image to be included at the end of your articles. We want to credit you for your hard work.
+Finally, if you're a first time contributor, be sure to include a short Author Biography and Headshot image. Please inlcude the files in the authors folder within the GitHub repo. We want to credit you for your hard work.
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a PR and we'll be happy to review it.
