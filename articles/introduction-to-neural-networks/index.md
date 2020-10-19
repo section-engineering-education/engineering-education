@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/introduction-to-neural-networks/hero.jpg
     alt: deep learning image example
 ---
-In this article, we will be talking about neural networks. A functional technique of deep learning whose motivation is by how the brain works.
+In this article, we will be talking about neural networks. A functional technique of deep learning whose motivation is driven by how the brain works.
 <!--more-->
 ### Introduction
-This article aims to make you understand what neural networks are. It will also give you a depth interpretation of how neural networks operates. This article will explain distinct kids of neural networks and their applications. By the end of this article, you will have attained an extensive understanding of what neural network is.
+This article aims to make you understand what neural networks are. It will also give you an in depth interpretation of how neural networks operates. This article will explain distinct kids of neural networks and their applications. By the end of this article, you will have attained an extensive understanding of what neural network are.
 
 ### Neural Networks Overview
 
