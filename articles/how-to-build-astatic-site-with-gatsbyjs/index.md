@@ -264,7 +264,7 @@ You can deploy your Gatsby site online in a various of ways, but there are 2 eas
 
 
 ### Summary
-In summary we defined what GatsbyJs is and went over its advantages, you set up your computer for GatsbyJs site development by installing Nodejs, you created your first GatsbyJs static site, added content to it, linked the pages, learned about react components, made the site interactive with a counter, and lastly deployed it to the cloud.
+In summary, we defined what GatsbyJs is and went over its advantages, we set up your computer for GatsbyJs site development by installing Nodejs, we created your first GatsbyJs static site, added content to it, linked the pages, learned about react components, made the site interactive with a counter, and lastly deployed it to the cloud.
 
 <iframe height="400px" width="100%" src="https://repl.it/@Jethromagaji/first-gatsby-site?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
