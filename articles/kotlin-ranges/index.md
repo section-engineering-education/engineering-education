@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/kotlin-ranges/
+title: Introduction to Kotlin Ranges
+description:
+author: linus-muema
+date: 2020-10-19T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/kotlin-ranges/hero.jpg
+    alt:  image example
+---
+Kotlin provides a wide range of solutions. Most of these solutions aim to make development easier and faster. It provides easier ways to perform specific actions.
+<!--more-->
 ### Kotlin Range Operators
-Kotlin provides a wide range of solutions. Most of these solutions aim to make development easier and faster. It provides easier ways to perform specific actions. Since it's compiled the same way as Java, its functions and methods ensure your code is more efficient. The boilerplate code present in Java is also greatly reduced. This article addresses one of the solutions it offers: iterations. In this article, let us take a look at Kotlin ranges.
+Since it's compiled the same way as Java, its functions and methods ensure your code is more efficient. The boilerplate code present in Java is also greatly reduced. This article addresses one of the solutions it offers: iterations. In this article, let us take a look at Kotlin ranges.
 
 ### What are ranges
 A range is a collection of values determined by a start and stop value. A simple example is, values between 1 and 5 form a range. That is, a range of 1 as the start value and 5 as the end value. Both the start and end values belong to the range too. In other words, a range is an interval from the start value to end value. We can use functions to create progressions and check for values in ranges. Let's look at how we could use ranges.  
