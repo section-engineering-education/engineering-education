@@ -6,7 +6,7 @@ url: /engineering-education/python-database-programming-sqlite/
 title: Python Database Programming - SQLite
 description: In this tutorial we will learn how to use the Python SQLite library, how to interact with it, and execute queries within a Python application.
 author: ahmad-mardeni
-date: 2020-10-15T00:00:00-14:00
+date: 2020-10-19T00:00:00-16:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -22,19 +22,19 @@ images:
 - Concurrency: it gives the ability to execute multiple queries or access multiple database files simultaneously in a single connection.
 - Reliability: it can face any maliciously designed database files and **SQL** strings.
 - Control: the content can be accessed and updated using powerful **SQL** queries.
-- Scalability: SQLite is scalable, as long as you don't need it for multi-user in high availability, and I don't recommend using it in production with big data.
+- Scalability: SQLite is scalable, as long as you don't need it for multi-user in high availability cases, and I don't recommend using it in production with big data.
 
 ### Prerequisites
 1. Basic understanding of Python programming language.
 2. Basic understanding of how **SQL** queries work.
 3. **DB Browser for SQLite**, you can download it from [here](https://sqlitebrowser.org/dl/).
 
-You are ready to go, Let's get started!
+You are ready to go, let's get started!
 
 #### In this tutorial, you’ll learn how to:
 - **Install** SQLite.
 - **Connect** SQLite with Python.
-- **Creating** tables.
+- **Create** tables.
 - **Perform** common database queries with Python application.
 
 ### Install SQLite:
@@ -44,12 +44,12 @@ For **Windows** users use this command in your terminal:
 pip install db-sqlite3
 
 ```
-for **Linux** users you can use:
+
+For **Linux** users you can use:
 
 ```bash
 sudo apt-get install sqlite
 ```
-
 
 ### Connect to a Database
 After importing SQLite3, in order to connect to a database, we have to create a connection object to represent the database by using the connect() function.
@@ -83,7 +83,7 @@ cur.execute(Create_Students_Table)
 
 A database cursor is a control structure that is used to execute statements in order to communicate with the SQLite database and fetch data from it.
 
-**Now let's take a look at how our database looks like**
+**Now let's take a look at what our database looks like**
 
 Open the **DB Browser for SQLite** then click on open database, after choosing our file `database.db` you will see what tables it contains.
 
@@ -91,7 +91,7 @@ Open the **DB Browser for SQLite** then click on open database, after choosing o
 
 ### Database Queries
 #### INSERT
-To insert records into your SQLite database. you need to store your **INSERT INTO** query in a string. After that, you can pass the query string to the execute.
+To insert records into your SQLite database. You need to store your **INSERT INTO** query in a string. After that, you can pass the query string to the execute.
 
 Let’s insert three records into the **Students** table:
 
@@ -165,7 +165,7 @@ In that example, we are searching for names in table **students** where the **ID
 Also, you can use **DESC** to sort the column in descending order(from the highest value to the lowest one).
 
 ### UPDATE
-Updating records in SQLite is very simple. we can update the **AGE**  of the **Students** with an id of 2 by:
+Updating records in SQLite is very simple. We can update the **AGE**  of the **Students** with an ID of 2 by:
 
 ```python
 Update_Students ='''
@@ -187,14 +187,14 @@ So far, we covered how to **insert** new data into a table, **update** an existi
 
 Let's go over how to delete data.
 
-As an example, try to delete the student with an id of 3:
+As an example, try to delete the student with an ID of 3:
 
 ```python
 Delete_Student = '''DELETE FROM STUDENTS WHERE id = 3'''
 cur.execute(Delete_Student)
 ```
 
-Now, if you take a look at **STUDENTS** table, you’ll see that the third student has been deleted.
+Now, if you take a look at the **STUDENTS** table, you’ll see that the third student has been deleted.
 
 ```python
 [(1, 'Ahmad', 20), (2, 'James', 35)]
@@ -212,7 +212,7 @@ Then we have to close the connection to the database by using:
 connection.close()
 ```
 
-When the connection is closed then any transaction will consider as un-committed change and in the next connection to the database, a ROLLBACK will happen, which means that the database will return to the last state before the last commit.
+When the connection is closed, any transaction will be considered as an un-committed change and in the next connection to the database, a ROLLBACK will happen, which means that the database will return to the last state before the last commit.
 
 That means you have to pay attention when starting the transactions and committing them at appropriate points without worrying about closing the connection.
 
