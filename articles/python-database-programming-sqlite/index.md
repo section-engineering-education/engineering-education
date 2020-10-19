@@ -212,7 +212,7 @@ Then we have to close the connection to the database by using:
 connection.close()
 ```
 
-When the connection is closed then any transaction will consider as un-committed changes and in the next connection to the database, a ROLLBACK will happen, which means that the database will return to the last state before the last commit.
+When the connection is closed then any transaction will consider as un-committed change and in the next connection to the database, a ROLLBACK will happen, which means that the database will return to the last state before the last commit.
 
 That means you have to pay attention when starting the transactions and committing them at appropriate points without worrying about closing the connection.
 
