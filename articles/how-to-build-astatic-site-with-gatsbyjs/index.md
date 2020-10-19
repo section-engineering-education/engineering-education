@@ -22,10 +22,6 @@ This is not an issue when building static sites. Due to cloud service companies 
 
 Compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes in; a powerful and easy static site generator.
 
-![GatsbyJs image](/engineering-education/how-to-build-astatic-site-with-gatsbyjs/gatsbyjs.png)
-
-[*Image Source: https://www.datocms.com/blog/gatsbyjs-plugin-just-landed](https://www.datocms.com/blog/gatsbyjs-plugin-just-landed)
-
 ### What is GatsbyJs?
 >GatsbyJs can be defined as a static site generator that uses [React.js](https://reactjs.org/) (for the client-side) and [GraphQL](https://graphql.org/) (to access data) to build a reliable and faster website.
 
@@ -244,8 +240,7 @@ So far so good, your site has been running on our yown local server which is `ht
 
 To get your Gatsby site ready for cloud deployment you will need to build it using this command:
 
-```
-bash
+```bash
 Users/learning: npm run build
 ```
 
