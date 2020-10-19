@@ -1,7 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-neural-networks/
+title: Introduction to Deep Learning
+description: This article serves as an introduction to
+author: judy-nduati
+date: 2020-10-19T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-neural-networks/hero.jpg
+    alt: deep learning image example
+---
 In this article, we will be talking about neural networks. A functional technique of deep learning whose motivation is by how the brain works.
-
+<!--more-->
+### Introduction
 This article aims to make you understand what neural networks are. It will also give you a depth interpretation of how neural networks operates. This article will explain distinct kids of neural networks and their applications. By the end of this article, you will have attained an extensive understanding of what neural network is.
 
 ### Neural Networks Overview
