@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/how-to-build-astatic-site-with-gatsbyjs/hero.png
     alt: hero example image computer Node.js
 ---
-When I first heard about GatsbyJs, I was confused about what it was and how I would get started. As time went on, I learned more about it, and found out it is awesome. My goal for this article is not to confuse you about GatsbyJs, but to help you get started with building your very first static site using GatsbyJs.
+When I first heard about GatsbyJs, I was confused about what it was, and how I would get started. As time went on, I learned more about it and found out it is awesome. My goal for this article is not to confuse you about GatsbyJs, but to help you get started with building your very first static site using GatsbyJs.
 <!--more-->
-A paradigm shift has begun in the web development world, where static sites are now becoming more of a trend over dynamic sites. Building a dynamic site that required you setting it up and/or maintaining it, is now obsolete.
+A paradigm shift has begun in the web development world, where static sites are now becoming more of a trend over dynamic sites. Building a dynamic site that required you to set it up and/or maintaining it, is now obsolete.
 
 This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gaysby Cloud](https://www.gatsbyjs.com/cloud/) etc. Having worked on making software development easier, faster, and more scalable for developers.
 
@@ -32,15 +32,15 @@ Compared to static sites, dynamic sites are slow to load and can cause high boun
 - It has a great [community of developers](https://www.gatsbyjs.com/contributing/community/).
 
 ### Prerequisites
-In order to get started with GatsbyJs, you will need some background knowledge on the following:
+To get started with GatsbyJs, you will need some background knowledge on the following:
 - [React.js](https://reactjs.org/) (the basics, components, etc.)
 - [Nodejs](https://nodejs.org/en/) (the basics, [npm](https://www.npmjs.com/), etc)
 - [GraphQL](https://graphql.org/) (the basics and advanced)
 
-However there’s no problem if you don’t have any knowledge on these technologies, this article will help you get started with GatsbyJs, so stick around and check the links out later if you are really interested in advancing your knowledge.
+However there’s no problem if you don’t have any knowledge on these technologies, this article will help you get started with GatsbyJs, so stick around and check the links out later if you are interested in advancing your knowledge.
 
 ### Installations
-First of all, you'll need to install [Node.js](https://nodejs.org/en/) in your computer.
+First of all, you'll need to install [Node.js](https://nodejs.org/en/) on your computer.
 Go to the [official Node.js website](https://nodejs.org/en/) to download the Node.js version for your operating system.
 
 After installing it, open up your terminal and type in:
@@ -74,12 +74,12 @@ Users/yourname: gatsby –version
 ### Creating a new GatsbyJs site
 Now let's create a static site using GatsbyJs.
 
-Open up your terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), it comes in with a terminal in it. You will be using the GatsbyJs site template from GitHub to create your own site from scratch.
+Open up your terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), it comes in with a terminal in it. You will be using the GatsbyJs site template from GitHub to create your site from scratch.
 
 Create a **my-first-gatsby-site** folder, and then in your terminal type in
 `Users/first-gatsby-site: gatsby new first-gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world`.
 
-In order to see the new site, you have created, check it out using these commands.
+To see the new site, you have created, check it out using these commands.
 
 First, go into the file directory you have just created:
 
@@ -106,9 +106,9 @@ I mean almost an expert but that shouldn’t be an issue now because you just cr
 Now let’s talk about your file directory, it looks overwhelming especially if you are still a beginner using [Nodejs](https://nodejs.org/en/).
 
 -	**The node-modules folder:** Contains a bunch of files you may or may not need.
--	**The public folder:** This contains all of your finished static site that would be served on a cloud server.
--	**The src folder:** This is the folder you will be using the most, because this is where you are going to store the pages you are building for your site.
-You will find an  ***index.js*** file in the pages folder, because Gatsby uses *Node.js* and *React.js* and these files will be a JavaScript file but you can also use a markdown file as well with the file extension of '.md'.
+-	**The public folder:** This contains all of your finished static sites that would be served on a cloud server.
+-	**The src folder:** This is the folder you will be using the most because this is where you are going to store the pages you are building for your site.
+You will find an  ***index.js*** file in the pages folder because Gatsby uses *Node.js* and *React.js* and these files will be a JavaScript file but you can also use a markdown file as well with the file extension of '.md'.
 -	**The gitignore file:** This file tells GitHub to ignore whatever file you specify in it ignore. For example: API keys.
 -	**The package.json:** Contains the dependencies or packages you have installed using the node package manager *“npm install”*
 
@@ -116,7 +116,7 @@ You will find an  ***index.js*** file in the pages folder, because Gatsby uses *
 As excited as I am that you have created your first GatsbyJs static site, let's move forward by adding more content to the site by making it look better.
 Remember how I mentioned you will need some knowledge of React.js?
 
-Yes, good! The moment has come for us to use it now, but don’t worry we will just be working with the basics here that is pretty easy.
+Yes, good! The moment has come for us to use it now, but don’t worry we will just be working with the basics here that are pretty easy.
 
 In the index.js file add this piece of code:
 
@@ -214,7 +214,7 @@ import { Link } from "gatsby"
 `
 
 ### Using plugins in GatsbyJs
-What if you want to extend your site to have cool features that you don’t want to build from the scratch, GatsbyJs offers [plugins](https://www.gatsbyjs.com/plugins/) built by community of developers who want to share cool and awesome features with everyone.
+What if you want to extend your site to have cool features that you don’t want to build from the scratch, GatsbyJs offers [plugins](https://www.gatsbyjs.com/plugins/) built by a community of developers who want to share cool and awesome features with everyone.
 
 We will be using a plugin for [Typogyaphy Js](https://kyleamathews.github.io/typography.js/) (a CSS framework) to style up the CSS by default.
 
@@ -236,7 +236,7 @@ plugins: [ `gatsby-plugin-typography`]
 ```
 
 ### Building the site on a web server
-So far so good, your site has been running on our yown local server which is `http://localhost:8000`, what’s the use of building a static site without showing it to your friends, family, and probably your boss online.
+So far so good, your site has been running on your local server which is `http://localhost:8000`, what’s the use of building a static site without showing it to your friends, family, and probably your boss online.
 
 To get your Gatsby site ready for cloud deployment you will need to build it using this command:
 
@@ -244,10 +244,10 @@ To get your Gatsby site ready for cloud deployment you will need to build it usi
 Users/learning: npm run build
 ```
 
-You will notice some changes in the public folder, basically that’s where our static site files are and if we want to host it on a web sever we could copy the public folder and place it in a server or you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko etc. to place the whole file directory on a cloud server.
+You will notice some changes in the public folder that’s where our static site files are and if we want to host it on a webserver we could copy the public folder and place it in a server or you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko, etc. to place the whole file directory on a cloud server.
 
 ### Deploying to a cloud server
-You can deploy your Gatsby site online in a various of ways, but there are 2 easy methods that we will discuss. Those being [Netlify](https://www.netlify.com/) and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/).
+You can deploy your Gatsby site online in a variety of ways, but there are 2 easy methods that we will discuss.  Those being [Netlify](https://www.netlify.com/) and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/).
 
 **Netlify:** With Netlify you can drag and drop your code folder into it or deploy your site from [GitHub](https://github.com/) if your code is on GitHub, but I would recommend that you place your code on GitHub to automatically sync any changes made to the site.
 
@@ -259,7 +259,7 @@ You can deploy your Gatsby site online in a various of ways, but there are 2 eas
 
 
 ### Summary
-In summary, we defined what GatsbyJs is and went over its advantages, we set up your computer for GatsbyJs site development by installing Nodejs, we created your first GatsbyJs static site, added content to it, linked the pages, learned about react components, made the site interactive with a counter, and lastly deployed it to the cloud.
+In summary, we defined what GatsbyJs is and went over its advantages, we set up your computer for GatsbyJs site development by installing Nodejs, we created your first GatsbyJs static site, added content to it, linked the pages, learned about React components, made the site interactive with a counter, and lastly deployed it to the cloud.
 
 
 ### Additional Readings
