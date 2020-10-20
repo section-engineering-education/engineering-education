@@ -238,7 +238,7 @@ Next, we need to assign the `theme` prop to the `NavigationContainer` component 
               <PaperProvider theme={PaperDarkTheme}>
 ```
 
-Hence, we will get the result as displayed in the following emulator screenshots, and we can notice that the entire Home screen UI has changed to a dark theme:
+We can notice that the entire App UI has changed to dark theme, as displayed in the following emulator screenshots:
 
 ![5.React Native Dark Theme](react-native-dark-theme.png)
 
