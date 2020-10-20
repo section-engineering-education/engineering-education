@@ -14,18 +14,18 @@ images:
   - url: /engineering-education/introduction-to-neural-networks/hero.jpg
     alt: deep learning image example
 ---
-In this article, we will be talking about neural networks. A functional technique of deep learning whose motivation is driven by how the brain works.
+In this article, we will be talking about neural networks. A functional unit of deep learning whose motivation is driven by how the brain works but does not imitate neurons.
 <!--more-->
 ### Introduction
-This article aims to make you understand what neural networks are. It will also give you an in depth interpretation of how neural networks operates. This article will explain distinct kids of neural networks and their applications. By the end of this article, you will have attained an extensive understanding of what neural network are.
+This article will improve your understanding of neural networks. It will also give you an in-depth interpretation of how neural networks operates. This article will explain distinct kids of neural networks and their applications. By the end of this article, you will have attained an extensive understanding of what neural networks are.
 
 ### Neural Networks Overview
 
 Neural Network is an operational element of deep learning. Deep learning uses neural networks, which mimics human behavior to solve problems. The neural network takes in data. Neurons recognize the patterns and predict the output.
 
-A neural network is a technology that uses network functions to understand and convert input data into the [desired output](https://deepai.org/machine-learning-glossary-and-terms/neural-network). The neural network's inspiration is by how the human brain works.
+A neural network is a technology that uses network functions to understand and convert input data into the [desired output](https://deepai.org/machine-learning-glossary-and-terms/neural-network).
 
-The essential building block of a neural network is a perception. Perception accomplishes simple signal processing. Neural networks are pertained to solve data problems in Speech recognition, image recognition, and pattern recognition, to name a few.
+The essential building block of a neural network is a perceptron. Perceptron accomplishes simple signal processing (we will learn more about perceptron later in this article). Neural networks are pertained to solve data problems in Speech recognition, image recognition, and pattern recognition, to name a few.
 
 ### How Neural Networks work
 
@@ -39,17 +39,19 @@ Neural networks comprise layers of neurons. The layers consist of the:
 
 The input layer receives data represented by a numeric value. Hidden layers perform most computations required by the network. Finally, the output layer predicts the output.
 
-In a neural network, neurons dominate one another. A neuron is an object that holds a numeral value that is between 0 and 1. Each layer is made of neurons. Once the input layer receives data, it is redirected to the hidden layer. At the hidden layer, computation occurs, and information is sent to the neurons of the output layer. Neurons in different layers are connected through channels. Each channel is assigned a number referred to as weight.
+In a neural network, neurons dominate one another. A neuron is an object that holds a numeral value that is between 0 and 1. Each layer is made of neurons. Once the input layer receives data, it is redirected to the hidden layer. At the hidden layer, computation occurs, and information is sent to the output layer's neurons. Neurons in different layers are connected through channels. Each channel is assigned a number referred to as weight.
+
+Weight is a value in a neural network that converts input data within the network's hidden layers. Weights work by input layer taking input data and multiplying it by the weight value then passing it to the next layer(hidden layer). The hidden layers transform the input data and pass it to the next layer. The output layer produces the desired output.
 
 The inputs and the weights are multiplied, and their sum is sent to neurons in the hidden layer. Each neuron adds the inputs it receives to get the sum. This value then transits through the activation function.
 
-The activation function outcome decides if a neuron is activated or not. An activated neuron transfer information in the other layers through the channels. In this approach, the data gets generated on the network. In other words, this is [forward propagation](https://towardsdatascience.com/forward-propagation-in-neural-networks-simplified-math-and-code-version-bbcfef6f9250).
+The activation function outcome decides if a neuron is activated or not. An activated neuron transfer information in the other layers through the channels. In this approach, the data gets generated on the network. In other words, this is [forward propagation](https://towardsdatascience.com/forward-propagation-in-neural-networks-simplified-math-and-code-version-bbcfef6f9250). Feed-forward propagation is the process of inputing data in an input node and getting a predicted output through the output node.
 
 Feed-forward propagation takes place when the hidden layer accepts the input data. Process it as per the activation function and pass it to the output. The neuron in the output layer with a higher probability projects the result.
 
 ### Main Types of Neural Networks
 
-Neural network classification depends on their layers, structure, neurons, data flow, and [density](https://www.mygreatlearning.com/blog/types-of-neural-networks/).
+Neural networks are identified based on mathematical performance and principles to determine the output.
 
 For more types of neural networks, [check this article out.](https://medium.com/towards-artificial-intelligence/main-types-of-neural-networks-and-its-applications-tutorial-734480d7ec8e)
 
@@ -70,7 +72,7 @@ The input layer computes the weighted input for every node. The input layer comp
 
 #### Feed Forward Neural Network
 
-In a feed-forward network, data moves in a single direction. It enters via input nodes and leaves through [output nodes](https://analyticsindiamag.com/6-types-of-artificial-neural-networks-currently-being-used-in-todays-technology/). This is a front propagation wave. By data moving in one direction, there is no backpropagation.
+In a feed-forward network, data moves in a single direction. It enters via input nodes and leaves through [output nodes](https://analyticsindiamag.com/6-types-of-artificial-neural-networks-currently-being-used-in-todays-technology/). This is a front propagation wave. By data moving in one direction, there is no backpropagation. The backpropagation algorithm helps to calculate the gradient of the loss function with consideration to weights in the network.
 
 The input product sum and their weights are computed. The data later is transferred to the output.
 
@@ -101,9 +103,11 @@ According to [Dr. Saed Sayad](https://www.saedsayad.com/artificial_neural_networ
 
 #### Recurrent Neural Network
 
+In neural networks such as in a feed-forward network, data moves in one direction. The network cannot remember the data; this is where RNN comes in.
 [A Recurrent Neural Network(RNN](https://www.sciencedirect.com/topics/engineering/recurrent-neural-network)) is a network whereby the hidden layer's output is saved from being used as input. Saving the output helps with future predictions.
 
-Its first layer formation is related to one in the feed-forward network. That is with the sum of inputs and weights. Once computed, the [RNN process](https://analyticsindiamag.com/6-types-of-artificial-neural-networks-currently-being-used-in-todays-technology/) begins by each node, remembering some data in the previous step. While carrying out operations, neurons act as memory cells.
+RNNs have a memory that helps the network recall what happened earlier in the sequence data.
+[RNN process](https://analyticsindiamag.com/6-types-of-artificial-neural-networks-currently-being-used-in-todays-technology/) begins by each node, remembering some data in the previous step. While carrying out operations, neurons act as memory cells.
 
 RNN goes with front propagation but recalls the data it needs to utilize later. If the projection backfires, Backpropagation is used. Whereby the system grasps and projects towards making the right propagation.
 
@@ -167,7 +171,7 @@ Character recognition helps to detect fraud and national security assessments.
 
 - Fault tolerance
 
-Some neurons, not working does not prevent neural networks from generating outputs.
+Some neurons not working does not prevent neural networks from generating outputs.
 
 - Real-time Operations
 
