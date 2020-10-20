@@ -252,7 +252,7 @@ First, we need to create a folder named **./redux** in the root level of the pro
 
 - `reducers` for containing the reducer files that handle the state manipulation.
 - `actions` for containing the function that we extract from the components.
-- **`constant.js`** file to hold all the state names.
+- `constant.js` file to hold all the state names.
 
 Now, we need to define the required state names in the constant.js file. In this project, we will have two states for light and dark theme as defined in the code snippet below: 
 
@@ -407,8 +407,8 @@ Now, the challenge for you can be to use the same redux mechanism to control the
 
 ### References:
 
-[https://callstack.github.io/react-native-paper/](https://callstack.github.io/react-native-paper/)
+[React Native Paper Documentation](https://callstack.github.io/react-native-paper/)
 
-[https://reactnavigation.org/docs/themes/](https://reactnavigation.org/docs/themes/)
+[Reactnavigation Documentation](https://reactnavigation.org/docs/themes/)
 
-[https://reactjs.org/docs/context.html](https://reactjs.org/docs/context.html)
+[React Redux Documentation](https://redux.js.org/basics/usage-with-react)
