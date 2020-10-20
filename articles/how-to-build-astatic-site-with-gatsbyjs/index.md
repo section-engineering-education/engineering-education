@@ -20,7 +20,7 @@ A paradigm shift has begun in the web development world, where static sites are 
 
 This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gaysby Cloud](https://www.gatsbyjs.com/cloud/) etc. Having worked on making software development easier, faster, and more scalable for developers.
 
-Compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes in; a powerful and easy static site generator.
+WHen compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes into play; it is a powerful and easy static site generator.
 
 ### What is GatsbyJs?
 >GatsbyJs can be defined as a static site generator that uses [React.js](https://reactjs.org/) (for the client-side) and [GraphQL](https://graphql.org/) (to access data) to build a reliable and faster website.
@@ -162,7 +162,7 @@ Then finally link it using the Gatsby link by placing this code in the index.js 
 ```
 
 ### Counter.js file
-Here we are going to make the site more interactive by adding a counter to the site where you can click on a **plus** button to increase a number and a **minus** button to decrease a number.
+Here you are going to make the site more interactive by adding a counter to the site where you can click on a **plus** button to increase a number and a **minus** button to decrease a number.
 
 Create a counter.js file in the pages folder and then add this code snippet.
 ```JavaScript
@@ -199,7 +199,7 @@ Using react components to build your static site will help you get the job done 
 
 Yet, I highly recommend you check out the [react component documentation](https://reactjs.org/docs/react-component.html) to gain a better understanding of react components.
 
-The counter code in our counter.js file is already a component because it extends the react component class. We will use it in the index.js file but as a component,
+The counter code in your counter.js file is already a component because it extends the react component class. You will use it in the index.js file but as a component,
 by adding this piece of code.
 
 
@@ -218,13 +218,13 @@ What if you want to extend your site to have cool features that you don’t want
 
 We will be using a plugin for [Typogyaphy Js](https://kyleamathews.github.io/typography.js/) (a CSS framework) to style up the CSS by default.
 
-To use it we have to do this:
+To use this plugin, you have to do this:
 
 ```bash
 Users/my-first-gatsby-site /my-gatsby-site: npm install gatsby-plugin-typography react-typography typography
 ```
 
-When the installation is done go to the *gatsby-config.js* file, we want to tell Gatsby that we want to use this plugin.
+When the installation is done go to the *gatsby-config.js* file, you want to tell Gatsby that you want to use this plugin.
 
 Add these lines of code in the *gatsby-config.js* file.
 
@@ -244,7 +244,7 @@ To get your Gatsby site ready for cloud deployment you will need to build it usi
 Users/learning: npm run build
 ```
 
-You will notice some changes in the public folder that’s where our static site files are and if we want to host it on a webserver we could copy the public folder and place it in a server or you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko, etc. to place the whole file directory on a cloud server.
+You will notice some changes in the public folder, that’s where your static site files are. If you want to host it on a webserver you could copy the public folder and place it in a server. Otherwise, you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko, etc. to place the whole file directory on a cloud server.
 
 ### Deploying to a cloud server
 You can deploy your Gatsby site online in a variety of ways, but there are 2 easy methods that we will discuss.  Those being [Netlify](https://www.netlify.com/) and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/).
