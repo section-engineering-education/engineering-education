@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/
 title: Why Julia is Slowly Replacing Python for Machine Learning and Data Science
-description: Jupyter Notebook is a standard tool in data science because of its ability to allow users to plot and explore data.
+description:
 author: eric-kahuha
-date: 2020-10-T00:00:00-10:00
+date: 2020-10-20T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
