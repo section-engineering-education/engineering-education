@@ -525,6 +525,46 @@ The following command will purge the cache in your project workflow.
 npm cache clean --force
 ```
 
+### Using NPM Packages
+Now that you have downloaded a package, how do you actually use that package in your project? The following example will guide you on how to apply [express](http://expressjs.com/en/starter/installing.html) (**a fast, unopinionated, minimalist web framework for Node.js with a myriad of HTTP utility methods and middleware at your disposal**) to your project. You have already downloaded express with `npm i express`. You're ready to explore express. On your project root folder, create a file. Name it `app.js`. The aim is to create a simple Node.js server app. For you to use any package, use `require()` to refer to the packages you are using in your project, and they will run just as if they were built-in.
+
+For example, to use express, copy the following code to your `app.js` file.
+
+```js
+var express = require('express');
+```
+
+This way, your app will exploit express features as if you built for your project.
+
+Add the following lines.
+
+```js
+var app = express();
+
+ app.listen(3000, () => {
+  console.log("Application started and Listening on port 3000")
+})
+```
+
+And there you have it. You have created the world simplest express server that listens to port 3000.
+
+Create an HTTP to get a request that will send a message to the server you have created.
+
+Add the following lined right above `app.listen`.
+
+```js
+app.get("/", (req, res) =>{
+  res.send("hello world!");
+  });
+```
+
+On your command line, run `node app.js`. This will give you *Application started and Listening on port 3000*. If you visit `http://localhost:3000/` on your browser, a message *hello world!* will greet you, sent by your server.
+
+This a basic example of applying the installed express to a Node.js project. If you are interested in learning more about express, we have a guide that will get you [started to express servers and routing](/engineering-education/express/).
+
+### Conclusion
+This guide introduces you to NPM. I hope it gives you a good impression of getting started using NPM. It bridges Node.js and NPM. NPM is diverse. It provides you with packages repositories—their many various packages on NPM. Go ahead and choose that useful package to help you scale out your next project workflow. Suppose you are interested in learning more; below are some links. Do have a look at them to learn more about Node.js and NPM.
+
 ### Related Topics
 [The History of Node.js](/engineering-education/history-of-nodejs/)
 
