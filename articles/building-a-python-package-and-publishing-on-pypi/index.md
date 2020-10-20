@@ -132,7 +132,4 @@ Now that’s it for building and deploying our package to you can run pip instal
 print(cal_lcm(4,5))
 ```
 #### Conclusion
-As you have seen it is not very cumbersome to build a package and now you’ve tried building a basic package which I’m sure you are proud of your progress, now it’s time for you to go ahead explore and try out your more complex ideas and build awesome packages to share that awesome code you wrote and help not just yourself but the general Python dev community.
-
-
-
+If you have followed all the steps carefully you will notice that it's not very difficult to build a basic package and I'm sure you are proud of this packageyou just built. If you have other ideas you feel will do well as a package then you can go ahead to try them following the same steps you did here.
