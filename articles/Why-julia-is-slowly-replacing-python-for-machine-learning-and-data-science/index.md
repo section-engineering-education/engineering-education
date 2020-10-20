@@ -1,6 +1,23 @@
-### What is Julia Programming Language?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/
+title: Why Julia is Slowly Replacing Python for Machine Learning and Data Science
+description: Jupyter Notebook is a standard tool in data science because of its ability to allow users to plot and explore data.
+author: eric-kahuha
+date: 2020-10-T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-As the demand for data manipulation and scientific computation arose, so did the need for a better data processing language. A group of mathematicians and computer scientists led by Alan Edelman, Viral B. Shah, Jeff Bezanson, and Stefan Karpinski, noted that the then-existing general-purpose languages were not excellent for logical and arithmetic coding. Particularly, there was a lack of a programming language that could perform these tasks at a lightning-fast speed. Thus, they resolved to create a high-performance programming language for machine learning and data science. And that is how [Julia](https://julialang.org/) was introduced. Since its launch in 2012, Julia has become a trendy language among data scientists and mathematicians.
+  - url: /engineering-education/why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/hero.jpg
+    alt: Julia Python Machine Learning example image
+---
+As the demand for data manipulation and scientific computation arose, so did the need for a better data processing language. A group of mathematicians and computer scientists led by Alan Edelman, Viral B. Shah, Jeff Bezanson, and Stefan Karpinski, noted that the then-existing general-purpose languages were not excellent for logical and arithmetic coding.
+<!--more-->
+### What is Julia Programming Language?
+Particularly, there was a lack of a programming language that could perform these tasks at a lightning-fast speed. Thus, they resolved to create a high-performance programming language for machine learning and data science. And that is how [Julia](https://julialang.org/) was introduced. Since its launch in 2012, Julia has become a trendy language among data scientists and mathematicians.
 
 Among the current corporate users of Julia are Aviva and BlackRock. They use this tool to calculate risks and execute time-series analysis, respectively. The Celeste project, which is based on the Julia language set a new scientific record due to its fast speed in cataloguing telescopic data for astronomical objects. The Climate Modeling Alliance, CISCO, QuantEcon, NVIDIA, among others also use Julia. In fact, Julia has become a primary tool in the fields of data science, visualization, machine learning and artificial intelligence.
 
@@ -42,7 +59,7 @@ Equally important for a programming language is community support. Considering t
 
 Python, a well-established language, is very significant to the fields of data science and machine learning. Despite Julia being relatively new with less community and tooling support, it has many advantages over Python. Julia was developed to overcome issues with speed. Its familiarity with C, R, Python, and multiple dispatch environment is a plus.
 
-References 
+References
 
 [Julia Vs Python: Will it unseat the king of programming?](https://theiotmagazine.com/julia-vs-python-will-it-unseat-the-king-of-programming-8220e4cd2e0a)
 
