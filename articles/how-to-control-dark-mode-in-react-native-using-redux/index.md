@@ -34,7 +34,7 @@ Our first step is to set up simple screens using the components from the react-n
 
 In the Home.js file, we need to import the components from the react-native-paper package as directed in the code snippet below:
 
-```jsx
+```js
 import {
     Avatar,
     Button,
@@ -48,7 +48,7 @@ import {
 
 Next, we are going to add the card layout to the screen using the `Card` component as shown in the code snippet below:
 
-```jsx
+```js
 const Home = () => {
    return (
        <View>
@@ -94,7 +94,7 @@ Hence, we will get the result as displayed in the emulator screenshot below:
 
 Next, we are going to implement the Setting screen. The Settings screen will be simple as it will only have a toggle component using which we can toggle the theme modes in the app. Hence, in the Setting.js file, we just need to add the code for the `Switch` component to be able to toggle to a dark theme. The code for this is provided in the code snippet below:
 
-```jsx
+```js
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import {
@@ -127,7 +127,7 @@ In order to set up the React Navigation, we need to re-structure our app by a bi
 
 Inside the Navigation.js file, we need to import the React Navigation components such as `NavigationContainer` and `createBottomTabNavigator` as well as the other screens to which we need to navigate to. The imports are shown in the code snippet below:
 
-```jsx
+```js
 import * as React from 'react';
 import { NavigationContainer  } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -143,7 +143,7 @@ Here, we have used two navigations packages:
 
 Next, we need to initialize the navigation structure using `NavigationContainer` component with the `Tab` components as directed in the code snippet below:
 
-```jsx
+```js
 export default () => {
     const Tab = createBottomTabNavigator();
     return (
@@ -159,7 +159,7 @@ export default () => {
 
 Then, we need to import the `Navigation` component into the **App.js** file and initialize it inside the render function as shown in the code snippet below:
 
-```jsx
+```js
 import Navigation from './Navigation'
 export default function App() {
   return (
@@ -181,13 +181,13 @@ Now, our next step is to add icons to the tab bar items to make it look appealin
 
 Here, in `Navigation.js`, we are going to add some icons to the tabs in the tab bar. For that, we need to import some icons as shown in the code snippet below:
 
-```jsx
+```js
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 ```
 
 Next, we need to add `screenOption` to `Tab.Navigator` component using which we add the logic to toggle icon style when tabs are active or inactive. The code for this is provided in the code snippet below:
 
-```jsx
+```js
 <Tab.Navigator screenOptions={({ route }) => ({
                 
                tabBarIcon: ({ focused, color, size }) => {
@@ -219,7 +219,7 @@ As we can see, we have got the icons in for our tabs which displays active as we
 
 Here, in `Navigation.js`, we are going to implement the controls to change the app theme to dark mode manually. First, we need to import the components from the react-navigation and react-native-paper packages that will help us control the dark theme.  We need to import the respective components from the packages in the Navigation.js file as directed in the code snippet below:
 
-```jsx
+```js
 import { 
     NavigationContainer ,
     DefaultTheme,
@@ -233,7 +233,7 @@ import {
 
 Next, we need to assign the `theme` prop to the `NavigationContainer` component with the `DarkTheme` option provided. Then, we need to wrap the component inside the `NavigationContainer` component with the `PaperProvider` component as provide `PaperDarkTheme` option as a `theme` prop to the component. The configuration is provided in the code snippet below:
 
-```jsx
+```js
 <NavigationContainer theme={DarkTheme}>
               <PaperProvider theme={PaperDarkTheme}>
 ```
@@ -256,7 +256,7 @@ First, we need to create a folder named **./redux** in the root level of the pro
 
 Now, we need to define the required state names in the constant.js file. In this project, we will have two states for light and dark theme as defined in the code snippet below: 
 
-```jsx
+```js
 export const DARK_THEME = "DARK_THEME";
 export const LIGHT_THEME = "LIGHT_THEME";
 ```
@@ -265,7 +265,7 @@ Next in the ./reducers folder, we need to create two new files named **theme.red
 
 In the `theme.reducer.js` file, we need to import the state names from constant.js. Then, we need to define the initial state called `theme` which will help control the theme modes. Here, the `theme` state will be set to `false` in order to set the light theme as the default theme. Then, we need to create a function to toggle the `theme` state using is a reducer function. In the reducer function, we use the Switch case logic to modify the theme state based on action type. The code for this is provided in the code snippet below: 
 
-```jsx
+```js
 import {
     DARK_THEME,LIGHT_THEME
 } from "../constant";
@@ -286,7 +286,7 @@ export default (theme = initialState,{ type }) => {
 
 In order to activate this reducer, we need to go to the `index.reducer.js` file and import the theme reducer. Then, we need to use the combineReducers method in order to combine all the reducers into one root reducer. This will help us prepare for other reducers in the future. The code for this is provided in the code snippet below:
 
-```jsx
+```js
 import { combineReducers } from "redux";
 
 import themeReducer from './theme.reducer'
@@ -303,7 +303,7 @@ Now in order to activate redux functionalities in the overall app, we need to go
 
 The setup phase is simple. We need to inject the reducer as a root reducer and redux-thunk as a middleware to `createStore` method supplied by the redux package. Then, by using the `Provider` component from the react-redux package we can link redux store to the overall app using the `store` prop as demonstrated in the code snippet below:
 
-```jsx
+```js
 import React from 'react'
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
@@ -327,7 +327,7 @@ export default function App() {
 
 Now, the last step here is to create an action function called `theme.action.js` inside the ./action folder in order to send manipulation triggers to reducers. We need to make the import of the constants that we defined earlier. Then, we need to create a function that handles the theme state toggle in the reducer. The overall coding implementation of the action is provided in the code snippet below:
 
-```jsx
+```js
 import {
     DARK_THEME,LIGHT_THEME
 } from "../constant";
@@ -354,14 +354,14 @@ export const ToggleTheme = (theme) => {
 
 Since our Redux store with reducers and actions are set up, we can now move to configure the dark mode switch in the `Setting.js` file which will help us change the theme modes in the app. The idea is to add the reducer state and action to the `Switch` component configuration. For that, we need to import the action and reducer into the Setting.js file. We also need to import the hook methods from the react-redux package in order to control the redux activities. The imports are shown in the code snippet below:
 
-```jsx
+```js
 import * as themeActions from "../redux/actions/theme.action";
 import { useDispatch,useSelector } from "react-redux";
 ```
 
 Next, we need to initialize the reducer as an instance using `useSelector` hook and add it to the `Switch` component prop as directed in the code snippet below:
 
-```jsx
+```js
 export default  ({ navigation }) => {
     const dispatch = useDispatch();
     const themeReducer = useSelector(({ themeReducer }) => themeReducer);
@@ -381,7 +381,7 @@ export default  ({ navigation }) => {
 
 Now, the last step is to add the reducer state to the main navigation. For that, we need to import the reducer in the `Navigation.js`and use it as the conditional rendering of the themes as shown in the code snippet below:
 
-```jsx
+```js
 import { useSelector } from "react-redux";
 export default () => {
     const themeReducer = useSelector(({ themeReducer }) => themeReducer);
