@@ -11,10 +11,10 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/graph-data-structure-python-part1/hero.jpg
-    alt: graphs
+    alt: graph data structure example image
 ---
 
-In this article, we will look into the basics of graphs, the different types of graphs, and their representation.
+In this article, we will look into the basics of graphs, the different types of graphs, and their [representation](https://www.javatpoint.com/graph-theory-graph-representations).
 <!--more-->
 Graphs are complex, non-linear data structures that are characterized by a group of vertices, connected by edges. For more information on the *different types of data structures in Python*, check out the following articles:
 
