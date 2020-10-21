@@ -14,22 +14,22 @@ images:
   - url: /engineering-education/introduction-to-neural-networks/hero.jpg
     alt: deep learning image example
 ---
-In this article, we will be talking about neural networks. A functional unit of deep learning whose motivation is driven by how the brain works but does not imitate neurons.
+In this article, we will be talking about neural networks. A functional unit of [deep learning](https://www.section.io/engineering-education/introduction-to-deep-learning/) whose motivation is driven by how the brain works. The technologies give the best solutions to object recognition, speech recognition, pattern recognition, and NLP.
 <!--more-->
 ### Introduction
 This article will improve your understanding of neural networks. It will also give you an in-depth interpretation of how neural networks operates. This article will explain distinct kids of neural networks and their applications. By the end of this article, you will have attained an extensive understanding of what neural networks are.
 
 ### Neural Networks Overview
 
-Neural Network is an operational element of deep learning. Deep learning uses neural networks, which mimics human behavior to solve problems. The neural network takes in data. Neurons recognize the patterns and predict the output.
+Neural Network is an operational element of deep learning. The neural network takes in data; neurons recognize the patterns and predict the output.
 
-A neural network is a technology that uses network functions to understand and convert input data into the [desired output](https://deepai.org/machine-learning-glossary-and-terms/neural-network).
+A neural network is a technology that uses network functions to understand and convert input data into the desired output.
 
 The essential building block of a neural network is a perceptron. Perceptron accomplishes simple signal processing (we will learn more about perceptron later in this article). Neural networks are pertained to solve data problems in Speech recognition, image recognition, and pattern recognition, to name a few.
 
 ### How Neural Networks work
 
-Neural Networks are complex systems with artificial neurons. The neurons receive many inputs and process a [single output](https://www.upgrad.com/blog/neural-network-architecture-components-algorithms/#:~:text=Neural%20Networks%20are%20complex%20structures,input%20into%20a%20meaningful%20output).
+Neural Networks are complex systems with artificial neurons. The neurons receive many inputs and process a single output.
 
 Neural networks comprise layers of neurons. The layers consist of the:
 
@@ -39,13 +39,13 @@ Neural networks comprise layers of neurons. The layers consist of the:
 
 The input layer receives data represented by a numeric value. Hidden layers perform most computations required by the network. Finally, the output layer predicts the output.
 
-In a neural network, neurons dominate one another. A neuron is an object that holds a numeral value that is between 0 and 1. Each layer is made of neurons. Once the input layer receives data, it is redirected to the hidden layer. At the hidden layer, computation occurs, and information is sent to the output layer's neurons. Neurons in different layers are connected through channels. Each channel is assigned a number referred to as weight.
+In a neural network, neurons dominate one another. A neuron is a fundamental element of a neural network. Each layer is made of neurons. Once the input layer receives data, it is redirected to the hidden layer. At the hidden layer, computation occurs, and information is sent to the output layer's neurons. Neurons in different layers are connected through channels. Each channel is assigned a number referred to as [weight](https://deepai.org/machine-learning-glossary-and-terms/weight-artificial-neural-network#:~:text=Weight%20is%20the%20parameter%20within,weight%2C%20and%20a%20bias%20value.).
 
-Weight is a value in a neural network that converts input data within the network's hidden layers. Weights work by input layer taking input data and multiplying it by the weight value then passing it to the next layer(hidden layer). The hidden layers transform the input data and pass it to the next layer. The output layer produces the desired output.
+Weight is a value in a neural network that converts input data within the network's hidden layers. Weights work by input layer, taking input data, and multiplying it by the weight value. It then initiates a value for the first hidden layer. The hidden layers transform the input data and pass it to the next layer. The output layer produces the desired output.
 
 The inputs and the weights are multiplied, and their sum is sent to neurons in the hidden layer. Each neuron adds the inputs it receives to get the sum. This value then transits through the activation function.
 
-The activation function outcome decides if a neuron is activated or not. An activated neuron transfer information in the other layers through the channels. In this approach, the data gets generated on the network. In other words, this is [forward propagation](https://towardsdatascience.com/forward-propagation-in-neural-networks-simplified-math-and-code-version-bbcfef6f9250). Feed-forward propagation is the process of inputing data in an input node and getting a predicted output through the output node.
+The activation function outcome decides if a neuron is activated or not. An activated neuron transfer information in the other layers through the channels. In this approach, the data gets generated on the network. In other words, this is [forward propagation](https://towardsdatascience.com/forward-propagation-in-neural-networks-simplified-math-and-code-version-bbcfef6f9250). Feed-forward propagation is the process of inputting data in an input node and getting a predicted output through the output node.
 
 Feed-forward propagation takes place when the hidden layer accepts the input data. Process it as per the activation function and pass it to the output. The neuron in the output layer with a higher probability projects the result.
 
@@ -64,7 +64,7 @@ Perceptron network comprises of two layers:
 - [Input Layer](https://www.techopedia.com/definition/33262/input-layer-neural-networks)
 - [Output Layer](https://www.techopedia.com/definition/33263/output-layer-neural-networks)
 
-The input layer computes the weighted input for every node. The input layer computes the weighted input for every node. The activation function is pertained to acquire the result as output.
+The input layer computes the weighted input for every node. The input layer computes the weighted input for every node. The activation function is pertained to get the result as output.
 
 ![Perceptron](/engineering-education/introduction-to-neural-networks/perceptron.png)
 
@@ -72,7 +72,7 @@ The input layer computes the weighted input for every node. The input layer comp
 
 #### Feed Forward Neural Network
 
-In a feed-forward network, data moves in a single direction. It enters via input nodes and leaves through [output nodes](https://analyticsindiamag.com/6-types-of-artificial-neural-networks-currently-being-used-in-todays-technology/). This is a front propagation wave. By data moving in one direction, there is no backpropagation. The backpropagation algorithm helps to calculate the gradient of the loss function with consideration to weights in the network.
+In a feed-forward network, data moves in a single direction. It enters via input nodes and leaves through output. This is a front propagation wave. By data moving in one direction, there is no [backpropagation](https://www.guru99.com/backpropogation-neural-network.html). The backpropagation algorithm calculates the gradient of the loss function with consideration to weights in the network.
 
 The input product sum and their weights are computed. The data later is transferred to the output.
 
@@ -103,11 +103,11 @@ According to [Dr. Saed Sayad](https://www.saedsayad.com/artificial_neural_networ
 
 #### Recurrent Neural Network
 
-In neural networks such as in a feed-forward network, data moves in one direction. The network cannot remember the data; this is where RNN comes in.
+In neural networks such as in a feed-forward network, data moves in one direction. The network has a shortcoming of not remembering the data in past inputs. This is where RNN comes in.
 [A Recurrent Neural Network(RNN](https://www.sciencedirect.com/topics/engineering/recurrent-neural-network)) is a network whereby the hidden layer's output is saved from being used as input. Saving the output helps with future predictions.
 
 RNNs have a memory that helps the network recall what happened earlier in the sequence data.
-[RNN process](https://analyticsindiamag.com/6-types-of-artificial-neural-networks-currently-being-used-in-todays-technology/) begins by each node, remembering some data in the previous step. While carrying out operations, neurons act as memory cells.
+RNN process begins by each node, remembering some data in the previous step. While carrying out operations, neurons act as memory cells.
 
 RNN goes with front propagation but recalls the data it needs to utilize later. If the projection backfires, Backpropagation is used. Whereby the system grasps and projects towards making the right propagation.
 
@@ -115,13 +115,13 @@ RNN goes with front propagation but recalls the data it needs to utilize later. 
 
 [Image source](https://deepai.org/machine-learning-glossary-and-terms/recurrent-neural-network)
 
-RNN solves problems in text data and audio data. In other words, it solves problems in text-to-speech conversion.
+RNN solves problems in text data and audio data. In other words, it solves problems in text-to-speech conversion. Learn more about text generation with RNN [here](https://www.section.io/engineering-education/text-generation-nn/)
 
 #### Convolution Neural Network
 
 Convolutional Neural Network (CNN) is a peculiar kind of feed-forward neural network. CNN contains a three-dimensional neuron arrangement.
 
-According to [great learning](https://www.mygreatlearning.com/blog/types-of-neural-networks/), the first stage is the convolutional layer. Neurons in a convolutional layer only process information from a small part of the visual field(image). Input features in convolution are abstracted in batches.
+The first stage is the convolutional layer. Neurons in a convolutional layer only process information from a small part of the visual field(image). Input features in convolution are abstracted in batches.
 
 The second stage is pooling. It reduces the dimensions of the features and, at the same time, sustaining valuable data. CNN launch into the third phase (fully connected neural network) when the features get to the right granularity level. At the final stage, the final probabilities are analyzed and decide which class the image belongs to.
 
@@ -171,7 +171,7 @@ Character recognition helps to detect fraud and national security assessments.
 
 - Fault tolerance
 
-Some neurons not working does not prevent neural networks from generating outputs.
+Some neurons not working, does not prevent neural networks from generating outputs.
 
 - Real-time Operations
 
