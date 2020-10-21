@@ -108,6 +108,8 @@ RecGNNs later inspired research on ConvGNNs. An example is the idea of message p
 ConvGNNs work by generalizing operations of convolution from grid data to graph data. In comparison to RecGNN, ConvGNN employs many layers of graph convolutions. This helps to extract high-level node representations.
 The idea behind ConvGNNs is to generate a node (v) representation by aggregating its features (xv) and its neighbors' features (xu). 
 
+Node (v) = xv + xu 
+
 ConvGNNs set the base for building other GNN models.
 
 #### Graph Auto-Encoders (GAEs)
