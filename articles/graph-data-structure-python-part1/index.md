@@ -6,8 +6,8 @@ url: /engineering-education/graph-data-structure-python-part1/
 title: Using the Graph Data Structure in Python, Part 1
 description: Graphs are special, non-linear data structures that are characterized by a group of vertices, connected by edges.
 author: saiharsha-balasubramaniam
-date: 2020-10-20T00:00:00-13:00
-topics: [Languages]
+date: 2020-10-21T00:00:00-13:00
+topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/graph-data-structure-python-part1/hero.jpg
