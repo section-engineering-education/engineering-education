@@ -19,7 +19,7 @@ Let's get started!
 
 ### Step 1 — Creating An Android Project
 In this step we are going to create our application.
-- Open android studio and select new project. 
+- Open android studio and select new project.
 - Select empty project template and click next.
 
 ![empty template](/engineering-education/android-custom-views/empty-template)
@@ -31,7 +31,7 @@ In this step we are going to create our application.
 - Click finish and wait for build to finish.
 
 ### Step 2 — Creating our View Class
-On your project window, 
+On your project window,
 - Select File -> New -> Kotlin File/Class
 - On the next screen select class, give it a name and press enter.
 
@@ -100,7 +100,7 @@ Add the following member variables to the class
 private var halfWidth = 0
 private var halfHeight = 0
 private var radius = 0
-``` 
+```
 We are going to use the half width and height of the view to determine the center of the circle.
 
 Now add this code to get the attributes.
