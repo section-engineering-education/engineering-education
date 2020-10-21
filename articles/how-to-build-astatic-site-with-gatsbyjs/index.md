@@ -18,7 +18,7 @@ When I first heard about GatsbyJs, I was confused about what it was, and how I w
 <!--more-->
 A paradigm shift has begun in the web development world, where static sites are now becoming more of a trend over dynamic sites. Building a dynamic site that required you to set it up and/or maintaining it, is now obsolete.
 
-This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gaysby Cloud](https://www.gatsbyjs.com/cloud/) etc. Having worked on making software development easier, faster, and more scalable for developers.
+This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gaysby](https://www.gatsbyjs.com/cloud/) etc. Having worked on making software development easier, faster, and more scalable for developers.
 
 WHen compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes into play; it is a powerful and easy static site generator.
 
@@ -74,7 +74,7 @@ Users/yourname: gatsby –version
 ### Creating a new GatsbyJs site
 Now let's create a static site using GatsbyJs.
 
-Open up your terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), it comes in with a terminal in it. You will be using the GatsbyJs site template from GitHub to create your site from scratch.
+Open up your terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), It comes in built-in with a terminal. You will be using the GatsbyJs site template from GitHub to create your site from scratch.
 
 Create a **my-first-gatsby-site** folder, and then in your terminal type in
 `Users/first-gatsby-site: gatsby new first-gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world`.
@@ -97,20 +97,19 @@ You will then get a success message saying *“your site is running at”* :
 
 You can now open up your web browser and access `http://localhost:8000`:
 
-Open `http://localhost:8000` in your browser and you will get a **“hello world”** text display.
+Open `http://localhost:8000` in your browser and you will see "hello world" displayed.
 
-Congratulations! You are now a GatsbyJs expert, oops!
+Congratulations! You just built your first static site using GatsbyJs.
 
-I mean almost an expert but that shouldn’t be an issue now because you just created your very own first static site using GatsbyJs.
 
-Now let’s talk about your file directory, it looks overwhelming especially if you are still a beginner using [Nodejs](https://nodejs.org/en/).
+Now let’s talk about your file directory, it looks overwhelming especially if you are still a beginner using [Node.js](https://nodejs.org/en/).
 
 -	**The node-modules folder:** Contains a bunch of files you may or may not need.
 -	**The public folder:** This contains all of your finished static sites that would be served on a cloud server.
 -	**The src folder:** This is the folder you will be using the most because this is where you are going to store the pages you are building for your site.
 You will find an  ***index.js*** file in the pages folder because Gatsby uses *Node.js* and *React.js* and these files will be a JavaScript file but you can also use a markdown file as well with the file extension of '.md'.
 -	**The gitignore file:** This file tells GitHub to ignore whatever file you specify in it ignore. For example: API keys.
--	**The package.json:** Contains the dependencies or packages you have installed using the node package manager *“npm install”*
+-	**The package.json:** Contain the dependencies or packages you have installed using the node package manager *“npm install”*
 
 ### Adding contents to the site
 As excited as I am that you have created your first GatsbyJs static site, let's move forward by adding more content to the site by making it look better.
