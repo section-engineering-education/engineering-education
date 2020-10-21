@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/k-means-from-scratch-r/
-title: Step by Step Implementation Guide for K-Means Algorithm in R
-description: This article will go over how to code the K-means algorithm from scratch and will visualize the results.
+title: Step by Step Guide to implement K-Means Algorithm in R
+description: This article will go over how to code the K-means algorithms from scratch and will visualize the results.
 author: lalithnarayan-c
 date: 2020-10-21T00:00:00-11:00
 topics: []
@@ -38,11 +38,11 @@ Let's take a closer look at the K-means algorithm, and try to understand what th
 2. Choose `k` data points `(x,y)` randomly represent the centroids of `k` clusters.
 3. Calculate the distances between these `k` points and all the remaining points. Upon completion of this step, we obtain a list of pair-wise distances between all the points.
 4. Using the obtained list, we compute the clusters. The k-clusters are formed with data points having the least distance from the randomly chosen centroids. Data points can belong to either of the k-clusters. The closer the data point to a given cluster, the higher the probability it belongs to that cluster.
-5. Using the newly formed clusters, the centroid is recalculated as the x and y co-ordinates' average.
+5. Using the newly formed clusters, the centroid is recalculated as the x and y coordinates' average.
 
 ### Implementation
 #### Step 1: Generation of Data
-To get us started we will generate some random data. We define two vectors and create a 2-D array that defines the (x,y) co-ordinate pairs.
+To get us started we will generate some random data. We will define two vectors and create a 2-D array that defines the (x,y) coordinate pairs.
 
 ```r
 vector1 <- c(1, 1.5, 3, 5, 3.5, 4.5, 3.5)
@@ -51,7 +51,7 @@ dataPoints<- array(c(vector1, vector2), dim = c(7, 2))
 print(dataPoints)
 ```
 
-The `dataPoints` is a 2-D array. The first column consists of the X co-ordinates, and the second column consists of the Y-coordinates.
+The `dataPoints` is a 2-D array. The first column consists of the X coordinates, and the second column consists of the Y-coordinates.
 
 It is defined as shown below:
 
@@ -85,7 +85,7 @@ centroid = array(c(1,5,1,7), dim = c(k, 2))
 print(centroid)
 ```
 
-We define the number of clusters `k` equal to 2. The centroids are defined as an array of two co-ordinate pairs. The array `centroid` containing the co-ordinates of the two clusters is shown below:
+We define the number of clusters `k` equal to 2. The centroids are defined as an array of two co-ordinate pairs. The array `centroid` containing the coordinates of the two clusters is shown below:
 
 ```txt
  [,1] [,2]
@@ -104,17 +104,17 @@ points(centroid[,1], centroid[,2],col="red")
 
 
 #### Step 3: Calculating the Distance from each Point
-To calculate the distance between the centroid and the remaining points, we use the Euclidean distance. The Euclidean distance is defined as follows:
+To calculate the distance between the centroid and the remaining points, we will use Euclidean distance. The Euclidean distance is defined as follows:
 
 $$ d = \sqrt{ \sum_i (x-x_i^2) + (y-y_i)^2}  $$
 
-Where $(x,y)$ represent the centroid's co-ordinates, and $(x_i,y_i)$ represent the data-point's co-ordinates.
+Where $(x,y)$ represent the centroid's coordinates, and $(x_i,y_i)$ represent the data-point's coordinates.
 
 We will code the equation above in the following sub-section. There are three steps in computing the Euclidean distance.
 
-      1.  Compute the difference between the corresponding X and Y co-ordinates of the data-points and the centroid.
-      2.  Compute the sum of the square of the differences computed in step 1.
-      3.  Find the square root of the sum of squares of differences computed in step 2.
+-  Compute the difference between the corresponding X and Y coordinates of the data-points and the centroid.
+-  Compute the sum of the square of the differences computed in step 1.
+-  Find the square root of the sum of squares of differences computed in step 2.
 
 1. Difference: $datapoint_i – centroid$
     ```r
@@ -228,7 +228,7 @@ We calculate the mean using the R function `mean.` This is an example on selecti
 1.83333
 ```
 
-We compute the X and Y co-ordinates of the centroid using the code above. We store the X co-ordinate in c1 and y-coordinates in c2. We copy the data in these lists to a new array called `new_centroid.`
+We compute the X and Y coordinates of the centroid using the code above. We store the X co-ordinate in c1 and y-coordinates in c2. We copy the data in these lists to a new array called `new_centroid.`
 
 ```r
 new_centroid = centroid
@@ -280,3 +280,32 @@ That was a fantastic journey implementing the K-means algorithm from scratch. Pa
 
 ### Additional Resources
 [Clustering Algorithms](https://www.analyticsvidhya.com/blog/2016/11/an-introduction-to-clustering-and-different-methods-of-clustering/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
