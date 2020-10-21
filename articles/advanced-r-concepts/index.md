@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/advanced-r-concepts/
 title: Advanced Programming Concepts in R
-description:
+description: In this article we will be going over some advanced aspects of the R programming language, such as dataframes, typecasting, file handling, and loop statements.
 author: lalithnarayan-c
 date: 2020-10-21T00:00:00-11:00
 topics: [Languages]
