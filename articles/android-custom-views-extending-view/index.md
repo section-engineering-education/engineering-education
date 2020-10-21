@@ -159,4 +159,4 @@ This is how the application is supposed to look like.
 ![app](/engineering-education/android-custom-views/app)
 
 ### Conclusion
-In this article, we have gone through creating a custom view by extending the view class. We have also seen how we can create custom attributes for our views and how to add these views to our layour file. Custom views give an application's UI a unique look. This helps developers to build outstanding applications. You can get the full code on [github]().
+In this article, we have gone through creating a custom view by extending the view class. We have also seen how we can create custom attributes for our views and how to add these views to our layour file. Custom views give an application's UI a unique look. This helps developers to build outstanding applications. You can get the full code on [github](https://github.com/kayere/android-custom-views.git).
