@@ -42,10 +42,14 @@ Browser-sync is an automation tool that allows you to keep multiple browsers & d
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >Browser-sync is awesomely fast, with incredible features you can use. Browser-sync allows you to also check your work preview simultaneously on different devices, provided you are connected to the same network.
 =======
 >Browser-sync is awesomely fast, with incredible features for your use. Browser-sync allows you to also check your work preview simultaneously on different devices, provided you are connected to the same network.
 >>>>>>> 872e5832c66ee31a22aaa2789d459dcbec2f79e8
+=======
+>Browser-sync is awesomely fast, with incredible features for your use. Browser-sync allows you to also check your work preview simultaneously on different devices, provided you are connected to the same network.
+>>>>>>> parent of df9075d... Major readability revision
 =======
 >Browser-sync is awesomely fast, with incredible features for your use. Browser-sync allows you to also check your work preview simultaneously on different devices, provided you are connected to the same network.
 >>>>>>> parent of df9075d... Major readability revision
@@ -134,8 +138,11 @@ The image below has a "\*\*/*\*" instead of the single asterisk "\*" used in the
 
   
 
+  
+
 ![Watching-over-your-files-again](/engineering-education/getting-started-with-browser-sync/watching-files.png)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Did you notice that each URL has both internal and external URLs? The internal URL will be used to access the project in your browser, while the external URL will be used to access the project on an external device. That is the power of Browser-sync.
 
@@ -152,6 +159,9 @@ The internal URL will be used to access the project in your browser, while the e
 =======
   
 =======
+>>>>>>> parent of df9075d... Major readability revision
+=======
+  
 >>>>>>> parent of df9075d... Major readability revision
 Did you notice that each URL has both internal and external URLs? That is the power of Browser-sync.
 >>>>>>> parent of df9075d... Major readability revision
@@ -174,7 +184,11 @@ Click on the index file to see your project.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 5. Compatibility: Browser-sync is compatible with many task runners like [GULP](https://browsersync.io/docs/gulp) and [Grunt](https://browsersync.io/docs/grunt) and it is cross-platform enabled.
+=======
+5. Compatibility: Browser-sync is compatible with many task runners like GULP and Grunt and it is cross-platform enabled.
+>>>>>>> parent of df9075d... Major readability revision
 =======
 5. Compatibility: Browser-sync is compatible with many task runners like GULP and Grunt and it is cross-platform enabled.
 >>>>>>> parent of df9075d... Major readability revision
