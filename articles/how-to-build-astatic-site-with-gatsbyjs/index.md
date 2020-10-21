@@ -46,13 +46,13 @@ Go to the [official Node.js website](https://nodejs.org/en/) to download the Nod
 After installing it, open up your terminal and type in:
 
 ```bash
-Users/yourname: node –version
+node –version
 ```
 
 and
 
 ```bash
-Users/yourname: npm –version
+npm –version
 ```
 
 These commands will give you the version of Node.js and node package manager respectively.
@@ -60,7 +60,7 @@ These commands will give you the version of Node.js and node package manager res
 Next, in your terminal type in:
 
 ```bash
-Users/yourname: npm install –global gatsby-cli
+npm install –global gatsby-cli
 ```
 
 You just installed Gatsby and its command line interface globally in your computer, this is the first step to interact with Gatsby using the command line interface.
@@ -68,7 +68,7 @@ You just installed Gatsby and its command line interface globally in your comput
 In order to confirm you have Gatsby installed, type in:
 
 ```bash
-Users/yourname: gatsby –version
+gatsby –version
 ```
 
 ### Creating a new GatsbyJs site
@@ -84,12 +84,12 @@ To see the new site, you have created, check it out using these commands.
 First, go into the file directory you have just created:
 
 ```bash
-Users/my-first-gatsby-site: cd first-gatsby-site
+cd first-gatsby-site
 ```
 
 Next:
 ```bash
-Users/my-first-gatsby-site /first-gatsby-site: npm run develop
+npm run develop
 ```
 
 You will then get a success message saying *“your site is running at”* :
@@ -220,7 +220,7 @@ We will be using a plugin for [Typogyaphy Js](https://kyleamathews.github.io/typ
 To use this plugin, you have to do this:
 
 ```bash
-Users/my-first-gatsby-site /my-gatsby-site: npm install gatsby-plugin-typography react-typography typography
+npm install gatsby-plugin-typography react-typography typography
 ```
 
 When the installation is done go to the *gatsby-config.js* file, you want to tell Gatsby that you want to use this plugin.
@@ -240,7 +240,7 @@ So far so good, your site has been running on your local server which is `http:/
 To get your Gatsby site ready for cloud deployment you will need to build it using this command:
 
 ```bash
-Users/learning: npm run build
+npm run build
 ```
 
 You will notice some changes in the public folder, that’s where your static site files are. If you want to host it on a webserver you could copy the public folder and place it in a server. Otherwise, you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko, etc. to place the whole file directory on a cloud server.
