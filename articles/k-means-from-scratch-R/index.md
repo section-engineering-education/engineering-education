@@ -205,7 +205,7 @@ c(total_distance[,1] <= total_distance[,2])
 TRUE TRUE TRUE FALSE FALSE FALSE FALSE
 ```
 
-Using the logical vector above, we obtain the elements of the first cluster. The operation used below is an example of conditional selection. Elements that satisfy the condition in the array `dataPoints` are printed.
+Using the logical vector above, we obtain the elements of the first cluster. The operation used below is an example of conditional selection. Elements that satisfy this condition in the array `dataPoints` are printed.
 
 ```r
 dataPoints[,1][c(total_distance[,1] <= total_distance[,2])]
@@ -222,7 +222,7 @@ The thinking is as follows: We need to find a point closest to all the cluster d
 mean(dataPoints[,1][c(total_distance[,1] <= total_distance[,2])])
 ```
 
-We calculate the mean using the R function `mean.` This is an example on selecting elements conditionally that belong to a cluster and finding its centroid.
+We calculate the mean using the R function `mean.` This is an example on how we select elements conditionally that belong to a cluster and how we find its centroid.
 
 ```txt
 1.83333
