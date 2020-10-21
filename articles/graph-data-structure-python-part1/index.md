@@ -7,7 +7,7 @@ title: Using the Graph Data Structure in Python, Part 1
 description: Graphs are special, non-linear data structures that are characterized by a group of vertices, connected by edges.
 author: saiharsha-balasubramaniam
 date: 2020-10-21T00:00:00-13:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/graph-data-structure-python-part1/hero.jpg
@@ -37,24 +37,24 @@ Graphs are complex, non-linear data structures that are characterized by a group
 ### Graphs: Introduction
 Graphs are non-linear data structures made up of two major components:
 
-- **Vertices** -- Vertices are entities in a graph. Every vertex has a value associated with it. For example, if we represent a list of cities using a graph, the vertices would represent cities.
+- **Vertices** -- Vertices are entities in a graph. Every vertex has a value associated with it. For example, if we represent a list of cities using a graph, the vertices would represent the cities.
 
-- **Edges** -- Edges represent the relationship between the vertices in the graph. Edges may or may not have a value associated with them. For example, if we represent a list of cities using a graph, the edges would represent the path between cities.
+- **Edges** -- Edges represent the relationship between the vertices in the graph. Edges may or may not have a value associated with them. For example, if we represent a list of cities using a graph, the edges would represent the path between the cities.
 
 ![Graph Diagram](/engineering-education/graph-data-structure-python-part1/graph.png)
 
-*Figure: Graph [Source](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html)*
+*Figure: [Graph](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html)*
 
 ### Applications of Graphs
-Graphs are used everywhere, even in the fields of physics and chemistry.
+Graphs are used everywhere, from schooling to business. Especially in the fields of computer science, physics, and chemistry.
 
 A few other applications of graphs are:
 
 - To visualize organized data.
 
-- Directed Graphs are used in Google's Page Ranking Algorithm.
+- Directed Graphs are used in Google's [Page Ranking Algorithm](https://en.wikipedia.org/wiki/PageRank).
 
-- Social Networks uses graphs to represent different users as vertices and edges to represent connections between them.
+- Social Networks uses graphs to represent different users as vertices and edges to represent the connections between them.
 
 - In a mapping application, graphs are used to represent places and the path (distance) between them.
 
@@ -73,7 +73,7 @@ That is, `edge (X, Y) == edge (Y, X)`.
 
 ![Undirected Graph](/engineering-education/graph-data-structure-python-part1/undirected-graph.png)
 
-*Figure: Undirected Graph ([Source](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/))*
+*Figure: [Undirected Graph](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/)*
 
 ##### Directed Graphs
 In a directed graph or digraph, the edges have an orientation. If there is a path from vertex X to vertex Y, then there isn't necessarily a path from vertex Y to vertex X.
@@ -82,7 +82,7 @@ That is, `edge (X, Y) != edge (Y, X)`.
 
 ![Directed Graphs](/engineering-education/graph-data-structure-python-part1/directed-graph.png)
 
-*Figure: Directed Graph ([Source](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/))*
+*Figure: [Directed Graph](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/)*
 
 #### Based on Weights
 ##### Weighted Graphs
@@ -94,7 +94,7 @@ A weighted graph has a value associated with every edge. The value may represent
 
 ![Weighted Graphs](/engineering-education/graph-data-structure-python-part1/weighted-graph.png)
 
-*Figure: Weighted Graph ([Source](https://www.clipartmax.com/middle/m2i8Z5i8G6b1b1b1_directed-weighted-ex1-directed-weighted-graph/))*
+*Figure: [Weighted Graph](https://www.clipartmax.com/middle/m2i8Z5i8G6b1b1b1_directed-weighted-ex1-directed-weighted-graph/)*
 
 ##### Unweighted Graphs
 An unweighted graph does not have a value associated with every edge. An edge of an unweighted graph is represented as, `(u, v)`.
