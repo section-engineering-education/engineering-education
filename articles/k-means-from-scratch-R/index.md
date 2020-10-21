@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/k-means-from-scratch-r/hero.jpg
     alt: K-Means Algorithm in R example image
 ---
- In this article, we will be coding the K-means algorithm from scratch and will visualize the results. Going through the article should result in an intuitive understanding of the algorithm.
+ In this article, we will be coding the K-means algorithm from scratch and will visualize the results. Going through this article should result in a more intuitive understanding of the K-means algorithm.
 <!--more-->
 K-Means is an [unsupervised machine learning algorithm](https://www.guru99.com/unsupervised-machine-learning.html). Unsupervised learning algorithms learn from unlabeled data. [Supervised learning algorithms](engineering-education/supervised-learning-algorithms/) on the other hand, need data with labels to learn from.
 It belongs to the subclass of [clustering algorithms](/engineering-education/clustering-algorithms/) under unsupervised learning.
@@ -26,7 +26,7 @@ Consider the data plot given below.
 
 ![plot](/engineering-education/k-means-from-scratch-r/plot1.jpg)
 
-In order to find a decision boundary that divides the data into k-different clusters, we use k-means. Let's assume we want to divide the given dataset into two clusters. What would be the optimal distribution of data points?
+In order to find a decision boundary that divides the data into k-different clusters, we use K-means. Let's assume we want to divide the given dataset into two clusters. What would be the optimal distribution of data points?
 
 ![plot](/engineering-education/k-means-from-scratch-r/plot2.jpg)
 
