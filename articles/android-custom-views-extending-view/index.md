@@ -20,17 +20,11 @@ To follow through this tutorial you will need to:
 Let's get started!
 
 ### Step 1 — Creating An Android Project
-In this step, we are going to create our application.
-- Open android studio and select `Create New Project`.
-- Select `Empty Activity` template and click next.
-
-![empty template](/engineering-education/android-custom-views/empty-template.png)
-
-- On the next page, give the application a name and keep the default settings.
+In this step, we are going to create our application. Open android studio and start a new project with an empty activity template. On the next page, give the application a name and keep the default settings.
 
 ![app name](/engineering-education/android-custom-views/app-name.png)
 
-- Click `Finish` and wait for the project build process to finish.
+Click `Finish` and wait for the project build process to finish.
 
 ### Step 2 — Creating our View Class
 On your project window,
