@@ -63,7 +63,7 @@ We use the `mapIndexed` method to transform the list into a map. With this metho
 Those are the four most common collections in Kotlin. They also have similar methods within their classes. We will go through each of them describing their functions and how they work.
 
 #### 1. `.indices`
-This method creates a range of indices from the collection. In maps, however, the equivalent of this method is `.keys`. But instead of a range, it creates a `set` of keys since there are no duplicates. When you call the `ranges` function, you get a random number from the range created. I have used string interpolation in most of the outputs for cleaner code. To read more about `Kotlin ranges` go ahead and read [this article](/engineering-education/kotlin-ranges/).
+This method creates a range of indices from the collection. In maps, however, the equivalent of this method is `.keys`. But instead of a range, it creates a `set` of keys since there are no duplicates. When you call the `ranges` function, you get a random number from the range created. I have used string interpolation in most of the outputs for cleaner code. 
 
 #### 2. `.maxBy`
 Sometimes we might want to get the highest value in a collection. For this we used to use the `.max` function. This method has been deprecated because of null safety and now we use `.maxOrNull`. In our case, we might need to get the longest word from our collection of words. The `maxOrNull` will not work because our values are not numeric in any way.
