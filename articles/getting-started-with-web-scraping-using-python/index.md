@@ -1,8 +1,8 @@
 ![](/engineering-education/getting-started-with-web-scraping-using-python/hero.PNG)
 # Getting started with web scraping using Python
-## Introduction
+### Introduction
 **Web scraping** is the process which made pulling a huge amount of data from websites easier and faster.
-### why web scraping?
+#### why web scraping?
 Imagine you want to gather a large amount of data from several websites as quickly as possible, will you do it manually? or will you search for a practical way?.
 Now you are asking yourself, why do you want to do that! okay let's give you some examples to understand the need for **web scraping**:
 - [Wego](https://www.wego.com/en) is a website where you can book your flights & hotels, it gives you the lowest price after comparing 1000 booking sites. They are using **web scraping** to do that process.
@@ -10,11 +10,11 @@ Now you are asking yourself, why do you want to do that! okay let's give you som
 - Another example that a lot of companies are using **web scraping** to create strategic marketing decisions after scraping social network profiles in order to determine the posts with the most interactions.
 
 Now after having a brief about **web scraping** let's talk about the most important thing which is "**legal issues**".
-## Prerequisites
+### Prerequisites
 1. Good understanding of **Python** programming language.
 2. Basic understanding of **HTML**.
 
-## How to know if the website is allowing web scraping?
+### How to know if the website is allowing web scraping?
 - You have to add "/robots.txt" to the URL, such as www.facebook.com/robots.txt, so you can see the scraping rules and what is forbidden to scrap.
 
 For example :
@@ -66,7 +66,7 @@ for **Linux** users you can use :
 sudo apt-get install bs4 urllib3 plyer requests
 ```
 You are ready to go, let's get started and learn **web scraping** through two real-life projects.
-## Reddit Web Scraper
+### Reddit Web Scraper
 One year ago, I wanted to build a smart **AI** bot, my aim was to make it talk as human as possible, but I had a problem, I didn't have a good dataset to train my bot on, so I decided to use **REDDIT** posts and comments.
 
 Here we will go through how to build the basics of that app step by step, and we will use https://old.reddit.com/
@@ -125,7 +125,7 @@ After running our code you will see the following result, which is every title o
 Finally, now you can do the same process for the comments and replies to build a good dataset as I mentioned before.
 
 Let's build another app to let you understand web scraping better.
-## COVID-19 Desktop Notifier
+### COVID-19 Desktop Notifier
 Here we are going to learn how to build a notification system for Covid-19 so we will be able to know the number of new cases and deaths within our country.
 
 The data is taken from [worldmeter](https://www.worldometers.info/coronavirus/) website where you can find the COVID-19 **real-time** update for any country in the world.
@@ -173,7 +173,7 @@ In the last part of our code, we are making an infinite while loop which uses th
  
 ![](/engineering-education/getting-started-with-web-scraping-using-python/3.PNG)
  
-## Conclusion
+### Conclusion
 Now, we’ve just proven that anything on the web can be scraped and stored, there are a lot of purposes to use that information, as an example on the **Reddit Web Scraper** : 
 
 consider that a specific post receives a lot of comments but without any like, we can know as a result that the post strikes a chord in people and go against the community.
