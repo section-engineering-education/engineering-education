@@ -29,7 +29,7 @@ A Bottom Navigation bar is made up of a container which contains the following:
 ### Terminologies
  * [Bottom Navigation Bar](https://material.io/develop/android/components/bottom-navigation)- A navigation component that enables users to explore and change to different views in applications.
  * [Dependency](https://developer.android.com/studio/build/dependencies)-  A statement SDK that allows us to add an external library into our projects.
- * [Fragment](https://developer.android.com/reference/android/app/Fragment)-A Fragment is a sub-activity which enables more flexible activity design.
+ * [Fragment](https://developer.android.com/reference/android/app/Fragment)--A Fragment is a sub-activity that enables a more flexible activity design.
 * [FragmentManager](https://developer.android.com/reference/android/app/FragmentManager)- A class used to manage and handle transactions in fragments.
 * [FragmentTransaction](https://developer.android.com/reference/android/app/FragmentTransaction)- A class used to provide methods to replace, add, or remove fragments.
 
