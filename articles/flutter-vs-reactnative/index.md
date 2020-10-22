@@ -19,7 +19,7 @@ Today, companies are not just making products, but ecosystems. A gamut of servic
 #### Take 1: One bytecode to rule ‘em all
 The dream of a cross-platform was first braved by Java. It devised the paradigm of [Write Once Run Anywhere (WORA)](https://en.wikipedia.org/wiki/Write_once,_run_anywhere). It was successful to a major extent, according to the Java installer at least.
 
-![Java Installer](/engineering-education/flutter-vs-reactnative/installer.jpeg)
+![](installer.jpeg)
 
 Things went south when companies started making their own Java implementations for exclusivity. Oracle turned licenses and usage rights upside down. Hundreds of products like J2ME, J2EE, Open JDK, Jakarta etc. popped up. Java became too fragmented to be universal.
 
