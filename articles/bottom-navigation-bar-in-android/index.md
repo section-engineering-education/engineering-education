@@ -1,9 +1,9 @@
 ### Bottom Navigation Bar in Android Applications.
-In this tutorial, will go over integrating a Bottom Navigation Bar in android applications.
+In this tutorial, we will go over integrating a Bottom Navigation Bar in android applications.
 
 ### Introduction
-A **Bottom Navigation Bar** is a navigation component that enables users to explore and change to different views in an application.
-Selecting a bottom navigation icon enables users to switch to a selected view or refresh an active view.
+A **Bottom Navigation Bar** is a navigation component that enables a user to explore and change to different views in an application.
+Selecting a bottom navigation icon enables a user to switch to a selected view or refresh an active view.
 Bottom Navigation Bars make applications more user friendly. It also eases the development processes by making code more organized.
 A Bottom Navigation Bar is used when an application has the following:
 * Three to five views.
@@ -15,7 +15,6 @@ Popular mobile applications that use this navigation component are Instagram, Tw
 
 ![Instagram](/engineering-education/bottom-navigation-bar-in-android/instagram.jpg)
 
-
 ![Twitter](/engineering-education/bottom-navigation-bar-in-android/twitter.jpg)
 
 ### Structure of a Bottom Navigation Bar
@@ -25,13 +24,12 @@ A Bottom Navigation bar is made up of a container which contains the following:
 * Active icon
 * Active text label
 
-
 ![Structure of a Bottom Navigation Bar](/engineering-education/bottom-navigation-bar-in-android/structure.jpg)
 
 ### Terminologies
  * [Bottom Navigation Bar](https://material.io/develop/android/components/bottom-navigation)- A navigation component that enables users to explore and change to different views in applications.
  * [Dependency](https://developer.android.com/studio/build/dependencies)-  A statement SDK that allows us to add an external library into our projects.
- * [Fragment](https://developer.android.com/reference/android/app/Fragment)-A Fragment is a sub-activity which enables more modular activity design.
+ * [Fragment](https://developer.android.com/reference/android/app/Fragment)-A Fragment is a sub-activity which enables more flexible activity design.
 * [FragmentManager](https://developer.android.com/reference/android/app/FragmentManager)- A class used to manage and handle transactions in fragments.
 * [FragmentTransaction](https://developer.android.com/reference/android/app/FragmentTransaction)- A class used to provide methods to replace, add, or remove fragments.
 
@@ -221,7 +219,7 @@ Add the following lines of code:
 
 </menu>
 ```
-The **menu** file serves as a container for menu items. **Item** represents one item on the menu. Each item has a title and an icon.
+The **menu** file serves as a container for menu items. **Item** represents a single item on the menu. Each item has an icon and a title.
 
 #### Step 4 – Let's Code.
 
