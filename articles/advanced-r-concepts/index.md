@@ -25,7 +25,7 @@ In the first article, we covered the basics of the R programming language. In th
 6. Loop Statements
 
 ### Dataframes
-R is a programming language built for statistical analysis of large datasets. Dataframes help by storing large datasets in the local memory. Dataframes allow various operations such Create, Read, Update and Delete to be performed in an efficient manner. 
+R is a programming language built for statistical analysis of large datasets. Dataframes help by storing large datasets in the local memory. They enable operations such as Create, Read, Update and Delete to be performed in an efficient manner. 
 
 Let's look at an example to define a dataframe. We will describe several vectors storing different data types. The example considered below is a simplified version of a real dataset. Datasets contain columns of different data types.
 
