@@ -111,7 +111,7 @@ You will find an  ***index.js*** file in the pages folder because Gatsby uses *N
 -	**The gitignore file:** This file tells GitHub to ignore whatever file you specify in it ignore. For example: API keys.
 -	**The package.json:** Contain the dependencies or packages you have installed using the node package manager *“npm install”*
 
-### Adding contents to the site
+### Adding content to the site
 As excited as I am that you have created your first GatsbyJs static site, let's move forward by adding more content to the site by making it look better.
 Remember how I mentioned you will need some knowledge of React.js?
 
