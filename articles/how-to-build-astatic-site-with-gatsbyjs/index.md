@@ -20,7 +20,7 @@ A paradigm shift has begun in the web development world, where static sites and 
 
 This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) etc. Which provides better performance, secured data, increased scalability, incredible speed and cost saving.
 
-When compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes into play; it is a powerful and easy static site generator.
+When compared to static sites which are cheaper, quick and easy to develop and loads faster. Dynamic sites are expensive, time consuming to develop and slow to load which can cause high bounce rate on a page by users, now that’s where GatsbyJs comes into play; it is a powerful and easy static site generator.
 
 ### What is GatsbyJs?
 >GatsbyJs can be defined as a static site generator that uses [React.js](https://reactjs.org/) (for the client-side) and [GraphQL](https://graphql.org/) (to access data) to build a reliable and faster website.
