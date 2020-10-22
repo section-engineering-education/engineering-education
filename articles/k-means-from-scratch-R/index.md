@@ -16,7 +16,7 @@ images:
 ---
  In this article, we will be coding the K-means algorithm from scratch and will visualize the results. Going through this article should result in a more intuitive understanding of the K-means algorithm.
 <!--more-->
-K-Means is an [unsupervised machine learning algorithm](https://www.guru99.com/unsupervised-machine-learning.html). Unsupervised learning algorithms learn from unlabeled data. [Supervised learning algorithms](engineering-education/supervised-learning-algorithms/) on the other hand, need data with labels to learn from.
+K-Means is an [unsupervised machine learning algorithm](https://www.guru99.com/unsupervised-machine-learning.html). Unsupervised learning algorithms learn from unlabeled data. [Supervised learning algorithms](engineering-education/supervised-learning-algorithms/) on the other hand, need datas to be labeled in order to learn from it.
 It belongs to the subclass of [clustering algorithms](/engineering-education/clustering-algorithms/) under unsupervised learning.
 
 ### Theory
