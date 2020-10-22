@@ -225,7 +225,7 @@ Upon crunching a few numbers, transposing a (10000 x 10000) matrix using for loo
  
 This is the under-the-hood reason why NumPy’s calculations are off the charts.
 The overhead of making sure the memory blocks line up correctly before pouring an nd-array into a C - compiled NumPy function will overwhelm any time benefit if the array isn't relatively large.
- Let us compare Numpy arrays and Python lists. As shown in the chart, as the number of elements increases, the breakeven size is around 200 elements. 
+Let us compare Numpy arrays and Python lists. As shown in the chart, as the number of elements increases, the breakeven size is around 200 elements. 
 
  ![Graph](/engineering-education/introduction-to-numpy/numpyGraph.jpg)
  *Figure: NumPy array vs Python List  - [Source](https://github.com/Pballer/dc-ds-071519/blob/master/blogs/array_vs_list/numpy_array_vs_py_list.ipynb)*
