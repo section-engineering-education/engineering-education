@@ -6,7 +6,7 @@ url: /engineering-education/kotlin-collections/
 title: Kotlin Collections
 description: This article goes through some of the most common collections in Kotlin and addresses the common methods among those collections.
 author: linus-muema
-date: 2020-10-21T00:00:00-10:00
+date: 2020-10-22T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -17,9 +17,9 @@ images:
 Working with grouped data can be a challenging task. In most programming languages, we have `Arrays` and `Lists` to help us. They allow for better management of data and computer's resources. Imagine having to create a String or Integer for every value that you had in a program.
 <!--more-->
 ### Kotlin collections
-Kotlin has a vast set of collections. All of them are special in their own way. However, there are many with similar methods and characteristics. Due to this, beginners may find it difficult to follow along when going over the official documentation.
+[Kotlin](https://kotlinlang.org/) has a vast set of collections. All of them are special in their own way. However, there are many with similar methods and characteristics. Due to this, beginners may find it difficult to follow along when going over the official documentation.
 
-This article goes through some of the most common collections in Kotlin. It also addresses the common methods among those collections. We will check on each collection and what makes it different from the rest. By the end of this article, you should be able to know the characteristics and methods of each collection.
+This article goes through some of the most common collections in Kotlin. It also addresses the common methods among those collections. We will look at each collection and how they differ from each other. By the end of this article, you should be able to know the characteristics and methods of each collection.
 
 ### Prerequisites
 To get started, you will need to have a basic understanding of Kotlin. This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@Linusmuema/Collections). To execute the functions, just call them in the `main` function and pass in `arr` as an argument.
@@ -34,18 +34,18 @@ The collections we will look at are:
 #### Lists
 This is an immutable collection that stores items in an ordered format. This means lists are read-only. Once you receive a list, you cannot change values but can only access them. This is done using indices. An `index` is the position of the value in the array.
 
-As in most programming languages, Kotlin indices also begin from 0. To create a mutable list, you make use of the [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html#kotlin.collections.MutableList) interface. The [ArrayList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/) collection is another alternative.
+As in most programming languages, Kotlin indices also begin from 0. To create a mutable list, you can make use of the [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html#kotlin.collections.MutableList) interface. The [ArrayList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/) collection is another alternative.
 
-To create a list, you could do so the following ways:
+There are a few ways to create a list:
 
   - **listOf()** - with this method, you pass in the values as parameters to create a list.
-  - **mutableListOf()** - it works the same as `listOf` but instead creates a mutable list.
-  - **toList()** - call this on any collection to convert it to a list. For a mutable list, use `toMutableList()`
+  - **mutableListOf()** - it works the same as `listOf()` but instead creates a mutable list.
+  - **toList()** - call this on any collection to convert it to a list. For a mutable list, use `toMutableList()`.
 
 #### Arrays
-These are the direct opposite of `lists`. They are mutable i.e. can be changed. They however have a fixed size. This means that you can't add more elements to them.
+These are the direct opposite of `lists`. They are mutable, i.e. can be changed. They, however, have a fixed size. This means that you can't add more elements to them.
 
-In `lists`, you can add and remove items from them but with `arrays`, you cannot. To create an Array :
+In `lists`, you can add and remove items from them, but with `arrays`, you cannot. To create an Array:
 
   - **arrayOf** - pass in the items to be included in the array
   - **toArray** - this method converts a collection to an Array
@@ -58,7 +58,7 @@ A map stores values in key-value pairs. Each item in the collection has a key us
 
 Just like lists, maps are immutable but have an [interface](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/#kotlin.collections.MutableMap) to support mutability. To convert a list to a map, we set the indices of each item to be the key and the item to be the value.
 
-We use the `mapIndexed` method to transform the list into a map. With this method, we can access the index `i` and set it as the key to the value `l`.
+We use the `mapIndexed()` method to transform the list into a map. With this method, we can access the index `i` and set it as the key to the value `l`.
 
 Those are the four most common collections in Kotlin. They also have similar methods within their classes. We will go through each of them describing their functions and how they work.
 
@@ -86,4 +86,4 @@ This ensures clean and readable code. In our case, we change the list of words t
 It is a common practice to filter data based on some conditions. In Kotlin, we use this `.filter` method to do exactly that. You pass in the condition in the lambda and the result is a list of the values that meet the criteria. In our `filterEven` function, we filter out the strings whose length is not an even number. The result should be an array with `coffee` as the only item.
 
 ### Conclusion
-With that, you know have a better understanding of some of the common collections and the shared methods. They are useful in managing a collection of data and resource management. You can find more collections and their methods in the Kotlin collections [documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/). These will help you create better applications with cleaner code. These offer alternatives to creating loops and nested if statements.
+With that, you now have a better understanding of some of the common collections and the shared methods. They are useful in managing a collection of data and resource management. You can find more collections and their methods in the Kotlin collections [documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/). These will help you create better applications with cleaner code and offer alternatives to creating loops and nested `if` statements.
