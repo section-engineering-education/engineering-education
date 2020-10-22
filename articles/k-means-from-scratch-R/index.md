@@ -16,7 +16,7 @@ images:
 ---
  In this article, we will be coding the K-means algorithm from scratch and will visualize the results. Going through this article should result in a more intuitive understanding of the K-means algorithm.
 <!--more-->
-K-Means is an [unsupervised machine learning algorithm](https://www.guru99.com/unsupervised-machine-learning.html). Unsupervised learning algorithms learn from unlabeled data. [Supervised learning algorithms](engineering-education/supervised-learning-algorithms/) on the other hand, need datas to be labeled in order to learn from it.
+K-Means is an [unsupervised machine learning algorithm](https://www.guru99.com/unsupervised-machine-learning.html). Unsupervised learning algorithms learn from unlabeled data. [Supervised learning algorithms](engineering-education/supervised-learning-algorithms/), on the other hand, need data to be labeled to learn from it.
 It belongs to the subclass of [clustering algorithms](/engineering-education/clustering-algorithms/) under unsupervised learning.
 
 ### Theory
@@ -26,7 +26,7 @@ Consider the data plot given below.
 
 ![plot](/engineering-education/k-means-from-scratch-r/plot1.jpg)
 
-In order to find a decision boundary that divides the data into k-different clusters, we use K-means. Let's assume we want to divide the given dataset into two clusters. What would be the optimal distribution of data points?
+To find a decision boundary that divides the data into k-different clusters, we use K-means. Let's assume we want to divide the given dataset into two clusters. What would be the optimal distribution of data points?
 
 ![plot](/engineering-education/k-means-from-scratch-r/plot2.jpg)
 
@@ -222,7 +222,7 @@ The thinking is as follows: We need to find a point closest to all the cluster d
 mean(dataPoints[,1][c(total_distance[,1] <= total_distance[,2])])
 ```
 
-We calculate the mean using the R function `mean.` This is an example on how we select elements conditionally that belong to a cluster and how we find its centroid.
+We calculate the mean using the R function `mean.` This is an example of how we select elements conditionally that belong to a cluster and how we find its centroid.
 
 ```txt
 1.83333
@@ -260,7 +260,7 @@ The updated centroids are shown in the figure below.
 ![](/engineering-education/k-means-from-scratch-r/plot4.jpg)
 
 ### Advantages and Disadvantages
-K-means is useful in implementing [dimensionality reduction](https://www.imperva.com/blog/clustering-and-dimensionality-reduction-understanding-the-magic-behind-machine-learning/) and [image compression](https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a). Dimensionality reduction is used as a pre-processing step to reduce data dimensions during the execution of other machine learning algorithms. Image compression aims to eliminate data by reducing size and still maintaining the relevant features and information.
+K-means is useful in implementing [dimensionality reduction](https://www.imperva.com/blog/clustering-and-dimensionality-reduction-understanding-the-magic-behind-machine-learning/) and [image compression](https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a). Dimensionality reduction is used as a pre-processing step to reduce data dimensions during the execution of other machine learning algorithms. Image compression aims to eliminate data by reducing the size and still maintaining the relevant features and information.
 
 Every algorithm has its own set of advantages and disadvantages. Understanding the pros and cons helps us understand when the algorithm is best suited for a problem and when it's not.
 
@@ -272,7 +272,7 @@ Every algorithm has its own set of advantages and disadvantages. Understanding t
 #### Disadvantage
 1. K-means chooses the initial centroid point randomly, and since the clustering accuracy depends on the initial choice of centroids, the accuracy can be low if the chosen centroids aren't proper.
 2. Considering only the distance between centroids of the cluster may not be efficient for categorical data.
-3. As the cluster size grows, it becomes challenging distinguishing between two clusters based on a few attributes.
+3. As the cluster size grows, it becomes a challenge to distinguish between two clusters based on a few attributes.
 
 ### Conclusion
 All algorithms can be broken down into smaller pieces and be implemented from scratch. Understanding the theory and reasoning behind the algorithms helps one make better decisions during building applications.
