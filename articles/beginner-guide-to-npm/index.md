@@ -274,7 +274,7 @@ The command below installs multiple packages.
 npm i mongoose  moment underscore ## install multiple packages at a go
 ```
 
-Now, assume you have cloned this project from another computer, and you want to install the colonies of this project. Go ahead and delete the `node_module` folder of your project. This will remove the packages installed on your local system. If you run `npm list --depth=0` to list down the packages installed for this project, you will get something close to this:
+Now, assume you have cloned this project from another computer, and you want to install the packages of this project. Go ahead and delete the `node_module` folder of your project. This will remove the packages installed on your local system. If you run `npm list --depth=0` to list down the packages installed for this project, you will get something close to this:
 
 ```bash
 $ npm list --depth=0
@@ -596,7 +596,7 @@ On your command line, run `node app.js`. This will give you ***Application start
 This a basic example of applying the installed express to a Node.js project. If you are interested in learning more about express, we have a guide that will get you [started to express servers and routing](/engineering-education/express/).
 
 ### Conclusion
-This guide introduced you to NPM. I hope it gave you a good impression on how best to get started using this amazing tool. It bridges Node.js and NPM. It provides you with packages repositories—their many various packages on NPM. Go ahead and choose that useful package to help you scale out your next project workflow. Suppose you are interested in learning more; below are some links. Do have a look at them to learn more about Node.js and NPM.
+This guide introduced you to NPM. I hope it gave you a good impression on how best to get started using this amazing tool. It bridges Node.js and NPM. It provides you with packages repositories—there are many various packages on NPM. Go ahead and choose that useful package to help you scale out your next project workflow. Suppose you are interested in learning more; below are some links. Do have a look at them to learn more about Node.js and NPM.
 
 ### Related Topics and Additional Resources
 [The History of Node.js](/engineering-education/history-of-nodejs/)
