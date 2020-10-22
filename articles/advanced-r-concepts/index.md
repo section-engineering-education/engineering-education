@@ -25,7 +25,7 @@ In the first article, we covered the basics of the R programming language. In th
 6. Loop Statements
 
 ### Dataframes
-R is a programming language built for statistical analysis of large datasets. With an emphasis on handling large datasets by the use of dataframes. Dataframes help by storing large datasets in a local variable.
+R is a programming language built for statistical analysis of large datasets. Dataframes help by storing large datasets in the local memory. Dataframes allow various operations such Create, Read, Update and Delete to be performed in an efficient manner. 
 
 Let's look at an example to define a dataframe. We will describe several vectors storing different data types. The example considered below is a simplified version of a real dataset. Datasets contain columns of different data types.
 
@@ -135,9 +135,9 @@ vector_1 vector_2 vector_3 vector_4 vector_5
 ```
 
 ### Typecasting
-Similar to other programming languages like C++,Python, etc, R provides us with an option to explicitly change or modify the data-type of previously defined variables. R provides the keyword as.* keyword to implement the same.
+Similar to other programming languages like C++,Python, etc, R provides us with an option to explicitly change or modify the data-type of previously defined variables. R provides the keyword **as.*** to typecast previously defined variables.
 
-Let's consider the following example:
+We will use the **as** keyword in the following example:
 
 ```r
 x <- 0:6
