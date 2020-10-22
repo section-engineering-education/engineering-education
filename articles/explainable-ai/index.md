@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/explainable-ai/hero.jpg
     alt: Explainable AI example image
 ---
-AI-powered systems have a lot of influence on our daily lives. A number of these systems are so sophisticated that little to no human intervention is required in their design and deployment. These systems make a lot of decisions for us every single day. They make a lot of crucial decisions that affect human lives (for example, in medicine, finance, law, defense). But how they do is often not explained.
+AI-powered systems have a lot of influence on our daily lives. A number of these systems are so sophisticated that little to no human intervention is required in their design and deployment. These systems make a lot of decisions for us every single day. They make many decisions that affect human lives (for example, in medicine, finance, law, defense). But how they do so is often not explained.
 <!--more-->
 
 ### Introduction
@@ -37,11 +37,11 @@ To get the most from this article a basic understanding of artificial intelligen
 #### A few useful terms
 **Black box model** – a data mining and machine learning model whose internals are not interpretable to humans. The model internals are unknown to the observer. It could also be a proprietary model.
 
-**Neural network** – a series of algorithms that are modeled on the human brain, used to identify underlying relationships in data.
+**Neural network** – a series of algorithms modeled on the human brain used to identify underlying data relationships.
 
 **Recurrent Neural Network** - a neural network containing loops that allow information to be stored within the network.
 
-**Deep learning** – a subset of machine learning where neural networks learn from large quantities of data. Deep learning covers neural networks with more than two layers.
+**Deep learning** – a subset of machine learning where neural networks imitate how human beings gain various types of knowledge and learn from large quantities of data. Deep learning uses multiple layers to extract higher-level features from raw input.
 
 **Attention mechanism** – can simply be described as the methods used by neural networks to know where to look as they try to predict parts of a sequence and perform their tasks.
 
@@ -52,7 +52,7 @@ Oftentimes there is little to no information given about how predictive models m
 
 Furthermore, one may never know if the model has inherent biases. In some of these scenarios, it would help to know why an algorithm denied your loan application. Or understand why it is allocating you higher than average insurance premiums. This is where Explainable AI (XAI) comes into play.
 
-Explainable AI refers to the concept on how AI works and how it makes decisions being made clear to humans. Explainable AI is concerned with explaining input variables and the decision-making stages of a model. It is also concerned with the structure of the models themselves.
+Explainable AI refers to the concept of how AI works and how it makes decisions being made clear to humans. Explainable AI is concerned with explaining input variables and the decision-making stages of a model. It is also concerned with the structure of the models themselves.
 
 ### Need for Explainable AI
 #### Decision Support Systems
@@ -69,21 +69,21 @@ Another case of bias involved a digital application for a mortgage. An algorithm
 
 If similar algorithms offered clear explanations on why the rates were decided upon, some of the consequences of bias would be contained before wreaking widespread harm. The bias would be easier to pick up. The algorithms would be fine-tuned to provide better and fairer experiences to all users.
 
-I recently wrote an article on bias in machine learning and how to handle it. To get a better understanding on bias, check it out [here](/engineering-education/handling-bias-in-machine-learning/).
+I recently wrote an article on bias in machine learning and how to handle it. To get a better understanding of bias, check it out [here](/engineering-education/handling-bias-in-machine-learning/).
 
 #### Models are More Complex and Unpredictable
 AI methods are usually either simple or complex. Simple methods are often rule-based and explainable. For example, a [decision tree](https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052) model. This is a tree-like graph that splits a data set based on differing conditions. It is popularly used in classification problems, though it is also used for regression tasks. This type of model is very easy to understand and visualize for the user.
 
-On the other hand, complex methods are designed without explainability in mind. These methods often provide greater performance than simple AI methods. They are not designed to be interpretable. Let's explain how complexity increases with an example of a random forest algorithm that consists of 1000 decision trees. Compare it to a simple decision tree. The processes of a simple decision tree are easy to follow but the decision tree will not be ideal at uncovering complex patterns in data due to its simple nature. A random forest algorithm with 1000 decision trees will offer 1000 times more complexity than a basic decision tree. This allows it to identify much more complex patterns in data as it can handle many more possibilities compared to a basic decision tree. As result of identifying more patterns in data is increased accuracy. However, attempting to analyze such a model would prove to be a difficult task. It would mean that we would have to look at each decision tree to understand what data patterns it identified. For a single decision tree, it is easy to do, and therefore very explainable. For 1000 of them, it shall not be the case.    
+On the other hand, complex methods are designed without explainability in mind. These methods often provide greater performance than simple AI methods. They are not designed to be interpretable. Let's explain how complexity increases with an example of a random forest algorithm that consists of 1000 decision trees. Compare it to a simple decision tree. The processes of a simple decision tree are easy to follow but the decision tree will not be ideal at uncovering complex patterns in data due to its simple nature. A random forest algorithm with 1000 decision trees will be 1000 times more complex than a basic decision tree. This allows it to identify much more complex patterns in data as it can handle many more possibilities compared to a basic decision tree. A result of identifying more patterns in data is increased accuracy. However, attempting to analyze such a model would prove to be a difficult task. It would mean that we would have to look at each decision tree to understand what data patterns it identified. For a single decision tree, it is easy to do, and therefore very explainable. For 1000 of them, it shall not be the case.    
 
 Consider deep learning models such as neural networks. These are some of the least explainable or most complex algorithms available today. One may use deep learning algorithms to get higher accuracy compared to interpretable models like decision trees or linear regression models. But, interpretability becomes more complex. Here's why. Keep in mind the reasoning we used when comparing a decision tree and a random forest algorithm. A neural network has several layers. There are input layers, hidden layers, and output layers. All these layers are fully connected to one another through neurons. Every neuron is connected to every neuron in all adjacent layers. Check out this [post](https://medium.com/@srnghn/deep-learning-overview-of-neurons-and-activation-functions-1d98286cf1e4#:~:text=The%20term%20%E2%80%9Cdeep%20learning%E2%80%9D%20is%20coined%20for%20machine,multiplied%20by%20values%20called%20%E2%80%9Cweights%E2%80%9D%20and%20added%20together.) for a more in-depth description of the architecture of a neural network. In a situation where you have a large number of inputs, there shall be many neurons in the input layer. If you have many hidden layers in the network, it means that there will be a large number of neurons interacting between the input layer and hidden layers. They also have to interact with the output layer neurons. Imagine attempting to explain the decision making of such a model where every single neuron is connected to every neuron in the adjacent layers. It is unfeasible.     
 
 Furthermore, the size and complexity of problems to be solved using AI keep increasing. The computational power accessible to algorithms keeps increasing as well. These are key factors influencing the advancement of artificial intelligence. Drawing from our explanation of the complexity of neural networks, and considering the two factors for the advancement of deep learning, we understand that these complex methods are becoming even more unpredictable. If you are dealing with a neural network whose complexity increases tenfold annually, its explanations will become foggier. This is the trade-off between explainability and performance.
 
 #### Social Repercussions of AI Choices
-Some of the consequences of the choices of AI have the potential to cause upset in a social sense. Looking deeper, the consequences could be that of a cultural impact as well as ethical one. For example, we have mentioned how AI can exhibit bias.
+Some of the consequences of the choices of AI have the potential to cause upset in a social sense. Looking deeper, the consequences could be that of a cultural impact as well as an ethical one. For example, we have mentioned how AI can exhibit bias.
 
-Due to relevance, let’s further consider racial bias. In our current times, racial bias has the potential to cause societal uproar. This is a very sensitive area today, as we have seen with protests and various movements recently. This could potentially put AI as a whole under greater scrutiny, which is both positive and negative. The negative sense would be generalizing that AI is just as troublesome as humans, thus overshadowing the good AI has achieved. The positives would include much more involved conversations on AI, ethics, and how to improve them both as a whole.
+Due to relevance, let’s further consider racial bias. In our current times, racial bias has the potential to cause a societal uproar. This is a very sensitive area today, as we have seen with protests and various movements recently. This could potentially put AI as a whole under greater scrutiny, which is both positive and negative. The negative sense would be generalizing that AI is just as troublesome as humans, thus overshadowing the good AI has achieved. The positives would include much more involved conversations on AI, ethics, and how to improve them both as a whole.
 
 ### Explainable AI Use Cases
 #### Fraud Detection
@@ -95,7 +95,7 @@ A key application of machine learning is making recommendations to users. We rec
 Businesses would then fine-tune a potential shopping experience. Explainable AI would predict what the customer wants and explain the “why” as well. This results in more personalized recommendations and overall experience for the users. The greater the personalization, the higher the chance of getting the recommendations right. This also provides an opportunity to make further recommendations. There is a good chance customer market size is going to increase as well. The volume of sales per customer and conversion rates will increase.
 
 #### Credit and Loan Decision Making
-A very widespread use of machine learning is determining who gets access to certain financial services. We trust these algorithms to make these decisions fairly. Although, if we are denied a loan, the reasoning behind the denial may not be provided.
+A popular use of machine learning is determining who gets access to certain financial services. We trust these algorithms to make these decisions fairly. Although, if we are denied a loan, the reasoning behind the denial may not be provided.
 
 Most traditional machine learning approaches can be categorized as black-box approaches. They would only predict who should receive or be denied financial services without any explanation. The implementation of explainable AI would explain why someone should receive or be denied financial services. This offers transparency to the process. It also makes the process more auditable. Legal compliance is also improved since decisions can be justified within the scope of the applicable laws.
 
@@ -103,10 +103,15 @@ Most traditional machine learning approaches can be categorized as black-box app
 To develop explainable systems, two main techniques are used; *ante-hoc and post-hoc*.
 
 #### Ante-Hoc Methods
-These techniques entail involving explainability into a AI model from the very beginning.
+These techniques entail involving explainability into an AI model from the very beginning.
 
 ##### Reverse Time Attention Model (RETAIN)
-To assist doctors with understanding AI software predictions, the [RETAIN](https://arxiv.org/abs/1608.05745) model was developed. It utilizes two recurrent neural networks, each having an attention mechanism. The two RNNs received patient hospital visit data. The attention mechanism was responsible for explaining the focus of the neural network and how a choice was influenced.
+
+Accuracy and interpretability are important characteristics of processes in the medical field as well as successful predictive models. To avoid dealing with a trade-off between the two characteristics in AI software in the medical field, RETAIN was created.
+
+To assist doctors with understanding AI software predictions, the [RETAIN](https://arxiv.org/abs/1608.05745) model was developed. It utilizes two recurrent neural networks, each having an attention mechanism. The two RNNs received patient hospital visit data. The attention mechanism was responsible for explaining the focus of the neural network and how a choice was influenced.  
+
+RETAIN is modeled to emulate the behavior of physicians during an encounter with patients. It helps doctors understand software predictions when given patient records. It can explain how different medical codes from patient data contribute to the predictions. Medical codes include diagnosis codes, procedure codes, or medication codes. RETAIN examines the past visits of patients. It then identifies the most meaningful visits. After that, it quantifies features that are visit-specific which contribute to the predictions that are made. 
 
 ##### Bayesian Deep Learning (BDL)
 BDL is a field that combines [Bayesian probability theory](https://en.wikipedia.org/wiki/Bayesian_probability) and deep learning architectures. With BDL, it's possible to measure the unreliability of the predictions of a neural network. Bayesian deep learning models usually form prediction uncertainty estimates, that assist in describing features that led to certain decisions being made. For a deeper dive into BDL feel free to check out this [paper](https://arxiv.org/pdf/1604.01662.pdf).
@@ -115,7 +120,7 @@ BDL is a field that combines [Bayesian probability theory](https://en.wikipedia.
 These techniques only involve explainability during testing stages. The training stages are carried out normally. Post-hoc model analysis is a very common approach towards explaining AI in production.
 
 ##### Local interpretable Model-Agnostic Explanations (LIME)
-[LIME](https://www.oreilly.com/content/introduction-to-local-interpretable-model-agnostic-explanations-lime/) is a popular post-hoc method that learns an interpretable model and attempts to explain its prediction. Only after a decision has been made will it provide a explanation. Here is how it works. LIME receives input, then generates a new dataset composed of refined data samples. The next step involves populating corresponding predictions that would have been made by a black-box model if the aforementioned samples would have been used as input.
+[LIME](https://www.oreilly.com/content/introduction-to-local-interpretable-model-agnostic-explanations-lime/) is a popular post-hoc method that learns an interpretable model and attempts to explain its prediction. Only after a decision has been made will it provide an explanation. Here is how it works. LIME receives input, then generates a new dataset composed of refined data samples. The next step involves populating corresponding predictions that would have been made by a black-box model if the aforementioned samples would have been used as input.
 
 Next is the training of an interpretable model (such as regression models or decision trees). The model is trained on the new dataset to help explain changes in the key extracted features.
 
@@ -124,9 +129,15 @@ Let’s go over an example to make it a bit clearer. Consider an image classific
 LIME uses this to predict the reasoning behind the decision making of the model. Taking our cat image example, LIME would find that erasing parts of the cat's face makes it more difficult for the model to identify that it is a cat. As a result, this would show that classification of an image of a cat would highly depend on the face of the cat.
 
 ##### Black Box Explanation through Transparent Approximation (BETA)
-BETA is a post hoc method that is linked to Interpretable Decision Sets. [Interpretable Decision Sets](https://cs.stanford.edu/people/jure/pubs/interpretable-kdd16.pdf) is a framework used to build highly accurate and interpretive predictive models. These are sets of “if-then” rules.
+BETA is a post hoc method that is linked to Interpretable Decision Sets. [Interpretable Decision Sets](https://cs.stanford.edu/people/jure/pubs/interpretable-kdd16.pdf) is a framework used to build highly accurate and interpretive predictive models.
 
-BETA learns decision sets through which each rule explains part of the behavior of the model. The learning process yields a high degree of agreement between the model and the explanation. The process also yields low ambiguity and high interpretability. For a more technical explanation on BETA check out this [paper](https://arxiv.org/abs/1707.01154).
+Interpretable Decision Sets generate interpretable classification models for multi-class classification tasks. They do this without significantly sacrificing accuracy. 
+These decision sets are sets of “if-then” rules. These rules are not connected by "else" statements and can be considered in any order. Each rule exists as an independent classifier. This means that it can assign its own label without regard for any other rules. Interpretable Decision Sets have two properties; interpretability and accuracy. They are interpretable by nature due to their simplicity. They also need to be accurate predictors of labels.
+
+Let's have a simple example of a decision set with two rules. One rule would be something like "If Respiratory-Illness = Yes and Smoker = Yes and Age ≥ 50 then Lung Cancer".
+A second rule would look like "If Risk-LungCancer = Yes and Blood-Pressure ≥ 0.3 then Lung Cancer". An obvious benefit is that we can easily follow and understand the two rules without any help. They manage to describe simple decision-making processes by predictive models. Note that there is no use of the "else statement". This is why we mentioned that they can be considered in any order and exist as independent classifiers. As we also mentioned, they offer us accuracy and interpretability. 
+
+BETA learns decision sets through which each rule explains part of the behavior of the model. The learning process yields a high degree of agreement between the model and the explanation. This means that the explanations given about the processes undertaken by the model and the actual processes are close to identical. The process also yields low ambiguity and high interpretability. For a more technical explanation on BETA check out this [paper](https://arxiv.org/abs/1707.01154).
 
 ### Challenges to Achieving XAI
 #### Different users, different levels of explainability, different contexts
@@ -136,7 +147,7 @@ Depending on the context, it is likely different users will need different level
 There exists an [inverse relationship](https://www.ubs.com/global/en/investment-bank/strategic-development-lab/blog/theory/2019/xai.html) between AI method accuracy and interpretability. The greater the accuracy, the lower the interpretability. This means that the lower the accuracy, the higher the interpretability. For example, deep learning models tend to be quite complex compared to basic machine learning methods. They are also credited with greater accuracy in their tasks. Explaining the process behind the decision making of a deep learning model is naturally going to be more difficult than that of a simple decision tree. Due to this complexity of deep learning, the demand to explain complex neural networks has skyrocketed.
 
 #### Explainability-privacy trade-off
-In the quest to achieve explainability, a trade-off with privacy is likely to be experienced in various cases. Consider a model that uses data points that users consider to be private to make predictions. Some of these data points may need to be revealed to truly explain the workings of a model. For example, a model that contains medical data of patients is going to have data points that are considered to be private. Anonymity, therefore, goes out of the window in an attempt to attain model explainability. This is a concern since privacy of users, which is supposed to be upheld, may be jeopardized.
+In the quest to achieve explainability, a trade-off with privacy is likely to be experienced in various cases. Consider a model that uses data points that users consider to be private to make predictions. Some of these data points may need to be revealed to truly explain the workings of a model. For example, a model that contains medical data of patients is going to have data points that are considered to be private. Anonymity, therefore, goes out of the window in an attempt to attain model explainability. This is a concern since the privacy of users, which is supposed to be upheld, may be jeopardized.
 
 #### Malicious actors
 If a system offers a very transparent explanation about its working and decision making, everyone is happy. But, if a system offers seemingly transparent yet inaccurate explanations of its inner workings, it would be hard for most users to tell. This could motivate malicious actors to deceive users into believing they offer explainability while not being the case. This could lead to users being easily exploited yet never suspecting it.
@@ -147,7 +158,7 @@ Artificial intelligence has taken over our normal lives in many discussed ways. 
 To be worthy of our trust, we need to understand how they work and how they arrive at various decisions. A few exceptions have to be made concerning systems whose transparency may jeopardize the privacy and confidentiality of critical information that affects the lives of people. Regardless of the challenges involved, explainable AI is a step in the right direction for the future of AI.
 
 ### References
-1. [Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI](https://doi.org/10.1016/j.inffus.2019.12.012)
+1. [Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities, and challenges toward responsible AI](https://doi.org/10.1016/j.inffus.2019.12.012)
 
 2. [The Case for Explainable AI (XAI)](https://www.infoq.com/articles/explainable-ai-xai/)
 
