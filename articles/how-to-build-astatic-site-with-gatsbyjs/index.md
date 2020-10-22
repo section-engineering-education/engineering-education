@@ -18,7 +18,7 @@ When I first heard about GatsbyJs, I was confused about what it was, and how I w
 <!--more-->
 A paradigm shift has begun in the web development world, where static sites are now becoming more of a trend over dynamic sites. Building a dynamic site that required you to set it up and/or maintaining it, is now obsolete.
 
-This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gaysby](https://www.gatsbyjs.com/cloud/) etc. Having worked on making software development easier, faster, and more scalable for developers.
+This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) etc. Having worked on making software development easier, faster, and more scalable for developers.
 
 When compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes into play; it is a powerful and easy static site generator.
 
