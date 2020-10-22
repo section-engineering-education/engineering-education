@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/how-to-build-astatic-site-with-gatsbyjs/hero.png
     alt: hero example image computer Node.js
 ---
-When I first heard about GatsbyJs, I was confused about what it was, and how I would get started. As time went on, I learned more about it and found out it is awesome. My goal for this article is not to confuse you about GatsbyJs, but to help you get started with building your very first static site using GatsbyJs.
+When I first heard about GatsbyJs, I was confused about what it was, and how I would get started. As time went on, I learned more about GatsbyJs and found out it is awesome. My goal for this article is not to confuse you about GatsbyJs, but to help you get started with building your very first static site using GatsbyJs.
 <!--more-->
-A paradigm shift has begun in the web development world, where static sites are now becoming more of a trend over dynamic sites. Building a dynamic site that required you to set it up and/or maintaining it, is now obsolete.
+A paradigm shift has begun in the web development world, where static sites and [JAMStack](https://jamstack.org/what-is-jamstack/) are now becoming more of a trend over dynamic sites. Building a dynamic site that required you to set it up and/or maintaining it, is not easy. 
 
-This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) etc. Having worked on making software development easier, faster, and more scalable for developers.
+This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) etc. Which provides better performance, secured data, increased scalability, incredible speed and cost saving.
 
 When compared to static sites, dynamic sites are slow to load and can cause high bounce rate on a page by users, now that’s where GatsbyJs comes into play; it is a powerful and easy static site generator.
 
