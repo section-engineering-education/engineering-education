@@ -67,7 +67,7 @@ A lambda expression is an expression used to create a method in-line. They have 
 
 public static boolean isEven(int num){
 
-return num % 2 == 0;
+    return num % 2 == 0;
 
 }
 
