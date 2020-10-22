@@ -45,7 +45,7 @@ Flutter hot reloads are super fast. Developers can make changes and view them on
 Android, iOS, web, Windows, MacOS, Linux, smartwatches, IoT. That’s all the platforms that exist for users. (Painting on canvas, basically the Bob Ross of frameworks!)
 
 ##### Smooth UI, rendered at 60fps
-Because Flutter is painting stuff, there's visual processing involved. This gets the GPU takes a generous load off the processors. So achieving 60 fps rendering is not a telling task for the framework.
+Flutter works more like a gaming engine, than an app framework you may be used to, as already explained. The UI is built and rendered on a Skia Canvas as it changes. Flutter updates the UI at 60fps, and uses the GPU for most of the work. While this doesn’t affect how we build an app, it is the reason the Flutter UI is buttery smooth. Dart based application code will continue to run via the CPU, and in the specialized UI Thread, when touching UI related components.
 
 ##### A UI first framework
 Flutter has a wide gamut of widgets built right in.  Want to change height, width, color, alignment etc.? Just wrap in an AnimatedContainer and you’re done. Imagine doing all that in any other framework. Flutter widgets are platform agnostic. Hence it's possible to show iOS style translucent dialog boxes within Android in Flutter using the Cupertino package.
@@ -67,13 +67,8 @@ Nothing comes close to pure native apps in terms of performance. React Native an
 ##### Components out of the box
 Many of the common components that you’d need as a developer are not supplied in React Native. You’ll have to hunt down 3rd party libraries to achieve the desired task. Flutter on the other hand, supports a whole ranger of widgets (components). Material design and Cupertino design (Apple’s design philosophy) are supported. There are over 375 official widgets out of the box, and many more being added all the time.
 
-##### Software architecture and state management
-React native has a mature ecosystem around this. The developers have the freedom to choose which navigation package and global state management package they want without them worrying about how widely adopted it is.
-
-Flutter has only a handful of such packages, with each package not having widespread knowledge. For example, I use a package called stacked for state management, but it was hardly known in the community until now. This problem will surely go away in the future, with the rising adoption of Flutter as a framework.
-
 ##### App sizes
-One of the bigger tradeoffs with the cross-platform is the app size, it is bound to be larger than native apps. But in this respect, it is also usually seen that React apps are relatively smaller than Flutter apps.
+One of the bigger tradeoffs with the cross-platform is the final build size of the app. It will always be more than an app built with vanilla Java/Kotlin/Swift. React Native and Flutter apps are no different. But on a comparative basis, React Native apps on average are smaller than Flutter apps. This is not a rule of thumb though.
 
 ##### Documentation
 React has decent documentation. The only problem is that it is more focused towards the web developers and not app developers. Flutter’s 280-page documentation, is one of the best documentation you will ever find. Flutter also has a very active YouTube Channel, showcasing tips and tricks.
@@ -90,7 +85,7 @@ Just a week ago Flutter announced an alpha release of Flutter for Windows. This 
 The list of possibilities just keeps on increasing. Still, it is quite clear that Flutter is playing catch up React, but it’s getting there fast.
 React has maturity as an ecosystem. It also has the bases covered in terms of platforms supported.
 
-What they are doing is working on an ambitious project called Fabric. It is rewiring the JS framework from the ground up, aiming to make native API calls easier, support async rendering, and new threading models.
+What they are doing is working on an ambitious project called [Fabric](https://www.qed42.com/blog/react-native-fabric-why-am-i-so-excited). It is rewiring the JS framework from the ground up, aiming to make native API calls easier, support async rendering, and new threading models.
 
 #### Conclusion
 I am more excited about Flutter than React Native (mainly because I’m not a web developer). But it would be unwise to declare either React or Flutter as a winner. Each one has its pros and cons.
