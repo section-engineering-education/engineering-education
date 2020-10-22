@@ -28,9 +28,9 @@ They are *class* with the `@Component` decorator that associates it with the res
 ### Modules
 Angular apps are modular, meaning the application's code can be split up into many modules and has its own modularity called *NgModules*. NgModules are containers that contain a block of code dedicated to an application domain or a workflow.
 
- - NgModules can contain *Components* and other code files whose scope is defined by the containing NgModule.
- - Every Angular app has at least one NgModule class, the *root* module named `AppModule`, that resides in the file `app.module.ts` in the `src` folder.
- - Angular apps can have one or more modules depending on the application's versatility.
+- NgModules can contain *Components* and other code files whose scope is defined by the containing NgModule.
+- Every Angular app has at least one NgModule class, the *root* module named `AppModule`, that resides in the file `app.module.ts` in the `src` folder.
+- Angular apps can have one or more modules depending on the application's versatility.
 
 For more in-depth info on *Modules and Components*. Refer to this [link](https://angular.io/guide/architecture).
 
