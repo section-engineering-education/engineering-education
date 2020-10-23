@@ -36,7 +36,7 @@ Let's take a closer look at the K-means algorithm, and try to understand what th
 
 1. Initialize `k.` `k` defines the number of clusters being formed.
 2. Choose `k` data points `(x,y)` randomly represent the centroids of `k` clusters.
-3. Calculate the distances between these `k` points and all the remaining points. Upon completion of this step, we obtain a list of pair-wise distances between all the points.
+3. Calculate the distances between these `k` points and all the remaining points. Upon completion of this step, we obtain a list of pair-wise distances between all the points. It is worth noting that various other [distance measures](https://machinelearningmastery.com/distance-measures-for-machine-learning/) can also be used. This ensures the algorithm can be used in a wide variety of cases.
 4. Using the obtained list, we compute the clusters. The k-clusters are formed with data points having the least distance from the randomly chosen centroids. Data points can belong to either of the k-clusters. The closer the data point to a given cluster, the higher the probability it belongs to that cluster.
 5. Using the newly formed clusters, the centroid is recalculated as the x and y coordinates' average.
 
