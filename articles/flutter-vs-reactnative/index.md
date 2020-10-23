@@ -12,43 +12,63 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/flutter-vs-reactnative/hero.jpg
-    alt: 
+    alt:
 ---
-Today, companies are not just making products, but ecosystems. A gamut of services which can prove to be a steady revenue stream. So it is only natural for them to try to get apps to run across devices in the ecosystem. How about being able to do that with a single codebase? Wishful thinking? That may have been true 20 years ago, but not today.
+Companies today are not just making products, but ecosystems. A gamut of services which can prove to be a steady revenue stream. It is only natural for them to try to get apps to run across devices within those ecosystems. How about being able to do that with a single codebase? Wishful thinking? That may have been true 20 years ago, but not today.
 <!--more-->
 #### Take 1: One bytecode to rule ‘em all
 The dream of a cross-platform was first braved by Java. It devised the paradigm of [Write Once Run Anywhere (WORA)](https://en.wikipedia.org/wiki/Write_once,_run_anywhere). It was successful to a major extent, according to the Java installer at least.
 
-![](installer.jpeg)
+![](/engineering-education/flutter-vs-reactnative/installer.jpeg)
 
 Things went south when companies started making their own Java implementations for exclusivity. Oracle turned licenses and usage rights upside down. Hundreds of products like J2ME, J2EE, Open JDK, Jakarta etc. popped up. Java became too fragmented to be universal.
 
 #### Take 2: A glorified webpage
-Mobile devices became more powerful, more compact, and more connected. They were getting more attention than our humble PC or laptops did. So companies were looking towards to developing for mobile while supporting the PC. Due to mobile being the future, but the PC market still having one of the largest user base. The thought process was to present a webpage wrapped in an app. Frameworks like ionic, PhoneGap, and Cordova tried to do it but the performance was not on par.
+Mobile devices became more powerful, more compact, and more connected. They were getting more attention than our humble PC or laptops did. So companies were looking to develop for mobile while supporting PC software applications. Due to mobile being the future, but the PC market still having one of the largest user base. The thought process was to present a webpage wrapped in an app. Frameworks like ionic, PhoneGap, and Cordova tried to do it but the performance was not on par.
 
 #### Take 2.5 - Enter React Native
-React is a front end framework for the web. What React Native did was extend the functionality of React to native Android and iOS platforms. The developer got to code the UI as React components. The developer could use the same code used in their React web app for some UI elements. Later React Native would replace those web elements with the corresponding native elements. For example, ` <span> ` primitive is replaced with TextView in the native build and UI View in iOS build. This was better than the earlier approach because:
+React is a front end framework for the web. What React Native did was extend the functionality of React to native Android and iOS platforms. The developer got to code the UI as React components.
+
+The developer could use the same code used in their React web app for some UI elements. Later React Native would replace those web elements with the corresponding native elements. For example, `<span>` primitive is replaced with TextView in the native build and UI View in iOS build.
+
+This was better than the earlier approach because:
 1. Web developers could dive into mobile app development without a steep learning curve.
 2. Code can be reused to a large extent.
 3. It offered better performance than a web app wrapper as it ran closer to metal.
 
 #### Take 3: A Blank canvas
-Let's take a look at mobile game development frameworks like Unity. They don't have anything like the Native UI component. All they provide is a blank 2D canvas or an empty 3D space. You are free to show anything you want in that space, irrespective of the mobile platform you are on.
+Let's take a look at mobile game development frameworks like [Unity](https://unity.com/). They don't have anything like the Native UI component. All they provide is a blank 2D canvas or an empty 3D space. You are free to show anything you want in that space, irrespective of the mobile platform you are on.
 
-Flutter works in the same way, unlike other app development frameworks. The platform is just concerned with rendering a canvas (Skia canvas). Once the canvas is created, Flutter paints on that canvas 60 times a second. That way it does not have to deal with platform-specific components. What prevents Flutter from supporting another platforms is its inability to run the Skia canvas on that platform. If you get that running, and you have another platform Flutter now supports, yay!
+Flutter works the same way, unlike other app development frameworks. The platform is just concerned with rendering a canvas (Skia canvas). Once the canvas is created, Flutter paints on that canvas 60 times a second.
+
+That way it does not have to deal with platform-specific components. What prevents Flutter from supporting another platforms is its inability to run the [Skia canvas](https://skia.org/user/api/skcanvas_overview) on that platform.
 
 #### What Flutter gets right
-##### Hot Reload-The MVP of Flutter
+##### Hot Reload - The MVP of Flutter
 Flutter hot reloads are super fast. Developers can make changes and view them on the fly within milliseconds. Want to try out which color suits the app? You can keep changing the color and it’ll show up in the app near instantly! This is great for rapid prototyping and creating an MVP.
 
 ##### 1 codebase - multiple platforms
-Android, iOS, web, Windows, MacOS, Linux, smartwatches, IoT. That’s all the platforms that exist for users. (Painting on canvas, basically the Bob Ross of frameworks!)
+Painting on canvas, makes the user feel like the Bob Ross of while working with frameworks! Due to the all the platforms that exist for users.
+
+A user can work with:
+- Android
+- iOS,
+- Web
+- Windows
+- MacOS
+- Linux
+- Smartwatches
+- IoT.
 
 ##### Smooth UI, rendered at 60fps
-Flutter works more like a gaming engine, than an app framework you may be used to, as already explained. The UI is built and rendered on a Skia Canvas as it changes. Flutter updates the UI at 60fps, and uses the GPU for most of the work. While this doesn’t affect how we build an app, it is the reason the Flutter UI is buttery smooth. Dart based application code will continue to run via the CPU, and in the specialized UI Thread, when touching UI related components.
+Flutter works more like a gaming engine, than an app framework you may be used to. As already explained, the UI is built and rendered on a Skia Canvas as it changes. Flutter updates the UI at 60fps, and uses the GPU for most of the work.
+
+While this doesn’t affect how we build an app, it is the reason the Flutter UI is buttery smooth. Dart based application code will continue to run via the CPU, and in the specialized UI Thread, when touching UI related components.
 
 ##### A UI first framework
-Flutter has a wide gamut of widgets built right in.  Want to change height, width, color, alignment etc.? Just wrap in an AnimatedContainer and you’re done. Imagine doing all that in any other framework. Flutter widgets are platform agnostic. Hence it's possible to show iOS style translucent dialog boxes within Android in Flutter using the Cupertino package.
+Flutter has a wide range of widgets built right in.  Want to change height, width, color, alignment etc.? Just wrap in an AnimatedContainer and you’re done.
+
+Imagine doing all that in any other framework. Flutter widgets are platform agnostic. Hence it's possible to show iOS style translucent dialog boxes within Android in Flutter using the Cupertino package.
 
 #### What React gets right
 ##### Oh yes, JS!
