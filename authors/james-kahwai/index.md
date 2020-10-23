@@ -1,5 +1,5 @@
 ---
-title: James Kahwai
+title: James Kimani
 type: engineering-education/author
 ---
-James Kahwai is a Junior Full Stack Web Developer with a passion for successful web projects. His interests are UX, web design, SEO, cryptocurrency & Infosec. On the side, while not working on a web project he is a swimming coach.
+James Kimani is a cool programmer who is passionate and does technical writing as a hobby! I love dogs and look forward to creating awesome software/apps in the future!When free, James enjoys listening to cool music and having a beach walk. 
