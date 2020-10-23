@@ -6,7 +6,7 @@ url: /engineering-education/kotlin-collections/
 title: Kotlin Collections
 description: This article goes through some of the most common collections in Kotlin and addresses the common methods among those collections.
 author: linus-muema
-date: 2020-10-22T00:00:00-10:00
+date: 2020-10-23T00:00:00-14:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
