@@ -266,6 +266,6 @@ In summary, we defined what GatsbyJs is and went over its advantages, we set up 
 
 -[Gatsby Doc](https://www.gatsbyjs.com/docs/quick-start/)
 
--[Gaysby Cloud](https://www.gatsbyjs.com/cloud/)
+-[Gatsby Cloud](https://www.gatsbyjs.com/cloud/)
 
 -[Gatsby - Full Tutorial for Beginners](https://www.youtube.com/watch?v=mHFAM0CXviE&t=2838s)
