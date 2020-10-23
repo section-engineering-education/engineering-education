@@ -9,10 +9,11 @@ Now you are asking yourself, why do you want to do that! okay let's give you som
 - [plagiarismdetector](https://plagiarismdetector.net/) is a tool you can use to check for plagiarism in your article, also it is using **web scraping** to compare your words with thousands of websites.
 - Another example that a lot of companies are using **web scraping** to create strategic marketing decisions after scraping social network profiles in order to determine the posts with the most interactions.
 
-Now after having a brief about **web scraping** let's talk about the most important thing which is "**legal issues**".
 ### Prerequisites
 1. Good understanding of **Python** programming language.
 2. Basic understanding of **HTML**.
+
+Now after having a brief about **web scraping** let's talk about the most important thing which is "**legal issues**".
 
 ### How to know if the website is allowing web scraping?
 - You have to add "/robots.txt" to the URL, such as www.facebook.com/robots.txt, so you can see the scraping rules and what is forbidden to scrap.
@@ -98,7 +99,7 @@ After doing the above process to the first title on the page, you can see the fo
 
 Now let's pull out every title on that page. You can see that there is a div that contains a table called siteTable, then the title is within it. 
 
-First, we have to search for that table, Then get every "a" element in it which has a class "title".
+First, we have to search for that table, then get every "a" element in it which has a class "title".
 
 ```python
 table = soup.find("div",attrs={'id':'siteTable'})
