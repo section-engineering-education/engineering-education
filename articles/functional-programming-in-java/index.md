@@ -286,5 +286,6 @@ To summarize this article, we went over the basic idea behind functional program
 [GeeksforGeeks](https://www.geeksforgeeks.org/functional-programming-in-java-with-examples/)
 
 [What is Java](https://www.java.com/en/about/whatis_java.jsp)
+
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
