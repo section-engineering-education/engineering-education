@@ -8,6 +8,7 @@ console.log("hello world")
 console.log("hello world")
 ```
 The code above will correctly repeat the assigned task six times. However, as the number of the task grows, say 100 hello worlds, the code will get messy affecting code readability. It is hard to write the same line of code repeatedly 100 times. Looping through these tasks will affect execution performance drastically. This is where JavaScript loops come in rescue. JavaScript can control the above loop more cleanly with a few lines of codes.
+
 ***For example:***
 ```js
 for (let loop = 0; loop < 6; loop++) {
@@ -264,6 +265,7 @@ for (let i = 1; i <= 10; i++){
 }
 ```
 The above code has nothing special, as the results will the same as without using a label. In loops, labels come into play with nested loops to specify the loop to alter. The label will determine exactly which loop to break or continue.
+
 ***For example:***
 ```js
 loopOne: for (var i = 0; i <=5; i++) {
