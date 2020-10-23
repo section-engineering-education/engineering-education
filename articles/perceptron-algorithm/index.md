@@ -135,6 +135,10 @@ We use the iris dataset available in `sklearn.datasets` module. We fit the model
 
 The training accuracy averages around 65%. The test accuracy is greater than the training accuracy. This indicates that the model can learn better, given changes are made in the hyper-parameters such as learning rates and the number of iterations. It will be a fun challenge to vary the values of the learning rate and the number of iterations and observe their effect on the accuracies.
 
+I have attached a screenshot of the terminal capturing the training and test accuracies.
+
+![output](output.jpg)
+* Code Output *
 ### Disadvantages
 
 The perceptron model showed that it could model datasets with linear decision boundaries. Even though it introduced the concept of weights, it had its own set of disadvantages:
