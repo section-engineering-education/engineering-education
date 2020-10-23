@@ -1,4 +1,7 @@
-
+---
+layout: engineering-education
+status: publish
+published: true
 url: /engineering-education/css-in-js-solutions/
 title: CSS-in-JS solutions
 description: This article will cover various techniques a developer can use in defining styles within app components during development than maintaining multiple stylesheets for a single app component.
@@ -10,11 +13,10 @@ images:
 
     - url: /engineering-education/css-in-js-solutions/hero.jpg
       alt: code view on a laptop
-
 ---
-# CSS-IN-JS Solutions
-
 The modern web is now written in components and not pages. CSS was designed to declare styles in different files(.CSS) for each page of your web application, and this structure makes it challenging to maintain multiple stylesheets for multiple pages.
+<!--more-->
+### CSS-IN-JS Solutions
 Maintaining multiple stylesheets for a single app component keeps your project verbose and unkempt, which makes modification a bit unpleasant, notably when you have over two thousand lines of code serving as style definitions for each of your app components.
 
 However, simplicity comes into play with CSS-in-JS solutions in application development. With CSS-in-JS, you can now keep your project workflow simple by defining styles within the same component of your app rather than maintaining external stylesheets for each component.
