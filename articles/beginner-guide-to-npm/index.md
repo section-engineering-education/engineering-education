@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/beginner-guide-to-npm/
-title:
+title: An Absolute Beginner Guide to Node Package Manager
 description: In this guide, we will cover the basics of NPM, see what we can achieve with it, and understand the whole concept of NPM.
 author: joseph-chege
-date: 2020-10-13T00:00:00-10:00
+date: 2020-10-23T00:00:00-16:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/beginner-guide-to-npm/hero.jpg
-    alt: Node.js npm Node.js package manager example image
+    alt: Node.js npm node package manager example image
 ---
 The whole ecosystem of Node.js is based on tools such as NPM. NPM is a Node.js package manager. It provides a bunch of open source packages. This extensive ecosystem of open source libraries makes Node.js a popular technology.
 <!--more-->
@@ -26,9 +26,9 @@ NPM is entirely written on JavaScript. It is the cornerstone for modern web app 
 ### Node.js Installation and Setup
 NPM is bundled with Node.js. If you install Node.js appropriately, you automatically get NPM installed.
 
--  For Windows:
+- For Windows:
 
-Download [Window Node.js installer](https://nodejs.org/en/download/).
+Download [Windows Node.js installer](https://nodejs.org/en/download/).
 
 - For Mac OS:
 
@@ -160,8 +160,8 @@ npm init --yes ## triggers the initialization of a project default NPM value
 You can change the file aspect later or rerun `npm init` to overwrite the `package.json` file with newer values.
 
 #### Breaking Down the Package.json Metadata Properties
-- Name - the name of your project. Has a maximum of 214 character all lowercase with leading period(.) or underscore(-).
-- Version - the initial/current version on your project.
+- Name - the name of your project. Has a maximum of 214 characters all lowercase with a leading period(.) or underscore(-).
+- Version - the initial/current version of your project.
 - Description - a short description of what your project does. It gives a hint on what your project is about.
 - Main - the project main/entry file.
 - Scripts - trigger testing, building, and trimming.
@@ -209,7 +209,7 @@ Try another package:
 npm install express
 ```
 
-Every NPM package will be installed in the `node_module` folder.  Running `npm install <module>` installs the latest package version available in the NPM registry. Open the `package.json` file. Apart from the project aspect, we initialize with `init`, the following lines were added.
+Every NPM package will be installed in the `node_module` folder. Running `npm install <module>` installs the latest package version available in the NPM registry. Open the `package.json` file. Apart from the project aspect, we initialize with `init`, the following lines were added.
 
 ```bash
   "dependencies": {
@@ -218,7 +218,7 @@ Every NPM package will be installed in the `node_module` folder.  Running `npm i
   }
   ```
 
-The packages we installed are saved as an entry in the dependencies field. The dependencies field save any package required by your app to run. It is possible to save a package as devDependencies. A flag `--save-dev` is added to the `npm install  <module>`.
+The packages we installed are saved as an entry in the dependencies field. The dependencies field save any package required by your app to run. It is possible to save a package as devDependencies. In this case, a flag `--save-dev` is added to the `npm install  <module>`.
 
 This will save the package as devDependencies. DevDependencies are the packages that are not required by the app to run. These packages are used for development purposes such as testing, local server speeding for development purposes, transpiring code, etc.
 
@@ -253,13 +253,18 @@ A devDependencies scaffold will be added to the package.json file.
 ```
 
 #### Package.json Dependencies Management
-The main aim of using `package.json` is to define your application's dependencies. For instance, if you have cloned someone else project to your local computer, this project will not execute as intended. You have not installed the necessary packages to run this app. This project has a `package.json` file with a dependencies scaffold that indicates the packages the project needs.
+The main aim of using `package.json` is to define your application's dependencies. For instance, if you have cloned someone else project to your local computer, this project will not execute as intended.
 
-Thus, you need to go ahead and install these packages. Assuming the project has several packages, it might be tiresome to do that. NPM solves this hassle. Run `npm i` (alias `i` replace install) inside the cloned project's root directory. `npm i` fetch plus install individual needed packages specified in the project `package.json` dependencies.
+You have not installed the necessary packages to run this app. This project has a `package.json` file with a dependencies scaffold that indicates the packages the project needs.
+
+Thus, you need to go ahead and install these packages. Assuming the project has several packages, it might be tiresome to do that.
+
+NPM solves this hassle. Run `npm i` (alias `i` replace install) inside the cloned project's root directory. `npm i` fetch plus install individual needed packages specified in the project `package.json` dependencies.
 
 For example:
 
 To better understand this, install several packages in the project we created at the beginning of this guide.
+
 Go ahead and install the following packages.
 
 ```bash
@@ -274,7 +279,9 @@ The command below installs multiple packages.
 npm i mongoose  moment underscore ## install multiple packages at a go
 ```
 
-Now, assume you have cloned this project from another computer, and you want to install the packages of this project. Go ahead and delete the `node_module` folder of your project. This will remove the packages installed on your local system. If you run `npm list --depth=0` to list down the packages installed for this project, you will get something close to this:
+Now, assume you have cloned this project from another computer, and you want to install the packages of this project. Go ahead and delete the `node_module` folder of your project. This will remove the packages installed on your local system.
+
+If you run `npm list --depth=0` to list down the packages installed for this project, you will get something close to this:
 
 ```bash
 $ npm list --depth=0
@@ -343,7 +350,7 @@ found 0 vulnerabilities
 **NOTE:** `npm update` will update to the wanted version. It will update all outdated versions in the entire dependencies tree.
 
 #### Uninstalling a Local Package
-Let say you installed a package, and no longer need it, or it has compatibility issues. NPM is a package manager and will help uninstall a package with `npm uninstall <module>`. Assuming you want to uninstall the moment package from the project dependencies:
+Let say you installed a package, and no longer need it, or it has compatibility issues. NPM is a package manager and will help uninstall a package with `npm uninstall <module>`. Assuming you want to uninstall the Moment package from the project dependencies:
 
 Usage:
 
@@ -362,7 +369,7 @@ Moment will be removed from the dependencies trees.
 #### Installing Global Packages
 Packages installed globally are saved on your system and not on your project's local path. A global package can be accessed and used by any project. That means they aren't added to the `package.json` file. Global packages end up in your PATH environment variable. NPM saves global packages in `{prefix}/lib/node_modules` and drops executable files in {prefix}/bin.
 
-Where `{prefix}` is `/usr/local/` or `/usr/`. To install a package globally, add a flag `--global` to command `npm install`. The flag `--global` can be an alias to `--g`.
+Where `{prefix}` is `/usr/local/` or `/usr/`. To install a package globally, add a flag `--global` to the command `npm install`. The flag `--global` can be an changed to `--g`.
 
 Usage:
 
@@ -371,7 +378,7 @@ npm install --global <module>
 npm i --g <module>
 ```
 
-For example, let's install the jshint, uglify, and mocha packages globally.
+For example, let's install the [jshint](https://jshint.com/), [uglify](https://www.npmjs.com/package/uglify-js), and [mocha](https://mochajs.org/) packages globally.
 
 Usage:
 
@@ -447,7 +454,7 @@ Let's install a specific version of Moment.
 npm i moment@2.20.0
 ```
 
-Run `npm outdate` to check the versions of these package
+Run `npm outdate` to check the versions of these package.
 
 ```bash
 $ npm outdate
@@ -455,7 +462,7 @@ Package  Current  Wanted  Latest  Location
 moment    2.20.0  2.29.1  2.29.1  myapp
 ```
 
-This is how Moment is saved on `package-lock.json`
+This is how Moment is saved on `package-lock.json`.
 
 ```bash
   "moment": {
@@ -465,11 +472,13 @@ This is how Moment is saved on `package-lock.json`
     },
 ```
 
-I want you to go ahead and erase the `node_module` directory and execute `npm install.` Moment version in the dependencies is 2.20.0. Yet we saw a newer version (2.29.1) of this package. `npm install` always installs the latest updated version in the NPM registry. But this time it didn't. The version was already specified in the `package-lock.json` file. This eliminates the inconsistency of package versions across the project under different computers.
+I want you to go ahead and erase the `node_module` directory and execute `npm install.` Moment version in the dependencies is 2.20.0. Yet we saw a newer version (2.29.1) of this package. `npm install` always installs the latest updated version in the NPM registry.
+
+Yet this time it didn't. The version was already specified in the `package-lock.json` file. This eliminates the inconsistency of package versions across the project under different computers.
 
 When a package is installed, it is saved with a caret (`^`) before the version number in the dependencies scaffold. The caret tells NPM always install the highest version available for this package that matches the major version available in the project's dependencies.
 
-In our case, it will be anything below 3.0.0 (`Major`.`Minor`.`Minor`). This is called semantic versioning. But if the `package-lock.json` file is available in that project, NPM will match the version specified in the lock file.
+In our case, it will be anything below 3.0.0 (`Major`.`Minor`.`Minor`). This is called [semantic versioning](https://en.wikipedia.org/wiki/Software_versioning). But if the `package-lock.json` file is available in that project, NPM will match the version specified in the lock file.
 
 **Package-lock.json has the following advantages:**
 - Increased reproducibility across teams.
@@ -477,7 +486,9 @@ In our case, it will be anything below 3.0.0 (`Major`.`Minor`.`Minor`). This is 
 - It makes it easier to debug an issue in your app.
 
 ### Audit
-When installing the NPM packages, you may have noticed `found 0 vulnerabilities` on the CLI output. This is a new tool for NPM with built-in security features. It automatically reviews any install requests you make and returns a vulnerability alert. The command `npm audit` allows you to analyze your dependencies trees thoroughly and identify any unsafe library. It recommends a replacement or upgrades to a newer version.
+When installing the NPM packages, you may have noticed `found 0 vulnerabilities` on the CLI output. This is a new tool for NPM with built-in security features.
+
+It automatically reviews any install requests you make and returns a vulnerability alert. The command `npm audit` allows you to analyze your dependencies trees thoroughly and identify any unsafe library. It recommends a replacement or upgrades to a newer version.
 
 To understand how NPM audit works, you may want to install Moment version 2.0.0.
 
@@ -504,7 +515,7 @@ found 2 vulnerabilities (1 low, 1 moderate)
 run `npm audit fix` to fix them, or `npm audit` for details
 ```
 
-Run
+Run:
 
 ```bash
 npm audit ## check package vulnerabilities
@@ -548,7 +559,11 @@ fixed 2 of 2 vulnerabilities in 152 scanned packages
 ```
 
 ### Cache
-When you install a package, NPM saves a copy of that package on your local computer. A cache is a memory buffer that stores data so that future requests for that data can be served faster. When installing a package you have used before, NPM will not hit the network. The package is usually installed from your local NPM cache. With time, you may end up installing many packages. The NPM cache directory will be cluttered with old packages. It would be useful to clean the NPM cache regularly to avoid junk files on your computer.
+When you install a package, NPM saves a copy of that package on your local computer. A cache is a memory buffer that stores data so that future requests for that data can be served faster.
+
+When installing a package you have used before, NPM will not hit the network. The package is usually installed from your local NPM cache. With time, you may end up installing many packages.
+
+The NPM cache directory will be cluttered with old packages. It would be useful to clean the NPM cache regularly to avoid storing junk files on your computer.
 
 The following command will purge the cache in your project workflow.
 
@@ -557,9 +572,11 @@ npm cache clean --force
 ```
 
 ### Using NPM Packages
-Now that you have downloaded a package, how do you actually use that package in your project? The following example will guide you on how to apply [express](http://expressjs.com/en/starter/installing.html) (***a fast, unopinionated, minimalist web framework for Node.js with various HTTP utility methods and middleware at your disposal***) to your project.
+Now that you have downloaded a package, how do you actually use that package in your project? The following example will guide you on how to apply [Express](http://expressjs.com/en/starter/installing.html) (***a fast, unopinionated, minimalist web framework for Node.js with various HTTP utility methods and middleware at your disposal***) to your project.
 
-You have already downloaded express with `npm i express`. You're ready to explore express. On your project root folder, create a file. Name it `app.js`. The aim is to create a simple Node.js server app. For you to use any package, use `require()` to refer to the packages you are using in your project, and they will run just as if they were built-in.
+You have already downloaded express with `npm i express`. You're ready to explore express. On your project root folder, create a file. Name it `app.js`. The aim is to create a simple Node.js server app.
+
+For you to use any package, use `require()` to refer to the packages you are using in your project, and they will run just as if they were built-in.
 
 For example, to use express, copy the following code to your `app.js` file.
 
@@ -567,7 +584,7 @@ For example, to use express, copy the following code to your `app.js` file.
 var express = require('express');
 ```
 
-This way, your app will exploit express features as if they were built for your project.
+This way, your app will exploit Express features as if they were built for your project.
 
 Add the following lines.
 
@@ -579,7 +596,7 @@ var app = express();
 })
 ```
 
-And there you have it. You have created the world simplest express server that listens to port 3000.
+There you have it. You have created the world simplest Express server that listens to port 3000.
 
 Create an HTTP to get a request that will send a message to the server you have created.
 
@@ -593,10 +610,14 @@ app.get("/", (req, res) =>{
 
 On your command line, run `node app.js`. This will give you ***Application started and Listening on port 3000***. If you visit `http://localhost:3000/` on your browser, a message ***hello world!*** will greet you, sent by your server.
 
-This a basic example of applying the installed express to a Node.js project. If you are interested in learning more about express, we have a guide that will get you [started to express servers and routing](/engineering-education/express/).
+This a basic example of applying the installed express to a Node.js project. If you are interested in learning more about Express, we have a guide that will get you [started to express servers and routing](/engineering-education/express/).
 
 ### Conclusion
-This guide introduced you to NPM. I hope it gave you a good impression on how best to get started using this amazing tool. It bridges Node.js and NPM. It provides you with packages repositories—there are many various packages on NPM. Go ahead and choose that useful package to help you scale out your next project workflow. Suppose you are interested in learning more; below are some links. Do have a look at them to learn more about Node.js and NPM.
+This guide introduced you to NPM. I hope it gave you a good impression on how best to get started using this amazing tool. It bridges Node.js and NPM.
+
+It provides you with packages repositories—as there are many various packages on NPM. Go ahead and choose any useful package to help you scale out your next project workflow.
+
+Suppose you are interested in learning more; below are some links. Do have a look at them to learn more about Node.js and NPM.
 
 ### Related Topics and Additional Resources
 [The History of Node.js](/engineering-education/history-of-nodejs/)
@@ -608,3 +629,6 @@ This guide introduced you to NPM. I hope it gave you a good impression on how be
 [Open-source packages & Code Security using NPM](/engineering-education/npm-registry-opensource-code-security-with-npm6/)
 
 [10 Tips for Working with Node.js](/engineering-education/ten-tips-for-working-with-nodejs/)
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
