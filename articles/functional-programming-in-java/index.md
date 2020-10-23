@@ -1,10 +1,27 @@
-# Functional Programming in Java
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/functional-programming-in-java/
+title: Functional Programming in Java
+description:
+author: 
+date: 2020-08-04T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/functional-programming-in-java/hero.jpg
+    alt: Function Overloading (C++) computer image
+
+---
+Object Oriented Programming is a fundamental method of programming that helps to develop programs using a modular approach. This approach treats data as the main element. The data is attached or linked to a function that acts and operates on it. Other functions cannot indulge in modifying this data. The functions only act on those data elements that are linked to them. This whole collection of data elements and functions is considered to be an object.
+<!--more-->
 ### Introduction
 In this article, we will go over functional programming in Java. This article assumes that you have foundational knowledge up to Java 7. All the features addressed below were introduced from Java 8.
 
 ### What is Functional Programming
-It's essential to have a solid understanding of functional programming and its advantages. Functional Programming is a programming paradigm centered on the structure and use of functions. Simultaneously, it emphasizes ensuring the code is safe to use anywhere. It does this by creating **pure functions**, i.e., functions that don't cause any global side effects and have consistent outputs for the same input. Additionally, it uses immutable data structures to avoid changes that cause side effects. 
+It's essential to have a solid understanding of functional programming and its advantages. Functional Programming is a programming paradigm centered on the structure and use of functions. Simultaneously, it emphasizes ensuring the code is safe to use anywhere. It does this by creating **pure functions**, i.e., functions that don't cause any global side effects and have consistent outputs for the same input. Additionally, it uses immutable data structures to avoid changes that cause side effects.
 
 This programming paradigm also has the concept of using functions as objects. Consequently, this allows us to have functions that use other functions or **higher-order functions**. In some cases, the use of these functions helps us to condense our code, as seen later. This article will focus on this aspect as it is the least intuitive concept.
 
