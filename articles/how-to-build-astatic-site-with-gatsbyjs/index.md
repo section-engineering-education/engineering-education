@@ -74,9 +74,9 @@ gatsby –version
 ### Creating a new GatsbyJs site
 Now let's create a static site using GatsbyJs.
 
-Open up your terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), It comes in built-in with a terminal. You will be using the GatsbyJs site template from GitHub to create your site from scratch.
+Open up the terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), It comes in built-in with a terminal. You will be using the GatsbyJs site template from GitHub to create your site from scratch.
 
-Create a **my-first-gatsby-site** folder, and then in your terminal type in
+Create a **my-first-gatsby-site** folder, and then in your terminal, type in
 `Users/first-gatsby-site: gatsby new first-gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world`.
 
 To see the new site, you have created, check it out using these commands.
