@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/k-means-from-scratch-r/
-title: Step by Step Guide to implement K-Means Algorithm in R
+title: Step by Step Guide to Implement K-Means Algorithm in R
 description: This article will go over how to code the K-means algorithms from scratch and will visualize the results.
 author: lalithnarayan-c
-date: 2020-10-21T00:00:00-11:00
+date: 2020-10-23T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,10 @@ images:
   - url: /engineering-education/k-means-from-scratch-r/hero.jpg
     alt: K-Means Algorithm in R example image
 ---
- In this article, we will be coding the K-means algorithm from scratch and will visualize the results. Going through this article should result in a more intuitive understanding of the K-means algorithm.
+In this article, we will be coding the K-means algorithm from scratch and will visualize the results. Going through this article should result in a more intuitive understanding of the K-means algorithm.
 <!--more-->
 K-Means is an [unsupervised machine learning algorithm](https://www.guru99.com/unsupervised-machine-learning.html). Unsupervised learning algorithms learn from unlabeled data. [Supervised learning algorithms](engineering-education/supervised-learning-algorithms/), on the other hand, need data to be labeled to learn from it.
+
 It belongs to the subclass of [clustering algorithms](/engineering-education/clustering-algorithms/) under unsupervised learning.
 
 ### Theory
@@ -102,7 +103,6 @@ points(centroid[,1], centroid[,2],col="red")
 
 ![plot 3](/engineering-education/k-means-from-scratch-r/plot3.jpg)
 
-
 #### Step 3: Calculating the Distance from each Point
 To calculate the distance between the centroid and the remaining points, we will use Euclidean distance. The Euclidean distance is defined as follows:
 
@@ -113,8 +113,8 @@ Where $(x,y)$ represent the centroid's coordinates, and $(x_i,y_i)$ represent th
 We will code the equation above in the following sub-section. There are three steps in computing the Euclidean distance.
 
 -  Compute the difference between the corresponding X and Y coordinates of the data-points and the centroid.
--  Compute the sum of the square of the differences computed in step 1.
--  Find the square root of the sum of squares of differences computed in step 2.
+-  Compute the sum of the square of the differences computed in Step 1.
+-  Find the square root of the sum of squares of differences computed in Step 2.
 
 1. Difference: $datapoint_i – centroid$
     ```r
@@ -228,7 +228,7 @@ We calculate the mean using the R function `mean.` This is an example of how we 
 1.83333
 ```
 
-We compute the X and Y coordinates of the centroid using the code above. We store the X co-ordinate in c1 and y-coordinates in c2. We copy the data in these lists to a new array called `new_centroid.`
+We compute the X and Y coordinates of the centroid using the code above. We store the X coordinate in c1 and y-coordinates in c2. We copy the data in these lists to a new array called `new_centroid.`
 
 ```r
 new_centroid = centroid
@@ -265,17 +265,18 @@ K-means is useful in implementing [dimensionality reduction](https://www.imperva
 Every algorithm has its own set of advantages and disadvantages. Understanding the pros and cons helps us understand when the algorithm is best suited for a problem and when it's not.
 
 #### Advantages
-1. Easy to implement.
-2. Computationally less intensive.
-3. Scales to large datasets.
+- Easy to implement.
+- Computationally less intensive.
+- Scales to large datasets.
 
 #### Disadvantage
-1. K-means chooses the initial centroid point randomly, and since the clustering accuracy depends on the initial choice of centroids, the accuracy can be low if the chosen centroids aren't proper.
-2. Considering only the distance between centroids of the cluster may not be efficient for categorical data.
-3. As the cluster size grows, it becomes a challenge to distinguish between two clusters based on a few attributes.
+- K-means chooses the initial centroid point randomly, and since the clustering accuracy depends on the initial choice of centroids, the accuracy can be low if the chosen centroids aren't proper.
+- Considering only the distance between centroids of the cluster may not be efficient for categorical data.
+- As the cluster size grows, it becomes a challenge to distinguish between two clusters based on a few attributes.
 
 ### Conclusion
-All algorithms can be broken down into smaller pieces and be implemented from scratch. Understanding the theory and reasoning behind the algorithms helps one make better decisions during building applications.
+All algorithms can be broken down into smaller pieces and be implemented from scratch. Understanding the theory and reasoning behind the algorithms helps one make better decisions while building applications.
+
 That was a fantastic journey implementing the K-means algorithm from scratch. Pat yourselves on the back. Do connect with me on [Linkedin](https://www.linkedin.com/in/lalithnarayan-c-27a89a1b/) to share what you think about the article. Your feedback is highly appreciated.
 
 ### Additional Resources
