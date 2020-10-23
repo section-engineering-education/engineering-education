@@ -20,8 +20,6 @@ A paradigm shift has begun in the web development world, where static sites and 
 
 This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) etc. Which provides better performance, secured data, increased scalability, incredible speed and cost saving.
 
-When compared to static sites which are cheaper, quick and easy to develop and loads faster. Dynamic sites are expensive, time consuming to develop and slow to load which can cause high bounce rate on a page by users, now that’s where GatsbyJS comes into play; it is a powerful and easy static site generator.
-
 ### What is GatsbyJS?
 
 >GatsbyJS can be defined as a static site generator that uses [React.js](https://reactjs.org/) (for the client-side) and [GraphQL](https://graphql.org/) (to access data) to build a reliable and faster website.
@@ -78,7 +76,7 @@ gatsby –version
 
 Now let's create a static site using GatsbyJS.
 
-Open up the terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), It comes in built-in with a terminal. You will be using the GatsbyJS site template from GitHub to create your site from scratch.
+Open up the terminal, in your code editor if you are using [VS Code](https://code.visualstudio.com/), It comes built-in with a terminal. You will be using the GatsbyJS site template from GitHub to create your site from scratch.
 
 Create a **my-first-gatsby-site** folder, and then in your terminal, type in
 `Users/first-gatsby-site: gatsby new first-gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world`.
