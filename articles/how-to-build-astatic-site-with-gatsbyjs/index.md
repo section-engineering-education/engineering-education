@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/how-to-build-astatic-site-with-gatsbyjs/hero.png
     alt: hero example image computer Node.js
 ---
-When I first heard about GatsbyJs, I was confused about what it was, and how I would get started. As time went on, I learned more about GatsbyJs and found out it is awesome. My goal for this article is not to confuse you about GatsbyJs, but to help you get started with building your very first static site using GatsbyJs.
+When I first heard about GatsbyJS, I was confused about what it was, and how I would get started. As time went on, I learned more about GatsbyJS and found out it is awesome. My goal for this article is not to confuse you about GatsbyJS, but to help you get started with building your very first static site using GatsbyJS.
 <!--more-->
 A paradigm shift has begun in the web development world, where static sites and [JAMStack](https://jamstack.org/what-is-jamstack/) are now becoming more of a trend over dynamic sites. Building a dynamic site that required you to set it up and/or maintaining it, is not easy. 
 
 This is not an issue when building static sites. Due to cloud service companies like [Amazon](https://aws.amazon.com/), [Google](https://cloud.google.com/), [Netlify](https://www.netlify.com/), [Heruko](https://www.heroku.com/), and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/) etc. Which provides better performance, secured data, increased scalability, incredible speed and cost saving.
 
-When compared to static sites which are cheaper, quick and easy to develop and loads faster. Dynamic sites are expensive, time consuming to develop and slow to load which can cause high bounce rate on a page by users, now that’s where GatsbyJs comes into play; it is a powerful and easy static site generator.
+When compared to static sites which are cheaper, quick and easy to develop and loads faster. Dynamic sites are expensive, time consuming to develop and slow to load which can cause high bounce rate on a page by users, now that’s where GatsbyJS comes into play; it is a powerful and easy static site generator.
 
-### What is GatsbyJs?
+### What is GatsbyJS?
 
->GatsbyJs can be defined as a static site generator that uses [React.js](https://reactjs.org/) (for the client-side) and [GraphQL](https://graphql.org/) (to access data) to build a reliable and faster website.
+>GatsbyJS can be defined as a static site generator that uses [React.js](https://reactjs.org/) (for the client-side) and [GraphQL](https://graphql.org/) (to access data) to build a reliable and faster website.
 
 **Advantages**
 - It's [faster](https://www.gatsbyjs.com/contributing/how-to-pitch-gatsby/) to create a static site with GatsbyJs.
@@ -34,12 +34,12 @@ When compared to static sites which are cheaper, quick and easy to develop and l
 
 ### Prerequisites
 
-To get started with GatsbyJs, you will need some background knowledge on the following:
+To get started with GatsbyJS, you will need some background knowledge on the following:
 - [React.js](https://reactjs.org/) (the basics, components, etc.)
 - [Nodejs](https://nodejs.org/en/) (the basics, [npm](https://www.npmjs.com/), etc)
 - [GraphQL](https://graphql.org/) (the basics and advanced)
 
-However there’s no problem if you don’t have any knowledge on these technologies, this article will help you get started with GatsbyJs, so stick around and check the links out later if you are interested in advancing your knowledge.
+However there’s no problem if you don’t have any knowledge on these technologies, this article will help you get started with GatsbyJS, so stick around and check the links out later if you are interested in advancing your knowledge.
 
 ### Installations
 
@@ -76,9 +76,9 @@ gatsby –version
 
 ### Creating a new GatsbyJS site
 
-Now let's create a static site using GatsbyJs.
+Now let's create a static site using GatsbyJS.
 
-Open up the terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), It comes in built-in with a terminal. You will be using the GatsbyJs site template from GitHub to create your site from scratch.
+Open up the terminal in your code editor, if you are using [VS Code](https://code.visualstudio.com/), It comes in built-in with a terminal. You will be using the GatsbyJS site template from GitHub to create your site from scratch.
 
 Create a **my-first-gatsby-site** folder, and then in your terminal, type in
 `Users/first-gatsby-site: gatsby new first-gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world`.
@@ -103,7 +103,7 @@ You can now open up your web browser and access `http://localhost:8000`:
 
 Open `http://localhost:8000` in your browser and you will see "hello world" displayed.
 
-Congratulations! You just built your first static site using GatsbyJs.
+Congratulations! You just built your first static site using GatsbyJS.
 
 
 Now let’s talk about your file directory, it looks overwhelming especially if you are still a beginner using [Node.js](https://nodejs.org/en/).
@@ -116,7 +116,8 @@ You will find an  ***index.js*** file in the pages folder because Gatsby uses *N
 -	**The package.json:** Contain the dependencies or packages you have installed using the node package manager *“npm install”*
 
 ### Adding content to the site
-As excited as I am that you have created your first GatsbyJs static site, let's move forward by adding more content to the site by making it look better.
+
+As excited as I am that you have created your first GatsbyJS static site, let's move forward by adding more content to the site by making it look better.
 Remember how I mentioned you will need some knowledge of React.js?
 
 Yes, good! The moment has come for us to use it now, but don’t worry we will just be working with the basics here that are pretty easy.
@@ -221,7 +222,7 @@ import { Link } from "gatsby"
 
 ### Using plugins in GatsbyJS
 
-What if you want to extend your site to have cool features that you don’t want to build from the scratch, GatsbyJs offers [plugins](https://www.gatsbyjs.com/plugins/) built by a community of developers who want to share cool and awesome features with everyone.
+What if you want to extend your site to have cool features that you don’t want to build from the scratch, GatsbyJS offers [plugins](https://www.gatsbyjs.com/plugins/) built by a community of developers who want to share cool and awesome features with everyone.
 
 We will be using a plugin for [Typogyaphy Js](https://kyleamathews.github.io/typography.js/) (a CSS framework) to style up the CSS by default.
 
@@ -269,7 +270,7 @@ You can deploy your Gatsby site online in a variety of ways, but there are 2 eas
 
 ### Summary
 
-In summary, we defined what GatsbyJs is and went over its advantages, we set up your computer for GatsbyJs site development by installing Nodejs, we created your first GatsbyJs static site, added content to it, linked the pages, learned about React components, made the site interactive with a counter, and lastly deployed it to the cloud.
+In summary, we defined what GatsbyJS is and went over its advantages, we set up your computer for GatsbyJs site development by installing Nodejs, we created your first GatsbyJS static site, added content to it, linked the pages, learned about React components, made the site interactive with a counter, and lastly deployed it to the cloud.
 
 
 ### Additional Readings
