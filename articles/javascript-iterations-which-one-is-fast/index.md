@@ -209,7 +209,7 @@ A break identifier terminates an iterating loop. I.e. the below examples closes 
 
 ***Example 1***
 ```js
-var animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit" ];
+const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit" ];
   for (let i = 0; i <animals.length; i++) {
   if (animals[i]==="wolf") break;
 console.log(`index:${i}, value: ${animals[i]}`)}
@@ -268,8 +268,8 @@ The above code has nothing special, as the results will the same as without usin
 
 ***For example:***
 ```js
-loopOne: for (var i = 0; i <=5; i++) {
-  loopTwo: for (var j = 0; j <=5; j++) {
+loopOne: for (let i = 0; i <=5; i++) {
+  loopTwo: for (let j = 0; j <=5; j++) {
   if (i === 3) continue loopOne;
   if (j === 3) break loopTwo;
   console.log(`i = ${i}, j = ${j}`);
@@ -504,7 +504,7 @@ for (let i = 0; i <array.length; i--) {}
 ```
 #### Cached Length
 ```js
-for ( var i = 1, l = array.length; i <= l; i++ ) {}
+for ( let i = 1, l = array.length; i <= l; i++ ) {}
 ```
 Or
 ```js
@@ -514,8 +514,8 @@ for(; i < max; i++) {}
 ```
 Or
 ```js
-var l = arr.length;
-for (var x = 0; x < l; x++) {}
+let l = arr.length;
+for (let x = 0; x < l; x++) {}
 ```
 #### Var vs Let
 ```js
@@ -525,18 +525,18 @@ for (var i = 0; i <array.length; i++) {}
 
 The ugly for loop
 ```js
-for (var i=n; i-- != 0; ) {}
+for (let i=n; i-- != 0; ) {}
 ```
 
 Function call Loop
 ```js
-for ( var i = 1; i <= array.length; i++ ) {}
+for ( let i = 1; i <= array.length; i++ ) {}
 ```
 
 #### Other Options
 ```js
-for (var i=n; i >=0; i--) {}
-for (var i=n; i--; ) {}
+for (let i=n; i >=0; i--) {}
+for (let i=n; i--; ) {}
 ```
 
 ##### Performance Summary
@@ -567,7 +567,7 @@ console.timeEnd("for");
 
 //cached lenth
 console.time("cached lenth ")
-var j = arraySize.length;
+let j = arraySize.length;
 for (let i = 0; i < j; i++) {}
 console.timeEnd("cached lenth ");
 
