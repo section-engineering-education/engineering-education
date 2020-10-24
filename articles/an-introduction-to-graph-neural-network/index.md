@@ -1,5 +1,5 @@
 Over the years, Deep Learning (DL) has been the key to solving many machine learning problems in fields such as image processing, natural language processing, and games.
-The data generated in the above-mentioned fields are represented in a Euclidean space. That is, spaces with a finite number of dimensions i.e. two or three-dimensional spaces.
+The data generated in the above-mentioned fields are represented in a Euclidean space. That is, spaces with a finite number of dimensions i.e. 2D or 3D spaces.
 However, in most current applications, generated data is generated from non-Euclidean domains that represent data as graphs with relationships and mutual dependency between objects. A good example is e-commerce. The interaction between users and products can be exploited to make accurate recommendations. 
 This has led to an increasingly growing interest in deep learning research that focuses on the structure of graph data.
 
@@ -22,11 +22,11 @@ This article assumes a basic understanding of Machine Learning (ML) and Deep Lea
 
 ### What is a Graph?
 
-In Computer Science, Graphs are data structures that model a set of objects and their relationships. These objects represent the nodes and the relationships represent edges. Besides, the **edges** represents the information of dependency between two **nodes**. Graphs tend to be irregular having variable sizes of unordered nodes.
+In Computer Science, Graphs are data structures that model a set of objects and their relationships. These objects represent the nodes and the relationships represent edges. 
 
 ![A Graph data structure](/engineering-education/an-introduction-to-graph-neural-network/edges-links.png)
 
-Assume we have a graph, G. This graph can be described by:
+Let's assume a graph, G. This graph can be described by:
 * V as the vertex set 
 * E as the edges
 
@@ -38,15 +38,15 @@ Let's take an example of a transportation system. This can be thought of as a gr
 
 ### What is Graph Neural Network (GNN)?
 
-Graph Neural Networks is a technique in deep learning which extends existing neural networks for processing data on the graph domain. They can extract high-level representations.
+Graph Neural Networks is a technique in deep learning which extends existing neural networks for processing data on graphs. 
 
 GNNs motivation stems from three areas of study:
 
 * Convolution Neural Networks (CNN)
-These are deep neural networks used to analyze image data.
+These are deep neural networks used to analyze image data. It is used to solve image processing tasks.
 
 * Recurrent Neural Networks (RNN)
-RNN is a type of neural network which allows the outputs from the previous step to be used as inputs of the current step. 
+RNN is a type of neural network that passes information internally from one time step to the next to process a sequence. It's commonly used to solve Natural Language Processing (NLP) and speech recognition tasks.  
 
 * Auto-Encoders (AE)
 This is a type of Artificial Neural Network (ANN). It consists of an encoder, code, and a decoder. It encodes the representations of a set of data. It then decodes the reduced encoded data generating new data similar to that of its original input. 
@@ -56,7 +56,7 @@ Based on these three motivations, GNNs can collectively combine information from
 Common applications of GNN are in node classification, link prediction, and graph classification. 
 
 In **node classification**, every node in the network is assigned a label. The network can classify new nodes introduced without the ground truth.
-In **link prediction**, the goal is to predict whether two nodes are likely to have a link.
+In **link prediction**, the goal is to predict the likelihood of two nodes in the network having a relationship.
 In **graph classification**, the idea is to classify graphs into different classes. This is related to image classification but the target changes into classifying graphs rather than images.
 
 ### Graph Learning Python Libraries
@@ -69,14 +69,14 @@ The top three libraries include:
 
 1. PyTorch Geometric
 
-It is a PyTorch extension library consisting of various methods for performing deep learning on graphs and irregular structures.
-It has the latest types of Graph Networks already built for you. 
+It is a PyTorch extension library. It consists of various methods for performing deep learning on graphs.
+It has the latest types of Graph Networks already built in for you. 
 
-Read more about it [here](/https://pytorch-geometric.readthedocs.io/en/latest//) 
+Read more about it [here](/https://pytorch-geometric.readthedocs.io/en/latest/) 
 
 2. Graph Nets
 
-It is a python library created by DeepMind Technologies. It helps build graph networks in TensorFlow and Sonnet.
+It is a python library created by DeepMind Technologies. It helps build graph networks in platforms such as TensorFlow and Sonnet.
 This library provides a lot of documentation and ready-made collab notebooks to showcase how to use their graph network library.
 
 However, it is important to note that their code isn't beginner-friendly when compared to the other two libraries. It is not advisable to start with this library.
@@ -101,12 +101,10 @@ The earliest studies of Graph Neural Networks fall under this model.
 
 These neural networks aim to learn node representations using Recurrent Neural Networks (RNNs). RecGNNs work by assuming that nodes in the graph exchange messages (message passing) constantly. This exchange continues until a stable equilibrium is achieved.  
 
-RecGNNs later inspired research on ConvGNNs. An example is the idea of message passing. This idea is inherited by the spatial-based ConvGNNs.
-
 #### Convolutional Graph Neural Networks (ConvGNNs)
 
 ConvGNNs work by generalizing operations of convolution from grid data to graph data. In comparison to RecGNN, ConvGNN employs many layers of graph convolutions. This helps to extract high-level node representations.
-The idea behind ConvGNNs is to generate a node (v) representation by aggregating its features (xv) and its neighbors' features (xu). 
+ConvGNNs generate a node (v) representation by aggregating its features (xv) and its neighbors' features (xu). 
 
 Node (v) = xv + xu 
 
@@ -119,8 +117,6 @@ GAEs are deep neural networks that learn to generate new graphs. They map nodes 
 They are used to learn the embedding in networks and the generative distribution of graphs. 
 
 #### Spatial-Temporal Graph Neural Networks (STGNNs)
-
-Their goal is to learn hidden patterns from the spatial-temporal graphs.
 
 The idea behind these networks is to simultaneously consider spatial and temporal dependencies. In the current research, graph convolutions are used to capture the spatial dependency while CNNs or RNNs are used for temporal dependence. 
 
@@ -174,7 +170,10 @@ GNNs have also been used together with Long Short Term Memory (LSTM) and CNN to 
 #### Chemistry
 
 In chemistry, GNN is applied to study the graph structure of molecules. In these molecules, atoms are considered as the nodes and the chemical bonds between these atoms considered the edges.
-In order to predict molecular properties, to learn the molecular fingerprints, and to synthesis chemical compounds, node classification, graph classification, and graph generation are the main tasks targeted.
+Their main tasks include:
+1. Node classification
+2. Graph classification
+3. Graph generation
 
 ### Conclusion
 
@@ -194,3 +193,4 @@ To learn more about Graph Neural Networks, please read this comprehensive survey
 8. [Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting](/https://arxiv.org/pdf/1707.01926.pdf/)
 9. [Structural-RNN: Deep Learning on Spatio-Temporal Graphs](/https://openaccess.thecvf.com/content_cvpr_2016/papers/Jain_Structural-RNN_Deep_Learning_CVPR_2016_paper.pdf/) 
 10. [Hero image](/https://unsplash.com/photos/BW0vK-FA3eg/)
+
