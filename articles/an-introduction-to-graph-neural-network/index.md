@@ -56,7 +56,7 @@ Based on these three motivations, GNNs can collectively combine information from
 Common applications of GNN are in node classification, link prediction, and graph classification. 
 
 In **node classification**, every node in the network is assigned a label. The network can classify new nodes introduced without the ground truth.
-In **link prediction**, the goal is to predict the likelihood of two nodes in the network having a relationship.
+In **link prediction**, the goal is to  predicts the likelihood of two nodes being inter-linked.
 In **graph classification**, the idea is to classify graphs into different classes. This is related to image classification but the target changes into classifying graphs rather than images.
 
 ### Graph Learning Python Libraries
@@ -69,8 +69,7 @@ The top three libraries include:
 
 1. PyTorch Geometric
 
-It is a PyTorch extension library. It consists of various methods for performing deep learning on graphs.
-It has the latest types of Graph Networks already built in for you. 
+It has the latest types of Graph Networks already built in for you. This graph networks are available as single line functions that are ready to be called in the PyTorch library. 
 
 Read more about it [here](/https://pytorch-geometric.readthedocs.io/en/latest/) 
 
@@ -104,9 +103,6 @@ These neural networks aim to learn node representations using Recurrent Neural N
 #### Convolutional Graph Neural Networks (ConvGNNs)
 
 ConvGNNs work by generalizing operations of convolution from grid data to graph data. In comparison to RecGNN, ConvGNN employs many layers of graph convolutions. This helps to extract high-level node representations.
-ConvGNNs generate a node (v) representation by aggregating its features (xv) and its neighbors' features (xu). 
-
-Node (v) = xv + xu 
 
 ConvGNNs set the base for building other GNN models.
 
@@ -120,7 +116,7 @@ They are used to learn the embedding in networks and the generative distribution
 
 The idea behind these networks is to simultaneously consider spatial and temporal dependencies. In the current research, graph convolutions are used to capture the spatial dependency while CNNs or RNNs are used for temporal dependence. 
 
-STGNNs are used widely in a variety of applications. 
+STGNNs are applied in: 
 
 1. [Human action recognition](/https://arxiv.org/pdf/1801.07455.pdf/) 
 2. [Traffic speed forecasting](/https://arxiv.org/pdf/1707.01926.pdf/) 
@@ -170,10 +166,6 @@ GNNs have also been used together with Long Short Term Memory (LSTM) and CNN to 
 #### Chemistry
 
 In chemistry, GNN is applied to study the graph structure of molecules. In these molecules, atoms are considered as the nodes and the chemical bonds between these atoms considered the edges.
-Their main tasks include:
-1. Node classification
-2. Graph classification
-3. Graph generation
 
 ### Conclusion
 
