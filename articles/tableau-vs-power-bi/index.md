@@ -1,4 +1,6 @@
-Business intelligence software is a top priority item in the toolkit of almost every business team. This is due to the significance of the tool in data collection, storage, and visualization. Analysis from BI tools is used to make strategic business decisions. But before running a project, you have to ensure that you use the right business intelligence product. This article intends to compare the two most commonly used data visualizations tools: Tableau and Power BI.
+Business intelligence software is a top priority item in the toolkit of almost every business team. This is due to the significance of the tool in data collection, storage, and visualization. Analysis from BI tools is used to make strategic business decisions. But before running a project, you have to ensure that you use the right business intelligence product. 
+
+This article intends to compare the two most commonly used data visualizations tools: Tableau and Power BI. The comparison will concentrate on four broad parameters. These are integration, data visualization and dashboard, analytics, as well as data sources and connectivity.
 
 ### An Overview of Tableau
 
@@ -36,7 +38,7 @@ Power BI&#39;s analytics interface closely resembles Excel. This assures recogni
 
 #### Data Sources and Data Connectivity
 
-A key strength of Tableau is its ability to support many data connectors. These include the could option, [online analytical processing (OLAP)](https://olap.com/olap-definition/), as well as big data options like Hadoop and NoSQL. When you add data from multiple sources, Tableau will determine the relationship automatically. You can create or modify data links manually based on your preference. You can connect to a distinct data warehouse if you use Tableau.
+A key strength of Tableau is its ability to support many data connectors. These include the cloud option, [online analytical processing (OLAP)](https://olap.com/olap-definition/), as well as big data options like Hadoop and NoSQL. When you add data from multiple sources, Tableau will determine the relationship automatically. You can create or modify data links manually based on your preference. You can connect to a distinct data warehouse if you use Tableau.
 
 Power BI also connects to a number of user&#39;s external sources. They range from [SAP HANA](https://www.sap.com/corporate/en/company.html) to MYSQL and [JSON](https://www.json.org/). Like Tableau, Power BI determines relationships automatically once you add data from multiple sources. Many programs that work with Microsoft integrate with Power BI, and this provides an extensive library for potential collaborations opportunities. Most important, with Power BI, you can connect to data stored in text-based files, third-party databases, Microsoft Azure databases, and online services such as Google Analytics and Salesforce.
 
