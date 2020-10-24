@@ -22,7 +22,7 @@ Since Kotlin is compiled the same way as [Java](https://en.wikipedia.org/wiki/Ja
 In this article, we will take a look at Kotlin ranges.
 
 ### What are ranges
-A range is a collection of values determined by a start and stop value. A simple example is, values between 1 and 5 form a range. That is, a range of 1 as the start value and 5 as the end value. Both the start and end values belong to the range as well. In other words, a range is an interval from the start value to end value. We can use functions to create progressions and check for certain values in those ranges. Let's look at how we could apply ranges.  
+A range is a collection of values determined by a start and stop value. A simple example is, values between 1 and 5 form a range. That is, a range of 1 as the start value and 5 as the end value. Both the start and end values belong to the range as well. In other words, a range is an interval from the start value to end value. We can use functions to create progressions and check for certain values in those ranges. Let's look at how we can apply ranges.  
 
 Before we begin writing code, you can use the following [repl.it](https://repl.it/@Linusmuema/Ranges) to run the functions.
 
