@@ -2,11 +2,11 @@ You might have come across a website with a background effect that slightly look
 
 [Example1:](https://codepen.io/matteobruni/pen/OJVZvPP)
 
-![image title](\example1.gif)
+![image ](/engineering-education/javascript-particles-effect-with-tsparticles/example1.gif)
 
 [Example2:](https://codepen.io/matteobruni/pen/BaNwOzB)
 
-![image title](\example2.gif)
+![Tsparticles Effect](/engineering-education/javascript-particles-effect-with-tsparticles/example2.gif)
 
 [Tsparticles](https://github.com/matteobruni/tsparticles) is one of the JavaScript libraries that will help achieve this. Tsparticles is a lightweight animation library. As the name sounds, the library enables you move some tiny particles on your web background, with many fancy features. [Particle.js](https://vincentgarreau.com/particles.js/), though, have not been lately updated and got bugs not fixed. Due to this, a hybrid typescript library tsparticles, was introduced to improve the paricle.js bugs and maintenance. It supports some common [JavaScript frameworks](https://particles.matteobruni.it/) such as Angular, Vue, React, Vanilla, svelte, and jQerry.
 
@@ -111,11 +111,11 @@ Define the number of particles to show with parameter value and pass a number to
 
 ***Note:*** if you open the `index.html` page directly on the browser. I.e;
 
-![image title](\local-file-browser.png)
+![index.html Browsed Page](/engineering-education/javascript-particles-effect-with-tsparticles/local-file-browser.png)
 
 No particles will be loaded. To avoid such circumstances, use the live-server provided on your text editor to open the `index.html` files.
 
-![image title](\server-browser.png)
+![index.html Served Page](/engineering-education/javascript-particles-effect-with-tsparticles/server-browser.png)
 
 For example:
 - [Visual studio code](https://code.visualstudio.com/) - install [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
@@ -289,11 +289,11 @@ tsParticles.load("tsparticles", {
 
 If you serve `index.html`, you should be having a background close to the samples below.
 
-#### Using circular shapes with randomized colors
-![image title](\circular-randomized-colors.gif)
+#### Using Circular Shapes with Sandomized Solors
+![Color Particles](/engineering-education/javascript-particles-effect-with-tsparticles/circular-randomized-colors.gif)
 
-#### Using bubbled array images as the shape
-![image title](\bubbled-image.gif)
+#### Using Bubbled Array Images as the Shape
+![Bubbled Particles](/engineering-education/javascript-particles-effect-with-tsparticles/bubbled-image.gif)
 
 ### Particle Linking
 The next big thing is to link a particle to the nearest neighboring particles to create a connection between the particle movement. When `line_linked:` enabled to true, every particle will be connected to the most relative adjacent particle. The linking line takes additional values such as distance. Distance specifies the range at which a particle should link to another particle. Customize the link by passing color, opacity, and width parameters.
@@ -308,7 +308,7 @@ line_linked: {
 },
 ```
 
-![image title](\linked-particles.gif)
+![Particle Linking](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Interactivity
 I want to add the particles' interactivity with the screen movements, such as onclick and onhover events. This tells the particle what to do whenever onscreen interaction is detected. Each event takes a parameter mode that defines how the particles will behave on event detection. Modes specifies the behaviors of the event.
@@ -441,7 +441,7 @@ tsParticles.load("tsparticles", {
 });
 ```
 
-![image title](\linked-particles.gif)
+![Particles Interactivity](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Application Example
 The end product is to be able to apply the particle background on your website. The example below shows a login form floating  over a particle's background.
@@ -736,7 +736,7 @@ tsParticles.load("tsparticles", {
 ```
 
 ##### Output
-![image title](\form.gif)
+![Particles Background Application](/engineering-education/javascript-particles-effect-with-tsparticles/form.gif)
 
 [***Sample source***](https://codepen.io/matteobruni/pen/xxGXELa)
 
