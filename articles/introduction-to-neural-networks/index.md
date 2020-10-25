@@ -21,12 +21,12 @@ These technologies solve problems in image recognition, speech recognition, patt
 In this article, you will learn the basics of artificial neural networks or ANN. It will also give you an in-depth interpretation of how neural networks operate.
 
 The contents to be discussed include:
-- [Neural Networks Overview](#Neural-Networks-Overview)
-- [How Neural Networks Work](#How-Neural-Networks-work)
-- [Types of Neural Networks](#Types-of-Neural-Networks)
-- [Applications of Neural Networks](#Applications-of-Neural-Networks)
-- [Advantages of Neural Networks](#Advantages-of-Neural-Networks)
-- [Disadvantages of Neural Networks](#Disadvantages-of-Neural-Networks)
+- [Neural Networks Overview](#neural-networks-overview)
+- [How Neural Networks Work](#how-neural-networks-work)
+- [Types of Neural Networks](#types-of-neural-networks)
+- [Applications of Neural Networks](#applications-of-neural-networks)
+- [Advantages of Neural Networks](#advantages-of-neural-networks)
+- [Disadvantages of Neural Networks](#disadvantages-of-neural-networks)
 
 ### Prerequisites
 Neural Networks is a complex topic; therefore, I recommend the reader to have a basic understanding of [deep learning](/engineering-education/introduction-to-deep-learning/).
