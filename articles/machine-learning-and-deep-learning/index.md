@@ -28,7 +28,7 @@ Machine learning uses Artificial Intelligence (AI) techniques that assist in dec
 
   Unstructured data information is stored as files. Examples include; images, word documents, email files, videos and audio files.
 
-Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying deciphering and enciphering keys that are identical and need to be kept secret.
+Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying, deciphering and enciphering keys that are identical, and need to be kept secret. A conventional algorithm maintains secrets in acryptographic environment.
 
 Unlike machine learning, AI can use [unstructured data](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) and still be able to function. Deep learning emulates human intelligence workings. 
 Machine learning aids in the detection of objects, language translation, and decision making. Machine learning is also able to recognize speech and make prompt decisions.
@@ -36,24 +36,26 @@ Machine learning aids in the detection of objects, language translation, and dec
 
 ### Deep Learning
 
-Deep learning is a [subset](https://en.wikipedia.org/wiki/Subset) of machine learning. Deep learning uses deep [neural networks](https://www.investopedia.com/terms/n/neuralnetwork.asp#:~:text=A%20neural%20network%20is%20a,organic%20or%20artificial%20in%20nature.) that are built using neural networks. These networks operate unsupervised since they use both [structured data](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) and unstructured data. 
+Deep learning is a [subset](https://en.wikipedia.org/wiki/Subset) of machine learning. Deep learning uses deep [neural networks](https://www.investopedia.com/terms/n/neuralnetwork.asp#:~:text=A%20neural%20network%20is%20a,organic%20or%20artificial%20in%20nature.) that are built using neural networks. Neural networks can be used for both supervised and unsupervised learning tasks. 
 
 Deep learning uses complex algorithms from neural networks. This resemblance is like the layers with neural connections in the human brain. 
 The use of structured and unstructured data make deep learning work perfectly as when compared to machine learning.
 
 ### How deep learning works
 
-Deep learning uses algorithms whose functionality is like that of machine learning.  The [neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) learn where data is fetched.
+Deep learning uses algorithms whose functionality is like that of machine learning. [Neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) extract and learn the features during training process.
+
 
 The neurons in the network undertake two tasks. The first includes understanding which feature is optimal for performing a specific task. The second one involves classifying data after many iterations of the learning process.
 
- In case there is a mistake, the deep learning model's accuracy increases. Deep learning is, thus, a more complex and more capable version of machine learning. Besides this, deep learning has more number of parameters when compared to machine learning algorithms. 
+ In case there is a mistake, the deep learning model's accuracy increases. This occurs when the model is specifically trained to identify and learn from the error. 
+ Deep learning is, thus, a more complex and more capable version of machine learning. Besides this, deep learning has more number of parameters when compared to machine learning algorithms. 
 
 ### Machine Learning vs Deep Learning
 
 Deep learning differs from machine learning in some aspects. Manual feature extraction is required for machine learning algorithms. 
 
-However, deep learning does not require a manual feature for manually selecting features from the dataset.
+However, deep learning does not require manual features for manually selecting features from the dataset.
 
 Deep learning adopts an algorithm that learns not to repeat a mistake in the future.  [Multi-level neural networks](https://towardsdatascience.com/multi-layer-neural-networks-with-sigmoid-function-deep-learning-for-rookies-2-bf464f09eb7f?gi=e7b1f9430ac5) are used to prevent the error from repetition.
 
