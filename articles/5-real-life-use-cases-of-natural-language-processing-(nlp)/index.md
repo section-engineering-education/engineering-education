@@ -38,7 +38,7 @@ Another critical application of NLP is autocomplete. If you start your search on
 
 But how does Google suggest relevant keywords? It relies on data that catalogs what other millions of Google users are searching when inputting particular search terms. This is made possible with using natural language processing to help understand subtleties between various search terms. Besides, NLP helps make sense of the data.
 
-If you are not well used to your computer&#39;s keyboard or have a problem hitting the right keys, you will find yourself making many typos or writing incorrect words. If you enable the autocorrect function, you will see the possible search terms or correct typos. Autocorrect also uses NLP technology. You see the closest possible terms to your misspellings and change the misspelLED words to the accurate ones with this autocorrect function.
+If you are not well used to your computer&#39;s keyboard or have a problem hitting the right keys, you will find yourself making many typos or writing incorrect words. If you enable the autocorrect function, you will see the possible search terms or correct typos. Autocorrect also uses NLP technology. You see the closest possible terms to your misspellings and change the misspelt words to the accurate ones with this autocorrect function.
 
 #### Machine Translation
 
