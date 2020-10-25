@@ -40,7 +40,7 @@ This tool is popular for its data warehousing capabilities (including data disco
 
 ### Key Differences
 #### Integration
-When it comes to integration, Tableau can connect to almost every data repository. Whether it be [Hadoop](https://hadoop.apache.org/) clusters or MS Excel, with this program, you can open up data source integration to many relational databases and NoSQL databases.
+When it comes to integration, Tableau can connect to almost any data repository. Whether it be [Hadoop](https://hadoop.apache.org/) clusters or MS Excel, with this program, you can open up data source integration to many relational databases and NoSQL databases.
 
 The improved Tableau's support for JavaScript and [REpresentational State Transfer APIs (REST)](https://restfulapi.net/) promotes efficiency while reducing the reliance of integration across analytic platforms on customized programming.
 
