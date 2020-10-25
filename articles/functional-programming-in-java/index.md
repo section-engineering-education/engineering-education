@@ -23,7 +23,7 @@ It's essential to have a solid understanding of functional programming and its a
 
 It does this by creating **pure functions**, i.e., functions that don't cause any global side effects or have consistent outputs for the same input. Additionally, it uses immutable data structures to avoid changes that cause side effects.
 
-This programming paradigm also has the concept of using functions as objects. Consequently, this allows us to have functions that use other functions or **higher-order functions**. In some cases, the use of these functions helps us to condense our code, as seen later. This article will focus on this aspect as it is the least intuitive concept.
+This programming paradigm also has the concept of using functions as objects. Consequently, this allows us to have functions that accept other functions or **higher-order functions**. In some cases, the use of these functions helps us to condense our code, as seen later. This article will focus on this aspect as it is the least intuitive concept.
 
 Functional programming can have huge advantages in some cases. One such case is in a multi-threaded environment. Because of the emphasis on avoiding global side effects, our operations become isolated. This isolation makes conflicts between threads impossible.
 
