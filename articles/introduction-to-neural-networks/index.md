@@ -169,6 +169,7 @@ In RNNs, data runs through a loop, such that each node remembers data in the pre
 
 For example:
 Let's say you are taking five classes this semester, and this is your schedule:
+
 Monday = Cryptography, Tuesday = Audit of Information Systems, Wednesday = Advanced Database, Thursday = Java, and Friday = Business intelligence.
 
 For the NN to tell you the class you are studying (any given day), it has to be able to "look" at the class studied the day before.
