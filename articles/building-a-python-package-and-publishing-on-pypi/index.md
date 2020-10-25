@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/building-a-python-package-and-publishing-on-pypi/hero.jpg
-    alt: docker example image Node.js
+    alt: Python example image PyPi
 ---
 If you have any past experience building things with Python you will notice a lot of installing and importing of packages, Python allows you to reuse code and share your code to save time and energy. In very simple terms, a Python package is a collection of related modules, it is a module that contains a file name *init.py*. Maybe you have been wanting to build your own package or just interested in knowing how it is built, this tutorial will give you a run down on how.
 <!--more-->
