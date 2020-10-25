@@ -28,23 +28,29 @@ Before we begin writing code, you can use the following [repl.it](https://repl.i
 
 All you need to do is call the specific function in the `main` function. Then run the code and your output will be printed 🤓.
 
-For instance, if we want to run the `printNumRange` function:
+
+### 1. To Create a Progression
+We can use the range operator to create an iterable range. A loop is created that goes through each item from the start value to the end value. This helps us to be sure of the number of iterations in the loop. It gives the developer more control over the loop. In the repl.it, call the `printNumRange` function and run it.
 
 ```Kotlin
   fun main(args: Array<String>) {
-      // call the function here
       printNumRange()
   }
 ```
 
-### 1. To Create a Progression
-We can use the range operator to create an iterable range. A loop is created that goes through each item from the start value to the end value. This helps us to be sure of the number of iterations in the loop. It gives the developer more control over the loop. In the repl.it, call the `printNumRange` function and run it. The output should be:
+The output should be:
 
 ```bash
 1,2,3,4,5,
 ```
 
 This loop goes from 1 to 5. That's not the only trick ranges can do. We can also create ranges using characters. We can create a range that starts from a specific letter in the alphabet to another. This can be from `a` to `e`. You can go ahead and call the `printCharRange` function.
+
+```Kotlin
+  fun main(args: Array<String>) {
+      printCharRange()
+  }
+```
 
 The expected output is:
 
@@ -73,6 +79,12 @@ for (int i = 5; i >= 0; i--) {}
 
 Ranges have a function called `downTo` that can be used to create a reverse progression. We can use it to loop from the end value backwards to the start point.
 
+```Kotlin
+  fun main(args: Array<String>) {
+      reverseNumRange()
+  }
+```
+
 Once you run the `reverseNumRange`, the output should be:
 
 ```bash
@@ -80,6 +92,13 @@ Once you run the `reverseNumRange`, the output should be:
 ```
 
 The same applies to the character range. It loops downwards to the start character. The function `reverseCharRange` does this for us.
+
+```Kotlin
+  fun main(args: Array<String>) {
+      reverseCharRange()
+  }
+```
+
 
 ```bash
 e,d,c,b,a,
@@ -99,12 +118,26 @@ int range = max - min + 1;
 int random = (Math.random() * range) + min;
 ```
 
-With ranges, it is as simple as creating the desired range and calling the `random` method. This makes it easy to get random numbers in any range. In the `getRandomInRange` function, we are creating a range from 1 to 5 then getting a random number from it. We add the value to the output through Kotlin's [String interpolation](https://kotlincompact.com/string-interpolation.html). You can add expressions as well as variables in strings.
+With ranges, it is as simple as creating the desired range and calling the `random` method. This makes it easy to get random numbers in any range.
+
+```Kotlin
+  fun main(args: Array<String>) {
+      getRandomInRange()
+  }
+```
+
+In the `getRandomInRange` function, we are creating a range from 1 to 5 then getting a random number from it. We add the value to the output through Kotlin's [String interpolation](https://kotlincompact.com/string-interpolation.html). You can add expressions as well as variables in strings.
 
 ### 4. To Check For Values in Ranges
 Sometimes you may need to check if a value lies inside a particular range. For instance, after picking an image via `intents`, we can check the dimensions. Suppose, we need the image dimensions to lie in a specific range, we can use the range operator.
 
 An if statement is used instead. If the value is in range, the result is `true` and vice versa. In the `checkInRange` function, we are generating a random number between 1 and 10. Then we check if the value is between 1 and 5. We then print the result based on the comparison.
+
+```Kotlin
+  fun main(args: Array<String>) {
+      checkInRange()
+  }
+```
 
 A sample output is:
 
@@ -115,6 +148,12 @@ A sample output is:
 
 ### 5. To Create Special Loops
 With loops generated from ranges, we can define how the loop happens. We may want it to skip one value as it loops through. A good use case is when you need to print either even or odd numbers. In an even use case, you would define the starting point as 1 until the last point. Then you add the `step` keyword with the value of 2. It will loop from 1, skipping one value in the loop. The `rangeWithStep` function is an example.
+
+```Kotlin
+  fun main(args: Array<String>) {
+      rangeWithStep()
+  }
+```
 
 The output is:
 
