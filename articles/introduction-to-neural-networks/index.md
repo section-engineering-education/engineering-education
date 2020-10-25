@@ -38,7 +38,7 @@ Neural Networks is a complex topic; therefore, I recommend the reader to have a 
 ### Neural Networks Overview
 Have you ever wondered how your brain recognizes images? No matter how the image looks like, the brain can tell that this is an image of a cat and not a dog. The brain relates to the best possible pattern and concludes the result. The example below will help you understand neural networks:
 Consider a scenario where you have a set of labeled images, and you have to classify the images based on if it is a dog or a cat.
-To create a neural network that recognizes images of cats and dogs. The network starts by processing the input. Each image is made of a bunch of neurons. For example, the image dimensions are 20 * 20 pixels that make 400 neurons or pixels. The 400 neurons make the first layer of our neural network.
+To create a neural network that recognizes images of cats and dogs. The network starts by processing the input. Each image is made of pixels. For example, the image dimensions are 20 * 20 pixels that make 400 pixels. The 400 pixels make the first layer of our neural network.
 
 ![Neural Network](/engineering-education/introduction-to-neural-networks/nn.png)
 
