@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/building-a-python-package-and-publishing-on-pypi/
 title: Building a Python package and publishing on PyPi (The Python Package Index)
 description: This tutorial will give readers a detailed guide on packages in Python and how to build one, it will take them through how to write and structure their code, structure and package it, and finally how to publish it on PyPI for their general python community.
-author: eric-kahuha
+author: 
 date: 2020-10-25T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
