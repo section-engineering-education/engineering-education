@@ -69,6 +69,7 @@ The neurons in the network undertake two tasks. The first includes understanding
 
 ### Machine Learning vs Deep Learning
 
+
 Deep learning differs from machine learning in some aspects. Manual feature extraction is required for machine learning algorithms.
 
 However, deep learning does not require manual features for manually selecting features from the dataset.
