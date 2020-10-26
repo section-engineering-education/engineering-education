@@ -44,7 +44,7 @@ Machine learning uses Artificial Intelligence (AI) techniques that assist in dec
 
   Unstructured data information is stored as files. Examples include; images, word documents, email files, videos and audio files.
 
-Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying, deciphering and enciphering keys that are identical, and need to be kept secret. A conventional algorithm maintains secrets in acryptographic environment.
+Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying, deciphering, and enciphering keys that are identical, and need to be kept secret. A conventional algorithm maintains secrets in acryptographic environment.
 
 Unlike machine learning, AI can use [unstructured data](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) and still be able to function. Deep learning emulates human intelligence workings.
 Machine learning aids in the detection of objects, language translation, and decision making. Machine learning is also able to recognize speech and make prompt decisions.
