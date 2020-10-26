@@ -79,7 +79,7 @@ Deep learning adopts an algorithm that learns not to repeat a mistake in the fut
 
 ### Applications
 
-Deep learning is currently being used in various industries and companies. Most of these companies involve the use of the high technology in their operations.
+Deep learning is currently being used in various industries and companies. Most of these companies involve the use of the high tech industry in their operations.
 
 Besides this, we, as consumers, are currently using these technologies and applications. People have been using and interact with these innovations without even realizing it.
 
