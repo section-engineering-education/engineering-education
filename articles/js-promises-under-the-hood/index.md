@@ -1,9 +1,9 @@
 # What Happens When JavaScript Runs My Code?
 
 ### Introduction
-JavaScript is a single-threaded language, where only one command executes at a time. And, it has a Synchronous model of execution, where each line executes in the order in which the code appears.
+JavaScript is a single-threaded language, where only one command executes at a time. And, it has a Synchronous model of execution, where each line executes line by line, top to bottom.
 
-In this guide, you get to see what happens as the JavaScript engine threads down your code line by line.
+In this guide, you get to understand what happens as the JavaScript engine threads down your code.
 
 ## Prerequisites
 
@@ -25,11 +25,12 @@ Before you begin this guide you'll need the following:
 In this step, you will walk through the above lines of code like the JavaScript engine would.
 
 Why?
+
 To understand what happens when you execute the code above.
 
 First, as soon as you start executing your code, there are two halves to that process:
 
-1. One, the ability to go through your code line by line, top to bottom. Referred to as the **Thread Of Execution**.
+1. One, the process of stepping through your code line by line, top to bottom. Referred to as the **Thread Of Execution**.
 2. Two, the storage of the bits of data that you announce as you go through your code's execution in live **Memory**. Referred to as the **Variable Environment**.
 
 Together, known as an **Execution Context**. Where a context is a space to do something. In this case, it is a space where you execute code, hence an execution context.
@@ -42,8 +43,6 @@ There are two types of Execution contexts:
 Below is a table that illustrates your Global Execution Context before code execution.
 
 ![Global Execution Context before you execute js code](global_execution_context_before_executing_js_code.jpg)
-
-With that understanding, you can now walk through your code line by line, top to bottom like the JavaScript engine would.
 
 For each line, there will be a visual representation of what the Global Execution Context looks like at that moment.
 
@@ -65,7 +64,9 @@ You would the source code for `multiplyBy2()`.
 
 To understand what `toString()` does see [the MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Location/toString)
 
-From line 2, you would then move on to line 6 and not line 3. Why?
+From line 2, you would then move on to line 6 and not line 3. 
+
+Why?
 
 This is because in JavaScript you **do not** go into the body of a function until it is called. And our function `multiplyBy2()` in this case, is defined, but never called.
 
@@ -73,7 +74,11 @@ Line 6: Save in memory a constant, **name**, as the label for a string, **"Will"
 
 ![Global Execution Context when line six is executed](step_one_line_six.jpg)
 
-For the entire Step 1, you stayed in the Global Execution Context. Why? Because you did not call `multiplyBy2()`.
+For the entire Step 1, you stayed in the Global Execution Context.
+
+Why? 
+
+Because you did not call `multiplyBy2()`.
 
 In the next step, you will get to see when a Local Execution Context is created and what exactly happens under the hood when during that process.
 
@@ -92,7 +97,7 @@ As you execute functions, you will switch Execution Contexts. From Global to Loc
 
 This switching of Execution Contexts raises, in JavaScript, an issue of tracking where one is in their Thread Of Execution.
 
-To keep track of this JavaScript uses a [**Call Stack**](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack).
+To keep track of this, JavaScript uses a [**Call Stack**](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack).
 
 And so now, you have a third element to the execution of your JavaScript code. The image below illustrates the three elements before any code is executed.
 
@@ -139,8 +144,6 @@ This brings you back to where you started as illustrated below.
 ![Global Execution Context after you execute js code](global_execution_context_after_executing_js_code.jpg)
 
 Congratulations! You now have the full circle of what happens under the hood when you execute your JavaScript Code.
-
-I encourage you to go to the links I attached above on [**MDN**](https://developer.mozilla.org/en-US/) and read more on the various topics.
 
 ## Citations & Resources
 
