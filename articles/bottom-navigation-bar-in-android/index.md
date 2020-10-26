@@ -346,3 +346,6 @@ Let’s run the app.
 Access the Source code [here](https://github.com/BrianaNzivu/BottomNavigationBar).
 
 Download the Sample Application [here] (https://drive.google.com/file/d/1UwooVA1SwVelfnnbxm6_ftXWAtX4Te9_/view?usp=sharing).
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
