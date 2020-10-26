@@ -41,7 +41,7 @@ Let's get started!
 ### Step 1 — Creating an Android Project
 In this step, we are going to create our application. Open Android Studio and start a new project with an empty activity template. On the next page, give the application a name and keep the default settings.
 
-![app name](/engineering-education/android-custom-views/app-name.png)
+![app name](/engineering-education/android-custom-views-extending-view/app-name.png)
 
 Click `Finish` and wait for the project build process to finish.
 
@@ -51,7 +51,7 @@ On your project window,
 - Select `File -> New -> Kotlin File/Class`
 - On the next screen select class, give it a name, and press enter.
 
-![new class](/engineering-education/android-custom-views/new-class.png)
+![new class](/engineering-education/android-custom-views-extending-view/new-class.png)
 
 On the newly created file. Add the following code to extend the View class.
 
@@ -100,7 +100,7 @@ To create it:
 - Go to `File -> New -> Android Resource File`
 - Give it a name, then click finish.
 
-![new resource file](/engineering-education/android-custom-views/new-resource-file.png)
+![new resource file](/engineering-education/android-custom-views-extending-view/new-resource-file.png)
 
 Add the following code between the resource tags to create the attributes.
 
@@ -189,7 +189,7 @@ Our code should look something like this.
 
 We are done! Build and run your application on an emulator or an Android device. The resulting view should resemble the one below.
 
-![app](/engineering-education/android-custom-views/app.png)
+![app](/engineering-education/android-custom-views-extending-view/app.png)
 
 ### Conclusion
 In this article, we have gone through creating a custom view by extending the view class. We have also seen how we can create custom attributes for our views and add them to our layout file. Custom views give an application's UI a unique look and feel. This helps developers build applications with a better user experience. You can get the full code on [GitHub](https://github.com/kayere/android-custom-views.git).
