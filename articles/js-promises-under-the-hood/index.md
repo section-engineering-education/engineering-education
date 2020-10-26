@@ -1,7 +1,7 @@
 # What Happens When JavaScript Runs My Code?
 
 ### Introduction
-JavaScript is a single-threaded language (one executing command at a time). And, it has a Synchronous model of execution (each line executes in the order in which the code appears).
+JavaScript is a single-threaded language, where only one command executes at a time. And, it has a Synchronous model of execution, where each line executes in the order in which the code appears.
 
 In this guide, you get to see what happens as the JavaScript engine threads down your code line by line.
 
@@ -11,7 +11,7 @@ Before you begin this guide you'll need the following:
 
 - A basic understanding of JavaScript Functions
 
-## Step 1 — What Happens When JavaScript Executes (Runs) My Code?
+## Step 1 — What Happens When JavaScript Executes My Code?
 
 ```JavaScript 
 1. const num = 3;
@@ -27,7 +27,7 @@ In this step, you will walk through the above lines of code like the JavaScript 
 Why?
 To understand what happens when you execute the code above.
 
-First, as soon as you start executing(running) your code, there are two halves to that process:
+First, as soon as you start executing your code, there are two halves to that process:
 
 1. One, the ability to go through your code line by line, top to bottom. Referred to as the **Thread Of Execution**.
 2. Two, the storage of the bits of data that you announce as you go through your code's execution in live **Memory**. Referred to as the **Variable Environment**.
@@ -39,11 +39,11 @@ There are two types of Execution contexts:
 1. Global Execution Context.
 2. Local Execution Context.
 
-Below is an illustration of your Global Execution Context before code execution.
+Below is a table that illustrates your Global Execution Context before code execution.
 
 ![Global Execution Context before you execute js code](global_execution_context_before_executing_js_code.jpg)
 
-With that understanding, you can now walk through your code line by line, top to bottom like the JavaSctip engine would.
+With that understanding, you can now walk through your code line by line, top to bottom like the JavaScript engine would.
 
 For each line, there will be a visual representation of what the Global Execution Context looks like at that moment.
 
@@ -59,11 +59,13 @@ This process is also known as **defining/declaring** a function.
 
 At this point, if you were to run:
 ```JavaScript
-console.log(multiplyBy2)
+console.log(multiplyBy2.toString());
 ```
-The source code for `multiplyBy2()` is what you would see.
+You would the source code for `multiplyBy2()`.
 
-From line 2, you would then move on to line 6 and not line 3. But why not move on to line 3 if, in JavaScript, each line executes in the order that the code appears, top to bottom?
+To understand what `toString()` does see [the MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Location/toString)
+
+From line 2, you would then move on to line 6 and not line 3. Why?
 
 This is because in JavaScript you **do not** go into the body of a function until it is called. And our function `multiplyBy2()` in this case, is defined, but never called.
 
@@ -71,11 +73,11 @@ Line 6: Save in memory a constant, **name**, as the label for a string, **"Will"
 
 ![Global Execution Context when line six is executed](step_one_line_six.jpg)
 
-For the entire Step 1, you stayed in the Global Execution Context. Why? Because you did not call (execute/run/invoke) `multiplyBy2()`.
+For the entire Step 1, you stayed in the Global Execution Context. Why? Because you did not call `multiplyBy2()`.
 
 In the next step, you will get to see when a Local Execution Context is created and what exactly happens under the hood when during that process.
 
-## Step 2 — What Happens When a Function Is Called/Executed in JavaScript?
+## Step 2 — What Happens When a Function Is Called in JavaScript?
 
 ```JavaScript
 1. const num = 3;
@@ -104,7 +106,7 @@ Line 2: Save in memory **multiplyBy2**, as the label for the functionality of th
 
 Line 6: Save in memory a constant, **output**, as the label for whatever the result of the function  `multiplyBy2()` returns after executing.
 
-At this point, you call/execute  `multiplyBy2()`.
+At this point, you call  `multiplyBy2()`.
 
 This adds `multiplyBy2()` to the call stack. And creates a Local Execution Context for the execution of the code inside  `multiplyBy2()`.As illustrated in the image below.
 
@@ -130,16 +132,18 @@ The image below illustrates the Global Execution Context after all this is done.
 
 ![After Garbage Collection](after_garbage_collection.jpg)
 
-Once all the lines of code are executed. JavaScript garbage collects the Global Execution Context's Variable Environment (Memory). Bringing you back to where you started as illustrated below.
+Once all the lines of code are executed, JavaScript garbage collects the Global Execution Context's Variable Environment (Memory). 
 
+This brings you back to where you started as illustrated below.
 
 ![Global Execution Context after you execute js code](global_execution_context_after_executing_js_code.jpg)
 
-And so now you have the full circle of what happens under the hood when you execute JavaScript Code.
+Congratulations! You now have the full circle of what happens under the hood when you execute your JavaScript Code.
 
 I encourage you to go to the links I attached above on [**MDN**](https://developer.mozilla.org/en-US/) and read more on the various topics.
 
-Citations & Resources
+## Citations & Resources
 
 [Frontend Masters - JavaScript: The New Hard Parts](https://frontendmasters.com/courses/javascript-new-hard-parts/)
+
 [MDN Web Docs](https://developer.mozilla.org/en-US/)
