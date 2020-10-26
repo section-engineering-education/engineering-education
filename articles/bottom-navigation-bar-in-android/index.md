@@ -1,8 +1,9 @@
 ### Bottom Navigation Bar in Android Applications.
-This article goes through how integrate a Bottom Navigation View. We will use a Navigation Component to add the Navigation Views in Android Applications.
+This article goes through how integrate a `Bottom Navigation View`. We will use a `Navigation Component` to add the Navigation Views in an Android applications.
 
 ### Introduction
-A **Bottom Navigation View** navigation tool enables users to explore and change to different views in an application. **Navigation Component** is a set of libraries developed by Google to manage complex navigation functions like animations, transitions, etc. Bottom Navigation View makes applications more user-friendly during navigation. Before 2017, navigation to different fragments in an application used Fragment transactions. For applications with many fragments, writing fragment transactions became tedious. In 2017, Google developed the Navigation Component, which made the navigation process more manageable. Selecting a Bottom Navigation View icon enables users to switch to a selected view or refresh an active view. We use a Bottom Navigation View when an application has the following: We use a Bottom Navigation View when an application has the following:
+A **Bottom Navigation View** navigation tool enables users to explore and change to different views in an application. A **Navigation Component** is a set of libraries developed by Google to manage complex navigation functions like animations, transitions, etc. Bottom Navigation View makes applications more user-friendly during navigation. Before 2017, navigation to different fragments in an application used Fragment transactions. For applications with many fragments, writing fragment transactions became tedious. Google developed the Navigation Component, which made the navigation process more manageable. Selecting a Bottom Navigation View icon enables users to switch to a selected view or refresh an active view. We use a Bottom Navigation View when an application has the following: We use a Bottom Navigation View when an application has the following:
+
 * Three to five views.
 * Views that need direct access.
 
@@ -48,13 +49,13 @@ A  Navigation component consists of the following:
 
 
 ### Terminologies
-* [Bottom Navigation Bar](https://material.io/develop/android/components/bottom-navigation)-A navigation component that enables users to explore and change to different applications' views.
-* [Dependency](https://developer.android.com/studio/build/dependencies)-  A statement SDK that allows us to add an external library into our projects.
-* [Fragment](https://developer.android.com/reference/android/app/Fragment)-A Fragment is a sub-activity which enables more modular activity design.
-* [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started)-A resource file that contains information used for navigation.
-* [Navigation Graph](https://developer.android.com/guide/navigation/navigation-getting-started)- A resource file that contains information used for navigation.
-* [NavHost](https://codeburst.io/android-tutorial-how-to-implement-android-jetpack-navigation-component-in-your-app-9030518639ac)- An empty container used to display destinations contained in the navigation graph.
-* [NavController](https://developer.android.com/guide/navigation/navigation-getting-started)-An object within the NavHost which manages navigation.
+* [Bottom Navigation Bar](https://material.io/develop/android/components/bottom-navigation) - a navigation component that enables users to explore and change to different applications' views.
+* [Dependency](https://developer.android.com/studio/build/dependencies) - a statement SDK that allows us to add an external library into our projects.
+* [Fragment](https://developer.android.com/reference/android/app/Fragment) - a fragment is a sub-activity which enables more modular activity design.
+* [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started) - a resource file that contains information used for navigation.
+* [Navigation Graph](https://developer.android.com/guide/navigation/navigation-getting-started#create-nav-graph) - a resource file that contains information used for navigation.
+* [NavHost](https://developer.android.com/reference/androidx/navigation/NavHost) - an empty container used to display destinations contained in the navigation graph.
+* [NavController](https://developer.android.com/reference/androidx/navigation/NavController) - an object within the `NavHost` which manages navigation.
 
 
 ### Prerequisites
@@ -69,14 +70,13 @@ Select *Empty Activity* and click *next*.
 
 ![Select Empty Activity](/engineering-education/bottom-navigation-bar-in-android/empty.jpg)
 
-We will name the project **BottomNavigationBar**. Click on *Finish* and wait for the project to build.
+We will name the project **BottomNavigationBar**. Click *Finish* and wait for the project to build.
 
 ![Name the project](/engineering-education/bottom-navigation-bar-in-android/name.jpg)
 
 #### Step 2 – Create a Navigation Graph.
-In this step, we will create a Navigation Graph.
+In this step, we will create a Navigation Graph. Add the following dependencies in your **app** module level `build.gradle` file:
 
-Add the following dependencies in your **app** module level `build.gradle` file:
 ```gradle
 dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.3.1'
@@ -86,12 +86,11 @@ dependencies {
 ```
 Select *Sync Now*.
 
-Right-click the `res` directory, click New and select Android Resource File.
-A menu will pop up.
+Right-click the `res` directory, click `New` and select `Android Resource File`. A menu will pop up.
 
 ![NavGraph Menu](/engineering-education/bottom-navigation-bar-in-android/navgraph.jpg)
 
-We will name our resource file **nav_graph.**. For the Resource Type select **Navigation** and then click `OK`. Next, add the destinations.
+We will name our resource file **nav_graph.**. For the Resource Type, select **Navigation** and then click `OK`. Next, we will add the destinations.
 
 ### Structure of a destination.
 * **_Name_** - indicates whether a destination is as an activity, fragment, or a custom class.
@@ -180,7 +179,7 @@ In this step, we will add the Bottom Navigation View to our activity's resource 
 ```
 A NavHost is an empty container used to display destinations from the navigation graph
 
-**Note: An error for app:menu="@menu/bottom_nav_menu" is seen.This is because it does not exist. To solve this, click `Alt+Enter` and select "Create resource file for bottom_nav_menu.xml"**
+**Note : An error for `app:menu="@menu/bottom_nav_menu"` is seen.This is because it does not exist. To solve this, click `Alt`+ `Enter` and select "Create resource file for bottom_nav_menu.xml"**
 
 
 ![Create a resource file](/engineering-education/bottom-navigation-bar-in-android/createmenu.jpg)
@@ -192,7 +191,7 @@ This menu will pop up.
 Select *OK* and the error is fixed.
 
 ### Step 4 -Creating A Fragment.
-A **Fragment** is a sub-activity. Fragments are used to simplify the reuse of components and logic in different layouts. First, navigate to the java directory and right-click. Select *New*, Click on *Fragment*, and select *Fragment(Blank)*. Name the Fragment and select *Finish*.
+A **Fragment** is a sub-activity. Fragments are used to simplify the reuse of components and logic in different layouts. First, navigate to the java directory and right-click. Select *New*. Click *Fragment* and select *Fragment(Blank)*. Name the Fragment and select *Finish*.
 
 
 ### Step 5 - Adding Details and Icons to the Bottom Navigation View
@@ -210,11 +209,11 @@ Select on the icon next to clipart. A list of different cliparts is displayed.
 
 ![Clipart List](/engineering-education/bottom-navigation-bar-in-android/list.jpg)
 
-One can search for a clipart in the search bar and can also choose whether the design of the clipart should be filled or outlined. We will use the outlined design.
+One can search for a clipart in the search bar and choose whether the design of the clipart should be filled or outlined. We will use the outlined design.
 
 ![Favorites](/engineering-education/bottom-navigation-bar-in-android/favorites.jpg)
 
-Once a clipart is selected, click *OK* then *Next*, and finally *Finish*. Open the menu file in `res/menu/ bottom_navigation_menu` and add the following lines of code:
+Once a clipart is selected, click *OK* then *Next* and finally *Finish*. Open the menu file in `res/menu/ bottom_navigation_menu` and add the following lines of code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -274,9 +273,9 @@ NavigationUI.setupWithNavController(navView, navController);
 We are done! Let’s run the app.
 
 
-![Home](/engineering-education/bottom-navigation-bar-in-android/myhome.jpg)
+![Home](/engineering-education/bottom-navigation-bar-in-android/home.jpg)
 
-![Favorites](/engineering-education/bottom-navigation-bar-in-android/favourites.png)
+![Favorites](/engineering-education/bottom-navigation-bar-in-android/favourites.jpg)
 
 ![Search](/engineering-education/bottom-navigation-bar-in-android/search.jpg)
 
