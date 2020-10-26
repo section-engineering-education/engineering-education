@@ -14,7 +14,7 @@ images:
     - url: /engineering-education/css-in-js-solutions/hero.jpg
       alt: code view on a laptop
 ---
-The modern web is now written in components and not pages. CSS was designed to declare styles in different files(.CSS) for each page of your web application, and this structure makes it challenging to maintain multiple stylesheets for multiple pages.
+The modern web is now written in components and not pages. CSS was designed to declare styles in different files (.CSS) for each page of your web application, and this structure makes it challenging to maintain multiple stylesheets for multiple pages.
 <!--more-->
 ### CSS-In-JS For Web Components
 Web components have changed the landscape for the development of web applications for front-end developers. The use of web components provides ample opportunities to reuse and build UI components and custom elements that are critical in the development process of web applications.
