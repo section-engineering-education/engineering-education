@@ -1,12 +1,11 @@
 ### Bottom Navigation Bar in Android Applications.
-In this tutorial, we will integrate a Bottom Navigation View using a Navigation Component in Android Applications.
-
+This article goes through how integrate a Bottom Navigation View. We will use a Navigation Component to add the Navigation Views in Android Applications.
 
 ### Introduction
 A **Bottom Navigation View** navigation tool that enables users to explore and change to different views in an application.
 **Navigation Component** is a set of libraries developed by Google used to manage complex navigation functions like animations, transitions, etc.
 Bottom Navigation View was created to make applications more user-friendly during navigation. Before 2017, Fragment Transactions were used to navigate to different fragments in an application. For applications with many fragments, writing fragment transactions became tedious.
-In 2017, Google developed the Navigation Component which made the navigation process easier. 
+In 2017, Google developed the Navigation Component which made the navigation process easier.
 Selecting a Bottom Navigation View icon enables users to switch to a selected view or refresh an active view.
 We use a Bottom Navigation View when an application has the following:
 * Three to five views.
@@ -33,7 +32,7 @@ A Bottom Navigation bar is made up of a container which contains the following:
 
 ### Structure of a Navigation Component.
 A  Navigation component consists of the following:
-* Navigation graph 
+* Navigation graph
 * NavHost
 * NavController
 
@@ -180,7 +179,7 @@ Next, add the destinations.
 
 ### Step 3 – Create a Bottom Navigation View.
 
-In this step, we will add the Bottom Navigation View to our activity's resource file. 
+In this step, we will add the Bottom Navigation View to our activity's resource file.
 
 In your XML Layout file, add a Bottom Navigation View and a NavHost.
 
@@ -347,6 +346,3 @@ Let’s run the app.
 Access the Source code [here](https://github.com/BrianaNzivu/BottomNavigationBar).
 
 Download the Sample Application [here] (https://drive.google.com/file/d/1UwooVA1SwVelfnnbxm6_ftXWAtX4Te9_/view?usp=sharing).
-
-
-
