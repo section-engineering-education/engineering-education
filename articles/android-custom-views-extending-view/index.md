@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/android-custom-views-extending-view/
 title: Android Custom Views - Extending View Class
-description: In this article we will create a simple view that is a colored circle with a border then add it to an XML layout.
+description: In this article we will create a simple view that is a colored circle with a border and add it to an XML layout.
 author: peter-kayere
 date: 2020-10-26T00:00:00-12:00
 topics: []
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/android-custom-views-extending-view/hero.jpg
     alt: Android custom views image example
 ---
- A [view is a basic building block](https://www.studytonight.com/android/introduction-to-views/) of UI (User Interface) in Android. The Android platform has a variety of views. These views tend to meet most applications' UI needs. In some cases, these ready-built views don't conform to the application's requirements. In these cases, developers have to create their own custom views.
+ A [view is a basic building block](https://www.studytonight.com/android/introduction-to-views/) of UI (User Interface) in Android. The Android platform has a variety of views. These views tend to meet most applications UI needs. In some cases, these ready-built views don't conform to the application's requirements. In these cases, developers have to create their own custom views.
 <!--more-->
 ### Introduction
 There are two approaches to creating custom Views.
