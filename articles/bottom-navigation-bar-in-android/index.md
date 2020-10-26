@@ -1,11 +1,14 @@
 ### Bottom Navigation Bar in Android Applications.
-In this tutorial, we will go over integrating a Bottom Navigation Bar in android applications.
+In this tutorial, we will integrate a Bottom Navigation View using a Navigation Component in Android Applications.
+
 
 ### Introduction
-A **Bottom Navigation Bar** is a navigation component that enables a user to explore and change to different views in an application.
-Selecting a bottom navigation icon enables a user to switch to a selected view or refresh an active view.
-Bottom Navigation Bars make applications more user friendly. It also eases the development processes by making code more organized.
-A Bottom Navigation Bar is used when an application has the following:
+A **Bottom Navigation View** navigation tool that enables users to explore and change to different views in an application.
+**Navigation Component** is a set of libraries developed by Google used to manage complex navigation functions like animations, transitions, etc.
+Bottom Navigation View was created to make applications more user-friendly during navigation. Before 2017, Fragment Transactions were used to navigate to different fragments in an application. For applications with many fragments, writing fragment transactions became tedious.
+In 2017, Google developed the Navigation Component which made the navigation process easier. 
+Selecting a Bottom Navigation View icon enables users to switch to a selected view or refresh an active view.
+We use a Bottom Navigation View when an application has the following:
 * Three to five views.
 * Views that need direct access.
 
@@ -14,6 +17,7 @@ Popular mobile applications that use this navigation component are Instagram, Tw
 ![Youtube](/engineering-education/bottom-navigation-bar-in-android/youtube.jpg)
 
 ![Instagram](/engineering-education/bottom-navigation-bar-in-android/instagram.jpg)
+
 
 ![Twitter](/engineering-education/bottom-navigation-bar-in-android/twitter.jpg)
 
@@ -24,21 +28,49 @@ A Bottom Navigation bar is made up of a container which contains the following:
 * Active icon
 * Active text label
 
+
 ![Structure of a Bottom Navigation Bar](/engineering-education/bottom-navigation-bar-in-android/structure.jpg)
+
+### Structure of a Navigation Component.
+A  Navigation component consists of the following:
+* Navigation graph 
+* NavHost
+* NavController
+
+### Advantages of a Bottom Navigation View using a Navigation Component.
+
+* Makes applications more user friendly.
+* Eases the development processes of an application.
+* Enables implementing and handling Deep Linking.
+* Enables handling of fragment transactions.
+* Offers View Model support
+* Offers animations and transitions support.
+
+
+### Disadvantages of a Bottom Navigation View using a Navigation Component.
+
+* Cannot be used in applications with less than three destinations.
+* Limited to only Mobiles and Tablets.
+* It is difficult to implement a TabLayout
+
+
+
 
 ### Terminologies
  * [Bottom Navigation Bar](https://material.io/develop/android/components/bottom-navigation)- A navigation component that enables users to explore and change to different views in applications.
  * [Dependency](https://developer.android.com/studio/build/dependencies)-  A statement SDK that allows us to add an external library into our projects.
- * [Fragment](https://developer.android.com/reference/android/app/Fragment)--A Fragment is a sub-activity that enables a more flexible activity design.
-* [FragmentManager](https://developer.android.com/reference/android/app/FragmentManager)- A class used to manage and handle transactions in fragments.
-* [FragmentTransaction](https://developer.android.com/reference/android/app/FragmentTransaction)- A class used to provide methods to replace, add, or remove fragments.
+ * [Fragment](https://developer.android.com/reference/android/app/Fragment)-A Fragment is a sub-activity which enables more modular activity design.
+* [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started)-A resource file that contains information used for navigation.
+* [Navigation Graph](https://developer.android.com/guide/navigation/navigation-getting-started)- A resource file that contains information used for navigation.
+* [NavHost](https://codeburst.io/android-tutorial-how-to-implement-android-jetpack-navigation-component-in-your-app-9030518639ac)- An empty container used to display destinations contained in the navigation graph.
+* [NavController](https://developer.android.com/guide/navigation/navigation-getting-started)-An object within the NavHost which manages navigation.
+
 
 ### Prerequisites
 
 * [Android Studio](https://developer.android.com/studio) installed.
 
 #### Step 1 – Create a new Project.
-In this step, we will [create](https://developer.android.com/studio/projects/create-project) a new Android Studio project.
 
 * Open Android Studio. Select *Start a new Android Studio project* and click on *next*.
 
@@ -52,82 +84,143 @@ We will name the project **BottomNavigationBar**. Click on *Finish* and wait for
 
 ![Name the project](/engineering-education/bottom-navigation-bar-in-android/name.jpg)
 
-#### Step 2 – Creating a Bottom Navigation Bar.
- In this step, we will add a Bottom Navigation Bar to our activity's resource file. 
+#### Step 2 – Create a Navigation Graph.
+In this step, we will create a Navigation Graph.
 
-Add the following dependency in your **app** module level `build.gradle` file:
+Add the following dependencies in your **app** module level `build.gradle` file:
 ```gradle
+
 dependencies {
- implementation 'com.android.support:design:28.0.0'
- implementation 'com.android.support:support-v4:28.0.0'
+
+implementation 'androidx.navigation:navigation-fragment:2.3.1'
+implementation 'androidx.navigation:navigation-ui:2.3.1'
+implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
 ```
 Select *Sync Now*.
 
-In your XML Layout file, add a Bottom Navigation Bar.
+Right-click on the res directory, click New and select Android Resource File.
+A menu will pop up.
+
+![NavGraph Menu](/engineering-education/bottom-navigation-bar-in-android/navgraph.jpg)
+
+We will name our resource file **nav_graph.**
+
+For the Resource Type select **Navigation** and then click OK.
+
+Next, add the destinations.
+
+### Structure of a destination.
+
+
+* Name- Indicates whether a destination is as an activity, fragment, or a custom class.
+
+* Label- Name of the destination's Layout resource file.
+
+* ID- Contains an ID used to refer to a destination.
+
+* Layout – The layout resource file of a destination.
+
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+
+   xmlns:tools="http://schemas.android.com/tools"
+
+   android:id="@+id/mobile_navigation"
+
+   app:startDestination="@+id/navigation_home">
+
+   <fragment
+
+       android:id="@+id/navigation_home"
+
+       android:name="com.example.bottomnavigationbar.home"
+
+       android:label="@string/title_home"
+
+       tools:layout="@layout/fragment_home" />
+
+   <fragment
+
+       android:id="@+id/navigation_favourites"
+
+       android:name="com.example.bottomnavigationbar.favourites"
+
+       android:label="@string/title_favourites"
+
+       tools:layout="@layout/fragment_favourites" />
+
+   <fragment
+
+       android:id="@+id/navigation_search"
+
+       android:name="com.example.bottomnavigationbar.search"
+
+       android:label="@string/title_search"
+
+       tools:layout="@layout/fragment_search" />
+
+   <fragment
+
+       android:id="@+id/navigation_profile"
+
+       android:name="com.example.bottomnavigationbar.profile"
+
+       android:label="@string/title_profile"
+
+       tools:layout="@layout/fragment_profile" />
+
+</navigation>
+```
+
+### Step 3 – Create a Bottom Navigation View.
+
+In this step, we will add the Bottom Navigation View to our activity's resource file. 
+
+In your XML Layout file, add a Bottom Navigation View and a NavHost.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
- xmlns:app="http://schemas.android.com/apk/res-auto"
-
- xmlns:tools="http://schemas.android.com/tools"
-
- android:layout_width="match_parent"
-
- android:layout_height="match_parent"
-
- tools:context=".MainActivity">
-
- <FrameLayout
-
- android:id="@+id/container_fragment"
-
- android:layout_width="match_parent"
-
- android:layout_height="match_parent"
-
- android:layout_alignParentTop="true"
-
- android:layout_alignParentBottom="true"
-
- android:layout_marginStart="0dp"
-
- android:layout_marginTop="0dp"
-
- android:layout_marginEnd="0dp"
-
- android:layout_marginBottom="0dp">
-
- </FrameLayout>
-
- <com.google.android.material.bottomnavigation.BottomNavigationView
-
- android:id="@+id/nav_view"
-
- android:layout_width="0dp"
-
- android:layout_height="wrap_content"
-
- android:layout_marginStart="0dp"
-
- android:layout_marginEnd="0dp"
-
- android:background="@color/colorPrimaryDark"
-
- app:layout_constraintBottom_toBottomOf="parent"
-
- app:layout_constraintLeft_toLeftOf="parent"
-
- app:layout_constraintRight_toRightOf="parent"
-
- app:menu="@menu/bottom_nav_menu" />
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:background="@color/white">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-A FrameLayout is used to serve as a container for the different fragments.
-* **Note: An error for app:menu=”@menu/bottom_nav_menu" is seen.This is because it does not exist. To solve this, click Alt+Enter and select on “Create resource file for bottom_nav_menu.xml“**
+A NavHost is an empty container used to display destinations from the navigation graph
+
+**Note: An error for app:menu="@menu/bottom_nav_menu" is seen.This is because it does not exist. To solve this, click Alt+Enter and select "Create resource file for bottom_nav_menu.xml"**
+
 
 ![Create a resource file](/engineering-education/bottom-navigation-bar-in-android/createmenu.jpg)
 
@@ -138,8 +231,19 @@ This menu will pop up.
 Select *OK*.
 The error is fixed.
 
+### Step 4 -Creating A Fragment.
+A **Fragment** is a sub-activity.
 
-#### Step 3 - Adding Details and Icons to the Bottom Navigation Bar.
+Fragments are used to simplify the reuse of components and logic in different layouts.
+
+First, navigate to the java directory and right-click. Select *New*, Click on *Fragment*, and select *Fragment(Blank)*.
+
+Name the Fragment and select *Finish.*
+
+
+That simple.
+
+### Step 5 - Adding Details and Icons to the Bottom Navigation View
 First, let us add the icons required.
 
 In the `res/drawable` directory, right-click on the `drawable` folder. Select *new* and then select **Vector Asset**.
@@ -164,7 +268,6 @@ One can search for a clipart in the search bar and can also choose whether the d
 
 We will use the outlined design.
 
-
 ![Favorites](/engineering-education/bottom-navigation-bar-in-android/favorites.jpg)
 
 Once a clipart is selected, select on *OK* then *Next*, and finally *Finish.*
@@ -173,213 +276,60 @@ We have created an icon.
 
 Next,open the menu file in `res/menu/ bottom_navigation_menu`
 Add the following lines of code:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
- <item
-
- android:id="@+id/home"
-
- android:enabled="true"
-
- android:icon="@drawable/ic_outline_home_24"
-
- android:title="Home"/>
-
- <item
-
- android:id="@+id/favourites"
-
- android:enabled="true"
-
- android:icon="@drawable/ic_baseline_favorite_border_24"
-
- android:title="Favorites"/>
-
- <item
-
- android:id="@+id/search"
-
- android:enabled="true"
-
- android:icon="@drawable/ic_outline_search_24"
-
- android:title="Search"/>
-
- <item
-
- android:id="@+id/person"
-
- android:enabled="true"
-
- android:icon="@drawable/ic_baseline_person_outline_24"
-
- android:title="Profile"/>
-
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_outline_search_24"
+        android:title="@string/title_search" />
+    <item
+        android:id="@+id/navigation_favourites"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
+        android:title="@string/title_favourites" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_baseline_perm_identity_24"
+        android:title="@string/title_profile" />
 </menu>
+
 ```
-The **menu** file serves as a container for menu items. **Item** represents a single item on the menu. Each item has an icon and a title.
+The **menu** file serves as a container for menu items. **Item** represents one item on the menu. Each item has a title and an icon.
 
-#### Step 4 – Let's Code.
-
+#### Step 6 - Let's Code.
 In our  `MainActivity.java` add the following lines of code:
-First, we will initialize the Bottom Navigation Bar.
+First, we will initialize the Bottom Navigation view in the Activity's `onCreate` Method
 
 ```java
-//Initialize Bottom Navigation Bar
+//Initialize Bottom Navigation View
 
-BottomNavigationView bottomNavigationView;
-
-@Override
-
-protected void onCreate(Bundle savedInstanceState) {
-
- super.onCreate(savedInstanceState);
-
- setContentView(R.layout.activity_main);
-
- bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
-
-}
+BottomNavigationView navView = findViewById(R.id.bottomNav_view);
 ```
-Next, we will set an `OnNavigationItemSelectedListener` which will be called when a menu item in the Bottom Navigation Bar is selected.
+
+Next, we will initialize an AppBarConfiguration object which is used to manage the behavior of the icons in the Navigation View.
 
 ```java
-public class MainActivity extends AppCompatActivity {
-
- //Initialize Bottom Navigation Bar
-
- BottomNavigationView bottomNavigationView;
-
- private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-
- = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
- @Override
-
- public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
- return false;
-
- }
-
- };
-
- @Override
-
- protected void onCreate(Bundle savedInstanceState) {
-
- super.onCreate(savedInstanceState);
-
- setContentView(R.layout.activity_main);
-
- bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_view);
-
- //Set onNavigationItemListener
-
- bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
- }
-
-}
+AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder
 ```
-**Note: The error displayed on `=new BottomNavigationView.OnNavigationItemSelectedListener()` requires one to implement the methods required.This can is done by pressing Alt+Enter.**
-
-In the `onNavigationItemSelected` method, we will configure the click events which will enable us to open the assigned view.
+Next, we will pass the ID of the different destinations in the Bottom Navigation View.
+```java
+  R.id.navigation_home, R.id.navigation_favourites, R.id.navigation_profile, R.id.navigation_search )
+        .build();
+```
+Then set up the NavController and link it with the Bottom Navigation View.
 
 ```java
-@Override
-
-public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
- switch (item.getItemId()) {
-
- case R.id.home:
-
- Home home = new Home();
-
- ft.replace(R.id.container_fragment, home);
-
- ft.commit();
-
- return true;
-
- case R.id.profile:
-
- Profile profile = new Profile();
-
- ft.replace(R.id.container_fragment,profile);
-
- ft.commit();
-
- return true;
-
- case R.id.search:
-
- Search search = new Search();
-
- ft.replace(R.id.container_fragment, search);
-
- ft.commit();
-
- return true;
-
- case R.id.favourites:
-
- Favourites favourites = new Favourites();
-
- ft.replace(R.id.container_fragment, favourites);
-
- ft.commit();
-
- return true;
-
- }
-
- return false;
-
-}
-```
-#### Step-5 Creating A Fragment.
-A fragment is a sub-activity.
-Fragments are used in bottom navigation bars to simplify the reuse of components and logic in different layouts.
-First, navigate to the `java` package and right-click. Select *new* and navigate to **Fragment** and select **Fragment(Blank)**.
-Name the Fragment and select *finish*.
-
-![Home Fragment](/engineering-education/bottom-navigation-bar-in-android/fragment.jpg)
-
-That simple.
-
-Let us navigate back to `MainActivity.java`.The fragments have now been added.
-
-Next, we will add a FragmentManager and a FragmentTransaction which will manage the fragment transactions. We will then make the Home fragment to be the default fragment.
-
-In our `onCreate` method add the following lines of code:
-
-```java
-//Add FragmentManager & FragmentTransaction.
-
-FragmentManager fragmentManager = getSupportFragmentManager();
-
-FragmentTransaction ft = fragmentManager.beginTransaction();
-
-//Make Home the default fragment
-
-Home home = new Home();
-
-ft.replace(R.id.container_fragment, home);
-
-ft.commit();
+//Initialize NavController.
+NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+NavigationUI.setupWithNavController(navView, navController);
 ```
 
-Lastly, add the following lines of code at the beginning of the `onNavigationItemSelected` method.
-
-```java
-FragmentManager fragmentManager = getSupportFragmentManager();
-
-FragmentTransaction ft = fragmentManager.beginTransaction();
-```
 We are done!
 
 Let’s run the app.
@@ -391,13 +341,12 @@ Let’s run the app.
 
 ![Search](/engineering-education/bottom-navigation-bar-in-android/search.jpg)
 
-
 ![Profile](/engineering-education/bottom-navigation-bar-in-android/profile.jpg)
 
 
 Access the Source code [here](https://github.com/BrianaNzivu/BottomNavigationBar).
 
-Download the Sample Application [here] (https://drive.google.com/file/d/1qeb3z7RfXaMfMl9I4AhQQYDrbhmem2n0/view?usp=sharing).
+Download the Sample Application [here] (https://drive.google.com/file/d/1UwooVA1SwVelfnnbxm6_ftXWAtX4Te9_/view?usp=sharing).
 
 
 
