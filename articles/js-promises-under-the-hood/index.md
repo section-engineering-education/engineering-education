@@ -1,31 +1,17 @@
-# How Promises in Javascript Work Under the Hood.
+# What Happens When JavaScript Runs My Code?
 
 ### Introduction
 JavaScript is a single-threaded language (one executing command at a time). And, it has a Synchronous model of execution (each line executes in the order in which the code appears).
 
-So, what happens if we have to wait a while before we can execute some code bits? Maybe, we have to wait for data from a GET request, or for a set timer to complete, after which we execute our code.
-
-Such scenarios introduce a challenge. A dilemma. Between having to postpone the execution of some code. And, not wanting to prevent the thread from executing the rest of the code while we wait.
-
-Asynchronous JavaScript solves this exact challenge!
-
-This guide’s goal is to help you understand JavaScript Promises. An implementation of Asynchronous JavaScript.
-
-At the very end, you should be able to understand:
-
-1. Why such scenarios introduce a challenge.
-2. How JavaScript promises overcome the challenge.
-3. How JavaScript implements promises under the hood.
-
-
+In this guide, you get to see what happens as the JavaScript engine threads down your code line by line.
 
 ## Prerequisites
 
 Before you begin this guide you'll need the following:
 
-- A basic understanding of JavaScript
+- A basic understanding of JavaScript Functions
 
-## Step 1 — What Happens When Javascript Executes (Runs) My Code?
+## Step 1 — What Happens When JavaScript Executes (Runs) My Code?
 
 ```JavaScript 
 1. const num = 3;
@@ -35,141 +21,125 @@ Before you begin this guide you'll need the following:
 5.     }
 6. const name = "Will"
 ```
- 
 
-In this step, we will walk through the above lines of code like the JavaScript engine would.
+In this step, you will walk through the above lines of code like the JavaScript engine would.
 
 Why?
-To understand what happens when we run the code.
+To understand what happens when you execute the code above.
 
-First, you need to note that there are two halves to the process of executing code.
+First, as soon as you start executing(running) your code, there are two halves to that process:
 
-One is the ability to walk through the code line by line by line, top to bottom. Known as The **Thread of Execution**.
+1. One, the ability to go through your code line by line, top to bottom. Referred to as the **Thread Of Execution**.
+2. Two, the storage of the bits of data that you announce as you go through your code's execution in live **Memory**. Referred to as the **Variable Environment**.
 
-The other part is, a place to store the bits of data that we announce as we go through our code's execution. This place is our computers **Memory**.
+Together, known as an **Execution Context**. Where a context is a space to do something. In this case, it is a space where you execute code, hence an execution context.
 
-In line 1, you are saying, save in memory a constant, **num**, as the label for an integer, **3**.
+There are two types of Execution contexts:
 
-In line 2, you meet a JavaScript keyword [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions). The function keyword means, go save in memory **multiplyBy2**, as the label for the functionality of the function, `multiplyBy2()`.
+1. Global Execution Context.
+2. Local Execution Context.
+
+Below is an illustration of your Global Execution Context before code execution.
+
+![Global Execution Context before you execute js code](global_execution_context_before_executing_js_code.jpg)
+
+With that understanding, you can now walk through your code line by line, top to bottom like the JavaSctip engine would.
+
+For each line, there will be a visual representation of what the Global Execution Context looks like at that moment.
+
+Line 1: Save in memory a constant, **num**, as the label for an integer, **3**.
+
+![Global Execution Context when line one is executed](step_one_line_one.jpg)
+
+Line 2: You meet a JavaScript keyword [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions). The function keyword means, save in memory **multiplyBy2**, as the label for the functionality of the function, `multiplyBy2()` (denoted as -f- in the image).
+
+This process is also known as **defining/declaring** a function.
+
+![Global Execution Context when line two is executed](step_one_line_two.jpg)
 
 At this point, if you were to run:
 ```JavaScript
 console.log(multiplyBy2)
 ```
-You would see the actual source code for the funtion!
+The source code for `multiplyBy2()` is what you would see.
 
-From there, you would move on to line 6 and not line 3. But wait, why not line 3 if, in JavaScript, each line executes in the order that the code appears?
+From line 2, you would then move on to line 6 and not line 3. But why not move on to line 3 if, in JavaScript, each line executes in the order that the code appears, top to bottom?
 
-This is because in JavaScript we **do not** go into the body of a function until it executes. And our function `multiplyBy2()` does not execute.
+This is because in JavaScript you **do not** go into the body of a function until it is called. And our function `multiplyBy2()` in this case, is defined, but never called.
 
-Inline 6, the same thing as line 2 happens. A constant, **name**, is saved to memory as the label for a string, **"Will"**.
+Line 6: Save in memory a constant, **name**, as the label for a string, **"Will"**.
 
-And so, to recap, as soon as we start executing(running) our code, we have two halves of that process:
+![Global Execution Context when line six is executed](step_one_line_six.jpg)
 
-1. One, the ability to go through our code line by line. That's our **Thread Of Execution**.
-2. Two, a live memory to store our labels and associated data. Another term for that is a **Variable Environment**.
+For the entire Step 1, you stayed in the Global Execution Context. Why? Because you did not call (execute/run/invoke) `multiplyBy2()`.
 
-These two halves together are known as an **Execution Context**, where a context is a space to do something. In this case, it is a space where we execute code, hence an execution context.
+In the next step, you will get to see when a Local Execution Context is created and what exactly happens under the hood when during that process.
 
-And it is a **Global Execution Context**. You are going to discover, a little later, when you run the code inside of a function, you create a **Local Execution Context**.  The Local Execution context is for running the code inside the function.
+## Step 2 — What Happens When a Function Is Called/Executed in JavaScript?
 
-So, for the entire Step 1, we stayed in the global execution context. Why? Because we did not call (execute/run/invoke) `multiplyBy2()`. We only declared (defined/stored in memory) the label 'multiplyBy2', that points to the functionality of `multiplyBy2()`.
-
-In the next step, you will get to see how a local execution context comes into play when you call the function `multiplyBy2()`.
-
-## Step 2 — Title Case
-
-Another introduction
-
-Your content
-
-Transition to the next step.
-
-## Step 3 — Title Case
-
-Another introduction
-
-Your content
-
-Transition to the next step.
-
-## Conclusion
-
-In this article you [configured/set up/built/deployed] [something]. Now you can....
-
-<!-- Speak  to reader benefits of this technique or procedure and optionally provide places for further exploration. -->
-
-
-
-<!-- Some examples of how to mark up various things
-
-This is _italics_ and this is **bold**.
-
-Only use italics and bold for specific things. Learn more at https://do.co/style#bold-and-italics
-
-This is `inline code`. Use it for referencing package names and commands.
-
-Here's a command someone types in the Terminal:
-
-```command
-sudo nano /etc/nginx/sites-available/default
+```JavaScript
+1. const num = 3;
+2. function multiplyBy2 (inputNumber){
+3.     const result = inputNumber*2;
+4.     return result;
+5.     }
+6. const output = multiplyBy2(4);
 ```
 
-Here's a configuration file. The label on the first line lets you clearly state the file that's being shown or modified:
+As you execute functions, you will switch Execution Contexts. From Global to Local, and back to Global.
 
-```nginx
-[label /etc/nginx/sites-available/default]
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
+This switching of Execution Contexts raises, in JavaScript, an issue of tracking where one is in their Thread Of Execution.
 
-    root <^>/usr/share/nginx/html<^>;
-    index index.html index.htm;
+To keep track of this JavaScript uses a [**Call Stack**](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack).
 
-    server_name localhost;
+And so now, you have a third element to the execution of your JavaScript code. The image below illustrates the three elements before any code is executed.
 
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-```
+![Call Stack illustration](call_stack_intro.jpg)
 
-Here's output from a command:
+Having understood that, you now get to see exactly how the call stack comes into play here.
 
-```
-[secondary_label Output]
-Could not connect to Redis at 127.0.0.1:6379: Connection refused
-```
+Line 1: Save in memory a constant, **num**, as the label for an integer, **3**.
 
-Learn about formatting commands and terminal output at https://do.co/style#code
+Line 2: Save in memory **multiplyBy2**, as the label for the functionality of the function, `multiplyBy2()`.
 
-Key presses should be written in ALLCAPS with in-line code formatting: `ENTER`.
+Line 6: Save in memory a constant, **output**, as the label for whatever the result of the function  `multiplyBy2()` returns after executing.
 
-Use a plus symbol (+) if keys need to be pressed simultaneously: `CTRL+C`.
+At this point, you call/execute  `multiplyBy2()`.
 
-This is a <^>variable<^>.
+This adds `multiplyBy2()` to the call stack. And creates a Local Execution Context for the execution of the code inside  `multiplyBy2()`.As illustrated in the image below.
 
-This is an `<^>in-line code variable<^>`
+![Add multiplyBy2() to call stack](call_stack_add_multiplyBy2.jpg)
 
-Learn more about how to use variables to highlight important items at https://do.co/style#variables
+Once inside the Local Execution Context, you carry on with the two parts of an Execution context.
 
-Use `<^>your_server_ip<^>` when referencing the IP of the server.  Use `111.111.111.111` and `222.222.222.222` if you need other IP addresses in examples.
+The code executed in this case is the body of `multiplyBy2()`. Since, in JavaScript, you go into the body of a function when it is called.
 
-Learn more about host names and domains at https://do.co/style#users-hostnames-and-domains
+Line 3: Save in memory a constant, **result**, as the label for the product of the argument **inputNumber** and an integer **2**, an integer, **8**.
 
-<$>[note]
-**Note:** This is a note.
-<$>
+Line 4: The [**return**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) keyword then ends function execution and specifies a value to be returned to the function caller.
 
-<$>[warning]
-**Warning:** This is a warning.
-<$>
+![Local Execution Context](local_execution_context.jpg)
 
-Learn more about notes at https://do.co/style#notes-and-warnings
+You then return to the Global Execution Context. A few things happen when you do:
 
-Screenshots should be in PNG format and hosted on imgur. Embed them in the article using the following format:
+1. JavaScript [**Garbage Collects**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management) the Local Execution Context's Variable Environment (Memory).
+2. The Call Stack is cleared.
+3. The return value is assigned to the constant **output**.
 
-![Alt text for screen readers](/path/to/img.png)
+The image below illustrates the Global Execution Context after all this is done.
 
-Learn more about images at https://do.co/style#images-and-other-assets
--->
+![After Garbage Collection](after_garbage_collection.jpg)
+
+Once all the lines of code are executed. JavaScript garbage collects the Global Execution Context's Variable Environment (Memory). Bringing you back to where you started as illustrated below.
+
+
+![Global Execution Context after you execute js code](global_execution_context_after_executing_js_code.jpg)
+
+And so now you have the full circle of what happens under the hood when you execute JavaScript Code.
+
+I encourage you to go to the links I attached above on [**MDN**](https://developer.mozilla.org/en-US/) and read more on the various topics.
+
+Citations & Resources
+
+[Frontend Masters - JavaScript: The New Hard Parts](https://frontendmasters.com/courses/javascript-new-hard-parts/)
+[MDN Web Docs](https://developer.mozilla.org/en-US/)
