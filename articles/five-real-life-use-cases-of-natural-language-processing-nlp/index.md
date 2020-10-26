@@ -62,7 +62,7 @@ Users that are using chatbots may not realize that they are not chatting with a 
 With [chatbots](https://chatbotslife.com/best-nlp-chatbot-platform-d3d80f441078) becoming more content-sensitive and adequate in personalizing users' experiences, businesses will reap the benefits of an automated 24/7/365 customer support service. In addition, chatbots are acting as virtual assistants being able to respond to any customer complaint.
 
 #### Search Autocorrect and Autocomplete
-Another critical application of NLP is the autocomplete function. If you start your search on Google, you get many predictions of what you may be interested in (searching) based on the initial few words or characters you entered.
+Another critical application of NLP is the autocomplete function. If you start your search query on Google, you'll get many predictions of what you may be interested in (searching) based on the initial few words or characters you entered.
 
 ![Google Autocomplete and Autocorrect](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/google-autocomplete-and-autocorrect.png)
 
