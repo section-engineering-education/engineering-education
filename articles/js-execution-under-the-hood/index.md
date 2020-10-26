@@ -13,7 +13,7 @@ Before you begin this guide you'll need the following:
 
 ## Step 1 — What Happens When JavaScript Executes My Code?
 
-```JavaScript 
+```javascript 
 1. const num = 3;
 2. function multiplyBy2 (inputNumber){
 3.     const result = inputNumber*2;
@@ -57,7 +57,7 @@ This process is also known as **defining/declaring** a function.
 ![Global Execution Context when line two is executed](step_one_line_two.jpg)
 
 At this point, if you were to run:
-```JavaScript
+```javascript
 console.log(multiplyBy2.toString());
 ```
 You would the source code for `multiplyBy2()`.
@@ -84,7 +84,7 @@ In the next step, you will get to see when a Local Execution Context is created 
 
 ## Step 2 — What Happens When a Function Is Called in JavaScript?
 
-```JavaScript
+```javascript
 1. const num = 3;
 2. function multiplyBy2 (inputNumber){
 3.     const result = inputNumber*2;
