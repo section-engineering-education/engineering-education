@@ -1,4 +1,22 @@
-Language as a method of communication helps people write, read, and speak. Individuals make plans and decisions in natural language, particularly in words. But the current artificial intelligence era is very determined to establish if individuals can communicate similarly with computers. To ensure that human beings communicate with computers in their natural language, computer scientists have developed natural language processing (NLP) applications. For computers to understand the unstructured and often ambiguous human speech, they require NLP applications&#39; input.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/
+title:
+description: This article will go over the two most commonly used data visualizations tools, Tableau and Power BI.
+author: eric-kahuha
+date: 2020-10-25T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/hero.jpg
+    alt: tableau power bi example image
+---
+Language as a method of communication helps people write, read, and speak. Individuals make plans and decisions in natural language, particularly in words. But the current artificial intelligence era is very determined to establish if individuals can communicate similarly with computers.
+<!--more-->
+To ensure that human beings communicate with computers in their natural language, computer scientists have developed natural language processing (NLP) applications. For computers to understand the unstructured and often ambiguous human speech, they require NLP applications&#39; input.
 
 ### Understanding Natural Language Processing
 
