@@ -4,7 +4,7 @@ description: Most times machine learning engineers build models and will need to
 ### Prototyping Machine learning models with Streamlit
 
 
-![Simple](/engineering-education/prototyping-machine-learning-models-with-streamlit/hero.jpg)
+![Simple](https://github.com/jamessandy/engineering-education/blob/new-article/articles/prototyping-machine-learning-models-with-streamlit/hero.jpg)
 
 As Machine learning Engineers or Data scientist, you are used to building cool machine learning models but you are probably not familiar with building mobile or web apps, or the thought of building an application to serve your model is stressful because of the whole process of building either a web or mobile app so you just leave your model(s) on your notebook without using the weights. Streamlit is a platform that can help you prototype your model(s) in a few lines of code with less stress.
 #### Tabel of Content
@@ -38,7 +38,7 @@ Streamlit run app.py
 #### Building Sentiment Analyzer
 Now for this introductory tutorial, we will be building a sentiment analyzer model and prototype it with streamlit. The first step will be getting a Dataset, and the dataset we will be using can be found HERE, next let’s create a directory and create a virtual environment.
 
-``python
+```python
 $ mkdir textanalyzer
 $ cd textanalyzer
 ```
