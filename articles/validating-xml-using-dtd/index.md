@@ -57,7 +57,7 @@ The rise of the World Wide Web in 1989 by [Sir Timothy Berners Lee](https://en.w
 
 The root of web development is HTML. However, when converting the data to HTML, there are high chances of losing our information. The information needs to be exchanged without loss, which led to the rise of XML.
 
-[XML (eXtensible Markup Language)](https://en.wikipedia.org/wiki/XML) is a simple and flexible markup language that can enable data serialization by sharing information between two data serialization formats, to describe the contents better. Initially, XML was used to describe the contents, but later it is being used for the exchange of data. It improves on the existing HTML approach and helps in communication among other data serialization types.
+[XML (eXtensible Markup Language)](https://en.wikipedia.org/wiki/XML) is a simple and flexible markup language that can enable data serialization by exchanging information between two data serialization formats, to describe the contents better. Initially, XML was used to describe the contents, but later it is being used for the exchange of data. It improves on the existing HTML approach and helps in communication among other data serialization types.
 
 [Document Object Model (DOM)](https://en.wikipedia.org/wiki/Document_Object_Model) is used to create a tree-like structure of a well-formed XML document. DOM facilitates the adding of objects to the tree structure to access and manipulate XML documents. More about DOM can be learned in this Section article ['Understanding Document Object Model (DOM)'](https://www.section.io/engineering-education/document-object-model/).
 
@@ -67,7 +67,7 @@ Creating XML documents was much easier, but sometimes it leads to frequent error
 [Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) is a markup language rulebook that defines what markup elements can be used to describe a document. The creation of user-defined tags in XML was much simpler, so the user has to specify the required tag in DTD, for validation. It defines and checks the structure of the elements and attributes used for each element in the XML document.
 
 ### Need for XML validation
-Browsers like Internet Explorer contain built-in XML parsers, which checks if the document is **well-formed**, and if it **validates the parser**. A document is said to be well-formed if it follows the basic syntactic rules of XML. And, a document is valid if it checks for the rules mentioned by DTD for the particular XML. For validation, there are various online automated validators like [this](https://codebeautify.org/xmlvalidator). Alternatively, there are extensions in text editors like VSCode with built-in validation.
+Browsers like Internet Explorer contain built-in XML parsers, which checks if the document is **well-formed**, and if it **validates the parser**. A document is well-formed if it follows the basic syntactic rules of XML. And, a document is valid if it checks for the rules mentioned by DTD for the particular XML. For validation, there are various online automated validators like [this](https://codebeautify.org/xmlvalidator). Alternatively, there are extensions in text editors like VSCode with built-in validation.
 
 ### Step by Step guide for validation
 Now, let's see how to build a sample XML document and how validation is done using DTD.
