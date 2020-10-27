@@ -4,6 +4,7 @@ status: publish
 published: true
 url: /engineering-education/python-database-programming-sqlite/
 title: Python Database Programming - SQLite
+<<<<<<< HEAD
 description: In this tutorial we will learn how to use the Python SQLite library, how to interact with it, and execute queries within a Python application.
 author: ahmad-mardeni
 date: 2020-10-15T00:00:00-14:00
@@ -33,6 +34,29 @@ You are ready to go, Let's get started!
 
 #### In this tutorial, you’ll learn how to:
 - **Install** SQLite.
+=======
+description:
+author:
+date: 2020-10-13T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/python-database-programming-sqlite/hero.jpg
+    alt:
+---
+SQLite is an open-source and simple database engine that allows you to create a relational database and interact with it, In general, it is very lightweight and can be used within almost all programming languages including Python.
+<!--more-->
+
+### Why SQLite?
+- Scalability
+- Concurrency
+- Centralization
+- Control
+
+#### In this tutorial, you’ll learn how to:
+- **Install** SQLite and how to get started.
+>>>>>>> minor edits for flow
 - **Connect** SQLite with Python.
 - **Creating** tables.
 - **Perform** common database queries with Python application.
@@ -49,6 +73,11 @@ for **Linux** users you can use:
 ```bash
 sudo apt-get install sqlite
 ```
+<<<<<<< HEAD
+=======
+
+In this tutorial, we will use **DB Browser for SQLite**, you can download it from [here](https://sqlitebrowser.org/dl/)
+>>>>>>> minor edits for flow
 
 
 ### Connect to a Database
@@ -84,15 +113,27 @@ cur.execute(Create_Students_Table)
 A database cursor is a control structure that is used to execute statements in order to communicate with the SQLite database and fetch data from it.
 
 **Now let's take a look at how our database looks like**
+<<<<<<< HEAD
 
 Open the **DB Browser for SQLite** then click on open database, after choosing our file `database.db` you will see what tables it contains.
 
 ![](/engineering-education/python-database-programming-sqlite/first-pic.jpg)
+=======
+
+Open the **DB Browser for SQLite** then click on open database, after choosing our file `database.db` you will see what tables it contains.
+>>>>>>> minor edits for flow
 
 ### Database Queries
 #### INSERT
 To insert records into your SQLite database. you need to store your **INSERT INTO** query in a string. After that, you can pass the query string to the execute.
 
+<<<<<<< HEAD
+=======
+### Database Queries
+#### INSERT
+To insert records into your SQLite database. you need to store your **INSERT INTO** query in a string. After that, you can pass the query string to the execute.
+
+>>>>>>> minor edits for flow
 Let’s insert three records into the **Students** table:
 
 ```python
@@ -123,7 +164,10 @@ The result will be:
 ```python
 [(1, 'Ahmad', 20), (2, 'James', 22), (3, 'Eva', 19)]
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> minor edits for flow
 Treat the cursor as an iterator:
 
 ```python
@@ -160,7 +204,11 @@ The result will be:
 [('James',), ('Ahmad',)]
 ```
 
+<<<<<<< HEAD
 In that example, we are searching for names in table **students** where the **ID** is less than 3, and we used **ASC** to sort the column in ascending order(from the lowest value to the highest one).
+=======
+In that example, we are searching for names in table **students** where the **ID** is less than 3, and we used **ASC** to sort the column in ascending order(from the lowest value to the highest one)
+>>>>>>> minor edits for flow
 
 Also, you can use **DESC** to sort the column in descending order(from the highest value to the lowest one).
 
@@ -212,10 +260,18 @@ Then we have to close the connection to the database by using:
 connection.close()
 ```
 
+<<<<<<< HEAD
 When the connection is closed then any transaction will consider as un-committed changes and in the next connection to the database, a ROLLBACK will happen, which means that the database will return to the last state before the last commit.
+=======
+When the connection is closed then a ROLLBACK will happen in the next connection to the database to any outstanding transaction. (The ROLLBACK statement cancels transaction that did any changes to the database).
+>>>>>>> minor edits for flow
 
 That means you have to pay attention when starting the transactions and committing them at appropriate points without worrying about closing the connection.
 
 ### Conclusion
 In this tutorial, you’ve learned how to use Python SQLite library, how to interact with it, and execute queries within a python application.
+<<<<<<< HEAD
 However, this is just the tip of the iceberg! In the future, you’ll learn more about SQLite library as an advanced tutorial in our [Languages](/engineering-education/topic/languages/) section.
+=======
+However, this is just the tip of the iceberg! In the future, You’ll learn more about SQLite library as an advanced tutorial in our [Languages](/engineering-education/topic/languages/) section.
+>>>>>>> minor edits for flow
