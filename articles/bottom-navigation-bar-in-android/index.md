@@ -53,24 +53,18 @@ A  Navigation component consists of the following:
 * [Dependency](https://developer.android.com/studio/build/dependencies) - a statement SDK that allows us to add an external library into our projects.
 * [Fragment](https://developer.android.com/reference/android/app/Fragment) - a fragment is a sub-activity which enables more modular activity design.
 * [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started) - a resource file that contains information used for navigation.
-* [Navigation Graph](https://developer.android.com/guide/navigation/navigation-getting-started#create-nav-graph) - a resource file that contains information used for navigation.
+* [Navigation Graph](https://developer.android.com/guide/navigation/navigation-getting-started#create-nav-graph) - a resource file that contains all the destinations in an application together with the actions and logical connections required for navigation.
 * [NavHost](https://developer.android.com/reference/androidx/navigation/NavHost) - an empty container used to display destinations contained in the navigation graph.
 * [NavController](https://developer.android.com/reference/androidx/navigation/NavController) - an object within the `NavHost` which manages navigation.
 
 
 ### Prerequisites
 * [Android Studio](https://developer.android.com/studio) installed.
+* Have basic knowledge of creating Android applications.
+* Have basic knowledge and understanding of Java programming language and XML.
 
 #### Step 1 – Create a new Project.
-* Open Android Studio. Select *Start a new Android Studio project* and click *next*.
-
-![Start a new Android Studio project](/engineering-education/bottom-navigation-bar-in-android/start.jpg)
-
-Select *Empty Activity* and click *next*.
-
-![Select Empty Activity](/engineering-education/bottom-navigation-bar-in-android/empty.jpg)
-
-We will name the project **BottomNavigationBar**. Click *Finish* and wait for the project to build.
+*  Open Android Studio. Select *Start a new Android Studio project* with an Empty Activity.We will name the project **BottomNavigationBar**. Click Finish and wait for the project to build.
 
 ![Name the project](/engineering-education/bottom-navigation-bar-in-android/name.jpg)
 
@@ -86,8 +80,8 @@ dependencies {
 ```
 Select *Sync Now*.
 
-Right-click the `res` directory, click `New` and select `Android Resource File`. A menu will pop up.
-
+Right-click the `res` directory, click New → Android Resource File.
+A menu will pop up.
 ![NavGraph Menu](/engineering-education/bottom-navigation-bar-in-android/navgraph.jpg)
 
 We will name our resource file **nav_graph.**. For the Resource Type, select **Navigation** and then click `OK`. Next, we will add the destinations.
@@ -191,11 +185,11 @@ This menu will pop up.
 Select *OK* and the error is fixed.
 
 ### Step 4 -Creating A Fragment.
-A **Fragment** is a sub-activity. Fragments are used to simplify the reuse of components and logic in different layouts. First, navigate to the java directory and right-click. Select *New*. Click *Fragment* and select *Fragment(Blank)*. Name the Fragment and select *Finish*.
+A **Fragment** is a sub-activity. Fragments are used to simplify the reuse of components and logic in different layouts. First, navigate to the java directory and right-click. Select New → Fragment →  Fragment(Blank). Name the Fragment and select Finish.
 
 
 ### Step 5 - Adding Details and Icons to the Bottom Navigation View
-First, let us add the icons required. In the `res/drawable` directory, right-click the `drawable` folder. Select *new* and then select **Vector Asset**.
+First, let us add the icons required. In the `res/drawable` directory, right-click the `drawable` folder. Select new → Vector Asset.
 
 ![Vector Asset](/engineering-education/bottom-navigation-bar-in-android/vector.jpg)
 
@@ -213,7 +207,7 @@ One can search for a clipart in the search bar and choose whether the design of 
 
 ![Favorites](/engineering-education/bottom-navigation-bar-in-android/favorites.jpg)
 
-Once a clipart is selected, click *OK* then *Next* and finally *Finish*. Open the menu file in `res/menu/ bottom_navigation_menu` and add the following lines of code:
+Once a clipart is selected, click OK → Next → Finish. Open the menu file in `res/menu/ bottom_navigation_menu` and add the following lines of code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -273,13 +267,7 @@ NavigationUI.setupWithNavController(navView, navController);
 We are done! Let’s run the app.
 
 
-![Home](/engineering-education/bottom-navigation-bar-in-android/home.jpg)
-
-![Favorites](/engineering-education/bottom-navigation-bar-in-android/favourites.jpg)
-
-![Search](/engineering-education/bottom-navigation-bar-in-android/search.jpg)
-
-![Profile](/engineering-education/bottom-navigation-bar-in-android/profile.jpg)
+![BottomNavigationView](/engineering-education/bottom-navigation-bar-in-android/progress.gif)
 
 
 Access the source code on [Github](https://github.com/BrianaNzivu/BottomNavigationBar).
