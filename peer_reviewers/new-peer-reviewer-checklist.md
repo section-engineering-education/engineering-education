@@ -1,4 +1,4 @@
-### Getting Started
+### Checklist
 - See all open pull requests
 
 ![pull request](/images/pull_requests.png)
