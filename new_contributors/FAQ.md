@@ -33,11 +33,10 @@ The only requirement is that the article has to be at least 750 words, there is 
 **Articles should be a minimum of 750 words.**
 
 ### How does the revision process work?
-All other formats payout will be as follows:
-
-Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
-Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
-Articles with (3+) and up rounds of revisions) we will consider closing the PR
+Article payout will be as follows:
+- Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
+- Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
+- Articles with (3+) and up rounds of revisions) we will consider closing the PR
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
 
