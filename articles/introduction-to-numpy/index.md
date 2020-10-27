@@ -3,18 +3,18 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/introduction-to-numpy/
-title: A Not-So-Gentle Introduction to NumPy
-description:
-author:
+title: A Not so Gentle Introduction to NumPy
+description: This article will go over NumPy (Numerical Python) and how they are a way of describing one or more blocks of computer memory so that the numbers represented can be manipulated.
+author: adithi-giridharan
 date: 2020-10-22T00:00:00-13:00
-topics: [Node.js]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-numpy/hero.jpg
     alt: NumPy example image
 ---
-One of the most fundamental libraries in the Machine Learning and Data Science landscape is unarguably NumPy (which stand for Numerical Python). Its significance has led to many other (similar) libraries like Pandas, SciPy, and Matplotlib (all based on NumPy). Let us delve into the workings and the various functions of the first import line in 99.78% of [Kaggle notebooks](https://www.kaggle.com/docs/notebooks).
+One of the most fundamental libraries in the Machine Learning and Data Science landscape is unarguably NumPy (which stand for Numerical Python). Its significance has led to many other (similar) libraries like Pandas, SciPy, and Matplotlib (all based on NumPy) to be created. Let us delve into the workings and the various functions of the first import line in 99.78% of [Kaggle notebooks](https://www.kaggle.com/docs/notebooks).
 <!--more-->
 ### Introduction
 The Python programming language is the [most versatile language](https://codeinstitute.net/blog/what-are-the-six-most-popular-programming-languages-today) to have ever lived. Yes, lived. Python provides a rich set of high-level data structures, lists for a collection of objects, dictionaries to build hash tables, etc.
@@ -264,4 +264,4 @@ print(time.time() - start)
 ```
 
 ### Conclusion
-NumPy is one of the most fundamental libraries in Machine Learning and Data Science. It is coded in Python and it uses the vectorized form to perform calculations at an incredible speed. It supports various built-in functions that come in handy for a programmer.
+NumPy is one of the most fundamental libraries in Machine Learning and Data Science. It's coded in Python and it uses the vectorized form to perform calculations at an incredible speed. It supports various built-in functions that come in handy for a programmer.
