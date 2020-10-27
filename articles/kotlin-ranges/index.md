@@ -75,7 +75,7 @@ This is not easy to do this in Java. When implemented it will lead to a bunch of
   }
 ```
 
-First, we create a string of characters. Then we convert it to a CharArray, where we are using `forEach`, we will get each of the characters. With Kotlin ranges, this is reduced to only a few lines with fewer requirements.
+First, we create a string of characters and assign `letters` to it. Then we convert `letters` to a CharArray. We then use `forEach` to get each of the characters. With Kotlin ranges, this is reduced to only a few lines with fewer requirements as seen in the replit.
 
 ### 2. To Create Reverse Loops
 It was always a challenge to create a reverse loop as you would interchange values if we did it the old way. This could lead to confusion and it takes time to debug. An example of a reverse loop in Java would be:
