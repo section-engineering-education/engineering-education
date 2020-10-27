@@ -245,3 +245,6 @@ To summarize:
 - https://devopedia.org/data-serialization
 - http://ptgmedia.pearsoncmg.com/images/0130960195/samplechapter/0130960195.pdf
 - https://quzzister.com/essay/what-is-xml-essay-19589
+
+---
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
