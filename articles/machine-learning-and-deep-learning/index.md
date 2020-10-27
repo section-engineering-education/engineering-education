@@ -44,7 +44,9 @@ Machine learning uses Artificial Intelligence (AI) techniques that assist in dec
 
   Unstructured data information is stored as files. Examples include; images, word documents, email files, videos and audio files.
 
-Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying, deciphering, and enciphering keys that are identical, and need to be kept secret. A conventional algorithm maintains secrets in acryptographic environment.
+Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying, deciphering, and enciphering keys that are identical, and need to be kept secret. 
+
+A conventional algorithm maintains secrets in acryptographic environment. Conventional algorithm are also used to regulate algorithms used at undoing histogram modifications and distortions. 
 
 Unlike machine learning, AI can use [unstructured data](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) and still be able to function. Deep learning emulates human intelligence workings.
 Machine learning aids in the detection of objects, language translation, and decision making. Machine learning is also able to recognize speech and make prompt decisions.
@@ -52,14 +54,14 @@ Machine learning aids in the detection of objects, language translation, and dec
 
 ### Deep Learning
 
-Deep learning is a [subset](https://en.wikipedia.org/wiki/Subset) of machine learning. Deep learning uses deep [neural networks](https://www.investopedia.com/terms/n/neuralnetwork.asp#:~:text=A%20neural%20network%20is%20a,organic%20or%20artificial%20in%20nature.) that are built using neural networks. Neural networks can be used for both supervised and unsupervised learning tasks. 
+Deep learning is a [subset](https://en.wikipedia.org/wiki/Subset) of machine learning. Deep learning uses deep [neural networks](https://www.investopedia.com/terms/n/neuralnetwork.asp#:~:text=A%20neural%20network%20is%20a,organic%20or%20artificial%20in%20nature.) that are built using neural networks. Neural networks can be used for both supervised and unsupervised learning tasks. Depending with the task, the algorithm have have to work unsupervised, and vice versa incase there is a supervision required.
 
 Deep learning uses complex algorithms from neural networks. This resemblance is like the layers with neural connections in the human brain.
 The use of structured and unstructured data make deep learning work perfectly as when compared to machine learning.
 
 ### How deep learning works
 
-Deep learning uses algorithms whose functionality is like that of machine learning. [Neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) extract and learn the features during training process.
+Deep learning uses algorithms whose functionality is like that of machine learning. [Neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) extract and learn the features during training process of deep learning.
 
 
 The neurons in the network undertake two tasks. The first includes understanding which feature is optimal for performing a specific task. The second one involves classifying data after many iterations of the learning process.
@@ -110,3 +112,5 @@ https://www.mathworks.com/discovery/deep-learning.html
 https://www.sas.com/en_us/insights/analytics/machine-learning.html
 
 https://searchenterpriseai.techtarget.com/definition/machine-learning-ML
+
+https://www.sciencedirect.com/topics/computer-science/conventional-algorithm
