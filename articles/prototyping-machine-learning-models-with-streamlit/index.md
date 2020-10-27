@@ -1,149 +1,185 @@
-title: Building a python package and publishing on PyPi
-description: This tutorial will give readers a detailed guide on packages in python and how to build one, it will take them through on how to write and structure their code, structure and package it, and finally how to publish it on PyPI for their general python community. It will help developers know how to push as their efficient chunk of codes so other devs can use it too.
+title: Prototyping Machine learning models with streamlit
+description: Most times machine learning engineers build models and will need to build a web or mobile app to prototype their models which is another stress on its own, this tutorial will show readers how to quickly prototype their ML models on web applications easily.
 
-### Building A Python Package And Publishing It on PyPI
-
-![Package](/engineering-education/building-a-python-package-and-publishing-on-pypi/img.jpg)
-
-If you are already building stuff with python you will notice a lot of installing and importing of packages, pythons allow you to reuse code and share your code to save time and energy. So in very simple terms, a  python package is a collection of related modules, it is a module that contains a file name *__init__.py*. Maybe you’ve been wanting to build your own package or just interested in knowing how it is built, this tutorial will give you a walk down.
-
-#### Tabel of Content 
-1. Writing the Code
-2. Adding required files and structuring code 
-3. Packaging
-4. Uploading on PyPI
-5. Conclusion
-
-#### Writing the Code
-The first step to building your package is to write the code that you want to package and for learning purposes, we will be building a package to carry out simple LCM calculations.
-First off, you will need to create a file and name it  *__init__.py* and then write a function that will carry out the LCM  operation. 
+### Prototyping Machine learning models with Streamlit
 
 
-```python
-def cal_lcm(x, y):
+![Simple](/engineering-education/prototyping-machine-learning-models-with-streamlit/hero.jpg)
 
-   # choose the greater number
-   if x > y:
-       greater = x
-   else:
-       greater = y
+As Machine learning Engineers or Data scientist, you are used to building cool machine learning models but you are probably not familiar with building mobile or web apps, or the thought of building an application to serve your model is stressful because of the whole process of building either a web or mobile app so you just leave your model(s) on your notebook without using the weights. Streamlit is a platform that can help you prototype your model(s) in a few lines of code with less stress.
+#### Tabel of Content
+1. Introduction to streamlit
+2. Streamlit setup
+3. Building sentient analyzer
+4. Conclusion 
 
-   while(True):
-       if((greater % x == 0) and (greater % y == 0)):
-           lcm = greater
-           break
-       greater += 1
+#### Introduction to Streamlit
+Streamlit is an Open source python framework that enables developers to demo or prototype their ML models and a lot more on a web application effortlessly, you can simply turn your data science scripts into a website with few lines of code. It saves time, energy, and is also simple to learn, use, and fast too. Now we’ll dive straight into how to install and setup streamlit and then build a text summarizer web app.
 
-   return lcm
-```
-#### Adding required files and structuring code 
-The function above is called *cal_lcm* and it will take in two arguments and calculate for the LCM of both of them. Now the next part will be to create a *README file*, this file will give an explanation of what our package does and also serves as a landing introduction page for our package on Github, so create a file and save it as *README.txt*, then add the following text.
-
-```txt
-This is a simple program that helps you calculate the Lowest common multiple of two numbers
-```
-
-The next step will be to create another file which we will call *CHANGELOG*, the changelog is a file that updates users on what changes are made when a new version of the package is released. So create a file save it as *CHANGELOG.txt* and add the text below 
-
-``txt
- Change log
-
-========
-0.0.0.1 (15/10/2020)
--------------
-- First release
-```
-
-The fourth step, will be adding an open-source license to our package, there are several open source licenses available which you can check out [here](https://opensource.org/licenses) but for this tutorial, we will be using the MIT open source license which you can see [here](https://opensource.org/licenses/MIT), so create a file, save it as *License.txt*  and add the text from the MIT Licenses below
-
-```txt
-Copyright <YEAR> <COPYRIGHT HOLDER>
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
-
-Now to a very important part of building our package which is the *setup.py* file, this is what the tool that publishes our package to PyPI uses to get all the information it needs. Before we proceed let’s rearrange for packaging, create a new folder with any name of your choice and put the *__init__.py* file in the new folder you just created then create a file and save it as *setup.py*, this file will hold all the important information the compiler will need to setup our package and then add the following code
-below:
+##### Streamlit Set up
+The installation is very simple, just run this on your command prompt or terminal
 
 ```python
-import pathlib
-from setuptools import setup, find_packages
-
-HERE = pathlib.Path(__file__).parent
-
-VERSION = '0.0.0.1'
-PACKAGE_NAME = 'findlcm'
-AUTHOR = 'james'
-AUTHOR_EMAIL = 'james@sandy.com'
-URL = 'https://github.com/jamessandy/lcmfinder'
-
-LICENSE = 'MIT'
-DESCRIPTION = 'A package that helps find Lowest common multiple of a number'
-LONG_DESCRIPTION = (HERE / "README.md").read_text()
-LONG_DESC_TYPE = "text/markdown"
-
-INSTALL_REQUIRES = [
-      'numpy',
-      'pandas'
-]
-
-setup(name=PACKAGE_NAME,
-      version=VERSION,
-      description=DESCRIPTION,
-      long_description=LONG_DESCRIPTION,
-      long_description_content_type=LONG_DESC_TYPE,
-      author=AUTHOR,
-      license=LICENSE,
-      author_email=AUTHOR_EMAIL,
-      url=URL,
-      install_requires=INSTALL_REQUIRES,
-      packages=find_packages()
-      )
-
+Pip install streamlit
+Streamlit hello
 ```
-
-The first chunk of code imports all the tools we need to setup our library, the *VERSION* will be the release number for the package, the *PACKAGE NAME* will be a unique name you want to call your package, the *AUTHOR* and *AUTHOR EMAIL* will be your details and finally, the URL can be a site if you have any or maybe your Github Repo. If your package requires other packages to work then you’ll need to indicate them, for example, if you use some other package to write your code you should add them in the *INSTALL_REQUIRES*  because your package depends on them if not it will work but this package doesn’t require any and I intentionally put that in case you’re trying it out with you package idea.
-
-#### Packaging
-Now we are done writing the code, setting up all the needed files, and structuring the codebase. Another important step will be to sign up for an account on pypi.org because that is where we will be hosting our package. After the sign up go to your terminal and pip install twine with the command below
+To import it, use the simple
 
 ```python
-pip install twine
-
+import pandas as pd
+import streamlit as st
+import plotly.express as px
 ```
-The next thing you need to do is to navigate to the directory of your project where the setup.py file is and then run this code
+And to run your streamlit app simply use
 
 ```python
-Python setup.py sdist bdist_wheel
+Streamlit run app.py
 ```
-After running this code you will notice that more directories called *dist*, *build*, and *your_package.egg-info*. The dist is the most important right now because it holds the installation files that we will deploy to PyPI, open the directory and you’ll see two compressed files that are saved with *.tar* extension and also a wheel file.
+#### Building Sentiment Analyzer
+Now for this introductory tutorial, we will be building a sentiment analyzer model and prototype it with streamlit. The first step will be getting a Dataset, and the dataset we will be using can be found HERE, next let’s create a directory and create a virtual environment.
 
-#### Uploading package on PyPI
-
-Next, you will need to make sure that the distribution files that we created are working perfectly well by running the code below.
+``python
+$ mkdir textanalyzer
+$ cd textanalyzer
+```
+Now to create the Virtual environment use the code below
 
 ```python
-twine check dist/*
+$ python3.8 -m venv env
+$ source env/bin/activate
 ```
-Now let’s upload our package to PyPi but before we do that  let’s deploy on a PyPI test domain so we can be sure that everything is okay and to do that use the code below
+Now copy the dataset as it is in the folder and paste it into this textanalyzer directory, now create a file and save it as sentiment_analyzer, this will be where we will be writing our code to build the streamlit app. The next thing will be to import all the packages we will be using for this tutorial.
 
 ```python
-twine upload --repository-url https://test.pypi.org/legacy/dist/*
+import streamlit as st
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import BernoulliNB
+from sklearn.metrics import confusion_matrix
+import numpy as np
+import itertools
+import matplotlib.pyplot as plt
 ```
-
-To try out the test version you just created to test.pypi.com and check out the package, if you’re satisfied with what you see then time to push it to the PyPi itself.
+After that let’s add a header for our web app and a subheader and to do that we simply use the code below
 
 ```python
-Twine upload dist/*
+st.title("Sentiment Analyzer Based On Text Analysis ")
+st.subheader("Paras Patidar - MLAIT")
+st.write('\n\n')
 ```
-Now that’s it for building and deploying our package to you can run pip install <package name> to install it on your computer and can try out this package using the code below
+The next step will be to write a function that will get all the data from our directory and bring them up,
 
 ```python
-print(cal_lcm(4,5))
+@st.cache
+def get_all_data():
+    root = "Datasets/"
+    with open(root + "imdb_labelled.txt", "r") as text_file:
+        data = text_file.read().split('\n')
+         
+    with open(root + "amazon_cells_labelled.txt", "r") as text_file:
+        data += text_file.read().split('\n')
+
+    with open(root + "yelp_labelled.txt", "r") as text_file:
+        data += text_file.read().split('\n')
+
+    return data
+```
+If you notice in the function above the first line is *@st.cache*, this mark tells streamlit that whenever the function is called that there are some certain requirements it should check for and they should be met, now create a variable called all_data which should call the *get_all_data* function we just wrote.
+
+```python
+all_data = get_all_data()
+```
+Next, we create a checkbox using the *st.checkbox* function that will display Show dataset and this checkbox should have the value from the *all_data* variable we created earlier.
+
+```python
+if st.checkbox('Show Dataset'):
+    st.write(all_data)
+```
+Now we write another function that will carry out data preprocessing and to achieve that we use the code below.
+
+```python
+@st.cache
+def preprocessing_data(data):
+    processing_data = []
+    for single_data in data:
+        if len(single_data.split("\t")) == 2 and single_data.split("\t")[1] != "":
+            processing_data.append(single_data.split("\t"))
+
+    return processing_data
+```
+
+Now let’s create another checkbox that will display *show_preprocessed_data* and will get the data from the *all_data* function and pass it through the preprocessing data function we wrote above. 
+```python
+if st.checkbox('Show PreProcessed Dataset'):
+    st.write(preprocessing_data(all_data))
+```
+
+The next step will be writing a function that will split the data and call it *split_data*
+
+```python
+@st.cache
+def split_data(data):
+    total = len(data)
+    training_ratio = 0.75
+    training_data= []
+    evaluation_data = []
+
+    for indice in range(0,total):
+        if indice<total*training_ratio:
+            training_data.append(data[indice])
+        else:
+            evaluation_data.append(data[indice])
+
+    return training_data, evaluation_data
+```
+
+Now we are going to create two functions, one will be *preprocessing_step* that will get the data, preprocess it, and then split it, and the second one will be *training_step* that will receive two parameters and vectorize the training text.
+
+```python
+@st.cache
+def preprocessing_step():
+    data = get_all_data()
+    processing_data = preprocessing_data(data)
+    return split_data(processing_data)
+
+def training_step(data,vectorizer):
+    training_text = [data[0] for data in data]
+    training_result = [data[1] for data in data]
+    training_text = vectorizer.fit_transform(training_text)
+
+    return BernoulliNB().fit(training_text,training_result)
+```
+The next step will be passing the training and evaluation data into the *preprocessing_step* function, choosing a vectorizer( In this case we will be using CountVecotizer), and finally, a classifier variable that will call the *training_step* function and pass in the training_data and vectorizer.
+
+```python
+training_data,evaluation_data = preprocessing_step()
+vectorizer = CountVectorizer(binary='true')
+classifier = training_step(training_data,vectorizer)
+```
+After carrying out the above step the next step will be writing two functions, the first will be *analyze_text* and it will carry out the analysis by taking in the classifier, vectorizer, and text value, and the second function will be called *print_result* and will send a result as positive or negative.
+
+```python
+def analyse_text(classifier,vectorizer,text):
+    return text,classifier.predict(vectorizer.transform([text]))
+
+def print_result(result):
+    text,analysis_result = result
+    print_text = "Positive" if analysis_result[0]=='1' else "Negative"
+    return text,print_text
+```
+Now it’s time for us to continue building the interface, we will simply need an input form, button, and output textbox.
+
+```python
+review = st.text_input("Enter The Review","Write Here...")
+if st.button('Predict Sentiment'):
+    result = print_result(analyse_text(classifier,vectorizer,review))
+    st.success(result[1])
+else:
+    st.write("Press the above button..")
+```
+The codes above use streamlit *st.text_input* to create a text input form that will display “enter the review, write here”, the if *st.button* will create a button that will display “predict sentiment”, after that the variable result calls the *print_result* function and pass in the parameters. If the whole process the st.sucess(result[1) displays the result else it passes an error message asking the user to press the above button. Run your app using the command below.
+
+```python
+streamit run textanalyzer.py
 ```
 #### Conclusion
-Now you’ve tried building a basic package which I’m sure you are proud of, now it’s left for you to go ahead and try out your more complex ideas and build awesome packages to ease your own and the general dev community.
-
-
-
+If you have followed the process carefully you will see how fun and easy it is to prototype your machine learning models with streamlit and save yourself a whole lot of stress. You can explore more advanced examples and maybe take this project forward by deploying it on Heroku or any other platform.
