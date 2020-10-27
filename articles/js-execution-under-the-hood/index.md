@@ -1,4 +1,19 @@
-# What Happens When JavaScript Runs My Code?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/js-execution-under-the-hood
+title: What Happens When JavaScript Runs My Code?
+description: This guide walks you through understanding what happens when the JavaScript engine runs your code.
+author: adrian-murage
+date: 
+topics: 
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/js-execution-under-the-hood/hero.jpg
+    alt: JS execution under the hood
+---
 
 ### Introduction
 JavaScript is a single-threaded language, where only one command executes at a time. And, it has a Synchronous model of execution, where each line executes line by line, top to bottom.
