@@ -31,13 +31,13 @@ In the quest to achieve artificial general intelligence (AGI), transfer learning
 Basic understanding of machine learning and deep learning. For an introduction or refresher on some basic machine learning concepts check out this [article](/engineering-education/supervised-learning-algorithms/). Some machine learning and deep learning concepts are also covered [here](/engineering-education/automated-fake-news-detection/).
 
 ### Useful Terms
-**Pre-trained models** – models trained on a sizeable benchmark dataset to solve a problem similar to a problem one might want to solve.
+**Pre-trained models** – models trained on a sizeable benchmark dataset to solve a problem similar to an already solved problem. We discuss the [applications](#applications-of-transfer-learning) of such models in transfer learning later on.
 
 **Neural network** – a series of algorithms that are modeled on the human brain, to identify underlying relationships in data.
 
 **Artificial general intelligence (AGI)** – hypothetical machine intelligence with the capacity to learn or understand any intellectual task a human being can.
 
-**Domain knowledge** – knowledge about the environment in which a target system operates.
+**Domain knowledge** – knowledge about the environment in which a target system operates. In this context, the environment can be a specific activity or profession. For example, domain knowledge in the medical field describes the knowledge of medical experts. 
 
 **Feature** – an individual measurable property that is being observed. It is an attribute shared by all the independent units on that analysis is to be done.
 
@@ -48,17 +48,19 @@ This makes the machine learning process very tedious. More so in tasks that coul
 
 We can define transfer learning as a machine learning method where a model built for a specific task is reused as a starting point for a model on another task. Transfer learning involves two key concepts; tasks and domains.
 
-A domain consists of feature space and a marginal probability distribution over the feature space. A feature space can be defined as a set of features identified from data. Marginal probability distribution is the marginal probability of a random variable in the presence of more random variables.
+A domain consists of feature space and a marginal probability distribution over the feature space. A feature space can be defined as a set of features identified from data. Marginal probability distribution is the marginal probability of a random variable in the presence of more random variables. Marginal probability refers to the probability of an event in the presence of all outcomes of another random variable. Consider two variables, X and Y. If all the outcomes and probabilities of the variables were put in a table, the marginal probability of X would be the sum of the probabilities of variable Y on the table margin. Given that the probability of X=A for all outcomes of Y, we can describe the marginal probability as "P(X=A) = sum P(X=A, Y=yi) for all y". This is in contrast to a joint probability approach which is concerned with the probability of two simultaneous events. The joint probability of two or more random variables is the joint probability distribution.   
 
 Since we have defined transfer learning, it is important to understand the "why" behind it. Below we explore the motivation or need for transfer learning.
 
 ### Motivation / Need for Transfer Learning
 #### Saving training time
-For complex tasks, it may take a long time to train a neural network from scratch. Access to useful training data may also be limited. The process of obtaining training data is time-consuming. The data has to be collected and prepared. Data preparation involves analyzing data, rectifying irregularities, and finally cleaning the data. Then it can be decided which portions of the data can be used to train the neural network.
+For complex tasks, it may take a long time to train a neural network from scratch. Access to useful training data may also be limited. The process of obtaining training data is time-consuming. 
+
+The data has to be collected and prepared. Data preparation involves analyzing data, rectifying irregularities, and finally cleaning the data. Then it can be decided which portions of the data can be used to train the neural network.
 
 Using a pre-trained model significantly shortens model training time. We only need to tweak the model and we can put the saved time into efficient use.
 
-#### Better NN performance
+#### Better neural network performance
 Deep learning models are often specialized in a specific domain or task. They might offer state-of-the-art performance but only on very particular datasets. This means that, given a similar task to one in which a model offered high performance, the model may perform poorly.
 
 This lack of reusability backs up the value of transfer learning. The use of transfer learning traverses domains and tasks. When dealing with tasks like those they were trained on, pre-trained models ensure performance is satisfactory.
@@ -71,9 +73,9 @@ Furthermore, sometimes domain knowledge is required to build large labeled datas
 Sometimes it may involve collaboration with many domain experts to create high-quality datasets. The use of transfer learning eases the burden on data scientists and makes the machine learning process more efficient.
 
 #### Contribution towards AGI
-To achieve artificial general intelligence, machines will need to learn common sense. The very nature of transfer learning works to achieve some aspect of common sense since.
+To achieve artificial general intelligence, machines will need to learn common sense. The very nature of transfer learning works to achieve some aspect of common sense.
 
-Specifically, the ability to compare different problem scenarios and use previous knowledge to carry out a task is common sense to a human being. Data scientists and researchers believe transfer learning is playing its role in achieving artificial general intelligence.
+Specifically, the ability to compare different problem scenarios and use previous knowledge to carry out a task is common sense to a human being. Data scientists and researchers believe transfer learning is playing its role in achieving artificial general intelligence. It is also worth noting that it is possible to carry out transfer learning in the contexts of supervised, unsupervised, and reinforcement learning. We shall explore this in the next section. 
 
 ### Transfer Learning Strategies and Approaches
 #### Transfer Learning Strategies
@@ -96,20 +98,27 @@ Unsupervised learning algorithms are algorithms whose output relies on finding p
 Unsupervised transfer learning is like inductive transfer learning. The target and source domains are similar but the tasks differ. But, unsupervised transfer learning focuses on unsupervised tasks in the target domain. As we had mentioned above, unsupervised learning has no labeled datasets. Thus, in unsupervised transfer learning, no labeled data is available in both the source and target domains.
 
 ##### Transductive Transfer Learning
-Here we deal with a context that has similar source and target tasks but different domains. The domain of the source boasts of having a lot of labeled data yet the target domain has none. In traditional machine learning, transductive learning defines a situation where all test data is required to be seen at the time of training.
+Here we deal with a context that has similar source and target tasks but different domains. The domain of the source boasts of having a lot of labeled data yet the target domain has none. 
 
-The model cannot be reused for future data. Here, we define transductive learning as a transfer learning setting where some unlabelled data has to be available in the target domain and tasks have to do the same.
+In traditional machine learning, transductive learning defines a situation where all test data is required to be seen at the time of training. This means that when new test data arrives, it must be categorized together with all existing data. In this traditional context, the model cannot be reused for future data. 
+
+Here, we define transductive learning as a transfer learning setting where some unlabelled data has to be available in the target domain and tasks have to do the same. For example, consider a source domain Ds with a learning task Ts and a target domain Dt with a learning task Tt. The goal of transductive transfer learning is to improve the learning of the target predictive function Ft in Dt. This is to be done using knowledge in Ds and Ts. Note that Ds and Dt are not equal. But tasks Ts and Tt are the same. 
+
+As per our example, since the source and target tasks are the same, one can adapt the predictive function learned in the source domain to be used in the target domain through unlabeled test-domain data.
 
 #### Transfer Learning Approaches
 The strategies discussed above help us understand where transfer learning can be implemented. The approaches explored below shed some light on what can be transferred in the context of the above strategies.
 
 ##### Instance Transfer
-In an ideal context, reusing all the knowledge from a source domain on a target task would be a common occurrence. Realistically, it is not possible to re-use data from the source domain directly. But, various instances from the source domain can be re-used. These instances of the source are transferred to the target task. These instances combined with data of the target domain define the instance transfer technique.
+In an ideal context, reusing all the knowledge from a source domain on a target task would be a common occurrence. Realistically, it is not possible to re-use data from the source domain directly. But, various instances from the source domain can be re-used. These instances of the source are transferred to the target task. Instance-based approaches compare the similarity between training samples in the source domain and samples in the target domain. They then adjust the weight values for the source domain samples which have similar samples in the target domain. These instances combined with data of the target domain define the instance transfer technique.
+
+Let's look at an example of the training of instance segmentation models. Instance segmentation refers to a computer vision technique that helps identify instances of a number of objects in a frame at pixel-level. In such a case, an instance refers to an occurrence of a specific object or objects. These segmentation models may be used to distinguish between objects and their backgrounds. This may be useful in a context where one seeks to visually pinpoint manufacturing defects in an industrial setting. These instance segmentation models may be trained using models that are pre-trained on visual data of numerous objects. Since these pre-trained models already have knowledge that is beneficial to the image segmentation models, the image segmentation models may re-use instances of objects from the pre-trained models to identify similar instances of objects in a frame. For a deep dive into a similar example, check out this post by [Nvidia](https://developer.nvidia.com/blog/training-instance-segmentation-models-using-maskrcnn-on-the-transfer-learning-toolkit/).          
 
 ##### Feature-Representation Transfer
 A feature may be defined as a property shared by independent units of data on which analysis should be done. The goal of feature representation transfer is to find suitable feature representations. These feature representations reduce the difference between the source and target domains. We are basically "transferring features" from the source domain to the target. This technique also reduces the error of classification and regression models. Supervised or unsupervised methods may be used for this technique but it is dependent on the availability of labeled data.
 
 ##### Parameter Transfer
+A model parameter refers to a configuration variable that is internal to the model and whose value can be estimated from data. Parameters are required by the model when making predictions. A hyperparameter is a configuration external to the model whose value cannot be estimated from data. Parameters differ from features as features can be described as data points chosen to define the input to a model. Understanding the difference between features and parameters is key to understanding the difference between parameter transfer and feature-representation transfer. Feature representation transfer is concerned with feature representations while parameter transfer focuses on discovering shared parameters.    
 Parameter transfer is based on two assumptions. The first one is that models with related tasks share some parameters. The second is that these models share prior distribution of hyperparameters. This technique, therefore, aims to discover shared parameters between source domain models and target domain models. Shared parameters make it possible to carry out transfer learning.
 
 ##### Relational-Knowledge Transfer
@@ -121,11 +130,12 @@ For a deep dive into these transfer learning approaches, take a look at this [pa
 Several transfer learning algorithms are used in other related fields. Such as medicine, image detection, speech recognition, and recommendation systems to name a few. We will go over these in more detail in the following sections.
 
 #### Medicine
-Many algorithms have been proposed and implemented in medical imaging to reduce the workload of doctors. They also serve the purpose of improving the accuracy of judgment. One method involves using a [convolutional neural network (CNN)](https://en.wikipedia.org/wiki/Convolutional_neural_network) for model transfer. The goal is the segmentation of white matter lesions of multiple sclerosis (MS) in patient images.
+Many algorithms have been proposed and implemented in medical imaging to reduce the workload of doctors. They also serve the purpose of improving the accuracy of judgment. 
 
-An approach involves segmentation tasks of chest X-ray images using domain adaptation. Domain adaptation refers to where a model is trained on a different source domain from the target domain. Both domains are related.
+Here is a use case of transfer learning with [convolutional neural networks (CNN)](https://en.wikipedia.org/wiki/Convolutional_neural_network) to automatically [detect Covid-19 from x-ray images](https://link.springer.com/content/pdf/10.1007%2Fs13246-020-00865-4.pdf). We can also mention an approach involving segmentation tasks of chest X-ray images using domain adaptation as an example. Domain adaptation refers to where a model is trained on a different source domain from the target domain. Both domains are related.
+We could also draw from our example on image segmentation under the instance transfer section to visualize how transfer learning for chest x-ray segmentation tasks works. 
 
-Another method involves the use of adversarial domain adaptation. This method is used to classify prostate histopathology whole-slide images. Adversarial domain adaptation is a method used to transform the features of many target domains to be uniform with source domain features.
+Another method involves the use of adversarial domain adaptation. Adversarial domain adaptation is a method used to transform the features of many target domains to be uniform with source domain features. This method is used to classify whole-slide images to be used to diagnose prostate cancer. Similar approaches and use of architectures such as CNNs can be used for detection of various cancers, health supervision as well as detection of heart disease. 
 
 #### Computer Vision
 Deep learning has been a driver of computer vision. Different neural network architectures are used to carry out computer vision tasks. An example of such a task is object recognition. Transfer learning for computer vision may occur through transferring of features in neural networks to improve the performance of the target network. The layers of a neural network may act as feature extractors. Some layers may extract image features such as detecting edges. Other layers may focus on task-specific features. For a more technical read on this application, feel free to read this [paper](https://arxiv.org/abs/1411.1792) that discusses the transferability of features in deep neural networks.
@@ -137,7 +147,7 @@ Automatic speech recognition models provide a very straightforward application o
 We have taken a high-level approach to introduce the concept of transfer learning. Transfer learning is an asset to researchers and data scientists. For one, it can make the machine learning process more efficient. Models not having to be built and trained from scratch saves a lot of time and effort for engineers. Now that we understand the basics, I aim to write an article delving deeper into transfer learning in deep learning soon. See you then!
 
 ### References
-1. H. Liang, W. Fu, and F. Yi, ["A Survey of Recent Advances in Transfer Learning,"]( https://ezproxy.ku.ac.ke:2546/document/8947072) 2019 IEEE 19th International Conference on Communication Technology (ICCT), Xi'an, China, 2019, pp. 1516-1523, doi: 10.1109/ICCT46805.2019.8947072.
+1. H. Liang, W. Fu, and F. Yi, ["A Survey of Recent Advances in Transfer Learning,"]( https://ezproxy.ku.ac.ke:2546/document/8947072) 2019 IEEE 19th International Conference on Communication Technology (ICCT), Xi'an, China, 2019, pp. 1516-1523, DOI: 10.1109/ICCT46805.2019.8947072.
 
 2. [A Survey on Transfer Learning](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf)
 
