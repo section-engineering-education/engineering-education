@@ -19,7 +19,7 @@ git push origin
 This should help prevent any merge conflicts.
 
 #### Can I include a video into my articles?
-Yes, please refer to our upload instructions for a [step-by-step guide](/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#including-videos-in-your-articles) on how to include YT videos into your articles.
+Yes, please refer to our upload instructions for a [step-by-step guide](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#including-videos-in-your-articles) on how to include YT videos into your articles.
 
 
 #### Is there a word limit on articles?
