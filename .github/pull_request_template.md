@@ -18,7 +18,6 @@
 
 #### Technical Checks
 - [ ] Are your code snippets properly formatted for syntax highlighting - **see [Syntax guide](https://gohugo.io/content-management/syntax-highlighting)**
-- [ ] Have you used Repl.it for your code snippets?
 
 ### Contribution Guidelines
 For first-time contributors and for more details, **see [Contributing Guidelines](https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md)**

@@ -3,7 +3,7 @@
 **Prerequisites:**
 - Github account
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
-- Prepared markdown (.md) file. (Note: All articles must be submitted in properly-formatted markdown. See [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)) 
+- Prepared markdown (.md) file. (Note: All articles must be submitted in properly-formatted markdown. See [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet))
 
 ### Fork the repository
 In order to upload your prepared .md file to Github, first, click the **Fork** option in the upper right-hand corner (pictured below).
@@ -39,7 +39,7 @@ Within the articles folder, create a new folder using the intended url for the a
 
 ![create article folder](/images/create-article-folder.png)
 
-Within that article folder, upload your prepared .md file containing article contents using the filename `index.md`. Upload any corresponding image files referenced in your article. When referencing images, be sure to use the following naming convention with your newly created article directory. For example: 
+Within that article folder, upload your prepared .md file containing article contents using the filename `index.md`. Upload any corresponding image files referenced in your article. When referencing images, be sure to use the following naming convention with your newly created article directory. For example:
 ```
 ![image title](/engineering-education/new-folder-name/image-name.jpg)
 ```
@@ -65,7 +65,7 @@ Open a pull request that includes the name of your article and a description of 
 ***Note***: Make sure your repository is up to date with the EngEd repository before contributing new articles.
 
 ### do this once
-git remote add section http://github.com/section-io/engineering-education 
+git remote add section http://github.com/section-io/engineering-education
 
 ### then use this every time before contributing a new article to keep it up to date
 git fetch section
@@ -82,6 +82,19 @@ By highlighting lengthy, complex sentences and common errors, it helps make any 
 
 To review your Code Snippets or examples before submitting, take full advantage of the free online tool, [repl.it](https://repl.it). Use it to run and compile any code snippets to be included in your article.
 
-Finally, if you're a first time contributor, be sure to include a short Author Biography and Headshot image to be included at the end of your articles. We want to credit you for your hard work.
+### Including videos in your articles
+If you would like to include a (step-by-step) video to one of your How To Guide or Tutorial videos feel free to do so as a YouTube iframe. Below is a step by step example on how to include a YT iframe to your .md files.
+
+Upload the [video to YouTube](https://www.wix.com/blog/2019/02/how-to-upload-video-youtube-guide/) (if it isn't already).
+
+![Copy YouTube Embed Code](/images/yt-video-embed.png)
+
+Take that copied embed code and paste it into your .md (markdown) file where you would like it to be placed. The code should look something like this:
+
+`<iframe width="956" height="538" src="https://www.youtube.com/embed/npnp--SSx_8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+
+*NOTE:* If the width and height are not `width="478" height="269"` be sure to change the sizes to fit our web page format.
+
+Finally, if you're a first time contributor, be sure to include a short Author Biography and Headshot image. Please include the files in the authors folder within the GitHub repo. We want to credit you for your hard work.
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a PR and we'll be happy to review it.

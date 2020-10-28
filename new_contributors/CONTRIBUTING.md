@@ -11,7 +11,7 @@ Articles do not need to be Section-specific or strongly Section-related. This is
 
 In order to participate in the program, all members will be required to agree to established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (Agreement is included as part of the enrollment process.)
 
-In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed.
+In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed. (1st time contributors-submit only one article to get familiar with the process and style-once published, you can then submit any number of articles.)
 
 ## Requirements for New Contributors
 - GitHub account
@@ -31,7 +31,7 @@ Once you have narrowed your topic search to one you would like to write about, f
 Once your topic has been approved and you have a final draft of your article ready  to submit, follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
 
 ## Submitting your article
-Ensure all article submissions are pre-checked for English grammar technically accurate, and delivered under the assertion that the content is original to you and includes proper citations (including sourced images).
+Ensure all article submissions are pre-checked for English grammar technically accurate, and delivered under the assertion that the content is original to you and includes proper citations (including sourced images) and has not been published somewhere else.
 
 
 Before submitting your article, we request that you cross-check the readability of your content using this [free tool](http://www.hemingwayapp.com/). This check helps make your writing BOLD & CLEAR by calling attention to any lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it. 

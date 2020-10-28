@@ -63,10 +63,10 @@ Create a file called `index.js` and add the following code to it.
 
 ```js
 const express = require("express");
+require("dotenv").config();
+
 const app = express();
 const port = process.env.PORT || 3000;
-
-require("dotenv").config();
 
 app.listen(port, () => {
   console.log(`Server is running on the port ${port}.`);
