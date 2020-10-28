@@ -22,7 +22,7 @@ Machine learning and deep learning are among the fast-growing applications. Arti
 
 The AI incorporates and avails intelligence that is used to enhance decision making on both applications. These applications have contributed significantly to solving problems that previously affected performances in some applications.  
 
-New ideas in the tech world have led to various innovations that have sparked the nature of things. Alexa and Siri are [virtual assistant](https://www.investopedia.com/terms/v/virtual-assistant.asp) that enhance the use of machine learning and are widely used.
+New ideas in the tech world have led to various innovations that have sparked the nature of things. Alexa and Siri are [virtual assistant](https://www.investopedia.com/terms/v/virtual-assistant.asp) that make extensive use of machine learning and are widely used.
 
 Machine learning and deep learning have attracted significant attention over the years. The popularity of these two has led to various applications implementing its tools.
 
@@ -32,21 +32,19 @@ This article will focus on understanding what machine learning and deep learning
 
 Machine learning is a [subset](https://en.wikipedia.org/wiki/Subset) of AI that allows computer algorithms to make accurate data outcomes through interpretations.
 
-Machine learning is used to obtain and use data that is used to make final decisions. Machine learning processes are also dependent on the subsets of artificial intelligence.
-
 Machine learning allows the use the AI towards automating several functionalities used by machine learning. Besides this, the AI enhances neuroscience that emulates human intelligence, an aspect that machine learning lacks. Several [synthetic intelligence](https://www.wikiwand.com/en/Synthetic_intelligence) aspects and modern [virtual assistants](https://www.investopedia.com/terms/v/virtual-assistant.asp) are created to achieve this.
 
 Machine learning uses Artificial Intelligence (AI) techniques that assist in decision making. These techniques include the use of [conventional algorithms](http://wiki.cas.mcmaster.ca/index.php/Conventional_Encryption_Algorithms) used in performing mathematical computation and predictions.
 
- Machine learning uses both structured and unstructured data. The use of Support Vector Machines (SVMs) and decision-trees are examples that use unstructured data to make interpretations.
+Structured data is presented in the form of columns and rows. Examples of structured data include strings, dates and numbers.
 
- Structured data is presented in the form of columns and rows. Examples of structured data include strings, dates and numbers.
+Unstructured data information is stored as files. Examples include; images, word documents, email files, videos and audio files.
 
-  Unstructured data information is stored as files. Examples include; images, word documents, email files, videos and audio files.
+Machine learning uses both structured and unstructured data. The use of Support Vector Machines (SVMs) and decision-trees are examples that use unstructured data to make interpretations.
 
 Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying, deciphering, and enciphering keys that are identical, and need to be kept secret. 
 
-A conventional algorithm maintains secrets in acryptographic environment. Conventional algorithm are also used to regulate algorithms used at undoing histogram modifications and distortions. 
+A conventional algorithm maintains secrets in a cryptographic environment. Conventional algorithm are also used to regulate algorithms used at undoing histogram modifications and distortions. 
 
 Unlike machine learning, AI can use [unstructured data](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) and still be able to function. Deep learning emulates human intelligence workings.
 Machine learning aids in the detection of objects, language translation, and decision making. Machine learning is also able to recognize speech and make prompt decisions.
@@ -54,14 +52,14 @@ Machine learning aids in the detection of objects, language translation, and dec
 
 ### Deep Learning
 
-Deep learning is a [subset](https://en.wikipedia.org/wiki/Subset) of machine learning. Deep learning uses deep [neural networks](https://www.investopedia.com/terms/n/neuralnetwork.asp#:~:text=A%20neural%20network%20is%20a,organic%20or%20artificial%20in%20nature.) that are built using neural networks. Neural networks can be used for both supervised and unsupervised learning tasks. Depending with the task, the algorithm have have to work unsupervised, and vice versa incase there is a supervision required.
+Deep learning is a [subset](https://en.wikipedia.org/wiki/Subset) of machine learning. Deep learning uses deep [neural networks](https://www.investopedia.com/terms/n/neuralnetwork.asp#:~:text=A%20neural%20network%20is%20a,organic%20or%20artificial%20in%20nature.) that are built using neural networks. Neural networks can be used for both supervised and unsupervised learning tasks. Depending on the task, the algorithm has to work unsupervised, and vice versa, if there is supervision required.
 
 Deep learning uses complex algorithms from neural networks. This resemblance is like the layers with neural connections in the human brain.
-The use of structured and unstructured data make deep learning work perfectly as when compared to machine learning.
+The use of structured and unstructured data makes deep learning work perfectly when compared to machine learning.
 
 ### How deep learning works
 
-Deep learning uses algorithms whose functionality is like that of machine learning. [Neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) extract and learn the features during training process of deep learning.
+Deep learning uses algorithms whose functionality is like that of machine learning. [Neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) extract and learn the features during the training process of deep learning.
 
 
 The neurons in the network undertake two tasks. The first includes understanding which feature is optimal for performing a specific task. The second one involves classifying data after many iterations of the learning process.
@@ -88,7 +86,7 @@ Besides this, we, as consumers, are currently using these technologies and appli
 
 Google applications like Gmail, Google Search, and Google Maps rely on deep learning. These applications need accurate data to improve their intuitiveness.
 
- For instance, Gmail can detect important mails for the user. Special emails are detected by the frequency through which a user gets to communicate. An effective response is enhanced through the use of a smart reply that offers a fast response to any email received. This feature depends on the content of the email received.
+For instance, Gmail can detect important mails for the user. Special emails are detected by the frequency through which a user gets to communicate. An effective response is enhanced by using a smart reply that offers a fast response to any email received. This feature depends on the content of the email received.
 
 Besides this, Google Search uses a prediction that anticipates what one is doing. Such predictions fetch past searches, activities, and places visited. The Google Maps application keeps data that can trace the history of past locations. Collected data allows the application to make correct and accurate predictions.
 
@@ -101,7 +99,7 @@ Deep learning allows the use of an algorithm that automates errors. This automat
  Services automated by AI has less probability of error, thus eliminating the need for human supervision.
 
 ### Conclusion
-Both deep learning and machine learning have promoted efficiency in most applications. As a result, the acceleration of the field of AI has increased. This has led to an economic advantage to companies since efficiency in terms of time and money have been enhanced.
+Both deep learning and machine learning have promoted efficiency in most applications. As a result, the acceleration of the field of AI has increased. This has led to companies' economic advantage since efficiency in terms of time and money has been enhanced.
 
 **Works cited**
 
