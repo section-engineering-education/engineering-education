@@ -236,23 +236,27 @@ The **menu** file serves as a container for menu items. **Item** represents one 
 
 #### Step 6 - Let's Code.
 In our  `MainActivity.java` add the following lines of code:
+First, we will initialize the Bottom Navigation view in the Activity's `onCreate` method. 
+Next, we will initialize an `AppBarConfiguration` object. It is used to manage the behavior of the icons in the Navigation View. We will then pass the ID of the different destinations in the Bottom Navigation View. Lastly, we will set up the NavController and link it with the Bottom Navigation View.
 
+```java
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //Initialize Bottom Navigation View.
+        BottomNavigationView navView = findViewById(R.id.bottomNav_view);
 
-We will initialize the Bottom Navigation view in the Activity's `onCreate` method. 
-```java
-//Initialize Bottom Navigation View
-BottomNavigationView navView = findViewById(R.id.bottomNav_view);
-```
-Next, we will initialize an `AppBarConfiguration` object. It is used to manage the behavior of the icons in the Navigation View. We will then pass the ID of the different destinations in the Bottom Navigation View.Then lastly set up the NavController and link it with the Bottom Navigation View.
-```java
-//Pass the ID's of Different destinations
+      //Pass the ID's of Different destinations
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_favourites, R.id.navigation_profile, R.id.navigation_search )
                 .build();
+                
         //Initialize NavController.
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+    }
 ```
 
 We are done! Let’s run the app.
