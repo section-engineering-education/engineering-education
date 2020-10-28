@@ -1,4 +1,20 @@
-**Angular** is a design framework for building SPAs(Single-Page-Applications) using HTML and TypeScript.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/data-binding-with-angular/
+title: Introduction to Data Binding using Angular
+description:
+author:
+date: 2020-10-22T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/data-binding-with-angular/hero.jpg
+    alt:  example image
+---
+**Angular** is a platform and design framework for building SPAs using HTML and TypeScript.
  Angular is written in TypeScript(although the first version, i.e.AngularJS, was written in JS).
  It is built upon a set of TypeScript libraries imported into our app; these libraries implement 
  all the core functionalities required for an app to run.
@@ -179,7 +195,7 @@ newStudent= 'Keanu Reeves';
 //Through @Input() we can now use the value of newStudent.
 ```
 
-- The `[..]` are indeed necessary to evaluate the template expression. If omitted, Angular
+- The `[..]` tells Angular to evaluate the expression. If omitted, Angular
 initializes the *target property* to the variable's type declared inside the component.
 
 
@@ -229,8 +245,8 @@ export class PropertyBindingComponent{
 
 From the above code, it can be seen that there are indeed two event binding listeners.
 - First is the *target event*`(input)` in the *input* element. When the user enters data in the *template*, triggers `onUpdateStudent()` in the *component* file.
-- The `$event` passed as a parameter holds the information about the binding. This information can include data values like an *object*,  *number* or *string*.
-  If the *target event* is a native DOM element event, then `$event` is a *DOM event object* with `target` and `target.value` behaving as properties for that event object[1].
+- The `$event` passed as a parameter holds the information about the binding, which could be data values like an *object*, *number*, or *string*.
+  If the *target event* is a native DOM event, then `$event` is a *DOM event object* with `target` and `target.value` as its properties.
 - In the `onUpdateStudent($event)`, we assign `studentID` a new value entered by the user.
 - After entering, when the user clicks on the *Add new student* button, the event `(click)` gets registered and `onAddStudent()` is triggered from the *component* file.
 - Like with *Property Binding*, there's an alternative syntax as well, `on-` prefix without the braces must be added before the *target element*.
@@ -298,6 +314,5 @@ export class PropertyBindingComponent{
 - The `studentID` variable is registered to user input changes and gets updated simultaneously.
 
 #### Additional Resources
-- [1] [Event Binding](https://angular.io/guide/event-binding)
 - To access my complete code. Click [here.](https://github.com/MahanteshR/dataBinding.git)
 - [Angular Docs](https://angular.io/docs).
