@@ -89,17 +89,17 @@ Creating a NumPy array can be done in one of two ways – convert a list to a Nu
 ```py
 import numpy as np
 
-#Method 1 - Converting a list to a NumPy array
+# Method 1 - Converting a list to a NumPy array
 
 list_a = [1,2,3,4,5,6]
 
 print(type(list_a))
-#Output - <class 'list'>
+# Output - <class 'list'>
 
 np_list_a = np.array(list_a)
 print(type(np_list_a))
 
-#Output - <class 'np.ndarray'>
+# Output - <class 'np.ndarray'>
 ```
 
 Initializing a linear NumPy array can go one of many ways:
@@ -124,7 +124,7 @@ A NumPy array of random integers can be generated using the `numpy.random.randin
 - **high** (upper bound of the range; exclusive) and  
 - **size** (size of the array).
 
-The method returns random integers from the discrete distribution of integers in the half-open interval `\[low, high)`. If high is None, the results are from `\[0, low)`.
+The method returns random integers from the discrete distribution of integers in the half-open interval `[low, high)`. If high is None, the results are from `[0, low)`.
 
 ```py
 # With all three parameters - low, high and size
@@ -146,7 +146,7 @@ This function takes the following parameters:
 - **num** (number of samples to be generated; default of 50), and  
 - **endpoint** (if true, ‘stop’ is the last sample; default is True)
 
-Return a numpy.ndarray with `num` equally spaced samples in the closed interval `\[start,stop\]` if the endpoint is True. If the endpoint is False, it returns `num` in equally spaced samples in the half-open interval `\[start, stop)`.
+Return a numpy.ndarray with `num` equally spaced samples in the closed interval `[start,stop]` if the endpoint is True. If the endpoint is False, it returns `num` in equally spaced samples in the half-open interval `[start, stop)`.
 
 ```py
 even_spaced_array = np.linspace(start = 0, stop = 50, num = 5, endpoint = True)
@@ -177,10 +177,10 @@ Output - [[1, 2, 3, 4],
           [1, 2, 3, 4],
           [1, 2, 3, 4]]
 """
-#Loop over every element in the matrix
+# Loop over every element in the matrix
 for i in range(4):
     for j in range(i,4):
-#Swap the elements
+# Swap the elements
         matrix_A[i][j], matrix_A[j][i] = matrix_A[j][i], matrix_A[i][j]
 
 print(matrix_A)
@@ -196,7 +196,7 @@ Output - [[1, 1, 1, 1],
 How does this work out in NumPy? Well, it’s pretty simple.
 
 ```py
-#Initialize Matrix to a set of values
+# Initialize Matrix to a set of values
 matrix_A = [[1,2,3,4] for _ in range(4)]
 
 print(matrix_A)
@@ -207,10 +207,10 @@ Output - [[1, 2, 3, 4],
           [1, 2, 3, 4],
           [1, 2, 3, 4]]
 """
-#Convert it into a NumPy array
+# Convert it into a NumPy array
 np_matrix_A = np.array(matrix_A)
 
-#And transpose!
+# And transpose!
 np_matrix_A = np_matrix_A.T
 
 print(np_matrix_A)
