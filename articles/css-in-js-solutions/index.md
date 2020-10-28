@@ -84,7 +84,7 @@ To dive in further, here are the benefits of using JSS in your project:
 * Reusability: With the application of javascript modules, variables, and functions, you can store CSS rules and call upon them in multiple instances without having to declare CSS rules for every element within your app component every time they are needed. 
 * Easy Modification: With JSS, making changes becomes more comfortable, because you only need to run down on where you declared the CSS rules and make necessary changes if any within the variable or function, and changes take effect where the variable or functions are applied. 
 
-Conclusively, JSS can be easily integrated into your react application. Follow this ![guide](https://cssinjs.org/setup) to get started with JSS, and you can see a live code ![here](https://codesandbox.io/s/z21lpmvv33) of CSS-in-JS in action with JSS.
+Conclusively, JSS can be easily integrated into your react application. Follow this [guide](https://cssinjs.org/setup) to get started with JSS, and you can see a live code [here](https://codesandbox.io/s/z21lpmvv33) of CSS-in-JS in action with JSS.
 
 2. Styled-Components: Styled-components are one of the most used CSS-in-JS solutions in app development. It ensures the usage of ES6 and CSS to style your application with template literals and CSS; you can easily style app components.
 With an intense focus on improving user experience, styled-components are designed to enhance CSS styling for react app components. The following are the benefits of using styled-components in your react app:
@@ -92,7 +92,7 @@ With an intense focus on improving user experience, styled-components are design
 * Maintenance: As with CSS-in-JS solutions, you can maintain your CSS codebase easily and track styles affecting your component without having to check through multiple CSS files.
 * CSS Deletion: Deleting CSS styles is made more comfortable, styled-components make it evident as to which component is unused, and deleting such components automatically deletes all styles related to that component.
 
-The above are some of the benefits of using styled-components as your preferred choice of CSS-in-JS solutions. You can view how styled-components handle CSS in Javascript from ![here](https://github.com/styled-components/styled-components#example), and you can also follow this ![guide](https://www.styled-components.com/docs/basics#installation) to installing styled-components in your react application. 
+The above are some of the benefits of using styled-components as your preferred choice of CSS-in-JS solutions. You can view how styled-components handle CSS in Javascript from [here](https://github.com/styled-components/styled-components#example), and you can also follow this [guide](https://www.styled-components.com/docs/basics#installation) to installing styled-components in your react application. 
 
 3. Styletron: Styletron is another CSS-in-JS library that works with plain JS, React, and other frontend frameworks. 
 Styletron has some great features which will be examined shortly, but the distinct feature that sets Styletron apart from other CSS-in-JS solutions is the ability to use media queries and other CSS selectors which couldn’t be done via inline styles.
@@ -102,16 +102,16 @@ Well, apart from the cool feature of declaring media queries, here are some of t
 * Portability: Styletron ensures portability by ensuring declaration of styles written in javascript
 within your component, providing the same experience as using inline styles but all in CSS-in-JS solutions. 
 
-Styletron provides the above distinct advantages when used, the same advantages to other CSS-in-JS solutions also apply to it. You can get started with Styletron ![here](https://www.styletron.org/getting-started).
+Styletron provides the above distinct advantages when used, the same advantages to other CSS-in-JS solutions also apply to it. You can get started with Styletron [here](https://www.styletron.org/getting-started).
 
 4. Emotion
 Like every other CSS-in-JS library, Emotion is a performant and flexible CSS-in-JS solution. Emotion makes use of String and Object styles to write CSS in Javascript, and better it ensures improved runtime performance by parsing styles with Babel and PostCSS.
 
 Emotion took into consideration approaches taken by other CSS-in-JS solutions like styled-components and glamor, so you tend to enjoy the same benefit as them. However, despite the foundation of existing solutions, Emotion was designed to solve the issue of specificity in CSS.
 
-Getting started with Emotions is also easy, you can follow this ![guide](https://emotion.sh/docs/install) to start using Emotion in your project, and you can check out a live code of Emotion Strings and Objects in declaring CSS styles in javascript ![here](https://5bb1495273f2cf57a2cf39cc--emotion.netlify.com/).
+Getting started with Emotions is also easy, you can follow this [guide](https://emotion.sh/docs/install) to start using Emotion in your project, and you can check out a live code of Emotion Strings and Objects in declaring CSS styles in javascript [here](https://5bb1495273f2cf57a2cf39cc--emotion.netlify.com/).
 
-5. Material UI: Material UI is a react component that aims to ensure fast and easy web application development. The material UI is not only restricted to material UI components, but you can also employ the CSS-in-JS solution through the @material-ui/styles package you can find ![here](https://www.npmjs.com/package/@material-ui/styles).
+5. Material UI: Material UI is a react component that aims to ensure fast and easy web application development. The material UI is not only restricted to material UI components, but you can also employ the CSS-in-JS solution through the @material-ui/styles package you can find [here](https://www.npmjs.com/package/@material-ui/styles).
 
 Material UI has been using LESS and Inline CSS to style components, but that has come to an end since the modification to take full advantage of CSS-in-JS. Material UI also has similar advantages to styled-components. 
 
