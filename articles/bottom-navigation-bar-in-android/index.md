@@ -134,18 +134,16 @@ In this step, we will add the Bottom Navigation View to our activity's resource 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/container"
+    android:id="@+id/myContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
     android:background="@color/white">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/bottomNav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
@@ -156,13 +154,14 @@ In this step, we will add the Bottom Navigation View to our activity's resource 
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
+
     <fragment
-        android:id="@+id/nav_host_fragment"
+        android:id="@+id/navHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -240,10 +239,6 @@ First, we will initialize the Bottom Navigation view in the Activity's `onCreate
 Next, we will initialize an `AppBarConfiguration` object. It is used to manage the behavior of the icons in the Navigation View. We will then pass the ID of the different destinations in the Bottom Navigation View. Lastly, we will set up the NavController and link it with the Bottom Navigation View.
 
 ```java
- @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         //Initialize Bottom Navigation View.
         BottomNavigationView navView = findViewById(R.id.bottomNav_view);
 
@@ -253,10 +248,9 @@ Next, we will initialize an `AppBarConfiguration` object. It is used to manage t
                 .build();
                 
         //Initialize NavController.
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-    }
 ```
 
 We are done! Let’s run the app.
