@@ -16,6 +16,7 @@ images:
 ---
 The modern web is now written in components and not pages. CSS was designed to declare styles in different files (.CSS) for each page of your web application, and this structure makes it challenging to maintain multiple stylesheets for multiple pages.
 <!--more-->
+
 ### CSS-In-JS For Web Components
 Web components have changed the landscape for the development of web applications for front-end developers. The use of web components provides ample opportunities to reuse and build UI components and custom elements that are critical in the development process of web applications.
 
@@ -33,6 +34,7 @@ This gap in the simplification of your codebase concerning your CSS files is why
 Although web components simplify the development process of web applications, with it comes the barrier of maintaining multiple external style sheets when using CSS. Nonetheless, some solutions exist to simplify CSS stylings when using web components, such as CSS-in-JS.
 
 ### What is CSS-in-JS, and how is it salutary to CSS for Web Components? 
+
 CSS-in-JS is a Javascript library that proffers an ample variety of styling techniques in styling web components. CSS-in-JS was a result of the flaws in using CSS in building web applications, especially with custom elements, and some of which include scoping, specificity, portability, and dynamic functioning.
 
 The adaptation of CSS-in-JS libraries over CSS is as a result of stylesheets loading in any order, which sometimes override each other. Meanwhile, before the advent of CSS-in-JS, developers applied specific CSS methodologies to ensure modular, reusable, and scalable styling, and some of the methodologies are BEM, OOCSS, and SMACSS amongst others.
@@ -45,7 +47,7 @@ CSS-in-JS is the best styling technique to settle for in the development of web 
 
 ## Pros of CSS
 
-1. Performance: The use of inline styles enhances website performance because the browser loads the CSS within elements faster before loading external styles.
+1. Inline Styling: The use of inline styles enhances website performance because the browser loads the CSS within elements faster before loading external styles.
 
 2. Reduction in Redundancy: With inline styles, you can avoid redundant code and only declare CSS styles to a particular element when needed, this way, all extraneous code stays out of the code and at the sympathy of the delete key.
 3.  External stylesheet: Inline-styles aren't the only golden property of CSS.  External stylesheet keeps your codebase organized and allows you to store all CSS code within a single file and reference them in documents that require them.
@@ -54,12 +56,20 @@ CSS-in-JS is the best styling technique to settle for in the development of web 
 
 ## Cons of CSS
 
-1. Overriding styles: Overriding styles is a bit of an issue without the !important keyword. When you use inline styles and try to override them in your stylesheet,  you can't do that without using the !important keyword.
-2. Scope: Applying styles to a particular tag can only be done via inline stylings. The specificity to HTML elements makes your code difficult to maintain, especially when using inline and external styling for a particular element.
+1. Overriding Inline Styles: The advantage of using inline styling is as a result of the acceleration of website performance, but it also results in a challenge when trying to override styles.
+
+Overriding styles is a bit of an issue without the !important keyword. When you use inline styles and try to override them in your stylesheet,  you can't do that without using the !important keyword.
+
+2. Compatibility: One of the disadvantages of CSS is its compatibility issues across browsers. What works in Internet Explorer might not work in Google Chrome. Yet, web developers have to run compatibility tests with their CSS code or write their code based on the browser accessing the website.
+
 3. Performance: Using an external stylesheet slows down the performance of your website since all CSS files referenced are loaded at once even when the page needing them is not currently rendered. 
 
+However, the performance hindrances can be mitigated by combining multiple stylesheets and inline CSS such that only the necessary CSS files are rendered on each page. This approach is similar to Styletron’s critical rendering concept as a CSS-in-JS solution.
+
 ### CSS-in-JS Solutions for Web Components
+
 There are several approaches to adapting CSS-in-JS within your web application. The following are different CSS-in-JS solutions to deploy in your web application.
+
 1. JSS
 2. Styled-Components
 3. Styletron
@@ -74,7 +84,7 @@ To dive in further, here are the benefits of using JSS in your project:
 * Reusability: With the application of javascript modules, variables, and functions, you can store CSS rules and call upon them in multiple instances without having to declare CSS rules for every element within your app component every time they are needed. 
 * Easy Modification: With JSS, making changes becomes more comfortable, because you only need to run down on where you declared the CSS rules and make necessary changes if any within the variable or function, and changes take effect where the variable or functions are applied. 
 
-Conclusively, JSS can be easily integrated into your react application. Follow this guide to get started with JSS, and you can see a live code here of CSS-in-JS in action with JSS.
+Conclusively, JSS can be easily integrated into your react application. Follow this ![guide](https://cssinjs.org/setup) to get started with JSS, and you can see a live code ![here](https://codesandbox.io/s/z21lpmvv33) of CSS-in-JS in action with JSS.
 
 2. Styled-Components: Styled-components are one of the most used CSS-in-JS solutions in app development. It ensures the usage of ES6 and CSS to style your application with template literals and CSS; you can easily style app components.
 With an intense focus on improving user experience, styled-components are designed to enhance CSS styling for react app components. The following are the benefits of using styled-components in your react app:
@@ -82,7 +92,7 @@ With an intense focus on improving user experience, styled-components are design
 * Maintenance: As with CSS-in-JS solutions, you can maintain your CSS codebase easily and track styles affecting your component without having to check through multiple CSS files.
 * CSS Deletion: Deleting CSS styles is made more comfortable, styled-components make it evident as to which component is unused, and deleting such components automatically deletes all styles related to that component.
 
-The above are some of the benefits of using styled-components as your preferred choice of CSS-in-JS solutions. You can view how styled-components handle CSS in javascript from here, and you can also follow this guide to installing styled-components in your react application. 
+The above are some of the benefits of using styled-components as your preferred choice of CSS-in-JS solutions. You can view how styled-components handle CSS in Javascript from ![here](https://github.com/styled-components/styled-components#example), and you can also follow this ![guide](https://www.styled-components.com/docs/basics#installation) to installing styled-components in your react application. 
 
 3. Styletron: Styletron is another CSS-in-JS library that works with plain JS, React, and other frontend frameworks. 
 Styletron has some great features which will be examined shortly, but the distinct feature that sets Styletron apart from other CSS-in-JS solutions is the ability to use media queries and other CSS selectors which couldn’t be done via inline styles.
@@ -92,16 +102,16 @@ Well, apart from the cool feature of declaring media queries, here are some of t
 * Portability: Styletron ensures portability by ensuring declaration of styles written in javascript
 within your component, providing the same experience as using inline styles but all in CSS-in-JS solutions. 
 
-Styletron provides the above distinct advantages when used, the same advantages to other CSS-in-JS solutions also apply to it. You can get started with Styletron here.
+Styletron provides the above distinct advantages when used, the same advantages to other CSS-in-JS solutions also apply to it. You can get started with Styletron ![here](https://www.styletron.org/getting-started).
 
 4. Emotion
 Like every other CSS-in-JS library, Emotion is a performant and flexible CSS-in-JS solution. Emotion makes use of String and Object styles to write CSS in Javascript, and better it ensures improved runtime performance by parsing styles with Babel and PostCSS.
 
 Emotion took into consideration approaches taken by other CSS-in-JS solutions like styled-components and glamor, so you tend to enjoy the same benefit as them. However, despite the foundation of existing solutions, Emotion was designed to solve the issue of specificity in CSS.
 
-Getting started with Emotions is also easy, you can follow this guide to start using Emotion in your project, and you can check out a live code of Emotion Strings and Objects in declaring CSS styles in javascript here.
+Getting started with Emotions is also easy, you can follow this ![guide](https://emotion.sh/docs/install) to start using Emotion in your project, and you can check out a live code of Emotion Strings and Objects in declaring CSS styles in javascript ![here](https://5bb1495273f2cf57a2cf39cc--emotion.netlify.com/).
 
-5. Material UI: Material UI is a react component that aims to ensure fast and easy web application development. The material UI is not only restricted to material UI components, but you can also employ the CSS-in-JS solution through the @material-ui/styles package you can find here.
+5. Material UI: Material UI is a react component that aims to ensure fast and easy web application development. The material UI is not only restricted to material UI components, but you can also employ the CSS-in-JS solution through the @material-ui/styles package you can find ![here](https://www.npmjs.com/package/@material-ui/styles).
 
 Material UI has been using LESS and Inline CSS to style components, but that has come to an end since the modification to take full advantage of CSS-in-JS. Material UI also has similar advantages to styled-components. 
 
