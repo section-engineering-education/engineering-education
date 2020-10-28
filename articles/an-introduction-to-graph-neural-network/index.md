@@ -1,19 +1,21 @@
 Over the years, Deep Learning (DL) has been the key to solving many machine learning problems in fields such as image processing, natural language processing, and games.
-The data generated in the above-mentioned fields are represented in a Euclidean space. That is, spaces with a finite number of dimensions i.e. 2D or 3D spaces.
-However, in most current applications, generated data is generated from non-Euclidean domains that represent data as graphs with relationships and mutual dependency between objects. A good example is e-commerce. The interaction between users and products can be exploited to make accurate recommendations. 
-This has led to an increasingly growing interest in deep learning research that focuses on the structure of graph data.
+The data generated are represented in spaces with a finite number of dimensions i.e. 2D or 3D spaces.
+Yet, in most current applications, generated data is generated from non-Euclidean domains that represent data as graphs with relationships and mutual dependency between objects. 
+This has led to a growing interest in deep learning research that focuses on the structure of graph data.
 
-In this article, we provide a comprehensive overview of:
+In this article, we will cover on:
 
 1. What is a Graph?
 
 2. What is Graph Neural Networks?
 
-3. Graph Learning Python Libraries
+3. How CNNs and Network Embedding plays a role in GNN
 
-4. Models of Graph Neural Networks
+4. Graph Learning Python Libraries
 
-5. Applications of Graph Neural Networks
+5. Models of Graph Neural Networks
+
+6. Applications of Graph Neural Networks
 
 
 ### Prerequisites
@@ -22,54 +24,95 @@ This article assumes a basic understanding of Machine Learning (ML) and Deep Lea
 
 ### What is a Graph?
 
-In Computer Science, Graphs are data structures that model a set of objects and their relationships. These objects represent the nodes and the relationships represent edges. 
+Graphs are powerful data structures which model a set of objects and their relationships. These objects represent the nodes and the relationships represent edges. 
 
 ![A Graph data structure](/engineering-education/an-introduction-to-graph-neural-network/edges-links.png)
 
-Let's assume a graph, G. This graph can be described by:
+Let's assume a graph, G. This graph describes:
 * V as the vertex set 
 * E as the edges
 
 Then,   G = (V,E)
 
-It is important to note that the vertex, V, often refers to the nodes.
+In our article, we will refer the vertex, V, as the nodes.
 
-Let's take an example of a transportation system. This can be thought of as a graph. The locations in the system represent the vertice, V, and the connections between these locations representing the edges.
+Let's take an example of a transportation system. The locations in the system represent the vertice, V, and the connections between these locations representing the edges.
 
 ### What is Graph Neural Network (GNN)?
 
-Graph Neural Networks is a technique in deep learning which extends existing neural networks for processing data on graphs. 
+GNN is a technique in deep learning which extends existing neural networks for processing data on graphs. 
 
-GNNs motivation stems from three areas of study:
+![Structure of a GNN implementing a drug interaction network)](/engineering-education/an-introduction-to-graph-neural-network/gnn-structure.PNG)<br>
 
-* Convolution Neural Networks (CNN)
-These are deep neural networks used to analyze image data. It is used to solve image processing tasks.
+*[Image Source: Aalto University](https://users.aalto.fi/~falconr1/RecentAdvances2019/How%20Powerful%20Are%20Graph%20Neural%20Networks/How_Powerful_Are_Graph_Neural_Networks(3).pdf)*
 
-* Recurrent Neural Networks (RNN)
-RNN is a type of neural network that passes information internally from one time step to the next to process a sequence. It's commonly used to solve Natural Language Processing (NLP) and speech recognition tasks.  
+Using neural networks, nodes in a GNN structure aggregate information gathered from neighboring nodes. The last layer then combines these aggregated information and outputs either a prediction or classification. 
 
-* Auto-Encoders (AE)
-This is a type of Artificial Neural Network (ANN). It consists of an encoder, code, and a decoder. It encodes the representations of a set of data. It then decodes the reduced encoded data generating new data similar to that of its original input. 
+GNN output performs:
 
-Based on these three motivations, GNNs can collectively combine information from the graph structure.
+1. Node classification  
+2. Link prediction
+3. Graph classification 
 
-Common applications of GNN are in node classification, link prediction, and graph classification. 
+Let's discuss further each of these outputs in detail.
 
-In **node classification**, every node in the network is assigned a label. The network can classify new nodes introduced without the ground truth.
-In **link prediction**, the goal is to  predicts the likelihood of two nodes being inter-linked.
-In **graph classification**, the idea is to classify graphs into different classes. This is related to image classification but the target changes into classifying graphs rather than images.
+### Node classification 
+Here, every node in the network is assigned a label. The network then determines the labels of new nodes introduced without the ground truth.
+
+A clear example of node classification is in the image above where the GNN establishes whether node A is either a toxic or safe drug. 
+Another application of node classification is on protein interaction networks. Here, the nodes of the graph represent different types of proteins while the edges describe the types of biological interactions between them. 
+Let's take an example of two proteins in a network of 16 proteins. The 0th (node 0) and 15th (node 15) protein are related to a cancerous disease. The network ought to classify which proteins are most related to each of them respectively.
+
+### Link prediction 
+The goal in a link prediction task is to predict the likelihood of two nodes being inter-linked.
+
+Link prediction is used in maps to predict the occurence of traffic jams enabling the suggestion of alternative routes (links) given the current traffic pattern.
+
+It's applied in social networking sites such as Facebook. I'm sure we've all encountered the friend suggestion notification on Facebook. This is a good application of link prediction. Here, the nodes are the friends on Facebook while the edges are the relationships between these friends. The network is able to establish the link between two friends (nodes) i.e. mutual friends. Once it establishes a link, it's able to make a prediction and suggest the friend to you.
+
+The image below depicts the link prediction problem in social networks
+
+![Link Prediction in social networks](/engineering-education/an-introduction-to-graph-neural-network/social-network.PNG)<br>
+
+*[Image Source: Arxiv](https://arxiv.org/abs/1812.08434)*
+
+### Graph classification
+The idea behind graph classification is to classify graphs into different classes. This is related to image classification but the target changes into classifying graphs rather than images.
+
+Social networks has changed the way we socialize and communicate in this era. Graph classification in social network analysis help to discover patterns in user's interaction. This analysis helps in summarizing the perspectives and interests of social media users. Information gathered from these analysis can then be used for targeted online advertising.
+
+For example, the network could categorize users into different age groups. Targeted advertisements could then be tailored for these different classes of users. 
+
+### How CNNs and Network Embedding plays a role in GNN
+
+GNNs motivation stems from two areas of study:
+1. Convolution Neural Networks (CNN)
+2. Network Embeddings
+
+#### Convolution Neural Networks (CNN)
+These are deep neural networks used to analyze image data. They solve image processing tasks.
+
+CNNs structures use shared weights, local connections and consist of many layer stacked together. 
+These structural properties of a CNN are also shared with GNN:
+1. The shared weight property is important in graphs as it leads to a reduction in the computation cost.
+2. Many layers stacked together are able to capture meaningful features in graphs networks.
+3. The local connections are important in GNNs are this property is what graphs networks are all about; locally connected structures.
+
+#### Network Embedding
+Network embedding enables the transformation of input networks such as the edges and nodes of a graph into low-dimensional vectors.
+The success in the implementation of ideas such as representation learning and word embeddings gave rise to [DeepWalk](/https://arxiv.org/pdf/1403.6652.pdf/) which is a graph embedding technique based on learning latent representations.
 
 ### Graph Learning Python Libraries
 
-Don't know where to start?
+Why would you need use a library? You might wonder.
 
-Well. Several freely available tools will let you start working on your project using GNN. 
+Well. As a beginner, the use of libraries enables a faster and efficient way of experimenting with GNNs. These libraries contain already implemented examples which make it easier for a beginner to understand. Besides, they are free, easy to use, and most standard benchmarked datasets in the graph domain have already been integrated into these libraries. 
 
 The top three libraries include:
 
 1. PyTorch Geometric
 
-It has the latest types of Graph Networks already built in for you. This graph networks are available as single line functions that are ready to be called in the PyTorch library. 
+It has the latest types of Graph Networks already built in for you. These graph networks are available as single line functions that are ready to be called in the PyTorch library. 
 
 Read more about it [here](/https://pytorch-geometric.readthedocs.io/en/latest/) 
 
@@ -78,7 +121,7 @@ Read more about it [here](/https://pytorch-geometric.readthedocs.io/en/latest/)
 It is a python library created by DeepMind Technologies. It helps build graph networks in platforms such as TensorFlow and Sonnet.
 This library provides a lot of documentation and ready-made collab notebooks to showcase how to use their graph network library.
 
-However, it is important to note that their code isn't beginner-friendly when compared to the other two libraries. It is not advisable to start with this library.
+But, it is important to note that their code isn't friendly for beginners when compared to the other two libraries. 
 
 Learn more about it [here](/https://github.com/deepmind/graph_nets/)
 
@@ -90,29 +133,57 @@ DGL is the top pick for beginners.
 
 Learn more about it on their official [website](/https://www.dgl.ai/)
 
+To better understand the use of these libraries, [here](/https://docs.dgl.ai/tutorials/basics/1_first.html#sphx-glr-download-tutorials-basics-1-first-py/) is an example problem implemented using the DGL library. 
+It is based on the Zachary's Karate club problem. Zachary's karate club is a popular social network of a university used in networks which dates back to the year 1970. The club consisted of a total of 34 members each with close associations outside the club setting. Due to internal conflicts, the club was forced to split into two communities. One community was led by the instructor (Oth node) while the other was led by the club's president (33rd node). 
+The task is to predict in which of the two communities, node 0 or node 33, each member of the club is likely to join.
+
 ### Models of Graph Neural Networks
 
-GNNs models can be categorized into four groups:
+GNNs models consists of four types:
+1. Recurrent Graph Neural Networks (RGNNs)
+2. Convolutional Graph Neural Networks (CGNNs)
+3. Graph Auto-Encoders (GAEs)
+4. Spatial-Temporal Graph Neural Networks (STGNNs)
 
-#### Recurrent Graph Neural Networks (RecGNNs)
+#### Recurrent Graph Neural Networks (RGNNs)
 
 The earliest studies of Graph Neural Networks fall under this model.
 
-These neural networks aim to learn node representations using Recurrent Neural Networks (RNNs). RecGNNs work by assuming that nodes in the graph exchange messages (message passing) constantly. This exchange continues until a stable equilibrium is achieved.  
+These neural networks aim to learn node representations using Recurrent Neural Networks (RNNs). RGNNs work by assuming that nodes in the graph exchange messages (message passing) constantly. This exchange continues until a stable equilibrium is achieved.  
 
-#### Convolutional Graph Neural Networks (ConvGNNs)
+#### Convolutional Graph Neural Networks (CGNNs)
 
-ConvGNNs work by generalizing operations of convolution from grid data to graph data. In comparison to RecGNN, ConvGNN employs many layers of graph convolutions. This helps to extract high-level node representations.
+![CGNN with multiple graph convolution layers](/engineering-education/an-introduction-to-graph-neural-network/CGNN.PNG)<br>
 
-ConvGNNs set the base for building other GNN models.
+*[Image Source: Arxiv](https://arxiv.org/pdf/1901.00596.pdf)*
+
+CGNNs work by generalizing the operations of convolutions from grid format to graph format. In comparison to RGNN, CGNN employs many layers of graph convolutions. This helps to extract high-level node representations.
+
+![Image to Graph](/engineering-education/an-introduction-to-graph-neural-network/image-as-graph.PNG)<br>
+
+*[Image Source: Arxiv](https://arxiv.org/abs/1812.08434)*
+
+CGNNs set the base for building other GNN models.
+
+An example of an application of CGNN is the [PinSage](/https://medium.com/pinterest-engineering/pinsage-a-new-graph-convolutional-neural-network-for-web-scale-recommender-systems-88795a107f48/)  recommendation system at Pinterest. The PinSage algorithm works by learning the graph node embeddings operating on 3 and 18 billion nodes and edges respectively.
 
 #### Graph Auto-Encoders (GAEs)
+
+![Graph Auto-Encoder](/engineering-education/an-introduction-to-graph-neural-network/GAE.PNG)<br>
+
+*[Image Source: Arxiv](https://arxiv.org/pdf/1901.00596.pdf)*
 
 GAEs are deep neural networks that learn to generate new graphs. They map nodes into latent vector spaces. Thereafter, reconstruct graph information from latent representations. 
 
 They are used to learn the embedding in networks and the generative distribution of graphs. 
 
+GAEs have been used to perform link prediction tasks in [citation networks](/https://arxiv.org/pdf/1611.07308.pdf/). These networks contain articles that are linked together via citationships. GAEs are able to categorize these articles into different groupings.
+
 #### Spatial-Temporal Graph Neural Networks (STGNNs)
+
+![A Spatial-Temporal Graph Neural Network](/engineering-education/an-introduction-to-graph-neural-network/GAE.PNG)<br>
+
+*[Image Source: Arxiv](https://arxiv.org/pdf/1901.00596.pdf)*
 
 The idea behind these networks is to simultaneously consider spatial and temporal dependencies. In the current research, graph convolutions are used to capture the spatial dependency while CNNs or RNNs are used for temporal dependence. 
 
@@ -128,23 +199,23 @@ For more details about these models, feel free to read this [paper](/https://iee
 
 #### Computer Vision
 
-GNNs have been applied to solve computer vision problems in areas such as:
+In computer vision, GNNs have been applied to solve problems in:
 
 1. Scene graph generation
-The goal of this model is to separate an image into a semantic graph consisting of objects and their semantic relationships.
+The goal of this model is to separate image data in order to achieve a semantic graph. This graph consists of objects and the semantic relationship between them.
 
 2. Point clouds' classification
-These are sets of 3-D data points in space. They are commonly recorded using LiDAR scans. They convert point clouds into k-nearest neighbor graphs. They then use ConvGNNs to explore their topological structures.
+These are sets of 3-D data points in space. They are commonly recorded using LiDAR scans. They transform point clouds into graphs. Thereaafter, use CGNNs to explore their topological structures.
 
 3. Action recognition 
-STGNN is applied to learn human action patterns. They detect the locations of human joints in videos. Naturally, human joints form a graph as they are linked by skeletons. 
+STGNN is applied to learn the various patterns in human action. They detect the locations of human joints in videos. Naturally, human joints form a graph as they are linked by skeletons. 
 
 #### Recommendation Systems
 
 In graph-based recommendation systems, users and items are regarded as the nodes in the network.
-These systems leverage a couple of relationships in order to produce quality recommendations.
+These systems leverage a couple of relationships towards producing recommendations of high quality.
 These include:
-* Users to users relationship
+* Users to user's relationship
 * Items to items relationship
 * Users to items relationship
 
@@ -152,20 +223,28 @@ The goal of the system is to tell the importance of an item to a user. This can 
 
 #### Natural Language Processing (NLP)
 
-In NLP, GNNs have been used for text classification. They utilize the mutual relationship between words in documents to work out the labels in documents. 
+In NLP, GNNs are used for the classification of text data. They utilize the mutual relationship between words in documents to work out the labels in documents. 
+
+![Graphs in NLP](/engineering-education/an-introduction-to-graph-neural-network/text-to-graphs.PNG)<br>
+
+*[Image Source: Arxiv](https://arxiv.org/abs/1812.08434)*
 
 #### Traffic Systems
 
 In smart transportation systems, STGNNs are deployed to solve the traffic prediction problem.
 This is essential in a smart transportation system as there is a need for an accurate estimation of the traffic volume, speed, and density of roads.
 
-STGNN considers the traffic network as a spatial-temporal graph. The nodes are represented by the various wireless sensors installed on the roads. The edges are represented by the measured distance between pairs of nodes.
+In a traffic network, the nodes are represented by the various wireless sensors installed on the roads. The edges are represented by the measured distance between pairs of nodes.
 
 GNNs have also been used together with Long Short Term Memory (LSTM) and CNN to forecast the number of taxi demands in a particular location within a time interval. It takes into account past taxi demands, weather data, and location information. 
 
 #### Chemistry
 
-In chemistry, GNN is applied to study the graph structure of molecules. In these molecules, atoms are considered as the nodes and the chemical bonds between these atoms considered the edges.
+Here, GNNs focuses on the study of the structures of graph in different protein molecules. In these molecules, atoms are considered as the nodes and the chemical bonds between these atoms considered the edges.
+
+![Image depicting a molecule as a graph](/engineering-education/an-introduction-to-graph-neural-network/molecule-as-a-graph.PNG)<br>
+
+*[Image Source: Arxiv](https://arxiv.org/abs/1812.08434)*
 
 ### Conclusion
 
@@ -185,4 +264,4 @@ To learn more about Graph Neural Networks, please read this comprehensive survey
 8. [Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting](/https://arxiv.org/pdf/1707.01926.pdf/)
 9. [Structural-RNN: Deep Learning on Spatio-Temporal Graphs](/https://openaccess.thecvf.com/content_cvpr_2016/papers/Jain_Structural-RNN_Deep_Learning_CVPR_2016_paper.pdf/) 
 10. [Hero image](/https://unsplash.com/photos/BW0vK-FA3eg/)
-
+11. [PinSage](/https://medium.com/pinterest-engineering/pinsage-a-new-graph-convolutional-neural-network-for-web-scale-recommender-systems-88795a107f48/)
