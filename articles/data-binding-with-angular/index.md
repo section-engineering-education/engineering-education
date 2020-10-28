@@ -3,7 +3,7 @@
  It is built upon a set of TypeScript libraries imported into our app; these libraries implement 
  all the core functionalities required for an app to run.
 
-###Terminologies
+### Terminologies
 Before diving into the tutorial, we will get familiar with the necessary terminologies used
 across all the Angular applications.
 #### 1. Components
