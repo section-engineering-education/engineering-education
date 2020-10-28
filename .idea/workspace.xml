@@ -25,7 +25,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78a22ad7-0f09-417d-b471-61a27e89a5aa" name="Default Changelist" comment="completed">
+    <list default="true" id="78a22ad7-0f09-417d-b471-61a27e89a5aa" name="Default Changelist" comment="updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +48,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/C1sco/nlg-tomcat7/nlg-client" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -58,7 +59,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602598913138</updated>
-      <workItem from="1602598915271" duration="4290000" />
+      <workItem from="1602598915271" duration="5904000" />
+      <workItem from="1602647423719" duration="346000" />
+      <workItem from="1603519382823" duration="3373000" />
+      <workItem from="1603544678140" duration="644000" />
+      <workItem from="1603783781371" duration="1144000" />
+      <workItem from="1603819161090" duration="6357000" />
     </task>
     <task id="LOCAL-00001" summary="completed">
       <created>1602605300841</created>
@@ -67,7 +73,21 @@
       <option name="project" value="LOCAL" />
       <updated>1602605300841</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="completed">
+      <created>1602606191926</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602606191926</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updated">
+      <created>1603860543509</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603860543509</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,15 +103,21 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1602605308058">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1603544691398">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602605308058" />
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603544691398" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1603860552976">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603860552976" />
   </component>
 </project>
