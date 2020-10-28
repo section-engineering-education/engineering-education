@@ -42,24 +42,24 @@ To back that statement up, let’s use one of Python’s fundamental data struct
 ```py
 import time
 
-#Create a list
+# Create a list
 list_a = []
 
-#Append 100,000 elements to the list
+# Append 100,000 elements to the list
 for i in range(100000):
     list_a.append(i)
 
 start_time = time.time()
 
-#Multiply every element in list_a with 5
+# Multiply every element in list_a with 5
 list_b = [5*number for number in list_a]
 
-#Calculate time taken to multiply every element
+# Calculate time taken to multiply every element
 end_time = time.time() - start_time
 
-print("Tim" taken for a list: ), end_time
+print("Time taken for a list:" + str(end_time))
 
-#Output - Time taken for a list - 0.0039899349212646484s
+# Output - Time taken for a list - 0.0039899349212646484s
 ```
 
 In a real-world setting like that of a processing chip within a self-driving car, 0.03 seconds for 100,000 multiplication operations is highly ineffective.
@@ -72,13 +72,13 @@ A NumPy array is a multidimensional, uniform collection of elements. Unlike a no
 Let’s dive into that statement a little deeper, but before that, let's import the NumPy library.
 
 ```py
-#Import the NumPy library
+# Import the NumPy library
 import numpy as np
 
-#Check Version
+# Check Version
 print(np.__version__)
 
-#Output - 1.18.4
+# Output - 1.18.4
 ```
 
 np.\_\_version\_\_ returns the version of NumPy being used.
@@ -105,17 +105,17 @@ print(type(np_list_a))
 Initializing a linear NumPy array can go one of many ways:
 
 ```py
-array_of_zeroes = np.zeros(10)
+array_of_zeros = np.zeros(10)
 print(array_of_zeros)
-#Output - [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# Output - [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 array_of_ones = np.ones(10)
 print(array_of_ones)
-#Output - [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+# Output - [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
 array_of_random_numbers = np.random.rand(5)
 print(array_of_random_numbers)
-#Output - [0.84692907 0.58108508 0.77377301 0.95796771 0.61382531]
+# Output - [0.84692907 0.58108508 0.77377301 0.95796771 0.61382531]
 ```
 
 A NumPy array of random integers can be generated using the `numpy.random.randint` method. This method takes three inputs:
@@ -127,15 +127,15 @@ A NumPy array of random integers can be generated using the `numpy.random.randin
 The method returns random integers from the discrete distribution of integers in the half-open interval `\[low, high)`. If high is None, the results are from `\[0, low)`.
 
 ```py
-#With all three parameters - low, high and size
+# With all three parameters - low, high and size
 array_of_random_integers = np.random.randint(low = 1, high = 100, size = 10)
 print(array_of_random_integers)
-#Output - [37 31 98 78 67 10 9 42 39 45]
+# Output - [37 31 98 78 67 10 9 42 39 45]
 
-#With high as None
+# With high as None
 array_of_random_integers = np.random.randint(low = 5, high = None, size = 10)
 print(array_of_random_integers)
-#Output - [3 4 1 4 4 1 3 1 3 2]
+# Output - [3 4 1 4 4 1 3 1 3 2]
 ```
 
 Yet another way to initialize a linear NumPy array is `linspace`, that returns an evenly spaced sequence in a specified interval.
@@ -151,12 +151,12 @@ Return a numpy.ndarray with `num` equally spaced samples in the closed interval 
 ```py
 even_spaced_array = np.linspace(start = 0, stop = 50, num = 5, endpoint = True)
 print(even_spaced_array)
-#Output - [ 0.  12.5 25.  37.5 50. ]
+# Output - [ 0.  12.5 25.  37.5 50. ]
 
 
-even_spaced_array = np.linspace(start = 0, stop = 50, num = 5, endpoint = True)
+even_spaced_array = np.linspace(start = 0, stop = 40, num = 5, endpoint = True)
 print(even_spaced_array)
-#Output - [ 0. 10. 20. 30. 40.]
+# Output - [ 0. 10. 20. 30. 40.]
 ```
 
 Below are a few more array operations in that are self-explanatory:
@@ -166,7 +166,7 @@ Below are a few more array operations in that are self-explanatory:
 Apart from mathematical computations, there will be a constant need to reshape or manipulate data in arrays. One simple transformation that can be done is to transpose a matrix. A tedious process like transforming a list of lists (a matrix) is done as follows:
 
 ```py
-#Initialize Matrix to a set of values
+# Initialize Matrix to a set of values
 matrix_A = [[1,2,3,4] for _ in range(4)]
 
 print(matrix_A)
@@ -212,6 +212,9 @@ np_matrix_A = np.array(matrix_A)
 
 #And transpose!
 np_matrix_A = np_matrix_A.T
+
+print(np_matrix_A)
+
 """
 Output - [[1, 1, 1, 1],
           [2, 2, 2, 2],
@@ -250,16 +253,16 @@ But this time, the NumPy way:
 
 ```py
 import time as time
-#Create a NumPy array having 100000 elements
+# Create a NumPy array having 100000 elements
 list_a = np.array([i for i in range(100000)])
 
 start = time.time()
 
-#Multiply by 5 the vectorized way
+# Multiply by 5 the vectorized way
 list_b = list_a * 5
 
 print(time.time() - start)
-#Output - 0.0004646778106689453        
+# Output - 0.0004646778106689453        
 
 ```
 
