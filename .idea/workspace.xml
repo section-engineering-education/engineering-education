@@ -26,7 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78a22ad7-0f09-417d-b471-61a27e89a5aa" name="Default Changelist" comment="updated">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/engineering-education.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/data-binding-with-angular/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/articles/data-binding-with-angular/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +70,7 @@
       <workItem from="1603544678140" duration="644000" />
       <workItem from="1603783781371" duration="1144000" />
       <workItem from="1603819161090" duration="6357000" />
+      <workItem from="1603861995809" duration="180000" />
     </task>
     <task id="LOCAL-00001" summary="completed">
       <created>1602605300841</created>
