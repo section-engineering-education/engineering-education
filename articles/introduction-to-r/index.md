@@ -1,5 +1,4 @@
 ---
-
 layout: engineering-education
 status: publish
 published: true
@@ -21,28 +20,27 @@ images:
 The data science community has been growing over the past decade. The tools used in the industry have been powering this unprecedented growth. Hence, learning a programming language like R empowers us to contribute to the field. This article will clarify all the basic concepts of R and look at the various concepts. Going through the article should give you sufficient information to start coding in R. 
 
 ### What is R?
-
-R is a software environment developed for statistical and graphical computing. Developed at the Bell Labs, it is a modified implementation of [S language](https://en.wikipedia.org/wiki/S_%28programming_language%29). It provides many statistical techniques such as [linear modeling](https://techvidvan.com/tutorials/r-generalized-linear-models/), [non-linear modeling](https://analyticsindiamag.com/hands-on-guide-for-non-linear-regression-models-in-r/), [statistical tests](http://r-statistics.co/Statistical-Tests-in-R.html), [classification, and clustering](https://www.geeksforgeeks.org/introduction-to-machine-learning-in-r/) algorithms, etc. One of the greatest strengths of the R language is the large community that uses it. Therefore, many optimized libraries are readily available to make the lives of early programmers simple. 
+R is a software environment developed for statistical and graphical computing. Developed at Bell Labs, it is a modified implementation of the [S language](https://en.wikipedia.org/wiki/S_%28programming_language%29). It provides many statistical techniques such as [linear modeling](https://techvidvan.com/tutorials/r-generalized-linear-models/), [non-linear modeling](https://analyticsindiamag.com/hands-on-guide-for-non-linear-regression-models-in-r/), [statistical tests](http://r-statistics.co/Statistical-Tests-in-R.html), [classification, and clustering](https://www.geeksforgeeks.org/introduction-to-machine-learning-in-r/) algorithms, etc. One of the greatest strengths of the R language is the large community that uses it. Therefore, many optimized libraries are readily available to make the lives of early programmers simple.
 
 ### RStudio
 
-Before we begin, we need to ensure if the R interpreter is installed on our local machine. In this article, we will focus on programming concepts. You can use online editors like [Repl.it](https://repl.it/languages/rlang) for this tutorial. For further information on installation, refer to this [article](https://techvidvan.com/tutorials/install-r/).
+Before we begin, we need to ensure that the R interpreter is installed on our local machine. In this article, we will focus on programming concepts. You can use online editors like [Repl.it](https://repl.it/languages/rlang) for this tutorial. For further information on installation, refer to this [article](https://techvidvan.com/tutorials/install-r/).
 
-The RStudio interface has four components that we make use of most. The RStudio terminal is shown below.
+The RStudio interface has four components that we make use of most. Below is a preview of what the RStudio interface looks like.
 
 ![rstuido](rstudio.jpg)
 
 The four components are as follows:
 
-1. **Editor**: The editor is used to create R scripts. R scripts are executed using the run button or the console. The run button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
+1. **Editor**: The editor is used to create R scripts. R scripts are executed using the **run** button or the console. The **run** button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
    1. Set the current working directory to the directory, including the R script. Use the command `setwd(dir)` to set the working directory to the directory of your choice. Use `getwd()` to get the current working directory
-   2. We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section.
+   2. We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section. The `source(filename)` is typed and executed via the console, which we cover in the next point.
    ![](R-Script.jpg)
-2. **Console and Terminal**: The console in R is similar to the IDLE in Python. We can execute any command here. For this tutorial, you may use the console.
+2. **Console and Terminal**: The **console** in R is similar to IDLE in Python. We can execute any command here. For this tutorial, you may use the **console**.
    ![](console.jpg)
-3. **Environment Variables**: It gives us a list of all the variables stored and the corresponding variables stored in them. These variables are created at the time of execution of the R scripts.
+3. **Environment Variables**: The **environment variables window** list all the variables created during program execution and their corresponding values. It is used to understand the dimensionality and data-types of the data being used by a program.
    ![](environment.jpg)
-4. **Plots, Package manager, and Help Section**: Plots section generates any plots that have been specified in the R script. The package manager gives us a list of packages installed and lets us install packages if required.  Finally, the help section is a go-to for developers of all caliber. The ability to go through official docs through the RStudio empowers programmers and saves them much time. 
+4. **Plots, Package manager, and Help Section**: The plots section generates any plots that have been specified in the R script. The **Package Manager** gives us a list of packages installed and lets us install packages if required.  Finally, the help section is a go-to for developers of all levels. The ability to go through official docs through the RStudio empowers programmers and saves them much time.
    ![](plot.jpg)
 
 
@@ -51,11 +49,11 @@ The four components are as follows:
 In this article, we will be covering the following concepts:
 
 1. Variables, Data Types, and Operations
-2. Vectors 
+2. Vectors
 3. Matrices
 4. Factors
 5. Lists
-   
+
 #### Variables, Data Types and Operations
 
 R includes the following atomic data types: logical, numeric, integer, complex, raw, and character. Abstract data types such as lists, stacks, etc., are defined using these atomic data types. Atomic data types are the most fundamental data structures. Abstract data types are building blocks used in complex scenarios. These abstract data types are created using atomic data types.
@@ -176,7 +174,7 @@ matrix(c(1:16), bycol=TRUE, ncol=4) # the matrix's dimensions is 4*4, since 16/4
 matrix(c(1:16), byrow=TRUE, nrow=4) # num of rows = 4, therefore, num of cols = 16/4 = 4. Hence, matrix is 4x4
 ```
 
-If the vector's length is not a multiple of the number of rows/columns mentioned in the function, then R displays a warning and fills up the remaining spaces with the first few elements of the list. 
+If the vector's length is not a multiple of the number of rows/columns mentioned in the function, then R displays a warning and fills up the remaining spaces with the first few elements of the list.
 
 For example: 
 
@@ -194,7 +192,7 @@ Warning message: data length [16] is not a sub-multiple or multiple of the numbe
 ```
 ##### Naming Matrices
 
-Just like vectors, matrices also have the option to name the rows and columns. The functions available are `rownames()` and `colnames()` respectively. They take in a vector containing the names corresponding to the indices. Consider the following example: 
+Just like vectors, matrices also have the option to name the rows and columns. The functions available are `rownames()` and `colnames()` respectively. They take in a vector containing the names corresponding to the indices. Consider the following example:
 
 While defining the matrix `new_matrix,` we can also specify the range of numbers that need to be stored in it. R automatically considers it as a vector and proceeds with the creation of the matrix. Therefore, `c(1:4)` is equivalent to `1:4` while defining matrices.
 
@@ -205,9 +203,9 @@ rownames(newm_matrix) <- c("row 1","row 2","row 3") # assigning names to row ind
 ```
 ##### Summing Entries
 
-Let's say you want to compute the average of the entries in your matrix. We begin by adding them up and then dividing by the total number of entries. R offers functions to add the entire rows or columns. They are `rowSums,` `colSums.` These functions take the matrix as their input and output a vector containing the sums. 
+Let's say you want to compute the average of the entries in your matrix. We begin by adding them up and then dividing by the total number of entries. R offers functions to add the entire rows or columns. They are `rowSums,` `colSums.` These functions take the matrix as their input and output a vector containing the sums.
 
-Example: 
+Example:
 ```r
 x <- matrix(1:9, byrow = TRUE, nrow=3) # 3x3 matrix defined
 x # outputs the matrix x
@@ -231,8 +229,8 @@ col_sum
 
 ##### Inserting new rows and columns to existing matrices
 
-Let us consider the situation where we need to modify a matrix by adding extra rows or columns. R provides two functions called `cbind()` and `rbind()` to do the same. 
-The input to the function is the matrix to be modified followed by the vector to be inserted. Consider the example given below: 
+Let us consider the situation where we need to modify a matrix by adding extra rows or columns. R provides two functions called `cbind()` and `rbind()` to do the same.
+The input to the function is the matrix to be modified followed by the vector to be inserted. Consider the example given below:
 ```r
 x <- matrix(1:9, byrow = TRUE, nrow=3) # 3x3 matrix defined 
 new_matrix_with_additional_column <- cbind(x, c(1,2,3)) # 3*4 matrix defined with additional column (1,2,3)
@@ -274,7 +272,7 @@ x
 [2,]    5    6    7    8
 [3,]    9   10   11   12
 [4,]   13   14   15   16
- 
+
  x[1:2,1:2]
      [,1] [,2]
 [1,]    1    2
@@ -311,7 +309,7 @@ factored_vector
 ```
 We obtain the desired output.
 ```txt
-[1] Big Small Medium 
+[1] Big Small Medium
 Levels: Small < Medium < Big
 ```
 The final function one must know under factors, which is used quite frequently, is `summary().` The summary function summarizes factors and gives the total number of occurrences of a particular category in the initial `factor_vector.`
@@ -324,7 +322,7 @@ summary(factored_vector)
 ```
 The following code outputs:
 ```txt
-Small Medium Big 
+Small Medium Big
     1     1     1
 ```
 
@@ -333,7 +331,7 @@ Small Medium Big
 An R list is an object consisting of an [ordered collection of objects known as its components](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Lists). They can hold elements belonging to various data types. These data types can be numerical, complex, character, boolean, vectors, factors, and matrix. Lists are the data structure that completes the R-ecosystem by providing many features. Let us look at lists and the functions it offers.
 
 
-Let us begin by declaring a list. 
+Let us begin by declaring a list.
 
 ```r
 vector_to_be_inserted_in_list <- c(1:5) # create a vector
@@ -395,7 +393,7 @@ $matrix
 
 Using the names, we can select the elements. To select the text using the name, we use the following command: `new_list$text.`
 
-The general syntax is name of the variable, followed by`$`, followed by the name assigned: `name_of_the_list_variable$name_assigned_to_element`. 
+The general syntax is name of the variable, followed by`$`, followed by the name assigned: `name_of_the_list_variable$name_assigned_to_element`.
 
 ### Conclusion
-In this article, we have learned the basics of R programming. It is a potent tool used extensively in the data science community. Try out the code given to gain maximum value from the tutorial. Also, try out [Repl.it](https://repl.it/languages/rlang) and use it often. It provides hassle-free access to faster experimentation and prototyping. 
+In this article, we have learned the basics of R programming. It is a potent tool used extensively in the data science community. Try out the code given to gain maximum value from the tutorial. Also, try out [Repl.it](https://repl.it/languages/rlang) and use it often. It provides hassle-free access to faster experimentation and prototyping.
