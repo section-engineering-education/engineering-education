@@ -5,8 +5,8 @@ published: true
 url: /engineering-education/machine-learning-and-deep-learning/
 title: Machine Learning and Deep Learning
 description:
-author:
-date: 2020-10-19T00:00:00-07:00
+author: james-kimani
+date: 2020-10-28T00:00:00-17:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,24 +15,25 @@ images:
   - url: /engineering-education/machine-learning-and-deep-learning/hero.jpg
     alt:
 ---
-Technology is growing at a fast pace in recent years. Due to this, it is now easy to get lost in the rumpus of technological terms that keep popping up every day.
+Technology is growing at an alarming pace in recent years. Due to this, it is now easy to get lost in the ruckus of all technological terms that keep popping up every day.
 <!--more-->
 ### Introduction
-Machine learning and deep learning are among the fast-growing applications. Artificial Intelligence ([AI](https://www.investopedia.com/terms/a/artificial-intelligence-ai.asp)) is one of the fast-growing technologies that has contributed significantly to the growth of machine and deep learning.
+Machine learning and deep learning are among the fastest-growing applications. Artificial Intelligence ([AI](https://www.investopedia.com/terms/a/artificial-intelligence-ai.asp)) is one of the fast-growing technologies that has significantly contributed to the growth of machine and deep learning.
 
-The AI incorporates and avails intelligence that is used to enhance decision making on both applications. These applications have contributed significantly to solving problems that previously affected performances in some applications.  
+The AI incorporates and helps power the intelligence that is used to enhance decision making within both applications. These applications have contributed significantly in solving problems that previously affected performances in some applications.  
 
-New ideas in the tech world have led to various innovations that have sparked the nature of things. Alexa and Siri are [virtual assistant](https://www.investopedia.com/terms/v/virtual-assistant.asp) that make extensive use of machine learning and are widely used.
+New ideas in the tech world have led to various innovations that have sparked the nature of things. Alexa and Siri are [virtual assistant](https://www.investopedia.com/terms/v/virtual-assistant.asp) that make extensive use of machine learning and are widely used today.
 
 Machine learning and deep learning have attracted significant attention over the years. The popularity of these two has led to various applications implementing its tools.
 
-This article will focus on understanding what machine learning and deep learning are. The reader will have a deeper understanding of how these applications differ and enhance their functionalities.
+This article will focus on understanding what machine learning and deep learning are. By the end of the article the reader will have a deeper understanding on how these applications differ and enhances AI functionalities.
 
 ### Machine Learning and Artificial Intelligence
-
 Machine learning is a [subset](https://en.wikipedia.org/wiki/Subset) of AI that allows computer algorithms to make accurate data outcomes through interpretations.
 
-Machine learning allows the use the AI towards automating several functionalities used by machine learning. Besides this, the AI enhances neuroscience that emulates human intelligence, an aspect that machine learning lacks. Several [synthetic intelligence](https://www.wikiwand.com/en/Synthetic_intelligence) aspects and modern [virtual assistants](https://www.investopedia.com/terms/v/virtual-assistant.asp) are created to achieve this.
+Machine learning allows the use the AI towards automating several functionalities used by machine learning. Besides this, the AI enhances neuroscience that emulates human intelligence, an aspect that machine learning lacks.
+
+Several [synthetic intelligence](https://www.wikiwand.com/en/Synthetic_intelligence) aspects and modern [virtual assistants](https://www.investopedia.com/terms/v/virtual-assistant.asp) are created to achieve this.
 
 Machine learning uses Artificial Intelligence (AI) techniques that assist in decision making. These techniques include the use of [conventional algorithms](http://wiki.cas.mcmaster.ca/index.php/Conventional_Encryption_Algorithms) used in performing mathematical computation and predictions.
 
@@ -42,34 +43,30 @@ Unstructured data information is stored as files. Examples include; images, word
 
 Machine learning uses both structured and unstructured data. The use of Support Vector Machines (SVMs) and decision-trees are examples that use unstructured data to make interpretations.
 
-Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying, deciphering, and enciphering keys that are identical, and need to be kept secret. 
+Conventional algorithms aids in achieving data mining and predictive analytics in a search. A conventional algorithm is an algorithm that aid in identifying, deciphering, and enciphering keys that are identical, and need to be kept secret.
 
-A conventional algorithm maintains secrets in a cryptographic environment. Conventional algorithm are also used to regulate algorithms used at undoing histogram modifications and distortions. 
+A conventional algorithm maintains secrets in a cryptographic environment. Conventional algorithm are also used to regulate algorithms used at undoing histogram modifications and distortions.
 
 Unlike machine learning, AI can use [unstructured data](https://www.datamation.com/big-data/structured-vs-unstructured-data.html) and still be able to function. Deep learning emulates human intelligence workings.
 Machine learning aids in the detection of objects, language translation, and decision making. Machine learning is also able to recognize speech and make prompt decisions.
  AI enables technologies such as speech recognition without any human intervention.
 
 ### Deep Learning
-
 Deep learning is a [subset](https://en.wikipedia.org/wiki/Subset) of machine learning. Deep learning uses deep [neural networks](https://www.investopedia.com/terms/n/neuralnetwork.asp#:~:text=A%20neural%20network%20is%20a,organic%20or%20artificial%20in%20nature.) that are built using neural networks. Neural networks can be used for both supervised and unsupervised learning tasks. Depending on the task, the algorithm has to work unsupervised, and vice versa, if there is supervision required.
 
 Deep learning uses complex algorithms from neural networks. This resemblance is like the layers with neural connections in the human brain.
 The use of structured and unstructured data makes deep learning work perfectly when compared to machine learning.
 
 ### How deep learning works
-
 Deep learning uses algorithms whose functionality is like that of machine learning. [Neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) extract and learn the features during the training process of deep learning.
 
 
 The neurons in the network undertake two tasks. The first includes understanding which feature is optimal for performing a specific task. The second one involves classifying data after many iterations of the learning process.
 
- In case there is a mistake, the deep learning model's accuracy increases. This occurs when the model is specifically trained to identify and learn from the error. 
- Deep learning is, thus, a more complex and more capable version of machine learning. Besides this, deep learning has more number of parameters when compared to machine learning algorithms. 
+ In case there is a mistake, the deep learning model's accuracy increases. This occurs when the model is specifically trained to identify and learn from the error.
+ Deep learning is, thus, a more complex and more capable version of machine learning. Besides this, deep learning has more number of parameters when compared to machine learning algorithms.
 
 ### Machine Learning vs Deep Learning
-
-
 Deep learning differs from machine learning in some aspects. Manual feature extraction is required for machine learning algorithms.
 
 However, deep learning does not require manual features for manually selecting features from the dataset.
@@ -79,7 +76,6 @@ Deep learning adopts an algorithm that learns not to repeat a mistake in the fut
  This model does not guarantee success since a wrong prediction can be made depending on the quality of the data fed to them. The accuracy is dependent on the quality of data used to learn.
 
 ### Applications
-
 Deep learning is currently being used in various industries and companies. Most of these companies involve the use of the high tech industry in their operations.
 
 Besides this, we, as consumers, are currently using these technologies and applications. People have been using and interact with these innovations without even realizing it.
@@ -101,8 +97,7 @@ Deep learning allows the use of an algorithm that automates errors. This automat
 ### Conclusion
 Both deep learning and machine learning have promoted efficiency in most applications. As a result, the acceleration of the field of AI has increased. This has led to companies' economic advantage since efficiency in terms of time and money has been enhanced.
 
-**Works cited**
-
+### References & Additional Resources
 [https://internetofthingsagenda.techtarget.com/definition/Internet-of-Things-IoT](https://internetofthingsagenda.techtarget.com/definition/Internet-of-Things-IoT)
 
 https://www.mathworks.com/discovery/deep-learning.html
