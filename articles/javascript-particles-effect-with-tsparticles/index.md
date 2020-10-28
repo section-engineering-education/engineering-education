@@ -162,7 +162,7 @@ color: {
 },
 ```
 
-Add animation to animate and transit tsParticles color with a beautiful transforming colored particles. Specify the speed that a particle jump from color a to color b. Adding animation to a single color will randomized particles colors.
+Add animation to animate the tsParticles color with a beautiful transforming colored particles. Specify the speed that a particle jump from color a to color b. Adding animation to a single color will randomized particles colors.
 
 ```js
 color: {
@@ -289,7 +289,7 @@ tsParticles.load("tsparticles", {
 
 If you serve `index.html`, you should be having a background close to the samples below.
 
-#### Using Circular Shapes with Sandomized Solors
+#### Using Circular Shapes with Randomized colors
 ![Color Particles](/engineering-education/javascript-particles-effect-with-tsparticles/circular-randomized-colors.gif)
 
 #### Using Bubbled Array Images as the Shape
