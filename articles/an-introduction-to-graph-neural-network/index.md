@@ -42,11 +42,11 @@ Let's take an example of a transportation system. The locations in the system re
 
 GNN is a technique in deep learning which extends existing neural networks for processing data on graphs. 
 
-![Structure of a GNN implementing a drug interaction network)](/engineering-education/an-introduction-to-graph-neural-network/gnn-structure.PNG)<br>
+![Structure of a GNN implementing a drug interaction network](/engineering-education/an-introduction-to-graph-neural-network/gnn-structure.PNG)<br>
 
 *[Image Source: Aalto University](https://users.aalto.fi/~falconr1/RecentAdvances2019/How%20Powerful%20Are%20Graph%20Neural%20Networks/How_Powerful_Are_Graph_Neural_Networks(3).pdf)*
 
-Using neural networks, nodes in a GNN structure aggregate information gathered from neighboring nodes. The last layer then combines these aggregated information and outputs either a prediction or classification. 
+Using neural networks, nodes in a GNN structure add information gathered from neighboring nodes. The last layer then combines these added information and outputs either a prediction or classification. 
 
 GNN output performs:
 
@@ -60,15 +60,15 @@ Let's discuss further each of these outputs in detail.
 Here, every node in the network is assigned a label. The network then determines the labels of new nodes introduced without the ground truth.
 
 A clear example of node classification is in the image above where the GNN establishes whether node A is either a toxic or safe drug. 
-Another application of node classification is on protein interaction networks. Here, the nodes of the graph represent different types of proteins while the edges describe the types of biological interactions between them. 
-Let's take an example of two proteins in a network of 16 proteins. The 0th (node 0) and 15th (node 15) protein are related to a cancerous disease. The network ought to classify which proteins are most related to each of them respectively.
+Another application of node classification is on protein interaction networks. Here, the nodes of the graph represent different types of proteins. The edges describe the types of biological interactions between them. 
+Let's take an example of two proteins in a network of 16 proteins. The 0th (node 0) and 15th (node 15) protein are related to a cancerous disease. The network ought to classify which proteins are most related to each of them.
 
 ### Link prediction 
 The goal in a link prediction task is to predict the likelihood of two nodes being inter-linked.
 
 Link prediction is used in maps to predict the occurence of traffic jams enabling the suggestion of alternative routes (links) given the current traffic pattern.
 
-It's applied in social networking sites such as Facebook. I'm sure we've all encountered the friend suggestion notification on Facebook. This is a good application of link prediction. Here, the nodes are the friends on Facebook while the edges are the relationships between these friends. The network is able to establish the link between two friends (nodes) i.e. mutual friends. Once it establishes a link, it's able to make a prediction and suggest the friend to you.
+It's applied in social networking sites such as Facebook. I'm sure we've all encountered the friend suggestion notification on Facebook. This is a good application of link prediction. The nodes are the friends on Facebook while the edges are the relationships between these friends. The network is able to establish the link between two friends (nodes) i.e. mutual friends. Once it establishes a link, it's able to make a prediction and suggest the friend to you.
 
 The image below depicts the link prediction problem in social networks
 
@@ -92,11 +92,11 @@ GNNs motivation stems from two areas of study:
 #### Convolution Neural Networks (CNN)
 These are deep neural networks used to analyze image data. They solve image processing tasks.
 
-CNNs structures use shared weights, local connections and consist of many layer stacked together. 
+CNNs structures share weights, local connections and consist of many layer stacked together. 
 These structural properties of a CNN are also shared with GNN:
 1. The shared weight property is important in graphs as it leads to a reduction in the computation cost.
 2. Many layers stacked together are able to capture meaningful features in graphs networks.
-3. The local connections are important in GNNs are this property is what graphs networks are all about; locally connected structures.
+3. The existence of local connections are what graphs networks are all about. They are locally connected structures.
 
 #### Network Embedding
 Network embedding enables the transformation of input networks such as the edges and nodes of a graph into low-dimensional vectors.
@@ -106,7 +106,10 @@ The success in the implementation of ideas such as representation learning and w
 
 Why would you need use a library? You might wonder.
 
-Well. As a beginner, the use of libraries enables a faster and efficient way of experimenting with GNNs. These libraries contain already implemented examples which make it easier for a beginner to understand. Besides, they are free, easy to use, and most standard benchmarked datasets in the graph domain have already been integrated into these libraries. 
+Well. As a beginner, the use of libraries enables a faster and efficient way of experimenting with GNNs. These libraries contain:
+1. Implemented examples which make it easier for a beginner to understand. 
+2. They are free and easy to use. 
+3. Most benchmarked datasets in the graph domain have already been integrated into these libraries. 
 
 The top three libraries include:
 
@@ -127,7 +130,7 @@ Learn more about it [here](/https://github.com/deepmind/graph_nets/)
 
 3. Deep Graph Library (DGL)
 
-DGL was created by the Distributed Machine Learning community on GitHub. This platform has readable code, maintained, and cross-platform.
+The Distributed Machine Learning community on GitHub created DGL. This platform has readable code, maintained, and cross-platform.
 
 DGL is the top pick for beginners.
 
@@ -185,7 +188,7 @@ GAEs have been used to perform link prediction tasks in [citation networks](/htt
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1901.00596.pdf)*
 
-The idea behind these networks is to simultaneously consider spatial and temporal dependencies. In the current research, graph convolutions are used to capture the spatial dependency while CNNs or RNNs are used for temporal dependence. 
+The idea behind these networks is to simultaneously consider spatial and temporal dependencies. In the current research, graph convolutions capture the spatial dependency. CNNs or RNNs capture the temporal dependence. 
 
 STGNNs are applied in: 
 
@@ -202,7 +205,7 @@ For more details about these models, feel free to read this [paper](/https://iee
 In computer vision, GNNs have been applied to solve problems in:
 
 1. Scene graph generation
-The goal of this model is to separate image data in order to achieve a semantic graph. This graph consists of objects and the semantic relationship between them.
+The goal of this model is to separate image data to achieve a semantic graph. This graph consists of objects and the semantic relationship between them.
 
 2. Point clouds' classification
 These are sets of 3-D data points in space. They are commonly recorded using LiDAR scans. They transform point clouds into graphs. Thereaafter, use CGNNs to explore their topological structures.
@@ -223,7 +226,7 @@ The goal of the system is to tell the importance of an item to a user. This can 
 
 #### Natural Language Processing (NLP)
 
-In NLP, GNNs are used for the classification of text data. They utilize the mutual relationship between words in documents to work out the labels in documents. 
+In NLP, GNNs are used for the classification of text data. They use the mutual relationship between words in documents to work out the labels in documents. 
 
 ![Graphs in NLP](/engineering-education/an-introduction-to-graph-neural-network/text-to-graphs.PNG)<br>
 
