@@ -1,4 +1,4 @@
-**Angular** is a development platform and design framework for building SPAs(Single-Page-Applications) using HTML and TypeScript.
+**Angular** is a design framework for building SPAs(Single-Page-Applications) using HTML and TypeScript.
  Angular is written in TypeScript(although the first version, i.e.AngularJS, was written in JS).
  It is built upon a set of TypeScript libraries imported into our app; these libraries implement 
  all the core functionalities required for an app to run.
@@ -179,7 +179,7 @@ newStudent= 'Keanu Reeves';
 //Through @Input() we can now use the value of newStudent.
 ```
 
-- The brackets`[..]` are necessary to evaluate the template expression. If omitted, Angular
+- The `[..]` are indeed necessary to evaluate the template expression. If omitted, Angular
 initializes the *target property* to the variable's type declared inside the component.
 
 
@@ -229,8 +229,8 @@ export class PropertyBindingComponent{
 
 From the above code, it can be seen that there are indeed two event binding listeners.
 - First is the *target event*`(input)` in the *input* element. When the user enters data in the *template*, triggers `onUpdateStudent()` in the *component* file.
-- The `$event` passed as a parameter holds the information about the binding. This information can include data values like an *object*, *number*, or *string*.
-  If the *target event* is a native DOM element event, then `$event` is a *DOM event object* with `target` and `target.value` behaving as properties for that event object.
+- The `$event` passed as a parameter holds the information about the binding. This information can include data values like an *object*,  *number* or *string*.
+  If the *target event* is a native DOM element event, then `$event` is a *DOM event object* with `target` and `target.value` behaving as properties for that event object[1].
 - In the `onUpdateStudent($event)`, we assign `studentID` a new value entered by the user.
 - After entering, when the user clicks on the *Add new student* button, the event `(click)` gets registered and `onAddStudent()` is triggered from the *component* file.
 - Like with *Property Binding*, there's an alternative syntax as well, `on-` prefix without the braces must be added before the *target element*.
@@ -298,5 +298,6 @@ export class PropertyBindingComponent{
 - The `studentID` variable is registered to user input changes and gets updated simultaneously.
 
 #### Additional Resources
+- [1] [Event Binding](https://angular.io/guide/event-binding)
 - To access my complete code. Click [here.](https://github.com/MahanteshR/dataBinding.git)
 - [Angular Docs](https://angular.io/docs).
