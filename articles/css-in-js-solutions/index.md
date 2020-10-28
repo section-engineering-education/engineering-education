@@ -87,7 +87,7 @@ To dive in further, here are the benefits of using JSS in your project:
 Conclusively, JSS can be easily integrated into your react application. Follow this [guide](https://cssinjs.org/setup) to get started with JSS, and you can see a live code [here](https://codesandbox.io/s/z21lpmvv33) of CSS-in-JS in action with JSS.
 
 2. Styled-Components: Styled-components are one of the most used CSS-in-JS solutions in app development. It ensures the usage of ES6 and CSS to style your application with template literals and CSS; you can easily style app components.
-With an intense focus on improving user experience, styled-components are designed to enhance CSS styling for react app components. The following are the benefits of using styled-components in your react app:
+With an intense focus on improving user experience, styled-components are designed to enhance CSS styling for react app components. The following are the benefits of using styled-components in your application:
 * CSS Automation: By using styled-components as your preferred CSS-in-JS solution, it keeps track of which components are active and rendered on the page to inject all styles related to that component automatically, which increases the speed of loading your application.
 * Maintenance: As with other CSS-in-JS solutions, you can maintain your CSS codebase easily and track styles affecting your component without having to check through multiple CSS files.
 * CSS Deletion: Deleting CSS styles is made more comfortable, styled-components make it evident as to which component is unused, and deleting such components automatically deletes all styles related to that component.
