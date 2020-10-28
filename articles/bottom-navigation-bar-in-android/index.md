@@ -107,7 +107,7 @@ We will name our resource file **nav_graph.**. For the Resource Type, select **N
        android:name="com.example.bottomnavigationbar.home"
        android:label="@string/title_home"
        tools:layout="@layout/fragment_home" />
-https://avatars3.githubusercontent.com/u/45882800?s=60&v=4
+
    <fragment
        android:id="@+id/navigation_favourites"
        android:name="com.example.bottomnavigationbar.favourites"
