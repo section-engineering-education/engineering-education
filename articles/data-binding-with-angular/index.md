@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/data-binding-with-angular/hero.jpg
-    alt:  example image
+    alt: example image
 ---
 **Angular** is a platform and design framework for building SPAs using HTML and TypeScript.
  Angular is written in TypeScript(although the first version, i.e.AngularJS, was written in JS).
