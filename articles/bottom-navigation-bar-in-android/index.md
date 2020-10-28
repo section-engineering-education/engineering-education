@@ -80,7 +80,7 @@ dependencies {
 ```
 Select *Sync Now*.
 
-Right-click the `res` directory, click New → Android Resource File.
+Right-click the `res` directory, click `New → Android Resource File`.
 A menu will pop up.
 ![NavGraph Menu](/engineering-education/bottom-navigation-bar-in-android/navgraph.jpg)
 
@@ -130,7 +130,6 @@ We will name our resource file **nav_graph.**. For the Resource Type, select **N
 ```
 
 ### Step 3 – Create a Bottom Navigation View.
-
 In this step, we will add the Bottom Navigation View to our activity's resource file. Add a Bottom Navigation View and a NavHost In your XML Layout file.
 
 ```xml
@@ -185,11 +184,11 @@ This menu will pop up.
 Select *OK* and the error is fixed.
 
 ### Step 4 -Creating A Fragment.
-A **Fragment** is a sub-activity. Fragments are used to simplify the reuse of components and logic in different layouts. First, navigate to the java directory and right-click. Select New → Fragment →  Fragment(Blank). Name the Fragment and select Finish.
+A **Fragment** is a sub-activity. Fragments are used to simplify the reuse of components and logic in different layouts. First, navigate to the java directory and right-click. Select `New → Fragment →  Fragment(Blank)`. Name the Fragment and select Finish.
 
 
 ### Step 5 - Adding Details and Icons to the Bottom Navigation View
-First, let us add the icons required. In the `res/drawable` directory, right-click the `drawable` folder. Select new → Vector Asset.
+First, let us add the icons required. In the `res/drawable` directory, right-click the `drawable` folder. Select `New → Vector Asset`.
 
 ![Vector Asset](/engineering-education/bottom-navigation-bar-in-android/vector.jpg)
 
@@ -199,7 +198,7 @@ First, let us add the icons required. In the `res/drawable` directory, right-cli
 * **_Color_** - provides color options for the clipart.
 * **_Opacity_** - deals with the visibility of the icon.
 
-Select on the icon next to clipart. A list of different cliparts is displayed.
+Select the icon next to clipart. A list of different cliparts is displayed.
 
 ![Clipart List](/engineering-education/bottom-navigation-bar-in-android/list.jpg)
 
@@ -207,7 +206,7 @@ One can search for a clipart in the search bar and choose whether the design of 
 
 ![Favorites](/engineering-education/bottom-navigation-bar-in-android/favorites.jpg)
 
-Once a clipart is selected, click OK → Next → Finish. Open the menu file in `res/menu/ bottom_navigation_menu` and add the following lines of code:
+Once a clipart is selected, click `OK → Next → Finish`. Open the menu file in `res/menu/bottom_navigation_menu` and add the following lines of code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
