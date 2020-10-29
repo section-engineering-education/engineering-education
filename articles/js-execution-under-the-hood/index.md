@@ -146,7 +146,7 @@ This brings you back to where you started as illustrated below.
 
 ![Global Execution Context after you execute js code](global_execution_context_after_executing_js_code.jpg)
 
-Congratulations! You now know exactlly what happens when JavaScript executes your code.
+Congratulations! You now know exactly what happens when JavaScript executes your code.
 
 ## Citations & Resources
 
