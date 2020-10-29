@@ -18,13 +18,13 @@ images:
 ### Introduction
 JavaScript is a single-threaded language, where only one command executes at a time. And, it has a Synchronous model of execution, where each line executes line by line, top to bottom.
 
-In this guide, you get to understand what happens as the JavaScript engine threads down your code.
+In this guide, you will learn what happens as the JavaScript engine threads down your code.
 
 ## Prerequisites
 
 Before you begin this guide you'll need the following:
 
-- A basic understanding of JavaScript Functions
+- An understanding of [JavaScript Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions).
 
 ## Step 1 — What Happens When JavaScript Executes My Code?
 
@@ -37,13 +37,9 @@ Before you begin this guide you'll need the following:
 6. const name = "Will"
 ```
 
-In this step, you will walk through the above lines of code like the JavaScript engine would.
+In this step, you will walk through the above lines of code like the JavaScript engine would. This is to help you understand what happens when you execute the code above.
 
-Why?
-
-To understand what happens when you execute the code above.
-
-First, as soon as you start executing your code, there are two halves to that process:
+As soon as you start executing your code, there are two halves to that process:
 
 1. One, the process of stepping through your code line by line, top to bottom. Referred to as the **Thread Of Execution**.
 2. Two, the storage of the bits of data that you announce as you go through your code's execution in live **Memory**. Referred to as the **Variable Environment**.
@@ -65,7 +61,7 @@ Line 1: Save in memory a constant, **num**, as the label for an integer, **3**.
 
 ![Global Execution Context when line one is executed](step_one_line_one.jpg)
 
-Line 2: You meet a JavaScript keyword [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions). The function keyword means, save in memory **multiplyBy2**, as the label for the functionality of the function, `multiplyBy2()` (denoted as -f- in the image).
+Line 2: You reach a JavaScript keyword [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions). The function keyword means, save in memory **multiplyBy2**, as the label for the functionality of the function, `multiplyBy2()` (denoted as -f- in the image).
 
 This process is also known as **defining/declaring** a function.
 
@@ -75,27 +71,19 @@ At this point, if you were to run:
 ```javascript
 console.log(multiplyBy2.toString());
 ```
-You would the source code for `multiplyBy2()`.
+You would see the source code for `multiplyBy2()`.
 
 To understand what `toString()` does see [the MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Location/toString)
 
-From line 2, you would then move on to line 6 and not line 3. 
-
-Why?
-
-This is because in JavaScript you **do not** go into the body of a function until it is called. And our function `multiplyBy2()` in this case, is defined, but never called.
+From line 2, you will then move on to line 6 and not line 3. This is because in JavaScript you **do not** go into the body of a function until it is called. And our function `multiplyBy2()` in this case, is defined, but never called.
 
 Line 6: Save in memory a constant, **name**, as the label for a string, **"Will"**.
 
 ![Global Execution Context when line six is executed](step_one_line_six.jpg)
 
-For the entire Step 1, you stayed in the Global Execution Context.
-
-Why? 
-
-Because you did not call `multiplyBy2()`.
-
-In the next step, you will get to see when a Local Execution Context is created and what exactly happens under the hood when during that process.
+In the next step, you will see:
+1. When a Local Execution Context is created.
+2. What happens under the hood during that process.
 
 ## Step 2 — What Happens When a Function Is Called in JavaScript?
 
@@ -114,11 +102,11 @@ This switching of Execution Contexts raises, in JavaScript, an issue of tracking
 
 To keep track of this, JavaScript uses a [**Call Stack**](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack).
 
-And so now, you have a third element to the execution of your JavaScript code. The image below illustrates the three elements before any code is executed.
+You now have a third element to the execution of your JavaScript code, the Call Stack. The image below illustrates the three elements before any code is executed.
 
 ![Call Stack illustration](call_stack_intro.jpg)
 
-Having understood that, you now get to see exactly how the call stack comes into play here.
+You will now get to see exactly how the call stack comes into play here.
 
 Line 1: Save in memory a constant, **num**, as the label for an integer, **3**.
 
@@ -158,7 +146,7 @@ This brings you back to where you started as illustrated below.
 
 ![Global Execution Context after you execute js code](global_execution_context_after_executing_js_code.jpg)
 
-Congratulations! You now have the full circle of what happens under the hood when you execute your JavaScript Code.
+Congratulations! You now know what happens when JavaScript executes your code.
 
 ## Citations & Resources
 
