@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-numpy/
 title: A Not so Gentle Introduction to NumPy
-description: This article will go over NumPy (Numerical Python) and how they are a way of describing one or more blocks of computer memory so that the numbers represented can be manipulated.
+description: This article will go over NumPy (Numerical Python) which is a way of describing one or more blocks of computer memory so that the numbers represented can be manipulated.
 author: adithi-giridharan
-date: 2020-10-22T00:00:00-13:00
+date: 2020-10-29T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -17,7 +17,7 @@ images:
 One of the most fundamental libraries in the Machine Learning and Data Science landscape is unarguably NumPy (which stands for Numerical Python). Its significance has led to many other (similar) libraries like Pandas, SciPy, and Matplotlib (all based on NumPy) to be created. Let us delve into the workings and the various functions of the first import line in 99.78% of [Kaggle notebooks](https://www.kaggle.com/docs/notebooks).
 <!--more-->
 ### Introduction
-The Python programming language is the [most versatile language](https://codeinstitute.net/blog/what-are-the-six-most-popular-programming-languages-today) to have ever lived. Yes, lived. Python provides abundant high-level data structures such as lists and dictionaries which aid in producing other data structures.
+The Python programming language is the [most versatile language](https://codeinstitute.net/blog/what-are-the-six-most-popular-programming-languages-today) to have ever existed. Yes, that's right existed. Python provides developers with an abundant of high-level data structures such as lists and dictionaries that aid in producing other data structures.
 
 However, these structures are not suited for [high-performance numeric computation](https://www.scribd.com/document/182500663/NumPY-Array).
 
@@ -62,12 +62,12 @@ print("Time taken for a list:" + str(end_time))
 # Output - Time taken for a list - 0.0039899349212646484s
 ```
 
-In a real-world setting like that of a processing chip within a self-driving car, 0.03 seconds for 100,000 multiplication operations is highly ineffective.
+Using a real-world example, like that of a processing chip within a self-driving car, 0.03 seconds for 100,000 multiplication operations is seen as highly ineffective.
 
-There could be millions of multiplication and addition operations to be done in a second, and those 0.03 seconds could result in a life or death situation.
+There could be millions of multiplication and addition operations to be completed in a second, and those 0.03 seconds could result in a life or death situation.
 
 ### Enter NumPy
-A NumPy array is similar to an array in any other language. It consists of homogeneous elements. However, the dimension is not restricted to 2. A NumPy array can have any dimension that calls for the situation at hand. According to the dimension, a block of computer memory is occupied to access the numbers represented more easily. 
+A NumPy array is similar to an array in any other language. It consists of homogeneous elements. However, the dimension is not restricted to 2. A NumPy array can have any dimension that calls for the situation at hand. According to the dimension, a block of computer memory is occupied to access the numbers represented more easily.
 
 Before delving into the functionality, let's begin by importing the NumPy library.
 
@@ -120,9 +120,9 @@ print(array_of_random_numbers)
 
 A NumPy array of random integers can be generated using the `numpy.random.randint` method. This method takes three inputs:
 
-- **low** (lower bound of the range; inclusive; default value is 0),  
-- **high** (upper bound of the range; exclusive) and  
-- **size** (size of the array).
+1. **low** (lower bound of the range; inclusive; default value is 0),  
+2. **high** (upper bound of the range; exclusive) and  
+3. **size** (size of the array).
 
 The method returns random integers from the discrete distribution of integers in the half-open interval `[low, high)`. If high is None, the results are from `[0, low)`.
 
@@ -142,7 +142,7 @@ Yet another way to initialize a linear NumPy array is `linspace`, which returns 
 
 This function takes the following parameters:
 - **start** (beginning value of the sequence),  
-- **stop** (if the endpoint is set to False, **stop-1** is the ending value, else **stop** is the end value), 
+- **stop** (if the endpoint is set to False, **stop-1** is the ending value, else **stop** is the end value),
 - **num** (default: 50, number of values to be generated), and  
 - **endpoint** (to decide where to stop, default: True)
 
@@ -267,4 +267,7 @@ print(time.time() - start)
 ```
 
 ### Conclusion
-NumPy is one of the most fundamental libraries in Machine Learning and Data Science. It's coded in Python and it uses the vectorized form to perform calculations at an incredible speed. It supports various built-in functions that come in handy for a programmer.
+NumPy is one of the most fundamental libraries in Machine Learning and Data Science. It's coded in Python and it uses vectorized forms to perform calculations at an incredible speed. It supports various built-in functions that come in handy for many programmers.
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
