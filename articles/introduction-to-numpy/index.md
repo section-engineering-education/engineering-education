@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/introduction-to-numpy/hero.jpg
     alt: NumPy example image
 ---
-One of the most fundamental libraries in the Machine Learning and Data Science landscape is unarguably NumPy (which stand for Numerical Python). Its significance has led to many other (similar) libraries like Pandas, SciPy, and Matplotlib (all based on NumPy) to be created. Let us delve into the workings and the various functions of the first import line in 99.78% of [Kaggle notebooks](https://www.kaggle.com/docs/notebooks).
+One of the most fundamental libraries in the Machine Learning and Data Science landscape is unarguably NumPy (which stands for Numerical Python). Its significance has led to many other (similar) libraries like Pandas, SciPy, and Matplotlib (all based on NumPy) to be created. Let us delve into the workings and the various functions of the first import line in 99.78% of [Kaggle notebooks](https://www.kaggle.com/docs/notebooks).
 <!--more-->
 ### Introduction
-The Python programming language is the [most versatile language](https://codeinstitute.net/blog/what-are-the-six-most-popular-programming-languages-today) to have ever lived. Yes, lived. Python provides a rich set of high-level data structures, lists for a collection of objects, dictionaries to build hash tables, etc.
+The Python programming language is the [most versatile language](https://codeinstitute.net/blog/what-are-the-six-most-popular-programming-languages-today) to have ever lived. Yes, lived. Python provides abundant high-level data structures such as lists and dictionaries which aid in producing other data structures.
 
 However, these structures are not suited for [high-performance numeric computation](https://www.scribd.com/document/182500663/NumPY-Array).
 
@@ -67,9 +67,9 @@ In a real-world setting like that of a processing chip within a self-driving car
 There could be millions of multiplication and addition operations to be done in a second, and those 0.03 seconds could result in a life or death situation.
 
 ### Enter NumPy
-A NumPy array is a multidimensional, uniform collection of elements. Unlike a normal array of fixed shape MxN (a matrix), NumPy arrays can have any dimensionality. NumPy arrays are a way of describing one or more blocks of computer memory so that the numbers represented can be manipulated.
+A NumPy array is similar to an array in any other language. It consists of homogeneous elements. However, the dimension is not restricted to 2. A NumPy array can have any dimension that calls for the situation at hand. According to the dimension, a block of computer memory is occupied to access the numbers represented more easily. 
 
-Let’s dive into that statement a little deeper, but before that, let's import the NumPy library.
+Before delving into the functionality, let's begin by importing the NumPy library.
 
 ```py
 # Import the NumPy library
@@ -138,15 +138,15 @@ print(array_of_random_integers)
 # Output - [3 4 1 4 4 1 3 1 3 2]
 ```
 
-Yet another way to initialize a linear NumPy array is `linspace`, that returns an evenly spaced sequence in a specified interval.
+Yet another way to initialize a linear NumPy array is `linspace`, which returns an evenly spaced sequence in a specified interval.
 
 This function takes the following parameters:
-- **start** (starting value of the sequence),  
-- **stop** (end value of the sequence, unless endpoint is set to false),  
-- **num** (number of samples to be generated; default of 50), and  
-- **endpoint** (if true, ‘stop’ is the last sample; default is True)
+- **start** (beginning value of the sequence),  
+- **stop** (if the endpoint is set to False, **stop-1** is the ending value, else **stop** is the end value), 
+- **num** (default: 50, number of values to be generated), and  
+- **endpoint** (to decide where to stop, default: True)
 
-Return a numpy.ndarray with `num` equally spaced samples in the closed interval `[start,stop]` if the endpoint is True. If the endpoint is False, it returns `num` in equally spaced samples in the half-open interval `[start, stop)`.
+Return a numpy.ndarray with `num` equally spaced samples in the closed interval `[start, stop]` if the endpoint is True. If the endpoint is False, it returns `num` in equally spaced samples in the half-open interval `[start, stop)`.
 
 ```py
 even_spaced_array = np.linspace(start = 0, stop = 50, num = 5, endpoint = True)
@@ -159,7 +159,7 @@ print(even_spaced_array)
 # Output - [ 0. 10. 20. 30. 40.]
 ```
 
-Below are a few more array operations in that are self-explanatory:
+Below are a few more array operations that are self-explanatory:
 
 ![Self Explanatory Functions](/engineering-education/introduction-to-numpy/numpyfunc.jpg)
 
@@ -167,15 +167,15 @@ Apart from mathematical computations, there will be a constant need to reshape o
 
 ```py
 # Initialize Matrix to a set of values
-matrix_A = [[1,2,3,4] for _ in range(4)]
+matrix_A = [[5,6,7,8] for _ in range(4)]
 
 print(matrix_A)
 
 """
-Output - [[1, 2, 3, 4],
-          [1, 2, 3, 4],
-          [1, 2, 3, 4],
-          [1, 2, 3, 4]]
+Output - [[5, 6, 7, 8],
+          [5, 6, 7, 8],
+          [5, 6, 7, 8],
+          [5, 6, 7, 8]]
 """
 # Loop over every element in the matrix
 for i in range(4):
@@ -186,10 +186,10 @@ for i in range(4):
 print(matrix_A)
 
 """
-Output - [[1, 1, 1, 1],
-          [2, 2, 2, 2],
-          [3, 3, 3, 3],
-          [4, 4, 4, 4]]
+Output - [[5, 5, 5, 5],
+          [6, 6, 6, 6],
+          [7, 7, 7, 7],
+          [8, 8, 8, 8]]
 """
 ```
 
@@ -232,16 +232,16 @@ With all that being said, let’s address the elephant in the room.
 ### How is NumPy so fast?
 Let's analyze the example where we transposed a matrix. One key point to remember is – in any scripting language, a major performance dipper is the use of unnecessary for loops. Loops when used to perform a single operation (in this case, swapping two elements) on a large dataset increases the complexity a significant amount.
 
-Upon crunching a few numbers, transposing a (10000 x 10000) matrix using for loops takes 58.8596s and using NumPy it takes significantly lesser time. The reason behind such high performance is a tiny concept called [vectorization](https://www.geeksforgeeks.org/vectorization-in-python/) that NumPy implements. Vectorization groups element-wise operations together. Such a vectorized approach applies to all elements in an array.
+Upon crunching a few numbers, transposing a (10000 x 10000) matrix using for loops takes 58.8596s, and using NumPy it takes significantly lesser time. The reason behind such high performance is a tiny concept called [vectorization](https://www.geeksforgeeks.org/vectorization-in-python/) that NumPy implements. Vectorization groups element-wise operations together. Such a vectorized approach applies to all elements in an array.
 
 ![Vectorized](/engineering-education/introduction-to-numpy/vectorized.jpg)
 
 *Figure: [Vectorized Operations](https://lappweb.in2p3.fr/~paubert/ASTERICS_HPC/6-6-1-985.html)*
 
 This is the under-the-hood reason why NumPy’s calculations are off the charts.
-The overhead of making sure the memory blocks line up correctly before pouring an nd-array into a C, compiled NumPy function will overwhelm any time advantage if the array isn't relatively large.
+When an nd-arrays in NumPy and C are compared, the NumPy function produces a massive time advantage in comparison to a C-array if the function is relatively large.
 
-Let's compare Numpy arrays and Python lists. As shown in the chartbelow, as the number of elements increases, the breakeven size is around 200 elements.
+Let's compare Numpy arrays and Python lists. As shown in the chart below, as the number of elements increases, the breakeven size is around 200 elements.
 
  ![Graph](/engineering-education/introduction-to-numpy/numpyGraph.jpg)
 
