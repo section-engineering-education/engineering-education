@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/advanced-r-concepts/
 title: Advanced Programming Concepts in R
-description: In this article we will be going over some advanced aspects of the R programming language, such as dataframes, typecasting, file handling, and loop statements.
+description: In this article we will be going over some advanced aspects of the R programming language, such as data frames, typecasting, file handling, and loop statements.
 author: lalithnarayan-c
 date: 2020-10-21T00:00:00-11:00
 topics: [Languages]
@@ -14,33 +14,34 @@ images:
   - url: /engineering-education/advanced-r-concepts/hero.jpg
     alt:
 ---
-In the first article, we covered the basics of the R programming language. In this article, we will look at some of the advanced aspects of the R programming language. Going through this article will enhance a developers ability to implement [Object-Oriented Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) concepts and write modular code. We will be covering the following topics in this article:
+In the first [article](https://www.section.io/engineering-education/introduction-to-r/), we covered the R programming language basics. In this article, we will look at some of the advanced aspects of the R programming language. Going through this article will enhance a developer's ability to implement [Object-Oriented Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) concepts and write modular code. We will be covering the following topics in this article:
 <!--more-->
 
-1. Dataframes
+1. Data Frames
 2. Typecasting
-3. File handling
-4. Working with inbuilt datasets
+3. File Handling
+4. Working with Inbuilt Datasets
 5. Conditional Statements
 6. Loop Statements
 
-### Dataframes
-R is a programming language built for statistical analysis of large datasets. Dataframes help by storing large datasets in the local memory. They enable operations such as Create, Read, Update and Delete to be performed in an efficient manner. 
+### Data frames
+R is a programming language built for statistical analysis of large datasets. Data frames help by storing large datasets in the local memory. They enable operations such as Create, Read, Update, and Delete to be performed efficiently. Formally, they are defined as: A data frame is a table or a two-dimensional array-like structure in which each column contains values of one variable, and each row contains one set of values from each column".
 
-Let's look at an example to define a dataframe. We will describe several vectors storing different data types. The example considered below is a simplified version of a real dataset. Datasets contain columns of different data types.
+Let's look at an example to define a data frame. We will describe several vectors storing different data types. The example considered below is a simplified version of a real dataset. Real datasets have much more variation with respect to the data. For instance, we use the alphabets as dummy data. Real datasets have much more detailed information such as nouns, verbs, adjectives, etc. Real datasets contain columns of different data types. The data most often belong to the boolean, character, or numeric data types.
 
 ```r
-vector_1 <- c("a","b","c","d","e")
-vector_2 <- c("A","B","C","D","E")
-vector_3 <- c(1,2,3,4,5)
+vector_1 <- c("a","b","c","d","e") # creating a vector of 5 characters
+vector_2 <- c("A","B","C","D","E") # creating a vector of 5 different characters
+vector_3 <- c(1,2,3,4,5) # creating a vector with numerical entries
 vector_4 <- c(2,4,6,8,10)
-vector_5 <- c(TRUE,TRUE,TRUE,FALSE,FALSE)
+vector_5 <- c(TRUE,TRUE,TRUE,FALSE,FALSE) # creating a vector with boolean values
 
-new_data_frame <- data.frame(vector_1, vector_2, vector_3, vector_4, vector_5)
+# creating a data frame out of 5 vectors.
+new_data_frame <- data.frame(vector_1, vector_2, vector_3, vector_4, vector_5) 
 new_data_frame
 ```
 
-We have defined a new dataframe called `new_data_frame.` To define a new dataframe, we use the `data.frame` method and pass the vectors as arguments.
+We have defined a new data frame called `new_data_frame.` Data frames are tightly coupled collections of variables that share many of the matrices and lists' properties. Therefore, defining data frames gives us access to most of the functions defined for matrices and lists. To define a new data frame, we use the `data.frame` method and pass the vectors as arguments.
 
 The output of the above code is as follows:
 
@@ -53,20 +54,20 @@ The output of the above code is as follows:
 5        e        E        5       10    FALSE
 ```
 
-R provides several functions to understand and analyze dataframes. Analysis of dataframes is necessary to perform pre-processing on a given dataset. There are primarily two types of analysis: Statistical and Categorical.
+It is important to create data frames out of vectors to perform preprocessing on datasets. There are primarily two types of analysis: Continuous and Categorical.
 
-The statistical analysis deals with all the continuous values (numbers) in the dataset, whereas categorical analysis deals with categories.
+Continuous analysis deals with all continuous values (numbers) in the dataset, whereas categorical analysis deals with categories. We looked at the definitions of categorical and continuous features in the previous article under the factors section. For more information, check out the [previous article](https://www.section.io/engineering-education/introduction-to-r/).
 
 Examples for the two are:
-1. Statistical values: Prices of houses, oxygen levels in the blood, etc.
-2. Categorical values: Names of places or objects, status(example: Sell, Rent, Buy)
+1. **Statistical values**: Prices of houses, oxygen levels in the blood, etc.
+2. **Categorical values**: Names of places or objects, status (example: Sell, Rent, Buy)
 
-R provides a few functions to help analyze dataframes:
-1. head(): Prints out the first six observations of the dataframe
-2. str(): Prints the structure of the dataframe. The structure includes information about the dataframe and the data-types present in each vector. Observe that the dataframe auto-assigns the data type to the vectors.
-3. tail(): Prints out the last six observations of the dataframe.
+R provides a few functions to help analyze data frames:
+1. **head()**: Prints out the first five rows of the data frame. This is used to preview the dataset and get information about the dimensionality (number of rows and columns) of the dataset.
+2. **str()**: Prints the structure of the data frame. The structure includes information about the data frame and the data types present in each vector. Notice that the data frame auto-assigns the data type to the vectors.
+3. **tail()**: Prints out the last six observations of the data frame.
 
-The outputs for the functions `head` and `tail` are the same in this case, for lack of elements.
+The outputs for the functions `head` and `tail` are the same in this case. The two functions display the first five and last five observations, respectively. If we had more than five rows, the difference between the two functions could be observed. 
 
 ```txt
     vector_1 vector_2 vector_3 vector_4 vector_5
@@ -77,9 +78,9 @@ The outputs for the functions `head` and `tail` are the same in this case, for l
 5        e        E        5       10    FALSE
 ```
 
-These functions make sense when the dataframe size is enormous.
+These functions make sense when the data frame size is enormous.
 
-The output for the `str` function is given below:
+`str` function provides the following preview, with the data type and dataset for 5 observations.
 
 ```r
 data.frame':    5 obs. of  5 variables:
@@ -89,9 +90,9 @@ $ vector_3: num  1 2 3 4 5
 $ vector_4: num  2 4 6 8 10
 $ vector_5: logi  TRUE TRUE TRUE FALSE FALSE
 ```
-Observe that `vector_1` is assigned to a factor data-type. To brush up on factor data-type, revisit the previous article.
+Observe that `vector_1` is assigned to a factor data type. To brush up on factor data type, revisit the previous [article](https://www.section.io/engineering-education/introduction-to-r/).
 
-Dataframes support indexing. The reasoning behind indexing is similar to that of the matrices. Let's consider a few examples:
+Data frames support indexing. The reasoning behind indexing is similar to that of the matrices. Let's consider a few examples:
 
 1. Select the third column
 2. Select the first three rows
@@ -101,12 +102,12 @@ The subsequent outputs is given below:
 
 ```r
 # Consider the same data_frame defined above: new_data_frame
-new_data_frame[,3]
-new_data_frame[1:3,]
-new_data_frame[1:3,5]
+new_data_frame[,3] # select third column
+new_data_frame[1:3,] # select the first three rows
+new_data_frame[1:3,5] # select the (1,5), (2,5) and (3,5)
 ```
 
-The above operations output:
+The above operations output the following: The first output is the third column. The second part of the output is the first three rows. The last piece of the output denotes the three elements `(1,5)`, `(2,5)` and `(3,5)`. We discuss the slicing and indexing operations in the previous article in depth. The example uses indexing and slicing operation. For a quick refresher on slicing, refer to the `selection of elements` subsection under the `matrices` section in the previous [article](https://www.section.io/engineering-education/introduction-to-r/). 
 
 ```txt
     1 2 3 4 5
@@ -119,13 +120,15 @@ vector_1 vector_2 vector_3 vector_4 vector_5
     TRUE TRUE TRUE
 ```
 
-The final function under dataframes is `subset.` The subset function is similar to Python's filter function. We can specify conditions using subset and get a slice of the dataframe satisfying the condition. **Let the condition be all those rows where `vector_5` is `not equal` to `FALSE.`**
+A final function to consider is `subset.` The subset function is similar to [Python's filter](https://www.w3schools.com/python/ref_func_filter.asp) function. We can specify conditions using a subset and get a slice of the data frame, satisfying the condition. 
+
+Example: Let the condition be all those rows where `vector_5` is `not equal` to `FALSE.`
 
 ```r
 subset(new_data_frame, subset= vector_5!=FALSE)
 ```
 
-The output is given as follows:
+The output is given as follows. The subset function with parameter `vector_5!=FALSE` makes sure the condition is satisfied so that any row under `vector_5` that is `FALSE` will not be displayed.
 
 ```txt
 vector_1 vector_2 vector_3 vector_4 vector_5
@@ -135,42 +138,30 @@ vector_1 vector_2 vector_3 vector_4 vector_5
 ```
 
 ### Typecasting
-Similar to other programming languages like C++,Python, etc, R provides us with an option to explicitly change or modify the data-type of previously defined variables. R provides the keyword **as.*** to typecast previously defined variables.
+Similar to other programming languages like C++, Python, etc., R provides us with an option to explicitly change or modify the data type of previously defined variables. R offers the keyword `as` to typecast previously defined variables.
 
-We will use the **as** keyword in the following example:
+We will use the `as` keyword in the following example:
 
 ```r
 x <- 0:6
 class(x)
+# output: integer
 typecast_to_numeric <- as.numeric(x)
-class(typecast_to_numeric).0
+class(typecast_to_numeric) # integer -> numeric
+# output: numeric
 typecast_to_logical <- as.logical(x)
-class(typecast_to_logical)
+class(typecast_to_logical) # integer-> logical
+# output: logical
 typecast_to_char <- as.character(x)
-class(typecast_to_char)
+class(typecast_to_char) # integer -> character
+# output: character
 ```
 
-The given code outputs the following:
+Observe the change in the data types. An application of typecasting makes sense on user-defined data types. Consider the following applications:
 
-```txt
-> class(x)
-[1] "integer"
-> typecast_to_numeric <- as.numeric(x)
-> class(typecast_to_numeric)
-[1] "numeric"
-> typecast_to_logical <- as.logical(x)
-> class(typecast_to_logical)
-[1] "logical"
-> typecast_to_char <- as.character(x)
-> class(typecast_to_char)
-[1] "character"
-```
+1. Consider a data frame with a column containing Boolean values. If one needs to convert these into integers to train a machine learning model, then typecasting is used. Typecasting converts the boolean values into integer data.
 
-Observe the change in the data types. An application of typecasting makes sense on user-defined data-types. Consider the following applications:
-
-1. Consider a dataframe with a column containing Boolean values. If one needs to convert these into integers to train a machine learning model, then typecasting is used. Typecasting converts the Boolean into integer data.
-
-2. Supposing one is given a dataframe with one column containing time in seconds. To convert each column of the given dataframe to [time in days format](https://www.rdocumentation.org/packages/PivotalR/versions/0.1.18.3.1/topics/Type%20Cast%20functions), explicit typecasting is used.
+2. Suppose one is given a data frame with one column containing time in seconds. To convert each column of the provided data frame to [time in days format](https://www.rdocumentation.org/packages/PivotalR/versions/0.1.18.3.1/topics/Type%20Cast%20functions), explicit typecasting is used.
 
 For more information on explicit typecasting, refer to this [link](https://study.com/academy/lesson/data-type-conversion-in-r-programming-purpose-functions.html).
 
@@ -189,16 +180,16 @@ For writing into files, R provides the following functions:
 2. write.csv: `write.csv(data, file='file_name.csv')`
 3. save: `save(x,y,"file_name.Rdata")`
 
-Whether reading from or writing to files, ensure that the file directory is correctly mentioned. Relative paths are used extensively in file handling. Consider going through this [answer](https://stackoverflow.com/questions/36834767/how-to-use-rstudio-relative-paths) on StackOverflow for a glance on relative paths.
+Whether reading from or writing to files, ensure that the file directory is correctly mentioned. This works when the file is in the same directory, otherwise, set up a relative link. Relative paths are used extensively in file handling. Consider going through this [answer](https://stackoverflow.com/questions/36834767/how-to-use-rstudio-relative-paths) on StackOverflow for a glance on relative paths.
 
 ### Accessing Built-in Datasets
-While learning various machine learning algorithms, the best place to start is the built-in datasets. These are small in size and are cleaned thoroughly.
+While learning various machine learning algorithms, the best place to start is the built-in datasets. These are small in size and are cleaned thoroughly. Clean datasets mean they have been pre-processed. The majority (80%) of a data scientist's time is spent on data collection and data cleaning. Therefore, as beginners, we skip the time-consuming step and deal with a tried and tested dataset.  
 
-These datasets were the benchmark datasets a decade ago. Today, budding data scientists use these as tools to learn the various machine learning algorithms.
+These datasets were the benchmark datasets a decade ago. Today, beginners in data science use these as tools to learn and implement the various machine learning algorithms. In the description below, links to a few sample projects using these datasets are given. 
 
 A few of the datasets that R provides are as follows:
 
-1. **Airquality** dataset: Dataset monitoring the air quality and the effect of air quality on weather and temperature. This dataset helps one understand the correlation between air quality and temperature. This [article](https://towardsdatascience.com/a-guide-to-data-visualisation-in-r-for-beginners-ef6d41a34174) goes through exploring this dataset in detail. Go through it for more information.
+1. **Airquality** dataset: Dataset monitoring the air quality and the effect of air quality on weather and temperature. This dataset helps one understand the correlation between air quality and temperature. This [article](https://towardsdatascience.com/a-guide-to-data-visualisation-in-r-for-beginners-ef6d41a34174) goes through exploring this dataset in detail. Could you go through it for more information?
 
 ```r
  head(airquality)
@@ -235,11 +226,10 @@ This dataset can be called through the variable `airquality`.
 ```
 
 For a thorough list, refer to the link [mentioned](https://www.rdocumentation.org/packages/datasets/versions/3.6.2).
-
-Pat yourselves on the back for having made it this far. From now on, we will work with flow control and modularizing the code.
+Next, we will work with flow control and modularizing the code using conditionals and functions in R.
 
 ### Conditional and Loop Statements
-1. **If-else statements**: If-else statements allows one to implement sequential logic. These are an important aspect of OOP paradigm.
+1. **If-else statements**: If-else statements allows one to implement sequential logic. These are an important aspect of [OOP paradigm](https://www.tutorialspoint.com/object_oriented_analysis_design/ooad_object_oriented_paradigm.htm).
 
 Let's look at the example given below:
 
@@ -253,7 +243,7 @@ Let's look at the example given below:
     }
     ```
 
-The `runif` function randomly picks `n` number of samples in the specified range `[min, max).` `[` denotes closed interval, whereas `)` denotes open interval.
+The `runif` function randomly picks `n` number of samples in the specified range `[min, max).` `[` denotes closed interval, whereas `)` denotes open interval. In the example given above, the runif function picks 1 sample randomly in the range `[0,10)` and assigns it to variable `x`. `n` is 1, `min` is 0, and `max` is 10.
 
 The arguments to the function `runif` are:
 
@@ -261,7 +251,7 @@ The arguments to the function `runif` are:
 - min: lower bound of the range
 - max:  upper bound of the range
 
-2. **For loops**: To demonstrate for loops, we will consider printing the elements of a list and the matrix. Since a matrix is a 2-D data structure, we will need two loops. Such usage of a loop within a loop is referred to as nested looping.
+2. **For loops**: To demonstrate for loops, we will consider printing the elements of a list and a matrix. Since a matrix is a 2-D data structure, we will need two loops. Such usage of a loop within a loop is referred to as nested looping.
 
     ```r
     for(i in 1:10){
@@ -277,7 +267,7 @@ The arguments to the function `runif` are:
     }
     ```
 
-Notice the new `seq_len` function. We have just learned a new function. This is similar to the `range` function in Python. `seq_len(x)` generates integers from 1 to x. Note that R is 1-indexed language. All indices start with one.
+Notice the new `seq_len` function. We have just learned a new function. This is similar to the `range` function in Python. `seq_len(x)` generates integers from 1 to x. Note that R is a 1-indexed language. All indices start with one. We look at nested loops in the above example. The code selects the `(i,j)th` element from the matrix and prints it on the console. Recall that indices in R begin with 1.
 
 The output for the code above is as follows:
 
@@ -313,7 +303,7 @@ The output for the code above is as follows:
         iter<iter-1
     }
     ```
-    The output of the above is as follows:
+    The output of the above is as follows. The code inside the loop executes until the value of iterator is less than or equal to 3. Hence, it prints the values till 4. When `iter` equals 3, it exits the loop.
 
     ```txt
     10
@@ -328,13 +318,13 @@ The output for the code above is as follows:
 When the variable `iter` equals three, the condition fails. Therefore, the print statement stops executing.
 
 ### Functions
-Functions are an important aspects of all programming languages. They help modularize the code. They help by implementing various programming paradigms such as Don't Repeat Yourself- [DRY](/engineering-education/dry-manifesto) and modularity.  
+Functions are important aspects of all programming languages. They help modularize the code. Modularization refers to the concept of breaking down a problem into the smallest pieces. This helps in easier debugging and better readability of code. Functions help by implementing various programming paradigms such as Don't Repeat Yourself- [DRY](/engineering-education/dry-manifesto) and modularity.  
 
 Let's look at the following function definition in R:
 
 ```r
 function_name <- function(parameter_1=10){
-    hello <- "Hellooooo"
+    hello <- "Hellooooo" # assigns string to hello variable
     for i in seq_len(parameter_1){
         print(hello)
     }
@@ -346,9 +336,10 @@ To call the function, we pass the parameter to the function name directly:
 
 ```r
 function_name(10)
+# output: prints hello 10 times in separate lines
 ```
 
 In cases when multiple values need to be returned, we use lists. This way, a single entity with various outputs is being returned. I suggest you try this last point as a challenge.
 
 ### Conclusion
-In this article, we have dealt with the advanced topics of the R programming language. At this point, you have the skills to master machine learning algorithms and perform various data science experiments. Adios.
+In this article, we have dealt with the advanced topics of the R programming language. At this point, you have the skills to code machine learning algorithms from scratch and perform various data science experiments.
