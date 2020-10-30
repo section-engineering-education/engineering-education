@@ -12,10 +12,10 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/python-database-programming-sqlite/hero.png
-    alt: web Scraping example image Python 
+    alt: web Scraping example image Python
 ---
 Imagine you want to gather a large amount of data from several websites as quickly as possible, will you do it manually, or will you search for it all in a practical way?.
-Now you are asking yourself, why do you want to do that! Okay let us give you some examples to understand the need for **web scraping**:
+Now you are asking yourself, why would you want to do that! Okay, follow along as we go over some examples to understand the need for **web scraping**:
 <!--more-->
 ### Introduction
 #### Why web scraping?
