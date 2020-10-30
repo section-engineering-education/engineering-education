@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-database-programming-sqlite/
+url: /engineering-education/getting-started-with-web-scraping-using-python/
 title: Getting Started with Web Scraping using Python
 description: In this article we will learn about web scraping which is the process that makes pulling a huge amount of data from websites easier and faster.
 author: ahmad-mardeni
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/python-database-programming-sqlite/hero.png
+  - url: /engineering-education/getting-started-with-web-scraping-using-python/hero.png
     alt: web Scraping example image Python
 ---
 Imagine you want to gather a large amount of data from several websites as quickly as possible, will you do it manually, or will you search for it all in a practical way?.
