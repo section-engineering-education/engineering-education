@@ -14,10 +14,11 @@ images:
   - url: /engineering-education/getting-started-with-web-scraping-using-python/hero.png
     alt: web Scraping example image Python
 ---
-Imagine you want to gather a large amount of data from several websites as quickly as possible, will you do it manually, or will you search for it all in a practical way?.
-Now you are asking yourself, why would you want to do that! Okay, follow along as we go over some examples to understand the need for **web scraping**:
-<!--more-->
 ### Introduction
+Imagine you want to gather a large amount of data from several websites as quickly as possible, will you do it manually, or will you search for it all in a practical way?.
+Now you are asking yourself, why would you want to do that! Okay, follow along as we go over some examples to understand the need for **web scraping**.
+<!--more-->
+
 #### Why web scraping?
 - [Wego](https://www.wego.com/en) is a website where you can book your flights & hotels, it gives you the lowest price after comparing 1000 booking sites. This is done by using **web scraping** to help with that process.
 - [Plagiarismdetector](https://plagiarismdetector.net/) is a tool you can use to check for plagiarism in your article, it also is using **web scraping** to compare your words with thousands of other websites.
@@ -158,6 +159,11 @@ After running our code you will see the following result, which is every title o
 ```
 
 Finally, you can do the same process for the comments and replies to build up a good dataset as mentioned before.
+
+When it comes to web scraping, API is the best solution that comes to the mind of most data scientists. APIs(Application Programming Interfaces) is an intermediary that allows one software to talk to another. In simple terms, you can ask the **API** for specific data by passing JSON to it and in return, it will also give you a JSON data format.
+For example, Reddit has a publicly-documented API that can be utilized which you can find ![here](https://www.reddit.com/dev/api).
+
+Also, it is worth mentioning that certain websites contain XHTML or RSS feeds that can be parsed as XML(Extensible Markup Language). XML does not define the form of the page, it defines the content, and it is free of any formatting constraints, so it will be much easier to scrap a website that is using XML. For example, REDDIT provides RSS feeds that can be parsed as XML which you can find ![here](https://old.reddit.com/.rss).
 
 Let's build another app to better understand how web scraping works.
 
