@@ -21,7 +21,7 @@ Now you are asking yourself, why would you want to do that! Okay, follow along a
 
 - [Wego](https://www.wego.com/en) is a website where you can book your flights & hotels, it gives you the lowest price after comparing 1000 booking sites. This is done by using **web scraping** to help with that process.
 - [Plagiarismdetector](https://plagiarismdetector.net/) is a tool you can use to check for plagiarism in your article, it also is using **web scraping** to compare your words with thousands of other websites.
-- Another example that a lot of companies are using **web scraping** for is to create strategic marketing decisions after scraping social network profiles in order to determine the posts with the most interactions.
+- Another example that a lot of companies are using **web scraping** to create strategic marketing decisions after scraping social network profiles in order to determine the posts with the most interactions.
 
 ### Prerequisites
 Before we dive right in, the reader would need to have the following:
@@ -110,9 +110,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 First of all, we imported the libraries we want to use in our code.
 
-**Requests** library allows us to do GET, PUT,.. requests to the website server, and the **beautiful soup** library is use for parsing a page then pulling out a specific item from it.
-
-We will see it in a practical example soon.
+**Requests** library allows us to do GET, PUT,.. requests to the website server, and the **beautiful soup** library is used for parsing a page then pulling out a specific item from it. We will see it in a practical example soon.
 
 Second, the URL we are going to use is for the **TOP** posts on Reddit.
 
@@ -160,9 +158,9 @@ After running our code you will see the following result, which is every title o
 Finally, you can do the same process for the comments and replies to build up a good dataset as mentioned before.
 
 When it comes to web scraping, API is the best solution that comes to the mind of most data scientists. APIs(Application Programming Interfaces) is an intermediary that allows one software to talk to another. In simple terms, you can ask the **API** for specific data by passing JSON to it and in return, it will also give you a JSON data format.
-For example, Reddit has a publicly-documented API that can be utilized which you can find ![here](https://www.reddit.com/dev/api).
+For example, Reddit has a publicly-documented API that can be utilized which you can find [here](https://www.reddit.com/dev/api).
 
-Also, it is worth mentioning that certain websites contain XHTML or RSS feeds that can be parsed as XML(Extensible Markup Language). XML does not define the form of the page, it defines the content, and it is free of any formatting constraints, so it will be much easier to scrap a website that is using XML. For example, REDDIT provides RSS feeds that can be parsed as XML which you can find ![here](https://old.reddit.com/.rss).
+Also, it is worth mentioning that certain websites contain XHTML or RSS feeds that can be parsed as XML(Extensible Markup Language). XML does not define the form of the page, it defines the content, and it is free of any formatting constraints, so it will be much easier to scrap a website that is using XML. For example, REDDIT provides RSS feeds that can be parsed as XML which you can find [here](https://old.reddit.com/.rss).
 
 Let's build another app to better understand how web scraping works.
 
@@ -222,5 +220,6 @@ After running our code you will see the following notification in the right-hand
 
 ### Conclusion
 We’ve just proven that anything on the web can be scraped and stored, there are a lot of reasons why we would want to use that information, and we came up with an example on the **Reddit Web Scraper**:
+consider that a specific post receives a lot of comments but without any like, we can know as a result that the post strikes a chord in people and go against the community.
 
 There are a lot of possibilities, and it’s up to you (as a developer) to choose how you will use that information.
