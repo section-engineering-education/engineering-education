@@ -13,29 +13,42 @@ images:
   - url: /engineering-education/how-to-control-dark-mode-in-react-native-using-redux/hero.jpg
     alt: React Native Dark Mode with Redux
 ---
-This tutorial aims to demonstrate the use of the Redux mechanism to toggle the dark mode on React Native. The idea is to add dark mode configurations to React Navigation as well as components from the React Native Paper library. Redux is a powerful and popular state management mechanism that offers top of the line state management flow in the React as well as React Native ecosystem.
-<!--more-->
+
+This tutorial aims to show the use of the Redux mechanism to toggle the dark mode on React Native. The idea is to add dark mode configurations to React Navigation as well as components from the React Native Paper library. Redux is a powerful and popular state management mechanism. It offers top of the line state management flow in the React as well as React Native ecosystem.
+
 Being able to use the Redux mechanism to toggle the theme modes will be very beneficial in the long run as it will tend to keep the state global.
 
-You will be able to apply the dark mode theme configurations to each page and UI elements in your app just by accessing the central Redux store. The process will make the implementation of dark mode in any React Native app very convenient and efficient.
+You will be able to apply the dark mode theme configurations to each page and UI elements in your app by accessing the central Redux store. The process will make the implementation of dark mode in any React Native app very convenient and efficient.
 
-For this tutorial, we bypass the installation process of any package as we are using the Expo ecosystem that automatically installs the package for us.
+For this tutorial, we bypass the installation process of any package. As we are using the Expo ecosystem which automatically installs the package for us.
 
-### Before we start..
+### **Before we start..**
+
 You can check the actual demo of what we are going to implement in the Expo platform itself. No need to worry about the setup, you can simply run the app on the simulators provided by the Expo platform.
 
 [Live Demo in Snack](https://snack.expo.io/@worawat101/react-native-dark-mode-toggle-with-redux)
 
-### Requirement
+### **Requirement**
 
-- [Snack](https://snack.expo.io) - The online React Native IDE
+- [Snack](https://snack.expo.io/) - The online React Native IDE
 
-### STEP 1: Setup Simple Screens with React Native Paper
-Our first step is to set up simple screens using the components from the react-native-paper UI library. But first, we need to create a directory named **./screens** and inside the directory, we need to create two new files called `Home.js` and `Setting.js`.
+**Knowledge you must have before you start**
+
+Here are some list of topics that you must have the basic knowledge of before you get started with this tutorial:
+
+- [Basics of React Native App Development](https://reactnative.dev/docs/tutorial/)
+- [React Navigation](https://medium.com/@sultanbutt820/react-navigation-v5-whats-new-d8048f76a0de#:~:text=Apr%2026%C2%B73%20min%20read,command%20in%20the%20project%20terminal.)
+- [React Native Paper UI library](https://reactnativepaper.com/#:~:text=React%20Native%20Paper%20is%20a,in%20all%20major%20use%2Dcases.)
+- [React Redux](https://www.valentinog.com/blog/redux/)
+- [Using Redux mechanism in React Native](https://enappd.com/blog/redux-in-react-native-app/92/)
+
+### **STEP 1: Setup Simple Screens with React Native Paper**
+
+Our first step is to set up simple screens using the components from the react-native-paper UI library. But first, we need to create a directory named **./screens** and inside the directory, we need to create two new files called `Home.js` and `Setting.js`.
 
 In the Home.js file, we need to import the components from the react-native-paper package as directed in the code snippet below:
 
-```js
+```
 import {
     Avatar,
     Button,
@@ -47,9 +60,9 @@ import {
   } from 'react-native-paper';
 ```
 
-Next, we are going to add the card layout to the screen using the `Card` component as shown in the code snippet below:
+Next, we are going to add the card layout to the screen using the `Card` component as shown in the code snippet below:
 
-```js
+```
 const Home = () => {
    return (
        <View>
@@ -87,17 +100,17 @@ i</Paragraph>
 export default Home
 ```
 
-Here, we have used the Headline component to display the title and the Card component with its subsidiary modules to create a card like component in the UI.
+Here, we have used the Headline component to display the title. To create a card like component in the UI, we used the Card component with its subsidiary modules.Inside the Navigation.js file, we need to import the React Navigation components. They are NavigationContainer and createBottomTabNavigator. We also need to import other screens to which we need to navigate to.Inside the Navigation.js file, we need to import the React Navigation components. They are NavigationContainer and createBottomTabNavigator. We also need to import other screens to which we need to navigate to.
 
 Hence, we will get the result as displayed in the emulator screenshot below:
 
-![React native paper in Home screen](how-to-control-dark-mode-in-react-native-using-redux/react-native-paper-in-home-screen.png)
+![https://github.com/Worawat101/engineering-education/raw/master/articles/how-to-control-dark-mode-in-react-native-using-redux/how-to-control-dark-mode-in-react-native-using-redux/react-native-paper-in-home-screen.png](https://github.com/Worawat101/engineering-education/raw/master/articles/how-to-control-dark-mode-in-react-native-using-redux/how-to-control-dark-mode-in-react-native-using-redux/react-native-paper-in-home-screen.png)
 
 Next, we are going to implement the Setting screen. The Settings screen will be simple as it will only have a 'toggle component', using that we will be able to toggle the theme modes in the app.
 
-Therefore, in the Setting.js file, we need to add the code for the `Switch` component to be able to toggle over to a dark theme. The code for this is provided in the code snippet below:
+Therefore, in the Setting.js file, we need to add the code for the `Switch` component to be able to toggle over to a dark theme. The code for this is provided in the code snippet below:
 
-```js
+```
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import {
@@ -120,18 +133,19 @@ export default  ({ navigation }) => {
 
 We will get the result as displayed in the emulator screenshot below:
 
-![React Native Setting Screen](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-setting-screen.png)
+![https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-setting-screen.png](https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-setting-screen.png)
 
 Here, we have added an icon as well as a switch component to the right. Now, we are done with the UI part. We can move on to the functionalities.
 
-### STEP 2: Setup React Navigation
-In order to set up the React Navigation, we need to re-structure our app a bit. First, we need to create a new file called `Navigation.js` at the root level that will contain the code configured for navigation purposes.
+### **STEP 2: Setup React Navigation**
 
-Inside the Navigation.js file, we need to import the React Navigation components such as `NavigationContainer` and `createBottomTabNavigator` as well as the other screens to we need to navigate to.
+In order to set up the React Navigation, we need to re-structure our app a bit. First, we need to create a new file called `Navigation.js` at the root level that will contain the code configured for navigation purposes.
+
+Inside the Navigation.js file, we need to import the React Navigation components. They are `NavigationContainer` and `createBottomTabNavigator`. We also need to import other screens to which we need to navigate to.
 
 The imports are shown in the code snippet below:
 
-```js
+```
 import * as React from 'react';
 import { NavigationContainer  } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -141,12 +155,13 @@ import SettingScreen from './screens/Setting';
 ```
 
 Here, we have used two navigations packages:
+
 1. **react-navigation/native**: It's the core react-navigation package.
 2. **react-navigation/bottom-tabs**: This package provides components to implement the bottom tab bar.
 
-Next, we need to initialize the navigation structure using the `NavigationContainer` component with the `Tab` components as directed in the code snippet below:
+Next, we need to initialize the navigation structure using the `NavigationContainer` component. We used it along with the `Tab` components as directed in the code snippet below:
 
-```js
+```
 export default () => {
     const Tab = createBottomTabNavigator();
     return (
@@ -160,9 +175,9 @@ export default () => {
  }
 ```
 
-Then, we need to import the `Navigation` component into the **App.js** file and initialize it inside the render function as shown in the code snippet below:
+Then, we need to import the `Navigation` component into the **App.js** file and initialize it inside the render function as shown in the code snippet below:
 
-```js
+```
 import Navigation from './Navigation'
 export default function App() {
   return (
@@ -176,20 +191,21 @@ export default function App() {
 
 As a result, we will get the tab navigation bar at the bottom of the screen which we can use for navigating to different screens as shown in the demo below:
 
-![integrate React Navigation to React Native](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/integrate-react-navigation-to-react-native.gif)
+![https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/integrate-react-navigation-to-react-native.gif](https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/integrate-react-navigation-to-react-native.gif)
 
 Now, our next step is to add icons to the tab bar items to make it look appealing.
 
-### Adding an Icon to the Tab bar
-Here, in `Navigation.js`, we are going to add some icons to the tabs in the tab bar. For that, we need to import some icons demonstrated in the code snippet below:
+### **Adding an Icon to the Tab bar**
 
-```js
+Here, in `Navigation.js`, we are going to add some icons to the tabs in the tab bar. For that, we need to import some icons demonstrated in the code snippet below:
+
+```
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 ```
 
-Next, we need to add the `screenOption` to the `Tab.Navigator` component using the logic we added to the toggle icon style when tabs are active or inactive. The code for this is provided in the code snippet below:
+Next, we need to add the `screenOption` to the `Tab.Navigator` component using the logic we added to the toggle icon style when tabs are active or inactive. The code for this is provided in the code snippet below:
 
-```js
+```
 <Tab.Navigator screenOptions={({ route }) => ({
 
                tabBarIcon: ({ focused, color, size }) => {
@@ -213,16 +229,17 @@ Next, we need to add the `screenOption` to the `Tab.Navigator` component using t
 
 We will get the result demonstrated in the demo below:
 
-![Add Material icon to Bottom tab](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/add-material-icon-to-bottom-tab.gif)
+![https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/add-material-icon-to-bottom-tab.gif](https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/add-material-icon-to-bottom-tab.gif)
 
 As we can see, we have got the icons in our tabs and they displays active as well as inactive states. Now, we move on to our main objective, implementing the dark mode theme.
 
-### STEP 3: Manual Dark mode
-Here, in `Navigation.js`, we are going to implement the controls to change the app theme to dark mode manually.
+### **STEP 3: Manual Dark mode**
 
-First, we need to import the components from the react-navigation and react-native-paper packages that will help us control the dark theme.  We need to import the respective components from the packages in the Navigation.js file example code snippet is shown below:
+Here, in `Navigation.js`, we are going to implement the controls to change the app theme to dark mode manually.
 
-```js
+First, we need to import the components from the react-navigation and react-native-paper packages. These components will help us control the dark theme. We need to import the respective components from the packages in the Navigation.js file example code snippet is shown below:
+
+```
 import {
     NavigationContainer ,
     DefaultTheme,
@@ -234,46 +251,47 @@ import {
      } from 'react-native-paper';
 ```
 
-Next, we need to assign the `theme` prop to the `NavigationContainer` component with the `DarkTheme` option provided. Then, we need to wrap the component inside the `NavigationContainer` component with the `PaperProvider` component and provide the `PaperDarkTheme` option as a `theme` prop to the component.
+Next, we need to assign the `theme` prop to the `NavigationContainer` component with the `DarkTheme` option provided. Then, we need to wrap the component inside the `NavigationContainer` component with the `PaperProvider` component. Lastly, we need to provide the `PaperDarkTheme` option as a `theme` prop to the component.
 
 The configuration is provided in the code snippet below:
 
-```js
+```
 <NavigationContainer theme={DarkTheme}>
               <PaperProvider theme={PaperDarkTheme}>
 ```
 
 We can notice that the entire App UI has changed to a dark theme, as we can see displayed in the following emulator screenshots:
 
-![React Native Dark Theme](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-dark-theme.png)
+![https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-dark-theme.png](https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-dark-theme.png)
 
 Here, we have given the user(s) the option to change to a dark theme using the components from the navigation and paper packages. Now, what we need to do is add controls to it. We are going to do that by using the Redux mechanism.
 
-### STEP 4: Setup Redux
+### **STEP 4: Setup Redux**
+
 In this step, we are going to integrate the Redux mechanism to control the dark mode theme toggle from the Switch. The idea is to control the dark mode theme from the Switch located in the child component that reflects to the parent component. First, we need to create the Redux structure that holds the overall Redux code.
 
-First, we need to create a folder named **./redux** in the root level of the project. Then inside the root redux folder, we need to create two folders named **./reducers** and **./actions**:
+First, we need to create a folder named **./redux** in the root level of the project. Then inside the root redux folder, we need to create two folders named **./reducers** and **./actions**:
 
-- `reducers` to contain the reducer files that handle the state manipulation.
-- `actions` to contain the function that we extract from the components.
-- `constant.js` file to hold all the state names.
+- `reducers` to contain the reducer files that handle the state manipulation.
+- `actions` to contain the function that we extract from the components.
+- `constant.js` file to hold all the state names.
 
 Now, we need to define the required state names in the constant.js file. In this project, we will have two states for light and dark theme as defined in the code snippet below:
 
-```js
+```
 export const DARK_THEME = "DARK_THEME";
 export const LIGHT_THEME = "LIGHT_THEME";
 ```
 
-Next in the ./reducers folder, we need to create two new files named **theme.reducer.js** and **index.reducer.js**. First, we will implement the theme.reducer.js file.
+Next in the ./reducers folder, we need to create two new files named **theme.reducer.js** and **index.reducer.js**. First, we will implement the theme.reducer.js file.
 
-In the `theme.reducer.js` file, we need to import the state names from constant.js. Then, we need to define the initial state called `theme` that will help control the theme modes.
+In the `theme.reducer.js` file, we need to import the state names from constant.js. Then, we need to define the initial state called `theme` that will help control the theme modes.
 
-Here, the `theme` state will be set to `false` in order to set the light theme as the default theme. Then, we need to create a function to toggle the `theme` state using a reducer function.
+Here, the `theme` state will be set to `false` in order to set the light theme as the default theme. Then, we need to create a function to toggle the `theme` state using a reducer function.
 
 In the reducer function, we use the Switch case logic to modify the theme state based on action type. The code for this is provided in the code snippet below:
 
-```js
+```
 import {
     DARK_THEME,LIGHT_THEME
 } from "../constant";
@@ -292,9 +310,9 @@ export default (theme = initialState,{ type }) => {
 };
 ```
 
-In order to activate this reducer, we need to go to the `index.reducer.js` file and import the theme reducer. Then, we need to use the combineReducers method in order to combine all the reducers into one root reducer. This will help us prepare for other reducers in the future. The code for this is provided in the code snippet below:
+In order to activate this reducer, we need to go to the `index.reducer.js` file and import the theme reducer. Then, we need to use the combineReducers method in order to combine all the reducers into one root reducer. This will help us prepare for other reducers in the future. The code for this is provided in the code snippet below:
 
-```js
+```
 import { combineReducers } from "redux";
 
 import themeReducer from './theme.reducer'
@@ -309,9 +327,9 @@ Now in order to activate redux functionalities in the overall app, we need to go
 - redux-thunk - The redux mechanism works synchronously. Now, in order to handle the asynchronous operation, we need a helper package called redux-thunk. It will help us implement the asynchronous calls in the redux actions.
 - react-redux - This package help us connect the redux store to the React Native app.
 
-The setup phase is simple. We need to inject the reducer as a root reducer and redux-thunk as middleware to the `createStore` method supplied by the redux package. Then, by using the `Provider` component from the react-redux package we can link redux store to the overall app using the `store` prop as demonstrated in the code snippet below:
+The setup phase is simple. We need to inject the reducer as a root reducer and redux-thunk as middleware to the `createStore` method supplied by the redux package. Then, by using the `Provider` component we can link the redux store to the overall app. We can use the `store` prop as demonstrated in the code snippet below:
 
-```js
+```
 import React from 'react'
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
@@ -333,11 +351,11 @@ export default function App() {
 }
 ```
 
-Now, the last step here is to create an action function called `theme.action.js` inside the ./action folder in order to send manipulation triggers to reducers.
+Now, the last step here is to create an action function called `theme.action.js` inside the ./action folder.
 
 We need to make the import of the constants that we defined earlier. Then, we need to create a function that handles the theme state toggle in the reducer. The overall coding implementation of the action is provided in the code snippet below:
 
-```js
+```
 import {
     DARK_THEME,LIGHT_THEME
 } from "../constant";
@@ -360,19 +378,20 @@ export const ToggleTheme = (theme) => {
 }
 ```
 
-### STEP 5: Controlling Dark mode with Switch toggle
-Since our Redux store with reducers and actions is now set up, we can now move to configure the dark mode switch in the `Setting.js` file that will help us change the theme modes in the app.
+### **STEP 5: Controlling Dark mode with Switch toggle**
 
-The idea is to add the reducer state and action to the `Switch` component configuration. For that, we need to import the action and reducer into the Setting.js file. We also need to import the hook methods from the react-redux package in order to control the redux activities. The imports are shown in the code snippet below:
+Our Redux store with reducers and actions is already set up. Now, we can move to configure the dark mode switch in the `Setting.js` file. That will help us change the theme modes in the app.
 
-```js
+The idea is to add the reducer state and action to the `Switch` component configuration. For that, we need to import the action and reducer into the Setting.js file. We also need to import the hook methods from the react-redux package in order to control the redux activities. The imports are shown in the code snippet below:
+
+```
 import * as themeActions from "../redux/actions/theme.action";
 import { useDispatch,useSelector } from "react-redux";
 ```
 
-Next, we need to initialize the reducer as an instance using the `useSelector` hook and add it to the `Switch` component prop as directed in the code snippet below:
+Next, we need to initialize the reducer as an instance using the `useSelector` hook. Then, we also need to add it to the `Switch` component prop as directed in the code snippet below:
 
-```js
+```
 export default  ({ navigation }) => {
     const dispatch = useDispatch();
     const themeReducer = useSelector(({ themeReducer }) => themeReducer);
@@ -390,11 +409,11 @@ export default  ({ navigation }) => {
 }
 ```
 
-Now, the last step is to add the reducer state to the main navigation. For that, we need to import the reducer in the `Navigation.js`and use it as the conditional rendering of the themes.
+Now, the last step is to add the reducer state to the main navigation. For that, we need to import the reducer in the `Navigation.js`and use it as the conditional rendering of the themes.
 
 We can do this by following the snippet below:
 
-```js
+```
 import { useSelector } from "react-redux";
 export default () => {
     const themeReducer = useSelector(({ themeReducer }) => themeReducer);
@@ -406,22 +425,24 @@ export default () => {
 
 We will get the result as shown in the emulator demo below:
 
-![Change Theme with Redux](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/change-theme-with-redux.gif)
+![https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/change-theme-with-redux.gif](https://github.com/Worawat101/engineering-education/raw/master/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/change-theme-with-redux.gif)
 
 As we can see, when we toggle the switch, we change the theme of the entire app to dark mode and vice-versa.
 
-We have successfully implemented the dark mode toggle in the React Native app based on the Expo ecosystem using the Redux mechanism to handle the state of the theme.
+We have successfully implemented the dark mode toggle in the React Native app. It was totally based on the Expo ecosystem using the Redux mechanism to handle the state of the theme.
 
-### Conclusion
-This tutorial not only aims to deliver the switching of themes from dark to light mode and vice-versa but also delivers the knowledge on how to use the Redux state management configuration in React Native.
+### **Conclusion**
 
-An essential part was setting up of dark mode theme switching between the components from react-navigation and react-native-paper packages.
+This tutorial not only aims to deliver the switching of themes from dark to light mode and vice-versa. But, also delivers the knowledge on how to use the Redux state management configuration in React Native.
 
-However, the highlight of the entire tutorial was teaching readers how to make use of redux in order to manage the theme state and use the reducers and action to control the state along with change of the overall theme of the app.
+An essential part was setting up of dark mode theme switching. The switch handle was between the components from react-navigation and react-native-paper packages.
 
-Now, the challenge for you can be to use the same redux mechanism to control the other features in the app that are required to be handled globally in the app such as AdMob and offline connectivity features.
+However, the highlight of the entire tutorial was teaching readers how to make use of redux in order to manage the theme state. And, use the reducers and action to control the state along with change the overall theme of the app.
 
-### References:
+Now, the challenge for you can be to use the same redux mechanism to control the other features in the app. Especially those features that are required to be handled globally. Some examples might be AdMob and offline connectivity features.
+
+### **References:**
+
 [React Native Paper Documentation](https://callstack.github.io/react-native-paper/)
 
 [Reactnavigation Documentation](https://reactnavigation.org/docs/themes/)
