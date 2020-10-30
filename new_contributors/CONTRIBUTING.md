@@ -14,7 +14,7 @@ In order to participate in the program, all members will be required to agree to
 In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed. (1st time contributors-submit only one article to get familiar with the process and style-once published, you can then submit any number of articles.)
 
 ## Requirements for New Contributors
-- GitHub account
+- GitHub account (Please be sure to have a basic understanding of [GitHub and Gitflows.](https://www.youtube.com/watch?v=MnUd31TvBoU&t=510s) Eg: Pull requests, commits, merge, etc.
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
 - Prepared Markdown (.md) file. (Note: All articles must be submitted in properly-formatted Markdown.)
 - PayPal account. (At this time, we only service payments through PayPal. If you don’t have a PayPal account, please check whether [PayPal is available in your region](https://www.paypal.com/en/webapps/mpp/country-worldwide).)
