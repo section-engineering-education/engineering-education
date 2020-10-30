@@ -16,10 +16,9 @@ images:
 ---
 ### Introduction
 Imagine you want to gather a large amount of data from several websites as quickly as possible, will you do it manually, or will you search for it all in a practical way?.
-Now you are asking yourself, why would you want to do that! Okay, follow along as we go over some examples to understand the need for **web scraping**.
+Now you are asking yourself, why would you want to do that! Okay, follow along as we go over some examples to understand the need for **web scraping**:
 <!--more-->
 
-#### Why web scraping?
 - [Wego](https://www.wego.com/en) is a website where you can book your flights & hotels, it gives you the lowest price after comparing 1000 booking sites. This is done by using **web scraping** to help with that process.
 - [Plagiarismdetector](https://plagiarismdetector.net/) is a tool you can use to check for plagiarism in your article, it also is using **web scraping** to compare your words with thousands of other websites.
 - Another example that a lot of companies are using **web scraping** for is to create strategic marketing decisions after scraping social network profiles in order to determine the posts with the most interactions.
