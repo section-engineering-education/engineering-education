@@ -1,4 +1,5 @@
 Sometimes you want to repeat a task several times. Let's say to log "hello world" six times. Here is a simple JavaScript code block do that:
+
 ```js
 console.log("hello world")
 console.log("hello world")
@@ -7,7 +8,8 @@ console.log("hello world")
 console.log("hello world")
 console.log("hello world")
 ```
-The code above will correctly repeat the assigned tasks six times. However, as the number of the task grows, say 100 hello worlds, the code will get messy affecting code readability. It is hard to write the same line of code repeatedly 100 times. Looping through these tasks will affect execution performance drastically. This is where JavaScript loops come in rescue. JavaScript can control the above loop more cleanly with a few lines of codes.
+
+The code above will correctly repeat the assigned tasks six times. However, as the number of tasks grows, say 100 hello worlds, the code will get messy affecting code readability. It is hard to write the same line of code repeatedly 100 times. Looping through these tasks will affect execution performance drastically. Here is where JavaScript loops come in rescue. JavaScript can control the above loop better with a few lines of codes.
 
 ***For example:***
 ```js
@@ -15,16 +17,17 @@ for (let loop = 0; loop < 6; loop++) {
   console.log("hello world")
 }
 ```
-There we have it, two lines of code give us a perfect six hello world as we anticipated. Shorter code means faster development time, code readability, and lesser performance overheads.
+With only two lines of code, we log six "hello world" strings as we anticipated. Shorter code means faster development time, code readability, and lesser performance overheads.
 
-JavaScript has different kinds of iterations statements called loops. They include `for`, `while`, `do while`, `for in`, `for of`, and `for each`. They all do the same job, to repeat an action several times, but have different ways to start and end a loop.ster? When it comes to loops, the most significant questions are which loop to use? Which loop is fastest?
+JavaScript has different kinds of iterations statements called loops. They include `for`, `while`, `do while`, `for in`, `for of`, and `for each`. They all do the same job, i.e, to repeat an action several times. They, however, have different ways to start and end a loop.ster? When it comes to loops, the most common questions are which loop to use and which one is the fastest?
 
-In this guide, we will discuss these loops with simple and basic examples, compare and test the execution performance of each loop.
+This guide will discuss each of these loops with simple & basic examples and compare & test each loop's execution performance.
 
 ### For Loop
-For loop is the commonly used loop. If you are not new to the world of programming, you might have come across a for loop statement under other programming languages such as `java`, `c++`, `c`, etc. A for statement loops through a specified or fixed number of elements until the specified condition is met.
+For loop is the commonly used loop. If you are not new to the world of programming, you might have come across a for loop statement under other programming languages such as java, c++, c, etc. A for statement loops through a specified or fixed number of elements until it meets the specified condition.
 
-For statement consist of the following parts:
+A `for statement` consist of the following parts:
+
 ```js
 for (initializer; condition; increment){
     statement //loop body
@@ -38,29 +41,33 @@ for (initializer; condition; increment){
 ***For loop example:***
 ```js
 for (let loop = 0; loop < 5; loop++){
-console.log("hello world") //loop body
+  console.log("hello world") //loop body
 }
 ```
 
 ### Do While
 Repeats a statement until the specified condition evaluates to false.
+
 ```js
 do {
   statement; //loop body
 }  while (condition);
 ```
-The statement is checked/execute before the condition. If the condition is true, the statement loop will be executed again. In the do-while loop, the next statement executes before the condition rechecks the previously executed statement. If the condition is true, the statement is executed again until the condition evaluates to false.
+
+The statement is checked/executed before the condition. If the condition is true, the loop executes the statement again. In the do-while loop, the next statement executes before the condition rechecks the previously executed statement. If the condition is true, it executes the statement again until the condition evaluates to false.
+
 ```js
 let i = 0;
 do {
-console.log("hello world");
+  console.log("hello world");
   i ++;
 } while (i < 5);
 ```
-In the above example, `do` iterates before `while` then `i` reiterates until the condition executes to false. I.e. until the loop cycle is no longer less than five `(i < 5)`.
+In the above example, `do` iterates before `while` then `i` reiterates until the condition executes to false, i.e, until the loop cycle is no longer less than five `(i < 5)`.
 
 ### While Loop
-Loops as long as the condition evaluates to true. When the condition evaluates to false, the whole loops statement stop. While check a condition before executing the specified statement. If the statement executes, the loop retests the condition again. If the condition will be false at the first loop cycle, there is a chance the loop will not call a statement.
+It loops as long as the condition evaluates to true. When the condition evaluates to false, the loop stops. `While` checks a condition before executing the specified statement. If the statement executes, the loop retests the condition again. If the condition will be false at the first loop cycle, there is a chance the loop will not call a statement.
+
 ```js
 let i = 0;
 while (i < 5) {
@@ -68,7 +75,10 @@ while (i < 5) {
   console.log(i);
 }
 ```
-The above block will run until `i < 5` is not valid, and the loop will stop when the value of `i` is `5`. Otherwise, if the condition is always true, the loop will never end. Thus creating an infinite loop. I.e:
+
+
+The above block will run until `i < 5` is not valid, and the loop will stop when the value of `i` is `5`. Otherwise, if the condition is always true, the loop will never end. Thus creating an infinite loop, i.e.
+
 ```js
 let i = 0;
 while (true) {
@@ -76,36 +86,42 @@ while (true) {
   console.log('Hello, world!');
 }
 ```
+
 The above code block will execute forever, as the condition will never be false.
 
 ### For In
-Iterates over named properties of an object key and get each property value inside the loop. A for-in loop has no condition expression and incremental value. The loop executes once per property. And tests are many times as the number of properties in an object.
+It iterates over named properties of an object key and gets each property value inside the loop. A for-in loop has no condition expression and incremental value. The loop executes once per property. And tests are many times as the number of properties in an object.
+
 ```js
 for(variable in object) {
 //statement
 }
 ```
-The main advantage of for in over the other loops its capacity to loop through an object.
+
+The main advantage of for-in over the other loops is its capacity to loop through an object.
+
 ```js
 const person = {
-name: "bunny",
-age:" 28",
-city: "LA",
-maritalstatus: true
+  name: "bunny",
+  age:" 28",
+  city: "LA",
+  maritalstatus: true
 }
 for(let info in person)
 console.log(`${info}: ${person[info]}`)
 ```
-For in will invoke the above loop as many times as the number of properties you add in object person. For in is a better solution to loop objects.
+For-in will invoke the above loop as many times as the number of properties you add in object person. It is a better solution to loop through objects.
 
 ### For Of
-Iterate through iterables such as `strings`, `arrays`, `maps`, and `set`. For of loops iterate through items in a collection such as an array. It is very similar to the for in except this time we are using the “of” keyword and passing it an iterable instead of an object. For of will not work with Objects because they are not iterable.
+It iterates through iterables such as `strings`, `arrays`, `maps`, and `set`. For of loops iterate through items in a collection such as an array. It is very similar to the for in except this time we are using the “of” keyword and passing in an iterable instead of an object. For-of will not work with Objects because they are not iterable.
+
 ```js
 for(variable of iterable) {
     //statement
 }
 ```
-For in also work with arrays, it uses the index of an array of each value. The following example sample the results difference of for in and for of to iterate over array elements.
+
+For-in also works with arrays as it uses the index of each value in the array. The following example sample the results difference of for in and for of to iterate over array elements.
 
 ```js
 let arr = [1, 3, 5, 7, 9];
@@ -120,7 +136,9 @@ for (let number of arr) {
   //1 3 5 7 9
 };
 ```
+
 To get the values, we would have to reference the original array and use square brackets to define the index of the value.
+
 ```js
 let arr = [1, 3, 5, 7, 9];
 for (let number in arr) {
@@ -128,7 +146,8 @@ console.log(arr[number]);
   //1 3 5 7 9
 };
 ```
-A better solution would be to use for of. It iterates a collection of elements in an array and gives the values of an array without having to refer to the original array.
+A better solution would be to use `for-of`. It iterates a collection of elements in an array and gives the values of an array without having to refer to the original array.
+
 ```js
 let arr = [1, 3, 5, 7, 9];
 console.log("for of");
