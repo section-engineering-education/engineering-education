@@ -30,7 +30,7 @@ const cars = {
     ]
 }
 ```
-We create an object `cars` and nest an array `brands` inside it. We also add 2 objects inside the `brands` array.  
+We create an object `cars` and nest an array `brands` inside it. We also add 2 objects inside the `brands` array.
 Nesting can also be done using either the dot notation or square bracket notation where necessary.
 ```javascript
 const cars = {};
@@ -128,8 +128,8 @@ everything(cars.brands);
 ```
 In the above code:
 1. We declare a function `everything()`.
-2. Inside it, we create a  [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)  that loops through all the items in the `brands` array.
-3. Inside it, we create a  [`for ...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop that loops through all the object properties.
+2. Inside it, we create a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) that loops through all the items in the `brands` array.
+3. Inside it, we create a [`for ...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop that loops through all the object properties.
 The for in loop, assigns each [enumerable property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) of the object to the variable `key` and then logs it.
 4. We call the function `everything()`.
 
@@ -157,7 +157,7 @@ const [
 
 console.log(name, origin) //Ford USA
 ```
-We can also extract all the `name` and `origin`  properties of the `brands` array.
+We can also extract all the `name` and `origin` properties of the `brands` array.
 
 ```javascript
 const [
@@ -231,7 +231,7 @@ $ npm install underscore
 ```
 To use underscore.js in our code, we'll need to initialize it. To do this on Node.JS, add the following code at the top of the file.
 ```javascript
-var  _ = require('underscore');
+var _ = require('underscore');
 ```
 
 ### Looping with `_.each()`
@@ -344,7 +344,7 @@ console.log(adultsList); //[ { name: 'john', age: 20 }, { name: 'Peter', age: 22
 In the code above:
 1. We create a nested array of objects `peopleList`.
 2. We pass `peopleList` to the `_.filter()` function.
-3. We then declare a predicate function that takes in a `personObject` and checks if the property `age` is greater than  the value 18.
+3. We then declare a predicate function that takes in a `personObject` and checks if the property `age` is greater than the value 18.
 4. The objects that pass the above condition are then saved as `adultsList`.
 
 ### Conclusion
