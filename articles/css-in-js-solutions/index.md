@@ -41,7 +41,7 @@ Some solutions exist to simplify web component CSS, such as CSS-in-JS. CSS-in-JS
 
 
 
-### What is CSS-in-JS, and how is it salutary to CSS for Web Components? 
+### What is CSS-in-JS and how does it benefit CSS Web Components? 
 
 CSS-in-JS is a JavaScript library that offers a variety of techniques to style web components. CSS-in-JS was a result of the flaws in using CSS to style web applications, especially with custom elements, and some of which include scoping, specificity, portability, and dynamic functioning.
 
