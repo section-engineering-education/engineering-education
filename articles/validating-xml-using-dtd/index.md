@@ -36,7 +36,7 @@ Computer systems vary in terms of hardware architecture, operating system, memor
 
 > According to [Devopedia](https://devopedia.org/data-serialization), [Data serialization](https://en.wikipedia.org/wiki/Serialization) is the process of converting data objects present in complex data structures into byte streams for storage, transfer, and distribution purposes on physical devices.
 
-Generally, the data is stored as data structures like an array, tree, and heaps. For communication, the complex structures must be transformed into byte sequences. This series of bytes gets transported to the destination machine, to establish communication. The reverse process of Serialization is Deserialization.
+Generally, the data is stored as data structures like an array, tree, and heaps. For communication, the complex structures must be transformed into byte sequences. This series of bytes gets transported to the destination machine, to establish communication. The reverse process of Serialization is Deserialization. Deserialization takes a series of bytes and converts it to an in-memory data structure. For example in Javascript, the `JSON` data that is passed to the web browser client as a `string` using `JSON.stringify()`, is Serialization. And, the parsing the `string` back to `JSON` using `JSON.parse()`, is deserialization.
 
 There are several types of serialization formats, like:
 
@@ -53,7 +53,7 @@ We cannot say which serialization format suits all our requirements. Each format
 In this article, we will be looking at an overview of XML and how the validation is done using DTD. Also, we will be implementing it, with a sample example.
 
 ### Overview of XML
-The rise of the World Wide Web in 1989 by [Sir Timothy Berners Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) led to the rise of the Internet and [HTML](https://en.wikipedia.org/wiki/HTML). HTML is a markup language used to interpret text, images, and other types of data as webpages in web browsers. The rules of HTML were formally defined by the [Internet Engineering Task Force](https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force). Later, it is being maintained and improved continuously by the [World Wide Web Consortium](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium). Over 30 years, various versions of HTML were launched, with the latest being HTML5.
+The invention of the World Wide Web in 1989 by [Sir Timothy Berners Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) led to the rise of the Internet and [HTML](https://en.wikipedia.org/wiki/HTML). HTML is a markup language used to interpret text, images, and other types of data as webpages in web browsers. The rules of HTML were formally defined by the [Internet Engineering Task Force](https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force). Later, it is being maintained and improved continuously by the [World Wide Web Consortium](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium). Over 30 years, various versions of HTML were launched, with the latest being HTML5.
 
 The root of web development is HTML. However, when converting the data to HTML, there are high chances of losing our information. The information needs to be exchanged without loss, which led to the rise of XML.
 
