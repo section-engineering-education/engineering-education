@@ -142,7 +142,7 @@ Here, we have added an icon as well as a switch component on the right. We are n
 ### STEP 2: Setup React Navigation
 In order to set up the React Navigation, we need to re-structure our app a bit. First, we need to create a new file called `Navigation.js` at the root level that will contain the code configured for navigation purposes.
 
-Inside the Navigation.js file, we need to import the React Navigation components. They are `NavigationContainer` and `createBottomTabNavigator`. We also need to import other screens to which we need to navigate to.
+Inside the Navigation.js file, we need to import the React Navigation components. They are `NavigationContainer` and `createBottomTabNavigator`. We also need to import `Home.js` and `Setting.js` components which are screens to which we need to navigate to.
 
 The imports are shown in the code snippet below:
 
