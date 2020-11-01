@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/perceptron-algorithm/hero.jpg
     alt: perceptron algorithm example image
 ---
-Perceptrons were one of the first algorithms discovered in the field of AI. It big significance was that it raised the hopes and expectations for the field of neural networks. Inspired by the neurons in the brain, the attempt to create a perceptron succeeded in modeling linear decision boundaries.
+Perceptrons were one of the first algorithms discovered in the field of AI. It's big significance was that it raised the hopes and expectations for the field of neural networks. Inspired by the neurons in the brain, the attempt to create a perceptron succeeded in modeling linear decision boundaries.
 <!--more-->
 A linear decision boundary can be visualized as a straight line demarcating the two classes. In this article, we will understand the theory behind the perceptrons and code a perceptron from scratch.
 
@@ -26,7 +26,7 @@ This article will explain what perceptrons are, and we will implement the percep
 By the end of the article, you will be able to code a perceptron, appreciate the significance of the model and, understand how it helped transform the field of neural networks as we know it.
 
 ### Perceptron
-Frank Rosenblatt developed the perceptron in the mid-1950s, which was based on the McCulloch-Pitts model. The McCulloch-Pitts model was proposed by the legendary-duo [Warren Sturgis McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) and [Walter Pitts](https://en.wikipedia.org/wiki/Walter_Pitts). Although these models are no longer in use today, they paved the way for research for many years to come.
+Frank Rosenblatt developed the perceptron in the mid-1950s, which was based on the [McCulloch-Pitts model](https://towardsdatascience.com/mcculloch-pitts-model-5fdf65ac5dd1). The McCulloch-Pitts model was proposed by the legendary-duo [Warren Sturgis McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) and [Walter Pitts](https://en.wikipedia.org/wiki/Walter_Pitts). Although these models are no longer in use today, they paved the way for research for many years to come.
 
 The perceptron is a mathematical model that accepts multiple inputs and outputs a single value. Inside the perceptron, various mathematical operations are used to understand the data being fed to it.
 
