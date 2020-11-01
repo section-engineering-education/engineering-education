@@ -54,7 +54,7 @@ Some tips to help you introduce yourself effectively are listed below:
 
 The interviewer will ask questions about your work experience( if any), projects, skills, etc., and anything else you may have on your resume. Make sure you know everything that is in your resume thoroughly. [Overleaf](https://www.overleaf.com/) is an excellent site for awesome resume templates.
 
-`Tip: Don't lie on your resume. If the interviewer asks you a question that you aren't able to answer, he/she will know that you have lied on your resume, and that will deduct a lot of points from your score. [This](https://www.jobscan.co/resume-writing-guide) is an amazing article on how to write an attractive resume`.  
+*Tip: Don't lie on your resume. If the interviewer asks you a question that you aren't able to answer, he/she will know that you have lied on your resume, and that will deduct a lot of points from your score. [This](https://www.jobscan.co/resume-writing-guide) is an amazing article on how to write an attractive resume.*
 
 In face-to-face interviews, the interviewer wants to understand how you think and arrive at a solution to the given problem. Therefore, it's always good to "think out loud" and communicate with the interviewer. Convey your thought process to the interviewer and let him/her know how you are approaching the problem.
 
@@ -78,8 +78,11 @@ In conclusion, cracking a coding interview takes a lot of practice and dedicatio
 
 Solve problems on competitive coding platforms, explore the fundamental subjects of computer science, and prepare for interviews.
 
-Some useful resources are:
-[Leetcode](https://leetcode.com/): For competitive coding and interview questions
+#### Some useful resources are listed below:
+
+[Leetcode](https://leetcode.com/)
+
+#### For competitive coding and interview questions:
 
 [GeeksForGeeks](https://www.geeksforgeeks.org/)
 
