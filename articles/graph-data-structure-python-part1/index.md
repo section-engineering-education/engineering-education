@@ -71,6 +71,8 @@ In an undirected graph, the edges have no path or direction. If there is a path 
 
 That is, `edge (X, Y) == edge (Y, X)`.
 
+Undirected Graphs are used in modelling electronic circuits and in number theory.
+
 ![Undirected Graph](/engineering-education/graph-data-structure-python-part1/undirected-graph.png)
 
 *Figure: [Undirected Graph](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/)*
@@ -79,6 +81,8 @@ That is, `edge (X, Y) == edge (Y, X)`.
 In a directed graph or digraph, the edges have an orientation. If there is a path from vertex X to vertex Y, then there isn't necessarily a path from vertex Y to vertex X.
 
 That is, `edge (X, Y) != edge (Y, X)`.
+
+By knowing directed graphs, a developer can work on social relations and networking applications and construct models for analysis of complex relationships.
 
 ![Directed Graphs](/engineering-education/graph-data-structure-python-part1/directed-graph.png)
 
@@ -92,6 +96,8 @@ A weighted graph has a value associated with every edge. The value may represent
 - `v` -> Destination vertex
 - `w` -> Weight associated to go from u to v.
 
+These weighted graphs are extensively used in modelling Computer Networks. For a career as a Networking Engineer, the knowledge of weighted graphs are a must.
+
 ![Weighted Graphs](/engineering-education/graph-data-structure-python-part1/weighted-graph.png)
 
 *Figure: [Weighted Graph](https://www.clipartmax.com/middle/m2i8Z5i8G6b1b1b1_directed-weighted-ex1-directed-weighted-graph/)*
@@ -101,6 +107,8 @@ An unweighted graph does not have a value associated with every edge. An edge of
 
 - `u` -> Source vertex
 - `v` -> Destination vertex
+
+Relationships in query languages like GraphQL can be represented by using Unweighted Graphs.
 
 ![Unweighted Graphs](/engineering-education/graph-data-structure-python-part1/unweighted-graph.png)
 
@@ -121,10 +129,12 @@ A rooted tree is a tree that has a designated root node. If edges point away fro
 
 ![Rooted Tree](/engineering-education/graph-data-structure-python-part1/rooted-trees.png)
 
-*Figure: Rooted Tree*
+*Figure: [Rooted Tree](https://www.youtube.com/watch?v=09_LlHjoEiY&t=213s)*
 
 ##### Directed Acyclic Graphs
 Directed Acyclic Graphs or DAGs are graphs with no directed cycles. They represent structures with dependencies. It's also important to note that: All [arborescences](https://en.wikipedia.org/wiki/Arborescence_(graph_theory)) are DAGs, but not all DAGs are arborescences.
+
+Directed Acyclic Graphs are used by compilers to represent expressions and relationships in a program.
 
 ![Directed Acyclic Graph](/engineering-education/graph-data-structure-python-part1/dag.png)
 
@@ -132,6 +142,8 @@ Directed Acyclic Graphs or DAGs are graphs with no directed cycles. They represe
 
 ##### Complete Graphs
 Complete graphs have a unique edge between every pair of vertices. A complete graph `n` vertices have `(n*(n-1)) / 2` edges and are represented by Kn.
+
+Fully connected networks in a Computer Network uses a complete graph in its representation. 
 
 ![Complete Graph](/engineering-education/graph-data-structure-python-part1/complete-graph.png)
 
@@ -148,6 +160,8 @@ There are multiple ways of using data structures to represent a graph. The three
 An Adjacency Matrix is a very simple way to represent a graph. In a weighted graph, the element `**A[i][j]**` represents the cost of moving from vertex `i` to vertex `j`.
 
 In an unweighted graph, the element `**A[i][j]**` represents a Boolean value that determines if a path exists from vertex `i` to vertex `j`. If A[i][j] == 0, then no path from vertex i to vertex j exists. If A[i][j] == 1, there is a path from vertex i to vertex j.
+
+For example, a snake and ladder game can be represented by using an adjacency matrix. This enables us to use various algorithms to find the shortest path to finish the game. Similarly, many shortest path algorithms use an adjacency matrix.
 
 ##### Example:
 ```python
