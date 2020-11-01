@@ -219,7 +219,8 @@ After running our code you will see the following notification in the right-hand
 ![](/engineering-education/getting-started-with-web-scraping-using-python/3.PNG)
 
 ### Conclusion
-We’ve just proven that anything on the web can be scraped and stored, there are a lot of reasons why we would want to use that information, and we came up with an example on the **Reddit Web Scraper**:
-consider that a specific post receives a lot of comments but without any like, we can know as a result that the post strikes a chord in people and go against the community.
+We’ve just proven that anything on the web can be scraped and stored, there are a lot of reasons why we would want to use that information, as an example:
+
+Imagine you are working with a social media platform, and you have a task which is deleting any post may be against the community, the best way of doing that task is by developing a web scraper App that scraps and store the likes and comments number for every post, after that if the post received a lot of comments but without any like, we can know as a result that post is striking a chord in people and we should take a look at it.
 
 There are a lot of possibilities, and it’s up to you (as a developer) to choose how you will use that information.
