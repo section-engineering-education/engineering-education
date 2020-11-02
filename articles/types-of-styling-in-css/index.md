@@ -1,4 +1,25 @@
-Cascading Style Sheets commonly known as CSS. This is what turns your everyday markup language, HTML, into a one of a kind expression that leaves people in admiration. CSS complements the elements in HTML to help come up with various designs that make a website pop. From background colors, font-size, font-weight, font-family, and much more the design of a website becomes limited to only your imagination. This is the main playground for any developer. In simple terms, CSS is like all the spices you add to your food to give it a rich, enticing aroma and taste when you finally present it. However, just throwing things in there randomly doesn't guarantee greatness. You still have to know what goes with what, when to apply a specific style or when something just doesn't fit in. How you implement your CSS can either make or break your website. Below we'll be looking at the different styling options in CSS, how to apply them, and when best to implement each style.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/types-of-styling-in-css/
+title:
+description:
+author:
+date: 2020-11-02T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/types-of-styling-in-css/hero.jpg
+    alt:  example image developers
+
+---
+Cascading Style Sheets commonly known as CSS. This is what turns your everyday markup language, HTML, into a one of a kind expression that leaves people in admiration. CSS complements the elements in HTML to help come up with various designs that make a website pop. From background colors, font-size, font-weight, font-family, and much more the design of a website becomes limited to only your imagination.
+<!--more-->
+This is the main playground for any developer. In simple terms, CSS is like all the spices you add to your food to give it a rich, enticing aroma and taste when you finally present it. However, just throwing things in there randomly doesn't guarantee greatness.
+
+You still have to know what goes with what, when to apply a specific style or when something just doesn't fit in. How you implement your CSS can either make or break your website. Below we'll be looking at the different styling options in CSS, how to apply them, and when best to implement each style.
 
 ### Styling in CSS
 There are 3 distinct methods for styling in CSS. Each level of styling is given a different hierarchical priority and is used for different reasons. The 3 methods are further grouped into two categories. Namely *Internal CSS* and *External CSS*. *Internal CSS* comprises of Local Styles and Page-Level Styles while *External CSS* is just as the name implies.
