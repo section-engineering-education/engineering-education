@@ -26,7 +26,7 @@ JavaScript has different kinds of iterations statements called loops. They inclu
 This guide will discuss each of these loops with simple & basic examples and compare & test each loop's execution performance.
 
 ### For Loop
-For loop is the commonly used loop. If you are not new to the world of programming, you might have come across a for loop statement under other programming languages such as java, c++, c, etc. A for statement loops through a specified or fixed number of elements until it meets the specified condition.
+`For` loop is the commonly used loop. If you are not new to the world of programming, you might have come across a `for` loop statement under other programming languages such as `java`, `c++`, `c`, etc. A `for` statement loops through a specified or fixed number of elements until it meets the specified condition.
 
 A `for statement` consist of the following parts:
 
@@ -37,7 +37,7 @@ for (initializer; condition; increment){
 ```
 
 - Initialization expression - it is a variable declaration that initializes a loop counter `loop = 0`.
-- Condition expression - for loop executes when the condition value is true, and if it is false, the loop terminates when `loop < 5`. It is a test condition that determines the number of times a statement will iterate.
+- Condition expression - `for` loop executes when the condition value is true, and if it is false, the loop terminates when `loop < 5`. It is a test condition that determines the number of times a statement will iterate.
 - Increment expression - `loop++` updates the loop by increasing or decreasing the loop counter.
 - Statement - `console.log ("hello world")` if the condition executes to true, the loop statement is executed until the condition expression `loop < 5` is false.
 
@@ -255,7 +255,7 @@ console.log(`index:${i}, value: ${animals[i]}`)}
 The loop terminates when the index value of the animals array is equal to `wolf`. The loop will impatiently stop after testing the value `wolf`. This means that the loop will not print the `wolf` in the console.
 
 ***Example 2***
-Break a while loop when the loop value is `3`.
+Break a `while` loop when the loop value is `3`.
 ```js
 let n = 0;
 while (n < 10)  {
@@ -265,9 +265,9 @@ while (n < 10)  {
   console.log(n)
 }
 ```
-The while loop will stop when the loop value is equal to `3`. Unlike For loop, the breakpoint value `3` will be included in the log message before the iteration stops.
+The `while` loop will stop when the loop value is equal to `3`. Unlike For loop, the breakpoint value `3` will be included in the log message before the iteration stops.
 
-While loops execute the condition `(n < 10)` before executing the statement. While loop executes a statement only when the condition is true. When the statement is invoked the while control the loop by retesting the condition again until `n==3` become false.
+While loops execute the condition `(n < 10)` before executing the statement. `While` loop executes a statement only when the condition is true. When the statement is invoked the `while` control the loop by retesting the condition again until `n==3` become false.
 
 ### Continue Statement
 Break a loop, check a specified condition, and then proceed to the next iteration until the loop condition expression returns false. The loop skips a value specified in the continue statement condition.
@@ -378,7 +378,7 @@ do...while: 0.045ms
 for...of: 0.113ms
 for...each: 0.065ms
 ```
-The results are quite eye-catching with while, do-while, and for comparatively faster. To get a clear picture and more desirable result to try to increase the number of iterations.
+The results are quite eye-catching with `while`, `do-while`, and `for` comparatively faster. To get a clear picture and more desirable result to try to increase the number of iterations.
 ```js
 arraySize iterations 1000
 for: 0.519ms
@@ -422,7 +422,7 @@ do...while: 349.297ms
 for...of: 14124.834ms
 for...each: 11820.696ms
 ```
-As the number of iterations increases, the results are quite comparable, and again the old for loop is giving stiff competition to while and do while loops. On the other hand, for of loop seems to lag behind.
+As the number of iterations increases, the results are quite comparable, and again the old `for` loop is giving stiff competition to `while` and `do-while` loops. On the other hand, `for` of loop seems to lag behind.
 
 ##### Nested Loop Performance
 ```js
@@ -553,9 +553,9 @@ console.log(Object.entries(values).sort((a, b) => {
 ]
 ```
 
-This is a more transparent result. Again the old for loop dominates the loops list. Do while and while still have a comparable performance. I included for in in this example. It seems to take the longest time to finish the loops. Unlike the other loops (logs the array values), for in logs the index of the array element. This makes it slow. For in is specially reserved to loops through an unspecified number of object properties.
+This is a more transparent result. Again the old `for` loop dominates the loops list. `Do-while` and `while` still have a comparable performance. I included `for-in` in this example. It seems to take the longest time to finish the loops. Unlike the other loops (logs the array values), `for-in` logs the index of the array element. This makes it slow. For in is specially reserved to loops through an unspecified number of object properties.
 
-The way you write your loop statements has a slight difference in iteration performance. For example, using the fast for loop, we can derive the following statements.
+The way you write your loop statements has a slight difference in iteration performance. For example, using the fast `for` loop, we can derive the following statements.
 
 #### Using Incremental
 ```js
@@ -683,10 +683,10 @@ option 2: 5.086ms
 ```
 
 ### Closing Notes
-- For, while and do while have close performance results characteristics. Neither of the loops is significant fast or slow.
-- For each is ideal for functional codes.
-- For in is ideal for unspecified object properties. Avoid it when using array data.
-- Be keen on the condition statement when using while to perform a loop.
+- `For`, `while` and `do-while` have close performance results characteristics. Neither of the loops is significant fast or slow.
+- `For-each` is ideal for functional codes.
+- `For-in` is ideal for unspecified object properties. Avoid it when using array data.
+- Be keen on the condition statement when using `while` to perform a loop.
 - Nested loops are significantly slower; avoid them when a loop has a large number of iterations to perform.
 - Decreasing the amount of work done per iteration and the number of loops increases loop performance.
 - Performance is not the only thing that matters. Code readability and maintainability are key. Few lines of codes mean reduced performance overheads and a short development period.
