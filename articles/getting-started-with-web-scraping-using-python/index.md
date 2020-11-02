@@ -18,7 +18,7 @@ Imagine you want to gather a large amount of data from several websites as quick
 Now you are asking yourself, why would you want to do that! Okay, follow along as we go over some examples to understand the need for **web scraping**:
 <!--more-->
 ### Introduction
-- [Wego](https://www.wego.com/en) is a website where you can book your flights & hotels, it gives you the lowest price after comparing 1000 booking sites. This is done by **web scraping** that help with that process.
+- [Wego](https://www.wego.com/en) is a website where you can book your flights & hotels, it gives you the lowest price after comparing 1000 booking sites. This is done by **web scraping** that helps with that process.
 - [Plagiarismdetector](https://plagiarismdetector.net/) is a tool you can use to check for plagiarism in your article, it also is using **web scraping** to compare your words with thousands of other websites.
 - Another example that many companies are using **web scraping** for, is to create strategic marketing decisions after scraping social network profiles, to determine the posts with the most interactions.
 
@@ -49,9 +49,9 @@ User-agent: Discordbot
 Allow: /*/videos/
 ```
 
-In www.facebook.com/robots.txt you can find this rule listed above, it means that a Discord bot has the permission to do **web scraping** on Facebook videos.
+On www.facebook.com/robots.txt you can find this rule listed above, it means that a Discord bot has the permission to do **web scraping** on Facebook videos.
 
-- You can run the following Python code that make a **GET** request to the website server:
+- You can run the following Python code that makes a **GET** request to the website server:
 
 ```python
   import requests
@@ -59,7 +59,7 @@ In www.facebook.com/robots.txt you can find this rule listed above, it means tha
   print(r.status_code)
 ```
 
-If the result is **200** then you have the permission to perform **web scraping** on the website, but you also have to take a look at the scraping rules.
+If the result is a **200** then you have the permission to perform **web scraping** on the website, but you also have to take a look at the scraping rules.
 
 As an example, if you run the following code:
 
@@ -69,7 +69,7 @@ r=requests.get("https://www.monster.com/")
 print(r.status_code)
 ```
 
-If the result are **200** then you have the permission to start crawling, but you must also be aware of the following **Points**:
+If the result is a **200** then you have the permission to start crawling, but you must also be aware of the following **Points**:
 
 - You can only scrape data that is available to the public, like the prices of a product, you can not scrape anything private, like a **Sign In** page.
 - You can't use the scraped data for any commercial purposes.
@@ -94,7 +94,7 @@ sudo apt-get install bs4 urllib3 plyer requests
 You're ready to go, let's get started and learn a bit more on **web scraping** through two real-life projects.
 
 ### Reddit Web Scraper
-One year ago, I wanted to build a smart **AI** bot, my aim was to make it talk like a human, but I had a problem, I didn't have a good dataset to train my bot on, so I decided to use posts and comments from **REDDIT**.
+One year ago, I wanted to build a smart **AI** bot, I aimed to make it talk like a human, but I had a problem, I didn't have a good dataset to train my bot on, so I decided to use posts and comments from **REDDIT**.
 
 Here we will go through how to build the basics of the aforementioned app step by step, and we will use https://old.reddit.com/.
 
@@ -113,13 +113,13 @@ First of all, we imported the libraries we want to use in our code.
 
 Second, the URL we are going to use is for the **TOP** posts on Reddit.
 
-Third, the headers part with "User-Agent" is a browser-related method to not let the server know that you are a bot and restrict your requests number, in order to find out your "User-Agent" you can do a web search for "what is my User-Agent?" in your browser.
+Third, the headers part with "User-Agent" is a browser-related method to not let the server know that you are a bot and restrict your requests number, to find out your "User-Agent" you can do a web search for "what is my User-Agent?" in your browser.
 
-Finally, we did a get request in order to connect to that URL then to pull out the HTML code for that page using the **Beautiful Soup** library.
+Finally, we did a get request to connect to that URL then to pull out the HTML code for that page using the **Beautiful Soup** library.
 
 Now let's move on to the next step of building our app:
 
-Open this [URL](https://old.reddit.com/top/) then press **F12** to inspect the page, you will see the HTML code for it. In order to know in what line you can find the HTML code for the element you want to locate, you have to do a right-click on that element then click on inspect.
+Open this [URL](https://old.reddit.com/top/) then press **F12** to inspect the page, you will see the HTML code for it. To know in what line you can find the HTML code for the element you want to locate, you have to do a right-click on that element then click on inspect.
 
 After doing the process above on the first title on the page, you can see the following code with a highlight for the tag that holds the data you right-clicked on:
 
