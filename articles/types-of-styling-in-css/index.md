@@ -73,7 +73,7 @@ By using the style tag in the HTML element *p*, we're able to change the font, f
 
 This time around we defined the style within the *head* HTML tags. By doing so all elements defined in the style will automatically use the style defined for them. This means that all *p* elements on the page will have a color red and a background-color of yellow. The body on the other hand will have the color yellow and a background-color of red.
 
-3. **External Styles** The styles used for the webpage are located in a completely different file. The *.HTML* file is linked to the *.css* file that can be imported to modify the style. When developing a website with multiple pages this styling usually comes in handy.
+3. **External Styles:** The styles used for the webpage are located in a completely different file. The *.HTML* file is linked to the *.css* file that can be imported to modify the style. When developing a website with multiple pages this styling usually comes in handy.
 
 ```html
   <!DOCTYPE html>
