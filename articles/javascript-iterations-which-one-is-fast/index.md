@@ -118,7 +118,7 @@ console.log(`${info}: ${person[info]}`)
 `For-in` will invoke the above loop as many times as the number of properties you add in object `person`. It is a better solution to loop through objects.
 
 ### For Of
-It iterates through iterables such as `strings`, `arrays`, `maps`, and `set`. `For-of` loops iterate through items in a collection such as an array. It is very similar to the `for-in`, except this time we are using the `of` keyword and passing in an iterable instead of an object. `For-of` will not work with Objects because they are not iterable.
+It iterates through iterables such as `strings`, `arrays`, `maps`, and `set`. `For-of` loops through items in a collection such as an array. It is very similar to the `for-in`, except this time we are using the `of` keyword and passing in an iterable instead of an object. `For-of` will not work with Objects because they are not iterable.
 
 ```js
 for(variable of iterable) {
@@ -167,7 +167,7 @@ for (let number of arr) {
 It executes a provided function once for each array element in ascending order. When it comes to looping through arrays `for-each` function is ideal, it is just simple to use.
 
 ```js
-const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit" ];
+const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
   animals.forEach(function(anim){
   console.log(anim)
 })
@@ -178,8 +178,8 @@ The callback function execute the first element in the array then the second to 
 You can rewrite the function using the arrow function, as shown below.
 
 ```js
-const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit" ];
-  animals.forEach(anim =>{
+const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
+  animals.forEach(anim => {
   console.log(anim)
 })
 ```
@@ -194,12 +194,12 @@ array.forEach(callback (currentValue, index, array) {
 ```
 
 #### Parameters
-- Callback - the function to be called once in each element order.
+- Callback - the function to be called once in each element in order.
 - Current value - a mandatory parameter that holds the current element value in the array.
 
 ```js
 const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
-animals.forEach((anim) =>{
+animals.forEach((anim) => {
   console.log(anim)
 })
 ```
@@ -208,7 +208,7 @@ animals.forEach((anim) =>{
 
 ```js
 const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
-  animals.forEach((anim, index) =>{
+  animals.forEach((anim, index) => {
   console.log(`index: ${index}, value: ${anim}`)
   })
 ```
@@ -217,7 +217,7 @@ const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 
 ```js
 const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
-  animals.forEach((anim, index, array) =>{
+  animals.forEach((anim, index, array) => {
   console.log(array)
 })
 ```
@@ -232,6 +232,7 @@ const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 A code block that has a loop inside another loop is called a nested loop.
 
 ***For example:***
+
 ```js
 for (let i = 0; i < 5; i++) {
    for (let j = 0; j < 5; j++) {
@@ -246,40 +247,46 @@ for (let i = 0; i < 5; i++) {
 A break identifier terminates an iterating loop. I.e. the below examples closes a loop that iterates over array elements. The loop terminates when iteration finds an index of a specified value.
 
 ***Example 1***
+
 ```js
 const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
   for (let i = 0; i <animals.length; i++) {
   if (animals[i]==="wolf") break;
 console.log(`index:${i}, value: ${animals[i]}`)}
 ```
+
 The loop terminates when the index value of the animals array is equal to `wolf`. The loop will impatiently stop after testing the value `wolf`. This means that the loop will not print the `wolf` in the console.
 
 ***Example 2***
 Break a `while` loop when the loop value is `3`.
+
 ```js
 let n = 0;
-while (n < 10)  {
+while (n < 10) {
   if (n ==3 )
   break;
   n++;
   console.log(n)
 }
 ```
-The `while` loop will stop when the loop value is equal to `3`. Unlike For loop, the breakpoint value `3` will be included in the log message before the iteration stops.
 
-While loops execute the condition `(n < 10)` before executing the statement. `While` loop executes a statement only when the condition is true. When the statement is invoked the `while` control the loop by retesting the condition again until `n==3` become false.
+The `while` loop will stop when the loop value is equal to `3`. Unlike `For` loop, the breakpoint value `3` will be included in the log message before the iteration stops.
+
+`While` loops execute the condition `(n < 10)` before executing the statement. `While` loop executes a statement only when the condition is true. When the statement is invoked the `while` control the loop by retesting the condition again until `n == 3` become false.
 
 ### Continue Statement
 Break a loop, check a specified condition, and then proceed to the next iteration until the loop condition expression returns false. The loop skips a value specified in the continue statement condition.
 
 For example, to loop over some numbers and get the even numbers, we need a continue statement to break the loop whenever we iterate odd numbers.
+
 ``` js
-for (let i = 1; i <= 10; i++){
+for (let i = 1; i < = 10; i++){
   if (i % 2 == 1) continue;
   console.log(i)
 }
 ```
-Every time `i` iterates, it will check the value, and if the value is an odd number, the loop will break and test the next value. Continue will loop the current iteration and continue as long as `i` is an even number until `i<= 10` is met.
+
+Every time `i` iterates, it will check the value, and if the value is an odd number, the loop will break and test the next value. Continue will loop the current iteration and continue as long as `i` is an even number until `i <= 10` is met.
 
 ***Note***: there is no way to break out of `for each` loop.
 
@@ -287,13 +294,16 @@ Every time `i` iterates, it will check the value, and if the value is an odd num
 A label identifies a loop. It is simply naming a loop or a block of code in JavaScript. A label statement can be added inside a loop as an identifier to interrupt the iteration execution. These statements are called labels. That label will then be used to refer to the code later.
 
 For example, to add `myloop` label to a loop block, add a semicolon to the end of the label name as shown below.
+
 ```js
 myloop:
 for (let i = 1; i <= 10; i++){
   console.log(i);
 }
 ```
+
 The `myloop` can be used to refer to our code. For example when using break and continue statements.
+
 ```js
 myloop:
 for (let i = 1; i <= 10; i++){
@@ -301,9 +311,11 @@ for (let i = 1; i <= 10; i++){
   console.log(i);
 }
 ```
+
 The above code has nothing special, as the results will the same as without using a label. In loops, labels come into play with nested loops to specify the loop to alter. The label will determine exactly which loop to break or continue.
 
 ***For example:***
+
 ```js
 loopOne: for (let i = 0; i <=5; i++) {
   loopTwo: for (let j = 0; j <=5; j++) {
@@ -313,6 +325,7 @@ loopOne: for (let i = 0; i <=5; i++) {
   }
 }
 ```
+
 In the above example:
 - Every loop will perform five iterations.
 - `loopOne` will always break when `i === 3`, skip the value `3`, and continue with the loop execution until `i <=5`. It will log values 1, 2, 4, and 5.
@@ -322,6 +335,7 @@ In the above example:
 We will traverse through an array using one array method with the same arrays size and an equal number of iterations to compare each loop's execution time. To get desirable results, we will use different test methods.
 
 #### Using .time ( ) and .timeEnd () Functions
+
 ```js
 //number of iterations
 // use 100 iterations
@@ -370,6 +384,7 @@ console.timeEnd("for...each");
 ```
 
 ***Results***
+
 ```js
 arraySize iterations 100
 for: 0.968ms
@@ -378,7 +393,9 @@ do...while: 0.045ms
 for...of: 0.113ms
 for...each: 0.065ms
 ```
+
 The results are quite eye-catching with `while`, `do-while`, and `for` comparatively faster. To get a clear picture and more desirable result to try to increase the number of iterations.
+
 ```js
 arraySize iterations 1000
 for: 0.519ms
@@ -422,9 +439,11 @@ do...while: 349.297ms
 for...of: 14124.834ms
 for...each: 11820.696ms
 ```
+
 As the number of iterations increases, the results are quite comparable, and again the old `for` loop is giving stiff competition to `while` and `do-while` loops. On the other hand, `for` of loop seems to lag behind.
 
 ##### Nested Loop Performance
+
 ```js
 const iterations = 100000
 // add an empty array size equal to the number of iterations
@@ -439,10 +458,12 @@ for (let i = 0; i < iterations; i++) {
 }
 console.timeEnd("nested loop");
 ```
+
 Created a separate code block because the nested loop creates performance overhead as the number of iterations increases.
 Test the loop with upto 100000 iterations.
 
 ***Results***
+
 ```js
 arraySize 100: 3.554ms
 arraySize 1000: 71.934ms
@@ -541,7 +562,9 @@ console.log(Object.entries(values).sort((a, b) => {
     return obj;
 }));
 ```
+
 ***Results***
+
 ```js
 [
   [ 'For', 108.80030800999994 ],
@@ -555,24 +578,28 @@ console.log(Object.entries(values).sort((a, b) => {
 
 This is a more transparent result. Again the old `for` loop dominates the loops list. `Do-while` and `while` still have a comparable performance. I included `for-in` in this example. It seems to take the longest time to finish the loops. Unlike the other loops (logs the array values), `for-in` logs the index of the array element. This makes it slow. For in is specially reserved to loops through an unspecified number of object properties.
 
-The way you write your loop statements has a slight difference in iteration performance. For example, using the fast `for` loop, we can derive the following statements.
+The way you write a loop statements has a slight difference in iteration performance. For example, using the fast `for` loop, we can derive the following statements.
 
 #### Using Incremental
+
 ```js
 for (let i = 0; i <array.length; i++) {}
 ```
 
 #### Using Decremental
+
 ```js
 for (let i = 0; i <array.length; i--) {}
 ```
 
 #### Cached Length
+
 ```js
 for ( let i = 1, l = array.length; i <= l; i++ ) {}
 ```
 
 Or
+
 ```js
 let i = 0;
 const max = array.length;
@@ -580,34 +607,40 @@ for(; i < max; i++) {}
 ```
 
 Or
+
 ```js
 let l = arr.length;
 for (let x = 0; x < l; x++) {}
 ```
 
 #### Var vs Let
+
 ```js
 for (let i = 0; i <array.length; i++) {}
 for (var i = 0; i <array.length; i++) {}
 ```
 
-#### The ugly for loop
+#### The Ugly for Loop
+
 ```js
 for (let i=n; i-- != 0; ) {}
 ```
 
-#### Function call Loop
+#### Function Call Loop
+
 ```js
 for ( let i = 1; i <= array.length; i++ ) {}
 ```
 
 #### Other Options
+
 ```js
 for (let i=n; i >=0; i--) {}
 for (let i=n; i--; ) {}
 ```
 
 ##### Performance Summary
+
 ```js
 const iterations = 50000
 const arraySize = new Array(iterations)
