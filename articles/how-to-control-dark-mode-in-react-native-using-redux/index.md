@@ -17,9 +17,9 @@ This tutorial aims to show the use of the Redux mechanism to toggle the dark mod
 <!--more-->
 Redux is a powerful and popular state management mechanism.
 
-You will be able to apply the dark mode theme configurations to each page and UI elements in your app by accessing the central Redux store. The process will implement dark mode in any React Native app very convenient and efficient.
+You will be able to apply the dark mode theme configurations to each page and UI elements in your app by accessing the central Redux store. The process will implement dark mode in any React Native application very conveniently and efficiently.
 
-For this tutorial, we bypass the installation process of any package. As we are using the [Expo ecosystem](https://docs.expo.io/) which automatically installs the package for us.
+For this tutorial, we will bypass the installation process of any package. As we are using the [Expo ecosystem](https://docs.expo.io/) which automatically installs the package for us.
 
 ### Before we start
 You can check the actual demo of what we are going to implement in the Expo platform itself. No need to worry about the setup, you can simply run the app on the simulators provided by the Expo platform.
@@ -42,7 +42,7 @@ Here is a list of helpful topics (basic knowledge) to better help you get starte
 ### STEP 1: Setup simple screens with React Native paper
 Our first step is to set up simple screens using the components from the react-native-paper UI library.
 
-To do that, we need to create a directory named **./screens** and inside the directory, we need to create two new files called `Home.js` and `Setting.js`.
+To do this, we need to create a directory named **./screens** and inside the directory, we need to create two new files called `Home.js` and `Setting.js`.
 
 In the Home.js file, we need to import the components from the react-native-paper package as directed in the code snippet below:
 
@@ -100,7 +100,7 @@ export default Home
 
 Here, we have used the Headline component to display the title. To create a card like component in the UI, we used the Card component with its subsidiary modules. Inside the Navigation.js file, we need to import the React Navigation components, `NavigationContainer` and `createBottomTabNavigator`.
 
-We will get the result as displayed in the emulator screenshot below:
+We should get the result as displayed in the emulator screenshot below:
 
 ![react-native-paper-in-home-screen.png](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-paper-in-home-screen.png)
 
@@ -131,11 +131,11 @@ export default  ({ navigation }) => {
 }
 ```
 
-We will see the result as they are displayed in the emulator screenshot below:
+We should see the result as they are displayed in the emulator screenshot below:
 
 ![react-native-setting-screen.png](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/react-native-setting-screen.png)
 
-Here, we have added an icon as well as a switch component on the right. We are now done with the UI part. We can move on to the functionalities.
+Here, we have added an icon as well as a switch component on the right. We are now done with the UI part of the tutorial. We can move on to the functionalities.
 
 ### STEP 2: Setup React Navigation
 To set up the React Navigation, we need to re-structure our app a bit. First, we need to create a new file called `Navigation.js` at the root level that will contain the code configured for navigation purposes.
