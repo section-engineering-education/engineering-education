@@ -7,13 +7,18 @@ Extended reality (XR) is a term that encompasses real and virtual environments t
 Extended reality encompasses three main pillars of immersive technology: Virtual Reality (VR), Augmented Reality (AR) and Mixed Reality (MR). 
 ### Virtual Reality (VR)
 This immersive technology employs a head mounted display (HMD) to provide an immersive expression through simulation. The simulated digital environment makes users feel as if they are there. For example, VR developers may create an artificial world that makes users feel as if they are walking around on the moon. The first industries to adopt this kind of technology include the gaming and entertainment industries.
-![alt text](Virtual_Reality.jpg)
+
+![Virtual Reality](/engineering-education/introduction-to-extended-reality/virtual-reality.jpg)
+
 [Image Source: Magic Holo](https://magic-holo.com/wp-content/uploads/2017/04/Virtual_Reality.jpg)
 
 ### Augmented Reality (AR)
 In this component of XR, smart devices are used to overlay sounds and digital graphics into the real world. Some of the digital details overlaid into the real-world environment include images, animation and texts. This enhanced experience can be achieved using AR screens, tablets, smartphones or screens. Snapchat filters and Pokeman Go are good examples of AR technology. In the game of Pokemon Go, digital creatures are overlaid into the real world. Snapchat filters involve putting digital objects such as glasses and hats onto the user’s head to provide unique experiences.
-![alt text](augmented%20reality.jpeg)
+
+![Augmented Reality](/engineering-education/introduction-to-extended-reality/augmented-reality.jpeg)
+
 [Image Source: Miro](https://miro.medium.com/max/1200/1*3F8SgP5Im17Kq9yPvy5rpA.jpeg)
+
 ### Mixed Reality (MR)
 Mixed Reality encompasses the co-existence of real-world and digital objects. There is an interaction of these objects in real time. This is an advanced immersive technology that needs an MR headset and higher processing power than virtual reality and augmented reality. A good example of mixed reality is Microsoft's HoloLens, which allows users to interact with digital objects that are placed in a room.
 
@@ -37,12 +42,14 @@ Extended reality has a wide range of applications in the modern world. Some of i
 Extended reality has played a great role in providing immersive technologies in the entertainment world. Users can now get virtual experiences of sports and music events using their VR headsets. In movie theatres, virtual reality has been used to provide audiences with 3D experiences. In acting, real-time rendering and camera tracking provide immersive experiences to actors, which makes them feel as if they are in a real scene. Extended reality is also increasingly being used in video games. There is an improved user experience because of the enhanced comprehensive participation effect.
 
 
-![alt text](xr-games.jpg)
+![Entertainment](/engineering-education/introduction-to-extended-reality/xr-games.jpg)
 
 [Image Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Reality_check_ESA384313.jpg/1200px-Reality_check_ESA384313.jpg)
 ### Healthcare
 In the healthcare system, extended reality is used by medical practitioners to visualize complex medical interventions. It also assists surgeons to plan for complicated surgeries. 
-![alt text](virtual-reality-in-medicine.jpeg)
+
+![Healthcare](/engineering-education/introduction-to-extended-reality/virtual-reality-in-medicine.jpeg)
+
 [Image Source: University of Virginia](https://news.med.virginia.edu/fac-dev-blog/wp-content/blogs.dir/364/files/2017/09/Virtual-Reality-Woman.jpeg?r=1)
 ### Training and Education
 Extended reality helps in facilitating the effective learning of people that may work in high-risk conditions. It could be dangerous to teach new aviation students to fly with real planes. With digital simulations that offer immersive experiences, aviation students can learn how to fly a plane effectively without any potential risk of an accident. Medical students are also using immersive technologies to learn important skills. A good example is the use of virtual patients to gain hands-on experience. 
@@ -57,9 +64,10 @@ Developers of XR technologies are faced with certain challenges that limit their
 ## The Future of XR
 Extended reality may shape the future of machine-human interactions and digital transformation. The future will have more advanced and complex immersive technologies that will solve many global problems. We may also experience immersive technologies that use the senses of taste and smell. These are technologies that are under extensive research. With the introduction of 5G technology, there will be increased adoption of extended reality in the future. This is because of sustained network performance and uniform experience. Finally, XR could be the future of mobile computing because of its increasing ability to revolutionize mobile experiences. It wouldn’t be surprising to find smartphones becoming XR wearable.  
 
-## Resources
-https://medium.com/predict/extended-reality-is-the-frontier-of-the-digital-future-a2c05785fc72
+## **Resources**
 
-https://www.dummies.com/software/virtual-reality-augmented-reality-mixed-reality-extended-reality/
+[Predict Newsletter](https://medium.com/predict/extended-reality-is-the-frontier-of-the-digital-future-a2c05785fc72)
+
+[Dummies Article](https://www.dummies.com/software/virtual-reality-augmented-reality-mixed-reality-extended-reality/)
 
 
