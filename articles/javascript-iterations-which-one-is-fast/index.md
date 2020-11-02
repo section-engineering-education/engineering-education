@@ -58,7 +58,7 @@ do {
 }  while (condition);
 ```
 
-The statement is checked/executed before the condition. If the condition is true, the loop executes the statement again. In the do-while loop, the next statement executes before the condition rechecks the previously executed statement. If the condition is true, it executes the statement again until the condition evaluates to false.
+The statement is checked/executed before the condition. If the condition is true, the loop executes the statement again. In the `do-while` loop, the next statement executes before the condition rechecks the previously executed statement. If the condition is true, it executes the statement again until the condition evaluates to false.
 
 ```js
 let i = 0;
@@ -94,7 +94,7 @@ while (true) {
 The above code block will execute forever, as the condition will never be false.
 
 ### For In
-It iterates over named properties of an object key and gets each property value inside the loop. A `for-in` loop has no condition expression and incremental value. The loop executes once per property. And tests are many times as the number of properties in an object.
+It iterates over named properties of an object key and gets each property value inside the loop. A `for-in` loop has no condition expression and incremental value. The loop executes once per property. And tests as many times as the number of properties in an object.
 
 ```js
 for(variable in object) {
@@ -115,10 +115,10 @@ for(let info in person)
 console.log(`${info}: ${person[info]}`)
 ```
 
-`For-in` will invoke the above loop as many times as the number of properties you add in object person. It is a better solution to loop through objects.
+`For-in` will invoke the above loop as many times as the number of properties you add in object `person`. It is a better solution to loop through objects.
 
 ### For Of
-It iterates through iterables such as `strings`, `arrays`, `maps`, and `set`. `For-of` loops iterate through items in a collection such as an array. It is very similar to the `for-in`, except this time we are using the “of” keyword and passing in an iterable instead of an object. `For-of` will not work with Objects because they are not iterable.
+It iterates through iterables such as `strings`, `arrays`, `maps`, and `set`. `For-of` loops iterate through items in a collection such as an array. It is very similar to the `for-in`, except this time we are using the `of` keyword and passing in an iterable instead of an object. `For-of` will not work with Objects because they are not iterable.
 
 ```js
 for(variable of iterable) {
@@ -126,7 +126,7 @@ for(variable of iterable) {
 }
 ```
 
-`For-in` also works with arrays as it uses the index of each value in the array. The following example sample the results difference of for in and for of to iterate over array elements.
+`For-in` also works with arrays as it uses the index of each value in the array. The following example sample the results difference of `for-in` and `for-of` to iterate over array elements.
 
 ```js
 let arr = [1, 3, 5, 7, 9];
@@ -164,7 +164,7 @@ for (let number of arr) {
 ```
 
 ### For Each
-It executes a provided function once for each array element in ascending order. When it comes to looping through arrays for each function is ideal, it is just simple to use.
+It executes a provided function once for each array element in ascending order. When it comes to looping through arrays `for-each` function is ideal, it is just simple to use.
 
 ```js
 const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit" ];
@@ -173,7 +173,9 @@ const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit" ];
 })
 ```
 
-The callback function execute the first element in the array then the second to the last element in the array. You can rewrite the function using the arrow function, as shown below.
+The callback function execute the first element in the array then the second to the last element in the array.
+
+You can rewrite the function using the arrow function, as shown below.
 
 ```js
 const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit" ];
@@ -182,7 +184,7 @@ const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit" ];
 })
 ```
 
-For each reference to a callback function once. The callback function calls every single array elements in order.
+`For-each` reference to a callback function once. The callback function calls every single array elements in order.
 
 ```js
 array.forEach(callback (currentValue, index, array) {
@@ -224,7 +226,7 @@ const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 
 `For-each` is deal to iterate over array elements without breaking the array list. It executes each array element simultaneously without side effects such as mutability of the scope variable. It is not chainable and always return an undefined value.
 
-For each is a high order function. If you are interested in learning more, head out to this [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
+`For-each` is a high order function. If you are interested in learning more, head out to this [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 ### Nested Loops
 A code block that has a loop inside another loop is called a nested loop.
