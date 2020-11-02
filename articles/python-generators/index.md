@@ -109,22 +109,6 @@ def names_to_uppercase_generator(names):
 uppercase_names = (name.upper() for name in name_list)
 ```
 
-### Profiling Generator Performance
-
-```python
->>> import sys
-# Square root of numbers in a range using list comprehension.
->>> nums_squared_list = [n * 2 for n in range(10000)]
->>> sys.getsizeof(nums_squared_list)
-87724
-# Square root of numbers in a range using generator functions.
->>> nums_squared_generator = (n ** 2 for n in range(10000))
->>> print(sys.getsizeof(nums_squared_generator))
-125
-```
-
-List comprehension uses 87724 bytes of memory while generator function uses only 125 bytes of memory. By using generators we save memory as compared to list comprehension where a lot of memory is used.
-
 **Generating Fibonacci sequence using generator functions.**
 
 The Fibonacci Sequence is the series of numbers where next number is found by adding up the two numbers before it.
@@ -149,7 +133,21 @@ for _ in range(10):
     fib.next()
 ```
 
+### Profiling Generator Performance
 
+```python
+>>> import sys
+# Square root of numbers in a range using list comprehension.
+>>> nums_squared_list = [n * 2 for n in range(10000)]
+>>> sys.getsizeof(nums_squared_list)
+87724
+# Square root of numbers in a range using generator functions.
+>>> nums_squared_generator = (n ** 2 for n in range(10000))
+>>> print(sys.getsizeof(nums_squared_generator))
+125
+```
+
+List comprehension uses 87724 bytes of memory while generator function uses only 125 bytes of memory. By using generators we save memory as compared to list comprehension where a lot of memory is used.
 
 ### Building Generator pipelines
 
