@@ -6,7 +6,7 @@ url: /engineering-education/perceptron-algorithm/
 title: Perceptron Algorithm: A Hands-On Introduction
 description: This article will explain what perceptrons are, and we will implement the perceptron model from scratch using Numpy.
 author: lalithnarayan-c
-date: 2020-10-30T00:00:00-13:00
+date: 2020-11-02T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -26,7 +26,7 @@ This article will explain what perceptrons are, and we will implement the percep
 By the end of the article, you will be able to code a perceptron, appreciate the significance of the model and, understand how it helped transform the field of neural networks as we know it.
 
 ### Perceptron
-Frank Rosenblatt developed the perceptron in the mid-1950s, which was based on the [McCulloch-Pitts model](https://towardsdatascience.com/mcculloch-pitts-model-5fdf65ac5dd1). The McCulloch-Pitts model was proposed by the legendary-duo [Warren Sturgis McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) and [Walter Pitts](https://en.wikipedia.org/wiki/Walter_Pitts). Although these models are no longer in use today, they paved the way for research for many years to come.
+Frank Rosenblatt developed the perceptron in the mid-1950s, that was based on the [McCulloch-Pitts model](https://towardsdatascience.com/mcculloch-pitts-model-5fdf65ac5dd1). The McCulloch-Pitts model was proposed by the legendary-duo [Warren Sturgis McCulloch](https://en.wikipedia.org/wiki/Warren_Sturgis_McCulloch) and [Walter Pitts](https://en.wikipedia.org/wiki/Walter_Pitts). Although these models are no longer in use today, they paved the way for research for many years to come.
 
 The perceptron is a mathematical model that accepts multiple inputs and outputs a single value. Inside the perceptron, various mathematical operations are used to understand the data being fed to it.
 
@@ -151,7 +151,7 @@ print("Training Accuracy: ", train_acc)
 print("Testing Accuracy: ", acc)
 ```
 
-We use the iris dataset available in `sklearn.datasets` module. We fit the model to the training data and test it on test data using the `predict` method. The output of the `predict` method, named `y_predicted` is compared with the actual outputs to obtain test accuracy.
+We use the iris dataset available in `sklearn.datasets` module. We fit the model to the training data and test it on test data using the `predict` method. The output of the `predict` method, named `y_predicted` is compared with the actual outputs to obtain the test accuracy.
 
 We get a test accuracy varying around 67%. The test accuracy is computed on unseen data, whereas the training accuracy is calculated on the data that the algorithm was trained on.
 
@@ -166,7 +166,7 @@ I have attached a screenshot of the terminal capturing the training and test acc
 
 ### Disadvantages
 The perceptron model showed that it could model datasets with linear decision boundaries. Even though it introduced the concept of weights, it had its own set of disadvantages:
-1. The algorithm does not scale well to more massive datasets
+1. The algorithm does not scale well to more massive datasets.
 2. It fails to capture non-linear decision boundaries. Most of the data available is non-linear.
 3. The step function makes updating the weights inefficient due to the abrupt change in value at 0.
 
