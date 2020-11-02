@@ -126,7 +126,7 @@ We will implement the methods one by one, and in the end, coalesce the code toge
             self.iterations = []
 ```
 
-We define and initialize the parameters in this method, that will be used in the next functions.
+We will define and initialize the parameters in this method, that will be used in the next functions.
 
 2. `sigmoid`: The sigmoid function is the activation function. The sigmoid function restricts the outputs to the range $[0,1]$. Therefore, all scores are converted into probabilistic scores. This helps in classifying data as we shall see in the `predict_probability` function.
 
@@ -141,7 +141,7 @@ It's given by the equation $sig(x) = \frac{1}{1+e^-x}$. We use the [numpy librar
             return 1/(1+np.exp(-z))
 ```
 
-3. `initialize_weights`: In this method, we initialize the weights and the biases. The weights are analogous to the slope, and the biases are equivalent to the intercept that we have seen in the equation $y=mx+c$.
+3. `initialize_weights`: In this method, we'll initialize the weights and the biases. The weights are analogous to the slope, and the biases are equivalent to the intercept that we have seen in the equation $y=mx+c$.
 
 ```py
         def initalize_weights(self):
@@ -152,7 +152,7 @@ It's given by the equation $sig(x) = \frac{1}{1+e^-x}$. We use the [numpy librar
 
 4. `logistic_loss`: The `logistic_loss` function computes the logistic loss that we have mentioned in the [earlier section](#loss-functions).
 
-We compute the `indvidual_loss,` that is the loss computed per data-point. We sum these losses over the entire dataset using the `np.sum` function. The sum is the total cost, that is returned by the function.
+We'll compute the `indvidual_loss,` that is the loss computed per data-point. We'll sum up these losses over the entire dataset using the `np.sum` function. The sum is the total cost, that is returned by the function.
 
 ```py
         def logistic_loss(self,p,y):
@@ -161,9 +161,9 @@ We compute the `indvidual_loss,` that is the loss computed per data-point. We su
             return cost
 ```
 
-5. `optimize`: We define the stochastic gradient descent optimizer from scratch in this function:
+5. `optimize`: We will define the stochastic gradient descent optimizer from scratch in this function:
 
-This is an exciting function. We compute the output `estimated_y` initially. Using this function, we calculate the gradients `dW` and `db.`
+This is an exciting function. We will compute the output `estimated_y` initially. Using this function, we can calculate the gradients `dW` and `db.`
 
 These give information about the direction of the loss function's increase. We are interested in reaching the minimum of the loss function. Therefore, we invert the signs of the gradients by multiplying it with $-1$.
 
