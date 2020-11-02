@@ -36,7 +36,7 @@ for (initializer; condition; increment){
 }
 ```
 
-- Initialization expression - it is a variable declaration that initializes a loop counter `loop = 0`.
+- Initialization expression - it is a variable declaration that initializes a loop counter, i.e, `loop = 0`.
 - Condition expression - `for` loop executes when the condition value is true, and if it is false, the loop terminates when `loop < 5`. It is a test condition that determines the number of times a statement will iterate.
 - Increment expression - `loop++` updates the loop by increasing or decreasing the loop counter.
 - Statement - `console.log ("hello world")` if the condition executes to true, the loop statement is executed until the condition expression `loop < 5` is false.
@@ -68,7 +68,7 @@ do {
 } while (i < 5);
 ```
 
-In the above example, `do` iterates before `while` then `i` reiterates until the condition executes to false, i.e, until the loop cycle is no longer less than five `(i < 5)`.
+In the above example, `do` iterates before `while` then `i` is invoked until the condition executes to false, i.e, until the loop cycle is no longer less than five: `(i < 5)`.
 
 ### While Loop
 It loops as long as the condition evaluates to true. When the condition evaluates to false, the loop stops. `While` checks a condition before executing the specified statement. If the statement executes, the loop retests the condition again. If the condition will be false at the first loop cycle, there is a chance the loop will not call a statement.
