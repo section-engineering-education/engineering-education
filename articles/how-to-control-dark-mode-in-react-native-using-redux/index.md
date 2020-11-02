@@ -267,7 +267,7 @@ Here, we have given the user(s) the option to change to a dark theme using the c
 ### STEP 4: Setup Redux
 In this step, we are going to integrate the Redux mechanism to control the dark mode theme toggle from the Switch. The idea is to control the dark mode theme from the switch located in the child component that reflects the parent component. First, we need to create the Redux structure that holds the overall Redux code.
 
-W will do that by creating a folder named **./redux** at the root level of the project. Then inside the root redux folder, we need to create two folders named **./reducers** and **./actions**:
+We will do that by creating a folder named **./redux** at the root level of the project. Then inside the root redux folder, we need to create two folders named **./reducers** and **./actions**:
 
 - `reducers` to contain the reducer files that handle the state manipulation.
 - `actions` to contain the function that we extract from the components.
