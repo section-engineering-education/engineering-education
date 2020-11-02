@@ -6,14 +6,13 @@ url: /engineering-education/graph-data-structure-python/
 title: Using the Graph Data Structure in Python
 description: Graphs are special, non-linear data structures that are characterized by a group of vertices, connected by edges.
 author: saiharsha-balasubramaniam
-date: 2020-11-02T00:00:00-11:00
+date: 2020-11-02T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/graph-data-structure-python/hero.jpg
     alt: graph data structure example image
 ---
-
 In this article, we will look into the basics of graphs, the different types of graphs, and their [representation](https://www.javatpoint.com/graph-theory-graph-representations).
 <!--more-->
 Graphs are complex, non-linear data structures that are characterized by a group of vertices, connected by edges. For more information on the *different types of data structures in Python*, check out the following articles:
@@ -41,7 +40,7 @@ Graphs are non-linear data structures made up of two major components:
 
 - **Edges** -- Edges represent the relationship between the vertices in the graph. Edges may or may not have a value associated with them. For example, if we represent a list of cities using a graph, the edges would represent the path between the cities.
 
-![Graph Diagram](/engineering-education/graph-data-structure-python-part1/graph.png)
+![Graph Diagram](/engineering-education/graph-data-structure-python/graph.png)
 
 *Figure: [Graph](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html)*
 
@@ -54,7 +53,7 @@ A few other applications of graphs are:
 
 - Directed Graphs are used in Google's [Page Ranking Algorithm](https://en.wikipedia.org/wiki/PageRank).
 
-- Social Networks uses graphs to represent different users as vertices and edges to represent the connections between them.
+- Social Networks use graphs to represent different users as vertices and edges to represent the connections between them.
 
 - In a mapping application, graphs are used to represent places and the path (distance) between them.
 
@@ -108,7 +107,7 @@ Relationships in query languages like GraphQL can be represented by using Unweig
 
 ![Unweighted Graphs](/engineering-education/graph-data-structure-python/unweighted-graph.png)
 
-*Figure:[Unweighted Graph](https://www.researchgate.net/figure/Unweighted-Undirected-Graph_fig3_327864836)*
+*Figure: [Unweighted Graph](https://www.researchgate.net/figure/Unweighted-Undirected-Graph_fig3_327864836)*
 
 #### Special Graphs
 ##### Trees
@@ -118,7 +117,7 @@ It has X vertices and X-1 edges.
 
 ![Tree - Graphs](/engineering-education/graph-data-structure-python/tree-graph.png)
 
-*Figure:[Tree](https://en.wikipedia.org/wiki/Tree_(graph_theory)*
+*Figure: [Tree](https://en.wikipedia.org/wiki/Tree_(graph_theory))*
 
 ##### Rooted Tree
 A rooted tree is a tree that has a designated root node. If edges point away from the root, it is called an **arborescence/out-tree**. If edges point towards the root, it is called an **anti-arborescence/in-tree**.
@@ -134,16 +133,16 @@ Directed Acyclic Graphs are used by compilers to represent expressions and relat
 
 ![Directed Acyclic Graph](/engineering-education/graph-data-structure-python/dag.png)
 
-*Figure:[Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph)*
+*Figure: [Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph)*
 
 ##### Complete Graphs
 Complete graphs have a unique edge between every pair of vertices. A complete graph `n` vertices have `(n*(n-1)) / 2` edges and are represented by Kn.
 
-Fully connected networks in a Computer Network uses a complete graph in its representation. 
+Fully connected networks in a Computer Network uses a complete graph in its representation.
 
 ![Complete Graph](/engineering-education/graph-data-structure-python/complete-graph.png)
 
-*Figure:[Complete Graph](https://www.geeksforgeeks.org/mathematics-graph-theory-basics/)*
+*Figure: [Complete Graph](https://www.geeksforgeeks.org/mathematics-graph-theory-basics/)*
 
 ### Representing Graphs
 There are multiple ways of using data structures to represent a graph. The three most common ways are:
@@ -153,9 +152,9 @@ There are multiple ways of using data structures to represent a graph. The three
 - [Edge List](#edge-list)
 
 #### Adjacency Matrix
-An Adjacency Matrix is a very simple way to represent a graph. In a weighted graph, the element `**A[i][j]**` represents the cost of moving from vertex `i` to vertex `j`.
+An Adjacency Matrix is a very simple way to represent a graph. In a weighted graph, the element `A[i][j]` represents the cost of moving from vertex `i` to vertex `j`.
 
-In an unweighted graph, the element `**A[i][j]**` represents a Boolean value that determines if a path exists from vertex `i` to vertex `j`. If A[i][j] == 0, then no path from vertex i to vertex j exists. If A[i][j] == 1, there is a path from vertex i to vertex j.
+In an unweighted graph, the element `A[i][j]` represents a Boolean value that determines if a path exists from vertex `i` to vertex `j`. If `A[i][j] == 0`, then no path from vertex `i` to vertex `j` exists. If `A[i][j] == 1`, there is a path from vertex `i` to vertex `j`.
 
 For example, a snake and ladder game can be represented by using an adjacency matrix. This enables us to use various algorithms to find the shortest path to finish the game. Similarly, many shortest path algorithms use an adjacency matrix.
 
@@ -245,3 +244,6 @@ To learn more about graphs, check out the following pages:
 - Practice Graphs -- [LeetCode](https://leetcode.com/tag/graph/)
 - Graph Theory [Notes](https://www.cpp.edu/~ftang/courses/CS241/notes/graph.htm)
 - Graph Representation -- [HackerEarth](https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/tutorial/)
+
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
