@@ -113,7 +113,7 @@ console.log(`${info}: ${person[info]}`)
 For-in will invoke the above loop as many times as the number of properties you add in object person. It is a better solution to loop through objects.
 
 ### For Of
-It iterates through iterables such as `strings`, `arrays`, `maps`, and `set`. For of loops iterate through items in a collection such as an array. It is very similar to the for in except this time we are using the “of” keyword and passing in an iterable instead of an object. For-of will not work with Objects because they are not iterable.
+It iterates through iterables such as `strings`, `arrays`, `maps`, and `set`. For of loops iterate through items in a collection such as an array. It is very similar to the for in, except this time we are using the “of” keyword and passing in an iterable instead of an object. For-of will not work with Objects because they are not iterable.
 
 ```js
 for(variable of iterable) {
@@ -182,7 +182,7 @@ array.forEach(callback (currentValue, index, array) {
 
 #### Parameters
 - Callback - the function to be called once in each element order.
-- Current value a mandatory parameter that hold the current element value in the array.
+- Current value a mandatory parameter that holds the current element value in the array.
 ```js
 const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 animals.forEach((anim) =>{
@@ -205,7 +205,7 @@ const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 ```
 - `ThisArg` - an optional parameter that holds the context `this` to passed when executing the callback function.
 
-For each is deal to iterate over array elements without breaking the array list. It execute each array element simultaneously without side effects such as mutability of the scope variable. It is not chainable and always return an undefined value.
+For each is deal to iterate over array elements without breaking the array list. It executes each array element simultaneously without side effects such as mutability of the scope variable. It is not chainable and always return an undefined value.
 
 For each is a high order function. If you are interested in learning more, head out to this [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
@@ -251,9 +251,9 @@ The while loop will stop when the loop value is equal to `3`. Unlike For loop, t
 While loops execute the condition `(n < 10)` before executing the statement. While loop executes a statement only when the condition is true. When the statement is invoked the while control the loop by retesting the condition again until `n==3` become false.
 
 ### Continue Statement
-Break a loop and check a specified condition then proceed to the next iteration until the loop condition expression returns false. The loop skips a value specified in the continue statement condition.
+Break a loop, check a specified condition, and then proceed to the next iteration until the loop condition expression returns false. The loop skips a value specified in the continue statement condition.
 
-For example, to loop over some number and get the even numbers, we need a continue statement to break the loop whenever we iterate odd numbers.
+For example, to loop over some numbers and get the even numbers, we need a continue statement to break the loop whenever we iterate odd numbers.
 ``` js
 for (let i = 1; i <= 10; i++){
   if (i % 2 == 1) continue;
@@ -300,7 +300,7 @@ In the above example:
 - `loopTwo` will always break and stop the iteration at `j === 3`. It will log values 1, 2, and 3.
 
 ### Speed Comparison
-We will traverse through an array using one array method with the same arrays size and an equal number of iterations to compare the execution time of each loop. To get desirable results, we will use different test methods.
+We will traverse through an array using one array method with the same arrays size and an equal number of iterations to compare each loop's execution time. To get desirable results, we will use different test methods.
 
 #### Using .time ( ) and .timeEnd () Functions
 ```js
@@ -534,7 +534,7 @@ console.log(Object.entries(values).sort((a, b) => {
 ]
 ```
 
-This is a more transparent result. Again the old for loop dominates the loops list. Do while and while still have a comparable performance. I included for in in this example. It seems to take the longest time to finish the loops. We are using array elements, unlike the other loops (logs the array values), for in logs the index of the array values. This makes it slow. For in is specially reserved to loops through an unspecified number of object properties.
+This is a more transparent result. Again the old for loop dominates the loops list. Do while and while still have a comparable performance. I included for in in this example. It seems to take the longest time to finish the loops. Unlike the other loops (logs the array values), for in logs the index of the array element. This makes it slow. For in is specially reserved to loops through an unspecified number of object properties.
 
 The way you write your loop statements has a slight difference in iteration performance. For example, using the fast for loop, we can derive the following statements.
 
@@ -666,11 +666,11 @@ option 2: 5.086ms
 ### Closing Notes
 - For, while and do while have close performance results characteristics. Neither of the loops is significant fast or slow.
 - For each is ideal for functional codes.
-- for in is ideal for unspecified object properties. Avoid it when using array data.
+- For in is ideal for unspecified object properties. Avoid it when using array data.
 - Be keen on the condition statement when using while to perform a loop.
-- Nested loops are significantly slower; avoid them when a loop have a large number of iterations to perform.
+- Nested loops are significantly slower; avoid them when a loop has a large number of iterations to perform.
 - Decreasing the amount of work done per iteration and the number of loops increases loop performance.
 - Performance is not the only thing that matters. Code readability and maintainability are key. Few lines of codes mean reduced performance overheads and a short development period.
-- Choose a loop that fits your application model and makes sure they align to your requirements to get desirable results.
+- Choose a loop that fits your application model and makes sure they align with your requirements to get desirable results.
 
 ***Note***: The above performance results will vary depending on the browser and computer model you are using to test the loops.
