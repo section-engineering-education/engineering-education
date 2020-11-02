@@ -2,15 +2,15 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/graph-data-structure-python-part1/
-title: Using the Graph Data Structure in Python, Part 1
+url: /engineering-education/graph-data-structure-python/
+title: Using the Graph Data Structure in Python
 description: Graphs are special, non-linear data structures that are characterized by a group of vertices, connected by edges.
 author: saiharsha-balasubramaniam
-date: 2020-10-21T00:00:00-13:00
+date: 2020-11-02T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/graph-data-structure-python-part1/hero.jpg
+  - url: /engineering-education/graph-data-structure-python/hero.jpg
     alt: graph data structure example image
 ---
 
@@ -71,9 +71,13 @@ In an undirected graph, the edges have no path or direction. If there is a path 
 
 That is, `edge (X, Y) == edge (Y, X)`.
 
+<<<<<<< HEAD:articles/graph-data-structure-python-part1/index.md
 Undirected Graphs are used in modelling electronic circuits and in number theory.
 
 ![Undirected Graph](/engineering-education/graph-data-structure-python-part1/undirected-graph.png)
+=======
+![Undirected Graph](/engineering-education/graph-data-structure-python/undirected-graph.png)
+>>>>>>> b70933cc2b3a45ae2b94c6f8af019776916f1ba5:articles/graph-data-structure-python/index.md
 
 *Figure: [Undirected Graph](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/)*
 
@@ -82,9 +86,13 @@ In a directed graph or digraph, the edges have an orientation. If there is a pat
 
 That is, `edge (X, Y) != edge (Y, X)`.
 
+<<<<<<< HEAD:articles/graph-data-structure-python-part1/index.md
 By knowing directed graphs, a developer can work on social relations and networking applications and construct models for analysis of complex relationships.
 
 ![Directed Graphs](/engineering-education/graph-data-structure-python-part1/directed-graph.png)
+=======
+![Directed Graphs](/engineering-education/graph-data-structure-python/directed-graph.png)
+>>>>>>> b70933cc2b3a45ae2b94c6f8af019776916f1ba5:articles/graph-data-structure-python/index.md
 
 *Figure: [Directed Graph](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/)*
 
@@ -96,9 +104,13 @@ A weighted graph has a value associated with every edge. The value may represent
 - `v` -> Destination vertex
 - `w` -> Weight associated to go from u to v.
 
+<<<<<<< HEAD:articles/graph-data-structure-python-part1/index.md
 These weighted graphs are extensively used in modelling Computer Networks. For a career as a Networking Engineer, the knowledge of weighted graphs are a must.
 
 ![Weighted Graphs](/engineering-education/graph-data-structure-python-part1/weighted-graph.png)
+=======
+![Weighted Graphs](/engineering-education/graph-data-structure-python/weighted-graph.png)
+>>>>>>> b70933cc2b3a45ae2b94c6f8af019776916f1ba5:articles/graph-data-structure-python/index.md
 
 *Figure: [Weighted Graph](https://www.clipartmax.com/middle/m2i8Z5i8G6b1b1b1_directed-weighted-ex1-directed-weighted-graph/)*
 
@@ -108,9 +120,13 @@ An unweighted graph does not have a value associated with every edge. An edge of
 - `u` -> Source vertex
 - `v` -> Destination vertex
 
+<<<<<<< HEAD:articles/graph-data-structure-python-part1/index.md
 Relationships in query languages like GraphQL can be represented by using Unweighted Graphs.
 
 ![Unweighted Graphs](/engineering-education/graph-data-structure-python-part1/unweighted-graph.png)
+=======
+![Unweighted Graphs](/engineering-education/graph-data-structure-python/unweighted-graph.png)
+>>>>>>> b70933cc2b3a45ae2b94c6f8af019776916f1ba5:articles/graph-data-structure-python/index.md
 
 *Figure:[Unweighted Graph](https://www.researchgate.net/figure/Unweighted-Undirected-Graph_fig3_327864836)*
 
@@ -120,32 +136,40 @@ An undirected graph with zero cycles is called a tree. A cycle in a graph is a s
 
 It has X vertices and X-1 edges.
 
-![Tree - Graphs](/engineering-education/graph-data-structure-python-part1/tree-graph.png)
+![Tree - Graphs](/engineering-education/graph-data-structure-python/tree-graph.png)
 
-*Figure:[Tree](https://en.wikipedia.org/wiki/Tree_(graph_theory))*
+*Figure:[Tree](https://en.wikipedia.org/wiki/Tree_(graph_theory)*
 
 ##### Rooted Tree
 A rooted tree is a tree that has a designated root node. If edges point away from the root, it is called an **arborescence/out-tree**. If edges point towards the root, it is called an **anti-arborescence/in-tree**.
 
-![Rooted Tree](/engineering-education/graph-data-structure-python-part1/rooted-trees.png)
+![Rooted Tree](/engineering-education/graph-data-structure-python/rooted-trees.png)
 
 *Figure: [Rooted Tree](https://www.youtube.com/watch?v=09_LlHjoEiY&t=213s)*
 
 ##### Directed Acyclic Graphs
 Directed Acyclic Graphs or DAGs are graphs with no directed cycles. They represent structures with dependencies. It's also important to note that: All [arborescences](https://en.wikipedia.org/wiki/Arborescence_(graph_theory)) are DAGs, but not all DAGs are arborescences.
 
+<<<<<<< HEAD:articles/graph-data-structure-python-part1/index.md
 Directed Acyclic Graphs are used by compilers to represent expressions and relationships in a program.
 
 ![Directed Acyclic Graph](/engineering-education/graph-data-structure-python-part1/dag.png)
+=======
+![Directed Acyclic Graph](/engineering-education/graph-data-structure-python/dag.png)
+>>>>>>> b70933cc2b3a45ae2b94c6f8af019776916f1ba5:articles/graph-data-structure-python/index.md
 
 *Figure:[Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph)*
 
 ##### Complete Graphs
 Complete graphs have a unique edge between every pair of vertices. A complete graph `n` vertices have `(n*(n-1)) / 2` edges and are represented by Kn.
 
+<<<<<<< HEAD:articles/graph-data-structure-python-part1/index.md
 Fully connected networks in a Computer Network uses a complete graph in its representation. 
 
 ![Complete Graph](/engineering-education/graph-data-structure-python-part1/complete-graph.png)
+=======
+![Complete Graph](/engineering-education/graph-data-structure-python/complete-graph.png)
+>>>>>>> b70933cc2b3a45ae2b94c6f8af019776916f1ba5:articles/graph-data-structure-python/index.md
 
 *Figure:[Complete Graph](https://www.geeksforgeeks.org/mathematics-graph-theory-basics/)*
 
@@ -232,7 +256,6 @@ To summarize,
     - Complete Graph
 
 #### Graph Representation
-
   - Adjacency Matrix
 
     - Used for dense graphs
