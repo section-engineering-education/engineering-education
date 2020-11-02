@@ -187,7 +187,7 @@ export default function App() {
 }
 ```
 
-As a result, we will get the tab navigation bar at the bottom of the screen that we can use for navigating to different screens as shown in the demo below:
+As a result, we will get the tab navigation bar at the bottom of the screen that we can use to navigate to different screens as shown in the demo below:
 
 ![native.gif](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/integrate-react-navigation-to-react-native.gif)
 
