@@ -23,7 +23,7 @@ Welcome to a tutorial on implementing a linear classifier using a Stochastic Gra
 4. Code a Linear Classifier
 
 ### Linear Classifiers   
-Linear classifiers are a type of supervised learning algorithm used on linear datasets. How is linearity defined in the case of a dataset?
+Linear classifiers are a type of [supervised learning algorithm](/engineering-education/supervised-learning-algorithms/) used on linear datasets. How is linearity defined in the case of a dataset?
 
 Consider a dataset with two classes. If the linear classifier can come up with a linear decision boundary to classify the two categories, that is, a straight line of the form $y=mx+c$, then the dataset is linearly separable.
 
