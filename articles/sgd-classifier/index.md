@@ -31,7 +31,7 @@ The notations used in the previous equation are as follows: $y$ is the output va
 
 Consider the image given below. This is a linear classifier classifying the conjunction (AND) function. The two-input [AND](https://en.wikipedia.org/wiki/AND_gate) function outputs only one when the two inputs are 1. In all other cases, it's output is 0. The dotted line given in the image is the decision boundary.  
 
-![and function](/engineering-education/sgd-classifier/and.jpg)
+![AND function](/engineering-education/sgd-classifier/and.jpg)
 
 *[Image Source](http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html)*
 
@@ -41,7 +41,7 @@ Now we'll look at the [XOR](https://en.wikipedia.org/wiki/XOR_gate) function. 2-
 
 *[Image Source](http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html)*
 
-Linear classifiers work very well on datasets with linear decision boundaries. According to the above example, linear classifiers will fail when it comes to the XOR function but will classify the AND function.
+Linear classifiers work very well on datasets with linear decision boundaries. According to the example above, linear classifiers will fail when it comes to the XOR function but will classify the AND function.
 
 ### Loss Functions
 Consider the following problem of fitting the best line for a given set of data-points. An intuitive way of fitting the line would be to fit a line at random and slowly changing the slope and the intercept values until we get a line close to all the data points in the set. The loss function, also known as the error function, mathematically defines the difference between the ideal and the actual values.
@@ -65,10 +65,10 @@ The cost function takes in the classifier's output, denoted by $h_\theta(x)$, an
 
 Therefore, we have two equations, one for $y=1$ and the other for $y=0$. The $log$ terms ensure that the loss values are [differentiable](http://www.graphnow.com/2dgallery2.html) to ensure better optimization.  
 
-A detailed analysis of loss functions is cited in the following article. Do go through it for an in-depth understanding of [loss functions](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/).
+A detailed analysis of loss functions is cited in the following article. Go through it for an in-depth understanding of [loss functions](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/).
 
 
-### Stochastic Gradient Descent(SGD) Optimizer
+### Stochastic Gradient Descent (SGD) Optimizer
 Stochastic Gradient Descent Optimizer tries to find the minimum for a function. The function of interest, in this case, is the loss/error function. We want to minimize the error, and therefore we use the SGD optimizer.
 
 The SGD optimizer works iteratively by moving in the direction of the gradient. The direction of the minimum is in the direction where the values are decreasing. Thus, this is computed using [gradients](https://ruder.io/optimizing-gradient-descent/).
@@ -79,9 +79,9 @@ A visual representation of the Stochastic Gradient Descent Optimizer is given be
 
 *[Image Source](https://medium.com/chung-yi/ml%E5%85%A5%E9%96%80-%E5%8D%81%E4%BA%8C-sgd-adagrad-momentum-rmsprop-adam-optimizer-e331ef3cf5cf)*
 
-Observe the balls rolling into the low-lying areas. The low-lying regions represent the minima. Sometimes, there might be two minima of varying sizes. The pink and the blue balls land up in the smaller minima, called local minima, whereas the other three balls end up in the deeper minima, called the global minima.
+Observe the balls rolling into the low-lying areas. The low-lying regions represent the minima. Sometimes, there might be two minima of varying sizes. The pink and the blue balls land up in the smaller minima, called the local minima, whereas the other three balls end up in the deeper minima, called the global minima.
 
-This is a problem associated with SGD. Sometimes, we might end up obtaining the minimum of a loss function at the local minimum. This leads to inefficient modeling of the loss function, thereby leading to a decrease inaccuracy.
+This is a problem associated with SGD. Sometimes, we might end up obtaining the minimum of a loss function at the local minimum. This leads to an inefficient modeling of the loss function, thereby leading to a decrease inaccuracy.
 
 The speed with which the balls travel is analogous to the learning rate, that is used later. Sufficient iterations of SGD are applied to tackle and nullify the problem of local minima.
 
