@@ -1,32 +1,32 @@
 
-Functional programming is a major building block for JavaScript as a language. They are some of the common scrips that you will constantly use when building JavaScript applications. Functions set statements to perform tasks. Functions define a task, which you can call and execute whenever you want inside your program.
+Functional programming is a significant building block for JavaScript as a language. They are some of the common scrips that you will continuously use when building JavaScript applications. Functions set statements to perform tasks. Functions define a task, which you can call and execute whenever you want inside your program.
 
-JavaScript treat function as an object assigned to values to return value. They have methods and properties just like the other objects. JavaScript calls them first-class objects.
+JavaScript treat function as an object assigned to values to return value. They have methods and properties, just like the other objects. JavaScript calls them first-class objects.
 
-Unlike the normal objects, a function can be called, a function can be passed to an argument assigned to value and can be returned by another function. Functions are that fundamental that outside functions, JavaScript have high order functions. They are critical and I think we should talk about them.
+Unlike regular objects, a function can be called. A function can be passed to an argument assigned to a value and can be returned by another function. Functions are that fundamental that outside functions, JavaScript has high order functions. They are critical, and I think we should talk about them.
 
-Higher-order functions are functions that take other functions as arguments or return functions as their outputs. Often referred to as a callback function. This is a concept that JavaScript uses a lot. Functions that are passed as an argument to another function are what we refer to as callback functions because it is called back by the higher-order function.
+Higher-order functions are functions that take other functions as arguments or return functions as their outputs. Often referred to as a callback function. This is a concept that JavaScript uses a lot. Functions that are passed as an argument to another function are what we refer to as callback functions because it is called back by that function.
 
-In this guide, we learn about high order function. We will discuss and show you some of the come built-in JavaScript high order function with examples. These include `filter`, `map`, `for each` and `reduce`.
+In this guide, we learn about high order function. We will discuss and show you some of the come built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each` and `reduce`.
 
 ### Array.prototype.filter
 
-`filter()` allow you to filter things in an array. It is a method that returns an array. It creates a new array of elements. The elements have to pass a test provided by a callback function. The new array composes an input array being tested. This new array created by `filter()` method takes all the elements that pass a callback function test.
+`filter()` allows you to filter things in an array. It is a method that returns an array. It creates a new array of elements. The elements have to pass a test provided by a callback function. The new array composes an input array being tested. This new array created by the `filter()` method takes all the elements that pass a callback function test.
 
 Let's digest this information with examples.
 
 Assume:
-1. an array with domestic animals such as
+1. An array with domestic animals such as
 
-```
+```JS
 ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "Horse"]
 ```
 
 We want to filter all domestic animals whose names have three-letter.
 
-2. an array of adults ages.
+2. An array of adults ages.
 
-```
+```JS
 [{name: "Xavier", age: 19},
 {name: "Alice", age: 21},
 {name: "John", age: 14},
@@ -57,6 +57,7 @@ console.log(dAnimals);
 ```
 
 ##### Adult Ages
+
 ```js
 const adults = [
 {name: "Xavier", age: 19},
@@ -77,9 +78,10 @@ for(let i = 0; i < adults.length; i++) {
 }
 console.log(canDrink);
 ```
-In the examples above log and filter the test as we told it to. However, these methods can get cumbersome. For example with a big app that has a large number of adults to filter age or other adult elements. The examples are a bit verbose and needs a lot of code setup. We can compose this further using high order funtions.
 
-#### using HIGH order Funtions
+The examples above log and filter the test as we told it to. However, these methods can get cumbersome. For example, with a big app that has a large number of adults to filter age or other adult elements. The examples are a bit lengthy and need a lot of code setup. We can compose this further using high order functions.
+
+#### using HIGH order Functions
 
 ##### Domestic animals
 
@@ -91,7 +93,9 @@ const canDrink = Animals.filter(function(animal) {
 });
 console.log(canDrink);
 ```
+
 ##### Adult Ages
+
 ```js
 const canDrink = adults.filter(function(adult) {
   if(adult.age >= 18) {
@@ -100,11 +104,12 @@ const canDrink = adults.filter(function(adult) {
 });
 console.log(canDrink);
 ```
-We get the same results. But this time our code is getting small and compact. No looping any more to iterate the original array to `canDrink.push(adults[i]);`
 
-#### Arrow Funtion
+We get the same results. But this time, our code is getting small and compact. No looping any more to iterate the original array to `canDrink.push(adults[i]);`
 
-With ES6 is unbelievable that we can compose this further using the Arrow Funtion.
+#### Arrow Function
+
+With ES6, it is unbelievable that we can compose this further using the arrow function.
 
 ##### Adult Ages
 
@@ -114,7 +119,7 @@ const canDrink = adults.filter(adults => adults.age >= 18);
 
 In just one line of code and we get the same results.
 
-So how does `filter()` magically walk us to such fine results with just a few lines of code? `filter()` calls the passed callback once for every element bing tested. `filter()` accepts the arguments of the callback function. This callback is what holds the value of the element being processed with the syntax below.
+So how does `filter()` magically walk us to such fine results with just a few lines of code? `filter()` calls the passed callback once for every element being tested. `filter()` accepts the arguments of the callback function. This callback is what holds the value of the element being processed with the syntax below.
 
 ```js
 let newArray = arr.filter(callback(currentValue[, index, [array]){
@@ -127,17 +132,17 @@ A filter callback function takes the following parameters:
 - Index - holds the current index of the array element.
 - Array object being tested.
 
-Every element that passes the callback, `filter()` return a new array for these elements. That means if no element pass the test the array return value will be empty. Elements that do not pass the callback test are skipped and not included in the new filtered array.
+Every element that passes the callback, `filter()` return a new array for these elements. That means if no element passes the test, the array return value will be empty. Elements that do not pass the callback test are skipped and not included in the new filtered array.
 
 ### Array.prototype.reduce
 
 It is another built-in JavaScript high order function. It uses the `reducer` as a callback function to execute each element of the input array.
 
-The callback takes two parameters namely:
+The callback takes two parameters, namely:
 - Accumulator
 - Current value
 
-It doesn't return a new array; instead, it uses a provided callback called `reducer`. When returned, it reduces the input array into one single value from the reduction. Reducer callback makes this method a high order function.
+It doesn't return a new array; instead, it uses a provided callback called a `reducer`. When returned, it reduces the input array into one single value from the reduction. Reducer callback makes this method a high order function.
 
 `reduce()` accept two input parameters
 - A callback function (the reducer function).
@@ -149,7 +154,7 @@ array.reduce(call back[, initialValue])
 
 The `reducer` callback function accepts two mandatory arguments
 
-- Accumulator - accumulates the previously returned value returned by the last callback invocation. ie the initialValue passed to `reduce()` method.
+- Accumulator - accumulates the previously returned value returned by the last callback invocation. I.e., the initialValue passed to `reduce()` method.
 - Current value - the value of the current element being processed by the callback.
 
 ```js
@@ -159,10 +164,12 @@ array.reduce(callback( accumulator, currentValue[, index[, array]){
 ```
 
 So have a look, assume an array of numbers:
+
 ```js
 [5, 6, 7, 8, 9, 10]
 ```
-Imagine getting the sum of these array elements, we can use loops are we demonstrated in the `filter()` method, and we will get the total sum of this array. However, we can opt to optimize our code with just a few lines using `educe()`. This will make our code clean and less verbose.
+
+Imagine getting the sum of these array elements; we can use loops are we demonstrated in the `filter()` method, and we will get the total sum of this array. However, we can opt to optimize our code with just a few lines using `educe()`. This will make our code clean and less verbose.
 
 Let’s demonstrate with examples.
 
@@ -189,7 +196,7 @@ console.log(total);
 // we still get 45
 ```
 
-The callback function will be called 5 times. The accumulator will hold the last returned callback value; this value will be the next callback intitialValue.
+The callback function will be called five times. The accumulator will hold the last returned callback value; this value will be the next callback initial value.
 
 | Callback  | Accumulator | CurrentValue | CurrentIndex | returned value |
 |-----------|-------------|--------------|--------------|----------------|
@@ -199,11 +206,12 @@ The callback function will be called 5 times. The accumulator will hold the last
 | 4th call  | 26          | 9            | 4            | 35             |
 | 5th call  | 35          | 10           | 5            | 45             |
 
-`reduce()` will return the last invoked callback. In this case 45
+`reduce()` will return the last invoked callback. In this case, 45
 
-It is important to note, for the first invoked callback, the value of the accumulator is the value of the first element in the input array. And the index of the first processed array element is 1 in this 6, which is the second element. Think about it. It actually makes sense. If you look back to callback syntax, accumulator take the first element as the initial value. If this didn't happen, the first value of the array would be counted two times.
+It is important to note, for the first invoked callback, the value of the accumulator is the value of the first element in the input array. And the index of the first processed array element is 1 and the value 6, which is the second element. Think about it. It actually makes sense. If you look back to callback syntax, the accumulator takes the first element as the initial value. If this didn't happen, the first value of the array would be counted two times.
 
 Using the optional InitialValue argument, we can pass an InitialValue value as the second argument to `reduce()`.
+
 ```js
 const total = sum.reduce((accumulator, currentValue) => {
 return accumulator + currentValue;
@@ -211,7 +219,8 @@ return accumulator + currentValue;
 console.log(total);
 // we get 55
 ```
-In this case we assigned InitialValue as 10. The callback function will be called 6 times. The accumulator will hold the last returned callback value; this value will be the InitialValue 10 which we have passed to `reduce()` as a second argument. And the value will be passed as the first callback.
+
+In this case, we assigned InitialValue as 10. The callback function will be called six times. The accumulator will hold the last returned callback value; this value will be the initial value 10, which we have passed to `reduce()` as a second argument. And the value will be passed as the first callback.
 
 | Callback  | Accumulator | CurrentValue | CurrentIndex | returned value |
 |-----------|-------------|--------------|--------------|----------------|
@@ -222,13 +231,13 @@ In this case we assigned InitialValue as 10. The callback function will be calle
 | 5th call  | 38          | 9            | 4            | 45             |
 | 6th call  | 45          | 10           | 5            | 55             |
 
-`reduce()` will return the last invoked callback. In this case 55.
+`reduce()` will return the last invoked callback. In this case, 55.
 
-We can conclude that if no initial value passed, the first callback will take the value of the first element. If the initial value is passed, the callback will take the Initilavalue as the first callback.
+We can conclude that if no initial value passed, the first callback would take the first element's value. If the initial value is passed, the callback will take the Initilavalue as the first callback.
 
 ### Array.prototype.map
 
-The `map()` method creates a new array by calling a callback function. It executes a provided callback function once for every element provided in the input array.The callback function is applied to all the elements of the input array.
+The `map()` method creates a new array by calling a callback function. It executes a provided callback function once for every element provided in the input array. The callback function is applied to all the elements of the input array.
 
 Let’s digest this with examples.
 
@@ -253,7 +262,7 @@ console.log(newArray);
 // new array [8, 16, 356, 2.68, 29.88, 80]
 ```
 
-Example two
+Example two:
 
 Suppose in our animal array example we want to return all the names as uppercase. `map()` will accept a callback as a mandatory argument and transform each element to Uppercase form. `map()` will take the uppercased elements and return a new array
 
@@ -268,7 +277,7 @@ In the example above `map()` creates a new array. It takes the passed callback a
 
 ### For Each
 
-It executes a provided callback function once `for each` element in the input array in an ascending order. `For each` reference to a callback function once. The callback function calls every member of the input array.
+It executes a provided callback function once `for each` element in the input array in ascending order. `For each` reference to a callback function once. The callback function calls every member of the input array.
 
 `For each` takes one mandatory callback function. The function will be called once in each element in ascending order.
 
@@ -277,13 +286,15 @@ The callback takes three Parameters:
 - Index - the array index of the current element array position.
 - Array - an optional parameter that holds a complete array from where for each was called.
 
-Syntax
+Syntax:
+
 ```js
 array.forEach(callback (currentValue, index, array) {
   // statement
 }[thisArg]);
 ```
-For example
+
+For example:
 ##### A for loop
 
 ```js
@@ -293,6 +304,7 @@ for (let i = 0; i < Animals.length; i++) {
 }
 console.log(dAnimals);
 ```
+
 #### Converting a for loop to a high order function using for each
 
 ```js
@@ -306,12 +318,13 @@ Higher-order functions are regular functions with the ability to accept other fu
 
 ### Final Notes
 
-JavaScript as a functional program, you may have used or applied a high-order function in a program without even knowing you are actually using a high order function
-If you have ever written a function that takes another function as an argument.
-![image title](/engineering-education/new-folder-name/image-name.jpg)
+JavaScript is a functional program. You may have used or applied a high-order function in a program without even knowing you are actually using a high order function.
+
+If you have ever written a function that takes another function as an argument
+![image title](/articles/javascript-higher-order-functions/function-as-an-argument.png)
 
 Or a function that returns another function,
 
-![image title](/engineering-education/new-folder-name/image-name.jpg)
+![image title](/articles/javascript-higher-order-functions/value-of-another-function.png)
 
-you have actually applied a concept of high order function
+you have actually applied a concept of high order function.
