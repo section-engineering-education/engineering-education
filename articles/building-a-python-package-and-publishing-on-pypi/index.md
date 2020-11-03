@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-python-package-and-publishing-on-pypi/hero.jpg
     alt: Python example image PyPi
 ---
-If you have any past experience building things with Python you will notice a lot of installing and importing of packages, Python allows you to reuse code and share your code to save time and energy. In very simple terms, a Python package is a collection of related modules, it is a module that contains a file name *init.py*. Maybe you have been wanting to build your own package or just interested in knowing how it is built, this tutorial will give you a run down on how.
+If you have any past experience building things with Python you will notice a lot of installing and importing of packages, Python allows you to reuse code and share your code to save time and energy. In very simple terms, a Python package is a collection of related modules, it is a module that contains a file name *__init__.py*, the Init.py file is simply a file that tells python that the directory contains packages so as to prevent other directories from having the same common name and as a result of that it's empty most of the times. Maybe you have been wanting to build your own package or just interested in knowing how it is built, this tutorial will give you a rundown on how.
 <!--more-->
 
 ### Building A Python Package And Publishing It on PyPI
@@ -26,9 +26,9 @@ If you have any past experience building things with Python you will notice a lo
 5. Conclusion
 
 #### Writing the Code
-The first step in building your package is to write the code that you want to package and for  our learning purposes, we will be building a package to carry out simple LCM (least common multiple) calculations.
+The first step in building your package is to write the code that you want to package and for our learning purposes, we will be building a package to carry out simple LCM (least common multiple) calculations. 
 
-First off, you will need to create a file and name it *init.py* and then write a function that will carry out the LCM  operation.
+First off, you will need to create a file and name it *__init__.py* and then write a function, the function takes in two values and chooses which is greater, and then that will carry out the LCM  operation. It should receive two values and check for which is the greatest then the while loops through that number and beyond and in each of the interaction checks if they perfectly divide our number.
 
 ```python
 def cal_lcm(x, y):
@@ -47,22 +47,15 @@ def cal_lcm(x, y):
 
    return lcm
 ```
-0.0.0.1 (15/10/2020)
--------------
-- First release
-```
-
-The fourth step, will be adding an open-source license to our package, there are several open source licenses available which you can check out [here](https://opensource.org/licenses) but for this tutorial, we will be using the MIT open source license which you can see [here](https://opensource.org/licenses/MIT), so create a file, save it as *License.txt*  and add the text from the MIT Licenses below
-=======
 
 #### Adding required files and structuring code
-The function above is called *cal_lcm* and it will take in two arguments and calculate the LCM of both of them. Now, the next part will be to create a *README file*, this file will give an explanation of what our package will do and also serves as a landing introduction page for our package on GitHub, so create a file and save it as *README.txt*, then add the following text.
+The next part will be to create a *README file*, this file will give an explanation of what our package will do and also serves as a landing introduction page for our package on GitHub, so create a file and save it as *README.txt*, then add the following text.
 
 ```txt
 This is a simple program that helps you calculate the lowest common multiple of two numbers.
 ```
 
-The third step, will be to add an open-source license to our package, there are several open source licenses available that you can check out [here]( https://opensource.org/licenses) but for this tutorial, we will be using the MIT open source license that you can see [here](https://opensource.org/licenses/MIT), create a file, save it as *License.txt*, and add the text from the MIT Licenses below.
+The next step will be to add an open-source license to our package, there are several open-source licenses available that you can check out [here]( https://opensource.org/licenses) but for this tutorial, we will be using the MIT open source license that you can see [here](https://opensource.org/licenses/MIT), create a file, save it as *License.txt*, and add the text from the MIT Licenses below.
 
 
 ```txt
@@ -74,7 +67,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Now on to a very important part of building our package, which is the *setup.py* file, this is the tool that publishes our package to PyPI and is used to get all the information it needs.
 
-Before we proceed let’s rearrange for packaging, create a new folder with any name of your choice and put the *init.py* file in the new folder you just created. Then create a file and save it as *setup.py*, this file will hold all the important information the compiler will need to set up our package.
+Before we proceed let’s rearrange for packaging, create a new folder with any name of your choice, and put the *init.py* file in the new folder you just created. Then create a file and save it as *setup.py*, this file will hold all the important information the compiler will need to set up our package.
 
 Then add the following code below:
 
@@ -117,23 +110,24 @@ setup(name=PACKAGE_NAME,
 
 The first chunk of code imports all the tools we need to set up our library, the *VERSION* will be the release number for the package, the *PACKAGE NAME* will be a unique name you want to call your package, the *AUTHOR* and *AUTHOR EMAIL* will be your details and finally, the URL can be a site if you have one or maybe your GitHub Repo.
 
-If your package requires other packages to work then you’ll need to indicate them, for example, if you use other packages to write your code you should add them in the *INSTALL_REQUIRES* because your package depends on them (otherwise it will not work) but this package we just created doesn’t require any and I intentionally put wrote this note, in case you’re trying it out with your package idea.
+If your package requires other packages to work then you’ll need to indicate them, for example, if you use other packages to write your code you should add them in the *INSTALL_REQUIRES* because your package depends on them (otherwise it will not work) but this package we just created doesn’t require any dependency but I added it as an example, in case you’re trying it out with your package idea.
 
 #### Packaging
-Now that we are done writing the code, we will set up all the needed files, and structure the codebase. Another important step will be to sign up for an account on [pypi.org](pypi.org), because that is where we will be hosting our package. After you sign up go to your terminal and pip install Twine with the command below.
+Now that we are done writing the code, we will set up all the needed files, and structure the codebase. Another important step will be to sign up for an account on [pypi.org](pypi.org) because that is where we will be hosting our package. After you sign up go to your terminal and install Twine with the command below.
 
 ```python
 pip install twine
-
 ```
 
 The next thing you need to do is navigate to the directory of your project where the setup.py file is and then run this code.
 
 ```python
-Python setup.py sdist bdist_wheel
+python setup.py sdist bdist_wheel
 ```
-
-After running the code above you will notice more directories called *dist*, *build*, and *your_package.egg-info*. The *dist* is the most important right now because it holds the installation files that we will deploy to PyPI, open the directory and you’ll see two compressed files that are saved with *.tar* extension and also a wheel file.
+url: /engineering-education/building-a-python-package-and-publishing-on-pypi/img.jpg
+alt: Python example image PyPi
+    
+After running the code above you will notice more directories called *dist*, *build*, and *your_package.egg-info* as shown in the image above. The *dist* is the most important right now because it holds the installation files that we will deploy to PyPI, open the folder and you’ll see two compressed files that are saved with *.tar* extension and also a wheel file. 
 
 #### Uploading package on PyPI
 Next, you will need to make sure that the distribution files that we created are working perfectly by running the code below.
@@ -142,7 +136,7 @@ Next, you will need to make sure that the distribution files that we created are
 twine check dist/*
 ```
 
-Now, let’s upload our package to PyPi but before we do that let’s deploy on a PyPI test domain so we can be sure that everything is running like it should be.
+Now, let’s upload our package to PyPi but before we do that let’s deploy on a PyPI test domain so we can be sure that everything is running as it should be.
 
 To do that use the code below:
 
@@ -159,6 +153,12 @@ Twine upload dist/*
 Those are the steps required in building and deploying our package, you can run pip install <package name> to install it on your computer and try out the package using the code below.
 
 ```python
+Pip install calc_lcm
+```
+Then import and use the package using the code below
+
+```python
+import calc_lcm
 print(cal_lcm(4,5))
 ```
 
@@ -167,3 +167,5 @@ If you have followed all the steps carefully you may have noticed that it's not 
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+
