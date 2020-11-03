@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/javascript-particles-effect-with-tsparticles/
+title: Understanding Asynchronous Control Flows in Node.js Using Async.js
+description: This article goes through
+author: joseph-chege
+date: 2020-11-03T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/javascript-particles-effect-with-tsparticles/hero.jpg
+    alt: 
+---
+Tsparticles is a perfect background animation library with diverse ways to move fancy particles that fit your website layout. It is flexibly made to fit any background that matches to your outlined website.
+<!--more-->
 You might have come across a website with a background effect that slightly looks like these examples.
 
 [Example1:](https://codepen.io/matteobruni/pen/OJVZvPP)
@@ -10,7 +28,7 @@ You might have come across a website with a background effect that slightly look
 
 [Tsparticles](https://github.com/matteobruni/tsparticles) is one of the JavaScript libraries that will help achieve this. Tsparticles is a lightweight animation library. As the name sounds, the library enables you move some tiny particles on your web background, with many fancy features. [Particle.js](https://vincentgarreau.com/particles.js/), though, have not been lately updated and got bugs not fixed. Due to this, a hybrid typescript library tsparticles, was introduced to improve the paricle.js bugs and maintenance. It supports some common [JavaScript frameworks](https://particles.matteobruni.it/) such as Angular, Vue, React, Vanilla, svelte, and jQerry.
 
-Tsparticles is a perfect background animation library with diverse ways to move fancy particles that fit your website layout. It is flexibly made to fit any background that matches to your outlined website.
+
 
 In this guide, we will show you how to create a particle animation background effect that you can apply to a website using standard JavaScript.
 
