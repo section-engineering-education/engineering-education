@@ -69,7 +69,7 @@ Therefore, we have two equations, one for $y=1$ and the other for $y=0$. The $lo
 A detailed analysis of loss functions is cited in the following article. Do go through it for an in-depth understanding of [loss functions](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/).
 
 
-### Stochastic Gradient Descentv(SGD) Optimizer
+### Stochastic Gradient Descent(SGD) Optimizer
 Stochastic Gradient Descent Optimizer tries to find the minimum for a function. The function of interest, in this case, is the loss/error function. We want to minimize the error, and therefore we use the SGD optimizer.
 
 The SGD optimizer works iteratively by moving in the direction of the gradient. The direction of the minimum is in the direction where the values are decreasing. Thus, this is computed using [gradients](https://ruder.io/optimizing-gradient-descent/).
