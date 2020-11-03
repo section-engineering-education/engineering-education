@@ -18,15 +18,15 @@ Let's digest this information with examples.
 Assume:
 1. An array with domestic animals such as
 
-```JS
-["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "Horse"]
+```js
+["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"]
 ```
 
 We want to filter all domestic animals whose names have three-letter.
 
-2. An array of adults ages.
+2. An array of adult ages.
 
-```JS
+```js
 [{name: "Xavier", age: 19},
 {name: "Alice", age: 21},
 {name: "John", age: 14},
@@ -44,7 +44,7 @@ We want to filter adult ages 18 and older.
 ##### Domestic animals
 
 ```js
-const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "Horse"];
+const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"];
 const dAnimals = [];
 // we could use a standard c-style for loop
 for (let i = 0; i < Animals.length; i++) {
@@ -70,13 +70,13 @@ const adults = [
 {name: "Alex", age: 15}
 ];
 
-let canDrink = [];
+let anAdult = [];
 for(let i = 0; i < adults.length; i++) {
  if(adults[i].age >= 18)  {
-    canDrink.push(adults[i]);
+    anAdult.push(adults[i]);
   }
 }
-console.log(canDrink);
+console.log(anAdult);
 ```
 
 The examples above log and filter the test as we told it to. However, these methods can get cumbersome. For example, with a big app that has a large number of adults to filter age or other adult elements. The examples are a bit lengthy and need a lot of code setup. We can compose this further using high order functions.
@@ -86,26 +86,26 @@ The examples above log and filter the test as we told it to. However, these meth
 ##### Domestic animals
 
 ```js
-const canDrink = Animals.filter(function(animal) {
+const dAnimals = Animals.filter(function(animal) {
   if(animal.length == 3) {
     return true;
   }
 });
-console.log(canDrink);
+console.log(dAnimals);
 ```
 
 ##### Adult Ages
 
 ```js
-const canDrink = adults.filter(function(adult) {
+const anAdult = adults.filter(function(adult) {
   if(adult.age >= 18) {
     return true;
   }
 });
-console.log(canDrink);
+console.log(anAdult);
 ```
 
-We get the same results. But this time, our code is getting small and compact. No looping any more to iterate the original array to `canDrink.push(adults[i]);`
+We get the same results. But this time, our code is getting small and compact. No looping any more to iterate the original array to `anAdult.push(adults[i]);`
 
 #### Arrow Function
 
@@ -114,7 +114,7 @@ With ES6, it is unbelievable that we can compose this further using the arrow fu
 ##### Adult Ages
 
 ```js
-const canDrink = adults.filter(adults => adults.age >= 18);
+const anAdult = adults.filter(adults => adults.age >= 18);
 ```
 
 In just one line of code and we get the same results.
@@ -169,7 +169,7 @@ So have a look, assume an array of numbers:
 [5, 6, 7, 8, 9, 10]
 ```
 
-Imagine getting the sum of these array elements; we can use loops are we demonstrated in the `filter()` method, and we will get the total sum of this array. However, we can opt to optimize our code with just a few lines using `educe()`. This will make our code clean and less verbose.
+Imagine getting the sum of these array elements. We can use loops are we demonstrated in the `filter()` method, and we will get the total sum of this array. However, we can opt to optimize our code with just a few lines using `educe()`. This will make our code clean and less verbose.
 
 Let’s demonstrate with examples.
 
@@ -196,7 +196,7 @@ console.log(total);
 // we still get 45
 ```
 
-The callback function will be called five times. The accumulator will hold the last returned callback value; this value will be the next callback initial value.
+The callback function will be called five times. The accumulator will hold the last returned callback value. This value will be the next callback initial value.
 
 | Callback  | Accumulator | CurrentValue | CurrentIndex | returned value |
 |-----------|-------------|--------------|--------------|----------------|
@@ -267,7 +267,7 @@ Example two:
 Suppose in our animal array example we want to return all the names as uppercase. `map()` will accept a callback as a mandatory argument and transform each element to Uppercase form. `map()` will take the uppercased elements and return a new array
 
 ```js
-const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "Horse"];
+const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"];
 const upperCasedAnimals = Animals.map((element) => element.toUpperCase());
 console.log(upperCasedAnimals);
 // new array ['CAT', 'DOG', 'COW', 'GOAT', 'SHEEP', 'DONKEY', 'PIG', 'HORSE']
@@ -295,10 +295,10 @@ array.forEach(callback (currentValue, index, array) {
 ```
 
 For example:
-##### A for loop
+#### A for loop
 
 ```js
-const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "Horse"];
+const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"];
 for (let i = 0; i < Animals.length; i++) {
     console.log(Animals[i]);
 }
