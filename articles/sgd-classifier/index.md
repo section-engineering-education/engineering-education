@@ -6,7 +6,7 @@ url: /engineering-education/sgd-classifier/
 title: Stochastic Gradient Descent Optimized Linear Classifier in Python
 description: This tutorial will go over how to implement a linear classifier using a stochastic gradient descent optimizer.
 author: lalithnarayan-c
-date: 2020-10-29T00:00:00-13:00
+date: 2020-11-03T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,8 @@ images:
   - url: /engineering-education/sgd-classifier/hero.jpg
     alt: Stochastic Gradient Classifier example image
 ---
-Welcome to a tutorial on implementing a linear classifier using a stochastic gradient descent optimizer. This article will cover the theory behind modeling data using loss functions and help the reader understand the optimization process used to minimize the loss functions. Finally, we will code the linear classifier from scratch and use the Iris dataset to test the linear classifier.
+Welcome to a tutorial on implementing a linear classifier using a Stochastic Gradient Descent optimizer (SDG). This article will cover the theory behind modeling data using loss functions and help the reader understand the optimization process used to minimize the loss functions. Finally, we will code the linear classifier from scratch and use the Iris dataset to test the linear classifier.
 <!--more-->
-
 ### Table of Contents
 1. Linear Classifiers
 2. Loss Functions
@@ -53,7 +52,7 @@ Consider the following problem of fitting the best line for a given set of data-
 
 The linear classifier fits a linear boundary (a straight line) through the given points in the image above. The line is termed as the best-fit line. To obtain the line of best-fit, a loss function is defined.
 
-It's defined as the sum of squares of the distance between the line and the points. It's called [least squares loss function](https://www.toppr.com/guides/fundamentals-of-business-mathematics-and-statistics/time-series-analysis/method-of-least-squares/).
+It's defined as the sum of squares of the distance between the line and the points. It's called the [least squares loss function](https://www.toppr.com/guides/fundamentals-of-business-mathematics-and-statistics/time-series-analysis/method-of-least-squares/).
 
 The loss function is responsible for the performance of the linear classifiers.
 For this article, I will be using the logistic loss function, defined as follows:
@@ -82,7 +81,7 @@ A visual representation of the Stochastic Gradient Descent Optimizer is given be
 
 Observe the balls rolling into the low-lying areas. The low-lying regions represent the minima. Sometimes, there might be two minima of varying sizes. The pink and the blue balls land up in the smaller minima, called local minima, whereas the other three balls end up in the deeper minima, called the global minima.
 
-This is a problem associated with SGD. Sometimes, we might end up obtaining the minimum of a loss function at the local minimum. This leads to inefficient modeling of the loss function, thereby leading to a decrease in accuracy.
+This is a problem associated with SGD. Sometimes, we might end up obtaining the minimum of a loss function at the local minimum. This leads to inefficient modeling of the loss function, thereby leading to a decrease inaccuracy.
 
 The speed with which the balls travel is analogous to the learning rate, that is used later. Sufficient iterations of SGD are applied to tackle and nullify the problem of local minima.
 
@@ -246,7 +245,7 @@ Notice the sum of elements inside each list is 1. The sum of probabilities is 1.
             return np.c_[1-ones, ones]
 ```
 
-10. `plot`: The plot function uses the matplotlib library to plot graphs. More information can be found on this [article](/engineering-education/matplotlib-visualization-python/).
+10. `plot`: The plot function uses the matplotlib library to plot graphs. More information can be found in this [article](/engineering-education/matplotlib-visualization-python/).
 
 ```py            
         def plot(self):
@@ -258,7 +257,7 @@ Notice the sum of elements inside each list is 1. The sum of probabilities is 1.
             plt.show()
 ```
 
-11.  `score`: This method returns the test and train accuracies of the classifier. It checks if the predicted value is equal to the true value and loops over the entire dataset.
+11.  `score`: This method returns the test and trains the accuracies of the classifier. It checks if the predicted value is equal to the true value and loops over the entire dataset.
 
 The accuracy is computed as follows:
         `$accuracy = \frac{\# of correct predictions}{\# of total predictions}$`
@@ -279,7 +278,7 @@ The repl.it link is included so that you can see the output. Observe the decreas
 ![cost vs iterations](/engineering-education/sgd-classifier/loss_vs_iterations.jpg)
 
 ### Conclusion
-In this article, we have coded a linear classifier from scratch. I would like to congratulate you on making it this far. As a recap, I have attached the flow chart of how the data is fit to linear model. I hope this helps conclude this article on a good note.
+In this article, we have coded a linear classifier from scratch. I would like to congratulate you on making it this far. As a recap, I have attached the flow chart on how the data is fit for a linear model. I hope this helps conclude this article on a good note.
 
 ![fitting a linear classifier](/engineering-education/sgd-classifier/flow_chart.jpg)
 
