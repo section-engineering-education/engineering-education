@@ -1,5 +1,5 @@
 ### Introduction
-The other approach to creating a custom View is by extending an existing widget. Extending an existing subclass is quite easier compared to extending the whole class. This approach gives the developer existing features and styles to customize. This article will go through creating a custom view using this approach.
+The other approach to creating a custom View is by extending an existing widget. Extending an existing subclass is relatively easier compared to extending the whole class. This approach gives the developer existing features and styles to customize. This article will go through creating a custom view using this approach.
 
 #### What we will do
 We are going to create a color slider. This view resembles a seek bar and so we will extend it. We will use the view to select the color of a text in a `TextView`.
@@ -7,7 +7,7 @@ We are going to create a color slider. This view resembles a seek bar and so we 
 Let's dive in!
 
 ### Prerequisites
-To follow through with this tutorial you will need:
+To follow through with this tutorial, you will need:
   1. [Android Studio](https://developer.android.com/studio) installed.
   2. Basic knowledge of building Android applications.
   3. Basic understanding of Kotlin programming language.
@@ -33,9 +33,9 @@ class ColorSlider(context: Context, attrs: AttributeSet): androidx.appcompat.wid
 
 }
 ```
-We will use that constructor so that we can add our view through xml. Visit this [page](https://developer.android.com/reference/android/widget/SeekBar?authuser=3) for more details about other constructors.
+We will use that constructor so that we can add our view through XML. Visit this [page](https://developer.android.com/reference/android/widget/SeekBar?authuser=3) for more details about other constructors.
 
-In the class add the following member variables.
+In the class, add the following member variables.
 
 ```Kotlin
 private val colors = arrayOf(Color.RED, Color.BLACK, Color.YELLOW, Color.BLUE, Color.GRAY, Color.GREEN)
@@ -43,7 +43,7 @@ private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 private var listeners = ArrayList<(Int) -> Unit>()
 ```
 
-The first variable is an array of colors that the user will select from. The second one is a paint object which we will use to draw custom tick marks. The third one is an array of functions that will run whenever a user selects a particular color.
+The first variable is an array of colors from which the user will select. The second one is a paint object which we will use to draw custom tick marks. The third one is an array of functions that will run whenever a user selects a particular color.
 
 Next, add an `init` block to perform some customizations on the view upon creation.
 
@@ -56,20 +56,22 @@ init {
 }
 ```
 
-Here we set the progress background tint and progress tint to transparent. We also set split track to false to make the seek bar thumb transparent. We set maximum value to 5 because our array contains 6 colors.
+Here we set the progress background tint and progress tint to transparent. We also set the split track to false to make the seek bar thumb transparent. We set the maximum value to 5 because our array contains six colors.
 
 We override the `onDraw` method of the seek bar to create custom tick marks.
 
 ### Step 3 — Overriding `onDraw` Method
-Now that our view is set with the desired attributes. Let's go ahead and override the `onDraw` method to begin drawing. We will make custom colored square tick marks. The squares will get colors from the colors array. Let's get to it!
+Now that we have set our view with the desired attributes let's override the `onDraw` method to begin drawing. We will make custom-colored square tick marks. The squares will get colors from the colors array. Let's get to it!
 
-First override the `onDraw` method by adding the code below.
+First, override the `onDraw` method by adding the code below.
+
 ```Kotlin
 override fun onDraw(canvas: Canvas?) {
     super.onDraw(canvas)
 }
 ```
-Here we have to call `super.onDraw` in order to allow the parent view to draw first. Then create a function to draw the tick marks.
+
+Here we have to call `super.onDraw` to allow the parent view to draw first. Then create a function to draw the tick marks.
 
 ```Kotlin
 private fun drawTickMarks(canvas: Canvas?){
@@ -104,9 +106,9 @@ private fun drawTickMarks(canvas: Canvas?) {
     }
 }
 ```
-In the function we first check if the canvas is null. We use Kotlin's let function to perform all the task. The statement `canvas?.let{}` means that if the canvas is not null, the code inside the block is executed.
+In the function, we first check if the canvas is null. We use Kotlin's let function to perform all the tasks. The statement `canvas?.let{}` means that if the canvas is not null, it executes the block's code.
 
-In the let function we explicitly declare the width and height of the tick marks to 24 pixels. The value should be a float. For the spacing between the tick marks, we subtract the left and right padding from the width the divide it by `max`. We obtain all these values from the super class. The spacing value should also be a float.
+We explicitly declare the width and height of the tick marks to 24 pixels in the let function. The value should be a float. For the spacing between the tick marks, we subtract the left and right padding from the width the divide it by `max`. We obtain all these values from the super class. The spacing value should also be a float.
 
 Before drawing the squares, we use the `translate` method to move the drawing pen to the right position. We then loop through the colors array drawing the squares on the canvas. The `drawRect` method draws the squares given the dimensions and paint object. `translate` moves the pen to the next drawing position. That's all for the drawing!
 
@@ -169,10 +171,10 @@ Open the `activity_main` file and add the following views
     app:layout_constraintVertical_bias="0.11" />
 ```
 
-As I mentioned earlier, we are going to use the color slider to change the color of the text view. For the color slider, you will have to use the package name of your application.
+As I mentioned earlier, we will use the color slider to change the color of the text view. For the color slider, you will have to use the package name of your application.
 
 ### Step 5 — Finishing The application
-Open `MainActivity` file and add this code on the `onCreate` method.
+Open `MainActivity` file and add this code in the `onCreate` method.
 
 ```Kotlin
 colorSlider.addListener {
@@ -187,4 +189,4 @@ And that's it! Build and run the app. The result should resemble the one below.
 ![App](/engineering-education/android-custom-views-extending-view-subclass/app.gif)
 
 ### Conclusion
-In this article we have gone through creating a custom view through extending a widget. We have also seen how we can change the view's appearance by drawing. Creating custom views through this approach is quite easier. It gives the application a unique appearance with less work to do. Check this [article](/engineering-education/android-custom-views-extending-view/) for a guide on creating custom views by extending the `View` class. You can find the source code of the application on [github](https://github.com/kayere/color-slider.git). Feel free to raise an issue or a PR if you notice any error.
+In this article, we have gone through creating a custom view by extending a widget. We have also seen how we can change the view's appearance by drawing. Creating custom views through this approach is quite easier. It gives the application a unique appearance with less work to do. Check this [article](/engineering-education/android-custom-views-extending-view/) for a guide on creating custom views by extending the `View` class. You can find the source code of the application on [github](https://github.com/kayere/color-slider.git). Feel free to raise an issue or a PR if you notice any error.
