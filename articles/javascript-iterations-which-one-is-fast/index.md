@@ -1,4 +1,4 @@
-Sometimes you want to repeat a task several times. Let's say to log "hello world" six times. Here is a simple JavaScript code block do that:
+Sometimes you want to repeat a task several times. Let's say to log "hello world" six times. Here is a simple JavaScript code block to do that:
 
 ```js
 console.log("hello world")
@@ -9,7 +9,7 @@ console.log("hello world")
 console.log("hello world")
 ```
 
-The code above will correctly repeat the assigned tasks six times. However, as the number of tasks grows, say 100 hello worlds, the code will get messy affecting code readability. It is hard to write the same line of code repeatedly 100 times. Looping through these tasks will affect execution performance drastically. Here is where JavaScript loops come in rescue. JavaScript can control the above loop better with a few lines of codes.
+The code above will correctly repeat the assigned task six times. However, as the number of tasks grows, say 100 hello worlds, the code will get messy affecting code readability. It is hard to write the same line of code repeatedly 100 times. Looping through these tasks will affect execution performance drastically. Here is where JavaScript loops come to the rescue. JavaScript can control the above loop better with a few lines of codes.
 
 ***For example:***
 
@@ -19,11 +19,7 @@ for (let loop = 0; loop < 6; loop++) {
 }
 ```
 
-With only two lines of code, we log six "hello world" strings as we anticipated. Shorter code means faster development time, code readability, and lesser performance overheads.
-
-JavaScript has different kinds of iterations statements called loops. They include `for`, `while`, `do while`, `for in`, `for of`, and `for each`. They all do the same job, i.e, to repeat an action several times. They, however, have different ways to start and end a loop.ster? When it comes to loops, the most common questions are which loop to use and which one is the fastest?
-
-This guide will discuss each of these loops with simple & basic examples and compare & test each loop's execution performance.
+With only two lines of code, we log six "hello world" strings as we anticipated. Shorter code means faster development time, code readability, and lesser performance overheads. JavaScript has different kinds of iterations statements called loops. They include `for`, `while`, `do while`, `for in`, `for of`, and `for each`. They all do the same job, i.e, to repeat an action several times. They, however, have different ways to start and end a loop.ster? When it comes to loops, the most common questions are which loop to use and which one is the fastest? This guide will discuss each of these loops with simple & basic examples and compare & test each loop's execution performance.
 
 ### For Loop
 `For` loop is the commonly used loop. If you are not new to the world of programming, you might have come across a `for` loop statement under other programming languages such as `java`, `c++`, `c`, etc. A `for` statement loops through a specified or fixed number of elements until it meets the specified condition.
@@ -68,7 +64,7 @@ do {
 } while (i < 5);
 ```
 
-In the above example, `do` iterates before `while` then `i` is invoked until the condition executes to false, i.e, until the loop cycle is no longer less than five: `(i < 5)`.
+In the above example, `do` iterates before `while` then `i` is incremented until the condition executes to false, i.e, until the loop cycle is no longer less than five: `(i < 5)`.
 
 ### While Loop
 It loops as long as the condition evaluates to true. When the condition evaluates to false, the loop stops. `While` checks a condition before executing the specified statement. If the statement executes, the loop retests the condition again. If the condition will be false at the first loop cycle, there is a chance the loop will not call a statement.
@@ -81,7 +77,7 @@ while (i < 5) {
 }
 ```
 
-The above block will run until `i < 5` is not valid, and the loop will stop when the value of `i` is `5`. Otherwise, if the condition is always true, the loop will never end. Thus creating an infinite loop, i.e,
+The above block will run until `i < 5` is not true, and the loop will stop when the value of `i` is `5`. Otherwise, if the condition is always true, the loop will never end. Thus creating an infinite loop, i.e,
 
 ```js
 let i = 0;
