@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/javascript-particles-effect-with-tsparticles/
-title: Understanding Asynchronous Control Flows in Node.js Using Async.js
-description: This article goes through
+title: JavaScript Particles Effect with TsParticles
+description: This article will go through a developer add TsParticles to WordPress blogs or any website using standard JavaScript.
 author: joseph-chege
 date: 2020-11-03T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/javascript-particles-effect-with-tsparticles/hero.jpg
-    alt:
+  - url: /engineering-education/javascript-particles-effect-with-tsparticles/hero.png
+    alt: javascript tsparticles example image
 ---
 Tsparticles is a perfect background animation library with diverse ways to move fancy particles that fit your website layout. It is flexibly made to fit any background that matches to your outlined website.
 <!--more-->
@@ -765,12 +765,12 @@ tsParticles.load("tsparticles", {
 [***Sample source***](https://codepen.io/matteobruni/pen/xxGXELa)
 
 ### Final Notes
-Tsparticle is a cool library that you should try in your next JavaScript project. It provides fancy backgrounds that will make your user enjoy interacting with your web apps.
+TsParticles is a cool library that you should try in your next JavaScript project. It provides fancy backgrounds that will make your user enjoy interacting with your web apps.
 
-Consider looking at the [tsparticles codepen](https://codepen.io/matteobruni/pens/popular) examples and their [official docs](https://particles.matteobruni.it/docs/). This will give you more examples to interact with as you try to manipulate and play with other tsparticles values.
+Consider looking at the [TsParticles codepen](https://codepen.io/matteobruni/pens/popular) examples and their [official docs](https://particles.matteobruni.it/docs/). This will give you more examples to interact with as you try to manipulate and play with other tsparticles values.
 
-Remember to check out how to use tsparticle with your favorite [Javascript framework](https://tsparticles.matteobruni.it/).
+Remember to check out how to use TsParticles with your favorite [Javascript framework](https://tsparticles.matteobruni.it/).
 
-Tspartcle borrows its concept from [Particle.js](https://github.com/VincentGarreau/particles.js/). If you had previously worked on a Particle.js project, check out [how to migrate to tsparticle](https://dev.to/matteobruni/migrating-from-particles-js-to-tsparticles-2a6m) and enjoy the more updated features.
+TsParticles borrows its concept from [Particle.js](https://github.com/VincentGarreau/particles.js/). If you had previously worked on a Particle.js project, check out [how to migrate to tsparticle](https://dev.to/matteobruni/migrating-from-particles-js-to-tsparticles-2a6m) and enjoy the more updated features.
 
-  If you enjoy building WordPress websites, this [article](https://www.elementoraddons.com/tutorial/add-particles-background-to-sections-in-elementor-page-builder/) will help you add tsapatcles to your WordPress blogs.
+If you enjoy building WordPress websites, this [article](https://www.elementoraddons.com/tutorial/add-particles-background-to-sections-in-elementor-page-builder/) will help you add TsParticles to your WordPress blogs.
