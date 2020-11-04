@@ -1,7 +1,6 @@
 Generators are a special kind of function that return a lazy iterator, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python generators are objects that you can loop over like a list. However, unlike lists, lazy iterators do not store their contents in memory. The best way to iterate through large and complex datasets is through the use of generators.
 
 ### Prerequisites
-
 To get started, you need to have a basic understanding of Python.  This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
 
 **Generator function** is a function that returns a generator object. It is defined like a normal function, but whenever it needs to generate a value, it does so with the **yield** keyword rather than return. If the body of a def contains yield, the function automatically becomes a generator function.
@@ -13,7 +12,6 @@ To get started, you need to have a basic understanding of Python.  This will hel
 **Generator Expressions** are a high-performance, memory–efficient generalization of list comprehensions and generators.
 
 ### Generator Expressions vs List Comprehensions
-
 ```python
 list_comprehension = ['Hello world' for i in range(3)]
 generator_expression = ('Hello world' for i in range(3))
@@ -43,7 +41,6 @@ for expression in generator_expression:
 
 
 Given a range of n numbers to filter out odd numbers. We could solve the problem using three different methods.
-
 1. Using function.
 
 ```python
@@ -61,7 +58,6 @@ def even_integers_function(n):
 ```
 
 2. Using Generator function. 
-
    The generator function below yields a generator object which we can iterate through to get the list of even numbers. 
 
 ```python
@@ -110,11 +106,8 @@ uppercase_names = (name.upper() for name in name_list)
 ```
 
 **Generating Fibonacci sequence using generator functions.**
-
 The Fibonacci Sequence is the series of numbers where next number is found by adding up the two numbers before it.
-
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-
 ```python
 def fibonacci_gen():
     trailing,leading = 0,1
@@ -122,7 +115,7 @@ def fibonacci_gen():
         yield leading
         trailing,leading = leading, trailing+leading
 ```
-To get the first value of the Fibonacci sequence we generated using generator function above we call the `fibonacci_gen()` function and assign it to variable fib, we then call `next()` on the fib variable, `fib.next()` to get the next number in the sequence.
+To get the first value of the Fibonacci sequence we generated using generator function above we call the `fibonacci_gen()` function and assign it to variable fib. We then call `next()` on the fib variable, `fib.next()` to get the next number in the sequence.
 ```python
 >>>fib = fibonacci_gen()
 >>>fib.next()
@@ -134,7 +127,6 @@ for _ in range(10):
 ```
 
 ### Profiling Generator Performance
-
 ```python
 >>> import sys
 # Square root of numbers in a range using list comprehension.
@@ -146,23 +138,15 @@ for _ in range(10):
 >>> print(sys.getsizeof(nums_squared_generator))
 125
 ```
-
 List comprehension uses 87724 bytes of memory while generator function uses only 125 bytes of memory. By using generators we save memory as compared to list comprehension where a lot of memory is used.
 
 ### Building Generator pipelines
-
 Data pipelines allow you to string together code to process large  datasets or streams of data without maxing out your machine’s memory.
-
 when working with pipelines:-
-
 - Several pipes can be linked together.
-
 - Items flow one by one through the entire pipeline.
-
 - Pipeline functionality can be packaged into a callable function.
-
   In order to get the longest name from the text file `names.txt`, We create two generator methods.
-
   - The first generator method full_names yields names line by line stripping off the new line from each line.
   - The second generator method lengths yields a tuple with name and an integer representing its length.
   - To get the longest name we use max and pass in the lengths generator object and pass a key for the lengths.
@@ -173,5 +157,4 @@ def get_longest_name():
 	longest = max(lengths,key=lambda x:x[1])
 ```
 ### Conclusions
-
 You now have a better understanding of the python generators. They are useful when working with complex datasets and performing memory intensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive. 
