@@ -1,6 +1,6 @@
 Organizations continue to embrace the Internet of Things (IoT), the cloud, and mobile technology. This has influenced considerable changes in the threat landscape and created more vulnerability points. Cybercriminals are leveraging these new vulnerability points to develop and launch sophisticated, high-volume, multi-dimensional attacks. Such attacks mean that data is at risk, and organizations must spend valuable time analyzing potentially malicious files.
 
-Using artificial intelligence software, organizations can process large volumes of threat data and adequately prevent and respond to breaches and hacks. This article will discuss how machine learning and artificial intelligence improve cybersecurity in four critical areas: network security, data centers, threat hunting, and vulnerability management.
+Using artificial intelligence software, organizations can process large volumes of threat data and adequately prevent and respond to breaches and hacks. This article will discuss how machine learning and artificial intelligence improve cybersecurity in four important areas: network security, data centers, threat hunting, and vulnerability management.
 
 ### Network Security
 
