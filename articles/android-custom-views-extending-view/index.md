@@ -6,7 +6,7 @@ url: /engineering-education/android-custom-views-extending-view/
 title: Android Custom Views - Extending View Class
 description: In this article we will create a simple view that is a colored circle with a border and add it to an XML layout.
 author: peter-kayere
-date: 2020-11-04T00:00:00-12:00
+date: 2020-10-26T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
