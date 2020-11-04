@@ -6,8 +6,8 @@ url: /engineering-education/javascript-particles-effect-with-tsparticles/
 title: JavaScript Particles Effect with TsParticles
 description: This article will go through how a developer can add TsParticles to WordPress blogs or any website using standard JavaScript.
 author: joseph-chege
-date: 2020-11-04T00:00:00-10:00
-topics: []
+date: 2020-11-04T00:00:00-15:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
@@ -199,7 +199,7 @@ color: {
 ### Shaping the Particles
 The particles will load on the default circular shape. Other common shapes include:
 
-```
+```js
 "circle"
 "edge"
 "triangle"
@@ -469,7 +469,7 @@ tsParticles.load("tsparticles", {
 ![Particles Interactivity](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Application Example
-Next we will go over how to apply the end product (the particle background) into your website. The example below shows a login form floating over the particle's background.
+Next we will go over how to apply the end product (the particle background) into your website. The example below will show a login form floating over the particle's background.
 
 #### Files Setup:
 ##### App.css
