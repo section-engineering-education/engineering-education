@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/javascript-particles-effect-with-tsparticles/
 title: JavaScript Particles Effect with TsParticles
-description: This article will go through a developer add TsParticles to WordPress blogs or any website using standard JavaScript.
+description: This article will go through how a developer can add TsParticles to WordPress blogs or any website using standard JavaScript.
 author: joseph-chege
-date: 2020-11-03T00:00:00-10:00
+date: 2020-11-04T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/javascript-particles-effect-with-tsparticles/hero.png
     alt: javascript tsparticles example image
 ---
-Tsparticles is a perfect background animation library with diverse ways to move fancy particles that fit your website layout. It is flexibly made to fit any background that matches to your outlined website.
+Tsparticles is a perfect background animation library with diverse ways to move fancy particles that fit your website layout. It is extremely flexible and made to fit any background that matches your website.
 <!--more-->
 You may have come across a website with a background effect that slightly look like these examples listed below.
 
@@ -26,7 +26,7 @@ You may have come across a website with a background effect that slightly look l
 
 ![Tsparticles Effect](/engineering-education/javascript-particles-effect-with-tsparticles/example2.gif)
 
-[Tsparticles](https://github.com/matteobruni/tsparticles) is one of the JavaScript libraries that will help you include this type of animation into your websites. Tsparticles is a lightweight animation library. As the name sounds, the library enables you move tiny particles on your web background, with many other fancy features.
+[Tsparticles](https://github.com/matteobruni/tsparticles) is one of the JavaScript libraries that will help you include this type of animation into your websites. Tsparticles is a lightweight animation library. As the name suggests, the library enables you move tiny particles on your web background, with many other fancy features.
 
 [Particle.js](https://vincentgarreau.com/particles.js/) was an earlier version, although it hasn't been updated (lately) and has many bugs that have not been fixed. Due to this, the hybrid typescript library Tsparticles was introduced, to improve on the particle.js bugs and lack of maintenance. It supports some common [JavaScript frameworks](https://particles.matteobruni.it/) such as Angular, Vue, React, Vanilla, svelte, and jQerry.
 
@@ -102,7 +102,7 @@ CSS properties will vary depending on your website. It will depend on the backgr
 That's all for `app.css` and `index.html`.
 
 ### Adding particles
-The aspect properties of the particles are specified on the `.js` file. This is where you manipulate and play with the particles until you get desirable particle movements. Specify both the `tsparticles` and the `div` element we defined earlier in the `index.html` file.
+The aspect properties of the particles are specified on the `.js` file. This is where you manipulate and play with the particles until you get the desired particle movements. Specify both the `tsparticles` and the `div` element we defined earlier in the `index.html` file.
 
 ```js
 /* tsParticles.load("tsparticles", {
@@ -126,7 +126,7 @@ tsParticles.load("tsparticles", {
 
 Define the number of particles you would like to show within the parameter values and pass a number to it. I choose to use 400; it mainly depends on the kind of movement you want to build in the animation. Load the `index.html` and 400 particles will float onto your canvas.
 
-The number can vary as you practice and create more of a different background. The number can be small depending on the particle size, collisions, linking, and interactivity. We shall look at that in a bit more detail as we play with tsparticles in later sections.
+The number can vary as you practice and create more of a different background. The number can be small depending on the particle size, collisions, linking, and interactivity. We'll look at that in a bit more detail as we play with tsparticles in later sections.
 
 ***Note:*** If you open the `index.html` page directly on the browser.
 
@@ -134,7 +134,7 @@ For example:
 
 ![index.html Browsed Page](/engineering-education/javascript-particles-effect-with-tsparticles/local-file-browser.png)
 
-You will notice that there are no particles loaded. This is because we need to make sure we are using the live-server provided with your text editor to open the `index.html` files.
+You will notice that there are no particles loaded. This is because we need to make sure we are using the live-server provided with your text editor when opening the `index.html` files.
 
 ![index.html Served Page](/engineering-education/javascript-particles-effect-with-tsparticles/server-browser.png)
 
@@ -157,7 +157,7 @@ We need to enable motion to `true`. We then save the file. A live server will re
 Tsparticles load these particles with the default color set. There are several ways to play with the particle color values.
 
 #### Single Color
-By adding the code snippet below we will have all particles in one uniform color.
+By adding the code snippet below we will have all the particles in one uniform color.
 
 ```js
 color: {
@@ -175,7 +175,7 @@ value: ["#5bc0eb", "#fde74c", "#9bc53d", "#e55934", "#fa7921"],
 ```
 
 ##### Random Colors
-Passing a random value, tsparticles will give the particles randomized colors. Almost every particle will have a different color in the background.
+Passing a random value, tsparticles can give the particles randomized colors. Wit this feature almost every particle will have a different color in the background.
 
 ```js
 color: {
@@ -183,7 +183,7 @@ color: {
 },
 ```
 
-Let's add animation to animate the tsParticles to have a beautiful transforming colored animation. We can specify the speed that a particle will jump from color a to color b. Adding animation to a single color will randomized the particles colors.
+Let's animate the tsParticles to have a beautiful transforming colored animation. We can specify the speed that a particle will alternate from color a to color b. Adding animation to a single color will randomized the particles colors.
 
 ```js
 color: {
@@ -232,7 +232,7 @@ type: ["circle", "star", "edge"],
 
 Or try a default image.
 
-Tsparticles allows you to choose an image or array of images as a particle. For example, if I wanted my particle to be bubbles, I will link an image with bubbles. In this case I have passed and array of images.
+Tsparticles allows you to choose an image or an array of images as a particle. For example, if I wanted my particle to be bubbles, I could link an image with bubbles. In this case I have passed an array of images below.
 
 ```js
 shape: {
@@ -253,10 +253,10 @@ shape: {
 },
 ```
 
-Remember, adding an image will only work if you specify the shape property as the `type: "image"`.
+Remember, adding an image will only work if you specify the shape property to be of the `type: "image"`.
 
 ### Particle Size
-Modify the shape size.
+We can modify the shape size.
 
 ```js
 size: {
@@ -271,9 +271,9 @@ size: {
 },
 ```
 
-You might set random to `true` to create particles of different sizes ranging from mini of 0.1 to 10. Add animation property to animate the particles as the size changes.
+You could set random to `true` to create particles of different sizes ranging from mini of 0.1 to 10. Add an animation property to animate the particles as the size changes.
 
-You now have an essential background with fancy colors, animated sizes, and shapes.
+You now have an creative background with fancy colors, animated sizes, and shapes.
 
 At this point, the `app.js` should look close to this code sample below.
 
@@ -336,9 +336,9 @@ line_linked: {
 ![Particle Linking](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Interactivity
-One more thing I would like to add, is the particles' interactivity with the screen movements, such as onclick and onhover events. This will tell the particle what to do whenever onscreen interaction is detected. Each event takes a parameter mode that defines how the particles will behave on an event detection. Thos modes specify the behaviors of the events.
+One more thing I would like to add, is that the particles' interactivity with screen movements, such as onclick and onhover events. This will tell the particle what to do whenever onscreen interaction is detected. Each event takes a parameter mode that defines how the particles will behave on an event detection. These modes specify the behaviors of the events.
 
-They will include:
+The modes include:
 - Push­ - add more particles. Specified with `particles_nb` (the number of particles to add).
 - Bubble - expand particles on a specified range.
 - Remove - delete or remove particles on onclick. Specified with `particles_nb` (the number of particles to remove).
@@ -469,7 +469,7 @@ tsParticles.load("tsparticles", {
 ![Particles Interactivity](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Application Example
-Next we will go over how to apply the end product (particle background) onto your website. The example below shows a login form floating over the particle's background.
+Next we will go over how to apply the end product (the particle background) into your website. The example below shows a login form floating over the particle's background.
 
 #### Files Setup:
 ##### App.css
