@@ -16,7 +16,7 @@ images:
 ---
 Tsparticles is a perfect background animation library with diverse ways to move fancy particles that fit your website layout. It is flexibly made to fit any background that matches to your outlined website.
 <!--more-->
-You may have come across a website with a background effect that slightly looks like these examples.
+You may have come across a website with a background effect that slightly look like these examples listed below.
 
 [Example1:](https://codepen.io/matteobruni/pen/OJVZvPP)
 
@@ -26,11 +26,11 @@ You may have come across a website with a background effect that slightly looks 
 
 ![Tsparticles Effect](/engineering-education/javascript-particles-effect-with-tsparticles/example2.gif)
 
-[Tsparticles](https://github.com/matteobruni/tsparticles) is one of the JavaScript libraries that will help achieve this. Tsparticles is a lightweight animation library. As the name sounds, the library enables you move some tiny particles on your web background, with many fancy features.
+[Tsparticles](https://github.com/matteobruni/tsparticles) is one of the JavaScript libraries that will help you include this type of animation into your websites. Tsparticles is a lightweight animation library. As the name sounds, the library enables you move tiny particles on your web background, with many other fancy features.
 
-[Particle.js](https://vincentgarreau.com/particles.js/), though, hasn't been updated lately and has bugs that have not been fixed. Due to this, a hybrid typescript library tsparticles, was introduced to improve the paricle.js bugs and maintenance. It supports some common [JavaScript frameworks](https://particles.matteobruni.it/) such as Angular, Vue, React, Vanilla, svelte, and jQerry.
+[Particle.js](https://vincentgarreau.com/particles.js/) was an earlier version, although it hasn't been updated (lately) and has many bugs that have not been fixed. Due to this, the hybrid typescript library Tsparticles was introduced, to improve on the particle.js bugs and lack of maintenance. It supports some common [JavaScript frameworks](https://particles.matteobruni.it/) such as Angular, Vue, React, Vanilla, svelte, and jQerry.
 
-In this guide, we will show you how to create a particle animation background effect that you can apply to a website using standard JavaScript.
+In this guide, we'll show you how to create a particle animation background effect that you can apply to any website using standard JavaScript.
 
 ### Installation and Usage
 #### Using CDN
@@ -40,7 +40,7 @@ Tsparticles supports CDN hosting to load particles. CDN includes script tags and
 <script src= "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.5/tsparticles.min.js"> </script>
 ```
 
-Head out to [tsparticles CDN](https://cdnjs.com/libraries/tsparticles) and check the latest CDN version to take advantage of updated features.
+Head out to [tsparticles CDN](https://cdnjs.com/libraries/tsparticles) and check the latest CDN version to take advantage of any updated features.
 
 #### Using NPM
 If you are a Node.js user and love using `require()` and `import{}` in your project, tsparticles is available in the [npm registry](https://www.npmjs.com/package/tsparticles).
@@ -63,7 +63,7 @@ Create three files, named `index.html` `app.css` and `app.js`.
 
 In your `index.html` file, add tsparticles `div` DOM. Add CDN, and import `app.css` and `app.js` from your root project directory.
 
-#### `index.html`
+#### index.html
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -85,8 +85,8 @@ In your `index.html` file, add tsparticles `div` DOM. Add CDN, and import `app.c
 </html>
 ```
 
-#### `app.css`
-Will hold the tsparticles stylesheet configurations.
+#### app.css
+Your `app.css` file will hold the tsparticles stylesheet configurations.
 
 ```css
 #tsparticles {
@@ -97,20 +97,20 @@ Will hold the tsparticles stylesheet configurations.
 }
 ```
 
-CSS properties will vary depending on your website. Depending on the background that fits your web colors and the position you want to place the tsparticles.
+CSS properties will vary depending on your website. It will depend on the background that best fits your web colors and the position you will want to place the tsparticles.
 
-That all for `app.css` and `index.html`.
+That's all for `app.css` and `index.html`.
 
 ### Adding particles
-The aspect properties of the particles are specified on the `.js` file. This is where you manipulate and play with particles until you get desirable particle movements. Specify `tsparticles`, the `div` element we defined in the `index.html` file.
+The aspect properties of the particles are specified on the `.js` file. This is where you manipulate and play with the particles until you get desirable particle movements. Specify both the `tsparticles` and the `div` element we defined earlier in the `index.html` file.
 
-```j
+```js
 /* tsParticles.load("tsparticles", {
 .load(@dom-id, @path-json, @callback (optional)); */
 tsParticles.load("tsparticles", {}
 ```
 
-First, specify the number of particles to move on you background canvas.
+First, specify the number of particles you would like to have move on your background canvas.
 
 ```js
 /* tsParticles.load("tsparticles", {
@@ -124,9 +124,9 @@ tsParticles.load("tsparticles", {
 })
 ```
 
-Define the number of particles to show with parameter value and pass a number to it. I choose to use 400; it mainly depends on the kind of movement you want to build. Load the `index.html` and 400 particles will float on your canvas.
+Define the number of particles you would like to show within the parameter values and pass a number to it. I choose to use 400; it mainly depends on the kind of movement you want to build in the animation. Load the `index.html` and 400 particles will float onto your canvas.
 
-The number may vary as you practice and create more of a background. Sometimes the number can be small depending on the particle size, collisions, linking, and interactivity. We shall look at that in more detail as we play with tsparticles.
+The number can vary as you practice and create more of a different background. The number can be small depending on the particle size, collisions, linking, and interactivity. We shall look at that in a bit more detail as we play with tsparticles in later sections.
 
 ***Note:*** If you open the `index.html` page directly on the browser.
 
@@ -134,7 +134,7 @@ For example:
 
 ![index.html Browsed Page](/engineering-education/javascript-particles-effect-with-tsparticles/local-file-browser.png)
 
-No particles will be loaded. To avoid this situation, use the live-server provided on your text editor to open the `index.html` files.
+You will notice that there are no particles loaded. This is because we need to make sure we are using the live-server provided with your text editor to open the `index.html` files.
 
 ![index.html Served Page](/engineering-education/javascript-particles-effect-with-tsparticles/server-browser.png)
 
@@ -143,7 +143,7 @@ For example:
 - [Atom](https://atom.io/) - install [atom live server](https://discuss.atom.io/t/how-to-install-configure-atom-live-server/53651/8).
 
 ### Adding Motion
-The created particle are motionless. Right below the `number:` property let's add.
+The particle we created are motionless at the moment. Right below the `number:` property let's add.
 
 ```js
 move: {
@@ -151,13 +151,13 @@ move: {
     },
 ```
 
-Enable motion to `true`. Save the file. Live server will reload the page, and you'll notice the particles are moving around.
+We need to enable motion to `true`. We then save the file. A live server will reload the page, and you'll now notice the particles are moving around.
 
 ### Playing with Colors
 Tsparticles load these particles with the default color set. There are several ways to play with the particle color values.
 
 #### Single Color
-All particles will have one uniform color.
+By adding the code snippet below we will have all particles in one uniform color.
 
 ```js
 color: {
@@ -166,7 +166,7 @@ color: {
 ```
 
 #### Multiple Colors
-Particles can have different colors, the color value takes an array of colors. For example, we can make the first particle black, and the next nearest particle white.
+Particles can have different colors as well, the color value can take an array of colors. For example, we can make the first particle black, and the next nearest particle white.
 
 ```js
 color: {
@@ -175,7 +175,7 @@ value: ["#5bc0eb", "#fde74c", "#9bc53d", "#e55934", "#fa7921"],
 ```
 
 ##### Random Colors
-Passing a random value, tsparticles will give the particles randomized colors. Almost every particle will have a different color.
+Passing a random value, tsparticles will give the particles randomized colors. Almost every particle will have a different color in the background.
 
 ```js
 color: {
@@ -183,7 +183,7 @@ color: {
 },
 ```
 
-Add animation to animate the tsParticles color with a beautiful transforming colored particles. Specify the speed that a particle jump from color a to color b. Adding animation to a single color will randomized particles colors.
+Let's add animation to animate the tsParticles to have a beautiful transforming colored animation. We can specify the speed that a particle will jump from color a to color b. Adding animation to a single color will randomized the particles colors.
 
 ```js
 color: {
@@ -197,7 +197,7 @@ color: {
 ```
 
 ### Shaping the Particles
-Particles loads on the default circular shape. The common shapes include:
+The particles will load on the default circular shape. Other common shapes include:
 
 ```
 "circle"
@@ -207,7 +207,7 @@ Particles loads on the default circular shape. The common shapes include:
 "star"
 ```
 
-Specified with:
+We can specify it with:
 
 ```js
 shape: {
@@ -215,14 +215,16 @@ shape: {
 },
 ```
 
-Go ahead and try these shapes. Specify the `nb_value` for polygon-shaped particles. Ie:
+Go ahead and try these shapes. Specify the `nb_value` for polygon-shaped particles.
+
+Example snippet below:
 
 ```js
 polygon: {
     nb_sides: 5
 ```
 
-Just like colors, add an array of shapes to have multiple shaped particles.
+Just like the colors, we can add an array of shapes to have multiple shaped particles.
 
 ```js
 type: ["circle", "star", "edge"],
@@ -230,7 +232,7 @@ type: ["circle", "star", "edge"],
 
 Or try a default image.
 
-Tsparticles allows you to choose an image or array of images as a particle. For example, if I wanted my particle to be bubbles, I will link an image with bubbles. In this case I passed and array of images.
+Tsparticles allows you to choose an image or array of images as a particle. For example, if I wanted my particle to be bubbles, I will link an image with bubbles. In this case I have passed and array of images.
 
 ```js
 shape: {
@@ -251,7 +253,7 @@ shape: {
 },
 ```
 
-Remember, image will only work if you specify the shape property  as `type: "image"`.
+Remember, adding an image will only work if you specify the shape property as the `type: "image"`.
 
 ### Particle Size
 Modify the shape size.
@@ -273,7 +275,7 @@ You might set random to `true` to create particles of different sizes ranging fr
 
 You now have an essential background with fancy colors, animated sizes, and shapes.
 
-To this point, the `app.js` should look close to this code sample.
+At this point, the `app.js` should look close to this code sample below.
 
 ```js
 tsParticles.load("tsparticles", {
@@ -308,7 +310,7 @@ tsParticles.load("tsparticles", {
   }});
 ```
 
-If you serve `index.html`, you should be having a background close to the samples below.
+If you serve `index.html`, you should be seeing a background close to the samples below.
 
 #### Using Circular Shapes with Randomized colors
 ![Color Particles](/engineering-education/javascript-particles-effect-with-tsparticles/circular-randomized-colors.gif)
@@ -317,7 +319,9 @@ If you serve `index.html`, you should be having a background close to the sample
 ![Bubbled Particles](/engineering-education/javascript-particles-effect-with-tsparticles/bubbled-image.gif)
 
 ### Particle Linking
-The next big thing is to link a particle to the nearest neighboring particles to create a connection between the particle movement. When `line_linked:` enabled to true, every particle will be connected to the most relative adjacent particle. The linking line takes additional values such as distance. Distance specifies the range at which a particle should link to another particle. Customize the link by passing color, opacity, and width parameters.
+The next big thing we will go over is linking a particle to the nearest neighboring particles to create a connection between the particle movement. When `line_linked:` is enabled to true, every particle will be connected to the most relative adjacent particle.
+
+The linking line takes additional values such as distance. Distance specifies the range at which a particle should link to another particle. Customize the link by passing the color, opacity, and width parameters.
 
 ```js
 line_linked: {
@@ -332,14 +336,14 @@ line_linked: {
 ![Particle Linking](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Interactivity
-I want to add the particles' interactivity with the screen movements, such as onclick and onhover events. This tells the particle what to do whenever onscreen interaction is detected. Each event takes a parameter mode that defines how the particles will behave on event detection. Modes specifies the behaviors of the event.
+One more thing I would like to add, is the particles' interactivity with the screen movements, such as onclick and onhover events. This will tell the particle what to do whenever onscreen interaction is detected. Each event takes a parameter mode that defines how the particles will behave on an event detection. Thos modes specify the behaviors of the events.
 
-They include:
+They will include:
 - Push­ - add more particles. Specified with `particles_nb` (the number of particles to add).
 - Bubble - expand particles on a specified range.
 - Remove - delete or remove particles on onclick. Specified with `particles_nb` (the number of particles to remove).
 - Repulse - pushes particles away to a radius.
-- Grab - connect the nearest particle in a specified radius. Only applicable with onhover.
+- Grab - connect the nearest particle in a specified radius. This is only applicable with onhover.
 
 ```js
 interactivity: {
@@ -465,13 +469,12 @@ tsParticles.load("tsparticles", {
 ![Particles Interactivity](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Application Example
-The end product is to be able to apply the particle background on your website. The example below shows a login form floating  over a particle's background.
+Next we will go over how to apply the end product (particle background) onto your website. The example below shows a login form floating over the particle's background.
 
 #### Files Setup:
+##### App.css
 
-##### `App.css`
-
-```css
+```CSS
 html {
     height: 100%;
     overflow: hidden;
@@ -620,7 +623,7 @@ select:-webkit-autofill {
 }
 ```
 
-##### `Index.html`
+##### Index.html
 
 ```html
 <!DOCTYPE html>
@@ -675,9 +678,9 @@ select:-webkit-autofill {
 </html>
 ```
 
-##### `App.js`
+##### App.js
 
-```js
+```JS
 tsParticles.load("tsparticles", {
   particles: {
     number: {
@@ -762,6 +765,12 @@ tsParticles.load("tsparticles", {
 [***Sample source***](https://codepen.io/matteobruni/pen/xxGXELa)
 
 ### Final Notes
-Tsparticle is a cool library that you should give a try in your next JavaScript project. It provides you fancy backgrounds that will make your user enjoy interacting with your web apps. We have covered simple grounds. Consider looking at [tsparticles codepen](https://codepen.io/matteobruni/pens/popular) sample examples and their [official docs](https://particles.matteobruni.it/docs/). This will give more examples to interact with as you try to manipulate and play with tsparticles values. Remember to check out how to use tsparticle with your favorite [Javascript framework](https://tsparticles.matteobruni.it/).
+Tsparticle is a cool library that you should try in your next JavaScript project. It provides fancy backgrounds that will make your user enjoy interacting with your web apps.
 
-Tspartcle borrows its concept from [Particle.js](https://github.com/VincentGarreau/particles.js/). If you had previously done a project with Particle.js, check out [how to migrate to tsparticle](https://dev.to/matteobruni/migrating-from-particles-js-to-tsparticles-2a6m) and enjoy more updated features. If you enjoy building WordPress websites, this [article](https://www.elementoraddons.com/tutorial/add-particles-background-to-sections-in-elementor-page-builder/) will help you add tsapatcles to your WordPress blogs.
+Consider looking at the [tsparticles codepen](https://codepen.io/matteobruni/pens/popular) examples and their [official docs](https://particles.matteobruni.it/docs/). This will give you more examples to interact with as you try to manipulate and play with other tsparticles values.
+
+Remember to check out how to use tsparticle with your favorite [Javascript framework](https://tsparticles.matteobruni.it/).
+
+Tspartcle borrows its concept from [Particle.js](https://github.com/VincentGarreau/particles.js/). If you had previously worked on a Particle.js project, check out [how to migrate to tsparticle](https://dev.to/matteobruni/migrating-from-particles-js-to-tsparticles-2a6m) and enjoy the more updated features.
+
+  If you enjoy building WordPress websites, this [article](https://www.elementoraddons.com/tutorial/add-particles-background-to-sections-in-elementor-page-builder/) will help you add tsapatcles to your WordPress blogs.
