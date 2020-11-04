@@ -122,7 +122,7 @@ for(variable of iterable) {
 }
 ```
 
-`For-in` also works with arrays as it uses the index of each value in the array. The following example sample the results difference of `for-in` and `for-of` to iterate over array elements.
+`For-in` also works with arrays as it uses the index of each value in the array. The following example shows the results difference of `for-in` and `for-of` to iterate over array elements.
 
 ```js
 let arr = [1, 3, 5, 7, 9];
@@ -160,7 +160,7 @@ for (let number of arr) {
 ```
 
 ### For Each
-It executes a provided function once for each array element in ascending order. When it comes to looping through arrays `for-each` function is ideal, it is just simple to use.
+It executes a provided function once for each array element in ascending order. When it comes to looping through arrays `for-each` function is ideal, it is simple to use.
 
 ```js
 const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
@@ -169,9 +169,7 @@ const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 })
 ```
 
-The callback function execute the first element in the array then the second to the last element in the array.
-
-You can rewrite the function using the arrow function, as shown below.
+The callback function executes the first element in the array then the second to the last element in the array. You can rewrite the function using the arrow function, as shown below.
 
 ```js
 const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
@@ -180,7 +178,7 @@ const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 })
 ```
 
-`For-each` reference to a callback function once. The callback function calls every single array elements in order.
+`For-each` references to a callback function once. The callback function calls every single element in the array in order.
 
 ```js
 array.forEach(callback (currentValue, index, array) {
@@ -220,9 +218,7 @@ const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 
 - `ThisArg` - an optional parameter that holds the context `this` to passed when executing the callback function.
 
-`For-each` is deal to iterate over array elements without breaking the array list. It executes each array element simultaneously without side effects such as mutability of the scope variable. It is not chainable and always return an undefined value.
-
-`For-each` is a high order function. If you are interested in learning more, head out to this [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
+`For-each`'s deal is to iterate over array elements without breaking the array list. It executes each array element simultaneously without side effects such as mutability of the scope variable. It is not chainable and always returns an undefined value. It is also a high order function. If you are interested in learning more, head out to this [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 ### Nested Loops
 A code block that has a loop inside another loop is called a nested loop.
@@ -240,18 +236,19 @@ for (let i = 0; i < 5; i++) {
 ### Loops Break and Continue
 
 #### Break Statement
-A break identifier terminates an iterating loop. I.e. the below examples closes a loop that iterates over array elements. The loop terminates when iteration finds an index of a specified value.
+A break identifier terminates an iterating loop, i.e, the below examples closes a loop that iterates over array elements. The loop terminates when iteration finds an index of a specified value.
 
 ***Example 1***
 
 ```js
 const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
   for (let i = 0; i <animals.length; i++) {
-  if (animals[i]==="wolf") break;
-console.log(`index:${i}, value: ${animals[i]}`)}
+    if (animals[i]==="wolf") break;
+    console.log(`index:${i}, value: ${animals[i]}`)
+}
 ```
 
-The loop terminates when the index value of the animals array is equal to `wolf`. The loop will impatiently stop after testing the value `wolf`. This means that the loop will not print the `wolf` in the console.
+The loop terminates when the index value of the animals array is equal to `wolf`. The loop will stop after testing the value `wolf`. This means that the loop will not print the `wolf` in the console.
 
 ***Example 2***
 Break a `while` loop when the loop value is `3`.
@@ -260,20 +257,16 @@ Break a `while` loop when the loop value is `3`.
 let n = 0;
 while (n < 10) {
   if (n ==3 )
-  break;
+    break;
   n++;
   console.log(n)
 }
 ```
 
-The `while` loop will stop when the loop value is equal to `3`. Unlike `For` loop, the breakpoint value `3` will be included in the log message before the iteration stops.
-
-`While` loops execute the condition `(n < 10)` before executing the statement. `While` loop executes a statement only when the condition is true. When the statement is invoked the `while` control the loop by retesting the condition again until `n == 3` become false.
+The `while` loop will stop when the loop value is equal to `3`. Unlike `For` loop, the breakpoint value `3` will be included in the log message before the iteration stops. `While` loops execute the condition `(n < 10)` before executing the statement. `While` loop executes a statement only when the condition is true. When the statement is invoked the `while` controls the loop by retesting the condition again until `n == 3` become false.
 
 ### Continue Statement
-Break a loop, check a specified condition, and then proceed to the next iteration until the loop condition expression returns false. The loop skips a value specified in the continue statement condition.
-
-For example, to loop over some numbers and get the even numbers, we need a continue statement to break the loop whenever we iterate odd numbers.
+Break a loop, check a specified condition and then proceed to the next iteration until the loop condition expression returns false. The loop skips a value specified in the continue statement condition. For example, to loop over some numbers and get the even numbers, we need a continue statement to break the loop whenever we iterate odd numbers.
 
 ``` js
 for (let i = 1; i < = 10; i++){
@@ -282,14 +275,12 @@ for (let i = 1; i < = 10; i++){
 }
 ```
 
-Every time `i` iterates, it will check the value, and if the value is an odd number, the loop will break and test the next value. Continue will loop the current iteration and continue as long as `i` is an even number until `i <= 10` is met.
+Every time `i` iterates, it will check the value and if the value is an odd number, the loop will break and test the next value. `Continue` will loop the current iteration and continue as long as `i` is an even number until `i <= 10` is met.
 
-***Note***: there is no way to break out of `for each` loop.
+***Note: there is no way to break out of `for each` loop.***
 
 ### Labeled Loop Statement
-A label identifies a loop. It is simply naming a loop or a block of code in JavaScript. A label statement can be added inside a loop as an identifier to interrupt the iteration execution. These statements are called labels. That label will then be used to refer to the code later.
-
-For example, to add `myloop` label to a loop block, add a semicolon to the end of the label name as shown below.
+A label identifies a loop. It is simply naming a loop or a block of code in JavaScript. A label statement can be added inside a loop as an identifier to interrupt the iteration execution. These statements are called labels. That label will then be used to refer to the code later. For instance, to add `myloop` label to a loop block, add a semicolon to the end of the label name as shown below.
 
 ```js
 myloop:
@@ -330,7 +321,7 @@ In the above example:
 ### Speed Comparison
 We will traverse through an array using one array method with the same arrays size and an equal number of iterations to compare each loop's execution time. To get desirable results, we will use different test methods.
 
-#### Using .time ( ) and .timeEnd () Functions
+#### Using .time() and .timeEnd() Functions
 
 ```js
 //number of iterations
@@ -572,7 +563,7 @@ console.log(Object.entries(values).sort((a, b) => {
 ]
 ```
 
-This is a more transparent result. Again the old `for` loop dominates the loops list. `Do-while` and `while` still have a comparable performance. I included `for-in` in this example. It seems to take the longest time to finish the loops. Unlike the other loops (logs the array values), `for-in` logs the index of the array element. This makes it slow. For in is specially reserved to loops through an unspecified number of object properties.
+This is a more transparent result. Again the old `for` loop dominates the loops list. `Do-while` and `while` still have a comparable performance. I included `for-in` in this example. It seems to take the longest time to finish the loops. Unlike the other loops (logs the array values), `for-in` logs the index of the array element. This makes it slow. `For in` is specially reserved to loops through an unspecified number of object properties.
 
 The way you write a loop statements has a slight difference in iteration performance. For example, using the fast `for` loop, we can derive the following statements.
 
