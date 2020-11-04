@@ -1,5 +1,25 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/android-recyclerviews/
+title: Android Recyclerviews
+description: This article goes through
+author: linus-muema
+date: 2020-11-04T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/android-recyclerviews/hero.jpg
+    alt: Android recyclerviews image
+---
+In android, it is common to display a list of data. With more data to be presented, developers have come with Compound Views to aid in displaying data. It has not been an easy task since most of the data is received dynamically.
+<!--more-->
 #### Android RecyclerViews
-In android, it is common to display a list of data. With more data to be presented, developers have come with Compound Views to aid in displaying data. It has not been an easy task since most of the data is received dynamically. Dynamic data includes data from a network or local database. Again comes the problem of resource management. Loading vast amounts of data into normal views can lead to high CPU usage. This, in turn, leads to the operating system forcibly shutting down the application. That is where ListViews came in handy. They were able to load text-based data to a Compound view using an adapter to ensure efficiency. However, they did not address all the problems encountered. They did not allow the addition of other views to the Compound view. Developers needed to write extra code to facilitate the addition of other Views. Again they were not very efficient in resource management. Having many ListViews in the application still showed high CPU usage. RecyclerViews addressed these issues and brought in other advantages:
+ Dynamic data includes data from a network or local database. Again comes the problem of resource management. Loading vast amounts of data into normal views can lead to high CPU usage. This, in turn, leads to the operating system forcibly shutting down the application.
+
+That is where ListViews came in handy. They were able to load text-based data to a Compound view using an adapter to ensure efficiency. However, they did not address all the problems encountered. They did not allow the addition of other views to the Compound view. Developers needed to write extra code to facilitate the addition of other Views. Again they were not very efficient in resource management. Having many ListViews in the application still showed high CPU usage. RecyclerViews addressed these issues and brought in other advantages:
 
 1. *_flexibility_* - with recyclerviews, you can create custom layouts for each of the list items. You can also define the orientation and placement of the items.
 2. *_animations_* - listviews had no support for animating the list items. Recyclerviews have the ItemAnimator class, which helps to animate the list items
@@ -165,7 +185,9 @@ fun bind(user: User) {
 }
 ```
 
-And here is where the name `RecyclerView` comes from. You see, we created the views using onCreateViewHolder. The recyclerView does not create a view for every item on our list. What happens is that it creates views that can fit onto the screen's viewport only and recycles them. Let's assume the device can accommodate five views and our data has ten items. The recyclerView creates five views to hold the first five pieces of data. Once a user starts scrolling, the items that move out of the screen are cleared from their views. The recyclerview uses these views to display the incoming set of data. So when the item at position 1 goes out of the screen, it is removed from the view. The recyclerview uses the now empty view to display the item at position 6 visible on the screen. This forms a recycling cycle that ensures all data is displayed well, and we don't create extra views. It also ensures the application does not drain the operating system's resources by creating many views that we do not use.
+And here is where the name `RecyclerView` comes from. You see, we created the views using onCreateViewHolder. The recyclerView does not create a view for every item on our list. What happens is that it creates views that can fit onto the screen's viewport only and recycles them. Let's assume the device can accommodate five views and our data has ten items. The recyclerView creates five views to hold the first five pieces of data. Once a user starts scrolling, the items that move out of the screen are cleared from their views. The recyclerview uses these views to display the incoming set of data.
+
+So when the item at position 1 goes out of the screen, it is removed from the view. The recyclerview uses the now empty view to display the item at position 6 visible on the screen. This forms a recycling cycle that ensures all data is displayed well, and we don't create extra views. It also ensures the application does not drain the operating system's resources by creating many views that we do not use.
 
 The last part is now connecting the recyclerView to the adapter. Add the following code to the `onCreate` method in the `MainActivity.kt` file.
 
@@ -180,4 +202,6 @@ We get the recyclerview by the id we used in the layout file. We use the `apply`
 ![RecyclerView](/engineering-education/android-recyclerviews/recyclerview.jpg)
 
 #### Conclusion
-That's just the basics of android recyclerviews. There are more methods like notifyDataSetChanged, which help us to manage our recyclerviews. Android developers have extensively adopted RecyclerViews, and learning how to use them is a great advantage. You should ensure to manage your lists of data by making use of recyclerviews. You can go ahead and try out the other layout managers to see how they work and perform. You can find the entire code for this tutorial on [Github](https://github.com/LinusMuema/kotlin/tree/recyclerviews) or install a sample application from [Google Drive](https://drive.google.com/file/d/1Nn8xiTcNCk7wlbygPbjxGwW-9ScPUJtr/view?usp=sharing)
+That's just the basics of android recyclerviews. There are more methods like notifyDataSetChanged, which help us to manage our recyclerviews. Android developers have extensively adopted RecyclerViews, and learning how to use them is a great advantage. You should ensure to manage your lists of data by making use of recyclerviews.
+
+You can go ahead and try out the other layout managers to see how they work and perform. You can find the entire code for this tutorial on [Github](https://github.com/LinusMuema/kotlin/tree/recyclerviews) or install a sample application from [Google Drive](https://drive.google.com/file/d/1Nn8xiTcNCk7wlbygPbjxGwW-9ScPUJtr/view?usp=sharing)
