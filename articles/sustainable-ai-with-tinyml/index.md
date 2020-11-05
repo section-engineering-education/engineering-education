@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/sustainable-ai-with-tinyml/hero.jpg
     alt: tiny machine learning image
 ---
-Tiny machine learning is at an intersection of embedded devices and machine learning. It is being touted as "the next AI revolution". However, the carbon footprint of AI has been increasing with the evolution of AI. There is a need for more energy-efficient computing. This is one of the challenges TinyML can address.
+Tiny machine learning is at an intersection of embedded devices and machine learning. It is being touted as *the next AI revolution*. However, the carbon footprint of AI has been increasing with the evolution of AI. There is a need for more energy-efficient computing. This is one of the challenges TinyML can address.
 <!--more-->
 ### Table of contents
 This article will be covering the following:
