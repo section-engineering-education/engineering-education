@@ -87,7 +87,7 @@ After gradle syncs, open the `activity_main.xml` file and add the code below.
 
 This code adds the RecyclerView XML view. We give it an ID of `recyclerview` that we'll use as a reference in the activity. We also add `app:layoutManager` to set a layout manager to our recyclerView.
 
-We can do this using Kotlin as well. Since we need the basic Vertical ListView form, we use `LinearLayoutManager`. We have three layout managers that we can use. You can learn more about them in their documentation.
+We can do this using Kotlin as well. Since we need the basic Vertical ListView form, we use `LinearLayoutManager`. We have three layout managers that we can use. You can learn more about them in their [documentation](https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.LayoutManager).
 
 Next up, we will create the list item layout. It will be a blueprint that the recyclerview will use to draw our list items. All items in the recyclerview will take the layout's form.
 
