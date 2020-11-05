@@ -179,7 +179,7 @@ Other implementations of TinyML loosely related to smart farming and agriculture
 
 This could be used to determine a pets' diet and diet frequency. The same perspective can be applied to a smart-garden irrigation system. It would take various factors-such as light intensity, humidity, plant health and type, and perhaps the water quantity available-into consideration before deciding when and how to carry out irrigation.
 
-### Winding Up
+### Wrapping up
 To ensure we improve the quality of life of future generations, we need to have environmental sustainability at the forefront of our efforts. Tiny Machine Learning is good for the planet. It offers us a chance to continue evolving artificial intelligence. It also encourages us to reduce our carbon footprint through the use of truly intelligent energy-efficient devices.
 
 Besides sustainability, we have seen that it also opens up many opportunities for innovation and development in many sectors. The benefits of reducing the cost of devices, lowering latency, and improving data security. Considering all this, tiny machine learning is the sustainable future of machine learning. It truly has the potential to become the next artificial intelligence revolution.
