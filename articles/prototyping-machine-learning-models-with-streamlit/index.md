@@ -20,7 +20,7 @@ Streamlit is an Open source python framework that enables developers to demo or 
 The installation is very simple, just run this on your command prompt or terminal
 
 ```python
-Pip install streamlit
+pip install streamlit
 Streamlit hello
 ```
 To import it, use the simple
@@ -36,19 +36,19 @@ And to run your streamlit app simply use
 Streamlit run app.py
 ```
 #### Building Sentiment Analyzer
-Now for this introductory tutorial, we will be building a sentiment analyzer model and prototype it with streamlit. The first step will be getting a Dataset, and the dataset we will be using can be found HERE, next let’s create a directory and create a virtual environment.
+Now for this introductory tutorial, we will be building a sentiment analyzer model and prototype it with streamlit. The first step will be getting a Dataset, and the dataset we will be using can be found [HERE](https://drive.google.com/drive/folders/1wk0hkrRhxe6t5g390g5V5O-CUcRB6BZC?usp=sharing), next let’s create a directory and create a virtual environment, open you terminal or command prompt and type in the code below.
 
 ```python
 $ mkdir textanalyzer
 $ cd textanalyzer
 ```
-Now to create the Virtual environment use the code below
+Now to create the Virtual environment use the code below to isolate the environment for this project
 
 ```python
 $ python3.8 -m venv env
 $ source env/bin/activate
 ```
-Now copy the dataset as it is in the folder and paste it into this textanalyzer directory, now create a file and save it as sentiment_analyzer, this will be where we will be writing our code to build the streamlit app. The next thing will be to import all the packages we will be using for this tutorial.
+The first line of code creates the virtual environment while the second activate it. Now copy the dataset as it is in the folder and paste it into this textanalyzer directory, now create a file and save it as sentiment_analyzer, this will be where we will be writing our code to build the streamlit app. The next thing will be to import all the packages we will be using for this tutorial.
 
 ```python
 import streamlit as st
@@ -66,7 +66,8 @@ st.title("Sentiment Analyzer Based On Text Analysis ")
 st.subheader("Paras Patidar - MLAIT")
 st.write('\n\n')
 ```
-The next step will be to write a function that will get all the data from our directory and bring them up,
+The next step will be to write a function that will get all the data from our directory and bring them up, your directory should look like
+![Simple](https://github.com/jamessandy/engineering-education/blob/new-article/articles/prototyping-machine-learning-models-with-streamlit/img1.jpg)
 
 ```python
 @st.cache
@@ -148,7 +149,7 @@ def training_step(data,vectorizer):
 
     return BernoulliNB().fit(training_text,training_result)
 ```
-The next step will be passing the training and evaluation data into the *preprocessing_step* function, choosing a vectorizer( In this case we will be using CountVecotizer), and finally, a classifier variable that will call the *training_step* function and pass in the training_data and vectorizer.
+The next step will be passing the training and evaluation data into the *preprocessing_step* function, choosing a vectorizer( In this case we will be using CountVecotizer), and finally, a classifier variable that will call the *training_step* function and pass in the training_data and vectorizer. And the last line uses BernoulliNB which is a Naives bayes model it predicts the probability of the input being classified for all the classes and is used for text classification with the 'Bag of words' model, we then fit our *training_text* and *training_result* into it.
 
 ```python
 training_data,evaluation_data = preprocessing_step()
@@ -181,5 +182,11 @@ The codes above use streamlit *st.text_input* to create a text input form that w
 ```python
 streamit run textanalyzer.py
 ```
+This is what your should run on your terminal 
+![Simple](https://github.com/jamessandy/engineering-education/blob/new-article/articles/prototyping-machine-learning-models-with-streamlit/img2.jpg)
+
+And your application should look like
+![Simple](https://github.com/jamessandy/engineering-education/blob/new-article/articles/prototyping-machine-learning-models-with-streamlit/img3.jpg)
+
 #### Conclusion
 If you have followed the process carefully you will see how fun and easy it is to prototype your machine learning models with streamlit and save yourself a whole lot of stress. You can explore more advanced examples and maybe take this project forward by deploying it on Heroku or any other platform.
