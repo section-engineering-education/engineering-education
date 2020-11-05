@@ -13,8 +13,10 @@ images:
   - url: /engineering-education/introduction-to-reinforcement-learning/hero.png
     alt:
 ---
+
 This article will serve as an introduction to Reinforcement Learning(RL). According to [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning), RL is a sub-field of Machine Learning (ML). That is concerned on how [agents](https://en.wikipedia.org/wiki/Software_agent) take actions in an environment to maximize a cumulative reward.
 <!--more-->
+
 ### Table of Contents
 1. Pre-requisites
 2. Introduction
@@ -59,7 +61,7 @@ This is an simple example of a reinforcement learning problem.
 *[Image Source: Springer Link](https://link.springer.com/chapter/10.1007/978-981-15-4095-0_2)*
 
 ### Most used Reinforcement Learning Algorithm
-There are a couple of popular RL algorithms used in solving problems today. They include Q-learning, [Policy Gradients (PG)](/https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf/), and [Actor-Critics](/https://papers.nips.cc/paper/1786-actor-critic-algorithms.pdf/).
+There are a couple of popular RL algorithms used in solving problems today. They include Q-learning, [Policy Gradients (PG)](https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf/), and [Actor-Critics](https://papers.nips.cc/paper/1786-actor-critic-algorithms.pdf/).
 
 We will be going through these algorithms in a bit more depth.
 
@@ -150,7 +152,7 @@ Some typical use cases of AC models are in the fields of biology and psychology.
 #### Games
 The use of AI in computer games has been on the increase over the past couple of years.
 
-In 2016, Deepmind Technologies built [AlphaGo](/https://deepmind.com/research/case-studies/alphago-the-story-so-far/). An RL controlled computer program that plays the board game, Go (an ancient Chinese board game). 
+In 2016, Deepmind Technologies built [AlphaGo](https://deepmind.com/research/case-studies/alphago-the-story-so-far/). An RL controlled computer program that plays the board game, Go (an ancient Chinese board game). 
 AlphaGo contains two networks:
 1. A Policy Network which is trained on high level games to immitate the best players. 
 2. A Value network which evaluates the current board position and establishes the probability of winning in that position.
@@ -159,13 +161,13 @@ The computer program was able to beat Lee Sedol, a human professional Go champio
 
 Later versions of AlphaGo such as AlphaGo Zero and MuZero became even more powerful. They were completely self-taught using RL. This was significant as they were learning to play games without being taught the game rules.
 
-For a deeper understanding of the AlphaGo story, watch its [full documentary](/https://www.youtube.com/watch?v=WXuK6gekU1Y&t=788s/)
+For a deeper understanding of the AlphaGo story, watch its [full documentary](https://www.youtube.com/watch?v=WXuK6gekU1Y&t=788s/)
 
 #### Robotics
 In industries, RL-controlled robots are used to perform various tasks. 
 
 For example, at Google's DeepMind, they developed an AI powered recommendation system. This system was meant to improve the energy efficiency of their data centre.
-An AI robots was given control over their data center in order to manage part of its [cooling infrastructure](/https://deepmind.com/blog/article/safety-first-ai-autonomous-data-centre-cooling-and-industrial-control/).
+An AI robots was given control over their data center in order to manage part of its [cooling infrastructure](https://deepmind.com/blog/article/safety-first-ai-autonomous-data-centre-cooling-and-industrial-control/).
 
 The AI robots exploits the RL technique, a similar approach to that used in AlphaGo, AlphaGo Zero and MuZero. This is by learning through trial and error.
 
@@ -180,14 +182,14 @@ The use of AI robots in their data center led to a decrease in energy spending b
 #### Trading and Finance
 RL agents are used to predict stock prices as well as predicting future sales. They can decide on whether to buy, hold or sell a particular stock.
 
-Horizon's [Active AI Global ETF](/https://www.horizonsetfs.com/etf/mind/) & EquBot's [AI based ETF](/https://equbot.com/) are examples of RL softwares used in trade and finance.
+Horizon's [Active AI Global ETF](https://www.horizonsetfs.com/etf/mind/) & EquBot's [AI based ETF](https://equbot.com/) are examples of RL softwares used in trade and finance.
 
-Another great example is the IBM’s [financial trading platform](/https://www.ibm.com/blogs/research/2020/07/ibm-research-at-icml-2020/) which uses a RL agent for trading. It computes a reward based on the profit or losses made in every financial transaction.
+Another great example is the IBM’s [financial trading platform](https://www.ibm.com/blogs/research/2020/07/ibm-research-at-icml-2020/) which uses a RL agent for trading. It computes a reward based on the profit or losses made in every financial transaction.
 
 ### Final Thoughts
 Reinforcement Learning is one of the most important subfield of Artificial Intelligence. Hopefully, this article has made you curious to dive deep into Reinforcement Learning.
 
-If Machine Learning is still new to you, feel free to [download and read this e-book on Machine Learning](/https://books.google.co.ke/books?hl=en&lr=&id=u8OWDwAAQBAJ&oi=fnd&pg=PR6&dq=introduction+to+machine+learning&ots=huhHR1ZCOT&sig=9hlNXYWvRqWRJgY_6P_QurJn3ac&redir_esc=y#v=onepage&q=introduction%20to%20machine%20learning&f=false/).
+If Machine Learning is still new to you, feel free to [download and read this e-book on Machine Learning](https://books.google.co.ke/books?hl=en&lr=&id=u8OWDwAAQBAJ&oi=fnd&pg=PR6&dq=introduction+to+machine+learning&ots=huhHR1ZCOT&sig=9hlNXYWvRqWRJgY_6P_QurJn3ac&redir_esc=y#v=onepage&q=introduction%20to%20machine%20learning&f=false/).
 
 ### References
 1.	Kaelbling, L. P., Littman, M. L., & Moore, A. W. (1996). Reinforcement learning: A survey. Journal of artificial intelligence research, 4, 237-285.
