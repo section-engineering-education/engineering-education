@@ -1,11 +1,11 @@
 ﻿
 ## List transformations in JavaScript
 
-In this tutorial, we will be looking at creating new objects and arrays from existing ones. We will look at creating nested data structures, looping and destructuring them. We will also look at transforming data structures by passing them through functions. 
+In this tutorial, we will be looking at creating new objects and arrays from existing ones. We will look at creating nested data structures, looping, and destructuring them. We will also look at transforming data structures by passing them through functions. 
 
 ### Prerequisites
 
-To follow through this tutorial, you are required to have at least some knowledge in JavaScript [objects and arrays](https://www.section.io/engineering-education/object-arrays-destructuring/).
+To follow through with this tutorial, you are required to know JavaScript [objects and arrays](https://www.section.io/engineering-education/object-arrays-destructuring/).
 
 By the end of this tutorial, you will be able to:
 - Nest objects and arrays.
@@ -31,7 +31,7 @@ const cars = {
 }
 ```
 We create an object `cars` and nest an array `brands` inside it. We also add 2 objects inside the `brands` array.
-Nesting can also be done using either the dot notation or square bracket notation where necessary.
+Nesting can also be done using either the dot notation or square bracket notation where applicable.
 ```javascript
 const cars = {};
 
@@ -48,7 +48,7 @@ cars.brands[1] = {
 ```
 The above code:
 1. Creates an object `cars`.
-2. Creates an empty list `brands` inside the `cars` object.
+2. Creates an empty list `brands` inside the `cars` object using dot notation.
 3. Using the [`push()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) method, adds an object with the properties `name` and `origin` inside `brands`.
 4. Using the square notation adds another object at index 1.
 
@@ -60,7 +60,6 @@ var car1 = cars.brands[0];
 
 console.log(car1); //{ name: "Ford", origin: "USA"}
 ```
-Dot notation can't be used above as the indices of an array are numeric and the dot notation only accepts strings.
 
 We can also access the `name` property of the first object of the `brands` array using the dot notation.
 ```javascript
@@ -84,10 +83,10 @@ allCars(cars.brands);
 ```
 In the code above:
 1. We declare a function `allCars()` with a parameter `brands`.
-2. Inside it we create a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) that loops through `brands` and logs them.
+2. Inside it, we create a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) that loops through `brands` and logs them.
 3. We call the function `allCars()`and pass an argument `cars.brands`.
 
-### Looping through nested objects using a `for()` loop
+### Accessing nested objects properties using a `for()` loop
 
 We can get common properties in nested objects using a for loop. Let us log all the `name` properties of the nested brand objects.
 
@@ -128,14 +127,14 @@ everything(cars.brands);
 ```
 In the above code:
 1. We declare a function `everything()` with a parameter `brands`.
-2. Inside it, we create a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) that loops through all the items in the `brands` array.
-3. Inside it, we create a [`for ...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop that loops through all the object properties.
+2. Inside `everything()`, we create a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) that loops through all the items in the `brands` array.
+3. Inside the `for()` loop, we create a [`for ...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop that loops through all the object properties.
 The for-in loop, assigns each [enumerable property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) of the object to the variable `key` and then logs it.
 4. We call the function `everything()` and pass an argument `cars.brands`.
 
 ### Destructuring a nested data structure
 
-Destructuring can be used to extract data from nested objects and arrays. We can extract the two `brands` objects we created earlier into two new variables.
+Destructuring can be used to extract data from nested objects and arrays. We can extract the two `brands` objects we created earlier and assign them to new variables.
 ```javascript
 const {
   brands: [
@@ -146,7 +145,7 @@ const {
 
 console.log(brand1, brand2); //{name: 'Ford', origin: 'USA'} {name: 'Toyota', origin: 'Japan'}
 ```
-We can also extract the `name` and `origin` properties of the **first** `brands` array.
+We can also extract the `name` and `origin` properties of the **first** object in the `brands` array.
 ```javascript
 const [
     {
@@ -157,7 +156,9 @@ const [
 
 console.log(name, origin) //Ford USA
 ```
-We can also extract all the `name` and `origin` properties of the `brands` array.
+We extract the `name` and `origin` properties into variables `name` and `origin`.
+
+We can also extract all the `name` and `origin` properties of the objects in the `brands` array.
 
 ```javascript
 const [
@@ -173,12 +174,15 @@ const [
 
 console.log(name, name1, origin, origin1); //Ford Toyota USA Japan
 ```
+In the code above:
+- We extract the `name` and `origin` properties of the first object into variables `name` and `origin`.
+- We assign the individual object properties to new variable names `name1` and `origin1`. 
 
-We assign the individual object properties to new variable names. We use destructuring to assign the value of the property on the left side (`name`) to the variable on the right side (`name1`). You can learn more about destructuring [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+We use destructuring to assign the value of the property on the left side (`name`) to the variable on the right side (`name1`). You can learn more about destructuring [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 ## Step 2 -- List transformations with functions
 
-We can create new objects and arrays by passing existing data structures through functions. Let's create a function that takes in array and transforms it to create a new array.
+We can create new objects and arrays by passing existing data structures through functions. Let's create a function that takes in an array and transforms it to create a new array.
 ```javascript
 function splitName(name) {
     return {
