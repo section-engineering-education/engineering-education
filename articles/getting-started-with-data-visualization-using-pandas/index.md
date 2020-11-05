@@ -5,22 +5,24 @@
 **Data Visualization** is the graphical representation of the data, it is both an art and a science. Nowadays images speak louder than words, and the main use of it is to discover the unknown facts and the reasons for a specific result. Yale professor [Edward Tufte](https://www.edwardtufte.com/tufte/) believes that excellent data visualizations consist of ‘complex ideas communicated with clarity, precision, and efficiency.’
 
 #### Why should you learn data visualization?
-Today more than any day ever, organizations are using computer technologies to do **data visualization** in order to make better decisions. **data visualization** is changing the way we make sense of the information to create value out of it, it discovers new patterns and spot trends.
+Today more than any day ever, organizations are using computer technologies to perform **data visualization** in order to make better decisions. **Data visualization** is changing the way we make sense of the information to create value out of it, it discovers new patterns and spot trends.
 
-In this tutorial we will go through how to implement different types of plots and charts then we will build a simple app to better understand the need for data visualization.
+In this tutorial we will go through how to implement different types of plots and charts. Then we'll build a a simple app to better understand the need for data visualization.
 
 ### Prerequisites
 Before we dive right in, the reader would need to have the following:
 
 - Good understanding of **Python** programming language.
-- Basic understanding of **pandas** library and **data analyzing**, you can start with our tutorial [here](https://www.section.io/engineering-education/data-analytics-using-pandas/).
+- Basic understanding of **pandas** library and **data analysis**, you can start with our tutorial [here](https://www.section.io/engineering-education/data-analytics-using-pandas/).
 - **Jupyter notebook** which you can download form [here](https://jupyter.org/install).
 
 ### Importing the Dataset
 In this tutorial, we are going to use the "Red Wine Quality" dataset which you can download for free from [here](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009).
 After unzipping the file you have to create the python file in the same folder of that dataset.
 
-Now after importing the dataset, and doing **data analyzing** for it as we saw in our [first tutorial](https://www.section.io/engineering-education/data-analytics-using-pandas/#prerequisites) we are going to visualize that data, even if you don't want to go through our [first tutorial](https://www.section.io/engineering-education/data-analytics-using-pandas/#prerequisites) and you already know **data analyzing** you can follow up with this tutorial.
+After importing the dataset, and perform data analysis on it, we will visualize that data. For more information on the data analysis you can start [here](https://www.section.io/engineering-education/data-analytics-using-pandas/).
+
+Even if you don't want to go through our [first tutorial](https://www.section.io/engineering-education/data-analytics-using-pandas/#prerequisites) and you already know **data analysis** you can follow up with this tutorial.
 
 ```python
 import pandas as pd
@@ -28,7 +30,7 @@ import pandas as pd
 data = pd.read_csv("winequality-red.csv")
 ```
 ### Scatter Plot
-In order to know how much one variable is affected by another one, we have to use **scatter Plot** which makes points on a horizontal and a vertical axis.
+In order to know how much one variable is affected by another one, we have to use **Scatter Plot** which makes points on a horizontal and a vertical axis.
 
 To create a scatter plot we have to call ```plot.scatter()``` and pass three arguments to it:
 1. The X-column.
@@ -43,6 +45,8 @@ The result will be the following plot:
 ![](/engineering-education/getting-started-with-data-visualization-using-pandas/scatter_plot.PNG)
 
 ### Histogram
+The Histogram is providing the frequency distribution of a data set for you. Histograms are one of the most frequently used methods for charting historical data. It was first introduced by [Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson) To construct a histogram.
+
 Now in order to make a histogram, we will use the first five values of the "free sulfur dioxide" column in our dataset for the x-axis and the y-axis will be the number of the values in the x-axis.
 
 ```python
@@ -78,7 +82,7 @@ The result will be:
 
 ### Bar Chart
 When you have comparative data, the bar chart is the best choice to use, these bars can be displayed horizontally or vertically and it is very easy to implement.
-Let's make a bar chart with our "total sulfur dioxide" column.
+Let's make a vertical bar chart with our "total sulfur dioxide" column.
 
 ```python
 data['total sulfur dioxide'].head().plot.bar() 
@@ -86,6 +90,28 @@ data['total sulfur dioxide'].head().plot.bar()
 The result will be:
 
 ![](/engineering-education/getting-started-with-data-visualization-using-pandas/bar.PNG)
+
+If we want to make it horizontal we just have to change our code to:
+
+```python
+data['total sulfur dioxide'].head().plot.barh() 
+```
+
+Let's create a compound horizontal bar chart. In this example we will learn how to input data manually:
+
+```python
+index = ["USA", "Germany", "France", "UK"]
+dataFrame = pd.DataFrame(data = {"Growth rate": [7, 1.6, 1.5, 6.2],
+                       "Inflation rate":[3.2, 3.4, 4.5, 2.7]})
+dataFrame.index = index
+dataFrame.plot.barh(title="Inflation and Growth of the countries")
+```
+The compound horizontal bar chart is created for two variables, for each one a horizontal bar is drawn in the corresponding category.
+The dataframe index allows you to put strings instead of numeric values in the axis.
+
+Our chart now will be:
+
+![](/engineering-education/getting-started-with-data-visualization-using-pandas/hbar.PNG)
 
 Now after learning the basics of **data visualization**, we are going to build a simple real-life app to let you get the idea better.
 ### Let's code!
@@ -107,7 +133,7 @@ ax.set_xticklabels(data.name)
 ```
 Then we choose the "name" column in the dataset to be the label for the x-axis.
 
-The most important thing now is to save the result with high resolution in order to check it whenever you want, by using the ```savefig(filename)``` method.
+We use ```savefig(filename)``` to save a high-resolution file on the local system. Saving it locally ensures easier and faster access to the results.
 ```python
 ax.figure.savefig("output.pdf")
 ```
@@ -116,9 +142,15 @@ After running our code you will see the following chart:
 
 ![](/engineering-education/getting-started-with-data-visualization-using-pandas/protein_all.png)
 
-As a result, we can know that "Cheerios" and "Special K" brands have a higher value of protein among any brand in our dataset, and we can recommend it to the athletes who want a high amount of protein. You can do the same process above to know the brands which have higher carbo values in order to prevent people who want to lose weight from eating it.
+As a result, we conclude that "Cheerios" and "Special K" brands have a higher value of protein among any brand in our dataset, and we can recommend it to the athletes who want a high amount of protein. 
+
+You can do the same process above to know the brands which have higher carbo values in order to prevent people who want to lose weight from eating it.
 
 ### Wrapping up
-Data is a hot topic, people are buying and wearing T-shirts saying "Data Nerd" or "Data is the new bacon", it is true and you can search for it. In the digitalization era data changed from being expensive and hard to collect to cheap and difficult to understand, huge amount of data in big companies like "Google", "Facebook" are waiting to be analyzed and taking advantage of, if it is correctly processed it may be digital gold, and here where **data visualization** comes into play, it is now the most important field after **data analyzing** in the **data science** industry.
+Data is a hot topic, people are buying and wearing T-shirts saying "Data Nerd" or "Data is the new bacon", it is true and you can search for it. 
+
+In the digitalization era data changed from being expensive and hard to collect to cheap and difficult to understand.
+
+Huge amount of data in big companies like "Google", "Facebook" are waiting to be analyzed and taking advantage of, if it is correctly processed it may be digital gold, and here where **data visualization** comes into play, it is now the most important field after **data analysis** in the **data science** industry.
 
 The possibilities are endless and **data visualization** can keep you ahead.
