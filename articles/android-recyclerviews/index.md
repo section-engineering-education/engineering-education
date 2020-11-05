@@ -14,16 +14,17 @@ images:
   - url: /engineering-education/android-recyclerviews/hero.jpg
     alt: Android recyclerviews image
 ---
-In Android, it is common to display a list of data. With more data being presented and dynamically received, developers had to come up with Compound Views to aid in displaying data. It has not been an easy task to say the least.
+Loading vast amounts of data into normal views can lead to high CPU usage. This, in turn, may lead to the operating system forcibly shutting down the applications.
+In Android, it is common to display a list of data. With more data being presented and dynamically received, developers had to come up with compound views to help display the data. It has not been an easy task to say the least.
 <!--more-->
 #### Android RecyclerViews
-The Dynamic data (that we are referring to) includes data from a network or local database. This again comes with the added problem of resource management. Loading vast amounts of data into normal views can lead to high CPU usage. This, in turn, may lead to the operating system forcibly shutting down the applications.
+The Dynamic data (that we are referring to) can include data from a network or local database. This again comes with the added problem of resource management.
 
-That is where ListViews came into play. They were able to load text-based data to a Compound view using an adapter to ensure efficiency. However, they did not address all the problems encountered.
+That is where ListViews came into play. Developers were able to load text-based data to a compound view using an adapter to increase efficiency. However, this solution did not address all the problems encountered.
 
-They did not allow the addition of other views to the Compound view. Developers needed to write extra code to facilitate the addition of other Views. They weren't very efficient in resource management. Having many ListViews in the application still showed a high CPU usage. RecyclerViews addressed these issues and brought in other advantages.
+This solution didn't allow the addition of other views to the Compound view. Developers needed to write extra code to facilitate the addition of other Views. They weren't very efficient in resource management. Having many ListViews in the application still showed a high CPU usage. RecyclerViews addressed these issues and brought in other advantages.
 
-Thos advantages are listed below:
+Those advantages are listed below:
 
 1. *flexibility* - with recyclerviews, you can create custom layouts for each of the list items. You can also define the orientation and placement of the items.
 2. *animations* - listviews had no support for animating the list items. Recyclerviews have the ItemAnimator class, that helps to animate the list items
