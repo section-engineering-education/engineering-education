@@ -198,6 +198,7 @@ Now let us create a `getData` method outside the `onCreate` method. The `getData
 In the `getData` method, create a `StringRequest` and assign the NovelCOVID API Url (https://corona.lmao.ninja/v2/all) to a `String`. We are using the `StringRequest` because we want to return information in `String` form.
 
 **Note: It is a good practice to test run test requests to ensure an API contains the information required. Platforms such as [Postman](https://www.postman.com/) can be used to do this.**
+![Test Run on Postman](/engineering-education/making-api-requests-using-volley-android/postman.jpg)
 
 Next, we will create a `ResponseListener`, which will contain an `onResponse` method. In the `onResponse` method, we will create a `JSONObject` class. This class will pass the API data and then set the data from API to the respective views.
 **Note: This should be done within a try block. The parameters inside the getString()should be the same as the name given in the JSON format.**
@@ -231,7 +232,7 @@ requestQueue.add(myRequest);
 ```
 We are Done! Let’s run the app.
 
-![CovidTrackerVolley](/engineering-education/making-volley-requests-in-android/app.jpg)
+![CovidTrackerVolley](/engineering-education/making-api-requests-using-volley-android/app.jpg)
 
 Access the source code on [Github](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/CovidTrackerVolley).
 
