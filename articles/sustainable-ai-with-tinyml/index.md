@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/sustainable-ai-with-tinyml/
-title: A Push Towards More Sustainable AI with Tiny Machine Learning
+title: Sustainable AI with Tiny Machine Learning
 description: Tiny Machine Learning (TinyML) can be defined as the collaboration of machine learning and embedded ultra-low power internet of things devices.
 author: collins-ayuya
 date: 2020-11-05T00:00:00-14:00
