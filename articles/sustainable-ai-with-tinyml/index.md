@@ -125,7 +125,7 @@ This transmission approach is also prone to errors. Another concern is the possi
 
 Furthermore, having data in a single location (which is the cloud in this case) makes it less secure. In the event of a breach, all systems dependent on the warehoused data will be affected. The reliability of the system is affected.
 
-A way to avoid all these problems is by performing on-device data processing. Transmissions would be minimized. The data being transmitted may not be as vital to a potential attacker. This is because (the data) processing and decision making abilities will occur locally. Communication between the device and the cloud may not contain very valuable information. The system becomes more secure and reliable as a result.
+A way to avoid many of these problems would be by having on-device data processing. Transmissions would be minimized. The data being transmitted may not be as vital to a potential attacker. This is because (the data) processing and decision making abilities will occur locally. Communication between the device and the cloud may not contain very valuable information. The system becomes more secure and reliable as a result.
 
 ### Challenges with Tiny Machine Learning
 Integrating machine learning into frugal devices presents a couple of challenges.
