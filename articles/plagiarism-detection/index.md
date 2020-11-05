@@ -395,8 +395,113 @@ class Tdif_Vectorizer_Detector(Plagiarism_Checker):
 
 
 ### Final Demo visualizations
-<iframe height="800px" width="100%" src="https://repl.it/@slyracoon23/Plagarism-Checker?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+```Python
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
+import pandas as pd
+
+
+class Plagarism_Checker():
+
+    def __init__(self, corpus, vectorizer=None):
+        self.doc_names , self.doc_data = zip(*corpus)
+        self._vectorizer = vectorizer
+
+
+    @property
+    def vectorizer(self):
+        if self._vectorizer is None:
+            raise TypeError("vecotrizer can't be None")
+        if not hasattr(self._vectorizer, '_fit_transform'):
+            self.__compute_document_term_matrix()
+        return self._vectorizer
+
+    @vectorizer.setter
+    def vectorizer(self, value):
+        if not isinstance(value, None):
+            self._vectorizer = value
+            self.__compute_document_term_matrix()
+        else:
+            self._vectorizer = value
+
+    def __compute_document_term_matrix(self):
+        self._vectorizer._fit_transform= self._vectorizer.fit_transform(self.doc_data)
+
+
+
+    def get_document_term_matrix(self):
+        count_vector = self.vectorizer._fit_transform.toarray()
+        return count_vector
+
+
+    def get_feature_words(self):
+        return  self.vectorizer.get_feature_names()
+
+
+    def get_document_term_matrix_dataframe(self):
+        df = pd.DataFrame(data= self.get_document_term_matrix(),
+                  columns= self.get_feature_words(),
+                  index=self.doc_names)
+
+        return df
+
+
+    def get_cosine_simularity_dataframe(self):
+        # compute cosine simularity matrix
+        df = pd.DataFrame(data= cosine_similarity(self.get_document_term_matrix()),
+                  columns=self.doc_names,
+                  index=self.doc_names)
+
+        return df
+
+
+class Count_Vectorizer_Detector(Plagarism_Checker):
+
+    def __init__(self, corpus):
+        super().__init__(corpus, vectorizer= CountVectorizer())
+
+
+
+
+
+
+class Tdif_Vectorizer_Detector(Plagarism_Checker):
+
+    def __init__(self, corpus):
+        super().__init__(corpus , vectorizer=TfidfVectorizer(smooth_idf=True,use_idf=True) )
+
+
+
+
+    def get_tfidf_weights_dataframe(self):
+        # print idf values # need to compute self.vectorizer.idf_ if not computed
+        df_idf = pd.DataFrame(self.vectorizer.idf_, index=self.get_feature_words(),columns=["idf_weights"])
+
+         # sort ascending
+        df_idf.sort_values(by=['idf_weights'])
+
+        return df_idf
+
+if __name__ == "__main__":
+
+
+    # define document data
+    corpus = [
+    ('doc_1', 'This is the first document.'),
+        ('doc_2', 'This document is the second document.'),
+    ('doc_3' ,'And this is the third one.'),
+        ('doc_4', 'Is this the first document?')
+    ]
+
+    obj = Count_Vectorizer_Detector(corpus)
+
+    cosine_matrix = obj.get_cosine_simularity_dataframe()
+
+    print(cosine_matrix)
+```
 
 Link to my code online is [here](https://repl.it/join/phfqwtnd-slyracoon23).
 
@@ -412,4 +517,3 @@ https://www.machinelearningplus.com/nlp/cosine-similarity/
 
 ---
 Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
-
