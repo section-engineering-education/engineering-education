@@ -1,0 +1,121 @@
+
+![hero](/engineering-education/transfer-learning-with-deep-learning/hero.jpg)
+[Image source](https://images.unsplash.com/photo-1569396116180-210c182bedb8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80)
+
+Deep learning models need a lot of data. They may be trained on millions of data points before making predictions. This makes training very expensive. Furthermore, such models often perform only a single task. We look at how deep transfer learning can deal with these challenges.
+
+### Table of Contents
+
+1. Relationship between transfer learning and deep learning
+
+2. Transfer learning vs traditional machine learning
+
+3. When to use deep transfer learning
+
+4. Types of deep transfer learning
+
+### Prerequisites
+
+Basic understanding of machine learning and deep learning. For an introduction or refresher on some basic machine learning concepts check out this [article](/engineering-education/supervised-learning-algorithms/). Some machine learning and deep learning concepts are also covered [here](/engineering-education/automated-fake-news-detection/). For an introduction to transfer learning, I would advise going through my previous [article](https://www.section.io/engineering-education/basics-of-transfer-learning/).
+
+### Useful Terms
+
+**Pre-trained models** – models trained on a sizeable benchmark dataset to solve a problem similar to an already solved problem.
+
+**Marginal probability** – The probability of an event in the presence of all outcomes of another random variable.
+
+**Feature** – an individual measurable property that is being observed. It is an attribute shared by all the independent units on that analysis is to be done.
+
+**Loss function** – component of a neural network responsible for calculating loss. Loss refers to the prediction error of a neural network.
+
+### Transfer Learning and Deep Learning
+
+In my previous transfer learning [article](https://www.section.io/engineering-education/basics-of-transfer-learning/), we defined transfer learning as a machine learning method where a model built for a specific task is reused as a starting point for a model on another task. It is basically re-using pre-trained models on new problems.
+
+Deep learning models have been applied to solve many problems that would have seemed impossible to solve a few years ago. Nonetheless, these models carry a few challenges with them. Firstly, they need very large amounts of data. They also need a lot of computing resources. Furthermore, they need a lot of time and energy to train.
+
+Deep neural networks have millions of weights that link many layers of neurons together. The weights are applied to inputs and adjusted during the training phase. The result is fed forward to provide an output. As we mentioned, this process is time-consuming and energy-intensive. This provides transfer learning a huge opportunity to optimize deep learning processes. Transfer learning allows us to use deep learning models that are pre-trained on a problem to be used on a new but related problem. This saves a lot of time and computational energy.
+
+#### Transfer Learning vs Traditional Machine Learning
+
+To understand transfer learning, it is important to compare it to a traditional machine learning approach. A key difference between the two is isolation. Traditional machine learning can be described as isolated. First things first, it focuses on specific tasks. It also occurs on specific datasets. Another characteristic of the traditional approach is the training of isolated models for very specific tasks. All this means that there is no knowledge that is either retained or accumulated. The learning process takes place without any relationship with past knowledge in different tasks.
+
+However, transfer learning takes the contrary approach to the isolated nature of traditional machine learning approaches. The basis of this approach is the transferability of prior knowledge to tackle new tasks. There is no isolation. It is possible to leverage knowledge from pre-trained models to train new models. Here, learning of a new task is dependent on tasks that were learned previously. The result of such is a faster and more efficient learning process.
+
+Now that we understand the distinction between the two approaches, it is important to understand when to use deep transfer learning.
+
+#### When to use Deep Transfer Learning
+
+##### Insufficient training data
+
+For efficient implementation of a deep learning model on a task, a lot of data is required. Yet, it is common to be in scenarios where there is insufficient labeled training data. It is cumbersome to attempt to label data for a deep learning model from scratch. In tasks where domain expertise is required to create a quality dataset, it is quite a time consuming to attempt to gain domain knowledge. Deep transfer learning comes into play here by allowing us to use pre-trained models from a related task, on a new task. We need not worry about training data as a result.
+
+##### Optimization
+
+Transfer learning optimizes the machine learning process. It greatly reduces the training time of a model. This is by allowing the use of a different model with prior knowledge related to a given problem to solve the given problem. In addition to saving time, this also makes the learning process more efficient. For instance, one spends less time worrying about training and more time on how to improve the performance of the model.
+
+##### Positive environmental impact
+
+It is important to consider social good. At a time when it is imperative to reduce the carbon footprint in whichever way possible, large deep learning models harm the environment. Their carbon footprint is massive. The results of a study carried out in this [paper](https://arxiv.org/abs/1906.02243) found that the process of training a large neural network can emit five times more CO2 than the lifetime emissions of an average car.
+
+Taking the above into account, transfer learning reduces the training stage of models which results in the use of computational resources more efficiently.
+
+### Types of Deep Transfer Learning
+
+It’s worth noting that, depending on the literature you may come across, the concepts detailed below are related to, or heavily involved in the concept of transfer learning. Some can also be used independently from transfer learning.
+
+#### Domain Adaptation
+
+Domain adaptation involves a scenario where marginal probabilities of the source domain and target domain differ.
+
+To make it clearer, consider a context where a model is trained on a source domain that is different from the target domain. This is the basis of domain adaptation. The goal of domain adaptation is learning a model for a target domain where little to no labeled data is available. It attains its goal by leveraging knowledge from a source domain with adequate labeled data. As we mentioned, this source domain differs from the target domain. However, both domains are related. The tasks are also more or less the same.
+
+Domain adaptation can be categorized as either homogenous or heterogeneous. This is dependent on how homogenous the feature spaces both source and target domains are. A feature space is a set of features that are identified from data. Homogenous domain adaptation refers to where two domains have the same feature spaces but different feature distributions. Heterogeneous domain adaptation has heterogeneous feature spaces in different domains. As a result, it is much more difficult to take on. The feature spaces have no similarity. To link up two different domains, supplementary information, such as labels, is required. If such information is not available, it is hard to deal with heterogeneous domain adaptation. The unavailability of supplementary information is a common scenario in practice.
+
+For further reading, I mentioned a couple of applications involving domain adaptation in this [article](https://www.section.io/engineering-education/basics-of-transfer-learning/).
+
+#### Domain Confusion
+
+Consider feature representation transfer, which is covered in my previous transfer learning [article](https://www.section.io/engineering-education/basics-of-transfer-learning/). We defined it as basically “transferring features” from source to target domains. In a neural network, different layers identify different sets of features. Such an approach can be used to learn features that do not vary regardless of the domain. This helps improve their transferability across the domains. In such a context, the feature representations between the source and target domains are made to be as similar as possible. This is done at the expense of allowing the model to learn any feature representations.
+
+But why? The goal is to add an objective to the model at the source to encourage similarity with the target by confusing the source domain itself. Specifically, domain confusion loss is used to confuse the high-level classification layers of a neural network by matching the distributions of the target and source domains.
+
+A fitting example of such a network is a Domain-Adversarial Neural Network (DANN). The network and relevant concepts around it are expressed in the paper [Domain-Adversarial Training of Neural Networks](https://arxiv.org/abs/1505.07818). DANNs consist of two losses; classification loss and domain confusion loss. The aim is to make sure samples come across as mutually indistinguishable to the classifier. To achieve this, one has to minimize the classification loss for the source samples. One has to also minimize the domain confusion loss for all samples.
+
+#### Multitask Learning
+
+As the name suggests, multitask learning involves learning several tasks simultaneously. However, learning is done without a distinction between the source and targets.
+
+Multitask learning has the goal of optimizing all the parameters of the network and improving all the performance of multiple tasks. Samples from these tasks are key to this process. The learner takes in information about many tasks simultaneously. The learner, through some shared knowledge, optimizes the performance of all the tasks.
+
+This differs from the base principle of transfer learning where the learner initially is unaware of the target task.
+
+#### One-Shot Learning
+
+A drawback of deep neural networks is that they need a lot of data to learn. In real-world contexts, it might not be possible to have labeled data in all classes of a classification problem. One might also deal with a scenario where additional classes, beyond the scope of labeled data, have to be added.
+
+In such scenarios, one-shot learning may be of great benefit. One-shot learning is a form of transfer learning where the required output of an algorithm is inferred based on one training example. A model is fed with a single example of the task that is required. For example, a language translation task. A model may be required to translate a word from Swahili to English. It is given a single example of the translation task. Then it is expected to learn from that example for future tasks. This is similar to few-shot learning which is a technique that uses a few examples to generate the required output.
+
+#### Zero-Shot Learning
+
+Zero-shot learning can be useful when dealing with the two scenarios we mentioned when describing one-shot learning. This variant of transfer learning is not dependent on any labeled examples to learn a task. This is training algorithms to carry out tasks they weren’t explicitly trained to do.
+
+An example of zero-shot learning is the implementation of a pre-trained model like [GPT-3](https://www.section.io/engineering-education/introducing-gpt3/) on a language translation task. A natural language description of the task like “translate from Swahili to English” is given to the model. The model carries out the translation task without any examples.
+
+### It’s a Wrap
+
+Transfer learning makes it easier to create and implement deep learning models. Since deep learning is becoming more and more integral to solving a range of problems in domains such as natural language processing and video processing, we can expect to find elements of transfer learning in such domains. A lot of time and energy is saved through transfer learning. I mentioned a few applications of transfer learning [here](https://www.section.io/engineering-education/basics-of-transfer-learning/). Feel free to check them out. Happy reading!
+
+### References
+
+1. [A Survey on Transfer Learning](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf)
+
+2. [Return of Frustratingly Easy Domain Adaptation](https://arxiv.org/abs/1511.05547)
+
+3. [Domain-Adversarial Training of Neural Networks](https://arxiv.org/abs/1505.07818)
+
+4. [What Is Deep Transfer Learning and Why Is It Becoming So Popular?](https://towardsdatascience.com/what-is-deep-transfer-learning-and-why-is-it-becoming-so-popular-91acdcc2717a)
+
+5. [A Comprehensive Hands-on Guide to Transfer Learning with Real-World Applications in Deep Learning](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a)
+
+6. [https://machinelearningmastery.com/transfer-learning-for-deep-learning/](https://machinelearningmastery.com/transfer-learning-for-deep-learning/)
