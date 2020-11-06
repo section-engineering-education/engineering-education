@@ -27,8 +27,6 @@ First, create an account on the DigitalOcean platform. There are discount codes 
 
 Second, you need to create a droplet. A droplet is a VPS (Virtual Private Server.) It’s similar to a Linux VM which is hosted on a server farm somewhere. Once you’ve logged into your account, go to droplets under the Manage heading and click create and then droplets.
 
-![DigitalOcean Droplet Creation](/engineering-education/deploying-nodejs-web-app/digitalocean-creation.png)
-
 You can leave most of the settings as the default but change the plan to the basic $5 a month which contains enough resources for your app. You can scale this up later if needed.
 
 Also, choose the datacenter closest to the target audience of your app and change the authentication to password. While password authentication is less secure (SSH Keys is recommended), it’s much easier to set up. So, for demonstration purposes, we’ll use this method.
