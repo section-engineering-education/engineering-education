@@ -1,7 +1,7 @@
-Generators are a special kind of function that return a lazy iterator, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python generators are objects that you can loop over like a list. However, unlike lists, lazy iterators do not store their contents in memory. The best way to iterate through large and complex datasets is through the use of generators.
+Generators are a special kind of function that return a lazy iterator, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Generators are objects that you can loop through like a list.Lazy iterators do not store their contents in memory. The best way to iterate through large and complex datasets is through the use of generators.
 
 ### Prerequisites
-To get started, you need to have a basic understanding of Python.  This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
+To get started, you need to have a basic understanding of Python. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
 
 **Generator function** is a function that returns a generator object. It is defined like a normal function, but whenever it needs to generate a value, it does so with the **yield** keyword rather than return. If the body of a def contains yield, the function automatically becomes a generator function.
 
@@ -141,7 +141,7 @@ for _ in range(10):
 List comprehension uses 87724 bytes of memory while generator function uses only 125 bytes of memory. By using generators we save memory as compared to list comprehension where a lot of memory is used.
 
 ### Building Generator pipelines
-Data pipelines allow you to string together code to process large  datasets or streams of data without maxing out your machine’s memory.
+Generator pipelines allow you to string together code to process large  datasets or streams of data without maxing out your machine’s memory.
 when working with pipelines:-
 - Several pipes can be linked together.
 - Items flow one by one through the entire pipeline.
@@ -156,5 +156,5 @@ def get_longest_name():
 	lengths = ((name,len(name)) for name in full_names)
 	longest = max(lengths,key=lambda x:x[1])
 ```
-### Conclusions
-You now have a better understanding of the python generators. They are useful when working with complex datasets and performing memory intensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive. 
+### Conclusions 
+Now you better understand python generators. They are useful when dealing with complex data sets and performing memory-intensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive
