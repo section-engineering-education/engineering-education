@@ -1,8 +1,21 @@
-﻿
-## List transformations in JavaScript
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/list-transformations-js/
+title: List transformations in JavaScript
+description: This tutorial guides
+author: geoffrey-mungai
+date: 2020-10-01T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-In this tutorial, we will be looking at creating new objects and arrays from existing ones. We will look at creating nested data structures, looping, and destructuring them. We will also look at transforming data structures by passing them through functions. 
-
+  - url: /engineering-education/list-transformations-js/hero.jpg
+    alt: image build a Jekyll site
+---
+In this tutorial, we will be looking at creating new objects and arrays from existing ones. We will look at creating nested data structures, looping, and destructuring them. We will also look at transforming data structures by passing them through functions.
+<!--more-->
 ### Prerequisites
 
 To follow through with this tutorial, you are required to know JavaScript [objects and arrays](https://www.section.io/engineering-education/object-arrays-destructuring/).
@@ -97,7 +110,7 @@ function names(brands){
     };
 };
 
-names(cars.brands); 
+names(cars.brands);
 //Ford
 //Toyota
 ```
@@ -119,7 +132,7 @@ function everything (brands){
     }
 };
 
-everything(cars.brands); 
+everything(cars.brands);
 //Ford
 //USA
 //Toyota
@@ -176,7 +189,7 @@ console.log(name, name1, origin, origin1); //Ford Toyota USA Japan
 ```
 In the code above:
 - We extract the `name` and `origin` properties of the first object into variables `name` and `origin`.
-- We assign the individual object properties to new variable names `name1` and `origin1`. 
+- We assign the individual object properties to new variable names `name1` and `origin1`.
 
 We use destructuring to assign the value of the property on the left side (`name`) to the variable on the right side (`name1`). You can learn more about destructuring [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
@@ -194,7 +207,7 @@ The function `splitName()` takes in some text and splits it using the [`split()`
 1. splits the text by spaces.
 2. returns an array with the split pieces of text.
 
-`splitName()` then accesses the 2nd item in the array and assigns it as the value of `lastName` in the `splitName()` return object. 
+`splitName()` then accesses the 2nd item in the array and assigns it as the value of `lastName` in the `splitName()` return object.
 
 Let us then create an array that will be passed to this function.
 ```javascript
@@ -223,7 +236,7 @@ We can reduce the lines of code in the `for` loop above by calling `splitName()`
 for(var i = 0; i < namesList.length; i++){
     halfNames.push(splitName(namesList[i]));
 }
- 
+
 console.log(halfNames); //[ { lastName: 'Doe' }, { lastName: 'Dove' }, { lastName: 'Bloggs' } ]
 ```
 
@@ -257,7 +270,7 @@ const numbers = ['one', 'two', 'three'];
 _.each(numbers, function(number){
   console.log(number)
   }
-); 
+);
 
 //one
 //two
@@ -323,7 +336,7 @@ var oddsList = _.filter(numbersList, function(number){
 console.log(oddsList); //[ 1, 3, 5, 7, 9 ]
 ```
 In the code above:
-1. We pass a list of numbers `numbersList` to `_.filter()`. 
+1. We pass a list of numbers `numbersList` to `_.filter()`.
 2. We then declare a predicate function that takes in a `number` and checks whether the number is indivisible by 2.
 3. The numbers that pass the condition above are saved as `oddsList`.
 
