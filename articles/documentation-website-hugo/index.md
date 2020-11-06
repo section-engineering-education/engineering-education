@@ -1,7 +1,7 @@
 
 Documentation is a must in every software development project. Reliable documentation provides an accurate overview of your software, good insight on how to use your software, and easy onboarding for new users of your software.
 
-In this tutorial, I will teach you how to build a documentation website for your software projects with [Hugo](https://gohugo.io/) and the [Docsy](https://www.docsy.dev/) theme. Hugo is a speed optimized static-site generator written in the GO programming language. Hugo can be used to generate documentation websites, blogs, portfolio websites, etc. directly from markdown and HTML.
+In this tutorial, I will teach you how to build a documentation website for your software projects with [Hugo](https://gohugo.io/) and the [Docsy](https://www.docsy.dev/) theme. Hugo is a speed-optimized static-site generator written in the Go programming language. Hugo can be used to generate documentation websites, blogs, portfolio websites, etc. directly from markdown and HTML.
 
 ### Table of contents
 - Install Hugo.
@@ -17,12 +17,12 @@ In this tutorial, I will teach you how to build a documentation website for your
 ### Prerequisites
 
 This guide assumes that you have:
-- GO installed on your local machine - visit [ednsquare.com](https://ednsquare.com/story/how-to-install-golang-on-windows-linux-mac------T3VRkO) for instructions on how to install Go on MacOS, Windows, and LINUX.
-- [Homebrew](brew.sh)(MacOS and LINUX) - visit [brew.sh](brew.sh) for instructions on how to install homebrew on mac and linux.
+- Go installed on your local machine - visit [ednsquare.com](https://ednsquare.com/story/how-to-install-golang-on-windows-linux-mac------T3VRkO) for instructions on how to install Go on macOS, Windows, and Linux.
+- [Homebrew](brew.sh)(MacOS and LINUX) - visit [brew.sh](brew.sh) for instructions on how to install homebrew on macOS and Linux.
 - [Chocolatey](chocolatey.org)(Windows) - visit [chocolatey.org](chocolatey.org) for instructions on how to install chocolatey on Windows.
  
 ### Step 1- Install Hugo
-The Docsy theme uses the Hugo-extended version of Hugo. Install the Hugo-extended version on MacOS and Linux with Homebrew.
+The Docsy theme uses the Hugo-extended version of Hugo. Install the Hugo-extended version on macOS and Linux with Homebrew.
 
 ```bash
  brew install hugo
@@ -67,7 +67,7 @@ Just a few more steps and you're ready to go:
 Visit https://gohugo.io/ for quickstart guide and full documentation.
 ```
 
-The hugo new command will also generate a directory with the following file structure:
+The `hugo new site` command will also generate a directory with the following file structure:
 
 ```
 hugo-project/
@@ -114,7 +114,7 @@ git submodule update --init --recursive
 
 ### Step 4 - Add a content section to your website
 
-All your website's content files are stored in the `content` folder found in your root folder. The top level subfolders in the `content` folder will determine the sections of your website by default, and the nested subfolders inside this top level subfolders combine to form your website structure as they are organized in their top level subfolders.
+All your website's content files are stored in the `content` folder found in your root folder. The top-level subfolders in the `content` folder will determine the sections of your website by default, and the nested subfolders inside this top-level subfolders combine to form your website structure as they are organized in their top-level subfolders.
 
 ```
 content      <-- Content folder
@@ -149,7 +149,7 @@ Visit [gohugo.io](https://gohugo.io/content-management/sections/) to learn more 
 
 ### Step 5 - Add a documentation page to your website
 
-Add pages to your website by creating markdown or HTML files inside the subfolders found in the content folder, and then specify the page layout in the page's frontmatter. Layouts in Hugo determines your page's header, footer, navigation, and are provided by your theme.
+Add pages to your website by creating markdown or HTML files inside the subfolders found in the content folder, and then specify the page layout in the page's frontmatter. Layouts in Hugo determine your page's header, footer, navigation, and are provided by your theme.
 
 Docsy ships with layout for 3 type of content,
 
@@ -172,7 +172,7 @@ type: docs
 summary: A new page for our Hugo documentation website website.
 ---
 ```
-3. Add markup into your page.
+3. Add markup to your page.
 ```
 # Hugo project website 
 
@@ -182,7 +182,7 @@ Visit [docsy.dev](https://www.docsy.dev/docs/adding-content/content/) to learn m
 
 ### Step 6 - Preview your website
 
-Hugo ships with a web server that has live reload built in. This allows you to preview your changes real time when your web server is running.
+Hugo ships with a web server that has live reload built-in. This allows you to preview your changes in real-time when your web server is running.
 
 Start your web server with the following command:
 
