@@ -6,7 +6,7 @@ url: /engineering-education/list-transformations-js/
 title: List transformations in JavaScript
 description: This tutorial guides
 author: geoffrey-mungai
-date: 2020-10-01T00:00:00-11:00
+date: 2020-11-06T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/list-transformations-js/hero.jpg
     alt: image build a Jekyll site
 ---
-In this tutorial, we will be looking at creating new objects and arrays from existing ones. We will look at creating nested data structures, looping, and destructuring them. We will also look at transforming data structures by passing them through functions.
+In this tutorial, we will be creating new objects and arrays from existing ones. We will create nested data structures, looping them, and destructuring them. We will also look at transforming data structures by passing them through functions.
 <!--more-->
 ### Prerequisites
-To follow along with this tutorial, it would be helpful to have some background knowledge on JavaScript [objects and arrays](/engineering-education/object-arrays-destructuring/).
+To follow along with this tutorial, it would be helpful to have some background knowledge of JavaScript [objects and arrays](/engineering-education/object-arrays-destructuring/).
 
 By the end of this tutorial, you will be able to:
 - Nest objects and arrays.
@@ -28,7 +28,7 @@ By the end of this tutorial, you will be able to:
 ### Step 1 -- Nesting objects and arrays
 Data structures can be nested to avoid the declaration of many variables. Multiple objects and/or arrays can be held by a single variable and can be accessed using [dot notation and bracket notation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors).
 
-```javascript
+```JavaScript
 const cars = {
     'brands': [
         {
@@ -43,7 +43,7 @@ const cars = {
 }
 ```
 
-We create an object named `cars` and nest an array `brands` inside it. We also add 2 objects inside the `brands` array.
+We created an object named `cars` and nested an array called `brands` inside it. We also added 2 objects inside the `brands` array.
 Nesting can also be done using either the dot notation or square bracket notation where applicable.
 
 ```JavaScript
@@ -62,9 +62,9 @@ cars.brands[1] = {
 ```
 
 Let's break down the code above:
-1. Creates an object `cars`.
-2. Creates an empty list `brands` inside the `cars` object using dot notation.
-3. Using the [`push()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) method, adds an object with the properties `name` and `origin` inside `brands`.
+1. We created an object `cars`.
+2. We then created an empty list `brands` inside the `cars` object using dot notation.
+3. Using the [`push()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) method, we can add an object with the properties `name` and `origin` inside `brands`.
 4. Using the square notation adds another object at index 1.
 
 ### Accessing nested data structures
@@ -100,7 +100,7 @@ allCars(cars.brands);
 ```
 
 In the code above:
-1. We declare a function `allCars()` with a parameter `brands`.
+1. We declared a function `allCars()` with a parameter named `brands`.
 2. We created a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) inside it, that loops through `brands` and logs them.
 3. We called the function `allCars()`and pass an argument `cars.brands`.
 
@@ -198,7 +198,7 @@ console.log(name, name1, origin, origin1); //Ford Toyota USA Japan
 
 In the code above:
 - We extracted the `name` and `origin` properties from the first object into the variables `name` and `origin`.
-- We assigned the individual object properties to new variable named `name1` and `origin1`.
+- We assigned the individual object properties to a new variable named `name1` and `origin1`.
 
 We used destructuring to assign the value of the property on the left side (`name`) to the variable on the right side (`name1`). You can learn more about destructuring [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
