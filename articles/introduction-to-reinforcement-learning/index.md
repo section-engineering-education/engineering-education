@@ -19,8 +19,8 @@ This article will serve as an introduction to Reinforcement Learning(RL). Accord
 
 ### Table of Contents
 1. [Pre-requisites](#Pre-requisites)
-2. [Introduction](#Introduction)
-3. [Key Concepts](#Key-Concepts)
+2. [Key Concepts](#Key-Concepts)
+3. [Introduction](#Introduction)
 4. [Most used Reinforcement Learning Algorithms](#Most-used-Reinforcement-Learning-Algorithms)
 5. [Applications of Reinforcement Learning](#Applications-of-Reinforcement-Learning)
 6. [Final Thoughts](#Final-Thoughts)
