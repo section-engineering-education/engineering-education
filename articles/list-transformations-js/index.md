@@ -144,11 +144,11 @@ everything(cars.brands);
 ```
 
 In the above code:
-1. We declared a function named `everything()` with a parameter `brands`.
+1. We declared a function named `everything()` with the parameter `brands`.
 2. Inside the `everything()` function, we created a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) that loops through all the items in the `brands` array.
 3. Inside the `for()` loop, we created a [`for ...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop that loops through all the object properties.
 The for-in loop, assigns each [enumerable property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) of the object to the variable `key` and then logs it.
-4. We call the function `everything()` and pass an argument `cars.brands`.
+4. We called the function `everything()` and pass an argument `cars.brands`.
 
 ### Destructuring a nested data structure
 Destructuring can be used to extract data from nested objects and arrays. We can extract the two `brands` objects we created earlier and assign them to new variables.
