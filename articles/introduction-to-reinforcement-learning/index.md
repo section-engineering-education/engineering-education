@@ -5,20 +5,19 @@ published: true
 url: /engineering-education/introduction-to-reinforcement-learning/
 title: Understanding Reinforcement Learning
 description:
-author: srishilesh-p-s
-date: 2020-10-07T00:00:00-12:00
+author: willies-ogola
+date: 2020-11-06T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/introduction-to-reinforcement-learning/hero.png
-    alt:
+    alt: reinforcement learning
 ---
-
-This article will serve as an introduction to Reinforcement Learning(RL). According to [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning), RL is a sub-field of Machine Learning (ML). That is concerned on how [agents](https://en.wikipedia.org/wiki/Software_agent) take actions in an environment to maximize a cumulative reward.
+This article will serve as an introduction to Reinforcement Learning (RL). According to [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning), RL is a sub-field of Machine Learning (ML). That is concerned on how [agents](https://en.wikipedia.org/wiki/Software_agent) take actions in an environment to maximize a cumulative reward.
 <!--more-->
 
 ### Table of Contents
-1. [Pre-requisites](#Pre-requisites)
+1. [Prerequisites](#Prerequisites)
 2. [Key Concepts](#Key-Concepts)
 3. [Introduction](#Introduction)
 4. [Most used Reinforcement Learning Algorithms](#Most-used-Reinforcement-Learning-Algorithms)
@@ -26,27 +25,27 @@ This article will serve as an introduction to Reinforcement Learning(RL). Accord
 6. [Final Thoughts](#Final-Thoughts)
 7. [References](#References)
 
-### Pre-requisites
-There are two main pre-requisites a reader would need before diving into this article:
-- Basic Machine learning knowledge.
-- Knowledge in Linear Algebra, Multivariable Calculus, and Probability and Statistics.
+### Prerequisites
+There are two main prerequisites a reader would need before diving into this article:
+- A basic understanding on Machine learning.
+- Some background Knowledge in Linear Algebra, Multivariable Calculus, and Probability and Statistics.
 
 ### Key Concepts
 In RL we have key concepts or terms that we need to define. These include agents, state, action, rewards, and the environment.
 
 1.	**Agent**
-The agent decides on what action to take given an observation from the environment.
+The agent decides on what action to take, given an observation from the environment.
 2.	**State**
 The state represents the decision-making factors under consideration observed by the agent.
 3.	**Action**
 The agent selects an action that may change or affect the state and reward.
 4.	**Reward**
-A reward represents the gains and losses in network performance.  The reward is for taking a particular action on a particular state in the previous time instance.
+A reward represents the gains and losses in network performance. The reward is for taking a particular action on a particular state in the previous time instance.
 5.	**Environment**
 The environment is where the agent acts. On how the environment reacts to certain actions defined by a model, we may or may not know.
 
 ### Introduction
-In Reinforcement Learning (RL), agents train to maximize the total rewards. This is because an RL agent is given rewards for all the correct moves it makes and punished for the wrong moves. This results in the agent trying to maximize on the right moves while minimizing the wrong moves.
+In Reinforcement Learning (RL), agents are trained to maximize total rewards. This is because an RL agent is given rewards for all the correct moves it makes and punished for the wrong moves. This results in the agent trying to maximize on the right moves while minimizing the wrong moves.
 
 RL programs learn to map situations to action taken in order to maximize those rewards. This guides the agent by finding the (best) actions leading to the most rewards.
 
@@ -97,7 +96,7 @@ That's Q-learning in a nutshell.
 #### Policy Gradients (PG)
 Alongside Q-learning, the Policy Gradient method is another type of reinforcement learning technique.
 
-Policy Gradients have a separate goal from Q-learning. 
+Policy Gradients have a separate goal from Q-learning.
 
 * Q-learning predicts q-values rather than predict what actions to take. Policy Gradients deal directly with choosing actions. They learn policies directly from data thus no need for computing values for each state. The policy network returns a matrix of probabilities for taking each possible action.
 
@@ -128,7 +127,7 @@ Due to these differences, SPG may need more samples to compute in cases of high 
 
 *[Image Source: Berkeley](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/f17docs/lecture_5_actor_critic_pdf)*
 
-Actor-Critics (AC) method consists of two separate models as shown above: 
+Actor-Critics (AC) method consists of two separate models as shown above:
 1. An Actor
 2. A Critic
 
@@ -142,7 +141,7 @@ This is the idea behind Actor Critics models.
 
 Let's consider an example that demonstrates the actor-critic network.
 
-Let's take the examples of a child playing in the backyard with the parent monitoring the child. The child is playing, running around exploring all options in this environment. The child can play in the dirt, ride the swing, play with water, etc. The role the parent plays is to watch the child and either criticize or reward its actions. Always taking the environment into account. 
+Let's take the examples of a child playing in the backyard with the parent monitoring the child. The child is playing, running around exploring all options in this environment. The child can play in the dirt, ride the swing, play with water, etc. The role the parent plays is to watch the child and either criticize or reward its actions. Always taking the environment into account.
 
 AC is advantageous compared to PG methods. They tend to need much less training time compared to PG methods.
 
@@ -152,9 +151,9 @@ Some typical use cases of AC models are in the fields of biology and psychology.
 #### Games
 The use of AI in computer games has been on the increase over the past couple of years.
 
-In 2016, Deepmind Technologies built [AlphaGo](https://deepmind.com/research/case-studies/alphago-the-story-so-far/). An RL controlled computer program that plays the board game, Go (an ancient Chinese board game). 
+In 2016, Deepmind Technologies built [AlphaGo](https://deepmind.com/research/case-studies/alphago-the-story-so-far/). An RL controlled computer program that plays the board game, Go (an ancient Chinese board game).
 AlphaGo contains two networks:
-1. A Policy Network which is trained on high-level games to imitate the best players. 
+1. A Policy Network which is trained on high-level games to imitate the best players.
 2. A Value network that evaluates the current board position and establishes the probability of winning in that position.
 
 The computer program was able to beat Lee Sedol, a human professional Go champion 4-1 in a 5 match game.
@@ -164,7 +163,7 @@ Later versions of AlphaGo such as AlphaGo Zero and MuZero became even more power
 For a deeper understanding of the AlphaGo story, watch its [full documentary](https://www.youtube.com/watch?v=WXuK6gekU1Y&t=788s/)
 
 #### Robotics
-In industries, RL-controlled robots are used to perform various tasks. 
+In industries, RL-controlled robots are used to perform various tasks.
 
 For example, at Google's DeepMind, they developed an AI-powered recommendation system. This system was meant to improve the energy efficiency of its data center.
 An AI robot was given control over their data center in order to manage part of its [cooling infrastructure](https://deepmind.com/blog/article/safety-first-ai-autonomous-data-centre-cooling-and-industrial-control/).
