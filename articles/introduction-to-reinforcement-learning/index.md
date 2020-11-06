@@ -40,7 +40,7 @@ The state represents the decision-making factors under consideration observed by
 3.	**Action**
 The agent selects an action that may change or affect the state and reward.
 4.	**Reward**
-A reward represents the gains and losses in network performance. The reward is for taking a particular action on a particular state in the previous time instance.
+A reward represents the gains and losses in network performance. The agent is rewarded for taking an action on a particular state in the previous time step.
 5.	**Environment**
 The environment is where the agent acts. On how the environment reacts to certain actions defined by a model, we may or may not know.
 
