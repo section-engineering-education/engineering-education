@@ -144,7 +144,7 @@ After running our code you will see the following chart:
 
 As a result, we conclude that "Cheerios" and "Special K" brands have a higher value of protein among any brand in our dataset, and we can recommend it to the athletes.
 
-You can do the same process to know which brands have higher carbo values in order to prevent people who want to lose weight from eating it.
+You can use the process mentioned above to know which brands have higher carbo values in order to prevent people who want to lose weight from eating it.
 
 ### Wrapping up
 Data is a hot topic, people are buying and wearing T-shirts saying "Data Nerd" or "Data is the new bacon". 
