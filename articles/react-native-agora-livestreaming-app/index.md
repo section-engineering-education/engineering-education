@@ -19,21 +19,24 @@ In this article, we will be focusing on how to build a Livestreaming App using t
 # Prerequisites
 This article will not cover tutorial aspects of how React/ React Native, So if you do not know how to work with it, please refer to some tutorials and brush up your skills before beginning with this project.
 
-# Lets Get Started
+# Overview
 We will be going through these steps in this article,
 
 1. Setting up the Development Environment
 2. Creating an Agora Account
 3. Installing Dependencies
 4. Writing the Application
+5. Recap
 
-## Step 1: Setting up the Development Environment
+At the end of this Article, you will learn how to build a livestreaming application using Agora in React Native.
+
+# Setting up the Development Environment
 
 > **IMPORTANT** - We will **not** be using Expo to create our project. We will use the **React Native CLI** to create the App.
 
-You can follow the steps in the [Environment Setup](https://reactnative.dev/docs/environment-setup) documentation to setup the react native app using the react-native CLI.
+You can follow the steps in the [Environment Setup](https://reactnative.dev/docs/environment-setup) documentation to set up the react native app using the react-native CLI.
 
-Once you've setup the environment, run this command to create a react native app.
+Once you've set up the environment, run this command to create a react native app.
 
 ```
 npx react-native init AgoraLivestreamingApp
@@ -51,7 +54,7 @@ For iOS,
 npx react-native run-android
 ```
 
-## Step 2: Creating an Agora Account
+# Creating an Agora Account
 
 Head to Agora and Create an account. You can reach the signup page from [here](https://sso.agora.io/en/v2/signup).
 
@@ -71,10 +74,10 @@ Once you hit on submit, the new project must be created and you should see it on
 
 Now, click on the closed eye icon near the App Id to reveal it and copy the App ID. We will be needing this later while setting up Agora in our app.
 
-## Step 3: Installing Dependencies
+# Installing Dependencies
 
-You can use either ```npm``` or ```yarn``` to install these dependencies.
-```npm``` ships with Node whereas you should install Yarn seperately. You can download yarn from [here](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
+You can use either use ```npm``` or ```yarn``` to install these dependencies.
+```npm``` ships with Node whereas you should install Yarn separately. You can download yarn from [here](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
 
 To install a dependency, either run (based on what package manager you use)
 
@@ -104,7 +107,7 @@ pod install
 
 **List of Dependencies**
 
-You can install these beforehand, or install these while going throught the article.
+You can install these beforehand, or install them while going through the article.
 
 ```
 "@react-native-community/masked-view": "^0.1.10",
@@ -121,13 +124,13 @@ You can install these beforehand, or install these while going throught the arti
 "uuid": "^8.3.1"
 ```
 
-## Step 4: Writing the Application
+# Writing the Application
 
-### Building our Home Screen
+## Building our Home Screen
 
 First things first, Let's delete everything in the `App.js` and create our first component.
 
-**`App.js`**
+*App.js*
 ```
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
@@ -146,7 +149,7 @@ const styles = StyleSheet.create({})
 
 Let's add some buttons on the home screen to help the user navigate to the Create and Join screens.
 
-**`App.js`**
+*App.js*
 ```
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
@@ -171,7 +174,7 @@ export default function App() {
 
 Eww, Let's add some styles.
 
-**`App.js`**
+*App.js*
 ```
 export default function App() {
   return (
@@ -235,10 +238,10 @@ const styles = StyleSheet.create({
 ```
 ![Homescreen After Styling](screenshots/homescreen_without_input.jpeg)
 
-Let's add a text input for the join Livestream channel ID.
+That looks better. Let's add a text input for the join Livestream channel Id.
 The join button should be disabled if there is an empty string in the text input.
 
-**`App.js`**
+*App.js*
 ```
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
@@ -295,7 +298,7 @@ const styles = StyleSheet.create({
 
 These buttons are supposed to take you to the live screen. So let's set up React Navigation.
 
-### Setting Up React Navigation
+## Setting Up React Navigation
 We need to use `@react-navigation/native` to set up navigation in our app.
 
 So let's install the packages required to get navigation up and running.
@@ -326,9 +329,10 @@ Create a new Directory called `screens` and create 2 new files inside called `Ho
 ![Screens Directory](screenshots/screens_directory.png)
 
 Let's move what we wrote in the `App.js` into `screens/Home.js`. Once you have moved everything, rename the function from App to Home.
+
 Let's add a dummy live screen, for now, just to visualize that we are navigating to the right screen.
 
-**screens/Live.js**
+*screens/Live.js*
 ```
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
@@ -355,14 +359,14 @@ In our `App.js`, we need to set up the navigation.
 
 Let's import the `NavigationContainer` from `@react-navigation\native`.
 
-**`App.js`**
+*App.js*
 ```
 import { NavigationContainer } from '@react-navigation/native';
 ```
 
 We need to wrap everything in our App with the `NavigationContainer` like this
 
-**`App.js`**
+*App.js*
 ```
 export default function App() {
   return (
@@ -375,16 +379,16 @@ export default function App() {
 
 Now, we need to create a Stack Navigator. To do that, we need to import createStackNavigator.
 
-**`App.js`**
+*App.js*
 ```
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 ```
 
-Now, Inside the Navigation Container, Let's Add a Stack Navigator.
+Now, inside the Navigation Container, Let's Add a Stack Navigator.
 
-**`App.js`**
+*App.js*
 ```
 export default function App() {
   return (
@@ -398,7 +402,7 @@ export default function App() {
 ```
 Our App has 2 Screens, So let's import the screens into ```App.js``` and create 2 screens inside the Navigator.
 
-**`App.js`**
+*App.js*
 ```
 import Home from './screens/Home';
 import Live from './screens/Live';
@@ -419,11 +423,16 @@ The Stack.Screen accepts 2 props.
 - component - The Screen Component
 - name - The name of the Screen. This will be used to navigate between screens.
 
-That header looks kinda ugly, let's remove that.
+You've set up the Navigation. When you open the app now, You'll see the Home screen because it's the first screen in the stack.
+But, you can't navigate to the Live screen yet. We still need to write the code to go from the Home Screen to the Live Screen.
+
+![Homescreen with Header](screenshots/home_with_header.jpeg)
+
+I don't think we need the header, let's remove that.
 
 The Stack.screen also accepts a prop called options. Let's pass an object with the option that'll remove the Header. For more options, you can refer [here](https://reactnavigation.org/docs/screen-options/)
 
-**`App.js`**
+*App.js*
 ```
 const options = { headerShown: false };
 return (
@@ -436,19 +445,16 @@ return (
 );
 ```
 
-You've set up the React Navigation. When you open the app now, You'll see the Home screen because it's the first screen in the stack.
-But, you can't navigate to the Live screen yet. We still need to write the code to go from the Home Screen to the Live Screen.
+Let's add the code to navigate from the home screen to the live screen. In `screens/Home.js`, we need to import a hook provided by `@react-navigation/native`.
 
-Let's do that now. In `screens/Home.js`, we need to import a hook provided by `@react-navigation/native`.
-
-**`screens/Home.js`**
+*screens/Home.js*
 ```
 import { useNavigation } from '@react-navigation/native';
 ```
 
 Inside the Home function, create a constant variable called navigation and assign the hook to it.
 
-**`screens/Home.js`**
+*screens/Home.js*
 ```
 const navigation = useNavigation();
 ```
@@ -479,7 +485,7 @@ npm install react-native-get-random-values
 
 Import both of those packages into the file in this order. The `react-native-get-random-values` must be imported before the `uuid` import.
 
-**`screens/Home.js`**
+*screens/Home.js*
 ```
 import 'react-native-get-random-values';
 import { v4 as uuid } from 'uuid';
@@ -490,7 +496,7 @@ We need to Navigate to the Live Screen from both the buttons, so let's create tw
 In the Navigate to Create Live function, we will generate a new UUID and pass it as a route prop.
 In the Navigate to Join Live function, we will use the TextInput's value.
 
-**`screens/Home.js`**
+*screens/Home.js*
 ```
 const createLive = () => navigation.navigate('Live', { type: 'create', channel: uuid() });
 const joinLive = () => navigation.navigate('Live', { type: 'join', channel: joinChannel });
@@ -500,7 +506,7 @@ Notice that we are also passing a route prop called `type` along with channel? W
 
 You can pass these functions to the `onPress` prop of the `TouchableOpacity` component.
 
-**`screens/Home.js`**
+*screens/Home.js*
 ```
 const navigation = useNavigation();
 
@@ -532,11 +538,11 @@ return (
 
 Boom, when you press the buttons, you should be navigating to the Live screen now.
 
-### Setting up The Live Screen
+## Setting up The Live Screen
 
 Okay, We reached the interesting part. 
 
-In order to use Agora, we need to install `react-native-agora` first. Let's install it.
+To use Agora, we need to install `react-native-agora` first. Let's install it.
 
 ```
 npm install react-native-agora
@@ -552,12 +558,12 @@ Let's open the `screens/Live.js`.
 
 In here, we need to import the `RtcEngine` from `react-native-agora`.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 import RtcEngine from 'react-native-agora';
 ```
 
-RtcEngine has a function called ```create``` on it, which will create an Agora Engine and allocate resources for it. We need to call that function when the component mounts. It returns an engine instance that has various functions on it which we will use later.
+RtcEngine has a function called `create` on it, which will create an Agora Engine and allocate resources for it. We need to call that function when the component mounts. It returns an engine instance that has various functions on it which we will use later.
 
 > Do not forget to destroy this instance on component unmount.
 
@@ -565,18 +571,18 @@ We can't create a normal variable in the function's scope and assign the engine'
 
 So let's import `useEffect` and `useRef` from `React`.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 import React, { useEffect, useRef } from 'react';
 ```
 
-`RtcEngine.create('App ID')` takes one argument, which is the App ID that we copied from the Agora Project Management Console while creating the project in the Agora Project Management Console (Step 3).
+`RtcEngine.create('Your App ID Here')` takes one argument, which is the App ID that we copied from the Agora Project Management Console while creating the project in the Agora Project Management Console.
 
 It is an async function, and we need to assign the returned object to the ref created using useRef().
 
-You can't pass an async function to an useEffect, so let's create an async function called init() and then call it in the useEffect().
+You can't pass an async function to an useEffect, so let's create an async function called `init()` and then call it in the `useEffect()`.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 export default function Live(props) {
   const AgoraEngine = useRef();
@@ -596,9 +602,9 @@ export default function Live(props) {
 }
 ```
 
-We need to destroy the Agora Engine instance when the component unmounts. If you forget to do this, the App may still be transmiting video and audio even after we go back from this screen and the resources allocated for the engine instance will not be unallocated.
+We need to destroy the Agora Engine instance when the component unmounts. If you forget to do this, the App may still be transmitting video and audio even after we go back from this screen and the resources allocated for the engine instance will not be unallocated.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 export default function Live(props) {
   const AgoraEngine = useRef();
@@ -625,7 +631,7 @@ Next, we need to enable video in the engine to transmit and receive Video. The A
 
 Let's Write a function to acquire these Permissions. This step is only for `android`, not for `iOS`.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 import { PermissionsAndroid } from 'react-native'
 
@@ -636,10 +642,8 @@ async function requestCameraAndAudioPermission() {
       PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
     ]);
     if (
-      granted['android.permission.RECORD_AUDIO'] ===
-        PermissionsAndroid.RESULTS.GRANTED &&
-      granted['android.permission.CAMERA'] ===
-        PermissionsAndroid.RESULTS.GRANTED
+      granted['android.permission.RECORD_AUDIO'] === PermissionsAndroid.RESULTS.GRANTED &&
+      granted['android.permission.CAMERA'] === PermissionsAndroid.RESULTS.GRANTED
     ) {
       console.log('You can use the cameras & mic');
     } else {
@@ -651,9 +655,9 @@ async function requestCameraAndAudioPermission() {
 }
 ```
 
-Now, we need to call this in our `useEffect()` i.e., our `componentDidMount` before `init()`.
+Now, we need to call this in our `useEffect()` before `init()`.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 import { Platform } from 'react-native';
 
@@ -666,9 +670,9 @@ useEffect(() => {
 }, []);
 ```
 
-Once we have acquired the permissions, we can enable video in the agora engine.
+Once we have acquired the permissions, we can enable video in the agora engine. Audio is enabled by default, you don't have to enable that explicitly.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 const init = async () => {
   AgoraEngine.current = await RtcEngine.create('Your App ID Here');
@@ -676,9 +680,9 @@ const init = async () => {
 };
 ```
 
-Next, we need to set the Channel Profile to Livestreaming. `react-native-agora` provides enums for Channel Profile. Let's import it and set the Channel Profile to Live Broadcasting.
+Next, we need to set the Channel Profile to Livestreaming. `react-native-agora` provides enums for Channel Profiles. Let's import it and set the Channel Profile to Live Broadcasting.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 import RtcEngine, { ChannelProfile } from 'react-native-agora';
 
@@ -695,7 +699,7 @@ Let's import the enum `ClientRole` provided by `react-native-agora`.
 
 Remember, we don't need to set the ClientRole if the user is the audience. It's the default value.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 import RtcEngine, { ChannelProfile, ClientRole } from 'react-native-agora';
 
@@ -712,7 +716,7 @@ const init = async () => {
 
 Now that we have set all the config required for the Livestream, we need to join the channel. We need to join the Livestream only after all these configurations have been set up on the engine. Since `init()` is an async function, we can add a `.then()` to it and Join the channel inside it.
 
-To join the channel, the AgoraEngine has a `joinChannel()` function on it. It takes 4 arguments. 
+To join the channel, the AgoraEngine instance has a `joinChannel()` function on it. It takes 4 arguments. 
 
 1. **Authentication Token**:
   - In situations not requiring high security: You can use the temporary token generated at Console. For details, see [Get a temporary token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
@@ -730,7 +734,7 @@ Let's not worry about Authentication and Optional Info now. We'll pass null for 
 
 > You can assign a random UID and store it elsewhere like a database and use that UID later in the code. For simplicity, we will use 1.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 useEffect(() => {
   const uid = props.route.params.type === 'create' ? 1 : 0;
@@ -743,7 +747,7 @@ useEffect(() => {
 
 To ensure we have joined the channel, we can add a `JoinChannelSuccess` listener to the AgoraEngine. Let's add that in the `init()` function.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 const init = async () => {
   AgoraEngine.current = await RtcEngine.create('You App ID Here');
@@ -761,13 +765,13 @@ const init = async () => {
 ```
 Now, when we navigate to the Live screen page, we must see the `console.log` message from the `JoinChannelSuccess` Callback.
 
-This means, we have successfully joined the live stream, we just can't see it yet. Because we didn't write it yet.
+This means, we have successfully joined the live stream, we just can't see it yet. Because we didn't write it yet. :grimacing:
 
-The next step is to display the Remote Video from the Host to the Audience and the Local Video to the Broadcaster.
+The next step is to display the Remote Feed of the Host to the Audience and the Local Feed to the Broadcaster.
 
 Let's import `RtcLocalView` and `RtcRemoteView` form `react-native-agora`.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 import RtcEngine, {
   ChannelProfile,
@@ -777,19 +781,19 @@ import RtcEngine, {
 } from 'react-native-agora';
 ```
 
-RtcLocalView is used on the Broadcaster's side, to display the feed of the Local Camera.
-RtcRemoteView is used on the audience's side, to display the feed of the Broadcaster.
+`RtcLocalView` is used on the Broadcaster's side, to display the feed of the Local Camera.
+`RtcRemoteView` is used on the audience's side, to display the feed of the Broadcaster.
 
 We should not be showing these until the user joins the channel. So, let's create a state for that and set the initial value to false.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 const [joined, setJoined] = useState(false);
 ```
 
 Now, we can use the `JoinChannelSuccess` listener to update the state.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 AgoraEngine.current.addListener(
   'JoinChannelSuccess',
@@ -802,7 +806,7 @@ AgoraEngine.current.addListener(
 
 We can use this state to display a loading screen.
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 return (
   <View style={styles.container}>
@@ -824,22 +828,169 @@ return (
 
 ![Loading Screen](screenshots/loading_screen.gif)
 
-When the `joined` state is set to `true`, we need to show the Local Feed or the Live Feed depending upon the user type.
-
-If the user is the Broadcaster, we need to use the `RtcLocalView` and if the user is an audience, we need to use the `RtcRemoteView`.
+When the `joined` state is set to `true`, we need to show the Local Feed or the Remote Feed (Livestrean) depending upon the user type.
 
 The `RtcLocalView` requires only one prop which is the `channelId` prop. The rest are optional.
 The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop. The `uid` prop is the one deciding which user's feed in the live stream must be displayed on this view. Here, we will pass our host's uid, which is `1`. 
 
-We can also pass styles to it, to make it fullscreen. To make it fullscreen, import Dimensions from react-native and use it to get the width and height of the screen.
+We can also pass styles to the `RtcLocalView` and `RtcRemoteView`, to make it fullscreen. To make it fullscreen, import Dimensions from react-native and use it to get the width and height of the screen.
+
+*screens/Live.js*
+```
+return (
+  <View style={styles.container}>
+    {!joined ? (
+      <>
+        <ActivityIndicator
+          size={60}
+          color="#222"
+          style={styles.activityIndicator}
+        />
+        <Text style={styles.loadingText}>Joining Stream, Please Wait</Text>
+      </>
+    ) : (
+      <>
+        {isBroadcaster ? (
+          <RtcLocalView.SurfaceView
+            style={styles.fullscreen}
+            channelId={props.route.params.channel}
+          />
+        ) : (
+          <RtcRemoteView.SurfaceView
+            uid={1}
+            style={styles.fullscreen}
+            channelId={props.route.params.channel}
+          />
+        )}
+      </>
+    )}
+  </View>
+);
+```
+Fullscreen Styles,
+
+*screens/Live.js*
+```
+import { Dimensions } from 'react-native';
+
+const dimensions = {
+  width: Dimensions.get('window').width,
+  height: Dimensions.get('window').height,
+};
+
+const styles = StyleSheet.create({
+
+  // Rest of the Styles
+
+  fullscreen: {
+    width: dimensions.width,
+    height: dimensions.height,
+  },
+});
+```
+
+One last thing, Let's add a Share button to share the channel ID to others. We need to import the `Share` component from `react-native`.
+
+*screens/Live.js*
+```
+import { Share } from 'react-native';
+```
+
+Let's add a button in the Live screen page and write the function to share the channel when the user presses the share button.
+
+Function to call when the share button is pressed.
+
+*screens/Live.js*
+```
+export default function Live(props) {
+  const onShare = async () => {
+    try {
+      const result = await Share.share({ message: props.route.params.channel });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  // Rest of the Code
+ };
+
+```
+
+Return statement when joined === true
+
+*screens/Live.js*
+```
+<>
+  {isBroadcaster ? (
+    <RtcLocalView.SurfaceView
+      style={styles.fullscreen}
+      channelId={props.route.params.channel}
+    />
+  ) : (
+    <RtcRemoteView.SurfaceView
+      uid={1}
+      style={styles.fullscreen}
+      channelId={props.route.params.channel}
+    />
+  )}
+  <TouchableOpacity style={styles.shareButton} onPress={onShare}>
+    <Text style={styles.shareText}>Share</Text>
+  </TouchableOpacity>
+</>
+```
+
+Share Button Styles
+
+*screens/Live.js*
+```
+shareButton: {
+  position: 'absolute',
+  bottom: 0,
+  width: 200,
+  backgroundColor: '#fff',
+  marginBottom: 50,
+  paddingVertical: 13,
+  borderRadius: 8,
+  alignItems: 'center',
+},
+shareText: {
+  fontSize: 17,
+},
+```
+
 
 This is the final file for the Live.js
 
-**`screens/Live.js`**
+*screens/Live.js*
 ```
 import React, { useRef, useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Dimensions, Platform, PermissionsAndroid, ActivityIndicator} from 'react-native';
-import RtcEngine, { ChannelProfile, ClientRole, RtcLocalView, RtcRemoteView } from 'react-native-agora';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Platform,
+  PermissionsAndroid,
+  ActivityIndicator,
+  Share,
+  TouchableOpacity,
+} from 'react-native';
+
+import RtcEngine, {
+  ChannelProfile,
+  ClientRole,
+  RtcLocalView,
+  RtcRemoteView,
+} from 'react-native-agora';
 
 const dimensions = {
   width: Dimensions.get('window').width,
@@ -873,6 +1024,23 @@ export default function Live(props) {
 
   const [joined, setJoined] = useState(false);
 
+  const onShare = async () => {
+    try {
+      const result = await Share.share({ message: props.route.params.channel });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   const init = async () => {
     AgoraEngine.current = await RtcEngine.create(
       'c7e742d5df23478285a9dc4f4ff62407',
@@ -902,9 +1070,6 @@ export default function Live(props) {
         uid,
       ),
     );
-    return () => {
-      AgoraEngine.current.destroy();
-    }
   }, []);
 
   return (
@@ -932,6 +1097,9 @@ export default function Live(props) {
               channelId={props.route.params.channel}
             />
           )}
+          <TouchableOpacity style={styles.shareButton} onPress={onShare}>
+            <Text style={styles.shareText}>Share</Text>
+          </TouchableOpacity>
         </>
       )}
     </View>
@@ -955,5 +1123,36 @@ const styles = StyleSheet.create({
     width: dimensions.width,
     height: dimensions.height,
   },
+  shareButton: {
+    position: 'absolute',
+    bottom: 0,
+    width: 200,
+    backgroundColor: '#fff',
+    marginBottom: 50,
+    paddingVertical: 13,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  shareText: {
+    fontSize: 17,
+  },
 });
 ```
+
+And with this, Our Livestream app is complete.
+
+## Recap
+
+1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
+   
+2. We created the home screen with two buttons and text input to create a live stream and join the live stream.
+   
+3. We setup React Navigation and we navigated between the two screens. We passed a UUID when we navigated to the Live screen which is the channel ID used for the Livestream.
+   
+4. We initiated the Agora Engine instance and setup all the necessary configuration for the engine like the Channel Profile and the Client Profile.
+   
+5. Then, we joined the channel using no authentication and the channel ID from the route prop.
+   
+6. We displayed the Local View and Remote View based on who is using the app, the Livestream host, or the audience.
+   
+7. We added a Share button to share the UUID to others from the Live screen.
