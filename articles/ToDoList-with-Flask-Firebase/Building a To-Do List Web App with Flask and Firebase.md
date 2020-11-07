@@ -111,7 +111,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
    from flask import Flask, render_template, request, url_for
    ```
 
-   Note: Never name your python script as flask.py, as it will look at this file instead of the flask package which you will import and result in an error.
+   Note: Never name your flask server script as flask.py. This will cause the interpreter will look for the flask libraries in this file instead of the flask package and result in an error.
 
 2.  Paste the firebase configurations you copied from the Firebase Console into a dictionary and make sure to add quotes to the keys.
 
