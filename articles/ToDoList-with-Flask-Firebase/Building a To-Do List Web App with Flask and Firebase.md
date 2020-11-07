@@ -100,7 +100,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
 
     ![img](./firebaseconfig.png)
 
-    Note: The firebase configuration token is confidential information. So do not share it with anyone else unless you would like them to access your Firebase Database (or any other firebase service that you opt-in for in the future).
+    Note: The firebase configuration token is confidential information. So do not share it with anyone else unless you would like them to access your Firebase Database (or any other firebase service that you opt for in the future).
 
 ### Step 3: Scripting the Flask Server
 
