@@ -200,7 +200,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
 
    Jinja is a templating language for Python and will help the Python-based servers, like Flask, communicate with the HTML files. We will make use of this in our application to pass data from server.py to index.html.
 
-   To display all the tasks that have been added, we are passing the dictionary ‘todo’ in render_index() to index.html. This will be received and used to generate as many tasks as there are in the dictionary. These tasks are accompanied by the update and delete button.
+   To display all the tasks that have been added, we are passing the dictionary ‘todo’ in render_index() to index.html. This will be received and used to generate as many tasks as there are in the dictionary. These tasks are accompanied by the update and delete buttons.
 
    So the code will be modified to look like this -
 
