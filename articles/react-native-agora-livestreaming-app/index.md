@@ -22,7 +22,7 @@ We will be going through these steps in this article,
 4. Writing the Application
 5. Let's Recap
 
-If you want to take a look at the code step-by-step, checkout the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app).
+If you want to take a look at the code step-by-step, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app).
 
 # Setting up the Development Environment
 
@@ -832,7 +832,7 @@ loadingText: {
 
 ![Loading Screen](screenshots/loading_screen.gif)
 
-When the `joined` state is set to `true`, we need to show the Local Feed or the Remote Feed (Livestrean) depending upon the user type.
+When the `joined` state is set to `true`, we need to show the Local Feed or the Remote Feed (Livestream) depending upon the user type.
 
 The `RtcLocalView` requires only one prop which is the `channelId` prop. The rest are optional.
 The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop. The `uid` prop is the one deciding which user's feed in the live stream must be displayed on this view. Here, we will pass our host's uid, which is `1`. 
@@ -1158,4 +1158,4 @@ const styles = StyleSheet.create({
 7. We added a Share button to share the UUID to others from the Live screen.
 
 Congratulations, :partying_face:
-You have developed a livestreaming app using React Native and Agora.
+You have developed a live streaming app using React Native and Agora.
