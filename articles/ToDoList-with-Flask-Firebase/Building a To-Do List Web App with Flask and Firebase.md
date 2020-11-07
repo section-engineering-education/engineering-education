@@ -156,7 +156,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
        return render_template('index.html', todo=todo)
    ```
 
-   Here, we are getting (reading) all the values of the child nodes that exist in the database and pass them to the index.html file as a dictionary named ‘todo’. The firebase database stores data in a tree-like structure, so all the tasks that we add will be stored as children of the database. In index.html, we will take the values from ‘todo’ and use them to populate our To-Do list. We will get a clearer idea soon, after we add tasks into the database.
+   Here, we are getting (reading) all the values of the child nodes that exist in the database and pass them to the index.html file as a dictionary named ‘todo’. The firebase database stores data in a tree-like structure, so all the tasks that we add will be stored as children of the database. In index.html, we will take the values from ‘todo’ and use them to populate our To-Do list. We will be able to see this soon, after we add tasks into the database.
 
 7. Next, let us write the function for adding tasks.
    
