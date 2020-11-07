@@ -17,168 +17,41 @@ In this article, we will be focusing on how to build a Livestreaming App using t
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
 # Prerequisites
-You need to have a basic understanding of how React/ React Native works. This article will not cover tutorial aspects of how React/ React Native, So if you do now know how it works, please refer to some tutorials and brush up your skills before beginning with this project.
+This article will not cover tutorial aspects of how React/ React Native, So if you do not know how to work with it, please refer to some tutorials and brush up your skills before beginning with this project.
 
 # Lets Get Started
 We will be going through these steps in this article,
 
 1. Setting up the Development Environment
-2. Creating a React Native App
-3. Creating an Account in Agora
-4. Installing Dependencies
-5. Writing the Main Application
-6. Adding Extra Features
+2. Creating an Agora Account
+3. Installing Dependencies
+4. Writing the Application
 
 ## Step 1: Setting up the Development Environment
 
-> **IMPORTANT** -  We will not be using Expo to create our project. We will use the React Native CLI to create the App.
+> **IMPORTANT** - We will **not** be using Expo to create our project. We will use the **React Native CLI** to create the App.
 
-You will need Node, the React Native command-line interface, a JDK, and Android Studio.
-While you can use any editor of your choice to develop your app, you will need to install Android Studio to set up the necessary tooling to build your React Native app for Android.
+You can follow the steps in the [Environment Setup](https://reactnative.dev/docs/environment-setup) documentation to setup the react native app using the react-native CLI.
 
-**Node, JDK**
-
-I recommend installing Node via Chocolatey, a popular package manager for Windows. You can download it [here](https://chocolatey.org/install).
-
-React Native also requires Java SE Development Kit (JDK), which can be installed using Chocolatey as well.
-
-Open an Administrator Command Prompt (right-click Command Prompt and select "Run as Administrator"), then run the following command:
-
-```
-choco install -y nodejs.install openjdk8
-```
-If you have already installed Node on your system, make sure it is Node 10 or newer. If you already have a JDK on your system, make sure it is version 8 or newer.
-
-You can find additional installation options on [Node's Downloads page](https://nodejs.org/en/download/).
-
-**Android development environment**
-
-Setting up your development environment can be somewhat tedious if you're new to Android development. If you're already familiar with Android development, there are a few things you may need to configure. In either case, please make sure to carefully follow the next few steps.
-
-*1. Install Android Studio*
-
-Download and install Android Studio. While on Android Studio installation wizard, make sure the boxes next to all of the following items are checked:
-
-- Android SDK
-- Android SDK Platform
-- Android Virtual Device
-- If you are not already using Hyper-V: Performance (Intel ® HAXM)
-  
-Then, click "Next" to install all of these components.
-
-> If the checkboxes are grayed out, you will have a chance to install these components later on.
-
-Once setup has finalized and you're presented with the Welcome screen, proceed to the next step.
-
-*2. Install the Android SDK*
-
-Android Studio installs the latest Android SDK by default. Building a React Native app with native code, however, requires the Android 10 (Q) SDK in particular. Additional Android SDKs can be installed through the SDK Manager in Android Studio.
-
-To do that, open Android Studio, click on the "Configure" button, and select "SDK Manager".
-
-![Configure Button Location](screenshots/configure_button.png)
-
-> The SDK Manager can also be found within the Android Studio "Preferences" dialog, under `Appearance & Behavior → System Settings → Android SDK`.
-
-Select the "SDK Platforms" tab from within the SDK Manager, then check the box next to "Show Package Details" in the bottom right corner. Look for and expand the Android 10 (Q) entry, then make sure the following items are checked:
-
-- Android SDK Platform 29
-- Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image
-
-Next, select the "SDK Tools" tab and check the box next to "Show Package Details" here as well. Look for and expand the "Android SDK Build-Tools" entry, then make sure that 29.0.2 is selected.
-
-Finally, click "Apply" to download and install the Android SDK and related build tools.
-
-*3. Configure the ANDROID_HOME environment variable*
-
-The React Native tools require some environment variables to be set up to build apps with native code.
-
-Open the Windows Control Panel.
-Click on User Accounts, then click User Accounts again
-Click on Change my environment variables
-Click on New... to create a new `ANDROID_HOME` user variable that points to the path to your Android SDK:
-
-The SDK is installed, by default, at the following location:
-
-```
-%LOCALAPPDATA%\Android\Sdk
-```
-
-![Android Home Path Variable](screenshots/android_home.png)
-
-You can find the actual location of the SDK in the Android Studio "Settings" dialog, under `Appearance & Behavior → System Settings → Android SDK`.
-
-Open a new Command Prompt window to ensure the new environment variable is loaded before proceeding to the next step.
-
-1. Open powershell
-2. Copy and paste `Get-ChildItem -Path Env:\ into powershell`
-3. Verify `ANDROID_HOME` has been added
-
-*4. Add platform-tools to Path*
-
-1. Open the Windows Control Panel.
-2. Click on User Accounts, then click User Accounts again
-3. Click on Change my environment variables
-4. Select the Path variable.
-5. Click Edit.
-6. Click New and add the path to `platform-tools` to the list.
-
-The default location for this folder is:
-
-```
-%LOCALAPPDATA%\Android\Sdk\platform-tools
-```
-
-**React Native Command Line Interface**
-
-React Native has a built-in command-line interface. Rather than install and manage a specific version of the CLI globally, I recommend you to access the current version at runtime using npx, which ships with Node.js. With ```npx react-native <command>```, the current stable version of the CLI will be downloaded and executed at the time the command is run.
-
-## Step 2: Creating the React Native App
-
-React Native has a built-in command-line interface, which you can use to generate a new project. You can access it without installing anything globally using npx, which ships with Node.js. Let's create a new React Native project called "AwesomeProject":
+Once you've setup the environment, run this command to create a react native app.
 
 ```
 npx react-native init AgoraLivestreamingApp
 ```
 
-**Preparing the Android device**
+After the app is created, it's time to start it up and run it on a physical device or an emulator.
 
-You will need an Android device to run your React Native Android app. This can be either a physical Android device or more commonly, you can use an Android Virtual Device which allows you to emulate an Android device on your computer.
-
-Either way, you will need to prepare the device to run Android apps for development.
-
-*Using a physical device*
-
-If you have a physical Android device, you can use it for development in place of an AVD by plugging it into your computer using a USB cable and following the instructions here.
-
-*Using a virtual device*
-
-If you use Android Studio to open ./AgoraLivestreamingApp/android, you can see the list of available Android Virtual Devices (AVDs) by opening the "AVD Manager" from within Android Studio. Look for an icon that looks like this:
-
-**Android Studio AVD Manager**
-
-If you have recently installed Android Studio, you will likely need to create a new AVD. Select "Create Virtual Device...", then pick any Phone from the list and click "Next", then select the Q API Level 29 image.
-
-> If you don't have HAXM installed, click on "Install HAXM" or follow these instructions to set it up, then go back to the AVD Manager.
-
-Click "Next" then "Finish" to create your AVD. At this point, you should be able to click on the green triangle button next to your AVD to launch it, then proceed to the next step.
-
-**Running your React Native application**
-
-For Android
+For Android,
 ```
 npx react-native run-android
 ```
-For iOS
+
+For iOS,
 ```
-npx react-native run-ios
+npx react-native run-android
 ```
 
-If everything is set up correctly, you should see your new app running in your Android emulator or your physical device shortly.
-
-You can pat yourself on the back now, You've completed the First Step.
-
-## Step 3: Creating and Agora Account
+## Step 2: Creating an Agora Account
 
 Head to Agora and Create an account. You can reach the signup page from [here](https://sso.agora.io/en/v2/signup).
 
@@ -198,7 +71,7 @@ Once you hit on submit, the new project must be created and you should see it on
 
 Now, click on the closed eye icon near the App Id to reveal it and copy the App ID. We will be needing this later while setting up Agora in our app.
 
-## Step 4: Installing Dependencies
+## Step 3: Installing Dependencies
 
 You can use either ```npm``` or ```yarn``` to install these dependencies.
 ```npm``` ships with Node whereas you should install Yarn seperately. You can download yarn from [here](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
@@ -231,7 +104,7 @@ pod install
 
 **List of Dependencies**
 
-You can install these beforehand, or install these while going throught the artice.
+You can install these beforehand, or install these while going throught the article.
 
 ```
 "@react-native-community/masked-view": "^0.1.10",
@@ -248,12 +121,13 @@ You can install these beforehand, or install these while going throught the arti
 "uuid": "^8.3.1"
 ```
 
-## Step 5: Writing the Main Application
+## Step 4: Writing the Application
 
 ### Building our Home Screen
 
 First things first, Let's delete everything in the `App.js` and create our first component.
 
+**`App.js`**
 ```
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
@@ -272,6 +146,7 @@ const styles = StyleSheet.create({})
 
 Let's add some buttons on the home screen to help the user navigate to the Create and Join screens.
 
+**`App.js`**
 ```
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
@@ -279,16 +154,12 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 export default function App() {
   return (
     <View>
-      <Text>Livestream</Text>
+      <Text>Livestream App</Text>
       <TouchableOpacity>
-        <View>
-          <Text>Start</Text>
-        </View>
+        <Text>Start</Text>
       </TouchableOpacity>
       <TouchableOpacity>
-        <View>
-          <Text>Join</Text>
-        </View>
+        <Text>Join</Text>
       </TouchableOpacity>
     </View>
   );
@@ -296,9 +167,11 @@ export default function App() {
 
 
 ```
+![Hideous Homescreen](screenshots/hideous_homepage.jpeg)
 
-This looks hideous, Let's add some styling.
+Eww, Let's add some styles.
 
+**`App.js`**
 ```
 export default function App() {
   return (
@@ -360,11 +233,15 @@ const styles = StyleSheet.create({
 });
 
 ```
-Let's add a text input for the join Livestream channel ID.
+![Homescreen After Styling](screenshots/homescreen_without_input.jpeg)
 
+Let's add a text input for the join Livestream channel ID.
+The join button should be disabled if there is an empty string in the text input.
+
+**`App.js`**
 ```
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 export default function Home() {
   const [joinChannel, setJoinChannel] = useState('');
@@ -412,10 +289,11 @@ const styles = StyleSheet.create({
 
 });
 
+
 ```
+![Homescreen With Input](screenshots/homescreen_with_input.jpeg)
 
-
-These buttons are supposed to take you to a new screen. So let's set up React Navigation.
+These buttons are supposed to take you to the live screen. So let's set up React Navigation.
 
 ### Setting Up React Navigation
 We need to use `@react-navigation/native` to set up navigation in our app.
@@ -423,20 +301,12 @@ We need to use `@react-navigation/native` to set up navigation in our app.
 So let's install the packages required to get navigation up and running.
 
 ```
-yarn add @react-navigation/native
-
-or
-
 npm install @react-navigation/native
 ```
 
 There are a couple of dependencies required for `@react-navigation/native` to work. Let's install those packages too.
 
 ```
-yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
-
-or
-
 npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
 
@@ -446,10 +316,6 @@ We need to install these packages separately.
 We will be using Stack Navigation, so let's install `@react-native/stack`
 
 ```
-yarn add @react-native/stack
-
-or
-
 npm install @react-native/stack
 ```
 
@@ -460,91 +326,6 @@ Create a new Directory called `screens` and create 2 new files inside called `Ho
 ![Screens Directory](screenshots/screens_directory.png)
 
 Let's move what we wrote in the `App.js` into `screens/Home.js`. Once you have moved everything, rename the function from App to Home.
-
-Now,
-In our `App.js`, we need to set up the navigation.
-
-Let's import the `NavigationContainer` from `@react-navigation\native`.
-
-```
-import { NavigationContainer } from '@react-navigation/native';
-```
-
-We need to wrap everything in our App with the `NavigationContainer` like this
-
-```
-export default function App() {
-  return (
-    <NavigationContainer>
-      // Rest of the Code
-    </NavigationContainer>
-  );
-}
-```
-
-Now, we need to create a Stack Navigator. To do that, we need to import createStackNavigator.
-
-```
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
-```
-
-Now, Inside the Navigation Container, Let's Add a Stack Navigator.
-
-```
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        // Rest of the Code Here
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-```
-Our App has 2 Screens, So let's import the screens into ```App.js``` and create 2 screens inside the Navigator.
-
-```
-import Home from './screens/Home';
-import Live from './screens/Live';
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Live" component={Live} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-```
-
-The Stack.Screen accepts 2 props.
-- component - The Screen Component
-- name - The name of the Screen. This will be used to navigate between screens.
-
-This is how our screen looks after adding navigation.
-
-That header looks kinda ugly, let's remove that.
-
-The Stack.screen also accepts a prop called options. Let's pass an object with the option that'll remove the Header. For more options, you can refer [here](https://reactnavigation.org/docs/screen-options/)
-
-```
-const options = { headerShown: false };
-return (
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} options={options} />
-      <Stack.Screen name="Live" component={Live} options={options} />
-    </Stack.Navigator>
-  </NavigationContainer>
-);
-```
-
-Yay, You've set up the React Navigation. But, we still need to write the code to go from the Home Screen to the Live Screen.
-
 Let's add a dummy live screen, for now, just to visualize that we are navigating to the right screen.
 
 **screens/Live.js**
@@ -569,14 +350,105 @@ const styles = StyleSheet.create({
 });
 ```
 
-Now, in `screens/Home.js`, we need to import a hook provided by `@react-navigation/native`.
+Now,
+In our `App.js`, we need to set up the navigation.
 
+Let's import the `NavigationContainer` from `@react-navigation\native`.
+
+**`App.js`**
+```
+import { NavigationContainer } from '@react-navigation/native';
+```
+
+We need to wrap everything in our App with the `NavigationContainer` like this
+
+**`App.js`**
+```
+export default function App() {
+  return (
+    <NavigationContainer>
+      // Rest of the Code
+    </NavigationContainer>
+  );
+}
+```
+
+Now, we need to create a Stack Navigator. To do that, we need to import createStackNavigator.
+
+**`App.js`**
+```
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+```
+
+Now, Inside the Navigation Container, Let's Add a Stack Navigator.
+
+**`App.js`**
+```
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        // Rest of the Code Here
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+```
+Our App has 2 Screens, So let's import the screens into ```App.js``` and create 2 screens inside the Navigator.
+
+**`App.js`**
+```
+import Home from './screens/Home';
+import Live from './screens/Live';
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Live" component={Live} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+```
+
+The Stack.Screen accepts 2 props.
+- component - The Screen Component
+- name - The name of the Screen. This will be used to navigate between screens.
+
+That header looks kinda ugly, let's remove that.
+
+The Stack.screen also accepts a prop called options. Let's pass an object with the option that'll remove the Header. For more options, you can refer [here](https://reactnavigation.org/docs/screen-options/)
+
+**`App.js`**
+```
+const options = { headerShown: false };
+return (
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} options={options} />
+      <Stack.Screen name="Live" component={Live} options={options} />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
+```
+
+You've set up the React Navigation. When you open the app now, You'll see the Home screen because it's the first screen in the stack.
+But, you can't navigate to the Live screen yet. We still need to write the code to go from the Home Screen to the Live Screen.
+
+Let's do that now. In `screens/Home.js`, we need to import a hook provided by `@react-navigation/native`.
+
+**`screens/Home.js`**
 ```
 import { useNavigation } from '@react-navigation/native';
 ```
 
 Inside the Home function, create a constant variable called navigation and assign the hook to it.
 
+**`screens/Home.js`**
 ```
 const navigation = useNavigation();
 ```
@@ -593,7 +465,7 @@ When we create or join a live event, we need to pass a channel id to the Live Sc
 Let's install the UUID package to generate UUID.
 
 ```
-yarn add uuid
+npm install uuid
 ```
 
 In React Native, you will run into an issue with the message `crypto.getRandomValues() is not supported`. To fix this, you will need to install `react-native-get-random-values` and import it before importing UUID.
@@ -602,11 +474,12 @@ In React Native, you will run into an issue with the message `crypto.getRandomVa
 Let's install the react-native-get-random-values package to fix the issue.
 
 ```
-yarn add react-native-get-random-values
+npm install react-native-get-random-values
 ```
 
 Import both of those packages into the file in this order. The `react-native-get-random-values` must be imported before the `uuid` import.
 
+**`screens/Home.js`**
 ```
 import 'react-native-get-random-values';
 import { v4 as uuid } from 'uuid';
@@ -617,15 +490,17 @@ We need to Navigate to the Live Screen from both the buttons, so let's create tw
 In the Navigate to Create Live function, we will generate a new UUID and pass it as a route prop.
 In the Navigate to Join Live function, we will use the TextInput's value.
 
+**`screens/Home.js`**
 ```
-  const createLive = () => navigation.navigate('Live', { type: 'create', channel: uuid() });
-  const joinLive = () => navigation.navigate('Live', { type: 'join', channel: joinChannel });
+const createLive = () => navigation.navigate('Live', { type: 'create', channel: uuid() });
+const joinLive = () => navigation.navigate('Live', { type: 'join', channel: joinChannel });
 ```
 
 Notice that we are also passing a route prop called `type` along with channel? We will be using this to determine whether the user is a broadcaster or an audience on the Livestream page.
 
 You can pass these functions to the `onPress` prop of the `TouchableOpacity` component.
 
+**`screens/Home.js`**
 ```
 const navigation = useNavigation();
 
@@ -664,10 +539,6 @@ Okay, We reached the interesting part.
 In order to use Agora, we need to install `react-native-agora` first. Let's install it.
 
 ```
-yarn add react-native-agora
-
-or 
-
 npm install react-native-agora
 ```
 
@@ -681,6 +552,7 @@ Let's open the `screens/Live.js`.
 
 In here, we need to import the `RtcEngine` from `react-native-agora`.
 
+**`screens/Live.js`**
 ```
 import RtcEngine from 'react-native-agora';
 ```
@@ -693,6 +565,7 @@ We can't create a normal variable in the function's scope and assign the engine'
 
 So let's import `useEffect` and `useRef` from `React`.
 
+**`screens/Live.js`**
 ```
 import React, { useEffect, useRef } from 'react';
 ```
@@ -703,6 +576,7 @@ It is an async function, and we need to assign the returned object to the ref cr
 
 You can't pass an async function to an useEffect, so let's create an async function called init() and then call it in the useEffect().
 
+**`screens/Live.js`**
 ```
 export default function Live(props) {
   const AgoraEngine = useRef();
@@ -722,10 +596,36 @@ export default function Live(props) {
 }
 ```
 
+We need to destroy the Agora Engine instance when the component unmounts. If you forget to do this, the App may still be transmiting video and audio even after we go back from this screen and the resources allocated for the engine instance will not be unallocated.
+
+**`screens/Live.js`**
+```
+export default function Live(props) {
+  const AgoraEngine = useRef();
+  const init = async () => {
+    AgoraEngine.current = await RtcEngine.create('Your App ID Here');
+  };
+
+  useEffect(() => {
+    init();
+    return () => {
+      AgoraEngine.current.destroy();
+    }
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <Text>Live</Text>
+    </View>
+  );
+}
+```
+
 Next, we need to enable video in the engine to transmit and receive Video. The AgoraEngine has a method called enableVideo(). We need to call it to enable video. But before that, we need to acquire permission from Android to access the Camera and Microphone.
 
 Let's Write a function to acquire these Permissions. This step is only for `android`, not for `iOS`.
 
+**`screens/Live.js`**
 ```
 import { PermissionsAndroid } from 'react-native'
 
@@ -753,17 +653,22 @@ async function requestCameraAndAudioPermission() {
 
 Now, we need to call this in our `useEffect()` i.e., our `componentDidMount` before `init()`.
 
+**`screens/Live.js`**
 ```
 import { Platform } from 'react-native';
 
 useEffect(() => {
   if (Platform.OS === 'android') requestCameraAndAudioPermission();
   init();
+  return () => {
+    AgoraEngine.current.destroy();
+  }
 }, []);
 ```
 
 Once we have acquired the permissions, we can enable video in the agora engine.
 
+**`screens/Live.js`**
 ```
 const init = async () => {
   AgoraEngine.current = await RtcEngine.create('Your App ID Here');
@@ -773,6 +678,7 @@ const init = async () => {
 
 Next, we need to set the Channel Profile to Livestreaming. `react-native-agora` provides enums for Channel Profile. Let's import it and set the Channel Profile to Live Broadcasting.
 
+**`screens/Live.js`**
 ```
 import RtcEngine, { ChannelProfile } from 'react-native-agora';
 
@@ -789,6 +695,7 @@ Let's import the enum `ClientRole` provided by `react-native-agora`.
 
 Remember, we don't need to set the ClientRole if the user is the audience. It's the default value.
 
+**`screens/Live.js`**
 ```
 import RtcEngine, { ChannelProfile, ClientRole } from 'react-native-agora';
 
@@ -823,15 +730,20 @@ Let's not worry about Authentication and Optional Info now. We'll pass null for 
 
 > You can assign a random UID and store it elsewhere like a database and use that UID later in the code. For simplicity, we will use 1.
 
+**`screens/Live.js`**
 ```
 useEffect(() => {
   const uid = props.route.params.type === 'create' ? 1 : 0;
   init().then(() => AgoraEngine.current.joinChannel(null, props.route.params.channel, null, uid));
+  return () => {
+    AgoraEngine.current.destroy();
+  }
 }, []);
 ```
 
 To ensure we have joined the channel, we can add a `JoinChannelSuccess` listener to the AgoraEngine. Let's add that in the `init()` function.
 
+**`screens/Live.js`**
 ```
 const init = async () => {
   AgoraEngine.current = await RtcEngine.create('You App ID Here');
@@ -855,6 +767,7 @@ The next step is to display the Remote Video from the Host to the Audience and t
 
 Let's import `RtcLocalView` and `RtcRemoteView` form `react-native-agora`.
 
+**`screens/Live.js`**
 ```
 import RtcEngine, {
   ChannelProfile,
@@ -869,12 +782,14 @@ RtcRemoteView is used on the audience's side, to display the feed of the Broadca
 
 We should not be showing these until the user joins the channel. So, let's create a state for that and set the initial value to false.
 
+**`screens/Live.js`**
 ```
 const [joined, setJoined] = useState(false);
 ```
 
 Now, we can use the `JoinChannelSuccess` listener to update the state.
 
+**`screens/Live.js`**
 ```
 AgoraEngine.current.addListener(
   'JoinChannelSuccess',
@@ -887,6 +802,7 @@ AgoraEngine.current.addListener(
 
 We can use this state to display a loading screen.
 
+**`screens/Live.js`**
 ```
 return (
   <View style={styles.container}>
@@ -906,6 +822,8 @@ return (
 );
 ```
 
+![Loading Screen](screenshots/loading_screen.gif)
+
 When the `joined` state is set to `true`, we need to show the Local Feed or the Live Feed depending upon the user type.
 
 If the user is the Broadcaster, we need to use the `RtcLocalView` and if the user is an audience, we need to use the `RtcRemoteView`.
@@ -917,6 +835,7 @@ We can also pass styles to it, to make it fullscreen. To make it fullscreen, imp
 
 This is the final file for the Live.js
 
+**`screens/Live.js`**
 ```
 import React, { useRef, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Dimensions, Platform, PermissionsAndroid, ActivityIndicator} from 'react-native';
@@ -983,6 +902,9 @@ export default function Live(props) {
         uid,
       ),
     );
+    return () => {
+      AgoraEngine.current.destroy();
+    }
   }, []);
 
   return (
