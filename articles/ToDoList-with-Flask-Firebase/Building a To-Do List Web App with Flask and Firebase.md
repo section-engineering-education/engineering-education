@@ -235,4 +235,4 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
 
    ### Conclusion
 
-   Play around with the delete and update functionalities as well, and voila! Our To-Do list app is ready! We successfully built a simple To-Do list web application with CRUD operations using Flask, Firebase Realtime Database, and Jinja.
+   Play around with the delete and update functionalities as well, and voila! Our To-Do list app is ready! We successfully built a simple To-Do list web application with Flask server, learned to perform CRUD operations on Firebase Realtime Database, and used Jinja templating to dynamically manipulate the content displayed in our HTML web page.
