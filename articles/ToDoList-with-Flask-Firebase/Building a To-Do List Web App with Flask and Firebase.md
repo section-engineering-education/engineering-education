@@ -66,7 +66,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
 
 ### Step 2: Set up Firebase Realtime Database
 
-1. We will be using the Python firebase package - Pyrebase, so let’s install this into your python environment.
+1. We will be using the Python firebase package - Pyrebase, so install this into your python environment.
 
    `pip install pyrebase`
 
