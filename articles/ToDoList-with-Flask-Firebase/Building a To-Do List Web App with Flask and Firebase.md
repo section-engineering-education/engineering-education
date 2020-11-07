@@ -146,7 +146,8 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
        app.run(debug=True)
    ```
 
-
+ @app.route(url) is used to map urls to their associated functions whenever that url is called. All these routes and their functions are to be placed above the main function. 
+ 
 6. Let us begin defining our first function, which will power the index.html page.
 
    ```python
