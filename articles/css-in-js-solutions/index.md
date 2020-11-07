@@ -22,9 +22,11 @@ Web components have changed the landscape for the development of web application
 
 Understanding web components might seem a bit daunting for novice web developers. However, let’s take a web application that has two prime features― a dropdown menu and a navigation menu appears on all pages. 
 
-The traditional way of building web applications would require creating multiple CSS, JavaScript and HTML files that have a dropdown and navigation menu as a feature. 
+The traditional way of building web applications would require linking JavaScript and CSS files to every page that needed a dropdown or navigation menu and copy/pasting the HTML code to every location you wanted them to appear. 
 
-This methodology of building web applications makes it difficult to maintain the codebase. But, if the generic features that span the entire web application can be isolated and built-in as components, then each web page will inherit that component and its generic features. This makes the dropdown and navigation menu components reusable, hence Web Components.
+This methodology of building web applications makes it difficult to maintain because in a big application, you could have hundreds of small files or one very large file which is difficult to sort through.
+
+But, if the generic features that span the entire web application can be isolated and built-in as components, then each web page will inherit that component and its generic features. This makes the dropdown and navigation menu components reusable, hence Web Components.
 
 ### CSS and Web Components
 Styling elements has been the underlying factor for the appeal of frontend web applications, and with it comes a clear understanding of web components and how it relates to CSS.
@@ -33,7 +35,9 @@ A web component contains its own default CSS stylinng. When a webpage invokes a 
 
 However, you may not want the default component styles every time and this would require over-riding them. A technical approach to this issue is to create an external stylesheet for each web page inheriting the specific element, but this however also leads to a clogged codebase of CSS files.
 
-This gap in the simplification of your codebase concerning your CSS files is why you need to seek out means of encapsulating your CSS code within your JavaScript files, rather than creating external stylesheets for each web component.
+Although web components simplify the development process of web applications, with it comes the barrier of maintaining multiple external style sheets when using CSS.
+
+Some solutions exist to simplify web component CSS, such as CSS-in-JS. CSS-in-JS will encapsulate your CSS code within your JavaScript files, rather than creating external stylesheets for each web component.
 
 Although web components simplify the development process of web applications, with it comes the barrier of maintaining multiple external style sheets when using CSS.
 
@@ -59,7 +63,7 @@ CSS-in-JS is the best styling technique to use with web components. But, this do
 
 2. Reduction in Redundancy: With inline styles, you can avoid redundant code and only declare CSS styles to a particular element when needed, this way, all extraneous code sis removed.
 
-3.  External stylesheets: Inline-styles aren't the only way to write CSS.  External stylesheets keeps your codebase organized and allows you to store all CSS code within a single file and reference them in webpages that need them.
+3.  External stylesheets: Inline-styles aren't the only way to write CSS.  External stylesheets keep your codebase organized and allows you to store all CSS code within a single file and reference them in webpages that need them.
 
 4. Media Queries: The use of media queries allows you to specify the application of specific CSS rules for a particular screen layout and media types or devices.
 
@@ -97,8 +101,9 @@ To dive in further, here are the benefits of using JSS in your project:
 
 Conclusively, JSS can be easily integrated into your React application. Follow this [guide](https://cssinjs.org/setup) to get started with JSS, and you can see a live code [here](https://codesandbox.io/s/z21lpmvv33) of CSS-in-JS in action with JSS.
 
-2. Styled-Components: Styled-components are one of the most used CSS-in-JS solutions in app development. It ensures the usage of ES6 and CSS to style your application with template literals and CSS; you can easily style app components.
-With an intense focus on improving user experience, styled-components are designed to enhance CSS styling for React app components. The following are the benefits of using styled-components in your application:
+2. Styled-Components: Styled-components are one of the most used CSS-in-JS solutions in app development. It ensures the usage of ES6 and CSS to style your application with template literals and CSS; you can easily style app components. With an intense focus on improving user experience, styled-components are designed to enhance CSS styling for React app components. 
+
+The following are the benefits of using styled-components in your application:
 
 * CSS Automation: By using styled-components as your preferred CSS-in-JS solution, it keeps track of which components are active and rendered on the page to inject all styles related to that component automatically, which increases the speed of loading your application.
 * Maintenance: As with other CSS-in-JS solutions, you can maintain your CSS codebase easily and track styles affecting your component without having to check through multiple CSS files.
