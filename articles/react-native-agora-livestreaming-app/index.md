@@ -1,12 +1,6 @@
 Want to build a cool and simple Livestreaming app using React Native?
 Keep reading to find out.
 
-# React Native
-According to [Wikipedia](https://en.wikipedia.org/wiki/React_Native), React Native is an open-source mobile application framework created by Facebook, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows, and UWP by enabling developers to use React's framework along with native platform capabilities.
-
-[Documentaion for React Native](https://reactnative.dev/)
-
-
 # Agora
 Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but do not worry. The first 10,000 minutes for every month is free. You could check their pricing [here](https://www.agora.io/en/pricing/).
 
@@ -17,7 +11,7 @@ In this article, we will be focusing on how to build a Livestreaming App using t
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
 # Prerequisites
-This article will not cover tutorial aspects of how React/ React Native, So if you do not know how to work with it, please refer to some tutorials and brush up your skills before beginning with this project.
+This article will not cover tutorial aspects of how React/ React Native, So if you do not know how to work with it, please refer to some tutorials before beginning with this project.
 
 # Overview
 We will be going through these steps in this article,
@@ -26,13 +20,13 @@ We will be going through these steps in this article,
 2. Creating an Agora Account
 3. Installing Dependencies
 4. Writing the Application
-5. Recap
+5. Let's Recap
 
-At the end of this Article, you will learn how to build a livestreaming application using Agora in React Native.
+If you want to take a look at the code step-by-step, checkout the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app).
 
 # Setting up the Development Environment
 
-> **IMPORTANT** - We will **not** be using Expo to create our project. We will use the **React Native CLI** to create the App.
+> **IMPORTANT** - We will **not** be using Expo to create our project. We will use the **React Native CLI Quickstart** to create the app.
 
 You can follow the steps in the [Environment Setup](https://reactnative.dev/docs/environment-setup) documentation to set up the react native app using the react-native CLI.
 
@@ -170,9 +164,7 @@ export default function App() {
 
 
 ```
-![Hideous Homescreen](screenshots/hideous_homepage.jpeg)
-
-Eww, Let's add some styles.
+Let's add some styles.
 
 *App.js*
 ```
@@ -181,12 +173,12 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>Livestream App</Text>
       <View style={styles.createContainer}>
-        <TouchableOpacity style={styles.button} onPress={createLive}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Start</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.joinContainer}>
-        <TouchableOpacity style={styles.button} onPress={joinLive}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Join</Text>
         </TouchableOpacity>
       </View>
@@ -234,16 +226,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
-
 ```
 ![Homescreen After Styling](screenshots/homescreen_without_input.jpeg)
 
-That looks better. Let's add a text input for the join Livestream channel Id.
+Now, Let's add a text input for the join Livestream channel Id.
 The join button should be disabled if there is an empty string in the text input.
 
 *App.js*
 ```
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 export default function Home() {
@@ -258,16 +249,18 @@ export default function Home() {
         </TouchableOpacity>
       </View>
       <View style={styles.joinContainer}>
+        <TextInput
+          value={joinChannel}
+          onChangeText={setJoinChannel}
+          placeholder="Enter Livestream Id"
+          style={styles.joinChannelInput}
+        />
         <TouchableOpacity
           style={[
             styles.button,
-            { backgroundColor: joinChannel === '' ? '#555555' : '#78b0ff' },
+            {backgroundColor: joinChannel === '' ? '#555555' : '#78b0ff'},
           ]}
-          onPress={joinLive}
           disabled={joinChannel === ''}>
-          <Text style={styles.buttonText}>Join</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Join</Text>
         </TouchableOpacity>
       </View>
@@ -291,8 +284,6 @@ const styles = StyleSheet.create({
   // Rest of the Styles
 
 });
-
-
 ```
 ![Homescreen With Input](screenshots/homescreen_with_input.jpeg)
 
@@ -319,12 +310,12 @@ We need to install these packages separately.
 We will be using Stack Navigation, so let's install `@react-native/stack`
 
 ```
-npm install @react-native/stack
+npm install @react-navigation/stack
 ```
 
 Now that we've installed the dependencies for us to set up navigation, Let's build the screens.
 
-Create a new Directory called `screens` and create 2 new files inside called `Home.js` and `Live.js`
+Create a new directory called `screens` and create 2 new files inside called `Home.js` and `Live.js`
 
 ![Screens Directory](screenshots/screens_directory.png)
 
@@ -508,8 +499,6 @@ You can pass these functions to the `onPress` prop of the `TouchableOpacity` com
 
 *screens/Home.js*
 ```
-const navigation = useNavigation();
-
 const createLive = () => navigation.navigate('Live', { type: 'create' });
 const joinLive = () => navigation.navigate('Live', { type: 'join' });
 
@@ -523,12 +512,18 @@ return (
     </View>
     <View style={styles.joinContainer}>
       <TextInput
-        placeholder="Enter Livestream ID"
         value={joinChannel}
         onChangeText={setJoinChannel}
+        placeholder="Enter Livestream Id"
         style={styles.joinChannelInput}
       />
-      <TouchableOpacity style={styles.button} onPress={joinLive}>
+      <TouchableOpacity
+        onPress={joinLive}
+        disabled={joinChannel === ''}
+        style={[
+          styles.button,
+          { backgroundColor: joinChannel === '' ? '#555555' : '#78b0ff' },
+        ]}>
         <Text style={styles.buttonText}>Join</Text>
       </TouchableOpacity>
     </View>
@@ -737,7 +732,7 @@ Let's not worry about Authentication and Optional Info now. We'll pass null for 
 *screens/Live.js*
 ```
 useEffect(() => {
-  const uid = props.route.params.type === 'create' ? 1 : 0;
+  const uid = isBroadcaster ? 1 : 0;
   init().then(() => AgoraEngine.current.joinChannel(null, props.route.params.channel, null, uid));
   return () => {
     AgoraEngine.current.destroy();
@@ -753,7 +748,7 @@ const init = async () => {
   AgoraEngine.current = await RtcEngine.create('You App ID Here');
   AgoraEngine.current.enableVideo();
   AgoraEngine.current.setChannelProfile(ChannelProfile.LiveBroadcasting);
-  if (props.route.params.type === 'create')
+  if (isBroadcaster)
     AgoraEngine.current.setClientRole(ClientRole.Broadcaster);
 
   AgoraEngine.current.addListener(
@@ -824,6 +819,15 @@ return (
     )}
   </View>
 );
+```
+
+*Styles for Loading Screen*
+
+```
+loadingText: {
+  fontSize: 18,
+  color: '#222',
+},
 ```
 
 ![Loading Screen](screenshots/loading_screen.gif)
@@ -967,20 +971,18 @@ shareText: {
 },
 ```
 
-
-This is the final file for the Live.js
+This is the final version for the Live.js file.
 
 *screens/Live.js*
 ```
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   StyleSheet,
   Text,
   View,
-  Dimensions,
-  Platform,
   PermissionsAndroid,
   ActivityIndicator,
+  Dimensions,
   Share,
   TouchableOpacity,
 } from 'react-native';
@@ -1019,10 +1021,7 @@ async function requestCameraAndAudioPermission() {
 }
 
 export default function Live(props) {
-  const AgoraEngine = useRef();
   const isBroadcaster = props.route.params.type === 'create';
-
-  const [joined, setJoined] = useState(false);
 
   const onShare = async () => {
     try {
@@ -1041,6 +1040,9 @@ export default function Live(props) {
     }
   };
 
+  const [joined, setJoined] = useState(false);
+
+  const AgoraEngine = useRef();
   const init = async () => {
     AgoraEngine.current = await RtcEngine.create(
       'c7e742d5df23478285a9dc4f4ff62407',
@@ -1049,7 +1051,6 @@ export default function Live(props) {
     AgoraEngine.current.setChannelProfile(ChannelProfile.LiveBroadcasting);
     if (isBroadcaster)
       AgoraEngine.current.setClientRole(ClientRole.Broadcaster);
-
     AgoraEngine.current.addListener(
       'JoinChannelSuccess',
       (channel, uid, elapsed) => {
@@ -1061,7 +1062,7 @@ export default function Live(props) {
 
   useEffect(() => {
     if (Platform.OS === 'android') requestCameraAndAudioPermission();
-    const uid = props.route.params.type === 'create' ? 1 : 0;
+    const uid = isBroadcaster ? 1 : 0;
     init().then(() =>
       AgoraEngine.current.joinChannel(
         null,
@@ -1070,6 +1071,9 @@ export default function Live(props) {
         uid,
       ),
     );
+    return () => {
+      AgoraEngine.current.destroy();
+    };
   }, []);
 
   return (
@@ -1112,9 +1116,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  activityIndicator: {
-    marginBottom: 20,
-  },
   loadingText: {
     fontSize: 18,
     color: '#222',
@@ -1137,11 +1138,10 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
 });
+
 ```
 
-And with this, Our Livestream app is complete.
-
-## Recap
+# Let's Recap
 
 1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
    
@@ -1156,3 +1156,6 @@ And with this, Our Livestream app is complete.
 6. We displayed the Local View and Remote View based on who is using the app, the Livestream host, or the audience.
    
 7. We added a Share button to share the UUID to others from the Live screen.
+
+Congratulations, :partying_face:
+You have developed a livestreaming app using React Native and Agora.
