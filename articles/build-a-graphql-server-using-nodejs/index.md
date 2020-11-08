@@ -128,4 +128,12 @@ Call the GraphQL server with the input as
 ```
 Click play and this is how the browser window will look.
 
-![graphql-init-browser](/engineering-education/build-a-graphql-server-using-nodejs/graphql-init-browser.png)
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uGMX8s7iFaw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### Add Basic Queries
+
+This section would use static data stored in arrays to be fetched via GraphQL server. In the further section we would replace it with MongoDB.
+
+1. Install the `lodash` library for Javascript via terminal. <br>
+This library makes working with arrays and objects easy. To get a brief idea about Lodash, read the [blog at Section](https://www.section.io/engineering-education/most-useful-nodejs-packages/)(Lodash is the fourth section of the article). For more details, visit the [Lodash website](https://lodash.com/). <br>
+```npm i lodash```
