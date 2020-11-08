@@ -7,7 +7,7 @@ By the end of the tutorial, you’ll understand
 - How to create a live stream App with React Native App using Agora.
 - Share a room code for others to join the live stream.
 - Add Event listeners on the live stream to listen to host's state changes and notify the audience in the live stream.
-- 
+  
 ### Prerequisites
 This article will not cover tutorial aspects of how React/ React Native. So if you do not know how to work with it, please refer to some tutorials before beginning with this project.
 
