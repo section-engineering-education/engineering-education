@@ -20,7 +20,8 @@ We will be going through these steps in this article,
 2. Creating an Agora Account
 3. Installing Dependencies
 4. Writing the Application
-5. Let's Recap
+5. Extra Features
+6. Let's Recap
 
 > If you want to take a look at the code step-by-step, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made commits for each and every step in this tutorial.
 
@@ -533,36 +534,23 @@ The `RtcLocalView` requires only one prop which is the `channelId` prop. The res
 The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop. The `uid` prop is the one deciding which user's feed in the live stream must be displayed on this view. Here, we will pass our host's uid, which is `1`. 
 
 We can also pass styles to the `RtcLocalView` and `RtcRemoteView`, to make it fullscreen. To make it fullscreen, import Dimensions from react-native and use it to get the width and height of the screen.
+
+Return Statement when joined === true.
 ```
-return (
-  <View style={styles.container}>
-    {!joined ? (
-      <>
-        <ActivityIndicator
-          size={60}
-          color="#222"
-          style={styles.activityIndicator}
-        />
-        <Text style={styles.loadingText}>Joining Stream, Please Wait</Text>
-      </>
-    ) : (
-      <>
-        {isBroadcaster ? (
-          <RtcLocalView.SurfaceView
-            style={styles.fullscreen}
-            channelId={props.route.params.channel}
-          />
-        ) : (
-          <RtcRemoteView.SurfaceView
-            uid={1}
-            style={styles.fullscreen}
-            channelId={props.route.params.channel}
-          />
-        )}
-      </>
-    )}
-  </View>
-);
+<>
+  {isBroadcaster ? (
+    <RtcLocalView.SurfaceView
+      style={styles.fullscreen}
+      channelId={props.route.params.channel}
+    />
+  ) : (
+    <RtcRemoteView.SurfaceView
+      uid={1}
+      style={styles.fullscreen}
+      channelId={props.route.params.channel}
+    />
+  )}
+</>
 ```
 Fullscreen Styles,
 ```
@@ -584,7 +572,9 @@ const styles = StyleSheet.create({
 });
 ```
 One last thing, Let's add a Share button to share the channel ID to others. We need to import the `Share` component from `react-native`.
-### Share the Channel ID
+
+# Extra Features 
+## Share the Channel ID
 ```
 import { Share } from 'react-native';
 ```
@@ -614,7 +604,7 @@ export default function Live(props) {
  };
 
 ```
-Return statement when joined === true
+The Share Button.
 ```
 <>
   {isBroadcaster ? (
@@ -629,27 +619,53 @@ Return statement when joined === true
       channelId={props.route.params.channel}
     />
   )}
-  <TouchableOpacity style={styles.shareButton} onPress={onShare}>
-    <Text style={styles.shareText}>Share</Text>
-  </TouchableOpacity>
+  <View style={styles.buttonContainer}>
+    <TouchableOpacity style={styles.button} onPress={onShare}>
+      <Text style={styles.shareText}>Share</Text>
+    </TouchableOpacity>
+  </View>
 </>
 ```
-*Share Button Styles*
+*Button Styles*
 ```
-shareButton: {
+buttonContainer: {
+  flexDirection: 'row',
   position: 'absolute',
   bottom: 0,
-  width: 200,
+},
+button: {
+  width: 150,
   backgroundColor: '#fff',
   marginBottom: 50,
   paddingVertical: 13,
   borderRadius: 8,
   alignItems: 'center',
+  marginHorizontal: 10,
 },
-shareText: {
+buttonText: {
   fontSize: 17,
 },
 ```
+
+## Switch Camera
+Let's add another button in the Live screen page and write the function to switch the camera when the user presses the button.
+
+Function to Switch Camera
+```
+const onSwitchCamera = () => AgoraEngine.current.switchCamera();
+```
+Switch Camera Button
+```
+ <View style={styles.buttonContainer}>
+  <TouchableOpacity style={styles.button} onPress={onShare}>
+    <Text style={styles.buttonText}>Share</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={styles.button} onPress={onSwitchCamera}>
+    <Text style={styles.buttonText}>Switch Camera</Text>
+  </TouchableOpacity>
+</View>
+```
+
 # Let's Recap
 1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
    
