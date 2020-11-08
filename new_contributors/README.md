@@ -2,8 +2,6 @@
 
 Here's a list of our contributor documentation to help you get started on your first article.
 
-Any questions, just ask on the #eng-ed Slack channel.
-
 - Contributing: is your main starting point. It introduces you to the program and guides you through signing up, proposing your first article and suggested article structures.
 
 - FAQ: answers the most frequent questions students often ask and links to the relevant guide to answer them
@@ -19,3 +17,5 @@ Any questions, just ask on the #eng-ed Slack channel.
 - Software Review Template: a sugggested structure for Software Review articles
 
 - Tutorial Template: a sugggested structure for Tutorial articles
+
+Any other follow up questions, feel free to ask on the #eng-ed Slack channel.
