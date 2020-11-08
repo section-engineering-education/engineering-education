@@ -4,14 +4,14 @@ Keep reading to find out.
 # Agora
 Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but do not worry. The first 10,000 minutes for every month is free. You could check their pricing [here](https://www.agora.io/en/pricing/).
 
-Using Agora, we can develop a wide variety of applications that requires real-time engagement like Audio/Video Call, Interactive Livestreaming (Audio/ Video), Interactive Gaming, Real-Time Messaging (which is in BETA at the time of writing this article).
+Using Agora, we can develop a wide variety of applications that requires real-time engagement. Some of the examples are Audio/Video Call, Interactive Livestreaming (Audio/ Video), Interactive Gaming, Real-Time Messaging (which is in BETA at the time of writing this article).
 
 In this article, we will be focusing on how to build a Livestreaming App using the services provided by Agora.
 
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
 # Prerequisites
-This article will not cover tutorial aspects of how React/ React Native, So if you do not know how to work with it, please refer to some tutorials before beginning with this project.
+This article will not cover tutorial aspects of how React/ React Native. So if you do not know how to work with it, please refer to some tutorials before beginning with this project.
 
 # Overview
 We will be going through these steps in this article,
@@ -23,7 +23,7 @@ We will be going through these steps in this article,
 5. Extra Features
 6. Let's Recap
 
-> If you want to take a look at the code step-by-step, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made commits for each and every step in this tutorial.
+> If you want to take a look at the code step-by-step, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made commits for every step in this tutorial.
 
 # Setting up the Development Environment
 
@@ -37,7 +37,7 @@ Once you've set up the environment, run this command to create a react native ap
 npx react-native init AgoraLivestreamingApp
 ```
 
-After the app is created, it's time to start it up and run it on a physical device or an emulator.
+Once you create the app, it's time to start it up and run it on a physical device or an emulator.
 
 For Android,
 ```
@@ -52,7 +52,7 @@ npx react-native run-android
 # Creating an Agora Account
 Head to Agora and Create an account. You can reach the signup page from [here](https://sso.agora.io/en/v2/signup).
 
-Fill in the details and create an account or you can signup with either Google, Github, or Cocos. Once you've signed up, You'll be greeted by the dashboard.
+Fill in the details and create an account or you can signup with either Google, Github, or Cocos. Once you've signed up, You'll see the dashboard.
 
 ![Agora Dashboard](screenshots/agora_dashboard.png)
 
@@ -62,7 +62,7 @@ You'll see this modal. Fill out the Project Name and set the Authentication Mech
 
 ![Agora New Project Dashboard](screenshots/agora_new_project.png)
 
-Once you hit on submit, the new project must be created and you should see it on the Project Management Console.
+Once you hit on submit, it'll create a new project and you should see it on the Project Management Console.
 
 ![Agora Project Management Console](screenshots/agora_project_management_console.png)
 
@@ -148,7 +148,7 @@ Create a new directory called `screens` with 2 new files inside called `Home.js`
 ### Set up Navigator
 Let's move what we wrote in the `App.js` into `screens/Home.js`. Once you have moved everything, rename the function from App to Home in `screens/Home.js`.
 
-Let's add a dummy live screen, for now, just to visualize that we are navigating to the right screen.
+Let's add a dummy live screen, for now, to visualize that we are navigating to the right screen.
 
 *screens/Live.js*
 ```
@@ -209,7 +209,7 @@ Our App has 2 Screens, So let's import the screens into ```App.js``` and create 
 
 The Stack.Screen accepts 2 props.
 - component - The Screen Component
-- name - The name of the screen. This will be used to navigate between screens.
+- name - The name of the screen. We will use this to navigate between screens.
 ```
 import Home from './screens/Home';
 import Live from './screens/Live';
@@ -230,7 +230,7 @@ You can't navigate to the Live screen yet. We still need to write the code to go
 
 ![Homescreen with Header](screenshots/home_with_header.jpeg)
 
-I don't think we need the header, let's remove that.
+We don't need the header, let's remove that.
 
 The Stack.screen also accepts a prop called options. Let's pass an object with the option that'll remove the Header. For more options, you can refer [here](https://reactnavigation.org/docs/screen-options/)
 ```
@@ -253,7 +253,7 @@ Inside the Home function, create a constant variable called navigation and assig
 ```
 const navigation = useNavigation();
 ```
-Now, `navigation` will have a function on it called `navigate` which can be used to navigate between screens using the screen name.
+Now, `navigation` will have a function on it called `navigate` which will be used to navigate between screens using the screen name.
 Like this,
 
 ```
@@ -271,7 +271,7 @@ Let's install the react-native-get-random-values package to fix the issue.
 ```
 npm install react-native-get-random-values
 ```
-Import both of those packages into the file in this order. The `react-native-get-random-values` must be imported before the `uuid` import.
+Import both of those packages into the file in this order. We must import the `react-native-get-random-values` before the `uuid` import.
 ```
 import 'react-native-get-random-values';
 import { v4 as uuid } from 'uuid';
@@ -312,7 +312,7 @@ RtcEngine has a function called `create` on it, which will create an Agora Engin
 
 > Do not forget to destroy this instance on component unmount.
 
-We can't create a normal variable in the function's scope and assign the engine's instance to it, because we will lose it on a re-render. So, we need to create a ref using useRef() and assign the engine instance to it.
+We can't create a normal variable in the function's scope and assign the engine's instance to it because we will lose it on a re-render. So, we need to create a ref using useRef() and assign the engine instance to it.
 
 So let's import `useEffect` and `useRef` from `React`.
 ```
@@ -531,7 +531,7 @@ loadingText: {
 When the `joined` state is set to `true`, we need to show the Local Feed or the Remote Feed (Livestream) depending upon the user type.
 
 The `RtcLocalView` requires only one prop which is the `channelId` prop. The rest are optional.
-The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop. The `uid` prop is the one deciding which user's feed in the live stream must be displayed on this view. Here, we will pass our host's UID, which is `1`. 
+The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop. The `uid` prop is the one deciding which user's feed in the live stream will be displayed on this view. Here, we will pass our host's UID, which is `1`. 
 
 We can also pass styles to the `RtcLocalView` and `RtcRemoteView`, to make it fullscreen. To make it fullscreen, import Dimensions from react-native and use it to get the width and height of the screen.
 
@@ -746,7 +746,7 @@ broadcasterVideoStateMessageText: {
    
 8. We added a Switch Camera button to switch between the front camera and the back camera.
    
-9.  We added a Remote Video State Change Listener to listen to the state changes of the Video Feed of the broadcaster and displayed the feed accordingly.
+9.  We added a Remote Video State Change Listener to listen to the state changes of the Video Feed of the broadcaster and displayed the feed or the video state message.
 
 Congratulations, :partying_face:
 You have developed a live streaming app using React Native and Agora.
