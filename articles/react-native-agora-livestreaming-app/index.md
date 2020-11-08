@@ -1,7 +1,10 @@
 Want to build a cool and simple Livestreaming app using React Native?
 Keep reading to find out.
 
-# Agora
+### Introduction
+This tutorial will help you set up a live streaming app using React Native and Agora.
+
+### Agora
 Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but do not worry. The first 10,000 minutes for every month is free. You could check their pricing [here](https://www.agora.io/en/pricing/).
 
 Using Agora, we can develop a wide variety of applications that requires real-time engagement. Some of the examples are Audio/Video Call, Interactive Livestreaming (Audio/ Video), Interactive Gaming, Real-Time Messaging (which is in BETA at the time of writing this article).
@@ -10,10 +13,10 @@ In this article, we will be focusing on how to build a Livestreaming App using t
 
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
-# Prerequisites
+### Prerequisites
 This article will not cover tutorial aspects of how React/ React Native. So if you do not know how to work with it, please refer to some tutorials before beginning with this project.
 
-# Overview
+### Overview
 We will be going through these steps in this article,
 
 1. Setting up the Development Environment
@@ -25,7 +28,7 @@ We will be going through these steps in this article,
 
 > If you want to take a look at the code step-by-step, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made commits for every step in this tutorial.
 
-# Setting up the Development Environment
+### Setting up the Development Environment
 
 > **IMPORTANT** - We will **not** be using Expo to create our project. We will use the **React Native CLI Quickstart** to create the app.
 
@@ -49,7 +52,7 @@ For iOS,
 npx react-native run-android
 ```
 
-# Creating an Agora Account
+### Creating an Agora Account
 Head to Agora and Create an account. You can reach the signup page from [here](https://sso.agora.io/en/v2/signup).
 
 Fill in the details and create an account or you can signup with either Google, Github, or Cocos. Once you've signed up, You'll see the dashboard.
@@ -68,7 +71,7 @@ Once you hit on submit, it'll create a new project and you should see it on the 
 
 Now, click on the closed eye icon near the App Id to reveal it and copy the App ID. We will be needing this later while setting up Agora in our app.
 
-# Installing Dependencies
+### Installing Dependencies
 You can use either use ```npm``` or ```yarn``` to install these dependencies.
 ```npm``` ships with Node whereas you should install Yarn separately. You can download yarn from [here](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
 
@@ -115,14 +118,14 @@ You can install these beforehand, or install them while going through the articl
 "uuid": "^8.3.1"
 ```
 
-# Writing the Application
+### Writing the Application
 You can get the initial code from [here](https://github.com/zolomohan/react-native-agora-livestreaming-app/tree/7c9be640b75b5030f11b60d9d22378ef9c62c5cd). This code contains the home screen in the App.js.
 
 These buttons are supposed to take you to the live screen. So let's set up React Navigation.
 
 ![Homescreen With Input](screenshots/homescreen_with_input.jpeg)
 
-## Setting Up React Navigation
+#### Setting Up React Navigation
 We need to use `@react-navigation/native` to set up navigation in our app. So let's install the packages required to get navigation up and running.
 ```
 npm install @react-navigation/native
@@ -145,7 +148,7 @@ Create a new directory called `screens` with 2 new files inside called `Home.js`
 
 ![Screens Directory](screenshots/screens_directory.png)
 
-### Set up Navigator
+##### Set up Navigator
 Let's move what we wrote in the `App.js` into `screens/Home.js`. Once you have moved everything, rename the function from App to Home in `screens/Home.js`.
 
 Let's add a dummy live screen, for now, to visualize that we are navigating to the right screen.
@@ -244,7 +247,7 @@ return (
   </NavigationContainer>
 );
 ```
-### Navigate Between Screens
+##### Navigate Between Screens
 Let's add the code to navigate from the home screen to the live screen. In `screens/Home.js`, we need to import a hook provided by `@react-navigation/native`.
 ```
 import { useNavigation } from '@react-navigation/native';
@@ -290,7 +293,7 @@ You can pass these functions to the `onPress` prop of the `TouchableOpacity` com
 
 When you press these buttons, you should be navigating to the Live screen now.
 
-## Setting up The Live Screen
+#### Setting up The Live Screen
 Okay, We reached the interesting part. 
 
 To use Agora, we need to install `react-native-agora` first. Let's install it.
@@ -301,7 +304,7 @@ For iOS, Run
 ```
 pod install
 ```
-### Creating the Agora Engine Instance
+##### Creating the Agora Engine Instance
 Let's open the `screens/Live.js`.
 
 In here, we need to import the `RtcEngine` from `react-native-agora`.
@@ -422,7 +425,7 @@ const init = async () => {
     AgoraEngine.current.setClientRole(ClientRole.Broadcaster);
   };
 ```
-### Joining the Agora Channel
+##### Joining the Agora Channel
 Now that we have set all the config required for the Livestream, we need to join the channel. We need to join the Livestream only after all these configurations have been set up on the engine. Since `init()` is an async function, we can add a `.then()` to it and Join the channel inside it.
 
 To join the channel, the AgoraEngine instance has a `joinChannel()` function on it. It takes 4 arguments. 
@@ -471,7 +474,7 @@ Now, when we navigate to the Live screen page, we must see the `console.log` mes
 
 This means, we have successfully joined the live stream, we just can't see it yet. Because we didn't write it yet. :grimacing:
 
-### Displaying the Feed
+##### Displaying the Feed
 The next step is to display the Remote Feed of the Host to the Audience and the Local Feed to the Broadcaster.
 
 Let's import `RtcLocalView` and `RtcRemoteView` form `react-native-agora`.
@@ -573,8 +576,8 @@ const styles = StyleSheet.create({
 ```
 One last thing, Let's add a Share button to share the channel ID to others. We need to import the `Share` component from `react-native`.
 
-# Extra Features 
-## Share the Channel ID
+### Extra Features 
+#### Share the Channel ID
 ```
 import { Share } from 'react-native';
 ```
@@ -646,7 +649,7 @@ buttonText: {
   fontSize: 17,
 },
 ```
-## Switch Camera
+#### Switch Camera
 Let's add another button in the Live screen page and write the function to switch the camera when the user presses the button.
 
 Function to Switch Camera
@@ -664,7 +667,7 @@ Switch Camera Button
   </TouchableOpacity>
 </View>
 ```
-## Broadcaster Video Status
+#### Broadcaster Video Status
 Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the live stream. When a video state changes, it provides the `UID` and the `Video State` of that user.
 
 Let's add a state for the Broadcaster's Video State and set the initial value to Decoding. `react-native-agora` provides the enum for all the Remote Video State.
@@ -729,7 +732,7 @@ broadcasterVideoStateMessageText: {
 },
 ```
 
-# Let's Recap
+### Let's Recap
 1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
    
 2. We created the home screen with two buttons and text input to create a live stream and join the live stream.
