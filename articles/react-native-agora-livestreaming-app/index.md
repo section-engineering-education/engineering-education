@@ -1,8 +1,15 @@
 Want to build a cool and simple Livestreaming app using React Native?
 Keep reading to find out.
 
-### Introduction
-This tutorial will help you set up a live streaming app using React Native and Agora.
+### Goals
+By the end of the tutorial, you’ll understand
+
+- How to create a live stream App with React Native App using Agora.
+- Share a room code for others to join the live stream.
+- Add Event listeners on the live stream to listen to host's state changes and notify the audience in the live stream.
+- 
+### Prerequisites
+This article will not cover tutorial aspects of how React/ React Native. So if you do not know how to work with it, please refer to some tutorials before beginning with this project.
 
 ### Agora
 Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but do not worry. The first 10,000 minutes for every month is free. You could check their pricing [here](https://www.agora.io/en/pricing/).
@@ -13,16 +20,13 @@ In this article, we will be focusing on how to build a Livestreaming App using t
 
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
-### Prerequisites
-This article will not cover tutorial aspects of how React/ React Native. So if you do not know how to work with it, please refer to some tutorials before beginning with this project.
-
 ### Overview
 We will be going through these steps in this article,
 
 1. Setting up the Development Environment
 2. Creating an Agora Account
 3. Installing Dependencies
-4. Writing the Application
+4. Building the Livestream
 5. Extra Features
 6. Let's Recap
 
@@ -118,7 +122,7 @@ You can install these beforehand, or install them while going through the articl
 "uuid": "^8.3.1"
 ```
 
-### Writing the Application
+### Building the Livestream
 You can get the initial code from [here](https://github.com/zolomohan/react-native-agora-livestreaming-app/tree/7c9be640b75b5030f11b60d9d22378ef9c62c5cd). This code contains the home screen in the App.js.
 
 These buttons are supposed to take you to the live screen. So let's set up React Navigation.
