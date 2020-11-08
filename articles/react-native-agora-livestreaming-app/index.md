@@ -437,7 +437,7 @@ To join the channel, the AgoraEngine instance has a `joinChannel()` function on 
 3. **Optional Info**: Additional information about the channel. This parameter can be set as null or contain channel-related information. Other users in the channel do not receive this message.
    
 4. **Optional UID** - User ID. A 32-bit unsigned integer with a value ranging from 1 to (2^32-1). `optionalUid` must be unique. If `optionalUid` is not assigned (or set to `0`), the SDK assigns and returns `uid` in the `JoinChannelSuccess` Callback.
-Your app must record and maintain the returned uid since the SDK does not do so.
+Your app must record and maintain the returned UID since the SDK does not do so.
 
 Let's not worry about Authentication and Optional Info now. We'll pass null for authentication and optional info. For the Channel ID, we'll pass what we get from the route props i.e., the channel UUID that we pass from the home screen to this screen. For the Optional UID, we'll pass `1` if the user is a Broadcaster and `0` if the user is an audience. This is because we can use the UID of the Broadcaster for listening to events later and establishing the remote feed on the audience's side.
 
@@ -531,7 +531,7 @@ loadingText: {
 When the `joined` state is set to `true`, we need to show the Local Feed or the Remote Feed (Livestream) depending upon the user type.
 
 The `RtcLocalView` requires only one prop which is the `channelId` prop. The rest are optional.
-The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop. The `uid` prop is the one deciding which user's feed in the live stream must be displayed on this view. Here, we will pass our host's uid, which is `1`. 
+The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop. The `uid` prop is the one deciding which user's feed in the live stream must be displayed on this view. Here, we will pass our host's UID, which is `1`. 
 
 We can also pass styles to the `RtcLocalView` and `RtcRemoteView`, to make it fullscreen. To make it fullscreen, import Dimensions from react-native and use it to get the width and height of the screen.
 
@@ -580,7 +580,7 @@ import { Share } from 'react-native';
 ```
 Let's add a button in the Live screen page and write the function to share the channel when the user presses the share button.
 
-Function to call when the share button is pressed.
+Function to call when the share button is pressed
 ```
 export default function Live(props) {
   const onShare = async () => {
@@ -604,7 +604,7 @@ export default function Live(props) {
  };
 
 ```
-The Share Button.
+The Share Button
 ```
 <>
   {isBroadcaster ? (
@@ -646,7 +646,6 @@ buttonText: {
   fontSize: 17,
 },
 ```
-
 ## Switch Camera
 Let's add another button in the Live screen page and write the function to switch the camera when the user presses the button.
 
@@ -665,6 +664,70 @@ Switch Camera Button
   </TouchableOpacity>
 </View>
 ```
+## Broadcaster Video Status
+Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the live stream. When a video state changes, it provides the `UID` and the `Video State` of that user.
+
+Let's add a state for the Broadcaster's Video State and set the initial value to Decoding. `react-native-agora` provides the enum for all the Remote Video State.
+```
+const [broadcasterVideoState, setBroadcasterVideoState] = useState(VideoRemoteState.Decoding);
+```
+Let's add the listener in `init()` to listen to the Remote Video State Changes.
+
+We only need to listen for the host's video state, and we know the Host's UID (which is `1`).
+```
+AgoraEngine.current.addListener('RemoteVideoStateChanged', (uid, state) => {
+  if (uid === 1) setBroadcasterVideoState(state);
+});
+```
+
+Let's add a utility function to provide a text message for each state.
+```
+const videoStateMessage = (state) => {
+  switch (state) {
+    case VideoRemoteState.Stopped:
+      return 'Video turned off by Host';
+
+    case VideoRemoteState.Frozen:
+      return 'Connection Issue, Please Wait';
+
+    case VideoRemoteState.Failed:
+      return 'Network Error';
+  }
+};
+```
+Using the state, we can conditionally display the remote feed or the state message.
+```
+broadcasterVideoState === VideoRemoteState.Decoding ? (
+  <RtcRemoteView.SurfaceView
+    uid={1}
+    style={styles.fullscreen}
+    channelId={props.route.params.channel}
+  />
+) : (
+  <View style={styles.broadcasterVideoStateMessage}>
+    <Text style={styles.broadcasterVideoStateMessageText}>
+      {videoStateMessage(broadcasterVideoState)}
+    </Text>
+  </View>
+);
+```
+Styles for the Video State Message
+```
+broadcasterVideoStateMessage: {
+  position: 'absolute',
+  bottom: 0,
+  width: '100%',
+  height: '100%',
+  backgroundColor: '#222',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flex: 1,
+},
+broadcasterVideoStateMessageText: {
+  color: '#fff',
+  fontSize: 20,
+},
+```
 
 # Let's Recap
 1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
@@ -680,6 +743,10 @@ Switch Camera Button
 6. We displayed the Local View and Remote View based on who is using the app, the Livestream host, or the audience.
    
 7. We added a Share button to share the UUID to others from the Live screen.
+   
+8. We added a Switch Camera button to switch between the front camera and the back camera.
+   
+9.  We added a Remote Video State Change Listener to listen to the state changes of the Video Feed of the broadcaster and displayed the feed accordingly.
 
 Congratulations, :partying_face:
 You have developed a live streaming app using React Native and Agora.
