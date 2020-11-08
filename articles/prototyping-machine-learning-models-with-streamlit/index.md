@@ -43,7 +43,7 @@ streamlit run app.py
  
 #### Building Sentiment Analyzer
  
-Now for this beginner’s tutorial, we will be building a sentiment analyzer model and prototype it with streamlit. The first step will be getting a Dataset, and the dataset we will be using can be found [HERE](https://drive.google.com/drive/folders/1wk0hkrRhxe6t5g390g5V5O-CUcRB6BZC?usp=sharing), next let’s create a directory and create a virtual environment, open you terminal or command prompt and type in the code below.
+Now for this beginner’s tutorial, we will be building a sentiment analyzer model and prototype it with streamlit. The first step will be getting a Dataset, and the dataset can be found [HERE](https://drive.google.com/drive/folders/1wk0hkrRhxe6t5g390g5V5O-CUcRB6BZC?usp=sharing), next let’s create a directory and create a virtual environment, open you terminal or command prompt and type in the code below.
  
 ```python
 $ mkdir textanalyzer
@@ -57,7 +57,7 @@ $ python3.8 -m venv env
 $ source env/bin/activate
 ```
  
-The first line of code creates the virtual environment while the second activate it. Now copy the dataset as it is in the folder and paste it into this textanalyzer directory, now create a file and save it as sentiment_analyzer, this will be where we will be writing our code to build the streamlit app. The next thing will be to import all the packages we will be using for this tutorial.
+The first line of code creates the virtual environment while the second activate it. Now copy the dataset as it is in the folder and paste it into this textanalyzer directory, and then create a file and save it as sentiment_analyzer.py, this will be where we will be writing our code to build the streamlit app. The next thing will be to import all the packages we will be using for this tutorial.
  
 ```python
 import streamlit as st
@@ -194,7 +194,7 @@ else:
 The codes above use streamlit *st.text_input* to create a text input form that will display “enter the review, write here”, the if *st.button* will create a button that will display “predict sentiment”, after that the variable result calls the *print_result* function and pass in the parameters. If the whole process the st.sucess(result[1) displays the result else it passes an error message asking the user to press the above button. Run your app using the command below.
  
 ```python
-streamit run textanalyzer.py
+streamit run sentiment_analyzer.py
 ```
  
 This is what you should run on your terminal
