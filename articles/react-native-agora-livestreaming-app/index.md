@@ -57,17 +57,17 @@ Head to Agora and Create an account. You can reach the signup page from [here](h
 
 Fill in the details and create an account or you can signup with either Google, Github, or Cocos. Once you've signed up, You'll see the dashboard.
 
-![Agora Dashboard](screenshots/agora_dashboard.png)
+![Agora Dashboard](agora_dashboard.png)
 
 Click on New Project.
 
 You'll see this modal. Fill out the Project Name and set the Authentication Mechanism to Testing, for now.
 
-![Agora New Project Dashboard](screenshots/agora_new_project.png)
+![Agora New Project Dashboard](agora_new_project.png)
 
 Once you hit on submit, it'll create a new project and you should see it on the Project Management Console.
 
-![Agora Project Management Console](screenshots/agora_project_management_console.png)
+![Agora Project Management Console](agora_project_management_console.png)
 
 Now, click on the closed eye icon near the App Id to reveal it and copy the App ID. We will be needing this later while setting up Agora in our app.
 
@@ -123,7 +123,7 @@ You can get the initial code from [here](https://github.com/zolomohan/react-nati
 
 These buttons are supposed to take you to the live screen. So let's set up React Navigation.
 
-![Homescreen With Input](screenshots/homescreen_with_input.jpeg)
+![Homescreen With Input](homescreen_with_input.jpeg)
 
 #### Setting Up React Navigation
 We need to use `@react-navigation/native` to set up navigation in our app. So let's install the packages required to get navigation up and running.
@@ -146,7 +146,7 @@ Now that we've installed the dependencies for us to set up navigation, Let's bui
 
 Create a new directory called `screens` with 2 new files inside called `Home.js` and `Live.js`
 
-![Screens Directory](screenshots/screens_directory.png)
+![Screens Directory](screens_directory.png)
 
 ##### Set up Navigator
 Let's move what we wrote in the `App.js` into `screens/Home.js`. Once you have moved everything, rename the function from App to Home in `screens/Home.js`.
@@ -231,7 +231,7 @@ export default function App() {
 You've set up the Navigation. When you open the app now, you'll see the home screen because it's the first screen in the stack.
 You can't navigate to the Live screen yet. We still need to write the code to go from the Home Screen to the Live Screen.
 
-![Homescreen with Header](screenshots/home_with_header.jpeg)
+![Homescreen with Header](home_with_header.jpeg)
 
 We don't need the header, let's remove that.
 
@@ -529,7 +529,7 @@ loadingText: {
   color: '#222',
 },
 ```
-![Loading Screen](screenshots/loading_screen.gif)
+![Loading Screen](loading_screen.gif)
 
 When the `joined` state is set to `true`, we need to show the Local Feed or the Remote Feed (Livestream) depending upon the user type.
 
