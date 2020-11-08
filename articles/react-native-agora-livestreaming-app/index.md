@@ -757,3 +757,5 @@ broadcasterVideoStateMessageText: {
 
 Congratulations, :partying_face:
 You have developed a live streaming app using React Native and Agora.
+
+Thanks for Reading!
