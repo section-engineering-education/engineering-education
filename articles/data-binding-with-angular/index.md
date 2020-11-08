@@ -14,12 +14,11 @@ images:
   - url: /engineering-education/data-binding-with-angular/hero.jpg
     alt: example image
 ---
-**Angular** is a platform and design framework for building SPAs using HTML and TypeScript.
+**Angular** is a platform and design framework used for building SPAs using HTML and TypeScript.
 Angular is written in TypeScript (although the first version, i.e. AngularJS, was written in JS). It is built upon a set of TypeScript libraries imported into our app; these libraries implement all the core functionalities required for an app to run.
 <!--more-->
 ### Terminologies
-Before diving into the tutorial, we will get familiar with the necessary terminologies used
-across all the Angular applications.
+Before diving into the tutorial, we'll get familiar with a couple of necessary terminologies used across all the Angular applications.
 
 #### 1. Components
 Components are the most fundamental building blocks of any Angular app. The *Component* is a *class* with a `@Component` decorator that associates it with the respective template on which the data needs to be rendered.
@@ -32,14 +31,14 @@ through different data binding methods.
 #### 2. Modules
 Angular apps are modular, meaning the application's code can be split up into many modules called *NgModules*. NgModules are like containers that hold a segment of code dedicated to an application workflow, and every app has at least one NgModule.
 
-- NgModules can contain *Component* files and other code files too, whose scope is defined by the NgModule in which they are defined.
-- Every Angular app has the *root* module named `AppModule`, that resides in the file `app.module.ts` in the `src` folder.
+- NgModules can contain *Component* files and other code files as well, whose scope is defined by the NgModule in which they are defined.
+- Every Angular app has a *root* module named `AppModule`, that resides in the file `app.module.ts` in the `src` folder.
 - Angular apps can have one or more modules depending on the application's versatility.
 
 To understand more about *Modules and Components*. Refer to this [link](https://angular.io/guide/architecture).
 
 ### Data Binding
-Data Binding is the means through which the TypeScript code communicates with the *template* (HTML). There might be instances where one might need to fetch data from a server/perform some calculations; the user doesn't need not be aware of all these details. The user is more concerned about the content that gets displayed. In cases, like these Data Binding comes in handy.
+Data Binding is the means through which the TypeScript code communicates with the *template* (HTML). There might be instances where one might need to fetch data from a server/perform some calculations; the user doesn't need not be aware of all these details. The user is more concerned about the content that gets displayed. In cases like these is where Data Binding comes in handy.
 
 Data Binding offers us different ways of communication:
 - To Output data from our TypeScript code into the template, we could use String Interpolation and Property Binding.
@@ -49,7 +48,7 @@ Data Binding offers us different ways of communication:
 Now let's look at how each of the data binding methods work.
 
 ### String Interpolation
-String Interpolation provides us the provision of including *calculated strings* into marked-up text between HTML element tags.
+String Interpolation includes *calculated strings* into marked-up text between HTML element tags.
 
 It uses double curly braces(`{{..}}`) as its delimiter.
 
@@ -102,7 +101,7 @@ the result to an element or component.
 Not everything that we insert into the delimiter gets interpolated.
 A few exceptions come with string interpolation i.e. if the expression includes:
 
-- assignment operators like `=`, `+=`, `-=`, and so on.
+- an assignment operators like `=`, `+=`, `-=`, and so on.
 - increment `++` and decrement `--` operators.
 - operators like `new`, `instanceof`, etc.
 
@@ -145,7 +144,7 @@ export class PropertyBindingComponent{
 
 ![property-binding-enabled](engineering-education/articles/data-binding-with-angular/property-binding-enabled.png)
 
-Here, in the code above. The `disabled` *element property* of a button is bound to the value of the *component* variable `addNewStudent`.
+In the code above. The `disabled` *element property* of a button is bound to the value of the *component* variable `addNewStudent`.
 - An *element property* enclosed between `[..]` identifies itself as the *target property*,
  that binds to a component variable.
 - There is an alternative syntax as well, where the `bind-` prefix must be added before the *target property*.
@@ -231,8 +230,8 @@ From the code above, it can be seen that there are indeed two event binding list
 - First is the *target event*`(input)` in the *input* element. When the user enters data in the *template*, triggers `onUpdateStudent()` in the *component* file.
 - The `$event` passed as a parameter holds the information about the binding, that could be data values like an *object*, *number*, or *string*.
 - If the *target event* is a native DOM event, then `$event` is a *DOM event object* with `target` and `target.value` as its properties.
-- In the `onUpdateStudent($event)`, we assign `studentID` a new value entered by the user.
-- After entering, when the user clicks on the *Add new student* button, the event `(click)` gets registered and `onAddStudent()` is triggered from the *component* file.
+- In the `onUpdateStudent($event)`, we assigned `studentID` a new value entered by the user.
+- After entering it, when the user clicks on the *Add new student* button, the event `(click)` gets registered and `onAddStudent()` is triggered from the *component* file.
 - Like with *Property Binding*, there's an alternative syntax as well, `on-` prefix without the braces must be added before the *target element*.
 
 For example:
