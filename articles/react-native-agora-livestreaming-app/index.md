@@ -403,7 +403,7 @@ const init = async () => {
 ```
 Next, we need to set the Channel Profile to Livestreaming. `react-native-agora` provides enums for Channel Profiles. Let's import it and set the Channel Profile to Live Broadcasting.
 ```
-import RtcEngine, { ChannelProfile } from 'react-native-agora';
+import { ChannelProfile } from 'react-native-agora';
 
 const init = async () => {
   AgoraEngine.current = await RtcEngine.create('Your App ID Here');
@@ -417,7 +417,7 @@ Let's import the enum `ClientRole` provided by `react-native-agora`.
 
 Remember, we don't need to set the ClientRole if the user is the audience. It's the default value.
 ```
-import RtcEngine, { ChannelProfile, ClientRole } from 'react-native-agora';
+import { ClientRole } from 'react-native-agora';
 
 const isBroadcaster = props.route.params.type === 'create';
 
@@ -483,12 +483,7 @@ The next step is to display the Remote Feed of the Host to the Audience and the 
 
 Let's import `RtcLocalView` and `RtcRemoteView` form `react-native-agora`.
 ```
-import RtcEngine, {
-  ChannelProfile,
-  ClientRole,
-  RtcLocalView,
-  RtcRemoteView,
-} from 'react-native-agora';
+import { RtcLocalView, RtcRemoteView } from 'react-native-agora';
 ```
 
 `RtcLocalView` will be used on the Broadcaster's side, to display the feed of the Local Camera and `RtcRemoteView` will be used on the audience's side, to display the feed of the Broadcaster.
@@ -674,7 +669,10 @@ Switch Camera Button
 #### Broadcaster Video Status
 Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the live stream. When a video state changes, it provides the `UID` and the `Video State` of that user.
 
-Let's add a state for the Broadcaster's Video State and set the initial value to Decoding. `react-native-agora` provides the enum for all the Remote Video State.
+Let's add a state for the broadcaster's video state and set the initial value to Decoding. `react-native-agora` provides an enum for all the remote video states.
+```
+import { VideoRemoteState } from 'react-native-agora`;
+```
 ```
 const [broadcasterVideoState, setBroadcasterVideoState] = useState(VideoRemoteState.Decoding);
 ```
@@ -753,9 +751,8 @@ broadcasterVideoStateMessageText: {
    
 8. We added a Switch Camera button to switch between the front camera and the back camera.
    
-9.  We added a Remote Video State Change Listener to listen to the state changes of the Video Feed of the broadcaster and displayed the feed or the video state message.
+9.  We added a Remote Video State Listener to listen to the state changes of the Video Feed from the broadcaster and displayed the feed or the video state message.
 
-Congratulations, :partying_face:
-You have developed a live streaming app using React Native and Agora.
+Congratulations, :partying_face: You did it.
 
 Thanks for Reading!
