@@ -67,7 +67,7 @@ We will be going through these algorithms in a bit more depth.
 #### Q-learning
 Q-learning is the most popular among the RL algorithms.
 
-This algorithm finds an optimal action-selection policy by using a Q-function. By selecting the best of all possible actions, the algorithm is able to maximize the value function, Q.
+This algorithm finds an optimal action-selection policy by using a Q-function. By selecting the best of all possible actions, the algorithm can maximize the value function, Q.
 
 ![q-learning](/engineering-education/introduction-to-reinforcement-learning/q-learning.PNG)
 
@@ -81,7 +81,7 @@ The first action performed by the agent is completely randomized. This is becaus
 
 Values in the Q-table are then updated for each state-action pair. The process continues until the function Q converges to Q new.
 
-**Discount factor**, usually denoted by the gamma parameter, this is a real value ranging from 0 to 1. This values indicates how important future rewards are to the current state.
+**Discount factor**, usually denoted by the gamma parameter, this is a real value ranging from 0 to 1. This value indicates how important future rewards are to the current state.
 
 If the discount factor is set to 0.1, the agent will only learn about actions that produce immediate rewards. But, setting it to 0.9 will prompt the agent to check each of its actions based on the sum total of all its future rewards.
 
@@ -106,7 +106,7 @@ Mathematically, this policy is represented by π (s|a).
 
 Policy Gradients work well on large and continuous action spaces. This makes them ideal for handling high dimensional continuous action spaces.
 
-This technique works the in the following ways:
+This technique works in the following ways:
 1. A random policy (π) is first selected.
 2. Some actions are then sampled from the environment.
 3. Probability is increased for taking actions whose rewards are better.
@@ -187,7 +187,7 @@ The algorithm works by:
 The use of AI robots in their data center led to a decrease in energy spending by up to 40%.
 
 #### Trading and Finance
-RL agents are used to predict stock prices, and are used with predicting future sales of good or services. These stock algorithms can decide on whether to buy, hold, or sell a particular stock.
+RL agents are used to predict stock prices, and are used to predict future sales of good or services. These stock algorithms can decide on whether to buy, hold, or sell a particular stock.
 
 Horizon's [Active AI Global ETF](https://www.horizonsetfs.com/etf/mind/) & EquBot's [AI-based ETF](https://equbot.com/) are examples of RL software used in trade and finance.
 
