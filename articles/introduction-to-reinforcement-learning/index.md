@@ -199,15 +199,15 @@ Reinforcement Learning is one of the most important subfields of Artificial Inte
 If Machine Learning is still new to you, feel free to [download and read this e-book on Machine Learning](https://books.google.co.ke/books?hl=en&lr=&id=u8OWDwAAQBAJ&oi=fnd&pg=PR6&dq=introduction+to+machine+learning&ots=huhHR1ZCOT&sig=9hlNXYWvRqWRJgY_6P_QurJn3ac&redir_esc=y#v=onepage&q=introduction%20to%20machine%20learning&f=false/).
 
 ### Additional References & Resources
-1.	Kaelbling, L. P., Littman, M. L., & Moore, A. W. (1996). Reinforcement learning: A survey. Journal of artificial intelligence research, 4, 237-285.
-2.	Sutton, R. S., & Barto, A. G. (1998). Introduction to reinforcement learning (Vol. 135). Cambridge: MIT press.
-3.	Szepesvári, C. (2010). Algorithms for reinforcement learning. Synthesis lectures on artificial intelligence and machine learning, 4(1), 1-103.
-4.	Henderson, P., Islam, R., Bachman, P., Pineau, J., Precup, D., & Meger, D. (2017). Deep reinforcement learning that matters. arXiv preprint arXiv:1709.06560.
-5.	François-Lavet, V., Henderson, P., Islam, R., Bellemare, M. G., & Pineau, J. (2018). An introduction to deep reinforcement learning. arXiv preprint arXiv:1811.12560.
-6.	Arulkumaran, K., Deisenroth, M. P., Brundage, M., & Bharath, A. A. (2017). A brief survey of deep reinforcement learning. arXiv preprint arXiv:1708.05866.
-7.	Arulkumaran, K., Deisenroth, M. P., Brundage, M., & Bharath, A. A. (2017). Deep reinforcement learning: A brief survey. IEEE Signal Processing Magazine, 34(6), 26-38.
-8.	Watkins, C. J., & Dayan, P. (1992). Q-learning. Machine learning, 8(3-4), 279-292.
-9. Dang, Q. V. (2019, December). Reinforcement Learning in Stock Trading. In International Conference on Computer Science, Applied Mathematics and Applications (pp. 311-322). Springer, Cham.
+1.	Kaelbling, L. P., Littman, M. L., & Moore, A. W. (1996). [Reinforcement learning: A survey.](https://www.jair.org/index.php/jair/article/view/10166) Journal of artificial intelligence research, 4, 237-285.
+2.	Sutton, R. S., & Barto, A. G. (1998). [Introduction to reinforcement learning (Vol. 135).](https://mitpress.mit.edu/books/reinforcement-learning) Cambridge: MIT press.
+3.	Szepesvári, C. (2010). [Algorithms for reinforcement learning. Synthesis lectures on artificial intelligence and machine learning](https://www.morganclaypool.com/doi/abs/10.2200/S00268ED1V01Y201005AIM009), 4(1), 1-103.
+4.	Henderson, P., Islam, R., Bachman, P., Pineau, J., Precup, D., & Meger, D. (2017). [Deep reinforcement learning that matters.](https://arxiv.org/abs/1709.06560) arXiv preprint arXiv:1709.06560.
+5.	François-Lavet, V., Henderson, P., Islam, R., Bellemare, M. G., & Pineau, J. (2018). [An introduction to deep reinforcement learning.](https://arxiv.org/abs/1810.06339) arXiv preprint arXiv:1811.12560.
+6.	Arulkumaran, K., Deisenroth, M. P., Brundage, M., & Bharath, A. A. (2017). [A brief survey of deep reinforcement learning.](https://arxiv.org/abs/1708.05866) arXiv preprint arXiv:1708.05866.
+7.	Arulkumaran, K., Deisenroth, M. P., Brundage, M., & Bharath, A. A. (2017). [Deep reinforcement learning: A brief survey.](https://ieeexplore.ieee.org/document/8103164) IEEE Signal Processing Magazine, 34(6), 26-38.
+8.	Watkins, C. J., & Dayan, P. (1992). [Q-learning. Machine learning](https://link.springer.com/article/10.1007/BF00992698), 8(3-4), 279-292.
+9. Dang, Q. V. (2019, December). [Reinforcement Learning in Stock Trading.](https://core.ac.uk/download/pdf/231933064.pdf) In International Conference on Computer Science, Applied Mathematics and Applications (pp. 311-322). Springer, Cham.
 
 ---
 Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
