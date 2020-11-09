@@ -743,13 +743,13 @@ option 2: 5.086ms
 ```
 
 ### Closing Notes
-- `For`, `while` and `do-while` have close performance results characteristics. Neither of the loops is significant fast or slow.
+- `For`, `while` and `do-while` have close performance results. Neither of the loops is significantly faster or slower.
 - `For-each` is ideal for functional codes.
 - `For-in` is ideal for unspecified object properties. Avoid it when using array data.
 - Be keen on the condition statement when using `while` to perform a loop.
 - Nested loops are significantly slower; avoid them when a loop has a large number of iterations to perform.
 - Decreasing the amount of work done per iteration and the number of loops increases loop performance.
-- Performance is not the only thing that matters. Code readability and maintainability are key. Few lines of codes mean reduced performance overheads and a short development period.
+- Performance is not the only thing that matters. Code readability and maintainability are key. Fewer lines of codes mean reduced performance overheads and a shorter development period.
 - Choose a loop that fits your application model and makes sure they align with your requirements to get desirable results.
 
 ***Note***: The above performance results will vary depending on the browser and computer model you are using to test the loops.
