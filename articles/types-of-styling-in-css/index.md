@@ -15,14 +15,14 @@ images:
     alt: Types of CSS (Cascading Style Sheets) example image
 
 ---
-We will be going over Cascading Style Sheets commonly known as CSS. CSS is what turns your everyday markup language, HTML, into a one of a kind expression that leaves people in admiration. CSS complements the elements in HTML to help come up with various designs that make a website pop. From background colors, font-size, font-weight, font-family, and much more the design of a website becomes limited by only your imagination.
+We will be going over Cascading Style Sheets commonly known as CSS. CSS is what turns your everyday Hypertext Markup Language, HTML, into a one of a kind expression that leaves people in admiration. On its own HTML is seen on a webpage as just a word skeleton that could easily have been written on Microsoft word and saved a lot of time. CSS complements HTML to help come up with various designs that make a website pop. From background colors, font-size, font-weight, font-family, and much more the design of a website becomes limited by only your imagination.
 <!--more-->
 CSS is the main playground for any developer. To use an analogy, CSS is like all the spices you add to your food to give it a rich, enticing aroma and the desired taste when you finally present it. However, just throwing things in there randomly doesn't guarantee greatness.
 
 You still have to know what goes with what, when to apply a specific style or when something just doesn't fit in. How you implement your CSS can either make or break your website. Below we'll be looking at the different styling options in CSS, how to apply them, and when best to implement each style.
 
 ### Styling in CSS
-There are 3 distinct methods for styling in CSS. Each level of styling is given a different hierarchical priority and is used for different reasons.
+There are 3 distinct methods for styling in CSS, *Local style*, *Page-Level style*, and *External Styles*. Each level of styling is given a different hierarchical priority (when to apply) and is used for different reasons.
 
 The 3 methods are further grouped into two categories. Namely *Internal CSS* and *External CSS*. *Internal CSS* is comprised of Local Styles and Page-Level Styles while *External CSS* is just as the name implies.
 
@@ -39,14 +39,15 @@ The 3 methods are further grouped into two categories. Namely *Internal CSS* and
           font-style: italic;">
           This paragraph is an example of a local style.
         </p>
-        <p>This
+        <p>This is an Unaffected paragraph</p>
     </body>
   </html>
 ```
+This code snippet edits the font of the *p* tag within the *body*. However, it only changes the contents of the first *p* tag. The second *p* tag maintains the webpage's default style.
 
 By using the style tag in the HTML element *p*, we're able to change the font, font-size, and style only for the first *p*. As for the second *p* element it retains its default style.
 
-2. **Page-Level styles:** Page-level styles are defined at the header area of the HTML file. All similar tags, whether elements members of the class or ID selector within the body of the HTML will undergo the changes at once.
+2. **Page-Level styles:** Page-level styles are defined at the header area of the HTML file. All similar tags, whether elements members of the class or ID selector within the body of the HTML will undergo the changes at once. An ID selectors can only identify one element each while Class selectors can identify more then just one at a time.
 
 ```HTML
   <html>
@@ -71,9 +72,9 @@ By using the style tag in the HTML element *p*, we're able to change the font, f
   </html>
 ```
 
-This time around we defined the style within the *head* HTML tags. By doing so all elements defined in the style will automatically use the style defined for them. This means that all *p* elements on the page will have a color red and a background-color of yellow. The body on the other hand will have the color yellow and a background-color of red.
+This time around we defined the style within the *head* HTML tags. By doing so the elements defined in the style tags will automatically adopt the style defined for them. This means that all *p* elements on the page will have a color red and a background-color of yellow. The *body* on the other hand will have the color yellow and a background-color of red. Developers can implement this when trying to give the webpage a different or vibrant theme where the background body and paragraphs complement each other to give an appealing look.
 
-3. **External Styles:** The styles used for the webpage are located in a completely different file. The *.HTML* file is linked to the *.css* file that can be imported to modify the style. When developing a website with multiple pages this styling usually comes in handy.
+3. **External Styles:** The styles used for the webpage are located in a completely different file. This other file purely contains CSS code and is saved with a *.css* extension. The *.HTML* file is linked to the *.css* file that can be imported to modify the webpage style. When developing a website with multiple pages this styling usually comes in handy. This is due to the fact that just one css file can be implemented on multiple pages making it easer to maintain uniformity.
 
 ```html
   <!DOCTYPE html>
@@ -90,7 +91,7 @@ This time around we defined the style within the *head* HTML tags. By doing so a
   </html>
 ```
 
-In this first half of the code there are no style tags defined. However, the styling used for the webpage has been written in another file and linked to this one using the link tags.
+In the code above there are no style tags defined within. However, the styling used for the webpage has been written in another file (contents shown below) and linked to this one using the link tags.
 
 ```CSS
   /*This is the CSS file called myStyle.css*/
@@ -106,13 +107,13 @@ In this first half of the code there are no style tags defined. However, the sty
 The CSS written in this file, *mystyle.css*, is used in the code above to implement the design.
 
 ### When to use each Style
-With these three styling options in CSS, **the best practice** would be to avoid internal CSS and implement external CSS.
+With these three styling options in CSS, **the best practice** would be to avoid internal CSS and implement external CSS. As explained further below external brings about uniformity and clean code making it easer to make changes.
 
 - **Local Style** is not the first choice that comes to mind when dealing with CSS. At some point, it becomes too much of a burden to keep styling each element individually. By the time you come to the end of your project, the entire file is a mess. That in the end prolongs the time needed to complete the project thereby causing you to extend deadlines or spend more time just to keep up.
 
 However, this does not mean that the style should not be used. It usually works well when you're trying to test out a new style on an element making it easier to determine if the style works well with the design or not.
 
-Always keep in mind that local styles have a higher priority over page-level and external styles. Meaning they will override any style property defined within page-level and external.
+Always keep in mind that local styles have a higher priority over page-level and external styles. This means they will override any style property defined within page-level and external. They will therefore act as the main style for the specific tag. For example, if a *p* tag has a page-level or external style where its color is given as red but a developer added a local style to the same tag with a color blue, the web page will display the color blue.
 
 **Pros:**
 - Easy to test designs on individual elements.
