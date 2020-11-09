@@ -28,7 +28,7 @@ This article will serve as an introduction to Reinforcement Learning (RL). Accor
 ### Prerequisites
 There are two main prerequisites a reader would need before diving into this article:
 - A basic understanding on Machine learning.
-- Some background Knowledge in Linear Algebra, Multivariable Calculus, and Probability and Statistics.
+- Some background knowledge in Linear Algebra, Multivariable Calculus, and Probability and Statistics.
 
 ### Key Concepts
 In RL we have key concepts or terms that we need to define. These include agents, state, action, rewards, and the environment.
