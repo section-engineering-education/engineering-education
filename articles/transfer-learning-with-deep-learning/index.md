@@ -37,10 +37,10 @@ A few other machine learning and deep learning concepts are covered [here](/engi
 
 **Feature** – an individual measurable property that is being observed. It's an attribute shared by all the independent units on that analysis is to be done.
 
-**Loss function** – in machine learning, using a single training example, the loss function is the difference between the actual and predicted output from the model. This is often used interchangeably with cost function. However, the cost function is defined as the average loss function for all training examples.
+**Loss function** – in machine learning, using a single training example, the loss function is the difference between the actual and predicted output from the model. This is often used interchangeably with a cost function. However, the cost function is defined as the average loss function for all training examples.
 
 ### Transfer Learning and Deep Learning
-In my previous transfer learning [article](/engineering-education/basics-of-transfer-learning/), we defined transfer learning as a machine learning method where a model built for a specific task is reused as a starting point for a model on another task. It's basically re-using pre-trained models on newer problems.
+In my previous transfer learning [article](/engineering-education/basics-of-transfer-learning/), we defined transfer learning as a machine learning method where a model built for a specific task is reused as a starting point for a model on another task. It's re-using pre-trained models on newer problems.
 
 Deep learning models have been applied to solve many problems that would have seemed impossible to solve a few years ago. Nonetheless, these models carry a few challenges with them. Mainly, these models need large amounts of data to operate. They also need a lot of computing resources. Furthermore, they currently need a lot of time and energy to be trained properly.
 
@@ -51,11 +51,11 @@ This provides transfer learning a huge opportunity to optimize deep learning pro
 #### Transfer Learning vs Traditional Machine Learning
 To understand transfer learning, it's important to compare it to a traditional machine learning approach. A key difference between the two is isolation. Traditional machine learning can be described as isolated. It focuses on specific tasks. Plus it uses datasets that are meant for a specific task.
 
-Another characteristic of the traditional approach is with the training of isolated models that will be used for very specific tasks. This means that there is no (prior) knowledge that will be retained or accumulated. The learning process takes place without any relationship with any past knowledge that may be used in different tasks.
+Another characteristic of the traditional approach is the training of isolated models that will be used for very specific tasks. This means that no (prior) knowledge will be retained or accumulated. The learning process takes place without any relationship with any past knowledge that may be used in different tasks.
 
 However, transfer learning takes the contrary approach to the isolated nature of traditional machine learning approaches. The basis of this approach is the transferability of prior knowledge to tackle new tasks.
 
-There is no isolation between models involved in transfer learning since it's possible (and beneficial) to leverage knowledge from pre-trained models to train new models. Here, learning new tasks is dependent on tasks that were learned (and trained) previously. The result being a faster and more efficient learning process.
+There is no isolation between models involved in transfer learning since it's possible (and beneficial) to leverage knowledge from pre-trained models to train new models. Here, learning new tasks is dependent on tasks that were learned (and trained) previously. The result is a faster and more efficient learning process.
 
 Now that we understand the distinction between the two approaches, it's important to understand when to use deep transfer learning.
 
