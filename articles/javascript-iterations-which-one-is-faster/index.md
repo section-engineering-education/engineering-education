@@ -45,10 +45,10 @@ JavaScript has different kinds of iterations statements called loops. They inclu
 
 They however, have different ways to start and end a loop? When it comes to loops, the most common questions are which loop to use and which one is the fastest?
 
-This guide will discuss each of these loops with simple & basic examples and compare & test each loop's execution performance.
+This guide will discuss each of these loops with simple & basic examples. We will also compare & test each loop's execution performance.
 
 ### For Loop
-`For` loop is the commonly used loop. If you are not new to the world of programming, you might have come across a `for` loop statement under other programming languages such as `java`, `c++`, `c`, etc. A `for` statement loops through a specified or fixed number of elements until it meets the specified condition.
+`For` loop is the commonly used loop. If you are a bit familiar with the world of programming, you might have come across a `for` loop statement under other programming languages such as `java`, `c++`, `c`, etc. A `for` statement loops through a specified or fixed number of elements until it meets the specified condition.
 
 A `for statement` consist of the following parts:
 
@@ -58,8 +58,8 @@ for (initializer; condition; increment){
 }
 ```
 
-- Initialization expression - it is a variable declaration that initializes a loop counter, i.e, `loop = 0`.
-- Condition expression - `for` loop executes when the condition value is true, and if it is false, the loop terminates when `loop < 5`. It is a test condition that determines the number of times a statement will iterate.
+- Initialization expression - it's a variable declaration that initializes a loop counter, i.e., `loop = 0`.
+- Condition expression - `for` loop executes when the condition value is true, and if it is false, the loop terminates when `loop < 5`. It's a test condition that determines the number of times a statement will iterate.
 - Increment expression - `loop++` updates the loop by increasing or decreasing the loop counter.
 - Statement - `console.log ("hello world")` if the condition executes to true, the loop statement is executed until the condition expression `loop < 5` is false.
 
@@ -72,7 +72,7 @@ for (let loop = 0; loop < 5; loop++){
 ```
 
 ### Do While
-Repeats a statement until the specified condition evaluates to false.
+Repeats a statement until the specified condition is evaluated to be false.
 
 ```js
 do {
