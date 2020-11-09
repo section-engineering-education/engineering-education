@@ -298,10 +298,14 @@ while (n < 10) {
 }
 ```
 
-The `while` loop will stop when the loop value is equal to `3`. Unlike `For` loop, the breakpoint value `3` will be included in the log message before the iteration stops. `While` loops execute the condition `(n < 10)` before executing the statement. `While` loop executes a statement only when the condition is true. When the statement is invoked the `while` controls the loop by retesting the condition again until `n == 3` become false.
+The `while` loop will stop when the loop value is equal to `3`. Unlike `For` loop, the breakpoint value `3` will be included in the log message before the iteration stops.
+
+`While` loops execute the condition `(n < 10)` before executing the statement. `While` loop executes a statement only when the condition is true. When the statement is invoked the `while` controls the loop by retesting the condition again until `n == 3` become false.
 
 ### Continue Statement
-Break a loop, check a specified condition and then proceed to the next iteration until the loop condition expression returns false. The loop skips a value specified in the continue statement condition. For example, to loop over some numbers and get the even numbers, we need a continue statement to break the loop whenever we iterate odd numbers.
+A continue statement break a loop, check a specified condition and then proceed to the next iteration until the loop condition expression returns false.
+
+The loop skips a value specified in the continue statement condition. For example, to loop over some numbers and get the even numbers, we need a continue statement to break the loop whenever we iterate odd numbers.
 
 ``` js
 for (let i = 1; i < = 10; i++){
