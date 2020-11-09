@@ -415,7 +415,7 @@ arraySize.forEach(value=> "")
 console.timeEnd("for...each");
 ```
 
-***Results***
+##### Results
 
 ```js
 arraySize iterations 100
@@ -494,7 +494,7 @@ Created a separate code block because the nested loop creates performance overhe
 
 Test the loop up to 100000 iterations.
 
-***Results***
+##### Results
 
 ```js
 arraySize 100: 3.554ms
@@ -594,7 +594,7 @@ console.log(Object.entries(values).sort((a, b) => {
 }));
 `
 
-***Results***
+##### Results
 
 ```js
 [
@@ -616,19 +616,16 @@ This makes it slower. `For in` is specially reserved to loops through an unspeci
 The way you write a loop statements has a slight difference in iteration performance. For example, using the fast `for` loop, we can derive the following statements.
 
 #### Using Incremental
-
 ```js
 for (let i = 0; i <array.length; i++) {}
 ```
 
 #### Using Decremental
-
 ```js
 for (let i = 0; i <array.length; i--) {}
 ```
 
 #### Cached Length
-
 ```js
 for ( let i = 1, l = array.length; i <= l; i++ ) {}
 ```
@@ -649,33 +646,28 @@ for (let x = 0; x < l; x++) {}
 ```
 
 #### Var vs Let
-
 ```js
 for (let i = 0; i <array.length; i++) {}
 for (var i = 0; i <array.length; i++) {}
 ```
 
 #### The Ugly for Loop
-
 ```js
 for (let i=n; i-- != 0; ) {}
 ```
 
 #### Function Call Loop
-
 ```js
 for ( let i = 1; i <= array.length; i++ ) {}
 ```
 
 #### Other Options
-
 ```js
 for (let i=n; i >=0; i--) {}
 for (let i=n; i--; ) {}
 ```
 
 ##### Performance Summary
-
 ```js
 const iterations = 50000
 const arraySize = new Array(iterations)
@@ -733,7 +725,7 @@ for (let i= arraySize.length; i--; ) {}
 console.timeEnd("option 2");
 ```
 
-***Results***
+##### Results
 
 ```js
 arraySize 50000
