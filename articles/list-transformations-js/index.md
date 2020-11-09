@@ -6,7 +6,7 @@ url: /engineering-education/list-transformations-js/
 title: List transformations in JavaScript
 description: This tutorial goes over various methods used for list transformations in JavaScript, such as nested objects and arrays and transforming using underscorejs.
 author: geoffrey-mungai
-date: 2020-11-06T00:00:00-11:00
+date: 2020-11-09T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -25,7 +25,7 @@ By the end of this tutorial, you will be able to:
 - Destructure nested data structures.
 - Transform objects and arrays using underscore.js.
 
-### Step 1 -- Nesting objects and arrays
+### Nesting objects and arrays
 Data structures can be nested to avoid the declaration of many variables. Multiple objects and/or arrays can be held by a single variable and can be accessed using [dot notation and bracket notation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors).
 
 ```JavaScript
@@ -57,13 +57,13 @@ cars.brands.push({
 });
 cars.brands[1] = {
   name: "Toyota",
-  origin: "japan"
+  origin: "Japan"
 };
 ```
 
 Let's break down the code above:
 1. We created an object `cars`.
-2. We then created an empty list `brands` inside the `cars` object using dot notation.
+2. We then created an empty array `brands` inside the `cars` object using dot notation.
 3. Using the [`push()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) method, we can add an object with the properties `name` and `origin` inside `brands`.
 4. Using the square notation adds another object at index 1.
 
@@ -101,11 +101,11 @@ allCars(cars.brands);
 
 In the code above:
 1. We declared a function `allCars()` with a parameter named `brands`.
-2. We created a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) inside it, that loops through `brands` and logs them.
-3. We called the function `allCars()`and pass an argument `cars.brands`.
+2. We created a [`for()` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) inside it that loops through `brands` and logs them.
+3. We called the function `allCars()`and passed an argument `cars.brands`.
 
-### Accessing nested objects properties using a 'for()' loop
-We can get common properties in nested objects using a for loop. Let's log all the `name` properties of the nested brand objects.
+### Accessing nested objects properties using a for() loop
+We can get common properties in nested objects using a `for()` loop. Let's log all the `name` properties of the nested brand objects.
 
 ```JavaScript
 function names(brands){
@@ -124,11 +124,11 @@ In the code above:
 2. We created a for loop that logs each `name` property of the nested objects.
 3. We then called the `names()` function and passed an argument `cars.brands`.
 
-### Looping through nested objects properties using a 'for ...in' loop
+### Looping through nested objects properties using a for ...in loop
 If we want to get all the properties of a nested object, we can use a [`for ...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop. Let's loop through all the properties of the nested `brands` array.
 
 ```JavaScript
-function everything (brands){
+function everything(brands){
     for(var i =0; i< brands.length; i++){
         for (var property in brands[i]){
             console.log(brands[i][property])
@@ -202,7 +202,7 @@ In the code above:
 
 We used destructuring to assign the value of the property on the left side (`name`) to the variable on the right side (`name1`). You can learn more about destructuring [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
-### Step 2 -- List transformations with functions
+### List transformations with functions
 We can create new objects and arrays by passing existing data structures through the functions. Let's create a function that takes in an array and transforms it to create a new array.
 
 ```JavaScript
@@ -214,8 +214,8 @@ function splitName(name) {
 ```
 
 The function `splitName()` takes in some text and splits it using the [`split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) method, which:
-1. splits the text by spaces.
-2. returns an array with the split pieces of text.
+1. splits the text by spaces
+2. returns an array with the split pieces of text
 
 `splitName()` then accesses the 2nd item in the array and assigns it as the value of `lastName` in the `splitName()` return object.
 
@@ -257,8 +257,8 @@ for(var i = 0; i < namesList.length; i++){
 console.log(halfNames); //[ { lastName: 'Doe' }, { lastName: 'Dove' }, { lastName: 'Bloggs' } ]
 ```
 
-### Step 3 -- List transformations using underscore.js
-[Underscore.Js](http://underscorejs.org) is a JavaScript library that provides many methods and functions for dealing with arrays, objects and functions. It can be used to do many operations with a few lines of code.
+### List transformations using underscore.js
+[Underscore.js](http://underscorejs.org) is a JavaScript library that provides many methods and functions for dealing with arrays, objects and functions. It can be used to do many operations with a few lines of code.
 
 To run underscore.js on a browser, import it under `<script>` html tags as shown below.
 
@@ -278,7 +278,7 @@ To use underscore.js in our code, we'll need to initialize it. We do this in Nod
 var _ = require('underscore');
 ```
 
-### Looping with '_.each()'
+### Looping with _.each()
 [`_.each()`](http://underscorejs.org#each) is an underscore.js function that is used to loop through and perform actions to lists.
 
 It takes two arguments:
@@ -304,7 +304,7 @@ The function `_.each()` above:
 1. Loops through the `numbers` array passing each number to the callback function.
 2. The callback function then logs each number to the console.
 
-### Looping with '_.map()'
+### Looping with _.map()
 [`_.map()`](http://underscorejs.org/#map) is an underscore.js function that produces new arrays by passing each value in a list through a transformation function.
 
 It takes two arguments:
@@ -347,7 +347,7 @@ In the code above:
 2. The function multiplies the `key` of the passed property by 2.
 3. The resulting values are then saved as an array `doubleNumbers`.
 
-### Filtering data using '_.filter()'
+### Filtering data using _.filter()
 [`_.filter()`](http://underscorejs.org#filter) is an underscore.js function that returns a list of objects that pass a certain condition. This function can be used to find certain properties in a large array. The function takes two arguments:
 1. The iteratee, which is a list of objects.
 2. A [predicate](https://codepen.io/Universalist/post/predicates-in-javascript), which is a function holding the truth condition.
