@@ -3,6 +3,8 @@ Drafting a software review to add to the Engineering Education blog? See a sugge
 
 **Tip**: Make sure to provide enough detail and reference other in-depth articles where appropriate. You should provide a broad overview of several aspects of the technology.
 
+**Software Comparison**: A related article to a software review is a software comparison where you compare several similar technologies. An example of this is [comparing several Node.js frameworks](https://www.section.io/engineering-education/hapi-vs-koa-vs-express). Make sure to back up your points, especially if it's contentious. It isn't enough to say React is the best front-end JavaScript framework, for example without a reason behind it. Use statistics and reference other articles.
+
 ### Example Article
 Here's an excellent [software review](https://www.section.io/engineering-education/transfer-learning-with-deep-learning/) written by one of our Eng-Ed Contributors so you can see the level of detail you should aspire to.
 
