@@ -505,8 +505,7 @@ arraySize 100000: 38987.654ms
 ```
 
 #### Using Performance Observer perf_hooks
-
-```js
+`js
 const { PerformanceObserver, performance } = require('perf_hooks');
 let arraySize = 1000000;
 let iterations = 100;
@@ -593,7 +592,7 @@ console.log(Object.entries(values).sort((a, b) => {
     obj[1] /= iterations;
     return obj;
 }));
-```
+`
 
 ***Results***
 
@@ -608,7 +607,11 @@ console.log(Object.entries(values).sort((a, b) => {
 ]
 ```
 
-This is a more transparent result. Again the old `for` loop dominates the loops list. `Do-while` and `while` still have a comparable performance. I included `for-in` in this example. It seems to take the longest time to finish the loops. Unlike the other loops (logs the array values), `for-in` logs the index of the array element. This makes it slow. `For in` is specially reserved to loops through an unspecified number of object properties.
+This is a more transparent result. Again the old `for` loop dominates the loops list. `Do-while` and `while` still have comparable performance.
+
+I included `for-in` in this example. It seems to take the longest time to finish the loops. Unlike the other loops (logs the array values), `for-in` logs the index of the array element.
+
+This makes it slower. `For in` is specially reserved to loops through an unspecified number of object properties.
 
 The way you write a loop statements has a slight difference in iteration performance. For example, using the fast `for` loop, we can derive the following statements.
 
