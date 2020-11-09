@@ -250,9 +250,11 @@ const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
 })
 ```
 
-- `ThisArg` - an optional parameter that holds the context `this` to passed when executing the callback function.
+- `ThisArg` - this is an optional parameter that holds the context `this` to be passed when executing the callback function.
 
-`For-each`'s deal is to iterate over array elements without breaking the array list. It executes each array element simultaneously without side effects such as mutability of the scope variable. It is not chainable and always returns an undefined value. It is also a high order function. If you are interested in learning more, head out to this [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
+`For-each`'s deal is to iterate over array elements without breaking the array list. It executes each array element simultaneously without side effects such as mutability of the scope variable.
+
+It's not chainable and always returns an undefined value. It's also a high order function. If you are interested in learning more, head out to this [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 ### Nested Loops
 A code block that has a loop inside another loop is called a nested loop.
@@ -268,9 +270,8 @@ for (let i = 0; i < 5; i++) {
 ```
 
 ### Loops Break and Continue
-
 #### Break Statement
-A break identifier terminates an iterating loop, i.e, the below examples closes a loop that iterates over array elements. The loop terminates when iteration finds an index of a specified value.
+A break identifier terminates an iterating loop, i.e., the below examples closes a loop that iterates over array elements. The loop terminates when iteration finds an index of a specified value.
 
 ***Example 1***
 
