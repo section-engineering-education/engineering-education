@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/javascript-iterations-which-one-is-faster/hero.jpg
-    alt: 
+    alt:
 ---
 Sometimes you want to repeat a task several times. Let's say to log "hello world" six times. Here is a simple JavaScript code block to do that:
 <!--more-->
@@ -27,7 +27,9 @@ console.log("hello world")
 console.log("hello world")
 ```
 
-The code above will correctly repeat the assigned task six times. However, as the number of tasks grows, say 100 hello worlds, the code will get messy affecting code readability. It is hard to write the same line of code repeatedly 100 times. Looping through these tasks will affect execution performance drastically. Here is where JavaScript loops come to the rescue. JavaScript can control the above loop better with a few lines of codes.
+The code above will correctly repeat the assigned task six times. However, as the number of tasks grows, say 100 hello worlds, the code will get messy affecting code readability.
+
+It's hard to write the same line of code 100 times. Looping through these tasks will affect execution performance drastically. Here is where JavaScript loops come to the rescue. JavaScript can control the above loop better with a few lines of codes.
 
 ***For example:***
 
@@ -37,7 +39,13 @@ for (let loop = 0; loop < 6; loop++) {
 }
 ```
 
-With only two lines of code, we log six "hello world" strings as we anticipated. Shorter code means faster development time, code readability, and lesser performance overheads. JavaScript has different kinds of iterations statements called loops. They include `for`, `while`, `do while`, `for in`, `for of`, and `for each`. They all do the same job, i.e, to repeat an action several times. They, however, have different ways to start and end a loop.ster? When it comes to loops, the most common questions are which loop to use and which one is the fastest? This guide will discuss each of these loops with simple & basic examples and compare & test each loop's execution performance.
+With only two lines of code, we can log six "hello world" strings as we mentioned we wanted to do before. Shorter code means a faster development time, better code readability, and less performance overheads.
+
+JavaScript has different kinds of iterations statements called loops. They include `for`, `while`, `do while`, `for in`, `for of`, and `for each`. They all do the same job, i.e., to repeat an action several times.
+
+They however, have different ways to start and end a loop? When it comes to loops, the most common questions are which loop to use and which one is the fastest?
+
+This guide will discuss each of these loops with simple & basic examples and compare & test each loop's execution performance.
 
 ### For Loop
 `For` loop is the commonly used loop. If you are not new to the world of programming, you might have come across a `for` loop statement under other programming languages such as `java`, `c++`, `c`, etc. A `for` statement loops through a specified or fixed number of elements until it meets the specified condition.
