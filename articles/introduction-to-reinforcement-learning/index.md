@@ -6,14 +6,14 @@ url: /engineering-education/introduction-to-reinforcement-learning/
 title: Understanding Reinforcement Learning
 description:
 author: willies-ogola
-date: 2020-11-06T00:00:00-12:00
+date: 2020-11-09T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/introduction-to-reinforcement-learning/hero.png
     alt: reinforcement learning
 ---
-This article will serve as an introduction to Reinforcement Learning (RL). According to [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning), RL is a sub-field of Machine Learning (ML). That is concerned on how [agents](https://en.wikipedia.org/wiki/Software_agent) take actions in an environment to maximize a cumulative reward.
+This article will serve as an introduction to Reinforcement Learning (RL). According to [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning), RL is a sub-field of Machine Learning (ML). That is concerned with how [agents](https://en.wikipedia.org/wiki/Software_agent) take actions in an environment to maximize a cumulative reward.
 <!--more-->
 
 ### Table of Contents
@@ -40,18 +40,18 @@ The state represents the decision-making factors under consideration observed by
 3.	**Action**
 The agent selects an action that may change or affect the state and reward.
 4.	**Reward**
-A reward represents the gains and losses in network performance. The agent is rewarded for taking an action on a particular state in the previous time step.
+A reward represents the gains and losses in network performance. A reward signifies how [good the action was.](https://towardsdatascience.com/create-your-own-reinforcement-learning-environment-beb12f4151ef#)
 5.	**Environment**
-The environment is where the agent acts. On how the environment reacts to certain actions defined by a model, we may or may not know.
+The environment is nothing but a task or simulation and the Agent is an AI algorithm that interacts with the [environment and tries to solve it.](https://towardsdatascience.com/create-your-own-reinforcement-learning-environment-beb12f4151ef#)
 
 ### Introduction
-In Reinforcement Learning (RL), agents are trained to maximize total rewards. This is because an RL agent is given rewards for all the correct moves it makes and punished for the wrong moves. This results in the agent trying to maximize on the right moves while minimizing the wrong moves.
+In Reinforcement Learning (RL), agents are trained to maximize total rewards. This is because an RL agent is given rewards for all the correct moves it makes and punished for the wrong moves. This results in the agent trying to maximize the right moves while minimizing the wrong moves.
 
-RL programs learn to map situations to action taken in order to maximize those rewards. This guides the agent by finding the (best) actions leading to the most rewards.
+RL programs learn to map situations to an action taken in order to maximize those rewards. This guides the agent by finding the (best) actions leading to the most rewards.
 
-Let's consider a simple problem of a child learning to walk. This example will allow us to better understand reinforcement learning and its key concepts.
+Let's consider a simple problem of a child learning to walk. This example will help us better understand reinforcement learning and its key concepts.
 
-In our scenario, the child is an agent. Our environment is the ground on which the child walks on. By taking an action, in this case, walking, the child tries to move from one state to another step by step. The child gets a reward (let's say a muffin) after taking a defined number of steps (task). The reward isn't awarded (given) to the child when it's not able to walk or perform the task well.
+In our scenario, the child is an agent. Our environment is the ground on which the child walks on. By taking an action, in this case, walking, the child tries to move from one state to another step by step. The child gets a reward (let's say a muffin) after taking a defined number of steps (task). The reward isn't awarded (given) to the child when it's not able to walk(that said number of steps) or perform the task well.
 
 This is a simple example of a reinforcement learning problem.
 
@@ -81,30 +81,32 @@ The first action performed by the agent is completely randomized. This is becaus
 
 Values in the Q-table are then updated for each state-action pair. The process continues until the function Q converges to Q new.
 
-**Discount factor**, usually denoted by the gamma parameter, this is a real value ranging from 0 to 1. It tells how important future rewards are to the current state.
+**Discount factor**, usually denoted by the gamma parameter, this is a real value ranging from 0 to 1. This values indicates how important future rewards are to the current state.
 
 If the discount factor is set to 0.1, the agent will only learn about actions that produce immediate rewards. But, setting it to 0.9 will prompt the agent to check each of its actions based on the sum total of all its future rewards.
 
 **Learning rate (LR)** is also referred to as the step size. It determines how much new information it accepts over the old information.
 
-There is a need to balance the agent's exploration and exploitation efforts. This is because the agent must take random actions that ought to bring greater returns in the long run.
+There is a need to balance the agent's exploration and exploitation efforts. This is because the agent must take random actions to bring greater returns in the long run.
 
 Without this balance, the agent might opt for an immediate reward every time. The [epsilon-greedy algorithm](https://www.geeksforgeeks.org/epsilon-greedy-algorithm-in-reinforcement-learning/) achieves this balance. The agent will exploit the knowledge it has already gathered instead of exploring.
 
 That's Q-learning in a nutshell.
 
 #### Policy Gradients (PG)
-Alongside Q-learning, the Policy Gradient method is another type of reinforcement learning technique.
+Alongside Q-learning, the Policy Gradient method is another type of a reinforcement learning technique.
 
-Policy Gradients have a separate goal from Q-learning.
+Policy Gradients have a different goal from Q-learning.
 
-* Q-learning predicts q-values rather than predict what actions to take. Policy Gradients deal directly with choosing actions. They learn policies directly from data thus no need for computing values for each state. The policy network returns a matrix of probabilities for taking each possible action.
+- Q-learning predicts q-values rather than predicting what actions to take. Policy Gradients deal directly with choosing actions. They learn policies directly from data thus eliminating the need for computing values for each state. The policy network returns a matrix of probabilities for taking each possible action.
 
 Mathematically, this policy is represented by π (s|a).
 
-* Q-learning does not work with large or continuous action spaces. We would need an infinitely large Q-table to keep track of all the Q-values. Thus are only suitable for estimating values on a finite number of states and actions space. Policy Gradients work well on large and continuous action spaces. This makes them ideal for handling high dimensional continuous action spaces.
+- Q-learning does not work with large or continuous action spaces. We would need an infinitely large Q-table to keep track of all the Q-values. Thus they are only suitable for estimating values on a finite number of states and actions space.
 
-This technique works by:
+Policy Gradients work well on large and continuous action spaces. This makes them ideal for handling high dimensional continuous action spaces.
+
+This technique works the in the following ways:
 1. A random policy (π) is first selected.
 2. Some actions are then sampled from the environment.
 3. Probability is increased for taking actions whose rewards are better.
@@ -127,7 +129,7 @@ Due to these differences, SPG may need more samples to compute in cases of high 
 
 *[Image Source: Berkeley](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/f17docs/lecture_5_actor_critic_pdf)*
 
-Actor-Critics (AC) method consists of two separate models as shown above:
+The Actor-Critics (AC) method consists of two separate models as shown above:
 1. An Actor
 2. A Critic
 
@@ -135,13 +137,17 @@ Actor-Critics (AC) method consists of two separate models as shown above:
 The actor model takes in the current environment state, determines and outputs the desired action.
 
 **Critic:**
-It takes plays the evaluation role. It takes in the environment state and the action (from the actor model) returning a score that tells us how good the action is for the state. This returned score is the Q-value.  
+It takes plays the evaluation role. It takes in the environment state and the action (from the actor model) returning a score that tells us how good the action is for the state.
+
+This returned score is the Q-value.  
 
 This is the idea behind Actor Critics models.
 
 Let's consider an example that demonstrates the actor-critic network.
 
-Let's take the examples of a child playing in the backyard with the parent monitoring the child. The child is playing, running around exploring all options in this environment. The child can play in the dirt, ride the swing, play with water, etc. The role the parent plays is to watch the child and either criticize or reward its actions. Always taking the environment into account.
+Let's take the examples of a child playing in the backyard with the parent monitoring the child. The child is playing, running around exploring all options in this environment.
+
+The child can play in the dirt, ride the swing, play with water, etc. The role the parent plays is to watch the child and either criticize or reward its actions. Always taking the environment into account.
 
 AC is advantageous compared to PG methods. They tend to need much less training time compared to PG methods.
 
@@ -152,20 +158,22 @@ Some typical use cases of AC models are in the fields of biology and psychology.
 The use of AI in computer games has been on the increase over the past couple of years.
 
 In 2016, Deepmind Technologies built [AlphaGo](https://deepmind.com/research/case-studies/alphago-the-story-so-far/). An RL controlled computer program that plays the board game, Go (an ancient Chinese board game).
+
 AlphaGo contains two networks:
-1. A Policy Network which is trained on high-level games to imitate the best players.
+1. A Policy Network that is trained on high-level games to imitate the best players.
 2. A Value network that evaluates the current board position and establishes the probability of winning in that position.
 
 The computer program was able to beat Lee Sedol, a human professional Go champion 4-1 in a 5 match game.
 
 Later versions of AlphaGo such as AlphaGo Zero and MuZero became even more powerful. They were completely self-taught using RL. This was significant as they were learning to play games without being taught the game rules.
 
-For a deeper understanding of the AlphaGo story, watch its [full documentary](https://www.youtube.com/watch?v=WXuK6gekU1Y&t=788s/)
+For a deeper understanding of the AlphaGo story, watch a full documentary [here](https://www.youtube.com/watch?v=WXuK6gekU1Y&t=788s/).
 
 #### Robotics
-In industries, RL-controlled robots are used to perform various tasks.
+In the robotics industries, RL-controlled robots are used to perform various tasks.
 
 For example, at Google's DeepMind, they developed an AI-powered recommendation system. This system was meant to improve the energy efficiency of its data center.
+
 An AI robot was given control over their data center in order to manage part of its [cooling infrastructure](https://deepmind.com/blog/article/safety-first-ai-autonomous-data-centre-cooling-and-industrial-control/).
 
 The AI robots exploit the RL technique, a similar approach to that used in AlphaGo, AlphaGo Zero, and MuZero. This is by learning through trial and error.
@@ -173,20 +181,20 @@ The AI robots exploit the RL technique, a similar approach to that used in Alpha
 The algorithm works by:
 1. Taking snapshots of the data center cooling system every five minutes.
 2. Feeding the data collected into a neural network that predicts future energy efficiency.
-3. Actions that minimize energy are selected by the AI robot.
+3. Actions that minimize energy consumption are then selected by the AI robot.
 4. The optimal actions selected are implemented in the data center.
 
 The use of AI robots in their data center led to a decrease in energy spending by up to 40%.
 
 #### Trading and Finance
-RL agents are used to predicting stock prices as well as predicting future sales. They can decide on whether to buy, hold, or sell a particular stock.
+RL agents are used to predict stock prices, and are used with predicting future sales of good or services. These stock algorithms can decide on whether to buy, hold, or sell a particular stock.
 
 Horizon's [Active AI Global ETF](https://www.horizonsetfs.com/etf/mind/) & EquBot's [AI-based ETF](https://equbot.com/) are examples of RL software used in trade and finance.
 
 Another great example is IBM’s [financial trading platform](https://www.ibm.com/blogs/research/2020/07/ibm-research-at-icml-2020/) which uses an RL agent for trading. It computes a reward based on the profit or losses made in every financial transaction.
 
 ### Final Thoughts
-Reinforcement Learning is one of the most important subfields of Artificial Intelligence. Hopefully, this article has made you curious to dive deep into Reinforcement Learning.
+Reinforcement Learning is one of the most important subfields of Artificial Intelligence. Hopefully, this article has made you curious enough to dive deep into Reinforcement Learning and other AI concepts.
 
 If Machine Learning is still new to you, feel free to [download and read this e-book on Machine Learning](https://books.google.co.ke/books?hl=en&lr=&id=u8OWDwAAQBAJ&oi=fnd&pg=PR6&dq=introduction+to+machine+learning&ots=huhHR1ZCOT&sig=9hlNXYWvRqWRJgY_6P_QurJn3ac&redir_esc=y#v=onepage&q=introduction%20to%20machine%20learning&f=false/).
 
