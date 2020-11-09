@@ -10,20 +10,20 @@ date: 2020-11-09T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/introduction-to-reinforcement-learning/hero.png
+  - url: /engineering-education/introduction-to-reinforcement-learning/hero.jpg
     alt: reinforcement learning
 ---
 This article will serve as an introduction to Reinforcement Learning (RL). According to [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning), RL is a sub-field of Machine Learning (ML). That is concerned with how [agents](https://en.wikipedia.org/wiki/Software_agent) take actions in an environment to maximize a cumulative reward.
 <!--more-->
 
 ### Table of Contents
-1. [Prerequisites](#Prerequisites)
-2. [Key Concepts](#Key-Concepts)
-3. [Introduction](#Introduction)
-4. [Most used Reinforcement Learning Algorithms](#Most-used-Reinforcement-Learning-Algorithms)
-5. [Applications of Reinforcement Learning](#Applications-of-Reinforcement-Learning)
-6. [Final Thoughts](#Final-Thoughts)
-7. [References](#References)
+1. [Prerequisites](#prerequisites)
+2. [Key Concepts](#key-Concepts)
+3. [Introduction](#introduction)
+4. [Most used Reinforcement Learning Algorithms](#most-used-reinforcement-learning-algorithms)
+5. [Applications of Reinforcement Learning](#applications-of-reinforcement-learning)
+6. [Final Thoughts](#final-thoughts)
+7. [References](#references)
 
 ### Prerequisites
 There are two main prerequisites a reader would need before diving into this article:
@@ -198,7 +198,7 @@ Reinforcement Learning is one of the most important subfields of Artificial Inte
 
 If Machine Learning is still new to you, feel free to [download and read this e-book on Machine Learning](https://books.google.co.ke/books?hl=en&lr=&id=u8OWDwAAQBAJ&oi=fnd&pg=PR6&dq=introduction+to+machine+learning&ots=huhHR1ZCOT&sig=9hlNXYWvRqWRJgY_6P_QurJn3ac&redir_esc=y#v=onepage&q=introduction%20to%20machine%20learning&f=false/).
 
-### References
+### Additional References & Resources
 1.	Kaelbling, L. P., Littman, M. L., & Moore, A. W. (1996). Reinforcement learning: A survey. Journal of artificial intelligence research, 4, 237-285.
 2.	Sutton, R. S., & Barto, A. G. (1998). Introduction to reinforcement learning (Vol. 135). Cambridge: MIT press.
 3.	Szepesvári, C. (2010). Algorithms for reinforcement learning. Synthesis lectures on artificial intelligence and machine learning, 4(1), 1-103.
