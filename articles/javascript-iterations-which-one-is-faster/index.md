@@ -122,7 +122,7 @@ while (true) {
 The code above block will execute forever, as the condition will never be false.
 
 ### For In
-It iterates over named properties of an object key and gets each property value inside the loop. A `for-in` loop has no condition expression and incremental value. The loop executes once per property. And tests as many times as the number of properties in an object.
+It iterates over named properties of an object key and gets each property value inside the loop. A `for-in` loop has no condition expression and incremental value. The loop executes once per property. Also runs the tests for every number of properties in an object.
 
 ```js
 for(variable in object) {
@@ -143,10 +143,12 @@ for(let info in person)
 console.log(`${info}: ${person[info]}`)
 ```
 
-`For-in` will invoke the above loop as many times as the number of properties you add in object `person`. It is a better solution to loop through objects.
+`For-in` will invoke the loop above the same number of times as the number of properties you add in the object `person`. It's a better solution to loop through objects.
 
 ### For Of
-It iterates through iterables such as `strings`, `arrays`, `maps`, and `set`. `For-of` loops through items in a collection such as an array. It is very similar to the `for-in`, except this time we are using the `of` keyword and passing in an iterable instead of an object. `For-of` will not work with Objects because they are not iterable.
+It repeats through iterables such as `strings`, `arrays`, `maps`, and `set`. `For-of`, loops through items in a collection such as an array.
+
+It's very similar to the `for-in`, except this time we are using the `of` keyword and passing in an iterable instead of an object. `For-of` will not work with Objects because they are not iterable.
 
 ```js
 for(variable of iterable) {
