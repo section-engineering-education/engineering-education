@@ -5,7 +5,8 @@ published: true
 url: /engineering-education/what-is-ransomware/
 title: What is Ransomware?
 description: Ransmoware is a type of cybersecurity threat, or malware (malicious software) that attackers use to hack into their victims' devices, and force them to pay a ransom.
-date: 2020-08-26T00:00:00-07:00
+author: maitreyi-karanjkar
+date: 2020-10-09T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +17,7 @@ images:
 In a world where computers are an essential part of life, it is only reasonable to have a healthy fear of cyber security threats. Cyber attacks are perpetually happening, and their targets can range from big corporations, to national governments, and even to regular people––potentially with their livelihoods at stake, depending on the nature of the threat.
 <!--more-->
 ### What is Ransomware?
-But before panicking, the first thing you can do to protect yourself is be informed. There are several kinds of cyber attacks to look out for, and one of them is Ransomware. 
+But before panicking, the first thing you can do to protect yourself is be informed. There are several kinds of cyber attacks to look out for, and one of them is Ransomware.
 
 Ransomware is a type of malware––or malicious software. It is the kind of threat where a hacker blocks their victim from accessing their own device, unless a ransom is paid (which usually must be in virtual currency, such as bitcoin). The most common way ransomware infects a computer is via phishing emails containing harmful attachments or drive-by downloads. When infected, a device usually displays a message with an official logo such as the FBI or Interpol’s, implying that the victim’s device has been taken over by the authorities due to “illegal activity”. Attackers effectively scare their victims into believing false accusations of criminal activity, which then promptly leads to them paying the ransom and getting the attack over with.
 
