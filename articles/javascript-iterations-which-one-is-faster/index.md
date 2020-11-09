@@ -1,4 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/javascript-iterations-which-one-is-faster/
+title:
+description: This article goes through
+author: joseph-chege
+date: 2020-11-09T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/javascript-iterations-which-one-is-faster/hero.jpg
+    alt: 
+---
 Sometimes you want to repeat a task several times. Let's say to log "hello world" six times. Here is a simple JavaScript code block to do that:
+<!--more-->
+
 
 ```js
 console.log("hello world")
