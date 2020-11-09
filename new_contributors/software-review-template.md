@@ -1,8 +1,9 @@
+## Example Article
+
+
+
 ### Table of Contents
 Provide the audience a run down on what the article will be covering.
-
-### Prerequisites
-Provide the audience with any prerequisites that may be required to follow you How To Tutorial along.
 
 ### Brief Summary
 Your tech introduction should be a self-contained topic and must be an accurate interpretation of what is presented.
