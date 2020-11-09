@@ -6,7 +6,7 @@ url: /engineering-education/transfer-learning-with-deep-learning/
 title: Transfer Learning for Deep Learning
 description: This article will be going over transfer learning and how it makes it easier to create and implement deep learning models.
 author: collins-ayuya
-date: 2020-11-09T00:00:00-11:00
+date: 2020-11-09T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
