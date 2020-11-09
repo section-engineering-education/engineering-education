@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+slug: choosing-between-firebase-and-mongo-db
+title: Choosing Between Firebase and MongoDB
+description: Respective history and pros and cons of using Firebase or MongoDB in a tech stack.
+date: 2020-11-09T00:00:00-07:00
+topics: [databases][mongodb][firebase]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/choosing-between-firebase-and-mongo-db/hero.jpg
+    alt: Relational Databases
+---
+
 ### MongoDB vs Firebase
 Databases play an important role in determining the functionality and quality of an application or a website. For an app to be successful,
 the developer will have to consider the users of the application or the website.
