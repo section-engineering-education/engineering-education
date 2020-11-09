@@ -156,7 +156,7 @@ for(variable of iterable) {
 }
 ```
 
-`For-in` also works with arrays as it uses the index of each value in the array. The following example shows the results difference of `for-in` and `for-of` to iterate over array elements.
+`For-in` also works with arrays as it uses an index for each value in the array. The following example shows the difference in the results of `for-in` and `for-of` to iterate over array elements.
 
 ```js
 let arr = [1, 3, 5, 7, 9];
@@ -182,7 +182,7 @@ console.log(arr[number]);
 };
 ```
 
-A better solution would be to use `for-of`. It iterates a collection of elements in an array and gives the values of an array without having to refer to the original array.
+A better solution would be to use `for-of`. This statement iterates a collection of elements in an array and gives the values of an array without having to refer to the original array.
 
 ```js
 let arr = [1, 3, 5, 7, 9];
@@ -194,7 +194,7 @@ for (let number of arr) {
 ```
 
 ### For Each
-It executes a provided function once for each array element in ascending order. When it comes to looping through arrays `for-each` function is ideal, it is simple to use.
+It executes a provided function once for each array element in ascending order. When it comes to looping through arrays `for-each` function is ideal, and it's simple to use.
 
 ```js
 const animals = [ "dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
@@ -222,7 +222,7 @@ array.forEach(callback (currentValue, index, array) {
 ```
 
 #### Parameters
-- Callback - the function to be called once in each element in order.
+- Callback - the function to be called once each element are in order.
 - Current value - a mandatory parameter that holds the current element value in the array.
 
 ```js
@@ -241,7 +241,7 @@ const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
   })
 ```
 
-- Array - an optional parameter that holds a complete array from where for each was called.
+- Array - an optional parameter that holds a complete array from where for-each was called.
 
 ```js
 const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
