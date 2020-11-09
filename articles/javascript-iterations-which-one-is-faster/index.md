@@ -314,12 +314,16 @@ for (let i = 1; i < = 10; i++){
 }
 ```
 
-Every time `i` iterates, it will check the value and if the value is an odd number, the loop will break and test the next value. `Continue` will loop the current iteration and continue as long as `i` is an even number until `i <= 10` is met.
+Every time `i` iterates, it will check the value and if the value is an odd number, the loop will break and test the next value.
+
+The `Continue` statement will loop the current iteration and continue as long as `i` is an even number until `i <= 10` is met.
 
 ***Note: there is no way to break out of `for each` loop.***
 
 ### Labeled Loop Statement
-A label identifies a loop. It is simply naming a loop or a block of code in JavaScript. A label statement can be added inside a loop as an identifier to interrupt the iteration execution. These statements are called labels. That label will then be used to refer to the code later. For instance, to add `myloop` label to a loop block, add a semicolon to the end of the label name as shown below.
+A label identifies a loop. It's simply naming a loop or a block of code in JavaScript. A label statement can be added inside a loop as an identifier to interrupt the iteration execution.
+
+These statements are called labels. These labels can then be used to refer to the code snippets later on. For instance, to add a `myloop` label to a loop block, add a semicolon to the end of the label name as shown below.
 
 ```js
 myloop:
@@ -328,7 +332,7 @@ for (let i = 1; i <= 10; i++){
 }
 ```
 
-The `myloop` can be used to refer to our code. For example when using break and continue statements.
+The `myloop` statement can be used to refer to our code later on. For example whenever a break or continue statements are needed.
 
 ```js
 myloop:
@@ -338,7 +342,9 @@ for (let i = 1; i <= 10; i++){
 }
 ```
 
-The above code has nothing special, as the results will the same as without using a label. In loops, labels come into play with nested loops to specify the loop to alter. The label will determine exactly which loop to break or continue.
+The code above results nothing different, as the results will be the same as when no label was used.
+
+In loops, labels come into play when using nested loops to specify the loop to be altered. The label will determine exactly which loop to break or allow to continue.
 
 ***For example:***
 
@@ -352,13 +358,13 @@ loopOne: for (let i = 0; i <=5; i++) {
 }
 ```
 
-In the above example:
+In the example above:
 - Every loop will perform five iterations.
 - `loopOne` will always break when `i === 3`, skip the value `3`, and continue with the loop execution until `i <=5`. It will log values 1, 2, 4, and 5.
 - `loopTwo` will always break and stop the iteration at `j === 3`. It will log values 1, 2, and 3.
 
 ### Speed Comparison
-We will traverse through an array using one array method with the same arrays size and an equal number of iterations to compare each loop's execution time. To get desirable results, we will use different test methods.
+We will traverse through an array using one array method with the same arrays size and an equal number of iterations to compare each loop's execution time. To get the best results, we will use different test methods.
 
 #### Using .time() and .timeEnd() Functions
 
@@ -466,10 +472,9 @@ for...of: 14124.834ms
 for...each: 11820.696ms
 ```
 
-As the number of iterations increases, the results are quite comparable, and again the old `for` loop is giving stiff competition to `while` and `do-while` loops. On the other hand, `for` of loop seems to lag behind.
+As the number of iterations increases, the results become quite comparable, and again the old `for` loop is giving stiff competition to the `while` and `do-while` loops. On the other hand, `for` of loop seems to lag behind.
 
 ##### Nested Loop Performance
-
 ```js
 const iterations = 100000
 // add an empty array size equal to the number of iterations
@@ -486,7 +491,8 @@ console.timeEnd("nested loop");
 ```
 
 Created a separate code block because the nested loop creates performance overhead as the number of iterations increases.
-Test the loop with upto 100000 iterations.
+
+Test the loop up to 100000 iterations.
 
 ***Results***
 
