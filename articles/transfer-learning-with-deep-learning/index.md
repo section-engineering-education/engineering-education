@@ -22,11 +22,12 @@ Basic understanding of machine learning and deep learning. For an introduction o
 
 **Pre-trained models** – models trained on a sizeable benchmark dataset to solve a problem similar to an already solved problem.
 
-**Marginal probability** – The probability of an event in the presence of all outcomes of another random variable.
+**Marginal probability** – The probability of an event in the presence of all outcomes of another random variable. Consider two variables, X and Y. If all the outcomes and probabilities of the variables were put in a table, the marginal probability of X would be the sum of the probabilities of variable Y on the table margin. Given that the probability of X=A for all outcomes of Y, we have the marginal probability as “P(X=A) = sum P(X=A, Y=yi) for all y”.
 
 **Feature** – an individual measurable property that is being observed. It is an attribute shared by all the independent units on that analysis is to be done.
 
-**Loss function** – component of a neural network responsible for calculating loss. Loss refers to the prediction error of a neural network.
+**Loss function** – in machine learning, using a single training example, the loss function is the difference between the actual and predicted output from the model. This is often used interchangeably with cost function. However, the cost function is defined as the average loss function for all training examples.
+
 
 ### Transfer Learning and Deep Learning
 
@@ -38,9 +39,9 @@ Deep neural networks have millions of weights that link many layers of neurons t
 
 #### Transfer Learning vs Traditional Machine Learning
 
-To understand transfer learning, it is important to compare it to a traditional machine learning approach. A key difference between the two is isolation. Traditional machine learning can be described as isolated. First things first, it focuses on specific tasks. It also occurs on specific datasets. Another characteristic of the traditional approach is the training of isolated models for very specific tasks. All this means that there is no knowledge that is either retained or accumulated. The learning process takes place without any relationship with past knowledge in different tasks.
+To understand transfer learning, it is important to compare it to a traditional machine learning approach. A key difference between the two is isolation. Traditional machine learning can be described as isolated. First things first, it focuses on specific tasks. It also uses datasets that are meant for a specific task. Another characteristic of the traditional approach is the training of isolated models for very specific tasks. All this means that there is no knowledge that is either retained or accumulated. The learning process takes place without any relationship with past knowledge in different tasks.
 
-However, transfer learning takes the contrary approach to the isolated nature of traditional machine learning approaches. The basis of this approach is the transferability of prior knowledge to tackle new tasks. There is no isolation. It is possible to leverage knowledge from pre-trained models to train new models. Here, learning of a new task is dependent on tasks that were learned previously. The result of such is a faster and more efficient learning process.
+However, transfer learning takes the contrary approach to the isolated nature of traditional machine learning approaches. The basis of this approach is the transferability of prior knowledge to tackle new tasks. There is no isolation between models involved in transfer learning since it is possible to leverage knowledge from pre-trained models to train new models. Here, learning of a new task is dependent on tasks that were learned previously. The result of such is a faster and more efficient learning process.
 
 Now that we understand the distinction between the two approaches, it is important to understand when to use deep transfer learning.
 
@@ -85,10 +86,14 @@ A fitting example of such a network is a Domain-Adversarial Neural Network (DANN
 #### Multitask Learning
 
 As the name suggests, multitask learning involves learning several tasks simultaneously. However, learning is done without a distinction between the source and targets.
+A basic example of multitask learning is the use of smart cameras to detect multiple objects in a frame simultaneously. In the absence of multitask learning, one would have to train a model to detect each object. 
+
+[GPT-3](https://www.section.io/engineering-education/introducing-gpt3/) is an example of a multitask model. It is also a few-shot learner (one-shot and zero-shot learner). GPT-3 shows that a model can be both a multitask learner and a few shot learner. The distinction between the two is that few-shot learning involves feeding a model with very little training data to carry out a given task whereas multitask learning may be used in scenarios where there is an abundance of labeled input data that can be shared with a different task with much less labeled data.         
 
 Multitask learning has the goal of optimizing all the parameters of the network and improving all the performance of multiple tasks. Samples from these tasks are key to this process. The learner takes in information about many tasks simultaneously. The learner, through some shared knowledge, optimizes the performance of all the tasks.
 
 This differs from the base principle of transfer learning where the learner initially is unaware of the target task.
+
 
 #### One-Shot Learning
 
@@ -98,7 +103,7 @@ In such scenarios, one-shot learning may be of great benefit. One-shot learning 
 
 #### Zero-Shot Learning
 
-Zero-shot learning can be useful when dealing with the two scenarios we mentioned when describing one-shot learning. This variant of transfer learning is not dependent on any labeled examples to learn a task. This is training algorithms to carry out tasks they weren’t explicitly trained to do.
+Zero-shot learning can be useful in contexts where we lack labeled data in all classes of a classification problem, or when new classes have to be added. This variant of transfer learning is not dependent on any labeled examples to learn a task. This is training algorithms to carry out tasks they weren’t explicitly trained to do.
 
 An example of zero-shot learning is the implementation of a pre-trained model like [GPT-3](https://www.section.io/engineering-education/introducing-gpt3/) on a language translation task. A natural language description of the task like “translate from Swahili to English” is given to the model. The model carries out the translation task without any examples.
 
