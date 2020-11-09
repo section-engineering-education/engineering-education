@@ -80,7 +80,11 @@ do {
 }  while (condition);
 ```
 
-The statement is checked/executed before the condition. If the condition is true, the loop executes the statement again. In the `do-while` loop, the next statement executes before the condition rechecks the previously executed statement. If the condition is true, it executes the statement again until the condition evaluates to false.
+The statement is checked/executed before the condition. If the condition is true, the loop executes the statement again.
+
+In a `do-while` loop, the next statement executes before the condition rechecks the previously executed statement.
+
+If the condition is true, it executes the statement again until the condition evaluates to false.
 
 ```js
 let i = 0;
@@ -90,10 +94,12 @@ do {
 } while (i < 5);
 ```
 
-In the above example, `do` iterates before `while` then `i` is incremented until the condition executes to false, i.e, until the loop cycle is no longer less than five: `(i < 5)`.
+In the example above, `do` iterates before `while` then `i` is incremented until the condition executes to false, i.e., until the loop cycle is no longer less than five: `(i < 5)`.
 
 ### While Loop
-It loops as long as the condition evaluates to true. When the condition evaluates to false, the loop stops. `While` checks a condition before executing the specified statement. If the statement executes, the loop retests the condition again. If the condition will be false at the first loop cycle, there is a chance the loop will not call a statement.
+It loops as long as the condition evaluates to true. When the condition evaluates to false, the loop stops.
+
+`While` checks a condition before executing the specified statement. If the statement executes, the loop retests the condition again. If the condition is false at the first loop cycle, there is a chance the loop will not call a statement.
 
 ```js
 let i = 0;
@@ -103,7 +109,7 @@ while (i < 5) {
 }
 ```
 
-The above block will run until `i < 5` is not true, and the loop will stop when the value of `i` is `5`. Otherwise, if the condition is always true, the loop will never end. Thus creating an infinite loop, i.e,
+The above block will run until `i < 5` is not true, and the loop will stop when the value of `i` is `5`. If the condition is always true, the loop will never end. Thus creating an infinite loop, as we will see below:
 
 ```js
 let i = 0;
@@ -113,7 +119,7 @@ while (true) {
 }
 ```
 
-The above code block will execute forever, as the condition will never be false.
+The code above block will execute forever, as the condition will never be false.
 
 ### For In
 It iterates over named properties of an object key and gets each property value inside the loop. A `for-in` loop has no condition expression and incremental value. The loop executes once per property. And tests as many times as the number of properties in an object.
