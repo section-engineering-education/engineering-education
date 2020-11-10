@@ -166,7 +166,7 @@ Where inline lets you test out new design patterns but becomes too much of a wor
 
 ### Additional resources
 
-- [External styling](https://www.webucator.com/how-to/how-create-css-external-style-sheet.cfm#)
+- [External Styling](https://www.webucator.com/how-to/how-create-css-external-style-sheet.cfm#)
 
 - [3 distinct methods for styling in CSS](https://www.hostinger.in/tutorials/difference-between-inline-external-and-internal-css)
 
