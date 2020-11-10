@@ -239,4 +239,9 @@ We are Done! Let’s run the app.
 
 ![CovidTrackerVolley](/engineering-education/making-api-requests-using-volley-android/app.jpg)
 
+### Conclusion
+As you can see, Volley makes networking easier in Android development. It provides an easier way to make simple API requests. Did you know that Volley takes 560ms to carry out one discussion? Pretty fast, right?? Instead of making requests using slow and complicated classes such as Async Task, you can use Volley to carry out simple network requests. Go ahead and make different networking calls using Volley.
+You can read more about Volley in their official [documentation](https://developer.android.com/training/volley).
+
+
 Access the source code on [Github](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/CovidTrackerVolley). Download the sample APK on Google [Drive](https://drive.google.com/file/d/1Gsn9P8KxrXcDXLR4DrUYu1o7i3VVMC52/view?usp=sharing).
