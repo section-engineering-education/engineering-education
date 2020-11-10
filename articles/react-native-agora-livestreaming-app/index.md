@@ -26,9 +26,10 @@ We will be going through these steps in this article,
 1. Setting up the Development Environment
 2. Creating an Agora Account
 3. Installing Dependencies
-4. Building the Livestream
-5. Extra Features
-6. Let's Recap
+4. Clone the Started Code
+5. Building the Livestream
+6. Extra Features
+7. Let's Recap
 
 > If you want to take a look at the code step-by-step, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made commits for every step in this tutorial.
 
@@ -122,12 +123,13 @@ You can install these beforehand, or install them while going through the articl
 "uuid": "^8.3.1"
 ```
 
-### Let's Get Started
-You can get the starter code from [here](https://github.com/zolomohan/react-native-agora-livestreaming-app-starter).
+### Building the App
+#### Clone the Starter Code
+You can get the starter code from [here](https://github.com/zolomohan/react-native-agora-app-starter).
 
 To clone the repository, run
 ```
-git clone https://github.com/zolomohan/react-native-agora-livestreaming-app-starter.git
+git clone https://github.com/zolomohan/react-native-agora-app-starter.git
 ```
 To install the dependencies, run
 ```
@@ -145,9 +147,12 @@ You can find the documentation for React Native Navigation [here](https://reactn
 ![Homescreen](homescreen_with_input.jpeg)
 
 #### Pass Channel ID While Navigating
-When we create or join a live stream, we need to pass a channel id to the Live Screen. For a new event, we will create a random UUID and pass it to the Live screen. For joining an event, we will use the channel id from the input.
+When we create or join a live stream, we need to give a channel id to Agora. 
 
-Let's install the UUID package to generate UUID.
+For a new live stream, we will generate a UUID and for joining a live stream, we will use the channel id from the input.
+We need to pass the channel ID from the Home Screen to the Live Screen. We can pass it as a route prop to the Live Screen. 
+
+Let's install the UUID package to generate a UUID.
 ```
 npm install uuid
 ```
@@ -158,22 +163,20 @@ Let's install the react-native-get-random-values package to fix the issue.
 npm install react-native-get-random-values
 ```
 
-In `screens/Home.js`, import both of those packages into the file in this order. We must import the `react-native-get-random-values` before the `uuid` import.
+In `screens/Home.js`, import both of those packages. We must import the `react-native-get-random-values` before the `uuid` import to avoid the above mentioned error.
 ```
 import 'react-native-get-random-values';
 import { v4 as uuid } from 'uuid';
 ```
-In the Navigate to Create Live function, we will generate a new UUID and pass it as a route prop for the Channel ID.
-In the Navigate to Join Live function, we will use the text input's value for the Channel ID.
+In the `createLive` function, we will generate a new UUID and pass it as a route prop for the Channel ID.
+In the `joinLive` function, we will pass the text input's value for the Channel ID.
 ```
   const createLive = () => navigation.navigate('Live', { type: 'create', channel: uuid() });
   const joinLive = () => navigation.navigate('Live', { type: 'join', channel: joinChannel });
 ```
 Notice that we are also passing a route prop called `type` along with channel? We will be using this to determine whether the user is a broadcaster or an audience on the Livestream page.
 
-You can pass these functions to the `onPress` prop of the `TouchableOpacity` component.
-
-When you press these buttons, you should be navigating to the Live screen now.
+When you press these buttons, it should be the same as before, but now, we can access the `channel` route prop in the Live Screen.
 
 #### Setting up The Live Screen
 To use Agora, we need to install `react-native-agora` first. Let's install it.
@@ -449,10 +452,11 @@ const styles = StyleSheet.create({
   },
 });
 ```
-One last thing, Let's add a Share button to share the channel ID to others. We need to import the `Share` component from `react-native`.
 
 ### Extra Features 
 #### Share the Channel ID
+
+Let's add a Share button to share the channel ID to others. We need to import the `Share` component from `react-native`.
 ```
 import { Share } from 'react-native';
 ```
