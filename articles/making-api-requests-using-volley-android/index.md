@@ -178,7 +178,7 @@ In your AndroidManifest.xml add internet permission:
 This permission enables our application to access the internet.
 
 #### Step 4 – Making the API Requests
-In this step, we will make an API request.
+In this step, we will make the API request.
 We will be using the [NovelCOVID](https://documenter.getpostman.com/view/8854915/SzS7R6uu?version=latest) API, which contains live Corona Virus statistics.
 In our `MainActivity` class, create an object for the `TextViews` in our Resource file.
 
@@ -190,9 +190,9 @@ In our `onCreate` method initialize the TextViews and invoke the `getData` metho
 
 ```java
 //Initialize the objects
-totalCasesWorld = (TextView) findViewById(R.id.newCasesWorld);
-totalDeathsWorld = (TextView) findViewById(R.id.newDeathsWorld);
-totalRecoveredWorld=(TextView)findViewById(R.id.newRecoveredWorld);
+totalCasesWorld = findViewById(R.id.newCasesWorld);
+totalDeathsWorld = findViewById(R.id.newDeathsWorld);
+totalRecoveredWorld = findViewById(R.id.newRecoveredWorld);
 
 getData();
 ```
@@ -209,25 +209,21 @@ Next, we will create a `ResponseListener`, which will contain an `onResponse` me
 In the `onErrorResponse` method, we will show a `Toast` message in case of an error.
 
 ```java
- String myUrl = "https://corona.lmao.ninja/v2/all";
-        StringRequest myRequest = new StringRequest(Request.Method.GET, myUrl,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try{
-                            //Create a JSON object containing information from the API.
-                            JSONObject myJsonObject = new JSONObject(response.toString());
-                            totalCasesWorld.setText(myJsonObject.getString("cases"));
-                            totalRecoveredWorld.setText(myJsonObject.getString("recovered"));
-                            totalDeathsWorld.setText(myJsonObject.getString("deaths"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
- public void onErrorResponse(VolleyError volleyError) {
- Toast.makeText(MainActivity.this,volleyError.getMessage(),Toast.LENGTH_SHORT)
- .show();
+String myUrl = "https://corona.lmao.ninja/v2/all";
+StringRequest myRequest = new StringRequest(Request.Method.GET, myUrl,
+        response -> {
+            try{
+                //Create a JSON object containing information from the API.
+                JSONObject myJsonObject = new JSONObject(response);
+                totalCasesWorld.setText(myJsonObject.getString("cases"));
+                totalRecoveredWorld.setText(myJsonObject.getString("recovered"));
+                totalDeathsWorld.setText(myJsonObject.getString("deaths"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        },
+        volleyError -> Toast.makeText(MainActivity.this, volleyError.getMessage(), Toast.LENGTH_SHORT).show()
+);
 ```
 Lastly, outside the `getData` method initialize the `RequestQueue`,
 
@@ -240,7 +236,11 @@ We are Done! Let’s run the app.
 ![CovidTrackerVolley](/engineering-education/making-api-requests-using-volley-android/app.jpg)
 
 ### Conclusion
-As you can see, Volley makes networking easier in Android development. It provides an easier way to make simple API requests. Did you know that Volley takes 560ms to carry out one discussion? Pretty fast, right?? Instead of making requests using slow and complicated classes such as Async Task, you can use Volley to carry out simple network requests. Go ahead and make different networking calls using Volley.
+As you can see, Volley makes networking easier in Android development. It provides an easier way to make simple API requests.
+
+**Did you know that Volley takes 560ms to carry out one discussion? That is pretty fast**.
+
+Instead of making requests using slow and complicated classes such as Async Task, you can use Volley to carry out simple network requests. Go ahead and make different networking calls using Volley.
 You can read more about Volley in their official [documentation](https://developer.android.com/training/volley).
 
 
