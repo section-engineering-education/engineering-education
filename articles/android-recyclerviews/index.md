@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/android-recyclerviews/
 title: Android Recyclerviews
-description: This article goes through
+description: This article goes through how to create RecyclerViews. It will address the requirements and classes involved to develop a functioning RecyclerView.
 author: linus-muema
-date: 2020-11-04T00:00:00-10:00
+date: 2020-11-10T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,23 +15,27 @@ images:
     alt: Android recyclerviews image
 ---
 Loading vast amounts of data into normal views can lead to high CPU usage. This, in turn, may lead to the operating system forcibly shutting down the applications.
-In Android, it is common to display a list of data. With more data being presented and dynamically received, developers had to come up with compound views to help display the data. It has not been an easy task to say the least.
+In Android, it is common to display a list of data.
 <!--more-->
+With more data being presented and dynamically received, developers had to come up with compound views to help display the data. It has not been an easy task to say the least.
+
 #### Android RecyclerViews
 The Dynamic data (that we are referring to) can include data from a network or local database. This again comes with the added problem of resource management.
 
-That is where ListViews came into play. Developers were able to load text-based data to a compound view using an adapter to increase efficiency. However, this solution did not address all the problems encountered.
+That is where ListViews comes into play. Developers were able to load text-based data to a compound view using an adapter to increase efficiency. However, this solution didn't address all the problems encountered.
 
 This solution didn't allow the addition of other views to the Compound view. Developers needed to write extra code to facilitate the addition of other Views. They weren't very efficient in resource management. Having many ListViews in the application still showed a high CPU usage. RecyclerViews addressed these issues and brought in other advantages.
 
 Those advantages are listed below:
 
 1. *flexibility* - with recyclerviews, you can create custom layouts for each of the list items. You can also define the orientation and placement of the items.
-2. *animations* - listviews had no support for animating the list items. Recyclerviews have the ItemAnimator class, that helps to animate the list items
-3. *click listeners* - with listviews, you could only listen to click events, while in recyclerviews, you could listen to various interactions like drag, long-press thanks to the RecyclerView.OnItemTouchListener class.
+2. *animations* - listviews had no support for animating the list items. Recyclerviews have the ItemAnimator class, that helps animate the list items.
+3. *click listeners* - with listviews, you could only listen to click events, while in recyclerviews, you could listen to various interactions like drag and long-press thanks to the RecyclerView.OnItemTouchListener class.
 4. *control* - recyclerviews allow the developer to have full control of the list items and their behavior. ListViews limited this.
 
-This article goes through how to create RecyclerViews. It will address the requirements and classes involved to develop a functioning RecyclerView. To comfortably follow through with this tutorial, you need:
+This article goes through how to create RecyclerViews. It will address the requirements and classes involved to develop a functioning RecyclerView.
+
+To comfortably follow through with this tutorial, you'll need:
 
 - **Android Studio** installed on your machine.
 - A basic understanding of **Android development** using **Kotlin** programming language
@@ -167,7 +171,7 @@ class ListAdapter(private val data: List<User>): RecyclerView.Adapter<ListAdapte
 
 For the adapter to function well, we need to override three methods. Let's go through each of the methods and see what they do.
 
-#### 1. 'onCreateViewHolder'
+#### 1. onCreateViewHolder
 The recyclerview invokes this method to create a `ViewHolder`. Since we passed our viewholder class by type inferencing, this method's return type is the actual viewholder. Go ahead and add the following code in the ListAdapter class.
 
 ```kotlin
@@ -178,14 +182,14 @@ override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolde
 
 We use the layout inflator class to create the view that will hold our data.
 
-#### 2. 'getItemCount'
+#### 2. getItemCount
 This method returns the entire count of items in the recyclerView and not just the visible ones. To return the correct value, we set it to return the size of our list.
 
 ```kotlin
     override fun getItemCount(): Int = data.size
 ```
 
-#### 3. 'onBindViewHolder'
+#### 3. onBindViewHolder
 This is the last method to override. This method binds data on the viewholder provided as an argument.
 
 ```kotlin
@@ -198,7 +202,7 @@ Here we call a function in our viewholder named `bind`, which takes care of addi
 
 Add the following function in the ListViewHolder class.
 
-```koltin
+```kotlin
 fun bind(user: User) {
     Glide.with(itemView.context).load(user.image).into(itemView.profile)
     itemView.name.text = user.name
