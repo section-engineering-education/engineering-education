@@ -31,7 +31,7 @@ We will be going through these steps in this article,
    2. Pass Channel ID While Navigating
    3. Setting up The Live Screen
    4. Extra Features
-5. Let's Recap
+5. Recap
 
 > If you want to take a look at the code step-by-step, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made commits for every step in this tutorial.
 
@@ -611,21 +611,23 @@ broadcasterVideoStateMessageText: {
 ### Let's Recap
 1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
    
-2. We cloned the started code and we passed a UUID when we navigated to the Live screen which is the channel ID used for the Livestream.
+2. We cloned the starter code. 
    
-3. We acquired Camera and Microphone permissions from Android to transmit Audio and Video.
+3. We passed a UUID when we navigated to the Live screen from the Home Screen which is the channel ID used for the Livestream.
    
-4. We initiated the Agora Engine instance and setup all the necessary configurations for the engine like the Channel Profile and the Client Profile.
+4. We acquired Camera and Microphone permissions from Android to transmit Audio and Video.
    
-5. We joined the channel using no authentication and the channel ID from the route prop.
+5. We initiated the Agora Engine instance and setup all the necessary configurations for the engine like the Channel Profile and the Client Profile.
    
-6. We displayed the Local View and Remote View based on who is using the app, the Livestream host, or the audience.
+6. We joined the channel using no authentication and the channel ID from the route prop.
    
-7. We added a Share button to share the UUID to others from the Live screen.
+7. We displayed the Local View and Remote View based on who is using the app, the broadcaster, or the audience.
    
-8. We added a Switch Camera button to switch between the front camera and the back camera.
+8. We added a Share button to share the UUID with others from the Live screen.
    
-9.  We added a Remote Video State Listener to listen to the state changes of the Video Feed from the broadcaster and displayed the feed or the video state message.
+9.  We added a Switch Camera button to switch between the front camera and the back camera.
+   
+10. We added a Remote Video State Listener to listen to the state changes of the Video Feed from the broadcaster and displayed the feed or the video state message.
 
 Congratulations, :partying_face: You did it.
 
