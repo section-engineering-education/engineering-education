@@ -6,7 +6,7 @@ url: /engineering-education/types-of-styling-in-css/
 title: Types of CSS (Cascading Style Sheets)
 description: This article will go over the different styling options in CSS, how to apply them, and when best to implement each style.
 author:
-date: 2020-11-09T00:00:00-18:00
+date: 2020-11-10T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
