@@ -122,151 +122,30 @@ You can install these beforehand, or install them while going through the articl
 "uuid": "^8.3.1"
 ```
 
-### Building the Livestream
-You can get the initial code from [here](https://github.com/zolomohan/react-native-agora-livestreaming-app/tree/7c9be640b75b5030f11b60d9d22378ef9c62c5cd). This code contains the home screen in the App.js.
+### Let's Get Started
+You can get the starter code from [here](https://github.com/zolomohan/react-native-agora-livestreaming-app-starter).
 
-These buttons are supposed to take you to the live screen. So let's set up React Navigation.
+To clone the repository, run
+```
+git clone https://github.com/zolomohan/react-native-agora-livestreaming-app-starter.git
+```
+To install the dependencies, run
+```
+npm install
+```
+For iOS, cd into ios/ and run
+```
+pod install
+```
 
-![Homescreen With Input](homescreen_with_input.jpeg)
+In this code, the Stack Navigation is setup with the Home screen and the Live Screen.
 
-#### Setting Up React Navigation
-We need to use `@react-navigation/native` to set up navigation in our app. So let's install the packages required to get navigation up and running.
-```
-npm install @react-navigation/native
-```
-There are a couple of dependencies required for `@react-navigation/native` to work. Let's install those packages too.
+You can find the documentation for React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
 
-```
-npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
-```
-`@react-navigation/native` offers different navigation systems like Stack Navigation, Top Tab Navigation, Drawer Navigation, etc.
-We need to install these packages separately.
+![Homescreen](homescreen_with_input.jpeg)
 
-We will be using Stack Navigation, so let's install `@react-navigation/stack`
-```
-npm install @react-navigation/stack
-```
-Now that we've installed the dependencies for us to set up navigation, Let's build the screens.
-
-Create a new directory called `screens` with 2 new files inside called `Home.js` and `Live.js`
-
-![Screens Directory](screens_directory.png)
-
-##### Set up Navigator
-Let's move what we wrote in the `App.js` into `screens/Home.js`. Once you have moved everything, rename the function from App to Home in `screens/Home.js`.
-
-Let's add a dummy live screen, for now, to visualize that we are navigating to the right screen.
-
-*screens/Live.js*
-```
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function Live() {
-  return (
-    <View style={styles.container}>
-      <Text>Live</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-```
-Now, In our `App.js`, we need to set up the navigation.
-
-Let's import the `NavigationContainer` from `@react-navigation\native`.
-```
-import { NavigationContainer } from '@react-navigation/native';
-```
-We need to wrap everything in our App with the `NavigationContainer` like this
-```
-export default function App() {
-  return (
-    <NavigationContainer>
-      // Rest of the Code
-    </NavigationContainer>
-  );
-}
-```
-Now, we need to create a Stack Navigator. To do that, we need to import createStackNavigator.
-```
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
-```
-Now, inside the Navigation Container, Let's Add a Stack Navigator.
-```
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        // Rest of the Code Here
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-```
-Our App has 2 Screens, So let's import the screens into ```App.js``` and create 2 screens inside the Navigator.
-
-The Stack.Screen accepts 2 props.
-- component - The Screen Component
-- name - The name of the screen. We will use this to navigate between screens.
-```
-import Home from './screens/Home';
-import Live from './screens/Live';
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Live" component={Live} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-```
-You've set up the Navigation. When you open the app now, you'll see the home screen because it's the first screen in the stack.
-You can't navigate to the Live screen yet. We still need to write the code to go from the Home Screen to the Live Screen.
-
-![Homescreen with Header](home_with_header.jpeg)
-
-We don't need the header, let's remove that.
-
-The Stack.screen also accepts a prop called options. Let's pass an object with the option that'll remove the Header. For more options, you can refer [here](https://reactnavigation.org/docs/screen-options/)
-```
-const options = { headerShown: false };
-return (
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} options={options} />
-      <Stack.Screen name="Live" component={Live} options={options} />
-    </Stack.Navigator>
-  </NavigationContainer>
-);
-```
-##### Navigate Between Screens
-Let's add the code to navigate from the home screen to the live screen. In `screens/Home.js`, we need to import a hook provided by `@react-navigation/native`.
-```
-import { useNavigation } from '@react-navigation/native';
-```
-Inside the Home function, create a constant variable called navigation and assign the hook to it.
-```
-const navigation = useNavigation();
-```
-Now, `navigation` will have a function on it called `navigate` which will be used to navigate between screens using the screen name.
-Like this,
-
-```
-navigation.navigate('<Screen Name>')
-``` 
-When we create or join a live event, we need to pass a channel id to the Live Screen. For a new event, we will create a random UUID and pass it to the Live screen. For joining an event, we will use the channel id from the input.
+#### Pass Channel ID While Navigating
+When we create or join a live stream, we need to pass a channel id to the Live Screen. For a new event, we will create a random UUID and pass it to the Live screen. For joining an event, we will use the channel id from the input.
 
 Let's install the UUID package to generate UUID.
 ```
@@ -278,18 +157,17 @@ Let's install the react-native-get-random-values package to fix the issue.
 ```
 npm install react-native-get-random-values
 ```
-Import both of those packages into the file in this order. We must import the `react-native-get-random-values` before the `uuid` import.
+
+In `screens/Home.js`, import both of those packages into the file in this order. We must import the `react-native-get-random-values` before the `uuid` import.
 ```
 import 'react-native-get-random-values';
 import { v4 as uuid } from 'uuid';
 ```
-We need to Navigate to the Live Screen from both the buttons, so let's create two functions to navigate to the Live screen for Create and Join.
-
 In the Navigate to Create Live function, we will generate a new UUID and pass it as a route prop for the Channel ID.
 In the Navigate to Join Live function, we will use the text input's value for the Channel ID.
 ```
-const createLive = () => navigation.navigate('Live', { type: 'create', channel: uuid() });
-const joinLive = () => navigation.navigate('Live', { type: 'join', channel: joinChannel });
+  const createLive = () => navigation.navigate('Live', { type: 'create', channel: uuid() });
+  const joinLive = () => navigation.navigate('Live', { type: 'join', channel: joinChannel });
 ```
 Notice that we are also passing a route prop called `type` along with channel? We will be using this to determine whether the user is a broadcaster or an audience on the Livestream page.
 
@@ -298,8 +176,6 @@ You can pass these functions to the `onPress` prop of the `TouchableOpacity` com
 When you press these buttons, you should be navigating to the Live screen now.
 
 #### Setting up The Live Screen
-Okay, We reached the interesting part. 
-
 To use Agora, we need to install `react-native-agora` first. Let's install it.
 ```
 npm install react-native-agora
