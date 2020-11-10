@@ -14,9 +14,8 @@ images:
   - url: /engineering-education/javascript-iterations-which-one-is-faster/hero.jpg
     alt:
 ---
-Sometimes you want to repeat a task several times. Let's say to log "hello world" six times. Here is a simple JavaScript code block to do that:
+Loops are a fundamental part of application development. They help you repeat a task or a set of instructions several times. In JavaScript, loops validate a value in a given block of code by checking if the value meets a provided condition. The value is executed repeatedly until that condition is met. The condition evaluates to false. To get a picture of how loops work in JavaScript, assume, let's say to log "hello world" six times. Here is a simple JavaScript code block to do that:
 <!--more-->
-
 
 ```js
 console.log("hello world")
@@ -475,6 +474,7 @@ for...each: 11820.696ms
 As the number of iterations increases, the results become quite comparable, and again the old `for` loop is giving stiff competition to the `while` and `do-while` loops. On the other hand, `for` of loop seems to lag behind.
 
 ##### Nested Loop Performance
+
 ```js
 const iterations = 100000
 // add an empty array size equal to the number of iterations
@@ -506,8 +506,8 @@ arraySize 100000: 38987.654ms
 
 #### Using Performance Observer perf_hooks
 These will log several performances for every loop and then output each loop's average time to complete the assigned task.
- 
-`js
+
+```js
 const { PerformanceObserver, performance } = require('perf_hooks');
 let arraySize = 1000000;
 let iterations = 100;
@@ -570,7 +570,7 @@ performance.mark('A');
 performance.mark('B');
 performance.measure('For', 'A', 'B');
 
-      //while
+    //while
 performance.mark('A');
 let i = 0;
 while (i < arr.length) {
@@ -580,7 +580,7 @@ while (i < arr.length) {
 performance.mark('B');
 performance.measure('While', 'A', 'B');
 
-        //do....while
+    //do....while
 performance.mark('A');
 let j = 0;
 do {j++;let x = arr[j] + 1;}
@@ -594,7 +594,7 @@ console.log(Object.entries(values).sort((a, b) => {
     obj[1] /= iterations;
     return obj;
 }))};
-`
+```
 
 ##### Results
 
@@ -741,7 +741,6 @@ ugly for loop : 6.868ms
 function call Loop : 6.307ms
 option 1: 3.130ms
 option 2: 5.086ms
-
 ```
 
 ### Closing Notes
