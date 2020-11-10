@@ -283,7 +283,7 @@ const init = async () => {
 ```
 
 ##### Configure the Agora Engine
-Next, we need to set the Channel Profile to Livestreaming. `react-native-agora` provides enums for Channel Profiles. Let's import it and set the Channel Profile to Live Broadcasting.
+Next, we need to set the Channel Profile to Livestreaming. `react-native-agora` provides enums for Channel Profiles. Let's import it and set the Channel Profile to Live Broadcasting. To learn about `ChannelProfile`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/enums/channelprofile.html).
 ```
 import { ChannelProfile } from 'react-native-agora';
 
@@ -295,7 +295,7 @@ const init = async () => {
 ```
 Next, We need to set the current user's profile. The default profile is set to `Audience`. So, we need to set the Client Profile to `Broadcaster` if the user pressed Create on the Homescreen. We can identify this by the `type` route prop that we pass when navigating to this screen. You can access the route prop like `props.route.params.propname`. In our case, it'll be `props.route.params.type`.
 
-Let's import the enum `ClientRole` provided by `react-native-agora`.
+Let's import the enum `ClientRole` provided by `react-native-agora`. To Learn more about `ClientRole`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/enums/clientrole.html).
 
 Remember, we don't need to set the ClientRole if the user is the audience. It's the default value.
 ```
@@ -314,23 +314,12 @@ const init = async () => {
 ##### Joining the Agora Channel
 Now that we have set all the config required for the Livestream, we need to join the channel. We need to join the Livestream only after all these configurations have been set up on the engine. Since `init()` is an async function, we can add a `.then()` to it and Join the channel inside it.
 
-To join the channel, the AgoraEngine instance has a `joinChannel()` function on it. It takes 4 arguments. 
+To join the channel, the AgoraEngine instance has a `joinChannel` function on it. It takes 4 arguments, *Authentication Token, Channel ID, Optional Info, and Optional UID*. To learn more about `joinChannel`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/classes/rtcengine.html#joinchannel).
 
-1. **Authentication Token**:
-  - In situations not requiring high security: You can use the temporary token generated at Console. For details, see [Get a temporary token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
-  -  In situations requiring high security: Set it as the token generated at your server. For details, see [Generate a token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#generatetoken).
-  -  In situations that do not require security, You can pass `null`.
-     
-2. **Channel**: The unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes.
-   
-3. **Optional Info**: Additional information about the channel. This parameter can be set as null or contain channel-related information. Other users in the channel do not receive this message.
-   
-4. **Optional UID** - User ID. A 32-bit unsigned integer with a value ranging from 1 to (2^32-1). `optionalUid` must be unique. If `optionalUid` is not assigned (or set to `0`), the SDK assigns and returns `uid` in the `JoinChannelSuccess` Callback.
-Your app must record and maintain the returned UID since the SDK does not do so.
+Let's not worry about Authentication and Optional Info now. We'll pass null for authentication and optional info. For the Channel ID, we'll pass what we get from the route props i.e., the channel UUID that we pass from the home screen to this screen. For the Optional UID, we'll pass `1` if the user is a Broadcaster and `0` if the user is an audience. This is because we can use the UID of the Broadcaster for listening to events later and establishing the remote feed on the audience's side. 
 
-Let's not worry about Authentication and Optional Info now. We'll pass null for authentication and optional info. For the Channel ID, we'll pass what we get from the route props i.e., the channel UUID that we pass from the home screen to this screen. For the Optional UID, we'll pass `1` if the user is a Broadcaster and `0` if the user is an audience. This is because we can use the UID of the Broadcaster for listening to events later and establishing the remote feed on the audience's side.
+If the OptionalUID is set to `0`, the SDK assigns and returns the UID in the `JoinChannelSuccess` callback.
 
-> You can assign a random UID and store it elsewhere like a database and use that UID later in the code. For simplicity, we will use 1.
 ```
 useEffect(() => {
   const uid = isBroadcaster ? 1 : 0;
@@ -459,7 +448,7 @@ const styles = StyleSheet.create({
 ### Extra Features 
 #### Share the Channel ID
 
-Let's add a Share button to share the channel ID with others. We need to import the `Share` component from `react-native`.
+Let's add a Share button to share the channel ID with others. We need to import the `Share` component from `react-native`. To learn more about the `Share` component, refer [here](https://reactnative.dev/docs/share).
 ```
 import { Share } from 'react-native';
 ```
@@ -550,7 +539,7 @@ Switch Camera Button
 </View>
 ```
 #### Broadcaster Video Status
-Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the live stream. When a video state changes, it provides the `UID` and the `Video State` of that user.
+Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the live stream. When a video state changes, it provides the `UID` and the `Video State` of that user. To Learn more about the `RemoteVideoStateChanged` listener, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/interfaces/rtcengineevents.html#remotevideostatechanged)
 
 Let's add a state for the broadcaster's video state and set the initial value to Decoding. `react-native-agora` provides an enum for all the remote video states.
 ```
@@ -568,7 +557,7 @@ AgoraEngine.current.addListener('RemoteVideoStateChanged', (uid, state) => {
 });
 ```
 
-Let's add a utility function to provide a text message for each state.
+Let's add a function to provide a text message for each state.
 ```
 const videoStateMessage = (state) => {
   switch (state) {
