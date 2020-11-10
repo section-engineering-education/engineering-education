@@ -238,7 +238,7 @@ animals.forEach((anim) => {
 const animals = ["dog", "cat", "mouse", "wolf", "chicken", "rabbit"];
   animals.forEach((anim, index) => {
   console.log(`index: ${index}, value: ${anim}`)
-  })
+})
 ```
 
 - Array - an optional parameter that holds a complete array from where for-each was called.
@@ -307,8 +307,8 @@ A continue statement break a loop, check a specified condition and then proceed 
 
 The loop skips a value specified in the continue statement condition. For example, to loop over some numbers and get the even numbers, we need a continue statement to break the loop whenever we iterate odd numbers.
 
-``` js
-for (let i = 1; i < = 10; i++){
+```js
+for (let i = 1; i <= 10; i++){
   if (i % 2 == 1) continue;
   console.log(i)
 }
@@ -591,7 +591,7 @@ console.log(Object.entries(values).sort((a, b) => {
 }).map(obj => {
     obj[1] /= iterations;
     return obj;
-}));
+}))};
 `
 
 ##### Results
