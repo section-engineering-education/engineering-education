@@ -140,7 +140,7 @@ For iOS, cd into ios/ and run
 pod install
 ```
 
-In this code, the Stack Navigation is setup with the Home screen and the Live Screen.
+In this code, the Stack Navigation is set up with the Home screen and a dummy Live Screen. The Home Screen has 2 buttons, Start and Join. The Join button has a text input associated with it to provide the channel ID to join the stream.
 
 You can find the documentation for React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
 
@@ -162,8 +162,7 @@ Let's install the react-native-get-random-values package to fix the issue.
 ```
 npm install react-native-get-random-values
 ```
-
-In `screens/Home.js`, import both of those packages. We must import the `react-native-get-random-values` before the `uuid` import to avoid the above mentioned error.
+In `screens/Home.js`, import both of those packages. We must import the `react-native-get-random-values` before the `uuid` import to avoid the above-mentioned error.
 ```
 import 'react-native-get-random-values';
 import { v4 as uuid } from 'uuid';
@@ -456,7 +455,7 @@ const styles = StyleSheet.create({
 ### Extra Features 
 #### Share the Channel ID
 
-Let's add a Share button to share the channel ID to others. We need to import the `Share` component from `react-native`.
+Let's add a Share button to share the channel ID with others. We need to import the `Share` component from `react-native`.
 ```
 import { Share } from 'react-native';
 ```
