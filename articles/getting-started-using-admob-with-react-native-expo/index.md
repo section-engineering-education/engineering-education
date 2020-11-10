@@ -24,7 +24,7 @@ In this tutorial, we are going to implement Admob in the React Native applicatio
 - Android Emulator or Real Device
 - [Admob account](https://apps.admob.com/v2/home?pli=1)
 - [Nodejs](https://nodejs.org/dist/v12.19.0/node-v12.19.0-x64.msi)
-- VScode or other text editor IDEs.
+- [VScode](https://aka.ms/win32-x64-user-stable) or other text editor IDEs.
 - [Yarn](https://classic.yarnpkg.com/latest.msi)
 - [Git SCM](https://github.com/git-for-windows/git/releases/download/v2.29.1.windows.1/Git-2.29.1-64-bit.exe)
 
@@ -42,41 +42,41 @@ From the dashboard, we need to create a new app. For that, we need to go to [cre
 
 After clicking on 'Continue', we need to fill the **App name** and subsequently click on the 'ADD APP' button as shown in the screenshot below:
 
-![admob dashboard](3-admob-dashboard.png)
+![naming admob app](3-naming-admob-app.png)
 
 Next, we need to add the Ad Unit as directed in the screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%203.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%203.png)
+![create add unit](4-create-add-unit.png)
 
 The Admob console generally provides 5 types of ads to be integrated. For this tutorial, we are going to focus on banner ads and rewarded ads. The ad types to be selected are shown in the screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%204.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%204.png)
+![admob ad type](5-admob-ad-type.png)
 
 First, we are going to create a **Banner ad** as directed in the screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/2563-11-09_11_02_49-Google_AdMob.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/2563-11-09_11_02_49-Google_AdMob.png)
+![create banner ad](6-create-banner-ad.png)
 
 Here, we have named our Ad unit name as 'header ads'. Now after clicking on 'CREATE AD UNIT', we will receive an **Ad Unit ID** as shown in the screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%205.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%205.png)
+![success create ad unit](7-success-create-ad-unit.png)
 
 Now, we will be able to get the Ad Unit ID from dashboard as well:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%206.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%206.png)
+![Ad unit dashboard](8-ad-unit-dashboard.png)
 
 Now, we are going to repeat the same process and create a Reward Ad. For that, we can customize the **Ad Unit name** and **Amount** as directed in the screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%207.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%207.png)
+![create reward ad](9-create-reward-ad.png)
 
 After clicking on 'CREATE AD UNIT', we will get the **Ad Unit ID** for the **Reward Ads** as well. Now, we will be able to see two Ad units in our console:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%208.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%208.png)
+![fininsh create ad unit](10-finish-create-ad-unit.png)
 
 ### Setup Admob on Expo
 
 For setting up Admob on Expo, we will need to export the previous project from the Expo snack. It is due to the fact that we are not authorized to access the `app.json` for use in environment variables. Hence, we need to export the entire expo project as directed in the screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%209.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%209.png)
+![export expo project from snack](11-export-project-from-snack.png)
 
 After exporting to the local system, we need to install all the required packages as mentioned in the requirement section above. First, we are going to install Expo CLI. For that, we need to open the terminal in the project directory and run the following command:
 
@@ -113,7 +113,7 @@ expo start
 
 After this, we need to choose the required emulator that is Android to run the project on. Then on a successful build, we will get the app running in our emulator as shown in the screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%2010.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%2010.png)
+![running react native expo  in local](12-running-react-native-expo-in-local.png)
 
 ### Using Admob Banner
 
@@ -169,9 +169,7 @@ We can do the similar thing add the Banner ad to Setting screen as well.
 
 The result showing the Banner ad in both the screens is provided in the screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%2011.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%2011.png)
-
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%2012.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%2012.png)
+![show ad banner in both screen](13-show-ad-banner.png)
 
 As we can notice, we have rendered out the Banner ad at the top of the Home and Setting Screen. Now, we can move on to the Reward Ads.
 
@@ -213,7 +211,7 @@ Now, we need to add a new Setting screen option to remove ads. It is just going 
 
 Hence, we will get the Remove Ads list option as shown in the demo screenshot below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%2013.png](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/Untitled%2013.png)
+![add remove ad button](14-remove-ad-button.png)
 
 Next, we are going to create a `Modal` component. It will be to ask the consent of the users for their agreement to watch video ads. For that, we need to import the required components as shown in the code snippet below:
 
@@ -333,7 +331,7 @@ Lastly, we need to call the Modal trigger function to the Remove ads list option
 
 Hence, if we click on the Remove Ads option, we will get the Modal with two options: Watch Video or Exit. If we choose to watch the video ad then the video ad will play in the app as shown in the demo below:
 
-![Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/ezgif-6-c564347f3a64.gif](Getting%20started%20using%20Admob%20to%20React%20Native%20Expo%20@%20cb91bfe31efe486491ed64e82bad0ed9/ezgif-6-c564347f3a64.gif)
+![remove ads demo](15-remove-ad-in-action.gif)
 
 Now that we have the video ads playing on the screen, we need to add a function called `initRewardAds` to handle the Reward ad event. Inside the function, we are going to trigger two events.  First, if the user views the video ad for 5 seconds, we will trigger `rewardedVideoDidRewardUser`event and close all ads. And, the second event that is to hide the modal, we trigger the `rewardedVideoDidClose` event and hide the modal itself. The overall coding implementation of this function is provided in the code snippet below:
 
