@@ -26,10 +26,12 @@ We will be going through these steps in this article,
 1. Setting up the Development Environment
 2. Creating an Agora Account
 3. Installing Dependencies
-4. Clone the Started Code
-5. Building the Livestream
-6. Extra Features
-7. Let's Recap
+4. Building the App
+   1. Clone The Starter Code
+   2. Pass Channel ID While Navigating
+   3. Setting up The Live Screen
+   4. Extra Features
+5. Let's Recap
 
 > If you want to take a look at the code step-by-step, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made commits for every step in this tutorial.
 
@@ -445,8 +447,8 @@ const styles = StyleSheet.create({
 });
 ```
 
-### Extra Features 
-#### Share the Channel ID
+#### Extra Features 
+##### Share the Channel ID
 
 Let's add a Share button to share the channel ID with others. We need to import the `Share` component from `react-native`. To learn more about the `Share` component, refer [here](https://reactnative.dev/docs/share).
 ```
@@ -520,7 +522,7 @@ buttonText: {
   fontSize: 17,
 },
 ```
-#### Switch Camera
+##### Switch Camera
 Let's add another button in the Live screen page and write the function to switch the camera when the user presses the button.
 
 Function to Switch Camera
@@ -538,7 +540,7 @@ Switch Camera Button
   </TouchableOpacity>
 </View>
 ```
-#### Broadcaster Video Status
+##### Broadcaster Video Status
 Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the live stream. When a video state changes, it provides the `UID` and the `Video State` of that user. To Learn more about the `RemoteVideoStateChanged` listener, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/interfaces/rtcengineevents.html#remotevideostatechanged)
 
 Let's add a state for the broadcaster's video state and set the initial value to Decoding. `react-native-agora` provides an enum for all the remote video states.
