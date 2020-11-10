@@ -505,6 +505,8 @@ arraySize 100000: 38987.654ms
 ```
 
 #### Using Performance Observer perf_hooks
+These will log several performances for every loop and then output each loop's average time to complete the assigned task.
+ 
 `js
 const { PerformanceObserver, performance } = require('perf_hooks');
 let arraySize = 1000000;
@@ -752,4 +754,4 @@ option 2: 5.086ms
 - Performance is not the only thing that matters. Code readability and maintainability are key. Fewer lines of codes mean reduced performance overheads and a shorter development period.
 - Choose a loop that fits your application model and makes sure they align with your requirements to get desirable results.
 
-***Note***: The above performance results will vary depending on the browser and computer model you are using to test the loops.
+***Note***: The above performance results will vary depending on the browser, computer model and operating system you are using to test the loops.
