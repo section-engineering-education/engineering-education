@@ -30,7 +30,7 @@ In this tutorial, we are going to implement Admob in the React Native applicatio
 
 *let's get started!*
 
-### Fetching Admob App ID
+### STEP 1: Fetching Admob App ID
 
 In order to incorporate the AdMob in the React Native app, first, we need to get the App ID for it. For that we need to create an Admob account if we have not and go to the [AdMob app dashboard](https://apps.admob.com/v2/apps/list) as shown in the screenshot below:
 
@@ -72,7 +72,7 @@ After clicking on 'CREATE AD UNIT', we will get the **Ad Unit ID** for the **Rew
 
 ![fininsh create ad unit](10-finish-create-ad-unit.png)
 
-### Setup Admob on Expo
+### STEP 2: Setup Admob on Expo
 
 For setting up Admob on Expo, we will need to export the previous project from the Expo snack. It is due to the fact that we are not authorized to access the `app.json` for use in environment variables. Hence, we need to export the entire expo project as directed in the screenshot below:
 
@@ -115,7 +115,7 @@ After this, we need to choose the required emulator that is Android to run the p
 
 ![running react native expo  in local](12-running-react-native-expo-in-local.png)
 
-### Using Admob Banner
+### STEP 3: Using Admob Banner
 
 Now, we are going to use the Banner Ad that we created before in Admob Account in our Home Screen. For that, we need to import the `AdMobBanner` component in the Home.js file as directed in the code snippet below:
 
@@ -173,7 +173,7 @@ The result showing the Banner ad in both the screens is provided in the screensh
 
 As we can notice, we have rendered out the Banner ad at the top of the Home and Setting Screen. Now, we can move on to the Reward Ads.
 
-### Using Admob Reward Ads
+### STEP 4: Using Admob Reward Ads
 
 The Admob Reward Ad is a video ad that users need to watch to a certain length in order to obtain certain rewards. We can use it in multiple scenarios such as to receive game points, upgrading levels, etc.
 
@@ -352,7 +352,7 @@ const initRewardAds = async () => {
   };
 ```
 
-### Control Ads status across app with Redux
+### STEP 5: Control Ads status across app with Redux
 
 To control the visibility of ads across every screen in the app, we are going to use the Redux mechanism. It is similar to the previous tutorial where we control the dark theme mode changes using Redux.
 
@@ -475,7 +475,7 @@ In order to trigger the toggling of ads status from action, we need to dispatch 
 
 The bottom line is some ads cannot be skipped until the video ads end. If we close the ad before the ad ends, we won't get the reward and the ads will still be shown. The final result is demonstrated in the demo below:
 
-{{< youtube CyyK5K0nP30 >}}
+<iframe width="956" height="538" src="https://www.youtube.com/embed/CyyK5K0nP30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Hence, we have successfully integrated the Admob Banner as well as Admob Reward ad into the React Native app based on the Expo ecosystem using the expo-ads-admob package.
 
