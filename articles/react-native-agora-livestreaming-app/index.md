@@ -144,7 +144,7 @@ In this code, the Stack Navigation is set up with the Home screen and a dummy Li
 
 You can find the documentation for React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
 
-![Homescreen](homescreen_with_input.jpeg)
+![Homescreen](homescreen.jpeg)
 
 #### Pass Channel ID While Navigating
 When we create or join a live stream, we need to give a channel id to Agora. 
@@ -233,7 +233,9 @@ useEffect(() => {
   }
 }, []);
 ```
-Next, we need to enable video in the engine to transmit and receive Video. The AgoraEngine has a method called enableVideo(). We need to call it to enable video. But before that, we need to acquire permission from Android to access the Camera and Microphone.
+
+##### Enable Video Transmission
+Next, we need to enable video in the engine to transmit and receive Video. The AgoraEngine instance has a method called `enableVideo` on it. But before calling that method, we need to acquire permissions from Android to access the Camera and Microphone.
 
 Let's Write a function to acquire these Permissions. 
 ```
@@ -265,7 +267,7 @@ This step is only for `android`, not for `iOS`.
 import { Platform } from 'react-native';
 
 useEffect(() => {
-  if (Platform.OS === 'android') requestCameraAndAudioPermission();
+  if (Platform.OS === 'android') await requestCameraAndAudioPermission();
   init();
   return () => {
     AgoraEngine.current.destroy();
@@ -279,6 +281,8 @@ const init = async () => {
   AgoraEngine.current.enableVideo();
 };
 ```
+
+##### Configure the Agora Engine
 Next, we need to set the Channel Profile to Livestreaming. `react-native-agora` provides enums for Channel Profiles. Let's import it and set the Channel Profile to Live Broadcasting.
 ```
 import { ChannelProfile } from 'react-native-agora';
