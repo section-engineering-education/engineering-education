@@ -3,19 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/javascript-iterations-which-one-is-faster/
-title:
-description: This article goes through
+title: JavaScript Iterations - Which One is Faster?
+description: This article goes through JavaScript iterations with examples to see which one performs faster when executing.
 author: joseph-chege
-date: 2020-11-09T00:00:00-10:00
+date: 2020-11-10T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/javascript-iterations-which-one-is-faster/hero.jpg
-    alt:
+  - url: /engineering-education/javascript-iterations-which-one-is-faster/hero.png
+    alt: JavaScript interations example image
 ---
-Loops are a fundamental part of application development. They help you repeat a task or a set of instructions several times. In JavaScript, loops validate a value in a given block of code by checking if the value meets a provided condition. The value is executed repeatedly until that condition is met. The condition evaluates to false. To get a picture of how loops work in JavaScript, assume, let's say to log "hello world" six times. Here is a simple JavaScript code block to do that:
+Loops are a fundamental part of application development. They help you repeat a task or a set of instructions several times. In JavaScript, loops validate a value in a given block of code by checking if the value meets a provided condition.
 <!--more-->
+The value is executed repeatedly until that condition is met. The condition then evaluates to false. To get a picture of how loops work in JavaScript, assume, let's say to log "hello world" six times. Here is a simple JavaScript code block to do that:
 
 ```js
 console.log("hello world")
@@ -47,7 +48,7 @@ They however, have different ways to start and end a loop? When it comes to loop
 This guide will discuss each of these loops with simple & basic examples. We will also compare & test each loop's execution performance.
 
 ### For Loop
-`For` loop is the commonly used loop. If you are a bit familiar with the world of programming, you might have come across a `for` loop statement under other programming languages such as `java`, `c++`, `c`, etc. A `for` statement loops through a specified or fixed number of elements until it meets the specified condition.
+`For` loop is a commonly used loop. If you are a bit familiar with the world of programming, you might have come across a `for` loop statement under other programming languages such as `java`, `c++`, `c`, etc. A `for` statement loops through a specified or fixed number of elements until it meets the specified condition.
 
 A `for statement` consist of the following parts:
 
@@ -653,7 +654,7 @@ for (let i = 0; i <array.length; i++) {}
 for (var i = 0; i <array.length; i++) {}
 ```
 
-#### The Ugly for Loop
+#### The Ugly For Loop
 ```js
 for (let i=n; i-- != 0; ) {}
 ```
@@ -754,3 +755,6 @@ option 2: 5.086ms
 - Choose a loop that fits your application model and makes sure they align with your requirements to get desirable results.
 
 ***Note***: The above performance results will vary depending on the browser, computer model and operating system you are using to test the loops.
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
