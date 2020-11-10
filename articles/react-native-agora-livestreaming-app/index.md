@@ -77,8 +77,8 @@ Once you hit on submit, it'll create a new project and you should see it on the 
 Now, click on the closed eye icon near the App Id to reveal it and copy the App ID. We will be needing this later while setting up Agora in our app.
 
 ### Installing Dependencies
-You can use either use ```npm``` or ```yarn``` to install these dependencies.
-```npm``` ships with Node whereas you should install Yarn separately. You can download yarn from [here](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
+You can use either use `npm` or `yarn` to install these dependencies.
+`npm` ships with Node whereas you should install Yarn separately. You can download yarn from [here](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
 
 To install a dependency, either run (based on what package manager you use)
 
@@ -92,7 +92,7 @@ For Yarn
 yarn add <package-name>
 ```
 
-After installing the packages, for ios, go into your ```LivestreamApp\ios\``` directory, and run 
+After installing the packages, for ios, go into your `ios/` directory, and run 
 
 ```
 pod install
@@ -620,13 +620,13 @@ broadcasterVideoStateMessageText: {
 ### Let's Recap
 1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
    
-2. We created the home screen with two buttons and text input to create a live stream and join the live stream.
+2. We cloned the started code and we passed a UUID when we navigated to the Live screen which is the channel ID used for the Livestream.
    
-3. We setup React Navigation and we navigated between the two screens. We passed a UUID when we navigated to the Live screen which is the channel ID used for the Livestream.
+3. We acquired Camera and Microphone permissions from Android to transmit Audio and Video.
    
-4. We initiated the Agora Engine instance and setup all the necessary configuration for the engine like the Channel Profile and the Client Profile.
+4. We initiated the Agora Engine instance and setup all the necessary configurations for the engine like the Channel Profile and the Client Profile.
    
-5. Then, we joined the channel using no authentication and the channel ID from the route prop.
+5. We joined the channel using no authentication and the channel ID from the route prop.
    
 6. We displayed the Local View and Remote View based on who is using the app, the Livestream host, or the audience.
    
