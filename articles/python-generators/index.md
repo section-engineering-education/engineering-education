@@ -1,32 +1,32 @@
-Generators are a special kind of function that returns a lazy iterator, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document which provides information to python developer community describing the concept of generators in python. Python generators are objects that you can loop over like a list. However, unlike lists, lazy iterators do not store their contents in memory. The best way to iterate through large and complex datasets is through the use of generators.
+Generators are functions that returns an iterable set of items which can be iterated through one at a time, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in python. Python generators are objects that you can loop over like a list. However, unlike lists, lazy iterator contents are not stored in the memory. The effiecient way to iterate through large datasets is through the use of generators.
 
 ### Prerequisites
 To get started, you need to have a basic understanding of Python. This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
 
-**A generator function** is a function that returns a generator object. It is defined as a normal function, but whenever it needs to generate a value, it does so with the **yield** keyword rather than return. If the function contains the keyword yield, it automatically becomes a generator function.
+**A generator function** is defined as a normal function, but it generates and returns a value through the **yield** keyword rather than return. If the function contains the keyword yield, it becomes a generator function and returns a generator object.
 
-**Generator Object** uses lazy evaluations to yield sequences. They are used either by calling the next method on the generator object or using the generator object in a “for in” loop.
+**Generator Object** uses lazy evaluations to yield sequences. They are used either by calling the `next()` method on the generator object or using the generator object in a for loop.
 
-**Yield** statement suspends function’s execution and sends a value back to the caller, but retains enough state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This allows its code to produce a series of values over time, rather than computing them at once and sending them back like a list.
+**Yield** statement pauses the function’s execution and sends a value back to the caller, but retains the function's state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This produces a series of values over time, rather than computing them at once and sending them back like a list.
 
-**Generator Expressions** are a high-performance, memory-efficient generalization of list comprehensions and generators as we will discuss later in the article. 
+**Generator Expressions** are a high-performance and memory-efficient generalization of list comprehensions and generators as we will discuss later in the article. 
 
-### Generator Expressions vs List Comprehensions
+### Generator Expressions versus List Comprehensions
 ```python
-list_comprehension = ['Hello world' for i in range(3)]
-generator_expression = ('Hello world' for i in range(3))
+list_comprehension = ['List Comprehension' for n in range(4)]
+generator_expression = ('Generator expression' for n in range(4))
 ```
-Unlike list comprehensions, generator expressions don’t  construct list objects. Instead, they generate values “just in time”  like a class-based iterator or generator function would.
-Class-based iterator and generator functions implements the iterators which makes it possible to construct list object by calling the `next()` object. 
-To access the values produced by the generator expression, you need to call `next()` on it, just like you would with any other iterator. When there isn't next value in the generator object, It throws a `StopIteration` exception. 
+Unlike list comprehensions, generator expressions don’t construct list-objects. Instead, they generate values “just in time” as a class-based iterator or generator function would. Class-based iterator and generator functions implement the iterators which makes it possible to construct a list object by calling the `next()` object. To access the values produced by the generator expression, you need to call `next()` on it. When there isn't the next value in the generator object, a `StopIteration` exception is thrown.
 
 ```python
 >>> next(generator_expression)
-'Hello world'
+'List Comprehension'
 >>> next(generator_expression)
-'Hello world'
+'List Comprehension'
 >>> next(generator_expression)
-'Hello world'
+'List Comprehension'
+>>> next(generator_expression)
+'List Comprehension'
 >>> next(generator_expression)
 StopIteration
 ```
@@ -116,15 +116,15 @@ def names_to_uppercase_generator(names):
 >>> print(sys.getsizeof(nums_squared_generator))
 125
 ```
-List comprehension uses 87724 bytes of memory while generator function uses only 125 bytes of memory. By using generators we save memory as compared to list comprehension where a lot of memory is used.
+List comprehension uses 87724 bytes of memory while the generator function uses only 125 bytes of memory. By using generators we save memory as compared to list comprehension where a lot of memory is used.
 The `getsizeof()` object returns the amount of memory that holds the `nums_squared_list` list as compared to `len()` object that would return the total number of items with the `nums_sqaured_list` list.
 
 ```python
 >>>len(nums_squared_list)
 10000
 ```
-**Generating Fibonacci sequence using generator functions.**
-The Fibonacci Sequence is the series of numbers where next number is found by adding up the two numbers before it.
+**Generating the Fibonacci sequence using generator functions.**
+The Fibonacci Sequence is the series of numbers where the next number is found by adding up the two numbers before it.
 
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
@@ -155,7 +155,7 @@ Data pipelines allow you to string together code to process large  datasets or s
   In order to get the longest name from the text file [names.txt](https://repl.it/@paulodhiambo962/PythonGenerators#text/names.txt), We create two generator methods.
 
   - The first generator method `full_names` yields names line by line stripping off the new line from each line.
-  - The second generator method lengths yields a tuple with name and an integer representing its length.
+  - The second generator method lengths yield a tuple with a name and an integer representing its length.
   - To get the longest name we use max and pass in the lengths generator object and pass a key for the lengths.
 ```python
 def get_longest_name():
@@ -164,4 +164,4 @@ def get_longest_name():
 	longest = max(lengths,key=lambda x:x[1])
 ```
 ### Conclusions
-We understand the concepts of generators in python in this article. They are useful when working with complex datasets and performing memory intensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive. 
+We understand the concepts of generators in python in this article. They are useful when working with complex datasets and performing memoryintensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive. 
