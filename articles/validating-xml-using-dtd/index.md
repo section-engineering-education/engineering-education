@@ -6,7 +6,7 @@ url: /engineering-education/validating-xml-using-dtd/
 title: Validating XML using DTD
 description: A tutorial on introduction to XML, the need for XML validation and how validation is done using DTD.
 author: srishilesh-p-s
-date: 2020-10-28T00:00:00-12:00
+date: 2020-11-13T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,21 +14,21 @@ images:
     alt: Validating XML using DTD
 ---
 
-In this article, we will be learning about XML and how validation is being done using DTD. By the end of this article, you will understand different data serialization techniques, the need for XML, and the importance of XML validation. To understand the concepts better, you will also be validating a sample XML document.
+In this article, we will be learning about XML and how validation is being done using Document Type Definition (DTD). By the end of this article, you will understand different data serialization techniques, the need for XML, and the importance of XML validation. To understand the concepts better, you will also be validating a sample XML document.
 
 <!--more-->
 
 ### Table of contents
 - [Introduction](#introduction)
 - [Overview of XML](#overview-of-xml)
-- [What is DTD?](#what-is-dtd)
+- [What is Document Type Definition?](#what-is-dtd)
 - [Need for XML validation](#need-for-xml-validation)
 - [Step by step guide for validation](#step-by-step-guide-for-validation)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
 ### Introduction
-Computer systems vary in terms of hardware architecture, operating system, memory management mechanisms, and addressing architecture. Every data inside a computer is represented as binary values. Depending on the architecture, the representations vary. Similarly, the storage and communication mechanisms vary between each system. With each system having different architectures, communication between two different architectures requires a common medium for transportation of data. This leads us to the introduction to the concept of Data serialization
+Computer systems vary in terms of hardware architecture, operating system, memory management mechanisms, and addressing architecture. Data inside a computer is represented as binary values (0s and 1s). Depending on the architecture, the representations vary. Similarly, the storage and communication mechanisms vary between each system. With each system having different architectures, communication between two different architectures require a common medium for transportation of data. This leads us to the introduction to the concept of Data serialization
 
 ![Data serialization](/engineering-education/validating-xml-using-dtd/data_serialization.jpg)
 
@@ -48,22 +48,24 @@ There are several types of serialization formats, like:
 - [Protobuf](https://en.wikipedia.org/wiki/Protocol_Buffers) (Protocol Buffers - 2008)
 - [BSON](https://en.wikipedia.org/wiki/BSON) (Binary JSON - 2016)
 
+For example, [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) serialization format is generally used for representing the data using comma separated values. It is more commonly used in Machine learning, as datasets for training and testing the model. Similarly, [JSON](https://en.wikipedia.org/wiki/JSON) is the most commonly used serialization format in web technologies. It represents a key-value pair containing information. For example, it can be used in HTTP requests and responses, where it reads the data from a web server and displays it in the web page.
+
 We cannot say which serialization format suits all our requirements. Each format has its pros and cons. It depends on the data objects that are being serialized.
 
-In this article, we will be looking at an overview of XML and how the validation is done using DTD. Also, we will be implementing it, with a sample example.
+In this article, we will be looking at an overview of XML and how the validation is done using Document Type Definition (DTD). Also, we will be implementing it, with a sample example.
 
 ### Overview of XML
 The invention of the World Wide Web in 1989 by [Sir Timothy Berners Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) led to the rise of the Internet and [HTML](https://en.wikipedia.org/wiki/HTML). HTML is a markup language used to interpret text, images, and other types of data as webpages in web browsers. The rules of HTML were formally defined by the [Internet Engineering Task Force](https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force). Later, it is being maintained and improved continuously by the [World Wide Web Consortium](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium). Over 30 years, various versions of HTML were launched, with the latest being HTML5.
 
-The root of web development is HTML. However, when converting the data to HTML, there are high chances of losing our information. The information needs to be exchanged without loss, which led to the rise of XML.
+The root of web development is HTML. However, when converting the data to HTML, there are high chances of losing information. The information needs to be exchanged without loss, which led to the rise of XML, which is a markup language. A markup language is a document that is syntactially distinguishable from the text, where the document is processed only for rendering the text, while the markup language is not displayed.
 
-[XML (eXtensible Markup Language)](https://en.wikipedia.org/wiki/XML) is a simple and flexible markup language that can enable data serialization by exchanging information between two data serialization formats, to describe the contents better. Initially, XML was used to describe the contents, but later it is being used for the exchange of data. It improves on the existing HTML approach and helps in communication among other data serialization types.
+[XML (eXtensible Markup Language)](https://en.wikipedia.org/wiki/XML) is a simple and flexible markup language that can enable data serialization by exchanging information between two data serialization formats, to describe the contents better. Initially, XML was used to describe the contents, but it is also being used for the exchange of data. It improves on the existing HTML approach and helps in communication among other data serialization types.
 
 [Document Object Model (DOM)](https://en.wikipedia.org/wiki/Document_Object_Model) is used to create a tree-like structure of a well-formed XML document. DOM facilitates the adding of objects to the tree structure to access and manipulate XML documents. More about DOM can be learned in this Section article ['Understanding Document Object Model (DOM)'](https://www.section.io/engineering-education/document-object-model/).
 
 Creating XML documents was much easier, but sometimes it leads to frequent errors for not matching the required syntax. Since XML codes are neither compiled nor interpreted, the only option left was to parse. Thus, validation of XML codes was necessary.
 
-### What is DTD?
+### What is Document Type Definition?
 [Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) is a markup language rulebook that defines what markup elements can be used to describe a document. The creation of user-defined tags in XML was much simpler, so the user has to specify the required tag in DTD, for validation. It defines and checks the structure of the elements and attributes used for each element in the XML document.
 
 ### Need for XML validation
@@ -165,7 +167,7 @@ For our example, the outermost tag `<customer />` holds all the input fields tog
 <!ELEMENT customer (firstname, lastname, companyname, email, message)>
 ```
 
-After specifying the tags present inside the outermost tag. Now, we have to define the type of value that can be parsed for each tag. Here, all the input fields can contain data as text. According to DTD syntax, we specify it as `#PCDATA`, under each element. Since it is required to parse for validating if the values are textual data or not.
+After specifying the tags present inside the outermost tag. Now, we have to define the type of value that can be parsed for each tag. Here, all the input fields can contain data as text. According to DTD syntax, we specify it as `#PCDATA`, under each element. This is done since these values should be parsed and validated.
 
 ```xml
 <!ELEMENT firstname (#PCDATA)>
@@ -223,6 +225,8 @@ And, now the DTD file can be referenced in XML as shown below
 ```
 
 In both types of validations, the parsing is done by DTD based on the structure that defines the XML file.
+
+The validations can be compiled using an online validators like [this](https://codebeautify.org/xmlvalidator), by simply uploading the XML schema and its respective DTD file. Alternatively, you can download XML validators locally to your text editors. For example, in VSCode editor, checkout [XML tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml) extension for validating XML.
 
 ### Conclusion
 We had an overview of what Data serialization is, how XML files are being built, and its validation using DTD. This article serves only as an introduction to the validation of XML using DTD. It is highly recommended to try out the code manually by reading further from the referenced articles.
