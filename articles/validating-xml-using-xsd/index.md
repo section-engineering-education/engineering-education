@@ -14,30 +14,30 @@ images:
     alt: Validating XML using XSD
 ---
 
-In this article, we will understand how validation of XML is done using XSD. By the end of this article, you will get an overview of various techniques for validating XML tags and attributes using XSD. You will also be learning step by step guide for validation. It is highly recommended to go through my [previous article](), to understand the basics of XML and its importance of validation.
+In this article, we will understand how validation of XML is done using XML Schema Definition (XSD). By the end of this article, you will get an overview of various techniques for validating XML tags and attributes using XML Schema Definition (XSD). You will also be learning step by step guide for validation. It is highly recommended to go through my [previous article](), to understand the basics of XML and its importance of validation.
 
 <!--more-->
 
 ### Table of contents
 - [Introduction](#introduction)
-- [What is XSD?](#what-is-xsd)
-- [Step by step guide for validation](#step-by-step-guide-for-validation)
+- [What is XML Schema Definition?](#what-is-xml-schema-definition)
+- [Step by Step Guide for Validation](#step-by-step-guide-for-validation)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
 ### Introduction
-In our [previous article](), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using DTD.
+In our [previous article](), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using Document Type Definition (DTD).
 
-[Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) helped us in validating the XML schema by parsing the structure of the XML document. But, we can't rely entirely on validation using DTD, since there are high chances of faulty data or data types mismatch in values. This lead to the improvement in the validation technique, where apart from parsing the XML structure, we also understand the semantics of the schema, using XSD.
+[Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) helped us in validating the XML schema by parsing the structure of the XML document. But, we can't rely entirely on validation using DTD, since there are high chances of faulty data or data types mismatch in values. Usually, in DTD, we validate by parsing the XML structure, but in XML Schema Definition (XSD) we also understand the semantics of the schema, for validating.
 
-### What is XSD?
+### What is XML Schema Definition?
 > According to Wikipedia, [XML Schema Definition (XSD)](https://en.wikipedia.org/wiki/XML_Schema_(W3C)) can be used to express a set of rules to which an XML document must conform to be considered "valid" according to that schema. However, unlike most other schema languages, XSD was also designed with the intent that the determination of a document's validity would produce a collection of information adhering to specific data types.
 
 You may be wondering what is the need for XSD when we already have DTD. XSD can validate much better than DTD, in terms of constraints verification, usage, and relationships between elements and its attributes. According to [W3C](https://www.w3.org/TR/xmlschema11-1/), XSD defines, describes, and catalogs XML vocabularies for classes of XML documents.
 
-### Step by Step guide for validation
+### Step by Step Guide for Validation
 #### XML document
-As you know, XSD is used for complex validation of XML document. So, let's take up some complex XML document for validating. By validating it, understanding of concepts would be much better. In this article, we are not going to cover the basics of building XML document. To keep it simple, let's validate the below XML code. Full XML code can be found [here](https://gist.github.com/srishilesh/5d028a5d9acef3818b014cd4595c9ebe).
+As you know, XSD is used for complex validation of XML documents. So, let's take up some complex XML document for validating. By validating it, our understanding of concepts would be much better. In this article, we are not going to cover the basics of building an XML document. To keep it simple, let's validate the below XML code. Full XML code can be found [here](https://gist.github.com/srishilesh/5d028a5d9acef3818b014cd4595c9ebe).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -77,7 +77,7 @@ where `type` can be of
 - `xs:boolean`
 
 ##### Attributes
-A complex element with element-specific values is known as attributes. It is not mandatory to mention attributes in elements. When attributes are specified, an element is known to be a complex element.
+A complex element with element-specific values is known as an attribute. It is not mandatory to mention attributes in elements. When attributes are specified, an element is known to be a complex element.
 
 Syntax:
 ```xml
@@ -90,7 +90,7 @@ When validations are to be done only for one element, it can be done under XSD t
 Whereas, when validations are to be done for a set/sequence of elements, it can be specified under `xs:complexType`. Here, XSD validates all the sub-child elements under a parent element, in sequence. More about these restrictions are explained in the below implementation.
 
 #### Validations
-##### XSD Definition
+##### XSD Declaration
 For any XSD document, the XML declaration statement is important. Along with it, we must also specify namespace details, as shown below:
 
 ```xml
@@ -136,7 +136,7 @@ Now, we may have any number of `name="event"` tags inside a `name="root"` elemen
 ```
 
 ##### Validating child elements
-As we understand, on specifying the `name="event"` element, validating it with a complex type containing a sequence of other sub-child elements under the type called `name="eventType"`. Since, each `name="event"` tag can occur only once, we restrict the limitations of its maximum occurance to `1`.
+As we understand, on validating the `name="event"` element with a complex type declaration. It contains a sequence of other sub-child elements under the type called `name="eventType"`. In this example, each `name="event"` tag can hold maximum of `1` sub-child , we restrict the limitations of its maximum occurance to `1`.
 
 ```xml
 <xs:complexType name="eventType">
@@ -246,6 +246,8 @@ Similar to email validation, we also validate the phone number of the organizer,
 ```
 
 So far, we have validated the XML schema not only based on structure parsing, but also by semantically analyzing very value and its data type.
+
+The validations can be compiled using an online validator like [this](https://codebeautify.org/xmlvalidator), by simply uploading the XML schema and its respective DTD file. Alternatively, you can download XML validators locally to your text editors. For example, in VSCode editor, checkout [XML tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml) extension for validating XML.
 
 ### Conclusion
 We had understood what XSD is, how it is different from DTD and we also validated a sample XML document using XSD. This article serves only as an introduction to the validation of XML using XSD. It is highly recommended to try out the code manually by reading further from the referenced articles. Full XSD code can be found [here](https://gist.github.com/srishilesh/3dc43a0c08430d75e77969086bcd5ee8).
