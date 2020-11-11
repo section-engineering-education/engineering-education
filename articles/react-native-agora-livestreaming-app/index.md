@@ -82,7 +82,7 @@ For iOS, cd into ios/ and run
 pod install
 ```
 
-Once you've installed the dependencies, it's time to start it up and run it on a physical device or an emulator.
+Once you've installed the dependencies, it's time to run the app on a physical device or an emulator.
 
 For Android,
 
