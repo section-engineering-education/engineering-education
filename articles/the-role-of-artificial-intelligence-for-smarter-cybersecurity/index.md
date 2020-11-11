@@ -4,17 +4,19 @@ Using artificial intelligence software, organizations can process large volumes 
 
 ### Network Security
 
-Network security mainly focuses on the understanding of network topography and creating a security policy of an organization. Securities policies can help to distinguish legitimate network connections from illegitimate ones. But drafting and maintaining policies for multiple networks may be challenging.
+Network security mainly focuses on the understanding of network topography and creating a security policy of an organization. Securities policies help distinguish legitimate network connections from illegitimate ones. 
 
-Often, some organizations may not have a precise naming convention for workloads and applications. This means that network security teams have to spend significant time attaching different workloads to given applications.
+But drafting and maintaining policies for multiple networks may be challenging. Also, some organizations do not know how to follow security policies properly. At the same time, others may not have a precise naming convention for workloads and applications. 
 
-These activities are time-consuming, and the use of artificial intelligence technology can come in handy. AI can expedite these processes by learning and observing traffic patterns and suggesting security policies. This way, organizations save on time, resources, and effort. The organization can allocate these to other areas of technological advancement or development.
+This means that network security teams have to spend significant time attaching different workloads to given applications. These activities are time-consuming, and the use of artificial intelligence technology can come in handy. AI can expedite these processes by learning and observing traffic patterns and suggesting security policies. This way, organizations save on time, resources, and effort. The organization can allocate these to other areas of technological advancement or development.
 
 ### Data Centers
 
 Cyber attackers target [data centers](https://www.cisco.com/c/en/us/solutions/data-center-virtualization/what-is-a-data-center.html) in an attempt to obtain critical data. Cybersecurity has improved over the years with advancements in technology. Being aware of this, cybercriminals regularly develop more advanced malware strains to ensure successful cyber-attacks on organizations&#39; networks.
 
 Organizations can deploy artificial intelligence technology in their data centers to enhance data security. To ensure data security, AI essentially learns normal network behavior. It then detects cyber threats with regard to the variations from the regular network behavior.
+
+Particularly, supervised Machine Learning is crucial to identifying new malware posing a threat to data centers. Malware constantly evolves to bypass traditional systems relying on signature recognition. The good news is that modern machine learning systems that use Recurrent Neural Networks (RRN) help detect this malware. Machine learning and RNN use linguistic analysis to provide a more accurate result. Generally, malware-generated domains typically have strange consonants/vowel ratios, which RNN helps to identify and isolate. This is important to improve security within a data center.
 
 The application of AI in a data center can help identify security loopholes and detect malware in data center systems. Most importantly, AI-based cybersecurity can analyze or screen outgoing and incoming data security threats.
 
@@ -24,9 +26,13 @@ The asymmetric nature of cybersecurity is an inherent problem that seems to empo
 
 In this case, AI is essential to identify abnormalities, outliers, and patterns in all data without the need for applying fixed rules. Human analysts depend on this output for investigation and action. This is what is often referred to as threat hunting in security language. It involves narrowing down threats by collaborating security analytics and machine intelligence, and advanced human cognition.
 
+Artificial intelligence uses artificial neural network-based techniques for cyber-threat detection. Artificial Neural Network (ANN) identifies patterns, learns system characteristics, and compares recent user activity with normal behavior. This way, malicious events can be recognized with more consistency. Ideally, system administrators leverage this technology to protect their organization against cyber-threats.  
+
 ### Vulnerability Management
 
-Every year, there are many reported vulnerabilities to cybersecurity. It is extremely difficult to manage these unique vulnerabilities with traditional technology or human resources. Systems that use machine learning and artificial intelligence do not wait for online attackers to exploit existing vulnerabilities. Rather, these systems are proactive in finding potential vulnerabilities in information systems.
+Every year, there are many reported vulnerabilities to cybersecurity. It is extremely difficult to manage these unique vulnerabilities with traditional technology or human resources. Modern approaches to vulnerability management are data-driven, and their corrective actions target specific vulnerabilities depending on their exploitability, environment and exploit pulse. They involve the automation of cybersecurity with artificial intelligence to categorize, list and rate cyber-threats and risks. Once AI systems identify the vulnerable points, they provide immediate strategic solutions which include blocking cyberattacks.  
+
+In most cases, systems that use machine learning and artificial intelligence do not wait for online attackers to exploit existing vulnerabilities. Rather, these systems are proactive in finding potential vulnerabilities in information systems.
 
 They rely on multiple factors such as hackers&#39; patterns, the reputation of the hacker, and the hacker&#39;s conversations on the dark web. AI-ML systems analyze these factors and use the insights to assess how and when threats might attack vulnerable targets.
 
@@ -42,7 +48,7 @@ AI can identify irregularities and abnormalities in a network, deduce patterns f
 
 ### The Future of AI and Cybersecurity
 
-The future of the application of artificial intelligence to improve cybersecurity looks promising. Security teams expect AI to enhance and respond better to cyber-attacks. Human analysts are designing better defense strategies, and AI will replicate the best methods to ensure cybersecurity. Response speed to threats will improve, and human experts will be freed up to handle more complicated investigations.
+The future of the application of artificial intelligence to improve cybersecurity looks promising. Security teams expect AI to enhance and respond better to cyber-attacks. Human analysts are designing better defense strategies, and AI will replicate the best methods to ensure cybersecurity. Response time to threats will improve, and human experts will be freed up to handle more complicated investigations.
 
 Artificial intelligence&#39;s natural language is predictably capable of understanding the origination of cyberattacks. In the future, we will see this principle put into effect by scanning data across the internet.
 
