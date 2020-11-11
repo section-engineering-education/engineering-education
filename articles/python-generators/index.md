@@ -1,24 +1,23 @@
-Generators are a special kind of function that return a lazy iterator, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Generators are objects that you can loop through like a list.Lazy iterators do not store their contents in memory. The best way to iterate through large and complex datasets is through the use of generators.
+Generators are a special kind of function that returns a lazy iterator, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document which provides information to python developer community describing the concept of generators in python. Python generators are objects that you can loop over like a list. However, unlike lists, lazy iterators do not store their contents in memory. The best way to iterate through large and complex datasets is through the use of generators.
 
 ### Prerequisites
-To get started, you need to have a basic understanding of Python. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
+To get started, you need to have a basic understanding of Python. This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
 
-**Generator function** is a function that returns a generator object. It is defined like a normal function, but whenever it needs to generate a value, it does so with the **yield** keyword rather than return. If the body of a def contains yield, the function automatically becomes a generator function.
+**A generator function** is a function that returns a generator object. It is defined as a normal function, but whenever it needs to generate a value, it does so with the **yield** keyword rather than return. If the function contains the keyword yield, it automatically becomes a generator function.
 
-**Generator Object** uses lazy evaluations to yield sequences. They are used either by calling the next method on the  generator object or using the generator object in a “for in” loop.
+**Generator Object** uses lazy evaluations to yield sequences. They are used either by calling the next method on the generator object or using the generator object in a “for in” loop.
 
-**Yield** statement suspends function’s execution and sends a value back to the caller, but retains enough state to enable function to resume  where it is left off. When resumed, the function continues execution  immediately after the last yield run. This allows its code to produce a  series of values over time, rather than computing them at once and  sending them back like a list.
+**Yield** statement suspends function’s execution and sends a value back to the caller, but retains enough state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This allows its code to produce a series of values over time, rather than computing them at once and sending them back like a list.
 
-**Generator Expressions** are a high-performance, memory–efficient generalization of list comprehensions and generators.
+**Generator Expressions** are a high-performance, memory-efficient generalization of list comprehensions and generators as we will discuss later in the article. 
 
 ### Generator Expressions vs List Comprehensions
 ```python
 list_comprehension = ['Hello world' for i in range(3)]
 generator_expression = ('Hello world' for i in range(3))
 ```
-
 Unlike list comprehensions, generator expressions don’t  construct list objects. Instead, they generate values “just in time”  like a class-based iterator or generator function would.
-
+Class-based iterator and generator functions implements the iterators which makes it possible to construct list object by calling the `next()` object. 
 To access the values produced by the generator expression, you need to call `next()` on it, just like you would with any other iterator. When there isn't next value in the generator object, It throws a `StopIteration` exception. 
 
 ```python
@@ -38,9 +37,8 @@ for expression in generator_expression:
     print(expression)
 ```
 
-
-
 Given a range of n numbers to filter out odd numbers. We could solve the problem using three different methods.
+
 1. Using function.
 
 ```python
@@ -56,7 +54,6 @@ def even_integers_function(n):
 >>>even_integers_function(10)
 [0,2,4,6,8,10]
 ```
-
 2. Using Generator function. 
    The generator function below yields a generator object which we can iterate through to get the list of even numbers. 
 
@@ -71,16 +68,17 @@ A generator function returns a generator object which can be iterated to get the
 >>>even_integer_generator(10)
 <generator object even_integer_generator at 0x1036c3200>
 ```
-
 ```python
 >>>list(even_integer_generator(10))
 [0,2,4,6,8,10]
 ```
 3. Using Generator expression.
 ```python
-even_integers = (i for i in range(n) if i%2==0)
+>>> even_integers = (i for i in range(10) if i%2==0)
+>>> list(even_integers)
+[0,2,4,6,8]
 ```
-Given a list of names to convert each name in the list to uppercase.
+Given a list of names, we can convert each name in the list to uppercase using the following code:
 ```python
 name_list = ["Adam","Eve","John","Doe","Peter","Paul","Kevin"]
 ```
@@ -102,30 +100,10 @@ def names_to_uppercase_generator(names):
 ```
 3. User of generator expressions.
 ```python
-uppercase_names = (name.upper() for name in name_list)
+>>> uppercase_names = (name.upper() for name in name_list)
+>>> list(uppercase_names)
+['ADAM', 'EVE', 'JOHN', 'DOE', 'PETER', 'PAUL', 'KEVIN']
 ```
-
-**Generating Fibonacci sequence using generator functions.**
-The Fibonacci Sequence is the series of numbers where next number is found by adding up the two numbers before it.
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-```python
-def fibonacci_gen():
-    trailing,leading = 0,1
-    while True:
-        yield leading
-        trailing,leading = leading, trailing+leading
-```
-To get the first value of the Fibonacci sequence we generated using generator function above we call the `fibonacci_gen()` function and assign it to variable fib. We then call `next()` on the fib variable, `fib.next()` to get the next number in the sequence.
-```python
->>>fib = fibonacci_gen()
->>>fib.next()
-```
-To get the list of the first 10 values for the `fibonacci_gen()` function we call the `fib.next()` inside a for loop with a range of 10
-```python
-for _ in range(10):
-    fib.next()
-```
-
 ### Profiling Generator Performance
 ```python
 >>> import sys
@@ -139,15 +117,44 @@ for _ in range(10):
 125
 ```
 List comprehension uses 87724 bytes of memory while generator function uses only 125 bytes of memory. By using generators we save memory as compared to list comprehension where a lot of memory is used.
+The `getsizeof()` object returns the amount of memory that holds the `nums_squared_list` list as compared to `len()` object that would return the total number of items with the `nums_sqaured_list` list.
 
+```python
+>>>len(nums_squared_list)
+10000
+```
+**Generating Fibonacci sequence using generator functions.**
+The Fibonacci Sequence is the series of numbers where next number is found by adding up the two numbers before it.
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+```python
+def fibonacci_gen():
+    trailing,leading = 0,1
+    while True:
+        yield leading
+        trailing,leading = leading, trailing+leading
+```
+To get the first value of the Fibonacci sequence we generated using generator function above we call the `fibonacci_gen()` function and assign it to variable fib, we then call `next()` on the `fib` variable, `fib.next()` to get the next number in the sequence.
+```python
+>>>fib = fibonacci_gen()
+>>>fib.next()
+```
+To get the list of the first 10 values for the `fibonacci_gen()` function we call the `fib.next()` inside a for loop with a range of 10
+```python
+for _ in range(10):
+    fib.next()
+```
 ### Building Generator pipelines
-Generator pipelines allow you to string together code to process large  datasets or streams of data without maxing out your machine’s memory.
-when working with pipelines:-
+Data pipelines allow you to string together code to process large  datasets or streams of data without maxing out your machine’s memory.
+**When working with pipelines:-**
 - Several pipes can be linked together.
 - Items flow one by one through the entire pipeline.
 - Pipeline functionality can be packaged into a callable function.
-  In order to get the longest name from the text file `names.txt`, We create two generator methods.
-  - The first generator method full_names yields names line by line stripping off the new line from each line.
+
+  In order to get the longest name from the text file [names.txt](https://repl.it/@paulodhiambo962/PythonGenerators#text/names.txt), We create two generator methods.
+
+  - The first generator method `full_names` yields names line by line stripping off the new line from each line.
   - The second generator method lengths yields a tuple with name and an integer representing its length.
   - To get the longest name we use max and pass in the lengths generator object and pass a key for the lengths.
 ```python
@@ -156,5 +163,5 @@ def get_longest_name():
 	lengths = ((name,len(name)) for name in full_names)
 	longest = max(lengths,key=lambda x:x[1])
 ```
-### Conclusions 
-Now you better understand python generators. They are useful when dealing with complex data sets and performing memory-intensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive
+### Conclusions
+We understand the concepts of generators in python in this article. They are useful when working with complex datasets and performing memory intensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive. 
