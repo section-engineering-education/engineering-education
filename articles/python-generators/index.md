@@ -1,4 +1,4 @@
-Generators are functions that returns an iterable set of items which can be iterated through one at a time, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in python. Python generators are objects that you can loop over like a list. However, unlike lists, lazy iterator contents are not stored in the memory. The effiecient way to iterate through large datasets is through the use of generators.
+Generators are functions that return an iterable set of items which can be iterated through one at a time, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in python. Python generators are objects that you can loop over like a list. However, unlike lists, lazy iterator contents are not stored in the memory. The efficient way to iterate through large datasets is through the use of generators.
 
 ### Prerequisites
 To get started, you need to have a basic understanding of Python. This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
@@ -7,7 +7,7 @@ To get started, you need to have a basic understanding of Python. This will help
 
 **Generator Object** uses lazy evaluations to yield sequences. They are used either by calling the `next()` method on the generator object or using the generator object in a for loop.
 
-**Yield** statement pauses the function’s execution and sends a value back to the caller, but retains the function's state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This produces a series of values over time, rather than computing them at once and sending them back like a list.
+**Yield** statement pauses the function’s execution and sends a value back to the caller, but retains the function's state to enable the function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This produces a series of values over time, rather than computing them at once and sending them back like a list.
 
 **Generator Expressions** are a high-performance and memory-efficient generalization of list comprehensions and generators as we will discuss later in the article. 
 
@@ -152,7 +152,7 @@ Data pipelines allow you to string together code to process large  datasets or s
 - Items flow one by one through the entire pipeline.
 - Pipeline functionality can be packaged into a callable function.
 
-  In order to get the longest name from the text file [names.txt](https://repl.it/@paulodhiambo962/PythonGenerators#text/names.txt), We create two generator methods.
+  To get the longest name from the text file [names.txt](https://repl.it/@paulodhiambo962/PythonGenerators#text/names.txt), We create two generator methods.
 
   - The first generator method `full_names` yields names line by line stripping off the new line from each line.
   - The second generator method lengths yield a tuple with a name and an integer representing its length.
@@ -164,4 +164,4 @@ def get_longest_name():
 	longest = max(lengths,key=lambda x:x[1])
 ```
 ### Conclusions
-We understand the concepts of generators in python in this article. They are useful when working with complex datasets and performing memoryintensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive. 
+We understand the concepts of generators in python in this article. They are useful when working with complex datasets and performing memory-intensive tasks. You can find more on python generators from the python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions which are memory intensive. 
