@@ -262,3 +262,6 @@ To summarize:
 - https://www.w3.org/XML/Schema
 - https://www.w3.org/TR/xmlschema11-1/
 - https://www.w3schools.com/xml/schema_schema.asp
+
+---
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
