@@ -21,9 +21,9 @@ In this article, we will be learning about XML and how validation is being done 
 ### Table of contents
 - [Introduction](#introduction)
 - [Overview of XML](#overview-of-xml)
-- [What is Document Type Definition?](#what-is-dtd)
+- [What is Document Type Definition?](#what-is-document-type-definition)
 - [Need for XML validation](#need-for-xml-validation)
-- [Step by step guide for validation](#step-by-step-guide-for-validation)
+- [Step by Step Guide for Validation](#step-by-step-guide-for-validation)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
