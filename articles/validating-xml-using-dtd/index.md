@@ -40,7 +40,7 @@ With each system having different architectures, communication between two diffe
 
 Data is stored as data structures similar to an array, tree, or heaps. For communication, we must transform the complex structures into byte sequences. This series of bytes gets transported to the destination machine, to establish communication. The reverse process of Serialization is Deserialization.
 
-Deserialization takes a series of bytes and converts it to an in-memory data structure. For example, in Javascript, the `JSON` data that is passed to the web browser client as a `string` using `JSON.stringify()`, is Serialization. And the parsing the `string` back to `JSON` using `JSON.parse()`, is deserialization.
+Deserialization takes a series of bytes and converts it to an in-memory data structure. For example, in JavaScript, the `JSON` data that is passed to the web browser client as a `string` using `JSON.stringify()`, is Serialization. And the parsing the `string` back to `JSON` using `JSON.parse()`, is deserialization.
 
 There are several types of serialization formats, like:
 
@@ -56,7 +56,7 @@ For example, we use a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values
 
 Similarly, [JSON](https://en.wikipedia.org/wiki/JSON) is the most commonly used serialization format in web technologies. It represents a key-value pair containing information. For example, we can use it in HTTP requests and responses, where it reads the data from a web server and displays it on the web page.
 
-We cannot say which serialization format suits all our requirements. Each format has its pros and cons. It depends on the data objects that are being serialized.
+We cannot say which serialization format suits all our requirements. Since each format has its pros and cons. It depends on the data objects that are being serialized.
 
 In this article, we'll look at an overview of XML and how it's validated when using Document Type Definition (DTD). We'll also implement an example.
 
