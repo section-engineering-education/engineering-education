@@ -6,7 +6,7 @@ description: Most times machine learning engineers build models and will need to
  
 ![Simple](https://github.com/jamessandy/engineering-education/blob/new-article/articles/prototyping-machine-learning-models-with-streamlit/hero.jpg)
  
-As Machine learning Engineers or Data scientist, you are used to building cool machine learning models but probably not familiar with building mobile or web apps, or the thought of building an application to serve your model is stressful because of the whole process of building either a web or mobile app so you just leave your model(s) on your notebook without using the weights. Streamlit is a platform that can help you prototype your model(s) in very few lines of code with less stress.
+Are you a Machine learning Engineers or Data scientist and the models you've built are not served on an application because you don't know how to build a web or mobile applications or you just find the process cumbersome so you just save your model weights and that's all ?, streamlit is a platform that can you easily prototype your model(s) with very few lines of code and technical know-how.
  
 #### Tabel of Content
 1. Introduction to streamlit
@@ -16,7 +16,7 @@ As Machine learning Engineers or Data scientist, you are used to building cool m
  
 #### Introduction to Streamlit
  
-Streamlit is an Open source python framework that enables developers to demo or prototype their ML models and a lot more on a web application, you can simply turn your data science scripts into a website with few lines of code. It saves time, energy, and is also simple to learn, use, and fast too. Now we’ll dive straight into how to install and setup streamlit and then build a text summarizer web app.
+Streamlit is an Open source python framework that enables developers to prototype their ML models on web applications. You can simply turn your data science scripts into a website with few lines of code thereby saving development time and energy and also it is simple to learn too. Now we’ll dive straight into how you can install, setup streamlit and build a text summarizer web app.
  
 ##### Streamlit Set up
  
@@ -43,7 +43,7 @@ streamlit run app.py
  
 #### Building Sentiment Analyzer
  
-Now for this beginner’s tutorial, we will be building a sentiment analyzer model and prototype it with streamlit. The first step will be getting a Dataset, and the dataset can be found [HERE](https://drive.google.com/drive/folders/1wk0hkrRhxe6t5g390g5V5O-CUcRB6BZC?usp=sharing), next let’s create a directory and create a virtual environment, open you terminal or command prompt and type in the code below.
+Now for this beginner’s tutorial we will build a sentiment analyzer model and prototype it with streamlit. The first step will be getting a Dataset and the dataset can be found [HERE](https://drive.google.com/drive/folders/1wk0hkrRhxe6t5g390g5V5O-CUcRB6BZC?usp=sharing). Next, let’s create a directory and create a virtual environment to do that open you terminal or command prompt and type in the code below.
  
 ```python
 $ mkdir textanalyzer
@@ -57,7 +57,7 @@ $ python3.8 -m venv env
 $ source env/bin/activate
 ```
  
-The first line of code creates the virtual environment while the second activate it. Now copy the dataset as it is in the folder and paste it into this textanalyzer directory, and then create a file and save it as sentiment_analyzer.py, this will be where we will be writing our code to build the streamlit app. The next thing will be to import all the packages we will be using for this tutorial.
+The first line of code creates the virtual environment while the second activate it. Now copy the dataset as it is in the folder and paste it into this textanalyzer directory. Create a file and save it as sentiment_analyzer.py, this will be where we will be writing our code to build the streamlit app. The next thing will be to import all the packages we will be using for this tutorial.
  
 ```python
 import streamlit as st
@@ -93,14 +93,13 @@ def get_all_data():
      data += text_file.read().split('\n')
  return data
 ```
- 
-If you notice in the function above the first line is *@st.cache*, this mark tells streamlit that whenever the function is called that there are some certain requirements it should check for and they should be fulfilled, now create a variable called all_data which should call the *get_all_data* function we wrote.
+ Notice the code snippet @st.cache in the first line. This tells streamlit that whenever the function is called, some requirements should be fulfilled. Create a new variable called all_data. all_data calls the function get_all_data we defined earlier.
  
 ```python
 all_data = get_all_data()
 ```
  
-Next, we create a checkbox using the *st.checkbox* function that will display the dataset, and also the checkbox should have the values from the *all_data* variable we created earlier.
+Next, we create a checkbox using the *st.checkbox* function that will display the dataset. The checkbox should have the values from the *all_data* variable we created earlier.
  
 ```python
 if st.checkbox('Show Dataset'):
@@ -120,7 +119,7 @@ def preprocessing_data(data):
  
 ```
  
-Now let’s create another checkbox that will display *show_preprocessed_data* and will get the data from the *all_data* function and pass it through the preprocessing data function we wrote above.
+Now let’s create another checkbox that will display *show_preprocessed_data* and will get the data from the *all_data* function. The *all_data* function will then pass it through the preprocessing data function we wrote above.
  
 ```python
 if st.checkbox('Show PreProcessed Dataset'):
@@ -146,7 +145,7 @@ def split_data(data):
  
 ```
  
-Now we are going to create two functions, one will be *preprocessing_step* that will get the data, preprocess it, and then split it, and the second one will be *training_step* that will receive two parameters and vectorize the training text.
+Now we are going to create two functions. One will be *preprocessing_step* that will get the data,  preprocess it, and then split it. The second one will be *training_step* that will receive two parameters and vectorize the training text.
  
 ```python
 @st.cache
@@ -161,7 +160,7 @@ def training_step(data,vectorizer):
  return BernoulliNB().fit(training_text,training_result)
 ```
  
-The next step will be passing the training and evaluation data into the *preprocessing_step* function, choosing a vectorizer( In this case we will be using CountVecotizer), and finally, a classifier variable that will call the *training_step* function and pass in the training_data and vectorizer. And the last line uses BernoulliNB which is a Naives Bayes model it predicts the probability of the input being classified for all the classes and is used for text classification with the 'Bag of words' model, we then fit our *training_text* and *training_result* into it.
+The next step will be passing the training and evaluation data into the "preprocessing_step" function then choosing a "vectorizer"( In this case we will be using CountVecotizer) and finally a 'classifier" variable. The "classifier" variable will call the "training_step" function and pass in the "training_data" and vectorizer. The last line uses BernoulliNB which is a Naives Bayes model; it predicts the probability of the input being classified for all the classes and is used for text classification with the 'Bag of words' model. Finally we fit our "training_text" and "training_result" into it.
  
 ```python
 training_data,evaluation_data = preprocessing_step()
@@ -169,7 +168,7 @@ vectorizer = CountVectorizer(binary='true')
 classifier = training_step(training_data,vectorizer)
 ```
  
-After carrying out the above step the next step will be writing two functions, the first will be *analyze_text* and it will carry out the analysis by taking in the classifier, vectorizer, and text value, and the second function will be called *print_result* and will send a result as positive or negative.
+After carrying out the above step the next step will be writing two functions the first will be *analyze_text* and it will carry out the analysis by taking in the classifier, vectorizer, and text value. The second function will be called *print_result* and will send a result as positive or negative.
  
 ```python
 def analyse_text(classifier,vectorizer,text):
@@ -191,7 +190,7 @@ else:
  st.write("Press the above button..")
 ```
  
-The codes above use streamlit *st.text_input* to create a text input form that will display “enter the review, write here”, the if *st.button* will create a button that will display “predict sentiment”, after that the variable result calls the *print_result* function and pass in the parameters. If the whole process the st.sucess(result[1) displays the result else it passes an error message asking the user to press the above button. Run your app using the command below.
+The codes above use streamlit *st.text_input* to create a text input form that will display “enter the review, write here” and the if *st.button* will create a button that will display “predict sentiment”. The variable result then calls the *print_result* function and passes in the parameters, if the whole process is successful the st.sucess(result[1) displays the result else it passes an error message asking the user to press the above button. Run your app using the command below.
  
 ```python
 streamit run sentiment_analyzer.py
@@ -209,4 +208,5 @@ And your application should look like
  
 If you have followed the process you will see how fun and easy it is to prototype your machine learning models with streamlit and save yourself a whole lot of stress. You can explore more advanced examples and take this project forward by deploying it on Heroku or any other hosting platform.
  
+
 
