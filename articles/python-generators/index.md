@@ -1,22 +1,22 @@
-Generators are functions that return an iterable set of items which can be iterated through one at a time, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in python. Python generators are objects that you can loop over like a list. However, unlike lists, lazy iterator contents are not stored in the memory. The efficient way to iterate through large datasets is through the use of generators.
+Generators are functions that return an iterable set of items which can be iterated through one at a time, they were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in python. Python generators are objects which, like a list, you can loop over. However, unlike lists, lazy iterator contents are not stored in the memory. The efficient way to iterate through large datasets is through the use of generators.
 
 ### Prerequisites
-To get started, you need to have a basic understanding of Python. This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
+You need to have a basic understanding of Python to get started. This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on **RUN**. You will now be able to access the variables and the function return values from the python interpreter. 
 
-**A generator function** is defined as a normal function, but it generates and returns a value through the **yield** keyword rather than return. If the function contains the keyword yield, it becomes a generator function and returns a generator object.
+**A generator function** is defined as a normal function, but rather than returning a value from the return keyword, it produces and returns a value via the yield keyword. If the keyword yield is found in the function, it becomes a generator function and returns a generator object.
 
 **Generator Object** uses lazy evaluations to yield sequences. They are used either by calling the `next()` method on the generator object or using the generator object in a for loop.
 
-**Yield** statement pauses the function’s execution and sends a value back to the caller, but retains the function's state to enable the function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This produces a series of values over time, rather than computing them at once and sending them back like a list.
+**Yield** statement pauses the execution of the function and returns the value to the caller, but maintains the status of the function to allow the function to continue execution from where it is left off. When resumed, the function continues execution immediately after the last run of the yield. This generates a set of values over time, rather than computing them at once and sending them back as a list.
 
-**Generator Expressions** are a high-performance and memory-efficient generalization of list comprehensions and generators as we will discuss later in the article. 
+**Generator Expressions** are a high-performance and memory-efficient generalization of list comprehensions and generators as discussed later in the article. 
 
 ### Generator Expressions versus List Comprehensions
 ```python
 list_comprehension = ['List Comprehension' for n in range(4)]
 generator_expression = ('Generator expression' for n in range(4))
 ```
-Unlike list comprehensions, generator expressions don’t construct list-objects. Instead, they generate values “just in time” as a class-based iterator or generator function would. Class-based iterator and generator functions implement the iterators which makes it possible to construct a list object by calling the `next()` object. To access the values produced by the generator expression, you need to call `next()` on it. When there isn't the next value in the generator object, a `StopIteration` exception is thrown.
+Unlike list comprehensions, generator expressions don’t construct list-objects. Instead, they generate values “just in time” as a class-based iterator or generator function would. Class-based iterator and generator functions implement the iterators which makes it possible to construct a list object by calling the `next()` object. You need to call `next()` to access the values produced by the generator expression. When there isn't the next value in the generator object, a `StopIteration` exception is thrown.
 
 ```python
 >>> next(generator_expression)
@@ -124,7 +124,7 @@ The `getsizeof()` object returns the amount of memory that holds the `nums_squar
 10000
 ```
 **Generating the Fibonacci sequence using generator functions.**
-The Fibonacci Sequence is the series of numbers where the next number is found by adding up the two numbers before it.
+The Fibonacci sequence is a series of numbers where the next number is identified by adding the two previous numbers.
 
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
