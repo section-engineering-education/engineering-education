@@ -24,25 +24,28 @@ The AI incorporates and avails intelligence that is used to enhance decision mak
 
 New ideas in the tech world have led to various innovations that have sparked the nature of things. Alexa and Siri are [virtual assistant](https://www.investopedia.com/terms/v/virtual-assistant.asp) that enhance the use of machine learning and are widely used.
 
-Machine learning and deep learning have attracted significant attention over the years. The popularity of these two has led to various applications implementing its tools.
+Machine learning and deep learning have gained a significant attention over the years. Vast application of machine learning and deep learning, have led to an increased popularity. 
 
 This article will focus on understanding what machine learning and deep learning are. The reader will have a deeper understanding of how these applications differ and enhance their functionalities.
 
 ### Machine Learning and Artificial Intelligence
 
-Machine learning is a [subset](https://en.wikipedia.org/wiki/Subset) of AI that allows computer algorithms to make accurate data outcomes through interpretations.
+Machine learning is a [subset](https://en.wikipedia.org/wiki/Subset) of AI that allows computer algorithms to make accurate data outcomes through learning patterns from data.
 
-Machine learning is used to obtain and use data that is used to make final decisions. Machine learning processes are also dependent on the subsets of artificial intelligence.
+Machine learning uses an algorithm that collects data from various patterns of data. Machine learning applications rely on collected data to make final decisions. Machine learning processes are dependent on the subsets of artificial intelligence. The subsets allow machine learning to obtain data from the various patterns, thus faciliatating  processes. 
 
 Machine learning allows the use the AI towards automating several functionalities used by machine learning. The AI enhances neuroscience algorithm that emulates human intelligence, that is able to make more accurate predictions. The neuorscience algorithm is modified in a way that emulates the human intelligence. This is because it is able to understand various relationships between data, and make predictions that are accurate.  
 
-Machine learning adopts the use of several [synthetic intelligence](https://www.wikiwand.com/en/Synthetic_intelligence) aspects and modern [virtual assistants](https://www.investopedia.com/terms/v/virtual-assistant.asp) to enhance automation. The application of live chatbots is perfect example how web applications enhance communication. 
+Machine learning adopts the use of several [synthetic intelligence](https://www.wikiwand.com/en/Synthetic_intelligence) aspects and modern [virtual assistants](https://www.investopedia.com/terms/v/virtual-assistant.asp) to enhance automation. Synthetic intelligence aim at enhancing the intelligence of machines being genuine and artificial. The application of live chatbots is perfect example how web applications enhance communication. 
 
 Machine learning uses Artificial Intelligence (AI) techniques that assist in decision making. These techniques include the use of [conventional algorithms](http://wiki.cas.mcmaster.ca/index.php/Conventional_Encryption_Algorithms) used in performing mathematical computation and predictions.
+ A conventional algorithm is also known as a cryptographic algorithm. This algorithm maintains secrets in acryptographic environment. Conventional algorithm is used to regulate algorithms, used at undoing histogram modifications and distortions. Conventional algorithm is used at identifying, deciphering, and enciphering keys that are identical, and need to be kept secret. 
+
+
 
  Machine learning uses both structured and unstructured data to fetch data in applications. Structured data is presented in the form of columns and rows. Examples of structured data include strings, dates and numbers.  Unstructured data information is stored as files. Examples include; images, word documents, email files, videos and audio files.
  
- The use of Support Vector Machines (SVMs) and decision-trees are examples that use unstructured data to make interpretations in machine learning.
+ The use of Support Vector Machines (SVMs) and decision-trees are examples that use unstructured data to make interpretations in machine learning. The use of SVMs exist as a set of supervised learning method,  used to classify, regress and outliers detection. 
 
 
  
@@ -66,12 +69,12 @@ The use of structured and unstructured data make deep learning work perfectly as
 
 ### How deep learning works
 
-Deep learning uses algorithms whose functionality is like that of machine learning. [Neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) extract and learn the features during training process of deep learning.
+Deep learning uses algorithms whose functionality is like that of machine learning. [Neural networks](https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414) extract and learn the features during training process of deep learning. Besides this, neural networks are used for all types of tasks.
 
 
-The neurons in the network undertake two tasks. The first includes understanding which feature is optimal for performing a specific task. The second one involves classifying data after many iterations of the learning process.
+The neurons in the network undertake various tasks. The first includes understanding which feature is optimal for performing a specific task. The second one involves classifying data after many iterations of the learning process.
 
- In case there is a mistake, the deep learning model's accuracy increases. This occurs when the model is specifically trained to identify and learn from the error. 
+ In case there is a mistake when making a prediction, the deep learning model's accuracy increases. This occurs when the model is specifically trained to identify and learn from the error. 
  Deep learning is, thus, a more complex and more capable version of machine learning. Besides this, deep learning has more number of parameters when compared to machine learning algorithms. 
 
 ### Machine Learning vs Deep Learning
@@ -95,15 +98,15 @@ Google applications like Gmail, Google Search, and Google Maps rely on deep lear
 
  For instance, Gmail can detect important mails for the user. Special emails are detected by the frequency through which a user gets to communicate. An effective response is enhanced through the use of a smart reply that offers a fast response to any email received. This feature depends on the content of the email received.
 
-Besides this, Google Search uses a prediction that anticipates what one is doing. Such predictions fetch past searches, activities, and places visited. The Google Maps application keeps data that can trace the history of past locations. Collected data allows the application to make correct and accurate predictions.
+Besides this, Google Search uses a prediction that anticipates what one is doing. Such predictions fetch past searches, activities, and places visited. The Google Maps application keeps data that can trace the history of past locations. Data is collected from personalized services, obtained from data crunching and collection. Collected data allows the application to make correct and accurate predictions.
 
 Machine learning stimulates the smooth transition of smart applications today. Most of these applications fetch a customized user experience that improves predictability. As a result, the user can enjoy the fast use of services offered by these applications.
 
-Deep learning has increased efficiency, thus eliminating the need for human supervision. As a result, the performance of machines towards performing tasks has improved.
+Deep learning has increased efficiency, by increasing machine performance, thus eliminating the need for human supervision. As a result, the performance of machines towards performing tasks has improved.
 
 Deep learning allows the use of an algorithm that automates errors. This automation corrects any mistakes without involving human intervention in places where human intervention is required.
 
- Services automated by AI has less probability of error, thus eliminating the need for human supervision.
+ Services automated by AI has low probability of error, thus eliminating the need for human supervision.
 
 ### Conclusion
 Both deep learning and machine learning have promoted efficiency in most applications. As a result, the acceleration of the field of AI has increased. This has led to an economic advantage to companies since efficiency in terms of time and money have been enhanced.
