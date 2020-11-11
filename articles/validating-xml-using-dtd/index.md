@@ -28,9 +28,9 @@ In this article, we will learn about XML and how validation is done using Docume
 ### Introduction
 Computer systems vary in terms of hardware architecture, operating system, memory management mechanisms, and addressing architecture. Data inside computers is represented as binary values (0s and 1s).
 
-Depending on the architecture, the representations vary. Similarly, the storage and communication mechanisms vary between each system.
+Depending on the architecture, the representations will vary. Similarly, the storage and communication mechanisms also differ between each system.
 
-With each system having different architectures, communication between two different architectures requires a common medium to transports data. This leads us to the introduction to the concept of Data serialization.
+With each system having different architectures, communication between two different architectures will require a common medium to transports data. This leads us to the concept of Data serialization.
 
 ![Data serialization](/engineering-education/validating-xml-using-dtd/data_serialization.jpg)
 
