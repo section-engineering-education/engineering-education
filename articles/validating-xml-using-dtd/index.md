@@ -6,7 +6,7 @@ url: /engineering-education/validating-xml-using-dtd/
 title: Validating XML using DTD
 description: A tutorial on introduction to XML, the need for XML validation, and how validation is done using DTD.
 author: srishilesh-p-s
-date: 2020-11-11T00:00:00-10:00
+date: 2020-11-11T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
