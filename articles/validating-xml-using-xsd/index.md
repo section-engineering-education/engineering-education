@@ -18,12 +18,12 @@ In this article, we will understand how validation of XML is done using XML Sche
 
 <!--more-->
 
-### Table of contents
+### Table of Contents
 - [Introduction](#introduction)
 - [What is XML Schema Definition?](#what-is-xml-schema-definition)
 - [Step by Step Guide for Validation](#step-by-step-guide-for-validation)
 - [Conclusion](#conclusion)
-- [Further reading](#further-reading)
+- [Further Reading](#further-reading)
 
 ### Introduction
 In our [previous article](), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using Document Type Definition (DTD).
@@ -36,7 +36,7 @@ In our [previous article](), we understood various data serialization techniques
 You may be wondering what is the need for XSD when we already have DTD. XSD can validate much better than DTD, in terms of constraints verification, usage, and relationships between elements and its attributes. According to [W3C](https://www.w3.org/TR/xmlschema11-1/), XSD defines, describes, and catalogs XML vocabularies for classes of XML documents.
 
 ### Step by Step Guide for Validation
-#### XML document
+#### XML Document
 As you know, XSD is used for complex validation of XML documents. So, let's take up some complex XML document for validating. By validating it, our understanding of concepts would be much better. In this article, we are not going to cover the basics of building an XML document. To keep it simple, let's validate the below XML code. Full XML code can be found [here](https://gist.github.com/srishilesh/5d028a5d9acef3818b014cd4595c9ebe).
 
 ```xml
@@ -60,7 +60,7 @@ As you know, XSD is used for complex validation of XML documents. So, let's take
 </root>
 ```
 
-#### Understanding XSD terminologies
+#### Understanding XSD Terminologies
 ##### Elements
 A simple element in XSD contains the text of various data types like boolean, string, date, etc. or any custom type. Restrictions can be added to it, to maintain consistency of values. A sample XSD element can be defined as:
 
@@ -116,7 +116,7 @@ elementFormDefault="qualified"
 
 indicates that any elements used by the XML instance document which were declared in this schema must be namespace-qualified.
 
-##### Validating the outermost element
+##### Validating the Outermost Element
 In our XML example, we have an element with `name="root"` as the outermost element holding other child elements. So, in our XSD, we access the tag with `name="root"` and handle the child elements under an `xs:complexType` with `name="rootType"`.
 
 ```xml
@@ -135,7 +135,7 @@ Now, we may have any number of `name="event"` tags inside a `name="root"` elemen
 </xs:complexType>
 ```
 
-##### Validating child elements
+##### Validating Child Elements
 As we understand, on validating the `name="event"` element with a complex type declaration. It contains a sequence of other sub-child elements under the type called `name="eventType"`. In this example, each `name="event"` tag can hold maximum of `1` sub-child , we restrict the limitations of its maximum occurance to `1`.
 
 ```xml
@@ -257,8 +257,7 @@ To summarize:
 - We understood how XSD is different from DTD.
 - We implemented the validation of XML using XSD.
 
-### Further reading
-
+### Further Reading
 - https://www.w3.org/XML/Schema
 - https://www.w3.org/TR/xmlschema11-1/
 - https://www.w3schools.com/xml/schema_schema.asp
