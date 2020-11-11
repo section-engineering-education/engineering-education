@@ -30,7 +30,7 @@ Computer systems vary in terms of hardware architecture, operating system, memor
 
 Depending on the architecture, the representations will vary. Similarly, the storage and communication mechanisms also differ between each system.
 
-With each system having different architectures, communication between two different architectures will require a common medium to transports data. This leads us to the concept of Data serialization.
+With each system having different architectures, communication between two different architectures will require a common medium to transport data. This leads us to the concept of Data serialization.
 
 ![Data serialization](/engineering-education/validating-xml-using-dtd/data_serialization.jpg)
 
