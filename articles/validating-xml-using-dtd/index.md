@@ -262,7 +262,8 @@ To summarize:
 - https://en.wikipedia.org/wiki/Document_type_definition
 - https://en.wikipedia.org/wiki/XML
 - https://en.wikipedia.org/wiki/HTML
-- https://web.archive.org/web/20100311063223/http://www.isoc.org/isoc/conferences/inet/99/proceedings/1i/1i_1.htm
+- https://web.archive.org/web/20100311063223/
+- http://www.isoc.org/isoc/conferences/inet/99/proceedings/1i/1i_1.htm
 - https://en.wikipedia.org/wiki/XML_validation
 - https://levelup.gitconnected.com/json-vs-yaml-6aa0243aefc6
 - https://devopedia.org/data-serialization
