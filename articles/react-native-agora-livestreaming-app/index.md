@@ -82,6 +82,20 @@ For iOS, cd into ios/ and run
 pod install
 ```
 
+Once you've installed the dependencies, it's time to start it up and run it on a physical device or an emulator.
+
+For Android,
+
+```bash
+npx react-native run-android
+```
+
+For iOS,
+
+```bash
+npx react-native run-ios
+```
+
 In this code, the Stack Navigation is set up with the Home screen and a dummy Live Screen. The Home Screen has 2 buttons, Start and Join. The Join button has a text input associated with it to provide the channel ID to join the stream.
 
 You can find the documentation for React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
