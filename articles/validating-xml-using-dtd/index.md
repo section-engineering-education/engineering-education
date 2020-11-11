@@ -22,7 +22,7 @@ In this article, we will be learning about XML and how validation is being done 
 - [Introduction](#introduction)
 - [Overview of XML](#overview-of-xml)
 - [What is Document Type Definition?](#what-is-document-type-definition)
-- [Need for XML validation](#need-for-xml-validation)
+- [Need for XML Validation](#need-for-xml-validation)
 - [Step by Step Guide for Validation](#step-by-step-guide-for-validation)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
@@ -68,13 +68,13 @@ Creating XML documents was much easier, but sometimes it leads to frequent error
 ### What is Document Type Definition?
 [Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) is a markup language rulebook that defines what markup elements can be used to describe a document. The creation of user-defined tags in XML was much simpler, so the user has to specify the required tag in DTD, for validation. It defines and checks the structure of the elements and attributes used for each element in the XML document.
 
-### Need for XML validation
+### Need for XML Validation
 Browsers like Internet Explorer contain built-in XML parsers, which checks if the document is **well-formed**, and if it **validates the parser**. A document is well-formed if it follows the basic syntactic rules of XML. And, a document is valid if it checks for the rules mentioned by DTD for the particular XML. For validation, there are various online automated validators like [this](https://codebeautify.org/xmlvalidator). Alternatively, there are extensions in text editors like VSCode with built-in validation.
 
-### Step by Step guide for validation
+### Step by Step Guide for Validation
 Now, let's see how to build a sample XML document and how validation is done using DTD.
 
-#### Building XML document
+#### Building XML Document
 In HTML, we have to use predefined tags like `<html></html>` or `<body></body>` for interpreting our data on the web. But, here in XML, user-defined tags can be created easily, and they are used for the transportation of information between webpages.
 
 For example, let's understand how XML documents are built for 'Contact us' pages like [this](https://www.section.io/contact-us/). Here, we have 5 different input fields: First Name, Last Name, Company Name, Email address, and Message fields.
@@ -102,7 +102,7 @@ Inside the outer tags, we may define our tags for every unique input field. Like
 
 We have built our first XML document. Now, it can be saved locally with a `.xml` file extension.
 
-#### Building DTD validator
+#### Building DTD Validator
 Before we start building, let us understand a few keywords, that would help us understand better.
 
 ##### Elements
@@ -177,7 +177,7 @@ After specifying the tags present inside the outermost tag. Now, we have to defi
 <!ELEMENT message (#PCDATA)>
 ```
 
-##### Complete code
+##### Complete Code
 If it is an Internal DTD validation, the whole XML code with its DTD validation is shown below
 
 ```xml
