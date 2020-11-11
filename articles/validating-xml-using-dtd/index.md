@@ -63,10 +63,10 @@ In this article, we'll look at an overview of XML and how it's validated when us
 ### Overview of XML
 The invention of the World Wide Web in 1989 by [Sir Timothy Berners Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) led to the rise of the Internet and [HTML](https://en.wikipedia.org/wiki/HTML). HTML is a markup language used to interpret text, images, and other types of data as webpages in web browsers.
 
-The [Internet Engineering Task Force](https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force) formally defined the rules of HTML. I has been maintained and improved continuously by the [World Wide Web Consortium](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium). Over the last 30 years, they have launched various versions of HTML, the latest being HTML5.
+The [Internet Engineering Task Force](https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force) formally defined the rules of HTML. It has been maintained and improved continuously by the [World Wide Web Consortium](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium). Over the last 30 years, they have launched various versions of HTML, the latest being HTML5.
 
 
-The root of web development is HTML. However, when converting the data to HTML, there is a high chance of losing information. The information needs to be exchanged without loss, this need led to the rise of XML, which is a markup language.
+The root of web development is HTML. However, when converting the data to HTML, there is a high chance of losing information. Information needs to be exchanged without loss, this need led to the rise of XML, which is a markup language.
 
 A markup language is a way of styling a document to be syntactically distinguishable from the text where the document is processed only to render the text, while not displaying the markup language.
 
