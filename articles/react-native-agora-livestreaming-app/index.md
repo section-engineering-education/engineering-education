@@ -60,6 +60,10 @@ Now, click on the closed eye icon near the App Id to reveal it and copy the App 
 
 ### Building the App
 
+> **IMPORTANT** - We will not be using Expo in our project.
+
+If you do not have the development environemt set up for non-expo projects, You can follow the steps in the [Environment Setup](https://reactnative.dev/docs/environment-setup) documentation to set up the react native development environment using the react-native CLI.
+
 #### Clone the Starter Code
 
 You can get the starter code from [here](https://github.com/zolomohan/react-native-agora-app-starter).
@@ -157,8 +161,8 @@ You can install these beforehand, or install them while going through the articl
 
 When we create or join a live stream, we need to give a channel id to Agora.
 
-For a new live stream, we will generate a UUID and for joining a live stream, we will use the channel id from the input.
-We need to pass the channel ID from the Home Screen to the Live Screen. We can pass it as a route prop to the Live Screen.
+For a new live stream, we will generate a new channel id and for joining a live stream, we will use the channel id from the text input.
+We need to pass the channel id from the Home Screen to the Live Screen. We can pass it as a route prop to the Live Screen.
 
 Let's install the UUID package to generate a UUID.
 
