@@ -65,8 +65,11 @@ const logger = winston.createLogger(logConfiguration);
 ```js
 // Log a message
 logger.log({
-    message: 'Hello, Winston!', // Descriptive message being logged.
-    level: 'info' // Level of the logging message
+// Message to be logged
+    message: 'Hello, Winston!',
+
+// Level of the message logging
+    level: 'info'
 });
 // Log a message
 logger.info('Hello, Winston!');
@@ -124,7 +127,7 @@ const logConfiguration = {
         }),
         new winston.transports.File({
             level: 'error',
-            // Create the log directory if it does not exist
+// Create the log directory if it does not exist
             filename: './logs/example.log'
         })
     ]
@@ -219,36 +222,36 @@ app.js:
 ```js
 const express = require('express');
 
-//require logger.js
+// Require logger.js
 const logger = require('./utils/log');
 const app = express();
 const port = 3000;
 const host = "localhost";
 
-//Dummy Express GET call
+// Dummy Express GET call
 app.get('/',(req,res) => {
     res.send("Hello World!");
     logger.info("Server Sent A Hello World!");
 })
 
-//Introduce error by using undefined variable 'y'
+// Introduce error by using undefined variable 'y'
 app.get('/calc',(req,res) => {
     const x = y + 10;
     res.send(x.toString());
 })
 
-//Capture 500 errors
+// Capture 500 errors
 app.use((err,req,res,next) => {
 res.status(500).send('Could not perform the calculation!');
    logger.error(`${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
 })
 
-//Capture 404 erors
+// Capture 404 erors
 app.use((req,res,next) => {
     res.status(404).send("PAGE NOT FOUND");
     logger.error(`400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
 })
-
+// Run the server
 app.listen(port, () => {
     console.log("Server started...");
     logger.info(`Server started and running on http://${host}:${port}`)
@@ -277,22 +280,22 @@ Like we said earlier, Winston is well suited to configure different log destinat
 ```js
 const { createLogger, format, transports } = require('winston');
 
-//Import mongodb
+// Import mongodb
 require('winston-mongodb');
 
 module.exports = createLogger({
 transports:[
 
-//file transport
+// File transport
     new transports.File({ 
     filename: './logs/example.log',
     format:format.combine(
         format.timestamp({format: 'MMM-DD-YYYY HH:mm:ss'}),
         format.align(),
         format.printf(info => `${info.level}: ${[info.timestamp]}: ${info.message}`),
-    )}),
+)}),
 
-// mongoDB transport
+// MongoDB transport
     new transports.MongoDB({
         level: 'error',
         //mongo database connection link
@@ -300,11 +303,11 @@ transports:[
         options: {
             useUnifiedTopology: true
         },
-        // a collection to save json formatted logs
+        // A collection to save json formatted logs
         collection: 'server_logs',
         format: format.combine(
         format.timestamp(),
-        // convert logs to a json format
+        // Convert logs to a json format
         format.json())
     })]
 });
@@ -353,12 +356,12 @@ In the above example, the application has two services, `users` and `transaction
 For example, assuming a user.js file that processes user services' properties, the following example will apply for a simple log.
 
 ```js
-// require logger.js
+// Require logger.js
 const {usersLogger, transactionLogger} = require('./logger');
 
-...........//your users' code setups.................
+...........// Your users' code setups.................
 
-//what to record to users.log
+// What to record to users.log
 usersLogger.info('New user created');
 usersLogger.error(`Unable to find user: ${err}`);
 ```
@@ -368,9 +371,9 @@ In an actual application, we can create the following logs when a new user is cr
 user.js
 
 ```js
-//require logger.js
+// Require logger.js
 const {usersLogger, transactionLogger} = require('./logger');
-...........//your users' code setups.................
+...........// Your users' code setups.................
 usersLogger.info('User created!',
      {user_id: `${res._id}`,
      user_name: `${res.name}`,
@@ -382,11 +385,12 @@ usersLogger.error(`Unable to find user: ${err}`);
 transaction.js
 
 ```js
-//require logger.js
+// Require logger.js
 const {usersLogger, transactionLogger} = require('./logger');
 
-...........//your Transaction' code setups.................
+...........// Your Transaction' code setups.................
 
+// Transaction logs
 transactionLogger.info('Session connected', { session_id: `${req.id}`}, {user_id: `${res._id}`);
 transactionLogger.info('Transaction Initiated', { transaction_id: `${req.transaction_id}`}, {user_id: `${res.user_id}`);
 transactionLogger.info('Transaction completed',  {user_id: `${res.user_id}`, {`${req.transaction_amout}`, `${req.transaction_code}`});
@@ -420,10 +424,10 @@ const morgan = require('morgan')
 const path = require('path')
 const app = express()
 
-// create a write stream (in append mode)
+// Create a write stream (in append mode)
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
-// setup the logger
+// Setup the logger
 app.use(morgan('combined', { stream: accessLogStream }))
 
 app.get('/', (req, res) => {
@@ -433,7 +437,9 @@ app.listen(3000, () => {
     console.log("Server Listening on port 3000");
 })
 ```
+
 [*Code Source*](https://www.npmjs.com/package/morgan#write-logs-to-a-file)
+
 Run the app and hit http://localhost:3000/ on your browser. Morgan will record the following log on the access.log file.
 
 ```js
@@ -464,7 +470,7 @@ log.warn({ lang: "fr" }, "au revoir");
 The following [Log4js](https://github.com/log4js-node/log4js-node) example will record error logs to both the file (log4.log) and the console appenders.
 
 ```js
-// require Log4js
+// Require Log4js
 const log4js = require('log4js');
 
 // Logger configuration
