@@ -1,3 +1,8 @@
+
+![Hero image](/engineering-education/basics-of-convolution-neural-networks/hero.jpg)<br>
+
+*[Image Source: Unsplash](/https://unsplash.com/photos/11KDtiUWRq4/)*
+
 ### Prerequisites
 
 This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/)
@@ -13,37 +18,22 @@ Let's take an example of an image with the number 8 shown below:
 
 *[Image Source: The MNIST Database](http://yann.lecun.com/exdb/mnist/)*
 
-In computer science, a pixel value of 0 represents black (dull) while 255, white (bright). As seen in the image, the pixels surrounding the image tend to be much brighter (closer to 255) than pixels away from it. This is how a computer sees an image. 
+A pixel value of 0 represents black (dull) while 255, white (bright). As seen in the image, the pixels surrounding the image tend to be much brighter (closer to 255) than pixels away from it. This is how a computer sees an image. 
 
 Convolution Neural Networks (CNNs) builds on this idea. 
 
-### Terminologies
+### What are Convolution Neural Networks (CNNs)?
 
-1. Parameter
+The concept of Convolution Neural Networks (CNNs) results from a combination of deep neural networks and a set of operations known as convolutions. 
+CNN's are a class of deep learning techniques popularly use to solve computer vision tasks. As they learn directly from input data, they are beneficial for finding patterns in images, enabling them to perform tasks such as face recognition, object detection, and scene recognition. 
+They are widely applied in solving computer vision and facial recognition tasks in smart cameras and self-driving cars.
 
-These are placeholders that change during training. Weights and Biases are the two main parameters in CNNs.
+Before we learn how CNNs work, it is important to understand why we need CNNs and why they are better than other algorithms?
 
-2. Hyperparameter
-
-A hyperparameter is also a placeholder, but unlike the parameter, hyperparameters need to set before training starts. The learning rate is one of the important hyperparameters that need to be set before training starts. 
-
-3. Kernel
-
-A kernel is an integral component of the structure of a CNN. It consists of a set of learnable parameters that are applied to the operations of convolutions. 
-
-4. Stride
-
-Stride refers to the number of pixels a convolution filter moves. It can be compared to a sliding window. The image below shows the stride, S moving with a pixel of 2
-
-![Stride, S](/engineering-education/basics-of-convolution-neural-networks/stride.PNG)<br>
-
-*[Image Source: Stanford](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)*
-
-### What is Convolution Neural Networks (CNN)?
-
-Convolution Neural Networks (CNN) is a class of deep learning techniques popularly use to solve computer vision tasks.
-CNN learns the spatial features of inputs through a process known as backpropagation, as we will see in the image below. Backpropagation can be described as the backward propagation of errors. It is the core algorithm behind how neural networks learn. Learn more about it in this [video](/https://www.youtube.com/watch?v=Ilg3gGewQ5U/).
-
+1. CNN's produce cutting-edge recognition results. 
+2. CNN's automatically learn a hierarchy of features from inputs. This eliminates the need for hand engineering the extraction of features. 
+3. CNNs can be built on pre-existing networks. Thus, it can be retrained to perform new recognition tasks. 
+ 
 Let's take a look at the architecture of a CNN.
 
 ### Architecture Overview
@@ -62,7 +52,21 @@ The CNN architecture consists of a stacking of three building blocks:
 
 #### Convolution layer
 
-A convolution layer is a key component of the CNN architecture. This layer helps us perform feature extractions on input data. This feature extraction is achieved using both convolution layers (linear operation) and activation functions (non-linear operation). Rectified Linear Unit (ReLU) is one of the most used activation functions in deep learning. 
+A convolution layer is a key component of the CNN architecture. This layer helps us perform feature extractions on input data using the convolution operation. The convolution operation involves performing an element-wise multiplication between the filter's weights and the patch of the input image with the same dimensions. Finally, the resulting output values are added together. 
+
+Let's consider a visual example to drive this convolution operation point home even further. 
+
+Let's assume we want to compute the convolution of a 5 X 5 input image using a 3 X 3 filter:
+
+![Convolution Operation](/engineering-education/basics-of-convolution-neural-networks/conv-op1.png)<br>
+
+![Convolution Operation](/engineering-education/basics-of-convolution-neural-networks/conv-op2.png)<br>
+
+![Convolution Operation](/engineering-education/basics-of-convolution-neural-networks/conv-op3)
+
+We slide the 3 X 3 filter over the input image, perform element-wise multiplication, and add the outputs.
+
+Besides, on the CNN architecture, we can note that feature extraction is achieved using both convolution layers (linear operation) and an activation function (non-linear operation). The activation function is always added to each layer of convolution. The most used activation function in deep learning is the Rectified Linear Unit (ReLU). 
 
 Let's touch a little bit on it.
 
@@ -78,13 +82,15 @@ f(x) = max (0, x)
 
 *[Image Source: Papers with code](https://paperswithcode.com/method/relu)*
 
-ReLU is the default activation function when working with CNNs, as it tends to have a faster training time. 
+Why is ReLU widely used?
 
-Other activation functions used in neural networks include the sigmoid and the hyperbolic tangent. Read more about them [here](/https://en.wikipedia.org/wiki/Activation_function/).
+ReLU tends to have a much faster training time than other activation functions used in neural networks such as sigmoid and the hyperbolic tangent. 
+Read more about them [here](/https://en.wikipedia.org/wiki/Activation_function/).
 
 #### Pooling layer
 
-A pooling layer is a form of non-linear downsampling that reduces the dimensionality of the feature maps of an input image, making its representation smaller and more manageable. This process reduces the number of parameters and computation resources in the network.
+A pooling layer is a form of non-linear downsampling that reduces the dimensionality of the feature maps of an input image, making its representation smaller and more manageable. This process reduces the number of parameters and computation resources in the network. 
+We will see an example of how the dimensionality reduction occurs from the max pooling and average pooling operations. 
 
 It is important to note that a 2 x 2 filter size applied with a stride of 2 is the most used in CNN.
 
@@ -92,15 +98,21 @@ It is important to note that a 2 x 2 filter size applied with a stride of 2 is t
 
 **Max pooling** is the most popular among the pooling operations. It extracts patches from the input feature maps, picks the largest value on each patch, and discards the rest.
 
-Below is an example of a max-pooling operation. It consists of a filter size of 2 x 2 that extracts a 2 x 2 patch from the input tensor. It outputs the largest value in each patch. Max-pooling results in the downsampling of the input by a factor of 2.
+Below is an example of a max-pooling operation. It consists of a filter size of 2 x 2 that extracts a 2 x 2 patch from the input tensor. It outputs the largest value in each patch. 
 
 ![Max Pooling](/engineering-education/basics-of-convolution-neural-networks/max-pooling.PNG)
+
+Max-pooling results in the downsampling of the input reducing its dimensions from a 4 x 4 to a 2 x 2. 
 
 ##### Average Pooling
 
 Besides, **average pooling** is another type of pooling operation that's worth mentioning. It performs downsampling by performing an average of all values in a feature map. Thus, picking this averaged value as the new value of the feature space. 
 
+Here is an example of average pooling on CNN.
+
 ![Average Pooling](/engineering-education/basics-of-convolution-neural-networks/average-pooling.png)
+
+Here, the input image with a 4 x 4 dimension is reduced to a 2 x 2 using average pooling.
 
 #### Fully Connected layer
 
@@ -113,19 +125,65 @@ The FC layer maps the extracted features from the convolution and pooling layers
 
 *[Image Source: Stanford](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)*
 
+Lastly, once the CNN has derived an output using a probability function such as [softmax](/https://en.wikipedia.org/wiki/Softmax_function/), we compare this output with the output we want the network to give. The difference between the two gives us the error in our network. The CNNs weights are then updated, and the objective function is minimized through a process known as backpropagation, as we will see in the image below. Backpropagation can be described as the backward propagation of errors. It's simply fine-tuning the weights and bias so that it can give us the output we want. It is the core algorithm behind how neural networks learn. Learn more about it in this [video](/https://www.youtube.com/watch?v=Ilg3gGewQ5U/).
+
+### Key Terminologies
+
+It is crucial to understand these terminologies that are commonly used in CNNs.
+
+1. Parameter
+
+These are placeholders that change during training. Weights and Biases are the two main parameters in CNNs.
+
+2. Hyperparameter
+
+A hyperparameter is also a placeholder, but unlike the parameter, hyperparameters need to set before training starts. But, it is important to note that these hyperparameters can be modified as the CNN model learns. The learning rate is one of the important hyperparameters that need to be set before training starts. 
+
+3. Kernel
+
+A kernel is an integral component of the structure of a CNN. It is sometimes referred to as a filter. They are learned during the training process. The kernel operation is performed on the first layer's input image and the convolved images in the consecutive layers alongside convolution. This operation helps filter the information that is of importance from the input image and discard the rest.  
+
+4. Stride
+
+Stride refers to the number of pixels a convolution filter moves. It can be compared to a sliding window. The image below shows the stride, S moving with a pixel of 2
+
+![Stride, S](/engineering-education/basics-of-convolution-neural-networks/stride.PNG)<br>
+
+*[Image Source: Stanford](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)*
+
 ### Applications of Convolution Neural Networks
 
 #### Computer Vision
 
 Image classification is a very common problem in computer vision. The goal in image classification is to learn features directly from image data. These learned features are then used for classification. For instance, feeding an image of a cat as our input, the network should classify the image as a cat. 
 
-Recently, CNN has been used for image captioning. Here, the goal is to generate a sentence that describes the semantic content in an image. It is achieved by combining CNN with a [Recurrent Neural Network](/https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks/)(RNN). In the last layer in the CNN architecture, instead of a fully connected (FC) layer, the last layer of the CNN is replaced with an RNN.   
+Recently, CNN has been used for image captioning. Here, the goal is to generate a sentence that describes the semantic content in an image. It is achieved by combining CNN with a [Recurrent Neural Network](/https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks/)(RNN). In the last layer in the CNN architecture, instead of a fully connected (FC) layer, the last layer of the CNN is replaced with an RNN.    
+
+I know you might find it difficult to understand how an RNN is getting fixed to a CNN. Let me explain using the structure of a CNN below.
+
+![Structure of a CNN divided into feature learning and classification sections](/engineering-education/basics-of-convolution-neural-networks/cnn-rnn-explanation.PNG)<br>
+
+*[Image Source: MathWork](https://www.mathworks.com/solutions/deep-learning/convolutional-neural-network.html)*
+
+What makes a CNN? It is the feature learning portion in the above image. 
+
+The second portion, the classification bit, can be altered to suit the application that we so desire. For our use case, we need to introduce the RNN architecture to perform the tasks of captioning our images. 
+
+Why are we choosing an RNN in this case? 
+
+It is because they are ideal for solving sequence prediction problems in text and speech data.
+
+We use CNN to learn the hierarchical features in the input image. These learned features are encoded and passed into the RNN to generate sentences that describe the semantic content in the image. 
+
+Hope that's clear now.
 
 #### Natural Language Processing (NLP)
 
 Traditionally, CNNs have only been applied in solving Computer Vision problems. This has changed over the years. CNN's are now being applied to solve NLP problems such as speech recognition and text classification. 
-The rapid development of speech recognition systems has been on the increase over the years. Apple's Siri and Amazon's Alexa are a few examples of such systems available today.
-As for text classification, texts are first converted into vectors. These vectors are then passed as inputs to the CNN. In a forward propagating manner, these vectors pass through the convolution and pooling layer to extract features and reduce dimensions.
+
+The rapid development of speech recognition systems has been on the increase over the years. This has been made possible by word vectors, which are vectors of numbers representing words. They enable the research of the relationships between documents, words, and sentences. Word vectors enable mathematical operations to be performed on words for machine translation and speech recognition. Apple's Siri and Amazon's Alexa are a few examples of speech recognition systems available today.
+
+For text classification, texts are first converted into vectors. These vectors are then passed as inputs to the CNN. In a forward propagating manner, these vectors pass through the convolution and pooling layer to extract features and reduce dimensions.
 Finally, the fully connected (FC) layer and activation function on the output classify texts into different text categories.
 
 #### Medical & Healthcare
@@ -159,10 +217,9 @@ To wrap up what we've covered in this article, we've introduced how computers se
 You can learn more advanced concepts of CNN [here](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks/)
 
 ### References
-1. Yamashita, R., Nishio, M., Do, R. K. G., & Togashi, K. (2018). Convolutional neural networks: an overview and application in radiology. Insights into Imaging, 9(4), 611-629.
+1. Yamashita, R., Nishio, M., Do, R. K. G., & Togashi, K. (2018). [Convolutional neural networks: an overview and application in radiology](/https://link.springer.com/content/pdf/10.1007/s13244-018-0639-9.pdf/). Insights into Imaging, 9(4), 611-629.
 2. [Applications of Convolution Neural Networks](/https://ijcsit.com/docs/Volume%207/vol7issue5/ijcsit20160705014.pdf/)
 3. [Applications of Convolution Neural Network in Natural Language Processing](/https://ieeexplore.ieee.org/document/8666928/)
 4. [Identifying facial phenotypes of genetic disorders using deep learning](/https://www.gwern.net/docs/genetics/heritable/2019-gurovich.pdf/)
 5. [Recurrent Neural Network](/https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks/)
 6. [Convolution Neural Network](/https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks/)
-7. [Hero](/https://unsplash.com/photos/11KDtiUWRq4/)
