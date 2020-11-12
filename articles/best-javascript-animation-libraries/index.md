@@ -337,7 +337,7 @@ canvas {
   display: block;
 }
 ```
-![Three.js](/engineering-education/best-javascript-animation-libraries/three.gif)
+![Three.js](/engineering-education/best-javascript-animation-libraries/threejs.gif)
 
 ### GreenSock.js
 
