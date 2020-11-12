@@ -1,20 +1,39 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/best-javascript-animation-libraries/
+title: Introduction to Neural Networks
+description: In this tutorial we will go over the best JavaScript animation libraries such as anime.js, howler.js, and KUTE.js to name a few.
+author: judy-nduati
+date: 2020-11-12T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-JavaScript is well known for animating web applications. In this article, we will be discussing JavaScript animation libraries more interactively. Animating with Javascript libraries is more efficient and advanced compared to SVG and CSS. In today's world, JavaScript is an essential language due to the magic it does in animating. Animations using JavaScript is a complex task to perform. It needs an extensive amount of knowledge and skills.
+  - url: /engineering-education/best-javascript-animation-libraries/hero.jpg
+    alt: deep learning image example
+---
+A well known programming language used for animating web applications is JavaScript. In this article, we will discuss JavaScript animation libraries in more depth.
+<!--more-->
+### Introduction
+Animating with JavaScript libraries is more efficient and advanced compared to SVG and CSS. In today’s world, JavaScript is an essential language because of the magic it does while animating. Animations using JavaScript is a complex task to perform. It needs an extensive amount of knowledge and skills.
 
 ### Prerequisites
-
 JavaScript Animation Libraries is an exciting and interactive topic. Therefore, I recommend the reader to have a basic understanding of HTML, CSS, and JavaScript.
 
 ### JavaScript Animations
+Animations on web applications are appealing and grab the user’s attention. JavaScript can animate what CSS can’t. JavaScript is the preferred tool of use because it handles more complex and advanced effects.
 
-Animations on web applications are catchy and grab the user’s attention. JavaScript can animate what CSS cannot. JavaScript is the preferred tool of use because it handles more complex and advanced effects.
-There are several JavaScript animation libraries. Here is a list of the best JavaScript animation Libraries you can use in your project.
+There are several JavaScript animation libraries. Here is a list of the best JavaScript animation libraries you can use in your project.
 
 ### Anime.js
+[Anime.js](https://animejs.com/) is one of the best and fastest JavaScript animation libraries that exist. Anime.js was created by Julian Gardner. The library has at least 37k stars and 2.7k forks on [GitHub](https://github.com/juliangarnier/anime).
 
-[Anime.js](https://animejs.com/) is one of the best and fastest JavaScript animation libraries that exist. Anime.js was created by Julian Garner. The library has at least 37k stars and 2.7k forks on [GitHub](https://github.com/juliangarnier/anime). Anime.js is a lightweight library, which animates CSS properties, DOM elements, and SVG on a webpage. It supports modern web browsers such as Chrome, Internet Explorer 10+, and Firefox Mozilla, to name a few. You can use anime.js to create both simple and complex animations on the web.
-Anime.js has a built-in staggering system that creates ripples and makes overlapping animations appear less complex. This library allows you to create different animations, effects, and properties, synchronize multiple instances, and control all animation features.
+Anime.js is a lightweight library, that animates CSS properties, DOM elements, and SVG on a webpage. It supports modern web browsers such as Chrome, Internet Explorer 10+, and Mozilla Firefox, to name a few. You can use anime.js to create both simple and complex animations on the web.
+
+Anime.js has a built-in staggering system that creates ripples and makes overlapping animations appear less complex. This library allows you to create different animations, effects, properties, synchronize multiple instances, and control all animation features.
+
 To get started with anime.js, the procedure is very simple. All you need is to include anime.js script from [anime.js Content Delivery Network (CDN)](https://cdnjs.com/libraries/animejs) on your HTML page.
 
 ```html
@@ -51,14 +70,19 @@ Here is a simple example of anime.js;
 ![Anime.js](/engineering-education/best-javascript-animation-libraries/animejs.gif)
 
 ### Howler.js
+[Howler.js](https://howlerjs.com/) is an open-source JavaScript audio library. It’s used in game development and audio-related web apps. Howler.js makes coding easy while working with audio in JavaScript on web platforms.
 
-[Howler.js](https://howlerjs.com/) is an open-source JavaScript audio library. It is used in game development and audio-related web apps. Howler.js makes coding easy while working with audio in JavaScript on web platforms. It lays out a modern audio library supporting the [Web Audio API](https://webaudio.github.io/web-audio-api/#OfflineAudioContext) and a fallback technique for [HTML5 Audio](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio).
+It lays out a modern audio library supporting the [Web Audio API](https://webaudio.github.io/web-audio-api/#OfflineAudioContext) and a fallback technique for [HTML5 Audio](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio).
+
 Howler.js supports all browser-ready files from MP3, MP4, DOLBY, MPEG, WEBA, OGG to WAV. The library controls audio patterns by playing, pausing, looping, and seek to rate. Loaded audios are cached automatically, resulting in a more excellent performance.
 
 ### KUTE.js
+[KUTE.js](https://thednp.github.io/kute.js/) is a feature-rich JavaScript animation library.
 
-[KUTE.js](https://thednp.github.io/kute.js/) is a feature-rich JavaScript animation library. It animates the latest technology designs and keeps track of the dynamic standards. It keeps on evolving, thus being modular. KUTE.js animation engine creates complex animations with elements that cannot be animated with CSS properties.
+It keeps on evolving, thus being modular. KUTE.js animation engine creates complex animations with elements that can't be animated using CSS properties.
+
 KUTE.js library focuses on performance, code quality, memory effectiveness, and flexibility while animating different web app components. This animation engine animates CSS properties, SVG, and other text elements.
+
 You can download the latest version of KUTE.js from its [projects page](https://thednp.github.io/kute.js/) or use [KUTE.js CDN](https://cdnjs.com/libraries/kute.js/1.6.1) to get started.
 
 ```html
@@ -153,9 +177,12 @@ button {
 ![KUTE.js](/engineering-education/best-javascript-animation-libraries/kutejs.gif)
 
 ### Mo.js
+[Mo.js](https://mojs.github.io/) is a JavaScript animation library dedicated to motion graphics for web use.
 
-[Mo.js](https://mojs.github.io/) is a JavaScript animation library that is dedicated to motion graphics for web use. This animation library is fun and fantastic in that you do not have to be a great developer or artist to make animations. Mo.js, compared to other animation libraries, has a distinct syntax and code animation structure approach.
+This animation library is fantastic and fun because you do not have to be a prominent developer or artist to make animations. Mo.js, compared to other animation libraries, has a distinct syntax and code animation structure approach.
+
 Mo.js is good at click-to-animate micro-interactions, dynamic lettering, and dozens of shape manipulations. Using Mo.js on your web app enhance your skills, improve your content visually, and make spectacular animations.
+
 Here is an example of Mo.js;
 
 ```html
@@ -268,16 +295,23 @@ body {
 ![Mo.js](/engineering-education/best-javascript-animation-libraries/mojs.gif)
 
 ### Velocity.js
+[Velocity.js](http://velocityjs.org/) is a JavaScript animation library for fast performing animations.
 
-[Velocity.js](http://velocityjs.org/) is a JavaScript animation library for fast performing animations. It was created by [Julian Shapiro](https://github.com/julianshapiro/velocity) to solve the problem of JQuery's slowness when animating complex or extensive animations. Velocity.js works with and without JQuery. It uses same API as JQuery ```$.animate()```, to use velocity.js you replace instances from ```$.animate()``` to ```$.velocity()```.
-Velocity.js is a high powered animation engine that creates high-quality animations. It improves the website interface and provides an easy experience to the user. Velocity.js helps you animate, fade and slide animations, color animations, SVG animations, transforms, scrolling, and loops.
+Created by [Julian Shapiro](https://github.com/julianshapiro/velocity) to solve the problem of JQuery’s slowness when animating complex or extensive animations.
+
+Velocity.js works with and without JQuery. It uses same API as JQuery `$.animate()`, to use velocity.js you replace instances from `$.animate()` to `$.velocity()`.
+
+Velocity.js is a high powered animation engine that creates high-quality animations. It improves the website interface and provides a simple experience to the user. Velocity.js helps you animate, fade and slide animations, color animations, SVG animations, transforms, scrolling, and loops.
 
 ### Three.js
+[Three.js](https://threejs.org/) is a lightweight and user-friendly JavaScript 3D animation library. It makes it easy to come up with 3D content on a web page. Three.js uses WebGL (Web Graphics Library) to draw 3D animations.
 
-[Three.js](https://threejs.org/) is a lightweight and user-friendly JavaScript 3D animation library. It makes it easy to come up with 3D content on a web page. Three.js uses WebGL (Web Graphics Library) to draw 3D animations. WebGL is a JavaScript API for rendering interactive 3D graphics.
-A scene is created with a camera and a geometric cube. A WebGL renderer is created for the scene and the camera.
+WebGL is a JavaScript API for rendering interactive 3D graphics. It creates a scene with a camera and a geometric cube. A WebGL renderer is created for the scene and the camera.
+
 WebGL renders (draw) 3D graphics on the scene inside the geometric cube. Finally, the geometric cube is animated within the scene for the camera.
+
 To get started with Three.js, download its latest version or reference it from [Three.js CDN](https://cdnjs.com/libraries/three.js). Then include the script on your page using a script tag.
+
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r122/three.min.js "></script>
 ```
@@ -337,13 +371,16 @@ canvas {
   display: block;
 }
 ```
+
 ![Three.js](/engineering-education/best-javascript-animation-libraries/threejs.gif)
 
 ### GreenSock.js
+[GreenSock Animation Platform (GSAP)](https://greensock.com/) is a powerful JavaScript animation library that is lightweight. It makes animations flow faster and easy to use. GSAP enables developers to create animations that look great in all major browsers, such as Chrome, Mozilla Firefox, and Internet Explorer 11+.
 
-[GreenSock Animation Platform (GSAP)](https://greensock.com/) is a powerful JavaScript animation library that is lightweight. It makes animations flow faster and easy to use. GSAP enables developers to create animations that look great in all major browsers, such as, Chrome, Firefox Mozilla, and Internet Explorer 11+.
 It has a ton of features that make it unique:
-GSAP is used with DOM elements, CSS animations, SVG, WebGL, strings, colors, and motion paths. Also, it solves problems when things fall apart on browsers, thus enabling animations to work well.
+
+We use GSAP with DOM elements, CSS animations, SVG, WebGL, strings, colors, and motion paths. Also, it solves problems when things fall apart on browsers, thus enabling animations to work well.
+
 Here is a simple example of GSAP:
 
 ```html
@@ -387,13 +424,12 @@ Here is a simple example of GSAP:
 ![GSAP.js](/engineering-education/best-javascript-animation-libraries/gsapjs.gif)
 
 ### Popmotion.js
-
 [Popmotion.js](https://popmotion.io/) is a lightweight and robust JavaScript animation library. It is powerful because it supports animations like Keyframes, spring, decay, and complex animations.
 Popmotion.js makes it easy for front-end developers and web designers to animate 3D objects, React components, SVG, CSS, and DOM elements.
 
 ### Typed.js
+[Typed.js](https://mattboldt.com/demos/typed-js/) is a JavaScript animation library that provides the experience of creating a typing animation on your webpage. It has various options to change how the animations function.
 
-[Typed.js](https://mattboldt.com/demos/typed-js/) is a JavaScript animation library that provides the experience of creating a typing animation on your webpage. It has various options to modify how the animations function.
 Typed.js options include; strings, type speed, start delay, loop, back speed, and back delay.
 
 To get started with type.js, download the latest version of the animation library from GitHub or use [type.js CDN](https://github.com/mattboldt/typed.js/blob/master/README.md). Then include the script to your page using a script tag.
@@ -449,12 +485,15 @@ body {
 ![Type.js](/engineering-education/best-javascript-animation-libraries/typejs.gif)
 
 ### Conclusion
+There are many JavaScript animation libraries that can be implemented on your projects. Those listed above are a few with the best combination of complexity, ease, and stability. Each animation library differs from others and each fit different situations.
 
-There are very many JavaScript animation libraries that can be implemented on your projects. Those listed above are a few with the best combination of complexity, ease, and stability. Each animation library is different from another and suites many different situations.
-Suppose you are looking for a powerful animation. The best JavaScript library options to go for is Anime.js, Velocity.js, GreenSock.js, and Popmotion.js.
-If you are looking for an audio library, the best option is Howler.js. If you want to do 3D animations, the best JavaScript animation to use is Three.js.
-If you are looking for a JavaScript animation library that is best for creating typing animations used on webpages, then Type.js is the best option.
-Although using a JavaScript animation library makes your web application stand out. Overdoing it beats the purpose and often confuses the user. Be careful and sensibly use animations.
+Let’s suppose you are looking for a powerful animation. The best JavaScript library options to go for is Anime.js, Velocity.js, GreenSock.js, and Popmotion.js.
+
+If you are looking for an audio library, the best option is Howler.js. If you want 3D animations, the best JavaScript animation to use is Three.js.
+
+If you are looking for a JavaScript animation library great for creating typing animations used on webpages, then Type.js is the best option.
+
+Although using a JavaScript animation library makes your web application stand out. Overdoing it, beats the purpose and often confuses the user. Be careful and sensibly use animations.
 
 ---
 Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
