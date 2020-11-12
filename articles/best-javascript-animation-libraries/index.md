@@ -455,3 +455,6 @@ Suppose you are looking for a powerful animation. The best JavaScript library op
 If you are looking for an audio library, the best option is Howler.js. If you want to do 3D animations, the best JavaScript animation to use is Three.js.
 If you are looking for a JavaScript animation library that is best for creating typing animations used on webpages, then Type.js is the best option.
 Although using a JavaScript animation library makes your web application stand out. Overdoing it beats the purpose and often confuses the user. Be careful and sensibly use animations.
+
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
