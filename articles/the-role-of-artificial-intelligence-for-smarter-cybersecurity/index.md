@@ -79,7 +79,7 @@ Artificial intelligence promotes and enhances cybersecurity. Lately, cybersecuri
 
 Attackers also take advantage of AI to find loopholes in cybersecurity and plan their attacks. Using AI in cybersecurity is expected to advance in the future, thus ensuring that systems can respond better to attacks.
 
-### Additional Resources
+### Sources & Additional Resources
 - https://blog.eccouncil.org/the-role-of-ai-in-cybersecurity/
 
 - https://www.balbix.com/insights/artificial-intelligence-in-cybersecurity/
