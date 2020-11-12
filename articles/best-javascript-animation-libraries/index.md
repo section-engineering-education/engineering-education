@@ -48,6 +48,7 @@ Here is a simple example of anime.js;
   </body>
 </html>
 ```
+![Anime.js](/engineering-education/best-javascript-animation-libraries/animejs.gif)
 
 ### Howler.js
 
@@ -149,9 +150,11 @@ button {
   cursor: pointer;
 }
 ```
+![KUTE.js](/engineering-education/best-javascript-animation-libraries/kutejs.gif)
+
 ### Mo.js
 
-[Mo.js](http://mojs.io/) is a JavaScript animation library that is dedicated to motion graphics for web use. This animation library is fun and fantastic in that you do not have to be a great developer or artist to make animations. Mo.js, compared to other animation libraries, have a distinct syntax and code animation structure approach.
+[Mo.js](https://mojs.github.io/) is a JavaScript animation library that is dedicated to motion graphics for web use. This animation library is fun and fantastic in that you do not have to be a great developer or artist to make animations. Mo.js, compared to other animation libraries, has a distinct syntax and code animation structure approach.
 Mo.js is good at click-to-animate micro-interactions, dynamic lettering, and dozens of shape manipulations. Using Mo.js on your web app enhance your skills, improve your content visually, and make spectacular animations.
 Here is an example of Mo.js;
 
@@ -262,6 +265,8 @@ body {
   font-weight: 300;
 }
 ```
+![Mo.js](/engineering-education/best-javascript-animation-libraries/mojs.gif)
+
 ### Velocity.js
 
 [Velocity.js](http://velocityjs.org/) is a JavaScript animation library for fast performing animations. It was created by [Julian Shapiro](https://github.com/julianshapiro/velocity) to solve the problem of JQuery's slowness when animating complex or extensive animations. Velocity.js works with and without JQuery. It uses same API as JQuery ```$.animate()```, to use velocity.js you replace instances from ```$.animate()``` to ```$.velocity()```.
@@ -332,6 +337,8 @@ canvas {
   display: block;
 }
 ```
+![Three.js](/engineering-education/best-javascript-animation-libraries/three.gif)
+
 ### GreenSock.js
 
 [GreenSock Animation Platform (GSAP)](https://greensock.com/) is a powerful JavaScript animation library that is lightweight. It makes animations flow faster and easy to use. GSAP enables developers to create animations that look great in all major browsers, such as, Chrome, Firefox Mozilla, and Internet Explorer 11+.
@@ -377,6 +384,8 @@ Here is a simple example of GSAP:
   </body>
 </html>
 ```
+![GSAP.js](/engineering-education/best-javascript-animation-libraries/gsapjs.gif)
+
 ### Popmotion.js
 
 [Popmotion.js](https://popmotion.io/) is a lightweight and robust JavaScript animation library. It is powerful because it supports animations like Keyframes, spring, decay, and complex animations.
@@ -387,12 +396,7 @@ Popmotion.js makes it easy for front-end developers and web designers to animate
 [Typed.js](https://mattboldt.com/demos/typed-js/) is a JavaScript animation library that provides the experience of creating a typing animation on your webpage. It has various options to modify how the animations function.
 Typed.js options include; strings, type speed, start delay, loop, back speed, and back delay.
 
-To get started with type.js, download the latest version of the animation library from GitHub. Then include the script to your page using a script tag.
-```html
- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-  <script src="typed.js"></script>
-  ```
-  Type.js example
+To get started with type.js, download the latest version of the animation library from GitHub or use [type.js CDN](https://github.com/mattboldt/typed.js/blob/master/README.md). Then include the script to your page using a script tag.
 
 ```html
 <!DOCTYPE html>
@@ -442,10 +446,12 @@ body {
   width: 100%;
 }
 ```
+![Type.js](/engineering-education/best-javascript-animation-libraries/typejs.gif)
+
 ### Conclusion
 
 There are very many JavaScript animation libraries that can be implemented on your projects. Those listed above are a few with the best combination of complexity, ease, and stability. Each animation library is different from another and suites many different situations.
-Suppose you are looking for a powerful animation. The best JavaScript library option to go for is Anime.js, Velocity.js, GreenSock.js, and Popmotion.js.
+Suppose you are looking for a powerful animation. The best JavaScript library options to go for is Anime.js, Velocity.js, GreenSock.js, and Popmotion.js.
 If you are looking for an audio library, the best option is Howler.js. If you want to do 3D animations, the best JavaScript animation to use is Three.js.
 If you are looking for a JavaScript animation library that is best for creating typing animations used on webpages, then Type.js is the best option.
-Although using a JavaScript animation library makes your web application stand out. Overdoing it beats the purpose and often confuse the user. Be careful and sensibly use animations.
+Although using a JavaScript animation library makes your web application stand out. Overdoing it beats the purpose and often confuses the user. Be careful and sensibly use animations.
