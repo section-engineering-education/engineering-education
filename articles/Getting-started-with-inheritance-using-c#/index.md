@@ -29,7 +29,7 @@ A **Base** class produces derived classes that inherit the properties of the bas
 
 Inheritance forms a tree-like Hierarchy:
 
-![inheritance tree](/engineering-education/Getting-started-with-inheritance-using-c#/tree-of-inheritance.jpg)
+![inheritance tree](/engineering-education/Getting-started-with-inheritance-using-c#/tree-of-inheritance.png)
 
  **In inheritance**, an object is often an object of another class and all derived classes are objects of their base class,
  also, note that constructors are not inherited. This is how you specify a class child derived from class father: `class child: father`.
