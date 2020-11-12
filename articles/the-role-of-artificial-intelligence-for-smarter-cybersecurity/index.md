@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/the-role-of-artificial-intelligence-for-smarter-cybersecurity/
 title: Artificial Intelligence for Smarter Cybersecurity
-description:
+description: This article will discuss how machine learning and artificial intelligence improve cybersecurity in four important areas: network security, data centers, threat hunting, and vulnerability management.
 author: eric-kahuha
 date: 2020-11-12T00:00:00-10:00
 topics: []
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/the-role-of-artificial-intelligence-for-smarter-cybersecurity/hero.jpg
-    alt:  example image
+    alt: AI and Cybersecurity example image
 ---
 Organizations continue to embrace the Internet of Things (IoT), the cloud, and mobile technology. This has influenced considerable changes in the threat landscape and created more vulnerability points.
 <!--more-->
