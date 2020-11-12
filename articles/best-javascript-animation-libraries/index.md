@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/best-javascript-animation-libraries/
-title: Introduction to Neural Networks
+title: The Top 9 JavaScript Animation Libraries
 description: In this tutorial we will go over the best JavaScript animation libraries such as anime.js, howler.js, and KUTE.js to name a few.
 author: judy-nduati
 date: 2020-11-12T00:00:00-16:00
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/best-javascript-animation-libraries/hero.jpg
-    alt: deep learning image example
+    alt: JavaScript animation libraries image example
 ---
 A well known programming language used for animating web applications is JavaScript. In this article, we will discuss JavaScript animation libraries in more depth.
 <!--more-->
@@ -135,7 +135,8 @@ Here is some KUTE.js code. Remember to copy the CSS code below in a file named s
   </script>
 </html>
 ```
-style.css file:
+Style.css file:
+
 ```css
 body {
   margin: 40px;
@@ -254,7 +255,8 @@ Here is an example of Mo.js;
   </script>
 </html>
 ```
-Mo.js style.css file;
+Mo.js style.css file:
+
 ```css
 body {
   margin: 20px auto;
@@ -360,7 +362,8 @@ Three.js example;
   </body>
 </html>
 ```
-style.css file:
+
+Style.css file:
 
 ```css
 body {
@@ -465,7 +468,7 @@ To get started with type.js, download the latest version of the animation librar
 </html>
 ```
 
-Here is type.js style.css file
+Here is type.js style.css file:
 
 ```css
 body {
