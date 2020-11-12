@@ -525,4 +525,4 @@ For example, where users interact with the system's component by creating user a
 - Divide logs into several log files in case you have an application with massive traffic.
 - Logging should be structured and done in levels.
 
-Hope the guide help you Undestand Winston!
+Hope the guide help you undestand Winston!
