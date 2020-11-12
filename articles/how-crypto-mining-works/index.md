@@ -1,4 +1,4 @@
-## How Does Cryptocurrency Mining Work?  
+### How Does Cryptocurrency Mining Work?  
 It is hard to talk about cryptocurrency without mentioning mining. Mining cryptocurrency is a complex mathematical system, generally utilizing cryptographic hashing algorithms. For the purposes of this article, Bitcoin mining at a high level will be examined. 
 
 ### What Does Mining Do for the Cryptocurrency?  
