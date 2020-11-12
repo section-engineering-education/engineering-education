@@ -217,13 +217,13 @@ Will do some logging from an express server that listens to port 3000.
 
 app.js:
 ```js
-var express = require('express');
+const express = require('express');
 
 //require logger.js
-var logger = require('./utils/log');
-var app = express();
-var port = 3000;
-var host = "localhost";
+const logger = require('./utils/log');
+const app = express();
+const port = 3000;
+const host = "localhost";
 
 //Dummy Express GET call
 app.get('/',(req,res) => {
@@ -233,7 +233,7 @@ app.get('/',(req,res) => {
 
 //Introduce error by using undefined variable 'y'
 app.get('/calc',(req,res) => {
-    var x = y + 10;
+    const x = y + 10;
     res.send(x.toString());
 })
 
@@ -375,7 +375,7 @@ usersLogger.info('User created!',
      {user_id: `${res._id}`,
      user_name: `${res.name}`,
      user_email: `${res.email}`,
-     );
+);
 usersLogger.error(`Unable to find user: ${err}`);
 ```
 
@@ -414,26 +414,23 @@ Morgan is designed to log errors the way servers like Apache and Nginx carry out
 Here is an example of a Morgan logger:
 
 ```js
-var express = require('express')
-var fs = require('fs')
-var morgan = require('morgan')
-var path = require('path')
-var app = express()
+const express = require('express')
+const fs = require('fs')
+const morgan = require('morgan')
+const path = require('path')
+const app = express()
 
-// create a write stream (in append mode) and make sure the file has read write access (chmod 777 especially for linux)
-var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'})
+// create a write stream (in append mode)
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
 // setup the logger
-app.use(morgan('combined', {stream: accessLogStream}))
+app.use(morgan('combined', { stream: accessLogStream }))
 
-app.get('/', function (req, res) {
-  res.send('hello, world!')
+app.get('/', (req, res) => {
+    res.send('Hello World!')
 })
-
-//server is listening
-app.listen(3000, function () {
-    console.log("Server started...");
-    console.log("Morgan logger with express...");
+app.listen(3000, () => {
+    console.log("Server Listening on port 3000");
 })
 ```
 
