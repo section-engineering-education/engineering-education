@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/breaking-down-kafka-vs-pulsar/
-title: Artificial Intelligence for Smarter Cybersecurity
+title: Breaking Down Kafka vs. Pulsar
 description: This article will compare Kafka and Pulsar in terms of architecture, geo-replication, and use cases for both.
 author: eric-kahuha
 date: 2020-11-12T00:00:00-10:00
@@ -19,17 +19,17 @@ Messaging systems are essential for their ability to enable remote communication
 This article will compare Kafka and Pulsar in terms of architecture, geo-replication, and use cases.
 
 ### An Overview of Apache Kafka
-[LinkedIn](https://engineering.linkedin.com/blog/2019/apache-kafka-trillion-messages) released [Apache Kafka](https://kafka.apache.org/) in 2011. The open-source event streaming platform was founded on the abstraction of a distributed commit log. It can manage trillions of events daily. Kafka’s functionality consists of publishing/subscribing (pub/sub), processing of event streams, and permanent storage.
+[LinkedIn](https://engineering.linkedin.com/blog/2019/apache-kafka-trillion-messages) released [Apache Kafka](https://kafka.apache.org/) in 2011. The open-source event streaming platform was founded on the concept of a distributed commit log. It can manage trillions of events daily. Kafka’s functionality consists of publishing/subscribing (pub/sub), processing of event streams, and permanent storage. To get a more in depth look at Kafka, check out this [Introduction to Kafka article here](/engineering-education/introduction-to-kafka/).
 
 ### An Overview of Apache Pulsar
-The original idea behind the development of [Apache Pulsar](https://pulsar.apache.org/) was to create a queuing system. But this has expanded in the latest releases to incorporate event streaming features. [Yahoo](http://www.yahoo.com/) originally developed Pulsar. But [Apache Software Foundation](https://www.apache.org/) has now taken control over the project.
+The original idea behind the development of [Apache Pulsar](https://pulsar.apache.org/) was to create a queuing system. But this has expanded in the latest releases to incorporate event streaming features. [Yahoo](http://www.yahoo.com/) originally developed Pulsar. But the [Apache Software Foundation](https://www.apache.org/) has now taken control over the project.
 
-Pulsar's developers wanted to create a program that could provide solutions to corporations that other open-source alternatives couldn't offer at the time. Consequently, Pulsar was founded to handle millions of partitions and topics with complete support for [multi-tenancy](https://www.gartner.com/en/information-technology/glossary/multitenancy#:~:text=Multitenancy%20is%20a%20reference%20to,logically%20isolated%2C%20but%20physically%20integrated.) and [geo-replication](https://en.wikipedia.org/wiki/Geo-replication).
+Pulsar's developers wanted to create a program that could provide solutions to corporations that other open-source alternatives couldn't offer at the time. Consequently, Pulsar was founded to handle millions of [partitions and topics](https://pulsar.apache.org/docs/en/concepts-messaging/#partitioned-topics) with complete support for [multi-tenancy](https://www.gartner.com/en/information-technology/glossary/multitenancy#) and [geo-replication](https://en.wikipedia.org/wiki/Geo-replication).
 
 ### Architecture
 Kafka is comprised of [Kafka Broker and ZooKeeper](https://kafka.apache.org/documentation/#brokerconfigs). The older version of ZooKeeper was used to store data relating to consumer groups such as topic consumption offsets. This has changed since then to include leadership election, service delivery, and metadata storage for the cluster.
 
-They center the messaging capabilities of Kafka on the Kafka Broker. Kafka Broker ends consumer and producer connections, sends messages to consumers and accepts new messages from producers. Kafka Broker’s storage of messages on disk provides message guarantees.
+They center the messaging capabilities of Kafka on the [Kafka Broker](https://jaceklaskowski.gitbooks.io/apache-kafka/content/kafka-brokers.html). Kafka Broker ends consumer and producer connections, sends messages to consumers and accepts new messages from producers. Kafka Broker’s storage of messages on disk provides message guarantees.
 
 Kafka Broker’s stateful nature means that a broker can only contain the complete state for its topics. If a broker fails, not just any broker can be used as a replacement.
 
@@ -40,7 +40,7 @@ Pulsar differs from Kafka by separating the messaging storage and messaging serv
 The Pulsar Broker serves messages between consumers and producers. With such a layered architecture, the Pulsar Broker is stateless. This allows for any broker to take over from another failed broker.
 
 ### Geo-Replication
-Pulsar's developers intended to create a message distribution application that could allow users to replicate messages between geographically different data centers. The geo-replication feature is fully integrated into Pulsar's administration interfaces. You can disable or enable the geo-replication feature at the namespace level.
+Pulsar's developers intended to create a message distribution application that could allow users to replicate messages between geographically different data centers. The geo-replication feature is fully integrated into Pulsar's administration interfaces. You can disable or enable the geo-replication feature at the [namespace](https://pulsar.apache.org/docs/en/admin-api-namespaces/#) (a namespace is basic administrative unit in Pulsar) level.
 
 As an administrator, you can decide on which topics to replicate. For individual producers, they can execute specific datacenters from receiving copies of messages they publish.
 
