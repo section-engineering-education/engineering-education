@@ -20,7 +20,7 @@ ReactiveX has created libraries for almost all programming languages. It has als
 In Android, it helps bring efficiency to application performance. It also ensures we have a clean and maintainable code. This article will go through the basics of RxJava and how to use it in Android development.
 
 #### Prerequisites
-To follow through this article, you need :
+To follow through this article, you'll need:
 - Android Studio installed
 - Basic understanding of Android development using Kotlin
 - Experience with retrofit and room
@@ -118,7 +118,7 @@ We use retrofit to make network calls in Android applications. It has support fo
 implementation 'com.squareup.retrofit2:adapter-rxjava2:2.8.1'
 ```
 
-You only need to add it when initializing retrofit. We also initialize the RxJava call adapter with a Scheduler. This is because all network calls are not CPU intensive, so we use the `io` scheduler. We don't need to define the scheduler when getting the data. We define the return of our retrofit calls as `Single` since we get one entity.
+You only need to add it when initializing retrofit. We also initialize the RxJava call adapter with a Scheduler. This is because all network calls are not CPU intensive, so we use the `io` scheduler. We need not define the scheduler when getting the data. We define the return of our retrofit calls as `Single` since we get one entity.
 
 ```kotlin
 
@@ -140,7 +140,7 @@ AndroidX Room also has support for RxJava. It helps us create observables for th
 
 Once we get data from the network in the application, we save it to the database. Once data insertion is successful, we send a Toast to the user to notify them. We observe completion using completable.
 
-The support library is added using the dependency below.
+It adds the support library using the dependency below.
 
 ```gradle
 //RxJava room support
@@ -162,16 +162,16 @@ fun addUsers(users: Users): Completable
 
 Those are some of the ways to integrate RxJava to common tasks in an application. But there is a new word in the `MainViewModel` file, i.e., `CompositeDisposable`. A compositedisposable holds multiple disposables. When we subscribe to an observer, we create a disposable.
 
-A disposable is a link between the observable and the observer. This disposable needs to be destroyed if it's no longer in use. If not disposed, it leads to memory leaks, which is very bad for an application.
+A disposable is a link between the observable and the observer. This disposable needs to be destroyed if it’s no longer in use. If not disposed, it leads to memory leaks, which is terrible for an application.
 
-We dispose them using the `.dispose()` method. The preferred time to dispose them is after the activity is destroyed. Once an activity is destroyed, the `onCleared` method in the viewmodel is called. That method is where we dispose our disposables. But what if we had 100 disposables.
+We dispose them using the `.dispose()` method. The preferred time to dispose them is after it destroys the activity. Once an activity is destroyed, the `onCleared` method in the viewmodel is called. That method is where we dispose our disposables. But what if we had 100 disposables.
 
-It would lead to 100 statements to clear each disposable. That is where compositedisposables come in. Once a compositedisposable is disposed, all the disposables in it are also disposed. We use it to hold all our disposables and have only one method call to clear all our disposables.
+It would lead to 100 statements to clear each disposable. That is where compositedisposables come in. Once a compositedisposable is disposed, it also disposes all the disposables in it. We use it to hold all our disposables and have only one method call to clear all our disposables.
 
 #### Conclusion
-With that, we have gone through the basics of RxJava and some of its observables. You will notice that the the code is clean and readable. It also ensures better thread management to avoid memory leaks that were present with Async tasks.
+With that, we have gone through the basics of RxJava and some of its observables. You’ll notice that the code is clean and readable. It also ensures better thread management to avoid memory leaks present with Async tasks.
 
-Go ahead and clone the repo to try out different observables. An installation package for the demo application can be found on [Google Drive](https://drive.google.com/file/d/1hW3fXiUErFSNzMSB4ZahTcnvUgK92Stg/view?usp=sharing). Next up we will look at the different RxJava operators and their different roles.
+Go ahead and clone the repo to try out different observables. We can find an installation package for the demo application on [Google Drive](https://drive.google.com/file/d/1hW3fXiUErFSNzMSB4ZahTcnvUgK92Stg/view?usp=sharing). Next up we will look at the different RxJava operators and their different roles.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
