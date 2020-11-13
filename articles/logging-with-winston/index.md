@@ -3,7 +3,7 @@ Assume you have an app running at the production level. If this app runs into an
 
 What are the possibilities of solving that problem? Perhaps by going back to the code and check if every line of code runs as expected. Well, you might think that it is possibly easier with a small app. However, there is a high chance this will take you time and energy of concentration trying to pip on your small app codes. You get the idea, how this could be for an extensive system. Suppose, let's say, an instance where the app collects some user's information and save them into a database.
 
-If the system fails, the server will return database connections error to the user end. It would be best if you caught those instances and solve such errors. In such a case, how do you get to know that user a or use b run into an individual system error?
+If the system fails, the server will return a system error to the user end. It would be best if you caught those instances and solve such errors. In such a case, how do you get to know that user a or use b run into an individual system error?
 
 If you need to avoid such kind of frustration, you cannot avoid logging. Yes, logging is something you can’t avoid. A log is the first place to look as a programmer, to track down errors and flow of events, especially from a server. A log tells you what happens when an app is running and interacting with your users. A great use case for logging would be if, for example, you have a bug in your system, and you want to understand the steps that led up to its occurrence.
 
@@ -127,7 +127,7 @@ const logConfiguration = {
         }),
         new winston.transports.File({
             level: 'error',
-// Create the log directory if it does not exist
+            // Create the log directory if it does not exist
             filename: './logs/example.log'
         })
     ]
@@ -187,9 +187,9 @@ Output:
 ```
 
 ### Configuring Winston With a Server
-Let’s create a simple Express server that we can do some logging using Winston.
+Let’s create a simple Express server that we can do some logging using Winston. This will be a small project to get you on feet using Winston to record logs from server requests and responses.
 
-Go ahead and install the [Express](/engineering-education/express/) library with `npm install express`. This will be a small project to get you on feet using Winston to record logs from server requests and responses.
+Go ahead and install the [Express](/engineering-education/express/) library with `npm install express`.
 
 This is the structure of our small project:
 
@@ -273,7 +273,7 @@ From the above example:
 When the server is running, accessing the following pages will create a log every time the link is invoked.
 - http://localhost:3000/ - the server will send a hello world message. We want Winston to capture that and record it in our log file.
 - http://localhost:3000/calc - we are trying to add variable `y` to variable `x`. In this case, variable `y` is not defined. This will generate an error, and we want Winston to capture such instances for us.
-- http://localhost:3000/hello - the services we have created have no such a link. We want Winston to inform us when a link that points to our IP address is accessed but can't be found, that is a `404` error.
+- http://localhost:3000/hello - the server we have created have no such a link. We want Winston to inform us when a link that points to our IP address is accessed but can't be found, that is a `404` error.
 
 Like we said earlier, Winston is well suited to configure different log destinations. In our small app, let create another transport. This time, I want to save the logs to a database, [MongoDB](https://www.mongodb.com/try/download/community) to be concise. On the `app.js` file, replicate the following code block. Make sure you install [Winston MongoDB](https://www.npmjs.com/package/winston-mongodb), i.e. `npm install winston-mongodb`. If you are new to MongoDB, we got a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
 
@@ -313,9 +313,9 @@ transports:[
 });
 ```
 
-Logs will be recorded into `example.log` file, and any error logs will be recorded in a MongoDB database.
+Logs will be recorded into `example.log` file, and any `error` logs will be recorded in a MongoDB database.
 
-**Note:** MongoDB transports take a JSON format. To save these logs in a mongo database, we need to convert them to a JSON format. It is the only format to insert a record into a mongo database collection.
+**Note:** MongoDB transport take a JSON format. To save these logs in a mongo database, we need to convert them to a JSON format. It is the only format to insert a record into a mongo database collection.
 
 ![MongoDB Transport](/engineering-education/logging-with-winston/mongo-db-transport.png)
 
@@ -353,7 +353,7 @@ module.exports = {
 
 In the above example, the application has two services, `users` and `transactions`. Creating different loggers for such services will be relevant. These distinguish an issue for various application services.
 
-For example, assuming a user.js file that processes user services' properties, the following example will apply for a simple log.
+For example, assuming a `user.js` file that processes user services' properties, the following example will apply for a simple log.
 
 ```js
 // Require logger.js
@@ -400,7 +400,7 @@ transactionLogger.error('Transaction Failed', `{${err}`,session_id: `${req.id}`}
 You will have easier logs management. Thus easier to debug an issue for a specific user account and transactions using user attributes such as `name`, `email`, and `id`. Transaction attributes as `transaction_id` and `transaction_code`.
 
 ### Winston vs Morgan vs Bunyan vs Log4js
-This guide discusses logging using Winston. However, there are other quality middleware logger packages worth mentioning. This include
+This guide discusses logging using Winston. However, there are other quality middleware logger packages worth mentioning. They include
 
 1. Morgan
 
@@ -413,7 +413,7 @@ The Logger function access objects such as `req` and `res`.
 
 The function will return a string log entry to the logline.
 
-Morgan is designed to log errors the way servers like Apache and Nginx carry out to the `access-log` or `error-log`.
+Morgan is designed to log errors the way servers like [Apache](https://httpd.apache.org/docs/1.3/logs.html) and [Nginx](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/) carry out to the `access-log` or `error-log`.
 
 Here is an example of a Morgan logger:
 
@@ -458,7 +458,7 @@ const log = bunyan.createLogger({ name: "myapp" });
 log.info("hi");
 log.warn({ lang: "fr" }, "au revoir");
 ```
-
+Output:
 ```js
 {"name":"myapp","hostname":"Doe","pid":14244,"level":30,"msg":"hi","time":"2020-11-12T08:22:41.398Z","v":0}
 {"name":"myapp","hostname":"Doe","pid":14244,"level":40,"lang":"fr","msg":"au revoir","time":"2020-11-12T08:22:41.4
@@ -514,7 +514,7 @@ When an application is at the production level, you can adapt many logging appro
 - Log request and responses
 - Do some logging during debug mode.
 
-#### What to log
+#### What to Log
 This primarily depends on what your application does.
 For example, where users interact with the system's component by creating user accounts, many users will invoke a log instance. In such a case, you need to stream your logs with the information that will help you track the log source, such as
 
@@ -527,4 +527,4 @@ For example, where users interact with the system's component by creating user a
 - Divide logs into several log files in case you have an application with massive traffic.
 - Logging should be structured and done in levels.
 
-Hope the guide helps you understand Winston!
+Hope the guide helps you understand Logging and able to apply Winston in your projects!
