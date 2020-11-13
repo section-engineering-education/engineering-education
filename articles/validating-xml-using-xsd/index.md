@@ -14,7 +14,7 @@ images:
     alt: Validating XML using XSD
 ---
 
-In this article, we will understand how validation of XML is done using XML Schema Definition (XSD). By the end of this article, you will get an overview of various techniques for validating XML tags and attributes using XML Schema Definition (XSD). You will also be learning step by step guide for validation. It is highly recommended to go through my [previous article](), to understand the basics of XML and its importance of validation.
+In this article, we will understand how validation of XML is done using XML Schema Definition (XSD). By the end of this article, you will get an overview of various techniques for validating XML tags and attributes using XML Schema Definition (XSD). You will also be learning step by step guide for validation. It is highly recommended to go through my [previous article](/engineering-education/validating-xml-using-dtd/), to understand the basics of XML and its importance of validation.
 
 <!--more-->
 
@@ -26,7 +26,7 @@ In this article, we will understand how validation of XML is done using XML Sche
 - [Further Reading](#further-reading)
 
 ### Introduction
-In our [previous article](), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using Document Type Definition (DTD).
+In our [previous article](/engineering-education/validating-xml-using-dtd/), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using Document Type Definition (DTD).
 
 [Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) helped us in validating the XML schema by parsing the structure of the XML document. But, we can't rely entirely on validation using DTD, since there are high chances of faulty data or data types mismatch in values. Usually, in DTD, we validate by parsing the XML structure, but in XML Schema Definition (XSD) we also understand the semantics of the schema, for validating.
 
