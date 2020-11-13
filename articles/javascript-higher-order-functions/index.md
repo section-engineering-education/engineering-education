@@ -1,17 +1,22 @@
 
 Functional programming is a significant building block for JavaScript as a language. They are some of the common scrips that you will continuously use when building JavaScript applications. Functions set statements to perform tasks. Functions define a task, which you can call and execute whenever you want inside your program.
 
-JavaScript treats a function as an object assigned to values to return a value. They have methods and properties, just like the other objects.
+JavaScript treats a function as an object assigned to values to return a value. They have methods and properties, just like the other objects. Unlike ordinary objects, a function can be
 
-Unlike ordinary objects, a function can be called. A function can be passed as an argument assigned to a value and can be returned by another function. Functions are fundamental that outside the "normal" functions, JavaScript has high order functions.
+- Called.
+- Passed as an argument to another function.
+- Assigned to a variable as a value.
+- Be returned by another function.
 
-Higher-order functions are functions that take other functions as arguments or return functions as their outputs. Often referred to as a callback function. This is a concept that JavaScript uses a lot. Functions that are passed as an argument to another function are what we refer to as callback functions because that function calls it back.
+Functions are fundamental that outside the "normal" functions, JavaScript has high order functions.
+
+A high order function accepts another function as an argument or returns a function as its output. The concept is commonly referred to as a callback function. A function that takes another function as its argument is what we refer to as a callback function because it calls back that function.
 
 In this guide, we learn about high order function. We will discuss and show you some of the come built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each` and `reduce`.
 
 ### Array.prototype.filter
 
-`filter()` allows you to filter things in an array. It is a method that returns an array. It creates a new array of elements. The elements have to pass a test provided by a callback function. The new array composes an input array being tested. This new array created by the `filter()` method takes all the elements that pass a callback function test.
+`filter()` allows you to filter things in an array. It is a method that returns an array. It creates a new array of elements. The callback funtion test every input array element. The `filter()` method composes all the elements that pass the callback function test and return a new array.
 
 Let's digest this information with examples.
 
@@ -132,7 +137,7 @@ A filter callback function takes the following parameters:
 - Index - holds the current index of the array element.
 - Array object being tested.
 
-Every element that passes the callback, `filter()` return a new array for these elements. That means if no element passes the test, the array return value will be empty. Elements that do not pass the callback test are skipped and not included in the new filtered array.
+Every element that passes the callback, `filter()` return a new array for these elements. That means if no element passes the test, the array return value will be empty. An element that fails the callback test is skipped and not included in the new filtered array.
 
 ### Array.prototype.reduce
 
@@ -155,7 +160,7 @@ array.reduce(callback[, initialValue])
 The `reducer` callback function accepts two mandatory arguments
 
 - Accumulator - accumulates the previously returned value returned by the last callback invocation. I.e., the initialValue passed to `reduce()` method.
-- Current value - the value of the current element being processed by the callback.
+- [Current value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) - the value of the current element being processed by the callback.
 
 ```js
 array.reduce(callback( accumulator, currentValue[, index[, array]){
@@ -208,7 +213,7 @@ The callback function will be called five times. The accumulator will hold the l
 
 `reduce()` will return the last invoked callback. In this case, 45
 
-It is important to note, for the first invoked callback, the value of the accumulator is the value of the first element in the input array. And the index of the first processed array element is 1 and the value 6, which is the second element. Think about it. It actually makes sense. If you look back to callback syntax, the accumulator takes the first element as the initial value. If this didn't happen, the first value of the array would be counted two times.
+It is important to note, for the first invoked callback, the value of the accumulator is the value of the first element in the input array. And the index of the first processed array element is 1 and the value 6, which is the second element. Think about it. It actually makes sense. If you look back to callback syntax, the accumulator takes the first element as the initial value.  If that didn't occur, the 1st element of the input array would be calculated twice.
 
 Using the optional `InitialValue` argument, we can pass an `InitialValue` value as the second argument to `reduce()`.
 
@@ -237,11 +242,11 @@ We can conclude tha the first callback would take the first element's value if n
 
 ### Array.prototype.map
 
-The `map()` method creates a new array by calling a callback function. It executes a provided callback function once for every element provided in the input array. The callback function is applied to all the elements of the input array.
+The `map()` method composes a new array by returning the results of a callback function. It executes a provided callback function once for every element provided in the input array. The callback function is applied to all the elements of the input array.
 
 Let’s digest this with examples.
 
-Suppose in our previous array of `[2, 4, 89, 0.67, 7.47, 20]`, we want to multiply every element, let's say `4`. This is how we can multiply the elements without a high order function.
+Suppose in our previous array of `[2, 4, 89, 0.67, 7.47, 20]`; we want to multiply every element, let's say `4`. This is how we can multiply the elements without a high order function.
 
 ```js
 const inputArray = [2, 4, 89, 0.67, 7.47, 20];
@@ -273,11 +278,11 @@ console.log(upperCasedAnimals);
 // new array ['CAT', 'DOG', 'COW', 'GOAT', 'SHEEP', 'DONKEY', 'PIG', 'HORSE']
 ```
 
-In the example above `map()` creates a new array. It takes the passed callback as an argument. In this case, the argument element will be applied to each element in the input array. `map()` build a new array from the retuned callback values.
+In the examples above, `map()` returns a new array. It takes the passed callback function. `map()` build a new array from the retuned callback values.
 
 ### For Each
 
-It executes a provided callback function once for each element in the input array in ascending order. `For each` reference to a callback function once. The callback function calls every member of the input array.
+It executes a provided callback function once for each element in the input array in [ascending order](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).  `For each` reference to a callback function once. The callback function calls every member of the input array.
 
 `For each` takes one mandatory callback function. The function will be called once in each element in ascending order.
 
