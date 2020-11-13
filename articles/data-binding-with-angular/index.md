@@ -291,7 +291,7 @@ export class PropertyBindingComponent{
 }
 ```
 
-![two-way-binding](/engineering-education/data-binding-with-angular/two-way-binding.gif =600x400)
+![two-way-binding](/engineering-education/data-binding-with-angular/two-way-binding.gif)
 
 - The NgModel used here is a [*directive*](https://angular.io/guide/built-in-directives#ngModel) that displays the data property and updates the property when the user makes the changes. It requires *FormsModule* to be imported before using it.
 - The `studentID` variable is registered to user input changes and gets updated simultaneously.
