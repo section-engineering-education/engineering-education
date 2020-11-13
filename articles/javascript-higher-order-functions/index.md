@@ -1,9 +1,9 @@
 
 Functional programming is a significant building block for JavaScript as a language. They are some of the common scrips that you will continuously use when building JavaScript applications. Functions set statements to perform tasks. Functions define a task, which you can call and execute whenever you want inside your program.
 
-JavaScript treat a function as an object assigned to values to return a value. They have methods and properties, just like the other objects.
+JavaScript treats a function as an object assigned to values to return a value. They have methods and properties, just like the other objects.
 
-Unlike ordinary objects, a function can be called. A function can be passed as an argument assigned to a value and can be returned by another function. Functions are that fundamental that outside the "normal" functions, JavaScript has high order functions.
+Unlike ordinary objects, a function can be called. A function can be passed as an argument assigned to a value and can be returned by another function. Functions are fundamental that outside the "normal" functions, JavaScript has high order functions.
 
 Higher-order functions are functions that take other functions as arguments or return functions as their outputs. Often referred to as a callback function. This is a concept that JavaScript uses a lot. Functions that are passed as an argument to another function are what we refer to as callback functions because that function calls it back.
 
@@ -233,7 +233,7 @@ In this case, we assigned `InitialValue` as 10. The callback function will be ca
 
 `reduce()` will return the last invoked callback. In this case, 55.
 
-We can conclude that, the first callback would take the first element's value if no initial value passed. If the `InitialValue` is passed, the callback will take the `InitialValue` as the first callback.
+We can conclude tha the first callback would take the first element's value if no initial value passed. If the `InitialValue` is passed, the callback will take the `InitialValue` as the first callback.
 
 ### Array.prototype.map
 
