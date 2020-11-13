@@ -3,9 +3,9 @@ Functional programming is a significant building block for JavaScript as a langu
 
 JavaScript treat function as an object assigned to values to return value. They have methods and properties, just like the other objects. JavaScript calls them first-class objects.
 
-Unlike regular objects, a function can be called. A function can be passed to an argument assigned to a value and can be returned by another function. Functions are that fundamental that outside functions, JavaScript has high order functions. They are critical, and I think we should talk about them.
+Unlike ordinar objects, a function can be called. A function can be passed to an argument assigned to a value and can be returned by another function. Functions are that fundamental that outside functions, JavaScript has high order functions. They are critical, and I think we should talk about them.
 
-Higher-order functions are functions that take other functions as arguments or return functions as their outputs. Often referred to as a callback function. This is a concept that JavaScript uses a lot. Functions that are passed as an argument to another function are what we refer to as callback functions because it is called back by that function.
+Higher-order functions are functions that take other functions as arguments or return functions as their outputs. Often referred to as a callback function. This is a concept that JavaScript uses a lot. Functions that are passed as an argument to another function are what we refer to as callback functions because that function calls it back.
 
 In this guide, we learn about high order function. We will discuss and show you some of the come built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each` and `reduce`.
 
@@ -39,9 +39,9 @@ We want to filter all domestic animals whose names have three-letter.
 
 We want to filter adult ages 18 and older.
 
-#### Example one: without `filter()` method
+#### Example One: without `filter()` Method
 
-##### Domestic animals
+##### Domestic Animals
 
 ```js
 const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"];
@@ -81,9 +81,9 @@ console.log(anAdult);
 
 The examples above log and filter the test as we told it to. However, these methods can get cumbersome. For example, with a big app that has a large number of adults to filter age or other adult elements. The examples are a bit lengthy and need a lot of code setup. We can compose this further using high order functions.
 
-#### using HIGH order Functions
+#### Example Two: Using High Order Functions
 
-##### Domestic animals
+##### Domestic Animals
 
 ```js
 const dAnimals = Animals.filter(function(animal) {
@@ -107,7 +107,7 @@ console.log(anAdult);
 
 We get the same results. But this time, our code is getting small and compact. No looping any more to iterate the original array to `anAdult.push(adults[i]);`
 
-#### Arrow Function
+####  Example Three: Arrow Function
 
 With ES6, it is unbelievable that we can compose this further using the arrow function.
 
@@ -119,7 +119,7 @@ const anAdult = adults.filter(adults => adults.age >= 18);
 
 In just one line of code and we get the same results.
 
-So how does `filter()` magically walk us to such fine results with just a few lines of code? `filter()` calls the passed callback once for every element being tested. `filter()` accepts the arguments of the callback function. This callback is what holds the value of the element being processed with the syntax below.
+So how does `filter()` magically walk us to such satisfying results with just a few lines of code? `filter()` calls the passed callback once for every element being tested. `filter()` accepts the arguments of the callback function. This callback is what holds the value of the element being processed with the syntax below.
 
 ```js
 let newArray = arr.filter(callback(currentValue[, index, [array]){
@@ -173,7 +173,7 @@ Imagine getting the sum of these array elements. We can use loops are we demonst
 
 Let’s demonstrate with examples.
 
-#### Using loops (No high order function)
+#### Using Loops (No High Order Function)
 
 ```js
 const sum = [5, 6, 7, 8, 9, 10];
@@ -185,7 +185,7 @@ console.log(total);
 // we get 45
 ```
 
-#### Using high order function reducer
+#### Using High Order Function `reducer`
 
 ```js
 const sum = [5, 6, 7, 8, 9, 10];
@@ -232,8 +232,7 @@ In this case, we assigned InitialValue as 10. The callback function will be call
 | 6th call  | 45          | 10           | 5            | 55             |
 
 `reduce()` will return the last invoked callback. In this case, 55.
-
-We can conclude that if no initial value passed, the first callback would take the first element's value. If the initial value is passed, the callback will take the Initilavalue as the first callback.
+We can conclude that the first callback would take the first element's value if no initial value passed. If the initial value is passed, the callback will take the Initilavalue as the first callback.
 
 ### Array.prototype.map
 
@@ -284,7 +283,7 @@ It executes a provided callback function once `for each` element in the input ar
 The callback takes three Parameters:
 - Current value - a mandatory parameter that holds the current element value in the array.
 - Index - the array index of the current element array position.
-- Array - an optional parameter that holds a complete array from where for each was called.
+- Array - an optional parameter that holds a complete array from where `for each` was called.
 
 Syntax:
 
@@ -295,7 +294,7 @@ array.forEach(callback (currentValue, index, array) {
 ```
 
 For example:
-#### A for loop
+#### A `for` loop
 
 ```js
 const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"];
@@ -305,7 +304,7 @@ for (let i = 0; i < Animals.length; i++) {
 console.log(dAnimals);
 ```
 
-#### Converting a for loop to a high order function using for each
+#### Converting a `for` Loop to a High Order Function Using `for each`
 
 ```js
 const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "Horse"];
