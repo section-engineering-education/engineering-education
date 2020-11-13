@@ -308,7 +308,7 @@ console.log(dAnimals);
 #### Converting a `for` Loop to a High Order Function Using `for each`
 
 ```js
-const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "Horse"];
+const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"];
 Animals.forEach((anim) =>{
   console.log(anim)
 })
