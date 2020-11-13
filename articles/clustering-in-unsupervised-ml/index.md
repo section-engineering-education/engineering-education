@@ -1,9 +1,11 @@
+## Clustering in Unsupervised Machine Learning
+
 ### Introduction to Unsupervised Machine Learning
-Unsupervised learning is a technique in machine learning that does not require the supervision of models by users. It is one of the categories of machine learning. The other two categories include reinforcement and supervised learning. 
+Unsupervised learning is a technique in machine learning (ML) that does not require the supervision of models by users. It is one of the categories of machine learning. The other two categories include reinforcement and supervised learning. 
 
 In unsupervised machine learning, a self-organized algorithm is utilized to enhance the self-discovery of unknown patterns that are in unlabeled datasets. 
 
-This is contrary to supervised machine learning that uses human-labeled data. Unsupervised learning algorithms use unstructured data that is grouped based on its similarities and patterns. 
+This is contrary to supervised machine learning that uses human-labeled data. Unsupervised learning algorithms use unstructured data that is grouped based on similarities and patterns.
 
 ### Why Unsupervised Learning is Important
 
@@ -11,7 +13,7 @@ Unsupervised learning is an important concept in machine learning. It saves data
 
 It is needed to create better forecasting, especially in threat detection. This can be achieved by developing network logs that enhance threat visibility. 
 
-This category of machine learning is also resourceful in the reduction of data dimensionality. Dimensionality reduction is needed in datasets that have very many features. In this case, unsupervised learning can analyze complex data to establish less relevant features. The model can then be simplified by dropping these features with insignificant effects on valuable insights. 
+This category of machine learning is also resourceful in the reduction of data dimensionality. Dimensionality reduction is needed in datasets that have very many features.Unsupervised learning can analyze complex data to establish less relevant features. The model can then be simplified by dropping these features with insignificant effects on valuable insights. 
 
 For example, an e-commerce business may use customers' data to establish shared habits. Using algorithms that enhance dimensionality reduction, irrelevant features of the data such as home address and weight may be dropped to simplify the analysis.
 
@@ -27,18 +29,18 @@ The left side of the image shows uncategorized data. On the right side, data has
 
 #### Why Clustering is Important 
 Clustering is important because of the following reasons;
-+ Through clusters, attributes of different entities can be profiled. This can subsequently enable users to sort data and analyze specific groups using these attributes.
++ Through clusters, attributes of different entities can be profiled. This can subsequently enable users to sort data and analyze specific groups.
 + Clustering enables businesses to approach customer segments differently based on their similarities and attributes. This helps in profit maximization.
 + It can help in dimensionality reduction if the dataset consists of too many variables. Irrelevant clusters can be identified easily and removed from the dataset.
 
-#### Types of Clustering in Unsupervised ML 
-The main types of clustering in unsupervised machine learning include K-Means, hierarchical clustering, Density-Based Spatial Clustering of Applications with Noise (DBSCAN), and Gaussian Mixtures Model (GMM). 
+#### Types of Clustering in Unsupervised Machine Learning 
+The main types of clustering in unsupervised machine learning include K-means, hierarchical clustering, Density-Based Spatial Clustering of Applications with Noise (DBSCAN), and Gaussian Mixtures Model (GMM). 
 
 ##### K-Means Clustering
 In K-means clustering, data is grouped in terms of characteristics and similarities. K is a letter that represents the number of clusters. For example, if K=5, then the number of desired clusters is 5. If K=10, then the number of desired clusters is 10.
 
 ###### Key Concepts
-The two main concepts of K-means clustering are squared euclidean distance and cluster inertia. Learning these concepts will help in understanding the algorithm steps of K-means clustering. 
+Squared euclidean distance and cluster inertia are the two main concepts in K-means clustering. Learning these concepts will help in understanding the algorithm steps of K-means clustering. 
 
 - _Squared Euclidean distance:_ If we have two points x and y, and the dimensional space given by m, the squared Euclidean distance will be given as;
 ![Squared Euclidean Distance](/engineering-education/clustering-in-unsupervised-machine-learning/squared-euclidean-distance.png)
@@ -71,7 +73,7 @@ Based on this information, we should note that the K-means algorithm aims at kee
 ##### Hierarchical Clustering
 In this type of clustering, an algorithm is used to construct a hierarchy (of clusters). This algorithm will only end if there is only one cluster left. 
 
-Unlike in K-means clustering, hierarchical clustering does not start by identifying the number of clusters. Instead, it starts by allocating each point of data to its cluster. 
+Unlike K-means clustering, hierarchical clustering does not start by identifying the number of clusters. Instead, it starts by allocating each point of data to its cluster. 
 
 A dendrogram is a simple example of how hierarchical clustering works. 
 ![Hierarchical Clustering Dendrogram](/engineering-education/clustering-in-unsupervised-machine-learning/hierarchical-clustering-dendrogram.png)
@@ -101,7 +103,7 @@ This is a density-based clustering that involves the grouping of data points tha
 2.	Identify border points and assign them to their designated core points. 
 3.	Any other point that is not within the group of border points or core points is treated as a nose point. This is an outlier.
 
-![DBSCAN Clustering](/engineering-education/clustering-in-unsupervised-machine-learning/DBSCAN-clustering.png)
+![DBSCAN Clustering](/engineering-education/clustering-in-unsupervised-machine-learning/dbscan-clustering.png)
 [Image Source: Git Book](https://yongle.gitbooks.io/datamining/content/figures/dbscan.png)
 
 ###### Advantages 
