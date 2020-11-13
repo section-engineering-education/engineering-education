@@ -6,7 +6,7 @@ url: /engineering-education/data-binding-with-angular/
 title: Introduction to Data Binding using Angular
 description: This tutorial will serve as an introduction to Data Binding using Angular with examples data methods.
 author: mahantesh-r
-date: 2020-10-29T00:00:00-16:00
+date: 2020-11-13T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: example image
 ---
 **Angular** is a platform and design framework used for building SPAs using HTML and TypeScript.
-Angular is written in TypeScript (although the first version, i.e. AngularJS, was written in JS). It is built upon a set of TypeScript libraries imported into our app; these libraries implement all the core functionalities required for an app to run.
+Angular is written in TypeScript (although the first version, i.e. AngularJS, was written in JS). It is built upon a set of TypeScript libraries already imported into our app; these libraries implement all the core functionalities required for an app to run.
 <!--more-->
 ### Terminologies
 Before diving into the tutorial, we'll get familiar with a couple of necessary terminologies used across all the Angular applications.
@@ -101,9 +101,9 @@ the result to an element or component.
 Not everything that we insert into the delimiter gets interpolated.
 A few exceptions come with string interpolation i.e. if the expression includes:
 
-- an assignment operators like `=`, `+=`, `-=`, and so on.
-- increment `++` and decrement `--` operators.
-- operators like `new`, `instanceof`, etc.
+- An assignment operators like `=`, `+=`, `-=`, and so on.
+- Increment `++` and decrement `--` operators.
+- Operators like `new`, `instanceof`, etc.
 
 Also, note that the same variable cannot be used more than once in any other interpolation delimiter within the same template file.
 
