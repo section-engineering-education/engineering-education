@@ -14,46 +14,46 @@ images:
     - url: /engineering-education/css-in-js-solutions/hero.jpg
       alt: code view on a laptop
 ---
-We now write the modern web in components and not pages. They designed CSS to declare styles in different files (.CSS) for each page of your web application, and this structure makes it challenging to maintain multiple stylesheets for multiple pages.
+The modern web is now written in components and not pages. CSS was designed to declare styles in different files (.CSS) for each page of your web application, and this structure makes it challenging to maintain multiple stylesheets for multiple pages.
 <!--more-->
 
 ### CSS-In-JS For Web Components
-Web components have changed the landscape for the development of web applications for front-end developers. Using web components provides ample opportunities to reuse and build UI components and custom elements critical in the development process of web applications.
+Web components have changed the landscape of development of web applications for front-end developers. The use of web components provides ample opportunities to reuse and build UI components and custom elements that are critical in the development process.
 
-Understanding web components might seem daunting for novice web developers. However, let’s take a web application that has two prime features― a dropdown menu and a navigation menu appears on all pages.
+Understanding web components might seem a bit daunting for novice web developers. However, let’s take a web application that has two prime features― a dropdown menu and a navigation menu appears on all pages.
 
-The traditional way of building web applications would require creating multiple CSS, JavaScript, and HTML files that have a dropdown and navigation menu as a feature.
+The traditional way of building web applications would require creating multiple CSS, JavaScript and HTML files that have a dropdown and navigation menu as a feature.
 
-This method of building web applications makes it difficult to maintain the codebase. But, if the generic features that span the entire web application can be isolated and built-in as components, then each web page will inherit that component and its generic features. This makes the dropdown and navigation menu components reusable, hence Web Components.
+This methodology of building web applications makes it difficult to maintain the codebase. But, if the generic features that span the entire web application can be isolated and built-in as components, then each web page will inherit that component and its generic features. This makes the dropdown and navigation menu components reusable, hence Web Components.
 
 ### CSS and Web Components
-Styling elements have been the underlying factor for the appeal of frontend web applications, and with it comes a clear understanding of web components and how it relates to CSS.
+Styling elements has been the underlying factor for the appeal of frontend web applications, and with it comes a clear understanding of web components and how it relates to CSS.
 
-A web component contains its own default CSS styling. When a webpage invokes a component, it brings its styling with it.
+A web component contains its own default CSS stylinng. When a webpage invokes a component, it brings its styling with it.
 
 However, you may not want the default component styles every time and this would require over-riding them. A technical approach to this issue is to create an external stylesheet for each web page inheriting the specific element, but this however also leads to a clogged codebase of CSS files.
 
-This gap in the simplification of your codebase concerning your CSS files is why you need to seek means of encapsulating your CSS code within your JavaScript files, rather than creating external stylesheets for each web component.
+This gap in the simplification of your codebase concerning your CSS files is why you need to seek out means of encapsulating your CSS code within your JavaScript files, rather than creating external stylesheets for each web component.
 
 Although web components simplify the development process of web applications, with it comes the barrier of maintaining multiple external style sheets when using CSS.
 
 Some solutions exist to simplify web component CSS, such as CSS-in-JS. CSS-in-JS will encapsulate your CSS code within your JavaScript files, rather than creating external stylesheets for each web component.
 
 ### What is CSS-in-JS and how does it benefit CSS Web Components?
-CSS-in-JS is a JavaScript library that offers a variety of techniques to style web components. CSS-in-JS resulted from the flaws in using CSS to style web applications, especially with custom elements, and some of which include scoping, specificity, portability, and dynamic functioning.
+CSS-in-JS is a JavaScript library that offers a variety of techniques to style web components. CSS-in-JS was a result of the flaws in using CSS to style web applications, especially with custom elements, and some of which include scoping, specificity, portability, and dynamic functioning.
 
-The adaptation of CSS-in-JS libraries over CSS is because of stylesheets loading in any order, which sometimes override each other. Meanwhile, before CSS-in-JS, developers applied specific CSS methodologies to ensure modular, reusable, and scalable styling, and some of these methodologies are [BEM](http://getbem.com/introduction/), [OOCSS](http://oocss.org/), and [SMACSS](http://smacss.com/) amongst others.
+The adaptation of CSS-in-JS libraries over CSS is as a result of stylesheets loading in any order, which sometimes override each other. Meanwhile, before the advent of CSS-in-JS, developers applied specific CSS methodologies to ensure modular, reusable, and scalable styling, and some of these methodologies are [BEM](http://getbem.com/introduction/), [OOCSS](http://oocss.org/), and [SMACSS](http://smacss.com/) amongst others.
 
-CSS-in-JS is an improvement over pure CSS for various reasons, but the end goal results from the need for a simpler, easier to maintain codebase. Rather than maintaining multiple external stylesheets, CSS-in-JS solutions provide us with different libraries with specific advantages for developers to choose from in the development of their web applications.
+CSS-in-JS is an improvement over pure CSS for various reasons, but the end goal is a result of the need for a simpler, easier to maintain codebase. Rather than maintaining multiple external stylesheets, CSS-in-JS solutions provide us with different libraries with specific advantages for developers to choose from in the development of their web applications.
 
-CSS-in-JS is the best styling technique to use with web components. But this doesn’t render CSS redundant because it has its pros and cons.
+CSS-in-JS is the best styling technique to use with web components. But, this doesn’t render CSS redundant because it certainly does have its pros and cons.
 
 ![A code example of style declaration in the JavaScript variable font](/engineering-education/css-in-js-solutions/js.png)
 
 ### Pros of CSS
 1. Inline Styling: The use of inline styles enhances website performance because the browser loads the CSS within elements faster before loading external styles.
 
-2. Reduction in Redundancy: With inline styles, you can avoid redundant code and only declare CSS styles to a particular element when needed, this way, all extraneous code sis removed.
+2. Reduction in Redundancy: With inline styles, you can avoid redundant code and only declare CSS styles to a particular element when needed, this way, all extraneous code is removed.
 
 3.  External stylesheets: Inline-styles aren't the only way to write CSS.  External stylesheets keeps your codebase organized and allows you to store all CSS code within a single file and reference them in webpages that need them.
 
@@ -62,15 +62,15 @@ CSS-in-JS is the best styling technique to use with web components. But this doe
 ### Cons of CSS
 1. Overriding Inline Styles: The advantage of using inline styling is because of the acceleration of website performance, but it also results in a challenge when trying to override styles.
 
-Overriding styles is a bit of an issue without the keyword. When you use inline styles and try to override them in your stylesheet,  you can’t do that without using the keyword.
+Overriding styles is a bit of an issue without the !important keyword. When you use inline styles and try to override them in your stylesheet, you can't do that without using the !important keyword.
 
-The keyword is bad CSS practice. It disrupts the natural flow in applying the CSS rules where in properties are applied from top to bottom. With the property will now give priority to the latest value.
+The !important keyword is a bad CSS practice. It disrupts the natural flow in applying the CSS rules where in properties are applied from top to bottom. With !important, the property will now give priority to the latest !important value.
 
-2. Compatibility: One disadvantage of CSS is its compatibility issues across browsers. What works in Internet Explorer might not work in Google Chrome. Yet, web developers have to run compatibility tests with their CSS code or write their code based on the browsers accessing the website.
+2. Compatibility: One of the disadvantages of CSS is its compatibility issues across browsers. What works in Internet Explorer might not work in Google Chrome. Yet, web developers have to run compatibility tests with their CSS code or write their code based on the browsers accessing the website.
 
-3. Performance: Using an external stylesheet slows down performing your website since all CSS files referenced are loaded at once, even when the page needing them is not currently rendered.
+3. Performance: Using an external stylesheet slows down the performance of your website since all CSS files referenced are loaded at once even when the page needing them is not currently rendered.
 
-However, the performance hindrances can be mitigated by combining multiple stylesheets and inline CSS and it renders only the necessary CSS files on each page. This approach is like Styletron’s critical rendering concept as a CSS-in-JS solution.
+However, the performance hindrances can be mitigated by combining multiple stylesheets and inline CSS such that only the necessary CSS files are rendered on each page. This approach is similar to Styletron’s critical rendering concept as a CSS-in-JS solution.
 
 ### CSS-in-JS Solutions for Web Components.
 There are several approaches to adapting CSS-in-JS within your web application. The following are different CSS-in-JS solutions to deploy in your web application.
@@ -85,6 +85,7 @@ There are several approaches to adapting CSS-in-JS within your web application. 
 
 5. Material-UI
 
+
 1. JSS: JSS is one option for CSS-in-JS solutions which provides you with the flexibility of using JavaScript to describe styles in your app component. It blooms on its reusability and declarative way of applying CSS styles to your web app.
 
 To dive in further, here are the benefits of using JSS in your project:
@@ -93,9 +94,10 @@ To dive in further, here are the benefits of using JSS in your project:
 
 - Real CSS: JSS does not convert your CSS code to inline styles when passed to elements to be rendered on the web, and it still maintains the use of real CSS.
 
-- Reusability: With the application of JavaScript modules, variables, and functions, you can store CSS rules and call upon them in multiple instances without having to declare CSS rules for every element within your app component every time we need them.
+- Reusability: With the application of JavaScript modules, variables, and functions, you can store CSS rules and call upon them in multiple instances without having to declare CSS rules for every element within your app component every time they are needed.
 
 - Easy Modification: With JSS, making changes becomes more comfortable, because you only need to run down on where you declared the CSS rules and make necessary changes if any within the variable or function, and changes take effect where the variable or functions are applied.
+
 
 Conclusively, JSS can be integrated easily into your React application. Follow this [guide](https://cssinjs.org/setup) to get started with JSS, and you can see a live code [here](https://codesandbox.io/s/z21lpmvv33) of CSS-in-JS in action with JSS.
 
@@ -109,7 +111,7 @@ With an intense focus on improving user experience, styled-components enhance CS
 
 - CSS Deletion: Deleting CSS styles is made more comfortable, styled-components make it clear which component is unused, and deleting such components automatically deletes all styles related to that component.
 
-The above is some benefits of using styled-components as your preferred choice of CSS-in-JS solutions. You can view how styled-components handle CSS in JavaScript from [here](https://github.com/styled-components/styled-components#example), and you can also follow this [guide](https://www.styled-components.com/docs/basics#installation) to installing styled-components in your React application.
+The above are some benefits of using styled-components as your preferred choice of CSS-in-JS solutions. You can view how styled-components handle CSS in JavaScript from [here](https://github.com/styled-components/styled-components#example), and you can also follow this [guide](https://www.styled-components.com/docs/basics#installation) to installing styled-components in your React application.
 
 3. Styletron: Styletron is another CSS-in-JS library that works with plain JS, React, and other frontend frameworks.
 
