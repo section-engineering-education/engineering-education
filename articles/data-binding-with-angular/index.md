@@ -90,7 +90,7 @@ export class StringInterpolationComponent {
 ```
 
 These produce an output, as shown below:
-![String Interpolation](engineering-education/articles/data-binding-with-angular/string_Interpolation.png)
+![String Interpolation](/engineering-education/data-binding-with-angular/string_Interpolation.png)
 
 From the above output, the value of `studentId` from the TypeScript code gets displayed onto the template through the delimiter `{{ }}`.
 
@@ -140,9 +140,9 @@ export class PropertyBindingComponent{
 }
 ```
 
-![property-binding-disabled](engineering-education/articles/data-binding-with-angular/property-binding-disabled.png)
+![property-binding-disabled](/engineering-education/data-binding-with-angular/property-binding-disabled.png)
 
-![property-binding-enabled](engineering-education/articles/data-binding-with-angular/property-binding-enabled.png)
+![property-binding-enabled](/engineering-education/data-binding-with-angular/property-binding-enabled.png)
 
 In the code above. The `disabled` *element property* of a button is bound to the value of the *component* variable `addNewStudent`.
 - An *element property* enclosed between `[..]` identifies itself as the *target property*,
@@ -224,7 +224,7 @@ export class PropertyBindingComponent{
   }
 }
 ```
-![event-binding](engineering-education/articles/data-binding-with-angular/event-binding.gif =600x400)
+![event-binding](/engineering-education/data-binding-with-angular/event-binding.gif =600x400)
 
 From the code above, it can be seen that there are indeed two event binding listeners.
 - First is the *target event*`(input)` in the *input* element. When the user enters data in the *template*, triggers `onUpdateStudent()` in the *component* file.
@@ -291,7 +291,7 @@ export class PropertyBindingComponent{
 }
 ```
 
-![two-way-binding](engineering-education/articles/data-binding-with-angular/two-way-binding.gif =600x400)
+![two-way-binding](/engineering-education/data-binding-with-angular/two-way-binding.gif =600x400)
 
 - The NgModel used here is a [*directive*](https://angular.io/guide/built-in-directives#ngModel) that displays the data property and updates the property when the user makes the changes. It requires *FormsModule* to be imported before using it.
 - The `studentID` variable is registered to user input changes and gets updated simultaneously.
