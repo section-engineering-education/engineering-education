@@ -1,18 +1,17 @@
-# How to build a static site with GatsbyJs
+# How to Build a Static Site with GatsbyJS
 ![Hero image](/engineering-education/howto-build-astatic-site-with-gatsbyjs/heroimage.png)
 [*Image Source: Unsplash](https://unsplash.com/photos/uyfohHiTxho)
-
 When I first heard about GatsbyJS, I was confused about what it was, and how I would get started. As time went on, I learned more about GatsbyJS and found out it is awesome. My goal for this article is not to confuse you about GatsbyJS, but to help you get started with building your very first static site using GatsbyJS.
 
-GatsbyJS is used to build websites powered by [JAMStack](https://jamstack.org/what-is-jamstack/). JAMStack is a modern framework for creating websites and software. The “JAM” is an acronym for JavaScript, APIs, and HTML markup, JAMStack sites do not need a database, unlike websites designed using WordPress or Drupal. 
-In JAMStack architecture, the frontend and backend are [decoupled](https://www.gatsbyjs.com/docs/glossary/#decoupled). During the building process, Gatsby creates JavaScript, HTML, and CSS files used for the frontend, while the backend is a content API that can be a headless [CMS](https://en.wikipedia.org/wiki/Content_management_system), a hosted datastore, or a custom application that returns JSON or XML.
-[Matt Biilmann](https://www.netlify.com/oreilly-jamstack/) and [Chris Bach](https://www.linkedin.com/in/christianbachdk/) came up with the name "JAMStack" because they were creating modern web development workflows and capabilities at Netlify.
+GatsbyJS is used to build websites powered by [JAMStack](https://jamstack.org/what-is-jamstack/). JAMstack is a modern framework for creating websites and software. The “JAM” is an acronym for JavaScript, APIs, and HTML markup. JAMstack sites do not need a database, unlike websites designed using WordPress or Drupal. 
+In JAMstack architecture, the frontend and backend are [decoupled](https://www.gatsbyjs.com/docs/glossary/#decoupled). During the building process, Gatsby creates JavaScript, HTML, and CSS files used for the frontend, while the backend is a content API that can be a headless [CMS](https://en.wikipedia.org/wiki/Content_management_system), a hosted datastore, or a custom application that returns JSON or XML.
+[Matt Biilmann](https://www.netlify.com/oreilly-jamstack/) and [Chris Bach](https://www.linkedin.com/in/christianbachdk/) came up with the name "JAMstack" because they were creating modern web development workflows and capabilities at Netlify.
 
-### Advantages of JAMStack architecture
-- Speed: They load faster than sites using [monolithic architectures](https://whatis.techtarget.com/definition/monolithic-architecture#:~:text=A%20monolithic%20architecture%20is%20the,and%20unable%20to%20be%20changed.).
-- Flexibility for Hosting: Being a static file, JAMStack sites can be hosted anywhere. To get the best performance and security, it is preferable to use an object storage service and content delivery networks such as [Netlify](https://www.netlify.com/), [Render](https://www.gatsbyjs.com/docs/deploying-to-render/), or Amazon Web Services’ [S3 and CloudFront](https://www.gatsbyjs.com/docs/deploying-to-s3-cloudfront/).
-- Improved security: Because JAMStack sites don’t have software layers and databases, this makes them invulnerable to server-side code injection or SQL injection attacks.
-- An enhanced experience for developers: Frontend developers can build JAMStack sites without the knowledge of a server-side language and Backend developers can focus on building APIs.
+### Advantages of JAMstack Architecture
+- **Speed**: They load faster than sites using [monolithic architectures](https://whatis.techtarget.com/definition/monolithic-architecture#:~:text=A%20monolithic%20architecture%20is%20the,and%20unable%20to%20be%20changed.).
+- **Flexibility for hosting**: Being a static file, JAMStack sites can be hosted anywhere. To get the best performance and security, it is preferable to use an object storage service and content delivery networks such as [Netlify](https://www.netlify.com/), [Render](https://www.gatsbyjs.com/docs/deploying-to-render/), or Amazon Web Services’ [S3 and CloudFront](https://www.gatsbyjs.com/docs/deploying-to-s3-cloudfront/).
+- **Improved security**: Because JAMStack sites don’t have software layers and databases, this makes them invulnerable to server-side code injection.
+- **An enhanced experience for developers**: Frontend developers can build JAMStack sites without a server-side language and back-end developers can focus on building APIs rather than creating databases.
 
 
 ### What is GatsbyJS?
@@ -21,7 +20,7 @@ In JAMStack architecture, the frontend and backend are [decoupled](https://www.g
 
 A software application that generates HTML pages from templates and a given content source is called a “static site generation”. Markdown-formatted text files are used by most static site generators.
 Static site generators are different from content management systems such as WordPress and Drupal that are powered by databases. 
-List of other static site generators for JAMStack Sites includes [Next.Js](https://nextjs.org/), [Hugo](https://gohugo.io/), [Jekyll](http://jekyllrb.com/), [Hexo](https://hexo.io/), [Slate](https://slatedocs.github.io/slate/), [NuxtJS](https://nuxtjs.org), [GitBook](https://www.gitbook.com/), [Docusaurus](https://v2.docusaurus.io/) and [more](https://jamstack.org/generators/) 
+Other static site generators for JAMstack Sites include [Next.Js](https://nextjs.org/), [Hugo](https://gohugo.io/), [Jekyll](http://jekyllrb.com/), [Hexo](https://hexo.io/), [Slate](https://slatedocs.github.io/slate/), [NuxtJS](https://nuxtjs.org), [GitBook](https://www.gitbook.com/), [Docusaurus](https://v2.docusaurus.io/) and [more](https://jamstack.org/generators/) 
 
 **Advantages of GatsbyJS**
 - It's [faster](https://www.gatsbyjs.com/contributing/how-to-pitch-gatsby/) to create a static site with GatsbyJs.
@@ -36,11 +35,10 @@ To get started with GatsbyJS, you will need some background knowledge on the fol
 - [Node.js](https://nodejs.org/en/) (the basics, [npm](https://www.npmjs.com/), etc)
 - [GraphQL](https://graphql.org/) (the basics and advanced)
 
-However there’s no problem if you don’t have any knowledge of these technologies, this article will help you get started with GatsbyJS, so stick around and check the links out later if you are interested in advancing your knowledge.
 
 ### Installations
 
-First of all, you'll need to install [Node.js](https://nodejs.org/en/) on your computer.
+First, you'll need to install [Node.js](https://nodejs.org/en/) on your computer.
 Go to the [official Node.js website](https://nodejs.org/en/) to download the Node.js version for your operating system.
 
 After installing it, open up your terminal and type in:
@@ -71,18 +69,18 @@ In order to confirm you have Gatsby installed, type in:
 gatsby –version
 ```
 
-### Creating a new GatsbyJS site
+### Creating a New GatsbyJS Site
 
 Now let's create a static site using GatsbyJS.
 
-Open up the terminal, in your code editor if you are using [VS Code](https://code.visualstudio.com/), It comes built-in with a terminal. You will be using the GatsbyJS site template from GitHub to create your site from scratch.
+Open up the terminal, in your code editor if you are using [VS Code](https://code.visualstudio.com/), it comes built-in with a terminal. You will be using the GatsbyJS site template from GitHub to create your site from scratch.
 
 Create a **my-first-gatsby-site** folder, and then in your terminal, type in
 `Users/first-gatsby-site: gatsby new first-gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world`.
 
-To see the new site, you have created, check it out using these commands.
+To see the new site you have created, check it out using these commands.
 
-First, go into the file directory you have just created:
+Next, go into the file directory you have just created:
 
 ```bash
 cd first-gatsby-site
@@ -105,14 +103,14 @@ Congratulations! You just built your first static site using GatsbyJS.
 
 Now let’s talk about your file directory, it looks overwhelming especially if you are still a beginner using [Node.js](https://nodejs.org/en/).
 
--	**The node-modules folder:** Contains a bunch of files you may or may not need.
+-	**The node-modules folder:** This contains a bunch of files you may or may not need.
 -	**The public folder:** This contains all of your finished static sites that would be served on a cloud server.
 -	**The src folder:** This is the folder you will be using the most because this is where you are going to store the pages you are building for your site.
 You will find an  ***index.js*** file in the pages folder because Gatsby uses *Node.js* and *React.js* and these files will be a JavaScript file but you can also use a markdown file as well with the file extension of '.md'.
 -	**The gitignore file:** This file tells GitHub to ignore whatever file you specify in it ignore. For example API keys.
 -	**The package.json:** Contain the dependencies or packages you have installed using the node package manager *“npm install”*
 
-### Adding content to the site
+### Adding Content to the Site
 
 As excited as I am that you have created your first GatsbyJS static site, let's move forward by adding more content to the site by making it look better.
 Remember how I mentioned you will need some knowledge of React.js?
@@ -134,7 +132,7 @@ return <div style={{ color: 'tomato' }}>
 }
 ```
 
-### Linking between pages
+### Linking Between Pages
 
 Having a one-page static site doesn’t sound cool at all, what if you want to have 2 or more pages? To do this create another page and link them together, so that you can easily navigate through the added pages.
 
@@ -163,7 +161,7 @@ Then finally link it using the Gatsby link by placing this code in the index.js 
 <Link to=”/page-2/”>Page 2</Link>
 ```
 
-### Counter.js file
+### Counter.js File
 
 Here you are going to make the site more interactive by adding a counter to the site where you can click on a **plus** button to increase a number and a **minus** button to decrease a number.
 
@@ -217,7 +215,7 @@ Also, import the counter component by placing this code at the top:
 import { Link } from "gatsby"
 `
 
-### Using plugins in GatsbyJS
+### Using Plugins in GatsbyJS
 
 What if you want to extend your site to have cool features that you don’t want to build from the scratch, GatsbyJS offers [plugins](https://www.gatsbyjs.com/plugins/) built by a community of developers who want to share cool and awesome features with everyone.
 
@@ -240,9 +238,9 @@ plugins: [ `gatsby-plugin-typography`]
 }
 ```
 
-### Building the site on a web server
+### Building the Site on a Web Server
 
-So far so good, your site has been running on your local server which is `http://localhost:8000`, what’s the use of building a static site without showing it to your friends, family, and probably your boss online.
+Your site has been running on your local server, which is `http://localhost:8000`.
 
 To get your Gatsby site ready for cloud deployment you will need to build it using this command:
 
@@ -250,15 +248,15 @@ To get your Gatsby site ready for cloud deployment you will need to build it usi
 npm run build
 ```
 
-You will notice some changes in the public folder, that’s where your static site files are. If you want to host it on a webserver you could copy the public folder and place it on a server. Otherwise, you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko, etc. to place the whole file directory on a cloud server.
+You will notice some changes in the public folder that’s where your static site files are. If you want to host it on a web server you could copy the public folder and place it on a server. Otherwise, you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko, etc. to place the whole file directory on a cloud server.
 
-### Deploying to a cloud server
+### Deploying to a Cloud Server
 
-You can deploy your Gatsby site online in a variety of ways, but there are 2 easy methods that we will discuss.  Those being [Netlify](https://www.netlify.com/) and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/).
+You can deploy your Gatsby site online in a variety of ways, but there are 2 easy methods that we will discuss. Those being deployed on [Netlify](https://www.netlify.com/) and [Gatsby Cloud](https://www.gatsbyjs.com/cloud/).
 
-**Netlify:** With Netlify you can drag and drop your code folder into it or deploy your site from [GitHub](https://github.com/) if your code is on GitHub, but I would recommend that you place your code on GitHub to automatically sync any changes made to the site.
+1. **Netlify**: With Netlify you can drag-and-drop your code folder into it or deploy your site from [GitHub](https://github.com/) if it is hosted there, but I would recommend that you place your code on GitHub to automatically sync any changes made to the site.
 
-**Gatsby cloud:** This provides a simpler way to deploy the site, but it requires your code to be on GitHub or Gitlab. Deploying your site on Gatsby cloud offers you the flexibility to use content management systems like [Contentful](https://www.contentful.com/), [DatoCMS](https://www.datocms.com/), [Strapi](https://strapi.io/), and [Wordpress](https://wordpress.com/) etc.
+2. **Gatsby Cloud**: This provides a simpler way to deploy the site, but it requires your code to be on GitHub or Gitlab. Deploying your site on Gatsby cloud offers you the flexibility to use content management systems like [Contentful](https://www.contentful.com/), [DatoCMS](https://www.datocms.com/), [Strapi](https://strapi.io/), and [Wordpress](https://wordpress.com/) etc.
 
 [Live site deployed on Netlify](https://my-first-gatsby-sites.netlify.app/)
 [Github code](https://github.com/Jethro-magaji/first-gatsby-site)
@@ -267,10 +265,10 @@ You can deploy your Gatsby site online in a variety of ways, but there are 2 eas
 
 ### Summary
 
-In summary, we covered the advantages JAMStack and GatsbyJS, you created your first GatsbyJS site, added content to it, linked between pages, learned about React components, made the site interactive with a counter, and lastly deployed it to the cloud.
+In summary, we covered the advantages JAMStack and GatsbyJS. You created your first GatsbyJS site, added content to it, linked between pages, learned about React components, made the site interactive, and deployed it to the cloud.
 
 
-### Additional Readings
+### Additional Resources
 -[Gatsby](https://www.gatsbyjs.com/)
 
 -[Gatsby Doc](https://www.gatsbyjs.com/docs/quick-start/)
