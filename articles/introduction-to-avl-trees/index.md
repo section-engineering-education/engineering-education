@@ -1,5 +1,5 @@
 ### Introduction to AVL trees
-Binary search trees are one of the most efficient data structures with their O(n) time complexity while performing operations. But in this fast paced world, especially in the realm of computers and processing, the one parameter that everything is scrutinized by is speed. The AVL tree, named after its two inventors, G.M. Abelson-Velvety and E.M. Landis, who published it in their 1962 paper "An Algorithm For The Organization Of Information" has anchored its position as a need-to-understand data structure owing to its performance increase from a regular BST.
+Binary search trees are one of the most efficient data structures with their O(n) time complexity while performing operations. But in this fast-paced world, especially in the realm of computers and processing, the one parameter that everything is scrutinized by is speed. The AVL tree, named after its two inventors, G.M. Abelson-Velvety and E.M. Landis, who published it in their 1962 paper "An Algorithm For The Organization Of Information" has anchored its position as a need-to-understand data structure owing to its performance increase from a regular BST.
 
 ### Table Of Contents
 1. [Introduction](#introduction)
@@ -26,7 +26,7 @@ This means that the height of the tree must be maintained after every insertion 
 How does one maintain the height of the tree after every such modification?
 
 ### Tri-Node Restructuring
-When a node is either inserted or deleted in an AVL tree, it might create an imbalance in the tree and would result in an increase in the time complexity. But, if the tree is restructured every time there is a modification to the structure, it would ensure that the time complexity still remains O(log h).
+When a node is either inserted or deleted in an AVL tree, it might create an imbalance in the tree and would increase the time complexity. But, if the tree is restructured every time there is a modification to the structure, it would ensure that the time complexity remains O(log h).
 
 Let's see how the insertion of a node into the following tree would affect its structure.
 
@@ -79,8 +79,8 @@ Right-left rotation
 The procedure for tri-node restructuring for an insertion operation is as follows -
 
     1. Perform regular BST deletion.
-    2. Let the node being deleted be known as 'a'. Let 'd' be the first node going up from 'a' towards root that is unbalanced. Let 'c' be child of 'd' with higher height and is the ancestor of 'a'. Let 'b' be child of 'c' with higher height and is the ancestor of 'a'. 
-    3. Now, there are four cases that can occur:
+    2. Let the node being deleted be known as 'a'. Let 'd' be the first node going up from 'a' towards root that is unbalanced. Let 'c' be the child of 'd' with higher height and is the ancestor of 'a'. Let 'b' be the child of 'c' with higher height and is the ancestor of 'a'. 
+    3. Now, four cases can occur:
         - Left-left rotation: Where 'c' is the left child of 'd' and 'b' is the left child of 'c' 
         - Right-right rotation: Where 'c' is the right child of 'd' and 'b' is the right child of 'c' 
         - Left-right rotation: Where 'c' is the left child of 'd' and 'b' is the right child of 'c' 
@@ -288,7 +288,7 @@ int main(void)
 }
 ```
 
-Since, the tree is 'automatically' balanced after every insertion, the complexity of insertion remains at O(logn) unlike a regular BST.
+Since the tree is 'automatically' balanced after every insertion, the complexity of insertion remains at O(logn), unlike a regular BST.
 
 ### Deletion from AVL Trees in C++
 
@@ -545,4 +545,4 @@ int main(void)
 The time complexity of deletion is O(logn) as well. This is due to the self-balancing feature of the tree. 
 
 ### Conclusion
-AVL trees or self-balancing trees have proven to be one of the most efficient data structures. They have efficient time and space complexities. As a programmer, it is key to have the knowledge on how to implement AVL trees in a language such that it finds its application in real world.
+AVL trees or self-balancing trees have proven to be one of the most efficient data structures. They have efficient time and space complexities. As a programmer, it is key to know how to implement AVL trees in a language such that it finds its application in the real world.
