@@ -6,7 +6,7 @@ url: /engineering-education/validating-xml-using-xsd/
 title: Validating XML using XSD
 description: A tutorial on validating XML using XSD
 author: srishilesh-p-s
-date: 2020-11-15T00:00:00-12:00
+date: 2020-11-18T00:00:00-00:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
     alt: Validating XML using XSD
 ---
 
-In this article, we will understand how validation of XML is done using XML Schema Definition (XSD). By the end of this article, you will get an overview of various techniques for validating XML tags and attributes using XML Schema Definition (XSD). You will also be learning step by step guide for validation. It is highly recommended to go through my [previous article](/engineering-education/validating-xml-using-dtd/), to understand the basics of XML and its importance of validation.
+In this article, we will understand how validation of XML is done using XML Schema Definition (XSD). By the end of this article, you will get an overview of various techniques for validating XML elements and attributes using XML Schema Definition (XSD). You will also be learning step by step for validation of XML. It is highly recommended to go through my [previous article](/engineering-education/validating-xml-using-dtd/), to understand the basics of XML and its importance of validation.
 
 <!--more-->
 
@@ -26,14 +26,42 @@ In this article, we will understand how validation of XML is done using XML Sche
 - [Further Reading](#further-reading)
 
 ### Introduction
-In our [previous article](/engineering-education/validating-xml-using-dtd/), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using Document Type Definition (DTD).
+In the [previous article](/engineering-education/validating-xml-using-dtd/), we understood various data serialization techniques like XML, the importance of validating XML, and also validated an XML schema using Document Type Definition (DTD).
 
-[Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) helped us in validating the XML schema by parsing the structure of the XML document. But, we can't rely entirely on validation using DTD, since there are high chances of faulty data or data types mismatch in values. Usually, in DTD, we validate by parsing the XML structure, but in XML Schema Definition (XSD) we also understand the semantics of the schema, for validating.
+[Document Type Definition (DTD)](https://en.wikipedia.org/wiki/Document_type_definition) helped us in validating the XML schema by parsing the structure of the XML document. But, we can't rely entirely on validation using DTD, since there are high chances of faulty data or data types mismatch in values.
+
+Usually, in DTD, we validate by parsing the XML structure, but in XML Schema Definition (XSD) we also understand the semantics of the schema, for validating.
+
+For example, in Document Type Definition (DTD), we can validate if a particular data can be only parsed or not parsable, by specifying `#PCDATA` and `#CDATA` respectively. Like, for `firstname` field containing textual data, we validate, if the data is only parsable. In DTD, the validation code is:
+
+```xml
+<!ELEMENT name (#PCDATA)>
+```
+
+Whereas, in XML Schema Definition (XSD), we can validate the same `firstname` field by checking its datatype, maximum length, minimum length, check for patterns within the value, and pose many other restrictions. Here, is a sample code XSD validation:
+
+```xml
+<xs:simpleType name="firstname">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[a-z]"/>
+        <xs:minLength value="5"/>
+        <xs:maxLength value="8"/>
+    </xs:restriction>
+</xs:simpleType>
+```
+
+In the above example, we validate the field `firstname` by
+- checking if the datatype is a `xs:string`
+- if the string contains only alphabets
+- if the minimum length is 5
+- if the maximum length is 8
+
+Many such restrictions can be posed on XSD validation. From the above example, we see that validation performed by XSD, not only parses the value, but also validates based on restrictions.
 
 ### What is XML Schema Definition?
 > According to Wikipedia, [XML Schema Definition (XSD)](https://en.wikipedia.org/wiki/XML_Schema_(W3C)) can be used to express a set of rules to which an XML document must conform to be considered "valid" according to that schema. However, unlike most other schema languages, XSD was also designed with the intent that the determination of a document's validity would produce a collection of information adhering to specific data types.
 
-You may be wondering what is the need for XSD when we already have DTD. XSD can validate much better than DTD, in terms of constraints verification, usage, and relationships between elements and its attributes. According to [W3C](https://www.w3.org/TR/xmlschema11-1/), XSD defines, describes, and catalogs XML vocabularies for classes of XML documents.
+You may be wondering what is the need for XSD, when we already have DTD. XSD can validate much better than DTD, in terms of constraints verification, usage, and relationships between elements and its attributes. According to [W3C](https://www.w3.org/TR/xmlschema11-1/), XSD defines, describes, and catalogs XML vocabularies for classes of XML documents.
 
 ### Step by Step Guide for Validation
 #### XML Document
@@ -91,7 +119,7 @@ Whereas, when validations are to be done for a set/sequence of elements, it can 
 
 #### Validations
 ##### XSD Declaration
-For any XSD document, the XML declaration statement is important. Along with it, we must also specify namespace details, as shown below:
+For any XSD document, the XML declaration statement along with namespace details, is mandatory. XML Namespace is a collection of names that can be used as element or attribute in XML document. It qualifies element names uniquely on the web inorder to avoid conflicts between elements with same name. The code for declaration is shown as below:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -102,19 +130,15 @@ The first line specifies the version and the encoding type used in the XML docum
 
 The following fragment:
 
-```xml
-xmlns:xs="http://www.w3.org/2001/XMLSchema"
-```
+`xmlns:xs="http://www.w3.org/2001/XMLSchema"`
 
 indicates that the elements and data types used in the schema come from the `http://www.w3.org/2001/XMLSchema` namespace. It also specifies that the elements and data types that come from the `http://www.w3.org/2001/XMLSchema` namespace should be prefixed with `xs`.
 
 The following fragment:
 
-```xml
-elementFormDefault="qualified"
-```
+`elementFormDefault="qualified"`
 
-indicates that any elements used by the XML instance document which were declared in this schema must be namespace-qualified.
+indicates that any elements used by the XML instance document which were declared in this schema must be namespace-qualified. By namespace-qualified, it is meant that the target namespace specified, applies to elements in the schema complaint XML document.
 
 ##### Validating the Outermost Element
 In our XML example, we have an element with `name="root"` as the outermost element holding other child elements. So, in our XSD, we access the tag with `name="root"` and handle the child elements under an `xs:complexType` with `name="rootType"`.
@@ -196,7 +220,7 @@ This input field accepts the tags related to the events as comma separated value
 </xs:attribute>
 ```
 
-The above code validates the `tagType` as a complex type with a sequence containing 5 other sub-elements of name `tag`. These elements also contains attributes like `id` and `displayName`. So, we also validate the possible values of the attribute `id`, where the expected data type must be `xs:string`.
+The above code validates the `tagsType` as a complex type with a sequence containing 5 other sub-elements of name `tag`. These elements also contains attributes like `id` and `displayName`. So, we also validate the possible values of the attribute `id`, where the expected data type must be `xs:string`.
 
 ###### Event type - participationType
 In this example, we validate 2 types of event: `value="Solo"`(Solo) and `value="Team"`(Team) events. For validating them, we can specify restrictions based on the data types, and their possible binary choices. So, we create `xs:enumeration` to specify that only the values can be chosen from the given choice.
@@ -232,7 +256,9 @@ We also accept the organizers' email address. So, for its validation, we use sim
 </xs:simpleType>
 ```
 
-We check if the value is of `xs:string` type, before pattern matching. Regex pattern for email validation is not under the scope of this article, the pattern to be validated can be found in any online regex editor or can be made custom, based on requirements.
+We check if the value is of `xs:string` type, before pattern matching. For example in Regular Expressions, pattern matching for a string with alphanumeric values of total length 5 would be `[a-zA-Z0-9]{5}`. The regex pattern signifies if any value from `a-z` or `A-Z` or `0-9` is found in the string, such that the total length of the string is `5`, then we say that the string matches the regex pattern.
+
+Regex pattern for email validation is not under the scope of this article, the pattern to be validated can be found in any online regex editor or can be made custom, based on requirements.
 
 ###### Organizer phone - phoneType
 Similar to email validation, we also validate the phone number of the organizer, by matching its pattern, like shown below.
