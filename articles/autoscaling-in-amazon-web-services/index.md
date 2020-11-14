@@ -19,7 +19,7 @@ AWS autoscaling is an advanced feature in cloud computing in which resource mana
 AWS offers flexibility in the configuration of a threshold CPU utilization value. A threshold level of resource utilization can also be configured. When the threshold is reached by the server, the AWS service will automatically initiate the scaling of resources. 
 
 ### Components of AWS Autoscaling
-The main components of AWS that are involved in autoscaling include Autoscaling Groups, Amazon Machine Image (AMI), Load Balancer, Snapshot, and EC2 Instance. 
+The main components of AWS that are involved in autoscaling include autoscaling aroups, Amazon Machine Image (AMI), load balancer, snapshot, and EC2 instance. 
 
 #### EC2 Instance
 This is a virtual server that exists in the Elastic Compute Cloud (EC2). AWS applications are deployed through this server. This web service provides secure and resizable cloud computing capacity.
@@ -29,6 +29,7 @@ This is a collection of EC2 instances and related policies. An autoscaling group
 * It adds or removes instances depending on the load of the server. When there is a high load, it will add instances. If the load is low, it will remove instances (extra ones).
 * It scales EC2 instances up or down, which helps in managing the availability of applications.
 * It runs the required number of instances. For example, if the required number of instances is 5, then it will run 5 EC2 instances.
+  
 ![Autoscaling Group](/engineering-education/autoscaling-in-amazon-web-services/autoscaling-group.png)
 [Image Source: Tudip](https://tudip.com/wp-content/uploads/2018/12/autoscaling-group.png)
 
@@ -66,6 +67,7 @@ Predictive scaling involves using machine learning algorithms to program the des
 AWS uses the aforementioned components to complete the process of autoscaling. First, an AMI of a user’s server should be created. The AMI will provide all the information that is needed for launching instances. The template of configuration should contain all system. 
 
 After an AMI has been created, the configuration should be launched. At the launch configuration, the right type of instance should be chosen based on need. An AWS autoscaling group should be created after a configuration has been launched. This group will be used in the launching of new instances. 
+
 ![AWS Autoscaling](/engineering-education/autoscaling-in-amazon-web-services/aws-autoscaling.png)
 [Image Source: Jayendra](https://jayendrapatil.com/wp-content/uploads/2016/03/AWS-Auto-Scaling-Configurations.png)
 
