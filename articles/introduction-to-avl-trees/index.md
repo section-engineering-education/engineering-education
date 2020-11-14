@@ -116,7 +116,7 @@ The algorithm for inserting a new node in an AVL tree is as follows:
 #include<bits/stdc++.h>
 using namespace std;
 
-//New Class called Node
+// New Class called Node
 class Node {
     public:
     int value;
@@ -124,7 +124,7 @@ class Node {
     Node* rightChild;
 };
 
-//Creating a new node when the user enters a value.
+// Creating a new node when the user enters a value.
 Node* newNode(int value)
 {
     Node* node = new Node();
@@ -134,7 +134,7 @@ Node* newNode(int value)
     return(node);
 }
 
-//Finding the height of the tree recursively
+// Finding the height of the tree recursively
 int height (Node* node)
 {
     int h=0;
@@ -148,7 +148,7 @@ int height (Node* node)
     return h;
 }
 
-//Balance is the difference between the heights of the two children of an AVL tree.
+// Balance is the difference between the heights of the two children of an AVL tree.
 int getBalance (Node* node)
 {
     if(node==NULL)
@@ -156,7 +156,7 @@ int getBalance (Node* node)
     return(height(node->leftChild)- height(node->rightChild));
 }
 
-//Function performs Left-Left rotation
+// Function performs Left-Left rotation
 Node* ll_rotate (Node* node)
 {
     Node* temp = new Node();
@@ -167,27 +167,27 @@ Node* ll_rotate (Node* node)
     return temp;
 }
 
-//Function performs Right-Right rotation
+// Function performs Right-Right rotation
 Node* rr_rotate (Node* node)
 {
     Node* temp = new Node();
     temp = node->rightChild;
-    //Performing rotation
+    // Performing rotation
     node->rightChild = temp->leftChild;
     temp->leftChild = node;
     return temp;
 }
 
-//Function performs Left-Right rotation
-//Left-Right rotation is nothing but left-left rotation performed before right-right rotation
+// Function performs Left-Right rotation
+// Left-Right rotation is nothing but left-left rotation performed before right-right rotation
 Node* lr_rotate (Node* node)
 {
     node= ll_rotate(node);
     return(rr_rotate(node));
 }
 
-//Function performs Right-Left rotation
-//Similar to left-right rotation, right-left rotation is nothing but right-right rotation performed before left-left rotation
+// Function performs Right-Left rotation
+// Similar to left-right rotation, right-left rotation is nothing but right-right rotation performed before left-left rotation
 Node* rl_rotate (Node* node)
 {
     node= rr_rotate(node);
@@ -197,14 +197,14 @@ Node* rl_rotate (Node* node)
 Node* balance(Node* node)
 {
     int bal_factor = getBalance(node);
-    //Occurs when the height of the left subtree is greater than that of the right subtree
+    // Occurs when the height of the left subtree is greater than that of the right subtree
     if (bal_factor > 1) {
       if (getBalance(node->leftChild) > 0)
          node = ll_rotate(node);
       else
          node = lr_rotate(node);
     } 
-    //Occurs when the height of the right subtree is greater than that of the left subtree
+    // Occurs when the height of the right subtree is greater than that of the left subtree
     else if (bal_factor < -1) {
       if (getBalance(node->rightChild) > 0)
          node = rl_rotate(node);
@@ -215,14 +215,14 @@ Node* balance(Node* node)
     
 }
 
-//BST Insertion followed by Tri-Node restructuring to balance the tree.
+// BST Insertion followed by Tri-Node restructuring to balance the tree.
 Node* insert_AVL (Node* node, int val)
 {
-    //If it's the first element being inserted, return it as a node
+    // If it's the first element being inserted, return it as a node
     if (node == NULL)
         return (newNode(val));
 
-    //If the value to be inserted is lesser than the current node, traverse towards the left
+    // If the value to be inserted is lesser than the current node, traverse towards the left
     if (val < node->value)
        {
             node->leftChild = insert_AVL(node->leftChild, val);
@@ -230,11 +230,11 @@ Node* insert_AVL (Node* node, int val)
             node=balance(node);d
        }
     
-    //If the value to be inserted is greater than the current node, traverse towards the right
+    // If the value to be inserted is greater than the current node, traverse towards the right
     if (val > node->value)
         {
             node->rightChild = insert_AVL(node->rightChild, val);
-            //After insertion, balance the node.
+            // After insertion, balance the node.
             node= balance(node);
         }
     else
@@ -251,40 +251,40 @@ void inOrder(Node *root)
     }  
 } 
 
-//Driver Code
+// Driver Code
 int main(void)
 {
     Node *root = NULL;  
     root = insert_AVL(root, 1);  
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
-    //Output - The inorder traversal of the AVL tree is: 1
+    // Output - The inorder traversal of the AVL tree is: 1
     cout << endl;
     root = insert_AVL(root, 3);
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
     cout << endl;
-    //Output - The inorder traversal of the AVL tree is: 1 3
+    // Output - The inorder traversal of the AVL tree is: 1 3
     root = insert_AVL(root, 4); 
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
     cout << endl;
-    //Output - The inorder traversal of the AVL tree is: 1 3 4
+    // Output - The inorder traversal of the AVL tree is: 1 3 4
     root = insert_AVL(root, 5); 
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
     cout << endl;
-    //Output - The inorder traversal of the AVL tree is: 1 3 4 5
+    // Output - The inorder traversal of the AVL tree is: 1 3 4 5
     root = insert_AVL(root, 6);
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
     cout << endl;
-    //Output - The inorder traversal of the AVL tree is: 1 3 4 5 6
+    // Output - The inorder traversal of the AVL tree is: 1 3 4 5 6
     root = insert_AVL(root, 2);  
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);  
     cout<<endl;
-    //Output - The inorder traversal of the AVL tree is: 1 2 3 4 5 6       
+    // Output - The inorder traversal of the AVL tree is: 1 2 3 4 5 6       
 }
 ```
 
@@ -302,7 +302,7 @@ Deletion follows a very similar algorithm compared to insertion. However, one mu
 #include<bits/stdc++.h>
 using namespace std;
 
-//New Class called Node
+// New Class called Node
 class Node {
     public:
     int value;
@@ -310,7 +310,7 @@ class Node {
     Node* rightChild;
 };
 
-//Creating a new node when the user enters a value.
+// Creating a new node when the user enters a value.
 Node* newNode(int value)
 {
     Node* node = new Node();
@@ -320,7 +320,7 @@ Node* newNode(int value)
     return(node);
 }
 
-//Finding the minimum node in the AVL Tree i.e. left-most node
+// Finding the minimum node in the AVL Tree i.e. left-most node
 Node* findMin(Node* node)
 {
     if(node == NULL)
@@ -331,7 +331,7 @@ Node* findMin(Node* node)
         return findMin(node->leftChild);
 }
 
-//Finding the height of the tree recursively
+// Finding the height of the tree recursively
 int height (Node* node)
 {
     int h=0;
@@ -345,7 +345,7 @@ int height (Node* node)
     return h;
 }
 
-//Balance is the difference between the heights of the two children of an AVL tree.
+// Balance is the difference between the heights of the two children of an AVL tree.
 int getBalance (Node* node)
 {
     if(node==NULL)
@@ -353,38 +353,38 @@ int getBalance (Node* node)
     return(height(node->leftChild)- height(node->rightChild));
 }
 
-//Function performs Left-Left rotation
+// Function performs Left-Left rotation
 Node* ll_rotate (Node* node)
 {
     Node* temp = new Node();
     temp = node->leftChild;
-    //Performing rotation
+    // Performing rotation
     node->leftChild = temp->rightChild;
     temp->rightChild = node;
     return temp;
 }
 
-//Function performs Right-Right rotation
+// Function performs Right-Right rotation
 Node* rr_rotate (Node* node)
 {
     Node* temp = new Node();
     temp = node->rightChild;
-    //Performing rotation
+    // Performing rotation
     node->rightChild = temp->leftChild;
     temp->leftChild = node;
     return temp;
 }
 
-//Function performs Left-Right rotation
-//Left-Right rotation is nothing but left-left rotation performed before right-right rotation
+// Function performs Left-Right rotation
+// Left-Right rotation is nothing but left-left rotation performed before right-right rotation
 Node* lr_rotate (Node* node)
 {
     node= ll_rotate(node);
     return(rr_rotate(node));
 }
 
-//Function performs Right-Left rotation
-//Similar to left-right rotation, right-left rotation is nothing but right-right rotation performed before left-left rotation
+// Function performs Right-Left rotation
+// Similar to left-right rotation, right-left rotation is nothing but right-right rotation performed before left-left rotation
 Node* rl_rotate (Node* node)
 {
     node= rr_rotate(node);
@@ -394,14 +394,14 @@ Node* rl_rotate (Node* node)
 Node* balance(Node* node)
 {
     int bal_factor = getBalance(node);
-    //Occurs when the height of the left subtree is greater than that of the right subtree
+    // Occurs when the height of the left subtree is greater than that of the right subtree
     if (bal_factor > 1) {
       if (getBalance(node->leftChild) > 0)
          node = ll_rotate(node);
       else
          node = lr_rotate(node);
     } 
-    //Occurs when the height of the right subtree is greater than that of the left subtree
+    // Occurs when the height of the right subtree is greater than that of the left subtree
     else if (bal_factor < -1) {
       if (getBalance(node->rightChild) > 0)
          node = rl_rotate(node);
@@ -411,47 +411,47 @@ Node* balance(Node* node)
     return node;
     
 }
-//BST Insertion followed by Tri-Node restructuring to balance the tree.
+// BST Insertion followed by Tri-Node restructuring to balance the tree.
 Node* insert_AVL (Node* node, int val)
 {
-    //If it's the first element being inserted, return it as a node
+    // If it's the first element being inserted, return it as a node
     if (node == NULL)
         return (newNode(val));
 
-    //If the value to be inserted is lesser than the current node, traverse towards the left
+    // If the value to be inserted is lesser than the current node, traverse towards the left
     if (val < node->value)
        {
             node->leftChild = insert_AVL(node->leftChild, val);
-            //After inserting, balance the node.
+            // After inserting, balance the node.
             node=balance(node);
        }
     
-    //If the value to be inserted is greater than the current node, traverse towards the right
+    // If the value to be inserted is greater than the current node, traverse towards the right
     if (val > node->value)
         {
             node->rightChild = insert_AVL(node->rightChild, val);
-            //After insertion, balance the node.
+            // After insertion, balance the node.
             node= balance(node);
         }
     else
         return node;
 }
 
-//Deletion in AVL Trees - BST Deletion followed by tri-node restructuring
+// Deletion in AVL Trees - BST Deletion followed by tri-node restructuring
 Node* delete_AVL(Node* node, int val)
 {
     Node* temp;
-        //If there is no element present, nothing can be deleted.
+        // If there is no element present, nothing can be deleted.
         if(node == NULL)
             return NULL;
 
-        //Searching for the element
+        // Searching for the element
         else if(val < node->value)
             node->leftChild = delete_AVL(node->leftChild, val);
         else if(val > node->value)
             node->rightChild = delete_AVL(node->rightChild, val);
 
-        //Element found with two children
+        // Element found with two children
         else if(node->leftChild && node->rightChild)
         {
             temp = findMin(node->rightChild);
@@ -459,7 +459,7 @@ Node* delete_AVL(Node* node, int val)
             node->rightChild = delete_AVL(node->rightChild, node->value);
         }
 
-        //Element with one or zero child
+        // Element with one or zero child
         else
         {
             temp = node;
@@ -470,23 +470,23 @@ Node* delete_AVL(Node* node, int val)
             delete temp;
         }
 
-        //If the left node is deleted, right case
+        // If the left node is deleted, right case
         if(getBalance(node) == 2)
         {
-            //right-right case
+            // right-right case
             if(getBalance(node->leftChild) == 1)
                 return rr_rotate(node);
-            //right-left case
+            // right-left case
             else
                 return rl_rotate(node);
         }
-        //If right node is deleted, left case
+        // If right node is deleted, left case
         else if(getBalance(node) == -2)
         {
-            //left-left case
+            // left-left case
             if(getBalance(node->rightChild)== 1)
                 return ll_rotate(node);
-            //left-right case
+            // left-right case
             else
                 return lr_rotate(node);
         }
@@ -502,7 +502,7 @@ void inOrder(Node *root)
         inOrder(root->rightChild);  
     }  
 } 
-//Driver Code
+// Driver Code
 int main(void)
 {
     Node *root = NULL;  
