@@ -131,7 +131,7 @@ Material UI is a React component that aims to ensure fast and easy web applicati
 
 Material UI did use LESS and Inline CSS to style components, but that has been changed in order to take full advantage of CSS-in-JS. Material UI also has similar advantages to styled-components.
 
-In favor of performance, Material UI uses JSS as its core, which ensures speedy compilation from JS to CSS both at runtime and server-side. Material UI is small, occupying just 15kb gzipped space. Follow this [guide](https://material-ui.com/) to get started.
+In favor of performance, Material UI uses JSS as its core, which ensures speedy compilation from JS to CSS both at runtime and server-side. Material UI is small, occupying just 15kb gzipped space. Follow this [guide](https://material-ui.com) to get started.
 
 ### Conclusion
 CSS-in-JS changes the perspective of web application development from specificity to modularity. With a list of modern CSS-in-JS solutions with links to get you started, you can now take advantage of the power of web components combined with CSS-in-JS.
