@@ -1,5 +1,10 @@
 ### Introduction to AVL trees
+
 Binary search trees are one of the most efficient data structures with their O(n) time complexity while performing operations. But in this fast-paced world, especially in the realm of computers and processing, the one parameter that everything is scrutinized by is speed. The AVL tree, named after its two inventors, G.M. Abelson-Velvety and E.M. Landis, who published it in their 1962 paper "An Algorithm For The Organization Of Information" has anchored its position as a need-to-understand data structure owing to its performance increase from a regular BST.
+
+### Pre Requisites
+
+To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](https://www.section.io/engineering-education/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
 
 ### Table Of Contents
 1. [Introduction](#introduction)
@@ -8,6 +13,7 @@ Binary search trees are one of the most efficient data structures with their O(n
 4. [Insertion in AVL Trees in C++](#insertion-in-avl-trees-in-c)
 5. [Deletion from AVL Trees in C++](#deletion-from-avl-trees-in-c)
 6. [Conclusion](#conclusion)
+7. [Further Reading](#further-reading)
 
 ### Introduction
 
@@ -52,25 +58,25 @@ The procedure for tri-node restructuring for an insertion operation is as follow
     1. Perform regular BST insertion.
     2. Let the node being inserted be known as 'a'. Let 'd' be the first node going up from 'w' towards root that is unbalanced. Let 'c' be a child of 'd' that lies on the path between 'a' and 'd'. Let 'b' be a child of 'c' that comes on the same path. 
     3. This would result in four possible cases:
-        - Left-left rotation: Where 'c' is the left child of 'd' and 'b' is the left child of 'c' 
-        - Right-right rotation: Where 'c' is the right child of 'd' and 'b' is the right child of 'c' 
-        - Left-right rotation: Where 'c' is the left child of 'd' and 'b' is the right child of 'c' 
-        - Right-left rotation: Where 'c' is the right child of 'd' and 'b' is the left child of 'c' 
+        - **Left-left rotation**: Where 'c' is the left child of 'd' and 'b' is the left child of 'c' 
+        - **Right-right rotation**: Where 'c' is the right child of 'd' and 'b' is the right child of 'c' 
+        - **Left-right rotation**: Where 'c' is the left child of 'd' and 'b' is the right child of 'c' 
+        - **Right-left rotation**: Where 'c' is the right child of 'd' and 'b' is the left child of 'c' 
     4. After the rotations are performed according to the situation, the node is successfully inserted and the tree is balanced.
   
-Left-left Rotation
+**Left-left Rotation**
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/leftleft_rotation.jpg" alt="Left-Left Rotation"> </center>
 
-Left-right rotation 
+**Left-right Rotation** 
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/leftright_rotation.jpg" alt="Left-Right Rotation"> </center>
 
-Right-right rotation
+**Right-right Rotation**
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/rightright_rotation.jpg" alt="Right - Right Rotation"> </center>
 
-Right-left rotation
+**Right-left Rotation**
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/rightleft_rotation.jpg" alt="Right-Left Rotation"> </center>
 
@@ -81,25 +87,25 @@ The procedure for tri-node restructuring for an insertion operation is as follow
     1. Perform regular BST deletion.
     2. Let the node being deleted be known as 'a'. Let 'd' be the first node going up from 'a' towards root that is unbalanced. Let 'c' be the child of 'd' with higher height and is the ancestor of 'a'. Let 'b' be the child of 'c' with higher height and is the ancestor of 'a'. 
     3. Now, four cases can occur:
-        - Left-left rotation: Where 'c' is the left child of 'd' and 'b' is the left child of 'c' 
-        - Right-right rotation: Where 'c' is the right child of 'd' and 'b' is the right child of 'c' 
-        - Left-right rotation: Where 'c' is the left child of 'd' and 'b' is the right child of 'c' 
-        - Right-left rotation: Where 'c' is the right child of 'd' and 'b' is the left child of 'c'
+        - **Left-left rotation**: Where 'c' is the left child of 'd' and 'b' is the left child of 'c' 
+        - **Right-right rotation**: Where 'c' is the right child of 'd' and 'b' is the right child of 'c' 
+        - **Left-right rotation**: Where 'c' is the left child of 'd' and 'b' is the right child of 'c' 
+        - **Right-left rotation**: Where 'c' is the right child of 'd' and 'b' is the left child of 'c'
     4. After the rotations are performed according to the situation, the node is successfully deleted and the tree is balanced. 
 
-Left-left Rotation
+**Left-left Rotation**
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/leftleft_rotation.jpg" alt="Left-Left Rotation"> </center>
 
-Left-right rotation 
+**Left-right Rotation** 
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/leftright_rotation.jpg" alt="Left-Right Rotation"> </center>
 
-Right-right rotation
+**Right-right Rotation**
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/rightright_rotation.jpg" alt="Right - Right Rotation"> </center>
 
-Right-left rotation
+**Right-left Rotation**
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/rightleft_rotation.jpg" alt="Right-Left Rotation"> </center>
 
@@ -116,7 +122,7 @@ The algorithm for inserting a new node in an AVL tree is as follows:
 #include<bits/stdc++.h>
 using namespace std;
 
-// New Class called Node
+// New class called Node
 class Node {
     public:
     int value;
@@ -156,7 +162,7 @@ int getBalance (Node* node)
     return(height(node->leftChild)- height(node->rightChild));
 }
 
-// Function performs Left-Left rotation
+// Function performs left-left rotation
 Node* ll_rotate (Node* node)
 {
     Node* temp = new Node();
@@ -167,7 +173,7 @@ Node* ll_rotate (Node* node)
     return temp;
 }
 
-// Function performs Right-Right rotation
+// Function performs right-right rotation
 Node* rr_rotate (Node* node)
 {
     Node* temp = new Node();
@@ -178,8 +184,8 @@ Node* rr_rotate (Node* node)
     return temp;
 }
 
-// Function performs Left-Right rotation
-// Left-Right rotation is nothing but left-left rotation performed before right-right rotation
+// Function performs left-right rotation
+// Left-right rotation is nothing but left-left rotation performed before right-right rotation
 Node* lr_rotate (Node* node)
 {
     node= ll_rotate(node);
@@ -215,10 +221,10 @@ Node* balance(Node* node)
     
 }
 
-// BST Insertion followed by Tri-Node restructuring to balance the tree.
+// BST insertion followed by tri-node restructuring to balance the tree.
 Node* insert_AVL (Node* node, int val)
 {
-    // If it's the first element being inserted, return it as a node
+    // If the first element is being inserted, return it as a node
     if (node == NULL)
         return (newNode(val));
 
@@ -226,7 +232,7 @@ Node* insert_AVL (Node* node, int val)
     if (val < node->value)
        {
             node->leftChild = insert_AVL(node->leftChild, val);
-            //After inserting, balance the node.
+            // Balance the nodes after insertion
             node=balance(node);d
        }
     
@@ -234,7 +240,7 @@ Node* insert_AVL (Node* node, int val)
     if (val > node->value)
         {
             node->rightChild = insert_AVL(node->rightChild, val);
-            // After insertion, balance the node.
+            // Balance the nodes after insertion
             node= balance(node);
         }
     else
@@ -302,7 +308,7 @@ Deletion follows a very similar algorithm compared to insertion. However, one mu
 #include<bits/stdc++.h>
 using namespace std;
 
-// New Class called Node
+// New class called Node
 class Node {
     public:
     int value;
@@ -310,7 +316,7 @@ class Node {
     Node* rightChild;
 };
 
-// Creating a new node when the user enters a value.
+// Creating a new node when the user enters a value
 Node* newNode(int value)
 {
     Node* node = new Node();
@@ -345,7 +351,7 @@ int height (Node* node)
     return h;
 }
 
-// Balance is the difference between the heights of the two children of an AVL tree.
+// Balance is the difference between the heights of the two children of an AVL tree
 int getBalance (Node* node)
 {
     if(node==NULL)
@@ -353,7 +359,7 @@ int getBalance (Node* node)
     return(height(node->leftChild)- height(node->rightChild));
 }
 
-// Function performs Left-Left rotation
+// Function performs left-left rotation
 Node* ll_rotate (Node* node)
 {
     Node* temp = new Node();
@@ -364,7 +370,7 @@ Node* ll_rotate (Node* node)
     return temp;
 }
 
-// Function performs Right-Right rotation
+// Function performs right-right rotation
 Node* rr_rotate (Node* node)
 {
     Node* temp = new Node();
@@ -375,15 +381,15 @@ Node* rr_rotate (Node* node)
     return temp;
 }
 
-// Function performs Left-Right rotation
-// Left-Right rotation is nothing but left-left rotation performed before right-right rotation
+// Function performs left-right rotation
+// Left-right rotation is nothing but left-left rotation performed before right-right rotation
 Node* lr_rotate (Node* node)
 {
     node= ll_rotate(node);
     return(rr_rotate(node));
 }
 
-// Function performs Right-Left rotation
+// Function performs right-left rotation
 // Similar to left-right rotation, right-left rotation is nothing but right-right rotation performed before left-left rotation
 Node* rl_rotate (Node* node)
 {
@@ -411,7 +417,7 @@ Node* balance(Node* node)
     return node;
     
 }
-// BST Insertion followed by Tri-Node restructuring to balance the tree.
+// BST insertion followed by tri-node restructuring to balance the tree.
 Node* insert_AVL (Node* node, int val)
 {
     // If it's the first element being inserted, return it as a node
@@ -422,7 +428,7 @@ Node* insert_AVL (Node* node, int val)
     if (val < node->value)
        {
             node->leftChild = insert_AVL(node->leftChild, val);
-            // After inserting, balance the node.
+            // Balance the nodes after insertion
             node=balance(node);
        }
     
@@ -430,14 +436,14 @@ Node* insert_AVL (Node* node, int val)
     if (val > node->value)
         {
             node->rightChild = insert_AVL(node->rightChild, val);
-            // After insertion, balance the node.
+            // Balance the nodes after insertion
             node= balance(node);
         }
     else
         return node;
 }
 
-// Deletion in AVL Trees - BST Deletion followed by tri-node restructuring
+// Deletion in AVL Trees - BST deletion followed by tri-node restructuring
 Node* delete_AVL(Node* node, int val)
 {
     Node* temp;
@@ -445,13 +451,13 @@ Node* delete_AVL(Node* node, int val)
         if(node == NULL)
             return NULL;
 
-        // Searching for the element
+        // Search for the element
         else if(val < node->value)
             node->leftChild = delete_AVL(node->leftChild, val);
         else if(val > node->value)
             node->rightChild = delete_AVL(node->rightChild, val);
 
-        // Element found with two children
+        // If an element found with two children
         else if(node->leftChild && node->rightChild)
         {
             temp = findMin(node->rightChild);
@@ -459,7 +465,7 @@ Node* delete_AVL(Node* node, int val)
             node->rightChild = delete_AVL(node->rightChild, node->value);
         }
 
-        // Element with one or zero child
+        // Element with one or no children
         else
         {
             temp = node;
@@ -473,20 +479,20 @@ Node* delete_AVL(Node* node, int val)
         // If the left node is deleted, right case
         if(getBalance(node) == 2)
         {
-            // right-right case
+            // Right-right case
             if(getBalance(node->leftChild) == 1)
                 return rr_rotate(node);
-            // right-left case
+            // Right-left case
             else
                 return rl_rotate(node);
         }
         // If right node is deleted, left case
         else if(getBalance(node) == -2)
         {
-            // left-left case
+            // Left-left case
             if(getBalance(node->rightChild)== 1)
                 return ll_rotate(node);
-            // left-right case
+            // Left-right case
             else
                 return lr_rotate(node);
         }
@@ -509,34 +515,42 @@ int main(void)
     root = insert_AVL(root, 1);  
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
+    // The inorder traversal of the AVL tree is: 1
     cout << endl;
     root = insert_AVL(root, 3);
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
+    // The inorder traversal of the AVL tree is: 1 3
     cout << endl;
     root = insert_AVL(root, 4); 
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
+    // The inorder traversal of the AVL tree is: 1 3 4
     cout << endl;
     root = insert_AVL(root, 5); 
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
+    // The inorder traversal of the AVL tree is: 1 3 4 5
     cout << endl;
     root = insert_AVL(root, 6);
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
+    // The inorder traversal of the AVL tree is: 1 3 4 5 6
     cout << endl;
     root = insert_AVL(root, 2);  
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
-    inOrder(root);  
+    inOrder(root);
+    // The inorder traversal of the AVL tree is: 1 2 3 4 5 6  
     cout<<endl;
     root = delete_AVL(root, 2);  
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
+    // The inorder traversal of the AVL tree is: 1 3 4 5 6
     cout << endl;
     root = delete_AVL(root, 6);  
     cout << "The inorder traversal of the AVL tree is: "<<endl;  
     inOrder(root);
+    // The inorder traversal of the AVL tree is: 1 3 4 5
     cout << endl;
        
 }
@@ -546,3 +560,18 @@ The time complexity of deletion is O(logn) as well. This is due to the self-bala
 
 ### Conclusion
 AVL trees or self-balancing trees have proven to be one of the most efficient data structures. They have efficient time and space complexities. As a programmer, it is key to know how to implement AVL trees in a language such that it finds its application in the real world.
+
+### Further Readings
+1. <https://www.codecademy.com/learn/learn-c-plus-plus/modules/learn-cpp-functions/cheatsheet>
+
+2. <https://en.wikipedia.org/wiki/AVL_tree>
+
+3. <https://www.cs.wcupa.edu/rkline/ds/avl-trees.html>
+
+4. <https://www.cs.usfca.edu/~galles/visualization/AVLtree.html>
+
+5. <https://link.springer.com/article/10.1007/BF00996801>
+
+6. <https://www.w3schools.in/data-structures-tutorial/avl-trees/>
+
+7. <https://www.cs.bgu.ac.il/~ds122/wiki.files/ds122_ps6.pdf>
