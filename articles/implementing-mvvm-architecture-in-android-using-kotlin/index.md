@@ -1,9 +1,11 @@
-This tutorial is suitable for beginners. Especially those who have just started learning android programming in kotlin. Every app needs to follow certain architectural principles. Failure to adhere to this requirement results in low-quality applications. Users will be disappointed in such applications, and the number of uninstalls will be high.
+ 
 
+This tutorial is suitable for beginners. Especially those who have just started learning android programming in kotlin. Every app needs to follow certain architectural principles. Failure to adhere to this requirement results in low-quality applications. Such applications disappoint users leading to a high number of uninstalls.
 ### Introduction
 Let's start by evaluating what android architectures existed before MVVM. The first component is Model View Presenter denoted by MVP. Though this architecture separates the business logic from the app's UI, it is not easy to implement. In the long-run, this can translate into high development costs. The second android architecture is [MVC](https://openclassrooms.com/en/courses/4661936-develop-your-first-android-application/4679186-learn-the-model-view-controller-pattern#:~:text=Most%20Android%20developers%20use%20a,apply%20to%20our%20TopQuiz%20application.). Just like MVP, it is also quite complex and not suitable for small projects. Google introduced MVVM (Model-View-ViewModel)  to resolve these challenges. By separating code into smaller chunks, MVVM simplifies the debugging process. Through this article, you'll understand MVVM architecture and implement it in an application. Furthermore, this article shows how to debug common errors resulting from this architecture. You can learn more about MVVM [here](https://developer.android.com/topic/libraries/architecture/viewmodel?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzhDtIsNoyAcuVYiA3F3smhaKd4THplNIp1nDr-KGB_XWkzZxiIvrVAaAjYKEALw_wcB&gclsrc=aw.ds).
 
 Let's dive in!
+
 
 
 ### Prerequisites
@@ -13,7 +15,7 @@ Let's dive in!
 4. Download the start code from [here](https://github.com/WanjaMIKE/MVVMExample)
 
 #### The goal of the tutorial
-By the end of this tutorial, you will create an app that takes input and displays it on a recycler view. A screenshot of the app is shown below.
+By the end of this tutorial, you will create an app that takes input and displays it on a recycler view. Below is the screenshot of the app.
 
 ### Step 1 – Launching Android Studio.
 Launch Android Studio and create a new project, as shown below. Make sure that you select Kotlin as your preferred programming language. If you do not have Android Studio, you can install it from [here](https://developer.android.com/studio?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzieBJWjBnokDdH6b0gQchoqudRXNohAGp_noSqALLuSlYuwA6EB5T4aAntwEALw_wcB&gclsrc=aw.ds)
@@ -21,24 +23,24 @@ Launch Android Studio and create a new project, as shown below. Make sure that y
 ![getting started](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/getting-started.png)
 
 ### Step 2 – Creating the model.
-Create the app model. This is also referred to as the data class. To avoid confusion, create a package named model inside the java folder. Then, create a data class named Blog in the model package as shown below. For simplicity, the data class will only have one variable (title). In Kotlin, there is no need to use the get and set keywords. These functionalities are added to the data class automatically.
+Create the app model. This is also referred to as the data class. To avoid confusion, create a package named model inside the java folder. Then, create a data class named Blog in the model package as shown below. For simplicity, the data class will only have one variable (title). There is no need to add getters and setters, Kotlin adds them to the class automatically.
 
 ![model](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/model.png)
 
 ### Step 3 – Creating the view.
 The view is what the user sees on the screen. The UI, therefore, needs to be well structured to minimize confusion and dissatisfaction.
 
-Open `activity_main.xml` file and change the layout from constraint to linear layout. Ensure that the orientation is set to vertical. This ensures that the UI components such as buttons and text views are arranged vertically. For our app, the primary widgets are `Edittext`, `Button`, and a `RecyclerView`. Ensure that all these widgets have IDs since they will be required at a later stage. The layout design and code are shown in the image below. The section with a list showing items 0 to 9 is the `RecyclerView`. Whatever we type in the app will be displayed in that section once the submit button is clicked.
+Open `activity_main.xml` file and change the layout from constraint to linear layout. Ensure that the orientation is set to vertical. This arranges UI components vertically in the Layout. For our app, the primary widgets are `Edittext`, `Button`, and a `RecyclerView`. Ensure that all these widgets have IDs since they will be vital at a later stage. The layout design and code are shown in the image below. The section with a list showing items 0 to 9 is the `RecyclerView`. Whatever we type in the app will be displayed in that section once the submit button is clicked.
 
 ![view](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/view.png)
 
 ### Step 4 – Creating the view.
-Still, on the layout, we need to create the design of the element that will be shown in the `RecyclerView`. Therefore, create a file named `item.xml` and add the code shown in the image below. The design is simple since only one attribute from the data class will be displayed to the user.
+Still, on the layout, we need to create the design of the element that will be shown in the `RecyclerView`. Therefore, create a file named `item.xml` and add the code shown in the image below. The design is simple since the user also accesses one attribute from the data class.
 
 ![itemview](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/itemview.png)
 
 ### Step 5 – Create a RecyclerView Adapter
-A `RecyclerView` adapter is responsible for binding the `item.xml` layout to the `RecyclerView`. It also takes in a list of items and displays them to the user. The code for the `RecyclerView` adapter is shown below.
+A `RecyclerView` adapter handles the binding of the `item.xml` layout to the `RecyclerView`. It also takes in a list of items and displays them to the user. The code for the `RecyclerView` adapter is shown below.
 
 ![recyclerviewadapter](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/recycleradapter.png)
 
@@ -65,7 +67,7 @@ If there are no errors in your code, it should compile and show the UI in the im
 ![results](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/result.png)
 
 ## Conclusion
-MVVM architecture has made it easy to build complex applications. As shown, it's easier to identify bugs due to the separation of business logic from the UI code. The architecture also prevents data loss, especially when the orientation of the screen changes. Ensure that all dependencies are installed before using MVVM. The measure helps prevent runtime errors.
-
+MVVM architecture has made it easy to build complex applications. As shown, it's easier to identify bugs due to the separation of business logic from the UI code. The architecture also prevents data loss, especially when the orientation of the screen changes. Ensure that all dependencies are present before using MVVM. The measure helps prevent runtime errors.
 ## References
 [JetPack](https://developer.android.com/jetpack/guide)
+
