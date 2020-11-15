@@ -1,7 +1,6 @@
 # How to Build a Static Site with GatsbyJS
 ![Hero image](/engineering-education/howto-build-astatic-site-with-gatsbyjs/heroimage.png)
 [*Image Source: Unsplash](https://unsplash.com/photos/uyfohHiTxho)
-When I first heard about GatsbyJS, I was confused about what it was, and how I would get started. As time went on, I learned more about GatsbyJS and found out it is awesome. My goal for this article is not to confuse you about GatsbyJS, but to help you get started with building your very first static site using GatsbyJS.
 
 GatsbyJS is used to build websites powered by [JAMStack](https://jamstack.org/what-is-jamstack/). JAMstack is a modern framework for creating websites and software. The “JAM” is an acronym for JavaScript, APIs, and HTML markup. JAMstack sites do not need a database, unlike websites designed using WordPress or Drupal. 
 In JAMstack architecture, the frontend and backend are [decoupled](https://www.gatsbyjs.com/docs/glossary/#decoupled). During the building process, Gatsby creates JavaScript, HTML, and CSS files used for the frontend, while the backend is a content API that can be a headless [CMS](https://en.wikipedia.org/wiki/Content_management_system), a hosted datastore, or a custom application that returns JSON or XML.
