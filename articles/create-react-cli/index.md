@@ -2,14 +2,14 @@
 
 Command-line applications have become popular in the developer ecosystem for several reasons.
 
-One of the most common reasons is the ease of use and many essential developer tools are terminal applications or command Line applications because of the same reason. As the complexity and functionality of the terminal applications grow, so does the need for a simpler and easier way to create them.
+One of the most common reasons is the ease of use and many essential developer tools are terminal applications or command Line applications because of the same reason.As the terminal applications' complexity and functionality grow, so does the need for a simpler and easier way to create them.
 
 In our [previous article](/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js. One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make. React makes it very easy to create powerful and very interactive CLI applications. In this article, we will create a CLI with React.js instead of Node.js and see the difference.
 
 ### Why React and not Node
-React takes away all the pains of parsing arguments and does them in the background. React also allows you to render components to the terminal like you would in a browser.Ink allows you even to use flexbox, meaning no more using coloured string outputs like you would in Node.
+React takes away all the pains of parsing arguments and does them in the background. React also allows you to render components to the terminal like you would in a browser.
 
-To make a CLI using React, we use a library called [INK](https://github.com/vadimdemedes/ink) to make our work easier. Some popular applications made with React and INK include.
+To make a CLI using React, we use a library called [INK](https://github.com/vadimdemedes/ink) to make our work easierInk also enables you to use flexbox, meaning no more using colored string outputs like you would in Node. Some popular applications made with React and INK include. Some popular applications made with React and INK include.
 
 - Jest
 - Gatsby
@@ -288,4 +288,4 @@ An example is, `useInput` that listens to the user input.
 
 Creating CLI applications has never been easier using React ink. Go ahead and have fun building more complex and beautiful CLI applications. To get the code used in the article, check [here](https://github.com/katungi/React-cli-section)
 
-**_Challenge: As of now, the application crushes when the user enters a non-existing country or in the event of a typo. To learn more about React Ink custom hooks and to practise on React hooks, try fixing that error to display an empty table or a error message. Submit the solution as a PR to the project repo._**
+**_Challenge: As of now, the application crashes when the user enters a non-existing country or in the event of a typo. To learn more about React Ink custom hooks and to practise on React hooks, try fixing that error to display an empty table or a error message. Submit the solution as a PR to the project repo._**
