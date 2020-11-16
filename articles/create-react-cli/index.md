@@ -20,7 +20,7 @@ To make a CLI using React, we use a library called [INK](https://github.com/vadi
 ### Getting Started with React INK
 Ink is a React.js framework that abstracts the tedious task of building CLI applications. Ink does not need any extra learning compared to Node. If you are familiar with React, then you are good to go.
 
-Let's get started by building a simple Hello World application. To do this, we need to React and Ink from npm. To make our work easier, Ink ships with a command to bootstrap a React CLI application.
+Let's get started by building a simple Hello World application. To do this, we need React and Ink from npm. To make our work easier, Ink ships with a command to bootstrap a React CLI application.
 
 In your terminal type
 
@@ -31,19 +31,14 @@ mkdir section-example && cd section-example
 npx create-ink-app
 ```
 
-Warning: the last command might take some time.  
-When it finishes, it will have created a link executable for the application.
-
-When you run `section-example` (name of your application) in the terminal, it should return this:
+The last command creates a link executable for our application. It may take some time to complete this process. When you run `section-example` (name of your application) in the terminal, it should return this:
 
 ![Image](/engineering-education/create-react-cli/first-1.png "image")
 
-And there you have it, your first CLI using React. To achieve this in Node.js would have taken a lot of code and time and not forgetting more libraries.
+And there you have it, your first CLI using React. To achieve this in Node.js, we would have written a lot of code and taken more time, not forgetting more libraries.
 
 ### Simple Project
-Let's go ahead and work on a more complex project. The project will help you understand the elements and the project structure of React ink.
-
-We will work in the `ui.js` file. The entry file for the application is `cli.js.`. The code should look something like this:
+Let's go ahead and work on a more complex project. The project will help you understand the elements and the project structure of React ink. We will work in the `ui.js` file. The entry file for the application is `cli.js.`. The code should resemble the one below:
 
 ```javascript
 "use strict";
@@ -59,19 +54,15 @@ const App = ({ name = "Stranger" }) => (
 module.exports = App;
 ```
 
-We are importing React from the React package. On the second line, we are importing the Text element that ships with the ink package. We also have a function that takes in a name and renders it. Let's create a simple CLI application that takes a country as input.
-It then returns some information about the given country in a table.
+We import React from the `react` package first. Then we import the Text element that ships with the `ink` package. We also have a function that takes in a name and renders it. Let's create a simple CLI application that takes a country as input. It then returns some information about the given country in a table.
 
-To achieve this we need this npm package called [world-countries-capitals
-](https://www.npmjs.com/package/world-countries-capitals), which will give us country information.
+To achieve this we need this npm package called [world-countries-capitals](https://www.npmjs.com/package/world-countries-capitals), which gives us country information.
 
-Let's start by getting user input. To achieve this, we need text input. Lucky for us, ink provides a package for this, just run:
+Let's start by getting the user input. To achieve this, we need text input. Lucky for us, ink provides a package for this, just run:
 
 `npm install ink-text-input`
 
-In our `ui.js` let's import and use the text input in the terminal. We will also make use of the `useState` React hook to store our country value and handle changes to the country name. In simple terms, think of `useState hooks` as a way to work with variables in React.
-
-To learn more about React hooks, I recommend reading the React [documentation](https://reactjs.org/docs/hooks-overview.html).
+In our `ui.js`,  we import and use the text input in the terminal. We will also use the `useState` React hook to store our country value and handle changes to the country name. In simple terms, think of `useState hooks` as a way to work with variables in React. To learn more about React hooks, I recommend reading the [React documentation](https://reactjs.org/docs/hooks-overview.html).
 
 Our code now will look like this:
 
@@ -100,7 +91,7 @@ module.exports = App;
 
 On running `section-example` in the terminal, you should be able to enter a country name.
 
-Moving forward, we will need to search for the country in real-time and display the results in a table. To do so, we will invoke the world countries npm package. We will use another React hook called `useEffect` to fetch our data and update the component as it renders. Let's go ahead and implement this.
+Moving forward, we will need to search for the country in real-time and display the results in a table. To do so, we will invoke the `world-countries-capitals` npm package. We will use another React hook called `useEffect` to fetch our data and update the component as it renders. Let's go ahead and implement this.
 
 We first install and import the package. In the terminal:
 
@@ -108,7 +99,7 @@ We first install and import the package. In the terminal:
     npm i world-countries-capitals
 ```
 
-at the top of our file, we import the package
+At the top of our file, we import the package:
 
 ```javascript
 const wcc = require("world-countries-capitals");
@@ -122,7 +113,7 @@ const [currency, setCurrency] = React.useState("");
 const [phone, setPhone] = React.useState("");
 ```
 
-Finally, let's update our variables with information from the npm package. Our complete `useEffect` hook, will look like this.
+Finally, we update our variables with information from the npm package. Our complete `useEffect` hook, will look like this.
 
 ```javascript
 React.useEffect(() => {
@@ -201,7 +192,7 @@ Finally, let's render the information in a table. We will need to nest a lot of 
 </Box>
 ```
 
-Let's add a banner to our application, just because we can. We will add it within the root Box element. We will add it on top of the text input.
+Let's add a banner to our application, just because we can. We will add it within the root Box element on top of the text input.
 
 ```javascript
 <Box borderStyle="round" borderColor="green">
@@ -276,15 +267,14 @@ const App = () => {
 module.exports = App;
 ```
 
-To test our new creation, we run `section-example` in our terminal, it should return this.
+To test our new creation, we run `section-example` in our terminal which it should return this:
 
 ![final-result](/engineering-education/create-react-cli/section-final.png "Title")
 
 You can find a gif of the application in action [here](https://terminalizer.com/view/ad4a80d54380)
 
 ### Finishing Up
-We just built our first complex CLI using React and here are Some things to note. Ink comes with more elements that allow you to have more control over the user interface of the CLI. It also ships with custom hooks to manipulate the data acquired from the terminal.
-An example is, `useInput` that listens to the user input.
+We just built our first complex CLI using React and here are Some things to note. Ink comes with more elements that allow you to have more control over the user interface of the CLI. It also ships with custom hooks to manipulate the data acquired from the terminal. A good example is `useInput` which listens to the user input.
 
 Creating CLI applications has never been easier using React ink. Go ahead and have fun building more complex and beautiful CLI applications. To get the code used in the article, check [here](https://github.com/katungi/React-cli-section)
 
