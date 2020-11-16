@@ -1,5 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/logging-with-winston/
+title: 
+description: This article goes through 
+author: joseph-chege
+date: 2020-11-10T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/logging-with-winston/hero.png
+    alt:  example image
+---
 Assume you have an app running at the production level. If this app runs into an error mode, a million things could lead to that. Some are essential others are not. As a developer, you need to find the critical issues and solve them.
+<!--more-->
 
 What are the possibilities of solving that problem? Perhaps by going back to the code and check if every line of code runs as expected. Well, you might think that it is possibly easier with a small app. However, there is a high chance this will take you time and energy of concentration trying to pip on your small app codes. You get the idea, how this could be for an extensive system. Suppose, let's say, an instance where the app collects some user's information and save them into a database.
 
