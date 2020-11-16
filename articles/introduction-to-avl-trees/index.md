@@ -4,7 +4,7 @@ Binary search trees are one of the most efficient data structures with their O(n
 
 ### Pre Requisites
 
-To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](https://www.section.io/engineering-education/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
+To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](/engineering-education/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
 
 ### Table Of Contents
 1. [Introduction](#introduction)
