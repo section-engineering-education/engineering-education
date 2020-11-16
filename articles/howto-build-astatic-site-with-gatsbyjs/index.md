@@ -72,7 +72,7 @@ gatsby –version
 
 Now let's create a static site using GatsbyJS.
 
-Open up the terminal, in your code editor if you are using [VS Code](https://code.visualstudio.com/), it comes built-in with a terminal. You will be using the GatsbyJS site template from GitHub to create your site from scratch.
+Open up the terminal. In your code editor if you are using [VS Code](https://code.visualstudio.com/), it comes built-in with a terminal. You will be using the GatsbyJS site template from GitHub to create your site from scratch.
 
 Create a **my-first-gatsby-site** folder, and then in your terminal, type in
 `Users/first-gatsby-site: gatsby new first-gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world`.
@@ -106,16 +106,12 @@ Now let’s talk about your file directory, it looks overwhelming especially if 
 -	**The public folder:** This contains all of your finished static sites that would be served on a cloud server.
 -	**The src folder:** This is the folder you will be using the most because this is where you are going to store the pages you are building for your site.
 You will find an  ***index.js*** file in the pages folder because Gatsby uses *Node.js* and *React.js* and these files will be a JavaScript file but you can also use a markdown file as well with the file extension of '.md'.
--	**The gitignore file:** This file tells GitHub to ignore whatever file you specify in it ignore. For example API keys.
+-	**The gitignore file:** This file tells GitHub to ignore whatever file you specify in it ignore, for example API keys.
 -	**The package.json:** Contain the dependencies or packages you have installed using the node package manager *“npm install”*
 
 ### Adding Content to the Site
 
-As excited as I am that you have created your first GatsbyJS static site, let's move forward by adding more content to the site by making it look better.
-Remember how I mentioned you will need some knowledge of React.js?
-
-Yes, good! The moment has come for us to use it now, but don’t worry we will just be working with the basics here that are pretty easy.
-
+Let's modify the look and feel of the site.
 In the index.js file add this piece of code:
 
 ```JavaScript
@@ -135,7 +131,7 @@ return <div style={{ color: 'tomato' }}>
 
 Having a one-page static site doesn’t sound cool at all, what if you want to have 2 or more pages? To do this create another page and link them together, so that you can easily navigate through the added pages.
 
-First of all, import a Gatsby react link and add it to the top of the index.js file
+First, import a Gatsby react link and add it to the top of the index.js file
 `import { Link } from "gatsby"`.
 
 Secondly, create a .js file with the name **page-2.js** in the pages folder and add this code snippet:
@@ -162,7 +158,7 @@ Then finally link it using the Gatsby link by placing this code in the index.js 
 
 ### Counter.js File
 
-Here you are going to make the site more interactive by adding a counter to the site where you can click on a **plus** button to increase a number and a **minus** button to decrease a number.
+We will now make the site more interactive by adding a counter to the site, where you can click on a **plus** button to increase a number and a **minus** button to decrease a number.
 
 Create a counter.js file in the pages folder and then add this code snippet.
 ```JavaScript
@@ -216,7 +212,7 @@ import { Link } from "gatsby"
 
 ### Using Plugins in GatsbyJS
 
-What if you want to extend your site to have cool features that you don’t want to build from the scratch, GatsbyJS offers [plugins](https://www.gatsbyjs.com/plugins/) built by a community of developers who want to share cool and awesome features with everyone.
+GatsbyJS offers [plugins](https://www.gatsbyjs.com/plugins/) built by a community of developers who want to share cool and awesome features with everyone.
 
 We will be using a plugin for [Typogyaphy Js](https://kyleamathews.github.io/typography.js/) (a CSS framework) to style up the CSS by default.
 
