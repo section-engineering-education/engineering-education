@@ -1,15 +1,33 @@
-Generators are functions that return an iterable set of items which can be iterated through one at a time. They were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in python. Python generators are objects which can be looped over similar to a list. Unlike lists however, lazy iterator contents are not stored in the memory. The efficient way to iterate through large datasets is through the use of generators.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/python-generators/
+title: 
+description:
+author:
+date: 2020-08-21T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/python-generators/hero.jpg
+    alt: Python example image
+---
+Generators are functions that return an iterable set of items which can be iterated through one at a time. They were introduced with [PEP 255](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in python.
+<!--more-->
+Python generators are objects which can be looped over similar to a list. Unlike lists however, lazy iterator contents are not stored in the memory. The efficient way to iterate through large datasets is through the use of generators.
 
 ### Prerequisites
 You need to have a basic understanding of Python to get started. This will help guide you through each of the functions and the keywords. All the functions and code used can be found on [repl.it](https://repl.it/@paulodhiambo962/PythonGenerators/). To execute various functions, click on RUN. You will now be able to access the variables and the function return values from the python interpreter.
 
 **A generator function** is defined like a normal function, but rather than returning a value from the return keyword, it produces and returns a value via the yield keyword. If the keyword yield is found in the function, it becomes a generator function and returns a  generator object.
 
-**Generator Object** uses lazy evaluations to yield sequences. To get values from the generator object, call `next()`  method on the generator object or loop through the generator object. 
+**Generator Object** uses lazy evaluations to yield sequences. To get values from the generator object, call `next()`  method on the generator object or loop through the generator object.
 
 **Yield** statement pauses the execution of the function and returns the value to the caller, but maintains the status of the function to allow the function to continue execution from where it is left off. When resumed, the function continues execution immediately after the last run of the yield. This generates a set of values over time, rather than computing them at once and sending them back as a list.
 
-**Generator Expressions** are a memory-efficient and high-performance generalization of list comprehensions and generators as discussed later in the article. 
+**Generator Expressions** are a memory-efficient and high-performance generalization of list comprehensions and generators as discussed later in the article.
 
 ### Generator Expressions versus List Comprehensions
 ```python
@@ -54,8 +72,8 @@ def even_integers_function(n):
 >>>even_integers_function(10)
 [0,2,4,6,8,10]
 ```
-2. Using Generator function. 
-   The generator function below yields a generator object which we can iterate through to get the list of even numbers. 
+2. Using Generator function.
+   The generator function below yields a generator object which we can iterate through to get the list of even numbers.
 
 ```python
 def even_integer_generator(n):
