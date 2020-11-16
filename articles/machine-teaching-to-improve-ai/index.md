@@ -128,4 +128,4 @@ Machine teaching adds value to the machine learning process. It is a paradigm th
 
 6. [Machine Learning Vs Machine Teaching: A Whole New Approach To Imparting Human Skills](https://analyticsindiamag.com/machine-learning-vs-machine-teaching-a-whole-new-approach-to-imparting-human-skills/)
 
-7. [Machine Taeching](https://searchenterpriseai.techtarget.com/definition/machine-teaching)
+7. [Machine Teaching](https://searchenterpriseai.techtarget.com/definition/machine-teaching)
