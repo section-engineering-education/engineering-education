@@ -7,7 +7,7 @@ RxJava makes use of operators to create the observables as well as manipulate th
 In order to follow through this article, you need:
 * [Intellij IDE](https://www.jetbrains.com/idea/) installed
 * Basic understanding of the Kotlin programming language
-* Basic understanding of RxJava observables. You can read [this article](https://www.section.io/engineering-education/android-rxjava/) to get you up to speed.
+* Basic understanding of RxJava observables. You can read [this article](/engineering-education/android-rxjava/) to get you up to speed.
 
 Go ahead and clone the repository using Intellij and wait for the gradle build to finish. Once done, navigate to the `src/main/kotlin` directory. We will be working from this folder. In the `main.kt` file, we have three functions that contain RxJava operators based on their functionalities. We will be removing the comments and running the application to get the results. There is also the `Data.kt` file, which contains sample data we will use.
 
