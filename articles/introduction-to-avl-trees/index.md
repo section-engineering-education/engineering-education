@@ -45,7 +45,7 @@ On inserting a node (4) in the tree, the structure would change to -
 <center> <img src="/engineering-education/introduction-to-avl-trees/tree_after_insertion.jpg" alt="After Insertion"> </center>
 
 In tri-node restructuring, the three roots which are involved in the imbalanced structure are chosen and are rearranged such that the order is restored.
-In this case, the roots of node (3), node (4), and node(5) are taken into account because the imbalance occurs at node (4). If the height at node (4) is balanced, the overall height of the tree would remain logarithmic. For example, node (4) could be restructured similar to the figure below.
+In this case, the roots of node (3), node (4), and node (5) are taken into account because the imbalance occurs at node (4). If the height at node (4) is balanced, the overall height of the tree would remain logarithmic. For example, node (4) could be restructured similar to the figure below.
 
 <center> <img src="/engineering-education/introduction-to-avl-trees/tree_after_structuring.jpg" alt="After Tri-Node Restructuring"> </center>
 
@@ -299,6 +299,7 @@ Since the tree is 'automatically' balanced after every insertion, the complexity
 ### Deletion from AVL Trees in C++
 
 Deletion follows a very similar algorithm compared to insertion. However, one must keep in mind that different nodes can be deleted i.e. nodes with one child, nodes with two children and nodes with no children. These cases have to be taken into account while balancing the tree.
+
     1. Perform regular BST deletion.
     2. Get the balance factor of the current node (height of left subtree - height of right subtree).
     3. If the balance factor is equal to 2, then the case could be either right-right or right-left rotation. If the balance of the left tree is equal to 1, then right-right rotation, else right-left rotation.
