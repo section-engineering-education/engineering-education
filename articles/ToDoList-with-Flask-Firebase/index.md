@@ -6,15 +6,15 @@
 
 ### Introduction
 
-Flask is microweb framework in Python, which is light-weight and easy to use. Firebase Realtime Database is a powerful no-SQL cloud database with SDKs, and client libraries in many commonly used languages including Python. Together, both of them can be used to build dynamic and flexible web applications quickly. Let’s dive right in and learn how to use these technologies together by building a To-Do List web app! 
+[Flask](https://flask.palletsprojects.com/en/1.1.x/) is a light-weight, easy to use, Python microframework primarily used for web development. Firebase Realtime Database is a powerful no-SQL cloud database with SDKs, and client libraries in many commonly used languages including Python. Together, both of them can be used to build dynamic and flexible web applications quickly. Let’s dive right in and learn how to use these technologies together by building a To-Do List web app! 
 
 ### Prerequisites
 
-- Basic knowledge of Python and HTML.
+- Some experience with Python and HTML.
 
 - [Python ](https://www.python.org/downloads/) installed in the system.
 
-- Flask installed in the system (You can refer this [article](https://www.section.io/engineering-education/python-frameworks/) for a gentle introduction and installation instructions)
+- Flask installed in the system (You can refer to this [article](https://www.section.io/engineering-education/python-frameworks/) for a gentle introduction and installation instructions)
 
 ### Step 1: Basic HTML template
 
@@ -22,7 +22,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
 
 **Note**: You cannot give this folder a different name because of the conventions specified by Flask. If it is not named as ‘templates’, then the flask server will not detect the HTML files.
 
-2. Now open an HTML file named ‘index.html’ in a text editor of your choice. Since the objective of this tutorial is to learn to use Flask and Firebase Database, let us build a very simple UI. Add the HTML code to create a page that looks like this - 
+2. Create an HTML file named ‘index.html’ in a text editor of your choice. Since the objective of this tutorial is to learn to use Flask and Firebase Database, let us build a very simple UI. Add the HTML code to create a page that looks like this - 
 
 ![img](./webpage1.png)
 
@@ -66,13 +66,13 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
 
 ### Step 2: Set up Firebase Realtime Database
 
-1. We will be using the Python firebase package - Pyrebase, so install this into your python environment.
+1. Install [Pyrebase](https://github.com/thisbejim/Pyrebase) (the Python firebase package). 
 
    `pip install pyrebase`
 
 2. Log in to https://console.firebase.google.com/.
 
-3.  Click on Add project 
+3. Click on Add project 
 
 4. Name your project
 
@@ -84,7 +84,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
 
 7. Go to Realtime Database and click on Create Database. Enable test mode, which allows anyone who has the tokens of this project to read and write to the database. 
 
-   Ensure that your rules look like this, for now. You can always modify it later based on your requirements.
+   Ensure that your rules look like this, for now. You can always modify the rules later based on your requirements.
 
    ![img](./fb2.png)
 
@@ -111,7 +111,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
    from flask import Flask, render_template, request, url_for
    ```
 
-   Note: Never name your flask server script as flask.py. This will cause the interpreter will look for the flask libraries in this file instead of the flask package and result in an error.
+   Note: Never name your flask server script as flask.py. This will lead the interpreter to look for flask libraries inside of flask.py instead of the flask package, resulting in an error.
 
 2.  Paste the firebase configurations you copied from the Firebase Console into a dictionary and make sure to add quotes to the keys.
 
@@ -127,7 +127,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
      }
    ```
 
-3. Initialize pyrebase in the script	
+3. Initialize [pyrebase](https://firebase.google.com/docs/reference/admin/python) in the script	
 
    ```python
    firebase = pyrebase.initialize_app(firebaseConfig)
@@ -157,7 +157,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
        return render_template('index.html', todo=todo)
    ```
 
-   Here, we are getting (reading) all the values of the child nodes that exist in the database and pass them to the index.html file as a dictionary named ‘todo’. The firebase database stores data in a tree-like structure, so all the tasks that we add will be stored as children of the database. In index.html, we will take the values from ‘todo’ and use them to populate our To-Do list. We will be able to see this soon, after we add tasks into the database.
+   Here, we are reading all the values of the child nodes that exist in the database and passing them to the index.html file as a dictionary named `todo`. The firebase database stores data in a tree-like structure, so all the tasks that we add will be stored as children of the database. In index.html, we will take the values from `todo` and use them to populate our To-Do list. We will be able to see this soon, after we add tasks into the database.
 
 7. Next, let us write the function for adding tasks.
    
@@ -200,7 +200,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
 
    Jinja is a templating language for Python and will help the Python-based servers, like Flask, communicate with the HTML files. We will make use of this in our application to pass data from server.py to index.html.
 
-   To display all the tasks that have been added, we are passing the dictionary ‘todo’ in render_index() to index.html. This will be received and used to generate as many tasks as there are in the dictionary. These tasks are accompanied by the update and delete buttons.
+   To display all the tasks that have been added, we are passing the dictionary `todo` in render_index() to index.html. This will be received and used to generate as many tasks as there are in the dictionary. These tasks are accompanied by the update and delete buttons.
 
    So the code will be modified to look like this -
 
@@ -223,7 +223,7 @@ Flask is microweb framework in Python, which is light-weight and easy to use. Fi
        <!-- Task List -->
    ```
 
-   We have a for loop to iterate through all the elements in ‘todo’, and then we set the button values to ‘l’ as it represents the key, ie, the ID used to store the task in the database. This helps us identify which task needs to be updated or deleted. And the input value is set as ‘todo[l]’, which contains the value of the task, ie, the task itself. Jinja templating is done within double curly brackets, and is similar to Python code.
+   We have a for loop to iterate through all the elements in `todo`, and then we set the button values to `l` as it represents the key, ie, the ID used to store the task in the database. This helps us identify which task needs to be updated or deleted. And the input value is set as `todo[l]`, which contains the value of the task, ie, the task itself. Jinja templating is done within double curly brackets, and is similar to Python code.
 
    Now we have completed our code! Run the flask server by running ‘python server.py’, and open the website. Add tasks through the UI, and the page will look like this - 
 
