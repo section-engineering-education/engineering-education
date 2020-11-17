@@ -14,16 +14,14 @@ images:
   - url: /engineering-education/logging-with-winston/hero.png
     alt:  example image
 ---
-Assume you have an app running in a production environment with millions of daily users that earns thousands of dollars. If there's an error, that costs money and users. No one wants to use an app that's buggy. There are a variety of reasons why an application could have a bug and as a developer, you need to find out why and fix it.
-
-Assume you have an app running at the production level. If this app runs into an error mode, a million things could lead to that. Some are essential others are not. As a developer, you need to find the critical issues and solve them.
+Assume you have an app running in a production environment with millions of daily users that earns thousands of dollars. If there's an error, that costs money and users. No one wants to use an app that's buggy. There are a variety of reasons why an application could have a bug, and as a developer, you need to find out why and fix it.
 <!--more-->
 
-How could you solve that problem? Perhaps by going back to the code and check if every line of code runs as expected. This is easier with a small application but even then trying to trigger the same kind of error as a user can be difficult. Imagine how hard this would be in a large application.
+How could you solve that problem? Perhaps by going back to the code and check if every line of code runs as expected. This is easier with a small application, but even then, trying to trigger the same kind of error as a user can be difficult. Imagine how hard this would be in a large application.
 
 Suppose, let's say, an instance where the app collects some user's information and saves them into a database.
 
-If the application fails, the server will return a system error to the user end. It would be best if you caught those instances and solve such errors. In such a case, how do you get to know that user a or user b run into an individual [system error?](https://www.softwaretestinghelp.com/types-of-software-errors/)
+If the application fails, the server will return a system error to the user end. It would be best if you caught those instances and solve such errors. In such a case, how do you get to know that user a or user b run into an individual [system error?](https://www.softwaretestinghelp.com/types-of-software-errors/) These errors can be triggered by a bug in the code, corrupt files, bad logic, or data type mismatch.
 
 If you need to avoid such kind of frustration, you cannot avoid logging. Yes, logging is something you can’t avoid. A log is the first place to look as a programmer, to track down errors and flow of events, especially from a server. A log tells you what happens when an app is running and interacting with your users. A great use case for logging would be if, for example, you have a bug in your system, and you want to understand the steps that led up to its occurrence.
 
@@ -45,7 +43,7 @@ Generally, the critical values of logging are:
 - Application performance.
 
 ### Why Choose Winston for Logging
-Winston, one of the best logging middlewares has about 4,000,000 weekly [downloads](https://www.npmjs.com/package/winston). The following properties make Winston an overall universal logging middleware.
+Winston, one of the best logging middlewares, has about 4,000,000 weekly [downloads](https://www.npmjs.com/package/winston). The following properties make Winston an overall universal logging middleware.
 
 - It is simple to use and configurable. Winston is simple to configure with your application.
 - Log [levels](https://github.com/winstonjs/winston#logging-levels) (priorities). Winston provides logging levels. They indicate the log priority; this gives you the ability to sort out critical logs from logs requiring less attention. For example: `{error: 0, warn: 1, info: 2, verbose: 3, debug: 4, silly: 5}`. In this case, an `error` log is given priority over a `verbose` log.
@@ -59,7 +57,7 @@ To get started, make sure you initialize a Node.js project using `npm init`. Her
 
 Install the Winston package using the command `npm install winston`.
 
-Logging with Winston is simple, with just four steps as shown in the example below, and you have your log recorded.
+Logging with Winston is simple, with just four steps, as shown in the example below, and you have your log recorded.
 
 - Add the Winston module with a `require()` function.
 
@@ -208,7 +206,7 @@ Output:
 ```
 
 ### Configuring Winston With a Server
-Let’s create a simple Express server that we can do some logging using Winston. This will be a small project to get you on feet using Winston to record logs from server requests and responses.
+Let’s create a simple Express server that we can do some logging using Winston. This will be a small project to get you on your feet using Winston to record logs from server requests and responses.
 
 Go ahead and install the [Express](/engineering-education/express/) library with `npm install express`.
 
@@ -294,9 +292,9 @@ From the above example:
 When the server is running, accessing the following pages will create a log every time the link is invoked.
 - http://localhost:3000/ - the server will send a hello world message. We want Winston to capture that and record it in our log file.
 - http://localhost:3000/calc - we are trying to add variable `y` to variable `x`. In this case, variable `y` is not defined. This will generate an error, and we want Winston to capture such instances for us.
-- http://localhost:3000/hello - the server we have created have no such a link. We want Winston to inform us when a link that points to our IP address is accessed but can't be found, that is a `404` error.
+- http://localhost:3000/hello - the server we have created has no such URL. We want Winston to inform us when a link that points to our IP address is accessed but can't be found; that is a `404` error.
 
-Like we said earlier, Winston is well suited to configure different log destinations. In our small app, let create another transport. This time, I want to save the logs to a database, [MongoDB](https://www.mongodb.com/try/download/community) to be concise. On the `app.js` file, replicate the following code block. Make sure you install [Winston MongoDB](https://www.npmjs.com/package/winston-mongodb), i.e. `npm install winston-mongodb`. If you are new to MongoDB, we got a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
+Like we said earlier, Winston is well suited to configure different log destinations. In our small app, let create another transport. This time, I want to save the logs to a database, [MongoDB](https://www.mongodb.com/try/download/community) to be concise. On the `app.js` file, replicate the following code block. Make sure you install [Winston MongoDB](https://www.npmjs.com/package/winston-mongodb), i.e., `npm install winston-mongodb`. If you are new to MongoDB, we got a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
 
 ```js
 const { createLogger, format, transports } = require('winston');
@@ -334,9 +332,9 @@ transports:[
 });
 ```
 
-Logs will be recorded into `example.log` file, and any `error` logs will be recorded in a MongoDB database.
+Logs will be recorded into the `example.log` file, and any `error` logs will be recorded in a MongoDB database.
 
-**Note:** MongoDB transport take a JSON format. To save these logs in a mongo database, we need to convert them to a JSON format. It is the only format to insert a record into a mongo database collection.
+**Note:** MongoDB transport takes a JSON format. To save these logs in a mongo database, we need to convert them to a JSON format. It is the only format to insert a record into a mongo database collection.
 
 ![MongoDB Transport](/engineering-education/logging-with-winston/mongo-db-transport.png)
 
@@ -424,7 +422,7 @@ This guide discusses logging using Winston. However, there are other quality mid
 
 1. Morgan
 
-[Morgan](https://www.npmjs.com/package/morgan) is used for logging HTTP web servers. It combines Node.js with Express. Morgan logs responses and requests from an HTTP server. Its logs entries are based on the HTTP request and error loglines.
+[Morgan](https://www.npmjs.com/package/morgan) is used for logging HTTP web servers. It combines Node.js with Express. Morgan logs responses and requests from an HTTP server. Its log entries are based on the HTTP request and error loglines.
 
 The Logger function access objects such as `req` and `res`.
 
@@ -529,7 +527,7 @@ Logging is the best approach to adopt for your production application. But befor
 #### When to do Logging
 When an application is at the production level, you can adapt many logging approaches depending on your app usage. Logging can combine one or more logging instances. Some of the standard logging instances include:
 
-- Log when there is an error, or the app encounters unexpected exceptions.
+- Log when there is an error or the app encounters unexpected exceptions.
 - Log when a system event takes place.
 - Log request and responses
 - Do some logging during debug mode.
