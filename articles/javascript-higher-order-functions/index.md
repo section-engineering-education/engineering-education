@@ -12,7 +12,7 @@ Functions are fundamental that outside the "normal" functions, JavaScript has hi
 
 A high order function accepts another function as an argument or returns a function as its output. The concept is commonly referred to as a callback function. A function that takes another function as its argument is what we refer to as a callback function because it calls back that function.
 
-In this guide, we learn about the high order function. We will discuss and show you some of the common built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each`, and `reduce`.
+In this guide, we learn about the high order function. We will discuss and show you some of the common built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each`, and `reduce`. To get along with this guide, prior knowledge to JavaScript [regular functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) and [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) will be important.
 
 ### Array.prototype.filter
 
