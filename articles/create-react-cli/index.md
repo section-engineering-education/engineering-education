@@ -6,6 +6,13 @@ One of the most common reasons is the ease of use and many essential developer t
 
 In our [previous article](/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js. One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make. React makes it very easy to create powerful and very interactive CLI applications. In this article, we will create a CLI with React.js instead of Node.js and see the difference.
 
+### Prerequisites
+- Basic understanding of Javascript
+
+- Basic knowledge of React.Js
+
+- Basic knowledge of npm and or yarn
+
 ### Why React and not Node
 React takes away all the pains of parsing arguments and does them in the background. React also allows you to render components to the terminal like you would in a browser.
 
