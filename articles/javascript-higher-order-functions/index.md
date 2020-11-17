@@ -12,7 +12,7 @@ Functions are fundamental that outside the "normal" functions, JavaScript has hi
 
 A high order function accepts another function as an argument or returns a function as its output. The concept is commonly referred to as a callback function. A function that takes another function as its argument is what we refer to as a callback function because it calls back that function.
 
-In this guide, we learn about the high order function. We will discuss and show you some of the come built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each`, and `reduce`.
+In this guide, we learn about the high order function. We will discuss and show you some of the common built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each`, and `reduce`.
 
 ### Array.prototype.filter
 
@@ -84,7 +84,7 @@ for(let i = 0; i < adults.length; i++) {
 console.log(anAdult);
 ```
 
-The examples above log and filter the test as we told it to. However, these methods can get cumbersome. For example, with a big app that has a large number of adults to filter age or other adult elements. The examples are a bit lengthy and need a lot of code setup. We can compose this further using high order functions.
+The examples above log and filter the test as we told it to. However, these methods can get cumbersome with a big app that has many adults to filter their ages or other adult elements. The examples are a bit lengthy and need a lot of code setup. We can compose this further using high order functions.
 
 #### Example Two: Using High Order Functions
 
@@ -147,7 +147,7 @@ The callback takes two parameters, namely:
 - Accumulator
 - Current value
 
-It doesn't return a new array; instead, it uses a provided callback called a `reducer`. When returned, it reduces the input array into one single value from the reduction. Reducer callback makes this method a high order function.
+It doesn't return a new array; instead, it uses a provided callback called a `reducer`. When returned, it reduces the input array into a single value. Reducer callback makes this method a high order function.
 
 `reduce()` accept two input parameters
 - A callback function (the reducer function).
@@ -213,7 +213,7 @@ The callback function will be called five times. The accumulator will hold the l
 
 `reduce()` will return the last invoked callback. In this case, 45
 
-It is important to note, for the first invoked callback, the value of the accumulator is the value of the first element in the input array. And the index of the first processed array element is 1, and the value 6, which is the second element. Think about it. It actually makes sense. If you look back to callback syntax, the accumulator takes the first element as the initial value. If that didn't occur, `reduce()` would calculate the 1st element of the input array twice.
+It is important to note, for the first invoked callback, the value of the accumulator is the value of the first element in the input array. And the index of the first processed array element is 1, and the value 6, which is the second element. Think about it. It actually makes sense. If you look back to callback syntax, the accumulator takes the first element as the initial value. If that didn't occur, `reduce()` would calculate the 1st element twice.
 
 Using the optional `InitialValue` argument, we can pass an `InitialValue` value as the second argument to `reduce()`.
 
@@ -246,7 +246,7 @@ The `map()` method composes a new array by returning the results of a callback f
 
 Let’s digest this with examples.
 
-Suppose we have an array `[2, 4, 89, 0.67, 7.47, 20]`; we want to multiply every element, let's say `4`. This is how we can multiply the elements without a high order function.
+Suppose we have an array `[2, 4, 89, 0.67, 7.47, 20]`; we want to multiply every element, let's say by `4`. This is how we can multiply the elements without a high order function.
 
 ```js
 const inputArray = [2, 4, 89, 0.67, 7.47, 20];
@@ -269,7 +269,7 @@ console.log(newArray);
 
 Example two:
 
-Suppose in our animal array example we want to return all the names as uppercase. `map()` will accept a callback as a mandatory argument and transform each element to Uppercase form. `map()` will take the uppercased elements and return a new array
+Suppose in our animals array example we want to return all the names as uppercase. `map()` will accept a callback as a mandatory argument and transform each element to Uppercase form. `map()` will take the uppercased elements and return a new array
 
 ```js
 const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"];
@@ -282,7 +282,7 @@ In the examples above, `map()` returns a new array. It takes the passed callback
 
 ### For Each
 
-It executes a provided callback function once for each element in the input array in [ascending order](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).  `For each` reference to a callback function once. The callback function calls every member of the input array.
+It executes a provided callback function once for each element in [ascending order](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).  `For each` reference to a callback function once. The callback function calls every member of the input array.
 
 `For each` takes one mandatory callback function. The function will be called once in each element in ascending order.
 
