@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/hero.jpg
     alt: MVVM (model–view–viewmodel) Android Kotlin image
 ---
-This tutorial is suitable for beginners. Especially those who have just started learning Android programming in Kotlin. Every application needs to follow certain architectural principles.
+This tutorial is suitable for beginners. Especially those who have just started learning [Android programming in Kotlin](/engineering-education/kotlin-extensions/). Every application needs to follow certain architectural principles.
 <!--more-->
 
 Failure to adhere to this requirement results in applications difficult to scale and maintain. As a result, more time and resources will be needed to push even simple updates. Therefore, the developer may end up missing crucial opportunities.
@@ -315,6 +315,7 @@ If there were no errors in your code, it should compile and show the UI in the i
 
 ### Conclusion
 MVVM architecture has made it easier to build complex applications. As shown, it's easier to identify bugs due to the separation of business logic from the UI code. The architecture also prevents data loss during configuration changes. Ensure that all dependencies are present before using MVVM. This measure helps prevent runtime errors.
+
 ### References
 - [JetPack](https://developer.android.com/jetpack/guide)
 
