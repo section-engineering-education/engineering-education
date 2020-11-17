@@ -213,7 +213,7 @@ class MainViewModelFactory(): ViewModelProvider.Factory{
 ### Step 8 – MainActivity (Connecting the code)
 We have created the model, `ViewModel`, `ViewModelfactory`, and `RecyclerView`. These components need to be instantiated in the `MainActivity` class for the application to work.
 
-Start by declaring the `RecyclerView` and instantiating it. Set the layout manager for the `RecyclerView` to `LinearLayoutManager`.
+Start by declaring the `RecyclerView` and instantiating it. Set the layout manager for the `RecyclerView` to `LinearLayoutManager`. The MainActivity file contains three major methods; `initialiseAdapter`,`observeData`, and `addData`. the `initialiseAdapter` method assigns a `Viewmanager` to the `RecyclerView`. The `observeData` function looks for changes in the `viewmodel` and forwards them to the `RecyclerAdapter`. The `addData` method takes in the user's input and updates the list in the `ViewModel`.
 
 ```Kotlin
 class MainActivity : AppCompatActivity() {
