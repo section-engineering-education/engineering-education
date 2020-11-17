@@ -24,10 +24,12 @@ This article will compare Kafka and Pulsar in terms of architecture, geo-replica
 ### An Overview of Apache Pulsar
 The original idea behind the development of [Apache Pulsar](https://pulsar.apache.org/) was to create a queuing system. But this has expanded in the latest releases to incorporate event streaming features. [Yahoo](http://www.yahoo.com/) originally developed Pulsar. But the [Apache Software Foundation](https://www.apache.org/) has now taken control over the project.
 
-Pulsar's developers wanted to create a program that could provide solutions to corporations that other open-source alternatives couldn't offer at the time. Consequently, Pulsar was founded to handle millions of [partitions and topics](https://pulsar.apache.org/docs/en/concepts-messaging/#partitioned-topics) with complete support for [multi-tenancy](https://www.gartner.com/en/information-technology/glossary/multitenancy#) and [geo-replication](https://en.wikipedia.org/wiki/Geo-replication).
+Pulsar's developers wanted to create a program that could provide solutions to corporations that other open-source alternatives couldn't offer at the time. Consequently, Pulsar was founded to handle millions of [partitions and topics](https://pulsar.apache.org/docs/en/concepts-messaging/#partitioned-topics) with complete support for [multi-tenancy](https://www.gartner.com/en/information-technology/glossary/multitenancy#) and [geo-replication](https://en.wikipedia.org/wiki/Geo-replication). For a multi-tenancy software architecture, each customer shares a single database and the software application. It isolates each tenant's data and ensures its inaccessibility by other tenants. 
+
+Pulsar uses topics as the mechanism to filter and deliver messages to a specified group. As a consumer, you subscribe to one or more topics of interest. You then receive messages sent by produers related to your topics of subscription. A topic can include one or more partitions. This enables the scaling of consumer and producer loads. 
 
 ### Architecture
-Kafka is comprised of [Kafka Broker and ZooKeeper](https://kafka.apache.org/documentation/#brokerconfigs). The older version of ZooKeeper was used to store data relating to consumer groups such as topic consumption offsets. This has changed since then to include leadership election, service delivery, and metadata storage for the cluster.
+Kafka is comprised of [Kafka Broker and ZooKeeper](https://kafka.apache.org/documentation/#brokerconfigs). The function of the Kafka Broker is to receive and store messages from producers on the disk keyed by a unique offset. It also enables consumers to fetch messages by offset, partition, and topics. The older version of ZooKeeper was used to store data relating to consumer groups such as topic consumption offsets. This has changed since then to include leadership election, service delivery, and metadata storage for the cluster.
 
 They center the messaging capabilities of Kafka on the [Kafka Broker](https://jaceklaskowski.gitbooks.io/apache-kafka/content/kafka-brokers.html). Kafka Broker ends consumer and producer connections, sends messages to consumers and accepts new messages from producers. Kafka Broker’s storage of messages on disk provides message guarantees.
 
@@ -44,24 +46,24 @@ Pulsar's developers intended to create a message distribution application that c
 
 As an administrator, you can decide on which topics to replicate. For individual producers, they can execute specific datacenters from receiving copies of messages they publish.
 
-Pulsar's geo-replication feature supports many [topologies](https://beginnersbook.com/2019/03/computer-network-topology-mesh-star-bus-ring-and-hybrid/), including full-mesh, active-active, edge aggregation, and active-standby. Typical geo-replication setups perform message replication asynchronously. But with Pulsar, you can do synchronous geo-replication.
+Pulsar's geo-replication feature supports many [topologies](https://beginnersbook.com/2019/03/computer-network-topology-mesh-star-bus-ring-and-hybrid/), including full-mesh, active-active, edge aggregation, and active-standby. A network topology is a geometric representation of how computers are connected to each other. Typical geo-replication setups perform message replication asynchronously. But with Pulsar, you can do synchronous geo-replication.
 
 In summary, Pulsar's geo-replication functionality is rich and can support almost all configurations. The management and configuration of geo-replication is fully integrated into Pulsar. This way, you don't need extensions or external packages.
 
 In the Kafka documentation, geo-replication is referred to as mirroring. Kafka replicates messages from one cluster to another through the [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) tool.
 
-MirrorMaker connects [Kafka Producer](https://kafka.apache.org/10/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html) in one center to a [Kafka Consumer](https://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html) in another center.
+MirrorMaker connects [Kafka Producer](https://kafka.apache.org/10/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html) in one center to a [Kafka Consumer](https://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html) in another center. Consumers are the subscribers of reading records from a topic(s) or partition(s) of a topic. 
 
-Kafka also has another geo-replication option, [uReplicator](https://eng.uber.com/ureplicator-apache-kafka-replicator/). Uber developed the uReplicator tool to address the challenges of MirrorMaker. As a result, the performance, operations, and scalability of MirrorMaker improved.
+Kafka also has another geo-replication option, [uReplicator](https://eng.uber.com/ureplicator-apache-kafka-replicator/). uReplicator allows replication across Kafka clusters in other data centers. This allows the publishing of data to many regional clusters and aggregation of the same in one Kafka cluster. Uber developed the uReplicator tool to address the challenges of MirrorMaker. As a result, the performance, operations, and scalability of MirrorMaker improved.
 
-The tool also offered better geo-replication. However, as an independent distributed system, users can operate controller and worker nodes in parallel with the Kafka cluster. Other commercial solutions to Kafka geo-replication such as Confluent Replicator also exist.
+The tool also offered better geo-replication. However, as an independent distributed system, users can operate controller and worker nodes in parallel with the Kafka cluster. Other commercial solutions to Kafka geo-replication, such as Confluent Replicator, also exist.
 
 Although geo-replication is possible in Kafka, it's not as simple as it is in Pulsar. You have to choose among many solutions, run parallel tools, or even a whole distributed system to support Kafka's geo-replication.
 
 ### Use Cases
-Originally developed as a unified pub/sub messaging platform, Pulsar has grown to become an event streaming and unified messaging platform. Pulsar is composed of a complete set of tools necessary to provide all the basic essentials for building event streaming applications.
+Originally developed as a unified pub/sub messaging platform, Pulsar has grown to become an event streaming and unified messaging platform. Pulsar is composed of a complete set of tools necessary to provide all the essentials for building event streaming applications.
 
-Pulsar relies on pulsar function, pulsar protocol handler, and [pulsar IO](https://pulsar.apache.org/docs/en/2.3.1/io-overview/) to provide routing capabilities. These routing capabilities include message transformation, message enrichment, and content-based routing. Pulsar's routing capabilities are more advanced compared to Kafka's.
+Pulsar relies on [pulsar function](https://pulsar.apache.org/docs/en/functions-overview/), pulsar protocol handler, and [pulsar IO](https://pulsar.apache.org/docs/en/2.3.1/io-overview/) to provide routing capabilities. These routing capabilities include message transformation, message enrichment, and content-based routing. Pulsar IO connectors allow easy creation, deployment, and management of connectors that interact with external systems, including [Aerospike](https://www.aerospike.com/), [Cassandra](https://cassandra.apache.org/), and others. Pulsar's routing capabilities are more advanced compared to Kafka's.
 
 Besides, Pulsar's deployment model for functions and connectors is much more flexible. You can run these functions and connectors within a broker to allow easy deployment. Or otherwise, run them in a dedicated pool of nodes, as is the case with Kafka streams.
 
