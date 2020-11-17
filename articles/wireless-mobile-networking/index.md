@@ -1,50 +1,157 @@
-### A Brief Guide to Wireless Mobile Networking
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/wireless-mobile-networking/
+title: A Brief Guide to Wireless Mobile Networking
+description: This article will go be a brief introduction to wireless mobile networking. We will discuss about the history of mobile network and telephone technology.  
+author: kanishkvardhan-a-n
+date: 2020-11-17T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero-image](/engineering-education/wireless-mobile-networking/hero.jpg)
-Photo by [Mario Caruso](https://unsplash.com/@giggiulena?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/communication-towers?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+  - url: /engineering-education/wireless-mobile-networking/hero.jpg
+    alt:  wireless mobile networking example image
+---
+The Internet has undeniably brought the world to our doorsteps. Education, entertainment, medicine, finance and many other sectors and their operations are now at our fingertips. However, it is worthwhile to note that it was not always like this. There was a time when people got their news only through newspapers and radios, and it would take days (sometimes even months) to deliver messages and letters.
+<!--more-->
+### Introduction
+A device that was once only used for talking is now potentially a television, radio, gaming console, messenger, navigation device, video conferencing device — and much more. This is all thanks to wireless communication: its advancement made the Internet widely available and paved the way for mobile networking. Wireless mobile networking is one of the various technological innovations that made this possible. Let's see how.
 
-##### INTRODUCTION
-The internet has undeniably brought the world to our doorsteps. Education, entertainment, medicine, finance and many more sectors and their operations are at our fingertips. It is worthwhile to note that it wasnt always like this. There was a time when people got their news only through newspapers and radios, and it would take days(sometimes even months) to deliver messages and letters. A device which was once only used to talk is now potentially a television, radio, gaming console, messenger, navigation device, video conferencing device and much more. All thanks to wireless communication providing internet facility and paving the way for mobile networking. Wireless mobile networking is one of the various technological innovations that made this possible. Let us see how.
+### History
+[Alexander Graham Bell](https://en.wikipedia.org/wiki/Alexander_Graham_Bell) invented the telephone using the concept of harmonic telegraphy in the year 1876. The notion of improving communication systems continued to develop after [Bell's invention](https://en.wikipedia.org/wiki/Invention_of_the_telephone).
 
-##### HISTORY
-[Alexander Graham Bell](https://en.wikipedia.org/wiki/Alexander_Graham_Bell) invented the telephone using the concept of Harmonic Telegraph in the year 1876. The notion of improving communication systems developed among people after [Bell's invention](https://en.wikipedia.org/wiki/Invention_of_the_telephone). If it wasn't for those years of research and development, the new networking technology wouldn't have been exactly like what it is now. Thanks to all those years that led to the development of the first commercial wireless network - 1G in 1979. It was launched by the [NTT](https://en.wikipedia.org/wiki/Nippon_Telegraph_and_Telephone) - a Japanese based telecommunications company. 1G was basically an analog cellular network. Various disadvantages such as signal loss over long distance transmission, high cost of cabling, low quality of signals, etc eventually led to the establishment of digital signals in mobile communication. This growth from analog to digital progressed the communication system to the next generation - 2G. Thus from 2G onwards, every communication technology or standard is solely based on digital signals.
+If it weren't for those years of research and development, the new networking technology wouldn't be exactly like it is now. Those formative years led to the development of the first commercial wireless network: 1G in 1979.
 
-##### THE GENERATIONS
+It was launched by the [NTT](https://en.wikipedia.org/wiki/Nippon_Telegraph_and_Telephone), a Japanese-based telecommunications company. 1G was basically an analog cellular network. Various disadvantages — such as signal loss over long distance transmission, high cost of cabling, and low quality of signals — eventually led to the establishment of digital signals in mobile communication.
 
-- **0G & 1G**
-**0G**(or **Zero Generation**) is basically the predecessor of 1G. It was a part of an open telephone network used by the public with their own telephone numbers. Mobile telephony communication is different from radio telephony communication. Mobile Telephony used open network lines for communication while radio-telephony was part of a closed network. It could be used only by those people who had access to that network. Technologies introduced in 0G were [Push to talk(PTT)](https://en.wikipedia.org/wiki/Push_to_Talk) - a telecommunication method in which a button switches its operation from reception mode to transmission mode and [Mobile Telephone Services(MTS)](https://en.wikipedia.org/wiki/Mobile_Telephone_Service). Telephone services used VHF(very high frequency) signals which in turn were connected to [Public Switched Telephone Network(PSTN)](https://en.wikipedia.org/wiki/Public_switched_telephone_network) for transmission. Telephone services were later developed to [IMTS](https://en.wikipedia.org/wiki/Improved_Mobile_Telephone_Service) and [AMTS](https://en.wikipedia.org/wiki/Advanced_Mobile_Telephone_System) systems. They used telephone line services for public communication which enabled users to make public telephone calls.
-**1G**(or **First Generation**)- the successor of 0G, was introduced in the year 1980. 1G specifically used digital signals for connecting between two cells. But to enable voice calls on 1G network, it modulated the signals to a higher frequency (150MHz+). NMT was one such standard which was implemented in the Nordic countries, Eastern Europe etc. Other standards which were prominent in the 1G network were Advanced Mobile Phone System(AMPS) and [Total Access Communication System(TACS)](https://en.wikipedia.org/wiki/Total_Access_Communication_System). Due to low frequency bandwidth of the network, the maximum speed for data transmission topped around 2-4Kbps(Kilobyte Per Second). The network was suitable for short distance voice calls but then the network interference resulted in signal disturbance over long distance calls. These issues led to the development of 2G.
+This progression from analog to digital pushed the communication system to the next generation, 2G. Thus, from 2G onward, every communication technology or standard is solely based on digital signals.
 
-- **2G**
-**2G**(or **Second Generation**) was launched by [GSM(Global System for Mobile Communications)](https://en.wikipedia.org/wiki/GSM) in 1991. Unlike the 1G, where the calls were modulated for long distance, here the voice calls were encoded for better quality. They were digitally encrypted between the receiver and the base station. 2G was based on the transmission of digital signals. This led to the introduction of data services, SMS, MMS etc. [TDMA(Time Division Multiple Access)](https://en.wikipedia.org/wiki/Time-division_multiple_access) was the most common technology used for transmission. It is a technology which provides wireless networking services using [Time Division Multiplexing(TDM)](https://en.wikipedia.org/wiki/Time-division_multiplexing). It is a multiplexing method in which transmission and reception of independent signals are made over a common signal path. Integrated switches were used at each end of the transmission line to make sure each signal appeared in an alternating pattern. In North America, [DAMPS(Digital Advanced Mobile Phone Service)](https://en.wikipedia.org/wiki/Digital_AMPS) was in use. DAMPS(also known as **IS-54** and **IS-136**) is the digital version of its 1G counterpart AMPS. It is a combination of TDMA and FDMA. It uses 30KHz for channel spacing and 800-900MHz for frequency band, just like the AMPS. Currently, all DAMPS channels are replaced by the GSM/CDMA technology.
-Another notable standard of 2G is [CDMAOne](https://en.wikipedia.org/wiki/CdmaOne)(or **IS-95**). This standard uses [CDMA(Code Division Multiple Access)](https://en.wikipedia.org/wiki/Code-division_multiple_access) technology for data transmission. CDMA allows multiple transmitters to send information over a single communication channel.
-[GPRS(General Packet Radio Service)](https://en.wikipedia.org/wiki/General_Packet_Radio_Service) or **2.5G** was a huge breakthrough in the 2G communication system. It is a data transfer oriented standard which uses packet switching technique. GPRS has an **IP(Internet Protocol)** based architecture which allows transmission of data packets to the internet. The packet radio technique was helpful in creating a communication link between the GSM devices(mobiles) and the external data packets. GPRS core led to the development of online voice and data applications which were afterwards built using the 3G standards. GPRS provided data transmission speed upto 100KBit/s.
-[EDGE(Enhanced Data Rates for GSM Evolution)](https://en.wikipedia.org/wiki/Enhanced_Data_Rates_for_GSM_Evolution) or **2.75G** technology made the most improvements than the other 2G standards. It was established for the GSM networks in 2003. Nine **MCS(Modulation and Coding Schemes)** were introduced for EDGE networking. Four of them used **GMSK(Gaussian Minimum Shift Keying)** modulation technique and the other five used **8PSK** modulation technique. This improved the data speeds and performance margin very much. Its theoretical maximum speed is around 450Kbps. The newer EDGE standards were upgraded to be implemented on GSM/GPRS networks. Hence, it is also considered as pre-3G.
 
-- **3G**
-**3G**(or **Third Generation**) turned out to be a huge development in terms of network connectivity. Data rates were drastically improved and this made video streaming, online conferencing, uploading, mobile internet better and faster. Some of the 3G standards were based on EDGE technicalities. That&#39;s why EDGE and CDMA were backward compatible to 2G networks as well. 3G was being developed in the early 1980s itself by [ITU(International Telecommunication Union)](https://en.wikipedia.org/wiki/International_Telecommunication_Union). It took years of research and development until it was made available to the public. The technical specifications of 3G standards are called IMT-2000. For 3G, the communication bandwidth was assigned from 400 MHz and 3 GHz. In 1998, NTT DoCoMo(Japanese based mobile phone operator) launched the first pre-commercial 3G network. Europe's first pre-commercial network was the [UMTS(Universal Mobile Telecommunications System)](https://en.wikipedia.org/wiki/UMTS) network developed by Manx Telecom. It is a system based on the GSM standard. UMTS is a part of the ITU's IMT-2000 standards developed and retained by the [3GPP(3rd Generation Partnership Project)](https://en.wikipedia.org/wiki/3GPP). It is aligned with the [CDMA2000](https://en.wikipedia.org/wiki/CDMA2000) standards set for networks based on its rival CDMAOne technology. To deliver greater spectral quality and bandwidth to mobile network operators, UMTS uses **W-CDMA(Wideband Code Division Multiple Access)**.
-In the United States, the first commercial 3G network was built by the Monet Cell Networks. It was developed using the **CDMA2000 1x EV-DO** technology. **CDMA2000** (also known as C2K) is a family of protocols for 3G network technologies to send voice, text, and data between mobile phones and cell sites. 3GPP2 was developed as a backward-compatible counterpart to CDMAOne(IS-95). It's downlink speed was about 384kbit/s.
-[High Speed Packet Access(HSPA)](https://en.wikipedia.org/wiki/High_Speed_Packet_Access) is a combination of two mobile protocols: High Speed Downlink Packet Access (HSDPA) and High Speed Uplink Packet Access (HSUPA). It uses the WCDMA protocols to enhance the performance of 3G mobile telecommunication networks. HSDPA was introduced in 3GPP Release 5 along with an upgrade to the uplink speed. It was enhanced from 128KBit/sec to 384KBit/sec. It provided a downlink speed of 7.2Mbit/sec. HSDPA also eliminates latency issues for applications. So, HSDPA is also called as 3.5G.
-[Evolved High Speed Packet Access (or HSPA+)](https://en.wikipedia.org/wiki/Evolved_High_Speed_Packet_Access) is an upgraded 3GPP standard of HSPA. It was launched in 2008. It was incorporated with MIMO(multiple-input and multiple-output) and Dual-Carrier HSDPA service to further improve data speeds. It was made available to the public in 2010. Theoretically, it can achieve downlink speed from 28-42Mbit/s. Advanced HSPA+ is the improved version of HSPA+ which uses MIMO and 64QAM(Quadrature Amplitude Modulation) to provide higher data rates. The data speeds range from 84.4 to 168Mbit/s for downlink and 22 Mbit/s for uplink.
+### The generations
+#### 0G & 1G 	
+0G (or Zero Generation) is basically the predecessor of 1G. It was a part of an open telephone network used by the public with their own telephone numbers. Mobile telephony communication is different from radio telephony communication. Mobile telephony used open network lines for communication, while radio telephony was a part of a closed network. It could be used only by those people who had access to that network.
 
-- **4G**
-**4G**(or **Fourth Generation**) is currently in use in almost all parts of the world. 4G finds its applications in HD gaming, video streaming, TV in mobile, 3D AR services and much more but better and faster. A series of specifications to enable 4G connectivity were specified. These specifications were 4G standards, called the [IMT-Advanced(International Mobile Telecommunications Advanced)](https://en.wikipedia.org/wiki/IMT_Advanced). They were defined by the **ITU-R** communications sector in March 1998. As IMT-2000 are the requirements for 3G systems, likewise IMT-Advanced are the requirements for 4G systems. [WiMax](https://en.wikipedia.org/wiki/WiMAX)(standardized by IEEE) and [LTE](https://en.wikipedia.org/wiki/LTE_(telecommunication))(standardized by 3GPP), are almost technically similar. Since they do not follow the intended 4G specifications, the first-releases of LTE and WiMAX are considered as pre-4G or near-4G. In 2011, the backward compatible IMT-Advanced variants of mobile WiMAX and LTE were developed. They were **Mobile WiMAX Release 2** (also called WirelessMAN-Advanced) and **LTE-A(LTE Advanced)**.
-WiMAX (IEEE 802.16e-2005) standard (also called WiBro in South Korea) provided high speeds of 128 Mbit/s for downlink and 56 Mbit/s for uplink. The WirelessMAN-Advanced(IEEE 802.16m-2011 standard) was the evolution of IEEE 802.16e standard. IEEE 802.16m-2011 standard satisfied the IMT-Advanced criteria. The upgrade improved the speed to 1GBit/s for fixed stations.
-The pre-4G (LTE(Long Term Evolution) or 4G-LTE) had a peak data rate of 100 Mbit/s for downlink and 50 Mbit/s for uplink. The speed was improved if MIMO technology was used. But the first releases of LTE did not satisfy the IMT-Advanced criteria. So, in 2011 its IMT-Advanced variant LTE-A was introduced as 3GPP Release 10. It is the improved version of LTE and made use of additional spectrum and multiplexing to achieve higher data rates. LTE-A provides high speeds upto 1.5-3GBit/s.
-**LTE-A Pro** (LTE Advanced Pro or Pre-5G) was introduced under 3GPP release 13 and 14. It is the next version of LTE-A and the beginning of the 5G era. It is credited to offer data rates starting from 3GBit/s. Its development is associated with 5G and is expected to be in use from 2020.
+Technologies that introduced in 0G were [Push to talk (PTT)](https://en.wikipedia.org/wiki/Push_to_Talk) — a telecommunication method in which a button switches its operation from reception mode to transmission mode — and [Mobile Telephone Services (MTS)](https://en.wikipedia.org/wiki/Mobile_Telephone_Service), these telephone services used very high frequency (VHF) signals which in turn were connected to [Public Switched Telephone Network (PSTN)](https://en.wikipedia.org/wiki/Public_switched_telephone_network) for transmission.
 
-- **5G**
-**5G**(or **Fifth Generation**) is the fifth generation of broadband cellular network technology. The reason why newer generations are developed is because new generation means new bandwidth. These new bandwidths will be greater than the bandwidths of lower generations. Greater bandwidths will contribute to higher data speeds and lower time for data transfer. 5G is expected to provide broadband internet connection as well, like the traditional cable internet. This newer generation can make a huge difference in providing stable internet connection to PC's, laptops, set-top boxes and various other IoT's.
-Low-band 5G uses a similar frequency spectrum of 4G(600-700 MHz), offering a speed around 30-250Mbit/s and having a service area similar to 4G towers. Mid-band 5G uses a frequency spectrum of 2.5-3.7GHz, allowing speeds upto 100-900Mbit/s and delivering coverage up to a few miles in radius. This mid-band is used to offer 5G services in metropolitan cities. High-band 5G uses a frequency spectrum of 25–39GHz(**mmWave or mmW**). It often achieves download speeds in Gbit/s. Their area of coverage is very low and may require many base stations for transmission, which makes them expensive.
-Lower-band spectrums tend to have greater range and lesser speeds while higher-band spectrums have limited coverage area but higher speeds. **Massive MIMO** technology can be used to achieve 5G services as more number of antennas can radically increase the coverage area and boost the power density.
-5GNR(New Radio) is the new 5G technology which covers FR1(sub 6GHz) and FR2(above 24HGz). It is a new air interface developed by 3GPP and built for the 5G network which is expected to be the universal norm for the future air interface networks. 5GNR is based on [RAT(Radio Access Technology)](https://en.wikipedia.org/wiki/Radio_access_technology). In 5GNR the air latency is estimated to be around 10-12ms. The first versions of 5G will have latency upto 30ms, and by using edge servers the latency can improve upto 20ms. This is because computing servers are closest to the end consumer and thus offering **edge computing**. Edge computing can decrease data flow congestion and latency. So, 5G combined with edge computing can provide seamless [gaming experience](https://www.section.io/blog/5g-edge-computing-for-gaming/) as well.
+Telephone services were later developed to an [Improved Mobile Telephone Service (IMTS)](https://en.wikipedia.org/wiki/Improved_Mobile_Telephone_Service) and an [Advanced Mobile Telephone System (AMTS)](https://en.wikipedia.org/wiki/Advanced_Mobile_Telephone_System) systems. These used telephone line services for public communication, enabling users to make public telephone calls.
 
-- **6G**
-**6G**(or **Sixth Generation**) will be the successor of 5G. It is expected to be remarkably faster at the speed of 11GBit/s. Several companies and MNCs have started their development of 6G. Countries like China, South Korea and Japan have also shown interest in 6G. [Recently](https://www.dailymail.co.uk/news/article-8929247/China-launches-worlds-6G-experimental-satellite.html) on 6th November 2020, China successfully deployed an experimental 6G research satellite into space. 6G's frequency band will be deployed on the terahertz spectrum. Terahertz waves are advantageous to transfer data at the speeds upto 50GBit/s. So the experimental satellite is designed to test terahertz wave technologies in orbit. 6G is expected to hit the markets by 2030.
+1G (or First Generation), the successor to 0G, was introduced in the year 1980. 1G specifically used digital signals when connecting two cells. Yet, to enable voice calls on a 1G network, signals had to be modulated to a higher frequency (150MHz+).
 
-##### R&D AT ITS BEST…
+Nordic Mobile Telephone (NMT) was one such standard, implemented in the Nordic countries, Eastern Europe, etc. Other prominent standards in the 1G network were Advanced Mobile Phone System (AMPS) and [Total Access Communication System(TACS)](https://en.wikipedia.org/wiki/Total_Access_Communication_System).
 
-The pace at which technology is developing is mind blowing. Yesterday's innovations are already considered obsolete today. Just about 10 years ago, the first phone was introduced and mobile networking was barely possible. Now, almost every task can be done online using a mobile device. The pandemic has reiterated the widely accepted fact that modern day technology depends largely on the use of mobile networking. As discussed before, research and development is on-going in the networking industry and with every passing day, we are inching closer to 7G being a reality. Seeking the next best thing has always been the human mentality. The thirst of humans to build something new and reach unbelievable heights is unending. So buckle up and stay on the lookout for more technological breakthroughs that are definitely to come.
+Due to the low frequency bandwidth of the network, the maximum speed for data transmission topped around 2–4Kbps (Kilobyte Per Second). The network was suitable for short distance voice calls, but network interference resulted in signal disturbance over long distance calls. These issues led to the development of 2G.
+
+#### 2G 	
+2G (or Second Generation) was launched by the [Global System for Mobile Communications (GSM)](https://en.wikipedia.org/wiki/GSM) in 1991. Unlike 1G, where calls were modulated for long distance, here the voice calls were encoded for better quality. They were digitally encrypted between the receiver and the base station.
+
+2G was based on the transmission of digital signals. This led to the introduction of data services, like short message service (SMS) and multimedia messaging service (MMS). [Time Division Multiple Access (TDMA)](https://en.wikipedia.org/wiki/Time-division_multiple_access) was the most common technology used for this type of transmission.
+
+It's a technology that provides wireless networking services using [time-division multiplexing (TDM)]((https://en.wikipedia.org/wiki/Time-division_multiplexing)), a multiplexing method in which transmission and reception of independent signals are made over a common signal path.
+
+Integrated switches were used at each end of the transmission line to make sure each signal appeared in an alternating pattern. In North America, [DAMPS (Digital Advanced Mobile Phone Service)](https://en.wikipedia.org/wiki/Digital_AMPS) was in use. DAMPS (also known as IS-54 and IS-136) is the digital version of its 1G counterpart AMPS.
+
+This is a combination of TDMA and FDMA. It uses 30KHz for channel spacing and 800–900MHz for the frequency band, just like AMPS. Currently, all DAMPS channels are replaced by GSM/CDMA technology.
+
+Another notable standard of 2G is [CDMAOne](https://en.wikipedia.org/wiki/CdmaOne) (or IS-95). This standard uses [code-division multiple access (CDMA)](https://en.wikipedia.org/wiki/Code-division_multiple_access) technology for data transmission.
+
+CDMA allows multiple transmitters to send information over a single communication channel. [General Packet Radio Service (GPRS)](https://en.wikipedia.org/wiki/General_Packet_Radio_Service), or 2.5G, was a huge breakthrough in the 2G communication system.
+
+It's a data transfer–oriented standard which uses a packet switching technique. GPRS has an Internet Protocol (IP) based architecture, that allows transmission of data packets to the Internet.
+
+The packet radio technique was helpful in creating a communication link between the GSM devices (mobiles) and the external data packets. GPRS core led to the development of online voice and data applications that were afterwards built using the 3G standards. GPRS provided data transmission speeds up to 100Kbps.
+
+[Enhanced Data Rates for GSM Evolution (EDGE)](https://en.wikipedia.org/wiki/Enhanced_Data_Rates_for_GSM_Evolution) 2.75G technology made the most improvements over the other 2G standards. It was established for the GSM networks in 2003.
+
+Nine modulation and coding schemes (MCS) were introduced for EDGE networking. Four of them used the Gaussian minimum-shift keying (GMSK) modulation technique, and the other five used the 8PSK modulation technique.
+
+This improved the data speeds and performance margin significantly. Its theoretical maximum speed is around 450Kbps. The newer EDGE standards were upgraded to be implemented on GSM/GPRS networks. Hence, it is also considered as pre-3G.
+
+#### 3G 	
+3G (or Third Generation) turned out to be a huge development in terms of network connectivity. Data rates were drastically improved, and this made video streaming, online conferencing, uploading, and mobile Internet better and faster.
+
+Some of the 3G standards were based on legacy EDGE technology, so EDGE and CDMA were backward compatible to 2G networks as well. 3G was being developed in the early 1980s by the [International Telecommunication Union (ITU)](https://en.wikipedia.org/wiki/International_Telecommunication_Union).
+
+It took years of research and development before it was made available to the public. The technical specifications of 3G standards are called IMT-2000.
+
+For 3G, the communication bandwidth was assigned from 400 MHz and 3 GHz. In 1998, NTT DoCoMo (a Japanese-based mobile phone operator) launched the first pre-commercial 3G network. Europe's first pre-commercial network was the [Universal Mobile Telecommunications System (UMTS)](https://en.wikipedia.org/wiki/UMTS) network, developed by Manx Telecom.
+
+This was a system based on the GSM standard. UMTS was a part of the ITU's IMT-2000 standards developed and retained by the [3rd Generation Partnership Project (3GPP)](https://en.wikipedia.org/wiki/3GPP).
+
+It aligned with the [CDMA2000](https://en.wikipedia.org/wiki/CDMA2000) standards set for networks based on its rival, the CDMAOne technology. To deliver greater spectral quality and bandwidth to mobile network operators, UMTS uses Wideband Code Division Multiple Access (W-CDMA).
+
+In the United States, the first commercial 3G network was built by the Monet Cell Networks. It was developed using the CDMA2000 1x EV-DO technology. CDMA2000 (also known as C2K) is a family of protocols for 3G network technologies to send voice, text, and data between mobile phones and cell sites.
+
+3GPP2 was developed as a backward-compatible counterpart to CDMAOne (IS-95). Its downlink speed was about 384Kbps.
+
+[High Speed Packet Access (HSPA)](https://en.wikipedia.org/wiki/High_Speed_Packet_Access) is a combination of two mobile protocols: High Speed Downlink Packet Access (HSDPA) and High Speed Uplink Packet Access (HSUPA).
+
+It uses the W-CDMA protocols to enhance the performance of 3G mobile telecommunication networks. HSDPA was introduced in 3GPP Release 5, along with an upgrade to the uplink speed. It was enhanced from 128Kbps to 384Kbps. It provided a downlink speed of 7.2Mbps.
+
+HSDPA also eliminated latency issues for applications. So, HSDPA is also called as 3.5G. [Evolved High Speed Packet Access (or HSPA+)](https://en.wikipedia.org/wiki/Evolved_High_Speed_Packet_Access) is an upgraded 3GPP standard of HSPA.
+
+It was launched in 2008 and incorporated with multiple-input and multiple-output (MIMO) and the dual-carrier HSDPA service to further improve data speeds.
+
+It was made available to the public in 2010. Theoretically, it can achieve downlink speeds of 28–42Mbps. Advanced HSPA+ is the improved version of HSPA+ that uses MIMO and 64QAM (quadrature amplitude modulation) to provide higher data rates. The data speeds range from 84.4 to 168Mbps for downlink and 22Mbps for uplink.
+
+#### 4G	 
+4G (or Fourth Generation) is currently in use in almost all parts of the world. 4G finds its applications in HD gaming, video streaming, TV via mobile, 3D AR services, and many more — yet better and faster.
+
+A series of specifications to enable 4G connectivity were specified. These specifications were 4G standards, called the [International Mobile Telecommunications Advanced (IMT-Advanced)](https://en.wikipedia.org/wiki/IMT_Advanced).
+
+They were defined by the ITU-R communications sector in March 1998. As IMT-2000 are the requirements for 3G systems, IMT-Advanced are the requirements for 4G systems as well.
+
+[WiMax](https://en.wikipedia.org/wiki/WiMAX) (standardized by IEEE) and [LTE](https://en.wikipedia.org/wiki/LTE_(telecommunication)) (standardized by 3GPP), are almost technically similar.
+
+Since they don't follow the intended 4G specifications, the first-releases of LTE and WiMAX are considered as pre-4G or near-4G. In 2011, the backward compatible IMT-Advanced variants of mobile WiMAX and LTE were developed.
+
+These were the Mobile WiMAX Release 2 (also called WirelessMAN-Advanced) and the LTE-A (LTE Advanced). The WiMAX (IEEE 802.16e-2005) standard (also called WiBro in South Korea) provided high speeds of 128 Mbps for downlink and 56 Mbps for uplink.
+
+The WirelessMAN-Advanced (IEEE 802.16m-2011 standard) was the evolution of IEEE 802.16e standard. IEEE 802.16m-2011 standard satisfied the IMT-Advanced criteria. The upgrade improved the speed to 1Gbps for fixed stations.
+
+The pre-4G (Long Term Evolution [LTE], or 4G-LTE) had a peak data rate of 100 Mbps for downlink and 50 Mbps for uplink. The speed was improved if MIMO technology was used. But the first releases of LTE did not satisfy the IMT-Advanced criteria.
+
+So, in 2011 its IMT-Advanced variant LTE-A was introduced as 3GPP Release 10. This is the improved version of LTE and made use of additional spectrum and multiplexing to achieve higher data rates.
+
+LTE-A provides high speeds, up to 1.5-3Gbps. LTE-A Pro (LTE Advanced Pro or Pre-5G) was introduced under the 3GPP release 13 and 14, which is the next version of LTE-A and the beginning of the 5G era. It's credited with data rates starting from 3Gbps. Its development is associated with 5G and is expected to be in use from 2020 moving forward.
+
+#### 5G 	
+5G (or Fifth Generation) is the fifth generation of broadband cellular network technology. New generation means new bandwidth which is the reason why newer generations are developed.
+
+Greater bandwidths will contribute to higher data speeds and lower time for data transfer. 5G is expected to provide broadband Internet connection as well, similar to traditional cable Internet.
+
+This newer generation can make a huge difference in providing stable Internet connection to PCs, laptops, set-top boxes, and various other Internet of Things (IoT) devices. Low-band 5G uses a similar frequency spectrum of 4G (600–700 MHz), offering a speed around 30–250Mbps and having a service area similar to 4G towers.
+
+Mid-band 5G uses a frequency spectrum of 2.5–3.7GHz, allowing speeds up to 100–900Mbps and delivering coverage up to a few miles in radius. This mid band is used to offer 5G services in metropolitan cities. High-band 5G uses a frequency spectrum of 25–39GHz (mmWave or mmW).
+
+It often achieves download speeds in Gbps. Their area of coverage is very low and may require many base stations for transmission, which makes them expensive. Lower-band spectrums tend to have greater range and lesser speeds, while higher-band spectrums have a limited coverage area but higher speeds.
+
+Massive MIMO technology can be used to achieve 5G services, as more number of antennas can radically increase the coverage area and boost the power density. 5GNR (New Radio) is the new 5G technology, covering FR1 (sub 6GHz) and FR2 (above 24HGz).
+
+It's a new air interface developed by 3GPP and built for the 5G network, expected to be the universal norm for the future air interface networks. 5GNR is based on [Radio Access Technology (RAT)](https://en.wikipedia.org/wiki/Radio_access_technology). In 5GNR the air latency is estimated to be around 10–12ms.
+
+The first versions of 5G will have latencies up to 30ms, and by using edge servers the latency can improve up to 20ms. This is because the computing servers are as close to the end consumer as they can be through the use of edge computing.
+
+Edge computing can decrease data flow congestion and latency. So, 5G combined with edge computing can provide a seamless [gaming experience](https://www.section.io/blog/5g-edge-computing-for-gaming/) as well.
+
+#### 6G 	
+6G (or Sixth Generation) will be the successor to 5G. It is expected to be remarkably faster, at the speed of 11GBps. Several companies and MNCs have started their development of 6G. Countries like China, South Korea, and Japan have also shown interest in 6G.
+
+[Recently](https://www.dailymail.co.uk/news/article-8929247/China-launches-worlds-6G-experimental-satellite.html), on the 6th of November, 2020, China successfully deployed an experimental 6G research satellite into space.
+
+6G's frequency band will be deployed on the terahertz spectrum. Terahertz waves are advantageous for transferring data, and can reach speeds up to 50GBps.
+
+This experimental satellite is thus designed to test terahertz wave technologies in orbit. 6G is expected to hit the markets by 2030.
+
+### R&D at its best
+The pace at which technology is developing is mind blowing. Yesterday's innovations are already considered obsolete today. Just about 10 years ago, the first phone was introduced, and mobile networking was barely possible.
+
+Now, almost every task can be done online using a mobile device. The pandemic has reiterated the widely accepted fact that modern day technology depends largely on the use of mobile networking.
+
+As discussed in this article, research and development is ongoing in the networking industry, and with every passing day, we are inching closer to 7G being a reality. Seeking the next best thing has always been the human mentality.
+
+Humans’ thirst to build something new and reach unbelievable heights is unending. So buckle up and stay on the lookout for more technological breakthroughs that are certainly to come.
 
 ##### ADDITIONAL RESOURCES
 [**Wikipedia | Mobile Networks**](https://en.wikipedia.org/wiki/Cellular_network)
