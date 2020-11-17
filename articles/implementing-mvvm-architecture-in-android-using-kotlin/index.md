@@ -1,7 +1,7 @@
 This tutorial is suitable for beginners. Especially those who have just started learning android programming in kotlin. Every app needs to follow certain architectural principles. Failure to adhere to this requirement results in applications that are difficult to scale and maintain. As a result, more time and resources will be needed to push even simple updates. Therefore, the developer may end up missing crucial opportunities.
 
 ### Introduction
-Let us start by evaluating what android architectures existed before MVVM. The first component is Model View Presenter denoted by MVP. Though this architecture separates the business logic from the app's UI, it is not easy to implement. In the long-run, this can translate into high development costs. The second android architecture is [MVC](https://openclassrooms.com/en/courses/4661936-develop-your-first-android-application/4679186-learn-the-model-view-controller-pattern#:~:text=Most%20Android%20developers%20use%20a,apply%20to%20our%20TopQuiz%20application.). Just like MVP, it is also quite complex and not suitable for small projects. Google introduced MVVM (Model-View-ViewModel)  to resolve these challenges. By separating code into smaller chunks, MVVM simplifies the debugging process. Through this article, you'll understand MVVM architecture and implement it in an application. Furthermore, this article shows how to debug common errors resulting from this architecture. Learn more about MVVM [here](https://developer.android.com/topic/libraries/architecture/viewmodel?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzhDtIsNoyAcuVYiA3F3smhaKd4THplNIp1nDr-KGB_XWkzZxiIvrVAaAjYKEALw_wcB&gclsrc=aw.ds).
+Let us start by evaluating what android architectures existed before MVVM. The first component is Model View Presenter denoted by MVP. Though this architecture separates the business logic from the app's UI, it is not easy to implement. In the long-run, this can translate into high development costs. The second android architecture is [MVC](https://openclassrooms.com/en/courses/4661936-develop-your-first-android-application/4679186-learn-the-model-view-controller-pattern#:~:text=Most%20Android%20developers%20use%20a,apply%20to%20our%20TopQuiz%20application.). Just like MVP, it is also quite complex and not suitable for small projects. Google introduced MVVM (Model-View-ViewModel) to resolve these challenges. By separating code into smaller chunks, MVVM simplifies the debugging process. Through this article, you'll understand MVVM architecture and implement it in an application. Furthermore, this article shows how to debug common errors resulting from this architecture. Learn more about MVVM [here](https://developer.android.com/topic/libraries/architecture/viewmodel?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzhDtIsNoyAcuVYiA3F3smhaKd4THplNIp1nDr-KGB_XWkzZxiIvrVAaAjYKEALw_wcB&gclsrc=aw.ds).
 
 Let's dive in!
 
@@ -20,11 +20,9 @@ Launch Android Studio and create a new project, as shown below. Make sure that y
 ![getting started](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/getting-started.png)
 
 ### Step 2 – Creating the model.
-Create the app model. Also referred to as the data class. To avoid confusion, create a package named model inside the java folder. Then, create a data class named Blog in the model package, as shown below. For simplicity, the data class will only have one variable (title). There is no need to add getters and setters; Kotlin adds them to the class automatically.
+Create the app model. Also referred to as the data class. To avoid confusion, create a package named model inside the java folder. Then, create a data class named Blog in the model package, as shown below. For simplicity, the data class will only have one variable (title). There is no need to add getters and setters; Kotlin adds them to the class automatically. Here's the code for the class.
 
-```
-import kotlin.random.Random
-
+```Kotlin
 data class Blog(
     var title:String
 )
@@ -33,9 +31,8 @@ data class Blog(
 ### Step 3 – Creating the view.
 The view is what the user sees on the screen. The UI, therefore, needs to be well structured to minimize confusion and dissatisfaction.
 
-Open `activity_main.xml` file and change the Layout from constraint to linear Layout. Set the orientation to vertical; this arranges UI components vertically in the Layout. Our app's primary widgets are `Edittext`, `Button`, and a `RecyclerView`. Make sure all these widgets have IDs since they will be vital at a later stage. The image below shows the layout design and code. The section with a list showing items 0 to 9 is the `RecyclerView`. Whatever we type in the app will be displayed in that section once we click the submit button.
-
-```
+Open `activity_main.xml` file and change the Layout from constraint to linear Layout. Set the orientation to vertical; this arranges UI components vertically in the Layout. Our app's primary widgets are `Edittext`, `Button`, and a `RecyclerView`. Make sure all these widgets have IDs since they will be vital at a later stage. This is how our `activity_main.xml` file should look like.
+```Xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -87,9 +84,9 @@ Open `activity_main.xml` file and change the Layout from constraint to linear La
 ```
 
 ### Step 4 – Creating the item_view.
-Still, on the Layout, we need to create the design of the element shown in the `RecyclerView`. Therefore, create a file named `item.xml` and add the code shown in the image below. The design is simple since the user also accesses one attribute from the data class.
+Still on the Layout, we need to create the design of the element shown in the `RecyclerView`. Therefore, create a file named `item.xml` and add the code shown in the image below. The design is simple since the user also accesses one attribute from the data class.
 
-```
+```Xml
 <?xml version="1.0" encoding="utf-8"?>
     <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -140,21 +137,7 @@ Still, on the Layout, we need to create the design of the element shown in the `
 
 ### Step 5 – Create a RecyclerView Adapter
 A `RecyclerView` adapter handles the binding of the `item.xml` layout to the `RecyclerView`. It also takes in a list of items and displays them to the user. The code for the `RecyclerView` adapter is shown below.
-
-```
-package com.wanja.mvvmexample.recycler
-
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
-import com.wanja.mvvmexample.R
-import com.wanja.mvvmexample.model.Blog
-import com.wanja.mvvmexample.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.item.view.*
-
+```Kotlin
 class NoteRecyclerAdapter(val viewModel: MainViewModel, val arrayList: ArrayList<Blog>, val context: Context): RecyclerView.Adapter<NoteRecyclerAdapter.NotesViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -192,16 +175,10 @@ class NoteRecyclerAdapter(val viewModel: MainViewModel, val arrayList: ArrayList
 }
 ```
 
-### Step 6 – Creating a ViewModel
+### Step 6 – Creating The ViewModel
 Create a package named `ViewModel`. Inside this folder, create a Kotlin class and name it `MainViewModel`. The class should extend the android `ViewModel`. You might face an error if you failed to add lifecycle dependencies from Jetpack. The `MainViewModel` will have a mutable `livedata` item that holds the array list. It is vital to use `LiveData` since it notifies the UI in case of any data change. The `MainViewModel` code is shown below.
 
-```
-package com.wanja.mvvmexample.viewmodel
-
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.wanja.mvvmexample.model.Blog
-
+```Kotlin
 class MainViewModel: ViewModel() {
     var lst = MutableLiveData<ArrayList<Blog>>()
     var newlist = arrayListOf<Blog>()
@@ -219,18 +196,9 @@ class MainViewModel: ViewModel() {
 }
 ```
 
-### Step 7 – Create a ViewModel factory.
-The purpose of a `ViewModel` factory is to instantiate the `ViewModel`. This prevents the app from crashing in case an activity is no found. The guideline for the `MainViewModelFactory` is shown below.
-
-```
-package com.wanja.mvvmexample.viewmodel
-
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import java.lang.IllegalArgumentException
-
+### Step 7 – Create The ViewModel Factory.
+The purpose of a `ViewModel` factory is to instantiate the `ViewModel`. This prevents the app from crashing in case an activity is not found. The code for our `MainViewModelFactory` is shown below.
+```Kotlin
 class MainViewModelFactory(): ViewModelProvider.Factory{
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(MainViewModel::class.java)){
@@ -243,28 +211,11 @@ class MainViewModelFactory(): ViewModelProvider.Factory{
 ```
 
 ### Step 8 – MainActivity (Connecting the code)
-We have created the model, `ViewModel`, `ViewModelfactory`, and `RecyclerView`. These components need to be instantiated in this class for the application to work.
+We have created the model, `ViewModel`, `ViewModelfactory`, and `RecyclerView`. These components need to be instantiated in the `MainActivity` class for the application to work.
 
 Start by declaring the `RecyclerView` and instantiating it. Set the layout manager for the `RecyclerView` to `LinearLayoutManager`.
 
-```
-package com.wanja.mvvmexample
-
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.wanja.mvvmexample.model.Blog
-import com.wanja.mvvmexample.recycler.NoteRecyclerAdapter
-import com.wanja.mvvmexample.viewmodel.MainViewModel
-import com.wanja.mvvmexample.viewmodel.MainViewModelFactory
-
+```Kotlin
 class MainActivity : AppCompatActivity() {
     private var viewManager = LinearLayoutManager(this)
     private lateinit var viewModel: MainViewModel
