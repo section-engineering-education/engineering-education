@@ -22,18 +22,18 @@ With more data being presented and dynamically received, developers had to come 
 #### Android RecyclerViews
 The Dynamic data (that we are referring to) can include data from a network or local database. This again comes with the added problem of resource management.
 
-That is where ListViews comes into play. Developers were able to load text-based data to a compound view using an adapter to increase efficiency. However, this solution didn't address all the problems encountered.
+That is where `ListViews` comes into play. Developers were able to load text-based data to a compound view using an adapter to increase efficiency. However, this solution didn't address all the problems encountered.
 
-This solution didn't allow the addition of other views to the Compound view. Developers needed to write extra code to facilitate the addition of other Views. They weren't very efficient in resource management. Having many ListViews in the application still showed a high CPU usage. RecyclerViews addressed these issues and brought in other advantages.
+This solution didn't allow addition of other views to the Compound view. Developers needed to write extra code to facilitate the addition of other Views. They weren't very efficient in resource management. Having many `ListViews` in the application still showed a high CPU usage. `RecyclerViews` addressed these issues and brought in other advantages.
 
 Those advantages are listed below:
 
-1. *flexibility* - with recyclerviews, you can create custom layouts for each of the list items. You can also define the orientation and placement of the items.
-2. *animations* - listviews had no support for animating the list items. Recyclerviews have the ItemAnimator class, that helps animate the list items.
-3. *click listeners* - with listviews, you could only listen to click events, while in recyclerviews, you could listen to various interactions like drag and long-press thanks to the RecyclerView.OnItemTouchListener class.
-4. *control* - recyclerviews allow the developer to have full control of the list items and their behavior. ListViews limited this.
+1. *flexibility* - with `RecyclerViews`, you can create custom layouts for each of the list items. You can also define the orientation and placement of the items.
+2. *animations* - `ListViews` had no support for animating the list items. `RecyclerViews` have the `ItemAnimator` class that helps animate the list items.
+3. *click listeners* - with `ListViews`, you could only listen to click events, while in `RecyclerViews`, you can listen to various interactions like drag and long-press thanks to the `RecyclerView.OnItemTouchListener` class.
+4. *control* - `RecyclerViews` allow the developer to have full control of the list items and their behavior. `ListViews` limited this.
 
-This article goes through how to create RecyclerViews. It will address the requirements and classes involved to develop a functioning RecyclerView.
+This article goes through how to create `RecyclerViews`. It will address the requirements and classes involved to develop a functioning `RecyclerView`.
 
 To comfortably follow through with this tutorial, you'll need:
 
@@ -41,11 +41,11 @@ To comfortably follow through with this tutorial, you'll need:
 - A basic understanding of **Android development** using **Kotlin** programming language
 
 ##### Components of a RecyclerView
-First, let's go through the parts of a RecyclerView.
+First, let's go through the parts of a `RecyclerView`.
 
-1. ***RecyclerView***: this is the list view declared in your activity. It's where the list of data will be displayed.
+1. ***RecyclerView***: this is the view declared in your activity. It's where the list of data will be displayed.
 2. ***Layout Manager***: it defines how the list should organize our data. It could be horizontal, vertical, or a grid layout.
-3. ***Adapter***: this connects our data, usually a list, to our recyclerview. It also observes changes in the list and updates the recyclerView.
+3. ***Adapter***: this connects our data, usually a list, to our `RecyclerView`. It also observes changes in the list and updates the `RecyclerView`.
 4. ***ViewHolder***: this holds the View onto which we display the data.
 
 #### Writing the code
@@ -66,7 +66,7 @@ Sync the project to load all dependencies.
 
 After gradle syncs, open the `activity_main.xml` file and add the code below.
 
-```xml
+```Xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -89,17 +89,17 @@ After gradle syncs, open the `activity_main.xml` file and add the code below.
 </LinearLayout>
 ```
 
-This code adds the RecyclerView XML view. We give it an ID of `recyclerview` that we'll use as a reference in the activity. We also add `app:layoutManager` to set a layout manager to our recyclerView.
+This code adds the `RecyclerView` XML view. We give it an ID of `recyclerview` that we'll use as a reference in the activity. We also add `app:layoutManager` to set a layout manager to our `RecyclerView`.
 
 We can do this using Kotlin as well. Since we need the basic Vertical ListView form, we use `LinearLayoutManager`. We have three layout managers that we can use. You can learn more about them in their [documentation](https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.LayoutManager).
 
 Next up, we will create the list item layout. It will be a blueprint that the recyclerview will use to draw our list items. All items in the recyclerview will take the layout's form.
 
-In the `res/layout` directory, create a new layout file and give it a name. In our case, we will use `list_item`. This will solve the XML error in our `activity_main.xml` at the listitem attribute.
+In the `res/layout` directory, create a new layout file and give it a name. In our case, we will use `list_item`. This will solve the XML error in our `activity_main.xml` at the `listitem` attribute.
 
 Add the following code:
 
-```xml
+```Xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -146,21 +146,21 @@ Add the following code:
 </androidx.cardview.widget.CardView>
 ```
 
-You can see that I have used a CardView as a parent to have card items on my list. Then we will add an ImageView and two TextViews to hold our data. Once you go to the `activity_main.xml` preview pane, the recyclerview preview will have changed from the old listview form to our layout's form.
+You can see that I have used a `CardView` as a parent to have card items on my list. Then we will add an `ImageView` and two `TextViews` to hold our data. Once you go to the `activity_main.xml` preview pane, the `RecyclerView` preview will have changed from the old `ListView` form to our layout's form.
 
 The layout should produce a view similar to the one below.
 
 ![List Item](/engineering-education/android-recyclerviews/item.png)
 
-Now that we have our recyclerView and the list item layouts set up, we can get the data displayed. You can go ahead and download the contents from [this file](https://github.com/LinusMuema/kotlin/blob/recyclerviews/app/src/main/java/com/moose/androidkt/Data.kt) on GitHub. It generates random users and returns the list of users for us to show in our recyclerView.
+Now that we have our `RecyclerView` and the list item layouts set up, we can get the data displayed. You can go ahead and download the contents from [this file](https://github.com/LinusMuema/kotlin/blob/recyclerviews/app/src/main/java/com/moose/androidkt/Data.kt) on GitHub. It generates random users and returns the list of users for us to show in our `RecyclerView`.
 
-We now have to create an adapter that will connect our data to our recyclerView. Go ahead and create a new Kotlin class. We will name it `ListAdapter`. Add a list of type `User` as a parameter.
+We now have to create an adapter that will connect our data to our `RecyclerView`. Go ahead and create a new Kotlin class. We will name it `ListAdapter`. Add a list of type `User` as a parameter.
 
 Make the class extend `RecyclerView.Adapter`. We also need to add our `ViewHolder` class by [type inferencing](https://kotlinlang.org/spec/type-inference.html). Since we don't have the class already, create an inner class in our `ListAdapter` class. Give it the name `ListViewHolder`.
 
 We'll get to that a bit later.
 
-```kotlin
+```Kotlin
 class ListAdapter(private val data: List<User>): RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
       class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -172,9 +172,9 @@ class ListAdapter(private val data: List<User>): RecyclerView.Adapter<ListAdapte
 For the adapter to function well, we need to override three methods. Let's go through each of the methods and see what they do.
 
 #### 1. onCreateViewHolder
-The recyclerview invokes this method to create a `ViewHolder`. Since we passed our viewholder class by type inferencing, this method's return type is the actual viewholder. Go ahead and add the following code in the ListAdapter class.
+The `Recyclerview` invokes this method to create a `ViewHolder`. Since we passed our `ViewHolder` class by type inferencing, this method's return type is the actual `ViewHolder`. Go ahead and add the following code in the `ListAdapter` class.
 
-```kotlin
+```Kotlin
 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
     return ListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false))
 }
@@ -183,14 +183,14 @@ override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolde
 We use the layout inflator class to create the view that will hold our data.
 
 #### 2. getItemCount
-This method returns the entire count of items in the recyclerView and not just the visible ones. To return the correct value, we set it to return the size of our list.
+This method returns the entire count of items in the `RecyclerView` and not just the visible ones. To return the correct value, we set it to return the size of our list.
 
-```kotlin
+```Kotlin
     override fun getItemCount(): Int = data.size
 ```
 
 #### 3. onBindViewHolder
-This is the last method to override. This method binds data on the viewholder provided as an argument.
+This is the last method to override. This method binds data on the `Viewholder` provided as an argument.
 
 ```kotlin
 override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
@@ -198,11 +198,11 @@ override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
 }
 ```
 
-Here we call a function in our viewholder named `bind`, which takes care of adding the data to the layout's views. We pass in the user object at the specified position in the list. This ensures that the user object at a specific position will be displayed at the same position in the recyclerView.
+Here we call a function in our `Viewholder` named `bind`, which takes care of adding the data to the layout's views. We pass in the user object at the specified position in the list. This ensures that the user object at a specific position will be displayed at the same position in the recyclerView.
 
 Add the following function in the ListViewHolder class.
 
-```kotlin
+```Kotlin
 fun bind(user: User) {
     Glide.with(itemView.context).load(user.image).into(itemView.profile)
     itemView.name.text = user.name
@@ -210,30 +210,33 @@ fun bind(user: User) {
 }
 ```
 
-This is where the name `RecyclerView` comes from. As you can see, we created the views using onCreateViewHolder. The recyclerView does not create a view for every item on our list. What it does do is create views that can only fit onto the screen's viewport and then recycles them.
+This is where the name `RecyclerView` comes from. As you can see, we created the views using `onCreateViewHolder`. The `RecyclerView` does not create a view for every item on our list. What it does do is create views that can only fit onto the screen's viewport and then recycles them.
 
-Let's assume the device can accommodate five views and our data has ten items. The recyclerView creates five views to hold the first five pieces of data. Once a user starts scrolling, the items that move out of the screen are cleared from their views. The recyclerview then uses these views to display the incoming set of data.
+Let's assume the device can accommodate five views and our data has ten items. The `RecyclerView` creates five views to hold the first five pieces of data. Once a user starts scrolling, the items that move out of the screen are cleared from their views. The `RecyclerView` then uses these views to display the incoming set of data.
 
-When the item at position 1 goes out of the screen, it's removed from the view. The recyclerview uses the now empty view to display the item at position 6 visible on the screen.
+When the item at position 1 goes out of the screen, it's removed from the view. The `RecyclerView` uses the now empty view to display the item at position 6 visible on the screen.
 
 This forms a recycling cycle that ensures all data is displayed well, and that we don't create extra views. It also ensures the application does not drain the operating system's resources by creating too many views that we will not use.
 
-The last part is now connecting the recyclerView to the adapter. Add the following code to the `onCreate` method in the `MainActivity.kt` file.
+The last part is now connecting the `RecyclerView` to the adapter. Add the following code to the `onCreate` method in the `MainActivity.kt` file.
 
-```kotlin
+```Kotlin
 recyclerview.apply {
     setHasFixedSize(true)
     adapter = ListAdapter(Data.get())
 }
 ```
 
-We get the recyclerview by the ID we used in the layout file. We use the `apply` method to perform actions on the recyclerView. We also assign an adapter to it and call the `Data.get()` function to get a random list of users. The `setHasFixedSize` ensures that the items' views always have the same dimensions.
+We get the `RecyclerView` by the ID we used in the layout file. We use the `apply` method to perform actions on the `RecyclerView`. We also assign an adapter to it and call the `Data.get()` function to get a random list of users. The `setHasFixedSize` ensures that the items' views always have the same dimensions.
 
-If the dimensions kept on changing, it would lead to glitches. With that, our recyclerView is complete. Once you run your application, the MainActivity should resemble the one below.
+If the dimensions kept on changing, it would lead to glitches. With that, our `RecyclerView` is complete. Once you run your application, the `MainActivity` should resemble the one below.
 
 ![RecyclerView](/engineering-education/android-recyclerviews/recyclerview.jpg)
 
 #### Conclusion
-That's just the basics of Android recyclerviews. There are more methods like notifyDataSetChanged, that help us to manage our recyclerviews. Android developers have adopted RecyclerViews extensively, and learning how to use them is a huge advantage. Make sure you manage your lists of data by using recyclerviews.
+That's just the basics of Android `RecyclerViews`. There are more methods like `notifyDataSetChanged`, that help us to manage our `Recyclerviews`. Android developers have adopted `RecyclerViews` extensively, and learning how to use them is a huge advantage. Make sure you manage your lists of data by using `RecyclerViews`.
 
 You can go ahead and try out the other layout managers to see how they work and perform. You can find the entire code for this tutorial on [Github](https://github.com/LinusMuema/kotlin/tree/recyclerviews) or install a sample application from [Google Drive](https://drive.google.com/file/d/1Nn8xiTcNCk7wlbygPbjxGwW-9ScPUJtr/view?usp=sharing).
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
