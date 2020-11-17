@@ -21,7 +21,6 @@ Launch Android Studio and create a new project, as shown below. Make sure that y
 
 ### Step 2 – Creating the model.
 Create the app model. Also referred to as the data class. To avoid confusion, create a package named model inside the java folder. Then, create a data class named Blog in the model package, as shown below. For simplicity, the data class will only have one variable (title). There is no need to add getters and setters; Kotlin adds them to the class automatically. Here's the code for the class.
-
 ```Kotlin
 data class Blog(
     var title:String
@@ -85,7 +84,6 @@ Open `activity_main.xml` file and change the Layout from constraint to linear La
 
 ### Step 4 – Creating the item_view.
 Still on the Layout, we need to create the design of the element shown in the `RecyclerView`. Therefore, create a file named `item.xml` and add the code shown in the image below. The design is simple since the user also accesses one attribute from the data class.
-
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
     <androidx.cardview.widget.CardView
@@ -177,7 +175,6 @@ class NoteRecyclerAdapter(val viewModel: MainViewModel, val arrayList: ArrayList
 
 ### Step 6 – Creating The ViewModel
 Create a package named `ViewModel`. Inside this folder, create a Kotlin class and name it `MainViewModel`. The class should extend the android `ViewModel`. You might face an error if you failed to add lifecycle dependencies from Jetpack. The `MainViewModel` will have a mutable `livedata` item that holds the array list. It is vital to use `LiveData` since it notifies the UI in case of any data change. The `MainViewModel` code is shown below.
-
 ```Kotlin
 class MainViewModel: ViewModel() {
     var lst = MutableLiveData<ArrayList<Blog>>()
@@ -213,8 +210,7 @@ class MainViewModelFactory(): ViewModelProvider.Factory{
 ### Step 8 – MainActivity (Connecting the code)
 We have created the model, `ViewModel`, `ViewModelfactory`, and `RecyclerView`. These components need to be instantiated in the `MainActivity` class for the application to work.
 
-Start by declaring the `RecyclerView` and instantiating it. Set the layout manager for the `RecyclerView` to `LinearLayoutManager`. The MainActivity file contains three major methods; `initialiseAdapter`,`observeData`, and `addData`. the `initialiseAdapter` method assigns a `Viewmanager` to the `RecyclerView`. The `observeData` function looks for changes in the `viewmodel` and forwards them to the `RecyclerAdapter`. The `addData` method takes in the user's input and updates the list in the `ViewModel`.
-
+Start by declaring the `RecyclerView` and instantiating it. Set the layout manager for the `RecyclerView` to `LinearLayoutManager`. The MainActivity file contains three major methods; `initialiseAdapter`,`observeData`, and `addData`. the `initialiseAdapter` method assigns a `ViewManager` to the `RecyclerView`. The `observeData` function looks for changes in the `viewmodel` and forwards them to the `RecyclerAdapter`. The `addData` method takes in the user's input and updates the list in the `ViewModel`.
 ```Kotlin
 class MainActivity : AppCompatActivity() {
     private var viewManager = LinearLayoutManager(this)
