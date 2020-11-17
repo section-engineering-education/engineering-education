@@ -213,8 +213,8 @@ Making a GET request to http://localhost:8000/api/v1/todo in postman returns a l
     {
         "id": 2,
         "date_created": "2020-11-20",
-        "title": "ght",
-        "body": "new todo",
+        "title": "Go to school",
+        "body": "Pick a book from the Library",
         "is_completed": false,
         "last_modified": "2020-11-17"
     }
