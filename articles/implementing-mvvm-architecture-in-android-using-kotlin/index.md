@@ -3,55 +3,57 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/
-title:
-description: 
-author:
+title: Implementing MVVM architecture in Android using Kotlin
+description: This tutorial will go over how we implement MVVM (model–view–viewmodel) architecture in Android using Kotlin.
+author: wanja-mike
 date: 2020-11-17T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/hero.jpg
-    alt: example math image
+    alt: MVVM (model–view–viewmodel) Android Kotlin image
 ---
-This tutorial is suitable for beginners. Especially those who have just started learning android programming in kotlin. Every app needs to follow certain architectural principles.
+This tutorial is suitable for beginners. Especially those who have just started learning Android programming in Kotlin. Every application needs to follow certain architectural principles.
 <!--more-->
 
-Failure to adhere to this requirement results in applications that are difficult to scale and maintain. As a result, more time and resources will be needed to push even simple updates. Therefore, the developer may end up missing crucial opportunities.
+Failure to adhere to this requirement results in applications difficult to scale and maintain. As a result, more time and resources will be needed to push even simple updates. Therefore, the developer may end up missing crucial opportunities.
 
 ### Introduction
-Let us start by evaluating what android architectures existed before MVVM. The first component is Model View Presenter denoted by MVP. Though this architecture separates the business logic from the app's UI, it is not easy to implement.
+Let us start by evaluating what android architectures existed before MVVM. The first component is Model View Presenter denoted by MVP. Though this architecture separates the business logic from the app’s UI, it is difficult to implement.
 
 In the long-run, this can translate into high development costs. The second android architecture is [MVC](https://openclassrooms.com/en/courses/4661936-develop-your-first-android-application/4679186-learn-the-model-view-controller-pattern#).
 
-Just like MVP, it is also quite complex and not suitable for small projects. Google introduced MVVM (Model-View-ViewModel) to resolve these challenges. By separating code into smaller chunks, MVVM simplifies the debugging process.
+Just like MVP, it is also quite complex and not suitable for minor projects. Google introduced MVVM (Model-View-ViewModel) to resolve these challenges. By separating code into smaller chunks, MVVM simplifies the debugging process.
 
-Through this article, you'll understand MVVM architecture and implement it in an application. Furthermore, this article shows how to debug common errors resulting from this architecture.
+Through this article, you’ll understand MVVM architecture and implement it in an application. This article shows how to debug common errors resulting from this architecture.
 
 Learn more about MVVM [here](https://developer.android.com/topic/libraries/architecture/viewmodel?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzhDtIsNoyAcuVYiA3F3smhaKd4THplNIp1nDr-KGB_XWkzZxiIvrVAaAjYKEALw_wcB&gclsrc=aw.ds).
 
 Let's dive in!
 
 ### Prerequisites
-1. Android studio
-2. You must be familiar with [Kotlin](https://developer.android.com/kotlin/campaign/learn?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzh1wodOJn7w8kKTtWq8yNFlx9xoqzEE_cU2KkCO2Ecdyyr2frGOVjQaAlSuEALw_wcB&gclsrc=aw.ds)
-3. Install [lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle) dependencies
-4. Download the start code from [here](https://github.com/WanjaMIKE/MVVMExample)
+1. Have Android studio installed.
+2. You must be familiar with [Kotlin](https://developer.android.com/kotlin/campaign/learn?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzh1wodOJn7w8kKTtWq8yNFlx9xoqzEE_cU2KkCO2Ecdyyr2frGOVjQaAlSuEALw_wcB&gclsrc=aw.ds).
+3. Install [lifecycle](https://developer.android.com/jetpack/androidx/releases/lifecycle) dependencies.
+4. Download the start code from [here](https://github.com/WanjaMIKE/MVVMExample).
 
 #### The goal of the tutorial
 By the end of this tutorial, you will create an app that takes input and displays it on a recycler view. Below is the screenshot of the app.
 
-### Step 1 – Launching Android Studio.
+### Step 1 – Launching Android Studio
 Launch Android Studio and create a new project, as shown below. Make sure that you select Kotlin as your preferred programming language.
 
-If you do not have Android Studio, you can install it from [here](https://developer.android.com/studio?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzieBJWjBnokDdH6b0gQchoqudRXNohAGp_noSqALLuSlYuwA6EB5T4aAntwEALw_wcB&gclsrc=aw.ds)
+If you don't have Android Studio, you can install it from [here](https://developer.android.com/studio?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzieBJWjBnokDdH6b0gQchoqudRXNohAGp_noSqALLuSlYuwA6EB5T4aAntwEALw_wcB&gclsrc=aw.ds)
 
 ![getting started](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/getting-started.png)
 
-### Step 2 – Creating the model.
+### Step 2 – Creating the model
 Create the app model. Also referred to as the data class. To avoid confusion, create a package named model inside the java folder. Then, create a data class named Blog in the model package, as shown below.
 
-For simplicity, the data class will only have one variable (title). There is no need to add getters and setters; Kotlin adds them to the class automatically. Here's the code for the class.
+For simplicity, the data class will only have one variable (title). There is no need to add getters and setters; Kotlin adds them to the class automatically.
+
+Here's the code for the class.
 
 ```Kotlin
 data class Blog(
@@ -59,10 +61,10 @@ data class Blog(
 )
 ```
 
-### Step 3 – Creating the view.
-The view is what the user sees on the screen. The UI, therefore, needs to be well structured to minimize confusion and dissatisfaction.
+### Step 3 – Creating the view
+The view is what the user sees on the screen. The UI, therefore, needs to be well structured to minimize any confusion and dissatisfaction.
 
-Open `activity_main.xml` file and change the Layout from constraint to linear Layout. Set the orientation to vertical; this arranges UI components vertically in the Layout. Our app's primary widgets are `Edittext`, `Button`, and a `RecyclerView`.
+Open `activity_main.xml` file and change the Layout from constraint to linear Layout. Set the orientation to vertical; this arranges the UI components vertically in the Layout. Our app's primary widgets are `Edittext`, `Button`, and a `RecyclerView`.
 
 Make sure all these widgets have IDs since they will be vital at a later stage. This is how our `activity_main.xml` file should look like.
 
@@ -118,7 +120,7 @@ Make sure all these widgets have IDs since they will be vital at a later stage. 
 ```
 
 ### Step 4 – Creating the item_view.
-Still on the Layout, we need to create the design of the element shown in the `RecyclerView`. Therefore, create a file named `item.xml` and add the code shown in the image below. The design is simple since the user also accesses one attribute from the data class.
+Still on the Layout, we need to create the design of the element shown in the `RecyclerView`. Therefore, create a file named `item.xml` and add the code shown in the image below. The design is simple since the user can also access one attribute from the data class.
 
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -210,10 +212,10 @@ class NoteRecyclerAdapter(val viewModel: MainViewModel, val arrayList: ArrayList
 }
 ```
 
-### Step 6 – Creating The ViewModel
-Create a package named `ViewModel`. Inside this folder, create a Kotlin class and name it `MainViewModel`. The class should extend the android `ViewModel`. You might face an error if you failed to add lifecycle dependencies from Jetpack.
+### Step 6 – Creating the ViewModel
+Create a package named `ViewModel`. Inside this folder, create a Kotlin class and name it `MainViewModel`. The class should extend the Android `ViewModel`. You might face an error if you failed to add lifecycle dependencies from Jetpack.
 
-The `MainViewModel` will have a mutable `livedata` item that holds the array list. It is vital to use `LiveData` since it notifies the UI in case of any data change. The `MainViewModel` code is shown below.
+The `MainViewModel` will have a mutable `livedata` item that holds the array list. It's vital to use `LiveData` since it notifies the UI in case of any data change. The `MainViewModel` code is shown below.
 
 ```Kotlin
 class MainViewModel: ViewModel() {
@@ -233,8 +235,10 @@ class MainViewModel: ViewModel() {
 }
 ```
 
-### Step 7 – Create The ViewModel Factory.
-The purpose of a `ViewModel` factory is to instantiate the `ViewModel`. This prevents the app from crashing in case an activity is not found. The code for our `MainViewModelFactory` is shown below.
+### Step 7 – Create the ViewModel Factory
+The purpose of a `ViewModel` factory is to instantiate the `ViewModel`. This prevents the app from crashing in case an activity is not found.
+
+The code for our `MainViewModelFactory` is shown below.
 
 ```Kotlin
 class MainViewModelFactory(): ViewModelProvider.Factory{
@@ -248,7 +252,7 @@ class MainViewModelFactory(): ViewModelProvider.Factory{
 }
 ```
 
-### Step 8 – MainActivity (Connecting the code)
+### Step 8 – MainActivity (connecting the code)
 We have created the model, `ViewModel`, `ViewModelfactory`, and `RecyclerView`. These components need to be instantiated in the `MainActivity` class for the application to work.
 
 Start by declaring the `RecyclerView` and instantiating it. Set the layout manager for the `RecyclerView` to `LinearLayoutManager`. The MainActivity file contains three major methods; `initialiseAdapter`,`observeData`, and `addData`. the `initialiseAdapter` method assigns a `ViewManager` to the `RecyclerView`.
@@ -305,11 +309,18 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ### Step 9 – Results
-If there are no errors in your code, it should compile and show the UI in the image below. Whatever you type in the `EditText` field should display in the `recyclerview` once you click the submit button.
+If there were no errors in your code, it should compile and show the UI in the image below. Whatever you type in the `EditText` field should display in the `recyclerview` once you click the submit button.
 
 ![results](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/result.png)
 
 ### Conclusion
-MVVM architecture has made it easy to build complex applications. As shown, it is easier to identify bugs due to the separation of business logic from the UI code. The architecture also prevents data loss during configuration changes. Ensure that all dependencies are present before using MVVM. The measure helps prevent runtime errors.
+MVVM architecture has made it easier to build complex applications. As shown, it's easier to identify bugs due to the separation of business logic from the UI code. The architecture also prevents data loss during configuration changes. Ensure that all dependencies are present before using MVVM. This measure helps prevent runtime errors.
 ### References
-[JetPack](https://developer.android.com/jetpack/guide)
+- [JetPack](https://developer.android.com/jetpack/guide)
+
+- [MVC](https://openclassrooms.com/en/courses/4661936-develop-your-first-android-application/4679186-learn-the-model-view-controller-pattern#)
+
+- [Kotlin](https://developer.android.com/kotlin/campaign/learn?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzh1wodOJn7w8kKTtWq8yNFlx9xoqzEE_cU2KkCO2Ecdyyr2frGOVjQaAlSuEALw_wcB&gclsrc=aw.ds)
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
