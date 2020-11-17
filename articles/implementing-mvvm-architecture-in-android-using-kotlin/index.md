@@ -44,7 +44,7 @@ By the end of this tutorial, you will create an app that takes input and display
 ### Step 1 – Launching Android Studio
 Launch Android Studio and create a new project, as shown below. Make sure that you select Kotlin as your preferred programming language.
 
-If you don't have Android Studio, you can install it from [here](https://developer.android.com/studio?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzieBJWjBnokDdH6b0gQchoqudRXNohAGp_noSqALLuSlYuwA6EB5T4aAntwEALw_wcB&gclsrc=aw.ds)
+If you don't have Android Studio, you can install it from [here](https://developer.android.com/studio?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzieBJWjBnokDdH6b0gQchoqudRXNohAGp_noSqALLuSlYuwA6EB5T4aAntwEALw_wcB&gclsrc=aw.ds).
 
 ![getting started](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/getting-started.png)
 
@@ -119,7 +119,7 @@ Make sure all these widgets have IDs since they will be vital at a later stage. 
 </LinearLayout>
 ```
 
-### Step 4 – Creating the item_view.
+### Step 4 – Creating the item_view
 Still on the Layout, we need to create the design of the element shown in the `RecyclerView`. Therefore, create a file named `item.xml` and add the code shown in the image below. The design is simple since the user can also access one attribute from the data class.
 
 ```Xml
