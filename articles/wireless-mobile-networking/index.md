@@ -117,26 +117,26 @@ So, in 2011 its IMT-Advanced variant LTE-A was introduced as 3GPP Release 10. Th
 LTE-A provides high speeds, up to 1.5-3Gbps. LTE-A Pro (LTE Advanced Pro or Pre-5G) was introduced under the 3GPP release 13 and 14, which is the next version of LTE-A and the beginning of the 5G era. It's credited with data rates starting from 3Gbps. Its development is associated with 5G and is expected to be in use from 2020 moving forward.
 
 #### 5G 	
-5G (or Fifth Generation) is the fifth generation of broadband cellular network technology. New generation means new bandwidth which is the reason why newer generations are developed.
+5G (or Fifth Generation) is the fifth generation of broadband cellular network technology. Each newer generations means newer bandwidth, which is the reason why newer generations are developed.
 
-Greater bandwidths will contribute to higher data speeds and lower time for data transfer. 5G is expected to provide broadband Internet connection as well, similar to traditional cable Internet.
+These greater bandwidths will contribute to higher data speeds and lower data transfer time. 5G is expected to provide broadband Internet connection as well, similar to traditional cable Internet.
 
 This newer generation can make a huge difference in providing stable Internet connection to PCs, laptops, set-top boxes, and various other Internet of Things (IoT) devices. Low-band 5G uses a similar frequency spectrum of 4G (600–700 MHz), offering a speed around 30–250Mbps and having a service area similar to 4G towers.
 
-Mid-band 5G uses a frequency spectrum of 2.5–3.7GHz, allowing speeds up to 100–900Mbps and delivering coverage up to a few miles in radius. This mid band is used to offer 5G services in metropolitan cities. High-band 5G uses a frequency spectrum of 25–39GHz (mmWave or mmW).
+Mid-band 5G uses a frequency spectrum of 2.5–3.7GHz, allowing speeds up to 100–900Mbps and delivering coverage up to a few miles in radius. This mid band is used to offer 5G services to larger metropolitan cities. High-band 5G uses a frequency spectrum of 25–39GHz (mmWave or mmW).
 
-It often achieves download speeds in Gbps. Their area of coverage is very low and may require many base stations for transmission, which makes them expensive. Lower-band spectrums tend to have greater range and lesser speeds, while higher-band spectrums have a limited coverage area but higher speeds.
+It often achieves download speeds in Gbps. Their coverage area is very small and may require many base stations for transmission, which makes them expensive. Lower-band spectrums tend to have a greater range and lesser speeds, while higher-band spectrums have a limited coverage area but higher speeds.
 
-Massive MIMO technology can be used to achieve 5G services, as more number of antennas can radically increase the coverage area and boost the power density. 5GNR (New Radio) is the new 5G technology, covering FR1 (sub 6GHz) and FR2 (above 24HGz).
+Massive MIMO technology can be used to achieve full 5G services, more antennas can radically increase the coverage area and boost the power density. [5GNR (New Radio)](https://en.wikipedia.org/wiki/5G_NR) is the new 5G technology, covering [FR1](https://ieeexplore.ieee.org/document/9074973) (sub 6GHz) and [FR2](https://ieeexplore.ieee.org/document/9074973) (above 24HGz).
 
-It's a new air interface developed by 3GPP and built for the 5G network, expected to be the universal norm for the future air interface networks. 5GNR is based on [Radio Access Technology (RAT)](https://en.wikipedia.org/wiki/Radio_access_technology). In 5GNR the air latency is estimated to be around 10–12ms.
+5GNR is a new air interface developed by 3GPP and built for the 5G network, expected to be the universal norm for the future air interface networks. 5GNR is based on [Radio Access Technology (RAT)](https://en.wikipedia.org/wiki/Radio_access_technology). In 5GNR the air latency is estimated to be around 10–12ms.
 
-The first versions of 5G will have latencies up to 30ms, and by using edge servers the latency can improve up to 20ms. This is because the computing servers are as close to the end consumer as they can be through the use of edge computing.
+The first versions of 5G will have latencies up to 30ms, and by using edge servers the latency can improve up to 20ms. This is because the computing servers are as close to the end consumer as they can be through the [use of edge computing](blog/edge-computing-5g-iot-ai/).
 
-Edge computing can decrease data flow congestion and latency. So, 5G combined with edge computing can provide a seamless [gaming experience](https://www.section.io/blog/5g-edge-computing-for-gaming/) as well.
+Edge computing can decrease data flow congestion and improve any latency issues. 5G combined with edge computing can provide a seamless [gaming experience](/blog/5g-edge-computing-for-gaming/) as well.
 
 #### 6G 	
-6G (or Sixth Generation) will be the successor to 5G. It is expected to be remarkably faster, at the speed of 11GBps. Several companies and MNCs have started their development of 6G. Countries like China, South Korea, and Japan have also shown interest in 6G.
+6G (or Sixth Generation) will be the successor to 5G. It's expected to be remarkably faster, at the speed of 11GBps. Several companies and multi-national corporations (MNCs) have started their development of 6G. Countries like China, South Korea, and Japan have also shown interest in 6G.
 
 [Recently](https://www.dailymail.co.uk/news/article-8929247/China-launches-worlds-6G-experimental-satellite.html), on the 6th of November, 2020, China successfully deployed an experimental 6G research satellite into space.
 
@@ -145,13 +145,13 @@ Edge computing can decrease data flow congestion and latency. So, 5G combined wi
 This experimental satellite is thus designed to test terahertz wave technologies in orbit. 6G is expected to hit the markets by 2030.
 
 ### R&D at its best
-The pace at which technology is developing is mind blowing. Yesterday's innovations are already considered obsolete today. Just about 10 years ago, the first phone was introduced, and mobile networking was barely possible.
+The pace at which technology is developing is mind blowing. Yesterday's innovations are already considered obsolete today. Just about 10 years ago, the first iPhone was introduced, and mobile networking was barely useable.
 
-Now, almost every task can be done online using a mobile device. The pandemic has reiterated the widely accepted fact that modern day technology depends largely on the use of mobile networking.
+Fast forward to today, and almost every task can be done online using a mobile device. The pandemic has reiterated the widely accepted fact that modern day technology depends largely on the use of mobile networking.
 
 As discussed in this article, research and development is ongoing in the networking industry, and with every passing day, we are inching closer to 7G being a reality. Seeking the next best thing has always been the human mentality.
 
-Humans’ thirst to build something new and reach unbelievable heights is unending. So buckle up and stay on the lookout for more technological breakthroughs that are certainly to come.
+Humans’ thirst to build something new and the urge to reach for unbelievable heights is unending. So buckle up and stay on the lookout for more technological breakthroughs that are certainly to come.
 
 ##### ADDITIONAL RESOURCES
 [**Wikipedia | Mobile Networks**](https://en.wikipedia.org/wiki/Cellular_network)
