@@ -12,11 +12,11 @@ Functions are fundamental that outside the "normal" functions, JavaScript has hi
 
 A high order function accepts another function as an argument or returns a function as its output. The concept is commonly referred to as a callback function. A function that takes another function as its argument is what we refer to as a callback function because it calls back that function.
 
-In this guide, we learn about high order function. We will discuss and show you some of the come built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each` and `reduce`.
+In this guide, we learn about the high order function. We will discuss and show you some of the come built-in JavaScript high order functions with examples. These include `filter`, `map`, `for each`, and `reduce`.
 
 ### Array.prototype.filter
 
-`filter()` allows you to filter things in an array. It is a method that returns an array. It creates a new array of elements. The callback funtion test every input array element. The `filter()` method composes all the elements that pass the callback function test and return a new array.
+`filter()` allows you to filter things in an array. It is a method that returns an array. It creates a new array of elements—the callback function test every input array element. The `filter()` method composes all the elements that pass the callback function test and return a new array.
 
 Let's digest this information with examples.
 
@@ -174,7 +174,7 @@ So have a look, assume an array of numbers:
 [5, 6, 7, 8, 9, 10]
 ```
 
-Imagine getting the sum of these array elements. We can use loops are we demonstrated in the `filter()` method, and we will get the total sum of this array. However, we can opt to optimize our code with just a few lines using `reduce()`. This will make our code clean and less verbose.
+Imagine getting the sum of these array elements. We can use loops as we demonstrated in the `filter()` method, and we will get the total sum of this array. However, we can opt to optimize our code with just a few lines using `reduce()`. This will make our code clean and less verbose.
 
 Let’s demonstrate with examples.
 
@@ -213,7 +213,7 @@ The callback function will be called five times. The accumulator will hold the l
 
 `reduce()` will return the last invoked callback. In this case, 45
 
-It is important to note, for the first invoked callback, the value of the accumulator is the value of the first element in the input array. And the index of the first processed array element is 1 and the value 6, which is the second element. Think about it. It actually makes sense. If you look back to callback syntax, the accumulator takes the first element as the initial value.  If that didn't occur, the 1st element of the input array would be calculated twice.
+It is important to note, for the first invoked callback, the value of the accumulator is the value of the first element in the input array. And the index of the first processed array element is 1, and the value 6, which is the second element. Think about it. It actually makes sense. If you look back to callback syntax, the accumulator takes the first element as the initial value. If that didn't occur, `reduce()` would calculate the 1st element of the input array twice.
 
 Using the optional `InitialValue` argument, we can pass an `InitialValue` value as the second argument to `reduce()`.
 
@@ -246,7 +246,7 @@ The `map()` method composes a new array by returning the results of a callback f
 
 Let’s digest this with examples.
 
-Suppose in our previous array of `[2, 4, 89, 0.67, 7.47, 20]`; we want to multiply every element, let's say `4`. This is how we can multiply the elements without a high order function.
+Suppose we have an array `[2, 4, 89, 0.67, 7.47, 20]`; we want to multiply every element, let's say `4`. This is how we can multiply the elements without a high order function.
 
 ```js
 const inputArray = [2, 4, 89, 0.67, 7.47, 20];
@@ -307,7 +307,6 @@ const Animals = ["cat", "dog", "cow" ,"goat", "sheep", "donkey", "pig", "horse"]
 for (let i = 0; i < Animals.length; i++) {
     console.log(Animals[i]);
 }
-console.log(dAnimals);
 ```
 
 #### Converting a `for` Loop to a High Order Function Using `for each`
