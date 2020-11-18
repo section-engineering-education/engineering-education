@@ -294,7 +294,7 @@ When the server is running, accessing the following pages will create a log ever
 - http://localhost:3000/calc - we are trying to add variable `y` to variable `x`. In this case, variable `y` is not defined. This will generate an error, and we want Winston to capture such instances for us.
 - http://localhost:3000/hello - the server we have created has no such URL. We want Winston to inform us when a link that points to our IP address is accessed but can't be found; that is a `404` error.
 
-Like we said earlier, Winston is well suited to configure different log destinations. In our small app, let create another transport. This time, I want to save the logs to a database, [MongoDB](https://www.mongodb.com/try/download/community) to be concise. On the `app.js` file, replicate the following code block. Make sure you install [Winston MongoDB](https://www.npmjs.com/package/winston-mongodb), i.e., `npm install winston-mongodb`. If you are new to MongoDB, we got a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
+Like we said earlier, Winston is well suited to configure different log destinations. In our small app, let create another transport. This time, I want to save the logs to a database, [MongoDB](https://www.mongodb.com/try/download/community) to be concise. On the `app.js` file, replicate the following code block. Make sure you install [Winston MongoDB](https://www.npmjs.com/package/winston-mongodb), i.e., `npm install winston-mongodb`. If you are new to MongoDB, here's a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
 
 ```js
 const { createLogger, format, transports } = require('winston');
