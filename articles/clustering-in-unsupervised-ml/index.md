@@ -99,13 +99,13 @@ In the above diagram, the bottom observations that have been fused are similar, 
 This is a density-based clustering that involves the grouping of data points that are close to each other. Data points that are far from each other are marked as outliers. Data is sorted based on commonalities. 
 
 ###### Key Concepts
-_MnPts:_ This is a certain number of neighbours or neighbour points
+_MinPts:_ This is a certain number of neighbours or neighbour points
 
 _Epsilon neighbourhood:_ This is a set of points that consist of a specific distance from an identified point. The distance between these points should be less than a specific number (epsilon).
 
-_Core Point:_ This is a point in the density-based cluster with at least MinsPts within the epsilon neighbourhood.
+_Core Point:_ This is a point in the density-based cluster with at least MinPts within the epsilon neighbourhood.
 
-_Border point:_ This is a point in the density-based cluster with fewer than MinsPts within the epsilon neighbourhood.
+_Border point:_ This is a point in the density-based cluster with fewer than MinPts within the epsilon neighbourhood.
 
 _Noise point:_ This is an outlier that does not fall in the category of a core point or border point. It is not part of any cluster.
 
