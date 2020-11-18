@@ -14,7 +14,7 @@
 
 - [Python ](https://www.python.org/downloads/) installed in the system.
 
-- Flask installed in the system (You can refer to this [article](https://www.section.io/engineering-education/python-frameworks/) for a gentle introduction and installation instructions)
+- Flask installed in the system (You can refer to this [article](https://flask.palletsprojects.com/en/1.1.x/installation/) for installation instructions and this [article](https://flask.palletsprojects.com/en/1.1.x/tutorial/factory/) for a gentle introduction and instructions on how to run the flask server.)
 
 ### Step 1: Basic HTML template
 
@@ -63,6 +63,7 @@
   </body>
 </html>
 ```
+Since it is just an HTML file, you can open that file with a browser to see what it looks like, without needing a server.
 
 ### Step 2: Set up Firebase Realtime Database
 
