@@ -67,7 +67,9 @@ The confusion matrix forms the basis for the other types of classification metri
 
 ![confusion](/engineering-education/evaluating-ml-model-performance/confusion.png)
 
-Confusion Matrix [Source]( https://towardsdatascience.com/various-ways-to-evaluate-a-machine-learning-models-performance-230449055f15)
+Confusion Matrix 
+
+[Source]( https://towardsdatascience.com/various-ways-to-evaluate-a-machine-learning-models-performance-230449055f15)
 
 The four terms represented in the image above are very important. Let’s define them:
 **True positives** – a scenario where positive predictions are actually positive.
@@ -100,7 +102,9 @@ Recall = True Positives / (True Positives + False Negatives)
 
 ![precisionrecall](/engineering-education/evaluating-ml-model-performance/percisionercall.png)
 
-Precision vs Recall [Source]( https://en.wikipedia.org/wiki/Precision_and_recall)
+Precision vs Recall 
+
+[Source]( https://en.wikipedia.org/wiki/Precision_and_recall)
 
 In addition to robustness, the F-score shows us how precise a model is by letting us know how many correct classifications are made. The F-score ranges between 0 and 1. The higher the F-score, the greater the performance of the model.
 
