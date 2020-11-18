@@ -1,6 +1,4 @@
- 
-
-In Flutter, everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that wow users. Such features are difficult to meet in native app development using languages such as Java. But it creates certain challenges. Particularly, it&#39;s difficult to implement State Management. You can learn about state management from [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It is also challenging to pass data from the primary widget to its children. The introduction of the scoped\_model library helped resolve these issues.
+ In Flutter, everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that wow users. Such features are difficult to meet in native app development using languages such as Java. But it creates certain challenges. Particularly, it&#39;s difficult to implement State Management. You can learn about state management from [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It is also challenging to pass data from the primary widget to its children. The introduction of the scoped\_model library helped resolve these issues.
 
 Let&#39;s dive in.
 
