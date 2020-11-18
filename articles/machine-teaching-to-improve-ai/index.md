@@ -1,8 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/machine-teaching-to-improve-ai/
+title: Transfer Learning for Deep Learning
+description: This article will be going over
+author: collins-ayuya
+date: 2020-11-17T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero](/engineering-education/machine-teaching-to-improve-ai/hero.jpg)
-[Image Source](https://images.unsplash.com/photo-1587252229505-6c358e9009b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80)
-
-We provide machine learning models with volumes of data with the expectation that they shall identify patterns or learn relationships in the data. This can be an expensive and time-consuming process. However, there exists an approach that leverages human abilities and expertise to guide machine learning models to find solutions to problems much faster. This is called machine teaching. We explore this approach in this article.
+  - url: /engineering-education/machine-teaching-to-improve-ai/hero.jpg
+    alt:  image
+---
+We provide machine learning models with volumes of data with the expectation that they shall identify patterns or learn relationships in the data. This can be an expensive and time-consuming process.
+<!--more-->
+However, there exists an approach that leverages human abilities and expertise to guide machine learning models to find solutions to problems much faster. This is called machine teaching. We explore this approach in this article.
 
 ### Table of Contents
 
