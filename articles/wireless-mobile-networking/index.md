@@ -6,7 +6,7 @@ url: /engineering-education/wireless-mobile-networking/
 title: A Brief Guide to Wireless Mobile Networking
 description: This article will go be a brief introduction to wireless mobile networking. We will discuss about the history of mobile network and telephone technology.  
 author: kanishkvardhan-a-n
-date: 2020-11-17T00:00:00-13:00
+date: 2020-11-18T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -129,7 +129,9 @@ It often achieves download speeds in Gbps. Their coverage area is very small and
 
 Massive MIMO technology can be used to achieve full 5G services, more antennas can radically increase the coverage area and boost the power density. [5GNR (New Radio)](https://en.wikipedia.org/wiki/5G_NR) is the new 5G technology, covering [FR1](https://ieeexplore.ieee.org/document/9074973) (sub 6GHz) and [FR2](https://ieeexplore.ieee.org/document/9074973) (above 24HGz).
 
-Since mmWaves support **LOS(Line Of Sight)** propogation, their signals get weakened due to rain attenuation and foliage loss. They have a shorter coverage area,  so more number of antennas, base stations, repeaters have to be installed to extend their range. These things may lead to increase in budget and that means limited access to rural areas. So the companies may generate their revenue by raising the data rates and hiking the price of smartphone devices with 5G neworking capabilities. So altogether 5G can be expensive for consumers as well.
+As briefly mentioned above, 5G uses mmWaves and supports **LOS (Line Of Sight)** propagation, their signals get weakened because of rain attenuation and foliage loss. MmWaves have a shorter coverage area,  so a higher number of antennas, base stations, repeaters have to be installed to extend their range.
+
+These issues may lead to an increase in budget and could limited access to rural areas. Therefore, companies may generate their revenue by raising the data rates and hiking the price of smartphone devices with 5G networking capabilities. Altogether 5G will have many benefits but may be expensive for consumers.
 
 5GNR is a new air interface developed by 3GPP and built for the 5G network, expected to be the universal norm for the future air interface networks. 5GNR is based on [Radio Access Technology (RAT)](https://en.wikipedia.org/wiki/Radio_access_technology). In 5GNR the air latency is estimated to be around 10–12ms.
 
@@ -142,18 +144,21 @@ Edge computing can decrease data flow congestion and improve any latency issues.
 
 [Recently](https://www.dailymail.co.uk/news/article-8929247/China-launches-worlds-6G-experimental-satellite.html), on the 6th of November, 2020, China successfully deployed an experimental 6G research satellite into space.
 
-6G's frequency band will be deployed on the terahertz spectrum. Terahertz waves are advantageous for transferring data, and can reach speeds up to 50GBps.
+6G’s frequency band will be deployed on the terahertz spectrum. Terahertz waves are useful for transferring data, and can reach speeds up to 50GBps.
 
-This experimental satellite is thus designed to test terahertz wave technologies in orbit. Terahertz waves (or THz waves) can be  challenging to work with since no other networking generation has been deployed on the THz spectrum. Thus to achieve this it may need a new line-up of communication equipments, a stable networking infrastructure and a sustainable system to handle 6G connectivity. These waves may disperse and scatter during long range transmission. They can also be absorbed by clouds, fogs and it is difficult for them to penetrate through metal surfaces. The hardware required to cope up with these problems are not economical, so it may be an hinderance for 6G to be publicly available. It is expected to hit the markets by 2030.
+This experimental satellite is designed to test terahertz wave technologies in orbit. Terahertz waves (or THz waves) can be a challenge to work with since we haven't deployed any other networking generation on the THz spectrum. Therefore to achieve this it may require a new line-up of communication equipment, a stable networking infrastructure, and a sustainable system to handle the 6G connectivity.
+
+These waves may disperse and scatter during long range transmission. Clouds, fogs can also absorb them and it is difficult for them to penetrate through metal surfaces. The hardware required to cope up with these problems is not economical, so it may be a hinderance for 6G to be publicly available. It’s expected to hit the markets by 2030.
 
 ### R&D at its best
 The pace at which technology is developing is mind blowing. Yesterday's innovations are already considered obsolete today. Just about 10 years ago, the first iPhone was introduced, and mobile networking was barely useable.
 
 Fast forward to today, and almost every task can be done online using a mobile device. The pandemic has reiterated the widely accepted fact that modern day technology depends largely on the use of mobile networking.
 
+### Conclusion
 As discussed in this article, research and development is ongoing in the networking industry, and with every passing day, we are inching closer to 7G being a reality. Seeking the next best thing has always been the human mentality.
 
-Humans’ thirst to build something new and the urge to reach for unbelievable heights is unending. So buckle up and stay on the lookout for more technological breakthroughs that are certainly to come.
+Humans’ thirst to build something new and the urge to reach towards unbelievable heights is unending. So buckle up and stay on the lookout for more technological breakthroughs that are certainly to come.
 
 ##### ADDITIONAL RESOURCES
 [**Wikipedia | Mobile Networks**](https://en.wikipedia.org/wiki/Cellular_network)
