@@ -6,13 +6,13 @@ Comparing these two text editors will enable developers to choose the editor the
 
 ### Table of contents
 
-Atom
+- [Atom](#atom)
 
-Visual Studio Code Editor
+- [Visual Studio Code Editor](#visual-studio-code-editor)
 
-Atom vs. VS Code: Tabular Comparison
+- [Atom vs. VS Code: Tabular Comparison](#atom-vs-VS-code:-tabular-comparison)
 
-Atom vs. VS Code: Features and Functionality Comparison
+- [Atom vs. VS Code: Features and Functionality Comparison](#atom-vs-VS-code:-features-and-functionality-comparison)
 
 ### Atom
 
@@ -87,7 +87,7 @@ Let's have a glance at features offered by Atom and VS Code text editors.
 | Price | Free | Free |
 | Find and replace | Yes | Yes |
 
-### Atom vs. VS Code: Feature Comparison
+### Atom vs. VS Code: Features and Functionality Comparison
 
 1. Configuration
 
