@@ -75,7 +75,7 @@ In this simple example, let's say that the target value is: 0f000000000000000000
 
 And our output from the program may show the following hashes. 
 
-![](https://newsitech.weebly.com/uploads/2/0/5/4/20542424/hashingexampe_orig.png)
+![]engineering-education/how-crypto-mining-works/hashingexampe.png)
 
 The second hash: 0e6878e44ef7b460869034d35acd8cfda70330841dd71f24e559b45d01a035fe is less than the target value and would be a valid block.
 
