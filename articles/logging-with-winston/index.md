@@ -54,7 +54,7 @@ Winston, one of the best logging middlewares, has about 4,000,000 weekly [downlo
 
 ### Using Winston
 
-To get started, make sure you initialize a Node.js project using `npm init`. Here's a [guide](/engineering-education/beginner-guide-to-npm/) that will help you understand NPM in detail.
+To get started, make sure you initialize a Node.js project using `npm init -y`. Here's a [guide](/engineering-education/beginner-guide-to-npm/) that will help you understand NPM in detail.
 
 Install the Winston package using the command `npm install winston`.
 
@@ -94,7 +94,7 @@ logger.log({
 logger.info('Hello, Winston!');
 ```
 
-The above example shows you how to log to the console.
+The above example shows you how to log to the console. Add the code blocks to a file (logger.js). Run `node logger.js`, and the following logs will be shown on your console.
 
 ```js
 {"message":"Hello, Winston logger a warning!","level":"warn"}
@@ -126,6 +126,8 @@ const logConfiguration = {
     ]
 };
 ```
+
+Go to the `example.log` file in the logs folder to view the log.
 
 Output:
 
@@ -162,8 +164,8 @@ logger.debug("Hello, Winston logger, a debug!");
 
 This specifies that:
 
+- Logs will be shown in the console output.
 - Only the log that falls under level `error` will be recorded in the `example.log` file.
-- Any `warn` log will be shown in the console output.
 
 With Winston, you can specify the default format to save your logs.
 
@@ -198,7 +200,13 @@ const logConfiguration = {
         winston.format.printf(info => `${info.level}: ${info.label}: ${[info.timestamp]}: ${info.message}`),
     )
 };
+
+const logger = winston.createLogger(logConfiguration);
+
+// Log a message
+logger.info("Hello, Winston logger, some info!");
 ```
+
 Output:
 
 ```js
@@ -219,6 +227,7 @@ This is the structure of our small project:
 - 📂Utils - will hold Winston `logger.js`🗄️ where we will add configurations such as Winston transport and formating.
 
 logger.js:
+
 ```js
 const { createLogger, format, transports } = require('winston');
 require('winston-mongodb');
@@ -238,11 +247,12 @@ transports:
 Will do some logging from an Express server that listens to port 3000.
 
 app.js:
+
 ```js
 const express = require('express');
 
 // Require logger.js
-const logger = require('./utils/log');
+const logger = require('./utils/logger');
 const app = express();
 const port = 3000;
 const host = "localhost";
@@ -277,13 +287,7 @@ app.listen(port, () => {
 })
 ```
 
-Output:
-```js
-info: Nov-12-2020 10:07:59: 	Server started and running on http://localhost:3000
-info: Nov-12-2020 10:08:02: 	Server Sent A Hello World!
-error: Nov-12-2020 10:08:05: 	500 - Internal Server Error - y is not defined - /calc - GET - ::1
-error: Nov-12-2020 10:08:10: 	400 || Not Found - /hello - GET - ::1
-```
+Run `node app.js` to start the server.
 
 From the above example:
 
@@ -294,7 +298,19 @@ When the server is running, accessing the following pages will create a log ever
 - http://localhost:3000/calc - we are trying to add variable `y` to variable `x`. In this case, variable `y` is not defined. This will generate an error, and we want Winston to capture such instances for us.
 - http://localhost:3000/hello - the server we have created has no such URL. We want Winston to inform us when a link that points to our IP address is accessed but can't be found; that is a `404` error.
 
+Go to the `example.log` file in the logs folder to view the log.
+Output:
+
+```js
+info: Nov-12-2020 10:07:59: 	Server started and running on http://localhost:3000
+info: Nov-12-2020 10:08:02: 	Server Sent A Hello World!
+error: Nov-12-2020 10:08:05: 	500 - Internal Server Error - y is not defined - /calc - GET - ::1
+error: Nov-12-2020 10:08:10: 	400 || Not Found - /hello - GET - ::1
+```
+
 Like we said earlier, Winston is well suited to configure different log destinations. In our small app, let's create another transport. This time, I want to save the logs to a database, [MongoDB](https://www.mongodb.com/try/download/community) to be concise. On the `app.js` file, replicate the following code block. Make sure you install [Winston MongoDB](https://www.npmjs.com/package/winston-mongodb), i.e., `npm install winston-mongodb`. If you are new to MongoDB, here's a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
+
+Replicate the following code blocks into the `logger.js` file.
 
 ```js
 const { createLogger, format, transports } = require('winston');
@@ -306,7 +322,7 @@ module.exports = createLogger({
 transports:[
 
 // File transport
-    new transports.File({ 
+    new transports.File({
     filename: './logs/example.log',
     format:format.combine(
         format.timestamp({format: 'MMM-DD-YYYY HH:mm:ss'}),
@@ -331,6 +347,12 @@ transports:[
     })]
 });
 ```
+
+Run `node app.js` to start the server and access the following URLs to trigger server responses and requests.
+
+- http://localhost:3000/
+- http://localhost:3000/calc
+- http://localhost:3000/hello
 
 Logs will be recorded into the `example.log` file, and any `error` logs will be recorded in a MongoDB database.
 
