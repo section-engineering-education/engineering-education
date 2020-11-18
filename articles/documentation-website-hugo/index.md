@@ -18,8 +18,8 @@ In this tutorial, I will teach you how to build a documentation website for your
 
 This guide assumes that you have:
 - Go installed on your local machine - visit [ednsquare.com](https://ednsquare.com/story/how-to-install-golang-on-windows-linux-mac------T3VRkO) for instructions on how to install Go on macOS, Windows, and Linux.
-- [Homebrew](brew.sh)(MacOS and LINUX) - visit [brew.sh](brew.sh) for instructions on how to install homebrew on macOS and Linux.
-- [Chocolatey](chocolatey.org)(Windows) - visit [chocolatey.org](chocolatey.org) for instructions on how to install chocolatey on Windows.
+- [Homebrew](brew.sh) - visit [brew.sh](brew.sh) for instructions on how to install homebrew on macOS and Linux.
+- [Chocolatey](chocolatey.org) - visit [chocolatey.org](chocolatey.org) for instructions on how to install chocolatey on Windows.
  
 ### Step 1- Install Hugo
 The Docsy theme uses the Hugo-extended version of Hugo. Install the Hugo-extended version on macOS and Linux with Homebrew.
@@ -44,7 +44,7 @@ Install the Hugo-extended version on Windows with Chocolatey.
 
  ```bash
  $ hugo version
- Hugo Static Site Generator v0.64.1/extended windows/amd64 BuildDate: unknown
+ Hugo Static Site Generator v0.78.1/extended windows/amd64 BuildDate: unknown
  ```
 ### Step 2 - Create your website
 
@@ -114,7 +114,7 @@ git submodule update --init --recursive
 
 ### Step 4 - Add a content section to your website
 
-All your website's content files are stored in the `content` folder found in your root folder. The top-level subfolders in the `content` folder will determine the sections of your website by default, and the nested subfolders inside this top-level subfolders combine to form your website structure as they are organized in their top-level subfolders.
+All your website's content files are stored in the `content` folder found in your root folder. The top-level subfolders in the `content` folder will determine the sections of your website by default, and the nested subfolders inside these top-level subfolders combine to form your website structure as they are organized in their top-level subfolders.
 
 ```
 content      <-- Content folder
@@ -197,8 +197,10 @@ Build your website with the `hugo` command. The command will generate all your w
 
 You can deploy your website on different hosting platforms like [AWS](https://aws.amazon.com/), [Github pages](https://pages.github.com/), [Netlify](https://www.netlify.com/), etc. with the generated static files.
 
+![Documentation-website-preview](/engineering-education/documentation-website-hugo/Hero.png)
+
 ### Conclusion
 
-Documentation is an essential part of any software development project, and can determine the success or failure of your project. By following this tutorial, you should have your Hugo documentation website easily set up with all your static files generated. 
+Documentation is an essential part of any software development project and can determine the success or failure of your project. By following this tutorial, you should have your Hugo documentation website easily set up with all your static files generated. 
 
 There are tons of other configuration options that you can edit to improve the look and feel of your website. Visit [gohugo.io](https://gohugo.io/documentation/) and [Docsy.dev](https://www.docsy.dev/docs/) to check out these options.
