@@ -20,15 +20,15 @@ Gatsby.js is used to build websites powered by [JAMStack](https://jamstack.org/w
 
 “JAM” is an acronym for JavaScript, APIs, and HTML markup. JAMstack sites don't need a database, unlike websites designed using WordPress or Drupal.
 
-In JAMstack architecture, the frontend and backend are [decoupled](https://www.Gatsby.js.com/docs/glossary/#decoupled). During the building process, Gatsby creates JavaScript, HTML, and CSS files used for the frontend, while the backend is a content API that can be a headless [CMS](https://en.wikipedia.org/wiki/Content_management_system), a hosted datastore, or a custom application that returns JSON or XML.
+In JAMstack architecture, the front-end and back-end are seperated ([decoupled](https://www.Gatsby.js.com/docs/glossary/#decoupled)) so that you can use whatever front-end you choose. During the building process, Gatsby creates JavaScript, HTML, and CSS files used for the front-end, while the back-end can be a content management software that allows modification and creation of contents, a hosted datastore, or a custom application that returns JSON or XML.
 
 [Matt Biilmann](https://www.netlify.com/oreilly-jamstack/) and [Chris Bach](https://www.linkedin.com/in/christianbachdk/) came up with the name "JAMstack" because they were creating modern web development workflows and capabilities at Netlify.
 
 ### Advantages of JAMstack Architecture
-- **Speed**: They load faster than sites using [monolithic architectures](https://whatis.techtarget.com/definition/monolithic-architecture#).
-- **Flexibility for hosting**: Being a static file, JAMStack sites can be hosted anywhere. To get the best performance and security, it's preferable to use an object storage service and content delivery networks such as [Netlify](https://www.netlify.com/), [Render](https://www.Gatsby.js.com/docs/deploying-to-render/), or Amazon Web Services’ [S3 and CloudFront](https://www.Gatsby.js.com/docs/deploying-to-s3-cloudfront/).
-- **Improved security**: Because JAMStack sites don’t have software layers and databases, this makes them invulnerable to server-side code injection.
-- **An enhanced experience for developers**: Frontend developers can build JAMStack sites without a server-side language and back-end developers can focus on building APIs rather than creating databases.
+- **Speed**: They load faster than sites using [monolithic architectures](https://whatis.techtarget.com/definition/monolithic-architecture#) i.e sites where contents are only parse as HTML.
+- **Flexibility for hosting**: Being a static file, JAMStack sites can be hosted anywhere. To get the best performance and security, it's preferable to use an cloud storage service and content delivery networks such as [Netlify](https://www.netlify.com/), [Render](https://www.Gatsby.js.com/docs/deploying-to-render/), or Amazon Web Services’ [S3 and CloudFront](https://www.Gatsby.js.com/docs/deploying-to-s3-cloudfront/) because they provide integration and protection against server side attack.
+- **Improved security**: Because JAMStack sites don’t have software layers and databases (back-end), this makes them invulnerable to server-side code injection.
+- **An enhanced experience for developers**: Front-end developers can build JAMStack sites without a server-side language and back-end developers can focus on building APIs rather than creating databases.
 
 ### What is Gatsby.js?
 >Gatsby.js can be defined as a static site generator that uses [React.js](https://reactjs.org/) (for the client-side) and [GraphQL](https://graphql.org/) (to access data) to build a reliable and faster website.
@@ -203,9 +203,9 @@ export default
 ```
 
 ### Using React Components
-Using react components to build your static site will help you get the job done faster. With react you can make parts of your code as a component, component codes are reusable and can be placed in any of your react code file to be used again.
+Using react components to build your static site will help you get the job done faster. With react you can make parts of your code as a component hence making it reusable, these code can be placed in any of your react code file to be used again.
 
-Yet, I highly recommend you check out the [react component documentation](https://reactjs.org/docs/react-component.html) to gain a better understanding of react components.
+Its recommended that you check out the [react component documentation](https://reactjs.org/docs/react-component.html) to gain a better understanding of react components.
 
 The counter code in your counter.js file is already a component because it extends the react component class. You will use it in the index.js file but as a component,
 by adding this piece of code.
@@ -257,7 +257,7 @@ You will notice some changes in the public folder that’s where your static sit
 ### Deploying to a Cloud Server
 You can deploy your Gatsby site online in a variety of ways, but there are 2 easy methods that we will discuss. Those being deployed on [Netlify](https://www.netlify.com/) and [Gatsby Cloud](https://www.Gatsby.js.com/cloud/).
 
-1. **Netlify**: With Netlify you can drag-and-drop your code folder into it or deploy your site from [GitHub](https://github.com/) if it is hosted there, but I would recommend that you place your code on GitHub to automatically sync any changes made to the site.
+1. **Netlify**: With Netlify you can drag-and-drop your code folder into it or deploy your site from [GitHub](https://github.com/) if it is hosted there, but it's recommended that you put your code on GitHub to automatically sync any changes made to the site.
 
 2. **Gatsby Cloud**: This provides a simpler way to deploy the site, but it requires your code to be on GitHub or Gitlab. Deploying your site on Gatsby cloud offers you the flexibility to use content management systems like [Contentful](https://www.contentful.com/), [DatoCMS](https://www.datocms.com/), [Strapi](https://strapi.io/), and [Wordpress](https://wordpress.com/) etc.
 
