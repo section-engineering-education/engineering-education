@@ -1,7 +1,7 @@
-A variety of applications use Socket on the modern web. From simple chat applications to real-time databases.  Even online multiplayer games use Socket under the hood. 
+A variety of applications use Socket on the modern web. For example chat applications, real-time databases and online multiplayer games. All use Socket under the hood. 
 
 ### Introduction
-This article focuses on building a web application that lets you play Rock Paper Scissor online with your friends. A player has to create a room and share the unique Room ID with the other player. The other player can join the same room with this unique Room ID. Once both players have joined the room, they could start playing!
+This article focuses on building a web application which lets you play Rock Paper Scissor online with your friends. A player has to create a room and share the unique Room ID with the other player. The other player can join the same room with this unique Room ID. Once both players have joined the room, they could start playing!
 
 There are two parts to this application, 
 - Front-end: To keep things simple, the front-end is built on basic HTML, CSS, JS with jQuery.
@@ -9,7 +9,7 @@ There are two parts to this application,
 
 ### Prerequisites
  
-- HTML is the standard markup language for web page. Useful [guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) for beginners.
+- HTML is the standard markup language for web page. Here's a useful [guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) for beginners.
 - CSS is style sheet language for improving the presentation of web pages. To learn more, check this [article](https://www.section.io/engineering-education/what-is-css/)
 - [BootStrap](https://getbootstrap.com/) is a popular HTML, CSS, JS library. An [article](https://getbootstrap.com/docs/4.0/getting-started/introduction/)  to get started.
 - [jQuery](https://jquery.com/) is a fast and feature-rich Javascript library. 
@@ -20,18 +20,18 @@ There are two parts to this application,
 
 ### Starter Code
 
-In the interest of time and the intention to put more focus on Socket logic. Please download the starter code from this [Repository](https://github.com/HarishTeens/rps-online) on GitHub.  Follow the instructions on README to set it up on your local system.
+In the interest of time and the intention to put more focus on Socket logic. Please download the starter code from this [Repository](https://github.com/HarishTeens/rps-online) on GitHub.  Follow the instructions as mentioned on README.md to set up the project on your local system.
 
-Here goes the file wise description,
+Here goes the file wise description of the Starter code,
 
 - ```public/index.html``` : A Home Page for the app with all the required UI Components. 
 - ```public/style.css``` : Styles for the entire application.
 - ```public/game.js``` : Client-Side JavaScript file to handle events.
-- ```app.js``` : Server Side NodeJS file for the server setup and getWinner function to calculate the winner.
+- ```app.js``` : Server Side NodeJS file for setting up the server.
 
-Note that the app is not functional yet, we need to write the necessary logic to make it functional. Also, feel free to tweak the boiler code to match your style.
+Note that the app is not functional yet, we need to write the necessary logic to make the app functional. Also, feel free to tweak the boiler code to match your style.
 
-Two important to focus on. One is  ```app.js``` that handles server-side logic. And the other is ```public/game.js``` that handles client-side logic.
+There are two important files to focus on. One is  ```app.js``` that handles server-side logic. And the other is ```public/game.js``` that handles client-side logic.
 
 ### Game Flow 
 
@@ -42,10 +42,10 @@ This is a Sequence diagram that shows the timeline of events. It's important to 
 Read through the below points if you are not familiar with Sequence Diagrams.
 
 - Time flows downward.
-- Arrows represent events. The start of the Arrow denotes the Emitter, end of the arrow denotes the listener. For example, Player1 emits the `Create Game` Event, Socket Server listens to this event.
+- Arrows represent events. The start of Arrow denotes the Emitter, end of arrow denotes the listener. For example, Player1 emits the `Create Game` Event, Socket Server listens to this event.
 - A rectangular box denotes waiting/processing time.
 
-Player1 emits the create Game Event. The server acknowledges and responds with a room ID. Once player2 emits join Game Event with the same room ID. The server detects that both players have joined the room. It then shares the other player's info with each other. Now it waits for both the players to select a choice. Then it processes the result and sends back to both players.
+Player1 emits the create Game Event. The server acknowledges and responds back with a room ID. Once player2 emits join Game Event with the same room ID. The server detects that both players have joined the room and shares the other player's info with each other. Once both of the players have their choice, the server processes the result and sends back to both players.
 
 Now that the flow is clear, let's jump right into coding. 
 
@@ -62,7 +62,7 @@ $(".createBtn").click(function(){
 })
 ```
 
-The above code listens for a click event on the Create Button. It grabs player1's name and emits a socket event named `createGame` . The variable `firstPlayer` identifies the player who started the game.  The use of this variable would be explained later.
+The above code listens for a click event on the Create Button. Once that event is triggered, the client grabs player1's name and emits a socket event named `createGame` . The variable `firstPlayer` identifies the player who started the game.  The use of this variable will be explained later.
 
 Now we write server-side code on `app.js` so that the server listens to this event.
 
@@ -81,8 +81,8 @@ io.on("connection",(socket)=>{
 })
 ```
 
-All event listeners/emitters would go inside the `io.on` block as mentioned above. `connection` is the default event listener provided by Socket.io. Whenever a client connects to the socket server, it emits a `connection` event under the hood.  
-The `CreateGame` listener creates a new Room with a random Room ID and adds the client to that room. It then emits an event `newGame` which contains the roomID for the created room.
+All event listeners/emitters would go inside the `io.on` block as mentioned above. `connection` is the default event listener provided by Socket.io. A `connection` event is emitted under the hood everytime a connection is established.  
+The `CreateGame` listener creates a new Room with a random Room ID and adds the client to that room. Later the server emits an event `newGame` which contains the roomID for the created room.
 
 ```
 //New Game Created Listener
@@ -94,11 +94,11 @@ socket.on("newGame",(data)=>{
 })
 ```
 
-The above code is added to `public/game.js`. This lets player1 know that a room was created and player2 could use this roomID to join the room. Then it hides the Room elements and displays a message with Room ID.
+The above code is added to `public/game.js`. This snippet lets player1 know that a room was created and player2 could use this roomID to join the room. Then it hides the Room elements and displays a message with Room ID.
 
 ### Join Game
 
-Now that we have player1 waiting in the room, it is time for player2 to join the room with RoomID.  
+Now that we have player1 waiting in the room, time for player2 to join the room with RoomID.  
 Like the `createGame` event, we write client-side logic on `public/game.js` to emit the `joinGame` event.
 
 ```
@@ -148,7 +148,7 @@ const transition=(data)=>{
     $("#message").html(data.p2name+" is here!").show();
 }
 ```
-This is the code to update UI on the client end(`public/game.js`) so that both players could enter the game. The transition function takes care of all the UI changes to enter the game mode.
+This is the code to update UI on the client end (`public/game.js`) so that both players could enter the game. The `transition()` function takes care of all the UI changes to enter the game mode.
 
 
 
@@ -167,9 +167,9 @@ $(".controls button").click(function (){
     });
 })
 ```
-The above code gets the choice picked by the user and emits the choice Event.  The firstPlayer variable is used to distinguish between the kind of event the player has to emit. Player emits `choice1` , Player2 emits `choice2` . 
+The above code gets the choice picked by the user and emits the choice Event.  The firstPlayer variable is used to distinguish between the kind of event the player has to emit. Player1 emits `choice1` , Player2 emits `choice2` . 
 ### Listen to Player's Choice
-We add serveserver-sider side logic at `app.js` to listen to Player1's choice.
+We add server-side side logic at `app.js` to listen to Player1's choice.
 ```
 //Listener to Player 1's Choice
     socket.on("choice1", (data)=> {
@@ -193,7 +193,7 @@ The above code gets player1's choice and does nothing if player2 hasn't picked t
         }
     });
 ```
-We also write logic to listen to player2's choice in `app.js`. Now that both of them have picked their choice, it enters into the `if block` and invokes the `result()` function.
+We also write logic to listen to player2's choice in `app.js`. Now that both of them have picked their choice, the server enters into the `if block` and invokes the `result()` function.
 
 
 
@@ -201,7 +201,7 @@ We also write logic to listen to player2's choice in `app.js`. Now that both of 
 
 In `app.js`,
 ```
-//Function to do executed after gettin both choices
+//Function to be executed after getting both choices
 const result=(roomID)=> {
     var winner = getWinner(choice1, choice2);
     io.sockets.to(roomID).emit("result", {
@@ -211,8 +211,9 @@ const result=(roomID)=> {
     choice2 = "";
 }
 ```
-The result function takes the roomID as an argument. The `getWinner()` function calculates the result based on the player's choices .  Later it emits the result to all the clients in the room, i.e both player1 and player2 who are in the room.
-And it resets the player's choices.
+The result function takes the roomID as an argument. The `getWinner()` function calculates the result based on the player's choices .   Later it emits the result to all the clients in the room, i.e both player1 and player2. And it resets the player's choices.
+
+> Note that the `getWinner()` is already written as a part of the boiler code.
 
 ### Listen to Result
 
@@ -237,13 +238,13 @@ const updateDOM=(player)=>{
 }
 ```
 
-The above code listens to the result event and updates the DOM with the help of `updateDOM()` function. The updateDOM function announces the winner and increases the score of the winner.
+The above code listens to the result event and updates the DOM with the help of `updateDOM()` function. The updateDOM function announces the winner and increases the score of the winner. If the result is draw, we just display a message that it's a draw.
 
 ### Conclusion
 
-Kudooos, You made it 🎉
+Kudos, You made it 🎉
 
-This app although works, it could use a  lot of improvement. As mentioned before, the intention was to keep it simple to put more focus Socket logic.
+This app although works, yet could use a lot of improvement. As mentioned before, the intention was to keep it simple to put more focus Socket logic. Learning never stops here, now that the app works. Next step is to do improvements in order to have a fruitful experience.
 
 
 
@@ -254,4 +255,4 @@ This app although works, it could use a  lot of improvement. As mentioned before
 - Improving the UI  
 - Storing choice details in socket meta-data rather than using server-side variable
 
- For Reference, check out my full-fledged Rock Paper Scissor game. Here is the link to the [Github Repo](https://github.com/HarishTeens/rpsgames). It is deployed to the web with Heroku. Feel free to check it out [here](https://rpsgames.herokuapp.com).
+ For Reference, check out my full-fledged Rock Paper Scissor game. Here is the link to the [Github Repo](https://github.com/HarishTeens/rpsgames). The application is deployed to the web with Heroku. Feel free to try the app at this [link](https://rpsgames.herokuapp.com).
