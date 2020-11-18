@@ -43,6 +43,7 @@ Generally, the critical values of logging are:
 - Application performance.
 
 ### Why Choose Winston for Logging
+
 Winston, one of the best logging middlewares, has about 4,000,000 weekly [downloads](https://www.npmjs.com/package/winston). The following properties make Winston an overall universal logging middleware.
 
 - It is simple to use and configurable. Winston is simple to configure with your application.
@@ -101,10 +102,7 @@ The above example shows you how to log to the console.
 ```
 
 ### Winston Transporters
-
-As a property of Winston, it supports different transports such as file transport.
-
-This will save a generated log message to a log file. The file is specified within your system. If the application creates its first log instance, the file will automatically be generated. Afterwards, any log will be saved to the created file.
+One of the properties of Winston is that it supports various transports such as uch as file transport. This will save a generated log message to a log file. The file is specified within your system. If the application creates its first log instance, the file will automatically be generated. Afterwards, any log will be saved to the created file.
 
 To do this, the logger configuration object needs to point to a file (file transporter). Simply by replacing the transport configuration object `.transports.Console()` with `.transports.File()` as shown below.
 
@@ -545,4 +543,4 @@ For example, where users interact with the system's component by creating a user
 - Divide logs into several log files in case you have an application with massive traffic.
 - Logging should be structured and done in levels.
 
-Hope the guide helps you understand Logging and able to apply Winston in your projects!
+I hope this guide helps you to understand logging and be able to apply Winston in your projects!
