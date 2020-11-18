@@ -129,6 +129,8 @@ It often achieves download speeds in Gbps. Their coverage area is very small and
 
 Massive MIMO technology can be used to achieve full 5G services, more antennas can radically increase the coverage area and boost the power density. [5GNR (New Radio)](https://en.wikipedia.org/wiki/5G_NR) is the new 5G technology, covering [FR1](https://ieeexplore.ieee.org/document/9074973) (sub 6GHz) and [FR2](https://ieeexplore.ieee.org/document/9074973) (above 24HGz).
 
+Since mmWaves support **LOS(Line Of Sight)** propogation, their signals get weakened due to rain attenuation and foliage loss. They have a shorter coverage area,  so more number of antennas, base stations, repeaters have to be installed to extend their range. These things may lead to increase in budget and that means limited access to rural areas. So the companies may generate their revenue by raising the data rates and hiking the price of smartphone devices with 5G neworking capabilities. So altogether 5G can be expensive for consumers as well.
+
 5GNR is a new air interface developed by 3GPP and built for the 5G network, expected to be the universal norm for the future air interface networks. 5GNR is based on [Radio Access Technology (RAT)](https://en.wikipedia.org/wiki/Radio_access_technology). In 5GNR the air latency is estimated to be around 10–12ms.
 
 The first versions of 5G will have latencies up to 30ms, and by using edge servers the latency can improve up to 20ms. This is because the computing servers are as close to the end consumer as they can be through the [use of edge computing](blog/edge-computing-5g-iot-ai/).
@@ -142,7 +144,7 @@ Edge computing can decrease data flow congestion and improve any latency issues.
 
 6G's frequency band will be deployed on the terahertz spectrum. Terahertz waves are advantageous for transferring data, and can reach speeds up to 50GBps.
 
-This experimental satellite is thus designed to test terahertz wave technologies in orbit. 6G is expected to hit the markets by 2030.
+This experimental satellite is thus designed to test terahertz wave technologies in orbit. Terahertz waves (or THz waves) can be  challenging to work with since no other networking generation has been deployed on the THz spectrum. Thus to achieve this it may need a new line-up of communication equipments, a stable networking infrastructure and a sustainable system to handle 6G connectivity. These waves may disperse and scatter during long range transmission. They can also be absorbed by clouds, fogs and it is difficult for them to penetrate through metal surfaces. The hardware required to cope up with these problems are not economical, so it may be an hinderance for 6G to be publicly available. It is expected to hit the markets by 2030.
 
 ### R&D at its best
 The pace at which technology is developing is mind blowing. Yesterday's innovations are already considered obsolete today. Just about 10 years ago, the first iPhone was introduced, and mobile networking was barely useable.
