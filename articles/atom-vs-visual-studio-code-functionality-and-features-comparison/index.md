@@ -22,7 +22,7 @@ Atom is built using web technology: HTML, CSS, and JavaScript, thus being very f
 
 Developers build Atom code/text editor with packages installed or written. There are [over 5,000 packages to choose from](https://atom.io/packages) and over 3,000 themes.
 
-Atom allows developers to use it productively without using a configuration file. Atom comes with eight syntax themes after installation. If none of the pre-installed themes amuse you, it is possible to install [customized themes from Atom](https://atom.io/themes).
+Atom allows developers to use it productively without using a configuration file. Atom comes with eight syntax themes after installation. If none of the pre-installed themes amuses you, it is possible to install [customized themes from Atom](https://atom.io/themes).
 
 Developers create interactive and responsive web applications with the Atom source code editor. Learn more about Atom [here](https://atom.io/docs)
 
@@ -76,7 +76,7 @@ Let's have a glance at features offered by Atom and VS Code text editors.
 | --- | --- | --- |
 | Released on | February 2014 | April 2015 |
 | Developers | GitHub | Microsoft |
-| Supported by | WindowsLinuxMac OS X | WindowsLinuxMac OS X |
+| Supported by | Windows / Linux / Mac OS | Windows / Linux / Mac OS |
 | License | MIT License | MIT License |
 | Extension Support | Yes | Yes |
 | Cross-platform support | Yes | Yes |
