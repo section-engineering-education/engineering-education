@@ -18,8 +18,8 @@ In this tutorial, I will teach you how to build a documentation website for your
 
 This guide assumes that you have:
 - Go installed on your local machine - visit [ednsquare.com](https://ednsquare.com/story/how-to-install-golang-on-windows-linux-mac------T3VRkO) for instructions on how to install Go on macOS, Windows, and Linux.
-- [Homebrew](brew.sh) - visit [brew.sh](brew.sh) for instructions on how to install homebrew on macOS and Linux.
-- [Chocolatey](chocolatey.org) - visit [chocolatey.org](chocolatey.org) for instructions on how to install chocolatey on Windows.
+- [Homebrew](https://brew.sh/) - visit [brew.sh](https://brew.sh/) for instructions on how to install homebrew on macOS and Linux.
+- [Chocolatey](https://chocolatey.org/) - visit [chocolatey.org](https://chocolatey.org/) for instructions on how to install chocolatey on Windows.
  
 ### Step 1- Install Hugo
 The Docsy theme uses the Hugo-extended version of Hugo. Install the Hugo-extended version on macOS and Linux with Homebrew.
@@ -191,13 +191,13 @@ hugo server command
 ```
 The web server will be hosted at http://localhost:1313, and will automatically reload when you make any changes in your website's files.
 
+![Documentation-website-preview](/engineering-education/documentation-website-hugo/Hero.png)
+
 ### Step 7 - Build your website 
 
 Build your website with the `hugo` command. The command will generate all your website's static files and store them in the `./public/` directory.
 
 You can deploy your website on different hosting platforms like [AWS](https://aws.amazon.com/), [Github pages](https://pages.github.com/), [Netlify](https://www.netlify.com/), etc. with the generated static files.
-
-![Documentation-website-preview](/engineering-education/documentation-website-hugo/Hero.png)
 
 ### Conclusion
 
