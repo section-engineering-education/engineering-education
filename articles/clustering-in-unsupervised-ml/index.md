@@ -1,19 +1,19 @@
 ## Clustering in Unsupervised Machine Learning
 
 ### Introduction to Unsupervised Machine Learning
-Unsupervised learning is a technique in machine learning (ML) that does not require the supervision of models by users. It is one of the categories of machine learning. The other two categories include reinforcement and supervised learning. 
+Unsupervised learning is a machine learning (ML) technique that does not require the supervision of models by users. It is one of the categories of machine learning. The other two categories include reinforcement and supervised learning. 
 
-In unsupervised machine learning, a self-organized algorithm is utilized to enhance the self-discovery of unknown patterns that are in unlabeled datasets. 
+In unsupervised machine learning, a learning algorithm is utilized to discover unknown patterns in unlabeled datasets. 
 
 This is contrary to supervised machine learning that uses human-labeled data. Unsupervised learning algorithms use unstructured data that is grouped based on similarities and patterns.
 
 ### Why Unsupervised Learning is Important
 
-Unsupervised learning is an important concept in machine learning. It saves data analysts’ time by providing algorithms that enhance the grouping and investigation of data. It is also important in well-defined network models.  Many analysts prefer using unsupervised learning in network traffic analysis (NTA) because of frequent data changes and scarcity of labels. 
+Unsupervised learning is an important concept in machine learning. It saves data analysts’ time by providing algorithms that enhance the grouping and investigation of data. It is also important in well-defined network models. Many analysts prefer using unsupervised learning in network traffic analysis (NTA) because of frequent data changes and scarcity of labels. 
 
 It is needed to create better forecasting, especially in threat detection. This can be achieved by developing network logs that enhance threat visibility. 
 
-This category of machine learning is also resourceful in the reduction of data dimensionality. Dimensionality reduction is needed in datasets that have very many features.Unsupervised learning can analyze complex data to establish less relevant features. The model can then be simplified by dropping these features with insignificant effects on valuable insights. 
+This category of machine learning is also resourceful in the reduction of data dimensionality. Dimensionality reduction is needed in datasets that have very many features. Unsupervised learning can analyze complex data to establish less relevant features. The model can then be simplified by dropping these features with insignificant effects on valuable insights. 
 
 For example, an e-commerce business may use customers' data to establish shared habits. Using algorithms that enhance dimensionality reduction, irrelevant features of the data such as home address and weight may be dropped to simplify the analysis.
 
@@ -98,10 +98,21 @@ In the above diagram, the bottom observations that have been fused are similar, 
 ##### Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
 This is a density-based clustering that involves the grouping of data points that are close to each other. Data points that are far from each other are marked as outliers. Data is sorted based on commonalities. 
 
+###### Key Concepts
+_MnPts:_ This is a certain number of neighbours or neighbour points
+
+_Epsilon neighbourhood:_ This is a set of points that consist of a specific distance from an identified point. The distance between these points should be less than a specific number (epsilon).
+
+_Core Point:_ This is a point in the density-based cluster with at least MinsPts within the epsilon neighbourhood.
+
+_Border point:_ This is a point in the density-based cluster with fewer than MinsPts within the epsilon neighbourhood.
+
+_Noise point:_ This is an outlier that does not fall in the category of a core point or border point. It is not part of any cluster.
+
 ###### Algorithm steps
 1.	In the first step, a core point should be identified. The core point radius is given as ε. Create a group  for each core point.
 2.	Identify border points and assign them to their designated core points. 
-3.	Any other point that is not within the group of border points or core points is treated as a nose point. This is an outlier.
+3.	Any other point that is not within the group of border points or core points is treated as a nose point. 
 
 ![DBSCAN Clustering](/engineering-education/clustering-in-unsupervised-machine-learning/dbscan-clustering.png)
 [Image Source: Git Book](https://yongle.gitbooks.io/datamining/content/figures/dbscan.png)
@@ -140,7 +151,7 @@ The following diagram shows a graphical representation of these models.
 + Membership can be assigned to multiple clusters, which makes it a fast algorithm for mixture models. 
 
 ###### Disadvantages
-+ If a mixture consists of insufficient points, the algorithm may diverge and establish solutions that contain infinite likelihood. This may require artificial regularization of covariance. 
++ If a mixture consists of insufficient points, the algorithm may diverge and establish solutions that contain infinite likelihood. This may require rectifying the covariances between the points (artificially). 
 + A sub-optimal solution can be achieved if there is a convergence of GMM to a local minimum.
 
 ### Conclusion
