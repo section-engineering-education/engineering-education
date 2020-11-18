@@ -102,7 +102,7 @@ The above example shows you how to log to the console.
 ```
 
 ### Winston Transporters
-One of the properties of Winston is that it supports various transports such as uch as file transport. This will save a generated log message to a log file. The file is specified within your system. If the application creates its first log instance, the file will automatically be generated. Afterwards, any log will be saved to the created file.
+One of the properties of Winston is that it supports various transports such as file transport. This will save a generated log message to a log file. The file is specified within your system. If the application creates its first log instance, the file will automatically be generated. Afterwards, any log will be saved to the created file.
 
 To do this, the logger configuration object needs to point to a file (file transporter). Simply by replacing the transport configuration object `.transports.Console()` with `.transports.File()` as shown below.
 
