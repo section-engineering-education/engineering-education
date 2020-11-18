@@ -242,6 +242,7 @@ module.exports = {
 plugins: [ `gatsby-plugin-typography`]
 }
 ```
+This code adds the Gatsby typography.js plugin
 
 ### Building the Site on a Web Server
 Your site has been running on your local server, which is `http://localhost:8000`.
@@ -251,8 +252,9 @@ To get your Gatsby site ready for cloud deployment you will need to build it usi
 ```bash
 npm run build
 ```
+Gatsby will build the site by generating a static HTML and JavaScript code bundles.
 
-You will notice some changes in the public folder that’s where your static site files are. If you want to host it on a web server you could copy the public folder and place it on a server. Otherwise, you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko, etc. to place the whole file directory on a cloud server.
+You will notice some changes in the public folder that’s where your static site files are. If you want to host it on a web server you could copy the public folder and place it on a server. Otherwise, you could use a cloud static site server like Amazon, Google, Netlify, Gatsby Cloud, Heruko, etc.
 
 ### Deploying to a Cloud Server
 You can deploy your Gatsby site online in a variety of ways, but there are 2 easy methods that we will discuss. Those being deployed on [Netlify](https://www.netlify.com/) and [Gatsby Cloud](https://www.Gatsby.js.com/cloud/).
