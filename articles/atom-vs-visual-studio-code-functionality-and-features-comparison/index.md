@@ -48,7 +48,7 @@ It uses Electron as its base, thus enabling cross-platform. It works on Windows,
 
 Visual Studio Code supports other languages such as Java, Python, PHP, C#, and C++. It comprises thousands of extensions that enable debuggers, more languages, commands, themes, etc.
 
-### How to Use Visio Studio Code Editor
+#### How to Use Visio Studio Code Editor
 
 To get started, download VS Code editor from [Visual Studio home page](https://code.visualstudio.com/). 
 
