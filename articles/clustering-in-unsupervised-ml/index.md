@@ -112,7 +112,7 @@ _Noise point:_ This is an outlier that does not fall in the category of a core p
 ###### Algorithm steps
 1.	In the first step, a core point should be identified. The core point radius is given as ε. Create a group  for each core point.
 2.	Identify border points and assign them to their designated core points. 
-3.	Any other point that is not within the group of border points or core points is treated as a nose point. 
+3.	Any other point that is not within the group of border points or core points is treated as a noise point. 
 
 ![DBSCAN Clustering](/engineering-education/clustering-in-unsupervised-machine-learning/dbscan-clustering.png)
 [Image Source: Git Book](https://yongle.gitbooks.io/datamining/content/figures/dbscan.png)
@@ -151,7 +151,7 @@ The following diagram shows a graphical representation of these models.
 + Membership can be assigned to multiple clusters, which makes it a fast algorithm for mixture models. 
 
 ###### Disadvantages
-+ If a mixture consists of insufficient points, the algorithm may diverge and establish solutions that contain infinite likelihood. This may require rectifying the covariances between the points (artificially). 
++ If a mixture consists of insufficient points, the algorithm may diverge and establish solutions that contain infinite likelihood. This may require rectifying the covariance between the points (artificially). 
 + A sub-optimal solution can be achieved if there is a convergence of GMM to a local minimum.
 
 ### Conclusion
