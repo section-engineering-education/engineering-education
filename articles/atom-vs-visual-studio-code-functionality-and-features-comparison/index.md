@@ -95,7 +95,7 @@ With loads of extensions and customization comes many configurations. The config
 
 Configuration in Visual Studio Code involves a JSON file recently replaced by Graphical User Interface (GUI). It is simpler to use GUI, and it does its work well. The abstraction level is maintained while using GUI over JSON.
 
-In Atom, you have GUI everywhere to edit instead of having a singular JSON file to edit. Atom users report there are sluggishness and other performance issues during the configuration process. This happens because of tons of extensions installed. The solution to these issues is doing away with extensions not in use, and maintaining a relatively small number of installed extensions.
+In Atom, you have GUI everywhere to edit instead of having a singular JSON file to edit. Atom users report there are sluggishness and other performance issues during the configuration process. This happens because of tons of extensions installed. The solution to these issues is doing away with extensions not in use and maintaining a relatively small number of installed extensions.
 
 2. Extensibility and customization
 
@@ -117,7 +117,7 @@ Atom is a product of GitHub, and git integration is an in-built feature. On the 
 
 The autocomplete tool lets you view and insert possible completions in the editor using the Enter button. The autocomplete system works by looking through the currently open file for strings that match whatever you type. Both Atom and Visual Studio Code editors have the autocomplete feature.
 
-In the Atom code editor, the autocomplete functionality is implemented in [the autocomplete-plus package](https://github.com/atom/autocomplete-plus). VS Code comes integrated with tools for auto-completion, thus making the code you write more convenient. Tools for auto-completion in VS Code include;[Emmet](https://code.visualstudio.com/docs/editor/emmet) and [IntelliSense.](https://code.visualstudio.com/docs/editor/intellisense)
+In the Atom code editor, the autocomplete functionality is implemented in [the autocomplete-plus package](https://github.com/atom/autocomplete-plus). VS Code comes integrated with tools for auto-completion, thus making the code you write more convenient. Tools for auto-completion in VS Code include; [Emmet](https://code.visualstudio.com/docs/editor/emmet) and [IntelliSense.](https://code.visualstudio.com/docs/editor/intellisense)
 
 6. Navigation
 
@@ -173,6 +173,6 @@ In Atom use Cmd/ Ctrl + Alt + [to collapse and Cmd/Ctrl + Alt +] to expand the b
 
 ### Conclusion
 
-In conclusion, Atom and Visual Studio Code editors work well, and each editor has its benefits and disadvantages. The editor that fits and satisfies one developer's demands may not satisfy the demands of another developer. One developer may like how Atom function, and another may prefer Visual Studio Code editor.
+In conclusion, Atom and Visual Studio Code editors work well, and each editor has its benefits and disadvantages. The editor that fits and satisfies one developer's demands may not satisfy the demands of another developer. One developer may like how Atom functions and another may prefer Visual Studio Code editor.
 
 If you wonder which text editor is best for you, you can choose any out of both. Both editors have multiple features that meet the developer's requirements. Also, it is essential to use the editors to familiarize yourself with the features and shortcut keys. Both editors provide almost the same features to developers. Hopefully, this article helps you decide which editor best suits your requirements.
