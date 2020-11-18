@@ -148,6 +148,9 @@ const logConfiguration = {
         })
     ]
 };
+
+const logger = winston.createLogger(logConfiguration);
+
 // Log some messages
 logger.error("Hello, Winston logger, the first error!");
 logger.warn("Hello, Winston logger, the first warning!");
@@ -187,12 +190,11 @@ const logConfiguration = {
     ],
     format: winston.format.combine(
         winston.format.label({
-            label: `CATEGORY 1`
+            label: `Label🏷️`
         }),
         winston.format.timestamp({
            format: 'MMM-DD-YYYY HH:mm:ss'
        }),
-        winston.format.json(),
         winston.format.printf(info => `${info.level}: ${info.label}: ${[info.timestamp]}: ${info.message}`),
     )
 };
@@ -200,7 +202,7 @@ const logConfiguration = {
 Output:
 
 ```js
-{"message":"Hello, Winston logged an error!","level":"error","label":"CATEGORY 1","timestamp":"Nov-09-2020 12:35:26"}
+info: Label🏷️: Nov-18-2020 08:10:44: Hello, Winston logger, some info!
 ```
 
 ### Configuring Winston With a Server
