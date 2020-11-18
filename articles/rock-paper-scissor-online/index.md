@@ -1,51 +1,57 @@
-Websockets have a variety of applications in the modern web these days, from simple chat applications to realtime databases. Even online games use Socket under the hood to make multiplayer experience possible. 
+A variety of applications use Socket on the modern web. From simple chat applications to real-time databases.  Even online multiplayer games use Socket under the hood. 
 
-###  Introduction
-This article focuses on building a web application, which lets you play Rock Paper Scissor online with your friend. A player has to create a room, and share the unique Room ID to the other player. The other player can join the same room with this unique Room ID. Once both players have joined the room, they could start playing!
+### Introduction
+This article focuses on building a web application that lets you play Rock Paper Scissor online with your friends. A player has to create a room and share the unique Room ID with the other player. The other player can join the same room with this unique Room ID. Once both players have joined the room, they could start playing!
 
 There are two parts to this application, 
-- Front-end: To keep things simple, the front-end is built on basic HTML,CSS, JS.
-- Back-end: An Express server which uses Socket.io.
+- Front-end: To keep things simple, the front-end is built on basic HTML, CSS, JS with jQuery.
+- Back-end: An Express server that uses Socket.io.
 
-<!-- All intros to be added -->
+### Prerequisites
+ 
+- HTML is the standard markup language for web page. Useful [guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) for beginners.
+- CSS is style sheet language for improving the presentation of web pages. To learn more, check this [article](https://www.section.io/engineering-education/what-is-css/)
+- [BootStrap](https://getbootstrap.com/) is a popular HTML, CSS, JS library. An [article](https://getbootstrap.com/docs/4.0/getting-started/introduction/)  to get started.
+- [jQuery](https://jquery.com/) is a fast and feature-rich Javascript library. 
+- [Express.js](https://expressjs.com/) is a web application framework  for Node.js. Introductory article on Express.js: [link](https://www.section.io/engineering-education/express/).
+- [Socket.io](https://socket.io/) is a Real-Time Engine for Web. A helpful [article](https://www.section.io/engineering-education/understanding-socket/) to get started. This article covers the usage of Socket.io on both the server and client-side. These are essential to proceed further.
 
-Refer this article to better understand Socket.io [article](https://www.section.io/engineering-education/understanding-socket/).
 
 
 ### Starter Code
 
-In the interest of time and the intention to put more focus on Socket logic, download the starter code from this Repo. Check out this [Repository on GitHub](https://github.com/HarishTeens/rps-online).  Follow the instructions on README to set it up on your local system.
+In the interest of time and the intention to put more focus on Socket logic. Please download the starter code from this [Repository](https://github.com/HarishTeens/rps-online) on GitHub.  Follow the instructions on README to set it up on your local system.
 
 Here goes the file wise description,
 
 - ```public/index.html``` : A Home Page for the app with all the required UI Components. 
 - ```public/style.css``` : Styles for the entire application.
-- ```public/game.js``` : Client Side JavaScript file to handle events.
-- ```app.js``` : Server Side NodeJS file for the server setup and getWinner function to calculate winner.
+- ```public/game.js``` : Client-Side JavaScript file to handle events.
+- ```app.js``` : Server Side NodeJS file for the server setup and getWinner function to calculate the winner.
 
-Note that the app is not functional yet, we would be writing the necessary logics to make it functional. Also, feel free to tweak the boiler code to match your Style.
+Note that the app is not functional yet, we need to write the necessary logic to make it functional. Also, feel free to tweak the boiler code to match your style.
 
-The only two files where majority would be written on, ```app.js``` file to handle the server side logic and ```public/game.js``` file to handle the client side logic.
+Two important to focus on. One is  ```app.js``` that handles server-side logic. And the other is ```public/game.js``` that handles client-side logic.
 
-### Game Flow  
+### Game Flow 
 
 ![image](/engineering-education/nginx-reverse-proxy/rps.png)
 
-This is a Sequence diagram which shows the timeline of events, where time passes as we move downwards. It's really important to understand the flow before we start coding, so I'd recommend to take a closer look at the diagram until one grasps it.
+This is a Sequence diagram that shows the timeline of events. It's important to understand the flow before we start coding. So make sure you understand the diagram completely.
 
-Read through the below points if you are familiar with reading a Sequence Diagram.
+Read through the below points if you are not familiar with Sequence Diagrams.
 
 - Time flows downward.
-- Arrows reprsent events. Start of the Arrow denotes the Emitter, end of the arrow denotes the listener. For example, Player1 emits the `Create Game` Event, Socket Server listens to this event.
-- A rectanguar box has been used to denote waiting/processing time.
+- Arrows represent events. The start of the Arrow denotes the Emitter, end of the arrow denotes the listener. For example, Player1 emits the `Create Game` Event, Socket Server listens to this event.
+- A rectangular box denotes waiting/processing time.
 
-Player1 emits the create Game Event. Server acknowledges and responds with a roomID. Once player2 emits join Game Event with the same roomID. Server detects that both players have joined the room and shares the other player's info to each other. It then waits for both the players to select a choice, after that it processes the result and sends result to both of the players.
+Player1 emits the create Game Event. The server acknowledges and responds with a room ID. Once player2 emits join Game Event with the same room ID. The server detects that both players have joined the room. It then shares the other player's info with each other. Now it waits for both the players to select a choice. Then it processes the result and sends back to both players.
 
 Now that the flow is clear, let's jump right into coding. 
 
 ### Create Game
 
-Let us start by writing logic for the Create Game Event in `public/game.js` file.
+Let us start by writing logic for the Create Game Event in the `public/game.js` file.
 
 ```
 //Create Game Event Emitter
@@ -56,9 +62,9 @@ $(".createBtn").click(function(){
 })
 ```
 
-The above code listens for a click event on the Create Button, takes in the player1 Name and emits an event named `createGame` . The variable `firstPlayer` is used to identify the player who started the game, the use of this variable would be explained later.
+The above code listens for a click event on the Create Button. It grabs player1's name and emits a socket event named `createGame` . The variable `firstPlayer` identifies the player who started the game.  The use of this variable would be explained later.
 
-Now we write server side code on `app.js` so that the server listens to this event.
+Now we write server-side code on `app.js` so that the server listens to this event.
 
 ```
 io.on("connection",(socket)=>{
@@ -76,24 +82,24 @@ io.on("connection",(socket)=>{
 ```
 
 All event listeners/emitters would go inside the `io.on` block as mentioned above. `connection` is the default event listener provided by Socket.io. Whenever a client connects to the socket server, it emits a `connection` event under the hood.  
-The CreateGame listener creates a new Room with a random Room ID and adds the client to that room. It then emits an event `newGame` which contains the roomID for the created room.
+The `CreateGame` listener creates a new Room with a random Room ID and adds the client to that room. It then emits an event `newGame` which contains the roomID for the created room.
 
 ```
 //New Game Created Listener
 socket.on("newGame",(data)=>{
-    $(".newRoom").hide();
+    $(".newRoom").hide(); 
     $(".joinRoom").hide();
     $("#message").html("Waiting for player 2, room ID is "+data.roomID).show();
     roomID=data.roomID;
 })
 ```
 
-The above code has to be added to `public/game.js` so that we could let player1 know that a room has been successfully created and player2 could use this roomID to join the room.
+The above code is added to `public/game.js`. This lets player1 know that a room was created and player2 could use this roomID to join the room. Then it hides the Room elements and displays a message with Room ID.
 
 ### Join Game
 
 Now that we have player1 waiting in the room, it is time for player2 to join the room with RoomID.  
-Similar to the `createGame` event, we now have to write client side logic on `public/game.js` to emit `joinGame` event.
+Like the `createGame` event, we write client-side logic on `public/game.js` to emit the `joinGame` event.
 
 ```
 //Join Game Event Emitter
@@ -106,10 +112,11 @@ $(".joinBtn").click(function(){
     });
 })
 ```
-The above code emits the `joinGame` event once the player2 fills in the roomID and his name and hits the Join Button.
+The client emits `joinGame` with player2's name and room ID, which we acquired from the input fields.
 
 
-Now we write server side logic on `app.js` to listen to the `joinGame` event and share each other info to the players.
+
+Now we write server-side logic on `app.js` to listen to the `joinGame` event and share each other info with the players.
 ```
 //Join Game Listener
     socket.on("joinGame",(data)=>{        
@@ -118,14 +125,14 @@ Now we write server side logic on `app.js` to listen to the `joinGame` event and
         socket.emit("player1Joined",{p2name:players[data.roomID],p1name:data.name});
     })
 ```
-The above code adds player2 to the room, notifies player2 that with player1's info and player1 with player2's info.
+The above code adds player2 to the room. It then notifies player2 with player1's info and player1 with player2's info.
 
 ```
 //Player 2 Joined
 socket.on("player2Joined",(data)=>{
     transition(data)  ;
   })
-  
+ 
 //Player 1 Joined
 socket.on("player1Joined",(data)=>{
     transition(data)  ;
@@ -141,12 +148,13 @@ const transition=(data)=>{
     $("#message").html(data.p2name+" is here!").show();
 }
 ```
-This is the code to update UI on the client end(`public/game.js`) so that both players could enter the game. The Transition Function takes care of all the UI changes that needs to happen to enter game mode.
+This is the code to update UI on the client end(`public/game.js`) so that both players could enter the game. The transition function takes care of all the UI changes to enter the game mode.
+
 
 
 ### Players select Choice
 
-Now that both of the players are in the room. They could start playing the game. Now we add logic for the client to be able to select choice and emit events accordingly in the `public/game.js` file.
+Now we add logic for the client to be able to select a choice and emit events in the `public/game.js` file.
 
 ```
 //Select Choice
@@ -159,9 +167,9 @@ $(".controls button").click(function (){
     });
 })
 ```
-The above code gets the choice picked by the user and emits the choice Event. Note that the firstPlayer variable is used here to distinguish between the kind of event it has to emit. Player emits `choice1` , Player2 emits `choice2` . 
+The above code gets the choice picked by the user and emits the choice Event.  The firstPlayer variable is used to distinguish between the kind of event the player has to emit. Player emits `choice1` , Player2 emits `choice2` . 
 ### Listen to Player's Choice
-We add server side logic at `app.js` to listen to Player1's choice.
+We add serveserver-sider side logic at `app.js` to listen to Player1's choice.
 ```
 //Listener to Player 1's Choice
     socket.on("choice1", (data)=> {
@@ -173,7 +181,7 @@ We add server side logic at `app.js` to listen to Player1's choice.
     });
 ```
 
-The above code gets player1's choice and does nothing if player2 hasnt picked their choice.
+The above code gets player1's choice and does nothing if player2 hasn't picked their choice yet.
 
 ```
 //Listener to Player 2's Choice
@@ -185,10 +193,13 @@ The above code gets player1's choice and does nothing if player2 hasnt picked th
         }
     });
 ```
-Similarly, we also write logic to listen to player2's choice in `app.js`. Now that both of them have picked their choice, it enters into the if block and invokes the `result()` function.
+We also write logic to listen to player2's choice in `app.js`. Now that both of them have picked their choice, it enters into the `if block` and invokes the `result()` function.
+
 
 
 ### Declare Winner
+
+In `app.js`,
 ```
 //Function to do executed after gettin both choices
 const result=(roomID)=> {
@@ -200,19 +211,18 @@ const result=(roomID)=> {
     choice2 = "";
 }
 ```
-The result function takes the roomID as an argument, calculates the result based on the player's choices with the help of `getWinner()` function and emits the result to all the clients in the room, i.e both player1 and player2 who are in the room.
+The result function takes the roomID as an argument. The `getWinner()` function calculates the result based on the player's choices .  Later it emits the result to all the clients in the room, i.e both player1 and player2 who are in the room.
 And it resets the player's choices.
 
 ### Listen to Result
 
-Now that the server has calculated the result and has emitted to all the players, time for us to write client side logic at `public/game.js` to listen to the `result` event.
+We now have the server emitting the result to both the players. Time to write client-side logic at `public/game.js` to listen to the `result` event.
 
 ```
 //Result Event Listener
 socket.on("result",(data)=>{
     if(data.winner=="draw"){
-        updateDOM("player1");
-        updateDOM("player2");
+        $("#message").html("It's a draw!");
     }else{
         updateDOM(firstPlayer==data.winner?"player1":"player2");
     }
@@ -227,16 +237,21 @@ const updateDOM=(player)=>{
 }
 ```
 
-The above code listens to the result event and updates the DOM with the help of `updateDOM()` function. The updateDOM function announces the winner in the message field and increases the score of the winner, and if draw it increases both of their scores.
+The above code listens to the result event and updates the DOM with the help of `updateDOM()` function. The updateDOM function announces the winner and increases the score of the winner.
 
-### Summary
+### Conclusion
 
-This app although works, a lot of things could improved. Firstly Error Handling, avoiding usage of server side variables..etc. All these were intended this way to keep the article simple so that the reader would better grasp the usage of Socket.io in this context and is expected to refactor and tweak the performance after a solid understanding of the flow.
+Kudooos, You made it 🎉
 
-### Bonus Step:
+This app although works, it could use a  lot of improvement. As mentioned before, the intention was to keep it simple to put more focus Socket logic.
 
-Deploy it to the web, the easiest way is Heroko. Follow their documentation and deploy the app within minutes with the help of their SDK. Try it out with your friends and have fun.
 
-After all this hard work of coding the game, it is time for you to play it with your friends and have some fun.
 
-Also checkout my full fledged Rock Paper Scissor game rpsgames.herokuapp.com github.com/HarishTeens/rpsgames to have a better experience.
+### Next Steps
+- Refactoring the Code
+- Error Handling
+- Efficient usage of Events
+- Improving the UI  
+- Storing choice details in socket meta-data rather than using server-side variable
+
+ For Reference, check out my full-fledged Rock Paper Scissor game. Here is the link to the [Github Repo](https://github.com/HarishTeens/rpsgames). It is deployed to the web with Heroku. Feel free to check it out [here](https://rpsgames.herokuapp.com).
