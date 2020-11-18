@@ -66,6 +66,7 @@ Testing the same model on a test set with 55% samples of X and 45% samples of Y,
 The confusion matrix forms the basis for the other types of classification metrics. It is a matrix that fully describes the performance of the model. A confusion matrix gives an in-depth breakdown of the correct and incorrect classifications of each class.
 
 ![confusion](/engineering-education/evaluating-ml-model-performance/confusion.png)
+
 Confusion Matrix [Source]( https://towardsdatascience.com/various-ways-to-evaluate-a-machine-learning-models-performance-230449055f15)
 
 The four terms represented in the image above are very important. Let’s define them:
@@ -98,11 +99,13 @@ On the other hand, recall is the number of true positives divided by all the sam
 Recall = True Positives / (True Positives + False Negatives)
 
 ![precisionrecall](/engineering-education/evaluating-ml-model-performance/percisionercall.png)
+
 Precision vs Recall [Source]( https://en.wikipedia.org/wiki/Precision_and_recall)
 
 In addition to robustness, the F-score shows us how precise a model is by letting us know how many correct classifications are made. The F-score ranges between 0 and 1. The higher the F-score, the greater the performance of the model.
 
 ![fscore](/engineering-education/evaluating-ml-model-performance/fscore.jpg)
+
 [Source](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
 
 #### Metrics for Regression Problems
@@ -115,6 +118,7 @@ The mean absolute error represents the average of the absolute difference betwee
 Mean absolute error is given by:
 
 ![mae](/engineering-education/evaluating-ml-model-performance/mae.jpg)
+
 [Source](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
 
 ##### Mean Squared Error
@@ -123,6 +127,7 @@ The mean squared error is quite similar to the mean absolute error. However, mea
 Mean squared error is given by:
 
 ![mse](/engineering-education/evaluating-ml-model-performance/mse.jpg)
+
 [Source](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
 
 ##### Root Mean Squared Error
