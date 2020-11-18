@@ -65,6 +65,7 @@ Logging with Winston is simple, with just four steps, as shown in the example be
 ```js
 const winston = require('winston');
 ```
+
 - Creating Winston configuration object. Winston requires at least one transport to create a log. A transport is where the log is saved.
 
 ```js
@@ -74,11 +75,13 @@ const logConfiguration = {
     ]
 };
 ```
+
 - Creating a logger and pass it to the Winston configuration object.
 
 ```js
 const logger = winston.createLogger(logConfiguration);
 ```
+
 - Log your message.
 
 ```js
@@ -104,7 +107,7 @@ The above example shows you how to log to the console. Add the code blocks to a 
 ### Winston Transporters
 One of the properties of Winston is that it supports various transports such as file transport. This will save a generated log message to a log file. The file is specified within your system. If the application creates its first log instance, the file will automatically be generated. Afterwards, any log will be saved to the created file.
 
-To do this, the logger configuration object needs to point to a file (file transporter). Simply by replacing the transport configuration object `.transports.Console()` with `.transports.File()` as shown below.
+To do this, the logger configuration object needs to point to a file (file transporter). Simply by replacing the transport configuration object `.transports.Console()` in `new winston.transports.File` with `.transports.File()` as shown below.
 
 ```js
 transports.File({
@@ -128,8 +131,6 @@ const logConfiguration = {
 ```
 
 Go to the `example.log` file in the logs folder to view the log.
-
-Output:
 
 ![Log File](/engineering-education/logging-with-winston/log-file.png)
 
@@ -213,7 +214,7 @@ Output:
 info: Label🏷️: Nov-18-2020 08:10:44: Hello, Winston logger, some info!
 ```
 
-### Configuring Winston With a Server
+### Configuring Winston with a Server
 Let’s create a simple Express server that we can do some logging using Winston. This will be a small project to get you on your feet using Winston to record logs from server requests and responses.
 
 Go ahead and install the [Express](/engineering-education/express/) library with `npm install express`.
@@ -294,6 +295,7 @@ From the above example:
 - Every time the server starts, Winston will record a log to the `example.log` file.
 
 When the server is running, accessing the following pages will create a log every time the link is invoked.
+
 - http://localhost:3000/ - the server will send a hello world message. We want Winston to capture that and record it in our log file.
 - http://localhost:3000/calc - we are trying to add variable `y` to variable `x`. In this case, variable `y` is not defined. This will generate an error, and we want Winston to capture such instances for us.
 - http://localhost:3000/hello - the server we have created has no such URL. We want Winston to inform us when a link that points to our IP address is accessed but can't be found; that is a `404` error.
@@ -440,7 +442,7 @@ transactionLogger.error('Transaction Failed', `{${err}`,session_id: `${req.id}`}
 
 This makes it easier to manage your logs because there are seperated for specific issues and user and transaction attributes are provided to help narrow it down to a specific user or transaction.
 
-### Other Logging Middleware 
+### Other Logging Middleware
 This guide discusses logging using Winston. However, there are other quality middleware logger packages worth mentioning. They include;
 
 1. Morgan
@@ -499,7 +501,9 @@ const log = bunyan.createLogger({ name: "myapp" });
 log.info("hi");
 log.warn({ lang: "fr" }, "au revoir");
 ```
+
 Output:
+
 ```js
 {"name":"myapp","hostname":"Doe","pid":14244,"level":30,"msg":"hi","time":"2020-11-12T08:22:41.398Z","v":0}
 {"name":"myapp","hostname":"Doe","pid":14244,"level":40,"lang":"fr","msg":"au revoir","time":"2020-11-12T08:22:41.4
