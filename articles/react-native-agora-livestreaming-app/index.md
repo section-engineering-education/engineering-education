@@ -28,7 +28,7 @@ By the end of this tutorial, you’ll understand
 - How to add event listeners on the live stream to listen to various state changes.
 
 ### Prerequisites
-This article will not cover tutorial aspects of how React/ React Native works. If you don't know how to work with it, please refer to [some tutorials](https://daveceddia.com/react-getting-started-tutorial/) before beginning with this project.
+This article will not cover tutorial aspects of how React/React Native works. If you don't know how to work with it, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
 Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but don’t worry. The first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
