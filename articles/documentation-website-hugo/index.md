@@ -18,8 +18,8 @@ In this tutorial, I will teach you how to build a documentation website for your
 
 This guide assumes that you have:
 - Go installed on your local machine - visit [ednsquare.com](https://ednsquare.com/story/how-to-install-golang-on-windows-linux-mac------T3VRkO) for instructions on how to install Go on macOS, Windows, and Linux.
-- [Homebrew](https://brew.sh/) - visit [brew.sh](https://brew.sh/) for instructions on how to install homebrew on macOS and Linux.
-- [Chocolatey](https://chocolatey.org/) - visit [chocolatey.org](https://chocolatey.org/) for instructions on how to install chocolatey on Windows.
+- [Homebrew](https://brew.sh/) (macOS and Linux) - visit [brew.sh](https://brew.sh/) for instructions on how to install homebrew on macOS and Linux.
+- [Chocolatey](https://chocolatey.org/) (Windows) - visit [chocolatey.org](https://chocolatey.org/) for instructions on how to install chocolatey on Windows.
  
 ### Step 1- Install Hugo
 The Docsy theme uses the Hugo-extended version of Hugo. Install the Hugo-extended version on macOS and Linux with Homebrew.
