@@ -17,7 +17,12 @@ This article will not cover tutorial aspects of how React/React Native. So if yo
 
 Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but don't worry. The first 10,000 minutes for every month are free. You could check their pricing [here](https://www.agora.io/en/pricing/).
 
-Using Agora, we can develop a wide variety of applications that require real-time engagement. Some of the examples are Audio/Video calls, Interactive Livestreaming (Audio/ Video), Interactive Gaming, Real-Time Messaging (which is in BETA at the time of writing this article).
+Using Agora, we can develop a variety of applications that need real-time engagement. Some of the examples are,
+
+- Audio/Video calls
+- Interactive Livestreaming (Audio/ Video)
+- Interactive Gaming
+- Real-Time Messaging (which is in BETA at the time of writing this article)
 
 In this article, we will be focusing on how to build a Video Conference App using the services provided by Agora.
 
@@ -65,7 +70,7 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 ### Clone the Starter Code
 
-In the interest of time and the intention to put more focus on the Video conference, clone the starter code [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
+To focus more on the Video conference, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
 
 In the starter code, the Navigation is set up with the Home screen and a dummy Conference Screen. You can find the documentation for React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
 
@@ -77,7 +82,7 @@ This is the Home Screen you'll see when you open the app.
 
 ### Installing Dependencies
 
-You can install these packages in advance, or install them while going through the article.
+You can install these packages either in advance or while going through the tutorial.
 
 ```json
 "@react-native-community/masked-view": "^0.1.10",
@@ -108,7 +113,12 @@ pod install
 ```
 
 > **IMPORTANT FOR ANDROID**
-> As more native dependencies are added to your project, it may bump you over the 64k method limit on the Android build system. Once this limit has been reached, you will start to see the following error whilst attempting to build your Android application: `Execution failed for task ':app:mergeDexDebug'.` Use [this documentation](https://rnfirebase.io/enabling-multidex) to resolve this issue.
+>
+> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error whilst attempting to build your Android application.
+>
+> `Execution failed for task ':app:mergeDexDebug'.`
+>
+> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable mulitdexing.
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Pass Channel ID While Navigating
@@ -125,7 +135,7 @@ Let's install the `uuid` package to generate a new channel ID.
 npm install uuid
 ```
 
-In React Native, you will run into an error with the message `crypto.getRandomValues() is not supported`. To fix this, you will need to install `react-native-get-random-values`.
+In React Native, you will run into an error with the message `crypto.getRandomValues() is not supported` when you try to use `uuid`. To fix this, you will need to install `react-native-get-random-values`.
 
 ```bash
 npm install react-native-get-random-values
@@ -133,7 +143,7 @@ npm install react-native-get-random-values
 
 In `screens/Home.js`, let's import both of those packages.
 
-> We must import the `react-native-get-random-values` before the `uuid` import to avoid the above-mentioned error.
+> We must import the `react-native-get-random-values` before the `uuid` import to avoid the error.
 
 ```javascript
 import "react-native-get-random-values";
@@ -197,7 +207,7 @@ export default function Conference(props) {
 
 When you open this page now, you should be in the Video Conference and others should be able to join the conference.
 
-When you launch a conference for the first time, it will get the Camera and Microphone permissions from the user.
+The app will prompt the user for Camera and Microphone permissions when you launch a conference for the first time.
 
 When no one else is at the conference except you, you will see the local feed. When others start to join the conference, you can view their remote feed.
 
@@ -207,7 +217,7 @@ You will see 5 buttons on the conference screen. They are toggle audio, toggle v
 
 ![Buttons](buttons.jpeg)
 
-When someone joins the stream, you will see two more buttons that will let you mute remote audio and video streams.
+When someone joins the stream, you will see two more buttons. These buttons will let you mute remote audio and video streams.
 
 Let's pass a callback function to navigate back to the home page when we press the End button.
 
@@ -283,7 +293,7 @@ Here is the list of styles you can pass.
 
 #### Share Channel ID
 
-Let's add a Share Button on the top right corner to share the Channel ID easily.
+Let's add a Share Button on the top right corner to share the Channel ID.
 
 ```javascript
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
