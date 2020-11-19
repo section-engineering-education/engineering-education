@@ -1,6 +1,21 @@
-### How Does Cryptocurrency Mining Work?  
-It is hard to talk about cryptocurrency without mentioning mining. Mining cryptocurrency is a complex mathematical system, generally utilizing cryptographic hashing algorithms. Since hashing is extremely complicated, we will only be looking at what is hashed in the mining process. For this article, we will examine Bitcoin mining at a high level. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-crypto-mining-works/
+title: How Does Cryptocurrency Mining Work?  
+description:
+author: gregory-manley
+date: 2020-11-19T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-crypto-mining-works/hero.jpg
+    alt:
+---
+It is hard to talk about cryptocurrency without mentioning mining. Mining cryptocurrency is a complex mathematical system, generally utilizing cryptographic hashing algorithms. Since hashing is extremely complicated, we will only be looking at what is hashed in the mining process. For this article, we will examine Bitcoin mining at a high level.
+<!--more-->
 Before continuing, be sure to be fimiliar with:
 <ul>
 	<li>What is a [blockchain](https://www.investopedia.com/terms/b/blockchain.asp)?</li>
@@ -8,22 +23,22 @@ Before continuing, be sure to be fimiliar with:
 </ul>
 
 ### What Does Mining Do for a Cryptocurrency?  
-Mining can be thought of as the "processor" for transactions on the blockchain. [Bitcoin.org](bitcoin.org/en/how-it-works) describes the process of mining as "a distributed consensus system that is used to confirm pending transactions by including them in the block chain". Transactions are packaged into a block and then mined. This process of "mining" includes the transactions and verifies them in the chain. By continuing mining, these transactions are confirmed and become nearly unmodifiable by attacks on the chain. 
+Mining can be thought of as the "processor" for transactions on the blockchain. [Bitcoin.org](bitcoin.org/en/how-it-works) describes the process of mining as "a distributed consensus system that is used to confirm pending transactions by including them in the block chain". Transactions are packaged into a block and then mined. This process of "mining" includes the transactions and verifies them in the chain. By continuing mining, these transactions are confirmed and become nearly unmodifiable by attacks on the chain.
 
 In Bitcoin, every block is connected, as the previous block hash is used to generate a new block. If a hacker wanted to modify or "double-spend" they would need to modify the previous block and rehash it before the next block is found or it becomes extremely difficult.
 
 ### What Does A User Get Out of Mining?  
-While the chain and the cryptocurrency itself, benefits from users mining, users also benefit. A "miner" receives a reward for their work. This reward is generally a set amount per block (currently 6.25 coins for Bitcoin) and the fees of transactions that are included in the block. 
+While the chain and the cryptocurrency itself, benefits from users mining, users also benefit. A "miner" receives a reward for their work. This reward is generally a set amount per block (currently 6.25 coins for Bitcoin) and the fees of transactions that are included in the block.
 
 The distributed mining power of the network also protects the blockchain from attacks. These attacks may include double spending or any other transaction modifying attacks. In order for these attacks to be successful, the attacker would have to rehash the block they want to modify and make the longest valid chain of blocks (highest combined difficulty of the chain of blocks). This not only becomes harder the more blocks added after the attack block, but would likely require 51% of the total hashing power.
 
 ### What is Proof-of-Work?  
 Bitcoin uses a proof-of-work algorithm. These algorithms provide a computational proof that can be easily checked. Most often, proof of work is implementing using various hashing algorithms with a target value (a hexdecimal number set by the blockchain). In order to successfully mine a block, a miner must generate a hexademical hash that is less than the target value.
 
-In the case of Bitcoin, the target value is adjusted every 2016 blocks (about 2 weeks) in order to try and achieve 10 minute block times. By limiting the rate of blocks through a proof-of-work system, the coin supply is controlled and some attacks become impractical. 
+In the case of Bitcoin, the target value is adjusted every 2016 blocks (about 2 weeks) in order to try and achieve 10 minute block times. By limiting the rate of blocks through a proof-of-work system, the coin supply is controlled and some attacks become impractical.
 
 ### How Does Bitcoin Mining Work?  
-In the case of mining Bitcoin, transactions are hashed and packaged to be included in a block. They are organized into a Merkle Tree. The following image from [Escape Velocity](https://chrispacia.wordpress.com/2013/09/02/bitcoin-mining-explained-like-youre-five-part-2-mechanics/) shows that transactions are initially hashed and then paired and hashed together. These resulting hashes may be paired again and hashed until one hash is left. In this type of tree, the root is called the Merkle Root. 
+In the case of mining Bitcoin, transactions are hashed and packaged to be included in a block. They are organized into a Merkle Tree. The following image from [Escape Velocity](https://chrispacia.wordpress.com/2013/09/02/bitcoin-mining-explained-like-youre-five-part-2-mechanics/) shows that transactions are initially hashed and then paired and hashed together. These resulting hashes may be paired again and hashed until one hash is left. In this type of tree, the root is called the Merkle Root.
 
 ![](/engineering-education/how-crypto-mining-works/merkle-tree.jpg)
 ---
@@ -50,7 +65,7 @@ for i in range(0,10):
 
 ---
 
-By running the program, you can see that the hash is the same every time 'secret' is hashed. Without the nonce value, the block hash would look similar. Every time the miner would attempt to create a valid hash, they would just be generating the same value over and over again. The following Python shows adding a random nonce to the string and hashing. 
+By running the program, you can see that the hash is the same every time 'secret' is hashed. Without the nonce value, the block hash would look similar. Every time the miner would attempt to create a valid hash, they would just be generating the same value over and over again. The following Python shows adding a random nonce to the string and hashing.
 
 ```python
 import hashlib
@@ -73,12 +88,12 @@ for i in range(0,10):
 
 In this simple example, let's say that the target value is: 0f00000000000000000000000000000000000000000000000000000000000000
 
-And our output from the program may show the following hashes. 
+And our output from the program may show the following hashes.
 
 ![]engineering-education/how-crypto-mining-works/hashingexampe.png)
 
 The second hash: 0e6878e44ef7b460869034d35acd8cfda70330841dd71f24e559b45d01a035fe is less than the target value and would be a valid block.
 
-If the resulting hash is less than the target value, it is valid. It is then submitted to the network and other nodes check the block. If other nodes accept the block as valid, it is added to the chain. 
+If the resulting hash is less than the target value, it is valid. It is then submitted to the network and other nodes check the block. If other nodes accept the block as valid, it is added to the chain.
 
 The process then starts again and continues repeating.
