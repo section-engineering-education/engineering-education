@@ -1,4 +1,4 @@
-ES6 introduced a new way of writing JavaScript functions called arrow function that uses a fat arrow =>. It is a sort of an abbreviated way to write compact functions. When writing a JavaScript function, you would regularly use a function keyword to declare a function.
+ES6 introduced a new way of writing JavaScript functions called arrow function that uses a [fat arrow =>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). It is a sort of an abbreviated way to write compact functions. When writing a JavaScript function, you would regularly use a function keyword to declare a function.
 
 For example:
 
@@ -31,7 +31,7 @@ console.log(sum(12, 30));
 
 The above examples are equivalent to the `sum()` function and give us the same results.
 
-This guide will discuss how to use the arrow function to write your JavaScript function. To understand arrow functions, it is essential to have prior knowledge of JavaScript functions.
+This guide will discuss how to use the arrow function to write your JavaScript function. To understand arrow functions, it is essential to have prior knowledge of [JavaScript functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions).
 
 ### Arrow Function Syntax
 Arrow function has a lot of variations and different syntax depending on your block of code. An arrow function depends on the number of arguments/parameters passed to a function and the return keyword (the function's body).
@@ -166,7 +166,7 @@ We can derive the following syntax.
 (paraml, param2) => {return expression; }
 ```
 
-Because more than one parameter requires parenthesis, rest and destructing parameters can be implemented using an arrow function. They both need parenthesis.
+Because more than one parameter requires parenthesis, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/engineering-education/object-arrays-destructuring/) parameters can be implemented using an arrow function. They both need parenthesis.
 
 #### Anonymous Function
 It is  a function with no name.
@@ -229,7 +229,7 @@ setTimeout(() => console.log("Executed after 3 second"), 3000);
 ```
 
 ### Arrow Function and Callbacks
-The arrow syntax is heavily seen when using callback functions.
+The arrow syntax is heavily seen when using [callback functions](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function).
 For example, let's use some of the build JavaScript callback function, such as `filter` and `map`, and see what we can achieve with arrow functions.
 
 Assume you have an array of doners:
@@ -272,6 +272,7 @@ console.log("Total donationds", sum);
 The arrow function makes the callback function compact and less verbose. This doesn't affect the code is readable.
 
 ### Arrow Functions with Object Literal
+Let's have an example that represents [JavaScrip object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
 
 ```js
 const sayName = function(){
@@ -312,7 +313,7 @@ console.log(sayName().name);
 
 ### Arrow Function and `this` Context
 
-`this` represents an object that executes the current function. In short, `this` is defined by the function execution context. I.e., how a function is called, it refers to a global object window. I.e., when a function is being executed from a global object.
+[`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) represents an object that executes the current function. In short, `this` is defined by the function execution context. I.e., how a function is called, it refers to a global object window. I.e., when a function is being executed from a global object.
 
 You might have used `this` keyword in real-life without ever realizing you are using `this` keyword. Suppose you are walking along with your mom and meet a friend along the way. This is how you would introduce your mom to your friend. ***This is my mother.***
 
@@ -512,11 +513,11 @@ const mom = {
 };
 console.log(mom.mother());
 ```
-In this case, return `undefined` because `this` value is equal to the method upon where we call the object. As we said earlier, `this` inside an arrow function is equal to the outer scope's value, equivalent to the global object.
+In this case, return `undefined` because `this` value is equal to the [method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) upon where we call the object. As we said earlier, `this` inside an arrow function is equal to the outer scope's value, equivalent to the global object.
 
 #### An Arrow Function can Never be a Constructor
 
-The value this points to its parent, the do not have a `constructor`.
+The value `this` points to its parent, the do not have a [`constructor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor).
 
 ```js
 const User = () => {
@@ -527,7 +528,7 @@ console.log(user);
 
 ```
 
-When you execute, `this` will throw an error That the `Uncaught TypeError: User is not a constructor`. However regular function cab be `constructors`,
+When you execute, `this` will throw an error That the `Uncaught TypeError: User is not a constructor` because arrow functions are not constructable. However regular function can be `constructors`,
 
 For example;
 
