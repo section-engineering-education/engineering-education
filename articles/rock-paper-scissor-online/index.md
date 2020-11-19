@@ -22,6 +22,8 @@ There are two parts to this application,
 
 In the interest of time and the intention to put more focus on Socket logic. Please download the starter code from this [Repository](https://github.com/HarishTeens/rps-online) on GitHub.  Follow the instructions as mentioned on README.md to set up the project on your local system.
 
+If you are only here for final version of the code, check out the [final branch](https://github.com/HarishTeens/rps-online/tree/final) of the same Repository.
+
 Here goes the file wise description of the Starter code,
 
 - ```public/index.html``` : A Home Page for the app with all the required UI Components. 
@@ -47,7 +49,7 @@ Read through the below points if you are not familiar with Sequence Diagrams.
 
 Player1 emits the create Game Event. The server acknowledges and responds back with a room ID. Once player2 emits join Game Event with the same room ID. The server detects that both players have joined the room and shares the other player's info with each other. Once both of the players have their choice, the server processes the result and sends back to both players.
 
-Now that the flow is clear, let's jump right into coding. 
+Now that the flow is clear, let's jump right into coding.
 
 ### Create Game
 
