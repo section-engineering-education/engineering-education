@@ -1,7 +1,7 @@
 ### Introduction
 Slide transition between screens is common in android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while. This view allows the developer to display views or fragments to the user in a swipe-able format. This feature is common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. `TabLayout` indicates the current page in display and allows a user to switch through pages.
 
-`ViewPager2` is an newer version of the `ViewPager` library. Its major difference to the old library is the use of a `RecyclerView` adapter. With this, views are now recycled. This improves user experience by making smooth transitions. It also minimizes memory usage.
+`ViewPager2` is an newer version of the `ViewPager` library. Its major difference to the old library is the use of a `RecyclerView` adapter. With this, views are now recycled. This improves user experience by making smooth transitions and minimizes memory usage.
 
 This article goes through implementing `ViewPager2` and `TabLayout` in an android application.
 
