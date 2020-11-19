@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/react-native-agora-livestreaming-app/
 title: React Native Livestream Application using Agora
-description: This tutorial will give readers a detailed guide on how they can build or join a live stream using Agora.
+description: This tutorial will give readers a detailed guide on how they can build an app to create or join a live stream using Agora.
 author: mohan-raj
 date: 2020-11-19T00:00:00-10:00
 topics: []
