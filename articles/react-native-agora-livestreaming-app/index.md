@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
     alt: Python example image PyPi
 ---
-Want to learn how to build a cool and simple Livestreaming app using React Native? In this tutorial we will do so using [Agora](https://www.agora.io/en/about-us/) is a video, voice and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive live streaming, and real-time messaging.
+Want to learn how to build a cool and simple Livestreaming app using React Native? In this tutorial, we will do so using [Agora](https://www.agora.io/en/about-us/), which is a video, voice, and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive live streaming, and real-time messaging.
 <!--more-->
 Keep reading to find out.
 
