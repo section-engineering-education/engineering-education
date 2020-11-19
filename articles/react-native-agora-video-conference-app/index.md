@@ -59,9 +59,9 @@ Now, click on the closed eye icon near the App Id to reveal it and copy the App 
 
 ### Building the App
 
-> **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs require native modules that are not supported by Expo and React Native doesn't support WebRTC yet.
+> **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs need native modules that are not supported by Expo.
 
-If you do not have the development environment set up for non-expo projects, You can follow the steps in the [Environment Setup](https://reactnative.dev/docs/environment-setup) documentation to set up the React Native development environment using the react-native CLI.
+You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the React Native CLI environment.
 
 ### Clone the Starter Code
 
@@ -77,7 +77,7 @@ This is the Home Screen you'll see when you open the app.
 
 ### Installing Dependencies
 
-You can install these packages beforehand, or install them while going through the article.
+You can install these packages in advance, or install them while going through the article.
 
 ```json
 "@react-native-community/masked-view": "^0.1.10",
@@ -115,22 +115,25 @@ pod install
 
 When we create or join a conference, we need to give a channel ID to Agora.
 
-For a new video conference, we will generate a new channel ID and for joining a conference, we will use the channel ID from the text input.
-We need to pass the channel ID from the Home Screen to the Conference Screen. We can pass it as a route prop to the Conference Screen.
+When we create or join a conference, we need to give a channel ID to Agora.
 
-Let's install the `UUID` package to generate a new channel ID.
+For a new video conference, we will generate a new channel ID. For joining a conference, we will use the channel ID from the text input. We need to pass the channel ID from the Home Screen to the Conference Screen.
+
+Let's install the `uuid` package to generate a new channel ID.
 
 ```bash
 npm install uuid
 ```
 
-In React Native, you will run into an error with the message `crypto.getRandomValues() is not supported`. To fix this, you will need to install `react-native-get-random-values` and import it before importing UUID.
+In React Native, you will run into an error with the message `crypto.getRandomValues() is not supported`. To fix this, you will need to install `react-native-get-random-values`.
 
 ```bash
 npm install react-native-get-random-values
 ```
 
-In `screens/Home.js`, let's import both of those packages. We must import the `react-native-get-random-values` before the `uuid` import to avoid the above-mentioned error.
+In `screens/Home.js`, let's import both of those packages.
+
+> We must import the `react-native-get-random-values` before the `uuid` import to avoid the above-mentioned error.
 
 ```javascript
 import "react-native-get-random-values";
@@ -140,16 +143,20 @@ import { v4 as uuid } from "uuid";
 In the `createConference` function, we will generate a new UUID and pass it as a route prop for the Channel ID.
 In the `joinConference` function, we will pass the text input's value for the Channel ID.
 
+You can learn more about route props [here](https://reactnavigation.org/docs/route-prop/).
+
 ```javascript
 const createConference = () => navigation.navigate("Conference", { channel: uuid() });
 const joinConference = () => navigation.navigate("Conference", { channel: joinChannel });
 ```
 
-When you press these buttons, it should be the same as before, but now, we can access the `channel` route prop in the Conference Screen.
+When you press these buttons, it should be the same as before. But, we can access the `channel` route prop in the Conference Screen.
 
 ### Setting up The Video Conference Screen
 
-To use Agora, we need to install `react-native-agora`. Agora also provides a UI Kit for React Native developers to build the UI faster.
+To use Agora, we need to install `react-native-agora`. There is a community managed package called `agora-rn-uikit` to help us build the UI.
+Here is the [Github Repository](https://github.com/AgoraIO-Community/ReactNative-UIKit) of `agora-rn-uikit`.
+
 Let's install both the packages.
 
 ```bash
@@ -162,8 +169,6 @@ After npm install, For iOS, go into the `iOS/` directory and run
 pod install
 ```
 
-Here is the [Github Repository](https://github.com/AgoraIO-Community/ReactNative-UIKit) of Agora UI Kit.
-
 #### Agora UI Kit
 
 In `screens/Conference.js`, let's import the Agora UI Kit.
@@ -174,7 +179,11 @@ import AgoraUIKit from "agora-rn-uikit";
 
 It accepts a prop named `rtcProps` through which we can pass the App ID and the channel ID to the UI kit. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora Token Authentication [here](https://docs.agora.io/en/Agora%20Platform/token?platform=Android).
 
-The channel ID can be accessed from the route props since it's coming from a different screen.
+You can get the channel ID from the route prop.
+
+```javascript
+props.route.params.channel;
+```
 
 ```javascript
 export default function Conference(props) {
@@ -188,19 +197,19 @@ export default function Conference(props) {
 
 When you open this page now, you should be in the Video Conference and others should be able to join the conference.
 
-When you open the app for the first time and launch a conference, it will acquire the Camera and Microphone permissions from the user.
+When you launch a conference for the first time, it will get the Camera and Microphone permissions from the user.
 
 When no one else is at the conference except you, you will see the local feed. When others start to join the conference, you can view their remote feed.
 
 #### Callbacks
 
-You will see 5 buttons on the conference screen. They are toggle audio, toggle video, end conference, toggle camera, and fullscreen. We can pass a callback functions for each button which will be called when the user presses these buttons.
+You will see 5 buttons on the conference screen. They are toggle audio, toggle video, end conference, toggle camera, and fullscreen. We can pass callback functions for each button.
 
 ![Buttons](buttons.jpeg)
 
 When someone joins the stream, you will see two more buttons that will let you mute remote audio and video streams.
 
-Let's pass a callback to navigate back to the home page when we press the End button.
+Let's pass a callback function to navigate back to the home page when we press the End button.
 
 ```javascript
 import { useNavigation } from "@react-navigation/native";
@@ -338,19 +347,21 @@ Pass the `onShare` function to the Share Button's `onPress` prop.
 
 ### Let's Recap
 
-1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
+1. We set up our Agora Account
 
-2. We cloned the starter code.
+2. We created a project using the Project Management Dashboard and acquired the App Id
 
-3. We passed a UUID when we navigated to the Conference screen from the Home Screen which is the channel ID used for the Conference.
+3. We cloned the starter code.
 
-4. We set up the Agora UI Kit by passing the App ID and the Channel ID as a prop.
+4. We passed a UUID when we navigated to the Conference screen which is the channel ID used for the Conference.
 
-5. We added an End Call Callback to go back to the Home Screen.
+5. We set up the Agora UI Kit by passing the App ID and the Channel ID as a prop.
 
-6. We modified the button styles to match the button color in the Home Screen.
+6. We added an End Call Callback to go back to the Home Screen.
 
-7. We added a Share button to share the UUID with others from the Conference screen.
+7. We modified the button styles to match the button color in the Home Screen.
+
+8. We added a Share button to share the UUID with others from the Conference screen.
 
 Congratulations, :partying_face: You did it.
 
