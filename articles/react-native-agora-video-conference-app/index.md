@@ -11,7 +11,7 @@ By the end of the tutorial, you’ll understand
 - How to share a room code for others to join the video conference.
 
 ### Prerequisites
-This article will not cover tutorial aspects of how React/React Native. If you don't know how to work with it, please refer to [this tutorial](https://reactnative.dev/docs/tutorial) before beginning with this project.
+This article will not cover tutorial aspects of how React/React Native. If you don't know how to work with it, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
 Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but don’t worry. The first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
@@ -188,12 +188,12 @@ In `screens/Conference.js`, let's import the Agora UI Kit.
 import AgoraUIKit from "agora-rn-uikit";
 ```
 
-It accepts a prop named `rtcProps` through which we can pass the App ID and the channel ID to the UI kit. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora Token Authentication [here](https://docs.agora.io/en/Agora%20Platform/token?platform=Android).
+It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID to the UI kit. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora Token Authentication [here](https://docs.agora.io/en/Agora%20Platform/token?platform=Android).
 
 You can get the channel ID from the route prop.
 
 ```JavaScript
-props.route.params.channel;
+props.route.params.channel
 ```
 
 ```JavaScript
@@ -206,20 +206,22 @@ export default function Conference(props) {
 }
 ```
 
-When you open this page now, you should be in the Video Conference and others should be able to join the conference.
+When you open this page now, you should be in the video conference and others should be able to join the conference.
 
-The app will prompt the user for Camera and Microphone permissions when you launch a conference for the first time.
+The app will prompt the user for camera and microphone permissions when you launch a conference for the first time.
 
 When no one else is at the conference except you, you'll see the local feed. When others start to join the conference, you can view their remote feed.
 
 #### Callbacks
-You'll see 5 buttons on the conference screen. They are toggle audio, toggle video, end conference, toggle camera, and fullscreen. We can pass callback functions for each button.
+You'll see 5 buttons on the conference screen. They are toggle audio, toggle video, end conference, toggle camera, and toggle full screen. We can pass callback functions for each button.
 
 ![Buttons](buttons.jpeg)
 
 When someone joins the stream, you'll see two more buttons. These buttons will let you mute remote audio and video streams.
 
 Let's pass a callback function to navigate back to the home page when we press the End button.
+
+To navigate back, we need to import the `useNavigation` hook from `@react-navigation/native`.
 
 ```JavaScript
 import { useNavigation } from "@react-navigation/native";
@@ -270,7 +272,7 @@ return <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} styleProps={stylePr
 
 ![Styled Buttons](styled_buttons.jpeg)
 
-Here is the list of styles you can pass.
+Here is the list of styles that you can pass.
 
 - theme (Icon color of the Buttons)
 - BtnTemplateStyles
@@ -291,7 +293,7 @@ Here is the list of styles you can pass.
   - fullScreen
 
 #### Share channel ID
-Let's add a Share Button on the top right corner to share the Channel ID.
+Let's add a share button on the top right corner to share the channel ID.
 
 ```JavaScript
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
@@ -306,7 +308,7 @@ return (
 );
 ```
 
-Styles for the Share Button
+Styles for the share button:
 
 ```JavaScript
 const styles = StyleSheet.create({
@@ -327,7 +329,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-Now, Let's import the Share Component from React Native
+Now, Let's import the `Share` component from React Native
 
 ```JavaScript
 import { Share } from "react-native";
@@ -345,7 +347,7 @@ export default function Conference(props) {
 }
 ```
 
-Pass the `onShare` function to the Share Button's `onPress` prop.
+Pass the `onShare` function to the Share button's `onPress` prop.
 
 ```JavaScript
 <TouchableOpacity style={styles.shareButton} onPress={onShare}>
