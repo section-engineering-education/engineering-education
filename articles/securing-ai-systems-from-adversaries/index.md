@@ -45,12 +45,12 @@ Considering how much we use these systems in our daily lives today, and the resp
 
 Adversarial ML Threat Matrix [Source](https://www.helpnetsecurity.com/2020/10/27/attacks-machine-learning-systems/)
 
-#### Model duplicating techniques
+### Model duplicating techniques
 With this method, the approaches taken are used to steal or duplicate the targeted models. This may involve stealing/duplicating the model itself or getting access to the training data of the model. The training data in question may be sensitive and highly valuable.
 
 For example, it could be private client financial information, confidential military data, and patient information. As a result, an attack of such as this may end up leaking the data. Data also makes up a large part of intellectual property. Leakage of such information will cause hefty consequences to an organization.
 
-##### Model replication
+### Model replication
 Another example attack is model replication. This attack can involve the exploitation of a public-facing API to reconstruct a model. We can find public APIs that may prove to be worthy targets of attacks in cloud-based machine learning services of many companies. These companies provide and run training algorithms that use datasets uploaded by users.
 
 The queries involved are often prediction queries. The interaction between users and the algorithms is handled by user-friendly web APIs. If these models are successfully monetized by the owners, it may motivate an attacker to attack to bypass query charges.
@@ -58,7 +58,7 @@ The queries involved are often prediction queries. The interaction between users
 This undermines the business of the model owner. An attacker may look to violate training-data privacy by leaking sensitive training data. They probe the public API to gradually refine a model.
 
 
-##### Defense
+### Defensive techniques
 An effective way to defend AI systems from model duplicating techniques is the use of a privacy framework named Private Aggregation of Teacher Ensembles (PATE). PATE is concerned about the privacy of sensitive data that is used to train several machine learning models. These models need to be prevented from revealing (leaking) confidential details of sensitive data.
 
 PATE works on the principle that involves training several models on disjoint data. We refer to these models as “teacher” models. If these models agree on input, it leaks no confidential details from their training set.
@@ -71,7 +71,7 @@ To ensure no attacks are carried out against the teacher models’ confidential 
 
 As a result, successive queries don't need the teachers to be involved. The student only has to learn the generalization given by the teachers. I advise to check out the paper on [PATE](https://arxiv.org/abs/1802.08908) for a more technical read.
 
-#### Adversarial attacks
+### Adversarial attacks
 Adversarial machine learning represents a technique used to trick a model with malicious input. This often leads to misclassification by the model. An attack may be in the form of adversarial examples. These are inputs to models, designed by an adversary to have the model make a mistake.
 
 The image below shows an example of adversarial examples.
@@ -84,7 +84,7 @@ The original image is of a panda. An attacker adds an adversarial perturbation. 
 
 Consider a scenario where an adversary attacks autonomous vehicles to misclassify traffic signs. This would lead to chaos and casualties on roads. This shows that such attacks can be very dangerous. However, there are ways to mitigate such attacks and make our models more robust.
 
-##### Defense
+### Defensive techniques
 **Adversarial training**. Adversarial training offers a solution of a brute-force nature. It involves generating many adversarial examples then training a model to not be fooled by the examples. If you’d want to implement adversarial training, here is a link to [CleverHans](https://github.com/tensorflow/cleverhans), an open-source Python library used to benchmark the vulnerability of machine learning systems to adversarial examples.
 
 **Defensive distillation**. Defensive distillation trains classifier models to be more robust towards perturbations. The models are trained to give out probabilities of different classes as opposed to decisions on which class to output.
@@ -93,7 +93,7 @@ To achieve these probabilities, a model is first trained on the same task as the
 
 For more on adversarial examples, read this paper on [Explaining and Harnessing Adversarial Examples](https://arxiv.org/pdf/1412.6572.pdf).
 
-#### Poisoning attacks
+### Poisoning attacks
 Poisoning attacks are when an attacker injects misleading data into a model’s training pool. The goal is to hinder the model from learning as it should (or correctly), therefore making it malfunction. A consequence of this is that the decision boundary of the model is shifted. This is shown in the image below. The model makes the wrong decisions as a result.
 
 Through poisoning attacks, an adversary is capable of:
@@ -110,11 +110,11 @@ Through poisoning attacks, an adversary is capable of:
 
 Below we will look at a threat known as machine learning model skewing, which is an example of a data poisoning attack.
 
-##### Model Skewing
+### Model Skewing
 In classification models, model skewing attacks aim to shift the classification boundary. The classification boundary separates what is considered as good input from bad input. This is illustrated by the boundary shift image shown above.
 
-##### Defense
-These methods don’t guarantee robustness all the time. Below are a couple of defenive techniques against poisoning attacks.
+### Defensive techniques
+These methods don’t guarantee robustness all the time. Below are a couple of defensive techniques against poisoning attacks.
 
 **Data Sanitization**. This poisoning attack counter-measure is also known as outlier detection or anomaly detection. It's a data pre-processing measure that filters suspicious samples before the learning process commences.
 
