@@ -1,6 +1,6 @@
 ## Forward and Backward Chaining in Artificial Intelligence
 
-Backward and forward chaining are methods of reasoning in artificial intelligence that exist in the Expert System Domain of artificial intelligence. 
+Backward and forward chaining are methods of reasoning that exist in the Expert System Domain of artificial intelligence. 
 
 ### Introduction to the Expert System
 Backward and forward chaining originate from the expert system. The expert system has three main components: user interface, inference engine, and knowledge base. 
