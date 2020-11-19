@@ -33,7 +33,7 @@ In JAMstack architecture, the front-end and back-end are seperated ([decoupled](
 ### What is Gatsby.js?
 >Gatsby.js can be defined as a static site generator that uses [React.js](https://reactjs.org/) (for the client-side) and [GraphQL](https://graphql.org/) (to access data) to build a reliable and faster website.
 
-A software application that generates HTML pages from templates and a given content source is called a “static site generation”. [Markdown-formatted](https://www.markdownguide.org/getting-started/#) text files are used by most static site generators.
+Static site generator can be defined as a software application that generates HTML pages from templates or components. Light-weight markup language such as [markdown-formatted](https://www.markdownguide.org/getting-started/#) text files are used by most static site generators.
 
 Static site generators are different from content management systems such as WordPress and Drupal that are powered by databases.
 
@@ -54,21 +54,21 @@ To get started with Gatsby.js, you'll need some background knowledge on the foll
 
 ### Installations
 First, you'll need to install [Node.js](https://nodejs.org/en/) on your computer.
-Go to the [official Node.js website](https://nodejs.org/en/) to download the Node.js version for your operating system.
+Go to the [official Node.js website](https://nodejs.org/en/) to download the Node.js version for your operating system. Downloading Node.js comes together with a node package manager installed.
 
-After installing it, open up your terminal and type in:
+To comfirm you have Node.js and node package manager(npm) installed, open up your terminal and type in:
 
 ```bash
 node –version
 ```
+This command is to verify you have Node.js installed and to see your current version. 
 
 and
 
 ```bash
 npm –version
 ```
-
-These commands will give you the version of Node.js and node package manager respectively.
+This command is to verify you have the node package manager installed and to see your current version. 
 
 Next, in your terminal type in:
 
@@ -76,21 +76,28 @@ Next, in your terminal type in:
 npm install –global gatsby-cli
 ```
 
-You just installed Gatsby and its command-line interface globally on your computer, this is the first step to interact with Gatsby using the command line interface.
+You just installed Gatsby and its command-line interface globally on your computer.
 
 In order to confirm you have Gatsby installed, type in:
 
 ```bash
 gatsby –version
 ```
+This command will show you the current version of GatsbyJS you have installed.
 
 ### Creating a New Gatsby.js Site
 Now let's create a static site using Gatsby.js.
 
 Open up the terminal. In your code editor if you are using [VS Code](https://code.visualstudio.com/), it comes built-in with a terminal. You will be using the Gatsby.js site template from GitHub to create your site from scratch.
 
-Create a **my-first-gatsby-site** folder, and then in your terminal, type in
-`Users/first-gatsby-site: gatsby new first-gatsby-site https://github.com/Gatsby.js/gatsby-starter-hello-world`.
+First, create a folder with the name **my-first-gatsby-site** and type this command in your terminal.
+
+```bash
+mkdir my-first-gatsby-site
+```
+
+Then clone the Gatsby template site by typing this in your terminal
+`Users/my-first-gatsby-site: gatsby new first-gatsby-site https://github.com/Gatsby.js/gatsby-starter-hello-world`.
 
 To see the new site you have created, check it out using these commands.
 
@@ -104,6 +111,7 @@ Next:
 ```bash
 npm run develop
 ```
+This is to run your site on a development level, where you can access it on your computer using the Localhost.
 
 You will then get a success message saying *“your site is running at”* :
 `http://localhost:8000`
@@ -115,18 +123,18 @@ Open `http://localhost:8000` in your browser and you will see "hello world" disp
 Congratulations! You just built your first static site using Gatsby.js.
 
 
-Now let’s talk about your file directory, it looks overwhelming especially if you are still a beginner using [Node.js](https://nodejs.org/en/).
+Now let’s talk about your file directory.
 
 -	**The node-modules folder:** This contains a bunch of files you may or may not need.
 -	**The public folder:** This contains all of your finished static sites that would be served on a cloud server.
 -	**The src folder:** This is the folder you will be using the most because this is where you are going to store the pages you are building for your site.
-You will find an  ***index.js*** file in the pages folder because Gatsby uses *Node.js* and *React.js* and these files will be a JavaScript file but you can also use a markdown file as well with the file extension of '.md'.
+You will find an  ***index.js*** file in the pages folder because Gatsby uses *Node.js* and *React.js* these files will be Javascript files but you can also use a markdown file as well, with the file extension of '.md'.
 -	**The gitignore file:** This file tells GitHub to ignore whatever file you specify in it ignore, for example API keys.
--	**The package.json:** Contain the dependencies or packages you have installed using the node package manager *“npm install”*
+-	**The package.json:** Contain the dependencies or packages you have installed using the node package manager *“npm install”*. The node package manager is the package manager for the Node.js Javascript platform, this allows you to import other external dependencies or modules making your work faster without reinventing the wheel to build your own tools from scratch.
 
 ### Adding Content to the Site
 Let's modify the look and feel of the site.
-In the index.js file add this piece of code:
+In the index.js file, add this piece of code:
 
 ```JavaScript
 // index.js code
@@ -140,9 +148,10 @@ return <div style={{ color: 'tomato' }}>
 </div>
 }
 ```
+This React code returns a div containing a h1 tag and paragraph tag styled with a tomato color.
 
 ### Linking Between Pages
-Having a one-page static site doesn’t sound cool at all, what if you want to have 2 or more pages? To do this create another page and link them together, so that you can easily navigate through the added pages.
+What if you want to have 2 or more pages? To do this create another page and link them together so that you can easily navigate through the added pages.
 
 First, import a Gatsby react link and add it to the top of the index.js file
 `import { Link } from "gatsby"`.
@@ -162,12 +171,14 @@ export default function Home() {
     </div>
 }
 ```
+This React code returns a div containing a h1 tag and Gatsby link styled with a tomato color.
 
 Then finally link it using the Gatsby link by placing this code in the index.js file to connect it to the page-2.js file
 
 ```bash
 <Link to=”/page-2/”>Page 2</Link>
 ```
+This Gatsby link connects the index.js file to page-2.js file using a link.
 
 ### Counter.js File
 We will now make the site more interactive by adding a counter to the site, where you can click on a **plus** button to increase a number and a **minus** button to decrease a number.
@@ -201,13 +212,14 @@ class Counter extends React.Component {
 
 export default
 ```
+This React code has a class called "Counter" that extends a stateful React Component with a constructor of initial count state set to 0. Then it renders a div tag styled with blue color containing a h1 tag, paragraph tag displaying the current count, a button tag styled tomato color labeled "PLUS" that sets the state of the counter by adding 1 to the current count and again a button tag styled tomato color labeled "MINUS" that sets the state of the counter by subtracting 1 from the current count.
 
 ### Using React Components
-Using react components to build your static site will help you get the job done faster. With react you can make parts of your code as a component hence making it reusable, these code can be placed in any of your react code file to be used again.
+Using React components to build your static site will help you get the job done faster. In React you can make your code reusable by making it a React component, these code can be used independently or in any of your React code file. A React components components can be either a class component or a function component, a class component extends a React.Component which creates an inheritance to the React.Component and gives access to the functions of the it, while the function component doesn't extends the React component.
 
-Its recommended that you check out the [react component documentation](https://reactjs.org/docs/react-component.html) to gain a better understanding of react components.
+Its recommended that you check out the [React component documentation](https://reactjs.org/docs/react-component.html) to gain a better understanding of React components.
 
-The counter code in your counter.js file is already a component because it extends the react component class. You will use it in the index.js file but as a component,
+The counter code in your counter.js file is already a component because it extends the React component class. You will use it in the index.js file but as a component,
 by adding this piece of code.
 
 
@@ -222,17 +234,18 @@ import { Link } from "gatsby"
 `
 
 ### Using Plugins in Gatsby.js
-Gatsby.js offers [plugins](https://www.Gatsby.js.com/plugins/) built by a community of developers who want to share cool and awesome features with everyone.
+Gatsby.js offers [plugins](https://www.Gatsby.js.com/plugins/) built by a community of developers to extend the functionality of your site.
 
 We will be using a plugin for [Typogyaphy Js](https://kyleamathews.github.io/typography.js/) (a CSS framework) to style up the CSS by default.
 
-To use this plugin, you have to do this:
+To use this plugin, type this:
 
 ```bash
 npm install gatsby-plugin-typography react-typography typography
 ```
+This command installs the node package for Gatsby React typography.js plugin. 
 
-When the installation is done go to the *gatsby-config.js* file, you want to tell Gatsby that you want to use this plugin.
+When the installation is done go to the *gatsby-config.js* file. Gatsby needs a way of knowing that this plugin will be used.
 
 Add these lines of code in the *gatsby-config.js* file.
 
