@@ -43,7 +43,7 @@ An example of an attack is model replication. This attack can involve the exploi
 
 An effective way to defend AI from model duplicating techniques is the use of a privacy framework named Private Aggregation of Teacher Ensembles (PATE). PATE is motivated by the concerns about the privacy of sensitive data that is used to train several machine learning models. These models need to be prevented from revealing confidential details of the sensitive data.
 
-PATE works on the principle that involves training several models on disjoint data. These models are referred to as “teacher” models. If these models agree on input, no confidential details from their training set are leaked. The models agree since they all reach the same conclusion. For privacy to be achieved, the outputs of the aforementioned models need to be in consensus.
+PATE works on the principle that involves training several models on disjoint data. These models are referred to as “teacher” models. If these models agree on input, no confidential details from their training set are leaked. Let's expound on what this means. Consider a scenario with two different models being trained on two different datasets, with no training examples in common. If the two models agree on how to classify a new input example, the agreement does not leak any details about any training example. The privacy in this scenario is guaranteed by the fact that the input examples are different, but the classification approach is the same. The models trained with different examples reached the same conclusion. For privacy to be achieved, the outputs of the aforementioned models need to be in consensus.
 
 Furthermore, to ensure no attacks are carried out against the teacher models’ confidential data through multiple querying, a “student” model is introduced. The student model learns using publicly available data that was previously labeled by the teachers. As a result, successive queries do not need the teachers to be involved. The student only has to learn the generalization given by the teachers. I advise checking out the paper on [PATE](https://arxiv.org/abs/1802.08908) for a more technical read.
 
@@ -95,7 +95,7 @@ In classification models, models skewing attacks aim to shift the classification
 
 ##### Defense
 
-It is worth noting that these methods do not guarantee robustness all the time.
+It is worth noting that these methods do not guarantee robustness all the time. Below are a couple of defenses against poisoning attacks. 
 
 **Data Sanitization**. This poisoning attack counter-measure is also known as outlier detection or anomaly detection. It is a data pre-processing measure that filters suspicious samples before the learning process commences. Data sanitization works under the principle that if an attacker is injecting very different data from what is available in the training pool, it should be possible to detect and filter out such data.
 
