@@ -15,11 +15,16 @@ This article will not cover tutorial aspects of how React/ React Native. So if y
 
 ### Agora
 
-Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but do not worry. The first 10,000 minutes for every month are free. You could check their pricing [here](https://www.agora.io/en/pricing/).
+Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but don't worry. The first 10,000 minutes for every month are free. You could check their pricing [here](https://www.agora.io/en/pricing/).
 
-Using Agora, we can develop a wide variety of applications that requires real-time engagement. Some of the examples are Audio/Video calls, Interactive Livestreaming (Audio/ Video), Interactive Gaming, Real-Time Messaging (which is in BETA at the time of writing this article).
+Using Agora, we can develop a variety of applications that need real-time engagement. Some of the examples are,
 
-In this article, we will be focusing on how to build a Livestreaming App using the services provided by Agora.
+- Audio/Video calls
+- Interactive Livestreaming (Audio/ Video)
+- Interactive Gaming
+- Real-Time Messaging (which is in BETA at the time of writing this article)
+
+In this article, we will be focusing on building a Livestreaming App using Agora.
 
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
@@ -60,13 +65,13 @@ Now, click on the closed eye icon near the App Id to reveal it and copy the App 
 
 ### Development Environment
 
-> **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs require native modules that are not supported by Expo and React Native doesn't support WebRTC yet.
+> **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs need native modules that are not supported by Expo.
 
-If you do not have the development environment set up for non-expo projects, You can follow the steps in the [Environment Setup](https://reactnative.dev/docs/environment-setup) documentation to set up the React Native development environment using the react-native CLI.
+You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the React Native CLI environment.
 
 ### Clone the Starter Code
 
-In the interest of time and the intention to put more focus on the Livestreaming, clone the starter code [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on Github. Follow the Repository's README for instructions.
+To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on Github. Follow the Repository's README for instructions.
 
 In the starter code, the Navigation is set up with the Home screen and a dummy Live Screen. You can find the documentation for React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
 
@@ -94,6 +99,7 @@ You can install these beforehand, or install them while going through the articl
 "react-native-safe-area-context": "^3.1.8",
 "@react-native-community/masked-view": "^0.1.10",
 ```
+
 To install a dependency, run
 
 ```bash
@@ -107,14 +113,19 @@ pod install
 ```
 
 > **IMPORTANT FOR ANDROID**
-> As more native dependencies are added to your project, it may bump you over the 64k method limit on the Android build system. Once this limit has been reached, you will start to see the following error whilst attempting to build your Android application: `Execution failed for task ':app:mergeDexDebug'.` Use [this documentation](https://rnfirebase.io/enabling-multidex) to resolve this issue.
+>
+> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error whilst attempting to build your Android application.
+>
+> `Execution failed for task ':app:mergeDexDebug'.`
+>
+> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable mulitdexing.
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Pass Channel ID While Navigating
 
 When we create or join a live stream, we need to give a channel id to Agora.
 
-For a new live stream, we will generate a new channel id and for joining a live stream, we will use the channel id from the text input.
+For a new live stream, we will generate a new channel id. For joining a live stream, we will use the channel id from the text input.
 We need to pass the channel id from the Home Screen to the Live Screen. We can pass it as a route prop to the Live Screen.
 
 Let's install the UUID package to generate a UUID.
@@ -123,7 +134,7 @@ Let's install the UUID package to generate a UUID.
 npm install uuid
 ```
 
-In React Native, you will run into an issue with the message `crypto.getRandomValues() is not supported`. To fix this, you will need to install `react-native-get-random-values` and import it before importing UUID.
+In React Native, you will run into an error with the message `crypto.getRandomValues() is not supported` when you use `uuid`. To fix this, you will need to install `react-native-get-random-values`.
 
 Let's install the react-native-get-random-values package to fix the issue.
 
@@ -131,7 +142,9 @@ Let's install the react-native-get-random-values package to fix the issue.
 npm install react-native-get-random-values
 ```
 
-In `screens/Home.js`, import both of those packages. We must import the `react-native-get-random-values` before the `uuid` import to avoid the above-mentioned error.
+In `screens/Home.js`, import both of those packages.
+
+> We must import the `react-native-get-random-values` before the `uuid` import to avoid the error.
 
 ```javascript
 import "react-native-get-random-values";
@@ -148,7 +161,7 @@ const joinLive = () => navigation.navigate("Live", { type: "join", channel: join
 
 Notice that we are also passing a route prop called `type` along with the channel? We will be using this to determine whether the user is a broadcaster or an audience on the Livestream page.
 
-When you press these buttons, it should be the same as before, but now, we can access the `channel` route prop in the Live Screen.
+When you press these buttons, it should be the same as before. But, we can access the `channel` route prop in the Live Screen.
 
 ### Setting up The Live Screen
 
@@ -174,11 +187,11 @@ In here, we need to import the `RtcEngine` from `react-native-agora`.
 import RtcEngine from "react-native-agora";
 ```
 
-RtcEngine has a function called `create` on it, which will create an Agora Engine and allocate resources for it. We need to call that function when the component mounts. It returns an engine instance that has various functions on it which we will use later.
+RtcEngine has a function called `create` on it, which will create an Agora Engine. We need to call that function when the component mounts. It returns an engine instance that has various functions on it which we will use later.
 
 > Do not forget to destroy this instance on component unmount.
 
-We can't create a normal variable in the function's scope and assign the engine's instance to it because we will lose it on a re-render. So, we need to create a ref using useRef() and assign the engine instance to it.
+We can't create a normal variable in the function's scope and assign the engine's instance to it. This is because we will lose the instance on a component re-render. So, we need to create a ref using useRef() and assign the engine instance to it.
 
 So let's import `useEffect` and `useRef` from `React`.
 
@@ -186,11 +199,11 @@ So let's import `useEffect` and `useRef` from `React`.
 import React, { useEffect, useRef } from "react";
 ```
 
-`RtcEngine.create('Your App ID Here')` takes one argument, which is the App ID that we copied from the Agora Project Management Console while creating the project in the Agora Project Management Console.
+`RtcEngine.create('Your App ID Here')` takes one argument, which is the App ID that we copied from the Agora Project Management Console.
 
 It is an async function, and we need to assign the returned object to the ref created using useRef().
 
-You can't pass an async function to an useEffect, so let's create an async function called `init()` and then call it in the `useEffect()`.
+You can't pass an async function to an useEffect. So, let's create an async function called `init()` and then call it in the `useEffect()`.
 
 ```javascript
 export default function Live(props) {
@@ -208,7 +221,7 @@ export default function Live(props) {
 }
 ```
 
-We need to destroy the Agora Engine instance when the component unmounts. If you forget to do this, the App may still be transmitting video and audio even after we go back from this screen and the resources allocated for the engine instance will not be unallocated.
+We need to destroy the Agora Engine instance when the component unmounts. If you forget to do this, the App may still be transmitting and receiving video and audio in the background.
 
 ```javascript
 useEffect(() => {
@@ -221,9 +234,9 @@ useEffect(() => {
 
 #### Enable Video Transmission
 
-Next, we need to enable video in the engine to transmit and receive Video. The AgoraEngine instance has a method called `enableVideo` on it. But before calling that method, we need to acquire permissions from Android to access the Camera and Microphone.
+Next, we need to enable video in the engine to send and receive Video. The AgoraEngine instance has a method called `enableVideo` on it. But before we call that method, we need to get permissions from Android to access the Camera and Microphone.
 
-Let's Write a function to acquire these Permissions.
+Let's Write a function to get these Permissions.
 
 ```javascript
 import { PermissionsAndroid } from "react-native";
@@ -264,7 +277,7 @@ useEffect(() => {
 }, []);
 ```
 
-Once we have acquired the permissions, we can enable video in the agora engine. Audio is enabled by default, you don't have to enable that explicitly.
+Once we have acquired the permissions, we can enable video in the agora engine. The Agora engine enables audio by default.
 
 ```javascript
 const init = async () => {
@@ -312,9 +325,13 @@ Now that we have set all the config required for the Livestream, we need to join
 
 To join the channel, the AgoraEngine instance has a `joinChannel` function on it. It takes 4 arguments, _Authentication Token, Channel ID, Optional Info, and Optional UID_. To learn more about `joinChannel`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/classes/rtcengine.html#joinchannel).
 
-Let's not worry about Authentication and Optional Info now. We'll pass null for authentication and optional info. For the Channel ID, we'll pass what we get from the route props i.e., the channel UUID that we pass from the home screen to this screen. For the Optional UID, we'll pass `1` if the user is a Broadcaster and `0` if the user is an audience. This is because we can use the UID of the Broadcaster for listening to events later and establishing the remote feed on the audience's side.
+Let's not worry about Authentication and Optional Info now. We'll pass null for authentication and optional info. 
 
-If the OptionalUID is set to `0`, the SDK assigns and returns the UID in the `JoinChannelSuccess` callback.
+For the Channel ID, we'll pass what we get from the route props.
+
+For the Optional UID, we'll pass `1` if the user is a Broadcaster and `0` if the user is an audience. This is because we can use the UID of the Broadcaster for listening to events and establishing the remote feed on the audience's side.
+
+If the Optional UID is set to `0`, the SDK assigns and returns the UID in the `JoinChannelSuccess` callback.
 
 ```javascript
 useEffect(() => {
@@ -326,7 +343,7 @@ useEffect(() => {
 }, []);
 ```
 
-To ensure we have joined the channel, we can add a `JoinChannelSuccess` listener to the AgoraEngine. Let's add that in the `init()` function.
+To ensure we have joined the channel, we can add a `JoinChannelSuccess` listener to the engine. Let's add that in the `init()` function.
 
 ```javascript
 const init = async () => {
@@ -341,9 +358,9 @@ const init = async () => {
 };
 ```
 
-Now, when we navigate to the Live screen page, we must see the `console.log` message from the `JoinChannelSuccess` Callback.
+Now, when we navigate to the Live screen page, we will see the `console.log` message from the `JoinChannelSuccess` Callback.
 
-This means, we have successfully joined the live stream, we just can't see it yet. Because we didn't write it yet. :grimacing:
+This means, we have joined the live stream but we can't see it yet. Because we didn't write it yet. :grimacing:
 
 #### Displaying the Feed
 
@@ -355,7 +372,8 @@ Let's import `RtcLocalView` and `RtcRemoteView` form `react-native-agora`.
 import { RtcLocalView, RtcRemoteView } from "react-native-agora";
 ```
 
-`RtcLocalView` will be used on the Broadcaster's side, to display the feed of the Local Camera and `RtcRemoteView` will be used on the audience's side, to display the feed of the Broadcaster.
+On the Broadcaster's side, we will use `RtcLocalView` to display the feed of the Local Camera.
+On the audience's side, we will use `RtcRemoteView` to display the feed of the Broadcaster.
 
 We should not be showing these until the user joins the channel. So, let's create a state for that and set the initial value to false.
 
@@ -404,12 +422,12 @@ loadingText: {
 
 ![Loading Screen](loading_screen.gif)
 
-When the `joined` state is set to `true`, we need to show the Local Feed or the Remote Feed (Livestream) depending upon the user type.
+When the `joined` state is set to `true`, we need to show the feed.
 
 The `RtcLocalView` requires only one prop which is the `channelId` prop. The rest are optional.
-The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop. The `uid` prop is the one deciding which user's feed in the live stream will be displayed on this view. Here, we will pass our host's UID, which is `1`.
-
-We can also pass styles to the `RtcLocalView` and `RtcRemoteView`, to make it fullscreen. To make it fullscreen, import Dimensions from react-native and use it to get the width and height of the screen.
+The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop.
+The `uid` prop decides which user's feed in the live stream to display on this view.
+Here, we will pass our host's UID, which is `1`.
 
 Return Statement when joined === true.
 
@@ -423,7 +441,7 @@ Return Statement when joined === true.
 </>
 ```
 
-Fullscreen Styles,
+We can also pass styles to the `RtcLocalView` and `RtcRemoteView`. Let's make it fullscreen.
 
 ```javascript
 import { Dimensions } from "react-native";
@@ -453,9 +471,9 @@ Let's add a Share button to share the channel ID with others. We need to import 
 import { Share } from "react-native";
 ```
 
-Let's add a button in the Live screen page and write the function to share the channel when the user presses the share button.
+Let's add a button in the Live screen page to share the channel when the user presses it.
 
-Function to call when the share button is pressed
+Function to call when we press the share button
 
 ```javascript
 export default function Live(props) {
@@ -521,7 +539,7 @@ buttonText: {
 
 #### Switch Camera
 
-Let's add another button in the Live screen page and write the function to switch the camera when the user presses the button.
+Let's add another button in the Live screen to switch the camera when the user presses it.
 
 Function to Switch Camera
 
@@ -583,7 +601,7 @@ const videoStateMessage = (state) => {
 };
 ```
 
-Using the state, we can conditionally display the remote feed or the state message.
+We can display the remote feed or the state message based on the broadcaster's video state.
 
 ```javascript
 broadcasterVideoState === VideoRemoteState.Decoding ? (
@@ -616,25 +634,27 @@ broadcasterVideoStateMessageText: {
 
 ### Let's Recap
 
-1. We set up our Agora Account and created a project using the Project Management Dashboard and acquired the App Id which we later used in the app to initiate the Agora Engine Instance.
+1. We set up our Agora Account
 
-2. We cloned the starter code.
+2. We created a project using the Project Management Dashboard and acquired the App Id
 
-3. We passed a UUID when we navigated to the Live screen from the Home Screen which is the channel ID used for the Livestream.
+3. We cloned the starter code.
 
-4. We acquired Camera and Microphone permissions from Android to transmit Audio and Video.
+4. We passed a UUID when we navigated to the Live screen which is the channel ID used for the Livestream.
 
-5. We initiated the Agora Engine instance and setup all the necessary configurations for the engine like the Channel Profile and the Client Profile.
+5. We acquired Camera and Microphone permissions from Android to send Audio and Video.
 
-6. We joined the channel using no authentication and the channel ID from the route prop.
+6. We initiated the Agora Engine instance and setup all the necessary configurations.
 
-7. We displayed the Local View and Remote View based on who is using the app, the broadcaster, or the audience.
+7. We joined the channel using no authentication and the channel ID from the route prop.
 
-8. We added a Share button to share the UUID with others from the Live screen.
+8. We displayed the Local View and Remote View based on who is using the app, the broadcaster, or the audience.
 
-9. We added a Switch Camera button to switch between the front camera and the back camera.
+9. We added a Share button to share the UUID with others from the Live screen.
 
-10. We added a Remote Video State Listener to listen to the state changes of the Video Feed from the broadcaster and displayed the feed or the video state message.
+10. We added a Switch Camera button to switch between the front camera and the back camera.
+
+11. We added a Remote Video State Listener to listen to the broadcaster's video state.
 
 Congratulations, :partying_face: You did it.
 
