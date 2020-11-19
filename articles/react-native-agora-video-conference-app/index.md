@@ -172,7 +172,8 @@ In `screens/Conference.js`, let's import the Agora UI Kit.
 import AgoraUIKit from "agora-rn-uikit";
 ```
 
-It accepts a prop named `rtcProps` through which we can pass the App ID and the channel ID to the UI kit.
+It accepts a prop named `rtcProps` through which we can pass the App ID and the channel ID to the UI kit. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora Token Authentication [here](https://docs.agora.io/en/Agora%20Platform/token?platform=Android).
+
 The channel ID can be accessed from the route props since it's coming from a different screen.
 
 ```javascript
