@@ -1,7 +1,22 @@
- ![hero](/engineering-education/securing-ai-systems-from-adversaries/hero.jpg)
-[Image source]( https://images.unsplash.com/photo-1514302240736-b1fee5985889?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/securing-ai-systems-from-adversaries/
+title: Securing AI Systems from Adversaries
+description: This article will be going over
+author: collins-ayuya
+date: 2020-11-19T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Artificial intelligence represents just how powerful and impactful technology has become. It is present in all aspects of our daily lives, from basic tasks to very critical implementations. However, AI systems may cause devastating damage if used by malicious actors. We often focus on how AI can be used to improve cybersecurity, but it is important to consider how to secure AI systems.
+  - url: /engineering-education/securing-ai-systems-from-adversaries/hero.jpg
+    alt:  image
+---
+Artificial intelligence represents just how powerful and impactful technology has become. It is present in all aspects of our daily lives, from basic tasks to very critical implementations. However, AI systems may cause devastating damage if used by malicious actors.
+<!--more-->
+We often focus on how AI can be used to improve cybersecurity, but it is important to consider how to secure AI systems.
 
 ### Table of Contents
 
@@ -95,7 +110,7 @@ In classification models, models skewing attacks aim to shift the classification
 
 ##### Defense
 
-It is worth noting that these methods do not guarantee robustness all the time. Below are a couple of defenses against poisoning attacks. 
+It is worth noting that these methods do not guarantee robustness all the time. Below are a couple of defenses against poisoning attacks.
 
 **Data Sanitization**. This poisoning attack counter-measure is also known as outlier detection or anomaly detection. It is a data pre-processing measure that filters suspicious samples before the learning process commences. Data sanitization works under the principle that if an attacker is injecting very different data from what is available in the training pool, it should be possible to detect and filter out such data.
 
