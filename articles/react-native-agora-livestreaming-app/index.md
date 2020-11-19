@@ -1,35 +1,53 @@
-Want to build a cool and simple Livestreaming app using React Native?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/react-native-agora-livestreaming-app/
+title: React Native Livestream Application using Agora
+description: This tutorial will give readers a detailed guide on how they can build or join a live stream using Agora.
+author: mohan-raj
+date: 2020-11-19T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
+    alt: Python example image PyPi
+---
+Want to learn how to build a cool and simple Livestreaming app using React Native?
+<!--more-->
 Keep reading to find out.
 
 ### Goals
+By the end of this tutorial, you’ll understand
 
-By the end of the tutorial, you’ll understand
+- How to create/join a live stream using Agora.
 
-- How to create/ join a live stream using Agora.
 - How to share a room code for others to join the live stream.
+
 - How to add event listeners on the live stream to listen to various state changes.
 
 ### Prerequisites
-
-This article will not cover tutorial aspects of how React/ React Native. So if you do not know how to work with it, please refer to some tutorials before beginning with this project.
+This article will not cover tutorial aspects of how React/ React Native works. If you don't know how to work with it, please refer to some tutorials before beginning with this project.
 
 ### Agora
+Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but don’t worry. The first 10,000 minutes for every month are free. You could check their pricing [here](https://www.agora.io/en/pricing/).
 
-Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but don't worry. The first 10,000 minutes for every month are free. You could check their pricing [here](https://www.agora.io/en/pricing/).
-
-Using Agora, we can develop a variety of applications that need real-time engagement. Some of the examples are,
+Using Agora, we can develop a variety of applications that need real-time engagement. Some examples are:
 
 - Audio/Video calls
+
 - Interactive Livestreaming (Audio/ Video)
+
 - Interactive Gaming
+
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
-In this article, we will be focusing on building a Livestreaming App using Agora.
+In this article, we will focus on building a Livestreaming App using Agora.
 
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
 ### Overview
-
 We will be going through these steps in this article,
 
 1. Creating an Agora Account
@@ -41,13 +59,12 @@ We will be going through these steps in this article,
 7. Extra Features
 8. Recap
 
-> If you want to take a look at the final code, check out the [Github Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made a commit for every step in this tutorial.
+> If you want to take a look at the final code, check out the [GitHub Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made a commit for every step in this tutorial.
 
 ### Creating an Agora Account
-
 Head to Agora and Create an account. You can reach the signup page from [here](https://sso.agora.io/en/v2/signup).
 
-Fill in the details and create an account or you can signup with either Google, Github, or Cocos. Once you've signed up, You'll see the dashboard.
+Fill in the details and create an account or you can signup with either Google, GitHub, or Cocos. Once you've signed up, You'll see the dashboard.
 
 ![Agora Dashboard](agora_dashboard.png)
 
@@ -64,13 +81,11 @@ Once you hit on submit, it'll create a new project and you should see it on the 
 Now, click on the closed eye icon near the App Id to reveal it and copy the App ID. We will be needing this later while setting up Agora in our app.
 
 ### Development Environment
-
 > **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs need native modules that are not supported by Expo.
 
 You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the React Native CLI environment.
 
 ### Clone the Starter Code
-
 To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on Github. Follow the Repository's README for instructions.
 
 In the starter code, the Navigation is set up with the Home screen and a dummy Live Screen. You can find the documentation for React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
@@ -82,7 +97,6 @@ This is the Home Screen you'll see when you open the app.
 ![Homescreen](homescreen.jpeg)
 
 ### Installing Dependencies
-
 You can install these beforehand, or install them while going through the article.
 
 ```json
@@ -122,10 +136,10 @@ pod install
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Pass Channel ID While Navigating
-
 When we create or join a live stream, we need to give a channel id to Agora.
 
 For a new live stream, we will generate a new channel id. For joining a live stream, we will use the channel id from the text input.
+
 We need to pass the channel id from the Home Screen to the Live Screen. We can pass it as a route prop to the Live Screen.
 
 Let's install the UUID package to generate a UUID.
@@ -164,7 +178,6 @@ Notice that we are also passing a route prop called `type` along with the channe
 When you press these buttons, it should be the same as before. But, we can access the `channel` route prop in the Live Screen.
 
 ### Setting up The Live Screen
-
 To use Agora, we need to install `react-native-agora` first. Let's install it.
 
 ```bash
@@ -325,7 +338,7 @@ Now that we have set all the config required for the Livestream, we need to join
 
 To join the channel, the AgoraEngine instance has a `joinChannel` function on it. It takes 4 arguments, _Authentication Token, Channel ID, Optional Info, and Optional UID_. To learn more about `joinChannel`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/classes/rtcengine.html#joinchannel).
 
-Let's not worry about Authentication and Optional Info now. We'll pass null for authentication and optional info. 
+Let's not worry about Authentication and Optional Info now. We'll pass null for authentication and optional info.
 
 For the Channel ID, we'll pass what we get from the route props.
 
@@ -570,7 +583,7 @@ Let's add a state for the broadcaster's video state and set the initial value to
 import { VideoRemoteState } from 'react-native-agora`;
 ```
 
-```javascript
+```JavaScript
 const [broadcasterVideoState, setBroadcasterVideoState] = useState(VideoRemoteState.Decoding);
 ```
 
