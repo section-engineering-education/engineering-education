@@ -1,5 +1,5 @@
 ### Introduction
-Slide transition between screens is common in android applications. We can use navigation component or a swipe-able view to create this transition. `ViewPager2` is a swipe-able view. The `ViewPager` library has been around for a significant period. This view allows a developer to display views or fragments to the user in a swipe-able format. This feature is quite common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. `TabLayout` indicates the current page in display and allows a user to switch pages.
+Slide transition between screens is common in android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while. This view allows the developer to display views or fragments to the user in a swipe-able format. This feature is common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. `TabLayout` indicates the current page in display and allows a user to switch through pages.
 
 `ViewPager2` is an newer version of the `ViewPager` library. Its major difference to the old library is the use of a `RecyclerView` adapter. With this, views are now recycled. This improves user experience by making smooth transitions. It also minimizes memory usage.
 
@@ -9,7 +9,6 @@ Let's dive in!
 
 ### Prerequisites
 To follow through with this tutorial you will need to:
-
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
   3. Have a basic understanding of Kotlin programming language.
@@ -25,6 +24,7 @@ Click `Finish` and wait for the project build process to finish.
 
 ### Step 2 — Adding Views in Xml Layouts
 Our `activity_main` layout file contains only two views. Add them as follows.
+
 ```xml
 <com.google.android.material.tabs.TabLayout
     android:id="@+id/tabLayout"
@@ -45,11 +45,9 @@ Our `activity_main` layout file contains only two views. Add them as follows.
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 ```
-We also need to create a layout that we will display on the `ViewPager2` component.
 
-Go to `File -> New -> XML -> Layout XML File` to create the layout file. 
+We also need to create a layout that we will display on the `ViewPager2` component. Go to `File -> New -> XML -> Layout XML File` to create the layout file. In the layout file, replace the default `TextView` widget with the one below.
 
-On the file, replace the default `TextView` widget with this.
 ```xml
 <TextView
     android:id="@+id/textView"
@@ -63,52 +61,56 @@ On the file, replace the default `TextView` widget with this.
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 ```
+
 We're done with the xml files. Let's go ahead and create an adapter for our `ViewPager2` component.
 
 ### Step 3 — Creating ViewPager2 Adapter
-As I mentioned earlier, the `ViewPager2` component uses a recycler view adapter. This adds vertical scroll ability which was absent in the old `ViewPager`. We will show this ability later in the article. Let's start creating the adapter.
+As I mentioned earlier, the `ViewPager2` component uses a recyclerview adapter. This adds vertical scroll ability which was absent in the old `ViewPager`. We will show this ability later in the article. Let's start creating the adapter.
 
-Go to `File -> New -> Kotlin File/Class`
+Go to `File -> New -> Kotlin File/Class`. Select class and name the file `PagerAdapter`. In the adapter class add the following code.
 
-Select class and name the file `PagerAdapter`.
-
-On the adapter class add the following code.
 ```Kotlin
 class PagerAdapter(private val context: Context, private val words: List<String>): RecyclerView.Adapter<PagerAdapter.PageHolder>(){
 
 }
 ```
+
 This adds the constructor and extends the base class `RecyclerView.Adapter`. The base class takes a typed parameter which is a view holder. The `PagerAdapter.PageHolder` class is a view holder class that we are yet to create.
 
-Inside the `PagerAdapter` class, add the PageHolder class as an inner class.
+Inside the `PagerAdapter` class, add the `PageHolder` class as an inner class.
+
 ```Kotlin
 inner class PageHolder(view: View): RecyclerView.ViewHolder(view){
-        
+
 }
 ```
+
 The class needs to extend the base class `RecyclerView.ViewHolder`. It should also pass in the view it gets as a parameter. We create our view references in this class. Let's add our view's reference to the view holder.
+
 ```Kotlin
 inner class PageHolder(view: View): RecyclerView.ViewHolder(view){
       val textView: TextView = view.findViewById<TextView>(R.id.textView)
 }
 ```
+
 Now override the members of the `RecyclerView.Adapter` class. We only need to override these three members.
+
 ```Kotlin
 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PageHolder {
-      
+
 }
 
 override fun onBindViewHolder(holder: PageHolder, position: Int) {
-        
+
 }
 
 override fun getItemCount(): Int {
 
 }
 ```
-Read [this article]() for a deep explanation of the methods.
 
-Add the implementation to the methods as shown.
+Read [this article](/engineering-education/android-recyclerviews/) for a deep explanation of the methods. Add the implementation to the methods as shown.
+
 ```Kotlin
 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PageHolder  =
         PageHolder(LayoutInflater.from(context).inflate(R.layout.page_layout, parent, false))
@@ -120,26 +122,23 @@ override fun onBindViewHolder(holder: PageHolder, position: Int) {
 
 override fun getItemCount(): Int = words.size
 ```
-In the `onCreateViewHolder` method we inflate the `page_layout` using a `LayoutInflater`. In the `onBindViewHolder` method, we assign a word form the word list to the `TextView`. The `getItemCount` is a one line method where we return the size of the word list. 
 
-That's all for the adapter.
+In the `onCreateViewHolder` method we inflate the `page_layout` layout using a `LayoutInflater`. In the `onBindViewHolder` method, we assign a word from the word list to the `TextView`. The `getItemCount` is a one line method where we return the size of the word list. That's all for the adapter.
 
 ### Step 4 — Testing the ViewPager2 component
 Open `MainActivity.kt` file. In the `onCreate` method, add a list of words and a reference to the `ViewPager2` component.
+
 ```Kotlin
-val words = arrayListOf(
-    "One",
-    "Two",
-    "Three",
-    "Four",
-    "Five"
-)
+val words = arrayListOf("One", "Two", "Three", "Four", "Five")
 val pager = findViewById<ViewPager2>(R.id.pager)
 ```
+
 Then add the adapter as shown.
+
 ```Kotlin
 pager.adapter = PagerAdapter(this, words)
 ```
+
 That's what we need for the `ViewPager2`. Now build and run the application.
 
 The output should be like to this.
@@ -147,10 +146,12 @@ The output should be like to this.
 ![View pager gif](/engineering-education/android-viewpager2/view-pager.gif)
 
 To change the scroll orientation to vertical, add the following statement.
+
 ```Kotlin
 pager.orientation = ViewPager2.ORIENTATION_VERTICAL
 ```
-This is how it looks.
+
+It should resemble the demo below.
 
 ![vertical orientation gif](/engineering-education/android-viewpager2/vertical-scroll.gif)
 
@@ -158,21 +159,27 @@ This is how it looks.
 Now that our view pager is functioning as expected. Let's go ahead and integrate it with `TabLayout`.
 
 First add the reference to the `TabLayout` component.
+
 ```Kotlin
 val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
 ```
+
 To integrate `ViewPager2` with `TabLayout` we need to use a `TabLayoutMediator` class. This was quite easier with the old ViewPager. One had to use the `TabLayout`'s `setUpWithViewPager` method and pass the `ViewPager2` refference.
 
 The `TabLayoutMediator` class takes in two parameters, the `TabLayout` and `ViewPager2` references.
+
 ```Kotlin
-TabLayoutMediator(tabLayout, pager) 
+TabLayoutMediator(tabLayout, pager)
 ```
+
 The class then takes a lambda function with two parameters. `TabLayout.Tab` and an integer representing the position the ViewPagers' pages.
+
 ```Kotlin
 TabLayoutMediator(tabLayout, pager) {tab, position ->
       tab.text = "${position + 1}"
 }.attach()
 ```
+
 In the function, we set the tabs' text to the position plus one. We add one because the positions start from zero. We attach the components by calling the `attach` method.
 
 Build and run the application. This is how it should look.
@@ -182,6 +189,7 @@ Build and run the application. This is how it should look.
 Another important feature of `TabLayout` is the on tab selected listener. This notifies the listeners whenever a tab's selected, unselected or reselected. This is useful when one wants to perform some background tasks when the listener fires up. We will use toasts in our application for demonstration.
 
 Add the following code to implement the feature.
+
 ```Kotlin
 tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
     override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -197,9 +205,10 @@ tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
     }
 })
 ```
+
 Build and run the app again.
 
 ![toasts gif](/engineering-education/android-viewpager2/toasts.gif)
 
 ### Conclusion
-In this article, we have gone through creating `ViewPager2` component. We have also seen how we can integrate it with a `TabLayout`. This is a common UI component and almost all apps that display data in page format us it. You can find the app's source code on [github](https://github.com/kayere/view-pager-example.git). 
+In this article, we have gone through creating `ViewPager2` component. We have also seen how we can integrate it with a `TabLayout`. This is a common UI component and almost all apps that display data in page format us it. You can find the app's source code on [github](https://github.com/kayere/view-pager-example.git).
