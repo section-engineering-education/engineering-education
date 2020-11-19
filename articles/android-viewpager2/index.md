@@ -1,7 +1,7 @@
 ### Introduction
-Slide transition between screens is common in android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while. This view allows the developer to display views or fragments to the user in a swipe-able format. This feature is common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. `TabLayout` indicates the current page in display and allows a user to switch through pages.
+Slide transition between screens is common in android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while. This view allows the developer to display views or fragments to the user in a swipe-able format. This feature is common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. A `TabLayout` indicates the current page in display and allows a user to switch through pages.
 
-`ViewPager2` is an newer version of the `ViewPager` library. Its major difference to the old library is the use of a `RecyclerView` adapter. With this, views are now recycled. This improves user experience by making smooth transitions and minimizes memory usage.
+`ViewPager2` is a newer version of the `ViewPager` library. Its major difference to the old library is the use of a `RecyclerView` adapter. With this, views are now recycled. This improves user experience by making smooth transitions and minimizes memory usage.
 
 This article goes through implementing `ViewPager2` and `TabLayout` in an android application.
 
@@ -16,14 +16,14 @@ To follow through with this tutorial you will need to:
 Let's get started!
 
 ### Step 1 — Creating an Android Project
-In this step, we're going to create our application. Open Android Studio and start a new project with an empty activity template. On the next page, give the application a name and keep the default settings.
+In this step, we're going to create our application. Open Android Studio and start a new project with using the empty activity template. On the next page, give the application a name and keep the default settings.
 
 ![app name](/engineering-education/android-viewpager2/app-name.png)
 
 Click `Finish` and wait for the project build process to finish.
 
 ### Step 2 — Adding Views in Xml Layouts
-Our `activity_main` layout file contains only two views. Add them as follows.
+Our `activity_main` layout file will contain only two views. Add them as follows.
 
 ```xml
 <com.google.android.material.tabs.TabLayout
@@ -109,7 +109,7 @@ override fun getItemCount(): Int {
 }
 ```
 
-Read [this article](/engineering-education/android-recyclerviews/) for a deep explanation of the methods. Add the implementation to the methods as shown.
+Read [this article](/engineering-education/android-recyclerviews/) for a deep explanation of the methods. Add the implementation to the methods as shown below.
 
 ```Kotlin
 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PageHolder  =
@@ -123,7 +123,7 @@ override fun onBindViewHolder(holder: PageHolder, position: Int) {
 override fun getItemCount(): Int = words.size
 ```
 
-In the `onCreateViewHolder` method we inflate the `page_layout` layout using a `LayoutInflater`. In the `onBindViewHolder` method, we assign a word from the word list to the `TextView`. The `getItemCount` is a one line method where we return the size of the word list. That's all for the adapter.
+In the `onCreateViewHolder` method we inflate the `page_layout` layout using a `LayoutInflater`. In the `onBindViewHolder` method, we assign a word from the word list to the `TextView`. The `getItemCount` is a method where we return the size of the word list. That's all for the adapter.
 
 ### Step 4 — Testing the ViewPager2 component
 Open `MainActivity.kt` file. In the `onCreate` method, add a list of words and a reference to the `ViewPager2` component.
@@ -164,7 +164,7 @@ First add the reference to the `TabLayout` component.
 val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
 ```
 
-To integrate `ViewPager2` with `TabLayout` we need to use a `TabLayoutMediator` class. This was quite easier with the old ViewPager. One had to use the `TabLayout`'s `setUpWithViewPager` method and pass the `ViewPager2` refference.
+To integrate `ViewPager2` with `TabLayout` we need to use a `TabLayoutMediator` class. This was quite easier with the old ViewPager. One had to use the `TabLayout`'s `setUpWithViewPager` method and pass the `ViewPager2` reference.
 
 The `TabLayoutMediator` class takes in two parameters, the `TabLayout` and `ViewPager2` references.
 
