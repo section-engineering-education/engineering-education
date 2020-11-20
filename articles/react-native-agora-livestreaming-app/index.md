@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
     alt: React Native Agora Livestreaming App
 ---
-In this tutorial, we will  build a cool and simple Livestreaming app with React Native and [Agora](https://www.agora.io/en/about-us/), which is a video, voice, and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive livestreaming, and real-time messaging.
+In this tutorial, we will build a Livestreaming app with React Native and [Agora](https://www.agora.io/en/about-us/).
 <!--more-->
 
 ### Goals
@@ -22,15 +22,16 @@ By the end of this tutorial, you’ll know:
 
 - How to create/join a livestream using Agora.
 
-- How to share a room code for others to join the livestream.
+- How to share a channel ID for others to join the livestream.
 
-- How to add event listeners on the livestream to listen to various state changes.
+- How to add event listeners on the livestream to listen to state changes.
 
 ### Prerequisites
 The fundamentals of React and React Native will not be covered in this tutorial. If you don't know the fundamentals, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
-Agora is used to build applications that require real-time engagement like:
+Founded in 2014, Agora.io is a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
+Agora provides SDKs to build apps that require real-time engagement like:
 
 - Audio/Video calls
 
@@ -40,7 +41,11 @@ Agora is used to build applications that require real-time engagement like:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
+Agora supports upto 1 million users in a live broadcast channel. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
+
 Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
+
+If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
 
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
