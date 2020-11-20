@@ -7,12 +7,12 @@ title: React Native Livestream Application using Agora
 description: This tutorial will give readers a detailed guide on how they can build an app to create or join a live stream using Agora.
 author: mohan-raj
 date: 2020-11-19T00:00:00-10:00
-topics: []
+topics: [Livestreaming, React Native, Agora]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
-    alt: Python example image PyPi
+    alt: React Native Agora Livestreaming App
 ---
 Want to learn how to build a cool and simple Livestreaming app using React Native? In this tutorial, we will do so using [Agora](https://www.agora.io/en/about-us/), which is a video, voice, and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive live streaming, and real-time messaging.
 <!--more-->
