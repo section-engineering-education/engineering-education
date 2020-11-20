@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/react-native-agora-livestreaming-app/
 title: React Native Livestream Application using Agora
-description: This tutorial will give readers a detailed guide on how they can build an app to create or join a live stream using Agora.
+description: This tutorial will give readers a detailed guide on how they can build an app to create or join a livestream using Agora.
 author: mohan-raj
 date: 2020-11-19T00:00:00-10:00
 topics: [Livestreaming, React Native, Agora]
@@ -14,18 +14,18 @@ images:
   - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
     alt: React Native Agora Livestreaming App
 ---
-Want to learn how to build a cool and simple Livestreaming app using React Native? In this tutorial, we will do so using [Agora](https://www.agora.io/en/about-us/), which is a video, voice, and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive live streaming, and real-time messaging.
+Want to learn how to build a cool and simple Livestreaming app using React Native? In this tutorial, we will do so using [Agora](https://www.agora.io/en/about-us/), which is a video, voice, and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive livestreaming, and real-time messaging.
 <!--more-->
 Keep reading to find out.
 
 ### Goals
-By the end of this tutorial, you’ll understand
+By the end of this tutorial, you’ll know:
 
-- How to create/join a live stream using Agora.
+- How to create/join a livestream using Agora.
 
-- How to share a room code for others to join the live stream.
+- How to share a room code for others to join the livestream.
 
-- How to add event listeners on the live stream to listen to various state changes.
+- How to add event listeners on the livestream to listen to various state changes.
 
 ### Prerequisites
 This article will not cover tutorial aspects of how React/React Native works. If you don't know how to work with it, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
@@ -137,9 +137,9 @@ pod install
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Pass channel ID while navigating
-When we create or join a live stream, we need to give a channel ID to Agora.
+When we create or join a livestream, we need to give a channel ID to Agora.
 
-For a new live stream, we'll generate a new channel ID. To join a live stream, we'll use the channel ID from the text input.
+For a new livestream, we'll generate a new channel ID. To join a livestream, we'll use the channel ID from the text input.
 
 We need to pass the channel ID from the Home Screen to the Live Screen. We can pass it as a route prop to the Live Screen.
 
@@ -383,7 +383,7 @@ const init = async () => {
 
 Now, when we navigate to the Live screen page, we will see the `console.log` message from the `JoinChannelSuccess` callback.
 
-This means, we have joined the live stream but we can't see it yet. Because we didn't write it yet. :grimacing:
+This means, we have joined the livestream but we can't see it yet. Because we didn't write it yet. :grimacing:
 
 #### Displaying the feed
 The next step is to display the Remote Feed of the Host to the Audience and the Local Feed to the Broadcaster.
@@ -449,7 +449,7 @@ When the `joined` state is set to `true`, we need to show the feed.
 
 The `RtcLocalView` requires only one prop which is the `channelId` prop. The rest are optional.
 The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop.
-The `uid` prop decides which user's feed in the live stream to display on this view.
+The `uid` prop decides which user's feed in the livestream to display on this view.
 Here, we will pass our host's UID, which is `1`.
 
 Return Statement when joined === true.
@@ -581,7 +581,7 @@ Switch Camera button:
 ```
 
 #### Broadcaster Video Status
-Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the live stream.
+Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the livestream.
 
 When a video state changes, it provides the `UID` and the `Video State` of that user. To learn more about the `RemoteVideoStateChanged` listener, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/interfaces/rtcengineevents.html#remotevideostatechanged)
 
