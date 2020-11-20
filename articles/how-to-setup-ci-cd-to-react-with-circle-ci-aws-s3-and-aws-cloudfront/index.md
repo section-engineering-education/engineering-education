@@ -19,7 +19,7 @@ In the present software development context, the important workflows for softwar
 
 Will it be better? if we reduce this repetitive manual process using  CI/CD and dedicate most of the valuable time in developing new, innovative, and problem-solving features?
 
-## The solutions can be...
+### The solutions can be...
 
 * Creating React application and push the repo to Github.
 * Setting up AWS S3 for deployment.
@@ -35,7 +35,7 @@ Will it be better? if we reduce this repetitive manual process using  CI/CD and 
 
 The steps to setup CI/CD to React ecosystem is explained below:
 
-## Step 1: Setting up Repository
+### Step 1: Setting up Repository
 
 First, we are going to set up a repository in GitHub. The steps are simple. In the GitHub console interface, we just need to click on the ‘**Create new repository**’ button and the following screen will appear:
 
@@ -57,7 +57,7 @@ Now, we need to create a React project and add git configuration to it running t
     $ git push -u origin master
 ```
 
-## Step 2:  Setting up AWS S3
+### Step 2:  Setting up AWS S3
 
 Now, we are going to setup AWS S3. First, we need to login to the AWS console. After successful login, we need to go to the S3 menu and create a new bucket as directed in the screenshot below:
 
@@ -130,7 +130,7 @@ Hence, we are done with the local deployment of our project. This also completes
 
 Now, we move on to set up CircleCI in our react project.
 
-## Step 4:  CircleCI Setup
+### Step 4:  CircleCI Setup
 
 First, we need to create an account on CircleCI. We can do that using Github login, which simplifies the register and login process. Then, we will be redirected to [https://circleci.com/dashboard](https://circleci.com/dashboard). If not, we need to go to the same URL which is the CircleCI dashboard. In the dashboard, we need to click on the ‘**Add Project’**. In the Projects screen, we need to choose the repository that we want to follow by clicking on ‘**Set Up Project’ **as directed in the screenshot below:
 
@@ -209,7 +209,7 @@ Then, we need to add the correct variables or correct the existing variables as 
 
 Hence, we have successfully configured the Environment variables.
 
-## Step 6:  Setting up AWS CloudFront
+### Step 6:  Setting up AWS CloudFront
 
 We know that we have already successfully deployed our React Native project to AWS from what we did before( [http://kriss-react-cicd.s3-website-ap-southeast-1.amazonaws.com/](http://kriss-react-cicd.s3-website-ap-southeast-1.amazonaws.com/)). However, it doesn't set up HTTPs that makes the deployment insecure. Now in order to make the hosting secure, we can use AWS CloudFront. In CloudFront, we need to go to [https://console.aws.amazon.com/cloudfront/home](https://console.aws.amazon.com/cloudfront/home) and select **Create Distribution -> Get Started**. Then, we need to hit the **Create Distribution **button as directed in the screenshot below:
 
@@ -237,18 +237,18 @@ After the status changes to **Deployed**, we will be able to access the site fro
 
 Hence, we have successfully set up the CircleCI and AWS CloudFront to our React Native project.
 
-## What’s next …
+### What’s next …
 
 * Using Circle CI with different platforms such as iOS, Android, etc.
 
 * [Netlify](https://www.netlify.com/) will be an interesting platform if you host your repository on Gitlab (CircleCI are supported only Github and Bitbucket)
 
-## Conclusion
+### Conclusion
 Well, this tutorial has been long and interesting. Regardless of how long and hefty the setup tasks are, it will be highly beneficial in the long run. CircleCI can do more than what we learned in the article. We should make sure to explore that as well. It will be highly advantageous to setup CI/CD together while starting a new project. Running the test, build, and deployment manually can be hefty work and come at an unacceptable cost. CI/CD makes things automatic which will prove highly efficient in the long run. The CI/CD process also helps to locate bugs in the project easily. If CI is not applicable to your project, an alternative to it can be Jenkins, Travis CI, etc.
 
 Note that if you find any errors while setting up following this article, do not hesitate to notify me. :)
 
-## References
+### References
 
 * [What is CI & CD ](https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html)
 
