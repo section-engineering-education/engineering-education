@@ -1,14 +1,14 @@
 ### Introduction
-Slide transition between screens is common in android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while. This view allows the developer to display views or fragments to the user in a swipe-able format. This feature is common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. A `TabLayout` indicates the current page in display and allows a user to switch through pages.
+Slide transition between screens is common in android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while. This view allows the developer to display views or fragments to the user in a swipe-able format. This feature is common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. A `TabLayout` indicates the current page and allows a user to switch through pages.
 
-`ViewPager2` is a newer version of the `ViewPager` library. Its major difference to the old library is the use of a `RecyclerView` adapter. With this, views are now recycled. This improves user experience by making smooth transitions and minimizes memory usage.
+`ViewPager2` is a newer version of the `ViewPager` library. Its significant difference from the old library is the use of a `RecyclerView` adapter. With this, views are now recycled. This improves user experience by making smooth transitions and minimizes memory usage.
 
 This article goes through implementing `ViewPager2` and `TabLayout` in an android application.
 
 Let's dive in!
 
 ### Prerequisites
-To follow through with this tutorial you will need to:
+To follow through with this tutorial, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
   3. Have a basic understanding of Kotlin programming language.
@@ -16,7 +16,7 @@ To follow through with this tutorial you will need to:
 Let's get started!
 
 ### Step 1 — Creating an Android Project
-In this step, we're going to create our application. Open Android Studio and start a new project with using the empty activity template. On the next page, give the application a name and keep the default settings.
+In this step, we're going to create our application. Open Android Studio and start a new project using the empty activity template. On the next page, give the application a name and keep the default settings.
 
 ![app name](/engineering-education/android-viewpager2/app-name.png)
 
@@ -65,9 +65,9 @@ We also need to create a layout that we will display on the `ViewPager2` compone
 We're done with the xml files. Let's go ahead and create an adapter for our `ViewPager2` component.
 
 ### Step 3 — Creating ViewPager2 Adapter
-As I mentioned earlier, the `ViewPager2` component uses a recyclerview adapter. The adapter's responsibility is to render data to the `viewPager2` component.The recyclerview adapter adds vertical scroll ability which was absent in the old `ViewPager`. We will show this ability later in the article. Let's start creating the adapter.
+As I mentioned earlier, the `ViewPager2` component uses a recyclerview adapter. The adapter's responsibility is to render data to the `viewPager2` component. The recyclerview adapter adds vertical scroll ability, which was absent in the old `ViewPager`. We will show this ability later in the article. Let's start creating the adapter.
 
-Go to `File -> New -> Kotlin File/Class`. Select class and name the file `PagerAdapter`. In the adapter class add the following code.
+Go to `File -> New -> Kotlin File/Class`. Select class and name the file `PagerAdapter`. In the adapter class, add the following code.
 
 ```Kotlin
 class PagerAdapter(private val context: Context, private val words: List<String>): RecyclerView.Adapter<PagerAdapter.PageHolder>(){
@@ -85,7 +85,7 @@ inner class PageHolder(view: View): RecyclerView.ViewHolder(view){
 }
 ```
 
-The class needs to extend the base class `RecyclerView.ViewHolder`. It should also pass in the view it gets as a parameter. A `ViewHolder`,as the name suggest is a class that holds, and describe views that each list item should contain.  We create our view references in this class. Let's add our view's reference to the view holder.
+The class needs to extend the base class `RecyclerView.ViewHolder`. It should also pass in the view it gets as a parameter. A `ViewHolder`, as the name suggests, is a class that holds and describe views that each list item should contain.  We create our view references in this class. Let's add our view's reference to the view holder.
 
 ```Kotlin
 inner class PageHolder(view: View): RecyclerView.ViewHolder(view){
@@ -123,7 +123,7 @@ override fun onBindViewHolder(holder: PageHolder, position: Int) {
 override fun getItemCount(): Int = words.size
 ```
 
-In the `onCreateViewHolder` method we inflate the `page_layout` layout using a `LayoutInflater`. In the `onBindViewHolder` method, we assign a word from the word list to the `TextView`. The `getItemCount` is a method where we return the size of the word list. That's all for the adapter.
+In the `onCreateViewHolder` method, we inflate the `page_layout` layout using a `LayoutInflater`. In the `onBindViewHolder` method, we assign a word from the word list to the `TextView`. The `getItemCount` is a method where we return the size of the word list. That's all for the adapter.
 
 ### Step 4 — Testing the ViewPager2 component
 Open `MainActivity.kt` file. In the `onCreate` method, add a list of words.
@@ -140,7 +140,7 @@ pager.adapter = PagerAdapter(this, words)
 
 That's what we need for the `ViewPager2`. Now build and run the application.
 
-The output should be like to this.
+The output should be like this.
 
 ![View pager gif](/engineering-education/android-viewpager2/view-pager.gif)
 
@@ -165,7 +165,7 @@ The `TabLayoutMediator` class takes in two parameters, the `TabLayout` and `View
 TabLayoutMediator(tabLayout, pager)
 ```
 
-The class then takes a lambda function with two parameters. `TabLayout.Tab` and an integer representing the position the ViewPagers' pages.
+The class then takes a lambda function with two parameters. `TabLayout.Tab` and an integer representing the position of the ViewPagers' pages.
 
 ```Kotlin
 TabLayoutMediator(tabLayout, pager) {tab, position ->
@@ -179,7 +179,7 @@ Build and run the application. This is how it should look.
 
 ![tab layout gif](/engineering-education/android-viewpager2/tab-layout.gif)
 
-Another important feature of `TabLayout` is the `onTabSelectedListener`. This notifies the listeners whenever a tab's selected, unselected or reselected. This is useful when one wants to perform some background tasks when the listener fires up. We will use toasts in our application for demonstration.
+Another essential feature of `TabLayout` is the `onTabSelectedListener`. This notifies the listeners whenever a tab's selected, unselected, or reselected. This is useful when one wants to perform some background tasks when the listener fires up. We will use toasts in our application for demonstration.
 
 Add the following code to implement the feature.
 
@@ -199,9 +199,9 @@ tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 })
 ```
 
-Build and run the app again.
+Build and rerun the app.
 
 ![toasts gif](/engineering-education/android-viewpager2/toasts.gif)
 
 ### Conclusion
-In this article, we have gone through creating the ViewPager2 component. We have also seen how we can integrate it with a TabLayout. This is a common UI component and almost all apps that display data in page format use it. Achieving the slide transition between content screens is quite easy with the component. You don't need to implement gesture listeners since the component does that for you. You can find the app's source code on [Github](https://github.com/kayere/view-pager-example.git).
+In this article, we have gone through creating the ViewPager2 component. We have also seen how we can integrate it with a TabLayout. This is a common UI component, and almost all apps that display data in page format use it. Achieving the slide transition between content screens is relatively easy with the component. You don't need to implement gesture listeners since the component does that for you. You can find the app's source code on [Github](https://github.com/kayere/view-pager-example.git).
