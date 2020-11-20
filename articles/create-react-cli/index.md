@@ -38,7 +38,7 @@ mkdir section-example && cd section-example
 npx create-ink-app
 ```
 
-The last command creates a link executable for our application. It may take some time to complete this process. When you run `section-example` (name of your application) in the terminal, it should return this:
+The last command creates a link executable for our application. It may take some time to complete this process. When you run `node cli` in the terminal, it should return this:
 
 ![Image](/engineering-education/create-react-cli/first-1.png "image")
 
@@ -96,7 +96,7 @@ const App = () => {
 module.exports = App;
 ```
 
-On running `section-example` in the terminal, you should be able to enter a country name.
+On running `node cli` in the terminal, you should be able to enter a country name.
 
 Moving forward, we will need to search for the country in real-time and display the results in a table. To do so, we will invoke the `world-countries-capitals` npm package. We will use another React hook called `useEffect` to fetch our data and update the component as it renders. Let's go ahead and implement this.
 
@@ -274,11 +274,13 @@ const App = () => {
 module.exports = App;
 ```
 
-To test our new creation, we run `section-example` in our terminal which it should return this:
+To test our new creation, we run `node cli` in our terminal which it should return this:
 
 ![final-result](/engineering-education/create-react-cli/section-final.png "Title")
 
 You can find a gif of the application in action [here](https://terminalizer.com/view/ad4a80d54380)
+
+Note: Running the test command (```npm run test```) will not work  because we have not written any tests of our own. Ink uses ava for testing by default. You can read more about ava in its [documentation](https://github.com/avajs/ava)
 
 ### Finishing Up
 We just built our first complex CLI using React and here are Some things to note. Ink comes with more elements that allow you to have more control over the user interface of the CLI. It also ships with custom hooks to manipulate the data acquired from the terminal. A good example is `useInput` which listens to the user input.
