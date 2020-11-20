@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/house-price-prediction/hero.jpg
-    alt: r programming language example image
+    alt: house price prediction example image
 ---
 Welcome to a tutorial on predicting house prices using the Random Forest Regression algorithm. We will cover the data pipeline creation. The process of data pipeline creation involves loading the dataset, cleaning and pre-processing the dataset, fitting a model to the dataset, and testing the model’s performance using various evaluation metrics.
 <!--more-->
