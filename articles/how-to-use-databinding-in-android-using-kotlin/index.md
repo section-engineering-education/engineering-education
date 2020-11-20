@@ -27,11 +27,11 @@ In this project, we will create a simple `Notes app` in Android using `Kotlin`. 
 
 ### Prerequisites
 
-Note that this tutorial is directed to those who have some experience in android programming using `Kotlin`. You can download the full source code [here]
+Note that this tutorial is directed to those who have some experience in android programming using `Kotlin`. You can download the full source code [here](https://github.com/WanjaMIKE/SimpleNotesApp)
 
 ### 1. Installing the required dependencies
 
-Launch android studio and create a new project. Once the project is ready, go to the `Gradle scripts` folder and open `build.gradle (module: app)`. Add `buildFeatures` and set `databinding` as `true`. This notifies the Android system that our app uses data binding. Therefore, the proper files will be generated.
+Launch android studio and create a new project. Once the project is ready, go to the `Gradle scripts` folder and open `build.gradle (module: app)`. Add `buildFeatures` and set `databinding` as `true`. This notifies the `Android` system that our app uses data binding. Therefore, the proper files will be generated.
 
 ```
 buildTypes {
