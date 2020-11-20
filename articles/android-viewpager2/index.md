@@ -65,7 +65,7 @@ We also need to create a layout that we will display on the `ViewPager2` compone
 We're done with the xml files. Let's go ahead and create an adapter for our `ViewPager2` component.
 
 ### Step 3 — Creating ViewPager2 Adapter
-As I mentioned earlier, the `ViewPager2` component uses a recyclerview adapter. This adds vertical scroll ability which was absent in the old `ViewPager`. We will show this ability later in the article. Let's start creating the adapter.
+As I mentioned earlier, the `ViewPager2` component uses a recyclerview adapter. The adapter's responsibility is to render data to the `viewPager2` component.The recyclerview adapter adds vertical scroll ability which was absent in the old `ViewPager`. We will show this ability later in the article. Let's start creating the adapter.
 
 Go to `File -> New -> Kotlin File/Class`. Select class and name the file `PagerAdapter`. In the adapter class add the following code.
 
@@ -85,11 +85,11 @@ inner class PageHolder(view: View): RecyclerView.ViewHolder(view){
 }
 ```
 
-The class needs to extend the base class `RecyclerView.ViewHolder`. It should also pass in the view it gets as a parameter. We create our view references in this class. Let's add our view's reference to the view holder.
+The class needs to extend the base class `RecyclerView.ViewHolder`. It should also pass in the view it gets as a parameter. A `ViewHolder`,as the name suggest is a class that holds, and describe views that each list item should contain.  We create our view references in this class. Let's add our view's reference to the view holder.
 
 ```Kotlin
 inner class PageHolder(view: View): RecyclerView.ViewHolder(view){
-      val textView: TextView = view.findViewById<TextView>(R.id.textView)
+      val textView: TextView = view.textView
 }
 ```
 
@@ -126,11 +126,10 @@ override fun getItemCount(): Int = words.size
 In the `onCreateViewHolder` method we inflate the `page_layout` layout using a `LayoutInflater`. In the `onBindViewHolder` method, we assign a word from the word list to the `TextView`. The `getItemCount` is a method where we return the size of the word list. That's all for the adapter.
 
 ### Step 4 — Testing the ViewPager2 component
-Open `MainActivity.kt` file. In the `onCreate` method, add a list of words and a reference to the `ViewPager2` component.
+Open `MainActivity.kt` file. In the `onCreate` method, add a list of words.
 
 ```Kotlin
 val words = arrayListOf("One", "Two", "Three", "Four", "Five")
-val pager = findViewById<ViewPager2>(R.id.pager)
 ```
 
 Then add the adapter as shown.
@@ -145,7 +144,7 @@ The output should be like to this.
 
 ![View pager gif](/engineering-education/android-viewpager2/view-pager.gif)
 
-To change the scroll orientation to vertical, add the following statement.
+To change the scroll orientation to vertical, add the following statement in the `onCreate` method.
 
 ```Kotlin
 pager.orientation = ViewPager2.ORIENTATION_VERTICAL
@@ -157,12 +156,6 @@ It should resemble the demo below.
 
 ### Step 5 — Integrating TabLayout
 Now that our view pager is functioning as expected. Let's go ahead and integrate it with `TabLayout`.
-
-First add the reference to the `TabLayout` component.
-
-```Kotlin
-val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
-```
 
 To integrate `ViewPager2` with `TabLayout` we need to use a `TabLayoutMediator` class. This was quite easier with the old ViewPager. One had to use the `TabLayout`'s `setUpWithViewPager` method and pass the `ViewPager2` reference.
 
@@ -186,7 +179,7 @@ Build and run the application. This is how it should look.
 
 ![tab layout gif](/engineering-education/android-viewpager2/tab-layout.gif)
 
-Another important feature of `TabLayout` is the on tab selected listener. This notifies the listeners whenever a tab's selected, unselected or reselected. This is useful when one wants to perform some background tasks when the listener fires up. We will use toasts in our application for demonstration.
+Another important feature of `TabLayout` is the `onTabSelectedListener`. This notifies the listeners whenever a tab's selected, unselected or reselected. This is useful when one wants to perform some background tasks when the listener fires up. We will use toasts in our application for demonstration.
 
 Add the following code to implement the feature.
 
@@ -211,4 +204,4 @@ Build and run the app again.
 ![toasts gif](/engineering-education/android-viewpager2/toasts.gif)
 
 ### Conclusion
-In this article, we have gone through creating `ViewPager2` component. We have also seen how we can integrate it with a `TabLayout`. This is a common UI component and almost all apps that display data in page format us it. You can find the app's source code on [github](https://github.com/kayere/view-pager-example.git).
+In this article, we have gone through creating the ViewPager2 component. We have also seen how we can integrate it with a TabLayout. This is a common UI component and almost all apps that display data in page format use it. Achieving the slide transition between content screens is quite easy with the component. You don't need to implement gesture listeners since the component does that for you. You can find the app's source code on [Github](https://github.com/kayere/view-pager-example.git).
