@@ -1,33 +1,57 @@
-In present-day applications, data plays a pivotal role. It then becomes essential to design systems that adapt to the ever-changing needs of the application. One of the primary functionalities of API(Application Programming Interfaces) is to be a consistent and reliable way to communicate between server and client. GraphQL is a game-changer in this field. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/build-a-graphql-server-using-nodejs/
+title: How to build a GraphQL Server Using Node.js
+description:
+author: abel-mathew
+date: 2020-11-20T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Quoting the [official website](https://graphql.org/), 
-> GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+  - url: /engineering-education/build-a-graphql-server-using-nodejs/hero.jpg
+    alt: How to build a GraphQL Server Using Node.js image
 
-The article covers two primary aspects
+---
+Before we delve into the comparative study on various methods of authenticating users, it is necessary to answer one primary question: Why does a website, app or service need to have login flow? Is it impossible to cater to the userbase without it?
+<!--more-->
+In present-day applications, data plays a pivotal role. It then becomes essential to design systems that adapt to the ever-changing needs of the application. One of the primary functionalities of API(Application Programming Interfaces) is to be a consistent and reliable way to communicate between server and client. GraphQL is a game-changer in this field.
+
+Quoting the [official website](https://graphql.org/),
+
+> GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to develop APIs over time, and enables powerful developer tools.
+
+The article covers two primary aspects:
+
 - What is GraphQL and its basics
+
 - Implement GraphQL server in Node.js
 
 ### What Is GraphQL?
-
 GraphQL was internally developed by Facebook in 2012 and was later open-sourced to the public. As said above, GraphQL is a query language for API. It gives the client the freedom to request only the data it needs from the server. It also helps in the aggregation of data in the response itself.
+
 #### Features Of GraphQL
 - Query only specific fields and get the response from the server, hence saving on network bandwidth.
+
 - Aggregation of data in a single request, hence reducing network calls.
-- It’s strongly typed and hence allows for validation easily. Additionally, GraphQL IDE like GraphiQL automatically generates docs from the schema for reference. <br>
+
+- It’s strongly typed and hence allows for validation easily. Additionally, GraphQL IDE like GraphiQL autogenerates docs from the schema for reference. <br>
+
 ![GraphQL Schema Docs](/engineering-education/build-a-graphql-server-using-nodejs/graphql-docs.png)
 
 ### Schema And Types
-
-The schema in GraphQL is a description of how data is linked and its hierarchy. The schema defines a set of types and the relationships between those types. In our example detailed in a further section of a blog built using GraphQL, two major types are `ArticleType` and `ContributorType`. The resolvers are used to populate these types with data from the database. 
+The schema in GraphQL is a description of how data is linked and its hierarchy. The schema defines a set of types and the relationships between those types. In our example detailed in a further section of a blog built using GraphQL, two major types are `ArticleType` and `ContributorType`. The resolvers are used to populate these types with data from the database.
 
 Do not confuse between GraphQL schema and MongoDB schema. MongoDB schema is a representation of the database structure in MongoDB Atlas. It is used to do database operation from the server on the database. GraphQL schema defines how queries are linked to the data and also how queries are interlinked. Both these schemas have a dependency on each other but are not the same.
 
 ### Setup A GraphQL Server In Node.js
-This section of the article covers a walkthrough of how to make your own basic GraphQL server using Node.js. As already said earlier, GraphQL is language-agnostic and database-agnostic. Additionally, this is one of the many possible implementations of GraphQL. For the data, the setup uses Javascript in-built arrays and objects for initial steps and then MongoDB for further steps.
+This section of the article covers a walkthrough of how to make your own basic GraphQL server using Node.js. As already said earlier, GraphQL is language-agnostic and database-agnostic. This is one of the many implementations of GraphQL. For the data, the setup uses Javascript in-built arrays and objects for initial steps and then MongoDB for further steps.
 
-If you are new to Node.js or MongoDB, it would be recommended to be acquainted with the basics of the same to get a better understanding. 
+If you are new to Node.js or MongoDB, we would recommend to be acquainted with the basics of the same to get a better understanding.
 
-For reference, the entire GitHub repository, along with a deployed version of the project would be linked so that you can view and understand for further clarity.
+For reference, the entire GitHub repository, along with a deployed version of the project would be linked so you can view and understand for further clarity.
 
 #### Reference To Get Started With Node.js and MongoDB
 - [Setup a server on Node.js using Express](https://www.section.io/engineering-education/express/)
@@ -35,19 +59,18 @@ For reference, the entire GitHub repository, along with a deployed version of th
 - [Other Node.js references](https://www.section.io/engineering-education/topic/node.js/)
 
 #### Initialize Project With Express
+1. Create a folder for your project and open the folder in the text editor of your choice.
 
-1. Create a folder for your project and open the folder in the text editor of your choice. 
-   
-2. Open a terminal in the project folder and initialize a Javascript project.  <br>
-```npm init``` <br>
+2. Open a terminal in the project folder and initialize a JavaScript project.  <br>
+`npm init` <br>
 Follow the prompts on the terminal to create the project or if you want to suppress the prompts and create with the default configuration, use, <br>
-```npm init -y```
+`npm init -y`
 
 3. Install Express via terminal. <br>
-```npm i express```
+`npm i express`
 
-4. Open ```index.js``` or the equivalent file as per the configuration you did while ```npm init```. By default, it is ```index.js```.
-   
+4. Open `index.js` or the equivalent file as per the configuration you did while `npm init`. By default, it is `index.js`.
+
 5. Import Express and initialize it.<br>
 ```
 const express = require('express');
@@ -71,7 +94,7 @@ Once done, this is how the file would look.
 ![Initialize express.js](/engineering-education/build-a-graphql-server-using-nodejs/express-init.png)
 
 8. Run the server.<br>
-Throughout the setup, wherever "Run the server" is mentioned, you can do `node index.js` from the project folder, or you can use a NodeJS process manager like nodemon or PM2 to make sure your browser refreshes whenever your code updates. To stop a server started using `node index.js`, you can use CTRL/CMD+C. 
+Throughout the setup, wherever "Run the server" is mentioned, you can do `node index.js` from the project folder, or you can use a NodeJS process manager like nodemon or PM2 to make sure your browser refreshes whenever your code updates. To stop a server started using `node index.js`, you can use CTRL/CMD+C.
 
 Once done, this is how the terminal window will look.
 
@@ -84,12 +107,12 @@ Once done, this is how the browser window will look.
 #### Initialize GraphQL
 
 1. Install GraphQL libraries for Javascript via terminal. <br>
-```npm i express-graphql graphql``` <br>
+`npm i express-graphql graphql` <br>
 `graphql` library provides the Javascript implementation of GraphQL. <br>
-`graphql-express` library provides integration of Express server with GraphQL. 
+`graphql-express` library provides integration of Express server with GraphQL.
 
 2. Create a `schema` folder within the project folder and create a `schema.js` file inside it. <br>
-   
+
 3. Import `graphql` in `schema/schema.js` <br>
 `const graphql = require('graphql');` <br>
 GraphQL schema defines how various GraphQL queries and mutations are structured and inter-linked. Refer the "Types and Schema" section in this article for a full explanation.
@@ -98,6 +121,7 @@ GraphQL schema defines how various GraphQL queries and mutations are structured 
 `const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList, GraphQLSchema } = graphql;`
 
 5. Add a root query that will print `Welcome to GraphQL` when the query contains a field named `status`. The field `status` is of type `GraphQLString`. <br>
+
 ```
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -112,7 +136,8 @@ const RootQuery = new GraphQLObjectType({
 });
 ```
 
-6. Export the query written above to be used in `index.js`. Export the query as GraphQLSchema type so that GraphQL can parse it as its schema. The GraphQLSchema takes an object with key-value pairs. One of the keys is `query`. To this key, pass the above created `RootQuery` as value. We will be using the additional key-value pairs for GraphQLSchema in the further section of this article.
+6. Export the query written above to be used in `index.js`. Export the query as GraphQLSchema type so that GraphQL can parse it as its schema. The GraphQLSchema takes an object with key-value pairs. One key is `query`. To this key, pass the above created `RootQuery` as value. We will use the additional key-value pairs for GraphQLSchema in the further section of this article.
+
 ```
 module.exports = new GraphQLSchema({
     query: RootQuery
@@ -126,6 +151,7 @@ module.exports = new GraphQLSchema({
 `const schema = require('./schema/schema');`
 
 9. Add GraphQL endpoint to server. It is a common practice to add GraphQL endpoint to `/graphql` but this customizable as per requirement. To the GraphQL middleware, pass `graphqlHTTP` as the second argument in `app.use()`. `graphqlHTTP` takes `schema` as a mandatory parameter. Pass the imported `schema` to `graphqlHTTP` with the key as `schema`. `graphqlHTTP` takes an optional parameter `graphiql`. If `graphiql` is set to `true`, it provides an in-browser GraphQL query tool.<br>
+
 ```
 app.use(
     "/graphql",
@@ -159,9 +185,9 @@ This section would use static data stored in arrays to be fetched via GraphQL se
 
 1. Install the `lodash` library for Javascript via terminal. <br>
 This library makes working with arrays and objects easy. To get a brief idea about Lodash, read the [blog at section](https://www.section.io/engineering-education/most-useful-nodejs-packages/)(Lodash is the fourth section of the article). For more details, visit the [Lodash website](https://lodash.com/). <br>
-```npm i lodash```
+`npm i lodash`
 
-2. Open `schema/schema.js` and import the `lodash` library. 
+2. Open `schema/schema.js` and import the `lodash` library.
 `const _ = require('lodash')`
 
 3. Import the required GraphQL types. For the fetching and showing data for the query we need `GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList, GraphQLSchema`. <br>
@@ -182,7 +208,8 @@ let contributors = [
 ];
 ```
 
-5. Create a user-defined `GraphQLObjectType` for articles and authors, and these would be re-used in code. The id field is of type `GraphQLID` and the rest as `GraphQLString`. 
+5. Create a user-defined `GraphQLObjectType` for articles and authors, and these would be re-used in code. The id field is of type `GraphQLID` and the rest as `GraphQLString`.
+
 ```
 const ArticleType = new GraphQLObjectType({
     name: 'Article',
@@ -207,6 +234,7 @@ const ContributorType = new GraphQLObjectType({
 ```
 
 6. Update the `RootQuery` to add `article` and `contributor` to query. As `ArticleType` and `ContributorType` is already declared, it can be directly used here. Both the fields should take an argument for id which would be used to query the data. The argument is of type `GraphQLID` and can be referenced in `resolve(parent, args)` function by `args.id`. `lodash` is used to find articles and contributors that match `args.id`.
+
 ```
 article: {
     type: ArticleType,
@@ -246,7 +274,8 @@ const ArticleType = new GraphQLObjectType({
 });
 ```
 
-9. Do similarly for `ContributorType`. A contributor can have multiple `articles`, hence the `articles` field under `ContributorType` should be a `GraphQLList` of type `ArticleType` as `ArticleType` is only for one article. The `filter()` function in `lodash` is used to return data that match the filter. The modified `ContributorType` would look like
+9. Do similarly for `ContributorType`. A contributor can have multiple `articles`, hence the `articles` field under `ContributorType` should be a `GraphQLList` of type `ArticleType` as `ArticleType` is only for one article. The `filter()` function in `lodash` is used to return data that match the filter. The modified `ContributorType` would look like:
+
 ```
 const ContributorType = new GraphQLObjectType({
     name: 'Contributor',
@@ -275,7 +304,7 @@ Call the GraphQL server with the input query to test. Below is an example query.
 
 #### Use MongoDB As database
 
-This section would replace the static stored data with MongoDB Atlas instance. 
+This section would replace the static stored data with MongoDB Atlas instance.
 
 1. Install `mongoose` and `dotenv` libraries for Javascript via terminal. <br>
 `mongoose` facilitates the NodeJS server to connect with MongoDB and do database operations.<br>
@@ -301,7 +330,7 @@ Once done, this is how the file would look like
 
 ![Connect GraphQL To MongoDB](/engineering-education/build-a-graphql-server-using-nodejs/graphql-mongo-connect.png)
 
-4. Create `models` folder to store database schema. Create `article.js` for `articleSchema`. Import `mongoose` and initialize `mongoose.Schema`. The schema does not need a definition of `id` field as MongoDB by default creates an `_id` field for all documents. Export the model by passing it `articleSchema` as the parameter. This model would be used to interact with the collection from the server. 
+4. Create `models` folder to store database schema. Create `article.js` for `articleSchema`. Import `mongoose` and initialize `mongoose.Schema`. The schema does not need a definition of `id` field as MongoDB by default creates an `_id` field for all documents. Export the model by passing it `articleSchema` as the parameter. This model would be used to interact with the collection from the server.
 ```
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
@@ -371,7 +400,7 @@ addArticle: {
 },
 ```
 
-4. Similarly, do for adding contributors. 
+4. Similarly, do for adding contributors.
 ```
 addContributor: {
     type: ContributorType,
@@ -408,13 +437,13 @@ module.exports = new GraphQLSchema({
 
 ### Using A GraphQL Server In Production
 
-The above example illustrates the basics of GraphQL, but there are some best practices to be followed to make sure the code is optimized and secure. The above code example 
+The above example illustrates the basics of GraphQL, but there are some best practices to be followed to make sure the code is optimized and secure. The above code example
 
 #### Nesting Queries Cautiously
 Although GraphQL allows for nesting, reducing the depth of nested queries optimizes the query response time. A nested query depth limit is recommended to limit the client from sending deeply nested queries.
 
 #### Optimising Database Queries
-Although GraphQL is a query language for API, that does not mean that database queries and structure should not be optimized. Having inefficient database queries and design put unnecessary load on the database server and increased network bandwidth. 
+Although GraphQL is a query language for API, that does not mean that database queries and structure should not be optimized. Having inefficient database queries and design put unnecessary load on the database server and increased network bandwidth.
 
 ##### Example
 
