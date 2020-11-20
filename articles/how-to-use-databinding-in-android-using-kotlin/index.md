@@ -1,8 +1,8 @@
-If you wonder whether there is a way to link the `UI` directly to the `data source`, you are in the right place. Repeating the dreaded `findViewbyID` statement in your code is so tiring. It takes so much time that you may even forget your variables&#39; IDs. Well, there is a solution. It&#39;s called `data binding`. We will learn how to implement this concept in this tutorial.
+If you wonder whether there is a way to link the `UI` directly to the `data source`, you are in the right place. Repeating the dreaded `findViewbyID` statement in your code is so boring. It takes so much time that you may even forget your variables&#39; IDs. Well, there is a solution. It&#39;s called `data binding`. We will learn how to implement this concept in this tutorial.
 
 ### Introduction
 
-Without going any further, it&#39;s essential to understand what `data binding` is and its advantages. The `data binding library` is part of Android Jetpack. According to the Android Developer Documentation, the data binding library allows users to bind `layouts` and `UI` components to data sources declaratively.
+Without going any further, it&#39;s essential to understand what `data binding` is and it's advantages. The `data binding library` is part of Android [Jetpack](https://developer.android.com/jetpack?gclid=CjwKCAiA7939BRBMEiwA-hX5J_CccPJR43xoH9ZS_RjsiGrlztDm11gCNpp3dD1qsmhtknCk06NXSBoCnmEQAvD_BwE&gclsrc=aw.ds) utilities. According to the Android Developer Documentation, the `data binding` library allows users to bind `layouts` and `UI` components to data sources declaratively.
 
 The `data binding` library seeks to eliminate something like this:
 
@@ -27,7 +27,7 @@ In this project, we will create a simple `Notes app` in Android using `Kotlin`. 
 
 ### Prerequisites
 
-Note that this tutorial is directed to those who have some experience in android programming using `Kotlin`.
+Note that this tutorial is directed to those who have some experience in android programming using `Kotlin`. You can download the full source code [here]
 
 ### 1. Installing the required dependencies
 
