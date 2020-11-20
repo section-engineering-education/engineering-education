@@ -14,9 +14,8 @@ images:
   - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
     alt: React Native Agora Livestreaming App
 ---
-Want to learn how to build a cool and simple Livestreaming app using React Native? In this tutorial, we will do so using [Agora](https://www.agora.io/en/about-us/), which is a video, voice, and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive livestreaming, and real-time messaging.
+In this tutorial, we will  build a cool and simple Livestreaming app with React Native and [Agora](https://www.agora.io/en/about-us/), which is a video, voice, and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive livestreaming, and real-time messaging.
 <!--more-->
-Keep reading to find out.
 
 ### Goals
 By the end of this tutorial, you’ll know:
@@ -28,14 +27,11 @@ By the end of this tutorial, you’ll know:
 - How to add event listeners on the livestream to listen to various state changes.
 
 ### Prerequisites
-This article will not cover tutorial aspects of how React/React Native works. If you don't know how to work with it, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
+The fundamentals of React and React Native will not be covered in this tutorial. If you don't know the fundamentals, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
-Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but don’t worry. The first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
+Agora is used to build applications that require real-time engagement like:
 
-Using Agora, we can develop a variety of applications that need real-time engagement.
-
-Some examples include:
 - Audio/Video calls
 
 - Interactive Livestreaming (Audio/ Video)
@@ -44,7 +40,7 @@ Some examples include:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
-In this article, we will focus on building a Livestreaming App using Agora.
+Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
 
 [Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
@@ -71,7 +67,7 @@ Fill in the details and create an account or you can signup with Google, GitHub,
 
 Click on New Project.
 
-You'll see this model. Fill out the Project Name and set the Authentication Mechanism to Testing, for now.
+You'll see this form. Fill out the Project Name and set the Authentication Mechanism to Testing, for now.
 
 ![Agora New Project Dashboard](/engineering-education/react-native-agora-livestreaming-app/agora_new_project.png)
 
