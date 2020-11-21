@@ -23,19 +23,19 @@ In this tutorial, I will teach you how to build a documentation webs
 - Create your website.
 - Install and set up the Docsy theme.
 - Add a content section to your website.
-- Add a documentation page to your website
+- Add a documentation page to your website.
 - Preview your website.
 - Build your website.
 - Conclusion.
 
 ### Prerequisites
-This guide assumes that you have:
+This guide assumes that you have th following installed:
 - Go installed on your local machine - visit [ednsquare.com](https://ednsquare.com/story/how-to-install-golang-on-windows-linux-mac------T3VRkO) for instructions on how to install Go on macOS, Windows, and Linux.
 - [Homebrew](https://brew.sh/) (macOS and Linux) - visit [brew.sh](https://brew.sh/) for instructions on how to install homebrew on macOS and Linux.
 - [Chocolatey](https://chocolatey.org/) (Windows) - visit [chocolatey.org](https://chocolatey.org/) for instructions on how to install chocolatey on Windows.
-- [npm](https://www.npmjs.com/) : Download [Nodejs](https://nodejs.org/en/download/) to install npm on your local machine.
+- [npm](https://www.npmjs.com/): Download [Nodejs](https://nodejs.org/en/download/) to install npm on your local machine.
  
-### Step 1- Install Hugo
+### Step 1 - Install Hugo
 The Docsy theme uses the Hugo-extended version of Hugo. Install the Hugo-extended version on macOS and Linux with Homebrew.
 
 ```bash
@@ -48,6 +48,7 @@ The Docsy theme uses the Hugo-extended version of Hugo. Install the Hugo-extende
  $ hugo version
  Hugo Static Site Generator v0.64.1/extended darwin/amd64 BuildDate: unknown
  ```
+
 Install the Hugo-extended version on Windows with Chocolatey.
 
  ```bash
@@ -60,6 +61,7 @@ Install the Hugo-extended version on Windows with Chocolatey.
  $ hugo version
  Hugo Static Site Generator v0.78.1/extended windows/amd64 BuildDate: unknown
  ```
+
 ### Step 2 - Create your website
 Create a new Hugo website with the `hugo new site` command.
 
@@ -68,13 +70,11 @@ $ hugo new site documentation-website
 
 Congratulations! Your new Hugo site is created in /Users/sheriff/hugo-project.
 
-Just a few more steps and you're ready to go:
+Just a few more steps and you are ready to go:
 
 1. Download a theme into the same-named folder.
-   Choose a theme from https://themes.gohugo.io/ or
-   create your own with the "hugo new theme <THEMENAME>" command.
-2. Perhaps you want to add some content. You can add single files
-   with "hugo new <SECTIONNAME>/<FILENAME>.<FORMAT>".
+   Choose a theme from https://themes.gohugo.io/ or create your own with the "hugo new theme <THEMENAME>" command.
+2. Perhaps you want to add some content. You can add single files with "hugo new <SECTIONNAME>/<FILENAME>.<FORMAT>".
 3. Start the built-in live server via "hugo server".
 
 Visit https://gohugo.io/ for quickstart guide and full documentation.
@@ -100,29 +100,35 @@ The following files are:
 - `data`: Directory for storing configuration files.
 - `layouts`: Directory for storing .html template files.
 - `static`: Directory for storing all static contents.
-- `themes`: Directory for storing your theme.
+- `themes`: Directory for storing your themes.
 
 ### Step 3 - Install the Docsy theme 
 The Docsy theme is a Hugo theme that is built specifically for creating medium to large technical documentation websites. The theme comes preloaded with basic documentation features like the search bar, the menu, etc.
 
-To install the Docsy theme:
+To install the Docsy theme, we can follow these steps:
 
 1. cd to your project's directory.
+
 ```bash
 cd documentation-website
 ```
-2. Install postCSS and autoprefixer .
+
+2. Install postCSS and autoprefixer.
  - On macOS and Linux.
+
 ```bash
 sudo npm install -D --save autoprefixer
 sudo npm install -D --save postcss-cli
 ```
  - On Windows.
+
 ```bash
 npm install -D --save autoprefixer
 npm install -D --save postcss-cli
 ```
+
 3. Install the Docsy theme by adding it into your project as a git submodule.
+
 ```bash
 git init
 git submodule add https://github.com/google/docsy.git themes/docsy
@@ -140,7 +146,7 @@ content      <-- Content folder
          |---- New Documentation    <-- Nested subfolder(subsection found in the documentation section).
 ```
          
-To add a custom section to your website, 
+To add a custom section to your website, we can do the following:
 
 1. cd to the `content` folder.
 
@@ -180,7 +186,7 @@ Docsy ships with layout for 3 type of content,
 - `blog` for blog content.
 - `community` for your community-oriented content.
 
-To add a documentation page to our documentation section,
+To add a documentation page to our documentation section:
 
 1. Create and add the markdown or HTML file into the documentation folder.
 
@@ -188,7 +194,7 @@ To add a documentation page to our documentation section,
 touch index.md
 ```
 
-or for Windows
+or for Windows.
 
 ```bash
 notepad index.md
@@ -222,6 +228,7 @@ Start your web server with the following command:
 ```bash
 hugo server command
 ```
+
 The web server will be hosted at http://localhost:1313, and will automatically reload when you make any changes in your website's files.
 
 ![Documentation-website-preview](/engineering-education/documentation-website-hugo/Hero.png)
@@ -232,6 +239,9 @@ Build your website with the `hugo` command. The command will generate all your w
 You can deploy your website on different hosting platforms like [AWS](https://aws.amazon.com/), [Github pages](https://pages.github.com/), [Netlify](https://www.netlify.com/), etc. with the generated static files.
 
 ### Conclusion
-Documentation is an essential part of any software development project and can determine the success or failure of your project.By following this tutorial, have your Hugo documentation website easily set up with all your static files generated. 
+Documentation is an essential part of any software development project and can determine the success or failure of your project.By following this tutorial, you can have your Hugo documentation website set up easily with all your static files generated. 
 
 There are tons of other configuration options you can edit to improve the look and feel of your website. Visit [gohugo.io](https://gohugo.io/documentation/) and [Docsy.dev](https://www.docsy.dev/docs/) to check out these options.
+
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
