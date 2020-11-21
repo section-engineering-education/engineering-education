@@ -41,13 +41,11 @@ Agora provides SDKs to build apps that require real-time engagement like:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
-Agora supports upto 1 million users in a live broadcast channel. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
+Agora supports upto 1 million users in a live broadcast channel. They also recommend to limit the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
 
 Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
 
 If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
-
-[Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
 ### Overview
 We will be going through these steps in this article:
@@ -90,9 +88,9 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 ### Clone the starter code
 To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
 
-In the starter code, the Navigation is set up with the Home screen and a dummy Live Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
+In the starter code, the Navigation is set up using a Stack Navigator with the Home screen and a dummy Live Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started). You can learn more about the Stack Navigator [here](https://reactnavigation.org/docs/stack-navigator/)
 
-The Home Screen has 2 buttons, Start and Join. The Join button has a text input associated with it to provide the channel ID to join the stream.
+The Home Screen has 2 buttons, Start and Join. The Join button has a text input associated with it to provide the channel ID to join the stream. When the text input is empty, the join button will be disabled.
 
 This is the Home Screen you'll see when you open the app.
 
@@ -144,7 +142,9 @@ For a new livestream, we'll generate a new channel ID. To join a livestream, we'
 
 We need to pass the channel ID from the Home Screen to the Live Screen. We can pass it as a route prop to the Live Screen.
 
-Let's install the UUID package to generate a UUID.
+You can learn more about route props [here](https://reactnavigation.org/docs/route-prop/).
+
+Let's install the UUID package to generate a channel ID.
 
 ```bash
 npm install uuid
@@ -160,6 +160,12 @@ Let's install the react-native-get-random-values package to fix the issue.
 npm install react-native-get-random-values
 ```
 
+After installing the packages, for iOS, go into your `ios/` directory, and run:
+
+```bash
+pod install
+```
+
 In `screens/Home.js`, import both of those packages.
 
 > We must import the `react-native-get-random-values` before the `uuid` import to avoid the error.
@@ -173,8 +179,10 @@ In the `createLive` function, we'll generate a new UUID and pass it as a route p
 
 In the `joinLive` function, we'll pass the text input's value for the Channel ID.
 
+
 ```javascript
 const createLive = () => navigation.navigate("Live", { type: "create", channel: uuid() });
+
 const joinLive = () => navigation.navigate("Live", { type: "join", channel: joinChannel });
 ```
 
@@ -182,20 +190,24 @@ Notice that we are also passing a route prop called `type` along with the channe
 
 When you press these buttons, it should be the same as before. But, we can access the `channel` route prop in the Live Screen.
 
-### Setting up the live screen
-To use Agora, we need to install `react-native-agora` first.
+You can learn more about the `useNavigation` hook [here](https://reactnavigation.org/docs/use-navigation/).
 
-Let's install it using the snippets below.
+### Setting up the live screen
+To use Agora, we need to install `react-native-agora`.
+
+Let's install it using the commands below.
 
 ```bash
 npm install react-native-agora
 ```
 
-For iOS, Run
+After installing the package, for iOS, go into your `ios/` directory, and run:
 
 ```bash
 pod install
 ```
+
+[Documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html)
 
 #### Creating the Agora engine instance
 Let's open the `screens/Live.js`.
@@ -208,21 +220,21 @@ import RtcEngine from "react-native-agora";
 
 RtcEngine has a function called `create` on it, that will create an Agora engine. We need to call that function when the component mounts. It returns an engine instance that has various functions on it that we will use later.
 
-> Do not forget to destroy this instance on component unmount.
-
 We can't create a normal variable in the function's scope and assign the engine's instance to it. This is because we will lose the instance on a component re-render. So, we need to create a ref using useRef() and assign the engine instance to it.
 
 So let's import `useEffect` and `useRef` from `React`.
+
+To learn more about the `useRef` and the `useEffect` hooks, refer [here](https://reactjs.org/docs/hooks-reference.html).
 
 ```JavaScript
 import React, { useEffect, useRef } from "react";
 ```
 
-`RtcEngine.create('Your App ID Here')` takes one argument, that is the App ID that we copied from the Agora Project Management Console.
+`RtcEngine.create('Your App ID Here')` takes one argument, that is the App ID that we copied from the Agora Project Management Console. 
 
-It's an async function, and we need to assign the returned object to the ref created using useRef().
+It's an async function, and we when we call it, it'll return a RTC engine instance. We'll assign the engine instance to a `ref` created using with `useRef`.
 
-You can't pass an async function to an useEffect. So, let's create an async function called `init()` and then call it in the `useEffect()`.
+You can't pass an async function to an useEffect. So, let's create an async function called `init` and then call it in the `useEffect`.
 
 ```JavaScript
 export default function Live(props) {
@@ -240,7 +252,7 @@ export default function Live(props) {
 }
 ```
 
-We need to destroy the Agora engine instance when the component unmounts. If you forget to do this, the App may still be transmitting and receiving video and audio in the background.
+> We need to destroy the Agora engine instance when the component unmounts. If you forget to do this, the App may still be transmitting and receiving video and audio in the background.
 
 ```JavaScript
 useEffect(() => {
@@ -254,7 +266,11 @@ useEffect(() => {
 #### Enable video transmission
 Next, we need to enable video in the engine to send and receive Video. The Agora engine instance has a method called `enableVideo` on it. But before we call that method, we need to get permissions from Android to access the camera and microphone.
 
-Let's write a function to get these permissions.
+> This step is only for `android`, not for `iOS`.
+
+Let's write a function to get these permissions. We can use the `PermissionsAndroid` component provided by React Native to get these permissions.
+
+To learn more about `PermissionsAndroid`, refer [here](https://reactnative.dev/docs/permissionsandroid).
 
 ```JavaScript
 import { PermissionsAndroid } from "react-native";
@@ -279,9 +295,7 @@ async function requestCameraAndAudioPermission() {
 }
 ```
 
-Now, we need to call this in our `useEffect()` before `init()`.
-
-This step is only for `android`, not for `iOS`.
+Now, we need to call this in our `useEffect` before `init`.
 
 ```JavaScript
 import { Platform } from 'react-native';
@@ -325,7 +339,7 @@ We can identify this by the `type` route prop that we pass when navigating to th
 
 Let's import the enum `ClientRole` provided by `react-native-agora`. To Learn more about `ClientRole`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/enums/clientrole.html).
 
-Remember, we don't need to set the ClientRole if the user is the audience. It's the default value.
+Remember, we don't need to set the Client Role if the user is the audience. It's the default value.
 
 ```JavaScript
 import { ClientRole } from "react-native-agora";
@@ -343,7 +357,7 @@ const init = async () => {
 #### Joining the Agora channel
 Now that we have set all the config required for the Livestream, we need to join the channel. We need to join the Livestream only after all these configurations have been set up on the engine.
 
-Since `init()` is an async function, we can add a `.then()` to it and join the channel inside it.
+Since `init` is an async function, we can add a `.then()` to it and join the channel inside it.
 
 To join the channel, the Agora engine instance has a `joinChannel` function on it. It takes 4 arguments, *Authentication Token, Channel ID, Optional Info, and Optional UID*. To learn more about `joinChannel`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/classes/rtcengine.html#joinchannel).
 
@@ -384,7 +398,7 @@ const init = async () => {
 
 Now, when we navigate to the Live screen page, we will see the `console.log` message from the `JoinChannelSuccess` callback.
 
-This means, we have joined the livestream but we can't see it yet. Because we didn't write it yet. :grimacing:
+This means, we have joined the livestream. But we can't see it yet because we didn't write it yet. :grimacing:
 
 #### Displaying the feed
 The next step is to display the Remote Feed of the Host to the Audience and the Local Feed to the Broadcaster.
@@ -493,24 +507,21 @@ Let's add a Share button to share the channel ID with others. We need to import 
 import { Share } from "react-native";
 ```
 
-Let's add a button in the Live screen page to share the channel when the user presses it.
+Let's add a button in the Live screen page to share the channel when the user presses it. The Share component has a method `share` on it, which accepts two arguments, `content` and `options`. We'll pass the channel ID in content like this:
 
-Function to call when we press the share button:
+```
+{ message: props.route.params.channel }
+```
+
+You can learn more about the `Share` component [here](https://reactnative.dev/docs/share).
+
+Let's write the function to call when we press the share button.
 
 ```JavaScript
 export default function Live(props) {
   const onShare = async () => {
     try {
-      const result = await Share.share({ message: props.route.params.channel });
-      if (result.action === Share.sharedAction) {
-        if (result.activityType) {
-          // shared with activity type of result.activityType
-        } else {
-          // shared
-        }
-      } else if (result.action === Share.dismissedAction) {
-        // dismissed
-      }
+      await Share.share({ message: props.route.params.channel });
     } catch (error) {
       console.log(error.message);
     }
@@ -537,7 +548,7 @@ The Share button:
 </>
 ```
 
-Button Styles
+Button Styles:
 
 ```javascript
 buttonContainer: {
@@ -561,6 +572,8 @@ buttonText: {
 
 #### Switch camera
 Let's add another button in the Live screen to switch the camera when the user presses it.
+
+The AgoraEngine has a method called `switchCamera` on it to toggle between front camera and back camera.
 
 Function to Switch camera:
 
