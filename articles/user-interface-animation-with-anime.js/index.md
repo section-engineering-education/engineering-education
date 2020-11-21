@@ -6,7 +6,7 @@ Anime.js is one of the most preferred javascript animation libraries. It is free
 
 ### Prerequisites
 
-This tutorial is suitable for web developers ranging from beginner to expert level. Nevertheless, you may need to have basic knowledge of HTML, CSS, and JavaScript. For free HTML, CSS, and JavaScript tutorials, I recommend [w3schools.com](w3schools.com).
+This tutorial is suitable for web developers ranging from beginner to expert level. Nevertheless, you may need to have basic knowledge of HTML, CSS, and JavaScript. For free HTML, CSS, and JavaScript tutorials, I recommend [w3schools.com](https://w3schools.com).
 
 ### Setting up Anime.js
 
