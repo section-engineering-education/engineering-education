@@ -1,4 +1,4 @@
-In this tutorial, we will build a Video Conference app with React Native and [Agora](https://www.agora.io/en/about-us/).
+In this tutorial, we'll build a Video Conference app with React Native and [Agora](https://www.agora.io/en/about-us/).
 
 ### Goals
 
@@ -59,9 +59,9 @@ Fill in the details and create an account or you can signup with Google, Github,
 
 Click on New Project.
 
-You'll see this modal. Fill out the Project Name and set the Authentication Mechanism to Testing.
+You'll see this form. Fill out the Project Name and set the Authentication Mechanism to Testing.
 
-![Agora New Project Dashboard](agora_new_project.png)
+![Agora New Project Form](agora_new_project.png)
 
 Once you hit on submit, it'll create a new project and you should see it on the Project Management Console.
 
@@ -73,7 +73,9 @@ Now, click on the closed eye icon near the App ID to reveal it and copy the App 
 
 > **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs need native modules that are not supported by Expo.
 
-You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the React Native CLI environment.
+You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the environment.
+
+Make sure you're follwing the React Native CLI Quickstart and not the Expo CLI Quickstart.
 
 ### Clone the starter code
 
@@ -173,7 +175,7 @@ const joinConference = () => navigation.navigate("Conference", { channel: joinCh
 
 When you press these buttons, it should be the same as before. But, we can access the `channel` route prop in the Conference Screen.
 
-You can learn more about the `useNavigation` hook [here](https://reactnavigation.org/docs/use-navigation/).
+You can learn more about the `useNavigation` hook which is present in the starter code [here](https://reactnavigation.org/docs/use-navigation/).
 
 ### Setting up the video conference screen
 
@@ -200,13 +202,9 @@ In `screens/Conference.js`, let's import the Agora UI Kit.
 import AgoraUIKit from "agora-rn-uikit";
 ```
 
-It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID to the UI kit. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora Token Authentication [here](https://docs.agora.io/en/Agora%20Platform/token?platform=Android).
+It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora Token Authentication [here](https://docs.agora.io/en/Agora%20Platform/token?platform=Android).
 
-You can get the channel ID from the route prop.
-
-```JavaScript
-props.route.params.channel
-```
+You can access the route prop like `props.route.params.propname`. In our case, it'll be `props.route.params.channel`.
 
 ```JavaScript
 export default function Conference(props) {
@@ -250,7 +248,7 @@ const callbacks = {
 return <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />;
 ```
 
-Here is the list of custom callbacks that you can pass.
+Here is the list of callbacks that you can pass for each button.
 
 - EndCall
 - FullScreen
@@ -315,7 +313,11 @@ import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 return (
   <>
-    <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} styleProps={styleProps} />
+    <AgoraUIKit 
+      rtcProps={rtcProps} 
+      callbacks={callbacks} 
+      styleProps={styleProps} 
+    />
     <TouchableOpacity style={styles.shareButton}>
       <Text style={styles.shareButtonText}>Share</Text>
     </TouchableOpacity>
@@ -351,6 +353,8 @@ Now, Let's import the `Share` component from React Native. The Share component h
 ```
 
 You can learn more about the `Share` component [here](https://reactnative.dev/docs/share).
+
+Let's write the function to share the channel ID.
 
 ```JavaScript
 import { Share } from "react-native";
