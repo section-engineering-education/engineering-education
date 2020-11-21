@@ -230,6 +230,8 @@ You'll see 5 buttons on the conference screen. They are toggle audio, toggle vid
 
 When someone joins the stream, you'll see two more buttons. These buttons will let you mute remote audio and video streams.
 
+![Buttons](remote_buttons.jpg)
+
 Let's pass a callback function to navigate back to the home page when we press the End button.
 
 To navigate back, we need to import the `useNavigation` hook from `@react-navigation/native`.
@@ -261,7 +263,7 @@ Here is the list of callbacks that you can pass for each button.
 
 #### Styling
 
-You can pass styles as a prop to the component. You can style the container, the local buttons, and the remote buttons. Let's style our buttons to match the blue buttons on the home screen with a black icon.
+You can pass styles as a prop to the component. You can style the container, the local buttons, and the remote buttons. Let's style our buttons to match the blue buttons on the home screen.
 
 ```JavaScript
 const localButtonStyle = {
@@ -270,7 +272,6 @@ const localButtonStyle = {
 };
 
 const styleProps = {
-  theme: "#000",
   localBtnStyles: {
     muteLocalAudio: localButtonStyle,
     muteLocalVideo: localButtonStyle,
@@ -313,10 +314,10 @@ import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 return (
   <>
-    <AgoraUIKit 
-      rtcProps={rtcProps} 
-      callbacks={callbacks} 
-      styleProps={styleProps} 
+    <AgoraUIKit
+      rtcProps={rtcProps}
+      callbacks={callbacks}
+      styleProps={styleProps}
     />
     <TouchableOpacity style={styles.shareButton}>
       <Text style={styles.shareButtonText}>Share</Text>
