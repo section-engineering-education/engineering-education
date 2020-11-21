@@ -63,6 +63,7 @@ In the next section, we will implement the above. Follow the comments in the cod
 #### Shapes Animation
 
 In this example, we will create a triangular shape inside a `div` identified by `#triangle1`. You require basic CSS knowledge to achieve this.
+
 **Javascript code:**
 
 ```javascript
@@ -100,6 +101,7 @@ The parameters are `duration`, `endDelay`, and `easing`. The rotation happens in
 The animation parameters used in the example above are `direction` and `loop`. The target rotates in the `normal` direction, and the `autoplay` is set to `true`.
 
 **Output:**
+
 ![](shape-animation.gif)
 
 ```html
@@ -167,6 +169,7 @@ A pendulum makes a natural motion that slows down at both peaks and is faster in
 **Explanation**
 In the above example, we were able to animate a pendulum using a few lines of Anime.js code. The pendulum rotates between `60` and `-60` for a duration of 4000 milliseconds (4 seconds). We are able to implement the natural motion by using `easing: 'easeInOutSine'`. We keep the pendulum moving repeatedly in both directions by setting the direction to `alternate` and `loop: true`.
 **Output**
+
 ![](pendulum-animation.gif)
 
 **Complete Source Code**
@@ -244,6 +247,7 @@ anime({
 ```
 
 **Output**
+
 ![](svg-path-animation.gif)
 
 **Explanation**
@@ -322,6 +326,7 @@ In the first example, we moved an object from point A to Point B. We will use ke
 ```
 
 **Output**
+
 ![](keyframes-animation.gif)
 
 **Complete Source Code**
@@ -393,7 +398,9 @@ anime({
 ```
 
 **Output**
+
 ![](text-path-animation.gif)
+
 **Full Source Code**
 
 ```html
