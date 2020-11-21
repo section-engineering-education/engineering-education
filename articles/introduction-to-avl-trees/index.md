@@ -4,7 +4,7 @@ Binary search trees (BSTs) are one of the most efficient data structures with th
 
 ### Pre Requisites
 
-To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](https://www.section.io/engineering-education/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
+To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](/engineering-education/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
 
 ### Table Of Contents
 1. [Introduction](#introduction)
@@ -294,6 +294,7 @@ Since the tree is 'automatically' balanced after every insertion, the complexity
 ### Deletion from AVL Trees in C++
 
 Deletion follows a very similar algorithm compared to insertion. However, one must keep in mind that different nodes can be deleted i.e. nodes with one child, nodes with two children and nodes with no children. These cases have to be taken into account while balancing the tree.
+
     1. Perform regular BST deletion.
     2. Get the balance factor of the current node 
         Balance Factor = Height of left subtree - Height of right subtree
