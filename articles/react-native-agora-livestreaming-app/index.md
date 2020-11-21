@@ -88,7 +88,7 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 ### Clone the starter code
 To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
 
-In the starter code, the Navigation is set up using a Stack Navigator with the Home screen and a dummy Live Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started). You can learn more about the Stack Navigator [here](https://reactnavigation.org/docs/stack-navigator/)
+In the starter code, the Navigation is set up using a [Stack Navigator](https://reactnavigation.org/docs/stack-navigator/) with the Home screen and a dummy Live Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
 
 The Home Screen has 2 buttons, Start and Join. The Join button has a text input associated with it to provide the channel ID to join the stream. When the text input is empty, the join button will be disabled.
 
@@ -501,7 +501,7 @@ const styles = StyleSheet.create({
 
 ### Extra features
 #### Share the channel ID
-Let's add a Share button to share the channel ID with others. We need to import the `Share` component from `react-native`. To learn more about the `Share` component, refer [here](https://reactnative.dev/docs/share).
+Let's add a Share button to share the channel ID with others. We need to import the `Share` component from `react-native`.
 
 ```JavaScript
 import { Share } from "react-native";
