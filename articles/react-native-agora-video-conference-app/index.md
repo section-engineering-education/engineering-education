@@ -1,6 +1,7 @@
 In this tutorial, we will build a Video Conference app with React Native and [Agora](https://www.agora.io/en/about-us/).
 
 ### Goals
+
 By the end of the tutorial, you’ll know:
 
 - How to create/join a video conference using Agora.
@@ -10,9 +11,11 @@ By the end of the tutorial, you’ll know:
 - How to share a room code for others to join the video conference.
 
 ### Prerequisites
+
 The fundamentals of React and React Native will not be covered in this tutorial. If you don't know the fundamentals, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
+
 Founded in 2014, Agora.io is a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
 Agora provides SDKs to build apps that require real-time engagement like:
 
@@ -33,6 +36,7 @@ If you'd like to learn more about Agora, visit their [website](https://www.agora
 Here is the [documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html).
 
 ### Overview
+
 We'll be going through these steps in this article,
 
 1. Creating an Agora account
@@ -46,6 +50,7 @@ We'll be going through these steps in this article,
 > If you want to take a look at the final code, check out the [Github Repo](https://github.com/zolomohan/rn-agora-video-conference-app). I've made a commit for every step in this tutorial.
 
 ### Creating an Agora account
+
 Head to Agora and create an account. You can reach the signup page from [here](https://sso.agora.io/en/v2/signup).
 
 Fill in the details and create an account or you can signup with Google, Github, or Cocos. Once you've signed up, you'll see the dashboard.
@@ -74,9 +79,9 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 To focus more on the Video conference, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
 
-In the starter code, the Navigation is set up with the Home screen and a dummy Conference Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
+In the starter code, the Navigation is set up using a [Stack Navigator](https://reactnavigation.org/docs/stack-navigator/) with the Home screen and a dummy Video Conference Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
 
-The Home Screen has 2 buttons, Start and Join. The Join button has a text input associated with it to provide the channel ID to join the conference.
+The Home Screen has 2 buttons, Start and Join. The Join button has a text input associated with it to provide the channel ID to join the stream. When the text input is empty, the join button will be disabled.
 
 This is the Home Screen you'll see when you open the app.
 
@@ -129,13 +134,15 @@ When we create or join a conference, we need to give a channel ID to Agora.
 
 For a new video conference, we'll generate a new channel ID. To join a conference, we'll use the channel ID from the text input. We need to pass the channel ID from the Home Screen to the Conference Screen.
 
+You can learn more about route props [here](https://reactnavigation.org/docs/route-prop/).
+
 Let's install the `uuid` package to generate a new channel ID.
 
 ```bash
 npm install uuid
 ```
 
-In React Native, you'll run into an error with the message `crypto.getRandomValues() is not supported` when you try to use `uuid`. 
+In React Native, you'll run into an error with the message `crypto.getRandomValues() is not supported` when you try to use `uuid`.
 
 To fix this, you'll need to install `react-native-get-random-values`.
 
@@ -160,12 +167,16 @@ You can learn more about route props [here](https://reactnavigation.org/docs/rou
 
 ```JavaScript
 const createConference = () => navigation.navigate("Conference", { channel: uuid() });
+
 const joinConference = () => navigation.navigate("Conference", { channel: joinChannel });
 ```
 
 When you press these buttons, it should be the same as before. But, we can access the `channel` route prop in the Conference Screen.
 
+You can learn more about the `useNavigation` hook [here](https://reactnavigation.org/docs/use-navigation/).
+
 ### Setting up the video conference screen
+
 To use Agora, we need to install `react-native-agora`. There is a community managed package called `agora-rn-uikit` to help us build the UI.
 Here is the [Github Repository](https://github.com/AgoraIO-Community/ReactNative-UIKit) of `agora-rn-uikit`.
 
@@ -182,6 +193,7 @@ pod install
 ```
 
 #### Agora UI Kit
+
 In `screens/Conference.js`, let's import the Agora UI Kit.
 
 ```JavaScript
@@ -213,6 +225,7 @@ The app will prompt the user for camera and microphone permissions when you laun
 When no one else is at the conference except you, you'll see the local feed. When others start to join the conference, you can view their remote feed.
 
 #### Callbacks
+
 You'll see 5 buttons on the conference screen. They are toggle audio, toggle video, end conference, toggle camera, and toggle full screen. We can pass callback functions for each button.
 
 ![Buttons](buttons.jpeg)
@@ -249,6 +262,7 @@ Here is the list of custom callbacks that you can pass.
 - LocalMuteVideo
 
 #### Styling
+
 You can pass styles as a prop to the component. You can style the container, the local buttons, and the remote buttons. Let's style our buttons to match the blue buttons on the home screen with a black icon.
 
 ```JavaScript
@@ -293,6 +307,7 @@ Here is the list of styles that you can pass.
   - fullScreen
 
 #### Share channel ID
+
 Let's add a share button on the top right corner to share the channel ID.
 
 ```JavaScript
@@ -329,7 +344,13 @@ const styles = StyleSheet.create({
 });
 ```
 
-Now, Let's import the `Share` component from React Native
+Now, Let's import the `Share` component from React Native. The Share component has a method `share` on it, which accepts two arguments, `content` and `options`. We'll pass the channel ID in content like this:
+
+```
+{ message: props.route.params.channel }
+```
+
+You can learn more about the `Share` component [here](https://reactnative.dev/docs/share).
 
 ```JavaScript
 import { Share } from "react-native";
@@ -356,6 +377,7 @@ Pass the `onShare` function to the Share button's `onPress` prop.
 ```
 
 ### Let's Recap
+
 1. We set up our Agora Account
 
 2. We created a project using the Project Management Dashboard and acquired the App ID
