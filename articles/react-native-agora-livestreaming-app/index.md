@@ -170,7 +170,7 @@ In `screens/Home.js`, import both of those packages.
 
 > We must import the `react-native-get-random-values` before the `uuid` import to avoid the error.
 
-```javascript
+```JavaScript
 import "react-native-get-random-values";
 import { v4 as uuid } from "uuid";
 ```
@@ -180,7 +180,7 @@ In the `createLive` function, we'll generate a new UUID and pass it as a route p
 In the `joinLive` function, we'll pass the text input's value for the Channel ID.
 
 
-```javascript
+```JavaScript
 const createLive = () => navigation.navigate("Live", { type: "create", channel: uuid() });
 
 const joinLive = () => navigation.navigate("Live", { type: "join", channel: joinChannel });
@@ -381,7 +381,7 @@ useEffect(() => {
 }, []);
 ```
 
-To ensure we have joined the channel, we can add a `JoinChannelSuccess` listener to the engine. Let's add that in the `init()` function.
+To ensure we have joined the channel, we can add a `JoinChannelSuccess` listener to the engine. Let's add that in the `init` function.
 
 ```JavaScript
 const init = async () => {
@@ -443,7 +443,7 @@ return (
         <Text style={styles.loadingText}>Joining Stream, Please Wait</Text>
       </>
     ) : (
-      // Live Feed
+      {/ *Live Feed */}
     )}
   </View>
 );
@@ -533,7 +533,7 @@ export default function Live(props) {
 
 The Share button:
 
-```javascript
+```JavaScript
 <>
   {isBroadcaster ? (
     <RtcLocalView.SurfaceView style={styles.fullscreen} channelId={props.route.params.channel} />
@@ -550,7 +550,7 @@ The Share button:
 
 Button Styles:
 
-```javascript
+```JavaScript
 buttonContainer: {
   flexDirection: 'row',
   position: 'absolute',
@@ -583,7 +583,7 @@ const onSwitchCamera = () => AgoraEngine.current.switchCamera();
 
 Switch Camera button:
 
-```javascript
+```JavaScript
 <View style={styles.buttonContainer}>
   <TouchableOpacity style={styles.button} onPress={onShare}>
     <Text style={styles.buttonText}>Share</Text>
@@ -599,21 +599,25 @@ Agora provides a listener called `RemoteVideoStateChanged`. This listens for any
 
 When a video state changes, it provides the `UID` and the `Video State` of that user. To learn more about the `RemoteVideoStateChanged` listener, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/interfaces/rtcengineevents.html#remotevideostatechanged)
 
-Let's add a state for the broadcaster's video state and set the initial value to Decoding. `react-native-agora` provides an enum for all the remote video states.
+Let's add a state for the broadcaster's video state and set the initial value to Decoding. The `react-native-agora` package provides an enum for all the remote video states.
 
 ```JavaScript
 import { VideoRemoteState } from "react-native-agora";
 ```
 
+You can learn more about the `VideoRemoteState` enum [here](https://docs.agora.io/en/Video/API%20Reference/react_native/enums/videoremotestate.html).
+
+The broadcaster's video state:
+
 ```JavaScript
 const [broadcasterVideoState, setBroadcasterVideoState] = useState(VideoRemoteState.Decoding);
 ```
 
-Let's add the listener in `init()` to listen to the Remote Video State Changes.
+Let's add the listener in `init` to listen to the Remote Video State Changes.
 
 We only need to listen for the host's video state, and we know the Host's UID (is `1`).
 
-```javascript
+```JavaScript
 AgoraEngine.current.addListener("RemoteVideoStateChanged", (uid, state) => {
   if (uid === 1) setBroadcasterVideoState(state);
 });
@@ -621,7 +625,7 @@ AgoraEngine.current.addListener("RemoteVideoStateChanged", (uid, state) => {
 
 Let's add a function to provide a text message for each state.
 
-```javascript
+```JavaScript
 const videoStateMessage = (state) => {
   switch (state) {
     case VideoRemoteState.Stopped:
