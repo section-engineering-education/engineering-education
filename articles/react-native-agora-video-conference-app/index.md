@@ -1,8 +1,7 @@
-Want to build a cool and simple Video Conference app using React Native? In this tutorial, we'll do so using [Agora](https://www.agora.io/en/about-us/), which is a video, voice, and live interactive streaming platform. It includes embedded voice and video chat, real-time recording, interactive live streaming, and real-time messaging.
-Keep reading to find out.
+In this tutorial, we will build a Video Conference app with React Native and [Agora](https://www.agora.io/en/about-us/).
 
 ### Goals
-By the end of the tutorial, you’ll understand
+By the end of the tutorial, you’ll know:
 
 - How to create/join a video conference using Agora.
 
@@ -11,14 +10,11 @@ By the end of the tutorial, you’ll understand
 - How to share a room code for others to join the video conference.
 
 ### Prerequisites
-This article will not cover tutorial aspects of how React/React Native. If you don't know how to work with it, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
+The fundamentals of React and React Native will not be covered in this tutorial. If you don't know the fundamentals, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
-Agora provides the building blocks for a wide range of real-time engagement possibilities. Agora is a paid service, but don’t worry. The first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
-
-Using Agora, we can develop a variety of applications that need real-time engagement. 
-
-Some examples include:
+Founded in 2014, Agora.io is a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
+Agora provides SDKs to build apps that require real-time engagement like:
 
 - Audio/Video calls
 
@@ -28,7 +24,11 @@ Some examples include:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
-In this article, we'll focus on how to build a Video Conference App using the services provided by Agora.
+Agora supports upto 1 million users in a channel. They also recommend to limit the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
+
+Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
+
+If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
 
 Here is the [documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html).
 
