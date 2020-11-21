@@ -20,6 +20,7 @@ This guide assumes that you have:
 - Go installed on your local machine - visit [ednsquare.com](https://ednsquare.com/story/how-to-install-golang-on-windows-linux-mac------T3VRkO) for instructions on how to install Go on macOS, Windows, and Linux.
 - [Homebrew](https://brew.sh/) (macOS and Linux) - visit [brew.sh](https://brew.sh/) for instructions on how to install homebrew on macOS and Linux.
 - [Chocolatey](https://chocolatey.org/) (Windows) - visit [chocolatey.org](https://chocolatey.org/) for instructions on how to install chocolatey on Windows.
+- [npm](https://www.npmjs.com/) : Download [Nodejs](https://nodejs.org/en/download/) to install npm on your local machine.
  
 ### Step 1- Install Hugo
 The Docsy theme uses the Hugo-extended version of Hugo. Install the Hugo-extended version on macOS and Linux with Homebrew.
@@ -100,11 +101,17 @@ To install the Docsy theme:
 cd documentation-website
 ```
 2. Install postCSS and autoprefixer .
+On macOS and Linux.
 ```bash
 sudo npm install -D --save autoprefixer
 sudo npm install -D --save postcss-cli
 ```
-3. Install the Docsy theme by adding it into your as a git submodule.
+On Windows.
+```bash
+npm install -D --save autoprefixer
+npm install -D --save postcss-cli
+```
+3. Install the Docsy theme by adding it into your project as a git submodule.
 ```bash
 git init
 git submodule add https://github.com/google/docsy.git themes/docsy
@@ -134,7 +141,6 @@ cd content
 mkdir documentation
 ```
 3. Add the new section to your `menu` for easier navigation by editing your config.toml file.
-
 ```config.toml
 [menu]
 
@@ -162,6 +168,10 @@ To add a documentation page to our documentation section,
 1. Create and add the markdown or HTML file into the documentation folder.
 ```bash
 touch index.md
+```
+or for Windows
+```bash
+notepad index.md
 ```
 2. Add the following yaml frontmatter to configure the page's information and layout type.
 ```
