@@ -151,6 +151,8 @@ mkdir documentation
     url = "/documentation/"
     weight = 20
 ```
+!!! Note: Most editing apps will encode your cofig.toml file incorrectly. Make sure to open your config.toml file with notepad++ on windows `start notepad++ .\config.toml`, or use a code editor like [Visual Studio Code](https://code.visualstudio.com/download).
+
 Visit [gohugo.io](https://gohugo.io/content-management/sections/) to learn more about creating sections.
 
 ### Step 5 - Add a documentation page to your website
