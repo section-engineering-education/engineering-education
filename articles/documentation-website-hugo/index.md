@@ -101,12 +101,12 @@ To install the Docsy theme:
 cd documentation-website
 ```
 2. Install postCSS and autoprefixer .
-On macOS and Linux.
+ - On macOS and Linux.
 ```bash
 sudo npm install -D --save autoprefixer
 sudo npm install -D --save postcss-cli
 ```
-On Windows.
+ - On Windows.
 ```bash
 npm install -D --save autoprefixer
 npm install -D --save postcss-cli
