@@ -2,7 +2,7 @@
 title: Ahmad Mardeni
 type: engineering-education/author
 ---
-Ahmad is a passionate software developer, an avid researcher, and a business man. He began his journey to be a cybersecurity expert two years ago, also he participated in a lot of hackathons and programming competitions. As he says "Knowledge is power" so that he wants to deliver good content by being a technical writer.
+Ahmad is a passionate software developer, an avid researcher, and a business man. He began his journey to be a cybersecurity expert two years ago. Also he participated in a lot of hackathons and programming competitions. As he says "Knowledge is power" so he wants to deliver good content by being a technical writer.
 
 LinkedIn: https://www.linkedin.com/in/ahmad-mardeni-369b3019b/
 Facebook: https://www.facebook.com/profile.php?id=100004114573038
