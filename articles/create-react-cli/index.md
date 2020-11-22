@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/create-react-cli/
 title: Building CLI Applications using React.js
-description: In this tutorial we will create a simple CLI application using React.js framework and the INK library. 
+description: In this tutorial we will create a simple CLI application using React.js framework and the INK library.
 author: daniel-katungi
 date: 2020-11-22T00:00:00-13:00
 topics: []
@@ -47,7 +47,7 @@ Let's get started by building a simple Hello World application. To do this, we n
 
 In your terminal type:
 
-```terminal
+```bash
 
 mkdir section-example && cd section-example
 
@@ -84,7 +84,9 @@ To achieve this we need this npm package called [world-countries-capitals](https
 
 Let's start by getting the user input. To achieve this, we need text input. Lucky for us, ink provides a package for this, just run:
 
-`npm install ink-text-input`
+```bash
+npm install ink-text-input
+```
 
 In our `ui.js`,  we import and use the text input in the terminal. We will also use the `useState` React hook to store our country value and handle changes to the country name. In simple terms, think of `useState hooks` as a way to work with variables in React. To learn more about React hooks, I recommend reading the [React documentation](https://reactjs.org/docs/hooks-overview.html).
 
@@ -120,7 +122,7 @@ We will need to search for the country in real-time and display the results in a
 We first install and import the package.
 
 In the terminal write:
-```terminal
+```bash
     npm i world-countries-capitals
 ```
 
@@ -226,9 +228,10 @@ Let's add a banner to our application, just because we can. We'll add it within 
 </Box>
 ```
 
-We are done. Our full code now looks like this:
+We are done.
 
-```javascript
+Our full code now looks like this:
+```JavaScript
 "use strict";
 const React = require("react");
 const { Text, Box } = require("ink");
@@ -297,7 +300,7 @@ To test our new creation, we run `node cli` in our terminal.
 
 It should return this:
 
-![final-result](/engineering-education/create-react-cli/section-final.png “Title”)
+![final-result](/engineering-education/create-react-cli/section-final.png)
 
 You can find a gif of the application in action  at this link [here](https://terminalizer.com/view/ad4a80d54380).
 
