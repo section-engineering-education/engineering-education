@@ -309,7 +309,16 @@ error: Nov-12-2020 10:08:05: 	500 - Internal Server Error - y is not defined - /
 error: Nov-12-2020 10:08:10: 	400 || Not Found - /hello - GET - ::1
 ```
 
-Like we said earlier, Winston is well suited to configure different log destinations. In our small app, let's create another transport. This time, I want to save the logs to a database, [MongoDB](https://www.mongodb.com/try/download/community) to be concise. On the `app.js` file, replicate the following code block. Make sure you install [Winston MongoDB](https://www.npmjs.com/package/winston-mongodb), i.e., `npm install winston-mongodb`. If you are new to MongoDB, here's a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
+Like we said earlier, Winston is well suited to configure different log destinations. In our small app, let's create another transport. This time, I want to save the logs to a database, [MongoDB](https://www.mongodb.com/try/download/community) to be concise. On the `logger.js` file, replicate the following code block. Make sure you install [Winston MongoDB](https://www.npmjs.com/package/winston-mongodb), i.e., `npm install winston-mongodb`.
+
+#### How to Use MongoDB
+- Download and Install the MongoDB [Community Server](https://www.mongodb.com/try/download/community).
+- Navigate to your environment variables (for Windows users), under User variables, select Path → Edit → New, add `C:\Program Files\MongoDB\Server\4.4\bin` (`4.4` may vary depending on the MongoDB version installed on your computer).
+- Open a command prompt and type `mongo`. This checks if you have successfully installed MongoDB. `MongoDB shell version`  will be printed on your terminal, meaning your installation was successful.
+- Enter `use logs` to create database `logs`.
+- Enter `db.createCollection("server_logs")` to crete a collection.
+
+If you are new to MongoDB, here's a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
 
 Replicate the following code blocks into the `logger.js` file.
 
@@ -355,7 +364,9 @@ Run `node app.js` to start the server and access the following URLs to trigger s
 - http://localhost:3000/calc
 - http://localhost:3000/hello
 
-Logs will be recorded into the `server.log` file, and any `error` logs will be recorded in a MongoDB database.
+Logs will be recorded into the `server.log` file. Open  `server.log` to view the recorded logs.
+
+Any `error` logs will be recorded in a MongoDB database. Enter `db.server_logs.find()` to view the logs.
 
 **Note:** MongoDB transport takes a JSON format. To save these logs in a mongo database, we need to convert them to a JSON format. It is the only format to insert a record into a mongo database collection.
 
@@ -495,7 +506,7 @@ Run the app and hit http://localhost:3000/ on your browser. Morgan will record t
 Like the Winston logger, create a logger instance and log your message.
 
 ```js
-const Bunyan = require("Bunyan");
+const bunyan = require("bunyan");
 const log = bunyan.createLogger({ name: "myapp" });
 log.info("hi");
 log.warn({ lang: "fr" }, "au revoir");
@@ -548,10 +559,9 @@ Output:
 ```
 
 ### Final Notes
-Logging is the best approach to adopt for your production application. But before logging consider:
-
-#### When to do Logging
-When an application is at the production level, you can adapt many logging approaches depending on your app usage. Logging can combine one or more logging instances. Some of the standard logging instances include:
+Logging is the best approach to adopt for your production application but before logging consider:
+#### When To Log
+When an application is up and running, there are many different logging approaches you could use, depending on your app's functionality. Logging can combine one or more logging instances. Some of the standard logging instances include:
 
 - Log when there is an error or the app encounters unexpected exceptions.
 - Log when a system event takes place.
