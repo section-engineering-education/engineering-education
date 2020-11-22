@@ -345,3 +345,6 @@ To summarize:
 - [Tutorial: Privacy-preserving in deep learning](https://towardsdatascience.com/preserving-data-privacy-in-deep-learning-part-1-a04894f78029)
 - [Federated optimization](https://arxiv.org/pdf/1610.02527.pdf)
 - [Learn federated learning through Comics](https://federated.withgoogle.com)
+
+---
+Peer Review Contributions by [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
