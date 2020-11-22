@@ -291,7 +291,7 @@ Run `node app.js` to start the server.
 
 From the above example:
 
-- Every time the server starts, Winston will record a log to the `example.log` file.
+- Every time the server starts, Winston will record a log to the `server.log` file.
 
 When the server is running, accessing the following pages will create a log every time the link is invoked.
 
@@ -299,7 +299,7 @@ When the server is running, accessing the following pages will create a log ever
 - http://localhost:3000/calc - we are trying to add variable `y` to variable `x`. In this case, variable `y` is not defined. This will generate an error, and we want Winston to capture such instances for us.
 - http://localhost:3000/hello - the server we have created has no such URL. We want Winston to inform us when a link that points to our IP address is accessed but can't be found; that is a `404` error.
 
-Go to the `example.log` file in the logs folder to view the log.
+Go to the `server.log` file in the logs folder to view the log.
 Output:
 
 ```js
@@ -355,7 +355,7 @@ Run `node app.js` to start the server and access the following URLs to trigger s
 - http://localhost:3000/calc
 - http://localhost:3000/hello
 
-Logs will be recorded into the `example.log` file, and any `error` logs will be recorded in a MongoDB database.
+Logs will be recorded into the `server.log` file, and any `error` logs will be recorded in a MongoDB database.
 
 **Note:** MongoDB transport takes a JSON format. To save these logs in a mongo database, we need to convert them to a JSON format. It is the only format to insert a record into a mongo database collection.
 
