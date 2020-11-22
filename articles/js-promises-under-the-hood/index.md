@@ -56,8 +56,17 @@ Assuming your returned tweet is a string, `"Hello World"`, it is assigned to the
 
 Line 8:  You execute `display()` passing the constant `dataFromAPI` as an argument. You then move into the body of `display()`, push `display()` onto the Call Stack and create a Local Execution Context.
 
-Line 2: You log the value of `dataFromAPI`. You then pop `display()` from the Call Stack, garbage collect the Local Execution Context and move back to the Global Execution Context.
+Line 2: You log the value of `dataFromAPI`. You then pop `display()` from the Call Stack, garbage collect the Local Execution Context, and move back to the Global Execution Context.
 
 Line 9: You log the string `"Me Later!"`
 
 From the breakdown above, you can spot a clear problem. Such a scenario in a real-world application would render our application unusable. Luckily, there are solutions to this problem. In the next step, we introduce Web Browser APIs and walk through how they solve this problem for us.
+
+### Step 2 - Web Browser APIs.
+```JavaScript
+function printHello(){
+  console.log(“Hello”);
+  }
+setTimeout(printHello,1000);
+console.log(“Me first!”);
+```
