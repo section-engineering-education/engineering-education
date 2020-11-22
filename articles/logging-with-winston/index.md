@@ -111,7 +111,7 @@ To do this, the logger configuration object needs to point to a file (file trans
 
 ```js
 transports.File({
-    filename: './logs/example.log'
+    filename: 'logs/example.log'
 })
 ```
 
@@ -124,7 +124,7 @@ The transport configuration will be:
 const logConfiguration = {
     'transports': [
         new winston.transports.File({
-            filename: './logs/example.log'
+            filename: 'logs/example.log'
         })
     ]
 };
@@ -147,7 +147,7 @@ const logConfiguration = {
         new winston.transports.File({
             level: 'error',
             // Create the log directory if it does not exist
-            filename: './logs/example.log'
+            filename: 'logs/example.log'
         })
     ]
 };
@@ -231,12 +231,11 @@ logger.js:
 
 ```js
 const { createLogger, format, transports } = require('winston');
-require('winston-mongodb');
 
 module.exports = createLogger({
 transports:
     new transports.File({
-    filename: './logs/example.log',
+    filename: 'logs/server.log',
     format:format.combine(
         format.timestamp({format: 'MMM-DD-YYYY HH:mm:ss'}),
         format.align(),
@@ -325,7 +324,7 @@ transports:[
 
 // File transport
     new transports.File({
-    filename: './logs/example.log',
+    filename: 'logs/server.log',
     format:format.combine(
         format.timestamp({format: 'MMM-DD-YYYY HH:mm:ss'}),
         format.align(),
