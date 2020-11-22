@@ -316,7 +316,7 @@ Like we said earlier, Winston is well suited to configure different log destinat
 - Navigate to your environment variables (for Windows users), under User variables, select Path → Edit → New, add `C:\Program Files\MongoDB\Server\4.4\bin` (`4.4` may vary depending on the MongoDB version installed on your computer).
 - Open a command prompt and type `mongo`. This checks if you have successfully installed MongoDB. `MongoDB shell version`  will be printed on your terminal, meaning your installation was successful.
 - Enter `use logs` to create database `logs`.
-- Enter `db.createCollection("server_logs")` to crete a collection.
+- Enter `db.createCollection("server_logs")` to create a collection.
 
 If you are new to MongoDB, here's a [guide](/engineering-education/working-with-databases-part1/) that will help you get started.
 
