@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/android-viewpager2/
+title: 
+description: In this article we will go through the basic
+author: peter-kayere
+date: 2020-11-22T00:00:00-14:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/android-viewpager2/hero.jpg
+    alt: job scheduling Node.js image example
+---
+Slide transition between screens is common in android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while.
+<!--more-->
 ### Introduction
-Slide transition between screens is common in android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while. This view allows the developer to display views or fragments to the user in a swipe-able format. This feature is common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. A `TabLayout` indicates the current page and allows a user to switch through pages.
+This view allows the developer to display views or fragments to the user in a swipe-able format. This feature is common in content display applications and in app setups. `ViewPager2` is often integrated with `TabLayout`. A `TabLayout` indicates the current page and allows a user to switch through pages.
 
 `ViewPager2` is a newer version of the `ViewPager` library. Its significant difference from the old library is the use of a `RecyclerView` adapter. With this, views are now recycled. This improves user experience by making smooth transitions and minimizes memory usage.
 
