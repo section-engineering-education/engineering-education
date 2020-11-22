@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/secured-deeplearning-in-remote-devices/
 title: Secured Deep Learning in Remote Devices
-description: Introduction to Secured Deep Learning and tutorial on how to build your privacy preserving Deep learning model to be deployed in Remote devices
+description: Introduction to Secured Deep Learning and tutorial on how to build your privacy preserving deep learning model to be deployed in Remote devices
 author: srishilesh-p-s
 date: 2020-11-20T00:00:00-00:00
 topics: []
@@ -14,9 +14,9 @@ images:
     alt: Secured Deep Learning in Remote Devices
 ---
 
-In my [previous article](/engineering-education/understanding-differential-privacy), we understood the basics of differential privacy. In this article, we will cover how differential privacy can be applied as Federated learning that can be deployed in remote devices.
+In my [previous article](/engineering-education/understanding-differential-privacy), we understood the basics of differential privacy. In this article, we will cover how differential privacy can be applied as Federated Learning that can be deployed in remote devices.
 <!--more-->
-We will be building a simple deep learning model to demonstrate the working of Federated learning. As a prerequisite, you must have an intermediate level of understanding in Python and Deep Learning with the PyTorch library.
+We will be building a simple deep learning model to demonstrate the working of federated learning. As a prerequisite, you must have an intermediate level of understanding in Python and Deep Learning with the [PyTorch](https://pytorch.org) library.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -31,17 +31,17 @@ We will be building a simple deep learning model to demonstrate the working of F
 #### What is Federated Learning?
 In Deep Learning, the problem of privacy arises with the centralization of the data used in training and development. The nature of data is to remain private, accessible only to the end-users, not even the organization that is providing the service. But nowadays, we are unsure if our privacy is at stake.
 
-Generally, in any end-user device using Deep learning, the data is sent to the cloud, the predictions/classifications are made, and the results are returned to the end-users. Here, as end-users, we send our data to the cloud. There is no guarantee that our data is secure. That's when the idea of Federated learning (Distributed deep learning), came into the picture, to preserve privacy.
+Generally, in any end-user device using deep learning, the data is sent to the cloud, the predictions/classifications are made, and the results are returned to the end-users. Here, as end-users, we send our data to the cloud. There is no guarantee that our data is secure. That's when the idea of federated learning (Distributed deep learning), came into the picture, to preserve privacy.
 
-By making the deep learning model distributed, we can solve the issue of privacy by running several independent deep learning models locally on each of the end-devices, and updating only their aggregated weights to the central deep learning model. This is Federated Learning, in a nutshell.
+By making the deep learning model distributed, we can solve the issue of privacy by running several independent deep learning models locally on each of the end-devices, and updating only their aggregated weights to the central deep learning model. This is federated learning, in a nutshell.
 
-For example, the Google Assistant uses Federated learning, where the deep learning model in our keyboard tries to predict the next word, by sending only the final aggregated model to the cloud. So, without uploading the details of any user to the cloud, we get the aggregated results based on local model training.
+For example, the Google Assistant uses federated learning, where the deep learning model in our keyboard tries to predict the next word, by sending only the final aggregated model to the cloud. So, without uploading the details of any user to the cloud, we get the aggregated results based on local model training.
 
-![Workflow of Federated learning](/engineering-education/secured-deeplearning-in-remote-devices/Introduction_to_federated_learning.png)
+![Workflow of federated learning](/engineering-education/secured-deeplearning-in-remote-devices/Introduction_to_federated_learning.png)
 [Image source](https://towardsdatascience.com/introduction-to-federated-learning-and-privacy-preservation-75644686b559)
 
 #### How does Federated Learning work?
-Let us see an abstract overview of the working of Federated learning
+Let us see an abstract overview of the working of federated learning
 
 1) The Server in the cloud gets initialized with a model/pre-trained model.
 2) The Server sends a copy of the latest aggregated model, to the request end-users' device.
@@ -51,7 +51,7 @@ Let us see an abstract overview of the working of Federated learning
 
 This concept of Distributed deep learning has become very popular since 2017, after a post by [Google AI](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html), similarly, [Apple](https://www.technologyreview.com/2019/12/11/131629/apple-ai-personalizes-siri-federated-learning/) has been using it for Siri.
 
-Having understood a little of Federated learning, let's learn more about it, by implementing them.
+Having understood a little of federated learning, let's learn more about it, by implementing them.
 
 #### Dataset description
 In this tutorial, we are going to use the [Boston housing dataset](https://www.kaggle.com/vikrishnan/boston-house-prices) to predict the price of housing in Boston. The prediction is done based on various kinds of housing properties.
@@ -155,7 +155,7 @@ Virtual workers are entities present on our local machine. They are used to mode
   compute_nodes = [end_device1, end_device2] # List of workers
 ```
 
-#### Distributing the Training Dataset to each Worker
+#### Distributing the Training Dataset to Each Worker
 In this snippet, we separate the data and target values into two different lists. Then, we map the corresponding data and target values in the `remote_dataset` list for the respective iterated index.
 
 ```python
@@ -169,7 +169,7 @@ In this snippet, we separate the data and target values into two different lists
 
 Here, `batch_idx % len(compute_nodes)` helps us index the `remote_dataset`. For our example, the index is `0` and `1`.
 
-#### Initializing Neural networks for each remote device
+#### Initializing Neural networks for Each Remote Device
 For each device, we instantiate both the devices with separate Neural network models. We also initialize optimizers for each of the neural networks.
 
 Optimizers are algorithms or methods used to change the attributes of your neural network such as weights and learning rate to reduce the losses. Here, we use the Stochastic Gradient Descent (SGD) optimizer. In short, SGD helps us reduce the loss faster, which happens batch-wise. More about SGD can be read [here](/engineering-education/sgd-classifier/).
@@ -215,7 +215,7 @@ tensor([-0.0982], requires_grad=True)
 
 We see that `device1` has a bias of `-0.0842`, and `device2` has a bias of `-0.0982`.
 
-#### Function for Model training
+#### Function for Model Training
 On initializing all the models, we write functions to train the model and update the weights and losses. In `update()`, we predict the values based on input, calculate the losses, and backpropagate to improve the model. Here, for loss, we are using Mean Squared Error (MSE) loss function. In MSE, we find the mean squared difference between the predicted and expected value.
 
 In `train()`, we iterate through each row, and update the weights and losses for each data, and return the aggregated values.
@@ -330,18 +330,18 @@ As there are no high-level APIs to remotely deploy the model onto the end device
 
 The ever-rising need for privacy and decentralization of data is suited by the emergence of systems utilizing Differential Privacy. With the cost of computation being a factor that has greatly been nerfed due to the advent of distributed systems and deployment of Machine Learning and Deep Learning Systems remotely on the cloud, even devices that have low computation power can deploy sufficiently powerful models at the client’s end. Thus, Federated Learning systems are highly effective in providing a highly secure and reliable abstraction of data, by capitalizing on the factors mentioned previously.
 
-In conclusion, you have understood the need for Federated learning. We looked at an overview of how deep learning models preserve the privacy of data in deep learing for end-devices. You can checkout the whole code [here](https://gist.github.com/srishilesh/673469c0814cc54902c708b755d567a4). It is highly recommended to read and implement to get a better understanding of Federated learning.
+In conclusion, you have understood the need for federated learning. We looked at an overview of how deep learning models preserve the privacy of data in deep learing for end-devices. You can checkout the whole code [here](https://gist.github.com/srishilesh/673469c0814cc54902c708b755d567a4). It is highly recommended to read and implement to get a better understanding of federated learning.
 
 To summarize:
-- We understood what Federated learning is.
+- We understood what federated learning is.
 - We got an insight into its working.
-- We implemented Federated learning for Remote devices.
+- We implemented federated learning for Remote devices.
 
 ### Further Reading
 - [Course on Udacity](https://www.udacity.com/course/secure-and-private-ai--ud185)
 - [Blog by Nvidia](https://blogs.nvidia.com/blog/2019/10/13/what-is-federated-learning/)
 - [Blog by Google AI](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html)
-- [Tutorial: What is Federated learning?](https://medium.com/@ODSC/what-is-federated-learning-99c7fc9bc4f5)
-- [Tutorial: Privacy-preserving in Deep learning](https://towardsdatascience.com/preserving-data-privacy-in-deep-learning-part-1-a04894f78029)
+- [Tutorial: What is federated learning?](https://medium.com/@ODSC/what-is-federated-learning-99c7fc9bc4f5)
+- [Tutorial: Privacy-preserving in deep learning](https://towardsdatascience.com/preserving-data-privacy-in-deep-learning-part-1-a04894f78029)
 - [Federated optimization](https://arxiv.org/pdf/1610.02527.pdf)
-- [Learn Federated learning through Comics](https://federated.withgoogle.com)
+- [Learn federated learning through Comics](https://federated.withgoogle.com)
