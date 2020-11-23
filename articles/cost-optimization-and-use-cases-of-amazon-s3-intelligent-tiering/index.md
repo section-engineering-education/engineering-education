@@ -80,7 +80,7 @@ S3 Intelligent-Tiering has six different storage cost options that allow users t
 They will have to select the right storage class on Amazon S3 to optimize costs. But the choice is subject to retrieval and access urgency requirements. They can implement further optimization using S3 Lifecycle policies.
 
 ### Conclusion
-Amazon S3 Intelligent Tiering optimizes storage costs, it allows companies to focus attention and resources on designing databases and applications.
+Amazon S3 Intelligent Tiering optimizes storage costs and it allows companies to focus attention and resources on designing databases and their applications.
 
 This storage class ensures that organizations reduce their storage costs by ensuring data availability as they pay little for frequently accessed data.
 
