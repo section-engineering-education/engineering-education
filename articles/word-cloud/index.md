@@ -20,9 +20,9 @@ This will create a virtual environment with Python 3.6. We will be installing th
 Activate the virtual environment using the command, `conda activate wordcloud.` After activating the virtual environment, we will be installing these packages locally in the virtual environment. To use these packages, we must always activate the virtual environment named `wordcloud` before proceeding. You may also use the name of your choice for the virtual environment. Just replace `wordcloud` with the name of your choice.
 
 To install the packages, we will use the following commands:
-1. **matplotlib**: pip3 install matplotlib
-2. **nltk**: pip3 install nltk
-3. **wordcloud**: pip3 install wordcloud
+1. **matplotlib**: `pip3 install matplotlib`
+2. **nltk**: `pip3 install nltk`
+3. **wordcloud**: `pip3 install wordcloud`
    
 *Note: If you get an error during installation, install the 1.19.3 version of numpy. Use the command* `pip3 install numpy==1.19.3` *For more information on the error, refer to this [discussion](https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html).*
 
