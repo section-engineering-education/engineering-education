@@ -182,8 +182,12 @@ The edits made by **SETX** will affect only the next command window. It will not
 
 Now let's learn how to detect if the variable name is not found. We have to use %ERRORLEVEL% which will be equal to 1 if the command didn't find the variable name. For example:
 ```batch
-If %ERRORLEVEL% ==1 (echo error) 
+@echo off
+set ahmad
+If %ERRORLEVEL% == 1 (echo error)
 ```
+The output will be ```error```.
+
 ### Assoc
 You can manage files extensions, display an existing association, or delete one by the ```assoc``` command. 
 
