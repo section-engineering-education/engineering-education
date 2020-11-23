@@ -28,7 +28,7 @@ We'll be building a simple deep learning model to demonstrate the working of fed
 
 ### Introduction
 #### What is Federated Learning?
-In Deep Learning, a problem of privacy arises with the centralization of the data used in training and development. The nature of data is to remain private, accessible only to the end-users, not even the organization that is providing the service. But in today's day and age, we are unsure if our privacy is ever at stake.
+In Deep Learning, a problem of privacy arises with the centralization of the data used in training and development. The nature of data is for it to remain private, accessible only to the end-users, and not even to the organization that is providing the service. But in today's day and age, we are unsure if our privacy is ever at stake.
 
 Any end-user device using deep learning sends the data to the cloud, the predictions/classifications are made, and it returns the results to the end-users. There is no guarantee that our data is secure. That’s where federated learning (Distributed deep learning), comes into the picture, to preserve privacy of the data.
 
