@@ -6,16 +6,17 @@ url: /engineering-education/house-price-prediction/
 title: House Price Prediction using Machine Learning
 description: In this tutorial we will be going over how to implement an entire machine learning pipeline and we will understand how we implement machine learning algorithms.
 author: lalithnarayan-c
-date: 2020-11-20T00:00:00-10:00
-topics: [Languages]
+date: 2020-11-23T00:00:00-14:00
+topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/house-price-prediction/hero.jpg
     alt: house price prediction example image
 ---
-Welcome to a tutorial on predicting house prices using the [Random Forest Regression](https://en.wikipedia.org/wiki/Random_forest) algorithm. We will cover the data pipeline creation. This pipeline creation process involves loading the dataset, cleaning and pre-processing the dataset, fitting a model to the dataset, and testing the model’s performance using various evaluation metrics.
+Welcome to a tutorial on predicting house prices using the [Random Forest Regression](https://en.wikipedia.org/wiki/Random_forest) algorithm. We will cover the data pipeline creation.
 <!--more-->
+This pipeline creation process involves loading the dataset, cleaning and pre-processing the dataset, fitting a model to the dataset, and testing the model’s performance using various evaluation metrics.
 ### Prerequisites
 There are a few theoretical and programming pre-requisites required for this article. They are helpful but not required to understand the article.
 
@@ -23,8 +24,7 @@ There are a few theoretical and programming pre-requisites required for this art
 2. [Introduction to Supervised Learning Algorithms using Scikit-Learn](/engineering-education/supervised-learning-algorithms/)
 
 ### Installation
-
-We will install the packages required for this tutorial in a virtual environment. You may bypass the process of creating the virtual environment. We will use `conda` to create a virtual environment. For more installation information, refer to the [Anaconda Package Manager website](https://www.anaconda.com/products/individual). 
+We'll install the packages required for this tutorial in a virtual environment. You may bypass the process of creating the virtual environment. We will use `conda` to create a virtual environment. For more installation information, refer to the [Anaconda Package Manager website](https://www.anaconda.com/products/individual).
 
 Create a new virtual environment by typing the command in the terminal. Perform this after installing anaconda package manager using the instructions mentioned on Anaconda's website.
 
@@ -32,23 +32,27 @@ Create a new virtual environment by typing the command in the terminal. Perform 
 conda create -n house-price python=3.6
 ```
 
-This will create a virtual environment with Python 3.6. We will be installing the following packages:
+This will create a virtual environment with Python 3.6. We'll be installing the following packages:
 1. *[numpy](https://www.google.com/search?q=numpy&oq=numpy&aqs=chrome..69i57.1503j0j1&sourceid=chrome&ie=UTF-8)*
 2. *[scikit-learn](https://scikit-learn.org/)*
 3. *[pandas](https://pandas.pydata.org/)*
 
-Activate the virtual environment using the command, `conda activate house-price.` After activating the virtual environment, we will be installing these packages locally in the virtual environment. To use these packages, we must always activate the virtual environment named `house-price` before proceeding. You may also use the name of your choice for the virtual environment. Just replace `house-price` with the name of your choice.
+Activate the virtual environment using the command, `conda activate house-price.` After activating the virtual environment, we'll be installing these packages locally in the virtual environment.
 
-To install the packages, we will use the following commands:
+To use these packages, we must always activate the virtual environment named `house-price` before proceeding. You may also use the name of your choice for the virtual environment. Just replace `house-price` with the name of your choice.
+
+To install the packages, we'll use the following commands:
 1. **scikit-learn**: pip install scikit-learn
 2. **numpy**: pip3 install numpy
 3. **pandas**: pip3 install pandas
 
 ### Introduction
-The problem falls under the category of supervised learning algorithms. The dataset we'll be using is the[ Boston Housing](https://www.kaggle.com/c/boston-housing) Dataset. The dataset comprises 13 input features and one target feature. The input features include features that may or may not impact the price.
+The problem falls under the category of supervised learning algorithms. The dataset we'll be using is the[Boston Housing](https://www.kaggle.com/c/boston-housing) Dataset. The dataset comprises 13 input features and one target feature. The input features include features that may or may not impact the price.
 
 #### Dataset
-The Boston data frame has 506 rows and 14 columns. Each row comprises one data-point and contains details about a plot. Various features affect the pricing of a house. The Boston housing dataset has 14 features, out of which we will use 13 to train the model. The 14th feature is the price, which we'll use as our target variable.
+The Boston data frame has 506 rows and 14 columns. Each row comprises one data-point and contains details about a plot. Various features affect the pricing of a house.
+
+The Boston housing dataset has 14 features, out of which we'll use 13 to train the model. The 14th feature is the price, which we'll use as our target variable.
 
 The table gives the list of features included in the dataset, along with their respective descriptions.
 
@@ -68,32 +72,37 @@ Features | Description
 **lstat** | *lower status of the population (percent).*
 **medv** | *median value of owner-occupied homes in \$1000s.*
 
-
 ### Approach taken
-We'll use the Random Forest regression algorithm to predict the price of the houses. In this article, we'll consider machine learning algorithms as a black box that fits the data. 
+We’ll use the Random Forest regression algorithm to predict the price of the houses. In this article, we’ll consider machine learning algorithms as a black box that fits the data.
 
 This article focuses more on the machine learning pipeline. For more information on the Random Forest algorithm, I suggest looking into this [video](https://www.youtube.com/watch?v=nxFG5xdpDto).
 
-We'll begin by loading the data. Since we are using an inbuilt dataset, we'll be calling the `load_boston` function from the `sklearn.datasets` module. The data is loaded into the `data` variable. Once the data is loaded, we separate the data and target attributes of the `data` variable. We store them in variables `data` and `target`, respectively.
+We’ll begin by loading the data. Since we're using an inbuilt dataset, we’ll be calling the `load_boston` function from the `sklearn.datasets` module. We load the data into the `data` variable.
 
-Once we have the data and target values in 2 different variables, we can divide the data into two parts: the testing data and training data. The theory behind dividing the dataset into two parts is to ensure the model doesn't overfit the training data. Otherwise, the model will perform well on the training data and perform poorly on the test data. 
+Once the data is loaded, we separate the data and target attributes of the `data` variable. We store them in variables `data` and `target`, respectively.
 
-This means that the model has learned the training data so well that it cannot generalize new data points. We should avoid this. 
+Once we have the data and target values in 2 different variables, we can divide the data into two parts: the testing data and training data.
 
-Once we have the dataset split into training and testing sets, we can pre-process the data. Pre-processing involves scaling the values and converting the categorical values into numerical values. 
+The theory behind dividing the dataset into two parts is to ensure the model doesn’t overfit the training data. Otherwise, the model will perform well on the training data and perform poorly on the test data.
 
-For example, there is a variable in the given dataset that indicates whether the Charles river is close to the house or not. This variable takes the values `Near` and `Far.` 
+This means that the model has learned the training data so well that it cannot generalize new data points. This should be avoided.
+
+Once we have the dataset split into training and testing sets, we can pre-process the data. Pre-processing involves scaling the values and converting the categorical values into numerical values.
+
+For example, there is a variable in the given dataset that indicates whether the Charles river is close to the house or not. This variable takes the values `Near` and `Far.`
 
 We need to convert this into a numerical value. To do this, we can use the `LabelEncoder` function available in the pre-processing module of sklearn. This will replace the column with numerical values of 0 and 1, respectively. 0 indicates `Near,` and 1 indicates `Far.`
 
 Once we perform the pre-processing of the dataset, we can fit the data to the model. We begin with instantiating an object of the `RandomForestRegressor` class. This is available in the `sklearn.ensemble` module. We use the `fit` method to fit the data to the model.
 
-Once the model is fit, we evaluate the model’s performance on the test set we got earlier. We use the `predict` method present in the `RandomForestRegressor` class. The `predict` method takes in the test input data and predicts an output. Using the predicted output and the actual output known from the dataset, we compute the test accuracy.
+Once the model is fit, we evaluate the model’s performance on the test set we got earlier. We use the `predict` method present in the `RandomForestRegressor` class.
+
+The `predict` method takes in the test input data and predicts an output. Using the predicted output and the actual output known from the dataset, we compute the test accuracy.
 
 Another useful evaluation metric is the `Mean Squared Error`. The Means Squared Error (MSE) loss estimates how far the prediction is from the mean of the output. Computing the MSE gives us an idea about the performance of the algorithm.
 
 ### Code
-We'll use the dataset stored in a CSV file for a detailed view and easier access. Download the CSV file from this [link](https://drive.google.com/file/d/1clV931HTopTlD7ZWLotFSbsr9SAX50S8/view?usp=sharing). Save the CSV file in the same directory as the python file.
+We’ll use the dataset stored in a CSV file for a detailed view and easier access. Download the CSV file from this [link](https://drive.google.com/file/d/1clV931HTopTlD7ZWLotFSbsr9SAX50S8/view?usp=sharing). Save the CSV file in the same directory as the python file.
 
 ```py
 # load the libraries
