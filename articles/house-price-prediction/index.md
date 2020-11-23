@@ -33,9 +33,9 @@ conda create -n house-price python=3.6
 ```
 
 This will create a virtual environment with Python 3.6. We will be installing the following packages:
-1. *numpy*
-2. *scikit-learn*
-3. *pandas*
+1. *[numpy](https://www.google.com/search?q=numpy&oq=numpy&aqs=chrome..69i57.1503j0j1&sourceid=chrome&ie=UTF-8)*
+2. *[scikit-learn](https://scikit-learn.org/)*
+3. *[pandas](https://pandas.pydata.org/)*
 
 Activate the virtual environment using the command, `conda activate house-price.` After activating the virtual environment, we will be installing these packages locally in the virtual environment. To use these packages, we must always activate the virtual environment named `house-price` before proceeding. You may also use the name of your choice for the virtual environment. Just replace `house-price` with the name of your choice.
 
