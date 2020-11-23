@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/secured-deeplearning-in-remote-devices/
 title: Secured Deep Learning in Remote Devices
-description: Introduction to Secured Deep Learning and tutorial on how to build your privacy preserving deep learning model to be deployed in remote devices.
+description: Introduction to Secured Deep Learning and a tutorial on how to build your privacy preserving deep learning model to be deployed in remote devices.
 author: srishilesh-p-s
 date: 2020-11-23T00:00:00-12:00
 topics: []
