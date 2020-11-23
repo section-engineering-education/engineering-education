@@ -63,12 +63,12 @@ In this tutorial, we are going to use the [Boston housing dataset](https://www.k
 #### Installation
 It's highly recommended to use [Google Colab](https://colab.research.google.com) to get started right away. If you wish to run the below codes in your local system, download [Anaconda](https://www.anaconda.com/download) by referring to the [Anaconda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html).
 
-The libraries to be installed in Conda are
+The libraries to be installed in Anaconda are:
 
-- [x] [PySyft](https://pysyft.readthedocs.io/en/latest/installing.html)
-- [x] [Numpy](https://anaconda.org/anaconda/numpy)
-- [x] [PyTorch](https://anaconda.org/pytorch/pytorch)
-- [x] [Pickle](https://anaconda.org/conda-forge/pickle5)
+- [PySyft](https://pysyft.readthedocs.io/en/latest/installing.html)
+- [Numpy](https://anaconda.org/anaconda/numpy)
+- [PyTorch](https://anaconda.org/pytorch/pytorch)
+- [Pickle](https://anaconda.org/conda-forge/pickle5)
 
 Having installed all the above-mentioned libraries, it's time to get started with the implementation.
 
