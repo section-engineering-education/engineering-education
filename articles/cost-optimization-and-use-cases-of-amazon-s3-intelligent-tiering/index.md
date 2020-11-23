@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/cost-optimization-and-use-cases-of-amazon-s3-intelligent-tiering/
-title: Use Cases of Amazon S3 Intelligent Tiering
+title: Cost Optimization with Amazon S3 Intelligent Tiering
 description: This article will go over what Amazon S3 intelligent tiering is, how it works, and how it can benefits organizations.
 author: eric-kahuha
 date: 2020-11-23T00:00:00-16:00
