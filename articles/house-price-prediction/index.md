@@ -22,8 +22,30 @@ There are a few theoretical and programming pre-requisites required for this art
 1. [Introduction to Pandas](/engineering-education/data-analytics-using-pandas/)
 2. [Introduction to Supervised Learning Algorithms using Scikit-Learn](/engineering-education/supervised-learning-algorithms/)
 
+### Installation
+
+We will install the packages required for this tutorial in a virtual environment. You may bypass the process of creating the virtual environment. We will use `conda` to create a virtual environment. For more installation information, refer to the [Anaconda Package Manager website](https://www.anaconda.com/products/individual). 
+
+Create a new virtual environment by typing the command in the terminal. Perform this after installing anaconda package manager using the instructions mentioned on Anaconda's website.
+
+```bash
+conda create -n house-price python=3.6
+```
+
+This will create a virtual environment with Python 3.6. We will be installing the following packages:
+1. *numpy*
+2. *scikit-learn*
+3. *pandas*
+
+Activate the virtual environment using the command, `conda activate house-price.` After activating the virtual environment, we will be installing these packages locally in the virtual environment. To use these packages, we must always activate the virtual environment named `house-price` before proceeding. You may also use the name of your choice for the virtual environment. Just replace `house-price` with the name of your choice.
+
+To install the packages, we will use the following commands:
+1. **scikit-learn**: pip install scikit-learn
+2. **numpy**: pip3 install numpy
+3. **pandas**: pip3 install pandas
+
 ### Introduction
-The problem falls under the category of supervised learning algorithms. The dataset we'll be using is the Boston Housing Dataset. The dataset comprises 13 input features and one target feature. The input features include features that may or may not impact the price.
+The problem falls under the category of supervised learning algorithms. The dataset we'll be using is the[ Boston Housing](https://www.kaggle.com/c/boston-housing) Dataset. The dataset comprises 13 input features and one target feature. The input features include features that may or may not impact the price.
 
 #### Dataset
 The Boston data frame has 506 rows and 14 columns. Each row comprises one data-point and contains details about a plot. Various features affect the pricing of a house. The Boston housing dataset has 14 features, out of which we will use 13 to train the model. The 14th feature is the price, which we'll use as our target variable.
@@ -52,7 +74,7 @@ We'll use the Random Forest regression algorithm to predict the price of the hou
 
 This article focuses more on the machine learning pipeline. For more information on the Random Forest algorithm, I suggest looking into this [video](https://www.youtube.com/watch?v=nxFG5xdpDto).
 
-We'll begin with loading the data. Since we are using an inbuilt dataset, we'll be calling the `load_boston` function from the `sklearn.datasets` module. The data is loaded into the `data` variable. Once the data is loaded, we separate the data and target attributes of the `data` variable. We store them in variables `data` and `target` respectively.
+We'll begin by loading the data. Since we are using an inbuilt dataset, we'll be calling the `load_boston` function from the `sklearn.datasets` module. The data is loaded into the `data` variable. Once the data is loaded, we separate the data and target attributes of the `data` variable. We store them in variables `data` and `target`, respectively.
 
 Once we have the data and target values in 2 different variables, we can divide the data into two parts: the testing data and training data. The theory behind dividing the dataset into two parts is to ensure the model doesn't overfit the training data. Otherwise, the model will perform well on the training data and perform poorly on the test data. 
 
@@ -62,22 +84,22 @@ Once we have the dataset split into training and testing sets, we can pre-proces
 
 For example, there is a variable in the given dataset that indicates whether the Charles river is close to the house or not. This variable takes the values `Near` and `Far.` 
 
-We need to convert this into a numerical value. To do this, we can use the `LabelEncoder` function available in the pre-processing module of sklearn. This will replace the column with numerical values of 0 and 1, respectively. 0 indicates `Near,` and 1 indicated `Far.`
+We need to convert this into a numerical value. To do this, we can use the `LabelEncoder` function available in the pre-processing module of sklearn. This will replace the column with numerical values of 0 and 1, respectively. 0 indicates `Near,` and 1 indicates `Far.`
 
 Once we perform the pre-processing of the dataset, we can fit the data to the model. We begin with instantiating an object of the `RandomForestRegressor` class. This is available in the `sklearn.ensemble` module. We use the `fit` method to fit the data to the model.
 
 Once the model is fit, we evaluate the model’s performance on the test set we got earlier. We use the `predict` method present in the `RandomForestRegressor` class. The `predict` method takes in the test input data and predicts an output. Using the predicted output and the actual output known from the dataset, we compute the test accuracy.
 
-Another useful evaluation metric is the `Mean Squared Error`. The MSE loss gives an estimate of how far the prediction is from the mean of the output. Computing the MSE gives us an idea about the performance of the algorithm.
+Another useful evaluation metric is the `Mean Squared Error`. The Means Squared Error (MSE) loss estimates how far the prediction is from the mean of the output. Computing the MSE gives us an idea about the performance of the algorithm.
 
 ### Code
-We'll use the dataset that is stored in a CSV file for a detailed view and easier access. Download the CSV file from this [link](https://drive.google.com/file/d/1clV931HTopTlD7ZWLotFSbsr9SAX50S8/view?usp=sharing). Save the CSV file in the same directory as the python file.
+We'll use the dataset stored in a CSV file for a detailed view and easier access. Download the CSV file from this [link](https://drive.google.com/file/d/1clV931HTopTlD7ZWLotFSbsr9SAX50S8/view?usp=sharing). Save the CSV file in the same directory as the python file.
 
 ```py
 # load the libraries
 import sklearn
 from sklearn.metrics import mean_squared_error as MSE
-from sklearn. pre-processing import LabelEncoder
+from sklearn.pre-processing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.datasets import load_boston
@@ -128,13 +150,19 @@ print("Testing Accuracy:",accuracy)
 print("Mean Squared Error",MSE_score.mean())
 ```
 
-The code output should look something like this:
+The code output should look like this:
+```bash
+['CRIM' 'ZN' 'INDUS' 'CHAS' 'NOX' 'RM' 'AGE' 'DIS' 'RAD' 'TAX' 'PTRATIO'
+ 'B' 'LSTAT']
+(354, 13) (354,)
+Training Accuracy: 0.9365453347551779
+Testing Accuracy: 0.799293144193572
+Mean Squared Error 18.157684374999995
+```
 
-![output](/engineering-education/house-price-prediction/output.jpg)
-
-We get an accuracy of about 81% and the MSE loss is around 14.5$.
+We get an accuracy of about 79.9%, and the MSE loss is around 18.15.
 
 ### Conclusion
-We have gone through how to implement the entire machine learning pipeline and we have an intuitive understanding on machine learning algorithms. The larger the dataset gets, the more complex each of the mentioned steps gets. Therefore, using this as a base will help, while you build your knowledge of machine learning pipelines.
+We have gone through how to implement the entire machine learning pipeline, and we have an intuitive understanding of machine learning algorithms. The larger the dataset gets, the more complex each of the mentioned steps gets. Therefore, using this as a base will help while you build your knowledge of machine learning pipelines.
 
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
