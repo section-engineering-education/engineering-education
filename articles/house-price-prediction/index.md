@@ -47,7 +47,7 @@ To install the packages, we'll use the following commands:
 3. **pandas**: pip3 install pandas
 
 ### Introduction
-The problem falls under the category of supervised learning algorithms. The dataset we'll be using is the[Boston Housing](https://www.kaggle.com/c/boston-housing) Dataset. The dataset comprises 13 input features and one target feature. The input features include features that may or may not impact the price.
+The problem falls under the category of supervised learning algorithms. The dataset we'll be using is the [Boston Housing](https://www.kaggle.com/c/boston-housing) Dataset. The dataset comprises 13 input features and one target feature. The input features include features that may or may not impact the price.
 
 #### Dataset
 The Boston data frame has 506 rows and 14 columns. Each row comprises one data-point and contains details about a plot. Various features affect the pricing of a house.
