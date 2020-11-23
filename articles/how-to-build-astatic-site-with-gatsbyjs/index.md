@@ -312,13 +312,13 @@ In summary, we covered the advantages JAMstack and Gatsby.js. You created your f
 
 
 ### Additional Resources
--[Gatsby](https://www.Gatsby.js.com/)
+- [Gatsby](https://www.gatsbyjs.com/)
 
--[Gatsby Doc](https://www.Gatsby.js.com/docs/quick-start/)
+- [Gatsby Doc](https://www.gatsbyjs.com/docs/quick-start/)
 
--[Gatsby Cloud](https://www.Gatsby.js.com/cloud/)
+- [Gatsby Cloud](https://www.gatsbyjs.com/cloud/)
 
--[Gatsby - Full Tutorial for Beginners](https://www.youtube.com/watch?v=mHFAM0CXviE&t=2838s)
+- [Gatsby - Full Tutorial for Beginners](https://www.youtube.com/watch?v=mHFAM0CXviE&t=2838s)
 
 ---
 Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
