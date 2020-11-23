@@ -54,7 +54,7 @@ This article focuses more on the machine learning pipeline. For more information
 
 We'll begin with loading the data. Since we are using an inbuilt dataset, we'll be calling the `load_boston` function from the `sklearn.datasets` module. The data is loaded into the `data` variable. Once the data is loaded, we separate the data and target attributes of the `data` variable. We store them in variables `data` and `target` respectively.
 
-Once we have the data and target values in 2 different variables, we can divide the data into two parts: the testing data and training data. The theory behind dividing the dataset into two parts is to ensure the model doesn't overfit the training data. Otherwise the model will perform well on the training data and perform poorly on the test data. 
+Once we have the data and target values in 2 different variables, we can divide the data into two parts: the testing data and training data. The theory behind dividing the dataset into two parts is to ensure the model doesn't overfit the training data. Otherwise, the model will perform well on the training data and perform poorly on the test data. 
 
 This means that the model has learned the training data so well that it cannot generalize new data points. We should avoid this. 
 
