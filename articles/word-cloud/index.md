@@ -26,7 +26,7 @@ To install the packages, we will use the following commands:
    
 *Note: If you get an error during installation, install the 1.19.3 version of numpy. Use the command* `pip3 install numpy==1.19.3` *For more information on the error, refer to this [discussion](https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html).*
 
-Once installed, check if the packages are installed correctly. Run the following piece of code in your terminal, and you should get a valid output for the version number.
+Once installed, check if the packages are installed correctly. Run the following piece of code in an instance of the python shell (activated by running `python3`) in your terminal, and you should get a valid output for the version number.
 ```py
 >>> import nltk
 >>> print(ntlk.__version__)
