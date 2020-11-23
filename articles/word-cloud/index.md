@@ -2,30 +2,62 @@
 
 Welcome to an exciting article on the word cloud generation. Word clouds are great ways to summarize vast pieces of information visually. They are typically used to depict metadata on websites. The bigger the font size of the keyword, the higher is its significance on the website. In this article, we will code a program to generate custom word clouds.  
 
-### Installing WordCloud Library
+### Installation
 
-This article will be using the `wordcloud` package available at this [link](https://pypi.org/project/wordcloud/). To install the package, we use the following command. The command will ensure the package is installed and ready to use. 
+We will install the packages required for this tutorial in a virtual environment. You may bypass the process of creating the virtual environment. We will use `conda` to create a virtual environment. For more installation information, refer to the [Anaconda Package Manager website](https://www.anaconda.com/products/individual). 
 
-```txt
-pip install wordcloud
+Create a new virtual environment by typing the command in the terminal. Perform this after installing anaconda package manager using the instructions mentioned on Anaconda's website.
+
+```bash
+conda create -n wordcloud python=3.6
 ```
 
-Once installed, check if the package is installed correctly. Run the following piece of code in your terminal, and you should get a valid output for the version number.
+This will create a virtual environment with Python 3.6. We will be installing the following packages:
+1. *matplotlib*
+2. *nltk*
+3. *wordcloud*
+
+Activate the virtual environment using the command, `conda activate wordcloud.` After activating the virtual environment, we will be installing these packages locally in the virtual environment. To use these packages, we must always activate the virtual environment named `wordcloud` before proceeding. You may also use the name of your choice for the virtual environment. Just replace `wordcloud` with the name of your choice.
+
+To install the packages, we will use the following commands:
+1. **matplotlib**: pip3 install matplotlib
+2. **nltk**: pip3 install nltk
+3. **wordcloud**: pip3 install wordcloud
+   
+*Note: If you get an error during installation, install the 1.19.3 version of numpy. Use the command* `pip3 install numpy==1.19.3` *For more information on the error, refer to this [discussion](https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html).*
+
+Once installed, check if the packages are installed correctly. Run the following piece of code in your terminal, and you should get a valid output for the version number.
 ```py
+>>> import nltk
+>>> print(ntlk.__version__)
+>>> import matplotlib
+>>> print(matplotlib.__version__)
 >>> import wordcloud
 >>> print(wordcloud.__version__)
 ```
-If you get valid output, you have successfully installed the package and can proceed with the rest of the article.
+If you get valid output, you have successfully installed the package and can proceed with the rest of the article. I get the following output: 
+
+```py
+>>> import matplotlib
+>>> matplotlib.__version__
+'3.3.3'
+>>> import nltk
+>>> nltk.__version__
+'3.5'
+>>> import wordcloud
+>>> wordcloud.__version__
+'1.8.1'
+```
 
 ### Word Cloud Generation
 
 Let us now look at the code to generate word clouds. The input to the program will be a paragraph copied from any website of your choice. With the paragraph as input, we will pre-process it and send it to the `wordcloud` package. Let's begin.
 
-We will be using the following libraries in the program:
-1. **matplotlib:** A visualization and plotting tool used extensively in Python. 
-2. **nltk.corpus.stopwords:** Natural language toolkit, known as `nltk`, is a library built for performing various Natural Language Processing (NLP) tasks. It is a vast library with tools for pre-processing, data cleaning, data visualization, data modeling, etc. We will use the list of stopwords for English. Stopwords are redundant words that don't add significant meaning to the data.
-3. **nltk.tokenize.word_tokenize:** Tokenization is the process of breaking down the text into smaller units called tokens. The tokens can be words, sub-words, or phrases. We will use the tokenizer available in `nltk`. 
-4. **wordcloud:** It is a library that takes in the list of words and outputs a word cloud image. Developed by [Andrea Mueller](https://amueller.github.io/), it is quite extensible and flexible with respect to the features.
+As mentioned above, we use the following libraries:
+1. **[matplotlib](https://www.section.io/engineering-education/matplotlib-visualization-python/):** A visualization and plotting tool used extensively in Python. 
+2. **[nltk.corpus.stopwords](https://pythonprogramming.net/stop-words-nltk-tutorial/):** Natural language toolkit, known as `nltk,` is a library built for performing various Natural Language Processing (NLP) tasks. It is a vast library with tools for pre-processing, data cleaning, data visualization, data modeling, etc. We will use the list of stopwords for English. Stopwords are redundant words that don't add significant meaning to the data.
+3. **[nltk.tokenize.word_tokenize](https://www.nltk.org/api/nltk.tokenize.html):** Tokenization is the process of breaking down the text into smaller units called tokens. The tokens can be words, sub-words, or phrases. We will use the tokenizer available in `nltk.` 
+4. **[wordcloud](https://pypi.org/project/wordcloud/):** It is a library that takes in the list of words and outputs a word cloud image. Developed by [Andrea Mueller](https://amueller.github.io/), it is quite extensible and flexible with respect to the features.
 
 #### Code
 We define a class called `WordCloudGeneration` and define the following methods in the class:
@@ -67,6 +99,7 @@ class WordCloudGeneration:
         plt.show()
 
 wordcloudgen = WordCloudGeneration()
+# you may uncomment the following line to use custom input
 # data = input("Enter the text here: ")
 data = 'These datasets are used for machine-learning research and have been cited in peer-reviewed academic journals. Datasets are an integral part of the field of machine learning. Major advances in this field can result from advances in learning algorithms (such as deep learning), computer hardware, and, less-intuitively, the availability of high-quality training datasets.[1] High-quality labeled training datasets for supervised and semi-supervised machine learning algorithms are usually difficult and expensive to produce because of the large amount of time needed to label the data. Although they do not need to be labeled, high-quality datasets for unsupervised learning can also be difficult and costly to produce.'
 data = data.split('.')
