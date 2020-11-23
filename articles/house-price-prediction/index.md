@@ -136,3 +136,5 @@ We get an accuracy of about 81% and the MSE loss is around 14.5$.
 
 ### Conclusion
 We have gone through how to implement the entire machine learning pipeline and we have an intuitive understanding on machine learning algorithms. The larger the dataset gets, the more complex each of the mentioned steps gets. Therefore, using this as a base will help, while you build your knowledge of machine learning pipelines.
+
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
