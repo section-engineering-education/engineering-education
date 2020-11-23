@@ -84,4 +84,4 @@ Amazon S3 Intelligent Tiering optimizes storage costs, it allows companies to fo
 
 This storage class ensures that organizations reduce their storage costs by ensuring data availability as they pay little for frequently accessed data.
 
-Both companies new or fresh to cloud computing and those with more of a better understanding with access pattern optimization can leverage this technology for their data storage needs.
+S3 Intelligent Tiering is great because both companies new or fresh to cloud computing and those with more of an understanding of access pattern optimization can leverage this technology for their data storage needs.
