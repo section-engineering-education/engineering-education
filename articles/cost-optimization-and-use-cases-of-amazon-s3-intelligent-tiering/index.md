@@ -16,12 +16,12 @@ images:
 ---
 [Amazon](https://aws.amazon.com/) Web Services (AWS) launched [Amazon S3](https://aws.amazon.com/s3/) in 2006, and since then, the service has undergone continuous improvement. These improvement include additional storage classes to help enable secure object storage at a low cost for organizations of all sizes.
 <!--more-->
-With Amazon S3, organizations develop lifecycle policies for their objects and encrypt [data at rest](https://securityfirstcorp.com/what-is-data-encryption-at-rest/). They can also manage access controls by employing built-in security features, that include bucket policies and control lists.
+With Amazon S3, organizations develop lifecycle policies for their objects and encrypt [data at rest](https://securityfirstcorp.com/what-is-data-encryption-at-rest/). They can also manage access controls by employing built-in security features that include bucket policies and control lists.
 
 ### What is S3 intelligent tiering?
 Amazon S3 is a storage infrastructure by the Amazon Company offered to users to store their objects. Users also rely on Amazon S3 for data archival, data backup, and for analytical data storage. S3 is also used to distribute [static content](https://blog.stackpath.com/static-content/#).
 
-Amazon introduced an additional storage class, the S3 Intelligent Tiering, in 2018. Objects in this S3 Intelligent Tiering class are monitored for access patterns. These patterns act as a guide for the automatic placement of objects in the most economical storage class.
+Amazon introduced an additional storage class, the S3 Intelligent Tiering, in 2018. It monitors objects in this S3 Intelligent Tiering class for access patterns. These patterns act as a guide for the automatic placement of objects in the most economical storage class.
 
  Other Amazon S3 [Storage Classes](https://aws.amazon.com/s3/storage-classes/) are:
 - S3 Standard- acts as a general-purpose storage of frequently accessed (FA) data.
@@ -29,9 +29,9 @@ Amazon introduced an additional storage class, the S3 Intelligent Tiering, in 20
 - Amazon S3 Glacier Deep Archive (S3 Glacier Deep Archive) and Amazon S3 Glacier (S3 Glacier) designed for digital preservation, long-term archive.
 - S3 Outposts storage class used to store S3 data on-premises.
 
-With Amazon S3, users can manage their data throughout its lifecycle. The S3 Lifecycle Policy ensures automatic data transfer to different storage classes without any changes to the application.
+With Amazon S3, users can manage their data throughout its lifecycle. The S3 Lifecycle Policy ensures automatic data transfer to different storage classes with no changes to the application.
 
-The combination of the S3 Lifecycle Policies, S3 Storage Class Analysis, and S3 Storage Classes enables users to save on storage costs without impacting performance or data availability.
+The combination of the S3 Lifecycle Policies, S3 Storage Class Analysis, and S3 Storage Classes enables users to save on storage costs without affecting performance or data availability.
 
 Users of Amazon S3 Intelligent Tiering make their data easily accessible across multiple availability zones.
 
@@ -46,11 +46,11 @@ Companies that experience uncertainty in their data access frequency can leverag
 
 ### Use cases of S3 intelligent tiering
 #### Unpredictable workloads
-Let's take the example of a company engaged in collecting and storing images. People access these images frequently when newly uploaded. However, after some time, access to these images decreases.
+Let’s take the example of a company engaged in collecting and storing images. People access these images frequently when newly uploaded. However, after some time, access to these images decreases.
 
-It's not unusual for months to go by without anyone accessing these images, and this is where intelligent tiering comes in. After 30 days of no access, intelligent tiering moves the images to the IA tier. This would help the company saves money on costs.
+It’s not unusual for months to go by with no one accessing these images, and this is where intelligent tiering comes in. After 30 days of no access, intelligent tiering moves the images to the IA tier. This would help the company save money on costs.
 
-If the unpredictable happens in a particular geographical area, such as a hurricane, people's interest in those images could rise again. Intelligent tiering will then monitor hurricane images since it's what users are interested in at the time.
+If the unpredictable happens in a particular geographical area, such as a hurricane, people’s interest in those images could rise again. Intelligent tiering will then monitor hurricane images since it’s what users are interested in at the time.
 
 It will then automatically move those images related to hurricanes back to the frequent access tier from the infrequent access tier to meet users demands.
 
@@ -73,15 +73,15 @@ The popularity of S3 Intelligent-Tiering is greatly due to its ability to help o
 
 Objects accessed in the IA tier move back to the FA tier automatically. Objects can move or be retrieved between tiers with no additional data retrieval fees or tiering fees.
 
-S3 Intelligent-Tiering has a simple pricing model, and can assist in predicting the applicable fees easily, unlike the previous offerings from Amazon Web Services.
+S3 Intelligent-Tiering has a simple pricing model, and can help predict the applicable fees easily, unlike the previous offerings from Amazon Web Services.
 
 S3 Intelligent-Tiering has six different storage cost options that allow users to address diverse storage requirements with multiple data sets. Yet to lower storage costs, they will need to plan effectively and continually review data access patterns.
 
 They will have to select the right storage class on Amazon S3 to optimize costs. But the choice is subject to retrieval and access urgency requirements. They can implement further optimization using S3 Lifecycle policies.
 
 ### Conclusion
-Amazon S3 Intelligent Tiering optimizes storage costs and it allows companies to focus attention and resources on designing databases and their applications.
+Amazon S3 Intelligent Tiering optimizes storage costs, and it allows companies to focus attention and resources on designing databases and their applications.
 
-This storage class ensures that organizations reduce their storage costs by ensuring data availability as they pay little for frequently accessed data.
+This storage class ensures organizations reduce their storage costs by ensuring data availability as they pay little for frequently accessed data.
 
-S3 Intelligent Tiering is great because both companies new or fresh to cloud computing and those with more of an understanding of access pattern optimization can leverage this technology for their data storage needs.
+S3 Intelligent Tiering is great because both companies new to cloud computing and those with more of an understanding of access pattern optimization can leverage this technology for their data storage needs.
