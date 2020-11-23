@@ -4,19 +4,18 @@ status: publish
 published: true
 url: /engineering-education/secured-deeplearning-in-remote-devices/
 title: Secured Deep Learning in Remote Devices
-description: Introduction to Secured Deep Learning and tutorial on how to build your privacy preserving deep learning model to be deployed in Remote devices
+description: Introduction to Secured Deep Learning and tutorial on how to build your privacy preserving deep learning model to be deployed in remote devices.
 author: srishilesh-p-s
-date: 2020-11-20T00:00:00-00:00
+date: 2020-11-23T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/secured-deeplearning-in-remote-devices/hero.jpg
     alt: Secured Deep Learning in Remote Devices
 ---
-
 In my [previous article](/engineering-education/understanding-differential-privacy), we understood the basics of differential privacy. In this article, we will cover how differential privacy can be applied as Federated Learning that can be deployed in remote devices.
 <!--more-->
-We will be building a simple deep learning model to demonstrate the working of federated learning. As a prerequisite, you must have an intermediate level of understanding in Python and Deep Learning with the [PyTorch](https://pytorch.org) library.
+We'll be building a simple deep learning model to demonstrate the working of federated learning. As a prerequisite, you must have an intermediate level of understanding of Python and Deep Learning with the [PyTorch](https://pytorch.org) library.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -29,35 +28,40 @@ We will be building a simple deep learning model to demonstrate the working of f
 
 ### Introduction
 #### What is Federated Learning?
-In Deep Learning, the problem of privacy arises with the centralization of the data used in training and development. The nature of data is to remain private, accessible only to the end-users, not even the organization that is providing the service. But nowadays, we are unsure if our privacy is at stake.
+In Deep Learning, a problem of privacy arises with the centralization of the data used in training and development. The nature of data is to remain private, accessible only to the end-users, not even the organization that is providing the service. But in today's day and age, we are unsure if our privacy is ever at stake.
 
-Generally, in any end-user device using deep learning, the data is sent to the cloud, the predictions/classifications are made, and the results are returned to the end-users. Here, as end-users, we send our data to the cloud. There is no guarantee that our data is secure. That's when the idea of federated learning (Distributed deep learning), came into the picture, to preserve privacy.
+Any end-user device using deep learning sends the data to the cloud, the predictions/classifications are made, and it returns the results to the end-users. There is no guarantee that our data is secure. That’s where federated learning (Distributed deep learning), comes into the picture, to preserve privacy of the data.
 
-By making the deep learning model distributed, we can solve the issue of privacy by running several independent deep learning models locally on each of the end-devices, and updating only their aggregated weights to the central deep learning model. This is federated learning, in a nutshell.
+By making the deep learning model distributed, we can solve the issue of privacy by running several independent deep learning models locally on each of the end-devices, and updating only their aggregated weights to the central deep learning model. This is federated learning in a nutshell.
 
-For example, the Google Assistant uses federated learning, where the deep learning model in our keyboard tries to predict the next word, by sending only the final aggregated model to the cloud. So, without uploading the details of any user to the cloud, we get the aggregated results based on local model training.
+For example, Google Assistant uses federated learning, when the deep learning model in our keyboard tries to predict the next word, by sending only the final aggregated model to the cloud. So, without uploading the details of any user to the cloud, we get the aggregated results based on local model training.
 
 ![Workflow of federated learning](/engineering-education/secured-deeplearning-in-remote-devices/Introduction_to_federated_learning.png)
+
 [Image source](https://towardsdatascience.com/introduction-to-federated-learning-and-privacy-preservation-75644686b559)
 
 #### How does Federated Learning work?
-Let us see an abstract overview of the working of federated learning
+Let's see an abstract overview of the working of federated learning.
 
 1) The Server in the cloud gets initialized with a model/pre-trained model.
-2) The Server sends a copy of the latest aggregated model, to the request end-users' device.
-3) The local model gets trained locally, and computes an update, and is sent back to the Global model.
+
+2) The Server sends a copy of the latest aggregated model to the request end-users’ device.
+
+3) The local model gets trained locally, computes an update, and is sent back to the Global model.
+
 4) The Server receives updates to the weights and averages them out by a weighting factor for each update in the training set from local.
+
 5) Steps 1 - 4 are repeated for each request by the client devices.
 
-This concept of Distributed deep learning has become very popular since 2017, after a post by [Google AI](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html), similarly, [Apple](https://www.technologyreview.com/2019/12/11/131629/apple-ai-personalizes-siri-federated-learning/) has been using it for Siri.
+This concept of Distributed deep learning has become very popular since 2017, after a blog post by [Google AI](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html). It has also been by [Apple](https://www.technologyreview.com/2019/12/11/131629/apple-ai-personalizes-siri-federated-learning/)that they have been using it for Siri.
 
-Having understood a little of federated learning, let's learn more about it, by implementing them.
+Having a better understanding of federated learning, let’s learn more about it, by implementing them.
 
 #### Dataset description
 In this tutorial, we are going to use the [Boston housing dataset](https://www.kaggle.com/vikrishnan/boston-house-prices) to predict the price of housing in Boston. The prediction is done based on various kinds of housing properties.
 
 #### Installation
-It is highly recommended to use [Google Colab](https://colab.research.google.com) to get started right away. If you wish to run the below codes in your local system, download [Anaconda](https://www.anaconda.com/download) by referring to the [Anaconda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html).
+It's highly recommended to use [Google Colab](https://colab.research.google.com) to get started right away. If you wish to run the below codes in your local system, download [Anaconda](https://www.anaconda.com/download) by referring to the [Anaconda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html).
 
 The libraries to be installed in Conda are
 
@@ -66,9 +70,9 @@ The libraries to be installed in Conda are
 - [x] [PyTorch](https://anaconda.org/pytorch/pytorch)
 - [x] [Pickle](https://anaconda.org/conda-forge/pickle5)
 
-Having installed all the above-mentioned libraries, it is time to get started with the implementation.
+Having installed all the above-mentioned libraries, it's time to get started with the implementation.
 
-#### Importing Libraries
+#### Importing libraries
 If you are unsure of why these libraries are imported, you will understand them as you implement them further.
 
 ```python
@@ -86,7 +90,7 @@ If you are unsure of why these libraries are imported, you will understand them 
   from syft.workers.websocket_client import WebsocketClientWorker
 ```
 
-#### Parameters Initialization
+#### Parameters initialization
 We set the parameters for the deep learning model, with the number of epochs as 100, learning rate as 0.001, and a batch size as 8 for every epoch. We also [manually seed](https://discuss.pytorch.org/t/what-is-manual-seed/5939/4) the random number generator.
 
 ```python
@@ -103,25 +107,33 @@ We set the parameters for the deep learning model, with the number of epochs as 
     torch.manual_seed(args.seed) # Set the seed for random number generator to a fixed value
 ```
 
-#### Loading the Dataset
-Pickling is the process whereby a Python object hierarchy is converted into a byte stream. Download [this](https://github.com/srishilesh/Secure-and-Private-AI/blob/master/boston_housing.pickle) pickle file for the Boston Housing dataset. This pickle file contains binary data for training the deep learning model.
+#### Loading the dataset
+Pickling is the process whereby a Python object hierarchy is converted into a byte stream. Download [this](https://github.com/srishilesh/Secure-and-Private-AI/blob/master/boston_housing.pickle) pickle file for the Boston Housing dataset.
 
-On adding it to the path, we must open the file, and split training files and testing files, and convert them to [Torch tensors](https://pytorch.org/docs/stable/tensors.html) for easier computations and compatibility with other PyTorch libraries. A Torch tensor is a multi-dimensional matrix containing elements of a single data type. It is used as a data structure which helps in easier computation.
+This pickle file contains binary data for training the deep learning model.
+
+On adding it to the path, we must open the file, and split both the training files and testing files, and convert them to [Torch tensors](https://pytorch.org/docs/stable/tensors.html) for easier computations and compatibility with other PyTorch libraries.
+
+A Torch tensor is a multi-dimensional matrix containing elements of a single data type. It's used as a data structure which helps make computation easier.
 
 ```python
   with open('./boston_housing.pickle','rb') as f:
     ((x, y), (x_test, y_test)) = pickle.load(f) # Load the file, and extract train and test files
 
     x = torch.from_numpy(x).float() # Convert the train dataset numpy arrays to Torch tensors
-    y = torch.from_numpy(y).float() 
+    y = torch.from_numpy(y).float()
     x_test = torch.from_numpy(x_test).float() # Convert the test dataset numpy arrays to Torch tensors
     y_test = torch.from_numpy(y_test).float()
 ```
 
-#### Neural Network Architecture
-We create a very simple neural network architecture consisting of 4 fully connected layers, with ReLU as activation functions used after each layer. To understand more about Neural networks, read [this article](/engineering-education/introduction-to-neural-networks/) before further implementation.
+#### Neural network architecture
+We create a very simple neural network architecture consisting of 4 fully connected layers, with ReLU as activation functions used after each layer.
 
-ReLU is an activation function that converts the values below zero to zero, and the value remains the same if it is above zero. This activation is highly preferred since, it does not activate all the neurons at the same time, so during backpropagation, the weights are not updated.
+To understand more about Neural networks, read [this article](/engineering-education/introduction-to-neural-networks/) before further implementation.
+
+ReLU is an activation function that converts the values below zero to zero, and the value remains the same if it is above zero.
+
+This activation is highly preferred since, it doesn't activate all the neurons at the same time, during backpropagation, the weights are not updated.
 
 ```python
   class Net(nn.Module): # Create a class containing Neural network architecture
@@ -143,8 +155,8 @@ ReLU is an activation function that converts the values below zero to zero, and 
 
 Here, `nn.Linear()` creates a simple linear neural network layer of the specified input and output dimensions. Similarly, `F.relu()` accepts the fully-connected layer as an input, and returns the activated value.
 
-#### Create Workers for Remote Devices
-To manage local end devices, we must bind the Torch tensors with the end-users using `sy.TorchHook(torch)`. Since we are not going to deploy them live on actual devices, we assume virtual devices on different WebSocket ports.
+#### Create workers for remote devices
+To manage local end devices, we must bind the Torch tensors with the end-users using `sy.TorchHook(torch)`. Since we aren't going to deploy them live on actual devices, we will assume virtual devices on different WebSocket ports.
 
 Virtual workers are entities present on our local machine. They are used to model the behavior of actual workers. Then, we create 2 different workers for the demonstration.
 
@@ -155,7 +167,7 @@ Virtual workers are entities present on our local machine. They are used to mode
   compute_nodes = [end_device1, end_device2] # List of workers
 ```
 
-#### Distributing the Training Dataset to Each Worker
+#### Distributing the training dataset to each worker
 In this snippet, we separate the data and target values into two different lists. Then, we map the corresponding data and target values in the `remote_dataset` list for the respective iterated index.
 
 ```python
@@ -169,10 +181,12 @@ In this snippet, we separate the data and target values into two different lists
 
 Here, `batch_idx % len(compute_nodes)` helps us index the `remote_dataset`. For our example, the index is `0` and `1`.
 
-#### Initializing Neural networks for Each Remote Device
-For each device, we instantiate both the devices with separate Neural network models. We also initialize optimizers for each of the neural networks.
+#### Initializing neural networks for each remote device
+We instantiate both the devices with separate neural network models. We also initialize optimizers for each of the neural networks.
 
-Optimizers are algorithms or methods used to change the attributes of your neural network such as weights and learning rate to reduce the losses. Here, we use the Stochastic Gradient Descent (SGD) optimizer. In short, SGD helps us reduce the loss faster, which happens batch-wise. More about SGD can be read [here](/engineering-education/sgd-classifier/).
+Optimizers are algorithms or methods used to change the attributes of your neural network such as weights and learning rate to reduce the losses.
+
+Here, we use the Stochastic Gradient Descent (SGD) optimizer. In short, SGD helps us reduce the loss faster, which happens batch-wise. More about SGD can be read [this article](/engineering-education/sgd-classifier/).
 
 ```python
   device1_model = Net() # Initialize neural network for Device1
@@ -187,7 +201,7 @@ Optimizers are algorithms or methods used to change the attributes of your neura
   model = Net()
 ```
 
-Let us print out the initialized weights for both the models, to check if both the models get updated after federated learning aggregation. Here, we print out the weights of the last fully-connected layer `fc3`.
+Let's print out the initialized weights for both the models, to check if both the models get updated after federated learning aggregation. Here, we print out the weights of the last fully-connected layer `fc3`.
 
 ```python
 device1_model.fc3.bias
@@ -215,8 +229,8 @@ tensor([-0.0982], requires_grad=True)
 
 We see that `device1` has a bias of `-0.0842`, and `device2` has a bias of `-0.0982`.
 
-#### Function for Model Training
-On initializing all the models, we write functions to train the model and update the weights and losses. In `update()`, we predict the values based on input, calculate the losses, and backpropagate to improve the model. Here, for loss, we are using Mean Squared Error (MSE) loss function. In MSE, we find the mean squared difference between the predicted and expected value.
+#### Function for model training
+On initializing all the models, we write functions to train the model and update the weights and losses. In `update()`, we predict the values based on input, calculate the losses, and backpropagate to improve the model. Here, for loss, we're using Mean Squared Error (MSE) loss function. In MSE, we find the mean squared difference between the predicted and expected value.
 
 In `train()`, we iterate through each row, and update the weights and losses for each data, and return the aggregated values.
 
@@ -243,7 +257,7 @@ In `train()`, we iterate through each row, and update the weights and losses for
 
 ```
 
-#### Function for Testing the Model
+#### Function for testing the model
 This function helps us test the existing model, based on the test dataset, and returns the average loss for each data point.
 
 ```python
@@ -258,7 +272,7 @@ This function helps us test the existing model, based on the test dataset, and r
       print('Test set: Average loss: {:.4f}'.format(test_loss)) # Return the average loss
 ```
 
-#### Updation of the model in each Remote device
+#### Updating the model in each remote device
 For demonstration, we train and compute the predictions for each of the two devices. We print out the epoch number for training, and the time is taken to communicate with each end-device.
 
 ```python
@@ -297,7 +311,7 @@ Test set: Average loss: 40.0887
 Communication time over the network 0.07 s
 ```
 
-Now, let us check if the aggregated weights of both the devices have changed or not.
+Now, let's check if the aggregated weights of both the devices have changed or not.
 
 ```python
 device1_model.fc3.bias
@@ -326,16 +340,24 @@ tensor([1.3244], requires_grad=True)
 We see the `bias` for both the models have changed to `1.3315` and `1.3244` for `device1` and `device2` respectively. It can be inferred that both the models have been trained and the weights have been updated.
 
 ### Conclusion
-As there are no high-level APIs to remotely deploy the model onto the end devices, virtual devices were used to act as end devices. However, the virtual devices exhibited seamless deployment and communication to the global model. The weights were updated perfectly in each of the remote devices, thus the overall accuracy of the model improved well.
+As there are no high-level APIs to remotely deploy the model onto the end devices, virtual devices were used to act as end devices. However, the virtual devices exhibited seamless deployment and communication to the global model.
 
-The ever-rising need for privacy and decentralization of data is suited by the emergence of systems utilizing Differential Privacy. With the cost of computation being a factor that has greatly been nerfed due to the advent of distributed systems and deployment of Machine Learning and Deep Learning Systems remotely on the cloud, even devices that have low computation power can deploy sufficiently powerful models at the client’s end. Thus, Federated Learning systems are highly effective in providing a highly secure and reliable abstraction of data, by capitalizing on the factors mentioned previously.
+The weights were updated perfectly in each of the remote devices, thus the overall accuracy of the model improved well. The ever-rising need for privacy and decentralization of data is met by the emergence of systems utilizing Differential Privacy.
 
-In conclusion, you have understood the need for federated learning. We looked at an overview of how deep learning models preserve the privacy of data in deep learing for end-devices. You can checkout the whole code [here](https://gist.github.com/srishilesh/673469c0814cc54902c708b755d567a4). It is highly recommended to read and implement to get a better understanding of federated learning.
+The cost of computation has been nerfed due to the use of distributed systems and the deployment of machine learning and deep learning systems remotely on the cloud. Even devices that have low computation power can deploy powerful models at the client’s end.
+
+Therefore, federated learning systems are highly effective in providing a highly secure and reliable abstraction of data, by capitalizing on the factors mentioned previously.
+
+In conclusion, we now have a better understanding for the need of federated learning. We looked at an overview of how deep learning models preserve the privacy of data in deep learning for end-devices.
+
+You can checkout the complete code [here](https://gist.github.com/srishilesh/673469c0814cc54902c708b755d567a4). We highly recommend reading and implementing a few examples to get a better understanding of federated learning.
 
 To summarize:
 - We understood what federated learning is.
-- We got an insight into its working.
-- We implemented federated learning for Remote devices.
+
+- We got an insight into how it works.
+
+- We implemented federated learning for remote devices.
 
 ### Further Reading
 - [Course on Udacity](https://www.udacity.com/course/secure-and-private-ai--ud185)
@@ -344,7 +366,7 @@ To summarize:
 - [Tutorial: What is federated learning?](https://medium.com/@ODSC/what-is-federated-learning-99c7fc9bc4f5)
 - [Tutorial: Privacy-preserving in deep learning](https://towardsdatascience.com/preserving-data-privacy-in-deep-learning-part-1-a04894f78029)
 - [Federated optimization](https://arxiv.org/pdf/1610.02527.pdf)
-- [Learn federated learning through Comics](https://federated.withgoogle.com)
+- [Learn federated learning through comics](https://federated.withgoogle.com)
 
 ---
 Peer Review Contributions by [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
