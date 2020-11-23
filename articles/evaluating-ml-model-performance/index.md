@@ -19,11 +19,11 @@ A general understanding of machine learning is required. For an introduction or 
 
 ### Useful Terms
 
-**Training set** – this refers to a subset of a dataset used to build predictive models. It includes a set of input examples that will be used to train a model by adjusting the parameters of the set.
+**Training set** – according to this ingsigtful article on [model evaluation](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f), this refers to a subset of a dataset used to build predictive models. It includes a set of input examples that will be used to train a model by adjusting the parameters of the set.
 
-**Validation set** – is a subset of a dataset whose purpose is to assess the performance of the model built, during the training phase. It periodically evaluates a model and allows for fine-tuning of the parameters of the model. It is worth noting that not all modeling algorithms need a validation set.
+**Validation set** – is a subset of a dataset whose purpose is to assess the performance of the model built, during the training phase. It periodically evaluates a model and allows for fine-tuning of the parameters of the model. This [post](https://docs.sparkflows.io/en/latest/machine-learning/evaluation.html) mentions that it is worth noting that not all modeling algorithms need a validation set.
 
-**Test set** – this is also known as unseen data. It is the final evaluation that a model undergoes after the training phase. A test set is a subset of a dataset used to assess the possible future performance of a model. For example, if a model fits to the training set much better than the test set, overfitting is likely present.
+**Test set** – this is also known as unseen data. It is the final evaluation that a model undergoes after the training phase. A test set is best defined in this [article](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f) as a subset of a dataset used to assess the possible future performance of a model. For example, if a model fits to the training set much better than the test set, overfitting is likely present.
 
 **Overfitting**– refers to when a model contains more parameters than can be accounted for by the dataset. Noisy data contributes to overfitting. The generalization of such models is unreliable since the model learns more than it is meant to from the dataset.
 
@@ -91,8 +91,8 @@ Accuracy = Total Number of Correct Predictions / Total Number of Observations
 
 ##### F-Score
 
-F-score is a metric that incorporates both the precision and recall of a test to determine the score. It is the harmonic mean of recall and precision. F-score is also known as F-measure or F1 score. Let’s define precision and recall.
-Precision refers to the number of true positives divided by the total positive results predicted by a classifier.
+F-score is a metric that incorporates both the precision and recall of a test to determine the score. This [post](https://acadgild.com/blog/metrics-to-calculate-performance-of-machine-learning-model) defines it as the harmonic mean of recall and precision. F-score is also known as F-measure or F1 score. Let’s define precision and recall.
+[Precision](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f) refers to the number of true positives divided by the total positive results predicted by a classifier.
 
 Precision = True Positives / (True Positives + False Positives)
 
@@ -118,7 +118,7 @@ Classification models deal with discrete data. The already covered metrics are i
 
 ##### Mean Absolute Error
 
-The mean absolute error represents the average of the absolute difference between the original and predicted values. Mean absolute error provides the estimate of how far off the actual output the predictions were. However, since it’s an absolute value, it does not indicate the direction of the error.
+The [mean absolute error](https://medium.com/analytics-vidhya/understanding-performance-metrics-for-machine-learning-algorithms-996dd7efde1e) represents the average of the absolute difference between the original and predicted values. Mean absolute error provides the estimate of how far off the actual output the predictions were. However, since it’s an absolute value, it does not indicate the direction of the error.
 Mean absolute error is given by:
 
 ![mae](/engineering-education/evaluating-ml-model-performance/mae.jpg)
@@ -127,7 +127,7 @@ Mean absolute error is given by:
 
 ##### Mean Squared Error
 
-The mean squared error is quite similar to the mean absolute error. However, mean squared error uses the average of the square of the difference between original and predicted values. Since this involves the squaring of the errors, larger errors are very notable.
+The mean squared error is quite similar to the mean absolute error. However, as described by this [article](https://medium.com/analytics-vidhya/understanding-performance-metrics-for-machine-learning-algorithms-996dd7efde1e), mean squared error uses the average of the square of the difference between original and predicted values. Since this involves the squaring of the errors, larger errors are very notable.
 Mean squared error is given by:
 
 ![mse](/engineering-education/evaluating-ml-model-performance/mse.jpg)
@@ -136,7 +136,7 @@ Mean squared error is given by:
 
 ##### Root Mean Squared Error
 
-The root mean squared error computes the goodness of fit by calculating the square root of the average of squared differences between the predicted and actual values. It is a measure of the average error magnitude.
+The root mean squared error, as defined in this [post](https://acadgild.com/blog/metrics-to-calculate-performance-of-machine-learning-model), computes the goodness of fit by calculating the square root of the average of squared differences between the predicted and actual values. It is a measure of the average error magnitude.
 
 ### Winding Up
 
