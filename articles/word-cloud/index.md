@@ -80,9 +80,9 @@ class WordCloudGeneration:
         # load the stop_words of english
         stop_words = set(stopwords.words('english'))
         # concatenate all the data with spaces.
-        para = ' '.join(data)
+        paragraph = ' '.join(data)
         # tokenize the paragraph using the inbuilt tokenizer
-        word_tokens = word_tokenize(para) 
+        word_tokens = word_tokenize(paragraph) 
         # filter words present in stopwords list 
         preprocessed_data = ' '.join([w for w in word_tokens if not w in stop_words])
         print("\n Preprocessed Data": ,preprocessed_data)
@@ -98,13 +98,13 @@ class WordCloudGeneration:
         plt.axis("off")
         plt.show()
 
-wordcloudgen = WordCloudGeneration()
+wordcloud_generator = WordCloudGeneration()
 # you may uncomment the following line to use custom input
-# data = input("Enter the text here: ")
-data = 'These datasets are used for machine-learning research and have been cited in peer-reviewed academic journals. Datasets are an integral part of the field of machine learning. Major advances in this field can result from advances in learning algorithms (such as deep learning), computer hardware, and, less-intuitively, the availability of high-quality training datasets.[1] High-quality labeled training datasets for supervised and semi-supervised machine learning algorithms are usually difficult and expensive to produce because of the large amount of time needed to label the data. Although they do not need to be labeled, high-quality datasets for unsupervised learning can also be difficult and costly to produce.'
-data = data.split('.')
-clean_data = wordcloudgen.preprocessing(data)
-wordcloudgen.create_word_cloud(clean_data)
+# input_text = input("Enter the text here: ")
+input_text = 'These datasets are used for machine-learning research and have been cited in peer-reviewed academic journals. Datasets are an integral part of the field of machine learning. Major advances in this field can result from advances in learning algorithms (such as deep learning), computer hardware, and, less-intuitively, the availability of high-quality training datasets.[1] High-quality labeled training datasets for supervised and semi-supervised machine learning algorithms are usually difficult and expensive to produce because of the large amount of time needed to label the data. Although they do not need to be labeled, high-quality datasets for unsupervised learning can also be difficult and costly to produce.'
+input_text = input_text.split('.')
+clean_data = wordcloud_generator.preprocessing(input_text)
+wordcloud_generator.create_word_cloud(clean_data)
 
 ```
 
