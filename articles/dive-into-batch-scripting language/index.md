@@ -16,14 +16,15 @@ images:
 ---
 Data Visualization is the graphical representation of the data, it is both an art and a science. Nowadays images speak louder than words, and the main use of it is to discover unknown facts and the reasons for a specific result.
 <!--more-->
-# 
+
 ### Introduction
 Batch commands are often used to start programs or to control them in the Windows environment. Also, it can be used for server installations.
+
 If you write a sequence of Batch commands and save the file with the extension `.bat` or `.cmd` then the file is called a Batch file.
 
 #### Why Batch programming language?
 - **Powerful**: you can execute a lot of complicated operations by one command.
-- The commands are **short** so that they are easy to remember and can save your time.
+- The commands are short so that they are easy to remember and can save your time.
 
 ### Prerequisites
 Before we dive right in, the reader would need to have the following:
@@ -98,20 +99,20 @@ goto :exit
 ```
 The colon represents a label you can jump to.
 
-Now let's talk about the ```REM``` command which allows you to make a comment in a batch file, anything following the ```REM``` will be igonred.
+Now let's talk about the `REM` command which allows you to make a comment in a batch file, anything following the `REM` will be igonred.
 
-Another way to make a comment in a batch file is by using :: instead of ```REM```, but be aware that if you are using too many ```REM``` it may slow down your code because the batch file executes every line of code.
+Another way to make a comment in a batch file is by using :: instead of `REM`, but be aware that if you are using too many `REM` it may slow down your code because the batch file executes every line of code.
 
-If you want to make changes to the CMD environment variables you can use the ```SET``` command which provides you the ability to set, delete or display an environment variable, but be aware that those changes will affect only the current CMD. Let's take a look at the syntax:
+If you want to make changes to the CMD environment variables you can use the `SET` command which provides you the ability to set, delete or display an environment variable, but be aware that those changes will affect only the current CMD. Let's take a look at the syntax:
 
 ```batch
 SET variable=string
 REM this is a comment
 REM the environment variable can be a new or an existing one.
 ```
-For example, open your terminal then type ```SET windir```, it will display ```C:\WINDOWS``` which is the value of that variable.
+For example, open your terminal then type `SET windir`, it will display `C:\WINDOWS` which is the value of that variable.
 
-You can use a switch```/A``` with the ```SET``` command in order to make some basic arithmetic operations:
+You can use a switch `/A` with the `SET` command in order to make some basic arithmetic operations:
 |   Symbole	|   Operation	|
 |---	|---	|
 |   +	|   Addition	|
@@ -123,7 +124,7 @@ The syntax will be:
 ```batch
 SET /A variable=arithmetic expression
 ```
-If you want to make the input from a user you can add a switch ```/P```, then the batch file will wait for the user to enter a value.
+If you want to make the input from a user you can add a switch `/P`, then the batch file will wait for the user to enter a value.
 Let's make a simple divide operation that takes the numbers from the user:
 ```batch
 @echo off
@@ -167,6 +168,7 @@ echo %expr%=%ans%
 pause
 goto :top
 ```
+
 The title allows you to change the name of the window to whatever you want. You can change the color simply by using the following:
 |   Symbol	|   Color	|   Symbol	|  Color 	| 
 |---	|---	|---	|---	|   	
@@ -188,34 +190,38 @@ If you run the code above then the result will be the following:
 We talked about the **SET** command in previous examples, now we are going to extend your knowledge with environment variables by some examples.
 #### Delete a variable  
 If you type the name of the variable with an equal sign then the variable will be deleted. Like the following:
+
 ```batch
 SET variablename=
 ```
 #### Permanent Setting 
-To make permanent changes you have to use ```SETX```. It extends the ```SET``` command so that any change for the environment variable will be permanent. The command of adding a folder to the path is:
+To make permanent changes you have to use `SETX`. It extends the `SET` command so that any change for the environment variable will be permanent. The command of adding a folder to the path is:
+
 ```batch
 setx PATH=%PATH%;C:\the-path-you-want-here\
 ```
 The edits made by **SETX** will affect only the next command window. It will not affect the current one, because it writes the variables to the master environment in the registry.
 
-Now let's learn how to detect if the variable name is not found. We have to use %ERRORLEVEL% which will be equal to 1 if the command didn't find the variable name. For example:
+Now let's learn how to detect if the variable name is not found. We have to use %ERRORLEVEL% which will be equal to 1 if the command didn't find the variable name.
+
+For example:
 ```batch
 @echo off
 set ahmad
 If %ERRORLEVEL% == 1 (echo error)
 ```
-The output will be ```error```.
+The output will be `error`.
 
 ### Assoc
-You can manage files extensions, display an existing association, or delete one by the ```assoc``` command. 
+You can manage files extensions, display an existing association, or delete one by the `assoc` command. 
 
-For example, if you type ```assoc``` in your terminal, it will display every file associations that exists on your machine.
+For example, if you type `assoc` in your terminal, it will display every file associations that exists on your machine.
 
 Another example:
 ```batch
 assoc | find ".doc" > D:\list.txt
 ```
-The pipe will redirect ```assoc``` in the input of the ```find``` and be used as the second parameter of it.
+The pipe will redirect `assoc` in the input of the `find` and be used as the second parameter of it.
 The file associations output now will be in the file lists.txt:
 ```
 .doc=Word.Document.8
@@ -225,5 +231,6 @@ The file associations output now will be in the file lists.txt:
 .docx=Word.Document.12
 .docxml=wordxmlfile
 ```
+
 ### Conclusion
 In this tutorial, we learned the most important things about the Batch scripting language. If you are interested in system programming I recommend you start learning Windows [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7). Unlike most shells, which accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR) which accepts and returns .NET objects. However, Batch will still be very important to run utilities in the Windows environment.
