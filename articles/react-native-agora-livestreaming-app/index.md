@@ -6,7 +6,7 @@ url: /engineering-education/react-native-agora-livestreaming-app/
 title: React Native Livestream Application using Agora
 description: This tutorial will give readers a detailed guide on how they can build an app to create or join a livestream using Agora.
 author: mohan-raj
-date: 2020-11-19T00:00:00-10:00
+date: 2020-11-24T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
     alt: React Native Agora Livestreaming App
 ---
-In this tutorial, we'll build a Livestreaming app with React Native and [Agora](https://www.agora.io/en/about-us/).
+In this tutorial, we will be building a Livestreaming app with real-time engagement using React Native and [Agora](https://www.agora.io/en/about-us/).
 <!--more-->
 
 ### Goals
@@ -33,7 +33,7 @@ The fundamentals of React and React Native will not be covered in this tutorial.
 Founded in 2014, Agora.io is a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
 Agora provides SDKs to build apps that require real-time engagement like:
 
-- Audio/Video calls
+- Audio/Video Calls
 
 - Interactive Livestreaming (Audio/ Video)
 
@@ -41,14 +41,14 @@ Agora provides SDKs to build apps that require real-time engagement like:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
-Agora supports upto 1 million users in a live broadcast channel. They also recommend to limit the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
+Agora supports up to 1 million users in a live broadcast channel. They also recommend to limit the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
 
 Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
 
 If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
 
 ### Overview
-We will be going through these steps in this article:
+We'll be going through these steps in this article:
 
 1. Creating an Agora account
 2. Development environment
@@ -56,7 +56,7 @@ We will be going through these steps in this article:
 4. Installing dependencies
 5. Pass channel ID while navigating
 6. Setting up the live screen
-7. Extra deatures
+7. Extra features
 8. Recap
 
 > If you want to take a look at the final code, check out the [GitHub Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app). I've made a commit for every step in this tutorial.
@@ -98,7 +98,7 @@ This is the Home Screen you'll see when you open the app.
 
 ![Homescreen](/engineering-education/react-native-agora-livestreaming-app/homescreen.jpeg)
 
-### Installing Dependencies
+### Installing dependencies
 You can install these in advance or while going through the article.
 
 ```json
@@ -134,7 +134,7 @@ pod install
 >
 > `Execution failed for task ':app:mergeDexDebug'.`
 >
-> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable mulitdexing.
+> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable multidexing.
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Pass channel ID while navigating
@@ -188,7 +188,7 @@ const createLive = () => navigation.navigate("Live", { type: "create", channel: 
 const joinLive = () => navigation.navigate("Live", { type: "join", channel: joinChannel });
 ```
 
-Notice that we are also passing a route prop called `type` along with the channel? We'll be using this to determine whether the user is a broadcaster or an audience on the Livestream page.
+Notice that we are also passing a route prop called `type` along with the channel. We'll be using this to determine whether the user is a broadcaster or an audience user on the Livestream page.
 
 When you press these buttons, it should be the same as before. But, we can access the `channel` route prop in the Live Screen.
 
@@ -222,11 +222,11 @@ import RtcEngine from "react-native-agora";
 
 RtcEngine has a function called `create` on it, that will create an Agora engine. We need to call that function when the component mounts. It'll return the Agora engine instance.
 
-We can't create a normal variable in the function's scope and assign the engine's instance to it. This is because we will lose the instance on a component re-render. So, we'll create a `ref` using `useRef` and assign the engine instance to it.
+We can't create a normal variable in the function's scope and assign the engine's instance to it. This is because we'll lose the instance on a component re-render. So, we'll create a `ref` using `useRef` and assign the engine instance to it.
 
 We need to create this engine instance when the component mounts. We'll use the `useEffect` hook to execute this on the component mount.
 
-The `useEffect` hook accepts a function that will be executed on any state update. It also accepts an array of state elements, to limit the call of this function, only to the state changes of those elements. When we pass an empty array, the function will be called only when the component mounts.
+The `useEffect` hook accepts a function that will be executed on any state update. It also accepts an array of state elements, to limit the call of this function, only to the state changes of those elements. When we pass an empty array, the function will only be called when the component mounts.
 
 Inside the function body, you can return a cleanup function that will get executed when the component unmounts.
 
@@ -336,7 +336,7 @@ const init = async () => {
 };
 ```
 
-#### Configure the Agora Engine
+#### Configure the Agora engine
 Next, we need to set the Channel Profile to Livestreaming. `react-native-agora` provides enums for Channel Profiles.
 
 Let's import it and set the Channel Profile to Live Broadcasting. To learn more about `ChannelProfile`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/enums/channelprofile.html).
@@ -484,7 +484,7 @@ loadingText: {
 
 When the `joined` state is set to `true`, we need to show the livestream.
 
-The `RtcLocalView` requires only one prop which is the `channelId` prop. The rest are optional.
+The `RtcLocalView` requires only one prop, that is the `channelId` prop. The rest are optional.
 
 The `RtcRemoteView` requires 2 props. One is the `channelId` and the other is the `uid` prop.
 
@@ -511,6 +511,7 @@ Return Statement when joined === true:
   )}
 </>
 ```
+
 Styles for `RtcLocalView` and `RtcRemoteView`: 
 
 ```JavaScript
@@ -539,7 +540,7 @@ Let's add a Share button to share the channel ID with others. We need to import 
 import { Share } from "react-native";
 ```
 
-The Share component has a method `share` on it, which accepts two arguments,`content` and `options`. We'll pass the channel ID in content like this:
+The Share component has a method `share` on it, that accepts two arguments,`content` and `options`. We'll pass the channel ID in content like this:
 
 ```
 { message: props.route.params.channel }
@@ -612,7 +613,7 @@ buttonText: {
 #### Switch camera
 Let's add another button in the Live screen to switch the camera when the user presses it.
 
-The AgoraEngine has a method called `switchCamera` on it to toggle between front camera and back camera.
+The Agora engine has a method called `switchCamera` on it to toggle between front camera and back camera.
 
 Function to Switch camera:
 
@@ -633,10 +634,10 @@ Switch Camera button:
 </View>
 ```
 
-#### Broadcaster Video Status
+#### Broadcaster video status
 Agora provides a listener called `RemoteVideoStateChanged`. This listens for any state changes in the video of all the users in the livestream.
 
-When a video state changes, it provides the `UID` and the `Video State` of that user. To learn more about the `RemoteVideoStateChanged` listener, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/interfaces/rtcengineevents.html#remotevideostatechanged)
+When a video state changes, it provides the `UID` and the `Video State` of that user. To learn more about the `RemoteVideoStateChanged` listener, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/interfaces/rtcengineevents.html#remotevideostatechanged).
 
 Let's add a state for the broadcaster's video state and set the initial value to Decoding. The `react-native-agora` package provides an enum for all the remote video states.
 
@@ -740,3 +741,7 @@ broadcasterVideoStateMessageText: {
 Congratulations, :partying_face: You did it.
 
 Thanks for reading!
+
+---
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
+
