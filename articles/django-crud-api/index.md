@@ -3,7 +3,7 @@ Have you ever wanted to create a restful API endpoint for consumption in your mo
 ### Prerequisites
 
 - Basics of Django web framework
-- Basics of python programming language.
+- Basics of Python programming language.
 - Postman installed.
 - IDE of your choice installed.
 - Python and Virtualenv installed.
