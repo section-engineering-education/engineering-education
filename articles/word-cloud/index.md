@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/house-price-prediction/
 title: Creating Word Clouds in Python
-description: In this article we will go over how to generate word clouds by creating a virtual environment in Python 3.6 and using Anaconda.
+description: In this article we will go over how code a program to generate word clouds by creating a virtual environment in Python 3.6 and using Anaconda.
 author: lalithnarayan-c
 date: 2020-11-24T00:00:00-12:00
 topics: []
@@ -139,6 +139,6 @@ The output of the code pops in a separate window. It should look like the image 
 
 
 ### Conclusion
-This was a fun experiment we coded in Python. We went over how to generate a virtual environment using Anaconda and how to install the needed packages to generate word clouds.I encourage you to test the program with various inputs and experiment with the code. Happy learning.
+This was a fun experiment we coded in Python. We went over how to generate a virtual environment using Anaconda and how to install the needed packages to generate word clouds. I encourage you to test the program with various inputs and experiment with the code. Happy learning.
 
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
