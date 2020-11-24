@@ -63,7 +63,7 @@ Lets create out django-todo project now by running the command `django-admin sta
 ```python
 $ django-admin startproject django_todo
 ```
-After successfully creating the project we change our working directory to our project folder and run the django development server.
+After successfully creating the project we change our working directory to our project folder and run the Django development server.
 ```python
 $ cd django_todo
 $ ./manage.py runserver
