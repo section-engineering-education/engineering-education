@@ -122,4 +122,6 @@ The output of the code pops in a separate window. It should look like the image 
 
 ### Conclusion
 
-This was a fun experiment we coded in Python. I encourage you to test the program with various inputs and play around with the code. Happy learning. 
+This was a fun experiment we coded in Python. I encourage you to test the program with various inputs and play around with the code. Happy learning.
+
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
