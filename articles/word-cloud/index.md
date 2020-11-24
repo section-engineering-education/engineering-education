@@ -116,7 +116,7 @@ wordcloud_generator.create_word_cloud(clean_data)
 
 ```
 
-The output of the code pops as a separate window. It should look like the image shown below.
+The output of the code pops in a separate window. It should look like the image shown below.
 ![output of the code](output.jpg)
 
 
