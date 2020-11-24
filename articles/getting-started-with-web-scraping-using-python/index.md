@@ -7,7 +7,7 @@ title: Getting Started with Web Scraping using Python
 description: In this article we will learn about web scraping which is the process that makes pulling a huge amount of data from websites easier and faster.
 author: ahmad-mardeni
 date: 2020-11-02T00:00:00-12:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
