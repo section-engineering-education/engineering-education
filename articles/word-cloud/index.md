@@ -26,6 +26,14 @@ To install the packages, we will use the following commands:
    
 *Note: If you get an error during installation, install the 1.19.3 version of numpy. Use the command* `pip3 install numpy==1.19.3` *For more information on the error, refer to this [discussion](https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html).*
 
+*NLTK Installation:* On the basis of the installer used, you may or may not need to run the following commands. If you get an error related to `stopwords` or `punkt` package while running the code, run the following commands: 
+
+```python
+>>> import nltk
+>>> nltk.download('popular')
+```
+A Graphical User Interface pops up. If you are unsure of what to download, refer to this [question](https://stackoverflow.com/questions/22211525/how-do-i-download-nltk-data) on Stack Overflow. 
+
 Once installed, check if the packages are installed correctly. Run the following piece of code in an instance of the python shell (activated by running `python3`) in your terminal, and you should get a valid output for the version number.
 ```py
 >>> import nltk
@@ -84,8 +92,8 @@ class WordCloudGeneration:
         # tokenize the paragraph using the inbuilt tokenizer
         word_tokens = word_tokenize(paragraph) 
         # filter words present in stopwords list 
-        preprocessed_data = ' '.join([w for w in word_tokens if not w in stop_words])
-        print("\n Preprocessed Data": ,preprocessed_data)
+        preprocessed_data = ' '.join([word for word in word_tokens if not word in stop_words])
+        print("\n Preprocessed Data: " ,preprocessed_data)
         return preprocessed_data
 
     def create_word_cloud(self, final_data):
@@ -108,7 +116,7 @@ wordcloud_generator.create_word_cloud(clean_data)
 
 ```
 
-The output of the code is shown below:
+The output of the code pops as a separate window. It should look like the image shown below.
 ![output of the code](output.jpg)
 
 
