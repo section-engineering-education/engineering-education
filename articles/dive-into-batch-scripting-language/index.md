@@ -22,7 +22,7 @@ If you write a sequence of Batch commands and save the file with the extension `
 
 #### Why Batch programming language?
 - **Powerful**: you can execute a lot of complicated operations by one command.
-- The commands are short so that they are easy to remember and can save your time.
+- The commands are **short** so that they are easy to remember and can save your time.
 
 ### Prerequisites
 Before we dive right in, the reader would need to have the following:
@@ -90,7 +90,7 @@ xcopy %1 %2 /s
 In the code above you can make a backup of the first folder(%1) files and its subfolders files in the second folder(%2).
 To include any hidden file you have to add the `/h` command-line option. Also, you can add `/e` to include any empty subdirectories.
 
-Now let's create a simple script to delete all temporary files with the extension **TMP**:
+Now let's create a simple script to delete all temporary files with the extension `TMP`:
 
 ```batch
 @echo off
@@ -130,6 +130,7 @@ REM the environment variable can be a new or an existing one.
 For example, open your terminal then type `SET windir`, it will display `C:\WINDOWS` which is the value of that variable.
 
 You can use a switch `/A` with the `SET` command in order to make some basic arithmetic operations:
+
 |   Symbole	|   Operation	|
 |---	|---	|
 |   +	|   Addition	|
@@ -170,6 +171,7 @@ if not %errorlevel% GTR 0 echo you are connected
 
 In the code above we did one ping request on google.com.
 The GTR is an expression for "greater than", you can also use the following:
+
 |   Operator	|   Meaning	|
 |---	|---	|
 |   EQU	|   equal to	|   	
@@ -195,6 +197,7 @@ goto :top
 The title allows you to change the name of the window to whatever you want. 
 
 You can change the color simply by using the following:
+
 |   Symbol	|   Color	|   Symbol	|  Color 	| 
 |---	|---	|---	|---	|   	
 |   0	|   Black	|   8	|   Gray	|   	   	
@@ -256,7 +259,7 @@ assoc | find ".doc" > D:\list.txt
 The pipe will redirect `assoc` in the input of the `find` and will be used as the second parameter of it.
 
 The file associations output now will be in the file lists.txt:
-```
+```batch
 .doc=Word.Document.8
 .dochtml=wordhtmlfile
 .docm=Word.DocumentMacroEnabled.12
@@ -266,7 +269,9 @@ The file associations output now will be in the file lists.txt:
 ```
 
 ### Conclusion
-In this tutorial, we learned the most important things about the Batch scripting language. If you are interested in system programming. I recommend you learn Windows [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7).Unlike most shells, which accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR)which accepts and returns .NET objects. However, Batch will still be very important to run utilities in the Windows environment.
+In this tutorial, we learned the most important things about the Batch scripting language. If you are interested in system programming. I recommend you learn Windows [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7). 
+
+Unlike most shells, that accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR) which accepts and returns .NET objects. However, Batch will still be very important to run utilities in the Windows environment.
 
 ---
 Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
