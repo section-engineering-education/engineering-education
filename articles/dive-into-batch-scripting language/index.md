@@ -1,7 +1,25 @@
-# Dive-into-Batch-scripting-language
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/dive-into-batch-scripting language/
+title: Dive into the Batch Scripting Language
+description: In this tutorial we will go through how to 
+author: ahmad-mardeni
+date: 2020-11-24T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/dive-into-batch-scripting language/hero.png
+    alt: Batch Scripting example image
+---
+Data Visualization is the graphical representation of the data, it is both an art and a science. Nowadays images speak louder than words, and the main use of it is to discover unknown facts and the reasons for a specific result.
+<!--more-->
+# 
 ### Introduction
-**Batch** commands are often used to start programs or to control them in the Windows environment. Also, it can be used for server installations.
-If you write a sequence of Batch commands and save the file with the extension ```.bat``` or ```.cmd``` then the file is called a **Batch file**.
+Batch commands are often used to start programs or to control them in the Windows environment. Also, it can be used for server installations.
+If you write a sequence of Batch commands and save the file with the extension `.bat` or `.cmd` then the file is called a Batch file.
 
 #### Why Batch programming language?
 - **Powerful**: you can execute a lot of complicated operations by one command.
