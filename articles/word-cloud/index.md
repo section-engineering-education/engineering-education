@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/house-price-prediction/
+url: /engineering-education/word-cloud/
 title: Creating Word Clouds in Python
 description: In this article we will go over how code a program to generate word clouds by creating a virtual environment in Python 3.6 and using Anaconda.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/house-price-prediction/hero.jpg
+  - url: /engineering-education/word-cloud/hero.jpg
     alt: word clouds python image
 ---
 Welcome to an exciting article on the word cloud generation. Word clouds are great ways to summarize vast pieces of information visually. They are typically used to depict metadata on websites. The bigger the font size of the keyword, the higher its significance on the website. In this article, we will code a program to generate custom word clouds.  
