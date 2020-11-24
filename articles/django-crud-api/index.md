@@ -30,7 +30,7 @@ $ mkdir ~/todo
 $ cd todo
 ```
 Run `virtualenv venv` to create a virtual environment for our project and `source venv/bin/activate` to activate the virtual environment for our project.
-To install Django and django rest framework in our virtual environment we run the command `pip3 install django` and `pip3 install djangorestframework`.
+To install Django and Django rest framework in our virtual environment we run the command `pip3 install django` and `pip3 install djangorestframework`.
 
 ```python
 $ pip install django
