@@ -7,7 +7,7 @@ title: React Native Livestream Application using Agora
 description: This tutorial will give readers a detailed guide on how they can build an app to create or join a livestream using Agora.
 author: mohan-raj
 date: 2020-11-19T00:00:00-10:00
-topics: [Livestreaming, React Native, Agora]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
