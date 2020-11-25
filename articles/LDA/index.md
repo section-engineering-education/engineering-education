@@ -22,7 +22,7 @@ We will be installing the following packages:
 2. [sklearn](https://scikit-learn.org/)
 3. [numpy](https://numpy.org/)
 
-Activate the virtual environment using the command, `conda activate lda`. After activating the virtual environment, we’ll be installing these packages locally in the virtual environment. To use these packages, we must always activate the virtual environment named `lda` before proceeding. You may also use the name of your choice for the virtual environment. Just replace `lda` with the name of your choice.
+Activate the virtual environment using the command, `conda activate lda`. After activating the virtual environment, we’ll be installing the above mentioned packages locally in the virtual environment. To use these packages, we must always activate the virtual environment named `lda` before proceeding. If you wish to, you may replace `lda` with a name of your choice for the virtual environment.
 
 To install the packages, we will use the following commands:
 
