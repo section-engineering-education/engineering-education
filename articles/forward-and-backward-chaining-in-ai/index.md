@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/forward-and-backward-chaining-in-ai/
 title: Forward and Backward Chaining in Artificial Intelligence
-description: This article will cover clustering algorithms in unsupervised machine learning which are useful when grouping uncategorized data into segments that comprise similar characteristics.
+description: This article will cover how backward and forward chaining are applied in artificial intelligence. Theese are method of reasonings used in artificial intelligence. 
 author: onesmus-mbaabu
 date: 2020-11-25T00:00:00-16:00
 topics: []
