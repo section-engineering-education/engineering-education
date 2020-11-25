@@ -1,8 +1,8 @@
-#### Prequisites
+#### prerequisites
 - Have [Node.js](https://nodejs.org/en/) installed in your computer.
 - Have some basic knowledge of JavaScript
 
-### What we shall do:
+### What we will cover:
 - [Introduction into JavaScript arrays](#introduction-into-javascript-arrays).
 - [Properties of JavaScript arrays](#properties-of-javascript-arrays).
 - [Operations on JavaScript arrays](#operations-on-javascript-arrays).
@@ -12,7 +12,7 @@
 Arrays are list-like objects for storing elements in a program. Since JavaScript is not statically typed, an array can hold different types of data. For instance, an array can have integers, strings, and floats at the same time. The number of elements stored in an array is not fixed; it's upon the programmer's precedence.
 
 ### Properties of JavaScript arrays.
-- **Length**. It indicates the number of elements in a particular array. Consider the following array:
+- **Length**: It indicates the number of elements in a particular array. Consider the following array:
 
 ```javascript
     const fruits = ["mangoes","lemons","avocados"];
@@ -31,7 +31,7 @@ Output
 
 Since there are three elements in the fruits array, the output shall be three.
 
-- **Constructor**. It indicates the function that created the array object. Using our previous array of fruits, we can check the constructor property.
+- **Constructor**: It indicates the function that created the array object. Using our previous array of fruits, we can check the constructor property.
 
 ```javascript
     console.log(fruits.constructor);    
@@ -44,7 +44,7 @@ Output
 
 `[Function: Array]` is the default constructor value when creating arrays in javascript.
 
-- **Prototype**. It allows us to add our own custom operations and properties to the arrays. For example, considering our fruits array, we can opt to implement a function to capitalize each element's first letter. Since there is no such pre-built operation in JavaScript, we can use `prototype`.
+- **Prototype**: It allows us to add our own custom operations and properties to the arrays. For example, considering our fruits array, we can opt to implement a function to capitalize each element's first letter. Since there is no such pre-built operation in JavaScript, we can use `prototype`.
 
 ```javascript
     Array.prototype.toUCase = function() {
@@ -91,7 +91,7 @@ Output
     ['mangoes','avocados','pineapples','lemons','oranges']
 ```
 
-- **copyWithin()**: It copies array elements to and from a given target, start and end index. The three are passed as parameters. It starts copying at a given target with data from the start index passing through until it reaches data of last index. The last index is exclusive.
+- **copyWithin()**: It copies array elements to and from a given target, start and end index. The three are passed as parameters. It starts copying at a given target with data from the start index passing through until it reaches data of the last index. The last index is exclusive.
 
 ```javascript
     const initial_fruits = ["mangoes","avocados","lemons","oranges"];
@@ -108,13 +108,13 @@ Output
 
 The target is index 2 so it shall start at index 2. It will then copy the data from index 1 to index 3 while still preserving the length of the array.
 
-- **entries()**: It is used to get an iterator object of a key-value pair nature. The key is the index of the element in the array whereas the value is actual element.
+- **entries()**: It is used to get an iterator object of a key-value pair nature. The key is the index of the element in the array whereas the value is the actual element.
 
 ```javascript
     const fruits = ["mangoes","lemons"];
 
     for(const [key,value] of fruits.entries()){
-        console.log(`key ${key}, value ${value}`);
+        console.log(`key ${key} and its value is ${value}`);
     };
 ```
 
@@ -142,9 +142,9 @@ Output
     false
 ```
 
-From the above, we want to check if all the fruits in the array start with the letter `m`. So, we implement the `every()` operation on the array, and if the first letter is an m. The result variable stores the output. The output shall be false because `lemons` does not satisfy the condition defined.
+From the above, we want to check if all the fruits in the array start with the letter `m`. So, we implement the `every()` operation on the array. The output shall be false because `lemons` does not satisfy the condition defined.
 
-- **fill()**: It is used to enter a static value into a given array. To use this method, you will have to instantiate the array with the `new Array()` method. The operation receives three parameters, which are the value, start index, and the end index. The end index is not inclusive, meaning it does not consider that index. It just stops there. Considering we have created an array of fruits and want to fill it with different fruits at different indexes, we can use the `fill()`.
+- **fill()**: It is used to enter a static value into a given array. To use this method, you will have to instantiate the array with the `new Array()` method. The operation receives three parameters, which are the value, start index, and the end index. The end index is not inclusive, meaning it does not consider that index. It just stops there. Considering that we have created an array of fruits and want to fill it with different fruits at different indexes, we can use the `fill()`.
 
 ```javascript
     const fruits = new Array(4);
@@ -160,9 +160,9 @@ Output.
     ['mangoes','lemons','banana','pineapples']
 ```
 
-From above, we instantiate the fruits array with the `new Array()` method and pass in the number of elements we'd like it to have. From there, we fill the array with values using the `fill()` considering the start and end index.
+From above, we instantiate the fruits array with the `new Array()` method and pass in the number of elements we'd like it to have. From there, we fill the array with values using  `fill()` considering the start and end index.
 
-- **filter()**: It creates a new array with elements that meet a particular condition. The condition is placed on all the array elements so that only elements that pass the condition proceed. For example, in our fruits array, we may want to have an array of fruits with only six letters, here we apply `filter()`.
+- **filter()**: It creates a new array with elements that meet a particular condition. The condition is placed on all the array elements so that only elements that pass the condition proceed. For example, in our fruits array, we may want to have an array of fruits with only those that have six letters, here we apply `filter()`.
 
 ```javascript
     let fruits = ["mangoes","lemons",'banana','pineapples'];
@@ -178,7 +178,7 @@ Output
 
 The `new_fruits` array comprises of `lemons` and `banana` since they both have six letters each.
 
-- **find()**. It returns the element of an array which is the first to meet a particular condition. For instance, if we need to find which fruit is the first to have six letters in the array, we can use the `find()` method.
+- **find()**: It returns the element of an array which is the first to meet a particular condition. For instance, if we need to find which fruit is the first to have six letters in the array, we can use the `find()` method.
 
 ```javascript
     let fruits = ["mangoes","lemons","banana","pineapples"];
@@ -193,7 +193,7 @@ Output.
 
 Since `lemons` is the first fruit to have six letters, the `find()` method returns it.
 
-- **findIndex()**. It returns the index of the first element to meet a particular condition in an array. If the element we are searching for has more than one occurrence, it returns the first index. Considering the previous example, we may want to find the index of the first fruit to have six letters, we use the `findIndex()`.
+- **findIndex()**: It returns the index of the first element to meet a particular condition in an array. If the element we are searching for has more than one occurrence, it returns the first index. Considering the previous example, if we want to find the index of the first fruit to have six letters, we use `findIndex()`.
 
 ```javascript
    let fruits = ["mangoes","lemons","banana","pineapples"];
@@ -209,7 +209,7 @@ Output
 ```
 Since lemons is the first fruit to meet the condition, its index shall be returned.
 
-- **forEach()**. It used to execute a function or a callback for each element of an array. It does not mutate an array meaning that it always returns undefined. In our previous example, we may intend to `console.log` all the fruits and hence we can use `forEach()` and execute it as a callback.
+- **forEach()**: It used to execute a function or a callback for each element of an array. It does not mutate an array meaning that it always returns undefined. In our previous example, we may intend to `console.log` all the fruits and hence we can use `forEach()` and execute it as a callback.
 
 ```javascript   
     let fruits = ["mangoes","lemons","banana"];
@@ -223,7 +223,7 @@ Output
     lemons
     banana
 ```
-- **from()**. It is used to come up with a new array from an iterable object such as an array or a string. For example if we have an array of strings and from there we want to come up with the same fruits but now capitalized, we can use the `from()` method. The method is usually executed on the `Array` instance.
+- **from()**: It is used to come up with a new array from an iterable object such as an array or a string. For example if we have an array of strings and from there we want to come up with the same fruits but now capitalized, we can use the `from()` method. The method is usually executed on the `Array` instance.
 
 ```javascript
     let fruits = ["mangoes","lemons","banana"];
@@ -237,9 +237,9 @@ Output
 ```bash
     ['MANGOES','LEMONS','BANANA']
 ```
-The from method is executed on the Array instance and receives the iterable object, for this case is fruits and a map function and for this case we are only capitalizing the fruit.
+The `from()` method is executed on the Array instance and receives the iterable object, for this case is fruits and a map function and for this case we are only capitalizing the fruit.
 
-- **includes()**. It is used to check if a particular array contains a specified element. For example if we want to check if the fruits array contains lemons, we can simply use the `includes()` method. The method returns a `Boolean`.
+- **includes()**: It is used to check if a particular array contains a specified element. For example if we want to check if the fruits array contains lemons, we can simply use the `includes()` method. The method returns a `Boolean`.
 
 ```javascript
     let fruits = ["mangoes","lemons","banana"];
@@ -256,7 +256,7 @@ Output
 ```
 Since we do not have avocado as an element in the fruits array, the result shall hold `false`.
 
-- **indexOf()**. It is usually used in searching for an element in an array and then returning its index. For example, if we want to search for bananas in our fruits array and get the index we use the `indexOf()` method. If else we do not find the element in the array it shall return `-1`.
+- **indexOf()**: It is usually used in searching for an element in an array and then returning its index. For example, if we want to search for bananas in our fruits array and get the index we use the `indexOf()` method. If else we do not find the element in the array it shall return `-1`.
 
 ```javascript
     let fruits = ["mangoes","lemons","bananas"];
@@ -270,7 +270,8 @@ Output
 ```bash
     2
 ```
-- **isArray()**. It is used to check whether the object passed is an array. It is important to note that even though strings are treated as arrays in JavaScript, the `isArray()` shall return `true` if and only if it is an array else it shall return `false`. Considering our previous example, we can illustrate this.
+
+- **isArray()**: It is used to check whether the object passed is an array. It is important to note that even though strings are treated as arrays in JavaScript, the `isArray()` shall return `true` if and only if it is an array else it shall return `false`. Considering our previous example, we can illustrate this.
 
 ```javascript
     let _string = "mangoes,lemons,bananas";
@@ -289,7 +290,7 @@ Output
     true
 ```
 
-- **join()**. It is used to join all of the data in the array in to a string. For example, if we wanted to convert our array of fruits into a single string, we use the `join()` method.
+- **join()**: It is used to join all of the data in the array into a string. For example, if we wanted to convert our array of fruits into a single string, we use the `join()` method.
 
 ```javascript
     let fruits = ["mangoes","lemons","bananas"];
@@ -304,7 +305,8 @@ Output
 ```bash
     mangoes,lemons,bananas
 ```
-- **keys()**. It returns an iteration array containing the keys of the passed array. The method yields an array and hence you use a `for loop` to iterate over the keys. For example, if we want to show all the keys of our fruits array, we use the `keys()` method.
+
+- **keys()**: It returns an iteration array containing the keys of the passed array. The method yields an array and hence you use a `for loop` to iterate over the keys. For example, if we want to show all the keys of our fruits array, we use the `keys()` method.
 
 ```javascript
     let fruits = ["mangoes","lemons","bananas"];
@@ -320,7 +322,8 @@ Output
     key 1
     key 2
 ```
-- **lastIndexOf()**. It usually searches for index of an element in an array and returns the position of that element. It's uniqueness is that if the item to search for occurs more than once, it returns the position of last occurrence. It does not receive a function, it receives a value. Assume that our fruits array has duplicates elements and we want to find the index of last occurrence of bananas, here we apply the `lastIndexOf()` method.
+
+- **lastIndexOf()**: It usually searches for the index of an element in an array and returns the position of that element. It's uniqueness is that if the item to search for occurs more than once, it returns the position of the last occurrence. It does not receive a function, it receives a value. Assume that our fruits array has duplicates elements and we want to find the index of the last occurrence of bananas, here we apply the `lastIndexOf()` method.
 
 ```javascript
     let fruits = ["mangoes","lemons","bananas","apples","bananas"];
@@ -336,7 +339,7 @@ Output
 ```
 Since we have two elements of bananas in the array, it shall pick the index of the last one.
 
-- **map()**. Performs a mutation on each element of the array resulting to creation of a new array. Lets assume we wanted to mutate our array such that each element has its length appended at the end. For this we need to use the `map()` method.
+- **map()**: Performs a mutation on each element of the array resulting to the creation of a new array. Lets assume we wanted to mutate our array such that each element has its length appended at the end. For this we need to use the `map()` method.
 
 ```javascript
     let fruits = ["mangoes","lemons","bananas"];
@@ -351,7 +354,8 @@ Output
 ```bash
     ['mangoes7','lemons6','bananas7']
 ```
-- **pop()**. It is used to remove the last element of an array. It returns the removed element. From our example, we may want to remove the last fruit from the fruits array. For this purpose, we have to use the `pop()` method.
+
+- **pop()**: It is used to remove the last element of an array. It returns the removed element. From our example, we may want to remove the last fruit from the fruits array. For this purpose, we have to use the `pop()` method.
 
 ```javascript
 
@@ -371,7 +375,7 @@ Output
     ['mangoes','lemons']
 ```
 
-- **push()**. It adds an element to the end of the array and returns the new length of the array. From our example, if we have a new fruit we want to add we can simply use the `push()` method.
+- **push()**: It adds an element to the end of the array and returns the new length of the array. From our example, if we have a new fruit we want to add we can simply use the `push()` method.
 
 ```javascript
     let fruits = ["mangoes","lemons","bananas"];
@@ -389,7 +393,7 @@ Output
     ['mangoes','lemons','bananas','pineapples']
 ```
 
-- **reduce()**. It reduces the elements of an array to a single value. It is done from left to right. It is usually implied when you want to reduce in an array from left to right. The method receives two parameters which symbolize two values to be reduced. In the function to be executed you specify the operation to be carried out and the starting point value. From our previous example, we can reduce the array of fruits from left to right and gain a single string using `reduce().`.
+- **reduce()**: It reduces the elements of an array to a single value. It is done from left to right. It is usually applied when you want to reduce in an array from left to right. The method receives two parameters which symbolize two values to be reduced. In the function to be executed you specify the operation to be carried out and the starting point value. From our previous example, we can reduce the array of fruits from left to right and gain a single string using `reduce().`.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -403,7 +407,8 @@ Output
 ```bash
     mangoeslemonsbananas
 ```
-- **reduceRight()**. It functions same as `reduce()`, only that for `reduceRight()` it reduces from the right to the left. The parameters received and the function to be executed are defined similarly. From our previous example, we can reduce the array of fruits from the right achieving a different string.
+
+- **reduceRight()**: It functions the same as `reduce()`, only that for `reduceRight()` it reduces from the right to the left. The parameters received and the function to be executed are defined similarly. From our previous example, we can reduce the array of fruits from the right achieving a different string.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -418,7 +423,7 @@ Output
     bananaslemonsmangoes
 ```
 
-- **reverse()**. It reverses the order of elements in an array. In such a way that the new array starts with the elements that were at the end in the original array. From the previous example, we can reverse the fruits such that we form an array that starts with the last element of fruits array using `reverse()`.
+- **reverse()**: It reverses the order of elements in an array. In such a way that the new array starts with the elements that were at the end in the original array. From the previous example, we can reverse the fruits such that we form an array that starts with the last element of the fruits array using `reverse()`.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -433,7 +438,7 @@ Output
     ['bananas','lemons','mangoes']
 ```
 
-- **shift()**. Opposite of `pop()`, `shift()` removes an element at the beginning of an array and returns that element. For example, in our fruits array, we can remove the first element of the array and get the element removed.
+- **shift()**: Opposite of `pop()`, `shift()` removes an element at the beginning of an array and returns that element. For example, in our fruits array, we can remove the first element of the array and get the element removed.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -450,7 +455,8 @@ Output
     mangoes
     ['lemons','bananas']
 ```
-- **slice()**. It selects some portions of an array based on the start and end index and returns the new array with those portions. If the start and end index are not specified, it returns a replica of the original array. Else if the start index is specified and the end index is not specified, it returns from an array from the start index all the way to the end of the array. The end index is not inclusive, its exclusive. Based on our fruits array we can make a new array from the second index to the third index using `slice()`. We shall specify the third index as `3` because its exclusive.
+
+- **slice()**: It selects some portions of an array based on the start and end index and returns the new array with those portions. If the start and end index are not specified, it returns a replica of the original array. Else if the start index is specified and the end index is not specified, it returns an array from the start index all the way to the end of the array. The end index is not inclusive, its exclusive. Based on our fruits array, we can make a new array from the second index to the third index using `slice()`. We shall specify the third index as `3` because its exclusive.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -465,7 +471,7 @@ Output
     ['lemons','bananas']
 ```
 
-- **some()**. It checks if some of the data in the array meet a particular condition. It must not be all, but some of them. For our fruits array we can check if there are some of the fruits which have eight letters. `some()` method receives a function specifying the condition. If there are some, it shall return `true` else `false`.
+- **some()**: It checks if some of the data in the array meet a particular condition. It must not be all, but some of them. For our fruits array we can check if there are some of the fruits which have eight letters. `some()` method receives a function specifying the condition. If there are some, it shall return `true` else `false`.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -479,7 +485,8 @@ Output
 ```bash
     false
 ```
-- **sort()**. It sorts the data of an array. It receives two parameters which symbolize the data to be sorted. The function to be executed for sorting depends with the problem at hand. For example, using our fruits array we may decide to order them according to the number of letters  in ascending order using `sort()`.
+
+- **sort()**: It sorts the data of an array. It receives two parameters which symbolize the data to be sorted. The function to be executed for sorting depends with the problem at hand. For example, using our fruits array we may decide to order them according to the number of letters  in ascending order using `sort()`.
 
 ```javascript
 
@@ -496,7 +503,7 @@ Output
     ['lemons','mangoes','bananas']
 ```
 
-- **splice()**. It removes elements from an array, replacing in their positions other elements of the array. When calling the `splice()`, you specify the start index and the deleteCount. If you omit the deleteCount, all of the elements in the array shall be deleted. In our example, we can delete two  elements (deleteCount) starting from index 0 (start index).
+- **splice()**: It removes elements from an array, replacing in their positions other elements of the array. When calling the `splice()`, you specify the start index and the deleteCount. If you omit the deleteCount, all of the elements in the array shall be deleted. In our example, we can delete two  elements (deleteCount) starting from index 0 (start index).
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -513,7 +520,8 @@ Output
     ['mangoes','lemons']
     ['bananas']    
 ```
-- **toString()**. It converts the target array to a string and returns the result. In our example, we can decide to convert our fruits array into a single string using `toString()`.
+
+- **toString()**: It converts the target array to a string and returns the result. In our example, we can decide to convert our fruits array into a single string using `toString()`.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -527,7 +535,8 @@ Output
 ```bash
     mangoes,lemons,bananas
 ```
-- **unshift**. Opposite of `push()`, `unshift()` adds new element to the beginning of the array and returns the new length. In our example, we can decide to push another fruit to the beginning of the array.
+
+- **unshift**: Opposite of `push()`, `unshift()` adds a new element to the beginning of the array and returns the new length. In our example, we can decide to push another fruit to the beginning of the array.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
@@ -546,7 +555,7 @@ Output
 ```
 
 ### Conclusion
-In this article we have covered introduction to JavaScript arrays, properties of JavaScript arrays and operations executed on JavaScript arrays.
+In this article we have covered an introduction to JavaScript arrays, properties of JavaScript arrays and operations executed on JavaScript arrays.
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
