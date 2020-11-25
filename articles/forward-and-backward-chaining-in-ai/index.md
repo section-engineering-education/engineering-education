@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/forward-and-backward-chaining-in-ai/hero.jpg
-    alt:  example image
+    alt:  forward and backward chaining example image
 ---
 Backward and forward chaining are methods of reasoning that exist in the Expert System Domain of artificial intelligence. These techniques are used in expert systems such as [MYCIN](https://en.wikipedia.org/wiki/Mycin) and [DENDRAL](https://en.wikipedia.org/wiki/Dendral) to generate solutions to real life problems. 
 <!--more-->
