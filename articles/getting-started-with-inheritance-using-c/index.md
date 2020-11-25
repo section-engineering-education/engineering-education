@@ -1,12 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-inheritance-using-c/
+title: Getting Started with Inheritance using C#
+description: The basic concepts of 
+author: 
+date: 2020-11-24T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-
-
-
-# Getting-started-with-inheritance-using-c#
+  - url: /engineering-education/getting-started-with-inheritance-using-c/hero.jpg
+    alt:  example image
+---
+Inheritance is a very unique concept in (OOP) object-oriented programming, it allows the definition of multiple classes using the properties of other classes. Inheritance allows us to maintain modify and boost our code, it also provides the reusability of code functionality and gives better performance.
+<!--more-->
 ### Introduction
-inheritance is a very unique concept in (OOP) object-oriented programming, it allows the definition of multiple classes using the properties of other classes. Inheritance allows us to maintain modify and boost our code, it also provides the reusability of code functionality and gives better performance.
+We create classes by inheriting the functions and variables of a base class, then we add new functions to enhance its performance, we call it a derived class because it inherits the properties of a base class. Without inheritance, the code will be unstructured harder to read, and complex.
 
-We create classes by inheriting the functions and variables of a base class, then we add new functions to enhance its performance, we call it a derived class because it inherits the properties of a base class. Without inheritance, the code will be unstructured harder to read, and complex
 ### Table of Contents
 1. Base classes vs Derived classes.
 
@@ -34,7 +46,6 @@ Inheritance forms a tree-like Hierarchy:
 
  **In inheritance**, an object is often an object of another class and all derived classes are objects of their base class,
  also, note that constructors are not inherited. This is how you specify a class child derived from class father: `class child: father`.
-
 
 
 ### Protected members vs Internal members
