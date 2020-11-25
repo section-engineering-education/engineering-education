@@ -16,7 +16,7 @@ To get started using Anime.js, download the library [Anime.js website](https://a
 <script src="path/to/anime.min.js"></script>
 ```
 
-We can also use the [Node Package Manager (npm)](https://www.npmjs.com/).
+We can also use the [Node Package Manager (npm)](https://www.npmjs.com/). If you use `npm`, the script location will be `node_modules/animejs/lib/anime.min.js`
 
 ```bash
 $ npm install animejs --save
@@ -50,7 +50,7 @@ In the animation details, we need to define targets, properties, property parame
 
 1. **Target:** This refers to the element to be animated. It can be any CSS selector, DOM Node, NodeList, JavaScript Object, or an array containing multiple targets. Examples are `div`, `.classSelector`, and `#idSelector`. Target tell anime how to find the elements on the web page.
 
-2. **Properties:** This refers to the CSS Properties that can be animated, CSS Transforms, Object Properties, Dom Attributes, and SVG Attributes. They include `translate`, `rotate`, `scale`, `skew`, `opacity`, `color`, among others.
+2. **Properties:** This refers to the CSS Properties that can be animated: CSS Transforms, Object Properties, Dom Attributes, and SVG Attributes. They include `translate`, `rotate`, `scale`, `skew`, `opacity`, `color`, among others.
 
 3. **Property parameters:** `duration`, `delay`, `endDelay`, `easing`, `round`, e.t.c
 
@@ -74,26 +74,28 @@ In this example, we will create a triangular shape inside a `div` identified by 
       targets: "#triangle1",
       //Properties
       rotateY: 360,
-	  scale: 0.5,
-	  translateX: 300,
-	  skew: 60,
+      scale: 0.5,
+      translateX: 300,
+      skew: 60,
       // Property Parameters
       duration: 1000,
       endDelay: 300,
       easing: "easeInOutSine",
-	  // Animation Parameters
-	  direction: 'alternate',
-      loop: true,
+      // Animation Parameters
+      direction: 'alternate',
+        loop: true,
     });
   </script>
 ```
 
 **Explanation**
 In the javascript code example above the target is `#triangle1`. Four transformations are applied to the target all at once. The resulting animation is shown in the output.
-`rotateY: 360`: Rotates the target along the Y-axis for 360&deg;
-`scale: 0.5`: Scales the target by a factor of 0.5.
-`translateX: 300`: Moves the target 300 pixels along the X-axis.
-`skew: 60`: Skews the target 60&deg;.
+
+- `rotateY: 360`: Rotates the target along the Y-axis for 360&deg;
+- `scale: 0.5`: Scales the target by a factor of 0.5.
+- `translateX: 300`: Moves the target 300 pixels along the X-axis.
+- `skew: 60`: Skews the target 60&deg;.
+
 Other properties used in Anime.js can be found on [Anime.js documentation](https://animejs.com/documentation/#CSStransforms).
 
 The parameters are `duration`, `endDelay`, and `easing`. The rotation happens in one second (1000ms), and there is a delay of 300 ms before the next rotation.
@@ -102,7 +104,7 @@ The animation parameters used in the example above are `direction` and `loop`. T
 
 **Output:**
 
-![](shape-animation.gif)
+![Triangle animated with Anime.js gif](shape-animation.gif)
 
 ```html
 <!DOCTYPE html>
@@ -115,13 +117,13 @@ The animation parameters used in the example above are `direction` and `loop`. T
         height: 1px;
         border-left: 45px solid transparent;
         border-right: 45px solid transparent;
-        border-bottom: 80px solid #59b;
-		margin: 50px 200px 100px  ;
+        border-bottom: 80px solid #5599bb;
+        margin: 50px 200px 100px;
       }
     </style>
   </head>
   <body>
-    <h4>Animating Triagle Shape with Anime.JS</h1>
+    <h4>Animating Triangle Shape with Anime.JS</h4>
     <div id="triangle1"></div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -132,25 +134,24 @@ The animation parameters used in the example above are `direction` and `loop`. T
       targets: "#triangle1",
       //Properties
       rotateY: 360,
-	  scale: 0.5,
-	  translateX: 300,
-	  skew: 60,
+      scale: 0.5,
+      translateX: 300,
+      skew: 60,
       // Property Parameters
       duration: 1000,
       endDelay: 300,
       easing: "easeInOutSine",
-	  // Animation Parameters
-	  direction: 'alternate',
+      // Animation Parameters
+      direction: "alternate",
       loop: true,
     });
   </script>
 </html>
-
 ```
 
 #### Pendulum Animation
 
-A pendulum makes a natural motion that slows down at both peaks and is faster in the middle. The first task is to draw a pendulum-like shape in HTML and CSS. In this example, I will not explain the HTML and CSS codes.
+A pendulum makes a natural motion that slows down at both peaks and is faster in the middle. The first task is to draw a pendulum-like shape in HTML and CSS. In this example, I will not explain the HTML and CSS code.
 **Javascript Code**
 
 ```javascript
@@ -167,10 +168,10 @@ A pendulum makes a natural motion that slows down at both peaks and is faster in
 ```
 
 **Explanation**
-In the above example, we were able to animate a pendulum using a few lines of Anime.js code. The pendulum rotates between `60` and `-60` for a duration of 4000 milliseconds (4 seconds). We are able to implement the natural motion by using `easing: 'easeInOutSine'`. We keep the pendulum moving repeatedly in both directions by setting the direction to `alternate` and `loop: true`.
+In the above example, we were able to animate a pendulum using a few lines of Anime.js code. The pendulum rotates between 60&deg; and -60&deg; for a duration of 4000 milliseconds (4 seconds). We can implement the natural motion by using `easing: 'easeInOutSine'`. We keep the pendulum moving by setting the direction to `alternate` and `loop: true`.
 **Output**
 
-![](pendulum-animation.gif)
+![Pendulum animated with Anime.js gif](pendulum-animation.gif)
 
 **Complete Source Code**
 
@@ -230,7 +231,7 @@ In the above example, we were able to animate a pendulum using a few lines of An
 
 #### SVG Animations
 
-Anime.js enables us to move an object using an SVG path. The first step is to create an SVG path. One of the tools for creating the SVG path is Adobe Photoshop, Adobe Illustrator, and [Codepen SVG Path Builder](https://codepen.io/anthonydugois/pen/mewdyZ). Go ahead and create an SVG path or use the one I have already created in the example below.
+Anime.js enables us to move an object using an SVG path. The first step is to create an SVG path. Some of the tools for creating the SVG path are Adobe Photoshop, Adobe Illustrator, and [Codepen SVG Path Builder](https://codepen.io/anthonydugois/pen/mewdyZ). Go ahead and create an SVG path or use the one I have already created in the example below.
 
 **Javascript**
 
@@ -248,7 +249,7 @@ anime({
 
 **Output**
 
-![](svg-path-animation.gif)
+![SVG Animation with Anime.js gif](svg-path-animation.gif)
 
 **Explanation**
 In the above example, the target is a ball emoji. It follows a predefined SVG path to create an animation.
@@ -268,7 +269,7 @@ In the above example, the target is a ball emoji. It follows a predefined SVG pa
         position: relative;
       }
       #path1{
-        stroke-width: 1px;
+        stroke-width: 4px;
         stroke-dasharray: 2,2;
       }
     </style>
@@ -327,7 +328,7 @@ In the first example, we moved an object from point A to Point B. We will use ke
 
 **Output**
 
-![](keyframes-animation.gif)
+![Key frames animations with Anime.js gif](keyframes-animation.gif)
 
 **Complete Source Code**
 
@@ -339,7 +340,7 @@ In the first example, we moved an object from point A to Point B. We will use ke
     <style type="text/css">
       #ball1 {
         position: absolute;
-        margin: 50px 20px;
+        margin: 40px 50px;
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -347,7 +348,7 @@ In the first example, we moved an object from point A to Point B. We will use ke
       }
       #ball2 {
         position: absolute;
-        margin: 50px 70px;
+        margin: 80px 50px;
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -399,7 +400,7 @@ anime({
 
 **Output**
 
-![](text-path-animation.gif)
+![Text path animations with Anime.js gif](text-path-animation.gif)
 
 **Full Source Code**
 
@@ -570,4 +571,4 @@ In the example above, an animated path is created by using the `strokeDashoffset
 
 ### Conclusion
 
-It is relatively easy to create animations with a few lines of Anime.js. All you need is to master Anime.js basics, and the only limitation will be your imagination. Keep animating your fantasies. Be mindful not to overdo the animations.
+It is relatively easy to create animations with a few lines of Anime.js. All you need is to master Anime.js basics, and the only limitation will be your imagination. Keep animating your fantasies. Too much animations can be distracting to the users. Therefore, Be mindful not to overdo the animations.
