@@ -1,6 +1,8 @@
 ## Tuple Data Structure in Python
 
-A tuple is an ordered collection of items. They are similar to lists but vary in the following aspects: They are immutable, (they cannot be changed) unlike lists which are mutable (they can be changed). Let us learn more about tuples and their related methods. We will also learn to effectively use them in Python.
+A tuple is an ordered collection of items. An ordered collection retains the items in the order you insert or initialize them. In other words, the order is preserved. This is in contrast to dictionaries or sets, where the order is not preserved (unordered collections).
+
+Tuples are similar to lists but vary in the following aspects: They are immutable, (they cannot be changed) unlike lists which are mutable (they can be changed). Let us learn more about tuples and their related methods. We will also learn to effectively use them in Python.
 
 For more background on the different types of data structures in Python, check out the following articles:
 
@@ -118,7 +120,7 @@ print(tuple1[0:3]) # Output: (1, 2, 3)
 print(tuple1[4:]) # Output: (8, 13)
 ```
 
-As per the examples shown above, if we slice a range of [a : b), it would return from tuple index a to tuple index (b - 1). For more tricks on python slicing, check out [this page](https://stackoverflow.com/questions/509211/understanding-slice-notation).
+As per the examples shown above, if we slice a range of \[a : b\), it would return from tuple index a to tuple index (b - 1). For more tricks on python slicing, check out [this page](https://stackoverflow.com/questions/509211/understanding-slice-notation).
 
 #### Modifying Tuples
 
@@ -195,7 +197,7 @@ def cmp(t1, t2):
     When both tuple1 > tuple2,
         bool(t1 > t2) = 1
         bool(t1 < t2) = 0
-        Therefore, 1 - 0 = 0
+        Therefore, 1 - 0 = 1
 
     When both tuple2 > tuple1,
         bool(t1 > t2) = 0
@@ -216,6 +218,13 @@ tuple2 = (100, 200)
 
 print(cmp(tuple2, tuple1))
 # Output: 0
+
+tuple1 = (100, 300)
+tuple2 = (200, 100)
+
+print(cmp(tuple2, tuple1))
+# Output: 1
+# This is because the tuple comparison is done left to right. When tuple2[0] > tuple1[0], no further comparisons are made and the output is returned as zero. This is how the cmp() method works in Python.
 ```
 
 ##### len(tuple)
@@ -284,11 +293,36 @@ print(tuple1.index(1))
 # Output: 0
 ```
 
+You can also return the index of the last occurence of the element by using this method.
+
+```py
+tuple1 = (1, 24, 45, 54, 6, 34, 24)
+
+print(tuple1.index(24, -1))
+# Output: 6
+# The second parameter specifies which index to start the search from
+# -1 refers to the last element in the tuple, so it searches in reverse
+```
+
+It is also possible to specify a range to search.
+
+```py
+tuple1 = (1, 24, 45, 54, 24, 6, 34, 24)
+
+print(tuple1.index(24, 2, 5))
+# Output: 4
+# The second paramter is the starting index, third parameter is the ending index
+```
+
 ### Applications of Tuples
 
 - Tuples are especially used as protection against modification. Since they are immutable, we can use tuples to write-protect data.
 
-- When iterating over a tuple, a considerable performance gain is observed when we compare it to lists. This is more evident when the size of the tuple is large.
+- When iterating over a tuple, a considerable performance gain is observed when we compare it to lists. This is more evident when the size of the tuple is large. Using the `timeit` module in python, we see that tuples are considerably faster to iterate when compared to lists.
+
+![Tuple Performance](/engineering-education/tuples-data-structure-python/tuples-performance.png)
+
+*Note: For more in-depth analysis of why tuples perform better, check out [this](https://stackoverflow.com/questions/68630/are-tuples-more-efficient-than-lists-in-python#comment2117930_68817) StackOverflow thread.*
 
 - The dictionary data structure has an immutable key. Therefore tuples can be used as a key in a dictionary.
 
