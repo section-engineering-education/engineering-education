@@ -1,4 +1,4 @@
-Creating a globally distributed database would traditionally require a lot of time and effort. You had to host the database in an own data center and use your own connections. Today&#39;s advancement in cloud computing and platforms as a service (PaaS) has made it easier to create globally distributed and scalable databases. Particularly, the use of SQL-based databases has become more popular in the recent past. These databases provide you with a customized experience of sorting and processing large amounts of raw data. Many database providers exist, and they work on different nodes of the SQL database engines, including [Microsoft Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) and [Google Cloud Spanner](https://cloud.google.com/spanner).
+Creating a globally distributed database would traditionally require a lot of time and effort. You had to host the database in a personal data center bearing the entire cost. Today&#39;s advancement in cloud computing and platforms as a service (PaaS) has made it easier to create globally distributed and scalable databases. Particularly, the use of SQL-based databases has become more popular in the recent past. These databases provide you with a customized experience of sorting and processing large amounts of raw data. Many database providers exist, and they work on different nodes of the SQL database engines, including [Microsoft Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) and [Google Cloud Spanner](https://cloud.google.com/spanner).
 
 This article will discuss the features of both Cloud Spanner and Microsoft Cosmos DB and highlight their advantages and disadvantages. It will also compare the two to help you better choose the cloud database to use in the future.
 
@@ -6,11 +6,15 @@ This article will discuss the features of both Cloud Spanner and Microsoft Cosmo
 
 Google Spanner is a fully managed, scalable, relational database management service.
 
-The platform can scale millions of nodes across multiple regions. Besides being integrated with access and identity management, it provides features such as [logging and auditing](https://cloud.google.com/spanner/docs/audit-logging).
+The platform can scale millions of nodes across multiple regions. Cloud Spanner nodes are dedicated resources that frequently perform background work to protect and optimize user's data, even when the user is not running a workload. Besides being integrated with access and identity management, it provides features such as [logging and auditing](https://cloud.google.com/spanner/docs/audit-logging).
 
-Google Cloud Spanner&#39;s instance is comparable to a relational database management system ([RDBMS](https://www.codecademy.com/articles/what-is-rdbms-sql)) server. This instance is composed of one or multiple databases, which use the same [compute](https://www.zdnet.com/article/what-is-cloud-computing-everything-you-need-to-know-about-the-cloud/) and [storage](https://searchstorage.techtarget.com/definition/cloud-storage) resources. These resources are allocated during [instance](https://cloud.google.com/spanner/docs/instances) creation. Two main configurations, [Regional and Multi-Regional](https://cloud.google.com/spanner/docs/instances), control the compute and storage resources.
+Google Cloud Spanner&#39;s instance is comparable to a relational database management system ([RDBMS](https://www.codecademy.com/articles/what-is-rdbms-sql)) server. This instance is composed of one or multiple databases, which use the same [compute](https://www.zdnet.com/article/what-is-cloud-computing-everything-you-need-to-know-about-the-cloud/) and [storage](https://searchstorage.techtarget.com/definition/cloud-storage) resources. These resources are allocated during [instance](https://cloud.google.com/spanner/docs/instances) creation. Two main configurations, [Regional and Multi-Regional](https://cloud.google.com/spanner/docs/instances), control the compute and storage resources. These configurations decouple resources from data storage. This way, a user can decrease, increase, or relocate processing resources without executing changes to the underlying storage. 
 
 Cloud Spanner supports automatic data replication. Instance configuration (the first configuration) determines the number of copies ([replicas](https://cloud.google.com/spanner/docs/replication)) to be created and their placement. Regional configuration allows data replication across three zones. These zones must come from within a single selected region. Multi-Regional configuration, on the other hand, supports data replication across four zones. These zones can come from different regions depending on what continent the user specifies.
+
+![GCP zones and regions](/engineering-education/GCP-regions-and-zones.jpg)
+
+[Image source](https://cloud.google.com/about/locations#regions)
 
 Essentially, these two configurations (Regional and Multi-Regional) provide safety against failure of zones and regions. Mainly, regional configuration ensures the safety of an entire zone. Multi-regional configuration, on the other hand, ensures the safety of an entire region.
 
@@ -20,11 +24,15 @@ Cloud Spanner supports atomicity, consistency, isolation, durability ([ACID](htt
 
 Microsoft Cosmos DB is a Platform as a Service ([PaaS](https://searchcloudcomputing.techtarget.com/definition/Platform-as-a-Service-PaaS)) service in [Microsoft Azure](https://azure.microsoft.com/en-us/). PaaS is a deployment environment in the cloud that provides a platform for individuals and organizations to develop, manage, and run cloud-enabled enterprise applications. Azure refers to Microsoft&#39;s public cloud offering. With Azure Cosmos DB, users can build and distribute their applications across an Azure data center. Manual work and configuration is eliminated, in this case.
 
-The globally distributed, multi-model database is available across more than 30 regions worldwide. This is possible considering its turnkey global distribution that automatically scales and replicates data across various data centers in the Azure network.
+The globally distributed, multi-model database is available in all regions where [Azure is available](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cosmos-db&regions=all). This is possible considering its turnkey global distribution that automatically scales and replicates data across various data centers in the Azure network.
 
-Cosmos DB&#39;s multi-model feature supports multiple models, including table storage, graphs, key values, and document storage in a single database. It offers high availability and consistency across all these data models, irrespective of their nature, for data storage.
+![Cosmos DB regions](/engineering-education/Cosmos-DB-regions.jpg)
 
-Cosmo DB offers comprehensive [service level agreements](https://azure.microsoft.com/en-us/support/legal/sla/cosmos-db/v1_3/#:~:text=The%20service%20offers%20comprehensive%2099.99,Azure%20regions%2C%20configured%20with%20any) (SLA) of 99.99% for latency, availability, consistency, and throughput. Latency is below 15ms for document write, and 10ms for document read operations. When latency is at a minimum, users experience a faster, seamless experience.
+[Image source](https://azure.microsoft.com/en-us/global-infrastructure/global-network/)
+
+Cosmos DB&#39;s multi-model feature supports multiple models, including table storage, graphs, key-values, and document storage in a single database. It offers high availability and consistency across all these data models, irrespective of their nature, for data storage.
+
+Cosmo DB offers comprehensive [service level agreements](https://azure.microsoft.com/en-us/support/legal/sla/cosmos-db/v1_3/#:~:text=The%20service%20offers%20comprehensive%2099.99,Azure%20regions%2C%20configured%20with%20any) (SLA) of 99.99% for latency, availability, consistency, and throughput. Latency is below 15ms for document write and 10ms for document read operations. When latency is at a minimum, users experience a faster, seamless experience.
 
 ### Pros and Cons of Microsoft Cosmos DB
 
@@ -32,7 +40,7 @@ CosmosDB&#39;s use of data containers projectable as different types of datasets
 
 Microsoft joined the cloud market and repurposed its on-premises software for the cloud. These software include [Windows Server](https://www.microsoft.com/en-us/windows-server), [SQL Server](https://www.microsoft.com/en-gb/sql-server/sql-server-downloads), [Office](https://www.office.com/), [.Net](https://dotnet.microsoft.com/), [Microsoft Dynamics 365](https://dynamics.microsoft.com/en-us/), and [SharePoint](https://support.microsoft.com/en-us/office/what-is-sharepoint-97b915e6-651b-43b2-827d-fb25777f446f). Many organizations use Windows and other Microsoft associated software, which is essential for Cosmos DB&#39;s success. Cosmos DB tightly integrates with other Microsoft applications. Thus, organizations using a lot of Microsoft software find sense to also use Cosmos DB. This builds on customer loyalty.
 
-On the flip side, users associate Cosmos DB platform with some imperfections. Cosmos DB fails to provide a seamless way to switch between [database-provisioned throughput and container-provisioned throughput](https://docs.microsoft.com/en-us/azure/cosmos-db/set-throughput). You have to recreate the database for you to switch successfully. Besides, Cosmos DB does not allow documents from different logical partition to participate in the same transaction. And writes from different containers cannot be part of the same transaction.
+On the flip side, users associate the Cosmos DB platform with some imperfections. Cosmos DB fails to provide a seamless way to switch between [database-provisioned throughput]((https://docs.microsoft.com/en-us/azure/cosmos-db/set-throughput)) and [container-provisioned throughput](https://docs.microsoft.com/en-us/azure/cosmos-db/set-throughput#:~:text=The%20throughput%20provisioned%20for%20a,logical%20partitions%20of%20the%20container.). You have to recreate the database for you to switch successfully. Besides, Cosmos DB does not allow documents from different logical partition to participate in the same transaction. And writes from different containers cannot be part of the same transaction.
 
 ### Pros and Cons of Google Cloud Spanner
 
@@ -40,7 +48,7 @@ One of the strengths of Google Cloud Spanner is its strong offering in container
 
 Spanner is capable of handling large volumes of data. Its use is not limited to applications of large sizes. Further, it allows the standardization of a single database engine for all workloads requiring an RDBMS. This is very beneficial to organizations.
 
-On the downside, it may be challenging to create an instance in a local environment for Cloud Spanner. A development environment needs to be as close a match to production as possible. But this is not the case with Spanner because you must rely on a full spanner instance to accomplish this need. You may choose a single region instance to save on costs.
+On the downside, it may be challenging to create an instance in a local environment for Cloud Spanner. A development environment needs to be as close to production as possible. But this is not the case with Spanner because you must rely on a full spanner instance to accomplish this need. You may choose a single region instance to save on costs.
 
 ### Major Differences between Cloud Spanner and Microsoft Cosmos DB
 
