@@ -1,7 +1,21 @@
-## Forward and Backward Chaining in Artificial Intelligence
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/forward-and-backward-chaining-in-ai/
+title: Forward and Backward Chaining in Artificial Intelligence
+description: This article will cover clustering algorithms in unsupervised machine learning which are useful when grouping uncategorized data into segments that comprise similar characteristics.
+author: onesmus-mbaabu
+date: 2020-11-18T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/forward-and-backward-chaining-in-ai/hero.jpg
+    alt:  example image
+---
 Backward and forward chaining are methods of reasoning that exist in the Expert System Domain of artificial intelligence. These techniques are used in expert systems such as MYCIN and DENDRAL to generate solutions to real life problems. 
-
+<!--more-->
 This article provides an overview of these techniques, and how they work. By the end of the article, readers will have learned real life examples of how backward and forward chaining are applied in artificial intelligence.
 
 ### Introduction to the Expert System
