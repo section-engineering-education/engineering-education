@@ -15,13 +15,13 @@ There are six autonomy levels in driving. These are;
 
 - **Level 0: No automation**- In this level, the car does not have technological capabilities that enhance self-driving. The car is controlled by a human driver.
 - **Level 1: Driver-assist**- The driver does most of the operations. There is the automation of some individual controls. For example, electronic stability control can enhance the stability of the vehicle.
-- **Level 2: Partial automation**- In this level, two or more controls can be automated simultaneously. There is more automation than in level 1.
+- **Level 2: Partial automation**- In this level, two or more controls can be automated simultaneously. There is higher automation than in level 1.
 - **Level 3: Conditional Automation**-  There is higher automation than in level 2. The car can control a significant number of operations.
 - **Level 4: High Automation**- All critical functions are automated. The driver does not control the car at any time.
 - **Level 5: Full automation**- This is the highest level of automation. All functions are automated, and the car can carry human passengers with no human interaction. 
 
 ### Introduction to Conditional Automation in Driving
-Conditional automation is the third level of automation in driving. This level consists of approximately 75% automation. In conditional automation, the level 3 car performs safety-critical functions such as acceleration, deceleration, and steering. A level 3 car is also able to monitor the road and surroundings. The human driver is required to be aware in case of self-driving failures. When the car senses danger, the driver will be required to retake control.
+Conditional automation is the third level of automation in driving. This level consists of approximately 75% automation. In conditional automation, the level 3 car performs safety-critical functions such as acceleration, deceleration, and steering. A level 3 car is also able to monitor the road and surroundings. The human driver is required to be aware in case of self-driving failures. When the autonomous car fails, the driver will be required to retake control.
 
 In level 3 cars, the human driver is simply a co-driver who will only take control under certain conditions. The driver can engage in other things like watching the surroundings or texting. The autonomous car will handle situations that require an immediate response. For example, when another vehicle suddenly appears in front of the car, the vehicle will perform emergency braking.
 
@@ -31,16 +31,26 @@ A level 3 autonomous car has certain technological features that facilitate self
 #### Computer Power
 A computer system is required in a level 3 car to enhance the processing of information and activities within the car. Extreme computing power is required to support the automation of controls (more than the traditional CPUs).
 
-Graphical processing units (GPUs) are used by automobile companies for processing. However, GPUs have not been effective enough to provide the sufficient processing power needed in self-driving cars. This made Tesla to use neural network acceleration chips (NNA), which has a higher processing capacity than GPU. 
+Graphical processing units (GPUs) are used by automobile companies for processing. However, GPUs have not been effective enough to provide the sufficient processing power needed in self-driving cars. This made Tesla to introduce [neural network acceleration chips (NNA)](https://www.youtube.com/watch?v=CJfAmGdA_RI), which have a higher processing capacity than GPU. 
+
+An alternative AI acceleration chip that can be used in autonomous driving is the field-programmable gate array (FPGA). FPGAs are better than GPUs in terms of computational power and power efficiency. However, GPUs are more cost-efficient than these chips.  They also provide platforms that are easier to use than FPGAs.  
 
 #### Cameras
-Cameras are used to capture the road and surrounding environments. The captured images help the autonomous car to choose the right control depending on the situation. For example, if the camera senses an image in front of the car, a braking control will be initiated. The visual data collected using cameras is translated into 3D data that is actionable. 
+Cameras are used to capture the road and surrounding environments. The captured images help the autonomous car to choose the right control depending on the situation. For example, if the camera senses an image in front of the car, a braking control will be initiated. The visual data collected using cameras is translated into 3D actionable data. 
+
+There are various cameras situated in the car. Failure in one of these cameras may affect driving. Camera failure may be caused by technical problems or extreme weather conditions. A good example of a technical problem is touchscreen failure at the dashboard. As a result, the rear image will not be displayed, which may affect reversing. 
+
+Cameras perform well in cold, sunny and windy weather conditions. Extreme weather conditions such as storms and fog may lead to poor visibility. In such cases, the cameras may not capture visual data effectively. Other sensors may play an important role of detecting other nearby objects during such situations. 
+
+Autonomous cars are fitted with infrared cameras to improve visibility. Infrared cameras have additional capabilities than normal cameras, which enable them to perform well in darkness. 
 
 #### Radar
-The level 3 car uses radar to detect the distance and presence of objects that are in front of the car. Radar helps the car to achieve control in times of snow or rain. 
+The level 3 car uses radar to detect the distance and presence of objects that are in front of the car. Radar helps the car to achieve control in normal and extreme weather conditions. It can enhance self-driving in situations where cameras have limited visibility (for example snow, rain or fog). This is achieved through the use of radio waves. Radar is good at estimating the distance between objects. However, it has limitations in the classification of objects. 
 
 #### Sensors
-Various sensors are used to detect situations and respond to them. For example, in case of failure, the car will use sensors to detect it, which will prompt the driver to take control. LIDAR sensors are placed at the top of the car to provide 3D data on the area surrounding the car. Inertial sensors, ultrasonic sensors, and GPS tracking sensors are utilized to monitor the performance of the autonomous car.
+Various sensors are used to detect situations and respond to them. For example, the sensors can detect a pedestrian crossing the road, which will prompt the braking system to stop the car. 
+
+LIDAR sensors are placed at the top of the car to provide 3D data on the area surrounding the car. These sensors use light waves to provide information regarding nearby objects. Inertial sensors, ultrasonic sensors, and GPS tracking sensors are utilized to monitor the performance of the autonomous car.
 
 ![Features of Level 3 Cars](/engineering-education/conditional-automation-in-driving-level-3-autonomous-cars/features-of-level-3-cars.png)
 
@@ -57,7 +67,7 @@ Analyzing the key activities in driving can help in understanding how a level 3 
 
 - **Emergency braking:** Autonomous Braking Systems (ABSs) help in emergency braking to avoid accidents. ABSs use sensors to detect the likelihood of a crash. The system will prevent collision through the initiation of instant brakes.
 
-- **Maintaining lanes:** Many would wonder how an autonomous car can maintain its lane on a highway. A lane-centering system enables the autonomous car to stay safely within the lane. The lane markings are monitored using cameras. When the vehicle is not within its lane, a warning will be initiated.
+- **Maintaining lanes:** Many would wonder how an autonomous car can maintain its lane on a highway. A lane-centering system enables the autonomous car to stay safely within its lane. The lane markings are monitored using cameras. When the vehicle is not within its lane, a warning will be initiated.
 
 - **Parking:** Autonomous cars have parking sensors that help in scanning the surrounding environment when parking is initiated. When the vehicle is too close to an object, a warning sound will be initiated. The level 3 car has forward and reverse options that are needed during parking. 
 
