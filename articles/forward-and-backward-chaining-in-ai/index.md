@@ -1,13 +1,17 @@
 ## Forward and Backward Chaining in Artificial Intelligence
 
-Backward and forward chaining are methods of reasoning that exist in the Expert System Domain of artificial intelligence. 
+Backward and forward chaining are methods of reasoning that exist in the Expert System Domain of artificial intelligence. These techniques are used in expert systems such as MYCIN and DENDRAL to generate solutions to real life problems. 
+
+This article provides an overview of these techniques, and how they work. By the end of the article, readers will have learned real life examples of how backward and forward chaining are applied in artificial intelligence.
 
 ### Introduction to the Expert System
-Backward and forward chaining originate from the expert system. The expert system has three main components: user interface, inference engine, and knowledge base. 
+A brief overview of an expert system can help us gain more insights on the origin of backward and forward chaining in artificial intelligence. 
 
-These three components play specific roles. High-quality and domain-specific knowledge is stored in the knowledge base. The user interface enables users of the system to interact with the expert system.
+An expert system is a computer application that uses rules, approaches and facts to provide solutions to complex problems. Examples of expert systems include MYCIN and DENDRAL. MYCIN uses the backward chaining technique to diagnose bacterial infections. DENDRAL employs forward chaining to establish the structure of chemicals.
 
-The inference engine is a component in which logical rules are applied to the knowledge base to get new information or make a decision. This component progresses in two modes: forward and backward chaining. These types of chaining are employed by the inference engine to deduce information. 
+There are three components in an expert system: user interface, inference engine, and knowledge base. The user interface enables users of the system to interact with the expert system. High-quality and domain-specific knowledge is stored in the knowledge base.
+
+Backward and forward chaining stem from the inference engine component. This is a component in which logical rules are applied to the knowledge base to get new information or make a decision.The backward and forward chaining techniques are used by the inference engine as strategies for proposing solutions or deducing information in the expert system. 
 
 ![Expert System](/engineering-education/forward-and-backward-chaining-in-ai/expert-system.jpg)
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/artificial_intelligence/images/expert_system.jpg)
@@ -29,7 +33,7 @@ Forward chaining can be used in planning, monitoring, control, and interpretatio
 * This approach is data-driven.
 * It is employed in expert systems and production rule system.
 
-#### Example of Forward Chaining
+#### Examples of Forward Chaining
 A simple example of forward chaining can be explained in the following sequence.
 
 A
@@ -48,6 +52,20 @@ If a person is running, he will sweat (A->B)
 
 Therefore, Tom is sweating. (B)
 
+A DENDRAL expert system is a good example of how forward chaining is used in artificial intelligence. DENDRAL is used in the prediction of the molecular structure of substances. 
+
+The process of deducing the chemical structure starts by finding the number of atoms in every molecule. The mass spectrum of the sample is then used to establish the arrangement of the atoms. These steps can be summarized as follows.
+
+The chemical formula is determined ( the number of atoms in every molecule)
+
+The spectrum machine is used to form mass spectrums of the sample
+
+The isomer and structure of the chemical are identified
+
+In this example, the identification of the chemical structure is the endpoint. In the DENDRAL expert system, a generate and test technique is employed. 
+
+There are two elements in the generator: a synthesiser and structural enumerator. The synthesiser plays the role of producing the mass spectrum. The structural enumerator identifies the structure of substances and prevents redundancy in the generator. 
+
 #### Advantages
 * It can be used to draw multiple conclusions.
 * It provides a good basis for arriving at conclusions.
@@ -55,7 +73,7 @@ Therefore, Tom is sweating. (B)
 
 #### Disadvantages
 * The process of forward chaining may be time-consuming. It may take a lot of time to eliminate and synchronize available data.
-* Unlike backward chaining, the hypothesis for this type of chaining is not very clear. The former uses a goal-driven method that arrives at conclusions efficiently. 
+* Unlike backward chaining, the explanation of facts or observations for this type of chaining is not very clear. The former uses a goal-driven method that arrives at conclusions efficiently. 
 
 ### Backward Chaining
 Backward chaining is a concept in artificial intelligence that involves backtracking from the endpoint or goal to steps that led to the endpoint. This type of chaining starts from the goal and moves backward to comprehend the steps that were taken to attain this goal. 
@@ -73,10 +91,10 @@ Backward chaining can be used in debugging, diagnostics, and prescription applic
 * It is a goal-driven method of reasoning.
 * The endpoint (goal) is subdivided into sub-goals to prove the truth of facts.
 * Backward chaining algorithm is employed in inference engines, game theories, and complex database systems.
-* The modus ponens inference rule is used as the basis for the backward chaining process. 
+* The modus ponens inference rule is used as the basis for the backward chaining process. This rule states that if both the conditional statement (p->q) and the antecedent (p) are true, then we can infer the subsequent (q). 
 
 #### Example of Backward Chaining
-The information provided in the previous example (forward chaining) can be used to explain how backward chaining works. Backward chaining can be explained in the following sequence.
+The information provided in the previous example (forward chaining) can be used to provide a simple explanation of backward chaining. Backward chaining can be explained in the following sequence.
 
 B
 
@@ -94,18 +112,34 @@ If a person is running, he will sweat (A->B)
 
 Tom is running (A)
 
+The MYCIN expert system is a real life example of how backward chaining works. This is a system that is used in the diagnosis of bacterial infections. It also recommends suitable treatments for this type of infections. 
+
+The knowledge base of a MYCIN consists of many antecedent-consequent rules, which enable the system to recognize various causes of infections (bacterial). This type of system is suitable for patients who have a bacterial infection, but do not know the specific type of infection. The system will gather information relating to symptoms and history of the patient. This information will then be analyzed to establish the type of bacterial infection. A suitable sequence can be as follows.
+
+The patient has a bacterial infection 
+
+The patient is vomiting
+
+He is also experiencing diarrhea and severe stomach upset
+
+Therefore, the patient has typhoid (salmonella bacterial infection)
+
+The MYCIN expert system uses the information collected from the patient to recommend suitable treatment. The recommended treatment corresponds to the identified bacterial infection. In the above case, the system may recommend the use of ciprofloxacin.
+
+
+
 #### Advantages
-* The result is already known, which makes it easy to deduce inferences
-* It is a quicker method of reasoning than forward chaining because the endpoint is available
-* In this type of chaining, correct solutions can be derived effectively if pre-determined rules are met by the inference engine
+* The result is already known, which makes it easy to deduce inferences.
+* It is a quicker method of reasoning than forward chaining because the endpoint is available.
+* In this type of chaining, correct solutions can be derived effectively if pre-determined rules are met by the inference engine.
 
 #### Disadvantages
 * The process of reasoning can only start if the endpoint is known.
-* It does not deduce multiple solutions or answers
-* It only derives data that is needed, which makes it less flexible than forward chaining
+* It does not deduce multiple solutions or answers.
+* It only derives data that is needed, which makes it less flexible than forward chaining.
 
 ### Conclusion
-Backward and forward chaining are important methods of reasoning in artificial intelligence. These concepts defer mainly in terms of approach, strategy, technique, speed, and operational direction. 
+Backward and forward chaining are important methods of reasoning in artificial intelligence. These concepts differ mainly in terms of approach, strategy, technique, speed, and operational direction. 
 
 Forward chaining is important to developers that want to use data-driven algorithms to develop effective computer-based systems. Backward chaining is important to developers that are interested in using goal-driven algorithms to design effective solutions in complex database systems.
 
