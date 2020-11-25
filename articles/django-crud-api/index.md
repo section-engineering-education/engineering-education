@@ -5,7 +5,7 @@ Have you ever wanted to create a restful API endpoint for consumption in your mo
 - Basics of Django web framework
 - Basics of Python programming language.
 - Postman installed.
-- IDE of your choice installed.
+- Code editor of your choice installed.
 - Python and Virtualenv installed.
   
 To verify if Python is installed and configured correctly on your system, Open the terminal and type in the command `python3 --version` on Linux/Mac or `python --version` if you are on windows.
