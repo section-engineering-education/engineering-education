@@ -22,7 +22,7 @@ virtualenv 20.0.35 from /home/user/.local/lib/python3.8/site-packages/virtualenv
 
 ### Creating the todo project.
 
-We will start by creating our project's work directory and a virtual environment for our project. The virtual environment makes it possible to run our project in an isolated environment together with its dependencies.
+We will start by creating our project's work directory and a virtual environment for our project. The virtual environment makes it possible to run our project and its dependencies in an isolated environment.
 Run `mkdir ~/todo` to create our working directory.
 
 ```python
