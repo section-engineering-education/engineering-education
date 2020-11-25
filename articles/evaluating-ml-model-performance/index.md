@@ -19,7 +19,7 @@ A general understanding of machine learning is required. For an introduction or 
 
 ### Useful Terms
 
-**Training set** – according to this ingsigtful article on [model evaluation](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f), this refers to a subset of a dataset used to build predictive models. It includes a set of input examples that will be used to train a model by adjusting the parameters of the set.
+**Training set** – according to this insightful article on [model evaluation](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f), this refers to a subset of a dataset used to build predictive models. It includes a set of input examples that will be used to train a model by adjusting the parameters of the set.
 
 **Validation set** – is a subset of a dataset whose purpose is to assess the performance of the model built, during the training phase. It periodically evaluates a model and allows for fine-tuning of the parameters of the model. This [post](https://docs.sparkflows.io/en/latest/machine-learning/evaluation.html) mentions that it is worth noting that not all modeling algorithms need a validation set.
 
@@ -47,7 +47,9 @@ The interchange between training and test data makes this method very effective.
 
 It is important to get an unbiased estimate of model performance. This is exactly what the holdout technique offers. To get this unbiased estimate, a model is tested on data that is different from the data it was trained on.
 This technique divides a dataset into three subsets; training, validation, and test sets. From the terms we defined at the start of the article, we know that the training set helps the model make predictions and that the test set assesses the performance of the model. The validation set also helps to assess the performance of the model by providing an environment to fine-tune the parameters of the model. From this, the best performing model is selected.
-The holdout method is ideal for use when dealing with a very large dataset or when working with really limited time. The holdout method is faster than cross-validation, prevents the model from overfitting, and incurs lower computational costs.
+The holdout method is ideal for use when dealing with a very large dataset, prevents the model from overfitting, and incurs lower computational costs. 
+
+When a function fits too tightly to a given set of data points, an error known as overfitting occurs. As a result, a model performs poorly on unseen data. To detect overfitting, we could first split our dataset into training and test sets. We then monitor the performance of the model on both training data and test data. If our model offers superior performance on the training set compared to the test set, there's a good chance overfitting is present. For instance, a model might offer 90% accuracy on the training set yet give 50% on the test set.   
 
 ### Model Evaluation Metrics
 
@@ -80,7 +82,11 @@ The four terms represented in the image above are very important. Let’s define
 
 **False negatives** – a scenario where negative predictions are actually positive.
 
-The green shapes in the image represent when the model makes the correct prediction. The blue ones represent scenarios where the model made the wrong predictions.
+From the definition of the four terms above, the takeaway is that it is important to amplify true positives and true negatives. False positives and false negatives represent misclassification, which could be costly in real-world applications of models. Consider instances of misdiagnosis in a medical deployment of a model. A model may wrongly predict that a healthy person has cancer. It may also classify someone who actually has cancer as cancer-free. Both these outcomes would have unpleasant consequences in terms of the well being of the patients after being diagnosed (or finding out about the misdiagnosis), treatment plans as well as expenses. It is therefore important to minimize false negatives and false positives.  
+
+
+The green shapes in the image represent when the model makes the correct prediction. The blue ones represent scenarios where the model made the wrong predictions. The rows of the matrix represent the actual classes while the columns represent predicted classes. 
+
 We can calculate accuracy from the confusion matrix. The accuracy is given by taking the average of the values in the “true” diagonal. That is:
 
 Accuracy = (True Positive + True Negative) / Total Sample
@@ -89,14 +95,19 @@ Which translates to:
 
 Accuracy = Total Number of Correct Predictions / Total Number of Observations
 
+Since the confusion matrix visualizes the four possible outcomes of classification mentioned above, aside from accuracy, we have insight into precision, recall, and ultimately, F-score. They can easily be calculated from the matrix. Precision, recall, and F-score are defined in the section below.  
+
+
+
+
 ##### F-Score
 
 F-score is a metric that incorporates both the precision and recall of a test to determine the score. This [post](https://acadgild.com/blog/metrics-to-calculate-performance-of-machine-learning-model) defines it as the harmonic mean of recall and precision. F-score is also known as F-measure or F1 score. Let’s define precision and recall.
-[Precision](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f) refers to the number of true positives divided by the total positive results predicted by a classifier.
+[Precision](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f) refers to the number of true positives divided by the total positive results predicted by a classifier. Simply put, precision aims to understand what fraction of all positive predictions were actually correct.
 
 Precision = True Positives / (True Positives + False Positives)
 
-On the other hand, recall is the number of true positives divided by all the samples that should have been predicted as positive.
+On the other hand, recall is the number of true positives divided by all the samples that should have been predicted as positive. Recall has the goal to perceive what fraction of actual positive predictions were identified accurately. 
 
 Recall = True Positives / (True Positives + False Negatives)
 
@@ -114,7 +125,7 @@ In addition to robustness, the F-score shows us how precise a model is by lettin
 
 #### Metrics for Regression Problems
 
-Classification models deal with discrete data. The already covered metrics are ideal for classification tasks since they are concerned with whether a prediction is correct or not. There is no in-between; for example, an output like “fairly correct”. Regression models, on the other hand, deal with continuous data. Predictions are in a continuous range. This is the distinction between the metrics for classification and regression problems. We look at a couple of regression metrics.
+Classification models deal with discrete data. The already covered metrics are ideal for classification tasks since they are concerned with whether a prediction is correct or not. There is no in-between. Regression models, on the other hand, deal with continuous data. Predictions are in a continuous range. This is the distinction between the metrics for classification and regression problems. We look at a couple of regression metrics.
 
 ##### Mean Absolute Error
 
@@ -136,7 +147,9 @@ Mean squared error is given by:
 
 ##### Root Mean Squared Error
 
-The root mean squared error, as defined in this [post](https://acadgild.com/blog/metrics-to-calculate-performance-of-machine-learning-model), computes the goodness of fit by calculating the square root of the average of squared differences between the predicted and actual values. It is a measure of the average error magnitude.
+The root mean squared error, as defined in this [post](https://acadgild.com/blog/metrics-to-calculate-performance-of-machine-learning-model), computes the goodness of fit by calculating the square root of the average of squared differences between the predicted and actual values. It is a measure of the average error magnitude. 
+
+This very detailed [article](https://towardsdatascience.com/what-does-rmse-really-mean-806b65f2e48e) describes root mean squared error as some form of normalized distance between the vectors of the observed and predicted values. I recommend a read to understand not only the math but the theory behind RMSE. Aside from being used to evaluate model accuracy, the root mean squared error can be a heuristic for training models. This means that it helps to reduce the error with every training iteration.  
 
 ### Winding Up
 
