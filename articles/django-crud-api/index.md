@@ -88,8 +88,9 @@ To create an app, run:
 ```python
 $ python3 manage.py startapp todo
 ```
-The above command creates a directory todo and generates boilerplate code for a todo app. Now we can plug our todo app into our `django_todo` project.
-Open `settings.py` in the project directory `django_todo` and add the name of our `todo` app in the `INSTALLED_APPS` list. We also add the `rest_framework` app that we installed to make it available for use in our project.
+The above command creates a directory `todo` and generates boilerplate code for a todo app. Now we can plug our todo app into our `django_todo` project.
+
+Open `settings.py` in the project directory `django_todo` and add our `todo` app to the `INSTALLED_APPS` list. We also add the `rest_framework` app to make it available for use in our project.
 ```python
 # ./django_todo/settings.py
 ...
