@@ -1,7 +1,20 @@
-## Tuple Data Structure in Python
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/tuples-data-structure-python/
+title: Tuple Data Structure in Python
+description: Introduction to 
+author: saiharsha-balasubramaniam
+date: 2020-11-25T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/tuples-data-structure-python/hero.jpg
+    alt: NPM Node Package Manager
+---
 A tuple is an ordered collection of items. An ordered collection retains the items in the order you insert or initialize them. In other words, the order is preserved. This is in contrast to dictionaries or sets, where the order is not preserved (unordered collections).
-
+ <!--more-->
 Tuples are similar to lists but vary in the following aspects: They are immutable, (they cannot be changed) unlike lists which are mutable (they can be changed). Let us learn more about tuples and their related methods. We will also learn to effectively use them in Python.
 
 For more background on the different types of data structures in Python, check out the following articles:
@@ -15,10 +28,9 @@ For more background on the different types of data structures in Python, check o
 - [Heaps](/engineering-education/heap-data-structure-python/)
 - [Graphs](/engineering-education/graph-data-structure-python/)
 
-_Note: Prerequisites -- Make sure you have basic Python knowledge before diving into this article. It also might be a good idea to check out some linear data structures. (links are given above)_
+*Note: Prerequisites -- Make sure you have basic Python knowledge before diving into this article. It also might be a good idea to check out some linear data structures. (links are given above)*
 
 ### Table of Contents
-
 - [Tuples: Let's Code](#tuples-lets-code)
   - [Creating a Tuple](#creating-a-tuple)
   - [Accessing Items in a Tuple](#accessing-items-in-a-tuple)
@@ -28,11 +40,9 @@ _Note: Prerequisites -- Make sure you have basic Python knowledge before diving 
 - [Further Reading](#further-reading)
 
 ### Tuples: Let's Code
-
 As we discussed, a Tuple is a collection of items that are immutable. Let us start by creating a tuple.
 
 #### Creating a Tuple
-
 A tuple can be created in multiple ways. The simplest way of creating a tuple is by setting a variable to a pair of empty parantheses.
 
 ```py
@@ -71,11 +81,9 @@ tuple5 = ([10, 20], [30, 40], [50, 60])
 ```
 
 #### Accessing Items in a Tuple
-
 Tuples follow [zero indexing](https://en.wikipedia.org/wiki/Zero-based_numbering). In zero indexing, the first element of the tuple has the index '0', the second element of the tuple has the index '1', and so on.
 
 ##### Positive Indexing
-
 For example, let us create a tuple, `tuple1`. Tuple elements can be accessed the same way as a list element.
 
 ```py
@@ -93,7 +101,6 @@ This tuple follows zero indexing.
 _Tuple Positive Indexing: Source -- [GeeksforGeeks](https://www.geeksforgeeks.org/python-tuples/)_
 
 ##### Negative Indexing
-
 Similar to lists, we can also use negative indexing on a tuple. Therefore, '-1' refers to the Nth element of a tuple, -2 refers to the (N-1)th element, and so on (where N is the length of the tuple).
 
 ```py
@@ -109,7 +116,6 @@ print(tuple1[-3]) # Output: 40
 _Tuple Negative Indexing_
 
 ##### Slicing
-
 In Python, slicing is used to return a range of values. Like lists, tuples can also be sliced.
 
 ```py
@@ -123,7 +129,6 @@ print(tuple1[4:]) # Output: (8, 13)
 As per the examples shown above, if we slice a range of \[a : b\), it would return from tuple index a to tuple index (b - 1). For more tricks on python slicing, check out [this page](https://stackoverflow.com/questions/509211/understanding-slice-notation).
 
 #### Modifying Tuples
-
 Tuples are immutable. For example:
 
 ```py
@@ -164,7 +169,6 @@ print(tuple3) # Output: ([10, 20], [30, 40], [50, 60], [100, 200], [300, 400])
 ```
 
 #### Tuple Methods
-
 Tuples have the following in-built methods that make them extremely powerful:
 
 - **`cmp(tuple1, tuple2)`**
@@ -176,8 +180,7 @@ Tuples have the following in-built methods that make them extremely powerful:
 - **`t.index(el)`**
 
 ##### cmp(tuple1, tuple2)
-
-_Note: The cmp() method existed in python2. It wasn't included in python3. Therefore we define our own compare method._
+*Note: The cmp() method existed in python2. It wasn't included in python3. Therefore we define our own compare method.*
 
 The compare method analyses two tuples element by element. It compares them and returns the following:
 
@@ -228,7 +231,6 @@ print(cmp(tuple2, tuple1))
 ```
 
 ##### len(tuple)
-
 The length method returns the length of the tuple.
 
 ```py
@@ -239,7 +241,6 @@ print(len(tuple1))
 ```
 
 ##### min(tuple)
-
 The min method returns the smallest element in the tuple.
 
 ```py
@@ -250,7 +251,6 @@ print(min(tuple1))
 ```
 
 ##### max(tuple)
-
 The max method returns the largest element in the tuple.
 
 ```py
@@ -261,7 +261,6 @@ print(max(tuple1))
 ```
 
 ##### tuple(list)
-
 The tuple method converts the list that is passed as parameter into a tuple.
 
 ```py
@@ -272,7 +271,6 @@ print(tuple(list1))
 ```
 
 ##### t.count(el)
-
 The count method returns the count of the element passed as parameter.
 
 ```py
@@ -283,7 +281,6 @@ print(tuple1.count(24))
 ```
 
 ##### t.index(el)
-
 The index method returns the index of the first occurence of the element in a tuple.
 
 ```py
@@ -315,7 +312,6 @@ print(tuple1.index(24, 2, 5))
 ```
 
 ### Applications of Tuples
-
 - Tuples are especially used as protection against modification. Since they are immutable, we can use tuples to write-protect data.
 
 - When iterating over a tuple, a considerable performance gain is observed when we compare it to lists. This is more evident when the size of the tuple is large. Using the `timeit` module in python, we see that tuples are considerably faster to iterate when compared to lists.
@@ -329,7 +325,6 @@ print(tuple1.index(24, 2, 5))
 - Tuples can be used to group related data. For example, a row in a database table can be grouped together and stored in a tuple.
 
 ### Further Reading
-
 We have looked at the tuple data structure, its implementation and methods. To get a better grip with tuples, take a look at these resources. You can find more about tuples in the Python official [documentation](https://docs.python.org/3/library/stdtypes.html#tuple).
 
 - Ways to Shuffle a Tuple: [GeeksforGeeks](https://www.geeksforgeeks.org/ways-to-shuffle-a-tuple-in-python/)
