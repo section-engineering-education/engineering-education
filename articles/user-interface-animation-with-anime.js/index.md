@@ -572,3 +572,6 @@ In the example above, an animated path is created by using the `strokeDashoffset
 ### Conclusion
 
 It is relatively easy to create animations with a few lines of Anime.js. All you need is to master Anime.js basics, and the only limitation will be your imagination. Keep animating your fantasies. Too much animations can be distracting to the users. Therefore, Be mindful not to overdo the animations.
+
+---
+Peer Review Contributions by: [Mike White](https://www.section.io/engineering-education/authors/mike-white/)
