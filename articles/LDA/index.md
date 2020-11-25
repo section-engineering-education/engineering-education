@@ -8,7 +8,7 @@ In this article, we will look into the algorithm Linear Discriminant Analysis al
 
 ### Installation
 
-We’ll install the packages required for this tutorial in a virtual environment. We’ll use conda to create a virtual environment. For more installation information, refer to the Anaconda Package Manager website.
+We’ll install the packages required for this tutorial in a virtual environment. We’ll use conda to create a virtual environment. For more installation information, refer to the [Anaconda Package Manager website](https://www.anaconda.com/products/individual).
 
 Create a new virtual environment by typing the command in the terminal. Perform this after installing anaconda package manager using the instructions mentioned on Anaconda’s website.
 
