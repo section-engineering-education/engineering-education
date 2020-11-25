@@ -1,6 +1,6 @@
 # Linear Discriminant Analysis from Scratch
 
-In this article, we will look into the algorithm Linear Discriminant Analysis also known as LDA. One should be careful while searching for LDA on the net. Another algorithm called Latent Dirichlet Allocation is also abbreviated as LDA. Linear Discriminant Analysis(LDA) is a supervised learning algorithm used as a classifier and a dimensionality reduction algorithm. We will look at LDA's theoretical concepts and look at its implementation from scratch using numpy. Let's get started.
+In this article, we will look into the algorithm Linear Discriminant Analysis also known as LDA. One should be careful while searching for LDA on the net. Another algorithm called Latent Dirichlet Allocation is also abbreviated as LDA. Linear Discriminant Analysis(LDA) is a supervised learning algorithm used as a classifier and a dimensionality reduction algorithm. We will look at LDA's theoretical concepts and look at its implementation from scratch using NumPy. Let's get started.
 
 ### Prerequisites
 1. [Theoretical Foundations for Linear Discriminant Analysis](https://www.isip.piconepress.com/publications/reports/1998/isip/lda/lda_theory.pdf)
