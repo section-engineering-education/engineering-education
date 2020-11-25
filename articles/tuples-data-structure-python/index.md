@@ -339,3 +339,7 @@ We have looked at the tuple data structure, its implementation and methods. To g
 - Named Tuple: [Python Docs](https://docs.python.org/3.3/library/collections.html#collections.namedtuple)
 
 - Tuples: [HackerRank](https://www.hackerrank.com/challenges/python-tuples/problem)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
