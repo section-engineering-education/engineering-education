@@ -3,28 +3,25 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/user-interface-animation-with-animejs/
-title: User Interface Animation With Anime.js
-description: 
-Anime.js is one of the most preferred javascript animation libraries. It is free, open-source, lightweight, and easy to use. I will guide you through the Anime.js animation library.
+title: User Interface Animation with Anime.js
+description: This article will guide you through the Anime.js animation library. Anime.js is a JavaScript animation libraries. It's free, open-source, lightweight, and easy to use.
 author: benson-kariuki
-date: 2020-11-25T00:00:00-12:00
+date: 2020-11-25T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/user-interface-animation-with-animejs/hero.jpg
     alt: User Interface Animation with Anime.js
 ---
+Anime.js is one of the most preferred javascript animation libraries. It is free, open-source, lightweight, and easy to use. The library supports modern browsers. Thtuttorail will guide you through the Anime.js animation library. You will learn how to create different animation effects for your web user interface.
+<!--more-->
+
 ### Introduction
-
-Anime.js is one of the most preferred javascript animation libraries. It is free, open-source, lightweight, and easy to use. The library supports modern browsers. I will guide you through the Anime.js animation library. You will learn how to create different animation effects for your web user interface.
-
-### Prerequisites
-
+#### Prerequisites
 This tutorial is suitable for web developers ranging from beginner to expert level. Nevertheless, you may need to have basic knowledge of HTML, CSS, and JavaScript. For free HTML, CSS, and JavaScript tutorials, I recommend [w3schools.com](https://w3schools.com).
 
 ### Setting up Anime.js
-
-To get started using Anime.js, download the library [Anime.js website](https://animejs.com/). Include the anime.js JavaScript file in your HTML code.
+To get started using Anime.js, download the library [Anime.js website](https://animejs.com/). Include the Anime.js JavaScript file in your HTML code.
 
 ```html
 <script src="path/to/anime.min.js"></script>
@@ -36,14 +33,15 @@ We can also use the [Node Package Manager (npm)](https://www.npmjs.com/). If you
 $ npm install animejs --save
 ```
 
-Another alternative is to use the latest release of the library hosted on a CDN. See the code below.
+Another alternative is to use the latest release of the library hosted on a CDN. 
+
+See the code below.
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 ```
 
 ### Getting started with Anime.js
-
 We use the `anime()` function to create the animations. The `anime()` function takes an object as an argument. The object holds the animation details. You can refresh your knowledge on [Javascript Objects](https://www.w3schools.com/js/js_object_definition.asp).
 
 ```javascript
@@ -66,20 +64,19 @@ In the animation details, we need to define targets, properties, property parame
 
 2. **Properties:** This refers to the CSS Properties that can be animated: CSS Transforms, Object Properties, Dom Attributes, and SVG Attributes. They include `translate`, `rotate`, `scale`, `skew`, `opacity`, `color`, among others.
 
-3. **Property parameters:** `duration`, `delay`, `endDelay`, `easing`, `round`, e.t.c
+3. **Property parameters:** `duration`, `delay`, `endDelay`, `easing`, `round`, etc.
 
 4. **Animation Parameters:** These are Direction, Loop, and Autoplay. Refer to [Anime.js Documentation](https://animejs.com/documentation/#direction) for more details.
 
-In the next section, we will implement the above. Follow the comments in the code.
+In the next section, we will implement the above. 
 
-### Simple Animations with Anime.js
+Follow the comments in the code.
 
-#### Shapes Animation
-
-In this example, we will create a triangular shape inside a `div` identified by `#triangle1`. You require basic CSS knowledge to achieve this.
+### Simple animations with Anime.js
+#### Shapes animation
+In this example, we'll create a triangular shape inside a `div` identified by `#triangle1`. You require basic CSS knowledge to achieve this.
 
 **Javascript code:**
-
 ```javascript
   <script type="text/javascript">
     //Create Anime object
@@ -103,7 +100,7 @@ In this example, we will create a triangular shape inside a `div` identified by 
 ```
 
 **Explanation**
-In the javascript code example above the target is `#triangle1`. Four transformations are applied to the target all at once. The resulting animation is shown in the output.
+In the JavaScript code example above the target is `#triangle1`. Four transformations are applied to the target all at once. The resulting animation is shown in the output.
 
 - `rotateY: 360`: Rotates the target along the Y-axis for 360&deg;
 - `scale: 0.5`: Scales the target by a factor of 0.5.
@@ -118,7 +115,7 @@ The animation parameters used in the example above are `direction` and `loop`. T
 
 **Output:**
 
-![Triangle animated with Anime.js gif](shape-animation.gif)
+![Triangle animated with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/shape-animation.gif)
 
 ```html
 <!DOCTYPE html>
@@ -163,12 +160,13 @@ The animation parameters used in the example above are `direction` and `loop`. T
 </html>
 ```
 
-#### Pendulum Animation
+#### Pendulum animation
+A pendulum makes a natural motion that slows down at both peaks and is faster in the middle. The first task is to draw a pendulum-like shape in HTML and CSS. 
 
-A pendulum makes a natural motion that slows down at both peaks and is faster in the middle. The first task is to draw a pendulum-like shape in HTML and CSS. In this example, I will not explain the HTML and CSS code.
+In this example, I will not explain the HTML and CSS code.
+
 **Javascript Code**
-
-```javascript
+```JavaScript
   <script type="text/javascript">
     let animation = anime({
       targets: "#pendulum_rod",
@@ -182,10 +180,11 @@ A pendulum makes a natural motion that slows down at both peaks and is faster in
 ```
 
 **Explanation**
-In the above example, we were able to animate a pendulum using a few lines of Anime.js code. The pendulum rotates between 60&deg; and -60&deg; for a duration of 4000 milliseconds (4 seconds). We can implement the natural motion by using `easing: 'easeInOutSine'`. We keep the pendulum moving by setting the direction to `alternate` and `loop: true`.
+In the example above, we were able to animate a pendulum using a few lines of Anime.js code. The pendulum rotates between 60&deg; and -60&deg; for a duration of 4000 milliseconds (4 seconds). We can implement the natural motion by using `easing: 'easeInOutSine'`. We keep the pendulum moving by setting the direction to `alternate` and `loop: true`.
+
 **Output**
 
-![Pendulum animated with Anime.js gif](pendulum-animation.gif)
+![Pendulum animated with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/pendulum-animation.gif)
 
 **Complete Source Code**
 
@@ -243,8 +242,7 @@ In the above example, we were able to animate a pendulum using a few lines of An
 </html>
 ```
 
-#### SVG Animations
-
+#### SVG animations
 Anime.js enables us to move an object using an SVG path. The first step is to create an SVG path. Some of the tools for creating the SVG path are Adobe Photoshop, Adobe Illustrator, and [Codepen SVG Path Builder](https://codepen.io/anthonydugois/pen/mewdyZ). Go ahead and create an SVG path or use the one I have already created in the example below.
 
 **Javascript**
@@ -263,13 +261,12 @@ anime({
 
 **Output**
 
-![SVG Animation with Anime.js gif](svg-path-animation.gif)
+![SVG Animation with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/svg-path-animation.gif)
 
 **Explanation**
-In the above example, the target is a ball emoji. It follows a predefined SVG path to create an animation.
+In the example above, the target is a ball emoji. It follows a predefined SVG path to create an animation.
 
 **Complete Source Code**
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -316,8 +313,7 @@ In the above example, the target is a ball emoji. It follows a predefined SVG pa
 
 ```
 
-#### Key Frames
-
+#### Key frames
 In the first example, we moved an object from point A to Point B. We will use keyframes to move an object from A to B to C. The animation keyframes are defined in an array, as shown in the code below. The object will do four different continuous translations.
 
 **Javascript code**
@@ -342,7 +338,7 @@ In the first example, we moved an object from point A to Point B. We will use ke
 
 **Output**
 
-![Key frames animations with Anime.js gif](keyframes-animation.gif)
+![Key frames animations with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/keyframes-animation.gif)
 
 **Complete Source Code**
 
@@ -393,14 +389,11 @@ In the first example, we moved an object from point A to Point B. We will use ke
 ```
 
 ### Animating UI with Anime.js
-
 #### Text Path Animation
+We'll use photoshop to create an SVG path. Create a text in photoshop, then convert the text into a path. Save the generated path as SVG. Copy the generated SVG path for use in this example.
 
-We will use photoshop to create an SVG path. Create a text in photoshop, then convert the text into a path. Save the generated path as SVG. Copy the generated SVG path for use in this example.
-
-**Javascript Code**
-
-```javascript
+**JavaScript Code**
+```JavaScript
 anime({
   targets: "#svg-path path",
   strokeDashoffset: [anime.setDashoffset, 0],
@@ -414,10 +407,9 @@ anime({
 
 **Output**
 
-![Text path animations with Anime.js gif](text-path-animation.gif)
+![Text path animations with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/text-path-animation.gif)
 
-**Full Source Code**
-
+**Full source code**
 ```html
 <!DOCTYPE html>
 <html>
@@ -584,8 +576,7 @@ anime({
 In the example above, an animated path is created by using the `strokeDashoffset: [anime.setDashoffset, 0]` property.
 
 ### Conclusion
-
-It is relatively easy to create animations with a few lines of Anime.js. All you need is to master Anime.js basics, and the only limitation will be your imagination. Keep animating your fantasies. Too much animations can be distracting to the users. Therefore, Be mindful not to overdo the animations.
+It’s relatively easy to create animations with a few lines of Anime.js. All you need is to master Anime.js basics, and the only limit will be your imagination. Keep animating your fantasies. One thing to consider is that too many animations can distract to the users. Therefore, be mindful not to overdo the animations.
 
 ---
-Peer Review Contributions by: [Mike White](https://www.section.io/engineering-education/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
