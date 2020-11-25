@@ -1,5 +1,19 @@
-## User Interface Animation with Anime.js
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/user-interface-animation-with-animejs/
+title: User Interface Animation With Anime.js
+description: 
+Anime.js is one of the most preferred javascript animation libraries. It is free, open-source, lightweight, and easy to use. I will guide you through the Anime.js animation library.
+author: benson-kariuki
+date: 2020-11-25T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/user-interface-animation-with-animejs/hero.jpg
+    alt: User Interface Animation with Anime.js
+---
 ### Introduction
 
 Anime.js is one of the most preferred javascript animation libraries. It is free, open-source, lightweight, and easy to use. The library supports modern browsers. I will guide you through the Anime.js animation library. You will learn how to create different animation effects for your web user interface.
