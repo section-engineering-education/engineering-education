@@ -81,7 +81,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
 
-When we visit http://127.0.0.1:8000/ we should see the Django welcome page. Django makes it easy for us to organize our code into apps which we can easily use in another Django project. We just plug and play. We are going to create an app which we will use to organize our code for the todo endpoints.
+When we visit http://127.0.0.1:8000/ we should see the Django welcome page. Django makes it easy for us to organize our code into reusable apps. We are going to create an app for the todo endpoints.
 
 To create an app, run:
 
