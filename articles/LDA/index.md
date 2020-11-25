@@ -33,7 +33,7 @@ To install the packages, we will use the following commands:
 Once installed, the following code can be executed seamlessly. 
 
 ### Introduction
-In some cases, the dataset's non-linearity forbids a linear classifier from coming up with an accurate decision boundary. Therefore, one of the approaches taken is to project the lower-dimensional data into a higher-dimension to find a linear decision boundary. Consider the following example taken from [Christopher Olah's blog.](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/).
+In some cases, the dataset's non-linearity forbids a linear classifier from coming up with an accurate decision boundary. Therefore, one of the approaches taken is to project the lower-dimensional data into a higher-dimension to find a linear decision boundary. Consider the following example taken from [Christopher Olah's blog](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/).
 
 ![spiral data](spiral_data.gif)
 
