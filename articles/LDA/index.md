@@ -1,10 +1,36 @@
 # Linear Discriminant Analysis from Scratch
 
-In this article, we will look into the algorithm Linear Discriminant Analysis also known as LDA. One should be careful while searching for LDA on the net. Another algorithm called Latent Dirichlet Allocation is also abbreviated as LDA. Linear Discriminant Analysis(LDA) is a supervised learning algorithm that can be used as a classifier and a dimensionality reduction algorithm. We will look at the theoretical concepts of LDA and look at LDA's implementation from scratch using numpy. Let's get started.
+In this article, we will look into the algorithm Linear Discriminant Analysis also known as LDA. One should be careful while searching for LDA on the net. Another algorithm called Latent Dirichlet Allocation is also abbreviated as LDA. Linear Discriminant Analysis(LDA) is a supervised learning algorithm used as a classifier and a dimensionality reduction algorithm. We will look at LDA's theoretical concepts and look at its implementation from scratch using numpy. Let's get started.
 
 ### Prerequisites
 1. [Theoretical Foundations for Linear Discriminant Analysis](https://www.isip.piconepress.com/publications/reports/1998/isip/lda/lda_theory.pdf)
 2. [Use of LDA in dimensionality reduction](https://machinelearningmastery.com/linear-discriminant-analysis-for-dimensionality-reduction-in-python/)
+
+### Installation
+
+We’ll install the packages required for this tutorial in a virtual environment. We’ll use conda to create a virtual environment. For more installation information, refer to the Anaconda Package Manager website.
+
+Create a new virtual environment by typing the command in the terminal. Perform this after installing anaconda package manager using the instructions mentioned on Anaconda’s website.
+
+`conda create -n lda python=3.6`
+
+This will create a virtual environment with Python 3.6.
+
+We will be installing the following packages:
+
+1. [matplotlib](https://matplotlib.org/)
+2. [sklearn](https://scikit-learn.org/)
+3. [numpy](https://numpy.org/)
+
+Activate the virtual environment using the command, `conda activate lda`. After activating the virtual environment, we’ll be installing these packages locally in the virtual environment. To use these packages, we must always activate the virtual environment named `lda` before proceeding. You may also use the name of your choice for the virtual environment. Just replace `lda` with the name of your choice.
+
+To install the packages, we will use the following commands:
+
+1. **matplotlib**: `pip3 install matplotlib`
+2. **numpy**: `pip3 install numpy`
+3. **sklearn**: `pip3 install sklearn`
+
+Once installed, the following code can be executed seamlessly. 
 
 ### Introduction
 In some cases, the dataset's non-linearity forbids a linear classifier from coming up with an accurate decision boundary. Therefore, one of the approaches taken is to project the lower-dimensional data into a higher-dimension to find a linear decision boundary. Consider the following example taken from [Christopher Olah's blog.](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/).
