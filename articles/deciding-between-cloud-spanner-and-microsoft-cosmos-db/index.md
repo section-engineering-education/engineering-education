@@ -1,9 +1,26 @@
-Creating a globally distributed database would traditionally require a lot of time and effort. You had to host the database in a personal data center bearing the entire cost. Today&#39;s advancement in cloud computing and platforms as a service (PaaS) has made it easier to create globally distributed and scalable databases. Particularly, the use of SQL-based databases has become more popular in the recent past. These databases provide you with a customized experience of sorting and processing large amounts of raw data. Many database providers exist, and they work on different nodes of the SQL database engines, including [Microsoft Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) and [Google Cloud Spanner](https://cloud.google.com/spanner).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/
+title: Cost Optimization with Amazon S3 Intelligent Tiering
+description: This article will go over what Amazon S3 intelligent tiering is, how it works, and how it can benefit organizations.
+author: eric-kahuha
+date: 2020-11-26T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/hero.jpg
+    alt:  s3 intelligent tiering example image
+---
+Creating a globally distributed database would traditionally require a lot of time and effort. You had to host the database in a personal data center bearing the entire cost. Today's advancement in cloud computing and platforms as a service (PaaS) has made it easier to create globally distributed and scalable databases. 
+<!--more-->
+Particularly, the use of SQL-based databases has become more popular in the recent past. These databases provide you with a customized experience of sorting and processing large amounts of raw data. Many database providers exist, and they work on different nodes of the SQL database engines, including [Microsoft Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) and [Google Cloud Spanner](https://cloud.google.com/spanner).
 
 This article will discuss the features of both Cloud Spanner and Microsoft Cosmos DB and highlight their advantages and disadvantages. It will also compare the two to help you better choose the cloud database to use in the future.
 
-### Features of Google Cloud Spanner
-
+### Features of Google cloud spanner
 Google Spanner is a fully managed, scalable, relational database management service.
 
 The platform can scale millions of nodes across multiple regions. Cloud Spanner nodes are dedicated resources that frequently perform background work to protect and optimize user's data, even when the user is not running a workload. Besides being integrated with access and identity management, it provides features such as [logging and auditing](https://cloud.google.com/spanner/docs/audit-logging).
@@ -12,7 +29,7 @@ Google Cloud Spanner&#39;s instance is comparable to a relational database manag
 
 Cloud Spanner supports automatic data replication. Instance configuration (the first configuration) determines the number of copies ([replicas](https://cloud.google.com/spanner/docs/replication)) to be created and their placement. Regional configuration allows data replication across three zones. These zones must come from within a single selected region. Multi-Regional configuration, on the other hand, supports data replication across four zones. These zones can come from different regions depending on what continent the user specifies.
 
-![GCP zones and regions](/engineering-education/GCP-regions-and-zones.jpg)
+![GCP zones and regions](/engineering-education/gcp-regions-and-zones.jpg)
 
 [Image source](https://cloud.google.com/about/locations#regions)
 
@@ -26,7 +43,7 @@ Microsoft Cosmos DB is a Platform as a Service ([PaaS](https://searchcloudcomput
 
 The globally distributed, multi-model database is available in all regions where [Azure is available](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cosmos-db&regions=all). This is possible considering its turnkey global distribution that automatically scales and replicates data across various data centers in the Azure network.
 
-![Cosmos DB regions](/engineering-education/Cosmos-DB-regions.jpg)
+![Cosmos DB regions](/engineering-education/cosmos-db-regions.jpg)
 
 [Image source](https://azure.microsoft.com/en-us/global-infrastructure/global-network/)
 
