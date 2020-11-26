@@ -4,21 +4,20 @@ status: publish
 published: true
 url: /engineering-education/tuples-data-structure-python/
 title: Tuple Data Structure in Python
-description: Introduction to 
+description: This article serves as an introduction to Tuples are similar to lists but vary in the following aspects they are immutable, (they cannot be changed) unlike lists which are mutable (they can be changed).
 author: saiharsha-balasubramaniam
-date: 2020-11-25T00:00:00-12:00
+date: 2020-11-25T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/tuples-data-structure-python/hero.jpg
     alt: NPM Node Package Manager
 ---
-A tuple is an ordered collection of items. An ordered collection retains the items in the order you insert or initialize them. In other words, the order is preserved. This is in contrast to dictionaries or sets, where the order is not preserved (unordered collections).
+A tuple is an ordered collection of items. An ordered collection keeps the items in the order you insert or initialize them. In other words, the order is preserved. This is in contrast to dictionaries or sets, where the order is not preserved (unordered collections).
  <!--more-->
-Tuples are similar to lists but vary in the following aspects: They are immutable, (they cannot be changed) unlike lists which are mutable (they can be changed). Let us learn more about tuples and their related methods. We will also learn to effectively use them in Python.
+Tuples are like lists but vary in the following aspects: They are immutable, (we cannot change them) unlike lists which are mutable (we can change them). Let us learn more about tuples and their related methods. We’ll also learn to effectively use them in Python.
 
-For more background on the different types of data structures in Python, check out the following articles:
-
+For more background on the different data structures in Python, check out the following articles:
 - [Introduction to Data Structures](/engineering-education/data-structures-python-part-1/)
 - [List](/engineering-education/list-data-structure-python/)
 - [Stack](/engineering-education/stack-data-structure-python/)
@@ -40,7 +39,7 @@ For more background on the different types of data structures in Python, check o
 - [Further Reading](#further-reading)
 
 ### Tuples: Let's Code
-As we discussed, a Tuple is a collection of items that are immutable. Let us start by creating a tuple.
+As we discussed, a Tuple is a collection of items that are immutable. Let's start by creating a tuple.
 
 #### Creating a Tuple
 A tuple can be created in multiple ways. The simplest way of creating a tuple is by setting a variable to a pair of empty parantheses.
@@ -55,7 +54,7 @@ print(type(tuple1))
 # Output : <class 'tuple'>
 ```
 
-The above code snippet gives an output of `<class: 'tuple'>`, which indicates that the tuple has been created successfully. We can also create a tuple by using the in-built `tuple()` method in Python.
+The code above snippet gives an output of `<class: 'tuple'>`, which indicates that the tuple has been created successfully. We can also create a tuple by using the in-built `tuple()` method in Python.
 
 ```py
 # Set the tuple2 variable to an empty tuple by using the tuple() method
@@ -84,7 +83,7 @@ tuple5 = ([10, 20], [30, 40], [50, 60])
 Tuples follow [zero indexing](https://en.wikipedia.org/wiki/Zero-based_numbering). In zero indexing, the first element of the tuple has the index '0', the second element of the tuple has the index '1', and so on.
 
 ##### Positive Indexing
-For example, let us create a tuple, `tuple1`. Tuple elements can be accessed the same way as a list element.
+For example, let's create a tuple, `tuple1`. Tuple elements can be accessed the same way as a list element.
 
 ```py
 tuple1 = (0, 1, 2, 3)
@@ -98,7 +97,7 @@ This tuple follows zero indexing.
 
 ![Tuple Positive Indexing](/engineering-education/tuples-data-structure-python/tuple-positive-index.png)
 
-_Tuple Positive Indexing: Source -- [GeeksforGeeks](https://www.geeksforgeeks.org/python-tuples/)_
+*Tuple Positive Indexing: Source -- [GeeksforGeeks](https://www.geeksforgeeks.org/python-tuples/)*
 
 ##### Negative Indexing
 Similar to lists, we can also use negative indexing on a tuple. Therefore, '-1' refers to the Nth element of a tuple, -2 refers to the (N-1)th element, and so on (where N is the length of the tuple).
@@ -113,7 +112,7 @@ print(tuple1[-3]) # Output: 40
 
 ![Tuple Negative Indexing](/engineering-education/tuples-data-structure-python/tuple-negative-index.png)
 
-_Tuple Negative Indexing_
+*Tuple Negative Indexing*
 
 ##### Slicing
 In Python, slicing is used to return a range of values. Like lists, tuples can also be sliced.
@@ -126,18 +125,19 @@ print(tuple1[0:3]) # Output: (1, 2, 3)
 print(tuple1[4:]) # Output: (8, 13)
 ```
 
-As per the examples shown above, if we slice a range of \[a : b\), it would return from tuple index a to tuple index (b - 1). For more tricks on python slicing, check out [this page](https://stackoverflow.com/questions/509211/understanding-slice-notation).
+As per the examples shown above, if we slice a range of \[a : b\), it would return from tuple index a to tuple index (b - 1). For more tricks on Python slicing, check out [this page](https://stackoverflow.com/questions/509211/understanding-slice-notation).
 
 #### Modifying Tuples
-Tuples are immutable. For example:
+Tuples are immutable. 
 
+For example:
 ```py
 tuple1 = (2000, 3000, 4000)
 
 tuple1[1] = 1000
 ```
 
-If we execute the above code, the python interpreter throws the following error:
+If we execute the code above, the Python interpreter throws the following error:
 
 ```bash
 Traceback (most recent call last):
@@ -146,7 +146,9 @@ Traceback (most recent call last):
 TypeError: 'tuple' object does not support item assignment
 ```
 
-This is because a tuple is designed to be immutable. However, we can change a tuple that contains mutable objects. For example, let us take a tuple of lists.
+This is because a tuple is designed to be immutable. However, we can change a tuple that contains mutable objects. 
+
+For example, let us take a tuple of lists.
 
 ```py
 tuple1 = ([10, 20], [30, 40], [50, 60])
@@ -182,8 +184,9 @@ Tuples have the following in-built methods that make them extremely powerful:
 ##### cmp(tuple1, tuple2)
 *Note: The cmp() method existed in python2. It wasn't included in python3. Therefore we define our own compare method.*
 
-The compare method analyses two tuples element by element. It compares them and returns the following:
+The compare method analyses two tuples element by element. 
 
+It compares them and returns the following:
 - If tuple1 > tuple2: the method returns 1.
 - If tuple2 > tuple1: the method returns -1.
 - If tuple1 == tuple2: the method returns 0.
@@ -301,7 +304,7 @@ print(tuple1.index(24, -1))
 # -1 refers to the last element in the tuple, so it searches in reverse
 ```
 
-It is also possible to specify a range to search.
+It's also possible to specify a range to search.
 
 ```py
 tuple1 = (1, 24, 45, 54, 24, 6, 34, 24)
@@ -314,7 +317,7 @@ print(tuple1.index(24, 2, 5))
 ### Applications of Tuples
 - Tuples are especially used as protection against modification. Since they are immutable, we can use tuples to write-protect data.
 
-- When iterating over a tuple, a considerable performance gain is observed when we compare it to lists. This is more evident when the size of the tuple is large. Using the `timeit` module in python, we see that tuples are considerably faster to iterate when compared to lists.
+- When iterating over a tuple, a considerable performance gain is observed when we compare it to lists. This is more evident when the size of the tuple is large. Using the `timeit` module in Python, we see that tuples are considerably faster to iterate when compared to lists.
 
 ![Tuple Performance](/engineering-education/tuples-data-structure-python/tuples-performance.png)
 
