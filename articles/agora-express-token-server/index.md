@@ -53,7 +53,7 @@ When users join an RTC channel, Agora needs their authentication information. Ag
 
 #### App ID Mechanism
 
-Each project has an app ID, which is the unique identity of the project. If your app ID is compromised, others can use it in their own projects. Therefore, using an app ID for authentication is less secure. It is not recommended to use an app ID for authentication. 
+Each project has an app ID, which is the unique identity of the project. If your app ID is compromised, others can use it in their projects. Therefore, using an app ID for authentication is less secure. It is not recommended to use an app ID for authentication. 
 
 #### Token Mechanism
 
@@ -105,7 +105,7 @@ For testing purposes, you can generate a temporary token from the project manage
 
 ![Agora Project Management Console Temp Token](project_management_console_temp_token.png)
 
-This will take you to the generate temporary token form. You need to fill in the channel name and then click on Generate Temp token button. You'll get a temporary token which you can use in your app for testing.
+This will take you to generate a temporary token form. You need to fill in the channel name and then click on the Generate Temp token button. You'll get a temporary token which you can use in your app for testing.
 
 ![Agora Project Management Console Temp Token](temp_token_form.png)
 
