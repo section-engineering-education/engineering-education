@@ -10,11 +10,12 @@ There are two parts to this application,
 ### Prerequisites
  
 - HTML is the standard markup language for web page. Here's a useful [guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) for beginners.
-- CSS is style sheet language for improving the presentation of web pages. To learn more, check this [article](https://www.section.io/engineering-education/what-is-css/)
-- [Bootstrap](https://getbootstrap.com/) is a popular HTML, CSS and JS library. An [article](https://getbootstrap.com/docs/4.0/getting-started/introduction/)  to get started.
+- CSS is a style sheet language for improving the presentation of web pages. To learn more, check this [article](https://www.section.io/engineering-education/what-is-css/)
+- [Bootstrap](https://getbootstrap.com/) is a popular HTML, CSS and JS library. Here's an [article](https://getbootstrap.com/docs/4.0/getting-started/introduction/)  to get you started.
 - [jQuery](https://jquery.com/) is a fast and feature-rich JavaScript library. 
 - [Express.js](https://expressjs.com/) is a web application framework  for Node.js. Here's an introductory article on Express.js: [link](https://www.section.io/engineering-education/express/).
 - [Socket.io](https://socket.io/) is a JavaScript library which abstracts WebSocket connections thereby enabling realtime, bi-directional communication. Here's a helpful [article](https://www.section.io/engineering-education/understanding-socket/) to get started. This article covers the usage of Socket.io on both the server and client-side. These are essential to proceed further.
+
 ### Starter Code
 
 In the interest of time and the intention to put more focus on Socket logic, please download the starter code from this [repository](https://github.com/HarishTeens/rps-online) on GitHub. Follow the instructions as mentioned on the README.md to set up the project on your local system.
@@ -23,12 +24,12 @@ If you're just looking for the source code, check out the [final branch](https:/
 
 Here's a description of the files in the starter code repository:
 
-- ```public/index.html``` : A Homepage for the app with all the required UI Components. 
+- ```public/index.html``` : A homepage for the app with all the required UI Components. 
 - ```public/style.css``` : Styles for the entire application.
-- ```public/game.js``` : A Client-side JavaScript file to handle events.
-- ```app.js``` : Server-side Node.js file for setting up the server.
+- ```public/game.js``` : A client-side JavaScript file to handle events.
+- ```app.js``` : A server-side Node.js file for setting up the server.
 
-The app doesn't work yet. We still need to write the necessary logic to make the app function. Feel free to tweak the boiler code to match your style.
+The app doesn't work yet. We still need to write the necessary logic to make the app function. Feel free to tweak the boiler-plate code to match your style.
 
 There are two important files to focus on. One is  ```app.js``` that handles server-side logic and the other is ```public/game.js``` that handles client-side logic.
 
@@ -61,9 +62,9 @@ $(".createBtn").click(function(){
 })
 ```
 
-The above code listens for a click event on the Create Button. Once that event is triggered, the client grabs player1's name and emits a socket event named `createGame` . The variable `firstPlayer` identifies the player who started the game. The use of this variable will be explained later.
+The above code listens for a click event on the Create Button. Once that event is triggered, the client grabs player1's name and emits a socket event named `createGame`. The variable `firstPlayer` identifies the player who started the game. The use of this variable will be explained later.
 
-Next we write the server-side code in `app.js` so that the server listens to this event.
+Next, we write the server-side code in `app.js` so that the server listens to this event.
 
 ```
 io.on("connection",(socket)=>{
@@ -120,7 +121,7 @@ Next, we write server-side logic on `app.js` to listen to the `joinGame` event a
         socket.emit("player1Joined",{p2name:players[data.roomID],p1name:data.name});
     })
 ```
-First, the above code adds player2 to the room, next it notifies player2 with player1's info and player1 with player2's info.
+First, the above code adds player2 to the room and then it notifies player2 with player1's info and player1 with player2's info.
 
 ```
 //Player 2 Joined
@@ -161,8 +162,11 @@ $(".controls button").click(function (){
 })
 ```
 The above code gets the choice picked by the user and emits the choice Event.  The `firstPlayer` variable is used to distinguish between the kind of event the player has to emit. Player1 emits `choice1` , Player2 emits `choice2` . 
+
 ### Listen to Player's Choice
+
 We add server-side side logic at `app.js` to listen to Player1's choice.
+
 ```
 //Listener to Player 1's Choice
     socket.on("choice1", (data)=> {
@@ -186,13 +190,13 @@ The above code gets player1's choice and does nothing if player2 hasn't picked t
         }
     });
 ```
+
 Next, we write logic to listen to player2's choice in `app.js`. Once, both of player have picked their choice, the server enters into the `if block` and invokes the `result()` function.
-
-
 
 ### Declare Winner
 
 In `app.js`,
+
 ```
 //Function to be executed after getting both choices
 const result=(roomID)=> {
@@ -204,6 +208,7 @@ const result=(roomID)=> {
     choice2 = "";
 }
 ```
+
 The result function takes the roomID as an argument. First, the `getWinner()` function calculates the result based on the player's choices . Next, it emits the result to all the clients in the room, i.e both player1 and player2. Finally, it resets the player's choices.
 
 > Note: `getWinner()` is already included in the boiler code.
@@ -237,12 +242,14 @@ The above code listens to the result event and updates the DOM with the help of 
 
 Kudos, You made it 🎉
 
-Although the app works, yet could use a lot of improvement. As mentioned before, the intention was to keep it simple to put more focus on Socket logic. The next step is to improve the app by adding extra functionality, read along for some suggestions.
+Although the app works, it could be improved. As mentioned before, the intention was to keep this tutorial simple to put more focus on Socket logic. The next step is to improve the app by adding extra functionality, read along for some suggestions.
+
 ### Next Steps
+
 - Refactoring the Code
 - Error Handling
 - Efficient usage of Events
 - Improving the UI
 - Storing choice details in socket meta-data rather than using server-side variable
 
- For Reference, check out my Rock Paper Scissor game. Here's the link to the [Github repo](https://github.com/HarishTeens/rpsgames). The application is deployed to the web with Heroku. Feel free to try the app at this [link](https://rpsgames.herokuapp.com).
+ Check out my Rock Paper Scissor game for reference. Here's the link to the [Github repo](https://github.com/HarishTeens/rpsgames). Feel free to try the game out at this [link](https://rpsgames.herokuapp.com) where its deployed to Heroku.
