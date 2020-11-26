@@ -61,7 +61,7 @@ $(".createBtn").click(function(){
 })
 ```
 
-The above code listens for a click event on the Create Button. Once that event is triggered, the client grabs player1's name and emits a socket event named `createGame` . The variable `firstPlayer` identifies the player who started the game.  The use of this variable will be explained later.
+The above code listens for a click event on the Create Button. Once that event is triggered, the client grabs player1's name and emits a socket event named `createGame` . The variable `firstPlayer` identifies the player who started the game. The use of this variable will be explained later.
 
 Next we write the server-side code in `app.js` so that the server listens to this event.
 
@@ -71,8 +71,8 @@ io.on("connection",(socket)=>{
 
     //Create Game Listener
     socket.on("createGame",(data)=>{
-        const roomID=randomstring.generate({length: 4});       
-        socket.join(roomID);        
+        const roomID=randomstring.generate({length: 4});
+        socket.join(roomID);
         players[roomID]=data.name;
         socket.emit("newGame",{roomID:roomID});
     })
@@ -80,7 +80,7 @@ io.on("connection",(socket)=>{
 })
 ```
 
-All event listeners/emitters go inside the `io.on` block as mentioned above. `connection` is the default event listener provided by Socket.io and a `connection` event is emitted under the hood every time a connection is established.  
+All event listeners/emitters go inside the `io.on` block as mentioned above. `connection` is the default event listener provided by Socket.io and a `connection` event is emitted under the hood every time a connection is established.
 The `CreateGame` listener creates a new Room with a random Room ID and adds the client to that room. Later, the server emits an event `newGame` which contains the roomID for the created room.
 
 ```
@@ -97,40 +97,40 @@ The above code is added to `public/game.js`. This snippet lets player1 know that
 
 ### Join Game
 
-Next we write client-side logic on `public/game.js` to emit the `joinGame` event.
+Next, we write client-side logic on `public/game.js` to emit the `joinGame` event.
 
 ```
 //Join Game Event Emitter
 $(".joinBtn").click(function(){
     const playerName=$("input[name=p2name").val();
-    roomID=$("input[name=roomID").val();    
+    roomID=$("input[name=roomID").val();
     socket.emit('joinGame',{
         name:playerName,
         roomID:roomID
     });
 })
 ```
-The client emits `joinGame` event with player2's name and room ID, which we acquired from the input fields.  
-Next we write server-side logic on `app.js` to listen to the `joinGame` event and share each other info with the players.
+The client emits `joinGame` event with player2's name and room ID, which we acquired from the input fields.
+Next, we write server-side logic on `app.js` to listen to the `joinGame` event and share each other info with the players.
 ```
 //Join Game Listener
-    socket.on("joinGame",(data)=>{        
+    socket.on("joinGame",(data)=>{
         socket.join(data.roomID);
         socket.to(data.roomID).emit("player2Joined",{p2name: data.name,p1name:players[data.roomID]});
         socket.emit("player1Joined",{p2name:players[data.roomID],p1name:data.name});
     })
 ```
-First the above code adds player2 to the room, next it notifies player2 with player1's info and player1 with player2's info.
+First, the above code adds player2 to the room, next it notifies player2 with player1's info and player1 with player2's info.
 
 ```
 //Player 2 Joined
 socket.on("player2Joined",(data)=>{
-    transition(data)  ;
+    transition(data);
   })
  
 //Player 1 Joined
 socket.on("player1Joined",(data)=>{
-    transition(data)  ;
+    transition(data);
 })
 
 const transition=(data)=>{
@@ -147,7 +147,7 @@ const transition=(data)=>{
 
 ### Players select Choice
 
-Next we add logic for the client to be able to select a choice and emit events in the `public/game.js` file.
+Next, we add logic for the client to be able to select a choice and emit events in the `public/game.js` file.
 
 ```
 //Select Choice
@@ -186,7 +186,7 @@ The above code gets player1's choice and does nothing if player2 hasn't picked t
         }
     });
 ```
-Next we write logic to listen to player2's choice in `app.js`. Once, both of player have picked their choice, the server enters into the `if block` and invokes the `result()` function.
+Next, we write logic to listen to player2's choice in `app.js`. Once, both of player have picked their choice, the server enters into the `if block` and invokes the `result()` function.
 
 
 
@@ -204,7 +204,7 @@ const result=(roomID)=> {
     choice2 = "";
 }
 ```
-The result function takes the roomID as an argument. First, the `getWinner()` function calculates the result based on the player's choices .   Next, it emits the result to all the clients in the room, i.e both player1 and player2. Finally, it resets the player's choices.
+The result function takes the roomID as an argument. First, the `getWinner()` function calculates the result based on the player's choices . Next, it emits the result to all the clients in the room, i.e both player1 and player2. Finally, it resets the player's choices.
 
 > Note: `getWinner()` is already included in the boiler code.
 
@@ -237,12 +237,12 @@ The above code listens to the result event and updates the DOM with the help of 
 
 Kudos, You made it 🎉
 
-This app although works, yet could use a lot of improvement. As mentioned before, the intention was to keep it simple to put more focus Socket logic. Learning never stops here, now that the app works the next step is to do improvements in order to have a fruitful experience.
+Although the app works, yet could use a lot of improvement. As mentioned before, the intention was to keep it simple to put more focus on Socket logic. The next step is to improve the app by adding extra functionality, read along for some suggestions.
 ### Next Steps
 - Refactoring the Code
 - Error Handling
 - Efficient usage of Events
-- Improving the UI  
+- Improving the UI
 - Storing choice details in socket meta-data rather than using server-side variable
 
- For Reference, check out my  Rock Paper Scissor game. Here's the link to the [Github repo](https://github.com/HarishTeens/rpsgames). The application is deployed to the web with Heroku. Feel free to try the app at this [link](https://rpsgames.herokuapp.com).
+ For Reference, check out my Rock Paper Scissor game. Here's the link to the [Github repo](https://github.com/HarishTeens/rpsgames). The application is deployed to the web with Heroku. Feel free to try the app at this [link](https://rpsgames.herokuapp.com).
