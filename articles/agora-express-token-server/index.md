@@ -42,7 +42,7 @@ This tutorial is for applications that uses [Agora](https://www.agora.io/) to im
 
 If you'd like to learn how to build a Livestream application with React Native and Agora, you can refer [this tutorial](https://www.section.io/engineering-education/react-native-agora-livestreaming-app/).
 
-The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, please refer to [some tutorials](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) before beginning with this project.
+The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
 ### Authentication in Agora
 When users join an RTC channel, Agora needs their authentication information. Agora provides three authentication mechanisms.
@@ -183,7 +183,7 @@ We have the app ID and the app certificate from the project management console.
 
 We'll get the channel ID and the user role from the request. 
 
-We'll generate a random user ID and set the expiration time of the token in the server.
+We'll generate a random user ID and set the expiration time for the token in the server.
 
 > Make sure the user ID you generate here is the same as the optional UID you pass to the SDK in the front-end while joining the channel.
 
@@ -262,7 +262,7 @@ Request & Response:
 ![RTC Token Request and Response](rtc_postman.png)
 
 ### RTM Token
-The RTM (Real-time Messaging) SDK is used to create a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency.
+The RTM (Real-time Messaging) SDK is used to create a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency. The RTM SDK is in beta at the time of writing this article.
 
 Let's add a POST handler for a new endpoint called `'/rtmtoken'` to generate authentication tokens for the RTM SDK.
 
