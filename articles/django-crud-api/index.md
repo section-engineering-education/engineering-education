@@ -1,21 +1,21 @@
-Have you ever wanted to create a restful API endpoint for consumption in your mobile app or single page front end application but never had an idea on how to get started? This article explains step by step process of creating a Restful crud API endpoints in the [Django](https://www.djangoproject.com/) and [Django rest framework](https://www.django-rest-framework.org/). Don't worry the article explains the stepwise process of creating a todo crud API endpoint from start to finish, even if you have little knowledge of the Django framework, this article is for you.
+In this tutorial, we will create a fully working to-do CRUD Django API using [Django](https://www.djangoproject.com/) and [Django rest framework](https://www.django-rest-framework.org/).
 
 ### Prerequisites
 
-- Basics of Django web framework
-- Basics of Python programming language.
-- Postman installed.
+- Knowledge of [Django web framework](https://www.djangoproject.com/).
+- Basics of [Python programming language](https://www.w3schools.com/python/python_intro.asp).
+- [Postman](https://www.postman.com/downloads/) installed.
 - Code editor of your choice installed.
-- Python and Virtualenv installed.
-  
+- Python and [Virtualenv](https://www.pythonforbeginners.com/basics/how-to-use-python-virtualenv) installed.
+
 To verify if Python is installed and configured correctly on your system, Open the terminal and type in the command `python3 --version` on Linux/Mac or `python --version` if you are on windows.
 
-```python
+```bash
 $ python3 --version
 Python 3.8.5
 ```
 To verify virtualenv installation execute the command `virtualenv --version` on the terminal.
-```python
+```bash
 $ virtualenv --version
 virtualenv 20.0.35 from /home/user/.local/lib/python3.8/site-packages/virtualenv/__init__.py
 ```
@@ -26,14 +26,14 @@ We will start by creating our project's work directory and a virtual environment
 
 Run `mkdir ~/todo` to create our working directory.
 
-```python
+```bash
 $ mkdir ~/todo
 $ cd todo
 ```
 Run `virtualenv venv` to create a virtual environment for our project and `source venv/bin/activate` to activate the virtual environment for our project.
 To install Django and Django rest framework in our virtual environment we run the command `pip3 install django` and `pip3 install djangorestframework`.
 
-```python
+```bash
 $ pip install django
 Collecting django
   Using cached Django-3.1.3-py3-none-any.whl (7.8 MB)
@@ -47,7 +47,7 @@ Installing collected packages: asgiref, pytz, sqlparse, django
 Successfully installed asgiref-3.3.1 django-3.1.3 pytz-2020.4 sqlparse-0.4.1
 ```
 
-```python
+```bash
 $ pip install djangorestframework
 Collecting djangorestframework
   Downloading djangorestframework-3.12.2-py3-none-any.whl (957 kB)
@@ -60,12 +60,12 @@ Installing collected packages: djangorestframework
 Successfully installed djangorestframework-3.12.2
 ```
 
-Lets create out django-todo project now by running the command `django-admin startproject django_todo`
-```python
+Let's create our django_todo project now by running the command `django-admin startproject django_todo`
+```bash
 $ django-admin startproject django_todo
 ```
 After successfully creating the project we change our working directory to our project folder and run the Django development server.
-```python
+```bash
 $ cd django_todo
 $ ./manage.py runserver
 Watching for file changes with StatReloader
@@ -85,7 +85,7 @@ When we visit http://127.0.0.1:8000/ we should see the Django welcome page. Djan
 
 To create an app, run:
 
-```python
+```bash
 $ python3 manage.py startapp todo
 ```
 The above command creates a directory `todo` and generates boilerplate code for a todo app. Now we can plug our todo app into our `django_todo` project.
@@ -104,7 +104,7 @@ INSTALLED_APPS = [
 ```
 ### Creating the Todo model
 
-Models are python classes that get mapped to the database tables in the database. The Todo Model will be mapped to the todo table in the database. All Django models subclass the model. Model superclass.
+In Django, models are python classes that represents a table in the database. The Todo Model represents a Todo table in the database which get created by Django whenever we run the command `python manage.py migrate`.
 In the `models.py` in the `todo` app, we will create our `Todo` model will the below code.
 
 ```python
@@ -121,7 +121,17 @@ class Todo(models.Model):
     def __str___(self):
         return self.title 
 ```
-To create an SQLite database and Todo table in the database, we will run the command `./manage.py makemigrations` to create SQL queries that will be used to create a `Todo` table in the database. To create the Todo table in the database will run the command `./manage.py migrate`.
+To create an SQLite database and Todo table in the database, we will first run the command `./manage.py makemigrations` to create SQL queries that will be used to create a `Todo` table in the database. To create the Todo table in the database will run the command `./manage.py migrate`.
+
+To make migrations run:
+```bash
+./manage.py makemigrations
+```
+To apply the migrations run:
+```bash
+./manage.py migrate
+```
+To get a better understanding of the Django migrations, read the documentation [here](https://docs.djangoproject.com/en/3.1/topics/migrations/)
 
 ### Creating the TodoSerializer
 
@@ -141,7 +151,7 @@ class TodoSerializer(serializers.ModelSerializer):
 We only need to pass in the model that we need to serialize and the fields to serialize as meta fields. In our case, we are serializing all of the fields from the `Todo` model that's why we are passing `__all__` to our `fields` variable.
 
 ### Creating the TodoAPIView
-In the `todo` app directory in the `views.py` file, we need to write in the logic for the CRUD functionality for our app. Django Rest framework comes with inbuilt classes which make building the CRUD functionality very easy. We start by importing the Django rest framework classes that we will use to create our CRUD API. We just need to create a class for each of our crud endpoints and add in the `queryset` and the `serializer_class` for our `Todo` model.
+In the `views.py` file in our `todo` app directory, we are going to write the logic for the CRUD functionality for our app. Django Rest framework comes with inbuilt classes which make building the CRUD functionality very easy. We start by importing the Django rest framework classes that we will use to create our CRUD API. We just need to create a class for each of our crud endpoints and add in the `queryset` and the `serializer_class` for our `Todo` model.
 
 ```python
 from django.shortcuts import render
