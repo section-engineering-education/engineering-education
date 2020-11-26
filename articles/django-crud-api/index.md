@@ -30,52 +30,52 @@ Run `mkdir ~/todo` to create our working directory.
 $ mkdir ~/todo
 $ cd todo
 ```
-1.To create a virtual environment for our project run:
-   ```bash
-   $ virtualenv venv
-   ```
+1. To create a virtual environment for our project run:
+      ```bash
+      $ virtualenv venv
+      ```
    `venv` in in the command `virtualenv venv` is the name of our virtual environment
    
-2.To activate the virtual environment for our projected run:
-  ```bash
-  $ source venv/bin/activate
-  ```
-3.To install Django and Django rest framework in our virtual environmnet run:
-  ```bash
-  $ pip3 install django
-  ```
+2. To activate the virtual environment for our projected run:
+   ```bash
+   $ source venv/bin/activate
+   ```
+3. To install Django and Django rest framework in our virtual environmnet run:
+   ```bash
+   $ pip3 install django
+   ```
    Running the command will result in something similar to the code block below
 
-```bash
-$ pip3 install django
-Collecting django
-  Using cached Django-3.1.3-py3-none-any.whl (7.8 MB)
-Collecting asgiref<4,>=3.2.10
-  Downloading asgiref-3.3.1-py3-none-any.whl (19 kB)
-Collecting pytz
-  Using cached pytz-2020.4-py2.py3-none-any.whl (509 kB)
-Collecting sqlparse>=0.2.2
-  Using cached sqlparse-0.4.1-py3-none-any.whl (42 kB)
-Installing collected packages: asgiref, pytz, sqlparse, django
-Successfully installed asgiref-3.3.1 django-3.1.3 pytz-2020.4 sqlparse-0.4.1
-```
-4.To Django rest framework in our virtual environmnet run:
-  ```bash
-  $ pip3 install djangorestframework
-  ```
+   ```bash
+   $ pip3 install django
+   Collecting django
+   Using cached Django-3.1.3-py3-none-any.whl (7.8 MB)
+   Collecting asgiref<4,>=3.2.10
+    Downloading asgiref-3.3.1-py3-none-any.whl (19 kB)
+   Collecting pytz
+     Using cached pytz-2020.4-py2.py3-none-any.whl (509 kB)
+   Collecting sqlparse>=0.2.2
+    Using cached sqlparse-0.4.1-py3-none-any.whl (42 kB)
+   Installing collected packages: asgiref, pytz, sqlparse, django
+   Successfully installed asgiref-3.3.1 django-3.1.3 pytz-2020.4 sqlparse-0.4.1
+   ```
+4. To Django rest framework in our virtual environmnet run:
+    ```bash
+    $ pip3 install djangorestframework
+    ```
    Running the command will result in something similar to the code block below
-```bash
-$ pip3 install djangorestframework
-Collecting djangorestframework
-  Downloading djangorestframework-3.12.2-py3-none-any.whl (957 kB)
-     |████████████████████████████████| 957 kB 595 kB/s 
-Requirement already satisfied: django>=2.2 in ./venv/lib/python3.8/site-packages (from djangorestframework) (3.1.3)
-Requirement already satisfied: asgiref<4,>=3.2.10 in ./venv/lib/python3.8/site-packages (from django>=2.2->djangorestframework) (3.3.1)
-Requirement already satisfied: sqlparse>=0.2.2 in ./venv/lib/python3.8/site-packages (from django>=2.2->djangorestframework) (0.4.1)
-Requirement already satisfied: pytz in ./venv/lib/python3.8/site-packages (from django>=2.2->djangorestframework) (2020.4)
-Installing collected packages: djangorestframework
-Successfully installed djangorestframework-3.12.2
-```
+   ```bash
+   $ pip3 install djangorestframework
+   Collecting djangorestframework
+     Downloading djangorestframework-3.12.2-py3-none-any.whl (957 kB)
+        |████████████████████████████████| 957 kB 595 kB/s 
+   Requirement already satisfied: django>=2.2 in ./venv/lib/python3.8/site-packages (from djangorestframework) (3.1.3)
+   Requirement already satisfied: asgiref<4,>=3.2.10 in ./venv/lib/python3.8/site-packages (from django>=2.2->djangorestframework) (3.3.1)
+   Requirement already satisfied: sqlparse>=0.2.2 in ./venv/lib/python3.8/site-packages (from django>=2.2->djangorestframework) (0.4.1)
+   Requirement already satisfied: pytz in ./venv/lib/python3.8/site-packages (from django>=2.2->djangorestframework) (2020.4)
+   Installing collected packages: djangorestframework
+   Successfully installed djangorestframework-3.12.2
+   ```
 
 Let's create our django_todo project now by running the command `django-admin startproject django_todo`
 ```bash
