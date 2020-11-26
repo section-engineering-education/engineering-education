@@ -30,8 +30,21 @@ Run `mkdir ~/todo` to create our working directory.
 $ mkdir ~/todo
 $ cd todo
 ```
-Run `virtualenv venv` to create a virtual environment for our project and `source venv/bin/activate` to activate the virtual environment for our project.
-To install Django and Django rest framework in our virtual environment we run the command `pip3 install django` and `pip3 install djangorestframework`.
+1.To create a virtual environment for our project run:
+   ```bash
+   $ virtualenv venv
+   ```
+   `venv` in in the command `virtualenv venv` is the name of our virtual environment
+   
+2.To activate the virtual environment for our projected run:
+  ```bash
+  $ source venv/bin/activate
+  ```
+3.To install Django and Django rest framework in our virtual environmnet run:
+  ```bash
+  $ pip3 install django
+  ```
+   Running the command will result in something similar to the code block below
 
 ```bash
 $ pip install django
@@ -46,7 +59,11 @@ Collecting sqlparse>=0.2.2
 Installing collected packages: asgiref, pytz, sqlparse, django
 Successfully installed asgiref-3.3.1 django-3.1.3 pytz-2020.4 sqlparse-0.4.1
 ```
-
+4.To Django rest framework in our virtual environmnet run:
+  ```bash
+  $ pip3 install djangorestframework
+  ```
+   Running the command will result in something similar to the code block below
 ```bash
 $ pip install djangorestframework
 Collecting djangorestframework
