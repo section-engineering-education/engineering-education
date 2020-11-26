@@ -157,6 +157,7 @@ The [mean absolute error](https://medium.com/analytics-vidhya/understanding-perf
 Mean absolute error provides the estimate of how far off the actual output the predictions were. However, since it’s an absolute value, it does not indicate the direction of the error.
 
 Mean absolute error is given by:
+
 ![mae](/engineering-education/evaluating-ml-model-performance/mae.jpg)
 
 [Source](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
@@ -165,6 +166,7 @@ Mean absolute error is given by:
 The mean squared error is quite similar to the mean absolute error. However, as described by this [article](https://medium.com/analytics-vidhya/understanding-performance-metrics-for-machine-learning-algorithms-996dd7efde1e), mean squared error uses the average of the square of the difference between original and predicted values. Since this involves the squaring of the errors, larger errors are very notable.
 
 Mean squared error is given by:
+
 ![mse](/engineering-education/evaluating-ml-model-performance/mse.jpg)
 
 [Source](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
