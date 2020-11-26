@@ -135,8 +135,8 @@ To get a better understanding of the Django migrations, read the documentation [
 
 ### Creating the TodoSerializer
 
-For converting the python objects we get from the database into a JSON format which we use for our endpoints and conversion of JSON to python object which can be mapped to our database tables we will be subclassing a Django rest framework `Serializer.ModelSerializer` class for easier conversion.
-In the todo app directory let's create a file `serializers.py` where we will write our `TodoSerializer` code.
+To convert the Python objects obtained from the database to the JSON format needed by our endpoints and back to the Python objects that can be mapped to our database tables, we will subclass the Django rest framework `Serializer.ModelSerializer` class for easier conversion.
+In the `todo` app directory, create a file `serializers.py`, where we will write our `TodoSerializer` code.
 
 ```python
 from rest_framework import serializers
