@@ -35,7 +35,7 @@ We'll be going through these steps in this article:
 5. Building Agora tokens
 6. Recap
 
-> If you want to take a look at the final code, check out the [GitHub Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app).
+> If you want to take a look at the final code, check out the [GitHub Repo](https://github.com/zolomohan/agora-express-token-server).
 
 ### Prerequisites
 This tutorial is for applications that uses [Agora](https://www.agora.io/) to implement real-time engagement and wants to implement authentication for it's users. If you are not using Agora in your application, then this tutorial is not for you.
