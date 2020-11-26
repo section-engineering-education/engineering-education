@@ -38,6 +38,10 @@ We'll be going through these steps in this article:
 > If you want to take a look at the final code, check out the [GitHub Repo](https://github.com/zolomohan/react-native-agora-livestreaming-app).
 
 ### Prerequisites
+This tutorial is for applications that uses [Agora](https://www.agora.io/) to implement real-time engagement and wants to implement authentication for it's users. If you are not using Agora in your application, then this tutorial is not for you.
+
+If you'd like to learn how to build a Livestream application with React Native and Agora, you can refer [this tutorial](https://www.section.io/engineering-education/react-native-agora-livestreaming-app/).
+
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, please refer to [some tutorials](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) before beginning with this project.
 
 ### Authentication in Agora
