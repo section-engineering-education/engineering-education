@@ -47,7 +47,7 @@ $ cd todo
    Running the command will result in something similar to the code block below
 
 ```bash
-$ pip install django
+$ pip3 install django
 Collecting django
   Using cached Django-3.1.3-py3-none-any.whl (7.8 MB)
 Collecting asgiref<4,>=3.2.10
@@ -65,7 +65,7 @@ Successfully installed asgiref-3.3.1 django-3.1.3 pytz-2020.4 sqlparse-0.4.1
   ```
    Running the command will result in something similar to the code block below
 ```bash
-$ pip install djangorestframework
+$ pip3 install djangorestframework
 Collecting djangorestframework
   Downloading djangorestframework-3.12.2-py3-none-any.whl (957 kB)
      |████████████████████████████████| 957 kB 595 kB/s 
@@ -150,7 +150,7 @@ To apply the migrations run:
 ```
 To get a better understanding of the Django migrations, read the documentation [here](https://docs.djangoproject.com/en/3.1/topics/migrations/)
 
-### Creating the TodoSerializer
+### Serializing the Todo Model
 
 To convert the Python objects obtained from the database to the JSON format needed by our endpoints and back to the Python objects that can be mapped to our database tables, we will subclass the Django rest framework `Serializer.ModelSerializer` class for easier conversion.
 In the `todo` app directory, create a file `serializers.py`, where we will write our `TodoSerializer` code.
