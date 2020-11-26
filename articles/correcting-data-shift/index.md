@@ -39,13 +39,13 @@ There are three major types of dataset shift. We explore each in detail.
 
 Covariate Shift
 
-[Source](Microsoft PowerPoint - IWANN-Dataset Shift.pptx (ugr.es))
+[Source](iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
 
 Covariate shift is the most common type of shift which is characterized by the change of the input variables existing in the training and test datasets. It may occur as a result of a change in the environment which only affects the input variables. The target variable remains unchanged.
 
 ![covariate2](/engineering-education/correcting-data-shift.png)
 
-[Source](Microsoft PowerPoint - IWANN-Dataset Shift.pptx (ugr.es))
+[Source](iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
 
 The change in distribution is problematic. Here’s why. From the above image, the learning function attempts to fit the training data. However, the distribution of the training and test data is contrasting. As such, using the learned function to make predictions, in this case, will lead to wrong results.
 
@@ -59,7 +59,7 @@ Prior probability shift is characterized by a scenario where the target variable
 
 Prior Probability Shift
 
-[Source](Dataset Shift in Machine Learning (Neural Information Processing) (acad.bg))
+[Source](http://www.acad.bg/ebook/ml/The.MIT.Press.Dataset.Shift.in.Machine.Learning.Feb.2009.eBook-DDU.pdf)
 
 We can use the context of spam emails to better understand this type of shift. The contents of spam mail may vary over time. Their ratio to the total daily received email number may also vary over time. As a result, spam filters that were developed on emails received last month may not be quite as effective today as a result of a change in the composition of the traffic of the emails.
 
@@ -105,7 +105,8 @@ Dataset shift deteriorates the performance of a model. No engineer wants to buil
 
 ### References and Further Reading
 
-1. [Dataset Shift in Classification: Approaches and Problems](Microsoft PowerPoint - IWANN-Dataset Shift.pptx (ugr.es))
+1. [Dataset Shift in Classification: Approaches and Problems](iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
+
 
 2. [Understanding Dataset Shift](https://towardsdatascience.com/understanding-dataset-shift-f2a5a262a766)
 
@@ -113,6 +114,6 @@ Dataset shift deteriorates the performance of a model. No engineer wants to buil
 
 4. [Data Shift in Machine Learning: what is it and how to detect it](https://gsarantitis.wordpress.com/2020/04/16/data-shift-in-machine-learning-what-is-it-and-how-to-detect-it/)
 
-5. [A Gentle Introduction to Concept Drift in Machine Learning](A Gentle Introduction to Concept Drift in Machine Learning (machinelearningmastery.com))
+5. [A Gentle Introduction to Concept Drift in Machine Learning](https://machinelearningmastery.com/gentle-introduction-concept-drift-machine-learning/)
 
-6. [Dataset Shift in Machine Learning](Dataset Shift in Machine Learning (Neural Information Processing) (acad.bg))
+6. [Dataset Shift in Machine Learning](http://www.acad.bg/ebook/ml/The.MIT.Press.Dataset.Shift.in.Machine.Learning.Feb.2009.eBook-DDU.pdf)
