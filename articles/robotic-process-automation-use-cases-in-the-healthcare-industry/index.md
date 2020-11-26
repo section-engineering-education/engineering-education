@@ -1,4 +1,4 @@
-Robotic process automation (RPA) is a technology that automates business operations based on the concept of artificial intelligence (AI) workers or [software robots](https://whatis.techtarget.com/definition/software-robot#:~:text=A%20software%20robot%20is%20an,virtual%20assistants%20and%20other%20chatbots.). RPA software mimics the virtual human worker and performs activities and tasks which are repetitive in nature. This reduces the involvement of humans in the process, improves efficiency, reduces costs, and saves time.
+Robotic process automation (RPA) is a technology that automates business operations based on the concept of artificial intelligence (AI) workers or [software robots](https://www.helpsystems.com/blog/best-software-robots-for-business). RPA software mimics the virtual human worker and performs activities and tasks which are repetitive in nature. This reduces the involvement of humans in the process, improves efficiency, reduces costs, and saves time.
 
 Organizations in the healthcare industry are using RPA in patients&#39; scheduling, insurance claims management, improvement of healthcare cycle, and provision of optimal care, as discussed in this article.
 
@@ -6,9 +6,9 @@ For a more in-depth look at robotic process automation, its features, and benefi
 
 ### An Overview of RPA in Healthcare
 
-The healthcare sector in any country is a complex system yet critical to the well-being of the citizens. It is comprised of medical equipment, health insurance, clinical trials, and more. Managing information related to clinical applications, third-party portals, scheduling applications, human resource applications, [enterprise resource planning](https://www.cio.com/article/2439502/what-is-erp-key-features-of-top-enterprise-resource-planning-systems.html#:~:text=Enterprise%20resource%20planning%20(ERP)%20is,%2C%20distribution%2C%20and%20other%20departments.) (EPR), and radiography information systems is often an uphill task.
+The healthcare sector in any country is a complex system yet critical to the well-being of the citizens. It is comprised of medical equipment, health insurance, clinical trials, and more. Managing information related to clinical applications, third-party portals, scheduling applications, human resource applications, [enterprise resource planning](https://www.cio.com/article/2439502/what-is-erp-key-features-of-top-enterprise-resource-planning-systems/) (EPR), and radiography information systems is often an uphill task.
 
-The integration across these systems is equally challenging and labor-intensive. It requires the engagement of patients, insurance companies, doctors, and many other stakeholders to ensure seamless care delivery. Maintaining a balance between the rising number of individuals seeking care and paperwork involved in hospital processes calls for a more efficient and accurate [back-office](https://www.investopedia.com/terms/b/backoffice.asp#:~:text=Key%20Takeaways-,The%20back%20office%20is%20the%20portion%20of%20a%20company%20made,%2C%20accounting%2C%20and%20IT%20services.) process.
+The integration across these systems is equally challenging and labor-intensive. It requires the engagement of patients, insurance companies, doctors, and many other stakeholders to ensure seamless care delivery. Maintaining a balance between the rising number of individuals seeking care and paperwork involved in hospital processes calls for a more efficient and accurate [back-office](https://www.investopedia.com/terms/b/backoffice.asp) process. A back office in a healthcare institution includes the administration and the support staff. Back-office staff work on regulatory compliance, record maintenance and provide IT, settlement, clearance services. 
 
 Advanced automatic solutions like robotic process automation help healthcare organizations lower operational costs, increase operational efficiency, and reduce the possibility of human error in the data processing. RPA systems can process information in a record time and address challenges resulting from human error.
 
@@ -44,11 +44,19 @@ Essentially, RPA software records and monitors large volumes of data. Clinics an
 
 RPA helps to achieve optimal care delivery by replacing manual inputs with digital input systems. RPA automates data extraction processes, medical records analysis, and detection of both structured and unstructured data. It then compares this information with historical health records to achieve the best diagnosis.
 
-Predictive analytic techniques are particularly applied to medical cases to give solutions, care alerts, and warnings. Furthermore, [predictive analytics](https://www.philips.com/a-w/about/news/archive/features/20200604-predictive-analytics-in-healthcare-three-real-world-examples.html#:~:text=Predictive%20analytics%20in%20healthcare%20can,avoidable%20downtime%20of%20medical%20equipment.) helps detect early signs of patients&#39; deteriorating health in the general ward and the ICU.
+Predictive analytic techniques are particularly applied to medical cases to give solutions, care alerts, and warnings. Furthermore, [predictive analytics](https://www.philips.com/a-w/about/news/archive/features/20200604-predictive-analytics-in-healthcare-three-real-world-examples.) helps detect early signs of patients&#39; deteriorating health in the general ward and the ICU.
 
 These techniques are equally important in identifying at-risk patients under home care to prevent hospital readmissions. The application of predictive analytics helps in the early identification of medical equipment maintenance needs to avoid downtime.
 
 Analytical techniques that doctors and medical researchers use in their day-to-day work include [Natural Language Processing](https://www.section.io/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/) (NLP),[machine learning](https://link.springer.com/chapter/10.1007/978-3-030-29407-6_9), [evidence-based medicine](https://www.hopkinsmedicine.org/gim/research/method/ebm.html), and big data.
+
+### How RPA Ensures Patient Data Privacy
+
+The automation of hospital processes and operations using RPA makes use of sensitive patient data. Ensuring the security and privacy of this information is a top concern of healthcare organizations. An RPA solution built with security in mind ensures medical data security and helps protect patient privacy.
+
+RPA software bots offer role-based access as a solution to data privacy. With this approach, only the correct people can access the private information of patients. Patient data is handled by many hands, each wanting access to unique information. Patient information demands from a physician are different from those of an employee in the insurance claims department. RPA helps control patient data access while ensuring that each stakeholder only gets access to specifically relevant data. 
+
+An RPA solution also automatically keeps a detailed audit history of data access. A healthcare organization can spot the issues or improper data usage in case of a data breach and make available data access records for audit.
 
 ### Conclusion
 
