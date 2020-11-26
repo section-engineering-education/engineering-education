@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/tuples-data-structure-python/hero.jpg
-    alt: NPM Node Package Manager
+    alt: Tuple data structure example image
 ---
 A tuple is an ordered collection of items. An ordered collection keeps the items in the order you insert or initialize them. In other words, the order is preserved. This is in contrast to dictionaries or sets, where the order is not preserved (unordered collections).
  <!--more-->
