@@ -1,4 +1,4 @@
-In this tutorial, we will create a fully working to-do CRUD Django API using [Django](https://www.djangoproject.com/) and [Django rest framework](https://www.django-rest-framework.org/).
+In this tutorial, we will create a fully working to-do CRUD Django API using [Django](https://www.djangoproject.com/) and [Django rest framework](https://www.django-rest-framework.org/). Restful API endpoints make it possible to perform CRUD functionality in the backend service from within the mobile app or website.
 
 ### Prerequisites
 
@@ -104,7 +104,7 @@ INSTALLED_APPS = [
 ```
 ### Creating the Todo model
 
-In Django, models are python classes that represents a table in the database. The Todo Model represents a Todo table in the database which get created by Django whenever we run the command `python manage.py migrate`.
+In Django, models are python classes that represent a table in the database. The Todo Model represents a Todo table in the database which gets created by Django whenever we run the command `python manage.py migrate`.
 In the `models.py` in the `todo` app, we will create our `Todo` model will the below code.
 
 ```python
@@ -135,7 +135,7 @@ To get a better understanding of the Django migrations, read the documentation [
 
 ### Creating the TodoSerializer
 
-For converting the python objects we get from the database into a JSON format which we uses for our endpoints and conversion of JSON to python object which can be mapped to our database tables we will be subclassing a Django rest framework `Serializer.ModelSerializer` class for easier conversion.
+For converting the python objects we get from the database into a JSON format which we use for our endpoints and conversion of JSON to python object which can be mapped to our database tables we will be subclassing a Django rest framework `Serializer.ModelSerializer` class for easier conversion.
 In the todo app directory let's create a file `serializers.py` where we will write our `TodoSerializer` code.
 
 ```python
@@ -261,7 +261,7 @@ To Delete a Todo we make a DELETE request to http://localhost:8000/api/v1/todo/u
 ### Documenting Todo Endpoints
 It's a good practice to provide documentation for the various endpoints that we create, this makes it easier for other people to use our API endpoints.
 
-We will use coreapi to document our endpoints.To install coreapi and plug it into our app we run the command `pip3 install coreapi` in the terminal. On the `setting.py` file in ` django_todo` project directory add `coreapi` to the installed apps list and the add the below rest framework configuration to enable documentation autogeneration.
+We will use coreapi to document our endpoints. To install coreapi and plug it into our app we run the command `pip3 install coreapi` in the terminal. On the `setting.py` file in ` django_todo` project directory add `coreapi` to the installed apps list and the add the below rest framework configuration to enable documentation autogeneration.
 ```python
 
 INSTALLED_APPS = [
@@ -297,7 +297,7 @@ urlpatterns = [
 ]
 ```
 
-By visiting http://127.0.0.1:8000/docs/ in the browser we will get a full documentation of our Todo Crud API endpoints..
+By visiting http://127.0.0.1:8000/docs/ in the browser we will get a full documentation of our Todo CRUD API endpoints.
 
 ### Conclusion
 We finally understand how to create and document our restful endpoint APIS in Django. Go ahead and clone the repos [django_todo](https://github.com/paulodhiambo/django_todo) to view the full source code of the project and add new fields to our Todo model. Next, we will secure our endpoints and add social authentication to our app.
