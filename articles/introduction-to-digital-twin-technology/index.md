@@ -1,18 +1,23 @@
-Digital twin technology is a concept that integrates the internet of things (IoT), software analytics, artificial intelligence, and special network graphs to create digital simulation models that replicate physical assets (physical twin).
+Global industries have achieved a tremendous technological transformation because of linkage between digital and physical worlds. 
+
+Digital twin technology has played an important role in enhancing this convergence. This is a technology that enables companies or organizations to develop digital copies of their products, assets, or processes to optimize performance and maintenance. For example, this technology has been employed in the automobile industry to create digital copies of cars. It has also been used by manufacturing firms to replicate physical production processes. 
+
+This article provides meaningful information regarding the concept of digital twin, and how digital twin technology works. It has also provided an overview of how this important technology has been employed in real-life applications. 
 
 ### What is a Digital Twin?
-A digital twin is a digital representation of actual and potential assets, people, processes, systems, devices, and places. This representation provides the dynamics and elements of how an IoT device lives and operates. 
+A digital twin is a virtual representation or digital replica (copy) of assets, people, processes, systems, devices, and places. Some of the things that can be replicated using digital twin technology include vehicles, aircraft engines and people.
 
-Continuous learning and updates enable the digital twin to provide the real-time position, condition, or status of the real objects. This pairing of the real world and the digital representation enable organizations to monitor systems, develop plans and anticipate problems before they occur. 
+If an automobile company develops a virtual representation or digital copy of a car model, then this digital replica is a digital twin of the physical car. Similarly, if a manufacturing company creates a virtual representation of its manufacturing process, the replicated process (digital) is a digital twin of the physical process. 
+
+A digital twin can also be described as a digital profile of the current and historical state of a process or physical object. This virtual representation provides the dynamics and elements of how an IoT device lives and operates.
+
+Continuous learning and updates enable the digital twin to provide the real-time position, condition, or status of the physical assets. This pairing of the real world and the digital world enable organizations to monitor systems, develop plans and anticipate problems before they occur.
+
+Digital twins are created using digital twin technology. This technology integrates the internet of things (IoT), software analytics, artificial intelligence, and special network graphs to replicate physical assets or processes (physical twins).
 
 ![Digital Twin](/engineering-education/introduction-to-digital-twin-technology/digital-twin.jpg)
 
 [Image Source: IDGESG](https://images.idgesg.net/images/article/2018/06/digital-twins_woman-in-profile_ai_mirror_duplicate_duo_pair-100760562-large.jpg)
-
-### Why Digital Technology is Important
-Digital technology should be considered by organizations for various reasons. It enables companies to develop a digital footprint of the entire product life cycle. This ensures that they have an in-depth understanding of the actual product and the process that was used to design the product. The digital twin created by a company enables it to drive value through improved models and reduced defects. 
-
-A Digital twin enables a company to detect problems in a product or manufacturing process. Through digital technology, outcomes can be predicted effectively with a high level of accuracy. With this technology, there is faster  realization of value than before. 
 
 ### Characteristics of Digital Twin Technology
 Digital twin technology consists of certain characteristics such as connectivity, homogenization, ability to be reprogammable, digital traces and modularity. 
@@ -32,38 +37,17 @@ This technology consists of digital traces that are left when creating a digital
 #### Modularity
 Digital technology enhances the customization of digital production modules. This enables manufacturers to modify their models. Modularity in digital technology enables manufacturers to identify areas that need improvement.
 
-### How Digital Technology Works
-The Digital twin a of a manufacturing process can give us a good overview of how digital technology works. In this case, the digital twin provides a virtual representation of what happens in the factory in real-time. The following diagram shows the digital twin model of an actual manufacturing process.
-
-![How Digital Twin Technology Works](/engineering-education/introduction-to-digital-twin-technology/how-digital-twin-technology-works.jpg)
-
-[Image Source: Deloitte University Press](https://www2.deloitte.com/content/dam/insights/us/articles/3833_Industry4-0_digital-twin-technology/figures/3833_Figure1.png)
-
-The digital twin model is achieved through six main features-sensors, actuators, data, integration, analytics, and the digital twin. 
-
-- **Sensors:** Sensors are positioned at various points of the physical manufacturing process to collect data. Some of the important dimensions of data collected include works in progress (including speed, thickness, and color quality), environmental conditions of the factory, and behavioral characteristics of machines.
-  
-- **Data:** This is the information collected from the physical processes. The main data collected includes operational and environmental data. This data is aggregated and combined with other enterprise data such as design specifications, enterprise systems, engineering drawings, and customer logs.  
-  
-- **Interaction:** Interactive technology enhances the interaction between the physical processes and the digital representation of these processes. This technology enables sensors to communicate the aforementioned data to the virtual (digital) world. Some of the integration technologies used include edge, security, and communication interfaces.   
-  
-- **Analytics:** Incoming data is continuously analyzed by the digital twin application. Data is analyzed through visualization routines and algorithmic simulations. Digital twins produce insights using this analysis. This analysis ensures the actual manufacturing process takes place seamlessly. It also identifies unacceptable trends in this process.
-  
-- **Digital Twin:** This is the digital replica of the actual manufacturing processes. It is shown on the right side of the diagram.  
-  
-- **Actuators:** If there is any need for action in the actual process, the digital twin will use actuators to generate the action. 
-
 ### Applications of Digital Twin Technology
 The digital twin technology is applied in various industries. The following are some of the applications of this technology.
 
 #### Manufacturing
-Digital twins are used for replicating the physical processes in manufacturing companies. Digital technology enhances the interaction of the virtual objects and the physical objects in the factory. When there are problems in the actual physical processes, engineers assess the digital twin to trace the origin and nature of the problem. Digital twins in manufacturing can also be used to improve processes. 
+Digital twins are used for replicating the physical processes in manufacturing companies. Digital technology enhances the interaction of virtual objects and physical objects in the factory. When there are problems in the actual physical processes, engineers assess the digital twin to trace the origin and nature of the problem. Digital twins in manufacturing can also be used to improve processes. 
   
 #### Health care
 Through digital twin technology, personalized models can be created by health professionals to improve medical care. These professionals can use the digital twin of organs or patients (instead of real patients) to practice important health procedures. 
   
 #### Urban Planning
-Digital twin technology is important in the planning of smart urban cities. Digital twins are used for modeling urban cities and related data. This technology has also enhanced the digitization of related activities such as construction, maintenance, and operation of urban projects. The built project is integrated with its digital representation to enhance optimal performance.
+Digital twin technology is important in the planning of smart urban cities. Digital twins are used for modeling urban cities and related data. This technology has also enhanced the digitization of related activities such as construction, maintenance, and operation of urban projects. The built project is integrated with its digital replica to enhance optimal performance.
 
 #### Automotive industry
 Automobile companies use digital twin technology to create digital twins of their cars. These digital twins enable these companies to showcase how real cars operate. In case improvements are needed in the current car models, engineers will use the digital twins to suggest new features that can improve their performance.
@@ -74,6 +58,38 @@ Automobile companies use digital twin technology to create digital twins of thei
 
 #### Logistics/Supply Chain
 Digital twin technology enables companies to virtualize their product packages before the actual packaging takes place. This helps in reducing errors in packaging. Logistics companies can also use this type of technology to assess material feasibility, design effective warehouse layouts, and create feasible logistics networks.
+
+### Why Digital Technology is Important
+Digital technology should be considered by organizations for various reasons. It enables companies to develop a digital footprint of the entire product life cycle. Companies can use the digital copy of their products to perform product improvements. They can also utilize digital twin technology to develop virtual prototypes of new products. The digital twin created by a company enables it to drive value through improved models and reduced defects. 
+
+A digital twin enables a company to detect problems in a product or manufacturing process. Through digital technology, outcomes can be predicted effectively with a high level of accuracy. With this technology, there is faster realization of value than before. 
+
+### How Digital Technology Works
+Digital twin technology works by integrating artificial intelligence, internet of things (IoT),and software analytics with physical assets or processes. 
+
+Physical products, devices, processes or equipment are built with sensors to collect data. A cloud-based system is used to send this data to the digital world. Machine learning algorithms are then used to analyze the collected data. This analysis generates actionable information that creates a digital copy of the physical world (physical asset, product or process).
+
+Insights are also generated to signify areas that need change in the physical process or product. Continuous analysis of real-time data ensures that the digital twin is up to date with the current state of the physical world. 
+
+The digital twin model of a manufacturing process gives a good example of how digital technology works. In this case, the digital twin provides a virtual representation of what happens in the factory in real-time. The following diagram shows how this digital twin model works.
+
+![How Digital Twin Technology Works](/engineering-education/introduction-to-digital-twin-technology/how-digital-twin-technology-works.jpg)
+
+[Image Source: Deloitte University Press](https://www2.deloitte.com/content/dam/insights/us/articles/3833_Industry4-0_digital-twin-technology/figures/3833_Figure1.png)
+
+The digital twin model consists of six main features-sensors, actuators, data, integration, analytics, and the digital twin. These features perform specific roles that enhance digital twin technology.
+
+- **Sensors:** Sensors are positioned at various points of the physical process to collect data. Some of the important dimensions of data collected include works in progress (including speed, thickness, and color quality), environmental conditions of the factory, and behavioral characteristics of machines.
+  
+- **Data:** This is the information collected from the physical processes. The main data collected includes operational and environmental data. This data is aggregated and combined with other enterprise data such as design specifications, enterprise systems, engineering drawings, and customer logs.  
+  
+- **Interaction:** Interactive technology enhances interaction between the physical processes and the digital representation of these processes. This technology enables sensors to communicate the aforementioned data to the virtual (digital) world. Some of the integration technologies used include edge, security, and communication interfaces.   
+  
+- **Analytics:** Incoming data is continuously analyzed by the digital twin application. Data is analyzed through visualization routines and algorithmic simulations. Digital twins produce insights using this analysis. This analysis ensures the actual manufacturing process takes place seamlessly. It also identifies unacceptable trends in this process.
+  
+- **Digital Twin:** This is the digital replica of the actual manufacturing processes. It is shown on the right side of the diagram.  
+  
+- **Actuators:** If there is any need for action in the actual process, the digital twin will use actuators to generate the action. 
   
 ### The Future of Digital Twin Technology
 Digital twin technology is driving optimal performance and innovation in various industries. In the coming years, there will be many digital twins representing various physical realities such as people, processes, places, and objects. This may call for more collaboration between experts who handle physical products and data scientists.  
