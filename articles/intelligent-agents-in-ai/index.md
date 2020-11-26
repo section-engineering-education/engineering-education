@@ -97,12 +97,4 @@ With increased technological advancement, there will be enhanced development of 
 
 [AI Objectives](http://www.aiobjectives.com/2019/11/01/analysis-of-intelligent-agents-in-artificial-intelligence/)
 
-
-
-
-
-
-
-
-
-
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
