@@ -30,7 +30,7 @@ With an understanding of Asynchronous functionality you should be able to:
 
 ### Prerequisites
 Before you begin this guide you will need:
-- An understanding of what happens when [JavaScript executes your code](https://www.section.io/engineering-education/js-execution-under-the-hood/).
+- An understanding of what happens when [JavaScript executes your code](/engineering-education/js-execution-under-the-hood/).
 
 ### Step 1 - When do you need Asynchronous JavaScript?
 ```JavaScript
@@ -54,19 +54,42 @@ The wait for the promised tweet begins. 10 milliseconds, 20 milliseconds, 50 mil
 
 Assuming your returned tweet is a string, `"Hello World"`, it is assigned to the constant `dataFromAPI`.
 
-Line 8:  You execute `display()` passing the constant `dataFromAPI` as an argument. You then move into the body of `display()`, push `display()` onto the Call Stack and create a Local Execution Context.
+Line 8:  You execute `display()` passing the constant `dataFromAPI` as an argument. This execution entails pushing `display()` onto the Call Stack, creating a Local Execution Context and moving to line 2 in the body of `display()`.
 
-Line 2: You log the value of `dataFromAPI`. You then pop `display()` from the Call Stack, garbage collect the Local Execution Context, and move back to the Global Execution Context.
+Line 2: You log the value of `dataFromAPI`. Then pop `display()` from the Call Stack, garbage collect the Local Execution Context, and move back to the Global Execution Context.
 
 Line 9: You log the string `"Me Later!"`
 
-From the breakdown above, you can spot a clear problem. Such a scenario in a real-world application would render our application unusable. Luckily, there are solutions to this problem. In the next step, we introduce Web Browser APIs and walk through how they solve this problem for us.
+From the breakdown above, you can spot a clear problem. Such a scenario in a real-world application would render our application unusable as we waited for the response from Twitter's servers. Luckily, there are solutions to this problem. In the next step, we introduce Web Browser APIs and walk through how they solve this problem for us.
 
 ### Step 2 - Web Browser APIs.
 ```JavaScript
-function printHello(){
-  console.log(“Hello”);
-  }
-setTimeout(printHello,1000);
-console.log(“Me first!”);
+1. function printHello(){
+2.   console.log(“Hello”);
+3. }
+4. function blockFor1Sec(){
+5.   //blocks in the JavaScript thread for 1 second
+6. }
+7. setTimeout(printHello,0);
+8. console.log(“Me first!”);
 ```
+In this step, we will see what happens when a web browser API ( `setTimeout()` ) is introduced and how it improves what we had in the previous step.
+
+[setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) and other web browser APIs introduce functionality that happens outside of JavaScript's Global Execution Context. If you wish to, you can explore the various APIs [here](https://developer.mozilla.org/en-US/docs/Web/API).
+
+Given that the functionality is outside of JavaScript, we will need to introduce rules around when the return values, if any, are allowed back into JavaScript's Global Execution Context and how exactly JavaScript and the web browser manage that whole process.
+
+Let's walk through the code and see this process in action.
+
+Line 1: You declare a function `printHello()`. You then move on to line 4.
+
+Line 4: You declare a function `blockFor1Sec()`. You then move on to line 7.
+Line 7: You execute `setTimeout()` which takes a function, `printHello`, and a time, in milliseconds, after which the function will be executed. This functionality is delegated to the browser, which means that your Thread Of Execution is freed. You can then move onto Line 8.
+
+The value of the timer is set to zero, meaning that at this point even before you move on to line 5, `printHello()` is ready to execute. But for reasons you will see later it is not allowed back until some conditions are met. It is added to 
+
+Line 8: You log `"Me first"`
+
+At this point, all of the Global Synchronous JavaScript code has been executed. 
+
+This is one of the conditions that need to be met for `printHello()` to be allowed back into JavaScript's Global Execution context.
