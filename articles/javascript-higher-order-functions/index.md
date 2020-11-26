@@ -1,7 +1,7 @@
 
 Functional programming is a significant building block for JavaScript as a language. They are some of the common scrips that you will continuously use when building JavaScript applications. Functions set statements to perform tasks. Functions define a task, which you can call and execute whenever you want inside your program.
 
-JavaScript treats a function as an object assigned to values to return a value. They have methods and properties, just like the other objects. Unlike ordinary objects, a function can be
+JavaScript treats a [function as an object](https://www.dofactory.com/javascript/function-objects) assigned to values to return a value. They have methods and properties, just like the other objects. Unlike ordinary [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects), a function can be;
 
 - Called.
 - Passed as an argument to another function.
@@ -36,7 +36,7 @@ In this guide, we learn about the high order function. We will discuss and show 
 
 ### Array.prototype.filter
 
-`filter()` allows you to filter things in an array. It is a method that returns a new array of elements. A callback function tests each input array element. The `filter()` method composes all the elements that pass the callback function test and returns a new array.
+`filter()` allows you to filter things in an array. It is a method that returns a new array of elements. A callback function tests each element in the input array. The `filter()` method composes all the elements that pass the callback test and returns a new array.
 
 Let's digest this information with examples.
 
@@ -156,7 +156,7 @@ console.log(anAdult);
 ]*/
 ```
 
-We get the same results. But this time, our code is getting small and compact. No looping any more to iterate the input array. `filter()` calls the passed callback once for every element being tested. `filter()` accepts the arguments of the callback function. The callback holds the value of the element being processed with the syntax below.
+We get the same results. But this time, the code is getting small and compact. No looping any more to iterate the input array. `filter()` calls the passed callback to each element being tested. `filter()` accepts the arguments of the callback function. The callback holds the value of the element being processed with the syntax below.
 
 ```js
 let newArray = arr.filter(callback(currentValue[, index, [array]){
@@ -171,7 +171,27 @@ A filter callback function takes the following parameters:
 
 ####  Example Three: Covert the High Order Function to an Arrow Function
 
-With ES6, it is unbelievable that we can compose this further using the arrow function.
+With ES6, we can compose this further using the arrow function. It is an abbreviated way to write compact functions.
+
+Here is a basic example of an arrow function.
+
+##### Basic Syntax
+```js
+(param1, paramN) => expression
+```
+##### Basic Example
+```js
+function sum(x, y) {
+  return x + y;
+}
+```
+Replicate the above example using the arrow function.
+```js
+const sum = (x, y) => x + y;
+```
+The arrow function uses a different syntax compared to the regular function. However, they do not change the logic. They make the code compact and less verbose. Here is a [guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) that will help you understand the arrow function concept.
+
+Let's replicate `filter()` using arrow function.
 
 ```js
 const adults = [
@@ -209,7 +229,7 @@ The callback takes two parameters, namely:
 - Accumulator
 - Current value
 
-It doesn't return a new array; instead, it uses a provided callback called a `reducer`. When returned, it reduces the input array into a single value. Reducer callback makes this method a high order function.
+It doesn't return a new array; instead, it uses a provided callback called `reducer`. When returned, it reduces the input array into a single value. Reducer callback makes this method a high order function.
 
 `reduce()` accept two input parameters
 - A callback function (the reducer function).
@@ -236,7 +256,7 @@ So have a look, assume an array of numbers:
 [5, 6, 7, 8, 9, 10]
 ```
 
-Imagine getting the sum of these array elements. We can use loops as we demonstrated in the `filter()` method, and we will get the total sum of this array. However, we can opt to optimize our code with just a few lines using `reduce()`. This will make our code clean and less verbose.
+Imagine getting the sum of these array elements. We can use loops as we demonstrated in the `filter()` method, and we will get the total sum of this array. However, we can opt to optimize the code with just a few lines using `reduce()`. This will make the code clean and less verbose.
 
 Let’s demonstrate with examples.
 
@@ -307,6 +327,8 @@ We can conclude that the first callback would take the first element's value if 
 The `map()` method composes a new array by returning the results of a callback function. It executes a provided callback function once for every element provided in the input array. The callback function is applied to all the elements of the input array.
 
 Let’s digest this with examples.
+
+Example one:
 
 Suppose we have an array `[2, 4, 89, 0.67, 7.47, 20]`; we want to multiply every element, let's say by `4`. This is how we can multiply the elements without a high order function.
 
