@@ -152,8 +152,12 @@ Let's import this into our code.
 const Agora = require("agora-access-token");
 ```
 
+You can refer the documentation to generate a token [here](https://docs.agora.io/en/Video/token_server?platform=Android).
+
 ### RTC Token
 The RTC (Real-time Communication) SDK is used to enable real-time audio and video communications. With the help of the RTC SDK, developers can add audio/video call and audio/video broadcast functions in their projects.
+
+You can learn more about the RTC SDK [here](https://docs.agora.io/en/Agora%20Platform/term_agora_rtc_sdk?platform=Android).
 
 Let's add a POST handler for a new endpoint called `'/rtctoken'` to generate authentication tokens for RTC Channels.
 
@@ -260,6 +264,8 @@ Request & Response:
 
 ### RTM Token
 The RTM (Real-time Messaging) SDK is used for real-time messaging scenarios that require low latency and high concurrency. The RTM SDK is in beta at the time of writing this article.
+
+You can learn more about the RTM SDK [here](https://docs.agora.io/en/Real-time-Messaging/landing-page?platform=Android).
 
 Let's add a POST handler for a new endpoint called `'/rtmtoken'` to generate authentication tokens for the RTM SDK.
 
