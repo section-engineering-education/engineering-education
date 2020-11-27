@@ -4,8 +4,8 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-inheritance-using-c/
 title: Getting Started with Inheritance using C#
-description: The basic concepts of 
-author: 
+description: The basic concepts of
+author:
 date: 2020-11-24T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/getting-started-with-inheritance-using-c/hero.jpg
     alt:  example image
 ---
-Inheritance is a very unique concept in (OOP) object-oriented programming, it allows the definition of multiple classes using the properties of other classes. Inheritance allows us to maintain modify and boost our code, it also provides the reusability of code functionality and gives better performance.
+Inheritance is a unique concept in (OOP) object-oriented programming, it allows the definition of multiple classes using the properties of other classes. Inheritance allows us to maintain, modify, and boost our code. It also provides the reusability of code functionality and gives better performance.
 <!--more-->
 ### Introduction
-We create classes by inheriting the functions and variables of a base class, then we add new functions to enhance its performance, we call it a derived class because it inherits the properties of a base class. Without inheritance, the code will be unstructured harder to read, and complex.
+We create classes by inheriting the functions and variables of a base class, then we add new functions to enhance its performance. We call it a derived class because it inherits the properties of a base class. Without inheritance, the code will be unstructured, difficult to read, and complex.
 
-### Table of Contents
+### Table of contents
 1. Base classes vs Derived classes.
 
 2. Protected vs Internal members.
 
-3. Learn about the relationship between classes.
+3. The relationship between classes.
 
 4. How constructors and destructors get executed.
 
@@ -37,28 +37,28 @@ Before we begin this tutorial, you should have the following:
 - A basic understanding of how Classes work.
 
 ### Base classes vs Derived classes
-
 A **Base** class produces derived classes that inherit the properties of the base class.
 
 Inheritance forms a tree-like Hierarchy:
 
 ![inheritance tree](/engineering-education/Getting-started-with-inheritance-using-c#/tree-of-inheritance.png)
 
- **In inheritance**, an object is often an object of another class and all derived classes are objects of their base class,
- also, note that constructors are not inherited. This is how you specify a class child derived from class father: `class child: father`.
+**In inheritance**, an object is often an object of another class and all derived classes are objects of their base class, also note that constructors are not inherited.
 
+This is how you specify a class child derived from class father: `class child: father`
 
 ### Protected members vs Internal members
 A derived class can access the **protected members** of a base class, on the other hand
-**Internal members** Can only be accessed by a class declared within the same domain.
+**Internal members** cnn only be accessed by a class declared within the same domain.
 
 ### The proper way to use inheritance
-Before we dig into the code we should always include the word **Override** if we need to reuse a method in a derived class inherited from a base class,
-also, the word **Virtual** is needed before the method in a base class if we are going to override it in a derived class.
+Before we dig into the code it's important to note that we include the word **Override** when we need to reuse a method in a derived class inherited from a base class.
+
+if we are going to override a method in a derived class we can use the word **Virtual** before the method in a base class.
 
 The following example will calculate the area and perimeter of a circle using inheritance.
 
-in this piece of code, we will define two private point coordinates, then we will define a constructor that takes two integers from the main.
+In this piece of code, we'll define two private point coordinates, then we'll define a constructor that takes two integers from the main.
 
 **Note** that Output statements use a reference (This) to implicitly call the ToString method.
 
@@ -73,9 +73,11 @@ in this piece of code, we will define two private point coordinates, then we wil
          Y = ycoordinate;
          Console.WriteLine("point constructor: {0}", this);}
   ```
-  Here we define the set and get Accessors to access the private members of the class, then we will override the ToString method.
 
-  **Note** that the ToString method will return a string representation of class Point.
+Here we define the set and get Accessors to access the private members of the class, then we'll override the ToString method.
+
+**Note** that the ToString method will return a string representation of the class Point.
+
   ```c#
       public int X
       {
@@ -98,12 +100,13 @@ in this piece of code, we will define two private point coordinates, then we wil
     } // end class Point
    ```
 
-The following class is the Derived class of class point.
+The following class is the Derived class of the class point.
 
-In class Circle, we don't need to define the point coordinates because they're already inherited as we can see
+In the class Circle, we don't need to define the point coordinates because they're already inherited.
 
-`: base(xcoordinate,ycoordinate)`. Now we define the radius of the circle the constructor and the Accessors.
+`: base(xcoordinate,ycoordinate)`.
 
+Now we define the radius of the circle the constructor and the Accessors.
 
    ```c#
        public class Circle: Point
@@ -125,9 +128,7 @@ In class Circle, we don't need to define the point coordinates because they're a
 
    ```
 
-
-Now we need to define the functions that will help us calculate the area and perimeter of the circle, then we will override the ToString method, just like we did in class Point.
-
+Now we need to define the functions that will help us calculate the area and perimeter of the circle, then we will override the ToString method, just like we did in the class Point.
 
    ```c#
       public double Diameter()
@@ -171,10 +172,9 @@ The output after execution:
   ```
 
 ### Constructors and Destructors in derived classes
-The constructor of a base class will be called implicitly or explicitly when Instantiating a derived class, this will cause a chain reaction when a base class is also a derived class.
+The constructor of a base class will be called implicitly or explicitly when Instantiating a derived class, this will cause a chain reaction when a base class is a derived class also.
 
 When a destructor is called, it executes its function and then invokes the derived class base class constructor.
-
 
 Let’s look at the code sample below to learn how to define a destructor.
 
@@ -221,4 +221,4 @@ Point destructor: Center= [6, 8]; Radius = 4
    ```
 
 ### Conclusion
-In this tutorial, we have learned the importance of inheritance, how to define a base class and inherit its properties, and understand the relationship between classes. However, it's just the start! we will learn more about inheritance in the upcoming tutorials. Also, don't forget to test out the code to fully understand how it works.
+In this tutorial, we have learned the importance of inheritance, how to define a base class and inherit its properties, and understand the relationship between classes. However, it's just the start! we will learn more about inheritance in the upcoming tutorials. Don't forget to test out the code to fully understand how it works.
