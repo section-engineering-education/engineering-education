@@ -181,7 +181,7 @@ Optimization involves finding a set of parameters that minimize or maximize a fu
 ##### Learning rate
 Learning rate is commonly denoted with the alpha hyperparameter. It can be described as the rate at which the weights in a neural network get updated.
 
-###### Adaptive learning rates
+##### Adaptive learning rates
 By allowing the learning rate to vary during training, the training time tends to reduce and improves the results. Several methods set a different learning rate for each trainable parameter and adaptively adjust the learning rates. 
 
 They include:  
