@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/js-promises-under-the-hood/
-title: How JavaScript Promises Work Under The Hood.
+url: /engineering-education/js-and-web-apis/
+title: How Javascript Uses Web Browser Apis to Achieve Asynchronisity
 description: 
 author: adrian-murage
 date: 
@@ -11,8 +11,8 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/js-promises-under-the-hood/hero.jpg
-Introduction    alt: JS Promises under the hood
+  - url: /engineering-education/js-and-web-apis/hero.jpg
+Introduction    alt: JS and Web APIs
 ---
 ### Introduction
 Pure JavaScript has a single thread of execution. Known as the [**main thread**](https://developer.mozilla.org/en-US/docs/Glossary/main_thread) in the browser context. "This means that long-running JavaScript functions can block the thread, leading to an unresponsive page and a bad user experience."[(MDN docs)](https://developer.mozilla.org/en-US/docs/Glossary/main_thread)
@@ -21,12 +21,12 @@ Examples of long-running JavaScript functions are those that:
 - Fetch data from an API.
 - Wait for some time to elapse before executing.
 
-But, the above-mentioned functionality is commonly used in today's web applications. In this guide, you will learn how this functionality is achieved Asynchronously with Web Browser APIs and JavaScript Promises. You will also learn how the two are implemented under the hood.
+But, the above-mentioned functionality is commonly used in today's web applications. In this guide, you will learn how this functionality is achieved Asynchronously with Web Browser APIs.
 
 With an understanding of Asynchronous functionality you should be able to:
 1. Run long-running JavaScript functions without blocking the Thread Of Execution.
 2. Run functionality related to long-running JavaScript functions once they are completed.
-3. Understand what happens under the hood during the entire process.
+3. Understand what happens during the entire process.
 
 ### Prerequisites
 Before you begin this guide you will need:
@@ -48,7 +48,7 @@ In this step, we will consider the block of code above to help you understand ho
 
 Line 1: You declare a function, `display()`. You then move on to line 4, since you do not enter the body of a function until it is executed.
 
-Line 4: You declare a constant `dataFromAPI` as the label for the return value of the function on the right of the assignment. In this case `fetchAndWait()` is a **made-up** function that makes a GET request to the Twitter Servers and returns a single tweet.
+Line 4: You declare a constant `dataFromAPI` as the label for the return value of the function on the right of the assignment. In this case `fetchAndWait()`, a **made-up** function that makes a GET request to the Twitter Servers and returns a single tweet.
 
 The wait for the promised tweet begins. 10 milliseconds, 20 milliseconds, 50 milliseconds, 90 milliseconds. At 350 milliseconds the tweet finally arrives. In that intermediate time, you are not allowed to move on and run any further JavaScript code. You are blocked because JavaScript has a Synchronous Thread Of Execution.
 
@@ -71,7 +71,8 @@ From the breakdown above, you can spot a clear problem. Such a scenario in a rea
 5.   //blocks in the JavaScript thread for 1 second
 6. }
 7. setTimeout(printHello,0);
-8. console.log(“Me first!”);
+8. blockFor1Sec();
+9. console.log(“Me first!”);
 ```
 In this step, we will see what happens when a web browser API ( `setTimeout()` ) is introduced and how it improves what we had in the previous step.
 
@@ -86,10 +87,32 @@ Line 1: You declare a function `printHello()`. You then move on to line 4.
 Line 4: You declare a function `blockFor1Sec()`. You then move on to line 7.
 Line 7: You execute `setTimeout()` which takes a function, `printHello`, and a time, in milliseconds, after which the function will be executed. This functionality is delegated to the browser, which means that your Thread Of Execution is freed. You can then move onto Line 8.
 
-The value of the timer is set to zero, meaning that at this point even before you move on to line 5, `printHello()` is ready to execute. But for reasons you will see later it is not allowed back until some conditions are met. It is added to 
+Line 8: You execute `blockFor1Sec()`
 
-Line 8: You log `"Me first"`
+The value of the timer was set to zero, meaning that at this point, `printHello()` was ready to execute 1 second ago. But for reasons you will see later it is not allowed back until some conditions are met.
 
-At this point, all of the Global Synchronous JavaScript code has been executed. 
+Instead, it is added to a queue known as the [Task Queue](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide).
 
-This is one of the conditions that need to be met for `printHello()` to be allowed back into JavaScript's Global Execution context.
+Line 9: You log `"Me first"`
+
+After Line 9, all the synchronous code has executed, your call stack is empty, but the `printHello()` function is still sitting in the Task Queue waiting to be pushed onto the call stack and executed.
+
+For this to happen:
+1. All of the synchronous code must have executed.
+2. The call stack must be empty.
+
+The checking of these rules is referred to as the [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+
+If the rules are satisfied, functionality sitting on the Task Queue is executed in the order they were added to the queue. First in, first out.
+
+### Conclusion
+
+Hopefully, this gives you a bearing of how JavaScript works with Web Browser APIs to achieve Asynchronous functionality. 
+
+This article does not cover everything on the topic and I encourage you to read the resource linked below.
+
+Further reading:
+- [In depth: Microtasks and the JavaScript runtime environment](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
+
+### References
+[MDN web docs](https://developer.mozilla.org/en-US/)
