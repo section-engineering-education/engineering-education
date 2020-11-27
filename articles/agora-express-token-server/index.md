@@ -51,7 +51,7 @@ We need to provide authentication for the users when they join an RTC channel. T
 
 - Token:  All clients in a channel use Token for authentication. (High Security)
 
-- App ID or Token:  In a channel, some clients use app ID for authentication, while others use Token. (This is used in a transition scenario when you upgrade your project from App ID authentication to Token authentication.)
+- App ID or Token:  In a channel, some clients use an app ID for authentication, while others use a token. This is used in a transition scenario when you upgrade your project from App ID authentication to Token authentication.
 
 > It's recommended to upgrade all your projects to use tokens for authentication since Agora is phasing out the support for App ID authentication.
 
