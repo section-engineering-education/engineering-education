@@ -14,10 +14,12 @@ images:
   - url: /engineering-education/getting-started-with-inheritance-using-c/hero.jpg
     alt:  example image
 ---
-Inheritance is a unique concept in (OOP) object-oriented programming, it allows the definition of multiple classes using the properties of other classes. Inheritance allows us to maintain, modify, and boost our code. It also provides the reusability of code functionality and gives better performance.
+Inheritance is a unique concept in (OOP) object-oriented programming, it allows the definition of multiple classes using the properties of other classes. We create classes by inheriting the functions and variables of a base class, then we add new functions to enhance its performance.
 <!--more-->
 ### Introduction
-We create classes by inheriting the functions and variables of a base class, then we add new functions to enhance its performance. We call it a derived class because it inherits the properties of a base class. Without inheritance, the code will be unstructured, difficult to read, and complex.
+Inheritance allows us to maintain, modify, and further improve our code. It provides us the ability to reuse code functionality. Without inheritance, our code will be unstructured, difficult to read, and complex.
+
+A derived class inherits the properties of a base class.
 
 ### Table of contents
 1. Base classes vs Derived classes.
