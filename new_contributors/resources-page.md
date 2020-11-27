@@ -1,42 +1,18 @@
-## Frequently Asked Questions
+### Resources Page
+Below are a list of resources that can help improve your writing skills from guides on grammar, writing skills and creating tech tutorials to outstanding articles from the EngEd program you can use as examples and our article templates that provide an sample structure.
 
-### How do I suggest a topic to write about?
-After reviewing the most [recently published articles](https://www.section.io/engineering-education/) to avoid topic overlap (and to get a good sense on article style and tonality) submit a topic using [this issue form](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=).
+We hope this helps get you started off on the right foot - and we're always happy to help. If you have any questions on the process or the program in general, ping us in the Slack EngEd channel.
 
-### How do I submit my 1st article?
-Visit our step-by-step guide on [how to upload your 1st EngEd article](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#how-to-upload-an-article-for-sections-engineering-education-program) to the GitHub repo.
-
-### How do I submit a Pull Request?
-Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&amp;t=47s) further explaining what a pull request is.
-
-### How do GitHub forks work?
-Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&amp;t=47s) further explaining what a pull request is and how to fork a Github repository.
-
-### I have a merge conflict - how do I resolve it?
-Use this every time before contributing a new article to keep it up to date
-git fetch section
-
-git pull --rebase section master
-
-git push origin
-
-This should help prevent any merge conflicts.
-
-For more details on how to submit a PR check out our [contribution guidelines here](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#do-this-once).
-
-### Can I include a video into my articles?
-Yes, please refer to our upload instructions for a [step-by-step guide](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#including-videos-in-your-articles) on how to include YT videos into your articles.
-
-### Is there a word limit on articles?
-The only requirement is that the article has to be at least 750 words, there is no upper cap limit as we want to ensure we are providing value to the EngEd community and the developer audience at large.
-
-**Articles should be a minimum of 750 words.**
-
-### How does the revision process work?
-Article payout will be as follows:
-- Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
-- Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
-- Articles with (3+) and up rounds of revisions) we will consider closing the PR
-
-For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
-
+| Grammar, Writing & Tech Tutorial Guides   |   Example EngEd Articles  |  Article Templates | Other Resources |
+|----------|:-------------:|------:|------:|
+| [Style Guides for Technical Writers](https://medium.com/technical-writing-is-easy/style-guides-for-technical-writers-72b011f84c4b) |  [History of Container Tech](https://github.com/section-io/engineering-education/blob/master/new_contributors/example_article_submission.md) | [How To Guide Template](https://github.com/section-io/engineering-education/blob/master/new_contributors/how-to-guide-template.md) |[EngEd Upload Instructions](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md)|
+| [Tips to Improve Your Technical Writing](https://thebestschools.org/magazine/technical-writing-tips/) |   [How to Create a Professional Email](https://www.section.io/engineering-education/creating-professional-email/)   |  [Software Review Template](https://github.com/section-io/engineering-education/blob/master/new_contributors/software-review-template.md) |[EngEd FAQ](https://github.com/section-io/engineering-education/blob/master/new_contributors/FAQ.md)|
+| [Improve Your Writing Skills](https://www.wordstream.com/blog/ws/2014/08/07/improve-writing-skills) | [Raising Exceptions](https://www.section.io/engineering-education/raising-exceptions/) |  [Tutorial Template](https://github.com/section-io/engineering-education/blob/master/new_contributors/tutorial-template.md) |[Purdue Writing Lab](https://owl.purdue.edu/owl_exercises/sentence_structure/sentence_structure/run_ons_comma_splices_and_fused_sentences.html)|
+| [Punctuation Cheat Sheet](https://www.wikihow.com/Use-English-Punctuation-Correctly) | - |  - |[Technical Writing for Beginners](https://www.freecodecamp.org/news/technical-writing-for-beginners/)|
+| [Common Errors](https://brians.wsu.edu/common-errors/) | - |  - |[Art of Concise Writing](https://technicalwritingtoolbox.com/2012/04/13/the-art-of-concise-writing/)|
+| [Organize Your Ideas](https://www.infoplease.com/homework-help/writing-grammar/homework-center-writing-skills-how-write-essay-advanced-1#organize) | - |  - |[Write Tech Content for Non-Tech Audiences](https://learn.g2.com/write-tech-content-for-non-technical-audiences)|
+| [Plagiarism Quick Guide](https://www.scribbr.com/category/plagiarism/) | - |    - |[Grammar Checker - Prowritingaid](https://prowritingaid.com/Free)|
+| [Harvard Writing Program](https://writingproject.fas.harvard.edu/pages/writing-guides) | - |  - |[Grammar Checker - Grammaly](https://prowritingaid.com/Free)|
+| [Creating an Effective Tutorial](https://freelancetofreedomproject.com/seven-steps-to-creating-an-effective-tutorial/) | - |  - |[Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)|
+| [How to Write a Tutorial](https://www.wikihow.com/Write-a-Tutorial) | - |    - ||
+| [Create Tech Tutorials](https://medium.com/handlebar-labs/how-to-create-tech-tutorials-7f3ecdc29f82) | - |    - ||
