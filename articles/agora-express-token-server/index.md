@@ -196,7 +196,7 @@ To make it simple, let's limit the range of the user ID to 100,000.
 const uid = Math.floor(Math.random() * 100000);
 ```
 
-Let's set the expiration time of the token. You need to provide a timestamp for the expiration time. So let's get the current timestamp using `Date.now()` and add the time (in seconds) to set when we want the token to expire.
+Let's set the expiration time of the token. You need to provide a timestamp for the expiration time. Using `Date.now()`, we'll get the current timestamp and we'll add the time (in seconds) to the current timestamp to set when we want the token to expire.
 
 ```JavaScript
 const expirationTimeInSeconds = 3600;
@@ -294,7 +294,7 @@ We should get the user account from the request.
 const user = req.body.user;
 ```
 
-Let's set the expiration time of the token. You need to provide a timestamp for the expiration time. So let's get the current timestamp using `Date.now()` and add the time (in seconds) to set when we want the token to expire.
+Let's set the expiration time of the token. You need to provide a timestamp for the expiration time. Using `Date.now()`, we'll get the current timestamp and we'll add the time (in seconds) to the current timestamp to set when we want the token to expire.
 
 ```JavaScript
 const expirationTimeInSeconds = 3600;
