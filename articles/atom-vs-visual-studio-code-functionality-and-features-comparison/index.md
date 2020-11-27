@@ -16,9 +16,9 @@ Comparing these two text editors will enable developers to choose the editor the
 
 ### Atom
 
-[Atom](https://atom.io/) is a free and open-source text editor developed by GitHub. It works across Windows, Linux, and Mac OS. Currently, the Atom is at version 1.52.0. It lets you easily customize every aspect of it to speed up the workflows. Atom uses a framework called Electron. Electron is a Node. js based framework that allows cross-platform in an application setting.
+[Atom](https://atom.io/) is a free and open-source text editor developed by GitHub. It works across Windows, Linux, and Mac OS. Currently, Atom is at version 1.52.0. It lets you easily customize every aspect of it to speed up the workflows. Atom uses a framework called Electron. Electron is a JavaScript framework that enables building cross-platform desktop applications.
 
-Atom is built using web technology: HTML, CSS, and JavaScript, thus being very flexible and hackable. If you know those technologies, extending Atom is very easy. Atom features are built-in packages.
+Atom is built using web technologies: HTML, CSS, and JavaScript, thus being very flexible and hackable. If you know those technologies, extending Atom is very easy. Atom features are built-in packages.
 
 Developers build Atom code/text editor with packages installed or written. There are [over 5,000 packages to choose from](https://atom.io/packages) and over 3,000 themes.
 
@@ -34,7 +34,7 @@ To use the Atom Code editor, you first install and download from [the Atom home 
 
 After clicking the download button, the Atom.zip file should appear in your downloads. Extract or Unzip the Atom file. Double click the Atom setup and follow the prompts in the Windows, Mac OS, and Linux installer to get started.
 
-Once Atom is installed, it is crucial to create an organized folder system. Files get well organized. It is easier to figure out what a particular file contains and where it goes.
+Once Atom is installed, it is crucial to create an organized folder system. As the number and your projects grow, it becomes easier to figure out what a particular file contains and where it goes.
 
 Atom gives you a welcome guide when you first open the program. Going through the welcome guide to get to know the text editor before starting your project is vital. First, know where to save your projects. You can name your primary folder for Atom files "Projects." Every time you start a new project, create a folder inside your projects directory. You can start coding after setting up your file structure. Also, make sure you save your work often to avoid losing it.
 
@@ -44,7 +44,7 @@ Atom gives you a welcome guide when you first open the program. Going through th
 
 VS Code is an open-source code editor developed by Microsoft in April 2015. There is no payment required to use VS Code Editor.
 
-It uses Electron as its base, thus enabling cross-platform. It works on Windows, Mac OS, and Linux. Electron is built using Node.js, and it has built-in support for JavaScript and TypeScript. VS Code is built using web technology: HTML, CSS, and JavaScript.
+It uses Electron as its base. VS Code enables cross-platform, it runs on Windows, Mac OS, and Linux. Electron is built using Node.js, and it has built-in support for JavaScript and TypeScript. VS Code is built using web technology: HTML, CSS, and JavaScript.
 
 Visual Studio Code supports other languages such as Java, Python, PHP, C#, and C++. It comprises thousands of extensions that enable debuggers, more languages, commands, themes, etc.
 
@@ -66,7 +66,7 @@ The activity bar on the left with icons give you access to:
 - Debugger
 - Extensions
 
-At the explorer, you go through the project files and where code writing and editing takes place. The search icon is used while finding files and information. Source Control Icon allows you to initialize the Git repository and manage projects. At the extension's icon, you install can install and manage extensions. VS Code comes with many integrated built-in features. You can learn more about Visual Studio editor [here.](https://code.visualstudio.com/docs)
+At the explorer, you go through the project files and where code writing and editing takes place. The search icon is used to find files and information. Source Control Icon allows you to initialize a Git repository and manage projects. At the extension's icon, you install can install and manage extensions. VS Code comes with many integrated built-in features. You can learn more about Visual Studio editor [here.](https://code.visualstudio.com/docs)
 
 ### Atom vs. VS Code: Tabular Comparison
 
@@ -93,7 +93,7 @@ Let's have a glance at features offered by Atom and VS Code text editors.
 
 With loads of extensions and customization comes many configurations. The configuration of applications is fundamental. It determines the overall user experience with the editor.
 
-Configuration in Visual Studio Code involves a JSON file recently replaced by Graphical User Interface (GUI). It is simpler to use GUI, and it does its work well. The level of abstraction is maintained while using GUI over JSON.
+Configuration in Visual Studio Code involves a JSON file recently replaced by Graphical User Interface (GUI). It is simpler to use GUI, and it does its work well. The level of abstraction is maintained while using GUI over JSON. GUI design programs just make it a little quicker and easier than JSON.
 
 In Atom, you have GUI everywhere to edit instead of having a singular JSON file to edit. Atom users report there are sluggishness and other performance issues during the configuration process. This happens when tons of extensions are installed. The solution to these issues is doing away with extensions not in use and maintaining a relatively small number of installed extensions.
 
@@ -108,16 +108,21 @@ In Visual Studio Code, themes are regarded as an extension like any other. In At
 Extensibility is where Atom and Visual Studio Code editors differ hugely. In the Visual Studio Code, plugins add more features and functionality to the program. The features that can be added include language support, themes, commands, Git integration, Markdown support, debuggers, and more.
 
 Atom gives more power and functionality to plugins. Atom has tons of built-in and third-party plugins. This is where the editor functionality comes from, thus being a hackable editor.
+This is an example of how to add plugins in atom editor
+
+![How to install plugins](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/plugininstall.gif)
 
 4. Git Integration
 
-Atom is a product of GitHub, and git integration is an in-built feature. On the other hand, Visual Studio Code has many GitHub related extensions.
-
+Atom is a product of GitHub, and git integration is an in-built feature. Also, VS Code also has built-in Git integration.
 5. Auto-completion
 
 The autocomplete tool lets you view and insert possible completions in the editor using the Enter button. The autocomplete system works by looking through the currently open file for strings that match whatever you type. Both Atom and Visual Studio Code editors have the autocomplete feature.
 
-In the Atom code editor, the autocomplete functionality is implemented in [the autocomplete-plus package](https://github.com/atom/autocomplete-plus). VS Code comes integrated with tools for auto-completion, thus making the code you write more convenient. Tools for auto-completion in VS Code include: [Emmet](https://code.visualstudio.com/docs/editor/emmet) and [IntelliSense.](https://code.visualstudio.com/docs/editor/intellisense)
+In the Atom code editor, the autocomplete functionality is implemented in [the autocomplete-plus package](https://github.com/atom/autocomplete-plus). VS Code comes integrated with tools for auto-completion, thus making the code you write more convenient. Tools for auto-completion in VS Code include [Emmet](https://code.visualstudio.com/docs/editor/emmet) and [IntelliSense.](https://code.visualstudio.com/docs/editor/intellisense) You don't have to install Atom's Autocomplete-plus package it comes with Atom while it is installed. Contrary, Emmet and Intellisense add-ons which have to be installed. Emmet is an essential toolkit for web developers. It makes HTML and CSS workflow fast. Instead of typing or copying and pasting Emmet do most for you.
+This is an example of Emmet, it expands a into ```<a href=""></a>```, and h1 into ```<h1></h1>```.
+
+![Emmet](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/emmet.gif)
 
 6. Navigation
 
