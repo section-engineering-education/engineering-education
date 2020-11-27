@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/js-and-web-apis/hero.jpg
-Introduction    alt: JS and Web APIs
+    alt: JS and Web APIs
 ---
 ### Introduction
 Pure JavaScript has a single thread of execution. Known as the [**main thread**](https://developer.mozilla.org/en-US/docs/Glossary/main_thread) in the browser context. "This means that long-running JavaScript functions can block the thread, leading to an unresponsive page and a bad user experience."[(MDN docs)](https://developer.mozilla.org/en-US/docs/Glossary/main_thread)
@@ -112,7 +112,11 @@ Hopefully, this gives you a bearing of how JavaScript works with Web Browser API
 This article does not cover everything on the topic and I encourage you to read the resource linked below.
 
 Further reading:
-- [In depth: Microtasks and the JavaScript runtime environment](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
+
+[In depth: Microtasks and the JavaScript runtime environment](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
 
 ### References
+
 [MDN web docs](https://developer.mozilla.org/en-US/)
+
+[JavaScript: The New Hard Parts](https://frontendmasters.com/courses/javascript-new-hard-parts/)
