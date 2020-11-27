@@ -14,5 +14,5 @@ We hope this helps get you started off on the right foot - and we're always happ
 | [Plagiarism Quick Guide](https://www.scribbr.com/category/plagiarism/) | - |    - |[Grammar Checker - Prowritingaid](https://prowritingaid.com/Free)|
 | [Harvard Writing Program](https://writingproject.fas.harvard.edu/pages/writing-guides) | - |  - |[Grammar Checker - Prowritingaid](https://prowritingaid.com/Free)|
 | [Creating an Effective Tutorial](https://freelancetofreedomproject.com/seven-steps-to-creating-an-effective-tutorial/) | - |  - |[Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)|
-| [How to Write a Tutorial](https://www.wikihow.com/Write-a-Tutorial) | - | [Purdue Writing Lab](https://owl.purdue.edu/owl_exercises/sentence_structure/sentence_structure/run_ons_comma_splices_and_fused_sentences.html) |[Technical Writing for Beginners](https://www.freecodecamp.org/news/technical-writing-for-beginners/)|
-| [Create Tech Tutorials](https://medium.com/handlebar-labs/how-to-create-tech-tutorials-7f3ecdc29f82) | - |    - ||
+| [How to Write a Tutorial](https://www.wikihow.com/Write-a-Tutorial) | - | - |[Technical Writing for Beginners](https://www.freecodecamp.org/news/technical-writing-for-beginners/)|
+| [Create Tech Tutorials](https://medium.com/handlebar-labs/how-to-create-tech-tutorials-7f3ecdc29f82) | - |  - |[Purdue Writing Lab](https://owl.purdue.edu/owl_exercises/sentence_structure/sentence_structure/run_ons_comma_splices_and_fused_sentences.html)|
