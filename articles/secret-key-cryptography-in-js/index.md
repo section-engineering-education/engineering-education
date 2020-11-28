@@ -1,4 +1,4 @@
-#### prerequisites
+#### Prerequisites
 - Have [Node.js](https://nodejs.org/en/) installed in your computer.
 - Have some basic knowledge of cryptography.
 
@@ -28,7 +28,7 @@ Since its invention, different algorithms have been  built based on their functi
 
 ### Libraries to use while implementing secret key cryptography in JavaScript
 
-- **Crypto**. It's a core module in server-side JavaScript, `Node js`. It mainly operates on the server-side. Its uniqueness is that it provide asynchronous processing, meaning that the program can be doing something else as the key is being generated. It implements algorithms such as `Twofish`, `RSA`, and `Serpent`.
+- **Crypto**. It's a core module in server-side JavaScript, `Node js`. It mainly operates on the server-side. Its uniqueness is that it provides asynchronous processing, meaning that the program can be doing something else as the key is being generated. It implements algorithms such as `Twofish`, `RSA`, and `Serpent`.
 
 - **Web crypto API**. It provides the functionalities of the crypto library to web-based applications. The functionalities include encryption, decryption, and generation of hashing signatures. It employs the same algorithms employed by the crypto module.
 
@@ -126,7 +126,7 @@ Expected output
     Hello there
 ```
 
-Decipher works as similar to the cipher. We still listen to the readable event and look if we have text which we convert to human-readable format `UTF8`. If then we have the plain text, then we can show the output. We write the ciphertext to the decipher using the `hex` format and close the decipher. 
+Decipher works as similar to the cipher. We still listen to the readable event and look if we have text which we convert to human-readable format `UTF8`. If we then have the plain text, then we can show the output. We write the ciphertext to the decipher using the `hex` format and close the decipher. 
 
 You can get the full project code from [here](https://github.com/mwangiKibui/secret-key-cryptography-in-js/blob/main/secret-key-cryptography.js).
 
@@ -149,4 +149,7 @@ Some of the platforms that use secret key cryptography in production include:
 - National Institute of Science and Technology (NIST)
 
 ### Conclusion
-In this article we have looked at a brief description of secret key cryptography, algorithms that employ secret key cryptography, libraries to use while implementing secret key cryptography in JavaScript, implementing secret key cryptography in JavaScript, the drawback of secret key cryptography, and platforms that employs secret key cryptography.
+In this article we have looked at a brief description of secret key cryptography, algorithms that employ secret key cryptography, libraries to use while implementing secret key cryptography in JavaScript, implementing secret key cryptography in JavaScript, the drawback of secret key cryptography, and platforms that employ secret key cryptography.
+
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
