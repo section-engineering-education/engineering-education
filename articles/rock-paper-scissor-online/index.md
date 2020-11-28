@@ -84,6 +84,8 @@ io.on("connection",(socket)=>{
 All event listeners/emitters go inside the `io.on` block as mentioned above. `connection` is the default event listener provided by Socket.io and a `connection` event is emitted under the hood every time a connection is established.
 The `CreateGame` listener creates a new Room with a random Room ID and adds the client to that room. Later, the server emits an event `newGame` which contains the roomID for the created room.
 
+The below code goes into `public/game.js`.
+
 ```
 //New Game Created Listener
 socket.on("newGame",(data)=>{
@@ -94,7 +96,7 @@ socket.on("newGame",(data)=>{
 })
 ```
 
-The above code is added to `public/game.js`. This snippet lets player1 know that a room was created and player2 could use this roomID to join the room. Then, it hides the Room elements and displays a message with Room ID.
+ This snippet lets player1 know that a room was created and player2 could use this roomID to join the room. Then, it hides the Room elements and displays a message with Room ID.
 
 ### Join Game
 
@@ -122,6 +124,8 @@ Next, we write server-side logic on `app.js` to listen to the `joinGame` event a
     })
 ```
 First, the above code adds player2 to the room and then it notifies player2 with player1's info and player1 with player2's info.
+
+The following code goes into `public/game.js`
 
 ```
 //Player 2 Joined
@@ -180,6 +184,8 @@ We add server-side side logic at `app.js` to listen to Player1's choice.
 
 The above code gets player1's choice and does nothing if player2 hasn't picked their choice yet.
 
+Next, we write logic to listen to player2's choice in `app.js`.
+
 ```
 //Listener to Player 2's Choice
     socket.on("choice2", (data)=> {
@@ -191,7 +197,7 @@ The above code gets player1's choice and does nothing if player2 hasn't picked t
     });
 ```
 
-Next, we write logic to listen to player2's choice in `app.js`. Once, both of player have picked their choice, the server enters into the `if block` and invokes the `result()` function.
+ Once, both of player have picked their choice, the server enters into the `if block` and invokes the `result()` function.
 
 ### Declare Winner
 
@@ -240,7 +246,190 @@ The above code listens to the result event and updates the DOM with the help of 
 
 ### Conclusion
 
+The final version of `public/game.js` is
+```
+const socket = io.connect("http://localhost:4000");
+
+let firstPlayer=false;
+let roomID;
+
+//Create Game Event Emitter
+$(".createBtn").click(function(){
+    firstPlayer=true;
+    const playerName=$("input[name=p1name").val();
+    socket.emit('createGame',{name:playerName});
+})
+
+//New Game Created Listener
+socket.on("newGame",(data)=>{
+    $(".newRoom").hide(); 
+    $(".joinRoom").hide();
+    $("#message").html("Waiting for player 2, room ID is "+data.roomID).show();
+    roomID=data.roomID;
+})
+
+//Join Game Event Emitter
+$(".joinBtn").click(function(){
+    const playerName=$("input[name=p2name").val();
+    roomID=$("input[name=roomID").val();
+    socket.emit('joinGame',{
+        name:playerName,
+        roomID:roomID
+    });
+})
+
+//Player 2 Joined
+socket.on("player2Joined",(data)=>{
+    transition(data);
+  })
+ 
+//Player 1 Joined
+socket.on("player1Joined",(data)=>{
+    transition(data);
+})
+
+const transition=(data)=>{
+    $(".newRoom").hide();
+    $(".joinRoom").hide();
+    $(".leaderboard").show();
+    $(".controls").show();
+    $(".player1 .name").html(data.p1name);
+    $(".player2 .name").html(data.p2name);
+    $("#message").html(data.p2name+" is here!").show();
+}
+
+//Select Choice
+$(".controls button").click(function (){
+    const choice=$(this).html().trim();
+    const choiceEvent=firstPlayer?"choice1":"choice2";
+    socket.emit(choiceEvent,{
+        choice: choice,
+        roomID:roomID
+    });
+})
+
+//Result Event Listener
+socket.on("result",(data)=>{
+    if(data.winner=="draw"){
+        $("#message").html("It's a draw!");
+    }else{
+        updateDOM(firstPlayer==data.winner?"player1":"player2");
+    }
+})
+
+const updateDOM=(player)=>{
+    const playerDOM=$("."+player+" span");
+    const prevScore=parseInt(playerDOM.html().trim());
+    playerDOM.html(prevScore+1);
+    const winnerName=$("."+player+" .name").html().trim();
+    $("#message").html(winnerName+" scored a point!");
+}
+```
+
+And the final version of `app.js` is
+
+```
+const app=require('express');
+const socket=require('socket.io');
+const randomstring=require('randomstring');
+
+const express=app();
+
+const server=express.listen(4000,()=>{
+    console.log("server started at http://localhost:4000");
+})
+
+express.use(app.static('public'));
+
+const io=socket(server);
+
+//ALL player info
+let players={};
+//GAME VARIABLES
+let choice1="",choice2="";
+
+
+io.on("connection",(socket)=>{
+    console.log("connection established");
+
+    //Create Game Listener
+    socket.on("createGame",(data)=>{
+        const roomID=randomstring.generate({length: 4});
+        socket.join(roomID);
+        players[roomID]=data.name;
+        socket.emit("newGame",{roomID:roomID});
+    })
+
+    //Join Game Listener
+    socket.on("joinGame",(data)=>{
+        socket.join(data.roomID);
+        socket.to(data.roomID).emit("player2Joined",{p2name: data.name,p1name:players[data.roomID]});
+        socket.emit("player1Joined",{p2name:players[data.roomID],p1name:data.name});
+    })
+
+    //Listener to Player 1's Choice
+    socket.on("choice1", (data)=> {
+        choice1 = data.choice;
+        console.log(choice1, choice2);
+        if (choice2 != "") {
+            result(data.roomID);
+        }
+    });
+
+    //Listener to Player 2's Choice
+    socket.on("choice2", (data)=> {
+        choice2 = data.choice;
+        console.log(choice1, choice2);
+        if (choice1 != "") {
+            result(data.roomID);
+        }
+    });
+
+    //Function to be executed after getting both choices
+const result=(roomID)=> {
+    var winner = getWinner(choice1, choice2);
+    io.sockets.to(roomID).emit("result", {
+        winner: winner
+    });
+    choice1 = "";
+    choice2 = "";
+}
+
+})
+
+
+
+
+
+//Function to calculate winner
+const getWinner=(p, c)=>  {
+    if (p === c) {
+        return "draw";
+    } else if (p === "Rock") {
+        if (c === "Paper") {
+            return false;
+        } else {
+            return true;
+        }
+    } else if (p === "Paper") {
+        if (c === "Scissor") {
+            return false;
+        } else {
+            return true;
+        }
+    } else if (p === "Scissor") {
+        if (c === "Rock") {
+            return false;
+        } else {
+            return true;
+        }
+    }
+}
+```
+
 Kudos, You made it 🎉
+
+> If you are facing issues with code, please make sure you hit hard refresh(Ctrl+Shift+R) so that the JavaScript is updated. And also compare your code with the [final version](https://github.com/HarishTeens/rps-online/tree/final) to find any possible errors.
 
 Although the app works, it could be improved. As mentioned before, the intention was to keep this tutorial simple to put more focus on Socket logic. The next step is to improve the app by adding extra functionality, read along for some suggestions.
 
@@ -253,3 +442,5 @@ Although the app works, it could be improved. As mentioned before, the intention
 - Storing choice details in socket meta-data rather than using server-side variable
 
  Check out my Rock Paper Scissor game for reference. Here's the link to the [Github repo](https://github.com/HarishTeens/rpsgames). Feel free to try the game out at this [link](https://rpsgames.herokuapp.com) where its deployed to Heroku.
+
+ Thanks for reading.
