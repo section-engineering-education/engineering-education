@@ -17,12 +17,12 @@ We can group the operators according to their functions. Some of these functions
 * _**transformation**_: we use these operators to change the data that the observers receive, i.e., transform the data
 * _**filtering**_: these are used to determine what data is emitted using a specified criteria
 
-#### `creation`
+#### Creation
 As mentioned earlier, these operators are used to create observables. We can create observables from a wide variety of items such as lists and ranges. The operators include:
 
 - **just**: this operator is used to create an observable from the object passed in as an argument. It converts the object to an observable. Copy the following code in the `main` function and run the application.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [JUST] **/
     Observable.just(Data.users).subscribe { println(it) }
@@ -36,7 +36,7 @@ Output:
 
 - **from**: this also generates an observable from the item passed in as an argument. The difference between `just` and `from` is in their nature of emission. If we pass in a list or an iterable, `from` emits each item in the list/iterable separately unlike `just` which emits the entire list. `from` has been replaced by more specific methods like `fromIterable`, `fromArray`, `fromStream`, etc. Replace the code in the main function with the one below and run.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [FROM] **/
     Observable.fromIterable(Data.users).subscribe { println(it) }
@@ -44,6 +44,7 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 User(name=Michael, age=20, location=Office, salary=500)
 User(name=Pam, age=25, location=Reception, salary=300)
@@ -56,7 +57,7 @@ User(name=Roy, age=30, location=Warehouse, salary=150)
 ```
 - **repeat**: as the name suggests, this creates an observable that emits data a specified number of times. If we do not pass in any number, it will lead to an infinite loop.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [REPEAT] **/
     Observable.just("I am emitted").repeat(3).subscribe { println(it) }
@@ -64,6 +65,7 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 I am emitted
 I am emitted
@@ -71,7 +73,7 @@ I am emitted
 ```
 - **range**: this creates an observable from a range of values. You can read more about ranges in [this article](/engineering-education/kotlin-ranges/).
 
-```kotlin
+```Kotlin
 fun main(){
     /** [RANGE] **/
     Observable.range(0, 3).subscribe { println(it) }
@@ -79,6 +81,7 @@ fun main(){
 ```
 
 Output :
+
 ```bash
 0
 1
@@ -87,7 +90,7 @@ Output :
 ```
 - **create**:  this operator creates an observable from scratch. It gives the developer the freedom to choose when to call the `onNext`, `onComplete`, and `onError` methods and what data/exception to pass in them. We loop through the list in our code and call the onNext method passing in each item in the loop.
 
-```kotlin   
+```Kotlin   
 fun main(){
     /** [CREATE] **/
     Observable.create<User> { emitter ->
@@ -96,6 +99,7 @@ fun main(){
 }
 ```
 Output:
+
 ```bash
 User(name=Michael, age=20, location=Office, salary=500)
 User(name=Pam, age=25, location=Reception, salary=300)
@@ -112,7 +116,7 @@ Sometimes when observables receive data, they may need to change or manipulate i
 
 - **map**: this method applies a function to each item emitted by the observable. In our code, we use lambda functions to change the `User` object emitted. We double the age property and return the item, which is then emitted.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [MAP] **/
     Observable.fromIterable(Data.users).map {
@@ -136,7 +140,7 @@ User(name=Roy, age=60, location=Warehouse, salary=150)
 ```
 - **flatMap**: this works similar to `map`, but instead of returning the item itself, it returns an observable that can also emit data. A good use case is when combining observables that depend on each other. In our code, we have a function `upgrade`, which changes the salary property based on age. It then returns an observable containing the modified object.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [FLATMAP] && [CONCATMAP]**/
     fun upgrade(user: User): Observable<User> {
@@ -152,6 +156,7 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 User(name=Michael, age=20, location=Office, salary=2000)
 User(name=Pam, age=25, location=Reception, salary=1200)
@@ -166,7 +171,7 @@ User(name=Roy, age=30, location=Warehouse, salary=300)
 
 - **groupBy**: this operator collects data according to the property used. In simpler words, it groups the items emitted based on the property defined. In our code, we use the location property to group the data. We then access the data based on the group keys. We get data whose location property is `Sales`. You can go ahead and test the other location properties too.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [GROUPBY] **/
     Observable.fromIterable(Data.users)
@@ -176,13 +181,14 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 User(name=Jim, age=22, location=Sales, salary=250)
 User(name=Dwight, age=31, location=Sales, salary=225)
 ```
 - **buffer**: this emits a specific number of items at a time. The number is passed as an argument. In our case, we specify three items to be emitted at a time.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [BUFFER] **/
     Observable.fromIterable(Data.users).buffer(3).subscribe { println(it)}
@@ -190,6 +196,7 @@ fun main(){
 ```
 
 Output
+
 ```bash
 [User(name=Michael, age=20, location=Office, salary=500), User(name=Pam, age=25, location=Reception, salary=300), User(name=Jim, age=22, location=Sales, salary=250)]
 [User(name=Darell, age=26, location=Warehouse, salary=350), User(name=Dwight, age=31, location=Sales, salary=225), User(name=Angela, age=27, location=Accounting, salary=200)]
@@ -201,7 +208,7 @@ As the use says, they emit data that meets the specified criteria. The operators
 
 - **filter**: the observables only emit  values that meet the specified predicate. The code below specifies that only records whose age property is above 25 should be emitted.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [FILTER] **/
     Observable.fromIterable(Data.users).filter {it.age > 25}.subscribe { println(it)}
@@ -209,6 +216,7 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 User(name=Darell, age=26, location=Warehouse, salary=350)
 User(name=Dwight, age=31, location=Sales, salary=225)
@@ -218,7 +226,7 @@ User(name=Roy, age=30, location=Warehouse, salary=150)
 ```
 - **take**: the observable emits the specified number of items starting from the first. When we pass three as an argument, only the first three items from the list are emitted. The opposite of this operator is the `takeLast`, which emits the last number of specified items.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [TAKE] **/
     Observable.fromIterable(Data.users).take(3).subscribe { println(it)}
@@ -226,6 +234,7 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 User(name=Michael, age=20, location=Office, salary=500)
 User(name=Pam, age=25, location=Reception, salary=300)
@@ -233,7 +242,7 @@ User(name=Jim, age=22, location=Sales, salary=250)
 ```
 - **skip**: this operator is used to prevent the emission of items. As the name sugests, the observable skips the specified number of items. In our code, we pass in three, so the first three items are not emitted. The opposite of this operator is `skipLast`, which skips the last number of items specified.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [SKIP] **/
     Observable.fromIterable(Data.users).skip(3).subscribe { println(it)}
@@ -241,6 +250,7 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 User(name=Darell, age=26, location=Warehouse, salary=350)
 User(name=Dwight, age=31, location=Sales, salary=225)
@@ -250,7 +260,7 @@ User(name=Roy, age=30, location=Warehouse, salary=150)
 ```
 - **elementAt**: this only emits the item in the specified position. If we pass 3, only the third item on the list is emitted.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [ELEMENTAT] **/
     Observable.fromIterable(Data.users).elementAt(3).subscribe { println(it)}
@@ -258,13 +268,14 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 User(name=Darell, age=26, location=Warehouse, salary=350)
 ```
 
 - **distinct**: this is used to emit the distinct values in the list, i.e., the cast items do not repeat.
 
-```kotlin
+```Kotlin
 fun main(){
     /** [DISTINCT] **/
     Observable.just('a', 'a', 'b', 'b', 'c', 'c').distinct().subscribe { println(it) }
@@ -272,6 +283,7 @@ fun main(){
 ```
 
 Output:
+
 ```bash
 a
 b
@@ -279,4 +291,7 @@ c
 ```
 
 ### Conclusion
-And with that, you now have a basic understanding of how RxJava operators work. It is a good practice to test each of the operators. They are used in most RxJava observables to work with data and manipulate it. They give the developer the freedom to modify the behavior and properties of the observables themselves. Go ahead and try out the other operators from the [official documentation](http://reactivex.io/documentation/operators.html). If any error comes up or an issue, feel free to raise an issue. 🤓
+And with that, you now have a basic understanding of how RxJava operators work. It is a good practice to test each of the operators. They are used in most RxJava observables to work with data and manipulate it. They give the developer the freedom to modify the behavior and properties of the observables themselves. Go ahead and try out the other operators from the [official documentation](http://reactivex.io/documentation/operators.html). If any error comes up or an issue, feel free to raise it. 🤓
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
