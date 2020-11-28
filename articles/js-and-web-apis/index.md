@@ -48,13 +48,13 @@ In this step, we will consider the block of code above to help you understand ho
 
 Line 1: You declare a function, `display()`. You then move on to line 4, since you do not enter the body of a function until it is executed.
 
-Line 4: You declare a constant `dataFromAPI` as the label for the return value of the function on the right of the assignment. In this case `fetchAndWait()`, a **made-up** function that makes a GET request to the Twitter Servers and returns a single tweet.
+Line 4: You declare a constant, `dataFromAPI`, as the label for the return value of the function on the right of the assignment. In this case `fetchAndWait()`, a **made-up** function that makes a GET request to the Twitter Servers and returns a single tweet.
 
 The wait for the promised tweet begins. 10 milliseconds, 20 milliseconds, 50 milliseconds, 90 milliseconds. At 350 milliseconds the tweet finally arrives. In that intermediate time, you are not allowed to move on and run any further JavaScript code. You are blocked because JavaScript has a Synchronous Thread Of Execution.
 
-Assuming your returned tweet is a string, `"Hello World"`, it is assigned to the constant `dataFromAPI`.
+Assuming your returned tweet is a string, `"Hello World"`, it is assigned to the constant, `dataFromAPI`.
 
-Line 8:  You execute `display()` passing the constant `dataFromAPI` as an argument. This execution entails pushing `display()` onto the Call Stack, creating a Local Execution Context and moving to line 2 in the body of `display()`.
+Line 8:  You execute `display()` passing the constant, `dataFromAPI`, as an argument. This execution entails pushing `display()` onto the Call Stack, creating a Local Execution Context and moving to line 2 in the body of `display()`.
 
 Line 2: You log the value of `dataFromAPI`. Then pop `display()` from the Call Stack, garbage collect the Local Execution Context, and move back to the Global Execution Context.
 
@@ -74,7 +74,7 @@ From the breakdown above, you can spot a clear problem. Such a scenario in a rea
 8. blockFor1Sec();
 9. console.log(“Me first!”);
 ```
-In this step, we will see what happens when a web browser API ( `setTimeout()` ) is introduced and how it improves what we had in the previous step.
+In this step, you will see what happens when a web browser API ( `setTimeout()` ) is introduced and how it improves what we had in the previous step.
 
 [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) and other web browser APIs introduce functionality that happens outside of JavaScript's Global Execution Context. If you wish to, you can explore the various APIs [here](https://developer.mozilla.org/en-US/docs/Web/API).
 
@@ -82,10 +82,11 @@ Given that the functionality is outside of JavaScript, we will need to introduce
 
 Let's walk through the code and see this process in action.
 
-Line 1: You declare a function `printHello()`. You then move on to line 4.
+Line 1: You declare a function, `printHello()`. You then move on to line 4.
 
-Line 4: You declare a function `blockFor1Sec()`. You then move on to line 7.
-Line 7: You execute `setTimeout()` which takes a function, `printHello`, and a time, in milliseconds, after which the function will be executed. This functionality is delegated to the browser, which means that your Thread Of Execution is freed. You can then move onto Line 8.
+Line 4: You declare a function, `blockFor1Sec()`. You then move on to line 7.
+
+Line 7: You execute `setTimeout()`, which takes a function, `printHello`, and a time, in milliseconds, after which the function will be executed. This functionality is delegated to the browser, which means that your Thread Of Execution is freed. You can then move onto Line 8.
 
 Line 8: You execute `blockFor1Sec()`
 
@@ -97,17 +98,19 @@ Line 9: You log `"Me first"`
 
 After Line 9, all the synchronous code has executed, your call stack is empty, but the `printHello()` function is still sitting in the Task Queue waiting to be pushed onto the call stack and executed.
 
-For this to happen:
+For `printHello()` to be allowed back into JavaScript's Global Execution Context:
 1. All of the synchronous code must have executed.
 2. The call stack must be empty.
 
-The checking of these rules is referred to as the [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+The process of checking these rules is referred to as the [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 
 If the rules are satisfied, functionality sitting on the Task Queue is executed in the order they were added to the queue. First in, first out.
 
-### Conclusion
+`printHello()` finally executes.
 
-Hopefully, this gives you a bearing of how JavaScript works with Web Browser APIs to achieve Asynchronous functionality. 
+You now have an understanding of how JavaScript uses web browser functionality to achieve Asynchronicity.
+
+### Conclusion
 
 This article does not cover everything on the topic and I encourage you to read the resource linked below.
 
