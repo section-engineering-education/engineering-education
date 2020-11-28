@@ -1,15 +1,15 @@
 ### Deep dive into RxJava Operators
-RxJava has very many operators. And going through the documentation might be a bit tedious for a beginner. This is because it uses a theoretical approach rather than a practical one. In the previous [article](/engineering-education/android-rxjava/), we went through the basics of RxJava and how to use it in Android. The article addressed the various types of observers and their properties. However, we did not look at how to create the RxJava observables and how they manipulate data. This article goes through exactly that.
+RxJava has very many operators. Going through the documentation might be a bit tedious for a beginner. This is because it uses a theoretical approach rather than a practical one. In the previous [article](/engineering-education/android-rxjava/), we went through the basics of RxJava and how to use it in Android. The article addressed the various types of observers and their properties. However, we did not look at how to create the RxJava observables and how they manipulate data. This article goes through exactly that.
 
-RxJava makes use of operators to create the observables as well as manipulate the data the observables receive. There are very many observables that have various functions. These functions can also have similar functions allowing us to group them. We will only look at the few operators in each group. You can get the code used in this article on [GitHub](https://github.com/LinusMuema/rxjava-operators).
+Rx-Java uses operators to create observables and manipulate data received by the observables. There are many observables with various functions. Some of these functions are similar, which allows us to group them. We will only look at the few operators in each group. You can get the code used in this article on [GitHub](https://github.com/LinusMuema/rxjava-operators).
 
 ### Prerequisites
-In order to follow through this article, you need:
+In order to follow through with this article, you need:
 * [Intellij IDE](https://www.jetbrains.com/idea/) installed
 * Basic understanding of the Kotlin programming language
 * Basic understanding of RxJava observables. You can read [this article](/engineering-education/android-rxjava/) to get you up to speed.
 
-Go ahead and clone the repository using Intellij and wait for the gradle build to finish. Once done, navigate to the `src/main/kotlin` directory. We will be working from this folder. In the `main.kt` file, we have three functions that contain RxJava operators based on their functionalities. We will be removing the comments and running the application to get the results. There is also the `Data.kt` file, which contains sample data we will use.
+Go ahead and clone the repository using Intellij and wait for the Gradle build to finish. Once done, navigate to the `src/main/kotlin` directory. We will be working from this folder. In the `main.kt` file, we have three functions. Each function contains RxJava operators grouped to their functionalities. We will be removing the comments and running the application to get the results. There is also the `Data.kt` file, which contains sample data that we will use.
 
 ### Grouping
 We can group the operators according to their functions. Some of these functions include:
@@ -18,7 +18,7 @@ We can group the operators according to their functions. Some of these functions
 * _**filtering**_: these are used to determine what data is emitted using a specified criteria
 
 #### `creation`
-These operators are used to create observables. We can create observables from a wide variety of items like lists and ranges. The operators include:
+As mentioned earlier, these operators are used to create observables. We can create observables from a wide variety of items such as lists and ranges. The operators include:
 
 - **just**: this operator is used to create an observable from the object passed in as an argument. It converts the object to an observable. Copy the following code in the `main` function and run the application.
 
@@ -54,7 +54,7 @@ User(name=Angela, age=27, location=Accounting, salary=200)
 User(name=Oscar, age=28, location=Accounting, salary=350)
 User(name=Roy, age=30, location=Warehouse, salary=150)
 ```
-- **repeat**: as the name says, this creates an observable that emits data a specified number of times. If we do not pass in any number, it will lead to an infinite loop.
+- **repeat**: as the name suggests, this creates an observable that emits data a specified number of times. If we do not pass in any number, it will lead to an infinite loop.
 
 ```kotlin
 fun main(){
@@ -110,7 +110,7 @@ User(name=Roy, age=30, location=Warehouse, salary=150)
 #### `transformation`
 Sometimes when observables receive data, they may need to change or manipulate it to the desired output. We have operators to do just that. Some of the transformation operators are:
 
-- **map**: this method applies a function to each of the items emitted by the observable. In our code, we use lambda functions to change the `User` object emitted. We double the age property and return the item, which is then emitted.
+- **map**: this method applies a function to each item emitted by the observable. In our code, we use lambda functions to change the `User` object emitted. We double the age property and return the item, which is then emitted.
 
 ```kotlin
 fun main(){
@@ -134,7 +134,7 @@ User(name=Angela, age=54, location=Accounting, salary=200)
 User(name=Oscar, age=56, location=Accounting, salary=350)
 User(name=Roy, age=60, location=Warehouse, salary=150)
 ```
-- **flatMap**: this works similar to `map`, but instead of returning the item itself, it returns an observable that can also emit data. A good use case is when combining observables that depend on each other. In our code, we have a function `upgrade` which changes the salary property based on age. It then returns an observable containing the modified object.
+- **flatMap**: this works similar to `map`, but instead of returning the item itself, it returns an observable that can also emit data. A good use case is when combining observables that depend on each other. In our code, we have a function `upgrade`, which changes the salary property based on age. It then returns an observable containing the modified object.
 
 ```kotlin
 fun main(){
@@ -164,7 +164,7 @@ User(name=Roy, age=30, location=Warehouse, salary=300)
 ```
 - **concatMap**: this operator does the same work as `flatMap` but with one difference. It keeps the order in which it receives the data. `flatMap` can lead to data changing in terms of position and time emitted. Since our data is static, the difference is not visible. We get the same result after replacing `flatMap` with `concatMap`.
 
-- **groupBy**: this operator collects data according to the property used. In simpler words, it groups the items emitted based on the property defined. In our code, we use the location property to group the data. We can then access the data based on the group keys. We get data whose location property is `Sales`. You can go ahead and test the other location properties too.
+- **groupBy**: this operator collects data according to the property used. In simpler words, it groups the items emitted based on the property defined. In our code, we use the location property to group the data. We then access the data based on the group keys. We get data whose location property is `Sales`. You can go ahead and test the other location properties too.
 
 ```kotlin
 fun main(){
@@ -180,7 +180,7 @@ Output:
 User(name=Jim, age=22, location=Sales, salary=250)
 User(name=Dwight, age=31, location=Sales, salary=225)
 ```
-- **buffer**: this emits a specific number of items at a time. You pass in the number as an argument. In our case, we specify three items to be emitted at the same time.
+- **buffer**: this emits a specific number of items at a time. The number is passed as an argument. In our case, we specify three items to be emitted at a time.
 
 ```kotlin
 fun main(){
@@ -199,7 +199,7 @@ Output
 #### `filtering`
 As the use says, they emit data that meets the specified criteria. The operators used are:
 
-- **filter**: the observables only emit the values that meet the specified predicate. We specify that only records whose age property is above 25 should be emitted.
+- **filter**: the observables only emit  values that meet the specified predicate. The code below specifies that only records whose age property is above 25 should be emitted.
 
 ```kotlin
 fun main(){
@@ -216,7 +216,7 @@ User(name=Angela, age=27, location=Accounting, salary=200)
 User(name=Oscar, age=28, location=Accounting, salary=350)
 User(name=Roy, age=30, location=Warehouse, salary=150)
 ```
-- **take**: the observable emits the specified number of items starting from the first. We pass in three as an argument, and only the first three items from the list are emitted. The opposite of this operator is the `takeLast`. It emits the last number of specified items.
+- **take**: the observable emits the specified number of items starting from the first. When we pass three as an argument, only the first three items from the list are emitted. The opposite of this operator is the `takeLast`, which emits the last number of specified items.
 
 ```kotlin
 fun main(){
@@ -231,7 +231,7 @@ User(name=Michael, age=20, location=Office, salary=500)
 User(name=Pam, age=25, location=Reception, salary=300)
 User(name=Jim, age=22, location=Sales, salary=250)
 ```
-- **skip**: this operator is used to prevent the emission of the items. As the name states, the observable skips the specified number of items. In our code, we pass in three, so the first three items are not emitted. The opposite of this operator is `skipLast`, which skips the last number of items specified.
+- **skip**: this operator is used to prevent the emission of items. As the name sugests, the observable skips the specified number of items. In our code, we pass in three, so the first three items are not emitted. The opposite of this operator is `skipLast`, which skips the last number of items specified.
 
 ```kotlin
 fun main(){
@@ -279,4 +279,4 @@ c
 ```
 
 ### Conclusion
-And with that, you have a basic understanding of how RxJava operators work. It's is a good practice to test each of the operators. They are used in most RxJava observables to work with data and manipulate it. They give the developer the freedom to modify the behavior and properties of the observables themselves. Go ahead and try out the other operators from the [official documentation](http://reactivex.io/documentation/operators.html). If any error comes up or an issue, feel free to raise an issue. 🤓
+And with that, you now have a basic understanding of how RxJava operators work. It is a good practice to test each of the operators. They are used in most RxJava observables to work with data and manipulate it. They give the developer the freedom to modify the behavior and properties of the observables themselves. Go ahead and try out the other operators from the [official documentation](http://reactivex.io/documentation/operators.html). If any error comes up or an issue, feel free to raise an issue. 🤓
