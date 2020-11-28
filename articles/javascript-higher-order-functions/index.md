@@ -304,7 +304,7 @@ const total = sum.reduce((accumulator, currentValue) => {
 return accumulator + currentValue;
 },10);
 console.log(total);
-// we get 55
+//  we get 55
 ```
 
 In this case, we assigned `InitialValue` as 10. The callback function will be called six times. And the `InitialValue` will be passed as the first callback. The accumulator will hold the last returned callback value. This value will be the `InitialValue` 10, which we have passed to `reduce()` as a second argument.
