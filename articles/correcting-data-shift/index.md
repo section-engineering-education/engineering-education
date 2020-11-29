@@ -15,7 +15,7 @@ Dataset shift manifests when there is a change in the distribution of data. In t
 
 ### Prerequisites
 
-A general understanding of machine learning is required. This [post](/engineering-education/supervised-learning-algorithms/) can provide an introduction or refresher.
+A general understanding of machine learning is required. This [post](https://www.section.io/engineering-education/supervised-learning-algorithms/) can provide an introduction or refresher.
 
 ### Dataset Shift
 
@@ -39,13 +39,13 @@ There are three major types of dataset shift. We explore each in detail.
 
 Covariate Shift
 
-[Source](iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
+[Source](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
 
 Covariate shift is the most common type of shift which is characterized by the change of the input variables existing in the training and test datasets. It may occur as a result of a change in the environment which only affects the input variables. The target variable remains unchanged.
 
 ![covariate2](/engineering-education/correcting-data-shift.png)
 
-[Source](iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
+[Source](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
 
 The change in distribution is problematic. Here’s why. From the above image, the learning function attempts to fit the training data. However, the distribution of the training and test data is contrasting. As such, using the learned function to make predictions, in this case, will lead to wrong results.
 
@@ -109,7 +109,7 @@ Dataset shift deteriorates the performance of a model. No engineer wants to buil
 
 ### References and Further Reading
 
-1. [Dataset Shift in Classification: Approaches and Problems](iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
+1. [Dataset Shift in Classification: Approaches and Problems](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
 
 
 2. [Understanding Dataset Shift](https://towardsdatascience.com/understanding-dataset-shift-f2a5a262a766)
