@@ -10,7 +10,7 @@ Given a list of prices over a timeframe, we compute the maximum possible profit 
 
 ### Greedy Approach 
 
-We will be using the greedy method to obtain the maximum possible profit. The greedy method is a type of problem-solving strategy, where the best possible solution at the current instance is chosen. Unlike other algorithms, which consider the optimal solution over a more extensive timeframe, greedy algorithms make decisions at the given time instance. This results in efficient computations and faster results. However, there is a downside to this approach. The greedy approach might not always provide the most optimal solution. This occurs because it considers only the current instance to make a decision. 
+We will be using the greedy method to obtain the maximum possible profit. The [greedy method](https://en.wikipedia.org/wiki/Greedy_algorithm) is a type of problem-solving strategy, where the best possible solution at the current instance is chosen. Unlike other algorithms, which consider the optimal solution over a more extensive timeframe, greedy algorithms make decisions at the given time instance. This results in efficient computations and faster results. However, there is a downside to this approach. The greedy approach might not always provide the most optimal solution. This occurs because it considers only the current instance to make a decision. 
 
 In this problem, we will understand the nature of greedy algorithms and determine the maximum possible profit. Let's begin.
 
