@@ -1,4 +1,4 @@
-# Optimization of Profit Using Greedy Algorithms
+# Optimizing Stock Price Profit Using Greedy Algorithms
 
 Stock markets are where buyers and sellers represent ownership for the businesses listed on the markets. Many have become millionaires by trading. In today's era, many companies offer solutions to test out our strategies on previous data. This is called back-testing. If the strategies return good profits during back-testing, it can be deployed in the live markets.
 
