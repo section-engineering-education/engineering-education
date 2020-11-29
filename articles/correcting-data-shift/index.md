@@ -15,7 +15,7 @@ Dataset shift manifests when there is a change in the distribution of data. In t
 
 ### Prerequisites
 
-A general understanding of machine learning is required. This [post](Supervised Learning Algorithms | Section) can provide an introduction or refresher.
+A general understanding of machine learning is required. This [post](/engineering-education/supervised-learning-algorithms/) can provide an introduction or refresher.
 
 ### Dataset Shift
 
@@ -65,7 +65,7 @@ We can use the context of spam emails to better understand this type of shift. T
 
 Still, in the context of spam filters, let’s have an example of an unbalanced dataset. Consider a training set with equal prior probabilities on the count of received spam mail. If the prior probabilities are equal, the training set would contain 50% spam and 50% non-spam mail. However, if in actuality about 75% of our mail is spam, the prior probability of the class variables has been altered. The effect of this does not influence the input distribution, but rather the output distribution.
 
-For more on this type of shift, check out this [book]( Dataset Shift in Machine Learning (Neural Information Processing) (acad.bg)).
+For more on this type of shift, check out this [book](http://www.acad.bg/ebook/ml/The.MIT.Press.Dataset.Shift.in.Machine.Learning.Feb.2009.eBook-DDU.pdf).
 
 #### Concept Drift
 
@@ -73,7 +73,7 @@ Concept drift is the type of shift defined by the change in relationships betwee
 
 The relationship between input and output variables may be unknown or hidden. For example, consumer purchasing habits over a period of time may be swayed by the strength of the economy. Yet, economic strength is not clearly specified in the data. Another example is in the context of weather data. Seasons may not be clearly defined in temperature data, but ultimately influence the temperature data.
 
-From the above examples, we note that this change in data has the ability to take any form. It makes it much easier to consider cases where there is some form of temporal consistency to the shift. This would mean that data obtained during a given time period would show the change in the relationship between input and output variables over time. Concept drift is more likely to manifest in various domains dependent on time, such as time series forecasting.
+From the above examples, we note that this change in data can take any form. It makes it much easier to consider cases where there is some form of temporal consistency to the shift. This would mean that data obtained during a given period would show the change in the relationship between input and output variables over time. Concept drift is more likely to manifest in various domains dependent on time, such as time series forecasting.
 
 ### Correcting Dataset Shift
 
@@ -95,7 +95,11 @@ In this context, adversarial search defines an approach where an adversarial mod
 
 #### Importance Reweighting
 
-When you have training examples that are very similar to test examples, it is necessary to up-weight the training examples. This makes it seem like the training data was taken from the test set. Each of the training instances is reweighted by the relative probability of the training set and test set. This can be done through density ratio estimation.
+When you have training examples that are very similar to test examples, it is necessary to up-weight the training examples.
+
+Weighting up involves increasing the weight associated with an example. To understand up-weighting, let's give a basic example. Let's have items A, B, C, and D. As they are, their coefficients are the same. We can assume they have equal importance. However, if we would want to increase the importance of item B with respect to the other three, we would up-weight B. Here's how; we would first represent weights of the four items as decimals that add up to 1. If they are of equal importance in this context, we would have (0.25)A, (0.25)B, (0.25)C, and (0.25)D. If we up-weight B with the others maintaining equal importance, an outcome would be something like (0.2)A, (0.4)B, (0.2)C, (0.2)D. B has a higher weight than the rest. Note that all the coefficients add up to 1.          
+
+Up-weighting the training examples makes it seem like the training data was taken from the test set. Each of the training instances is reweighted by the relative probability of the training set and test set. This can be done through density ratio estimation.
 
 Density ratio estimation involves the separate estimation of test and training densities first. This is then followed by estimating the importance by considering the ratio of the approximated densities of the training and test sets. The densities represent the weights of each instance of the training data.
 
