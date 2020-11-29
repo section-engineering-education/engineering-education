@@ -16,6 +16,7 @@ Given a list of prices over a time-frame, we compute the maximum possible profit
 ### Divide and Conquer Paradigm
 
 [Divide and Conquer Paradigm](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm) is an algorithmic design approach used in problems that have a recursive structure to it. It is based on multi-branched recursion. The algorithm operates by breaking down the problem into smaller sub-problems thereby making the problem small enough to be solved directly. In this article, we will observe the recursive approach taken to optimize the profit.
+
 At the end of this article, we will also analyze the advantages and limitations of this programming paradigm. 
 
 ### Given 
