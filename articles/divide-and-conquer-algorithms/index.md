@@ -1,5 +1,5 @@
 # Understanding Divide and Conquer Method using Stock Price Optimization Problem
- 
+
 Stock markets are where buyers and sellers represent ownership for the businesses listed on the markets. Many have become millionaires by trading. In today's era, many companies offer solutions to test out our strategies on previous data. This is called back-testing. If the approach returns good profits during back-testing, it can be deployed in the live markets. 
 
 One of the aspects of back-testing is to know the maximum possible profit. We compute the maximum potential yield of stock prices and compare the strategy's performance to the maximum profit possible. Once the back-testing approach is at par with the maximum profit, it is deployed into the real-time analysis.
@@ -8,11 +8,15 @@ One of the aspects of back-testing is to know the maximum possible profit. We co
 
 Given a list of prices over a time-frame, we compute the maximum possible profit possible through performing one buy operation or one sell operation at a given time. At a given time-stamp, only one of the two operations can be used. The total number of buying and selling operations that can be performed are unlimited.
 
-
 ### Objective
 
 - In this program, the divide and conquer method is used to maximize the profit, given a list of values. The divide and conquer method recursively breaks down the problem into smaller sub-problems until they can be solved directly. The solutions to these sub-problems are then combined to give a solution to the original problem. 
 - We discuss the advantages and disadvantages of the divide and conquer approach.
+
+### Divide and Conquer Paradigm
+
+[Divide and Conquer Paradigm](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm) is an algorithmic design approach used in problems that have a recursive structure to it. It is based on multi-branched recursion. The algorithm operates by breaking down the problem into smaller sub-problems thereby making the problem small enough to be solved directly. In this article, we will observe the recursive approach taken to optimize the profit.
+At the end of this article, we will also analyze the advantages and limitations of this programming paradigm. 
 
 ### Given 
 
@@ -66,7 +70,7 @@ function main():
 }
 ```
 
-### Code 
+### Python Code 
 
 We convert the pseudo code given above into Python code. Try coding it on your own. The solution is given below.
 
