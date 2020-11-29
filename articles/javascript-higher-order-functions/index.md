@@ -206,6 +206,7 @@ const adults = [
 ];
 
 const anAdult = adults.filter(adults => adults.age >= 18);
+console.log(anAdult);
 
 /*[
   { name: 'Xavier', age: 19 },
