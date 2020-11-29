@@ -299,7 +299,7 @@ Deletion follows a very similar algorithm compared to insertion. However, one mu
     2. Get the balance factor of the current node 
         Balance Factor = Height of left subtree - Height of right subtree
     3. If the balance factor is greater than 1, it could be either left-left or left-right rotation. If the balance of the left tree is greater than 0, it would be a left-left rotation, else a left-right rotation.
-    4. If the balance factor is lesser than -1, it could be either right-right or right-left rotation. If the balance of the left tree is lesser than 0, it is a right-right rotation, else a right-left rotation.
+    4. If the balance factor is lesser than -1, it could be either right-right or right-left rotation. If the balance of the right tree is lesser than or equal to 0, it is a right-right rotation, else a right-left rotation.
 
 ```cpp
 #include<bits/stdc++.h>
