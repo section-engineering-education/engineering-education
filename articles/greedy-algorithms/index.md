@@ -14,13 +14,13 @@ We will be using the greedy method to obtain the maximum possible profit. The gr
 
 In this problem, we will understand the nature of greedy algorithms and determine the maximum possible profit. Let's begin.
 
-### Analysis of the Greedy Solution
+### An introduction to the Greedy Solution
 
 In this problem, the greedy method is used to maximize the profit given a list of values. The greedy algorithm obtains the profit by going with the amount that looks best at each timestamp. This project's scope is limited to previous data and can not model the fluctuations and variations in stock markets. We assume that pre-historic data is available and are thus proceeding with the same.
 
 ### Given Input
 
-The input to the program is a list of historical values(integers). It is stored in an array. Python's list is an efficient implementation of the dynamic array. The advantage of the dynamic array is that it grows automatically when additional elements are inserted, and no space is available for the new element. The amortized cost of insertion of an element into a dynamic array is O(1), whereas the worst case is still Θ(n).
+The input to the program is a list of historical values (integers). It is stored in an array. Python's list is an efficient implementation of the dynamic array. The advantage of the dynamic array is that it grows automatically when additional elements are inserted, and no space is available for the new element. The amortized cost of insertion of an element into a dynamic array is O(1), whereas the worst case is still Θ(n).
 
 ### Desired Output
 
@@ -156,4 +156,4 @@ Input: Large numbers, more extensive list
 
 ### Conclusion
 
-In this article, we considered the greedy approach to obtain the maximum profit given a list of indices. Observe that the option of performing multiple buys and sell operations are never used. 
+In this article, we considered the greedy approach to obtain the maximum profit given a list of indices. Observe that the option of performing multiple buys and sell operations are never used. I hope the intuition behind the greedy approach was presented well. Do let me know what you think about the approach taken to solve the problem. Feedback is highly appreciated.
