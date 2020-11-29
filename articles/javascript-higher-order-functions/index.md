@@ -440,3 +440,6 @@ Or a function that returns another function,
 you have actually applied a concept of high order function.
 
 I hope this guide helps you understand high order functions and replicate that concept in your programs.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
