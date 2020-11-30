@@ -327,3 +327,4 @@ By visiting http://127.0.0.1:8000/docs/ in the browser we will get a full docume
 
 ### Conclusion
 We finally understand how to create and document our restful endpoint APIS in Django. Go ahead and clone the repos [django_todo](https://github.com/paulodhiambo/django_todo) to view the full source code of the project and add new fields to our Todo model. Next, we will secure our endpoints and add social authentication to our app.
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
