@@ -169,4 +169,4 @@ Because our overloaded `operator+()` function is a friend function, we have acce
 **NOTE: _Explicitly calling an operator functions is allowed and can be done in certain situations._**
 
 ### Conclusion
-In this article, we got to explore what operator overloading is, where to use it and its significance. We also learnt that through the use of  **operator overloading** we have a clean and maintainable code. Go ahead and try out the operator overloading examples on  [repl.it](https://repl.it/@Dawe7/operator-overloading-using-member-functions).
+In this article, we got to explore what operator overloading is, where to use it and its significance. We also learnt that through the use of  **operator overloading** we have a clean and maintainable code. Go ahead and try out the operator overloading examples above on  [repl.it](https://repl.it/@Dawe7/operator-overloading-using-member-functions).
