@@ -329,11 +329,11 @@ const updateDOM=(player)=>{
 And the final version of `app.js` is
 
 ```
-const app=require('express');
-const socket=require('socket.io');
-const randomstring=require('randomstring');
+const app = require('express');
+const socket = require('socket.io');
+const randomstring = require('randomstring');
 
-const express=app();
+const express = app();
 
 const server=express.listen(4000,()=>{
     console.log("server started at http://localhost:4000");
@@ -345,9 +345,9 @@ const io=socket(server);
 
 //ALL player info
 let players={};
+
 //GAME VARIABLES
 let choice1="",choice2="";
-
 
 io.on("connection",(socket)=>{
     console.log("connection established");
@@ -386,20 +386,16 @@ io.on("connection",(socket)=>{
     });
 
     //Function to be executed after getting both choices
-const result=(roomID)=> {
-    var winner = getWinner(choice1, choice2);
-    io.sockets.to(roomID).emit("result", {
-        winner: winner
-    });
-    choice1 = "";
-    choice2 = "";
-}
+    const result=(roomID)=> {
+        var winner = getWinner(choice1, choice2);
+        io.sockets.to(roomID).emit("result", {
+            winner: winner
+        });
+        choice1 = "";
+        choice2 = "";
+    }
 
 })
-
-
-
-
 
 //Function to calculate winner
 const getWinner=(p, c)=>  {
@@ -429,7 +425,7 @@ const getWinner=(p, c)=>  {
 
 Kudos, You made it 🎉
 
-> If you are facing issues with code, please make sure you hit hard refresh(Ctrl+Shift+R) so that the JavaScript is updated. And also compare your code with the [final version](https://github.com/HarishTeens/rps-online/tree/final) to find any possible errors.
+> If you are facing issues with the code, try a hard refresh (Ctrl+Shift+R) so that the JavaScript is updated and also compare your code with the [final version](https://github.com/HarishTeens/rps-online/tree/final) to find any possible discrepancies.
 
 Although the app works, it could be improved. As mentioned before, the intention was to keep this tutorial simple to put more focus on Socket logic. The next step is to improve the app by adding extra functionality, read along for some suggestions.
 
@@ -444,3 +440,6 @@ Although the app works, it could be improved. As mentioned before, the intention
  Check out my Rock Paper Scissor game for reference. Here's the link to the [Github repo](https://github.com/HarishTeens/rpsgames). Feel free to try the game out at this [link](https://rpsgames.herokuapp.com) where its deployed to Heroku.
 
  Thanks for reading.
+ 
+ ---
+Peer Review Contributions by: [Louise Findlay](//engineering-education/authors/louise-findlay/)
