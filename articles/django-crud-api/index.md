@@ -228,28 +228,10 @@ urlpatterns = [
 ```
 ### Testing the endpoints
 
-Making a GET request to http://localhost:8000/api/v1/todo in postman returns a list of `todos`.
-```json
-[
-    {
-        "id": 1,
-        "date_created": "2020-11-19",
-        "title": "Go to market",
-        "body": "Go Buy Goods from the market",
-        "is_completed": true,
-        "last_modified": "2020-11-17"
-    },
-    {
-        "id": 2,
-        "date_created": "2020-11-20",
-        "title": "Go to school",
-        "body": "Pick a book from the Library",
-        "is_completed": false,
-        "last_modified": "2020-11-17"
-    }
-]
+Before testing our API endpoints let's make sure our development server is up and running. To start the development server run the command `./manage.py runserver` in the root folder of our project where `manage.py` file exists.
+```bash
+$ ./manage.py runserver
 ```
-
 To create a new Todo we make a POST request to 
 http://localhost:8000/api/v1/todo/create/ with the new Todo object.
 
@@ -260,8 +242,21 @@ http://localhost:8000/api/v1/todo/create/ with the new Todo object.
     "body": "Go Buy Goods from the market",
     "is_completed": true,
 }
-```
+``` 
 
+Making a GET request to http://localhost:8000/api/v1/todo in postman returns a list of `todos`.
+```json
+[
+    {
+        "id": 1,
+        "date_created": "2020-11-19",
+        "title": "Go to market",
+        "body": "Go Buy Goods from the market",
+        "is_completed": true,
+        "last_modified": "2020-11-17"
+    }
+]
+```
 To Update a Todo we make a PUT request to http://localhost:8000/api/v1/todo/update/1/ with the Todo object fields to update and the passing in Todo id as a URL parameter.
 
 ```json
