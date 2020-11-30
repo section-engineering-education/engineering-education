@@ -75,6 +75,7 @@ In this piece of code, we'll define two private point coordinates, then we'll de
          Y = ycoordinate;
          Console.WriteLine("point constructor: {0}", this);}
   ```
+**Note**: be aware that you can't run the code above without putting the incomming code snippets togather.
 
 Here we define the set and get Accessors to access the private members of the class, then we'll override the ToString method.
 
@@ -155,14 +156,18 @@ Now we need to define the functions that will help us calculate the area and per
 Let's take a look at the following code:
 
    ```c#
-   static void Main(string[] args)
-        {
-            Circle c = new Circle(6,8,4);
+ public class Example{
 
-            Console.WriteLine("Area : " + c.Area());
-            Console.WriteLine("Perimeter : " + c.Perimeter());
-        }
+static void Main(string[] args)
+{
+Circle c = new Circle(6,8,4);
+Console.WriteLine("Area : " + c.Area());
+Console.WriteLine("Perimeter : " + c.Perimeter());
+}
+}
+        
    ```
+You can run the previous code online by clicking [here](https://repl.it/@mohamedgh16/example-1).
 
 The output after execution should look like:
 
@@ -174,7 +179,7 @@ The output after execution should look like:
   ```
 
 ### Constructors and Destructors in derived classes
-The constructor of a base class will be called implicitly or explicitly when Instantiating a derived class, this will cause a chain reaction when a base class is a derived class as well.
+The constructor of a base class will be called implicitly or explicitly when *Instantiating* a derived class, this will cause a chain reaction when a base class is a derived class as well.
 
 When a destructor is called, it executes its function and then invokes the derived class base class constructor.
 
@@ -221,6 +226,7 @@ Circle destructor: Center= [6, 8]; Radius = 4
 Point destructor: Center= [6, 8]; Radius = 4
 
    ```
+You can run the previous code online by clicking [here](https://repl.it/@mohamedgh16/example-2).
 
 ### Conclusion
 In this tutorial, we have learned the importance of inheritance, how to define a base class and inherit its properties, and understand the relationship between classes.
