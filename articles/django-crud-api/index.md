@@ -240,7 +240,7 @@ http://localhost:8000/api/v1/todo/create/ with the new Todo object.
     "date_created": "2020-11-19",
     "title": "Go to School",
     "body": "Go Buy Goods from the market",
-    "is_completed": true,
+    "is_completed": true
 }
 ``` 
 
@@ -268,7 +268,7 @@ To Update a Todo we make a PUT request to http://localhost:8000/api/v1/todo/upda
 }
 ```
 
-To Delete a Todo we make a DELETE request to http://localhost:8000/api/v1/todo/update/1/ passing the id of the Todo to delete as URL parameter.
+To Delete a Todo we make a DELETE request to http://localhost:8000/api/v1/todo/delete/1/ passing the id of the Todo to delete as URL parameter.
 
 ### Documenting Todo Endpoints
 It's a good practice to provide documentation for the various endpoints that we create, this makes it easier for other people to use our API endpoints.
