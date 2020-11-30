@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-avl-trees/
 title: Introduction to AVL trees
-description: In this article, 
+description: In this article,
 author: prashanth-saravanan
 date: 2020-11-30T00:00:00-12:00
 topics: []
@@ -19,7 +19,6 @@ Binary search trees (BSTs) are one of the most efficient data structures with th
 The AVL tree, named after its two inventors, G.M. Abelson-Velvety and E.M. Landis, who published it in their 1962 paper "An Algorithm For The Organization Of Information" has anchored its position as a need-to-understand data structure owing to its performance increase from a regular BST.
 
 ### Prerequisites
-
 To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](/engineering-education/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
 
 ### Table of contents
