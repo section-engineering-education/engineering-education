@@ -494,15 +494,12 @@ Output
     ['lemons','mangoes','bananas']
 ```
 
-- **splice()**. It removes elements from an array, replacing their positions with other elements of the array. When calling the `splice()`, you specify the start index and the deleteCount. If you omit the deleteCount, all of the elements in the array shall be deleted. In our example, we can delete two  elements (deleteCount) starting from index 0 (start index).
+- **splice()**. It removes elements from an array, replacing their positions with other elements of the array. When calling the `splice()`, you specify the start index and the `deleteCount`. If you omit the `deleteCount`, all of the elements in the array will be deleted. In our example, we delete two elements i.e the `deleteCount`, starting from index 0 i.e the start index.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
-
     let spliced_fruits = fruits.splice(0,2);
-
     console.log(spliced_fruits);
-
     console.log(fruits);
 ```
 Output
