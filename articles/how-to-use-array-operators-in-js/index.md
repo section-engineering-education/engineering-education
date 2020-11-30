@@ -454,9 +454,7 @@ Output
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
-
     let new_fruits = fruits.slice(1,3);
-
     console.log(new_fruits);
 ```
 Output
@@ -465,13 +463,11 @@ Output
     ['lemons','bananas']
 ```
 
-- **some()**. It checks if some of the data in the array meet a particular condition. It must not be all, but some of them. For our fruits array we can check if there are some of the fruits which have eight letters. `some()` method receives a function specifying the condition. If there are some, it shall return `true` else `false`.
+- **some()**. It checks if any of the data in the array meet a particular condition. For our fruits array we can check if there are some of the fruits which have eight letters. The `some()` method receives a function specifying the condition. If there are some, it shall return `true` otherwise `false`.
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
-
     let exists = fruits.some(fruit => fruit.length === 8);
-
     console.log(exists);
 ```
 Output
@@ -479,16 +475,12 @@ Output
 ```bash
     false
 ```
-- **sort()**. It sorts the data of an array. It receives two parameters which symbolize the data to be sorted. The function to be executed for sorting depends with the problem at hand. For example, using our fruits array we may decide to order them according to the number of letters  in ascending order using `sort()`.
+- **sort()**. This sorts the data inside an array. It receives two parameters which symbolize the data to be sorted. The function to be executed for sorting depends with the problem at hand. For example, using our fruits array we may decide to order them according to the number of letters  in ascending order using `sort()`.
 
 ```javascript
-
     let fruits = ['mangoes','lemons','bananas'];
-
     let sorted_fruits = fruits.sort((fruit_a,fruit_b) => fruit_a.length - fruit_b.length);
-
     console.log(sorted_fruits);
-
 ```
 Output
 
@@ -496,7 +488,7 @@ Output
     ['lemons','mangoes','bananas']
 ```
 
-- **splice()**. It removes elements from an array, replacing in their positions other elements of the array. When calling the `splice()`, you specify the start index and the deleteCount. If you omit the deleteCount, all of the elements in the array shall be deleted. In our example, we can delete two  elements (deleteCount) starting from index 0 (start index).
+- **splice()**. It removes elements from an array, replacing their positions with other elements of the array. When calling the `splice()`, you specify the start index and the deleteCount. If you omit the deleteCount, all of the elements in the array shall be deleted. In our example, we can delete two  elements (deleteCount) starting from index 0 (start index).
 
 ```javascript
     let fruits = ['mangoes','lemons','bananas'];
