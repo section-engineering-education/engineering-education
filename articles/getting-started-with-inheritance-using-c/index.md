@@ -226,7 +226,6 @@ Circle destructor: Center= [6, 8]; Radius = 4
 Point destructor: Center= [6, 8]; Radius = 4
 
    ```
-You can run the previous code online by clicking [here](https://repl.it/@mohamedgh16/example-2).
 
 ### Conclusion
 In this tutorial, we have learned the importance of inheritance, how to define a base class and inherit its properties, and understand the relationship between classes.
