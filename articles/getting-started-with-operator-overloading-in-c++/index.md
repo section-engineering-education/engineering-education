@@ -1,8 +1,8 @@
 ### Introduction
-Operator overloading  is the process of making an operator exhibit different behaviours in different instances. By overloading operators in a specific class, you can the user's view of that class. This helps developers have a problem driven approach towards programming. 
+Operator overloading  is the process of making an operator exhibit different behaviors in different instances. By overloading operators in a specific class, you can the user's view of that class. This helps developers have a problem driven approach towards programming.
 In this article, we will go through the basics of operator overloading and dive into how to use it in C++.
 
-#### Prerequisities
+#### Prerequisites
 To follow through this article, you'll need:
 - Basic understanding of C++ language
 - Basic understanding of Operators
@@ -57,7 +57,7 @@ Operator overloading makes it easy to develop new definitions for most of the op
 we could have it as,
 
 ```c++
-result= a1+a2;
+result = a1+a2;
 ```
 Since operator overloading allows us to change how operators work, we can redefine how the `+` operator works and use it to add `a1` and `a2`. This makes our code intuitive and easier to understand.
 
@@ -68,7 +68,7 @@ Since operator overloading allows us to change how operators work, we can redefi
 
 ##### Operator overloading of member function
 Member functions are operators and functions declared as members of a certain class. They don't include operators and functions declared with the friend keyword.
-If you write an operator function as a member function, it gains access to all of the member variables and functions of that class. 
+If you write an operator function as a member function, it gains access to all of the member variables and functions of that class.
 
 When overloading an operator using a member function:
 - The overloaded operator must be added as a member function of the left operand.
@@ -78,34 +78,34 @@ When overloading an operator using a member function:
  Example of operator overloading using the member function:
 ```C++
 #include <iostream>
- 
+
 class Coins
 {
 private:
     int a_coins;
- 
+
 public:
     Coins(int coins) { a_coins = coins; }
- 
+
     // Overload Coins + int
     Coins operator+(int value);
- 
+
     int getCoins() const { return a_coins; }
 };
- 
+
 // note: this function is a member function!
 // the coins parameter in the friend version is now the implicit *this parameter
 Coins Coins::operator+(int value)
 {
     return Coins(a_coins + value);
 }
- 
+
 int main()
 {
 	Coins coins1(6);
 	Coins coins2 = coins1 + 3;
 	std::cout << "We have " << coins2.getCoins() << " coins.\n";
- 
+
 	return 0;
 }
 ```
@@ -115,29 +115,30 @@ The output of our program will be:
 We have 9 coins.
 ```
 
-The expression `coins1 + 2` becomes function call `coins1.operator+(2)`. Now there is only one explicit function parameter and `coins1` becomes an object prefix. The operator overloaded member function gets invoked on the first operand. 
+The expression `coins1 + 2` becomes function call `coins1.operator+(2)`. Now there is only one explicit function parameter and `coins1` becomes an object prefix. The operator overloaded member function gets invoked on the first operand.
 
 #### Operator overloading of non-member function or Friend function
 A non-member function does not have access to the private data of that class. This means that an operator overloading function must be made a friend function if it requires access to the private members of the class.
+
 Example of operator overloading using friend function:
 
 ```C++
 #include <iostream>
- 
+
 class Coins
 {
 private:
 	int a_coins;
- 
+
 public:
 	Coins(int coins) { a_coins = coins; }
- 
+
 	// add Coins + Coins using a friend function
 	friend Coins operator+(const Coins &c1, const Coins &c2);
- 
+
 	int getCoins() const { return a_coins; }
 };
- 
+
 // note: this function is not a member function!
 Coins operator+(const Coins &c1, const Coins &c2)
 {
@@ -145,14 +146,14 @@ Coins operator+(const Coins &c1, const Coins &c2)
 	// we can access a_coins directly because this is a friend function
 	return Coins(c1.a_coins + c2.a_coins);
 }
- 
+
 int main()
 {
 	Coins coins1{ 5 };
 	Coins coins2{ 4 };
 	Coins coinsSum{ coins1 + coins2 };
 	std::cout << "We have " << coinsSum.getCoins() << " coins.\n";
- 
+
 	return 0;
 }
 ```
@@ -164,8 +165,8 @@ We have 9 coins
 ```
 
 Because our overloaded `operator+()` function is a friend function, we have access the `a_coins` member of our parameters directly. We can also use the built-in function of the plus operator to do the addition since `a_coins` is an integer.
- 
-**NOTE: _Explicitly calling an operator functions is legal and can be done in certain situations._**
+
+**NOTE: _Explicitly calling an operator functions is allowed and can be done in certain situations._**
 
 ### Conclusion
-In this article, we got to explore what operator overloading is, where it is used and its significance. We also learnt that through the use of  **operator overloading** we have a clean and maintenable code. Go ahead and try out the operator overloading examples on  [repl.it](https://repl.it/@Dawe7/operator-overloading-using-member-functions).
+In this article, we got to explore what operator overloading is, where to use it and its significance. We also learnt that through the use of  **operator overloading** we have a clean and maintainable code. Go ahead and try out the operator overloading examples on  [repl.it](https://repl.it/@Dawe7/operator-overloading-using-member-functions).
