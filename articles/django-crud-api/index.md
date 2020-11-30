@@ -243,6 +243,7 @@ http://localhost:8000/api/v1/todo/create/ with the new Todo object.
     "is_completed": true
 }
 ``` 
+![Postman POST](/engineering-education/django-crud-api/post.png)
 
 Making a GET request to http://localhost:8000/api/v1/todo in postman returns a list of `todos`.
 ```json
@@ -257,6 +258,8 @@ Making a GET request to http://localhost:8000/api/v1/todo in postman returns a l
     }
 ]
 ```
+![Postman GET](/engineering-education/django-crud-api/get.png)
+
 To Update a Todo we make a PUT request to http://localhost:8000/api/v1/todo/update/1/ with the Todo object fields to update and the passing in Todo id as a URL parameter.
 
 ```json
@@ -267,8 +270,10 @@ To Update a Todo we make a PUT request to http://localhost:8000/api/v1/todo/upda
     "is_completed": false
 }
 ```
+![Postman PUT](/engineering-education/django-crud-api/put.png)
 
 To Delete a Todo we make a DELETE request to http://localhost:8000/api/v1/todo/delete/1/ passing the id of the Todo to delete as URL parameter.
+![Postman DELETE](/engineering-education/django-crud-api/delete.png)
 
 ### Documenting Todo Endpoints
 It's a good practice to provide documentation for the various endpoints that we create, this makes it easier for other people to use our API endpoints.
