@@ -48,13 +48,13 @@ Output
 
 ```javascript
 Array.prototype.toUCase = function() {
-  for (i = 0; i < this.length; i++) {
+  for (let i = 0; i < this.length; i++) {
     this[i] = this[i][0].toUpperCase() + this[i].slice(1);
   }
 };
 
 //we execute the operation on our array
-fruits.toUcase();
+fruits.toUCase();
 
 console.log(fruits);
 ```
@@ -105,7 +105,7 @@ Output
 
 The target is index 2 so it shall start at index 2. It will then copy the data from index 1 to index 3 while still preserving the length of the array.
 
-- **entries()**: It is used to get an iterator object of a key-value pair nature. The key is the index of the element in the array whereas the value is the actual element.
+- **entries()**: It is used to get an iterator object of a key-value pair. The key and the value are usually destructed from the array returned. The key is the index of the element in the array whereas the value is the actual element.
 
 ```javascript
 const fruits = ["mangoes","lemons"];
@@ -121,8 +121,6 @@ Output.
 key 0 and its value is mangoes
 key 1 and its value is lemons
 ```
-
-The operation returns an array of key and value, and so when iterating you will have to destructure. Keys start at 0.
 
 - **every()**: It is used when iterating through all array elements to check if they all meet a given condition. Using this operation, you are guaranteed that all elements of the array will be checked.
 
@@ -229,7 +227,7 @@ Output
 ['MANGOES','LEMONS','BANANA']
 ```
 
-The `from()` method is executed on the Array instance and receives the iterable object which in this case is `fruits` and a map function. The map function capitlaizes each of the elements in the array.
+The `from()` method is executed on the Array instance and receives the iterable object which in this case is `fruits` and a map function. The map function capitalizes each of the elements in the array.
 
 - **includes()**: It is used to check if a particular array contains the specified element. For example if we want to check if the fruits array contains lemons, we can simply use the `includes()` method. The method returns a `Boolean`.
 
@@ -246,7 +244,7 @@ false
 ```
 Since we do not have avocado as an element in the fruits array, the result shall hold `false`.
 
-- **indexOf()**: It is used in searching for an element in an array and then returning its index. For example, if we want to search for bananas in our fruits array and get the index we use the `indexOf()` method. If else we do not find the element in the array it shall return `-1`.
+- **indexOf()**: It is used in searching for the index of the element passed in. For example, if we want to search for bananas in our fruits array and get the index we use the `indexOf()` method. If else we do not find the element in the array it shall return `-1`.
 
 ```javascript
 let fruits = ["mangoes","lemons","bananas"];
@@ -500,7 +498,7 @@ Output
 ```
 
 ### Conclusion
-In this article we have covered an introduction to JavaScript arrays, properties of JavaScript arrays and operations executed on JavaScript arrays.
+Whether you are writing a simple program or solving a complex problem in JavaScript, you will always find it necessary to use arrays. In this article we have covered an introduction to JavaScript arrays, properties of JavaScript arrays, and operations executed on JavaScript arrays. You can access the  code from [here](https://github.com/mwangiKibui/array-operators-in-js/tree/main).
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
