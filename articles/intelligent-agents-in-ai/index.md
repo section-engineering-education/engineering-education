@@ -18,11 +18,11 @@ Intelligent agents have the following distinguishing characteristics;
 The IA structure consists of three main parts: architecture, agent function, and agent program.
 
 - **Architecture:** This refers to machinery or device that consists of actuators and sensors. The intelligent agent executes on this machinery. Examples include a personal computer, a car, or a camera.
-  
+
 - **Agent function:** This is a function in which actions are mapped from a certain percept sequence. Percept sequence refers to a history of what the intelligent agent has perceived. 
-  
+
 - **Agent program:** This is an implementation or execution of the agent function. The agent function is produced through the agent program’s execution on the physical architecture. .
-  
+
 ### Categories of Intelligent Agents
 There are 5 main categories of intelligent agents. The grouping of these agents is based on their capabilities and level of perceived intelligence.  
 
@@ -46,23 +46,23 @@ Learning agents have the following elements.
 - **The critic:** It provides feedback on how the agent is doing.
 - **The performance element:** This element decides on the external action that needs to be taken.
 - **The problem generator:** This acts as a feedback agent that performs certain tasks such as making suggestions (new) and keeping history. 
-  
+
 #### How Intelligent Agents Work
 Intelligent agents work through three main components: sensors, actuators, and effectors. Getting an overview of these components can improve our understanding of how intelligent agents work.
 
 - **Sensors:** These are devices that detect any changes in the environment. This information is sent to other devices. In artificial intelligence, the environment of the system is observed by intelligent agents through sensors. 
-  
+
 - **Actuators:** These are components through which energy is converted into motion. They perform the role of controlling and moving a system. Examples include rails, motors, and gears.
-  
+
 - **Effectors:** The environment is affected by effectors. Examples include legs, fingers, wheels, display screen, and arms.
-  
+
 The following diagram shows how these components are positioned in the AI system.
 
 ![AI Sytem](/engineering-education/intelligent-agents-in-artificial-intelligence/ai-system.png)
 
 [Image Source: JavatPoint](https://static.javatpoint.com/tutorial/ai/images/agents-in-ai.png)
 
-Inputs (percepts) from the environment are received by the intelligent agent through sensors. This agent uses artificial intelligence to make decisions using the acquired information/ observations. Actions are then triggered through actuators.  Future decisions will be influenced by percept history and past actions.
+Inputs (percepts) from the environment are received by the intelligent agent through sensors. This agent uses artificial intelligence to make decisions using the acquired information/ observations. Actions are then triggered through actuators. Future decisions will be influenced by percept history and past actions.
 
 ![How an Intelligent Agent Works](/engineering-education/intelligent-agents-in-artificial-intelligence/how-an-intelligent-agent-works.png)
 
@@ -97,12 +97,4 @@ With increased technological advancement, there will be enhanced development of 
 
 [AI Objectives](http://www.aiobjectives.com/2019/11/01/analysis-of-intelligent-agents-in-artificial-intelligence/)
 
-
-
-
-
-
-
-
-
-
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
