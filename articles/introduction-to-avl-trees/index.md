@@ -73,16 +73,16 @@ Let's see how performing an operation on a tree would affect its structure.
 
 Take the example of the following AVL Tree.
 
-<center> <img src="/engineering-education/introduction-to-avl-trees/avl_insertion_before.jpg" alt="Before insertion"> </center>
+![Example AVL Tree](/engineering-education/introduction-to-avl-trees/avl_insertion_before.jpg)
 
 On inserting nodes (1) and (2) in the tree, the structure would change to -
 
-<center> <img src="/engineering-education/introduction-to-avl-trees/avl_after_insertion.jpg" alt="After Insertion"> </center>
+![AVL Tree After Insertion](/engineering-education/introduction-to-avl-trees/avl_after_insertion.jpg)
 
 In tri-node restructuring, the three roots which are involved in the imbalanced structure are chosen and are rearranged such that the order is restored.
 In this case, the roots of node (1), node (2), and node(3) are taken into account because the imbalance occurs at node (3). If the height at node (3) is balanced, the overall height of the tree would be in the order of log(n). For example, node (3) could be restructured similar to the figure below.
 
-<center> <img src="/engineering-education/introduction-to-avl-trees/avl_after_structuring.jpg" alt="After Tri-Node Restructuring"> </center>
+![AVL Tree After Tri Node Restructuring](/engineering-education/introduction-to-avl-trees/avl_after_restructuring.jpg)
 
 This ensures that the height of all the nodes is balanced and hence is an AVL Tree.
 
@@ -100,20 +100,19 @@ The procedure for tri-node restructuring for an insertion/deletion operation is 
 
 **Left-left Rotation**
 
-<center> <img src="/engineering-education/introduction-to-avl-trees/leftleft_rotation.jpg" alt="Left-Left Rotation"> </center>
+![Left-Left Rotation](/engineering-education/introduction-to-avl-trees/leftleft_rotation.jpg)
 
 **Left-right Rotation**
 
-<center> <img src="/engineering-education/introduction-to-avl-trees/leftright_rotation.jpg" alt="Left-Right Rotation"> </center>
+![Left-Right Rotation](/engineering-education/introduction-to-avl-trees/leftright_rotation.jpg)
 
 **Right-right Rotation**
 
-<center> <img src="/engineering-education/introduction-to-avl-trees/rightright_rotation.jpg" alt="Right - Right Rotation"> </center>
+![Right-Right Rotation](/engineering-education/introduction-to-avl-trees/rightright_rotation.jpg)
 
 **Right-left Rotation**
 
-<center> <img src="/engineering-education/introduction-to-avl-trees/rightleft_rotation.jpg" alt="Right-Left Rotation"> </center>
-
+![Right-Left Rotation](/engineering-education/introduction-to-avl-trees/rightleft_rotation.jpg)
 
 ### Insertion in AVL trees in C++
 The algorithm for inserting a new node in an AVL tree is as follows:
