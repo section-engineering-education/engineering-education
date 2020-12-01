@@ -27,7 +27,7 @@ There are two parts to this application,
 
 ### Prerequisites
 - HTML is the standard markup language for web page. Here's a useful [guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) for beginners.
-- CSS is a style sheet language for improving the presentation of web pages. To learn more, check this [article](/engineering-education/what-is-css/)
+- CSS is a style sheet language for improving the presentation of web pages. To learn more, check this [article](/engineering-education/what-is-css/).
 - [Bootstrap](https://getbootstrap.com/) is a popular HTML, CSS and JS library. Here's an [article](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to get you started.
 - [jQuery](https://jquery.com/) is a fast and feature-rich JavaScript library.
 - [Express.js](https://expressjs.com/) is a web application framework for Node.js. Here's an introductory article on Express.js: [link](/engineering-education/express/).
