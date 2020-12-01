@@ -245,8 +245,8 @@ Final Code:
 
 ```JavaScript
 app.post("/rtctoken", (req, res) => {
-  const appID = "<-- You app ID here -->";
-  const appCertificate = "<-- You app certificate here -->";
+  const appID = "<-- Your app ID here -->";
+  const appCertificate = "<-- Your app certificate here -->";
   const expirationTimeInSeconds = 3600;
   const uid = Math.floor(Math.random() * 100000);
   const role = req.body.isPublisher ? Agora.RtcRole.PUBLISHER : Agora.RtcRole.SUBSCRIBER;
@@ -265,7 +265,7 @@ Body of the request:
 
 ```json
 {
-  "channel": "<-- You Channel here -->",
+  "channel": "<-- Channel ID here -->",
   "isPublisher": "<-- True or False here -->"
 }
 ```
@@ -274,11 +274,13 @@ Request & Response:
 
 ![RTC Token Request and Response](rtc_postman.png)
 
-> If you are using User Accounts instead of integer UIDs, you can use the `buildTokenWithAccount` function instead of the `buildTokenWithUid`.
->
-> In `buildTokenWithAccount`, you will pass the user account instead of the UID. Everything else remains the same. You can learn more about User Accounts [here](https://docs.agora.io/en/All/faq/string).
->
-> For Example, `Agora.RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channel, userAccount, role, expirationTimestamp);`
+If you are using User Accounts instead of integer UIDs, you can use the `buildTokenWithAccount` function instead of the `buildTokenWithUid`.
+In `buildTokenWithAccount`, you will pass the user account instead of the UID. Everything else remains the same. You can learn more about User Accounts [here](https://docs.agora.io/en/All/faq/string).
+
+For Example, 
+```JavaScript
+Agora.RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channel, userAccount, role, expirationTimestamp);
+```
 
 ### RTM Token
 Let's add a POST handler for a new endpoint called `'/rtmtoken'` to generate authentication tokens for the RTM SDK.
@@ -344,8 +346,8 @@ Final Code:
 
 ```JavaScript
 app.post("/rtmtoken", (req, res) => {
-  const appID = "<-- You app ID here -->";
-  const appCertificate = "<-- You app certificate here -->";
+  const appID = "<-- Your app ID here -->";
+  const appCertificate = "<-- Your app certificate here -->";
   const user = req.body.user;
   const role = Agora.RtmRole.Rtm_User;
   const expirationTimeInSeconds = 3600;
@@ -363,7 +365,7 @@ Body of the request:
 
 ```json
 {
-  "user": "<-- You User Account here -->",
+  "user": "<-- User Account here -->",
 }
 ```
 
