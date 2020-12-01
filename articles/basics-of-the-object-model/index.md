@@ -30,9 +30,9 @@ The object model describes objects in Object-oriented programming, Object-orient
 #### Object-Oriented Programming (OOP)
 OOP is a programming paradigm with a view of objects and classes. OOP incorporates properties/attributes and functions/methods into an element called an object. These objects are grouped into classes.
 
-This programming style generally exists in programming languages such as C++, Java, JavaScript, Python, etc. These languages help structure and organize systems and software programs quickly. Developers use Object-Oriented Languages when creating large, complex, and actively updated programs.
+This programming style exists in programming languages such as C++, Java, JavaScript, Python, etc. These languages help structure and organize systems and software programs quickly. Developers use Object-Oriented Languages when creating large, complex, and actively updated programs.
 
-OOP is based on four principles, Encapsulation, Abstraction, Inheritance, and Polymorphism.
+OOP is based on four principles, i.e., Encapsulation, Abstraction, Inheritance, and Polymorphism.
 
 - [Encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)): It is the bundling of data and methods to control access into the object. It is also known as information/data hiding. In other words, the data is not available to the outside world. Therefore, only those methods that are within the class can access it.
 - [Abstraction](https://stackify.com/oop-concept-abstraction/#:~:text=Abstraction%20is%20one%20of%20the,unnecessary%20details%20from%20the%20user.&amp;text=That&#39;s%20a%20very%20generic%20concept,everywhere%20in%20the%20real%20world.): It hides implementation details while presenting the attributes to the outer world. It reduces code complexity, hides the facts, and expose the essential parts.
@@ -54,7 +54,7 @@ There are various [types of inheritance in OOP](https://en.wikipedia.org/wiki/In
 - [Polymorphism](https://www.tutorialspoint.com/java/java_polymorphism.htm#:~:text=Polymorphism%20is%20the%20ability%20of,to%20a%20child%20class%20object.&amp;text=In%20Java%2C%20all%20Java%20objects,and%20for%20the%20class%20Object.): The term polymorphism refers to the occurrence of something in many forms. Objects can be represented in many forms. In other words, It means an object can perform many functions and work differently.
 
 For example,
-A person in this scenario is the object, performing different functions, and behaving in distinct ways. 
+A person in this scenario is the object, performing different functions, and behaving in distinct ways.
 While in church, the person behaves like a follower.
 While in the market, a person behaves like a customer.
 While in a rented house, the person behaves like a tenant.
@@ -67,7 +67,7 @@ The primary purpose of OOA is identifying the application domain and gathering t
 
 There are three OOA components; Object Modelling, Dynamic Modelling, and Functional Modelling.
 
-- Object Modelling: Objects are occrurences in a class.
+- Object Modelling: Objects are occurrences in a class.
 
 Object Modelling develops the constant formation of the system concerning the object.
 
@@ -98,14 +98,14 @@ Encapsulation is achieved through information hiding or data hiding to reduce co
 
 #### Hierarchy
 The hierarchy shows the order in which objects in a system are put together. Also, it explains the relationship between different parts of a system. Different properties and functions form a class of the hierarchy.
-A hierarchy class is composed of a base class(subclass) and derive classes (parent class). A derived class inherits the properties of a parent class. Through hierarchy, a class can be composed of inter-related sub-classes, which can have their sub-classes until the smallest level of components is reached.
+A hierarchy class is composed of a base class(parent class) and derive classes (subclass). A derived class inherits the properties of a parent class. Through hierarchy, a class can be composed of inter-related sub-classes, which can have their sub-classes until the smallest level of components is reached.
 
 Here is an example of a class of hierarchy
 
 ![Class of Hierarchy](/engineering-education/basics-of-the-object-model/hierarchy.gif)<br>
 *[Image Source](http://www.dba-oracle.com/t_object_class_hierarchies_design.htm)*
 
-In the scenario above, the vehicle is the base class. Objects car, boat, and aircraft inherit properties of the base class (vehicle). Objects truck and van inherit properties from the car, sailboat and yacht inherit from the class boat, and helicopter and blimp inherit properties from class aircraft.  
+In the scenario above, the vehicle is the base class. Objects car, boat, and aircraft inherit properties of the base class (vehicle). Objects truck and van inherit properties from the car. Sailboat and yacht inherit from the class boat, and helicopter and blimp inherit properties from class aircraft.  
 
 #### Modularity
 Modularity refers to dividing a program into components or modules to reduce the problem's complexity. Modularity takes place on broad and powerful applications with multiple classes. The modules help to manage complexity. Modularity focuses on implementation. Therefore, modularity and Encapsulation are related. Modularity can be viewed as a way of matching encapsulated abstraction into basic components. This takes place after the partitioning of a system into modules.
