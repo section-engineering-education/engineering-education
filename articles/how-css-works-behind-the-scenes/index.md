@@ -19,11 +19,11 @@ Let me tell you, **there are three kinds of CSS**:-
 
 1. **Author CSS**:- The developer writes it.
 2. **User CSS**:- It includes styles like the font-size of any webpage that **the user can change** in the browser settings.
-3. **Browser CSS**:- Some styles are **pre-defined in the browser** like in the case of anchor tags. This is known as Browser CSS., and the work of cascade is to resolve the conflicts between the declarations coming from these three different CSS based on some factors:-
+3. **Browser CSS**:- Some styles are **pre-defined in the browser** like in the case of anchor tags. This is known as Browser CSS, and the work of cascade is to resolve the conflicts between the declarations coming from these three different CSS based on some factors:-
 
-1. ** importance**
-2. ** specificity**
-3. **Source order**
+1. ** Importance**
+2. ** Specificity**
+3. ** Source Order**
 
 So, cascade marks the importance of CSS styles based on the source they are coming from in the following order:-
 
