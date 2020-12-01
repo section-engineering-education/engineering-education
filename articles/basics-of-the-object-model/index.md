@@ -21,7 +21,7 @@ Below is an example of a class and a few objects.
 
 Class (Car Brand) = Objects (Toyota, Subaru, Hyundai, Audi, Volkswagen)
 
-An Object model uses various diagrams to show how objects behave and perform real-world tasks. The diagrams used include use-case diagram, sequence diagram, class diagram, activity diagram, etc.
+An Object model uses various diagrams to show how objects behave and perform real-world tasks. The diagrams used include use-case diagram, sequence diagram.
 
 The object model describes objects in Object-oriented programming, Object-oriented Analysis, and Object-oriented design.
 
@@ -112,7 +112,7 @@ Modularity refers to dividing a program into components or modules to reduce the
 
 ### Conclusion
 The object model is built on a collection of models. The object model describes these objects well in OOP, OOA, and OOD. The major elements of the object model are also well explained to the reader.
-That's all there is for this article. I hope this article  will shed some light on the object model and its techniques. Good luck!S
+That's all there is for this article. I hope this article  will shed some light on the object model and its techniques. Good luck!
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
