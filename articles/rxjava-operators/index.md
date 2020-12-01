@@ -22,8 +22,8 @@ Rx-Java uses operators to create observables and manipulate data received by the
 
 ### Prerequisites
 In order to follow through with this article, you need:
-- [Intellij IDE](https://www.jetbrains.com/idea/) installed
-- Basic understanding of the Kotlin programming language
+- [Intellij IDEA](https://www.jetbrains.com/idea/) installed.
+- Basic understanding of the Kotlin programming language.
 - Basic understanding of RxJava observables. You can read [this article](/engineering-education/android-rxjava/) to get you up to speed.
 
 Go ahead and clone the repository using Intellij and wait for the Gradle build to finish. Once done, navigate to the `src/main/kotlin` directory. We will be working from this folder. In the `main.kt` file, we have three functions.
