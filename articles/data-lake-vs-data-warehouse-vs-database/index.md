@@ -2,7 +2,7 @@ Most of today&#39;s organizations collect and process large amounts of data dail
 
 Depending on the kind of data, its use, and scope, an organization can use a data warehouse, data lake, or database. This article will discuss data lake, data warehouse, database, their use cases, and future outlook to help you decide which best suits your goals, data strategy, and infrastructure.
 
-### **An overview of data lake**
+### An overview of data lake
 
 A data lake is a centralized storage repository that allows the storage of structured, unstructured, and semi-structured data. Data lakes allow you to store data in its original format (raw form) without the need to transform or process it at the time.
 
@@ -10,7 +10,7 @@ It is much cheaper and flexible to store data in a data lake than in a data ware
 
 Some of the most popular data lakes are [Amazon S3](https://aws.amazon.com/s3/), [Google Cloud Storage](https://cloud.google.com/storage), and [Apache Hadoop](https://hadoop.apache.org/).
 
-### **An overview of data warehouse**
+### An overview of data warehouse
 
 A data warehouse refers to a storage location that hosts large amounts of structured data, from one or more sources, in a centralized place. Unlike a data lake that stores unprocessed data, data warehouse stores already filtered data processed for a specified purpose.
 
@@ -20,7 +20,7 @@ Mid-size organizations and large-size businesses rely on data warehousing to sha
 
 [Amazon Redshift](https://aws.amazon.com/redshift/), [Snowflake](https://www.snowflake.com/), [Yellowbrick](https://www.yellowbrick.com/), [Teradata](https://www.teradata.com/Products/Software/Database), [Microsoft Azure Synapse](https://azure.microsoft.com/en-us/services/synapse-analytics/), and [IBM Db2](https://www.ibm.com/support/knowledgecenter/SSCJDQ/com.ibm.swg.im.dashdb.doc/local_overview.html#) Warehouse are examples of cloud database solution providers.
 
-### **An overview of database**
+### An overview of database
 
 A database is a storage repository that houses structured data. All related data is stored collectively in a database to ensure easy information access, management, and updating. A database has only one major purpose of storing data.
 
@@ -32,55 +32,55 @@ Besides, DBMS ensures the security and protection of databases and maintains dat
 
 Some of the most popular DBMS are [MongoDB](https://www.mongodb.com/), [Oracle](https://www.oracle.com/database/), [Apache Cassandra](http://cassandra.apache.org/), [PostgreSQL](https://www.postgresql.org/), [Elasticsearch](https://www.elastic.co/), and [Redis](https://redis.io/).
 
-### **Industrial use cases of data warehouses**
+### Industrial use cases of data warehouses
 
 Industries that process large amounts of data find data warehousing most applicable to their needs. They include governments and companies in the insurance, healthcare, education, and finance industries.
 
-- **Healthcare**
+#### Healthcare
 
 Healthcare institutions collect a lot of information from patients, suppliers, and other stakeholders daily. Once collected, the information is organized and stored in a data warehouse. These organizations can access this data at a later date to predict epidemics in advance, create treatment plans, and strategize on purchases.
 
-- **Public sector**
+#### Public sector
 
 The public sector relies on data warehouses for intelligence gathering. Government agencies maintain and analyze citizens&#39; records relating to health, tax records, etc.
 
-### **Industrial use cases of data lakes**
+### Industrial use cases of data lakes
 
 A data lake complements a data warehouse by providing additional [query options](https://docs.microsoft.com/en-us/odata/concepts/queryoptions-overview#). While data warehouses provide organized and structured information, the addition of a data lake helps organizations tap into raw data. Thus, offering more support and insights, considering that data lakes facilitate real-time analytics. Data lakes are applicable in IT, research, and science, among other industries.
 
-- **Research and Science**
+#### Research and Science
 
 The field of science is ever-evolving, and the use of real-time data helps deduct critical insights. Data lakes are applicable for science use because they hold raw data from algorithms and feedback sources in real-time. Science developments rely on the most current and relevant deductions to produce impactful findings and reports. Data lakes help in this aspect because they allow the importation of data that come in real-time.
 
-- **Information technology**
+#### Information technology
 
 Data lakes enable information technology architects to access data in its most original form. They can [case](https://corrus.com/blog/docs/user-guide/corrus-basics/what-is-case-data/#) this data depending on their needs. Organizations use raw data to create more effective products that meet customers&#39; expectations.
 
-### **Industrial use cases of databases**
+### Industrial use cases of databases
 
 Databases are mostly used in data science research and testing. Engineers and data scientists are the primary users of databases.
 
-- **Business data analysis**
+#### Business data analysis
 
 Databases have excellent reporting features thus useful for data analysis and trend predictions. For instance, a sales promotion report may show that sales for an item, say A, increased following an effective email promotion. Those of an item, say B, rose following an effective in-store promotion. A productivity report may show that productivity slows drastically on the afternoon of the day before a holiday; the employer might, as well, let the employees go early on the eve of holidays.
 
-- **Telecommunication**
+#### Telecommunication
 
 Telecommunication companies use databases to store and generate customer bills, balances for prepaid customers, call logs, among other essential information.
 
-- **Sales**
+#### Sales
 
 The sales department benefits significantly from a company&#39;s database. Among other tasks, sales teams use databases to track sales, product performance, and customer information.
 
-### **The future of data lakes, data warehouses, and databases**
+### The future of data lakes, data warehouses, and databases
 
-The current shift towards cloud-based data platforms to mitigate data issues and manage data suggests that data lakes&#39; future is the cloud. The cloud is scalable and expandable, thus expected to attract more users.
+The current shift towards cloud-based data platforms to mitigate data issues and manage data suggests that data lakes&#39; will continue growing deeper in the cloud. The cloud environment enables faster deployment, reliability, scalability, and performance. It also offers access to analytic engines, especially those that analyze data from the internet of things devices. 
 
 Scientists expect future data warehousing to offer a more effective platform to integrate and work with data. In this case, leading warehousing systems will allow users to leverage integration to generate more insights from their data without necessarily depending on a complicated data infrastructure. The next-generation data warehousing will embrace simplicity in terms of ease of use and offer more data delivery capabilities.
 
 There is a need to address the broader range of workloads in databases. Data scientists anticipate that the leading cloud database platforms will address this need. [General-purpose](https://alison.com/learning/courses/236/topic-database-management-systems#) databases can now support data visualization, multiple data models, in-memory storage, distributed storage, and extended capabilities like graphs and spatial. The next-generation databases will ensure data utilization in real-time. Data scientists will need to generate more accurate forecasts and computations.
 
-### **Conclusion**
+### Conclusion
 
 Every organization needs to use the best data analytics system to address their needs and get the best outcome. Databases, data lakes, and data warehouses provide most of the analytics solutions for today&#39;s businesses. With the insights from this article, you will make the right choice between the three analytics solutions.
 
