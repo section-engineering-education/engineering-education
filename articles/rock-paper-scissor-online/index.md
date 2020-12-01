@@ -72,7 +72,7 @@ Now that the flow is clear, let's jump right into coding.
 ### Create game
 Let's start by writing the logic for the Create Game Event in the `public/game.js` file.
 
-```
+```JavaScript
 //Create Game Event Emitter
 $(".createBtn").click(function(){
     firstPlayer=true;
@@ -85,7 +85,7 @@ The code above listens for a click event on the Create Button. Once that event i
 
 Next, we will write the server-side code in `app.js` so that the server listens to this event.
 
-```
+```JavaScript
 io.on("connection",(socket)=>{
     console.log("connection established");
 
@@ -106,7 +106,7 @@ The `CreateGame` listener creates a new Room with a random Room ID and adds the 
 
 The code below goes into `public/game.js`.
 
-```
+```JavaScript
 //New Game Created Listener
 socket.on("newGame",(data)=>{
     $(".newRoom").hide();
@@ -121,7 +121,7 @@ This snippet lets player1 know that a room was created and player2 could use thi
 ### Join game
 Next, we write client-side logic on `public/game.js` to emit the `joinGame` event.
 
-```
+```JavaScript
 //Join Game Event Emitter
 $(".joinBtn").click(function(){
     const playerName=$("input[name=p2name").val();
@@ -137,7 +137,7 @@ The client emits `joinGame` event with player2's name and room ID, which we acqu
 
 Next, we write server-side logic on `app.js` to listen to the `joinGame` event and share each other's info with the players.
 
-```
+```JavaScript
 //Join Game Listener
     socket.on("joinGame",(data)=>{
         socket.join(data.roomID);
@@ -150,7 +150,7 @@ First, the code above adds player2 to the room and then it notifies player2 with
 
 The following code goes into `public/game.js`
 
-```
+```JavaScript
 //Player 2 Joined
 socket.on("player2Joined",(data)=>{
     transition(data);
@@ -177,7 +177,7 @@ The code above calls the `transition()` function for both players. This `transit
 ### Players select choice
 Next, we add the logic needed for the client to be able to select a choice and emit events in the `public/game.js` file.
 
-```
+```JavaScript
 //Select Choice
 $(".controls button").click(function (){
     const choice=$(this).html().trim();
@@ -194,7 +194,7 @@ The code above gets the choice picked by the user and emits the choice Event. Th
 ### Listen to player's choice
 We add server-side side logic at `app.js` to listen to Player1's choice.
 
-```
+```JavaScript
 //Listener to Player 1's Choice
     socket.on("choice1", (data)=> {
         choice1 = data.choice;
@@ -209,7 +209,7 @@ The code above gets player1's choice and does nothing if player2 hasn't picked t
 
 Next, we write the logic to listen to player2's choice in `app.js`.
 
-```
+```JavaScript
 //Listener to Player 2's Choice
     socket.on("choice2", (data)=> {
         choice2 = data.choice;
@@ -225,7 +225,7 @@ Once, both players have picked their choice, the server enters into the `if bloc
 ### Declare winner
 In `app.js`,
 
-```
+```JavaScript
 //Function to be executed after getting both choices
 const result=(roomID)=> {
     var winner = getWinner(choice1, choice2);
@@ -248,7 +248,7 @@ Finally, it resets the player's choices.
 ### Listen to the result
 We now have the server emitting the result to both the players. It's time to write client-side logic at `public/game.js` to listen to the `result` event.
 
-```
+```JavaScript
 //Result Event Listener
 socket.on("result",(data)=>{
     if(data.winner=="draw"){
@@ -274,7 +274,7 @@ In case of a draw, we will display a message that says: "It's a draw".
 ### Conclusion
 The final version of `public/game.js` is:
 
-```
+```JavaScript
 const socket = io.connect("http://localhost:4000");
 
 let firstPlayer=false;
@@ -355,7 +355,7 @@ const updateDOM=(player)=>{
 
 The final version of `app.js` is:
 
-```
+```JavaScript
 const app = require('express');
 const socket = require('socket.io');
 const randomstring = require('randomstring');
