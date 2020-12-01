@@ -6,7 +6,7 @@ url: /engineering-education/django-crud-api/
 title: Introduction to Django Crud API
 description: This tutorial will be an introduction to Django CRUD API. We will learn how to create and document our restful endpoint APIS in Django.
 author: odhiambo-paul
-date: 2020-12-01T00:00:00-15:00
+date: 2020-12-01T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
