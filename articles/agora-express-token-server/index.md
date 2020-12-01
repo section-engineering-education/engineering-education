@@ -109,7 +109,7 @@ This will take you to generate a temporary token form. You need to fill in the c
 
 ### Setting up the Server
 > You need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). 
-> In order to test the server, I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
+> To test the server, I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
 
 Let's install `Express` using `NPM`.
 
@@ -183,7 +183,7 @@ The `buildTokenWithUid` method requires 6 arguments.
 
 We have the app ID and the app certificate from the project management console. 
 
-We'll get the channel ID and the user role from the request. You can learn more channel about [here](https://docs.agora.io/en/Agora%20Platform/channel?platform=Android). You can learn more about user role [here](https://docs.agora.io/en/Agora%20Platform/user_role?platform=Android).
+We'll get the channel ID and the user role from the request. You can learn more about the channel [here](https://docs.agora.io/en/Agora%20Platform/channel?platform=Android). You can learn more about user roles [here](https://docs.agora.io/en/Agora%20Platform/user_role?platform=Android).
 
 We'll generate a random user ID and set the expiration time for the token in the server.
 
@@ -259,7 +259,7 @@ app.post("/rtctoken", (req, res) => {
 });
 ```
 
-Let's make a request to this endpoint to get the RTC token now.
+Let's request this endpoint to get the RTC token now.
 
 Body of the request:
 
@@ -359,7 +359,7 @@ app.post("/rtmtoken", (req, res) => {
 });
 ```
 
-Let's make a request to this endpoint to get the RTM token now.
+Let's request this endpoint to get the RTM token now.
 
 Body of the request:
 
