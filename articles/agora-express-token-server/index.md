@@ -183,7 +183,7 @@ The `buildTokenWithUid` method requires 6 arguments.
 
 We have the app ID and the app certificate from the project management console. 
 
-We'll get the channel ID and the user role from the request. 
+We'll get the channel ID and the user role from the request. You can learn more channel about [here](https://docs.agora.io/en/Agora%20Platform/channel?platform=Android). You can learn more about user role [here](https://docs.agora.io/en/Agora%20Platform/user_role?platform=Android).
 
 We'll generate a random user ID and set the expiration time for the token in the server.
 
@@ -245,8 +245,8 @@ Final Code:
 
 ```JavaScript
 app.post("/rtctoken", (req, res) => {
-  const appID = "e004df68b67841a1b6ea7c08b7225814";
-  const appCertificate = "521c7307f1d547e080c34585dd20662e";
+  const appID = "<-- You app ID here -->";
+  const appCertificate = "<-- You app certificate here -->";
   const expirationTimeInSeconds = 3600;
   const uid = Math.floor(Math.random() * 100000);
   const role = req.body.isPublisher ? Agora.RtcRole.PUBLISHER : Agora.RtcRole.SUBSCRIBER;
@@ -274,6 +274,12 @@ Request & Response:
 
 ![RTC Token Request and Response](rtc_postman.png)
 
+> If you are using User Accounts instead of integer UIDs, you can use the `buildTokenWithAccount` function instead of the `buildTokenWithUid`.
+>
+> In `buildTokenWithAccount`, you will pass the user account instead of the UID to this function. Everything else remains the same. You can learn more about User Accounts [here](https://docs.agora.io/en/All/faq/string).
+>
+> For Example, `Agora.RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channel, userAccount, role, expirationTimestamp);`
+
 ### RTM Token
 Let's add a POST handler for a new endpoint called `'/rtmtoken'` to generate authentication tokens for the RTM SDK.
 
@@ -299,13 +305,13 @@ We have the app ID and the App Certificate from the project management console.
 
 ```JavaScript
 const appID = "<-- Your app ID Here -->";
-const appCertificate = "<-- Your App Certificate Here -->";
+const appCertificate = "<-- Your App certificate Here -->";
 ```
 
-We should get the user account from the request.
+We should get the user account from the request. You can learn more about User Accounts [here](https://docs.agora.io/en/All/faq/string).
 
 ```JavaScript
-const user = req.body.user;
+const userAccount = req.body.user;
 ```
 
 Let's set the expiration time of the token. You need to provide a timestamp for the expiration time. We'll add the time (in seconds) to the current timestamp to set when we want the token to expire.
@@ -325,7 +331,7 @@ const role = Agora.RtmRole.Rtm_User;
 Let's pass these data to `buildToken` to generate the token.
 
 ```JavaScript
-const token = Agora.RtmTokenBuilder.buildToken(appID, appCertificate, uid, role, privilegeExpiredTs);
+const token = Agora.RtmTokenBuilder.buildToken(appID, appCertificate, userAccount, role, privilegeExpiredTs);
 ```
 
 Now that we have the token, Let's return the token as the response.
@@ -338,15 +344,15 @@ Final Code:
 
 ```JavaScript
 app.post("/rtmtoken", (req, res) => {
-  const appID = "e004df68b67841a1b6ea7c08b7225814";
-  const appCertificate = "521c7307f1d547e080c34585dd20662e";
+  const appID = "<-- You app ID here -->";
+  const appCertificate = "<-- You app certificate here -->";
   const user = req.body.user;
   const role = Agora.RtmRole.Rtm_User;
   const expirationTimeInSeconds = 3600;
   const currentTimestamp = Math.floor(Date.now() / 1000);
   const expirationTimestamp = currentTimestamp + expirationTimeInSeconds;
 
-  const token = Agora.RtmTokenBuilder.buildToken(appID, appCertificate, user, role, expirationTimestamp);
+  const token = Agora.RtmTokenBuilder.buildToken(appID, appCertificate, userAccount, role, expirationTimestamp);
   res.send({ token });
 });
 ```
