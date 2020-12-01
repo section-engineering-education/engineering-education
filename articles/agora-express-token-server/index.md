@@ -38,7 +38,7 @@ We'll be going through these steps in this article:
 > If you want to take a look at the final code, check out the [GitHub Repo](https://github.com/zolomohan/agora-express-token-server).
 
 ### Prerequisites
-This tutorial is for applications that use [Agora](https://www.agora.io/) and wants to implement authentication for its users. If you are not using Agora in your application, then this tutorial is not for you.
+This tutorial is for applications that use [Agora](https://www.agora.io/) and want to implement authentication for its users. If you are not using Agora in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build a Livestream application with React Native and Agora, you can refer to [this tutorial](https://www.section.io/engineering-education/react-native-agora-livestreaming-app/).
 
