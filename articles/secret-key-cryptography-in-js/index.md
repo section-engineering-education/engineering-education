@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/secret-key-cryptography-in-js/
+title: Implementing Secret Key Cryptography in JavaScript
+description: Introduction
+author:
+date: 2020-12-01T00:00:00-17:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/secret-key-cryptography-in-js/hero.jpg
+    alt: Secret Key Cryptography image example
+---
+
+<!--more-->
+
 #### Prerequisites
 - Have [Node.js](https://nodejs.org/en/) installed in your computer.
 - Have some basic knowledge of cryptography.
@@ -11,7 +29,6 @@
 - [Existing platforms that use secret key cryptography](#existing-platforms-that-use-secret-key-cryptography)
 
 ### Secret key cryptography
-
 Secret key cryptography is also known as `symmetric cryptography`. It's a cryptographic system where the same key often referred to as the secret key is used for encryption and decryption of messages. While the message is transported over an insecure medium, the key is usually transported over a secure medium. The secret key is known to the communicating pair. It is faster when compared to `public key (asymmetric) cryptography` and therefore used for encryption and decryption of bulk messages.
 
 ### Algorithms that employ secret key cryptography
@@ -64,7 +81,7 @@ For us to implement secret key cryptography in JavaScript, we need to form a pra
     let cipher_text;
 
     const decipher = crypto.createDecipheriv(alg,shared_key,one_time_code);
-    
+
 ```
 From the above, we define the module crypto which is a core module meaning. From there, we specify the algorithm we are going to use since crypto can support more than one algorithm. We will use `AES`. We then come up with the necessary parameters to get the shared key. A one time code is also needed in generating the cipher and the decipher. Based on the above, we have everything for encryption and decryption.
 
@@ -100,7 +117,7 @@ When you are encrypting, you will need the message to be encrypted and in this i
 
 ```javascript
     function viktoriaDecrypting(){
-        
+
         decipher.on('readable',() => {
 
             let _plain_text = decipher.read();
@@ -126,7 +143,7 @@ Expected output
     Hello there
 ```
 
-Decipher works as similar to the cipher. We still listen to the readable event and look if we have text which we convert to human-readable format `UTF8`. If we then have the plain text, then we can show the output. We write the ciphertext to the decipher using the `hex` format and close the decipher. 
+Decipher works as similar to the cipher. We still listen to the readable event and look if we have text which we convert to human-readable format `UTF8`. If we then have the plain text, then we can show the output. We write the ciphertext to the decipher using the `hex` format and close the decipher.
 
 You can get the full project code from [here](https://github.com/mwangiKibui/secret-key-cryptography-in-js/blob/main/secret-key-cryptography.js).
 
@@ -135,7 +152,7 @@ You can get the full project code from [here](https://github.com/mwangiKibui/sec
 #### Key distirbution problem.
 Secret key cryptography uses the same key for encrypting and decrypting the message. While the key is been shared between the communicating parties, there is the risk of being stolen or copied by an attacker. This puts the integrity of the message at risk.
 
-Also, when many parties are communicating, a large number of key pairs are generated which becomes hectic to manage. 
+Also, when many parties are communicating, a large number of key pairs are generated which becomes hectic to manage.
 
 solutions to key distribution problem include:
 - Public key cryptography
