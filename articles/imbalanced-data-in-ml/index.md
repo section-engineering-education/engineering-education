@@ -47,7 +47,15 @@ A benefit of oversampling is that there is no data loss from the original traini
 
 When there exists a class that is in abundance, underfitting aims to reduce the size of the abundant class to balance the dataset. Using a similar context to the oversampling example, we have a classification problem with two classes and 100K data points. 20K data points are of the positive class, 80K for the negative class. We would need to undersample the majority class. This would involve choosing 20K data points randomly from the 80K available. We will then have 20K positive and 20K negative data points, bringing the total dataset size to 40K data points.
 
-For classification problems, there exists a method known as [Tomek links](http://www.samdrazin.com/classes/een548/project1report.pdf). It aims to improve the accuracy of the classification of data. This is by removing as much class label noise as possible. It also works to remove borderline examples with a higher probability of being incorrect. This is known as Tomek link removal. Tomek links are points that are the closest neighbors to each other but have different class labels. Since this technique makes it possible to identify points near different class labels, it is easy to get rid of them until none are left. In the context of undersampling, this technique gets rid of unwanted overlap between classes. The result is having only neighbors of the same class in close proximity.
+For classification problems, there exists a method known as [Tomek links](http://www.samdrazin.com/classes/een548/project1report.pdf). It aims to improve the accuracy of the classification of data. This is by removing as much class label noise as possible. 
+
+Let's define label noise. Classification involves predicting the class of new samples using a model that makes an inference from training data. Let's assume that each sample associates itself with an observed label. The label usually indicates the class of the sample. This label may be subjected to a process that pollutes labels. This process is described as label noise. A type of label noise is known as class noise. This [paper](https://www.researchgate.net/publication/261601383_Classification_in_the_Presence_of_Label_Noise_A_Survey) describes class noise as noise that changes the observed labels assigned to instances. An example is wrongly assigning a positive label on a negative instance.
+
+Tomek links also work to remove borderline examples with a higher probability of being incorrect. This is known as Tomek link removal. Tomek links are points that are the closest neighbors to each other but have different class labels. Since this technique makes it possible to identify points near different class labels, it is easy to get rid of them until none are left. In the context of undersampling, this technique gets rid of unwanted overlap between classes. The result is having only neighbors of the same class in close proximity.
+
+We can also argue that a [support vector machine](https://towardsdatascience.com/support-vector-machines-imbalanced-data-feb3ecffbb0e) algorithm can function similarly to the Tomek links method. An SVM algorithm, though also competent at regression tasks, is effective at classification tasks since it finds a hyperplane decision boundary that separates examples into two categories. The hyperplane is placed equidistantly from both classes. A margin defines the hyperplane by maximizing the distance between the boundary and nearest examples from each class. 
+
+However, a distinguishing factor between Tomek links and SVMs is that SVMs are ineffective at imbalanced classification. They are very sensitive to imbalanced datasets hence produce less than optimal performance. Nonetheless, there exists a method to improve the effectiveness of SVMs on imbalanced data. There exists a parameter C, which controls the trade-off between broadening the margin between classes and lessening instances of misclassification. This C value can be weighted to reflect the importance of each class in an imbalanced set. This allows SVMs to be competent at working with imbalanced datasets. This variation of SVM is known as Weighted SVM or Cost-Sensitive SVM. Read more on it [here](https://machinelearningmastery.com/cost-sensitive-svm-for-imbalanced-classification/).         
 
 #### Ensemble Learning
 
@@ -77,15 +85,15 @@ As defined in my previous [article](https://www.section.io/engineering-education
 
 Precision is the number of true positives against the total positive results predicted by a classifier.
 
-Precision = True Positives / (True Positives + False Positives)
+$$ Precision = \frac{True Positives}{True Positives + False Positives} $$
 
 The recall is the number of true positives divided by all the samples that should have been positive.
 
-Recall = True Positives / (True Positives + False Negatives)
+$$ Recall = \frac{True Positives}{True Positives + False Negatives} $$
 
 F1-score shows us how accurate a model is by showing how many correct classifications are made. F1-score has a range between 0 and 1. The greater the score, the better the performance of the model.
 
-F1-score = (2 * Precision * Recall) / (Precision + Recall)
+$$ F1-score = \frac{2 * Precision * Recall}{Precision + Recall} $$
 
 #### More Data
 
