@@ -152,6 +152,8 @@ Now we need to define the functions that will help us calculate the _area_ and _
       }
    } // end class Circle
    ```
+**Note** that in c# all methods have to be wrapped inside a class, including the main method.
+You can replace the class made by default with the following class, or copy & paste what is inside the main method into yours.
 
 Let's take a look at the following code:
 
