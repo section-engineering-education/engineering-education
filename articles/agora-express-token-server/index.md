@@ -276,7 +276,7 @@ Request & Response:
 
 > If you are using User Accounts instead of integer UIDs, you can use the `buildTokenWithAccount` function instead of the `buildTokenWithUid`.
 >
-> In `buildTokenWithAccount`, you will pass the user account instead of the UID to this function. Everything else remains the same. You can learn more about User Accounts [here](https://docs.agora.io/en/All/faq/string).
+> In `buildTokenWithAccount`, you will pass the user account instead of the UID. Everything else remains the same. You can learn more about User Accounts [here](https://docs.agora.io/en/All/faq/string).
 >
 > For Example, `Agora.RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channel, userAccount, role, expirationTimestamp);`
 
