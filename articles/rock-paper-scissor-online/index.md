@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/rock-paper-scissor-online/
 title: Building a Rock Paper Scissors Game Using Socket
-description: Introduction
+description: This tutorial is an introduction to socket logic while building a web application that lets you play Rock, Paper, Scissors online with your friends.
 author: harish-ramesh-babu
-date: 2020-10-14T00:00:00-13:00
+date: 2020-12-01T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
