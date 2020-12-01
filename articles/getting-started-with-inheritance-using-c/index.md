@@ -4,15 +4,15 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-inheritance-using-c/
 title: Getting Started with Inheritance using C#
-description: The basic concepts of
-author:
-date: 2020-11-24T00:00:00-12:00
+description: This tutorial will go over the basics of Inheritance using C#, including the relationship between classes and how constructor are executed.
+author: mohamed-alghadban
+date: 2020-12-01T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/getting-started-with-inheritance-using-c/hero.jpg
-    alt:  example image
+    alt: inheritance example image c#
 ---
 Inheritance is a unique concept in (OOP) object-oriented programming. It allows the definition of multiple classes using the properties of other classes. We create classes by inheriting the functions and variables of a base class. Then we add new functions to enhance its performance.
 <!--more-->
@@ -30,20 +30,19 @@ A derived class inherits the properties of a base class.
 
 4. How constructors and destructors get executed.
 
-
 ### Prerequisites
-Before we begin this tutorial, it is recommended the reader have the following:
+Before we begin this tutorial, it's recommended the reader have the following:
 
 - A basic understanding of C# programming language.
 
 - A basic understanding of how Classes work.
 
 ### Base classes vs. Derived classes
-A **Base** class produces derived classes that inherit the properties of the base class.
+A **base** class produces derived classes that inherit the properties of the base class.
 
-Inheritance forms a tree-like Hierarchy:
+Inheritance forms a tree-like hierarchy:
 
-![inheritance tree](/engineering-education/Getting-started-with-inheritance-using-c#/tree-of-inheritance.png)
+![inheritance tree](/engineering-education/getting-started-with-inheritance-using-c/tree-of-inheritance.png)
 
 **In inheritance**, an object is often the object of another class, and all derived classes are objects of their base class, also note that constructors are not inherited.
 
@@ -51,10 +50,10 @@ This is how you would specify a class child derived from class father: `class ch
 
 ### Protected members vs. Internal members
 A derived class can access the **protected members** of a base class. On the other hand
-**Internal members** can only be accessed by a declared class within the same domain.
+**internal members** can only be accessed by a declared class within the same domain.
 
 ### The proper way to use inheritance
-Before we dig into the code, we must note that we include the word **Override** when we need to reuse a method in a derived class inherited from a base class.
+Before we dig into the code, we must include the word **Override** when we need to reuse a method in a derived class inherited from a base class.
 
 If we override a method in a derived class, we can use the word **Virtual** before the base class method.
 
@@ -62,7 +61,7 @@ Below we have an example where we calculate the area and perimeter of a circle u
 
 In this piece of code, we'll define two private point coordinates. Then we'll define a constructor that takes two integers from the main.
 
-**Note** that the Output statements use a reference (This) to implicitly call the ToString method.
+**Note** that the Output statements use a reference (`this`) to implicitly call the ToString method.
 
 ```c#
     public class Point
@@ -109,7 +108,7 @@ In the class `Circle`, we don't need to define the Point coordinates because the
 
 `: base(xcoordinate,ycoordinate)`.
 
-Now we'll define the _radius_ of the circle, the _constructor_, and the _Accessors_.
+Now we'll define the *radius* of the circle, the *constructor*, and the *Accessors*.
 
    ```c#
        public class Circle: Point
@@ -131,7 +130,7 @@ Now we'll define the _radius_ of the circle, the _constructor_, and the _Accesso
 
    ```
 
-We need to define the functions that will help us calculate the _area_ and _perimeter_ of the circle. We'll then override the `ToString` method, just like we did in the class `Point`.
+We need to define the functions that will help us calculate the *area* and *perimeter* of the circle. We'll then override the `ToString` method, just like we did in the class `Point`.
 
    ```c#
       public double Diameter()
@@ -167,7 +166,7 @@ Let's take a look at the following code:
         Console.WriteLine("Perimeter : " + c.Perimeter());
     }
  }
-        
+
    ```
 You can run the previous code online by clicking [here](https://repl.it/@mohamedgh16/example-1).
 
@@ -196,7 +195,7 @@ Let’s look at the code snippet below to learn how we define a destructor.
       }    
    ```
 
-**Note** that we need to include this piece of code inside the class Circle.
+**Note**: We need to include this piece of code inside the class Circle.
 
    ```c#
       ~Circle()
