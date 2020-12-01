@@ -45,7 +45,7 @@ If you'd like to learn how to build a Livestream application with React Native a
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
 ### Authentication in Agora
-We need to provide authentication for the users when they join an RTC channel. There are three authentication mechanisms available in Agora.
+We can provide authentication tokens for the Agora SDKs to improve security. There are three authentication mechanisms available in Agora.
 
 - App ID: All clients in a channel use app ID for authentication. (Low Security)
 
