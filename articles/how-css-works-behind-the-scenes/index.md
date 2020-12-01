@@ -55,9 +55,9 @@ Consider this example, in which an element has been styled in a separate CSS fil
 ```
 
 1. Since this element is not styled by inline CSS so, I=0.
-2. an ID nav selects it. Thus, ID=1.
+2. An ID nav selects it. Thus, ID=1.
 3. It has two classes, including **btn** and a pseudo-class **hover**, thus, C=2.
-4. and finally, it also has an element button, therefore E=1.
+4. And finally, it also has an element button, therefore E=1.
 
 **Thus, the selector specificity for this block of style will be (I, ID, C, E)=(0,1,2,1).**
 
@@ -89,7 +89,7 @@ If the last two scenarios, i.e., ** importance, and specificity fails, we decide
 
 So this finishes the first step of parsing the CSS, i.e, Cascading.
 
-2. **Processing the real values**
+### Processing the real values
    This step includes giving the final processed values to all the styles.<br>
    The **default font-size of content on a webpage is always 16px**, which is the style from the browser CSS, and we can change it.
    Also, **we should never set the font-size in pixels**. If we do so, the user cannot change the size from the browser settings, which is a bad user experience.
