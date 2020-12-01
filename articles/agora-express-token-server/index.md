@@ -1,4 +1,4 @@
-In this tutorial, we'll be building a server using Node.js and Express to generate Agora authentication tokens.
+In this tutorial, we'll be building a server using Node.js and Express to generate authentication tokens for the Agora SDKs.
 
 ### Goals
 By the end of this tutorial, you’ll know:
@@ -7,7 +7,7 @@ By the end of this tutorial, you’ll know:
 
 - How to generate a temporary token for testing
 
-- How to set up an Express server to dispatch Agora authentication token.
+- How to set up an Express server to dispatch authentication tokens for the Agora SDKs.
 
 ### Agora
 Agora.io was founded in 2014. It's a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
@@ -32,7 +32,7 @@ We'll be going through these steps in this article:
 2. Creating a project in Agora
 3. Generating a temporary token
 4. Setting up the server
-5. Building Agora Authentication tokens
+5. Generating authentication tokens
 6. Recap
 
 > If you want to take a look at the final code, check out the [GitHub Repo](https://github.com/zolomohan/agora-express-token-server).
@@ -140,7 +140,7 @@ node index.js
 
 This server will be listening on port 3000 and when you hit the `'/'` endpoint, it'll send `"Agora Auth Token Server"`.
 
-### Building Agora Authentication Tokens
+### Generating authentication Tokens
 
 Agora provides the RTC SDK and the RTM SDK. The `agora-access-token` package is used to generate tokens for both the SDKs.
 
