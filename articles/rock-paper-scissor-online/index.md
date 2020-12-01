@@ -12,9 +12,9 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/rock-paper-scissor-online/hero.jpg
-    alt: nginx reverse proxy image example
+    alt: socket logic web application image example
 ---
-Unlike HTTP Requests which are one-sided, Socket is a software structure that provides two way communication link between two nodes. Sockets are primarily used whenever realtime communication needs to be established.
+Unlike HTTP requests which are one-sided, Socket is a software structure that provides two way communication link between two nodes. Sockets are primarily used whenever realtime communication needs to be established.
 <!--more-->
 For instance, chat applications, realtime databases, and online multiplayer games, all use Socket under the hood. One popular example is WhatsApp, the text messaging app that uses Socket for its realtime messaging service.
 
