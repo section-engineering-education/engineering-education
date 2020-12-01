@@ -148,7 +148,7 @@ Next, we write server-side logic on `app.js` to listen to the `joinGame` event a
 
 First, the code above adds player2 to the room and then it notifies player2 with player1's info and player1 with player2's info.
 
-The following code goes into `public/game.js`
+The following code goes into `public/game.js`.
 
 ```JavaScript
 //Player 2 Joined
@@ -223,7 +223,7 @@ Next, we write the logic to listen to player2's choice in `app.js`.
 Once, both players have picked their choice, the server enters into the `if block` and invokes the `result()` function.
 
 ### Declare winner
-In `app.js`,
+In `app.js` include snippet below:
 
 ```JavaScript
 //Function to be executed after getting both choices
