@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-operator-overloading-in-c++/
+title: Getting Started with Operator Overloading in C++
+description:
+author: dawe-daniel
+date: 2020-12-01T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-operator-overloading-in-c++/hero.jpg
+    alt: example image
+
+---
+Operator overloading is the process of making an operator exhibit different behaviors in different instances. By overloading operators in a specific class, you can the user's view of that class. This helps developers have a problem driven approach towards programming.
+<!--more-->
 ### Introduction
-Operator overloading  is the process of making an operator exhibit different behaviors in different instances. By overloading operators in a specific class, you can the user's view of that class. This helps developers have a problem driven approach towards programming.
 In this article, we will go through the basics of operator overloading and dive into how to use it in C++.
 
 #### Prerequisites
@@ -9,7 +27,7 @@ To follow through this article, you'll need:
 - [Codeblocks](http://www.codeblocks.org/downloads) IDE to run the code
 
 #### Rules of operator overloading
-1. We can overload an operator as its type only i.e,  a unary operator cannot be overloaded as a binary operator and vice versa.
+1. We can overload an operator as its type only i.e., a unary operator cannot be overloaded as a binary operator and vice versa.
 2. We can't overload operators that are not a part of C++.
 3. We can perform operator overloading only in user-defined classes. We cannot change the operator's existing functionality.
 4. We can't change the associativity and precedence of the operators.
@@ -173,4 +191,3 @@ In this article, we got to explore what operator overloading is, where to use it
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
----
