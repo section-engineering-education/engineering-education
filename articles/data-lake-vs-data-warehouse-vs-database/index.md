@@ -6,13 +6,13 @@ Depending on the kind of data, its use, and scope, an organization can use a dat
 
 A data lake is a centralized storage repository that allows the storage of structured, unstructured, and semi-structured data. Data lakes allow you to store data in its original format (raw form) without the need to transform or process it at the time.
 
-It is much cheaper and flexible to store data in a data lake than in a data warehouse. Despite this, you should not replace a data lake with a [relational database](https://www.codecademy.com/articles/what-is-rdbms-sql#) or data warehouses. Relational databases use a structure that enables easier information identification and access in relation to other pieces of data in the database.
+It is much cheaper and flexible to store data in a data lake than in a data warehouse. Despite this, you should not replace a data lake with a [relational database](https://www.codecademy.com/articles/what-is-rdbms-sql#) or data warehouses. Relational databases use a structure that enables easier information identification and access concerning other data pieces in the database.
 
 Some of the most popular data lakes are [Amazon S3](https://aws.amazon.com/s3/), [Google Cloud Storage](https://cloud.google.com/storage), and [Apache Hadoop](https://hadoop.apache.org/).
 
 ### **An overview of data warehouse**
 
-A data warehouse refers to a storage location that hosts large amounts of structured data, from one or more sources, into a centralized place. Unlike a data lake that stores unprocessed data, a data warehouse stores already filtered data processed for a specified purpose.
+A data warehouse refers to a storage location that hosts large amounts of structured data, from one or more sources, in a centralized place. Unlike a data lake that stores unprocessed data, data warehouse stores already filtered data processed for a specified purpose.
 
 Data warehousing includes the construction and usage of databases. Data warehousing also involves data consolidations, data integration, and data cleaning. Data warehouse construction includes the integration of data from multiple heterogeneous sources. It must support decision making, analytical reporting, and structures or [ad hoc queries](https://www.techopedia.com/definition/30581/ad-hoc-query-sql-programming).
 
@@ -28,7 +28,7 @@ Data was stored on tapes, mostly write-only, during the early computer days. The
 
 A database management system ([DBMS](https://www.section.io/engineering-education/understanding-dbms/)) includes hardware, software, procedures, data, and database processing language as its components. With a DBMS, you can create, manipulate, and define a database, allowing you to easily store, analyze, and process data.
 
-Besides, DBMS ensures the security and protection of databases and maintains data consistency in case of multiple users.
+Besides, DBMS ensures the security and protection of databases and maintains data consistency in multiple users.
 
 Some of the most popular DBMS are [MongoDB](https://www.mongodb.com/), [Oracle](https://www.oracle.com/database/), [Apache Cassandra](http://cassandra.apache.org/), [PostgreSQL](https://www.postgresql.org/), [Elasticsearch](https://www.elastic.co/), and [Redis](https://redis.io/).
 
@@ -46,11 +46,11 @@ The public sector relies on data warehouses for intelligence gathering. Governme
 
 ### **Industrial use cases of data lakes**
 
-A data lake complements a data warehouse by providing additional [query options](https://docs.microsoft.com/en-us/odata/concepts/queryoptions-overview#). While data warehouses provide organized and structured information, the addition of a data lake helps organizations tap into raw data. Thus, offering more support and insights, considering that data lakes facilitate real-time analytics. Data lakes are applicable in IT, research and science, among other industries.
+A data lake complements a data warehouse by providing additional [query options](https://docs.microsoft.com/en-us/odata/concepts/queryoptions-overview#). While data warehouses provide organized and structured information, the addition of a data lake helps organizations tap into raw data. Thus, offering more support and insights, considering that data lakes facilitate real-time analytics. Data lakes are applicable in IT, research, and science, among other industries.
 
 - **Research and Science**
 
-The field of science is ever-evolving, and the use of real-time data helps deduct critical insights. Data lakes are applicable for science use because they hold raw data from algorithms and feedback sources in real-time. Science developments rely on the most current and relevant deductions to produce impactful findings and reports. Data lakes help in this aspect because allow importation of data that come in real-time.
+The field of science is ever-evolving, and the use of real-time data helps deduct critical insights. Data lakes are applicable for science use because they hold raw data from algorithms and feedback sources in real-time. Science developments rely on the most current and relevant deductions to produce impactful findings and reports. Data lakes help in this aspect because they allow the importation of data that come in real-time.
 
 - **Information technology**
 
@@ -70,7 +70,7 @@ Telecommunication companies use databases to store and generate customer bills, 
 
 - **Sales**
 
-The sales department benefits significantly from a company&#39;s database. Among other tasks, sales teams uses databases to track sales, product performance, and customer information.
+The sales department benefits significantly from a company&#39;s database. Among other tasks, sales teams use databases to track sales, product performance, and customer information.
 
 ### **The future of data lakes, data warehouses, and databases**
 
@@ -83,3 +83,6 @@ There is a need to address the broader range of workloads in databases. Data sci
 ### **Conclusion**
 
 Every organization needs to use the best data analytics system to address their needs and get the best outcome. Databases, data lakes, and data warehouses provide most of the analytics solutions for today&#39;s businesses. With the insights from this article, you will make the right choice between the three analytics solutions.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
