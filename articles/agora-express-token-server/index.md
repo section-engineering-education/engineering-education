@@ -108,7 +108,8 @@ This will take you to generate a temporary token form. You need to fill in the c
 ![Agora Project Management Console Temp Token](temp_token_form.png)
 
 ### Setting up the Server
-> You need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/).
+> You need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). 
+> In order to test the server, I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
 
 Let's install `Express` using `NPM`.
 
@@ -258,6 +259,17 @@ app.post("/rtctoken", (req, res) => {
 });
 ```
 
+Let's make a request to this endpoint to get the RTC token now.
+
+Body of the request:
+
+```json
+{
+  "channel": "<-- You Channel here -->",
+  "isPublisher": "<-- True or False here -->"
+}
+```
+
 Request & Response: 
 
 ![RTC Token Request and Response](rtc_postman.png)
@@ -337,6 +349,16 @@ app.post("/rtmtoken", (req, res) => {
   const token = Agora.RtmTokenBuilder.buildToken(appID, appCertificate, user, role, expirationTimestamp);
   res.send({ token });
 });
+```
+
+Let's make a request to this endpoint to get the RTM token now.
+
+Body of the request:
+
+```json
+{
+  "user": "<-- You User Account here -->",
+}
 ```
 
 Request & Response: 
