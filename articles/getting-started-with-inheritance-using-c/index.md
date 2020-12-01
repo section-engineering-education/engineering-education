@@ -54,9 +54,9 @@ A derived class can access the **protected members** of a base class. On the oth
 **Internal members** can only be accessed by a declared class within the same domain.
 
 ### The proper way to use inheritance
-Before we dig into the code, it's important to note that we include the word **Override** when we need to reuse a method in a derived class inherited from a base class.
+Before we dig into the code, we must note that we include the word **Override** when we need to reuse a method in a derived class inherited from a base class.
 
-If we are going to override a method in a derived class, we can use the word **Virtual** before the method in a base class.
+If we override a method in a derived class, we can use the word **Virtual** before the base class method.
 
 Below we have an example where we calculate the area and perimeter of a circle using inheritance.
 
@@ -131,7 +131,7 @@ Now we'll define the _radius_ of the circle, the _constructor_, and the _Accesso
 
    ```
 
-Now we need to define the functions that will help us calculate the _area_ and _perimeter_ of the circle. Then we'll override the `ToString` method, just like we did in the class `Point`.
+We need to define the functions that will help us calculate the _area_ and _perimeter_ of the circle. We'll then override the `ToString` method, just like we did in the class `Point`.
 
    ```c#
       public double Diameter()
@@ -181,7 +181,7 @@ The output after execution should look like:
   ```
 
 ### Constructors and Destructors in derived classes
-The constructor of a base class will be called implicitly or explicitly when *Instantiating* a derived class. This will cause a chain reaction when a base class is a derived class as well.
+A base class's constructor will be called implicitly or explicitly when *Instantiating* a derived class. This will cause a chain reaction when a base class is a derived class as well.
 
 When a destructor is called, it executes its function and then invokes the derived class base class constructor.
 
