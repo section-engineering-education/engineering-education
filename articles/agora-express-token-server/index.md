@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/agora-express-token-server/
 title: Express Server to Generate Authentication Token for Agora Applications
-description: This tutorial will give readers a detailed guide on how they can build an app to create or join a livestream using Agora.
+description: This tutorial will give readers a detailed guide on how they can implement authentication for the Agora RTC SDK and RTM SDK.
 author: mohan-raj
 date: 2020-12-02T00:00:00-13:00
 topics: []
