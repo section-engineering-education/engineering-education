@@ -1,5 +1,21 @@
-In this tutorial, we'll be building a server using Node.js and Express to generate authentication tokens for the Agora SDKs.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/agora-express-token-server/
+title: Express Server to Generate Authentication Token for Agora Applications
+description: This tutorial will give readers a detailed guide on how they can build an app to create or join a livestream using Agora.
+author: mohan-raj
+date: 2020-12-02T00:00:00-13:00
+topics: []
+ excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/agora-express-token-server/hero.jpg
+    alt: Agora express token server
+---
+In this tutorial, we'll be building a server using Node.js and Express to generate authentication tokens for the Agora SDKs.
+<!--more-->
 ### Goals
 By the end of this tutorial, you’ll know:
 
