@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-avl-trees/
 title: Introduction to AVL trees
-description: In this article,
+description: This article will serve as an introduction to AVL trees or self-balancing trees which are an efficient data structures. They have efficient time and space complexities.
 author: prashanth-saravanan
-date: 2020-11-30T00:00:00-12:00
+date: 2020-12-02T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 Binary search trees (BSTs) are one of the most efficient data structures with their O(n) time complexity while performing operations. But in the realm of computers and processing, constant optimization has brought about the concept of AVL trees.
 <!--more-->
-The AVL tree, named after its two inventors, G.M. Abelson-Velvety and E.M. Landis, who published it in their 1962 paper "An Algorithm For The Organization Of Information" has anchored its position as a need-to-understand data structure owing to its performance increase from a regular BST.
+The [AVL tree](https://en.wikipedia.org/wiki/AVL_tree), named after its two inventors, G.M. Abelson-Velvety and E.M. Landis, who published it in their 1962 paper "An Algorithm for the Organization of Information" has anchored its position as a need-to-understand data structure due to its performance increase from a regular BST.
 
 ### Prerequisites
 To follow along with this tutorial, the reader is expected to have understood the workings of a [binary tree](/engineering-education/binary-tree-data-structure-python/) and [binary search trees](https://www.geeksforgeeks.org/binary-search-tree-data-structure/). A quick run-through the above mentioned topics would help with the understanding of the inner mechanics of AVL trees.
@@ -58,7 +58,9 @@ Difference in heights of left and right sub-trees = 2-0 = 2, which is greater th
 This makes the tree in figure (b) an ordinary BST and not an AVL tree.
 
 ### Reason for AVL trees
-Operations on BSTs like search, insertion and deletion take O(h) time, where 'h' represents the height of the tree. In case of a skewed BST (as shown in the figure below), performing these operations take O(n) time, where 'n' denotes the number of nodes in the tree. To tackle this inefficiency in the process, the tree can be reconstructed after every operation in such a way that it always maintains logarithmic height, thereby reducing the time complexity for all operations to O(log n).
+Operations on BSTs like search, insertion, and deletion take O(h) time, where 'h' represents the height of the tree. In case of a skewed BST (as shown in the figure below), performing these operations take O(n) time, where 'n' denotes the number of nodes in the tree.
+
+To tackle this inefficiency in the process, the tree can be reconstructed after every operation in such a way that it always maintains logarithmic height, thereby reducing the time complexity for all operations to O(log n).
 
 ![AVL trees vs BST](/engineering-education/introduction-to-avl-trees/skewedTree.jpg)
 
@@ -75,28 +77,29 @@ Take the example of the following AVL Tree.
 
 ![Example AVL Tree](/engineering-education/introduction-to-avl-trees/avl_insertion_before.jpg)
 
-On inserting nodes (1) and (2) in the tree, the structure would change to -
+On inserting nodes (1) and (2) in the tree, the structure would change to:
 
 ![AVL Tree After Insertion](/engineering-education/introduction-to-avl-trees/avl_after_insertion.jpg)
 
 In tri-node restructuring, the three roots which are involved in the imbalanced structure are chosen and are rearranged such that the order is restored.
+
 In this case, the roots of node (1), node (2), and node(3) are taken into account because the imbalance occurs at node (3). If the height at node (3) is balanced, the overall height of the tree would be in the order of log(n). For example, node (3) could be restructured similar to the figure below.
 
 ![AVL Tree After Tri Node Restructuring](/engineering-education/introduction-to-avl-trees/avl_after_restructuring.jpg)
 
-This ensures that the height of all the nodes is balanced and hence is an AVL Tree.
+This ensures that the height of all the nodes is balanced and therefore is an AVL Tree.
 
 #### Procedure for Tri-Node restructuring
 The procedure for tri-node restructuring for an insertion/deletion operation is as follows:
 
-    1. Perform regular BST insertion/deletion.
-    2. Let the node being inserted/deleted be known as 'a'. Let 'd' be the first node going up from 'a' towards root that is unbalanced. Let 'c' be a child of 'd' that lies on the path between 'a' and 'd'. Let 'b' be a child of 'c' that is on the same path.
-    3. This would result in four possible cases:
-        - **Left-left rotation**: Where 'c' is the left child of 'd' and 'b' is the left child of 'c'
-        - **Right-right rotation**: Where 'c' is the right child of 'd' and 'b' is the right child of 'c'
-        - **Left-right rotation**: Where 'c' is the left child of 'd' and 'b' is the right child of 'c'
-        - **Right-left rotation**: Where 'c' is the right child of 'd' and 'b' is the left child of 'c'
-    4. After the appropriate rotations are performed, the node is successfully inserted/deleted and the tree is balanced.
+1. Perform regular BST insertion/deletion.
+2. Let the node being inserted/deleted be known as 'a'. Let 'd' be the first node going up from 'a' towards root that is unbalanced. Let 'c' be a child of 'd' that lies on the path between 'a' and 'd'. Let 'b' be a child of 'c' that is on the same path.
+3. This would result in four possible cases:
+    - **Left-left rotation**: Where 'c' is the left child of 'd' and 'b' is the left child of 'c'
+    - **Right-right rotation**: Where 'c' is the right child of 'd' and 'b' is the right child of 'c'
+    - **Left-right rotation**: Where 'c' is the left child of 'd' and 'b' is the right child of 'c'
+    - **Right-left rotation**: Where 'c' is the right child of 'd' and 'b' is the left child of 'c'
+4. After the appropriate rotations are performed, the node is successfully inserted/deleted and the tree is balanced.
 
 **Left-left Rotation**
 
@@ -117,11 +120,11 @@ The procedure for tri-node restructuring for an insertion/deletion operation is 
 ### Insertion in AVL trees in C++
 The algorithm for inserting a new node in an AVL tree is as follows:
 
-    1. Perform regular BST insertion.
-    2. Get the balance factor of the current node
-        Balance Factor = Height of left subtree - Height of right subtree
-    3. If the balance factor is greater than 1, it could be either left-left or left-right rotation. If the balance of the left tree is greater than 0, it is a left-left rotation, else a left-right rotation.
-    4. If the balance factor is lesser than -1, it could be either right-right or right-left rotation. If the balance of the left tree is lesser than 0, it is a right-right rotation, else a right-left rotation.
+1. Perform regular BST insertion.
+2. Get the balance factor of the current node
+   - Balance Factor = Height of left subtree - Height of right subtree
+3. If the balance factor is greater than 1, it could be either left-left or left-right rotation. If the balance of the left tree is greater than 0, it's a left-left rotation, otherwise a left-right rotation.
+4. If the balance factor is less than -1, it could be either right-right or right-left rotation. If the balance of the left tree is less than 0, it's a right-right rotation, otherwise a right-left rotation.
 
 ```cpp
 #include<bits/stdc++.h>
@@ -233,7 +236,7 @@ Node* insert_AVL (Node* node, int val)
     if (node == NULL)
         return (newNode(val));
 
-    // If the value to be inserted is lesser than the current node, traverse towards the left
+    // If the value to be inserted is less than the current node, traverse towards the left
     if (val < node->value)
        {
             node->leftChild = insert_AVL(node->leftChild, val);
@@ -304,11 +307,11 @@ Since the tree is 'automatically' balanced after every insertion, the complexity
 ### Deletion from AVL trees in C++
 Deletion follows a very similar algorithm compared to insertion. However, one must keep in mind that different nodes can be deleted i.e. nodes with one child, nodes with two children and nodes with no children. These cases have to be taken into account while balancing the tree.
 
-    1. Perform regular BST deletion.
-    2. Get the balance factor of the current node
-        Balance Factor = Height of left subtree - Height of right subtree
-    3. If the balance factor is greater than 1, it could be either left-left or left-right rotation. If the balance of the left tree is greater than 0, it would be a left-left rotation, else a left-right rotation.
-    4. If the balance factor is lesser than -1, it could be either right-right or right-left rotation. If the balance of the right tree is lesser than or equal to 0, it is a right-right rotation, else a right-left rotation.
+1. Perform regular BST deletion.
+2. Get the balance factor of the current node
+   - Balance Factor = Height of left subtree - Height of right subtree
+3. If the balance factor is greater than 1, it could be either left-left or left-right rotation. If the balance of the left tree is greater than 0, it would be a left-left rotation, otherwise a left-right rotation.
+4. If the balance factor is less than -1, it could be either right-right or right-left rotation. If the balance of the right tree is less than or equal to 0, it is a right-right rotation, otherwise a right-left rotation.
 
 ```cpp
 #include<bits/stdc++.h>
@@ -430,7 +433,7 @@ Node* insert_AVL (Node* node, int val)
     if (node == NULL)
         return (newNode(val));
 
-    //If the value to be inserted is lesser than the current node, traverse towards the left
+    //If the value to be inserted is less than the current node, traverse towards the left
     if (val < node->value)
        {
             node->leftChild = insert_AVL(node->leftChild, val);
@@ -563,3 +566,6 @@ The reader is encouraged to take a look at the resources provided below to get a
 6. [W3 Schools](https://www.w3schools.in/data-structures-tutorial/avl-trees/)
 
 7. [Wiki Files](https://www.cs.bgu.ac.il/~ds122/wiki.files/ds122_ps6.pdf)
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
