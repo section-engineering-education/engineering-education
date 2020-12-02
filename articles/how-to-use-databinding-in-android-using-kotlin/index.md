@@ -1,39 +1,36 @@
-If you wonder whether there is a way to link the `UI` directly to the `data source`, you are in the right place. Repeating the dreaded `findViewbyID` statement in your code is so boring. It takes so much time that you may even forget your variables&#39; IDs. Well, there is a solution. It&#39;s called `data binding`. We will learn how to implement this concept in this tutorial.
+Have you ever wonder whether there is a way to link the `UI` directly to the `data source`?  If so, you are in the right place. Repeating the dreaded `findViewbyID` statement in your code is tedious. It takes so much time that one may end up forgetting variables' IDs. Well, there is a solution. And that is `data binding`. We will learn how to implement this concept in this tutorial.
 
 ### Introduction
 
-Without going any further, it&#39;s essential to understand what `data binding` is and it's advantages. The `data binding library` is part of Android [Jetpack](https://developer.android.com/jetpack?gclid=CjwKCAiA7939BRBMEiwA-hX5J_CccPJR43xoH9ZS_RjsiGrlztDm11gCNpp3dD1qsmhtknCk06NXSBoCnmEQAvD_BwE&gclsrc=aw.ds) utilities. According to the Android Developer Documentation, the `data binding` library allows users to bind `layouts` and `UI` components to data sources declaratively.
+Without going any further, it's essential to understand what `data binding` is and it's advantages. The `data binding library` is part of Android [Jetpack](https://developer.android.com/jetpack?gclid=CjwKCAiA7939BRBMEiwA-hX5J_CccPJR43xoH9ZS_RjsiGrlztDm11gCNpp3dD1qsmhtknCk06NXSBoCnmEQAvD_BwE&gclsrc=aw.ds) utilities. According to the Android Developer Documentation, the `data binding` library allows users to bind `layouts` and `UI` components to data sources declaratively.
 
 The `data binding` library seeks to eliminate something like this:
 
-```
+```Kotlin
 findViewByIdR.id.name).apply {
 text = viewModel.name
 }
 ```
 
-And introduce something like this.
+By introducing this.
 
-```
+```Kotlin
 TextView
      android:text="@{viewmodel.name}";
 ```
 
 ### The goal of the tutorial
-
-In this project, we will create a simple `Notes app` in Android using `Kotlin`. As you guessed, the app will make use of the `data binding library`. At the end of the tutorial, your application should be similar to the one shown in the video.
+In this project, we will create a simple `Notes app` in Android using `Kotlin`. As you guessed, the app will make use of the `data binding` library. At the end of the tutorial, your application should be similar to the one shown in the video.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/HJP8cuwBAh8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Prerequisites
-
-Note that this tutorial is directed to those who have some experience in android programming using `Kotlin`. You can download the full source code [here](https://github.com/WanjaMIKE/SimpleNotesApp)
+This tutorial is intended for those who have some experience in android programming using `Kotlin`. You can download the full source code [here](https://github.com/WanjaMIKE/SimpleNotesApp)
 
 ### 1. Installing the required dependencies
-
 Launch android studio and create a new project. Once the project is ready, go to the `Gradle scripts` folder and open `build.gradle (module: app)`. Add `buildFeatures` and set `databinding` as `true`. This notifies the `Android` system that our app uses data binding. Therefore, the proper files will be generated.
 
-```
+```Gradle
 buildTypes {
         release {
             minifyEnabled false
@@ -46,9 +43,9 @@ buildTypes {
 }
 ```
 
-In the same `build.gradle` file, add the `lifecycle` library to your `dependencies`. This library will help connect the `UI` to a `ViewModel` and `LiveData`. You care read more about `MVVM` architecture [here](https://www.section.io/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
+In the same `build.gradle` file, add the `lifecycle` library to your `dependencies`. This library helps connect the `UI` to a `ViewModel` and `LiveData`. Read more about `MVVM` architecture [here](https://www.section.io/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
 
-```
+```Gradle
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -67,7 +64,7 @@ dependencies {
 
 Remember to add `apply plugin: kotlin-kapt` at the top of the file.
 
-```
+```Gradle
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -75,10 +72,9 @@ apply plugin: 'kotlin-kapt'
 ```
 
 ### 2. Model
+In your primary folder, create a new package and name it `model`. Then create a `Note.kt` file in this package. As shown, the `data class NoteItem` only holds two variables (`title` and `description`). These values are required to initialize the class.
 
-In your primary folder, please create a new package and name it as a `model`. Then create a `Note.kt` file in this package. As shown, the `data class NoteItem` only holds two variables (`title` and `description`). These values are required whenever the class is initialized.
-
-```
+```Kotlin
 package com.wanja.notesapp.model
 
 data class NoteItem(
@@ -88,10 +84,9 @@ data class NoteItem(
 ```
 
 ### 3. ViewModel
+The `ViewModel` makes it easy to update data changes on the `UI`. It also persists data during configuration changes. Create a package named `viewmodels` in your main folder. Create a new file and name it `MainViewModel.kt`. The file will contain the following variables.
 
-The `ViewModel` makes it easy to update data changes on the `UI`. It also protects the data from being destroyed when the screen orientation changes. Create a package named `viewmodels` in your main folder. Generate a new file name it `MainViewModel.kt`. The file will contain the following variables.
-
-```
+```Kotlin
     val isStringEmpty = MutableLiveData<Boolean>()
     @Bindable
     val inputTitle = MutableLiveData<String>()
@@ -101,13 +96,13 @@ The `ViewModel` makes it easy to update data changes on the `UI`. It also protec
     private val arraylst = ArrayList<NoteItem>()
 ```
 
-The `isStringEmpty` variable is a `Boolean`. It will help determine whether or not the user&#39;s input is empty. The `inputTitle` and `inputdescription` will store the user&#39;s data. The values stored in these variables will change according to the user&#39;s input since we are using `MutableLiveData`. The list will store the `NoteItem arraylist`. It&#39;s capable of refreshing itself when it detects that the arraylist&#39;s contents have changed.
+The `isStringEmpty` variable is a `Boolean`. It will help determine whether or not the user's input is empty. The `inputTitle` and `inputdescription` variables will store the user's data. The values stored in these variables will change according to the user's input; hence, we use `MutableLiveData`. The list will store the `NoteItem arraylst`. It is capable of refreshing itself when it detects a change in its content.
 
 The `NotesViewModel` also contains three major methods; `init`, `addData`, and `clearData`.
 
-The `init` method will initialize the `isStringEmpty` variable by assigning it with the value of `false`. This method launches automatically once the `NotesViewModel` is created.
+The `init` method will initialize the `isStringEmpty` variable to `false`. This method launches automatically once the `NotesViewModel` is created.
 
-```
+```Kotlin
     init {
         isStringEmpty.value = false
     }
@@ -115,7 +110,7 @@ The `init` method will initialize the `isStringEmpty` variable by assigning it w
 
 The `addData` method takes the user input and checks if it is empty. The `isStringEmpty` variable is updated to `true` if the data is empty. Else, the data is entered into a `NoteItem` object and passed to the `arraylst`. The `arraylst` is then stored in `list.`
 
-```
+```Kotlin
  fun addData() {
         val title = inputTitle.value!!
         val description = inputDescription.value!!
@@ -134,7 +129,7 @@ The `addData` method takes the user input and checks if it is empty. The `isStri
 
 The `clearData` function resets the `arraylst` and `list`, as shown below.
 
-```
+```Kotlin
     fun clearData(){
         arraylst.clear()
         list.value = arraylst
@@ -143,7 +138,7 @@ The `clearData` function resets the `arraylst` and `list`, as shown below.
 
 Note: To use the `bindable` component, the `NotesViewModel` must extend the `Observable` class. You will then need to implement the methods below.
 
-```
+```Kotlin
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
     }
 
@@ -153,7 +148,7 @@ Note: To use the `bindable` component, the `NotesViewModel` must extend the `Obs
 
 Your final NotesViewModel should look as follows.
 
-```
+```Kotlin
 package com.wanjamike.co.notesapp.viewmodel
 
 import androidx.databinding.Bindable
@@ -210,12 +205,11 @@ class NotesViewModel(): ViewModel(), Observable {
 ```
 
 ### 4. ViewModelFactory
-
 This class helps initialize the `ViewModel`. The `ViewModelFactory` is particularly vital if your application uses multiple viewmodels.
 
 In the same `viewmodels` package, create a file named `NotesViewModelFactory` and add the code below. The `NotesViewModel` will throw an Exception in case the ViewModel is not found.
 
-```
+```Kotlin
 package com.wanjamike.co.notesapp.viewmodel
 
 import androidx.lifecycle.ViewModel
@@ -235,12 +229,11 @@ class NotesViewModelFactory(): ViewModelProvider.Factory{
 ```
 
 ### 5. User Interface
-
-Let&#39;s create the app `UI` before finalizing with the `MainActivity`. Since this is a `Notes App`, we need to allow the user to `enter`, `save`, and `clear` data. Therefore, the application will have two `EditTexts` and `two Buttons`. Whatever the user types will be displayed in a `TextView` on the click of the `submit` button. The app UI is shown below.
+Let's create the app `UI` before finalizing with the `MainActivity`. Since this is a `Notes App`, we need to allow the user to `enter`, `save`, and `clear` data. Therefore, the application will have two `EditTexts` and `two Buttons`. Whatever the user types will be displayed in a `TextView` on the click of the `submit` button. The app UI is shown below.
 
 To include `data binding` in the UI, enclose all content with `<layout></layout>.` The `ViewModel` is introduced to the `layout` in the `<data></data>` section, as shown. Ensure that the `type` value points to the specific folder that has the required `ViewModel`.
 
-```
+```Xml
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -259,7 +252,7 @@ To include `data binding` in the UI, enclose all content with `<layout></layout>
 
 The `EditText` widgets will be bound to the NotesViewModel using `@={NotesViewModel.inputTitle}` statement.
 
-```
+```Xml
  <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="match_parent"
@@ -287,7 +280,7 @@ The `EditText` widgets will be bound to the NotesViewModel using `@={NotesViewMo
 
 The `submit` and `clear` buttons will connect to the NotesViewModel by `@{()->NotesViewModel.addData()}` statement. This is illustrated below.
 
-```
+```Xml
  <Button
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -307,9 +300,9 @@ The `submit` and `clear` buttons will connect to the NotesViewModel by `@{()->No
            android:text="Clear"/>
 ```
 
-We will use the TextView with the id of `content` to display the user&#39;s input. Here is the full code for the activity\_main.xml.
+We will use the TextView with the id of `content` to display the user's input. Here is the full code for the activity\_main.xml.
 
-```
+```Xml
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout
@@ -411,10 +404,9 @@ We will use the TextView with the id of `content` to display the user&#39;s inpu
 ```
 
 ### 6. MainActivity
-
 In this class, we need to initialize the `NotesViewModel` and the `ActivityMain` data binding. The `lateinit` allows variables to be initialized at a later stage. The `NotesViewModelFactory` is initialized first and then passed to the `NotesViewModel` as a parameter. The `databinding` is also assigned the required `viewmodel` and `lifecycleowner`.
 
-```
+```Kotlin
  databinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
  val factory = NotesViewModelFactory()         
  viewModel = ViewModelProviders.of(this, factory).get(NotesViewModel::class.java)
@@ -424,7 +416,7 @@ In this class, we need to initialize the `NotesViewModel` and the `ActivityMain`
 
 We will observe the list in the NotesViewModel using the following commands.
 
-```
+```Kotlin
         viewModel.list.observe(this, Observer{
             databinding.content.text = it.toString()
     })
@@ -432,7 +424,7 @@ We will observe the list in the NotesViewModel using the following commands.
 
 We will observe the `isStringEmpty` variable to determine if the user has clicked the `submit` button without entering data. A `Toast` message will appear in case the user inputs are empty.
 
-```
+```Kotlin
  viewModel.isStringEmpty.observe(this, Observer{
             if(it==true){
                 Toast.makeText(this, "No Notes Detected",Toast.LENGTH_SHORT).show();
@@ -442,7 +434,7 @@ We will observe the `isStringEmpty` variable to determine if the user has clicke
 
 The completed `MainActivity.kt` is shown below.
 
-```
+```Kotlin
 package com.wanja.notesapp
 
 import androidx.appcompat.app.AppCompatActivity
@@ -482,9 +474,7 @@ When you run your application, it should show appear as in the video below.
 <iframe width="478" height="269" src="https://www.youtube.com/embed/HJP8cuwBAh8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
-
 As a developer, data binding will allow you to save time by eliminating boilerplate code. The UI components are updated automatically in case of any data changes. This functionality enables you to create high quality and productive applications.
 
 ### References
-
 [Android Developer Documentation](https://developer.android.com/topic/libraries/data-binding/start)
