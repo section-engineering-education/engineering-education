@@ -1,37 +1,101 @@
-title: Minecraft Plugin Development: A Hands-On Crash Course
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/functional-programming-in-java/
+title: Minecraft Plugin Development - A Hands-On Crash Course
+description: This will be an interactive tutorial on how to code Minecraft plugins.
+author: john-amiscaray
+date: 2020-12-02T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-description: An interactive tutorial on how to code Minecraft plugins.
+  - url: /engineering-education/functional-programming-in-java/hero.jpg
+    alt: Java Minecraft Plugin image
 
+---
+If you have ever watched the popular Minecraft YouTuber Dream, you have noticed that many of his videos feature Minecraft challenges. In these challenges, he and his friends attempt to beat the game under odd circumstances. These can include crazy events like raids or swarms of bees spawning frequently. This is all made possible using Minecraft server plugins.
+<!--more-->
 
 ### Introduction:
-
-If you have ever watched the popular Minecraft YouTuber Dream, many of his videos feature Minecraft challenges. In these challenges, he and his friends attempt to beat the game under odd circumstances. These can include crazy events like raids or swarms of bees spawning frequently. This is all made possible using Minecraft server plugins. A plugin is some code you add to your Minecraft server to change the default behavior of the game. In this tutorial, we will go over the basics of coding our own plugins. I am a believer that learning should be enjoyable, so that is the approach I will take. To do this, we will be learning through action, creating plugins you can have fun with.
+A plugin is some code you add to your Minecraft server to change the default behavior of the game. In this tutorial, we will go over the basics of coding our own plugins. I am a believer that learning should be enjoyable, so that is the approach I will take. To do this, we will be learning through action, creating plugins you can have fun with.
 
 ### Prerequisites:
+For this tutorial, I will assume that you have Minecraft Java Edition installed. 
 
-For this tutorial, I will assume that you have Minecraft Java Edition installed. I also expect you to have a local server set up for testing. I have decided to skip over setting up a server so we can get straight into coding. If you have not set up a server, you can find the instructions [here](https://minecraft.gamepedia.com/Tutorials/Setting_up_a_Spigot_server). As well, you should go into this tutorial with some knowledge of Java programming. Ideally, you should have a solid practical understanding of object-orientated programming. I suspect that some of you may have little to no programming experience and are reading out of curiosity. In which case it is still fine to read this tutorial. I intend this to have value for beginners to inspire them to get into recreational coding. Then they may later get back to this tutorial after honing their skills enough to follow along. For the more experienced developer, you will learn the foundations to code your own plugins. As a final prerequisite, I recommend you to fork a copy of this [repository](https://github.com/john-amiscaray/Minecraft-Plugin-Development-A-Hands-On-Crash-Course). It contains resources to go along with this article and give extra information. The resources include the project setup, the final code, and homework solutions I will give later on.
+I also expect you to have a local server set up for testing. 
+
+I have decided to skip over setting up a server so we can get straight into coding. 
+
+If you have not set up a server, you can find the instructions [here](https://minecraft.gamepedia.com/Tutorials/Setting_up_a_Spigot_server). 
+
+You should go into this tutorial with some knowledge of Java programming. 
+
+Ideally, you should have a solid practical understanding of object-orientated programming. 
+
+I suspect that some of you may have little to no programming experience and are reading out of curiosity. In which case it is still fine to read this tutorial. 
+
+I intend this to add value for beginners to inspire them to get into recreational coding. Then they can come back to this tutorial after honing their skills enough to follow along. 
+
+For the more experienced developer, you will learn the foundations needed to code your own plugins. 
+
+As a final prerequisite, I recommend you to fork a copy of this [repository](https://github.com/john-amiscaray/Minecraft-Plugin-Development-A-Hands-On-Crash-Course). It contains resources to go along with this article and give extra information. The resources include the project setup, the final code, and homework solutions I will give later on.
 
 
-### Project Structure And Setup:
+### Project structure and setup:
+Before we begin, it's necessary to learn how to set up our project so that we may begin coding. For this tutorial, we'll be using a tool for Java projects called Maven. If you have never used Maven before, it is a tool we will use to download some external code we need. 
 
-Before we begin, it is necessary to learn how to set up our project so that we may begin coding. For this tutorial, we will be using a tool for Java projects called Maven. If you have never used Maven before, it is a tool we will mostly use to download some external code we need. Our project will contain a file called “pom.xml” which will tell Maven to download this code. To install Maven on your computer, you can find the instructions [here](https://www.baeldung.com/install-maven-on-windows-linux-mac). To make the project set up easy, I recommend using the Intellij IDE which would make this setup trivial. Intellij has a plugin you can use to generate the project structure with minimal effort. To install it, go to file > settings > plugins, and search for “Minecraft Development”. Once installed, go to File > New > Project... > Minecraft > Spigot Plugin. From there, you have to choose your group id and artifact id. In case you don’t know, the artifact id is the name of your Plugin, whereas the group id is a unique id to say you created it. The group id is also used to identify projects of similar artifact ids. It usually takes the form of a reverse domain (ex. com.google), so if you have your own website use it as the group id. Otherwise, you can use something like me.firstname.lastname, or me.minecraftusername. Make sure to separate words by periods, and that they are all lowercase. From there, the rest of the process is straightforward. The IDE then asks you for optional settings like a project description. Finally, it will ask what to call the root folder and where to put it. In case you wish to use another IDE, refer to the repository linked above to find the basic setup. The repository will also contain extra info about the setup you may be interested in. In the end, you should have a project structure like this:
+Our project will contain a file called “pom.xml” that will tell Maven to download this code. 
 
-[basic setup](https://github.com/section-io/engineering-education/blob/master/articles/minecraft-plugin-development-a-hands-on-crash-course/plugin-setup.png)
+To install Maven on your computer, you can find the instructions [here](https://www.baeldung.com/install-maven-on-windows-linux-mac). 
 
-All this, except for the ```.idea``` folder and ```(project name).iml``` file, are all the essential elements we need to get started. For this guide, you can disregard any other folders or files. 
+To make the project set up easy, I recommend using the Intellij IDE. Intellij has a plugin you can use to generate the project structure with minimal effort. 
 
-Within the main package (in this case: src>main>java>me>john>amiscaray>minecraftplugindevelopmenttutorialfinalcode), you should have a single java file. That java file, named the same as the artifact id, should have the following basic structure:
+To install it, go to file > settings > plugins, and search for “Minecraft Development”. Once installed, go to File > New > Project... > Minecraft > Spigot Plugin. 
 
-[plugin main class](https://github.com/section-io/engineering-education/blob/master/articles/minecraft-plugin-development-a-hands-on-crash-course/plugin-main-class.png)
+From there, you have to choose your group ID and artifact ID. In case you don’t know, the artifact ID is the name of your Plugin, whereas the group ID is a unique id to say you created it. The group ID is also used to identify projects of similar artifact IDs. 
+
+It usually takes the form of a reverse domain (ex. com.google), so if you have your own website use it as the group ID. Otherwise, you can use something like me.firstname.lastname, or me.minecraftusername. 
+
+Make sure to separate words by periods, and that they are all lowercase. 
+
+From here, the rest of the process is straightforward. 
+
+The IDE then asks you for optional settings like a project description. 
+
+Finally, it will ask what to call the root folder and where to put it. In case you wish to use another IDE, refer to the repository linked above to find the basic setup. 
+
+The repository will also contain extra info about the setup you may be interested in. In the end, you should have a project structure like this:
+
+[basic setup](/engineering-education/functional-programming-in-java/plugin-setup.png)
+
+All this, except for the `.idea` folder and `(project name).iml` file, are all the essential elements we need to get started. For this guide, you can disregard any other folders or files. 
+
+Within the main package (in this case: src>main>java>me>john>amiscaray>minecraftplugindevelopmenttutorialfinalcode), you should have a single java file. That java file, named the same as the artifact ID, should have the following basic structure:
+
+[plugin main class](/engineering-education/functional-programming-in-java/plugin-main-class.png)
 
 That file will be the main entry point of our plugin where all the magic begins. For that reason, I will be referring to it as our plugin's main class.
 
-One other important file to talk about is the ```plugin.yml``` file. This file has the basic information about our plugin needed for it to run.
+One other important file to talk about is the `plugin.yml` file. This file has the basic information about our plugin needed for it to run.
 
-### Coding Our First Minecraft Challenge:
+### Coding our first minecraft challenge:
+Now that we got everything set up, this is where the fun begins. We will begin by trying to code our plugin to make stepping on grass blocks trigger explosions. 
 
-Now that we got everything set up, this is where our fun will begin. We will begin by trying to code our plugin to make stepping on grass blocks trigger explosions. This idea was inspired by [this Minecraft video](https://www.youtube.com/watch?v=zzO50cQgXug). Thinking about this feature, we would need to detect which block a player steps on whenever they move. To pull this off, we need to wait for the player to move and execute code to check which block they are on. We can do this using the help of what is called *listeners*, which listen for in-game events. To start, we will create a new Java class called ```PlayerMovementListener```. Next, we need to set up the class to listen for and react to events. To do so, we make the class implement the ```Listener``` interface from the org.bukkit.event package. Maven added this package into our project which contains code we need to build our plugin. Now that we defined our class as a listener, we need to create a method that it will call whenever a player moves. This method will be a public void method called ```onPlayerMove```. As an argument, it will accept a ```PlayerMoveEvent``` object. Whenever the player moves, our class will receive this object and use it to call our method. To ensure our plugin uses the method as a response to a Player moving, we add the annotation ```@EventHandler```. Right now, our code should look exactly like this:
+This idea was inspired by [this Minecraft video](https://www.youtube.com/watch?v=zzO50cQgXug). Thinking about this feature, we would need to detect which block a player steps on whenever they move. To pull this off, we need to wait for the player to move and execute code to check which block they are on. 
 
+We can do this using the help of what is called *listeners*, that listen for in-game events. To start, we will create a new Java class called `PlayerMovementListener`.
+
+Next, we need to set up the class to listen for and react to events. To do so, we make the class implement the `Listener` interface from the org.bukkit.event package. 
+
+Maven added this package into our project that contains code we need to build our plugin. Now that we defined our class as a listener, we need to create a method that it will call whenever a player moves. 
+
+This method will be a public void method called `onPlayerMove`. As an argument, it will accept a `PlayerMoveEvent` object. 
+
+Whenever the player moves, our class will receive this object and use it to call our method. To ensure our plugin uses the method as a response to a Player moving, we add the annotation `@EventHandler`. 
+
+Right now, our code should look exactly like this:
 
 ```java
 package me.john.amiscaray.minecraftplugindevelopmenttutorialfinalcode.eventlisteners;
@@ -49,6 +113,7 @@ public class PlayerMovementListener implements Listener {
     
 }
 ```
+
 As easy as that, we set up a simple class to listen to the player’s movement. Now we need to be able to examine the block the player is standing on and act accordingly. Within the event object our method accepts, we can find all the information we need to code the behavior we want:
     
 ```java
@@ -65,8 +130,7 @@ public void onPlayerMove(PlayerMoveEvent event){
 ``` 
 
 From here, we detect the block that the player is standing on. If the block is a grass block, we will trigger an explosion:
-
-    
+   
 ```java
 @EventHandler
 public void onPlayerMove(PlayerMoveEvent event){
@@ -88,20 +152,26 @@ public void onPlayerMove(PlayerMoveEvent event){
 }
 ```
 
-As a final important step, we need to make sure we register this class to listen for events. Just because we created this class as a Listener, doesn’t mean the server will know to use it. We achieve this by adding this line of code to the ```onEnable``` method of our plugin’s main class:
+As a final important step, we need to make sure we register this class to listen for events. Just because we created this class as a `Listener`, doesn’t mean the server will know to use it. We achieve this by adding this line of code to the `onEnable` method of our plugin’s main class:
 
 ```java
 getServer().getPluginManager().registerEvents(new PlayerMovementListener(), this);
 ```
 
-Each time we create a new Listener we have to make sure we add this line to the ```onEnable``` method.
+Each time we create a new `Listener` we have to make sure we add this line to the `onEnable` method.
 
-There we go, we have created a fun challenge you can play for yourself. The fact that we can create something pretty cool like this with little code shows the scale of what we can do. To try it out, you need to package the plugin into a jar file and place it in the ```plugins``` folder of your server. To package it into a jar file open up your command terminal in the root directory of the project. From here, run the command ```mvn package``` which will build a few jar files. The one we are looking for should be called ```(Artifact id)-(version).jar```.
+There we go, we have created a fun challenge you can play for yourself. The fact that we can create something this cool with little code shows the scale of what we can do. 
 
+To try it out, you need to package the plugin into a jar file and place it in the `plugins` folder of your server. 
 
-### Amping Up Our Challenge:
+To package it into a jar file open up your command terminal in the root directory of the project. From here, run the command `mvn package` that will build a few jar files. 
 
-As if this wasn’t masochistic enough, our players want something more to challenge them. Let’s amp this up by making the mobs pack a bit more punch. To do so, we will create and register a Listener with the following method:
+The one we are looking for should be called `(Artifact id)-(version).jar`.
+
+### Amping up our challenge:
+As if this wasn’t masochistic enough, our players want something more to challenge them. Let’s amp this up by making the mobs pack a bit more punch. 
+
+To do so, we will create and register a `Listener` with the following method:
 
 ```java
 @EventHandler
@@ -138,12 +208,12 @@ public void onMobSpawn(CreatureSpawnEvent event){
 
 As easy as that, we gave hostile mobs full diamond armor, made creepers invisible, and gave skeletons power 4 bows. If that isn’t a challenge I don’t know what is.
 
-### Writing Our First Commands:
+### Writing our first commands:
+As fun as it is, let’s take a break from bullying the users of our plugin. Let’s make them a semi-useful command. If you’ve ever found an interesting location, you may have created a cobblestone tower to mark it. 
 
-As fun as it is, let’s take a break from bullying the users of our plugin. Let’s make them a semi-useful command. If you’ve ever found an interesting location, you may have created a cobblestone tower to mark it. Sure you could write down the coordinates, but this presents us an opportunity to learn block manipulation.
+Sure you could write down the coordinates, but this presents us an opportunity to learn block manipulation.
 
-First, we need to make sure to define the command we can create. We create the definition of our command in the ```plugin.yml``` file:
-
+First, we need to make sure to define the command we can create. We create the definition of our command in the `plugin.yml` file:
 
 ```YAML
 # defining our commands.
@@ -157,7 +227,9 @@ commands:
     aliases: [mark, tower]
 ```
 
-Next, we need to create a class that will execute the command whenever it’s called. This class must implement the ```CommandExecutor``` interface of the org.bukkit.command package. This forces us to implement the ```onCommand``` method of that interface. Whenever someone calls the command, our plugin will call this method as a response.
+Next, we need to create a class that will execute the command whenever it’s called. This class must implement the `CommandExecutor` interface of the org.bukkit.command package. This forces us to implement the `onCommand` method of that interface. 
+
+Whenever someone calls the command, our plugin will call this method as a response.
 
 ```java
 package me.john.amiscaray.minecraftplugindevelopmenttutorialfinalcode.commandexecutors;
@@ -178,9 +250,13 @@ public class TowerCommandExecutor implements CommandExecutor {
 }
 ```
 
-This ```onCommand``` method returns a boolean indicating whether the execution was successful. If unsuccessful, the game will send the user the value of our usage property. 
+This `onCommand` method returns a boolean indicating whether the execution was successful. If unsuccessful, the game will send the user the value of our usage property. 
 
-Now we need to generate the cobblestone tower next to the player that called the command. One thing to note is that *commands aren't always called by players*. The server owner can call commands from their command line while not being in the game. This forces us to first check if the command sender is a player. To achieve our goals with this command, we would do the following:
+Now we need to generate the cobblestone tower next to the player that called the command. One thing to note is that *commands aren't always called by players*. 
+
+The server owner can call commands from their command line while not being in the game. This forces us to check if the command sender is a player. 
+
+To achieve our goals with this command, we would do the following:
 
 ```java
 @Override
@@ -218,32 +294,44 @@ public boolean onCommand(CommandSender sender, Command command, String label, St
 }
 ```
 
-As a final step, we need to register this CommandExecutor in the ```onEnable``` method. This ensures the game associates the defined command with our CommandExecutor. To do so, add the following line of code:
+As a final step, we need to register this CommandExecutor in the `onEnable` method. This ensures the game associates the defined command with our CommandExecutor. 
+
+To do so, add the following line of code:
 
 ```java
 getServer().getPluginCommand("mark-location").setExecutor(new TowerCommandExecutor());
 ```
 
-### Our Final Project:
+### Our final project:
+As a fun final project, let’s create a command to bully people on our server. We will be creating a command called `continuous-wither-spawn`. When called this would spawn withers on a set interval and location. Earlier in this guide, we worked with creating responses to events. 
 
-As a fun final project, let’s create a command to bully people on our server. We will be creating a command called ```continuous-wither-spawn```. When called this would spawn withers on a set interval and location. Earlier in this guide, we have only worked with creating responses to events. We will now learn to cause things to happen on our own without it being a response. To make this possible, we will learn how to create and use a class of type ```BukkitRunnable```.
+We will now learn to cause things to happen on our own without it being a response. To make this happen, we will learn how to create and use a class of type `BukkitRunnable`.
 
-Before we begin, we need to give a more detailed description of the feature we are adding. We need our command to spawn withers on a set interval at the world spawn point. To do this, we need to be able to get an object representing the world so we may add the withers to it. We can get the world the players are in by using its name. For the sake of our code’s maintainability, I will be setting the world name as a *configuration variable*. This allows us to access it throughout the code without us hard coding it every time. As an added benefit, the server owner can change the configuration variables anytime. If the server owner wants to change the name of their world, our plugin won’t break. The server owner can update the configuration variable to change the world name used in our code. Plus, this allows anyone to use our plugin on any Minecraft world. To do this, we add the following ```config.yml``` file in the same directory as our ```plugin.yml``` file:
+Before we begin, we need to give a more detailed description of the feature we are adding. We need our command to spawn withers on a set interval at the world spawn point. To do this, we need to be able to get an object representing the world so we may add the withers to it. We can get the world the players are in by using its name. For the sake of our code’s maintainability, I will be setting the world name as a *configuration variable*. 
 
+This allows us to access it throughout the code without us hard coding it every time. As an added benefit, the server owner can change the configuration variables anytime. 
+
+If the server owner wants to change the name of their world, our plugin won’t break. The server owner can update the configuration variable to change the world name used in our code. Plus, this allows anyone to use our plugin on any Minecraft world. 
+
+To do this, we add the following `config.yml` file in the same directory as our `plugin.yml` file:
 
 ```YAML
 world-name: (your-world-name)
 ```
 
-Afterward, add the following to the ```onEnable``` method of your main class:
+Afterward, add the following to the `onEnable` method of your main class:
 
 ```java
 saveDefaultConfig();
 ```
 
-This creates a copy of the ```config.yml``` file the server admin can access outside of the plugin’s jar file. This would then allow them to change the properties even when the plugin is packaged in a jar.
+This creates a copy of the `config.yml` file and the server admin can access outside of the plugin’s jar file. This would then allow them to change the properties even when the plugin is packaged in a jar.
 
-Now that we got that out of the way, let’s begin. As we did earlier, we need to first define our command in the ```plugin.yml``` file. Next, we have to create our CommandExecutor and register it. From here, we have to create a class of type BukkitRunnable which will allow us to have timed events:
+Now that we got that out of the way, let’s begin. As we did earlier, first we need to define our command in the `plugin.yml` file. 
+
+Next, we have to create our CommandExecutor and register it. 
+
+From here, we have to create a class of type BukkitRunnable that will allow us to have timed events:
 
 ```java
 package me.john.amiscaray.minecraftplugindevelopmenttutorialfinalcode.runnables;
@@ -302,12 +390,16 @@ public boolean onCommand(CommandSender sender, Command command, String label, St
 }
 ```
 
-We first check if the user gives the right amount of arguments. If they did not, we will not execute this command. Otherwise, we will start spawning Withers with the given delays. Note, *the delays given are in Minecraft ticks*; these are around 0.05 seconds.
+First we check if the user gave the right amount of arguments. If they didn't, we will not execute this command. Otherwise, we will start spawning Withers with the given delays. 
 
-As easy as that, we have created our command. You can try it by typing in the chat of your server: ```/continuous-wither-spawn 0 100```. This should spawn a wither instantly, then spawn another every 5 seconds.
+Note, *the delays given are in Minecraft ticks*; these are around 0.05 seconds.
+
+As simple as that, we have created our command. You can try it by typing in the chat of your server: `/continuous-wither-spawn 0 100`.This should spawn a wither instantly, then spawn another every 5 seconds.
 
 
 ### Conclusion:
+In this tutorial, you have gained a foundational understanding on how of to code Minecraft plugins. I obviously could not cover everything in this tutorial and left some parts out. Some next steps are to research command permissions and to just play around. 
 
-In this tutorial, you have gained a solid foundational knowledge of coding Minecraft plugins. I obviously could not cover everything in this tutorial and left some parts out. Some next steps are to research command permissions and to just play around. In fact, I have learned most of this by experimenting and having fun. I would think of cool things I want to build and try to build them, with some help from the [documentation](https://hub.spigotmc.org/javadocs/spigot/index.html) of course. To further help you out I have some homework for you to test your understanding and learn more. First, I want you to improve the wither spawn command. Make it so that the user has the option to spawn withers at a location they choose. Then make a command that allows them to stop the withers from spawning. Lastly, try to make a plugin that will detect if emeralds are in a loaded chunk. If so, add some visual signs of it in the world. You can find my solutions to these challenges in the repository. My solutions may not be perfect so if you find a better solution, feel free to send a pull request. Happy coding!
+In fact, I have learned most of this by experimenting and having fun. I would encourage you to think of cool things you want to build and try to build them, with some help from the [documentation](https://hub.spigotmc.org/javadocs/spigot/index.html) of course. To help you out I have some homework for you to test your understanding and to keep learning. 
 
+First, I want you to improve the wither spawn command. Make it so that the user has the option to spawn withers at a location they choose. Then make a command that allows them to stop the withers from spawning. Lastly, try to make a plugin that will detect if emeralds are in a loaded chunk. If so, add some visual signs of it in the world. You can find my solutions to these challenges in the repository. My solutions may not be perfect so if you find a better solution, feel free to send a pull request. Happy coding!
