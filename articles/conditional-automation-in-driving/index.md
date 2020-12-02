@@ -19,10 +19,6 @@ Autonomous driving is gaining momentum in the automobile industry. Developers ha
 ### What is an autonomous car?
 An autonomous car is a car that uses technology to operate with little or no assistance from human drivers. Self-driving is achieved with the help of artificial intelligence, cameras, and sensors. The technology that is used in developing these cars is evolving.
 
-![Autonomous Car](/engineering-education/conditional-automation-in-driving/autonomous-car.jpg)
-
-[Image Source: IDG](https://images.idgesg.net/images/article/2018/02/automotive_connected_smart_car_autonomous_vehicle_gui_hud_thinkstock_861086772-100749780-large.jpg)
-
 #### Levels of autonomous driving
 Before focusing on conditional automation in driving, it's important to look at the various levels of automation in driving.
 
