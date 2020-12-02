@@ -25,7 +25,7 @@ Let us list some of the activation functions that we will be covering in this tu
 #### Step activation function
 
 The step activation function, as discussed in the perceptron algorithm, is shown below. It is discontinuous, and therefore, the gradient computations are erroneous at points of discontinuity.  
-![](step_function.png)
+![step function graph](step_function.png)
 
 [*Image Source*](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intmath.com%2Flaplace-transformation%2F1a-unit-step-functions-definition.php&psig=AOvVaw1XjHjFjI93-cSbYQYy1jYq&ust=1606899070976000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCMCuo-G0rO0CFQAAAAAdAAAAABAD)
 
@@ -37,7 +37,7 @@ Step functions are not as informative as we would like to be due to the disconti
 
 $$ sigmoid(x) = \frac{1}{1+\exp(-x)} $$
 
-![](sigmoid.png)
+![sigmoid function graph](sigmoid.png)
 [*Image Source*](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40toprak.mhmt%2Factivation-functions-for-deep-learning-13d8b9b20e&psig=AOvVaw1LlfJR-_qjbU6wAMK-Rnzf&ust=1606899316672000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCPDwncy0rO0CFQAAAAAdAAAAABAD)
 
 This function works very well with shallow neural network architectures. However, for deeper neural architectures, it is replaced with the Rectified Linear Unit activation function.
@@ -63,7 +63,7 @@ Mathematically it is given as:
 
 $$ softmax(x) = \frac{\exp(x)}{\sum_{i=0}^n \exp(x_i) } $$
 
-![](softmax.png)
+![softmax  function graph](softmax.png)
 
 [*Image Source*](https://www.researchgate.net/figure/Softmax-activation-function_fig2_319121953) 
 
@@ -81,7 +81,7 @@ class Softmax():
 
 This is similar to the sigmoid activation function, except for the range of output values. The range of sigmoid output is $[0,1]$. The range of the tanH function is $[-1,1]$. The distinction between tanH and sigmoid is visible in the image shown below.
 
-![](tanh.png)
+![tanh  function graph](tanh.png)
 
 [*Image Source*](https://debuggercafe.com/activation-functions-in-neural-networks/)
 
@@ -108,7 +108,7 @@ The first question that one must ask is how a non-continuous linear function is 
 
 A more detailed explanation for the working of ReLU is given at this [link](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/).
 
-![](relu.png)
+![relu  function graph](relu.png)
 
 [*Image Source*](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
 
@@ -132,7 +132,7 @@ class ReLU():
 
 Leaky ReLU is a modification of the Rectified Linear Unit. In ReLU, there is an absolute cutoff present at 0. Any value less than zero is discarded. In leaky ReLU, the positive values are passed through. The negative values are multiplied by a constant between 0 and 1 and then passed through. This way, only a fraction of the negative values are passed through, thus striking a balance between gradient computations and information loss.
 
-![](leakyrelu.png)
+![leakyrelu function graph](leakyrelu.png)
 
 [*Image Source*](https://towardsdatascience.com/activation-functions-in-neural-networks-58115cda9c96)
 
