@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/basics-of-the-object-model/
+title: The Basics of the Object Model
+description: 
+author: judy-nduati
+date: 2020-12-01T00:00:00-16:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/basics-of-the-object-model/hero.jpg
+    alt: JavaScript animation libraries image example
+---
+A well known programming language used for animating web applications is JavaScript. In this article, we will discuss JavaScript animation libraries in more depth.
+<!--more-->
 ### Introduction
 The Object Model sees an information system as a set of objects and classes. The reader will get an in-depth understanding of the Object model and its elements. Also, we will look into object-oriented programming, object-oriented Analysis, and object-oriented design.
 
