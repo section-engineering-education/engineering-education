@@ -14,20 +14,22 @@ images:
   - url: /engineering-education/introduction-to-digital-twin-technology/hero.jpg
     alt: example image
 ---
-Global industries have achieved a tremendous technological transformation because of linkage between digital and physical worlds. Digital twin technology has played an important role in enhancing this convergence.
+Global industries have achieved a tremendous technological transformation due to the linkage between digital and physical worlds. Digital twin technology has played an important role in enhancing this convergence.
 <!--more-->
-This is a technology that enables companies or organizations to develop digital copies of their products, assets, or processes to optimize performance and maintenance. For example, this technology has been employed in the automobile industry to create digital copies of cars. It has also been used by manufacturing firms to replicate physical production processes.
+This is a technology that enables companies or organizations to develop digital copies of their products, assets, or processes to optimize performance and maintenance.
 
-This article provides meaningful information regarding the concept of digital twin, and how digital twin technology works. It has also provided an overview of how this important technology has been employed in real-life applications.
+For example, this technology has been employed in the automobile industry to create digital copies of cars. It has also been used by manufacturing firms to replicate physical production processes.
+
+This article will go over the concept of the digital twin, and how digital twin technology works. It will also provide an overview of how this important technology has been employed in real-life applications.
 
 ### What is a Digital Twin?
 A digital twin is a virtual representation or digital replica (copy) of assets, people, processes, systems, devices, and places. Some of the things that can be replicated using digital twin technology include vehicles, aircraft engines and people.
 
-If an automobile company develops a virtual representation or digital copy of a car model, then this digital replica is a digital twin of the physical car. Similarly, if a manufacturing company creates a virtual representation of its manufacturing process, the replicated process (digital) is a digital twin of the physical process.
+If an automobile company develops a virtual representation or digital copy of a car model, then this digital replica is considered a digital twin of the physical car. Similarly, if a manufacturing company creates a virtual representation of its manufacturing process, the (digital) replicated process is a digital twin of the physical process.
 
 A digital twin can also be described as a digital profile of the current and historical state of a process or physical object. This virtual representation provides the dynamics and elements of how an IoT device lives and operates.
 
-Continuous learning and updates enable the digital twin to provide the real-time position, condition, or status of the physical assets. This pairing of the real world and the digital world enable organizations to monitor systems, develop plans and anticipate problems before they occur.
+Continuous learning and updates enable the digital twin to provide the real-time position, condition, and/or status of the physical assets. This pairing of the real world and the digital world enable organizations to monitor systems, develop plans and anticipate problems before they occur.
 
 Digital twins are created using digital twin technology. This technology integrates the internet of things (IoT), software analytics, artificial intelligence, and special network graphs to replicate physical assets or processes (physical twins).
 
@@ -36,10 +38,10 @@ Digital twins are created using digital twin technology. This technology integra
 [Image Source: IDGESG](https://images.idgesg.net/images/article/2018/06/digital-twins_woman-in-profile_ai_mirror_duplicate_duo_pair-100760562-large.jpg)
 
 ### Characteristics of Digital Twin Technology
-Digital twin technology consists of certain characteristics such as connectivity, homogenization, ability to be reprogammable, digital traces and modularity.
+Digital twin technology comprises certain characteristics such as connectivity, homogenization,  reprogrammability, digital traces, and modularity.
 
 #### Connectivity
-In digital twin technology, connectivity is enhanced between physical assets and their digital counterparts. Sensors that are attached to physical objects are used to enhance connectivity with digital representations. Data from the physical components is obtained and integrated by these sensors. Integration technologies enable the sensors to communicate the collected data.
+In digital twin technology, connectivity is embedded between physical assets and their digital counterparts. Sensors are attached to physical objects and are used to enhance connectivity with their digital representations. Data from the physical components is obtained and integrated with these sensors. This integration enable the sensors to communicate the collected data to a user.
 
 #### Homogenization
 Digital technology is also characterized by the homogenization of data from physical components. This means that a digital representation that is similar to the physical object can be created using the collected data. This technology can also enable data to be decoupled from the physical artifacts.  
