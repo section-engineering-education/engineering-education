@@ -6,7 +6,7 @@ url: /engineering-education/javascript-higher-order-functions/
 title: Introduction to JavaScript High Order Functions
 description: In this tutorial we'll learn about the high order function. We will discuss and show some of the common built-in JavaScript high order functions with examples.
 author: joseph-chege
-date: 2020-12-01T00:00:00-18:00
+date: 2020-12-01T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
