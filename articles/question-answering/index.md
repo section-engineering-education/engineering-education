@@ -1,12 +1,12 @@
 ### An Introduction to Question Answering Systems
 
-Recently I came across this library that enables one to create large-scale and distributed question answering systems. It solves a significant problem that we usually face in a vast field as Natural Language Processing. Hence my interest in the area of question answering systems arose. I have tried to put together the general trends in the field of question answering systems. Once we have a good picture of the area, we will explore the library ** Haystack**, which arose my interest in the first place. 
+Recently I came across this library that enables one to create large-scale and distributed question answering systems. It solves a significant problem that we usually face in a vast field as Natural Language Processing. The problem of creating models that work accurately with large amounts of data. Hence my interest in the area of question answering systems arose. I have tried to put together the general trends in the field of question answering systems. Once we have a good picture of the area, we will explore the library ** Haystack**, which arose my interest in the first place. 
 
 ### Goal of Question Answering Systems
 
-What are the question answering systems trying to achieve? Given a question, should the system return the nearest answer? What if the answer is a mixture of multiple answers that it has been trained on? We are trying to build intelligent systems that don't just return documents related to the question but extracts relevant information within the documents and puts forth the detailed answer, one like a human would have come up with. This task comes under the field of Information Retrieval(IR), Information Extraction(IE), and Natural Language Processing (NLP).
+What are the question answering systems trying to achieve? Given a question, should the system return the nearest answer? What if the answer is a mixture of multiple answers that it has been trained on? We are trying to build intelligent systems that don't just return documents related to the question but extracts relevant information within the documents and puts forth the detailed answer, one like a human would have come up with. This task comes under the field of [Information Retrieval ](https://nlp.stanford.edu/IR-book/pdf/01bool.pdf)(IR), [Information Extraction](https://www.ontotext.com/knowledgehub/fundamentals/information-extraction/) (IE), and Natural Language Processing (NLP).
 
-Google is a search engine. But, some questions are generated automatically while we search. This is due to the knowledge graphs structure that Google uses to represent information.
+Google is a search engine. But, some questions are generated automatically while we search. This is due to the [knowledge graphs](/engineering-education/web-developers-guide-seo/#pagerank) that Google uses to represent vast amounts of data.
 
 ![google python_example](python_example.png)
 
@@ -14,15 +14,12 @@ Google is a search engine. But, some questions are generated automatically while
 
 ### Structure of Question Answering System
 
-The design of a question answering system has specific vital components. The image given below summarized the entire architecture. 
-
-
-There are three distinct modules used in a question-answering system: 
+The design of a question answering system has specific vital components. There are three distinct modules used in a question-answering system: 
 - Query Processing Module: Classifies questions according to the context. This module identifies the context and focus, classifies the type of question, and sets the answer type's expectations. 
 - Document Processing Module: Information retrieval module that focuses on gathering relevant documents
 - Answer Processing Module: Once the relevant documents are retrieved, they need to be parsed through to obtain an accurate and appropriate answer.
 
-Each of these modules takes up a different task to give relevant answers.
+Each of these modules takes up a different task to give relevant answers. The image given below summarizes the entire architecture. 
 
 ![architecture of question answering system](architecture-qna.png)
 
@@ -31,35 +28,35 @@ Each of these modules takes up a different task to give relevant answers.
 ### Query Processing Module
 
 As mentioned earlier, the query processing system deals with three main tasks:
-1. Analysis of the question to obtain the preliminary information from the question.
-2. Classification of the type of question to better understand the required context for the answer. For example, the phrase _Python error_ should lead to answers related to coding, and _Python bite_ should lead to snake bites. 
-3. Reformulation of the question to obtain relevant answers. Therefore the question is converted into a pre-trained vector with several such pairs of examples of questions and answers. This aspect is responsible for information retrieval.
+1. *Analysis* of the question to obtain the preliminary information from the question.
+2. *Classification* of the type of question to better understand the required context for the answer. For example, the phrase _Python error_ should lead to answers related to coding, and _Python bite_ should lead to snake bites. 
+3. *Reformulation* of the question to obtain relevant answers. Therefore the question is converted into a pre-trained vector with several such pairs of examples of questions and answers. This aspect is responsible for information retrieval.
 
 ### Document Processing Module
 
 The document processing module accepts the reformulated question as its input. The document processing module uses an information retrieval (IR) system internally to map the closest documents to the question presented. The most similar documents are sorted according to their similarity and relevance to the question. The document processing module performs mainly three significant tasks.
 
-1. Retrieve the set of the documents from the IR system
-2. Filter the set of documents obtained in the previous step and reduce the amount of text in each document to produce a concise answer.
-3. Order the documents by similarity and relevance to the question.
+1. *Retrieve* the set of the documents from the IR system
+2. *Filter* the set of documents obtained in the previous step and reduce the amount of text in each document to produce a concise answer.
+3. *Order* the documents by similarity and relevance to the question.
 
 ### Answer Processing Module
 
 The final module gets the list of concise documents filtered and ordered by the previous module. The answer processing module considers the set of documents and performs three major tasks:
 
-1. Identify statements/answers within the concise set of documents.
-2. Extract the relevant answer by choosing the appropriate phrases and words that answers the question. This used to be performed heuristically. *Heuristic algorithms* are a way of solving problems where solving in the best possible way is given importance. Parameters such as cost complexity in terms of space and time, accuracy, or speed are neglected, and instead, obtaining a solution close to the actual answer is emphasized. 
+1. *Identify* statements/answers within the concise set of documents.
+2. *Extract* the relevant answer by choosing the appropriate phrases and words that answers the question. This used to be performed heuristically. *Heuristic algorithms* are a way of solving problems where solving in the best possible way is given importance. Parameters such as cost complexity in terms of space and time, accuracy, or speed are neglected, and instead, obtaining a solution close to the actual answer is emphasized. 
    
-   Heuristic algorithms are usually used to solve NP-complete problems, where there is no known efficient way to find a solution. However, it can be verified if the answer is known by plugging the parameters into the algorithm. Therefore, developing heuristic algorithms involves going back and forth between the solution and produced and the algorithm itself. 
+   Heuristic algorithms are usually used to solve [NP-complete problems](https://www.britannica.com/science/NP-complete-problem), where there is no known efficient way to find a solution. However, it can be verified if the answer is known by plugging the parameters into the algorithm. Therefore, developing heuristic algorithms involves going back and forth between the solution and produced and the algorithm itself. 
    
    The algorithm is said to perform well when the algorithm's solution is as efficient as possible, given the constraints. 
 
-3. Validation of the answers obtained by the previous step. This is usually used during the design of such question-answering systems to evaluate the outputs obtained. During deployment, the evaluation metrics are reduced to achieve high data throughput from the system.
+3. *Validation* of the answers obtained by the previous step. This is usually used during the design of such question-answering systems to evaluate the outputs obtained. During deployment, the evaluation metrics are reduced to achieve high data throughput from the system.
 
 
 ### Evaluating the answers obtained 
 
-The criteria can vary from paper to paper. But more generally, we want the question answering system to produce relevant, correct, and complete answers to the point. Hence many evaluation metrics were developed to measure such ambiguous terminologies. A few of those metrics are F1-scores, precision, recall, etc. For a more detailed insight into evaluation metrics, refer to this [article](https://www.section.io/engineering-education/evaluating-ml-model-performance/). 
+The criteria can vary from paper to paper. But more generally, we want the question answering system to produce relevant, correct, and complete answers to the point. Hence many evaluation metrics were developed to measure such ambiguous terminologies. A few of those metrics are F1-scores, precision, recall, etc. For a more detailed insight into evaluation metrics, refer to this [article](/engineering-education/evaluating-ml-model-performance/). 
 
 Transformers at scale for question answering & neural search. Using NLP via a modular Retriever-Reader-Pipeline. Supporting DPR, Elasticsearch, HuggingFace's Modelhub
 
