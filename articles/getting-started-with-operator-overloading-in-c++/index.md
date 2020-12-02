@@ -15,7 +15,7 @@ images:
     alt: example image
 
 ---
-Operator overloading is the process of making an operator exhibit different behaviors in different instances. By overloading operators in a specific class, you can the user's view of that class. This helps developers have a problem driven approach towards programming.
+Operator overloading is the process of making an operator exhibit different behaviors in different instances. By overloading operators in a specific class, you can change the user's view of that class. This helps developers have a problem driven approach towards programming.
 <!--more-->
 ### Introduction
 In this article, we will go through the basics of operator overloading and dive into how to use it in C++.
