@@ -75,7 +75,6 @@ apply plugin: 'kotlin-kapt'
 In your primary folder, create a new package and name it `model`. Then create a `Note.kt` file in this package. As shown, the `data class NoteItem` only holds two variables (`title` and `description`). These values are required to initialize the class.
 
 ```Kotlin
-package com.wanja.notesapp.model
 
 data class NoteItem(
     var title: String,
@@ -84,7 +83,7 @@ data class NoteItem(
 ```
 
 ### 3. ViewModel
-The `ViewModel` makes it easy to update data changes on the `UI`. It also persists data during configuration changes. Create a package named `viewmodels` in your main folder. Create a new file and name it `MainViewModel.kt`. The file will contain the following variables.
+The `ViewModel` makes it easy to update data changes on the `UI`. Create a package named `viewmodels` in your main folder. Create a new file and name it `MainViewModel.kt`. The file will contain the following variables.
 
 ```Kotlin
     val isStringEmpty = MutableLiveData<Boolean>()
@@ -149,7 +148,6 @@ Note: To use the `bindable` component, the `NotesViewModel` must extend the `Obs
 Your final NotesViewModel should look as follows.
 
 ```Kotlin
-package com.wanjamike.co.notesapp.viewmodel
 
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
@@ -205,16 +203,12 @@ class NotesViewModel(): ViewModel(), Observable {
 ```
 
 ### 4. ViewModelFactory
-This class helps initialize the `ViewModel`. The `ViewModelFactory` is particularly vital if your application uses multiple viewmodels.
-
-In the same `viewmodels` package, create a file named `NotesViewModelFactory` and add the code below. The `NotesViewModel` will throw an Exception in case the ViewModel is not found.
+In the same `viewmodels` package, create a file named `NotesViewModelFactory` and add the code below. The `NotesViewModelFactory` will throw an Exception in case the ViewModel is not found.
 
 ```Kotlin
-package com.wanjamike.co.notesapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-
 import java.lang.IllegalArgumentException
 
 class NotesViewModelFactory(): ViewModelProvider.Factory{
@@ -435,7 +429,6 @@ We will observe the `isStringEmpty` variable to determine if the user has clicke
 The completed `MainActivity.kt` is shown below.
 
 ```Kotlin
-package com.wanja.notesapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
