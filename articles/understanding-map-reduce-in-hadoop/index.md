@@ -23,7 +23,7 @@ The following diagram shows a MapReduce architecture.
 
 MapReduce architecture consists of various components. A brief description of these components can improve our understanding of how MapReduce works. 
 - **Job:** This is an execution of a reducer or mapper across a dataset.
-- ** Task:** This is an execution of a reducer or mapper on a section of data
+- **Task:** This is an execution of a reducer or mapper on a section of data
 - **Job Tracker:** This tracker plays the role of scheduling jobs and tracking all jobs assigned to the task tracker.
 - **Task Tracker:** This tracker plays the role of tracking tasks and reporting the status of tasks to the job tracker.  
 - **Input data:** This is the data used for processing in the mapping phase.
@@ -81,7 +81,7 @@ The following diagram shows how all the four phases of MapReduce have been appli
 [Image Source: Cloud Front](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2017/05/mapreduce-job-execution-flow-1-1024x492-1.jpg)
 
 ### Benefits of Hadoop MapReduce
-* ** speed:** MapReduce can process huge unstructured data within a short time. 
+* **Speed:** MapReduce can process huge unstructured data within a short time. 
 * **Fault-tolerance:** The MapReduce framework can handle failures. 
 * **Cost-effective:** Hadoop has a scale-out feature that enables users to process or store data in a cost-effective manner. 
 * **Scalability:** Hadoop provides a highly scalable framework. MapReduce allows users to run applications from many nodes.
