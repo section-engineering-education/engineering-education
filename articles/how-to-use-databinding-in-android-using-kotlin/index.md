@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/how-to-use-databinding-in-android-using-kotlin/
 title: Databinding in Android using Kotlin
 description: In this tutorial we will learn how to implement data binding in Andriod using Kotlin.
-author: wanja-mike
+author: michael-barasa
 date: 2020-12-03T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
@@ -53,7 +53,7 @@ Launch Android studio and create a new project. Once the project is ready, go to
 
 Add `buildFeatures` and set `databinding` to `true`. This notifies the `Android` system that our app uses data binding. Therefore, the proper files will be generated.
 
-```Gradle
+```bash
 buildTypes {
         release {
             minifyEnabled false
@@ -70,7 +70,7 @@ In the same `build.gradle` file, add the `lifecycle` library to your `dependenci
 
 Read more about `MVVM` architecture [here](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
 
-```Gradle
+```bash
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -89,7 +89,7 @@ dependencies {
 
 Remember to add `apply plugin: kotlin-kapt` at the top of the file.
 
-```Gradle
+```bash
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
