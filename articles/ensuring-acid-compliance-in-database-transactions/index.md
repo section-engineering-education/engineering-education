@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/ensuring-acid-compliance-in-database-transactions/hero.jpg
     alt: ACID compliance databases example image
 ---
-Applying the ACID (atomicity, consistency, isolation, and durability) properties to database modifications is the best way to ensure database's reliability, accuracy, and successful transactions.
+Applying the ACID (atomicity, consistency, isolation, and durability) properties to database modifications is the best way to ensure databases reliability, accuracy, and successful transactions.
 <!--more-->
 Often, you will need to conduct some operations on your database (database transactions). We must complete these changes with care to ensure that you do not corrupt the database's data.
 
