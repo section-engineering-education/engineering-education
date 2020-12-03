@@ -14,16 +14,16 @@ images:
   - url: /engineering-education/android-custom-views-extending-view/hero.jpg
     alt: Android custom views image example
 ---
- A [view is a basic building block](https://www.studytonight.com/android/introduction-to-views/) of UI (User Interface) in Android. The Android platform has a variety of views. These views tend to meet most applications UI needs. In some cases, these ready-built views don't conform to the application's requirements. In these cases, developers have to create their own custom views.
+A [view is a basic building block](https://www.studytonight.com/android/introduction-to-views/) of UI (User Interface) in Android. The Android platform has a variety of views. These views tend to meet most applications UI needs. In some cases, these ready-built views don't conform to the application's requirements. In these cases, developers have to create their own custom views.
 <!--more-->
 ### Introduction
 There are two approaches to creating custom Views.
 
 These are:
-1. By extending the androids View class.
+1. By extending the Androids View class.
 2. By extending an existing subclass of the View class.
 
-This article will focus on the first approach, i.e., extending the View class. Why extend the View class when you can extend an already built subclass? For instance, in an Android game, most of these applications' views don't resemble any other default view. It shows that the developers most probably built their custom views from scratch. That's what we will go through.
+This article will focus on the first approach, i.e., extending the View class. Why would you extend the View class when you can extend an already built subclass? Well for example, in an Android game, most of these applications' views don't resemble any other default view. It shows that the developers probably built their custom views from scratch. That's what we will go through.
 
 We will create a simple view that is a colored circle with a border then add it to an XML layout.
 
@@ -39,14 +39,13 @@ To follow through with this tutorial you will need to:
 Let's get started!
 
 ### Step 1 — Creating an Android Project
-In this step, we are going to create our application. Open Android Studio and start a new project with an empty activity template. On the next page, give the application a name and keep the default settings.
+In this step, we're going to create our application. Open Android Studio and start a new project with an empty activity template. On the next page, give the application a name and keep the default settings.
 
 ![app name](/engineering-education/android-custom-views-extending-view/app-name.png)
 
 Click `Finish` and wait for the project build process to finish.
 
 ### Step 2 — Creating our View Class
-
 On your project window,
 - Select `File -> New -> Kotlin File/Class`
 - On the next screen select class, give it a name, and press enter.
@@ -63,13 +62,17 @@ class Circle(context: Context, attr: AttributeSet): View(context, attr){
 
 The View class has four constructors.
 1. `constructor(context: Context)`. This constructor requires the activity context to create the view from Kotlin code.
-2. `constructor(context: Context, attrs: AttributeSet)`. This constructor enables one to create a view from the XML code. It is the most popular constructor and the one we have used above.
+2. `constructor(context: Context, attrs: AttributeSet)`. This constructor enables one to create a view from the XML code. It's the most popular constructor and the one we have used above.
 3. `constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int)`. This constructor creates a view from XML with a style from the theme attribute.
-4. `constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int)`. This constructor creates a view from XML with a style from the theme attribute and /or a style resource.
+4. `constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int)`. This constructor creates a view from XML with a style from the theme attribute and/or a style resource.
 
 After declaring the constructor, we now have to override the methods we require to create our view. Let's take a look at the methods.
 
-The first method we will override is the `onDraw` method. The Android system calls this method when the activity comes to the foreground. It is in this method where the view draws itself. When Android calls this method, it passes in a canvas object for the view to draw on. The other method that we will override is the `onMeasure` method. This method allows the view to measure itself before drawing.
+The first method we'll override is the `onDraw` method. The Android system calls this method when the activity comes to the foreground.
+
+It's in this method where the view draws itself. When Android calls this method, it passes in a canvas object for the view to draw on.
+
+The other method that we will override is the `onMeasure` method. This method allows the view to measure itself before drawing.
 
 Let's override the methods to start drawing.
 
@@ -85,7 +88,7 @@ override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int){
 }
 ```
 
-We will need a paint object to draw on the canvas. Let's create it as a member of the class. We instantiate it with the `ANTI_ALIAS_FLAG` to make our shapes smooth.
+We'll need a paint object to draw on the canvas. Let's create it as a member of the class. We instantiate it with the `ANTI_ALIAS_FLAG` to make our shapes smooth.
 
 ```Kotlin
 private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -127,7 +130,7 @@ private var halfHeight = 0
 private var radius = 0
 ```
 
-We are going to use half the width and height of the view to determine the center of the circle.
+We're going to use half the width and height of the view to determine the center of the circle.
 
 Now add this code to get the attributes.
 
@@ -162,7 +165,7 @@ paint.apply { color = borderColor; style = Paint.Style.STROKE; strokeWidth = bor
 canvas?.drawCircle(halfWidth.toFloat(), halfHeight.toFloat(), radius.toFloat(), paint)
 ```
 
-We set the paint color to the `circleColor` variable and the style to fill and to draw the circle. The canvas' `drawCircle` method uses the paint object and the dimensions we calculated to draw the colored circle. For the border, we changed the paint style to stroke. This draws a circular border around our colored circle. That's all we need for our view class.
+We set the paint color to the `circleColor` variable and the style to fill and draw the circle. The canvas' `drawCircle` method uses the paint object and the dimensions we calculated to draw the colored circle. For the border, we changed the paint style to stroke. This draws a circular border around our colored circle. That's all we need for our view class.
 
 ### Step 5 — Adding the View to XML Layout
 Open the `activity_main.xml` file and add the view in this format.
@@ -192,7 +195,7 @@ We are done! Build and run your application on an emulator or an Android device.
 ![app](/engineering-education/android-custom-views-extending-view/app.png)
 
 ### Conclusion
-In this article, we have gone through creating a custom view by extending the view class. We have also seen how we can create custom attributes for our views and add them to our layout file. Custom views give an application's UI a unique look and feel. This helps developers build applications with a better user experience. You can get the full code on [GitHub](https://github.com/kayere/android-custom-views.git).
+In this article, we've gone through creating a custom view by extending the view class. We have also seen how we can create custom attributes for our views and add them to our layout file. Custom views give an application's UI a unique look and feel. This helps developers build applications with a better user experience. You can get the full code on [GitHub](https://github.com/kayere/android-custom-views.git).
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

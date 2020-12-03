@@ -5,7 +5,7 @@ Welcome to Section’s Engineering Education program. This program is dedicated 
 - Type of content that has been contributed
 - Topics you can begin working on
 
-Articles do not need to be Section-specific or strongly Section-related. This is not necessarily about Section or Edge Compute directly, but rather an effort to provide educational value to software developers within the diverse ecosystem of web technologies. 
+Articles do not need to be Section-specific or strongly Section-related. This is not necessarily about Section or Edge Compute directly, but rather an effort to provide educational value to software developers within the diverse ecosystem of web technologies. We are looking to create a pool of content will be unique from what is already readily available through the official docs. We need to be sure that the content is providing unique value that addresses a specific use case or challenge that developers face. 
 
 **Articles should be a minimum of 750 words.**
 
