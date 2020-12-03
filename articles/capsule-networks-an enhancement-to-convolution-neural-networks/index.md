@@ -4,7 +4,7 @@ Understanding how Convolutional Neural Networks (CNNs) work is key to understand
 
 ### Table of Contents
 
-1. [The Orientation Problem in Convolutional Neural Networks (CNNs)](#the-orientation-problem-in-convolutional-neural-network-cnns) 
+1. [The Orientation Problem in Convolutional Neural Networks (CNNs)](#the-orientation-problem-in-convolutional-neural-networks-cnns) 
 
 2. [The Pooling problem in CNNs](#the-pooling-problem-in-cnns) 
 
