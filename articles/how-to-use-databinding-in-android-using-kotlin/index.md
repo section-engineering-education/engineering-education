@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-to-use-databinding-in-android-using-kotlin/hero.png
     alt: Databinding Android Kotlin image
 ---
-If you have ever wondered if there is a way to link the `UI` directly to the `data source`?  You are in the right place. Repeating the dreaded `findViewbyID` statement in your code is tedious.
+If you have ever wondered if there is a way to link the `UI` directly to the `data source`?  You are in the right place. Repeating the dreaded `findViewbyID` statement in your code can be tedious.
 <!--more-->
 It takes so much time that one may end up forgetting variables' IDs. Well, there is a solution. That solution is `data binding`. We will learn how to implement this concept in this tutorial.
 
