@@ -41,7 +41,7 @@ Digital twins are created using digital twin technology. This technology integra
 Digital twin technology comprises certain characteristics such as connectivity, homogenization,  reprogrammability, digital traces, and modularity.
 
 #### Connectivity
-In digital twin technology, we embed connectivity between physical assets and their digital counterparts. We attach sensors to physical objects and to enhance connectivity with their digital representations. Data from the physical components is obtained and integrated via these sensors. This integration enables the sensors to communicate the collected data to a user.
+In digital twin technology, we embed connectivity between physical assets and their digital counterparts. We attach sensors to physical objects to enhance connectivity with their digital representations. Data from the physical components is obtained and integrated via these sensors. This integration enables the sensors to communicate the collected data to a user.
 
 #### Homogenization
 Digital technology is also characterized by the homogenization of data from physical components. This means that a digital representation that is similar to the physical object can be created using the collected data. This technology can also enable data to be decoupled from the physical artifacts.  
