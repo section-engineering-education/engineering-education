@@ -1,6 +1,6 @@
 Data integration developers require open source tools for synchronizing massive data collected from various platforms in the current data-driven world. Talent Open Studio (TOS) is an open-source application that provides user-friendly and cost-effective solutions for data integration. This application is needed in organizations to enhance data accuracy and improved decision making. 
 
-This article provides an overview of data integration in Talend Open Studio. It starts by introducing readers to Talend Open Studio and Talend data integration. The article has provided a step-by-step explanation of how this application can be installed. Various features have been explained to understand the basics of data integration in TOS.  
+This article provides an overview of data integration in Talend Open Studio. It starts by introducing readers to Talend Open Studio and Talend data integration. The article provides a step-by-step explanation of how this application can be installed. Various features have been explained to understand the basics of data integration in TOS.  
 
 ### Introduction to Talend Open Studio
 Talend Open Studio is an open-source application developed by Talend, a software integration vendor that provides big data, data quality, data preparation, and data integration solutions. 
@@ -9,7 +9,7 @@ It is one of the three main products offered by Talend. The other two products i
 
 In Talend Open Studio, data can be combined easily, converted, and updated in different locations. TOS supports data integration, big data, ESB, and ETL (extract, transform, load) implementations. 
 
-Talend Open Studio for data integration is an Eclipse-based tool. In this application, components can be dragged from the palette section of the Graphical User Interface (GUI) and connected to run ETL jobs. This tool enhances the automatic creation of Java codes for jobs. It is connected to various data sources such as Excel, Relational Database Management System (RDBMS), and Dropbox. 
+Talend Open Studio for data integration is an [Eclipse](https://en.wikipedia.org/wiki/Eclipse_(software))-based tool. In this application, components can be dragged from the palette section of the Graphical User Interface (GUI) and connected to run ETL jobs. This tool enhances the automatic creation of Java codes for jobs. It is connected to various data sources such as Excel, Relational Database Management System (RDBMS), and Dropbox. 
 
 ### Talend Data Integration
 Talend data integration is a process in which data from various sources is combined to provide meaningful information. Data integration in Talend Open Studio enhances the cleaning of data through some transformation. The cleaned data is then sent to a data warehouse. Various aspects of businesses can be improved by analyzing the integrated data.  
@@ -28,7 +28,7 @@ The Address has been given as Houston, Houston.
 
 The phone number has been given as 2815091234
 
-The information collected by all the customers (including Customer A) can be cleaned to provide meaningful information. In this case, Customer A’s new data form will look as follows.
+The information collected from all the customers (including Customer A) can be cleaned to provide meaningful information. In this case, Customer A’s new data form will look as follows.
 
 Given Name: KL
 
@@ -152,13 +152,24 @@ This part is below the design workspace. Some of the configuration tabs in the T
 ### Components of Talend Data Integration
 There are over 800 components in Talend Open Studio. The following are some of the essential elements of Talend data integration.
 - **tFileList:** Folder files are listed by this component with a specific mask pattern. 
-- **tMysqlConnection:** This component provides a connection to Mysql Database, which is an open-source solution for database management.
-- **tMysqlInput:** This component is used to run queries (including MySQL database query) and generate columns or tables. 
-- **tMysqlOutput:** data is inserted or updated in the Mysql database using this component.
+- **tMySQLConnection:** This component provides a connection to MySQL database, which is an open-source solution for database management.
+- **tMySQLInput:** This component is used to run queries (including MySQL database query) and generate columns or tables. 
+- **tMySQLOutput:** data is inserted or updated in the MySQL database using this component.
 - **tPrejob:** This component triggers a task that is necessary for the execution of jobs.
 - **tPostjob:** This component triggers a task after a job has been executed. 
 - **tLogcatcher:** It catches the errors and warnings in existing jobs. 
 - **tRowGenerator:** This is used for generating fields and rows using random values collected from a list. 
+
+### Examples of Companies That Use Talend Data Integration
+The following are some of the companies that have used Talend data integration.
+
+#### Air France-KLM
+[Air France-KLM](https://en.wikipedia.org/wiki/Air_France%E2%80%93KLM) is an airline company that was formed in 2004 after the merger of KLM and Air France. This airline has offices in France and Netherlands. Air France-KLM uses Talend to streamline information and improve the quality of customer data. 
+
+#### Bayer
+[Bayer](https://en.wikipedia.org/wiki/Bayer) is a large pharmaceutical company that provides healthcare and agricultural products. Its headquarters is in Leverkusen, Germany.
+
+This company uses Talend data integration to integrate its various databases into the data hub. Talend has also enabled the company to obtain clean clinical data, which expedites the process of establishing the right dosage. 
   
 ### Conclusion
 Talend Open Studio is an innovative software application that provides organizations with various features for data integration. In this application, jobs can be converted to Java code automatically without manual coding. It is also cost-effective and easy to use. 
