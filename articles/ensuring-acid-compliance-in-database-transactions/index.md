@@ -59,9 +59,9 @@ Say you want to withdraw $100 from your account, but you only have a balance of 
 #### Isolation
 ACID compliance databases guarantee the individuality of each transaction by ensuring that no transaction affects another transaction.
 
-The isolation property facilitates simultaneous transaction processing securely and independently and without interference. Isolation does not guarantee the transactions' order, meaning that any transaction can be executed first.
+The isolation property facilitates simultaneous transaction processing securely and independently and without interference. Isolation does not guarantee the transactions' order, meaning that it can execute any transaction first.
 
-For instance, say that you want to withdraw $70 and send your relative $50 from the same account with a balance of $200. Either you will be required to wait until your relative's transaction of $50 is complete (you will then withdraw from the remaining balance of $150).
+For instance, say that you want to withdraw $70 and send your relative $50 from the same account with a balance of $200. Either it will require you to wait until your relative's transaction of $50 is complete (you will then withdraw from the remaining balance of $150).
 
 Either that or your relative will have to wait for your transaction of $70 to complete (and your relative will then withdraw from the remaining balance of 130).
 
@@ -72,7 +72,7 @@ Every time portions of the database or the entire database are restarted, the sy
 
 Your relative can withdraw $50 only after your transaction is completed and updated in the database in the example above.
 
-Assuming that the system fails before your transaction is logged in the database, your relative cannot withdraw any money, and the account will return to its initial consistent state.
+Assuming that the system fails before it logs your transaction in the database, your relative cannot withdraw any money, and the account will return to its initial consistent state.
 
 ### How ACID works in practice
 There are various techniques used to enforce ACID compliance, as we will discuss below.
@@ -85,7 +85,7 @@ Imagine your computer loses power while you are in the middle of performing a tr
 
 When you restart your machine, the program will need to know the state of the operation before your computer powered off unexpectedly, that is, whether it failed, succeeded, or succeeded partially.
 
-The write-ahead log comes to ensure that the program checks this log and compares what it was expected to perform when it suddenly lost power to what it was able to execute.
+The write-ahead log comes to ensure that the program checks this log and compares what we expected it to perform when it suddenly lost power to what it could execute.
 
 With this basis, the program may keep things as they were, complete what it had started, or undo what it had started.
 
