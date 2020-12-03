@@ -1,25 +1,46 @@
-### How CSS works behind the scenes?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-css-works-behind-the-scenes/
+title: How does CSS works behind the scenes?
+description: In this article we
+author: peter-kayere
+date: 2020-10-02T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Before coming right onto the topic, we have to look at the first thing that happens while loading a website in the browser. The loading of the root HTML document. When the root HTML document is being loaded, it gets parsed. Parsing means taking the HTML code and then extracting valuable information from it. This includes information like the title of the page, header links, and the body content.
+  - url: /engineering-education/how-css-works-behind-the-scenes/hero.jpg
+    alt: k
+---
+Parsing means taking the HTML code and then extracting valuable information from it. This includes information like the title of the page, header links, and the body content.
+<!--more-->
+Before going right into the topic, we have to look at the first thing that happens while loading a website in the browser. When the root HTML document is being loaded, it is being parsed.
 
-After the HTML document's parsing, all the code is stored in DOM (Document Object Model). It describes the whole web page consisting of parents, children, and siblings. The header links that contain the CSS files are separated during the parsing. The separated CSS files go to the next step i,e. loading of the CSS files.
+After the HTML document is parsed, all the code is stored in DOM (Document Object Model). It describes the whole web page consisting of parents, children, and siblings. The header links that contain the CSS files are separated during parsing.
+
+The separated CSS files go to the next step i.e. loading the CSS files.
+
 ![Flowchart showing Parsing](/engineering-education/how-css-works-behind-the-scenes/parsing.png)
 
-After the loading of the CSS files, parsing of CSS occurs, like parsing of HTML but **there’s a small difference**. The parsing of CSS files takes place in two steps, and it is a bit more complex.
+After loading the CSS files, the parsing of CSS occurs, like the parsing of the HTML files but **there’s a small difference**. The parsing of CSS files takes place in two steps, and it's a bit more complex.
 
-The first step is:- **Resolving the CSS declarations conflicts**, and this step is also known as **Cascading**.
-and the second step is:- **Processing final CSS values.**
+The first step is: **Resolving the CSS declarations conflicts**, and this step is also known as **Cascading**.
 
-Now, let’s explain both the steps!!
+The second step is: **Processing final CSS values.**
 
-1. **Cascading**:- It means combining different CSS files while resolving issues like **conflicts between the different rules and declarations applied to the same element**. Sometimes, while writing CSS, some block of rules applies to certain elements, and some do not. This happens because **some styles have higher importance or specificity than the other.**
+Now, let’s explain both steps!!
 
-So, now let us learn about cascading in detail.
-Let me tell you, **there are three kinds of CSS**:-
+1. **Cascading**: It means combining different CSS files while resolving issues like **conflicts between the different rules and declarations applied to the same element**. Sometimes, while writing CSS, some block of rules applies to certain elements, and some do not. This happens because **some styles have higher importance or specificity than the other.**
 
-1. **Author CSS**:- The developer writes it.
-2. **User CSS**:- It includes styles like the font-size of any webpage that **the user can change** in the browser settings.
-3. **Browser CSS**:- Some styles are **pre-defined in the browser** like in the case of anchor tags. This is known as Browser CSS, and the work of cascade is to resolve the conflicts between the declarations coming from these three different CSS based on some factors:-
+Now let's learn about cascading in detail.
+
+**There are three kinds of CSS**:
+
+1. **Author CSS**: The developer writes it.
+2. **User CSS**: It includes styles like the font-size of any webpage that **the user can change** in the browser settings.
+3. **Browser CSS**: Some styles are **pre-defined in the browser** like in the case of anchor tags. This is known as Browser CSS, and the point of cascade is to resolve the conflicts between the declarations coming from these three different CSS based on some factors:
 
 1. ** Importance**
 2. ** Specificity**
@@ -33,19 +54,22 @@ So, cascade marks the importance of CSS styles based on the source they are comi
 > 4. User declarations.
 > 5. Browser declarations.
 
-Consider this example: we have a **button with a class button under the nav element**. We have conflicted the background-color property of this button as,
+Consider this example: We have a **button with a class button under the nav element**. We have conflicted the background-color property of this button as:
 
 ![Code snippet showing importance](/engineering-education/how-css-works-behind-the-scenes/importance-code.png)
 
 In this case, **the background-color property with the color red will be applied**. This is because it is **marked with an !important keyword**. This is how 'importance' is applied while cascading.
 
-Now, consider a situation when **two or more conflicting styles have the same importance**. In that case, **we use the specificity of the selectors** that we are using to style the element, and the selector specificity is given as:-
+Now, consider a situation when **two or more conflicting styles have the same importance**. In that case, **we use the specificity of the selectors** that we are using to style the element, and the selector specificity is given as:
 
 **Inline styles > IDs > Classes or Pseudo classes > elements or pseudo elements**
 
-Inline styles or **Inline CSS have the highest precedence because they are written in HTML documents** and not in the separate CSS files. Next comes when we select the element by its ID. Next is **selecting the element by its class, which has lower precedence than ID**. Finally, selecting the element by its name has the lowest precedence.
+Inline styles or **Inline CSS have the highest precedence because they are written in HTML documents** and not in the separate CSS files.
 
-We can find the specificity of any element based on the selectors we are using like this:- **(I, ID, C, E).**
+Next select the element by its ID. Next is **selecting the element by its class, which has lower precedence than ID**. Finally, selecting the element by its name has the lowest precedence.
+
+We can find the specificity of any element based on the selectors we are using like this: **(I, ID, C, E).**
+
 Consider this example, in which an element has been styled in a separate CSS file.
 
 ```css
@@ -59,23 +83,31 @@ Consider this example, in which an element has been styled in a separate CSS fil
 3. It has two classes, including **btn** and a pseudo-class **hover**, thus, C=2.
 4. And finally, it also has an element button, therefore E=1.
 
-**Thus, the selector specificity for this block of style will be (I, ID, C, E)=(0,1,2,1).**
+**Therefore, the selector specificity for this block of style will be (I, ID, C, E)=(0,1,2,1).**
 
-### Let’s create an example showing how it resolves the conflict.
-
+### Let’s create an example showing how it resolves the conflict
 ![Code snippet showing specificty](/engineering-education/how-css-works-behind-the-scenes/specificity-code.png)
 
-So, which style you think will be applied to the button. Let’s start by writing the specificity for all these styles.
+Let’s start by writing the specificity for all these styles:
+```
 (0, 0, 1, 0),
 (0, 0, 0, 2),
 (0, 1, 1, 1)
-As we can see that the **inline specificity is the same in all three**, so we will go to the next precedence, i.e., ID. Now **ID for 1st and 2nd is 0 except the 3rd block has 1**. Thus the 3rd block has a higher specificity than the rest 2. Now **we don’t even have to look at the other precedence, i.e., classes and elements**.
-So, in this case, the 3rd block of style will be applied the **background-color of the button will be blue.**
+```
 
-But, there can be a case **when ID can also be the same, so we will go to the next precedence until we find a winner**.
+As we can see that the **inline specificity is the same in all three**, so we will go to the next precedence, i.e., ID. Now **ID for 1st and 2nd is 0 except the 3rd block has 1**.
+
+Thus the 3rd block has a higher specificity than the rest 2.
+
+Now **we don’t even have to look at the other precedence, i.e., classes and elements**.
+
+In this case, the 3rd block of style will be applied to the **background - and color of the button will be blue.**
+
+But, there can be a case **when the ID can also be the same, so we will go to the next precedence until we find a winner**.
+
 In that case, we will go to the very last scene we have while resolving the conflicts, and that is **Source order**.
 
-If the last two scenarios, i.e., ** importance, and specificity fails, we decide the style by comparing the source order**. This means if two blocks have the same importance and specificity, then **the one written last will be applied.**
+If the last two scenarios, i.e., **importance, and specificity fails, we can decide the style by comparing the source order**. This means if two blocks have the same importance and specificity, then **the one written last will be applied.**
 
 **Important points to remember:**
 
