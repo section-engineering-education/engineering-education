@@ -1,4 +1,4 @@
-Often, you&#39;ll need to conduct some operations on your database (database transactions). You must complete these changes with care to ensure that you do not corrupt the database&#39;s data. Applying the ACID (atomicity, consistency, isolation, and durability) properties to database modifications is the best way to ensure the database&#39;s reliability, accuracy, and successful transactions.
+Often, you&#39;ll need to conduct some operations on your database (database transactions). You must complete these changes with care to ensure that you do not corrupt the database&#39;s data. Applying the ACID (atomicity, consistency, isolation, and durability) properties to database modifications is the best way to ensure database&#39;s reliability, accuracy, and successful transactions.
 
 In this article, we will have a look at database transactions and all the four components of ACID compliance.
 
@@ -30,13 +30,13 @@ Say you want to withdraw $100 from your account, but you only have a balance of 
 
 #### Isolation
 
-ACID compliance databases guarantee the individuality of each transaction by ensuring that no transaction affects another transaction. The isolation property facilitates simultaneous transaction processing securely and independently and without interference. Isolation does not guarantee the transactions&#39; order, meaning that any of the transactions can be executed first.
+ACID compliance databases guarantee the individuality of each transaction by ensuring that no transaction affects another transaction. The isolation property facilitates simultaneous transaction processing securely and independently and without interference. Isolation does not guarantee the transactions&#39; order, meaning that any transaction can be executed first.
 
 For instance, say that you want to withdraw $70 and your relative $50 from the same account with a balance of $200. Either you will be required to wait until your relative&#39;s transaction of $50 is complete (you will then withdraw from the remaining balance of $150). Or your relative will have to wait for your transaction of $70 to complete (your relative will then withdraw from the remaining balance of 130).
 
 #### Durability
 
-Durability guarantees that successfully completed transactions survive permanently, even in instances of system failure. This way, data within the database remains uncorrupted after a service crash, outage, or other failures. Every time portions of the database or the entire database are restarted, the system references [changelogs](https://en.wikipedia.org/wiki/Changelog#) to ensure transaction durability.
+Durability guarantees that completed transactions survive permanently, even in instances of system failure. This way, data within the database remains uncorrupted after a service crash, outage, or other failures. Every time portions of the database or the entire database are restarted, the system references [changelogs](https://en.wikipedia.org/wiki/Changelog#) to ensure transaction durability.
 
 Your relative can withdraw $50 only after your transaction is completed and updated in the database in the above example. Assuming that the system fails before your transaction is logged in the database, your relative cannot withdraw any money, and the account will return to its initial consistent state.
 
@@ -46,7 +46,7 @@ There are various techniques used to enforce ACID compliance, as discussed below
 
 The [write-ahead logging](https://www.postgresql.org/docs/9.1/wal-intro.html) (WAL) technique enforces integrity, durability, and atomicity by ensuring that all transaction details are first written to a log that includes undo and redo information. In case of a transaction failure, the database checks the log and compares its contents to the database&#39;s state before the transaction failure.
 
-Imagine your computer loses power while you are in the middle of performing a transaction. When you restart your machine, the program will need to know the state of the operation before your computer went off unexpectedly, that is, whether it failed, succeeded, or succeeded partially. The write-ahead log comes to ensure that the program checks this log and compares what it was expected to perform when it suddenly lost power to what it was actually able to execute. On this basis, the program may keep things as they are, complete what it had started, or undo what it had started.
+Imagine your computer loses power while you are in the middle of performing a transaction. When you restart your machine, the program will need to know the state of the operation before your computer went off unexpectedly, that is, whether it failed, succeeded, or succeeded partially. The write-ahead log comes to ensure that the program checks this log and compares what it was expected to perform when it suddenly lost power to what it was able to execute. On this basis, the program may keep things as they are, complete what it had started, or undo what it had started.
 
 Another technique to ensure ACID compliance is [shadow paging](https://www.geeksforgeeks.org/shadow-paging-dbms/). This [copy-on-write](https://www.computerhope.com/jargon/c/copy-on-write.htm#) technique avoids in-place page updates and instead allocates a shadow page when a page is modified. You can modify this shadow page liberally without minding consistency constraints because it has no references from other pages on disk. Pages that referred to the original page can only be updated to refer to the new page once the shadow page is ready to become durable. The page is considered automatic because it is activated only when it is ready.
 
@@ -56,8 +56,12 @@ In phase 1, all resource managers save transaction updates in stable storage. Se
 
 Phase 2 starts after a successful phase 1 and when all participants send an OK response. In this phase, all resource managers must commit, enabling [nodes](https://docs.oracle.com/cd/B10191_01/calendar.903/b10093/nodes.htm#) to log their commits in a record and notify the coordinator of the successful commits.
 
-In the case that phase 1 fails, phase 2 notifies resource managers to abort the transaction. In this event, servers will roll back, and each node will send feedback for successfully accomplished rollbacks.
+In the case that phase 1 fails, phase 2 notifies resource managers to abort the transaction. In this event, servers will roll back, and each node will send feedback for accomplished rollbacks.
 
 ### Conclusion
 
 ACID-compliant database management systems are maintained with utmost data security and integrity. Organizations can derive value from such databases and prevent data from being corrupted.
+
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
