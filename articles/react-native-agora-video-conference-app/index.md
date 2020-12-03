@@ -1,4 +1,4 @@
-In this tutorial, we'll build a Video Conference app with React Native and [Agora](https://www.agora.io/en/about-us/).
+In this tutorial, we will build a Video Conference app with React Native and [Agora](https://www.agora.io/en/about-us/).
 
 ### Goals
 
@@ -12,7 +12,7 @@ By the end of the tutorial, you’ll know:
 
 ### Prerequisites
 
-The fundamentals of React and React Native will not be covered in this tutorial. If you don't know the fundamentals, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
+The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, please refer to this [tutorial](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
 
@@ -27,7 +27,7 @@ Agora provides SDKs to build apps that require real-time engagement like:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
-Agora supports upto 1 million users in a channel. They also recommend to limit the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
+Agora supports up to 1 million users in a channel. They also recommend limiting the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
 
 Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
 
@@ -39,15 +39,15 @@ Here is the [documentation for React Native Agora](https://docs.agora.io/en/Vide
 
 We'll be going through these steps in this article,
 
-1. Creating an Agora account
-2. Development environment
-3. Clone the starter code
-4. Installing dependencies
-5. Pass channel ID while navigating
-6. Setting up the video conference
-7. Recap
+1. Creating an Agora account.
+2. Development environment.
+3. Clone the starter code.
+4. Installing dependencies.
+5. Pass channel ID while navigating.
+6. Setting up the video conference.
+7. Recap.
 
-> If you want to take a look at the final code, check out the [Github Repo](https://github.com/zolomohan/rn-agora-video-conference-app). I've made a commit for every step in this tutorial.
+> If you want to take a look at the final code, check out this [Github Repo](https://github.com/zolomohan/rn-agora-video-conference-app). I've made a commit for every step in this tutorial.
 
 ### Creating an Agora account
 
@@ -59,7 +59,7 @@ Fill in the details and create an account or you can signup with Google, Github,
 
 Click on New Project.
 
-You'll see this form. Fill out the Project Name and set the Authentication Mechanism to Testing.
+You'll see this form. Fill out the project name and set the authentication mechanism to testing.
 
 ![Agora New Project Form](agora_new_project.png)
 
@@ -71,11 +71,11 @@ Now, click on the closed eye icon near the App ID to reveal it and copy the App 
 
 ### Development environment
 
-> **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs need native modules that are not supported by Expo.
+> **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs require native modules that are not supported by Expo.
 
 You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the environment.
 
-Make sure you're follwing the React Native CLI Quickstart and not the Expo CLI Quickstart.
+Make sure you're following the React Native CLI Quickstart and not the Expo CLI Quickstart.
 
 ### Clone the starter code
 
@@ -83,7 +83,7 @@ To focus more on the Video conference, I've prepared a starter code. You can clo
 
 In the starter code, the Navigation is set up using a [Stack Navigator](https://reactnavigation.org/docs/stack-navigator/) with the Home screen and a dummy Video Conference Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
 
-The Home Screen has 2 buttons, Start and Join. The Join button has a text input associated with it to provide the channel ID to join the stream. When the text input is empty, the join button will be disabled.
+The Home Screen has 2 buttons, Start and Join. The join button has a text input associated with it to provide the channel ID to join the stream. When the text input is empty, the join button will be disabled.
 
 This is the Home Screen you'll see when you open the app.
 
@@ -134,7 +134,7 @@ pod install
 
 When we create or join a conference, we need to give a channel ID to Agora.
 
-For a new video conference, we'll generate a new channel ID. To join a conference, we'll use the channel ID from the text input. We need to pass the channel ID from the Home Screen to the Conference Screen.
+For a new video conference, we'll generate a new channel ID. To join a conference, we'll use the channel ID from the text input. We need to pass the channel ID from the Home Screen to the Conference Screen as a route prop.
 
 You can learn more about route props [here](https://reactnavigation.org/docs/route-prop/).
 
@@ -165,8 +165,6 @@ In the `createConference` function, we'll generate a new UUID and pass it as a r
 
 In the `joinConference` function, we'll pass the text input's value for the Channel ID.
 
-You can learn more about route props [here](https://reactnavigation.org/docs/route-prop/).
-
 ```JavaScript
 const createConference = () => navigation.navigate("Conference", { channel: uuid() });
 
@@ -180,7 +178,7 @@ You can learn more about the `useNavigation` hook which is present in the starte
 ### Setting up the video conference screen
 
 To use Agora, we need to install `react-native-agora`. There is a community managed package called `agora-rn-uikit` to help us build the UI.
-Here is the [Github Repository](https://github.com/AgoraIO-Community/ReactNative-UIKit) of `agora-rn-uikit`.
+Here is the [GitHub Repository](https://github.com/AgoraIO-Community/ReactNative-UIKit) of `agora-rn-uikit`.
 
 Let's install both the packages.
 
@@ -202,7 +200,7 @@ In `screens/Conference.js`, let's import the Agora UI Kit.
 import AgoraUIKit from "agora-rn-uikit";
 ```
 
-It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora Token Authentication [here](https://www.section.io/engineering-education/agora-express-token-server/).
+It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora token authentication [here](https://www.section.io/engineering-education/agora-express-token-server/).
 
 You can access the route prop like `props.route.params.propname`. In our case, it'll be `props.route.params.channel`.
 
@@ -216,11 +214,11 @@ export default function Conference(props) {
 }
 ```
 
-When you open this page now, you should be in the video conference and others should be able to join the conference.
+Now, when you open this page, you should be in the video conference and others should be able to join the conference.
 
-The app will prompt the user for camera and microphone permissions when you launch a conference for the first time.
+The app will prompt the user for the camera and microphone permissions when you launch a conference for the first time.
 
-When no one else is at the conference except you, you'll see the local feed. When others start to join the conference, you can view their remote feed.
+When no one else is at the conference except you, you'll see the local feed. When others start to join the conference, you'll see their remote feed.
 
 #### Callbacks
 
@@ -232,7 +230,9 @@ When someone joins the stream, you'll see two more buttons. These buttons will l
 
 ![Buttons](remote_buttons.jpg)
 
-Let's pass a callback function to navigate back to the home page when we press the End button.
+You can pass functions that'll get executed when the user interacts with the buttons. These custom functions are called callback functions.
+
+Let's pass a callback function to navigate back to the home page when the user presses the end button.
 
 To navigate back, we need to import the `useNavigation` hook from `@react-navigation/native`.
 
@@ -261,6 +261,21 @@ Here is the list of callbacks that you can pass for each button.
 - LocalMuteAudio
 - LocalMuteVideo
 
+For Example,
+
+```JavaScript
+const callbacks = {
+  EndCall: () => { /* Function Body */ },
+  FullScreen: () => { /* Function Body */ },
+  SwitchCamera: () => { /* Function Body */ },
+  SwapVideo: () => { /* Function Body */ },
+  UserMuteRemoteAudio: () => { /* Function Body */ },
+  UserMuteRemoteVideo: () => { /* Function Body */ },
+  LocalMuteAudio: () => { /* Function Body */ },
+  LocalMuteVideo: () => { /* Function Body */ },
+};
+```
+
 #### Styling
 
 You can pass styles as a prop to the component. You can style the container, the local buttons, and the remote buttons. Let's style our buttons to match the blue buttons on the home screen.
@@ -287,7 +302,7 @@ return <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} styleProps={stylePr
 
 Here is the list of styles that you can pass.
 
-- theme (Icon color of the Buttons)
+- theme (Icon color of the Buttons - Accepts a color)
 - BtnTemplateStyles
 - maxViewStyles
 - minViewStyles
@@ -305,8 +320,34 @@ Here is the list of styles that you can pass.
   - endCall
   - fullScreen
 
-#### Share channel ID
+For Example,
 
+```JavaScript
+const styles = {
+  theme: '#fff',
+  BtnTemplateStyles: { /* Styles */ },
+  maxViewStyles: { /* Styles */ },
+  minViewStyles: { /* Styles */ },
+  remoteBtnContainer:{ /* Styles */ },
+  localBtnContainer:{ /* Styles */ },
+  remoteBtnStyles: {
+    muteRemoteAudio: { /* Styles */ },
+    muteRemoteVideo: { /* Styles */ },
+    remoteSwap: { /* Styles */ },
+    minCloseBtnStyles: { /* Styles */ },
+  },
+  localBtnStyles: {
+    muteLocalAudio: { /* Styles */ },
+    muteLocalVideo: { /* Styles */ },
+    switchCamera: { /* Styles */ },
+    endCall: { /* Styles */ },
+    fullScreen: { /* Styles */ },
+  }
+}
+
+```
+
+#### Share channel ID
 Let's add a share button on the top right corner to share the channel ID.
 
 ```JavaScript
@@ -349,7 +390,7 @@ const styles = StyleSheet.create({
 
 Now, Let's import the `Share` component from React Native. The Share component has a method `share` on it, which accepts two arguments, `content` and `options`. We'll pass the channel ID in content like this:
 
-```
+```JavaScript
 { message: props.route.params.channel }
 ```
 
@@ -383,9 +424,9 @@ Pass the `onShare` function to the Share button's `onPress` prop.
 
 ### Let's Recap
 
-1. We set up our Agora Account
+1. We set up our Agora Account.
 
-2. We created a project using the Project Management Dashboard and acquired the App ID
+2. We created a project using the Project Management Dashboard and acquired the App ID.
 
 3. We cloned the starter code.
 
