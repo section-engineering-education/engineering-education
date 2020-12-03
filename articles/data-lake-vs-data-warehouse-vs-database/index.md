@@ -22,7 +22,7 @@ Depending on the data, the scope, and how it's used, an organization has the opt
 
 This article will go over data lakes, data warehouses, databases, their use cases, and future outlook to help you decide which best suits your goals, data strategy, and infrastructure.
 
-### Overview of a data lake
+### Overview of data lakes
 A data lake is a centralized storage repository that allows the storage of structured, unstructured, and semi-structured data.
 
 Data lakes allow you to store data in its original format (raw form) without the need of transforming or processing it at the time.
@@ -31,7 +31,7 @@ It's much cheaper and flexible to store data in a data lake than in a data wareh
 
 Some of the most popular data lakes are [Amazon S3](https://aws.amazon.com/s3/), [Google Cloud Storage](https://cloud.google.com/storage), and [Apache Hadoop](https://hadoop.apache.org/).
 
-### Overview of data warehouse
+### Overview of data warehouses
 A data warehouse refers to a storage location that hosts large amounts of structured data, from one or more sources, in a centralized place.
 
 Unlike a data lake that stores unprocessed data, data warehouse stores already filtered data processed for a specified purpose.
@@ -46,7 +46,7 @@ These organizations invest in data warehouses because of their ability to genera
 
 [Amazon Redshift](https://aws.amazon.com/redshift/), [Snowflake](https://www.snowflake.com/), [Yellowbrick](https://www.yellowbrick.com/), [Teradata](https://www.teradata.com/Products/Software/Database), [Microsoft Azure Synapse](https://azure.microsoft.com/en-us/services/synapse-analytics/), and [IBM Db2](https://www.ibm.com/support/knowledgecenter/SSCJDQ/com.ibm.swg.im.dashdb.doc/local_overview.html#) Warehouse are examples of cloud database solution providers.
 
-### Overview of database
+### Overview of databases
 A database is a storage repository that houses structured data. All related data is stored collectively in a database to ensure easy information access, management, and updating. A database has only one major purpose of storing data.
 
 Data was stored on tapes, mostly write-only, during the early computer days. These storage systems were bulky and slow; thus, data scientists saw the need for a modern database management system.
