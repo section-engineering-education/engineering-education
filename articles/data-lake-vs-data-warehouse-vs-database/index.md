@@ -6,7 +6,7 @@ url: /engineering-education/data-lake-vs-data-warehouse-vs-database/
 title: Comparison Between Data Lakes, Data Warehouses, & Databases
 description: This article will go over data lakes, data warehouses, databases, their use cases.
 author: eric-kahuha
-date: 2020-12-02T00:00:00-14:00
+date: 2020-12-02T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
