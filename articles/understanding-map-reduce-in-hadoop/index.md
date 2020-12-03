@@ -1,18 +1,18 @@
-MapReduce is a component of the Apache Hadoop ecosystem, which is a framework that enhances the processing of huge data. Other components of Apache Hadoop include Hadoop Distributed File System (HDFS), Yarn, and Apache Pig. 
+MapReduce is a component of the Apache Hadoop ecosystem, a framework that enhances massive data processing. Other components of Apache Hadoop include Hadoop Distributed File System (HDFS), Yarn, and Apache Pig. 
 
-The MapReduce component enhances the processing of huge data using dispersed and parallel algorithms in the Hadoop ecosystem. This programming model is applied in social platforms and e-commerce to analyze huge data collected from online users.
+The MapReduce component enhances the processing of massive data using dispersed and parallel algorithms in the Hadoop ecosystem. This programming model is applied in social platforms and e-commerce to analyze huge data collected from online users.
 
-This article provides an understanding of MapReduce in Hadoop. It will enable readers to gain insights on how huge volumes of data is simplified, and how MapReduce is used in real-life applications. 
+This article provides an understanding of MapReduce in Hadoop. It will enable readers to gain insights on how vast volumes of data is simplified and how MapReduce is used in real-life applications. 
 
 ### Introduction to MapReduce in Hadoop
-MapReduce is a Hadoop framework that is used for writing applications that can process huge amounts of data on large clusters. It can also be termed as a programming model in which large datasets can be processed across computer clusters. This application allows data to be stored in a distributed form. It simplifies huge volumes of data and large scale computing. 
+MapReduce is a Hadoop framework for writing applications that can process vast amounts of data on large clusters. It can also be termed a programming model in which large datasets can be processed across computer clusters. This application allows data to be stored in a distributed form. It simplifies huge volumes of data and large scale computing. 
 
-There are two main tasks in MapReduce: map and reduce. The map task is done first, followed by the reduce task. In the map job, the input dataset is split into chunks. Map task processes these chunks in a parallel manner. The map outputs are used as inputs for the Reduce tasks. The intermediate data from the maps are processed by reducers into smaller tuples, which reduce the tasks. This is the final output of the framework.
+There are two main tasks in MapReduce: map and reduce. The map task is done first, followed by the reduce task. In the map job, the input dataset is split into chunks. Map task processes these chunks in a parallel manner. The map outputs are used as inputs for the Reduce tasks. Reducers process the intermediate data from the maps into smaller tuples, which reduce the tasks. This is the final output of the framework.
 
 The MapReduce framework enhances the scheduling and monitoring of tasks. The failed tasks are re-executed by the framework. This framework can be used easily, even by programmers with little expertise in distributed processing. MapReduce can be implemented using various programming languages such as Java, Hive, Pig, Scala, and Python. 	
  
 ### How MapReduce in Hadoop works
-An overview of MapReduce Architecture and the phases of MapReduce will help us to understand how MapReduce in Hadoop works. 
+An overview of MapReduce Architecture and MapReduce's phases will help us understand how MapReduce in Hadoop works. 
 
 #### MapReduce Architecture
 The following diagram shows a MapReduce architecture.
@@ -23,18 +23,18 @@ The following diagram shows a MapReduce architecture.
 
 MapReduce architecture consists of various components. A brief description of these components can improve our understanding of how MapReduce works. 
 - **Job:** This is an execution of a reducer or mapper across a dataset.
-- **Task:** This is an execution of a reducer or mapper on a section of data
+- ** task:** This is an execution of a reducer or mapper on a section of data
 - **Job Tracker:** This tracker plays the role of scheduling jobs and tracking all jobs assigned to the task tracker.
 - **Task Tracker:** This tracker plays the role of tracking tasks and reporting the status of tasks to the job tracker.  
-- **Input data:** This is the data that is used for processing in the mapping phase.
+- **Input data:** This is the data used for processing in the mapping phase.
 - **Output data:** This is the result of mapping and reducing.
-- **Client:** The MapReduce receives jobs from clients. It can receive jobs from many clients. 
+- **Client:** The MapReduce receives jobs from clients. It can accept jobs from many clients. 
 - **Hadoop MapReduce Master:** This plays the role of dividing jobs into job-parts.
 - **Job-parts:** These are sub-jobs that result from the division of the main job. 
 
-In the MapReduce architecture, jobs are submitted by clients to the MapReduce Master. This master will then sub-divide the job into equal sub-parts. The job-parts will be used for the two main tasks in MapReduce: mapping and reducing. The developer will write logics that satisfy the requirements of the organization or company. The input data will be split and mapped.
+In the MapReduce architecture, jobs are submitted by clients to the MapReduce Master. This master will then sub-divide the job into equal sub-parts. The job-parts will be used for the two main tasks in MapReduce: mapping and reducing. The developer will write logics that satisfies the requirements of the organization or company. The input data will be split and mapped.
 
-The intermediate data will then be sorted and merged. The resulting output will be processed by the reducer, which will generate a final output that will be stored in the HDFS.
+The intermediate data will then be sorted and merged. The resulting output will be processed by the reducer, which will generate a final output stored in the HDFS.
 
 The following diagram shows a simplified flow diagram for the MapReduce program. 
 
@@ -45,17 +45,17 @@ The following diagram shows a simplified flow diagram for the MapReduce program.
 #### How Job Trackers and Task Trackers Work
 Every job consists of two main components: mapping task and reducing task. The map task plays the role of splitting jobs into job-parts and mapping intermediate data. The reduce task plays the role of shuffling and reducing intermediate data into smaller units. 
 
-The job tracker acts as a master. It ensures that all jobs are executed. The job tracker schedules jobs that have been submitted by clients. It will assign jobs to task trackers. Each task tracker consists of a map task and reduce task. Task trackers report the status of each assigned job to the job tracker. The following diagram provides a summary of how job trackers and task trackers work. 
+The job tracker acts as a master. It ensures that all jobs are executed. The job tracker schedules jobs that have been submitted by clients. It will assign jobs to task trackers. Each task tracker consists of a map task and reduces the task. Task trackers report the status of each assigned job to the job tracker. The following diagram provides a summary of how job trackers and task trackers work. 
 
 ![Job Trackers and Task Trackers](/engineering-education/understanding-mapreduce-in-hadoop/job-trackers-and-task-trackers.png)
 
 [Image Source: CNBlogs](https://images2015.cnblogs.com/blog/222972/201512/222972-20151215101500256-2116703561.png)
 
 #### Phases of MapReduce
-The MapReduce program is executed in three main phases: mapping, shuffling and reducing. There is also an optional phase known as combiner phase.
+The MapReduce program is executed in three main phases: mapping, shuffling, and reducing. There is also an optional phase known as the combiner phase.
 
 ##### Mapping Phase
-This is the first phase of the program. There are two steps in this phase: splitting and mapping. In this phase, a dataset is split into equal units called chunks. These chunks can be termed as input splits. The input splits are used by MapReduce as inputs. They are composed of two parts: keys and values. In the mapping step, the required action is performed using these subsets. This step contains a coding logic that is applied to a specific number of data blocks. The output of this phase is in the form of keys and values (k, v). 
+This is the first phase of the program. There are two steps in this phase: splitting and mapping. In this phase, a dataset is split into equal units called chunks. These chunks can be termed as input splits. MapReduce uses the input splits as inputs. They are composed of two parts: keys and values. In the mapping step, the required action is performed using these subsets. This step contains a coding logic that is applied to a specific number of data blocks. The output of this phase is in the form of keys and values (k, v). 
 
 ##### Shuffling Phase
 This is the second phase that takes place after the completion of the Mapping phase. It consists of two main steps: sorting and merging. In the sorting step, the key-value pairs are sorted using the keys. Merging ensures that key-value pairs are combined. 
@@ -81,7 +81,7 @@ The following diagram shows how all the four phases of MapReduce have been appli
 [Image Source: Cloud Front](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2017/05/mapreduce-job-execution-flow-1-1024x492-1.jpg)
 
 ### Benefits of Hadoop MapReduce
-* **Speed:** MapReduce can process huge unstructured data within a short time. 
+* ** speed:** MapReduce can process huge unstructured data within a short time. 
 * **Fault-tolerance:** The MapReduce framework can handle failures. 
 * **Cost-effective:** Hadoop has a scale-out feature that enables users to process or store data in a cost-effective manner. 
 * **Scalability:** Hadoop provides a highly scalable framework. MapReduce allows users to run applications from many nodes.
@@ -112,6 +112,7 @@ This programming model is a suitable tool for analyzing usage patterns on websit
 [Medium](https://medium.com/@elmaslouhy.mouaad/understanding-hadoop-mapreduce-f3e206cc3598)
 
 
-
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
 
