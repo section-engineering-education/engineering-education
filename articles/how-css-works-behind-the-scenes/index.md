@@ -111,7 +111,7 @@ If the last two scenarios, i.e., **importance, and specificity fails, we can dec
 
 **Important points to remember:**
 
-1. Do not use **!important** until it should not be given the highest priority.
+1. Do not use **!important keyword** until it should be given the highest priority.
 
 2. Rather than using !important, use the selector specificity carefully.
 
