@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/data-lake-vs-data-warehouse-vs-database/hero.jpg
     alt: data lakes warehouses databases example image
 ---
-Most of today's organizations collect and process large amounts of data daily. But this data can only bring value if the organization derives valuable insights from the data.
+Most of todays organizations collect and process large amounts of data daily. But this data can only bring value if the organization derives valuable insights from the data.
 <!--more-->
 A major factor in the success of a big data strategy is choosing the right technology to enable data storage, search, analysis, and report generation.
 
