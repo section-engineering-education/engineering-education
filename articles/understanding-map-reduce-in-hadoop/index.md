@@ -28,7 +28,7 @@ MapReduce architecture consists of various components. A brief description of th
 - **Task Tracker:** This tracker plays the role of tracking tasks and reporting the status of tasks to the job tracker.  
 - **Input data:** This is the data used for processing in the mapping phase.
 - **Output data:** This is the result of mapping and reducing.
-- **Client:** This is a program or Application Programming Interface (API) that submits jobs to the MapReduce. The MapReduce can accept jobs from many clients. 
+- **Client:** This is a program or Application Programming Interface (API) that submits jobs to the MapReduce. MapReduce can accept jobs from many clients. 
 - **Hadoop MapReduce Master:** This plays the role of dividing jobs into job-parts.
 - **Job-parts:** These are sub-jobs that result from the division of the main job. 
 
@@ -55,7 +55,7 @@ The job tracker acts as a master. It ensures that all jobs are executed. The job
 The MapReduce program is executed in three main phases: mapping, shuffling, and reducing. There is also an optional phase known as the combiner phase.
 
 ##### Mapping Phase
-This is the first phase of the program. There are two steps in this phase: splitting and mapping. In the splitting step, a dataset is split into equal units called *chunks* *(input splits)*.Hadoop consists of a [RecordReader](https://techvidvan.com/tutorials/hadoop-recordreader-introduction/) that uses TextInputFormat to transform input splits into [key-value pairs](https://searchenterprisedesktop.techtarget.com/definition/key-value-pair). The key-value pairs are then used as inputs in the mapping step. This is the only data format that a mapper can read or understand. The mapping step contains a coding logic that is applied to these data blocks. In this step, the mapper processes the key-value pairs and produces an output of the same form (key-value pairs). 
+This is the first phase of the program. There are two steps in this phase: splitting and mapping. A dataset is split into equal units called *chunks* *(input splits)* in the splitting step.Hadoop consists of a [RecordReader](https://techvidvan.com/tutorials/hadoop-recordreader-introduction/) that uses TextInputFormat to transform input splits into [key-value pairs](https://searchenterprisedesktop.techtarget.com/definition/key-value-pair). The key-value pairs are then used as inputs in the mapping step. This is the only data format that a mapper can read or understand. The mapping step contains a coding logic that is applied to these data blocks. In this step, the mapper processes the key-value pairs and produces an output of the same form (key-value pairs). 
 
 ##### Shuffling Phase
 This is the second phase that takes place after the completion of the Mapping phase. It consists of two main steps: sorting and merging. In the sorting step, the key-value pairs are sorted using the keys. Merging ensures that key-value pairs are combined. 
@@ -101,7 +101,7 @@ The MapReduce programming tool can evaluate certain information on social media 
 Netflix uses MapReduce to analyze the clicks and logs of online customers. This information helps the company to suggest movies based on customers’ interests and behavior. 
 
 ### Conclusion
-MapReduce is an important processing component of the Hadoop framework. It is a quick, scalable, and cost-effective program that can help data analysts and developers to process huge data. 
+MapReduce is a crucial processing component of the Hadoop framework. It is a quick, scalable, and cost-effective program that can help data analysts and developers to process huge data. 
 
 This programming model is a suitable tool for analyzing usage patterns on websites and e-commerce platforms. Companies providing online services can utilize this framework to improve their marketing strategies. 
 
