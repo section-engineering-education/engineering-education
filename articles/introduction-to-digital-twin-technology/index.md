@@ -118,3 +118,6 @@ In the future, digital twin technology will have a major influence on customer a
 [The Innovation Enterprise](https://channels.theinnovationenterprise.com/articles/a-beginner-s-guide-to-digital-twin-technology)
 
 [Anylogic](https://www.anylogic.com/resources/white-papers/an-introduction-to-digital-twin-development/)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
