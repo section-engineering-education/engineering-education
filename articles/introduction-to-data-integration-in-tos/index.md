@@ -118,7 +118,7 @@ There are four sections or parts in the GUI of Talend Open Studio. These are the
 ![The GUI of TOS](/engineering-education/introduction-to-data-integration-in-talend-open-studio/the-gui-of-tos.jpg)
 
 #### The Repository
-The repository displays a tree structure of all the technical items used in designing jobs or describing business models. It is situated at the top left side of the GUI. Some of the things that can be accessed through the repository include job designs, documentation, database connections, business models, and reusable routines. It merely is a central store for items that are important for business modeling or job design in a project.
+The repository displays a tree structure of all the technical items used to design jobs or describe business models. It is situated at the top left side of the GUI. Some of the things that can be accessed through the repository include job designs, documentation, database connections, business models, and reusable routines. It merely is a central store for items that are important for business modeling or job design in a project.
 
 If you want to create your first job in TOS, you should click on ‘Job Design’ in the repository section and then ‘Create Job’. 
 
@@ -146,13 +146,13 @@ This part is below the design workspace. Some of the configuration tabs in the T
 
 - **Job tab:** This tab provides important information regarding the current job. This includes creation date, creation time, name, and version.
 - **Context tab:** Context variables are set using this tab. A context tab sets different contexts that will be used in the job design.
-- **Component tab:** This tab shows or displays the parameters needed in the configuration of components.
+- **Component tab:** This tab shows or displays the parameters needed in the components' configuration.
 - **Run tab:** This tab displays logs such as error, start, and end messages. It shows the progress of a job that is being executed.
   
 ### Components of Talend Data Integration
 There are over 800 components in Talend Open Studio. The following are some of the essential elements of Talend data integration.
 - **tFileList:** Folder files are listed by this component with a specific mask pattern. 
-- **tMySQLConnection:** This component provides a connection to MySQL database, which is an open-source solution for database management.
+- **tMySQLConnection:** This component provides a connection to the MySQL database, which is an open-source solution for database management.
 - **tMySQLInput:** This component is used to run queries (including MySQL database query) and generate columns or tables. 
 - **tMySQLOutput:** data is inserted or updated in the MySQL database using this component.
 - **tPrejob:** This component triggers a task that is necessary for the execution of jobs.
@@ -164,12 +164,12 @@ There are over 800 components in Talend Open Studio. The following are some of t
 The following are some of the companies that have used Talend data integration.
 
 #### Air France-KLM
-[Air France-KLM](https://en.wikipedia.org/wiki/Air_France%E2%80%93KLM) is an airline company that was formed in 2004 after the merger of KLM and Air France. This airline has offices in France and Netherlands. Air France-KLM uses Talend to streamline information and improve the quality of customer data. 
+[Air France-KLM](https://en.wikipedia.org/wiki/Air_France%E2%80%93KLM) is an airline company formed in 2004 after the merger of KLM and Air France. This airline has offices in France and the Netherlands. Air France-KLM uses Talend to streamline information and improve the quality of customer data. 
 
 #### Bayer
-[Bayer](https://en.wikipedia.org/wiki/Bayer) is a large pharmaceutical company that provides healthcare and agricultural products. Its headquarters is in Leverkusen, Germany.
+[Bayer](https://en.wikipedia.org/wiki/Bayer) is a large pharmaceutical company that provides healthcare and agricultural products. Its headquarters are in Leverkusen, Germany.
 
-This company uses Talend data integration to integrate its various databases into the data hub. Talend has also enabled the company to obtain clean clinical data, which expedites the process of establishing the right dosage. 
+This company uses Talend data integration to integrate its various databases into the data hub. Talend has also enabled the company to obtain clean clinical data, which expedites establishing the right dosage. 
   
 ### Conclusion
 Talend Open Studio is an innovative software application that provides organizations with various features for data integration. In this application, jobs can be converted to Java code automatically without manual coding. It is also cost-effective and easy to use. 
