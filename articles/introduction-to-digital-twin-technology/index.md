@@ -62,10 +62,10 @@ The digital twin technology is applied in various industries. The following are 
 Digital twins are used for replicating the physical processes in manufacturing companies. Digital technology enhances the interaction of virtual objects and physical objects in the factory. When there are problems in the actual physical processes, engineers assess the digital twin to trace the origin and nature of the problem. Digital twins in manufacturing can also be used to improve processes.
 
 #### Health care
-Through digital twin technology, personalized models can be created by health professionals to improve medical care. These professionals can use the digital twin of organs or patients (instead of real patients) to practice important health procedures.
+Through digital twin technology, health professionals can create personalized models to improve medical care. These professionals can use the digital twin of organs or patients (instead of real patients) to practice important health procedures.
 
 #### Urban Planning
-Digital twin technology is important in the planning of smart urban cities. Digital twins are used for modeling urban cities and related data. This technology has also enhanced the digitization of related activities such as construction, maintenance, and operation of urban projects. The built project is integrated with its digital replica to enhance optimal performance.
+Digital twin technology is important in the planning of smart urban cities. Digital twins are used for modeling urban cities and related data. This technology has also enhanced the digitization of related activities such as construction, maintenance, and operation of urban projects. It integrates the built project with its digital replica to enhance optimal performance.
 
 #### Automotive industry
 Automobile companies use digital twin technology to create digital twins of their cars. These digital twins enable these companies to showcase how real cars operate. In case improvements are needed in the current car models, engineers will use the digital twins to suggest new features that can improve their performance.
@@ -78,7 +78,7 @@ Automobile companies use digital twin technology to create digital twins of thei
 Digital twin technology enables companies to virtualize their product packages before the actual packaging takes place. This helps in reducing errors in packaging. Logistics companies can also use this type of technology to assess material feasibility, design effective warehouse layouts, and create feasible logistics networks.
 
 ### Why Digital Technology is Important
-Digital technology should be considered by organizations for various reasons. It enables companies to develop a digital footprint of the entire product life cycle. Companies can use the digital copy of their products to perform product improvements. They can also utilize digital twin technology to develop virtual prototypes of new products. The digital twin created by a company enables it to drive value through improved models and reduced defects.
+There are various reasons why digital twin technology is important to organizations. It enables companies to develop a digital footprint of the entire product life cycle. Companies can use the digital copy of their products to perform product improvements. They can also utilize digital twin technology to develop virtual prototypes of new products. The digital twin created by a company enables it to drive value through improved models and reduced defects.
 
 A digital twin enables a company to detect problems in a product or manufacturing process. Through digital technology, outcomes can be predicted effectively with a high level of accuracy. With this technology, there is faster realization of value than before.
 
@@ -87,7 +87,7 @@ Digital twin technology works by integrating artificial intelligence, internet o
 
 Physical products, devices, processes or equipment are built with sensors to collect data. A cloud-based system is used to send this data to the digital world. Machine learning algorithms are then used to analyze the collected data. This analysis generates actionable information that creates a digital copy of the physical world (physical asset, product or process).
 
-Insights are also generated to signify areas that need change in the physical process or product. Continuous analysis of real-time data ensures that the digital twin is up to date with the current state of the physical world.
+The digital twin generates insights to signify areas that need change in the physical process or product. Continuous analysis of real-time data ensures that the digital twin is up to date with the current state of the physical world.
 
 The digital twin model of a manufacturing process gives a good example of how digital technology works. In this case, the digital twin provides a virtual representation of what happens in the factory in real-time. The following diagram shows how this digital twin model works.
 
