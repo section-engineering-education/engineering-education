@@ -94,7 +94,69 @@ We then use a try-catch block to execute our job i.e get a user and save them to
 And with that, our work is ready to go!
 
 ### Step 3 - Scheduling the work
+The next step is to register the work and set it rolling.
+
+First we create a workManager instance and pass in a context.
+
+```Kotlin
+// WorkManager instance
+private val manager = WorkManager.getInstance(application)
+```
+
+Then we create our constraints. These are conditions that are required in order for our work to be done. Constraints range from Network availability to the battery power in the device. In our case, we will require the device's battery level not be low and for the device to be connected to the internet.
+
+```Kotlin
+// Our work constraints
+private val constraints = Constraints.Builder()
+    .setRequiredNetworkType(NetworkType.CONNECTED)
+    .setRequiresBatteryNotLow(true)
+    .build()
+```
+
+You can explore more constraints by checking the `Constraints.java` file available in the library.
+
+**NOTE: To access the library file and other core framework files, hold the `ctrl`/`cmd` key and click the `Constraints` object.**
+
+The only thing remaining is creating the work and setting the constraints. With WorkManager, there are two types of jobs.
+
+**1. One time work**
+This is work/job that is run only once. It is created using the `OneTimeWorkRequest` class which takes one parameter, i.e our worker class. We create one in our code and name it `oneTimeWorker`. We set constraints using the `.setConstraints()` method and pass in our constraints.
+
+```Kotlin
+  // Define OneTime work
+  private val oneTimeWorker = OneTimeWorkRequest.Builder(Work::class.java)
+      .setConstraints(constraints)
+      .build()
+```
+
+**2. Periodic work**
+Sometimes we may need the work to be run at intervals. In this case, we use the `PeriodicWorkRequest` class. This takes in three parameters i.e our worker class, the interval and the TimeUnit. Add the following in your code.
+
+```Kotlin
+// Define Periodic work
+private val periodicWork = PeriodicWorkRequest.Builder(Work::class.java, 15, TimeUnit.MINUTES)
+    .setConstraints(constraints)
+    .build()
+```
+
+We set our time interval to 15 minutes. This is the minimum interval defined in the [documentation](https://developer.android.com/reference/kotlin/androidx/work/PeriodicWorkRequest).
+
+To start our work, we pass in the defined work into the workManager instance we created. We call the `enqueue()` method and pass in our work. Since we have multiple jobs defined, we can pass in a list as a parameter. Create a function called `startWork()` and add the following code.
+
+```Kotlin
+fun startWork(){
+    manager.enqueue(listOf(oneTimeWorker, periodicWork))
+}
+```
+
+This starts the work for us automatically provided the constraints are met.
+
+Sometimes you may want to chain work i.e start with one job and after completion, begin a second job. The we make use of `beginWith()` and `then()` methods. Each of these methods receives one job as a parameter. They however receive work on `OneTimeWorkRequest` type only. So periodic work cannot be used in a chain.
 
 ### Step 4 - Finishing up
+Now that we have our work completely set up. You can go ahead and follow through the repository to check the UI setup.
+
+Once the application starts, it calls the `startWork` function which starts our work. This starts both the oneTimeWork and periodicWork. The one time work completes immediately and adds one user to the Room database. The periodicWork also starts by adding one user to the database and another user after 15 minutes. So after 2 hours, the periodicWork will have added 8 users. On the first run the application should show 2 users. One from the oneTimeWork and another from the periodicWork.
 
 ### Conclusion
+With that, you have the basic information about WorkManager. As you can see, it is easier to schedule background tasks. You are able to run tasks like network calls even if the application closes. A good use case could be backing up data on a different network. This can be done when some constraints are met and you have the assurance of your work being done. Go ahead and clone the [repo](https://github.com/LinusMuema/kotlin/tree/workManager) and run the application. Feel free to raise a PR or an issue with any updates.
