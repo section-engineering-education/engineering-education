@@ -219,7 +219,9 @@ The very constrained string "email" can be represented by "\w+" and the string "
 
 Piecing it all together, our email ID validator goes like
 
+```py
 '^[a-z0-9]+[\\.\_]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+```
 
 On testing it out,
 
