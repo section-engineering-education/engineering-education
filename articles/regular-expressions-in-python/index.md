@@ -173,7 +173,7 @@ The metacharacteres mentioned above can be interpreted as follows:
     # Output - ['there']
     ```
 
-7. Finally, the "\" is an important metacharacter. It is used to represent pre-defined character sets that are common. The following are a few special sequences:
+7. Finally, the "\\" is an important metacharacter. It is used to represent pre-defined character sets that are common. The following are a few special sequences:
 
     - \d - Matches decimal numbers; same as [0-9].
     
