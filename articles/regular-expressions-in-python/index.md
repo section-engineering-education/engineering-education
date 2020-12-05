@@ -1,6 +1,6 @@
 ### Regular Expressions in Python
 
-A Regular Expression (also called a RegEx) has put a lot of programmers in a bit of a hassle. A casual conversation with a professional with 15 years of programming experience under his belt revealed that he practiced RegExes everyday for a year to wrap his head around the syntax without having to looking it up. This is a small attempt from my end (hopefully not a disastrous one) to dive into regular expressions using Python.
+A Regular Expression (RegEx) has put a lot of programmers in a bit of a hassle. A casual conversation with a professional with 15 years of programming experience under his belt revealed that he practiced RegExes everyday for a year to wrap his head around the syntax without having to looking it up. This is a small attempt from my end (hopefully not a disastrous one) to dive into regular expressions using Python.
 
 ### Table of Contents
 
@@ -14,19 +14,19 @@ A Regular Expression (also called a RegEx) has put a lot of programmers in a bit
 
 ### Introduction
 
-RegExes is a tiny programming language in itself. It is more of a formal grammar used to parse strings than a programming language. Like any other programming language, RegEx has a syntax and a specific RegEx can be used to match all strings following that specific format. Webscraping and data cleaning are among the [numerous applications](https://www.analyticsvidhya.com/blog/2020/01/4-applications-of-regular-expressions-that-every-data-scientist-should-know-with-python-code/#:~:text=Regular%20Expressions%20are%20useful%20for,data%20extraction%20and%20what%20not!) of this string-matching engine. 
+A Regular Expression (or RegEx) is a tiny programming language in itself. It's more of a formal grammar used to parse strings than a programming language. Like any other programming language, RegEx has a syntax and a specific RegEx can be used to match all strings following that specific format. Webscraping and data cleaning are among the [numerous applications](https://www.analyticsvidhya.com/blog/2020/01/4-applications-of-regular-expressions-that-every-data-scientist-should-know-with-python-code/#:~:text=Regular%20Expressions%20are%20useful%20for,data%20extraction%20and%20what%20not!) of this string-matching engine. 
 
-The question begs to be asked - Why go for a complex, difficult-to-interpret piece of code when one can easily iterate through the string and check for the conditions?
+The question begs to be asked - why go for a complex, difficult-to-interpret piece of code when one can easily iterate through the string and check for the conditions?
 
 ### Reason for Regular Expressions
 
-Remember those websites where your password must be between 8-12 characters with atleast one capital letter, one small letter and one number? You miss any one of those, and your password is invalid. In the backend, every attempt you take at making a password is matched with a RegEx and ensures your password follows the right format.
+Remember those websites where your password must be between 8-12 characters with atleast a capital letter, a small letter, a number and a special character? You miss any one of those, and your password is invalid. In the backend, every attempt you take at making a password is matched with a RegEx and ensures your password follows the right format.
 
 The computational resources wasted while scaling up the format checks when if-elif-else comparisons are used instead of RegExes is quite significant.
 
 And it doesn't just stop there.
 
-With the help of RegExes, your code becomes clean. Faster computation translates to faster validation. And RegExes are fairly standard. If you're able to grasp a specific implementation of a RegEx, all it takes is minor tweaks to switch between different implementations. RegExes can be used in multiple ways – replacing substrings, finding substrings, splitting strings - all at the expense of a set of brackets and alphabets and symbols. What started off as a theoretical concept in computer science has helped Wall Street financial analysts save thousands of man hours in extracting relevant financial and statistical data from from relevant documents like quarterly reports and quarterly earnings.
+With the help of RegExes, your code becomes clean. Faster computation translates to faster validation. And RegExes are fairly standard. If you're able to grasp a specific implementation of a RegEx, all it takes is minor tweaks to switch between different implementations. RegExes can be used in multiple ways: replacing substrings, finding substrings, splitting strings - all at the expense of a set of brackets and alphabets and symbols. What started off as a theoretical concept in computer science has helped Wall Street financial analysts save thousands of man hours in extracting relevant financial and statistical data from from relevant documents like quarterly reports and quarterly earnings.
 
 In a nutshell, the effort's worth it.
 
@@ -38,7 +38,7 @@ Efficient and effective? Check.
 
 But how do these work?
 
-The key behind these enhancements is a small yet powerful concept called Finite State Machines. A [finite state machine](https://en.wikipedia.org/wiki/Finite-state_machine) is an abstract machine that contains states. These states can be initial states, final states or intermediate states. A transition function takes the present state as inputs and returns the appropriate output event - but not without transitioning through the other intermediate states. There are two types of FSMs - [Deterministic Finite Machine](https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm) and [Non Deterministic Finite Machine)](https://www.tutorialspoint.com/automata_theory/non_deterministic_finite_automaton.htm). A real-life example of a finite state machine would be the working of a vending machine, wherein certain steps must be followed in a specific order for dispensing candy according to the amount inserted in the slot. 
+The key behind these enhancements is a powerful concept called Finite State Machines. A [finite state machine](https://en.wikipedia.org/wiki/Finite-state_machine) is an abstract machine that contains states. These states can be initial states, final states or intermediate states. A [state-transition table](https://en.wikipedia.org/wiki/State-transition_table) takes the present state as inputs and returns the appropriate output event - but not without transitioning through the other intermediate states. There are two types of FSMs - [Deterministic Finite Machine](https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm) and [Non Deterministic Finite Machine)](https://www.tutorialspoint.com/automata_theory/non_deterministic_finite_automaton.htm). The working of a vending machine can be represented as a Finite State Machine, where certain steps must be followed in a specific order for dispensing candy according to the amount inserted in the slot. 
 
 ![Finite State Machine](/engineering-education/regular-expressions-in-python/fsm.png)
 
@@ -77,147 +77,149 @@ Python's RegEx module offers a set of functions that search for a string for a m
 - split	    - Splits the source string by the occurrences of the pattern and returns a list containing the resulting substrings
 - sub	    - Replaces one or many matches in the source string
 
-Square brackers denote a character class, a set of characters that are to be matched. "[abef]" maps to any one of "a", "b", "e", "f". If the comparison is for a character within a range, the starting and the ending characters must be specified within the square brackets, separated by a "-". "[a-z]" maps to any character in lowercase and "[A-Z]" maps to any character in uppercase.
+The metacharacteres mentioned above can be interpreted as follows:
 
-```py
-test_string = "I d0n't want any num6er 1n th1s 5tr1ng"
-regex = re.findall("[0-9]",test_string)
-if regex:
-    print("There is(are) number(s) in the string")
-else:
-    print("There are no numbers in this string")
+1. Square brackers denote a character class, a set of characters that are to be matched. "[abef]" maps to any one of "a", "b", "e", "f". If the comparison is for a character within a range, the starting and the ending characters must be specified within the square brackets, separated by a "-". "[a-z]" maps to any character in lowercase and "[A-Z]" maps to any character in uppercase.
 
-# Output - There is(are) number(s) in the string
-```
+    ```py
+    test_string = "I d0n't want any num6er 1n th1s 5tr1ng"
+    regex = re.findall("[0-9]",test_string)
+    if regex:
+        print("There is(are) number(s) in the string")
+    else:
+        print("There are no numbers in this string")
 
-Another rule that metacharacters enforce is that they do not have any effect in a character class unless it starts with a metacharacter. A complement of a character class is denoted by the metacharacter "^". So, "[^abc]" will match with any character except "a", "b" and "c" whereas "[abc^]" will match with characters "a", "b", "c" and "^" even though "^" is a metacharacter. Note that the complement happens only within a character class.
+    # Output - There is(are) number(s) in the string
+    ```
 
-```py
-test_string = "This string has no e in it"
-regex = re.search("[^e]",test_string)
-if regex:
-    print("There is an e in the string")
-else:
-    print("There is no e in this string")
+2. Another rule that metacharacters enforce is that they do not have any effect in a character class unless it starts with a metacharacter. A complement of a character class is denoted by the metacharacter "^". So, "[^abc]" will match with any character except "a", "b" and "c" whereas "[abc^]" will match with characters "a", "b", "c" and "^" even though "^" is a metacharacter. Note that the complement happens only within a character class.
 
-# Output - There is an e in the string
+    ```py
+    test_string = "This string has no e in it"
+    regex = re.search("[^e]",test_string)
+    if regex:
+        print("There is an e in the string")
+    else:
+        print("There is no e in this string")
 
-test_string = "2^4 = 16"
-regex = re.search("[z^]",test_string)
-if regex:
-    print("There is either a z or a ^ in this string")
-else:
-    print("There is no z or ^ in this string")
+    # Output - There is an e in the string
 
-# Output - There is either a z or a ^ in this string
-```
+    test_string = "2^4 equals 16"
+    regex = re.search("[z^]",test_string)
+    if regex:
+        print("There is either a z or a ^ in this string")
+    else:
+        print("There is no z or ^ in this string")
 
-A combination of character classes is allowed in RegExes. "[0-2][0-4]" matches with any number between 00 and 24, "[ac][b-d]" matches with the strings "ab", "ac", "ad", "cb", "cc" and "cd", and "[a-zA-Z]" returns a match for any character between a to z, lowercase or uppercase. The same extends to numbers as well.
+    # Output - There is either a z or a ^ in this string
+    ```
 
-```py
-test_string = "Brutus stabbed Caesar"
-regex = re.search("[aeiou][aeiou]",test_string)
-if regex:
-    print("There are consecutive vowels in this string")
-else:
-    print("There are no consecutive vowels in this string")
+3. A combination of character classes is allowed in RegExes. "[0-2][0-4]" matches with any number between 00 and 24, "[ac][b-d]" matches with the strings "ab", "ac", "ad", "cb", "cc" and "cd", and "[a-zA-Z]" returns a match for any character between a to z, lowercase or uppercase. The same extends to numbers as well.
 
-# Output - There are consecutive vowels in this string
+    ```py
+    test_string = "Brutus stabbed Caesar"
+    regex = re.search("[aeiou][aeiou]",test_string)
+    if regex:
+        print("There are consecutive vowels in this string")
+    else:
+        print("There are no consecutive vowels in this string")
 
-print(regex)
+    # Output - There are consecutive vowels in this string
 
-# <_sre.SRE_Match object; span=(16, 18), match='ae'>
-```
+    print(regex)
 
-The span parameter in the RegEx object displays the position of the "match" (in this case, "ae").
+    # <_sre.SRE_Match object; span=(16, 18), match='ae'>
+    ```
 
-"^" within a string matches with a string that starts with the sequence of characters after "^" and "$" within a string matches with a string that ends with the sequence of characters before "$".
+    The span parameter in the RegEx object displays the position of the match (in this case, "ae").
 
-```py
-names = ["Steve Aoki","Joe Willink","Steve Carrel","Jim Ross"]
-for name in names:
-    if re.search("^Steve",name):
-        print(name)
+4. "^" within a string matches with a string that starts with the sequence of characters after "^" and "$" within a string matches with a string that ends with the sequence of characters before "$".
 
-# Output - Steve Aoki
-#          Steve Carrel
+    ```py
+    names = ["Steve Aoki","Joe Willink","Steve Carrel","Jim Ross"]
+    for name in names:
+        if re.search("^Steve",name):
+            print(name)
 
-names = ["Evan Smith","Gary Neville","Jamie Carragher","Steve Smith","Elaine Smith"]
-names_starting_with_steve = [name for name in names if re.search("Smith$",name)]
-print(*names_starting_with_steve, sep = ", ")
+    # Output - Steve Aoki
+    #          Steve Carrel
 
-# Output - Evan Smith, Steve Smith, Elaine Smith
-```
+    names = ["Evan Smith","Gary Neville","Jamie Carragher","Steve Smith","Elaine Smith"]
+    names_starting_with_steve = [name for name in names if re.search("Smith$",name)]
+    print(*names_starting_with_steve, sep = ", ")
 
-A number within "{}" is used to specify the exact number of occurences to be checked.
+    # Output - Evan Smith, Steve Smith, Elaine Smith
+    ```
 
-```py
-test_string = "Too maaaany aaa's becaaause the keyboaaard is broken"
-regex = re.sub("a{3}","a",test_string)
-print(regex)
+5. A number within "{ }" is used to specify the exact number of occurences to be checked.
 
-# Output - Too maany a's because the keyboard is broken
-```
+    ```py
+    test_string = "Too maaaany aaa's becaaause the keyboaaard is broken"
+    regex = re.sub("a{3}","a",test_string)
+    print(regex)
 
-Notice that there are two a's in the word 'many' in the output. This is because the expression replaces three a's consecutively with a single 'a' and the word 'maaaany' in the source string has 4 a's.
+    # Output - Too maany a's because the keyboard is broken
+    ```
 
-"." is matched against any character.
+    Notice that there are two a's in the word 'many' in the output. This is because the expression replaces three a's consecutively with a single 'a' and the word 'maaaany' in the source string has 4 a's.
 
-```py
-test_string = "the ball is over there"
-regex = re.findall("t...e",test_string)
-print(regex)
+6. "." is matched against any character.
 
-# Output - ['there']
-```
+    ```py
+    test_string = "the ball is over there"
+    regex = re.findall("t...e",test_string)
+    print(regex)
 
-Finally, the "\" is an important metacharacter. It is used to represent pre-defined character sets that are common. The following are a few special sequences:
+    # Output - ['there']
+    ```
 
-\d - Matches decimal numbers; same as [0-9].
- 
-\D - Matches non-digit characters; same as [^0-9].
+7. Finally, the "\" is an important metacharacter. It is used to represent pre-defined character sets that are common. The following are a few special sequences:
 
-\Z	 Matches the specified characters at the end of the string;
+    - \d - Matches decimal numbers; same as [0-9].
+    
+    - \D - Matches non-digit characters; same as [^0-9].
 
-\s - Matches whitespace characters; same as [\t\n\r\f\v].
+    - \Z	 Matches the specified characters at the end of the string;
 
-\S - Matches non-whitespace characters; same as [^\t\n\r\f\v].
+    - \s - Matches whitespace characters; same as [\t\n\r\f\v].
 
-\w - Matches alphanumeric characters; same as [a-zA-Z0-9].
+    - \S - Matches non-whitespace characters; same as [^\t\n\r\f\v].
 
-\W - Matches non-alphanumeric characters; same as [^a-zA-Z0-9].
+    - \w - Matches alphanumeric characters; same as [a-zA-Z0-9].
 
-The following is another version of a previous example:
+    - \W - Matches non-alphanumeric characters; same as [^a-zA-Z0-9].
 
-```py
-test_string = "I d0n't want any num6er 1n the 5tr1ng"
-regex = re.findall("\d",test_string)
-if regex:
-    print("There is(are) number(s) in the string")
-else:
-    print("There are no numbers in this string")
+    The following is another version of a previous example:
 
-# Output - There is(are) number(s) in the string
-```
+    ```py
+    test_string = "I d0n't want any num6er 1n the 5tr1ng"
+    regex = re.findall("\d",test_string)
+    if regex:
+        print("There is(are) number(s) in the string")
+    else:
+        print("There are no numbers in this string")
+
+    # Output - There is(are) number(s) in the string
+    ```
 
 ### Email Validation using Regular Expressions
 
 Let's try to put to test what we've grasped till this point. Let's try to build a regular expression that would check if a given email address is valid or not. 
 
-The format of an email ID goes like: "name"[at]"email"[dot]"suffix" with the following constraints:
+The format of an email ID goes like 'name'[at]'email'[dot]'suffix' with the following constraints:
 1. The string "name" can be alphanumeric without capital letters and only allow special characters "." and "_". 
 2. The string "email" is strictly alphabetical (no numbers or special characters)
 3. The string "suffix" is strictly alphabetical (no numbers or special characters) with a length of 2 or 3.
 
-Since the email ID starts with the 'name' string, we use "^". Alphanumeric without any capital letters forces the character set to be [a-z0-9]. [\._] ensures that no other special character is allowed in the first part of the name. Considering the possibility that "name" need not always have a special character, a "?[a-z0-9]" is added to the combination of [a-z0-9] and [\._], the "?" representing 0 or more occurences of the preceeding expression. 
+Since the email ID starts with the 'name' string, we use "^". Alphanumeric without any capital letters forces the character set to be [a-z0-9]. "[\\.\_]" ensures that no other special character is allowed in the first part of the name. Considering the possibility that "name" need not always have a special character, "?[a-z0-9]" is added to the combination of [a-z0-9] and [\\.\_], with "?" representing 0 or more occurences of the preceeding expression. 
 
-The RegEx matching the "name" string would be ^[a-z0-9]+[\._]?[a-z0-9].
+The RegEx matching the string "name" would be ^[a-z0-9]+[\\._]?[a-z0-9].
 
 The very constrained string "email" can be represented by "\w+" and the string "suffix" is represented by "\w{2,3}$", the "$" to denote the end and {2,3} for the number of characters from the character set "\w".
 
 Piecing it all together, our email ID validator goes like
 
-'^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+'^[a-z0-9]+[\\.\_]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 
 On testing it out,
 
