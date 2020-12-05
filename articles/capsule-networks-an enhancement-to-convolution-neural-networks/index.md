@@ -16,7 +16,7 @@ Understanding how Convolutional Neural Networks (CNNs) work is key to understand
 
 6. [Key Takeaways](#key-takeaways)  
 
-The key ideas behind Capsule Networks (CapsNets) were originally introduced in 2011 by [Geoffrey E. Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) in a research paper called [Transforming Autoencoders](http://www.cs.toronto.edu/~bonner/courses/2020s/csc2547/papers/capsules/transforming-autoencoders,-hinton,-icann-2011.pdf). But, he did have a difficult time making the network work properly.  
+The key ideas behind Capsule Networks (CapsNets) were initially introduced in 2011 by [Geoffrey E. Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) in a research paper called [Transforming Autoencoders](http://www.cs.toronto.edu/~bonner/courses/2020s/csc2547/papers/capsules/transforming-autoencoders,-hinton,-icann-2011.pdf). But, he did have a difficult time making the network work properly.  
 
 In 2017, Geoffrey E. Hinton, alongside Sara Sabour and Nicholas Frosst, managed to publish a paper called [Dynamic Routing Between Capsules](https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf/). The three researchers built on the key ideas first published in 2011, and managed to achieve state-of-the-art performance on the MNIST dataset, and demonstrated better results than Convolutional Neural Networks (CNNs) on highly overlapping digits. The capsule model was also tested on the CIFAR10 dataset, and it achieved a 10.6% error, which is not state-of-the-art, but it's a good start.   
 
@@ -35,7 +35,7 @@ If we train the CNN on the original image and then feed in the dog's flipped ima
 
 ### The Pooling Problem in CNNs
 
-In CNN's, we have the Max-Pooling layer. Its function is to reduce the dimensions of input data. This layer is applied to each Convolution layer, and it takes the most active neurons and continues to pass them through the network. This means that the less active neurons are dropped, getting rid of important information that might tell us more about other important spatial features in the network. 
+In CNN's, we have the Max-Pooling layer. Its function is to reduce the dimensions of input data. This layer is applied to each Convolution layer, and it takes the most active neurons and continues to pass them through the network. This means that the less active neurons are dropped, getting rid of important information that might tell us more about other critical spatial features in the network. 
 
 Geoffrey E. Hinton considers this a disaster. In one of his lectures, he is quoted saying, 
 
@@ -51,7 +51,7 @@ This is where Capsule Networks (CapsNet) come into play.
 
 Before we understand what a CapsNet is, let's first understand what a capsule is.
 
-A capsule is a collection of neurons that learn to detect an object or parts of an object in an image. Its output is a vector whose length represents the existence of an entity being present in an image. The vector orientation represents instantiation parameters such as the object's rotation, size, or its exact location in an image. A slight adjustment to the object's rotation or its size changes the vector's orientation with proportion to its input, but its length remains the same.
+A capsule is a collection of neurons that learn to detect an object or parts of an object in an image. Its output is a vector whose length represents the existence of an entity being present in an image. The vector orientation describes instantiation parameters such as the object's rotation, size, or its exact location in an image. A slight adjustment to the object's rotation or its size changes the vector's orientation with proportion to its input, but its length remains the same.
 
 Below is an example of an output that denotes an object's location in a CapsNet. The vectors' length where the object is placed is longer than those of the vectors where the object isn't placed. The vectors' orientation could represent their position, rotation, size, or scale in the image.
 
@@ -66,7 +66,7 @@ I hope that's clear. Let's now understand what a CapsNet is.
 A CapsNet consists of capsules instead of neurons in its architecture. Unlike neurons, which outputs scalars with no direction, capsules outputs vectors that have a direction. This feature in capsules helps it solve the orientation problem in CNNs. When the image's orientation is changed, the vector's direction will also move following that position.
 
 In computer graphics, computers render images on screens by taking into account the internal representations of an object, such as its scale, rotation, and position. On the other hand, the human brain process images in the opposite way; this process is known as inverse graphics. We first identify an object, deconstruct it into different parts, and establish a relationship between these parts of an object. This is how we humans identify objects.
-A CapsNet aims to borrow this idea of inverse graphics, which is the reverse process of how computers render images. Here, the network first starts with an image; it tries to determine the objects it contains and its instantiation parameters.
+A CapsNet aims to borrow this idea of inverse graphics, which is the reverse process of how computers render images. Here, the network starts with an image; it tries to determine the objects it contains and its instantiation parameters.
 
 One key feature of Capsule Networks is preserving detailed information about the object's location and its pose throughout the network. This process is known as Equivariance. 
 In CNN's, we have several pooling layers. Researchers have found that these pooling layers tend to lose information, such as the objects' precise location and pose. Capsule Networks are Equivariance, making them suitable for applications such as object detection and image segmentation.
@@ -162,3 +162,5 @@ This article briefly introduces the main key ideas behind Capsule Networks (Caps
 4. [Convolutional Neural Network](https://www.section.io/engineering-education/basics-of-convolution-neural-networks/)
 5. [TensorFlow](https://www.tensorflow.org/)
 6. [Keras](https://keras.io/)
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
