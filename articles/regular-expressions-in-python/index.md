@@ -10,7 +10,7 @@ A Regular Expression (RegEx) has put a lot of programmers in a bit of a hassle. 
 4. [Syntax of Regular Expressions in Python](#syntax-of-regular-expressions-in-python)
 5. [Email Validation using Regular Expressions](#email-validation-using-regular-expressions)
 6. [Conclusion](#conclusion)
-7. [Further Reading](#further-reading)
+7. [Further Readings](#further-readings)
 
 ### Introduction
 
@@ -58,7 +58,7 @@ Phew.
 
 Writing expressions in a certain way? What does that mean?
 
-### Syntax for Regular Expressions in Python
+### Syntax of Regular Expressions in Python
 
 To lay the foundation, most characters and letters are matched to themselves. That means "p" is matched to the character "p". However, there are exceptions to this, and these characters are called metacharacters. Here are the list of metacharacters:
 
