@@ -1,6 +1,6 @@
 ### Regular Expressions in Python
 
-A Regular Expression (also called a RegEx) has put a lot of programmers in a bit of a hassle. If you're confused with RegExes, you're not the only one. A casual conversation with a professional with 15 years of programming experience under his belt revealed that he practiced RegExes everyday for a year to wrap his head around the syntax without having to looking it up. This is a small attempt from my end (hopefully not a disastrous one) to dive into regular expressions using Python.
+A Regular Expression (also called a RegEx) has put a lot of programmers in a bit of a hassle. A casual conversation with a professional with 15 years of programming experience under his belt revealed that he practiced RegExes everyday for a year to wrap his head around the syntax without having to looking it up. This is a small attempt from my end (hopefully not a disastrous one) to dive into regular expressions using Python.
 
 ### Table of Contents
 
@@ -22,7 +22,7 @@ The question begs to be asked - Why go for a complex, difficult-to-interpret pie
 
 Remember those websites where your password must be between 8-12 characters with atleast one capital letter, one small letter and one number? You miss any one of those, and your password is invalid. In the backend, every attempt you take at making a password is matched with a RegEx and ensures your password follows the right format.
 
-The computational resources wasted while scaling up the format checks when if-elif-else comparisons are used instead of REgExes is quite significant.
+The computational resources wasted while scaling up the format checks when if-elif-else comparisons are used instead of RegExes is quite significant.
 
 And it doesn't just stop there.
 
@@ -44,7 +44,7 @@ The key behind these enhancements is a small yet powerful concept called Finite 
 
 *Source: [FSM of a Vending Machine](http://osr600doc.sco.com/en/SDK_c++/_What_is_a_Finite_State_Machine.html)*
 
-The above figure is a state diagram of a vending machine. The circles denote the states, where zero is the initial state (no money implies no candy) and the termination state is either 15 cents or 20 cents. Notice how a process, after reaching the end state is reverted back to its initial state. A click here represents an increase by 5 cents from one state to another, and depending on the amount, the appropriate candy is dispensed. A basic yet understandable implementation of a FSM in Python can be found [here](https://www.python-course.eu/finite_state_machine.php)
+The above figure is a state diagram of a vending machine. The circles denote the states, where zero is the initial state (no money implies no candy) and the termination state is either 15 cents or 20 cents. Notice how a process, after reaching the end state is reverted back to its initial state. A click here represents an increase by 5 cents from one state to another, and depending on the amount, the appropriate candy is dispensed. A basic yet understandable implementation of a FSM in Python can be found [here](https://www.python-course.eu/finite_state_machine.php).
 
 A RegEx engine works in a similar way, but with a lot more states and a lot more transitional changes between two or more states.
 
@@ -66,9 +66,9 @@ To lay the foundation, most characters and letters are matched to themselves. Th
 
 Before we get into the syntax, let's import Python's RegEx library, re.
 
-'''py
+```py
 import re
-'''
+```
 
 Python's RegEx module offers a set of functions that search for a string for a match
 
@@ -79,7 +79,7 @@ Python's RegEx module offers a set of functions that search for a string for a m
 
 Square brackers denote a character class, a set of characters that are to be matched. "[abef]" maps to any one of "a", "b", "e", "f". If the comparison is for a character within a range, the starting and the ending characters must be specified within the square brackets, separated by a "-". "[a-z]" maps to any character in lowercase and "[A-Z]" maps to any character in uppercase.
 
-'''py
+```py
 test_string = "I d0n't want any num6er 1n th1s 5tr1ng"
 regex = re.findall("[0-9]",test_string)
 if regex:
@@ -88,11 +88,11 @@ else:
     print("There are no numbers in this string")
 
 # Output - There is(are) number(s) in the string
-'''
+```
 
 Another rule that metacharacters enforce is that they do not have any effect in a character class unless it starts with a metacharacter. A complement of a character class is denoted by the metacharacter "^". So, "[^abc]" will match with any character except "a", "b" and "c" whereas "[abc^]" will match with characters "a", "b", "c" and "^" even though "^" is a metacharacter. Note that the complement happens only within a character class.
 
-'''py
+```py
 test_string = "This string has no e in it"
 regex = re.search("[^e]",test_string)
 if regex:
@@ -110,11 +110,11 @@ else:
     print("There is no z or ^ in this string")
 
 # Output - There is either a z or a ^ in this string
-'''
+```
 
 A combination of character classes is allowed in RegExes. "[0-2][0-4]" matches with any number between 00 and 24, "[ac][b-d]" matches with the strings "ab", "ac", "ad", "cb", "cc" and "cd", and "[a-zA-Z]" returns a match for any character between a to z, lowercase or uppercase. The same extends to numbers as well.
 
-'''py
+```py
 test_string = "Brutus stabbed Caesar"
 regex = re.search("[aeiou][aeiou]",test_string)
 if regex:
@@ -127,13 +127,13 @@ else:
 print(regex)
 
 # <_sre.SRE_Match object; span=(16, 18), match='ae'>
-'''
+```
 
 The span parameter in the RegEx object displays the position of the "match" (in this case, "ae").
 
 "^" within a string matches with a string that starts with the sequence of characters after "^" and "$" within a string matches with a string that ends with the sequence of characters before "$".
 
-'''py
+```py
 names = ["Steve Aoki","Joe Willink","Steve Carrel","Jim Ross"]
 for name in names:
     if re.search("^Steve",name):
@@ -147,29 +147,29 @@ names_starting_with_steve = [name for name in names if re.search("Smith$",name)]
 print(*names_starting_with_steve, sep = ", ")
 
 # Output - Evan Smith, Steve Smith, Elaine Smith
-'''
+```
 
 A number within "{}" is used to specify the exact number of occurences to be checked.
 
-'''py
+```py
 test_string = "Too maaaany aaa's becaaause the keyboaaard is broken"
 regex = re.sub("a{3}","a",test_string)
 print(regex)
 
 # Output - Too maany a's because the keyboard is broken
-'''
+```
 
 Notice that there are two a's in the word 'many' in the output. This is because the expression replaces three a's consecutively with a single 'a' and the word 'maaaany' in the source string has 4 a's.
 
 "." is matched against any character.
 
-'''py
+```py
 test_string = "the ball is over there"
 regex = re.findall("t...e",test_string)
 print(regex)
 
-Output - ['there']
-'''
+# Output - ['there']
+```
 
 Finally, the "\" is an important metacharacter. It is used to represent pre-defined character sets that are common. The following are a few special sequences:
 
@@ -189,7 +189,7 @@ Finally, the "\" is an important metacharacter. It is used to represent pre-defi
 
 The following is another version of a previous example:
 
-'''py
+```py
 test_string = "I d0n't want any num6er 1n the 5tr1ng"
 regex = re.findall("\d",test_string)
 if regex:
@@ -198,7 +198,7 @@ else:
     print("There are no numbers in this string")
 
 # Output - There is(are) number(s) in the string
-'''
+```
 
 ### Email Validation using Regular Expressions
 
@@ -209,7 +209,7 @@ The format of an email ID goes like: "name"[at]"email"[dot]"suffix" with the fol
 2. The string "email" is strictly alphabetical (no numbers or special characters)
 3. The string "suffix" is strictly alphabetical (no numbers or special characters) with a length of 2 or 3.
 
-Since the email ID starts with the 'name' string, we use "^". Alphanumeric without any capital letters forces the character set to be [a-z0-9]. [\._] ensures that no other special character is allowed in the first part of the name. Considering the possibility that "name" need not always have a special character, a "?[a-z0-9]" is added to the combination of [a-z0-9] and [\._], the "?" denoting zero or more occurences of the expression preceeding it. 
+Since the email ID starts with the 'name' string, we use "^". Alphanumeric without any capital letters forces the character set to be [a-z0-9]. [\._] ensures that no other special character is allowed in the first part of the name. Considering the possibility that "name" need not always have a special character, a "?[a-z0-9]" is added to the combination of [a-z0-9] and [\._], the "?" representing 0 or more occurences of the preceeding expression. 
 
 The RegEx matching the "name" string would be ^[a-z0-9]+[\._]?[a-z0-9].
 
@@ -221,7 +221,7 @@ Piecing it all together, our email ID validator goes like
 
 On testing it out,
 
-'''py
+```py
 email_ids = ["john@example.com", 
             "john@ex.ample.com", 
             "john.doe@example.com",
@@ -240,7 +240,7 @@ for email in email_ids:
 #          john.doe@example.com - Valid
 #          john_doe@example.au - Valid
 #          john.doe@example.fred - Invalid
-'''
+```
 
 ...it works perfectly!
 
