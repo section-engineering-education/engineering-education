@@ -1,6 +1,6 @@
 A random forest is a supervised machine learning algorithm that is constructed from decision tree algorithms. This algorithm is applied in various industries such as banking and e-commerce to predict behavior and outcomes. 
 
-This article provides an overview of random forest algorithm, and how it works. The article presents meaningful information such as features of the algorithm and how it is employed in real life applications. It also highlights the advantages and disadvantages of this algorithm. 
+This article provides an overview of the random forest algorithm and how it works. The article presents meaningful information, such as the algorithm's features and how it is employed in real-life applications. It also highlights the advantages and disadvantages of this algorithm. 
 
 ### What is a Random Forest?
 A random forest is a machine learning technique that is used to solve regression and classification problems. It utilizes ensemble learning, which is a technique that combines many classifiers to provide solutions to complex problems. 
@@ -9,14 +9,14 @@ A random forest algorithm consists of many decision trees. The 'forest' generate
 
 The algorithm (random forest) establishes the outcome based on the predictions of the trees. It predicts by taking the average of the output of various decision trees. Increasing the number of trees increases the precision of the outcome. 
 
-A random forest eradicates the limitations of a decision tree algorithm. It reduces overfitting of datasets and increases precision. It generates predictions without requiring many configurations in packages (like [scikit-learn](https://en.wikipedia.org/wiki/Scikit-learn)).
+A random forest eradicates the limitations of a decision tree algorithm. It reduces the overfitting of datasets and increases precision. It generates predictions without requiring many configurations in packages (like [scikit-learn](https://en.wikipedia.org/wiki/Scikit-learn)).
 
 ### Features of a Random Forest Algorithm
 * It is more accurate than the decision tree algorithm.
 * It provides an effective way of handling missing data.
 * It can produce a reasonable prediction without hyper-parameter tuning.
 * It solves the problem of overfitting in decision trees.
-* In every random forest tree, a subset of features is selected randomly at the splitting point of a node.
+* In every random forest tree, a subset of features is selected randomly at the node's splitting point.
 
 ### How Random Forest Algorithm Works
 Decision trees are the building blocks of a random forest algorithm. A decision tree is a decision support technique that forms a tree-like structure. An overview of decision trees will help us understand how random forest algorithms work. 
@@ -29,19 +29,19 @@ The nodes in the decision tree represent attributes that are used for predicting
 
 [Image Source: Tutorials and Example](https://www.tutorialandexample.com/wp-content/uploads/2019/10/Decision-Trees-Root-Node.png)
 
-Let's take a simple example of how a decision tree works. Suppose we want to predict if a customer will buy a mobile phone or not. The features of the phone form the basis of his decision. This analysis can be presented in a decision tree diagram. The root node and decision nodes of the decision represent the features of the aforementioned phone. The leaf node represents the final output, which is either *buying* or *not buying*. The main features that determine the choice include the price, internal storage, and Random Access Memory (RAM). The decision tree will appear as follows.
+Let's take a simple example of how a decision tree works. Suppose we want to predict if a customer will buy a mobile phone or not. The features of the phone form the basis of his decision. This analysis can be presented in a decision tree diagram. The root node and decision nodes of the decision represent the features of the phone mentioned above. The leaf node represents the final output, either *buying* or *not buying*. The main features that determine the choice include the price, internal storage, and Random Access Memory (RAM). The decision tree will appear as follows.
 
 ![Example of Decision Tree](/engineering-education/introduction-to-random-forest-in-machine-learning/example-of-decision-tree.png)
 
 [Image Source: Simplilearn](https://www.simplilearn.com/ice9/free_resources_article_thumb/phone-price.JPG)
 
-The main difference between the random forest algorithm and the decision tree algorithm is that in the former, the process of establishing root nodes and segregating nodes is done randomly. The random forest algorithm uses the bagging method to generate the required prediction. 
+The main difference between the random forest algorithm and the decision tree algorithm is that in the former, establishing root nodes and segregating nodes is done randomly. The random forest algorithm uses the bagging method to generate the required prediction. 
 
-Bagging involves using different samples of data (training data), rather than just one sample. A training dataset comprises observations and features that are used for making predictions. The decision trees produce different outputs, depending on the training data that was fed to the rain forest algorithm. These outputs will be ranked, and the highest will be chosen as the final output. 
+Bagging involves using different samples of data (training data) rather than just one sample. A training dataset comprises observations and features that are used for making predictions. The decision trees produce different outputs, depending on the training data fed to the rain forest algorithm. These outputs will be ranked, and the highest will be chosen as the final output. 
 
-Our first example can still be used to explain how random forests work. Instead of having a single decision tree, the rain forest will have many decision trees. Let's assume we have only four decision trees. In this case, the training data comprising the observations and features of the phone will be divided into four root nodes. 
+Our first example can still be used to explain how random forests work. Instead of having a single decision tree, the rain forest will have many decision trees. Let's assume we have only four decision trees. In this case, the training data comprising the phone's observations and features will be divided into four root nodes. 
 
-The root nodes could represent four features that could influence the choice of the customer (price, internal storage, camera, and RAM). The random forest will split the nodes by selecting features randomly. The final prediction will be selected based on the outcome of the four trees. The outcome chosen by most decision trees will be the final choice. If three trees predict *buying*, and one tree predicts *not buying*, then the final prediction will be *buying*. In this case, it is predicted that the customer will buy the phone.
+The root nodes could represent four features that could influence the customer's choice (price, internal storage, camera, and RAM). The random forest will split the nodes by selecting features randomly. The final prediction will be selected based on the outcome of the four trees. The outcome chosen by most decision trees will be the final choice. If three trees predict *buying*, and one tree predicts *not buying*, then the final prediction will be *buying*. In this case, it is predicted that the customer will buy the phone.
 
 ### Classification in Random Forest
 Classification in random forests employs an ensemble methodology to attain the outcome. The training data is fed to train various decision trees. This dataset consists of observations and features that will be selected randomly during the splitting of nodes.
@@ -59,16 +59,16 @@ Let's take an example of a training dataset consisting of various fruits such as
 [Image Source: Javatpoint](https://static.javatpoint.com/tutorial/machine-learning/images/random-forest-algorithm2.png)
 
 ### Applications of Random Forest
-Some of the applications of random forest include:
+Some of the applications of the random forest include:
 
 #### Banking
-Random forest is used in banking to predict the creditworthiness of a loan applicant. This helps the lending institution to make a good decision on whether to give the customer the loan or not. Random forest is also used by banks to detect fraudsters. 
+Random forest is used in banking to predict the creditworthiness of a loan applicant. This helps the lending institution to make a good decision on whether to give the customer the loan or not. Banks also use the random forest algorithm to detect fraudsters. 
 
 #### Health care
 Health professionals use random forest systems to diagnose patients. Patients are diagnosed by assessing their previous medical history. Past medical records are reviewed to establish the right dosage for the patients. 
 
 #### Stock Market
-It is used by financial analysts to identify potential markets for stocks. It also enables them to identify the behavior of stocks. 
+Financial analysts use it to identify potential markets for stocks. It also enables them to identify the behavior of stocks. 
 
 #### E-commerce
 Through rain forest algorithms, e-commerce vendors can predict the preference of customers based on past consumption behavior. 
@@ -77,7 +77,7 @@ Through rain forest algorithms, e-commerce vendors can predict the preference of
 * It can perform both regression and classification tasks.
 * A random forest produces good predictions that can be understood easily. 
 * It can handle large datasets efficiently. 
-* The random forest algorithm provides a higher level of accuracy in the prediction of outcomes than the decision tree algorithm.
+* The random forest algorithm provides a higher level of accuracy in predicting outcomes than the decision tree algorithm.
 
 ### Disadvantages of Random Forest
 * In random forest, more resources are required for computation.
@@ -86,7 +86,7 @@ Through rain forest algorithms, e-commerce vendors can predict the preference of
 ### Conclusion
 The rain forest algorithm is a machine learning algorithm that is easy to use and flexible. It uses ensemble learning, which enables organizations to solve classification and regression problems. 
 
-This is an ideal algorithm for developers because it solves the problem of overfitting of datasets. It is a very resourceful tool for making accurate predictions, which are needed in strategic decision making in organizations. 
+This is an ideal algorithm for developers because it solves the problem of overfitting of datasets. It is a very resourceful tool for making accurate predictions needed in strategic decision making in organizations. 
 
 ### Resources
 
@@ -94,3 +94,6 @@ This is an ideal algorithm for developers because it solves the problem of overf
 
 [Free Code Camp](https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/)
 
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
