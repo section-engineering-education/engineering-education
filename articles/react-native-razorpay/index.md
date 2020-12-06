@@ -80,6 +80,8 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 
 To focus more on the Razorpay Transactions, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/rn-razorpay-app-starter) on GitHub. Follow the Repository's README for instructions.
 
+If you'd like to take a look at the final code, please refer to [this GitHub Repository](https://github.com/zolomohan/rn-razorpay-section-io-final).
+
 In the starter code, I've set up a checkout screen that will fetch random products from [fakestoreapi.com](https://fakestoreapi.com/).
 
 Checkout Screen:
@@ -120,7 +122,7 @@ pod install
 
 ### Razorpay Payment Process
 
-There are 3 steps in the Razorpay payment process.
+There are 4 steps in the Razorpay payment process.
 
 1. Creating an order.
 2. Checkout.
@@ -138,8 +140,6 @@ _Image Source: Razorpay official documentation_
 Every payment can be associated with an order to help prevent multiple payments. Once payment is captured, the order will be marked as paid.
 
 You can learn more about orders [here](https://razorpay.com/docs/api/orders/).
-
-You can learn more about Payment capture settings [here](https://razorpay.com/docs/payment-gateway/payments/capture-settings/).
 
 #### Server Side
 
@@ -494,9 +494,9 @@ The following state diagram depicts the payment states:
 
 ![Payment State](payment_states.png)
 
-By default, once the user completes a payment, it is automatically moved to a captured state. However, the payment can remain in the authorized state in some scenarios.
-
 _Image Source: Razorpay official documentation_
+
+By default, once the user completes a payment, it is automatically moved to a captured state. However, the payment can remain in the authorized state in some scenarios.
 
 You can learn more about Payment Capture [here](https://razorpay.com/docs/payment-gateway/payments/capture-settings/).
 
