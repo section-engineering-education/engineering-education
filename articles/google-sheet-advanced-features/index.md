@@ -1,17 +1,17 @@
 
 
-## How developers can leverage advanced features in Google Sheets
+### How developers can leverage advanced features in Google Sheets
 
 
-## Introduction
+#### Introduction
 
 A spreadsheet is a computer program/application that is used to store data, analyse and organise it in a tabular format. These applications are vital in our day to day activities. Microsoft Excel, LibreOffice, and OpenOffice are other examples of spreadsheets. Having been offered by google with other applications, google spreadsheet is available to users with google emails for free and available online with offline capabilities. This application has developed and it readily interfaces with other applications to increase its effectiveness. Developers need to consider available methods to appropriately utilize in totality improved features of google spreadsheet.
 
 
-## Discussion
+#### Discussion
 
 
-### Online/offline access
+##### Online/offline access
 
 Google offers most of the services online which makes them accessible from any part of the world but allows offline capability for some including google spreadsheet which increases service availability. 
 
@@ -20,7 +20,7 @@ Google offers most of the services online which makes them accessible from any p
 
 
 
-### Complement data collection
+##### Complement data collection
 
 Google offers google forms that are customisable for use in data collection. Data collected from the form is easily stored in a linked spreadsheet.
 
@@ -29,7 +29,7 @@ Google offers google forms that are customisable for use in data collection. Dat
 ![Link to google form](/engineering-education/google-sheet-advanced-features/link-form.png)
 
 
-### Develop web application
+##### Develop web application
 
 Google offers a programming language called Google App Script that is available to enable spreadsheet data processing and making it available to the public via web applications. Google App Script heavily uses JavaScript that is commonly used and thus makes it a very  versatile language.
 
@@ -39,7 +39,7 @@ Google offers a programming language called Google App Script that is available 
 
 
 
-### Mobile application development
+##### Mobile application development
 
 Google offers appsheet mobile applications used to host mobile applications developed from the spreadsheet tab. This app does not require coding skills but drag and drop unlike other code-driven platforms. This application development follows the following steps:
 
@@ -61,7 +61,7 @@ Google offers appsheet mobile applications used to host mobile applications deve
 
 
 
-### Collaboration
+##### Collaboration
 
 The ability to share spreadsheets to other users and have a real time interaction at the same time is a great feature. It allows simultaneous multiple interaction by users on the same document. In addition the interaction is given based on access levels with the ability to view, comment, edit and own. Sharing can also happen to a group or to the public by sharing the link. This capability enables collaboration by users. Google also allows editors to see the version history to view the edits and changes made to cells, sheets or even the whole spreadsheet and go back to a certain time in history. This enhances the collaboration feature and makes edits trackable and traceable to specific users. Google sheet comes with a chat window that allows collaborators to side chat and share their views. It also makes available the users that are inline per certain session.
 
@@ -71,17 +71,17 @@ The ability to share spreadsheets to other users and have a real time interactio
 
 
 
-### Ease of use / Availability and Security
+##### Ease of use / Availability and Security
 
 To access google spreadsheets the user only requires a google email account as it comes with all other applications. Different from many other applications that demand the file to be saved manually, Google sheet auto saves in google drive thereby saving users the worry of losing the document in the event of power loss.Google spreadsheet has few number of menus thus considered user friendly. The application security is enhanced via the capability to enable 2FA(Two Factor Authentication) in google email. Updates release becomes an extremely seamless process with the application being online.
 
 
-### Cost
+##### Cost
 
 The application is offered for free with only gmail email registration as a requirement.
 
 
-### Add-ons
+##### Add-ons
 
 As one of the benefits of online shared applications, google encourages developers to make and publish addons for the google spreadsheet. The addons are hosted in google marketplace and are used to serve various purposes ranging from data entry, manipulation, analysis to display. Developers are able to read, edit, visualize, and format data as well as use Google App Script to access REST API directly. It is possible to create Menus, Sidebars and custom dialogue using CSS and HTML. Custom functions and triggers are possible to develop and use.
 
@@ -91,17 +91,17 @@ As one of the benefits of online shared applications, google encourages develope
 
 
 
-### APIs support
+##### APIs support
 
 Application programming interfaces are essential for interacting with other applications / systems. Google spreadsheet is able to connect to google docs, forms and other google products and perform data transfer or update periodically based on user request. Google App Script can work with many different applications thus forming a core point in achieving this functionality.
 
 
-## Conclusion
+#### Conclusion
 
 Developers have dynamically researched for better and easier ways to automate processes. In doing so, a lot come into their know. Analysis, data storage and organisation remain key considerations in modern day activities. Google has continuously improved its spreadsheet  to provide the best product a spreadsheet can have. The spreadsheet is readily available, cost effective, offers real time access and helps organize and collaborate. The tool is supplemented with very good services by google, addons, mobile app, web app etc.
 
 
-## References
+#### References
 
 
 
