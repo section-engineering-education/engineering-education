@@ -105,7 +105,7 @@ In the program below we are going to illustrate how our constructor integer() wi
 
 using namespace std;
 
-class integer 
+class integer
 {
 private:
 int a, b;
@@ -131,14 +131,14 @@ int main()
 integer v(10, 15); // Constructor called
 
 cout << "a = " << v.getX() ; // values assigned by constructor accessed
-cout<< "b = " << v.getY();	
+cout<< "b = " << v.getY();
 
 return 0;
 }
 ```
-Initial values have to be passed to the object in parameterized constructors and the normal declaration of a statement will not work. We can pass the initial values as arguments by either calling the constructor implicitly or explicitly. 
+Initial values have to be passed to the object in parameterized constructors and the normal declaration of a statement will not work. We can pass the initial values as arguments by either calling the constructor implicitly or explicitly.
 For example our declaration above, we have declared implicitly as:
-	
+
 	integer v(10,15);  // implicit call
 
 This statement passes the values 10 and 15 to our integer object v. we can also pass our values explicitly as follows:
@@ -166,7 +166,7 @@ In C++, copy constructors are called using the cases below:
 2. Whenever objects are constructed based on another object which is of the same class.
 3. Whenever objects are passed as parameters.
 
-We are required to define our copy constructor functions particularly if an object has runtime allocation of resources or pointers. 
+We are required to define our copy constructor functions particularly if an object has runtime allocation of resources or pointers.
 
 **Example of a copy constructor**
 ```c++
@@ -179,7 +179,7 @@ class integer
 public:
 	integer (integer & v) // copy constructor declared
  {
- a=v.a; 
+ a=v.a;
  b=v.b;
 }
 };
@@ -218,56 +218,59 @@ b=v.b;
 
 This is whereby more than one constructor function is defined in a class. Overloaded constructors have the same name as the class but with a different number of arguments. They are based on the number and type of parameters passed to the calling function. The compiler will know which constructor requires to be called depending on the arguments passed when the object is created.
 ```c++
-// C++ program to illustrate 
-// Constructor overloading 
+// C++ program to illustrate
+// Constructor overloading
 
-#include <iostream> 
+#include <iostream>
 
-using namespace std; 
+using namespace std;
 
 class shape
-{ 
+{
 int a, b;
-public: 
+public:
 // Constructor with no argument
-shape() 
-{ 
+shape()
+{
 a= 2;
-b= 3; 
-} 
+b= 3;
+}
 // constructor with one argument
-shape(int x) 
-{ 
+shape(int x)
+{
 a=b=x;
 }
 // Constructor with two arguments
-shape(int x, int y) 
-{ 
+shape(int x, int y)
+{
 a= x;
-b= y; 
-} 
+b= y;
+}
 int area(void){
 return(a*b);
 }
-void display() 
-{ 
-cout<<"area="<< area() <<endl; 
-} 
-}; 
-int main() 
-{ 
-// Constructor Overloading 
-// with two different constructors 
-// of class name 
+void display()
+{
+cout<<"area="<< area() <<endl;
+}
+};
+int main()
+{
+// Constructor Overloading
+// with two different constructors
+// of class name
 shape s;
 shape s2(6);
-shape s3( 3, 2); 
+shape s3( 3, 2);
 
-s.display(); 
 s.display();
 s.display();
-return 0; 
-} 
+s.display();
+return 0;
+}
 ```
 #### Conclusion
 In this article, we have gone through the basics of constructor functions and constructor overloading. A constructor is required so that when we create an instance of a class (object) all the functions and variables exist in memory. This allows you to use the class by name alongside all the variables and functions. You’ll notice that they are vital and C++ is meaningless without them.
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
