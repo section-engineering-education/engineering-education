@@ -403,3 +403,6 @@ In this tutorial, you have gained a foundational understanding on how of to code
 In fact, I have learned most of this by experimenting and having fun. I would encourage you to think of cool things you want to build and try to build them, with some help from the [documentation](https://hub.spigotmc.org/javadocs/spigot/index.html) of course. To help you out I have some homework for you to test your understanding and to keep learning. 
 
 First, I want you to improve the wither spawn command. Make it so that the user has the option to spawn withers at a location they choose. Then make a command that allows them to stop the withers from spawning. Lastly, try to make a plugin that will detect if emeralds are in a loaded chunk. If so, add some visual signs of it in the world. You can find my solutions to these challenges in the repository. My solutions may not be perfect so if you find a better solution, feel free to send a pull request. Happy coding!
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
