@@ -29,7 +29,7 @@ Here is an [article](engineering-education/deploying-nodejs-web-app/) on how to 
 
 Founded in 2013, Razorpay is a payment gateway service. With Razorpay, you have access to payment modes like credit and debit cards, UPI, and popular mobile wallets to include it in your app.
 
-If you are building an application targeting Indian audience that requires a payment gateway, Razorpay should be your choice.
+If you are building an application targeting an Indian audience that requires a payment gateway, Razorpay should be your choice.
 
 If you'd like to learn more about Razorpay, read [this blog post](https://razorpay.com/blog/best-payment-gateway-india/).
 
@@ -81,6 +81,10 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 To focus more on the Razorpay Transactions, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/rn-razorpay-app-starter) on GitHub. Follow the Repository's README for instructions.
 
 In the starter code, I've set up a checkout screen that will fetch random products from [fakestoreapi.com](https://fakestoreapi.com/).
+
+Checkout Screen:
+
+![Starter Page](starter_page.jpeg)
 
 ### Installing dependencies
 
@@ -403,7 +407,13 @@ RazorpayCheckout.open(options)
 
 This will open the checkout form for the transaction with all the available payment methods.
 
+![Checkout Form](checkout_form.jpeg)
+
 You can learn about the test card details [here](https://razorpay.com/docs/payment-gateway/test-card-details/).
+
+When you are working on test mode, you'll see an additional screen that'll let you simulate a successful and failed transaction.
+
+![Test Page](test_page.jpeg)
 
 When the transaction is successful, the transaction details are passed to the `.then()`. We need to verify the payment using the transaction details.
 
@@ -468,6 +478,8 @@ RazorpayCheckout.open(options)
   .catch(console.log);
 ```
 
+![Alert Modal](alert_modal.jpeg)
+
 ### Payment Capture
 
 When a user makes a payment, it usually flows through the following states:
@@ -482,7 +494,7 @@ The following state diagram depicts the payment states:
 
 ![Payment State](payment_states.png)
 
-By default, once the user completes a payment, it is automatically moved to captured state. However, the payment can remain in the authorized state in the some scenarios.
+By default, once the user completes a payment, it is automatically moved to a captured state. However, the payment can remain in the authorized state in some scenarios.
 
 _Image Source: Razorpay official documentation_
 
