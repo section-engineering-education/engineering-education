@@ -1,4 +1,4 @@
-In this tutorial, we will be building a simple React Native application and integrate Razorpay to accept payments from users.
+In this tutorial, we will be building a React Native application and a Node.js server to integrate Razorpay into the app to accept payments from users.
 
 ### Goals
 
@@ -6,13 +6,15 @@ By the end of this tutorial, you’ll know:
 
 - The steps required to initiate and complete a Razorpay transaction.
 
+- How to create a Razorpay order from a Node.js server.
+
 - How to integrate Razorpay checkout to a React Native app.
 
 - How to verify Razorpay payments.
 
 ### Prerequisites
 
-In this tutorial, we will be working on the application and the server. The application will be built using React Native and the server will be built using Node.js and Express.
+In this tutorial, we'll be working on the application and the server. The application will be built using React Native and the server will be built using Node.js and Express.
 
 So, if you are not comfortable with the fundamentals of these technologies, refer to these articles below before proceeding with this project.
 
@@ -21,7 +23,7 @@ So, if you are not comfortable with the fundamentals of these technologies, refe
 
 You should also deploy the server to use it from the app. You can deploy your server in DigitalOcean or other alternatives.
 
-Here is an [article](https://www.section.io/engineering-education/deploying-nodejs-web-app/) on how to deploy a Node.js app on DigitalOcean.
+Here is an [article](engineering-education/deploying-nodejs-web-app/) on how to deploy a Node.js app on DigitalOcean.
 
 ### Razorpay
 
@@ -29,7 +31,7 @@ Founded in 2013, Razorpay is a payment gateway service. With Razorpay, you have 
 
 If you are building an application targeting Indian audience that requires a payment gateway, Razorpay should be your choice.
 
-If you'd like to learn more about Razorpay, refer to [this blog post](https://razorpay.com/blog/best-payment-gateway-india/).
+If you'd like to learn more about Razorpay, read [this blog post](https://razorpay.com/blog/best-payment-gateway-india/).
 
 ### Overview
 
@@ -42,14 +44,15 @@ We'll be going through these steps in this article:
 5. Create a Razorpay Order.
 6. Add the Razorpay Checkout.
 7. Verify Transaction.
-8. Payments Log.
-9. Recap.
+8. Payment Capture.
+9. Payments Log.
+10. Recap.
 
 ### Creating a Razorpay account
 
 Head to Razorpay and create an account. You can reach the signup page from [here](https://dashboard.razorpay.com/signup?captcha=invisible).
 
-Fill in the details and create an account or you can signup with Google. Once you've signed up with all the necessary information, you'll see the dashboard.
+Once you've signed up with all the necessary information, you'll see the dashboard.
 
 ![Razorpay Dashboard](razorpay_dashboard.png)
 
@@ -118,6 +121,7 @@ There are 3 steps in the Razorpay payment process.
 1. Creating an order.
 2. Checkout.
 3. Verifying Transaction.
+4. Payment Capture.
 
 Here is a diagram to represent the payment flow.
 
@@ -463,6 +467,26 @@ RazorpayCheckout.open(options)
   })
   .catch(console.log);
 ```
+
+### Payment Capture
+
+When a user makes a payment, it usually flows through the following states:
+
+- Created
+- Authorized
+- Captured
+- Refunded
+- Failed
+
+The following state diagram depicts the payment states:
+
+![Payment State](payment_states.png)
+
+By default, once the user completes a payment, it is automatically moved to captured state. However, the payment can remain in the authorized state in the some scenarios.
+
+_Image Source: Razorpay official documentation_
+
+You can learn more about Payment Capture [here](https://razorpay.com/docs/payment-gateway/payments/capture-settings/).
 
 ### Payments Log
 
