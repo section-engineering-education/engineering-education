@@ -52,7 +52,6 @@ If you'd like to learn more about Agora, visit their [website](https://www.agora
 Here is the [documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html).
 
 ### Overview
-
 We'll be going through these steps in this article,
 
 1. Creating an Agora account.
@@ -66,7 +65,6 @@ We'll be going through these steps in this article,
 > If you want to take a look at the final code, check out this [Github Repo](https://github.com/zolomohan/rn-agora-video-conference-app). I've made a commit for every step in this tutorial.
 
 ### Creating an Agora account
-
 Head to Agora and create an account. You can reach the signup page from [here](https://sso.agora.io/en/v2/signup).
 
 Fill in the details and create an account or you can signup with Google, Github, or Cocos. Once you've signed up, you'll see the dashboard.
@@ -86,7 +84,6 @@ Once you hit on submit, it'll create a new project and you should see it on the 
 Now, click on the closed eye icon near the App ID to reveal it and copy the App ID. We'll be needing this later while setting up Agora in our app.
 
 ### Development environment
-
 > **IMPORTANT** - We will not be using Expo in our project. Agora's React Native SDK does NOT work with expo managed workflow. This is because video calling SDKs require native modules that are not supported by Expo.
 
 You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the environment.
@@ -94,7 +91,6 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 Make sure you're following the React Native CLI Quickstart and not the Expo CLI Quickstart.
 
 ### Clone the starter code
-
 To focus more on the Video conference, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
 
 In the starter code, the Navigation is set up using a [Stack Navigator](https://reactnavigation.org/docs/stack-navigator/) with the Home screen and a dummy Video Conference Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
@@ -105,8 +101,7 @@ This is the Home Screen you'll see when you open the app.
 
 ![Homescreen](homescreen.jpeg)
 
-### Installing Dependencies
-
+### Installing dependencies
 You can install these packages either in advance or while going through the tutorial.
 
 ```json
@@ -147,7 +142,6 @@ pod install
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Pass channel ID while navigating
-
 When we create or join a conference, we need to give a channel ID to Agora.
 
 For a new video conference, we'll generate a new channel ID. To join a conference, we'll use the channel ID from the text input. We need to pass the channel ID from the Home Screen to the Conference Screen as a route prop.
@@ -208,8 +202,7 @@ After npm install, For iOS, go into the `iOS/` directory and run:
 pod install
 ```
 
-#### Agora UI Kit
-
+#### Agora UI kit
 In `screens/Conference.js`, let's import the Agora UI Kit.
 
 ```JavaScript
@@ -237,7 +230,6 @@ The app will prompt the user for the camera and microphone permissions when you 
 When no one else is at the conference except you, you'll see the local feed. When others start to join the conference, you'll see their remote feed.
 
 #### Callbacks
-
 You'll see 5 buttons on the conference screen. They are toggle audio, toggle video, end conference, toggle camera, and toggle full screen. We can pass callback functions for each button.
 
 ![Buttons](buttons.jpeg)
@@ -293,7 +285,6 @@ const callbacks = {
 ```
 
 #### Styling
-
 You can pass styles as a prop to the component. You can style the container, the local buttons, and the remote buttons. Let's style our buttons to match the blue buttons on the home screen.
 
 ```JavaScript
@@ -439,7 +430,6 @@ Pass the `onShare` function to the Share button's `onPress` prop.
 ```
 
 ### Let's Recap
-
 1. We set up our Agora Account.
 
 2. We created a project using the Project Management Dashboard and acquired the App ID.
