@@ -5,7 +5,7 @@ Amazon Web Services (AWS) and Google Cloud are two cloud computing giants that p
 This article provides a comprehensive comparison between these cloud computing platforms. The comparison will involve analyzing their differences using key parameters. It will also highlight their advantages and disadvantages. By the end of the article, readers will have a good overview of these platforms, which will enable them to make an informed choice. 
 
 ### What is AWS?
-Amazon Web Services (AWS) are services that provide APIs and cloud computing platforms to individuals, companies, and governments. The AWS platform offers cloud computing solutions that are flexible, easy-to-use, scalable, reliable, and cost-effective. 
+Amazon Web Services (AWS) provides APIs and a cloud computing platform to individuals, companies, and governments. The AWS platform offers cloud computing solutions that are flexible, easy-to-use, scalable, reliable, and cost-effective. 
 
 It also consists of offerings such as infrastructure as a service (IAAS), software as a service (SAAS), and platform as a service (PAAS). Some of the services provided by this platform include networking, storage, remote computing, mobile development, email, analytics, and security.
 
