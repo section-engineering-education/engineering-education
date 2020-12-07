@@ -152,7 +152,9 @@ Input: Large numbers, more extensive list
 ### Limitations of Greedy Approach
 
 - The program can work with only one buy and one sell operation due to its greedy nature. It fails to sell and buy at multiple time stamps.
-- Greedy algorithm solutions are not always optimal. Therefore, the maximum profit computed may be a local maximum. The program can fail to reach the global maxima. For example, the optimal solution in scenario-3 is 865. The output of the greedy algorithm is 655.
+- Greedy algorithm solutions are not always optimal. Therefore, the maximum profit computed may be a local maximum. The program can fail to reach the global maxima. For example, the optimal solution in scenario-3 is 865. The output of the greedy algorithm is 655. 
+
+The same problem can be solved using other programming paradigms such as [divide and conquer](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm), [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming), etc. The next article in this series will be solving the same problem using divide and conquer. Divide and conquer algorithms divide the problem into many sub-problems until the sub-problems can be solved directly. Then the solutions obtained are put together to get the final answer. 
 
 ### Conclusion
 
