@@ -16,7 +16,7 @@ It also consists of offerings such as infrastructure as a service (IAAS), softwa
 ### What is Google Cloud?
 Google Cloud is a cloud computing platform that provides cloud services such as data storage, machine learning, and data analytics. It also provides offerings such as serverless computing, platform as a service, and infrastructure as a service. 
 
-Other tools offered by this platform include networking, big data, the internet of things (IoT), management tools, security, and Cloud AI.  Google cloud services share the same infrastructure with other end-user products of Google. These include YouTube, Gmail, and Google Search.
+Other tools offered by this platform include networking, big data, the internet of things (IoT), management tools, security, and Cloud AI.  Google cloud services share the same infrastructure with other end-user products of Google which include: YouTube, Gmail, and Google Search.
 
 ![Google Cloud Platform](/engineering-education/aws-vs-google-cloud-services/google-cloud-platform.jpg)
 
