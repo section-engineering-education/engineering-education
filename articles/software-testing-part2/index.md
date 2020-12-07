@@ -50,7 +50,6 @@ After listing our testing conditions, first, we create a test that fulfills our 
 ```python
 # _tests
 
-import pytest
 from factorial import find_factorial
 
 def test_find_factorial():
@@ -112,6 +111,9 @@ _test.py .                                                               [100%]
 Also, first we design a test to pass these condition.
 
 ```python
+# _tests
+from factorial import find_factorial
+
 def test_find_factorial_of_one():
     num = 1
     assert find_factorial(num) == 1
@@ -171,6 +173,9 @@ _test.py .                                                               [100%]
 Before moving on to our next testing condition, we have to run our first test again to confirm if it is not broken and our two testing conditions can pass together at the same time.
 
 ```python
+# _tests
+from factorial import find_factorial
+
 def test_find_factorial_of_zero():
     num = 0
     assert find_factorial(num) == 1
@@ -201,6 +206,8 @@ After that, we move to our thirld testing condition.
 First we create our tests.
 
 ```python
+# _tests
+from factorial import find_factorial
 
 def test_find_factorial_of_negative_numbers():
     num = -1
@@ -263,6 +270,8 @@ _test.py .                                                               [100%]
 After that, we run all of our testing conditions together to confirm if they are still passing.
 
 ```python
+# _tests
+from factorial import find_factorial
 
 def test_find_factorial_of_zero():
     num = 0
@@ -298,6 +307,9 @@ Then, we move  to our last testing condition.
 First we write our tests.
 
 ```python
+# _tests
+from factorial import find_factorial
+
 def test_find_factorial():
     num = 5
     assert find_factorial(num) == 12
@@ -360,6 +372,9 @@ _test.py .                                                               [100%]
 Then we confirm if our other testing conditions are still passing.
 
 ```python
+# _tests
+from factorial import find_factorial
+
 def test_find_factorial_of_zero():
     num = 0
     assert find_factorial(num) == 1
