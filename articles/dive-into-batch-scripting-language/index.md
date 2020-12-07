@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/dive-into-batch-scripting-language/
 title: Dive into the Batch Scripting Language
-description: In this tutorial we will go through how to 
+description: In this tutorial we will go through how to
 author: ahmad-mardeni
 date: 2020-11-24T00:00:00-16:00
 topics: []
@@ -40,7 +40,7 @@ By default, when you run a Batch file it displays every command it's currently e
 @echo off
 ```
 
-We used the "@" sign to prevent the command from appearing as well. 
+We used the "@" sign to prevent the command from appearing as well.
 
 Now let's create our first Batch file that will list all the files names in a new text file.
 ```batch
@@ -77,7 +77,7 @@ The ability to use the wildcards in a Batch file greatly enhances the power of i
 
 ```batch
 @echo off
-dir /s "C:\*.mp3" 
+dir /s "C:\*.mp3"
 ```
 
 You can use `xcopy` to create a backup for the files:
@@ -117,7 +117,7 @@ Now let's talk about the `REM` command that allows you to make a comment in a ba
 
 Another way to make a comment in a batch file is by using :: instead of `REM`, but be aware that if you are using too many `REM` it may slow down your code because the batch file executes every line of code.
 
-If you want to make changes to the CMD environment variables you can use the `SET` command that provides you the ability to set, delete, or display an environment variable, but be aware that those changes will affect only the current CMD. 
+If you want to make changes to the CMD environment variables you can use the `SET` command that provides you the ability to set, delete, or display an environment variable, but be aware that those changes will affect only the current CMD.
 
 Let's take a look at the syntax:
 
@@ -131,8 +131,8 @@ For example, open your terminal then type `SET windir`, it will display `C:\WIND
 
 You can use a switch `/A` with the `SET` command in order to make some basic arithmetic operations:
 
-|   Symbole	|   Operation	|
-|---	|---	|
+|Symbol| Operation|
+|---|---|
 |   +	|   Addition	|
 |   -	|   Subtraction	|
 |   *	|   Multiplication	|
@@ -158,7 +158,7 @@ if %y%==0 (
 )
 ```
 
-There are many possibilities with Batch. 
+There are many possibilities with Batch.
 
 For example, you can make a [ping](https://en.wikipedia.org/wiki/Ping_(networking_utility)) request by:
 ```batch
@@ -176,7 +176,7 @@ The GTR is an expression for "greater than", you can also use the following:
 |---	|---	|
 |   EQU	|   equal to	|   	
 |   NEQ	|   not equal to	|
-|   LSS	|   less than	| 
+|   LSS	|   less than	|
 |   LEQ	|   less than or equal to	|   		
 |   GEQ	|   greater than or equal to	|   	
 
@@ -194,11 +194,11 @@ pause
 goto :top
 ```
 
-The title allows you to change the name of the window to whatever you want. 
+The title allows you to change the name of the window to whatever you want.
 
 You can change the color simply by using the following:
 
-|   Symbol	|   Color	|   Symbol	|  Color 	| 
+|   Symbol	|   Color	|   Symbol	|  Color 	|
 |---	|---	|---	|---	|   	
 |   0	|   Black	|   8	|   Gray	|   	   	
 |   1	|   Navy	|   9	|   Blue	|   	   	
@@ -218,15 +218,15 @@ If you run the code above, you will see the following:
 We talked about the `SET` command in previous examples, now we are going to build on that knowledge of environment variables with some examples.
 
 #### Delete a variable  
-If you type the name of the variable with an equal sign then the variable will be deleted. 
+If you type the name of the variable with an equal sign then the variable will be deleted.
 
 Like the following:
 ```batch
 SET variablename=
 ```
 
-#### Permanent setting 
-To make permanent changes you have to use `SETX`. It extends the `SET` command so that any change for the environment variable will be permanent. 
+#### Permanent setting
+To make permanent changes you have to use `SETX`. It extends the `SET` command so that any change for the environment variable will be permanent.
 
 The command of adding a folder to the path is:
 ```batch
@@ -247,7 +247,7 @@ If %ERRORLEVEL% == 1 (echo error)
 The output will be `error`.
 
 ### Assoc
-You can manage files extensions, display an existing association, or delete one by the `assoc` command. 
+You can manage files extensions, display an existing association, or delete one by the `assoc` command.
 
 For example, if you type `assoc` in your terminal, it will display every file associations that exists on your machine.
 
@@ -269,7 +269,7 @@ The file associations output now will be in the file lists.txt:
 ```
 
 ### Conclusion
-In this tutorial, we learned the most important things about the Batch scripting language. If you are interested in system programming. I recommend you learn Windows [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7). 
+In this tutorial, we learned the most important things about the Batch scripting language. If you are interested in system programming. I recommend you learn Windows [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7).
 
 Unlike most shells, that accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR) which accepts and returns .NET objects. However, Batch will still be very important to run utilities in the Windows environment.
 
