@@ -36,6 +36,21 @@ To run unit tests, you provide a sample input into your code unit, and then chec
 
 For example, say you have a python function that calculates the factorial of a number in your codebase that you would like to test.
 
+First, we create our testing enviroment i.e.
+
+```bash
+$ mkdir factorial_testing
+$ cd factorial_testing
+$ python3 -m venv virtual && source virtual/bin/activate
+```
+Then we create our testing file and function file.
+
+```bash
+$ touch _test.py factorial.py
+```
+Our factorial function will be added to our `factorial.py` file, while our tests will be written inside our `_test.py` file.
+
+
 ```python
 #  Factorial
 
