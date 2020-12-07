@@ -115,7 +115,7 @@ from factorial import find_factorial
 
 def test_find_factorial_of_zero():
     num = 0
-    assert find_factorial(num) == 1
+    assert find_factorial(num) == 2
 ```
 You get an AssertionError error because your code unit can’t uphold its contract as expected in your tests. This error will notify you about the part of your code unit that is breaking hence allowing you to fix all your errors easily. 
 
