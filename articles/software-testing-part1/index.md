@@ -40,7 +40,7 @@ For example, say you have a python function that calculates the factorial of a n
 #  Factorial
 
 def  find_factorial(num):
-    If num == 1:
+    if num == 1:
         return num
     elif  num == 0:
         return 1
@@ -55,7 +55,7 @@ To perform unit testing, you have to test every output of your code unit with th
 ```python
 # _test.py
 
-Import pytest
+from factorial import find_factorial
 
 def test_find_factorial_of_zero():
     num = 0
@@ -76,24 +76,24 @@ def test_find_factorial():
 Run your tests to confirm if your code unit is working as expected.
 
 ```bash
-py.test
+$ py.test
 
 ============================= test session starts ==============================
 platform darwin -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
-rootdir: /Users/sheriff/Python_testing
-plugins: hypothesis-5.5.4, arraydiff-0.3, remotedata-0.3.2, openfiles-0.4.0, doctestplus-0.5.0, astropy-header-0.1.2, cov-2.8.1
-collected 1 item                                                               
+rootdir: /Users/salius/Python_testing
+plugins: requests-mock-1.8.0, hypothesis-5.5.4, arraydiff-0.3, remotedata-0.3.2, openfiles-0.4.0, mock-3.3.1, doctestplus-0.5.0, astropy-header-0.1.2, cov-2.8.1
+collected 4 items                                                              
 
-_test.py .                                                               [100%]
+_test.py ....                                                            [100%]
 
-============================== 1 passed in 0.06s ===============================
+============================== 4 passed in 1.89s ===============================
 ```
 Now, say you change the expected output of your test to a wrong value.
 
 ```python
 #  _test.py
 
-Import pytest
+from factorial import find_factorial
 
 def test_find_factorial_of_zero():
     num = 0
@@ -102,6 +102,8 @@ def test_find_factorial_of_zero():
 You get an AssertionError error because your code unit can’t uphold its contract as expected in your tests. This error will notify you about the part of your code unit that is breaking hence allowing you to fix all your errors easily. 
 
 ```bash
+$ py.test
+
 ============================= test session starts ==============================
 platform darwin -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
 rootdir: /Users/salius/Python_testing
