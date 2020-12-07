@@ -37,9 +37,9 @@ Let's take a simple example of how a decision tree works. Suppose we want to pre
 
 The main difference between the random forest algorithm and the decision tree algorithm is that in the former, establishing root nodes and segregating nodes is done randomly. The random forest algorithm uses the bagging method to generate the required prediction. 
 
-Bagging involves using different samples of data (training data) rather than just one sample. A training dataset comprises observations and features that are used for making predictions. The decision trees produce different outputs, depending on the training data fed to the rain forest algorithm. These outputs will be ranked, and the highest will be chosen as the final output. 
+Bagging involves using different samples of data (training data) rather than just one sample. A training dataset comprises observations and features that are used for making predictions. The decision trees produce different outputs, depending on the training data fed to the random forest algorithm. These outputs will be ranked, and the highest will be chosen as the final output. 
 
-Our first example can still be used to explain how random forests work. Instead of having a single decision tree, the rain forest will have many decision trees. Let's assume we have only four decision trees. In this case, the training data comprising the phone's observations and features will be divided into four root nodes. 
+Our first example can still be used to explain how random forests work. Instead of having a single decision tree, the random forest will have many decision trees. Let's assume we have only four decision trees. In this case, the training data comprising the phone's observations and features will be divided into four root nodes. 
 
 The root nodes could represent four features that could influence the customer's choice (price, internal storage, camera, and RAM). The random forest will split the nodes by selecting features randomly. The final prediction will be selected based on the outcome of the four trees. The outcome chosen by most decision trees will be the final choice. If three trees predict *buying*, and one tree predicts *not buying*, then the final prediction will be *buying*. In this case, it is predicted that the customer will buy the phone.
 
@@ -52,11 +52,18 @@ A rain forest system relies on various decision trees. Every decision tree consi
 
 [Image Source: Medium](https://miro.medium.com/max/5752/1*5dq_1hnqkboZTcKFfwbO9A.png)
 
-Let's take an example of a training dataset consisting of various fruits such as bananas, apples, pineapples, and mangoes. The random forest classifier divides this dataset into subsets. These subsets are given to every decision tree in the random forest system. each decision tree produces its specific output. For example, the prediction for trees 1 and 2 is *apple*. Another decision tree (n) has predicted *banana* as the outcome. The random forest classifier collects the majority voting to provide the final prediction. The majority of the decision trees have chosen *apple* as their prediction. This makes the classifier to choose *apple* as the final prediction. 
+Let's take an example of a training dataset consisting of various fruits such as bananas, apples, pineapples, and mangoes. The random forest classifier divides this dataset into subsets. These subsets are given to every decision tree in the random forest system. Each decision tree produces its specific output. For example, the prediction for trees 1 and 2 is *apple*. Another decision tree (n) has predicted *banana* as the outcome. The random forest classifier collects the majority voting to provide the final prediction. The majority of the decision trees have chosen *apple* as their prediction. This makes the classifier to choose *apple* as the final prediction. 
 
 ![Example of Random Forest Classifier](/engineering-education/introduction-to-random-forest-in-machine-learning/example-of-random-forest-classifier.png)
 
 [Image Source: Javatpoint](https://static.javatpoint.com/tutorial/machine-learning/images/random-forest-algorithm2.png)
+
+### Regression in Random Forest
+Regression is the other task performed by a random forest algorithm. A random forest regression follows the concept of a simple regression. Values of dependent (features) and independent variables are passed in the random forest model. 
+
+Random forest regressions can be run in various programs such as [SAS](https://en.wikipedia.org/wiki/SAS_(software)), R, and python. In a random forest regression, each tree produces a specific prediction. The mean prediction of the individual trees is the output of the regression. This is unlike in random forest classification, whose output is determined by the mode of the output of the decision trees. 
+
+Although random forest regression and linear regression follow the same concept, they differ in terms of functions. The function of a linear regression is in the form of y=bx + c, where y is the dependent variable, x is the independent variable, b is the estimation parameter, and c is a constant. The function of a complex random forest regression is like a [blackbox](https://en.wikipedia.org/wiki/Black_box). 
 
 ### Applications of Random Forest
 Some of the applications of the random forest include:
@@ -64,7 +71,7 @@ Some of the applications of the random forest include:
 #### Banking
 Random forest is used in banking to predict the creditworthiness of a loan applicant. This helps the lending institution to make a good decision on whether to give the customer the loan or not. Banks also use the random forest algorithm to detect fraudsters. 
 
-#### Health care
+#### Health Care
 Health professionals use random forest systems to diagnose patients. Patients are diagnosed by assessing their previous medical history. Past medical records are reviewed to establish the right dosage for the patients. 
 
 #### Stock Market
@@ -72,6 +79,15 @@ Financial analysts use it to identify potential markets for stocks. It also enab
 
 #### E-commerce
 Through rain forest algorithms, e-commerce vendors can predict the preference of customers based on past consumption behavior. 
+
+### When to Avoid Using Random Forest
+Random forest algorithm is not ideal in the following situations:
+
+#### Extrapolation
+Random forest regression is not ideal in the [extrapolation](https://en.wikipedia.org/wiki/Extrapolation) of data. This is unlike linear regression, which uses existing observations to estimate values beyond the observation range. This explains why most applications of random forest relate to classification.
+
+#### Sparse Data
+Random forest does not produce good results when the data is very sparse. In this case, the subset of features and the bootstrapped sample will produce an invariant space. This will lead to unproductive splits, which will affect the outcome.
 
 ### Advantages of Random Forest
 * It can perform both regression and classification tasks.
