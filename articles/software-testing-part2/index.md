@@ -43,12 +43,26 @@ For example, say we are trying to create a python function that calculates the f
 - Return value error if the input is less than 0.
 - Calculate the factorial of all number greater than 1.
 
-After listing our testing conditions, first, we create a test that fulfills our first condition.
+After listing our testing conditions, we create our testing enviroment i.e.
+
+```bash
+$ mkdir factorial_testing
+$ cd factorial_testing
+$ python3 -m venv virtual && source virtual/bin/activate
+```
+Then we create our testing file and function file.
+
+```bash
+$ touch _test.py factorial.py
+```
+Our factorial function will be added to our `factorial.py` file, while our tests will be written inside our `_test.py` file.
+
+Then, we create a first test that fulfills our first condition.
 
 - Return 1 if the input is 0.
 
 ```python
-# _tests
+# _test
 
 from factorial import find_factorial
 
@@ -111,7 +125,7 @@ _test.py .                                                               [100%]
 Also, first we design a test to pass these condition.
 
 ```python
-# _tests
+# _test
 from factorial import find_factorial
 
 def test_find_factorial_of_one():
@@ -173,7 +187,7 @@ _test.py .                                                               [100%]
 Before moving on to our next testing condition, we have to run our first test again to confirm if it is not broken and our two testing conditions can pass together at the same time.
 
 ```python
-# _tests
+# _test
 from factorial import find_factorial
 
 def test_find_factorial_of_zero():
@@ -206,7 +220,7 @@ After that, we move to our thirld testing condition.
 First we create our tests.
 
 ```python
-# _tests
+# _test
 from factorial import find_factorial
 
 def test_find_factorial_of_negative_numbers():
@@ -270,7 +284,7 @@ _test.py .                                                               [100%]
 After that, we run all of our testing conditions together to confirm if they are still passing.
 
 ```python
-# _tests
+# _test
 from factorial import find_factorial
 
 def test_find_factorial_of_zero():
@@ -307,7 +321,7 @@ Then, we move  to our last testing condition.
 First we write our tests.
 
 ```python
-# _tests
+# _test
 from factorial import find_factorial
 
 def test_find_factorial():
@@ -372,7 +386,7 @@ _test.py .                                                               [100%]
 Then we confirm if our other testing conditions are still passing.
 
 ```python
-# _tests
+# _test
 from factorial import find_factorial
 
 def test_find_factorial_of_zero():
@@ -392,7 +406,7 @@ def test_find_factorial():
     assert find_factorial(num) == 12
 ```
 ```bash
-Py.test
+$ py.test
 
 ============================= test session starts ==============================
 platform darwin -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
