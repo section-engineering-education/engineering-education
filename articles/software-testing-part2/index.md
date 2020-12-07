@@ -70,7 +70,7 @@ def test_find_factorial():
     num = 0
     assert find_factorial(num) == 1
 ```
-When we run our tests with `py.test`, we will get an assertion error. 
+When we run our test with `py.test`, we will get an assertion error. 
 
 ```bash
 $ py.test
