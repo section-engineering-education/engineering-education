@@ -7,7 +7,7 @@ This article provides a comprehensive comparison between these cloud computing p
 ### What is AWS?
 Amazon Web Services (AWS) provides APIs and a cloud computing platform to individuals, companies, and governments. The AWS platform offers cloud computing solutions that are flexible, easy-to-use, scalable, reliable, and cost-effective. 
 
-It also consists of offerings such as infrastructure as a service (IAAS), software as a service (SAAS), and platform as a service (PAAS). Some of the services provided by this platform include networking, storage, remote computing, mobile development, email, analytics, and security.
+It also consists of offerings such as infrastructure as a service (IAAS), software as a service (SAAS), and platform as a service (PAAS). Examples of the services provided by AWS include networking, storage, remote computing, mobile development, email, analytics, and security.
 
 ![Amazon Web Services](/engineering-education/aws-vs-google-cloud-services/amazon-web-services.png)
 
