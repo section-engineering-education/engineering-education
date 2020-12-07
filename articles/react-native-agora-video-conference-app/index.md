@@ -63,7 +63,7 @@ We'll be going through these steps in this article:
 ### Creating an Agora account
 Head to Agora and create an account. You can reach the signup page from [here](https://sso.agora.io/en/v2/signup).
 
-Fill in the details and create an account or you can signup with Google, Github, or Cocos. Once you've signed up, you'll see the dashboard.
+Fill in the details and create an account or you can signup with Google, Github, or Cocos. Once you've signed up, you'll see the dashboard below.
 
 ![Agora Dashboard](/engineering-education/react-native-agora-video-conference-app/agora_dashboard.png)
 
@@ -86,7 +86,7 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 Make sure you're following the React Native CLI Quickstart and not the Expo CLI Quickstart.
 
-### Clone the starter code
+### Cloning the starter code
 To focus more on the Video conference, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
 
 In the starter code, the Navigation is set up using a [Stack Navigator](https://reactnavigation.org/docs/stack-navigator/) with the Home screen and a dummy Video Conference Screen. You can find the documentation for the React Native Navigation [here](https://reactnavigation.org/docs/getting-started).
@@ -137,7 +137,7 @@ pod install
 > Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable mulitdexing.
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
-### Pass channel ID while navigating
+### Passing the channel ID while navigating
 When we create or join a conference, we need to give a channel ID to Agora.
 
 For a new video conference, we'll generate a new channel ID. To join a conference, we'll use the channel ID from the text input. We need to pass the channel ID from the Home Screen to the Conference Screen as a route prop.
@@ -158,7 +158,7 @@ To fix this, you'll need to install `react-native-get-random-values`.
 npm install react-native-get-random-values
 ```
 
-In `screens/Home.js`, let's import both of those packages.
+In `screens/Home.js`, let's import both of these packages.
 
 > We must import the `react-native-get-random-values` before the `uuid` import to avoid the error.
 
@@ -179,10 +179,11 @@ const joinConference = () => navigation.navigate("Conference", { channel: joinCh
 
 When you press these buttons, it should be the same as before. But, we can access the `channel` route prop in the Conference Screen.
 
-You can learn more about the `useNavigation` hook which is present in the starter code [here](https://reactnavigation.org/docs/use-navigation/).
+You can learn more about the `useNavigation` hook that is present in the starter code [here](https://reactnavigation.org/docs/use-navigation/).
 
 ### Setting up the video conference screen
 To use Agora, we need to install `react-native-agora`. There is a community managed package called `agora-rn-uikit` to help us build the UI.
+
 Here is the [GitHub Repository](https://github.com/AgoraIO-Community/ReactNative-UIKit) of `agora-rn-uikit`.
 
 Let's install both the packages.
@@ -220,7 +221,7 @@ export default function Conference(props) {
 
 Now, when you open this page, you should be in the video conference and others should be able to join the conference.
 
-The app will prompt the user for the camera and microphone permissions when you launch a conference for the first time.
+The app will prompt the user for camera and microphone permissions when you launch a conference for the first time.
 
 When no one else is at the conference except you, you'll see the local feed. When others start to join the conference, you'll see their remote feed.
 
@@ -253,8 +254,7 @@ const callbacks = {
 return <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />;
 ```
 
-Here is the list of callbacks that you can pass for each button.
-
+Here is the list of callbacks that you can pass for each button:
 - EndCall
 - FullScreen
 - SwitchCamera
@@ -264,7 +264,7 @@ Here is the list of callbacks that you can pass for each button.
 - LocalMuteAudio
 - LocalMuteVideo
 
-For Example,
+For example:
 
 ```JavaScript
 const callbacks = {
@@ -302,8 +302,7 @@ return <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} styleProps={stylePr
 
 ![Styled Buttons](/engineering-education/react-native-agora-video-conference-app/styled_buttons.jpeg)
 
-Here is the list of styles that you can pass.
-
+Here is the list of styles that you can pass:
 - theme (Icon color of the Buttons - Accepts a color)
 - BtnTemplateStyles
 - maxViewStyles
@@ -322,7 +321,7 @@ Here is the list of styles that you can pass.
   - endCall
   - fullScreen
 
-For Example,
+For example:
 
 ```JavaScript
 const styles = {
@@ -390,7 +389,9 @@ const styles = StyleSheet.create({
 });
 ```
 
-Now, Let's import the `Share` component from React Native. The Share component has a method `share` on it, which accepts two arguments, `content` and `options`. We'll pass the channel ID in content like this:
+Now, Let's import the `Share` component from React Native. The Share component has a method `share` on it, that accepts two arguments, `content` and `options`. 
+
+We'll pass the channel ID in content like this:
 
 ```JavaScript
 { message: props.route.params.channel }
