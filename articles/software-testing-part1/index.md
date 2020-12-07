@@ -50,19 +50,22 @@ $ touch _test.py factorial.py
 ```
 Our factorial function will be added to our `factorial.py` file, while our tests will be written inside our `_test.py` file.
 
-
 ```python
 #  Factorial
 
 def  find_factorial(num):
+    factorial = 1
+
     if num == 1:
-        return num
+        return factorial
     elif  num == 0:
-        return 1
-    elif num > 0:
+        return factorial
+    elif num < 0:
         return  ValueError
     else:
-        return num * find_factorial(num - 1)
+        for i in range(1, (num + 1)):
+            factorial = factorial * i
+        return factorial
 ```
 
 To perform unit testing, you have to test every output of your code unit with their expected return value to confirm if they adhere to their contract. 
