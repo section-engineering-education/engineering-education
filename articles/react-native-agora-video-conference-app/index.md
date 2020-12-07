@@ -6,7 +6,7 @@ url: /engineering-education/react-native-agora-video-conference-app/
 title: React Native Agora Video Conference App
 description: This tutorial will give readers a detailed guide on how to build a video conference application using React Native and Agora SDKs.
 author: mohan-raj
-date: 2020-12-07T00:00:00-13:00
+date: 2020-12-07T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -29,20 +29,20 @@ By the end of the tutorial, you’ll know:
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, please refer to this [tutorial](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
-As I mentioned in my [previous article](/engineering-education/react-native-agora-livestreaming-app/) as well Agora was founded in 2014. It's a service provider used for real-time voice and video. Its core technology is real-time communication (RTC).
+As I mentioned in my [previous article](/engineering-education/react-native-agora-livestreaming-app/), Agora was founded in 2014. It's a service provider used for real-time voice and video. Its core technology is real-time communication (RTC).
 Agora provides SDKs to build apps that require real-time engagement like:
 
-- Audio/Video calls
+- Audio/Video calls.
 
-- Interactive Livestreaming (Audio/ Video)
+- Interactive Livestreaming (Audio/Video).
 
-- Interactive Gaming
+- Interactive Gaming.
 
-- Real-Time Messaging (which is in BETA at the time of writing this article)
+- Real-Time Messaging (which is in BETA at the time of writing this article).
 
 Agora supports up to 1 million users in a channel. They also recommend limiting the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
 
-Agora is a paid service, but the first 10,000 minutes are free every month. Check their pricing [here](https://www.agora.io/en/pricing/).
+Agora is a paid service, but the first 10,000 minutes are free every month. View their pricing [here](https://www.agora.io/en/pricing/).
 
 If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
 
