@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/react-native-agora-video-conference-app/
 title: React Native Agora Video Conference App
-description: This tutorial will give readers 
+description: This tutorial will give readers a detailed guide on how to build a video conference application using React Native and Agora SDKs.
 author: mohan-raj
 date: 2020-12-07T00:00:00-13:00
 topics: []
