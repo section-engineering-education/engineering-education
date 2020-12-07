@@ -159,3 +159,6 @@ The same problem can be solved using other programming paradigms such as [divide
 ### Conclusion
 
 In this article, we considered the greedy approach to obtain the maximum profit given a list of indices. Observe that the option of performing multiple buys and sell operations are never used. I hope the intuition behind the greedy approach was presented well. Do let me know what you think about the approach taken to solve the problem. Feedback is highly appreciated.
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
