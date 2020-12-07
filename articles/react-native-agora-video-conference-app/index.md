@@ -1,5 +1,21 @@
-In this tutorial, we will build a Video Conference app with React Native and [Agora](https://www.agora.io/en/about-us/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/react-native-agora-video-conference-app/
+title: React Native Agora Video Conference App
+description: This tutorial will give readers 
+author: mohan-raj
+date: 2020-12-07T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/react-native-agora-video-conference-app/hero.jpg
+    alt: React Native Agora Conference App
+---
+In this tutorial, we will build a Video Conference app with React Native and [Agora](https://www.agora.io/en/about-us/).
+<!--more-->
 ### Goals
 
 By the end of the tutorial, you’ll know:
