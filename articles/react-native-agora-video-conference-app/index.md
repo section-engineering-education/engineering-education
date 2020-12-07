@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/react-native-agora-video-conference-app/hero.jpg
     alt: React Native Agora Conference App
 ---
-In this tutorial, we will build a Video Conference application with React Native and [Agora](https://www.agora.io/en/about-us/).
+In this tutorial, we will build a Video Conference application with the help of React Native and [Agora](https://www.agora.io/en/about-us/).
 <!--more-->
 ### Goals
 By the end of the tutorial, you’ll know:
@@ -29,7 +29,7 @@ By the end of the tutorial, you’ll know:
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, please refer to this [tutorial](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
-Founded in 2014, Agora.io is a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
+As I mentioned in my [previous article](/engineering-education/react-native-agora-livestreaming-app/) as well Agora was founded in 2014. It's a service provider used for real-time voice and video. Its core technology is real-time communication (RTC).
 Agora provides SDKs to build apps that require real-time engagement like:
 
 - Audio/Video calls
@@ -42,20 +42,19 @@ Agora provides SDKs to build apps that require real-time engagement like:
 
 Agora supports up to 1 million users in a channel. They also recommend limiting the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
 
-Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
+Agora is a paid service, but the first 10,000 minutes are free every month. Check their pricing [here](https://www.agora.io/en/pricing/).
 
 If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
 
 Here is the [documentation for React Native Agora](https://docs.agora.io/en/Video/API%20Reference/react_native/index.html).
 
 ### Overview
-We'll be going through these steps in this article,
-
+We'll be going through these steps in this article:
 1. Creating an Agora account.
-2. Development environment.
-3. Clone the starter code.
+2. Setting up a development environment.
+3. Cloning the starter code.
 4. Installing dependencies.
-5. Pass channel ID while navigating.
+5. Passing channel ID while navigating.
 6. Setting up the video conference.
 7. Recap.
 
@@ -66,17 +65,17 @@ Head to Agora and create an account. You can reach the signup page from [here](h
 
 Fill in the details and create an account or you can signup with Google, Github, or Cocos. Once you've signed up, you'll see the dashboard.
 
-![Agora Dashboard](agora_dashboard.png)
+![Agora Dashboard](/engineering-education/react-native-agora-video-conference-app/agora_dashboard.png)
 
 Click on New Project.
 
 You'll see this form. Fill out the project name and set the authentication mechanism to testing.
 
-![Agora New Project Form](agora_new_project.png)
+![Agora New Project Form](/engineering-education/react-native-agora-video-conference-app/agora_new_project.png)
 
 Once you hit on submit, it'll create a new project and you should see it on the Project Management Console.
 
-![Agora Project Management Console](agora_project_management_console.png)
+![Agora Project Management Console](/engineering-education/react-native-agora-video-conference-app/agora_project_management_console.png)
 
 Now, click on the closed eye icon near the App ID to reveal it and copy the App ID. We'll be needing this later while setting up Agora in our app.
 
@@ -96,7 +95,7 @@ The Home Screen has 2 buttons, Start and Join. The join button has a text input 
 
 This is the Home Screen you'll see when you open the app.
 
-![Homescreen](homescreen.jpeg)
+![Homescreen](/engineering-education/react-native-agora-video-conference-app/homescreen.jpeg)
 
 ### Installing dependencies
 You can install these packages either in advance or while going through the tutorial.
@@ -183,7 +182,6 @@ When you press these buttons, it should be the same as before. But, we can acces
 You can learn more about the `useNavigation` hook which is present in the starter code [here](https://reactnavigation.org/docs/use-navigation/).
 
 ### Setting up the video conference screen
-
 To use Agora, we need to install `react-native-agora`. There is a community managed package called `agora-rn-uikit` to help us build the UI.
 Here is the [GitHub Repository](https://github.com/AgoraIO-Community/ReactNative-UIKit) of `agora-rn-uikit`.
 
@@ -206,7 +204,7 @@ In `screens/Conference.js`, let's import the Agora UI Kit.
 import AgoraUIKit from "agora-rn-uikit";
 ```
 
-It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora token authentication [here](https://www.section.io/engineering-education/agora-express-token-server/).
+It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora token authentication [here](/engineering-education/agora-express-token-server/).
 
 You can access the route prop like `props.route.params.propname`. In our case, it'll be `props.route.params.channel`.
 
@@ -229,11 +227,11 @@ When no one else is at the conference except you, you'll see the local feed. Whe
 #### Callbacks
 You'll see 5 buttons on the conference screen. They are toggle audio, toggle video, end conference, toggle camera, and toggle full screen. We can pass callback functions for each button.
 
-![Buttons](buttons.jpeg)
+![Buttons](/engineering-education/react-native-agora-video-conference-app/buttons.jpeg)
 
 When someone joins the stream, you'll see two more buttons. These buttons will let you mute remote audio and video streams.
 
-![Buttons](remote_buttons.jpg)
+![Buttons](/engineering-education/react-native-agora-video-conference-app/remote_buttons.jpg)
 
 You can pass functions that'll get executed when the user interacts with the buttons. These custom functions are called callback functions.
 
@@ -302,7 +300,7 @@ const styleProps = {
 return <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} styleProps={styleProps} />;
 ```
 
-![Styled Buttons](styled_buttons.jpeg)
+![Styled Buttons](/engineering-education/react-native-agora-video-conference-app/styled_buttons.jpeg)
 
 Here is the list of styles that you can pass.
 
