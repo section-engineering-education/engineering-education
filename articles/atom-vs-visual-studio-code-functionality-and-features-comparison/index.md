@@ -16,7 +16,7 @@ Comparing these two text editors will enable developers to choose the editor the
 
 ### Atom
 
-[Atom](https://atom.io/) is a free and open-source text editor developed by GitHub. It works across Windows, Linux, and Mac OS. Currently, Atom is at version 1.52.0. It lets you easily customize every aspect of it to speed up the workflows. Atom uses a framework called Electron. Electron is a JavaScript framework that enables building cross-platform desktop applications.
+[Atom](https://atom.io/) is a free and open-source text editor developed by GitHub. It works across Windows, Linux, and Mac OS. Currently, Atom is at version 1.52.0. It lets you easily customize every aspect of it to speed up workflows. Atom uses a framework called Electron. Electron is a JavaScript framework that enables building cross-platform desktop applications.
 
 Atom is built using web technologies: HTML, CSS, and JavaScript, thus being very flexible and hackable. If you know those technologies, extending Atom is very easy. Atom features are built-in packages.
 
@@ -44,7 +44,7 @@ Atom gives you a welcome guide when you first open the program. Going through th
 
 VS Code is an open-source code editor developed by Microsoft in April 2015. There is no payment required to use VS Code Editor.
 
-It uses Electron as its base. VS Code enables cross-platform, it runs on Windows, Mac OS, and Linux. Electron is built using Node.js, and it has built-in support for JavaScript and TypeScript. VS Code is built using web technology: HTML, CSS, and JavaScript.
+Since VS Code uses Electron, it is cross-platform. It runs on Windows, Mac OS, and Linux. Electron is built using Node.js, and it has built-in support for JavaScript and TypeScript. VS Code is also built using web technology: HTML, CSS, and JavaScript.
 
 Visual Studio Code supports other languages such as Java, Python, PHP, C#, and C++. It comprises thousands of extensions that enable debuggers, more languages, commands, themes, etc.
 
@@ -66,7 +66,7 @@ The activity bar on the left with icons give you access to:
 - Debugger
 - Extensions
 
-At the explorer, you go through the project files and where code writing and editing takes place. The search icon is used to find files and information. Source Control Icon allows you to initialize a Git repository and manage projects. At the extension's icon, you install can install and manage extensions. VS Code comes with many integrated built-in features. You can learn more about Visual Studio editor [here.](https://code.visualstudio.com/docs)
+At the explorer, you go through the project files and where code writing and editing takes place. The search icon is used to find files and information. Source Control Icon allows you to initialize a Git repository and manage projects. If you click the extension icon, you can install and manage extensions. VS Code comes with many integrated built-in features. You can learn more about Visual Studio editor [here.](https://code.visualstudio.com/docs)
 
 ### Atom vs. VS Code: Tabular Comparison
 
@@ -120,7 +120,7 @@ Atom is a product of GitHub, and git integration is an in-built feature. Also, V
 The autocomplete tool lets you view and insert possible completions in the editor using the Enter button. The autocomplete system works by looking through the currently open file for strings that match whatever you type. Both Atom and Visual Studio Code editors have the autocomplete feature.
 
 In the Atom code editor, the autocomplete functionality is implemented in [the autocomplete-plus package](https://github.com/atom/autocomplete-plus). VS Code comes integrated with tools for auto-completion, thus making the code you write more convenient. Tools for auto-completion in VS Code include [Emmet](https://code.visualstudio.com/docs/editor/emmet) and [IntelliSense.](https://code.visualstudio.com/docs/editor/intellisense) You don't have to install Atom's Autocomplete-plus package it comes with Atom while it is installed. Contrary, Emmet and Intellisense add-ons which have to be installed. Emmet is an essential toolkit for web developers. It makes HTML and CSS workflow fast. Instead of typing or copying and pasting Emmet do most for you.
-This is an example of Emmet, it expands a into ```<a href=""></a>```, and h1 into ```<h1></h1>```.
+This is an example of Emmet, it expands 'a' into ```<a href=""></a>```, and 'h1' into ```<h1></h1>```.
 
 ![Emmet](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/emmet.gif)
 
