@@ -21,7 +21,7 @@ Examples of long-running JavaScript functions are those that:
 - Fetch data from an API.
 - Wait for some time to elapse before executing.
 
-But, the above-mentioned functionality is commonly used in today's web applications. In this guide, you will learn how this functionality is achieved Asynchronously with Web Browser APIs.
+The above-mentioned functionality is commonly used in today's web applications. In this guide, you will learn how this functionality is achieved asynchronously with web browser APIs.
 
 With an understanding of Asynchronous functionality you should be able to:
 1. Run long-running JavaScript functions without blocking the Thread Of Execution.
