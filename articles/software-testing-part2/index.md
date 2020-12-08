@@ -55,6 +55,10 @@ Then we create our testing file and function file.
 ```bash
 $ touch _test.py factorial.py
 ```
+Finally, we install pytest
+```bash
+$ pip install pytest
+```
 Our factorial code will be in our `factorial.py` file, while our test code will be written in our `_test.py` file.
 
 ***Visit [pytest.org](https://docs.pytest.org/en/stable/getting-started.html) to learn more on how to set up testing enviroments and testing files.***
