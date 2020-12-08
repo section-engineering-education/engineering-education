@@ -118,7 +118,7 @@ Click `Connect` and you should see a message similar to the one below.
 
 Go back to Android studio to finish up the setup.
 
-![image](as_connected_fb_add_auth1.png)
+![image](as_connected_fb_add_auth1.png "accept changes")
 
 You can see a success notification at the bottom indicating that our app is now connected to firebase. 
 
@@ -126,15 +126,15 @@ We're now in the last final step of setting up firebase auth. Click `Add firebas
 
 Finally, this is what you should see on the firebase assistant. You can confirm it by opening the build. Gradle (app level) dependencies.
 
-![image](as_connected_fb_and_auth.png)
+![image](as_connected_fb_and_auth.png "connected firebase")
 
 #### One more thing concerning firebase
 Since we want to use Email and password auth, we have to enable it in our project's console. To do that navigate to `Authentication` > `sign-in method` then enable email and password auth. This should look like this
 
-![image](firebase_enable_auth1.png)
-![image](firebase_enable_auth2.png)
+![image](firebase_enable_auth1.png "enable auth")
+![image](firebase_enable_auth2.png "enabled auth")
 
-Congratulations !! We have finished setting up firebase auth.
+Congratulations! We have finished setting up firebase auth.
 
 ### Getting ready to Code 
 
