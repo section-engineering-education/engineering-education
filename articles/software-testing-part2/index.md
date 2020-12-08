@@ -372,7 +372,7 @@ def find_factorial(num):
         return 1
     if num < 0:
         return ValueError
-    if num < 1:
+    if num > 1:
         return num * find_factorial(num - 1)
 ```
 ```bash
