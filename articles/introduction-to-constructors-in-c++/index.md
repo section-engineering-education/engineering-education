@@ -27,7 +27,7 @@ integer:: integer(void) // constructor definition
   b=2;
 }
 ```
-When we created the constructor above, we are assured that the object we create in our program will be automatically initialized. For instance, the declaration `integer v1;` automatically initialize our object `v1` and assigns the data members `a` and `b` the value  `2`. With normal member functions, we would be required to write a Y statement to invoke the constructor function and for each of the objects separately. So if we had a large number of objects, it would result to a lot of code which might be messy and difficult to read.
+When we create a constructor, it assures us initialization of the object we create in our program. The declaration `integer v1;`  initializes our object `v1` and assigns the data members `a` and `b` the value  `2`. With normal member functions, we have to write a statement to initialize each of the objects. So if we had a large number of objects, it would result in a lot of code that might be messy and difficult to read.
 
 #### Characteristics of constructor functions.
 - Constructors are invoked automatically when we create objects.
@@ -264,7 +264,7 @@ int main()
 ```
 
 #### Conclusion
-In this article, we have gone through the basics of constructor functions and constructor overloading. A constructor is required so that when we create an instance of a class (object) all the functions and variables exist in memory. This allows you to use the class by name alongside all the variables and functions. Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
+In this article, we have gone through the basics of constructors and how to overload them. In C++ programming, the primary goal of the constructor is to create an object of the class. In other words, it is used to initialize all members of the data class. Hence, they enable programmers to limit instantiation and write code that is flexible and easy to read.
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
