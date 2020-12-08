@@ -1,4 +1,4 @@
-﻿## User registration in Django using Google OAuth
+## User registration in Django using Google OAuth
 
 Open Authorization (OAuth) is a service that allows websites or apps to share user information with other websites without being given a user's password. Users can log in to multiple websites with the same account without creating other credentials. Some of the most popular OAuth service providers are Google, Facebook and GitHub. In this tutorial, we look at registering users in a Django app using Google OAuth.
 
@@ -173,7 +173,7 @@ After a successful OAuth client ID creation, copy `Your Client ID` and `Your Cli
 
 ### Step 5 -- Add a social app in Django admin
 Now, make the migrations using the command:
-<!--make sure this is the correct command!!-->
+
 ```bash
 $ python manage.py migrate
 ```
