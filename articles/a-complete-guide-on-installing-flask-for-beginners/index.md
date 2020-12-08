@@ -154,7 +154,7 @@ def index():
 
 From the first line of code, we imported the app object from the app itself. Next, we define the route using the **@app.route** decorator, and passing the URL of the  web page, in this case, it's the homepage and we use the backward slash to delineate that. Proceed further to create an **index()** function that returns a simple hello world message. 
 
-We’ve progressed a little, at this stage we can run our application to see what it looks like on a web browser.
+At this stage we can run our application to see what it looks like on a web browser.
 
 ## Running Your Application
 Congratulations, you’ve made it this far, you can run your application by opening your terminal with the virtual environment active and run the following command line:
