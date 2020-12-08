@@ -1,12 +1,12 @@
- In Flutter, everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that wow users. Such features are difficult to meet in native app development using languages such as Java. But it creates certain challenges. Particularly, it&#39;s difficult to implement State Management. You can learn about state management from [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It is also challenging to pass data from the primary widget to its children. The introduction of the scoped\_model library helped resolve these issues.
+ In [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro), everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that wow users. Such features are difficult to meet in native app development using languages such as Java. However, it contributes to specific challenges. Particularly, it&#39;s difficult to implement State Management. You can learn about state management from [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It is also challenging to pass data from the primary widget to its children. The scoped\_model library helps resolve these issues.
 
 Let&#39;s dive in.
 
 ### Introduction
 
-The scoped\_model library consists of various utilities that allow children UI elements to receive data from their parent Widget. The library consists of three major classes; the ScopedModelDescendant, the Model, and the ScopedModel. You must extend the Model class to listen for changes. The ScopeModel widget can be used to wrap UI components to access data from the Model. The ScopedModelDescendant lets you identify the correct ScopeModel from the widget hierarchy. You can learn more about the scoped\_model library from here.
+The scoped\_model library consists of various utilities that allow children UI elements to receive data from their parent Widget. The [library](https://pub.dev/packages/scoped_model) consists of three major classes; the ScopedModelDescendant, the Model, and the ScopedModel. You must extend the Model class to listen for changes. The ScopeModel widget can be used to wrap UI components to access data from the Model. The ScopedModelDescendant lets you identify the correct ScopeModel from the widget hierarchy. You can learn more about the scoped\_model library from [here](https://pub.dev/packages/scoped_model).
 
-Let&#39;s implement the library in a Flutter application.
+Let&#39;s implement the library in our Flutter application.
 
 ### Prerequisites
 
@@ -16,11 +16,11 @@ Let&#39;s implement the library in a Flutter application.
 
 3. Have the latest Flutter SDK
 
-4. Download full project from [here](https://github.com/WanjaMIKE/flutter-scoped_model)
+4. Download full project from [here](https://github.com/WanjaMIKE/scopedmodelexample)
 
 ### The goal of the tutorial
 
-By the end of this tutorial, you will create an application that follows State Management principles in Flutter. It will allow customers to insert and submit their tips in a restaurant.
+By the end of this tutorial, you will create an application that follows State Management principles in Flutter. It will allow customers to add and store notes. Widgets will be updated as soon as data changes.
 
 ### Creating the project
 
@@ -34,1105 +34,252 @@ You must install the required library for you to access the scoped\_model&#39;s 
 
 ### Creating the UI
 
-In this stage, we will use numerous widgets to create the user interface. Our final design should be similar to the image below.
+In this stage, we will use different widgets to create the user interface. Our final design should be similar to the image below.
 
 ![App design](/engineering-education/implementing-scoped-model-in-your-flutter-application/ui.jpg)
 
-#### Modify `main.dart` file
+### Modify `main.dart` file
 
-Go to the `lib` folder and open the `main.dart` file. You will notice that there is a pre-generated code in the file. We won&#39;t be needing this code, so delete it starting from `class MyHomePage` downwards. Then go to `MyApp class,` in the same file, and change the `home` parameter to `home: HomePage().` You can follow the following code to avoid confusion.
+Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won&#39;t be needing some of this code, you can, therefore, delete the `MyHomePage class` since we will create a new one. Then go to `MyApp class,` in the same file, and change the `home` parameter to `home: MyHomePage().` You can follow the following code to avoid confusion.
 
-```
-
+```dart
 import 'package:flutter/material.dart';
-
-import './model/tip.dart';
-
+import './model/note.dart';
+import './model/notesmodel.dart';
 import 'package:scoped_model/scoped_model.dart';
-
-import './ui/home.dart';
-
-void main() {
-
- runApp(MyApp());
-
-}
 
 class MyApp extends StatelessWidget {
-
- // This widget is the root of your application.
-
- @override
-
- Widget build(BuildContext context) {
-
-   return MaterialApp(
-
-         title: 'Flutter Demo',
-
-         theme: ThemeData(
-
-           primarySwatch: Colors.blue,
-
-           visualDensity: VisualDensity.adaptivePlatformDensity,
-
-         ),
-
-         home: HomePage()
-
-   );
-
- }
-
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new ScopedModel<NotesModel>(
+      model: notesModel,
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
+    );
+  }
 }
 
 ```
 
-#### Design the homepage
+### Design the homepage
 
-Make a new package in the `lib` folder and name it `ui.` Create a `home.dart` file in this package. Paste the following code.
+Since we are making a simple application, we can include our UI code in the main.dart file. The class should be named as `MyHomePage`. Paste the following code in the `MyHomePage` class..
 
-```
-
-import 'package:flutter/cupertino.dart';
-
+```dart 
 import 'package:flutter/material.dart';
-
-import 'package:flutter_app/model/tip.dart';
-
+import './model/note.dart';
+import './model/notesmodel.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-class HomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
 
- @override
+  final String title;
 
- _HomePageState createState() => _HomePageState();
-
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-
- @override
-
- Widget build(BuildContext context) {
-
-   return Scaffold(
-
-     appBar: AppBar(
-
-       title: Text("Restaraunt Tip"),
-
-     ),
-
-     body: Container(
-
-       width: MediaQuery.of(context).size.width,
-
-       height: MediaQuery.of(context).size.height,
-
-       decoration: BoxDecoration(
-
-           image: DecorationImage(
-
-               fit: BoxFit.fill,
-
-               image: NetworkImage(
-
-                   'https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg'))),
-
-       child: Container(
-
-         child: Column(
-
-           mainAxisAlignment: MainAxisAlignment.end,
-
-           children: <Widget>[
-
-             Material(
-
-               color: Colors.white,
-
-               elevation: 14.0,
-
-               borderRadius: BorderRadius.only(
-
-                 topLeft: Radius.circular(30.0),
-
-                 topRight: Radius.circular(30.0),
-
-               ),
-
-               shadowColor: Color(0x802196F3),
-
-               child: _buildInitContent(model);
-
-             )
-
-           ],
-
-         ),
-
-       ),
-
-     ),
-
-   );
-
- }
-
- //_______________________________________________________________________________________________
-
- Widget _buildInitContent() {
-
-   return Align(
-
-     alignment: Alignment.bottomCenter,
-
-     child: Container(
-
-       width: MediaQuery.of(context).size.width,
-
-       height: 250.0,
-
-       child: Column(
-
-         children: <Widget>[
-
-           _titleContainer(),
-
-           _priceContainer(),
-
-           _submitContainer()
-
-         ],
-
-       ),
-
-     ),
-
-   );
-
- }
-
- Widget _titleContainer() {
-
-   return Container(
-
-       child: Row(
-
-     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-     children: <Widget>[
-
-       Padding(
-
-         padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 10.0),
-
-         child: Column(
-
-           crossAxisAlignment: CrossAxisAlignment.center,
-
-           children: <Widget>[
-
-             Center(
-
-               child: Text(
-
-                 "Enter Amount",
-
-                 style: TextStyle(fontSize: 24.0),
-
-               ),
-
-             ),
-
-             SizedBox(
-
-               height: 10.0,
-
-             )
-
-           ],
-
-         ),
-
-       ),
-
-     ],
-
-   ));
-
- }
-
- Widget _priceContainer() {
-
-   return Padding(
-
-     padding: EdgeInsets.all(15.0),
-
-     child: Row(
-
-       mainAxisAlignment: MainAxisAlignment.center,
-
-       children: <Widget>[
-
-         RawMaterialButton(
-
-           onPressed: () {
-
-           },
-
-           child: Icon(
-
-             Icons.add,
-
-             size: 30.0,
-
-           ),
-
-           shape: CircleBorder(),
-
-           elevation: 2.0,
-
-           fillColor: Colors.white,
-
-           padding: EdgeInsets.all(10.0),
-
-         ),
-
-         Text(
-
-           '\u0024 60',
-
-           style: TextStyle(fontSize: 30, color: Colors.black),
-
-         ),
-
-         RawMaterialButton(
-
-           onPressed: () {
-
-           },
-
-           child: Icon(
-
-             Icons.remove,
-
-             size: 30.0,
-
-           ),
-
-           shape: CircleBorder(),
-
-           elevation: 2.0,
-
-           fillColor: Colors.white,
-
-           padding: EdgeInsets.all(10.0),
-
-         ),
-
-       ],
-
-     ),
-
-   );
-
- }
-
- Widget _submitContainer(TipModel tipModel) {
-
-   return Padding(
-
-     padding: EdgeInsets.only(top: 25.0, left: 10.0, right: 10.0),
-
-     child: Column(
-
-       crossAxisAlignment: CrossAxisAlignment.stretch,
-
-       children: <Widget>[
-
-         RaisedButton(
-
-           onPressed: () {
-
-           },
-
-           color: Colors.pink,
-
-           child: Padding(
-
-             padding: EdgeInsets.all(15.0),
-
-             child: Row(
-
-               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-               children: <Widget>[
-
-                 Text(
-
-                   'Submit',
-
-                   style: TextStyle(color: Colors.black),
-
-                 )
-
-               ],
-
-             ),
-
-           ),
-
-           shape:
-
-               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-
-         )
-
-       ],
-
-     ),
-
-   );
-
- }
-
-//__________________________________________________________________________________________________________
-
- Widget _buildContent() {
-
-   return Align(
-
-     alignment: Alignment.bottomCenter,
-
-     child: Container(
-
-       width: MediaQuery.of(context).size.width,
-
-       height: 250.0,
-
-       child: Column(
-
-         children: <Widget>[
-
-           _titleThankYou(),
-
-           _backContainer()
-
-         ],
-
-       ),
-
-     ),
-
-   );
-
- }
-
- Widget _titleThankYou() {
-
-   return Container(
-
-       child: Row(
-
-         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-         children: <Widget>[
-
-           Padding(
-
-             padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 10.0),
-
-             child: Column(
-
-               crossAxisAlignment: CrossAxisAlignment.center,
-
-               children: <Widget>[
-
-                 Center(
-
-                   child: Text(
-
-                     "Thank you",
-
-                     style: TextStyle(fontSize: 24.0),
-
-                   ),
-
-                 ),
-
-                 SizedBox(
-
-                   height: 10.0,
-
-                 ),
-
-                 Text('You donated }')
-
-               ],
-
-             ),
-
-           ),
-
-         ],
-
-       ));
-
- }
-
- Widget _backContainer() {
-
-   return Padding(
-
-     padding: EdgeInsets.only(top: 25.0, left: 10.0, right: 10.0),
-
-     child: Column(
-
-       crossAxisAlignment: CrossAxisAlignment.stretch,
-
-       children: <Widget>[
-
-         RaisedButton(
-
-           onPressed: () {
-
-           },
-
-           color: Colors.pink,
-
-           child: Padding(
-
-             padding: EdgeInsets.all(15.0),
-
-             child: Row(
-
-               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-               children: <Widget>[
-
-                 Text(
-
-                   'Back',
-
-                   style: TextStyle(color: Colors.black),
-
-                 )
-
-               ],
-
-             ),
-
-           ),
-
-           shape:
-
-           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-
-         )
-
-       ],
-
-     ),
-
-   );
-
- }
-
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: ListView.builder(
+          padding: EdgeInsets.all(5.0),
+          itemCount: null, //calculating length ist
+          itemBuilder: (BuildContext context, index) {
+            return Column(
+              children: <Widget>[
+                ListTile(
+                    leading: Image.network(
+                      //fetching online images
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Noto_Emoji_KitKat_263a.svg/1200px-Noto_Emoji_KitKat_263a.svg.png",
+                      height: 20.0,
+                      width: 20.0,
+                    ),
+                    title: Text("name"), //retrieving object's name from list
+
+                    ),
+                Divider()
+              ],
+            );
+          }),
+
+      floatingActionButton: FloatingActionButton(
+        //objects will be added to the database when this button is clicked.
+        onPressed: () {//this button is executed when the floating button is clicked
+        },
+        tooltip: 'Add to list new object',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
 }
 
 ```
 
-The `home.dart` file contains several `functions` which return `Widgets`. For instance, the `_buildInitContent` takes in widgets from three functions; `_titleContainer()`, `_priceContainer()`, `_submitContainer()`. The widgets are then arranged on the screen appropriately.
-
-The `_buildContent` method, on the other hand, calls two functions `_titleThankYou()`, `_backContainer()` which also return widgets.
-
-The widgets returned by the `_buildInitContent` function will mainly take in the user input, while those in the `_buildContent` method will show the output. The specific `UIs` created by these methods are shown below.
-
-![_buildInitContent](/engineering-education/implementing-scoped-model-in-your-flutter-application/init.jpg) ![_buildContent](/engineering-education/implementing-scoped-model-in-your-flutter-application/output.jpg)
+The `MyHomePage class` in the `main.dart` file contains three major widgets: `ListTile`, `ListView`, and a `Floating Button`. The `ListTile` will be used to display an object's attributes. All of the `ListTiles` will appear in the `ListView`. This means that the user will be able to scroll through the content.
 
 ### Creating the Model
 
-Please create a new package in the `lib` folder and name it as `model`. In this package, create a `tip.dart` file. Use `TipModel` as your class name and extend the `Model`. Ensure that you have imported the `scoped_model` library. A full illustration of the `model` class is shown below.
+Please create a new package in the `lib` folder and name it as `model`. In this package, create a `note.dart` file. Use `Note` as your class name. Our program will have two major attributes or variables. These are the name and description.
 
-```
+```dart
 
-import 'package:scoped_model/scoped_model.dart';
-
-class TipModel extends Model{
-
- int _tip =0;
-
- bool _isClicked=false;
-
- get count=> _tip;
-
- get isClicked=>_isClicked;
-
- void decreaseTip(){
-
-   // First, increment the counter
-
-   _tip++;
-
-   // Then notify all the listeners.
-
-   notifyListeners();
-
- }
-
- void increaseTip() {
-
-   _tip--;
-
-   notifyListeners();
-
- }
-
- set isClicked(bool tip){
-
-   if(tip==null){
-
-     throw new ArgumentError("Error");
-
-   }
-
-   _isClicked=tip;
-
-   notifyListeners();
-
- }
-
+class Note{
+  String id, name, description;
+  Note({ this.id, @required this.name, @required this.description});
 }
 
 ```
+### Extending the ScopedModel
+This `scoped_model` class will be responsible for state management in our Flutter application. The first step is to create a class named `NotesModel` and ensure that it extends the `Model` class. You should have `import 'package:scoped_model/scoped_model.dart';` for the program to execute. The next step is to define the functions, variables, or data which will be required by widgets. The full code for the NotesModel is shown below.
 
-The `_ tip` variable (integer) will hold the user&#39;s amount. The bool `_isClicked` variable will help handle navigation by determining if the user has clicked on a particular button.
+```dart
+import 'package:scoped_model/scoped_model.dart';
+import 'note.dart';
 
-The `decreaseTip()` function is called when the user reduces the tip while the `increaseTip()` boosts the amount. The `isClicked` function will change the `value` stored in the `_isClicked` variable. The remaining functions that start with the keyword `get` will fetch the stored data.
+class NotesModel extends Model{
+  List<Note> _list = []; //list that stores Note objects
+  
+  List<Note> get list{ //returns a copy of list
+    return [..._list];
+}
+    void addNote(Note note){ //adds a Note object to list
+        _list.add(note);
+        notifyListeners();
+    }
 
-### Adding and initializing the scoped\_model
-
-Go to the `main.dart` file and initialize the `TipModel` just before the `MyApp` class. Then go to `MyApp.class` file and wrap the `MaterialApp` widget with the `ScopedModel`. Ensure that you have inserted the correct Model, as shown below.
+  void removeNote(Note note){
+    _list.remove(note); //removes a Note object from list
+    notifyListeners();
+  }
 
 ```
 
-TipModel tipModel = TipModel();
+`_list` will be used to store the Note objects.
+
+The function shown below returns a copy of the Note list.
+
+```dart
+  List<Note> get list{
+    return [..._list];
+}
+```
+
+The `addNote()` function adds objects in the _list. The `removeNote()` method allows a user to delete or remove objects from list. These methods are declared as `void` since they do not return anything.
+
+### Finishing up
+
+Go to the `main.dart` file and initialize the `NoteModel` just before the `MyApp` class. Then go to `MyHomePage.class` file and wrap the `MaterialApp` widget with the `ScopedModel`. Ensure that you have inserted the correct Model, as shown below.
+
+```dart
+
+NotesModel notesModel = NotesModel();
 
 class MyApp extends StatelessWidget {
-
- // This widget is the root of your application.
-
- @override
-
- Widget build(BuildContext context) {
-
-   return new ScopedModel<TipModel>(
-
-     model:  tipModel,
-
-     child: MaterialApp(
-
-         title: 'Flutter Demo',
-
-         theme: ThemeData(
-
-           primarySwatch: Colors.blue,
-
-           visualDensity: VisualDensity.adaptivePlatformDensity,
-
-         ),
-
-         home: HomePage()
-
-     ),
-
-   );
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new ScopedModel<NotesModel>(
+      model: notesModel,
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
+    );
+  }
+}
 
 ```
 
-Next, open the `home.dart` file add the `ScopedModelDescendant` in the `_HomePageState class` as shown below. Note that the `ScopedModelDescendant` will take `context`, `child`, and `model` as `parameters`. Pass the `model` to the other UI functions, as shown below.
+Next, Go to the `MyHomePage class` file add the `ScopedModelDescendant` in the `_HomePageState class` as shown below. Note that the `ScopedModelDescendant` will take `context`, `child`, and `model` as `parameters`. Pass the `model` to the other UI functions, as shown below.
 
-```
+```dart
 
-import 'package:flutter/cupertino.dart';
 
-import 'package:flutter/material.dart';
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
 
-import 'package:flutter_app/model/tip.dart';
+  final String title;
 
-import 'package:scoped_model/scoped_model.dart';
-
-class HomePage extends StatefulWidget {
-
- @override
-
- _HomePageState createState() => _HomePageState();
-
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-
- @override
-
- Widget build(BuildContext context) {
-
-   return Scaffold(
-
-     appBar: AppBar(
-
-       title: Text("Restaraunt Tip"),
-
-     ),
-
-     body: Container(
-
-       width: MediaQuery.of(context).size.width,
-
-       height: MediaQuery.of(context).size.height,
-
-       decoration: BoxDecoration(
-
-           image: DecorationImage(
-
-               fit: BoxFit.fill,
-
-               image: NetworkImage(
-
-                   'https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg'))),
-
-       child: Container(
-
-         child: Column(
-
-           mainAxisAlignment: MainAxisAlignment.end,
-
-           children: <Widget>[
-
-             Material(
-
-               color: Colors.white,
-
-               elevation: 14.0,
-
-               borderRadius: BorderRadius.only(
-
-                 topLeft: Radius.circular(30.0),
-
-                 topRight: Radius.circular(30.0),
-
-               ),
-
-               shadowColor: Color(0x802196F3),
-
-               child:ScopedModelDescendant<TipModel>(builder: (context,child,model){
-
-                 if(model.isClicked){
-
-                   return  _buildContent(model);
-
-                 }else{
-
-                   return  _buildInitContent(model);
-
-                 }
-
-               }),
-
-             )
-
-           ],
-
-         ),
-
-       ),
-
-     ),
-
-   );
-
- }
-
- //_______________________________________________________________________________________________
-
- Widget _buildInitContent(TipModel tipModel) {
-
-   return Align(
-
-     alignment: Alignment.bottomCenter,
-
-     child: Container(
-
-       width: MediaQuery.of(context).size.width,
-
-       height: 250.0,
-
-       child: Column(
-
-         children: <Widget>[
-
-           _titleContainer(tipModel),
-
-           _priceContainer(tipModel),
-
-           _submitContainer(tipModel)
-
-         ],
-
-       ),
-
-     ),
-
-   );
-
- }
-
- Widget _titleContainer(TipModel tipModel) {
-
-   return Container(
-
-       child: Row(
-
-     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-     children: <Widget>[
-
-       Padding(
-
-         padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 10.0),
-
-         child: Column(
-
-           crossAxisAlignment: CrossAxisAlignment.center,
-
-           children: <Widget>[
-
-             Center(
-
-               child: Text(
-
-                 "Enter Amount",
-
-                 style: TextStyle(fontSize: 24.0),
-
-               ),
-
-             ),
-
-             SizedBox(
-
-               height: 10.0,
-
-             )
-
-           ],
-
-         ),
-
-       ),
-
-     ],
-
-   ));
-
- }
-
- Widget _priceContainer(TipModel tipModel) {
-
-   return Padding(
-
-     padding: EdgeInsets.all(15.0),
-
-     child: Row(
-
-       mainAxisAlignment: MainAxisAlignment.center,
-
-       children: <Widget>[
-
-         RawMaterialButton(
-
-           onPressed: () {
-
-             tipModel.decreaseTip();
-
-           },
-
-           child: Icon(
-
-             Icons.add,
-
-             size: 30.0,
-
-           ),
-
-           shape: CircleBorder(),
-
-           elevation: 2.0,
-
-           fillColor: Colors.white,
-
-           padding: EdgeInsets.all(10.0),
-
-         ),
-
-         Text(
-
-           '\u0024${tipModel.count}',
-
-           style: TextStyle(fontSize: 30, color: Colors.black),
-
-         ),
-
-         RawMaterialButton(
-
-           onPressed: () {
-
-             tipModel.increaseTip();
-
-           },
-
-           child: Icon(
-
-             Icons.remove,
-
-             size: 30.0,
-
-           ),
-
-           shape: CircleBorder(),
-
-           elevation: 2.0,
-
-           fillColor: Colors.white,
-
-           padding: EdgeInsets.all(10.0),
-
-         ),
-
-       ],
-
-     ),
-
-   );
-
- }
-
- Widget _submitContainer(TipModel tipModel) {
-
-   return Padding(
-
-     padding: EdgeInsets.only(top: 25.0, left: 10.0, right: 10.0),
-
-     child: Column(
-
-       crossAxisAlignment: CrossAxisAlignment.stretch,
-
-       children: <Widget>[
-
-         RaisedButton(
-
-           onPressed: () {
-
-             tipModel.isClicked = true;
-
-           },
-
-           color: Colors.pink,
-
-           child: Padding(
-
-             padding: EdgeInsets.all(15.0),
-
-             child: Row(
-
-               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-               children: <Widget>[
-
-                 Text(
-
-                   'Submit',
-
-                   style: TextStyle(color: Colors.black),
-
-                 )
-
-               ],
-
-             ),
-
-           ),
-
-           shape:
-
-               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-
-         )
-
-       ],
-
-     ),
-
-   );
-
- }
-
-//__________________________________________________________________________________________________________
-
- Widget _buildContent(TipModel tipModel) {
-
-   return Align(
-
-     alignment: Alignment.bottomCenter,
-
-     child: Container(
-
-       width: MediaQuery.of(context).size.width,
-
-       height: 250.0,
-
-       child: Column(
-
-         children: <Widget>[
-
-           _titleThankYou(tipModel),
-
-           _backContainer(tipModel)
-
-         ],
-
-       ),
-
-     ),
-
-   );
-
- }
-
- Widget _titleThankYou(TipModel tipModel) {
-
-   return Container(
-
-       child: Row(
-
-         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-         children: <Widget>[
-
-           Padding(
-
-             padding: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 10.0),
-
-             child: Column(
-
-               crossAxisAlignment: CrossAxisAlignment.center,
-
-               children: <Widget>[
-
-                 Center(
-
-                   child: Text(
-
-                     "Thank you",
-
-                     style: TextStyle(fontSize: 24.0),
-
-                   ),
-
-                 ),
-
-                 SizedBox(
-
-                   height: 10.0,
-
-                 ),
-
-                 Text('You donated ${tipModel.count}')
-
-               ],
-
-             ),
-
-           ),
-
-         ],
-
-       ));
-
- }
-
- Widget _backContainer(TipModel tipModel) {
-
-   return Padding(
-
-     padding: EdgeInsets.only(top: 25.0, left: 10.0, right: 10.0),
-
-     child: Column(
-
-       crossAxisAlignment: CrossAxisAlignment.stretch,
-
-       children: <Widget>[
-
-         RaisedButton(
-
-           onPressed: () {
-
-             tipModel.isClicked = false;
-
-           },
-
-           color: Colors.pink,
-
-           child: Padding(
-
-             padding: EdgeInsets.all(15.0),
-
-             child: Row(
-
-               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-               children: <Widget>[
-
-                 Text(
-
-                   'Back',
-
-                   style: TextStyle(color: Colors.black),
-
-                 )
-
-               ],
-
-             ),
-
-           ),
-
-           shape:
-
-           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-
-         )
-
-       ],
-
-     ),
-
-   );
-
- }
-
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    Note task = Note(name: "Run", description: "Run a 40 mile marathon");
+    return ScopedModelDescendant<NotesModel>(builder: (context, child, model) {
+      //scoped model descendants helps to pass data to the children widgets.
+      return Scaffold(
+        appBar: AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(widget.title),
+        ),
+        body: ListView.builder(
+            padding: EdgeInsets.all(5.0),
+            itemCount: model.list.length, //calculating length ist
+            itemBuilder: (BuildContext context, index) {
+              return Column(
+                children: <Widget>[
+                  ListTile(
+                      leading: Image.network(
+                        //fetching online images
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Noto_Emoji_KitKat_263a.svg/1200px-Noto_Emoji_KitKat_263a.svg.png",
+                        height: 20.0,
+                        width: 20.0,
+                      ),
+                      title: Text(model.list[index]
+                          .name) //retrieving object's name from list
+
+                      ),
+                  Divider()
+                ],
+              );
+            }),
+
+        floatingActionButton: FloatingActionButton(
+          //objects will be added to the database when this button is clicked.
+          onPressed: () {
+            model.addNote(task); //this button is executed when the floating button is clicked
+          },
+          tooltip: 'Add to list new object',
+          child: Icon(Icons.add),
+        ), // This trailing comma makes auto-formatting nicer for build methods.
+      );
+    });
+  }
 }
+
 
 ```
 
 Your final app should run, as shown in the video below. 
 
-[video](https://www.youtube.com/watch?v=Xt3RrOra5fc)
+<iframe width="469" height="269" src="https://www.youtube.com/embed/_BhaQOMafUc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
 
-The `scoped_model` simplifies the state management process. Data is passed from the parent to the children widgets quickly. The user will also be notified in case of any data changes.
+The `scoped_model` simplifies the state management process. Data is passed from the parent to the children widgets quickly. The user is notified in case of any data changes. You can use the knowledge gained from this tutorial to create more productive and interactive Flutter applications.
 
 ### References 
 [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro)
