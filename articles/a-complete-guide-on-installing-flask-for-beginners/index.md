@@ -109,7 +109,7 @@ To start off, head back to your terminal and run the following command to genera
 (env) ~/Desktop/flask_website$ pip freeze > requirements.txt
 ```
 
-To keep you engaged, curiosity won’t kill the cat here. Open the "**requirement.txt file**" in your web application and list out the packages being used by your current web application, it shouldn’t be more than seven.
+To see the packages in use open the "**requirement.txt file**". It shouldn’t be more than seven requirements.
 
 Next, you should create the "**app**" folder and the "**run.py**" file at the top level of your working directory.
 
