@@ -103,7 +103,7 @@ The first process in structuring your web application is to create an “**app**
 
 The "**app**" folder structure provides us with the flexibility of defining our Flask application as a package that could be imported in any part of the app which we would require. The "**run.py**" file will basically serve as a pointer to Flask, informing it about where the App itself is and thereby running it. Lastly, the "**requirement.txt**" file houses all packages used in the project.
 
-To start off, head back to your terminal and run the following command to generate the "**requirements.txt**" file automatically:
+To start off, head back to your terminal and run the following command to generate the "**requirements.txt**" file:
 
 ```bash
 (env) ~/Desktop/flask_website$ pip freeze > requirements.txt
