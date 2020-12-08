@@ -539,4 +539,4 @@ kenyan
 For a comprehensive list of all object methods, you can access them from [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object).
 
 ### Conclusion.
-JavaScript objects are heavily used due to flexibility and ease of implementation. In this article, we have covered an introduction to JavaScript objects, object properties, implementing functions in objects, object accessors, and common object methods. You can also access the code we have written throughout the article from [here](#)
+JavaScript objects are heavily used due to flexibility and ease of implementation. In this article, we have covered an introduction to JavaScript objects, object properties, implementing functions in objects, object accessors, and common object methods. You can also access the code we have written throughout the article from [here](https://github.com/mwangiKibui/diving-deeper-into-js-objects)
