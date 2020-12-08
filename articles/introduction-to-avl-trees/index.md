@@ -85,7 +85,7 @@ In tri-node restructuring, the three roots which are involved in the imbalanced 
 
 In this case, the roots of node (1), node (2), and node(3) are taken into account because the imbalance occurs at node (3). If the height at node (3) is balanced, the overall height of the tree would be in the order of log(n). For example, node (3) could be restructured similar to the figure below.
 
-![AVL Tree After Tri Node Restructuring](/engineering-education/introduction-to-avl-trees/avl_after_restructuring.jpg)
+![AVL Tree After Tri Node Restructuring](/engineering-education/introduction-to-avl-trees/avl_after_structuring.jpg)
 
 This ensures that the height of all the nodes is balanced and therefore is an AVL Tree.
 
