@@ -1,11 +1,29 @@
-# Laravel Tutorial; Step by Step Guide to Build Your First Laravel Application (Blog Application)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/laravel-beginners-guide-blogpost/
+title: Building Your First Laravel Application (Blog Application)
+description: This article will show a developer how to use Kotlin extensions, understanding when and how to use them.
+author: 
+date: 2020-10-01T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/laravel-beginners-guide-blogpost/hero.jpg
+    alt: kotlin extensions image
+---
+When Kotlin was introduced into Android, it came along with new features. One of the features was Kotlin extensions. Extensions solved a large problem that developers faced: code redundancy. It is not a good practice to have code repeating itself. On a larger scale, this would lead to slower performance. At which point the code can become dirty and unscalable.
+<!--more-->
+### Laravel Tutorial: Step by Step Guide to Build Your First Laravel Application (Blog Application)
 - **Framework:** Laravel 
 - **Author:** Taylor Otwell
 - **Initial Release Date:** June 2011
 - **Current Version:** 8 (September 8th, 2020)
 - **Stable Release:** 8.11.2 (October 28th, 2020)
  
-## What is Laravel?
+### What is Laravel?
 Short version, Laravel is a PHP MVC Framework. Long version, Laravel is a free and open-source PHP Framework for Web Artisans based on Symfony which helps craft Web Applications following the MVC (Model View Controller) design pattern.
 For us to understand Laravel better, we will build a simple blog application with Laravel from scratch.
 Requirements.
