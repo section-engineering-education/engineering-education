@@ -2,7 +2,7 @@
 
 This article compares the Atom and Visual Studio Code editors based on features and comparison. There are loads of code editors, but we will review Atom and Visual Studio Code editors in this article. These source code editors tend to increase the developer's productivity by providing different plugins and components. There are various features such as code-snippets, syntax highlighting, preview options, compiling, and debugging.
 
-Comparing these two text editors will enable developers to choose the editor they would love to use as per their requirement.
+Comparing these two text editors will enable developers to choose the editor they would love to use as per their requirements.
 
 ### Table of contents
 
@@ -30,13 +30,13 @@ Developers create interactive and responsive web applications with the Atom sour
 
 To use the Atom Code editor, you first install and download from [the Atom home page](https://atom.io/).
 
-![Atom download](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/atomdownload.PNG)
+![Atom download](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/atomdownload.jpg)
 
 After clicking the download button, the Atom.zip file should appear in your downloads. Extract or Unzip the Atom file. Double click the Atom setup and follow the prompts in the Windows, Mac OS, and Linux installer to get started.
 
 Once Atom is installed, it is crucial to create an organized folder system. As the number and your projects grow, it becomes easier to figure out what a particular file contains and where it goes.
 
-Atom gives you a welcome guide when you first open the program. Going through the welcome guide to get to know the text editor before starting your project is vital. First, know where to save your projects. You can name your primary folder for Atom files "Projects." Every time you start a new project, create a folder inside your projects directory. You can start coding after setting up your file structure. Also, make sure you save your work often to avoid losing it.
+Atom gives you a welcome guide when you first open the program. Going through the welcome guide to get to know the text editor before starting your project is vital. First, know where to save your projects. You can name your primary folder for Atom files "Projects." Every time you start a new project, create a folder inside your project's directory. You can start coding after setting up your file structure. Also, make sure you save your work often to avoid losing it.
 
 ### Visual Studio Code Editor
 
@@ -52,11 +52,11 @@ Visual Studio Code supports other languages such as Java, Python, PHP, C#, and C
 
 To get started, download VS Code editor from [Visual Studio home page](https://code.visualstudio.com/). 
 
-![VS Code download](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vsdownload.PNG)
+![VS Code download](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vsdownload.jpg)
 
 Go to the site and download the latest version of the editor. Currently, it is at V1.51. After installing the editor, you will see the welcome screen guide.
 
-![VS Code Welcome Guide](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vswelcome.PNG)
+![VS Code Welcome Guide](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vswelcome.jpg)
 
 The activity bar on the left with icons give you access to:
 
@@ -93,9 +93,29 @@ Let's have a glance at features offered by Atom and VS Code text editors.
 
 With loads of extensions and customization comes many configurations. The configuration of applications is fundamental. It determines the overall user experience with the editor.
 
-Configuration in Visual Studio Code involves a JSON file recently replaced by Graphical User Interface (GUI). It is simpler to use GUI, and it does its work well. The level of abstraction is maintained while using GUI over JSON. GUI design programs just make it a little quicker and easier than JSON.
+Configuration in Visual Studio Code involves a JSON file recently replaced by Graphical User Interface (GUI). It is simpler to use GUI, and it does its work well. The level of abstraction is maintained while using GUI over JSON. GUI design programs make it a little quicker and easier than JSON.
 
-In Atom, you have GUI everywhere to edit instead of having a singular JSON file to edit. Atom users report there are sluggishness and other performance issues during the configuration process. This happens when tons of extensions are installed. The solution to these issues is doing away with extensions not in use and maintaining a relatively small number of installed extensions.
+To configure using GUI, use the following VS Code command menu:
+
++ On windows navigate to, File > Preferences > Settings
++ On mac navigate to, Code > Preferences > Settings
+
+Here is an example of Visual Studio Code Configuration with GUI.
+
+![VS Code Settings](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-code-settings.jpg)
+
+While Configuring with GUI in VS Code, you either use a drop-down menu, a check box, or an input to edit the settings.
+
+![Drop-down Menu](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/drop-down.jpg)
+
+![Input](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/input.jpg)
+
+To configure using JSON use Ctrl + Shift+ P to navigate. Then search **Preferences: Configure Language Specific Settings**. Select the language you want to use. It then opens your user ```settings.json```. You can now add your settings.
+
+Here is an example of Visual Studio Code Configuration with JSON.
+![Configuration with JSON](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/json.gif)
+
+In Atom, you have GUI everywhere to edit instead of having a singular JSON file to edit. Atom users report there are sluggishness and other performance issues during the configuration process. This happens when tons of extensions are installed. The solution to these issues is doing away with extensions not in use, and maintaining a relatively small number of installed extensions.
 
 2. Extensibility and customization
 
@@ -108,18 +128,26 @@ In Visual Studio Code, themes are regarded as an extension like any other. In At
 Extensibility is where Atom and Visual Studio Code editors differ hugely. In the Visual Studio Code, plugins add more features and functionality to the program. The features that can be added include language support, themes, commands, Git integration, Markdown support, debuggers, and more.
 
 Atom gives more power and functionality to plugins. Atom has tons of built-in and third-party plugins. This is where the editor functionality comes from, thus being a hackable editor.
-This is an example of how to add plugins in atom editor
+This is an example of how to add plugins in atom editor.
 
 ![How to install plugins](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/plugininstall.gif)
 
 4. Git Integration
 
-Atom is a product of GitHub, and git integration is an in-built feature. Also, VS Code also has built-in Git integration.
+Atom is a product of GitHub, and git integration is an in-built feature. Also, VS Code has built-in Git integration and has many GitHub related extensions. Using GitHub enables you to share your project code, make changes, and create commits, create and switch branches and collaborate with other developers.
+In Atom, git integration is provided through navigating to View > Toggle Git Tab/ Toggle GitHub Tab.
+
+![Git Integration with Atom](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/git-atom.jpg)
+
+In VS Code, Git Integration is provided through the GitHub Pull Requests and Issues extension.
+
+![Git Integration with VS Code](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-git-integration.jpg)
+
 5. Auto-completion
 
 The autocomplete tool lets you view and insert possible completions in the editor using the Enter button. The autocomplete system works by looking through the currently open file for strings that match whatever you type. Both Atom and Visual Studio Code editors have the autocomplete feature.
 
-In the Atom code editor, the autocomplete functionality is implemented in [the autocomplete-plus package](https://github.com/atom/autocomplete-plus). VS Code comes integrated with tools for auto-completion, thus making the code you write more convenient. Tools for auto-completion in VS Code include [Emmet](https://code.visualstudio.com/docs/editor/emmet) and [IntelliSense.](https://code.visualstudio.com/docs/editor/intellisense) You don't have to install Atom's Autocomplete-plus package it comes with Atom while it is installed. Contrary, Emmet and Intellisense add-ons which have to be installed. Emmet is an essential toolkit for web developers. It makes HTML and CSS workflow fast. Instead of typing or copying and pasting Emmet do most for you.
+In the Atom code editor, the autocomplete functionality is implemented in [the autocomplete-plus package](https://github.com/atom/autocomplete-plus). VS Code comes integrated with tools for auto-completion, thus making the code you write more convenient. Tools for auto-completion in VS Code include [Emmet](https://code.visualstudio.com/docs/editor/emmet) and [IntelliSense.](https://code.visualstudio.com/docs/editor/intellisense) You don't have to install the Atom's Autocomplete-plus package. It comes with Atom while it is installed. Contrary, Emmet and Intellisense add-ons have to be installed. Emmet is an essential toolkit for web developers. It makes HTML and CSS workflow fast. Instead of typing or copying and pasting, Emmet does most for you.
 This is an example of Emmet, it expands 'a' into ```<a href=""></a>```, and 'h1' into ```<h1></h1>```.
 
 ![Emmet](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/emmet.gif)
@@ -150,7 +178,7 @@ To select multiple lines in Visual Studio, hold option or Alt + Cursor.
 
 ![VS Code Multilines](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-multiline.gif)
 
-In Atom hold Ctrl + Cursor.
+In Atom, hold Ctrl + Cursor.
 
 ![Atom Multilines](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/at-multiline.gif)
 
@@ -178,7 +206,7 @@ In Atom use Cmd/ Ctrl + Alt + [to collapse and Cmd/Ctrl + Alt +] to expand the b
 
 ### Conclusion
 
-In conclusion, Atom and Visual Studio Code editors work well, and each editor has its advantages and disadvantages. The editor that fits and satisfies one developer's demands may not satisfy the demands of another developer. One developer may like how Atom functions and another may prefer Visual Studio Code editor.
+In conclusion, Atom and Visual Studio Code editors work well, and each editor has its advantages and disadvantages. The editor that fits and satisfies one developer's demands may not satisfy the demands of another developer. One developer may like how Atom functions, and another may prefer Visual Studio Code editor.
 
 If you wonder which text editor is best for you, you can choose any out of both. Both editors have multiple features that meet the developer's requirements. Also, it is essential to use the editors to familiarize yourself with the features and shortcut keys. Both editors provide almost the same features to developers. Hopefully, this article helps you decide which editor best suits your requirements.
 
