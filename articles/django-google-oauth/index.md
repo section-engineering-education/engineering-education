@@ -91,7 +91,7 @@ Then add a site ID and redirect users to the base route after a successful login
 
 *djangooauth/settings.py*
 ```python
-SITE_ID = 1
+SITE_ID = 2
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -101,6 +101,7 @@ LOGOUT_REDIRECT_URL = '/'
 We will be using Django templates to display the **Login With Google** button. Create a new folder `templates` in your base directory. Then create a file `index.html` inside the `templates` folder.
 ```bash
 $ mkdir templates
+$ cd templates
 $ touch index.html
 ```
 
@@ -179,6 +180,10 @@ $ python manage.py migrate
 Then, create a superuser by running the following command in a terminal.
 ```bash
 $ python manage.py createsuperuser
+```
+Run the app using:
+```bash
+$ python manage.py runserver
 ```
 Open http://127.0.0.1:8000/admin and login to Django Admin.  Under `Sites` click `Add` and put `127.0.0.1:8000` as both the **Domain name** and **Display name**.
 ![](create-dj-site.jpg)
