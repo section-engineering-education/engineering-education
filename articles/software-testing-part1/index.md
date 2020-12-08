@@ -175,3 +175,6 @@ Unit tests can also take a lot of time to write, and be very hard to master. You
 - https://smartbear.com/learn/automated-testing/what-is-unit-testing/
 - https://developer.android.com/training/testing/unit-testing
 - https://www.softwaretestinghelp.com/unit-testing/
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
