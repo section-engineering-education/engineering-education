@@ -90,7 +90,7 @@ Consider this example, in which we have styled an element in a separate CSS file
 ![Code snippet showing specificty](/engineering-education/how-css-works-behind-the-scenes/specificity-code.png)
 
 Let’s start by writing the specificity for all these styles:
-```
+```bash
 (0, 0, 1, 0),
 (0, 0, 0, 2),
 (0, 1, 1, 1)
