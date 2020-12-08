@@ -77,8 +77,8 @@ int main()
 In the program above, the compiler will automatically provide a default constructor implicitly. Our program output will be:
 
 ```bash
-x=45
-y=10
+x: 45
+y: 10
 ```
 
 **2. Parameterized constructors**
