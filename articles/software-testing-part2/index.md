@@ -107,7 +107,7 @@ This is expected since we don’t even have a function to test yet. The next ste
 #  factorial 
 
 def find_factorial(num):
-    if num == o:
+    if num == 0:
         return 1
 ```   
 Now when we run our test again, we get a pass output after which we move on to our next condition.
