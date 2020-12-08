@@ -6,7 +6,7 @@ In this article, we are going to discuss Test-driven development (TDD), how to w
 
 All the code samples in this tutorial are written in python and the tests are done with the pytest framework. Basic knowledge of python or pytest will be nice to have but is not required to understand this article. 
 
-Visit [python.org](https://www.python.org/) to learn more about python and [pytest.org](https://docs.pytest.org/en/stable/getting-started.html) to learn more about the pytest framework.
+***Visit [python.org](https://www.python.org/) to learn more about python and [pytest.org](https://docs.pytest.org/en/stable/getting-started.html) to learn more about the pytest framework.***
 
 ### Introduction to Test-Driven Development
 
@@ -46,8 +46,8 @@ For example, say we are trying to create a python function that calculates the f
 After listing our testing conditions, we create our testing enviroment i.e.
 
 ```bash
-$ mkdir factorial_testing
-$ cd factorial_testing
+$ mkdir TDD_tutorial
+$ cd TDD_tutorial
 $ python3 -m venv virtual && source virtual/bin/activate
 ```
 Then we create our testing file and function file.
@@ -55,7 +55,9 @@ Then we create our testing file and function file.
 ```bash
 $ touch _test.py factorial.py
 ```
-Our factorial function will be added to our `factorial.py` file, while our tests will be written inside our `_test.py` file.
+Our factorial code will be in our `factorial.py` file, while our test code will be written in our `_test.py` file.
+
+***Visit [pytest.org](https://docs.pytest.org/en/stable/getting-started.html) to learn more on how to set up testing enviroments and testing files.***
 
 Then, we create a first test that fulfills our first condition.
 
