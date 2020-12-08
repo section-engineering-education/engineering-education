@@ -125,13 +125,13 @@ if __name__ = "__main__":
 ```
 
 ## The app Folder
-You are very much enthusiastic to run your web app and see it shine in your browser, but you still need to adequately structure your web app. In the previous step, you wrote the necessary code for Python to execute the app when we run the Flask server.
+In the previous step, you wrote the necessary code for Python to execute the app when we run the Flask server.
 
 In this step, we will completely structure the **app** folder, and to do that you need to create certain files and folders. We start off by creating two folders and two Python files, which are: **static folder**, **templates folder**, **__init__.py** and **views.py**.
 
-The “pre and post double underscore“ **init.py** file warehouses the code to initialize our Flask application and to import our views. In this file, we import Flask, and also create and app object which is an instance of the Flask class. 
+The `__init__.py` file houses the code to initialize our Flask application and to import our views. In this file, we import Flask, and also create and app object which is an instance of the Flask class. 
 
-Lastly, we import the **views** file from the app folder. At the end of following this process, your code in the **__init__.py** file should look this way:
+Lastly, we import the `views.py` file from the app folder. At the end of following this process, your code in the `__init__.py` file should look this way:
 
 ```python
 from flask import Flask
