@@ -1,7 +1,7 @@
 An Application Programming Interface, denoted by API, enables applications to access data and other external software functionalities. APIs are gaining popularity among developers since they save time and resources. Companies do not need to develop complex systems from scratch. They can opt to consume data from other existing frameworks. An API is responsible in returning the appropriate response whenever an application sends a request.
 
 ### Introduction
-Laravel is one of the popular PHP frameworks. It provides many dependencies that make it easy for developers to work on projects. Laravel lays a foundation which allows you to focus on more demanding things. It is popular due to its ability to support real-time communication, API authentication, and job queues. This tutorial will teach you how to create an API using Laravel. Since we now know what Laravel is all about, let's dive into the cool stuff.
+[Laravel](https://laravel.com/docs/8.x) is a vital PHP framework for creating interactive websites and APIs. It supports numerous dependencies and templates. Laravel lays a foundation which allows you, as a developer, to focus on more demanding things. It is popular due to its ability to support real-time communication, API authentication, and job queues. This tutorial outlines the steps for creating a Laravel Web API. Since we now know what Laravel is all about, let's dive into the cool stuff.
 
 ### Goal of the tutorial
 The tutorial seeks to create a simple task manager API using Laravel.
@@ -10,13 +10,13 @@ The tutorial seeks to create a simple task manager API using Laravel.
 You need some basic knowledge of PHP to benefit from this tutorial. Furthermore, you must have [Composer](https://getcomposer.org/) and [XAMPP](https://www.apachefriends.org/index.html) installed on your computer. `Composer` helps download and install the required dependencies. XAMPP is a collection of tools such as Apache Server and MySQL.
 
 ### 1. Creating the project
-We use the following command to create a new `Laravel` project. You can substitute `taskmanager` with any project name.
+A new `Laravel` project is created by the command below. You can substitute `taskmanager` with any project name.
 
 ```Bash
 Laravel new taskmanager.
 ```
 
-You can also use the composer command to create a project as shown.
+Alternatively, you can use Composer to install the required dependencies.
 
 ```Bash
 composer create-project –prefer-dist Laravel/Laravel taskmanager
@@ -25,12 +25,12 @@ composer create-project –prefer-dist Laravel/Laravel taskmanager
 Ensure that the project you create is in the `xampp/htdocs` folder. You can view your generated website template by visiting `localhost/taskmanager/public/` on your browser.
 
 ### 2. Creating the database
-Open `Xampp` and launch `phpMyAdmin`. Use it to create a database called `tasks`. We will create tables and insert data using `migrations`. You can now open the Laravel project in your preferred IDE. I will be using Visual Studio Code.
+Open `Xampp` and launch `phpMyAdmin`. Use it to create a database called `tasks`. We will create tables and insert data using `migrations`. You can now open the Laravel project in your preferred IDE. Visual Studio Code is used for this project..
 
-Open the `.env` file and change the database name to `tasks`. You can also change the username and password variables depending on your Xampp settings.
+The database can be changed to `tasks` in the `.env`. You can also change the authentication information including passwords and emails in the .env file. . This largely  depends on the Xampp settings.
 
 ### 3. Migration
-We use the `php artisan make:model Task -mf ` command to create a model. The `&#39;-mf&#39;` portion generates a task factory and database migration files for this model. You can find the generated files in the migrations and factories folders. Open the `2020_11_25_173913_create_tasks_table` file and go to the `up()` function. We need to outline the names of our database columns in the `up()` function as shown below.
+We use the `php artisan make:model Task -mf ` command to create a model. The `&#39;-mf&#39;` portion generates a task factory and database migration files for this model. The new files are stored in the factories and migrations folders. Open the `2020_11_25_173913_create_tasks_table` file and go to the `up()` function. We need to outline the names of our database columns in the `up()` function as shown below.
 
 ```Php
 <?php
@@ -214,7 +214,7 @@ This method will return all the data or tasks in the database.
 
 ```Php
  public function index(){
-      return Task::orderBy('created_at', 'asc')->get();  //returns all values in the database in ascending order
+      return Task::orderBy('created_at', 'asc')->get();  //returns values in ascending order
   }
 ```
 
@@ -233,7 +233,7 @@ This method allows us to receive user inputs and store them in the database.
 ```Php
 public function store(Request $request){
 
-      $this->validate($request, [ //ensures that inputs are not empty or null
+      $this->validate($request, [ //inputs are not empty or null
           'title' => 'required',
           'description' => 'required',
       ]);
@@ -276,7 +276,7 @@ This function is used to delete values in the database. It searches for an objec
 ```
 
 ### 6. Registering and Listing routes
-We can register our Controller in the `api.php` file, as shown below. Note that we do not need to declare all available routes in the project. This is automatically done.
+We can register our Controller in the `api.php` file, as shown below. Routes are declared automatically.
 
 ```Php
 Route::resource('tasks', TaskController::class);
