@@ -6,7 +6,7 @@ In this article, we will talk about unit testing, how to run unit tests, the ben
 
 All the code samples in this tutorial are written in python and the tests are done with the pytest framework. Basic knowledge of python or pytest will be nice to have but is not required to understand this article. 
 
-Visit [python.org](https://www.python.org/) to learn more about python and [pytest.org](https://docs.pytest.org/en/stable/getting-started.html) to learn more about the pytest framework.
+***Visit [python.org](https://www.python.org/) to learn more about python and [pytest.org](https://docs.pytest.org/en/stable/getting-started.html) to learn more about the pytest framework.***
 
 ### Introduction to Unit testing
 
@@ -49,6 +49,8 @@ Then we create our testing file and function file.
 $ touch _test.py factorial.py
 ```
 Our factorial function will be added to our `factorial.py` file, while our tests will be written inside our `_test.py` file.
+
+***Visit [pytest.org](https://docs.pytest.org/en/stable/getting-started.html) to learn more on how to set up testing enviroments and testing files.***
 
 ```python
 #  Factorial
