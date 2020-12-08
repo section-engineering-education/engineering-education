@@ -67,7 +67,7 @@ env
 By following the three steps above, we have our virtual environment for our Flask app ready, next, we activate it.
 
 ### Running A Virtual Environment
-To run your virtual environment, from the directory of your folder, the following command will activate our virtual environment in the “env” folder as we demonstrated in the previous step.
+To activate your virtual environment, from the directory of your folder, the following command will activate our virtual environment in the “env” folder as we demonstrated in the previous step.
 
 ```bash
 ~/Desktop/flask_website$ source env/bin/activate
