@@ -123,3 +123,7 @@ Further reading:
 [MDN web docs](https://developer.mozilla.org/en-US/)
 
 [JavaScript: The New Hard Parts](https://frontendmasters.com/courses/javascript-new-hard-parts/)
+
+
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/) 
