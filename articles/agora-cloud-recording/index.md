@@ -49,3 +49,6 @@ We'll be going through these steps in this article:
 6. Query a recording.
 7. Stop a recording.
 8. Recap.
+
+### Cloud recording vs. On-Premise recording.
+
