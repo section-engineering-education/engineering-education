@@ -1,5 +1,21 @@
-An Application Programming Interface, denoted by API, enables applications to access data and other external software functionalities. APIs are gaining popularity among developers since they save time and resources. Companies do not need to develop complex systems from scratch. They can opt to consume data from other existing frameworks. An API is responsible in returning the appropriate response whenever an application sends a request.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-create-an-api-using-laravel/
+title: Databinding in Android using Kotlin
+description: In this tutorial we will learn how to implement data binding in Andriod using Kotlin.
+author: michael-barasa
+date: 2020-12-08T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-create-an-api-using-laravel/hero.png
+    alt: Databinding Android Kotlin image
+---
+An Application Programming Interface, denoted by API, enables applications to access data and other external software functionalities. APIs are gaining popularity among developers since they save time and resources. Companies do not need to develop complex systems from scratch. They can opt to consume data from other existing frameworks. An API is responsible in returning the appropriate response whenever an application sends a request.
+<!--more-->
 ### Introduction
 [Laravel](https://laravel.com/docs/8.x) is a vital PHP framework for creating interactive websites and APIs. It supports numerous dependencies and templates. Laravel lays a foundation which allows you, as a developer, to focus on more demanding things. It is popular due to its ability to support real-time communication, API authentication, and job queues. This tutorial outlines the steps for creating a Laravel Web API. Since we now know what Laravel is all about, let's dive into the cool stuff.
 
