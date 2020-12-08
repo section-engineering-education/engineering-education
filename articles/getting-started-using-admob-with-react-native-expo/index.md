@@ -4,22 +4,21 @@ status: publish
 published: true
 url: /engineering-education/getting-started-using-admob-with-react-native-expo/
 title: Getting started using Admob to React Native Expo 
-description: In this tutorial we are going to learn how to integrate React Native Dark Mode using components from React navigation and React Native paper and configure the toggle settings using Redux functionalities.
+description: In this tutorial we are going to go over how to set up and configure Admob into a React Native app based on the Expo ecosystem.
 author: worawat-kaewsanmaung
-date: 2020-11-04T00:00:00-10:00
+date: 2020-12-08T00:00:00-11:00
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/getting-started-using-admob-with-react-native-expo/hero.jpg
-    alt: React Native Dark Mode with Redux
+    alt: React Admob with Expo
 ---
-
-Many modern-day apps contain ads in them. The ads pop out if you want to use certain features in the app. Mainly in the game apps, you need to watch the ad before reaching another level. So, ads have been a popular way to monetize the app and make some profit out of it. Some sophisticated apps also provide a payment option to remove the ads from the interface. Here, we are going to incorporate the same logic but in a slightly different way.
-
-In this tutorial, we are going to implement Admob in the React Native application. Here, we are going to implement an interface to show the ads as well as an option to remove ads as well. In most cases, the users will have to pay to remove the ads. But here, we are going to make users watch video ads to hide the ads from the interface for a certain amount of time. For this, we are going to make use of the expo Admob package which provides the ad reward feature.
+Many modern-day apps contain ads in them. The ads pop out if you want to use certain features in the app. Mainly in game apps, you need to watch an ad before reaching another level. Ads have been a popular way to monetize the app and make some profit out of it. Some sophisticated apps also provide a payment option to remove the ads from the interface. Here, we are going to incorporate the same logic but in a slightly different way.
+<!--more-->
+In this tutorial, we are going to implement Admob in the React Native application. Here, we are going to implement an interface to show the ads as well as an option to remove ads as well. In most cases, the users will have to pay to remove the ads. But here, we are going to make users watch video ads to hide the ads from the interface for a certain amount of time. For this, we are going to make use of the expo Admob package that provides the ad reward feature.
 
 ### Requirement
-- It is necessary to complete the [previous tutorial](https://www.section.io/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) before starting this one. The previous tutorial  will help you understand the use of React Navigation. Also, the use of React Native Paper components, and the Redux mechanism better.
+- It's necessary to complete the [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) before starting this one. The previous tutorial will help you understand the use of React Navigation. Also, the use of React Native Paper components, and the Redux mechanism better.
 - Android Emulator or Real Device
 - [Admob account](https://apps.admob.com/v2/home?pli=1)
 - [Nodejs](https://nodejs.org/dist/v12.19.0/node-v12.19.0-x64.msi)
@@ -30,52 +29,50 @@ In this tutorial, we are going to implement Admob in the React Native applicatio
 *let's get started!*
 
 ### STEP 1: Fetching Admob App ID
+To incorporate the AdMob in the React Native app, first, we need to get the App ID for it. For that we need to create an Admob account (if we have not done so yet) then go to the [AdMob app dashboard](https://apps.admob.com/v2/apps/list) as shown in the screenshot below:
 
-To incorporate the AdMob in the React Native app, first, we need to get the App ID for it. For that we need to create an Admob account if we have not and go to the [AdMob app dashboard](https://apps.admob.com/v2/apps/list) as shown in the screenshot below:
-
-![admob dashboard](1-admob-all-apps-dashboard.png)
+![admob dashboard](getting-started-using-admob-with-react-native-expo/1-admob-all-apps-dashboard.png)
 
 From the dashboard, we need to create a new app. For that, we need to go to [create](https://apps.admob.com/v2/apps/create) a new Admob app console and select the required options as directed in the screenshot below:
 
-![create new admob app choose platform](2-create-new-admob-app-choose-platform.png)
+![create new admob app choose platform](getting-started-using-admob-with-react-native-expo2-create-new-admob-app-choose-platform.png)
 
 After clicking on 'Continue', we need to fill the **App name** and subsequently click on the 'ADD APP' button as shown in the screenshot below:
 
-![naming admob app](3-naming-admob-app.png)
+![naming admob app](getting-started-using-admob-with-react-native-expo/3-naming-admob-app.png)
 
 Next, we need to add the Ad Unit as directed in the screenshot below:
 
-![create add unit](4-create-add-unit.png)
+![create add unit](/engineering-education/getting-started-using-admob-with-react-native-expo/4-create-add-unit.png)
 
 The Admob console generally provides 5 types of ads to be integrated. For this tutorial, we are going to focus on banner ads and rewarded ads. The ad types to be selected are shown in the screenshot below:
 
-![admob ad type](5-admob-ad-type.png)
+![admob ad type](/engineering-education/getting-started-using-admob-with-react-native-expo/5-admob-ad-type.png)
 
 First, we are going to create a **Banner ad** as directed in the screenshot below:
 
-![create banner ad](6-create-banner-ad.png)
+![create banner ad](/engineering-education/getting-started-using-admob-with-react-native-expo/6-create-banner-ad.png)
 
 Here, we have named our Ad unit name as 'header ads'. Now after clicking on 'CREATE AD UNIT', we will receive an **Ad Unit ID** as shown in the screenshot below:
 
-![success create ad unit](7-success-create-ad-unit.png)
+![success create ad unit](/engineering-education/getting-started-using-admob-with-react-native-expo/7-success-create-ad-unit.png)
 
 Now, we will be able to get the Ad Unit ID from dashboard as well:
 
-![Ad unit dashboard](8-ad-unit-dashboard.png)
+![Ad unit dashboard](/engineering-education/getting-started-using-admob-with-react-native-expo/8-ad-unit-dashboard.png)
 
 Now, we are going to repeat the same process and create a Reward Ad. For that, we can customize the **Ad Unit name** and **Amount** as directed in the screenshot below:
 
-![create reward ad](9-create-reward-ad.png)
+![create reward ad](/engineering-education/getting-started-using-admob-with-react-native-expo/9-create-reward-ad.png)
 
 After clicking on 'CREATE AD UNIT', we will get the **Ad Unit ID** for the **Reward Ads** as well. Now, we will be able to see two Ad units in our console:
 
-![fininsh create ad unit](10-finish-create-ad-unit.png)
+![fininsh create ad unit](/engineering-education/getting-started-using-admob-with-react-native-expo/10-finish-create-ad-unit.png)
 
 ### STEP 2: Setup Admob on Expo
+To set up Admob on Expo, we will need to export the previous project from the Expo snack. This is due to the fact that we are not authorized to access the `app.json` to use in environment variables. Therefore, we need to export the entire expo project as directed in the screenshot below:
 
-For setting up Admob on Expo, we will need to export the previous project from the Expo snack. It is due to the fact that we are not authorized to access the `app.json` for use in environment variables. Hence, we need to export the entire expo project as directed in the screenshot below:
-
-![export expo project from snack](11-export-project-from-snack.png)
+![export expo project from snack](/engineering-education/getting-started-using-admob-with-react-native-expo/11-export-project-from-snack.png)
 
 After exporting to the local system, we need to install all the required packages as mentioned in the requirement section above. First, we are going to install Expo CLI. For that, we need to open the terminal in the project directory and run the following command:
 
@@ -110,12 +107,11 @@ After everything is installed, we can go ahead and run the app using the followi
 expo start
 ```
 
-After this, we need to choose the required emulator that is Android to run the project on. Then on a successful build, we will get the app running in our emulator as shown in the screenshot below:
+After this, we need to choose the required emulator, that is, Android to run the project on. Then on a successful build, we will get the app running in our emulator as shown in the screenshot below:
 
-![running react native expo  in local](12-running-react-native-expo-in-local.png)
+![running react native expo  in local](/engineering-education/getting-started-using-admob-with-react-native-expo/12-running-react-native-expo-in-local.png)
 
 ### STEP 3: Using Admob Banner
-
 Now, we are going to use the Banner Ad that we created before in Admob Account in our Home Screen. For that, we need to import the `AdMobBanner` component in the Home.js file as directed in the code snippet below:
 
 ```json
@@ -126,7 +122,7 @@ import {
 ```
 
 - `AdMobBanner` The component that delivers the Banner Ad to the interface.
-- `setTestDeviceIDAsync`This module enables use to display ads on test environment.
+- `setTestDeviceIDAsync`This module enables us to display ads on test environment.
 
 First, we are going to call the `setTestDeviceIDAsync` method to a function `initAdmob`. Then, we need to call the `initAdmob` function inside the `useEffect` hook so that it triggers every time the app loads. The coding implementation is provided in the code snippet below:
 
@@ -140,7 +136,7 @@ const Home = () => {
   };
 ```
 
-Next, we need to add the Banner ad to the view. For that, we are going to use the `AdMobBanner` component with props configured. It is to be wrapped inside the `Card` component with styles as shown in the code snippet below:
+Next, we need to add the Banner ad to the view. For that, we are going to use the `AdMobBanner` component with props configured. It will be wrapped inside the `Card` component with styles as shown in the code snippet below:
 
 ```jsx
 <Card
@@ -164,19 +160,18 @@ Next, we need to add the Banner ad to the view. For that, we are going to use th
         </Card>
 ```
 
-We can do the similar thing add the Banner ad to Setting screen as well.
+We can do the similar thing and add the Banner ad to the Setting screen as well.
 
 The result showing the Banner ad in both the screens is provided in the screenshot below:
 
-![show ad banner in both screen](13-show-ad-banner.png)
+![show ad banner in both screen](/engineering-education/getting-started-using-admob-with-react-native-expo/13-show-ad-banner.png)
 
-As we can notice, we have rendered out the Banner ad at the top of the Home and Setting Screen. Now, we can move on to the Reward Ads.
+As we notice, we have rendered out the Banner ad at the top of the Home and Setting Screen. Now, we can move on to the Reward Ads.
 
 ### STEP 4: Using Admob Reward Ads
-
 The Admob Reward Ad is a video ad that users need to watch to a certain length in order to obtain certain rewards. We can use it in multiple scenarios such as to receive game points, upgrading levels, etc.
 
-We are going to integrate this Reward Ad into the Setting screen. For that, we need to import the `AdMobRewarded` component from the expo-ads-admob package as shown in the code snippet below:
+We are going to integrate this Reward Ad into the Setting screen. For this, we need to import the `AdMobRewarded` component from the expo-ads-admob package as shown in the code snippet below:
 
 ```jsx
 import {
@@ -197,7 +192,7 @@ const initRewardAds = async () => {
   };
 ```
 
-Now, we need to add a new Setting screen option to remove ads. It is just going to be a `List` element item with a bullhorn icon. The template for it is provided in the code snippet below:
+Now, we need to add a new Setting screen option to remove ads. It's going to be a `List` element item with a bullhorn icon. The template for it is provided in the code snippet below:
 
 ```jsx
 <TouchableOpacity >
@@ -208,11 +203,11 @@ Now, we need to add a new Setting screen option to remove ads. It is just going 
  </TouchableOpacity>
 ```
 
-Hence, we will get the Remove Ads list option as shown in the demo screenshot below:
+We will get the Remove Ads list option as shown in the demo screenshot below:
 
-![add remove ad button](14-remove-ad-button.png)
+![add remove ad button](/engineering-education/getting-started-using-admob-with-react-native-expo/14-remove-ad-button.png)
 
-Next, we are going to create a `Modal` component. It will be to ask the consent of the users for their agreement to watch video ads. For that, we need to import the required components as shown in the code snippet below:
+Next, we are going to create a `Modal` component. It will be used to ask the consent of the users for their agreement to watch video ads. For that, we need to import the required components as shown in the code snippet below:
 
 ```jsx
 import {
@@ -311,7 +306,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-You may find it difficult to implement a Modal in React Native. In that case, you can check out the official React Native documentation.
+You may find it difficult to implement a Modal in React Native. If that is the case, you can check out the official React Native documentation.
 
 Lastly, we need to call the Modal trigger function to the Remove ads list option as directed in the code snippet below:
 
@@ -330,10 +325,13 @@ Lastly, we need to call the Modal trigger function to the Remove ads list option
 
 Hence, if we click on the Remove Ads option, we will get the Modal with two options: Watch Video or Exit. If we choose to watch the video ad then the video ad will play in the app as shown in the demo below:
 
-![remove ads demo](15-remove-ad-in-action.gif)
+![remove ads demo](/engineering-education/getting-started-using-admob-with-react-native-expo/15-remove-ad-in-action.gif)
 
-Now that we have the video ads playing on the screen, we need to add a function called `initRewardAds` to handle the Reward ad event. Inside the function, we are going to trigger two events.  First, if the user views the video ad for 5 seconds, we will trigger `rewardedVideoDidRewardUser`event and close all ads. And, the second event that is to hide the modal, we trigger the `rewardedVideoDidClose` event and hide the modal itself. The overall coding implementation of this function is provided in the code snippet below:
+Now that we have the video ads playing on the screen, we need to add a function called `initRewardAds` to handle the Reward ad event. Inside the function, we are going to trigger two events.  
 
+First, if the user views the video ad for 5 seconds, we will trigger `rewardedVideoDidRewardUser`event and close all ads. And, the second event is to hide the modal, we trigger the `rewardedVideoDidClose` event and hide the modal itself. 
+
+The overall coding implementation of this function is provided in the code snippet below:
 ```jsx
 const initRewardAds = async () => {
     // Display a rewarded ad
@@ -352,7 +350,6 @@ const initRewardAds = async () => {
 ```
 
 ### STEP 5: Control Ads status across app with Redux
-
 To control the visibility of ads across every screen in the app, we are going to use the Redux mechanism. It is similar to the previous tutorial where we control the dark theme mode changes using Redux.
 
 First, we need to define some constants in the **constant.js** file for new ad status as directed in the code snippet below:
@@ -419,7 +416,7 @@ export const ToggleAds = (ads_state) => {
 };
 ```
 
-In order to use the reducer, we need to go to the Home.js file and import the `useSelector` Hook to access the reducer state easily:
+In order to use the reducer, we need to go to the Home.js file and import the `useSelector` hook to access the reducer state easily:
 
 ```jsx
 import { useSelector } from "react-redux";
@@ -440,8 +437,9 @@ Next, we need to use the `ad_status` state from the reducer to conditionally ren
       )}
 ```
 
-Now, we need to apply the same configuration to the Setting.js file as well. We need to import the action as well as `useSelector` and `useDispatch` hooks. Then, initialize the hooks as shown in the code snippet below:
+Now, we need to apply the same configuration to the Setting.js file as well. We need to import the action as well as `useSelector` and `useDispatch` hooks. 
 
+Then, initialize the hooks as shown in the code snippet below:
 ```jsx
 import * as admobActions from "../redux/actions/admob.action";
 import { useDispatch, useSelector } from "react-redux";
@@ -463,7 +461,8 @@ Then, we need to apply conditional rendering to the `AdmobBanner` component just
         </Card>
       )}
 ```
-Now we need to trigger the toggling of ads status from action. For that, we need to dispatch the  `ToggleAds` method. We can do that inside the callback of the `rewardedVideoDidRewardUser` event as shown in the code snippet below:
+
+Now we need to trigger the toggling of ads status from action. For that, we need to dispatch the `ToggleAds` method. We can do that inside the callback of the `rewardedVideoDidRewardUser` event as shown in the code snippet below:
 
 ```jsx
    AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
@@ -475,10 +474,11 @@ The bottom line is some ads cannot be skipped until the video ads end. If we clo
 
 <iframe width="956" height="538" src="https://www.youtube.com/embed/CyyK5K0nP30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Hence, we have successfully integrated the Admob Banner as well as the Admob Reward ad.
+We have successfully integrated the Admob Banner as well as the Admob Reward ad.
 
 ### Conclusion
+Monetizing an app using Admobs can be profitable in the long run as the app becomes popular. This tutorial aims to teach you how to set up and configure Admob into a React Native app based on the Expo ecosystem. The tutorial also sheds light on creating the Admob account and fetching the Admob Unit ID. 
 
-Monetizing an app using Admobs can be profitable in the long run as the app becomes popular. This tutorial aims to teach you how to set up and configure Admob into a React Native app based on the Expo ecosystem. The tutorial also sheds light on creating the Admob account and fetching the Admob Unit ID. It is essential in displaying the Admob in the React Native app. Lastly, the major learning point was to control the visibility of ads using the Redux mechanism.
+It is essential in displaying the Admob in the React Native app. Finally, the major learning point was to control the visibility of ads using the Redux mechanism.
 
 The overall code for this tutorial is available on [GitHub](https://github.com/Worawat101/react-native-admon-demo).
