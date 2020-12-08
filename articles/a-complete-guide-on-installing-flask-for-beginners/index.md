@@ -171,7 +171,7 @@ Congratulations, you’ve made it this far, you can run your application by open
 By executing the command, your Flask server should be running and you can click on the link to see if your application works. If you’ve followed the process outlined here carefully, you should see hello world in your web browser.
 
 ## Conclusion
-At the end of this article, you should be able to install Flask, structure your web application professionally and create a web page with Flask that prints hello world in your web browser. While this is a basic introduction, subsequent articles on Flask would require the knowledge here for you to build on. 
+At the end of this article, you should be able to install Flask, structure your web application professionally and create a web page with Flask that prints hello world in your web browser. With this introduction, you can now build on it to create web applications.
 
 In addition, you can find the codebase for this article [here](https://github.com/corpsgeek/introduction-to-flask).
 
