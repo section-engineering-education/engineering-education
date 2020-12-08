@@ -332,7 +332,7 @@ from factorial import find_factorial
 
 def test_find_factorial():
     num = 5
-    assert find_factorial(num) == 12
+    assert find_factorial(num) == 120
 ```
 
 Then we confirm if our test fails.
@@ -409,7 +409,7 @@ def test_find_factorial_of_negative_numbers():
 
 def test_find_factorial():
     num = 5
-    assert find_factorial(num) == 12
+    assert find_factorial(num) == 120
 ```
 ```bash
 $ py.test
