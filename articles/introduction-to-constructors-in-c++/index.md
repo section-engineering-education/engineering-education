@@ -125,6 +125,9 @@ int main()
   return 0;
 }
 ```
+The output is:
+a = 10
+b = 15
 
 Initial values have to be passed to the object through parameterized constructors and the normal declaration of a statement will not work. We can pass the initial values as arguments by either calling the constructor implicitly or explicitly.
 
@@ -262,6 +265,9 @@ int main()
   return 0;
 }
 ```
+area=6
+area=6
+area=6
 
 #### Conclusion
 In this article, we have gone through the basics of constructors and how to overload them. In C++ programming, the primary goal of the constructor is to create an object of the class. In other words, it is used to initialize all members of the data class. Hence, they enable programmers to limit instantiation and write code that is flexible and easy to read.
