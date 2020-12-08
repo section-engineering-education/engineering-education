@@ -48,6 +48,10 @@ Then we create our testing file and function file.
 ```bash
 $ touch _test.py factorial.py
 ```
+Finally, we install pytest
+```bash
+pip install pytest
+```
 Our factorial function will be added to our `factorial.py` file, while our tests will be written inside our `_test.py` file.
 
 ***Visit [pytest.org](https://docs.pytest.org/en/stable/getting-started.html) to learn more on how to set up testing enviroments and testing files.***
@@ -124,24 +128,26 @@ You get an AssertionError error because your code unit can’t uphold its contra
 ```bash
 $ py.test
 
-============================= test session starts ==============================
-platform darwin -- Python 3.7.6, pytest-5.3.5, py-1.8.1, pluggy-0.13.1
-rootdir: /Users/salius/Python_testing
-plugins: requests-mock-1.8.0, hypothesis-5.5.4, arraydiff-0.3, remotedata-0.3.2, openfiles-0.4.0, mock-3.3.1, doctestplus-0.5.0, astropy-header-0.1.2, cov-2.8.1
-collected 1 item                                                               
- 
-_test.py F                                                               [100%]
- 
-=================================== FAILURES ===================================
-_____________________________ test_find_factorial ______________________________
- 
-    def test_find_factorial():
->       assert find_factorial(0) == 2
+======================= test session starts ========================
+platform linux -- Python 3.6.9, pytest-6.1.2, py-1.9.0, pluggy-0.13.1
+rootdir: /home/murage/reviews/factorial_testing
+collected 4 items
+
+_test.py F...                                                [100%]
+
+============================= FAILURES =============================
+___________________ test_find_factorial_of_zero ____________________
+
+    def test_find_factorial_of_zero():
+        num = 0
+>       assert find_factorial(num) == 2
 E       assert 1 == 2
 E        +  where 1 = find_factorial(0)
- 
-_test.py:6: AssertionError
-============================== 1 failed in 0.17s ===============================
+
+_test.py:5: AssertionError
+===================== short test summary info ======================
+FAILED _test.py::test_find_factorial_of_zero - assert 1 == 2
+=================== 1 failed, 3 passed in 0.09s ====================
 ```
 
 ### Benefits of running Unit Tests
