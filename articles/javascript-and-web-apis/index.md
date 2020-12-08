@@ -2,21 +2,22 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/js-and-web-apis/
-title: How Javascript Uses Web Browser Apis to Achieve Asynchronisity
-description: 
+url: /engineering-education/javascript-and-web-apis/
+title: How JavaScript Uses Web Browser APIs to Achieve Asynchronisity
+description: In this tutorial we will introduce us to Asynchronous JavaScript and walk through how JavaScript uses web browser APIs to achieve asynchronisity.
 author: adrian-murage
-date: 
-topics: [Languages]
+date: 2020-12-08T00:00:00-17:00
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/js-and-web-apis/hero.jpg
-    alt: JS and Web APIs
+  - url: /engineering-education/javascript-and-web-apis/hero.jpg
+    alt: JavaScripts and Web APIs
 ---
-### Introduction
-Pure JavaScript has a single thread of execution. Known as the [**main thread**](https://developer.mozilla.org/en-US/docs/Glossary/main_thread) in the browser context. "This means that long-running JavaScript functions can block the thread, leading to an unresponsive page and a bad user experience."[(MDN docs)](https://developer.mozilla.org/en-US/docs/Glossary/main_thread)
+Pure JavaScript has a single thread of execution. Known as the [main thread](https://developer.mozilla.org/en-US/docs/Glossary/main_thread) in the browser context. This means that long-running JavaScript functions can block the thread, leading to an [unresponsive page](https://developer.mozilla.org/en-US/docs/Glossary/main_thread) and a bad user experience.
+<!--more-->
 
+### Introduction
 Examples of long-running JavaScript functions are those that:
 - Fetch data from an API.
 - Wait for some time to elapse before executing.
@@ -44,13 +45,16 @@ Before you begin this guide you will need:
 8. display(dataFromAPI)
 9. console.log(“Me later!”);
 ```
-In this step, we will consider the block of code above to help you understand how the Synchronous, Single Thread nature of JavaScript is untenable in modern web scenarios.
+
+In this step, we'll consider the block of code above to help you understand how the Synchronous, Single Thread nature of JavaScript is untenable in modern web scenarios.
 
 Line 1: You declare a function, `display()`. You then move on to line 4, since you do not enter the body of a function until it is executed.
 
 Line 4: You declare a constant, `dataFromAPI`, as the label for the return value of the function on the right of the assignment. In this case `fetchAndWait()`, a **made-up** function that makes a GET request to the Twitter Servers and returns a single tweet.
 
-The wait for the promised tweet begins. 10 milliseconds, 20 milliseconds, 50 milliseconds, 90 milliseconds. At 350 milliseconds the tweet finally arrives. In that intermediate time, you are not allowed to move on and run any further JavaScript code. You are blocked because JavaScript has a Synchronous Thread Of Execution.
+The wait for the promised tweet begins. 10 milliseconds, 20 milliseconds, 50 milliseconds, 90 milliseconds. At 350 milliseconds the tweet finally arrives. 
+
+In that intermediate time, you are not allowed to move on and run any further JavaScript code. You are blocked because JavaScript has a Synchronous Thread Of Execution.
 
 Assuming your returned tweet is a string, `"Hello World"`, it is assigned to the constant, `dataFromAPI`.
 
@@ -60,9 +64,11 @@ Line 2: You log the value of `dataFromAPI`. Then pop `display()` from the Call S
 
 Line 9: You log the string `"Me Later!"`
 
-From the breakdown above, you can spot a clear problem. Such a scenario in a real-world application would render our application unusable as we waited for the response from Twitter's servers. Luckily, there are solutions to this problem. In the next step, we introduce Web Browser APIs and walk through how they solve this problem for us.
+From the breakdown above, you can spot a clear problem. Such a scenario in a real-world application would render our application unusable as we waited for the response from Twitter's servers. Luckily, there are solutions to this problem. 
 
-### Step 2 - Web Browser APIs.
+In the next step, we introduce Web Browser APIs and walk through how they solve this problem for us.
+
+### Step 2 - Web Browser APIs
 ```JavaScript
 1. function printHello(){
 2.   console.log(“Hello”);
@@ -74,9 +80,12 @@ From the breakdown above, you can spot a clear problem. Such a scenario in a rea
 8. blockFor1Sec();
 9. console.log(“Me first!”);
 ```
+
 In this step, you will see what happens when a web browser API ( `setTimeout()` ) is introduced and how it improves what we had in the previous step.
 
-[setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) and other web browser APIs introduce functionality that happens outside of JavaScript's Global Execution Context. If you wish to, you can explore the various APIs [here](https://developer.mozilla.org/en-US/docs/Web/API).
+[setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) and other web browser APIs introduce functionality that happens outside of JavaScript's Global Execution Context. 
+
+If you wish to, you can explore the various APIs [here](https://developer.mozilla.org/en-US/docs/Web/API).
 
 Given that the functionality is outside of JavaScript, we will need to introduce rules around when the return values, if any, are allowed back into JavaScript's Global Execution Context and how exactly JavaScript and the web browser manage that whole process.
 
@@ -86,7 +95,7 @@ Line 1: You declare a function, `printHello()`. You then move on to line 4.
 
 Line 4: You declare a function, `blockFor1Sec()`. You then move on to line 7.
 
-Line 7: You execute `setTimeout()`, which takes a function, `printHello`, and a time, in milliseconds, after which the function will be executed. This functionality is delegated to the browser, which means that your Thread Of Execution is freed. You can then move onto Line 8.
+Line 7: You execute `setTimeout()`, that takes a function, `printHello`, and a time, in milliseconds, after which the function will be executed. This functionality is delegated to the browser, which means that your Thread of Execution is freed. You can then move onto Line 8.
 
 Line 8: You execute `blockFor1Sec()`
 
@@ -102,7 +111,7 @@ For `printHello()` to be allowed back into JavaScript's Global Execution Context
 1. All of the synchronous code must have executed.
 2. The call stack must be empty.
 
-The process of checking these rules is referred to as the [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+The process of checking these rules is referred to as the [Event Loop](/engineering-education/event-loop-explained/).
 
 If the rules are satisfied, functionality sitting on the Task Queue is executed in the order they were added to the queue. First in, first out.
 
@@ -111,19 +120,17 @@ If the rules are satisfied, functionality sitting on the Task Queue is executed 
 You now have an understanding of how JavaScript uses web browser functionality to achieve Asynchronicity.
 
 ### Conclusion
-
-This article does not cover everything on the topic and I encourage you to read the resource linked below.
+This article does not cover everything on the topic and I encourage you to read the resource linked below. 
 
 Further reading:
-
-[In depth: Microtasks and the JavaScript runtime environment](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
+[Microtasks and the JavaScript runtime environment](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
 
 ### References
+- [MDN web docs](https://developer.mozilla.org/en-US/)
 
-[MDN web docs](https://developer.mozilla.org/en-US/)
+- [JavaScript: The New Hard Parts](https://frontendmasters.com/courses/javascript-new-hard-parts/)
 
-[JavaScript: The New Hard Parts](https://frontendmasters.com/courses/javascript-new-hard-parts/)
-
+- [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 
 ---
 Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/) 
