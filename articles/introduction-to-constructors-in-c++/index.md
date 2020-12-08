@@ -264,7 +264,7 @@ int main()
 ```
 
 #### Conclusion
-In this article, we have gone through the basics of constructor functions and constructor overloading. A constructor is required so that when we create an instance of a class (object) all the functions and variables exist in memory. This allows you to use the class by name alongside all the variables and functions. You’ll notice that they are vital and C++ is meaningless without them.
+In this article, we have gone through the basics of constructor functions and constructor overloading. A constructor is required so that when we create an instance of a class (object) all the functions and variables exist in memory. This allows you to use the class by name alongside all the variables and functions. Constructors enable the programmer to set default values, limit instantiation, and write code that is flexible and easy to read.
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
