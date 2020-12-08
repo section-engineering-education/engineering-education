@@ -72,7 +72,7 @@ Then, we create a first test that fulfills our first condition.
 
 from factorial import find_factorial
 
-def test_find_factorial():
+def test_find_factorial_of_zero():
     num = 0
     assert find_factorial(num) == 1
 ```
