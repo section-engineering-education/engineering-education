@@ -1,5 +1,5 @@
 ### Introduction
-A constructor is a special member function that initializes the objects of its class. They are said to be special because their name is the same as the class name. Constructors are invoked every time an instance of the class is created. They automate the destroying of allocated variables therefore the programmer doesn’t have to create a function call to destroy them. This article will go through basics of C++ constructors.
+A constructor is a special member function that initializes the objects of its class. It is said to be special because its name is the same as the class name. Constructors are invoked every time an instance of the class is created. They automate the destroying of allocated variables therefore the programmer doesn’t have to create a function call to destroy them. This article will go through basics of C++ constructors.
 
 #### Prerequisites
 To follow through this article, you will need:
@@ -27,7 +27,7 @@ integer:: integer(void) // constructor definition
   b=2;
 }
 ```
-When we create a constructor, it assures us initialization of the object we create in our program. The declaration `integer v1;`  initializes our object `v1` and assigns the data members `a` and `b` the value  `2`. With normal member functions, we have to write a statement to initialize each of the objects. So if we had a large number of objects, it would result in a lot of code that might be messy and difficult to read.
+When we create a constructor, it ensures the initialization of the object we create in our program. The declaration `integer v1;`  initializes our object `v1` and assigns the data members `a` and `b` the value  `2`. With normal member functions, we have to write a statement to initialize each of the objects. So if we had a large number of objects, it would result in a lot of code that might be messy and difficult to read.
 
 #### Characteristics of constructor functions.
 - Constructors are invoked automatically when we create objects.
