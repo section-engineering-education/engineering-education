@@ -10,8 +10,6 @@
 - Basic knowledge on [constraint layout](https://developer.android.com/training/constraint-layout)
 - An active **Google account**
 
-**NB: `This is a beginner-friendly tutorial !`**
-
 ### Getting started
 
 First, we need to create an android project that we'll use for the entire tutorial. To do this, launch the android studio and you'll see a welcome screen similar to the one below.
@@ -99,7 +97,7 @@ Launch firebase assistant by heading to `Tools` >> `firebase`
 
 ![image](as_firebase_auth1.png "connect  to firebase")
 
-Click `Authentication` >> `Email and password authentication`
+Click `Authentication` > `Email and password authentication`
 
 ![image](as_connect_to_firebase1.png "connect  to firebase")
 
@@ -131,7 +129,7 @@ Finally, this is what you should see on the firebase assistant. You can confirm 
 ![image](as_connected_fb_and_auth.png)
 
 #### One more thing concerning firebase
-Since we want to use Email and password auth, we have to enable it in our project's console. To do that navigate to `Authentication` >> `sign-in method` then enable email and password auth. This should look like this
+Since we want to use Email and password auth, we have to enable it in our project's console. To do that navigate to `Authentication` > `sign-in method` then enable email and password auth. This should look like this
 
 ![image](firebase_enable_auth1.png)
 ![image](firebase_enable_auth2.png)
@@ -140,24 +138,24 @@ Congratulations !! We have finished setting up firebase auth.
 
 ### Getting ready to Code 
 
-At this stage, we're going to create the user interface (UI) and the backend for our app. This is where `XML` and `Kotlin` come in<br> `NB`: we don't need to code the server-side backend as firebase APIs will do that for us. Isn't that awesome?
+At this stage, we're going to create the user interface (UI) and the backend for our app. This is where `XML` and `Kotlin` come in<br> we don't need to code the server-side backend as firebase APIs will do that for us. Isn't that awesome?
 
-First of all, we need to keep our app well organized. This is referred to as application architecture. Expand the `java` directory `>>` right click on the package that contains your package name `>>` add 3 new `packages` namely `extensions`, `utils` and `views`. you'll learn more about them as we proceed.
+First of all, we need to keep our app well organized. This is referred to as application architecture. Expand the `java` directory `>` right click on the package that contains your package name `>` add 3 new `packages` namely `extensions`, `utils` and `views`. you'll learn more about them as we proceed.
 
 It should appear like this
 
-![image](org_packages.png)
+![image](org_packages.png "organized packages")
 
 Next, we need to refactor (shift + f6) MainActivity.kt and activity_main.xml to `HomeActivity.kt` and  `activity_home.xml` respectively. Drag HomeActivity class into views.
 
 #### Explanation
 Each directory plays an important role in the app's design. 
 
-- `extensions` -> holds objects that entails Kotlin extension functions. This makes it possible to access and use such functions from any class in the app without creating another instance of their parent. 
+- `extensions` : holds objects that entails Kotlin extension functions. This makes it possible to access and use such functions from any class in the app without creating another instance of their parent. 
 
-- `utils` -> contains utilities used in the app. In our case, this will only contain firebase utilities.
+- `utils` : contains utilities used in the app. In our case, this will only contain firebase utilities.
 
-- `views` -> This contains the UI related classes.  
+- `views` : This contains the UI related classes.  
 
 In advanced architectures like **MVVM**, there are more commonly used packages like the `model` but we're not concerned about them for now.
 
@@ -166,13 +164,12 @@ Right click on views and add two empty activities namely `CreateAccountActivity`
 Right-click extensions directory select new kotlin file or class then select `object`. Set object's name to `Extensions`. Do the same thing on utils where you'll name the object as `FirebaseUtils`.
 It should look similar to this ;
 
-![image](org_complete.png)
+![image](org_complete.png "packages and directories")
 
 ### Writing Code 
 
-Our app is now inches away from being complete. 
-
 #### 1). Let's begin with the UI.
+This is what the users see and use to interact with the app. We'll use Extensive markup language (XML) to create UI elements.
 
 **a).** copy and paste the code below into ***activity_create_account.xml***.
 
@@ -290,7 +287,7 @@ vertically using vertical-compressed chains. Unlike in linear layout, we don't n
 ```xml
 android:text="@string/sign_in"
 ```
-you can resolve the error by navigating to `res` >> `values` >> `strings` then create a string resource like this
+you can resolve the error by navigating to `res` > `values` > `strings` then create a string resource like this
 
 ```xml
 <string name="sign_in">Sign in</string>
@@ -303,9 +300,9 @@ Do the same thing to solve the color reference error. Add the desired color reso
 
 **Key points** 
 
-- ***margin*** -> this is the field around a view that serves as its part. Think of it as the area between the fence and homestead. It's always given in density pixels (DP).
+- ***margin*** : this is the field around a view that serves as its part. Think of it as the area between the fence and homestead. It's always given in density pixels (DP).
 
-- ***Padding*** -> is the area inside the view which defines how far from the edges is whatever is inside the view.
+- ***Padding*** : is the area inside the view which defines how far from the edges is whatever is inside the view.
 
 - Setting ***layout_width = "0dp"*** in a constraint layout means that the view together with its margin will occupy the whole horizontal constraint set. This works best if the view below is constrained horizontally to the one above it.
 
@@ -313,7 +310,6 @@ Do the same thing to solve the color reference error. Add the desired color reso
 
 
 ```XML
-
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -403,7 +399,7 @@ Do the same thing to solve the color reference error. Add the desired color reso
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-The UI code above is pretty much similar to the previous one. The main views are two EditTexts and two buttons. Remember in *SignInActivity* the user doesn't need to enter the password twice unlike when *Creating account*
+The UI code above is pretty much similar to the previous one. The main views are two EditTexts and two buttons. Remember in *SignInActivity* the user doesn't need to enter the password twice unlike when *Creating an account*
 
 **c).** finally copy the code below into ***activity_home.xml***
 
@@ -440,15 +436,15 @@ The UI code above is pretty much similar to the previous one. The main views are
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 This generates a textView at the top and a signOut button.
-Now we're done with layouts.
+Now we're done with the user interface.
 
-### 2). Coding the Logic (using Kotlin)
+### 2). Creating the App Logic (using Kotlin)
 
-Logic is what controls the flow of a program. In our app, we need to handle clicks, navigation as well as managing users. This process involves accessing the UI elements from their respective inflaters. Think of it as connecting the layout to a class responsible for populating it(the layout) on the screen.
+Logic is what controls the flow of a program. In our app, we need to handle clicks, navigation as well as managing users. All these are interactions the user can perform using the UI. This process involves accessing the UI elements from their respective inflaters. Think of it as connecting the layout to a class responsible for populating it(the layout) on the screen.
 
 There are many ways to achieve this;
 - Using [View binding](https://developer.android.com/topic/libraries/view-binding/migration)
-- Using [Kotlin synthetics](https://developer.android.com/topic/libraries/view-binding/migration) 
+- Using [Kotlin synthetics](https://developer.android.com/topic/libraries/view-binding/migration) (in support until september 2021)
 - using findViewById<>() (deprecated)
 
 **a).**
