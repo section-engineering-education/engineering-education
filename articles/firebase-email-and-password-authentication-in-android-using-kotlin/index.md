@@ -1,14 +1,13 @@
 ### Introduction
 
-[Firebase authentication](https://firebase.google.com/docs/auth) is a technology of setting up service-access permissions by creating and managing valid user accounts using firebase APIs or Firebase console provided by Google. In this article, you'll learn how to implement firebase auth in an android application using the Kotlin programming language.
+[Firebase authentication](https://firebase.google.com/docs/auth) is a technology used to set up service-access permissions by creating and managing valid user accounts using firebase APIs or Firebase console provided by Google. In this article, you'll learn how to implement firebase auth in an android application using the Kotlin.
 
-### Pre-requisites
+### Prerequisites
 
 #### This article requires you to have :
 - [Android Studio IDE](https://developer.android.com/studio) installed in your machine
-- A basic understanding of the [Kotlin](https://kotlinlang.org/) programming language
-- Basic knowledge on [constraint layout](https://developer.android.com/training/constraint-layout)
-- An active **Google account**
+- Knowledge on [constraint layout](https://developer.android.com/training/constraint-layout)
+- An active [Google account](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp)
 
 ### Getting started
 
