@@ -142,7 +142,7 @@ from app import views
 If you recall in the previous step we imported the **app** module from the app file, what we were basically doing was importing the app object in the **__init__** file. Let’s proceed by examining the **view.py** file
 
 ### The views.py file
-The views file contains the route to webpages and also the code logic of complex processes when developing your web app. However, to keep this simple, let’s start with a simple hello world message to our browser. To achieve this, follow the coding process.
+The views file contains the routes to webpages and might also house logic for your web app. In our case, we'll start with a function that returns a simple "Hello world' message to our browser. To achieve this add the code below to the `views.py` file:
 
 ```python
 from app import app
