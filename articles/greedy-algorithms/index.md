@@ -1,34 +1,52 @@
-# Optimizing Stock Price Profit Using Greedy Algorithms
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/greedy-algorithms/
+title: Optimizing Stock Price Profit using Greedy Algorithms
+description: In this article we will explore the greedy algorithm approach to obtain the maximum profit given a list of indices when optimizing a stock price profit program.
+author: lalithnarayan-c
+date: 2020-12-07T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Stock markets are where buyers and sellers represent ownership for the businesses listed on the markets. Many have become millionaires by trading. In today's era, many companies offer solutions to test out our strategies on previous data. This is called back-testing. If the strategies return good profits during back-testing, it can be deployed in the live markets.
+  - url: /engineering-education/greedy-algorithms/hero.jpg
+    alt: Stock Price Greedy Algorithm example image
+---
+Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading. 
+<!--more-->
+In today's era, many companies offer solutions to test out our strategies on previous data. We call this back-testing. If the strategies return good profits during back-testing, we can deploy it in the live markets.
 
-One of the aspects of back-testing is to know the maximum possible profit. We compute the maximum potential gain from stock prices and compare the strategy's performance to the maximum profit possible. Once the back-testing method is at par with the maximum profit, it is deployed into the real-time analysis.
+One aspect of back-testing is knowing the maximum potential profit. We compute the maximum potential gain from stock prices and compare the strategy's performance to the maximum profit possible. Once the back-testing method is at par with the maximum profit, we deploy it into real-time analysis.
 
-### Problem Statement
-
+### Problem statement
 Given a list of prices over a timeframe, we compute the maximum possible profit possible through performing one buy operation or one sell operation at a given time. At a given timestamp, only one of the two operations can be used. The total number of buying and selling operations that can be performed are unlimited. 
 
-### Greedy Approach 
+### Greedy approach 
+We will be using the greedy method to obtain the maximum possible profit. The [greedy method](https://en.wikipedia.org/wiki/Greedy_algorithm) is a type of problem-solving strategy, where the best possible solution at the current instance is chosen. 
 
-We will be using the greedy method to obtain the maximum possible profit. The [greedy method](https://en.wikipedia.org/wiki/Greedy_algorithm) is a type of problem-solving strategy, where the best possible solution at the current instance is chosen. Unlike other algorithms, which consider the optimal solution over a more extensive timeframe, greedy algorithms make decisions at the given time instance. This results in efficient computations and faster results. However, there is a downside to this approach. The greedy approach might not always provide the most optimal solution. This occurs because it considers only the current instance to make a decision. 
+Unlike other algorithms, that consider the optimal solution over a more extensive timeframe, greedy algorithms make decisions at the given time instance. 
 
-In this problem, we will understand the nature of greedy algorithms and determine the maximum possible profit. Let's begin.
+This results in efficient computations and faster results. However, there is a downside to this approach. The greedy approach might not always provide the most optimal solution. This occurs because it considers only the current instance to make a decision. 
 
-### An introduction to the Greedy Solution
+In this problem, we will understand the nature of greedy algorithm and determine the maximum possible profit. Let's begin.
 
-In this problem, the greedy method is used to maximize the profit given a list of values. The greedy algorithm obtains the profit by going with the amount that looks best at each timestamp. This project's scope is limited to previous data and can not model the fluctuations and variations in stock markets. We assume that pre-historic data is available and are thus proceeding with the same.
+### An introduction to the greedy solution
+In this problem, the greedy method is used to maximize the profit given a list of values. The greedy algorithm obtains the profit by going with the amount that looks best at each timestamp. This project's scope is limited to previous data and can not model the fluctuations and variations in stock markets. We assume that pre-historic data is available.
 
-### Given Input
+### Given input
+The input to the program is a list of historical values (integers). It's stored in an array. Python's list is an efficient implementation of the dynamic array. The advantage of the dynamic array is that it grows automatically when additional elements are inserted, and no space is available for the new element. 
 
-The input to the program is a list of historical values (integers). It is stored in an array. Python's list is an efficient implementation of the dynamic array. The advantage of the dynamic array is that it grows automatically when additional elements are inserted, and no space is available for the new element. The amortized cost of insertion of an element into a dynamic array is O(1), whereas the worst case is still Θ(n).
+The amortized cost of insertion of an element into a dynamic array is O(1), whereas the worst case is still Θ(n).
 
-### Desired Output
+### Desired output
+The program outputs the maximum possible profit given the list of prices. The output of the program is of type int. Since we are dealing with profits, it's efficient to round off to the nearest ₹.
 
-The program outputs the maximum possible profit given the list of prices. The output of the program is of type int. Since we are dealing with profits, it is efficient to round off to the nearest ₹.
+### Greedy approach: Pseudo code
+The pseudo-code explains the algorithm to calculate the maximum profit. 
 
-### Greedy Approach: Pseudo Code
-
-The pseudo-code explains the algorithm to calculate the maximum profit. Given a list of prices, we init
+Given a list of prices, we init:
 ```txt
 function maximize_profit(price_list):
     {
@@ -60,8 +78,8 @@ function main():
     print PROFIT on the console. 
 }
 ```
-### Greedy Approach: Code
 
+### Greedy approach: Code
 We will code the greedy algorithm in this section. Using the pseudo code given above, we convert it into a Python code. You may choose to use any language of your choice. 
 
 ```python
@@ -100,7 +118,6 @@ print("6.",price6,"--> ₹",maximize_profit(price6))
 
 
 ### Output
-
 The output of the code is given below:
 
 ```bash
@@ -113,51 +130,47 @@ The output of the code is given below:
 6. [100, 180, 260, 310, 40, 535, 695] --> ₹ 655
 ```
 
-### Output Analysis
-
-Let us analyze the output obtained. 
+### Output analysis
+Let's analyze the output obtained. 
 
 #### Case 1:
 *Input List*: [1,5,3,2]
 
-*Output*: **Maximum Profit: 4**: **Buy at 1** : **Sell at 5**
+*Output*: **Maximum Profit: 4** : **Buy at 1** : **Sell at 5**
 
 #### Case 2:
-
 *Input List*: [9,7,4,1]
 
-*Output*: **Maximum Profit: -2**: **Buy at 9** : **Sell at 7**
+*Output*: **Maximum Profit: -2** : **Buy at 9** : **Sell at 7**
 
 #### Case 3:
-
-Input: Large numbers, more extensive list
+Input: Large numbers, more extensive list:
 
 *Input List*: [100,180,260,310,40,535,695]
-*Output*: **Maximum Profit: 655** : Buy at 40 : Sell at 695
 
-##### Optimal Solution:
+*Output*: **Maximum Profit: 655** : **Buy at 40** : **Sell at 695**
+
+##### Optimal solution:
 - Buy at 100, Sell at 310
 - Buy at 40, Sell at 695
 
 **Total Profit = 865**
 
-
-### Advantages of Greedy Approach
-
+### Advantages of the greedy approach
 - The worst-case time complexity of the function `maximize_profit()` is Θ(n).
 - Space Complexity of the function is Θ(1).
-- The program completes execution within one pass of the entire list
-- Since it uses a greedy approach, the profits are added up in each step, thereby ensuring profit
+- The program completes execution within one pass of the entire list.
+- Since it uses a greedy approach, the profits are added up in each step, thereby ensuring profit.
   
-### Limitations of Greedy Approach
-
+### Limitations of the greedy approach
 - The program can work with only one buy and one sell operation due to its greedy nature. It fails to sell and buy at multiple time stamps.
 - Greedy algorithm solutions are not always optimal. Therefore, the maximum profit computed may be a local maximum. The program can fail to reach the global maxima. For example, the optimal solution in scenario-3 is 865. The output of the greedy algorithm is 655. 
 
-The same problem can be solved using other programming paradigms such as [divide and conquer](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm), [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming), etc. The next article in this series will be solving the same problem using divide and conquer. Divide and conquer algorithms divide the problem into many sub-problems until the sub-problems can be solved directly. Then the solutions obtained are put together to get the final answer. 
+The same problem can be solved using other programming paradigms such as [divide and conquer](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm), [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming), etc. The next article in this series will be solving the same problem using divide and conquer. 
+
+Divide and conquer algorithms divide the problem into many sub-problems until the sub-problems can be solved directly. Then the solutions obtained are put together to get the final answer. 
 
 ### Conclusion
-
 In this article, we considered the greedy approach to obtain the maximum profit given a list of indices. Observe that the option of performing multiple buys and sell operations are never used. I hope the intuition behind the greedy approach was presented well. Do let me know what you think about the approach taken to solve the problem. Feedback is highly appreciated.
 
 ---
