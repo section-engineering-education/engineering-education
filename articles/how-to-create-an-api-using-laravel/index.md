@@ -3,21 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-create-an-api-using-laravel/
-title: Databinding in Android using Kotlin
-description: In this tutorial we will learn how to implement data binding in Andriod using Kotlin.
+title: How to Create an API using Laravel
+description: In this tutorial we will learn how to create a simple task manager API using Laravel which is a a vital PHP framework used in creating interactive websites and APIs.
 author: michael-barasa
 date: 2020-12-08T00:00:00-16:00
-topics: []
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-create-an-api-using-laravel/hero.png
-    alt: Databinding Android Kotlin image
+    alt: task manager API using Laravel image
 ---
-An Application Programming Interface, denoted by API, enables applications to access data and other external software functionalities. APIs are gaining popularity among developers since they save time and resources. Companies do not need to develop complex systems from scratch. They can opt to consume data from other existing frameworks. An API is responsible in returning the appropriate response whenever an application sends a request.
+An Application Programming Interface, denoted as API, enables applications to access data and other external software functionalities. APIs are gaining popularity among developers since they save time and resources. Companies do not need to develop complex systems from scratch. 
 <!--more-->
+They can opt to consume data from other existing frameworks. An API is responsible in returning the appropriate response whenever an application sends a request.
 ### Introduction
-[Laravel](https://laravel.com/docs/8.x) is a vital PHP framework for creating interactive websites and APIs. It supports numerous dependencies and templates. Laravel lays a foundation which allows you, as a developer, to focus on more demanding things. It is popular due to its ability to support real-time communication, API authentication, and job queues. This tutorial outlines the steps for creating a Laravel Web API. Since we now know what Laravel is all about, let's dive into the cool stuff.
+[Laravel](https://laravel.com/docs/8.x) is a vital PHP framework used in creating interactive websites and APIs. It supports numerous dependencies and templates. Laravel lays a foundation that allows you, as a developer, to focus on more demanding things. It's popular due to its ability to support real-time communication, API authentication, and job queues. This tutorial outlines the steps needed to create a Laravel Web API. Since we now know what Laravel is all about, let's dive into the cool stuff.
 
 ### Goal of the tutorial
 The tutorial seeks to create a simple task manager API using Laravel.
@@ -41,12 +42,16 @@ composer create-project –prefer-dist Laravel/Laravel taskmanager
 Ensure that the project you create is in the `xampp/htdocs` folder. You can view your generated website template by visiting `localhost/taskmanager/public/` on your browser.
 
 ### 2. Creating the database
-Open `Xampp` and launch `phpMyAdmin`. Use it to create a database called `tasks`. We will create tables and insert data using `migrations`. You can now open the Laravel project in your preferred IDE. Visual Studio Code is used for this project..
+Open `Xampp` and launch `phpMyAdmin`. Use it to create a database called `tasks`. We will create tables and insert data using `migrations`. You can now open the Laravel project in your preferred IDE. Visual Studio Code will be used for this project.
 
-The database can be changed to `tasks` in the `.env`. You can also change the authentication information including passwords and emails in the .env file. . This largely  depends on the Xampp settings.
+The database can be changed to `tasks` in the `.env`. You can also change the authentication information including passwords and emails in the `.env file.`. This largely  depends on the Xampp settings.
 
 ### 3. Migration
-We use the `php artisan make:model Task -mf ` command to create a model. The `&#39;-mf&#39;` portion generates a task factory and database migration files for this model. The new files are stored in the factories and migrations folders. Open the `2020_11_25_173913_create_tasks_table` file and go to the `up()` function. We need to outline the names of our database columns in the `up()` function as shown below.
+We use the `php artisan make:model Task -mf ` command to create a model. The `&#39;-mf&#39;` portion generates a task factory and database migration files for this model. 
+
+The new files are stored in the factories and migrations folders. 
+
+Open the `2020_11_25_173913_create_tasks_table` file and go to the `up()` function. We need to outline the names of our database columns in the `up()` function as shown below.
 
 ```Php
 <?php
@@ -80,7 +85,7 @@ class CreateTasksTable extends Migration{
 }
 ```
 
-The database table will have the id, title, description, and timestamps columns. We can perform a migration by using a `php artisan migrate` command in the terminal.
+The database table will have the ID, title, description, and timestamps columns. We can perform a migration by using a `php artisan migrate` command in the terminal.
 
 ### 4. Seeding data
 This stage entails adding some dummy data to our database. Let's create a `TaskFactory` class by using `php artistan make:factory TaskFactory` command. We then need to define the columns that will have fake data as follows.
@@ -146,7 +151,11 @@ class TaskTableSeeder extends Seeder{
 We state the number of records that should be pre-populated in the database using this `Task::factory()->times(50)->create()` statement. In this case, 50 records will be generated. We can generate the data using `php artisan db:seed` command.
 
 ### 5. Controller
-The next step is to create a task controller by using `php artisan make:controller TaskController --resource` command. The Controller class helps in handling requests. You can find the created file at `App\http\Controllers\TaskController`. The `--resource` portion allows Laravel to add functions that support *CRUD* functionalities in the controller. The generated methods are index(), create(), store(), show(), edit(), and update().
+The next step is to create a task controller by using `php artisan make:controller TaskController --resource` command. The Controller class helps in handling requests. 
+
+You can find the created file at `App\http\Controllers\TaskController`. 
+
+The `--resource` portion allows Laravel to add functions that support *CRUD* functionalities in the controller. The generated methods are index(), create(), store(), show(), edit(), and update().
 
 ```Php
 <?php
@@ -223,9 +232,9 @@ class TaskController extends Controller {
 }
 ```
 
-Let's modify the generated functions to activate *CRUD* functionalities.
+Let's modify the generated functions to activate the *CRUD* functionalities.
 
-#### a. Index
+#### A) Index
 This method will return all the data or tasks in the database.
 
 ```Php
@@ -234,7 +243,7 @@ This method will return all the data or tasks in the database.
   }
 ```
 
-#### b. Show
+#### B) Show
 This method allows us to retrieve values of a specific object.
 
 ```Php
@@ -243,7 +252,7 @@ public function show($id) {
   }
 ```
 
-#### c. Store
+#### C) Store
 This method allows us to receive user inputs and store them in the database.
 
 ```Php
@@ -262,7 +271,7 @@ public function store(Request $request){
   }
 ```
 
-#### d. Update
+#### D) Update
 This method allows the user to update existing values in the database.
 
 ```Php
@@ -279,8 +288,8 @@ public function update(Request $request, $id){
       return $task; // retrieves the updated object from the database
 ```
 
-#### e. Destroy
-This function is used to delete values in the database. It searches for an object in the database using the provided id and deletes it.
+#### E) Destroy
+This function is used to delete values in the database. It searches for an object in the database using the provided ID and deletes it.
 
 ```Php
  public function destroy($id){ //receives an object's id
@@ -309,15 +318,17 @@ Here are the available routes in the `taskmanager` project.
 ![routes](/engineering-education/how-to-create-an-api-using-laravel/routes.png)
 
 ### 7. Testing
-We will use Postman for our tests. Please watch the video below to know how the tests are done.
+We will use Postman for our tests. Please watch the video below to learn how the tests are done.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/o5JM9NpEiSs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
-The `Laravel` framework has made it easy to create powerful and secure APIs quickly. Using the resource command simplifies the routing process. All known routes are automatically added to the application. The framework also provides dependencies for exception and Error handling. Any bug can be traced and resolved.cc
+The `Laravel` framework has made it easy to create powerful and secure APIs quickly. Using the resource command simplifies the routing process. It automatically adds all known routes to the application. The framework also provides dependencies for exception and Error handling. Any bug can be traced and resolved.
 
 ### References
-[Laravel](https://laravel.com/docs/8.x)
+- [Laravel](https://laravel.com/docs/8.x)
+- [Composer](https://getcomposer.org/) 
+- [XAMPP](https://www.apachefriends.org/index.html) 
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
