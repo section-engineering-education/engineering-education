@@ -6,7 +6,7 @@ url: /engineering-education/laravel-beginners-guide-blogpost/
 title: Building Your First Laravel Application (Blog Application)
 description: This article will show a developer how to use Kotlin extensions, understanding when and how to use them.
 author: 
-date: 2020-10-01T00:00:00-10:00
+date: 2020-12-08T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/laravel-beginners-guide-blogpost/hero.jpg
     alt: kotlin extensions image
 ---
-When Kotlin was introduced into Android, it came along with new features. One of the features was Kotlin extensions. Extensions solved a large problem that developers faced: code redundancy. It is not a good practice to have code repeating itself. On a larger scale, this would lead to slower performance. At which point the code can become dirty and unscalable.
+Short version, Laravel is a PHP MVC Framework. Long version, Laravel is a free and open-source PHP Framework for Web Artisans based on Symfony which helps craft Web Applications following the MVC (Model View Controller) design pattern.
 <!--more-->
 ### Laravel Tutorial: Step by Step Guide to Build Your First Laravel Application (Blog Application)
 - **Framework:** Laravel 
@@ -24,7 +24,6 @@ When Kotlin was introduced into Android, it came along with new features. One of
 - **Stable Release:** 8.11.2 (October 28th, 2020)
  
 ### What is Laravel?
-Short version, Laravel is a PHP MVC Framework. Long version, Laravel is a free and open-source PHP Framework for Web Artisans based on Symfony which helps craft Web Applications following the MVC (Model View Controller) design pattern.
 For us to understand Laravel better, we will build a simple blog application with Laravel from scratch.
 Requirements.
 
@@ -43,7 +42,7 @@ To install either MAMP, LAMP, or WAMP go to http://ampps.com/downloads and choos
 
 With our machine setup, it's time to start developing.
 
-## Crafting a new Laravel Application
+### Crafting a new Laravel Application
 There are two ways to create a Laravel application; one is using the Laravel installer and the other is through requiring the Laravel package; using composer create-project command. For this tutorial we will use the latter.
 - Open your console and cd to www directory in your MAMP, LAMP, or WAMP installation directory.
 - Type the following command:-
@@ -53,7 +52,7 @@ There are two ways to create a Laravel application; one is using the Laravel ins
   ```
 It will create a directory called `my-blog` and load all the primary Laravel files there. 
 
-## Configuring our Laravel Application
+### Configuring our Laravel Application
 After installing our Laravel application we will need to configure our database for it to work.
 - Go to `http://localhost/phpmyadmin/ `
 - Create a new Database by clicking on new (shown below in red)
@@ -98,15 +97,15 @@ It will start the Application and give you a URL, mostly `http://127.0.0.1:8000`
 
 ![home-page](images/2_home.PNG)
 
-## Understanding the Laravel Application file structure.
+### Understanding the Laravel Application file structure.
 Before we start coding, let us understand the file structure of a Laravel application. 
 For example, most of you don't understand why we changed the `.env` file. Below is the Laravel App file structure
 
-![files](images/3_files.PNG)
+![files](/engineering-education/laravel-beginners-guide-blogpost/images/3_files.PNG)
 
 `app` folder – this contains all the logic in our application, this includes the models, controllers, service providers e.t.c
 
-![app files](images/4_app_files.png)
+![app files](/engineering-education/laravel-beginners-guide-blogpost/images/4_app_files.png)
 
 As a beginner you will spend most of your time in Models and Controllers folders, these are what we will discuss in details.
 - `Models` folder- This is where the business logic of your App is stored in a model is a representation of a real life object e.g. a blog post. 
@@ -168,7 +167,7 @@ env('KEY','default')
 ```
 >NOTE: Avoid using env() helper method inside your code, only use it in config files. This is because, during deployment when you cache the environment (you will learn how) all the environment variables will be loaded to config and the .env file will be dropped.
 
-## Understanding a request lifecycle.
+### Understanding a request lifecycle.
 Laravel like any other serverside platform, works on a request response model, i.e. the user sends a request and they get a response in return.
 
 For illustration, let's assume the user wants to read a blog post 5, they will send a get request to fetch that post; the request route (URL) will be as follows http://my-blog.test/blog/5
@@ -179,8 +178,9 @@ Inside the controller, the request is executed i.e. the post is fetched from the
 
 That finalizes the request process.
 
-## Let's code!
+### Let's code!
 Now that we have understood how a request works and different files and folders of a Laravel application, we will start developing our blog now.
+
 #### Making BlogPost Model
 First, we will create a BlogPost Model, to create a model, we use the php artisan `make:model` command followed by the name of the model.
 
@@ -294,7 +294,7 @@ php artisan tinker
 
 This will fire up a command line that looks like this:-
 
-![Tinker](images/5_tinker.png)
+![Tinker](/engineering-education/laravel-beginners-guide-blogpost/images/5_tinker.png)
 
 Start typing your code there and hit enter to run it. To seed, type:-
 
@@ -403,8 +403,8 @@ Route::get('/blog', [\App\Http\Controllers\BlogPostController::class, 'index']);
 If you visit that route now, it will show a blank screen. 
 In the next sections we will create more routes and implement the methods available.
 
-####Implementing the controller methods.
-##### 1. Showing all blog posts with `index()` method.
+### Implementing the controller methods.
+#### 1. Showing all blog posts with `index()` method.
 
 ```php
 ...
@@ -420,7 +420,7 @@ public function index()
 
 If we navigate to `http://127.0.0.1:8000/blog` you will see a JSON dump of the posts available (10 posts). Like this:-
  
-![Blog Dump](images/6_blog_dump.png)
+![Blog Dump](/engineering-education/laravel-beginners-guide-blogpost/images/6_blog_dump.png)
 
 I have installed a chrome extension called JSON Formatter to help me format the JSON dumped, it's a free plugin, you don't have to install it I you don't need it.
 
@@ -456,12 +456,12 @@ This is called route-model binding in Laravel! You provide a route with a wildca
 
 This is the response you will see in your browser:-
 
-![Blog Post](images/7_blog_post.png)
+![Blog Post](/engineering-education/laravel-beginners-guide-blogpost/images/7_blog_post.png)
 
 >WARNING: The key we use on the wildcard must be the same name as the variable name inside show method for model-route binding to occur. 
 >E.g. if in the route wildcard is `{blogPost}` the variable name on `public function show(BlogPost $blogPost)` method has to be `$blogPost`.
 
-##### Working with other methods
+#### Working with other methods
 So far we have been working on `get` routes only, the `create()` and `edit()` methods will be get verbs too but they are supposed to show the create and edit forms respectfully.
 
 The `store()` method will be a `post` verb since we will be posting the create BlogPost form to store the data, the `update()` method will need a `put` or `patch` verb to update data and the `destroy()` method will need a `delete` verb to delete the post.
@@ -484,7 +484,7 @@ Laravel uses a templating engine called blade which is injected into HTML and en
 
 First, we will learn a few blade syntax that will help us get started. We will compare the syntax we use on blade to that of regular PHP inside views:-
 
-![Blade Syntax](images/8_blade_syntax.PNG)
+![Blade Syntax](/engineering-education/laravel-beginners-guide-blogpost/images/8_blade_syntax.PNG)
 
 >TIP: The PHP syntax is still accepted in Laravel views but as you have seen, it's clumsy. Using blade syntax is better.
 
@@ -495,14 +495,14 @@ Blade has more terms and directive that we need to understand:-
 
 Blade directives and their meaning
 
-![Blade Directives](images/9_blade_directives.PNG)
+![Blade Directives](/engineering-education/laravel-beginners-guide-blogpost/images/9_blade_directives.PNG)
 
 These are the ones we are going to use right now, you can always learn more on Laravel documentation here: https://laravel.com/docs/8.x/blade
 
 With this knowledge now we are ready to design our Laravel app
 
 
-##### 1. Designing our app layout
+#### 1. Designing our app layout
 Inside the `resource/views` folder create a new folder and name it layouts then create a file in the folder and name it `app.blade.php`.
 Below is the final code of how the file will look like.
 
@@ -542,7 +542,7 @@ At the title `{{ config('app.name') }}` – Is a Laravel config accessor helper 
 
 In the body, `@yield('content)` – is a blade directive that will be used to bring content from children views to the layout.
 
-##### 2. Designing the welcome page
+#### 2. Designing the welcome page
 This is the page that we saw when we created our first application, we will redesign it to show the welcome page afresh extending our layout using `@extend` directive. It is located in `resources/views` folder, named `welcome.blade.php`
 
 The final code in the page will look like this:-
@@ -565,9 +565,9 @@ The final code in the page will look like this:-
 
 This is how it looks like in the browser. The `Show Blog` button will show the blog page which we will design next
 
-![Home Page](images/10_home.png)
+![Home Page](/engineering-education/laravel-beginners-guide-blogpost/images/10_home.png)
 
-##### 3. Designing the Blog Page
+#### 3. Designing the Blog Page
 In our current blog page, we are returning raw json data to user. 
 
 In this section, we will return a view to user, to do that, Laravel gives us a method for that. i.e. Instaed of saying `return $posts` we say `return view('view.name', [$data]);` so, 
@@ -632,9 +632,9 @@ It will attach the post id to the link.
 
 In the browser the page will look like this:-
 
-![Blog Page](images/11_blog_page.png)
+![Blog Page](/engineering-education/laravel-beginners-guide-blogpost/images/11_blog_page.png)
 
-##### 4. Designing the BlogPost Page (`http://127.0.0.1:8000/blog/5`)
+#### 4. Designing the BlogPost Page (`http://127.0.0.1:8000/blog/5`)
 In our current blog-post page, we are returning raw json data to user, in this section, we will return a view to user. 
 So, we will modify the code in `BlogPostController.php` in `show()` method to return view instead of json.
 
@@ -695,13 +695,13 @@ This will be clicked to edit the post.
 ```
 This form will be used to delete the post. The `@method(‘DELETE’)` directive creates a field that will override the default post method to `DELETE` method. Same will happen for `@csrf` directive. As shown below:-
 
-![csrf and method expands](images/12_expand.png)
+![csrf and method expands](/engineering-education/laravel-beginners-guide-blogpost/images/12_expand.png)
 
 The `Go Back` button will take us back to the Blog page.
 
 This is how the page will look like in the browser.
 
-![Blog post Page](images/13_blog_post_page.png)
+![Blog post Page](/engineering-education/laravel-beginners-guide-blogpost/images/13_blog_post_page.png)
 
 ##### 5. Create a new post page.
 We have already created a route for this page `http://127.0.0.1:8000/blog/create/post`.
@@ -773,9 +773,9 @@ The `@csrf` directive will expand in the browser to give us the token field in t
 
 The page will look like this in our browser.
 
-![New post Page](images/14_new_post_form.png)
+![New post Page](/engineering-education/laravel-beginners-guide-blogpost/images/14_new_post_form.png)
 
-##### 6. Accepting and saving the submitted post
+#### 6. Accepting and saving the submitted post
 Inside our `BlogPostController.php` in `store()` method we will implement the code to save the post to the database the redirect the user to the created post.
 
 The code will look like this:-
@@ -820,7 +820,7 @@ class BlogPost extends Model
 ```
 With that, we are done with adding a post.
 
-##### 7. Editing a post.
+#### 7. Editing a post.
 We have already created a route for this page `http://127.0.0.1:8000/blog/{blogPost}/edit`.
 
 We will first modify the code in `BlogPostController.php` in `edit()` method to return the view.
@@ -916,7 +916,7 @@ Here, we are using the `$modelInstance->update()` method which accepts an associ
 
 That’s all we need to update our post.
 
-##### 9. Deleting a Post
+#### 9. Deleting a Post
 Inside our `BlogPostController.php` in `destroy()` method we will implement the code to save the post to the database then redirect the user to the edited post.
 
 The code will look like this:-
@@ -937,7 +937,7 @@ Here, we are using the `$modelInstance->delete()` method which will delete the p
 That’s all we need to delete a post.
 
 
-## Conclusion
+### Conclusion
 With this article you have learned how to create a Laravel project from scratch to a functional blog.
 
 This was a beginner course so I didn’t want to overwhelm you with a lot of information. But you have at least learned all the Laravel core concepts starting from models, controllers, views, routes, migrations and factories. 
