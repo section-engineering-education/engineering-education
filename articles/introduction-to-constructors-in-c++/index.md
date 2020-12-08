@@ -119,8 +119,8 @@ int main()
 {
   integer v(10, 15); // Constructor called
 
-  cout << "a = " << v.getX() ; // values assigned by constructor accessed
-  cout<< "b = " << v.getY();
+  cout << "a = " << v.getX() << endl; // values assigned by constructor accessed
+  cout<< "b = " << v.getY() << endl;
 
   return 0;
 }
