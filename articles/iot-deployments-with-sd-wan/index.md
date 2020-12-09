@@ -4,17 +4,30 @@ However, various challenges hold the IoT back, including inadequate network reso
 
 This article will discuss how SD-WAN ensures successful IoT deployments and how it compares to the traditional wide area network (WAN).
 
+### Keywords
+
+- Overlay network (SDN overlay) - a telecommunications network layered on another network
+- Tunneling technology- a technology that allows a network to send its information through another network&#39;s connections.
+- Multiprotocol Label Switching ([MPLS](https://www.forcepoint.com/cyber-edu/mpls-multiprotocol-label-switching#)) - a data forwarding technology that monitors and boosts network traffic flow.
+- Data packet- data is broken down into similar data structures, known as data packets, before transmission.
+- End-to-end encryption (E2EE) – a communication mechanism that allows only the communicating parties to access and read messages.
+- Virtual private network ([VPN]((https://en.wikipedia.org/wiki/Virtual_private_network))) – a technology that creates a private network from a public internet connection to guarantee the anonymity and privacy of users.
+- Firewalls - systems designed to block unauthorized access to a private network.
+- Decouple - systems that transact without being connected.
+- Secure Sockets Layer (SSL) - a security protocol that creates an encrypted and authenticated link between a server and a client for example, a mail client and a mail server.
+- Zero-touch provisioning (ZTP) - a switch feature that allows automatic device configuration and provisioning.
+
 ### What is SD-WAN?
 
 A Software-defined Wide Area Network (SD-WAN) is a software-driven technology that relies on a centralized control function to control WAN traffic securely. SD-WAN helps to improve user experience and application performance. As a result, organizations benefit from increased agility, business productivity, and lower information technology costs.
 
-SD-WAN solutions are deployed as [overlay networks](https://searchnetworking.techtarget.com/definition/overlay-network#) to existing networks, which eases adoption and integration eventually. Overlay networks are computer networks that are layered on top of other networks. In this case, [tunneling technology](https://www.webopedia.com/TERM/T/tunneling.html) is used to differentiate the logical network from the physical network. SD-WAN relies on this tunneling technology to move data between networks.
+SD-WAN solutions are deployed as overlay networks to existing networks, which eases adoption and integration eventually. Overlay networks are computer networks that are layered on top of other networks. In this case, [tunneling technology](https://www.webopedia.com/TERM/T/tunneling.html) is used to differentiate the logical network from the physical network. SD-WAN relies on this tunneling technology to move data between networks.
 
-SD-WAN combines traditional WAN technologies, including [broadband connections](https://www.nfon.com/en/service/knowledge-base/knowledge-base-detail/broadband-internet-connection) and Multi-Protocol Label Switching ([MPLS](https://www.forcepoint.com/cyber-edu/mpls-multiprotocol-label-switching#)), to bring a better experience to wide-area networking. It enables organizations to route traffic to multiple offices and remote locations besides providing enhanced capabilities for managing and monitoring network traffic. Organizations use SD-WAN to connect all their departments or offices to a central network in the cloud to increase flexibility and control. SD-WAN reduces networking expenses by measuring the traffic and selecting the most efficient route for every [data packet](https://www.techopedia.com/definition/6751/data-packet#) in real-time.
+SD-WAN combines traditional WAN technologies, including [broadband connections](https://www.nfon.com/en/service/knowledge-base/knowledge-base-detail/broadband-internet-connection) and Multi-Protocol Label Switching (MPLS), to bring a better experience to wide-area networking. It enables organizations to route traffic to multiple offices and remote locations besides providing enhanced capabilities for managing and monitoring network traffic. Organizations use SD-WAN to connect all their departments or offices to a central network in the cloud to increase flexibility and control. SD-WAN reduces networking expenses by measuring the traffic and selecting the most efficient route for every [data packet](https://www.techopedia.com/definition/6751/data-packet#) in real-time.
 
 ### Comparing SD-WAN and traditional WAN
 
-SD-WAN&#39;s provision of end-to-end encryption ([E2EE](https://searchsecurity.techtarget.com/definition/end-to-end-encryption-E2EE#)) over a virtual private network ([VPN](https://en.wikipedia.org/wiki/Virtual_private_network)) guarantees data traffic security. With this technology, organizations can integrate and implement additional security layers like [firewalls](https://kb.iu.edu/d/aoru#) for unified threat management.
+SD-WAN&#39;s provision of end-to-end encryption (E2EE) over a virtual private network (VPN) guarantees data traffic security. With this technology, organizations can integrate and implement additional security layers like [firewalls](https://kb.iu.edu/d/aoru#) for unified threat management.
 
 Traditional WAN also guarantees security in various ways. For example, it sends private packets over MPLS connections to allow site-to-site secure communication. These private packets are only accessible to the destined MLPS connection.
 
@@ -40,7 +53,7 @@ Connecting IoT devices to the internet exposes the devices to potential security
 
 Despite operating on tight budgets and limited resources, IT teams are expected to extend enterprise-class security to remote areas. They must also protect systems and ensure end-to-end security for IoT systems.
 
-SD-WAN comes in handy to help IT teams manage threats by performing a wide range of security functions. These include security information management, Secure Sockets Layer ([SSL](https://www.digicert.com/ssl/)) and intrusion detection, and web and app filtering. SD-WAN integrates well with firewalls, anti-virus, anti-spyware, and anti-malware software.
+SD-WAN comes in handy to help IT teams manage threats by performing a wide range of security functions. These include security information management, Secure Sockets Layer (SSL) and intrusion detection, and web and app filtering. SD-WAN integrates well with firewalls, anti-virus, anti-spyware, and anti-malware software.
 
 SD-WAN&#39;s security zoning capabilities allow organizations to segment the network and ensure IoT assets&#39; isolation from attacks.
 
