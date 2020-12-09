@@ -83,16 +83,18 @@ yarn ; yarn global add expo-cli
 Now that our expo-cli is installed, we need to start setting up Admod. For that, we need to open the `app.json` file and add the **Admob App ID** to the `config` section as shown in the code snippet below:
 
 ```json
+{
+ "expo": {
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "config": {
-        "googleMobileAdsAppId":"ca-app-pub-2547344479047582~xxxxxxxxx"
+        "googleMobileAdsAppId":"ca-app-pub-2547344479047582~7785850471"
       }
-     
-    },
+   },
+},
 ```
 
 Now, it is time to install the expo Admob package i.e. **expo-ads-admob**. For that, we need to run the following command in our project terminal: 
@@ -131,12 +133,13 @@ const Home = () => {
   React.useEffect(() => {
      setTestDeviceIDAsync("EMULATOR");
   }, []);
+}
 ```
 
 Next, we need to add the Banner ad to the view. For that, we are going to use the `AdMobBanner` component with props configured. It will be wrapped inside the `Card` component with styles as shown in the code snippet below:
 
 ```jsx
-<Card
+        <Card
           style={{
             shadowOffset: { width: 5, height: 5 },
             width: "90%",
@@ -197,7 +200,7 @@ Now, we need to add a new Setting screen option to remove ads. It's going to be 
           title="Remove Ads"
           left={() => <List.Icon icon="bullhorn" />}
         />
- </TouchableOpacity>
+</TouchableOpacity>
 ```
 
 We will get the Remove Ads list option as shown in the demo screenshot below:
@@ -228,12 +231,13 @@ First, we need to define a state using the `useState` hook in order to control t
 ```jsx
 export default ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
+/// other code
 ```
 
 Next, we need to add a `Modal` component with a body template. In the `Modal` body, we are going to add a button to trigger the Reward Ads as well. The Modal component with its prop configuration along with body template is provided in the code snippet below:
 
 ```jsx
-<Modal
+      <Modal
         animationType="slide"
         transparent={true}
         visible={modalVisible}
@@ -314,7 +318,7 @@ You may find it difficult to implement a Modal in React Native. If that is the c
 Lastly, we need to call the Modal trigger function to the Remove ads list option as directed in the code snippet below:
 
 ```jsx
-    <TouchableOpacity
+      <TouchableOpacity
         onPress={() => {
           setModalVisible(true);
         }}
@@ -424,15 +428,14 @@ In order to use the reducer, we need to go to the Home.js file and import the `u
 ```jsx
 import { useSelector } from "react-redux";
 const Home = () => {
-  const admobReducer = useSelector(({ admobReducer }) => admobReducer);
+ const admobReducer = useSelector((reduxStoreState) => state.admobReducer);
 ```
 
 Next, we need to use the `ad_status` state from the reducer to conditionally render the `AdMobBanner` as directed in the code snippet below:
 
 ```jsx
       {admobReducer.ad_status && (
-        <Card
-        >
+        <Card>
           <AdMobBanner
            /// other code
           />
@@ -450,14 +453,14 @@ export default ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const dispatch = useDispatch();
   const admobReducer = useSelector((reduxStoreState) => state.admobReducer);
+  /// other code
 ```
 
 Then, we need to apply conditional rendering to the `AdmobBanner` component just like in the Home screen as shown in the code snippet below:
 
 ```jsx
       {admobReducer.ad_status && (
-        <Card
-        >
+        <Card>
           <AdMobBanner
            /// other code
           />
