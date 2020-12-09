@@ -18,7 +18,8 @@ Many modern-day apps contain ads in them. The ads pop out if you want to use cer
 In this tutorial, we are going to implement Admob in the React Native application. Here, we are going to implement an interface to show the ads as well as an option to remove ads as well. In most cases, the users will have to pay to remove the ads. But here, we are going to make users watch video ads to hide the ads from the interface for a certain amount of time. For this, we are going to make use of the expo Admob package that provides the ad reward feature.
 
 ### Requirement
-- It is necessary to complete the [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) before starting this one. The previous tutorial will help you understand the use of React Navigation. Also, the use of React Native Paper components, and the Redux mechanism better. You can use the code from the previous tutorial as a [started template](https://snack.expo.io/2y6z09xog) for this tutorial.
+- A fresh React Native project or download the [starter project](https://snack.expo.io/2y6z09xog) from the [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/).
+- It is necessary to complete the  before starting this one. The previous tutorial will help you understand the use of React Navigation. Also, the use of React Native Paper components, and the Redux mechanism better. You can use the code from the previous tutorial as a for this tutorial.
 -  Android Emulator or Real Device
 - [Admob account](https://apps.admob.com/v2/home?pli=1)
 - [Nodejs](https://nodejs.org/dist/v12.19.0/node-v12.19.0-x64.msi)
