@@ -47,31 +47,26 @@ It is assumed that you have Python, pip and a virtual environment installed on y
 The following is a step-by-step process to follow to install Flask:
 
 ### Terminal and File Directory
-The first step is to open up your terminal and navigate to the file directory where you would like to create your project e.g Desktop in this example. 
-
-Secondly, you make a directory for the project itself. Over time, you will be building a static website with Flask, hence the folder name “**Flask_website**”. Confirm that the directory was created.
-
-Thirdly, we change our directory to our Flask app folder, then make a virtual environment and have its tools stored in the “**env**” folder inside our Flask app folder.
-
+The first step is to create the flask_website directory 
 ```bash
-~$  cd Desktop
-~/Desktop$ mkdir flask_website
-~/Desktop$ ls
-flask_website
-~/Desktop$ cd flask_website
-~/Desktop/flask_website$ python3 -m venv env
-~/Desktop/flask_website$ ls
-env
+~$  mkdir flask_website
 ```
-
-By following the three steps above, we have our virtual environment for our Flask app ready, next, we activate it.
+Next, change directory to the flask_website directory created in the previous step
+```bash
+~$  cd flask_website
+```
+Create a virtual environment and store its tools in the "**env**" folder
+```bash
+~$  python3 -m venv env
+```
+By following the steps above, we have our virtual environment for our Flask app ready, next, we activate it.
 
 ### Running A Virtual Environment
 To activate your virtual environment, from the directory of your folder, the following command will activate our virtual environment in the “env” folder as we demonstrated in the previous step.
 
 ```bash
-~/Desktop/flask_website$ source env/bin/activate
-(env) ~/Desktop/flask_website$
+~$  source env/bin/activate
+(env) ~$  
 ```
 
 If you have successfully activated your virtual environment, you should see the **(env)** word indicating that we are working in a virtual environment. With all these done, the fun part is here, what you’ve been waiting for, installing Flask!
@@ -82,14 +77,14 @@ In this step, you will be installing the Flask web framework in our virtual envi
 Before you install Flask, I recommend you check your Python and Pip version just to confirm they are installed and activated in your virtual environment. You can proceed to install Flask by running the following command:
 
 ```bash
-(env) ~/Desktop/flask_website$ pip install flask
+(env) ~$ pip install flask
 ```
 
 ### Launching The Workspace
 For the scope of this article, Visual Studio Code is the choice of code editor here. Now, back to your terminal after installing Flask, run the subsequent command to launch VSCode in the current directory of the web application. 
 
 ```bash
-(env) ~/Desktop/flask_website$ code .
+(env) ~$ code .
 ```
 
 By following through this process, you have successfully installed Python, a virtual environment and most importantly Flask. Now, let’s proceed to structure the web application.
@@ -99,24 +94,24 @@ The structuring of your web application is the first thing to do before delving 
 
 ![image for web application structure](/engineering-education/a-complete-guide-on-installing-flask-for-beginners/web-app-structure.jpg)
 
-The first process in structuring your web application is to create an “**app**” folder, a “**run.py**” file and a "**requirement.txt**" file.
+The first process in structuring your web application is to create an “**app**” folder, a `run.py` file and a "**requirement.txt**" file.
 
-The "**app**" folder structure provides us with the flexibility of defining our Flask application as a package that could be imported in any part of the app which we would require. The "**run.py**" file will basically serve as a pointer to Flask, informing it about where the App itself is and thereby running it. Lastly, the "**requirement.txt**" file houses all packages used in the project.
+The "**app**" folder structure provides us with the flexibility of defining our Flask application as a package that could be imported in any part of the app which we would require. The `run.py` file will basically serve as a pointer to Flask, informing it about where the App itself is and thereby running it. Lastly, the "**requirement.txt**" file houses all packages used in the project.
 
 To start off, head back to your terminal and run the following command to generate the "**requirements.txt**" file:
 
 ```bash
-(env) ~/Desktop/flask_website$ pip freeze > requirements.txt
+(env) ~$ pip freeze > requirements.txt
 ```
 
 To see the packages in use open the "**requirement.txt file**". It shouldn’t be more than seven requirements.
 
-Next, you should create the "**app**" folder and the "**run.py**" file at the top level of your working directory.
+Next, you should create the "**app**" folder and the `run.py` file at the top level of your working directory.
 
 ## The Run.py File
 This file serves as a pointer to Flask, informing it about the existence of our application and to run the application. In this file, we start off by importing the **app module** from the app folder we created earlier, while this seems confusing, it will make sense soon.
 
-Next, we write an "**if**" condition to run the app when we run the Flask server, by the end of this, your "**run.py**" file should have a code that looks just like this:
+Next, we write an "**if**" condition to run the app when we run the Flask server, by the end of this, your `run.py` file should have a code that looks just like this:
 
 ```python
 from app import app
@@ -127,7 +122,7 @@ if __name__ = "__main__":
 ## The app Folder
 In the previous step, you wrote the necessary code for Python to execute the app when we run the Flask server.
 
-In this step, we will completely structure the **app** folder, and to do that you need to create certain files and folders. We start off by creating two folders and two Python files, which are: **static folder**, **templates folder**, **__init__.py** and **views.py**.
+In this step, we will completely structure the **app** folder, and to do that you need to create certain files and folders. We start off by creating two folders and two Python files, which are: **static folder**, **templates folder**, `__init__.py` and `views.py`.
 
 The `__init__.py` file houses the code to initialize our Flask application and to import our views. In this file, we import Flask, and also create and app object which is an instance of the Flask class. 
 
@@ -139,14 +134,13 @@ app = Flask(__name__)
 from app import views
 ```
 
-If you recall in the previous step we imported the **app** module from the app file, what we were basically doing was importing the app object in the **__init__** file. Let’s proceed by examining the **view.py** file
+If you recall in the previous step we imported the **app** module from the app file, what we were basically doing was importing the app object in the **__init__** file. Let’s proceed by examining the `view.py` file
 
 ### The views.py file
 The views file contains the routes to webpages and might also house logic for your web app. In our case, we'll start with a function that returns a simple "Hello world' message to our browser. To achieve this add the code below to the `views.py` file:
 
 ```python
 from app import app
-
 @app.route("/")
 def index():
     return "Hello world"
