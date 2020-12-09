@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/laravel-beginners-guide-blogpost/
 title: Building Your First Laravel Application (Blog Application)
-description: This article will be a step by gtep guide on how to build a Laravel application (blog application)
+description: This article will be a step by step guide on how to build a Laravel application (blog application)
 author: 
 date: 2020-12-08T00:00:00-12:00
 topics: []
@@ -493,7 +493,12 @@ This is the response you will see in your browser:
 #### Working with other methods
 So far we have been working with `get` routes only. The `create()` and `edit()` methods are supposed to show the create and edit forms respectfully.
 
-The `store()` method will be a `post` verb since we will be posting the create BlogPost form to store the data, the `update()` method will need a `put` or `patch` verb to update data and the `destroy()` method will need a `delete` verb to delete the post.
+The `store()` method will be a `post` http verb since we will be posting the create BlogPost form to store the data, the `update()` method will need a `put` or `patch` verb to update data and the `destroy()` method will need a `delete` verb to delete the post.
+
+>TIP: http verbs are also reffered as methods or actions, they are normally used to define the action that is to taken on the sever. 
+>e.g. A POST verb/action/method will be used to post data to the server, a GET method will be used to get data from server,
+>PATCH / PUT method will be used to update data and DELETE method will be used to delete data from server. There are other 
+>verbs but you will rarely use them even in a professional development environment.
 
 We will implement these after we have learned how to create the user interface, for the time being, we can create their routes.
 
