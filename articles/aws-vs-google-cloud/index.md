@@ -102,3 +102,6 @@ AWS is leading in several categories such as features, number of customers, and 
 [Daily JS](https://medium.com/dailyjs/google-cloud-storage-pros-cons-and-how-to-use-it-with-javascript-ea9ce60a94c0)
 
 [Cloud Academy](https://cloudacademy.com/blog/google-cloud-vs-aws-a-comparison/)
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
