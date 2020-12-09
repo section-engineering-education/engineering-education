@@ -18,8 +18,8 @@ Many modern-day apps contain ads in them. The ads pop out if you want to use cer
 In this tutorial, we are going to implement Admob in the React Native application. Here, we are going to implement an interface to show the ads as well as an option to remove ads as well. In most cases, the users will have to pay to remove the ads. But here, we are going to make users watch video ads to hide the ads from the interface for a certain amount of time. For this, we are going to make use of the expo Admob package that provides the ad reward feature.
 
 ### Requirement
-- It's necessary to complete the [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) before starting this one. The previous tutorial will help you understand the use of React Navigation. Also, the use of React Native Paper components, and the Redux mechanism better.
-- Android Emulator or Real Device
+- It is necessary to complete the [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) before starting this one. The previous tutorial will help you understand the use of React Navigation. Also, the use of React Native Paper components, and the Redux mechanism better. You can use the code from the previous tutorial as a [started template](https://snack.expo.io/2y6z09xog) for this tutorial.
+-  Android Emulator or Real Device
 - [Admob account](https://apps.admob.com/v2/home?pli=1)
 - [Nodejs](https://nodejs.org/dist/v12.19.0/node-v12.19.0-x64.msi)
 - [VScode](https://aka.ms/win32-x64-user-stable) or other text editor IDEs.
@@ -70,13 +70,13 @@ After clicking on 'CREATE AD UNIT', we will get the **Ad Unit ID** for the **Rew
 ![fininsh create ad unit](/engineering-education/getting-started-using-admob-with-react-native-expo/10-finish-create-ad-unit.png)
 
 ### STEP 2: Setup Admob on Expo
-To set up Admob on Expo, we will need to export the previous project from the Expo snack. This is due to the fact that we are not authorized to access the `app.json` to use in environment variables. Therefore, we need to export the entire expo project as directed in the screenshot below:
+To set up Admob on Expo, we will need to export the previous project from the Expo snack. This is due to the fact that we are not authorized to access the `app.json` to use in environment variables. Therefore, we need to [export the entire expo project](https://snack.expo.io/2y6z09xog) as directed in the screenshot below:
 
 ![export expo project from snack](/engineering-education/getting-started-using-admob-with-react-native-expo/11-export-project-from-snack.png)
 
 After exporting to the local system, we need to install all the required packages as mentioned in the requirement section above. First, we are going to install Expo CLI. For that, we need to open the terminal in the project directory and run the following command:
 
-```jsx
+```bash
 yarn ; yarn global add expo-cli 
 ```
 
@@ -129,11 +129,8 @@ First, we are going to call the `setTestDeviceIDAsync` method to a function `ini
 ```jsx
 const Home = () => {
   React.useEffect(() => {
-    initAdmob();
-  }, []);
-  const initAdmob = async () => {
     await setTestDeviceIDAsync("EMULATOR");
-  };
+  }, []);
 ```
 
 Next, we need to add the Banner ad to the view. For that, we are going to use the `AdMobBanner` component with props configured. It will be wrapped inside the `Card` component with styles as shown in the code snippet below:
@@ -153,7 +150,7 @@ Next, we need to add the Banner ad to the view. For that, we are going to use th
         >
           <AdMobBanner
             bannerSize="smartBanner"
-            adUnitID="ca-app-pub-2547344479047582/6124133064" 
+            adUnitID="<-- Your Banner Ad Unit ID Here -->" 
             servePersonalizedAds // true or false
             onDidFailToReceiveAdWithError={(e) => console.log(e)}
           />
@@ -186,7 +183,7 @@ Next, we need to create a new function to handle the Reward Ads. In the function
 ```jsx
 const initRewardAds = async () => {
     // Display a rewarded ad
-    await AdMobRewarded.setAdUnitID("ca-app-pub-2547344479047582/6388494355");
+    await AdMobRewarded.setAdUnitID("<-- Your Reward Ad Unit ID Here -->");
     await AdMobRewarded.requestAdAsync();
     await AdMobRewarded.showAdAsync();
   };
@@ -218,6 +215,12 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
+import {
+  Card,
+  Title,
+  Paragraph,
+  Headline,
+} from "react-native-paper";
 ```
 
 First, we need to define a state using the `useState` hook in order to control the visibility of the `Modal` component as directed in the code snippet below:
@@ -335,7 +338,7 @@ The overall coding implementation of this function is provided in the code snipp
 ```jsx
 const initRewardAds = async () => {
     // Display a rewarded ad
-    await AdMobRewarded.setAdUnitID("ca-app-pub-2547344479047582/6388494355"); // Test ID, Replace with your-admob-unit-id
+    await AdMobRewarded.setAdUnitID("<-- Your Reward Ad Unit ID Here -->"); // Test ID, Replace with your-admob-unit-id
     await AdMobRewarded.requestAdAsync();
     
     AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
@@ -446,7 +449,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const dispatch = useDispatch();
-  const admobReducer = useSelector(({ admobReducer }) => admobReducer);
+  const admobReducer = useSelector((reduxStoreState) => state.admobReducer);
 ```
 
 Then, we need to apply conditional rendering to the `AdmobBanner` component just like in the Home screen as shown in the code snippet below:
