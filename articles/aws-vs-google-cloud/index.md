@@ -32,7 +32,7 @@ Other tools offered by this platform include networking, big data, the internet 
 
 ### Features of Google Cloud
 * It allows the constant inclusion of more languages.
-* In Google Cloud platforms, user experience can be improved if a better user interface is used.
+* It has a multi-layered security system, which ensures that sensitive data is safe.
 * It can enhance broad network access. 
 * Scalable services can be provided by Google Cloud platforms.
 * It allows cloud resource pooling- This is a service that enables the provider to serve many customers with provisional services. Adjustments can be made to these services to meet the demand of customers.
@@ -41,7 +41,7 @@ Other tools offered by this platform include networking, big data, the internet 
 AWS and Google Cloud can be distinguished by key parameters such as users, compute services, storage, Big Data analysis, networking, features, downtimes and pricing. 
 
 #### Users
-AWS has been able to attract high-profile clients because it is established, and has extensive experience in cloud computing. AWS platform is used by clients such as Unilever, Samsung, Netflix, Xiami, BMW, and Airbnb. 
+AWS has been able to attract high-profile clients because it is established, and has extensive experience in cloud computing. AWS platform is used by clients such as Unilever, Samsung, Netflix, Xiaomi, BMW, and Airbnb. 
 
 Google Cloud Platform has also attracted big clients because its services share the same infrastructure with YouTube, Gmail, and Google Search. Some of its clients include PayPal, Bloomberg, HSBC, and 20th Century Fox.  
 
@@ -84,14 +84,12 @@ Google Cloud platform offers its customers discounts (Committed Use Discounts) t
 * It has good pricing plans. 
 * They enhance the live migration of VMs (Virtual Machines).
 
-#### Disadvantages of AWS
-* It has a long deployment process. This process can take up to 20 minutes for one website. 
+#### Disadvantages of AWS 
 * It may not be ideal for companies that do not have a high technological capability.
 * The cost structure is difficult to understand.
   
 #### Disadvantages of Google Cloud
-* The Google Cloud lacks certain features that exist in the AWS platform.
-* Its user interface does not offer adequate customer support. 
+* Google Cloud lacks certain features that exist in the AWS platform. For example, AWS provides a hybrid environment, unlike Google Cloud, which uses partners (e.g Egnyte) to provide hybrid support.
 * Google Cloud Platform does not provide in-depth documentation of services and other features.
   
 ### Conclusion
@@ -99,7 +97,7 @@ AWS and Google Cloud are good cloud computing platforms that provide companies w
 
 AWS is leading in several categories such as features, number of customers, and experience in cloud services. Google Cloud platform enhances cost-effectiveness and live migration of VMs. Although AWS is enjoying a bigger market share than its competitor, the fast growth of Google Cloud may lead to the closure of this gap in the coming years. The battle between these cloud computing giants will benefit consumers in terms of lower prices and improved services.  
 
-Resources
+### Resources
 
 [Daily JS](https://medium.com/dailyjs/google-cloud-storage-pros-cons-and-how-to-use-it-with-javascript-ea9ce60a94c0)
 
