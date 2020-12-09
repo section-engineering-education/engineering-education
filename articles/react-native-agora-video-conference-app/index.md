@@ -444,4 +444,6 @@ Pass the `onShare` function to the Share button's `onPress` prop.
 
 Congratulations, :partying_face: You did it.
 
+If you'd like to learn how to build a Livestreaming app with React Native and Agora, refer to [this article](https://www.section.io/engineering-education/react-native-agora-livestreaming-app/).
+
 Thanks for Reading!
