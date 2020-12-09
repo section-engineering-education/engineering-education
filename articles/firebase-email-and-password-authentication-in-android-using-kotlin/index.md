@@ -11,7 +11,7 @@
 
 ### Getting started
 
-First, we need to create an android project that we'll use for the entire tutorial. To do this, launch the android studio and you'll see a welcome screen similar to the one below.
+First, we need to create an android project that we'll use in the entire tutorial. To do this, launch android studio and you'll see a welcome screen similar to the one below.
 
 
 ![image](android_studio_welcome_screen.png "Android studio home screen")
