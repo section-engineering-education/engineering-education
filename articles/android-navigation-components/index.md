@@ -89,7 +89,7 @@ In our application, we want when a user clicks on an item in the recyclerview, i
 
 An action takes in an identifier, i.e, an `id` and the destination which in our case is the `profile_fragment`. When a user clicks an item in the recyclerview, we will use this action to move to the next fragment.
 
-Sometimes an action maxy be shared between several destinations. It is a good practice to define the action outside the destinations. This type of action is what is referred to as a **Global action**.
+Sometimes an action may be shared between several destinations. It is a good practice to define the action outside the destinations. This type of action is what is referred to as a **Global action**.
 
 ### Step 3 : Passing data to a navigation
 In our ProfileFragment, we would like to receive the id of the item clicked in the previous fragment. We will need to pass this id from the UsersFragment to ProfileFragment. The navigation library helps us pass data between destinations. It has a plugin known as `safeArgs` that helps in passing data and ensuring type-safety. This means that we don't need to check for nullability in our data. The project is already set up for safeArgs. You can go through [this section](https://developer.android.com/guide/navigation/navigation-pass-data#Safe-args) of the documentation to learn how to set it up.
@@ -110,18 +110,18 @@ To pass data to a destination, we make use of the `<argument>` tag. Add the foll
 
 The attributes:
 * `name`: this is the name of the data value you would like to pass into this destination
-* `argType`: this is the data type of the argument passed in.
+* `argType`: this is the data type of the argument passed in. You can get the supported types from the [documentation](https://developer.android.com/guide/navigation/navigation-pass-data#supported_argument_types)
 * `defaultValue`: this is the fallback value used when no data is passed in
 
 ### Step 4 : Navigating to a destination
 When we set up safeArgs, it automatically generates classes for us to use in navigation.
-1. For every destination with an action or uses an action, a class is generated based on the name. In our case, the `UsersFragment` has an action hence the generated class is `UsersFragmentDirections`. It appends "Directions" to the name of the destination. This class has a function with the names of the actions in that destination.
+1. For every destination with an action or that uses an action, a class is generated based on the name. In our case, the `UsersFragment` has an action hence the generated class is `UsersFragmentDirections`. It appends "Directions" to the name of the destination. This class has functions with the names of the actions in that destination.
 
 2. For every destination that receives an argument, an inner class is also generated. The name of the generated class is the name of the destination but with "Args" appended to it. So in our application, the generated class will be `ProfileFragmentArgs`.
 
-The recyclerview adapter has a click listener that executes the lambda expression. In this lambda is where we will add the code to navigate to the ProfileFragment. This lambda receives the id of the item clicked and so we will pass this id as an argument. Go ahead and add the following code.
+The recyclerview adapter has a click listener that executes the lambda expression. In this lambda is where we will add the code to navigate to the ProfileFragment. This lambda receives the id of the item clicked and so we will pass this id as an argument. Go ahead and add the following code in the UsersFragment.
 
-```java
+```kotlin
 val listAdapter = ListAdapter(Data.getUsers()){
     val action = UsersFragmentDirections.actionUsersFragmentToProfileFragment(it)
     findNavController().navigate(action)
@@ -132,7 +132,7 @@ We use `findNavController` to get access to the NavController and pass in the ac
 
 To get the data in the profile fragment, add the following code.
 
-```java
+```kotlin
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
@@ -156,7 +156,13 @@ To add a deep link, you make use of the `<deeplink>` tag. So in our profile_frag
 <deepLink app:uri="www.example.com/{userId}"/>
 ```
 
-Keep note of the values passed in as arguments in URIs. Their names should be the same as the argument names. You should also make sure you add `<nav-graph android:value="@navigation/nav_graph"/>` in the application's manifest file. It should be added in the activity hosting the NavHost. In our application, the NavHost is in MainActivity.
+Keep note of the values passed in as arguments in URIs. Their names should be the same as the argument names. You should also make sure you add the code below  in the application's manifest file.
+
+```xml
+<nav-graph android:value="@navigation/nav_graph"/>
+```
+
+It should be added in the activity hosting the NavHost. In our application, the NavHost is in MainActivity.
 
 Run your application and open any browser of your choice. Then enter the following URI
 
@@ -166,7 +172,9 @@ https://wwww.example.com/2
 
 You should receive a dialog asking you which application to proceed with. Select your application and proceed to view the results. The entire flow should be something similar to the one below.
 
-**NOTE: _the uri used use a verified domain or else it won't work_**
+The application back stack is preserved while using deeplinks. This means that when you use the back button, the previous activities/fragments will still be available.
+
+**NOTE: _the uri used should have a verified domain or else it won't work_**
 
 ### Conclusion
 And with that, you know more about the navigation library and some of the extra perks it has. You can go ahead and try other options like using explicit deep links or making use of bundles to pass in data. Understanding the navigation library is important for any Android developer. It helps you create better applications and allows you to customise the navigation process in your application. Feel free to raise a PR or an issue on [GitHub](https://github.com/LinusMuema/kotlin).
