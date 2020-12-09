@@ -1,5 +1,21 @@
-Software Testing is a very important software development process. It helps to improve the quality of your software, and also ensures you don’t ship bug-filled software to your end-user. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/software-testing-part1/
+title: Introduction to Unit Testing
+description: This 
+author: quadri-sheriff
+date: 2020-12-08T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/software-testing-part1/hero.jpg
+    alt: Hugo Documentation site example image
+---
+Software Testing is a very important software development process. It helps to improve the quality of your software, and also ensures you don’t ship bug-filled software to your end-user. 
+<!--more-->
 There are different types of software testing available today, each type with its specific use case, tools, benefits, and limitations. Popular examples are integration testing, unit testing, system testing, regression testing, etc. 
 
 In this article, we will talk about unit testing, how to run unit tests, the benefits, and the limitations. This article is the first part of our software testing series, where we discuss popular software testing techniques.
