@@ -33,11 +33,11 @@ The nodes in the decision tree represent attributes that are used for predicting
 
 The information theory can provide more information on how decision trees work. Entropy and information gain are the building blocks of decision trees. An overview of these fundamental concepts will improve our understanding of how decision trees are built. 
 
-Entropy is a metric for calculating uncertainty. Information gain is a measure of how uncertainty in the target variable is reduced given a set of independent variables. 
+Entropy is a metric for calculating uncertainty. Information gain is a measure of how uncertainty in the target variable is reduced, given a set of independent variables. 
 
-The concept of information gain involves using independent variables (features) to gain information about a target variable (class). The entropy of the target variable (Y) and the [conditional entropy](https://en.wikipedia.org/wiki/Conditional_entropy) of Y (given X) are used to estimate the information gain. In this case, the conditional entropy is substracted from the entropy of Y. 
+The information gain concept involves using independent variables (features) to gain information about a target variable (class). The entropy of the target variable (Y) and the [conditional entropy](https://en.wikipedia.org/wiki/Conditional_entropy) of Y (given X) are used to estimate the information gain. In this case, the conditional entropy is subtracted from the entropy of Y. 
 
-Information gain is used in the training of decision trees. It helps in reducing uncertainty in these trees. A high information gain means that a high degree of uncertainty (information entropy) has been removed. Entropy and information gain are important in the splitting of branches, which is an important activity in the construction of decision trees.
+Information gain is used in the training of decision trees. It helps in reducing uncertainty in these trees. A high information gain means that a high degree of uncertainty (information entropy) has been removed. Entropy and information gain are important in splitting branches, which is an important activity in the construction of decision trees.
 
 Let's take a simple example of how a decision tree works. Suppose we want to predict if a customer will purchase a mobile phone or not. The features of the phone form the basis of his decision. This analysis can be presented in a decision tree diagram. The root node and decision nodes of the decision represent the features of the phone mentioned above. The leaf node represents the final output, either *buying* or *not buying*. The main features that determine the choice include the price, internal storage, and Random Access Memory (RAM). The decision tree will appear as follows.
 
@@ -46,7 +46,7 @@ Let's take a simple example of how a decision tree works. Suppose we want to pre
 [Image Source: Simplilearn](https://www.simplilearn.com/ice9/free_resources_article_thumb/phone-price.JPG)
 
 #### Applying Decision Trees in Random Forest
-The main difference between the decision tree algorithm and the random forest algorithm is that in the latter, establishing root nodes and segregating nodes is done randomly. The random forest employs the bagging method to generate the required prediction. 
+The main difference between the decision tree algorithm and the random forest algorithm is that establishing root nodes and segregating nodes is done randomly in the latter. The random forest employs the bagging method to generate the required prediction. 
 
 Bagging involves using different samples of data (training data) rather than just one sample. A training dataset comprises observations and features that are used for making predictions. The decision trees produce different outputs, depending on the training data fed to the random forest algorithm. These outputs will be ranked, and the highest will be selected as the final output. 
 
@@ -70,11 +70,11 @@ Let's take an example of a training dataset consisting of various fruits such as
 [Image Source: Javatpoint](https://static.javatpoint.com/tutorial/machine-learning/images/random-forest-algorithm2.png)
 
 ### Regression in Random Forest
-Regression is the other task performed by a random forest algorithm. A random forest regression follows the concept of a simple regression. Values of dependent (features) and independent variables are passed in the random forest model. 
+Regression is the other task performed by a random forest algorithm. A random forest regression follows the concept of simple regression. Values of dependent (features) and independent variables are passed in the random forest model. 
 
-Random forest regressions can be run in various programs such as [SAS](https://en.wikipedia.org/wiki/SAS_(software)), R, and python. In a random forest regression, each tree produces a specific prediction. The mean prediction of the individual trees is the output of the regression. This is unlike in random forest classification, whose output is determined by the mode of the class of the decision trees. 
+Random forest regressions can be run in various programs such as [SAS](https://en.wikipedia.org/wiki/SAS_(software)), R, and python. In a random forest regression, each tree produces a specific prediction. The mean prediction of the individual trees is the output of the regression. This is unlike in random forest classification, whose output is determined by the mode of the decision trees' class. 
 
-Although random forest regression and linear regression follow the same concept, they differ in terms of functions. The function of a linear regression is in the form of y=bx + c, where y is the dependent variable, x is the independent variable, b is the estimation parameter, and c is a constant. The function of a complex random forest regression is like a [blackbox](https://en.wikipedia.org/wiki/Black_box). 
+Although random forest regression and linear regression follow the same concept, they differ in terms of functions. The function of linear regression is y=bx + c, where y is the dependent variable, x is the independent variable, b is the estimation parameter, and c is a constant. The function of a complex random forest regression is like a [blackbox](https://en.wikipedia.org/wiki/Black_box). 
 
 ### Applications of Random Forest
 Some of the applications of the random forest include:
