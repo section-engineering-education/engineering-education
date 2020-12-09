@@ -1,11 +1,27 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/
+title: Atom vs. Visual Studio Code - Functionality and Features Comparison
+description: This article will cover the
+author: judy-nduati
+date: 2020-12-09T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-This article compares the Atom and Visual Studio Code editors based on features and comparison. There are loads of code editors, but we will review Atom and Visual Studio Code editors in this article. These source code editors tend to increase the developer's productivity by providing different plugins and components. There are various features such as code-snippets, syntax highlighting, preview options, compiling, and debugging.
+  - url: /engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/hero.jpg
+    alt:  image example
+---
+This article compares the Atom and Visual Studio Code editors based on features and comparison. There are loads of code editors, but we will review Atom and Visual Studio Code editors in this article.
+<!--more-->
+### Introduction
+ These source code editors tend to increase the developer's productivity by providing different plugins and components. There are various features such as code-snippets, syntax highlighting, preview options, compiling, and debugging.
 
 Comparing these two text editors will enable developers to choose the editor they would love to use as per their requirements.
 
 ### Table of contents
-
 - [Atom](#atom)
 
 - [Visual Studio Code Editor](#visual-studio-code-editor)
@@ -15,7 +31,6 @@ Comparing these two text editors will enable developers to choose the editor the
 - [Atom vs. VS Code: Features and Functionality Comparison](#atom-vs-VS-code:-features-and-functionality-comparison)
 
 ### Atom
-
 [Atom](https://atom.io/) is a free and open-source text editor developed by GitHub. It works across Windows, Linux, and Mac OS. Currently, Atom is at version 1.52.0. It lets you easily customize every aspect of it to speed up workflows. Atom uses a framework called Electron. Electron is a JavaScript framework that enables building cross-platform desktop applications.
 
 Atom is built using web technologies: HTML, CSS, and JavaScript, thus being very flexible and hackable. If you know those technologies, extending Atom is very easy. Atom features are built-in packages.
@@ -27,7 +42,6 @@ Atom allows developers to use it productively without using a configuration file
 Developers create interactive and responsive web applications with the Atom source code editor. Learn more about Atom [here](https://atom.io/docs)
 
 #### How to Use Atom Text/Code Editor
-
 To use the Atom Code editor, you first install and download from [the Atom home page](https://atom.io/).
 
 ![Atom download](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/atomdownload.jpg)
@@ -39,7 +53,6 @@ Once Atom is installed, it is crucial to create an organized folder system. As t
 Atom gives you a welcome guide when you first open the program. Going through the welcome guide to get to know the text editor before starting your project is vital. First, know where to save your projects. You can name your primary folder for Atom files "Projects." Every time you start a new project, create a folder inside your project's directory. You can start coding after setting up your file structure. Also, make sure you save your work often to avoid losing it.
 
 ### Visual Studio Code Editor
-
 [Visual Studio Code](https://code.visualstudio.com/) is a lightweight, powerful, and fast development tool.
 
 VS Code is an open-source code editor developed by Microsoft in April 2015. There is no payment required to use VS Code Editor.
@@ -48,8 +61,7 @@ Since VS Code uses Electron, it is cross-platform. It runs on Windows, Mac OS, a
 
 Visual Studio Code supports other languages such as Java, Python, PHP, C#, and C++. It comprises thousands of extensions that enable debuggers, more languages, commands, themes, etc.
 
-#### How to Use Visio Studio Code Editor
-
+#### How to Use Visual Studio Code Editor
 To get started, download VS Code editor from [Visual Studio home page](https://code.visualstudio.com/). 
 
 ![VS Code download](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vsdownload.jpg)
@@ -69,7 +81,6 @@ The activity bar on the left with icons give you access to:
 At the explorer, you go through the project files and where code writing and editing takes place. The search icon is used to find files and information. Source Control Icon allows you to initialize a Git repository and manage projects. If you click the extension icon, you can install and manage extensions. VS Code comes with many integrated built-in features. You can learn more about Visual Studio editor [here.](https://code.visualstudio.com/docs)
 
 ### Atom vs. VS Code: Tabular Comparison
-
 Let's have a glance at features offered by Atom and VS Code text editors.
 
 | Category | Atom | Visual Studio Code |
@@ -88,7 +99,6 @@ Let's have a glance at features offered by Atom and VS Code text editors.
 | Find and replace | Yes | Yes |
 
 ### Atom vs. VS Code: Features and Functionality Comparison
-
 1. Configuration
 
 With loads of extensions and customization comes many configurations. The configuration of applications is fundamental. It determines the overall user experience with the editor.
@@ -205,7 +215,6 @@ In Atom use Cmd/ Ctrl + Alt + [to collapse and Cmd/Ctrl + Alt +] to expand the b
 ![Atom Code Folding](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/atmfolding.gif)
 
 ### Conclusion
-
 In conclusion, Atom and Visual Studio Code editors work well, and each editor has its advantages and disadvantages. The editor that fits and satisfies one developer's demands may not satisfy the demands of another developer. One developer may like how Atom functions, and another may prefer Visual Studio Code editor.
 
 If you wonder which text editor is best for you, you can choose any out of both. Both editors have multiple features that meet the developer's requirements. Also, it is essential to use the editors to familiarize yourself with the features and shortcut keys. Both editors provide almost the same features to developers. Hopefully, this article helps you decide which editor best suits your requirements.
