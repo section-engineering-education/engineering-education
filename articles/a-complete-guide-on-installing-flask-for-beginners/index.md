@@ -18,9 +18,9 @@ By the end of this article, you will adequately understand the following:
 The Flask web framework is built on the Python programming language, thus, it requires the installation of Python. Albeit, your system might have Python installed; to check if you have Python installed, open your terminal or cmd(windows) and type in the command:
 
 ```bash
-~$  python --version
+$  python --version
 Python 2.7.17
-~$  python3 --version
+$  python3 --version
 Python 3.6.9
 ```
 
@@ -49,15 +49,15 @@ The following is a step-by-step process to follow to install Flask:
 ### Terminal and File Directory
 The first step is to create the flask_website directory 
 ```bash
-~$  mkdir flask_website
+$  mkdir flask_website
 ```
 Next, change directory to the flask_website directory created in the previous step
 ```bash
-~$  cd flask_website
+$  cd flask_website
 ```
 Create a virtual environment and store its tools in the "**env**" folder
 ```bash
-~$  python3 -m venv env
+$  python3 -m venv env
 ```
 By following the steps above, we have our virtual environment for our Flask app ready, next, we activate it.
 
@@ -65,8 +65,8 @@ By following the steps above, we have our virtual environment for our Flask app 
 To activate your virtual environment, from the directory of your folder, the following command will activate our virtual environment in the “env” folder as we demonstrated in the previous step.
 
 ```bash
-~$  source env/bin/activate
-(env) ~$  
+$  source env/bin/activate
+(env)$  
 ```
 
 If you have successfully activated your virtual environment, you should see the **(env)** word indicating that we are working in a virtual environment. With all these done, the fun part is here, what you’ve been waiting for, installing Flask!
@@ -77,14 +77,14 @@ In this step, you will be installing the Flask web framework in our virtual envi
 Before you install Flask, I recommend you check your Python and Pip version just to confirm they are installed and activated in your virtual environment. You can proceed to install Flask by running the following command:
 
 ```bash
-(env) ~$ pip install flask
+(env)$ pip install flask
 ```
 
 ### Launching The Workspace
 For the scope of this article, Visual Studio Code is the choice of code editor here. Now, back to your terminal after installing Flask, run the subsequent command to launch VSCode in the current directory of the web application. 
 
 ```bash
-(env) ~$ code .
+(env)$ code .
 ```
 
 By following through this process, you have successfully installed Python, a virtual environment and most importantly Flask. Now, let’s proceed to structure the web application.
@@ -101,7 +101,7 @@ The "**app**" folder structure provides us with the flexibility of defining our 
 To start off, head back to your terminal and run the following command to generate the "**requirements.txt**" file:
 
 ```bash
-(env) ~$ pip freeze > requirements.txt
+(env)$ pip freeze > requirements.txt
 ```
 
 To see the packages in use open the "**requirement.txt file**". It shouldn’t be more than seven requirements.
@@ -154,7 +154,7 @@ At this stage we can run our application to see what it looks like on a web brow
 Congratulations, you’ve made it this far, you can run your application by opening your terminal with the virtual environment active and run the following command line:
 
 ```bash
-(env) ~/Desktop/flask_website$ flask run
+(env)$ flask run
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
