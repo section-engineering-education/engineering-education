@@ -30,14 +30,143 @@ git checkout navigation
 git checkout 75f4822cce5c169f9f1c57807ec19e9dacc730d7
 ```
 
-What these commands do is checkout to the `navigation` branch that has all the dependecies and UI set. Then since the branch has the final code for this tutorial, we rollback to a commit where the basic setup only was done.
+What these commands do is, checkout to the `navigation` branch that has all the dependecies and UI set. Then since the branch has the final code for this tutorial, we rollback to a commit where the basic setup only was done.
 
 ### Step 2 : Setting up the navigation graph
+The navigation graph hosts our destinations and actions. It is an Android resource file. It must be associated with a NavHost. In our application, the navhost is in the `activity_main.xml`. The navhost is a container that holds destinations and displays them to users.
+
+Our navigation graph resides in the `navigation` resource folder. It has no destinations or actions at this point. We will be having two destinations in our application i.e the `UsersFragment` and `ProfileFragment` which can be found in the `fragments` directory. In order to add them to our navigation graph, we use the `<fragment>` tag. Go ahead and add the following in your `nav_graph.xml` file.
+
+```xml
+<fragment
+    android:id="@+id/users_fragment"
+    android:name="com.moose.androidkt.fragments.UsersFragment"
+    android:label="Users"
+    tools:layout="@layout/fragment_users"/>
+
+<fragment
+    android:id="@+id/profile_fragment"
+    android:name="com.moose.androidkt.fragments.ProfileFragment"
+    android:label="Profile"
+    tools:layout="@layout/fragment_profile"/>
+```
+
+The attributes:
+* `id`: special identification for the destination
+* `name`: denotes the name of destination which in our case is the fragment class
+* `label`: the name of the layout of the destination that is displayed on the top app bar (if present)
+* `layout`: the actual layout file used to display content in our destination
+
+Our navigation graph needs a starting point. This is the first destination to be displayed when the user opens the application. Go ahead and add the following atribute to the `<navigation>` tag.
+
+```xml
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    ...
+    app:startDestination="@id/users_fragment">
+
+    ...
+
+</navigation>
+```
+We set the `UsersFragment` as the starting point of our navigation graph.
+
+In our application, we want when a user clicks on an item in the recyclerview, it moves to the `ProfileFragment`. So we will use an action to move from `users_fragment` to `profile_fragment`. So go ahead and add the following to the `users_fragment` destination.
+
+```xml
+<fragment
+    android:id="@+id/users_fragment"
+    android:name="com.moose.androidkt.fragments.UsersFragment"
+    android:label="fragment_users"
+    tools:layout="@layout/fragment_users">
+
+    <action
+        android:id="@+id/action_users_fragment_to_profile_fragment"
+        app:destination="@id/profile_fragment" />
+
+</fragment>
+```
+
+An action takes in an identifier, i.e, an `id` and the destination which in our case is the `profile_fragment`. When a user clicks an item in the recyclerview, we will use this action to move to the next fragment.
+
+Sometimes an action maxy be shared between several destinations. It is a good practice to define the action outside the destinations. This type of action is what is referred to as a **Global action**.
 
 ### Step 3 : Passing data to a navigation
+In our ProfileFragment, we would like to receive the id of the item clicked in the previous fragment. We will need to pass this id from the UsersFragment to ProfileFragment. The navigation library helps us pass data between destinations. It has a plugin known as `safeArgs` that helps in passing data and ensuring type-safety. This means that we don't need to check for nullability in our data. The project is already set up for safeArgs. You can go through [this section](https://developer.android.com/guide/navigation/navigation-pass-data#Safe-args) of the documentation to learn how to set it up.
+
+To pass data to a destination, we make use of the `<argument>` tag. Add the following to the profile_fragment destination.
+
+```xml
+<fragment
+    android:id="@+id/profile_fragment"
+    android:name="com.moose.androidkt.fragments.ProfileFragment"
+    android:label="fragment_profile"
+    tools:layout="@layout/fragment_profile">
+
+    <argument android:name="userId" android:defaultValue="1" app:argType="integer"/>
+
+</fragment>
+```
+
+The attributes:
+* `name`: this is the name of the data value you would like to pass into this destination
+* `argType`: this is the data type of the argument passed in.
+* `defaultValue`: this is the fallback value used when no data is passed in
 
 ### Step 4 : Navigating to a destination
+When we set up safeArgs, it automatically generates classes for us to use in navigation.
+1. For every destination with an action or uses an action, a class is generated based on the name. In our case, the `UsersFragment` has an action hence the generated class is `UsersFragmentDirections`. It appends "Directions" to the name of the destination. This class has a function with the names of the actions in that destination.
+
+2. For every destination that receives an argument, an inner class is also generated. The name of the generated class is the name of the destination but with "Args" appended to it. So in our application, the generated class will be `ProfileFragmentArgs`.
+
+The recyclerview adapter has a click listener that executes the lambda expression. In this lambda is where we will add the code to navigate to the ProfileFragment. This lambda receives the id of the item clicked and so we will pass this id as an argument. Go ahead and add the following code.
+
+```java
+val listAdapter = ListAdapter(Data.getUsers()){
+    val action = UsersFragmentDirections.actionUsersFragmentToProfileFragment(it)
+    findNavController().navigate(action)
+}
+```
+
+We use `findNavController` to get access to the NavController and pass in the action with the id as an argument in the navigate method. If you run the application at this point, you will end up with an empty `ProfileFragment` page.
+
+To get the data in the profile fragment, add the following code.
+
+```java
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    val args: ProfileFragmentArgs by navArgs()
+    val user = Data.getUser(args.userId)
+
+    Glide.with(requireContext()).load(user.image).into(image)
+    name.text = resources.getString(R.string.name, user.name)
+    number.text = resources.getString(R.string.number, user.number.toString())
+}
+```
+
+We get an instance of ProfileFragmentArgs and use it to get the id passed in during navigation. We then use it to get the corresponding data and display it accordingly. And with that you get a fully working navigation process.
 
 ### Step 5 : Using implicit deep links
+The navigation library also comes with support for deep linking within the application. A deep link is used to move to a certain destination inside the application. In this article we will look at implicit deep links. These are URIs that lead to a specific point in the application. For instance, when a user enters `https://wwww.example.com/2` in a browser, we could directly take them to the profile page and display the user with the id value of 2.
+
+To add a deep link, you make use of the `<deeplink>` tag. So in our profile_fragment destination, add the following code below the argument.
+
+```xml
+<deepLink app:uri="www.example.com/{userId}"/>
+```
+
+Keep note of the values passed in as arguments in URIs. Their names should be the same as the argument names. You should also make sure you add `<nav-graph android:value="@navigation/nav_graph"/>` in the application's manifest file. It should be added in the activity hosting the NavHost. In our application, the NavHost is in MainActivity.
+
+Run your application and open any browser of your choice. Then enter the following URI
+
+```bash
+https://wwww.example.com/2
+```
+
+You should receive a dialog asking you which application to proceed with. Select your application and proceed to view the results. The entire flow should be something similar to the one below.
+
+**NOTE: _the uri used use a verified domain or else it won't work_**
 
 ### Conclusion
+And with that, you know more about the navigation library and some of the extra perks it has. You can go ahead and try other options like using explicit deep links or making use of bundles to pass in data. Understanding the navigation library is important for any Android developer. It helps you create better applications and allows you to customise the navigation process in your application. Feel free to raise a PR or an issue on [GitHub](https://github.com/LinusMuema/kotlin).
