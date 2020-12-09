@@ -169,3 +169,5 @@ At the end of this article, you should be able to install Flask, structure your 
 
 In addition, you can find the codebase for this article [here](https://github.com/corpsgeek/introduction-to-flask).
 
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
