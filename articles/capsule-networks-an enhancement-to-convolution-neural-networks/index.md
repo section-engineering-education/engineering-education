@@ -35,7 +35,7 @@ If we train the CNN on the original image and then feed in the dog's flipped ima
 
 ### The Pooling Problem in CNNs
 
-In CNN's, we have the Max-Pooling layer. Its function is to reduce the dimensions of input data. This layer is applied to each Convolution layer, and it takes the most active neurons and continues to pass them through the network. This means that the less active neurons are dropped, getting rid of important information that might tell us more about other critical spatial features in the network. 
+In CNN's, we have the pooling operation. This operation's function is to reduce input data dimensions from a high dimension to a low dimension. This layer is applied to each convolution layer, and it takes the most active neurons and continues to pass them through the network. This means that the less active neurons are dropped, getting rid of important information that might tell us more about other critical spatial features in the network. 
 
 Geoffrey E. Hinton considers this a disaster. In one of his lectures, he is quoted saying, 
 
@@ -51,7 +51,8 @@ This is where Capsule Networks (CapsNet) come into play.
 
 Before we understand what a CapsNet is, let's first understand what a capsule is.
 
-A capsule is a collection of neurons that learn to detect an object or parts of an object in an image. Its output is a vector whose length represents the existence of an entity being present in an image. The vector orientation describes instantiation parameters such as the object's rotation, size, or its exact location in an image. A slight adjustment to the object's rotation or its size changes the vector's orientation with proportion to its input, but its length remains the same.
+A capsule is a collection of neurons that learn to detect an object or parts of an object in an image. Its output is a vector whose length represents the existence of an entity being present in an image. The length of the vector acts as a confidence score. The vectors with longer lengths give a higher confidence score that the entity exists in the image, while those with shorter lengths give lower confident scores. The vector's length guides the network on which capsules to pick to forward to a higher capsule where more processing can be done. 
+The vector orientation describes instantiation parameters such as the object's rotation, size, or its exact location in an image. A slight adjustment to the object's rotation or its size changes the vector's orientation with proportion to its input, but its length remains the same.
 
 Below is an example of an output that denotes an object's location in a CapsNet. The vectors' length where the object is placed is longer than those of the vectors where the object isn't placed. The vectors' orientation could represent their position, rotation, size, or scale in the image.
 
@@ -66,10 +67,16 @@ I hope that's clear. Let's now understand what a CapsNet is.
 A CapsNet consists of capsules instead of neurons in its architecture. Unlike neurons, which outputs scalars with no direction, capsules outputs vectors that have a direction. This feature in capsules helps it solve the orientation problem in CNNs. When the image's orientation is changed, the vector's direction will also move following that position.
 
 In computer graphics, computers render images on screens by taking into account the internal representations of an object, such as its scale, rotation, and position. On the other hand, the human brain process images in the opposite way; this process is known as inverse graphics. We first identify an object, deconstruct it into different parts, and establish a relationship between these parts of an object. This is how we humans identify objects.
-A CapsNet aims to borrow this idea of inverse graphics, which is the reverse process of how computers render images. Here, the network starts with an image; it tries to determine the objects it contains and its instantiation parameters.
+A CapsNet aims to borrow this idea of inverse graphics, which is the reverse process of how computers render images. Here, the network starts with an image; it tries to determine the objects it contains and its instantiation parameters such as pose (relative position, orientation, and size). This is unlike CNNs, which ignore the spatial relationships between features.
 
-One key feature of Capsule Networks is preserving detailed information about the object's location and its pose throughout the network. This process is known as Equivariance. 
-In CNN's, we have several pooling layers. Researchers have found that these pooling layers tend to lose information, such as the objects' precise location and pose. Capsule Networks are Equivariance, making them suitable for applications such as object detection and image segmentation.
+To obtain a representation of the instantiation parameters:
+
+1. We apply a couple of convolution layers, which outputs an array of feature maps.
+2. This array is reshaped to obtain a set of vectors for each location.
+3. The last process involves ensuring that no vector is longer than one. This process is achieved by applying a squashing function that squashes it to ensure its length is between 0 and 1.
+
+One key feature of Capsule Networks is preserving detailed information about an object's location and its pose throughout the network. This process is known as equivariance. 
+In CNN's, we have several pooling layers. Researchers have found that these pooling layers tend to lose information, such as the objects' precise location and pose. Capsule Networks are equivariant, making them suitable for applications such as object detection and image segmentation.
 
 CapsNet has four main components:
 
@@ -83,11 +90,12 @@ The inputs' weighting helps determine the direction where the current capsules s
 
 3. Dynamic Routing Algorithm
 
-The role of this algorithm is to facilitate communication between the Primary Capsule and the DigitCaps layer. 
+The power of a CapsNet is realized through the Dynamic Routing algorithm. Its role is to facilitate communication between the Primary Capsule and the DigitCaps layer. A capsule (i) in the primary capsule layer (lower layer) needs to figure out how to send its output vector to the DigitCaps layer (higher-level capsule, j). The algorithm computes a coupling coefficient ($$c_ij$$) to quantify the connection between the Primary Capsule and the DigitCaps layers. This coupling coefficient value is important as it facilitates the routing of capsules to the appropriate next layers, layers that only agree with its inputs.
+However, this coefficient value is not permanent. It is updated correspondingly. Only three routing iterations is recommended to optimize the loss faster and to avoid the problem of overfitting. This is how the network learns.
 
 4. Applying a non-linear function to condense the information
 
-We use the squashing (non-linear) function shown below to condense the information to a value between 0 and 1. The short vectors are squashed to an almost zero value, while the long vectors are squashed to a length of slightly less than one. Thus, the length of the output vector of a capsule denotes the probability of whether an entity is present in the current input.
+Unlike in CNNs, where we use the ReLU function, we use the squashing (non-linear) function shown below to condense the information to a length of between 0 and 1. The short vectors are squashed to an almost zero value, while the long vectors are squashed to a length of slightly less than one. Thus, the length of the output vector of a capsule denotes the probability of whether an entity is present in the current input.
 Instead of adding the squashing function to each layer as in CNNs, the function is applied to a nested set of layers in a CapsNet.
 
 It is important to note that the squashing function preserves the vectors' orientation, but it squashes it to ensure its length is between 0 and 1. 
@@ -98,11 +106,11 @@ The [paper](https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf/) introd
 
 *[Image Source: University of Toronto](https://web.cs.toronto.edu/)*
 
-The term vj refers to the output after applying the squashing function; the term sj refers to the previous step's output.
+The term $$v_j$$ refers to the output after applying the squashing function; the term $$s_j$$ refers to the previous step's output.
 
 ### The CapsNet Architecture
 
-The capsule network architecture contains an encoder and a decoder, with each layer consisting of 3 layers.
+The capsule network architecture contains an encoder and a decoder, with each component consisting of three layers.
 
 ![A simple CapsNet with 3 layers](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-3-layers.PNG)<br>
 
@@ -112,7 +120,7 @@ The encoder contains three layers:
 
 1. Convolution layer (Conv1)
 
-This layer has 256 convolutional kernels with 9 x 9 that slide with a stride of 1. The ReLU activation function is also used. This layer is responsible for converting pixel intensities to the activities of local feature detectors. These outputs are then fed as inputs to the primary capsule layer.
+This layer has 256, 9x9 convolution kernels that slide with a stride of 1. The ReLU activation function is also used. This layer is responsible for converting pixel intensities to the activities of local feature detectors. These outputs are then fed as inputs to the primary capsule layer.
 
 2. Primary Capsule layer
 
@@ -140,9 +148,9 @@ It contains three fully-connected (FC) layers:
 
 1. Capsule networks (CapsNet) work by adding structures (capsules) to a Convolutional Neural Network (CNN).
 
-2. The Routing-By-Agreement algorithm replaces max-pooling, which performs routing by pooling. It is more effective than the conventional form that is implemented by max-pooling. It is also great for segmenting digits that highly overlap.
+2. The Routing-By-Agreement algorithm replaces max-pooling, which performs routing by pooling. It is more effective than the conventional form that is implemented by the pooling operation. It is also great for segmenting digits that highly overlap.
 
-3. CapsNet preserves detailed information about the object's location and its pose (position, size, orientation) throughout the network. This process is known as Equivariance. 
+3. CapsNet preserves detailed information about the object's location and its pose (position, size, orientation) throughout the network. This process is known as equivariance. 
 
 4. The scalar-output feature detectors of a CNN are replaced with vector-output capsules. It solves the orientation problem in CNNs as when the orientation of the image is changed, the vector's direction will also move following that position.
 
@@ -162,6 +170,8 @@ This article briefly introduces the main key ideas behind Capsule Networks (Caps
 4. [Convolutional Neural Network](https://www.section.io/engineering-education/basics-of-convolution-neural-networks/)
 5. [TensorFlow](https://www.tensorflow.org/)
 6. [Keras](https://keras.io/)
+7. [Matrix Capsules with EM Routing](https://www.cs.toronto.edu/~hinton/absps/EMcapsules.pdf)
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
