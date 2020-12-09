@@ -1,12 +1,12 @@
 # A Complete Guide On Installing Flask For Beginners
 
-Flask is a popular micro web framework which provides you with tools, libraries and technologies for building web applications. such as web pages, e-commerce applications and more.
+Flask is a popular micro web framework that provides you with tools, libraries and technologies for the building of web pages, e-commerce applications and more.
 
-However, there is a basic problem of selecting what framework to learn as a beginner starting a career in backend web development. Nonetheless, I recommend Flask over Django for a beginner, because it is easier to learn and use.
+For beginners there is a common problem selecting what framework to learn for backend web development. The common choices being Flask and Django. I recommend Flask for a beginner, because it is easier to learn and use.
 
-Flask could be related to the analogy of a home compact library, while Django can be attributed to a state library. The point here is that, when you intend to build apps that wouldn’t scale up in the future, Flask is one of the best choices, and the opposite is the case when you intend to use Django.
+Flask could be related to the analogy of a compact home library, while Django could be attributed to a state library. The point here is that, when you intend to build apps that wouldn’t scale up in the future, Flask is one of the best choices, and the opposite is the case when you intend to use Django.
 
-However, because Flask is related to a home library, that does not mean it is not widely adopted in the tech industry. Organizations like Netflix, Airbnb, Uber, Lyft, Mozilla, MIT make use of Flask as one of the technologies in developing their web applications.
+However, becaause of Flask extensibility, organizations like Netflix, Airbnb, Uber, Lyft, Mozilla, MIT make use of Flask as one of the technologies in developing their web applications.
 
 By the end of this article, you will adequately understand the following:
 * How to install Flask.
