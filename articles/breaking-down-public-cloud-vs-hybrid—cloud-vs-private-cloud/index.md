@@ -2,7 +2,7 @@ The cloud environment enables users to manage storage, application, network, and
 
 This article will explore public, private, and hybrid cloud environments, their benefits and drawbacks, and help users decide on the best cloud solution according to their needs.
 
-To introduce cloud computing and the three cloud deployment models (public cloud, hybrid cloud, and private cloud), have a look at this [article](https://www.section.io/engineering-education/introduction-to-cloud-computing/).
+To introduce cloud computing and the three cloud deployment models (public cloud, hybrid cloud, and private cloud), have a look at this [article](/engineering-education/introduction-to-cloud-computing/).
 
 ### Benefits of public cloud, hybrid cloud, and private cloud
 
@@ -21,7 +21,7 @@ Both public, hybrid, and private cloud environments have unique strengths that m
 
 - Hybrid cloud is agile in that it allows you to integrate public and private cloud deployments to meet changing opportunities and needs. It also enables you to modernize [legacy applications](https://www.techopedia.com/definition/177/legacy-application) gradually. You can rebuild and migrate these applications into the cost-effective public cloud infrastructure at your convenience.
 - Its high flexibility allows you to respond immediately to unpredictable demand changes. You can use the public cloud when the demand surges and scale down when demand reduces without affecting other workloads running in the private cloud.
-- It allows users to use their own equipment to respond to compliance and security requirements.
+- It allows users to use their equipment to respond to compliance and security requirements.
 
 #### Private cloud
 
@@ -31,7 +31,7 @@ Both public, hybrid, and private cloud environments have unique strengths that m
 
 ### Drawbacks of public cloud, hybrid cloud, and private cloud
 
-Public cloud, hybrid cloud, and private cloud also have their own weaknesses, as highlighted below.
+Public cloud, hybrid cloud, and private cloud also have their weaknesses, as highlighted below.
 
 #### Public cloud
 
@@ -44,12 +44,12 @@ Public cloud, hybrid cloud, and private cloud also have their own weaknesses, as
 
 - With a hybrid cloud, you need to deploy an extra hardware device for data storage and remote control. This increases the number of devices to deploy.
 - Failure of a single element disrupts centralized configuration capabilities and remote visibility of the entire hybrid cloud system. This is because controller hardware devices, including cloud keys and hardware controllers, represent a single point of failure.
-- Hybrid clouds&#39; architecture is complicated, and this makes it challenging to build adequate security. You have to manage different security platforms simultaneously.
+- Hybrid clouds&#39; architecture is complicated, making it challenging to build adequate security. You have to manage different security platforms simultaneously.
 
 #### Private cloud
 
-- Exclusivity in private clouds comes with increased costs. Building an own private cloud requires large capital. A less expensive alternative is to rent a private cloud from hosting service providers. With this option, you will still benefit from all the private cloud features.
-- It takes much time and many resources to deploy a private cloud, especially on a global scale. Besides, you need the assistance of IT experts to maintain deployments.
+- Exclusivity in private clouds comes with increased costs. Building an own private cloud requires considerable capital. A less expensive alternative is to rent a private cloud from hosting service providers. With this option, you will still benefit from all the private cloud features.
+- It takes much time and many resources to deploy a private cloud, especially globally. Besides, you need the assistance of IT experts to maintain deployments.
 - Public clouds have limited remote access. This is due to increased security that mainly affects mobile users in the private cloud. These users may not connect to the required business functions as they would wish.
 
 ### When to use public cloud, hybrid cloud, and private cloud
@@ -66,7 +66,7 @@ You can use public clouds when:
 You can use hybrid clouds when:
 
 - Serving multiple [industry verticals](https://pitchbook.com/what-are-industry-verticals) facing different regulatory, performance, and IT security requirements.
-- Optimizing cloud environments while ensuring not to compromise on the value the private and public cloud technologies offer.
+- Optimizing cloud environments while ensuring not compromising the value the private and public cloud technologies offer.
 - Enhancing security on already available cloud solutions such as SaaS that are delivered through a secure private network.
 
 You can use private clouds when:
@@ -79,3 +79,6 @@ You can use private clouds when:
 ### Conclusion
 
 The choice to deploy private, hybrid, or public cloud mainly depends on your needs. Understanding both different cloud types&#39; strengths and weaknesses is key to helping you chose which will give the best return on your investment.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
