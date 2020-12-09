@@ -19,7 +19,6 @@ In this tutorial, we are going to implement Admob in the React Native applicatio
 
 ### Requirement
 - [Starter React Native project](https://snack.expo.io/2y6z09xog). (Check out the  [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) for detail guidance on how to build the starter project). 
-- It is necessary to complete the  before starting this one. The previous tutorial will help you understand the use of React Navigation. Also, the use of React Native Paper components, and the Redux mechanism better. You can use the code from the previous tutorial as a for this tutorial.
 -  Android Emulator or Real Device
 - [Admob account](https://apps.admob.com/v2/home?pli=1)
 - [Nodejs](https://nodejs.org/dist/v12.19.0/node-v12.19.0-x64.msi)
