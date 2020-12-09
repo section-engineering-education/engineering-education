@@ -5,8 +5,6 @@ title: Graph Implementation and Traversal Algorithms (Java)
 ---
 Graphs are one of the most common data structures in computer science. Graphs are made up of nodes and edges. There are many applications for graph structures in the real world including relationships (Facebook), locations (Google Maps), programming analysis, and more.
 
-<!-- <img src="graph.png" alt="drawing" width="600"/> -->
-
 ![graph](graph.jpg)
 
 By the end of this article, readers should know
@@ -33,6 +31,9 @@ Undirected and Unweighted  |  Directed and Weighted	 |
 
 ## How to implement a graph
 
+All the code can be found here: https://repl.it/@tensoncai/Graph-Traversals-Java#Main.java 
+Just press the Run button at the top to run.
+
 ### Node object
 
 First, we create a Node object. It contains a value and an array list of neighboring nodes.
@@ -55,23 +56,30 @@ public class Node {
 		neighbors.add(to);
 	}
 }
-
 ```
+
 ### Graph object
 
-Next, we implement a graph object. The code below will create an undirected graph as shown before.
+Next, we implement a graph object and the traversal methods. The code below will create an undirected graph as shown before. Again, you can find the full code here: https://repl.it/@tensoncai/Graph-Traversals-Java#Main.java
 
 ```
-public class Graph {
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+import java.util.Stack;
+
+class Main {
     public static void main(String[] args) {
+    
+        // Constructing the graph
         Node n0 = new Node(0);
         Node n1 = new Node(1);
         Node n2 = new Node(2);
         Node n3 = new Node(3);
         Node n4 = new Node(4);
         Node n5 = new Node(5);
-        Node n6 = new Node(6);
-	
+
         n0.addEdge(n1);
         n1.addEdge(n0);
         n1.addEdge(n3);
@@ -85,10 +93,74 @@ public class Graph {
         n4.addEdge(n3);
         n5.addEdge(n3);
 
-        // Uncomment any method and run
-        // bfs(n0);
-        // dfsIterative(n0);
-        // dfsRecursive(n0, new HashSet<Integer>());
+
+        // Traversal methods
+
+        System.out.println("BFS Iterative:");
+        bfs(n0);
+        System.out.println();
+
+        System.out.println("DFS Iterative:");
+        dfsIterative(n0);
+        System.out.println();
+
+        System.out.println("DFS Recursive:");
+        dfsRecursive(n0, new HashSet<Integer>());
+    
+    }
+
+    public static void bfs(Node startNode) {
+        
+        Queue<Node> queue = new LinkedList<>();
+        Set<Integer> visited = new HashSet<>();
+        
+        queue.add(startNode);
+        visited.add(startNode.value);
+        
+        while (!queue.isEmpty()) {
+            Node currentNode = queue.remove();
+            System.out.println(currentNode.value);
+            
+            for (Node n : currentNode.neighbors) {
+                if (!visited.contains(n.value)) {
+                    queue.add(n);
+                    visited.add(n.value);
+                }
+            }
+        }
+    }
+
+    public static void dfsIterative(Node startNode) {
+        Stack<Node> stack = new Stack<>();
+        Set<Integer> visited = new HashSet<>();
+        
+        stack.push(startNode);
+        
+        while (!stack.isEmpty()) {
+            Node currentNode = stack.pop();
+            
+            if (!visited.contains(currentNode.value)) {
+                System.out.println(currentNode.value);
+                visited.add(currentNode.value);
+            }
+            
+            for (Node n : currentNode.neighbors) {
+                if (!visited.contains(n.value)) {
+                    stack.push(n);
+                }
+            }
+        }
+    }
+
+    public static void dfsRecursive(Node startNode, Set<Integer> visited) {
+        System.out.println(startNode.value);
+        visited.add(startNode.value);
+        
+        for (Node n : startNode.neighbors) {
+            if (!visited.contains(n.value)) {
+                dfsRecursive(n, visited);
+            }
+        }
     }
 }
 ```
@@ -96,8 +168,6 @@ public class Graph {
 <br />
 
 ## Graph Traversal Algorithms
-
-Put each algorithm code inside the Graph class and uncomment the method in the main method.
 
 ### BFS Iterative
 
@@ -196,6 +266,38 @@ public static void dfsRecursive(Node startNode, Set<Integer> visited) {
         }
     }
 }
+```
+
+![graph](graph.jpg)
+
+### Outputs
+
+The BFS output shows that the graph is traversed in layers. The DFS iterative and recursive outputs show the traversal in depth. The DFS outputs are in different orders, but the algorithms operate the same way. There are just many valid DFS outputs.
+
+```
+BFS Iterative:
+0
+1
+3
+2
+4
+5
+
+DFS Iterative:
+0
+1
+2
+4
+3
+5
+
+DFS Recursive:
+0
+1
+3
+4
+2
+5
 ```
 
 ## Conclusion
