@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/implementing-scoped-model-in-your-flutter-application/
 title: Implementing a Scoped Model in your Flutter Application
-description: In this tutorial we will learn how to 
+description: In this tutorial we will learn how to create more productive and interactive Flutter applications. You will create an application that follows State Management principles in Flutter.
 author: michael-barasa
 date: 2020-12-09T00:00:00-16:00
 topics: []
@@ -70,8 +70,9 @@ In this stage, we will use different widgets to create the user interface. Our f
 ![App design](/engineering-education/implementing-scoped-model-in-your-flutter-application/ui.jpg)
 
 ### Modify `main.dart` file
+Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won't be needing some of this code, you can, therefore, delete the `MyHomePage class` since we will create a new one. 
 
-Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won't be needing some of this code, you can, therefore, delete the `MyHomePage class` since we will create a new one. Then go to `MyApp class,` in the same file, and change the `home` parameter to `home: MyHomePage().` You can follow the following code to avoid confusion.
+Then go to `MyApp class,` in the same file, and change the `home` parameter to `home: MyHomePage().` You can follow the following code to avoid confusion.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -100,8 +101,9 @@ class MyApp extends StatelessWidget {
 ```
 
 ### Design the homepage
+Since we are making a simple application, we can include our UI code in the main.dart file. The class should be named as `MyHomePage`. 
 
-Since we are making a simple application, we can include our UI code in the main.dart file. The class should be named as `MyHomePage`. Paste the following code in the `MyHomePage` class..
+Paste the following code in the `MyHomePage` class.
 
 ```dart 
 import 'package:flutter/material.dart';
@@ -161,7 +163,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ```
 
-The `MyHomePage class` in the `main.dart` file contains three major widgets: `ListTile`, `ListView`, and a `Floating Button`. The `ListTile` will be used to display an object's attributes. All of the `ListTiles` will appear in the `ListView`. This means that the user will be able to scroll through the content.
+The `MyHomePage class` in the `main.dart` file contains three major widgets: `ListTile`, `ListView`, and a `Floating Button`. The `ListTile` will be used to display an object's attributes. 
+
+All of the `ListTiles` will appear in the `ListView`. This means that the user will be able to scroll through the content.
 
 ### Creating the Model
 Please create a new package in the `lib` folder and name it as `model`. In this package, create a `note.dart` file. Use `Note` as your class name. Our program will have two major attributes or variables. These are the name and description.
@@ -174,8 +178,9 @@ class Note{
 }
 
 ```
+
 ### Extending the ScopedModel
-This `scoped_model` class will be responsible for state management in our Flutter application. The first step is to create a class named `NotesModel` and ensure that it extends the `Model` class. You should have `import 'package:scoped_model/scoped_model.dart';` for the program to execute. The next step is to define the functions, variables, or data which will be required by widgets. The full code for the NotesModel is shown below.
+This `scoped_model` class will be responsible for state management in our Flutter application. The first step is to create a class named `NotesModel` and ensure that it extends the `Model` class. You should have `import 'package:scoped_model/scoped_model.dart';` for the program to execute. The next step is to define the functions, variables, or data that will be required by widgets. The full code for the NotesModel is shown below.
 
 ```dart
 import 'package:scoped_model/scoped_model.dart';
@@ -238,7 +243,7 @@ class MyApp extends StatelessWidget {
 
 ```
 
-Next, Go to the `MyHomePage class` file add the `ScopedModelDescendant` in the `_HomePageState class` as shown below. Note that the `ScopedModelDescendant` will take `context`, `child`, and `model` as `parameters`. Pass the `model` to the other UI functions, as shown below.
+Next, go to the `MyHomePage class` file add the `ScopedModelDescendant` in the `_HomePageState class` as shown below. Note that the `ScopedModelDescendant` will take `context`, `child`, and `model` as `parameters`. Pass the `model` to the other UI functions, as shown below.
 
 ```dart
 
@@ -310,6 +315,6 @@ Your final app should run, as shown in the video below.
 The `scoped_model` simplifies the state management process. Data is passed from the parent to the children widgets quickly. The user is notified in case of any data changes. You can use the knowledge gained from this tutorial to create more productive and interactive Flutter applications.
 
 ### References 
-[Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro)
+- [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro)
 
-[scoped_model](https://pub.dev/packages/scoped_model)
+- [Scoped_model](https://pub.dev/packages/scoped_model)
