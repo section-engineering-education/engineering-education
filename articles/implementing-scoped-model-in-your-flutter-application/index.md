@@ -51,7 +51,18 @@ You have to be patient since this stage takes time.
 ### Installing the required library
 You must install the required library for you to access the scoped\_model's functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation. 
 
-Your `pubspec.yaml` file should look like the next image below.
+Your `pubspec.yaml` file should look as shown below.
+
+```
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  scoped_model: ^1.1.0
+
+```
 
 ### Creating the UI
 In this stage, we will use different widgets to create the user interface. Our final design should be similar to the image below.
