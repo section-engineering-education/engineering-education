@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-constructors-in-c++/
+title: Introduction to Constructors in C++
+description:
+author: dawe-daniel
+date: 2020-12-04T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-to-constructors-in-c++/hero.jpg
+    alt: example image
+---
+A constructor is a special member function that initializes the objects of its class. It is said to be special because its name is the same as the class name. Constructors are invoked every time an instance of the class is created.
+<!--more-->
 ### Introduction
-A constructor is a special member function that initializes the objects of its class. It is said to be special because its name is the same as the class name. Constructors are invoked every time an instance of the class is created. They automate the destroying of allocated variables therefore the programmer doesn’t have to create a function call to destroy them. This article will go through basics of C++ constructors.
+They automate the destroying of allocated variables therefore the programmer doesn’t have to create a function call to destroy them. This article will go through basics of C++ constructors.
 
 #### Prerequisites
 To follow through this article, you will need:
@@ -7,7 +25,7 @@ To follow through this article, you will need:
   - Basic understanding of C++ functions
   - [Codeblocks](http://www.codeblocks.org/downloads) IDE to run the code.
 
-### What we’ll go through:
+### What we’ll go through
   1. [Syntax of constructor functions](#syntax-of-constructor-functions)
   2. [Characteristics of constructor functions](#characteristics-of-constructor-functions)
   3. [Types of Constructors](#types-of-constructors)
