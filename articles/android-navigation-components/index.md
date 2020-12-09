@@ -172,6 +172,8 @@ https://wwww.example.com/2
 
 You should receive a dialog asking you which application to proceed with. Select your application and proceed to view the results. The entire flow should be something similar to the one below.
 
+![deep-linking](/engineering-education/android-navigation-components/deep-linking.gif)
+
 The application back stack is preserved while using deeplinks. This means that when you use the back button, the previous activities/fragments will still be available.
 
 **NOTE: _the uri used should have a verified domain or else it won't work_**
