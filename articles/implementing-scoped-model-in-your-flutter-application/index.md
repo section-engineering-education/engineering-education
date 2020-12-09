@@ -1,12 +1,30 @@
- In [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro), everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that wow users. Such features are difficult to meet in native app development using languages such as Java. However, it contributes to specific challenges. Particularly, it&#39;s difficult to implement State Management. You can learn about state management from [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It is also challenging to pass data from the primary widget to its children. The scoped\_model library helps resolve these issues.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-scoped-model-in-your-flutter-application/
+title: Implementing a Scoped Model in your Flutter Application
+description: In this tutorial we will learn how to 
+author: michael-barasa
+date: 2020-12-09T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Let&#39;s dive in.
+  - url: /engineering-education/implementing-scoped-model-in-your-flutter-application/hero.png
+    alt:  image
+---
+ In [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro), everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that wow users. Such features are difficult to meet in native app development using languages such as Java.
+<!--more-->
+ However, it contributes to specific challenges. Particularly, it's difficult to implement State Management. You can learn about state management from [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It is also challenging to pass data from the primary widget to its children. The scoped\_model library helps resolve these issues.
+
+Let's dive in.
 
 ### Introduction
 
 The scoped\_model library consists of various utilities that allow children UI elements to receive data from their parent Widget. The [library](https://pub.dev/packages/scoped_model) consists of three major classes; the ScopedModelDescendant, the Model, and the ScopedModel. You must extend the Model class to listen for changes. The ScopeModel widget can be used to wrap UI components to access data from the Model. The ScopedModelDescendant lets you identify the correct ScopeModel from the widget hierarchy. You can learn more about the scoped\_model library from [here](https://pub.dev/packages/scoped_model).
 
-Let&#39;s implement the library in our Flutter application.
+Let's implement the library in our Flutter application.
 
 ### Prerequisites
 
@@ -30,7 +48,7 @@ Open `Android Studio` click file, then create a `new Flutter project.` Ensure th
 
 ### Installing the required library
 
-You must install the required library for you to access the scoped\_model&#39;s functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation. Your `pubspec.yaml` file should look as illustrated below.
+You must install the required library for you to access the scoped\_model's functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation. Your `pubspec.yaml` file should look as illustrated below.
 
 ### Creating the UI
 
@@ -40,7 +58,7 @@ In this stage, we will use different widgets to create the user interface. Our f
 
 ### Modify `main.dart` file
 
-Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won&#39;t be needing some of this code, you can, therefore, delete the `MyHomePage class` since we will create a new one. Then go to `MyApp class,` in the same file, and change the `home` parameter to `home: MyHomePage().` You can follow the following code to avoid confusion.
+Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won't be needing some of this code, you can, therefore, delete the `MyHomePage class` since we will create a new one. Then go to `MyApp class,` in the same file, and change the `home` parameter to `home: MyHomePage().` You can follow the following code to avoid confusion.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -133,7 +151,6 @@ class _MyHomePageState extends State<MyHomePage> {
 The `MyHomePage class` in the `main.dart` file contains three major widgets: `ListTile`, `ListView`, and a `Floating Button`. The `ListTile` will be used to display an object's attributes. All of the `ListTiles` will appear in the `ListView`. This means that the user will be able to scroll through the content.
 
 ### Creating the Model
-
 Please create a new package in the `lib` folder and name it as `model`. In this package, create a `note.dart` file. Use `Note` as your class name. Our program will have two major attributes or variables. These are the name and description.
 
 ```dart
@@ -182,7 +199,6 @@ The function shown below returns a copy of the Note list.
 The `addNote()` function adds objects in the _list. The `removeNote()` method allows a user to delete or remove objects from list. These methods are declared as `void` since they do not return anything.
 
 ### Finishing up
-
 Go to the `main.dart` file and initialize the `NoteModel` just before the `MyApp` class. Then go to `MyHomePage.class` file and wrap the `MaterialApp` widget with the `ScopedModel`. Ensure that you have inserted the correct Model, as shown below.
 
 ```dart
@@ -278,7 +294,6 @@ Your final app should run, as shown in the video below.
 <iframe width="469" height="269" src="https://www.youtube.com/embed/_BhaQOMafUc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
-
 The `scoped_model` simplifies the state management process. Data is passed from the parent to the children widgets quickly. The user is notified in case of any data changes. You can use the knowledge gained from this tutorial to create more productive and interactive Flutter applications.
 
 ### References 
