@@ -129,7 +129,7 @@ First, we are going to call the `setTestDeviceIDAsync` method to a function `ini
 ```jsx
 const Home = () => {
   React.useEffect(() => {
-    await setTestDeviceIDAsync("EMULATOR");
+     setTestDeviceIDAsync("EMULATOR");
   }, []);
 ```
 
