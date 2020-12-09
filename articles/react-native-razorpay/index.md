@@ -182,6 +182,8 @@ const Razorpay = require("razorpay");
 
 Now that we have imported the package, Let's create an instance of `Razorpay`. To initialize the instance, we need the API key and the Secret Key. It is not a good idea to leave the keys in the code, so you can set environment variables and use them in the code.
 
+If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
+
 ```JavaScript
 const razorpay = new Razorpay({
   key_id: process.env.APIKEY,
