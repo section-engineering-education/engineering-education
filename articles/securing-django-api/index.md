@@ -41,7 +41,7 @@ Run the command `./manage.py migrate` to create the table that will store the au
 ### Project setup
 
 Since this is a continuation of our previous article, We will be using the `Django_todo` application that we created previously.
-If you don't have the application we created in the previous article, you can clone it from [here]().
+If you don't have the application we created in the previous article, you can clone it from [here](https://github.com/paulodhiambo/django_todo/tree/master).
 
 
 To secure our endpoint using a token, we will add `permission_classes` to our view classes in `views.py` file in the `todo` app directory.
