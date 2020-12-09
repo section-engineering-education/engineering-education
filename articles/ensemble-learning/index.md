@@ -14,7 +14,7 @@ We build machine learning models to provide the best possible predictions to a g
 
 ### Prerequisites
 
-An understanding of machine learning is recommended. This [post](https://www.section.io/engineering-education/supervised-learning-algorithms/) can provide a good introduction or refresher to machine learning.
+An understanding of machine learning is recommended. This [post](/engineering-education/supervised-learning-algorithms/) can provide a good introduction or refresher to machine learning.
 
 ### Ensemble Learning
 
@@ -52,7 +52,7 @@ The image below will aid in the understanding of the bagging process.
 
 ![bagging](/engineering-education/ensemble-learning/bagging.png)
 
-Bagging process
+_Bagging process_
 
 [Source](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-for-ensemble-models/)
 
@@ -86,7 +86,7 @@ We can describe stacking as a technique that uses many classifiers' predictions 
 
 ![stacking](/engineering-education/ensemble-learning/stacking.png)
 
-The framework of a stacking classifier
+_The framework of a stacking classifier_
 
 [Source](https://towardsdatascience.com/stacking-classifiers-for-higher-predictive-performance-566f963e4840)
 
@@ -96,7 +96,7 @@ It is worth noting that stacking can be used with regression models too. Like th
 
 ![stackingregression](/engineering-education/ensemble-learning/stackingregression.png)
 
-Stacking in regression
+_Stacking in regression_
 
 [Source](https://rasbt.github.io/mlxtend/user_guide/regressor/StackingRegressor/#:~:text=Stacking%20regression%20is%20an%20ensemble%20learning%20technique%20to,of%20the%20individual%20regression%20models%20in%20the%20ensemble.)
 
