@@ -38,23 +38,29 @@ Cloud bursting prevents critical applications from crashing; otherwise, operatio
 
 Organizations that cloud burst run the same resource types, for example, application servers, in multiple clouds. But choosing multiple cloud providers may bring some challenges in terms of different resource offerings. For instance, it may require an organization to manage and configure its applications and technology stacks across two environments.
 
-Differences may come in terms of cloud network configurations. Some cloud providers offer the concept of availability zones, while others do not. Still, some have security groups, others have Access Control Lists ([ACLs](https://geek-university.com/ccna/what-is-acl-access-control-list/#)) and [Subnets](https://en.wikipedia.org/wiki/Subnetwork#), and some have both.
+Differences may come in terms of cloud network configurations. Some cloud providers offer the concept of availability zones, while others do not. Still, some have security groups, others have Access Control Lists ([ACLs](https://geek-university.com/ccna/what-is-acl-access-control-list/#)) and [Subnets](https://en.wikipedia.org/wiki/Subnetwork#), and some have both. 
 
-[Hypervisors](https://www.vmware.com/topics/glossary/content/hypervisor#), their features, and versions of hypervisors differ between cloud providers. Also, machine types and power vary from one cloud provider to another. Clouds also offer different storage types, including object, persistent, and block.
+ACLs are used to filter network data. This is done by configuring ACLs on network devices with packet filtering capabilities, including firewalls and routers. Subnets promote the efficiency of networks. Subnetting ensures network traffic does not travel through unnecessary routers, thus reducing the distance the traffic travels to reach its intended destination.
 
-Such differences may bring a downstream effect. For instance, for an organization to use different storage subsystems and hypervisors, it also has to use additional virtual machine images(https://www.informit.com/articles/article.aspx?p=1927741&seqNum=7) built for each cloud. Still, the organization has to maintain these base machine images with every security patch and operating system.
+[Hypervisors](https://www.vmware.com/topics/glossary/content/hypervisor#), their features, and versions of hypervisors differ between cloud providers. A hypervisor allows a host computer to share processing, memory, and other resources to support multiple virtual machines. 
+
+Also, machine types and power vary from one cloud provider to another. Clouds also offer different storage types, including object, persistent, and block.
+
+Such differences may bring a downstream effect. For instance, for an organization to use different storage subsystems and hypervisors, it also has to use additional virtual machine images built for each cloud. Still, the organization has to maintain these base machine images with every security patch and operating system.
 
 #### Complexity and Latency
 
 Effective cloud bursting requires a flexible and scalable network that can handle the workload changes between public cloud infrastructures and on-premises private clouds. The management and [orchestration](https://www.mulesoft.com/resources/esb/what-application-orchestration#) of the applications moving between the two cloud environments must be in synchronization. And this requires two identical clouds with matching platforms and templates and a lot of scripting.
 
+Essentially, orchestration involves integrating two or more services or applications to allow real-time data synchronization and automation of processes. 
+
 To address the orchestration issue, you can host both the private and public clouds in the same data center for consistent configuration, testing, and management. Besides, you can use containers to create a consistent development environment across these cloud platforms. The latency connectivity between clouds must be low for containers to work effectively.
 
-You can also address the latency problem through a hybrid cloud [colocation](https://en.wikipedia.org/wiki/Colocation_centre) solution. But this requires the two cloud models to have a direct, low-latency interconnection infrastructure. This direct interconnection is essential to support automated management and provide virtualized connections in multiple cloud networks and services. It also mitigates complexity and latency issues related to cloud bursting.
+You can also address the latency problem through a hybrid cloud [colocation](https://en.wikipedia.org/wiki/Colocation_centre) solution where you rent networking equipment, space, and bandwidth. But this requires the two cloud models to have a direct, low-latency interconnection infrastructure. This direct interconnection is essential to support automated management and provide virtualized connections in multiple cloud networks and services. It also mitigates complexity and latency issues related to cloud bursting.
 
 ### How to save on cloud computing costs with cloud bursting
 
-Big data analysts and software developers are intense consumers of cloud computing services. Software developers need to test code and applications, especially at the end of the software development cycle. It requires organizations to [spin up](https://www.techopedia.com/definition/27697/spin-up) multiple virtual machines to meet the increased demand for computing services.
+Big data analysts and software developers are intense consumers of cloud computing services. Software developers need to test code and applications, especially at the end of the software development cycle. It requires organizations to spin up multiple virtual machines to meet the increased demand for computing services. spining-up involves booting up a virtual machine on a computer, thus saving you money and the need to manage virtual machines manually. 
 
 However, these services are only needed for a short period, mostly during the development process&#39;s testing stage. While investing in the virtual machines and infrastructure necessary to run these tests, you must also consider your investment return. Cloud bursting offers on-demand computing resources, so you do not need to invest in this infrastructure. This is a pay-as-you-use arrangement that will help you save on your cloud computing costs.
 
