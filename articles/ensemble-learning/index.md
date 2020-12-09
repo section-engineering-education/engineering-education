@@ -18,15 +18,15 @@ An understanding of machine learning is recommended. This [post](https://www.sec
 
 ### Ensemble Learning
 
-Ensemble learning refers to a method where many base models are combined to carry out the same task. These base models are usually referred to as weak learners. Ensemble learning works on the principle that a weak learner predicts poorly when alone. But when combined with other weak learners, they create a strong learner. The strong learner performs much better than lesser learners. We shall expound on weak learners later on.
+Ensemble learning refers to a method where many base models are combined to carry out the same task. These base models are usually referred to as weak learners. Ensemble learning works on the principle that a weak learner predicts poorly when alone. But when combined with other weak learners, they create a strong learner. The strong learner performs much better than the lesser learners. We shall expound on weak learners later on.
 
 ### Why Use Ensemble Learning?
 
 Compared to using a single model, it is beneficial to use an ensemble for a couple of reasons:
 
-**Performance**. As described in the previous section, the outcome of ensemble learning is a strong learner. The strong learner results from weak learners. As a result, the predictive capability of models is improved. Compared to a single model, better performance is achieved.
+**Performance**. As described in the previous section, the outcome of ensemble learning is a strong learner—the strong learner results from weak learners. As a result, the predictive capability of models is improved. Compared to a single model, better performance is achieved.
 
-**Reduction of errors**. Prediction errors of machine learning models can be described through bias and variance. Bias refers to the difference between prediction and the actual outcome. Variance can be described as the responsiveness of a model to tiny fluctuations in the training set. It is preferable to have a model with low bias and variance but it’s a challenge to achieve practically. Ensemble methods offer a way to lower prediction variance. For instance, through averaging of the performance of various models, the spread of performance is contained. The bagging technique assists in reducing the variance. Boosting and stacking produce less biased models. We shall dive into these techniques in the next section. Plus, here’s a read on the relationship between [ensemble learning and bias and variance](https://medium.com/ml-research-lab/ensemble-learning-relation-with-bias-and-variance-431cdc0a3fc9).
+**Reduction of errors**. Prediction errors of machine learning models can be described through bias and variance. Bias refers to the difference between prediction and the actual outcome. Variance can be described as the responsiveness of a model to tiny fluctuations in the training set. It is preferable to have a model with low bias and variance, but it’s a challenge to achieve practically. Ensemble methods offer a way to lower prediction variance. For instance, through averaging of the performance of various models, the spread of performance is contained. The bagging technique assists in reducing the variance. Boosting and stacking produce less biased models. We shall dive into these techniques in the next section. Plus, here’s a read on the relationship between [ensemble learning and bias and variance](https://medium.com/ml-research-lab/ensemble-learning-relation-with-bias-and-variance-431cdc0a3fc9).
 
 The next section is split into two sections; basic and advanced ensemble learning techniques. We cover three of each.
 
@@ -42,7 +42,7 @@ Here are the steps to the bagging process:
 
 1. Bags are generated through bootstrapping. As mentioned previously, sampling with replacement is done.
 
-2. After generating bags, we now carry out bootstrap aggregating (bagging). This method utilizes the bags to understand the data distribution in the dataset.
+2. After generating bags, we now carry out bootstrap aggregating (bagging). This method utilizes the bags to understand the dataset's data distribution.
 
 3. What follows is the creation of base models on each of the bootstrapped subsets. It is worth noting that the models run independently and in parallel to each other.
 
@@ -76,13 +76,13 @@ Boosting is sequentially done with every ensuing model aiming to minimize the er
 
 7. The next step involves introducing a new model to make predictions on the same dataset. The goal of the new model is to remedy the errors of the model before it.
 
-8. The process is iterated with a new model that aims to iron out the inefficiencies of the previous model.
+8. The process is iterated with a new model that aims to iron out the previous model's inefficiencies.
 
 9. This sequence continues until the strongest learner is realized. The final model becomes the weighted mean of all the previous models.
 
 #### Stacking
 
-We can describe stacking as a technique that uses the predictions of many classifiers as new features for training a meta-classifier. The many classifiers can be referred to as level one classifiers. We can also simply define a meta-classifier as a classifier that takes in the predictions of other classifiers. Let’s use an image to explain this technique a bit more intuitively.
+We can describe stacking as a technique that uses many classifiers' predictions as new features for training a meta-classifier. The many classifiers can be referred to as level one classifiers. We can also simply define a meta-classifier as a classifier that takes in the predictions of other classifiers. Let’s use an image to explain this technique a bit more intuitively.
 
 ![stacking](/engineering-education/ensemble-learning/stacking.png)
 
@@ -91,7 +91,7 @@ The framework of a stacking classifier
 [Source](https://towardsdatascience.com/stacking-classifiers-for-higher-predictive-performance-566f963e4840)
 
 From the image above, we note that we have three level-one classifiers (C1. C2, and C3). The classifiers are independently trained. After training, the classifiers make predictions. The predictions made are then used for the training of the meta-classifier.
-When stacking classifiers, it is advisable to have level one predictions coming from a subset of the training set that was not used to train the level one classifier. The purpose of this is to avoid information leakage from what we’re attempting to predict (target) into the training set. To achieve this, we split the training set into two. The first half of the training set should be used to train the level-one classifiers. After the classifiers have been trained, we use them on the other half of the training data to make predictions on the data. Finally, we use the resultant predictions to train the meta-classifier.
+When stacking classifiers, it is advisable to have level one predictions from a subset of the training set that was not used to train the level one classifier. The purpose of this is to avoid information leakage from what we’re attempting to predict (target) into the training set. To achieve this, we split the training set into two. The first half of the training set should be used to train the level-one classifiers. After the classifiers have been trained, we use them on the other half of the training data to make predictions. Finally, we use the resultant predictions to train the meta-classifier.
 It is worth noting that stacking can be used with regression models too. Like the approach with classification models, stacking puts together predictions of several regression models through a meta-regressor. The image below gives a better description of the process.
 
 ![stackingregression](/engineering-education/ensemble-learning/stackingregression.png)
@@ -100,14 +100,14 @@ Stacking in regression
 
 [Source](https://rasbt.github.io/mlxtend/user_guide/regressor/StackingRegressor/#:~:text=Stacking%20regression%20is%20an%20ensemble%20learning%20technique%20to,of%20the%20individual%20regression%20models%20in%20the%20ensemble.)
 
-If interested to learn more about stacking and its implementation, here is a very technical [article](https://towardsdatascience.com/stacking-classifiers-for-higher-predictive-performance-566f963e4840).
+Here is a technical [article on stacking and its implementation](https://towardsdatascience.com/stacking-classifiers-for-higher-predictive-performance-566f963e4840).
 
 ### Basic Ensemble Learning Techniques
 
 ### Max Voting Classifier
 
-This technique is similar to averaging (which shall be discussed later) but is ideal for classification problems. Its explanation is simple. Several models make predictions which are referred to as votes; each prediction counts as a vote. As is often the case with voting, a decision is often in favor of the majority of the votes. The same applies here. The prediction made by the majority of classifiers becomes the final prediction.
-For instance, we attempt to predict car prices. The set of models involved end up giving a set of prices like $ 6000, 5000, 8000, 5000, 6000, 5000, 7000, 5000, and 7000. We note that most of the models predict $5000. Using max voting, $5000 becomes the final prediction.
+This technique is similar to averaging (which shall be discussed later) but is ideal for classification problems. Its explanation is simple. Several models make predictions, which are referred to as votes; each prediction counts as a vote. As is often the case with voting, a decision is often in favor of most votes. The same applies here. The prediction made by the majority of classifiers becomes the final prediction.
+For instance, we attempt to predict car prices. The models involved end up giving a set of prices like $ 6000, 5000, 8000, 5000, 6000, 5000, 7000, 5000, and 7000. We note that most of the models predict $5000. Using max voting, $5000 becomes the final prediction.
 
 ### Averaging
 
@@ -119,7 +119,7 @@ $$ \frac {6000 + 7000 +5000 + 6000}{4} = 6000 $$
 ### Weighted Averaging
 
 This technique is a variation of the averaging method. The difference is that, where averaging gives the models equal importance, weighted average gives greater importance to a model with greater predictive power. This importance is represented in terms of weights. These weights may be represented as decimals whose total should be equal to 1.
-Here’s an example to make it clearer. Using the same example as the two previous sections, suppose we have 4 models to predict car prices. Their predictions are $ 5000, 8000, 7000 and 5000. The respective weights are 0.25, 0.1, 0.5 and 0.15.
+Here’s an example to make it clearer. Using the same example as the two previous sections, suppose we have four models to predict car prices. Their predictions are $ 5000, 8000, 7000 and 5000. The respective weights are 0.25, 0.1, 0.5 and 0.15.
 
 The final prediction will be given by:
 
@@ -148,3 +148,9 @@ Ensemble methods allow us to average the performance of many models to generate 
 8. [Ensemble Learning Relation With Bias and variance](https://medium.com/ml-research-lab/ensemble-learning-relation-with-bias-and-variance-431cdc0a3fc9)
 
 9. [Ensemble methods: bagging, boosting, and stacking](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
+
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+
