@@ -14,44 +14,46 @@ images:
   - url: /engineering-education/implementing-scoped-model-in-your-flutter-application/hero.png
     alt:  image
 ---
- In [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro), everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that wow users. Such features are difficult to meet in native app development using languages such as Java.
+ In [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro), everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that impress users. These features are difficult to use in native app development using languages such as Java.
 <!--more-->
- However, it contributes to specific challenges. Particularly, it's difficult to implement State Management. You can learn about state management from [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It is also challenging to pass data from the primary widget to its children. The scoped\_model library helps resolve these issues.
+ However, Flutter does pose specific challenges. Particularly, it can be difficult to implement State Management. To learn about state management click [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It's also challenging to pass data from the primary widget to its children. The scoped\_model library helps resolve these issues.
 
 Let's dive in.
 
 ### Introduction
+The scoped\_model library consists of various utilities that allow children UI elements to receive data from their parent Widget. The [library](https://pub.dev/packages/scoped_model) consists of three major classes: the ScopedModelDescendant, the Model, and the ScopedModel. 
 
-The scoped\_model library consists of various utilities that allow children UI elements to receive data from their parent Widget. The [library](https://pub.dev/packages/scoped_model) consists of three major classes; the ScopedModelDescendant, the Model, and the ScopedModel. You must extend the Model class to listen for changes. The ScopeModel widget can be used to wrap UI components to access data from the Model. The ScopedModelDescendant lets you identify the correct ScopeModel from the widget hierarchy. You can learn more about the scoped\_model library from [here](https://pub.dev/packages/scoped_model).
+You must extend the Model class to listen for changes. 
+
+The ScopeModel widget can be used to wrap UI components and access data from the Model. The ScopedModelDescendant lets you identify the correct ScopeModel from the widget hierarchy. You can learn more about the scoped\_model library from [here](https://pub.dev/packages/scoped_model).
 
 Let's implement the library in our Flutter application.
 
 ### Prerequisites
+- You must be familiar with [Dart](https://dart.dev/) and [Flutter](https://flutter.dev/?gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AnCz_EBYwFun_g6f2nAyWqPcTxFEMpwnLbjPNdGnZ5m05taSW1LvG8aArElEALw_wcB&gclsrc=aw.ds)
 
-1. You must be familiar with [Dart](https://dart.dev/) and [Flutter](https://flutter.dev/?gclid=Cj0KCQiAqdP9BRDVARIsAGSZ8AnCz_EBYwFun_g6f2nAyWqPcTxFEMpwnLbjPNdGnZ5m05taSW1LvG8aArElEALw_wcB&gclsrc=aw.ds)
+- Have Android Studio, or Visual Studio Code installed.
 
-2. Have Android Studio, or Visual Studio Code installed
+- Have the latest Flutter SDK.
 
-3. Have the latest Flutter SDK
-
-4. Download full project from [here](https://github.com/WanjaMIKE/scopedmodelexample)
+- YOu can download full project from [here](https://github.com/WanjaMIKE/scopedmodelexample).
 
 ### The goal of the tutorial
-
 By the end of this tutorial, you will create an application that follows State Management principles in Flutter. It will allow customers to add and store notes. Widgets will be updated as soon as data changes.
 
 ### Creating the project
+Open `Android Studio` click file, then create a `new Flutter project.` Ensure that you set the proper Flutter SDK path to avoid errors. The computer also needs to be online for Flutter dependencies and libraries to be installed. If this process is successful, your start page should look like the image below. 
 
-Open `Android Studio` click file, then create a `new Flutter project.` Ensure that you set the proper Flutter SDK path to avoid errors. Also, the computer needs to be online for Flutter dependencies and libraries to be installed. If this process is successful, your start page should be as the image below. You have to be patient since this stage takes time.
+You have to be patient since this stage takes time.
 
 ![Creating new project](/engineering-education/implementing-scoped-model-in-your-flutter-application/creating-project.png)
 
 ### Installing the required library
+You must install the required library for you to access the scoped\_model's functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation. 
 
-You must install the required library for you to access the scoped\_model's functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation. Your `pubspec.yaml` file should look as illustrated below.
+Your `pubspec.yaml` file should look like the next image below.
 
 ### Creating the UI
-
 In this stage, we will use different widgets to create the user interface. Our final design should be similar to the image below.
 
 ![App design](/engineering-education/implementing-scoped-model-in-your-flutter-application/ui.jpg)
