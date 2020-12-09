@@ -69,7 +69,7 @@ Su - postgres
 
 ![postgres-login](/How-to-Replicate-PostgreSQL-database/postgres-login.png)
 
-2. Create replication user with the follwing command
+2. Create replication user with the following command
 <br>
 ```
  psql -c "CREATEUSER replication REPLICATION LOGIN CONNECTION LIMIT 1 ENCRYPTED PASSWORD'YOUR_PASSWORD';"
