@@ -1,7 +1,7 @@
-In this tutorial, we are going to secure our TODO API endpoints that we created in this [article](https://www.section.io/engineering-education/django-crud-api/). We will start by implementing Token-based authentication and then implement javascript web tokens (JWT).
+In this tutorial, we will secure our TODO API endpoints that we created in this [article](/engineering-education/django-crud-api/). We will start by implementing Token-based authentication and then implement javascript web tokens (JWT).
 
 ### Token-based authentication
-Token-based authentication works by getting a token for the correct username and password which is then used to perform subsequent requests to the server.
+Token-based authentication works by getting a token for the correct username and password used to perform subsequent requests to the server.
 
 **Project setup**
 Add `'rest_framework.authtoken'` to the apps list in `django_todo` settings.py file.
@@ -44,7 +44,7 @@ Since this is a continuation of our previous article, We will be using the `Djan
 If you don't have the application we created in the previous article, you can clone it from [here]().
 
 
-To secure our endpoint using token we will add `permission_classes` to our view classes in `views.py` file in the `todo` app directory.
+To secure our endpoint using a token, we will add `permission_classes` to our view classes in `views.py` file in the `todo` app directory.
 
 ```python
 from rest_framework.generics import CreateAPIView
@@ -156,20 +156,20 @@ Making a POST request to `http://127.0.0.1:8000/api/token/` with a valid usernam
 ### Implementing the JSON Web Token JWT Authentication
 
 **How JWT works**
-JWT is an access token that is acquired by passing in username and password for a refresh token and access token.
-**Access token** is having short lifespan (usually 5 minutes) while **refresh token** has a longer lifespan (usually 24 hours).
+JWT is an access token acquired by passing in username and password for a refresh token and access token.
+**Access token** is having a short lifespan (usually 5 minutes) while **refresh token** has a longer lifespan (usually 24 hours).
 
 Sample JWT `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQzODI4NDMxLCJqdGkiOiI3ZjU5OTdiNzE1MGQ0NjU3OWRjMmI0OTE2NzA5N2U3YiIsInVzZXJfaWQiOjF9.Ju70kdcaHKn1Qaz8H42zrOYk0Jx9kIckTn9Xx7vhikY`
 
 JWT consists of 3 parts:-
 `header.payload.signature`
-In the above JWT we have:-
+In the above JWT, we have:-
 ```
 header = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 payload = eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQzODI4NDMxLCJqdGkiOiI3ZjU5OTdiNzE1MGQ0NjU3OWRjMmI0OTE2NzA5N2U3YiIsInVzZXJfaWQiOjF9
 signature = Ju70kdcaHKn1Qaz8H42zrOYk0Jx9kIckTn9Xx7vhikY
 ```
-The information above is encoded using a Base64 encoder. After decoding the above information we get:-
+The information above is encoded using a Base64 encoder. After decoding the above information, we get:-
 **header**
 ```json
 {
@@ -188,7 +188,7 @@ The information above is encoded using a Base64 encoder. After decoding the abov
 ```
 **signature**
 
-The signature is provided by JWT. The signature is verified whenever a request is made to the server. If the information in the header or payload is tempered by the client then the signature will be invalidated.
+JWT provides the signature. The signature is verified whenever a request is made to the server. If the client's information in the header or payload is tempered, then the signature will be invalidated.
 We will be using djangorestframework_simplejwt to implement JWT authenticate.
 
 We will be using `djangorestframework_simplejwt` to implement JWT authenticate.
@@ -220,7 +220,7 @@ urlpatterns = [
 ```
 
 **Obtaining Token**
-To get the access and refresh tokens make a POST request to `http://127.0.0.1:8000/api/jwt/token/` passing in username and password.
+To get the access and refresh tokens, make a POST request to `http://127.0.0.1:8000/api/jwt/token/` passing in username and password.
 
 ![POST JWT Request](/engineering-education/securing-django-api/jwt-get-token.png)
 
@@ -231,16 +231,21 @@ We get a refresh and access token as the response.
     "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU0NTMxMDM1OSwianRpIjoiMjk2ZDc1ZDA3Nzc2NDE0ZjkxYjhiOTY4MzI4NGRmOTUiLCJ1c2VyX2lkIjoxfQ.rA-mnGRg71NEW_ga0sJoaMODS5ABjE5HnxJDb0F8xAo"
 }
 ```
-Now to access the protected endpoints in our backend, we should include the include access token in the header of all of our requests.
+To access the protected endpoints in our backend, we should include the include access token in the header of all of our requests.
 //Postman image
-We can use the access token within 5 minutes before it expires thereafter we will need to obtain another access token using the refresh token we got from the previous API request.
-When we try to make requests to protected endpoints we get the below error.
+We can use the access token within 5 minutes before it expires. Thereafter we will need to obtain another access token using the refresh token we got from the previous API request.
+When we try to make requests to protected endpoints, we get the below error.
 ![GET Request](/engineering-education/securing-django-api/jwt-error.png)
 
-To get a new access token we will make a post request to `http://127.0.0.1:8000/api/jwt/token/refresh/` posting the refresh token.
+To get a new access token, we will make a post request to `http://127.0.0.1:8000/api/jwt/token/refresh/` posting the refresh token.
 ![POST Request](/engineering-education/securing-django-api/jwt-refresh.png)
 
-The refresh token is valid for 24 hours after which a user is required to reauthenticate to obtain a new refresh and access token.
-The access token is shortlived because it is sent through the HTTP header which might get compromised therefore it is only valid for a short while.
+The refresh token is valid for 24 hours, after which a user is required to reauthenticate to obtain a new refresh and access token.
+The access token is shortlived because it is sent through the HTTP header, which might get compromised; therefore, it is only valid for a short while.
 
-For further customization visit [django simple jwt](https://github.com/davesque/django-rest-framework-simplejwt)
+For further customization, visit [django simple jwt](https://github.com/davesque/django-rest-framework-simplejwt)
+
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
