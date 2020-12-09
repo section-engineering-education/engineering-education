@@ -50,7 +50,7 @@ This is an active learning technique where training examples are sent to an algo
 
 ![stream](/engineering-education/active-learning/stream.png)
 
-Stream-Based Sampling
+*Stream-Based Sampling*
 
 [Source](https://www.datacamp.com/community/tutorials/active-learning)
 
@@ -64,7 +64,7 @@ For numerous real-world machine learning problems, we can collect large collecti
 
 ![pool](/engineering-education/active-learning/pool.png)
 
-Pool-Based Sampling
+*Pool-Based Sampling*
 
 [Source](https://www.datacamp.com/community/tutorials/active-learning)
 
@@ -82,7 +82,7 @@ The image below represents this process.
 
 ![membership](/engineering-education/active-learning/membership.png)
 
-Membership Query Synthesis
+*Membership Query Synthesis*
 
 [Source](https://www.datacamp.com/community/tutorials/active-learning)
 
