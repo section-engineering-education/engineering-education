@@ -21,10 +21,14 @@ Typically, this API concept is a better way to ask users for a review than the f
 ### Prerequisites
 This guide assumes you have prior knowledge of Android application development using Android Studio.
 
+To carry out testing you need;
+- A Google Play [Console account](https://play.google.com/console/about/).
+- An application already published in the Google Play store.
+
 ### Why you should ask your users for reviews
 Reviews play a marketing role in your application. They are a crucial part of securing more downloads because they can convince a new user whether they should download the application. There's a good chance a new user will check reviews and ratings to decide which application to try. The reviews give the experiences of previous users.
 
-Reviews also form a line of communication between your users and the application, as they tell you what to improve in your application. Potentially, a user could catch a bug while interacting with your application. Feedback lets you know that something might not be working well, giving you a nudge to fix a bug.
+Reviews also form a line of communication between you and your users, as they tell you what to improve in your application. Potentially, a user could catch a bug while interacting with your application. Feedback lets you know that something might not be working well, giving you a nudge to fix a bug.
 
 Improvement of your Play store ranking can make your application more discoverable from organic searches. Apart from keywords that you add such as application title and description, Google Play store indexes almost every text in your store listing. Reviews are part of this text because they appear in your store listing. When indexed, your application becomes more discoverable to the relevant users. This translates to a good ranking, which results in more downloads from traffic conversion.
 
@@ -58,8 +62,11 @@ Google describes this API as light, and indeed it is. It is simple to integrate 
 #### Integration
 
 ##### Step 1: Adding dependency
-Add Google Core Library to your `app.gradle` file.
+Add Google Core Library to your `build.gradle` file.
 
+```java
+implementation 'com.google.android.play:core:1.9.0'
+```
 Sync to download the library to have access to the necessary classes to initiate review flow.
 
 Always ensure that you are using the latest library version. Check [here](https://developer.android.com/reference/com/google/android/play/core/release-notes) for newly added versions.
@@ -84,7 +91,7 @@ reviewManager = ReviewManagerFactory.create(getApplicationContext());
 `requestReviewFlow()` communicates with the Google Play store remotely to get the information that references your application. Declare `ReviewInfo`.
 
 ```java
-ReviewInfo reviewlnfo;
+ReviewInfo reviewInfo;
 ```
 
 `ReviewInfo` holds this information, which will be used to trigger the review flow process to the end user.
@@ -93,7 +100,7 @@ ReviewInfo reviewlnfo;
 Task<ReviewInfo> manager = reviewManager.requestReviewFlow();
         manager.addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                reviewlnfo = task.getResult();
+                reviewInfo = task.getResult();
             } else {
             }
         });
@@ -113,14 +120,14 @@ These instances include:
 For this reason, we need to start `launchReviewFlow()` if `ReviewFlow` is not null. Make sure you assign `ReviewFlow` to null.
 
 ```java
-ReviewInfo reviewlnfo = null;
+ReviewInfo reviewInfo = null;
 ```
 
 When null, the ReviewManager will terminate the review flow.
 
 ```java
-if (reviewlnfo != null) {
-    Task<Void> flow = reviewManager.launchReviewFlow(this, reviewlnfo);
+if (reviewInfo != null) {
+    Task<Void> flow = reviewManager.launchReviewFlow(this, reviewInfo);
     flow.addOnCompleteListener(new OnCompleteListener<Void>() {
         @Override
         public void onComplete(Task<Void> task) {
@@ -132,7 +139,7 @@ else {
 }
 ```
 
-When `requestReviewFlow()` is successful, `ReviewFlow` will be assigned to the request results. You need to check if  `reviewlnfo != null`  to trigger the review flow with `launchReviewFlow()`. Then the API will handle the review's comment and rating and update your application store listing showing them.
+When `requestReviewFlow()` is successful, `ReviewFlow` will be assigned to the request results. You need to check if  `reviewInfo != null`  to trigger the review flow with `launchReviewFlow()`. Then the API will handle the review's comment and rating and update your application store listing showing them.
 
 This API state's that if an error occurs during the review flow, you should never inform the user or change your normal application flow. The app should continue its usual flow after `onComplete` Is called.
 
@@ -142,7 +149,7 @@ This API state's that if an error occurs during the review flow, you should neve
 ```java
 public class MainActivity extends AppCompatActivity {
     ReviewManager reviewManager;
-    ReviewInfo reviewlnfo = null;
+    ReviewInfo reviewInfo = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         Task<ReviewInfo> manager = reviewManager.requestReviewFlow();
         manager.addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                reviewlnfo = task.getResult();
+                reviewInfo = task.getResult();
             } else {
                 Toast.makeText(getApplicationContext(), "In App ReviewFlow failed to start", Toast.LENGTH_LONG).show();
             }
@@ -164,8 +171,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startReviewFlow() {
-        if (reviewlnfo != null) {
-            Task<Void> flow = reviewManager.launchReviewFlow(this, reviewlnfo);
+        if (reviewInfo != null) {
+            Task<Void> flow = reviewManager.launchReviewFlow(this, reviewInfo);
             flow.addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(Task<Void> task) {
@@ -224,14 +231,10 @@ mButton.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-#### What you need
-- A Google Play Console account.
-- An application already published in the Google Play store.
-
 #### How to test
-1. Generate a signed app bundle/APK. Note the APK signing key and the `applicationId` should be the same as the already published application.
+1. Generate a [signed app bundle/APK](https://developer.android.com/studio/publish/app-signing#sign-apk). Note the APK signing key and the `applicationId` should be the same as the already published application.
 
-2. Share the generated APK with a tester. To do that, select the published application in the Google console, navigate to [`Internal App Sharing`](https://play.google.com/console/internal-app-sharing), and upload the generated APK there.
+2. Share the generated APK with a tester. To do that, select the published application in the Google console, navigate to [`Internal App Sharing`](https://play.google.com/console/internal-app-sharing), and upload the generated APK there. Check how to use [Google Internal App Sharing](https://support.google.com/googleplay/android-developer/answer/9844679?hl=en).
 
 2. Copy the upload's shareable link and share it with a tester. In this case, a tester should be using an Android mobile phone.
 
