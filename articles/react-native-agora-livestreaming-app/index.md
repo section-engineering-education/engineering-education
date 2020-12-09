@@ -452,7 +452,7 @@ import { ActivityIndicator } from "react-native";
 
 If the user has not joined, we'll return the Loading Screen.
 
-```JavaScript
+```JSX
 return (
   <View style={styles.container}>
     {!joined ? (
@@ -495,7 +495,7 @@ Here, we will pass our host's UID, which is `1`.
 
 Return Statement when joined === true:
 
-```JavaScript
+```JSX
 <>
   {isBroadcaster ? (
     <RtcLocalView.SurfaceView 
@@ -566,7 +566,7 @@ export default function Live(props) {
 
 Let's add a button to the Live screen page.
 
-```JavaScript
+```JSX
 <>
   {isBroadcaster ? (
     <RtcLocalView.SurfaceView 
@@ -623,7 +623,7 @@ const onSwitchCamera = () => AgoraEngine.current.switchCamera();
 
 Switch Camera button:
 
-```JavaScript
+```JSX
 <View style={styles.buttonContainer}>
   <TouchableOpacity style={styles.button} onPress={onShare}>
     <Text style={styles.buttonText}>Share</Text>
@@ -682,7 +682,7 @@ const videoStateMessage = (state) => {
 
 We can display the remote feed or the state message based on the broadcaster's video state.
 
-```JavaScript
+```JSX
 broadcasterVideoState === VideoRemoteState.Decoding ? (
   <RtcRemoteView.SurfaceView 
    uid={1} 
