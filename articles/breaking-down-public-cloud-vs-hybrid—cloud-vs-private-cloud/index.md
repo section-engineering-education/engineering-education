@@ -4,6 +4,14 @@ This article will explore public, private, and hybrid cloud environments, their 
 
 To introduce cloud computing and the three cloud deployment models (public cloud, hybrid cloud, and private cloud), have a look at this [article](/engineering-education/introduction-to-cloud-computing/).
 
+### Keywords 
+
+- Application Packaging Standard (APS) – to integrate an application software with a hosting platform, you need to follow the technology defined by APS.
+- Zero Touch Provisioning – this technology allows you to install a networking appliance anywhere while eliminating the need to configure these appliances locally.
+- A service-level agreement (SLA) – anytime you enter into a business with a vendor, you expect to receive a certain level of service. You agree (through a SLA) with the vendor on the metrics to measure the service and penalties for not achieving the agreed-on service.
+- Legacy Application – with technology advancement, software applications become outdated unless updated to reflect the current technology standard.
+- Industry verticals – specialist organizations on a shared market niche spanning multiple industries.
+
 ### Benefits of public cloud, hybrid cloud, and private cloud
 
 Both public, hybrid, and private cloud environments have unique strengths that make them a better choice for individuals and organizations with cloud computing needs. Below are the benefits of using public cloud, hybrid cloud, and private cloud.
