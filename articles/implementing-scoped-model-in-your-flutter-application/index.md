@@ -6,7 +6,7 @@ url: /engineering-education/implementing-scoped-model-in-your-flutter-applicatio
 title: Implementing a Scoped Model in your Flutter Application
 description: In this tutorial we will learn how to create more productive and interactive Flutter applications. You will create an application that follows state management principles in Flutter.
 author: michael-barasa
-date: 2020-12-10T00:00:00-16:00
+date: 2020-12-10T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
