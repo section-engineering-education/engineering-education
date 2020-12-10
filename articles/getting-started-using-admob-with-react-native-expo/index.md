@@ -99,13 +99,13 @@ Now that our expo-cli is installed, we need to start setting up Admod. For that,
 
 Now, it is time to install the expo Admob package i.e. **expo-ads-admob**. For that, we need to run the following command in our project terminal: 
 
-```json
+```bash
 expo install expo-ads-admob
 ```
 
 After everything is installed, we can go ahead and run the app using the following command in the project terminal:
 
-```jsx
+```bash
 expo start
 ```
 
@@ -116,7 +116,7 @@ After this, we need to choose the required emulator, that is, Android to run the
 ### STEP 3: Using Admob Banner
 Now, we are going to use the Banner Ad that we created before in Admob Account in our Home Screen. For that, we need to import the `AdMobBanner` component in the Home.js file as directed in the code snippet below:
 
-```json
+```jsx
 import {
   AdMobBanner,
   setTestDeviceIDAsync
@@ -139,25 +139,25 @@ const Home = () => {
 Next, we need to add the Banner ad to the view. For that, we are going to use the `AdMobBanner` component with props configured. It will be wrapped inside the `Card` component with styles as shown in the code snippet below:
 
 ```jsx
-        <Card
-          style={{
-            shadowOffset: { width: 5, height: 5 },
-            width: "90%",
-            borderRadius: 5,
-            alignSelf: "center",
-            alignContent: "center",
-            alignItems: "center",
-            marginTop: 10,
-            marginBottom: 10,
-          }}
-        >
-          <AdMobBanner
-            bannerSize="smartBanner"
-            adUnitID="<-- Your Banner Ad Unit ID Here -->" 
-            servePersonalizedAds // true or false
-            onDidFailToReceiveAdWithError={(e) => console.log(e)}
-          />
-        </Card>
+<Card
+  style={{
+    shadowOffset: { width: 5, height: 5 },
+    width: "90%",
+    borderRadius: 5,
+    alignSelf: "center",
+    alignContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+    marginBottom: 10,
+  }}
+>
+<AdMobBanner
+    bannerSize="smartBanner"
+    adUnitID="<-- Your Banner Ad Unit ID Here -->" 
+    servePersonalizedAds // true or false
+    onDidFailToReceiveAdWithError={(e) => console.log(e)}
+    />
+</Card>
 ```
 
 We can do the similar thing and add the Banner ad to the Setting screen as well.
@@ -189,17 +189,17 @@ const initRewardAds = async () => {
     await AdMobRewarded.setAdUnitID("<-- Your Reward Ad Unit ID Here -->");
     await AdMobRewarded.requestAdAsync();
     await AdMobRewarded.showAdAsync();
-  };
+};
 ```
 
 Now, we need to add a new Setting screen option to remove ads. It's going to be a `List` element item with a bullhorn icon. The template for it is provided in the code snippet below:
 
 ```jsx
-<TouchableOpacity >
-        <List.Item
-          title="Remove Ads"
-          left={() => <List.Icon icon="bullhorn" />}
-        />
+<TouchableOpacity>
+   <List.Item
+      title="Remove Ads"
+      left={() => <List.Icon icon="bullhorn" />}
+   />
 </TouchableOpacity>
 ```
 
@@ -237,36 +237,34 @@ export default ({ navigation }) => {
 Next, we need to add a `Modal` component with a body template. In the `Modal` body, we are going to add a button to trigger the Reward Ads as well. The Modal component with its prop configuration along with body template is provided in the code snippet below:
 
 ```jsx
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Title style={styles.modalText}>
-              Watch Video Ads for remove ads
-            </Title>
-
-            <TouchableOpacity
-              style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+<Modal
+   animationType="slide"
+   transparent={true}
+   visible={modalVisible}
+>
+   <View style={styles.centeredView}>
+      <View style={styles.modalView}>
+        <Title style={styles.modalText}>
+           Watch Video Ads for remove ads
+        </Title>
+        <TouchableOpacity style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
               onPress={() => {
                 initRewardAds();
               }}
-            >
-              <Text style={styles.textStyle}>Watch Ads</Text>
-            </TouchableOpacity>
+        >
+        <Text style={styles.textStyle}>Watch Ads</Text>
+        </TouchableOpacity>
             <TouchableOpacity
               style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
               onPress={() => {
                 setModalVisible(false);
               }}
             >
-              <Text style={styles.textStyle}>Nope</Text>
+            <Text style={styles.textStyle}>Nope</Text>
             </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
+       </View>
+   </View>
+</Modal>
 ```
 
 The required styles mentioned in the code snippet above is provided in the code snippet below:
@@ -318,16 +316,16 @@ You may find it difficult to implement a Modal in React Native. If that is the c
 Lastly, we need to call the Modal trigger function to the Remove ads list option as directed in the code snippet below:
 
 ```jsx
-      <TouchableOpacity
-        onPress={() => {
-          setModalVisible(true);
-        }}
-      >
-        <List.Item
-          title="Remove Ads"
-          left={() => <List.Icon icon="bullhorn" />}
-        />
-      </TouchableOpacity>
+<TouchableOpacity
+   onPress={() => {
+      setModalVisible(true);
+   }}
+>
+  <List.Item
+     title="Remove Ads"
+        left={() => <List.Icon icon="bullhorn" />}
+   />
+</TouchableOpacity>
 ```
 
 Hence, if we click on the Remove Ads option, we will get the Modal with two options: Watch Video or Exit. If we choose to watch the video ad then the video ad will play in the app as shown in the demo below:
@@ -434,13 +432,13 @@ const Home = () => {
 Next, we need to use the `ad_status` state from the reducer to conditionally render the `AdMobBanner` as directed in the code snippet below:
 
 ```jsx
-      {admobReducer.ad_status && (
-        <Card>
-          <AdMobBanner
-           /// other code
-          />
-        </Card>
-      )}
+{admobReducer.ad_status && (
+   <Card>
+     <AdMobBanner
+       /// other code
+     />
+   </Card>
+)}
 ```
 
 Now, we need to apply the same configuration to the Setting.js file as well. We need to import the action as well as `useSelector` and `useDispatch` hooks. 
@@ -459,21 +457,21 @@ export default ({ navigation }) => {
 Then, we need to apply conditional rendering to the `AdmobBanner` component just like in the Home screen as shown in the code snippet below:
 
 ```jsx
-      {admobReducer.ad_status && (
-        <Card>
-          <AdMobBanner
-           /// other code
-          />
-        </Card>
-      )}
+{admobReducer.ad_status && (
+  <Card>
+     <AdMobBanner
+        /// other code
+     />
+   </Card>
+)}
 ```
 
 Now we need to trigger the toggling of ads status from action. For that, we need to dispatch the `ToggleAds` method. We can do that inside the callback of the `rewardedVideoDidRewardUser` event as shown in the code snippet below:
 
 ```jsx
-   AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
-      dispatch(admobActions.ToggleAds(false));
-    });
+AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
+   dispatch(admobActions.ToggleAds(false));
+});
 ```
 
 The bottom line is some ads cannot be skipped until the video ads end. If we close the ad before the ad ends, we won't get the reward and the ads will still be shown. The final result is demonstrated in the demo below:
