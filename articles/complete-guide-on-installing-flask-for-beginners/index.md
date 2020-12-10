@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/complete-guide-on-installing-flask-for-beginners/
 title: A Complete Guide on Installing Flask for Beginners
-description: This article briefly introduces Address Resolution Protocol(ARP) and its types, namely, Gratuitous ARP(GARP), Inverse ARP(InARP), Proxy ARP and Reverse ARP(RARP).
+description: This tutorial will walk you on how to install Flask, structure your web application professionally, and create a web page with Flask that prints hello world in your web browser. 
 author: adetu-ridwan
 date: 2020-12-10T00:00:00-15:00
 topics: []
@@ -21,7 +21,7 @@ We could use the analogy of a compact home library (when talking about Flask), w
 
 However, because of its extensibility, organizations like Netflix, Airbnb, Uber, Lyft, Mozilla, and MIT make use of Flask as one of the technologies when developing their web applications.
 
-By the end of this article, you will adequately understand the following:
+By the end of this tutorial, you will adequately understand the following:
 - How to install Flask.
 - How to install a virtual environment.
 - How to structure your web app.
