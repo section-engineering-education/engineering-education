@@ -31,7 +31,7 @@ Download [Android SDK command-line tools](https://dl.google.com/android/reposito
 
 Some other resources provided by B4X are also required and can be downloaded [here](https://b4xfiles-4c17.kxcdn.com/b4a/resources_9_20.zip). Unzip the contents of the downloaded folder, then move the contents to the folder created earlier, `C:/android-sdk `. The final folder should look like in the screenshot below.
 
-![ B4A Android SDK Folder Structure](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-android-sdk-folder-structure.jpg)
+![ B4A Android SDK Folder Structure](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-android-sdk-folder-structure.jpg)
 
 #### Download, Install and Configure Basic4Android
 Download B4A from the [official website](https://www.b4x.com/android/files/B4A.exe). After installation, we need to tell B4A where the JDK and SDK files are located. Open B4A, then navigate to `Tools>Configure Paths`.
@@ -40,7 +40,7 @@ Set the android.jar path to `C:\android-sdk\platforms\android-30\android.jar`.
 
 Set the `javac.exe` location to either `C:\Program Files\Java\jdk1.8.0_271\bin\javac.exe` or `C:\java\jdk-11.0.1\bin\javac.exe`. These paths point to Java 8 JDK and Open JDK, respectively.
 
-![B4A configuring paths](b4a-configuring-paths.jpg)
+![B4A configuring paths](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1b4a-configuring-paths.jpg)
 **Note**: Path may vary depending on the version of JDK you installed.
 
 #### B4A-Bridge
@@ -48,15 +48,15 @@ To install apps on the phone, we use B4A Bridge. It is a feature that comes with
 
 Open the B4A-Bridge app, check the `Enable FTP Server` option, and start the connection. Take note of the device IP address. See the screenshot below.
 
-![B4A Bridge Android App](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-bridge-android.jpg)
+![B4A Bridge Android App](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-bridge-android.jpg)
 
 Open B4A IDE, navigate to `Tools > B4A Bridge > Connect > New IP`.
 
-![B4A Bridge Connection](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/connecting-b4a-bridge.jpg)
+![B4A Bridge Connection](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/connecting-b4a-bridge.jpg)
 
 You will be prompted to enter the Android device IP address. Enter the IP address on the Android B4A bridge Screen, and click okay to connect.
 
-![B4A Bridge IP Prompt](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/connecting-b4a-bridge-ip-prompt.jpg)
+![B4A Bridge IP Prompt](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/connecting-b4a-bridge-ip-prompt.jpg)
 
 Now you are ready to install apps from the IDE to the Android device over the wireless network.
 
@@ -78,16 +78,16 @@ Now we are ready to create and run a hello world app.
 
 Open B4A, navigate to `File -> New -> Default`.
 
-![B4A create new default project](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-create-new-default-project.jpg)
+![B4A create new default project](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-create-new-default-project.jpg)
 
 You will be prompted to select a path to save your project and the project's name.
 
-![B4A new default project source code](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-new-default-project-source-code.jpg)
+![B4A new default project source code](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-new-default-project-source-code.jpg)
 
 #### Program Flow
 On our "Hello World" project above, there are two tabs, `Main` and `Starter`. The two tabs are the Main activity and Starter Service modules, respectively.
 
-![B4A Modules Screenshot](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-modules.jpg)
+![B4A Modules Screenshot](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-modules.jpg)
 
 **Main Activity**
 The main activity is the starting activity. By default, each new project you create has the main activity. Each module in B4A has `Sub`. A sub is like a function. In `Sub Process_Globals` we declare global variables that can be accessed from all modules. In `Sub Globals`, we declare global variables.
@@ -114,26 +114,26 @@ This is where we declare all `ProcessGlobal` variables. `ProcessGlobal` variable
 #### B4A Visual Designer
 B4A comes with an inbuilt visual designer. You can design the layout of your application here. To launch Visual designer in the IDE, navigate to `designer -> Launch Designer`.
 
-![Launching B4A Visual Designer](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-launching-visual-designer.jpg)
+![Launching B4A Visual Designer](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-launching-visual-designer.jpg)
 
 The visual designer shows how the layout design looks on the device. Navigate to `WYSIWYG Designer -> Connect` to connect the visual designer to the device. This connects the device to the IDE over a wireless network.
 
-![Connecting B4A `WYSIWYG Designer to Device](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-connecting-visual-designer-to-device.jpg)
+![Connecting B4A `WYSIWYG Designer to Device](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-connecting-visual-designer-to-device.jpg)
 
 Navigate to `Add View` and add any view of your choice. We will get into more details in [example 2](#Example-App-2).
 
-![B4A Views](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-visual-designer-views.jpg)
+![B4A Views](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-visual-designer-views.jpg)
 
 To learn more about the visual designer, refer to the [B4A visual designer Booklet](https://www.b4x.com/guides/B4XVisualDesigner/?page=1).
 
 #### Output
 Let us run the code and install the app on our android device. Click the Run button as highlighted in the screenshot above. Once you run the code, you will be prompted to install the B4A designer app on your android device. Select install. We will use the [B4A designer app later](#B4A-Visual-Designer).
 
-![Install Visual Designer Prompt](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-install-visual-designer-prompt.jpg)
+![Install Visual Designer Prompt](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-install-visual-designer-prompt.jpg)
 
 Your app should install successfully. The app has one screen with a button `Click`. Once you click the button, a dialog box with the message "Hello world!" appears. You can change the message to something else (on the main file).
 
-![B4A Hello World app](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-hello-world.jpg)
+![B4A Hello World app](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-hello-world.jpg)
 
 Congratulations, you have successfully created a hello world app using B4A. in the next section, we will learn how to code using B4A.
 
@@ -146,13 +146,13 @@ In this example, we will create an application that takes in numbers and display
 - Launch visual designer.
 - Add views to the layout as shown in the screenshot below.
 
-![B4A Visual Designer Screenshot](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-visual-designer-screenshot.jpg)
+![B4A Visual Designer Screenshot](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-visual-designer-screenshot.jpg)
 
 In the abstract designer, we added two text views, a label and a button. Style them to your satisfaction. You can change the properties of any selected view in the properties section of the abstract designer. Some of the editable properties are color, hint text, input type, among others. For the two text views, change the name to `txtNumber1` and `txtNumber1`. Edit the hint text for the text views and set the input type to `NUMBERS`.
 
 Right-click the button in the abstract designer and generate the button click function. This will add a function to the Main activity. Code or logic within the function will be executed when the button is clicked.
 
-![B4A Generating Button Click Function](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-generating-button-onclick.jpg)
+![B4A Generating Button Click Function](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-generating-button-onclick.jpg)
 
 Right-click the rest of the views and generate their declarations.
 
@@ -176,7 +176,7 @@ In the function above, we check if the textboxes are empty. If empty, we prompt 
 
 **Output**
 
-![B4A App Screenshot](/engineering-education/Introduction-to-android-app-development-basic4android-b4a-part1/b4a-sample-app-output.jpg)
+![B4A App Screenshot](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-sample-app-output.jpg)
 
 You can find the complete source code on [Github](). You can also find more example projects in the [B4A community](https://www.b4x.com/android/forum/threads/b4a-projects-source-code.29614/).
 
