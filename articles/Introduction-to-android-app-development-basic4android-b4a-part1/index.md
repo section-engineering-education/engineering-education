@@ -1,5 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/
+title: MySQL Query Performance Optimization Tips
+description: This article will focus on 
+author: benson-kariuki
+date: 2020-12-10T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/hero.jpg
+    alt:  image
+---
+Basic4Android is a tool for developing native Android applications rapidly. The technique is called [rapid application development(RAD)](https://en.wikipedia.org/wiki/Rapid_application_development). Basic4Android is abbreviated as B4A. B4A is developed and distributed by a company called [Anywhere Software Ltd](https://www.b4x.com/).
+<!--more-->
 ### Introduction
-Basic4Android is a tool for developing native Android applications rapidly. The technique is called [rapid application development(RAD)](https://en.wikipedia.org/wiki/Rapid_application_development). Basic4Android is abbreviated as B4A. B4A is developed and distributed by a company called [Anywhere Software Ltd](https://www.b4x.com/). B4A is a language similar to Visual Basic and Visual Basic .NET. It is easier to learn if you know Visual Basic or Visual Basic .NET.
+B4A is a language similar to Visual Basic and Visual Basic .NET. It is easier to learn if you know Visual Basic or Visual Basic .NET.
 Nevertheless, Visual Basic or Visual Basic .NET is not a requirement for you to learn B4A. With B4A, you may not need to learn Java to be a native Android application developer. B4A is object-based and event-driven. It is more of an IDE rather than an app builder.
 
 ### Prerequisites
