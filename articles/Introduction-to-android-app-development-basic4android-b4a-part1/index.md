@@ -178,7 +178,7 @@ In the function above, we check if the textboxes are empty. If empty, we prompt 
 
 ![B4A App Screenshot](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/b4a-sample-app-output.jpg)
 
-You can find the complete source code on [Github](). You can also find more example projects in the [B4A community](https://www.b4x.com/android/forum/threads/b4a-projects-source-code.29614/).
+You can find the complete source code on [Github](https://github.com/Tsanguu/B4ASampleApp). You can also find more example projects in the [B4A community](https://www.b4x.com/android/forum/threads/b4a-projects-source-code.29614/).
 
 ### Conclusion
 Alternatives to B4A are [Android Studio](https://developer.android.com/studio) and [Unity 3D](https://unity.com/) for android games. But B4A is the best tool if you want to create an app quicker and also for prototyping. Developers who use other tools for Android app development can also use B4A. B4A is simple and straightforward. Make sure you join the [B4A forum](https://www.b4x.com/android/forum/#b4a-android.25). Happy coding with B4A.
