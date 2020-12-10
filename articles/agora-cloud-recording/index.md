@@ -65,7 +65,7 @@ Compared with On-premise Recording, Cloud Recording is more convenient as it doe
 
 You can learn more about cloud recording [here](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful).
 
-### Enabling Cloud Recording in Project management console
+### Enabling cloud recording in project management console
 
 To use Cloud Recording in your application, you must enable Cloud Recording from the Agora Project Management Console for the Agora project that your application is using.
 
@@ -86,7 +86,7 @@ Once you hit Apply, you will see the statistics page of the cloud recording. Wit
 ![Cloud Recording Enabled](cr_enabled.png)
 
 
-### Acquiring Authentication Keys for Agora APIs
+### Acquiring authentication keys for Agora APIs
 
 If you want to work with Agora's APIs, you need to acquire some authentication tokens from Agora.
 
@@ -99,3 +99,35 @@ Copy the customer ID and click on download under customer secret.
 > You can download the customer secret only once. Keep the customer secret in a safe place.
 
 ![Customer Secret](customer_secret.png)
+
+### Setting up the server
+> You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/).
+> To test the server, I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
+
+Let's install `Express` using `NPM`.
+
+```bash
+npm install express
+```
+
+Now, we can import `express` in our code to create a simple server module that'll listen on port 3000.
+
+```JavaScript
+const express = require("express");
+const app = express();
+app.use(express.json());
+
+app.get("/", (req, res) => res.send("Agora Cloud Recording Server"));
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Agora Cloud Recording Server listening at Port ${port}`));
+```
+
+You can start the server by running:
+
+```bash
+node index.js
+```
+
+This server will be listening on port 3000 and when you hit the `'/'` endpoint, it'll send `"Agora Cloud Recording Server"`.
+
