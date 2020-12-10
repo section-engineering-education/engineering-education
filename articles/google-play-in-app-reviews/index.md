@@ -250,4 +250,6 @@ mButton.setOnClickListener(new View.OnClickListener() {
 - Since we a carrying out a test, the submit button will be inactive.
 - If you have previously reviewed the application, delete your comment in the Google Play store. Otherwise, the review sheet won't pop up.
 
+For more reference, check the code on [GitHub](https://github.com/kimkimani/InAppReview).
+
 I hope this guide is a helpful source on how to ask users for reviews as well as implement in-app reviews within your application.
