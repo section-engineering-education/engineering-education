@@ -21,11 +21,11 @@ images:
 Let's dive in.
 
 ### Introduction
-The scoped\_model library consists of various utilities that allow children UI elements to receive data from their parent Widget. The [library](https://pub.dev/packages/scoped_model) consists of three major classes: the ScopedModelDescendant, the Model, and the ScopedModel. 
+The scoped\_model library consists of various utilities that allow children UI elements to receive data from their parent Widget. The [library](https://pub.dev/packages/scoped_model) consists of three major classes: the `ScopedModelDescendant`, the `Model`, and the `ScopedModel`.
 
-You must extend the Model class to listen for changes. 
+You must extend the Model class to listen for changes.
 
-The ScopeModel widget can be used to wrap UI components and access data from the Model. The ScopedModelDescendant lets you identify the correct ScopeModel from the widget hierarchy. You can learn more about the scoped\_model library from [here](https://pub.dev/packages/scoped_model).
+The `ScopeModel` widget can be used to wrap UI components and access data from the Model. The `ScopedModelDescendant` lets you identify the correct `ScopeModel` from the widget hierarchy. You can learn more about the scoped\_model library from [here](https://pub.dev/packages/scoped_model).
 
 Let's implement the library in our Flutter application.
 
@@ -36,20 +36,20 @@ Let's implement the library in our Flutter application.
 
 - Have the latest Flutter SDK.
 
-- YOu can download full project from [here](https://github.com/WanjaMIKE/scopedmodelexample).
+- You can download the full project from [here](https://github.com/WanjaMIKE/scopedmodelexample).
 
 ### The goal of the tutorial
 By the end of this tutorial, you will create an application that follows State Management principles in Flutter. It will allow customers to add and store notes. Widgets will be updated as soon as data changes.
 
 ### Creating the project
-Open `Android Studio` click file, then create a `new Flutter project.` Ensure that you set the proper Flutter SDK path to avoid errors. The computer also needs to be online for Flutter dependencies and libraries to be installed. If this process is successful, your start page should look like the image below. 
+Open `Android Studio` click file, then create a `new Flutter project.` Ensure that you set the proper Flutter SDK path to avoid errors. The computer also needs to be online for Flutter dependencies and libraries to be installed. If this process is successful, your start page should look like the image below.
 
 You have to be patient since this stage takes time.
 
 ![Creating new project](/engineering-education/implementing-scoped-model-in-your-flutter-application/creating-project.png)
 
 ### Installing the required library
-You must install the required library for you to access the scoped\_model's functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation. 
+You must install the required library for you to access the scoped\_model's functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation.
 
 Your `pubspec.yaml` file should look as shown below.
 
@@ -61,7 +61,6 @@ dependencies:
   flutter:
     sdk: flutter
   scoped_model: ^1.1.0
-
 ```
 
 ### Creating the UI
@@ -70,11 +69,11 @@ In this stage, we will use different widgets to create the user interface. Our f
 ![App design](/engineering-education/implementing-scoped-model-in-your-flutter-application/ui.jpg)
 
 ### Modify `main.dart` file
-Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won't be needing some of this code, you can, therefore, delete the `MyHomePage class` since we will create a new one. 
+Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won't be needing some of this code, you can, therefore, delete the `MyHomePage` class since we will create a new one.
 
-Then go to `MyApp class,` in the same file, and change the `home` parameter to `home: MyHomePage().` You can follow the following code to avoid confusion.
+Then go to `MyApp` class, in the same file, and change the `home` parameter to `home: MyHomePage().` You can follow the following code to avoid confusion.
 
-```dart
+```Dart
 import 'package:flutter/material.dart';
 import './model/note.dart';
 import './model/notesmodel.dart';
@@ -97,15 +96,14 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 ```
 
 ### Design the homepage
-Since we are making a simple application, we can include our UI code in the main.dart file. The class should be named as `MyHomePage`. 
+Since we are making a simple application, we can include our UI code in the `main.dart` file. The class should be named as `MyHomePage`.
 
 Paste the following code in the `MyHomePage` class.
 
-```dart 
+```Dart
 import 'package:flutter/material.dart';
 import './model/note.dart';
 import './model/notesmodel.dart';
@@ -152,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       floatingActionButton: FloatingActionButton(
         //objects will be added to the database when this button is clicked.
-        onPressed: () {//this button is executed when the floating button is clicked
+        onPressed: () {//this method is executed when the floating button is clicked
         },
         tooltip: 'Add to list new object',
         child: Icon(Icons.add),
@@ -160,38 +158,35 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
 ```
 
-The `MyHomePage class` in the `main.dart` file contains three major widgets: `ListTile`, `ListView`, and a `Floating Button`. The `ListTile` will be used to display an object's attributes. 
+The `MyHomePage` class in the `main.dart` file contains three major widgets: `ListTile`, `ListView`, and a `Floating Button`. The `ListTile` will be used to display an object's attributes.
 
 All of the `ListTiles` will appear in the `ListView`. This means that the user will be able to scroll through the content.
 
 ### Creating the Model
 Please create a new package in the `lib` folder and name it as `model`. In this package, create a `note.dart` file. Use `Note` as your class name. Our program will have two major attributes or variables. These are the name and description.
 
-```dart
-
+```Dart
 class Note{
   String id, name, description;
   Note({ this.id, @required this.name, @required this.description});
 }
-
 ```
 
 ### Extending the ScopedModel
-This `scoped_model` class will be responsible for state management in our Flutter application. The first step is to create a class named `NotesModel` and ensure that it extends the `Model` class. You should have `import 'package:scoped_model/scoped_model.dart';` for the program to execute. The next step is to define the functions, variables, or data that will be required by widgets. The full code for the NotesModel is shown below.
+This `scoped_model` class will be responsible for state management in our Flutter application. The first step is to create a class named `NotesModel` and ensure that it extends the `Model` class. You should have `import 'package:scoped_model/scoped_model.dart';` for the program to execute. The next step is to define the functions, variables, or data that will be required by widgets. The full code for the `NotesModel` is shown below.
 
-```dart
+```Dart
 import 'package:scoped_model/scoped_model.dart';
 import 'note.dart';
 
 class NotesModel extends Model{
   List<Note> _list = []; //list that stores Note objects
-  
+
   List<Note> get list{ //returns a copy of list
     return [..._list];
-}
+  }
     void addNote(Note note){ //adds a Note object to list
         _list.add(note);
         notifyListeners();
@@ -201,26 +196,16 @@ class NotesModel extends Model{
     _list.remove(note); //removes a Note object from list
     notifyListeners();
   }
-
 ```
 
 `_list` will be used to store the Note objects.
 
-The function shown below returns a copy of the Note list.
-
-```dart
-  List<Note> get list{
-    return [..._list];
-}
-```
-
-The `addNote()` function adds objects in the _list. The `removeNote()` method allows a user to delete or remove objects from list. These methods are declared as `void` since they do not return anything.
+The `get` function returns a copy of the Note list. The `addNote()` function adds objects in the _list. The `removeNote()` method allows a user to delete or remove objects from list. These methods are declared as `void` since they do not return anything.
 
 ### Finishing up
 Go to the `main.dart` file and initialize the `NoteModel` just before the `MyApp` class. Then go to `MyHomePage.class` file and wrap the `MaterialApp` widget with the `ScopedModel`. Ensure that you have inserted the correct Model, as shown below.
 
-```dart
-
+```Dart
 NotesModel notesModel = NotesModel();
 
 class MyApp extends StatelessWidget {
@@ -240,14 +225,11 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 ```
 
-Next, go to the `MyHomePage class` file add the `ScopedModelDescendant` in the `_HomePageState class` as shown below. Note that the `ScopedModelDescendant` will take `context`, `child`, and `model` as `parameters`. Pass the `model` to the other UI functions, as shown below.
+Next, go to the `MyHomePage` class file add the `ScopedModelDescendant` in the `_HomePageState` class as shown below. Note that the `ScopedModelDescendant` will take `context`, `child`, and `model` as `parameters`. Pass the `model` to the other UI functions, as shown below.
 
-```dart
-
-
+```Dart
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -265,7 +247,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //scoped model descendants helps to pass data to the children widgets.
       return Scaffold(
         appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
+          // Here, we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
@@ -294,7 +276,7 @@ class _MyHomePageState extends State<MyHomePage> {
         floatingActionButton: FloatingActionButton(
           //objects will be added to the database when this button is clicked.
           onPressed: () {
-            model.addNote(task); //this button is executed when the floating button is clicked
+            model.addNote(task); //this method is executed when the floating button is clicked
           },
           tooltip: 'Add to list new object',
           child: Icon(Icons.add),
@@ -303,18 +285,19 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 }
-
-
 ```
 
-Your final app should run, as shown in the video below. 
+Your final app should run, as shown in the video below.
 
 <iframe width="469" height="269" src="https://www.youtube.com/embed/_BhaQOMafUc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
 The `scoped_model` simplifies the state management process. Data is passed from the parent to the children widgets quickly. The user is notified in case of any data changes. You can use the knowledge gained from this tutorial to create more productive and interactive Flutter applications.
 
-### References 
+### References
 - [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro)
 
 - [Scoped_model](https://pub.dev/packages/scoped_model)
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
