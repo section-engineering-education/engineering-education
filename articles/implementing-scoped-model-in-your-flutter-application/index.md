@@ -4,19 +4,19 @@ status: publish
 published: true
 url: /engineering-education/implementing-scoped-model-in-your-flutter-application/
 title: Implementing a Scoped Model in your Flutter Application
-description: In this tutorial we will learn how to create more productive and interactive Flutter applications. You will create an application that follows State Management principles in Flutter.
+description: In this tutorial we will learn how to create more productive and interactive Flutter applications. You will create an application that follows state management principles in Flutter.
 author: michael-barasa
-date: 2020-12-09T00:00:00-16:00
+date: 2020-12-10T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-scoped-model-in-your-flutter-application/hero.png
-    alt:  image
+  - url: /engineering-education/implementing-scoped-model-in-your-flutter-application/hero.jpg
+    alt: scoped model in Flutter image
 ---
  In [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro), everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that impress users. These features are difficult to use in native app development using languages such as Java.
 <!--more-->
- However, Flutter does pose specific challenges. Particularly, it can be difficult to implement State Management. To learn about state management click [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It's also challenging to pass data from the primary widget to its children. The scoped\_model library helps resolve these issues.
+ However, Flutter does pose specific challenges. Particularly, it can be difficult to implement state management. To learn about state management click [here](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro). It's also challenging to pass data from the primary widget to its children. The scoped\_model library helps resolve these issues.
 
 Let's dive in.
 
@@ -39,10 +39,10 @@ Let's implement the library in our Flutter application.
 - You can download the full project from [here](https://github.com/WanjaMIKE/scopedmodelexample).
 
 ### The goal of the tutorial
-By the end of this tutorial, you will create an application that follows State Management principles in Flutter. It will allow customers to add and store notes. Widgets will be updated as soon as data changes.
+By the end of this tutorial, you will create an application that follows state management principles in Flutter. It will allow customers to add and store notes. Plus the widgets will be updated as soon as data changes.
 
 ### Creating the project
-Open `Android Studio` click file, then create a `new Flutter project.` Ensure that you set the proper Flutter SDK path to avoid errors. The computer also needs to be online for Flutter dependencies and libraries to be installed. If this process is successful, your start page should look like the image below.
+Open `Android Studio` click file, then create a `new Flutter project.` Ensure that you set the proper Flutter SDK path to avoid any errors. The computer also needs to be online for Flutter dependencies and libraries to be installed. If this process is successful, your start page should look like the image below.
 
 You have to be patient since this stage takes time.
 
@@ -53,7 +53,7 @@ You must install the required library for you to access the scoped\_model's func
 
 Your `pubspec.yaml` file should look as shown below.
 
-```
+```bash
 environment:
   sdk: ">=2.7.0 <3.0.0"
 
@@ -68,7 +68,7 @@ In this stage, we will use different widgets to create the user interface. Our f
 
 ![App design](/engineering-education/implementing-scoped-model-in-your-flutter-application/ui.jpg)
 
-### Modify `main.dart` file
+### Modify 'main.dart' file
 Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won't be needing some of this code, you can, therefore, delete the `MyHomePage` class since we will create a new one.
 
 Then go to `MyApp` class, in the same file, and change the `home` parameter to `home: MyHomePage().` You can follow the following code to avoid confusion.
