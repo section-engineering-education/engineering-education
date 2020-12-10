@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/hero.jpg
     alt: Android App Development with Basic4Android (B4A) example image
 ---
-Basic4Android is a tool used for developing native Android applications rapidly. The technique is called [rapid application development (RAD)](https://en.wikipedia.org/wiki/Rapid_application_development). Basic4Android is abbreviated as B4A. B4A is developed and distributed by a company called [Anywhere Software Ltd](https://www.b4x.com/).
+Basic4Android is a tool used for developing native Android applications rapidly. The technique is called [rapid application development (RAD)](https://en.wikipedia.org/wiki/Rapid_application_development). We abbreviate Basic4Android as B4A. B4A was developed and distributed by a company called [Anywhere Software Ltd](https://www.b4x.com/).
 <!--more-->
 ### Introduction
 B4A is a language similar to Visual Basic and Visual Basic .NET. It is easier to learn if you know Visual Basic or Visual Basic .NET.
