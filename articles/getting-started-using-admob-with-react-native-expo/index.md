@@ -13,12 +13,12 @@ images:
   - url: /engineering-education/getting-started-using-admob-with-react-native-expo/hero.jpg
     alt: React Admob with Expo
 ---
-Many modern-day apps contain ads in them. The ads pop out if you want to use certain features in the app. Mainly in game apps, you need to watch an ad before reaching another level. Ads have been a popular way to monetize the app and make some profit out of it. Some sophisticated apps also provide a payment option to remove the ads from the interface. Here, we are going to incorporate the same logic but in a slightly different way.
+Many modern-day apps contain ads in them. The ads pop out if you want to use certain features in the app. Mainly in-game apps, you need to watch an ad before reaching another level. Ads have been a popular way to monetize the app and make some profit out of it. Some sophisticated apps also provide a payment option to remove the ads from the interface. Here, we are going to incorporate the same logic but in a slightly different way.
 <!--more-->
 In this tutorial, we are going to implement Admob in the React Native application. Here, we are going to implement an interface to show the ads as well as an option to remove ads as well. In most cases, the users will have to pay to remove the ads. But here, we are going to make users watch video ads to hide the ads from the interface for a certain amount of time. For this, we are going to make use of the expo Admob package that provides the ad reward feature.
 
 ### Requirement
-- [Starter React Native project](https://snack.expo.io/2y6z09xog). (Check out the  [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) for detail guidance on how to build the starter project). 
+- [Starter React Native project](https://snack.expo.io/2y6z09xog). (Check out the  [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) for detailed guidance on how to build the starter project). 
 -  Android Emulator or Real Device
 - [Admob account](https://apps.admob.com/v2/home?pli=1)
 - [Nodejs](https://nodejs.org/dist/v12.19.0/node-v12.19.0-x64.msi)
@@ -29,7 +29,7 @@ In this tutorial, we are going to implement Admob in the React Native applicatio
 *let's get started!*
 
 ### STEP 1: Fetching Admob App ID
-To incorporate the AdMob in the React Native app, first, we need to get the App ID for it. For that we need to create an Admob account (if we have not done so yet) then go to the [AdMob app dashboard](https://apps.admob.com/v2/apps/list) as shown in the screenshot below:
+To incorporate the AdMob in the React Native app, first, we need to get the App ID for it. For that, we need to create an Admob account (if we have not done so yet) then go to the [AdMob app dashboard](https://apps.admob.com/v2/apps/list) as shown in the screenshot below:
 
 ![admob dashboard](getting-started-using-admob-with-react-native-expo/1-admob-all-apps-dashboard.png)
 
@@ -57,7 +57,7 @@ Here, we have named our Ad unit name as 'header ads'. Now after clicking on 'CRE
 
 ![success create ad unit](/engineering-education/getting-started-using-admob-with-react-native-expo/7-success-create-ad-unit.png)
 
-Now, we will be able to get the Ad Unit ID from dashboard as well:
+Now, we will be able to get the Ad Unit ID from the dashboard as well:
 
 ![Ad unit dashboard](/engineering-education/getting-started-using-admob-with-react-native-expo/8-ad-unit-dashboard.png)
 
@@ -124,9 +124,9 @@ import {
 ```
 
 - `AdMobBanner` The component that delivers the Banner Ad to the interface.
-- `setTestDeviceIDAsync`This module enables us to display ads on test environment.
+- `setTestDeviceIDAsync`This module enables us to display ads in the test environment.
 
-First, we are going to call the `setTestDeviceIDAsync` method to a function `initAdmob`. Then, we need to call the `initAdmob` function inside the `useEffect` hook so that it triggers every time the app loads. The coding implementation is provided in the code snippet below:
+First, we are going to call the `setTestDeviceIDAsync` inside the `useEffect` hook so that it triggers every time the app loads. The coding implementation is provided in the code snippet below:
 
 ```jsx
 const Home = () => {
@@ -160,16 +160,16 @@ Next, we need to add the Banner ad to the view. For that, we are going to use th
 </Card>
 ```
 
-We can do the similar thing and add the Banner ad to the Setting screen as well.
+We can do a similar thing and add the Banner ad to the Setting screen as well.
 
-The result showing the Banner ad in both the screens is provided in the screenshot below:
+The result showing the Banner ad on both the screens is provided in the screenshot below:
 
 ![show ad banner in both screen](/engineering-education/getting-started-using-admob-with-react-native-expo/13-show-ad-banner.png)
 
 As we notice, we have rendered out the Banner ad at the top of the Home and Setting Screen. Now, we can move on to the Reward Ads.
 
 ### STEP 4: Using Admob Reward Ads
-The Admob Reward Ad is a video ad that users need to watch to a certain length in order to obtain certain rewards. We can use it in multiple scenarios such as to receive game points, upgrading levels, etc.
+The Admob Reward Ad is a video ad that users need to watch to a certain length  to obtain certain rewards. We can use it in multiple scenarios such as to receive game points, upgrading levels, etc.
 
 We are going to integrate this Reward Ad into the Setting screen. For this, we need to import the `AdMobRewarded` component from the expo-ads-admob package as shown in the code snippet below:
 
@@ -226,7 +226,7 @@ import {
 } from "react-native-paper";
 ```
 
-First, we need to define a state using the `useState` hook in order to control the visibility of the `Modal` component as directed in the code snippet below:
+First, we need to define a state using the `useState` hook to control the visibility of the `Modal` component as directed in the code snippet below:
 
 ```jsx
 export default ({ navigation }) => {
@@ -354,7 +354,7 @@ const initRewardAds = async () => {
   };
 ```
 
-### STEP 5: Control Ads status across app with Redux
+### STEP 5: Control Ads status across an app with Redux
 To control the visibility of ads across every screen in the app, we are going to use the Redux mechanism. It is similar to the previous tutorial where we control the dark theme mode changes using Redux.
 
 First, we need to define some constants in the **constant.js** file for new ad status as directed in the code snippet below:
@@ -474,7 +474,7 @@ AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
 });
 ```
 
-The bottom line is some ads cannot be skipped until the video ads end. If we close the ad before the ad ends, we won't get the reward and the ads will still be shown. The final result is demonstrated in the demo below:
+The bottom line is some ads cannot be shipped until the video ads end. If we close the ad before the ad ends, we won't get the reward and the ads will still be shown. The final result is demonstrated in the demo below:
 
 <iframe width="956" height="538" src="https://www.youtube.com/embed/CyyK5K0nP30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
