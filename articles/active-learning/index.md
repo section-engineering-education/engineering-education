@@ -16,13 +16,15 @@ By nature, machine learning models are data-hungry. They require a lot of data t
 
 ### Prerequisites
 
-This article requires an understanding of supervised learning, in addition to machine learning in general. This [article](https://www.section.io/engineering-education/supervised-learning-algorithms/) may be of help with the mentioned prerequisites.
+This article requires an understanding of supervised learning, in addition to machine learning in general. This [article](/engineering-education/supervised-learning-algorithms/) may be of help with the mentioned prerequisites.
 
 ### Active Learning
 
 In supervised learning, a great amount of labeled data is needed for training. However, we might encounter a situation where we have a large pool of unlabelled data. To apply a supervised algorithm on such data, we would need to label every instance. However, this would be a tedious, time-consuming, and expensive process.
 
-However, a semi-supervised approach would allow us to label a few data examples to train a model and still achieve great precision. This is active learning. Active learning describes an approach where data that needs to be labeled to train a model is prioritized. Specifically, the data that is prioritized has the highest impact on the performance of a model. Prioritizing informative data allows one to train a model on such data instead of training it on the whole dataset. We describe this approach as semi-supervised since unsupervised learning approaches consider unlabelled data while supervised ones prefer a fully labeled dataset. Active learning does not need a fully labeled set. Active learning involves the use of an oracle. In this context, an oracle is the information source. That is an entity that is capable of labeling data examples when the learner cannot. This is often a human expert.
+However, a semi-supervised approach would allow us to label a few data examples to train a model and still achieve great precision. This is active learning. Active learning describes an approach where data that needs to be labeled to train a model is prioritized. Specifically, the data that is prioritized has the highest impact on the performance of a model. Prioritizing informative data allows one to train a model on such data instead of training it on the whole dataset. 
+
+We describe this approach as semi-supervised. Unsupervised learning approaches consider unlabelled data while supervised ones prefer a fully labeled dataset. Active learning does not need a fully labeled set. Active learning involves the use of an oracle. In this context, an oracle is the information source. That is an entity that is capable of labeling data examples when the learner cannot. This is often a human expert.
 
 To further understand this type of learning, let's look at the process of carrying out active learning on an unlabelled dataset.
 
@@ -32,7 +34,7 @@ To use active learning on an unlabelled dataset, there are several common steps 
 
 1. Firstly, a tiny portion of the training data needs to be manually labeled.
 
-2. The model would then need to be trained on this portion of labeled data. The essence of doing this is not to achieve the best performance but rather an insight. This allows one to understand which sections of the parameter space need to be prioritized in terms of labeling to improve the model.
+2. The model would then need to be trained on this portion of labeled data. The essence of doing this is not to achieve the best performance but rather an insight. This allows the analysis of sections of the parameter space to be prioritized to improve the model.
 
 3. After training is completed, the learner is then tasked to predict each of the unlabelled examples' class.
 
@@ -100,7 +102,7 @@ Let's have instances C1 and C2. Each of these instances has probability values a
 
 C1 has a probability of 0.8 for Label 1. This means that the learner is confident that C1 should be labeled 1. This is in comparison with 2 and 3, with probabilities of 0.17 and 0.03, respectively. When it comes to C2, the learner is less sure about its label. The probabilities are 0.25, 0.45, and 0.3. The probabilities are closer to each other compared to the case of C1. The learner cannot for certain determine the correct label for C2. The learner would think that C2 should be labeled 2, but a probability of 0.45 does not demonstrate confidence.
 
-Using the least confidence method, the learning agent would choose C2 to query the oracle for its true label.
+Since querying is a process used to retrieve information, the learning agent would choose C2 to query the oracle for its true label using the least confidence method. The learner would ask the oracle to provide the correct label since it lacks the confidence to do it itself. This is due to the low probability value assigned to C2.  
 
 #### Margin Sampling
 
@@ -120,7 +122,7 @@ To learn more about entropy, here's a short post about [Shannon Entropy](https:/
 
 ### Closing
 
-Active learning allows us to use large unlabelled datasets while avoiding the prospect of having to label every single instance in the set. This reduces the tedium associated with data labeling. A lot of time, effort, as well as financial resources are saved through this approach. We have gone through an introduction to active learning. I hope that the concepts we have covered will help you with your machine learning journey. Happy reading!
+Active learning allows us to use large unlabelled datasets while avoiding the prospect of having to label every single instance in the set. This reduces the tedium associated with data labeling. A lot of time, effort, as well as financial resources, are saved through this approach. We have gone through an introduction to active learning. I hope that the concepts we have covered will help you with your machine learning journey. Happy reading!
 
 ### References and Further Reading
 
