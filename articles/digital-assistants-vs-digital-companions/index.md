@@ -24,19 +24,23 @@ Digital assistants are affordable, convenient, and user-friendly and are primari
 
 Digital companions are just new and improved digital assistants. In a way, they assist us in numerous tasks, and they do so in a personalized, seamless, and fun manner. They are interactive to the user. Digital companions learn and remember what we like or dislike each time we interact, that is individual preferences and needs. They also assist us in understanding and choosing, among many options, the best course of action. In other words, digital companions interact with us proactively as opposed to digital assistants, which do so reactively.
 
-Digital companions have a two-way relationship with their users based on empathy, trust, and anticipation of needs and preferences. They make suggestions that fit our interests and positively influence our behaviors.
+A future digital companion will have a two-way relationship with the users based on empathy, trust, and anticipation of needs and preferences. They will be able to make suggestions that will fit people&#39;s interests and influence their behaviors positively. In other words, this is an ideal idea for digital companions.
 
 Digital companions are used to automating management and employee experience, thereby making it more accessible. It is also used in performing common tasks such as resetting passwords, system status updates, and outage alerts.
 
 ### A comparison of digital assistants and digital companions
 
-- Digital assistants&#39; interactions are primarily command-based, but those of digital companions are both proactive and command-based.
-- Digital assistants create short and one-sided exchanges; digital companions create more extended and bidirectional exchanges.
-- Digital assistants use a single primary modality, for instance, voice or text; digital companions use multiple modalities, e.g., voice, movements.
-- Digital assistants are more of generic character and less personality; digital companions are personalized for each user.
-- Digital assistants&#39; experiences are homogenous for all users; digital companions&#39; experiences are personalized for each individual.
-- Digital assistants&#39; actions are executed based on users&#39; commands; digital companions&#39; actions are executed based on context and goals.
-- Digital assistants incorporate very little information about the user while digital companions remember users` needs and preferences.
+The below table enumerates the fundamental differences between digital assistants and digital companions;
+
+| Distinctive point | Digital assistants | Digital companions |
+| --- | --- | --- |
+| Interactions | They are primarily based on commands. | Both pro-active and command-based. |
+| The direction of information exchange | Create a short and one-sided direction. | Create more extended and bidirectional exchanges. |
+| Modality | Use a single primary modality, for instance, voice or text. | Use multiple modalities, e.g., voice, movements. |
+| Character and Personality | Have a generic character and personality. | Have a more personalized character for each user. |
+| User experience | Experiences are homogenous for all users | Experiences are personalized for each individual. |
+| Actions execution | Based on user commands. | Based on context and goals. |
+| User information | Incorporate very little information about the user. | Remembers user needs and preferences. |
 
 ### Applications of digital companions
 
