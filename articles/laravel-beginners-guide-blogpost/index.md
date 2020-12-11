@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/laravel-beginners-guide-blogpost/
 title: Building Your First Laravel Application (Blog Application)
-description: This article will be a step by step guide on how to build a Laravel application (blog application)
+description: This article will be a step by step guide on how to build a Laravel (which is a is a PHP MVC Framework) application (blog application) using CRUD.
 author: 
-date: 2020-12-08T00:00:00-12:00
+date: 2020-12-11T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -48,7 +48,7 @@ With our machine setup complete, it's time to start developing.
 As we mentioned before, there are two ways to create a Laravel application; one is using the Laravel installer and the other is through installing the Laravel package; and using a composer and a create-project command. 
 In this tutorial we will use the latter:
 - Open your console and cd to www directory in your MAMP, LAMP, or WAMP installation directory.
-- Type the following command:-
+- Type the following command:
 
   ```sh
   composer create-project --prefer-dist laravel/laravel my-blog
@@ -97,7 +97,7 @@ With everything configured it's time to run our app and see what it is. To run t
 ```sh
 php artisan serve
 ```
-It will start the Application and give you a URL, mostly `http://127.0.0.1:8000` open the URL in your browser and see the Application (shown below)
+It will start the application and give you a URL, mostly `http://127.0.0.1:8000` open the URL in your browser and see the Application (shown below)
 
 ![home-page]/engineering-education/laravel-beginners-guide-blogpost/(images/2_home.PNG)
 
