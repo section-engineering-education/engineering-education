@@ -34,7 +34,7 @@ These models may be successfully trained and tested. But if they offer poor perf
 
 On the bright side, there are ways to reduce the impact of underspecification. We cover a handful below.
 
-### Limiting Model Complexity
+#### Limiting Model Complexity
 
 A way of addressing underspecification is limiting the complexity of a model. The complexity of modern machine learning models almost guarantees that underspecification will occur. As defined by this [post](https://machinelearningmastery.com/difference-between-a-parameter-and-a-hyperparameter/), a parameter is a configuration variable that is internal to the model and whose value can be approximated from data. A model that has many free parameters encourages underspecification. These parameters allow models to use numerous ways to achieve a prediction. This allows models to blend competent predictions with luck. It is difficult to determine which approach was skill and which was luck.
 
