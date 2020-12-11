@@ -17,7 +17,7 @@ The performance of C# is exceptional in terms of speed and it can cheaply use re
 
 C# is a friendlier and easier language to understand for beginners compared to other programming languages like C and C++.
 
-Programs written in C# use the .NET Framework to run. .NET is a framework used to create applications and run the .NET software. It was developed by Microsoft and runs primarily on Windows operating systems. There is an open-source project as well – it's called Mono which delivers a cross-platform.
+Programs written in C# utilize the .NET Framework to run. .NET is a framework used to make applications and run the .NET software. It was created by Microsoft and runs essentially on Windows working operating system. There is an open-source too called Mono which conveys a cross-platform.
 In this tutorial, we need it to compile and run our code.
 
 To get started, you will need:
@@ -132,7 +132,7 @@ You can explore more in the [C# docs](https://docs.microsoft.com/en-us/dotnet/cs
  namespace HelloWorld{}
  ``` 
 
-Namespaces are used in C# to organize and provide a level of separation of codes. It is a container that consists of classes, methods, and other namespaces.
+Namespaces are used in C# to organize and provide a level of separation of codes. They are containers consisting of methods, classes and other namespaces.
 
 **Line 4:**
  ``` C#
@@ -152,7 +152,7 @@ Any program execution starts from the `Main` method. Any code outside the `Main`
  Console.WriteLine("Hello World!");
  ```
 
-`Console.WriteLine()` is used to print out text on the console. It prints a string and moves to the start of the next line. In our case, it is used to output *"Hello World"*.
+`Console.WriteLine()` is used to print out text on the console.It prints a string and moves to the beginning of the next line. In our case, it is used to output *"Hello World"*.
 
 We can also use `Console.Write()` that print a string in the same line without moving to the next line.  You can learn more on Console.WriteLine() and Console.Write() [here](https://www.programiz.com/csharp-programming/basic-input-output).
 
@@ -166,12 +166,12 @@ In the above program, as soon as the user enters a character(s) and presses the 
 
 `Console.Read()`can also be used to read the next character in the input system.
 
-```Console.ReadKey()``` can also be used to obtain the next key pressed by the user. It is mostly used to hold the console for the user until he presses a key.
+```Console.ReadKey()``` can also be used to obtain the next key entered by the user. It is mostly used to hold the console for the user until he presses a key.
 
 **Note:**
 - Each line in C# ends with a semi-colon(;).
 - C# follows a top to bottom order when executing the program.
-- C# is a case-sensitive language. This means that it treats lowercase and uppercase characters differently.e.g `program` and `Program` mean different things.
+- C# is case-sensitive as it treats uppercase and lowercase characters differently.e.g `program` and `Program` mean different things.
 
 **Congratulations!** You just wrote your first C# program.
 
