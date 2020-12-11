@@ -1,27 +1,27 @@
 ### Introduction
-Background work has been a core part in android application development for a long time. This is because it allows for the execution of tasks without any interference to and from the user interface. But implementing such tasks is not an easy task. One has to consider resources like threads and when to start running the task. Some tasks may even require running at time intervals. Several solutions have come up like `IntentServices` and `JobScheduler` which help in execution of these tasks. But they too come with their challenges like chaining tasks and setting constraints. This is where WorkManager comes in to help.
+Background work has been a core part of android application development for a long time. This is because it allows the execution of tasks without any interference with the user interface. However, implementing such functionality is not an easy task. One has to consider resources such as threads and when to start running the task. Some tasks may even require running at time intervals. Several solutions have come up. Some of these solutions are `IntentServices` and `JobSchedulers`. But they too come with their challenges like chaining tasks and setting constraints. This is where WorkManager comes in to help.
 
 ### What is WorkManager
-This is an AndroidX library that helps in running tasks asynchronously. It ensures that the work is done even if the user exits the app or the device restarts. It makes use of the existing job services to do the work. This means that it can support devices up to API level 14. Running background tasks is made easier using WorkManager and has other awesome perks too:
+This is an AndroidX library that helps in running tasks asynchronously. It ensures that the work is done even if the user exits the app or the device restarts. It makes use of the existing job services to do the work. This means that it can support devices up to API level 14. WorkManager makes running background tasks easier and gives other awesome perks too:
 
-* **constraints**: with WorkManager, you can easily set conditions to be met before the task is run
-* **chaining**: you can easily tie multiple tasks to be run at the same time or one after another
-* **threading**: like most AndroidX libraries, it comes with support for `coroutines` and `rxjava` for better thread management
-* **work execution**: you have two options to define how the work is executed i.e either once or periodically.
+* **constraints**: with WorkManager, you can easily set conditions that should be met for the task to run.
+* **chaining**: you can easily tie multiple tasks to run at the same time or one after another.
+* **threading**: like most AndroidX libraries, it comes with support for `coroutines` and `rxjava` for better thread management.
+* **work execution**: you have two options to define the execution of work. i.e. either once or periodically.
 
 In a normal WorkManager setting, you have three parts:
-1. **_the work definition_**: this is where you define the task to be done or rather, the job
-2. **_the work creation_**: you create the job and set constraints to it. You may create it as a one time job or one that runs at an interval.
+1. **_the work definition_**: this is where you define the task or rather, the job.
+2. **_the work creation_**: you create the job and set constraints to it. You may create it as a one time job or one that runs at intervals.
 3. **_queueing the work_**: you use the `WorkManager` instance to start/launch your job.
 
 ### Prerequisites
-In order to comfortably follow through, you will need:
-* Android Studio installed
-* Knowledge of Android application development
-* Basic understanding of the AndroidX Room library
-* Basic information of the Kotlin programming language
+To comfortably follow through, you will need:
+* Android Studio installed.
+* Knowledge of Android application development.
+* Basic understanding of the AndroidX Room library.
+* Basic information of the Kotlin programming language.
 
-This article will go through how to get started with WorkManager and how to use it as well as what classes are involved. The final code for this tutorial is available on [Github](https://github.com/LinusMuema/kotlin/tree/workManager). Use it as a reference to follow through the article.
+This article goes through getting started with WorkManager i.e. how to use it and the classes involved. The final code for this tutorial is available on [Github](https://github.com/LinusMuema/kotlin/tree/workManager). Use it as a reference to follow through the article.
 
 Let's get to it.
 
@@ -46,7 +46,7 @@ Click `sync` to download the new dependencies and sync them to your project.
 
 The application follows a basic `MVVM architecture` approach so go ahead and create a ViewModel class for your `MainActivity` class. You can go ahead an download [this](https://github.com/LinusMuema/kotlin/blob/workManager/app/src/main/java/com/moose/androidkt/data/Data.kt) file or copy it's code and add it to your application. The code is in charge of generating random data for us.
 
-The Room database is also set up in the [db package](https://github.com/LinusMuema/kotlin/tree/workManager/app/src/main/java/com/moose/androidkt/db). You can read more about Room in [this article](/engineering-education/android-room)
+The Room database is also set up in the [db package](https://github.com/LinusMuema/kotlin/tree/workManager/app/src/main/java/com/moose/androidkt/db). You can read more about Room in [this article](/engineering-education/introduction-to-room-db)
 
 ### Step 2 - Defining our work
 Create a new package and name it `work`. In here we will place our jobs or work.
@@ -59,7 +59,7 @@ class Work(context: Context, params: WorkerParameters): Worker(context, params) 
 }
 ```
 
-A worker class holds the tasks to be run by our job. The class receives `Context` and `WorkerParameters` as parameters. There is one method that needs to be implemented i.e the `doWork` method.
+A worker class holds the tasks to be run by our job. The class receives `Context` and `WorkerParameters` as parameters. There is one method that needs to be implemented i.e. the `doWork` method.
 
 ```Kotlin
     override fun doWork(): Result {}
@@ -87,9 +87,9 @@ override fun onStopped() {
 }
 ```
 
-First, we initialise the Room Dao and pass in the context available during the work execution. Then we create a `CompositeDisposable` that holds the disposables created during our job execution. We dispose it in the `onStopped` method when the work is done. To read more about RxJava in Android, you can go through [this article](/engineering-education/rxjava-android)
+First, we initialize the Room Dao and pass in the context available during the work execution. Then we create a `CompositeDisposable` that holds the disposables created during our job execution. We dispose it in the `onStopped` method when the work is done. To read more about RxJava in Android, you can go through [this article](/engineering-education/rxjava-android)
 
-We then use a try-catch block to execute our job i.e get a user and save them to our Room database. If any error occurs, the catch block returns a `Result.failure()` otherwise, we return a `Result.success()`
+We then use a try-catch block to execute our job i.e. get a user and save them to our Room database. If any error occurs, the catch block returns a `Result.failure()` otherwise, we return a `Result.success()`
 
 And with that, our work is ready to go!
 
@@ -103,7 +103,7 @@ In our viewmodel class, we create a workManager instance and pass in a context.
 private val manager = WorkManager.getInstance(application)
 ```
 
-Then we create our constraints. These are conditions that are required in order for our work to be done. Constraints range from Network availability to the battery power in the device. In our case, we will require the device's battery level not be low and for the device to be connected to the internet.
+Then we create our constraints. These are conditions that need to be met for our work to be done. Constraints range from Network availability to device's battery power. In our case, we will require the device's battery level not to be low and for the device to be connected to the internet.
 
 ```Kotlin
 // Our work constraints
@@ -117,7 +117,7 @@ You can explore more constraints by checking the `Constraints.java` file availab
 
 **NOTE: To access the library file and other core framework files, hold the `ctrl`/`cmd` key and click the `Constraints` object.**
 
-The only thing remaining is creating the work and setting the constraints. With WorkManager, there are two types of jobs.
+The only thing remaining is creating the work and setting the constraints. As mentioned earlier, there are two types of jobs in `WorkManager`.
 
 **1. One time work**
 This is work/job that is run only once. It is created using the `OneTimeWorkRequest` class which takes one parameter, i.e our worker class. We create one in our code and name it `oneTimeWorker`. We set constraints using the `.setConstraints()` method and pass in our constraints.
@@ -130,7 +130,7 @@ This is work/job that is run only once. It is created using the `OneTimeWorkRequ
 ```
 
 **2. Periodic work**
-Sometimes we may need the work to be run at intervals. In this case, we use the `PeriodicWorkRequest` class. This takes in three parameters i.e our worker class, the interval and the TimeUnit. Add the following in your code.
+Sometimes we may need the work to be run at intervals. In this case, we use the `PeriodicWorkRequest` class. This takes in three parameters i.e. our worker class, the interval and the `TimeUnit`. Add the following code.
 
 ```Kotlin
 // Define Periodic work
@@ -149,9 +149,9 @@ fun startWork(){
 }
 ```
 
-This starts the work for us automatically provided the constraints are met.
+This starts the work for us provided the constraints are met.
 
-Sometimes you may want to chain work i.e start with one job and after completion, begin a second job. The we make use of `beginWith()` and `then()` methods. Each of these methods receives one job as a parameter. They however receive work of `OneTimeWorkRequest` type only. So periodic work cannot be used in a chain.
+Sometimes you may want to chain work i.e. start with one job and after completion, begin a second job. Then we make use of `beginWith()` and `then()` methods. Each of these methods receive one job as a parameter. They however receive work of `OneTimeWorkRequest` type only. So periodic work cannot be used in a chain.
 
 ### Step 4 - Finishing up
 Now that we have our work completely set up. You can go ahead and follow through the repository to check the UI setup.
