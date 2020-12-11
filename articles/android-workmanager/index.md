@@ -1,15 +1,15 @@
 ### Introduction
-Background work has been a core part of android application development for a long time. This is because it allows the execution of tasks without any interference with the user interface. However, implementing such functionality is not an easy task. One has to consider resources such as threads and when to start running the task. Some tasks may even require running at time intervals. Several solutions have come up. Some of these solutions are `IntentServices` and `JobSchedulers`. But they too come with their challenges like chaining tasks and setting constraints. This is where WorkManager comes in to help.
+Background work has been a core part of android application development for a long time. This is because it allows the execution of tasks without any interference with the user interface. However, implementing such functionality is not an easy task. One has to consider resources such as threads and when to start running the task. Some tasks may even require running at time intervals. Several solutions have come up. Some of these solutions are `IntentServices` and `JobSchedulers`. But they too come with their challenges like chaining tasks and setting constraints. This is where `WorkManager` comes in to help.
 
 ### What is WorkManager
-This is an AndroidX library that helps in running tasks asynchronously. It ensures that the work is done even if the user exits the app or the device restarts. It makes use of the existing job services to do the work. This means that it can support devices up to API level 14. WorkManager makes running background tasks easier and gives other awesome perks too:
+This is an AndroidX library that helps in running tasks asynchronously. It ensures that the work is done even if the user exits the app or the device restarts. It makes use of the existing job services to do the work. This means that it can support devices up to API level 14. `WorkManager` makes running background tasks easier and gives other awesome perks too:
 
-* **constraints**: with WorkManager, you can easily set conditions that should be met for the task to run.
+* **constraints**: with `WorkManager`, you can easily set conditions that should be met for the task to run.
 * **chaining**: you can easily tie multiple tasks to run at the same time or one after another.
 * **threading**: like most AndroidX libraries, it comes with support for `coroutines` and `rxjava` for better thread management.
 * **work execution**: you have two options to define the execution of work. i.e. either once or periodically.
 
-In a normal WorkManager setting, you have three parts:
+In a normal `WorkManager` setting, you have three parts:
 1. **_the work definition_**: this is where you define the task or rather, the job.
 2. **_the work creation_**: you create the job and set constraints to it. You may create it as a one time job or one that runs at intervals.
 3. **_queueing the work_**: you use the `WorkManager` instance to start/launch your job.
@@ -21,7 +21,7 @@ To comfortably follow through, you will need:
 * Basic understanding of the AndroidX Room library.
 * Basic information of the Kotlin programming language.
 
-This article goes through getting started with WorkManager i.e. how to use it and the classes involved. The final code for this tutorial is available on [Github](https://github.com/LinusMuema/kotlin/tree/workManager). Use it as a reference to follow through the article.
+This article goes through getting started with `WorkManager` i.e. how to use it and the classes involved. The final code for this tutorial is available on [Github](https://github.com/LinusMuema/kotlin/tree/workManager). Use it as a reference to follow through the article.
 
 Let's get to it.
 
@@ -44,7 +44,7 @@ implementation 'androidx.work:work-runtime-ktx:2.4.0'
 
 Click `sync` to download the new dependencies and sync them to your project.
 
-The application follows a basic `MVVM architecture` approach so go ahead and create a ViewModel class for your `MainActivity` class. You can go ahead an download [this](https://github.com/LinusMuema/kotlin/blob/workManager/app/src/main/java/com/moose/androidkt/data/Data.kt) file or copy it's code and add it to your application. The code is in charge of generating random data for us.
+The application follows a basic `MVVM architecture` approach so go ahead and create a `ViewModel` class for your `MainActivity` class. You can go ahead an download [this](https://github.com/LinusMuema/kotlin/blob/workManager/app/src/main/java/com/moose/androidkt/data/Data.kt) file or copy it's code and add it to your application. The code is in charge of generating random data for us.
 
 The Room database is also set up in the [db package](https://github.com/LinusMuema/kotlin/tree/workManager/app/src/main/java/com/moose/androidkt/db). You can read more about Room in [this article](/engineering-education/introduction-to-room-db)
 
@@ -65,7 +65,7 @@ A worker class holds the tasks to be run by our job. The class receives `Context
     override fun doWork(): Result {}
 ```
 
-This method runs our job on a different thread provided by WorkManager. The return type is `ListenableWorker.Result` which informs WorkManager the state of the job/work. Go ahead and add the implementation of the work in the `doWork` method.
+This method runs our job on a different thread provided by `WorkManager`. The return type is `ListenableWorker.Result` which informs `WorkManager` the state of the job/work. Go ahead and add the implementation of the work in the `doWork` method.
 
 ```Kotlin
 private val dao = AppDatabase.getDatabase(context).dao()
@@ -87,7 +87,7 @@ override fun onStopped() {
 }
 ```
 
-First, we initialize the Room Dao and pass in the context available during the work execution. Then we create a `CompositeDisposable` that holds the disposables created during our job execution. We dispose it in the `onStopped` method when the work is done. To read more about RxJava in Android, you can go through [this article](/engineering-education/rxjava-android)
+First, we initialize the Room Dao and pass in the context available during the work execution. Then we create a `CompositeDisposable` that holds the disposables created during our job execution. We dispose it in the `onStopped` method when the work is done. To read more about `RxJava` in Android, you can go through [this article](/engineering-education/rxjava-android)
 
 We then use a try-catch block to execute our job i.e. get a user and save them to our Room database. If any error occurs, the catch block returns a `Result.failure()` otherwise, we return a `Result.success()`
 
@@ -96,7 +96,7 @@ And with that, our work is ready to go!
 ### Step 3 - Scheduling the work
 The next step is to register the work and set it rolling.
 
-In our viewmodel class, we create a workManager instance and pass in a context.
+In our `ViewModel` class, we create a `WorkManager` instance and pass in a context.
 
 ```Kotlin
 // WorkManager instance
@@ -120,7 +120,7 @@ You can explore more constraints by checking the `Constraints.java` file availab
 The only thing remaining is creating the work and setting the constraints. As mentioned earlier, there are two types of jobs in `WorkManager`.
 
 **1. One time work**
-This is work/job that is run only once. It is created using the `OneTimeWorkRequest` class which takes one parameter, i.e our worker class. We create one in our code and name it `oneTimeWorker`. We set constraints using the `.setConstraints()` method and pass in our constraints.
+This is work/job that is run only once. It is created using the `OneTimeWorkRequest` class which takes one parameter, i.e. our worker class. We create one in our code and name it `oneTimeWorker`. We set constraints using the `.setConstraints()` method and pass in our constraints.
 
 ```Kotlin
   // Define OneTime work
@@ -141,7 +141,7 @@ private val periodicWork = PeriodicWorkRequest.Builder(Work::class.java, 15, Tim
 
 We set our time interval to 15 minutes. This is the minimum interval defined in the [documentation](https://developer.android.com/reference/kotlin/androidx/work/PeriodicWorkRequest).
 
-To start our work, we pass in the defined work into the workManager instance we created. We call the `enqueue()` method and pass in our work. Since we have multiple jobs defined, we can pass in a list of jobs as a parameter. Create a function called `startWork()` and add the following code.
+To start our work, we pass in the defined work into the `WorkManager` instance we created. We call the `enqueue()` method and pass in our work. Since we have multiple jobs defined, we can pass in a list of jobs as a parameter. Create a function called `startWork()` and add the following code.
 
 ```Kotlin
 fun startWork(){
@@ -156,7 +156,10 @@ Sometimes you may want to chain work i.e. start with one job and after completio
 ### Step 4 - Finishing up
 Now that we have our work completely set up. You can go ahead and follow through the repository to check the UI setup.
 
-Once the application starts, it calls the `startWork` function which starts our work. This starts both the oneTimeWork and periodicWork. The one time work completes immediately and adds one user to the Room database. The periodicWork also starts by adding one user to the database and another user after 15 minutes. So after 2 hours, the periodicWork will have added 8 users. On the first run the application should show 2 users. One from the oneTimeWork and another from the periodicWork.
+Once the application starts, it calls the `startWork` function which starts our work. This starts both the `oneTimeWork` and `periodicWork`. The one time work completes immediately and adds one user to the Room database. The `periodicWork` also starts by adding one user to the database and another user after 15 minutes. So after 2 hours, the `periodicWork` will have added 8 users. On the first run the application should show 2 users. One from the `oneTimeWork` and another from the `periodicWork`.
 
 ### Conclusion
-With that, you have the basic information about WorkManager. As you can see, it is easier to schedule background tasks. You are able to run tasks like network calls even if the application closes. A good use case could be backing up data on a different network like cloud services. This can be done when some constraints are met and you have the assurance of your work being done. Go ahead and clone the [repo](https://github.com/LinusMuema/kotlin/tree/workManager) and run the application. Feel free to raise a PR or an issue with any updates.
+With that, you have the basic information about `WorkManager`. As you can see, it is easier to schedule background tasks. You are able to run tasks like network calls even if the application closes. A good use case could be backing up data on a different network like cloud services. This can be done when some constraints are met and you have the assurance of your work being done. Go ahead and clone the [repo](https://github.com/LinusMuema/kotlin/tree/workManager) and run the application. Feel free to raise a PR or an issue with any updates.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
