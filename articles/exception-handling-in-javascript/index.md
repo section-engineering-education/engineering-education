@@ -1,6 +1,6 @@
 ### Introduction
 
-Developers face problems and obstacles while coding. With the use of exceptions, you can responsibly manage these problems. In this article, we will understand exception handling in JavaScript. Exception handling is a necessary process of the development process.
+Developers face problems and obstacles while coding. With the use of exceptions, you can responsibly manage these problems. Exception handling is the process of converting a code error message into a user-friendly error message. In this article, we will go through exception handling in JavaScript. Exception handling is a necessary step in the development process.
 
 ### Table of Contents
 
@@ -12,28 +12,27 @@ Developers face problems and obstacles while coding. With the use of exceptions,
 
 ### Prerequisites
 
-Exception Handling in JavaScript is an exciting and interactive topic.
-
-Therefore, I recommend the reader to have a basic understanding of HTML, CSS, and JavaScript.
+Exception Handling in JavaScript is an exciting and interactive topic. Therefore, I recommend the reader to have a basic understanding of HTML, CSS, and JavaScript.
 
 ### What is Exception Handling
 
-Errors occur due to mistakes made by developers, wrong input, and unforeseeable things. When JavaScript encounters an error in the process of running a code. It immediately stops the execution and raises an exception. An exception is an object with a description of what went wrong. Also, it discovers where the problem occurred. In a programming environment, exceptions can be handled, but errors cannot.
+An exception is an object with a description of what went wrong. Also, it discovers where the problem occurred.
+Errors occur due to mistakes made by developers, wrong input, and unforeseeable things. When JavaScript encounters an error in the process of running a code. It immediately stops the execution and raises an exception. In a programming environment, exceptions can be handled, but errors cannot.
 
-If a software engineer fails to plan for failure, then whatever project or code they are working on will not be successful. That is where [exception handling](https://en.wikipedia.org/wiki/Exception_handling) comes in. Exception handling is the process of converting a code error message into a user-friendly error message. When JavaScript encounters an error and raises an exception. The JavaScript translator looks for an exception handling code instead of proceeding to the next statement.
+If a software engineer fails to plan for failure, then whatever project or code they are working on will not be successful. That is where [exception handling](https://en.wikipedia.org/wiki/Exception_handling) comes in. When JavaScript encounters an error and raises an exception. The JavaScript translator looks for an exception handling code instead of proceeding to the next statement.
 
 Exception handling is a powerful JavaScript feature to handle errors and maintain a regular JavaScript code/program flow.
 
-There are several reasons why exceptions occur. These are some of the reasons why exceptions occur:
+Some of the reasons why exceptions occur are:
 
-- By dividing a number with zero results in infinity, thus throwing an exception.
+- Dividing a number by zero: This results into infinity, thus throwing an exception.
 - When a file that is requested does not exist in the system.
 - When the user provides the wrong input.
 - When the network drops during communication.
 
 ### JavaScript Error Types
 
-Different errors occur while executing a JavaScript code. There are three types of errors.
+Different errors may occur while executing a JavaScript code. There are three types of errors.
 
 1. [**Syntax Errors:**](https://developer.mozilla.org/en-US/docs/Glossary/Syntax_error#:~:text=An%20exception%20caused%20by%20the,you%20trigger%20a%20syntax%20error.) Errors that cannot be interpreted by the computer. Besides, these errors stop the program from working. In JavaScript, these errors are:
 
@@ -54,20 +53,20 @@ These errors are often caused by:
 
 When a runtime error occurs, it stops the code and raises an error object. The error object has two properties:
 
-- name: It gives the error name.
-- message: It sets or returns the error message in the form of a string.
+- Name: It gives the error name.
+- Message: It sets or returns the error message in the form of a string.
 
 JavaScript uses six types of error objects. These error objects are the foundation of exception handling.
 
-#### Eval Error
+#### EvalError
 
 The EvalError function indicates the error that occurred in the [```eval()```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) function. It is a global function that evaluates the JavaScript string. This exception is not thrown anymore by JavaScript. It is used for compatibility.
 
-#### Range Error
+#### RangeError
 
 A RangeError is raised when a numeric value is outside the specified range.
 
-#### Reference Error
+#### ReferenceError
 
 A ReferenceError exception is raised if a variable that is not declared is used. These exceptions commonly occur due to spelling errors on variables.
 
@@ -75,11 +74,11 @@ A ReferenceError exception is raised if a variable that is not declared is used.
 
 A Syntax Error exception is raised while compiling a code with syntax errors.
 
-#### Type Error
+#### TypeError
 
 A TypeError exception is raised when a value is different from the one expected.
 
-#### URI Error
+#### URIError
 
 A URIError exception is raised by ```encodeURI()``` and ```decodeURI()``` methods.
 
@@ -91,7 +90,7 @@ We now know what exceptions are. It's now time to understand how to handle them 
 
 **```try-catch-finally```** statement is a code or program that handles exceptions.
 
-**```try```** clause identify the code that generates exceptions.
+**```try```** clause identifies the code that generates exceptions.
 
 **```catch```** clause catch exceptions that are thrown.
 
@@ -201,6 +200,6 @@ Here is an example of ```try-catch-finally``` statements.
 </html>
 ```
 
-### Wrapping Up
+### Wrapping up
 
-That's all there is for this article. We have learnt what exception handling is, the different errors, and the error objects in JavaScript. Finally, we have learnt how to handle exceptions in JavaScript. I hope this article has helped you understand the concept of handling exceptions in JavaScript. Good luck!
+That's all there is for this article. We have learned what exception handling is, the different types of errors, and the error objects in JavaScript. We have also learned how to handle exceptions in JavaScript. I hope this article has helped you understand the concept of handling exceptions in JavaScript. Good luck!
