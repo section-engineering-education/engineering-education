@@ -44,7 +44,7 @@ To begin, we will be setting up a basic Maven project. To get the dependencies w
 
 As well, make sure you set up the appropriate java version since JUnit 5 uses features of Java 8.
 
-```xml
+```Xml
 <properties>
    <maven.compiler.target>1.8</maven.compiler.target>
    <maven.compiler.source>1.8</maven.compiler.source>
@@ -61,13 +61,11 @@ First, our calculator will need a basic addition method to add two integers. As 
 
 Starting, we create a new class called `Calculator`. This class will have an `add` method as follows.
 
-```java
+```Java
 public class Calculator {
 
    public int add(int a, int b){
-
        return a + b;
-
    }
 
 }
@@ -75,7 +73,7 @@ public class Calculator {
 
 From here, we create a new class in our `test/java` folder named `CalculatorTest`. As the name suggests, this is where our tests will go. First, let’s make a test for when we add 2 to 2. To create our first test, we simply create a new void method with the `@Test` annotation:
 
-```java
+```Java
 @Test
 void test1() {
 
@@ -84,9 +82,8 @@ void test1() {
 
 As the name suggests, this tells JUnit to treat our method as a test. Within each test, we need to make comparisons between our expected and actual results. We do so using static methods of the `org.junit.jupiter.api.Assertions` class. With this in mind, we need to assert that our `add` method returns 4 when called with two 2’s as arguments. To do so, we use the static `assertEquals` method of the Assertions class as follows.
 
-```java
+```Java
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
@@ -95,10 +92,8 @@ class CalculatorTest {
 
    @Test
    void test1() {
-
        // Assert that our Calculator instance returns 4 when adding 2 + 2
        assertEquals(4, calc.add(2, 2));
-
    }
 
 }
@@ -108,19 +103,15 @@ Note that we can call the `assertEquals` method directly because of the static i
 
 Very easy right? We just created our first unit test for the `add` method of our `Calculator` class. Now that you understand the basic structure of a unit test, let’s create our other tests:
 
-```java
+```Java
 @Test
 void test2(){
-
     assertEquals(3, calc.add(4, -1));
-
 }
 
 @Test
 void Test3(){
-
    assertEquals(-2, calc.add(-1, -1));
-
 }
 ```
 
@@ -133,7 +124,7 @@ To help increase the readability of our tests, we can change their name when run
 ###Nested Test Classes
 Before we begin writing tests for other calculator methods, let’s organize this test class a bit. This class will have tests for all the methods in the `Calculator` class. This gives it the potential to get disorganized. To improve the organization, we will use nested test classes. These are simply nested classes in our test class with the `@Nested` annotation. We put tests for one method in a single class.
 
-```java
+```Java
 // Set display name for nested class
 @Nested
 @DisplayName("Testing the add method: ")
@@ -143,25 +134,19 @@ class AdditionTests{
    @Test
    @DisplayName("When adding 2 and 2, expect 4")
    void test1() {
-
        assertEquals(4, calc.add(2, 2));
-
    }
 
    @Test
    @DisplayName("When adding 4 and -1, expect 3")
    void test2(){
-
        assertEquals(3, calc.add(4, -1));
-
    }
 
    @Test
    @DisplayName("When adding -1 and -1, expect -2")
    void Test3(){
-
        assertEquals(-2, calc.add(-1, -1));
-
    }
 
 }
@@ -170,7 +155,7 @@ class AdditionTests{
 ###Testing a Divide Method
 Now let’s practice and learn more by creating tests for a `divide` method. Let's first think about the types of tests we should write for this method. Thinking about edge cases, one critical test to write would test the case of zero division. Aside from that, we should test different combinations of sizes of divisors and dividends. For simplicity’s sake let’s only write a test for zero division. Notice for this case we would want our `divide` method to throw an `IllegalArgumentException`. To test this behavior, we would need to use the `assertThrows` method of the `Assertions` class:
 
-```java
+```Java
 @Nested
 @DisplayName("Testing the divide method: ")
 class DivisionTests{
@@ -178,10 +163,8 @@ class DivisionTests{
    @Test
    @DisplayName("When dividing by zero, expect an Arithmetic Exception")
    void test1() {
-
        // Takes the expected exception and an executable with the code we expect to throw an exception
        assertThrows(IllegalArgumentException.class, () -> calc.divide(1, 0));
-
    }
 
 }
@@ -194,13 +177,13 @@ Now that we got the basics of JUnit covered, let’s see where Mockito comes int
 
 To show you how this works, let’s try implementing a test for this `power` method. This test will simply verify that our `power` method returns 4 when called with 2 and 2 as parameters. Note, we will make our `Calculator` class accept the `MultiplicationService` from its constructor. This would allow us to give it our mock object for use in the test. Starting, we need to import all the static methods of the `Mockito` class:
 
-```java
+```Java
 import static org.mockito.Mockito.*;
 ```
 
 Next, we need to add the following lines of code on top of our test class.
 
-```java
+```Java
 // Create a mock object of type MultiplicationService
 private final MultiplicationService multiplier = mock(MultiplicationService.class);
 private final Calculator calc = new Calculator(multiplier);
@@ -208,34 +191,26 @@ private final Calculator calc = new Calculator(multiplier);
 
 Before we write our test, let’s look at the implementation of the `power` method to see how it uses the `multiply` method.
 
-```java
+```Java
 public double power(double a, double b){
-
    double result = 1;
    for(int i = 0; i < b; i++){
-
        result = multiplier.multiply(result, a);
-
    }
-
    return result;
-
 }
 ```
 
 The `power` method iterates `b` number of times, multiplying the result by `a`. Thus, it calls the `multiply` method 2 times, first with 1 and 2 as arguments, then 2 and 2. These method calls return 2.0 and 4.0 respectively. Thus, we need to set up our mock object to have these behaviors.
 
-```java
+```Java
 @Test
 @DisplayName("When evaluating 2^2, expect 4.0")
 void test1() {
-
    // The when and thenReturn methods come from the org.mockito package.
    when(multiplier.multiply(1, 2)).thenReturn(2.0);
    when(multiplier.multiply(2, 2)).thenReturn(4.0);
-
    assertEquals(4.0, calc.power(2,2));
-
 }
 ```
 
@@ -243,3 +218,6 @@ As intuitively as that, we set up our mock object to return the right values the
 
 ###Conclusion
 In this tutorial, we have gone over the basics of JUnit and Mockito. We learned how to write unit tests, how to create mock objects, and some useful tips along the way. With these new tools at your disposal, you should be able to better maintain and improve your code. This is an especially useful tool to make you a more productive programmer. This is by no means a comprehensive guide on what there is to know about the two frameworks. To learn more, I highly recommend looking at the documentation for [JUnit](https://junit.org/junit5/docs/current/user-guide/) and [Mockito](https://javadoc.io/doc/org.mockito/mockito-core/latest/index.html). Finally, if you want a reference to all the code written here, refer to this [repository](https://github.com/john-amiscaray/JUnitAndMockitoExample).
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
