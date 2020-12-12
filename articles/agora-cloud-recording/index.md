@@ -1,7 +1,6 @@
 In this tutorial, we will be building a server using Node.js and Express to start, query, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the APIs provided by Agora.
 
 ### Goals
-
 By the end of this tutorial, you’ll know:
 
 - How Agora's cloud recording works.
@@ -11,7 +10,6 @@ By the end of this tutorial, you’ll know:
 - How to set up an Express server to start, query, and stop cloud recording.
 
 ### Prerequisites
-
 This tutorial is for applications that use [Agora](https://www.agora.io/) and want to implement cloud recording. If you are not using Agora in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
@@ -23,7 +21,6 @@ If you'd like to learn how to build some applications with React Native and Agor
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
 ### Agora
-
 Agora.io was founded in 2014. It's a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
 
 Agora provides SDKs to build apps that require real-time engagement like:
@@ -41,7 +38,6 @@ Agora is a paid service, but the first 10,000 minutes are free every month. You 
 If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
 
 ### Overview
-
 We'll be going through these steps in this article:
 
 1. Cloud recording vs. On-Premise recording.
@@ -54,7 +50,6 @@ We'll be going through these steps in this article:
 8. Recap.
 
 ### Cloud recording vs. On-Premise recording.
-
 [Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record and save voice calls, video calls, and interactive streaming on your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams. Once the recording ends, Agora will upload the recorded video to your cloud storage.
 
 Agora supports uploads to Amazon S3, Qiniu Cloud, Alibaba Cloud, Tencent Cloud, Kingsoft Cloud.
@@ -70,7 +65,6 @@ If you'd like to learn more about the differences between cloud recording and on
 Agora will bill you for the cloud recording service. You can check their billing policies [here](https://docs.agora.io/en/cloud-recording/billing_cloud_recording?platform=RESTful).
 
 ### Enabling cloud recording in the project management console
-
 To use cloud recording in your application, you must enable cloud recording from the Agora Project Management Console.
 
 Head to the console and open Project Management.
@@ -94,7 +88,6 @@ Once you hit Apply, you will see the statistics page of the cloud recording.
 You have successfully enabled cloud recording for your project.
 
 ### Acquiring authentication keys for Agora APIs
-
 If you want to work with Agora's APIs, you need to acquire the client ID and client secret from Agora.
 
 Head to the console and click the account name on the top right corner and click on RESTful API from the dropdown.
@@ -118,7 +111,6 @@ const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env
 I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios [here](https://www.npmjs.com/package/axios).
 
 ### Setting up the server
-
 > You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). To test the server, I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
 
 Let's install `Express` using `NPM`.
@@ -149,7 +141,6 @@ node index.js
 This server will be listening on port 3000 and when you hit the `'/'` endpoint, it'll send `"Agora Cloud Recording Server"`.
 
 ### Recording
-
 We need to use the RESTful APIs in the following sequence.
 
 1. Acquire Resource
@@ -166,8 +157,7 @@ If you have set up token authentication for your Agora project, you should also 
 
 At the time of writing this article, Agora cloud recording does not support user accounts yet. Make sure that the recording channel uses integer UIDs. If you'd like to learn more about user accounts, refer [here](https://docs.agora.io/en/All/faq/string).
 
-### Acquire Resource ID
-
+### Acquire resource ID
 Let's add a POST handler for a new endpoint called `'/acquire'` to acquire the resource ID for the cloud recording.
 
 ```JavaScript
@@ -202,8 +192,7 @@ app.post("/acquire", (req, res) => {
 });
 ```
 
-### Start Recording
-
+### Start recording
 Now, Let's add a POST handler for a new endpoint called `'/start'` to start the cloud recording.
 
 ```JavaScript
@@ -235,9 +224,13 @@ We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd 
 - **Vendor**: The cloud storage vendor.
 
   - **0**: Qiniu Cloud
+
   - **1**: Amazon S3
+
   - **2**: Alibaba Cloud
+
   - **3**: Tencent Cloud
+
   - **4**: Kingsoft Cloud
 
 - **Region**: The regional information specified by cloud storage:
@@ -335,8 +328,7 @@ app.post("/start", async (req, res) => {
 
 If the request is successful, the response will contain the recording ID (sid) and the resource ID. We need the recording ID to `query`, `updateLayout`, or `stop` the recording.
 
-### Stop cloud recording
-
+### Stop recording
 Now, Let's add a POST handler for a new endpoint called `'/stop'` to stop the cloud recording.
 
 ```JavaScript
@@ -361,8 +353,7 @@ The uploading status can either be,
 
 - **unknown**: Unknown status.
 
-### Query the recording
-
+### Query recording session
 You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with a 404.
 
 Now, Let's add a POST handler for a new endpoint called `'/query'` to query the recording session.
