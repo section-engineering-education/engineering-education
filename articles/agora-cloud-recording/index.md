@@ -430,7 +430,7 @@ Response:
     "fileListMode": "json",
     "fileList": [
     {
-      "filename": "example1.m3u8",
+      "filename": "M6ETnKVtPbAY892ffaj3.m3u8",
       "trackType": "audio_and_video",
       "uid": "123",
       "mixedAllUser": true,
@@ -438,7 +438,7 @@ Response:
       "sliceStartTime": 1562724971626
     },
     {
-      "filename": "example2.m3u8",
+      "filename": "hlvM26hvtnXjj62fAkMc.m3u8",
       "trackType": "audio_and_video",
       "uid": "456",
       "mixedAllUser": true,
@@ -516,6 +516,48 @@ If the request is successful, the response will contain the details about the re
 - **Extension Service State**: The status of the extension services.
 
 - **Sub Service Status**: The status of the cloud recording submodules.
+
+Request body:
+
+```json
+{
+    "mode": "mix",
+    "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
+    "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+}
+```
+
+Response:
+
+```json
+{
+  "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
+  "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
+  "serverResponse":{
+    "status": "5",
+    "fileListMode": "json",
+    "fileList": [
+      {
+          "filename": "M6ETnKVtPbAY892ffaj3.m3u8",
+          "trackType": "audio_and_video",
+          "uid": "123",
+          "mixedAllUser": true,
+          "isPlayable": true,
+          "sliceStartTime": 1562724971626
+      },    
+      {
+          "filename": "hlvM26hvtnXjj62fAkMc.m3u8",
+          "trackType": "audio_and_video",
+          "uid": "456",
+          "mixedAllUser": true,
+          "isPlayable": true,
+          "sliceStartTime": 1562724971626
+      }
+    ],
+    "sliceStartTime": 1562724971626
+   }       
+}
+```
 
 ### Let's Recap
 1. We learned about cloud recording, on-premise recording, and the differences between them.
