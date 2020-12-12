@@ -192,6 +192,23 @@ app.post("/acquire", (req, res) => {
 });
 ```
 
+Request body:
+
+```json
+{
+    "channel": "Jo6m9E20E02m9yE5maNk",
+    "uid": "45687",
+}
+```
+
+Response:
+
+```json
+{
+ "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+}
+```
+
 ### Start recording
 Now, Let's add a POST handler for a new endpoint called `'/start'` to start the cloud recording.
 
@@ -328,6 +345,26 @@ app.post("/start", async (req, res) => {
 
 If the request is successful, the response will contain the recording ID (sid) and the resource ID. We need the recording ID to `query`, `updateLayout`, or `stop` the recording.
 
+Request body:
+
+```json
+{
+    "channel": "Jo6m9E20E02m9yE5maNk",
+    "uid": "45687",
+    "mode": "mix",
+    "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+}
+```
+
+Response:
+
+```json
+{
+  "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a", 
+  "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+}
+```
+
 ### Stop recording
 Now, Let's add a POST handler for a new endpoint called `'/stop'` to stop the cloud recording.
 
@@ -370,6 +407,49 @@ The uploading status can either be,
 - **backuped**: Some of the recorded files fail to upload to the third-party cloud storage and upload to Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage.
 
 - **unknown**: Unknown status.
+
+Request body:
+
+```json
+{
+    "channel": "Jo6m9E20E02m9yE5maNk",
+    "uid": "45687",
+    "mode": "mix",
+    "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
+    "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+}
+```
+
+Response:
+
+```json
+{
+  "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
+  "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
+  "serverResponse":{
+    "fileListMode": "json",
+    "fileList": [
+    {
+      "filename": "example1.m3u8",
+      "trackType": "audio_and_video",
+      "uid": "123",
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
+    },
+    {
+      "filename": "example2.m3u8",
+      "trackType": "audio_and_video",
+      "uid": "456",
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
+    }
+    ],
+    "uploadingStatus": "uploaded"
+  }
+}
+```
 
 ### Query recording session
 You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with a 404.
@@ -438,7 +518,6 @@ If the request is successful, the response will contain the details about the re
 - **Sub Service Status**: The status of the cloud recording submodules.
 
 ### Let's Recap
-
 1. We learned about cloud recording, on-premise recording, and the differences between them.
 
 2. We enabled cloud recording from the project management console.
