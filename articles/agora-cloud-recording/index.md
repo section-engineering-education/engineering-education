@@ -466,6 +466,6 @@ Response:
 
 7. We added a POST handler to stop the recording session.
 
-8. We added a POST handler to query the recording session which will return the state of the recording session along with other details.
-
 Congratulations, :partying_face: You did it.
+
+Thanks for reading!
