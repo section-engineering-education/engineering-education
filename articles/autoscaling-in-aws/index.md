@@ -3,6 +3,8 @@
 ### Introduction to Amazon Web Services
 Amazon Web Services (AWS) are cloud computing services that provide application programming interfaces (APIs) and platforms for cloud computing to governments, individuals, and companies. These platforms include a mixture of various offerings such as software as a service (SAAS), infrastructure as a service (IAAS), and platform as a service (PAAS). 
 
+SAAS is a service model where a software is licensed out (usually) on a subscription basis (eg. Google drive). PAAS is a service that provides the infrastructure, hardware and software required for application development (eg. AWS Elastic Beanstalk). IAAS is a service model that provides the fundamental compute, storage and network resources for cloud computing (eg. AWS). 
+
 Some of the tools offered by AWS include content delivery, database storage, and computing power. Other services provided include data management, hybrid cloud, networking, artificial intelligence, development tools, analytics, security, and mobile development.
 
 ![Amazon Web Services](/engineering-education/autoscaling-in-amazon-web-services/amazon-web-services.png)
