@@ -19,7 +19,7 @@ A hill-climbing algorithm has three main features:
 * **Incremental change:** The algorithm improves the current solution by incremental changes. 
  
 ### State-Space Diagram Analysis
-A state-space diagram provides a graphical representation of states and the objective function. If the objective function is the y-axis, we aim to establish the local maximum and global maximum. If the cost function represents this axis, we aim to establish the local minimum and global minimum. More information about local minimum, local maximum, global minimum, and global maximum can be found [here](https://en.wikipedia.org/wiki/Maxima_and_minima). 
+A state-space diagram provides a graphical representation of states and the optimization function. If the objective function is the y-axis, we aim to establish the local maximum and global maximum. If the cost function represents this axis, we aim to establish the local minimum and global minimum. More information about local minimum, local maximum, global minimum, and global maximum can be found [here](https://en.wikipedia.org/wiki/Maxima_and_minima). 
 
 The following diagram shows a simple state-space diagram. The objective function has been shown on the y-axis, while the state-space represents the x-axis.
 
