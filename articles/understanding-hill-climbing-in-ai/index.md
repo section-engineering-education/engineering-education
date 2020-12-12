@@ -40,7 +40,7 @@ There are three regions in which a hill-climbing algorithm cannot attain a globa
 #### Local maximum
 At this point, the neighboring states have lower values than the current state. The greedy approach feature will not move the algorithm to a worse off state. This will lead to the hill-climbing process's termination, even though this is not the best possible solution.
 
-This problem can be solved using momentum. This technique adds a certain proportion (m) of the initial weight to the current one. m is a value that is between 0 and 1. Momentum enables the hill-climbing algorithm to take huge steps that will make it move past the local maximum. 
+This problem can be solved using momentum. This technique adds a certain proportion (m) of the initial weight to the current one. m is a value between 0 and 1. Momentum enables the hill-climbing algorithm to take huge steps that will make it move past the local maximum. 
 #### Plateau
 In this region, the values attained by the neighboring states are the same. This makes it difficult for the algorithm to choose the best direction.
 
