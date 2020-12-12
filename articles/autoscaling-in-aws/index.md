@@ -11,15 +11,15 @@ Some of the tools offered by AWS include content delivery, database storage, and
 ### What is Autoscaling?
 Autoscaling refers to a cloud computing feature in which computational resources are varied automatically based on usage. In this context, computational resources are measured by the number of servers (active). In this feature, computational resources are added or removed depending on demand to ensure that the traffic slump or surge is handled smoothly. 
 
-For example, when there is a heavy traffic load, the autoscaling feature increases the computational resources to reduce the risk of crumbling.  In times of low traffic, the cloud auto-scaler will automatically reduce computational resources. 
+For example, when there is heavy traffic load, the autoscaling feature increases the computational resources to reduce the risk of crumbling.  In times of low traffic, the cloud auto-scaler will automatically reduce computational resources. 
 
 ### Introduction to AWS Autoscaling 
-AWS autoscaling is an advanced feature in cloud computing in which resource management is done automatically depending on the server load. The resources are scaled up or down through various mechanisms. 
+AWS autoscaling is an advanced feature offered in Amazon Web Services. In this feature, resource management is done automatically depending on the server load. The resources are scaled up or down through various mechanisms. 
 
 AWS offers flexibility in the configuration of a threshold CPU utilization value. A threshold level of resource utilization can also be configured. When the threshold is reached by the server, the AWS service will automatically initiate the scaling of resources. 
 
 ### Components of AWS Autoscaling
-The main components of AWS that are involved in autoscaling include autoscaling aroups, Amazon Machine Image (AMI), load balancer, snapshot, and EC2 instance. 
+The main components of AWS that are involved in autoscaling include autoscaling groups, Amazon Machine Image (AMI), load balancer, snapshot, and EC2 instance. 
 
 #### EC2 Instance
 This is a virtual server that exists in the Elastic Compute Cloud (EC2). AWS applications are deployed through this server. This web service provides secure and resizable cloud computing capacity.
@@ -75,6 +75,77 @@ When there is a heavy traffic, the AWS autoscaling service will initiate the add
 
 When new instances are launched, the load balancer will divide traffic among them. The system load is used as the basis for the division of traffic. The ratio of division depends on the type of load balancer employed. In the case of a classic load balancer, the traffic will be divided equally. In application balancer, some rules will be used to guide the division of traffic.
 
+### Getting Started With AWS Autoscaling: A Simple Practical Guide
+Using autoscaling in AWS requires you to make two main configurations: launch configuration and creating an autoscaling group. Before performing these set-ups, users should meet the following prerequisites.
+
+* An AWS account. This can be created [here](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start).
+* Stable internet access
+* AMI. Follow this [link](https://linuxroutes.com/create-custom-ami-aws/#:~:text=%20Steps%20to%20create%20custom%20AMI%20in%20AWS%3A,you%20can%20change%20the%20size%20of...%20More%20) to get a simple guide on how to create a custom AMI.
+
+#### 1. Launch Configuration
+To perform launch configuration, go to the right hand side of the dashboard and select the icon 'autoscaling'. There are two aspects under this icon: launch configuration and autoscaling group. Choose 'launch configuration' and then select 'create launch configuration'. 
+
+The following diagram shows the six main steps taken in creating a launch configuration (at the top).
+
+![Launch Configuration](/engineering-education/autoscaling-in-amazon-web-services/launch-configuration.png)
+
+[Image Source: WhizLabs](https://www.whizlabs.com/wp-content/uploads/2017/04/Figure2_LaunchConfiguration.png)
+
+**Step 1:** Choose AMI
+
+This step involves choosing the AMI that was created above. 
+
+**Step 2:** Choose instance type
+
+In this step, users should choose instance types that suit their need. 
+
+**Step 3:** Configure details
+
+This involves giving the launch configuration a name depending on the project you are working on. In this step, you can also enable monitoring and select the purchasing option.
+
+**Step 4:** Add storage
+
+This step involves creating the storage settings for your instance.
+
+**Step 5:** Configure security group
+
+Here, users should select a security group that will be attached automatically when a new instance is launched.
+
+**Step 6:** Review
+
+Review the configurations made in steps 1 to 5. Users can edit their settings based on their needs. If all the details are correct, click on 'create launch configuration'. This will lead you to a new window requiring you to choose a key pair (for the new instance). 
+
+When this is done, click on 'create launch configuration'. This will generate a message showing the status of launch configuration. If the launch configuration is done successfuly, proceed to the next stage of creating an autoscaling group. 
+
+#### 2. Creating Autoscaling Group
+To create an autoscaling group, go to the right hand side of the dashboard and click on the icon 'autoscaling'. Choose 'create autoscaling group'. 
+
+The following diagram shows the five main steps taken in creating an autoscaling group.
+
+![Creating Autoscaling Group](/engineering-education/autoscaling-in-amazon-web-services/creating-autoscaling-group.png)
+
+[Image Source: WhizLabs](https://www.whizlabs.com/wp-content/uploads/2017/04/Figure3_AutoScalingGroup.png)
+
+**Step 1:** Configure autoscaling group details
+
+This step involves configuring settings for aspects such as monitoring, load balancers, and health check type.
+
+**Step 2:** Configure scaling policies
+
+Some of the aspects that need configuration in this step include the number of instances needed, metric type, and target value. Users can also create alarms in this step. 
+
+**Step 3:** Configure notifications
+
+Here, users should select notifications that will be sent to a certain endpoint (e.g email) if specific events occur (e.g instance termination). 
+
+**Step 4:** Configure tags
+
+In this step, users should add new tags in the form of key-value pairs. These are used to identify a user's group. 
+
+**Step 5:** Review
+
+Establish whether all details are correct. If this is the case, click on 'create autoscaling group'. This will generate a message indicating that the action is successful. 
+ 
 ### Benefits of AWS Autoscaling
 AWS autoscaling provides the following benefits to users;
 * AWS autoscaling enables users to minimize costs. This is because total usage is the basis for the price charged, rather than capacity. When the load is low, autoscaling can enable some unutilized servers to be asleep, which reduces electricity costs. 
