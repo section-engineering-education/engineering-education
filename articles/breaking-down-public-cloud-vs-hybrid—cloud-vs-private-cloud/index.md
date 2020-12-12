@@ -1,16 +1,18 @@
-The cloud environment enables users to manage storage, application, network, and compute resources over the internet. Users rely on IT infrastructures not installed on their local server or computer to manage these resources. This is referred to as cloud computing. Cloud computing is either public, private, or hybrid (a combination of private and public clouds).
+The cloud environment enables users to manage storage, application, network, and compute resources over the internet. Users rely on IT infrastructures not installed on their local server or computer to manage these resources. This is referred to as cloud computing. 
+
+Cloud computing is either public, private, or hybrid (a combination of private and public clouds).
 
 This article will explore public, private, and hybrid cloud environments, their benefits and drawbacks, and help users decide on the best cloud solution according to their needs.
 
 To introduce cloud computing and the three cloud deployment models (public cloud, hybrid cloud, and private cloud), have a look at this [article](/engineering-education/introduction-to-cloud-computing/).
 
-### Keywords 
+### Keywords
 
-- Application Packaging Standard (APS) – to integrate an application software with a hosting platform, you need to follow the technology defined by APS.
-- Zero Touch Provisioning – this technology allows you to install a networking appliance anywhere while eliminating the need to configure these appliances locally.
-- A service-level agreement (SLA) – anytime you enter into a business with a vendor, you expect to receive a certain level of service. You agree (through a SLA) with the vendor on the metrics to measure the service and penalties for not achieving the agreed-on service.
-- Legacy Application – with technology advancement, software applications become outdated unless updated to reflect the current technology standard.
-- Industry verticals – specialist organizations on a shared market niche spanning multiple industries.
+- Application Packaging Standard (APS) – To integrate an application software with a hosting platform, you need to follow the technology defined by APS.
+- Zero Touch Provisioning – This technology allows you to install a networking appliance anywhere while eliminating the need to configure these appliances locally.
+- A Service-Level Agreement (SLA) – Anytime you enter into a business with a vendor, you expect to receive a certain level of service. You agree (through an SLA) with the vendor on the metrics to measure the service and penalties for not achieving the agreed-on service.
+- Legacy Application – With technology advancement, software applications become outdated unless updated to reflect the current technology standard.
+- Industry Verticals – Specialist organizations on a shared market niche spanning multiple industries.
 
 ### Benefits of public cloud, hybrid cloud, and private cloud
 
@@ -68,7 +70,7 @@ You can use public clouds when:
 
 - You have predictable computing needs, for example, communication services for a specified number of users.
 - You require additional resources to address varying peak demands.
-- You require a less expensive software development and test environment.
+- You require less expensive software development and test environment.
 - You do not have the services and applications required to perform IT and business operations at your disposal.
 
 You can use hybrid clouds when:
