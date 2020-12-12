@@ -19,7 +19,7 @@ A hill-climbing algorithm has three main features:
 * **Incremental change:** The algorithm improves the current solution by incremental changes. 
  
 ### State-Space Diagram Analysis
-A state-space diagram provides a graphical representation of states and the cost or objective functions. If the objective function is the y-axis, we aim to establish the local maximum and global maximum. If the cost function represents this axis, we aim to establish the local minimum and global minimum. More information about local minimum, local maximum, global minimum, and global maximum can be found [here](https://en.wikipedia.org/wiki/Maxima_and_minima). 
+A state-space diagram provides a graphical representation of states and the objective function. If the objective function is the y-axis, we aim to establish the local maximum and global maximum. If the cost function represents this axis, we aim to establish the local minimum and global minimum. More information about local minimum, local maximum, global minimum, and global maximum can be found [here](https://en.wikipedia.org/wiki/Maxima_and_minima). 
 
 The following diagram shows a simple state-space diagram. The objective function has been shown on the y-axis, while the state-space represents the x-axis.
 
@@ -40,8 +40,7 @@ There are three regions in which a hill-climbing algorithm cannot attain a globa
 #### Local maximum
 At this point, the neighboring states have lower values than the current state. The greedy approach feature will not move the algorithm to a worse off state. This will lead to the hill-climbing process's termination, even though this is not the best possible solution.
 
-This problem can be solved by searching for new paths to move from an undesirable state. This can be done through [backpropagation](https://en.wikipedia.org/wiki/Backpropagation). 
-
+This problem can be solved using momentum. This technique adds a certain proportion (m) of the initial weight to the current one. m is a value that is between 0 and 1. Momentum enables the hill-climbing algorithm to take huge steps that will make it move past the local maximum. 
 #### Plateau
 In this region, the values attained by the neighboring states are the same. This makes it difficult for the algorithm to choose the best direction.
 
