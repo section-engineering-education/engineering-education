@@ -177,7 +177,7 @@ app.post("/acquire", (req, res) => {
   const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
 
   const acquire = await axios.post(
-    `https://api.agora.io/v1/apps/${appID}/cloud_recording/acquire`,
+    `https://api.agora.io/v1/apps/${process.env.appID}/cloud_recording/acquire`,
     {
       cname: req.body.channel,
       uid: req.body.uid,
@@ -288,7 +288,7 @@ app.post("/start", async (req, res) => {
 
   const startBody = ;
   const start = await axios.post(
-    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${req.body.resource}/mode/mix/start`,
+    `https://api.agora.io/v1/apps/${process.env.appID}/cloud_recording/resourceid/${req.body.resource}/mode/${req.body.mode}/start`,
     {
     uid: req.body.uid,
     cname: req.body.channel,
@@ -343,6 +343,24 @@ The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recordin
 
 In the request body, We should specify the UID, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the recording status.
 
+```JavaScript
+app.post("/stop", async (req, res) => {
+  const Authorization = `Basic ${Buffer.from(`${RESTkey}:${RESTsecret}`).toString("base64")}`;
+
+  const stop = await axios.post(
+    `https://api.agora.io/v1/apps/${process.env.appID}/cloud_recording/resourceid/${req.body.resource}/sid/${req.body.sid}/mode/${req.body.mode}/stop`,
+    {
+      cname: req.body.channel,
+      uid: req.body.uid,
+      clientRequest: {},
+    } ,
+    { headers: { Authorization } }
+  );
+
+  res.send(stop.data);
+});
+```
+
 The response will contain an object called `serverResponse`. It will contain the list of files, which is an array of objects containing the details about the files and the uploading status of these files.
 
 The uploading status can either be,
@@ -373,7 +391,7 @@ app.post("/query", (req, res) => {
   const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
 
   const acquire = await axios.post(
-    `https://api.agora.io/v1/apps/${appid}/cloud_recording/resourceid/${resourceid}/sid/${sid}/mode/${mode}/query`,
+    `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/query`,
     { headers: { Authorization } }
   );
 
