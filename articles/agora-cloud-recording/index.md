@@ -1,4 +1,4 @@
-In this tutorial, we will be building a server using Node.js and Express to initiate, query, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the APIs provided by Agora.
+In this tutorial, we will be building a server using Node.js and Express to start, query, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the APIs provided by Agora.
 
 ### Goals
 By the end of this tutorial, you’ll know:
@@ -7,7 +7,7 @@ By the end of this tutorial, you’ll know:
 
 - The difference between cloud recording and on-premise recording.
 
-- How to set up an Express server to initiate, query, and stop cloud recording.
+- How to set up an Express server to start, query, and stop cloud recording.
 
 ### Prerequisites
 This tutorial is for applications that use [Agora](https://www.agora.io/) and want to implement cloud recording. If you are not using Agora in your application, then this tutorial is not for you.
@@ -50,7 +50,7 @@ We'll be going through these steps in this article:
 8. Recap.
 
 ### Cloud recording vs. On-Premise recording.
-[Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record and save voice calls, video calls, and interactive streaming on your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams and once the recording ends, you can upload the recorded video to your cloud storage.
+[Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record and save voice calls, video calls, and interactive streaming on your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams. Once the recording ends, Agora will upload the recorded video to your cloud storage.
 
 [On-Premise recording](https://docs.agora.io/en/Recording/product_recording?platform=Linux) is similar to cloud recording, but you need to set up your own Linux server using the components provided by Agora to record the streams.
 
@@ -96,7 +96,7 @@ Copy the customer ID and click on download under customer secret to get the cust
 
 ![Customer Secret](customer_secret.png)
 
-For the APIs, We should convert the client key and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
+For the API, We should convert the customer ID and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
 
 It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
@@ -107,7 +107,6 @@ const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env
 I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios [here](https://www.npmjs.com/package/axios).
 
 ### Setting up the server
-
 > You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). To test the server, I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
 
 Let's install `Express` using `NPM`.
@@ -140,13 +139,19 @@ This server will be listening on port 3000 and when you hit the `'/'` endpoint, 
 ### Recording
 We need to use the RESTful APIs in the following sequence.
 
-1. Acquire
-2. Start
-3. Stop
+1. Acquire Resource
+2. Start Recording
+3. Stop Recording
 
 First, you need to acquire a resource ID for cloud recording. Then, we need to start the recording within 5 minutes from acquiring the resource ID. You can stop the recording whenever you want.
 
 During the recording, you can `query` to check the recording status.
+
+We need to provide a UID for the recorder. The recorder is like a user who joins the channel, records the stream and uploads it to the storage. So make sure you provide an unique UID to the recorder that doesn't conflict with an existing user in the channel. 
+
+If you have set up token authentication for your Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
+
+At the time of writing this article, Agora cloud recording does not support user accounts yet. Make sure that the recording channel uses integer UIDs. If you'd like to learn more about user accounts, refer [here](https://docs.agora.io/en/All/faq/string).
 
 ### Acquire Resource ID
 Let's add a POST handler for a new endpoint called `'/acquire'` to acquire the resource ID for the cloud recording.
@@ -202,7 +207,7 @@ There are two modes,
 
 - [Composite mode](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=RESTful): Generates a single mixed audio and video file for all UIDs in a channel.
 
-In the body of the request, we should specify the UID, the channel ID, and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig` and `extensionServiceConfig`. If you have set up token authentication for your Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
+In the body of the request, we should specify the UID, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig` and `extensionServiceConfig`. 
 
 We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd like to learn about the complete schema of the request, refer to [the documentation](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
 
@@ -210,7 +215,7 @@ We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd 
 
 - **avFileType:** The format of the recorded files. avFileType can only take ["hls"], setting the recorded files to `M3U8` and `TS` formats.
 
-**Storage Config:** Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#storageConfig) to learn about the parameters that you need to pass for this configuration.
+**Storage Config:**
 
 - **Vendor**: The cloud storage vendor.
 
@@ -229,6 +234,8 @@ We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd 
 - **Secret Key**: The secret key of the cloud storage.
 
 - **File Name Prefix**: An array of strings to set the path of the recorded files in the cloud storage.
+
+Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#storageConfig) to learn more about the parameters that you need to pass for this configuration.
 
 **Recording Config:**
 
@@ -278,6 +285,7 @@ app.post("/start", async (req, res) => {
     uid: req.body.uid,
     cname: req.body.channel,
     clientRequest: {
+      token: '<-- Optional: Your generated token for the recorder -->',
       recordingConfig: {
         maxIdleTime: 30,
         streamTypes: 2,
@@ -395,11 +403,11 @@ If the request is successful, the response will contain the details about the re
 
   - **json**: The file list is a JSONArray. In individual mode, fileListMode is always "json".
 
-- **File list**: When fileListMode is "string", fileList is a string that represents the filename of the M3U8 file. When fileListMode is "json", fileList is a JSONArray that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
+- **File list**: If the file list mode is "string", the file list is a string that represents the filename of the M3U8 file. If the file list mode is "json", the file list is a array that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
 
-- **Slice Start Time**: The time when recording starts. It's a UNIX timestamp.
+- **Slice Start Time**: The time when the recording starts. It's a UNIX timestamp.
 
-- **Extension Service State**: An array of the status of each extension service.
+- **Extension Service State**: The status of the extension services.
 
 - **Sub Service Status**: The status of the cloud recording submodules.
 
@@ -408,7 +416,7 @@ If the request is successful, the response will contain the details about the re
 
 2. We enabled cloud recording from the project management console.
 
-3. We acquired the client key and the client secret from the project management console.
+3. We acquired the customer ID and the customer secret from the project management console.
 
 4. We set up a simple Express server.
 
