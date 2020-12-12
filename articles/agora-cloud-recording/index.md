@@ -44,9 +44,9 @@ We'll be going through these steps in this article:
 2. Enabling Cloud Recording in Project management console.
 3. Acquiring Authentication Keys for Agora APIs.
 4. Setting up the server.
-5. Start a recording.
-6. Query a recording.
-7. Stop a recording.
+5. Acquire resource ID.
+6. Start recording.
+7. Stop recording.
 8. Recap.
 
 ### Cloud recording vs. On-Premise recording.
@@ -111,7 +111,7 @@ const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env
 I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios [here](https://www.npmjs.com/package/axios).
 
 ### Setting up the server
-> You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). To test the server, I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
+> You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). You can use [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
 
 Let's install `Express` using `NPM`.
 
@@ -448,114 +448,6 @@ Response:
     ],
     "uploadingStatus": "uploaded"
   }
-}
-```
-
-### Query recording session
-You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with a 404.
-
-Now, Let's add a POST handler for a new endpoint called `'/query'` to query the recording session.
-
-```JavaScript
-app.post("/query", (req, res) => {
-  // Query Recording Session Here
-});
-```
-
-You need to perform a GET request on this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/query` to start the recording.
-
-The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
-
-```JavaScript
-app.post("/query", (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
-
-  const acquire = await axios.post(
-    `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/query`,
-    { headers: { Authorization } }
-  );
-
-  res.send(acquire.data)
-});
-```
-
-If the request is successful, the response will contain the details about the recording status. The details contain:
-
-- **Status**: The recording status.
-
-  - 0: Recording has not started.
-
-  - 1: Initialization is complete.
-
-  - 2: Recorder is starting.
-
-  - 3: Uploader is ready.
-
-  - 4: Recorder is ready.
-
-  - 5: First recorded file is uploaded. After uploading the first file, the status is always 5 when the recording is running.
-
-  - 6: Recording stops.
-
-  - 7: Agora Cloud Recording service stops.
-
-  - 8: Recording is ready to exit.
-
-  - 20: Recording exits abnormally.
-
-- **File List Mode**: The data type of fileList. The query method does not return this field if you have set snapshotConfig.
-
-  - **string**: The file list is a string. In composite mode, fileListMode is always "string".
-
-  - **json**: The file list is a JSONArray. In individual mode, fileListMode is always "json".
-
-- **File list**: If the file list mode is "string", the file list is a string that represents the filename of the M3U8 file. If the file list mode is "json", the file list is an array that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
-
-- **Slice Start Time**: The time when the recording starts. It's a UNIX timestamp.
-
-- **Extension Service State**: The status of the extension services.
-
-- **Sub Service Status**: The status of the cloud recording submodules.
-
-Request body:
-
-```json
-{
-    "mode": "mix",
-    "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
-    "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
-}
-```
-
-Response:
-
-```json
-{
-  "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
-  "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
-  "serverResponse":{
-    "status": "5",
-    "fileListMode": "json",
-    "fileList": [
-      {
-          "filename": "M6ETnKVtPbAY892ffaj3.m3u8",
-          "trackType": "audio_and_video",
-          "uid": "123",
-          "mixedAllUser": true,
-          "isPlayable": true,
-          "sliceStartTime": 1562724971626
-      },    
-      {
-          "filename": "hlvM26hvtnXjj62fAkMc.m3u8",
-          "trackType": "audio_and_video",
-          "uid": "456",
-          "mixedAllUser": true,
-          "isPlayable": true,
-          "sliceStartTime": 1562724971626
-      }
-    ],
-    "sliceStartTime": 1562724971626
-   }       
 }
 ```
 
