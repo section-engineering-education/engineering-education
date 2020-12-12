@@ -2,7 +2,7 @@
 
 title: A Brief History of Container Technology
 
-description: A brief history of container technology and how it has fundamentally altered the development of software today.
+A brief history of container technology and how it has fundamentally altered the development of software today.
 
 
 ### The Beginning
