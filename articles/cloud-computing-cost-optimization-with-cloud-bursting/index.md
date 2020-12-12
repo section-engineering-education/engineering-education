@@ -1,6 +1,6 @@
 Organizations across all industries have appreciated the significance of data in decision making and business development. They are now running more data workloads and analytics than ever before.
 
-But an overload of these activities may cause a system crash, workloads freeze, and ultimately downtime. This happens mainly when an organization&#39;s [cloud computing](/engineering-education/introduction-to-cloud-computing/) resources such as storage, memory, and CPU, exceed the available system capacity.
+But an overload of these activities may cause a system crash, workloads freeze, and ultimately downtime. This happens mainly when an organization&#39;s [cloud computing](/engineering-education/introduction-to-cloud-computing/) resources such as storage, memory, and CPU exceed the available system capacity.
 
 Many organizations have resulted to cloud bursting to address this issue of system overload while saving on costs. With cloud bursting, organizations offload private cloud and on-premises traffic into the public cloud, thus meeting peak demand.
 
@@ -52,7 +52,7 @@ Such differences may bring a downstream effect. For instance, for an organizatio
 
 Effective cloud bursting requires a flexible and scalable network that can handle the workload changes between public cloud infrastructures and on-premises private clouds. The management and [orchestration](https://www.mulesoft.com/resources/esb/what-application-orchestration#) of the applications moving between the two cloud environments must be in synchronization. And this requires two identical clouds with matching platforms and templates and a lot of scripting.
 
-Essentially, orchestration involves integrating two or more services or applications to allow real-time data synchronization and automation of processes. 
+Orchestration involves integrating two or more services or applications to allow real-time data synchronization and automation of processes. 
 
 To address the orchestration issue, you can host both the private and public clouds in the same data center for consistent configuration, testing, and management. Besides, you can use containers to create a consistent development environment across these cloud platforms. The latency connectivity between clouds must be low for containers to work effectively.
 
@@ -60,7 +60,7 @@ You can also address the latency problem through a hybrid cloud [colocation](htt
 
 ### How to save on cloud computing costs with cloud bursting
 
-Big data analysts and software developers are intense consumers of cloud computing services. Software developers need to test code and applications, especially at the end of the software development cycle. It requires organizations to spin up multiple virtual machines to meet the increased demand for computing services. spining-up involves booting up a virtual machine on a computer, thus saving you money and the need to manage virtual machines manually. 
+Big data analysts and software developers are intense consumers of cloud computing services. Software developers need to test code and applications, especially at the end of the software development cycle. It requires organizations to spin up multiple virtual machines to meet the increased demand for computing services. Spinning-up involves booting up a virtual machine on a computer, thus saving you money and the need to manage virtual machines manually. 
 
 However, these services are only needed for a short period, mostly during the development process&#39;s testing stage. While investing in the virtual machines and infrastructure necessary to run these tests, you must also consider your investment return. Cloud bursting offers on-demand computing resources, so you do not need to invest in this infrastructure. This is a pay-as-you-use arrangement that will help you save on your cloud computing costs.
 
