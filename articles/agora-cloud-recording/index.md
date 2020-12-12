@@ -1,4 +1,4 @@
-In this tutorial, we will be building a server using Node.js and Express to initiate, query and stop cloud recording of audio/video streams occuring in your application using the APIs provided by Agora.
+In this tutorial, we will be building a server using Node.js and Express to initiate, query, and stop cloud recording of audio/video streams occurring in your application using the APIs provided by Agora.
 
 ### Goals
 
@@ -8,7 +8,7 @@ By the end of this tutorial, you’ll know:
 
 - The difference between cloud recording and on-premise recording.
 
-- How to set up an Express server to initiate, query and stop cloud recording.
+- How to set up an Express server to initiate, query, and stop cloud recording.
 
 ### Prerequisites
 
@@ -65,7 +65,7 @@ If you'd like to learn more about the differences between cloud recording and on
 
 Agora will bill you for the cloud recording service. You can check their billing policies [here](https://docs.agora.io/en/cloud-recording/billing_cloud_recording?platform=RESTful).
 
-### Enabling cloud recording in project management console
+### Enabling cloud recording in the project management console
 
 To use cloud recording in your application, you must enable cloud recording from the Agora Project Management Console.
 
@@ -111,7 +111,7 @@ It is not a good idea to add the key and the secret in the code. So, you can use
 const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`;
 ```
 
-I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about axios [here](https://www.npmjs.com/package/axios).
+I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios [here](https://www.npmjs.com/package/axios).
 
 ### Setting up the server
 
@@ -166,9 +166,9 @@ app.post("/acquire", (req, res) => {
 });
 ```
 
-You need to request this endpoint `https://api.agora.io/v1/apps/{appId}/cloud_recording/acquire` to get a resource ID. The endpoint URL should cointain the Agora app ID.
+You need to request this endpoint `https://api.agora.io/v1/apps/{appId}/cloud_recording/acquire` to get a resource ID. The endpoint URL should contain the Agora app ID.
 
-In the body of the request, We should specify a UID, the channel ID and the time limit (in hours) for the cloud recording API calls. The time limit must be between 1 hour and 720 hours. The countdown starts when you start the recording. When you exceed the limit, you can no longer call `query`, `updateLayout`, and `stop`.
+In the body of the request, We should specify a UID, the channel ID, and the time limit (in hours) for the cloud recording API calls. The time limit must be between 1 hour and 720 hours. The countdown starts when you start the recording. When you exceed the limit, you can no longer call `query`, `updateLayout`, and `stop`.
 
 If this request succeeds, you will get a resource ID as the response. You need to start recording with this resource ID within five minutes.
 
@@ -204,7 +204,7 @@ app.post("/start", (req, res) => {
 
 You need to request this endpoint `https://api.agora.io/v1/apps/{appID}/cloud_recording/resourceid/{resourceID}/mode/{mode}/start` to start the recording.
 
-The endpoint URL must contain the `appID`, the `resourceID` (from the previous step) and the `mode` of recording.
+The endpoint URL must contain the `appID`, the `resourceID` (from the previous step), and the `mode` of recording.
 
 There are two modes,
 
@@ -212,11 +212,11 @@ There are two modes,
 
 - [Composite mode](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=RESTful): Generates a single mixed audio and video file for all UIDs in a channel.
 
-In the body of the request, we should specify the UID, the channel ID, and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig` and `extensionServiceConfig`. If you have set up token authentication for you Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
+In the body of the request, we should specify the UID, the channel ID, and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig` and `extensionServiceConfig`. If you have set up token authentication for your Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
 
 We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd like to learn about the complete schema of the request, refer to [the documentation](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
 
-**Recording File Config:** This will define the configurations for the recorded files. You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time, otherwise an error will occur.
+**Recording File Config:** This will define the configurations for the recorded files. You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time, otherwise, an error will occur.
 
 - **avFileType:** The format of the recorded files. avFileType can only take ["hls"], setting the recorded files to `M3U8` and `TS` formats.
 
@@ -230,11 +230,11 @@ We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd 
   - **3**: Tencent Cloud
   - **4**: Kingsoft Cloud
 
-- **Region**: The regional information specified by the cloud storage:
+- **Region**: The regional information specified by cloud storage:
 
 - **Bucket**: The bucket ID from the cloud storage where you want to save your recorded files.
 
-- **Access Key**: The access key of the cloud storage.
+- **Access Key**: The access key to cloud storage.
 
 - **Secret Key**: The secret key of the cloud storage.
 
@@ -242,9 +242,9 @@ We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd 
 
 **Recording Config:**
 
-- **Max Idle Time**: Cloud recording automatically stops recording and leaves the channel when there is no user in the channel after a time period (in seconds) set by this parameter. The value range is from 5 to 2^32-1.
+- **Max Idle Time**: Cloud recording automatically stops recording and leaves the channel when there is no user in the channel after a period (in seconds) set by this parameter. The value range is from 5 to 2^32-1.
 
-- **Stream Types**: The type of the media stream to record.
+- **Stream Types**: The type of media stream to record.
 
   - **0**: Audio streams only.
 
@@ -315,7 +315,7 @@ app.post("/start", async (req, res) => {
 });
 ```
 
-If the request is successful, the response will contain the recording ID (sid) and the resource ID. We need the recording ID to `query`, `updateLayout` or `stop` the recording.
+If the request is successful, the response will contain the recording ID (sid) and the resource ID. We need the recording ID to `query`, `updateLayout`, or `stop` the recording.
 
 ### Stop cloud recording
 
@@ -329,9 +329,9 @@ app.post("/stop", (req, res) => {
 
 You need to send a POST request to this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/stop` to start the recording.
 
-The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID) and the `mode` of recording.
+The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
-In the request body, We should specify the UID, the channel ID and an empty clientRequest oject. If the request is successful, the endpoint will respond with the resource ID, the SID and the details about the recording status.
+In the request body, We should specify the UID, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the recording status.
 
 The response will contain an object called `serverResponse`. It will contain the list of files, which is an array of objects containing the details about the files and the uploading status of these files.
 
@@ -345,7 +345,7 @@ The uploading status can either be,
 
 ### Query the recording
 
-You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with an 404.
+You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with a 404.
 
 Now, Let's add a POST handler for a new endpoint called `'/query'` to query the recording session.
 
@@ -395,7 +395,7 @@ If the request is successful, the response will contain the details about the re
 
 - **File list**: When fileListMode is "string", fileList is a string that represents the filename of the M3U8 file. When fileListMode is "json", fileList is a JSONArray that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
 
-- **Slice Start Time**: The time when recording starts. It's an UNIX timestamp.
+- **Slice Start Time**: The time when recording starts. It's a UNIX timestamp.
 
 - **Extension Service State**: An array of the status of each extension service.
 
@@ -403,7 +403,7 @@ If the request is successful, the response will contain the details about the re
 
 ### Let's Recap
 
-1. We learned about cloud recording, on-premise recording and the differences between them.
+1. We learned about cloud recording, on-premise recording, and the differences between them.
 
 2. We enabled cloud recording from the project management console.
 
@@ -413,7 +413,7 @@ If the request is successful, the response will contain the details about the re
 
 5. We added a POST handler to acquire the resource ID for the recording session.
 
-6. We added a POST handler to start the recording session with the resource ID. We learnt about all the parameters that we need to pass to start the recording.
+6. We added a POST handler to start the recording session with the resource ID. We learned about all the parameters that we need to pass to start the recording.
 
 7. We added a POST handler to stop the recording session.
 
