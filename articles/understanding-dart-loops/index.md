@@ -11,7 +11,6 @@ To write Dart programs and implement knowledge from this article you need to hav
 2. You can use this method if you are familiar with [`Java`](https://en.wikipedia.org/wiki/Java_(programming_language)) or [`Kotlin`](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), **[Install Dart SDK ](https://dart.dev/get-dart)**, **[Install IntelliJ IDEA ](https://www.jetbrains.com/idea/)** and integrate the Dart plugin to IntelliJ IDEA IDE.
 
 
-
 ### Table of Contents
 - [General Loop Structure](#general-loop-structure)
 - [Loops in Dart](#loops-in-dart)
@@ -95,7 +94,6 @@ for(var i = 0; i<4; i++){
 
 ```
 Here the value of the initializer of the counter variable will increase by one from 0 based on the increment specified. If the value of i becomes equal to four or more, the loop terminates/ends since the condition states that the value of i should be less than 4. The loop is to print hello if the the condition is true, hence the output is hello written four times (0,1,2,3) < 4. 
-
 
 2. #### While Loop
 
@@ -316,8 +314,6 @@ void main(){
 
 ```
 The code will print out an endless string of the word Hello.
-
-
 
 ### Further Reading
 
