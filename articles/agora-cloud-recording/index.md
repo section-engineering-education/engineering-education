@@ -92,7 +92,7 @@ Head to the console and click the account name on the top right corner and click
 
 Copy the customer ID and click on download under customer secret to get the customer secret.
 
-> You can download the customer secret only once. Keep the customer secret in a safe place.
+> You can download the customer secret only once. Keep the secret in a safe place.
 
 ![Customer Secret](customer_secret.png)
 
@@ -147,7 +147,7 @@ First, you need to acquire a resource ID for cloud recording. Then, we need to s
 
 During the recording, you can `query` to check the recording status.
 
-We need to provide a UID for the recorder. The recorder is like a user who joins the channel, records the stream and uploads it to the storage. So make sure you provide an unique UID to the recorder that doesn't conflict with an existing user in the channel. 
+We need to provide a UID for the recorder. The recorder is like a user who joins the channel, records the stream, and uploads it to the storage. So make sure you provide a unique UID to the recorder that doesn't conflict with an existing user in the channel. 
 
 If you have set up token authentication for your Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
 
@@ -207,7 +207,7 @@ There are two modes,
 
 - [Composite mode](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=RESTful): Generates a single mixed audio and video file for all UIDs in a channel.
 
-In the body of the request, we should specify the UID, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig` and `extensionServiceConfig`. 
+In the body of the request, we should specify the UID, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig`, and `extensionServiceConfig`. 
 
 We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd like to learn about the complete schema of the request, refer to [the documentation](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
 
@@ -358,7 +358,7 @@ app.post("/query", (req, res) => {
 
 You need to perform a GET request on this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/query` to start the recording.
 
-The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID) and the `mode` of recording.
+The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
 ```JavaScript
 app.post("/query", (req, res) => {
@@ -403,7 +403,7 @@ If the request is successful, the response will contain the details about the re
 
   - **json**: The file list is a JSONArray. In individual mode, fileListMode is always "json".
 
-- **File list**: If the file list mode is "string", the file list is a string that represents the filename of the M3U8 file. If the file list mode is "json", the file list is a array that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
+- **File list**: If the file list mode is "string", the file list is a string that represents the filename of the M3U8 file. If the file list mode is "json", the file list is an array that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
 
 - **Slice Start Time**: The time when the recording starts. It's a UNIX timestamp.
 
