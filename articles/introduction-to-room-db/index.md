@@ -1,5 +1,5 @@
 ### Introduction
-Most Android applications require local data storage. In the past years, this has been achieved through the use of SQLite database. Room is a persistent library that is part of the android jetpack. It is built on top of SQLite. The room persistent library has many advantages over raw SQLite. One advantage is that it saves a developer from writing a lot of boilerplate code to create and manage databases. It also provides compile-time validation of SQL queries. This means that an application won't compile if there is an SQL query error. This saves the developer from encountering run time errors. 
+Most Android applications require local data storage. In the past years, this has been achieved through the use of SQLite database. Room is a persistent library that is part of the android jetpack. It is built on top of SQLite. The room persistent library has many advantages over raw SQLite. One advantage is that it saves a developer from writing a lot of boilerplate code to create and manage databases. It also provides compile-time validation of SQL queries. This means that an application won't compile if there is an SQL query error. This prevents the developer from encountering run time errors. 
 
 This article goes through creating an android application that uses room persistent library to create and manage SQLite databases. We are going to create a simple ToDo list application. The list will be stored locally using the library.
 
@@ -18,7 +18,7 @@ Let's get started!
 ### Step 1 — Getting started
 In this step, we are going to take a look at what makes up the room database. The main components are:
  1. Entity - An entity is a class that is annotated with the `@Entity` annotation. This class represents a database table.
- 2. DAO - A `Data Access Object` is used to map SQL queries to functions. A DAO is an interface annotated with the `@DAO` annotation.
+ 2. DAO - A `Data Access Object` is used to map SQL queries to functions. It is an interface annotated with the `@DAO` annotation.
  3. Room Database - This class acts as an access point to the SQL database. The class uses the DAO to issue queries to the SQL database.
 
 With that bit of information, let's start implementing room in our application. First, download the starter application from [github](https://github.com/kayere/To-do/tree/start-up). It is just a basic android application with only the UI logic. Our work will be to build the functionality. After downloading, sync the project to download the necessary dependencies.
@@ -26,15 +26,12 @@ With that bit of information, let's start implementing room in our application. 
 With that done, let's now proceed to the main task.
 
 ### Step 2 — Creating the Entity
-Create a package named `db`, inside it, create a Kotlin class. As mentioned earlier, this is the class that we will use to define our table. I.e. its name and column properties.
+Create a package named `db` and add a Kotlin class inside it. As mentioned earlier, this is the class that we will use to define our table, i.e, its name and column properties.
 
 Add the following code to the class.
 ```Kotlin
 @Entity
-data class ToDo(
-        @PrimaryKey
-        val content: String
-)
+data class ToDo( @PrimaryKey val content: String)
 ```
 Since we are going to record a sentence for each to-do item, we only need one field in the table. We annotate the field with `@PrimaryKey` to declare it the primary key for our table. There are many annotations for table fields. You can read more about the fields [here](https://developer.android.com/training/data-storage/room/defining-data)
 
