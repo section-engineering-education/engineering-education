@@ -1,6 +1,6 @@
-In this tutorial, we will be building a server using Node.js and Express to start, query, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the APIs provided by Agora.
+In this tutorial, we will be building a server using Node.js and Express to acquire recording resource, start, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the APIs provided by Agora.
 
-The client application that's using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing it in the app. 
+The client application that's using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
 
 ### Goals
 By the end of this tutorial, you’ll know:
@@ -9,7 +9,7 @@ By the end of this tutorial, you’ll know:
 
 - The difference between cloud recording and on-premise recording.
 
-- How to set up an Express server to start, query, and stop cloud recording.
+- How to set up an Express server to acquire recording, resource, start, and stop cloud recording.
 
 ### Prerequisites
 This tutorial is for applications that use [Agora](https://www.agora.io/) and want to implement cloud recording. If you are not using Agora in your application, then this tutorial is not for you.
@@ -153,7 +153,7 @@ We need to use the RESTful APIs in the following sequence.
 
 First, you need to acquire a resource ID for cloud recording. Then, we need to start the recording within 5 minutes from acquiring the resource ID. You can stop the recording whenever you want.
 
-During the recording, you can `query` to check the recording status.
+During the recording, you can query the recording session for the status, update the layout of the recording and, update the subscriber list. To learn more about them, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_rest?platform=RESTful).
 
 We need to provide a UID for the recorder. The recorder is like a user who joins the channel, records the stream, and uploads it to the storage. So make sure you provide a unique UID to the recorder that doesn't conflict with an existing user in the channel.
 
