@@ -177,9 +177,8 @@ In the body of the request, We should specify a UID, the channel ID, and the tim
 If this request succeeds, you will get a resource ID as the response. You need to start recording with this resource ID within five minutes.
 
 ```JavaScript
-app.post("/acquire", (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
-
+app.post("/acquire", async (req, res) => {
+  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString("base64")}`;
   const acquire = await axios.post(
     `https://api.agora.io/v1/apps/${process.env.appID}/cloud_recording/acquire`,
     {
@@ -192,7 +191,7 @@ app.post("/acquire", (req, res) => {
     { headers: { Authorization } }
   );
 
-  res.send(acquire.data)
+  res.send(acquire.data);
 });
 ```
 
@@ -304,43 +303,47 @@ Let's write the POST request to Agora to start the cloud recording. Use environm
 
 ```JavaScript
 app.post("/start", async (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
+  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString("base64")}`;
+  const appID = process.env.appID;
+  const resource = req.body.resource;
+  const mode = req.body.mode;
 
   const start = await axios.post(
-    `https://api.agora.io/v1/apps/${process.env.appID}/cloud_recording/resourceid/${req.body.resource}/mode/${req.body.mode}/start`,
+    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/mode/${mode}/start`,
     {
-    uid: req.body.uid,
-    cname: req.body.channel,
-    clientRequest: {
-      token: '<-- Optional: Your generated token for the recorder -->',
-      recordingConfig: {
-        maxIdleTime: 30,
-        streamTypes: 2,
-        channelType: 1,
-        transcodingConfig: {
-          height: 1280,
-          width: 720,
-          bitrate: 3420,
-          fps: 30,
-          mixedVideoLayout: 1,
-          backgroundColor: "#000000",
+      cname: req.body.channel,
+      uid: req.body.uid,
+      clientRequest: {
+        recordingConfig: {
+          maxIdleTime: 30,
+          streamTypes: 2,
+          channelType: 0,
+          videoStreamType: 0,
+          transcodingConfig: {
+            height: 640,
+            width: 360,
+            bitrate: 500,
+            fps: 15,
+            mixedVideoLayout: 1,
+            backgroundColor: "#FFFFFF",
+          },
+        },
+        recordingFileConfig: {
+          avFileType: ["hls"],
+        },
+        storageConfig: {
+          vendor: 1,
+          region: 2,
+          bucket: process.env.bucket,
+          accessKey: process.env.accessKey,
+          secretKey: process.env.secretKey,
+          fileNamePrefix: ["directory1", "directory2"],
         },
       },
-      recordingFileConfig: {
-        avFileType: ["hls"],
-      },
-      storageConfig: {
-        vendor: process.env.vendor,
-        region: process.env.region,
-        bucket: process.env.bucket,
-        accessKey: process.env.accessKey,
-        secretKey: process.env.secretKey,
-        fileNamePrefix: ["recordings"],
-      },
     },
-  },
-  { headers: { Authorization } }
+    { headers: { Authorization } }
   );
+
   res.send(start.data);
 });
 ```
@@ -351,10 +354,10 @@ Request body:
 
 ```json
 {
-    "channel": "Jo6m9E20E02m9yE5maNk",
-    "uid": "45687",
-    "mode": "mix",
-    "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+  "channel": "Jo6m9E20E02m9yE5maNk",
+  "uid": "45687",
+  "mode": "mix",
+  "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
 }
 ```
 
@@ -384,18 +387,21 @@ In the request body, We should specify the UID, the channel ID, and an empty `cl
 
 ```JavaScript
 app.post("/stop", async (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${RESTkey}:${RESTsecret}`).toString("base64")}`;
+  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString("base64")}`;
+  const appID = process.env.appID;
+  const resource = req.body.resource;
+  const sid = req.body.sid;
+  const mode = req.body.mode;
 
   const stop = await axios.post(
-    `https://api.agora.io/v1/apps/${process.env.appID}/cloud_recording/resourceid/${req.body.resource}/sid/${req.body.sid}/mode/${req.body.mode}/stop`,
+    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/sid/${sid}/mode/${mode}/stop`,
     {
       cname: req.body.channel,
       uid: req.body.uid,
       clientRequest: {},
-    } ,
+    },
     { headers: { Authorization } }
   );
-
   res.send(stop.data);
 });
 ```
