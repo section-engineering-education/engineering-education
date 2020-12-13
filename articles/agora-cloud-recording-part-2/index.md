@@ -303,3 +303,7 @@ If the request is successful, the response will contain the recording ID and the
 2. We added a POST request handler to update the subscriber list of the recorder.
 
 3. We added a POST request handler to update the video mixing layout of the recording.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for reading!
