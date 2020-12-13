@@ -76,7 +76,7 @@ if __name__ == '__main__':
 
 As you can see in the output, we get the message "name or service not known" for the two servers that did not exist. 
 
-In the above program, the `ping()` function takes a list of servers and returns the output of running the `ping` command on each server. If a server is unreachable, it displays an output saying "ping: somethingthatdoesntexits: Name or service not known". 
+In the above program, the `ping()` function takes a list of servers and returns the output of running the `ping` command on each server. If a server is unreachable, it displays an output saying "ping: somethingthatdoesntexist: Name or service not known". 
 
 The `Popen()` is a constructor method of the `Popen` class and takes in the following arguments:
 1. A list of commands and any additional options these commands might require. For example, the `ls` command can be used with '-l' option. To execute the `ls -l` command, the argument list would look like this: `['ls', '-l']`. The commands are specified as strings. In the above example, we use the `ping` command with the option `-c 1` so that it only sends one packet of data, and the server replies with a single `packet`. Without this limit, the command would run forever until an external process stops it. 
