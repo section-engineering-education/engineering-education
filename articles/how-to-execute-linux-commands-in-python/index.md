@@ -83,6 +83,8 @@ The `Popen()` is a constructor method of the `Popen` class and takes in the foll
 
 2. The `stdout` argument is optional and can be used to set where you want `subprocess` to display the output. By default, the output is sent to the terminal. However, If you don't want to dump a large output onto the terminal, you can use `subprocess.PIPE` to send the output of one command to the next. This corresponds to the `|` option in Linux. 
 
+3. The `stderr` argument is also optional and is used to set where you want the errors to be displayed. By default, it sends the errors to the terminal. Since we need to get a list of servers that cannot be reached, we don't need to change this. The servers that cannot be reached(error) will be displayed to us on the terminal.  
+
 The output of the command is stored in a variable called `temp`. The `communicate()` function allows us to read the output and the `str` function can be used to convert it to a string. Once we get the output, we can parse it to extract only the essential details or just display it as it is. In this example, I am storing the output in a list for future use.  
 
 ### Conclusion
