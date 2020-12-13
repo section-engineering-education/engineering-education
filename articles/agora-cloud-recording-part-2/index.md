@@ -1,4 +1,4 @@
-To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/) to set up cloud recording for your Agora project and develop the express server to acquire resource ID, start and stop the cloud recording.
+To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/)in order to set up cloud recording for your Agora project and develop the express server to acquire resource ID, start and stop the cloud recording.
 
 ### Goals
 
@@ -12,7 +12,7 @@ By the end of this tutorial, you’ll know:
 
 ### Prerequisites
 
-This tutorial along with the previous tutorial is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora in your application, then this tutorial is not for you.
+This tutorial and the previous tutorial is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora's SDKs in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
 
@@ -35,28 +35,28 @@ We'll be going through these steps in this article:
 
 You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with a 404.
 
-Now, Let's add a POST handler for a new endpoint called `'/query'` to query the recording session.
+Now, Let's add a POST request handler for a new endpoint called `'/query'` to query the recording session.
 
 ```JavaScript
-app.post("/query", (req, res) => {
+app.post("/query", async (req, res) => {
   // Query Recording Session Here
 });
 ```
 
-You need to perform a GET request on this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/query` to query the recording.
+You need to perform a GET request on this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/query` to query the recording session.
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
 ```JavaScript
-app.post("/query", (req, res) => {
+app.post("/query", async (req, res) => {
   const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
 
-  const acquire = await axios.get(
+  const query = await axios.get(
     `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/query`,
     { headers: { Authorization } }
   );
 
-  res.send(acquire.data)
+  res.send(query.data)
 });
 ```
 
@@ -142,14 +142,14 @@ Response:
 
 ### Updating the recorder's subscriber list
 
-The recorder can subscribe to audio/video streams from a specific user and record them. You can set up this configuration while starting the recording and you can also update the configuration when the recording is in progress. Refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#start) on how to set up subscription lists when you start the recording.
+The recorder can subscribe to audio/video streams from specific users and record them. You can set up this configuration while starting the recording and you can also update the configuration when the recording is in progress. Refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#start) on how to set up subscription lists when you start the recording.
 
-You can call update the subscriber list multiple times during a recording session.
+You can update the subscriber list multiple times during a recording session.
 
-Now, Let's add a POST handler for a new endpoint called `'/update'` to update the subscription list of the recording session while it is in progress.
+Now, Let's add a POST request handler for a new endpoint called `'/updateSubscription'` to update the subscription list of the recorder.
 
 ```JavaScript
-app.post("/update", (req, res) => {
+app.post("/updateSubscription", async (req, res) => {
   // Update Recorder's Subscriber List here
 });
 ```
@@ -158,7 +158,7 @@ You need to perform a POST request on this endpoint `https://api.agora.io/v1/app
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
-In the body of the request, we should specify the UID, the channel ID and the subscription list, and the unsubscription list for video and audio channels separately.
+In the body of the request, we should specify the UID, the channel ID, the subscription list, and the unsubscription list for video and audio channels separately.
 
 Schema of the request body:
 
@@ -181,42 +181,32 @@ Schema of the request body:
 }
 ```
 
-If you want to subscribe/unsubscribe to all the audio/video streams, you need to specify `#allstream#` inside the array. For example, `[ "#allstream#"]`
+If you want to subscribe/unsubscribe to all the audio/video streams, you need to specify `#allstream#` inside the array like this `[ "#allstream#"]`.
 
 ```JavaScript
-app.post("/update", (req, res) => {
+app.post("/updateSubscription", async (req, res) => {
   const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
 
-  const acquire = await axios.get(
+  const updateSubscription = await axios.get(
     `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/update`,
     {
       cname: req.body.channel,
       uid: req.body.uid,
       clientRequest: {
         streamSubscribe: {
-          audioUidList: {
-            subscribeAudioUids: [
-              "#allstream#"
-            ]
-          },
-          videoUidList: {
-            unSubscribeVideoUids: [
-              "444",
-              "555",
-              "666"
-            ]
-          }
+          audioUidList: req.body.audioSubscription,
+          videoUidList: req.body.videoSubscription
         }
       }
     },
     { headers: { Authorization } }
   );
 
-  res.send(acquire.data)
+  res.send(updateSubscription.data)
 });
 ```
 
-If the request is successful, the response will contain the recording ID and the resource ID of the recording session.
+If the request is successful, the response will contain the recording ID and the resource ID of the recording session and the subscription list will be updated.
 
 To learn more about setting up subscription lists, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription?platform=RESTful).
 
@@ -224,21 +214,21 @@ To learn more about setting up subscription lists, refer to [the documentation](
 
 While you are recording, you can request this endpoint to update the video mixing layout of the recording. You can update the video mixing layout multiple times during a recording session.
 
-Calling this endpoint will override the existing configurations.
+Requesting this endpoint will override the existing configurations.
 
->  If you set the background color of the canvas as red when starting a recording and call this method to update the layout without setting the backgroundColor parameter, the background color changes back to the default value (black).
+> If you set the background color of the canvas as red when starting a recording and call this method to update the layout without setting the backgroundColor parameter, the background color changes back to the default value (black).
 
 To learn more about setting video layout, refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=RESTful).
 
-Now, Let's add a POST handler for a new endpoint called `'/updateLayout'` to update the mixing layout of the recording.
+Now, Let's add a POST request handler for a new endpoint called `'/updateLayout'` to update the mixing layout of the recording.
 
 ```JavaScript
-app.post("/updateLayout", (req, res) => {
+app.post("/updateLayout", async (req, res) => {
   // Update Video Mixing Layout Here
 });
 ```
 
-You need to perform a POST request on this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/updateLayout` to start the recording.
+You need to perform a POST request on this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/updateLayout` to update the video mixing layout.
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
@@ -246,70 +236,64 @@ In the body of the request, we should specify the UID, the channel ID, and the c
 
 **Layout Config:**
 
-  - **Background Color:** The background color of the canvas in RGB Hex value.
+- **Background Color:** The background color of the canvas in RGB Hex value.
 
-  - **Max Resolution UID:** When the _mixedVideoLayout_ parameter is set as 2 (vertical layout), you can specify the UID of the large video window.
+- **Max Resolution UID:** When the _mixedVideoLayout_ parameter is set as 2 (vertical layout), you can specify the UID of the large video window.
 
-  - **Mixed Video Layout:** The predefined layouts are `0`, `1`, and `2`. `0`: Floating Layout, `1`: Best Fit Layout, `2`: Vertical Layout. If you set this parameter as `3`, you need to provide the layout config by the `layoutConfig` parameter.
+- **Mixed Video Layout:** The predefined layouts are `0`: Floating Layout, `1`: Best Fit Layout, `2`: Vertical Layout. If you set this parameter as `3`, you need to provide the layout config by the `layoutConfig` parameter.
 
-  - **Layout Config:** An array of the configuration of each user. Supports 17 users at most. Each user configuration should have the below parameters:
+- **Layout Config:** An array of the configuration of each user. Supports 17 users at most. Each user configuration should have the below parameters:
 
-    - **uid:** The string should contain the UID of the user.
+  - **uid:** The string should contain the UID of the user.
 
-    - **x_axis:** The relative horizontal position of the top-left corner of the region. The value should be between 0.0 (leftmost) and 1.0 (rightmost). It can also be an integer (0 or 1).
+  - **x_axis:** The relative horizontal position of the top-left corner of the region. The value should be between 0.0 (leftmost) and 1.0 (rightmost). It can also be an integer (0 or 1).
 
-    - **y_axis:** The relative vertical position of the top-left corner of the region. The value should be between 0.0 (top) and 1.0 (bottom). It can also be an integer (0 or 1).
+  - **y_axis:** The relative vertical position of the top-left corner of the region. The value should be between 0.0 (top) and 1.0 (bottom). It can also be an integer (0 or 1).
 
-    - **height:** The relative height of the region. The value should be between 0.0 and 1.0. _height_ can also be an integer 0 or 1.
+  - **height:** The relative height of the region. The value should be between 0.0 and 1.0. _height_ can also be an integer 0 or 1.
 
-    - **width:** The relative width of the region. The value should be between 0.0 and 1.0. _width_ can also be an integer 0 or 1.
+  - **width:** The relative width of the region. The value should be between 0.0 and 1.0. _width_ can also be an integer 0 or 1.
 
-    - **alpha:** Transparency of the region. The value should be between 0.0 and 1.0.
+  - **alpha:** Transparency of the region. The value should be between 0.0 and 1.0.
 
-    - **render_mode:** The display mode of the region. `0`: Cropped Mode and `1`: Fit Mode
+  - **render_mode:** The display mode of the region. `0`: Cropped Mode and `1`: Fit Mode
 
 ```JavaScript
-app.post("/updateLayout", (req, res) => {
+app.post("/updateLayout", async (req, res) => {
   const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
 
-  const acquire = await axios.get(
+  const body = {
+    cname: req.body.channel,
+    uid: req.body.uid,
+    clientRequest: {
+      mixedVideoLayout: req.body.layout,
+      backgroundColor: req.body.backgroundColor,
+    }
+  };
+
+  if(req.body.layoutConfig === 3) {
+    body.clientRequest.layoutConfig = req.body.layoutConfig
+  }
+
+  const updateLayoutConfig = await axios.get(
     `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/updateLayout`,
     {
       cname: req.body.channel,
       uid: req.body.uid,
       clientRequest: {
-        mixedVideoLayout: 3,
-        backgroundColor: "#FF0000",
-        layoutConfig: [
-          {
-            uid: 1,
-            x_axis: 0.1,
-            y_axis: 0.1,
-            width: 0.1,
-            height: 0.1,
-            alpha: 1,
-            render_mode: 1
-          },
-          {
-            uid: 1,
-            x_axis: 0.1,
-            y_axis: 0.1,
-            width: 0.1,
-            height: 0.1,
-            alpha: 1,
-            render_mode: 1
-          }
-        ]
+        mixedVideoLayout: req.body.layout,
+        backgroundColor: req.body.backgroundColor,
+        layoutConfig: req.body.layoutConfig
       }
     },
     { headers: { Authorization } }
   );
 
-  res.send(acquire.data)
+  res.send(updateLayoutConfig.data)
 });
 ```
 
-If the request is successful, the response will contain the recording ID and the resource ID of the recording session.
+If the request is successful, the response will contain the recording ID and the resource ID of the recording session and the video mixing layout will be updated.
 
 ### Let's Recap
 
