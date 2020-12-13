@@ -1,4 +1,4 @@
-To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/)in order to set up cloud recording for your Agora project and develop the express server to acquire resource ID, start and stop the cloud recording.
+To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/) to set up cloud recording for your Agora project and develop the express server to acquire resource ID, start and stop the cloud recording.
 
 The client application that's using the Agora SDKs should request this server to perform these actions. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
 
@@ -95,7 +95,7 @@ If the request is successful, the response will contain the details about the re
 
   - **string**: The file list is a string. In composite mode, fileListMode is always "string".
 
-  - **json**: The file list is a JSONArray. In individual mode, fileListMode is always "json".
+  - **JSON**: The file list is a JSONArray. In individual mode, fileListMode is always "json".
 
 - **File list**: If the file list mode is "string", the file list is a string that represents the filename of the M3U8 file. If the file list mode is "json", the file list is an array that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
 
@@ -107,7 +107,7 @@ If the request is successful, the response will contain the details about the re
 
 Request body:
 
-```json
+```JSON
 {
   "mode": "mix",
   "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a",
@@ -117,7 +117,7 @@ Request body:
 
 Response:
 
-```json
+```JSON
 {
   "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
   "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a",
@@ -169,7 +169,7 @@ In the body of the request, we should specify the UID, the channel ID, the subsc
 
 Schema of the request body:
 
-```json
+```JSON
 {
   "cname": /* Channel Name */,
   "uid": /* UID of the recorder */,
@@ -220,7 +220,7 @@ If the request is successful, the response will contain the recording ID and the
 
 Request body:
 
-```json
+```JSON
 {
   "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "c87831d3914285db6c102e8a4015d308",
@@ -237,9 +237,9 @@ Request body:
 }
 ```
 
-Respose:
+Response:
 
-```json
+```JSON
 {
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "c87831d3914285db6c102e8a4015d308",
@@ -330,7 +330,7 @@ If the request is successful, the response will contain the recording ID and the
 
 Request body:
 
-```json
+```JSON
 {
   "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "c87831d3914285db6c102e8a4015d308",
@@ -362,9 +362,9 @@ Request body:
 }
 ```
 
-Respose:
+Response:
 
-```json
+```JSON
 {
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "c87831d3914285db6c102e8a4015d308",
