@@ -8,6 +8,8 @@ IDS refer to software applications or hardware devices that monitor incoming and
 
 ![An illustration of IDS](/engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ids-security.png)
 
+[Source](https://www.comodo.com/ids-in-security.php)
+
 IDS are of two types:
 
 - Network Intrusion Detection System (NIDS) – used to monitor packets inbound and outbound a network or a network subset.
@@ -18,6 +20,8 @@ IDS are of two types:
 IPS are strategically placed between the outside internet and the internal network. Practically the same area as firewalls. Anything that the IDS flags as a threat, IPS denies it as malicious traffic. The traffic may represent known threats in the database, but the presence of IPS ensures that the threats are blocked, and there is no delivery of malicious packets.
 
 ![An illustration of IPS](/engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ips-security.png)
+
+[Source](https://www.exabeam.com/ueba/ips-security-how-active-security-saves-time-and-stop-attacks-in-their-tracks/)
 
 IPS are of four main types:
 
