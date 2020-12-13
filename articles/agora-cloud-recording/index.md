@@ -81,11 +81,11 @@ Click on duration under cloud recording. If you haven't already enabled it yet, 
 
 ![Enable Cloud Recording](enable_cr.png)
 
-It will display the maximum number of channels that you can record at the same time. The default value is 50 channels. If you want more, you need to contact the Sales team of Agora (sales@agora.io).
+It'll display the maximum number of channels that you can record at the same time. The default value is 50 channels. If you want more, you need to contact the Sales team of Agora (sales@agora.io).
 
 ![Max Concurrent Channels](max_concurrent_channels.png)
 
-Once you hit Apply, you will see the statistics page of the cloud recording.
+Once you hit Apply, you'll see the statistics page of the cloud recording.
 
 ![Cloud Recording Enabled](cr_enabled.png)
 
@@ -174,7 +174,7 @@ You need to request this endpoint `https://api.agora.io/v1/apps/{appId}/cloud_re
 
 In the body of the request, We should specify a UID, the channel ID, and the time limit (in hours) for the cloud recording API calls. The time limit must be between 1 hour and 720 hours. The countdown starts when you start the recording. When you exceed the limit, you can no longer call `query`, `updateLayout`, and `stop`.
 
-If this request succeeds, you will get a resource ID as the response. You need to start recording with this resource ID within five minutes.
+If this request succeeds, you'll get a resource ID as the response. You need to start recording with this resource ID within five minutes.
 
 ```JavaScript
 app.post("/acquire", async (req, res) => {
@@ -235,7 +235,7 @@ There are two modes of recording:
 
 In the body of the request, we should specify the UID, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig`, and `extensionServiceConfig`.
 
-We will not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd like to learn about the complete schema of the request, refer to [the documentation](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
+We'll not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd like to learn about the complete schema of the request, refer to [the documentation](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
 
 **Recording File Config:** This will define the configurations for the recorded files. You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time, otherwise, an error will occur.
 
@@ -410,7 +410,7 @@ app.post("/stop", async (req, res) => {
 });
 ```
 
-The response will contain an object called `serverResponse`. It will contain the list of files, which is an array of objects containing the details about the files and the uploading status of these files.
+The response will contain an object called `serverResponse`. It'll contain the list of files, which is an array of objects containing the details about the files and the uploading status of these files.
 
 The uploading status can either be,
 
