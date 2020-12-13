@@ -3,7 +3,7 @@
 title: Graph Implementation and Traversal Algorithms (Java)
 
 ---
-Graphs are one of the most common data structures in computer science. Graphs are made up of nodes and edges. There are many applications for graph structures in the real world including relationships (Facebook), locations (Google Maps), programming analysis, and more.
+Graphs are one of the most common data structures in computer science. Graphs are made up of nodes and edges. There are many applications for graph structures in the real world, including relationships (Facebook), locations (Google Maps), programming analysis, and more.
 
 ![graph](graph.jpg)
 
@@ -11,14 +11,14 @@ By the end of this article, readers should know
 1. What graphs are
 2. How graphs are implemented in code
 3. How to traverse a graph
-    * Breadth first search iterative
-    * Depth first search iterative and recursive
+    * Breadth-first search iterative
+    * Depth-first search iterative and recursive
 
 <br />
 
 ### Types of graphs
 
-There are different types of graphs like undirected, directed, unweighted, unweighted, etc. All graphs have nodes and edges, but there are different structures and properties between different types. Undirected graphs have directionless edges between nodes while directed graphs have edges that point in a direction. Directed graphs can only be traversed in the direction the edges point. Unweighted graphs have zero value edges while weighted graphs have non zero value edges. These values can be positive or negative.
+There are different types of graphs, like undirected, directed, unweighted, unweighted, etc. All graphs have nodes and edges, but there are different structures and properties between different types. Undirected graphs have directionless edges between nodes. Directed graphs have edges that point in a direction. Directed graphs can only be traversed in the direction the edges point. Unweighted graphs have zero value edges, while weighted graphs have non zero value edges. These values can be positive or negative.
 
 <br />
 
@@ -60,7 +60,7 @@ public class Node {
 
 #### Graph object
 
-Next, we implement a graph object and the traversal methods. The code below will create an undirected graph as shown before. Again, you can find the full code here: https://repl.it/@tensoncai/Graph-Traversals-Java#Main.java
+Next, we implement a graph object and traversal methods. The code below will create an undirected graph, as shown before. Again, you can find the full code here: https://repl.it/@tensoncai/Graph-Traversals-Java#Main.java
 
 ```
 import java.util.HashSet;
@@ -178,7 +178,7 @@ BFS pseudocode:
 	Initialize a queue
 	Initialize a visited hash set (this is just one way to keep track of visited nodes)
 	Add start node to queue.
-	Add start node's value to visited set
+	Add start node's value to visited set.
 	While the queue's size is not empty:
 		Remove a node.
 		Print the node's value.
@@ -210,7 +210,7 @@ public static void bfs(Node startNode) {
 
 #### DFS Iterative
 
-Depth First Search is the opposite of BFS. It uses a stack instead to traverse the graph. A start node is pushed to the stack. As long as the stack is not empty, a node is popped and its unvisited neighbors are added to the stack. Because the node that is popped off the stack is the most recently pushed node, the graph is traversed in a depth like manner. Just like in BFS, a visited set is used.
+Depth First Search is the opposite of BFS. It uses a stack instead to traverse the graph. A start node is pushed to the stack. As long as the stack is not empty, a node is popped, and its unvisited neighbors are added to the stack. The graph is traversed in-depth like manner because the node that is popped off the stack is the most recently pushed. Just like in BFS, a visited set is used.
 
 ```
 DFS pseudocode:
@@ -302,5 +302,7 @@ DFS Recursive:
 
 ### Conclusion
 
-In this article, we looked over some common graphs and how to traverse them with breadth first search and depth first search.
+This article looked over some common graphs and how to traverse them with breadth-first search and depth-first search.
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
