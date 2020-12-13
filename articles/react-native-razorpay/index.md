@@ -191,7 +191,7 @@ const razorpay = new Razorpay({
 });
 ```
 
-Let's add a POST handler for a new endpoint called `'/createOrder'` to create an order and return the created order as the response.
+Let's add a POST request handler for a new endpoint called `'/createOrder'` to create an order and return the created order as the response.
 
 ```JavaScript
 app.post("/createOrder", (req, res) => {
@@ -410,7 +410,7 @@ This step allows you to confirm the authenticity of the details returned from th
 #### Server Side
 We will add a new endpoint called `/verifyPayment` to verify the transaction on the server.
 
-Let's add a POST handler for a new endpoint called `'/verifyPayment'`.
+Let's add a POST request handler for a new endpoint called `'/verifyPayment'`.
 
 ```JavaScript
 app.post("/verifyPayment", (req, res) => {
