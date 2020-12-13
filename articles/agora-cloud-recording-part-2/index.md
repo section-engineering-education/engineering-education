@@ -1,6 +1,7 @@
 To follow along with this tutorial, you need to go through [my previous tutorial]() to set up cloud recording for your Agora project and develop the express server to acquire resource ID, start and stop the cloud recording.
 
 ### Goals
+
 By the end of this tutorial, you’ll know:
 
 - How to query an Agora cloud recording session.
@@ -10,6 +11,7 @@ By the end of this tutorial, you’ll know:
 - How to update the layout of the recording.
 
 ### Prerequisites
+
 This tutorial along with the previous tutorial is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
@@ -21,6 +23,7 @@ If you'd like to learn how to build some applications with React Native and Agor
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
 ### Overview
+
 We'll be going through these steps in this article:
 
 1. Querying the recording session.
@@ -28,6 +31,7 @@ We'll be going through these steps in this article:
 3. Update the layout of the recording.
 
 ### Query the recording session
+
 You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with a 404.
 
 Now, Let's add a POST handler for a new endpoint called `'/query'` to query the recording session.
@@ -46,7 +50,7 @@ The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recordin
 app.post("/query", (req, res) => {
   const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
 
-  const acquire = await axios.post(
+  const acquire = await axios.get(
     `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/query`,
     { headers: { Authorization } }
   );
@@ -97,9 +101,9 @@ Request body:
 
 ```json
 {
-    "mode": "mix",
-    "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
-    "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+  "mode": "mix",
+  "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a",
+  "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
 }
 ```
 
@@ -107,32 +111,108 @@ Response:
 
 ```json
 {
-  "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
-  "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
-  "serverResponse":{
+  "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
+  "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a",
+  "serverResponse": {
     "status": "5",
     "fileListMode": "json",
     "fileList": [
       {
-          "filename": "M6ETnKVtPbAY892ffaj3.m3u8",
-          "trackType": "audio_and_video",
-          "uid": "123",
-          "mixedAllUser": true,
-          "isPlayable": true,
-          "sliceStartTime": 1562724971626
-      },    
+        "filename": "M6ETnKVtPbAY892ffaj3.m3u8",
+        "trackType": "audio_and_video",
+        "uid": "123",
+        "mixedAllUser": true,
+        "isPlayable": true,
+        "sliceStartTime": 1562724971626
+      },
       {
-          "filename": "hlvM26hvtnXjj62fAkMc.m3u8",
-          "trackType": "audio_and_video",
-          "uid": "456",
-          "mixedAllUser": true,
-          "isPlayable": true,
-          "sliceStartTime": 1562724971626
+        "filename": "hlvM26hvtnXjj62fAkMc.m3u8",
+        "trackType": "audio_and_video",
+        "uid": "456",
+        "mixedAllUser": true,
+        "isPlayable": true,
+        "sliceStartTime": 1562724971626
       }
     ],
     "sliceStartTime": 1562724971626
-   }       
+  }
 }
 ```
 
-### Updating the recorder's subscriber list.
+### Updating the recorder's subscriber list
+
+The recorder can subscribe to audio/video streams from a specific user and record them. You can set up this configuration while starting the recording and you can also update the configuration when the recording is in progress. Refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#start) on how to set up subscription lists when you start the recording.
+
+Now, Let's add a POST handler for a new endpoint called `'/update'` to update the subscription list of the recording session while it is in progress.
+
+```JavaScript
+app.post("/update", (req, res) => {
+  // Query Recording Session Here
+});
+```
+
+You need to perform a POST request on this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/update` to start the recording.
+
+The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
+
+In the body of the request, we should specify the UID, the channel ID and the subscription list and the upsubscription list for video and audio channels seperately.
+
+Schema of the request body:
+
+```json
+{
+  "cname": /* Channel Name */,
+  "uid": /* UID of the recorder */,
+  "clientRequest": {
+    "streamSubscribe": {
+      "audioUidList": {
+        "subscribeAudioUids": [ /* Comma seperated values of UIDs */ ],
+        "unSubscribeAudioUids": [ /* Comma seperated values of UIDs */ ]
+      },
+      "videoUidList": {
+        "subscribeVideoUids": [ /* Comma seperated values of UIDs */ ],
+        "unSubscribeVideoUids": [ /* Comma seperated values of UIDs */ ]
+      }
+    }
+  }
+}
+```
+
+If you want to subscribe/unsubscribe to all the audio/video streams, you need to specify `#allstream#` inside the array. For example, `[ "#allstream#"]`
+
+```JavaScript
+app.post("/query", (req, res) => {
+  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
+
+  const acquire = await axios.get(
+    `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/query`,
+    {
+      cname: "httpClient463224",
+      uid: "527841",
+      clientRequest: {
+        streamSubscribe: {
+          audioUidList: {
+            subscribeAudioUids: [
+              "#allstream#"
+            ]
+          },
+          videoUidList: {
+            "unSubscribeVideoUids": [
+              "444",
+              "555",
+              "666"
+            ]
+          }
+        }
+      }
+    },
+    { headers: { Authorization } }
+  );
+
+  res.send(acquire.data)
+});
+```
+
+If the request is successful, the response will contain the recording ID and the resource ID.
+
+To learn more about setting up subscription lists, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription?platform=RESTful).
