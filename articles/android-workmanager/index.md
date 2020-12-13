@@ -21,12 +21,15 @@ To comfortably follow through, you will need:
 * Basic understanding of the AndroidX Room library.
 * Basic information of the Kotlin programming language.
 
-This article goes through getting started with `WorkManager` i.e. how to use it and the classes involved. The final code for this tutorial is available on [Github](https://github.com/LinusMuema/kotlin/tree/workManager). Use it as a reference to follow through the article.
-
 Let's get to it.
 
 ### Step 1 - Setting up the project
-Create an android application and give it a name of your choice. Use the `Empty Activity` template.
+To get the starting code for this tutorial, clone the projec from [Github](https://github.com/LinusMuema/kotlin/tree/workManager) and open it in Android Studio. Open the terminal in the IDE and run the following commands to rollback the project.
+
+```bash
+git checkout workManager
+git checkout f1a4d683563ffe5c6eb00b3ea91353db0db2ca9a
+```
 
 After gradle build finishes, add the following dependencies in the app-level `build.gradle` file
 
@@ -159,7 +162,7 @@ Now that we have our work completely set up. You can go ahead and follow through
 Once the application starts, it calls the `startWork` function which starts our work. This starts both the `oneTimeWork` and `periodicWork`. The one time work completes immediately and adds one user to the Room database. The `periodicWork` also starts by adding one user to the database and another user after 15 minutes. So after 2 hours, the `periodicWork` will have added 8 users. On the first run the application should show 2 users. One from the `oneTimeWork` and another from the `periodicWork`.
 
 ### Conclusion
-With that, you have the basic information about `WorkManager`. As you can see, it is easier to schedule background tasks. You are able to run tasks like network calls even if the application closes. A good use case could be backing up data on a different network like cloud services. This can be done when some constraints are met and you have the assurance of your work being done. Go ahead and clone the [repo](https://github.com/LinusMuema/kotlin/tree/workManager) and run the application. Feel free to raise a PR or an issue with any updates.
+With that, you have the basic information about `WorkManager`. As you can see, it is easier to schedule background tasks. You are able to run tasks like network calls even if the application closes. A good use case could be backing up data on a different network like cloud services. This can be done when some constraints are met and you have the assurance of your work being done. Feel free to raise a PR or an issue with any updates.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
