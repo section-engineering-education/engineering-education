@@ -115,7 +115,7 @@ I'll be using Axios to make requests to the Agora APIs. We need to pass the cons
 It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
 ### Setting up the server
-> You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). You can use [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
+> You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
 
 Let's install `Express` using `NPM`.
 
@@ -211,6 +211,8 @@ Response:
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g"
 }
 ```
+
+![Acquire Request & Response](postman_acquire.png)
 
 ### Start recording
 Now, Let's add a POST handler for a new endpoint called `'/start'` to start the cloud recording.
@@ -369,6 +371,8 @@ Response:
   "sid": "c87831d3914285db6c102e8a4015d308"
 }
 ```
+
+![Start Request & Reponse](postman_start.png)
 
 ### Stop recording
 Now, Let's add a POST handler for a new endpoint called `'/stop'` to stop the cloud recording.
