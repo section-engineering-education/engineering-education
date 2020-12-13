@@ -214,6 +214,33 @@ app.post("/updateSubscription", async (req, res) => {
 
 If the request is successful, the response will contain the recording ID and the resource ID of the recording session and the subscription list will be updated.
 
+Request body:
+
+```json
+{
+  "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
+  "sid": "c87831d3914285db6c102e8a4015d308",
+  "mode": "mix",
+  "channel": "",
+  "uid": "",
+  "audioSubscription": {
+    "subscribeAudioUids": ["#allstream#"]
+  },
+  "videoSubscription": {
+    "unSubscribeVideoUids": ["444", "555", "666"]
+  }
+}
+```
+
+Respose:
+
+```json
+{
+  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
+  "sid": "c87831d3914285db6c102e8a4015d308",
+}
+```
+
 To learn more about setting up subscription lists, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription?platform=RESTful).
 
 ### Updating the layout of the recording
@@ -295,6 +322,49 @@ app.post("/updateLayout", async (req, res) => {
 ```
 
 If the request is successful, the response will contain the recording ID and the resource ID of the recording session and the video mixing layout will be updated.
+
+Request body:
+
+```json
+{
+  "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
+  "sid": "c87831d3914285db6c102e8a4015d308",
+  "mode": "mix",
+  "channel": "",
+  "uid": "",
+  "layout": 3,
+  "backgroundColor": "#FF0000",
+  "layoutConfig": [
+    {
+      "uid": 1,
+      "x_axis": 0.1,
+      "y_axis": 0.1,
+      "width": 0.1,
+      "height": 0.1,
+      "alpha": 1,
+      "render_mode": 1
+    },
+    {
+      "uid": 1,
+      "x_axis": 0.1,
+      "y_axis": 0.1,
+      "width": 0.1,
+      "height": 0.1,
+      "alpha": 1,
+      "render_mode": 1
+    }
+  ]
+}
+```
+
+Respose:
+
+```json
+{
+  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
+  "sid": "c87831d3914285db6c102e8a4015d308",
+}
+```
 
 ### Let's Recap
 
