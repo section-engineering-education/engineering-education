@@ -1,5 +1,7 @@
 In this tutorial, we will be building a server using Node.js and Express to start, query, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the APIs provided by Agora.
 
+The client application that's using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing it in the app. 
+
 ### Goals
 By the end of this tutorial, you’ll know:
 
@@ -49,12 +51,14 @@ We'll be going through these steps in this article:
 7. Stop recording.
 8. Recap.
 
+> You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-recording-server).
+
 ### Cloud recording vs. On-Premise recording.
 [Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record and save voice calls, video calls, and interactive streaming on your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams. Once the recording ends, Agora will upload the recorded video to your cloud storage.
 
 Agora supports uploads to Amazon S3, Qiniu Cloud, Alibaba Cloud, Tencent Cloud, Kingsoft Cloud.
 
-I recommend using Amazon S3 as it is easy to set up. Refer to [this documentation](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) on how to create a bucket in Amazon S3. Agora will need the bucket name, the access key and the secret key for the bucket to upload the recorded files to your cloud storage.
+I recommend using Amazon S3 as it is easy to set up. Refer to [this documentation](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) on how to create a bucket in Amazon S3. Agora will need the bucket name, the access key, and the secret key for the bucket to upload the recorded files to your cloud storage.
 
 [On-Premise recording](https://docs.agora.io/en/Recording/product_recording?platform=Linux) is similar to cloud recording, but you need to set up your own Linux server using the components provided by Agora to record the streams.
 
@@ -102,13 +106,13 @@ Copy the customer ID and click on download under customer secret to get the cust
 
 For the API, We should convert the customer ID and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
 
-It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
-
 ```JavaScript
-const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`;
+Buffer.from(string).toString('base64');
 ```
 
 I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios [here](https://www.npmjs.com/package/axios).
+
+It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
 ### Setting up the server
 > You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). You can use [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
@@ -222,7 +226,7 @@ You need to request this endpoint `https://api.agora.io/v1/apps/{appID}/cloud_re
 
 The endpoint URL must contain the `appID`, the `resourceID` (from the previous step), and the `mode` of recording.
 
-There are two modes,
+There are two modes of recording:
 
 - [Individual mode](https://docs.agora.io/en/cloud-recording/cloud_recording_individual_mode?platform=RESTful): Records the audio and video as separate files for each UID in a channel.
 
@@ -300,10 +304,8 @@ Let's write the POST request to Agora to start the cloud recording. Use environm
 
 ```JavaScript
 app.post("/start", async (req, res) => {
-
   const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
 
-  const startBody = ;
   const start = await axios.post(
     `https://api.agora.io/v1/apps/${process.env.appID}/cloud_recording/resourceid/${req.body.resource}/mode/${req.body.mode}/start`,
     {
