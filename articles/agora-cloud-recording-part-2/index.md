@@ -1,5 +1,7 @@
 To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/)in order to set up cloud recording for your Agora project and develop the express server to acquire resource ID, start and stop the cloud recording.
 
+The client application that's using the Agora SDKs should request this server to perform these actions. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
+
 ### Goals
 
 By the end of this tutorial, you’ll know:
@@ -227,6 +229,7 @@ Request body:
     "subscribeAudioUids": ["#allstream#"]
   },
   "videoSubscription": {
+    "subscribeVideoUids": ["111", "222", "333"],
     "unSubscribeVideoUids": ["444", "555", "666"]
   }
 }
@@ -337,19 +340,19 @@ Request body:
   "layoutConfig": [
     {
       "uid": 1,
-      "x_axis": 0.1,
-      "y_axis": 0.1,
-      "width": 0.1,
-      "height": 0.1,
+      "x_axis": 0,
+      "y_axis": 0,
+      "width": 0.5,
+      "height": 1,
       "alpha": 1,
       "render_mode": 1
     },
     {
-      "uid": 1,
-      "x_axis": 0.1,
-      "y_axis": 0.1,
-      "width": 0.1,
-      "height": 0.1,
+      "uid": 2,
+      "x_axis": 0.5,
+      "y_axis": 0.5,
+      "width": 0.5,
+      "height": 1,
       "alpha": 1,
       "render_mode": 1
     }
