@@ -158,7 +158,7 @@ You need to perform a POST request on this endpoint `https://api.agora.io/v1/app
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
-In the body of the request, we should specify the UID, the channel ID and the subscription list and the upsubscription list for video and audio channels seperately.
+In the body of the request, we should specify the UID, the channel ID and the subscription list, and the unsubscription list for video and audio channels separately.
 
 Schema of the request body:
 
@@ -228,6 +228,8 @@ Calling this endpoint will override the existing configurations.
 
 >  If you set the background color of the canvas as red when starting a recording and call this method to update the layout without setting the backgroundColor parameter, the background color changes back to the default value (black).
 
+To learn more about setting video layout, refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=RESTful).
+
 Now, Let's add a POST handler for a new endpoint called `'/updateLayout'` to update the mixing layout of the recording.
 
 ```JavaScript
@@ -240,7 +242,7 @@ You need to perform a POST request on this endpoint `https://api.agora.io/v1/app
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
-In the body of the request, we should specify the UID, the channel ID and the configuration for the video mixing layout.
+In the body of the request, we should specify the UID, the channel ID, and the configuration for the video mixing layout.
 
 **Layout Config:**
 
@@ -250,7 +252,7 @@ In the body of the request, we should specify the UID, the channel ID and the co
 
   - **Mixed Video Layout:** The predefined layouts are `0`, `1`, and `2`. `0`: Floating Layout, `1`: Best Fit Layout, `2`: Vertical Layout. If you set this parameter as `3`, you need to provide the layout config by the `layoutConfig` parameter.
 
-  - **Layout Config:** An array of configuration of each user. Supports 17 users at most. Each user configuration should have the below parameters:
+  - **Layout Config:** An array of the configuration of each user. Supports 17 users at most. Each user configuration should have the below parameters:
 
     - **uid:** The string should contain the UID of the user.
 
