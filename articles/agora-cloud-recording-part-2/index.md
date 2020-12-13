@@ -147,6 +147,8 @@ Response:
 }
 ```
 
+If you'd like to learn more about this endpoint, checkout the [API refernce](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/query).
+
 ### Updating the recorder's subscriber list
 
 The recorder can subscribe to audio/video streams from specific users and record them. You can set up this configuration while starting the recording and you can also update the configuration when the recording is in progress. Refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#start) on how to set up subscription lists when you start the recording.
@@ -247,6 +249,8 @@ Response:
 ```
 
 To learn more about setting up subscription lists, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription?platform=RESTful).
+
+If you'd like to learn more about this endpoint, checkout the [API refernce](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/update).
 
 ### Updating the layout of the recording
 
@@ -370,6 +374,8 @@ Response:
   "sid": "c87831d3914285db6c102e8a4015d308",
 }
 ```
+
+If you'd like to learn more about this endpoint, checkout the [API refernce](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout).
 
 ### Let's Recap
 
