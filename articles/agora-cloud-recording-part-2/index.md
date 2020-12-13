@@ -49,14 +49,17 @@ The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recordin
 
 ```JavaScript
 app.post("/query", async (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
+  const appID = process.env.appID;
+  const resource = req.body.resource;
+  const sid = req.body.sid;
+  const mode = req.body.mode;
 
   const query = await axios.get(
-    `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/query`,
+    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/sid/${sid}/mode/${mode}/query`,
     { headers: { Authorization } }
   );
 
-  res.send(query.data)
+  res.send(query.data);
 });
 ```
 
@@ -185,24 +188,27 @@ If you want to subscribe/unsubscribe to all the audio/video streams, you need to
 
 ```JavaScript
 app.post("/updateSubscription", async (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
+  const appID = process.env.appID;
+  const resource = req.body.resource;
+  const sid = req.body.sid;
+  const mode = req.body.mode;
 
   const updateSubscription = await axios.get(
-    `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/update`,
+    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/sid/${sid}/mode/${mode}/update`,
     {
       cname: req.body.channel,
       uid: req.body.uid,
       clientRequest: {
         streamSubscribe: {
           audioUidList: req.body.audioSubscription,
-          videoUidList: req.body.videoSubscription
-        }
-      }
+          videoUidList: req.body.videoSubscription,
+        },
+      },
     },
     { headers: { Authorization } }
   );
 
-  res.send(updateSubscription.data)
+  res.send(updateSubscription.data);
 });
 ```
 
@@ -260,7 +266,10 @@ In the body of the request, we should specify the UID, the channel ID, and the c
 
 ```JavaScript
 app.post("/updateLayout", async (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString('base64')}`
+  const appID = process.env.appID;
+  const resource = req.body.resource;
+  const sid = req.body.sid;
+  const mode = req.body.mode;
 
   const body = {
     cname: req.body.channel,
@@ -268,28 +277,20 @@ app.post("/updateLayout", async (req, res) => {
     clientRequest: {
       mixedVideoLayout: req.body.layout,
       backgroundColor: req.body.backgroundColor,
-    }
+    },
   };
 
-  if(req.body.layoutConfig === 3) {
-    body.clientRequest.layoutConfig = req.body.layoutConfig
+  if (req.body.layoutConfig === 3) {
+    body.clientRequest.layoutConfig = req.body.layoutConfig;
   }
 
   const updateLayoutConfig = await axios.get(
-    `https://api.agora.io/v1/apps/${process.env.appid}/cloud_recording/resourceid/${req.body.resourceid}/sid/${req.body.sid}/mode/${req.body.mode}/updateLayout`,
-    {
-      cname: req.body.channel,
-      uid: req.body.uid,
-      clientRequest: {
-        mixedVideoLayout: req.body.layout,
-        backgroundColor: req.body.backgroundColor,
-        layoutConfig: req.body.layoutConfig
-      }
-    },
+    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/sid/${sid}/mode/${mode}/updateLayout`,
+    body,
     { headers: { Authorization } }
   );
 
-  res.send(updateLayoutConfig.data)
+  res.send(updateLayoutConfig.data);
 });
 ```
 
