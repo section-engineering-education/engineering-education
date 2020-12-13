@@ -221,8 +221,8 @@ Request body:
   "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "c87831d3914285db6c102e8a4015d308",
   "mode": "mix",
-  "channel": "",
-  "uid": "",
+  "channel": "Jo6m9E20E02m9yE5maNk",
+  "uid": "45687",
   "audioSubscription": {
     "subscribeAudioUids": ["#allstream#"]
   },
@@ -330,8 +330,8 @@ Request body:
   "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "c87831d3914285db6c102e8a4015d308",
   "mode": "mix",
-  "channel": "",
-  "uid": "",
+  "channel": "Jo6m9E20E02m9yE5maNk",
+  "uid": "45687",
   "layout": 3,
   "backgroundColor": "#FF0000",
   "layoutConfig": [
