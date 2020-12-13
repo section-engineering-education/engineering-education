@@ -16,7 +16,7 @@ By the end of this article, readers should know
 
 <br />
 
-## Types of graphs
+### Types of graphs
 
 There are different types of graphs like undirected, directed, unweighted, unweighted, etc. All graphs have nodes and edges, but there are different structures and properties between different types. Undirected graphs have directionless edges between nodes while directed graphs have edges that point in a direction. Directed graphs can only be traversed in the direction the edges point. Unweighted graphs have zero value edges while weighted graphs have non zero value edges. These values can be positive or negative.
 
@@ -29,12 +29,12 @@ Undirected and Unweighted  |  Directed and Weighted	 |
 <br />
 <br />
 
-## How to implement a graph
+### How to implement a graph
 
 All the code can be found here: https://repl.it/@tensoncai/Graph-Traversals-Java#Main.java 
 Just press the Run button at the top to run.
 
-### Node object
+#### Node object
 
 First, we create a Node object. It contains a value and an array list of neighboring nodes.
 
@@ -58,7 +58,7 @@ public class Node {
 }
 ```
 
-### Graph object
+#### Graph object
 
 Next, we implement a graph object and the traversal methods. The code below will create an undirected graph as shown before. Again, you can find the full code here: https://repl.it/@tensoncai/Graph-Traversals-Java#Main.java
 
@@ -167,11 +167,11 @@ class Main {
 <br />
 <br />
 
-## Graph Traversal Algorithms
+### Graph Traversal Algorithms
 
-### BFS Iterative
+#### BFS Iterative
 
-Breadth First Search uses a queue to traverse the graph in a level like manner. A start node is added to the queue to start. As long as the queue is not empty, a node is removed and its unvisited neighbors are added to the queue. In this way, the graph is traversed in a level like manner. Since a graph may contain cycles, a visited hash set is used to keep track of all visited nodes. We only want to add unvisited nodes into the queue!
+Breadth First Search uses a queue to traverse the graph in a level like manner. A start node is added to the queue to start. As long as the queue is not empty, a node is removed and its unvisited neighbors are added to the queue. Since a graph may contain cycles, a visited hash set is used to keep track of all visited nodes. We only want to add unvisited nodes into the queue!
 
 ```
 BFS pseudocode:
@@ -208,7 +208,7 @@ public static void bfs(Node startNode) {
 ```
 <br />
 
-### DFS Iterative
+#### DFS Iterative
 
 Depth First Search is the opposite of BFS. It uses a stack instead to traverse the graph. A start node is pushed to the stack. As long as the stack is not empty, a node is popped and its unvisited neighbors are added to the stack. Because the node that is popped off the stack is the most recently pushed node, the graph is traversed in a depth like manner. Just like in BFS, a visited set is used.
 
@@ -251,9 +251,9 @@ public static void dfsIterative(Node startNode) {
 ```
 <br />
 
-### DFS Recursive
+#### DFS Recursive
 
-DFS can also be implemented recursively. Instead of using a stack, the dfs method is called upon seeing an unvisited node. We also need to pass a visited set as a parameter in the method so that each layer in the call stack knows which nodes have been visited.
+DFS can also be implemented recursively. Instead of using a stack, the dfs method is called upon seeing an unvisited node. We also need to pass a visited set as a parameter in the method to keep track of visited nodes.
 
 ```
 public static void dfsRecursive(Node startNode, Set<Integer> visited) {
@@ -270,9 +270,9 @@ public static void dfsRecursive(Node startNode, Set<Integer> visited) {
 
 ![graph](graph.jpg)
 
-### Outputs
+#### Outputs
 
-The BFS output shows that the graph is traversed in layers. The DFS iterative and recursive outputs show the traversal in depth. The DFS outputs are in different orders, but the algorithms operate the same way. There are just many valid DFS outputs.
+The BFS output shows that the graph is traversed in layers. The DFS iterative and recursive outputs show the traversal in depth. The DFS outputs are in different orders, but the algorithms operate the same way. There are more than one valid DFS outputs.
 
 ```
 BFS Iterative:
@@ -300,7 +300,7 @@ DFS Recursive:
 5
 ```
 
-## Conclusion
+### Conclusion
 
 In this article, we looked over some common graphs and how to traverse them with breadth first search and depth first search.
 
