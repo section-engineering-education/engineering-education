@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/choosing-between-django-flask-and-fastapi/
 title: Choosing between Django, Flask, and FastAPI
-description: Most developers who start off learning Python are often confused after the introductory Python course if they should learn Django, Flask, or Fast API. This article will highlight some features that will enable a beginner to make the right choice.
+description: Python course if they should learn this article will highlight some features that will enable a beginner to make an informed decision between Django, Flask, or Fast API.
 author: james-sandy
-date: 2020-12-10T00:00:00-11:00
+date: 2020-12-13T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,28 +14,28 @@ images:
   - url: /engineering-education/choosing-between-django-flask-and-fastapi/hero.jpg
     alt: Django, Flask, and FastAPI example image
 ---
-Python is a very beginner-friendly language with a great community. When learning Python, you will come across Python frameworks to work with Python efficiently. A framework is a collection of packages and modules used to develop software and help developers avoid handling low-level details.
+A framework is a collection of packages and modules used to develop software and help developers avoid handling low-level details. When learning Python, you will come across Python frameworks used to work with Python efficiently. 
 <!--more-->
-The three major Python frameworks used in developing web applications are [Django](https://www.djangoproject.com/), [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)), and [Fast API](https://fastapi.tiangolo.com/). They are handy in various use cases, and we will evaluate each framework to help you make a decision.
+The three major Python frameworks used in developing web applications are [Django](https://www.djangoproject.com/), [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)), and [Fast API](https://fastapi.tiangolo.com/). They are handy in various use cases, and we will evaluate each framework to help you make a decision for your use cases.
 
-#### Table of contents
+### Table of contents
 1. Django Pros & Cons
 2. Flask Pros & Cons
 3. FastAPI Pros & Cons
 4. Comparison
 5. Conclusion
 
-#### Django
+### Django
 Django is a free and open-source Python web development framework used in building websites. It was created by Adrian Holovaty and Simon Willison in 2003 and made use of the Model-Template-View pattern. It is trendy for its robust and straightforward nature. It's one of the most popular frameworks globally and is used by Tech giants like Instagram, Youtube, etc. Django is also popular because it encourages reusable code.
 
-##### Pros
-- Django makes its code structure very efficient, which make it easy for developers to add more functionalities to their websites.
-- The Rest framework (Representational state transfer can be defined as a software architectural style that defines a set of constraints to be used for creating web services) in Django, is called Django Rest Framework (DRF). It's a flexible toolkit to build Web APIs in Django. 
-- REST is the general framework DRF is a specific REST framework used in Django. It's easy to build Web APIs with Django because it's modular and has a customizable architecture.
+### Pros
+- Django code structure is very efficient, which makes it easy for developers to add more functionalities to their websites.
+- The Rest framework (Representational state transfer can be defined as a software architectural style that defines a set of constraints to be used for creating web services) in Django, this is called Django Rest Framework (DRF). It's a flexible toolkit used to build Web APIs in Django. 
+- REST is the general framework, DRF is a specific REST framework used in Django. It's easy to build Web APIs with Django because it's modular and has a customizable architecture.
 - Django emphasizes security by providing defense against joint [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) and [cross-site request forgery attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery).
 
-##### Cons
-- Django's cumbersome software limits development speed because of the community's several reusable modules. It also needs to make sure that previous versions are still compatible with new releases, contributing to its slow nature. 
+### Cons
+- Django's cumbersome software may limit development speed because of the many reusable modules. It also needs to make sure that previous versions are still compatible with new releases, contributing to its slow nature. 
 - Django object-relational mapper (ORM) which allows you to interact with your database like you would with SQL. 
 - Django models and their transactions can be saved because it was created before SQLAlchemy came to be.
 
