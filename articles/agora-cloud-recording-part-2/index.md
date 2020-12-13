@@ -33,6 +33,8 @@ We'll be going through these steps in this article:
 3. Update the layout of the recording.
 4. Recap
 
+> You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-recording-server).
+
 ### Query the recording session
 
 You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with a 404.
