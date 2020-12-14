@@ -12,16 +12,16 @@ To follow along with this tutorial you're required to have:
 
 ### Step 1 -- Creating An Android project
 
-First, we need to create an Android project that we will use in the entire tutorial. To do this, launch android studio and you'll see a welcome screen similar to the one below.
+First, we need to create an Android project that we will use in the entire tutorial. To do this, launch the android studio and you'll see a welcome screen similar to the one below.
 
 ![image](android_studio_welcome_screen.png "Android studio home screen")
 
-Click on `Create new Project`. This takes you to project template selection.
+Click on `Create New Project`. This takes you to project template selection.
 
 ![image](android_studio_select_type.png "Android studio project template selection")
 
 Select `Empty Activity`. An empty activity template comes with one activity named `MainActivity` and an [XML](https://abhiandroid.com/ui/xml) layout file named `activity_main.xml`.
- By clicking `Next` you'll be taken to the project configuration screen. This is the last and the most critical stage in project setup. It's critical as it defines most of [Gradle](https://www.geeksforgeeks.org/android-build-gradle/)  properties for the project.
+ By clicking `Next` you'll be taken to the project configuration screen. This is the last and the most critical stage in the project setup. It's critical as it defines most of [Gradle](https://www.geeksforgeeks.org/android-build-gradle/)  properties for the project.
 
 **Configure your project as shown below:**
 - **Name** as `Firebase auth`
@@ -34,7 +34,7 @@ Select `Empty Activity`. An empty activity template comes with one activity name
 
 The above screen appears after a successful Gradle build process.
 
-### Step 2 -- Sign into Android studio
+### Step 2 -- Sign in to Android studio
 For you to be able to access services like firebase in your app, you need to sign into Android studio. This is where the google account comes in.
 To sign in, click the icon at the top right corner
 
@@ -86,7 +86,7 @@ Now our project is ready to be connected with our app.
 There are two ways to connect a firebase project to an android app.
 
 ### 1. Manually adding services configuration file
-This can be achieved by downloading `google-services.json` file from the firebase console into the android project root and adding the necessary dependencies manually.
+This can be achieved by downloading the `google-services.json` file from the firebase console into the android project root and adding the necessary dependencies manually.
 
 This process requires you to have a running app (can be in an emulator or a physical device) so that it sends a signal to firebase servers indicating that the project configuration file and dependencies are working as expected. This is obviously not the best way as it is more complicated compared to method 2.
 
@@ -139,8 +139,7 @@ Congratulations! We have finished setting up Firebase authentication.
 
 ### Step 5 -- Application Code 
 
-At this stage, we're going to create the user interface (UI) and the backend for our app. This is where `XML` and `Kotlin` come in
- we don't need to code the server-side backend as firebase APIs will do that for us. Isn't that awesome?
+At this stage, we're going to create the user interface (UI) and the backend for our app. This is where `XML` and `Kotlin` come in we don't need to code the server-side backend as firebase APIs will do that for us. Isn't that awesome?
 
 First of all, we need to keep our app organized. This is referred to as application architecture. Expand the `java` directory `>` right click on the package that contains your package name `>` add 3 new `packages` namely `extensions`, `utils` and `views`. you'll learn more about them as we proceed.
 
@@ -148,16 +147,16 @@ It should appear like this
 
 ![image](org_packages.png "organized packages")
 
-Next, we need to refactor `MainActivity.kt` and `activity_main.xml` to `HomeActivity.kt` and  `activity_home.xml` respectively. You can do this by right clicking on it or by pressing `Shift + F6`. Drag  and drop `HomeActivity.kt` class into views.
+Next, we need to refactor `MainActivity.kt` and `activity_main.xml` to `HomeActivity.kt` and  `activity_home.xml` respectively. You can do this by right-clicking on it or by pressing `Shift + F6`. Drag and drop the `HomeActivity.kt` class into views.
 
 ### Explanation
 Each directory plays an important role in the app's design. 
 
 - `extensions` : holds objects that entails Kotlin extension functions. This makes it possible to access and use such functions from any class in the app without creating another instance of their parent. 
 
-- `utils` : contains utilities used in the app. In our case, this will only contain firebase utilities.
+- `utils`: contains utilities used in the app. In our case, this will only contain firebase utilities.
 
-- `views` : This contains the UI related classes.  
+- `views`: This contains the UI-related classes.  
 
 In advanced architectures like **MVVM**, there are more commonly used packages like the `model` but we're not concerned about them for now.
 
@@ -302,9 +301,9 @@ Do the same thing to solve the color reference error. Add the desired color reso
 
 **Key points** 
 
-- ***margin*** : this is the field around a view that serves as its part. Think of it as the area surrounding a view. It's always given in density pixels (DP).
+- ***margin***: this is the field around a view that serves as its part. Think of it as the area surrounding a view. It's always given in density pixels (DP).
 
-- ***Padding*** : is the area inside the view which defines how far from the edges is whatever is inside the view.
+- ***Padding***: is the area inside the view which defines how far from the edges is whatever is inside the view.
 
 - Setting ***layout_width = "0dp"*** in a constraint layout means that the view together with its margin will occupy the whole horizontal constraint set. This works best if the view below is constrained horizontally to the one above it.
 
