@@ -225,7 +225,7 @@ From these figures, you can figure out why users are uninstalling your applicati
 
 *[Image source](https://clevertap.com/blog/customer-experience-optimization/)*
 
-KPI performance also records traffic sources, or where your users come from. It also records the acquisition rate and the conversion rate of your application. Every time an application appears to a user and is downloaded, the play store calculates the conversion rate for you.
+[KPI performance](https://support.google.com/googleplay/android-developer/answer/139628?co=GENIE.Platform%3DDesktop&hl=en) also records traffic sources, or where your users come from. It also records the acquisition rate and the conversion rate of your application. Every time an application appears to a user and is downloaded, the play store calculates the conversion rate for you.
 
 From these figures, you can draw very conclusive metrics.
 
@@ -241,7 +241,7 @@ As previously mentioned, most of the users who visit your application page come 
 
 ![](/engineering-education/google-play-store-application-optimization/traffic-source.png)
 
-There is a lot more you can learn from the analysis of your KPI performance. Always keep an eye on your Google Play console to check how your application is performing, take the necessary measures based on the metrics that perform low, and adopt practices that will maintain your well-performing figures.
+There is a lot more you can learn from the analysis of your KPI performance. Always keep an eye on your Google Play console to [check how your application is performing](https://developer.android.com/distribute/best-practices/launch/monitor-stats), take the necessary measures based on the metrics that perform low, and adopt practices that will maintain your well-performing figures.
 
 #### Spying on your competitors
 Be sure to regularly conduct an intensive search into what your competitors do better than you. If possible, download their applications and check how their features outsmart yours. With this, you will have a better idea of their application flow, such as their user interface and design.
@@ -252,7 +252,7 @@ However, don't directly copy keywords that your competitors use. Based on what y
 
 #### Backlinks and social media
 
-It's estimated that 75 percent of mobile users find applications through direct keyword search. The remaining will find your application on different platforms, such as social media, referrals, and blogs.
+A lot of mobile users find applications through direct keyword search. However some finds application on different platforms, such as social media, referrals, and blogs.
 
 Building backlinks means including your application information on other websites. Make sure you build backlinks on websites that are relevant to your application. Include the application features in a blog post and talk about its benefits. Take screenshots and videos of your application and include them in this post, and be sure to include a Google Play store link where users can download your application.
 
