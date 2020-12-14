@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/autoscaling-in-aws/
+url: /engineering-education/autoscaling-in-amazon-web-services/
 title: Autoscaling in Amazon Web Services (AWS) - An Overview
 description: This article will go over Amazon Web Services or (AWS) which is a tool that provide various ways that enhance data management, storage, development, and networking in organizations.
 author: onesmus-mbaabu
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/autoscaling-in-aws/hero.jpg
+  - url: /engineering-education/autoscaling-in-amazon-web-services/hero.jpg
     alt: Autoscaling AWS example image
 ---
-Amazon Web Services (AWS) is a cloud computing services provider that has application programming interfaces (APIs) and platforms that are used for cloud computing by governments, individuals, and companies. These platforms include a mixture of various offerings such as software as a service (SaaS), infrastructure as a service (IaaS), and platform as a service (PaaS).
+Amazon Web Services (AWS) is a cloud computing services provider that has application programming interfaces (APIs) and platforms that are used for cloud computing by governments, individuals, and companies. These platforms include a mixture of various offerings such as [software as a service (SaaS)](https://en.wikipedia.org/wiki/Software_as_a_service), [infrastructure as a service (IaaS)](https://en.wikipedia.org/wiki/Infrastructure_as_a_service), and [platform as a service (PaaS)](https://en.wikipedia.org/wiki/Platform_as_a_service).
 <!--more-->
 ### Introduction to Amazon Web Services
 SaaS is a service model where a software is licensed out (usually) on a subscription basis (eg. Google Drive). PaaS is a service that provides the infrastructure, hardware, and software required for application development (eg. AWS Elastic Beanstalk). IaaS is a service model that provides the fundamental compute, storage, and network resources for cloud computing (eg. AWS EC2).
@@ -104,7 +104,7 @@ Using autoscaling in AWS requires you to make two main configurations: launch co
 - Stable internet access
 - AMI. Follow this [link](https://linuxroutes.com/create-custom-ami-aws/#:~:text=%20Steps%20to%20create%20custom%20AMI%20in%20AWS%3A,you%20can%20change%20the%20size%20of...%20More%20) to get a simple guide on how to create a custom AMI.
 
-#### 1. Launch configuration
+#### Launch configuration
 To perform launch configurations, go to the right hand side of the dashboard and select the icon 'autoscaling'. There are two aspects under this icon: launch configuration and autoscaling group. Choose 'launch configuration' and then select 'create launch configuration'.
 
 The following diagram shows the six main steps taken in creating a launch configuration (at the top).
