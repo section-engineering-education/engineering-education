@@ -527,7 +527,7 @@ We are done! Let us run the app.
 ![Picasso](/engineering-education/using-picasso-in-android/name.gif)
 
 ### Conclusion. 
-Picasso is a powerful image loading library with various features. We have discussed scaling, resizing, targets, callbacks, and the rest. Instead of manually implementing all these features with a bunch of code, why not use Picasso, which is easy to use and offers better syntax. Go on and read more about Picasso in their official documentation and other features offered by Picasso and implement them in Android Applications. 
+Picasso is a powerful image loading library with various features. We have discussed scaling, resizing, targets, callbacks, and the rest. Instead of manually implementing all these features with a bunch of code, why not use Picasso, which is easy to use and offers better syntax. Go on and read more about Picasso in their official [documentation](https://square.github.io/picasso/) and other features offered by Picasso and implement them in Android Applications. 
 
 Access the source code on [Github](https://github.com/BrianaNzivu/EngineeringEducation/tree-save/main/Picasso).
 Download the sample APK from Google [Drive](https://drive.google.com/file/d/1wkweiHuBYV5jwncJbYRWRcRxxzrXCwGk/view?usp=sharing). 
