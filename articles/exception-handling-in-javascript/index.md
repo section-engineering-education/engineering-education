@@ -62,7 +62,7 @@ We now understand what exceptions are. It's time to learn how to handle them to 
 * The **`throw`** statement generates exceptions.
 
 To have a complete source code, use this HTML code. Insert the JavaScript code inside the script tag to understand how each exception handling statement works.
-```html 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,36 +81,36 @@ To have a complete source code, use this HTML code. Insert the JavaScript code i
 #### Throw Statements
 The `throw statement` is to raise your built-in exceptions.
 
-Below is an example of a ```throw``` statement. 
+Below is an example of a ```throw``` statement.
 ```js
- function myFunction() {
+function myFunction() {
     const x = 50;
     const y = 0;
-    try{
+    try {
         if (y === 0) {
-        throw("This is division by zero error");   
-        }else{
+            throw ("This is division by zero error");
+        } else {
             const z = x / y;
         }
-        }catch(error){
-            alert("Error: " + error);
-        }
-       }
+    } catch (error) {
+        alert("Error: " + error);
+    }
+}
 ```
 
 #### Try Catch Statements
 The `try` clause has the main code that may generate exceptions. If an exception is raised, the `catch` clause gets executed.
 
-Here is an example of a `try-catch` statement. 
+Here is an example of a `try-catch` statement.
 ```js
 function myFunction() {
-  const j = 70;
-  try {
-      allert("The value of j is : " + j);
-  } catch (error) {
-      alert("Error: "+ error.message);
-    }  
-  }
+    const j = 70;
+    try {
+        allert("The value of j is : " + j);
+    } catch (error) {
+        alert("Error: " + error.message);
+    }
+}
 ```
 
 In the example above, we have made a typo error while calling the in-built `alert()` function. We have misspelled alert to produce an error deliberately. The `catch` clause catches the error and executes the code.
@@ -121,14 +121,14 @@ The `finally` statement is the last block to be executed. It executes after `try
 Here is an example of `try-catch-finally` statements.
 ```js
 function myFunction() {
-    var j = 70;
+    const j = 70;
     try {
         alert("The value of j is : " + j);
     } catch (error) {
-        alert("Error: "+ error.message);     
+        alert("Error: " + error.message);
     } finally {
         alert("Finally: Finally gets executed")
-    }  
+    }
 }
 ```
 
