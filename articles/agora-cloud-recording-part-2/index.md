@@ -1,9 +1,11 @@
-To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/) to set up cloud recording for your Agora project and develop the express server to acquire resource ID, start and stop the cloud recording.
+To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/). The previous tutorial covers:
 
-The client application that's using the Agora SDKs should request this server to perform these actions. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the client. 
+- How to set up cloud recording for your Agora project.
+- How to develop an express server to acquire resource ID, start and stop the cloud recording.
+
+The client application that's using the Agora SDKs should request this server to perform these actions. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the client application.
 
 ### Goals
-
 By the end of this tutorial, you’ll know:
 
 - How to query an Agora cloud recording session.
@@ -13,7 +15,6 @@ By the end of this tutorial, you’ll know:
 - How to update the layout of the recording.
 
 ### Prerequisites
-
 This tutorial and the previous tutorial is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora's SDKs in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
@@ -25,7 +26,6 @@ If you'd like to learn how to build some applications with React Native and Agor
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
 ### Overview
-
 We'll be going through these steps in this article:
 
 1. Querying the recording session.
@@ -35,8 +35,7 @@ We'll be going through these steps in this article:
 
 > You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-recording-server).
 
-### Quering the recording session
-
+### Querying the recording session
 You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a session that has ended, the endpoint will respond with a 404.
 
 Now, Let's add a POST request handler for a new endpoint called `'/query'` to query the recording session.
@@ -67,7 +66,7 @@ app.post("/query", async (req, res) => {
 });
 ```
 
-If the request is successful, the response will contain the details about the recording status. The details contain:
+If the request is successful, the response will contain the details about the recording status. The details are:
 
 - **Status**: The recording status.
 
@@ -111,7 +110,7 @@ Request body:
 {
   "mode": "mix",
   "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a",
-  "resource": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+  "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g"
 }
 ```
 
@@ -119,7 +118,7 @@ Response:
 
 ```JSON
 {
-  "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
+  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a",
   "serverResponse": {
     "status": "5",
@@ -147,11 +146,10 @@ Response:
 }
 ```
 
-If you'd like to learn more about this endpoint, checkout the [API refernce](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/query).
+If you'd like to learn more about this endpoint, check out the [API reference](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/query).
 
 ### Updating the recorder's subscriber list
-
-The recorder can subscribe to audio/video streams from specific users and record them. We can use this enpoint to update the configuration when the recording is in progress. You can update the subscriber list multiple times during a recording session.
+The recorder can subscribe to audio/video streams from specific users and record them. We can use this endpoint to update the configuration when the recording is in progress. You can update the subscriber list multiple times during a recording session.
 
 You can also set up the subscriber list while starting the recording. Refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#start) on how to set up subscriber lists when you start the recording.
 
@@ -250,15 +248,14 @@ Response:
 
 To learn more about setting up subscription lists, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription?platform=RESTful).
 
-If you'd like to learn more about this endpoint, checkout the [API refernce](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/update).
+If you'd like to learn more about this endpoint, check out the [API reference](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/update).
 
 ### Updating the layout of the recording
-
 While you are recording, you can request this endpoint to update the video mixing layout of the recording. You can update the video mixing layout multiple times during a recording session.
 
 Requesting this endpoint will override the existing configurations.
 
-> If you set the background color of the canvas as red when starting a recording and call this method to update the layout without setting the backgroundColor parameter, the background color changes back to the default value (black).
+> If you set the background color of the canvas as red when starting a recording and call this method to update the layout without setting the backgroundColor parameter, the background color will revert back to the default value (black).
 
 To learn more about setting video layout, refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=RESTful).
 
@@ -330,7 +327,7 @@ app.post("/updateLayout", async (req, res) => {
 });
 ```
 
-If the request is successful, the response will contain the recording ID and the resource ID of the recording session and the video mixing layout will be updated.
+If the request is successful, the response will contain the recording ID and the resource ID of the recording session. The video mixing layout of the recording will also be updated.
 
 Request body:
 
@@ -375,10 +372,9 @@ Response:
 }
 ```
 
-If you'd like to learn more about this endpoint, checkout the [API refernce](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout).
+If you'd like to learn more about this endpoint, check out the [API reference](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout).
 
 ### Let's Recap
-
 1. We added a POST request handler to query the recording session.
 
 2. We added a POST request handler to update the subscriber list of the recorder.
