@@ -33,7 +33,7 @@ Add the following code to the class.
 @Entity
 data class ToDo( @PrimaryKey val content: String)
 ```
-Since we are going to record a sentence for each to-do item, we only need one field in the table. We annotate the field with `@PrimaryKey` to declare it the primary key for our table. There are many annotations for table fields. You can read more about the fields [here](https://developer.android.com/training/data-storage/room/defining-data)
+Since we are going to record a sentence for each to-do item, we only need one field in the table. We annotate the field with `@PrimaryKey` to declare it the primary key for our table. One important property of the primary key is the `autogenerate` parameter. It is a boolean property. We set it to true when the primary key is a value that can autoincrement. For our case, the primary key is a string provided by the user hence we can not apply that property. There are many annotations for table fields. You can read more about the fields [here](https://developer.android.com/training/data-storage/room/defining-data).
 
 ### Step 3 — Creating the DAO
 Now that we have defined our table, let's go ahead and create functions to query our table. Still, in the `db` package, create another file and name it `DAO`. We need to create three functions. One to get the ToDO list, another to save a ToDo item, and another one to delete a ToDo item.
@@ -65,20 +65,19 @@ That's all we need for the DAO. Let's now create the database class.
 As mentioned earlier, the database class uses the data access object to issue queries to the database. For this reason, the class must hold a reference to the DAO. Write the code below in the database class
 
 ```Kotlin
-@Database(entities = [Note::class], version = 1, exportSchema = false)
-abstract class NoteDatabase : RoomDatabase(){
-    abstract fun noteDao(): NoteDao
+abstract class ListDatabase : RoomDatabase(){
+    abstract fun Dao(): Dao
 
     companion object {
         @Volatile
-        private var INSTANCE: NoteDatabase? = null
+        private var INSTANCE: ListDatabase? = null
 
-        fun getDatabase(context: Context): NoteDatabase {
+        fun getDatabase(context: Context): ListDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    NoteDatabase::class.java,
-                    "word_database"
+                        context.applicationContext,
+                        ListDatabase::class.java,
+                        "list_database"
                 ).build()
                 INSTANCE = instance
                 instance
@@ -87,7 +86,10 @@ abstract class NoteDatabase : RoomDatabase(){
     }
 }
 ```
-The class needs to exhibit the singleton feature. To do this, we declare the class as abstract and then use a companion object housing a function to create the instance. That is what we need for the database class.
+ 
+The class needs to exhibit the singleton feature. To do this, we declare the class as abstract and then use a companion object housing a function to create the database instance. By singleton, we mean that only one database instance should be created during the lifetime of the application's process. Creation of multiple instances may lead to errors in data management. To create the instance, we first declare a variable to hold the instance. Then, in the getDatabase method, we check whether the INSTANCE variable is null, we return it if it is not null. If null we use the Room.databaseBuilder method to create the database. In the method, we pass in the application context, database class, and the database name as parameters. We then update the instance variable before returning the instance.
+
+That is what we need for the database class.
 
 ### Step 5 — Creating a Repository
 A repository acts as a single source of truth. It is mostly used when an application has multiple sources of data i.e. local and remote sources. We don't really need it in our application but it is a good practice to use it.
