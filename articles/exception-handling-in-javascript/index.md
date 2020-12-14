@@ -13,7 +13,7 @@ Exception Handling in JavaScript is an exciting and interactive topic. Therefore
 Exception handling is one of the powerful JavaScript features to handle errors and maintain a regular JavaScript code/program flow. An exception is an object with an explanation of what went amiss. Also, it discovers where the problem occurred.
 Errors occur due to mistakes made by developers, wrong input, or unforeseeable things. Some reasons why exceptions occur are:
 
-- Dividing a number by zero: This results into infinity, thus throwing an exception.
+- Dividing a number by zero: This results in infinity, thus throwing an exception.
 - When a requested file does not exist in the system.
 - When the user provides the wrong input.
 - When the network drops during communication.
