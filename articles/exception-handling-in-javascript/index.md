@@ -61,10 +61,27 @@ We now understand what exceptions are. It's time to learn how to handle them to 
 * A **`finally`** clause always gets executed.
 * The **`throw`** statement generates exceptions.
 
+To have a complete source code, use this HTML code. Insert the JavaScript code inside the script tag to understand how each exception handling statement works.
+```html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try-Catch-Finally Statement</title>
+</head>
+<body>
+    <script type="text/JavaScript"></script>
+     <p>Click the button to see the output</p>
+     <button type="button" onclick="myFunction()">Click Here</button>
+</body>
+</html>
+```
+
 #### Throw Statements
 The `throw statement` is to raise your built-in exceptions.
 
-Below is an example of a ```throw``` statement. The complete source code can be found on [repl.it link](https://repl.it/@JudyNduati/throw-statement-example).
+Below is an example of a ```throw``` statement. 
 ```js
  function myFunction() {
     const x = 50;
@@ -84,7 +101,7 @@ Below is an example of a ```throw``` statement. The complete source code can be 
 #### Try Catch Statements
 The `try` clause has the main code that may generate exceptions. If an exception is raised, the `catch` clause gets executed.
 
-Here is an example of a `try-catch` statement. The complete source code can be found on [repl.it link](https://repl.it/@JudyNduati/try-catch-statement-example).
+Here is an example of a `try-catch` statement. 
 ```js
 function myFunction() {
   const j = 70;
@@ -101,8 +118,7 @@ In the example above, we have made a typo error while calling the in-built `aler
 #### Try Catch Finally Statements
 The `finally` statement is the last block to be executed. It executes after `try` and `catch` clauses.
 
-Here is an example of `try-catch-finally` statements. The complete source code can be found on [repl.it link](https://repl.it/@JudyNduati/try-catch-finally-example).
-
+Here is an example of `try-catch-finally` statements.
 ```js
 function myFunction() {
     var j = 70;
