@@ -44,8 +44,8 @@ When a runtime error occurs, it stops the code and raises an error object. The e
 
 JavaScript uses six types of error objects. These error objects are the foundation of exception handling.
 
-- **EvalError**: The `EvalError` function indicates the error that occurred in the [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) function. It is a global function that evaluates the JavaScript string. JavaScript do not throw this exception anymore.
-- **RangeError**: `RangeError` exceptions occurs when a numeric value is outside the specified range.
+- **EvalError**: The `EvalError` function indicates the error that occurred in the [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) function. It is a global function that evaluates the JavaScript string. JavaScript does not throw this exception anymore.
+- **RangeError**: `RangeError` exceptions occur when a numeric value is outside the specified range.
 - **ReferenceError**: A `ReferenceError` exception occurs when undeclared variables are used. These exceptions commonly occur due to spelling errors on variables.
 - **Syntax Error**: A Syntax Error exception occurs when JavaScript language rules get broken.
 - **TypeError**: A `TypeError` exception occurs when a value is different from the one expected.
@@ -55,11 +55,11 @@ JavaScript uses six types of error objects. These error objects are the foundati
 We now understand what exceptions are. It's time to learn how to handle them to stop our code from crashing. JavaScript handles exceptions in `try-catch-finally` statements and `throw` statements.
 
 #### Key Terms
-* a **`try-catch-finally`** statement is a code or program that handles exceptions.
-* the **`try`** clause runs the code that generates exceptions.
-* the **`catch`** catch exceptions that are thrown.
-* a **`finally`** clause gets executed always.
-* the **`throw`** statement generates exceptions.
+* A **`try-catch-finally`** statement is a code or program that handles exceptions.
+* The **`try`** clause runs the code that generates exceptions.
+* The **`catch`** clause catches exceptions that are thrown.
+* A **`finally`** clause always gets executed.
+* The **`throw`** statement generates exceptions.
 
 #### Throw Statements
 The `throw statement` is to raise your built-in exceptions.
