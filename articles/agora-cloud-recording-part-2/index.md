@@ -1,6 +1,6 @@
 To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/) to set up cloud recording for your Agora project and develop the express server to acquire resource ID, start and stop the cloud recording.
 
-The client application that's using the Agora SDKs should request this server to perform these actions. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
+The client application that's using the Agora SDKs should request this server to perform these actions. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the client. 
 
 ### Goals
 
@@ -35,9 +35,9 @@ We'll be going through these steps in this article:
 
 > You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-recording-server).
 
-### Query the recording session
+### Quering the recording session
 
-You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a recording session that has ended, the endpoint will respond with a 404.
+You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a session that has ended, the endpoint will respond with a 404.
 
 Now, Let's add a POST request handler for a new endpoint called `'/query'` to query the recording session.
 
@@ -151,9 +151,9 @@ If you'd like to learn more about this endpoint, checkout the [API refernce](htt
 
 ### Updating the recorder's subscriber list
 
-The recorder can subscribe to audio/video streams from specific users and record them. You can set up this configuration while starting the recording and you can also update the configuration when the recording is in progress. Refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#start) on how to set up subscription lists when you start the recording.
+The recorder can subscribe to audio/video streams from specific users and record them. We can use this enpoint to update the configuration when the recording is in progress. You can update the subscriber list multiple times during a recording session.
 
-You can update the subscriber list multiple times during a recording session.
+You can also set up the subscriber list while starting the recording. Refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#start) on how to set up subscriber lists when you start the recording.
 
 Now, Let's add a POST request handler for a new endpoint called `'/updateSubscription'` to update the subscription list of the recorder.
 
@@ -167,7 +167,7 @@ You need to perform a POST request on this endpoint `https://api.agora.io/v1/app
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
-In the body of the request, we should specify the UID, the channel ID, the subscription list, and the unsubscription list for video and audio channels separately.
+In the body of the request, we should specify the recorder's UID, the channel ID, the subscription list, and the unsubscription list for video and audio channels separately.
 
 Schema of the request body:
 
@@ -274,7 +274,7 @@ You need to perform a POST request on this endpoint `https://api.agora.io/v1/app
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
-In the body of the request, we should specify the UID, the channel ID, and the configuration for the video mixing layout.
+In the body of the request, we should specify the recorder's UID, the channel ID, and the configuration for the video mixing layout.
 
 **Layout Config:**
 
