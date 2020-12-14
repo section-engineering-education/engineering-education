@@ -2,7 +2,7 @@
 C# is pronounced as "C-Sharp".
 ### Why C#?
 
-C# is a modern object-oriented programming language that is portable and requires a .NET framework on a machine for it to run.
+C# is object-oriented and portable. It requires a .NET framework on a machine for it to run.
 
 The performance of C# is exceptional in terms of speed and it can cheaply use resources. Many applications can be created using C#. Some of these are given as follows:
 
@@ -18,7 +18,7 @@ The performance of C# is exceptional in terms of speed and it can cheaply use re
 C# is a friendlier and easier language to understand for beginners compared to other programming languages like C and C++.
 
 Programs written in C# utilize the .NET Framework to run. .NET is a framework used to make applications and run the .NET software. It was created by Microsoft and runs essentially on Windows working operating system. There is an open-source too called Mono which conveys a cross-platform.
-In this tutorial, we need it to compile and run our code.
+In this tutorial, we will use it to compile and run our C# code.
 
 To get started, you will need:
 - An IDE(Integrated Development Environment) for writting and compiling code. We will be using [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
@@ -26,7 +26,7 @@ To get started, you will need:
 
 
 ### Installing C# 
-Once you have downloaded and installed Visual Studio, choose .NET desktop development and click *Modify*.
+After you have installed Visual Studio, choose .NET desktop development and click *Modify*.
 ![vscode](installation.png)
 
 After the installation, click *Launch* to get started.  
@@ -50,7 +50,7 @@ Visual Code will automatically generate some code of C# for you.
 
 ![newproject](Program.png)
 
-Let us look at the code.
+Let's look at the code.
 
 Below is the code that will be generated. It is a *Hello World* program.
 
@@ -107,7 +107,7 @@ Here:
 //This is a C# program
 ```
 
-The line starts with two forward slashes which makes it a comment. C# ignores this line when executing the code. This is a single-line comment. Comments are used by programmers to explain more about the line(what the line does). This concept is so important when a group of programmers are working together as it makes your code more readable to the others.
+The line starts with two forward slashes which makes it a comment. The compiler ignores this line when compiling the code. This is a single-line comment. Comments are used by programmers to explain more about the line(what the line does). This concept is so important when a group of programmers are working together as it makes your code more readable to the others.
 
 For multiple-line comment,we use ` /*`and ends with `*/` :
 
@@ -132,27 +132,27 @@ You can explore more in the [C# docs](https://docs.microsoft.com/en-us/dotnet/cs
  namespace HelloWorld{}
  ``` 
 
-Namespaces are used in C# to organize and provide a level of separation of codes. They are containers consisting of methods, classes and other namespaces.
+Namespaces are used in C# to seperate and organize code. They are containers consisting of methods, classes and other namespaces.
 
 **Line 4:**
  ``` C#
  class Program{}
  ```
 
-A class is a container that contains data and methods. Since C# is Object-oriented programming, creating a class is mandatory for each program. In our case, we are creating a class called `Program`.
+A class is a container that contains methods and data. Since C# is Object-oriented programming, creating a class is mandatory for each program. In our case, we are creating a class called `Program`.
 
 **Line 5:** 
 ```C#
 static void Main(string[] args)
 ```
-Any program execution starts from the `Main` method. Any code outside the `Main` method will not be executed **unless** it is called. Every C# program must have the `Main` method.
+Execution of programs begins from the `Main` method. Every C# program must have the `Main` method.
 
 **Line 6:**
  ```C#
  Console.WriteLine("Hello World!");
  ```
 
-`Console.WriteLine()` is used to print out text on the console.It prints a string and moves to the beginning of the next line. In our case, it is used to output *"Hello World"*.
+`Console.WriteLine()` is used to print out text on the console.It prints a string and moves to the next line. In our case, it is used to output *"Hello World"*.
 
 We can also use `Console.Write()` that print a string in the same line without moving to the next line.  You can learn more on Console.WriteLine() and Console.Write() [here](https://www.programiz.com/csharp-programming/basic-input-output).
 
@@ -171,11 +171,11 @@ In the above program, as soon as the user enters a character(s) and presses the 
 **Note:**
 - Each line in C# ends with a semi-colon(;).
 - C# follows a top to bottom order when executing the program.
-- C# is case-sensitive as it treats uppercase and lowercase characters differently.e.g `program` and `Program` mean different things.
+- C# is case-sensitive as it treats capitalized and lowercase characters in a different way.e.g `program` and `Program` are different things.
 
 **Congratulations!** You just wrote your first C# program.
 
-Let's write another program that calculates the sum of two numbers entered by the user.
+Let's write another program that adds two numbers entered by the user.
 ```C#
 //This is a C# program that adds two numbers
 using System;
