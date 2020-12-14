@@ -142,12 +142,20 @@ Django rest framework comes with an endpoint that users can use to generate thei
 
 In the `django_todo` project directory add the api endpoint for token generation in the `urls.py` file.
 ```python
+from django.contrib import admin
+from django.urls import path
+from django.urls import include
+from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework.documentation import include_docs_urls
+from rest_framework_simplejwt import views as jwt_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/todo/', include("todo.urls")),
     path('docs/', include_docs_urls(title='Todo Api')),
-    path('api/token', obtain_auth_token, name="auth_toke"),#token generation url
+    path('api/token', obtain_auth_token, name="auth_token")
 ]
+
 ```
 Making a POST request to `http://127.0.0.1:8000/api/token/` with a valid username and password returns an authentication token in the response body that can be used to authenticate subsequent requests.
 ![POST Request](/engineering-education/securing-django-api/get-token.png)
@@ -209,14 +217,22 @@ REST_FRAMEWORK = {
 ```
 In the `urls.py` file in the `django_todo` directory add the below url endpoints for obtaining the refresh and access tokens.
 ```python
+from django.contrib import admin
+from django.urls import path
+from django.urls import include
+from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework.documentation import include_docs_urls
+from rest_framework_simplejwt import views as jwt_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/todo/', include("todo.urls")),
     path('docs/', include_docs_urls(title='Todo Api')),
     path('api/token', obtain_auth_token, name="auth_token"),
-    path('api/jwt/token/', jwt_views.TokenObtainPairView.as_view(), name='token_pair'),
+    path('api/jwt/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/jwt/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
+
 ```
 
 **Obtaining Token**
