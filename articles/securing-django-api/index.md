@@ -9,13 +9,17 @@ Add `'rest_framework.authtoken'` to the apps list in `django_todo` settings.py f
 ```python
 # ./django_todo/settings.py
 ...
+
 INSTALLED_APPS = [
-    ...
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo',
     'rest_framework',
-    'rest_framework.authtoken'
+    'coreapi',
 ]
 ```
 Add `'rest_framework.authentication.TokenAuthentication'` to `REST_FRAMEWORK` dictionary in the `django_todo` project `settings.py`.
