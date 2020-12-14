@@ -1,5 +1,5 @@
 ### Introduction
-Developers face problems and obstacles while coding. With the use of exceptions, you can responsibly manage some of these problems. Exception handling is the process of converting a code error message into a user-friendly error message. It is a necessary step in the development process. In this article, we will go through exception handling in JavaScript. 
+Developers face problems and obstacles while coding. With the use of exceptions, you can responsibly manage some of these problems. Exception handling is the process of converting a code error message into a user-friendly error message. It is a necessary step in the development process. In this article, we will go through exception handling in JavaScript.
 
 ### Table of Contents
 - [What is Exception Handling](#what-is-exception-handling)
@@ -64,7 +64,7 @@ We now understand what exceptions are. It's time to learn how to handle them to 
 #### Throw Statements
 The `throw statement` is to raise your built-in exceptions.
 
-Below is an example of a ```throw``` statement. The complete source code can be found on [repil.it link](https://repl.it/@JudyNduati/throw-statement-example).
+Below is an example of a ```throw``` statement. The complete source code can be found on [repl.it link](https://repl.it/@JudyNduati/throw-statement-example).
 ```js
  function myFunction() {
     const x = 50;
@@ -84,7 +84,7 @@ Below is an example of a ```throw``` statement. The complete source code can be 
 #### Try Catch Statements
 The `try` clause has the main code that may generate exceptions. If an exception is raised, the `catch` clause gets executed.
 
-Here is an example of a `try-catch` statement. The complete source code can be found on [repil.it link](https://repl.it/@JudyNduati/try-catch-statement-example). 
+Here is an example of a `try-catch` statement. The complete source code can be found on [repl.it link](https://repl.it/@JudyNduati/try-catch-statement-example).
 ```js
 function myFunction() {
   const j = 70;
@@ -101,7 +101,7 @@ In the example above, we have made a typo error while calling the in-built `aler
 #### Try Catch Finally Statements
 The `finally` statement is the last block to be executed. It executes after `try` and `catch` clauses.
 
-Here is an example of `try-catch-finally` statements. The complete source code can be found on [repil.it link](https://repl.it/@JudyNduati/try-catch-finally-example).
+Here is an example of `try-catch-finally` statements. The complete source code can be found on [repl.it link](https://repl.it/@JudyNduati/try-catch-finally-example).
 
 ```js
 function myFunction() {
