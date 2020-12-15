@@ -7,7 +7,7 @@
 - title: Optimizing Stock Price Profit using Greedy Algorithms
 - description: In this article we will explore the greedy algorithm approach to obtain the maximum profit given a list of indices when optimizing a stock price profit program.
 - author: lalithnarayan-c
-- date: 2020-12-07T00:00:00-18:00
+- date: 2020-12-15T00:00:00-18:00
 - topics: []
 - excerpt_separator: <!--more-->
 - images:
