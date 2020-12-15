@@ -1,21 +1,21 @@
 # Understanding Divide and Conquer Method using Stock Price Optimization Problem
 
-Stock markets are where buyers and sellers represent ownership for the businesses listed on the markets. Many have become millionaires by trading. In today's era, many companies offer solutions to test out our strategies on previous data. This is called back-testing. If the approach returns good profits during back-testing, it can be deployed in the live markets. 
+Consider the scenario of the stock markets. Daily, millions of people trade equities and commodities on various exchanges across the globe. These processes are being technically equipped, and a majority of the functions are being automated. Algorithmic trading represents one such area of interest for brokerage firms. Algorithmic trading involves coming up with new algorithms to predict the future price of a stock or commodity. However, before deploying it live, it is tested on historical data. This is called back-testing.
 
-One of the aspects of back-testing is to know the maximum possible profit. We compute the maximum potential yield of stock prices and compare the strategy's performance to the maximum profit possible. Once the back-testing approach is at par with the maximum profit, it is deployed into the real-time analysis.
+If the returns are comparable to the maximum possible profit during back-testing, then the algorithm is considered stable. On the other hand, if the returns are not close to the maximum potential profit, they are not yet ready to be deployed. This article will consider the algorithm to find the maximum possible profit given a list of historical prices. 
 
 ### Aim 
 
-Given a list of prices over a time-frame, we compute the maximum possible profit possible through performing one buy operation or one sell operation at a given time. At a given time-stamp, only one of the two operations can be used. The total number of buying and selling operations that can be performed are unlimited.
+We are given a list of historical prices over a specific period. Given the list, we compute the maximum possible profit from the historical prices. One can perform either a *BUY* transaction or a *SELL* transaction at a given timestamp. The total number of buying and selling operations that can be executed is not limited.
 
 ### Objective
 
-- In this program, the divide and conquer method is used to maximize the profit, given a list of values. The divide and conquer method recursively breaks down the problem into smaller sub-problems until they can be solved directly. The solutions to these sub-problems are then combined to give a solution to the original problem. 
-- We discuss the advantages and disadvantages of the divide and conquer approach.
+- We use the divide and conquer paradigm to solve the maximization problem. The divide and conquer method recursively breaks down the problem into smaller sub-problems until they can be solved directly. The solutions to these sub-problems are then combined to give a solution to the original problem. 
+- Further, in the article, we discuss the advantages and disadvantages of the divide and conquer paradigm.
 
 ### Divide and Conquer Paradigm
 
-[Divide and Conquer Paradigm](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm) is an algorithmic design approach used in problems that have a recursive structure to it. It is based on multi-branched recursion. The algorithm operates by breaking down the problem into smaller sub-problems thereby making the problem small enough to be solved directly. In this article, we will observe the recursive approach taken to optimize the profit.
+[Divide and Conquer Paradigm](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm) is an algorithmic design approach used in problems that have a recursive structure to it. It is based on multi-branched recursion. The algorithm operates by breaking down the problem into smaller sub-problems, making the problem small enough to be solved directly. In this article, we will observe the recursive approach taken to optimize the profit.
 
 At the end of this article, we will also analyze the advantages and limitations of this programming paradigm. 
 
@@ -25,30 +25,28 @@ We are given a list of prices. The indices of the list indicate the day number. 
 
 ### Given Input 
 
-The input to the program is a list of historical values(integers). It is stored in an array. Python's list is an efficient implementation of the dynamic array. 
-
-The advantage of the dynamic array is that it grows automatically when additional elements are inserted, and no space is available for the new element. The amortized cost of insertion of an element into a dynamic array is O(1), whereas the worst case is still Θ(n).
+We are given a pythonic list of historical prices. Python's list implements dynamic array under the hood. Dynamic arrays are resourceful as the size grows as and when required. This saves space. Moreover, the amortized cost of inserting an element is O(1). The worst-case scenario is Θ(n) when the size of the array is doubled.
 
 ### Desired Output
 
-The program outputs the maximum possible profit given the list of prices. The output of the program is of type int. Since we are dealing with profits, it is efficient to round off to the nearest ₹.
+The output is the maximum potential profit rounded to the nearest ₹. We will output an integer, but depending on the accuracy of the output required, the data type can be chosen accordingly.
 
-### Pseudo Code
+### Pseudocode
 
-Let us look at the pseudo code for the above problem. The pseudo code explains the entire solution and is invariant to programming languages. The logic below is to split the problem into smallest sub-problems and compute the profits. If the local profit is greater than the global profit then the value of the global profit is updated.
+Let us look at the pseudocode for the above problem. The pseudocode explains the entire solution and is invariant to programming languages. The logic below is to split the problem into the smallest sub-problems and compute the profits. If the local profit is greater than the global profit, then the global profit value is updated.
 
 ```txt
-function maximize_profit(price_list, starting_index, ending_index):
+function maximize_profit(list_of_prices, starting_index, ending_index):
 {
-    IF length(price_list)<2 THEN
+    IF length(list_of_prices)<2 THEN
         raise an Error and exit the program
     
     INITIALIZE maximum_profit to 0
     # base condition for recursion
     IF starting_index > ending_index THEN
         return maximum_profit
-    FOR buying_counter in price_list
-        FOR selling_counter in price_list
+    FOR buying_counter in list_of_prices
+        FOR selling_counter in list_of_prices
             UPDATE tentative_profit with the difference of the current two prices at hand
             RECURSIVELY call maximize_profit on the following two slices of the list:
             1. start: buy -1
@@ -64,8 +62,8 @@ function maximize_profit(price_list, starting_index, ending_index):
 
 function main():
 {
-    STORE the list of prices in PRICE_LIST
-    CALL the function maximize_profit with argument PRICE_LIST
+    STORE the list of prices in LIST_OF_PRICES
+    CALL maximize_profit() with argument LIST_OF_PRICES
     STORE the value returned by the function in variable PROFIT
     print PROFIT on the console. 
 }
@@ -73,12 +71,12 @@ function main():
 
 ### Python Code 
 
-We convert the pseudo code given above into Python code. Try coding it on your own. The solution is given below.
+We convert the pseudocode given above into Python code. Try coding it on your own. The solution is given below.
 
 ```py
 def maximize_profit(price_list, start, end):
     if(len(price_list)<2):
-        raise ValueError('Getting a profit requires at least 2 prices')
+        raise ValueError('At least 2 prices required')
     
     maximum_profit = 0
     if start >= end:
@@ -159,7 +157,7 @@ In this case, the output remains at 0 and does not output negative numbers. Ther
 
 **Total Profit** = 865
 
-Compared to the greedy approach, this method gives the optimal solution to the problem. We observed that the maximum profit in greedy method was 655. In this case, the total profit is 865.
+Compared to the greedy approach, this method gives the optimal solution to the problem. We observed that the maximum profit in the greedy method was 655. In this case, the total profit is 865. We solved the above problem using the greedy method in the earlier article. You may go through the solution at this [link](/engineering-education/greedy-algorithms/). 
 
 ### Advantages 
 - The program can work with many buy and sell operations due to its recurring property. Multiple buy and sell operations take place, and the best profits are returned 
@@ -167,8 +165,8 @@ Compared to the greedy approach, this method gives the optimal solution to the p
 
 ### Disadvantages
 
-- The worst-case time complexity of the function `maximize_profit`()  is Θ(n^2*log(n)) 
-- Space Complexity of the function is Θ(log(n)).
+- The worst-case time complexity of the function `maximize_profit`()  is Θ(n^2*log(n)). The time complexity is arrived at through computational methods. A good exercise would be to come up with recurrence relations for the above algorithm. 
+- Space Complexity of the function is Θ(log(n)). This is computed using the maximum memory utilization by the program at a given time. At any given time, the algorithm has a maximum of `log(n)` function calls. Each function call represents the function solving a subproblem. 
 - The program requires multiple passes over slices of the entire list.
 - The minimum profit is 0. Losses are not accounted for and displayed by the program. The base case drives DNC methods, and in this case, the base case is when `starting_index`> `ending_index.` When the following happens, 0 is returned.
 
