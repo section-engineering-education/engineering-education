@@ -27,7 +27,7 @@ The `os.system()` function allows users to execute commands in Python.  The abov
 
 ### Building an application to ping servers
 
-Let us use the [`subprocess`](https://docs.python.org/3/library/subprocess.html) library to write a script that pings multiple servers to see whether they are reachable or not. This would be a good use case when you have multiple hosts, servers, or VMs(AWS ec2 instances) and want to check if they are up and running without any problems. A simple solution is to just [`ping`](https://www.geeksforgeeks.org/ping-command-in-linux-with-examples/) these servers and see if they respond to the request. However, when you have a considerable amount of machines, it will be extremely tedious and time-consuming to manually `ping` them. A better approach is to use Python to automate this process.  
+Let us use the [`subprocess`](https://docs.python.org/3/library/subprocess.html) library to write a script that pings multiple servers to see whether they are reachable or not. This would be a good use case when you have multiple hosts, servers, or VMs (AWS ec2 instances) and want to check if they are up and running without any problems. A simple solution is to just [`ping`](https://www.geeksforgeeks.org/ping-command-in-linux-with-examples/) these servers and see if they respond to the request. However, when you have a considerable amount of machines, it will be extremely tedious and time-consuming to manually `ping` them. A better approach is to use Python to automate this process.  
 
 ### Code
 
