@@ -6,7 +6,7 @@ url: /engineering-education/divide-and-conquer-algorithms/
 title: Divide and Conquer Method using Stock Price Optimization Problem
 description: In this article we will explore the algorithm to find the maximum possible profit given a list of historical prices. We will also discuss the advantages and disadvantages of the divide and conquer paradigm.
 author: lalithnarayan-c
-date: 2020-12-15T00:00:00-18:00
+date: 2020-12-15T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -49,7 +49,7 @@ The output is the maximum potential profit rounded to the nearest ₹. We will o
 ### Pseudocode
 Let us look at the pseudocode for the problem above. The pseudocode explains the entire solution and is invariant to programming languages. The logic below is to split the problem into the smallest sub-problems and compute the profits. If the local profit is greater than the global profit, then the global profit value is updated.
 
-```txt
+```bash
 function maximize_profit(list_of_prices, starting_index, ending_index):
 {
     IF length(list_of_prices)<2 THEN
