@@ -1,4 +1,4 @@
-### The Front Matter Review Process:
+### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out.
 ---
 - layout: engineering-education
 - status: publish
@@ -18,7 +18,7 @@
 We build machine learning models to provide the best possible predictions to a given problem. However, a single model may not make the best predictions and may be subject to errors such as variance and bias.
 <!--more-->
 
-Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor. Otherwise copy any front matter.
+NOTE: Make sure you copy the front matter from the most recently published article of the *same author* if it is a repeat contributor. Otherwise copy any front matter.
 ---
 
 - Line 2: Start of the front matter
