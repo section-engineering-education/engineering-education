@@ -2,20 +2,17 @@
 **Linux** is one of the most popular operating systems used by software developers and system administrators. It is open-source, free, customizable, and is very robust and adaptable making it an ideal choice for servers, [Virtual machines(VMs)](https://www.vmware.com/topics/glossary/content/virtual-machine), and an array of other use cases. Therefore, it is essential for anyone working in the tech industry to know how to work with Linux because it is used almost everywhere. *In this tutorial, we are going to look at how we can automate and run Linux commands in Python*. 
 
 ### Table of contents
-
-[Prerequisites](#prerequisites)
-[Introduction](#introduction)
-[Building an application to ping servers](#building-an-application-to-ping-servers)
-[Code](#code)
-[Conclusion](#conclusion)
+- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
+- [Building An Application To Ping Servers](#building-an-application-to-ping-servers)
+- [Code](#code)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
-
 1. Basic understanding of Linux: https://www.section.io/engineering-education/what-is-linux/ and https://www.section.io/engineering-education/introduction-to-shell-scripting/
 2. Basic programming skills in Python: https://www.python.org/about/gettingstarted/
 
 ### Introduction
-
 Python has a rich set of libraries that allow us to execute shell commands. A naive approach would be to use the `os` library:
 
 ```python
@@ -25,12 +22,18 @@ os.system(cmd)
 ```
 The `os.system()` function allows users to execute commands in Python.  The above program lists all the files inside a directory. However, we can't read and parse the output of the command. In some commands, it is imperative to read the output and analyze it. The `subprocess` library provides a better, safer, and faster approach for this and allows us to view and parse the output of the commands.  
 
-### Building an application to ping servers
+| os      | subprocess |
+| ----------- | ----------- |
+| os.system function has been deprecated. In other words, this function has been replaced.      | The subprocess module serves as a replacement to this and Python officially recommends using subprocess for shell commands.       |
+| os.system directly executes shell commands and is susceptible to vulnerabilities.   | The subprocess module overcomes these vulnerabilities and is more secure.        |
+| The os.system function simply runs the shell command and only returns the status code of that command. | The subprocess module returns an object that can be used to get more information on the output of the command and kill or terminate the command if necessary. This cannot be done in the os module.     |
 
-Let us use the [`subprocess`](https://docs.python.org/3/library/subprocess.html) library to write a script that pings multiple servers to see whether they are reachable or not. This would be a good use case when you have multiple hosts, servers, or VMs (AWS ec2 instances) and want to check if they are up and running without any problems. A simple solution is to just [`ping`](https://www.geeksforgeeks.org/ping-command-in-linux-with-examples/) these servers and see if they respond to the request. However, when you have a considerable amount of machines, it will be extremely tedious and time-consuming to manually `ping` them. A better approach is to use Python to automate this process.  
+Although you can execute commands using the os module, the subprocess library provides a better and newer approach and is officially recommended. Therefore, we are going to use subprocess in this tutorial. [This](https://www.python.org/dev/peps/pep-0324/#abstract) documentation explores the motivation behind creating this module. 
+
+### Building An Application To Ping Servers
+Let us use the [`subprocess`](https://docs.python.org/3/library/subprocess.html) library to write a script that pings multiple servers to see whether they are reachable or not. This would be a good use case when you have multiple hosts, servers, or VMs(AWS ec2 instances) and want to check if they are up and running without any problems. A simple solution is to just [`ping`](https://www.geeksforgeeks.org/ping-command-in-linux-with-examples/) these servers and see if they respond to the request. However, when you have a considerable amount of machines, it will be extremely tedious and time-consuming to manually `ping` them. A better approach is to use Python to automate this process.  
 
 ### Code
-
 According to the [official documentation](https://docs.python.org/3/library/subprocess.html), The subprocess module allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes. This module intends to replace several older modules and functions. The subprocess library has a class called `Popen()` that allows us to execute shell commands and get the output of the command. 
 
 Create a python file and add the following code. We also need to create a file called "servers.txt", where we can add a list of all the servers we need to ping. The python script will read from this file and ping each server listed in it. 
@@ -84,7 +87,6 @@ As you can see in the output, we get the message "name or service not known" for
 In the above program, the `ping()` function takes a list of servers and returns the output of running the `ping` command on each server. If a server is unreachable, it displays an output saying "ping: somethingthatdoesntexist: Name or service not known". 
 
 The `Popen()` is a constructor method of the `Popen` class and takes in the following arguments:
-
 1. A list of commands and any additional options these commands might require. For example, the `ls` command can be used with '-l' option. To execute the `ls -l` command, the argument list would look like this: `['ls', '-l']`. The commands are specified as strings. In the above example, we use the `ping` command with the option `-c 1` so that it only sends one packet of data, and the server replies with a single `packet`. Without this limit, the command would run forever until an external process stops it. 
 
 2. The `stdout` argument is optional and can be used to set where you want `subprocess` to display the output. By default, the output is sent to the terminal. However, If you don't want to dump a large output onto the terminal, you can use `subprocess.PIPE` to send the output of one command to the next. This corresponds to the `|` option in Linux. 
@@ -94,5 +96,4 @@ The `Popen()` is a constructor method of the `Popen` class and takes in the foll
 The output of the command is stored in a variable called `temp`. The `communicate()` function allows us to read the output and the `str` function can be used to convert it to a string. Once we get the output, we can parse it to extract only the essential details or just display it as it is. In this example, I am storing the output in a list for future use.  
 
 ### Conclusion
-
 In conclusion, automation is one of the hottest topics in the industry, and almost every company is investing huge amounts of money to automate various manual tasks. In this tutorial, we explored the process of automatically running and analyzing Linux commands on multiple hosts using Python. A naive and old way of doing this is by using shell scripts. However, using Python gives developers more power and control over the execution and output of the commands. Now that you have understood the basics of executing Linux commands, you can go ahead and experiment with different commands and build more complex and robust applications.
