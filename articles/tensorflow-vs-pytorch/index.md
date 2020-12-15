@@ -1,0 +1,111 @@
+### Prerequisites
+
+Deep Learning (DL) frameworks all center around deep learning and neural networks. If you haven't studied neural networks and how they function, please feel free to read this [article](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) before diving into reading this article. 
+
+### Introduction
+
+Given how powerful and transformative Deep Learning (DL) is, several libraries have sprung up in recent years to make designing, testing, and deploying DL models easy. Some of these libraries include Microsoft's [Cognitive Toolkit](https://docs.microsoft.com/en-us/cognitive-toolkit/) (CNTK), Apache's [MXNET](https://mxnet.apache.org/versions/1.7.0/), Facebook's [PyTorch](https://pytorch.org/), and Google's [TensorFlow](https://www.tensorflow.org/). 
+Today, we have a lot of people using both TensorFlow and PyTorch. These are the two most popular DL frameworks. 
+
+Discussing these two popular frameworks will be the subject of our article today. But first, let's get to know what TensorFlow and PyTorch are.
+
+### What is TensorFlow (TF)?
+
+TensorFlow is a software application popular for implementing deep learning algorithms. The Google Brain team developed it, and it was released as an open-source platform in 2015. It supports both the R and Python programming languages. It was initially started as a research-based architecture for Google's in-house applications but was eventually open-sourced to be used commercially.
+
+It is known as "TensorFlow" because it takes in inputs as tensors or multi-dimensional arrays (MDAs). These tensors (MDAs) then flow through a system of operations and comes out the other end as outputs.
+
+The key features of TensorFlow include:
+
+1. It is actively maintained by the developers at Google. Currently, TF2.3 is the latest released version.
+2. It is open-source software that grants developers access to use and distribute the software for different purposes.
+3. It makes use of TensorBoard for visualizing model graphs, tracking and visualizing metrics, and displaying data such as images and texts.
+4. It is a flexible framework. It supports the experimentation of new deep learning models.
+
+An extra feature to note is that TensorFlow 2.x now adopts the Keras API as its default standard. This eliminates the need to import the Keras API onto TensorFlow separately.
+
+### What is PyTorch?
+
+PyTorch is a relatively new deep learning framework as it came out a year later after TensorFlow was released. The name PyTorch was inspired by a popular "[torch](http://torch.ch/)" deep learning framework, which was written in the [Lua](https://www.lua.org/) programming language. However, learning the Lua programming language was a big barrier, especially when learning deep learning. It also didn't offer the modularity necessary to interface with other deep learning libraries currently present. 
+
+This problem was solved by a team of AI researchers inspired by the torch's programming style. They decided to develop an improvised form of torch with the Python (py) programming language, which later became known as PyTorch. 
+
+Some notable features of PyTorch include:
+
+1. It is extremely fast and feels Native.
+2. It has native support for Python and all of its libraries. This feature makes it very easy to learn. 
+3. It's easy to use API that ensures easy usability when making use of the API.
+4. It is actively maintained and used by the developers at Facebook.
+5. It supports Nvidia's [CUDA](https://en.wikipedia.org/wiki/CUDA), ensuring that the code runs on a GPU, decreasing the time needed to run the code.
+6. Dynamic Computation Graphs is a key feature in PyTorch. It ensures that the graphs build up dynamically as you code.
+
+Let's begin by discussing some of the comparisons between TensorFlow and PyTorch. 
+
+### Computation Graphs
+
+From the start, the computation graph was a notable difference between TensorFlow and PyTorch.
+
+From its onset, PyTorch was built around the concept of dynamism. It provided developers with the ability to dynamically define and manipulate graphs at runtime while it is executing. This feature offered PyTorch developers an advantage over TensorFlow as manipulating graphs during runtime helped easily troubleshoot the model in case of any issue with the code.
+
+By default, when [TensorFlow](https://www.tensorflow.org/) was developed, it let developers create static computation graphs at compile time. It didn't allow us to define and manipulate graphs at runtime. If we wanted to make any changes, we would have to rebuild the neural network from the start. 
+
+But, with the release of TensorFlow 2.0, they introduced the "eager mode." They aimed to allow graphs to be defined and manipulated dynamically in computation while executing as was with PyTorch, which already had this feature, which worked so well. Rather than waiting until everything is coded up and connected before you can see if anything is done right, you could now "eagerly" execute your operations as you're working. 
+
+Today, both frameworks allow both the static and dynamic computation of graphs. No much difference between the two as far as computation graphs are concerned. 
+
+### Visualization
+
+Besides Computation Graphs, the visualization tools used between these two frameworks show notable distinctions.
+
+TensorFlow comes on-board with the [TensorBoard](https://www.tensorflow.org/tensorboard) visualization toolkit that helps researchers understand graphs and how their code runs. It is also an easy-to-use toolkit that helps track and visualize metrics such as accuracy and losses in your model. 
+
+PyTorch does not have a native in-build visualizing tool like TensorFlow does. A researcher has to import external visualization libraries such as [matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) to be able to achieve the same objective.
+
+They both achieve the same visualization objective, but TensorBoard offers researchers a bigger advantage. It has more features and a good number of visualization tools that transform graphs into beautiful-looking visualizations.
+
+### Community
+
+As I mentioned earlier, TensorFlow has been around for a longer time compared to PyTorch. Due to this factor, and partly because Google's technology giants develop it, TensorFlow has a much wider community around its ecosystem. This community helps make the learning of the framework easier.
+
+Since it's still relatively new, PyTorch has a smaller community based around its ecosystem. This makes it a little bit harder, especially for beginners, to learn the framework. 
+
+### Distributed Computing
+
+Both frameworks currently allow the use of distributed computing both on the GPU and CPU, enabling faster processing of models.
+However, TensorFlow's distributed computing platform does offer an added advantage over PyTorch's. Google, TensorFlow's parent company, released the Tensor Processing Unit (TPU), which processes faster than GPUs. It is far much easier to run code on a TPU using TensorFlow than it is on PyTorch. These TPUs enable TensorFlow's code to run faster. 
+
+### Debugging
+
+Here, PyTorch wins. 
+
+This is because PyTorch uses the standard Python debugger (pdb) that most developers are familiar with. There is no need to start learning on a new debugger to use it to debug your code. This makes it easier and flexible, especially for beginners.
+
+In TensorFlow, a developer is required to use the TensorFlow debugger (tfdbg). An extra amount of time is needed to learn how to use the debugger and request to use variables requested from the session. 
+
+### Deployment
+
+When deploying deep learning models for production, TensorFlow has an advantage over PyTorch. TensorFlow provides tools such as TensorFlow.js, TensorFlow Serving, and TensorFlow Lite that enable the easy deployment of models on browsers, the cloud, and IoT devices. This is the main reason why a lot of companies have chosen TensorFlow as their preferred framework of choice when it comes to production.
+
+PyTorch also hasn't been left behind. In a recent update, they introduced [TorchServe](https://github.com/pytorch/serve) (still relatively new) to serve PyTorch models for production purposes. Though not as robust as the one TensorFlow has with many functionalities, it's still able to provide PyTorch developers with an easy and flexible way for serving models. 
+
+### Wrapping Up
+
+To wrap up, I'd say that TensorFlow and PyTorch are two very popular frameworks. PyTorch is the most popular framework of choice in the research community. Big companies such as OpenAI, Apple, Microsoft, and Tesla have recently been embracing PyTorch as their default framework of choice. The reason is that PyTorch lets you prototype and to try out new unseen projects without much hassle. 
+TensorFlow is still being used by many companies, including the industry giants, Google. They keep improving it and introducing newer features. It's still the framework of choice when building models for production purposes.
+In their initial years of release, the differences between the two frameworks were very visible. But, updates to the frameworks over the years has narrowed that gap. Presently, the two popular frameworks' differences are negligible as PyTorch seems to be catching up with TensorFlow. 
+I would be wrong if I said that one framework is better than the other. The frameworks have both have their merits and demerits. Just pick one framework and get started with it. The more you interact with these two deep learning frameworks, the better you'll become at developing instincts on which framework suits you the best for your project.
+
+### References
+
+1.  [MXNET](https://mxnet.apache.org/versions/1.7.0/)
+2.  [TensorFlow](https://www.tensorflow.org/) 
+3.  [Cognitive Toolkit](https://docs.microsoft.com/en-us/cognitive-toolkit/) 
+4.  [PyTorch](https://pytorch.org/) 
+5.  [Lua](https://www.lua.org/) 
+6.  [torch](http://torch.ch/)  
+7.  [CUDA](https://en.wikipedia.org/wiki/CUDA) 
+8.  [TensorBoard](https://www.tensorflow.org/tensorboard) 
+9.  [Matplotlib](https://matplotlib.org/) 
+10. [Seaborn](https://seaborn.pydata.org/) 
+11. [Difference between AI, ML, and DL](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) 
+12. [TorchServe](https://github.com/pytorch/serve)   
