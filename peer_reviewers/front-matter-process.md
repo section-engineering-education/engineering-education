@@ -1,22 +1,22 @@
 ### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out.
----
-layout: engineering-education
-status: publish
-published: true
-url: /engineering-education/greedy-algorithms/
-title: Optimizing Stock Price Profit using Greedy Algorithms
-description: In this article we will explore the greedy algorithm approach to obtain the maximum profit given a list of indices when optimizing a stock price profit program.
-author: lalithnarayan-c
-date: 2020-12-07T00:00:00-18:00
-topics: []
-excerpt_separator: <!--more-->
-images:
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/greedy-algorithms/
+- title: Optimizing Stock Price Profit using Greedy Algorithms
+- description: In this article we will explore the greedy algorithm approach to obtain the maximum profit given a list of indices when optimizing a stock price profit program.
+- author: lalithnarayan-c
+- date: 2020-12-07T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+-images:
 
-  - url: /engineering-education/greedy-algorithms/hero.jpg
-    alt: Stock Price Greedy Algorithm example image
----
-Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading. 
-<!--more-->
+-  - url: /engineering-education/greedy-algorithms/hero.jpg
+-    alt: Stock Price Greedy Algorithm example image
+- ---
+- Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading. 
+- <!--more-->
 
 
 NOTE: Make sure you copy the front matter from the most recently published article of the *same author* if it is a repeat contributor. Otherwise copy any front matter.
@@ -39,4 +39,4 @@ NOTE: Make sure you copy the front matter from the most recently published artic
 - Line 16: Should be descriptive of the article and image
 - Line 17: The three lines start the article.
 - Line 18: Copy a sentence or two from the introduction to place here - this text will show up on the main page with hero images. (Note: can not contain ' Eg: Can't = can not)
-- Line 19: This closes the large font for the intro text at the beginning of the article.
+- Line 19: This closes the large font for the intro text at the beginning of the article. Be sure the <!--more--> is after the intro sentence(s).
