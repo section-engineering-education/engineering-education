@@ -3,6 +3,7 @@ Intense competition in global industries has made businesses to seek ways of man
 There is a wide variety of BI tools that organizations can use for business intelligence. Choosing a suitable BI tool can be a daunting task. This article takes you through 10 powerful business intelligence tools that can be used by data analysts to grow their businesses. 
 
 ### Introduction to Business Intelligence
+
 Business Intelligence entails using strategies and technologies to conduct data analysis and integration of [business information](https://en.wikipedia.org/wiki/Business_information). It is a concept that encompasses the tools, software, and processes that analyze, collect, and integrate data to generate actionable information. 
 
 Business intelligence combines three main concepts with data analysis: data collection, data storage, and knowledge management. The main essence of business intelligence is to enhance the timeliness and accuracy of business information. This improves decision making in organizations. 
@@ -10,6 +11,7 @@ Business intelligence combines three main concepts with data analysis: data coll
 Business intelligence tools refer to the applications, programs, and software used to achieve the objective of business intelligence. These tools provide services such as data warehousing, reporting, data visualization, and dashboard development. Companies are also using business intelligence tools to predict future performance. Other functions provided by BI technologies include data mining, benchmarking, business performance management, and prescriptive analytics. 
  
 ### How Business Intelligence Works
+
 The following diagram shows a simple business intelligence architecture. This diagram can be used to explain how a business intelligence system works. 
 
 ![BI Architecture](/engineering-education/business-intelligence-tools-for-data-analysts/bi-architecture.jpg)
@@ -21,7 +23,9 @@ Various sources of data are used to develop a business intelligence system. Some
 In a BI system, data can be integrated with other data sources using various tools. Some of the tools used include business analytics, data mining, and ETL engines. Business analytics is also used for analyzing the collected data. Business intelligence tools are used to provide enhanced insights. These insights help organizations to make fast and impactful decisions. Business intelligence results can be presented using OLAP and visualization tools. They can also be presented on dashboards and scorecards. 
 
 ### Why Business Intelligence Tools are Important
+
  BI tools are important because of the following reasons:
+
 * **Operational efficiency:** BI tools enable organizations to gain insights from the analyzed data. Organizations use these insights to streamline processes, which improves operational efficiency in the business. 
 * **Increased revenue:** BI tools provide meaningful business information relating to customer needs, market trends, and end-users. This information can be used to develop impactful strategies that drive revenue in the organization. 
 * **Customer analysis:** Business intelligence tools integrate customer's data with various sources. This enables organizations to analyze various aspects relating to their customers. These include customer trends, buying behavior, and their preferences.
@@ -32,9 +36,11 @@ In a BI system, data can be integrated with other data sources using various too
 ### 10 Powerful Business Intelligence Tools 
 
 #### 1. Sisense
+
 Working with Sisense requires little conversance with IT. This is because it is simple and user friendly. Data collection in this tool is systematic. It provides an end-to-end platform for business intelligence. 
 
 ##### Key Features
+
 * It has a drag-and-drop feature that enables businesses to share and analyze valuable insights.
 * The dashboard of this tool is robust. 
 * Working with this tool does not require assistance from IT experts.
@@ -46,9 +52,11 @@ Working with Sisense requires little conversance with IT. This is because it is 
 [Image Source: Finances Online](https://financesonline.com/uploads/2017/12/vp9d305892015e14ba8e952e32137fff76.png)
   
 #### 2. SAP Business Intelligence
+
 SAP BI offers real-time analytics that improve decision making in organizations. It is ideal for gauging investigators, information researchers, text experts, forecasting analysts, and information engineers.
 
 ##### Key features
+
 * It supports auto charting, which requires less coding and support from the IT team. 
 * It consists of dynamic visuals that enhance data visualization. These are integrated with dashboards and intuitive reports. 
 * It allows integration with other systems and applications (e.g Microsoft Office). 
@@ -60,9 +68,11 @@ SAP BI offers real-time analytics that improve decision making in organizations.
 [Image Source: Altex Soft](https://www.altexsoft.com/media/2019/12/word-image-18.png)
 
 #### 3. Microsoft Power BI
+
 This is a web-based platform that provides business intelligence to Microsoft users. It specializes on enterprise analytics. 
 
 ##### Key features
+
 * It offers users various service options: Power BI Report Server, Power BI mobile, Power BI, Premium, and Power BI Pro. 
 * It is compatible with mobile as well as web applications.
 * It can be connected with various sources of data. 
@@ -74,9 +84,11 @@ This is a web-based platform that provides business intelligence to Microsoft us
 [Image Source: Tech Hive](https://images.techhive.com/images/article/2015/07/power-bi-desktop-1-100595904-orig.png)
 
 #### 4. MicroStrategy
+
 This BI tool leverages data to allow businesses to get informed and timely answers. It can enable organizations to optimize revenue, forecast opportunities, monitor trends, and increase productivity. 
 
 ##### Key features
+
 * It can run on desktop computers as well as mobile applications.
 * It allows access to a cloud platform.
 * It has a hyper-intelligence tool that collects data from diverse sources to provide contextual insights.
@@ -88,9 +100,11 @@ This BI tool leverages data to allow businesses to get informed and timely answe
 [Image Source: Mopinion](https://mopinion.com/wp-content/uploads/2018/07/Microstrategy.jpg)
 
 #### 5. Zoho Analytics
+
 This tool is mostly ideal for small and medium businesses. This is mainly because of its affordable pricing and user-friendly interface. 
 
 ##### Key features
+
 * Users do not need a huge skill-set to use this tool
 * It consists of simplified tools for creating intuitive reports.
 * It supports the sharing of functional reports and dashboards. 
@@ -102,9 +116,11 @@ This tool is mostly ideal for small and medium businesses. This is mainly becaus
 [Image Source: G2Crowd](https://images.g2crowd.com/uploads/attachment/file/94878/CRM-Desk-Dashboard.jpg)
 
 #### 6. Clear Analytics
+
 This is an excel-based BI tool that enables users to manage spreadsheets. It is very ideal for excel users that want to use business intelligence. 
 
 ##### Key features
+
 * It is linked to a centralized storage system.
 * It can gather data from various data sources.
 * In this tool, users can use a dynamic query builder to gain access to data.
@@ -117,9 +133,11 @@ This is an excel-based BI tool that enables users to manage spreadsheets. It is 
 [Image Source: Software Advice](https://www.softwareadvice.com/imglib/products/screenshots/clear-analytics-3116-1536250913-large.png?v=ebadb284e4bd8a1fd7087825e3e4b86f)
   
 #### 7. Domo
+
 This is another business intelligence tool that supports self-administration. It allows users to utilize tools such as ETL, data warehouse, and data lakes. 
 
 ##### Key features
+
 * It can visualize data in maps, charts, and graphs.
 * It is connected to a cloud via in-built connectors. 
 * It allows users to drag and drop.
@@ -132,9 +150,11 @@ This is another business intelligence tool that supports self-administration. It
 [Image Source: G2Crowd](https://images.g2crowd.com/uploads/attachment/file/102385/domo-device-laptop-dashboard-overview-sales-finance.png)
 
 #### 8. IBM Cognos Analytics
+
 IBM Cognos Analytics is a tool that uses artificial intelligence to create intuitive reports and dashboards. It can be used in various industries such as healthcare, retail, and e-commerce. 
 
 ##### Key features
+
 * It has a search feature that enables users to locate content in the software.
 * It consists of analytics tools that provide interactive visualizations. These visualizations are integrated with geospatial data to provide enhanced insights. 
 * It is linked to a cloud, which allows users to access tools there or on-premise.
@@ -146,9 +166,11 @@ IBM Cognos Analytics is a tool that uses artificial intelligence to create intui
 [Image Source: Value Coders](https://www.valuecoders.com/blog/wp-content/uploads/2020/09/ibm-cognos-business-intelligence-tools-2.jpg)
 
 #### 9. Yellowfin BI
+
 This tool offers functionalities such as mobile BI, mapping, collaborative BI, data discovery, storyboards, and dashboards. 
 
 ##### Key features
+
 * It has intuitive filtering that uses radio buttons, sliders, and checkboxes.
 * Users can access the dashboard through mobile phones or web pages.
 * In this tool, users can share insights through simple scripts.
@@ -160,9 +182,11 @@ This tool offers functionalities such as mobile BI, mapping, collaborative BI, d
 [Image Source: Weebly](http://yfcs.weebly.com/uploads/4/3/9/7/43974277/3215752_orig.png)
   
 #### 10. QlikView
+
 This is a BI tool that enhances the safety and accuracy of data. This tool supports data aggregation and compression. 
 
 ##### Key features
+
 * Users can analyze data and gain enhanced insights using its self-service feature.
 * It provides data visualization and presentation systematically.
 * It enables users from various sectors to get customized solutions. Some of the sectors include insurance, banking, and retail.
@@ -174,6 +198,7 @@ This is a BI tool that enhances the safety and accuracy of data. This tool suppo
 [Image Source: Xax](https://www.xax.de/wp-content/uploads/2018/11/financial-1024x726.jpg)
   
 ### Important Factors to Consider When Choosing a BI Tool
+
 * **Features:** Data analysts should look for BI tools that suit their needs. The features provided by these tools should meet the objectives of the business. Some of the important features to look at include customizable dashboards, data filters, data discovery, and automated reports. 
 * **User Interface:** If you are a data analyst, you would possibly want to use a BI tool that is user-friendly. The user interface should have a good design. It should also have clear displays that can enhance navigation within the tool.
 * **Ease of use:** How easy is it to use the BI tool? Good BI tools should offer tutorials and technical support to new users. 
@@ -181,6 +206,7 @@ This is a BI tool that enhances the safety and accuracy of data. This tool suppo
 * **Integration:** Many companies want to gather data from diverse applications. Companies should choose BI Tools that are integrated with a wide variety of applications. 
   
 ### Conclusion
+
 Business intelligence tools enable businesses to visualize and analyze data for effective strategic planning. These tools can enable firms to grow their businesses through improved decision making, increased revenue, improved productivity, and enhanced trend analysis. An organization can choose a business intelligence tool based on important aspects such as features, usability, user interface, price, and integration capabilities. Choosing a suitable BI tool can be a source of competitive advantage to an organization.
 
 ### Resources
