@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/nlp-transfer-learning/hero.jpg
-    alt: Transfer Learning in NLP example image
+    alt: transfer learning in NLP example image
 ---
 Using pre-trained models, we can skip the time-consuming process of data collection, pre-processing, training, and testing. These models are trained on Petabytes of data and give us an edge over training neural networks from scratch. This is what we call Transfer learning, and it is a novel way to train machine learning models.
 <!--more-->
@@ -33,7 +33,7 @@ This diversity in culture dictates vast variations in speech and text. Therefore
 
 Consider the architecture of the RNN. There are two inputs to each neuron in the neural network. The first neuron has the first word of the sentence as its input. The neuron's output is fed as input to the second neuron along with the second word of the sentence. This results in the neural network understanding the underlying patterns of languages. The network can predict the most likely word to occur in the given content. 
 
-LSTMs worked better because they solved the problem of vanishing gradients. When large datasets are passed to deep neural networks using RNNs, the network won't learn effectively after a certain time. The RRN can degrade because the gradients tend to zero. If the gradients tend to zero, then the weights won't get updated, and therefore no learning occurs. LSTMs structure solved the problem of vanishing gradients. 
+LSTMs worked better because they solved the problem of vanishing gradients. When large datasets are passed to deep neural networks using RNNs, the network won't learn effectively after a certain time. The RRN can degrade because the gradients tend to zero out. If the gradients zero out, then the weights won't get updated, and therefore no learning will occur. LSTMs structure solved the problem of vanishing gradients. 
 
 But both these architectures would only take the previous input and the current word as its input. Logically, to understand the context in which the word is being spoken, we would look at the entire sentence. Then, another architecture called *transformers* was introduced, taking multiple previous step as inputs, better learning the underlying patterns. Transformers have paved the way for rapid advances in the field of NLP. 
 
