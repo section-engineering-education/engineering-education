@@ -4,7 +4,7 @@ This article takes you through important aspects regarding aggregation in DBMS. 
 
 ### Introduction to Database Management Systems (DBMS)
 
-Before learning what DBMS is, we need to understand two important terms: data and database.Data refers to facts, figures or statistics gathered for various uses, including analysis or future reference. A database refers to a collection of organized or related data. A good example of a database is a collection of cities within a country. This is regarded as a database because all the data in that collection is related. 
+Before learning what DBMS is, we need to understand two important terms: data and database. Data refers to facts, figures or statistics gathered for various uses, including analysis or future reference. A database refers to a collection of organized or related data. A good example of a database is a collection of cities within a country. This is regarded as a database because all the data in that collection is related. 
 
 A Database Management System (DBMS) is a software package that is used for managing databases. A DBMS facilitates operations such as accessing, updating, administering, fetching, manipulating, creating and deleting the database system. It also enables users to share data with other applications or users. The main aim of this software is to enhance the storage and retrieval of data. Some of the examples of database management systems include MySQL, Oracle, SQLite, Ms-Access, and MariaDB. 
 
