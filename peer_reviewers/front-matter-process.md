@@ -1,4 +1,4 @@
-### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out.
+### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out. There are a few sections that are not seen in the breakdown - but can be seen in the image referenced below.
  ---
 - layout: engineering-education
 - status: publish
@@ -15,11 +15,13 @@
 -  - url: /engineering-education/greedy-algorithms/hero.jpg
 -    alt: Stock Price Greedy Algorithm example image
 - ---
-- Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading. 
+- Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading.
 - <!--more-->
 
-
 NOTE: Make sure you copy the front matter from the most recently published article of the *same author* if it is a repeat contributor. Otherwise copy any front matter.
+
+See image with missing parts:
+![Front Matter Image](/images/frontmatter.JPG)
 ---
 
 - Line 2: Start of the front matter
