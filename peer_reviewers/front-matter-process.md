@@ -1,22 +1,23 @@
 ### The Front Matter Review Process: Start by copying the front matter from the most recently published article of the *same author* if it is a repeat contributor to have the author information and other field semi-filled out.
 ---
-- layout: engineering-education
-- status: publish
-- published: true
-- url: /engineering-education/ensemble-learning/
-- title: Ensemble Learning Techniques to Improve Machine Learning
-- description: This article will be going over ensemble learning methods that allow us to average the performance of many models to generate one final model.
-- author: collins-ayuya
-- date: 2020-12-13T00:00:00-18:00
-- topics: []
-- excerpt_separator: <!--more-->
-- images:
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/greedy-algorithms/
+title: Optimizing Stock Price Profit using Greedy Algorithms
+description: In this article we will explore the greedy algorithm approach to obtain the maximum profit given a list of indices when optimizing a stock price profit program.
+author: lalithnarayan-c
+date: 2020-12-07T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-  - url: /engineering-education/ensemble-learning/hero.jpg
-    alt: ensemble learning image example
+  - url: /engineering-education/greedy-algorithms/hero.jpg
+    alt: Stock Price Greedy Algorithm example image
 ---
-We build machine learning models to provide the best possible predictions to a given problem. However, a single model may not make the best predictions and may be subject to errors such as variance and bias.
+Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading. 
 <!--more-->
+
 
 NOTE: Make sure you copy the front matter from the most recently published article of the *same author* if it is a repeat contributor. Otherwise copy any front matter.
 ---
