@@ -1,9 +1,9 @@
 ### Introduction
-`Dart` is a language that is scalable and can write simple scripts or full-featured applications. It is an object-oriented, dynamic language developed by `Google`. Like most programming languages, it contains loops and iterations. If one is familiar with [`Java`](https://en.wikipedia.org/wiki/Java_(programming_language)) or [`Kotlin`](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will prove to be simpler to understand.
+`Dart` is a programming language that is scalable and can write simple scripts or full-featured applications. It is an object-oriented, dynamic language developed by `Google`. Like most programming languages, it contains loops and iterations. If one is familiar with [`Java`](https://en.wikipedia.org/wiki/Java_(programming_language)) or [`Kotlin`](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will prove to be simpler to understand as then elements of Dart Language will be easier to understand.
 
-A `Loop's` definition is a piece of code that determines the number of iterations that will occur if it meets a condition, while an `Iteration` is the number of times it can execute a loop. We also define a `Loop` as a written piece of code that repeats a sequence of instructions until it meets a condition. We apply Loops to avoid unnecessary repetition of code. They are a way of using something to an unknown or not innumerable amount of things. Some applications of loops include adding sums of numbers, cycling through values, repeat functions, to mention a few.
+A `Loop's` definition is the code that executes multiple times while `Iteration` refers to the process in which the content executes once. One iteration refers to 1-time execution of a loop. It can undergo many iterations. They are a way of using something to an unknown or not innumerable amount of things. Some applications include adding sums of numbers, cycling through values, repeat functions, to mention a few.
 
-### Prerequisites
+### To write Dart Programs
 To write Dart programs and implement the knowledge you need to have:
 
 1. You can use the **[DartPad Online Editor](https://dartpad.dartlang.org/)** OR
@@ -27,19 +27,19 @@ To write Dart programs and implement the knowledge you need to have:
 ### General Loop Structure
 
 There are two types of loops:
-1. #### Definite Loops
+1. **Definite Loops**
 These are loops that we know the number of times we want to execute the code.***For example***, The `For Loop`, later on through this article, we shall come to understand that it has a definite number of iterations known to the programmer.
 
-2. #### Indefinite Loops
-These refer to loops we do not know the number of times we want to execute the code. ***For example***, The `While Loop` and The `Do-While Loop`, later on, we shall come to understand what it means by the iterations not known to the user.
+2. **Indefinite Loops**
+These refer to loops we do not know the number of times we want to execute the code. ***For example***, The `While Loop` and The `Do-While Loop`, later on, we shall come to understand what it means by the iterations not known to the programmer.
 
-The general loop structure refers to the fundamental components of loops in all languages and usage. All the loop types mentioned above have the following characeristics:
+The general loop structure refers to the fundamental components of loops in all languages and usage. All the loop types mentioned above have the following characteristics:
 
-- *Counter Variable* - We also know this as the initializer. It is the starting point of the loop where it executes. 
+- *Counter Variable* - We also know this as the initializer. It is the starting point where it executes. 
 
 - *Condition Check* - This is the condition a loop has to start or execute. After it's met, it ends.
 
-- *Increment or Decrement Counter Variable*  - This refers to the number in which counter variable increases or decreases until the loop meets the condition.
+- *Increment or Decrement Counter Variable*  - This refers to the number in which counter variable increases or decreases it meets the condition.
 
 
 ### Loops in Dart
@@ -72,7 +72,7 @@ The flow of the For Loop:
 
 **Initialize - Condition Check - Code Execute - Increment**.
 
-The counter variable initializes, then it checks the condition if it's true the code executes, then the counter variable increases depending on the value of increment. The increased counter variable initializes, and it re-checks the condition. If it's still true, the code executes and so on until the condition check is false or not met, then the loop ends.
+The counter variable initializes, then it checks the condition if it's true the code executes, then the counter variable increases depending on the value of increment. The increased counter variable initializes, and it re-checks the condition. If it's still true, the code executes and so on until the condition check is false or not met, then it terminates.
 
 
 ***Example:***
@@ -93,12 +93,9 @@ for(var i = 0; i<4; i++){
              Hello **/
 
 ```
-Here the value of the initializer of the counter variable will increase by one from 0 based on the increment specified. If the value of i becomes equal to four or more, the loop terminates/ends since the condition states that the value of i should be less than 4. The loop is to print hello if the condition is true, hence the output is hello written four times (0,1,2,3) < 4. 
+Here the value of the initializer of the counter variable will increase by one from 0 based on the increment specified. If the value of i becomes equal to four or more, it ends since the condition states that the value of i should be less than 4. t prints hello when it meets the condition, hence the output is hello written four times (0,1,2,3) < 4. 
 
 2. #### While Loop
-
-While Loop is an example of [Indefinite Loops](#indefinite-loops).
-
 >Syntax of While Loop
 ```Dart
 
@@ -125,8 +122,8 @@ The flow of the While Loop:
 
 In the While Loop, we initialization of the counter variable outside the syntax. It begins with the condition check, if it's true, the code executes. The value of the counter variable is then increments or decrements, and the new counter variable goes through the condition check. It will continue until the condition check is false.
 
-***NOTE:*** 
-#### We must always have the increment or decrement part of the While Loop, failure to which we create a never-ending loop.
+> NOTE: 
+> We must always have the increment or decrement part of the While Loop, failure to which will create a never-ending loop.
 
 ***Example:***
 
@@ -147,7 +144,7 @@ void main(){
             Hello **/
 
 ```
-In the example above, our condition check begins with 0<3 which is true therefore the code executes and prints out the first hello. The value of i the increases by one to 1 and the condition 1<3 is still true, so the code executes. This goes on for one more loop (2<3) and ends when the condition is now (3<3) which is false. Hence three hellos get printed.
+Our condition check begins with 0<3 which is true therefore the code executes and prints out the first hello. The value of i the increases by one to 1 and the condition 1<3 is still true, so the code executes. It goes, the new variable becomes (2<3) and ends when the condition is now (3<3) which is false. Hence three hellos get printed. 
 
 3. #### Do-While Loop
 
@@ -174,7 +171,7 @@ The flow of the Do-While Loop:
 
 **Code Execution - Increment - Condition Check**.
 
-In Do-While Loop the code executes then the counter variable initialized outside the syntax increments or decrements. Then the condition check, if it's met, it begins from code execution. The code execution will continue until the condition check turns false.
+In Do-While loop the code executes then the counter variable initialized outside the syntax increments or decrements. Then the condition check, if it's met, it begins from code execution. The code execution will continue until the condition check turns false. We note that the code block in Do-While Loop executes at least once.
 
 ***Example:***
 
@@ -197,7 +194,7 @@ void main(){
              Hello **/
 
 ```
-The code first executes then the counter variable increments by one. It then checks the condition (1<5). This is true, so the loop will begin again. The code executes, then the counter variable increments by one. It then checks the condition (2<5). This is true, so the loop starts again. This will continue until the code executes and the new counter variable is 5 and the condition checked is (5<5) which is false, so the loop ends after printing 5 hellos.
+The code first executes then the counter variable increments by one. It then checks the condition (1<5). It is true, so the loop will begin again. The code executes, then the counter variable increments by one. It then checks the condition (2<5). This is true, so the loop starts again. It will continue until the code executes and the new counter variable is 5 and the condition checked is (5<5) which is false, so the loop ends after printing 5 hellos.
 
 
 ### Other Key Concepts
@@ -269,7 +266,7 @@ Here are some positive and negative applications of loops:
 
 1. #### Writing a Music Player Code.
 
-We base a music player on a loop program the enables it to play from one song to the next systematically.
+A music player has a loop that enables it to play from one song to the next systematically.
 
 2. #### Cycling through values.
 It is the use of loops to print out values in an extensive list. ***For example***, Names of students in a school.
@@ -294,7 +291,7 @@ It loops over all the elements stored in the list and prints them out.
 
 
 3. #### Create computer viruses.
-Malicious programmers use loops to create [Computer Viruses](https://en.wikipedia.org/wiki/Computer_virus) by using the While loop and embedding it to software downloads. If we write a while loop without the increment or decrement counter variable, it creates a never-ending loop which leads to unnecessary storage consumption on devices. This courses the devices to crash or behave abnormally.
+Malicious programmers use loops to create [Computer Viruses](https://en.wikipedia.org/wiki/Computer_virus) by using the While loop and embedding it to software downloads. If we write a while loop without the increment or decrement counter variable, it creates a never-ending loop which leads to unnecessary storage and memory consumption on devices. This courses the devices to crash or behave abnormally.
 
 ***Caution: DO NOT RUN THIS CODE!!!***
 ```Dart
