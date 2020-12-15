@@ -10,7 +10,7 @@
 - date: 2020-12-07T00:00:00-18:00
 - topics: []
 - excerpt_separator: <!--more-->
--images:
+- images:
 
 -  - url: /engineering-education/greedy-algorithms/hero.jpg
 -    alt: Stock Price Greedy Algorithm example image
