@@ -71,7 +71,7 @@ Since it's still relatively new, PyTorch has a smaller community based around it
 
 ### Distributed Computing
 
-Both frameworks currently allow the use of distributed computing both on the GPU and CPU, enabling faster processing of models.
+Both frameworks currently allow distributed computing both on the GPU and CPU, enabling faster processing of models.
 However, TensorFlow's distributed computing platform does offer an added advantage over PyTorch's. Google, TensorFlow's parent company, released the Tensor Processing Unit (TPU), which processes faster than GPUs. It is far much easier to run code on a TPU using TensorFlow than it is on PyTorch. These TPUs enable TensorFlow's code to run faster. 
 
 ### Debugging
@@ -109,3 +109,5 @@ I would be wrong if I said that one framework is better than the other. The fram
 10. [Seaborn](https://seaborn.pydata.org/) 
 11. [Difference between AI, ML, and DL](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) 
 12. [TorchServe](https://github.com/pytorch/serve)   
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
