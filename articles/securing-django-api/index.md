@@ -6,7 +6,7 @@ url: /engineering-education/securing-django-api/
 title: Introduction on Securing Django APIs
 description: This tutorial will be an introduction on how to secure a Django API, using token-based authentication and JavaScript web token to perform requests.
 author: odhiambo-paul
-date: 2020-12-16T00:00:00-10:00
+date: 2020-12-16T00:00:00-1:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -239,7 +239,7 @@ JWT provides the signature. The signature is verified whenever a request is made
 
 We will be using `djangorestframework_simplejwt` to implement JWT authenticate.
 
-To install `` run the command:
+To install run the command:
 ```bash
 pip install djangorestframework_simplejwt
 ```
@@ -257,6 +257,7 @@ REST_FRAMEWORK = {
 ```
 
 In the `urls.py` file in the `django_todo` directory add the URL endpoints below to obtain the refresh and access tokens.
+
 ```python
 from django.contrib import admin
 from django.urls import path
@@ -282,6 +283,7 @@ To get the access and refresh tokens, make a POST request to `http://127.0.0.1:8
 ![POST JWT Request](/engineering-education/securing-django-api/jwt-get-token.png)
 
 We get a refresh and access token as the response.
+
 ```json
 {
     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQ1MjI0MjU5LCJqdGkiOiIyYmQ1NjI3MmIzYjI0YjNmOGI1MjJlNThjMzdjMTdlMSIsInVzZXJfaWQiOjF9.D92tTuVi_YcNkJtiLGHtcn6tBcxLCBxz9FKD3qzhUg8",
@@ -303,7 +305,7 @@ To get a new access token, we will make a post request to `http://127.0.0.1:8000
 
 ![POST Request](/engineering-education/securing-django-api/jwt-refresh.png)
 
-The refresh token is valid for 24 hours, after that a user is required to reauthenticate, in order to obtain a new refresh and access token.
+The refresh token is valid for 24 hours, after that a user is required to reauthenticate in order to obtain a new refresh and access token.
 
 The access token is shortlived because it's sent through the HTTP header, which might get compromised; therefore, it's only valid for a short while.
 
