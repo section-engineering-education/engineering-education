@@ -10,7 +10,6 @@ To write Dart programs and implement the knowledge you need to have:
 
 2. You can use this method if you are familiar with [`Java`](https://en.wikipedia.org/wiki/Java_(programming_language)) or [`Kotlin`](https://en.wikipedia.org/wiki/Kotlin_(programming_language)) , **[Install Dart SDK ](https://dart.dev/get-dart)**, **[Install IntelliJ IDEA ](https://www.jetbrains.com/idea/)** and integrate the Dart plugin to IntelliJ IDEA IDE.
 
-
 ### Table of Contents
 - [General Loop Structure](#general-loop-structure)
 - [Loops in Dart](#loops-in-dart)
@@ -25,7 +24,6 @@ To write Dart programs and implement the knowledge you need to have:
 - [Conclusion ](#conclusion)
 
 ### General Loop Structure
-
 There are two types of loops:
 1. **Definite Loops**
 These are loops that we know the number of times we want to execute the code.***For example***, The `For Loop`, later on through this article, we shall come to understand that it has a definite number of iterations known to the programmer.
@@ -39,7 +37,6 @@ All the loop types mentioned above have the following characteristics:
 
 - *Increment or Decrement Counter Variable*  - This refers to the number in which counter variable increases or decreases it meets the condition.
 
-
 - *Condition Check* - Every loop will have a condition which will be checked on each Iteration. If the condition is evaluated to true, the next iteration will get executed.
 
   There are two types of loops in condition check:
@@ -47,7 +44,6 @@ All the loop types mentioned above have the following characteristics:
   1. Entry controlled loops - These are loops in which the condition is checked first then the body of the loop executes.
 
   2. Exit controlled loops - These are loops in which the body of the loop executes then the condition check afterwards.
-
 
 ### Loops in Dart
 We should note that the syntax of Dart Loops is like the ones in Java Programming Language.
@@ -70,7 +66,6 @@ void main(){
     }
 
 }
-
 ```
 
 **How the For Loop works.**
@@ -101,8 +96,6 @@ void main(){
    }
 
 }
-
-
 ```
 
 Output : 
@@ -113,9 +106,7 @@ Hello
 Hello
 Hello
 Hello
-
 ```
-
 
 Here the value of the counter variable will increase by one from 0 based on the increment specified. If the value of i becomes equal to four or more, it ends since the condition states that the value of i should be less than 4. t prints hello when it meets the condition, hence the output is hello written four times (0,1,2,3) < 4. 
 
@@ -123,7 +114,6 @@ Here the value of the counter variable will increase by one from 0 based on the 
 
 **Syntax of While Loop.**
 ```Dart
-
 void Main(){
    
    // initialize counter variable;
@@ -137,7 +127,6 @@ void Main(){
     }
 
 }
-
 ```
 
 **How the While Loop works.**
@@ -160,7 +149,6 @@ The flow of the While Loop:
 ***Example:***
 
 ```Dart
-
 void main(){
   
   int i = 0;
@@ -171,7 +159,6 @@ void main(){
    }
 
 }
-
 ```
 
 Output:
@@ -181,7 +168,6 @@ Hello
 Hello
 Hello
 Hello
-
 ```
 Our condition check begins with 0<3 which is true therefore the code executes and prints out the first hello. The value of i the increases by one to 1 and the condition 1<3 is still true, so the code executes. It goes, the new variable becomes (2<3) and ends when the condition is now (3<3) which is false. Hence three hellos get printed. 
 
@@ -192,21 +178,18 @@ Do-While loop is an example of [Indefinite Loops](#indefinite-loops).
 **Syntax of Do-While Loop.**
 
 ```Dart
-
 void main(){
    
    initialize counter variable;
    
-   do{
-     
+   do {
       //code;
      
       increment/decrement;
   
-   }while(condition);
+   } while(condition);
 
 }
-
 ```
 
 **How the Do-While Loop works.**
@@ -221,26 +204,24 @@ The flow of the Do-While Loop:
 
 3. The code execution will continue until the condition check turns false. 
 
->We note that the code block in Do-While loop executes at least once.
+> We note that the code block in Do-While loop executes at least once.
 
 ***Example:***
 
 ```Dart
-
 void main(){
    
    int i = 0;
 
-   do{
+   do {
       
       print ("Hello");
      
       i++;
    
-   }while (i<5);
+   } while (i<5);
 
 }
-
 ```
 
 Output:
@@ -251,14 +232,11 @@ Hello
 Hello
 Hello
 Hello
-
 ```
 
 The code first executes then the counter variable increments by one. It then checks the condition (1<5). It is true, so the loop will begin again. The code executes, then the counter variable increments by one. It then checks the condition (2<5). It meets the condition. It will continue until the code executes and the new counter variable is 5 and the condition checked is (5<5) which is false, so the loop ends after printing 5 hellos.
 
-
 ### Other Key Concepts
-
 - #### Break Keyword
 
 We use the `Break Keyword` to 'forcefully' end a loop without changing the main loop statement. It comes in handy when you want a partial output and not to display all the elements.
@@ -279,7 +257,6 @@ void main(){
   }
    
 }
-
 ```
 
 Output:
@@ -290,7 +267,6 @@ Hello
 Hello
 Hello
 Hello
-
 ```
 This code will end the loop after printing five hellos because of the break statement.
 
@@ -315,7 +291,6 @@ void main(){
   }
    
 }
-
 ```
 Output:
 
@@ -328,13 +303,10 @@ Output:
 6
 7
 8
-
 ```
 In the example, when i becomes 5, it skips the print statement, the rest of the loop continues.
 
-
 ### Applications of Loops
-
 Here are some positive and negative applications of loops:
 
 1. #### Writing a Music Player Code.
@@ -355,7 +327,6 @@ void main(){
 
    }
 }
-
 ```
 Output:
 
@@ -363,12 +334,11 @@ Output:
 John
 Mark
 Alex
-
 ```
 It loops over all the elements stored in the list and prints them out.
 
-
 3. #### Create computer viruses.
+
 Malicious programmers use loops to create [Computer Viruses](https://en.wikipedia.org/wiki/Computer_virus) by using the While loop and embedding it to software downloads. If we write a while loop without the increment or decrement counter variable, it creates a never-ending loop which leads to unnecessary storage and memory consumption on devices. This courses the devices to crash or behave abnormally.
 
 ***Caution: DO NOT RUN THIS CODE!!!***
@@ -384,28 +354,23 @@ void main(){
    }
 
 }
-
 ```
-
 
 Output :
 
 ```Dart 
    Hello
    Hello
-
 ```
 
 The code will print out an endless string of the word Hello.
 
 ### Further Reading
-
 To get a better grip into the topic, look at these resources:
  - The [Dart's Official document](https://dart.dev/samples#control-flow-statements)
 
 - You can have a look at this course from Udemy for [Dart Beginners Course](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
 
 ### Conclusion 
-
 `Loops` and `Iteration` may seem complicated and a bit challenging to new developers while learning a new language. This article has made it easier to understand them in Dart Programming Language, and the knowledge gained used and applied to other languages `Loop Control Statements`. Practice will make the understanding of these control statements increase.
 
