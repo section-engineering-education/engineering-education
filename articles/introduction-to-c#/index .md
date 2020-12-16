@@ -20,15 +20,15 @@ The performance of C# is exceptional in terms of speed and it uses very few reso
 To get started, you will need an IDE(Integrated Development Environment) for writing and compiling code. We will be using [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
 
 ### Installing C# 
-After you have installed Visual Studio, choose .NET desktop development and click *Modify*.
+After you have installed Visual Studio, choose .NET desktop development, and click *Modify*.
 ![vscode](installation.png)
 
 After the installation, click *Launch* to get started.  
 
-On the new window, choose *Create new project*.
+On the new window, choose *Create a new project*.
 ![newproject](vs1.png)
 
-Once you have selected *Create new project*, choose *"Install more tools and features"* then click *Next*.
+Once you have selected *Create a new project*, choose *"Install more tools and features"* then click *Next*.
 
 ![newproject](Newproject2.png)
 
@@ -89,7 +89,8 @@ You can explore more in the [C# docs](https://docs.microsoft.com/en-us/dotnet/cs
 **Line 2:**
 
 ```C#
- namespace HelloWorld {
+namespace HelloWorld 
+{
     // code declarations
 }
 ``` 
@@ -99,7 +100,8 @@ Namespaces are used in C# to separate and organize code. They are containers con
 **Line 3:**
 
 ``` C#
- class Program {
+class Program 
+{
     // code declarations
 }
 ```
@@ -109,7 +111,8 @@ A class is a container that contains methods and data. Since C# is Object-orient
 **Line 4:** 
 
 ```C#
-static void Main(string[] args) {
+static void Main(string[] args) 
+{
     // code
 }
 ```
@@ -122,7 +125,7 @@ Execution of a program begins from the `Main` method. Every C# program must have
 Console.WriteLine("Hello World!");
 ```
 
-`Console.WriteLine()` is used to print out text on the console. It prints a string and it adds a new line character to the end of the string. In our case, it is used to output *"Hello World"*.
+`Console.WriteLine()` is used to print out text on the console. It prints a string and it adds a new line character to the end of the string. In our case, it is used to output *"Hello World!"*.
 
 We can also use `Console.Write()` to print a string **but** it does not add a new line character to the end of the string. You can learn more on `Console.WriteLine()` and `Console.Write()` [here](https://www.programiz.com/csharp-programming/basic-input-output).
 
@@ -209,13 +212,17 @@ It takes data from the user and allocates it to the memory location.
 
 `int num1` means that we are creating a memory location to hold an integer (int) and naming that memory location for future reference. In our case, we have named the memory location as **num1** that will hold an integer.
 
+When we prompt the user to enter any details using `Console.Readlint()`, C# takes the input as strings therefore, we have to convert the strings to numbers using the `Convert.ToInt32()` method above.
+
+Using `=` (assignment operator), we are assigning the value given by the user to `num1`.
+
 Just like integers, we have a data type called `double` which is used to store fractional numbers:
 
 ```C#
 double num1;
 ```
 
-When we prompt the user to enter any details, C# takes the input as strings therefore, we have to convert the strings to numbers using the `Convert.ToInt32()` method above.
+If you'd like to learn more about the built-in types, refer to [this documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types).
 
 ### Takeaways
 In this tutorial we looked at:
