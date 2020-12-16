@@ -35,7 +35,7 @@ These refer to loops we do not know the number of times we want to execute the c
 
 All the loop types mentioned above have the following characteristics:
 
-- *Counter Variable* - It is also known as the Initializer. It is the starting point where it executes.
+- *Counter Variable* - It is also known as the Initializer. It keeps track of the number of times a loop is executed.
 
 - *Increment or Decrement Counter Variable*  - This refers to the number in which counter variable increases or decreases it meets the condition.
 
@@ -74,14 +74,11 @@ void main(){
 
 **Initialize - Condition Check - Code Execute - Increment**.
 
-1. The counter variable initializes. 
+1. The counter variable is initialized. The initialization occurs only once, it won't be executed on every iteration. 
 
-2. Then it checks the condition if it's true the code executes. 
+2. Then the condition is checked. If the condition is evaluated as true, then the code executes. If not, the code will not be executed.
 
-3. The counter variable increases depending on the value of increment. 
-
-4. The increased counter variable initializes, and it re-checks the condition. If it's still true, the code executes and so on until the condition check is false or not met, then it terminates.
-
+3. The condition is evaluated again with the new value of the counter variable. This process repeats itself until the condition isn't met.
 
 ***Example:***
 
@@ -104,10 +101,10 @@ Hello
 Hello
 Hello
 Hello
-Hello
+
 ```
 
-Here the value of the counter variable will increase by one from 0 based on the increment specified. If the value of i becomes equal to four or more, it ends since the condition states that the value of i should be less than 4. t prints hello when it meets the condition, hence the output is hello written four times (0,1,2,3) < 4. 
+Here the value of the counter variable will increase by one from 0 based on the increment specified for every iteration. If the value of i becomes equal to four or more, the loop is terminated since the condition states that the value of i should be less than 4. The code block prints Hello, hence the output is Hello written four times for (0,1,2,3) < 4.
 
 #### While Loop
 
@@ -121,7 +118,7 @@ void Main(){
       
       //code;
       
-      increment/decrement;
+      //increment/decrement;
 
     }
 
@@ -132,7 +129,7 @@ void Main(){
 
 **Condition Check - Code Execute - Increment**.
 
-1. We initialization of the counter variable outside the syntax. 
+1. We Initialize the counter variable outside the while block. 
 
 2. It begins with the condition check, if it's true, the code executes. 
 
@@ -151,6 +148,7 @@ void main(){
   int i = 0;
 
    while(i<3){
+      
       print("Hello");
       i++;
    }
@@ -164,9 +162,9 @@ Output:
 Hello
 Hello
 Hello
-Hello
+
 ```
-Our condition check begins with 0<3 which is true therefore the code executes and prints out the first hello. The value of i the increases by one to 1 and the condition 1<3 is still true, so the code executes. It goes, the new variable becomes (2<3) and ends when the condition is now (3<3) which is false. Hence three hellos get printed. 
+Our condition check begins with 0<3 which is true therefore the code executes and prints out the first hello. The value of i the increases by one to 1 and the condition 1<3 is still true, so the code executes. The new variable becomes (2<3) and ends when the condition is (3<3) which is false. Hence three hellos get printed. 
 
 #### Do-While Loop
 
@@ -182,7 +180,7 @@ void main(){
    do {
       //code;
      
-      increment/decrement;
+      //increment/decrement;
   
    } while(condition);
 
@@ -195,7 +193,7 @@ void main(){
 
 1. Code executes then the counter variable initialized outside the syntax increments or decrements. 
 
-2. The condition check - if it's met, it begins from code execution. 
+2. The condition check - The condition is checked. if it's met, the code block is executed again,
 
 3. The code execution will continue until the condition check turns false. 
 
@@ -229,12 +227,12 @@ Hello
 Hello
 ```
 
-The code first executes then the counter variable increments by one. It then checks the condition (1<5). It is true, so the loop will begin again. The code executes, then the counter variable increments by one. It then checks the condition (2<5). It meets the condition. It will continue until the code executes and the new counter variable is 5 and the condition checked is (5<5) which is false, so the loop ends after printing 5 hellos.
+The code first executes then the counter variable increments by one. It then checks the condition (1<5). It is true, so the loop will begin again. The code executes, then the counter variable increments by one. It then checks the condition (2<5). It meets the condition. This will continue until the value of the counter variable is 5. This time the condition check (5<5) will be evaluated as false, so the loop ends after printing 5 hellos.
 
 ### Other Key Concepts
 #### Break Keyword
 
-We use the `Break Keyword` to 'forcefully' end a loop without changing the main loop statement. It comes in handy when you want a partial output and not to display all the elements.
+We use the `break` keyword to 'forcefully' end a loop without changing the main loop statement. It comes in handy when you want a partial output and not to display all the elements.
 
 ***Example:***
 
@@ -262,12 +260,14 @@ Hello
 Hello
 Hello
 Hello
+Hello
+
 ```
-This code will end the loop after printing five hellos because of the break statement.
+This code will end the loop after printing six hellos because of the break statement.
 
 #### Continue Keyword
 
-We use the `Continue Keyword` to skip code or a loop iteration after the continuation and proceed with the rest of the iteration.
+We use the `continue` keyword to skip code or a loop iteration after the continuation and proceed with the rest of the iteration.
 
 ***Example:***
 
@@ -276,12 +276,12 @@ void main(){
 
  for (int i = 1; i<=8; i++){
    
-    print (i);
-
     if(i == 5){
       
        continue;
     }
+
+    print (i);
 
   }
    
@@ -294,7 +294,6 @@ Output:
 2
 3
 4
-5
 6
 7
 8
@@ -314,7 +313,7 @@ It is the use of loops to print out values in an extensive list. ***For example*
 ```Dart
 void main(){
    
-   List grade-one-students = ["John", "Mark", "Alex"];
+   List grade_one_students = ["John", "Mark", "Alex"];
    
    for(String student in grade-one-students){
 
@@ -344,18 +343,12 @@ void main(){
    int i = 0;
 
    while(i<3){
+     
       print("Hello");
       
    }
 
 }
-```
-
-Output :
-
-```Dart 
-   Hello
-   Hello
 ```
 
 The code will print out an endless string of the word Hello.
