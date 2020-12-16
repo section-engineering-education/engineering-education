@@ -5,7 +5,7 @@ description: This article will give users an introduction to what time series is
 
 ![Simple](https://github.com/jamessandy/engineering-education/blob/new-article/articles/introduction-to-time-series/hero.jpg)
 
-In Machine learning, time series is a very crucial aspect but is often overlooked. They are useful in forecasting, stock market analysis even forex but it's time component that makes it challenging to handle. This article will give a friendly introduction to time series.
+In Machine learning, time series is a very crucial aspect but is often overlooked. They are useful in forecasting, stock market analysis even forex but it's time component makes it challenging to handle. This article will give a friendly introduction to time series.
 
 #### Tabel of Content
 1. Introductions to Time series
