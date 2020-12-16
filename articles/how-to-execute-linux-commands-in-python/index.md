@@ -97,3 +97,6 @@ The output of the command is stored in a variable called `temp`. The `communicat
 
 ### Conclusion
 In conclusion, automation is one of the hottest topics in the industry, and almost every company is investing huge amounts of money to automate various manual tasks. In this tutorial, we explored the process of automatically running and analyzing Linux commands on multiple hosts using Python. A naive and old way of doing this is by using shell scripts. However, using Python gives developers more power and control over the execution and output of the commands. Now that you have understood the basics of executing Linux commands, you can go ahead and experiment with different commands and build more complex and robust applications.
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
