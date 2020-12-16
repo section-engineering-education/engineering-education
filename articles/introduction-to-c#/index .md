@@ -1,5 +1,5 @@
 ### Introduction to C#
-C# is an Object-Oriented programming language and it is portable. It requires a .NET framework on the machine for it to run. C# language was invented in 2002 and it is one of the programming languages widely used today.
+C# is an Object-Oriented programming language and it is portable as it can develop software for many computers. It requires a .NET framework on the machine for it to run. C# language was invented in 2002 and it is one of the programming languages widely used today.
 
 C# is pronounced as "C-Sharp".
 
@@ -15,7 +15,7 @@ The performance of C# is exceptional in terms of speed and it uses very few reso
 
 C# is a unique language that is friendlier and easier to understand.
 
-Programs written in C# utilize the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) to run. .NET is a framework used to make applications and run the .NET software. It was created by Microsoft and it runs primarily on Windows operating system. There is an open-source too called [Mono](https://www.mono-project.com/download/stable/) which conveys a cross-platform.
+Programs written in C# utilize the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) to run. .NET is a framework used to make applications and run the .NET software. It was created by Microsoft and it runs primarily on Windows operating system. There is an open-source too called [Mono](https://www.mono-project.com/download/stable/) which runs a cross-platform.
 In this tutorial, we will use it to compile and run our C# code.
 
 To get started, you will need:
@@ -55,12 +55,12 @@ Below is the code that will be generated. It is a *Hello World* program.
 
 ```C#
 using System;
-
-    namespace HelloWorld
+namespace HelloWorld
         {
             class Program
             {
-            static void Main(string[] args){
+            static void Main(string[] args)
+            {
                 Console.WriteLine("Hello World!");
             }
         }
@@ -93,21 +93,27 @@ You can explore more in the [C# docs](https://docs.microsoft.com/en-us/dotnet/cs
 
 **Line 2:**
  ```C#
- namespace HelloWorld{}
+ namespace HelloWorld {
+    // code declarations
+}
  ``` 
 
 Namespaces are used in C# to separate and organize code. They are containers consisting of methods, classes, and other namespaces.
 
 **Line 3:**
  ``` C#
- class Program{}
+ class Program {
+    // code declarations
+}
  ```
 
 A class is a container that contains methods and data. Since C# is Object-oriented programming, creating a class is mandatory for each program. In our case, we are creating a class called `Program`.
 
 **Line 4:** 
 ```C#
-static void Main(string[] args)
+static void Main(string[] args) {
+    // code
+}
 ```
 Execution of a program begins from the `Main` method. Every C# program must have the `Main` method.
 
@@ -116,17 +122,17 @@ Execution of a program begins from the `Main` method. Every C# program must have
  Console.WriteLine("Hello World!");
  ```
 
-`Console.WriteLine()` is used to print out text on the console. It prints a string and moves to the next line. In our case, it is used to output *"Hello World"*.
+`Console.WriteLine()` is used to print out text on the console. It prints a string and it adds a new line character to the end of the string. In our case, it is used to output *"Hello World"*.
 
-We can also use `Console.Write()` to print a string in the same line without moving to the next line.  You can learn more on Console.WriteLine() and Console.Write() [here](https://www.programiz.com/csharp-programming/basic-input-output).
+We can also use `Console.Write()` to print a string **but** it does not add a new line character to the end of the string.  You can learn more on Console.WriteLine() and Console.Write() [here](https://www.programiz.com/csharp-programming/basic-input-output).
 
 ### Reading character(s) from the input:
 
-`Console.ReadLine()` is used to read the next characters in the input system.
+`Console.ReadLine()` is used to read the next **characters** in the input system.
 
-`Console. Read()` is used to read the next character in the input system.
+`Console.Read()` is used to read the next **character** in the input system.
 
-`Console.ReadKey()` is used to obtain the next key entered by the user. It is mostly used to hold the console for the user until he presses a key.
+`Console.ReadKey()` is used to obtain the **next key** entered by the user. It is mostly used to hold the console for the user until he presses a key.
 
 ### Comments in C#
 
@@ -159,18 +165,19 @@ Let's write another program that adds two numbers entered by the user.
 ```C#
 //This is a C# program that adds two numbers
 using System;
-
-    namespace HelloWorld
+namespace HelloWorld
         {
             class Program
             {       
-                static void Main(string[] args){
+                static void Main(string[] args)
+                {
                     Console.WriteLine("Enter your first number: ");
                     int num1= Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Enter your second number: ");
                     int num2= Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Your Sum is "num1 + num2);//prints the sum of the two numbers 
-                    Console.ReadLine();
+                    int sum = num1 + num2;//adds the two numbers
+                    Console.WriteLine("Your Sum is " + sum);//prints the sum of the two numbers 
+                    Console.ReadKey();
                }
          }
     }
@@ -192,6 +199,7 @@ Let us look at the new things in our program:
 ```c#
 int num1= Convert.ToInt32(Console.ReadLine());
 ```
+It takes data from the user and allocates it to the memory location.
 
 `int num1` means that we are creating a memory location to hold an integer (int). In our case, we have named the memory location as **num1**.
 
@@ -205,7 +213,7 @@ When we prompt the user to enter any details, C# takes the input as strings ther
 ```C#
 Console.ReadLine()
 ```
-It takes data from the user and allocates it to the memory location we had created earlier. 
+It is a function that returns the value from the Input system. 
 
 ### Takeaways
 In this tutorial we looked at:
