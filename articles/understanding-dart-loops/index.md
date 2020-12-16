@@ -10,7 +10,7 @@ To write Dart programs:
 
 - You can use the **[DartPad Online Editor](https://dartpad.dartlang.org/)** OR
 
-- You can use this method if you are familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)). **[Install Dart SDK](https://dart.dev/get-dart)**, **[Install IntelliJ IDEA](https://www.jetbrains.com/idea/)** and integrate the Dart plugin to IntelliJ IDEA IDE.
+- You can use this method if you are familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)). **[Install Dart SDK](https://dart.dev/get-dart)**, **[Install IntelliJ IDEA](https://www.jetbrains.com/idea/)** and, integrate the Dart plugin to IntelliJ IDEA IDE.
 
 ### Table of Contents
 - [General loop structure](#general-loop-structure)
@@ -38,7 +38,7 @@ All the loop types mentioned above have the following characteristics:
 
 - *Increment or Decrement Counter Variable*  - This refers to the number in which counter variable increases or decreases it meets the condition.
 
-- *Condition Check* - Every loop will have a condition which will be checked on each Iteration. If the condition is evaluated to true, then the next iteration will get executed.
+- *Condition Check* - Every loop will have a condition that will be checked on each Iteration. If the condition is evaluated to true, then the next iteration will get executed.
 
 Loops can be classified into two types based on condition checking:
 
@@ -152,7 +152,7 @@ Hello
 Hello
 ```
 
-Our condition check begins with `0 < 3` which is true. Therefore the code executes and prints out the first hello. Then, the value of `i` increases by one to 1. Now, the condition `1 < 3` is still true, so the code executes. This goes on until the the value of the counter variable will be `3`. Now, the condition is `3 < 3` which is false. Hence, the loop terminates and three `Hello`s get printed. 
+Our condition check begins with `0 < 3` which is true. Therefore the code executes and prints out the first hello. Then, the value of `i` increases by one to 1. Now, the condition `1 < 3` is still true, so the code executes. This goes on until the value of the counter variable will be `3`. Now, the condition is `3 < 3` which is false. Hence, the loop terminates and three `Hello`s get printed. 
 
 #### Do-While Loop
 **Syntax of Do-While Loop:**
@@ -176,13 +176,13 @@ void main(){
 
 **Initialize counter - Execute code - Increment - Condition check**.
 
-1. The counter variable will be initilized and the code block will be executed once regardless of the condition for the first time.
+1. The counter variable will be initialized and the code block will be executed once regardless of the condition for the first time.
 
-2. Then, the condition will be checked. If it's evaluvated to `true`, the loop will proceed to the next iteration.
+2. Then, the condition will be checked. If it's evaluated to `true`, the loop will proceed to the next iteration.
 
-3. The iterations will continue until the condition is evaluvated as `false`. 
+3. The iterations will continue until the condition is evaluated as `false`. 
 
-> Note that the code block in `do-while` loop executes at least once.
+> Note that the code block in the `do-while` loop executes at least once.
 
 ***Example:***
 
@@ -211,7 +211,7 @@ The code is executed for the first time and then the counter variable is increme
 ### Other key concepts
 #### Break keyword
 
-We use the `break` keyword to forcefully end a loop without changing the main loop statement. It comes in handy when you want a partial output or want to terminate the loop when a certain condtion is met.
+We use the `break` keyword to forcefully end a loop without changing the main loop statement. It comes in handy when you want a partial output or terminate the loop when a certain condition is met.
 
 ***Example:***
 
@@ -277,7 +277,7 @@ Here are some positive and negative applications of loops:
 A music player has a loop that enables it to play from one song to the next systematically.
 
 2. Cycling through values.
-It is the use of loops to print out values in an extensive list. ***For example***, Names of students in a school.
+It is the use of loops to print out values in an extensive list. For example, the names of students in a school.
 
 ```Dart
 void main(){
@@ -315,7 +315,7 @@ void main(){
 The code will print out an endless string of the word `Hello`. Note that we are not incrementing the counter variable.
 
 ### Further reading
-To get a better grip into the topic, look at these resources:
+To get a better grip on the topic, look at these resources:
 
  - The [Dart's Official document](https://dart.dev/samples#control-flow-statements)
 
