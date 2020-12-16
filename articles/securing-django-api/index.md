@@ -1,9 +1,26 @@
-In this tutorial, we will secure our TODO API endpoints that we created in this [article](/engineering-education/django-crud-api/). We will start by implementing Token-based authentication and then implement javascript web tokens (JWT).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/securing-django-api/
+title: Introduction to Django Crud API
+description: This tutorial will be an introduction to 
+author: odhiambo-paul
+date: 2020-12-16T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/securing-django-api/hero.jpg
+    alt:  example image
+---
+In this tutorial, we will secure our TODO API endpoints that we previously created in this [article](/engineering-education/django-crud-api/). We will start by implementing Token-based authentication and then implement Javascript web tokens (JWT).
+<!--more-->
 
 ### Token-based authentication
 Token-based authentication works by getting a token for the correct username and password used to perform subsequent requests to the server.
 
-**Project setup**
+#### Code setup
 Add `'rest_framework.authtoken'` to the apps list in `django_todo` settings.py file.
 
 ```python
@@ -22,7 +39,8 @@ INSTALLED_APPS = [
     'coreapi',
 ]
 ```
-Add `'rest_framework.authentication.TokenAuthentication'` to `REST_FRAMEWORK` dictionary in the `django_todo` project `settings.py`.
+
+Then add `'rest_framework.authentication.TokenAuthentication'` to the `REST_FRAMEWORK` dictionary in the `django_todo` project `settings.py`.
 
 ```python
 REST_FRAMEWORK = {
@@ -32,19 +50,23 @@ REST_FRAMEWORK = {
     ],
 }
 ```
+
 Run the command `./manage.py migrate` to create the table that will store the authentication tokens.
+
 ```bash
  $ ./manage.py migrate
  ```
- We need to create a user and test the token generation if it works as expected.
- To create a user for testing, we use a `manage.py` command-line utility.
+
+ We need to create a user and test the token generation if it works as expected.  To create a user for testing, we use a `manage.py` command-line utility.
+ 
  Run the command:
  ```bash
  python manage.py createsuperuser --username paul --email paul@gmail.com
  ```
-### Project setup
 
-Since this is a continuation of our previous article, We will be using the `Django_todo` application that we created previously.
+### Project setup
+Since this is a continuation of our previous [article](/engineering-education/django-crud-api/), we will be using the `Django_todo` application that we created there.
+
 If you don't have the application we created in the previous article, you can clone it from [here](https://github.com/paulodhiambo/django_todo/tree/master).
 
 
@@ -91,11 +113,10 @@ class DeleteTodoAPIView(DestroyAPIView):
 
 ```
 
-By adding permission classes to our view classes makes our API endpoints secure. When we visit `http://127.0.0.1:8000/api/v1/todo/` we get HTTP 403 Forbidden error.
+Adding permission classes to our view classes will make our API endpoints more secure. When we visit `http://127.0.0.1:8000/api/v1/todo/` we get HTTP 403 forbidden error.
 
-### Implementing the Token Authentication
-
-In `settings.py` file in our `django_todo` projects directory add `rest_framework.authtoken` to the `INSTALLED_APPS` list and also include `TokenAuthentication` to the `REST_FRAMEWORK` dictionary.
+### Implementing the token authentication
+In the `settings.py` file in our `django_todo` projects directory add `rest_framework.authtoken` to the `INSTALLED_APPS` list and also include `TokenAuthentication` to the `REST_FRAMEWORK` dictionary.
 
 ```python
 INSTALLED_APPS = [
@@ -118,6 +139,7 @@ REST_FRAMEWORK = {
     ],
 }
 ```
+
 Now we should run the command `./manage.py migrate` to create the table that will store the authentication tokens.
 
 ```bash
@@ -125,12 +147,14 @@ $ ./manage.py migrate
 ```
 
 To create an authentication token, we need a user account that we can create through the command line.
+
 Run the command below to create a user account:
 ```bash
 $ ./manage.py createsuperuser --username paul --email paul@domain.com
 ```
 
 We can also generate the authentication token through the command line. Run the command `python manage.py drf_create_token paul` to generate the authentication token.
+
 ```bash
 $ ./manage.py drf_create_token paul
 Generated token 342b58233e5fdeb2446bcaae60b6e51e953f7a17 for user paul
@@ -139,12 +163,13 @@ Generated token 342b58233e5fdeb2446bcaae60b6e51e953f7a17 for user paul
 We will be using the generated token `342b58233e5fdeb2446bcaae60b6e51e953f7a17` to authenticate our requests to the server.
 
 Let's make a request to `http://127.0.0.1:8000/api/v1/todo/` adding our token as an authorization header `Authorization: Token 342b58233e5fdeb2446bcaae60b6e51e953f7a17`.
+
 ![GET Request with token](/engineering-education/securing-django-api/get-using-token.png)
 
 ### User token endpoint
-Django rest framework comes with an endpoint that users can use to generate their authentication tokens by providing their valid username and password.
+The Django rest framework comes with an endpoint that users can use to generate their authentication tokens by providing their valid username and password.
 
-In the `django_todo` project directory add the api endpoint for token generation in the `urls.py` file.
+In the `django_todo` project directory add the API endpoint for token generation in the `urls.py` file.
 ```python
 from django.contrib import admin
 from django.urls import path
@@ -161,27 +186,34 @@ urlpatterns = [
 ]
 
 ```
+
 Making a POST request to `http://127.0.0.1:8000/api/token/` with a valid username and password returns an authentication token in the response body that can be used to authenticate subsequent requests.
+
 ![POST Request](/engineering-education/securing-django-api/get-token.png)
 
 
-### Implementing the JSON Web Token JWT Authentication
+### Implementing the JSON web token JWT authentication
 
-**How JWT works**
+#### How JWT works
 JWT is an access token acquired by passing in username and password for a refresh token and access token.
-**Access token** is having a short lifespan (usually 5 minutes) while **refresh token** has a longer lifespan (usually 24 hours).
+**Access token** has a short lifespan (usually 5 minutes) while **refresh token** has a longer lifespan (usually 24 hours).
 
 Sample JWT `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQzODI4NDMxLCJqdGkiOiI3ZjU5OTdiNzE1MGQ0NjU3OWRjMmI0OTE2NzA5N2U3YiIsInVzZXJfaWQiOjF9.Ju70kdcaHKn1Qaz8H42zrOYk0Jx9kIckTn9Xx7vhikY`
 
-JWT consists of 3 parts:-
+JWT consists of 3 parts:
+
 `header.payload.signature`
-In the above JWT, we have:-
+
+In the JWT above, we have:
 ```
 header = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 payload = eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQzODI4NDMxLCJqdGkiOiI3ZjU5OTdiNzE1MGQ0NjU3OWRjMmI0OTE2NzA5N2U3YiIsInVzZXJfaWQiOjF9
 signature = Ju70kdcaHKn1Qaz8H42zrOYk0Jx9kIckTn9Xx7vhikY
 ```
-The information above is encoded using a Base64 encoder. After decoding the above information, we get:-
+
+The information above is encoded using a Base64 encoder. 
+
+After decoding the above information, we get:
 **header**
 ```json
 {
@@ -251,20 +283,24 @@ We get a refresh and access token as the response.
     "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU0NTMxMDM1OSwianRpIjoiMjk2ZDc1ZDA3Nzc2NDE0ZjkxYjhiOTY4MzI4NGRmOTUiLCJ1c2VyX2lkIjoxfQ.rA-mnGRg71NEW_ga0sJoaMODS5ABjE5HnxJDb0F8xAo"
 }
 ```
+
 To access the protected endpoints in our backend, we should include the include access token in the header of all of our requests.
-//Postman image
+
+![Postman image](/engineering-education/securing-django-api/jwt-rquest.png)
+
 We can use the access token within 5 minutes before it expires. Thereafter we will need to obtain another access token using the refresh token we got from the previous API request.
 When we try to make requests to protected endpoints, we get the below error.
+
 ![GET Request](/engineering-education/securing-django-api/jwt-error.png)
 
 To get a new access token, we will make a post request to `http://127.0.0.1:8000/api/jwt/token/refresh/` posting the refresh token.
+
 ![POST Request](/engineering-education/securing-django-api/jwt-refresh.png)
 
 The refresh token is valid for 24 hours, after which a user is required to reauthenticate to obtain a new refresh and access token.
 The access token is shortlived because it is sent through the HTTP header, which might get compromised; therefore, it is only valid for a short while.
 
 For further customization, visit [django simple jwt](https://github.com/davesque/django-rest-framework-simplejwt)
-
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
