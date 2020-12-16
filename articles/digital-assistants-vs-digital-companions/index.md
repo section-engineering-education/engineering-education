@@ -10,7 +10,7 @@ This article provides an extensive comparison and interrelatedness between digit
 
 Digital assistants is an advanced computer program that simulates a conversation with the people who use it, mostly over the internet. Digital assistants use the following to provide a personalized conversation experience;
 
-1. Artificial Intelligence ([IA](https://www.section.io/engineering-education/artificial-intelligence-future/)) – Simulation of human intelligence through programming in a machine to mimic human actions.
+1. Artificial Intelligence ([AI](https://www.section.io/engineering-education/artificial-intelligence-future/)) – Simulation of human intelligence through programming in a machine to mimic human actions.
 2. Natural Language Processing ([NLP](https://machinelearningmastery.com/natural-language-processing/)) – refers to automatic manipulation of a natural language such as speech and text through software.
 3. [Machine Language](https://www.computerhope.com/jargon/m/machlang.htm) – refers to a collection of binary digits or bits that a machine can understand.
 
