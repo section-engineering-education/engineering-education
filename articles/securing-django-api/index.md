@@ -6,7 +6,7 @@ url: /engineering-education/securing-django-api/
 title: Introduction on Securing Django APIs
 description: This tutorial will be an introduction on how to secure a Django API, using token-based authentication and JavaScript web token to perform requests.
 author: odhiambo-paul
-date: 2020-12-16T00:00:00-1:00
+date: 2020-12-16T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
