@@ -13,11 +13,11 @@ images:
   - url: /engineering-education/building-xml-webpages-using-xslt/hero.jpg
     alt: Building XML webpages using XSLT
 ---
-In this article, we'll learn about building XML webpages using eXtensible Stylesheet Language Transformations (XSLT). By the end of the article, you will get an overview of how HTML webpages are built by transforming XML codes. You will also be learning a step-by-step procedure for building a simple webpage.
+In this article, we'll learn about building XML webpages using eXtensible Stylesheet Language Transformations (XSLT). By the end of the article, you will overview how HTML webpages are built by transforming XML codes. You will also be learning a step-by-step procedure for building a simple webpage.
 <!--more-->
 In my previous articles about the [Validation of XML using DTD](/engineering-education/validating-xml-using-dtd/) and [Validation of XML using XSD](/engineering-education/validating-xml-using-xsd/), we learned about the basics of XML and implemented validations using [DTD](https://en.wikipedia.org/wiki/Document_type_definition) and [XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C)).
 
-I highly recommend going over the previous articles, to grasp the concepts better. As a pre-requisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help in easier understanding.
+I highly recommend going over the previous articles to grasp the concepts better. As a pre-requisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help in easier understanding.
 
 ### Table of contents
 - [What is eXtensible Stylesheet Language Transformation?](#what-is-extensible-stylesheet-language-transformation)
@@ -54,12 +54,12 @@ In this article, we'll not cover the basics of building an XML document. To keep
 
 #### Understanding XSLT terminologies
 ##### XSLT template
-An XSL consists of one or more sets of rules that are called templates. A template consists of rules, which are applicable only when the specific node in the XML document, is matched.
+An XSL consists of one or more sets of rules that are called templates. A template consists of rules applicable only when the specific node in the XML document is matched.
 
-We can understand this, as a wrapper function. It wraps the XSLT code based on matching the start node of an XML document. When the start node matches, the template gets rendered accordingly.
+We can understand this as a wrapper function. It wraps the XSLT code based on matching the start node of an XML document. When the start node matches, the template gets rendered accordingly.
 
 ##### XPath
-> According to Wikipedia, XPath (XML Path Language) is a query language for selecting nodes from an XML document. Also, XPath may be used to compute values (e.g., strings, numbers, or Boolean values) from the content of an XML document. XPath was defined by the World Wide Web Consortium (W3C).
+> According to Wikipedia, XPath (XML Path Language) is a query language for selecting nodes from an XML document. Also, XPath may be used to compute values (e.g., strings, numbers, or Boolean values) from an XML document's content. XPath was defined by the World Wide Web Consortium (W3C).
 
 Here, in XSLT, we use XPath for navigating within XML documents. A sample example for demonstration would be:
 
@@ -72,10 +72,10 @@ Here, in XSLT, we use XPath for navigating within XML documents. A sample exampl
 </root>
 ```
 
-For the above XML document, let's say, we have to access the value in `<firstname />` tag. We can do that, by specifying the XPath as `/root/name/firstname`.
+We have to access the value in the `<firstname />` tag for the above XML document. We can do that by specifying the XPath as `/root/name/firstname`.
 
 #### Building XSLT webpages
-We are going to build a simple web page containing a table with the table headers as the XML tags. We are also going to explore a few of the interesting features that can be built using XSLT.
+We will build a simple web page containing a table with the table headers as the XML tags. We are also going to explore a few of the interesting features that can be built using XSLT.
 
 ##### Declarations
 For any XSLT document, the declaration statement, along with namespace details, is mandatory. XML Namespace `xmlns` is a collection of names that can be used as elements or attributes in an XML document. It qualifies element names uniquely on the web to avoid conflicts between elements with the same name.
@@ -91,12 +91,12 @@ Here, we set the XSL version to be `1.0` and the `xmlns` to be `xsl="http://www.
 ##### Cascading Style Sheets
 > According to Wikipedia, Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. 
 
-A markup language is a way of styling a document to be syntactically distinguishable from the text where the document is processed only to render the text, while not displaying the markup language.
+A markup language is a way of styling a document syntactically distinguishable from the text where the document is processed only to render the text while not displaying the markup language.
 
-In the web page that we are going to build, we'll use [this](https://gist.github.com/srishilesh/2e9d4030619d014585e06c745706ee35) CSS code for styling the document. Building CSS is not under the scope of this article. Only essential information regarding it will be emphasized upon.
+In the web page that we will build, we'll use [this](https://gist.github.com/srishilesh/2e9d4030619d014585e06c745706ee35) CSS code for styling the document. Building CSS is not under the scope of this article. Only essential information regarding it will be emphasized upon.
 
 ##### XSLT template
-Having done the pre-requisite steps, let's start building the webpage using XSLT. To begin with, we create an `xsl:template` by matching with the `"/"`, which signifies the root node of the XML document. By specifying `"/"`, we mention that the whole document will be accessed.
+Having done the pre-requisite steps, let's start building the webpage using XSLT. First, we create an `xsl:template` by matching with the `"/"`, which signifies the XML document's root node. By specifying `"/"`, we mention that the whole document will be accessed.
 
 The match attribute is used to associate a template with an XML element. The match attribute can also be used to define a template for the entire XML document.
 
@@ -107,7 +107,7 @@ The match attribute is used to associate a template with an XML element. The mat
 ##### HTML header
 Inside the `xsl:template`, we write normal HTML codes, which later are rendered as webpages. Here, the interesting part is, the codes are XSLT, not HTML codes.
 
-To start, we begin with `<head />` tag and link all the necessary CSS and other required files. Here, we link our CSS files and a font style sheet file.
+First, we begin with the `<head />` tag and link all the necessary CSS and other required files. Here, we link our CSS files and a font style sheet file.
 
 ```html
 <head>
@@ -118,7 +118,7 @@ To start, we begin with `<head />` tag and link all the necessary CSS and other 
 ```
 
 ##### HTML body
-Moving on with the HTML `<body />`, we build a table to display all the details from the XML document. To make the webpage look good, let's align the contents to the `center` using `<center />` tag.
+Moving on with the HTML `<body />`, we build a table to display all the XML document details. To make the webpage look good, let's align the contents to the `center` using the `<center />` tag.
 
 ```html
 <body>
@@ -130,7 +130,7 @@ Moving on with the HTML `<body />`, we build a table to display all the details 
 ```
 
 ##### Building table
-Now, we create a `<div />` tag which wraps the `<table />` tag. Here, we use certain CSS properties like `class="scrolling"` to enable horizontal and vertical scrolling of the webpages. `class="table-props"` to set styling for the table contents. And, `id="table-title"` to set styling specific for table heading. It is advised to refer to [this](https://gist.github.com/srishilesh/2e9d4030619d014585e06c745706ee35) CSS code for a better understanding of styling.
+We create a `<div />` tag that wraps the `<table />` tag. Here, we use certain CSS properties like `class="scrolling"` to enable horizontal and vertical scrolling of the webpages. `class="table-props"` to set styling for the table contents. And, `id="table-title"` to set styling specific for table heading. It is advised to refer to [this](https://gist.github.com/srishilesh/2e9d4030619d014585e06c745706ee35) CSS code for a better understanding of styling.
 
 ```html
 <div class="scrolling">
@@ -140,7 +140,7 @@ Now, we create a `<div />` tag which wraps the `<table />` tag. Here, we use cer
 ```
 
 ##### Table headings
-On referring to [this](https://gist.github.com/srishilesh/5d028a5d9acef3818b014cd4595c9ebe) XML document, the XML tags will be considered as the table headings for the web page. So, we specify the headings using `<th>` tag.
+On referring to [this](https://gist.github.com/srishilesh/5d028a5d9acef3818b014cd4595c9ebe) XML document, the XML tags will be considered as the table headings for the web page. So, we specify the headings using the `<th>` tag.
 
 ```html
 <tr id="table-heading">
@@ -157,7 +157,7 @@ On referring to [this](https://gist.github.com/srishilesh/5d028a5d9acef3818b014c
 
 ##### Table rows
 ##### Selecting based on XML field
-Having built the skeleton for the webpage, let's focus on rendering the data from the XML document. Corresponding to the first heading `"Event_ID"`, we must render the data from the XML document, as separate rows under the heading. So, we use the `xsl:value-of` command to retrieve data for the respective XML tag, which is specified in `select=""`. Here, we retrieve the data in XML tag `event_id`. The data in each cell of the table is enclosed within `<td />` tags.
+Having built the web page's skeleton, let's focus on rendering the data from the XML document. Corresponding to the first heading `"Event_ID"`, we must render the XML document's data as separate rows under the heading. So, we use the `xsl:value-of` command to retrieve data for the respective XML tag, which is specified in `select=""`. Here, we retrieve the data in the XML tag `event_id`. The data in each cell of the table is enclosed within `<td />` tags.
 
 ```html
 <td>
@@ -168,7 +168,7 @@ Having built the skeleton for the webpage, let's focus on rendering the data fro
 ##### Choice-based XSL transformations
 For the XML tag `event_type_participation`, there are 2 possible values: `Solo` and `Team` type of participations. So, we can specify choice based XSLT codes. For demonstration, we display the `Solo` and `Team` values in 2 different colors.
 
-To make choice based transformations, we use `xsl:choose` XSLT tag, which is similar to `if-else-if` conditional statements. The first `if` condition corresponds to `xsl:when test=""`. Similarly, the `else` condition corresponds to `xsl:otherwise`.
+To make choice based transformations, we use the `xsl:choose` XSLT tag, which is similar to `if-else-if` conditional statements. The first `if` condition corresponds to `xsl:when test=""`. Similarly, the `else` condition corresponds to `xsl:otherwise`.
 
 Code structure for Choice based XSLT:
 
@@ -198,7 +198,7 @@ For our webpage, the code is as shown as below:
 ```
 
 ##### Full Code - Table Rows
-Based on the previous explanations, we build the XSLT code for the remaining XML tags, by rendering values using `xsl:value-of` tag.
+Based on the previous explanations, we build the XSLT code for the remaining XML tags by rendering values using the `xsl:value-of` tag.
 
 ```html
 <xsl:for-each select="root/event">
@@ -264,7 +264,7 @@ For accessing `event_id`, the path would be `root/event/event_id`. And, to acces
 ```
 
 ##### Sorting
-Now, let's say, we have to sort the table rows in ascending order based on `event_id`. We have an exclusive XSLT tag for sorting. In XML, every data is considered as a `string` by default. So, we must convert it to an integer, by using `number()`. `xsl:sort` helps us sort the table rows based on `number(event_id)`.
+Now, let's say we have to sort the table rows in ascending order based on `event_id`. We have an exclusive XSLT tag for sorting. In XML, every data is considered as a `string` by default. So, we must convert it to an integer by using `number()`. `xsl:sort` helps us sort the table rows based on `number(event_id)`.
 
 ```xml
 <xsl:sort select="number(event_id)" data-type="number" />
