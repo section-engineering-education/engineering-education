@@ -1,6 +1,23 @@
-### Introduction
-Dart is a programming language that is scalable and can be used to write simple scripts or full-featured applications. It is an object-oriented and dynamic language. Dart was developed by Google. Like most programming languages, it contains loops and iterations. If one is familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-loops-and-iteration-in-dart/
+title: Understanding Loops and Iteration in Dart
+description: In this article, the readers will understand about the different types of loops in Dart and how to use them.
+author: diana-mutheu
+date: 2020-12-16T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/understanding-loops-and-iteration-in-dart/hero.jpg
+    alt: Understanding loops and iteration in Dart image
+---
+Dart is a programming language that is scalable and can be used to write simple scripts or full-featured applications. It is an object-oriented and dynamic language. Dart was developed by Google. Like most programming languages, it contains loops and iterations. If one is familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
+<!--more-->
+
+### Introduction
 A Loop is defined as a segment of code that executes multiple times.
 
 Iteration refers to the process in which the code segment is executed once. One iteration refers to 1-time execution of a loop. The loop can undergo many iterations. 
