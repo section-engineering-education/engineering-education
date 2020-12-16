@@ -151,7 +151,7 @@ We need to use the RESTful APIs in the following sequence.
 2. Start Recording
 3. Stop Recording
 
-First, you need to acquire a resource ID for cloud recording. Then, we need to start the recording within 5 minutes from acquiring the resource ID. You can stop the recording whenever you want.
+First, you need to acquire a resource ID for cloud recording. This will allocate a recorder on Agora's servers for you to record the streams. Then, we need to start the recording within 5 minutes from acquiring the resource ID. You can stop the recording whenever you want.
 
 During the recording, you can query the recording session for the status, update the layout of the recording and, update the subscriber list. To learn more about them, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_rest?platform=RESTful).
 
@@ -159,10 +159,10 @@ We need to provide a UID for the recorder. The recorder is like a user who joins
 
 If you have set up token authentication for your Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
 
-At the time of writing this article, Agora cloud recording does not support user accounts yet. Make sure that the recording channel uses integer UIDs. If you'd like to learn more about user accounts, refer [here](https://docs.agora.io/en/All/faq/string).
+> At the time of writing this article, Agora cloud recording does not support user accounts yet. Make sure that the recording channel uses integer UIDs. If you'd like to learn more about user accounts, refer [here](https://docs.agora.io/en/All/faq/string).
 
 ### Acquire resource ID
-Let's add a POST handler for a new endpoint called `'/acquire'` to acquire the resource ID for the cloud recording.
+Let's add a POST request handler for a new endpoint called `'/acquire'` to acquire the resource ID for the cloud recording.
 
 ```JavaScript
 app.post("/acquire", (req, res) => {
@@ -215,7 +215,7 @@ Response:
 ![Acquire Request & Response](postman_acquire.png)
 
 ### Start recording
-Now, Let's add a POST handler for a new endpoint called `'/start'` to start the cloud recording.
+Now, Let's add a POST request handler for a new endpoint called `'/start'` to start the cloud recording.
 
 ```JavaScript
 app.post("/start", (req, res) => {
@@ -236,6 +236,8 @@ There are two modes of recording:
 In the body of the request, we should specify the UID, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig`, and `extensionServiceConfig`.
 
 We'll not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd like to learn about the complete schema of the request, refer to [the documentation](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
+
+Snapshot Config is used to capture screenshots. If you'd like to learn more about capturing screenshots, refer to [this article](/engineering-education/agora-cloud-screenshots).
 
 **Recording File Config:** This will define the configurations for the recorded files. You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time, otherwise, an error will occur.
 
@@ -375,7 +377,7 @@ Response:
 ![Start Request & Reponse](postman_start.png)
 
 ### Stop recording
-Now, Let's add a POST handler for a new endpoint called `'/stop'` to stop the cloud recording.
+Now, Let's add a POST request handler for a new endpoint called `'/stop'` to stop the cloud recording.
 
 ```JavaScript
 app.post("/stop", (req, res) => {
@@ -383,7 +385,7 @@ app.post("/stop", (req, res) => {
 });
 ```
 
-You need to send a POST request to this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/stop` to start the recording.
+You need to send a POST request to this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/{mode}/stop` to stop the recording.
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
@@ -472,11 +474,11 @@ Response:
 
 4. We set up a simple Express server.
 
-5. We added a POST handler to acquire the resource ID for the recording session.
+5. We added a POST request handler to acquire the resource ID for the recording session.
 
-6. We added a POST handler to start the recording session with the resource ID. We learned about all the parameters that we need to pass to start the recording.
+6. We added a POST request handler to start the recording session with the resource ID. We learned about all the parameters that we need to pass to start the recording.
 
-7. We added a POST handler to stop the recording session.
+7. We added a POST request handler to stop the recording session.
 
 Congratulations, :partying_face: You did it.
 
