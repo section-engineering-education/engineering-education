@@ -1,5 +1,5 @@
 ### Introduction
-Most Android applications require local data storage. In the past years, this has been achieved through the use of SQLite database. Room is a persistent library that is part of the android jetpack. It is built on top of SQLite. The room persistent library has many advantages over raw SQLite. One advantage is that it saves a developer from writing a lot of boilerplate code to create and manage databases. It also provides compile-time validation of SQL queries. This means that an application won't compile if there is an SQL query error. This prevents the developer from encountering run time errors. 
+Most Android applications require local data storage. In the past years, this has been achieved through the use of SQLite database. Room is a persistent library that is part of the android jetpack. It is built on top of SQLite. The room persistent library has many advantages over raw SQLite. One advantage is that it saves a developer from writing a lot of boilerplate code to create and manage databases. It also provides compile-time validation of SQL queries. This means that an application won't compile if there is an SQL query error. This prevents the developer from encountering run time errors.
 
 This article goes through creating an android application that uses room persistent library to create and manage SQLite databases. We are going to create a simple ToDo list application. The list will be stored locally using the library.
 
@@ -9,8 +9,8 @@ Without further ado. Let's dive in!
 To follow through with this tutorial, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
-  3. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language, 
-  [SQL](https://en.wikipedia.org/wiki/SQL), 
+  3. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language,
+  [SQL](https://en.wikipedia.org/wiki/SQL),
   [MVVM](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin) architecture and Kotlin [coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html).
 
 Let's get started!
@@ -86,7 +86,7 @@ abstract class ListDatabase : RoomDatabase(){
     }
 }
 ```
- 
+
 The class needs to exhibit the singleton feature. To do this, we declare the class as abstract and then use a companion object housing a function to create the database instance. By singleton, we mean that only one database instance should be created during the lifetime of the application's process. Creation of multiple instances may lead to errors in data management. To create the instance, we first declare a variable to hold the instance. Then, in the getDatabase method, we check whether the INSTANCE variable is null, we return it if it is not null. If null we use the Room.databaseBuilder method to create the database. In the method, we pass in the application context, database class, and the database name as parameters. We then update the instance variable before returning the instance.
 
 That is what we need for the database class.
@@ -116,7 +116,7 @@ First, go to `MAViewModel` and add the following in the `MAViewModel` class.
 val items = repository.getList().asLiveData()
 
 fun addItem(item: ToDo) = runBlocking{ repository.addItem(item) }
-    
+
 fun deleteItem(item: String) = runBlocking { repository.deleteItem(item) }
 ```
 Then navigate to `MainActivity` and add the code bellow above `onCreate` method
@@ -155,3 +155,6 @@ This is how the application should look like.
 
 ### Conclusion
 In this article, we have gone through the room database. What it is, its advantages, and its basic components. We have also seen how Room contributes to and follows the MVVM architecture. With that, you can now confidently implement room database in a new or existing application. You can find the source code for the full application from [github](https://github.com/kayere/To-do/tree/master)
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
