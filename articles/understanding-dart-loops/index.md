@@ -1,13 +1,9 @@
 ### Introduction
 Dart is a programming language that is scalable and can write simple scripts or full-featured applications. It is an object-oriented, dynamic language developed by Google. Like most programming languages, it contains loops and iterations. If one is familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
 
-<<<<<<< HEAD
 A `Loop` is defined as a segment of code that executes multiple times.
 
 `Iteration` refers to the process in which the code segment is executed once. One iteration refers to 1-time execution of a loop. The loop can undergo many iterations. 
-=======
-A Loop's definition is the code that executes multiple times while Iteration refers to the process in which the content executes once. One iteration refers to 1-time execution of a loop. It can undergo many iterations. They are a way of using something to an unknown or not innumerable amount of things. Some applications include adding sums of numbers, cycling through values, repeat functions, to mention a few.
->>>>>>> e57e5e48d2c5779bd45327ffbee719ea8383ddfe
 
 ### To write Dart Programs
 To write Dart programs and implement the knowledge you need to have:
