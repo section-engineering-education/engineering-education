@@ -32,7 +32,7 @@ For websites built using [HTML](https://en.wikipedia.org/wiki/HTML), the styling
 
 ### Step by step guide for implementation
 #### XML document
-In this article, we'll not cover the basics of building an XML document. To keep it simple, let’s build a webpage using the XML code below. Full XML code can be found [here](https://gist.github.com/srishilesh/5d028a5d9acef3818b014cd4595c9ebe).
+In this article, we'll not cover the basics of building an XML document. To keep it simple, let’s build a webpage using the XML code below. Full XML code can be found [here](https://gist.github.com/srishilesh/1e4779285eb75fd4af9315391a05e5e6).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -140,7 +140,7 @@ We create a `<div />` tag that wraps the `<table />` tag. Here, we use certain C
 ```
 
 ##### Table headings
-On referring to [this](https://gist.github.com/srishilesh/5d028a5d9acef3818b014cd4595c9ebe) XML document, the XML tags will be considered as the table headings for the web page. So, we specify the headings using the `<th>` tag.
+On referring to [this](https://gist.github.com/srishilesh/1e4779285eb75fd4af9315391a05e5e6) XML document, the XML tags will be considered as the table headings for the web page. So, we specify the headings using the `<th>` tag.
 
 ```html
 <tr id="table-heading">
@@ -280,7 +280,15 @@ Due to security concerns in several browsers like Google Chrome, the output can 
 ![A sample output of XML Webpage](/engineering-education/building-xml-webpages-using-xslt/output.PNG)
 
 ### Conclusion
-In conclusion, we have understood what XSLT is, how the webpages are rendered, and how to build a sample XML webpage using XSLT. This article serves only as an introduction to building XML webpages using XSLT. It is highly recommended to try out the code manually by reading further from the referenced articles. Full XSLT code can be found [here](https://gist.github.com/srishilesh/bc00bf4a134d37295874758390127929).
+In conclusion, we have understood what XSLT is, how the webpages are rendered, and how to build a sample XML webpage using XSLT. This article serves only as an introduction to building XML webpages using XSLT. It is highly recommended to try out the code manually by reading further from the referenced articles.
+
+Full codes can be accessed here:
+
+- [XML Document](https://gist.github.com/srishilesh/1e4779285eb75fd4af9315391a05e5e6)
+
+- [CSS File](https://gist.github.com/srishilesh/2e9d4030619d014585e06c745706ee35)
+
+- [XSLT Code](https://gist.github.com/srishilesh/bc00bf4a134d37295874758390127929)
 
 To summarize:
 
