@@ -46,15 +46,31 @@ If you'd like to learn more about Agora, visit their [website](https://www.agora
 
 We'll be going through these steps in this article:
 
-1. Enabling Cloud Recording in Project management console.
-2. Acquiring Authentication Keys for Agora APIs.
-3. Setting up the server.
-4. Acquire resource ID.
-5. Start capturing screenshots.
-6. Stop capturing screenshots.
-7. Recap.
+1. Cloud recording vs. On-Premise recording
+2. Enabling Cloud Recording in Project management console.
+3. Acquiring Authentication Keys for Agora APIs.
+4. Setting up the server.
+5. Acquire resource ID.
+6. Start capturing screenshots.
+7. Stop capturing screenshots.
+8. Recap.
 
 > You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-recording-server).
+
+### Cloud recording vs. On-Premise recording
+[Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record voice calls, video calls, interactive streaming and also capture screenshots of your streams and upload them to your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams. Once the recording ends, Agora will upload the recorded video to your cloud storage.
+
+Agora supports uploads to Amazon S3, Qiniu Cloud, Alibaba Cloud, Tencent Cloud, Kingsoft Cloud.
+
+I recommend using Amazon S3 as it is easy to set up. Refer to [this documentation](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) on how to create a bucket in Amazon S3. Agora will need the bucket name, the access key, and the secret key for the bucket to upload the recorded files to your cloud storage.
+
+[On-Premise recording](https://docs.agora.io/en/Recording/product_recording?platform=Linux) is similar to cloud recording, but you need to set up your own Linux server using the components provided by Agora to record the streams.
+
+Compared with On-premise Recording, Cloud Recording is more convenient as it does not require deploying Linux servers.
+
+If you'd like to learn more about the differences between cloud recording and on-premise recording, refer [here](https://docs.agora.io/en/All/faq/onpremise_cloud).
+
+Agora will bill you for the cloud recording service. You can check their billing policies [here](https://docs.agora.io/en/cloud-recording/billing_cloud_recording?platform=RESTful).
 
 ### Enabling cloud recording in the project management console
 
@@ -459,15 +475,17 @@ Response:
 
 ### Let's Recap
 
-1. We enabled cloud recording from the project management console.
+1. We learned the difference between Cloud Recording and On-Premise recording.
 
-2. We acquired the customer ID and the customer secret from the project management console.
+2. We enabled cloud recording from the project management console.
 
-3. We set up a simple Express server.
+3. We acquired the customer ID and the customer secret from the project management console.
 
-4. We added a POST handler to acquire the resource ID for the recording session.
+4. We set up a simple Express server.
 
-5. We added a POST handler to start capturing the screenshots. We learned about all the parameters that we need to pass to start capturing screenshots.
+5. We added a POST handler to acquire the resource ID for the recording session.
+
+6. We added a POST handler to start capturing the screenshots. We learned about all the parameters that we need to pass to start capturing screenshots.
 
 7. We added a POST handler to stop capturing the screenshots.
 
