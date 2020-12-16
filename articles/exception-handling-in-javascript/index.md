@@ -134,3 +134,6 @@ function myFunction() {
 
 ### Wrapping up
 That's all there is for this article. We have learned what exception handling is, the different types of errors, and the error objects in JavaScript. We have understood the handling of exceptions in JavaScript. I hope this article has helped you understand the concept of handling exceptions in JavaScript.
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
