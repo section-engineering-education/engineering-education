@@ -57,7 +57,7 @@ Enter your preferred project name and click *Create*. In this case, I will name 
 
 ![newproject](projectname.png)
 
-Visual Code will automatically generate some code of C# for you.
+Visual Code will automatically generate some C# code for you.
 
 ![newproject](Program.png)
 
