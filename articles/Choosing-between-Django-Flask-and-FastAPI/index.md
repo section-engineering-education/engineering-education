@@ -36,18 +36,18 @@ Django is a free and open-source Python web development framework used in buildi
 
 ### Cons
 - Django's cumbersome software may limit development speed because of the many reusable modules. It also needs to make sure that previous versions are still compatible with new releases, contributing to its slow nature. 
-- Django object-relational mapper (ORM) which allows you to interact with your database like you would with SQL. 
-- Django models and their transactions can be saved because it was created before SQLAlchemy came to be.
+- Django Models can have no mixins just simple inheritance 
+- Django uses ORM which was created before SQLAlchemy so that makes Django ORM inferior to SQLAlchemy because it is less flexible.
 
 ##### Django: Use cases
-Django can tackle projects of any size and capacity. We can use it for simple sites or high-performance sites. A few example use cases would be for example: high load booking engines, shopping platforms, management systems, built-in custom CRM systems for internal data, and even IOS and Android applications that support web-based applications. 
+Django can tackle projects of any size and capacity. We can use it for simple sites or high-performance sites. A few example use cases would be for example: [high load booking engines](https://github.com/amadeus4dev/amadeus-flight-booking-django), [shopping platforms](https://github.com/benedictchen/django-shopping-cart), [School management systems](https://github.com/adigunsherif/Django-School-Management-System), built-in custom CRM systems for internal data, and even IOS and Android applications that support web-based applications. 
 
 Some developer features that can be implemented with Django are admin dashboards, photo-based verification, emailing systems for sending user notifications, etc.
 
 #### Flask
-Flask is a micro web framework written in Python. A micro web framework is a web development framework with easy setup and can be used in developing minimalistic web applications. Flask comes with options like template engines such as, ORM, caching, authentication, etc. It was created to build web apps with Python, easy and fast, and scale up complex applications. 
+Flask is a micro web framework written in Python. A micro web framework is a web development framework with easy setup and can be used in developing minimalistic web applications. Flask comes with options like template engines such as, ORM, caching, authentication, etc. It was created to build web apps with Python, easy and fast, and scale up complex applications and microservices(a lightweight application that provides a narrowed list of features with a well-defined contract.).  
 
-A Microservice is a lightweight application that provides a narrowed list of features with a well-defined contract. Flask was more like an April fool's prank by the creator Armin Ronacher on the 1st of April, where he wrapped [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) and [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), which were both created by him and. Surprisingly it was appreciated, which made it to be taken seriously, and more work was done on it based on the Pocoo projects.
+Flask was more like an April fool's prank by the creator Armin Ronacher on the 1st of April, where he wrapped [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) and [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)Surprisingly it was appreciated which made them work more on it.
 
 ##### Pros
 - Flask is flexible and easy. Most of the parts of Flask have the possibility of changing, which is very unlikely for some other web frameworks.
@@ -55,7 +55,7 @@ A Microservice is a lightweight application that provides a narrowed list of fea
 - Flask is very beginner-friendly because of its simplicity, giving room to learn and understand it better. It also enables devs to create apps effortlessly quickly. 
 
 #### Cons
-- Flask uses Modules, a third-party involvement prone to cause security breaches. The modules are now like a third-party between the framework and the developer.
+- Flask uses Modules, which is a third-party involvement and is prone to cause security breaches. The modules are in between the framework and the developer.
 - Flask has a singular source that implies that it will handle every request in turns, one after the other, so regardless of how many multiple requests it still takes them in turns, it takes more time.
 
 ##### Flask: Use cases
@@ -96,7 +96,7 @@ No doubt they are more job openings in the python web ecosystem with Django requ
 Django is more strenuous to learn but has many online materials and resources. Flask is easy and straightforward and has a lot of online materials and resources, and Fast API, which is the easiest if you're starting with web development but has few online resources.
 
 #### Conclusion
-After looking at them, you might be able to choose which one works better for you. I would love to share my thoughts on each of them. First, Django is perfect if you want to build robust full-stack websites because it has several functionalities and works very well in production. Flask is ideal for Machine learning Engineers or developers who want to quickly prototype a web application and build APIs easily and quickly. At the same time, FastAPI is perfect if you're looking for speed or scalability. Based on what you want to use it for, you should choose, but all of them generally are good and have good market demand.
+After looking at them, you might be able to choose which one works better for you. In summary, Django is perfect if you want to build robust full-stack websites because it has several functionalities and works very well in production. Flask is ideal for Machine learning Engineers or developers who want to quickly prototype a web application and build APIs easily and quickly. At the same time, FastAPI is perfect if you're looking for speed or scalability. Make a choice based on what you want to use it for but generally they are all good and have good market demand.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
