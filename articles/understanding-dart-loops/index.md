@@ -1,14 +1,14 @@
 ### Introduction
-`Dart` is a programming language that is scalable and can write simple scripts or full-featured applications. It is an object-oriented, dynamic language developed by `Google`. Like most programming languages, it contains loops and iterations. If one is familiar with [`Java`](https://en.wikipedia.org/wiki/Java_(programming_language)) or [`Kotlin`](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
+Dart is a programming language that is scalable and can write simple scripts or full-featured applications. It is an object-oriented, dynamic language developed by Google. Like most programming languages, it contains loops and iterations. If one is familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
 
-A `Loop's` definition is the code that executes multiple times while `Iteration` refers to the process in which the content executes once. One iteration refers to 1-time execution of a loop. It can undergo many iterations. They are a way of using something to an unknown or not innumerable amount of things. Some applications include adding sums of numbers, cycling through values, repeat functions, to mention a few.
+A Loop's definition is the code that executes multiple times while Iteration refers to the process in which the content executes once. One iteration refers to 1-time execution of a loop. It can undergo many iterations. They are a way of using something to an unknown or not innumerable amount of things. Some applications include adding sums of numbers, cycling through values, repeat functions, to mention a few.
 
 ### To write Dart Programs
 To write Dart programs and implement the knowledge you need to have:
 
-1. You can use the **[DartPad Online Editor](https://dartpad.dartlang.org/)** OR
+- You can use the **[DartPad Online Editor](https://dartpad.dartlang.org/)** OR
 
-2. You can use this method if you are familiar with [`Java`](https://en.wikipedia.org/wiki/Java_(programming_language)) or [`Kotlin`](https://en.wikipedia.org/wiki/Kotlin_(programming_language)) , **[Install Dart SDK ](https://dart.dev/get-dart)**, **[Install IntelliJ IDEA ](https://www.jetbrains.com/idea/)** and integrate the Dart plugin to IntelliJ IDEA IDE.
+- You can use this method if you are familiar with [`Java`](https://en.wikipedia.org/wiki/Java_(programming_language)) or [`Kotlin`](https://en.wikipedia.org/wiki/Kotlin_(programming_language)) , **[Install Dart SDK ](https://dart.dev/get-dart)**, **[Install IntelliJ IDEA ](https://www.jetbrains.com/idea/)** and integrate the Dart plugin to IntelliJ IDEA IDE.
 
 ### Table of Contents
 - [General Loop Structure](#general-loop-structure)
@@ -50,7 +50,7 @@ We should note that the syntax of Dart Loops is like the ones in Java Programmin
 
 There are three loops in Dart:
 
-1. #### For Loop
+#### For Loop
 
 For Loop is an example of [Definite Loops](#definite-loops).
 
@@ -84,7 +84,6 @@ void main(){
 ***Example:***
 
 ```Dart
-
 void main(){
 
   for(var i = 0; i<4; i++){
@@ -108,7 +107,7 @@ Hello
 
 Here the value of the counter variable will increase by one from 0 based on the increment specified. If the value of i becomes equal to four or more, it ends since the condition states that the value of i should be less than 4. t prints hello when it meets the condition, hence the output is hello written four times (0,1,2,3) < 4. 
 
-2. #### While Loop
+#### While Loop
 
 **Syntax of While Loop.**
 ```Dart
@@ -167,7 +166,7 @@ Hello
 ```
 Our condition check begins with 0<3 which is true therefore the code executes and prints out the first hello. The value of i the increases by one to 1 and the condition 1<3 is still true, so the code executes. It goes, the new variable becomes (2<3) and ends when the condition is now (3<3) which is false. Hence three hellos get printed. 
 
-3. #### Do-While Loop
+#### Do-While Loop
 
 Do-While loop is an example of [Indefinite Loops](#indefinite-loops).
 
@@ -231,7 +230,7 @@ Hello
 The code first executes then the counter variable increments by one. It then checks the condition (1<5). It is true, so the loop will begin again. The code executes, then the counter variable increments by one. It then checks the condition (2<5). It meets the condition. It will continue until the code executes and the new counter variable is 5 and the condition checked is (5<5) which is false, so the loop ends after printing 5 hellos.
 
 ### Other Key Concepts
-- #### Break Keyword
+#### Break Keyword
 
 We use the `Break Keyword` to 'forcefully' end a loop without changing the main loop statement. It comes in handy when you want a partial output and not to display all the elements.
 
@@ -264,7 +263,7 @@ Hello
 ```
 This code will end the loop after printing five hellos because of the break statement.
 
-- #### Continue Keyword
+#### Continue Keyword
 
 We use the `Continue Keyword` to skip code or a loop iteration after the continuation and proceed with the rest of the iteration.
 
@@ -303,11 +302,11 @@ In the example, when i becomes 5, it skips the print statement, the rest of the 
 ### Applications of Loops
 Here are some positive and negative applications of loops:
 
-1. #### Writing a Music Player Code.
+1. Writing a Music Player Code.
 
 A music player has a loop that enables it to play from one song to the next systematically.
 
-2. #### Cycling through values.
+2. Cycling through values.
 It is the use of loops to print out values in an extensive list. ***For example***, Names of students in a school.
 
 ```Dart
@@ -331,7 +330,7 @@ Alex
 ```
 It loops over all the elements stored in the list and prints them out.
 
-3. #### Create computer viruses.
+3. Create computer viruses.
 
 Malicious programmers use loops to create [Computer Viruses](https://en.wikipedia.org/wiki/Computer_virus) by using the While loop and embedding it to software downloads. If we write a while loop without the increment or decrement counter variable, it creates a never-ending loop which leads to unnecessary storage and memory consumption on devices. This courses the devices to crash or behave abnormally.
 
@@ -361,10 +360,11 @@ The code will print out an endless string of the word Hello.
 
 ### Further Reading
 To get a better grip into the topic, look at these resources:
+
  - The [Dart's Official document](https://dart.dev/samples#control-flow-statements)
 
-- You can have a look at this course from Udemy for [Dart Beginners Course](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
+ - You can have a look at this course from Udemy for [Dart Beginners Course](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
 
 ### Conclusion 
-`Loops` and `Iteration` may seem complicated and a bit challenging to new developers while learning a new language. This article has made it easier to understand them in Dart Programming Language, and the knowledge gained used and applied to other languages `Loop Control Statements`. Practice will make the understanding of these control statements increase.
+Loops and Iteration may seem complicated and a bit challenging to new developers while learning a new language. This article has made it easier to understand them in Dart Programming Language, and the knowledge gained used and applied to other languages Loop Control Statements. Practice will make the understanding of these control statements increase.
 
