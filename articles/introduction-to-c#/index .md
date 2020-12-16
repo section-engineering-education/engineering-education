@@ -1,9 +1,5 @@
 ### Introduction to C#
-<<<<<<< HEAD
-C# is an Object-Oriented programming language and it is portable as it can develop software for many computers. It requires a .NET framework on the machine for it to run. C# language was invented in 2002 and it is one of the programming languages widely used today.
-=======
-C# is an Object-Oriented programming language and it is portable. C# was invented in 2002 and it is one of the programming languages widely used today.
->>>>>>> 2934c5ae760f42ada7a746ef4d6987593fd05e9a
+C# is an Object-Oriented programming language and it is portable as it can develop software for many computers. C# was invented in 2002 and it is one of the programming languages widely used today.
 
 C# is pronounced as "C-Sharp".
 
@@ -21,21 +17,7 @@ The performance of C# is exceptional in terms of speed and it uses very few reso
 - Games
 - Service applications 
 
-<<<<<<< HEAD
-
-C# is a unique language that is friendlier and easier to understand.
-
-Programs written in C# utilize the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) to run. .NET is a framework used to make applications and run the .NET software. It was created by Microsoft and it runs primarily on Windows operating system. There is an open-source too called [Mono](https://www.mono-project.com/download/stable/) which runs a cross-platform.
-In this tutorial, we will use it to compile and run our C# code.
-
-To get started, you will need:
-
-An IDE(Integrated Development Environment) for writing and compiling code. We will be using [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
-
-
-=======
 To get started, you will need an IDE(Integrated Development Environment) for writing and compiling code. We will be using [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
->>>>>>> 2934c5ae760f42ada7a746ef4d6987593fd05e9a
 
 ### Installing C# 
 After you have installed Visual Studio, choose .NET desktop development and click *Modify*.
@@ -136,18 +118,10 @@ Execution of a program begins from the `Main` method. Every C# program must have
 
 `Console.WriteLine()` is used to print out text on the console. It prints a string and it adds a new line character to the end of the string. In our case, it is used to output *"Hello World"*.
 
-<<<<<<< HEAD
-We can also use `Console.Write()` to print a string **but** it does not add a new line character to the end of the string.  You can learn more on Console.WriteLine() and Console.Write() [here](https://www.programiz.com/csharp-programming/basic-input-output).
+We can also use `Console.Write()` to print a string **but** it does not add a new line character to the end of the string. You can learn more on `Console.WriteLine()` and `Console.Write()` [here](https://www.programiz.com/csharp-programming/basic-input-output).
 
 ### Reading character(s) from the input:
-
 `Console.ReadLine()` is used to read the next **characters** in the input system.
-=======
-We can also use `Console.Write()` to print a string in the same line without moving to the next line. You can learn more on `Console.WriteLine()` and `Console.Write()` [here](https://www.programiz.com/csharp-programming/basic-input-output).
-
-### Reading character(s) from the input:
-`Console.ReadLine()` is used to read the next characters in the input system.
->>>>>>> 2934c5ae760f42ada7a746ef4d6987593fd05e9a
 
 `Console.Read()` is used to read the next **character** in the input system.
 
@@ -235,12 +209,8 @@ When we prompt the user to enter any details, C# takes the input as strings ther
 ```C#
 Console.ReadLine()
 ```
-<<<<<<< HEAD
-It is a function that returns the value from the Input system. 
-=======
 
-It takes data from the user and allocates it to the memory location we had created earlier. 
->>>>>>> 2934c5ae760f42ada7a746ef4d6987593fd05e9a
+It is a function that returns the value from the Input system. 
 
 ### Takeaways
 In this tutorial we looked at:
