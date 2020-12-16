@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/securing-django-api/
-title: Introduction to Django Crud API
-description: This tutorial will be an introduction to 
+title: Introduction on Securing Django APIs
+description: This tutorial will be an introduction on how to secure a Django API, using token-based authentication and JavaScript web token to perform requests.
 author: odhiambo-paul
 date: 2020-12-16T00:00:00-10:00
 topics: []
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/securing-django-api/hero.jpg
-    alt:  example image
+    alt: Django API web based tokens example image
 ---
 In this tutorial, we will secure our TODO API endpoints that we previously created in this [article](/engineering-education/django-crud-api/). We will start by implementing Token-based authentication and then implement Javascript web tokens (JWT).
 <!--more-->
@@ -205,7 +205,7 @@ JWT consists of 3 parts:
 `header.payload.signature`
 
 In the JWT above, we have:
-```
+```bash
 header = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
 payload = eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQzODI4NDMxLCJqdGkiOiI3ZjU5OTdiNzE1MGQ0NjU3OWRjMmI0OTE2NzA5N2U3YiIsInVzZXJfaWQiOjF9
 signature = Ju70kdcaHKn1Qaz8H42zrOYk0Jx9kIckTn9Xx7vhikY
@@ -213,15 +213,17 @@ signature = Ju70kdcaHKn1Qaz8H42zrOYk0Jx9kIckTn9Xx7vhikY
 
 The information above is encoded using a Base64 encoder. 
 
-After decoding the above information, we get:
-**header**
+After decoding the information above, we get:
+
+**Header**
 ```json
 {
   "typ": "JWT",
   "alg": "HS256"
 }
 ```
-**payload**
+
+**Payload**
 ```json
 {
   "token_type": "access",
@@ -230,18 +232,20 @@ After decoding the above information, we get:
   "user_id": 5
 }
 ```
-**signature**
 
-JWT provides the signature. The signature is verified whenever a request is made to the server. If the client's information in the header or payload is tempered, then the signature will be invalidated.
-We will be using djangorestframework_simplejwt to implement JWT authenticate.
+**Signature**
+
+JWT provides the signature. The signature is verified whenever a request is made to the server. If the client's information in the header or payload is tempered, then the signature will be invalidated. We will be using `djangorestframework_simplejwt` to implement JWT authenticate.
 
 We will be using `djangorestframework_simplejwt` to implement JWT authenticate.
+
 To install `` run the command:
 ```bash
 pip install djangorestframework_simplejwt
 ```
 
 In the `settings.py` file in the `django_todo` applications directory, add `rest_framework_simplejwt.authentication.JWTAuthentication` to the `DEFAULT_AUTHENTICATION_CLASSES` in the `REST_FRAMEWORK` dictionary.
+
 ```python
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
@@ -251,7 +255,8 @@ REST_FRAMEWORK = {
     ],
 }
 ```
-In the `urls.py` file in the `django_todo` directory add the below url endpoints for obtaining the refresh and access tokens.
+
+In the `urls.py` file in the `django_todo` directory add the URL endpoints below to obtain the refresh and access tokens.
 ```python
 from django.contrib import admin
 from django.urls import path
@@ -284,12 +289,13 @@ We get a refresh and access token as the response.
 }
 ```
 
-To access the protected endpoints in our backend, we should include the include access token in the header of all of our requests.
+To access the protected endpoints in our backend, we should include the access token in the header of all of our requests.
 
 ![Postman image](/engineering-education/securing-django-api/jwt-rquest.png)
 
-We can use the access token within 5 minutes before it expires. Thereafter we will need to obtain another access token using the refresh token we got from the previous API request.
-When we try to make requests to protected endpoints, we get the below error.
+We can use the access token within 5 minutes before it expires. After that we will need to obtain another access token using the refresh token we got from the previous API request.
+
+When we try to make requests to protected endpoints, we will get the error below.
 
 ![GET Request](/engineering-education/securing-django-api/jwt-error.png)
 
@@ -297,10 +303,13 @@ To get a new access token, we will make a post request to `http://127.0.0.1:8000
 
 ![POST Request](/engineering-education/securing-django-api/jwt-refresh.png)
 
-The refresh token is valid for 24 hours, after which a user is required to reauthenticate to obtain a new refresh and access token.
-The access token is shortlived because it is sent through the HTTP header, which might get compromised; therefore, it is only valid for a short while.
+The refresh token is valid for 24 hours, after that a user is required to reauthenticate, in order to obtain a new refresh and access token.
 
-For further customization, visit [django simple jwt](https://github.com/davesque/django-rest-framework-simplejwt)
+The access token is shortlived because it's sent through the HTTP header, which might get compromised; therefore, it's only valid for a short while.
+
+For additional customization, visit [Django simple jwt](https://github.com/davesque/django-rest-framework-simplejwt)
+
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
