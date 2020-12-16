@@ -1,7 +1,9 @@
 ### Introduction
 `Dart` is a programming language that is scalable and can write simple scripts or full-featured applications. It is an object-oriented, dynamic language developed by `Google`. Like most programming languages, it contains loops and iterations. If one is familiar with [`Java`](https://en.wikipedia.org/wiki/Java_(programming_language)) or [`Kotlin`](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
 
-A `Loop's` definition is the code that executes multiple times while `Iteration` refers to the process in which the content executes once. One iteration refers to 1-time execution of a loop. It can undergo many iterations. They are a way of using something to an unknown or not innumerable amount of things. Some applications include adding sums of numbers, cycling through values, repeat functions, to mention a few.
+A `Loop` is defined as a segment of code that executes multiple times.
+
+`Iteration` refers to the process in which the code segment is executed once. One iteration refers to 1-time execution of a loop. The loop can undergo many iterations. 
 
 ### To write Dart Programs
 To write Dart programs and implement the knowledge you need to have:
@@ -42,11 +44,11 @@ All the loop types mentioned above have the following characteristics:
 
 - *Condition Check* - Every loop will have a condition which will be checked on each Iteration. If the condition is evaluated to true, the next iteration will get executed.
 
-  There are two types of loops in condition check:
+  Loops can be classified into two types based on condition checking:
 
-  1. Entry controlled loops - These are loops in which the condition is checked first then the body of the loop executes.
+  1. Entry controlled loops - These are loops in which the condition is checked first and then the Iteration is executed.
 
-  2. Exit controlled loops - These are loops in which the body of the loop executes then the condition check afterwards.
+  2. Exit controlled loops - These are loops in which an Iteration is executed and then the condition is checked afterward.
 
 
 ### Loops in Dart
