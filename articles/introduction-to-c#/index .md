@@ -1,5 +1,22 @@
-### Introduction to C#
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-csharp/
+title: Introduction to C#
+description: This article will help the readers to understand the basics of C# and how to setup the development environment to write and compile C# code.
+author: geoffrey-mwangi
+date: 2020-12-16T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-to-csharp/hero.jpeg
+    alt: Introduction to c# image
+
+---
 C# is an Object-Oriented programming language and it is portable as it can develop software for many computer systems. C# was invented in 2002 and it is one of the programming languages widely used today.
+<!--more-->
 
 C# is pronounced as "C-Sharp".
 
