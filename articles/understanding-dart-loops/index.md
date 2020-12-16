@@ -68,9 +68,7 @@ void main(){
 }
 ```
 
-**How the For Loop works.**
-
-The flow of the For Loop: 
+**How the For Loop works**
 
 **Initialize - Condition Check - Code Execute - Increment**.
 
@@ -129,9 +127,7 @@ void Main(){
 }
 ```
 
-**How the While Loop works.**
-
-The flow of the While Loop: 
+**How the While Loop works**
 
 **Condition Check - Code Execute - Increment**.
 
@@ -192,9 +188,7 @@ void main(){
 }
 ```
 
-**How the Do-While Loop works.**
-
-The flow of the Do-While Loop: 
+**How the Do-While Loop works**
 
 **Code Execution - Increment - Condition Check**.
 
