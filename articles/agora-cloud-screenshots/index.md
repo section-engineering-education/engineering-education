@@ -14,7 +14,7 @@ By the end of this tutorial, you’ll know:
 
 ### Prerequisites
 
-This tutorial is for applications that use [Agora](https://www.agora.io/) and want to capture screenshots of the streams. If you are not using Agora in your application, then this tutorial is not for you.
+This tutorial is for applications that use [Agora](https://www.agora.io/) and want to capture screenshots of the streams. If you are not using Agora SDKs in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
 
@@ -58,7 +58,7 @@ We'll be going through these steps in this article:
 > You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-recording-server).
 
 ### Cloud recording vs. On-Premise recording
-[Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record voice calls, video calls, interactive streaming and also capture screenshots of your streams and upload them to your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams. Once the recording ends, Agora will upload the recorded video to your cloud storage.
+[Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record voice calls, video calls, interactive streaming and also capture screenshots of your streams and upload them to your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams and capture screenshots. Once the session ends, Agora will upload the captured screenshots or the recorded video to your third-party cloud storage.
 
 Agora supports uploads to Amazon S3, Qiniu Cloud, Alibaba Cloud, Tencent Cloud, Kingsoft Cloud.
 
@@ -183,7 +183,7 @@ app.post("/acquire", (req, res) => {
 
 You need to request this endpoint `https://api.agora.io/v1/apps/{appId}/cloud_recording/acquire` to get a resource ID. The endpoint URL should contain the Agora app ID.
 
-In the body of the request, We should specify a UID, the channel ID, and the time limit (in hours) for the cloud recording API calls. The time limit must be between 1 hour and 720 hours. The countdown starts when you start capturing screenshots. When you exceed the limit, you can no longer call other API methods.
+In the body of the request, We should specify a UID for the recorder, the channel ID, and the time limit (in hours) for the cloud recording API calls. The time limit must be between 1 hour and 720 hours. The countdown starts when you start capturing screenshots. When you exceed the limit, you can no longer call other API methods.
 
 If this request succeeds, you'll get a resource ID as the response. You need to start capturing screenshots with this resource ID within five minutes.
 
@@ -219,7 +219,7 @@ Response:
 
 ```json
 {
-  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g"
+  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQhuCGwI6Kw7qB4eur2u4vTbwBlhrCV8ECgDyV8RJw4RWGjXNr-Of87WBTwpwEE8DADQdgx2Hgu2xGT6Q6494YBIra0GxyN7lGZIAunqj-L4JUugsRLzzmjKT84TDuU3WP-92HjTzFfRyQ3EdHDbfnve5JaGoC0UmMZRnOMuLGJAr"
 }
 ```
 
@@ -241,7 +241,7 @@ The endpoint URL must contain the `appID` and the `resourceID` (from the previou
 
 > There are two recording modes, [composite](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=RESTful) and [indvidual](https://docs.agora.io/en/cloud-recording/cloud_recording_individual_mode?platform=RESTful). You can't take screenshots on `composite` mode. You can only take screenshots on `indvidual` mode.
 
-In the body of the request, we should specify the UID, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig` and `snapshotConfig`.
+In the body of the request, we should specify the UID of the recorder, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig` and `snapshotConfig`.
 
 **Snapshot Config:**
 
@@ -267,25 +267,11 @@ In the body of the request, we should specify the UID, the channel ID, authentic
 
   - **1**: Live Broadcast Channel.
 
-- **Transcoding Config**: The video transcoding configuration. You cannot set this parameter in individual recording mode.
-
-  - **height**: In pixels, Should not exceed 1920.
-
-  - **width**: In pixels, Should not exceed 1920.
-
-  - **bitrate**: The video bitrate.
-
-  - **fps**: The frame rate.
-
-  - **backgroundColor**: RGB Hex Value, The background color of the canvas.
-
-  - **mixedVideoLayout**: 0: Floating Layout, 1: Best Fit Layout, 2: Vertical Layout. You can learn more about recording layouts [here](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=RESTful).
-
-> **Width \* Height** should not exceed 1920 \* 1080.
+- **Subscribe Uid Group**: The estimated maximum number of subscribed users. 
 
 **Storage Config:**
 
-- **Vendor**: The cloud storage vendor.
+- **Vendor**: The third-party cloud storage vendor.
 
   - **0**: Qiniu Cloud
 
@@ -316,10 +302,9 @@ app.post("/start", async (req, res) => {
   const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString("base64")}`;
   const appID = process.env.appID;
   const resource = req.body.resource;
-  const mode = req.body.mode;
 
   const start = await axios.post(
-    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/mode/${mode}/start`,
+    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/mode/individual/start`,
     {
       cname: req.body.channel,
       uid: req.body.uid,
@@ -328,19 +313,11 @@ app.post("/start", async (req, res) => {
           maxIdleTime: 30,
           streamTypes: 2,
           channelType: 0,
-          videoStreamType: 0,
-          transcodingConfig: {
-            height: 640,
-            width: 360,
-            bitrate: 500,
-            fps: 15,
-            mixedVideoLayout: 1,
-            backgroundColor: "#FFFFFF",
-          },
+          subscribeUidGroup: 0,
         },
         snapshotConfig: {
           captureInterval: 10,
-          fileType: ["jpg"]
+          fileType: ["jpg"],
         },
         storageConfig: {
           vendor: 1,
@@ -367,8 +344,7 @@ Request body:
 {
   "channel": "Jo6m9E20E02m9yE5maNk",
   "uid": "45687",
-  "mode": "mix",
-  "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g"
+  "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQhuCGwI6Kw7qB4eur2u4vTbwBlhrCV8ECgDyV8RJw4RWGjXNr-Of87WBTwpwEE8DADQdgx2Hgu2xGT6Q6494YBIra0GxyN7lGZIAunqj-L4JUugsRLzzmjKT84TDuU3WP-92HjTzFfRyQ3EdHDbfnve5JaGoC0UmMZRnOMuLGJAr"
 }
 ```
 
@@ -376,8 +352,8 @@ Response:
 
 ```json
 {
-  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
-  "sid": "c87831d3914285db6c102e8a4015d308"
+  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQhuCGwI6Kw7qB4eur2u4vTbwBlhrCV8ECgDyV8RJw4RWGjXNr-Of87WBTwpwEE8DADQdgx2Hgu2xGT6Q6494YBIra0GxyN7lGZIAunqj-L4JUugsRLzzmjKT84TDuU3WP-92HjTzFfRyQ3EdHDbfnve5JaGoC0UmMZRnOMuLGJAr",
+  "sid": "cb3765154b4a499f6d60569d484c1f65"
 }
 ```
 
@@ -397,7 +373,7 @@ You need to send a POST request to this endpoint `https://api.agora.io/v1/apps/{
 
 The endpoint URL must contain the `appID`, the `resourceID` and the `sid` (recording ID).
 
-In the request body, We should specify the UID, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the upload status.
+In the request body, We should specify the UID of the recorder, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the upload status.
 
 ```JavaScript
 app.post("/stop", async (req, res) => {
@@ -405,10 +381,9 @@ app.post("/stop", async (req, res) => {
   const appID = process.env.appID;
   const resource = req.body.resource;
   const sid = req.body.sid;
-  const mode = req.body.mode;
 
   const stop = await axios.post(
-    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/sid/${sid}/mode/${mode}/stop`,
+    `https://api.agora.io/v1/apps/${appID}/cloud_recording/resourceid/${resource}/sid/${sid}/mode/individual/stop`,
     {
       cname: req.body.channel,
       uid: req.body.uid,
@@ -436,9 +411,8 @@ Request body:
 {
   "channel": "Jo6m9E20E02m9yE5maNk",
   "uid": "45687",
-  "mode": "mix",
-  "sid": "c87831d3914285db6c102e8a4015d308",
-  "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g"
+  "sid": "cb3765154b4a499f6d60569d484c1f65",
+  "resource": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQhuCGwI6Kw7qB4eur2u4vTbwBlhrCV8ECgDyV8RJw4RWGjXNr-Of87WBTwpwEE8DADQdgx2Hgu2xGT6Q6494YBIra0GxyN7lGZIAunqj-L4JUugsRLzzmjKT84TDuU3WP-92HjTzFfRyQ3EdHDbfnve5JaGoC0UmMZRnOMuLGJAr"
 }
 ```
 
@@ -446,22 +420,22 @@ Response:
 
 ```json
 {
-  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
-  "sid": "c87831d3914285db6c102e8a4015d308",
+  "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQhuCGwI6Kw7qB4eur2u4vTbwBlhrCV8ECgDyV8RJw4RWGjXNr-Of87WBTwpwEE8DADQdgx2Hgu2xGT6Q6494YBIra0GxyN7lGZIAunqj-L4JUugsRLzzmjKT84TDuU3WP-92HjTzFfRyQ3EdHDbfnve5JaGoC0UmMZRnOMuLGJAr",
+  "sid": "cb3765154b4a499f6d60569d484c1f65",
   "serverResponse": {
     "fileListMode": "json",
     "fileList": [
       {
-        "filename": "M6ETnKVtPbAY892ffaj3.m3u8",
-        "trackType": "audio_and_video",
+        "filename": "M6ETnKVtPbAY892ffaj3.jpg",
+        "trackType": "image",
         "uid": "fb2b6760-c2d8-48f6-b61a-066bd632b691",
         "mixedAllUser": true,
         "isPlayable": true,
         "sliceStartTime": 160786677
       },
       {
-        "filename": "hlvM26hvtnXjj62fAkMc.m3u8",
-        "trackType": "audio_and_video",
+        "filename": "hlvM26hvtnXjj62fAkMc.jpg",
+        "trackType": "image",
         "uid": "6dfdbe0e-2eb7-44c5-8b0c-af414fb2dc8f",
         "mixedAllUser": true,
         "isPlayable": true,
