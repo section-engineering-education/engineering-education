@@ -8,7 +8,7 @@ By the end of this tutorial, you’ll know:
 
 - How capturing screenshots from Agora streams works.
 
-- How to set up an Express server to acquire resource to capture screenshots.
+- How to set up an Express server to acquire resources to capture screenshots.
 
 - How to start and stop capturing screenshots.
 
@@ -58,7 +58,7 @@ We'll be going through these steps in this article:
 > You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-capture-screenshots-express).
 
 ### Cloud recording vs. On-Premise recording
-[Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record voice calls, video calls, interactive streaming and also capture screenshots of your streams and upload them to your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams and capture screenshots. Once the session ends, Agora will upload the captured screenshots or the recorded video to your third-party cloud storage.
+[Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record voice calls, video calls, interactive streaming, and also capture screenshots of your streams and upload them to your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams and capture screenshots. Once the session ends, Agora will upload the captured screenshots or the recorded video to your third-party cloud storage.
 
 Agora supports uploads to Amazon S3, Qiniu Cloud, Alibaba Cloud, Tencent Cloud, Kingsoft Cloud.
 
@@ -74,7 +74,7 @@ Agora will bill you for the cloud recording service. You can check their billing
 
 ### Enabling cloud recording in the project management console
 
-In order to capture screenshots, you must enable cloud recording from the Agora Project Management Console.
+To capture screenshots, you must enable cloud recording from the Agora Project Management Console.
 
 Head to the console and open Project Management.
 
@@ -155,7 +155,7 @@ This server will be listening on port 3000 and when you hit the `'/'` endpoint, 
 
 We need to use the RESTful APIs in the following sequence.
 
-1. Acquire resource for capturing screenshots.
+1. Acquire resources for capturing screenshots.
 2. Start capturing screenshots.
 3. Stop capturing screenshots.
 
@@ -165,7 +165,7 @@ Capturing screenshots is part of Agora's cloud recording. Hence the process for 
 
 First, you need to acquire a resource ID for capturing screenshots. This will allocate a recorder on Agora's servers for you to capture the screenshots. Then, we need to start capturing screenshots within 5 minutes from acquiring the resource ID. You can stop the session whenever you want.
 
-We need to provide a UID for the recorder. The recorder is like a user who joins the channel, captures the screenshots, and uploads it to your third-party cloud storage. So make sure you provide a unique UID to the recorder that doesn't conflict with an existing user in the channel.
+We need to provide a UID for the recorder. The recorder is like a user who joins the channel, captures the screenshots, and uploads them to your third-party cloud storage. So make sure you provide a unique UID to the recorder that doesn't conflict with an existing user in the channel.
 
 If you have set up token authentication for your Agora project, you should also pass a `token` while starting to capture screenshots. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
 
@@ -208,7 +208,7 @@ app.post("/acquire", async (req, res) => {
 
 Request body:
 
-```json
+```JSON
 {
   "channel": "Jo6m9E20E02m9yE5maNk",
   "uid": "45687"
@@ -217,7 +217,7 @@ Request body:
 
 Response:
 
-```json
+```JSON
 {
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQhuCGwI6Kw7qB4eur2u4vTbwBlhrCV8ECgDyV8RJw4RWGjXNr-Of87WBTwpwEE8DADQdgx2Hgu2xGT6Q6494YBIra0GxyN7lGZIAunqj-L4JUugsRLzzmjKT84TDuU3WP-92HjTzFfRyQ3EdHDbfnve5JaGoC0UmMZRnOMuLGJAr"
 }
@@ -241,13 +241,13 @@ The endpoint URL must contain the `appID` and the `resourceID` (from the previou
 
 > There are two recording modes, [composite](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=RESTful) and [indvidual](https://docs.agora.io/en/cloud-recording/cloud_recording_individual_mode?platform=RESTful). You can't take screenshots on `composite` mode. You can only take screenshots on `indvidual` mode.
 
-In the body of the request, we should specify the UID of the recorder, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig` and `snapshotConfig`.
+In the body of the request, we should specify the UID of the recorder, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, and `snapshotConfig`.
 
 **Snapshot Config:**
 
-- **Capture Interval**: The time interval between two successive screenshots in seconds. The minimum value is 5 and maximum value is 3600.
+- **Capture Interval**: The time interval between two successive screenshots in seconds. The minimum value is 5 and the maximum value is 3600.
 
-- **File Type**: The file format of the captured screenshots. At the time of writing this article, This field can only accept `jpg` format. You should pass it like `["jpg"]`.
+- **File Type**: The file format of the captured screenshots. At the time of writing this article, This field can only accept the `jpg` format. You should pass it like `["jpg"]`.
 
 **Recording Config:**
 
@@ -295,7 +295,7 @@ In the body of the request, we should specify the UID of the recorder, the chann
 
 Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#storageConfig) to learn more about the parameters that you need to pass for storage configuration.
 
-Let's write the POST request to Agora to start the capturing the screenshots. Use environment variables to store the third-party cloud storage credentials and configurations.
+Let's write the POST request to Agora to start capturing the screenshots. Use environment variables to store the third-party cloud storage credentials and configurations.
 
 ```JavaScript
 app.post("/start", async (req, res) => {
@@ -340,7 +340,7 @@ If the request is successful, the response will contain the recording ID (sid) a
 
 Request body:
 
-```json
+```JSON
 {
   "channel": "Jo6m9E20E02m9yE5maNk",
   "uid": "45687",
@@ -350,7 +350,7 @@ Request body:
 
 Response:
 
-```json
+```JSON
 {
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQhuCGwI6Kw7qB4eur2u4vTbwBlhrCV8ECgDyV8RJw4RWGjXNr-Of87WBTwpwEE8DADQdgx2Hgu2xGT6Q6494YBIra0GxyN7lGZIAunqj-L4JUugsRLzzmjKT84TDuU3WP-92HjTzFfRyQ3EdHDbfnve5JaGoC0UmMZRnOMuLGJAr",
   "sid": "cb3765154b4a499f6d60569d484c1f65"
@@ -371,7 +371,7 @@ app.post("/stop", (req, res) => {
 
 You need to send a POST request to this endpoint `https://api.agora.io/v1/apps/{appid}/cloud_recording/resourceid/{resourceid}/sid/{sid}/mode/indvidual/stop` to stop capturing screenshots.
 
-The endpoint URL must contain the `appID`, the `resourceID` and the `sid` (recording ID).
+The endpoint URL must contain the `appID`, the `resourceID`, and the `sid` (recording ID).
 
 In the request body, We should specify the UID of the recorder, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the upload status.
 
@@ -395,7 +395,7 @@ app.post("/stop", async (req, res) => {
 });
 ```
 
-The response will contain an object called `serverResponse`. It'll contain the list of files, which is an array of objects containing the details about the files and the upload status of these files.
+The response will contain an object called `serverResponse`. It'll contain the list of files, which is an array of objects containing the details about the files and the overall upload status.
 
 The upload status can either be,
 
@@ -407,7 +407,7 @@ The upload status can either be,
 
 Request body:
 
-```json
+```JSON
 {
   "channel": "Jo6m9E20E02m9yE5maNk",
   "uid": "45687",
@@ -418,7 +418,7 @@ Request body:
 
 Response:
 
-```json
+```JSON
 {
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQhuCGwI6Kw7qB4eur2u4vTbwBlhrCV8ECgDyV8RJw4RWGjXNr-Of87WBTwpwEE8DADQdgx2Hgu2xGT6Q6494YBIra0GxyN7lGZIAunqj-L4JUugsRLzzmjKT84TDuU3WP-92HjTzFfRyQ3EdHDbfnve5JaGoC0UmMZRnOMuLGJAr",
   "sid": "cb3765154b4a499f6d60569d484c1f65",
