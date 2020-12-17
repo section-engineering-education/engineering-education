@@ -1,6 +1,6 @@
 # Introduction
 
-[Firebase authentication](https://firebase.google.com/docs/auth) is a technology used to set up service-access permissions by creating and managing valid user accounts using firebase APIs and Firebase console provided by Google. In this tutorial, you'll learn how to implement firebase authentication in an android application using Kotlin.
+[Firebase authentication](https://firebase.google.com/docs/auth) is a technology used to set up service-access permissions. It does so by creating and managing valid user accounts using firebase APIs and Firebase console provided by Google. In this tutorial, you'll learn how to implement firebase authentication in an android application.
 
 ## Prerequisites
 
@@ -58,8 +58,7 @@ Go back to Android studio and you'll see your email in the account section.
 
 ### Step 3 -- Creating a Firebase Project
 
-We need a firebase project that we'll eventually connect with our android app. This project will enable us to access most of the firebase services but not limited to **Authentication** and **Analytics** offered free of charge.
-This process involves several stages.
+We need a firebase project that we'll eventually connect with our android app. This project will enable us to access most of the firebase services not limited to Authentication and Analytics. This process involves several stages.
 
 **1**. Open [Firebase](https://firebase.google.com), sign in with your Google account then head to `firebase console` by clicking the button at the top right corner.
 
@@ -71,7 +70,7 @@ This process involves several stages.
 
 ![image](firebase_create_project_step1.png "Create firebase project")
 
-We start by giving a name to the project. Let's name it `Firebase-auth`. The project name should not contain spaces, instead, use a hyphen.
+We start by giving a name to the project. Let's name it `Firebase-auth`. The project name shouldn't have spaces, instead, use a hyphen.
 Just below the name, is a unique id used to identify your project among the millions of firebase projects out there. Click the continue button.
 
 ![image](firebase_create_project_step2.png "Create firebase project step 2 of 3")
@@ -89,9 +88,9 @@ There are two ways to connect a firebase project to an android app.
 
 ### 1. Manually adding services configuration file
 
-This can be achieved by downloading the `google-services.json` file from the firebase console into the android project root and adding the necessary dependencies manually.
+This can be achieved by downloading the google-services.json file. Then paste into the android project root and adding the necessary dependencies manually.
 
-This process requires you to have a running app (can be in an emulator or a physical device) so that it sends a signal to firebase servers indicating that the project configuration file and dependencies are working as expected. This is obviously not the best way as it is more complicated compared to method 2.
+This process requires you to have a running app so that it sends a signal to firebase servers. This indicates that the project configuration file and dependencies are working as expected This is noticeably not the best option as it is more complicated compared to method 2.
 
 ### 2. Through Android studio firebase assistant
 
@@ -116,7 +115,7 @@ By so doing, the google-services.json file is automatically downloaded into your
 
 ![image](firebase_connect_project2.png)
 
-Click `Connect` and you should see a message similar to the one below.
+Click `Connect` and you'll see a message like the one below.
 
 ![image](firebase_project_connected_to_as.png)
 
@@ -126,7 +125,7 @@ Go back to Android studio to finish up the setup.
 
 You can see a success notification at the bottom indicating that our app is now connected to firebase.
 
-We're now in the final step of setting up Firebase authentication. Click `Add firebase authentication to your app` and accept changes to add the respective dependencies. Wait for the Gradle build to finish.
+We're now in the final step of setting up Firebase authentication. Tap `Add firebase authentication` and accept changes to add the respective dependencies. Wait for the Gradle build to finish.
 
 Finally, this is what you should have on the Firebase assistant. You can confirm it by opening the build. Gradle (app level) dependencies.
 
@@ -145,7 +144,7 @@ Congratulations! We have finished setting up Firebase authentication.
 
 At this stage, we're going to create the user interface (UI) and the backend for our app. This is where `XML` and `Kotlin` come in we don't need to code the server-side backend as firebase APIs will do that for us. Isn't that awesome?
 
-First of all, we need to keep our app organized. This is referred to as application architecture. Expand the `java` directory `>` right click on the package that contains your package name `>` add 3 new `packages` namely `extensions`, `utils` and `views`. you'll learn more about them as we proceed.
+First of all, we need to keep our app organized. This is referred to as application architecture. Expand the `java` directory `>` right click on the package name directory `>` add 3 new `packages` namely `extensions`, `utils` and `views`. you'll learn more about them as we proceed.
 
 It should appear like this
 
@@ -165,7 +164,7 @@ Each directory plays an important role in the app's design.
 
 In advanced architectures like **MVVM**, there are more commonly used packages like the `model` but we're not concerned about them for now.
 
-Right click on views and add two empty activities namely `CreateAccountActivity` and `SignInActivity` respectively. These two comes with their respective Xml layout files namely `activity_create_account` and `activity_sign_in`.
+Right click on views and add two empty activities namely `CreateAccountActivity` and `SignInActivity`. These two comes with their respective Xml layout files namely `activity_create_account` and `activity_sign_in`.
 
 Right-click extensions directory select new kotlin file or class then select `object`. Set object's name to `Extensions`. Do the same thing on utils where you'll name the object as `FirebaseUtils`.
 It should look similar to this ;
@@ -287,7 +286,7 @@ This is what the users see and use to interact with the app. We'll use Extensive
 ```
 
 In the above code, we've mainly created three `EditTexts` views responsible for taking email and password inputs from the user. The key point is that each of them contains a unique identifier (id) used to refer to it in the entire layout.
-We've also created `sign in` and `Create account` buttons. Constraint layout has helped us align views (buttons and the like)
+We've also created `sign in` and `Create account` buttons. Constraint layout has helped us align views
 vertically using vertical-compressed chains. Unlike in linear layout, we don't need to arrange views code in order as they appear in the preview.
 
 **Attention :** if the IDE complains about unresolved references, for instance in
@@ -504,7 +503,7 @@ plugins{
 }
 ```
 
-Inside the kotlin file (CreateAccountActivity) just below the package name, ensure you import kotlin synthetics like  this
+Inside CreateAccountActivity.kt, import kotlin synthetics like this
 
 ```Kotlin
 import kotlinx.android.synthetic.main.activity_create_account.*
@@ -616,7 +615,7 @@ In the code above, we've created a user using the details provided. we've also h
 
 ### c)
 
-**SignInactivity** is similar to **CreateAccountActivity** the only major difference is that we'll use firebase `signInWithEmailAndPassword()` function. Inputs are processed the same way as for creating an account.
+**SignInactivity** is similar to **CreateAccountActivity**. The only major difference is that we'll use firebase `signInWithEmailAndPassword()` function. Inputs are processed the same way as for creating an account.
 here is the code for that.
 
 ```Kotlin
