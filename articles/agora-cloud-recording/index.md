@@ -1,4 +1,4 @@
-In this tutorial, we will be building a server using Node.js and Express to acquire recording resource, start, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the APIs provided by Agora.
+In this tutorial, we will be building a server using Node.js and Express to acquire recording resource, start, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the Cloud Recording APIs provided by Agora.
 
 The client application that's using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
 
@@ -9,7 +9,7 @@ By the end of this tutorial, you’ll know:
 
 - The difference between cloud recording and on-premise recording.
 
-- How to set up an Express server to acquire recording, resource, start, and stop cloud recording.
+- How to set up an Express server to acquire recording resource, start and stop cloud recording.
 
 ### Prerequisites
 This tutorial is for applications that use [Agora](https://www.agora.io/) and want to implement cloud recording. If you are not using Agora in your application, then this tutorial is not for you.
@@ -147,13 +147,13 @@ This server will be listening on port 3000 and when you hit the `'/'` endpoint, 
 ### Recording
 We need to use the RESTful APIs in the following sequence.
 
-1. Acquire Resource
-2. Start Recording
-3. Stop Recording
+1. Acquire resource.
+2. Start recording.
+3. Stop recording.
 
 First, you need to acquire a resource ID for cloud recording. This will allocate a recorder on Agora's servers for you to record the streams. Then, we need to start the recording within 5 minutes from acquiring the resource ID. You can stop the recording whenever you want.
 
-During the recording, you can query the recording session for the status, update the layout of the recording and, update the subscriber list. To learn more about them, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_rest?platform=RESTful).
+During the recording, you can query the recording session for the status, update the layout of the recording, and, update the subscriber list. To learn more about them, refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_rest?platform=RESTful).
 
 We need to provide a UID for the recorder. The recorder is like a user who joins the channel, records the stream, and uploads it to the storage. So make sure you provide a unique UID to the recorder that doesn't conflict with an existing user in the channel.
 
@@ -197,7 +197,7 @@ app.post("/acquire", async (req, res) => {
 
 Request body:
 
-```json
+```JSON
 {
   "channel": "Jo6m9E20E02m9yE5maNk",
   "uid": "45687"
@@ -206,7 +206,7 @@ Request body:
 
 Response:
 
-```json
+```JSON
 {
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g"
 }
@@ -233,41 +233,11 @@ There are two modes of recording:
 
 - [Composite mode](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=RESTful): Generates a single mixed audio and video file for all UIDs in a channel.
 
-In the body of the request, we should specify the UID, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, `recordingFileConfig`, `snapshotConfig`, and `extensionServiceConfig`.
+In the body of the request, we should specify the UID, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, and `recordingFileConfig`.
 
-We'll not be covering `snapshotConfig` and `extensionServiceConfig`. If you'd like to learn about the complete schema of the request, refer to [the documentation](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
-
-Snapshot Config is used to capture screenshots. If you'd like to learn more about capturing screenshots, refer to [this article](/engineering-education/agora-cloud-screenshots).
-
-**Recording File Config:** This will define the configurations for the recorded files. You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time, otherwise, an error will occur.
+**Recording File Config:** This will define the configurations for the recorded files.
 
 - **avFileType:** The format of the recorded files. avFileType can only take ["hls"], setting the recorded files to `M3U8` and `TS` formats.
-
-**Storage Config:**
-
-- **Vendor**: The cloud storage vendor.
-
-  - **0**: Qiniu Cloud
-
-  - **1**: Amazon S3
-
-  - **2**: Alibaba Cloud
-
-  - **3**: Tencent Cloud
-
-  - **4**: Kingsoft Cloud
-
-- **Region**: The regional information specified by cloud storage:
-
-- **Bucket**: The bucket ID from the cloud storage where you want to save your recorded files.
-
-- **Access Key**: The access key to cloud storage.
-
-- **Secret Key**: The secret key of the cloud storage.
-
-- **File Name Prefix**: An array of strings to set the path of the recorded files in the cloud storage.
-
-Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#storageConfig) to learn more about the parameters that you need to pass for this configuration.
 
 **Recording Config:**
 
@@ -289,9 +259,9 @@ Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_reco
 
 - **Transcoding Config**: The video transcoding configuration. You cannot set this parameter in individual recording mode.
 
-  - **height**: In pixels, Should not exceed 1920.
+  - **height**: In pixels, Should not exceed 1920. **width * height** should not exceed 1920 * 1080.
 
-  - **width**: In pixels, Should not exceed 1920.
+  - **width**: In pixels, Should not exceed 1920. **width * height** should not exceed 1920 * 1080.
 
   - **bitrate**: The video bitrate.
 
@@ -301,7 +271,31 @@ Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_reco
 
   - **mixedVideoLayout**: 0: Floating Layout, 1: Best Fit Layout, 2: Vertical Layout. You can learn more about recording layouts [here](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=RESTful).
 
-> **Width \* Height** should not exceed 1920 \* 1080.
+**Storage Config:**
+
+- **Vendor**: The third-party cloud storage vendor.
+
+  - **0**: Qiniu Cloud
+
+  - **1**: Amazon S3
+
+  - **2**: Alibaba Cloud
+
+  - **3**: Tencent Cloud
+
+  - **4**: Kingsoft Cloud
+
+- **Region**: The regional information specified by your cloud storage.
+
+- **Bucket**: The bucket ID from your cloud storage where you want to save your recorded files.
+
+- **Access Key**: The access key to your cloud storage.
+
+- **Secret Key**: The secret key of your cloud storage.
+
+- **File Name Prefix**: An array of strings to set the path of the recorded files in the cloud storage.
+
+Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#storageConfig) to learn more about the parameters that you need to pass for storage configuration.
 
 Let's write the POST request to Agora to start the cloud recording. Use environment variables to store the third-party cloud storage credentials and configurations.
 
@@ -356,7 +350,7 @@ If the request is successful, the response will contain the recording ID (sid) a
 
 Request body:
 
-```json
+```JSON
 {
   "channel": "Jo6m9E20E02m9yE5maNk",
   "uid": "45687",
@@ -367,7 +361,7 @@ Request body:
 
 Response:
 
-```json
+```JSON
 {
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "c87831d3914285db6c102e8a4015d308"
@@ -424,7 +418,7 @@ The uploading status can either be,
 
 Request body:
 
-```json
+```JSON
 {
   "channel": "Jo6m9E20E02m9yE5maNk",
   "uid": "45687",
@@ -436,7 +430,7 @@ Request body:
 
 Response:
 
-```json
+```JSON
 {
   "resourceId": "Etkl6g-zSB7EpP-Da1zN63gS7Jv-butkhmOpECJ68ZYw7z0iOrTlzlXAP4r8gVDYIi9_bR13V6J4Eh8a4DJoKu2_FYpouhmjGOOynn5o8AQRYx3bWiVGyf936LGG-YHvYGhF9Coz_uqO5E0SHRlYQj9WMCAQsxBMMU5RvTS0MMtAO_8UcoQmGMO4pm5b4u6K2ejA8e6-JlV_dCaEadkIa-07RCAhPspjIUEQEcNJsQ_UKP5fVnXIl1OLMfimaDUt7JVDMGJ_z7dnOc01G43FkKFBSJEMzYZ25V2099i0UzewVFzO91j2rx91RGMnTN7g",
   "sid": "c87831d3914285db6c102e8a4015d308",
