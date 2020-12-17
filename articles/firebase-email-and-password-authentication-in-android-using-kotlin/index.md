@@ -90,7 +90,7 @@ There are two ways to connect a firebase project to an android app.
 
 This can be achieved by downloading the google-services.json file. Then paste into the android project root and adding the necessary dependencies manually.
 
-This process requires you to have a running app so that it sends a signal to firebase servers. This indicates that the project configuration file and dependencies are working as expected This is noticeably not the best option as it is more complicated compared to method 2.
+This process requires you to have a running app so that it sends a signal to firebase servers. This indicates that the project configuration file and dependencies are working as expected. This is noticeably not the best option as it is more complicated compared to method 2.
 
 ### 2. Through Android studio firebase assistant
 
