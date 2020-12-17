@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/activation-functions/
 title: An Introduction to Activation Functions
-description: In this article we will be discussing 
+description: In this tutorial will look at some of the activation functions used frequently and implement them from scratch, coding them using Python classes. 
 author: lalithnarayan-c
 date: 2020-12-16T00:00:00-17:00
 topics: []
@@ -14,10 +14,11 @@ images:
   - url: /engineering-education/activation-functions/hero.jpg
     alt: example image
 ---
-In the earlier article on [perceptron](engineering-education/perceptron-algorithm/), we looked at the concept of the weighted sum and thresholding. The output was passed through a threshold function, which blocked all the negative values from passing. 
+In an earlier article on [perceptron](engineering-education/perceptron-algorithm/), we looked at the concept of the weighted sum and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
 <!--more-->
+
 ### Activation Functions
-The disadvantage with the use of a unit step function is that it is not continuous. Therefore, weight updation is not done efficiently. Thus, several activation functions were introduced to ensure better generalization of the models. 
+The disadvantage of using a unit step function is that it is not continuous. Therefore, weight updation is not efficiently done. Thus, several activation functions were introduced to ensure better generalization of the models. 
 
 This tutorial will look at some of the activation functions used frequently and implement them from scratch. Since this is an article on activation functions, we will code each of them using Python Classes. We will make use of these classes in the upcoming articles.  
 
@@ -33,27 +34,31 @@ This idea works well in theory, but computing the gradients and finding the glob
 
 ### Activation functions
 Let us list some of the activation functions that we will be covering in this tutorial:
-1. Step activation function
-2. Sigmoid activation function
-3. Softmax activation function
-4. Hyperbolic Tangent activation function
-5. Rectified Linear Unit (ReLU) activation function
-6. Leaky ReLU activation function
+- Step activation function
+- Sigmoid activation function
+- Softmax activation function
+- Hyperbolic Tangent activation function
+- Rectified Linear Unit (ReLU) activation function
+- Leaky ReLU activation function
 
 #### Step activation function
-The step activation function, as discussed in the perceptron algorithm, is shown below. It is discontinuous, and therefore, the gradient computations are erroneous at points of discontinuity.  
-![step function graph](step_function.png)
+The step activation function, as discussed in the perceptron algorithm, is shown below. It is discontinuous, and therefore, the gradient computations are erroneous at points of discontinuity. 
+
+![step function graph](/engineering-education/activation-functions/step_function.png)
 
 [*Image Source*](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intmath.com%2Flaplace-transformation%2F1a-unit-step-functions-definition.php&psig=AOvVaw1XjHjFjI93-cSbYQYy1jYq&ust=1606899070976000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCMCuo-G0rO0CFQAAAAAdAAAAABAD)
 
-For a more in-depth discussion on the step function, refer to my previous article on [perceptrons](/engineering-education/perceptron-algorithm/).
+For a more in-depth discussion on the step function, refer to this previous article on [perceptrons](/engineering-education/perceptron-algorithm/).
 
 #### Sigmoid activation function
-Step functions are not as informative as we would like to be due to the discontinuity present at 0. During training and optimizing networks, the step function gathers minimal information from the training data and therefore is of no use. The sigmoid function represents the same range and is a continuous variant of the step function. It is given by the formula below:
+Step functions are not as informative as we would like them to be due to the discontinuity present at 0. During training and optimizing networks, the step function gathers minimal information from the training data and therefore is of no use. The sigmoid function represents the same range and is a continuous variant of the step function. 
+
+It is given by the formula below:
 
 $$ sigmoid(x) = \frac{1}{1+\exp(-x)} $$
 
-![sigmoid function graph](sigmoid.png)
+![sigmoid function graph](/engineering-education/activation-functions/sigmoid.png)
+
 [*Image Source*](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40toprak.mhmt%2Factivation-functions-for-deep-learning-13d8b9b20e&psig=AOvVaw1LlfJR-_qjbU6wAMK-Rnzf&ust=1606899316672000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCPDwncy0rO0CFQAAAAAdAAAAABAD)
 
 This function works very well with shallow neural network architectures. However, for deeper neural architectures, it is replaced with the Rectified Linear Unit activation function.
@@ -70,15 +75,19 @@ class Sigmoid():
 ```
 
 #### Softmax activation function
-Softmax is an activation function that stems from logistic regression. Logistic regression is a classification algorithm where the outputs are numbers. The class that outputs the largest number is denoted as the output class. However, if two numbers are 400 and 500, can we confidently say that the class with output 500 is the target? There is a chance that 400 could also be the output. 
+Softmax is an activation function that stems from logistic regression. Logistic regression is a classification algorithm where the outputs are numbers. The class that outputs the largest number is denoted as the output class. 
 
-To avoid such confusion, softmax outputs the probability distribution of the class outputs. Moreover, we can think of it as a squeeze function. If the output is small, then it makes it as close to 0. On the other hand, if the output is relatively large, it increases the output probability to the neighborhood of 1.
+However, if two numbers are 400 and 500, can we confidently say that the class with output 500 is the target? There is a chance that 400 could also be the output. 
+
+To avoid such confusion, softmax outputs the probability distribution of the class outputs. We can think of it as a squeeze function. 
+
+If the output is small, then it makes it as close to 0. On the other hand, if the output is relatively large, it increases the output probability to the neighborhood of 1.
 
 Mathematically it is given as:
 
 $$ softmax(x) = \frac{\exp(x)}{\sum_{i=0}^n \exp(x_i) } $$
 
-![softmax  function graph](softmax.png)
+![softmax  function graph](/engineering-education/activation-functions/softmax.png)
 
 [*Image Source*](https://www.researchgate.net/figure/Softmax-activation-function_fig2_319121953) 
 
@@ -92,10 +101,11 @@ class Softmax():
         e_x = np.exp(x - np.max(x, axis=-1, keepdims=True))
         return e_x / np.sum(e_x, axis=-1, keepdims=True)
 ```
-#### Hyperbolic tangent activation function
-This is similar to the sigmoid activation function, except for the range of output values. The range of sigmoid output is $[0,1]$. The range of the tanH function is $[-1,1]$. The distinction between tanH and sigmoid is visible in the image shown below.
 
-![tanh  function graph](tanh.png)
+#### Hyperbolic tangent activation function
+This is similar to the sigmoid activation function, except for the range of output values. The range of the sigmoid output is $[0,1]$. The range of the tanH function is $[-1,1]$. The distinction between tanH and sigmoid is visible in the image shown below.
+
+![tanh  function graph](/engineering-education/activation-functions/tanh.png)
 
 [*Image Source*](https://debuggercafe.com/activation-functions-in-neural-networks/)
 
@@ -116,13 +126,13 @@ class TanH():
 ```
 
 #### Rectified linear unit activation function
-ReLU is one of the most widely used activation functions today. We will understand the elegance of this function. Overall it allows positive values to pass through and stops negative values. It is linear in the domain $(0,\infty]$. 
+ReLU is one of the most widely used activation functions today. We will understand the elegance of this function. Overall it allows positive values to pass through and stops negative values. It's linear in the domain $(0,\infty]$. 
 
-The first question that one must ask is how a non-continuous linear function is introducing nonlinearity? ReLU, when used individually, does not non-introduce linearity. But, when more than a couple of non-linear layers of ReLU is used, nonlinearity sets in. 
+The first question that one must ask is how a non-continuous linear function is introducing nonlinearity? ReLU, when used individually, does not introduce non-linearity. But, when more than a couple of non-linear layers of ReLU is used, nonlinearity sets in. 
 
 A more detailed explanation for the working of ReLU is given at this [link](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/).
 
-![relu  function graph](relu.png)
+![relu  function graph](/engineering-education/activation-functions/relu.png)
 
 [*Image Source*](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
 
@@ -132,6 +142,7 @@ $$
     1  \text{ if $x>0$}; \
     0 \text{ otherwise}
 $$
+
 ##### Code
 
 ```py
@@ -144,9 +155,11 @@ class ReLU():
 ```
 
 #### Leaky Rectified Linear Unit activation function
-Leaky ReLU is a modification of the Rectified Linear Unit. In ReLU, there is an absolute cutoff present at 0. Any value less than zero is discarded. In leaky ReLU, the positive values are passed through. The negative values are multiplied by a constant between 0 and 1 and then passed through. This way, only a fraction of the negative values are passed through, thus striking a balance between gradient computations and information loss.
+Leaky ReLU is a modification of the Rectified Linear Unit. In ReLU, there is an absolute cutoff present at 0. Any value less than zero is discarded. In leaky ReLU, the positive values are passed through. 
 
-![leakyrelu function graph](leakyrelu.png)
+The negative values are multiplied by a constant between 0 and 1 and then passed through. This way, only a fraction of the negative values are passed through, thus striking a balance between gradient computations and information loss.
+
+![leakyrelu function graph](/engineering-education/activation-functions/leakyrelu.png)
 
 [*Image Source*](https://towardsdatascience.com/activation-functions-in-neural-networks-58115cda9c96)
 
