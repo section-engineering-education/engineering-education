@@ -1,4 +1,4 @@
-In this tutorial, we will be building a server using Node.js and Express to capture screenshots of audio/video streams that occur using the Agora SDKs in your application by using the APIs provided by Agora.
+In this tutorial, we will be building a server using Node.js and Express to capture screenshots of audio/video streams that occur using the Agora SDKs in your application by using the Cloud Recording APIs provided by Agora.
 
 The client application that's using the Agora SDKs should request this server to capture the screenshots. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app.
 
@@ -64,7 +64,7 @@ Agora supports uploads to Amazon S3, Qiniu Cloud, Alibaba Cloud, Tencent Cloud, 
 
 I recommend using Amazon S3 as it is easy to set up. Refer to [this documentation](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) on how to create a bucket in Amazon S3. Agora will need the bucket name, the access key, and the secret key for the bucket to upload the recorded files to your cloud storage.
 
-[On-Premise recording](https://docs.agora.io/en/Recording/product_recording?platform=Linux) is similar to cloud recording, but you need to set up your own Linux server using the components provided by Agora to record the streams.
+[On-Premise recording](https://docs.agora.io/en/Recording/product_recording?platform=Linux) is similar to cloud recording, but you need to set up your own Linux server using the components provided by Agora to record the streams or capture screenshots.
 
 Compared with On-premise Recording, Cloud Recording is more convenient as it does not require deploying Linux servers.
 
@@ -137,7 +137,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-app.get("/", (req, res) => res.send("Agora Screenshots Server"));
+app.get("/", (req, res) => res.send("Agora Cloud Screenshots Server"));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Agora Cloud Screenshots Server listening at Port ${port}`));
@@ -163,7 +163,7 @@ Capturing screenshots is part of Agora's cloud recording. Hence the process for 
 
 > You can't record and take screenshots simultaneously in one session. To do both, acquire two resource IDs, one for recording and the other for capturing screenshots. Agora will charge you for both the sessions.
 
-First, you need to acquire a resource ID for capturing screenshots. This will allocate a recorder on Agora's servers for you to capture the screenshots. Then, we need to start capturing screenshots within 5 minutes from acquiring the resource ID. You can stop it whenever you want.
+First, you need to acquire a resource ID for capturing screenshots. This will allocate a recorder on Agora's servers for you to capture the screenshots. Then, we need to start capturing screenshots within 5 minutes from acquiring the resource ID. You can stop the session whenever you want.
 
 We need to provide a UID for the recorder. The recorder is like a user who joins the channel, captures the screenshots, and uploads it to your third-party cloud storage. So make sure you provide a unique UID to the recorder that doesn't conflict with an existing user in the channel.
 
@@ -173,7 +173,7 @@ If you have set up token authentication for your Agora project, you should also 
 
 ### Acquire resource ID
 
-Let's add a POST handler for a new endpoint called `'/acquire'` to acquire the resource ID for the recorder.
+Let's add a POST request handler for a new endpoint called `'/acquire'` to acquire the resource ID for the recorder.
 
 ```JavaScript
 app.post("/acquire", (req, res) => {
@@ -267,7 +267,7 @@ In the body of the request, we should specify the UID of the recorder, the chann
 
   - **1**: Live Broadcast Channel.
 
-- **Subscribe Uid Group**: The estimated maximum number of subscribed users. 
+- **Subscribe UID Group**: The estimated maximum number of subscribed users. 
 
 **Storage Config:**
 
@@ -283,17 +283,17 @@ In the body of the request, we should specify the UID of the recorder, the chann
 
   - **4**: Kingsoft Cloud
 
-- **Region**: The regional information specified by cloud storage:
+- **Region**: The regional information specified by your third-party cloud storage.
 
-- **Bucket**: The bucket ID from the cloud storage where you want to save your recorded files.
+- **Bucket**: The bucket ID from your cloud storage where you want to save your recorded files.
 
-- **Access Key**: The access key to cloud storage.
+- **Access Key**: The access key to your cloud storage.
 
-- **Secret Key**: The secret key of the cloud storage.
+- **Secret Key**: The secret key of your cloud storage.
 
-- **File Name Prefix**: An array of strings to set the path of the recorded files in the cloud storage.
+- **File Name Prefix**: An array of strings to set the path of the recorded files in your cloud storage.
 
-Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#storageConfig) to learn more about the parameters that you need to pass for this configuration.
+Refer to [the documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=RESTful#storageConfig) to learn more about the parameters that you need to pass for storage configuration.
 
 Let's write the POST request to Agora to start the capturing the screenshots. Use environment variables to store the third-party cloud storage credentials and configurations.
 
@@ -361,7 +361,7 @@ Response:
 
 ### Stop capturing screenshots
 
-Now, Let's add a POST handler for a new endpoint called `'/stop'` to stop capturing screenshots.
+Now, Let's add a POST request handler for a new endpoint called `'/stop'` to stop capturing screenshots.
 
 ```JavaScript
 app.post("/stop", (req, res) => {
@@ -395,9 +395,9 @@ app.post("/stop", async (req, res) => {
 });
 ```
 
-The response will contain an object called `serverResponse`. It'll contain the list of files, which is an array of objects containing the details about the files and the uploading status of these files.
+The response will contain an object called `serverResponse`. It'll contain the list of files, which is an array of objects containing the details about the files and the upload status of these files.
 
-The uploading status can either be,
+The upload status can either be,
 
 - **uploaded**: All the recorded files are uploaded to the third-party cloud storage.
 
@@ -457,11 +457,11 @@ Response:
 
 4. We set up a simple Express server.
 
-5. We added a POST handler to acquire the resource ID for the recording session.
+5. We added a POST request handler to acquire the resource ID for the recording session.
 
-6. We added a POST handler to start capturing the screenshots. We learned about all the parameters that we need to pass to start capturing screenshots.
+6. We added a POST request handler to start capturing the screenshots. We learned about all the parameters that we need to pass to start capturing screenshots.
 
-7. We added a POST handler to stop capturing the screenshots.
+7. We added a POST request handler to stop capturing the screenshots.
 
 Congratulations, :partying_face: You did it.
 
