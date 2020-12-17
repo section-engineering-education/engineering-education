@@ -1,4 +1,4 @@
-## Php yii2 Web Application framework.
+## Getting started with yii2 php framework
  
 Nowadays,many people has turned out to use framework in web designing and apps development..This has played a great role in improving developers codding skill since they don't have to have the whole knowledge of a language so as to use it..
 
