@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/active-learning/
 title: Introduction to Active Learning
-description: This article will be discussing active learning, which is an approach where data that needs to be labeled to train a model is prioritized. Specifically, the data that is prioritized has the highest impact on the performance of a model.
+description: This article will be discussing active learning, which is an approach where data that needs to be labeled to train a model is prioritized. The data that is prioritized has the highest impact on the performance of a model.
 author: collins-ayuya
-date: 2020-12-17T00:00:00-11:00
+date: 2020-12-17T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
