@@ -10,7 +10,7 @@ This article provides an extensive comparison and interrelatedness between digit
 
 Digital assistants is an advanced computer program that simulates a conversation with the people who use it, mostly over the internet. Digital assistants use the following to provide a personalized conversation experience;
 
-1. Artificial Intelligence ([IA](https://www.section.io/engineering-education/artificial-intelligence-future/)) – Simulation of human intelligence through programming in a machine to mimic human actions.
+1. Artificial Intelligence ([AI](https://www.section.io/engineering-education/artificial-intelligence-future/)) – Simulation of human intelligence through programming in a machine to mimic human actions.
 2. Natural Language Processing ([NLP](https://machinelearningmastery.com/natural-language-processing/)) – refers to automatic manipulation of a natural language such as speech and text through software.
 3. [Machine Language](https://www.computerhope.com/jargon/m/machlang.htm) – refers to a collection of binary digits or bits that a machine can understand.
 
@@ -24,7 +24,7 @@ Digital assistants are affordable, convenient, and user-friendly and are primari
 
 Digital companions are just new and improved digital assistants. In a way, they assist us in numerous tasks, and they do so in a personalized, seamless, and fun manner. They are interactive to the user. Digital companions learn and remember what we like or dislike each time we interact, that is individual preferences and needs. They also assist us in understanding and choosing, among many options, the best course of action. In other words, digital companions interact with us proactively as opposed to digital assistants, which do so reactively.
 
-A future digital companion will have a two-way relationship with the users based on empathy, trust, and anticipation of needs and preferences. They will be able to make suggestions that will fit people&#39;s interests and influence their behaviors positively. In other words, this is an ideal idea for digital companions.
+A future digital companion will have a two-way relationship with the users based on empathy, trust, and anticipation of needs and preferences. They will be able to make suggestions that will positively fit people&#39;s interests and influence their behaviors. In other words, this is an ideal idea for digital companions.
 
 Digital companions are used to automating management and employee experience, thereby making it more accessible. It is also used in performing common tasks such as resetting passwords, system status updates, and outage alerts.
 
@@ -47,7 +47,7 @@ The below table enumerates the fundamental differences between digital assistant
 The applications of digital companions, especially as far as the future is concerned, are vast; this is because of technology evolution. Digital companions are applied but not limited to the following field;
 
 - Education and training field, for example, in computations, spelling checks, study reviews, etcetera.
-- Automotive and mobility, for example, one can ask the locations of refiling station and directions.
+- Automotive and mobility, for example, one can ask the locations of refilling stations and directions.
 - Banking and finance, in Automatic Machines (ATMs)
 - Retail and hospitality, for instance, processing orders
 - Digital assistants can be used in-home care tasks and chores, for example, in smart homes, smart appliances, etcetera.
