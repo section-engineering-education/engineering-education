@@ -1,7 +1,7 @@
 Public key cryptography, also known as `asymmetric cryptography` is an encryption system comprising of public and private key pairs. The private keys are known to the sender and receiver of information only whereas the public keys are disseminated widely. It solves the [key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3) brought about by symmetric cryptography.
 
 #### Prerequisites
-- Have [Node.js](https://nodejs.org/en/) installed in your computer.
+- Have [Node.js](https://nodejs.org/en/) installed on your computer.
 - Have some basic knowledge of JavaScript programming language.
 - Have some basic knowledge of cryptography.
 
