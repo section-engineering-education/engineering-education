@@ -34,11 +34,11 @@ Picasso has the following features:
 - [Multithread networking](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)) This refers to the ability to work on multiple tasks at the same time.
 - Bitmap - This refers to a digital image composed of a matrix and dots used to store digital photos. 
 
-### Prerequisites
-- It would be best to have [Android Studio](https://developer.android.com/studio) installed.
-- A basic knowledge and understanding of XML and Java programming language.  
-- A basic understanding of image loading in android applications.
-- A basic experience and knowledge of developing and creating Android applications.
+### Prerequisite\
+- Have[Android Studio](https://developer.android.com/studio) installed. 
+- The reader should have a beginner level understanding of  Java and XML.  
+- The reader should have basic understanding of image loading in android applications.
+
 
 ### Step 1 – Create a new AndroidStudio Project
 - Open Android studio. Select Start new Android Studio Project -->  Empty Activity -->. Let us name the **Picasso**. Click Finish and wait for the project to build.
@@ -58,7 +58,7 @@ Add internet permission to you application.
 ```
 
 #### Step 3 – Design the XML layout resource file.
- In this step, we will design the UI for our mobile application. Our layout will contain an ImageView, which will display our image and nine buttons, each with a different function to illustrate Picasso's features.
+In this step, we will design our layout for our application. Our layout will contain an ImageView, which will display our image and nine buttons, each with a different function to illustrate Picasso's features.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
