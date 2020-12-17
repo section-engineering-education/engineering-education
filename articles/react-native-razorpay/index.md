@@ -1,4 +1,4 @@
-This tutorial is for React Native developers who want to accept payments from users. We will be building a React Native application and a Node.js server to integrate Razorpay into the app.
+In this tutorial, we will be building a React Native application to accept payments from users by integrating Razorpay in our application. We will also build a Node.js server to handle sensitive information and processes that shouldn't be exposed or handled from the mobile application.
 
 ### Razorpay
 Founded in 2013, Razorpay is a payment gateway service. With Razorpay, you have access to payment modes like credit and debit cards, UPI, and popular mobile wallets to include it in your app.
