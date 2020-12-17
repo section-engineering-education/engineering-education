@@ -6,39 +6,39 @@ url: /engineering-education/activation-functions/
 title: An Introduction to Activation Functions
 description: In this tutorial will look at some of the activation functions used frequently and implement them from scratch, coding them using Python classes. 
 author: lalithnarayan-c
-date: 2020-12-16T00:00:00-17:00
+date: 2020-12-17T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/activation-functions/hero.jpg
-    alt: example image
+    alt: activation function with Python example image
 ---
-In an earlier article on [perceptron](engineering-education/perceptron-algorithm/), we looked at the concept of the weighted sum and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
+In an earlier article on [perceptron](engineering-education/perceptron-algorithm/) algorithms, we looked at the concepts of the weighted sums and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
 <!--more-->
 
-### Activation Functions
-The disadvantage of using a unit step function is that it is not continuous. Therefore, weight updation is not efficiently done. Thus, several activation functions were introduced to ensure better generalization of the models. 
+### Activation functions
+The disadvantage of using a unit step function is that it is not continuous. Therefore, weight updation will not be done efficiently. This led to several activation functions being introduced to ensure a better generalization of the models. 
 
 This tutorial will look at some of the activation functions used frequently and implement them from scratch. Since this is an article on activation functions, we will code each of them using Python Classes. We will make use of these classes in the upcoming articles.  
 
 ### What are activation functions?
-The datasets that we work with are usually non-linear. The decision boundaries are non-linear most of the time. A perceptron model without the threshold function is just a linear shift and scale operation performed on the inputs. To model the non-linear datasets, one needs to add a layer of nonlinearity. 
+The datasets that we work with are usually non-linear. The decision boundaries are also non-linear most of the time. A perceptron model without the threshold function is just a linear shift and scale operation performed on the inputs. To model the non-linear datasets, one needs to add a layer of nonlinearity. 
 
 Therefore activation functions introduce nonlinearity to better model the information. The universal approximation theorem states that if a neural network has more than 2 non-linear layers, it can model any input irrespective of its nonlinearity degree. 
 
 ### Why have so many activation functions?
-The reason for introducing the various activation functions is to reduce the computational load and improve the computation of gradients during gradient computation. Back-propagation is the algorithm that introduced making small changes in the weights according to minimize the error. 
+The reason for introducing the various activation functions is to reduce the computational load and improve the computation of gradients during gradient computation. Back-propagation is the algorithm that introduced making small changes in the weights accordingly to minimize any errors. 
 
 This idea works well in theory, but computing the gradients and finding the global minimum is a computationally challenging task. There are many optimization techniques, such as gradient-based techniques, meta-heuristic optimization algorithms, etc. These activation functions are used with gradient descent optimization algorithms. 
 
 ### Activation functions
-Let us list some of the activation functions that we will be covering in this tutorial:
+Let's list some of the activation functions that we will be covering in this tutorial:
 - Step activation function
 - Sigmoid activation function
 - Softmax activation function
-- Hyperbolic Tangent activation function
-- Rectified Linear Unit (ReLU) activation function
+- Hyperbolic tangent activation function
+- Rectified linear unit (ReLU) activation function
 - Leaky ReLU activation function
 
 #### Step activation function
@@ -51,7 +51,7 @@ The step activation function, as discussed in the perceptron algorithm, is shown
 For a more in-depth discussion on the step function, refer to this previous article on [perceptrons](/engineering-education/perceptron-algorithm/).
 
 #### Sigmoid activation function
-Step functions are not as informative as we would like them to be due to the discontinuity present at 0. During training and optimizing networks, the step function gathers minimal information from the training data and therefore is of no use. The sigmoid function represents the same range and is a continuous variant of the step function. 
+Step functions are not as informative as we would like them to be due to the discontinuity present at 0. During the training and optimizing of the networks, the step function gathers minimal information from the training data and therefore is of no use. The sigmoid function represents the same range and is a continuous variant of the step function. 
 
 It is given by the formula below:
 
@@ -77,13 +77,13 @@ class Sigmoid():
 #### Softmax activation function
 Softmax is an activation function that stems from logistic regression. Logistic regression is a classification algorithm where the outputs are numbers. The class that outputs the largest number is denoted as the output class. 
 
-However, if two numbers are 400 and 500, can we confidently say that the class with output 500 is the target? There is a chance that 400 could also be the output. 
+However, if two numbers are 400 and 500, can we confidently say that the class with the output of 500 is the target? There is a chance that 400 could also be the output. 
 
-To avoid such confusion, softmax outputs the probability distribution of the class outputs. We can think of it as a squeeze function. 
+To avoid such a confusion, softmax outputs the probability distribution of the class outputs. We can think of it as a squeeze function. 
 
-If the output is small, then it makes it as close to 0. On the other hand, if the output is relatively large, it increases the output probability to the neighborhood of 1.
+If the output is small, then it makes it as close to 0 as possible. On the other hand, if the output is relatively large, it increases the output probability to the neighborhood of 1.
 
-Mathematically it is given as:
+Mathematically this is written as:
 
 $$ softmax(x) = \frac{\exp(x)}{\sum_{i=0}^n \exp(x_i) } $$
 
@@ -126,13 +126,15 @@ class TanH():
 ```
 
 #### Rectified linear unit activation function
-ReLU is one of the most widely used activation functions today. We will understand the elegance of this function. Overall it allows positive values to pass through and stops negative values. It's linear in the domain $(0,\infty]$. 
+ReLU is one of the most widely used activation functions today. Overall it allows positive values to pass through and stops negative values. 
 
-The first question that one must ask is how a non-continuous linear function is introducing nonlinearity? ReLU, when used individually, does not introduce non-linearity. But, when more than a couple of non-linear layers of ReLU is used, nonlinearity sets in. 
+It's linear in the domain $(0,\infty]$. 
+
+The first question that one must ask is how a non-continuous linear function will introduce nonlinearity? ReLU, when used individually, does not introduce non-linearity. But, when more than a couple of non-linear layers of ReLU are used, nonlinearity does set in. 
 
 A more detailed explanation for the working of ReLU is given at this [link](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/).
 
-![relu  function graph](/engineering-education/activation-functions/relu.png)
+![relu function graph](/engineering-education/activation-functions/relu.png)
 
 [*Image Source*](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
 
@@ -154,7 +156,7 @@ class ReLU():
 
 ```
 
-#### Leaky Rectified Linear Unit activation function
+#### Leaky Rectified linear unit activation function
 Leaky ReLU is a modification of the Rectified Linear Unit. In ReLU, there is an absolute cutoff present at 0. Any value less than zero is discarded. In leaky ReLU, the positive values are passed through. 
 
 The negative values are multiplied by a constant between 0 and 1 and then passed through. This way, only a fraction of the negative values are passed through, thus striking a balance between gradient computations and information loss.
@@ -177,4 +179,33 @@ class LeakyReLU():
 ```
 
 ### Conclusion
-In this article, we have looked at some of the most frequently used activation functions. The code given is a blueprint for these activation functions. We will make use of these blueprints in the upcoming articles to come. 
+In this article, we have looked at some frequently used activation functions. We also looked at how we write the functions mathematically. We should use the code given as a blueprint for these activation functions. We will make use of these blueprints in the upcoming articles to come.
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
