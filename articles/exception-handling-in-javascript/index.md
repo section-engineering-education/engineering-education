@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/exception-handling-in-javascript/hero.jpg
-    alt:  image example
+    alt: JavaScript Exception Handling image example
 ---
 With the use of exceptions, you can responsibly manage some of these problems we face as developers. Exception handling is the process of converting a code error message into a user-friendly error message. It is a necessary step in the development process. 
 <!--more-->
