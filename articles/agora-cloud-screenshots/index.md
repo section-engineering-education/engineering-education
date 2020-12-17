@@ -55,7 +55,7 @@ We'll be going through these steps in this article:
 7. Stop capturing screenshots.
 8. Recap.
 
-> You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-recording-server).
+> You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-capture-screenshots-express).
 
 ### Cloud recording vs. On-Premise recording
 [Cloud recording](https://docs.agora.io/en/cloud-recording/landing-page?platform=RESTful) is used to record voice calls, video calls, interactive streaming and also capture screenshots of your streams and upload them to your cloud storage. You can record one-to-one or one-to-many audio and video calls. For cloud recording, Agora provides APIs to record the streams and capture screenshots. Once the session ends, Agora will upload the captured screenshots or the recorded video to your third-party cloud storage.
