@@ -1,8 +1,8 @@
-## User registration in Django using Google OAuth
+# User registration in Django using Google OAuth
 
 Open Authorization (OAuth) is a service that allows websites or apps to share user information with other websites without being given a user's password. Users can log in to multiple websites with the same account without creating other credentials. Some of the most popular OAuth service providers are Google, Facebook and GitHub. In this tutorial, we look at registering users in a Django app using Google OAuth.
 
-### Prerequisites
+## Prerequisites
 To follow along with this tutorial, you need [Python3](https://www.python.org/downloads/) installed on your machine.
 
 ### Step 1 -- Create and set up a new Django project
@@ -18,25 +18,27 @@ Then, install the latest version of Django from PyPI by running the following co
 ```bash
 $ pip install django
 ```
-> Django 3.1.3 was used in this tutorial.
 
 Then, create a new Django project using the command:
 ```bash
-$ django-admin startproject djangooauth .
+$ django-admin startproject oauth_project .
 ```
 Then, create a Django app using the command:
 ```bash
-$ django-admin startapp googleoauth
+$ python manage.py startapp oauth_app
 ```
-Register the `googleoauth` app to the `djangooauth` project by adding it to `INSTALLED_APPS` in `settings.py`.
+Then, apply the database migrations using the `migrate` command:
+```bash
+$ python manage.py migrate
+```
+Register the `oauth_app` to the `oauth_project` project by adding it to `INSTALLED_APPS` in `settings.py`.
 
 *djangooauth/settings.py*
 ```python
 INSTALLED_APPS = [
- #...
- 'django.contrib.staticfiles',
- 'django.contrib.sites',
- 'googleoauth',
+    #...
+    'django.contrib.sites',
+    'oauth_app',
 ]
 ```
 
@@ -50,23 +52,22 @@ Then register `django-allauth` by adding it to `INSTALLED_APPS` in `settings.py`
 *djangooauth/settings.py*
 ```python
 INSTALLED_APPS = [
- #...
- 'googleoauth',
- 'allauth',
- 'allauth.account',
- 'allauth.socialaccount',
- 'allauth.socialaccount.providers.google',
+    #...
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 ```
 The line `allauth.socialaccount.providers.google` specifies the OAuth provider since `django-allauth` supports [many OAuth providers](https://django-allauth.readthedocs.io/en/latest/providers.html).
 
-We will also set `django-allauth` as the authentication backend for our application in the `AUTHENTICATION_BACKEND` configurations.
+We will also set `django-allauth` as the authentication backend for our application in the `AUTHENTICATION_BACKEND` configurations. At the bottom of `settings.py`, add the following code:
 
 *djangooauth/settings.py*
 ```python
 AUTHENTICATION_BACKENDS = [
- 'django.contrib.auth.backends.ModelBackend',
- 'allauth.account.auth_backends.AuthenticationBackend'
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
 ]
 ```
 Then set Google as the OAuth provider under `SOCIALACCOUNT_PROVIDERS` configurations.
@@ -74,13 +75,13 @@ Then set Google as the OAuth provider under `SOCIALACCOUNT_PROVIDERS` configurat
 *djangooauth/settings.py*
 ```python
 SOCIALACCOUNT_PROVIDERS = {
- 'google': {
- 'SCOPE': [
- 'profile',
- 'email',
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
         ],
- 'AUTH_PARAMS': {
- 'access_type': 'online',
+        'AUTH_PARAMS': {
+            'access_type': 'online',
         }
     }
 }
@@ -129,10 +130,11 @@ Then, register this `templates` folder in the `TEMPLATES` configurations in `set
 ```python
 TEMPLATES = [
     {
- 'BACKEND': 'django.template.backends.django.DjangoTemplates',
- 'DIRS': [BASE_DIR / 'templates'],
- 'APP_DIRS': True,
- #...
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True,
+        #...
+    }
 ]
 ```
 
@@ -147,7 +149,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
- #...
+    #...
     path('', TemplateView.as_view(template_name="index.html")),
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view()),
@@ -198,12 +200,15 @@ Then, under `Social Applications` click `Add` and fill in the details as follows
 
 Since you are currently logged in as a superuser, logout and login again using your Google account.
 
+If you get an error: `SocialApp matching query does not exist` at http://127.0.0.1:8000/accounts/google/login/, it means that the id of the site you created in Django admin is not the same as the one in `settings.py`. Consider playing around with the `SITE_ID` value. For example `SITE_ID = 3`, etc.
+
+For more information look at [Django "sites" framework docs](https://docs.djangoproject.com/en/3.1/ref/contrib/sites/).
+
 ![](sign-in-with-google.jpg)
 
-After signing with Google, you can check the user information obtained from Google at http://127.0.0.1:8000/admin/socialaccount/socialaccount/. 
+After signing in with Google, you can check the user information obtained from Google at http://127.0.0.1:8000/admin/socialaccount/socialaccount/. 
 
 Google provides little information about its users. To get more user information from Google, [your app needs to be verified](https://developers.google.com/apps-script/guides/client-verification).
 
 ### Conclusion
-You can integrate Google OAuth into your Django with Django OAuth packages like `django-allauth`. You can also integrate other OAuth services similarly using `django-allauth`. 
-
+You can integrate Google OAuth into your Django with Django OAuth packages like `django-allauth`. You can also integrate other OAuth services similarly using `django-allauth`.
