@@ -2,7 +2,7 @@ Public key cryptography, also known as `asymmetric cryptography` is an encryptio
 
 #### Prerequisites
 - Have [Node.js](https://nodejs.org/en/) installed in your computer.
-- Have some basic knowledge of JavaScript.
+- Have some basic knowledge of JavaScript programming language.
 - Have some basic knowledge of cryptography.
 
 ### What we will cover
