@@ -52,7 +52,7 @@ if __name__ == '__main__':
 
 ```
 
-Create a file called .gitlab-ci.yml in the repository and add the following snippet of code. The [`variables`](https://docs.gitlab.com/ee/ci/variables/) section defines a list of variables that can be used in the pipeline. I have declared a variable called `example`, whose value is set to "this is an example variable".  Variables are declared as key-value pairs(separated by a semicolon) in YAML. 
+Create a file called .gitlab-ci.yml in the repository and add the following snippet of code. The [`variables`](https://docs.gitlab.com/ee/ci/variables/) section defines a list of variables that can be used in the pipeline. I have declared a variable called `example`, whose value is set to "this is an example variable".  Variables are declared as key-value pairs (separated by a semicolon) in YAML. 
 
 The [`stages`](https://docs.gitlab.com/ee/ci/yaml/#stage) section defines a list of stages in the pipeline. These stages are executed one after the other, and hence, it is important to order them based on dependencies. In other words, stages that are dependant on other stages must be declared after all of their dependencies. 
 
@@ -115,3 +115,6 @@ You will see the different stages that you defined and whether each stage passed
 ### Conclusion
 In conclusion, Gitlab-ci is an impeccable tool that makes the lives of software engineers easier by providing a robust solution without requiring any third-party library or tool. In this tutorial, we understood the basics of GitLab and GitLab-ci by building a simple CI pipeline that automates the process of testing and building your code without the need for human intervention. Now that you have grasped the basics, you can go ahead and build your own pipeline. Whether you are a software developer, a system administrator, or a DevOps engineer, GitLab-ci is an indispensable part of your toolkit. 
 
+
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
