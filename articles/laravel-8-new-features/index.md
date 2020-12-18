@@ -1,6 +1,6 @@
 # What's New In Laravel 8
 
-## What We WIll Learn.
+## What We Will Learn.
 
 * Requirements
 * Installation
@@ -10,20 +10,18 @@
 
 ## Requirements
 
-This tutorial assumes that you have grasped basic skills in PHP, in general and HTML.  
-If you're just starting to learn Laravel,you're at the right place to explore.  
-the amazing features of the current version of Laravel,8.x.
+This tutorial assumes that you have basic skills in PHP, in general, and HTML.  
+If you're starting to learn Laravel, you're at the right place to explore the fantastic features in Laravel 8.x.
 
 ## Installation
 
-To get started with Laravel,you have 2 options.
+To get started with Laravel, you have two options.
 * Using Laravel Homestead as your local development environment.
-* Using local server e.g Apache or Nginx or any other server of your own choice.
+* Using local servers such as Apache or Nginx or any other server of your own choice.
 
 ### Laravel Homestead
-Virtual machines are great choices when it comes to software development,
-to get started,follow steps below.
-* Install your virtual machine e.g Virtual Box 6.x,VMware,Parallels or Hyper-V
+Virtual machines are great choices for software development. To get started, follow the steps below.
+* Install your virtual machine e.g. Virtual Box 6.x, VMware,Parallels or Hyper-V
 * Install vagrant to manage your virtual machine(s).
 * To install Homestead vagrant box,
     * run command ```vagrant box add laravel/homestead```   
@@ -141,11 +139,11 @@ Don't worry if you don't understand,things are all done under the hood,and you o
             * Note:- 
             ```CSS
                 
-                sm	640px	@media (min-width: 640px) { ... }
-                md	768px	@media (min-width: 768px) { ... }
-                lg	1024px	@media (min-width: 1024px) { ... }
-                xl	1280px	@media (min-width: 1280px) { ... }
-                2xl	1536px	@media (min-width: 1536px) { ... }
+                sm  640px   @media (min-width: 640px) { ... }
+                md  768px   @media (min-width: 768px) { ... }
+                lg  1024px  @media (min-width: 1024px) { ... }
+                xl  1280px  @media (min-width: 1280px) { ... }
+                2xl 1536px  @media (min-width: 1536px) { ... }
             ```
             To learn more about Tailwind,visit [https://tailwindcss.com/docs/responsive-design](https://tailwindcss.com/docs/responsive-design)
 
