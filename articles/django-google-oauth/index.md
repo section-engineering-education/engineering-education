@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/django-google-oauth/hero.jpg
-    alt: 
+    alt: Django using Google OAuth
 ---
 Open Authorization (OAuth) is a service that allows websites or apps to share user information with other websites without being given a users password. Users can log in to multiple websites with the same account without creating other credentials. 
 <!--more-->
