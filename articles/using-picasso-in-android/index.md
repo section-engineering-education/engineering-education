@@ -1,7 +1,7 @@
 This article will illustrate the different features offered by Picasso in Android applications.
 
 ### Introduction
-Visual representation in mobile application development is a growing UI/UX trend. In this current era, most of our minds seem to understand either graphics in motion or pictures than words. With time, most mobile applications, such as Instagram, Facebook, Twitter, LinkedIn, etc., started implementing visual representation. It was not perfect the first time. Images were of low quality, could neither be downloaded nor edited, and screens would "freeze" as pictures loaded. As much as it was an improvement in mobile development, it was still hectic. Developers had to solve these problems. Many visual representation libraries such as `Glide`, `Picasso`, `Image loader`, `Fresco`, etc ,were developed. In his article, we will discuss **Picasso**. **Picasso** is a powerful image loading, downloading, and caching library developed by Square. Picasso offers better image quality, disk caching, and simpler syntax to carry out various library features.
+Visual representation in mobile application development is a growing UI/UX trend. In this current era, most of our minds seem to understand either graphics in motion or pictures rather than words. With time, most mobile applications, such as Instagram, Facebook, Twitter, LinkedIn, etc., started implementing visual representation. It was not perfect the first time. Images were of low quality, could neither be downloaded nor edited, and screens would "freeze" as pictures loaded. As much as it was an improvement in mobile development, it was still hectic. Developers had to solve these problems. Many visual representation libraries such as `Glide`, `Picasso`, `Image loader`, `Fresco`, etc ,were then developed. In his article, we will discuss **Picasso**. **Picasso** is a powerful image loading, downloading, and caching library developed by Square. Picasso offers better image quality, disk caching, and simpler syntax to carry out various library features.
 
 ### Uses of Picasso
 Picasso has the following features:
@@ -41,7 +41,7 @@ Picasso has the following features:
 - A basic experience and knowledge of developing and creating Android applications.
 
 ### Step 1 – Create a new AndroidStudio Project
-- Open Android studio. Select Start new Android Studio Project -->  Empty Activity -->. Let us name the **Picasso**. Click Finish and wait for the project to build.
+- Open Android studio. Select Start new Android Studio Project ->  Empty Activity ->. Let us name the **Picasso**. Click Finish and wait for the project to build.
 
 ![Name the project](/engineering-education/using-picasso-in-android/name.jpg)
 
@@ -221,9 +221,9 @@ Add internet permission to you application.
 ### Step 3 – Initialize objects. 
 In our `MainActivity` class, initialize the image view and the buttons that are in the layout resource file.
 ```java
- ImageView imageView;
- int i = 0;
- Button buttonDrawableImage,buttonUrlImage, buttonErrorImage, buttonPlaceholderImage, buttonCallback, buttonResizeImage, buttonRotateImage, buttonScaleImage,       buttonTarget;
+ImageView imageView;
+int i = 0;
+Button buttonDrawableImage,buttonUrlImage, buttonErrorImage, buttonPlaceholderImage, buttonCallback, buttonResizeImage, buttonRotateImage, buttonScaleImage, buttonTarget;
 ```
 
 ### Step 4 – Create a custom method.
@@ -332,7 +332,7 @@ case R.id.showRotate:
 	 break;
 ```  
 ### h)Targets  
-Targets combine image loading, callbacks, and errors. Targets return bitmap images. Targets normally use `onBitmapLoaded()`, `onBitmapFailed()` and on `Prepared()` methods. In our `MainActivity.java`, outside `initializeView` method, add the following lines of code:
+Targets combine image loading, callbacks, and errors. They return bitmap images. Targets normally use `onBitmapLoaded()`, `onBitmapFailed()` and on `Prepared()` methods. In our `MainActivity.java`, inside the `initializeView` method, add the following lines of code:
 ```java
 buttonTarget = (Button) 
 findViewById(R.id.showTarget); buttonTarget.setOnClickListener(this); 
