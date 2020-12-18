@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/django-google-oauth/
 title: User Registration in Django using Google OAuth
-description: In this tutorial, we will look at hw to register users in a Django app using Google OAuth 
+description: In this tutorial, we will look at how to register users in a Django app using Google OAuth. This process allows users to log in to multiple sites with the same credentials. 
 author: geoffrey-mungai
-date: 2020-12-19T00:00:00-13:00
+date: 2020-12-18T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/django-google-oauth/hero.jpg
     alt: 
 ---
-Open Authorization (OAuth) is a service that allows websites or apps to share user information with other websites without being given a user's password. Users can log in to multiple websites with the same account without creating other credentials. 
+Open Authorization (OAuth) is a service that allows websites or apps to share user information with other websites without being given a users password. Users can log in to multiple websites with the same account without creating other credentials. 
 <!--more-->
 Some of the most popular OAuth service providers are Google, Facebook and GitHub. In this tutorial, we look at registering users in a Django app using Google OAuth.
 
@@ -195,11 +195,11 @@ We add a base route that will display our template `index.html`. We also add a r
 ### Step 4 -- Create  and configure a new Google APIs project
 Head over to [Google Developer APIs Console](https://console.developers.google.com/apis) and create a new project. 
 
-![](create-g-oauth-project.jpg)
+![](/engineering-education/django-google-oauth/create-g-oauth-project.jpg)
 
 Then, register your app by filling the [OAuth consent screen](https://console.developers.google.com/apis/credentials/consent).
 
-![](g-oauth-consent-screen-1.jpg)
+![](/engineering-education/django-google-oauth/g-oauth-consent-screen-1.jpg)
 
 Then, create a new **OAuth client ID** under **[Credentials](https://console.developers.google.com/apis/credentials)**. Select **Web application** for the **Application type**.  
 
@@ -207,7 +207,7 @@ Then, add:
 - `http://127.0.0.1:8000` under **Authorized JavaScript origins**.
 - `http://127.0.0.1:8000/accounts/google/login/callback/` under  **Authorized redirect URIs**.
 
-![](authorised-redirects.jpg)
+![](/engineering-education/django-google-oauth/authorised-redirects.jpg)
 
 After a successful OAuth client ID creation, copy `Your Client ID` and `Your Client Secret`, you will need them in step 5.
 
@@ -240,7 +240,7 @@ Then, under `Social Applications` click `Add` and fill in the details as follows
 4. Secret key: <The Secret key you created in step 4>
 5. Sites: 127.0.0.1:8000
 
-![](add-social-app.jpg)
+![](/engineering-education/django-google-oauth/add-social-app.jpg)
 
 Since you are currently logged in as a superuser, logout and login again using your Google account.
 
@@ -250,9 +250,9 @@ For example: `SITE_ID = 3`, etc.
 
 For more information look at [Django "sites" framework docs](https://docs.djangoproject.com/en/3.1/ref/contrib/sites/).
 
-![](sign-in-with-google.jpg)
+![](/engineering-education/django-google-oauth/sign-in-with-google.jpg)
 
-After signing in with Google, you can check the user information obtained from Google at http://127.0.0.1:8000/admin/socialaccount/socialaccount/. 
+After signing in with Google, you can check the user information obtained from Google at: `http://127.0.0.1:8000/admin/socialaccount/socialaccount/`. 
 
 Google provides little information about its users. To get more user information from Google, [your app needs to be verified](https://developers.google.com/apps-script/guides/client-verification).
 
