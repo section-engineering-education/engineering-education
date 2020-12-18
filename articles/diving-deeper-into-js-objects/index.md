@@ -16,7 +16,7 @@ images:
 ---
 The object-based paradigm is one of the design patterns used in JavaScript. An object can be referred to as a collection of properties. A property on the other hand is an association of a 'key(name)' and a 'value'.
 <!--more-->
-### Introduction to objects.
+### Introduction to objects
 The key is treated as a `string` but the value can be a `string`, `number`, `float`, `boolean`, `array`, `function`, or another `object`. This means that we can illustrate different kinds of data using a single object.
 
 #### Prerequisites
