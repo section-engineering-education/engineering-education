@@ -33,8 +33,8 @@ Picasso has the following features:
 - [Multithread networking](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)) This refers to the ability to work on multiple tasks at the same time.
 - Bitmap - This refers to a digital image composed of a matrix and dots used to store digital photos. 
 
-### Prerequisite\
-- Have[Android Studio](https://developer.android.com/studio) installed. 
+### Prerequisites
+- Have [Android Studio](https://developer.android.com/studio) installed. 
 - The reader should have a beginner level understanding of  Java and XML.  
 - The reader should have basic understanding of image loading in android applications.
 
