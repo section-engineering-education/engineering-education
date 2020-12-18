@@ -268,3 +268,6 @@ Regular Expressions is a tool that comes in handy to avoid messy code and improv
 6. [Improve your Regex Performance](https://www.loggly.com/blog/five-invaluable-techniques-to-improve-regex-performance/)
 
 7. [Rexegg](https://www.rexegg.com/)
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
