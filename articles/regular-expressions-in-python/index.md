@@ -95,14 +95,15 @@ The metacharacteres mentioned above can be interpreted as follows:
 2. Another rule that metacharacters enforce is that they do not have any effect in a character class unless it starts with a metacharacter. A complement of a character class is denoted by the metacharacter "^". So, "[^abc]" will match with any character except "a", "b" and "c" whereas "[abc^]" will match with characters "a", "b", "c" and "^" even though "^" is a metacharacter. Note that the complement happens only within a character class.
 
     ```py
-    test_string = "This string has no e in it"
+    import re
+    test_string = "I doubt I can. It’s a major part of many many words."
     regex = re.search("[^e]",test_string)
     if regex:
-        print("There is an e in the string")
+        print("There is no 'e' in the string")
     else:
-        print("There is no e in this string")
+        print("There is atleast one 'e' in this string")
 
-    # Output - There is an e in the string
+    # Output - There is no 'e' in the string
 
     test_string = "2^4 equals 16"
     regex = re.search("[z^]",test_string)
@@ -145,8 +146,8 @@ The metacharacteres mentioned above can be interpreted as follows:
     #          Steve Carrel
 
     names = ["Evan Smith","Gary Neville","Jamie Carragher","Steve Smith","Elaine Smith"]
-    names_starting_with_steve = [name for name in names if re.search("Smith$",name)]
-    print(*names_starting_with_steve, sep = ", ")
+    names_ending_with_smith = [name for name in names if re.search("Smith$",name)]
+    print(*names_ending_with_smith, sep = ", ")
 
     # Output - Evan Smith, Steve Smith, Elaine Smith
     ```
