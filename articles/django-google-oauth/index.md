@@ -212,3 +212,6 @@ Google provides little information about its users. To get more user information
 
 ### Conclusion
 You can integrate Google OAuth into your Django with Django OAuth packages like `django-allauth`. You can also integrate other OAuth services similarly using `django-allauth`.
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
