@@ -33,7 +33,7 @@ Digital assistants use the following to provide a personalized conversation expe
 - Natural Language Processing ([NLP](https://machinelearningmastery.com/natural-language-processing/)) – refers to automatic manipulation of a natural language such as speech and text through software.
 - [Machine Language](https://www.computerhope.com/jargon/m/machlang.htm) – refers to a collection of binary digits or bits that a machine can understand.
 
-Just as the word digital assistant implies, their primary purpose is to assist us in our daily tasks, either by providing short-cuts, quick information, automation, and/or simplifing routines.
+Just as the word digital assistant implies, their primary purpose is to assist us in our daily tasks, either by providing short-cuts, quick information, automation, and/or simplifying routines.
 
 We use digital assistants in various forms, like in our smartphones, speakers, etc. The interaction of digital assistant takes place through hands-free [Voice User Interfaces](https://www.interaction-design.org/literature/topics/voice-user-interfaces) (a system that allows users to interact through voice or speech commands) and text or visuals. 
 
