@@ -215,3 +215,6 @@ lipaNaMpesaOnlineCallback(req,res){
 
 ### Conclusion.
 Mpesa users are rapidly growing hence software developers need to familiarize themselves with Daraja API. In this article, we have covered an introduction to Mpesa, creating a Safaricom developer account, creating an app, getting an OAuth token, and implementing Lipa na Mpesa online. Apart from what we have covered here, there are more functionalities from the [documentation](https://developer.safaricom.co.ke/docs)
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
