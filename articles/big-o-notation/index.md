@@ -9,19 +9,19 @@ Given functions **f(n)** and **g(n)**, we do say that *f(n) is Big O of g(n)* be
 
 `f(n) is O(g(n))`
 
-Therefore Big O, pronounced as Big Oh), describes how good the performance of your algorithm is as the input data grows larger.
+Therefore Big O, (pronounced as Big Oh), describes how good the performance of our algorithms is as the input data grows larger.
  
 It assists us in knowing which algorithm suits which task and which one is not by estimating the different runtimes of the algorithms. The estimation of the manner in which the runtime varies with the problem size is called the **runtime complexity** of an algorithm.
 
-An easy illustration of how different algorithms use different durations is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles apart. The information was given to the duo using  data signals and an envelope respectively. Ironicallly, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant speed while the network's delivery time was inversely proportional to the amount of information being sent.
+An easy illustration of how different algorithms use different durations is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles away. The information was given to the duo using  data signals and an envelope respectively. Ironically, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant duration while the network's delivery time was inversely proportional to the amount of information being sent.
 
-There are several notations of the Big O and here am going to discuss a few of them which are:
+There are many notations of the Big O but here am going to discuss a few of them which are:
 -**O(1)**
 -**O(n)**
 -**O(n<sup>2)**
 -**O(log<sub>2</sub>n)**
 
-At the end of the article, we will estimate the Big O of a sample algorithm.
+In the article, we will also estimate the Big O of a sample algorithm.
 
 *In the code examples, I used Python for illustrations but you can rewrite them using a language of your choice.*
 ###1. O(1) Constant Runtime complexity
@@ -29,7 +29,7 @@ This means that the algorithm does a fixed number of operations no matter the nu
 `def first_element(array):`
     `print(array[0])`
 The function `first_element()` takes an array passed in and prints the first element and does not consider how many elements are present in the array.
- Take a look at the graph representation below:
+Take a look at the graph representation below:
 ![01](o_1.png)
 ###2. O(n) Linear Runtime complexity
 This means that the runtime complexity of your algorithm increases linearly with the size of the input data.
@@ -59,7 +59,7 @@ The code has two loops, the *outer* and the *inner*. The outer loop iterates n t
 Taking a case where the array has 3 elements; the outer loop takes  3 operations in total to iterate over each element. For each 3 operations of the outer loop, the inner loop also takes 3 operations to iterate over each element. That is 3 × 3 operations amounting to 9.
 ![02](n_square.png)
 ###4. O(log<sub>2</sub>n)- Logarithmic Runtime complexity
-This is associated with the binary search algorithm which searches by doing necessary halvings to get the item being searched.
+This is associated with the binary search algorithm which searches by doing necessary halvings to get the item being searched for.
 The essence of this method is to compare the value being searched for, let's name it *X*, with the middle element of the array and if X is not found there, we then decide which half of the array to look at next. This is repeated until X is found.
 The expected number of steps depends on the number of halvings needed to get from n elements to 1 element.
 Have a look at the code and graphical illustrations below:
@@ -88,7 +88,7 @@ Have a look at the code and graphical illustrations below:
 `val_found = binary_search(array, query)`
 
 #####Step 1
-The code takes in a sorted array with 9 elements through the function `binary_search()` and searches for the value, the parameter named query, 7. It divides it in half and checks if 7 is in the middle.
+The code takes in a sorted array with 9 elements through the function `binary_search()` and searches for the value, the parameter named `query`, 7. It divides it in half and checks if 7 is in the middle.
 
 | 1|2|3|4|5|6|7|8|9|
 --|--|--|--|---|----|--|---|---|
