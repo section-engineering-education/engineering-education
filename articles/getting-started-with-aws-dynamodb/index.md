@@ -6,7 +6,7 @@ DynamoDB is a platform as a service(PaaS) AWS product. The product is a managed 
 
 This article is suitable for any reader interested in digging into DynamoDB. Most of the time, we are introduced to relational databases. Relational databases are SQL based. Nonrelational databases are also referred to as NoSQL databases, DynamoDB being one of them. It is recommended you get to know the differences between an SQL and a NoSQL database. The article [SQL or NoSQL - Which Database is Ideal](https://www.section.io/engineering-education/sql-or-nosql-when-to-choose-what/) will come in handy.
 
-#### Core Components of DynamoDB
+#### Core components of DynamoDB
 
 - **Tables:** Data is stored in tables. This is similar to other database systems. For instance, you can have a table that stores student details.
 - **Items:** A table is made up of zero or more items. Items can be compared to rows in a relational database. Each item is uniquely identifiable.
@@ -14,15 +14,16 @@ This article is suitable for any reader interested in digging into DynamoDB. Mos
 - **Primary key:** The primary key is unique for each item. DynamoDB has two types of primary keys:
   - [Partition Key](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey): This forms a simple primary key with the partition key only. In this, the partition key is sufficient to identify each item uniquely.
   - [Partition key and sort key](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey): The two constitute a composite key. In instances where two items can have a similar partition key, a sort key is used to identify them uniquely. Any two or more items that have a matching partition key should have a distinct sort key.
-    **Secondary indexes:** Secondary indexes are used for additional access patterns that cannot be satisfied only by the primary key. DynamoDB supports two kinds of secondary indexes:
-  - Local Secondary Indexes(LSI)
-  - Global Secondary Indexes(GSI)
 
-##### Local Secondary Indexes(LSI)
+- **Secondary indexes:** Secondary indexes are used for additional access patterns that cannot be satisfied only by the primary key. DynamoDB supports two kinds of secondary indexes:
+  - Local secondary indexes(LSI)
+  - Global secondary indexes(GSI)
+
+##### Local secondary indexes(LSI)
 
 LSI enables us to extend the sort key's functionalities to other attributes without changing the partition key. This allows us to perform more optimal queries in terms of cost and performance. The limitation of LSI is that it can only be defined during table creation time. DynamoDB provides a limit of five LSIs per table.
 
-##### Global Secondary Indexes(GSI)
+##### Global secondary indexes(GSI)
 
 GSI is an index that can have both partition key and sort key different from the one on the table. GSI can be created after the table is created, and it comes at an extra cost.
 
@@ -30,10 +31,10 @@ GSI is an index that can have both partition key and sort key different from the
 
 There are two ways of setting up DynamoDB:
 
-- [DynamoDB Local](#DynamoDB-Local)
-- [Amazon DynamoDB web service](#Amazon-Web-Service)
+- [DynamoDB local](#dynamodb-local)
+- [Amazon DynamoDB web service](#amazon-web-service)
 
-#### DynamoDB Local
+#### DynamoDB local
 
 DynamoDB Local is installable software that simulates DynamoDB on your computer. It's suitable for the development stages of an application. This provides a development environment that does not require connecting to the DynamoDB web service. Once development is done, you can deploy to the DynamoDB web service. The downloadable version runs on all platforms that support Java. Java Runtime Environment not older than version 8 is required to run this version of DynamoDB. The download links and deploying guidelines can be found on [Amazon DynamoDB documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html).
 
@@ -41,7 +42,7 @@ DynamoDB Local is installable software that simulates DynamoDB on your computer.
 
 To set up DynamoDB on AWS, you need to register for an [AWS account](https://portal.aws.amazon.com/billing/signup#/start). A credit card for billing may be required. To access DynamoDB programmatically, you need access keys. To get access keys:
 
-- In your logged in [AWS Console](https://aws.amazon.com/console/), navigate to the [IAM dashboard](https://console.aws.amazon.com/iam/home?region=us-east-1).
+- In your logged in [AWS console](https://aws.amazon.com/console/), navigate to the [IAM dashboard](https://console.aws.amazon.com/iam/home?region=us-east-1).
 
 - Navigate to users and select add user as shown in the screenshot.
 
@@ -67,7 +68,7 @@ Using AWS CLI, we can control several AWS services, including DynamoDB.
 - For Windows users, launch the command prompt and navigate to the directory where you installed AWS CLI. Run the command in the command prompt `aws --version`.
 - You should get the same result.
 
-For more details on configuration, refer to [AWS CLI User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). In this tutorial, we will use AWS CLI to interact with DynamoDB.
+For more details on configuration, refer to [AWS CLI user guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). In this tutorial, we will use AWS CLI to interact with DynamoDB.
 
 After installing AWS CLI, run the command below on the terminal.
 
@@ -77,15 +78,15 @@ aws configure
 
 You will be prompted to enter the values as shown in the screenshot below.
 
-![AWS CLI Configure](/engineering-education/getting-started-with-aws-dynamodb/aws-cli-configure.jpg)
+![AWS CLI configure](/engineering-education/getting-started-with-aws-dynamodb/aws-cli-configure.jpg)
 
-Make sure you replace the values with your correct values. The user used in this exercise should have the role of `AmazonDynamoDBFullAccess`. Now you can run some commands such as create a table, delete table, among others. Follow [AWS DynamoDB CLI User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-dynamodb.html) for commands syntax.
+Make sure you replace the values with your correct values. The user used in this exercise should have the role of `AmazonDynamoDBFullAccess`. Now you can run some commands such as create a table, delete table, among others. Follow [AWS DynamoDB CLI user guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-dynamodb.html) for commands syntax.
 
-### DynamoDB Data Modelling
+### DynamoDB data modelling
 
 Data modeling is how an application stores data in a given database related to real-world entities. With NoSQL databases like DynamoDB, the modeling process is different from the one used in SQL or relational databases. Relational modeling focuses on reducing redundancy to make better use of storage. This is the reason why normalization is done. On the other hand, DynamoDB is optimized for computing power rather than storage. Designed for highly scalable applications and makes an excellent transactional database for online analytical processing(OLAP). There are no SQL queries. Queries are made only to indexed data making it very fast with a latency range of 1 to 9ms. Therefore, do not model DynamoDB with a relational data modeling perspective.
 
-#### Key Points to Note in DynamoDB Data Modelling
+#### Key points to note in DynamoDB data modelling
 
 - DynamoDB is schemaless. Items with a different number of attributes can be on the same table.
 - Most applications require only one table. Too many tables increase the read and write capacity, consequently increasing the DynamoDB bill.
@@ -98,7 +99,7 @@ Data modeling is how an application stores data in a given database related to r
 
 In a company, some devices need to be monitored. Monitoring needs to be automated. Five temperature sensors are attached to each device to record temperatures at 10 minutes intervals. The recorded data is then sent to the cloud for analysis. Each device has a unique serial number. Model a DynamoDB database that will be used to store the data.
 
-**Step 1: Identify Entities**
+**Step 1: Identify entities**
 In this case, we only have one entity: Device
 Attributes for the entity:
 
@@ -113,21 +114,21 @@ temperature4
 temperature5
 ```
 
-**Step 2: Identify Relationships**
+**Step 2: Identify relationships**
 There are no relationships between entities, as we only have one entity.
-**Step 3: Identify the Access Patterns**
+**Step 3: Identify the access patterns**
 The only data access requirement we have is to fetch data for every device.
-**Step 4: Identify the Primary Key**
+**Step 4: Identify the primary key**
 We will use a partition key and a sort key.
 The partition key is the `deviceid`, and `datacount` is the sort key.
-**Step 5: Identify Secondary Indexes**
+**Step 5: Identify secondary indexes**
 In this case, we do not need a secondary index.
 
-### DynamoDB Operations
+### DynamoDB operations
 
 In this section, we will do some database operations based on the above scenario. We will use [AWS CLI](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.CLI.html) in this exercise. You must be logged in to the AWS Console and connected to AWS using CLI.
 
-#### Create Table
+#### Create table
 
 We will create a table called `device_data` with two attributes, `device_id` and `datacount`. We are also going to define the partition and hash key. We do not need to define the other attributes. Only the primary key and local indexes need to be defined during table creation. To create the table, run the command below.
 
@@ -209,15 +210,15 @@ The response is in JSON format.
 }
 ```
 
-You can have a better view of the data we inserted on the AWS Console. In your logged in AWS console, Navigate to the DynamoDB table we created as shown in the screenshot below.
+You can have a better view of the data we inserted on the AWS console. In your logged in AWS console, Navigate to the DynamoDB table we created as shown in the screenshot below.
 
-![AWS Console DynamoDB Query](/engineering-education/getting-started-with-aws-dynamodb/aws-console-dynamodb-query.jpg)
+![AWS console DynamoDB query](/engineering-education/getting-started-with-aws-dynamodb/aws-console-dynamodb-query.jpg)
 
 #### Update
 
 In this scenario, our table does not require an update operation.
 
-#### Delete Table
+#### Delete table
 
 To delete a table in AWS CLI, use the command below.
 
