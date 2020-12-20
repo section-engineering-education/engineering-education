@@ -1,23 +1,25 @@
-Routing
+#Understanding Network Routing
 When using the internet, our devices send requests to servers stored in some data center in form of packets. Likewise, the servers return back responses to the requests using data packets.
 These packets' journey from the data center to our devices whether smartphones, laptops etc form the internet's backbone.
 However, controlling these packets from the data source to the destination through the wide complicated global network is not a walk in the park.
 This is where routing comes in. It is done by specialised networking hardware called routers.
 Routers select an appropriate path that will ensure the packets arrive faster and safely.
+
 Take an example of when one wants to get home situated in an estate from his/her workplace located in a city center. During rush hours, cities are usually characterised by traffic snarlups on their roads. The person will then use Google maps to check the route with less traffic and manouvre the way home.
 In the same way, routers use algorithms to make logical data decisions to select appropriate paths for forwarding the packets. The decisions are made using the current network states of where the packets would pass through.
 
 There are two types of routing:
-Static
-Dynamic
+**-Static**
+**-Dynamic**
 
-In static routing, the routing tables information don't change after being manually set up by a network administrator. In a case of a network break in the link, this information doesn't change unless the change is done manually.
-This is the exact opposite of dynamic routing where the tables update themselves dynamically in discrete time steps according to the current network states such as link failures, traffic changes etc.
-The Link state algorithm is used in dynamic routing. It basically checks the states of the links between nodes and make decisions.
-Link State algorithm
+In **static routing**, *the routing tables information don't change after being manually set up* by a network administrator. In a case of a network break in the link, this information doesn't change unless the change is done manually.
+This is the exact opposite of **dynamic routing** where *the tables update themselves dynamically in discrete time steps according to the current network states* such as link failures, traffic changes etc.
+A commonly used algorithm in dynamic routing is the **Link State algorithm**. It basically checks the states of the links between nodes and make decisions.
+Let's discuss it.
+###Link State algorithm
 Link state consists of two algorithms:
-Dikjstra's shortest path algorithm
-Reliable flooding algorithm
+**-Dikjstra's shortest path algorithm**
+**-Reliable flooding algorithm**
 
 Dijkstra's algorithm
 These algorithm is too wide to explain it in detail here. Here I will only discusss it briefly and later on, I will dive into it in detail in another article.
