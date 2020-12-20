@@ -1,13 +1,13 @@
 #Understanding Network Routing
 ![Routing](routing.jpeg)
-When using the internet, our devices send requests to servers stored in some data center in form of packets. Likewise, the servers return back responses to the requests using data packets.
-These packets' journey from the data center to our devices whether smartphones, laptops etc form the internet's backbone.
+When using the internet, our devices send requests to servers stored in various data centers in form of packets. Likewise, the servers return back responses to the requests using data packets.
+These packets' journey to the data center from our devices and vice versa form the internet's backbone.
 However, controlling these packets from the data source to the destination through the wide complicated global network is not a walk in the park.
 This is where routing comes in. It is done by specialised networking hardware called routers.
 Routers select an appropriate path that will ensure the packets arrive faster and safely.
 
-Take an example of when one wants to get home situated in an estate from his/her workplace located in a city center. During rush hours, cities are usually characterised by traffic snarlups on their roads. The person will then use Google maps to check the route with less traffic and manouvre the way home.
-In the same way, routers use algorithms to make logical data decisions to select appropriate paths for forwarding the packets. The decisions are made using the current network states of where the packets would pass through.
+Take an example of when one wants to get home situated in an estate from his/her workplace located in a city center. During rush hours, cities are usually characterised by traffic snarlups on their roads. The person will then use Google maps to check the route with less traffic and manouvre all the way home.
+In the same way, routers use algorithms to make logical data decisions for selecting appropriate paths for forwarding the packets. The decisions are made using the current network states of where the packets would pass through.
 
 There are two types of routing:
 **-Static**
@@ -23,8 +23,8 @@ Link state consists of two algorithms:
 **-Reliable flooding algorithm**
 
 ####Dijkstra's algorithm
-I will briefly discuss this algorithm for it is too wide to explain in detail here .Later on, I will dive into it in detail in my next article.
-This algorithm was created by a Dutch computer scientist Edsger Wybe Dijkstra and with it routers find the shortest path between nodes in a network.
+I will briefly discuss this algorithm for it is too wide to explain in detail here. Later on, I will dive into it in detail in my next article.
+This algorithm was created by a Dutch computer scientist Edsger Wybe Dijkstra and with it, routers find the shortest path between nodes in a network.
 It starts with the router at the source node and analyses the network using all the parameters and finds the shortest path between it and other nodes.
 Once a shortest path between a node and the source node, the node is marked as **visited** and sequentially **added to the path**.
 The algorithm stores the currently known shortest path from each node to the source node and it will update this information if it finds a shorter path.
@@ -38,9 +38,10 @@ We have this list of distances initially.
 We got zero as the first distance because it is the distance from the source node to itself.
 Since other distances have not been determined yet, we show them using the infinity symbol.
 We also have a list of visited nodes. We mark node 0 because we are starting with it. 
+(In the graph, we mark a visited node by adding a red border around it.)
+
 **{0}**
 
-(In the graph, we mark a visited node by adding a red border around it.)
 ![Graph2](routing3.png)
 We start checking the distance of adjacent nodes to 0(nodes 1 & 2).
 We only add a node if the distance between node 0 and the node if the shortest.
