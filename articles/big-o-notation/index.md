@@ -10,7 +10,7 @@ Given functions **f(n)** and **g(n)**, we do say that *f(n) is Big O of g(n)* be
 
 Therefore Big O, pronounced as Big Oh), describes how good the performance of your algorithm is as the input data grows larger.
  
-Big O assists us in knowing which algorithm suits which task and which one is not by estimating the different runtimes of the algorithms. The estimation of the manner in which the runtime varies with the problem size is called the runtime complexity of an algorithm.
+It assists us in knowing which algorithm suits which task and which one is not by estimating the different runtimes of the algorithms. The estimation of the manner in which the runtime varies with the problem size is called the **runtime complexity** of an algorithm.
 
 An easy illustration of how different algorithms use different durations is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles apart. The information was given to the duo using  data signals and an envelope respectively. Ironicallly, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant speed while the network's delivery time was inversely proportional to the amount of information being sent.
 
@@ -19,6 +19,8 @@ There are several notations of the Big O and here am going to discuss a few of t
 -**O(n)**
 -**O(n<sup>2)**
 -**O(log<sub>2</sub>n)**
+
+At the end of the article, we will estimate the Big O of a sample algorithm.
 
 *In the code examples, I used Python for illustrations but you can rewrite them using a language of your choice.*
 ###1. O(1) Constant Runtime complexity
@@ -43,11 +45,13 @@ If the array passed in as an argument only has **1** element, then the algorithm
 The algorithm varies with the square of the problem size, n.
 Example:
 `def add_array_elements(array):`  
-    `sum = 0 `   
-    `  for i in range (len(array)): `       
-    `    for j in range (len(array)): `          
-    `      sum += array[i]+array[j] `         
-    `return sum`
+
+    sum = 0  
+     for i in range (len(array)):      
+        for j in range (len(array)):         
+         sum += array[i]+array[j] 
+         
+    return sum
 
 The code has two loops, the *outer* and the *inner*. The outer loop iterates n times giving an element to the inner loop which again loops n times, per one loop of the outer array, adding the element given by the outer array and all the array elements.
 
@@ -140,5 +144,41 @@ We will base our inferences based on the code below:
 `array = [1,2,3,4,5,6,7,8,9]`
 `value = 7`
 
-The best case for linear_search() would be finding the value 1 O(1) while the worst case would be finding the last array element or a value not included in the array O(n).
-This is due to the fact that it needs to traverse each element giving a O(n) complexity.
+The best case for `linear_search()` would be finding the value 1, O(1), while the worst case would be finding the last array element or a value not included in the array O(n). This is due to the fact that it needs to traverse each element giving a O(n) complexity.
+
+The best case for the `binary_search()` would be searching the value of 5, which is the value in the middle of the array O(1).
+The worst case would be searching the value 1 or 10, the first and the last elements of the array, or a value not included in the array.
+This is because the algorithm needs to make the halvings necessary until it reaches the first and the last elements (O(log<sub>2</sub>n)).
+
+
+##Estimating the Big O notation of a code
+We need to always look at the worst case scenario perspective.
+We will estimate the Big O of the code below (We are simply estimating its complexity, I have not put any conditional checks for the code):
+`def array_arithmetic(array):`
+    
+    value = 0  # O(1) complexity
+        for i in range (len(array)): # O(n) complexity
+    
+        for j in range (len(array)-10): # O(10) complexity
+        
+            for k in range (len(array)//2): # O(n/2) complexity
+                
+                value += array[i] + array[j] + array[k] # O(1) complexity
+           
+    return value # O(1) complexity
+
+We should start with the innermost loop.
+1. The inner most loop has **O(n/2)** complexity while its operation has **O(1)** complexity.
+    The inner most loop therefore has **(n/2) * (1)** complexity.
+
+2. The second inner loop has O(10) complexity and the inner loop (in No. 1) of this loop has **O(n/2)** meaning the whole second inner loop has **(10) * (n/2) = O(5n)** complexity.
+
+3. Lastly, outer loop has **O(n)** complexity. The inner loop (No. 2) of this outer loop has in total **O(5n)** complexity.
+So, they have **n*5n = 5n<sup>2</sup>** complexity.
+
+4. Combining the loop's complexity together with the two operations outside the loop, we get **1+1+5n<sup>2</sup> = O(2+5n<sup>2</sup>)**.
+
+We drop all constants when estimating the Big O notation in that we remain with  O(n<sup>2</sup>) instead of **O(2+5n<sup>2</sup>)**. 
+The code above therefore has **O(n<sup>2</sup>)** complexity.
+
+That's all for now. Hope you will consider the scalability of your algorithm next time you write one.
