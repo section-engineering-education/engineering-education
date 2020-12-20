@@ -43,20 +43,20 @@ We also have a list of visited nodes. We mark node 0 because we are starting wit
 **{0}**
 
 ![Graph2](routing3.png)
-We start checking the distance of adjacent nodes to 0(nodes 1 & 2).
-We only add a node if the distance between node 0 and the node if the shortest.
-From 0 to 1, the distance is 2 while from 0 to 2, the distance is 6. Clearly, the distance to node 1 is the shortest, so we add node 1 to the path.
+We start checking the distance of adjacent nodes to 0 (nodes 1 & 2).
+We only add a node if the distance between node 0 and the node is the shortest.
+From node 0 to node 1, the distance is 2 while from 0 to 2, the distance is 6. Clearly, the distance to node 1 is the shortest, so we add node 1 to the path.
 ![Graph3](routing4.png)
-We then mark 1 as visited and add it to the path.
+We then mark 1 as visited and add it to our list.
 ![Distances2](routing5.png)
 
 **{0,1}**
 
 
-Next nodes are 2 and 3. 
-From 0-1-3 is (2+5) = 7.
-From 0-2 is 6.
-We will choose a node with the shortest distance to node 0 which is 2.
+Next nodes are node 2 and node 3. 
+The distance 0-1-3 is (2+5) = 7.
+The distance between 0-2 is 6.
+We will choose a node with the shortest distance from node 0 which is node 2.
 ![Graph4](routing6.png)
 
 ![Distances3](routing8.png)
@@ -74,15 +74,15 @@ The final result will be this:
 **{0,1,2,3,4,5,6}**
 
 ####Reliable flooding algorithm
-As the name suggests, *it floods each router in a network with all other neighbouring routers information* such as the IP addresses, costs of the network, health of the networks etc using **link state packets** of the routers.
+As the name suggests, *it floods each router in a network with all other neighbouring routers network state information* such as the IP addresses, costs of the network, health of the networks etc using **link state packets** of the routers.
  Take for example a LAN with 5 routers A, B, C, D, E .
-
-Each router has its state info which it passes to its neighbours. A will send to B. B to C and D until all of them have all the states.
-They can then independently use the Dijkstra's algorithm to foward packets.
+![LAN-1](LAN-1.png)
+Each router has its state info which it passes to its neighbours. A will send to B. B to C & D and so on until all of them have all the states.
+They can then independently apply the Dijkstra's algorithm to foward packets.
 That said, this is not always the case with interconnected routers as shown below where the process of passing the link state packets goes on and on without stopping hence creating a condition called **looping** e.g A will pass its packet to B, B then forwards it to C and C passes it again to A.
-
+![LAN-2](LAN-2.png)
 A **unique ID** is given to each link state packets so that this problem is solved.
-When C and B receives the packet with the unique ID from A , C does not send it again to B and B does not send it to C.
+When C and B receives the packet with the unique ID from A , it(A) does not send it again to B and B does not send it to C.
 At the global level, applying flooding can be unachievable therefore protocols are required to help in implementing it.
 I will talk about one, the **OSPF**(Open Shortest Path First) protocol.
 This protocol divides the wide networks into **local areas** forming a **backbone area** which shares atleast one router from the bordering local areas. These shared routers form the border routers.
