@@ -89,21 +89,35 @@ Have a look at the code and graphical illustrations below:
 #####Step 1
 The code takes in a sorted array with 9 elements through the function `binary_search()` and searches for the value, the parameter named query, 7. It divides it in half and checks if 7 is in the middle.
 
+| 1|2|3|4|5|6|7|8|9|
+--|--|--|--|---|----|--|---|---|
+
 
 #####Step 2
 The middle value is 5 and our algorithm checks it with 7 and since 7 is greater than 5, then it will move to the right hand side since 7 is greater than 5.
 
+| 1|2|3|4|~~5~~|6|7|8|9|
+--|--|--|--|---|----|--|---|---|
 
 #####Step 3
 We now have an array with 4 elements. The algorithm will divide it by half to get two arrays with 6 & 7 and 8 & 9.
 The one with 8 & 9 will be ignored and the algorithm will now check and compare 6 and 7.
 
+|~~6~~|~~7~~|8|9|
+|----|--|---|---|
 
 #####Step 4
 The comparison will be done and we will arrive at 7.
-
+|7|
+|---|
 Further example inputs and the **maximum** number of steps to be taken are shown in the table below:
-
+| n |log<sub>2</sub>n|
+|---|---|
+|10| 4|
+|100| 7|
+|1000| 10|
+|10000| 14|
+|100000| 17|
 
 ##Determining the Big-O Notation of a Code
 Here we look at the best case and worst case scenarios.
