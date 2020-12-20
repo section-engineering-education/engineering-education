@@ -59,7 +59,7 @@ The distance between 0-2 is 6.
 We will choose a node with the shortest distance from node 0 which is node 2.
 ![Graph4](routing6.png)
 
-![Distances3](routing8.png)
+![Distances3](routing7.png)
  This will continue till all the nodes are marked as visited and added.
 
 
