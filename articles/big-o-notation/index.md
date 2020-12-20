@@ -49,7 +49,8 @@ If the array passed in as an argument only has **1** element, then the algorithm
 ###3. O(n<sup>2</sup>) Quadratic Runtime complexity
 The algorithm varies with the square of the problem size, n.
 Example:
-`def add_array_elements(array):`  
+```python
+def add_array_elements(array):
 
     sum = 0  
      for i in range (len(array)):      
@@ -57,6 +58,7 @@ Example:
          sum += array[i]+array[j] 
          
     return sum
+```
 
 The code has two loops, the *outer* and the *inner*. The outer loop iterates n times giving an element to the inner loop which again loops n times, per one loop of the outer array, adding the element given by the outer array and all the array elements.
 
