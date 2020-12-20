@@ -21,14 +21,15 @@ Link state consists of two algorithms:
 **-Dikjstra's shortest path algorithm**
 **-Reliable flooding algorithm**
 
-Dijkstra's algorithm
-These algorithm is too wide to explain it in detail here. Here I will only discusss it briefly and later on, I will dive into it in detail in another article.
+####Dijkstra's algorithm
+I will briefly discuss this algorithm for it is too wide to explain in detail here .Later on, I will dive into it in detail in my next article.
 This algorithm was created by a Dutch computer scientist Edsger Wybe Dijkstra and with it routers find the shortest path between nodes in a network.
-It starts with the source node and analyses the network using all parameters and finds the shortest path between it and other nodes.
-Once a shortest path between a node and the source node, the node is marked as visited and sequentially added to the path.
-The algorithm stores the currently known shortest path from each node to the source node and will update this information if it finds a shorter path.
+It starts with the router at the source node and analyses the network using all the parameters and finds the shortest path between it and other nodes.
+Once a shortest path between a node and the source node, the node is marked as **visited** and sequentially **added to the path**.
+The algorithm stores the currently known shortest path from each node to the source node and it will update this information if it finds a shorter path.
 This continues until all nodes are added and a path is established.
-  An example
+
+  ***Example***
 The algorithm will generate the shortest path from node 0 to all other nodes 1,2,3,4,5,6 in the graph assuming the weights of the graph represents distances between the nodes.
 
 We have this list of distances initially.
