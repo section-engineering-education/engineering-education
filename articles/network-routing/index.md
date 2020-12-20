@@ -1,4 +1,5 @@
 #Understanding Network Routing
+![Routing](routing.jpeg)
 When using the internet, our devices send requests to servers stored in some data center in form of packets. Likewise, the servers return back responses to the requests using data packets.
 These packets' journey from the data center to our devices whether smartphones, laptops etc form the internet's backbone.
 However, controlling these packets from the data source to the destination through the wide complicated global network is not a walk in the park.
@@ -31,23 +32,22 @@ This continues until all nodes are added and a path is established.
 
   ***Example***
 The algorithm will generate the shortest path from node 0 to all other nodes 1,2,3,4,5,6 in the graph assuming the weights of the graph represents distances between the nodes.
-
+![Graph1](routing1.png)
 We have this list of distances initially.
-
-
+![Distances1](routing2.png)
 We got zero as the first distance because it is the distance from the source node to itself.
 Since other distances have not been determined yet, we show them using the infinity symbol.
 We also have a list of visited nodes. We mark node 0 because we are starting with it. 
 **{0}**
 
-In the diagram, we mark a visited node by adding a red border around it.
-
-
+(In the graph, we mark a visited node by adding a red border around it.)
+![Graph2](routing3.png)
 We start checking the distance of adjacent nodes to 0(nodes 1 & 2).
 We only add a node if the distance between node 0 and the node if the shortest.
 From 0 to 1, the distance is 2 while from 0 to 2, the distance is 6. Clearly, the distance to node 1 is the shortest, so we add node 1 to the path.
-
+![Graph3](routing4.png)
 We then mark 1 as visited and add it to the path.
+![Distances2](routing5.png)
 
 **{0,1}**
 
@@ -56,14 +56,19 @@ Next nodes are 2 and 3.
 From 0-1-3 is (2+5) = 7.
 From 0-2 is 6.
 We will choose a node with the shortest distance to node 0 which is 2.
- This will continue till all the bodes are marked as visited and added.
+![Graph4](routing6.png)
+
+![Distances3](routing7.png)
+ This will continue till all the nodes are marked as visited and added.
 
 
 
 **{0,1,2}**
 
 The final result will be this:
+![Graph5](routing8.png)
 
+![Distances4](routing9.png)
 
 **{0,1,2,3,4,5,6}**
 
