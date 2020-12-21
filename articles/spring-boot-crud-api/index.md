@@ -48,7 +48,6 @@ The easiest way to create a new spring boot application is to use the [spring in
 ### Configuring Spring Datasource, JPA, Hibernate
 We are using H2 database which is an in-memory database meaning the data stored in the database is destroyed if the application is stopped ore restarted.
 
-Under src/main/resources folder, open application.properties and write these lines.
 In the `resources` folder within the `src/main` folder, open `application.properties` file and write the below properties.
 ```groovy
 spring.datasource.url=jdbc:h2:mem:todo
