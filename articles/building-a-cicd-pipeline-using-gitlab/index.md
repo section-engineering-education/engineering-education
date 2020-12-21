@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/building-a-cicd-pipeline-using-gitlab/hero.jpg
-    alt:  example image
+    alt: CI/CD Pipeline using Gitlab example image
 ---
 GitLab is a Git-based platform, similar to [Github](https://github.com/), that provides an array of tools and technologies for various aspects of the [software development lifecycle](https://www.tutorialspoint.com/sdlc/sdlc_overview.htm) (SDLC).
 <!--more-->
