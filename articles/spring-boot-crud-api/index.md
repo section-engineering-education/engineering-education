@@ -57,7 +57,7 @@ spring.datasource.password=password
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
 - `spring.datasource.username` & `spring.datasource.password` properties are the H2 database username and password. The default H2 database `username` is `sa` and `password` is `password`.
-- Spring Boot uses Hibernate for Spring Data JPA implementation. Configure `spring.jpa.database-platform=org.hibernate.dialect.H2Dialect`.
+- Spring Boot uses Hibernate for Spring Data JPA implementation, that is why we configure `spring.jpa.database-platform=org.hibernate.dialect.H2Dialect`.
 - `spring.datasource.url=jdbc:h2:mem:todo` species the database url and the database name. In our case the database name is `todo`.
 
 ### Todo model
