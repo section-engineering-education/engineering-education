@@ -1,6 +1,6 @@
 ### Understanding Network Routing
 
-![Routing](routing.jpeg)
+![Routing](/engineering-education/network-routing/routing.jpeg)
 
 When using the internet, our devices send requests to servers stored in various data centers in form of packets. Likewise, the servers return responses to the requests using data packets.</br>
 These packets' journey to the data center from our devices and vice versa form the internet's backbone.</br>
@@ -35,7 +35,7 @@ This continues until all nodes are added and a path is established.</br>
 *Example*</br>
 The algorithm will generate the shortest path from node 0 to all other nodes 1,2,3,4,5,6 in the graph assuming the weights of the graph represents distances between the nodes.
 
-![Graph1](routing1.png)
+![Graph1](/engineering-education/network-routing/routing1.png)
 
 We have this list of distances initially.
 
@@ -56,14 +56,14 @@ We also have a list of visited nodes. We mark node 0 because we are starting wit
 
 **{0}**
 
-![Graph2](routing3.png)
+![Graph2](/engineering-education/network-routing/routing3.png)
 
 We start checking the distance of adjacent nodes to 0 (nodes 1 & 2).
 We only add a node if the distance between node 0 and the node is the shortest.
 From node 0 to node 1, the distance is 2 while from 0 to 2, the distance is 6. The distance to node 1 is the shortest, so we add node 1 to the path.</br>
 *(We will mark added nodes by adding an asterisk beside them)*
 
-![Graph3](routing4.png)
+![Graph3](/engineering-education/network-routing/routing4.png)
 
 We then mark node 1 as visited and add it to our list. We add node 2 for we know its distance but we will mark it since it is not yet visited.
 
@@ -85,7 +85,7 @@ The distance 0-1-3 is (2+5) = 7.
 The distance between 0-2 is 6.</br>
 We will choose a node with the shortest distance from node 0 which is node 2.</br>
 
-![Graph4](routing6.png)
+![Graph4](/engineering-education/network-routing/routing6.png)
 
 |NODE|DISTANCE|
 ---|---|
@@ -103,7 +103,7 @@ We will choose a node with the shortest distance from node 0 which is node 2.</b
 
 The final result will be this:
 
-![Graph5](routing8.png)
+![Graph5](/engineering-education/network-routing/routing8.png)
 
 
 |NODE|DISTANCE|
@@ -123,13 +123,13 @@ As the name suggests, *it floods each router in a network with all other neighbo
 
  Take for example a LAN with 5 routers A, B, C, D, E.
 
-![LAN-1](LAN-1.png)
+![LAN-1](/engineering-education/network-routing/LAN-1.png)
 
 Each router has its state info which it passes to its neighbors. A will send to B. B to C & D and so on until all of them have all the states.</br>
 They can then independently apply Dijkstra's algorithm to forward packets.</br>
 That said, this is not always the case with interconnected routers as shown below where the process of passing the link state packets goes on and on without stopping hence creating a condition called **looping** e.g A will pass its packet to B, B then forwards it to C and C passes it again to A.
 
-![LAN-2](LAN-2.png)
+![LAN-2](/engineering-education/network-routing/LAN-2.png)
 
 A **unique ID** is given to each link-state packets so that this problem is solved.
 When C and B receives the packet with the unique ID from A, it (A) does not send it again to B and B does not send it to C.</br>
