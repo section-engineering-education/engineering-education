@@ -76,6 +76,7 @@ Within the `model` package created above create a Java class with the name `Todo
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Builder;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -89,6 +90,7 @@ import java.sql.Timestamp;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Todo {
     @Id
     @GeneratedValue
@@ -119,6 +121,7 @@ public class Todo {
 - `@Data` annotation is from project Lombok. It generates the getters and setters for all the fields that we have in the todo class, equals method, and a toString method.
 - `@NoArgsConstructor` annotation is from project Lombok and it generates an empty constructor for our `Todo` class.
 - `@AllArgsConstructor` annotation is from project Lombok and it generates a constructor will all the fields that are available in our `Todo` class.
+- `@Builder` annotation is from project Lombok and it makes it possible for us to use the builder pattern with our `Todo` model.
 
 ### Creating the Repository interface
 
