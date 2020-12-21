@@ -121,7 +121,7 @@ public class Todo {
 - `@Data` annotation is from project Lombok. It generates the getters and setters for all the fields that we have in the todo class, equals method, and a toString method.
 - `@NoArgsConstructor` annotation is from project Lombok and it generates an empty constructor for our `Todo` class.
 - `@AllArgsConstructor` annotation is from project Lombok and it generates a constructor will all the fields that are available in our `Todo` class.
-- `@Builder` annotation is from project Lombok and it makes it possible for us to use the builder pattern with our `Todo` model.
+- `@Builder` annotation is from project Lombok. It makes it possible for us to use the builder pattern with our `Todo` model. We will use the builder pattern later in the article when creating initial bootstrap data.
 
 ### Creating the Repository interface
 
@@ -285,7 +285,7 @@ public class TodoController {
 
 
 ### Creating a bootstrapper
-Data bootstrapper creates and loads the initial data whenever the application is run.
+Data bootstrapper creates and loads the initial data whenever the application is run. We will make use of the builder pattern we mention while creating the `Todo` model.
 In the root package of our project, create a package with the name `bootstrap`.
 In the `bootstrap` package created above create a Java class with the name `TodoLoader`.
 
@@ -379,6 +379,6 @@ Make a `DELETE` request to `http://127.0.0.1:8080/api/v1/todo/2` adding to the e
 ![](delete-todo.png)
 
 ### Conclusion
-Now that you have learned how to create a Restful web service in Spring Boot, Clone the project [here]() and `IN_PROGRESS` status to our `TodoStatus` enum in the `models'` package.
+Now that you have learned how to create a Restful web service in Spring Boot, Clone the project [here](https://github.com/paulodhiambo/springbootcrud) and `IN_PROGRESS` status to our `TodoStatus` enum in the `models'` package.
 
 In our next secure our Restful endpoints and handle various exceptions in our application.
