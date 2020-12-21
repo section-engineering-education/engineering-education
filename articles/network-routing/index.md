@@ -11,26 +11,27 @@ Routers select an appropriate path that will ensure the packets arrive faster an
 Take an example of when one wants to get home situated in an estate from his/her workplace located in a city center. During rush hours, cities are usually characterised by traffic snarlups on their roads. The person will then use Google maps to check the route with less traffic and manouvre all the way home.
 In the same way, routers use algorithms to make logical data decisions for selecting appropriate paths for forwarding the packets. The decisions are made using the current network states of where the packets would pass through.
 
-There are two types of routing:
-**-Static**
-**-Dynamic**
+There are two types of routing:</br>
+**-Static**</br>
+**-Dynamic**</br>
 
-In **static routing**, *the routing tables information don't change after being manually set up* by a network administrator. In a case of a network break in the link, this information doesn't change unless the change is done manually.
-This is the exact opposite of **dynamic routing** where *the tables update themselves dynamically in discrete time steps according to the current network states* such as link failures, traffic changes etc.
-A commonly used algorithm in dynamic routing is the **Link State algorithm**. It basically checks the states of the links between nodes and makes forwarding decisions.
-Let's discuss it.
+In **static routing**, *the routing tables information don't change after being manually set up* by a network administrator. In a case of a network break in the link, this information doesn't change unless the change is done manually.</br>
+This is the exact opposite of **dynamic routing** where *the tables update themselves dynamically in discrete time steps according to the current network states* such as link failures, traffic changes etc.</br>
+A commonly used algorithm in dynamic routing is the **Link State algorithm**. It basically checks the states of the links between nodes and makes forwarding decisions.</br>
+
+Let's discuss it.</br>
 **Link State algorithm**
-Link state consists of two algorithms:
-**-Dikjstra's shortest path algorithm**
-**-Reliable flooding algorithm**
+Link state consists of two algorithms:</br>
+**-Dikjstra's shortest path algorithm**</br>
+**-Reliable flooding algorithm**</br>
 
 ***Dijkstra's algorithm***
-I will briefly discuss this algorithm for it is too wide to explain in detail here. Later on, I will dive into it in detail in my next article.
-This algorithm was created by a Dutch computer scientist Edsger Wybe Dijkstra and with it, routers find the shortest path between nodes in a network.
-It starts with the router at the source node and analyses the network using all the parameters and finds the shortest path between it and other nodes.
-Once a shortest path between a node and the source node, the node is marked as **visited** and sequentially **added to the path**.
-The algorithm stores the currently known shortest path from each node to the source node and it will update this information if it finds a shorter path.
-This continues until all nodes are added and a path is established.
+I will briefly discuss this algorithm for it is too wide to explain in detail here. Later on, I will dive into it in detail in my next article.</br>
+This algorithm was created by a Dutch computer scientist Edsger Wybe Dijkstra and with it, routers find the shortest path between nodes in a network.</br>
+It starts with the router at the source node and analyses the network using all the parameters and finds the shortest path between it and other nodes.</br>
+Once a shortest path between a node and the source node, the node is marked as **visited** and sequentially **added to the path**.</br>
+The algorithm stores the currently known shortest path from each node to the source node and it will update this information if it finds a shorter path.</br>
+This continues until all nodes are added and a path is established.</br>
 
   *Example*
 The algorithm will generate the shortest path from node 0 to all other nodes 1,2,3,4,5,6 in the graph assuming the weights of the graph represents distances between the nodes.
