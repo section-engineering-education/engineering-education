@@ -43,7 +43,7 @@ The easiest way to create a new spring boot application is to use the [spring in
 - Extract the zip file and open the project in your favorite IDE.
 - Sync the dependencies with Gradle.
 
-![](generate-project.png)
+![Project setup](/engineering-education/spring-boot-crud-api/generate-project.png)
 
 ### Configuring Spring Datasource, JPA, Hibernate
 We are using the H2 database which is an in-memory database meaning the data stored in the database is destroyed if the application is stopped or restarted.
