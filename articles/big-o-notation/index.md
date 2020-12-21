@@ -113,19 +113,19 @@ The code takes in a sorted array with 9 elements through the function `binary_se
 **Step 2**
 The middle value is 5 and our algorithm checks it with 7 and since 7 is greater than 5, then it will move to the right hand side since 7 is greater than 5.
 
-| 1|2|3|4|<h6 style='color:red'>5</h6>|6|7|8|9|
+| 1|2|3|4|~~5~~|6|7|8|9|
 --|--|--|--|---|----|--|---|---|
 
 **Step 3**
 We now have an array with 4 elements. The algorithm will divide it by half to get two arrays with 6 & 7 and 8 & 9.
 The one with 8 & 9 will be ignored and the algorithm will now check and compare 6 and 7.
 
-|<h6 style='color:red'>6</h6>|<h6 style='color:red'>7</h6>|8|9|
+|~~6~~|~~7~~|8|9|
 |----|--|---|---|
 
 **Step 4**
 The comparison will be done and we will arrive at 7.
-|<h6 style='color:red'>7</h6>|
+|7|
 |---|
 Further example inputs and the **maximum** number of steps to be taken are shown in the table below:
 | n |log<sub>2</sub>n|
