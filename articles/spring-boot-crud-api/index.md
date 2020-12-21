@@ -330,11 +330,13 @@ public class TodoLoader implements CommandLineRunner {
 - `@Component` annotation informs Spring that this class is a Spring component.
 
 The final project structure should be as shown below.
+
 ![](project-structure.png)
 
 ### Testing the CRUD endpoints
 **Getting the list of todos**
 Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo` to get all the `todos`.
+
 ![](get-todos.png)
 
 **Getting a `Todo` by id**
@@ -369,6 +371,7 @@ Make a `PUT` request to `http://127.0.0.1:8080/api/v1/todo/2` adding the id of t
 
 **Deleting a `Todo`**
 Make a `DELETE` request to `http://127.0.0.1:8080/api/v1/todo/2` adding to the end of the URL the id of the `todo` to delete, in our case the id is 2.
+
 ![](delete-todo.png)
 
 ### Conclusion
