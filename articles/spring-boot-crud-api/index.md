@@ -211,7 +211,7 @@ public class TodoServiceImpl implements TodoService {
 }
 
 ```
-we create and initialize our `TodoRepository` the constructor the above class so as to be able to use the various methods that `CrudRepository` provides.
+We create and initialize the `TodoRepository` in the constructor of the above class to be able to use the various methods that CrudRepository provides.
 - `@service` annotation makes Spring context to be aware of this class as a service.
 
 ### Creating the Rest API controller
@@ -244,13 +244,12 @@ public class TodoController {
         List<Todo> todos = todoService.getTodos();
         return new ResponseEntity<>(todos, HttpStatus.OK);
     }
-    //The function receives a GET request with id in the url path, processes it and returns a Todo with the specified Id
+    //The function receives a GET request, processes it, and gives back a list of Todo as a response.
     @GetMapping({"/{todoId}"})
     public ResponseEntity<Todo> getTodo(@PathVariable Long todoId) {
         return new ResponseEntity<>(todoService.getTodoById(todoId), HttpStatus.OK);
     }
-    //The function receives a POST request, processes it, creates a new Todo and saves it to the database and returns a resource link to the created todo.
-    @PostMapping
+    //The function receives a POST request, processes it, creates a new Todo and saves it to the database, and returns a resource link to the created todo.    @PostMapping
     public ResponseEntity<Todo> saveTodo(@RequestBody Todo todo) {
         Todo todo1 = todoService.insert(todo);
         HttpHeaders httpHeaders = new HttpHeaders();
