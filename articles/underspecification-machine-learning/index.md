@@ -1,8 +1,22 @@
-![hero](/engineering-education/underspecification/hero.jpg)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/underspecification-machine-learning/
+title: Correcting Dataset Shift in Machine Learning
+description: This article will be going over Dataset Shift and how to correct it in machine learning models to prevent performance degradation.
+author: collins-ayuya
+date: 2020-11-30T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-[Image Source](https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80)
-
-It is common to have machine learning models perform well after training but offering poor performance after being deployed. A possible cause of this is known as underspecification. Models are supposed to simulate the real world. But, a challenge that manifests is that there is no guarantee that the model one selects is the absolute best for one's intended application or reflects best the application's logic. This article sheds light on the challenge of underspecification and how to address it.
+  - url: /engineering-education/underspecification-machine-learning/hero.jpg
+    alt: correcting data shift image example
+---
+It is common to have machine learning models perform well after training but offering poor performance after being deployed. A possible cause of this is known as underspecification. 
+<!--more-->
+Models are supposed to simulate the real world. But, a challenge that manifests is that there is no guarantee that the model one selects is the absolute best for one's intended application or reflects best the application's logic. This article sheds light on the challenge of underspecification and how to address it.
 
 ### Contents
 
