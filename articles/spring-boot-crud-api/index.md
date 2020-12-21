@@ -2,9 +2,9 @@ In this tutorial, we are going to build a Spring Boot Rest CRUD API with Gradle 
 Rest APIs makes it possible to establish a communication between a backend server and a frontend web or mobile applications.
 
 ### Prerequisites
-- Basic knowledge of [Spring framework and Sprin Boot](https://spring.io/guides/gs/spring-boot/)
+- Basics of [Spring framework and Spring Boot](https://spring.io/guides/gs/spring-boot/)
 - Basic Knowledge of [Java programming language](https://www.javatpoint.com/java-tutorial)
-- [Java development kit](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) (JDK) installed on your computer.
+- [Java development kit](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) (JDK) installed and setup on your computer.
 - Your favourite Java IDE installed. I use [Intellij](https://www.jetbrains.com/idea/download/#section=windows)
 
 To verify if Java and java compiler are installed and configured correctly on your system, Open the terminal and type in the command `java --version` to see the version of java installed and `javac --version` to see the version of java compiler installed.
@@ -31,7 +31,7 @@ Rest API CRUD operations map to HTTP verbs and SQL operations as shown in the ta
 
 
 ### Project setup
-The easiest way to creat a spring boot application is to use the [spring initializr](https://start.spring.io/).
+The easiest way to create a new spring boot application is to use the [spring initializr](https://start.spring.io/).
 
 - Open [spring initializr](https://start.spring.io/) in your web browser.
 - Choose Gradle project.
@@ -49,6 +49,7 @@ The easiest way to creat a spring boot application is to use the [spring initial
 We are using H2 database which is an in-memory database meaning the data stored in the database is destroyed if the application is stopped ore restarted.
 
 Under src/main/resources folder, open application.properties and write these lines.
+In the `resources` folder within the `src/main` folder, open `application.properties` file and write the below properties.
 ```groovy
 spring.datasource.url=jdbc:h2:mem:todo
 spring.datasource.driverClassName=org.h2.Driver
@@ -93,7 +94,7 @@ import java.sql.Timestamp;
 public class Todo {
     @Id
     @GeneratedValue
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false)
     Long id;
     @Column
     String title;
@@ -113,7 +114,7 @@ public class Todo {
 ```
 - `@Entity` annotation shows that the class is a persistent Java class.
 - `@Id` annotation shows that the annotated field is the primary key.
-- `@GeneratedValue` annotation is used to define generation strategy for the primary key.
+- `@GeneratedValue` annotation is used to specify the generation strategy used for primary key.
 - `@Column` annotation defines the column in database that maps annotated field.
 -  `@CreationTimestamp` annotation is a JPA annotation thats automatically update the `todo` creation timestamp.
 - `@UpdateTimestamp` annotation is a JPA annotation thats automatically update the `todo` last modified timestamp.
