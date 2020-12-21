@@ -1,5 +1,7 @@
 #Understanding the Big O notation
+
 ![bigoh](bigo.png)
+
 We all need a way to measure the performance (efficiency) of our algorithms as they scale up.
 The analysis of the efficiency is performed by considering the amount of resources, in this case **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.
 The space used is determined by the number and sizes of variables together with the data structures being used while the time is determined by the elementary operations that must be performed during the algorithm execution.
@@ -32,7 +34,7 @@ def first_element(array):
 ```
 The function `first_element()` takes an array passed in and prints the first element and does not consider how many elements are present in the array.
 Take a look at the graph representation below:
-![01](o_1.png)
+![01](o-1.png)
 ###2. O(n) Linear Runtime complexity
 This means that the runtime complexity of your algorithm increases linearly with the size of the input data.
 Example:
@@ -45,7 +47,7 @@ def show_array_elements(array):
 
 The code takes in an array using the function `show_array_elements()` and displays the array elements.
 If the array passed in as an argument only has **1** element, then the algorithm will only take **1 operation** to run and would similarly take **300** operations for an array with **300 elements**. The number of times the loop iterates depends on the number of the array elements.
-![0n](o_n.png)
+![0n](o-n.png)
 ###3. O(n<sup>2</sup>) Quadratic Runtime complexity
 The algorithm varies with the square of the problem size, n.
 Example:
@@ -63,7 +65,7 @@ def add_array_elements(array):
 The code has two loops, the *outer* and the *inner*. The outer loop iterates n times giving an element to the inner loop which again loops n times, per one loop of the outer array, adding the element given by the outer array and all the array elements.
 
 Taking a case where the array has 3 elements; the outer loop takes  3 operations in total to iterate over each element. For each 3 operations of the outer loop, the inner loop also takes 3 operations to iterate over each element. That is 3 × 3 operations amounting to 9.
-![02](n_square.png)
+![02](n-square.png)
 ###4. O(log<sub>2</sub>n)- Logarithmic Runtime complexity
 This is associated with the binary search algorithm which searches by doing necessary halvings to get the item being searched for.
 The essence of this method is to compare the value being searched for, let's name it *X*, with the middle element of the array and if X is not found there, we then decide which half of the array to look at next. This is repeated until X is found.
@@ -128,7 +130,7 @@ Further example inputs and the **maximum** number of steps to be taken are shown
 |10000| 14|
 |100000| 17|
 
-![log_2_n](log_2_n.png)
+![log_2_n](log-2-n.png)
 
 ##Determining the Big-O Notation of a Code
 Here we look at the best case and worst case scenarios.
