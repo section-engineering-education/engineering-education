@@ -26,8 +26,10 @@ In the article, we will also estimate the Big O of a sample algorithm.
 *In the code examples, I used Python for illustrations but you can rewrite them using a language of your choice.*
 ###1. O(1) Constant Runtime complexity
 This means that the algorithm does a fixed number of operations no matter the number of inputs. Let's look at the code snippet below:
-`def first_element(array):`
-    `print(array[0])`
+```python
+def first_element(array):
+    print(array[0])
+```
 The function `first_element()` takes an array passed in and prints the first element and does not consider how many elements are present in the array.
 Take a look at the graph representation below:
 ![01](o_1.png)
@@ -35,9 +37,11 @@ Take a look at the graph representation below:
 This means that the runtime complexity of your algorithm increases linearly with the size of the input data.
 Example:
 
-`def show_array_elements(array):`
-    `for i in range (len(array)):`    
-        `print(array[i]+"\n")`
+```python
+def show_array_elements(array):
+    for i in range (len(array)):   
+        print(array[i]+"\n")
+```
 
 The code takes in an array using the function `show_array_elements()` and displays the array elements.
 If the array passed in as an argument only has **1** element, then the algorithm will only take **1 operation** to run and would similarly take **300** operations for an array with **300 elements**. The number of times the loop iterates depends on the number of the array elements.
@@ -45,7 +49,8 @@ If the array passed in as an argument only has **1** element, then the algorithm
 ###3. O(n<sup>2</sup>) Quadratic Runtime complexity
 The algorithm varies with the square of the problem size, n.
 Example:
-`def add_array_elements(array):`  
+```python
+def add_array_elements(array):  
 
     sum = 0  
      for i in range (len(array)):      
@@ -53,6 +58,7 @@ Example:
          sum += array[i]+array[j] 
          
     return sum
+```
 
 The code has two loops, the *outer* and the *inner*. The outer loop iterates n times giving an element to the inner loop which again loops n times, per one loop of the outer array, adding the element given by the outer array and all the array elements.
 
@@ -64,12 +70,13 @@ The essence of this method is to compare the value being searched for, let's nam
 The expected number of steps depends on the number of halvings needed to get from n elements to 1 element.
 Have a look at the code and graphical illustrations below:
 
-`def binary_search(array, query):`
- ` lower_bound = 0`
- ` upper_bound = len(array)-1`
-  `found_bool = False`
- `while (lower_bound <= upper_bound and found_bool == False):`
- `middle_value = (lower_bound + upper_bound) // 2`
+```python
+def binary_search(array, query):
+  lower_bound = 0
+     upper_bound = len(array)-1
+     found_bool = False
+ while (lower_bound <= upper_bound and found_bool == False):
+ middle_value = (lower_bound + upper_bound) // 2
         
         if array[middle_value] == query:
            found_bool = True
@@ -82,10 +89,11 @@ Have a look at the code and graphical illustrations below:
            
     return found_bool
 
-`array = [1,2,3,4,5,6,7,8,9]`
-`query = 7`
+array = [1,2,3,4,5,6,7,8,9]
+query = 7
 
-`val_found = binary_search(array, query)`
+val_found = binary_search(array, query)
+```
 
 #####Step 1
 The code takes in a sorted array with 9 elements through the function `binary_search()` and searches for the value, the parameter named `query`, 7. It divides it in half and checks if 7 is in the middle.
@@ -126,10 +134,11 @@ Further example inputs and the **maximum** number of steps to be taken are shown
 Here we look at the best case and worst case scenarios.
 ####Best and Worst Case Scenarios
 We will base our inferences based on the code below:
+```python
 
-`def linear_search(array, query):`
-  `lin_found_bool=False`
-    `while(lin_found_bool == False):`
+def linear_search(array, query):
+  lin_found_bool=False`
+    while(lin_found_bool == False):
 
       for i in range (len(array)):
         if array[i] == query:
@@ -138,11 +147,11 @@ We will base our inferences based on the code below:
             lin_found_bool=False
 
 
-`def binary_search(array, value):`
-    `lower_bound = 0`
-   ` upper_bound = len(array)-1`
-    `found_bool = False`
-    `while (lower_bound <= upper_bound and found_bool == False):`
+def binary_search(array, value):
+    lower_bound = 0
+   upper_bound = len(array)-1
+    found_bool = False`
+    while (lower_bound <= upper_bound and found_bool == False):
 
         middle_value = (lower_bound + upper_bound) // 2
         
@@ -158,8 +167,9 @@ We will base our inferences based on the code below:
            
     return found_bool
 
-`array = [1,2,3,4,5,6,7,8,9]`
-`value = 7`
+array = [1,2,3,4,5,6,7,8,9]
+value = 7
+```
 
 The best case for `linear_search()` would be finding the value 1, O(1), while the worst case would be finding the last array element or a value not included in the array O(n). This is due to the fact that it needs to traverse each element giving a O(n) complexity.
 
@@ -171,7 +181,8 @@ This is because the algorithm needs to make the halvings necessary until it reac
 ##Estimating the Big O notation of a code
 We need to always look at the worst case scenario perspective.
 We will estimate the Big O of the code below (We are simply estimating its complexity, I have not put any conditional checks for the code):
-`def array_arithmetic(array):`
+```python
+def array_arithmetic(array):
     
     value = 0  # O(1) complexity
         for i in range (len(array)): # O(n) complexity
@@ -183,6 +194,7 @@ We will estimate the Big O of the code below (We are simply estimating its compl
                 value += array[i] + array[j] + array[k] # O(1) complexity
            
     return value # O(1) complexity
+```
 
 We should start with the innermost loop.
 1. The inner most loop has **O(n/2)** complexity while its operation has **O(1)** complexity.
