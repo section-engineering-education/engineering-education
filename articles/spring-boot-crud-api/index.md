@@ -4,6 +4,7 @@ In this tutorial, we are going to build a Spring Boot Rest CRUD API with Gradle 
 - Basics of [Spring framework and Spring Boot](https://spring.io/guides/gs/spring-boot/)
 - Basic Knowledge of [Java programming language](https://www.javatpoint.com/java-tutorial)
 - [Java development kit](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) (JDK) installed and set up on your computer.
+- [Postman](https://www.postman.com/downloads/) installed on your computer.
 - Your favorite Java IDE installed. I use [Intellij](https://www.jetbrains.com/idea/download/#section=windows)
 
 To verify if Java and java compiler are installed and configured correctly on your system, Open the terminal and type in the command `java --version` to see the version of java installed and `javac --version` to see the version of java compiler installed.
