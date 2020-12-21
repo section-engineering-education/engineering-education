@@ -73,12 +73,12 @@ Fast API is a modern open-source fast and highly performant Python web framework
 - Because FastAPI is relatively new, the community is small compared to other frameworks and regardless of its detailed documentation there are few external educational materials.
 
 ##### FastAPI Use cases
-Fast API, which is relatively new amongst the three, works perfectly if your concern is speed. Netflix uses it for its internal crisis management. It also scales perfectly in deploying production-ready machine learning models because ML models work best in production when they are wrapped around a REST API and deployed in a microservice.
+Fast API which is relatively new amongst the three, works perfectly if your concern is speed. Netflix uses it for its internal crisis management. It also scales perfectly in deploying production-ready machine learning models because ML models work best in production when they are wrapped around a REST API and deployed in a microservice.
 
 Now we're going to compare Django, Flask, and FastAPI based on their *packages*, *community*, *performance*, *flexibility*, *job opening*, and *education*.
 
 **Packages**
-Among Django, Flask, and FastAPI, Django has the most packages that enable reusability of code. It is a full-stack web development framework, unlike Flask and FastAPI which are minimalistic frameworks for building fast websites.
+Among Django, Flask, and FastAPI, Django has the most packages that enable reusability of code. It is a full-stack web development framework unlike Flask and FastAPI which are minimalistic frameworks for building fast websites.
 
 **Community**
 Django has the biggest community because of its wide use and popularity next to the Flask which also has a thriving community. FastAPI on the other hand has a small community because it's fairly new.
@@ -90,7 +90,7 @@ In performance, FastAPI leads because it is speed-oriented then next to Flask an
 Flexibility is something developers value a lot, and Flask is more flexible than Django. Fast API, on the other hand is flexible code-wise and doesn't restrict the code layout. So we can say Flask is the most flexible among all of the above.
 
 **Job openings**
-No doubt they are more job openings in the python web ecosystem with Django requirement next to Flask and finally Fast API which is few, so if your is aim to get a quick job then Django should be your go-to guy.
+No doubt they are more job openings in the python web ecosystem with Django requirement next to Flask and finally Fast API which is few, so if your is aim to get a job quickly then Django should be your go-to guy.
 
 **Education**
 Django is more strenuous to learn but has many online materials and resources, Flask is easy and straightforward and has a lot of online materials and resources while Fast API which is the easiest if you're starting with web development but has few online resources.
