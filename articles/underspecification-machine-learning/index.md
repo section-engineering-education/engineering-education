@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/underspecification-machine-learning/hero.jpg
-    alt: image example
+    alt: Underspecification in Machine Learning image example
 ---
 It is common to have machine learning models that perform well after training but offer a poor performance after being deployed. A possible cause of this is known as underspecification. Models are supposed to simulate the real world.
 <!--more-->
