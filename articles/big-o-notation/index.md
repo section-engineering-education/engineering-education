@@ -140,7 +140,7 @@ Further example inputs and the **maximum** number of steps to be taken are shown
 
 ![log_2_n](log-2-n.png)
 
-### Determining the Big-O Notation of a Code
+### Determining the Big-O of an algorithm
 Here we look at the best-case and worst-case scenarios.
 ####Best and Worst-Case Scenarios
 We will base our inferences based on the code below:
@@ -188,20 +188,20 @@ The worst-case would be searching the value 1 or 10, the first and the last elem
 This is because the algorithm needs to make the halvings necessary until it reaches the first and the last elements (O(log<sub>2</sub>n)).
 
 
-### Estimating the Big O notation of a code
-We need to always look at the worst-case scenario perspective.
+### Checking the Big O of a sample code
+We look at the worst-case scenario perspective.
 We will estimate the Big O of the code below (We are simply estimating its complexity, I have not put any conditional checks for the code):
 ```python
 def array_arithmetic(array):
     
     value = 0  # O(1) complexity
-        for i in range (len(array)): # O(n) complexity
+        for e in range (len(array)): # O(n) complexity
     
         for j in range (10): # O(10) complexity
         
             for k in range (len(array)//2): # O(n/2) complexity
                 
-                value += array[i] + array[j] + array[k] # O(1) complexity
+                value += array[e] + array[j] + array[k] # O(1) complexity
            
     return value # O(1) complexity
 ```
