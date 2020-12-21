@@ -27,10 +27,10 @@ To be able to use Daraja API, you need to have an app so that you have the requi
 
 - Step 1: Click on `My Apps` link on the navbar in the developer portal.
 - Step 2: On that page, click the `Add a new app` button.
-- Step 3: In the page that follows, enter your preferred app name. Check the `Lipa na Mpesa Sandbox` and then click `create app`. After that, you are all set.
+- Step 3: On the page that follows, enter your preferred app name. Check the `Lipa na Mpesa Sandbox` and then click `create app`. After that, you are all set.
 
 #### Configuring our application.
-Having set up the developer account and an app, it's time we set up our application shall. For this article, we shall implement a REST API with express framework. This means that our end goal is to implement a working endpoint for Lipa na Mpesa online. To handle communication to and from Daraja API we shall use `request`, a third-party package. To follow along effectively, clone the finalized project from [here](https://github.com/mwangiKibui/starter-kit-lipa-na-mpesa-online). For testing our API, we shall use [Postman](https://postman.com). If you are not experienced in postman, feel free to watch this [video](https://www.youtube.com/watch?v=t5n07Ybz7yI)
+Having set up the developer account and an app, it's time we set up our application shall. For this article, we shall implement a REST API with Express JS framework. This means that our end goal is to implement a working endpoint for Lipa na Mpesa online. To handle communication to and from Daraja API we shall [Axios](https://www.npmjs.com/package/axios). To follow along effectively, clone the finalized project from [here](https://github.com/mwangiKibui/starter-kit-lipa-na-mpesa-online). For testing our API, we shall use [Postman](https://postman.com). If you are not experienced in postman, feel free to watch this [video](https://www.youtube.com/watch?v=t5n07Ybz7yI)
 
 ### Obtaining Consumer Key and Consumer Secret.
 On the portal's apps page, click on the newly created app from the previous process. In the Keys section, Copy the Consumer Key and the Consumer Secret and paste them in your `.env` file respectively as shown:
@@ -47,51 +47,55 @@ After you have saved the Consumer Key and the Consumer Secret, you are set to pr
 To make every call to Daraja API, we need to always supply an OAuth token. For this reason, we shall implement it as a middleware to be called every time we are accessing an endpoint. The function shall be as follows:
 
 ```javascript
-getOAuthToken(req,res,next){
+ async getOAuthToken(req,res,next){
+
         let consumer_key = process.env.consumer_key;
         let consumer_secret = process.env.consumer_secret;
+
         let url = process.env.oauth_token_url;
 
         //form a buffer of the consumer key and secret
         let buffer = new Buffer.from(consumer_key+":"+consumer_secret);
+
         let auth = `Basic ${buffer.toString('base64')}`;
 
-        request({
-            url:url,
-            headers:{
-                "Authorization":auth
-            }
-        },(error,response,body) => {
+        try{
 
-            if(error) {
-                return res.send({
-                    success:false,
-                    message:"Error getting oauth token"
-                });
-            };
+            let {data} = await axios.get(url,{
+                "headers":{
+                    "Authorization":auth
+                }
+            });
 
-            //else we extract the token from the body
-            let token = JSON.parse(body)['access_token'];
-            req.token = token;
+            req.token = data['access_token'];
+
             return next();
-        });
-}
+
+        }catch(err){
+
+            return res.send({
+                success:false,
+                message:err['response']['statusText']
+            });
+
+        }
+        
+};
 ```
 
 - Receiving `req`,`res`,`next` as parameters: Since the function shall be called as a middleware, we need to pass the appropriate parameters. `req` has access to the request object whereas `res` has access to the response object. `next` is used to execute the next middleware on that particular endpoint.
 - Access the environmental variables `consumer_key`,`consumer_secret` and `oauth_token_url`.
 - Create a buffer and then encode it to a `base64` string.
-- Use `request` to communicate with the Daraja API endpoint.
-- Receive the `error`,`response` and `body` as a callback. If there is an error, return an error else, parse the body to a `JSON` object. Then access the `access_token` key to get the token. Set the token on the request object so that it can be accessed by any other middleware and then execute the next middleware on the line using `next()`.
+- Use a `try`,`catch` block to communicate with Daraja API. If the request is successful, set the token on the request object, and then execute the next middleware. Else return the error. 
 
 
 ### Lipa na Mpesa online.
-Having generated an access token, we can now implement our core functionality. Since Express is a series of middleware calls, we shall also implement it as a middleware. The implementation shall be as follows: 
+Having generated an access token, we can now implement our core functionality. Since Express JS is a series of middleware calls, we shall also implement it as a middleware. The implementation shall be as follows: 
 
 ```javascript 
-lipaNaMpesaOnline(req,res){
+async lipaNaMpesaOnline(req,res){
         let token = req.token;
-        let auth = `Bearer ${token}`;        
+        let auth = `Bearer ${token}`;       
 
         //getting the timestamp
         let timestamp = require('../middleware/timestamp').timestamp;
@@ -103,20 +107,16 @@ lipaNaMpesaOnline(req,res){
         let password = new Buffer.from(`${bs_short_code}${passkey}${timestamp}`).toString('base64');
         let transcation_type = "CustomerPayBillOnline";
         let amount = "1"; //you can enter any amount
-        let partyA = "your_phone_number"; //should follow the format:2547xxxxxxxx
+        let partyA = "party-sending-funds"; //should follow the format:2547xxxxxxxx
         let partyB = process.env.lipa_na_mpesa_shortcode;
-        let phoneNumber = "your_phone_number"; //should follow the format:2547xxxxxxxx
-        let callBackUrl = "{{your_ngrok_url}}/mpesa/lipa-na-mpesa-callback";
+        let phoneNumber = "party-sending-funds"; //should follow the format:2547xxxxxxxx
+        let callBackUrl = "your-ngrok-url/mpesa/lipa-na-mpesa-callback";
         let accountReference = "lipa-na-mpesa-tutorial";
         let transaction_desc = "Testing lipa na mpesa functionality";
 
-        request({
-            method:'POST',
-            url,
-            headers:{
-                'Authorization':auth
-            },
-            json:{
+        try {
+
+            let {data} = await axios.post(url,{
                 "BusinessShortCode":bs_short_code,
                 "Password":password,
                 "Timestamp":timestamp,
@@ -128,21 +128,26 @@ lipaNaMpesaOnline(req,res){
                 "CallBackURL":callBackUrl,
                 "AccountReference":accountReference,
                 "TransactionDesc":transaction_desc
-            }
-        },(error,response,body) => {
+            },{
+                "headers":{
+                    "Authorization":auth
+                }
+            }).catch(console.log);
 
-            if(error) return res.send({
-                success:false,
-                message:error
-            });
-
-            //else true
             return res.send({
                 success:true,
-                message:body
-            })
-        })
-}
+                message:data
+            });
+
+        }catch(err){
+
+            return res.send({
+                success:false,
+                message:err['response']['statusText']
+            });
+
+        };
+};
 ```
 
 The implementation follows the following steps:
@@ -150,7 +155,7 @@ The implementation follows the following steps:
 - Append Bearer in front of the string to create the authorization string.
 - Get the current timestamp.
 - Get the lipa na Mpesa URL which is stored as an environmental variable.
-- Get your business short code and `passkey`. To get them, proceed to  your [test credentials](https://developer.safaricom.co.ke/test_credentials). Then copy and paste the `Lipa Na Mpesa Online Shortcode` as the business short code to your `.env` file and `Lipa Na Mpesa Online Passkey` as the passkey.
+- Get your business short code and `passkey`. Proceed to  your [test credentials](https://developer.safaricom.co.ke/test_credentials). Then copy and paste the `Lipa Na Mpesa Online Shortcode` as the business short code to your `.env` file and `Lipa Na Mpesa Online Passkey` as the passkey.
 - Get the password which is generated from a buffer composed of business short code, passkey, and timestamp. The buffer is then encoded to a `base64` string.
 - Set the transaction type to CustomerPayBillOnline which is the only one supported. Don't change it.
 - Set the amount to be paid.
@@ -175,19 +180,16 @@ This shall forward you to a particular link such as `http://78066c1c2d6b.ngrok.i
 
 - Set the account reference which can be any string you set. It references where the money is being paid to.
 - Set the transaction description which describes what the transaction is for.
-- Use `request` to send the data to the Daraja API. 
-- Set the method, headers, and `JSON` body to send.
-- Receive the result from the API in form of `error`,`response`,  and `body`. If there is an error, send back the error, else send the body object.
+- Use a `try`,`catch` block when communicating with Daraja API. If the process is successful, return the message from the API. Else return the error from the API.
 
 #### Lipa na Mpesa online callback.
-When we send a request, the response from the API shall be sent through the callback. In case we want to update some records, we update them here based on the response sent back. We implement a simple callback as a method on the class.
+When we send a request, the response from the API shall be sent through the callback. In case we want to update some records, we update them here based on the response sent back. We implement a simple callback as a method in the class.
 
 ```javascript
 lipaNaMpesaOnlineCallback(req,res){
         
-    let message = req.Body.stkCallback.ResultDesc;
-
-    //based on the message you can update some records.
+    //Get the transaction description
+    let message = req.body.Body.stkCallback['ResultDesc'];
 
     return res.send({
         success:true,
@@ -197,7 +199,7 @@ lipaNaMpesaOnlineCallback(req,res){
 };
 ```
 
-- Destructure the message sent from the request object.
+- Access the description of the transaction carried out.
 - Since ours is just a simple tutorial we return the message sent.
 
 #### Important takeaways
@@ -207,6 +209,7 @@ lipaNaMpesaOnlineCallback(req,res){
 ### Resources 
 - [Node.js](https://nodejs.org/en/)
 - [Daraja Api](https://developer.safaricom.co.ke/home)
+- [Axios](https://www.npmjs.com/package/axios)
 - [Ngrok](https://ngrok.com/)
 - [Express js](https://expressjs.com/)
 - [Postman](https://www.postman.com/)
@@ -214,7 +217,7 @@ lipaNaMpesaOnlineCallback(req,res){
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 
 ### Conclusion.
-Mpesa users are rapidly growing hence software developers need to familiarize themselves with Daraja API. In this article, we have covered an introduction to Mpesa, creating a Safaricom developer account, creating an app, getting an OAuth token, and implementing Lipa na Mpesa online. Apart from what we have covered here, there are more functionalities from the [documentation](https://developer.safaricom.co.ke/docs)
+Mpesa users are rapidly growing hence software developers need to familiarize themselves with Daraja API. In this article, we have covered an introduction to Mpesa, creating a Safaricom developer account, creating an app, getting an OAuth token, and implementing Lipa na Mpesa online. Apart from what we have covered here, there are more functionalities from the [documentation](https://developer.safaricom.co.ke/docs). Feel free to check them out.
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
