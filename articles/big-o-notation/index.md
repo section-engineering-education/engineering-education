@@ -17,7 +17,7 @@ It assists us in knowing which algorithm suits which task and which one is not b
 
 An easy illustration of how different algorithms use different durations is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles away. The information was given to the duo using  data signals and an envelope respectively. Ironically, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant duration while the network's delivery time was inversely proportional to the amount of information being sent.
 
-There are many notations of the Big O but here am going to discuss a few of them which are:
+There are many notations of the Big O but here am going to discuss a few of them which are:</br>
 -**O(1)**</br>
 -**O(n)**</br>
 -**O(n<sup>2)**</br>
@@ -113,19 +113,19 @@ The code takes in a sorted array with 9 elements through the function `binary_se
 **Step 2**
 The middle value is 5 and our algorithm checks it with 7 and since 7 is greater than 5, then it will move to the right hand side since 7 is greater than 5.
 
-| 1|2|3|4|~~5~~|6|7|8|9|
+| 1|2|3|4|<h6 style='color:red'>5</h6>|6|7|8|9|
 --|--|--|--|---|----|--|---|---|
 
 **Step 3**
 We now have an array with 4 elements. The algorithm will divide it by half to get two arrays with 6 & 7 and 8 & 9.
 The one with 8 & 9 will be ignored and the algorithm will now check and compare 6 and 7.
 
-|~~6~~|~~7~~|8|9|
+|<h6 style='color:red'>6</h6>|<h6 style='color:red'>7</h6>|8|9|
 |----|--|---|---|
 
 **Step 4**
 The comparison will be done and we will arrive at 7.
-|7|
+|<h6 style='color:red'>7</h6>|
 |---|
 Further example inputs and the **maximum** number of steps to be taken are shown in the table below:
 | n |log<sub>2</sub>n|
