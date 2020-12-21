@@ -21,20 +21,20 @@ To get started with Laravel, you have two options.
 
 ### Laravel Homestead
 Virtual machines are great choices for software development. To get started, follow the steps below.
-* Install your virtual machine e.g. Virtual Box 6.x, VMware,Parallels or Hyper-V
+* Install your virtual machine e.g. Virtual Box 6.x, VMware, Parallels, or Hyper-V
 * Install vagrant to manage your virtual machine(s).
 * To install Homestead vagrant box,
-    * run command ```vagrant box add laravel/homestead```   
-    This will take awhile to download. It fails on occassions.  
-    Simple solution,check your vagrant whether it's upto date.
+    * run command ```vagrant box add Laravel/homestead```   
+    This will take a while to download. It fails on occasions.  
+    Simple solution, check your vagrant whether it's up to date.
 
 * Finally install Homestead by running this git clone on your terminal, 
     * git clone [https://github.com/laravel/homestead.git]( https://github.com/laravel/homestead.git) ~/Homestead
 
-Congratulations,you have your Homestead ready to start coding in laravel.  
+Congratulations, you have your Homestead ready to start coding in Laravel.  
 
 ## Local Server
-Ensure your system has PHP version 7.3.,to install laravel,you have 2 options:-  
+Ensure your system has PHP version 7.3., to install Laravel, you have 2 options:-  
 * Install Laravel via composer
 * Install Laravel via Laravel installer
 
@@ -45,9 +45,9 @@ Ensure your system has PHP version 7.3.,to install laravel,you have 2 options:-
     ```php artisan key:generate```    
     to generate a secure key for your app  
 
-    ## using laravel Installer
-    To use this option,you need to download the laravel via the composer.  
-    NB **Remember composer is the package manager for PHP,think of it as NPM for Javascript.**  
+    ## using Laravel Installer
+    To use this option, you need to download the Laravel via the composer.  
+    NB **Remember composer is the package manager for PHP, think of it as NPM for Javascript.**  
     ***Composer can be installed globally in your system or just for a particular project!!***
 
     Run this command on the terminal:-  
@@ -58,58 +58,58 @@ Ensure your system has PHP version 7.3.,to install laravel,you have 2 options:-
     ```composer global about```,  
     make your $PATH laravel-executable.
 
-Congratulations,you have created your Laravel 8 APP.  
+Congratulations, you have created your Laravel 8 APP.  
 
 ## Laravel Jestream Scaffolding
 
-**Whats Jestream?** 
+**Whats Jetstream?** 
  
-This is a new package used to generate the laravel scaffolding in Laravel 8 APPs.  
-In earlier versions,the default vue scaffolding were used,okay,thats now a thing of the past,atleast for now. 
+This is a new package used to generate the Laravel scaffolding in Laravel 8 APPs.  
+In earlier versions, the default Vue scaffolding was used, okay, that's now a thing of the past, at least for now. 
 
-It comes with two stacks,Livewire and Inertia scaffoldings,either of the 2 you select depends on your personal taste.  
+It comes with two stacks, Livewire and Inertia scaffoldings, either of the 2 you select depends on your taste.  
 Use Livewire with Blade template(sounds familiar?),while Inertia goes with Vue.  
 You'll probably go with Blade + Livewire stack if you're not familiar with Vue.Good luck
 
 ***What's so special about this new way of doing things in Laravel?***  
-Okay,lets install jetstream package before we dig deeper into laravel new way....  
+Okay, let's install the Jetstream package before we dig deeper into laravel new way...  
 
 ### Jestream Installation
-As we said at the start,composer is the most popular package manager in PHP,others include yarn(topic for another day)  
-and most package installations are via composer,with Jetstream included.  
+As we said at the start, the composer is the most popular package manager in PHP, others include yarn(topic for another day)  
+and most package installations are via composer, with Jetstream included.  
 
 To install Jetstream into your laravel project, ***cd***  into your project root e.g ***cd  /var/www/html/MyApp***  
-Then run the command, ```composer require laravel/jetstream```.      
-Ensure that you've strong internet connection,as its installation may fail,reverting composer.json file back to its default.   
+Then run the command, ```composer requires laravel/jetstream```.      
+Ensure that you've got a strong internet connection, as its installation may fail, reverting the composer.json file to its default.   
 
-If successful,we need to choose our stack(Livewire or Inertia),therefore we need to run an artisan command,  
+If successful, we need to choose our stack(Livewire or Inertia), therefore we need to run an artisan command,  
 ```php artisan jetstream:install livewire``` for Livewire stack.   
 ```php artisan jetstream:install inertia``` for Inertia stack.
 
-To complete installation,we will need to build our Node Package Managers(NPM) dependencies and migrate our database.  
+To complete installation, we will need to build our Node Package Managers(NPM) dependencies and migrate our database.  
     ``` npm install && npm run dev ```  
     ``` php artisan migrate ```  
-Remember we said Jetstream comes with new changes,i.e Tailwind CSS,doing away with Bootstrap as its default ui framework?  
-It will scaffold your application with Tailwind framework,with a beatifully designed UI.  
-Don't worry if you don't understand,things are all done under the hood,and you only need to build your NPM dependencies   which you achieved above.
+Remember we said Jetstream comes with new changes,i.e Tailwind CSS, doing away with Bootstrap as its default UI framework?  
+It will scaffold your application with the Tailwind framework, with a beautifully designed UI.  
+Don't worry if you don't understand, things are all done under the hood, and you only need to build your NPM dependencies which you achieved above.
 
 ### Quick Laravel 8 Jetstream Structure
 * Tailwind Framework is installed into your system:-you'll notice a file webpack.mix.js and tailwind.config.js   
   at the root of your application
 
-* In the views directory,new folders are created for you,they include:-
-    * api folder:-which has api token manager and index.blade.php,these helps with api management.
-    * profile folder:-This handles user profil management,some tasks include deleting user.
-    * auth folder:-This existed in Laravel 7,the only new files are the two-factor authentications.
-    * navigation-dropdown.blade.php file,as the name suggests,it handles the navigation in your app.Its a new feature.
+* In the views directory, new folders are created for you, they include:-
+    * API folder:-which has API token manager and index.blade.php, these help with API management.
+    * profile folder:-This handles user profile management, some tasks include deleting a user.
+    * auth folder:-This existed in Laravel 7, the only new files are the two-factor authentications.
+    * navigation-dropdown.blade.php file, as the name suggests, it handles the navigation in your app. It's a new feature.
     * dashboard.blade.php file:-this has replaced the home.blade.php which existed in other versions of laravel.
-    * vendor:-by default it's doesnt exist,unless you publish Blade components while using Livewire stack.
+    * vendor:-by default it's doesn't exist, unless you publish Blade components while using Livewire stack.
 * If you run your application, ```php artisan serve ```,you will notice a jetstream logo has been set for you,  
-  you can modify this to meet your needs,by customizing the jetstream components.
+  you can modify this to meet your needs, by customizing the jetstream components.
 
 ### What's Tailwind CSS Framework?
-&minus; You're probably wondering what's this new css framework,why not Boostrap?
-* Tailwind CSS uses utility classes to style your HTML markups,think of utility classes as inline css.
+&minus; You're probably wondering what's this new CSS framework, why not Boostrap?
+* Tailwind CSS uses utility classes to style your HTML markups, think of utility classes as inline CSS.
     * What makes Tailwind special unlike inline css is because you can do everything e.g hover which you can't  
         achieve with Inline CSS,let's look at an example:-
         ```HTML 
@@ -145,7 +145,7 @@ Don't worry if you don't understand,things are all done under the hood,and you o
                 xl  1280px  @media (min-width: 1280px) { ... }
                 2xl 1536px  @media (min-width: 1536px) { ... }
             ```
-            To learn more about Tailwind,visit [https://tailwindcss.com/docs/responsive-design](https://tailwindcss.com/docs/responsive-design)
+            To learn more about Tailwind, visit [https://tailwindcss.com/docs/responsive-design](https://tailwindcss.com/docs/responsive-design)
 
 
 * User Registration
@@ -167,45 +167,36 @@ Don't worry if you don't understand,things are all done under the hood,and you o
         //not passwordRules() has been added
     }
     ```
-    * Upon registration,the developer has an option for email verification link.  
-        * It's a little different in Laravel 8,apart from the MustImplementEmail in the Model,
-          a new fortify feature  is needed to enable this functionality.  
+    * Upon registration, the developer has an option for the email verification link.  
+        * It's a little different in Laravel 8, apart from the MustImplementEmail in the Model,
+          a new fortify feature is needed to enable this functionality.  
           This is available in the **config/fortify.php**,Features option,enable emailVerification()  
 
 * Profile Photo
-    This feature was not available in other versions,it was initially enabled by default in the earlier  
-    version lof Laravel 8 before being disabled due to "community" demands.
+    This feature was not available in other versions, it was initially enabled by default in the earlier version of Laravel 8 before being disabled due to "community" demands.
     * To achieve this functionality:-
-        Laravel 8 comes with new files in the app/config.php files,including Jetstream.php file,now in this file  
-        we have the Features option which has a few methods,uncomment the Feature::profilePhotos()  
+        Laravel 8 comes with new files in the app/config.php files, including the Jetstream.php file, now in this file,  
+        we have the Features option which has a few methods, uncomment the Feature::profilePhotos()  
 
-        Next step,remember images are stored in the database as url,and original photos stored in the public  
-        directory of the Storage folder,remember,this is solely for images that are required to be  
+        Next step, remember images are stored in the database as URL, and original photos stored in the public  
+        directory of the Storage folder, remember, this is solely for images that are required to be  
         publicly accessible.
 
-        Run a sysmbolic link to enable you access your images in the blade template  
+        Run a symbolic link to enable you to access your images in the blade template  
         ``` php artisan storage:link```  
-        ## How to manage profile photos with jetstream
-        Always remember that new auth scaffolding are configured to use the App/Models/User.php model by default.  
-        In this new version, another functionality has been added by defaulf when you install Jestream.  
+        ## How to manage profile photos with the jetstream
+        Always remember that new auth scaffolding is configured to use the App/Models/User.php model by default.  
+        In this new version, another functionality has been added by default when you install Jetstream.  
         ```Laravel\Jetstream\HasProfilePhoto```  
-        This new trait comes hand in hand with its own predefined methods,
+        This new trait comes hand in hand with its predefined methods,
         * ```updateProfilePhoto,``` 
         * ```getProfilePhotoUrlAttribute,```
         * ```defaultProfilePhotoUrl, and```
         * ```profilePhotoDisk ```
-        All these methods can be customised in the model,depending on your personal interest.  
+        All these methods can be customized in the model, depending on your interest.  
 
 * Account Deletion
     This is another feature that has been introduced in the laravel 8 scaffolding.  
     It's an option for a user to delete their account.  
     The functionality to implement this is located at the  
     ```App\Actions\Jetstream\DeleteUser```
-
-            
-            
-    
-
-
-    
-
