@@ -5,7 +5,7 @@
 When using the internet, our devices send requests to servers stored in various data centers in form of packets. Likewise, the servers return back responses to the requests using data packets.</br>
 These packets' journey to the data center from our devices and vice versa form the internet's backbone.</br>
 Nevertheless, controlling these packets from the data source to the destination through the wide complicated global network is not a walk in the park.</br>
-This is where routing comes in. It is done by specialised networking hardware called routers.</br>
+This is where routing comes in. It is done by specialised networking hardware called **routers**.</br>
 Routers select an appropriate path that will ensure the packets arrive faster and safely.</br>
 
 Take an example of when one wants to get home situated in an estate from his/her workplace located in a city center. During rush hours, cities are usually characterised by traffic snarlups on their roads. The person will then use Google maps to check the route with less traffic and manouvre all the way home.</br>
@@ -26,13 +26,13 @@ Link state consists of two algorithms:</br>
 
 ***Dijkstra's algorithm***
 I will briefly discuss this algorithm for it is too wide to explain in detail here. Later on, I will dive into it in detail in my next article.</br>
-This algorithm was created by a Dutch computer scientist Edsger Wybe Dijkstra and with it, routers find the shortest path between nodes in a network.</br>
+This algorithm was created by a Dutch computer scientist **Edsger Wybe Dijkstra** and with it, routers find the shortest path between nodes in a network.</br>
 It starts with the router at the source node and analyses the network using all the parameters and finds the shortest path between it and other nodes.</br>
 Once a shortest path between a node and the source node, the node is marked as **visited** and sequentially **added to the path**.</br>
 The algorithm stores the currently known shortest path from each node to the source node and it will update this information if it finds a shorter path.</br>
 This continues until all nodes are added and a path is established.</br>
 
-*Example*
+*Example*</br>
 The algorithm will generate the shortest path from node 0 to all other nodes 1,2,3,4,5,6 in the graph assuming the weights of the graph represents distances between the nodes.
 
 ![Graph1](routing1.png)
@@ -65,7 +65,7 @@ From node 0 to node 1, the distance is 2 while from 0 to 2, the distance is 6. C
 
 ![Graph3](routing4.png)
 
-We then mark 1 as visited and add it to our list.
+We then mark node 1 as visited and add it to our list. We add node 2 for we know its distance but we will mark it since it is not yet visited.
 
 |NODE|DISTANCE|
 ---|---|
