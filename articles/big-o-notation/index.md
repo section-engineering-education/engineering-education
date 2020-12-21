@@ -187,7 +187,7 @@ def array_arithmetic(array):
     value = 0  # O(1) complexity
         for i in range (len(array)): # O(n) complexity
     
-        for j in range (len(array)-10): # O(10) complexity
+        for j in range (10): # O(10) complexity
         
             for k in range (len(array)//2): # O(n/2) complexity
                 
