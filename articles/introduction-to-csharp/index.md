@@ -86,7 +86,7 @@ This will compile and run your code.
 
 A console window will open with the following output:
 
-```
+```bash
 Hello World!
 
 C:\Users\Username\source\repos\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.0\HelloWorld.exe (process 13784) exited with code 0.
