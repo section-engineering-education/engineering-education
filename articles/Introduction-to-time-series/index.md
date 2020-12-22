@@ -45,7 +45,7 @@ We are going to look at two types of time series:
 
 **Deterministic time series:** A deterministic time series is expressed by an analytic expression. It doesn’t have random or probabilistic aspects. In deterministic time series the past and future are explicitly specified by the derivative values at that time.
 
-**Non-deterministic time series:** This type of time-series means it cannot be described by an analytic expression and has some random aspect making it unable to describe the behavior. There are two reasons that make a time series non-deterministic. First is if the information required to describe it is not available. Secondly is that the generating process is inherently random.
+**Non-deterministic time series:** This type of time-series means it cannot be described by an analytic expression and has some random aspect making it unable to describe the behavior. There are two reasons that make a time series non-deterministic. First is if the information required to describe it is not available. Secondly is that the generating process of the Non deterministic time series is inherently random due to its general random nature.
 
 #### Components of time series
 Here are some useful time series analysis techniques, and they are divided into four parts.
