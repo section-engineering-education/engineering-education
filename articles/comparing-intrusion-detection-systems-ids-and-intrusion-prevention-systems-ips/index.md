@@ -1,10 +1,10 @@
 Intruders are always ready and determined to cause data breaches, install malware, and steal sensitive information. [Research](https://www.sitelock.com/blog/security-by-obscurity-q2-2017/) shows that websites are hit with 22 cyber-attacks in a day, on average. Embracing cyber threat prevention and detection technologies is significant to mitigating threats. Intrusion Prevention Systems (IPS) and Intrusion Detection Systems (IDS) are two technologies used in threat protection.
 
-This article discusses IDS and IPS, the problems they address, their significance to cybersecurity, and how they compare.
+This article discusses IDS and IPS, their problems, their significance to cybersecurity, and how they compare.
 
 ### An overview of IDS
 
-IDS refers to software applications or hardware devices that monitor incoming and outbound network traffic for a security policy violation or any malicious activity. Think of it this way. An intruder alarm sounds an alert if it spots a suspicious activity resulting in data and network compromise. How does this happen? Well, IDS inspect [packets](https://techterms.com/definition/packet#) flowing across a network to detect traffic patterns and compromise indicators that suggest malicious activity. These packets refer to small amounts of data sent over a network, including the internet or local area network (LAN). They incorporate a destination, source, and data (content) being transferred. An IDS is used to detect potential network compromises in real-time.
+IDS refers to software applications or hardware devices that monitor incoming and outbound network traffic for a security policy violation or any malicious activity. Think of it this way. An intruder alarm sounds an alert if it spots a suspicious activity resulting in data and network compromise. How does this happen? Well, IDS inspect [packets](https://techterms.com/definition/packet#) flowing across a network to detect traffic patterns and compromise indicators that suggest a malicious activity. These packets refer to small amounts of data sent over a network, including the internet or local area network (LAN). They incorporate a destination, source, and data (content) being transferred. An IDS is used to detect potential network compromises in real-time.
 
 ![An illustration of IDS](/engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ids-security.png)
 
