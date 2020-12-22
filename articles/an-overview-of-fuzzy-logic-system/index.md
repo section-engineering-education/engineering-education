@@ -50,7 +50,7 @@ The fuzzy logic architecture consists of the following components:
 - **Defuzzifier:** This component transforms the fuzzy sets into an explicit output (in the form of crisp inputs). Defuzzification is the final stage of a fuzzy logic system. 
   
 ### Fuzzy logic membership function
-A membership function is a graphical representation of a fuzzy set. It shows how values ranging between 0 and 1 are mapped to inputs. Inputs are generally represented as Universe (U). The membership function for a given fuzzy set is in the form $$\mu_{A}:X\rightarrow [0, 1]$$ where A is a fuzzy set and X is the Universe. 
+A membership function is a graphical representation of a fuzzy set. It shows how values ranging between 0 and 1 are mapped to inputs. Inputs are generally represented as Universe (U). The membership function for a given fuzzy set is in the form: $$\mu_{A}:X\rightarrow [0, 1]$$ Where A is a fuzzy set and X is the Universe. 
 
 Any value within the range of 0 to 1 indicates a degree of membership. Each element of the Universe (X) is given a specific degree of membership.
 
@@ -120,3 +120,32 @@ Fuzzy logic is an effective tool for solving various computing problems in the w
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
