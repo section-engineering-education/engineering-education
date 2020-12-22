@@ -1,21 +1,23 @@
 Digital revolution has led to an increase in the number of web applications. Developers are constantly creating new web applications to meet various demands. Before these applications are commissioned for use, developers test them (using automation testing tools) to ensure that they function without problems. Selenium is an effective automation tool that can help developers to validate their applications. 
 
-This article will take you through fundamental aspects of this software. It provides an overview of how automation testing takes place in Selenium software. The article has also highlighted the main types of testing done by Selenium.  
+This article will take you through the fundamental aspects of this software. It provides an overview of how automation testing takes place in Selenium software. The article has also highlighted the main types of testing done by Selenium.  
 
 ### Introduction to Selenium Automation Testing
+Automation testing refers to the use of testing software and automation tools in testing new systems, applications, and software. This technique enables testers to establish whether there are defects in applications or software. It also enables developers to check the effectiveness and performance of these applications. 
+
 Selenium is a software used for automation testing in new applications. This software provides a framework for the testing of web applications (across various web platforms). It is open-source, which means that developers will not incur costs related to licensing. 
 
 Automation testing in Selenium has helped in solving some of the challenges experienced in manual testing. In manual testing, the test cases are executed manually. The outcome of the test is compared with the expected or desired outcome. The disparity between the desired and actual outcome indicates the presence of a defect. This defect is fixed to ensure that the application is error-free. 
 
-Selenium conducts automation testing within a shorter time compared to manual testing. It also provides various tools that increase the scope of testing. In this type of automation testing, logs are created automatically, which increases the level of accuracy. 
+Selenium conducts automation testing within a shorter time compared to manual testing. It also provides various tools that increase the scope of testing. In this type of automation testing, the test cases are executed automatically, which increases the level of accuracy. 
 
-Some of the programming languages employed in creating text scripts in Selenium include Java, Python, C#, Perl, Ruby, and PhP. This software supports testing across various browsers such as Internet Explorer, Apple Safari, Mozilla Firefox, and Google Chrome. Automation testing in Selenium can also be done on various operating systems such as Linux, Windows, and Mac.
+Some of the programming languages employed in creating text scripts in Selenium include Java, Python, C#, Perl, Ruby, and *PhP*. This software supports testing across various browsers such as Internet Explorer, Apple Safari, Mozilla Firefox, and Google Chrome. Automation testing in Selenium can also be done on various operating systems such as Linux, Windows, and Mac.
 
 ### Why Selenium is Widely Used in Automation Testing
 Selenium is widely used by organizations and web developers in the testing of web applications. The following are some of the reasons for the adoption of this software in automation testing.
 * **Ease of use:** This software can be installed and used easily. 
 * **Low Cost:** This software is open-source, which reduces the cost of licensing and testing. This also provides an open community for providing customer support. 
-* **Flexibility:** Selenium software supports different browsers, programming languages, and browsers. This offers flexibility to web developers. This is unlike other testing software like QTP and RFT, which support fewer number of browsers.
+* **Flexibility:** Selenium software supports different browsers, programming languages, and browsers. This offers flexibility to web developers. This is unlike other testing software like Quick Test Professional (QTP) and Relational Functional Tester (RFT), which support a fewer number of browsers. 
 * **Integration:** It is possible to integrate this software with other applications such as TestNG, Docker, Maven, and Junit. These applications add value to automation testing, especially test management.
 * **Hardware consumption:** The execution of scripts requires low hardware consumption. 
 
@@ -23,7 +25,9 @@ Selenium is widely used by organizations and web developers in the testing of we
 Selenium software has four main components: Integrated Development Environment (IDE), remote control (RC), web driver, and grid. These components perform specific roles in automation testing.
 
 #### Selenium Integrated Development Environment (IDE)
-This can also be termed as a Selenium Recorder. It is utilized in the editing and recording of functional tests. It is also used for replaying and debugging tests. IDE has a playback feature that enables users to playback the recorded tests. In Mozilla Firefox, it is implemented as an add-on. In google chrome, it is made available as a plugin. 
+This can also be termed as a Selenium Recorder. It is utilized in the editing and recording of [functional tests](https://en.wikipedia.org/wiki/Functional_testing). A functional test is done to evaluate the functionality of an application. It is done by feeding an input into the application and examining the resulting output. 
+
+Selenium IDE is also used for replaying and debugging tests. IDE has a playback feature that enables users to playback the recorded tests. In Mozilla Firefox, it is implemented as an add-on. In google chrome, it is made available as a plugin. 
 
 The interactions recorded by Selenium IDE are exported in the form of a reusable script. Users can export test cases to other Selenium components such as Web Driver or Remote Control.    
 
@@ -40,7 +44,11 @@ When a web browser is opened by a user, the Selenium Recorder records the test c
 #### Selenium Remote Control (RC)
 This can also be termed as Selenium 1. It is a server that utilizes HTTP protocol to accept the command of browsers. It supports the use of various programming languages such as Python, C#, Java, and Perl. Selenium 1 consists of two main components: the RC server and the RC client. The former uses HTTP requests to communicate. RC client acts as a library for the programming codes.
 
-The main limitation of this component is that it is slow and time-consuming. This explains its usage has been declining.  
+![Selenium RC](/engineering-education/automation-testing-in-selenium/selenium-rc.png)
+
+[Image Source: Edureka](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/selenium-rc.png)
+
+The main limitation of this component is that it is slow and time-consuming. This explains why its usage has been declining.  
 
 #### Selenium Grid
 This component was developed to reduce the execution time of tests. Through this component, test commands can be distributed across various remote machines (simultaneously). Selenium grid enables tests to be executed in parallel across various operating systems and web browsers. 
@@ -56,7 +64,7 @@ The Selenium grid comprises a hub that is linked to many nodes. The tests that n
 #### Selenium Web Driver
 This component is an upgraded version of Remote Control. This is the most applied Selenium tool in automation testing. It utilizes a client API to send commands to web browsers. Every browser consists of a unique web driver for running tests. Some of the web drivers for specific browsers include Firefox driver, Safari driver, Opera driver and Internet Explorer driver. 
 
-Some of the programming languages supported by this component include PHP, Java, C#, Javascript, Ruby, Perl, and Python. Selenium web driver is also compatible with various browsers such as Opera, Internet Explorer, Mozilla Firefox, Google Chrome, and Apple Safari. The operating systems supported by the Selenium web driver include Mac, Solaris, Windows, and Linux.  
+Some of the programming languages supported by this component include *PHP*, Java, C#, Javascript, Ruby, Perl, and Python. Selenium web driver is also compatible with various browsers such as Opera, Internet Explorer, Mozilla Firefox, Google Chrome, and Apple Safari. The operating systems supported by the Selenium web driver include Mac, Solaris, Windows, and Linux.  
 
 The following diagram shows a simple web driver architecture.
 
