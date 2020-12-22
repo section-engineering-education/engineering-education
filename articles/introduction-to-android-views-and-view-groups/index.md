@@ -1,16 +1,16 @@
 ### Introduction
-All of a user’s interaction with the Android application is via the user interface (UI) therefore, knowing the fundamentals of an android application’s user interface is very essential. In android, the user interface of an application is made with a collection of views and viewgroup objects. In this article, we will cover the commonly used views, view groups, and the attributes associated with them to illustrate how they are used to design an android application’s user interface.
+All user’s interaction with an Android application is via the user interface (UI). Therefore, knowing the fundamentals of android application’s user interface is very essential. In android, the user interface of an application is made with a collection of views and viewgroup objects. In this article, we will cover the commonly used views, view groups, and the attributes associated with them to illustrate how they are used to design an android application’s user interface.
 
 #### Prerequisites
 To follow this article, you’ll need:
-- Android Studio installed
+- Android Studio installed.
 - Basic knowledge of building Android applications.
-- Basic understanding of Android development using Kotlin
+- Basic understanding of Android development using Kotlin.
 
 #### Views
 A view is a rectangular block on the screen used to create UI components. It refers to the `android.view.View ` class, which for all the GUI components is the base class.  A view displays on the screen a rectangle displaying some form of content
 
-The attributes ` android:layout_width` and `android:layout_height` is mandatory to write for every view and viewgroup because we must define the width and height for every view and viewgroup that we create. 
+The attributes ` android:layout_width` and `android:layout_height` is mandatory to write for every view and viewgroup because we must define the width and height for every view and viewgroup that we create.
 They can take two forms that are `wrap_content`(adjusts height and width to the content) and `match_parent`(adjusts height and width to the full size of the parent container).
 
 Some of the commonly used views in android are:
@@ -21,7 +21,7 @@ Some of the commonly used views in android are:
 - ImageView
 
 **TextView**
-This view is for displaying text. We can also use it with other views. For example, when creating forms, it can be used alongside the EditText view to mention information required to enter by the user. 
+This view is for displaying text. We can also use it with other views. For example, when creating forms, it can be used alongside the EditText view to mention information required to enter by the user.
 
 Now, let's see how to define a TextView in the design layout XML:
 ```xml
@@ -48,7 +48,6 @@ Now let's see what the attributes stated above do:
 **NOTE:** Android provides many different attributes that can be applied to manage various properties thus, the user is not limited to the above only.
 
 **EditText**
-
 it is a widget for entering text by the user. You need to specify the  `android:inputType` attribute when defining the EditText view. Choosing an input type configures the displayed keyboard type, appropriate characters. For instance, inputType is set to ‘text’ for plain text input. if you want to accept a secret number, such as a unique pin, set inputType to ‘numeric password’. it will result in editing text that accepts numbers only and displays a numeric keyboard.
 
 Example of editText view XML code snippet:
@@ -73,10 +72,9 @@ The attributes we have stated above will be broken down as follows:
 - `android:maxLength=”10”` - specifies how many characters can be input. in this case, it only accepts 10 characters.
 
 **Button**
-
 it is a user interface feature that contains a text or an icon that the user can tap or click to act.
 
-Example of a Button view XML code snippet: 
+Example of a Button view XML code snippet:
 
 ```xml  
     <Button
@@ -98,7 +96,7 @@ it is a widget used to display images and bitmaps in android applications. Bitma
 
 `.png` -preferred
 `.jpg` -acceptable
-` .gif` -discouraged 
+` .gif` -discouraged
 
 Example of ImageView XML code snippet:
 
@@ -112,7 +110,7 @@ Example of ImageView XML code snippet:
 
 The attributes are defined as follows:
 
-`android:src=”@drawable/ic_campaign” />` - sets a drawable as the content of this ImageView. 
+`android:src=”@drawable/ic_campaign” />` - sets a drawable as the content of this ImageView.
 A drawable resource is a general term for a graph that can be drawn on the screen and can be retrieved by adding attributes such as `android:drawable` and `android:icon` to another XML resource.
 
 Android also provides more views such as Spinners, CheckBox and RadioButtons for more user input
@@ -128,7 +126,7 @@ Some of the commonly used Viewgroups are:
 - FrameLayout
 
 **RelativeLayout**
-RelativeLayout displays views are relative to the others. The view position has some relation to the sibling.  You might be able to substitute many nested LinearLayout groups with a single RelativeLayout if you find yourself using them because it can delete nested view groups and keep the hierarchy of your layout flat, which improves performance. 
+RelativeLayout displays views are relative to the others. The view position has some relation to the sibling.  You might be able to substitute many nested LinearLayout groups with a single RelativeLayout if you find yourself using them because it can delete nested view groups and keep the hierarchy of your layout flat, which improves performance.
 
 Example of RelativeLayout XML code snippet:
 
@@ -173,15 +171,15 @@ Example of RelativeLayout XML code snippet:
 
 ![Output screen](/engineering-education/android-views-and-viewgroups/screenshot-relative-layout.png)
 
-The attributes are defined as follows: 
+The attributes are defined as follows:
 
-- `android:layout_alignParentEnd="true"` - It makes the end edge of this view match the end edge of the parent when the boolean value is true. In this case, the EditText view will align to the end edge of the parent. 
-- `android:layout_alignParentEnd="true"` - True, makes the end edge of the button view  match the end edge of the parent. 
+- `android:layout_alignParentEnd="true"` - It makes the end edge of this view match the end edge of the parent when the boolean value is true. In this case, the EditText view will align to the end edge of the parent.
+- `android:layout_alignParentEnd="true"` - True, makes the end edge of the button view  match the end edge of the parent.
 - `android:layout_alignParentBottom="true"` - 	True, makes the bottom edge of the button view match the bottom edge of the parent.
 - `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the ImageView match the bottom edge of the parent.
 
 **LinearLayout**
-Views are arranged in a linear format either vertically or horizontally. LinearLayout children are stacked one by one, so no matter how large they are, a vertical list will only have one child per row and a horizontal list will only be one row long. 
+Views are arranged in a linear format either vertically or horizontally. LinearLayout children are stacked one by one, so no matter how large they are, a vertical list will only have one child per row and a horizontal list will only be one row long.
 
 Example of LinearLayout XML code snippet:
 
@@ -229,7 +227,6 @@ The attributes above can be defined as follows:
 -`android:orientation="vertical"` - This determines the arrangement direction. We use "vertical" for a column" and "horizontal" for a row. In this case, the views are arranged in a column.
 
 **ConstraintLayout**
-
 It allows developers to position and size widgets in a flexible way. One of the fundamental building blocks of layout formation in ConstraintLayout is relative positioning. This allows you to position a given view relative to another one. A view will restrict to the horizontal and vertical axes. The general idea is to constrain a specific side of a widget to another side of some other widget.
 
 Example of ConstraintLayout XML code snippet:
@@ -321,8 +318,7 @@ The attributes are defined as follows:
 
 
 **FrameLayout**
-
-FrameLayout holds a single child view. it is designed to block out a region on the screen to view a single item. 
+FrameLayout holds a single child view. it is designed to block out a region on the screen to view a single item.
 
 ```xml
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
