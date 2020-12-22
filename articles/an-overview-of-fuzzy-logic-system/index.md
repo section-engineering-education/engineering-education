@@ -3,11 +3,11 @@ Decision-making is an integral aspect of our daily lives. It is hard to establis
 Fuzzy logic systems are used in automobile and domestic applications to control actions and processes. This article provides an overview of this logic and how it is implemented. It also highlights its real-life applications and explains why it is used.
 
 ### What is Fuzzy Logic?
-Fuzzy means uncertain, indefinite, vague, or unclear. Fuzzy logic is a computing technique that is based on the degree of truth. A fuzzy logic system uses the input's degree of truth and [linguistic variables](https://www.igi-global.com/dictionary/granular-computing/17211) produce a certain output. The state of this input determines the nature of the output.
+Fuzzy means uncertain, indefinite, vague, or unclear. Fuzzy logic is a computing technique that is based on the degree of truth. A fuzzy logic system uses the input's degree of truth and [linguistic variables](https://www.igi-global.com/dictionary/granular-computing/17211) to produce a certain output. The state of this input determines the nature of the output.
 
-This technique is different from [Boolean logic](https://www.bbc.co.uk/bitesize/guides/zc4bb9q/revision/1), which uses only two categories (true or false). In Boolean logic, two categories (0 and 1) are used to describe objects. For example, the temperature in water served in glass may be High (1) or Low (0). The water is described using more categories in fuzzy logic, but within the two categories mentioned earlier. In this case, the water may be very cold, very warm, or warm.
+This technique is different from [*boolean logic*](https://www.bbc.co.uk/bitesize/guides/zc4bb9q/revision/1), which uses only two categories (true or false). In *boolean logic*, two categories (0 and 1) are used to describe objects. For example, the temperature in water served in glass may be *High* (1) or *Low* (0). The water is described using more categories in fuzzy logic, but within the two categories mentioned earlier. In this case, the water may be *very cold*, *very warm*, or *warm*.
 
-Let's take another simple example. Suppose we have a question that we need to answer. In Boolean logic, the answer would be either yes or no. In fuzzy logic, the answer may be between these two categories. Some of the probable answers in this logic include possibly yes, possibly no, or certainly no. 
+Let's take another simple example. Suppose we have a question that we need to answer. In *boolean logic*, the answer would be either *yes* or *no*. In fuzzy logic, the answer may be between these two categories. Some of the probable answers in this logic include *possibly yes*, *possibly no*, or *certainly no*. 
 
 We learn that fuzzy logic systems use degrees of possibilities rather than precise categories in the above two examples. These are used to generate an explicit output. 
 
@@ -34,7 +34,7 @@ The fuzzy logic architecture consists of the following components:
 * **Defuzzifier:** This component transforms the fuzzy sets into an explicit output (in the form of crisp inputs). Defuzzification is the final stage of a fuzzy logic system. 
   
 ### Fuzzy Logic Membership Function
-A membership function is a graphical representation of a fuzzy set. It shows how values ranging between 0 and 1 are mapped to inputs. Inputs are generally represented as Universe (U). The membership function is in the form μ A:X → [0,1], where A is a fuzzy set and X is the Universe. 
+A membership function is a graphical representation of a fuzzy set. It shows how values ranging between 0 and 1 are mapped to inputs. Inputs are generally represented as Universe (U). The membership function for a given fuzzy set is in the form $$\mu_{A}:X\rightarrow [0, 1]$$ where A is a fuzzy set and X is the Universe. 
 
 Any value within the range of 0 to 1 indicates a degree of membership. Each element of the Universe (X) is given a specific degree of membership.
 
