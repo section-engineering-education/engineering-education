@@ -1,6 +1,6 @@
 ﻿
 
-# Intergrating Django with TinyMCE
+### Intergrating Django with TinyMCE
 
 TinyMCE is a rich and flexible online text editor which is compatible with Django amongst many other frameworks. It comes in handy when trying to make your content look more stylish with colorful texts, various fonts, tables, and many other features.   
 
@@ -16,7 +16,7 @@ You should at least have the following things before we begin as they will come 
  - a stable internet connection
  - patience
 
-## Step 1 – Creating our  Django app
+### Step 1 – Creating our  Django app
 Open your cmd and type in the following commands to create the Django project.
 
     $ django-admin startproject TinyMce
@@ -36,7 +36,7 @@ and then use the below command to activate it.
 
     $ .venv\Scripts\activate.bat
 
-## Step 2 – Installations
+### Step 2 – Installations
 You can now Install Django in the virtual enviroment:
 
     $ pip install django
@@ -45,7 +45,7 @@ and also Install TinyMCE:
 
     $ pip install django-tinymce4-lite
 
-## Step 3 – Intergrations
+### Step 3 – Intergrations
 After the installations are complete, you can now proceed
 to *settings. py*  and add both our app and the *tinymce* app.
 
@@ -122,7 +122,7 @@ You should also add the below *tinymce*  configurations to *settings. py*, where
        }
 
 
-## Step 4 – Applying tinyMCE
+### Step 4 – Applying tinyMCE
 Now that we have installed and integrated TinyMCE, we can create a model with a text field in *models. py* that will utilize TinyMCE.
 In *models. py* create a model by the name *textEditor* and a textfield by the name *content* :
    
@@ -187,7 +187,7 @@ After logging in you should be able to see *MYAPP* with its * Text editors * tab
 
 ![tinymce-the-final-results](/engineering-education/integrating-django-with-tinymce/tinymce-the-final-results.jpg)
 
-## Conclusion
+### Conclusion
 If you're not okay with the size of your TinyMCE text editor, you could go back to its configurations in *settings. py* and adjust the *height* and *width* values until you get the size you want.
 
 In the above project, we used the *modern* theme, although you might be pleased to know that there are other themes available that you can always google and replace the *modern* theme in the TinyMCE configurations with any other that is available.
