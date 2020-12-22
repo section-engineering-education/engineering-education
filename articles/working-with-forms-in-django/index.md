@@ -74,7 +74,7 @@ The next step is to create a register.html template that will display the form o
 </form>
 ```
 
-Csrf_token is an added security used as a hidden field to protect the form from attacks. It is an important feature in a Django form.
+_Csrf_token_ is an added security used as a hidden field to protect the form from attacks. It is an important feature in a Django form.
 
 Next, add the register.html template in your app **urls.py** file.
 
@@ -90,15 +90,15 @@ urlpatterns = [
 ]
 ```
 
-Now we check our work so far in the browser by running the command  ***python manage.py runserver*** as you know.
+Now we check our work so far in the browser by running the command  `python manage.py runserver` as you know.
 
 This should display on our browser.
 
 ![Register form](https://i.imgur.com/0Xq5kIr.png)
 
-As seen from these few lines of code, a form has been created, and Django also provides a password validation field just by importing the UserCreationForm.
+As seen from these few lines of code, a form has been created, and Django also provides a password validation field just by importing the `UserCreationForm`.
 
-So to do this, we add a few lines of code in our ****views.py**** file.
+So to do this, we add a few lines of code in our **views.py** file.
 
 ```python
 from django.shortcuts import render, redirect
@@ -116,9 +116,9 @@ def register(request):
   return render(request, 'details/register.html', {'form': form})
 ```
 
-Once this is done successfully, try creating a new user again. ***Bravo! It worked.*** So, a new user account is created, validated and the user is redirected to the home page after creating an account.
+Once this is done successfully, try creating a new user again. **Bravo! It worked.** So, a new user account is created, validated and the user is redirected to the home page after creating an account.
 
-**Note:** This form does not have an email field provided for us. Therefore, we'll need to create an email field but remember Django already provides this form for us through its UserCreationForm. So in a bit, we'll be looking at how to edit the Django form to include '**emailField'** and any other field necessary.
+**Note:** This form does not have an email field provided for us. Therefore, we'll need to create an email field but remember Django already provides this form for us through its UserCreationForm. So in a bit, we'll be looking at how to edit the Django form to include `emailField` and any other field necessary.
 
 To do this, we'll start by creating a new file **forms.py**
 
@@ -135,7 +135,7 @@ class UserRegisterForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 ```
 
-*Class Meta* is used in adding fields in an already existing Django **ModelForm.** There are various Django fields. [see](https://docs.djangoproject.com/en/3.1/topics/forms/modelforms/#field-types) for more on Django forms.
+*Class Meta* is used in adding fields in an already existing Django `ModelForm.` There are various Django fields. [Refer documentation](https://docs.djangoproject.com/en/3.1/topics/forms/modelforms/#field-types) for more details on Django forms.
 
 In **views.py:**
 
@@ -164,7 +164,7 @@ A few additional styling can be done using either CSS or bootstrap within the te
 
 Swiftly, let's add crispy-forms. Firstly, install crispy forms in your terminal.
 
-***pip install Django-crispy-forms***
+`pip install Django-crispy-forms`
 
 Once this is installed, go to your **settings.py** file and add the crispy form under installed_apps
 
@@ -193,7 +193,7 @@ Lastly, in your **register.html** file. Add the crispy form tag at the top, this
 </form>
 ```
 
- Notice, we also added "**crispy"** in our code. Hence we are adding crispy to do the editing. Don't skip that.
+Notice, we also added "**crispy"** in our code. Hence we are adding crispy to do the editing. Don't skip that.
 
 Once this is done properly, your form would look like this.
 
