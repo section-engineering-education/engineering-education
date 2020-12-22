@@ -312,11 +312,11 @@ void main(){
 The code will print out an endless string of the word `Hello`. Note that we are not incrementing the counter variable.
 
 ### Further reading
-To get a better grip on the topic, look at these resources:
+To get a better grip on the topic, take a look at these resources:
 
- - The [Dart's Official document](https://dart.dev/samples#control-flow-statements)
+ - [Dart's official documentation](https://dart.dev/samples#control-flow-statements)
 
- - You can have a look at this course from Udemy for [Dart Beginners Course](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
+ - [Udemy course for Dart](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
 
 ### Conclusion 
 Loops and Iteration may seem complicated and a bit challenging to new developers while learning a new language. This article has made it easier to understand them in Dart Programming Language. Practice will increase your understanding of these loops.
