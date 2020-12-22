@@ -6,43 +6,44 @@ url: /engineering-education/introduction-to-csharp/
 title: Introduction to C#
 description: This article will help the readers to understand the basics of C# and how to setup the development environment to write and compile C# code.
 author: geoffrey-mwangi
-date: 2020-12-16T00:00:00-13:00
+date: 2020-12-22T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-csharp/hero.jpeg
     alt: Introduction to c# image
-
 ---
-C# is an Object-Oriented programming language and it is portable as it can develop software for many computer systems. C# was invented in 2002 and it is one of the programming languages widely used today.
+C# is an Object-Oriented Programming language and it is portable as it can develop software for many computer systems. C# was invented in 2002 and it is one of the programming languages widely used today.
 <!--more-->
-
 C# is pronounced as "C-Sharp".
 
-Programs written in C# utilize the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) to run. .NET is a framework used to make applications and run the .NET software. It was created by Microsoft and it runs primarily on Windows operating system. There is an open-source implementation called [Mono](https://www.mono-project.com/download/stable/) which is cross-platform.
+Programs written in C# utilize the [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework/net45) to run. .NET is a framework used to make applications and run the .NET software. It was created by Microsoft and it runs primarily on the Windows operating system. There is an open-source implementation called [Mono](https://www.mono-project.com/download/stable/) which is cross-platform.
 
 ### Why C#?
 C# is a unique language that is friendlier and easier to understand.
 
-The performance of C# is exceptional in terms of speed and it uses very few resources. Many applications can be created using C#. Some of the applications that can be created with C# are:
+The performance of C# is exceptional in terms of speed and it uses very few resources. Many applications can be created using C#. 
 
+Some of the applications that can be created with C# are:
 - Web applications
 - Networking applications
 - Database applications
 - Mobile application
-- Games
+- Videos games
 - Service applications 
 
-To get started, you will need an IDE(Integrated Development Environment) for writing and compiling code. We will be using [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
+To get started, you will need an IDE (Integrated Development Environment) to write and compile code. We will be using [Visual Studio](https://visualstudio.microsoft.com/vs/community/) as our text editor.
 
 ### Installing C# 
 After you have installed Visual Studio, choose .NET desktop development, and click *Modify*.
+
 ![vscode](installation.png)
 
 After the installation, click *Launch* to get started.  
 
 On the new window, choose *Create a new project*.
+
 ![newproject](vs1.png)
 
 Once you have selected *Create a new project*, choose *"Install more tools and features"* then click *Next*.
