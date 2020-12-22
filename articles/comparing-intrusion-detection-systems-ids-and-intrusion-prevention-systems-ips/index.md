@@ -56,11 +56,11 @@ That is why prevention and detection are critical for network management. You mu
 
 Data breach threats are ever-growing, and security teams must continuously update their cybersecurity strategies. IDS and IPS are essential aspects of a cybersecurity strategy and can help to accomplish many security objectives, as explained below.
 
-**Compliance**: in many jurisdictions, part of the compliance requirement is to invest in systems and technologies that guarantee data protection. These technologies are not limited to IPS and IDS, which are significant in addressing security controls. Security controls act as countermeasures or safeguards to detect, avoid, minimize, and counteract threats to computer systems, data, computer networks, and more.
+**Compliance**: In many jurisdictions, part of the compliance requirement is to invest in systems and technologies that guarantee data protection. These technologies are not limited to IPS and IDS, which are significant in addressing security controls. Security controls act as countermeasures or safeguards to detect, avoid, minimize, and counteract threats to computer systems, data, computer networks, and more.
 
-**Policy enforcement**: security teams can configure IDS and IPS to implement internal security strategies at the network level. If an organization supports only one virtual private network (VPN), it can rely on IPS to block other VPN traffic.
+**Policy enforcement**: Security teams can configure IDS and IPS to implement internal security strategies at the network level. If an organization supports only one virtual private network (VPN), it can rely on IPS to block other VPN traffic.
 
-**Automation**: since IPS and IDS are mostly hands-off, they are very applicable for the present security stack. IPS only requires limited resources to protect networks from known threats.
+**Automation**: Since IPS and IDS are mostly hands-off, they are very applicable for the present security stack. IPS only requires limited resources to protect networks from known threats.
 
 ### Conclusion
 
