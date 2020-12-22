@@ -18,7 +18,7 @@ Some of the commonly used views in android are:
 - Buttons
 - ImageView
 
-**TextView**
+**`TextView`**
 This view is for displaying text. We can also use it with other views. For example, when creating forms, it can be used alongside the EditText view to mention information required to enter by the user.
 
 Example of TextView in XML:
@@ -45,7 +45,7 @@ Now, let's see what the attributes stated above do:
 
 **NOTE:** Android provides many different attributes that can be applied to manage various properties thus, the user is not limited to the above only.
 
-**EditText**
+**`EditText`**
 It is a widget that allows the user to enter text. The android:inputType attribute is not really a must since it has a default value of text.
 
 Example of EditText in XML:
@@ -69,7 +69,7 @@ The attributes we have stated above will be broken down as follows:
 - `android:inputType=”text” `-It is used to specify the type of input that the view should accept.
 - `android:maxLength=”10”` - Specifies the maximum number of characters that the view should accept. in this case, it only accepts 10 characters.
 
-**Button**
+**`Button`**
 it is a user interface feature that contains a text or an icon that the user can tap or click to act.
 
 Example of Button in XML:
@@ -89,7 +89,7 @@ The attributes are defined as follows:
 - `android:backgroundTint=”#de4f3e”` - It sets the background color of the button.
 - `android:text=”click me”` - is the text that will be displayed on the button.
 
-**ImageView**
+**`ImageView`**
 it is a widget used to display images and bitmaps in android applications. Image files supported by android are in three formats:
 
 `.png` -preferred
@@ -123,7 +123,7 @@ Some of the commonly used Viewgroups are:
 - ConstraintLayout
 - FrameLayout
 
-**RelativeLayout**
+**`RelativeLayout`**
 RelativeLayout displays views relatively to one another. The view position has some relation to the sibling. RelativeLayout substitutes many nested LinearLayout groups while keeping the hierarchy of the layout flat, improving performance.
 
 Example of RelativeLayout in XML:
@@ -176,7 +176,7 @@ The attributes are defined as follows:
 - `android:layout_alignParentBottom="true"` - 	True, makes the bottom edge of the button view match the bottom edge of the parent.
 - `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the ImageView match the bottom edge of the parent.
 
-**LinearLayout**
+**`LinearLayout`**
 Views are arranged in a linear format either vertically or horizontally. LinearLayout children are stacked one by one, so no matter how large they are, a vertical list will only have one child per row and a horizontal list will only be one row long.
 
 Example of LinearLayout in XML:
@@ -224,7 +224,7 @@ The attributes above can be defined as follows:
 -`android:gravity="center"`-  This controls how linear layout aligns all the views it contains.  In this case, the views will align at the center.
 -`android:orientation="vertical"` - This determines the arrangement direction. We use "vertical" for a column" and "horizontal" for a row. In this case, the views are arranged in a column.
 
-**ConstraintLayout**
+**`ConstraintLayout`**
 It allows developers to position and size widgets in a flexible way. One of the fundamental building blocks of layout formation in ConstraintLayout is relative positioning. This allows you to position a given view relative to another one. A view will restrict to the horizontal and vertical axes. The general idea is to constrain a specific side of a widget to another side of some other widget.
 
 Example of ConstraintLayout in XML:
@@ -315,7 +315,7 @@ The attributes are defined as follows:
 - `app:layout_constraintStart_toStartof="parent"` - This attribute constrains the start of the ImageView to the start of another view which in this case is the parent.
 
 
-**FrameLayout**
+**`FrameLayout`**
 FrameLayout holds a single child view. it is designed to block out a region on the screen to view a single item.
 
 ```xml
