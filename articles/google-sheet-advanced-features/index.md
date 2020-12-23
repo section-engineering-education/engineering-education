@@ -9,7 +9,7 @@ A spreadsheet is a computer program/application used to store data, analyze and 
 
 ##### Online/offline access
 
-Google offers most of the services online, making them accessible from any part of the world but allows the offline capability for some, including Google spreadsheet, which increases service availability. To turn on offline access navigate to Google Drive, click on Settings on the top right, and switch on the offline setting. To set a document available offline, navigate to Google Drive, right-click on it and turn on "Available offline".
+Google offers most of the services online making them accessible from any part of the world. It allows the offline capability for some applications like Google spreadsheet to increases service availability. To turn on offline access navigate to Google Drive, click on Settings on the top right, and switch on the offline setting. To set a document available offline, navigate to Google Drive, right-click on it and turn on "Available offline".
 
 ![Offline Access](/engineering-education/google-sheet-advanced-features/offline-access.png)
 
