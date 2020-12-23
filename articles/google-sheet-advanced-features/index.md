@@ -47,7 +47,7 @@ Google offers AppSheet mobile applications used to host mobile applications deve
 The Sheet is a mobile application developed by Google to enable the editing of Google sheets on mobile devices with small screens such as tablets and mobile phones.
 
 
-![Offline Access](/engineering-education/google-sheet-advanced-features/mobile-app.png)
+![Mobile app](/engineering-education/google-sheet-advanced-features/mobile-app.png)
 
 
 ##### Collaboration
@@ -55,7 +55,7 @@ The Sheet is a mobile application developed by Google to enable the editing of G
 The ability to share spreadsheets with other users and have a real-time interaction is a great feature. It allows multiple simultaneous uses of the document by users. Also, access is determined by rights to view, comment, edit, and own. Sharing can happen to a group or the public by sharing the link. This capability enables collaboration by users. Google also allows editors to see the version history to view the edits and changes made to cells, sheets, or even the whole spreadsheet and go back to a particular time in history. It enhances the collaboration feature and makes edits trackable and traceable to specific users. Google sheet comes with a chat window that allows collaborators to side chat and shares their views. It also makes available the users that are inline per session.
 
 
-![Offline Access](/engineering-education/google-sheet-advanced-features/collaboration-share.png)
+![Collaboration](/engineering-education/google-sheet-advanced-features/collaboration-share.png)
 
 
 ##### Ease of use / Availability and Security
@@ -72,7 +72,7 @@ As one of the benefits of online shared applications, Google encourages develope
 A good example of an add-on is Hunter which is for Google Sheet and helps in finding, organizing, and verifying professional email addresses. It also allows the pulling of email addresses given first name, last name, and the organization domain.
 
 
-![Offline Access](/engineering-education/google-sheet-advanced-features/dev-addons.png)
+![Add-on](/engineering-education/google-sheet-advanced-features/dev-addons.png)
 
 
 ##### APIs support
