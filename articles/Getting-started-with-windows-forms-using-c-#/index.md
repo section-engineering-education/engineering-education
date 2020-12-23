@@ -124,24 +124,25 @@ private void Div_Click(object sender, EventArgs e)
 }
 ```
 
-Let's deal with the `Sqrt()` & the `Pow()` methods.
+Let's deal with the `Sqrt()` & the `Pow()` methods. We will also use the `try` & `catch` blocks to prevent the user from doing invalid operations.
+
 **Note:** In order to use the Pow & Sqrt methods you need to import the Math class as follows `using static System.Math;`.
-We will also use the `try` & `catch` blocks to prevent the user from doing invalid operations.
 
 ```c#
  private void Sqrt_Click(object sender, EventArgs e)
 {              
     try
-        {
+    {
         double ans = Sqrt(Double.Parse(Output.Text));
         Output.Text = ans.ToString();
-        }
+    }
     catch(Exception E)
     {
         MessageBox.Show(E.Message);
     }
 
 }
+
 private void Pow_Click(object sender, EventArgs e)
 {
     try
