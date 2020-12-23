@@ -100,7 +100,7 @@ void main(){
 
 Output : 
 
-```
+```bash
 Hello
 Hello
 Hello
@@ -151,7 +151,7 @@ void main(){
 
 Output:
 
-```
+```bash
 Hello
 Hello
 Hello
@@ -202,7 +202,7 @@ void main(){
 
 Output:
 
-```
+```bash
 Hello
 Hello
 Hello
@@ -234,7 +234,7 @@ void main(){
 
 Output:
 
-```
+```bash
 Hello
 Hello
 Hello
@@ -263,7 +263,7 @@ void main(){
 
 Output:
 
-```
+```bash
 1
 2
 3
@@ -293,7 +293,7 @@ void main(){
 
 Output:
 
-```
+```bash
 John
 Mark
 Alex
@@ -317,7 +317,7 @@ void main(){
 The code will print out an endless string of the word `Hello`. Note that we are not incrementing the counter variable.
 
 ### Conclusion 
-Loops and iteration may seem complicated and a bit challenging to new developers while learning a new language. The goal of this article was to make it easier to understand them in Dart Programming Language. Practice will increase your skill and understanding of these loops.
+Loops and iteration may seem complicated and a bit challenging to new developers while learning a new language. The goal of this article was to make it easier to understand them in Dart programming language. Practice will increase your skill and understanding of these loops.
 
 I've listed a couple extra links as further reading down below:
 
