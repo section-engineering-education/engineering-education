@@ -19,7 +19,7 @@ Dart is a programming language that is scalable and can write simple scripts or 
 If one is familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
 
 ### Introduction
-A Loop is defined as a segment of code that executes multiple times.
+A loop is defined as a segment of code that executes multiple times.
 
 Iteration refers to the process in which the code segment is executed once. One iteration refers to 1-time execution of a loop. A loop can undergo many iterations. 
 
