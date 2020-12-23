@@ -11,7 +11,7 @@ Automation testing in Selenium has helped in solving some of the challenges expe
 
 Selenium conducts automation testing within a shorter time compared to manual testing. It also provides various tools that increase the scope of testing. In this type of automation testing, the test cases are executed automatically, which increases the level of accuracy. 
 
-Some of the programming languages employed in creating text scripts in Selenium include Java, Python, C#, Perl, Ruby, and *PhP*. This software supports testing across various browsers such as Internet Explorer, Apple Safari, Mozilla Firefox, and Google Chrome. Automation testing in Selenium can also be done on various operating systems such as Linux, Windows, and Mac.
+Some of the programming languages employed in creating text scripts in Selenium include Java, Python, C#, Perl, Ruby, and PHP. This software supports testing across various browsers such as Internet Explorer, Apple Safari, Mozilla Firefox, and Google Chrome. Automation testing in Selenium can also be done on various operating systems such as Linux, Windows, and Mac.
 
 ### Why Selenium is Widely Used in Automation Testing
 Selenium is widely used by organizations and web developers in the testing of web applications. The following are some of the reasons for the adoption of this software in automation testing.
@@ -64,7 +64,7 @@ The Selenium grid comprises a hub that is linked to many nodes. The tests that n
 #### Selenium Web Driver
 This component is an upgraded version of Remote Control. This is the most applied Selenium tool in automation testing. It utilizes a client API to send commands to web browsers. Every browser consists of a unique web driver for running tests. Some of the web drivers for specific browsers include Firefox driver, Safari driver, Opera driver and Internet Explorer driver. 
 
-Some of the programming languages supported by this component include *PHP*, Java, C#, Javascript, Ruby, Perl, and Python. Selenium web driver is also compatible with various browsers such as Opera, Internet Explorer, Mozilla Firefox, Google Chrome, and Apple Safari. The operating systems supported by the Selenium web driver include Mac, Solaris, Windows, and Linux.  
+Some of the programming languages supported by this component include PHP, Java, C#, Javascript, Ruby, Perl, and Python. Selenium web driver is also compatible with various browsers such as Opera, Internet Explorer, Mozilla Firefox, Google Chrome, and Apple Safari. The operating systems supported by the Selenium web driver include Mac, Solaris, Windows, and Linux.  
 
 The following diagram shows a simple web driver architecture.
 
