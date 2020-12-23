@@ -162,7 +162,7 @@ Our `index.html` will have a `form` and several `buttons`, as shown below.
 </html>
 ```
 
-When the `submit` button is clicked, it takes the user input and passes it to the `store` function in the `main.js` file. The `document.getElementById('carBrand').value` gets the user input. The values are then passed to the car object and stored in the `sessionStorage` using setItem method.
+When the `submit` button is clicked, it takes the user input and passes it to the `store` function in the `main.js` file. The `document.getElementById('carBrand').value` gets the user input. The values are then passed to the car object and stored in the `localStorage` using setItem method.
 
 ```javascript
 function store(){ //stores items in the local storage
@@ -204,7 +204,7 @@ function removeItem(){  //deletes item from localStorage
 ```
 
 clearButton calls the `clearStorage()`. The `clear()` method is used to remove all values in the localStorage.
-```
+```javascript
 function clearStorage(){ //clears the entire localStorage
     localStorage.clear()
     console.log("clear records");
