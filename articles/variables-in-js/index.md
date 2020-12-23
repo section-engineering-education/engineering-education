@@ -4,7 +4,7 @@ Variables are a way for programmers to name a value to reuse it, update it, or k
 To follow along with this tutorial, you need a web browser. You can get Google Chrome [here](https://www.google.com/chrome/)
 
 ### Accessing the JavaScript Console
-We will use the JavaScript console to execute the JavaScript code in this tutorial. To open it in Google Chrome, press `Ctrl + Shift + J` on Windows and Linux and `Cmd + Option + J` in Mac OS.
+We will use the JavaScript console to execute the JavaScript code in this tutorial. To open it in Google Chrome, press `Ctrl + Shift + J` on Windows and Linux and `Cmd + Option + J` on Mac OS.
 
 ### Understanding the scope of variables
 Scope determines the accessibility of variables from different parts of your code.
@@ -30,8 +30,8 @@ A function scoped variable means that the variable defined within the function i
 
 **b.Block scoped variables**
 
-In JavaScript a block is denoted by curly braces. The space between the curly brackets is known as a block.
-For example: the `if...else, do...while` and `for` loop statements create blocks.
+In JavaScript, a block is denoted by curly braces. The space between the curly brackets is known as a block.
+For example, the `if...else, do...while` and `for` loop statements create blocks.
 
 When a variable is block-scoped, it means that it exists only inside the block where it was defined.
 
@@ -41,10 +41,10 @@ When a variable is block-scoped, it means that it exists only inside the block w
 Before you start declaring variables, you should first learn how to name them first. Below are some of the rules that one should follow. Failing to do so will cause an error.
 
 - Variables should not have spaces.
-- Variables should begin with an underscore, a dollar sign or a letter.
+- Variables should begin with an underscore, a dollar sign, or a letter.
 - Variables are very case-sensitive. This means `car_TYPE` is treated as an entirely different variable than one named `car_type`
 - Variables must contain only letters, numbers, underscores, or dollar signs.
-- You can't use any JavaScript *reserved words* as a variable name. Reserved words include; private, public, enum etc.
+- You can't use any JavaScript *reserved words* as a variable name. Reserved words include; private, public, enum, etc.
 
 ### Declaring variables using the keyword `var`
 
@@ -122,6 +122,6 @@ The error: `SyntaxError: Identifier 'pi' has already been declared`, informs you
 Using the `const` keyword lets you declare constants that should not be changed in your code.
 
 ### Conclusion
-In summary, we have learnt about variables and how they are declared and used in JavaScript. We have gone through different types of variable scopes.
+In summary, we have learned about variables and how they are declared and used in JavaScript. We have gone through different types of variable scopes.
 
 If you are a beginner, this may not be very clear, but you will get there with practice.
