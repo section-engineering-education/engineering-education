@@ -161,19 +161,19 @@ Then register the styles above in `assets/AppAsset.php`.
 Now let us change the contents of our website. Replace the contents of `frontend/views/site/index.php` with the following code:
 
 ```PHP
-<?PHP
+<?php
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Website';
+$this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
 
        <h1>Hello World!</h1>
-       <p>My first yii2 powered site.</p>
-       <h2>Click here <a href="<?= Yii::$app->urlManager->createUrl(['site/portfolio'])?>">Portfolio </a></h2> to go to portfolio page
+       <p>My first webpage using yii2.</p>
+       <h2>Look at my <a href="<?= Yii::$app->urlManager->createUrl(['site/portfolio'])?>">Portfolio<a> </h2>
     </div>
 </div>
 ```
@@ -187,17 +187,22 @@ The code above replaces the default homepage content with bootstrap jumbotron. W
 ### Adding a new page to our website
 To add a new page to our website, we need to create a view and an action. A view is the code that the user will see on the browser. Create a new file `frontend/views/site/portfolio.php` and put the following code:
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Portfolio</title>
-</head>
-<body>
-     <h1 style="text-align: center">This is the portfolio page</h1>
-     
-</body>
-</html>
+```php
+<?php
+
+/* @var $this yii\web\View */
+
+$this->title = 'My Website';
+?>
+<div class="site-index">
+
+    <div class="jumbotron">
+
+       <h1>Hello World!</h1>
+       <p>My first yii2 powered site.</p>
+       <h2>This is my portfolio</a></h2>
+    </div>
+</div>
 ```
 For the above view code to work, we need to create an action. We will put Actions in controllers. 
 
@@ -224,11 +229,11 @@ class SiteController extends Controller
 
 }
 ```
-After creating the action and the view, you can access the new page by clicking on "Portfolio" on the main page.
+After creating the action and the view, you can access the new page by clicking on "Portfolio" link on the main page.
 
 You should have a page like the one below;
 ![web display](1.png)
-### conclusion
+### Conclusion
 Congratulations! Now you have a better understanding of the basics of the Yii 2 framework.
 Yii 2 pushes you to create a securable and testable site by doing a lot of the heavy lifting for you.
 I encourage you to use Yii 2 in your next project.
