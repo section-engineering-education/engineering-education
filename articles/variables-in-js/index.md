@@ -52,7 +52,7 @@ Before you start declaring variables, you should first learn how to name them fi
 - should begin with an underscore, a dollar sign or a letter.
 - are very case-sensitive. This means `car_TYPE` is treated as an entirely different variable than one named `car_type`
 - must contain only letters, numbers, underscores, or dollar signs.
-- You can't use any JavaScript *reserved words* as a variable name, reserved words include; private, public, enum etc.
+- You can't use any JavaScript *reserved words* as a variable name, you can find a list of reserved words [here](https://www.w3schools.com/js/js_reserved.asp)
 
 ### Declaring variables using the keyword `var`
 
