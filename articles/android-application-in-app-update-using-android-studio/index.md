@@ -11,9 +11,11 @@ To solve this problem, Google I/O introduced an [in-app update API](https://deve
 In this guide, we will learn about Google's in-app updates and implement them in our applications. We will discuss the two methods to implement in-app updates. These are:
 
 - Immediate
+
 The immediate update introduces a `blocking full-screen UI`. When a user starts the update, he/she can't use the application until the update is installed. The app will automatically restart when the update is completed. This method is preferred when the update introduces critical functionalities.
 
 - Flexible
+
 A flexible update allows users to interact with the application while the update takes place in the `background`. Once the update is downloaded, the user will be prompted to restart the application. The application will then install the update and open the app to the foreground. It is preferred when the update has minor changes that do not affect the application's critical functionalities.
 
 ### Prerequisites
