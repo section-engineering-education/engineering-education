@@ -1,4 +1,23 @@
-Digital revolution has led to an increase in the number of web applications. Developers are constantly creating new web applications to meet various demands. Before these applications are commissioned for use, developers test them (using automation testing tools) to ensure that they function without problems. Selenium is an effective automation tool that can help developers to validate their applications. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/automation-testing-in-selenium/
+title: Automation Testing in Selenium - An Overview
+description: This article will provide an overview on Automation Testing using Selenium. We will go over the components of Selenium and what they are used for.
+author: onesmus-mbaabu
+date: 2020-12-24T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/automation-testing-in-selenium/hero.jpg
+    alt: Automation Testing Image
+---
+Digital revolution has led to an increase in the number of web applications. Developers are constantly creating new web applications to meet various demands. 
+<!--more-->
+
+Before these applications are commissioned for use, developers test them (using automation testing tools) to ensure that they function without problems. Selenium is an effective automation tool that can help developers to validate their applications. 
 
 This article will take you through the fundamental aspects of this software. It provides an overview of how automation testing takes place in Selenium software. The article has also highlighted the main types of testing done by Selenium.  
 
