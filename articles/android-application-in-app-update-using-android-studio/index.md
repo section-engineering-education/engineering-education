@@ -1,23 +1,27 @@
 As developers, we always want users to update their applications to the latest version quickly. You want everyone to use the latest features you've developed.
 
-Google notifies Android users whenever updates are available for certain applications. This is mainly for users who have enabled `auto-update`. Its important for users to know when your application has a new update available.
+Google notifies Android users whenever updates are available for certain applications. This is mainly for users who have enabled `auto-update`. It is important for users to know when your application has a new update available.
 
 Suppose a user has your application installed on their mobile phone. Yet, you have added new critical features or fixed a bug to the app. The only way the user can access these functionalities is by updating the application. Some users lack the interest or time to open the Google Play store and update their applications. This means that they will take time before switching to the latest version.
 
-To solve this problem, Google I/O introduced an [in-app update API](https://developer.android.com/guide/playcore/in-app-updates). This API alerts users whenever you have a new version on the Play store by poking the user to update the application. The API introduces an `update UI` within your application context to notify users of the update. 
+To solve this problem, Google I/O introduced an [in-app update API](https://developer.android.com/guide/playcore/in-app-updates). This API alerts users whenever you have a new version on the Google Play store. The API introduces an `update UI` within your application to notify users to update to the newly available application version. Users don't have to open the Google Play store to initiate the update.
 
 ### Goal
 
 In this guide, we will learn about Google's in-app updates and implement them in our applications. We will discuss the two methods to implement in-app updates. These are:
 
 - Immediate
-The immediate update introduces a `blocking full-screen UI`. When a user starts the update, he/she can't use the application until the update is installed. The app will automatically restart when the update is completed. This method is preferred when the update introduces critical functionality.
+The immediate update introduces a `blocking full-screen UI`. When a user starts the update, he/she can't use the application until the update is installed. The app will automatically restart when the update is completed. This method is preferred when the update introduces critical functionalities.
 
 - Flexible
-A flexible update allows users to interact with the application while the update takes place in the ``background`. Once the update is downloaded, the user will be prompted to restart the application. The application will then install the update and open the app to the foreground. This method is preferred when the update has minor changes that do not affect the application's critical functionalities.
+A flexible update allows users to interact with the application while the update takes place in the `background`. Once the update is downloaded, the user will be prompted to restart the application. The application will then install the update and open the app to the foreground. It is preferred when the update has minor changes that do not affect the application's critical functionalities.
 
 ### Prerequisites
 This guide assumes you have prior knowledge of Android application development using `Android Studio` and `Java.`
+
+To carry out testing, you will need:
+- A Google Play [Console account](https://play.google.com/console/about/).
+- An application already published in the Google Play store.
 
 ### Requirements
 - A device running Android `5.0` (API level 21) or higher.
@@ -32,14 +36,14 @@ implementation 'com.google.android.play:core:1.8.3'
 
 Sync to download the library.
 
-At the time of writing this guide, the Play Core version was `1.8.3`. It is recommended to have the latest version. Check for the latest version [here](https://developer.android.com/reference/com/google/android/play/core/release-notes).
+At the time of writing this guide, the Google Play Core version was `1.8.3`. It is recommended to have the latest version. Check for the latest version [here](https://developer.android.com/reference/com/google/android/play/core/release-notes).
 
 ### Background
-Setting the in-app update is simple. All major functionalities are implemnted by the `Google Core API`. A user doesn't have to activate auto-updates in the play store. The API will handle the update flow in any application that has implemented this in-app update concept.
+Setting the in-app update is simple. All major functionalities are implemented by the `Google Core API`. A user doesn't have to activate auto-updates in the Google Play store. The API will handle the update flow in any application that has implemented this in-app update concept.
 
-Before handling the update type, either flexible or immediate, you should understand how the API works. 
+Before handling the update type, either flexible or immediate, you should understand how the API works. Let's discuss some of the key classes and functions that help us to trigger an update flow.
 
-To check if there is an update available in the Play store, we have to create an instance of `appUpdateManager`. It communicates with the `AppUpdateInfo` object. The object triggers a remote communication with the Play store. It holds the property results and status of any available update. The result is a collection of data for the update availability, such as the available app version. The data will then be used to determine whether the API should initiate the update flow.
+To check if there is an update available in the Google Play store, we have to create an instance of `appUpdateManager`. It communicates with the `AppUpdateInfo` object. The object triggers a remote communication with the Google Play store. It holds the property results and status of any available update. The result is a collection of data for the update availability, such as the available app version. The data will then be used to determine whether the API should initiate the update flow.
 
 `AppUpdateInfo` has the following methods.
 
@@ -47,11 +51,11 @@ To check if there is an update available in the Play store, we have to create an
 
 - `UPDATE_AVAILABLE`
 
-This checks whether an application has a new version available in the play store.
+This checks whether an application has a new version available in the Google Play store.
 
 - `DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS`
 
-This handles a case where a user initiated the update process but closed the application while the update was in progress. `updateAvailability()` will return the state of the update progress.
+This handles a case where a user-initiated the update process but closed the application while the update was in progress. `updateAvailability()` will return the state of the update progress.
 
 2. `installStatus()` returns the value of the update milestone. `installStatus()` is an instance of `installStateUpdatedListener` hooked to the `appUpdateManager`. It returns the values of the update status, such as;
 
@@ -60,15 +64,15 @@ When the user hits the update, the application will first download the APK. `ins
 
 - `INSTALLED` - `installStatus()` sets the action when the newly available update has been installed.
 
-To trigger the update flow, we first check the `updateAvailability()` to determine if there is an update available. The returned value should be `UPDATE_AVAILABLE` if the developer has pushed new features. 
+To trigger the update flow, we first check the `updateAvailability()` to determine if there is an update available. The returned value should be `UPDATE_AVAILABLE` if the developer has pushed new features.
 - Validate whether the update type is allowed with the function `isUpdateTypeAllowed()`.
 - Pass `AppUpdateType`, which can be `IMMEDIATE` or `FLEXIBLE`.
 
-Since we have determined whether an update is available or not (the state of the available update), and if the update type is allowed, `appUpdateManager` will return the update status from the `AppUpdateInfo` values, and trigger the update flow with `startUpdateFlowForResult`.
+We have determined whether an update is available or not (the state of the available update). If the update type is allowed, `appUpdateManager` will return the update status from the `AppUpdateInfo` values and trigger the update flow with `startUpdateFlowForResult`.
 
 We pass the following parameters to `startUpdateFlowForResult` to start the update flow UI.
 
-- The `appUpdateInfo` that we previously fetched from the play store.
+- The `appUpdateInfo` that we previously fetched from the Google Play store.
 - The updated flow that we want to trigger. Previously passed to `isUpdateTypeAllowed` as `AppUpdateType` that can be `IMMEDIATE` or `FLEXIBLE`.
 - The execution context in the current activity.
 - A request code to catch `Onactivity` results such as:
@@ -86,9 +90,7 @@ Let’s handle the flow.
 Before we check this, make sure you implement the update flow on your main launch application page—for example, a log-in activity. This will make sure that a user is alerted as soon they open the application.
 
 #### An instance of `AppUpdateManager`
-Create an instance of `AppUpdateManager` within our application execution context.
-
-Go ahead and declare `AppUpdateManager` right above `onCreate`.
+Create an instance of `AppUpdateManager`. Go ahead and declare `AppUpdateManager` right above `onCreate`.
 
 ```java
 private AppUpdateManager appUpdateManager;
@@ -103,7 +105,7 @@ appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
 #### Check for the update
 To implement the update flow, you need to check whether there is an updated application version in the Google Play store.
 
-Create a function `checkUpdate()` and pass it to the `onCreate` function.
+Create a function `checkUpdate()` and call it in the `onCreate`.
 
 ```java
 private void checkUpdate() {
@@ -123,22 +125,23 @@ private void checkUpdate() {
 
 Here is what the function does:
 
-The function communicates with the Play store to decide if the update is available.
+It communicates with the Play store to decide if the update is available.
 
-To get update information, an instance of `appUpdateManager` is assigned to a variable `appUpdateInfoTask`.
+This requests;
+- The update availability for the current application, 
+- An intent to start an update flow,
+- And, if applicable, the state of updates currently in progress.
 
-This requests the update availability for the current application, an intent to start an update flow, and, if applicable, the state of updates currently in progress.
+Register a listener to communicate with the `appUpdateInfoTask`. If the conditions check that `UPDATE_AVAILABLE` is `true`, check whether the update is allowed and set the update mode to `FLEXIBLE`. If these conditions are met, we will start the update flow with `startUpdateFlow(appUpdateInfo)` (we will look into it later).
 
-Register a listener to communicate with the `appUpdateInfoTask`. If the conditions check that `UPDATE_AVAILABLE` is `true`, check whether the update is allowed and set the update mode to `FLEXIBLE`. If these conditions are met, we will start the update flow with `startUpdateFlow(appUpdateInfo)` (we will look into that later).
-
-In this case, our update mode is set `Flexible`. The update download happens in the background. We then need to check the install status. If the status shows that the app is `DOWNLOADED`, we need to notify the user that the download has been completed. You can choose to use a `snack bar` or an `alert dialog`. Here I create a function `popupSnackBarForCompleteUpdate()`, and call it when `installStatus()` is equal to `DOWNLOADED`. The UI will react by nudging the user to install the downloaded APK.
+In this case, our update mode is set `Flexible`. The update download happens in the background. We then need to check the install status. If the status shows that the app is `DOWNLOADED`, we need to notify the user that the download has been completed. You can choose to use a `snack bar` or an `alert dialog`. I choose to use `snack bar`. Create a function `popupSnackBarForCompleteUpdate()`, and call it when `installStatus()` is equal to `DOWNLOADED`. The UI will react by nudging the user to install the downloaded APK.
 
 ***Remember to press alt + enter on a PC and option + enter on a Mac to import the classes after copying and pasting the code blocks into your IDE.***
 
 #### Handling the update flow
 Now create the `startUpdateFlow(appUpdateInfo)` function we passed above.
 
-Thus far, we have checked whether the update is available or not. We have also confirmed that the updated platform is supported, and we are, therefore, ready to request the update.
+We have checked whether the update is available or not. We have also confirmed that the updated platform is supported, and we are, therefore, ready to request the update.
 
 ```java
 private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
@@ -151,7 +154,7 @@ private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
 ```
 
 `startUpdateFlowForResult()` will request the update from `AppUpdateInfo` that holds the update information.
-To ensure the update flow of the requested update kick-off as expected, we pass some parameters to `startUpdateFlowForResult`; They include
+To ensure the update flow kick-off as expected, we pass some parameters to `startUpdateFlowForResult`. They include
 
 - `appUpdateInfo`
 - `AppUpdateType` — the mode of the update flow we want to perform. In this case, we've set that to `FLEXIBLE`.
@@ -184,7 +187,13 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 From the above code, there are several results;
 
-- If a user canceled the installation, you could call the `checkUpdate()` to start the update flow again. You can do many things here, such as returning a dialog to inform the user they need to update the application or inform them of the new features or the bugs that the update will fix. If the user agrees, you can call `checkUpdate()` to reinitiate the update flow again. You can also decide to close the application with `finish()`.  Otherwise, do nothing and continue with the normal application flow.
+- If a user canceled the installation, you could call the `checkUpdate()` to restart the update flow.
+
+You can do many things here, such as;
+  1. Poping a dialog to inform the user the need to update the application.
+  2. Inform them of the new features or the bugs that the update will fix.
+
+If the user agrees, you can call `checkUpdate()` to reinitiate the update flow. You can also decide to close the application with `finish()`. Otherwise, do nothing and continue with the normal application flow.
 
 - `RESULT_OK` — shows that the update was successful. We can't assign any action to it, as our goal is met. But you can choose to show a message to the user to thank them for taking the time to update the application to the latest version.
 
@@ -202,7 +211,7 @@ Declare the listener.
 private InstallStateUpdatedListener installStateUpdatedListener;
 ```
 
-Add the following code just below the `appUpdateManager` instance created on the `Ocreate` method.
+Add the following code just below the `appUpdateManager` instance created inside the `onCreate` method.
 
 ```java
 installStateUpdatedListener = state -> {
@@ -237,10 +246,10 @@ private void popupSnackBarForCompleteUpdate() {
 }
 ```
 
-This notifies the user that the update is APK is downloaded and ready to be installed. When the user clicks `Install`, the `appUpdateManager`, automatically installs the newly downloaded APK and relaunches it in the foreground.
+This notifies the user that the update APK is downloaded and ready to be installed. When the user clicks `Install`, the `appUpdateManager` automatically installs the downloaded APK. This will bring the newly updated features onboard.
 
 #### Unregister the listener
-We have now achieved the update installation, so we don’t need the `installStateUpdatedListener` anymore.
+We have now achieved the update installation. We don’t need the `installStateUpdatedListener` anymore.
 
 To unregister it, create a function `removeInstallStateUpdateListener()` and call it when `installStatus()` is equal to `INSTALLED`.
 
@@ -255,7 +264,7 @@ private void removeInstallStateUpdateListener() {
 This prevents the callbacks from being triggered when they are no longer required. Unregistering the listener also helps to avoid memory leaks.
 
 ### Implementing immediate updates
-When the `AppUpdateType` is set to `IMMEDIATE`, `appUpdateManager`  initiates a `blocking UI`, which blocks the user from interacting with the application until the update is complete.
+When the `AppUpdateType` is set to `IMMEDIATE`, `appUpdateManager`  initiates a `blocking UI`. It blocks the user from interacting with the application until the update is complete.
 
 Immediate updates are similar to the flow of events discussed while implementing the flexible mode. To avoid repeating the detailed explanation we have done above, we will state the update flow that implements an immediate update.
 
@@ -288,7 +297,7 @@ The app will communicate with the play store and check whether the update is ava
 
 If the update is available, check whether the update type is allowed. In this case, we are checking if the `IMMEDIATE` mode is allowed to start the update flow. If yes, we call `startUpdateFlow(appUpdateInfo)`.
 
-If the user initiated the update and closed the app before the process was over, set the `UpdateAvailability` to `DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS` so that the user can resume the update process by initiating `startUpdateFlow(appUpdateInfo)`.
+If the user initiated the update and closed the app before the process was over, set the `UpdateAvailability` to `DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS`. The user can resume the update process by initiating `startUpateFlow(appUpdateInfo)`.
 
 #### Handling the update flow
 
@@ -325,24 +334,20 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 `OnActivityResult` handles the action a user takes when prompted to install an update. This is comprised of three main actions, including:
 
-- `RESULT_CANCELED` — when a user cancels an update, you may choose an action that follows that decision, such as `checkUpdate()` to force the application to restart the update. Or call `finish()` to close the application whenever the user cancels an update.
+- `RESULT_CANCELED` — when a user cancels an update, you may choose an action that follows that decision. `checkUpdate()` to force the application to restart the update. Or call `finish()` to close the application whenever the user cancels an update.
 - `RESULT_OK` — shows that a user has accepted the update to be installed.
 - `RESULT_IN_APP_UPDATE_FAILED` — If an update fails with an error, you would want the app to reinitiate the update flow again. For that reason, call `checkUpdate()`, and the update flow will start again.
 
 ### Testing
 Testing an in-app update is not straightforward. It can be a little tricky to perform a test.
 
-#### What you need
-- A Google Play Console account
-- An application already published in the Google Play store
-
 #### How to test
-1. Generate a signed app bundle/APK. Note that the APK signing key, and the `applicationId` should be the same as the already published application.
-2. Share the generated APK with a tester. To do that, select the published application in the Google console, navigate to [`Internal App Sharing`](https://play.google.com/console/internal-app-sharing), and upload the generated APK there.
+1. Generate a [signed app bundle/APK](https://developer.android.com/studio/publish/app-signing#sign-apk). Note that the APK signing key and the `applicationId` should be the same as the already published application.
+2. Share the generated APK with a tester. To do that, select the published application in the Google console, navigate to [`Internal App Sharing`](https://play.google.com/console/internal-app-sharing), and upload the generated APK there. Check how to use [Google Internal App Sharing](https://support.google.com/googleplay/android-developer/answer/9844679?hl=en).
 2. Copy the upload's shareable link and share it with a tester. In this case, the tester should have an Android mobile phone.
 3. Open the shared link on the phone's browser. You will be redirected to the Play store.
 4. Download the app and wait for the installation to complete.
-5. Once done, generate another sighed app bundle/APK. This time change `versionCode` and `versionName` in your `app.gradle` file to a higher version. If, for example, in the first generated APK, the values were;
+5. Once done, generate another signed app bundle/APK. This time change `versionCode` and `versionName` in your `app.gradle` file to a higher version. If, for example, in the first generated APK, the values were;
 
 ```java
 versionCode 1
@@ -362,7 +367,7 @@ To be sure that the update will take place, on your `activity.xml` replace ` and
 
 7. Again, copy the shareable link generated by this upload and open it with the tester. When the link launches on the Google Play store, you will get an update button, **don’t click update**.
 
-8. Close the Google Play store and open the application we installed earlier. This will launch an update UI that will be prompt you to update the application. The UI may differ depending on your update type (either flexible or immediate).
+8. Close the Google Play store and open the application we installed earlier. This will launch an update UI that will prompt you to update the application. The UI may differ depending on your update type (either flexible or immediate).
 
 ### Code setup and output
 
@@ -515,4 +520,4 @@ public class Immediate extends AppCompatActivity {
 
 ### Conclusion
 
-I hope this guide helps you implement in-app updates, both immediate and flexible,  within your application context.
+I hope this guide helps you implement in-app updates, both immediate and flexible, within your application context.
