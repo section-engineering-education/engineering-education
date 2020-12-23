@@ -240,7 +240,7 @@ class SiteController extends Controller
 After creating the action and the view, you can access the new page by clicking on "Portfolio" on the main page.
 
 You should have a page like the one below;
-![A congratulatory note](web.png)
+![web display](web.png)
 
 
 ### conclusion
