@@ -116,17 +116,10 @@ To create a web page, we need to change the different parts of our website to fi
     <div class="container">
         <div class="col-md-6">
             <div>
-           <h6>This is a footer</h6>
-           <h5>Classic footer</h5>
+           <h5>This is a classic footer</h5>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-              <a href="https://mdbtrap.com/"> MDBootstrap.com</a>
-            </div>
-
-        </div>
-
+    
     </div>
 
   
@@ -140,15 +133,12 @@ All CSS files in a project are stored under `/web/CSS` and all JavaScript is sto
 
 Let us customize the footer we created above. Create a `footer.css` under `/web/css` and put the code below. 
 ```css
-h6{
-    color: red;
-    text-align: center;
-}
+
 h5:hover{
     color: blue;
 }
 h5{
-    color: violet;
+    color: white;
 }
 
 
@@ -183,10 +173,15 @@ $this->title = 'My Website';
 
        <h1>Hello World!</h1>
        <p>My first yii2 powered site.</p>
-       <h2>Here is my <a href="<?= Yii::$app->urlManager->createUrl(['site/portfolio'])?>">Portfolio </a></h2>
+       <h2>Click here <a href="<?= Yii::$app->urlManager->createUrl(['site/portfolio'])?>">Portfolio </a></h2> to go to portfolio page
     </div>
 </div>
 ```
+Open your browser and navigate, http://localhost/advanced/frontend/web to test it.
+
+You should have a page like the one below;
+![web display](web.png)
+
 The code above replaces the default homepage content with bootstrap jumbotron. We also add a link that points to a portfolio page using the PHP URL manager. The URL Manager is used to link pages throughout Yii 2 framework. On clicking the link you get a 404 error as the portfolio page does not exist. Let us now create the portfolio page.
 
 ### Adding a new page to our website
@@ -200,14 +195,6 @@ To add a new page to our website, we need to create a view and an action. A view
 </head>
 <body>
      <h1 style="text-align: center">This is the portfolio page</h1>
-     <div class="container">
-        <div class="col-sm-4">
-            <div class="title">
-                <h6>About Me</h6>
-            </div>
-            <div>I am a student.</div>
-        </div>
-     </div>
      
 </body>
 </html>
@@ -240,9 +227,7 @@ class SiteController extends Controller
 After creating the action and the view, you can access the new page by clicking on "Portfolio" on the main page.
 
 You should have a page like the one below;
-![web display](web.png)
-
-
+![web display](1.png)
 ### conclusion
 Congratulations! Now you have a better understanding of the basics of the Yii 2 framework.
 Yii 2 pushes you to create a securable and testable site by doing a lot of the heavy lifting for you.
