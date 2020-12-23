@@ -5,7 +5,7 @@ This guide will discuss how to use the arrow function to write your JavaScript f
 ### What are the arrow functions
 It is a sort of an abbreviated way to write compact functions. The following are a few facts about arrow functions;
 - Using the arrow function, curly braces, parenthesis, function, and return keywords become optional.
-- The arrow function has a [lexical scoping](https://stackoverflow.com/questions/1047454/what-is-lexical-scope#:~:text=A%20lexical%20scope%20in%20JavaScript,be%20accessible%20outside%20that%20function.) to  `this` context.
+- The arrow function has a [lexical scoping](https://stackoverflow.com/questions/1047454/what-is-lexical-scope#:~:text=A%20lexical%20scope%20in%20JavaScript,be%20accessible%20outside%20that%20function.) to `this` context.
 
 One of the main differences between arrow functions and regular functions is that arrow functions can only be anonymous. They are not bound to any identifier. Thus they created dynamically. We cannot name an arrow function as we do for the regular functions. However, if you'd like to call or reuse an arrow function, you will need to assign it to a variable.
 
@@ -321,10 +321,10 @@ test();
 Run the above call in a browse console. You will get something like;
 
 ```js
-Window {window: Window, …}
+Window {window: Window, . . . .}
 ```
 
-![](window-objects.jpg)
+![](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/window-objects.jpg)
 
 This is because the `test()` is called from a global context, and `this` will refer to a global object. In this case, a global object window from the browser. `this` is not defined by the caller. Thus, it will turn to the default window object. Javascript engine will check if `test()` is available in the window object. If not, the engine will add it to the many available javascript window object methods.
 
@@ -342,9 +342,7 @@ console.log(parent.mother());
 
 We get `undefined.....`.
 
-It actually makes sense. In the regular function, a function always defines its `this` value. Arrow functions treat `this` keyword differently.
-
-They don't define their own context since it doesn't have its own `this` context. They inherit that from the parent scope whenever you call `this`.
+It actually makes sense. In the regular function, a function always defines its `this` value. Arrow functions treat `this` keyword differently. They don't define their own context since it doesn't have its own `this` context. They inherit that from the parent scope whenever you call `this`.
 
 `this` in regular function always refers to the context of the function being called. However, in the arrow function, `this` has nothing to do with the caller of the function. It refers to the scope where the function (the enclosing context) is present. That's why we get undefined.
 
@@ -436,7 +434,7 @@ Let's look at the broader scope of how the arrow function binds to this keyword.
 
 Here is an example that uses the regular function.
 
-Execute the below examples with the console. You can choose to use the Goggle chrome console.
+Execute the below examples with the console. You can choose to use the Google chrome console.
 
 ```js
 let animals = {
@@ -457,11 +455,9 @@ animals.printdomesticAnimals();
 
 The above example accesses the object's property `domesticAnimals` and prints the domestic animals in 3 seconds. Unfortunately, we ran into an error.
 
-![](error.jpg)
+![](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/error.jpg)
 
-`setTimeout()` can't find the `domesticAnimals`, which means the JavaScript engine interprets `domesticAnimals` as `undefined`. Meaning `this` doesn't point to the property `domesticAnimals`. `this` seems to be pointing to somewhere else.
-
-does it refer to the
+`setTimeout()` can't find the `domesticAnimals`, which means the JavaScript engine interprets `domesticAnimals` as `undefined`. Meaning `this` doesn't point to the property `domesticAnimals`. `this` seems to be pointing to somewhere else. Does it refer to the
 - inner function context
 - the outer (enclosing) function context
 - the object context or
@@ -485,7 +481,7 @@ let animals = {
 animals.printdomesticAnimals();
 ```
 
-![](this-execution-context.jpg)
+![](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-execution-context.jpg)
 
 `this` inside `printdomesticAnimals()` points to the object `animals` with the `domesticAnimals` property. `this` inside `setTimeout()` points to the window object where property `domesticAnimals` is undefined.
 
@@ -507,7 +503,7 @@ animals.printdomesticAnimals();
 
 When we use the arrow function, we get the results as we expected.
 
-![](this-inside-arrow-function.jpg)
+![](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-inside-arrow-function.jpg)
 
 #### Arrow functions with object literal
 Let's have an example that represents [JavaScrip object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
@@ -593,7 +589,7 @@ const parent = {
 console.log(parent.mother());
 ```
 
-Avoid arrow functions when using a code block with methods. They can be confusing at times. This occurs mostly on object methods, prototype methods, and class methods. `this` is scoped to the parent (window) context.
+Avoid arrow functions when using a code block with methods. They can be confusing at times due to their lexical scoping. This occurs mostly on object methods, prototype methods, and class methods. `this` is scoped to the parent (window) context.
 
 #### An arrow function can never be a constructor
 
