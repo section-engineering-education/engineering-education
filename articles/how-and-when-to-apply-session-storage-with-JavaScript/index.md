@@ -209,8 +209,23 @@ window.onload =function(){ //ensures the page is loaded before functions are exe
         document.getElementById("retrieveButton").onclick = retrieveRecords
 }
 ```
+You can follow the code below to store a list in sessionStorage.
+
+```javascript
+
+function store(){ //stores items in the local storage
+    var brand = document.getElementById('carBrand').value; //retrieves value
+    var price = document.getElementById('carPrice').value; //retrieve value
+
+    const car = {brand: brand,price: price}
+
+    var vehicles =[car]; // adding an object to list
+    window.sessionStorage.setItem('car',JSON.stringify(vehicles));  
+    //converting the list to string. SessionStorage only stores values in Strings
+}
+```
 ### Results
-You can follow the video below to test the web page we have developed in this tutorial.
+Kindly, note that the item been stored in sessionStorage is the `car` object used in this tutorial. You can follow the video below to test the web page. 
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/bQ6R14jwMIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
