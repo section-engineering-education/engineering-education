@@ -28,18 +28,18 @@ Let's dive into it.
 
 ### Linear Algebra
 
-Linear Algebra covers a significant part of the mathematical concepts used for Machine Learning. According to [Wikipedia](https://en.wikipedia.org/wiki/Linear_algebra/), Linear Algebra is a mathematics domain concerned with linear equations and the way they are represented in vector spaces and through matrices.
+[Linear Algebra](https://en.wikipedia.org/wiki/Linear_algebra/) covers a significant part of the mathematical concepts used for Machine Learning. It is a mathematics sub-domain dealing with linear systems of equations and the way they are represented in vector spaces and through matrices.
 
 The topics in Linear Algebra essential for understanding the methods used in machine learning include:
 
-1. Principal Component Analysis (PCA)
-2. Eigenvalues and Eigenvectors
-3. Singular Value Decomposition (SVD)
-4. Matrix Operations, i.e., addition, subtraction, multiplication, transpose, and inverse. 
-5. Vector Spaces and Norms
-6. Orthogonalization and Orthonormalization
-7. Latent Semantic Analysis
-8. Eigen decomposition of a matrix
+1. [Principal Component Analysis (PCA) ](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0202)
+2. [Eigenvalues and Eigenvectors](https://www.youtube.com/watch?v=PFDu9oVAE-g&t=59s) 
+3. [Singular Value Decomposition (SVD) ](https://www.youtube.com/watch?v=gXbThCXjZFM)
+4. [Matrix Operations, i.e., addition, subtraction, multiplication, transpose, and inverse.](https://www.youtube.com/watch?v=rowWM-MijXU) 
+5. [Vector Spaces and Norms](https://en.wikipedia.org/wiki/Normed_vector_space)
+6. [Orthogonalization and Orthonormalization](https://en.wikipedia.org/wiki/Orthogonalization)
+7. [Latent Semantic Analysis](https://www.youtube.com/watch?v=hB51kkus-Rc) 
+8. [Eigen decomposition of a matrix](https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix)
 
 #### Some Applications of Linear Algebra in ML
 
@@ -56,37 +56,37 @@ Unlike single variable calculus, where we use functions with single inputs, whic
 
 There are a couple of topics in Calculus that are essential for ML. They include:
 
-1. Differential Calculus
-2. Integral Calculus
-3. Partial Derivatives
-4. Hessian
-5. Jacobian
-6. Laplacian and Lagrarian Distribution.
-7. Chain Rule.
-8. Vector-Values Functions
-9. Directional Gradient
+1. [Differential Calculus](https://www.youtube.com/watch?v=ZetdIWyktGs&list=PLiiljHvN6z193BBzS0Ln8NnqQmzimTW23&index=6)
+2. [Integral Calculus](https://www.youtube.com/watch?v=rCWOdfQ3cwQ)
+3. [Partial Derivatives](https://www.youtube.com/watch?v=pK7ap_wog9Y&list=PLiiljHvN6z193BBzS0Ln8NnqQmzimTW23&index=5)
+4. [Hessian](https://www.youtube.com/watch?v=5qD53Exg6kQ&list=PLiiljHvN6z193BBzS0Ln8NnqQmzimTW23&index=17)
+5. [Jacobian](https://www.youtube.com/watch?v=VhiHhHnBXcY&list=PLiiljHvN6z193BBzS0Ln8NnqQmzimTW23&index=14)
+6. [Laplacian and Lagrarian Distribution](https://www.youtube.com/watch?v=EW08rD-GFh0)
+7. [Chain Rule](https://www.youtube.com/watch?v=B-mNJEZqpms&list=PLiiljHvN6z193BBzS0Ln8NnqQmzimTW23&index=21)
+8. [Vector-Values Functions](https://www.youtube.com/watch?v=40r56pX4mqA)
+9. [Directional Gradient](https://www.youtube.com/watch?v=GJODOGq7cAY)
 
 #### Some Applications of Calculus in ML
 
 1. Optimization techniques such as the Gradient Descent, Adam, RMSProp, and Ada Delta methods use Calculus to help find the local and global minimum and maxima.
 2. Backpropagation is the main algorithm used to train neural networks. It is achieved by using calculus, which utilizes concepts such as chain rule and partial derivatives.
 
-### Probability $ Statistics
+### Probability and Statistics
 
 Probability is the study of the measure of uncertainty. There is a need to quantify uncertainty in the real world, as the information we work with is usually incomplete. Thus, probability helps us model elements of uncertainty, i.e., the probability of a user paying back a bank loan based on past transaction information. It is important to note that the probabilities of all outcomes always sum up to 1.
 On the other hand, Statistics is a discipline in applied mathematics that involves gathering, explaining, and presenting data.
 
 The topics in Probability and Statistics essential for understanding the methods used in machine learning include:
 
-1. Maximum Likelihood Estimation (MLE)
-2. Prior and Posterior
-3. Bayes' Theorem
-4. Standard Distributions (Gaussian, Bernouilli, Binomial, Multinomial, and Uniform distributions)
-5. Random Variables
-6. Moment Generating Functions
-7. Sampling Methods
-8. Maximum a Posteriori Estimation (MAP)
-9. Probability Rules and Axioms
+1. [Maximum Likelihood Estimation (MLE)](https://online.stat.psu.edu/stat415/lesson/1/1.2)
+2. [Prior and Posterior](https://www.youtube.com/watch?v=o2Tpws5C2Eg/)
+3. [Bayes' Theorem](https://www.youtube.com/watch?v=XQoLVl31ZfQ/)
+4. [Standard Distributions](https://www.youtube.com/watch?v=CfZa1daLjwo) (Gaussian, Bernouilli, Binomial, Multinomial, and Uniform distributions)
+5. [Random Variables](https://www.youtube.com/watch?v=3v9w79NhsfI)
+6. [Moment Generating Functions](https://www.youtube.com/watch?v=cbmfYoepHPk/)
+7. [Sampling Methods](https://www.youtube.com/watch?v=pTuj57uXWlk/)
+8. [Maximum a Posteriori Estimation (MAP)](https://www.youtube.com/watch?v=kkhdIriddSI)
+9. [Probability Rules and Axioms](https://sites.nicholas.duke.edu/statsreview/probability-axioms/)
 
 #### Some Applications of Probability and Statistics
 
@@ -101,20 +101,20 @@ Algorithms are instructions that enable a computer program to put together diffe
 
 Below is a list of the necessary algorithm topics needed to start with ML:
 
-1. Dynamic Programming
-2. Stochastic Gradient Descent
-3. Random and Sub-linear algorithms
-4. Graphs
-5. Data structures, i.e., Hashing, Binary Trees, Stack, and Heap.
+1. [Dynamic Programming](https://www.youtube.com/watch?v=vYquumk4nWw)
+2. [Stochastic Gradient Descent](https://www.youtube.com/watch?v=hMLUgM6kTp8)
+3. [Random and Sub-linear algorithms](https://www.youtube.com/watch?v=fCPhlWYzIPY)
+4. [Graphs](https://www.youtube.com/watch?v=vZi-Ca9QBME)
+5. [Data structures,](https://www.youtube.com/watch?v=bum_19loj9A) i.e., Hashing, Binary Trees, Stack, and Heap.
 
 ### Others
 
 This section includes topics that are not covered by the four main mathematical concepts but are still essential to understand machine learning. These topics include:
 
-1. Real and Complex Analysis
-2. Function Spaces and Manifolds
-3. Information Theory
-4. Fourier Transforms
+1. [Real and Complex Analysis](https://59clc.files.wordpress.com/2011/01/real-and-complex-analysis.pdf)
+2. [Function Spaces and Manifolds](https://webspace.science.uu.nl/~ban00101/anman2009/lecture3.pdf)
+3. [Information Theory](https://www.youtube.com/watch?v=d9alWZRzBWk)
+4. [Fourier Transforms](https://www.youtube.com/watch?v=spUNpyF58BY)
 
 ### Resources
 
@@ -157,6 +157,7 @@ For a start, this [book](https://mml-book.github.io/) is a great resource publis
 3. [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw/)
 4. [Mathematics for Machine Learning - Linear Algebra](https://www.youtube.com/playlist?list=PLiiljHvN6z1_o1ztXTKWPrShrMrBLo5P3)
 5. [Mathematics for Machine Learning - Multivariate Calculus](https://www.youtube.com/playlist?list=PLiiljHvN6z193BBzS0Ln8NnqQmzimTW23)
+6. [Principal Component Analysis (PCA) ](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0202)
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
