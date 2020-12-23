@@ -12,21 +12,21 @@ If you don't have Visual Studio installed on your computer, you can check this a
 In this tutorial, we will make a simple calculator. Make a new project by opening the Visual Studio, then click on File -> New -> Project -> Visual C# -> Windows desktop and choose Windows Forms App (.NET Framework).
 
 ### ToolBox
-The *Toolbox* window provides you with all the controls that help you build your project inside the form. to display the Toolbox click on View -> Toolbox, or you can press Ctrl+Alt+X. To use one of the controls double click on one of them or simply drag and drop it.
+The *Toolbox* window provides you with all the controls that will help you build the form. To display the Toolbox click on View -> Toolbox, or you can press Ctrl+Alt+X. To use one of the controls double click on one of them or simply drag and drop it.
 
 ### Properties window
-The *Properties* window is used to show the properties of the form or the control (button, textbox, etc.) that you click on. You can manipulate the properties of any control used in your form. To open the properties window, you can click on View -> Properties window or you can simply click F4.   
+The *Properties* window is used to edit the properties of the form or the control (button, textbox, etc.) that you click on. To open the properties window, you can click on View -> Properties window or you can simply click F4.   
 
 ![properties window and toolbox](properties window and toolbox.png)
 
 ### Building the form with the controls
 First of all, let's start with the form and change the text to My calculator and the name to Cal_Form using the properties window.
 
-**Note**: Changing the name of a control or the form will only change the name of the object inside the code.This will make it easier to figure out which button or which textbox you are using or editing right now. On the other hand, changing the text of a control will only change what is displayed to the user.
+**Note**: Changing the name of a control or the form will only change the name of the object inside the code. This will make it easier to figure out which button or which textbox you are using or editing right now. On the other hand, changing the text of a control will only change what is displayed to the user.
 
 ![Form_name_text](Form_name_text.png)
 
-Now let's begin by adding the numbers and the operations as buttons, then we will add the textbox that will show the answer. To add a control, you can drag & drop it from the toolbox to the form or simply double click on it. Repeat this with the remaining controls.
+Now let's begin by adding the numbers and the operations as buttons. Then we will add the textbox that will show the answer. To add a control, you can drag & drop it from the toolbox to the form or simply double click on it. Repeat this with the remaining controls.
 
 ![Controls_display](Controls_display.png)
 
