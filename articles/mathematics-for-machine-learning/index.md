@@ -93,11 +93,11 @@ The topics in Probability and Statistics essential for understanding the methods
 1. Maximum Likelihood Estimation (MLE) provides a framework for predictive modeling in machine learning. It is used to maximize the likelihood of a function, which results in finding parameters that explain observed data and probability distributions in a dataset. It is commonly used to train models in ML techniques such as linear regression and logistic regression.
 2. Sampling is a method used in probability. In machine learning, datasets usually contain a lot of noise and bias. Sampling helps us solve this problem by obtaining samples, i.e., from different areas, instead of only using samples from one specific area, which may be biased and containing a lot of noise. Thus, sampling gives us complete coverage of the problem domain.
 3. Probability forms the foundation to develop specific algorithms such as the Naive Bayes classifier.
-4. Standard distributions such as the commonly used Gaussian distribution focus on a massive chunk in the field of statistics. These distributions provide functions used to calculate the probability of a single observation from a collection of sample spaces.
+4. Standard distributions such as the commonly used Gaussian distribution focus on a massive chunk in the field of statistics. These distributions provide functions to calculate the probability of a single observation from a collection of sample spaces.
 
 ### Algorithms
 
-Algorithms are a set of instructions that enable a computer program to put together different information sources and eventually generate a result. Understanding how algorithms work is essential in understanding the best ways to scale our ML algorithms and exploit sparsity information in our datasets, i.e., why some range of values has no data.
+Algorithms are instructions that enable a computer program to put together different information sources and eventually generate a result. Understanding how algorithms work is essential in understanding the best ways to scale our ML algorithms and exploit sparsity information in our datasets, i.e., why some range of values has no data.
 
 Below is a list of the necessary algorithm topics needed to start with ML:
 
@@ -157,3 +157,6 @@ For a start, this [book](https://mml-book.github.io/) is a great resource publis
 3. [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw/)
 4. [Mathematics for Machine Learning - Linear Algebra](https://www.youtube.com/playlist?list=PLiiljHvN6z1_o1ztXTKWPrShrMrBLo5P3)
 5. [Mathematics for Machine Learning - Multivariate Calculus](https://www.youtube.com/playlist?list=PLiiljHvN6z193BBzS0Ln8NnqQmzimTW23)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
