@@ -1,5 +1,5 @@
 ### Introduction
-A non-member function cannot have access to the private data of a class.  However, there could be a situation where we would like two classes to share a particular function.  C++ allows the common function made friendly with both the classes, thereby allowing the function to have access to the private data of these classes. in this article, we will take a look at how to make a non-member function friend to a class.
+Non-member functions of a class are unable to access the private data of another class. Although there could be situations where we want two classes to share functions and access the data members. C++ enables us to make the function a friend of the classes, allowing it access to the private data members of the classes. in this article, we will take a look at how to make a non-member function friend to a class.
 
 #### Prerequisites
 To follow this article, you’ll need:
@@ -15,22 +15,23 @@ To follow this article, you’ll need:
 5. [Friend class](#friend-class)
 
 #### What is a friend function?
-A friend function is a function that is defined outside that class's scope but it has the right to access all private and protected members of the class. A friend may be a function, function template, or function of a member, or a template of a class or class, in which case friends are the whole class and all its members.
+A friend function is a function that is defined outside of a class but has the right to access the private and protected data members of the class. A friend may be a function, function template, or function of a member, or a template of a class or class, in which case friends are the whole class and all its members.
 
 #### Why do we need friend functions?
-In special cases when a class’s private data needs to be accessed directly without using objects of that class. For example, consider a case where two classes, director and doctor have been defined. We would like to use a function `income_tax` to operate the objects of both these classes. Such a function need not be a member of any of these classes.
+In special cases when a class’s private data needs to be accessed directly without using objects of that class. For instance, we may consider two classes, which have been defined as director and doctor. We may want the function `gross_salary` to operate the objects of both these classes. The function is not required to be a member of these classes. 
+They are also used in operator overloading because they are more intuitive. some of the most commonly used operators such as the binary arithmetic operators can be overloaded the friend function way.
 
-#### Special characteristics of friend functions:
-- A friend function is not in the scope of the class to which it has been declared as a friend. Hence, functionality is not limited to one class.
-- A friend function can be a global function or a member of another class.
-- A friend function can be declared either in the public or the private part of a class without affecting its meaning.
-- A friend function cannot be called using objects of the class, since it is not in the scope of the class.
-- A friend function can be invoked like a normal function without the aid of any object.
+#### Special features of friend functions:
+- A friend function does not fall within the scope of the class for which it was declared as a friend. Hence, functionality is not limited to one class.
+- The friend function can be a  member of another class or outside the scope of the class.
+- A friend function can be declared,  without changing its meaning either in the public or the private section of a class.
+- Friend functions are not called using objects of the class because they are not within the class's scope.
+- Without the help of any object, the friend function can be invoked like a normal member function.
 - Friend functions use objects of the class as arguments.
-- Unlike member functions, it cannot access the member names directly and has to use an object name and dot membership operator with each member name. e.g  `A.x` where x is the object.
+- A friend function cannot access member names directly, and each member name has to use an object name and dot membership, operator`.`. E.g  `C.v` where v is the object name.
 
 ##### Syntax of friend functions:
-To make an outside function “friendly” to a class, we have to simply declare this function as a friend of the class as shown below:
+To make an outside function "friendly" to a class, we have to declare the function as a friend function, as seen below:
 
 ```c++
 class className{
@@ -40,15 +41,15 @@ class className{
  friend returnType functionName(arg list);
  };
 ```
-As shown above, the friend function is declared inside the class whose private and protected data members are to be accessed.
+As we can see above, the friend function should be declared inside the class whose private and protected members are to be accessed.
 
 We can breakdown the syntax as follows:
 - `friend` is a keyword  to denote this a friend function.
-- `returnType` is the return type of the function.
-- `functionName` is the name of the function being made friendly.
-- `arg list` is the arguments passed into the function.
+- `returnType` is the function return type.
+- `functionName` is the name of the function being made a friend of the class.
+- `arg list` is the arguments that are passed.
 
-The function is defined elsewhere in the program like a normal function in C++. The function definition does not use a scope resolution  operator`::` or have the `friend` keyword.  A function can be declared as a friend in any number of classes.
+The friend function definition is found outside the class like a normal member function. The friend function is not defined using the `friend` keyword or use the scope resolution  operator`::` as it is not a member of the class in which it has been declared. A friend function may be declared in several classes. 
 
 #### Friend function declaration
 
@@ -60,147 +61,142 @@ The function is defined elsewhere in the program like a normal function in C++. 
 
 using namespace std;
 
-class sample
+class integer
 {
-int x, y;
+int a, b;
 public:
 void set_value()
 {
-x=20;
-y=40;
+a=50;
+b=30;
 }
-friend float mean(sample s);  //declaration of friend function
+friend int mean(integer s);  //declaration of friend function
 };
 
-float mean(sample s)
+int mean(integer s)
 {
-return float(s.x+s.y)/2.0; //friend function definition
+return int(s.a+s.b)/2.0; //friend function definition
 }
 int main()
 {
-sample v;
-v.set_value();
-cout<< "Mean value:" <<mean(v);
+integer c;
+c.set_value();
+cout<< "Mean value:" <<mean(c);
 return 0;
 }
 ```
 The output of our program will be:
-Mean value: 30
+Mean value: 40
 
 Let's break down the program below:
 
-We have declared the friend function  `float mean` that takes objects as arguments. The friend function has been defined outside the class. The friend function thus accesses the variables of the class `x` and `y`, by using the dot operator`.` and the object passed to it. The function call mean(v) passes the object `v` by value to the friend function.
+We have declared the friend function  `int mean` that takes objects as arguments. The function definition is outside the class's scope. The function uses the dot membership operator`.` and the object passed as an argument to it to access the variables of the class `a` and `b`. The function call `mean(c)` passes by value the object `c`  to the friend function.
 
-Through the use of the `friend` keyword, we can make member functions of one class be friend functions of another class. In such cases, they are defined using the scope resolution operator, as shown below:
+Through the use of the `friend` keyword, member functions of one class can also be made friend functions of another class. In such instances, they are defined, as seen below, using the scope resolution operator:
 
 ```c++
-class x
-{
-…….
-…….
-int fun1();    // member function of X
-…….
-};
+class className{
+
+ ……
+int functionName();    // member function of X
+
+ };
 
 class Y
 {
-…….
+……
 
-…….
-
-friend int X::fun1();	//fun1() of X
-…….			//is a friend of y
-
+friend int X::functionName();	//The functionName() is a friend of y
 };
 ```
 
-The function `fun()` is a member of `class X` and a friend of `class Y`.
+The function `functionName()` which is a member of `class X` has been made a friend of `class Y`.
 
 #### Friend Class
-
- A friend class can access private and protected members of other classes in which it is declared as a friend. It is sometimes useful to allow a particular class to access private members of another class. Friend functions are used to work as a link between the classes.
-
+A friend class can have access to the data members and functions of another class in which it is declared as a 'friend'.They are used in situations where we want a certain class to have access to another class's private and protected members. When we declare a class as a friend class, all the member functions of the friend class become friend functions. Friend functions are used to work as a link between the classes.
 ##### Syntax of friend class:
 
 ```c++
-class A{
+class S     //forward declaration
+
+class P{
 ……
-friend class B;
+friend class S;
 };
-class B{
+class S{
 ……..
 };
 ```
-As illustrated above, `class B` is a friend of `class A`. So `class B` can access the private and protected data members of `class A`. But this does not mean that `class A` can access private and protected data members of `class B`.
+In the illustration above, `class S` is a friend of `class P`. As a result `class S` has the right to access the private and protected members of `class P`. However, this does not mean that `class P` can access private and protected members of `class S`. A forward declaration informs the compiler about an entity's existence before the entity is explicitly defined. We have declared `class S` using forward declaration to inform the compiler of its existence, allowing us to use the objects of `class S` in `class P`.
  
-**Note:** Friendship is not mutual unless we make it so. likewise, class friendship is not inherited. This means that as class B is a friend of class A, it will not be a friend of the sub-classes of class A.
+**Note:** Class friendship is not mutual unless we make it so. furthermore, class friendship is not inherited. This means that because class S is a friend of class P, it will be a friend of the sub-classes of class P.
 
 Example of a program to illustrate friend class:
 ```c++
-//Program to illustrate
-//Friend class
-
-#include<iostream>
-
+//program to illustrate
+//friend class
+#include <iostream>
 using namespace std;
 
-class ABC;       //forward declaration
+// forward declaration
+class ClassY;
 
-class EFG
-{
-int x;
+class ClassX {
+        int num1;
 
-public:
-void set_value(int i)
-{
-x=i;
-}
-friend void max(EFG, ABC);  //declaration of friend function
-};
-class ABC
-{
-int a;
+        // friend class declaration
+        friend class ClassY;
 
-public:
-void set_value(int i)
-{
-    a=i;
-}
-friend void max(EFG, ABC);
+    public:
+        // constructor to initialize num1 to 10
+        ClassX() : num1(10) {}
 };
 
-void max(EFG m, ABC n)  // definition of friend
-{
-if(m.x > n.a)
-    cout<<m.x;
-else
-    cout<<n.a;
-}
-int main()
-{
-ABC abc;
-abc.set_value(10);
-EFG efg;
-efg.set_value(20);
-max(efg,abc);
-return 0;
-}
+class ClassY {
+        int num2;
 
-The output will be:
-20
+    public:
+        // constructor to initialize num2 to 5
+        ClassY() : num2(5) {}
 
+    // member function to multiply num1
+    // from ClassX with num2 from ClassY
+    int multiply() {
+        ClassX m;
+        return m.num1 * num2;
+    }
+};
+
+int main() {
+    ClassY n;
+    cout << "Multiplication: " << n.multiply();
+    return 0;
+}
 ```
-The function `max()` has arguments from both class EFG and ABC. When the function `max()` is declared as a friend for the first time, the compiler will not acknowledge the presence of ABC unless its name is in the beginning as `class ABC;`. This is known as forward declaration.
+The output will be:
+`50`
 
-As pointed out earlier, a friend function can be called by reference. In this case, local copies of the objects are not made. Instead, a pointer to the address of the object is passed and the called function directly works on the actual object used in the call.
-
-This method can be used to alter the values of the private members of a class. Remember, altering the values of private members is against the basic principles of data insulation. It should be used only when necessary.
+In the program above, we have declared two classes X and Y. `ClassY` is a friend class of `ClassX`. Therefore, `ClassY` has access to the member function of `classX`. In ClassY, we have created a function` multiply()` that returns the multiplication of `num1` and `num2`. Since `ClassY` is a friend class, we can create objects of `ClassX` inside of ClassY. This is possible through forward declaration of the `classY`. 
 
 #### Here are some important points to note on friend functions and classes: 
-
-- Friend functions should be used for restricted purposes only. This because having too many friend functions and classes can compromise the OOP feature of encapsulation in our program.
+- Friend functions should be used for restricted purposes only. Because having excessive friend functions and classes can reduce the Object-oriented programming feature of encapsulation in a program.
 - Friendship is not reciprocal. If class X is Y’s friend, then Y does not automatically become X’s friend.
 - Friendship cannot be inherited.
 
 ### Conclusion
-In this article, we got to explore friend functions and friend class, what they and where they are used. By making a function and class "friendly" we reduce having too many functions therefore, we have programs that are  maintainable and easy to read.
+In this article, we got to explore friend functions and friend class, what they and where they are used. By making a function and class "friendly" we reduce having too many functions therefore, we have programs that are maintainable and easy to read.
+
+### References
+Dawe, D. Introduction to friend functions in C++. Retrieved from https://codevidyalay.blogspot.com/2019/09/friend-class-and-friend-function-in-c.html.
+
+Dawe, D. Introduction to friend functions in C++. Retrieved from https://www.indiabix.com/cpp-programming/objects-and-classes/discussion-170.
+
+Dawe, D. Introduction to friend functions in C++. Retrieved from https://mounanaravani.files.wordpress.com/2017/02/17-friend-functions.pdf.
+
+Dawe, D. Introduction to friend functions in C++. Retrieved from https://www.softwaretestinghelp.com/friend-functions-in-cpp.
+
+Dawe, D. Introduction to friend functions in C++. Retrieved from http://web.archive.org/web/20191023010010/http://lessons2all.com:80/ff.php.
+
+Dawe, D. Introduction to friend functions in C++. Retrieved from https://www.iditect.com/how-to/10227802.html.
+
+Dawe, D. Introduction to friend functions in C++. Retrieved from https://www.programiz.com/cpp-programming/friend-function-class.
