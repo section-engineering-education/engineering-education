@@ -6,7 +6,7 @@ sessionStorage is a popular choice when it comes to storing data on the browser.
 
 ### Prerequisites
 
-For you to follow along, you must have some basic understanding of `HTML` and `JavaScript`. You should also have a browser installed on your computer.
+To follow along, you must have some basic understanding of `HTML` and `JavaScript`. You should also have a browser installed on your computer.
 
 ### Goal
 
@@ -14,7 +14,7 @@ To demonstrate how to store, retrieve, delete, and clear items in the sessionSto
 
 ### Step 1 – Creating the project
 
-Create a new folder on your desktop. In this folder, create `index.html` and `main.js` files. You can then open these files in Visual Studio Code or in your preferred editor. All our JavaScript functions relating to the `sessionStorage` object will be in the `main.js` file. We will then import this file in the `index.html`.
+Create a new folder on your desktop. In this folder, create `index.html` and `main.js` files. You can then open these files in Visual Studio Code or your preferred editor. All our JavaScript functions relating to the `sessionStorage` object will be in the `main.js` file. We will then import this file in the `index.html`.
 
 ### Step 2 – Understanding sessionStorage functions
 
@@ -52,7 +52,7 @@ Let&#39;s implement sessionStorage in a real-life application.
 
 ### Step 3 – Creating the view
 
-In this step, we will design a simple web page which we will use to interact with the sessionStorage functionalities. The page is designed using HTML 5. The `main.js` file must be imported in the `index.html` file. This allows us to access the required sessionStorage functions. We import the main.js file using the below code snippet.
+In this step, we will design a simple web page that we will use to interact with the sessionStorage functionalities. The page is designed using HTML 5. The `main.js` file must be imported in the `index.html` file. This allows us to access the required sessionStorage functions. We import the main.js file using the below code snippet.
 
 ```html
   <script type="text/javascript" src="main.js"></script>
@@ -218,4 +218,7 @@ You can follow the video below to test the web page we have developed in this tu
 sessionStorage can be used to check for the user&#39;s authentication state. Users who are logged in can be redirected to the home page. Unregistered users, on the other hand, are directed to the authentication pages. SessionStorage also helps prevent certain actions. For instance, it helps barr some users from making certain purchases. Developers can also use sessionStorage to improve data safety. Once the user closes the browser tab, all their data is cleared. This makes it much difficult for third parties to gain access.
 
 ### Conclusion
-By now you understand the ins and outs of sessionStorage. You should consider using sessionStorage as an alternative to cookies. This is because it offers great flexibility.
+By now, you understand the ins and outs of sessionStorage. You should consider using sessionStorage as an alternative to cookies. This is because it offers great flexibility.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
