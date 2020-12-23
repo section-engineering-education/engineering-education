@@ -1,4 +1,24 @@
-**Windows forms** allow the programmers to create a graphical user interface (GUI) that allows the user to interact with the program visually. According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), It provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio. Functionality like the drag-and-drop placement of controls makes it easy for the programmers to build the GUI.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/
+title: Getting Started with Windows Forms Using C#
+description: This tutorial will go over the basics of Windows forms using C# and Visual Studio.
+author: mohamed-alghadban
+date: 2020-12-24T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/hero.jpg
+    alt: inheritance example image c#
+---
+
+Windows forms allow the programmers to create a graphical user interface (GUI) that allows the user to interact with the program visually. 
+<!--more-->
+
+According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), It provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio. Functionality like the drag-and-drop placement of controls makes it easy for the programmers to build the GUI.
 
 With *windows forms*, you can make basic applications like a calculator to high-level applications such as a library database management application that requires a connection to the database from the application.
 
