@@ -1,6 +1,26 @@
-# What's New In Laravel 8
 
-## What We Will Learn.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/laravel-8-new-features/index.md
+title: Laravel 8 New Features
+description: This tutorial provides a detailed overviews of Laravel 8.x version. The article discusses the file structures, as well as the new features.
+author: Miller Juma
+date: 2020-12-23T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/laravel-8-new-features/hero.jpg
+    alt: laravel 8.x image example
+---
+If you have started learning Laravel, then you are in the right place. This tutorial will help you explore the fantastic features in Laravel 8.x.
+<!--more-->
+
+## What's New In Laravel 8
+
+### What We Will Learn.
 
 * Requirements
 * Installation
@@ -8,12 +28,12 @@
 * Tailwind CSS Framework with Blade Template
 * Authentication
 
-## Requirements
+### Requirements
 
 This tutorial assumes that you have basic skills in PHP and HTML.  
-If you're starting to learn Laravel, you're in the right place to explore the fantastic features in Laravel 8.x.
+If you're starting to learn Laravel, you're in the right place. This tutorial will help you explore the fantastic features in Laravel 8.x.
 
-## Installation
+### Installation
 
 To get started with Laravel, you have two options.
 * Using Laravel Homestead as your local development environment.
@@ -52,9 +72,9 @@ Ensure your system has PHP version 7.3., to install Laravel. You can use any of 
 
     Run this command on the terminal:-  
     ```composer global require laravel/installer```   
-    To create your app,run  
+    To create your app, enter:  
      ```laravel new MyApp```   
-    NB:- **If you encounter command not found error,find your composer global installation locations** by running   
+    NB:- **If you encounter command not found error, find your composer global installation locations** by running   
     ```composer global about```,  
     make your $PATH laravel-executable.
 
@@ -65,9 +85,9 @@ Congratulations, you have created your Laravel 8 APP.
 **Whats Jetstream?** 
  
 This is a new package used for scaffolding in Laravel 8 apps.  
-In earlier versions, the default Vue scaffolding was used. That's now a thing of the past. 
+In earlier versions, the default scaffolding package was Vue. That's now a thing of the past. 
 
-Jetstream comes with two stacks, Livewire and Inertia scaffoldings. Once again, you can apply any of these options.
+Jetstream comes with two stacks, `Livewire` and `Inertia` scaffoldings. Once again, you can apply any of these options.
 Use Livewire with Blade template(sounds familiar?), while Inertia goes with Vue.  
 You'll probably go with Blade + Livewire stack if you're not familiar with Vue. Good luck
 
@@ -78,7 +98,7 @@ Okay, let's install the Jetstream package before we dig deeper into laravel new 
 As we said at the start, the composer is the most popular package manager in PHP. Most package installations are done via composer, with Jetstream included.  
 
 To install Jetstream into your laravel project, `cd`  into your project root e.g `cd  /var/www/html/MyApp`  
-Then run the command, ```composer requires laravel/jetstream```.      
+Then run the command, ```composer require laravel/jetstream```.      
 Ensure that you've got a strong internet connection, as its installation may fail, thus, reverting the composer.json file to its default.   
 
 If successful, we need to choose our stack(Livewire or Inertia), therefore we need to run an artisan command,  
@@ -86,8 +106,11 @@ If successful, we need to choose our stack(Livewire or Inertia), therefore we ne
 ```php artisan jetstream:install inertia``` for Inertia stack.
 
 To complete the installation, we will need to build our Node Package Managers(NPM) dependencies and migrate our database.  
-    ``` npm install && npm run dev ```  
-    ``` php artisan migrate ```  
+    ``` npm install && npm run dev ```   
+    ``` 
+    php artisan migrate 
+    //before running this command, you must create a database. 
+    ```  
 Remember we said Jetstream comes with new changes, i.e. Tailwind CSS, doing away with Bootstrap as its default UI framework?  
 It will scaffold your application with the Tailwind framework. It features a beautifully designed UI.  
 Don't worry if you don't understand, things are all done under the hood, and you only need to build your NPM dependencies which you achieved above.
@@ -96,7 +119,7 @@ Don't worry if you don't understand, things are all done under the hood, and you
 * Tailwind Framework is installed into your system:-you'll notice a file `webpack.mix.js` and `tailwind.config.js`   
   at the root of your application
 
-* In the `views` directory, new folders are created for you, they include:-
+* In the `resources/views` directory, new folders are created for you, they include:-
     * API folder:-which has API token manager and index.blade.php, these help with API management.
     * profile folder:-This handles user profile management, some tasks include deleting a user.
     * auth folder:-This existed in Laravel 7. The only new files are the two-factor authentications.
@@ -127,7 +150,7 @@ Don't worry if you don't understand, things are all done under the hood, and you
                 </div>
          ```
         #### Tailwind explanation in the code above
-        * max-width is indicated as ***max-w-md***,if you have noticed the use of **md**,okay Tailwind also has
+        * max-width is indicated as ***max-w-md***, if you have noticed the use of **md**, okay Tailwind also has
           breaking point just like bootstrap,they include:-  
             * sm-small screen
             * md -medium screen
@@ -146,7 +169,7 @@ Don't worry if you don't understand, things are all done under the hood, and you
             To learn more about Tailwind, visit [tailwindcss](https://tailwindcss.com/docs/responsive-design)
 
 * User Registration
-    * Unlike the other versions,a new folder is created on the ***app*** folder i.e ***MyApp/app/Actions/Fortify***  
+    * Unlike the other versions,a new folder is created on the ***app/actions*** folder i.e ***MyApp/app/Actions/Fortify***  
     * In this directory,there are 5 files generated,including ***createNewUser.php*** file.  
     * Lets dive in to see what happens in this file.
 
@@ -165,23 +188,23 @@ Don't worry if you don't understand, things are all done under the hood, and you
     }
     ```
     * Upon registration, the developer has an option for the email verification link.  
-        * It's a little different in Laravel 8, apart from the MustImplementEmail in the Model,
+        * It's a little different in `Laravel 8`, apart from the `MustImplementEmail` in the Model,
           a new fortify feature is needed to enable this functionality.  
-          This is available in the **config/fortify.php**,Features option,enable emailVerification()  
+          This is available in the **config/fortify.php**, Features option, enable `emailVerification()`  
 
 * Profile Photo
     This feature was not available in other versions. It was initially enabled by default in the earlier version of Laravel 8 before being disabled due to "community" demands.
     * To achieve this functionality:-
-        Laravel 8 comes with new files in the app/config.php files, including the Jetstream.php file, now in this file,  
-        we have the Features option which has a few methods, uncomment the Feature::profilePhotos()  
-
-        Next step, remember images are stored in the database as URL, and original photos stored in the public  
-        directory of the Storage folder, remember, this is solely for images that are required to be  
+        Laravel 8 comes with new files in the `app/config.php` files, including the `Jetstream.php` file, now in this file,  
+        we have the Features option which has a few methods, uncomment the `Feature::profilePhotos()`.  
+        Next step, remember `images` are stored in the database as `URL`, and original photos stored in the `public` directory of the `Storage` folder. Note that this is solely for images which need to be  
         publicly accessible.
 
-        Run a symbolic link to enable you to access your images in the blade template  
+        Run a symbolic link to enable you to access your images in the `blade` template  
+
         ``` php artisan storage: link```  
-        ## How to manage profile photos with the jetstream
+
+        ### How to manage profile photos with the jetstream
         Always remember that new auth scaffolding is configured to use the App/Models/User.php model by default.  
         In this new version, another functionality has been added by default when you install Jetstream.  
         ```Laravel\Jetstream\HasProfilePhoto```  
@@ -190,10 +213,13 @@ Don't worry if you don't understand, things are all done under the hood, and you
         * ```getProfilePhotoUrlAttribute,```
         * ```defaultProfilePhotoUrl, and```
         * ```profilePhotoDisk ```
-        All these methods can be customized in the model, depending on your interest.  
+        All these methods can be customized in the `model`, depending on your interest.  
 
 * Account Deletion
     This is another feature that has been introduced in the laravel 8 scaffolding.  
     It's an option for a user to delete their account.  
     The functionality to implement this is located at the  
     ```App\Actions\Jetstream\DeleteUser```
+
+### Conclusion
+You have now learned the basics of Laravel 8.x. You can, therefore, use this knowledge to develop more interactive applications which make use of full laravel features.
