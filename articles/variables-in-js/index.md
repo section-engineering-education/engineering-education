@@ -8,37 +8,41 @@ We will use the JavaScript console to execute the JavaScript code in this tutori
 
 ### Understanding the scope of variables
 Scope determines the accessibility of variables from different parts of your code.
-Javascript has two types of scopes, which are:
+Javascript has two types of scopes.
+
 1. Global scope
+
 2. Local scope
 
 **1. Global scope**
 
-When a variable is *globally scoped*, it means it is available anywhere in your program. Declaring a variable outside a function or block leads to it being added to the global scope automatically.
+When a variable is *globally scoped*, it means it is available anywhere in your program. Declaring a variable outside a function or a block outside a funciton leads to it being added to the global scope automatically.
 
 **2. Local scope**
 
-When variables are declared within a function or block, they are locally scoped. It means they can only be used inside the function or block they belong in.
+When variables are declared within a function or a block, they are locally scoped. It means that they can only be used inside the function or the block they were declared in.
 
 Local scope variables are divided into:
+
 - Function scoped variables
+
 - Block scope variables
 
-**a.Function scoped variables**
+#### Function scoped variables
 
 A function scoped variable means that the variable defined within the function is not accessible from outside the function.
 
-**b.Block scoped variables**
+#### Block scoped variables
 
 In JavaScript, a block is denoted by curly braces. The space between the curly brackets is known as a block.
 For example, the `if...else, do...while` and `for` loop statements create blocks.
 
 When a variable is block-scoped, it means that it exists only inside the block where it was defined.
 
-`let` and `const` keywords are used in block scoping a variable. If you use `var` in a block scope, the variable will not be block scoped. It will either be function scoped or globally scoped depending upon where the block is present. 
+`let` and `const` keywords are used in block scoping a variable. If you use `var` inside a block, the variable will not be block scoped. It will either be function scoped or globally scoped depending upon where the block is present. 
 
 ### Naming Variables In JavaScript
-Before you start declaring variables, you should first learn how to name them first. Below are some of the rules that one should follow. Failing to do so will cause an error.
+Before you start declaring variables, you should learn how to name them. Below are some of the rules that one should follow. Failing to do so will cause an error.
 
 - Variables should not have spaces.
 - Variables should begin with an underscore, a dollar sign, or a letter.
@@ -47,7 +51,6 @@ Before you start declaring variables, you should first learn how to name them fi
 - You can't use any JavaScript *reserved words* as a variable name. Reserved words include; private, public, enum, etc.
 
 ### Declaring variables using the keyword `var`
-
 Variables can be declared using the `var` keyword as shown below:
 
 ```javascript
