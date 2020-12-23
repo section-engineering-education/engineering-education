@@ -126,7 +126,7 @@ private void Div_Click(object sender, EventArgs e)
 
 Let's deal with the `Sqrt()` & the `Pow()` methods.
 **Note:** In order to use the Pow & Sqrt methods you need to import the Math class as follows `using static System.Math;`.
-We will also use the `try()` & `catch()` methods to prevent the user from doing invalid operations.
+We will also use the `try` & `catch` blocks to prevent the user from doing invalid operations.
 
 ```c#
  private void Sqrt_Click(object sender, EventArgs e)
@@ -156,7 +156,7 @@ private void Pow_Click(object sender, EventArgs e)
 }
 ```
 
-Finally, we will work on the calculate button to evaluate the string expression, and don't forget to check for invalid operations or inputs.
+Finally, we will work on the calculate button to evaluate the string expression and check for invalid operations or inputs.
 
 ```c#
  private void Calculate_Click(object sender, EventArgs e)
@@ -189,7 +189,7 @@ Remember that you can change the fonts & colors to suit your taste!
 ![Final_look](Final_look.png).
 
 ### Conclusion
-In this tutorial, we created a basic calculator using windows forms. We have learned how easy it is to build various applications with it using *Controls*. Then, we learned how to connect these *Controls* to the code inside of it.
+In this tutorial, we created a basic calculator using windows forms. We have learned how easy it is to build various applications with it using *Controls*.
 
 This is not over! We will build more applications using windows forms in the upcoming tutorials. Don’t forget to test out the code to fully understand how it works.
 
