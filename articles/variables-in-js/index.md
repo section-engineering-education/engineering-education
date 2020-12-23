@@ -1,18 +1,18 @@
-# Understanding Variables In Javascript
+### Understanding Variables In Javascript
 
-## Introduction
+### Introduction
 Variables are a way for programmers to name a value to reuse it, update it, or keep track of it.
 In this article, we will go through naming variables, declaring them, and initializing them.
 We are also going to touch on the scope of variables to ensure that we understand variables fully.
 
-## Prerequisites
+### Prerequisites
 To follow along with this tutorial, you need a web browser. You can get Google Chrome [here](https://www.google.com/chrome/)
 
 ### Accessing the JavaScript Console
 We will use the JavaScript console to execute the JavaScript code in this tutorial. To open it in Google Chrome, press `Ctrl + Shift + J` on Windows and Linux and `Cmd + Option + J` in Mac OS.
 
 ### Understanding the scope of variables
-Scope determines the accessibility of variables, objects, and functions from different parts of your code.
+Scope determines the accessibility of variables from different parts of your code.
 Javascript has two types of scopes, which are:
 1. Global scope
 2. Local scope
@@ -20,12 +20,12 @@ Javascript has two types of scopes, which are:
 **1. Global scope**
 
 When a variable is *globally scoped*, it means it is available anywhere in your program. 
-Declaring a variable outside a function leads to it being ade to the global scope automatically.
-Global scope uses `var` key word to declare variables.
+Declaring a variable outside a function or block leads to it being added to the global scope automatically.
+Global scope uses `var let` and `const` keywords to declare variables.
 
 **2. Local scope**
 
-When variables are declared within a function they become locally scoped, that means they can only be called inside the function.
+When variables are declared within a function or block they become locally scoped, that means they can only be called inside the function or block they belong in.
 Local scope variables are divided into:
 - function scoped variables
 - block scope variables
@@ -33,17 +33,18 @@ Local scope variables are divided into:
 **a.Function scoped variables**
 
 When you say a variable is function scoped, it means that the variable defined within the function is not accessible from outside the function.
-To define a locally scoped variable we use the `var` keyword.
+To define a function scoped variable we use the `var` keyword.
 
 
 **b.Block scoped variables**
 
-In JavaScript a block is denoted by curly braces, the space between the curly brackets is what is known as a block.
+In JavaScript a block is denoted by curly braces, the space between the curly brackets is known as a block.
 For example: the `if...else, do...while` and `for` loop statements create blocks.
 
 When a variable is block-scoped, it means that it exists inside the block, it was defined.
 
 `let` and `const` keywords are used in defining the block scope.
+This means that you can't use `var` in a block. 
 
 ### Naming Variables In JavaScript
 Before you start declaring variables, you should first learn how to name them first. Below are some of the rules that one should follow to ensure that your JavaScript code is easy to understand and work with. Variable names;
@@ -98,8 +99,9 @@ console.log(x);
 ```
 
 ### Declaring variables using the keyword `let`
-`let` keyword can be used to declare one or more variables. 
-The main difference between keywords `var` and `let` is that variables declared using `let` are block-scoped, while `var` is both globally-scoped and function scoped.
+
+`let` keyword permits you to declare block scope variables.
+The main difference between keywords `var` and `let` is that variables declared using `let` are block-scoped, while `var` is function scoped.
 
 Example:
 ```javascript
@@ -114,7 +116,8 @@ console.log(exe); // ReferenceError: exe is not defined
 In the above example, `exe` variable only exists inside the block, and referencing it outside the block gets you a ` ReferenceError: exe is not defined`.
 
 ### Declaring variables using the keyword  `const`
-The keyword `const` works the same as the `let` keyword. The difference between the variable declared using the keyword `const` must be initialized immediately and with a value, and that value **can't be redeclared**.
+The keyword `const` works the same as the `let` keyword. 
+The difference between the `const` and `let` keyword is that a variable declared using the keyword `const` must be initialized immediately and with a value, and that value **can't be redeclared**. 
 
 Example:
 ```javascript
@@ -125,5 +128,5 @@ The error: `SyntaxError: Identifier 'p' has already been declared`, informs you 
 Using the `const` keyword lets you declare variables or constants that should not be changed in your code.
 
 ### Conclusion
-In summary, we have learnt about variables, how they are declared and used.
+In summary, we have learnt about variables and how they are declared and used in JavaScript.
 We have gone through different types of variable scopes.  At first, all this may not be very clear, especially if you are a beginner, but you will get there with practice.
