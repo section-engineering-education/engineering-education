@@ -14,18 +14,19 @@ images:
   - url: /engineering-education/understanding-loops-and-iteration-in-dart/hero.jpg
     alt: Understanding loops and iteration in Dart image
 ---
-Dart is a programming language that is scalable and can be used to write simple scripts or full-featured applications. It is an object-oriented and dynamic language. Dart was developed by Google. Like most programming languages, it contains loops and iterations. If one is familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
+Dart is a programming language that is scalable and can be used to write simple scripts or full-featured applications. It is an object-oriented and dynamic language. Dart was developed by Google. Like most programming languages, it contains loops and iterations. 
 <!--more-->
+If one is familiar with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)), then elements of Dart Language will be easier to understand.
 
 ### Introduction
 A Loop is defined as a segment of code that executes multiple times.
 
 Iteration refers to the process in which the code segment is executed once. One iteration refers to 1-time execution of a loop. A loop can undergo many iterations. 
 
-### Development Environment
-To write Dart programs, you can either use the [DartPad Online Editor](https://dartpad.dartlang.org/) or you can install the [Dart SDK](https://dart.dev/get-dart), Install [IntelliJ IDEA](https://www.jetbrains.com/idea/), and integrate the Dart plugin to IntelliJ IDEA IDE.
+### Development environment
+To write Dart programs, you can either use the [DartPad Online Editor](https://dartpad.dartlang.org/) or you can install the [Dart SDK](https://dart.dev/get-dart), install [IntelliJ IDEA](https://www.jetbrains.com/idea/), and integrate the Dart plugin to IntelliJ IDEA IDE.
 
-### Table of Contents
+### Table of contents
 - [General loop structure](#general-loop-structure)
 - [Loops in Dart](#loops-in-dart)
    - [For loop](#for-loop)
@@ -39,15 +40,15 @@ To write Dart programs, you can either use the [DartPad Online Editor](https://d
 - [Conclusion](#conclusion)
 
 ### General loop structure
-There are two types of loops:
 
+There are two types of loops:
 1. **Definite Loops**: These refer to loops where we know the number of times we want to execute the code.
 
 2. **Indefinite Loops**: These refer to loops where we do not know the number of times we want to execute the code.
 
 All the loop types mentioned above have the following characteristics:
 
-- *Counter Variable* - It is also known as the Initializer. It keeps track of the number of times a loop is executed.
+- *Counter Variable* - Also known as the Initializer. It keeps track of the number of times a loop is executed.
 
 - *Increment or Decrement Counter Variable*  - This refers to the number in which counter variable increases or decreases after each iteration.
 
@@ -57,7 +58,7 @@ Loops can be classified into two types based on condition checking:
 
   1. Entry controlled loops - These are loops in which the condition is checked first and then the iteration is executed.
 
-  2. Exit controlled loops - These are loops in which an iteration is executed and then the condition is checked afterward.
+  2. Exit controlled loops - These are loops in which an iteration is executed and then the condition is checked afterwards.
 
 ### Loops in Dart
 The syntax of Dart loops is similar to the ones in Java Programming Language.
@@ -109,7 +110,7 @@ Hello
 Here the value of the counter variable will increase by `1` for every iteration. If the value of `i` becomes equal to `4` or more, the loop will be terminated since the condition states that the value of `i` should be less than `4`. The code block prints `Hello`, hence the output is `Hello` written four times for (0,1,2,3) < 4.
 
 #### While loop
-**Syntax of While loop:**
+**Syntax of a While loop:**
 ```Dart
 void Main(){
    
@@ -156,7 +157,9 @@ Hello
 Hello
 ```
 
-Our condition check begins with `0 < 3` which is true. Therefore the code executes and prints out the first hello. Then, the value of `i` increases by one to 1. Now, the condition `1 < 3` is still true, so the code executes. This goes on until the value of the counter variable will be `3`. Now, the condition is `3 < 3` which is false. Hence, the loop terminates and three `Hello`s get printed. 
+Our condition check will begin with the statement `0 < 3` which is true. Therefore the code executes and prints out the first hello. Then, the value of `i` increases by one to 1. 
+
+Now, the condition `1 < 3` is still true, so the code executes. This goes on until the value of the counter variable is `3`. Once the condition is `3 < 3` which is false. The loop terminates and three `Hello`s get printed. 
 
 #### Do-While Loop
 **Syntax of Do-While Loop:**
@@ -177,7 +180,7 @@ void main(){
 
 **Initialize counter - Execute code - Increment - Condition check**.
 
-1. The counter variable will be initialized outside the do-while block and the code block will be executed once regardless of the condition for the first time.
+1. The counter variable will be initialized outside the do-while block and the code block will be executed regardless of the condition for the first time.
 
 2. Then, the condition will be checked. If it's evaluated to `true`, the loop will proceed to the next iteration.
 
@@ -207,12 +210,14 @@ Hello
 Hello
 ```
 
-The code is executed for the first time and then the counter variable is incremented by one. The loop then checks the condition `1 < 5`. Since this is `true`, the loop will proceed to the next iteration. In the next iteration, the counter variable is incremented by one. The loop then checks the condition `2 < 5`.  Since this is `true`, the loop will proceed to the next iteration. This will continue until the value of the counter variable is `5`. This time the condition check `5 < 5` will be evaluated as `false`, so the loop ends after printing 5 `Hello`s.
+The code is executed for the first time and then the counter variable is incremented by one. The loop then checks the condition `1 < 5`. Since this is `true`, the loop will proceed to the next iteration. 
+
+In the next iteration, the counter variable is incremented by one. The loop then checks the condition `2 < 5`.  Since this is `true`, the loop will proceed to the next iteration. This will continue until the value of the counter variable is `5`. This time the condition check `5 < 5` will be evaluated as `false`, so the loop ends after printing 5 `Hello`s.
 
 ### Other key concepts
 #### Break keyword
 
-We use the `break` keyword to forcefully end a loop. It comes in handy when you want a partial output or terminate the loop when a certain condition is met.
+We use the `break` keyword to forcefully end a loop. It comes in handy when you want a partial output or to terminate the loop when a certain condition is met.
 
 ***Example:***
 
@@ -273,9 +278,9 @@ In the example, when `i` becomes 5, the loop is forced to the next iteration, th
 ### Applications of loops
 Here are some positive and negative applications of loops:
 
-1. **Writing a Music Player**: A music player has a loop that enables it to play from one song to the next systematically.
+- **Writing a Music Player**: A music player has a loop that enables it to play from one song to the next systematically.
 
-2. **Cycling through values**: It is the use of loops to print out values in an extensive list. For example, the names of students in a school.
+- **Cycling through values**: Loops are used to print out values in an extensive list. For example, the names of students in a school.
 
 ```Dart
 void main(){
@@ -296,7 +301,7 @@ Alex
 
 It loops over all the elements stored in the list and prints them out.
 
-3. **Create computer viruses**: Malicious programmers use loops to create [Computer Viruses](https://en.wikipedia.org/wiki/Computer_virus) by using the While loop and embedding it to software downloads. If we write a while loop without the increment or decrement counter variable, it creates a never-ending loop which leads to unnecessary storage and memory consumption on devices. This courses the devices to crash or behave abnormally.
+- **Create computer viruses**: Malicious programmers use loops to create [computer viruses](https://en.wikipedia.org/wiki/Computer_virus) by using the While loop and embedding it to software downloads. If we write a while loop without the increment or decrement counter variable, it creates a never-ending loop which leads to unnecessary storage and memory consumption on devices. This causes the devices to crash or behave abnormally.
 
 ***Caution: DO NOT RUN THIS CODE!!!***
 
@@ -311,13 +316,19 @@ void main(){
 
 The code will print out an endless string of the word `Hello`. Note that we are not incrementing the counter variable.
 
+### Conclusion 
+Loops and iteration may seem complicated and a bit challenging to new developers while learning a new language. The goal of this article was to make it easier to understand them in Dart Programming Language. Practice will increase your skill and understanding of these loops.
+
+I've listed a couple extra links as further reading down below:
+
 ### Further reading
 To get a better grip on the topic, take a look at these resources:
 
- - [Dart's official documentation](https://dart.dev/samples#control-flow-statements)
+- [Dart's official documentation](https://dart.dev/samples#control-flow-statements)
 
- - [Udemy course for Dart](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
+- [Udemy course for Dart](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
 
-### Conclusion 
-Loops and Iteration may seem complicated and a bit challenging to new developers while learning a new language. This article has made it easier to understand them in Dart Programming Language. Practice will increase your understanding of these loops.
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+
 
