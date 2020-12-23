@@ -1,7 +1,13 @@
-localStorage is a critical part of web development. It allows developers to store and retrieve data in the browser. One key advantage of localStorage is that the data does not have an expiry date. This means that data persists even if the browser&#39;s tab or window is closed.
+localStorage is a critical part of web development. It allows developers to store and retrieve data in the browser. One key advantage of localStorage is that the data does not have an expiry date. Data is not deleted when the browser&#39;s tab or window is closed.
 
 ### What is localStorage
-You can look at `localStorage` as some form of web storage that keeps data for a long time. This could be a day, a week, or even a year. It mainly depends on the developers&#39; preference. It is important to note that `localStorage` only stores strings. So, if you wish to store objects, lists, or arrays, you must convert them into strings using a method such as `JSON.stringify().`
+You can look at `localStorage` as some form of web storage that keeps data for a long time. This could be a day, a week, or even a year. It is important to note that `localStorage` only stores strings. So, if you wish to store objects, lists, or arrays, you must convert them into a string using `JSON.stringify().`
+
+### Limitations
+The major limitations of localStorage are:
+- Insecure data
+- Synchronous operations
+- Limited storage capacity
 
 ### Main methods in localStorage
 The primary functions when using localStorage are `key()`, `setItem()`, `removeItem()`, `getItem()`, and `clear()`.
@@ -11,11 +17,10 @@ This function is used to retrieve a value/string in a specific location. The ind
 
 ```javascript
 var answer = localStorage.key(1);
-
 // this statement will retrieve the value of the second item in the localStorage.
 ```
 
-The key() can also be used in a for-loop to retrieve all the items in the localStorage.
+The key() can also be used in a loop statement to retrieve all the items in the localStorage.
 
 #### setItem()
 This function is used to store items in the localStorage. An example of this function is shown below.
@@ -155,16 +160,56 @@ Our `index.html` will have a `form` and several `buttons`, as shown below.
 
 </body>
 </html>
-
 ```
 
-When the `submit` button is clicked, it takes the user input and passes it to the `store` function in the main.js file.
+When the `submit` button is clicked, it takes the user input and passes it to the `store` function in the `main.js` file. The `document.getElementById('carBrand').value` gets the user input. The values are then passed to the car object and stored in the `sessionStorage` using setItem method.
 
-Similarly, the `retrieveButton` will invoke the retrieveRecords function when clicked.
+```javascript
+function store(){ //stores items in the local storage
+        var brand = document.getElementById('carBrand').value;
+        var price = document.getElementById('carPrice').value;
+    
+        const car = {
+            brand: brand,
+            price: price,
+        }
+        
+        window.localStorage.setItem('car',JSON.stringify(car));  
+        //converting object to string
+}
+```
 
-removeButton invokes `removeItem()`.
 
-clearButton calls the `clearStorage()`.
+Similarly, the `retrieveButton` will invoke the `retrieveRecords` function when clicked. This method fetches items from the `localStorage` using the getItem function. ` var paragraph = document.createElement("p")` creates a new paragraph component in our web page. `document.createTextNode(records);` helps create the text that will be displayed to the user. The text node is then binded to the paragraph tag by `paragraph.appendChild(infor)`. These components are then shwn in a specific place on the web page by `document.getElementById("retrieve")` and `element.appendChild(paragraph)`.
+
+```javascript
+function retrieveRecords(){ //retrieves items in the localStorage
+    console.log("retrive records");
+    var records = window.localStorage.getItem('car');
+    var paragraph = document.createElement("p");
+    var infor = document.createTextNode(records);
+    paragraph.appendChild(infor);
+    var element = document.getElementById("retrieve");
+    element.appendChild(paragraph);
+}
+```
+
+removeButton invokes `removeItem()`. This `method` will delete a value from the `localStorage` using the removeItem `function`.
+
+```javascript
+function removeItem(){  //deletes item from localStorage
+    localStorage.removeItem('car')
+    console.log("remove items");
+}
+```
+
+clearButton calls the `clearStorage()`. The `clear()` method is used to remove all values in the localStorage.
+```
+function clearStorage(){ //clears the entire localStorage
+    localStorage.clear()
+    console.log("clear records");
+}
+```
 
 Here is the `main.js` file with the required functions.
 
@@ -192,7 +237,6 @@ function retrieveRecords(){ //retrieves items in the localStorage
     element.appendChild(paragraph);
 }
 
-
 function removeItem(){//deletes item from localStorage
     localStorage.removeItem('car')
     console.log("remove items");
@@ -205,18 +249,15 @@ function clearStorage(){ //clears the entire localStorage
 
 window.onload =function(){ //ensues the page is loaded before functions are executed.
     document.getElementById("carForm").onsubmit = store
-
     document.getElementById("clearButton").onclick = clearStorage
-
     document.getElementById("removeButton").onclick = removeItem
-
     document.getElementById("retrieveButton").onclick = retrieveRecords
 
 }
 
 ```
 
-As shown above, the functions will only be clickable after the page has finished loading. This is specified by the `window.onload` method.
+As shown above, the functions will only be accessible after the page has finished loading. This is specified by the `window.onload` method.
 
 Ensure that the `main.js` file is referenced in the `index.html` file by pasting the statement below in the `head` section.
 
@@ -232,17 +273,8 @@ The following video shows how the site looks, as well as the invocation of local
 ### When to use local storage
 You should only use localStorage when storing insensitive information. This is because third-party individuals can easily access the information. localStorage can help in storing temporary data before it is pushed to the server. It is important to clear localStorage once this operation is completed.
 
-### Limitations
-The major limitations of localStorage are:
-
-- Insecure data
-
-- Synchronous operations
-
-- Limited storage capacity
-
 #### Conclusion
-You are now familiar with the different functionalities of localStorage. In case, you have not understood any concept, feel free to go through the localStorage functions again.
+You are now familiar with the different functionalities of localStorage. In case, you didn't understood any concept, feel free to go through the localStorage functions again.
 
 ### References
-[JavaScript Infor](https://javascript.info/localstorage)
+[JavaScript.Infor](https://javascript.info/localstorage)
