@@ -100,13 +100,12 @@ The main difference between keywords `var` and `let` is that variables declared 
 
 Example:
 ```javascript
-var a = 20, b = 10;
+var a = 20;
 {
-  let exe = a;
-  a = b;
-  b = exe;
+  let exe = 30;
 }
-console.log(exe); // ReferenceError: exe is not defined
+console.log(a) // Expected output: 20
+console.log(exe); // Uncaught ReferenceError: exe is not defined
 ```
 In the above example, `exe` variable only exists inside the block, and referencing it outside the block gets you a ` ReferenceError: exe is not defined`.
 
@@ -118,9 +117,9 @@ The difference between the `const` and other keywords used to declare variables 
 Example:
 ```javascript
 const pi = 3.14;
-pi = 1.5; //SyntaxError: Identifier 'pi' has already been declared
+pi = 1.5; //Uncaught TypeError: Assignment to constant variable.
 ```
-The error: `SyntaxError: Identifier 'pi' has already been declared`, informs you that you can't change the value of `pi`. 
+The error: `Uncaught TypeError: Assignment to constant variable`, informs you that you can't change the value of `pi`. 
 
 Using the `const` keyword lets you declare constants that should not be changed in your code.
 
