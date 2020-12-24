@@ -1,6 +1,8 @@
 ### Understanding the Big O notation
 
-![bigoh](/engineering-education/big-o-notation/bigo.png)
+![Hero Image](/engineering-education/big-o-notation/bigo.png)
+
+[Image Source](https://res.cloudinary.com/practicaldev/image/fetch/s--S9kD7Tvi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/0x6qo2na9bk35zy3dwcn.png)
 
 We all need a way to measure the performance (efficiency) of our algorithms as they scale up.
 The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.
@@ -35,7 +37,11 @@ def first_element(array):
 The function `first_element()` takes an array passed in and prints the first element and does not consider how many elements are present in the array.
 Take a look at the graph representation below:
 
-![01](/engineering-education/big-o-notation/o-1.png)
+![O-n-graph](/engineering-education/big-o-notation/o-1.png)
+
+*O(1) graph*</br>
+[Image Source](https://miro.medium.com/max/387/1*C--4xOJ1aDuUykTZ4z5UGg.png)
+
 
 ### 2. O(n) Linear Runtime complexity
 This means that the runtime complexity of your algorithm increases linearly with the size of the input data.
@@ -51,6 +57,9 @@ The code takes in an array using the function `show_array_elements()` and displa
 If the array passed in as an argument only has **1** element, then the algorithm will only take **1 operation** to run and would similarly take **300** operations for an array with **300 elements**. The number of times the loop iterates depends on the number of array elements.
 
 ![0n](/engineering-education/big-o-notation/o-n.png)
+
+*O(n) graph*</br>
+[Image Source](https://miro.medium.com/max/387/1*X5JanH7K1HPOarB4fJpTTg.png)</br>
 
 ### 3. O(n<sup>2</sup>) Quadratic Runtime complexity
 The algorithm varies with the square of the problem size, n.
@@ -71,6 +80,9 @@ The code has two loops, the *outer*, and the *inner*. The outer loop iterates n 
 Taking a case where the array has 3 elements; the outer loop takes  3 operations in total to iterate over each element. For every 3 operations of the outer loop, the inner loop also takes 3 operations to iterate over each element. That is 3 × 3 operations amounting to 9.
 
 ![02](/engineering-education/big-o-notation/n-square.png)
+
+*O(n<sup>2</sup>) graph*</br>
+[Image Source](https://miro.medium.com/max/387/1*GKAnOWbIA7CRV4OUB3STZw.png)</br>
 
 ### 4. O(log<sub>2</sub>n)- Logarithmic Runtime complexity
 This is associated with the binary search algorithm which searches by doing necessary halvings to get the item being searched for.
@@ -139,6 +151,9 @@ Further example inputs and the **maximum** number of steps to be taken are shown
 |100000| 17|
 
 ![log_2_n](/engineering-education/big-o-notation/log-2-n.png)
+
+*O(log<sub>2</sub>n) graph*</br>
+[Image Source](https://miro.medium.com/max/387/1*UHTWeGAoDrJL1mhvtKkVGw.png)
 
 ### Determining the Big-O of an algorithm
 Here we look at the best-case and worst-case scenarios.
