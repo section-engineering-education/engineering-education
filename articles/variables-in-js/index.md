@@ -43,15 +43,19 @@ When a variable is block-scoped, it means that it exists only inside the block w
 Before you start declaring variables, you should learn how to name them. Below are some of the rules that you should follow. Failing to follow these rules will cause an error.
 
 - Variables should not have spaces.
+
 - Variables should begin with an underscore, a dollar sign, or a letter.
-- Variables are very case-sensitive. This means `car_TYPE` is treated as an entirely different variable than one named `car_type`
+
+- Variables are very case-sensitive. This means `car_TYPE` is treated as an entirely different variable than one named `car_type`.
+
 - Variables must contain only letters, numbers, underscores, or dollar signs.
-- You can't use any JavaScript *reserved words* as a variable name, you can find a list of reserved words [here](https://www.w3schools.com/js/js_reserved.asp)
+
+- You can't use any JavaScript *reserved words* as a variable name. You can find a list of the reserved words [here](https://www.w3schools.com/js/js_reserved.asp).
 
 ### Declaring variables using the keyword `var`
 Variables can be declared using the `var` keyword as shown below:
 
-```javascript
+```JavaScript
 var favouriteThing;
 ```
 
@@ -59,13 +63,13 @@ Upon declaring a variable, you can assign a value to the variable such as a stri
 
 Example:
 
-```javascript
+```JavaScript
 var favouriteThing;
 favouriteThing = "Icecream!";
 ```
 
 Declaring and initializing a variable at the same time is also possible using the following syntax.
-```javascript
+```JavaScript
 var favouriteThing = "Icecream!";
 ```
 
@@ -74,7 +78,7 @@ Each declaration is separated by a comma (`,`).
 
 Example:
 
-```javascript
+```JavaScript
 var favouriteThing = "Icecream!", bestMovie = "Code Eight";
 ```
 
@@ -84,7 +88,7 @@ If you use `var` inside a block, the variable will not be block scoped. It will 
 
 Example:
 
-```javascript
+```JavaScript
 var x = 2;
 
 if (x === 2) {
@@ -99,14 +103,17 @@ console.log(x); //expected output: 3
 The main difference between keywords `var` and `let` is that variables declared using `let` are block-scoped, while `var` is function scoped.
 
 Example:
-```javascript
+
+```JavaScript
 var a = 20;
 {
   let exe = 30;
+  console.log(exe); // Expected output: 30
 }
 console.log(a) // Expected output: 20
 console.log(exe); // Uncaught ReferenceError: exe is not defined
 ```
+
 In the above example, the `exe` variable only exists inside the block, and referencing it outside the block will cause an error `Uncaught ReferenceError: exe is not defined`.
 
 ### Declaring variables using the keyword  `const`
@@ -116,10 +123,11 @@ The difference between the `const` and other keywords used to declare variables 
 
 Example:
 
-```javascript
+```JavaScript
 const pi = 3.14;
-pi = 1.5; //Uncaught TypeError: Assignment to constant variable.
+pi = 1.5; // Uncaught TypeError: Assignment to constant variable.
 ```
+
 The error: `Uncaught TypeError: Assignment to constant variable`, informs you that you can't change the value of `pi`.
 
 Using the `const` keyword lets you declare constants that should not be changed in your code.
