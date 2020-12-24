@@ -1,38 +1,40 @@
 # stocks-prices-predection-using-python
-According to [wikipedia](https://en.wikipedia.org/wiki/Artificial_neural_network#:~:text=An%20artificial%20neural%20network%20is,to%20the%20input%20of%20another.) an artificial neural network is an interconnected group of nodes, inspired by a simplification of neurons in a brain. Here, each circular node represents an artificial neuron and an arrow represents a connection from the output of one artificial neuron to the input of another.
+An artificial neural network is an interconnected group of nodes, inspired by a simplification of neurons in a brain. Here, each circular node represents an artificial neuron and an arrow represents a connection from the output of one artificial neuron to the input of another.
 
-In this tutorial we are going to build an ai neural network model to predict the stock price. Specifically **Tesla** stock, hope that we can make Elon Mask happy along the way.
+In this tutorial, we are going to build an AI neural network model to predict stock prices. Specifically **Tesla** stock, hope that we can make Elon Musk happy along the way.
 
 ### Prerequisites
 - A good understanding of Python programming language.
-- A good understanding of neural networks, you can start from [here](https://www.section.io/engineering-education/introduction-to-neural-networks/).
+- A good understanding of neural networks. 
+
+If you are a beginner check out [our tutorial](https://www.section.io/engineering-education/introduction-to-neural-networks/) about neural networks.
 
 #### Development Environment
 - Locally install Python and Tensorflow.
-- Google Colab [Recommended].
+- [Google Colab](https://colab.research.google.com/github/ahmadmardeni1/Stock-price-predection-using-Python/blob/main/stock_price_predection.ipynb#scrollTo=QI4PhD_bi9dN) [Recommended].
 
 ### What is RNN?
- When you are reading this tutorial you understand each word based on previous words in your brain, you don't start thinking from scratch, your thoughts are cumulative.
- Recurrent Neural Networks implements that in the machine, it has loops in it and it allows information to persist, where traditional neural networks can't do that.
+When you read this tutorial you will understand each word based on previous words in your brain, you wouldn't start thinking from scratch, your thoughts are cumulative. Recurrent Neural Networks implements that in the machine it has loops, and it allows information to persist where traditional neural networks can't do that.
  
  ![Recurrent Neural Networks with loops](/engineering-education/stock-price-prediction-using-python/first.jpg)
  
- Here **A** takes the input **Xt** and the output is **ht**.
+ When **A** take the input **Xt**, then the **Ht** will be the output.
  
- A recurrent neural network is like multiple copies of the same network which pass the message to a successor, now let's think a little bit of what will happen if we unroll that loop:
+ A recurrent neural network is like multiple copies of the same network which passes the message to a successor. Now let's think a little bit of what will happen if we unroll the previous loop:
  
  ![Unroll the loop in the recurrent neural network](/engineering-education/stock-price-prediction-using-python/second.jpg)
  
  And here comes the problem of the RNN which is **vanishing gradient problem**, where it can not handle large sequences. LSTMs are designed to handle long-term dependencies.
  
-### What is the LSTM?
- Long short-term memory (LSTM) is an artificial recurrent neural network (RNN) architecture you can use in the deep learning field. In LSTM you can process an entire sequence of data. For example, handwriting generation, question answering or speech recognition, and a lot more.
+### What is LSTM?
+ Long short-term memory (LSTM) is an artificial recurrent neural network (RNN) architecture that you can use in the deep learning field. In LSTM you can process an entire sequence of data. For example, handwriting generation, question answering or speech recognition, and a lot more.
 
-Unlike the traditional feed-forward neural network which passes values sequentially through each layer of the network, LSTM has feedback connection that helps it remember preceding information which makes it the perfect one for our needs to do time series analysis
+Unlike the traditional feed-forward neural network which passes the values sequentially through each layer of the network. LSTM has a feedback connection that helps it remember preceding information which makes it the perfect model for our needs to do time series analysis.
+
 ### Choosing data 
 In this tutorial, I'm going to use a TESLA stock dataset from [Yahoo finance](https://finance.yahoo.com/) which contains the stock data for 10 years. You can download it for free from [here](https://github.com/ahmadmardeni1/Stock-price-predection-using-Python).
 
-Also, I'm going to use [Google Colab](https://colab.research.google.com/) because it is powerful, but you are free to use whatever notebook you are comfortable with. 
+Also, I'm going to use [Google Colab](https://colab.research.google.com/) because it is powerful, but you are free to use whatever you are comfortable with. 
 
 #### Importing libraries
 ```python
@@ -55,6 +57,14 @@ from google.colab import files
 dataset = files.upload()
 ```
 Then press "choose files" and upload the dataset.
+
+If you are not using Google Colab, you can just put the data file in the same code folder.
+
+#### Reading data
+After uploading our data, we need to make a data frame by:
+```python
+pd.read_csv('TSLA.csv')
+```
 
 #### Feature Extraction
 After that let's get the number of the trading days by:
@@ -95,6 +105,8 @@ def create_dataset(df):
     y = np.array(y)
     return x,y
  ```
+For the features (x) we will always append the last 50 prices, and for the label (y) we will append the next price. Then we will use numpy to convert it into an array.
+ 
 Now we are going to create our training and testing data by calling our function for each one:
 ```python
 x_train, y_train = create_dataset(dataset_train)
@@ -132,7 +144,7 @@ Now we want to compile our model:
 ```python
 model.compile(loss='mean_squared_error', optimizer='adam')
 ```
-We used `loss='mean_squared_error'` because it is a regression problem. And the adam optimizer to update network weights iterative based on training data.
+We used `loss='mean_squared_error'` because it is a regression problem, and the adam optimizer to update network weights iterative based on training data.
 
 We are ready! Let's save our model and start the training:
 ```python
@@ -146,7 +158,7 @@ Let's load our model by:
 model = load_model('stock_prediction.h5')
 ```
 ### Results visualization
-The last step is to visualize our data, if you are new to data visualization please consider going through our [Getting Started with Data Visualization using Pandas](https://www.section.io/engineering-education/getting-started-with-data-visualization-using-pandas/) tutorial first.
+The last step is to visualize our data. If you are new to data visualization please consider going through our [Getting Started with Data Visualization using Pandas](https://www.section.io/engineering-education/getting-started-with-data-visualization-using-pandas/) tutorial first.
 ```python
 predictions = model.predict(x_test)
 predictions = scaler.inverse_transform(predictions)
@@ -161,10 +173,10 @@ plt.legend()
 The result will be:
 ![Ploting results](/engineering-education/stock-price-prediction-using-python/third.jpg)
 
-That's all!. You can find the whole code [here](https://github.com/ahmadmardeni1/Stock-price-predection-using-Python) and you can run it with one click on "open in colab".
+That's all. You can find the entire code [here](https://github.com/ahmadmardeni1/Stock-price-predection-using-Python) and you can run it by clicking on "open in colab".
 
 
 ### Wrapping up
-We got very good prediction results, imagine if you are working with multiple variables, how much accurate the result will be?
+We got a very good prediction result! Imagine if you are working with multiple variables, how much accurate the result will be?
 
 Also, I recommend you to change layers numbers, epochs, and batch_size. Try it yourself and change whatever you think may make your prediction better.
