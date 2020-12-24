@@ -199,3 +199,6 @@ That is it! Let us run our application.
 ### To Wrap up
 We have learned that networking is a crucial factor in mobile application development. We have learned how to use Retrofit and its advantages and disadvantages. **Did you know that Retrofit takes 312ms to carry out one discussion? That is super fast.**
 Check out other ways to use Retrofit in their official [documentation](https://square.github.io/retrofit/). You can access this tutorial's code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/MarvelRetrofit). You can also download the sample APK on Google [Drive](https://drive.google.com/file/d/1v_C-cgkmTaVswyfnC7s60nWcs6f_ncWf/view?usp=sharing).
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
