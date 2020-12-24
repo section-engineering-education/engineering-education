@@ -7,8 +7,8 @@
 We all need a way to measure the performance (efficiency) of our algorithms as they scale up.</br>
 The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.</br>
 The space used is determined by the number and sizes of variables together with the data structures being used while the time is determined by the elementary operations that must be performed during the algorithm execution.</br>
-That said, time to run our algorithms is highly dependent of the computer system we use.</br>
-Take an instance where one is using old hardware, or runs it where there are many programs open and the RAM has little space. He/She will experience slower times compared to another developer using new hardware and large RAM size. Other factors in the environment include compilers & libraries used, processor types etc.</br>
+That said, the time to run our algorithms is highly dependent on the computer system we use.</br>
+Take an instance where one is using old hardware, or runs it where there are many programs open and the RAM has little space. He/She will experience slower times compared to another developer using new hardware and large RAM size. Other factors in the environment include compilers & libraries used, processor types, etc.</br>
 We then need a methodology that is independent of the software and hardware environment that takes into account all possible inputs.</br>
 
 This is done by a high-level description of the algorithm by associating each algorithm with a function **f(n)** that characterizes the running time of the algorithm in terms of the input size **n**.
@@ -22,7 +22,7 @@ It assists us in knowing which algorithm suits which task and which one is not b
 
 An easy illustration of how different algorithms use different runtime complexities is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles away. The information was given to the duo using data signals and an envelope respectively. Ironically, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant duration while the network's delivery time was inversely proportional to the amount of information being sent.
 
-There are many notations of the Big O but here am going to discuss a few of them which are:</br>
+There are many notations of the Big O but here we are going to discuss a few of them which are:</br>
 -**O(1)**</br>
 -**O(n)**</br>
 -**O(n<sup>2)**</br>
@@ -30,7 +30,7 @@ There are many notations of the Big O but here am going to discuss a few of them
 
 In the article, we will also estimate the Big O of a sample algorithm.
 
-*In the code examples, I used Python for illustrations but you can rewrite them using a language of your choice.*
+*In the code examples, we will Python for illustrations but you can rewrite them using a language of your choice.*
 ### 1. O(1) Constant Runtime complexity
 This means that the algorithm does a fixed number of operations no matter the number of inputs. Let's look at the code snippet below:
 ```python
@@ -158,9 +158,9 @@ Further example inputs and the **maximum** number of steps to be taken are shown
 *O(log<sub>2</sub>n) graph*</br>
 [Image Source](https://miro.medium.com/max/387/1*UHTWeGAoDrJL1mhvtKkVGw.png)
 
-### Determining the Big-O of an algorithm
-Here we look at the best-case and worst-case scenarios.
-####Best and Worst-Case Scenarios
+### Determining the Big-O of an algorithm</br>
+Here we look at the best-case and worst-case scenarios.</br>
+#### Best and Worst-Case Scenarios</br>
 We will base our inferences based on the code below:
 ```python
 
@@ -206,9 +206,9 @@ The worst-case would be searching the value 1 or 10, the first and the last elem
 This is because the algorithm needs to make the halvings necessary until it reaches the first and the last elements (O(log<sub>2</sub>n)).
 
 
-### Checking the Big O of a sample code
+### Checking the Big O of a sample code</br>
 We look at the worst-case scenario perspective.
-We will estimate the Big O of the code below (We are simply estimating its complexity, I have not put any conditional checks for the code):
+We will estimate the Big O of the code below (We are simply estimating its complexity, we have not put any conditional checks for the code):
 ```python
 def array_arithmetic(array):
     
