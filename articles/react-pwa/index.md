@@ -93,7 +93,7 @@ const App=()=>{
 export default App;
 ```
 This is the main App component. We are using functional components alongside React hooks. Hooks are functions that let you have state and other lifecycle patterns from function components. In this case, the ```useState()``` hook will
-be used for state. The ```useState``` hook returns two values in an array. The first is the state, and the second value being the function to update it when the state changes.
+be used for the state. The ```useState``` hook returns two values in an array. The first is the state, and the second value being the function to update it when the state changes.
 The second line of our code imports the Form component, which we will be creating in a moment. The Form component is mounted to the UI on the App component and the initial props attributes are passed down to the child component, in this case, our Form component. Now we will go ahead and create the Form component and utilize props from the App component.
 In your ```src/``` folder, create a new folder named components. Inside the components folder, you need to create a file named Form.js. This is the component that one will type in an item and later have it show on the to-do list.
 <br>
@@ -119,11 +119,10 @@ const inputTextHandler=(e)=>{
 
 export default Form;
 ```
-So let us go through this, inside the form, we are binding input tag to an event. On change of form state, The method ```inputTextHandler``` is invoked. Inside the method, we call the setInputText function that 
-updates the inputText to the current state value.
+So let us go through this, inside the form, we are binding the input tag to an event. On change of form state, The method ```inputTextHandler``` is invoked. Inside the method, we call the setInputText function that updates the inputText to the current state value.
 
 ### Creating a Todo
-First, we need to add a new state inside the App.js file. This is the state set once the Add button is clicked. Note that this is the value that inputText current have. So I will add extra props to the  Form component. Clicking the Add button will create the new to-do task and we store this in the todos array to be later used on the UI.
+First, we need to add a new state inside the App.js file. This is the state set once the Add button is clicked. Note that this is the value that inputText current has. So I will add extra props to the  Form component. Clicking the Add button will create the new to-do task and we store this in the todos array to be later used on the UI.
 Our code in the _App.js_ file will now look like this:
 ```javascript
 import React,{useState} from 'react';
@@ -156,7 +155,7 @@ The to-do will be an object with structure like:
       complete:false
     }
 ```    
-The id is a unique identifier or key for a specific to-do task.I am using uuid to generate a unique id.
+The id is a unique identifier or key for a specific to-do task. I am using uuid to generate a unique id.
 You can install it via the command ```npm install uuid```.
 Our Form component has extra props passed to it, the todos and the setTodos that updates our todos array.
 Using destructuring we grab all props in the Form component.
@@ -196,18 +195,16 @@ export default Form;
 ```
 
 ### Creating the Todo and TodoList
-A Todo component will be a card that holds the todo for each row. On the left will be the text and the right side 
-of it will be the button to mark it as compled or delete. It will represent a single item on the row.
+A Todo component will be a card that holds the todo for each row. On the left will be the text and the right side of it will be the button to mark it as completed or delete. It will represent a single item on the row.
 The TodoList is the container for the list of todos available.
 
 Since our Todo component is a child of the TodoList component, I will first create the TodoList component.
 
 ### TodoList component
 You need to create a new file named TodosList inside the components folder.
-This is the component that will have a list of todo items.
-The state is held in App component and passed to the TodoList as props.
-Before creating TodoList component, the App component has its state, so this is the 
-entire code for the _App.js_ file:
+This is the component that will have a list of to-do items.
+The state is held in the App component and passed to the TodoList as props.
+Before creating the TodoList component, the App component has its state, so this is the entire code for the _App.js_ file:
 _App.js_
 ```javascript
 import React,{useState} from 'react';
@@ -235,7 +232,7 @@ export default App;
 
 ### Our TodoList
 Inside your components folder, create a new file named _TodoList.js_.
-This component simply recieves todos object in an array, we then map through them and return a new Todo item.
+This component simply receives todos object in an array, we then map through them and return a new Todo item.
 _TodoList.js_
 ```javascript
 import React from 'react';
@@ -258,7 +255,7 @@ export default TodoList;
 ### The Todo
 The component receives the destructured todos. On the left of the todo is the item and on the right are the buttons
 to delete and mark the item as completed. deleteHandler is the method bound to the delete button to delete a single
-todo by its id. With ES 2015 higher-order array methods, filter method is applied to well, filter out the item out of the array that do not equal the id i.e the item that matches the id is will not go through the new returned array.
+todo by its id. With ES 2015 higher-order array methods, the filter method is applied to well, filter out the item out of the array that does not equal the id i.e the item that matches the id is will not go through the new returned array.
 Note the new returned array is our updated todos from the setTodos function.
 The completeHandler method in the Check button toggles the completed property and applies a strike-through if the component is marked as completed. It will check if the completed property is true and change its class property to
 style it accordingly.
@@ -361,10 +358,10 @@ Your app so far should look like this:
 ### Adding functionality to make it a PWA
 In this part, we will now turn our application into a progressive
 web App.
-A progressive web app refers to an enhanced web application having some capabilities
-as a native platform specific application.
+A progressive web app refers to an enhanced web application having the same capabilities
+as a native platform-specific application.
 Our application will add functionalities such as running the application offline, caching assets by registering
-service workers, and also installing it on users device screen.
+service workers, and also installing it on the user's device screen.
 <br>
 
 ### Register a service worker
@@ -386,7 +383,7 @@ service worker file named serviceworker.js if the condition is true.
 
 Go ahead and create the file serviceworker.js inside your public directory. This will have our custom code
 for a service worker.
-The serviceworker.js file will have the folling code.
+The serviceworker.js file will have the following code.
 
 ```javascript
 const CACHE_NAME="version-1"
@@ -430,11 +427,10 @@ self.addEventListener("activate",(e)=>{
 })
 ```
 The CACHE_NAME variable will help us fetch resources from the CACHE.
-The above code will now cache and fetch url from our cache if we are offline. The offline.html file is 
-used as the fallback markup file when no cache and user is offline.
+The above code will now cache and fetch URL from our cache if we are offline. The offline.html file is used as the fallback markup file when no cache and the user is offline.
 We defined three events: The fetch event is used in the installation of the service worker.
 Our second event will be listening for network requests while the third is used to activate the service worker.
-The self, which is the this keyword of the global service worker itself. Check the code above.
+The self, which is JavaScript this keyword of the global service worker itself. Check the code above.
 
 ### The Public folder
 The public folder currently has this structure:
@@ -446,21 +442,20 @@ The public folder currently has this structure:
     manifest.json
     robots.txt
 ```
-The favicon.ico, logo192.png and logo512.png are icons that user sees on the tab of mobile
-or desktop device. The browser will select by size depending on the device.
-I will use this icons but one would as well use custom ones, feel free to try out.
-The robots.txt is for web crawlers for search engines and indexing which I will not be 
-editing in this tutorial.
+The favicon.ico, logo192.png, and logo512.png are icons that the user sees on the tab of mobile
+or desktop devices. The browser will select by size depending on the device.
+I will use these icons but one would as well use custom ones, feel free to try them out.
+The robots.txt is for web crawlers for search engines and indexing which I will not be editing in this tutorial.
 
 ### Editing index.html file and Manifest
 Manifest is a JSON file that has metadata to describe how the app will appear to the user.
-We then link it to the html in line 18 of index.html:
-```html
+We then link it to the HTML in line 18 of index.html:
+```HTML
 <link rel="manifest" href="./manifest.json" />
 ```
 In our manifest.json file, the code contains icons that are applied as images of different sizes
-on the home screen. The name, theme color as well as the start url will live in this file.
-```json
+on the home screen. The name, theme color, as well as the start URL, will live in this file.
+```JSON
 {
   "short_name": "React PWA",
   "name": "A React Todo PWA",
@@ -524,14 +519,14 @@ The index.html file now looks like:
   </body>
 </html>
 ```
-We have just changed the title to React Todo PWA and decription of our app to Todo Web App on PWA.
+We have just changed the title to React Todo PWA and the description of our app to Todo Web App on PWA.
 Pointed apple-touch icon to the logo192.png and made our icon the favicon.ico.
 All this now need to be added in the manifest.json file
 
 ### Performance of the App
 I use lighthouse to generate audit report, the result is as follows:
 The score is 89/100 which is fair considering this was about introducing PWA rather than production optimized.
-Note that this will not pass the HTTPS audit in development environment. So if hosting is needed, make sure the production web-server supports HTTPS.
+Note that this will not pass the HTTPS audit in the development environment. So if hosting is needed, make sure the production web-server supports HTTPS.
 Here is the final version of the App:
 
 
