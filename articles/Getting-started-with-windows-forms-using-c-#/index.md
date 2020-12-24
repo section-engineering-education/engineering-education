@@ -37,7 +37,7 @@ The *Toolbox* window provides you with all the controls that will help you build
 ### Properties window
 The *Properties* window is used to edit the properties of the form or the control (button, textbox, etc.) that you click on. To open the properties window, you can click on View -> Properties window or you can simply click F4.   
 
-![properties window and toolbox](/engineering-education/getting-started-with-windows-forms-using-c-sharp/properties window and toolbox.png)
+![properties_window_and_toolbox](/engineering-education/getting-started-with-windows-forms-using-c-sharp/properties_window_and_toolbox.png)
 
 ### Building the form with the controls
 First of all, let's start with the form and change the text to My calculator and the name to Cal_Form using the properties window.
