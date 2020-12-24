@@ -2,6 +2,8 @@
 
 ![Routing](/engineering-education/network-routing/routing.jpeg)
 
+[Image Source](https://www.networkworld.com/article/3276304/building-iot-ready-networks-must-become-a-priority.html)
+
 When using the internet, our devices send requests to servers stored in various data centers in packets. Likewise, the servers return responses to the requests using data packets.</br>
 These packets' journey to the data center from our devices and vice versa form the internet's backbone.</br>
 Nevertheless, controlling these packets from the data source to the destination through the wide complicated global network is not a walk in the park.</br>
@@ -35,6 +37,8 @@ The algorithm will generate the shortest path from node 0 to all other nodes 1,2
 
 ![Graph1](/engineering-education/network-routing/routing1.png)
 
+[Image Source](https://www.freecodecamp.org/news/content/images/2020/06/image-76.png)
+
 We have this list of distances initially.
 
 |NODE|DISTANCE|
@@ -56,12 +60,16 @@ We also have a list of visited nodes. We mark node 0 because we are starting wit
 
 ![Graph2](/engineering-education/network-routing/routing3.png)
 
+[Image source](https://www.freecodecamp.org/news/content/images/2020/06/image-83.png)
+
 We start checking the distance of adjacent nodes to 0 (nodes 1 & 2).
 We only add a node if the distance between node 0 and the node is the shortest.
 From node 0 to node 1, the distance is 2, while from 0 to 2, the distance is 6. The distance to node 1 is the shortest, so we add node 1 to the path.</br>
 *(We will mark added nodes by adding an asterisk beside them)*
 
 ![Graph3](/engineering-education/network-routing/routing4.png)
+
+[Image Source](https://www.freecodecamp.org/news/content/images/2020/06/image-94.png)
 
 We then mark node 1 as visited and add it to our list. We add node 2 for we know its distance, but we will mark it since it is not yet visited.
 
@@ -84,6 +92,8 @@ The distance between 0-2 is 6.</br>
 We will choose a node with the shortest distance from node 0, which is node 2.</br>
 
 ![Graph4](/engineering-education/network-routing/routing6.png)
+
+[Image Source](https://www.freecodecamp.org/news/content/images/2020/06/image-96.png)
 
 |NODE|DISTANCE|
 ---|---|
@@ -144,6 +154,8 @@ A router running the OSPF protocol contains a **Link State Database(LSDB)** whic
 This protocol subdivides the wide networks into local areas forming a backbone area that shares at least one router from the bordering areas as shown in the picture below:
 
 ![ospf-areas](/engineering-education/network-routing/ospf-areas.png)
+
+[Image Source](https://packetpushers.net/wp-content/uploads/2020/01/8-1.png)
 
 These shared routers form the border routers called **Area Border Routers(ABR)**.</br>
 The areas are identified by 32-bit(4 bytes) numbers expressed either in decimal or dot-decimal notation for example the backbone, area 0, is identified with 0.0.0.0 by convention.</br> 
