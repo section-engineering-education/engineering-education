@@ -356,28 +356,190 @@ Your app so far should look like this:
 
 ![React-PWA-image](\react-pwa1.png)
 ![React-PWA-image2](\react-pwa2.png)
+<br>
 
 ### Adding functionality to make it a PWA
 In this part, we will now turn our application into a progressive
 web App.
 A progressive web app refers to an enhanced web application having some capabilities
 as a native platform specific application.
-Our application will add functionalities such as running the application offline, caching assets and using workbox to create service workers, and also installing it on mobile homescreen.
+Our application will add functionalities such as running the application offline, caching assets by registering
+service workers, and also installing it on users device screen.
+<br>
 
 ### Register a service worker
-A SW is a script that is run by the browser in bg.
--[x] special type of web worker that intercepts network requests
--[x] Can manage caching of resources and retrieval from the cache
--[x] Thereby supporting offline-first mode which is crucial to PWAs
-Service workers provide essential support for running a PWA.
-A service worker takes the form of a JS file that runs in a seperate, non-blocking thread from main browser thread
-Note--PWAs are https .So if hosting is needed, make sure the production web-server supports HTTPS.
+A service worker is a script that is run by the browser in background off the main thread. 
+It is responsible for requests and intercepts as well as managing caching for offline availability.
+Inside our public folder, open the index.html. You need to put this inside scripts tag, now paste the following script:
+
+```javascript
+      if("serviceWorker" in navigator){
+        window.addEventListener("load",()=>{
+          navigator.serviceWorker.register('./serviceworker.js')
+          .then(registration=>console.log('Success',registration.scope))
+          .catch(err=>console.log("Error",err))
+        })
+      }
+```
+In the above code, we are checking if our browser supports service workers and registering a 
+service worker file named serviceworker.js if the condition is true.
+
+Go ahead and create the file serviceworker.js inside your public directory. This will have our custom code
+for a service worker.
+The serviceworker.js file will have the folling code.
+
+```javascript
+const CACHE_NAME="version-1"
+const urlsToCache=[" index.html","offline.html"]
+
+const self=this;
+// istall sw
+self.addEventListener("install",(e)=>{
+    e.waitUntil(
+        caches.open(CACHE_NAME)
+        .then((cache)=>{
+            console.log("Opened cache...")
+            return cache.addAll(urlsToCache)
+        })
+    )
+})
+// listen req
+self.addEventListener("fetch",(e)=>{
+        e.respondWith(
+            caches.match(e.request)
+                    .then(()=>{
+                        return fetch(e.request)
+                                .catch(()=>caches.match('offline.html'))
+                    })
+        )
+})
+// activate sw
+self.addEventListener("activate",(e)=>{
+    const cacheWhitelist=[]
+    cacheWhitelist.push(CACHE_NAME);
+
+    e.waitUntil(
+        caches.keys().then((cacheNames)=>Promise.all(
+            cacheNames.map((cacheName)=>{
+                if(!cacheWhitelist.includes(cacheName)){
+                    return caches.delete(cacheName)
+                }
+            })
+        ))
+    )
+})
+```
+The CACHE_NAME variable will help us fetch resources from the CACHE.
+The above code will now cache and fetch url from our cache if we are offline. The offline.html file is 
+used as the fallback markup file when no cache and user is offline.
+We defined three events: The fetch event is used in the installation of the service worker.
+Our second event will be listening for network requests while the third is used to activate the service worker.
+The self, which is the this keyword of the global service worker itself. Check the code above.
+
+### The Public folder
+The public folder currently has this structure:
+```bash
+    favicon.ico
+    index.html
+    logo192.png
+    logo512.png
+    manifest.json
+    robots.txt
+```
+The favicon.ico, logo192.png and logo512.png are icons that user sees on the tab of mobile
+or desktop device. The browser will select by size depending on the device.
+I will use this icons but one would as well use custom ones, feel free to try out.
+The robots.txt is for web crawlers for search engines and indexing which I will not be 
+editing in this tutorial.
+
+### Editing index.html file and Manifest
+Manifest is a JSON file that has metadata to describe how the app will appear to the user.
+We then link it to the html in line 18 of index.html:
+```html
+<link rel="manifest" href="./manifest.json" />
+```
+In our manifest.json file, the code contains icons that are applied as images of different sizes
+on the home screen. The name, theme color as well as the start url will live in this file.
+```json
+{
+  "short_name": "React PWA",
+  "name": "A React Todo PWA",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#F4BD42",
+  "background_color": "#2B2929",
+  "scope":"/"
+}
+
+```
+
+Now, we need to edit the index.html file to have this changes in our manifest file.
+Note there is nothing much is in our body tag in html file as our app was built with React and injected with JavaScript.
+The index.html file now looks like:
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Todo Web App on PWA"
+    />
+    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <title>React Todo PWA</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+        <script>
+      if("serviceWorker" in navigator){
+        window.addEventListener("load",()=>{
+          navigator.serviceWorker.register('./serviceworker.js')
+          .then(registration=>console.log('Success',registration.scope))
+          .catch(err=>console.log("Error",err))
+        })
+      }
+    </script>
+  </body>
+</html>
+```
+We have just changed the title to React Todo PWA and decription of our app to Todo Web App on PWA.
+Pointed apple-touch icon to the logo192.png and made our icon the favicon.ico.
+All this now need to be added in the manifest.json file
+
+### Performance of the App
+I use lighthouse to generate audit report, the result is as follows:
+The score is 89/100 which is fair considering this was about introducing PWA rather than production optimized.
+Note that this will not pass the HTTPS audit in development environment. So if hosting is needed, make sure the production web-server supports HTTPS.
+Here is the final version of the App:
 
 
-
-
-
-
+![PWA Performance](/performance.png)
+![PWA install](/install.png)
+![Requirements for PWA](/requirements.png)
+Our app is now installable by clicking the plus icon on chrome.
+The cache will make it available for offline use.
 
 ### Summary
 In summary, we learned how to create a Todo app using the React library, with awesome features such as React Hooks and functional components. We created a Form input and functionality to add todo tasks, mark them as complete and delete the todo tasks. We then explored some introduction to Progressive Web Apps and turned our Todo app into a PWA.
