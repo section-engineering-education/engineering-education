@@ -79,7 +79,7 @@ When called, this function clears all values in the Local Storage. It is execute
 Window.localStorage.clear()
 ```
 
-Now that we have understood what Local Storage entails let&#39;s create a project that uses this concept.
+Now that we have understood what Local Storage entails let's create a project that uses this concept.
 
 ### Preferences
 You must have a basic understanding of javascript. You also need a code editor and browser to test the project. In this example, we will mainly be using visual studio code and Chrome.
@@ -87,7 +87,7 @@ You must have a basic understanding of javascript. You also need a code editor a
 ### Goal
 To create a web application that stores, retrieves, deletes, and clears items from the `Local Storage`.
 
-Let&#39;s jump in.
+Let's jump in.
 
 ### 1. Creating the project
 Create a new folder on your Desktop and open it in your code editor. Create two files: `index.html` and `main.js`. The `index.html` will showcase the web page to the user, while the `main.js` will store our javascript functions. These methods will be used to access different functionalities of the `Local Storage`.
@@ -173,7 +173,6 @@ function store(){ //stores items in the local storage
         //converting object to string
 }
 ```
-
 
 Similarly, the `retrieveButton` will invoke the `retrieveRecords` function when clicked. This method fetches items from the `Local Storage` using the getItem function. ` var paragraph = document.createElement("p")` creates a new paragraph component in our web page. `document.createTextNode(records);` helps create the text that will be displayed to the user. The text node is then binded to the paragraph tag by `paragraph.appendChild(infor)`. These components are then shwn in a specific place on the web page by `document.getElementById("retrieve")` and `element.appendChild(paragraph)`.
 
