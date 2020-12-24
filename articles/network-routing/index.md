@@ -18,14 +18,12 @@ There are two types of routing:</br>
 In **static routing**, *the routing tables information don't change after being manually set up* by a network administrator. If a network breaks in the link, this information doesn't change unless the change is done manually.</br>
 This is the exact opposite of **dynamic routing** where *the tables update themselves dynamically in discrete time steps according to the current network states* such as link failures, traffic changes, etc.</br>
 A commonly used algorithm in dynamic routing is the **Link State algorithm**. It checks the states of the links between nodes and makes forwarding decisions.</br>
-Let's discuss it.</br>
-**Link State algorithm**</br>
-Link state consists of two algorithms:</br>
+The types of Link State algorithm are:</br>
 - **Dijkstra's shortest path algorithm**</br>
 - **Reliable flooding algorithm**</br>
 
 ***Dijkstra's algorithm***
-I will briefly discuss this algorithm, for it is too wide to explain in detail here. Later on, I will dive into it in detail in my next article.</br>
+We will briefly discuss this algorithm, for it is too wide to explain in detail here. Later on, We will dive into it in detail in my next article.</br>
 This algorithm was created by a Dutch computer scientist, **Edsger Wybe Dijkstra**, and with it, routers find the shortest path between nodes in a network.</br>
 It starts with the router at the source node and analyses the network using all the parameters, and finds the shortest path between it and other nodes.</br>
 Once the shortest path between a node and the source node, the node is marked as **visited** and sequentially **added to the path**.</br>
@@ -133,13 +131,29 @@ That said, this is not always the case with interconnected routers as shown belo
 
 A **unique ID** is given to each link-state packets so that this problem is solved.
 When C and B receives the packet with the unique ID from A, it (A) does not send it again to B, and B does not send it to C.</br>
+#### Reliable flooding in wider networks.
+Applying reliable flooding in wide networks can be unachievable; therefore, protocols are required to help implement it.</br>
+We will talk about one, the **OSPF**(Open Shortest Path First) protocol.</br>
 
-Applying reliable flooding can be unachievable; therefore, protocols are required to help implement it.</br>
-I will talk about one, the **OSPF**(Open Shortest Path First) protocol.</br>
-This protocol divides the wide networks into **local areas**, forming a **backbone area** which shares at least one router from the bordering local areas. These shared routers form the **border routers**.</br>
-Flooding *occurs in these local areas* and when a packet needs to go to another local area, it will pass through the backbone area.</br>
-This helps in reducing the size of the routing tables and improves the scalability of the network.
+**OSPF**</br>
 
-That's all for now. We have seen how routers do packet forwarding hence enabling communication to take place. Let's meet at my next article, which talks more about Dijkstra's algorithm in detail.
+(Again, the OSPF is wide and just like  Dijkstra's algorithm we will elaborate it more in a dedicated article).</br>
+The OSPF falls under the **Interior Gateway Protocols(IGPs)** which are protocols used to exchange routing information between gateways, much often routers, within networks containing multiple IP connected nodes such as Local Area Networks(LANs).</br>
+A **gateway** is a networking hardware that *connects two networks by acting as a gate to the traffic flow between them*.</br>
+A router running the OSPF protocol contains a **Link State Database(LSDB)** which lists all nodes and their link states.</br>
+This protocol subdivides the wide networks into local areas forming a backbone area which shares at least one router from the bordering areas as shown in the picture below:
+
+![ospf-areas](/engineering-education/network-routing/ospf-areas.png)
+
+These shared routers form the border routers called **Area Border Routers(ABR)**.</br>
+The areas are identified by 32-bit(4 byte) numbers expressed either in decimal or dot-decimal notation for example the backbone, area 0, is identified with 0.0.0.0 by convention.</br> 
+The ABRs maintain a LSDBs for the OSPF areas they serve.</br>
+Flooding occurs at these local areas and when a packet needs to go to another local area, it will pass through the backbone area.</br>
+This helps in reducing the size of the routing tables and improves the scalability of the network.</br.
+As much as OSPF helps in large networks, there have been complains that it generates much overhead traffic by requiring link state refreshes after a certain duration.</br>
+- Each link state packet header in the OSPF protocol has a link state age before a refresh (minimum of 30 minutes to a maximum of 3600 seconds).</br>
+This has been overcome by introduction of the DNA(DoNotAge) bit which makes a link state packet ageless hence does not have to be refreshed periodically.
+
+That's all for now. We have seen how routers do packet forwarding hence enabling communication to take place.
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
