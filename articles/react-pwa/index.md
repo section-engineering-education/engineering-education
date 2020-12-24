@@ -353,6 +353,8 @@ Your app so far should look like this:
 
 ![React-PWA-image](/engineering-education/react-pwa/react-pwa1.png)
 ![React-PWA-image2](/engineering-education/react-pwa/react-pwa2.png)
+
+
 <br>
 
 ### Adding functionality to make it a PWA
@@ -533,6 +535,7 @@ Here is the final version of the App:
 ![PWA Performance](/engineering-education/react-pwa/performance.png)
 ![PWA install](/engineering-education/react-pwa/install.png)
 ![Requirements for PWA](/engineering-education/react-pwa/requirements.png)
+
 Our app is now installable by clicking the plus icon on chrome.
 The cache will make it available for offline use.
 
