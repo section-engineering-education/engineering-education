@@ -141,18 +141,18 @@ We will talk about one, the **OSPF**(Open Shortest Path First) protocol.</br>
 The OSPF falls under the **Interior Gateway Protocols(IGPs)** which are protocols used to exchange routing information between gateways, much often routers, within networks containing multiple IP connected nodes such as Local Area Networks(LANs).</br>
 A **gateway** is a networking hardware that *connects two networks by acting as a gate to the traffic flow between them*.</br>
 A router running the OSPF protocol contains a **Link State Database(LSDB)** which lists all nodes and their link states.</br>
-This protocol subdivides the wide networks into local areas forming a backbone area which shares at least one router from the bordering areas as shown in the picture below:
+This protocol subdivides the wide networks into local areas forming a backbone area that shares at least one router from the bordering areas as shown in the picture below:
 
 ![ospf-areas](/engineering-education/network-routing/ospf-areas.png)
 
 These shared routers form the border routers called **Area Border Routers(ABR)**.</br>
-The areas are identified by 32-bit(4 byte) numbers expressed either in decimal or dot-decimal notation for example the backbone, area 0, is identified with 0.0.0.0 by convention.</br> 
-The ABRs maintain a LSDBs for the OSPF areas they serve.</br>
-Flooding occurs at these local areas and when a packet needs to go to another local area, it will pass through the backbone area.</br>
-This helps in reducing the size of the routing tables and improves the scalability of the network.</br.
-As much as OSPF helps in large networks, there have been complains that it generates much overhead traffic by requiring link state refreshes after a certain duration.</br>
-- Each link state packet header in the OSPF protocol has a link state age before a refresh (minimum of 30 minutes to a maximum of 3600 seconds).</br>
-This has been overcome by introduction of the DNA(DoNotAge) bit which makes a link state packet ageless hence does not have to be refreshed periodically.
+The areas are identified by 32-bit(4 bytes) numbers expressed either in decimal or dot-decimal notation for example the backbone, area 0, is identified with 0.0.0.0 by convention.</br> 
+The ABRs maintain LSDBs for the OSPF areas they serve.</br>
+Flooding occurs in these local areas and when a packet needs to go to another local area, it will pass through the backbone area.</br>
+This helps in reducing the size of the routing tables and improves the scalability of the network.</br>
+As much as OSPF helps in large networks, there have been complaints that it generates much overhead traffic by requiring link-state refreshes after a certain duration.</br>
+- Each link state packet header in the OSPF protocol has a link-state age before a refresh (minimum of 30 minutes to a maximum of 3600 seconds).</br>
+This has been overcome by the introduction of the DNA(DoNotAge) bit which makes a link-state packet ageless hence does not have to be refreshed periodically.
 
 That's all for now. We have seen how routers do packet forwarding hence enabling communication to take place.
 ---
