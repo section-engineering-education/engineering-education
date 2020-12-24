@@ -1,7 +1,8 @@
 ### Introduction
 In this tutorial, we are going to create a new React Todo application and turn it into a 
 progressive web app (PWA). You will be able to add a todo, mark it as complete and delete
-the todo item. We will use the React library for the application and workbox for making it a PWA.
+the todo item. We will use the React library for the application and add functionality
+to make it a PWA.
 
 ### Prerequisites
 1. Knowledge of the [JavaScript programming language](https://www.w3schools.com/js/DEFAULT.asp).
