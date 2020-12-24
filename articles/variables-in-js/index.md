@@ -1,4 +1,4 @@
-Variables are a way for programmers to name a value to reuse it, update it, or keep track of it. In this article, we will go through naming variables, declaring them, and initializing them. We are also going to touch on the scope of variables to ensure that we completely understand variables.
+Variables are a way for programmers to name a value to reuse it, update it, or keep track of it. In this article, we will go through naming variables, declaring them, and initializing them. We are also going to learn about the differnet scopes of the variables to ensure that we completely understand about them.
 
 ### Prerequisites
 To follow along with this tutorial, you need a web browser. You can get Google Chrome [here](https://www.google.com/chrome/)
@@ -16,21 +16,21 @@ Javascript has two types of scopes.
 
 **1. Global scope**
 
-When a variable is *globally scoped*, it means it is available anywhere in your program. Declaring a variable outside a function or a block outside a funciton leads to it being added to the global scope automatically.
+When a variable is *globally scoped*, it means it is available from anywhere in your program. Declaring a variable outside a function or a block outside a funciton leads to it being globally scoped.
 
 **2. Local scope**
 
-When variables are declared within a function or a block, they are locally scoped. It means that they can only be used inside the function or the block they were declared in.
+When variables are declared within a function or a block, they are locally scoped. It means that they can only be accessed inside the function or the block they were declared in.
 
 Local scope variables are divided into:
 
 - Function scoped variables
 
-- Block scope variables
+- Block scoped variables
 
 #### Function scoped variables
 
-A function scoped variable means that the variable defined within the function is not accessible from outside the function.
+A function scoped variable means that the variable defined within a function is not accessible from outside the function.
 
 #### Block scoped variables
 
@@ -39,10 +39,8 @@ For example, the `if...else, do...while` and `for` loop statements create blocks
 
 When a variable is block-scoped, it means that it exists only inside the block where it was defined.
 
-`let` and `const` keywords are used in block scoping a variable. If you use `var` inside a block, the variable will not be block scoped. It will either be function scoped or globally scoped depending upon where the block is present. 
-
 ### Naming Variables In JavaScript
-Before you start declaring variables, you should learn how to name them. Below are some of the rules that one should follow. Failing to do so will cause an error.
+Before you start declaring variables, you should learn how to name them. Below are some of the rules that you should follow. Failing to follow these rules will cause an error.
 
 - Variables should not have spaces.
 - Variables should begin with an underscore, a dollar sign, or a letter.
@@ -56,46 +54,48 @@ Variables can be declared using the `var` keyword as shown below:
 ```javascript
 var favouriteThing;
 ```
-Upon declaring a variable, you can assign the variable a value such as a string or a number.
+
+Upon declaring a variable, you can assign a value to the variable such as a string or a number.
 
 Example:
+
 ```javascript
 var favouriteThing;
 favouriteThing = "Icecream!";
 ```
-Declaring a variable and at the same time initializing it is also possible using the following syntax;
-```javascript
-var favouriteThing = "Icecream";
-```
-Declaring two or more variables using the same statement is also possible.
-Each declaration is separated by a comma (,).
 
-Example:
+Declaring and initializing a variable at the same time is also possible using the following syntax.
 ```javascript
-var favouriteThing = "Icecream" ,
-    bestMovie = "Code Eight";
+var favouriteThing = "Icecream!";
 ```
 
-The `var` keyword declares both a function-scoped and globally-scoped variable and can initialize it to a value.
+Declaring two or more variables in a single statement is also possible.
+Each declaration is separated by a comma (`,`).
 
 Example:
+
+```javascript
+var favouriteThing = "Icecream!", bestMovie = "Code Eight";
+```
+
+The `var` keyword is used to declare a function-scoped variable and a globally-scoped variable. 
+
+If you use `var` inside a block, the variable will not be block scoped. It will either be function scoped or globally scoped depending upon where the block is present. 
+
+Example:
+
 ```javascript
 var x = 2;
 
 if (x === 2) {
   var x = 3;
-
-  console.log(x);
-  // expected output: 3
+  console.log(x); // expected output: 3
 }
 
-console.log(x);
-//expected output: 3
+console.log(x); //expected output: 3
 ```
 
 ### Declaring variables using the keyword `let`
-
-`let` keyword permits you to declare block scope variables.
 The main difference between keywords `var` and `let` is that variables declared using `let` are block-scoped, while `var` is function scoped.
 
 Example:
@@ -107,19 +107,20 @@ var a = 20;
 console.log(a) // Expected output: 20
 console.log(exe); // Uncaught ReferenceError: exe is not defined
 ```
-In the above example, `exe` variable only exists inside the block, and referencing it outside the block gets you a ` ReferenceError: exe is not defined`.
+In the above example, the `exe` variable only exists inside the block, and referencing it outside the block will cause an error `Uncaught ReferenceError: exe is not defined`.
 
 ### Declaring variables using the keyword  `const`
 The difference between the `const` and other keywords used to declare variables is that a variable declared using the keyword `const` must be initialized immediately with a value, and that value **can't be redeclared**. 
 
-`const` keyword permits you to declare block scope variables.
+`const` keyword is used to declare block scope variables.
 
 Example:
+
 ```javascript
 const pi = 3.14;
 pi = 1.5; //Uncaught TypeError: Assignment to constant variable.
 ```
-The error: `Uncaught TypeError: Assignment to constant variable`, informs you that you can't change the value of `pi`. 
+The error: `Uncaught TypeError: Assignment to constant variable`, informs you that you can't change the value of `pi`.
 
 Using the `const` keyword lets you declare constants that should not be changed in your code.
 
