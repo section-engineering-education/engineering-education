@@ -223,7 +223,7 @@ def array_arithmetic(array):
 
 We should start with the innermost loop.
 1. The innermost loop has **O(n/2)** complexity while its operation has **O(1)** complexity.
-    The inner most loop therefore has **(n/2) * (1)** complexity.
+    The innermost loop therefore has **(n/2) * (1)** complexity.
 
 2. The second inner loop has O(10) complexity and the inner loop (in No. 1) of this loop has **O(n/2)** meaning the whole second inner loop has **(10) * (n/2) = O(5n)** complexity.
 
