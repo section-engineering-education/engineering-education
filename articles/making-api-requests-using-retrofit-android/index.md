@@ -4,7 +4,7 @@ This article will illustrate how to make API requests using Retrofit. We will cr
 Networking is a crucial factor in mobile development. Most, if not all mobile applications incorporate networking. Applications are either sending or receiving information. Initially, developers did networking on the `main thread`. This made applications less user-friendly since screens would "freeze". Networking on the main thread stopped after the Honeycomb version was released. Google then developed Volley in 2013. You can read my article on Volley [here](https://www.section.io/engineering-education/making-api-requests-using-volley-android/). Volley offered something better: It was faster, better functionality, simpler syntax, etc. Still, there was more room for growth when it came to networking. Square introduced Retrofit. **Retrofit** is a type-safe HTTP Networking library used for Android and Java. Retrofit was even better since it was super fast, better functionality, and even simpler syntax.
 Most developers have then switched to using Retrofit to make API requests.
 
-### Uses of Retrofit.
+### Uses of Retrofit
 Retrofit is used to perform the following tasks:
 - It manages the process of receiving, sending, and creating HTTP requests and responses.
 - It alternates IP addresses if there is a connection to a web service failure.
@@ -13,7 +13,7 @@ Retrofit is used to perform the following tasks:
 - Retrofit resolves issues before sending an error and crashing the app.
 
 
-### Advantages of Retrofit.
+### Advantages of Retrofit
 - It is very fast.
 - It enables direct communication with the web service.
 - It is easy to use and understand.
@@ -24,12 +24,11 @@ Retrofit is used to perform the following tasks:
 - Supports convertors.
 
 
-### Disadvantages of Retrofit.
-- It does not support caching.
+### Disadvantages of Retrofit
 - It does not support image loading. It requires other libraries such as `Glide` and `Picasso`.
 - It does not support setting priorities.
 
-### Classes used in Retrofit.
+### Classes used in Retrofit
 - Model class - This class contains the objects to be obtained from the JSON file.
 - Retrofit instance - This java class is used to send requests to an API.
 - Interface class- This java class is used to define endpoints.
@@ -43,7 +42,7 @@ Retrofit is used to perform the following tasks:
 Open Android Studio and Start a new Android Studio Project -> Empty Activity. Let us name the project `MarvelRetrofit`. Select *Finish* and wait for the project to build.
 ![Name the project](/engineering-education/making-api-requests-using-retrofit-android/name.jpg)
 
-### Step 2 – Adding Retrofit to our application.
+### Step 2 – Adding Retrofit to our application
 Add the following dependencies to your app-level `build.gradle` file.
 
 ```Gradle
@@ -64,7 +63,7 @@ Add internet permission to you application.
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-#### Step 3 – Designing the UI for our application.
+#### Step 3 – Designing the UI for our application
 In this step, we will design the layout for our application. Since this is a simple application, we will only use a `ListView` to display the API's information.
 Add the following lines of code to your layout resource file:
 
@@ -86,7 +85,7 @@ Add the following lines of code to your layout resource file:
 </LinearLayout>
 ```
 
-### Step 4 - Create a model class.
+### Step 4 - Create a model class
 Next, we will create a model class that will contain the objects from the JSON. For our instance, we only want to get the names of the fictional characters.
 In the java directory, right-click and select new-→ java class-→ app/src/main/java--> class. We will name our model class **Results**. Add the following lines of code in `Results.java`:
 
@@ -108,7 +107,7 @@ public class Results {
 ```
 **Note: The `SerializedName` annotation should always display the exact name of an object in the JSON file.**
 
-### Step 5 - Create a Retrofit instance.
+### Step 5 - Create a Retrofit instance
 This java class is used to send requests to an API.  We specify the URL which contains the data required and use the `Retrofit Builder` class.
 In the java directory, right-click and select new-→ java class-→ app/src/main/java-→class. We shall name our class, **RetrofitClient**. Add the following lines of code to the `RetrofitClient.java`:
 
@@ -137,11 +136,9 @@ public class RetrofitClient {
     }
 }
 ```
-### Step 6 – Define the Endpoints.
+### Step 6 – Define the Endpoints
 Endpoints usually are defined inside an **Interface** class. An endpoint refers to the path where information is obtained. Our endpoint is 'marvel'. Since our aim is to obtain information from the API, we will be using the `@GET` annotation since we are making a Get request. Next we will have a `call<results>` object which will return the information from the API.
-In the java directory,right click and select new--> java class--> app/src/main/java-->class.
-We will name our Interface class **Api.**
-Add the following lines of code in `Api.java`:
+In the java directory, right-click and select new--> java class--> app/src/main/java-->class. We will name our Interface class **Api**. Add the following lines of code in `Api.java`:
 
 ```Java
 public interface Api {
@@ -152,7 +149,7 @@ public interface Api {
 }
 ```
 
-### Step 7 – Sending a GET request.
+### Step 7 – Sending a GET request
 In this step, we will call each of the API endpoints defined in our Interface class. The interface class will enable the information from the API to be displayed in our `ListView`. Lastly, we will have an `onFailure` method, which will display a `Toast` message if the information is not successfully loaded into the `ListView`.
 Add the following lines of code to your `MainActivity.java`
 
