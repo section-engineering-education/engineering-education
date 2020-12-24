@@ -1,11 +1,48 @@
 Fragments help you enrich your UI design, pass data between different screens, and adapt to different device configurations. Unlike activities, fragments are usable. This means that they can be used to showcase different messages or functions to the user. These functionalities or features allow you to develop more interactive applications.
 
 ### What are fragments?
-Before going any further, it&#39;s essential to understand what fragments are or mean. According to the Android [documentation](https://developer.android.com/guide/fragments), a fragment is a part of the application&#39;s user interface that is bound to an activity. Fragments have their lifecycle and layouts or UI components. Furthermore, fragments also have their logic and can thus, accept and handle different events. Fragments are beneficial since they allow code to be divided into smaller and more manageable chunks. This simplifies the debugging process.
+Before going any further, it&#39;s essential to understand what fragments are or mean. According to the Android [documentation](https://developer.android.com/guide/fragments), a fragment is a part of application&#39;s user interface that is bound to an activity. Fragments have their lifecycle and layouts or UI components. Furthermore, fragments also have their logic and can thus, accept and handle different events. Fragments are beneficial since they allow code to be divided into smaller and more manageable chunks. This simplifies the debugging process.
 
-Just like activities, fragments also have a lifecycle. The major lifecycle methods are `onCreate`, `onStart`, `onResume`, `onPause`, `onStop`, and `onDestroy`. These methods are called depending on the fragment&#39;s state. The image below shows how fragment lifecycle methods are classified.
+### Fragment lifecyle
+Just like activities, fragments also have a lifecycle. This component tracks the fragments in all aspects of their lifecycle. This includes when they are `initialized,` `started,` `created,` `resumed,` and `destroyed.` A `LifecycleObserver` allows the developer to detect when a specific fragment is active. As a result, certain actions can be executed. For instance, an app can display a `Snackbar` or `Toast` message.
+
+Alternatively, callback methods can also help in the management of the fragment's lifecycle. These functions include `onCreate`, `onStart`, `onResume`, `onPause`, `onStop`, and `onDestroy`. The callback methods are called depending on the fragment&#39;s state. 
+`onCreate` - This method is called to initialize or add the fragment to the host activity. The layout is also inflated in this stage. All elements initialized in this method are usually preserved whenever the fragment is paused.
+`onStart` - In this step, the fragment is visible or active. Users can interact with different UI components.
+`onPause` -  The activity is paused, which causes the fragment to bear a similar state. The `onPause` is commonly called when a fragment is replaced or when the user chooses to navigate backward.
+`onResume` - In this phase, the fragment is reactivated.
+`onStop` - The fragment is stopped and the UI hidden from the user.
+`onDetach` and `onDestroy` - All of the fragment's instances and processes are destroyed.
+The image below shows how the fragment lifecycle methods are classified.
 
 ![fragment lifecycle](https://developer.android.com/images/guide/fragments/fragment-view-lifecycle.png)
+
+### Fragment and Activity Context
+ `Context` is an important aspect of android development. It allows you to start different activities, processes, and even displays certain messages to the user.
+ The activity context is returned by using the `getActivity` method. Note that this method is only applicable when the fragment is active. Using the `getActivity` function when the fragment is paused returns a null value. 
+ 
+### Implementing back stack in fragments
+`Back stack` allows users to navigate back to the previous activity or fragment. In Activities, Back Stack is implemented automatically. In fragments, back stack needs to be declared manually using the `addToBackStack` method. It should also be stated before the Fragment Transaction is committed, as shown below. The `addToBackStack` function requires an optional string value as a parameter.
+
+```
+fragmentTransaction.add(R.id.question_fragment, fragment);
+fragmentTransation.addToBackStack(null);
+fragmentTransaction.committ();
+```
+### Fragment Communication
+The general rule is that fragments should not communicate with other fragments directly. This ensures that the fragments remain self-contained. However, one-time values can be shared using the `FragmentResult` API. A result listener should be set on the fragment that is passing the data. This is executed using the statement below.
+```kotlin
+    setFragmentResultListener("key") { key, bundle ->
+        // any value can be passed as a parameter
+        val result = bundle.getString("bundle_Key")
+        // the value is retrieved from the Bundle.
+    }
+```
+The code below is used to retrieve the values in the second fragment.
+```kotlin
+    setFragmentResult("requestKey", bundleOf("bundle_Key" to result));
+```
+You can learn more about communication with fragments from [here](https://developer.android.com/guide/fragments/communicate).
 
 ### Prerequisites
 This tutorial is suitable for beginners. You must have the following.
@@ -15,24 +52,24 @@ This tutorial is suitable for beginners. You must have the following.
 ### Goal
 To create a simple mobile app that demonstrates how fragments are used in Android.
 
-### 1. Creating project
-Create a new empty activity project in android studio and name it as `NavExample`. Ensure that you select `Kotlin` as your preferred programming language.
+### 1. Creating the project
+Create a new empty activity project in android studio and name it as `NavExample.` Ensure that you select `Kotlin` as your preferred programming language.
 
 ![launch project](/engineering-education/all-about-fragments-in-android-applications/launch-project.png)
 
 ### 2. Create a navigation graph
 A navigation graph outlines all the actions, destinations, and logical connections in an application. It helps you determine how the user will navigate through the application.
 
-Go to res folder and create a new android resource file. Name it as `navigation.xml`.
+Go to res folder and create a new android resource file. Name it as `navigation.xml.`
 
 ![navigation graph](/engineering-education/all-about-fragments-in-android-applications/navigation-graph.png)
 
 After you have created the navigation file, a new dialog will appear prompting you to install several dependencies. Press *Ok*.
 
 ### 3. NavHost Fragment
-The `NavHost` Fragment acts as a container or host for all the fragments. In other words, any fragment that is displayed to the user is hosted in this `NavHost` Container. The `NavHost` Fragment is usually created in the primary activity (where the fragments need to be displayed). In our case, the primary activity layout is the `activity_main.xml`.
+The `NavHost` Fragment acts as a container or host for all the fragments. In other words, any fragment that is displayed to the user is hosted in this `NavHost` Container. The `NavHost` Fragment is usually created in the primary activity (where the fragments need to be displayed). In our case, the primary activity layout is the `activity_main.xml.`
 
-Therefore, navigate to the `res/layout` folder and open the `activity_main.xml`. Delete the `TextView` and replace it with the `NavHost` Fragment component as shown below.
+Therefore, navigate to the `res/layout` folder and open the `activity_main.xml.` Delete the `TextView` and replace it with the `NavHost` Fragment component, as shown below.
 
 ```Xml
 <fragment
@@ -188,7 +225,7 @@ Finally, the `fragment_wrong.xml` code is listed below.
 ```
 
 ### 5. Linking components in the Navigation graph
-In this step, we need to determine how users will navigate through the application. The default fragment will be the `QuestionFragment`. Therefore, open the `navigation.xml` file. Go to the `new destination` icon and add the `questionFragment` as the starting point. You can then add the `correctFragment` and `wrongFragment`. Link the `questionFragment` to the correct fragment using the provided arrow.
+In this step, we need to determine how users will navigate through the application. The default fragment will be the `QuestionFragment.` Therefore, open the `navigation.xml` file. Go to the `new destination` icon and add the `questionFragment` as the starting point. You can then add the `correctFragment` and `wrongFragment`. Link the `questionFragment` to the correct fragment using the provided arrow.
 
 Similarly, draw an arrow from the `correctFragment` and `wrongFragment` to the `questionFragment`. This basically means that we can navigate to and from the `main` fragment. Your final navigation graph should look, as shown below.
 
@@ -214,12 +251,13 @@ The above modification allows us to access the views we declared in the `fragmen
 ```Kotlin
 root.yesbutton.setOnClickListener {view:View->
     Navigation.findNavController(view).navigate(R.id.action_questionFragment_to_correctFragment)
+       //the user will navigate to the correctFragment when the yes button is clicked
 
 }
 
 root.nobutton.setOnClickListener {view:View->
     Navigation.findNavController(view).navigate(R.id.action_questionFragment_to_wrongFragment)
-
+     //the user will navigate to the wrongFragment when the no button is clicked
 }
 ```
 
@@ -242,7 +280,7 @@ class QuestionFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(
+    override fun onCreateView( //the fragment is initialized and bound to the nav host activity.
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -263,7 +301,7 @@ class QuestionFragment : Fragment() {
 ```
 
 **WrongFragment**
-```Kotlin
+```kotlin
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -283,17 +321,20 @@ class WrongFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
        val root = inflater.inflate(R.layout.fragment_wrong, container, false)
+      // we access the widget's id using the application's root.
         root.tryagain.setOnClickListener {view:View->
             Navigation.findNavController(view).navigate(R.id.action_wrongFragment_to_questionFragment2)
-
+            //we use the findNavController to navigate across different fragments
         }
 
-        return root;
+        return root; //return main ui
     }
 }
 ```
 
 **CorrectFargment**
+This fragment only shows when a user answers the question correctly. It also offers the user an opportunity to navigate to the previous fragment.
+
 ```Kotlin
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -314,15 +355,16 @@ class QuestionFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
        val root = inflater.inflate(R.layout.fragment_question, container, false)
-        root.yesbutton.setOnClickListener {view:View->
+
+        root.yesbutton.setOnClickListener {view:View-> //setting on click listener on yesbutton
             Navigation.findNavController(view).navigate(R.id.action_questionFragment_to_correctFragment)
 
         }
 
-        root.nobutton.setOnClickListener {view:View->
+        root.nobutton.setOnClickListener {view:View-> //setting on click listener on nobutton
             Navigation.findNavController(view).navigate(R.id.action_questionFragment_to_wrongFragment)
         }   
-        return root
+        return root // return the entire fragment
     }
 }
 ```
