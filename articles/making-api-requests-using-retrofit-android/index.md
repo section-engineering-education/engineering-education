@@ -138,8 +138,10 @@ public class RetrofitClient {
 }
 ```
 ### Step 6 – Define the Endpoints.
-Endpoints usually are defined inside an **Interface** with special annotations either for the request method or the parameters. In our case, we will be using the `@GET` annotation since we are making a Get request. Our return value will be a `call<results>` object.
-In the java directory, right-click and select new-→ java class-→ app/src/main/java-->class. We will name our Interface class **Api**. Add the following lines of code in `Api.java`:
+Endpoints usually are defined inside an **Interface** class. An endpoint refers to the path where information is obtained. Our endpoint is 'marvel'. Since our aim is to obtain information from the API, we will be using the `@GET` annotation since we are making a Get request. Next we will have a `call<results>` object which will return the information from the API.
+In the java directory,right click and select new--> java class--> app/src/main/java-->class.
+We will name our Interface class **Api.**
+Add the following lines of code in `Api.java`:
 
 ```Java
 public interface Api {
