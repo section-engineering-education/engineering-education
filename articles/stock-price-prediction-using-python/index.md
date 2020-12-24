@@ -171,6 +171,7 @@ plt.plot(predictions, color='cyan', label='Predicted price')
 plt.legend()
 ```
 The result will be:
+
 ![Ploting results](/engineering-education/stock-price-prediction-using-python/third.jpg)
 
 That's all. You can find the entire code [here](https://github.com/ahmadmardeni1/Stock-price-predection-using-Python) and you can run it by clicking on "open in colab".
