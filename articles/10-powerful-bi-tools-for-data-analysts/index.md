@@ -14,13 +14,13 @@ Business intelligence tools refer to the applications, programs, and software us
 
 The following diagram shows a simple business intelligence architecture. This diagram can be used to explain how a business intelligence system works. 
 
-![BI Architecture](/engineering-education/business-intelligence-tools-for-data-analysts/bi-architecture.jpg)
+![BI Architecture](/engineering-education/10-business-intelligence-tools-for-data-analysts/bi-architecture.jpg)
 
 [Image Source: Blog Spot](http://3.bp.blogspot.com/-9TD7_H5mDqI/VUi3OIUoo1I/AAAAAAAAApo/8rP5OTsfhE4/s1600/bi_architecture.bmp)
 
 Various sources of data are used to develop a business intelligence system. Some of these sources include customer relationship management systems, marketing analytics, and data from call centers. This data is cleaned, transformed, and aggregated before it is sent to a data warehouse. The data warehouse plays the role of storing data. 
 
-In a BI system, data can be integrated with other data sources using various tools. Some of the tools used include business analytics, data mining, and ETL engines. Business analytics is also used for analyzing the collected data. Business intelligence tools are used to provide enhanced insights. These insights help organizations to make fast and impactful decisions. Business intelligence results can be presented using OLAP and visualization tools. They can also be presented on dashboards and scorecards. 
+In a BI system, data can be integrated with other data sources using various tools. Some of the tools used include business analytics, data mining, and ETL engines. Business analytics is also used for analyzing the collected data. Business intelligence tools are used to provide enhanced insights. These insights help organizations to make fast and impactful decisions. Business intelligence results can be presented using [Online Analytical Processing (OLAP)](https://searchdatamanagement.techtarget.com/definition/OLAP) and visualization tools. OLAP is a technique that enables users to analyze, view or extract data from various points of view. BI results can also be presented on dashboards and scorecards. 
 
 ### Why Business Intelligence Tools are Important
 
@@ -45,31 +45,31 @@ Working with Sisense requires little conversance with IT. This is because it is 
 * The dashboard of this tool is robust. 
 * Working with this tool does not require assistance from IT experts.
 * It allows data analysts to collect data from diverse sources such as Salesforce, Adwords, and Google Analytics. 
-* It has a single-stack architecture that can perform various functions such as collecting, analyzing, and organizing data. 
+* It has a single-stack architecture that can perform various functions such as collecting, analyzing, and organizing data. A single-stack architecture is one that consists of all functionalities and features in one stack or system. 
   
-![Sisense](/engineering-education/business-intelligence-tools-for-data-analysts/sisense.png)
+![Sisense](/engineering-education/10-business-intelligence-tools-for-data-analysts/sisense.png)
 
 [Image Source: Finances Online](https://financesonline.com/uploads/2017/12/vp9d305892015e14ba8e952e32137fff76.png)
   
 #### 2. SAP Business Intelligence
 
-SAP BI offers real-time analytics that improve decision making in organizations. It is ideal for gauging investigators, information researchers, text experts, forecasting analysts, and information engineers.
+SAP BI offers real-time analytics that improves decision making in organizations. It is ideal for gauging investigators, information researchers, text experts, forecasting analysts, and information engineers.
 
 ##### Key features
 
 * It supports auto charting, which requires less coding and support from the IT team. 
 * It consists of dynamic visuals that enhance data visualization. These are integrated with dashboards and intuitive reports. 
 * It allows integration with other systems and applications (e.g Microsoft Office). 
-* It has a centralized metadata.
+* It has centralized metadata.
 * It consists of a single integrated platform that offers various functionalities.
 
-![SAP](/engineering-education/business-intelligence-tools-for-data-analysts/sap.png)
+![SAP](/engineering-education/10-business-intelligence-tools-for-data-analysts/sap.png)
 
 [Image Source: Altex Soft](https://www.altexsoft.com/media/2019/12/word-image-18.png)
 
 #### 3. Microsoft Power BI
 
-This is a web-based platform that provides business intelligence to Microsoft users. It specializes on enterprise analytics. 
+This is a web-based platform that provides business intelligence to Microsoft users. It specializes in enterprise analytics. 
 
 ##### Key features
 
@@ -79,7 +79,7 @@ This is a web-based platform that provides business intelligence to Microsoft us
 * It enhances the storage of data in a cloud platform.
 * It allows users to access real-time visualizations using various devices.
 
-![Power BI](/engineering-education/business-intelligence-tools-for-data-analysts/power-bi.png)
+![Power BI](/engineering-education/10-business-intelligence-tools-for-data-analysts/power-bi.png)
 
 [Image Source: Tech Hive](https://images.techhive.com/images/article/2015/07/power-bi-desktop-1-100595904-orig.png)
 
@@ -95,7 +95,7 @@ This BI tool leverages data to allow businesses to get informed and timely answe
 * It allows the integration of chatbots and voice technology.
 * It consists of robust investigation tools.
 
-![MicroStrategy](/engineering-education/business-intelligence-tools-for-data-analysts/microstrategy.jpg)
+![MicroStrategy](/engineering-education/10-business-intelligence-tools-for-data-analysts/microstrategy.jpg)
 
 [Image Source: Mopinion](https://mopinion.com/wp-content/uploads/2018/07/Microstrategy.jpg)
 
@@ -111,7 +111,7 @@ This tool is mostly ideal for small and medium businesses. This is mainly becaus
 * It allows users to utilize data gathered from diverse sources. 
 * It offers a cloud-based platform.
 
-![Zoho Analytics](/engineering-education/business-intelligence-tools-for-data-analysts/zoho-analytics.jpg)
+![Zoho Analytics](/engineering-education/10-business-intelligence-tools-for-data-analysts/zoho-analytics.jpg)
 
 [Image Source: G2Crowd](https://images.g2crowd.com/uploads/attachment/file/94878/CRM-Desk-Dashboard.jpg)
 
@@ -124,17 +124,17 @@ This is an excel-based BI tool that enables users to manage spreadsheets. It is 
 * It is linked to a centralized storage system.
 * It can gather data from various data sources.
 * In this tool, users can use a dynamic query builder to gain access to data.
-* It has a drag-and-drop capabilities.
+* It has drag-and-drop capabilities.
 * It enables users to share insights into other applications and devices (eg. Mobile devices).
 * It consists of audit trails that enhance the tracing of data.
 
-![Clear Analytics](/engineering-education/business-intelligence-tools-for-data-analysts/clear-analytics.png)
+![Clear Analytics](/engineering-education/10-business-intelligence-tools-for-data-analysts/clear-analytics.png)
 
 [Image Source: Software Advice](https://www.softwareadvice.com/imglib/products/screenshots/clear-analytics-3116-1536250913-large.png?v=ebadb284e4bd8a1fd7087825e3e4b86f)
   
 #### 7. Domo
 
-This is another business intelligence tool that supports self-administration. It allows users to utilize tools such as ETL, data warehouse, and data lakes. 
+This is another business intelligence tool that supports self-administration. It allows users to utilize tools such as ETL (Extract, Transform, and Load), data warehouse, and data lakes. ETL is a tool that extracts data from various sources, and transforms it into various forms before it is loaded to a data warehouse.
 
 ##### Key features
 
@@ -145,7 +145,7 @@ This is another business intelligence tool that supports self-administration. It
 * It integrates information sources using Domo Integration Studio.
 * It offers intuitive functions for prediction, information exchange, and moderation.
 
-![Domo BI](/engineering-education/business-intelligence-tools-for-data-analysts/domo-bi.png)
+![Domo BI](/engineering-education/10-business-intelligence-tools-for-data-analysts/domo-bi.png)
 
 [Image Source: G2Crowd](https://images.g2crowd.com/uploads/attachment/file/102385/domo-device-laptop-dashboard-overview-sales-finance.png)
 
@@ -161,7 +161,7 @@ IBM Cognos Analytics is a tool that uses artificial intelligence to create intui
 * Users do not need professional expertise to use this tool.
 * It allows users to import data from various sources.
   
-![IBM Cognos Analytics](/engineering-education/business-intelligence-tools-for-data-analysts/ibm-cognos-analytics.jpg)
+![IBM Cognos Analytics](/engineering-education/10-business-intelligence-tools-for-data-analysts/ibm-cognos-analytics.jpg)
 
 [Image Source: Value Coders](https://www.valuecoders.com/blog/wp-content/uploads/2020/09/ibm-cognos-business-intelligence-tools-2.jpg)
 
@@ -177,7 +177,7 @@ This tool offers functionalities such as mobile BI, mapping, collaborative BI, d
 * Its dashboards are AI-driven.
 * It provides BI solutions such as external apps for analytics, enterprise analytics, and embedded analytics. 
 
-![Yellowfin BI](/engineering-education/business-intelligence-tools-for-data-analysts/yellow-fin-bi.png)
+![Yellowfin BI](/engineering-education/10-business-intelligence-tools-for-data-analysts/yellow-fin-bi.png)
 
 [Image Source: Weebly](http://yfcs.weebly.com/uploads/4/3/9/7/43974277/3215752_orig.png)
   
@@ -193,7 +193,7 @@ This is a BI tool that enhances the safety and accuracy of data. This tool suppo
 * It has an associative engine feature that enables users to discover data.
 * In this tool, users can interact with analytics, dynamic apps, and dashboards.
 
-![QlikView](/engineering-education/business-intelligence-tools-for-data-analysts/qlikview.jpg)
+![QlikView](/engineering-education/10-business-intelligence-tools-for-data-analysts/qlikview.jpg)
 
 [Image Source: Xax](https://www.xax.de/wp-content/uploads/2018/11/financial-1024x726.jpg)
   
@@ -204,6 +204,23 @@ This is a BI tool that enhances the safety and accuracy of data. This tool suppo
 * **Ease of use:** How easy is it to use the BI tool? Good BI tools should offer tutorials and technical support to new users. 
 * **Price:** Employing business intelligence should be done cost-effectively. Businesses should choose a BI tool offering a price that is within its reach. 
 * **Integration:** Many companies want to gather data from diverse applications. Companies should choose BI Tools that are integrated with a wide variety of applications. 
+
+### Summary of Top BI Tools
+The following table shows a brief summary of the business intelligence tools discussed above. 
+
+|BI Tool |Deployment |Open Source?| Pricing |Website|
+| :----- | :-----: | :-------: | :----:| ------|
+|Sisense|on premise, cloud|No|free trial, custom pricing|[Sisense](https://www.sisense.com/?r=dpm-rpts&dpm=37684)|
+|SAP Business Intelligence|cloud|No|free trial, quote-based pricing|[SAP BI](https://www.sap.com/products/bi-platform.html?btp=5b17eb1d-f336-408b-ac06-3b210a1ce910)|
+|Microsoft Power BI|on premise, cloud|Partly (Power BI Desktop)|Power BI Desktop is free while Power BI Pro starts from $9.99/month/user|[Microsoft Power BI](https://powerbi.microsoft.com/en-us/)|
+|MicroStrategy|cloud|No|from $600 per user, it also consists of a custome quote|[MicroStrategy](https://www.microstrategy.com/en/business-intelligence)|
+|Zoho Analytics|cloud|No|free trial (15 days), from $22 per month (2 users)|[Zoho Analytics](https://www.zoho.com/analytics/)|
+|Clear Analytics|on premise|No|30 days trial, from $8 per month (depending on no. of users)|[Clear Anlalytics](https://www.clearanalyticsbi.com/pricing/)|
+|Domo|cloud|No|free trial, pricing is based on usage|[Domo](https://www.domo.com/)|
+|IBM Cognos Analytics|on premise, cloud|No|free trial (30 days), from $15 per month (per authorized user)|[IBM Cognos Analytics](https://www.ibm.com/products/cognos-analytics)|
+|Yellowfin BI|on premise, cloud|No|free demo on request, quote-based pricing|[Yellowfin](https://www.yellowfinbi.com/)|
+|QlikView|on premise, cloud|No|free trial, from $30 per month|[QlikView](https://www.qlik.com/us/products/qlikview)|
+
   
 ### Conclusion
 
