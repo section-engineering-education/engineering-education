@@ -46,7 +46,7 @@ Open Android Studio and Start a new Android Studio Project -> Empty Activity. Le
 ### Step 2 – Adding Retrofit to our application.
 Add the following dependencies to your app-level `build.gradle` file.
 
-```gradle
+```Gradle
 implementation 'com.squareup.retrofit2:retrofit:2.7.2'
 implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
 implementation 'com.squareup.okhttp3:okhttp:3.6.0'
@@ -60,15 +60,15 @@ implementation 'com.squareup.okhttp3:okhttp:3.6.0'
 
 Add internet permission to you application.
 
-```manifest
-<uses-permission android:name="android.permission.INTERNET />
+```Xml
+<uses-permission android:name="android.permission.INTERNET" />
 ```
 
-#### Step 3 –  Designing the UI for our application.
+#### Step 3 – Designing the UI for our application.
 In this step, we will design the layout for our application. Since this is a simple application, we will only use a `ListView` to display the API's information.
 Add the following lines of code to your layout resource file:
 
-```xml
+```Xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -89,7 +89,8 @@ Add the following lines of code to your layout resource file:
 ### Step 4 - Create a model class.
 Next, we will create a model class that will contain the objects from the JSON. For our instance, we only want to get the names of the fictional characters.
 In the java directory, right-click and select new-→ java class-→ app/src/main/java--> class. We will name our model class **Results**. Add the following lines of code in `Results.java`:
-```java
+
+```Java
 public class Results {
 
     @SerializedName("name")
@@ -110,7 +111,8 @@ public class Results {
 ### Step 5 - Create a Retrofit instance.
 This java class is used to send requests to an API.  We specify the URL which contains the data required and use the `Retrofit Builder` class.
 In the java directory, right-click and select new-→ java class-→ app/src/main/java-→class. We shall name our class, **RetrofitClient**. Add the following lines of code to the `RetrofitClient.java`:
-```java
+
+```Java
 public class RetrofitClient {
 
     private static RetrofitClient instance = null;
@@ -139,19 +141,20 @@ public class RetrofitClient {
 Endpoints usually are defined inside an **Interface** with special annotations either for the request method or the parameters. In our case, we will be using the `@GET` annotation since we are making a Get request. Our return value will be a `call<results>` object.
 In the java directory, right-click and select new-→ java class-→ app/src/main/java-->class. We will name our Interface class **Api**. Add the following lines of code in `Api.java`:
 
+```Java
 public interface Api {
 
     String BASE_URL = "https://simplifiedcoding.net/demos/";
     @GET("marvel")
     Call<List<results>> getsuperHeroes();
 }
-
+```
 
 ### Step 7 – Sending a GET request.
 In this step, we will call each of the API endpoints defined in our Interface class. The interface class will enable the information from the API to be displayed in our `ListView`. Lastly, we will have an `onFailure` method, which will display a `Toast` message if the information is not successfully loaded into the `ListView`.
 Add the following lines of code to your `MainActivity.java`
 
-```java
+```Java
 public class MainActivity extends AppCompatActivity {
 
     ListView superListView;
