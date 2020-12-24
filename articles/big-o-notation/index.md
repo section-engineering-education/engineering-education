@@ -4,10 +4,13 @@
 
 [Image Source](https://res.cloudinary.com/practicaldev/image/fetch/s--S9kD7Tvi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/0x6qo2na9bk35zy3dwcn.png)
 
-We all need a way to measure the performance (efficiency) of our algorithms as they scale up.
-The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.
-The space used is determined by the number and sizes of variables together with the data structures being used while the time is determined by the elementary operations that must be performed during the algorithm execution.
-This methodology is independent of the software and hardware environment that takes into account all possible inputs.
+We all need a way to measure the performance (efficiency) of our algorithms as they scale up.</br>
+The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.</br>
+The space used is determined by the number and sizes of variables together with the data structures being used while the time is determined by the elementary operations that must be performed during the algorithm execution.</br>
+That said, time to run our algorithms is highly dependent of the computer system we use.</br>
+Take an instance where one is using old hardware, or runs it where there are many programs open and the RAM has little space. He/She will experience slower times compared to another developer using new hardware and large RAM size. Other factors in the environment include compilers & libraries used, processor types etc.</br>
+We then need a methodology that is independent of the software and hardware environment that takes into account all possible inputs.</br>
+
 This is done by a high-level description of the algorithm by associating each algorithm with a function **f(n)** that characterizes the running time of the algorithm in terms of the input size **n**.
 Given functions **f(n)** and **g(n)**, we do say that *f(n) is Big O of g(n)* being written as:
 
@@ -17,7 +20,7 @@ Therefore Big O, (pronounced as Big Oh), describes how good the performance of o
  
 It assists us in knowing which algorithm suits which task and which one is not by estimating the different runtimes of the algorithms. The estimation of how the runtime varies with the problem size is called the **runtime complexity** of an algorithm.
 
-An easy illustration of how different algorithms use different durations is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles away. The information was given to the duo using data signals and an envelope respectively. Ironically, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant duration while the network's delivery time was inversely proportional to the amount of information being sent.
+An easy illustration of how different algorithms use different runtime complexities is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles away. The information was given to the duo using data signals and an envelope respectively. Ironically, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant duration while the network's delivery time was inversely proportional to the amount of information being sent.
 
 There are many notations of the Big O but here am going to discuss a few of them which are:</br>
 -**O(1)**</br>
