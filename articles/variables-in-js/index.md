@@ -119,6 +119,8 @@ In the above example, the `exe` variable only exists inside the block, and refer
 ### Declaring variables using the keyword  `const`
 The difference between the `const` and other keywords used to declare variables is that a variable declared using the keyword `const` must be initialized immediately with a value, and that value **can't be redeclared**. 
 
+Using the `const` keyword lets you declare constants that should not be changed in your code.
+
 `const` keyword is used to declare block scope variables.
 
 Example:
@@ -129,8 +131,6 @@ pi = 1.5; // Uncaught TypeError: Assignment to constant variable.
 ```
 
 The error: `Uncaught TypeError: Assignment to constant variable`, informs you that you can't change the value of `pi`.
-
-Using the `const` keyword lets you declare constants that should not be changed in your code.
 
 ### Conclusion
 In summary, we have learned about variables and how they are declared and used in JavaScript. We have gone through different types of variable scopes.
