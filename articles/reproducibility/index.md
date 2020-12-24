@@ -36,7 +36,7 @@ Reproducibility is essential for several reasons. Let's highlight a few.
 
 **Having a baseline**. A baseline refers to a starting point that can be used for comparisons. To show improvement over an original technique, we first have to reproduce the method. Say we're attempting to improve a model. In an attempt to deploy a better version of such a model, we must first replicate the model. It would be unfair to claim improvement when comparing two models that are inherently different. The ability to reproduce such models provides us with a baseline, making it easy to refine the models.
 
-**Skill versus randomness**. Consider a context where creators of machine learning models may claim to have improved the overall performance by tweaking a parameter. The performance may improve, but it might be impossible to tell whether the improvement is due to scientific skill or some randomness source. The only way to validate the improvement is to replicate the process.
+**Skill versus randomness**. Consider a context where creators of machine learning models may claim to have improved the overall performance by tweaking a parameter. The performance may improve, but it might be impossible to tell whether the improvement is due to scientific skill or randomness. The only way to validate the improvement is to replicate the process.
 
 ### Challenges to Attaining Reproducibility
 
@@ -54,7 +54,7 @@ One may struggle to deploy a model more than once. A key reason for this is conc
 
 #### Algorithm
 
-Deterministic algorithms produce the same output given the same input, even on different iterations. However, there exist many algorithms that display non-determinism. Reproducibility in such algorithms is a difficult task since we expect randomness. Non-deterministic algorithms may be fed with the same input yet produce different results upon different iterations. The randomness in results may result from the algorithm using various paths to arrive at contrasting outcomes. A huge factor that influences the non-deterministic nature of an algorithm is the complexity of the model. The routes and processes used to achieve output may be non-reproducible, therefore ensuring an element of randomness. It is impossible to reproduce that which is random.
+Deterministic algorithms produce the same output given the same input, even on different iterations. However, there exist many algorithms that display non-determinism. Reproducibility in such algorithms is a difficult task since we expect randomness. Non-deterministic algorithms may be fed with the same input yet produce different results upon different iterations. The randomness in results may result from the algorithm using various paths to arrive at contrasting outcomes. A huge factor that influences the non-deterministic nature of an algorithm is the complexity of the model. The routes and processes used to achieve output may be non-reproducible, therefore ensuring an element of randomness. It is impossible to reproduce that which is random. To deal with such randomness, we may use a random seed. This shall be discussed in the [Model Building](#model-building) section of potential solutions to attaining reproducibility. 
 
 #### Software
 
@@ -84,7 +84,15 @@ To aid in reproducibility, features that are implemented should not change after
 
 Algorithms themselves pose a challenge to reproducibility. As we mentioned before, many models have an element of randomness in their machine learning process. This randomness has models using the same training data giving different outcomes. For example, [cross validation](/engineering-education/evaluating-ml-model-performance/) may be reliant on random partitioning of data for folds.
 
-The potential solution to this is a simple one; keenness to order. Engineers should be keen on the order in which they pass features, hyperparameters, and when to introduce [seed values](https://en.wikipedia.org/wiki/Initial_condition).
+The potential solution to this is a simple one; keenness to order. Engineers should be keen on the order in which they pass features, hyperparameters, and when to introduce [seed values](https://en.wikipedia.org/wiki/Initial_condition). Unseeded randomness plays a huge part in making machine learning workflows non-reproducible. To achieve reproducible results, all we need to do is seed the randomness. As the seed is the beginning of a sequence of values, if we start from the same seed, the sequence shall be repeated. As an example, the code snippet below shows the setting of a random seed for Numpy and Pytorch packages.
+
+
+```
+  np.random.seed(seed_value) # Numpy
+  torch.manual_seed(seed_value) # PyTorch
+```
+
+Here are a few links to help you understand random seeding much better. Check out this article on [setting the random seed](https://towardsdatascience.com/properly-setting-the-random-seed-in-machine-learning-experiments-7da298d1320b). For Tensorflow to achieve reproducibility, explore this [post](https://suneeta-mall.github.io/2019/12/22/Reproducible-ml-tensorflow.html). This one is on [training with controlled randomness](https://towardsdatascience.com/creating-a-plant-pet-toxicity-classifier-13b8ba6289e6).
 
 #### Deployment
 
