@@ -283,14 +283,22 @@ $ flask run
 ```
 ### Testing the API endpoints
 **GET endpoint**
-![]()
-![]()
+
+![Get all todos](/engineering-education/flask-crud-api/get-todos.png)
+
+![Get todo by id](/engineering-education/flask-crud-api/get-todo-by-id.png)
+
 **POST endpoint**
-![]()
+
+![Create todo](/engineering-education/flask-crud-api/create-todo.png)
+
 **PUT endpoint**
-![]()
+
+![Update todo](/engineering-education/flask-crud-api/update-todo.png)
+
 **DELETE endpoint**
-![]()
+
+![Delete todo](/engineering-education/flask-crud-api/delete-todo.png)
 
 ### Conclusion
 Now that you have learned how to create a CRUD API using flask, add the `date_created` and `last_modified` fields to our `Todo` model and make modifications to various API endpoints to include the added fields in the API requests and responses.
