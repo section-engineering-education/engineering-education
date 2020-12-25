@@ -1,4 +1,4 @@
-In this tutorial, we will create a fully working Restful API with flask and Mysql database. Restful APIs makes it possible to establish communication between the backend and the frontend mobile and web applications, we will be using Flask-SQLAlchemy. Flask-SQLAlchemy is an extension python library for Flask that adds SQLAlchemy to the flask project. SQLAlchemy is an Object Relational Mapper that provides access to SQL databases through python objects.
+In this tutorial, we will create a fully working Restful API with flask and Mysql database. Restful APIs makes it possible to establish communication between the backend and the frontend mobile and web applications, we will be using Flask-SQLAlchemy. Flask-SQLAlchemy is an extension python library for the flask web framework that adds SQLAlchemy to the flask project. SQLAlchemy is an Object Relational Mapper that provides access to SQL databases through python objects.
 
 ### Prerequisites
 1. [Python](https://www.python.org/downloads/) installed on your computer.
@@ -93,8 +93,10 @@ class Todo(db.Model):
 
 db.create_all()
 ```
-`Todo` model class has an id property which is used as the primary key.
-`db.create_all()` makes the application to create all the defined tables in the database.
+`Todo` model class has an id property which is used as the primary key.</br> 
+`db.create_all()` makes the application to create all the defined tables in the database.</br> 
+`db.session.add(self)` adds the `Todo` instance into the SQLAlchemy database connection session.</br> 
+`db.session.commit()` executes all the database operations that are available in the session.
 
 ```python
 class TodoSchema(ModelSchema):
