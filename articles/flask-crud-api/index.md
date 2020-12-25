@@ -34,6 +34,7 @@ We now need to install PyMySQL, a driver that allows for connection to the MYSQL
 Lastly, we need to install flask-marshmallow and marshmallow libraries which eases the work of converting Python objects to JSON and JSON to Python objects. To install flask-marshmallow and marshmallow run the below command.
 ```bash
 (venv)$ pip install flask-marshmallow marshmallow
+(venv)$ pip install marshmallow_sqlalchemy
 ```
 
 Open the project folder in your favorite IDE and create a new file name `app.py` in the project folder.
