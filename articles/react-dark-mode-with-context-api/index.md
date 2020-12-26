@@ -114,7 +114,9 @@ Now, We should write a HOC (Higher Order Component) that'll be used to wrap any 
 
 In this HOC, we need to use the `useReducer` hook to produce a state and the dispatch function to update that state and pass it to the provider component.
 
-We need to write a reducer function to switch between dark mode and light mode.
+We need to write a reducer function to switch between dark mode and light mode. 
+
+> Realistically, you won't need a reducer for this simple state update. You can just use a normal `state` and `setState` from the `useState` hook. But, just for the sake of learning on how to use reducers along with the Context API, I'll be using reducers to update the theme state.
 
 The initial state will be:
 
