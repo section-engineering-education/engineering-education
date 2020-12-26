@@ -218,7 +218,7 @@ This is because the algorithm needs to make the halvings necessary until it reac
 
 ### Checking the Big O of a sample code</br>
 We look at the worst-case scenario perspective.
-We will estimate the Big O of the code below (We are simply estimating its complexity, we have not put any conditional checks for the code):
+We will estimate the Big O of the code below (We are simply estimating its complexity, no conditional checks have been put for the code):
 ```python
 def array_arithmetic(array):
     
