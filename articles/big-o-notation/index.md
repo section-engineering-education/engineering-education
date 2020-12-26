@@ -9,7 +9,7 @@ The analysis of the efficiency is performed by considering the number of resourc
 
 The **space** used is determined by the number and sizes of variables together with the data structures being used while the **time** is determined by the elementary operations that must be performed during the algorithm execution.</br>
 That said, the **time** to run our algorithms is highly dependent on the software and hardware environment they run in eg:</br>
-- **Read/Write speeds**
+- **Read/Write Speed**
 - **Number of programs running**
 - **RAM size**
 - **Processor type**
