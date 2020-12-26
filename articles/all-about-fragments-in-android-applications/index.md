@@ -3,13 +3,13 @@ Fragments help you enrich your UI design, pass data between different screens, a
 ### What are fragments?
 Before going any further, it&#39;s essential to understand what fragments are or mean. According to the Android [documentation](https://developer.android.com/guide/fragments), a fragment is a part of application&#39;s user interface that is bound to an activity. Fragments have their lifecycle and layouts or UI components. Furthermore, fragments also have their logic and can thus, accept and handle different events. Fragments are beneficial since they allow code to be divided into smaller and more manageable chunks. This simplifies the debugging process.
 
-### Fragment lifecyle
-Just like activities, fragments also have a lifecycle. This component tracks the fragments in all aspects of their lifecycle. This includes when they are `initialized,` `started,` `created,` `resumed,` and `destroyed.` A `LifecycleObserver` allows the developer to detect when a specific fragment is active. As a result, certain actions can be executed. For instance, an app can display a `Snackbar` or `Toast` message.
+### Fragment lifecycle
+Just like activities, fragments also have a lifecycle. This component tracks the fragments in all aspects of their lifecycle. This includes when they are `initialized`, `started`, `created`, `resumed`, and `destroyed`. A `LifecycleObserver` allows the developer to detect when a specific fragment is active. As a result, certain actions can be executed. For instance, an app can display a `Snackbar` or `Toast` message.
 
-Alternatively, callback methods can also help in the management of the fragment's lifecycle. These functions include `onCreate`, `onStart`, `onResume`, `onPause`, `onStop`, and `onDestroy`. The callback methods are called depending on the fragment&#39;s state. 
+Alternatively, callback methods can also help in the management of the fragment's lifecycle. These functions include `onCreate`, `onStart`, `onResume`, `onPause`, `onStop`, and `onDestroy`. The callback methods are called depending on the fragment&#39;s state.
 `onCreate` - This method is called to initialize or add the fragment to the host activity. The layout is also inflated in this stage. All elements initialized in this method are usually preserved whenever the fragment is paused.
 `onStart` - In this step, the fragment is visible or active. Users can interact with different UI components.
-`onPause` -  The activity is paused, which causes the fragment to bear a similar state. The `onPause` is commonly called when a fragment is replaced or when the user chooses to navigate backward.
+`onPause` -  The activity is paused, which causes the fragment to bear a similar state. The `onPause` is called when a fragment is replaced or when the user chooses to navigate backward.
 `onResume` - In this phase, the fragment is reactivated.
 `onStop` - The fragment is stopped and the UI hidden from the user.
 `onDetach` and `onDestroy` - All of the fragment's instances and processes are destroyed.
@@ -19,12 +19,12 @@ The image below shows how the fragment lifecycle methods are classified.
 
 ### Fragment and Activity Context
  `Context` is an important aspect of android development. It allows you to start different activities, processes, and even displays certain messages to the user.
- The activity context is returned by using the `getActivity` method. Note that this method is only applicable when the fragment is active. Using the `getActivity` function when the fragment is paused returns a null value. 
- 
+ The activity context is returned by using the `getActivity` method. Note that this method is only applicable when the fragment is active. Using the `getActivity` function when the fragment is paused returns a null value.
+
 ### Implementing back stack in fragments
 `Back stack` allows users to navigate back to the previous activity or fragment. In Activities, Back Stack is implemented automatically. In fragments, back stack needs to be declared manually using the `addToBackStack` method. It should also be stated before the Fragment Transaction is committed, as shown below. The `addToBackStack` function requires an optional string value as a parameter.
 
-```
+```Kotlin
 fragmentTransaction.add(R.id.question_fragment, fragment);
 fragmentTransation.addToBackStack(null);
 fragmentTransaction.committ();
@@ -46,7 +46,7 @@ You can learn more about communication with fragments from [here](https://develo
 
 ### Prerequisites
 This tutorial is suitable for beginners. You must have the following.
-1.  Android Studio installed
+1.  Android Studio installed.
 2.  Some knowledge in Kotlin.
 
 ### Goal
@@ -137,7 +137,6 @@ Here is the code for the `fragment_question.xml`.
    </LinearLayout>
 
 </FrameLayout>
-
 ```
 
 The `fragment_correct.xml` code is shown below.
@@ -179,7 +178,6 @@ The `fragment_correct.xml` code is shown below.
 
     </LinearLayout>
 </FrameLayout>
-
 ```
 
 Finally, the `fragment_wrong.xml` code is listed below.
@@ -379,3 +377,6 @@ In this tutorial, you have learned how to add fragments and navigate across diff
 
 ### References
 [Fragments](https://developer.android.com/guide/fragments/lifecycle)
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
