@@ -12,9 +12,9 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/react-dark-mode-with-context-api-and-hooks/hero.jpg
-    alt: React Native Agora Livestreaming App
+    alt: React Dark Mode with Context API Image
 ---
-In this tutorial, we will use the React Context API in a react application to maintain the state for the theme of the application (dark/light).
+In this tutorial, we will use the React Context API and reducers in a react application to maintain the state for the theme of the application (dark/light).
 <!--more-->
 
 ### Goals
