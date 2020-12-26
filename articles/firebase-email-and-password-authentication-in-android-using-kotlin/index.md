@@ -41,7 +41,7 @@ Allow the permissions to successfully sign into Android studio. You can now acce
 
 Go back to Android studio and you'll see your email in the account section.
 
-### Step 3 -- Creating a Firebase Project
+### Step 3 - Creating a Firebase Project
 
 We need a firebase project that we'll eventually connect with our android app. This project will enable us to access most of the firebase services not limited to Authentication and Analytics. This process involves several stages.
 
