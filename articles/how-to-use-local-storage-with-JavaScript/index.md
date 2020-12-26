@@ -1,16 +1,16 @@
 Local Storage allows developers to store and retrieve data in the browser. The data stored in the local storage doesn't expire. This means the data will persist even if the tab or the browser window is closed.
 
 ### Prerequisites
-You must have a basic understanding of javascript. You also need a code editor and browser to test the project. In this example, we will mainly be using visual studio code and Chrome.
+You must have a basic understanding of javascript. You also need a code editor and browser to test the project. In this tutorial, we will be using Visual Studio Code and Chrome.
 
 ### What is Local Storage
-You can look at `Local Storage` as some form of web storage that keeps data for a long time. This could be a day, a week, or even a year. It is important to note that `Local Storage` only stores strings. So, if you wish to store objects, lists, or arrays, you must convert them into a string using `JSON.stringify().`
+Local Storage is a web storage that stores data for a long time. This could be a day, a week, or even a year. This depends upon the developer's preference. It is important to note that local storage only stores strings. So, if you wish to store objects, lists, or arrays, you must convert them into a string using `JSON.stringify().`
 
 ### When to use Local Storage
-You should only use Local Storage when storing insensitive information. This is because third-party individuals can easily access the information. Local Storage can help in storing temporary data before it is pushed to the server. It is important to clear Local Storage once this operation is completed.
+You should only use local storage when storing insensitive information. This is because third-party individuals can easily access the information. Local storage can help in storing temporary data before it is pushed to the server. It is important to clear the local storage once this operation is completed.
 
 ### Limitations
-The major limitations of Local Storage are:
+The major limitations of local storage are:
 
 - Insecure data.
 
@@ -19,27 +19,27 @@ The major limitations of Local Storage are:
 - Limited storage capacity.
 
 ### Main methods in Local Storage
-The primary functions when using Local Storage are `key()`, `setItem()`, `removeItem()`, `getItem()`, and `clear()`.
+The primary methods when using Local Storage are `key()`, `setItem()`, `removeItem()`, `getItem()`, and `clear()`.
 
 #### key()
-This function is used to retrieve a value/string in a specific location. The index can be passed into the key() function as a parameter.
+This method is used to retrieve a value/string from a specific location. The index can be passed into the `key()` function as a parameter.
 
 ```JavaScript
 var answer = localStorage.key(1);
 // this statement will retrieve the value of the second item in the localStorage.
 ```
 
-The key() can also be used in a loop statement to retrieve all the items in the Local Storage.
+The `key()` can also be used in a loop statement to retrieve all the items in the local storage.
 
 #### setItem()
-This function is used to store items in the Local Storage. An example of this function is shown below.
+This function is used to store items in the local storage. An example of this function is shown below.
 
 ```JavaScript
 Window.localStorage.setItem("grade","One");
 //in this case, the `grade` is the key while `One` is the value.
 ```
 
-We must `stringify` objects before we store them in the local storage. An example is outlined below.
+As mentioned before, we must `stringify` objects before we store them in the local storage. An example is outlined below.
 
 ```JavaScript
 const Car = {
@@ -71,34 +71,29 @@ The above statement will return something like this;
 You should convert it to an object using `JSON.parse()` to use it in your code.
 
 ```JavaScript
-JSON.parse(window.localStorage.getItem('car';));
+JSON.parse(window.localStorage.getItem('car'));
 ```
 
 #### removeItem()
-This method is used to delete an item from the local storage. The `removeItem()` method requires a key as a parameter. This is shown below.
+This method is used to delete an item from the local storage. The `removeItem()` method requires a key as a parameter.
 
 ```javascript
 window.localStorage.removeItem('brand');
 ```
 
 #### clear()
-This method is used to clear all values stored in the local storage. It is executed, as shown below. It does not require any parameters.
+This method is used to clear all values stored in the local storage. It does not require any parameters.
 
 ```JavaScript
 Window.localStorage.clear()
 ```
 
-Now that we have understood what local storage entails let's create a project that uses this concept.
+### Project
+Now that we have learned about the primary functions of local storage, let's create a web application that stores, retrieves, deletes, and clears items from the local storage.
 
-### Goal
-To create a web application that stores, retrieves, deletes, and clears items from the local storage.
+Create a new folder and open it in your code editor. Create two files, `index.html` and `main.js`. The `index.html` will showcase the web page to the user, while the `main.js` will store our javascript functions. These functions will be used to access different functionalities of the `Local Storage`.
 
-Let's jump in.
-
-### Project Structure
-Create a new folder on your Desktop and open it in your code editor. Create two files: `index.html` and `main.js`. The `index.html` will showcase the web page to the user, while the `main.js` will store our javascript functions. These functions will be used to access different functionalities of the `Local Storage`.
-
-### Forms, buttons, and JavaScript functions
+### Let's Code
 Our `index.html` will have a `form` and several `buttons`, as shown below.
 
 ```html
@@ -156,7 +151,7 @@ Our `index.html` will have a `form` and several `buttons`, as shown below.
 </html>
 ```
 
-When the `submit` button is clicked, it takes the user input and passes it to the `store` function in the `main.js` file. The `document.getElementById('carBrand').value` gets the user input. The values are then passed to the car object and stored in the `Local Storage` using setItem method.
+When the `submit` button is clicked, it takes the user input and passes it to the `store` function in the `main.js` file. The `document.getElementById('carBrand').value` gets the user input. The values are then passed to the car object and stored in the local storage using the `setItem` method.
 
 ```JavaScript
 function store(){ //stores items in the local storage
@@ -173,7 +168,15 @@ function store(){ //stores items in the local storage
 }
 ```
 
-Similarly, the `retrieveButton` will invoke the `retrieveRecords` function when clicked. This method fetches items from the local storage using the getItem function. `var paragraph = document.createElement("p")` creates a new paragraph component in our web page. `document.createTextNode(records);` helps create the text that will be displayed to the user. The text node is then binded to the paragraph tag by `paragraph.appendChild(infor)`. These components are then shwn in a specific place on the web page by `document.getElementById("retrieve")` and `element.appendChild(paragraph)`.
+Similarly, the `retrieveButton` will invoke the `retrieveRecords` function when clicked. This method fetches items from the local storage using the getItem function. 
+
+`var paragraph = document.createElement("p")` creates a new paragraph component in our web page. 
+
+`document.createTextNode(records);` helps create the text that will be displayed to the user. 
+
+The text node is then added to the paragraph tag by `paragraph.appendChild(infor)`. 
+
+These components are then shown in a specific place on the web page by `document.getElementById("retrieve")` and `element.appendChild(paragraph)`.
 
 ```JavaScript
 function retrieveRecords(){ //retrieves items in the localStorage
@@ -187,7 +190,7 @@ function retrieveRecords(){ //retrieves items in the localStorage
 }
 ```
 
-removeButton invokes `removeItem()`. This `method` will delete a value from the `localStorage` using the removeItem `function`.
+`removeButton` invokes `removeItem()`. This `method` will delete a value from the local storage using the `removeItem` function.
 
 ```JavaScript
 function removeItem(){  //deletes item from localStorage
@@ -196,15 +199,28 @@ function removeItem(){  //deletes item from localStorage
 }
 ```
 
-clearButton calls the `clearStorage()`. The `clear()` method is used to remove all values in the local storage.
-```javascript
-function clearStorage(){ //clears the entire localStorage
+`clearButton` calls the `clearStorage()`. The `clear()` method is used to remove all values in the local storage.
+
+```JavaScript
+function clearStorage(){ /
+    //clears the entire localStorage
     localStorage.clear()
     console.log("clear records");
 }
 ```
 
-Here is the `main.js` file with the required functions.
+Let's set the `onClick` property of all the buttons when the webpage loads.
+
+```JavaScript
+window.onload =function(){ //ensues the page is loaded before functions are executed.
+    document.getElementById("carForm").onsubmit = store
+    document.getElementById("clearButton").onclick = clearStorage
+    document.getElementById("removeButton").onclick = removeItem
+    document.getElementById("retrieveButton").onclick = retrieveRecords
+}
+```
+
+Here is the `main.js` file with all the functions.
 
 ```JavaScript
 function store(){ //stores items in the local storage
@@ -257,7 +273,7 @@ Ensure that the `main.js` file is referenced in the `index.html` file by pasting
 ```
 
 ### Results
-The following video shows how the site looks, as well as the invocation of Local Storage methods.
+The following video shows how the site works.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/nzitoIbsT2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
