@@ -8,8 +8,14 @@ We all need a way to measure the performance (efficiency) of our algorithms as t
 The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.</br>
 
 The **space** used is determined by the number and sizes of variables together with the data structures being used while the **time** is determined by the elementary operations that must be performed during the algorithm execution.</br>
-That said, the **time** to run our algorithms is ***highly dependent on the software and hardware environment they run in***.</br>
-Take an instance where one is using old hardware, or runs it where there are many programs open and the RAM has little space. He/She will experience slower execution times compared to another developer using relatively newer hardware and large RAM size. Other factors in the environment include compilers & libraries used, processor types, etc.</br>
+That said, the **time** to run our algorithms is highly dependent on the software and hardware environment they run in eg:</br>
+- * **Hardware age**
+- * **Number of programs running**
+- * **RAM size**
+- * **Processor type**
+- * **Compilers or libraries being used**
+
+
 
 We therefore need a methodology that is **independent** of the software and hardware environment which takes into account all possible inputs.</br>
 
