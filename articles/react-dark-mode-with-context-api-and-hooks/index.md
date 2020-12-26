@@ -20,7 +20,7 @@ In this tutorial, we will use the React Context API in a react application to ma
 ### Goals
 By the end of this tutorial, you’ll know:
 
-- How the React Context API works.
+- How the Context API works.
 
 - When to use the Context API instead of Redux.
 
@@ -32,13 +32,13 @@ The fundamentals of React will not be covered in this tutorial. If you are not c
 ### Overview
 We'll be going through these steps in this article:
 
-- Context API.
-- When to use React's Context API instead of Redux.
-- Reducers.
-- Cloning the starter code.
-- Adding the Context and Reducer.
-- Consuming the Context.
-- Recap.
+- [Context API](#context-api).
+- [When to use the Context API instead of Redux](#When-to-use-React's-Context-API-instead-of-Redux).
+- [Reducers](#reducers).
+- [Cloning the starter code](#Cloning-the-starter-code).
+- [Adding the Context and Reducer](#Adding-the-Context-and-Reducer).
+- [Consuming the Context](#Consuming-the-Context).
+- [Recap](#Let's-Recap).
 
 ### Context API
 According to the [official documentation](https://reactjs.org/docs/context.html), Context provides a way to pass data through the component tree without having to pass props down manually at every level.
@@ -74,7 +74,7 @@ When a component subscribes to the context object, it will read the current cont
 const context = useContext(Context);
 ```
 
-### When to use React's Context API instead of Redux
+### When to use the Context API instead of Redux
 If you don't know about Redux, it serves as a centralized store for state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion. Redux is an external library. Redux can also be used with other frameworks like [Angular](https://angular.io/), [Flutter](https://flutter.dev/), etc.
 
 If you want to learn more about Redux, check out [this tutorial](https://redux.js.org/tutorials/fundamentals/part-1-overview).
@@ -284,13 +284,13 @@ Now, when you click on the button, the theme should change.
 
 ### Let's Recap
 
-- We learned about React's Context API.
+- We learned about the Context API.
 
-- We learned about when to use React's Context API.
+- We learned about when to use Context API.
 
 - We learned about Reducers and how to use them along with the Context API.
 
-- We build an application that uses Context API and Reducers to implement Dark Mode for the application.
+- We built an application that uses context API and reducers to implement dark mode for the application.
 
 Congratulations, :partying_face: You did it.
 
