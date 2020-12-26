@@ -1,6 +1,6 @@
 ### Understanding Network Routing
 
-![Routing](/engineering-education/network-routing/routing.jpeg)
+![Routing](/engineering-education/network-routing/hero.jpeg)
 
 [Image Source](https://www.networkworld.com/article/3276304/building-iot-ready-networks-must-become-a-priority.html)
 
