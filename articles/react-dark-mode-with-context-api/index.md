@@ -21,6 +21,7 @@ We'll be going through these steps in this article:
 - Cloning the starter code.
 - Adding the Context and Reducer.
 - Consuming the Context.
+- Recap.
 
 ### Context API
 According to the official documentation of React, Context provides a way to pass data through the component tree without having to pass props down manually at every level.
@@ -260,3 +261,17 @@ export default function SwitchButton() {
 Now, when you click on the button, the theme should change.
 
 ![Toggle Mode](toggle.gif)
+
+### Let's Recap
+
+- We learned about the React's Context API.
+
+- We learned about when to use React's Context API.
+
+- We learned about Reducers and how to use it along with the Context API.
+
+- We build an application that uses Context API and Reducers to implement Dark Mode for the application.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for reading!
