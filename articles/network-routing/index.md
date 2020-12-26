@@ -24,7 +24,7 @@ The types of Link State algorithm are:</br>
 - **Dijkstra's shortest path algorithm**</br>
 - **Reliable flooding algorithm**</br>
 
-***Dijkstra's algorithm***
+***Dijkstra's algorithm***</br>
 We will briefly discuss this algorithm, for it is too wide to explain in detail here. Later on, We will dive into it in detail in my next article.</br>
 This algorithm was created by a Dutch computer scientist, **Edsger Wybe Dijkstra**, and with it, routers find the shortest path between nodes in a network.</br>
 It starts with the router at the source node and analyses the network using all the parameters, and finds the shortest path between it and other nodes.</br>
@@ -126,7 +126,7 @@ The final result will be this:
 
 **{0,1,2,3,4,5,6}**
 
-***Reliable flooding algorithm***
+***Reliable flooding algorithm***</br>
 As the name suggests, *it floods each router in a network with all other neighboring routers network state information* such as the IP addresses, costs of the network, the health of the networks, etc. using **link-state packets** of the routers.</br>
 
  For example, take a LAN with 5 routers A, B, C, D, E.
@@ -141,7 +141,7 @@ That said, this is not always the case with interconnected routers as shown belo
 
 A **unique ID** is given to each link-state packets so that this problem is solved.
 When C and B receives the packet with the unique ID from A, it (A) does not send it again to B, and B does not send it to C.</br>
-#### Reliable flooding in wider networks.
+#### Reliable flooding in wider networks.</br>
 Applying reliable flooding in wide networks can be unachievable; therefore, protocols are required to help implement it.</br>
 We will talk about one, the **OSPF**(Open Shortest Path First) protocol.</br>
 
