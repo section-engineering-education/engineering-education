@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-dark-mode-with-context-api-and-hooks/
-title: React Dark Mode With Context API and Hooks
-description: This tutorial will give readers a detailed guide on how to use context api with reducers to implement dark mode in a react application.
+url: /engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/
+title: Dark Mode for React Application using Context API and Hooks
+description: This tutorial will give readers a detailed guide on how to use the context api with reducers to implement dark mode in a react application.
 author: mohan-raj
 date: 2020-12-26T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-dark-mode-with-context-api-and-hooks/hero.jpg
-    alt: React Dark Mode with Context API Image
+  - url: /engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/hero.jpg
+    alt: Dark Mode for React Application using Context API and Hooks Image
 ---
 In this tutorial, we will use the React Context API and reducers in a react application to maintain the state for the theme of the application (dark/light).
 <!--more-->
@@ -118,7 +118,7 @@ If you'd like to take a look at the final code, please refer to [this GitHub Rep
 
 In the starter code, I've set up a simple screen with text and a button to switch to dark mode. I've also written all the CSS styles required for the dark mode and the light mode. Take a look at them or feel free to edit them in `src/App.css`.
 
-![Starter Screen](lightmode.png)
+![Starter Screen](/engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/lightmode.png)
 
 ### Adding the Context and Reducer
 Let's create a new file called ThemeContext.js. 
@@ -280,7 +280,7 @@ export default function SwitchButton() {
 
 Now, when you click on the button, the theme should change.
 
-![Toggle Mode](toggle.gif)
+![Toggle Mode](/engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/toggle.gif)
 
 ### Let's Recap
 
