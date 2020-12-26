@@ -75,7 +75,7 @@ const context = useContext(Context);
 ```
 
 ### When to use the Context API instead of Redux
-If you don't know about Redux, it serves as a centralized store for state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion. Redux is an external library. Redux can also be used with other frameworks like [Angular](https://angular.io/), [Flutter](https://flutter.dev/), etc.
+If you don't know about Redux, it serves as a centralized store for the state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion. Redux is an external library. Redux can also be used with other frameworks like [Angular](https://angular.io/), [Flutter](https://flutter.dev/), etc.
 
 If you want to learn more about Redux, check out [this tutorial](https://redux.js.org/tutorials/fundamentals/part-1-overview).
 
