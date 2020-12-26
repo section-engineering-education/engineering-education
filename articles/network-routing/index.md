@@ -19,12 +19,11 @@ There are two types of routing:</br>
 
 In **static routing**, *the routing tables information don't change after being manually set up* by a network administrator. If a network breaks in the link, this information doesn't change unless the change is done manually.</br>
 This is the exact opposite of **dynamic routing** where *the tables update themselves dynamically in discrete time steps according to the current network states* such as link failures, traffic changes, etc.</br>
-A commonly used algorithm in dynamic routing is the **Link State algorithm**. It checks the states of the links between nodes and makes forwarding decisions.</br>
-The types of Link State algorithm are:</br>
+Two commonly used algorithms in checking the network link states and helping in making packet forwarding decisions are:</br>
 - **Dijkstra's shortest path algorithm**</br>
 - **Reliable flooding algorithm**</br>
 
-***Dijkstra's algorithm***</br>
+**Dijkstra's algorithm**</br>
 We will briefly discuss this algorithm, for it is too wide to explain in detail here. Later on, We will dive into it in detail in my next article.</br>
 This algorithm was created by a Dutch computer scientist, **Edsger Wybe Dijkstra**, and with it, routers find the shortest path between nodes in a network.</br>
 It starts with the router at the source node and analyses the network using all the parameters, and finds the shortest path between it and other nodes.</br>
@@ -126,7 +125,7 @@ The final result will be this:
 
 **{0,1,2,3,4,5,6}**
 
-***Reliable flooding algorithm***</br>
+**Reliable flooding algorithm**</br>
 As the name suggests, *it floods each router in a network with all other neighboring routers network state information* such as the IP addresses, costs of the network, the health of the networks, etc. using **link-state packets** of the routers.</br>
 
  For example, take a LAN with 5 routers A, B, C, D, E.
@@ -145,7 +144,7 @@ When C and B receives the packet with the unique ID from A, it (A) does not send
 Applying reliable flooding in wide networks can be unachievable; therefore, protocols are required to help implement it.</br>
 We will talk about one, the **OSPF**(Open Shortest Path First) protocol.</br>
 
-**OSPF**</br>
+***OSPF***</br>
 
 (Again, the OSPF is wide and just like  Dijkstra's algorithm we will elaborate it more in a dedicated article).</br></br>
 The OSPF falls under the **Interior Gateway Protocols(IGPs)** which are *protocols used to exchange routing information between gateways, much often routers, within networks containing multiple IP connected nodes such as Local Area Networks(LANs)*.</br></br>
