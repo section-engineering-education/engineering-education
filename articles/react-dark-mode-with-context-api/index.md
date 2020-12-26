@@ -98,6 +98,8 @@ If you'd like to take a look at the final code, please refer to [this GitHub Rep
 
 In the starter code, I've set up a simple screen with text and a button to switch to dark mode. I've also written all the CSS styles required for the dark mode and the light mode.
 
+![Starter Screen](lightmode.png)
+
 ### Adding the Context and Reducer
 Let's create a new file called ThemeContext.js. 
 
@@ -254,3 +256,7 @@ export default function SwitchButton() {
   );
 }
 ```
+
+Now, when you click on the button, the theme should change.
+
+![Toggle Mode](toggle.gif)
