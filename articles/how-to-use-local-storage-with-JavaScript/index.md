@@ -39,10 +39,10 @@ Window.localStorage.setItem("grade","One");
 //in this case, the `grade` is the key while `One` is the value.
 ```
 
-As noted, we must `stringify` objects before we store them in the Local Storage. An example is outlined below.
+We must `stringify` objects before we store them in the local storage. An example is outlined below.
 
 ```JavaScript
-Const Car = {
+const Car = {
   brand:"Suzuki",
   color:"white",
   price:10000
@@ -54,7 +54,7 @@ Window.localStorage.setItem('car', JSON.stringify(Car));
 Failure to stringify the object will result in an error.
 
 #### getItem()
-This function enables one to access or retrieve the data in the Local Storage. The method takes in a `key` as a parameter. It then extracts the required value.
+This function is used to access or retrieve the data in the local storage. The method takes in a `key` as a parameter. It then extracts the required value from the local storage.
 
 For example, to retrieve the above `Car` object, we will use the following statement.
 
@@ -68,35 +68,35 @@ The above statement will return something like this;
 "{brand:"Suzuki",color:"white",price:"10000"}"
 ```
 
-To make maximum use of the above result, you should convert it to an object using `JSON.parse()`.
+You should convert it to an object using `JSON.parse()` to use it in your code.
 
 ```JavaScript
 JSON.parse(window.localStorage.getItem('car';));
 ```
 
 #### removeItem()
-This method is used to delete an item from the Local Storage. The `removeItem()` method requires a key as a parameter. This is shown below.
+This method is used to delete an item from the local storage. The `removeItem()` method requires a key as a parameter. This is shown below.
 
 ```javascript
 window.localStorage.removeItem('brand');
 ```
 
 #### clear()
-When called, this function clears all values in the Local Storage. It is executed, as shown below. It does not require any parameters.
+This method is used to clear all values stored in the local storage. It is executed, as shown below. It does not require any parameters.
 
 ```JavaScript
 Window.localStorage.clear()
 ```
 
-Now that we have understood what Local Storage entails let's create a project that uses this concept.
+Now that we have understood what local storage entails let's create a project that uses this concept.
 
 ### Goal
-To create a web application that stores, retrieves, deletes, and clears items from the `Local Storage`.
+To create a web application that stores, retrieves, deletes, and clears items from the local storage.
 
 Let's jump in.
 
 ### Project Structure
-Create a new folder on your Desktop and open it in your code editor. Create two files: `index.html` and `main.js`. The `index.html` will showcase the web page to the user, while the `main.js` will store our javascript functions. These methods will be used to access different functionalities of the `Local Storage`.
+Create a new folder on your Desktop and open it in your code editor. Create two files: `index.html` and `main.js`. The `index.html` will showcase the web page to the user, while the `main.js` will store our javascript functions. These functions will be used to access different functionalities of the `Local Storage`.
 
 ### Forms, buttons, and JavaScript functions
 Our `index.html` will have a `form` and several `buttons`, as shown below.
@@ -173,7 +173,7 @@ function store(){ //stores items in the local storage
 }
 ```
 
-Similarly, the `retrieveButton` will invoke the `retrieveRecords` function when clicked. This method fetches items from the `Local Storage` using the getItem function. ` var paragraph = document.createElement("p")` creates a new paragraph component in our web page. `document.createTextNode(records);` helps create the text that will be displayed to the user. The text node is then binded to the paragraph tag by `paragraph.appendChild(infor)`. These components are then shwn in a specific place on the web page by `document.getElementById("retrieve")` and `element.appendChild(paragraph)`.
+Similarly, the `retrieveButton` will invoke the `retrieveRecords` function when clicked. This method fetches items from the local storage using the getItem function. `var paragraph = document.createElement("p")` creates a new paragraph component in our web page. `document.createTextNode(records);` helps create the text that will be displayed to the user. The text node is then binded to the paragraph tag by `paragraph.appendChild(infor)`. These components are then shwn in a specific place on the web page by `document.getElementById("retrieve")` and `element.appendChild(paragraph)`.
 
 ```JavaScript
 function retrieveRecords(){ //retrieves items in the localStorage
@@ -196,7 +196,7 @@ function removeItem(){  //deletes item from localStorage
 }
 ```
 
-clearButton calls the `clearStorage()`. The `clear()` method is used to remove all values in the Local Storage.
+clearButton calls the `clearStorage()`. The `clear()` method is used to remove all values in the local storage.
 ```javascript
 function clearStorage(){ //clears the entire localStorage
     localStorage.clear()
