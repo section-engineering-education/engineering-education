@@ -15,9 +15,12 @@ The fundamentals of React will not be covered in this tutorial. If you are not c
 ### Overview
 We'll be going through these steps in this article:
 
-- What is a context.
-- What is a reducer.
-- Redux vs Context API.
+- Context API.
+- When to use React's Context API intead of Redux.
+- Reducers.
+- Cloning the starter code.
+- Adding the Context and Reducer.
+- Consuming the Context.
 
 ### Context API
 According to the official documentation of React, Context provides a way to pass data through the component tree without having to pass props down manually at every level.
@@ -95,3 +98,159 @@ If you'd like to take a look at the final code, please refer to [this GitHub Rep
 
 In the starter code, I've set up a simple screen with text and a button to switch to dark mode. I've also written all the CSS styles required for the dark mode and the light mode.
 
+### Adding the Context and Reducer
+Let's create a new file called ThemeContext.js. 
+
+Now, Let's create a context object for the theme. We need to export this object from this file, so that we can import it in the component from where we want to consume this context.
+
+```JSX
+export const ThemeContext = createContext();
+```
+
+Now, We should write a HOC (Higher Order Component) that'll be used to wrap any component with the Context provider.
+
+In this HOC, we need to use the `useReducer` hook to produce a state and the dispatch function to update that state and pass it to the provider component.
+
+We need to write a reducer function to switch between dark mode and light mode.
+
+The initial state will be:
+
+```JSX
+const initialState = { darkMode: false };
+```
+
+The reducer function will be:
+
+```JSX
+const themeReducer = (state, action) => {
+  switch (action.type) {
+    case "LIGHTMODE":
+      return { darkMode: false };
+    case "DARKMODE":
+      return { darkMode: true };
+    default:
+      return state;
+  }
+};
+```
+
+Now, we need to pass this `themeReducer` function and the `initialState` to the `useReducer` hook.
+
+```JSX
+const [state, dispatch] = useReducer(themeReducer, initialState);
+```
+
+Now, let's write the HOC and export it from this file. We should pass the state and the dispatch function to the value prop of the Provider.
+
+```JSX
+export function ThemeProvider(props) {
+  const [state, dispatch] = useReducer(themeReducer, initialState);
+
+  return <ThemeContext.Provider value={{ state: state, dispatch: dispatch }}>{props.children}</ThemeContext.Provider>;
+}
+```
+
+### Consuming the Context
+We should use the ThemeProvider HOC to wrap it around the component we want to consume the context from. Since theme is supposed to affect the application globally, let's wrap it around the App component.
+
+In index.js, let's import the ThemeProvider.
+
+```JSX
+import { ThemeProvider } from "./ThemeContext";
+```
+
+Now, let's wrap `<App></App>` with `<ThemeProvider></ThemeProvider>`.
+
+```JSX
+ReactDOM.render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```
+
+This will make the Theme Context available for all the descendant components of the App component.
+
+Now, in the *App.js* file, let's import the `ThemeContext` and the `useContext` hook.
+
+```JSX
+import React, { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+```
+
+We need to pass the `ThemeContext` object to the `useContext` hook.
+
+```JSX
+const theme = useContext(ThemeContext);
+```
+
+The `useContext` hook will return the object that we passed to the value prop of the provider.
+
+So, to access the dark mode state, we need to access it like `theme.state.darkMode`.
+
+```JSX
+const darkMode = theme.state.darkMode;
+```
+
+Now, we can use this state to alternate between the CSS classes that we need to apply for the elements.
+
+For example,
+
+```HTML
+<div className={`bg ${darkMode ? "bg-dark" : "bg-light"}`}>
+```
+
+Now, do the same for the `h1` and the `p` tags.
+
+```HTML
+<h1 className={`heading ${darkMode ? "heading-dark" : "heading-light"}`}>
+  {darkMode ? "Dark Mode" : "Light Mode"}
+</h1>
+<p className={`para ${darkMode ? "para-dark" : "para-light"}`}>
+  ...
+</p>
+```
+
+Now, we need to use the dispatch function to update the state between dark mode and light mode.
+
+In Button.js, let's import the `ThemeContext` and the `useContext` hook.
+
+```JSX
+import React, { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+```
+
+Similar to what we did in the App.js file, we need to pass the `ThemeContext` object to the `useContext` hook.
+
+```JSX
+const theme = useContext(ThemeContext);
+const darkMode = theme.state.darkMode;
+```
+
+When the user clicks the button, we need to call the dispatch funtion with the correct type. If the current state is in light mode, the dispatch type should be of dark mode and vice-versa.
+
+Let's write a function for when the user clicks on the button and pass it to the `onClick` property of the button.
+
+```JSX
+export default function SwitchButton() {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+
+  const onClick = () => {
+    if (darkMode) {
+      theme.dispatch({ type: "LIGHTMODE" });
+    } else {
+      theme.dispatch({ type: "DARKMODE" });
+    }
+  };
+
+  return (
+    <button className={`btn ${darkMode ? "btn-dark" : "btn-light"}`} onClick={onClick}>
+      {theme.darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+    </button>
+  );
+}
+```
