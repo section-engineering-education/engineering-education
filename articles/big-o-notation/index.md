@@ -9,11 +9,12 @@ The analysis of the efficiency is performed by considering the number of resourc
 
 The **space** used is determined by the number and sizes of variables together with the data structures being used while the **time** is determined by the elementary operations that must be performed during the algorithm execution.</br>
 That said, the **time** to run our algorithms is ***highly dependent on the software and hardware environment they run in***.</br>
-Take an instance where one is using old hardware, or runs it where there are many programs open and the RAM has little space. He/She will experience slower execution times compared to another developer using new hardware and large RAM size. Other factors in the environment include compilers & libraries used, processor types, etc.</br>
+Take an instance where one is using old hardware, or runs it where there are many programs open and the RAM has little space. He/She will experience slower execution times compared to another developer using relatively newer hardware and large RAM size. Other factors in the environment include compilers & libraries used, processor types, etc.</br>
 
-We therefore need a methodology that is independent of the software and hardware environment which takes into account all possible inputs.</br>
+We therefore need a methodology that is **independent** of the software and hardware environment which takes into account all possible inputs.</br>
 
-This is done by a high-level description of the algorithm by associating each algorithm with a function **f(n)** that characterizes the running time of the algorithm in terms of the input size **n**.
+
+This is done by a *high-level* description of the algorithm by associating each algorithm with a function **f(n)** that characterizes the running time of the algorithm in terms of the input size **n**.
 Given functions **f(n)** and **g(n)**, we do say that *f(n) is Big O of g(n)* being written as:
 
 `f(n) is O(g(n))`
