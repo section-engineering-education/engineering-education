@@ -1,6 +1,6 @@
 ### Understanding the Big O notation
 
-![Hero Image](/engineering-education/big-o-notation/bigo.png)
+![Hero Image](/engineering-education/big-o-notation/hero.png)
 
 [Image Source](https://res.cloudinary.com/practicaldev/image/fetch/s--S9kD7Tvi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/0x6qo2na9bk35zy3dwcn.png)
 
