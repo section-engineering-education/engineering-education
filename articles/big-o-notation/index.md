@@ -8,7 +8,7 @@ We all need a way to measure the performance (efficiency) of our algorithms as t
 The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.</br>
 
 The **space** used is determined by the number and sizes of variables together with the data structures being used while the **time** is determined by the elementary operations that must be performed during the algorithm execution.</br>
-That said, the **time** to run our algorithms is highly dependent on the software and hardware environment they run in eg:</br>
+That said, the **time to run** our algorithms is *highly dependent on the software and hardware environment they run in* eg:</br>
 - **Read/Write Speed**
 - **Number of programs running**
 - **RAM size**
