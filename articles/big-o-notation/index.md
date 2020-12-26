@@ -30,7 +30,7 @@ Therefore Big O, (pronounced as Big Oh), describes how good the performance of o
  
 It assists us in knowing which algorithm suits which task and which one is not by estimating the different runtimes of the algorithms. The estimation of how the runtime varies with the problem size is called the **runtime complexity** of an algorithm.
 
-An easy illustration of how different algorithms use different runtime complexities is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles away. The information was given to the duo using data signals and an envelope respectively. Ironically, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant duration while the network's delivery time was inversely proportional to the amount of information being sent.
+A simple illustration of how different algorithms use different runtime complexities is a tale of a South African telecommunication company with a slow network speed and a pigeon. The company wanted to send some information to its other office which was 50 miles away. The information was given to the duo using data signals and an envelope respectively. Ironically, the pigeon delivered the data ahead of the telco network. Here, the pigeon could deliver any amount of information whether too large or too little at the same constant duration while the network's delivery time was inversely proportional to the amount of information being sent.
 
 There are many notations of the Big O but here we are going to discuss a few of them which are:</br>
 -**O(1)**</br>
