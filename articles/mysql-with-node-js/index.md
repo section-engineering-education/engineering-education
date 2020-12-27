@@ -179,7 +179,7 @@ Now that we have a database, we need to specify that inside `createConnection()`
 ```js
 host: "localhost",
 user: "root",
-password: ""
+password: "",
 // include the database we have just created
 database: "Company"
 ```
@@ -517,7 +517,7 @@ Perhaps you want to delete one or multiple records in a database. `DELETE` comma
 ```js
 // Delete office
 app.get("/deleteoffice/:id", (req, res) => {
-    let sqlQuery = `DELETE FROM offices WHERE id = ${req.params.id}`;
+    let sqlQuery = `DELETE FROM offices WHERE officeCode = ${req.params.id}`;
     let query = dbconnection.query(sqlQuery, (err, result) => {
         if (err) throw err;
         console.log(result);
