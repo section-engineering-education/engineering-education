@@ -56,7 +56,7 @@ Whenever working with MySQL, you first need a MySQL development server and MySQL
 
 - Under MySQL connections, click the connection as highlighted in the screenshot above. You will be prompted to enter the root password set previously.
 
-![[MySQL Root Password](/engineering-education/mysql-with-node-js/password.png)
+![MySQL Root Password](/engineering-education/mysql-with-node-js/password.png)
 
 Check MySQL [Mac](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html) and [Ubuntu](https://www.mysqltutorial.org/install-mysql-ubuntu/) Installations.
 
@@ -118,7 +118,7 @@ Run `node app.js` to check if the connection is established.
 
 If you run into an error close to the one shown below.
 
-![[MySQL Server Connection Error](/engineering-education/mysql-with-node-js/error.jpg)
+![MySQL Server Connection Error](/engineering-education/mysql-with-node-js/error.jpg)
 
 Follow [these steps](https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server).
 
