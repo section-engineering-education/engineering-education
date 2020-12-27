@@ -7,13 +7,13 @@ To get along with this guide, you need;
 - Basic understanding of [Node.js](https://www.w3schools.com/nodejs/nodejs_get_started.asp).
 
 ### Background
-MySQL is a fast and easy to use Relational Database Management System(RDBMS). DBMS is a collection of systems that allows us to access the relational database and manipulate data. It is written in C and C++. MySQL is based on Structured Query Language (SQL) that interact with relational databases.
+MySQL is a fast and easy to use Relational Database Management System(RDBMS). DBMS is a collection of systems that allows us to access the relational database and manipulate data. It is written in C and C++. MySQL is based on Structured Query Language (SQL) that is used to interact with relational databases.
 
 Here are remarkable reasons why you should use MySQL.
 - It an open-source database and scalable. It is suitable for both small and large applications.
 - MySQL is very powerful, and it can handle a large set of functionality.
 - It supports numerous operating systems and a wide list of programming languages such as JavaScript, PHP, JAVA, etc.
-- It has an excellent performance in terms of speed.
+- It has excellent performance in terms of speed.
 - MySQL is secure and efficient to use.
 
 ### Setting up the MySQL server
@@ -74,7 +74,7 @@ Run `npm install mysql` to install the package. Create a `.js` file to work on, 
 ### Creating a connection to MySQL server
 Before carrying out any database operation, you first need to create a connection to the MySQL server.
 
-In just a few steps below, and you have a connection to the database established.
+In just a few steps mentioned below, you'll establish a connection to the database.
 
 - Import MySQL using the `require()` function.
 
@@ -120,7 +120,7 @@ If you run into an error close to the one shown below.
 
 ![](/engineering-education/mysql-with-node-js/error.jpg)
 
-Follow [the following steps](https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server).
+Follow [these steps](https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server).
 
 - Run the following query in MySQL Workbench.
 
@@ -135,7 +135,7 @@ Where `root` is the user, `localhost` is the URL and `password` is the password.
 We need to create a database that will be queried by the connection we have created.
 
 ### Creating a database
-We need to create a database that we will store our information. Create a function `createDB()`. We will use this function to create a new database. After making a successful connection, call the function `createDB()` as shown below.
+We need to create a database for storing our information. Create a function `createDB()`. We will use this function to create a new database. After making a successful connection, call the function `createDB()` as shown below.
 
 ```js
 let mysql = require("mysql");
@@ -591,8 +591,8 @@ This creates multiple connections to execute the queries parallel. A new connect
 I hope this guide helps get you started writing SQL queries and executing them within the Node.js application.
 
 ### Related Topics and Additional Resources
-[Introduction to Express.js](/engineering-education/express/)
-[Understanding HTTP Requests in Node.js](/engineering-education/http-requests-nodejs/)
-[An Absolute Beginner Guide to Node Package Manager](/engineering-education/beginner-guide-to-npm/)
-[Develop Your First Data-Driven  Web App Using  MongoDB database and Node.js](/engineering-education/working-with-databases-part2/)
-[Getting to Grips with MongoDB Database](/engineering-education/working-with-databases-part1/)
+- [Introduction to Express.js](/engineering-education/express/)
+- [Understanding HTTP Requests in Node.js](/engineering-education/http-requests-nodejs/)
+- [An Absolute Beginner Guide to Node Package Manager](/engineering-education/beginner-guide-to-npm/)
+- [Develop Your First Data-Driven  Web App Using  MongoDB database and Node.js](/engineering-education/working-with-databases-part2/)
+- [Getting to Grips with MongoDB Database](/engineering-education/working-with-databases-part1/)
