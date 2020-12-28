@@ -35,7 +35,7 @@ The `key()` can also be used in a loop statement to retrieve all the items in th
 This function is used to store items in the local storage. An example of this function is shown below.
 
 ```JavaScript
-Window.localStorage.setItem("grade","One");
+window.localStorage.setItem("grade","One");
 //in this case, the `grade` is the key while `One` is the value.
 ```
 
@@ -48,7 +48,7 @@ const Car = {
   price:10000
 }
 
-Window.localStorage.setItem('car', JSON.stringify(Car));
+window.localStorage.setItem('car', JSON.stringify(Car));
 ```
 
 Failure to stringify the object will result in an error.
@@ -59,7 +59,7 @@ This function is used to access or retrieve the data in the local storage. The m
 For example, to retrieve the above `Car` object, we will use the following statement.
 
 ```JavaScript
-Window.localStorage.getItem('car');
+window.localStorage.getItem('car');
 ```
 
 The above statement will return something like this;
@@ -85,7 +85,7 @@ window.localStorage.removeItem('brand');
 This method is used to clear all values stored in the local storage. It does not require any parameters.
 
 ```JavaScript
-Window.localStorage.clear()
+window.localStorage.clear()
 ```
 
 ### Project
@@ -103,50 +103,43 @@ Our `index.html` will have a `form` and several `buttons`, as shown below.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>localStorage</title>
-  <link rel="stylesheet" href="./css/bootstrap.css">
+  <title>Local Storage</title>
   <script type="text/javascript" src="main.js"></script>
-
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+
   <br>
   <br>
+
   <div class="container" id="formDiv">
-        <form class="form-signin" id="carForm">
-            <h1>Please sign in</h1>
-            <label for="carBrand" class="sr-only">Car</label>
-            <input type="text" id="carBrand" class="form-control" placeholder="Car brand" required autofocus><br>
-            <label for="carPrice" class="sr-only">Price</label>
-            <input type="text" id="carPrice" class="form-control" placeholder="Price" required><br>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        <form id="carForm">
+            <h1>Local Storage</h1>
+            <label for="carBrand" >Car</label>
+            <input type="text" id="carBrand" placeholder="Car brand" required autofocus><br>
+            <label for="carPrice" >Price</label>
+            <input type="text" id="carPrice" placeholder="Price" required><br>
+            <label for="key" >Key</label>
+            <input type="text" id="key" placeholder="Key" required><br>
+            <button type="submit">Store Records</button>
         </form>
         <br>
         <br>
-        <button class="btn btn-lg btn-primary btn-block" id="retrieveButton">Retrieve records</button>
+        <br>
+        <label for="retrieveKey" >Enter Key to retrieve item</label>
+        <input type="text" id="retrieveKey" placeholder="retrieveKey" required><br>
+        <button id="retrieveButton">Retrieve records</button>
         <br>
         <div id="retrieve"></div>
         <br>
-        <button class="btn btn-lg btn-danger btn-block" id="removeButton">Remove record</button>
+        <label for="removeKey" >Enter Key to delete item</label>
+        <input type="text" id="removeKey" placeholder="removeKey" required><br>
+        <button id="removeButton">Remove record</button>
         <br>
         <br>
-        <button class="btn btn-lg btn-danger btn-block" id="clearButton">Clear all records</button>
+        <button id="clearButton">Clear all records</button>
   </div>
+
 </body>
 </html>
 ```
@@ -157,13 +150,14 @@ When the `submit` button is clicked, it takes the user input and passes it to th
 function store(){ //stores items in the local storage
     var brand = document.getElementById('carBrand').value;
     var price = document.getElementById('carPrice').value;
+    var key = document.getElementById('key').value; //gets the key from the user
 
     const car = {
         brand: brand,
         price: price,
     }
 
-    window.localStorage.setItem('car',JSON.stringify(car));  
+    window.localStorage.setItem(key,JSON.stringify(car));  
     //converting object to string
 }
 ```
@@ -180,8 +174,9 @@ These components are then shown in a specific place on the web page by `document
 
 ```JavaScript
 function retrieveRecords(){ //retrieves items in the localStorage
-    console.log("retrive records");
-    var records = window.localStorage.getItem('car');
+    console.log("retrieve records");
+     var key = document.getElementById('retrieveKey').value;
+    var records = window.localStorage.getItem(key);
     var paragraph = document.createElement("p");
     var infor = document.createTextNode(records);
     paragraph.appendChild(infor);
@@ -194,7 +189,8 @@ function retrieveRecords(){ //retrieves items in the localStorage
 
 ```JavaScript
 function removeItem(){  //deletes item from localStorage
-    localStorage.removeItem('car')
+    var key = document.getElementById('removeKey').value;
+    localStorage.removeItem(key)
     console.log("remove items");
 }
 ```
@@ -226,19 +222,21 @@ Here is the `main.js` file with all the functions.
 function store(){ //stores items in the local storage
     var brand = document.getElementById('carBrand').value;
     var price = document.getElementById('carPrice').value;
+    var key = document.getElementById('key').value;
 
     const car = {
         brand: brand,
         price: price,
     }
 
-    window.localStorage.setItem('car',JSON.stringify(car));  
+    window.localStorage.setItem(key,JSON.stringify(car));  
     //converting object to string
 }
 
 function retrieveRecords(){ //retrieves items in the localStorage
+    var key = document.getElementById('retrieveKey').value; //gets key from user
     console.log("retrive records");
-    var records = window.localStorage.getItem('car');
+    var records = window.localStorage.getItem(key);//searches for the key in local storage
     var paragraph = document.createElement("p");
     var infor = document.createTextNode(records);
     paragraph.appendChild(infor);
@@ -247,7 +245,8 @@ function retrieveRecords(){ //retrieves items in the localStorage
 }
 
 function removeItem(){//deletes item from localStorage
-    localStorage.removeItem('car')
+    var key = document.getElementById('removeKey').value;//gets key from user
+    localStorage.removeItem(key) //passes key to the removeItem method
     console.log("remove items");
 }
 
@@ -256,7 +255,7 @@ function clearStorage(){ //clears the entire localStorage
     console.log("clear records");
 }
 
-window.onload =function(){ //ensues the page is loaded before functions are executed.
+window.onload =function(){ //ensures the page is loaded before functions are executed.
     document.getElementById("carForm").onsubmit = store
     document.getElementById("clearButton").onclick = clearStorage
     document.getElementById("removeButton").onclick = removeItem
@@ -278,7 +277,7 @@ The following video shows how the site works.
 <iframe width="478" height="269" src="https://www.youtube.com/embed/nzitoIbsT2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Conclusion
-You are now familiar with the different functionalities of Local Storage. In case, you didn't understood any concept, feel free to go through the localStorage functions again.
+You are now familiar with the different functionalities of Local Storage. The major methods in local storage are `setItem`, `getItem`, `removeItem` and `clear`. A `key` is required when storing, retrieving, and removing items from the `Local Storage`. In case, you didn't understood any concept, feel free to go through the localStorage functions again.
 
 ### References
 [JavaScript.Infor](https://javascript.info/localstorage)
