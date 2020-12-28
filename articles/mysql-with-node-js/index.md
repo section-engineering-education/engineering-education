@@ -1,19 +1,42 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/mysql-with-node-js/
+title: MySQL with Node.js
+description: This article will explain how to use MySQL with Node.js.
+author: joseph-chege
+date: 2020-12-28T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/mysql-with-node-js/hero.png
+    alt: MySQL with Node.js Image
+---
 If you are new to MySQL with Node.js, this guide will help you learn the basics and what you need to get started with MySQL using Node.js.
+<!--more-->
 
 ### Prerequisites
 To get along with this guide, you need;
 
 - Basic knowledge of how to [write SQL queries](https://www.w3schools.com/sql/).
+
 - Basic understanding of [Node.js](https://www.w3schools.com/nodejs/nodejs_get_started.asp).
 
 ### Background
 MySQL is a fast and easy to use Relational Database Management System(RDBMS). DBMS is a collection of systems that allows us to access the relational database and manipulate data. It is written in C and C++. MySQL is based on Structured Query Language (SQL) that is used to interact with relational databases.
 
 Here are remarkable reasons why you should use MySQL.
+
 - It an open-source database and scalable. It is suitable for both small and large applications.
+
 - MySQL is very powerful, and it can handle a large set of functionality.
+
 - It supports numerous operating systems and a wide list of programming languages such as JavaScript, PHP, JAVA, etc.
+
 - It has excellent performance in terms of speed.
+
 - MySQL is secure and efficient to use.
 
 ### Setting up the MySQL server
@@ -592,7 +615,11 @@ I hope this guide helps get you started writing SQL queries and executing them w
 
 ### Related Topics and Additional Resources
 - [Introduction to Express.js](/engineering-education/express/)
+
 - [Understanding HTTP Requests in Node.js](/engineering-education/http-requests-nodejs/)
+
 - [An Absolute Beginner Guide to Node Package Manager](/engineering-education/beginner-guide-to-npm/)
+
 - [Develop Your First Data-Driven Web App Using MongoDB database and Node.js](/engineering-education/working-with-databases-part2/)
+
 - [Getting to Grip with MongoDB Database](/engineering-education/working-with-databases-part1/)
