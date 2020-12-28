@@ -52,7 +52,12 @@ Let&#39;s implement sessionStorage in a real-life application.
 
 ### Step 3 – Creating the view
 
-In this step, we will design a simple web page that we will use to interact with the sessionStorage functionalities. The page is designed using HTML 5. The `main.js` file must be imported in the `index.html` file. This allows us to access the required sessionStorage functions. We import the main.js file using the below code snippet.
+In this step, we will design a simple web page that we will use to interact with the sessionStorage functionalities. The page is designed using HTML 5. The `main.js` file must be imported in the `index.html` file. This allows us to access the required sessionStorage functions. Kindly, note that we will use Bootstrap to style our web page. 
+Here is the Bootstrap link.
+```
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+```
+We import the main.js file using the below code snippet.
 
 ```html
   <script type="text/javascript" src="main.js"></script>
@@ -69,6 +74,7 @@ It&#39;s important to ensure that all of our buttons have an `id`. This is becau
   <meta name="viewport" content="width=device-width">
   <title>sessionStorage</title>
   <script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
