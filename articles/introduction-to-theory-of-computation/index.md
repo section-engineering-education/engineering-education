@@ -90,10 +90,21 @@ Computation is done by a various computation models depending on the nature of t
 
 ### Complexity Theory
 This theoretical computer science branch is all about studying the cost of solving problems while focusing on resources (time & space) needed as the metric.
-
+The running time of an algorithm varies with the inputs and usually grows with the size of the inputs.
 **Measuring Complexity**
 
-Involves algorithm analysis to determine how much time it takes while solving a problem. As T(n), running time is usually a complex expression when an algorithm runs on large input sizes. This would mean an exponential growth in the running time hence cost.
+Involves algorithm analysis to determine how much time it takes while solving a problem.(Time complexity) 
+To evaluate an algorithm , a focus is made on relative rates of growth as the size of the input grows. Since the exact running time of an algorithm often is a complex expression, we usually just estimate it. 
+We measure an algorithm's time requirement as a function of the input size(n) when determining the time complexity of an algorithm.
+As T(n),the time complexity is expressed using the Big Oh(O) notation where only the highest order term in the algebraic expressions is considered while ignoring constant values.
+
+The common running times when analyzing algorithms are:
+
+* O(1) - Constant time, where the running time is not affected by the size of the input(n)
+* O(n) - Linear time, where time requirement increases uniformly with the size of the input.
+* O(log n) - Logarithmic time
+* O(n^2) - Quadratic time
+  
 
 This analysis is based on 2 bounds that can be used to define the cost of each algorithm. i.e 
 - Upper(*Worst Case Scenario*) 
