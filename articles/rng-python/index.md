@@ -1,4 +1,4 @@
-# How to Generate Random Numbers
+# How to Generate Random Numbers in Python
 
 A random event is an event that cannot be predicted in advance. How do computers make random numbers?
 
