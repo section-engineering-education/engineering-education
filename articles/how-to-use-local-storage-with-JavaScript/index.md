@@ -116,20 +116,14 @@ Our `index.html` will have a `form` and several `buttons`, as shown below.
 ```html
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Local Storage</title>
   <script type="text/javascript" src="main.js"></script>
 </head>
-
 <body>
-
-  <br>
-  <br>
-
-  <div class="container" id="formDiv">
+  <div id="formDiv">
         <form id="carForm">
             <h1>Local Storage</h1>
             <label for="carBrand" >Car</label>
@@ -141,8 +135,6 @@ Our `index.html` will have a `form` and several `buttons`, as shown below.
             <button type="submit">Store Records</button>
         </form>
         <br>
-        <br>
-        <br>
         <label for="retrieveKey" >Enter Key to retrieve item</label>
         <input type="text" id="retrieveKey" placeholder="retrieveKey" required><br>
         <button id="retrieveButton">Retrieve records</button>
@@ -153,10 +145,8 @@ Our `index.html` will have a `form` and several `buttons`, as shown below.
         <input type="text" id="removeKey" placeholder="removeKey" required><br>
         <button id="removeButton">Remove record</button>
         <br>
-        <br>
         <button id="clearButton">Clear all records</button>
   </div>
-
 </body>
 </html>
 ```
