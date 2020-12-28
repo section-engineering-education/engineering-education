@@ -594,5 +594,5 @@ I hope this guide helps get you started writing SQL queries and executing them w
 - [Introduction to Express.js](/engineering-education/express/)
 - [Understanding HTTP Requests in Node.js](/engineering-education/http-requests-nodejs/)
 - [An Absolute Beginner Guide to Node Package Manager](/engineering-education/beginner-guide-to-npm/)
-- [Develop Your First Data-Driven  Web App Using  MongoDB database and Node.js](/engineering-education/working-with-databases-part2/)
-- [Getting to Grips with MongoDB Database](/engineering-education/working-with-databases-part1/)
+- [Develop Your First Data-Driven Web App Using MongoDB database and Node.js](/engineering-education/working-with-databases-part2/)
+- [Getting to Grip with MongoDB Database](/engineering-education/working-with-databases-part1/)
