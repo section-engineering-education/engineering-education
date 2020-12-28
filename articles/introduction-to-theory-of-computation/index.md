@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: publish
-published: 
+published: true
 url: /engineering-education/introduction-to-theory-of-computation/
 title: Introduction to Theory of Computation
 description: This article will cover the basics of theory of computation and its role in efficiency of computers.
@@ -54,7 +54,7 @@ The Theory of Computation is made up of 3 branches. They are:
 - Complexity Theory.
 
 ### Automata Theory
-Mathematicians and Computer Scientists developed this theoretical computer science branch to simplify the logic of computation by using well defined abstract computational devices(models).
+Mathematicians and Computer Scientists developed this theoretical computer science branch to simplify the logic of computation by using well defined abstract computational devices (models).
 
 [Automata Theory](https://en.wikipedia.org/wiki/Automata_theory) is the study of abstract computational devices. It forms a formal framework for designing and analyzing computing devices such as biocomputers and quantum computers. These models are essential in several areas of computation (applied and theoretical fields). 
 
@@ -64,12 +64,12 @@ A basic computation performed on/by an automaton is defined by the following fea
 
 - A set of input symbols.
 
--	The Configuration States.
+- The configuration states.
 
 - Output.
 
 #### Branches of Automata Theory 
-- **Finite Automata(FA)**- This is a computer model, though inferior in its computation ability. This model is fit for devices with limited memory. It is a simple abstract machine with five elements that define its functioning and processing of problems.
+- **Finite Automata(FA):** This is a computer model that is inferior in its computation ability. This model is fit for devices with limited memory. It is a simple abstract machine with five elements that define its functioning and processing of problems.
 
 A [*Finite Automaton* (FA)](https://www.geeksforgeeks.org/introduction-of-finite-automata/) is a finite collection of states with rules (transition functions) for traversing through the states depending on the input symbol. FA accepts or rejects input strings while reading the strings from left to right.
 
@@ -87,40 +87,37 @@ A [*Finite Automaton* (FA)](https://www.geeksforgeeks.org/introduction-of-finite
 
 Finite Automata is useful in building text editors/text preprocessors. FA are poor models of computers. They can only perform simple computational tasks.
 
-- **Context-Free Grammars (CFGs)**  – are more powerful abstract models than FA and are essentially used in the programming languages and natural language research work
+- **Context-Free Grammars (CFGs):**  They are more powerful abstract models than FA and are essentially used in the programming languages and natural language research work.
 
-- **Turing Machines** - are abstract models for real computers having an infinite memory (in thr form of a tape) and a reading head. Form powerful computation models than FA, CFGs, and Regular Expressions.
+- **Turing Machines:** They are abstract models for real computers having an infinite memory (in the form of a tape) and a reading head. They form powerful computation models than FA, CFGs, and Regular Expressions.
 
 ### Computability Theory
-The [Computability theory](https://plato.stanford.edu/entries/computability/) defines whether a problem is “solvable” by any abstract machine. Some problems are computable, others are not.
+The [Computability theory](https://plato.stanford.edu/entries/computability/) defines whether a problem is “solvable” by any abstract machine. Some problems are computable while  others are not.
 
 Computation is done by various computation models depending on the nature of the problem at hand, among these machines being; Turing machine, Finite state machines, and many others.
 
 ### Complexity Theory
-This theoretical computer science branch is all about studying the cost of solving problems while focusing on resources (time & space) needed as the metric.
+This branch is about studying the cost of solving problems while focusing on resources (time & space) needed as the metric.
 
 **Measuring Complexity:**
 
-Involves algorithm analysis to determine how much time it takes while solving a problem. As T(n), running time is usually a complex expression when an algorithm runs on large input sizes. This would mean an exponential growth in the running time hence cost.
+Involves analysis of the algorithm to determine how much time it takes while solving a problem. As T(n), running time is usually a complex expression when an algorithm runs on large input sizes. This would mean an exponential growth in the running time hence cost.
 
-This analysis is based on 2 bounds that can be used to define the cost of each algorithm. i.e 
-- Upper(*Worst Case Scenario*) 
+This analysis is based on 2 bounds that can be used to define the cost of each algorithm. They are:
+
+- Upper(*Worst Case Scenario*)
+
 - Lower(*Best Case Scenario*)
 
 The major classifications of complexities include:
 
-1. *Class P* – devised to capture the notion of efficient computation. Are problems that can be solved in time O(nk) for some constant k where n is the input size to the problem.
+1. *Class P:* It is devised to capture the notion of efficient computation. Are problems that can be solved in time O(nk) for some constant k where n is the input size to the problem.
 
-2. *Class NP* – forms the class of all problems whose solution can be achieved in polynomial time by Non-deterministic Turing Machine.
+2. *Class NP:* It forms the class of all problems whose solution can be achieved in polynomial time by non-deterministic Turing machine.
 
-A major contributor to the complexity theory is the complexity of the algorithm used to solve the problem. Among several algorithms used in solving computational problems are those whose complexity can range from fairly complex to very complex. The more the complexity of an algorithm, the more the computational complexity of a given problem. 
+A major contributor to the complexity theory is the complexity of the algorithm used to solve the problem. Among several algorithms used in solving computational problems are those whose complexity can range from fairly complex to very complex. The more the complexity of an algorithm, the more the computational complexity of a given problem.
 
-### Conclusion
-Programs are formally written from descriptions of computations for execution on machines. We've learned that TOC is concerned with a formalism that helps build efficient programs. Efficient algorithms lead to better programs that optimally use hardware resources.
-
-Good understanding of the Theory of Computation helps programmers and developers express themselves clearly and intuitively, thus avoiding entering into potentially uncomputable problems while working with computational models. 
-
- #### Factors that influence program efficiency
+#### Factors that influence program efficiency
  
 - The problem being solved.
 
@@ -129,6 +126,11 @@ Good understanding of the Theory of Computation helps programmers and developers
 - Computer hardware.
 
 - Programming language used.
+
+### Conclusion
+Programs are formally written from descriptions of computations for execution on machines. We've learned that TOC is concerned with a formalism that helps build efficient programs. Efficient algorithms lead to better programs that optimally use hardware resources.
+
+Good understanding of the Theory of Computation helps programmers and developers express themselves clearly and intuitively, thus avoiding entering into potentially uncomputable problems while working with computational models. 
 
 #### Relevant Resources
 - [Theory of Computation](https://www.geeksforgeeks.org/introduction-of-theory-of-computation/)
