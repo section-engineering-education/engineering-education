@@ -298,3 +298,7 @@ You are now familiar with the different functionalities of Local Storage. The ma
 
 ### References
 [JavaScript.Infor](https://javascript.info/localstorage)
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+
