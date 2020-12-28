@@ -9,10 +9,11 @@
 - [ ] Can your article be understood by beginners? - **Assume the audience is smart but has no prior exposure to the common terminology in your article.**
 - [ ] Have you included a hero image that is 600x400 pixels and have the copyright to use it? - **Tools:** [Pixlr Image Editor](https://pixlr.com/e) for resizing and [Unsplash](https://unsplash.com) for Creative Commons images
 - [ ] In your PR - add a comment that states **["This fixes #(enter your Idea Content Form #)"](https://youtu.be/TKJ4RdhyB5Y?t=278)** to link and close your Idea Content (issue) when the PR is merged.
-      
 
+**NOTE: (1st time contributors - submit ONLY one article to get familiar with the process and style-once published, you can then submit any number of articles.)**
+      
 #### Grammar Checks
-- [ ] Have you spellchecked and grammar checked your article? - **Tool:** [Grammarly](https://grammarly.com)
+- [ ] Have you spellchecked and grammar checked your article? - **Tools:** [Write&Improve](https://writeandimprove.com/?lang=en-GB) - [ProWritingAid](https://prowritingaid.com/) -  [Grammarly](https://grammarly.com) 
 - [ ] Have you checked your article for readability? - **Tool:** [Hemmingway](http://www.hemingwayapp.com)
 - [ ] Have you added sources for quotes and images that aren't yours?
 
