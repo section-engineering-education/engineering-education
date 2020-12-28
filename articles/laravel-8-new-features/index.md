@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/laravel-8-new-features/index.md
 title: Laravel 8 New Features
-description: This tutorial provides a detailed overviews of Laravel 8.x version. The article discusses the file structures, as well as the new features.
+description: This tutorial provides a detailed overview of the Laravel 8.x version. The article discusses the file structures, as well as the new features.
 author: miller-juma
 date: 2020-12-28T00:00:00-13:00
 topics: []
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/laravel-8-new-features/hero.jpg
     alt: laravel 8.x image example
 ---
-If you have learned Laravel, then you are in the right place. This tutorial will help you explore the fantastic features in Laravel 8.x. This tutorial will provide a detailed overview of Laravel 8.x version.
+If you have learned Laravel, then you are in the right place. This tutorial will help you explore the fantastic features in Laravel 8.x. This tutorial will go over how to use the Larvavel installer, and Jetstream scaffolding.
 <!--more-->
 The article discusses the file structures, and the new features.
 
@@ -233,7 +233,7 @@ All these methods can be customized in the `model`, depending on your interest.
 - Account Deletion: This is another feature that has been introduced in the laravel 8 scaffolding. It's an option for a user to delete their account. The functionality to implement this is located at the `App\Actions\Jetstream\DeleteUser`.
 
 ### Conclusion
-You have now learned the basics of Laravel 8.x. You can use this knowledge to develop more interactive applications that make use of full laravel features.
+You have now learned the basics of Laravel 8.x. You can use this knowledge to develop more interactive applications that make use of full Laravel features.
 
 Happy Coding!
 
