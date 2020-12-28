@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-8-new-features/index.md
+url: /engineering-education/laravel-8-new-features/
 title: Laravel 8 New Features
 description: This tutorial provides a detailed overview of the Laravel 8.x version. The article discusses the file structures, as well as the new features.
 author: miller-juma
