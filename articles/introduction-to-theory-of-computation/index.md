@@ -19,7 +19,7 @@ images:
 
 Real-world computers perform computations that by nature run like mathematical models to solve problems in systematic ways. The essence of the theory of computation is to help develop mathematical and logical models that run efficiently and to the point of halting. Since all machines that implement logic apply TOC, studying TOC gives learners an insight into computer hardware and software limitations.
 
-#### Overview
+### Overview
 This article will cover:
 - [Key considerations of computational problems](#Key-considerations-of-computational-problems)
 - [mportance of Theory of computation](#Importance-of-Theory-of-computation)
@@ -36,7 +36,7 @@ This article will cover:
 
 3. The amount of memory in use during such computations.
 
-#### Importance of Theory of computation
+### Importance of Theory of computation
 The theory of computation forms the basis for:
 
 * Writing efficient algorithms that run in computing devices.
