@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/hero.jpg
     alt: Dark Mode for React Application using Context API and Hooks Image
 ---
-In this tutorial, we will use the React's Context API and Reducers in a React application to maintain the state for the theme of the application (dark/light).
+In this tutorial, we will use React's Context API and Reducers in a React application to maintain the state for the theme of the application (dark/light).
 <!--more-->
 
 ### Goals
@@ -92,10 +92,10 @@ For example:
 const reducer = (state, action) => {
   switch (action.type) {
     case "TYPE_1":
-      return manipulated_state;
+      return new_state;
 
     case "TYPE_2":
-      return manipulated_state;
+      return new_state;
 
     default:
       return state;
