@@ -1,4 +1,21 @@
-Local Storage allows developers to store and retrieve data in the browser. The data stored in the local storage doesn't expire. This means the data will persist even if the tab or the browser window is closed.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-use-local-storage-with-javascript/
+title: How to use Local Storage with JavaScript
+description: This article will cover how to use local storage in a browser with JavaScript.
+author: michael-barasa
+date: 2020-12-28T00:00:00-09:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-use-local-storage-with-javascript/hero.jpg
+    alt: How to use local storage with javascript Image
+---
+Local Storage allows developers to store and retrieve data in the browser. The data stored in the local storage will not expire. This means the data will persist even if the tab or the browser window is closed.
+<!--more-->
 
 ### Prerequisites
 You must have a basic understanding of javascript. You also need a code editor and browser to test the project. In this tutorial, we will be using Visual Studio Code and Chrome.
