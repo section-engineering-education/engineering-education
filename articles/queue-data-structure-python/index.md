@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: queue-data-structure-python
+url: /engineering-education/queue-data-structure-python/
 title: Using the Queue Data Structure in Python
 description: A queue is an efficient linear data structure that is used to maintain the order and is used to implement other data structures. 
 author: saiharsha-balasubramaniam
 date: 2020-07-20T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

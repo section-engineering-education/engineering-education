@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: what-is-little-endian-and-big-endian
+url: /engineering-education/what-is-little-endian-and-big-endian/
 title: What Is Little-Endian And Big-Endian Byte Ordering?
 description: Computers store data in memory in binary. One thing that is often overlooked is the formatting at the byte level of this data. This is called endianness and it refers to the ordering of the bytes.
 author: zack-jorquera

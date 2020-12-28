@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: introduction-to-shell-scripting
+url: /engineering-education/introduction-to-shell-scripting/
 title: Introduction to Shell Scripting
 description: A shell script is a computer program designed to be run by the Unix shell. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
 author: rohan-reddy
 date: 2020-06-20T00:00:00-07:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -196,7 +196,7 @@ case
 ### Loops
 Loops are powerful tools that help us execute a set of commands repeatedly.
 
-**While loop** executes the given commands until the given condition becomes false.  
+**While loop** executes the given commands until the given condition becomes false.
 
 ```
 while condition
@@ -231,7 +231,7 @@ for i in range
 We can loop over a range of numbers, loop over an array of numbers, or loop over the output from a command.
 
 **Example 1:**
-```	
+```
 for i in 1 2 3 4 5
 	do
 		echo $i   #prints 1 to 5
@@ -251,7 +251,7 @@ for i in {1..5}
 ```
 #!/bin/bash
 	for (( c=1; c<=5; c++ ))	#this is one of the ways we can write loops which is similar to C-style loops
-	do								  
+	do
 	   echo "Welcome $c times"
 	done
 ```

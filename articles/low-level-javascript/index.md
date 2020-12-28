@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: low-level-javascript
+url: /engineering-education/low-level-javascript/
 title: Low Level JavaScript – The Magic of asm.js
 description: Low level means fast, and its hard to get faster than pure assembly. Asm.js, or Assembly JavaScript is a subset of normal JavaScript built to take advantage of certain aspects of JavaScript and low level techniques to squeeze every ounce of speed on the web.
 author: nadiv-gold-edelstein

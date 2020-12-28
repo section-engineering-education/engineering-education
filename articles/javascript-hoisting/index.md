@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: javascript-hoisting
+url: /engineering-education/javascript-hoisting/
 title: A Primer on JavaScript Hoisting
 description: Hoisting is when the JavaScript compiler changes the placement of variables and function in your code.
 author: nadiv-gold-edelstein

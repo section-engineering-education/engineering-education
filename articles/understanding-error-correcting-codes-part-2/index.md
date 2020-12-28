@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: understanding-error-correcting-codes-part-2
+url: /engineering-education/understanding-error-correcting-codes-part-2/
 title: An Introduction to Error-Correcting Codes - Part 2
 description: Error-correcting codes are one of the most fundamental concepts that keep our technology-driven society running.
 author: ian-jorquera

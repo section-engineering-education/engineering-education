@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: introduction-web-assembly
+url: /engineering-education/introduction-web-assembly/
 title: An Introduction to WebAssembly - Part 1
 description: WebAssembly is designed as an open standard that defines a portable binary-code format for programming languages, and a corresponding textual assembly language. Enabling deployment on the web for client and server applications.
 author: lucas-gompou
 date: 2020-07-03T00:00:00-07:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -163,7 +163,7 @@ createModule().then((module) => {
 });
 ```
 
-This is where things get a bit interesting. Let's walk through this code to see how it works. 
+This is where things get a bit interesting. Let's walk through this code to see how it works.
 
 First, we call our factory function `createModule`, which returns a promise that resolves with an instance of the module when everything is ready to call our compiled code.
 

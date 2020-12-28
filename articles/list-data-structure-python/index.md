@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: list-data-structure-python
+url: /engineering-education/list-data-structure-python/
 title: Using the List Data Structure in Python
 description: The list data structure is one of the most fundamental and powerful data structures in Python, allowing you to cut down on the lines of code you write.
 author: saiharsha-balasubramaniam
 date: 2020-07-15T00:00:00-08:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

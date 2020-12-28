@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: working-with-databases-part2
+url: /engineering-education/working-with-databases-part2/
 title: Develop Your First Data-Driven Node.js Web App
 description: How to use Node.js, EJS and the MongoDB node module to add, modify and delete data in a MongoDB collection using a book databases as an example.
 author: louise-findlay
 date: 2020-08-04T00:00:00-10:00
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 

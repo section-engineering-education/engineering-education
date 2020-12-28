@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: golang-part-1-introduction
+url: /engineering-education/golang-part-1-introduction/
 title: Introduction to Golang
 description:  It covers the history of Golang, its purpose, where it is used, and how to install -  Go is  similar to C but with memory safety.
 author: adith-bharadwaj
 date: 2020-07-29T00:00:00-07:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -103,4 +103,4 @@ go build hello_world.go
 You will see "hello world" on your terminal. In the next few articles, we will understand the code to print hello world and explore the syntax and features of Go.
 
 ### Conclusion
-Golang was designed to strike the right balance between powerful and cost-effective development tools. It has become an example of how we can get the best out of both worlds by striking a balance between dynamic and static languages. However, Go is still in its early stages of development and is rapidly evolving every day. Whether you are a software developer, architect, DevOps engineer, or a student,  this is the best time to learn and explore Go. In the upcoming articles, we are going to explore the basic programming concepts in Go.    
+Golang was designed to strike the right balance between powerful and cost-effective development tools. It has become an example of how we can get the best out of both worlds by striking a balance between dynamic and static languages. However, Go is still in its early stages of development and is rapidly evolving every day. Whether you are a software developer, architect, DevOps engineer, or a student,  this is the best time to learn and explore Go. In the upcoming articles, we are going to explore the basic programming concepts in Go.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: asynchronous-programming-in-rust
+url: /engineering-education/asynchronous-programming-in-rust/
 title: Asynchronous Programming in Rust
 description: Asynchronous programming is a method of programming that can allow multiple different things to be run concurrently. In Rust, it is accomplished using a high-level idea called a Future.
 author: zack-jorquera

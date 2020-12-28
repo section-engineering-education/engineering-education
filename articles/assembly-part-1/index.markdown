@@ -7,7 +7,7 @@ title: Assembly Part 1 - Let's Learn Assembly!
 description: In computer programming, assembly language, often abbreviated asm, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
 author: mike-white
 date: 2020-06-23T00:00:00-07:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

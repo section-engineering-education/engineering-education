@@ -1,5 +1,6 @@
 ---
-name: Ada Lovelace
+title: Ada Lovelace
+type: engineering-education/author
 twitter: https://twitter.com/AdaLovelaceInst
 website: https://en.wikipedia.org/wiki/Ada_Lovelace
 github: https://github.com/ada.lovelace

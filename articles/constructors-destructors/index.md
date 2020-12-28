@@ -2,20 +2,20 @@
 layout: engineering-education
 status: publish
 published: true
-slug: extending-classes
+url: /engineering-education/constructors-destructors/
 title: Constructors and Destructors (C++)
 description: Learn the difference between Constructors and Destructors with the help of code snippets. Understand the usage of explicit call, implicit call and constructor overloading.
 author: kanishkvardhan-a-n
 date: 2020-08-05T00:00:00-05:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-
-  - url: /engineering-education/extending-classes/hero.jpg
+  - url: /engineering-education/constructors-destructors/hero.jpg
     alt: extending classes example image
-
 ---
+
 While programming, the objects which hold certain data members and member functions have to be initialized before operating on them. This is usually done by member functions that initialize data members to predefined values. But there is a special member function in which the object initializes itself automatically when it is first constructed. This special member function is called a **constructor**.
+
 <!--more-->
 
 Substantially, a constructor defines a value to data members of the class. **A constructor is a special member function that is used to initialize objects of a class instantaneously when it is constructed.**
@@ -44,51 +44,55 @@ class demo
 
 ##### C++ program to demonstrate the use of a constructor
 Consider the program to find the area of a circle. The name of the class will be **demo**. The two member functions will be declared, one for **input** and one for **output**. Since the name of the constructor should be the same as that of the class, the name of the constructor will also be **demo**. When the constructor demo is declared, the initialization of the class objects is done automatically.
- ```C
+
+```C
 #include <iostream>
 #include<conio.h>
 using namespace std;
 
 class demo
 {
-   private:
-      double radius, pi;
-    public:
-      void input(double r);
-      double output();
-      demo();  
+  private:
+     double radius, pi;
+   public:
+     void input(double r);
+     double output();
+     demo();
 };
 
 demo::demo(void)    //constructor definition outside the class
 {
-    pi=3.142;
+   pi=3.142;
 }
 void demo::input(double r)
 {
-   radius=r;
+  radius=r;
 }
 double demo::output(void)
 {
-   return (pi*radius*radius);
+  return (pi*radius*radius);
 }
 
 int main()
 {
-   demo d1;
+  demo d1;
 
-   d1.input(5.5);
-   cout<<"Area of the circle is : "<<d1.output()<<"sq.units"<<"\n";
-   return 0;
-   getch();
+  d1.input(5.5);
+  cout<<"Area of the circle is : "<<d1.output()<<"sq.units"<<"\n";
+  return 0;
+  getch();
 }
 ```
+
 The output of the above program is:
 
 ```bash
 Area of the circle is : 95.0455sq.units
 
 ```
+
 The above program can also be written by defining the constructor inside the class. The code segment for defining the constructor inside the class is as follows:
+
 ```C
 class demo
 {
@@ -103,22 +107,24 @@ class demo
             }
 };
 ```
+
 ### Types of Constructors
 #### Default Constructor
 *A constructor which does not have any arguments is called a Default Constructor*, or a ‘Zero Argument Constructor’. In a default constructor, every object in the class is initialized to the same set of values. It is not possible to initialize different objects with different initial values. This is one of the disadvantages of a default constructor.
 
-**Syntax:**
-Consider a class with the name **world**. The default constructor for this class would be:
+**Syntax:** Consider a class with the name **world**. The default constructor for this class would be:
+
 ```C
 world :: world()   //default constructor without any arguments
 ```
+
 **Note:** Any constructor with arguments is not a default constructor.
 
 #### Parameterized constructor
-*To avoid the infeasibility of default constructor to accept arguments, we use Parameterized Constructor, which is a constructor that can accept one or more arguments.* It works the same way as a default constructor, but the difference is that it can hold arguments. They are also called automatically once the objects are created. Another attribute of parameterized constructors is that they can be overloaded.  
+*To avoid the infeasibility of default constructor to accept arguments, we use Parameterized Constructor, which is a constructor that can accept one or more arguments.* It works the same way as a default constructor, but the difference is that it can hold arguments. They are also called automatically once the objects are created. Another attribute of parameterized constructors is that they can be overloaded.
 
-**Syntax:**
-Consider a class with the name world. The parameterized constructor for this class would be:
+**Syntax:** Consider a class with the name world. The parameterized constructor for this class would be:
+
 ```C
 world :: world(int a, int b)     //parameterized constructor with arguments
 ```
@@ -128,21 +134,24 @@ world :: world(int a, int b)     //parameterized constructor with arguments
 
 **Note:** Copy constructors cannot be invoked explicitly.
 
-**Syntax:**
-Consider a class with the name **world**. The copy constructor for this class would be:
+**Syntax:** Consider a class with the name **world**. The copy constructor for this class would be:
+
 ```C
 world :: world(world &ptr)        //copy constructor
 ```
-Where, `ptr` is the pointer to the class object.  
+
+Where, `ptr` is the pointer to the class object.
 
 ### Invoking (Calling) Constructors
 #### Explicit Call
 Explicit call is a method of invoking constructors in which the declaration of an object is done by using **assignment operator(=)**, constructor name followed by argument list.
 
 **Syntax:**
+
 ```
 constructor_name object_name=constructor_name(argument list);
 ```
+
 ##### C++ program to demonstrate the use of explicit call
 Consider the program to calculate the area of the circle. The name of the class and constructor will be **demo**. The constructor will be parameterized by taking one argument. Here, **d1** acts as the object which transfers the value **5.5** explicitly to the constructor.
 
@@ -175,19 +184,25 @@ int main()
 	getch();
 }
 ```
+
 The output of the above program will be:
+
 ```bash
 The area of the circle is: 95.0455sq.units
 ```
+
 #### Implicit Call
 Implicit call is a method of invoking constructors in which the declaration of an object is done and is then followed by an argument list.
 
 **Syntax:**
+
 ```
 constructor_name object_name(argument list);
 ```
+
 ##### C++ program to demonstrate the use of implicit call
 Consider the program to calculate the area of the circle. The name of the class and constructor will be **demo**. The constructor will be parameterized by taking one argument. Here, **d1** acts as the object which transfers the value **5.5** implicitly to the constructor.
+
 ```C
 #include <iostream>
 #include<conio.h>
@@ -217,10 +232,13 @@ int main()
 	getch();
 }
 ```
+
 The output of the above program will be:
+
 ```bash
 The area of the circle is: 95.0455sq.units
 ```
+
 **Note:** For different values, different objects have to be initialized in the main function.
 
 ### Constructor Overloading
@@ -235,14 +253,16 @@ class demo
 			... data members of the class...
 		public:
 			demo()                 //default constructor
-			{ }                         
+			{ }
 			demo(argument list)   //parameterized constructor
 			{
 			...operations on the variables...
 			}
 	};
 ```
+
 Consider **d1** and **d2** to be the objects. When the object **d1** is created, default constructor is invoked, and when the object **d2** is created with some arguments, parameterized constructor is invoked.
+
 ```C
 int main()
 {
@@ -251,7 +271,8 @@ int main()
 	getch();
 }
 ```
-### Destructors                                                    
+
+### Destructors
 As mentioned in the introduction, constructor is a special member function which is instantaneously called whenever an object is created. Likewise, **a destructor is a type of function which is instantaneously called whenever an object is destroyed.** By doing so, it deallocates the values initialized to a variable and also its memory. They have no return value. They do not take any arguments and so they cannot be overloaded. It has the same name as the class (like a constructor), but is preceded by **tilde mark** (symbolized as ~). Look at the following code snippet to see how a destructor works.
 
 ```C

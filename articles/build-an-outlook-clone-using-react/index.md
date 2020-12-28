@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: build-an-outlook-clone-using-react
+url: /engineering-education/build-an-outlook-clone-using-react/
 title: Building An Outlook Clone with React
 description: This article helps developers get started with React by building an Outlook clone using React so that you can learn the fundamentals by getting hands-on with the code.
 author: lalithnarayan-c
 date: 2020-07-31T00:00:00-10:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -156,7 +156,7 @@ The above mentioned lifecycle methods are used most often. There are a few more 
 
 ### Code
 
-We first begin with creating a React project using the **create-react-app** package. Open a new terminal of your choice and execute the following commands.  
+We first begin with creating a React project using the **create-react-app** package. Open a new terminal of your choice and execute the following commands.
 
 ```bash
 npx create-react-app outlookclonereact
@@ -446,7 +446,7 @@ To do this, we will modify the `App.js` component with the following changes:
    - current sender email ID
    - current subject
    - current date
-2. Enable operations like mark as favorite and filter operations. We need to maintain lists to store emails after the filter operations are performed. Additional lists are required to store the list of read and favorited emails. We need to store the following in the state:   
+2. Enable operations like mark as favorite and filter operations. We need to maintain lists to store emails after the filter operations are performed. Additional lists are required to store the list of read and favorited emails. We need to store the following in the state:
    - fav
    - read
 
@@ -489,7 +489,7 @@ This is an important concept. The communication between parent and child compone
 
 There are instances where changes in the children components have to be reflected in the parent component.
 
-For this purpose, we use callback functions. `findEmailId()` is a callback function sent as a prop to the `EmailList.js` component. It is redirected over to `Email.js` component. In the `Email.js` component, we call the `onClick` function when there is an onClick event.    
+For this purpose, we use callback functions. `findEmailId()` is a callback function sent as a prop to the `EmailList.js` component. It is redirected over to `Email.js` component. In the `Email.js` component, we call the `onClick` function when there is an onClick event.
 
 ```javascript
       findEmailId = (id) => {
@@ -811,7 +811,7 @@ code {
     background: #e1e4ea;
     border: none;
     border-radius: 15%;
-    width: 5em;   
+    width: 5em;
     outline: none;
     cursor: pointer;
     font-size: 1.15em;
@@ -1063,7 +1063,7 @@ class App extends Component {
 
   render() {
     const { email, searchField } = this.state;
-    // filter emails using the short_description.  
+    // filter emails using the short_description.
     const filterEmails = email.filter(emails => {
       return emails.short_description.toLowerCase().includes(searchField.toLowerCase())
     })

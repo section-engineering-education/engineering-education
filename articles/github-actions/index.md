@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: github-actions
+url: /engineering-education/github-actions/
 title: Introduction to GitHub Actions
 description: We can use GitHub Actions to perform real-world tasks such as CI/CD, publish to NPM, deploy to the cloud, and so on. This guide will walk you through how to get started with GitHub Actions.
 author: rohan-reddy

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: complex-event-processing
+url: /engineering-education/complex-event-processing/
 title: Complex Event Processing
 description: The demand for rapid, actionable decisions illustrates the importance for enabling technologies like Complex Event Processing (CEP).
 author: earl-potters

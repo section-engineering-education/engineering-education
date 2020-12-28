@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: what-is-anti-virus-software
+url: /engineering-education/what-is-anti-virus-software/
 title: What is Anti-Malware?
 description: Anti-malware is software that protects the user from financial ruin, infrastructure destruction, loss of data or loss of consumer confidence, etc through sophisticated malware techniques in detection, containment and prevention.
 author: earl-potters
 date: 2020-08-03T00:00:00-07:00
-topics: [security]
+topics: [Security]
 excerpt_separator: <!--more-->
 images:
 

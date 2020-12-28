@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-slug: serverless-api-firebase
+url: /engineering-education/serverless-api-firebase/
 title: Build a Serverless API using Firebase Functions
 description: This article walks a beginner through creating, writing and deploying a simple RESTful API using the firebase-cli tools onto a publicly hosted link.
 author: saiharsha-balasubramaniam
 date: 2020-07-08T00:00:00-12:00
-topics: [languages]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: rest-api
+url: /engineering-education/rest-api/
 title: REST APIs - Introductory guide
 description: Introduction to REST APIs, what are they, why do we need them and how do they work. Representational state transfer is a software architectural style that defines a set of constraints to be used for creating Web services.
 author: priyank-kumar

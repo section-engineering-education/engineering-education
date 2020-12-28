@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-slug: are-chiplets-the-future-of-computing
+url: /engineering-education/are-chiplets-the-future-of-computing/
 title: Are Chiplets the Future of Computing?
 description: Processors followed Moore's Law, which says that the number of transistors will double every two years. It is now being said that Moore's Law is coming to an end, especially with monolithic designs.
 author: gregory-manley
