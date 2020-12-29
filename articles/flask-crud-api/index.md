@@ -4,7 +4,7 @@ In this tutorial, we will create a fully working Restful API with flask and Mysq
 1. [Python 3.6](https://www.python.org/downloads/) and above installed on your computer.
 2. [Postman](https://www.postman.com/downloads/) installed on your computer.
 3. [Apache XAMPP](https://www.apachefriends.org/download.html) installed on your computer.
-4. Favourite IDE installed. I use [Pycharm](https://www.jetbrains.com/pycharm/download/).
+4. Favourite code editor installed. I use [Pycharm community edition](https://www.jetbrains.com/pycharm/download/) which is free.
 5. Basic [Python](https://www.w3schools.com/python/) knowledge. 
 
 ### Project setup
