@@ -354,6 +354,7 @@ The above endpoint allows for DELETE request deleting the `Todo` with the specif
 
 ![Delete todo](/engineering-education/flask-crud-api/delete-todo.png)
 
+You can find the entire source code for the project [here](https://github.com/paulodhiambo/flaskcrudapi).
 ### Conclusion
 
 Now that you have learned how to create CRUD API, add the `date_created` and `last_modified` fields to our `Todo` model. Consider using the `datetime` object from python `datetime` module when implementing the `date_created` and `last_modified` fields.
