@@ -104,7 +104,7 @@ The running time of an algorithm varies with the inputs and usually grows with t
 Involves algorithm analysis to determine how much time it takes while solving a problem.(Time complexity) 
 To evaluate an algorithm , a focus is made on relative rates of growth as the size of the input grows. Since the exact running time of an algorithm often is a complex expression, we usually just estimate it. 
 We measure an algorithm's time requirement as a function of the input size(n) when determining the time complexity of an algorithm.
-As T(n),the time complexity is expressed using the Big Oh(O) notation where only the highest order term in the algebraic expressions is considered while ignoring constant values.
+As T(n),the time complexity is expressed using the [Big O](https://en.wikipedia.org/wiki/Big_O_notation) notation where only the highest order term in the algebraic expressions is considered while ignoring constant values.
 
 The common running times when analyzing algorithms are:
 
