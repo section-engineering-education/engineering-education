@@ -1,6 +1,6 @@
 ### Prerequisites
 
-Deep Learning (DL) frameworks all center around deep learning and neural networks. If you haven't studied neural networks and how they function, please feel free to read this [article](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) before diving into reading this article. 
+Deep Learning (DL) frameworks are gradient computing engines widely used in deep learning and neural networks. If you haven't studied neural networks and how they function, please feel free to read this [article](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) before diving into reading this article. 
 
 ### Introduction
 
@@ -17,7 +17,7 @@ It is known as "TensorFlow" because it takes in inputs as tensors or multi-dimen
 
 The key features of TensorFlow include:
 
-1. It is actively maintained by the developers at Google. Currently, TF2.3 is the latest released version.
+1. It is actively maintained by the developers at Google. Currently, [TF2.3](https://blog.tensorflow.org/2020/07/whats-new-in-tensorflow-2-3.html) is the latest released version.
 2. It is open-source software that grants developers access to use and distribute the software for different purposes.
 3. It makes use of TensorBoard for visualizing model graphs, tracking and visualizing metrics, and displaying data such as images and texts.
 4. It is a flexible framework. It supports the experimentation of new deep learning models.
@@ -26,32 +26,36 @@ An extra feature to note is that TensorFlow 2.x now adopts the Keras API as its 
 
 ### What is PyTorch?
 
-PyTorch is a relatively new deep learning framework as it came out a year later after TensorFlow was released. The name PyTorch was inspired by a popular "[torch](http://torch.ch/)" deep learning framework, which was written in the [Lua](https://www.lua.org/) programming language. However, learning the Lua programming language was a big barrier, especially when learning deep learning. It also didn't offer the modularity necessary to interface with other deep learning libraries currently present. 
+PyTorch is a relatively new deep learning framework as it came out a year later after TensorFlow was released. The name PyTorch was inspired by a popular "[torch](http://torch.ch/)" deep learning framework, which was written in the [Lua](https://www.lua.org/) programming language. However, learning the Lua programming language was a significant barrier, especially when learning deep learning. It also didn't offer the modularity necessary to interface with other deep learning libraries currently present. 
 
 This problem was solved by a team of AI researchers inspired by the torch's programming style. They decided to develop an improvised form of torch with the Python (py) programming language, which later became known as PyTorch. 
 
 Some notable features of PyTorch include:
 
-1. It is extremely fast and feels Native.
+1. It is swift and feels native.
 2. It has native support for Python and all of its libraries. This feature makes it very easy to learn. 
 3. It's easy to use API that ensures easy usability when making use of the API.
 4. It is actively maintained and used by the developers at Facebook.
 5. It supports Nvidia's [CUDA](https://en.wikipedia.org/wiki/CUDA), ensuring that the code runs on a GPU, decreasing the time needed to run the code.
-6. Dynamic Computation Graphs is a key feature in PyTorch. It ensures that the graphs build up dynamically as you code.
+6. Dynamic Computation Graphs is a crucial feature in PyTorch. It ensures that the graphs build up dynamically as you code.
 
 Let's begin by discussing some of the comparisons between TensorFlow and PyTorch. 
 
 ### Computation Graphs
 
+#### Static Graphs vs Dynamic Graphs
+
 From the start, the computation graph was a notable difference between TensorFlow and PyTorch.
 
-From its onset, PyTorch was built around the concept of dynamism. It provided developers with the ability to dynamically define and manipulate graphs at runtime while it is executing. This feature offered PyTorch developers an advantage over TensorFlow as manipulating graphs during runtime helped easily troubleshoot the model in case of any issue with the code.
+From its onset, PyTorch was built around the concept of dynamism. It provided developers with the ability to dynamically define and manipulate graphs at runtime while it is executing. This feature offered PyTorch developers an advantage over TensorFlow as manipulating graphs during runtime helped quickly troubleshoot the model in case of any issue with the code. The dynamic nature of PyTorch graphs enabled its code to run faster, thus increasing its performance.
 
-By default, when [TensorFlow](https://www.tensorflow.org/) was developed, it let developers create static computation graphs at compile time. It didn't allow us to define and manipulate graphs at runtime. If we wanted to make any changes, we would have to rebuild the neural network from the start. 
+By default, when [TensorFlow](https://www.tensorflow.org/) was developed, it let developers create static computation graphs at compile time. It didn't allow us to define and manipulate graphs at runtime. If we wanted to make any changes, we would have to rebuild the neural network from the start. It is also challenging to debug static graphs as many logic errors have to wait until execution time to be uncovered. 
 
-But, with the release of TensorFlow 2.0, they introduced the "eager mode." They aimed to allow graphs to be defined and manipulated dynamically in computation while executing as was with PyTorch, which already had this feature, which worked so well. Rather than waiting until everything is coded up and connected before you can see if anything is done right, you could now "eagerly" execute your operations as you're working. 
+With the release of [TensorFlow 2.0](https://www.tensorflow.org/guide/effective_tf2), TensorFlow developers introduced the "eager mode." They aimed to allow graphs to be defined and manipulated dynamically in computation while executing as was with PyTorch, which already had this feature, which worked so well. Rather than waiting until everything is coded up and connected before you can see if anything is done right, you could now "eagerly" execute your operations as you're working. 
 
-Today, both frameworks allow both the static and dynamic computation of graphs. No much difference between the two as far as computation graphs are concerned. 
+It is important to note that static graphs are advantageous in cases where a developer needs to store fixed graph data structures, distribute computations over large amounts of hardware, and ship models independent of code. However, this tends to add a lot more complexity, which wastes computation and reduces the networks' overall performance.
+
+Today, both frameworks allow the use of both the static and dynamic computation of graphs. As far as computational graphs are concerned, not much difference exists between the two.
 
 ### Visualization
 
@@ -61,13 +65,13 @@ TensorFlow comes on-board with the [TensorBoard](https://www.tensorflow.org/tens
 
 PyTorch does not have a native in-build visualizing tool like TensorFlow does. A researcher has to import external visualization libraries such as [matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) to be able to achieve the same objective.
 
-They both achieve the same visualization objective, but TensorBoard offers researchers a bigger advantage. It has more features and a good number of visualization tools that transform graphs into beautiful-looking visualizations.
+They both achieve the same visualization objective, but TensorBoard offers researchers a more significant advantage. It has more features and a good number of visualization tools that transform graphs into beautiful-looking visualizations.
 
 ### Community
 
-As I mentioned earlier, TensorFlow has been around for a longer time compared to PyTorch. Due to this factor, and partly because Google's technology giants develop it, TensorFlow has a much wider community around its ecosystem. This community helps make the learning of the framework easier.
+As I mentioned earlier, TensorFlow has been around for a longer time compared to PyTorch. Due to this factor, and partly because Google's technology giants develop it, TensorFlow has a much more expansive community around its ecosystem. This community helps make the learning of the framework easier.
 
-Since it's still relatively new, PyTorch has a smaller community based around its ecosystem. This makes it a little bit harder, especially for beginners, to learn the framework. 
+Recently, the number of developers using PyTorch among the research community has grown. The community around TensorFlow is still broader, but PyTorch is catching up fast. Especially with companies like Tesla and Facebook adopting it as their default framework of choice. 
 
 ### Distributed Computing
 
@@ -90,9 +94,9 @@ PyTorch also hasn't been left behind. In a recent update, they introduced [Torch
 
 ### Wrapping Up
 
-To wrap up, I'd say that TensorFlow and PyTorch are two very popular frameworks. PyTorch is the most popular framework of choice in the research community. Big companies such as OpenAI, Apple, Microsoft, and Tesla have recently been embracing PyTorch as their default framework of choice. The reason is that PyTorch lets you prototype and to try out new unseen projects without much hassle. 
+To wrap up, I'd say that TensorFlow and PyTorch are two prevalent frameworks. PyTorch is the most popular framework of choice in the research community. Big companies such as OpenAI, Apple, Microsoft, and Tesla have recently embraced PyTorch as their default framework of choice. The reason is that PyTorch lets you prototype and to try out new unseen projects without much hassle. 
 TensorFlow is still being used by many companies, including the industry giants, Google. They keep improving it and introducing newer features. It's still the framework of choice when building models for production purposes.
-In their initial years of release, the differences between the two frameworks were very visible. But, updates to the frameworks over the years has narrowed that gap. Presently, the two popular frameworks' differences are negligible as PyTorch seems to be catching up with TensorFlow. 
+In their initial years of release, the differences between the two frameworks were evident. But, updates to the frameworks over the years has narrowed that gap. Presently, the two popular frameworks' differences are negligible as PyTorch seems to be catching up with TensorFlow. 
 I would be wrong if I said that one framework is better than the other. The frameworks have both have their merits and demerits. Just pick one framework and get started with it. The more you interact with these two deep learning frameworks, the better you'll become at developing instincts on which framework suits you the best for your project.
 
 ### References
@@ -109,5 +113,7 @@ I would be wrong if I said that one framework is better than the other. The fram
 10. [Seaborn](https://seaborn.pydata.org/) 
 11. [Difference between AI, ML, and DL](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) 
 12. [TorchServe](https://github.com/pytorch/serve)   
+13. [TensorFlow 2.0](https://www.tensorflow.org/guide/effective_tf2)
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
