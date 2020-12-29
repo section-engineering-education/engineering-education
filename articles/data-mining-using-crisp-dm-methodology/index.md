@@ -183,7 +183,6 @@ This is one of the most important steps while building a data science project. T
 Visualization can be done by plotting graphs, performing statistical analysis, or by predicting the next possible outcome. To learn more about visualization, please refer to [this](/engineering-education/matplotlib-visualization-python/) article on Matplotlib visualizations and [this](/engineering-education/getting-started-with-data-visualization-using-pandas/) article on Pandas visualization.
 
 ### Conclusion
-
 In conclusion, we have learned various steps in CRISP-DM methodology and understood it by analyzing a case study. This can be understood better only by using this methodology for your next data science project.
 
 ![Summary](/engineering-education/data-mining-using-crisp-dm-methodology/summary.PNG)
@@ -199,7 +198,6 @@ To summarize:
 - We also analyzed a case-study to understand this methodology
 
 ### Further reading
-
 - [Course on Udacity](https://www.udacity.com/course/problem-solving-with-advanced-analytics--ud976)
 - [PPT on CRISP-DM](https://paginas.fe.up.pt/~ec/files_0405/slides/02%20CRISP.pdf)
 - [Article by KDNuggets](https://www.kdnuggets.com/2014/10/crisp-dm-top-methodology-analytics-data-mining-data-science-projects.html)
