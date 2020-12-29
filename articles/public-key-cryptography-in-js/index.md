@@ -1,4 +1,3 @@
-Public key cryptography, also known as `asymmetric cryptography` is an encryption system comprising of public and private key pairs. The private keys are known to the sender and receiver of information only whereas the public keys are disseminated widely. It solves the [key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3) brought about by symmetric cryptography.
 
 #### Prerequisites
 - Have [Node.js](https://nodejs.org/en/) installed on your computer.
@@ -17,7 +16,7 @@ Public key cryptography, also known as `asymmetric cryptography` is an encryptio
 - [Platforms that employ public key cryptography](#platforms-that-employ-public-key-cryptography)
 
 ### Introduction
-Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is one of the methods of cryptography. In this method, there is the public and private key. The public key is known widely whereas the private key is secret to a communicating pair. When a pair wants to communicate, the sender encrypts the message with the public key of the recipient to come up with the ciphertext. When the recipient receives the message, he or she decrypts the message using his or her private key. The key is not transported individually, it is encoded in the ciphertext. This eliminates the [Key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3)
+Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is also known as `asymmetric cryptography`. It is one of the methods of cryptography. In this method, there is the public and private key. The public key is known widely whereas the private key is secret to a communicating pair. When a pair wants to communicate, the sender encrypts the message with the public key of the recipient to come up with the ciphertext. When the recipient receives the message, he or she decrypts the message using his or her private key. The private key of the sender, and  the public key of the receiver are encoded in the ciphertext. This eliminates the [Key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3)
 
 ### Algorithms using public-key cryptography
 
@@ -93,9 +92,9 @@ function davidEncrypting(){
 ```
 
 From above:
-1. A one-time code for verification.
-1. Got a  plain text from David.
-1. Composed ciphertext using `nacl` library.
+1. We generate a one-time code for verification.
+1. We get a  plain text from David.
+1. We compose ciphertext using `nacl` library.
 
 The message to be sent to the recipient as per the library is:
 - Ciphertext.
@@ -128,7 +127,7 @@ From above, we are decoding the message using the ciphertext, one-time code, Dav
 In public-key cryptography, the public key is disseminated widely. This means that an attacker may get the public key of another party. If party A is communicating with party B. An attacker may impersonate himself or herself such that when party A is sending a message to party B, it does not reach party B first, it first reaches him or her. The attacker  then modifies the message and sends the modified message to party B. When party B decides to reply, the message is again sent to the attacker who modifies the message and sends the modified message to party A. In such a situation, the integrity of the message is not preserved. This is a major threat to public-key cryptography.
 
 ### Using pre-computed keys
-To curb the above threat, we use the pre-computed keys. Here, while encrypting, instead of using the public key of the other party which could be impersonated, we use a shared key. A shared key is a special combination key of the recipient's public key and the sender's secret key. 
+To curb the above threat, we use the pre-computed keys. Here, while encrypting and decrypting, instead of using the public key of the other party which could be impersonated, we use a shared key. A shared key is a special combination key of the recipient's public key and the sender's secret key. 
 
 #### David encrypting the message
 ```javascript
@@ -158,10 +157,10 @@ function davidEncrypting(){
 
 From above:
 
-1. David computes a shared key based on Viktoria's public key and his secret key.
-1. David computes a one-time code.
-1. Get a plain text from David.
-1. Compute the ciphertext using the plain text, one-time code, and David's shared key.
+1. We compute a shared key based on Viktoria's public key and David's secret key.
+1. We generate a one-time code.
+1. We get a plain text from David.
+1. We compute the ciphertext using the plain text, one-time code, and David's shared key.
 
 The message to be sent to the recipient comprises:
 
@@ -194,9 +193,9 @@ Hey!!, our communication is now much secure
 
 From above:
 
-1. Viktoria gets her shared key.
-1. Viktoria decodes her message using: ciphertext, one-time code, and her shared key.
-1. Encode the message to `UTF8` so that it can be human-readable.
+1. We get Viktoria's shared key.
+1. We decode Viktoria's message using: the ciphertext, one-time code, and her shared key.
+1. We encode the message to `UTF8` so that it can be human-readable.
 
 ### Maintaining Public keys
 
