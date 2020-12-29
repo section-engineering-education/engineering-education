@@ -1,15 +1,15 @@
 ### Introduction
-All user’s interaction with an Android application is via the user interface (UI). Therefore, knowing the fundamentals of the android application’s user interface is very essential. The user interface of an android application is made up of a collection of views and view groups. This article goes through commonly used views, view groups, and the attributes associated with them.
+All user’s interaction with an Android application is via the user interface (UI)  <cite>[User interface](https://www.studytonight.com/android/introduction-to-views)<cite>. Therefore, knowing the fundamentals of the android application’s user interface is very essential. The user interface of an android application is made up of a collection of views and view groups <cite>[User interface](https://www.programmersought.com/article/47124971866/)<cite>. This article goes through commonly used views, view groups, and the attributes associated with them.
 
 #### Prerequisites
-To follow through this article, you’ll need to:
+You will need the following to follow through this article:
 - Have [Android Studio](https://developer.android.com/studio) installed.
-- Have basic knowledge of building Android applications.
+- Have a basic understanding of building Android applications.
 
 #### Views
-A view is a rectangular block on the screen used to create UI components. It refers to the `android.view.View ` class, which is the base class for all GUI components.
+A view is a rectangular block on the screen used to create UI components. It refers to the `android.view.View ` class, which is the foundation class of all views for GUI elements.
 
-The attributes `android:layout_width` and `android:layout_height` is mandatory for every view and view group. They can take two forms that are `wrap_content`(adjusts height and width to the content) and `match_parent`(adjusts height and width to the full size of the parent container). They can also take specific density pixel values(dp/dip)
+The attributes `android:layout_width` and `android:layout_height` is mandatory for every view and view group. They will take two types that display attributes of wrap-content(adjust height and width to the content) and match-parent(adjust height and width to the maximum size of the parent container). They can also take specific density pixel values(dp/dip).
 
 Some of the commonly used views in android are:
 
@@ -19,7 +19,7 @@ Some of the commonly used views in android are:
 - ImageView
 
 **TextView**
-This view is for displaying text. We can also use it with other views. For example, when creating forms, it can be used alongside the `EditText` view to mention information required from the user.
+This view is for displaying text. It is used with other views. For example, when creating forms, it can be used alongside the `EditText` view to mention information required from the user.
 
 Example of `TextView` in XML:
 ```Xml
@@ -34,19 +34,19 @@ Example of `TextView` in XML:
 
 ![Output screen](/engineering-education/android-views-and-viewgroups/screenshot-text-view.png)
 
-First, we open the tag with `<`and type `TextView`, indicating that we are creating a `TextView` that will get displayed by the app. The same format will be used in the other views and viewgroups we'll discuss.
+We open the view with the tag with `<`and type `TextView`, to indicate that we are creating a `TextView` that will get displayed by the app. The same structure is used in the other views and viewgroups we'll discuss.
 
-Now, let's see what the attributes stated above do:
+let's define the attributes stated above:
 
-- `android:gravity=”center”` – It is used to define the direction of the contents of a view. In this, our content “Hello world” will be aligned at the center.
+- `android:gravity=”center”` – This attribute defines the direction of the contents in a view. In this, our content “Hello world” will be aligned at the center.
 - `android:text=” hello world”` – This attribute specifies the text to display. "hello world" will be the text displayed.
-- `android:textColor=”#df3e4c”` – This attribute is used to set the color of the text. `"#df3e4c"` is a color code that can be accessed from material design websites.
+- `android:textColor=”#df3e4c”` – The color of the text is set by this attribute. `"#df3e4c"` is a color code that can be accessed from material design websites.
 - `android:textSize=”20sp”` – This attribute is used to set the text size. Scale pixel(sp) is for text size scaled by the user's font performance. Density pixel(dp) is used for everything else.
 
-**NOTE:** Android provides many different attributes that can be applied to manage various properties. Thus, the user is not limited to the above only.
+**NOTE:** Android provides many different attributes that can be applied to manage various properties <cite>[Android attributes](https://www.xspdf.com/resolution/50853945.html)<cite>. Therefore, the developer is not limited to the above only.
 
 **EditText**
-It is a widget that allows the user to enter text. The `android:inputType` attribute is not really a must since it has a default value of text.
+It is a widget that allows the user to enter text. The `android:inputType` attribute is not a must since it has a default value of text.
 
 Example of `EditText` in XML:
 ```Xml
@@ -65,9 +65,9 @@ The attributes we have stated above will be broken down as follows:
 
 - `android:hint=” Enter your Name”` - It is used to display the hint when the view is empty. The user will see the hint as “Enter your Name”.
 - `android:textColor=”#de4f3e” ` - It is used to set the color of the text.
-- `android:textColorHint=”#de4f3e” ` - It is used to set the color of the hint text.
+- `android:textColorHint=”#de4f3e” ` - This attribute sets the hint text's color.
 - `android:inputType=”text” `-It is used to specify the type of input that the view should accept.
-- `android:maxLength=”10”` - Specifies the maximum number of characters that the view should accept. In this case, it only accepts 10 characters.
+- `android:maxLength=”10”` - Defines the maximum digit of characters that should be accepted by the view. In this instance, it only accepts 10 characters.
 
 **Button**
 It is a user interface feature that contains a text or an icon that the user can tap or click to act. It extends `TextView`.
@@ -106,16 +106,16 @@ Example of `ImageView` in XML:
 ```
 ![Output screen](/engineering-education/android-views-and-viewgroups/screenshot-image-view.png)
 
-The attributes are defined as follows:
+The attribute above is defined as follows:
 
-`android:src=”@drawable/ic_campaign” />` - Sets a drawable as the content of this `ImageView`.
-A drawable resource is a general term for a graph that can be drawn on the screen and can be retrieved by adding attributes such as `android:drawable` and `android:icon` to another XML resource.
+`android:src=”@drawable/ic_campaign” />` - Sets the drawable as the `ImageView` content.
+A drawable resource is a general term for a graph that can be drawn on the screen and can be retrieved by adding attributes such as `android:drawable` and `android:icon` to another XML resource <cite>[drawable resource](http://web.archive.org/web/20201119081656/https://developer.android.com/guide/topics/resources/drawable-resource.)<cite>.
 
 Android also provides more views such as Spinners, `CheckBox` and `RadioButtons` for more user input
 Output screen.
 
 #### ViewGroups
-A `ViewGroup` is a view that holds other views. The View group is the base class for containers, templates and views. Views use `LayoutParams` that serves to inform the parent class how to lay them out. For an easier understanding of viewgroups, we'll use the views we discussed to illustrate how we can align each of them in the same viewgroup. Some of the layout parameters take boolean value i.e. "true" or "false".
+A `ViewGroup` is a view that holds other views <cite>[viewgroups](https://www.xspdf.com/resolution/52346774.html.)<cite>. Views use `LayoutParams` that serves to inform the parent class how to lay them out. For an easier understanding of viewgroups, we'll use the views we discussed to illustrate how we can align each of them in the same viewgroup. Some of the layout parameters take boolean values i.e. "true" or "false".
 
 Some of the commonly used `Viewgroups` are:
 - RelativeLayout
@@ -171,13 +171,13 @@ Example of `RelativeLayout` in XML:
 
 The attributes are defined as follows:
 
-- `android:layout_alignParentEnd="true"` - It makes the end edge of this view match the end edge of the parent when the boolean value is true. In this case, the `EditText` view will align to the end edge of the parent.
-- `android:layout_alignParentEnd="true"` - True, makes the end edge of the button view match the end edge of the parent.
-- `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the button view match the bottom edge of the parent.
-- `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the `ImageView` match the bottom edge of the parent.
+- `android:layout_alignParentEnd="true"` - It makes the end edge of this view match the end edge of the parent end when the boolean value is true. In this case, the `EditText` view will align to the end edge of the parent .
+- `android:layout_alignParentEnd="true"` - True, makes the end edge of the button view match the end edge of the parent end.
+- `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the button view match the bottom edge of the parent bottom.
+- `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the `ImageView` match the bottom edge of the parent bottom.
 
 **LinearLayout**
-Views are arranged in a linear format either vertically or horizontally. `LinearLayout` children are stacked one by one, so no matter how large they are, a vertical list will only have one child per row and a horizontal list will only be one row long.
+Views are arranged in a linear format either vertically or horizontally. `LinearLayout` children are stacked one by one, so no matter how large they are, a vertical list will only have one child per row and a horizontal list will only be one row long <cite>[LinearLayout](https://stackoverflow.com/questions/64747509/android-layout-0dp-shows-suspicious-size-error)<cite>.
 
 Example of `LinearLayout` in XML:
 
@@ -221,11 +221,11 @@ Example of `LinearLayout` in XML:
 ![Output screen](/engineering-education/android-views-and-viewgroups/screenshot-linear-layout.png)
 
 The attributes above can be defined as follows:
--`android:gravity="center"`-  This controls how linear layout aligns all the views it contains. In this case, the views will align at the center.
--`android:orientation="vertical"` - This determines the arrangement direction. We use "vertical" for a column" and "horizontal" for a row. In this case, the views are arranged in a column.
+-`android:gravity="center"`-  This controls how it positions all the views it contains in the viewgroup. In this case, the views will align at the center.
+-`android:orientation="vertical"` - This determines the arrangement direction. We use "vertical" for a column" and "horizontal" for a row. In this instance, the views are aligned in a column.
 
 **ConstraintLayout**
-It allows developers to position and size widgets in a flexible way. One of the fundamental building blocks of layout formation in `ConstraintLayout` is relative positioning. This allows you to position a given view relative to another one. A view will restrict to the horizontal and vertical axes. The general idea is to constrain a specific side of a widget to another side of some other widget.
+It allows developers to position and size widgets in a flexible way <cite>[ConstraintLayout](https://www.xspdf.com/resolution/54152766.html)<cite>. One of the fundamental building blocks of layout formation in `ConstraintLayout` is relative positioning <cite>[ConstraintLayout](https://www.techtravelhub.com/guide-on-android-layouts)<cite>. This enables you to place a given view relative to another one. A view will restrict to the horizontal and vertical axes. The general idea is to constrain a specific side of a widget to another side of some other widget.
 
 Example of `ConstraintLayout` in XML:
 
@@ -290,9 +290,9 @@ Example of `ConstraintLayout` in XML:
 ```
 ![Output screen](/engineering-education/android-views-and-viewgroups/screenshot-constraint-layout.png)
 
-The attributes are defined as follows:
+The attributes above are defined as shown below:
 
-- `android:id="@id/textView"` - The `android:id` attribute lets you specify a unique resource identifier for every view. In this case the resource identified is a `TextView`.
+- `android:id="@id/textView"`-This attribute allows you to define for each view a specific resource identifier. In this case the resource identified is a `TextView`.
 - `android:layout_marginTop="20dp"` - Sets the distance from top between the constraints to 20dp
 - `app:layout_constraintEnd_toEndof="parent"` - This attribute constraints the end of the `TextView` to an end of another view which in this case is the parent.
 - `app:layout_constraintStart_toStartof="parent"` -  This attribute constraints the start of the `TextView` to the start of another view which in this case is the parent.
@@ -339,15 +339,15 @@ The attributes are defined as follows:
 ```
 ![Output screen](/engineering-education/android-views-and-viewgroups/screenshot-frame-layout.png)
 
-The attributes above can be defined as follows:
+The attributes above are defined as follows:
 - `android:layout_marginTop="20dp` - Specifies extra space at the top of a view. Hence, the extra space is set to "20dp"
-- `android:layout_gravity="center"` - Controls how frame layout aligns the view it contains. The value you set affects both horizontal and vertical alignment of the child view within a single row or column. In this case, the view will be aligned at the center.
+- `android:layout_gravity="center"` - Controls how frame layout aligns the view it contains. Inside a single column or row, the value you set influences the horizontal and vertical orientation of the child's view. In this instance, the view will be aligned at the center.
 
 Android also provides more viewgroups such as `GridLayout` and `TableLayout` for more user input
 Output screen.
 
 #### Conclusion
-In this article, we've gone through creating views and viewgroups. We have also seen some of the attributes associated with our views and viewgroups, where they are used and what they are used for. This helps developers build applications with a better user experience.
+In this article, we've looked at creating views and viewgroups. We have also seen some of the attributes associated with our views and viewgroups, where they are used and what they are used for. This helps developers build android applications with a better user experience.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
