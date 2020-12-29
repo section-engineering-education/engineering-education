@@ -17,7 +17,7 @@ Public key cryptography, also known as `asymmetric cryptography` is an encryptio
 - [Platforms that employ public key cryptography](#platforms-that-employ-public-key-cryptography)
 
 ### Introduction
-Cryptography refers to the encoding and decoding of messages so that to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is one of the methods of cryptography. In this method, there is the public and private key. The public key is known widely whereas the private key is secret to a communicating pair. When a pair wants to communicate, the sender encrypts the message with the public key of the recipient to come up with the ciphertext. When the recipient receives the message, he or she decrypts the message using his or her private key. The key is not transported individually, it is encoded in the ciphertext. This eliminates the [Key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3)
+Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is one of the methods of cryptography. In this method, there is the public and private key. The public key is known widely whereas the private key is secret to a communicating pair. When a pair wants to communicate, the sender encrypts the message with the public key of the recipient to come up with the ciphertext. When the recipient receives the message, he or she decrypts the message using his or her private key. The key is not transported individually, it is encoded in the ciphertext. This eliminates the [Key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3)
 
 ### Algorithms using public-key cryptography
 
@@ -41,18 +41,18 @@ For this article, we shall use TweetNaCL.js to implement the concept of public-k
 First and foremost we will install the dependencies to use in the application, you can use `npm` or `yarn`.
 
 ```bash
-    npm install tweetnacl tweetnacl-util
+npm install tweetnacl tweetnacl-util
 ```
 
 or 
 
 ```bash
-    yarn add tweetnacl tweetnacl-util
+yarn add tweetnacl tweetnacl-util
 ```
 
 #### Forming a puzzle 
 
-For us to implement the solution, we need first to come up with a puzzle. We have two communicating pairs, David and Viktoria. The concept is that, when David is sending a message to Viktoria he encrypts it using Viktoria's public key. When Viktoria receives it, she decrypts it with her private key. When she decides to reply to the message, she encrypts her message using David's public key, and on David receiving the message, he decrypts it using his private key.
+For us to implement the solution, we need first to come up with a puzzle. We have two communicating pairs, David and Viktoria. The concept is that, when David is sending a message to Viktoria, he encrypts it using Viktoria's public key. When Viktoria receives it, she decrypts it with her private key. When she decides to reply to the message, she encrypts her message using David's public key, and on David receiving the message, he decrypts it using his private key.
 
 #### Importing libraries
 ```javascript
@@ -119,7 +119,7 @@ function viktoriaDecrypting(message){
 Output
 
 ```bash
-    Hello there Viktoria
+Hello there Viktoria
 ```
 
 From above, we are decoding the message using the ciphertext, one-time code, David's public key, and Viktoria's secret key. The message is then encoded to `UTF8` so that it can be human-readable.
@@ -189,7 +189,7 @@ function viktoriaDecrypting(message){
 Output
 
 ```bash
-    Hey!!, our communication is now much secure
+Hey!!, our communication is now much secure
 ```
 
 From above:
