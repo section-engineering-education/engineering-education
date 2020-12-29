@@ -154,7 +154,6 @@ Data types are so much related to variables and many programmers tend to confuse
 Data types are classified into various types:
 > 
 
-
 | Data types |      size     |  Explanation                          |                         
 |----------  |:-------------:|--------------------------------------  |
 |  byte      |    1 byte     | stores whole numbers from -128 to 127  |
