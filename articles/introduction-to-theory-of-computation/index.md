@@ -150,3 +150,7 @@ Good understanding of the Theory of Computation helps programmers and developers
 - [Theory of Computation](https://www.geeksforgeeks.org/introduction-of-theory-of-computation/)
 - [Computability Theory](https://www.sciencedirect.com/topics/mathematics/computability-theory)
 - [Complexity Theory](https://en.wikipedia.org/wiki/Computational_complexity_theory)
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+
