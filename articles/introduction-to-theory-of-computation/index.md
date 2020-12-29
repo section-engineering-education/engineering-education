@@ -102,19 +102,19 @@ The running time of an algorithm varies with the inputs and usually grows with t
 
 **Measuring Complexity**
 
-It involves analysis of the algorithm to determine how much time it takes to solve a problem. This is know as Time complexity.
+It involves analysis of the algorithm to determine how much time and space it takes to solve a problem. This is know as Time complexity and Space complexity respectively.
 
-To evaluate the time complexity of an algorithm, a focus is made on the relative rate of growth of the time taken to solve the problem as the size of the input grows. We measure an algorithm's time requirement as a function of the input size(n) when determining the time complexity of an algorithm. The time complexity is expressed using the Big Oh(O) notation where only the highest order term in the algebraic expression is considered while ignoring constant values.
+To evaluate the time and space complexity of an algorithm, a focus is made on the relative rate of growth of the time taken and the space taken to solve the problem as the size of the input grows. We measure an algorithm's time and space requirement as a function of the input size(n). The time complexity and spacce complexity is expressed using the Big Oh(O) notation where only the highest order term in the algebraic expression is considered while ignoring constant values.
 
 The common running times when analyzing algorithms are:
 
-* O(1) - Constant time, where the running time is not affected by the size of the input(n).
+* O(1) - Constant time or constant space regardless of the input size.
 
-* O(n) - Linear time, where time requirement increases uniformly with the size of the input.
+* O(n) - Linear time or linear space, where the requirement increases uniformly with the size of the input.
 
-* O(log n) - Logarithmic time.
+* O(log n) - Logarithmic time, where the requirement increases in a logarthimic nature.
 
-* O(n^2) - Quadratic time.
+* O(n^2) - Quadratic time, , where the requirement increases in a quadratic nature.
   
 
 This analysis is based on 2 bounds that can be used to define the cost of each algorithm. They are:
