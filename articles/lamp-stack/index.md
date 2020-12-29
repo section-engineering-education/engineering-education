@@ -34,6 +34,26 @@ All the layers of the stack are dependent on each other. They work together to p
 - **Scripting Layer**
 **PHP:** The fourth and final layer is the scripting layer, which uses a programming language for scripting that implements computerized tasks. PHP is one of the default web programming languages used in the LAMP stack. The scripting layer unites all the other components to make a web application work perfectly. The codes written in scripting languages are dynamic and embedded in HTML. It also helps to extract the data from the third layer, i.e., the database layer. The data is then sent back to the user as "search results" through the second layer, i.e., the web server. Web applications are operated within this part of the LAMP stack. The other scripting languages used for web programming are **Perl** and **Python**.
 
+##### Layer-by-Layer stack operation 
+
+A thorough look at the LAMP arrangement tells us how the components work together. 
+
+Let’s assume we search **“Sports news”** in the browser. It all begins when the user requests for web pages(about sports news) from their browser(Chrome, Firefox, Safari to name a few). These requests are received by the webserver(Apache in this case). The request is transferred to PHP by Apache. As discussed above, PHP, which is embedded into the HTML code, manages dynamic pages, tracks user statistics, and analyzes their data. The code written in the PHP file is executed and the data from the database are sent back together as HTML pages. These HTML pages are shown as search results in web browsers. Let us consider another instance where we need “Yesterday’s Sports news”. Websites that provide news have an archive system where the old data is stored. In this case, the archive system is stored in the MySQL database. If the user prompts yesterday's news, PHP runs the file code again and interacts with MySQL to retrieve the old data. Then it is sent back to the browser through the webserver. Lastly, all these functions need one main component to work with - the operating system. The operating system acts as the backbone of any stack(Linux in this case). A simple flowchart designed below may help you to understand the working of the lamp stack easily.
+
+![Layer-by-Layer stack operation](/engineering-education/lamp-stack/flowchart.png)
+
+##### Usage of Lamp Stack
+
+1. Stack variants are based on the different types of components used but LAMP arrangement is most suitable for building web architecture because of its scalability and flexibility.
+2. LAMP Stack provides web frameworks for some popular websites such as Joomla and Drupal. 
+3. The Wikimedia Foundation uses customized LAMP Stack for hosting its services and to improve its site infrastructure.
+4. Because of its vast community and availability of many source codes it provides a secure framework.
+5. The LAMP Stack can be upgraded by adding other FOSS. This helps to improve the site performance and enhance its security. For example,
+    - Varnish Cache, a web accelerator. 
+    - OpenSSL, to secure communication networks.
+    - ModSecurity (or Modsec), a web-based firewall application.
+    - OAuth, a protocol used to invoke authorization from the user.
+
 ##### Conclusion
 
 Web applications such as Wikipedia and WordPress are built using the LAMP framework. However, Wikipedia uses a personalized structure of LAMP, which includes an add-on - the [**LVS(Linux Virtual Server)**](https://en.wikipedia.org/wiki/Linux_Virtual_Server). LVS handles the network traffic distribution systematically by diverting the incoming HTTP request to the available server. This helps in the smooth transmission of data and reduces network latency. All the four components of the LAMP stack are FOSS(Free and Open Source Software), so money does not need to be spent on proprietary software. Also, the source code of FOSS can be shared and reused for developmental purposes. This helps to make modifications and enhancements to improve the websites. The LAMP framework is so stable that even after personalizing the stack in favor of our needs, it works smoothly. This makes the LAMP stack ideal for web application development.
