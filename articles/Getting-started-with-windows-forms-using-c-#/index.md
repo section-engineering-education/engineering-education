@@ -4,32 +4,31 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/
 title: Getting Started with Windows Forms Using C#
-description: This tutorial will go over the basics of Windows forms using C# and Visual Studio.
+description: This tutorial will go over the basics of Windows forms using C# and Visual Studio. We will create a basic calculator using windows forms. 
 author: mohamed-alghadban
-date: 2020-12-24T00:00:00-16:00
+date: 2020-12-29T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/hero.jpg
-    alt: inheritance example image c#
+    alt: Windows Forms C# example image 
 ---
-
-Windows forms allow the programmers to create a graphical user interface (GUI) that allows the user to interact with the program visually. 
+Windows forms allow the programmers to create a graphical user interface (GUI) that allows the user to interact with the program visually. According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), it provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio.
 <!--more-->
+Functionality like the drag-and-drop placement of controls makes it easier for the programmers to build the GUI.
 
-According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), It provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio. Functionality like the drag-and-drop placement of controls makes it easy for the programmers to build the GUI.
-
-With *windows forms*, you can make basic applications like a calculator to high-level applications such as a library database management application that requires a connection to the database from the application.
+With *windows forms*, you can make basic applications, from a simple calculator to high-level applications such as a library database management application that requires a database connection.
 
 ### Prerequisites
-1. A basic understanding of C# programming language.
-2. Visual studio installed on your system.
+Before we begin it would help the you as the reader to have the following:
+- A basic understanding of C# programming language.
+- Visual studio installed on your system.
 
 If you don't have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/).
 
 ### Make a new project
-In this tutorial, we will make a simple calculator. Make a new project by opening the Visual Studio, then click on File -> New -> Project -> Visual C# -> Windows desktop and choose Windows Forms App (.NET Framework).
+In this tutorial, we will make a simple calculator. We can start by opening a new project in Visual Studio, click on File -> New -> Project -> Visual C# -> Windows desktop and choose Windows Forms App (.NET Framework).
 
 ### ToolBox
 The *Toolbox* window provides you with all the controls that will help you build the form. To display the Toolbox click on View -> Toolbox, or you can press Ctrl+Alt+X. To use one of the controls double click on one of them or simply drag and drop it.
@@ -42,7 +41,7 @@ The *Properties* window is used to edit the properties of the form or the contro
 ### Building the form with the controls
 First of all, let's start with the form and change the text to My calculator and the name to Cal_Form using the properties window.
 
-**Note**: Changing the name of a control or the form will only change the name of the object inside the code. This will make it easier to figure out which button or which textbox you are using or editing right now. On the other hand, changing the text of a control will only change what is displayed to the user.
+**Note**: Changing the name of a control or the form will only change the name of the object inside the code. This will make it easier to figure out which button or which textbox you are using or editing at that moment. On the other hand, changing the text of a control will only change what is displayed to the user.
 
 ![Form_name_text](/engineering-education/getting-started-with-windows-forms-using-c-sharp/Form_name_text.png)
 
@@ -75,7 +74,7 @@ This is how the form should look like after adding all the controls.
 
 ### Let's start coding
 
-Let's start with the numbers. When you click a button, the value of the button must get appended to the text box's value, which we will use later for calculating. 
+Let's start with the numbers. When you click a button, the value of the button must get appended to the text box's value, that we will use later for calculating. 
 
 **Note**: You have to double click on each control to start coding inside its method. Do this with all the following controls.
 
@@ -144,7 +143,7 @@ private void Div_Click(object sender, EventArgs e)
 }
 ```
 
-Let's deal with the `Sqrt()` & the `Pow()` methods. We will also use the `try` & `catch` blocks to prevent the user from doing invalid operations.
+Let's deal with the `Sqrt()` & the `Pow()` methods. We will also use the `try` & `catch` blocks to prevent the user from doing any invalid operations.
 
 **Note:** In order to use the Pow & Sqrt methods you need to import the Math class as follows `using static System.Math;`.
 
@@ -200,17 +199,17 @@ Let's change some colors and fonts using the properties window.
 
 ![Final_touch_example](/engineering-education/getting-started-with-windows-forms-using-c-sharp/Final_touch_example.png).
 
-1. Change the BackColor of the form from Apearance -> BackColor -> Grey.
-1. Change the BackColor of all the buttons from Apearance -> BackColor -> Black.
-1. Set the font of all the buttons from Apearance -> Fontstyle -> Bold, size -> 12 & change the Forecolor to white.
-1. Set the font of the Output.Text from Apearance -> Fontstyle -> Bold, size -> 14 & from Behavior Enabled -> False.
+- Change the BackColor of the form from Apearance -> BackColor -> Grey.
+- Change the BackColor of all the buttons from Apearance -> BackColor -> Black.
+- Set the font of all the buttons from Apearance -> Fontstyle -> Bold, size -> 12 & change the Forecolor to white.
+- Set the font of the Output.Text from Apearance -> Fontstyle -> Bold, size -> 14 & from Behavior Enabled -> False.
 
 Remember that you can change the fonts & colors to suit your taste!
 
 ![Final_look](/engineering-education/getting-started-with-windows-forms-using-c-sharp/Final_look.png).
 
 ### Conclusion
-In this tutorial, we created a basic calculator using windows forms. We have learned how easy it is to build various applications with it using *Controls*.
+In this tutorial, we created a basic calculator using windows forms. We have learned how easy it is to build various applications when using *Controls*.
 
 This is not over! We will build more applications using windows forms in the upcoming tutorials. Don’t forget to test out the code to fully understand how it works.
 
