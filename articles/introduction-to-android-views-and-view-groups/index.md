@@ -1,5 +1,5 @@
 ### Introduction
-All user’s interaction with an Android application is via the user interface (UI)  <cite>[User interface](https://www.studytonight.com/android/introduction-to-views)<cite>. Therefore, knowing the fundamentals of the android application’s user interface is very essential. The user interface of an android application is made up of a collection of views and view groups <cite>[User interface](https://www.programmersought.com/article/47124971866/)<cite>. This article goes through commonly used views, view groups, and the attributes associated with them.
+All user’s interaction with an Android application is via the user interface (UI) <cite>[User interface](https://www.studytonight.com/android/introduction-to-views)<cite>. Therefore, knowing the fundamentals of the android application’s user interface is very essential. The user interface of an android application is made up of a collection of views and view groups <cite>[User interface](https://www.programmersought.com/article/47124971866/)<cite>. This article goes through commonly used views, view groups, and the attributes associated with them.
 
 #### Prerequisites
 You will need the following to follow through this article:
@@ -171,10 +171,10 @@ Example of `RelativeLayout` in XML:
 
 The attributes are defined as follows:
 
-- `android:layout_alignParentEnd="true"` - It makes the end edge of this view match the end edge of the parent end when the boolean value is true. In this case, the `EditText` view will align to the end edge of the parent .
-- `android:layout_alignParentEnd="true"` - True, makes the end edge of the button view match the end edge of the parent end.
-- `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the button view match the bottom edge of the parent bottom.
-- `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the `ImageView` match the bottom edge of the parent bottom.
+- `android:layout_alignParentEnd="true"` - It makes the end edge of this view match the end edge of the parent when the boolean value is true. In this case, the `EditText` view will align to the end edge of the parent.
+- `android:layout_alignParentEnd="true"` - True, makes the end edge of the button view match the end edge of the parent.
+- `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the button view match the bottom edge of the parent.
+- `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the `ImageView` match the bottom edge of the parent.
 
 **LinearLayout**
 Views are arranged in a linear format either vertically or horizontally. `LinearLayout` children are stacked one by one, so no matter how large they are, a vertical list will only have one child per row and a horizontal list will only be one row long <cite>[LinearLayout](https://stackoverflow.com/questions/64747509/android-layout-0dp-shows-suspicious-size-error)<cite>.
