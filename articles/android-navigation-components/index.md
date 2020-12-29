@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/android-navigation-components/
 title: Basics of Android Navigation Components
-description: This article goes through the basics of Andriod navigation components, we will look at how to implement a navigation graph manually and how to navigate to different destinations. It will also look on how to pass data between destinations using `safeArgs` and a bit of deep linking.
+description: This article goes through the basics of Android navigation components, we will look at how to implement a navigation graph manually and how to navigate to different destinations. It will also look on how to pass data between destinations using `safeArgs` and a bit of deep linking.
 author: linus-muema
 date: 2020-12-29T00:00:00-12:00
 topics: []
