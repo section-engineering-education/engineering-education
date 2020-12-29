@@ -99,6 +99,7 @@ Computation is done by various computation models depending on the nature of the
 ### Complexity Theory
 This theoretical computer science branch is all about studying the cost of solving problems while focusing on resources (time & space) needed as the metric.
 The running time of an algorithm varies with the inputs and usually grows with the size of the inputs.
+
 **Measuring Complexity**
 
 Involves algorithm analysis to determine how much time it takes while solving a problem.(Time complexity) 
@@ -108,10 +109,13 @@ As T(n),the time complexity is expressed using the [Big O](https://en.wikipedia.
 
 The common running times when analyzing algorithms are:
 
-* O(1) - Constant time, where the running time is not affected by the size of the input(n)
-* O(n) - Linear time, where time requirement increases uniformly with the size of the input.
-* O(log n) - Logarithmic time
-* O(n^2) - Quadratic time
+* O(1) - Constant time or constant space regardless of the input size.
+
+* O(n) - Linear time or linear space, where the requirement increases uniformly with the size of the input.
+
+* O(log n) - Logarithmic time, where the requirement increases in a logarthimic nature.
+
+* O(n^2) - Quadratic time, , where the requirement increases in a quadratic nature.
   
 
 This analysis is based on 2 bounds that can be used to define the cost of each algorithm. They are:
@@ -122,9 +126,11 @@ This analysis is based on 2 bounds that can be used to define the cost of each a
 
 The major classifications of complexities include:
 
-1. *Class P:* It is devised to capture the notion of efficient computation. Are problems that can be solved in time O(nk) for some constant k where n is the input size to the problem.
+1. *Class P:* The class P consists of those problems that are solvable in polynomial time. Are problems that can be solved in time O(n^k) for some constant k where n is the input size to the problem.
+It is devised to capture the notion of efficient computation.
 
 2. *Class NP:* It forms the class of all problems whose solution can be achieved in polynomial time by non-deterministic Turing machine.
+NP is a complexity class used to classify decision problems.
 
 A major contributor to the complexity theory is the complexity of the algorithm used to solve the problem. Among several algorithms used in solving computational problems are those whose complexity can range from fairly complex to very complex. The more the complexity of an algorithm, the more the computational complexity of a given problem.
 
@@ -147,3 +153,7 @@ Good understanding of the Theory of Computation helps programmers and developers
 - [Theory of Computation](https://www.geeksforgeeks.org/introduction-of-theory-of-computation/)
 - [Computability Theory](https://www.sciencedirect.com/topics/mathematics/computability-theory)
 - [Complexity Theory](https://en.wikipedia.org/wiki/Computational_complexity_theory)
+- [Time Complexity](https://en.wikipedia.org/wiki/Time_complexity)
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+
