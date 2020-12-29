@@ -1,8 +1,7 @@
 # Creating a Django Hello World App Using PostgreSQL Database
-> Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
-> <cite>[https://www.djangoproject.com]<cite>
+> Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source <cite>[Django](https://www.djangoproject.com)<cite>
 
-> PostgreSQL is a powerful, open-source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads.
+> PostgreSQL is a powerful, open-source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads. <cite>[PostgreSQL](https://www.postgresql.org/about/) <cite>
 
 ### Prerequisites
 To follow this tutorial you need to have
