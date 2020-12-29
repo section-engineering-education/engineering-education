@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/variables-in-javascript/hero.jpg
     alt: Variables in JavaScript Image
 ---
-Variables are a way for programmers to name a value to reuse it, update it, or keep track of it. In this article, we will go through naming variables, declaring them, and initializing them. We are also going to learn about the differnet scopes of the variables to ensure that we completely understand about them.
+Variables are a way for programmers to name a value in order to reuse it, update it, or keep track of it. In this article, we will go through naming variables, declaring variables, and initializing variables. We will also learn about the differnet scopes of the variables to ensure that we completely understand about them.
 <!--more-->
 
 ### Prerequisites
@@ -24,37 +24,25 @@ To follow along with this tutorial, you need a web browser. You can get Google C
 We will use the JavaScript console to execute the JavaScript code in this tutorial. To open it in Google Chrome, press `Ctrl + Shift + J` on Windows and Linux and `Cmd + Option + J` on Mac OS.
 
 ### Understanding the scope of variables
-Scope determines the accessibility of variables from different parts of your code.
-Javascript has two types of scopes.
+Scope determines the accessibility of variables from different parts of your code. Javascript has two types of scopes.
 
 1. Global scope
 
 2. Local scope
 
-**1. Global scope**
-
+#### Global scope
 When a variable is *globally scoped*, it means it is available from anywhere in your program. Declaring a variable outside a function or a block outside a funciton leads to it being globally scoped.
 
-**2. Local scope**
+#### Local scope
+> In JavaScript, a block is denoted by curly braces. The space between the curly brackets is known as a block. For example, the `if...else, do...while` and `for` loop statements create blocks.
 
 When variables are declared within a function or a block, they are locally scoped. It means that they can only be accessed inside the function or the block they were declared in.
 
 Local scope variables are divided into:
 
-- Function scoped variables
+- Function scoped variables: A function scoped variable means that the variable defined within a function will not accessible from outside the function.
 
-- Block scoped variables
-
-#### Function scoped variables
-
-A function scoped variable means that the variable defined within a function is not accessible from outside the function.
-
-#### Block scoped variables
-
-In JavaScript, a block is denoted by curly braces. The space between the curly brackets is known as a block.
-For example, the `if...else, do...while` and `for` loop statements create blocks.
-
-When a variable is block-scoped, it means that it exists only inside the block where it was defined.
+- Block scoped variables: A block scoped variable means that the variable defined within a block will not accessible from outside the block. A block can reside inside a function, and a block scoped variable will not be available outside the block even if the block is inside a function.
 
 ### Naming Variables In JavaScript
 Before you start declaring variables, you should learn how to name them. Below are some of the rules that you should follow. Failing to follow these rules will cause an error.
@@ -90,8 +78,7 @@ Declaring and initializing a variable at the same time is also possible using th
 var favouriteThing = "Icecream!";
 ```
 
-Declaring two or more variables in a single statement is also possible.
-Each declaration is separated by a comma (`,`).
+Declaring two or more variables in a single statement is also possible. Each declaration is separated by a comma (`,`).
 
 Example:
 
@@ -99,7 +86,7 @@ Example:
 var favouriteThing = "Icecream!", bestMovie = "Code Eight";
 ```
 
-The `var` keyword is used to declare a function-scoped variable and a globally-scoped variable. 
+The `var` keyword is used to declare function-scoped variables and globally-scoped variables. 
 
 If you use `var` inside a block, the variable will not be block scoped. It will either be function scoped or globally scoped depending upon where the block is present. 
 
@@ -134,11 +121,9 @@ console.log(exe); // Uncaught ReferenceError: exe is not defined
 In the above example, the `exe` variable only exists inside the block, and referencing it outside the block will cause an error `Uncaught ReferenceError: exe is not defined`.
 
 ### Declaring variables using the keyword  `const`
-The difference between the `const` and other keywords used to declare variables is that a variable declared using the keyword `const` must be initialized immediately with a value, and that value **can't be redeclared**. 
+A variable declared using the keyword `const` must be initialized immediately with a value, and that value **can't be redeclared**. In other words, using the `const` keyword lets you declare constants that cannot be changed later once you've declared them.
 
-Using the `const` keyword lets you declare constants that should not be changed in your code.
-
-`const` keyword is used to declare block scope variables.
+Variables declared using  the `const` keyword are block scoped.
 
 Example:
 
@@ -152,8 +137,5 @@ The error: `Uncaught TypeError: Assignment to constant variable`, informs you th
 ### Conclusion
 In summary, we have learned about variables and how they are declared and used in JavaScript. We have gone through different types of variable scopes.
 
-If you are a beginner, this may not be very clear, but you will get there with practice.
-
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
-
