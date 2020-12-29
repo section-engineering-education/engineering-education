@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/hugging-face/
-title: HuggingFace - An Overview
+title: HuggingFace Library - An Overview
 description: In this article we will explore the HuggingFace library in depth and explain the various libraries that they offer. HuggingFace transformers support the two popular deep learning libraries, TensorFlow and PyTorch. 
 author: lalithnarayan-c
 date: 2020-12-29T00:00:00-11:00
