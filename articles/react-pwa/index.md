@@ -1,11 +1,11 @@
 ### Introduction
-In this tutorial, we will create a React Todo Progressive Web App. A progressive web app refers to an enhanced web application having the same capabilities as a native platform-specific application by utilizing the emerging browser APIs. They are intended to be fast, reliable, and engaging.
+In this tutorial, we will create a React Todo Progressive Web App. A progressive web app refers to an enhanced web application having the same capabilities as a native platform-specific application by utilizing the emerging browser APIs. The Progressive Web Apps are intended to be fast, reliable, and engaging.
 
 ### Prerequisites
 1. Knowledge of the [JavaScript programming language](https://www.w3schools.com/js/DEFAULT.asp).
 2. Basics of React library.Check documentation [here](https://www.reactjs.org).
 3. A basic knowledge of [NPM](https://www.npmjs.com/).
-4. A code editor, I will be using [VS Code](https://code.visualstudio.com/download)
+4. A code editor, I will use [VS Code](https://code.visualstudio.com/download)
 
 
 ### Getting started
@@ -51,7 +51,7 @@ README.md
 yarn.lock
 ```
 Our React code will be in the `src` folder. Inside this folder, 
-go ahead and delete the `logo. svg` and remove everything in both `App.css` and `App.js` files.
+delete the `logo. svg` and remove everything in both `App.css` and `App.js` files.
 
 
 ### Creating UI components
@@ -104,7 +104,7 @@ export default Form;
 The code above uses functional components alongside React hooks. Hooks are functions that let you have state and other lifecycle patterns from function components.
 We are using the `useState` hook to return two values in an array. The first value is the state, and the second value is the function to update the state. We have named the destructured values as `inputText` and `setInputText`.
 Inside the form, we are binding the input tag to an event. When the state of the form changes, The method `inputTextHandler` is invoked and updates the state to the current input value by calling the `setInputText` function.
-The form is a controlled component that will track the `inputText`. The `submitTodoHandler` is bound on the form when a button is clicked that will invoke the `addTodo` function. The `addTodo` was passed down as props from the `App` component. The `setInputText` inside the `submitTodoHandler` will simply reset the form.
+The form is a controlled component that will track the `inputText`. The `submitTodoHandler` is bound on the form when a button is clicked that will invoke the `addTodo` function. We passed the `addTodo` down as props from the `App` component. The `setInputText` inside the `submitTodoHandler` will simply reset the form.
 We now need to add this component in our parent `App` component and pass the function `addTodo`.
 Below is the `App.js` file.
 ```javascript
@@ -133,7 +133,7 @@ export default App;
 ### Creating the TodoList and Todo Components
 You need to create a new file named `TodosList.js` inside the components folder.
 This is the component that acts as a container to the list of the todo items.
-The state is held in the App component and passed to the TodoList as props.
+The state is in the App component and passed to the TodoList as props.
 Before creating the TodoList component, the App component has its state, so below is the entire code for the `App.js` file:
 A Todo component will represent a single todo item for each row
 with buttons to mark it as completed and delete it. The TodoList will be the container for the list of todos available.
@@ -183,7 +183,7 @@ You can install the `uuid` library by executing the following command in your te
 npm install uuid
 ```
 ### The TodoList Component
-The `TodoList` is receiving `todos` with an array of objects as the todos and while `setTodos` will be used to update the todos.
+The `TodoList` is receiving `todos` with an array of objects as the todos and while `setTodos` will update the todos.
 We are destructuring to grab all props in the `TodoList` component. We now need to create this `TodoList`.
 
 Go into your components folder and create a new file named `TodoList.js`.
@@ -225,7 +225,7 @@ export default TodoList;
 
 We are mapping through the todos and returning a new Todo component as the todo item.
 The `removeTodo` passes an `id` that uniquely identifies the `todo` in our list. Whatever todo that does not match the provided `id` is filtered and stored in the state using `setTodos`.
-We will use the `completeTodo` method to toggle the completed property state and apply a strike-through styling if the component is marked as complete. 
+We will use the `completeTodo` method to toggle the completed property state and apply a strike-through styling if the todo is marked as complete. 
 Let us now create the `Todo` component.
 
 ### The Todo component
@@ -329,8 +329,8 @@ service workers, and also installing it on the user's device screen.
 
 
 ### Register service worker
-A service worker is a script that runs in the background of the browser. 
-It is responsible for network intercepts from requests as well as managing caching for offline availability.
+A service worker is a script that runs in the browser's background. 
+It handles network intercepts from requests and managing caching for offline availability.
 This is where we need to focus on that `public` folder.
 Inside our `public` folder, open the index.html file. 
 Below the file, add the following code. The code below will be inside a script tag.
@@ -345,8 +345,8 @@ Below the file, add the following code. The code below will be inside a script t
       }
 ```
 In the above code, we are checking if our browser supports service workers.
-If this returns true, we will go ahead and register a service worker that points to the file named `serviceWorker.js`. 
-Now our service worker is registered in the background. To create the worker, go ahead and create the file `serviceworker.js` inside your `public` directory.
+If this returns true, we register a service worker that points to the file named `serviceWorker.js`. 
+Now that our service worker is registered in the background. To create the worker, create the file `serviceworker.js` inside your `public` directory.
 The `serviceworker.js` file will have the following code.
 
 ```javascript
@@ -391,12 +391,12 @@ self.addEventListener("activate",(e)=>{
 })
 ```
 We are starting with the install step. At this step, we are trying to cache some static assets that will be available
-offline. This returns a promise to install the service worker when all assets are cached.
+offline. This returns a promise to install the service worker when we've cached our assets.
 The activate listener is where we manage our old caches. 
 The `CACHE_NAME` variable will help us fetch resources from the cache.
-The above code will now cache and fetch the URL from our cache if we are offline. The offline.html file is used as the fallback markup file when there is no cache.
-We defined three events: The fetch event is used in the installation of the service worker.
-Our second event will be listening for a network request. The third event is used to activate the service worker.
+The above code will now cache and fetch the URL from our cache if we are offline. The offline.html file is the fallback markup file when there is no cache.
+We defined three events: We use The fetch event in the installation of the service worker.
+Our second event will listen for a network request. The third event is used to activate the service worker.
 The self references this keyword of the global service worker itself. Check the code above.
 
 ### The Public folder
@@ -491,7 +491,7 @@ We will now add this in the `manifest.json`.
 ### Performance of the App
 I have used lighthouse to generate an audit report:
 Our App scores 89/100 on performance.
-Note that this will not pass the HTTPS audit in the development environment. So if hosting is needed, make sure the production web-server supports HTTPS.
+Note that this will not pass the HTTPS audit in the development environment. So if we need hosting, make sure the production web-server supports HTTPS.
 Here is the final version of the App:
 
 
@@ -505,4 +505,4 @@ The cache will make it available for offline use.
 You can interact with the deployed app on [netlify](https://infallible-brahmagupta-cdcafd.netlify.app/)
 
 ### Summary
-In summary, we learned how to create a Todo app using the React library, with awesome features such as React Hooks and functional components. We created a Form input and functionality to add todo tasks, mark them as complete and delete the todo tasks. We then explored some introduction to Progressive Web Apps and turned our Todo app into a PWA.
+In summary, we learned how to create a Todo app using the React library, with outstanding features such as React Hooks and functional components. We created a Form input and functionality to add todo tasks, mark them as complete and delete the todo tasks. We then explored some introduction to Progressive Web Apps and turned our Todo app into a PWA.
