@@ -56,9 +56,9 @@ from marshmallow_sqlalchemy import ModelSchema
 ```
 
 In the above section, we import all of the required modules that we will use in our application.
-`from flask import Flask` imports the Flask web module that we use to create an instance of the Flask web application.
-`from flask_sqlalchemy import SQLAlchemy` imports SQLAlchemy module which we use to connect to the database.
-`from marshmallow import fields` and `from marshmallow_sqlalchemy import ModelSchema` imports the modules that we will use to serialize Python objects.
+- `from flask import Flask` imports the Flask web module that we use to create an instance of the Flask web application.
+- `from flask_sqlalchemy import SQLAlchemy` imports SQLAlchemy module which we use to connect to the database.
+- `from marshmallow import fields` and `from marshmallow_sqlalchemy import ModelSchema` imports the modules that we will use to serialize Python objects.
 
 ### Project configuration
 In this section, we create an instance of the flask application, setup the database configurations and create a database object.
