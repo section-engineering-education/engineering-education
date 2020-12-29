@@ -1,13 +1,23 @@
-In this tutorial, we will create a fully working Restful API with flask and Mysql database. Restful APIs makes it possible to establish communication between the backend and the the frontend of mobile and web applications. Flask-SQLAlchemy is a Flask extension library that we will use to add SQLAlchemy to the flask project. SQLAlchemy is an Object Relational Mapper that provides access to SQL databases through python objects.
+In this tutorial, we will create a fully working Restful API with flask and Mysql database. Restful APIs make it possible to establish communication between the backend and the frontend of mobile and web applications. Flask-SQLAlchemy is a Flask extension library that we will use to add SQLAlchemy to the flask project. SQLAlchemy is an Object Relational Mapper that provides access to SQL databases through python objects.
 
 ### Prerequisites
 1. [Python 3.6](https://www.python.org/downloads/) and above installed on your computer.
 2. [Postman](https://www.postman.com/downloads/) installed on your computer.
 3. [Apache XAMPP](https://www.apachefriends.org/download.html) installed on your computer.
-4. Favourite code editor installed. I use [Pycharm community edition](https://www.jetbrains.com/pycharm/download/) which is free.
+4. Favourite code editor installed. I use [Pycharm community edition](https://www.jetbrains.com/pycharm/download/) that is free.
 5. Some knowledge of [Python](https://www.w3schools.com/python/) programming language. 
 
 ### Project setup
+Before we start creating our application, ensure you have `virtualenv` installed on your computer.
+To verify if `virtualenv` is installed on your computer, execute the below command.
+```bash
+$ virtualenv --version
+virtualenv 20.2.2 from /home/username/.local/lib/python3.8/site-packages/virtualenv/__init__.py
+```
+If you get an error executing the above command, run the below command to install `virtualenv` on your computer.
+```bash
+$ pip install virtualenv
+```
 On the terminal execute the below command to create the projects' working directory and move into that directory.
 ```bash
 $ mkdir flasktodo
