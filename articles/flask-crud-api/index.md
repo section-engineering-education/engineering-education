@@ -230,9 +230,7 @@ The above endpoint allows for a POST request and creates a new `Todo` in the dat
 
 - `data = request.get_json()` gets the data from the request body.
 
-- `@app.route('/api/v1/todo', methods=['POST'])
-
-` defines the URL to the endpoint and the HTTP method allowed for the endpoint.
+- `@app.route('/api/v1/todo', methods=['POST'])` defines the URL to the endpoint and the HTTP method allowed for the endpoint.
 
 **GET endpoint**
 
