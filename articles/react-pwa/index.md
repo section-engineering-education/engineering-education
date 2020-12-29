@@ -1,8 +1,8 @@
 ### Introduction
 In this tutorial, we are going to create a new React Todo application and turn it into a 
-progressive web app (PWA). You will be able to add a todo, mark it as complete and delete
-the todo item. We will use the React library for the application and add functionality
-to make it a PWA.
+progressive web app (PWA). A progressive web app refers to an enhanced web application having the same capabilities
+as a native platform-specific application by utilizing the emerging browser APIs. They are intended to be fast, reliable
+and engaging.
 
 ### Prerequisites
 1. Knowledge of the [JavaScript programming language](https://www.w3schools.com/js/DEFAULT.asp).
@@ -12,14 +12,14 @@ to make it a PWA.
 
 
 ### Getting started
-First, you will need to have Node installed on your computer. You can download the latest version [here](https://www.nodejs.org). The installed version of Node runtime comes pre-installed with a node package manager(npm).
+First, you should have Node.js installed on your computer. You can download the latest version [here](https://www.nodejs.org). The installed version of Node.js runtime comes pre-installed with a node.js package manager(npm).
 
-To confirm that Node has been installed, open the terminal and execute the below command:
+To confirm that Node.js has been installed, open the terminal and execute the below command:
 ```bash
     node --version
 ```
-This shows the version of Node running on your system confirming that Node has been installed.
-<br>
+This shows the version of Node.js running on your system confirming that Node.js has been installed.
+
 Execute the command below to verify if npm is setup and ready for use.
 ```bash
     npm --version
@@ -53,9 +53,8 @@ package.json
 README.md
 yarn.lock
 ```
-We can assume the `public/` directory for now and focus on the `src` folder where we will write most of our React code.
-The `package.json` file contains the package dependencies and some script configuration of the project.
-Go ahead and delete the `logo.svg` and remove everything in both `App.css` and `App.js` files.
+Our React code will be in the `src` folder. Inside this folder, 
+go ahead and delete the `logo.svg` and remove everything in both `App.css` and `App.js` files.
 
 
 ### Creating UI components
@@ -69,123 +68,33 @@ We shall have four functional components.
 
 ### Form component
 This is the component that will be used to add new todos.
-A user should be able to type in the form and have the state updated. The state will leave in the `App.js` file and passed to other components where it is needed. So I will first show you the code for our `App.js` and the state the Form component
-is taking as props before we create the Form component.
-```javaScript
+In your `src/` folder, create a new folder named `components`. Inside the `components` folder, you need to create a file named `Form.js`. 
+This is the code for the *Form.js*:
+
+```javascript
 import React,{useState} from 'react';
+import {v4 as uuidv4} from 'uuid';
 
-import Form from './components/Form';
-
-const App=()=>{
-
-  const [inputText,setInputText]=useState("");
-  
-  return (
-    <div>
-      <h1>TODO PWA</h1>
-      <Form setInputText={setInputText} inputText={inputText}/>
-    </div>
-  );
-}
-
-export default App;
-```
-This is the main App component. We are using functional components alongside React hooks. Hooks are functions that let you have state and other lifecycle patterns from function components. In this case, the `useState()` hook will
-be used for the state. The `useState` hook returns two values in an array. The first is the state, and the second value being the function to update it when the state changes.
-The second line of our code imports the Form component, which we will be creating in a moment. The Form component is mounted to the UI on the App component and the initial props attributes are passed down to the child component, in this case, our Form component. Now we will go ahead and create the Form component and utilize props from the App component.
-In your `src/` folder, create a new folder named `components`. Inside the `components` folder, you need to create a file named `Form.js`. This is the component that one will type in an item and later have it show on the to-do list.
-<br>
-
-```javaScript
-import React from 'react';
-
-const Form =({inputText,setInputText})=>{
+const Form =({addTodo})=>{
     
-const inputTextHandler=(e)=>{
-    setInputText(e.target.value)
-}
+    const [inputText,setInputText]=useState("");
 
-    return(
-        <form>
-            <input type="text" value={inputText} placeholder="Add Todo" onChange={inputTextHandler}/>
-            <button type="submit">
-                Add
-            </button>
-        </form>
-    );
-};
-
-export default Form;
-```
-So let us go through this, inside the form, we are binding the input tag to an event. On change of form state, The method `inputTextHandler` is invoked. Inside the method, we call the setInputText function that updates the inputText to the current state value.
-
-### Creating a Todo
-First, we need to add a new state inside the `App.js` file. This is the state set once the Add button is clicked. Note that this is the value that inputText current has. So we will add extra props to the Form component. Clicking the Add button will create the new to-do task and we store this in the todos array to be later used on the UI.
-Our code in the `App.js` file will now look like this:
-```javascript
-import React,{useState} from 'react';
-
-import Form from './components/Form';
-
-const App=()=>{
-
-  const [inputText,setInputText]=useState("");
-  const [todos,setTodos]=useState([]);
-  
-  return (
-    <div>
-      <h1>TODO PWA</h1>
-      <Form setInputText={setInputText} inputText={inputText} todos={todos} setTodos={setTodos} />
-    </div>
-  );
-}
-
-export default App;
-```
-
-The form can now be used to add new todos to the list. It is a **controlled** component,
-as the data is managed by React rather than the DOM.
-The to-do will be an object with structure like:
-```javascript
-    {
-      id:v4(),
-      task,
-      complete:false
+    const inputTextHandler=(e)=>{
+        setInputText(e.target.value);
     }
-```    
-The id is a unique identifier or key for a specific to-do task. I am using `uuid` libary to generate a unique id.
-You can install the `uuid` library by executing the following command:
-```bash
-npm install uuid
-```
-Our Form component has extra props passed to it, the todos and the setTodos that updates our todos array.
-Using destructuring we grab all props in the Form component.
-The submitTodoHandler method is binded to the Add button and invoked when a button is clicked to create the todo.
-This adds a new todo item by first copying initial todos if any exists using ES 2015 spread syntax.
-Now our Todo is created and the setInputText is called to simply reset the form.
+    const submitTodoHandler=(e)=>{
+        e.preventDefault();
+        if(!inputText){
+            return
+        }
+        addTodo({text:inputText,completed:false,id:uuidv4()});
+        setInputText("");
+    }
 
-This will be the code below:
-```javascript
-import React from 'react';
-import {v4 as uuidv4} from 'uuid'
-
-const Form =({setInputText,todos,setTodos,inputText})=>{
-    
-const inputTextHandler=(e)=>{
-    setInputText(e.target.value)
-}
-const submitTodoHandler=(e)=>{
-    e.preventDefault() // supress the default form behaviour
-    //create a new todoHandler
-    setTodos([
-        ...todos,{text:inputText,completed:false,id:uuidv4()}
-    ])
-    setInputText("") // clears the input form once the button is clicked
-}
     return(
-        <form>
+        <form onSubmit={submitTodoHandler}>
             <input type="text" value={inputText} placeholder="Add Todo" onChange={inputTextHandler}/>
-            <button type="submit" onClick={submitTodoHandler}>
+            <button type="submit" className="add-btn">
                 Add
             </button>
         </form>
@@ -195,34 +104,66 @@ const submitTodoHandler=(e)=>{
 export default Form;
 ```
 
-### Creating the Todo and TodoList
-A Todo component will be a card that holds the todo for each row. On the left will be the text and the right side of it will be the button to mark it as completed or delete. It will represent a single item on the row.
-The TodoList is the container for the list of todos available.
+The code above uses functional components alongside React hooks. Hooks are functions that let you have state and other lifecycle patterns from function components.
+We are using `useState` hook which returns two values in an array. The first value is the state, and the second value is the function to update the state. We have named the destructured values as `inputText` and `setInputText`.
+Inside the form, we are binding the input tag to an event. On change of form state, The method `inputTextHandler` is invoked and updates the state to the current input value by calling the `setInputText` function.
+The form is a controlled component that will track the `inputText`. We bind the form submission event with a method named `submitTodoHandler` that will call `addTodo` function when the event is triggered by clicking the *Add* button. The `addTodo` was passed down as props from the `App` component. The `setInputText` inside the `submitTodoHandler` will simply reset the form.
+We now need to add this component in our parent `App` component and pass the function `addTodo` to it.
+Below is the `App.js` file.
+```javascript
+import React,{useState} from 'react';
 
-Since our Todo component is a child of the TodoList component, We will first create the TodoList component.
+import Form from './components/Form';
 
-### TodoList component
+const App=()=>{
+
+  const addTodo= todo=>{
+          const newTodos=[todo,...todos];
+           setTodos(newTodos);
+       }
+  
+  return (
+    <div>
+      <h1>TODO PWA</h1>
+      <Form addTodo={addTodo}/>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### Creating the TodoList and Todo Components
 You need to create a new file named `TodosList.js` inside the components folder.
-This is the component that will have a list of to-do items.
+This is the component that acts as container to the list of the todo items.
 The state is held in the App component and passed to the TodoList as props.
 Before creating the TodoList component, the App component has its state, so below is the entire code for the `App.js` file:
-_App.js_
+A Todo component will represent a single todo item for each row. On the left will be the text and the right side of it will be the button to mark it 
+as completed and a button to delete it. The TodoList will be the container for the list of todos available.
+Since our Todo component is a child of the TodoList component, We will first create the TodoList component.
+First, we need to add todos state inside the `App.js` file. So we will add extra props to the Form component.
+The todos state is [lifted up](https://reactjs.org/docs/lifting-state-up.html) in the App component so that our `TodoList` will recieve it via the props pattern.
+The `App.js` file is now as follows:
+
 ```javascript
 import React,{useState} from 'react';
-import './App.css';
 
 import Form from './components/Form';
 import TodoList from './components/TodoList';
 
 const App=()=>{
 
-  const [inputText,setInputText]=useState("");
   const [todos,setTodos]=useState([]);
+
+  const addTodo= todo=>{
+          const newTodos=[todo,...todos];
+           setTodos(newTodos);
+       }
   
   return (
     <div>
       <h1>TODO PWA</h1>
-      <Form setInputText={setInputText} inputText={inputText} todos={todos} setTodos={setTodos} />
+      <Form addTodo={addTodo}/>
       <TodoList todos={todos} setTodos={setTodos}/>
     </div>
   );
@@ -231,62 +172,94 @@ const App=()=>{
 export default App;
 ```
 
-### Our TodoList
-Inside your components folder, create a new file named `TodoList.js`.
-This component simply receives todos object in an array, we then map through them and return a new Todo item.
+The todo will be an object with a structure like:
 ```javascript
-import React from 'react';
-import Todo from './Todo'
+    {
+      id:v4(),
+      task,
+      complete:false
+    }
+```    
+The id is a unique identifier or key for a specific todo task. I am using `uuid` libary to generate a unique id.
+You can install the `uuid` library by executing the following command in your terminal:
+```bash
+npm install uuid
+```
+### The TodoList Component
+The `TodoList` is recieving `todos` with array of objects as the todos and  while `setTodos` will be used to update the todos.
+Using destructuring we grab all props in the `TodoList` component. We now need to create this `TodoList`.
 
-const TodoList=({todos,setTodos})=>{
-    return(
-        <div className="todo-container">
-            <ul className="todo-list">
-                {todos.map((todo)=>(
-                    <Todo text={todo.text} completed={todo.completed} key={todo.id} todos={todos} todo={todo} setTodos={setTodos} />
-                ))}
-            </ul>
-        </div>
-    );
-}
+Go in your components folder and create a new file named `TodoList.js`.
+This `TodoList` component code is below:
+```javascript
+import React from "react";
+import Todo from "./Todo";
+
+const TodoList = ({ todos, setTodos }) => {
+  const completeTodo = (id) => {
+      let updatedTodos=todos.map(todo=>{
+          if(todo.id===id){
+              todo.completed=!todo.completed;
+          }
+          return todo;
+      })
+      setTodos(updatedTodos);
+  };
+  const removeTodo=(id)=>{
+    setTodos(todos.filter(todo=>todo.id!==id));
+  }
+
+  return (
+    <div className="todo-container">
+      <ul className="todo-list">
+        {todos.map((todo) => (
+          <Todo key={todo.id}
+            todo={todo}
+            completeTodo={completeTodo} 
+            removeTodo={removeTodo}/>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default TodoList;
 ```
-### The Todo
-The component receives the destructured todos. On the left of the todo is the item and on the right are the buttons
-to delete and mark the item as completed. deleteHandler is the method bound to the delete button to delete a single
-todo by its id. With ES 2015 higher-order array methods, the filter method is applied to well, filter out the item out of the array that does not equal the id i.e the item that matches the id is will not go through the new returned array.
-Note the new returned array is our updated todos from the setTodos function.
-The completeHandler method in the Check button toggles the completed property and applies a strike-through if the component is marked as completed. It will check if the completed property is true and change its class property to
-style it accordingly.
-The Todo returns a `div` containing the todo item and the buttons.
-_Todos.js_
+
+To create a todo, we are mapping through the todos and returning a new Todo component as the todo item.
+The `removeTodo` passes an `id` to uniquely identify the `todo` in our list. Whatever todos that do not match the provided `id` are filtered and stored in the state using `setTodos`.
+We will use `completeTodo` method to toggle the state of the completed property state and apply a strike-through if the component is marked as complete. This boolean will be used to apply the appropiate class in our styles.
+Let us now create the `Todo` component.
+
+### The Todo component
+You need to add a new file and name it `Todo.js` in the components folder.
+We created the functions that perform the complete and delete operations in our `TodoList` component. We now need to destructure
+the props and bind them to the *Check* button for completed tasks and *Delete* buttons.
+Clicking the the *Check* button will invoke the `HandleComplete` that will call the function `completeTodo` passing the `id`.
+The `HandleDelete` method will call the function `removeTodo` and filter out the todo by its `id`.
+Check the code below:
+
 ```javascript
 import React from 'react';
 
-const Todo=({text,completed,todos,todo,setTodos})=>{
-    const deleteHandler=()=>{
-        setTodos(todos.filter(item=>item.id!==todo.id))
+const Todo=({todo,completeTodo,removeTodo})=>{
+    
+    const HandleComplete=()=>{
+        completeTodo(todo.id);
     }
-    const completeHandler=()=>{
-        setTodos(todos.map(el=>{
-            if(element.id==todo.id){
-
-
-                return{
-                    ...element, completed:!completed
-                }
-            }
-            return el
-        }))
+    const HandleDelete=()=>{
+        removeTodo(todo.id);
     }
+
     return(
         <div>
-            <li>
-                {text}
+            <div className="todo">
+            <li className={todo.completed?"checked":""}>
+                {todo.text}
             </li>
-            <button onClick={completeHandler}>Check</button>
-            <button onClick={deleteHandler}>Delete</button>
+            <button onClick={HandleComplete} className="check-btn">{todo.completed?"Uncheck":"Check"}</button>
+            <button className="delete-btn" onClick={HandleDelete}>Delete</button>
+            </div>
         </div>
     );
 }
@@ -294,9 +267,8 @@ const Todo=({text,completed,todos,todo,setTodos})=>{
 export default Todo;
 ```
 
-
 ### Styling
-This tutorial assumes you know CSS, so I have included the entire CSS here: 
+This tutorial assumes you know basics of CSS styling, so I have some basic styles here: 
 ```css
 body{
     background-color: rgb(72, 72, 247);
@@ -304,7 +276,6 @@ body{
     max-width: 100vw;
     max-height: 100vh;
 }
-
 
 input{
     padding:1.3rem 5rem;
@@ -321,7 +292,6 @@ button{
     margin-right: 5px;
 
 }
-
 
 button:hover{
     transform: scale(0.98);
@@ -349,27 +319,24 @@ button:hover{
 
 ### The App so far
 Your app so far should look like this:
-<br>
 
 ![React-PWA-image](/engineering-education/react-pwa/react-pwa1.png)
 ![React-PWA-image2](/engineering-education/react-pwa/react-pwa2.png)
 
 
-<br>
-
 ### Adding functionality to make it a PWA
 In this part, we will now convert our application into a progressive
 web App.
-A progressive web app refers to an enhanced web application having the same capabilities
-as a native platform-specific application.
 Our application will add functionalities such as running the application offline, caching assets by registering
 service workers, and also installing it on the user's device screen.
-<br>
+
 
 ### Register a service worker
 A service worker is a script that is run by the browser in background off the main thread. 
-It is responsible for requests and intercepts as well as managing caching for offline availability.
-Inside our `public` folder, open the index.html. You need to put this inside scripts tag, now paste the following script:
+It is responsible for network intercepts from requests as well as managing caching for offline availability.
+This is where we need to focus on that `public` folder.
+Inside our `public` folder, open the index.html file. 
+Below the file, add the following code. You need to put this inside a script tag.
 
 ```javascript
       if("serviceWorker" in navigator){
@@ -380,11 +347,9 @@ Inside our `public` folder, open the index.html. You need to put this inside scr
         })
       }
 ```
-In the above code, we are checking if our browser supports service workers and registering a 
-service worker file named `serviceworker.js` if the condition is true.
-
-Go ahead and create the file `serviceworker.js` inside your `public` directory. This will have our custom code
-for a service worker.
+In the above code, we are checking if our browser supports service workers.
+If this returns true, we will go ahead and register a service worker that points to the file named `serviceWorker.js`. 
+Now our service worker is registered in the background and we need to create it. Go ahead and create the file `serviceworker.js` inside your `public` directory.
 The `serviceworker.js` file will have the following code.
 
 ```javascript
@@ -428,8 +393,11 @@ self.addEventListener("activate",(e)=>{
     )
 })
 ```
-The `CACHE_NAME` variable will help us fetch resources from the `CACHE`.
-The above code will now cache and fetch URL from our cache if we are offline. The `offline.html` file is used as the fallback markup file when no cache and the user is offline.
+We are starting with the install step. At this step, we are trying to cache some static assets that will be available
+offline. This returns a promise, when all are cached, the registered service worker becomes installed.
+The activate listener is where we manage our old caches. 
+The `CACHE_NAME` variable will help us fetch resources from the cache.
+The above code will now cache and fetch the URL from our cache if we are offline. The offline.html file is used as the fallback markup file when there is no cache and the user is offline.
 We defined three events: The fetch event is used in the installation of the service worker.
 Our second event will be listening for network requests while the third is used to activate the service worker.
 The self, which is JavaScript this keyword of the global service worker itself. Check the code above.
