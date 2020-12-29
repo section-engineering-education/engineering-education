@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/hugging-face/hero.jpg
     alt: HuggingFace transformers example image
 ---
-This article will go over an overview of the library and look at a few case studies using HuggingFace. HuggingFace has been gaining prominence in Natural Language Processing (NLP) ever since the inception of transformers. 
+This article will go over an overview of the HuggingFace library and look at a few case studies. HuggingFace has been gaining prominence in Natural Language Processing (NLP) ever since the inception of transformers. 
 <!--more-->
 Intending to democratize NLP and make models accessible to all, they have created an entire library providing various resources. Some of these resources include datasets, tokenizers, and transformers to perform NLP related tasks ranging from chatbots to question and answering systems. 
 
