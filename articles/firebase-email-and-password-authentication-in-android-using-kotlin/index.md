@@ -21,19 +21,19 @@ First, we need to create an Android project that we will use in the entire tutor
 You need to sign in to android studio in order to use services such as firebase. This is where the google account comes in.
 To sign in, click the icon at the top right corner.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_sign_in_icon.png "Android studio sign in step 1")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-sign-in-icon.png "Android studio sign in step 1")
 
 By clicking `Sign in` a browser window pops up and prompts you to select an account or create one for Android studio.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_sign_in_choose_account.png "Android studio sign in choose account")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-sign-in-choose-account.png "Android studio sign in choose account")
 
 A bunch of permissions is required for you to sign in.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_sign_in_permission.png "Android studio sign in permissions")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-sign-in-permission.png "Android studio sign in permissions")
 
 Allow the permissions to successfully sign in to Android studio. You can now access `Firebase` and `Google cloud platform` services via Android studio. In our case, we only need Firebase.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_sign_in_success.png "Android studio sign in success")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-sign-in-success.png "Android studio sign in success")
 
 Go back to Android studio and you'll see your email in the account section.
 
@@ -42,24 +42,24 @@ We need a firebase project that we'll eventually connect with our android app. T
 
 **1**. Open [Firebase](https://firebase.google.com), sign in with your Google account then head to `firebase console` by clicking the button at the top right corner.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_console1.png "Create firebase project")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-console1.png "Create firebase project")
 
 **2**. To create a new project click `Add project`. This involves three steps.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_create_project_step0.png "Create firebase project")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-create-project-step0.png "Create firebase project")
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_create_project_step1.png "Create firebase project")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-create-project-step1.png "Create firebase project")
 
 We start by giving a name to the project. Let's name it `Firebase-auth`. The project name shouldn't have spaces, instead, use a hyphen.
 Just below the name, is a unique id used to identify your project among the millions of firebase projects out there. Click the continue button.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_create_project_step2.png "Create firebase project step 2 of 3")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-create-project-step2.png "Create firebase project step 2 of 3")
 
 **3**. Since we're going to use Google analytics in our app, ensure that the analytics switch is checked. hit continue to proceed.
 
 Wait for project creation to finish up.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_create_project_finish_up2.png "Create firebase finish up 3 0f 3")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-create-project-finish-up2.png "Create firebase finish up 3 0f 3")
 
 Now our project is ready to be connected to our app.
 
@@ -76,29 +76,29 @@ This is a less complicated and straightforward method that does most of the work
 For simplicity purposes, we'll use this method.
 Launch firebase assistant by heading to `Tools` >> `firebase`
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_firebase_assistant1.png "launch firebase assistant")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-firebase-assistant1.png "launch firebase assistant")
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_firebase_auth1.png "connect  to firebase")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-firebase-auth1.png "connect  to firebase")
 
 Click `Authentication` >> `Email and password authentication`
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_connect_to_firebase1.png "connect  to firebase")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-connect-to-firebase1.png "connect  to firebase")
 
 Click `Connect to Firebase`. You'll be taken to the Firebase website and prompted to choose a project to connect with.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_choose_project_to_connect.png)
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-choose-project-to-connect.png)
 
 Choose the `Firebase-auth` we just created. By so doing, the `google-services.json` file is automatically downloaded into your project.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_connect_project2.png)
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-connect-project2.png)
 
 Click `Connect` and you'll see a message like the one below.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_project_connected_to_as.png)
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-project-connected-to-as.png)
 
 Go back to Android studio to finish up the setup.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_connected_fb_add_auth1.png "accept changes")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-connected-fb-add-auth1.png "accept changes")
 
 You can see a success notification at the bottom indicating that our app is now connected to firebase.
 
@@ -106,13 +106,13 @@ We're now in the final step of setting up Firebase authentication. Tap `Add fire
 
 Finally, this is what you should have on the Firebase assistant. You can confirm it by opening the `build.gradle` (app level) dependencies.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as_connected_fb_and_auth.png "connected firebase")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/as-connected-fb-and-auth.png "connected firebase")
 
 ### One more thing concerning firebase
 Since we want to use email and password authentication, we have to enable it in our project's console. To do that navigate to `Authentication` > `sign-in method` then enable email and password authentication. It should look like this.
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_enable_auth1.png "enable auth")
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_enable_auth2.png "enabled auth")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-enable-auth1.png "enable auth")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-enable-auth2.png "enabled auth")
 
 Congratulations! We have finished setting up Firebase authentication.
 
@@ -123,7 +123,7 @@ First of all, we need to keep our app organized. This is referred to as applicat
 
 It should appear like this
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/org_packages.png "organized packages")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/org-packages.png "organized packages")
 
 Next, we need to refactor `MainActivity.kt` and `activity_main.xml` to `HomeActivity.kt` and  `activity_home.xml` respectively. You can do this by right-clicking on it or by pressing `Shift + F6`. Drag and drop the `HomeActivity.kt` class into views.
 
@@ -143,7 +143,7 @@ Right-click on views and add two empty activities namely `CreateAccountActivity`
 Right-click extensions directory and select new kotlin file or class then select `object`. Set object's name to `Extensions`. Do the same thing on utils where you'll name the object as `FirebaseUtils`.
 It should look similar to this ;
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/org_complete.png "packages and directories")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/org-complete.png "packages and directories")
 
 ### Writing Code
 #### 1). Let's begin with the UI
@@ -679,11 +679,11 @@ Now we have a running app that can.
 - Manage the account (user)
 - Implement firebase APIs
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/app_three_in_one.png "create account / sign out / sign in")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/app-three-in-one.png "create account / sign out / sign in")
 
 When you open the users' section in the firebase console you'll find all signed-in users. Each user/account is given a unique id and the password is [hashed](https://firebaseopensource.com/projects/firebase/scrypt/).
 
-![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase_authenticated_users.png "firebase authenticated users")
+![image](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/firebase-authenticated-users.png "firebase authenticated users")
 
 ### Conclusion
 In this article, we've learned most of the best that Firebase offers particularly authentication. The project we created can be improved further for production apps and it'll still work fine. I can't wait to see what you'll build with Firebase authentication.
