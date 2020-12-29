@@ -4,7 +4,7 @@ status: publish
 published: false
 url: /engineering-education/let's-learn-about-osi-layer-model/
 title: Let's learn about OSI Layer Model
-description: In this article we will look at Linear Discriminant Analysis (LDA) theoretical concepts and look at its implementation from scratch using NumPy.
+description: In this article we will look at OSI layer model and know how it works.
 author: aju-tamang
 date: 2020-11-25T00:00:00-14:00
 topics: []
