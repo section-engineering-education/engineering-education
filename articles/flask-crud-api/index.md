@@ -71,7 +71,7 @@ db = SQLAlchemy(app)
 
 `app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<username>:<password>@localhost:
 <database port>/<database name>'
-` contains the information required to connect to our database. Our database username is `root` ,the password is ` ` ,the database port is `3306` and the database name is `todo`.
+` contains the information required to connect to our database. Our database username is `root` ,the password is an empty string ` ` ,the database port is `3306` and the database name is `todo`.
 
 On your computer start the XAMPP control panel, start the apache and MySQL servers then visit `http://localhost/phpmyadmin/index.php` in your browser and create a database with the name `todo`.
 
