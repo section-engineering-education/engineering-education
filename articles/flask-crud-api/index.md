@@ -124,15 +124,15 @@ db = SQLAlchemy(app)
 
 ```
 
-`app = Flask(__name__)` creates an instance of the flask web application.
-
-`app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<username>:<password>@localhost:
-
+- `app = Flask(__name__)` creates an instance of the flask web application.
+- `app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<username>:<password>@localhost:
 <database port>/<database name>'
-
 ` contains the information required to connect to our database. Our database username is `root` ,the password is an empty string ` ` ,the database port is `3306` and the database name is `todo`.
 
-On your computer start the XAMPP control panel, start the apache and MySQL servers then visit `http://localhost/phpmyadmin/index.php` in your browser and create a database with the name `todo`.
+On your computer start the XAMPP control panel, start the apache and MySQL servers.
+On your browser open `http://localhost/dashboard/` then `phpAdmin`, create a database with the name `todo` as shown below.
+
+![Creating database](/engineering-education/flask-crud-api/database.png)
 
 `db = SQLAlchemy(app)` creates an object of the SQLAlchemy and stores it in a variable `db`.
 
@@ -178,11 +178,11 @@ db.create_all()
 
 `Todo` model class has an id property which is used as the primary key.
 
-`db.create_all()` makes the application to create all the defined tables in the database.
+- `db.create_all()` makes the application to create all the defined tables in the database.
 
-`db.session.add(self)` adds the `Todo` instance into the SQLAlchemy database connection session.
+- `db.session.add(self)` adds the `Todo` instance into the SQLAlchemy database connection session.
 
-`db.session.commit()` executes all the database operations that are available in the session.
+- `db.session.commit()` executes all the database operations that are available in the session.
 
 ```python
 
@@ -356,6 +356,6 @@ The above endpoint allows for DELETE request deleting the `Todo` with the specif
 
 ### Conclusion
 
-Now that you have learned how to create CRUD API, add the `date_created` and `last_modified` fields to our `Todo` model. Consider using the `datetime` object from python `datetime`.
+Now that you have learned how to create CRUD API, add the `date_created` and `last_modified` fields to our `Todo` model. Consider using the `datetime` object from python `datetime` module when implementing the `date_created` and `last_modified` fields.
 
 Happy Coding.
