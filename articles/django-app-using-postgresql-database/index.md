@@ -1,7 +1,7 @@
-# Creating a Django Hello World App Using PostgreSQL Database
-> Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source <cite>[Django](https://www.djangoproject.com)<cite>
+### Creating a Django Hello World App Using PostgreSQL Database
+> Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open-source <cite>[Django](https://www.djangoproject.com)<cite>
 
-> PostgreSQL is a powerful, open-source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads. <cite>[PostgreSQL](https://www.postgresql.org/about/) <cite>
+> PostgreSQL is a powerful, open-source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads. <cite>[PostgreSQL](https://www.postgresql.org/about/)<cite>
 
 ### Prerequisites
 To follow this tutorial you need to have
@@ -19,7 +19,7 @@ Click on Enter to accept a default value. input the password that you provide du
  CREATE DATABASE helloworld;
  CREATE USER <yourname> WITH PASSWORD '<password>';
 ```
-Modifying few connections parameters for new database user. 
+Modifying a few connections parameters for the new database user. 
 ```bash 
 ALTER ROLE <yourname> SET client_encoding TO 'utf8';
 ALTER ROLE <yourname> SET default_transaction_isolation TO 'read committed';
@@ -27,36 +27,41 @@ ALTER ROLE <yourname> SET timezone TO 'UTC';
 ```
 Next, we have to grant our new user access to the database we created earlier.
 ```bash 
+
  GRANT ALL PRIVILEGES ON DATABASE helloworld TO <yourname>;
 ```
 
 ### Step - 2 creating a virtual environment using and installing necessary python package
 
-we will start by creating a folder for our project
+Let's start by creating a folder for our project
 ```bash 
+
  mkdir myproject 
  cd myproject
 ```
-creating a virtual environment and activate it.
+Let's create a virtual environment and activate it.
 ```bash 
 virtualenv env
 source venv/bin/activate
 ```
- installing django and psycopg2
+ Installing django and psycopg2
  ```bash
  pip install django psycopg2
  ```
   - psycopg2 is a popular PostgreSQL database adapter for python programming language.
   
-creating our Hello World Django project
+Let's create our Hello World Django project
 ```bash
  django-admin startproject django_app
 ```
-change your current directory into our Django project django_app
+
+Change your current directory into our Django project django_app
+
 ```bash
 cd hello_world
 ```
-creating a app in our django_app project
+Let's create an app in our django_app project
+> A Django application is a Python package that is specifically intended for use in a Django project. Django apps are reusable in different Django project. [Django](https://www.djangoproject.com)
 ```bash 
 django-admin startapp hello_world
 ```
@@ -74,7 +79,7 @@ INSTALLED_APPS = [
 ```
 
 ### Step 3 - set up your project to use PostgreSQL Database 
-navigate to django_app/settings.py
+Navigate to django_app/settings.py
 go to the DATABASE SECTION 
 ```python 
 DATABASES = {
@@ -84,7 +89,7 @@ DATABASES = {
     }
 }
 ```
-change the above code to this
+Change the above code to this
 
 ```python 
 DATABASES = {
@@ -98,18 +103,18 @@ DATABASES = {
     }
 }
 ```
-we changed the backend engine to use postgresql_psycopg2 instead of the default sqlite3.
+We changed the backend engine to use postgresql_psycopg2 instead of the default sqlite3.
 Where- NAME is the name of the database we created for our project,
      - USER is the database user we created during the database creation,
      - PASSWORD is the password to the database we created,
 
-Now let make sure our django project is working without errors.
+Now let's make sure our Django project is working without errors.
  
 ```python
 python manage.py makemigrations
 python manage.py migrate
 ```
-after running the above commands you will get something like this in your CLI
+After running the above commands you will get something like this in your CLI
 ```bash 
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, sessions
@@ -122,18 +127,18 @@ Running migrations:
   Applying auth.0012_alter_user_first_name_max_length... OK
   Applying sessions.0001_initial... OK
 ```
-To verify our django app is working run this command: 
+To verify our Django app is working run this command: 
 ```bash
 python manage.py runserver
 ```
-after running the above commands proceed to visit 127.0.0.1:8000
-if your app runs without errors you should get the below picture. 
+After running the above commands proceed to visit 127.0.0.1:8000
+If your app runs without errors you should get the below picture. 
 ![Django Homepage](/engineering-education/django-app-using-postgresql-database/django_webpage.jpg)
 Congratulations you configured Django to use a PostgresSQL.
 
-### Hello World in Django.
+### Hello World In Django.
 
-First let create a templates folder in our django_app/templates directory and create a index.html file. Your project directory should look like this.
+First, let create a templates folder in our django_app/templates directory and create an index.html file. Your project directory should look like this.
 ```
 --django_app
 | ---django_app
@@ -143,7 +148,7 @@ First let create a templates folder in our django_app/templates directory and cr
 | ---manage.py
 
 ```
-Let configure our app to make use of the templates folder. Head over to django_app/settings.py the TEMPLATES section.
+Let's configure our app to make use of the templates folder. Head over to django_app/settings.py the TEMPLATES section.
 ```python 
  TEMPLATES = [
     {
@@ -163,11 +168,12 @@ Let configure our app to make use of the templates folder. Head over to django_a
     },
 ]
 ```
-To make sure our django templates is now working let go me work you through this short steps
+To make sure our Django template is now working let's walk through these short steps
 
 * In **hello_world/views.py**
   
   ```python 
+
   from django.shortcuts import render
   
   def homepage(request):
@@ -187,18 +193,18 @@ To make sure our django templates is now working let go me work you through this
     ```
 
 
-* create a new python file in your app folder. 
+Let's create a new python file in your app folder. 
 **hello_world/urls.py**
-    ```python 
-    from django.urls import path
-    from django.urls import path 
-    from . import views
-    urlpatterns = [
-        path("", views.homepage, name="home"),
-    ]
-    ```
+```python 
+from django.urls import path
+from django.urls import path 
+from . import views
+urlpatterns = [
+    path("", views.homepage, name="home"),
+]
+```
 
-visit **127.0.0.1:8000** in your browser. you can see 
+Visit **127.0.0.1:8000** in your browser. you can see 
 
 # Hello World
 
