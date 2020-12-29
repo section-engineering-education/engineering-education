@@ -1,4 +1,4 @@
-In this tutorial, we will create a fully working Restful API with flask and Mysql database. Restful APIs makes it possible to establish communication between the backend and the frontend mobile and web applications, we will be using Flask-SQLAlchemy. Flask-SQLAlchemy is an extension python library for the flask web framework that adds SQLAlchemy to the flask project. SQLAlchemy is an Object Relational Mapper that provides access to SQL databases through python objects.
+In this tutorial, we will create a fully working Restful API with flask and Mysql database. Restful APIs makes it possible to establish communication between the backend and the the frontend of mobile and web applications. Flask-SQLAlchemy is a Flask extension library that we will use to add SQLAlchemy to the flask project. SQLAlchemy is an Object Relational Mapper that provides access to SQL databases through python objects.
 
 ### Prerequisites
 1. [Python](https://www.python.org/downloads/) installed on your computer.
