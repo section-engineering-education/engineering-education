@@ -1,4 +1,4 @@
-Flutter is a popular platform when it comes to the development of cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base. Flutter reduces development time and associated costs. Furthermore, developers can use widgets to create more flexible and interactive UIs. Incorporating Firebase in Flutter applications will enhance productivity significantly.
+Flutter is a popular platform when it comes to the development of cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base. Flutter reduces development time and associated costs. Furthermore, developers can use widgets to create a more flexible and interactive UIs. Incorporating Firebase in Flutter applications will enhance productivity significantly.
 
 ### Introduction
 Firebase helps developers in creating high-quality applications. It provides functionalities such as real-time database, cloud storage, authentication, and hosting. This tutorial focuses more on the real-time database. Firebase offers synchronization that ensures that all connected devices are notified whenever data changes. In this tutorial, we will be building a simple expense tracker application. It will allow individuals to store and retrieve a list of expenses. Let&#39;s get started.
@@ -31,7 +31,7 @@ Next, open your browser and navigate to the [Firebase](https://firebase.google.c
 
 ![project name](/engineering-educationimplementing-firebase-in-flutter/project-name.png)
 
-Add your flutter application to Firebase by clicking the android icon.
+Add your flutter application to Firebase by clicking on the android icon.
 
 ![add app](/engineering-educationimplementing-firebase-in-flutter/add-app.png)
 
@@ -62,7 +62,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: 'com.google.gms.google-services'
 ````
 
-After the project is created successfully, navigate back to the Firebase website, Realtime Database section, and create a new database.
+After the project is created successfully, navigate back to the Firebase console's realtime database section, and create a new database.
 
 ![create database](/engineering-educationimplementing-firebase-in-flutter/create-database.png)
 
@@ -77,7 +77,7 @@ In the `rules` section, ensure that you click on `test mode` rather than the `lo
 }
 ```
 
-We have now successfully set up Firebase and the flutter project. Let&#39;s design the UI.
+We have now successfully set up Firebase and the flutter project. Let's design the UI.
 
 ### 2. Creating UI.
 The app will have a simple user interface. It will allow a user to input a word or sentence and click on a button to save it to the Firebase database.
@@ -144,7 +144,7 @@ class MyApp extends StatelessWidget {
 ```
 
 ### 3. Storing data
-We will initialize a Firebase `databasereference` object and use it to store data.
+We will initialize a Firebase `databaseReference` object and use it to store data.
 
 ```dart
 final databaseRef = FirebaseDatabase._instance_.reference(); //database reference object
@@ -157,7 +157,6 @@ void addData(String data) {
 Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app.
 
 ### 4. Retrieving data
-
 For simplicity, we will retrieve and print out the data in the console. This is shown below.
 
 ```dart
@@ -240,7 +239,7 @@ class _HomePageState extends State<HomePage> {
 ```
 
 ### 5. Results
-When we click on the `Save to Database` button. The user input is stored in the `real-time database`, as shown.
+When we click on the Save to Database button. The user input is stored in the real-time database, as shown.
 
 ![results](/engineering-educationimplementing-firebase-in-flutter/firebaseresults.png)
 
@@ -252,5 +251,4 @@ The following items are also printed.
 We have successfully created a simple Flutter application that can store and retrieve records from the Firebase Realtime Database. You can, therefore, use this knowledge and skills to build more interactive applications.
 
 ### References
-
 [FlutterFire](https://firebase.flutter.dev/docs/overview/)
