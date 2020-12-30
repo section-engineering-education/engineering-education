@@ -20,19 +20,32 @@ Leave the **Server, Database, Port, Username** options empty, by clicking on the
 
 Click on Enter to accept a default value. input the password that you provide during PostgresSQL installation.
 
+### Creating Postgresql Database
+
+
 ```bash 
  CREATE DATABASE helloworld;
- CREATE USER <yourname> WITH PASSWORD '<password>';
 ```
-Modifying a few connections parameters for the new database user. 
+- The CREATE DATABASE command let us create a new database in PostgreSQL.
+```bash 
+CREATE USER <yourname> WITH PASSWORD '<password>';
+```
+- The CREATE USER command let create user for our database along with a password.
+
+
+Modifying a few connections parameters for the new database user.Afterwards, to speed up database operations. The efficiency in the database operation will ensure that the values do not have to be queried and set each time a connection is established. 
 ```bash 
 ALTER ROLE <yourname> SET client_encoding TO 'utf8';
 ALTER ROLE <yourname> SET default_transaction_isolation TO 'read committed';
 ALTER ROLE <yourname> SET timezone TO 'UTC';
 ```
+- In the first line we are setting the default encoding to UTF-8 expected by Django.
+- The second line we are also setting the default transaction isolation scheme to “read committed”, which blocks reads from uncommitted transactions. 
+- Lastly, By default Django timezone is UTC we are setting our Postgres database timezone to use UTC.
+
+
 Next, we have to grant our new user access to the database we created earlier.
 ```bash 
-
  GRANT ALL PRIVILEGES ON DATABASE helloworld TO <yourname>;
 ```
 
@@ -40,23 +53,28 @@ Next, we have to grant our new user access to the database we created earlier.
 
 Let's start by creating a folder for our project
 ```bash 
-
- mkdir myproject 
- cd myproject
+ mkdir myproject   #creating our project folder
+ cd myproject     #changing into our project folder directory
 ```
-Let's create a virtual environment and activate it.
+### Let's create a virtual environment and activate it.
 
 A virtual environment helps create an isolated python environment which will contain all that packages that our Django project will need. By activating our virtual environment, any Python packages installed will only be available to our Django project alone.
 ```bash 
-virtualenv env
+virtualenv venv
+```
+- The **virtualenv env** create a python virtual environment name **venv**.
+
+```bash 
 source venv/bin/activate
 ```
+- The above command activate the **venv** virtual environment.
 
  Installing django and psycopg2
  ```bash
  pip install django psycopg2
  ```
- psycopg2 is a popular PostgreSQL database adapter for python programming language.
+ - **pip** is the standard package manager for Python. **pip** is use to install python packages from the Python package index(PyPI). More on [pip](https://pip.pypa.io/en/stable/)
+ - psycopg2 is a popular PostgreSQL database adapter for python programming language.
   
 Let's create our Hello World Django project
 ```bash
@@ -73,8 +91,7 @@ Let's create an app in our django_app project
 ```bash 
 django-admin startapp hello_world
 ```
-We need to plug our hello_world app to our django_app to do this navigate to
-django_app/settings.py
+For our hello_world app to work we need to register the app in django_app project to do this navigate let navigate to the django_app/settings.py
 
 ```python 
 ...
@@ -82,12 +99,14 @@ INSTALLED_APPS = [
     ...
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hello_world',
+    'hello_world',  # registering the hello_world app
 ]
 ```
 
 ### Step 3 - set up your project to use PostgreSQL Database 
-Navigate to django_app/settings.py, in the DATABASE SECTION you see the  code snippets below
+SQlite is the default database that comes with Django, we need the to change our project database configuration settings to use PostgreSQL.
+
+Let's Navigate to django_app/settings.py, in the DATABASE SECTION you see the  code snippets below
 ```python 
 DATABASES = {
     'default': {
@@ -116,10 +135,14 @@ Where- NAME is the name of the database we created for our project,
      - PASSWORD is the password to the database we created,
 
 Now let's make sure our Django project is working without error 
+
 ```bash
 python manage.py runserver
 ```
-After running the above commands proceed to visit 127.0.0.1:8000
+- **manage.py** is a command-line utility that lets us interact with this Django project in various ways. The **manage.py** file is a python script which allows us to perform adminstartive tasks. Here in the above command  **python manage.py runserver** launch the development server in Django. 
+
+After running the commands proceed to visit ```http://127.0.0.1:8000 ``` in your browser.
+
 If your Django project runs without errors you should get the below picture. 
 ![Django Homepage](/engineering-education/django-app-using-postgresql-database/django_webpage.jpg)
 Congratulations you configured Django to use a PostgresSQL.
@@ -137,7 +160,7 @@ First, let create a templates folder in our django_app/templates directory and c
 
 ```
 
-The Templates folder is the display layer which handles User Interface of our Django project. 
+The Templates folder is the display layer which handles User Interface of our Django project which contains HTML, CSS and JavaScript files needed in a Django project. We can use a single template folder for our the entire project. or we can create a different template folder for each app in our django project. Since we only have one app which is our **helloworld** app, we will stick to using a single temlate folder for our project.
 
 Let's configure our app to make use of the templates folder. Head over to **django_app/settings.py** the TEMPLATES section. Django web framework comes with is own built-in template engine called the Django template language. For more information on [Django template langauage](https://docs.djangoproject.com/en/3.1/topics/templates/).
 ```python 
@@ -195,8 +218,9 @@ urlpatterns = [
     path("", views.homepage, name="home"), #mapping the homepage function
 ]
 ```
-The above code in our **urls.py** file maps ```homepage()``` in the **views.py** to **127.0.0.1:8000/**.
+The above code in our **urls.py** file maps ```homepage()``` in the **views.py** to **/**.
 For more information on visit [views and urls in Django](https://djangobook.com/mdj2-django-views/).
+
 
 Let's navigate to the index.html in our templates folder **temaplates/index.html**
 
@@ -213,11 +237,11 @@ Let's navigate to the index.html in our templates folder **temaplates/index.html
 </body>
 </html>
 ```
-Visit **127.0.0.1:8000** in your browser. you can see 
 
-# Hello World
+If the developemnt server is still running visit **http://127.0.0.1:8000** in your browser. else run the ```python manage.py runserver``` again. 
+![homepage](/engineering-education/django-app-using-postgresql-database/homepage.png)
 
-Congratulation you have created a Hello World App in Django.
+If you can see the above image congratulation you just created a Hello World App in Django.
 
 
 ### References
