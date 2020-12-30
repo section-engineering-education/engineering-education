@@ -204,6 +204,8 @@ The above endpoint allows for a POST request and creates a new `Todo` in the dat
 
 - `@app.route('/api/v1/todo', methods=['POST'])` defines the URL to the endpoint and the HTTP method allowed for the endpoint.
 
+The `POST` endpoint only allows for creating a single `Todo` at a time.
+
 **GET endpoint**
 
 ```python
