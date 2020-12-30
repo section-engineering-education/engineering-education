@@ -9,7 +9,7 @@ A spreadsheet is a computer program/application used to store data, analyze and 
 
 ##### Online/offline access
 
-Google offers most of the services online making them accessible from any part of the world. It allows the offline capability for some applications like Google spreadsheet to increases service availability. To turn on offline access navigate to Google Drive, click on Settings on the top right, and switch on the offline setting. To set a document available offline, navigate to Google Drive, right-click on it and turn on "Available offline".
+Google offers most of the services online, making them accessible from any part of the world. It allows the offline capability for some applications like Google spreadsheet to increases service availability. To turn on offline access, navigate to Google Drive, click on Settings on the top right, and switch on the offline setting. To set a document available offline, navigate to Google Drive, right-click on it, and turn on "Available offline."
 
 ![Offline Access](/engineering-education/google-sheet-advanced-features/offline-access.png)
 
@@ -23,7 +23,7 @@ Google Forms are customizable, and the data collected can be exported easily int
 
 ##### Develop web application
 
-Google offers a programming language called Google Apps Script that is available to enable spreadsheet data processing and to make it available to the public via web applications. Google App Script heavily uses JavaScript that is commonly used and thus makes it a very versatile language as it is flexible to use and can adapt to changes in technology. The language lets you read, update, and manipulate Google application data using scripts. Interfaces can also be built to help in providing feedback and collect user inputs. It also allows developers to tap into other applications service.
+Google offers a programming language called Google Apps Script that is available to enable spreadsheet data processing and make it open to the public via web applications. Google App Script heavily uses JavaScript that is commonly used and thus makes it a versatile language. It is flexible to use and can adapt to changes in technology. The language lets you read, update, and manipulate Google application data using scripts. Interfaces can also be built to help in providing feedback and collect user inputs. It also allows developers to tap into other applications service.
 
 
 ![Deploy web appliction](/engineering-education/google-sheet-advanced-features/deploy-web-app.png)
@@ -68,8 +68,8 @@ The application is offered for free with only Gmail email registration as a requ
 
 ##### Add-ons
 
-As one of the benefits of online shared applications, Google encourages developers to publish addons for the Google spreadsheet. The addons are hosted in the Google marketplace and serve various purposes ranging from data entry, manipulation, and analysis to display. Developers can read, edit, visualize, and format data as well as use Google App Script to access REST API directly. It is possible to create Menus, Sidebars, and custom dialogue using CSS and HTML. Custom functions and triggers are possible to develop and use.
-A good example of an add-on is Hunter which is for Google Sheet and helps in finding, organizing, and verifying professional email addresses. It also allows the pulling of email addresses given first name, last name, and the organization domain.
+As one of the benefits of online shared applications, Google encourages developers to publish add-ons for the Google spreadsheet. The add-ons are hosted in the Google marketplace and serve various purposes ranging from data entry, manipulation, and analysis to display. Developers can read, edit, visualize, and format data and use Google App Script to directly access the REST API. It is possible to create Menus, Sidebars, and custom dialogue using CSS and HTML. Custom functions and triggers are likely to develop and use.
+An excellent example of an add-on is Hunter, which is for Google Sheet and helps find, organize, and verify professional email addresses. It also allows pulling email addresses given first name, last name, and the organization domain.
 
 
 ![Add-on](/engineering-education/google-sheet-advanced-features/dev-addons.png)
@@ -77,15 +77,15 @@ A good example of an add-on is Hunter which is for Google Sheet and helps in fin
 
 ##### APIs support
 
-Application programming interfaces are essential for interacting with other applications/systems. Google spreadsheet can connect to Google docs, forms, and other Google products and perform data transfer or update periodically based on user request. Google App Script can work with many applications, thus forming a core point in achieving this functionality. There are defined methods in Apps Script to connect to external and internal applications like databases(MySQL, Google Cloud Storage, Ms. SQL, Oracle, etc), Google sheet user interface(UI) among others.
+Application programming interfaces are essential for interacting with other applications/systems. Google spreadsheet can connect to Google docs, forms, and other Google products and perform data transfer or update periodically based on user request. Google App Script can work with many applications, thus forming a core point in achieving this functionality. There are defined methods in Apps Script to connect to external and internal applications like databases(MySQL, Google Cloud Storage, Ms. SQL, Oracle, etc.), Google sheet user interface(UI).
 
 ##### G Suite (Google Workspace)
 
-G Suite was changed to Google Workspace. It is a collection of Google products that are marketed to offer service with the primary focus being collaboration and productivity. It allows organization administrators to manage their user emails and control the application and add-ons a user may install. The emails are therefore customized to the Google Workspace account. Besides, Google expands the limits from ordinary Gmail accounts to the plan the organization subscribes to.
+G Suite was changed to Google Workspace. It is a collection of Google products marketed to offer service, with the primary focus being collaboration and productivity. It allows organization administrators to manage their user emails and control the application and add-ons they may install. The emails are therefore customized to the Google Workspace account. Besides, Google expands the limits from ordinary Gmail accounts to the plan the organization subscribes to.
 
 #### Conclusion
 
-Developers have dynamically researched for better and easier ways to automate processes. In doing so, a lot comes into their knowledge. Analysis, data storage, and organization remain key considerations in modern-day activities. Google has continuously improved its spreadsheet to provide the best product a spreadsheet can have. The spreadsheet is readily available, cost-effective, offers real-time access, and helps organize and collaborate. The tool is supplemented with good services by Google, addons, mobile app, web app, etc.
+Developers have dynamically researched for better and easier ways to automate processes. In doing so, a lot comes into their knowledge. Analysis, data storage, and organization remain key considerations in modern-day activities. Google has continuously improved its spreadsheet to provide the best product a spreadsheet can have. The spreadsheet is readily available, cost-effective, offers real-time access, and helps organize and collaborate. The tool is supplemented with good services by Google, add-ons, mobile app, web app, etc.
 
 #### References
 
