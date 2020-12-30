@@ -1,10 +1,26 @@
-As developers, we always want users to update their applications to the latest version quickly. You want everyone to use the latest features you've developed.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/android-application-in-app-update-using-android-studio/
+title: Android Application In-app Update Using Android Studio
+description: This article acts as a guide on how to provide In-app Updates using Android Studio. It discusses flexible and immediate updating techniques.
+author: joseph-chege
+date: 2020-12-1T00:00:00-13:00
+date: 2020-12-30T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/android-application-in-app-update-using-android-studio/hero.png
+    alt: Android app update
+---
+As developers, we always want users to update their applications to the latest version quickly. We want everyone to use the latest features included in the updates. Google notifies Android users whenever updates are available for certain applications. However, this is mainly for users who have enabled the `auto-update` feature. It is, therefore, important for users to know when your application has a new update available.
+<!--more-->
 
-Google notifies Android users whenever updates are available for certain applications. This is mainly for users who have enabled `auto-update`. It is important for users to know when your application has a new update available.
-
+### Introduction
 Suppose a user has your application installed on their mobile phone. Yet, you have added new critical features or fixed a bug to the app. The only way the user can access these functionalities is by updating the application. Some users lack the interest or time to open the Google Play store and update their applications. This means that they will take time before switching to the latest version.
 
-To solve this problem, Google I/O introduced an [in-app update API](https://developer.android.com/guide/playcore/in-app-updates). This API alerts users whenever you have a new version on the Google Play store. The API introduces an `update UI` within your application to notify users to update to the newly available application version. Users don't have to open the Google Play store to initiate the update.
+To solve this problem, Google I/O introduced an [in-app update API](https://developer.android.com/guide/playcore/in-app-updates). This API alerts users whenever you have a new version on the Google Play store. The API introduces an `update UI` within your application to notify users to update to the newly available application version. Users do not have to open the Google Play store to initiate the update.
 
 ### Goal
 
@@ -16,7 +32,7 @@ The immediate update introduces a `blocking full-screen UI`. When a user starts 
 
 - Flexible
 
-A flexible update allows users to interact with the application while the update takes place in the `background`. Once the update is downloaded, the user will be prompted to restart the application. The application will then install the update and open the app to the foreground. It is preferred when the update has minor changes that do not affect the application's critical functionalities.
+A flexible update allows users to interact with the application while the update occurs in the `background.` Once the update is downloaded, the app will prompt the user to restart the application. The application will then install the update and open the app to the foreground. It is preferred when the update has minor changes that do not affect the application's critical functionalities.
 
 ### Prerequisites
 This guide assumes you have prior knowledge of Android application development using `Android Studio` and `Java.`
@@ -41,11 +57,11 @@ Sync to download the library.
 At the time of writing this guide, the Google Play Core version was `1.8.3`. It is recommended to have the latest version. Check for the latest version [here](https://developer.android.com/reference/com/google/android/play/core/release-notes).
 
 ### Background
-Setting the in-app update is simple. All major functionalities are implemented by the `Google Core API`. A user doesn't have to activate auto-updates in the Google Play store. The API will handle the update flow in any application that has implemented this in-app update concept.
+Setting the in-app update is simple. The `Google Core API implements all major functionalities.` A user does not have to activate auto-updates in the Google Play store. The API will handle the update flow in any application that has implemented this in-app update concept.
 
 Before handling the update type, either flexible or immediate, you should understand how the API works. Let's discuss some of the key classes and functions that help us to trigger an update flow.
 
-To check if there is an update available in the Google Play store, we have to create an instance of `appUpdateManager`. It communicates with the `AppUpdateInfo` object. The object triggers a remote communication with the Google Play store. It holds the property results and status of any available update. The result is a collection of data for the update availability, such as the available app version. The data will then be used to determine whether the API should initiate the update flow.
+To check if there is an update available in the Google Play store, we have to create an instance of `appUpdateManager.` It communicates with the `AppUpdateInfo` object. The object triggers a remote communication with the Google Play store. It holds the property results and status of any available update. The result is a collection of data for the update availability, such as the available app version. The data will then be used to determine whether the API should initiate the update flow.
 
 `AppUpdateInfo` has the following methods.
 
@@ -61,7 +77,7 @@ This handles a case where a user-initiated the update process but closed the app
 
 2. `installStatus()` returns the value of the update milestone. `installStatus()` is an instance of `installStateUpdatedListener` hooked to the `appUpdateManager`. It returns the values of the update status, such as;
 
-- `DOWNLOADED`
+- `DOWNLOADED.`
 When the user hits the update, the application will first download the APK. `installStatus()` sets the action that should be done when the APK has been downloaded.
 
 - `INSTALLED` - `installStatus()` sets the action when the newly available update has been installed.
@@ -127,7 +143,7 @@ private void checkUpdate() {
 
 Here is what the function does:
 
-It communicates with the Play store to decide if the update is available.
+It communicates with the Play store to check if an update is available.
 
 This requests;
 - The update availability for the current application, 
@@ -136,7 +152,9 @@ This requests;
 
 Register a listener to communicate with the `appUpdateInfoTask`. If the conditions check that `UPDATE_AVAILABLE` is `true`, check whether the update is allowed and set the update mode to `FLEXIBLE`. If these conditions are met, we will start the update flow with `startUpdateFlow(appUpdateInfo)` (we will look into it later).
 
-In this case, our update mode is set `Flexible`. The update download happens in the background. We then need to check the install status. If the status shows that the app is `DOWNLOADED`, we need to notify the user that the download has been completed. You can choose to use a `snack bar` or an `alert dialog`. I choose to use `snack bar`. Create a function `popupSnackBarForCompleteUpdate()`, and call it when `installStatus()` is equal to `DOWNLOADED`. The UI will react by nudging the user to install the downloaded APK.
+In this case, our update mode is set `Flexible.` The update is downloaded in the background. We then need to check the `install` status. If the status shows that the app is `DOWNLOADED`, we need to notify the user that the download has been completed. You can choose to use a `Snackbar` or an `AlertDialog`. In this tutorial, we will use `Snackbar`. 
+
+Create a function named `popupSnackBarForCompleteUpdate().` This method will be called when the `installStatus()` is equal to `DOWNLOADED`. The UI will react by nudging the user to install the downloaded APK.
 
 ***Remember to press alt + enter on a PC and option + enter on a Mac to import the classes after copying and pasting the code blocks into your IDE.***
 
@@ -159,7 +177,7 @@ private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
 To ensure the update flow kick-off as expected, we pass some parameters to `startUpdateFlowForResult`. They include
 
 - `appUpdateInfo`
-- `AppUpdateType` — the mode of the update flow we want to perform. In this case, we've set that to `FLEXIBLE`.
+- `AppUpdateType` — the mode of the update flow we want to perform. In this case, we have set that to `FLEXIBLE`.
 - `this` — the execution context of the current activity requesting the update.
 
 - `FLEXIBLE_APP_UPDATE_REQ_CODE` — a request code that handles user actions `onActivityResult`. Make sure you declare `FLEXIBLE_APP_UPDATE_REQ_CODE` right above `onCreate`, as shown below.
@@ -367,7 +385,7 @@ To be sure that the update will take place, on your `activity.xml` replace ` and
 
 6. Once you have generated the app bundle/APK, head to `App Internal Sharing` and upload it.
 
-7. Again, copy the shareable link generated by this upload and open it with the tester. When the link launches on the Google Play store, you will get an update button, **don’t click update**.
+7. Again, copy the shareable link generated by this upload and open it with the tester. When the link launches on the Google Play store, you will get an update button, **do not click update**.
 
 8. Close the Google Play store and open the application we installed earlier. This will launch an update UI that will prompt you to update the application. The UI may differ depending on your update type (either flexible or immediate).
 
@@ -521,5 +539,4 @@ public class Immediate extends AppCompatActivity {
 ![image](/engineering-education/android-application-in-app-update-using-android-studio/immediate.png)
 
 ### Conclusion
-
 I hope this guide helps you implement in-app updates, both immediate and flexible, within your application context.
