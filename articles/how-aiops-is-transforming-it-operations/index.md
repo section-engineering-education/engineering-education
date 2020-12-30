@@ -26,7 +26,7 @@ By an organization adopting AIOps, it introduces important ML techniques to its 
 
 #### Eliminates data silos
 
-Data silos is a common problem for many organizations and is a source of inefficiency. Organizations faced with the issue of [data silos](https://www.plixer.com/blog/data-silo-what-is-it-why-is-it-bad/#) find that only particular employees or one group of employees has access to the source of data or a specific set of data in the organization. In such a situation, you will find multiple teams storing the same data or complementary data separately. This leads to wasted resources in terms of storage costs and inhibited productivity.
+Data silos is a common problem for many organizations and a source of inefficiency. Organizations faced with [data silos](https://www.plixer.com/blog/data-silo-what-is-it-why-is-it-bad/#) find that only particular employees or one group of employees has access to the source of data or a specific set of data in the organization. In such a situation, you will find multiple teams storing the same data or complementary data separately. This leads to wasted resources in terms of storage costs and inhibited productivity.
 
 With AIOps, organizations break down data silos and the consequent challenges with full effect across all IT environments. AIOps promotes collaboration among teams and makes data available for all teams to analyze and monitor.
 
@@ -58,7 +58,7 @@ AIOps comes to help IT teams evaluate and act on data more quickly while reducin
 
 In other words, AIOps works by enriching data and offering data intelligence. AIOps does not replace developers&#39; roles. Rather, it helps developers save on time, enabling greater observability and delivery of more accurate results.
 
-AIOps&#39; focus is not limited to the present problems but learns continually to enhance the handling of future challenges. Machine learning uses the results of analytics to create new algorithms or change the current ones to identify possible issues and recommend solutions earlier.
+AIOps&#39; focus is not limited to the present problems but learns continually to enhance future challenges. Machine learning uses analytics to create new algorithms or change the current ones to identify possible issues and recommend solutions earlier.
 
 ### Top AIOps software
 
@@ -82,4 +82,6 @@ AIOps&#39; focus is not limited to the present problems but learns continually t
 
 ### Conclusion
 
-Embracing AIOps is a significant step towards getting to the root cause of the problems IT teams face every day. AIOps prevents alert fatigue and empowers teams to perform their tasks more efficiently.
+Embracing AIOps is a significant step towards getting to the root cause of IT teams' problems every day. AIOps prevents alert fatigue and empowers teams to perform their tasks more efficiently.
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
