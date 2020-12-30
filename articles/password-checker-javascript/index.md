@@ -2,6 +2,8 @@
 
 ![hero image](/engineering-education/password-checker-javascript/hero.jpg)
 
+[Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fpassword-access-and-cybersecurity-icon-vector-26197809&psig=AOvVaw3DyHpwGFj6n6zfdkifE8mD&ust=1609411254673000&source=images&cd=vfe&ved=2ahUKEwjZiaqiwvXtAhUMQRoKHffrB8gQr4kDegUIARC9AQ)
+
 For us to secure our systems and accounts, we need a strong password.</br>
 The person developing the system has to ensure that the password the end-user chooses is strong enough to guard his/her account.</br>
 We are going to discuss one of the tools offered to developers to achieve that, the **Regular Expression** class in JavaScript.</br>
