@@ -1,5 +1,21 @@
-### An Introduction to Question Answering Systems
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/question-answering/
+title: An Introduction to Question Answering Systems
+description: Recently, I came across this library that enables one to create large-scale and distributed question answering systems. It solves a significant problem that we usually face in the vast field of Natural Language Processing.
+author: lalithnarayan-c
+date: 2020-12-30T00:00:00-10:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/question-answering/hero.jpg
+    alt: question answering systems
+---
 Recently, I came across this library that enables one to create large-scale and distributed question answering systems. It solves a significant problem that we usually face in the vast field of Natural Language Processing. The problem of creating models that work accurately with large amount of data. Hence, my interest in the area of question answering systems arose. I have tried to put together the general trends in the field of question answering systems. Once we have a good picture of the area, we will explore the library **Haystack**, which arose my interest in the first place.
+<!--more-->
 
 ### Goal of Question Answering Systems
 What are the question answering systems trying to achieve? Given a question, should the system return the nearest answer? What if the answer is a mixture of multiple answers that it has been trained on? We are trying to build intelligent systems that don't just return documents related to the question, but extracts relevant information within the documents and puts forth the detailed answer. Like one that a human would have come up with. This task comes under the field of [Information Retrieval ](https://nlp.stanford.edu/IR-book/pdf/01bool.pdf)(IR), [Information Extraction](https://www.ontotext.com/knowledgehub/fundamentals/information-extraction/) (IE), and Natural Language Processing (NLP).
