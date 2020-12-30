@@ -73,7 +73,7 @@ for num in lst:
     total += num # add each number to the total
 print (total)
 ```
-How would we solve this problem in a functional language? Let's use pattern matching and recursion.
+How would we solve this problem in a functional language? Recall that functional languages don't use loops. Instead, we can use pattern matching and recursion to perform iterative tasks.
 
 ```haskell
 -- getTotal takes in a list of numbers and returns the sum of all the elements
@@ -89,5 +89,5 @@ getTotal []
 ```
 
 # More Resources for Haskell
-You've learnt ideas such as referential transparency, lazy evaluation and pattern-matching in Haskell. To learn more about these concepts, I encourage you to read [Learn You a Haskell](http://learnyouahaskell.com/). 
+You've learnt ideas such as referential transparency, lazy evaluation and pattern-matching in Haskell. You've also seen that recursion is used instead of *for-loops*, and it can make code a lot more concise. These topics are not exclusive to Haskell; they can be applied to other functional languages as well. To learn more about these concepts, I encourage you to read [Learn You a Haskell](http://learnyouahaskell.com/), which is available for free online.
 The [HaskellWiki](https://wiki.haskell.org/Haskell) is another great resource for beginners. 
