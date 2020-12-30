@@ -164,6 +164,16 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+Ensure that you have the following imports at the Top of the Home page.
+```
+import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_core/firebase_core.dart';
+```
+`package:flutter/material.dart` - This import allows you to access Flutter's built-in widgets and other functionalities.
+`package:firebase_database/firebase_database.dart` - This import helps access the Firebase Realtime database features.
+`package:firebase_core/firebase_core.dart` - This dependency enables you to connect to different Firebase products. 
+
 ### Storing data
 We will initialize a Firebase `databaseReference` object and use it to store data.
 
@@ -185,6 +195,7 @@ onPressed: () {
   //call method flutter upload
 })),
 ```
+We will access the user input using a `textcontroller`. This element allows us to listen for changes in a TextField.
 
 Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
 
@@ -201,10 +212,16 @@ void printFirebase(){
 
 We'll call the above function in the  `_HomePageState` class's `build` method.
 
+Note that the FirebaseApp is initialised using a Future component. This object helps handle errors or other results that occur in future.
+
+```dart
+ final Future<FirebaseApp> _future = Firebase.initializeApp();
+ ```
+ `_future` is then added to the `FutureBuilder` in the `Scaffold`. As noted, FutureBuilder helps in awaiting long-running operations.
+
 Here is the full code for the HomePage class
 
 ```dart
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
