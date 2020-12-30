@@ -8,8 +8,7 @@ To follow this article, you’ll need to:
 - Have a basic understanding of functions.
 
 #### What is a Class?
-A class is a logical method of grouping data and functions in the same construct. It is declared using the `class` keyword whose functionality is similar to that of the `struct` C keyword, but with the option of including functions as members rather than data only. Classes are data types specified by users and behave like a programming language's built-in types. After the class has been defined, we can create objects of any number belonging to that class.
-
+A class is a logical method of grouping data and functions in the same construct. It is declared using the `class` keyword whose functionality is similar to that of the `struct` C keyword, but with the option of including functions as members rather than data only. Classes are data types specified by users and behave like a programming language's built-in types. We are able to construct objects of any number belonging to that class after the class has been defined.
 #### What is an Object?
 An object is a data structure that encapsulates data and functions in a single construct. In an object-oriented framework, they are the basic run-time entities. Objects can represent anything the program has to handle such as a shape, a place, time, and many others.
 
@@ -186,7 +185,7 @@ In pass by value, a copy of the object is passed to the function and the object 
 
 This is useful since we can transfer objects and allocate the values of the supplied object to the current object when we want to initialize all the data members of an object with another object. We need to use objects for complex or large projects as an argument or parameter.
 
-We write the object name as the argument to pass an object as an argument and call the method the same way we do it for other variables.
+We write the name of the object as the argument for passing an object as an argument and call the function for other variables the same process we do.
 
 Syntax:  
 
