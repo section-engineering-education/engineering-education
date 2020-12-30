@@ -56,7 +56,7 @@ To activate our virtual environment, execute the below command.
 
 ```bash
 
-$ source venv/Script/activate
+$ source venv/bin/activate
 
 ```
 
@@ -256,7 +256,7 @@ def update_todo_by_id(id):
    db.session.commit()
    todo_schema = TodoSchema(only=['id', 'title', 'todo_description'])
    todo = todo_schema.dump(get_todo)
-   
+
    return make_response(jsonify({"todo": todo}))
 
 ```
