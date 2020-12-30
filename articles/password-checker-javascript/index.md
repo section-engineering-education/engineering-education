@@ -35,8 +35,19 @@ For that reason we are going to use the constructor function for we are getting 
 |\W|Checks for a special character e.g returns % in "2%"|
 |x{n,}|Matches at least n terms from the preceding term x e.g o{2,} does not return anything in boy but returns all o<sub>s</sub> in gooooal.|
 |xIy |matches either x or y in a string|
-|[^xyz]|A negated set. Doesn't check for anything included in the range|
+|[^vet]|A negated set. Doesn't check for anything included in the range ie Does not check for **vet** |
 |[A-Za-z0-9]|Checks all alphanumeric characters|
-|x(?=y)|Returns x if and only if it is followed by y e.g (?=.*[A-Za-z0-9]) returns true if the string contains atleast one alphanumeric letter|
+|[a-z]|Checks for lowercase letters|
+|[A-Z]|Checks for uppercase letters|
+|x(?=y)|Returns x if and only if it is followed by y e.g a(?=.*[A-Za-z0-9]) returns true if the **a**  is followed by atleast one alphanumeric letter|
+|**.**|Checks for any single character except line terminators |
+|x*|Checks for x 0 or more times|
 
-#### The JavaScript program
+
+#### The JavaScript program</br></br>
+We are going to discuss how to check the strength of  a password a user enters basing on if the password:</br>
+- Is at least 8 characters long(**?=.{8,}**)
+- Has at least one uppercase letter(**?=.*[A-Z]**)
+- Has at least one lowercase letter(**?=.*[a-z]**)
+- Has at least one digit(**?=.*[0-9]**)
+- Has at least one special character(**[A-Za-z0-9]**)
