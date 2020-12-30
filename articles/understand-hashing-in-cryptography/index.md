@@ -17,7 +17,7 @@ Well, your name is Daniel, and you do not want to disclose your name to anyone. 
 
 ### What is Hashing
 
-A [hash value](https://en.wikipedia.org/wiki/Hash_function) is the output of plaintext or ciphertext. Hashing is a cryptographic technique that transforms any form of data into a special text string. For any given input, there is a deterministic output. In simpler terms, when you put a plaintext into a hashing algorithm, you get the exact outcome. Suppose you change anything about the input or the plaintext to the hashing algorithm. The hashing output becomes different.
+A [hash value](https://en.wikipedia.org/wiki/Hash_function) is the output of plaintext or ciphertext. Hashing is a cryptographic technique that transforms any form of data into a special text string. For any given input, there is a deterministic output. When you put a plaintext into a hashing algorithm in simpler terms, you get the exact outcome. Suppose you change anything about the input or the plaintext to the hashing algorithm. The hashing output becomes different.
 
 ### How Hashing Works
 
@@ -46,10 +46,10 @@ Keep in mind that a Hash algorithm or function is mainly used for comparison pur
 
 Here are the properties of a hash function.
 - **Deterministic** - The output will be the same for a given outcome.
-- **Not reversible** – A hash function can't be reversed back to the original password.
+- **Not reversible** – We can't reverse a hash function back to the original password.
 - **Collision resistant** – Two inputs do not result in the same output.
 - **Non-predictable** – A hash function randomly generates a unique hash value that is not predictable.
-- **Compression** – The hash function's output is much smaller than the size of the input.
+- **Compression** – The hash function's output is much smaller than the input size.
 
 Characteristics of a hash function
 - **Secure** – A hash function is irreversible. It is a one-way function.
