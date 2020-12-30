@@ -60,6 +60,8 @@ The password has to meet all the requirements to be strong.</br>
 ```
 </br>
 
+![Strong password](strong-password.png)
+
 - **Medium**</br>
 The password can either be medium if it atleast 6 characters long and meets all the requirements or has no digit but meets the rest of the requirements.</br>
 ```
@@ -67,5 +69,94 @@ The password can either be medium if it atleast 6 characters long and meets all 
 ```
 </br>
 
+![Medium password](medium-password.png)
+
 - **Weak**</br>
 If the entered password does not meet the strong or medium level requirements then it is deemed weak.</br>
+
+![Weak password](weak-password.png)
+
+</br>
+We will use Bootstrap 5 for UI styling.</br>
+A badge, basically a span, is used to show the password strength and colour.</br>
+Green for strong, Blue for medium and Red for weak.</br></br>
+
+#### HTML Code</br>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<style>
+    .passwordInput{
+        margin-top: 5%; 
+        text-align :center;
+    }
+
+    .displayBadge{
+        margin-top: 5%; 
+        display: none; 
+        text-align :center;
+    }
+</style>
+<body>
+    <p>
+          <div class="d-flex text-danger justify-content-center">
+              <ul style="list-style-type:none">
+             <li class="fs-4" style="margin-top: 10%; text-align :center">
+                Password Strength Checker
+             </li>
+               <li>
+                <input id="0101" class="form-control passwordInput" type="password" placeholder="Type your password" id="inputPassword">
+               </li>
+               <li>
+                <span id="0102" class="badge displayBadge">Weak</span>
+               </li>
+            </ul>
+              </div>  
+    </p>     
+</body>
+</html>
+
+
+#### JavaScript Code</br>
+The full code can be accessed in my [Github repository](https://github.com/Agusioma/Password-Strength-Checker).</br>
+
+```
+    <script type="text/javascript">
+        let timeout;
+        let password = document.getElementById('0101')
+        let strengthBadge = document.getElementById('0102')
+        let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+        let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
+
+        password.addEventListener("input", () => {
+
+            strengthBadge.style.display= 'block'
+            clearTimeout(timeout);
+            timeout = setTimeout(() => StrengthChecker(password.value), 500);
+
+            if(password.value.length !== 0){
+                strengthBadge.style.display != 'block'
+            }else{
+                strengthBadge.style.display = 'none'
+            }
+        });
+
+
+        function StrengthChecker(PasswordParameter){
+
+            if(strongPassword.test(PasswordParameter)){
+                strengthBadge.style.backgroundColor = "green"
+                strengthBadge.textContent = 'Strong'
+            }else if(mediumPassword.test(PasswordParameter)){
+                strengthBadge.style.backgroundColor = 'blue'
+                strengthBadge.textContent = 'Medium'
+            }else{
+                strengthBadge.style.backgroundColor = 'red'
+                strengthBadge.textContent = 'Weak'
+            }
+
+        }
+
+    </script>
+
+```
