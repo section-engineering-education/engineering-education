@@ -50,4 +50,22 @@ We are going to discuss how to check the strength of  a password a user enters b
 - Has at least one uppercase letter(**?=.*[A-Z]**)
 - Has at least one lowercase letter(**?=.*[a-z]**)
 - Has at least one digit(**?=.*[0-9]**)
-- Has at least one special character(**[A-Za-z0-9]**)
+- Has at least one special character(**[^A-Za-z0-9]**)
+
+We are going to have three levels:</br>
+- **Strong**</br>
+The password has to meet all the requirements to be strong.</br>
+```
+(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
+```
+</br>
+
+- **Medium**</br>
+The password can either be medium if it atleast 6 characters long and meets all the requirements or has no digit but meets the rest of the requirements.</br>
+```
+((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
+```
+</br>
+
+- **Weak**</br>
+If the entered password does not meet the strong or medium level requirements then it is deemed weak.</br>
