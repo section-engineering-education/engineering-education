@@ -37,7 +37,11 @@ Add your flutter application to Firebase by clicking on the android icon.
 
 ![add app](/engineering-educationimplementing-firebase-in-flutter/add-app.png)
 
-Add your application's package name as shown in the image below. You can find your package name in the app-level – `build.gradle` file. Click register app after completing this step.
+Add your application's package name as shown in the image below. 
+
+![find package](/engineering-educationimplementing-firebase-in-flutter/find-package.png)
+
+You can find your package name in the app-level – `build.gradle` file. Click register app after completing this step.
 
 ![package name](/engineering-educationimplementing-firebase-in-flutter/package-name.png)
 
@@ -78,6 +82,7 @@ In the `rules` section, ensure that you click on `test mode` rather than the `lo
   }
 }
 ```
+You can find more information about changing the above rules for a production application [here](https://firebase.google.com/docs/rules/manage-deploy)
 
 We have successfully set up Firebase and the flutter project. Let's design the UI.
 
@@ -108,7 +113,9 @@ class _MyAppState extends State<MyApp> {
 We can then create the above `UI` in this file by pasting the following code in the body section of the `Scaffold.` 
 
 ```dart
-Container(
+Scaffold(
+  appBar: AppBar(title: Text("Firebase Demo"),),
+  body: Container(
   child: Column(
     children: <Widget>[
       SizedBox(height: 250.0),
@@ -128,7 +135,7 @@ Container(
               })),
     ],
   ),
-);
+),);
 ```
 
 Import the `HomePage` class in the `main.dart` file. Ensure that the `HomePage` is initialized, as shown below.
@@ -136,8 +143,6 @@ Import the `HomePage` class in the `main.dart` file. Ensure that the `HomePage` 
 ```dart
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'package:firebase_core/firebase_core.dart';
-
 
 void main(){
   runApp(MyApp());
@@ -169,6 +174,7 @@ void addData(String data) {
   databaseRef.push().set({'name': data, 'comment': 'A good season'});
 }
 ```
+The `addData` function stores the user input along with a string (`'comment': 'A good season'`).
 
 Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
 
@@ -184,6 +190,15 @@ void printFirebase(){
 ```
 
 We add the above function in the  `_HomePageState` class. The `printFirebase` method is called after all widgets have been rendered on the screen.
+
+We will call the `addData` function when the `RaisedButton` is clicked. The `addData` is included inside the `onPressed` method, as shown below.
+
+```dart
+  onPressed: () {
+         addData(textcontroller.text);
+          //call method flutter upload
+        })),
+```
 
 Here is the full code for the HomePage class
 
@@ -256,6 +271,8 @@ class _HomePageState extends State<HomePage> {
 }
 ```
 
+
+
 ### 5. Results
 When we click on the Save to Database button. The user input is stored in the real-time database, as shown.
 
@@ -273,6 +290,8 @@ We have successfully created a simple Flutter application that can store and ret
 2. You must instantiate the Firebase Realtime Database before using it in your application.
 
 3. Use a FutureBuilder object when awaiting for network requests or operations.
+
+You can download the source code from [here](https://github.com/WanjaMIKE/flutterfirebaseexample).
 
 ### References
 [FlutterFire](https://firebase.flutter.dev/docs/overview/)
