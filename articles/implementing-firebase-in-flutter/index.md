@@ -4,11 +4,11 @@ Flutter is a popular platform when it comes to the development of cross-platform
 Firebase helps developers in creating high-quality applications. It provides functionalities such as real-time database, cloud storage, authentication, and hosting. This tutorial focuses more on the real-time database. Firebase offers synchronization that ensures that all connected devices are notified whenever data changes. In this tutorial, we will be building a simple expense tracker application. It will allow individuals to store and retrieve a list of expenses. Let&#39;s get started.
 
 ### Goal of the Tutorial
-To create a Flutter application that stores and retrieves data from the Firebase's Real-time database.
+To implement Firebase in a Flutter application and use Firebase's Real-Time Database to store and retrieve data.
 
 ### Prerequisites
 This tutorial is suitable for beginners. 
-For you to follow along, you should have the Flutter SDK installed on your computer. When it comes to the IDE, you can use Android Studio or Visual Studio Code. Lastly, you need to sign up [here](https://firebase.google.com/) to access Firebase products.
+For you to follow along, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. When it comes to the IDE, you can use [Android Studio](https://developer.android.com/) or [Visual Studio Code](https://code.visualstudio.com/download). Lastly, you need to sign up [here](https://firebase.google.com/) to access Firebase products.
 
 ### 1. Getting started
 Launch `Android Studio` and create a new `Flutter` project. This is shown below.
@@ -68,7 +68,7 @@ After the project is created successfully, navigate back to the Firebase console
 
 In the `rules` section, ensure that you click on `test mode` rather than the `locked mode`. This allows us to read and write data without authentication. Note that these rules should not be used in a production application since anyone can access data.
 
-```
+```json
 {
   "rules": {
     ".read": "now < 1610053200000",  // 2021-1-8
@@ -154,7 +154,7 @@ void addData(String data) {
 }
 ```
 
-Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app.
+Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
 
 ### 4. Retrieving data
 For simplicity, we will retrieve and print out the data in the console. This is shown below.
@@ -247,8 +247,14 @@ The following items are also printed.
 
 ![console results](/engineering-educationimplementing-firebase-in-flutter/console.png)
 
-### Conclusion
-We have successfully created a simple Flutter application that can store and retrieve records from the Firebase Realtime Database. You can, therefore, use this knowledge and skills to build more interactive applications.
+### Recap
+We have successfully created a simple Flutter application that can store and retrieve records from the Firebase Realtime Database. Please remember.
+
+1. You must create a Firebase account to access products such as the real-time database.
+2. You must instantiate the Firebase Realtime Database before using it in the Flutter application.
+3. Use a FutureBuilder object when awaiting for network requests or operations.
+
+You can, therefore, use this knowledge and skills to build more interactive applications.
 
 ### References
 [FlutterFire](https://firebase.flutter.dev/docs/overview/)
