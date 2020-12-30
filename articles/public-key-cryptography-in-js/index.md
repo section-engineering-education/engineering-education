@@ -1,11 +1,15 @@
+Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is also known as asymmetric cryptography. In this method, there is a public key and a private key. The public key is known widely whereas the private key is secret to a communicating pair. When a pair wants to communicate, the sender encrypts the message with the public key of the recipient to come up with the ciphertext. When the recipient receives the message, he or she decrypts the message using his or her private key. The private key of the sender, and the public key of the receiver are encoded in the ciphertext. This eliminates the [Key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3)
 
 #### Prerequisites
-- Have [Node.js](https://nodejs.org/en/) installed on your computer.
-- Have some basic knowledge of JavaScript programming language.
-- Have some basic knowledge of cryptography.
+Before we begin it would help if you have the following:
+
+- [Node.js](https://nodejs.org/en/) installed on your computer.
+
+- Basic knowledge of the JavaScript programming language.
+
+- Basic knowledge of cryptography.
 
 ### What we will cover
-- [Introduction](#introduction)
 - [Algorithms using public key cryptography](#algorithms-using-public-key-cryptography)
 - [Libraries for public key cryptography in JavaScript](#libraries-for-public-key-cryptography-in-javascript)
 - [Using TweetNaCl.js to implement public key cryptography](#using-tweetnacl.js-to-implement-public-key-cryptography)
@@ -15,29 +19,26 @@
 - [Maintaining Private or Secret keys](#maintaining-private-or-secret-keys)
 - [Platforms that employ public key cryptography](#platforms-that-employ-public-key-cryptography)
 
-### Introduction
-Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is also known as `asymmetric cryptography`. It is one of the methods of cryptography. In this method, there is the public and private key. The public key is known widely whereas the private key is secret to a communicating pair. When a pair wants to communicate, the sender encrypts the message with the public key of the recipient to come up with the ciphertext. When the recipient receives the message, he or she decrypts the message using his or her private key. The private key of the sender, and  the public key of the receiver are encoded in the ciphertext. This eliminates the [Key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3)
-
 ### Algorithms using public-key cryptography
-
 Since its initial release in 1976, different algorithms have applied its mechanism. The following are some of the algorithms using public-key cryptography:
 
-- **RSA (Rivest-Shamir-Adelman)**: Designed by [Rivest](https://en.wikipedia.org/wiki/Ron_Rivest), [Shamir](https://en.wikipedia.org/wiki/Adi_Shamir), and [Adelman](https://en.wikipedia.org/wiki/Leonard_Adleman). First published in 1977. Currently widely used for [secure data transmission](https://en.wikipedia.org/wiki/RSA_(cryptosystem)).
-- **Elliptic curve cryptography**: Suggested in 1985 by [Neal Koblitz](https://en.wikipedia.org/wiki/Neal_Koblitz) and [Victor S.miller](https://en.wikipedia.org/wiki/Victor_S._Miller). It is based on an [algebraic structure](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) over finite fields of elliptic curves.
-- **Diffie Hellman protocol**: It is a mechanism of using the [public channel](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) to exchange cryptographic keys. It was designed by [Whitfield Diffie](https://en.wikipedia.org/wiki/Whitfield_Diffie) and [Martin Hellman](https://en.wikipedia.org/wiki/Martin_Hellman). First published in 1976.
+- **RSA (Rivest-Shamir-Adelman)**: RSA was designed by [Rivest](https://en.wikipedia.org/wiki/Ron_Rivest), [Shamir](https://en.wikipedia.org/wiki/Adi_Shamir), and [Adelman](https://en.wikipedia.org/wiki/Leonard_Adleman). It was first published in 1977 and it is currently widely used for [secure data transmission](https://en.wikipedia.org/wiki/RSA_(cryptosystem)).
+
+- **Elliptic curve cryptography**: Elliptic curve cryptography was suggested in 1985 by [Neal Koblitz](https://en.wikipedia.org/wiki/Neal_Koblitz) and [Victor S.miller](https://en.wikipedia.org/wiki/Victor_S._Miller). It's based on an [algebraic structure](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) over finite fields of elliptic curves.
+
+- **Diffie Hellman protocol**: Diffie Hellman protocol is a mechanism of using the [public channel](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) to exchange cryptographic keys. It was designed by [Whitfield Diffie](https://en.wikipedia.org/wiki/Whitfield_Diffie) and [Martin Hellman](https://en.wikipedia.org/wiki/Martin_Hellman) and was first published in 1976.
 
 ### Libraries for public-key cryptography in JavaScript
+There are different libraries for implementing public-key cryptography in JavaScript. The following are the most commonly used.
 
-Following the above algorithms, there are different libraries for implementing public-key cryptography in JavaScript. The following are the most commonly used.
+- [NaCL](http://nacl.cr.yp.to/): It's a high-speed library for carrying out encryption, decryption, and network communication. It uses an elliptic curve cryptography algorithm.
 
-- [NaCL](http://nacl.cr.yp.to/). It is a high-speed library for carrying out encryption, decryption, and network communication. It uses an elliptic curve cryptography algorithm.
-- [TweetNaCL](http://tweetnacl.cr.yp.to/). It was among the initial cryptographic  libraries to be released and was originally written in C programming language. TweeNaCL.js is the JavaScript version of the library. It uses the Diffie Hellman algorithm.
+- [TweetNaCL](http://tweetnacl.cr.yp.to/): It was among the initial cryptographic libraries to be released and it was originally written in the C programming language. TweeNaCL.js is the JavaScript version of the library. It uses the Diffie Hellman algorithm.
 
 ### Using TweetNaCL.js to implement public-key cryptography
+For this article, we'll use TweetNaCL.js to implement the concept of public-key cryptography.
 
-For this article, we shall use TweetNaCL.js to implement the concept of public-key cryptography.
-
-First and foremost we will install the dependencies to use in the application, you can use `npm` or [`yarn`](#https://classic.yarnpkg.com/en/docs/install/).
+First, let's install the dependencies to use in the application. You can use `npm` or [`yarn`](#https://classic.yarnpkg.com/en/docs/install).
 
 ```bash
 npm install tweetnacl tweetnacl-util
@@ -51,17 +52,17 @@ yarn add tweetnacl tweetnacl-util
 
 #### Practical scenario
 
-We have two communicating pairs, David and Viktoria. The concept is that, when David is sending a message to Viktoria, he encrypts it using Viktoria's public key. When Viktoria receives it, she decrypts it with her private key. When she decides to reply to the message, she encrypts her message using David's public key, and on David receiving the message, he decrypts it using his private key.
+We have two communicating pairs, David and Viktoria. When David is sending a message to Viktoria, he encrypts it using Viktoria's public key. When Viktoria receives it, she decrypts it using her private key. When she decides to reply to the message, she encrypts her message using David's public key, and on David receiving the message, he decrypts it using his private key.
 
 #### Importing libraries
-```javascript
+```JavaScript
 //import the libraries
 const nacl = require('tweetnacl');
 nacl.util = require('tweetnacl-util');
 ```
 
 #### Generating the keys
-```javascript
+```JavaScript
 //Generate the keys
 const david = nacl.box.keyPair();
 const viktoria = nacl.box.keyPair();
@@ -80,8 +81,7 @@ Uint8Array(32) [
 ```
 
 #### David encrypting the message
-
-```javascript
+```JavaScript
 function davidEncrypting(){
     const one_time_code = nacl.randomBytes(24);
 
@@ -104,24 +104,29 @@ function davidEncrypting(){
 ```
 
 From above:
-1. We generate a one-time code, a code valid for only the current process.
-1. We get a  plain text from David.
-1. We compose ciphertext passing in the following parameters:
-    - String of Unicode characters generated by passing the plain text through `decodeUTF8()` as a parameter.
-    - one-time code
-    - Viktoria's public key
+
+1. We generate a one-time code, a code only valid for the current process.
+
+1. We get a plain text from David.
+
+1. We compose ciphertext using `nacl.box()` passing the following parameters:
+    - A string of Unicode characters generated by passing plain text as a parameter through `decodeUTF8()`.
+    - One-time code.
+    - Viktoria's public key.
     - David's private key.
 
 The message to be sent to the recipient as per the library is:
+
 - Ciphertext.
+
 - One-time code.
 
 Viktoria decrypting the message:
 
-```javascript
+```JavaScript
 function viktoriaDecrypting(message){
     //Get the decoded message
-    let decoded_message = nacl.box.open(message.cipher_text,message.one_time_code,david.publicKey,viktoria.secretKey);
+    let decoded_message = nacl.box.open(message.cipher_text, message.one_time_code, david.publicKey, viktoria.secretKey);
 
     //Get the human readable message
     let plain_text = nacl.util.encodeUTF8(decoded_message)
@@ -131,7 +136,7 @@ function viktoriaDecrypting(message){
 };
 ```
 
-Output
+Output:
 
 ```bash
 Hello there Viktoria
@@ -139,14 +144,14 @@ Hello there Viktoria
 
 From above, we are decoding the message using the ciphertext, one-time code, David's public key, and Viktoria's secret key. The message is then encoded to `UTF8` using `encodeUTF8()` so that it can be human-readable.
 
-### Man-in-the-middle attack. 
-In public-key cryptography, the public key is disseminated widely. This means that an attacker may get the public key of another party. If party A is communicating with party B. An attacker may impersonate himself or herself such that when party A is sending a message to party B, it does not reach party B first, it first reaches him or her. The attacker  then modifies the message and sends the modified message to party B. When party B decides to reply, the message is again sent to the attacker who modifies the message and sends the modified message to party A. In such a situation, the integrity of the message is not preserved. This is a major threat to public-key cryptography.
+### Man-in-the-middle attack
+In public-key cryptography, the public key is disseminated widely. This means that an attacker may get the public key of another party. If party A is communicating with party B, an attacker may impersonate himself or herself such that when party A is sending a message to party B, the message reaches the attacker before reaching party B. The attacker then modifies the message and sends the modified message to party B. When party B decides to reply, the message is again sent to the attacker who modifies the message and sends the modified message to party A. In such a situation, the integrity of the message is not preserved. This is a major threat to public-key cryptography.
 
 ### Using pre-computed keys
-To curb the above threat, we use the pre-computed keys. Here, while encrypting and decrypting, instead of using the public key of the other party which could be impersonated, we use a shared key. A shared key is a special combination key of the recipient's public key and the sender's secret key. 
+To curb the above threat, we use pre-computed keys. Here, while encrypting and decrypting, instead of using the public key of the other party which could be impersonated, we use a shared key. A shared key is a special combination key of the recipient's public key and the sender's secret key. 
 
 #### David encrypting the message
-```javascript
+```JavaScript
 function davidEncrypting(){
     //David computes a one time shared key
     const david_shared_key = nacl.box.before(viktoria.publicKey,david.secretKey);
@@ -174,21 +179,25 @@ function davidEncrypting(){
 From above:
 
 1. We compute a shared key based on Viktoria's public key and David's secret key.
-1. We generate a one-time code, a code only valid for the current process.
+
+1. We generate a one-time code.
+
 1. We get a plain text from David.
-1. We compute the ciphertext using:
-    - String of Unicode characters generated by passing plain text through `decodeUTF8()` as a parameter.
-    - One-time code.
+
+1. We compute the ciphertext using `nacl.box.after()` passing the following parameters:
+    - A string of Unicode characters generated by passing the plain text through `decodeUTF8()`
+    - One-time code
     - David's shared key
 
 The message to be sent to the recipient comprises:
 
 - Ciphertext.
+
 - One-time code.
 
 #### Viktoria decrypting the message
 
-```javascript
+```JavaScript
 function viktoriaDecrypting(message){
     //Getting Viktoria's shared key
     const viktoria_shared_key = nacl.box.before(david.publicKey,viktoria.secretKey);
@@ -213,21 +222,24 @@ Hey!!, our communication is now much secure
 From above:
 
 1. We get Viktoria's shared key.
+
 1. We decode Viktoria's message using: the ciphertext, one-time code, and her shared key.
+
 1. We encode the message to `UTF8` using `encodeUTF8()` so that it can be human-readable.
 
 ### Maintaining Public keys
-
 **Public key infrastructure** is a body responsible for [maintaining and registering public keys](https://en.wikipedia.org/wiki/Public_key_infrastructure). Practical areas that use public key infrastructure are banks. All banks have their keys stored and maintained by one body. So when one bank wants to transfer funds to another they get the keys from the common body. Public key infrastructure ensures the credibility of public keys thereby preventing man in the middle attacks.
 
 ### Maintaining Private or Secret keys
-They are very crucial and critical keys. Currently, they are stored online in databases or through some other medium but are usually first encrypted using encryption algorithms such as `Advanced Encryption Standard (AES)` to promote integrity.
+It's very important to maintain these keys since they are very crucial and critical. Currently, they are stored online in databases or through some other medium. They are usually encrypted using encryption algorithms such as `Advanced Encryption Standard (AES)` to promote integrity before storing them.
 
 ### Platforms that employ public-key cryptography
 Some of the platforms that use public-key cryptography in production include:
 
 - [Whatsapp](https://www.businesstoday.in/buzztop/buzztop-feature/how-does-whatsapp-end-to-end-encryption-work/story/307998.html)
+
 - [Threema](https://threema.ch/press-files/2_documentation/cryptography_whitepaper.pdf)
+
 - [SSL/TLS handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
 
 ### Conclusion
