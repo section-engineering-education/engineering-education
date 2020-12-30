@@ -5,7 +5,7 @@ Hashing is a mathematical algorithm that converts plaintext to a unique text str
 
 Let us understand with the help of an example.
 Well, your name is Daniel, and you do not want to disclose your name to anyone. With the use of a hashing algorithm. You can represent your name differently with a unique text string. It's only you who can tell the unique text or number.
-"Daniel" = FO8230hRq5K4g7nA
+`Daniel = FO8230hRq5K4g7nA`
 
 ### Table of Contents
 
