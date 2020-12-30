@@ -1,4 +1,4 @@
-Flutter is a popular platform when it comes to the development of cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base. Flutter reduces development time and associated costs. Furthermore, developers can use widgets to create a more flexible and interactive UIs. Incorporating Firebase in Flutter applications will enhance productivity significantly.
+Flutter is a popular platform when it comes to the development of cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base.
 
 ### Introduction
 Firebase helps developers in creating high-quality applications. It provides functionalities such as real-time database, cloud storage, authentication, and hosting. This tutorial focuses more on the real-time database. Firebase offers synchronization that ensures that all connected devices are notified whenever data changes. In this tutorial, we will be building a simple expense tracker application. It will allow individuals to store and retrieve a list of expenses. Let&#39;s get started.
@@ -9,7 +9,8 @@ To implement Firebase in a Flutter application and use Firebase's Real-Time Data
 ### Prerequisites
 This tutorial is suitable for beginners.
 
-For you to follow along, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. For the IDE, you can either use [Android Studio](https://developer.android.com/) or [Visual Studio Code](https://code.visualstudio.com/download). You should have an [Firebase account](https://firebase.google.com/) to access its products.
+For you to follow along, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. For the IDE, you can either use [Android Studio](https://developer.android.com/) or [Visual Studio Code](https://code.visualstudio.com/download). You should have a [Firebase account](https://firebase.google.com/) to access its products.
+You can learn more on setting up Flutter's development environment from [here](https://flutter.dev/docs/get-started/install/).
 
 ### Getting started
 Launch Android Studio and create a new Flutter project.
@@ -86,8 +87,25 @@ The app will have a simple user interface. It will allow a user to input a word 
 ![ui](/engineering-educationimplementing-firebase-in-flutter/ui.jpeg)
 
 Create a new file called `home.dart.` In this file, create a `stateful class` and name it `HomePage.`
+We create a stateful widget and scaffold, as shown below.
 
-We can then create the above `UI` in this file by pasting the following code in the body section of the `Scaffold.`
+```dart 
+class MyApp extends StatefulWidget { //creating statefulwidget 
+  MyApp({Key key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();  // add scaffold here
+  }
+}
+```
+
+We can then create the above `UI` in this file by pasting the following code in the body section of the `Scaffold.` 
 
 ```dart
 Container(
@@ -164,6 +182,8 @@ void printFirebase(){
   });
 }
 ```
+
+We add the above function in the  `_HomePageState` class. The `printFirebase` method is called after all widgets have been rendered on the screen.
 
 Here is the full code for the HomePage class
 
