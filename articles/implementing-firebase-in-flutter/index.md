@@ -2,9 +2,7 @@ Flutter is a SDK (Software Development Kit) used to develop cross-platform appli
 
 Firebase is a platform developed by Google for creating mobile and web applications. It provides functionalities such as real-time database, cloud storage, authentication, and hosting. This tutorial focuses on the real-time database. Firebase also offers synchronization which ensures that all connected devices are notified whenever data changes. 
 
-In this tutorial, we will be building a simple expense tracker application. It will allow individuals to store and retrieve a list of expenses. Let's get started.
-
-### Goal of the Tutorial
+### Goal of this Tutorial
 To implement Firebase in a Flutter application and use Firebase's Real-Time Database to store and retrieve data.
 
 You can view the source code of this project from [here](https://github.com/WanjaMIKE/flutterfirebaseexample).
@@ -16,7 +14,7 @@ For you to follow along with this tutorial, you should have the [Flutter SDK](ht
 
 You can learn more on setting up Flutter's development environment from [here](https://flutter.dev/docs/get-started/install/).
 
-### Getting started
+### Set up the Project
 Launch Android Studio and create a new Flutter project.
 
 ![getting started](/engineering-educationimplementing-firebase-in-flutter/getting-started.png)
@@ -90,7 +88,7 @@ You can find more information about changing the above rules for a production ap
 
 We have successfully set up Firebase and the flutter project. Let's design the UI.
 
-### Creating UI
+### Building the UI
 The app will have a simple user interface. It will allow a user to input a word or sentence and click on a button to save it to the Firebase database.
 
 ![ui](/engineering-educationimplementing-firebase-in-flutter/ui.jpeg)
@@ -123,8 +121,7 @@ Scaffold(
       SizedBox(height: 250.0),
       Padding(
         padding: EdgeInsets.all(10.0),
-        child: TextField(
-        ),
+        child: TextField(),
       ),
       SizedBox(height: 30.0),
       Center(
@@ -132,7 +129,6 @@ Scaffold(
           color: Colors.pinkAccent,
           child: Text("Save to Database"),
           onPressed: () {
-            addData(textcontroller.text);
             //call method flutter upload
           }
         )
@@ -168,7 +164,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-### 3. Storing data
+### Storing data
 We will initialize a Firebase `databaseReference` object and use it to store data.
 
 ```dart
@@ -192,7 +188,7 @@ onPressed: () {
 
 Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
 
-### 4. Retrieving data
+### Retrieving data
 For simplicity, we will retrieve and print out the data in the console. This is shown below.
 
 ```dart
