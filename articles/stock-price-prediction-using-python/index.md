@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/stock-price-prediction-using-python/hero.png
     alt: stock price prediction python
 ---
-An artificial neural network is an interconnected group of nodes, inspired by the brain's simplification. Here, each circular node represents an artificial neuron, and an arrow represents a connection from the output of one artificial neuron to the input of another.
 <!--more-->
 
 In this tutorial, we are going to build an AI neural network model to predict stock prices. Specifically, we will work with the **Tesla** stock, hoping that we can make Elon Musk happy along the way.
