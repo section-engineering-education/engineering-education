@@ -82,6 +82,8 @@ A badge, basically a span, is used to show the password strength and colour.</br
 Green for strong, Blue for medium and Red for weak.</br></br>
 
 #### HTML Code</br>
+
+```
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -115,7 +117,7 @@ Green for strong, Blue for medium and Red for weak.</br></br>
     </p>     
 </body>
 </html>
-
+```
 
 #### JavaScript Code</br>
 The full code can be accessed in my [Github repository](https://github.com/Agusioma/Password-Strength-Checker).</br>
