@@ -333,16 +333,15 @@ def delete_todo_by_id(id):
 The above endpoint allows for DELETE request deleting the `Todo` with the specified id in the database.
 
 ### Testing the API endpoints
+**POST endpoint**
+
+![Create todo](/engineering-education/flask-crud-api/create-todo.png)
 
 **GET endpoint**
 
 ![Get all todos](/engineering-education/flask-crud-api/get-todos.png)
 
 ![Get todo by id](/engineering-education/flask-crud-api/get-todo-by-id.png)
-
-**POST endpoint**
-
-![Create todo](/engineering-education/flask-crud-api/create-todo.png)
 
 **PUT endpoint**
 
