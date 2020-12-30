@@ -1,6 +1,6 @@
 ### Password strength check using JavaScript Regex</br></br>
 
-![hero image](hero.jpg)
+![hero image](/engineering-education/password-checker-javascript/hero.jpg)
 
 For us to secure our systems and accounts, we need a strong password.</br>
 The person developing the system has to ensure that the password the end-user chooses is strong enough to guard his/her account.</br>
@@ -56,7 +56,7 @@ The password has to meet all the requirements to be strong.</br>
 ```
 </br>
 
-![Strong password](strong-password.png)
+![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
 
 - **Medium**</br>
 The password can only be medium either if it is atleast 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.</br>
@@ -65,12 +65,12 @@ The password can only be medium either if it is atleast 6 characters long and me
 ```
 </br>
 
-![Medium password](medium-password.png)
+![Medium password](/engineering-education/password-checker-javascript/medium-password.png)
 
 - **Weak**</br>
 If the entered password does not meet the strong or medium-level requirements then it is deemed weak.</br>
 
-![Weak password](weak-password.png)
+![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
 
 </br>
 We will use Bootstrap 5 for UI styling.</br>
@@ -222,4 +222,4 @@ It then sets the background colour(`strengthBadge.style.backgroundColor`) and te
         }
 ```
 
-That's all for now. Hope you can manipulate the code more and give it more levels like Too Strong, Too Weak, etc.</br>
+That's all for now. You can read more about JavaScript Regex at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).</br>Hope you can manipulate the code more and give it more levels like Too Strong, Too Weak, etc.</br>
