@@ -23,22 +23,22 @@ In this tutorial, we are going to build an AI neural network model to predict st
 - A good understanding of Python programming language.
 - A good understanding of neural networks. 
 
-If you are a beginner, check out [our tutorial](https://www.section.io/engineering-education/introduction-to-neural-networks/) about neural networks.
+If you are a beginner, check out [this article](https://www.section.io/engineering-education/introduction-to-neural-networks/) about neural networks.
 
 #### Development Environment
-- Locally install Python and Tensorflow.
-- [Google Colab](https://colab.research.google.com/github/ahmadmardeni1/Stock-price-predection-using-Python/blob/main/stock_price_predection.ipynb#scrollTo=QI4PhD_bi9dN) [Recommended].
+- Locally install Python and Tensorflow
+- [Google Colab](https://colab.research.google.com/github/ahmadmardeni1/Stock-price-predection-using-Python/blob/main/stock_price_predection.ipynb#scrollTo=QI4PhD_bi9dN) (Recommended)
 
 ### What is RNN?
 When you read this tutorial, you will understand each word based on previous words in your brain. You wouldn't start thinking from scratch. The thoughts are cumulative. Recurrent Neural Networks implements that in the machine it has loops, and it allows information to persist where traditional neural networks can't do that.
  
- ![Recurrent Neural Networks with loops](/engineering-education/stock-price-prediction-using-python/first.jpg)
+ ![Recurrent Neural Networks with loops](/engineering-education/stock-price-prediction-using-python/first.png)
  
  When **A** take the input **Xt**, then the **Ht** will be the output.
  
  A recurrent neural network is like multiple copies of the same network which passes the message to a successor. Now let's think a little bit of what will happen if we unroll the previous loop:
  
- ![Unroll the loop in the recurrent neural network](/engineering-education/stock-price-prediction-using-python/second.jpg)
+ ![Unroll the loop in the recurrent neural network](/engineering-education/stock-price-prediction-using-python/second.png)
  
  And here comes the problem of the RNN, which is **vanishing gradient problem**, where it can not handle large sequences. LSTMs are designed to handle long-term dependencies.
  
@@ -197,5 +197,6 @@ That's all. You can find the entire code [here](https://github.com/ahmadmardeni1
 We got a very good prediction result! Imagine if you are working with multiple variables, how much accurate the result will be?
 
 Also, I recommend you to change layers numbers, epochs, and batch_size. Try it yourself and change whatever you think may make your prediction better.
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
