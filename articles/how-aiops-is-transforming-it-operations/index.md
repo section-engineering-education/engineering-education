@@ -26,7 +26,7 @@ By an organization adopting AIOps, it introduces important ML techniques to its 
 
 #### Eliminates data silos
 
-Data silos is a common problem for many organizations and a source of inefficiency. Organizations faced with [data silos](https://www.plixer.com/blog/data-silo-what-is-it-why-is-it-bad/#) find that only particular employees or one group of employees has access to the source of data or a specific set of data in the organization. In such a situation, you will find multiple teams storing the same data or complementary data separately. This leads to wasted resources in terms of storage costs and inhibited productivity.
+Data silos is a common problem for many organizations and a source of inefficiency. A data solo is a colection of data held by one group in an organiation such that it is not fully or easly accessible to other groups. Organizations faced with [data silos](https://www.plixer.com/blog/data-silo-what-is-it-why-is-it-bad/#) find that only particular employees or one group of employees has access to the source of data or a specific set of data in the organization. In such a situation, you will find multiple teams storing the same data or complementary data separately. This leads to wasted resources in terms of storage costs and inhibited productivity.
 
 With AIOps, organizations break down data silos and the consequent challenges with full effect across all IT environments. AIOps promotes collaboration among teams and makes data available for all teams to analyze and monitor.
 
@@ -36,7 +36,7 @@ It does this by absorbing data in the form of metrics, events, and logs and taki
 
 It takes a lot of time for humans to process large amounts of data. AIOps uses algorithms powered by big data and machine learning to derive cognitive insights from raw datasets.
 
-AIOps reduces metrics such as the [Mean Time to Repair (MTTR) and the Mean Time to Detect (MTTD)](https://resolve.io/writable/documents/AIOps_For_Dummies-Nov19.pdf) dramatically. MTTR represents the amount the IT team takes to eradicate, remediate, or control the organization&#39;s already discovered threats. MTTD is the amount of time the IT team takes to notice a potential threat. The ability to process data at light fast speed saves IT operations (ITOps) teams&#39; time, effort and reduces the risk of operational fatigue.
+AIOps reduces metrics such as the [Mean Time to Repair (MTTR) and the Mean Time to Detect (MTTD)](https://resolve.io/writable/documents/AIOps_For_Dummies-Nov19.pdf) dramatically. MTTR represents the duration that the IT team takes to eradicate, remediate, or control the organization&#39;s already discovered threats. MTTD is the duration that the IT team takes to notice a potential threat. The ability to process data at light fast speed saves IT operations (ITOps) teams&#39; time, effort and reduces the risk of operational fatigue.
 
 ### Challenges of AIOps
 
@@ -83,5 +83,6 @@ AIOps&#39; focus is not limited to the present problems but learns continually t
 ### Conclusion
 
 Embracing AIOps is a significant step towards getting to the root cause of IT teams' problems every day. AIOps prevents alert fatigue and empowers teams to perform their tasks more efficiently.
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
