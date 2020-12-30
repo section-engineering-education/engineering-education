@@ -38,7 +38,7 @@ There are different libraries for implementing public-key cryptography in JavaSc
 ### Using TweetNaCL.js to implement public-key cryptography
 For this article, we'll use TweetNaCL.js to implement the concept of public-key cryptography.
 
-First, let's install the dependencies to use in the application. You can use `npm` or [`yarn`](#https://classic.yarnpkg.com/en/docs/install).
+First, let's install the dependencies to use in the application. You can use `npm` or [`yarn`](https://classic.yarnpkg.com/en/docs/install).
 
 ```bash
 npm install tweetnacl tweetnacl-util
