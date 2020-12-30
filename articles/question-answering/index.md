@@ -66,8 +66,6 @@ The final module gets the list of concise documents filtered and ordered by the 
 ### Evaluating the answers obtained
 The criteria can vary from paper to paper. But more generally, we want the question answering system to produce relevant, correct, and complete answers to the point. Hence many evaluation metrics were developed to measure such ambiguous terminologies. A few of those metrics are F1-scores, precision, recall, etc. For a detailed insight into evaluation metrics, refer to this [article](/engineering-education/evaluating-ml-model-performance/).
 
-Transformers at scale for question answering & neural search. Using NLP via a modular Retriever-Reader-Pipeline. Supporting DPR, Elasticsearch, HuggingFace's Modelhub
-
 ### Applications
 The applications of such systems are varied and exciting. Currently used in commercial applications, these have a broad scope in almost every aspect. Humans are question-driven organisms, and therefore these systems are the easiest way for humans to interact with machines.
 
