@@ -1,4 +1,22 @@
+---
+ layout: engineering-education
+ status: publish
+ published: true
+ url: /engineering-education/digital-assistants-vs-digital-companions/
+ title: Is Node.js a Good Choice to Create an App based on Micro-services?
+ description: After reading this article, you should know the importance of using micro-services and the micro-services' key benefits when building apps. 
+ author: pius-macharia
+ date: 2020-12-30T00:00:00-18:00
+ topics: [Node.js]
+ excerpt_separator: <!--more-->
+ images:
+
+    - url: /engineering-education/microservices-and-nodejs/hero.jpg
+     alt: Node.js and Microservices Image
+ ---
+
 Node.js and micro-services have an intense connection. Node.js was introduced in app development to make the building of apps based on micro-services easier. The principal idea was to break down Node.js apps into small, distributed nodes that would communicate with each other to make the whole application function.
+<!-- more -->
 
 After reading this article, you should know the importance of using micro-services and the micro-services' key benefits when building apps. You should also know why Node.js coupled with micro-services is such a good technology to implement when building complex apps and the benefits Node.js can offer during development.
 
