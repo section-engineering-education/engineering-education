@@ -53,7 +53,7 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 ```
 
-**Note:** It is important that the **register.html** path in your app **views.py** must be the correct path. Else you'll have an error. For example, if your **register.html** is located in your details app. The code above should be written this way:
+**Note:** It is important that the **register.html** path in your app **views.py** must be the correct path. Else you'll have an error. For example, if your **register.html** is located in your details app. We should write the code above this way:
 
 ```python
 return render(request, 'details/register.html', {'form': form})
