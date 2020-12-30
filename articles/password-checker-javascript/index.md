@@ -122,17 +122,35 @@ The full code can be accessed in my [Github repository](https://github.com/Agusi
 
 ```
     <script type="text/javascript">
+
+        //timeout before a callback is called
+
         let timeout;
+
+        //traversing the DOM and getting the input and span using their IDs
+
         let password = document.getElementById('0101')
         let strengthBadge = document.getElementById('0102')
+
+        //The strong and weak password Regex pattern checker
+
         let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
         let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
 
+        //Adding an input event listener when a user types to the  password input 
+
         password.addEventListener("input", () => {
+
+            //The badge is hidden by default, so we show it
 
             strengthBadge.style.display= 'block'
             clearTimeout(timeout);
+
+            //We then call the StrengChecker function as a callback then pass the typed password to it
+
             timeout = setTimeout(() => StrengthChecker(password.value), 500);
+
+            //Incase a user clears the text, the badge is hidden again
 
             if(password.value.length !== 0){
                 strengthBadge.style.display != 'block'
@@ -143,6 +161,8 @@ The full code can be accessed in my [Github repository](https://github.com/Agusi
 
 
         function StrengthChecker(PasswordParameter){
+
+        //We then change the badge's colour and text based on the password strength
 
             if(strongPassword.test(PasswordParameter)){
                 strengthBadge.style.backgroundColor = "green"
@@ -159,4 +179,41 @@ The full code can be accessed in my [Github repository](https://github.com/Agusi
 
     </script>
 
+```
+</br>
+
+In the event listener, we check the strengh when the user has typed something, but
+we won't do it immeadiately after every input event.</br>
+When typing quickly, we wait until a pause occurs so instead of immeadiately performing an action in the event handler, we set a timeout.</br>
+We also clear the previous timeout (if any) so that when the input events occur close together,closer than our timeout delay, the timeout from the previous input event will be cancelled.</br>
+
+```
+       password.addEventListener("input", () => {
+            strengthBadge.style.display= 'block'
+            clearTimeout(timeout)
+            timeout = setTimeout(() => StrengthChecker(password.value), 500)
+            if(password.value.length !== 0){
+                strengthBadge.style.display != 'block'
+            }else{
+                strengthBadge.style.display = 'none'
+            }
+        });
+```
+
+In the function ```StrengthChecker```, we test for the match through the ```RegExp.prototype.test()``` method. It returns true if there is a match or false if there is no match.</br>
+It then sets the background colour and text of the badge.</br>
+
+```
+        function StrengthChecker(PasswordParameter){
+            if(strongPassword.test(PasswordParameter)){
+                strengthBadge.style.backgroundColor = "green"
+                strengthBadge.textContent = 'Strong'
+            }else if(mediumPassword.test(PasswordParameter)){
+                strengthBadge.style.backgroundColor = 'blue'
+                strengthBadge.textContent = 'Medium'
+            }else{
+                strengthBadge.style.backgroundColor = 'red'
+                strengthBadge.textContent = 'Weak'
+            }
+        }
 ```
