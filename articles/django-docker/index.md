@@ -180,5 +180,6 @@ $ docker push <docker hub username>/django_todo:latest
 - `docker tag django_todo: latest <docker hub username>/django_todo: latest` command changes the tag to our local Docker image to include the Docker hub username which makes it possible to push the image to docker hub.
 - `docker push <docker hub username>/django_todo: latest` pushes the image to the Docker hub repository we created earlier.
 
+Full source code for the application is in [this](https://github.com/paulodhiambo/django_todo/tree/token_auth) github repository.
 ### Conclusion
 Docker is a great tool for packaging applications with the required dependencies to run them both locally and in production. [Docker playground](https://labs.play-with-docker.com/) is an online playground that you can use to test various Docker commands by installing Docker locally on your computer.
