@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/stock-price-prediction-using-python/
 title: Building a Stock Price Predictor Using Python
 description: In this tutorial, we build an AI neural network model in Python to predict stock prices.
-author: lalithnarayan-c
+author: ahmad-mardeni
 date: 2020-12-30T00:00:00-12:00
 topics: [languages]
 excerpt_separator: <!--more-->
