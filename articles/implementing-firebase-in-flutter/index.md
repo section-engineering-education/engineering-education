@@ -7,15 +7,16 @@ Firebase helps developers in creating high-quality applications. It provides fun
 To implement Firebase in a Flutter application and use Firebase's Real-Time Database to store and retrieve data.
 
 ### Prerequisites
-This tutorial is suitable for beginners. 
-For you to follow along, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. When it comes to the IDE, you can use [Android Studio](https://developer.android.com/) or [Visual Studio Code](https://code.visualstudio.com/download). Lastly, you need to sign up [here](https://firebase.google.com/) to access Firebase products.
+This tutorial is suitable for beginners.
 
-### 1. Getting started
-Launch `Android Studio` and create a new `Flutter` project. This is shown below.
+For you to follow along, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. For the IDE, you can either use [Android Studio](https://developer.android.com/) or [Visual Studio Code](https://code.visualstudio.com/download). You should have an [Firebase account](https://firebase.google.com/) to access its products.
+
+### Getting started
+Launch Android Studio and create a new Flutter project.
 
 ![getting started](/engineering-educationimplementing-firebase-in-flutter/getting-started.png)
 
-Open the `pubspec.yaml` file and add the following `Flutter` dependencies.
+Open the `pubspec.yaml` file and add the following Flutter dependencies.
 
 ```
 dev_dependencies:
@@ -25,7 +26,7 @@ dev_dependencies:
   firebase_core : ^0.5.3
 ```
 
-Use the` pub get` command to retrieve appropriate dependencies.
+Use the `pub get` command to retrieve appropriate dependencies.
 
 Next, open your browser and navigate to the [Firebase](https://firebase.google.com/) website. We need to create a new firebase project, as shown below.
 
@@ -77,9 +78,9 @@ In the `rules` section, ensure that you click on `test mode` rather than the `lo
 }
 ```
 
-We have now successfully set up Firebase and the flutter project. Let's design the UI.
+We have successfully set up Firebase and the flutter project. Let's design the UI.
 
-### 2. Creating UI.
+### Creating UI
 The app will have a simple user interface. It will allow a user to input a word or sentence and click on a button to save it to the Firebase database.
 
 ![ui](/engineering-educationimplementing-firebase-in-flutter/ui.jpeg)
@@ -112,10 +113,9 @@ Container(
 );
 ```
 
-Import the `HomePage class` in the `main.dart` file. Ensure that the `HomePage` is initialized, as shown below.
+Import the `HomePage` class in the `main.dart` file. Ensure that the `HomePage` is initialized, as shown below.
 
 ```dart
-
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -139,8 +139,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
 ```
 
 ### 3. Storing data
@@ -248,13 +246,13 @@ The following items are also printed.
 ![console results](/engineering-educationimplementing-firebase-in-flutter/console.png)
 
 ### Recap
-We have successfully created a simple Flutter application that can store and retrieve records from the Firebase Realtime Database. Please remember.
+We have successfully created a simple Flutter application that can store and retrieve records from the Firebase Realtime Database. Please remember these following points when you are working on your own project.
 
-1. You must create a Firebase account to access products such as the real-time database.
-2. You must instantiate the Firebase Realtime Database before using it in the Flutter application.
+1. You must create a Firebase account to access its products such as the real-time database.
+
+2. You must instantiate the Firebase Realtime Database before using it in your application.
+
 3. Use a FutureBuilder object when awaiting for network requests or operations.
-
-You can, therefore, use this knowledge and skills to build more interactive applications.
 
 ### References
 [FlutterFire](https://firebase.flutter.dev/docs/overview/)
