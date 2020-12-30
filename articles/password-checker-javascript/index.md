@@ -75,7 +75,7 @@ If the entered password does not meet the strong or medium-level requirements th
 ![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
 
 </br>
-We will use Bootstrap 5 for UI styling.</br>
+Bootstrap 5 is used for UI styling.</br>
 A badge, basically a span, is used to show the password strength and color.</br>
 Green for strong, Blue for medium and Red for weak.</br></br>
 
@@ -124,7 +124,7 @@ Green for strong, Blue for medium and Red for weak.</br></br>
 ```
 
 #### JavaScript Code</br>
-The complete code can be accessed in my [Github repository](https://github.com/Agusioma/Password-Strength-Checker).</br>
+The complete code can be accessed in my [Github repository](https://github.com/Agusioma/Password-Strength-Checker/blob/main/password-strength-checker.html).</br>
 
 ```java
     <script type="text/javascript">
