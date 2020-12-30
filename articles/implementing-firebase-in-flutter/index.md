@@ -1,15 +1,19 @@
-Flutter is a popular platform when it comes to the development of cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base.
+Flutter is a SDK (Software Development Kit) used to develop cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base.
 
-### Introduction
-Firebase helps developers in creating high-quality applications. It provides functionalities such as real-time database, cloud storage, authentication, and hosting. This tutorial focuses more on the real-time database. Firebase offers synchronization that ensures that all connected devices are notified whenever data changes. In this tutorial, we will be building a simple expense tracker application. It will allow individuals to store and retrieve a list of expenses. Let&#39;s get started.
+Firebase is a platform developed by Google for creating mobile and web applications. It provides functionalities such as real-time database, cloud storage, authentication, and hosting. This tutorial focuses on the real-time database. Firebase also offers synchronization which ensures that all connected devices are notified whenever data changes. 
+
+In this tutorial, we will be building a simple expense tracker application. It will allow individuals to store and retrieve a list of expenses. Let's get started.
 
 ### Goal of the Tutorial
 To implement Firebase in a Flutter application and use Firebase's Real-Time Database to store and retrieve data.
 
+You can view the source code of this project from [here](https://github.com/WanjaMIKE/flutterfirebaseexample).
+
 ### Prerequisites
 This tutorial is suitable for beginners.
 
-For you to follow along, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. For the IDE, you can either use [Android Studio](https://developer.android.com/) or [Visual Studio Code](https://code.visualstudio.com/download). You should have a [Firebase account](https://firebase.google.com/) to access its products.
+For you to follow along with this tutorial, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. For the IDE, you can either use [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/download). You should have a [Firebase account](https://firebase.google.com/) to access its products.
+
 You can learn more on setting up Flutter's development environment from [here](https://flutter.dev/docs/get-started/install/).
 
 ### Getting started
@@ -29,7 +33,7 @@ dev_dependencies:
 
 Use the `pub get` command to retrieve appropriate dependencies.
 
-Next, open your browser and navigate to the [Firebase](https://firebase.google.com/) website. We need to create a new firebase project, as shown below.
+Next, open your browser and navigate to [Firebase's website](https://firebase.google.com/). We need to create a new firebase project, as shown below.
 
 ![project name](/engineering-educationimplementing-firebase-in-flutter/project-name.png)
 
@@ -45,7 +49,7 @@ You can find your package name in the app-level – `build.gradle` file. Click r
 
 ![package name](/engineering-educationimplementing-firebase-in-flutter/package-name.png)
 
-Download the generated `google-services.json` file and paste it into the `app` folder
+Download the `google-services.json` file and paste it into the `android/app` folder
 
 ![paste json](/engineering-educationimplementing-firebase-in-flutter/paste-json.png)
 
@@ -92,17 +96,15 @@ The app will have a simple user interface. It will allow a user to input a word 
 ![ui](/engineering-educationimplementing-firebase-in-flutter/ui.jpeg)
 
 Create a new file called `home.dart.` In this file, create a `stateful class` and name it `HomePage.`
-We create a stateful widget and scaffold, as shown below.
+We'll create a stateful widget and scaffold, as shown below.
 
 ```dart 
-class MyApp extends StatefulWidget { //creating statefulwidget 
-  MyApp({Key key}) : super(key: key);
-
+class HomePage extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold();  // add scaffold here
@@ -126,13 +128,15 @@ Scaffold(
       ),
       SizedBox(height: 30.0),
       Center(
-          child: RaisedButton(
-              color: Colors.pinkAccent,
-              child: Text("Save to Database"),
-              onPressed: () {
-                addData(textcontroller.text);
-                //call method flutter upload
-              })),
+        child: RaisedButton(
+          color: Colors.pinkAccent,
+          child: Text("Save to Database"),
+          onPressed: () {
+            addData(textcontroller.text);
+            //call method flutter upload
+          }
+        )
+      ),
     ],
   ),
 ),);
@@ -174,7 +178,17 @@ void addData(String data) {
   databaseRef.push().set({'name': data, 'comment': 'A good season'});
 }
 ```
-The `addData` function stores the user input along with a string (`'comment': 'A good season'`).
+
+The `addData` function stores the user input along with a string (`'comment': 'A good season'`). Essentially, we can add any object to the database.
+
+We'll call the `addData` function when the `RaisedButton` is clicked.
+
+```dart
+onPressed: () {
+ addData(textcontroller.text);
+  //call method flutter upload
+})),
+```
 
 Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
 
@@ -189,16 +203,7 @@ void printFirebase(){
 }
 ```
 
-We add the above function in the  `_HomePageState` class. The `printFirebase` method is called after all widgets have been rendered on the screen.
-
-We will call the `addData` function when the `RaisedButton` is clicked. The `addData` is included inside the `onPressed` method, as shown below.
-
-```dart
-  onPressed: () {
-         addData(textcontroller.text);
-          //call method flutter upload
-        })),
-```
+We'll call the above function in the  `_HomePageState` class's `build` method.
 
 Here is the full code for the HomePage class
 
@@ -253,25 +258,25 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(height: 30.0),
                     Center(
-                        child: RaisedButton(
-                            color: Colors.pinkAccent,
-                            child: Text("Save to Database"),
-                            onPressed: () {
-                              addData(textcontroller.text);
-                              //call method flutter upload
-                            })),
+                      child: RaisedButton(
+                          color: Colors.pinkAccent,
+                          child: Text("Save to Database"),
+                          onPressed: () {
+                            addData(textcontroller.text);
+                            //call method flutter upload
+                          }
+                        )
+                     ),
                   ],
                 ),
               );
             }
-          }),
-
+          }
+       ),
     );
   }
 }
 ```
-
-
 
 ### 5. Results
 When we click on the Save to Database button. The user input is stored in the real-time database, as shown.
@@ -290,8 +295,6 @@ We have successfully created a simple Flutter application that can store and ret
 2. You must instantiate the Firebase Realtime Database before using it in your application.
 
 3. Use a FutureBuilder object when awaiting for network requests or operations.
-
-You can download the source code from [here](https://github.com/WanjaMIKE/flutterfirebaseexample).
 
 ### References
 [FlutterFire](https://firebase.flutter.dev/docs/overview/)
