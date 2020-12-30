@@ -30,29 +30,31 @@ If you are a beginner, check out [this article](https://www.section.io/engineeri
 - [Google Colab](https://colab.research.google.com/github/ahmadmardeni1/Stock-price-predection-using-Python/blob/main/stock_price_predection.ipynb#scrollTo=QI4PhD_bi9dN) (Recommended)
 
 ### What is RNN?
-When you read this tutorial, you will understand each word based on previous words in your brain. You wouldn't start thinking from scratch. The thoughts are cumulative. Recurrent Neural Networks implements that in the machine it has loops, and it allows information to persist where traditional neural networks can't do that.
+When you read this text, you understand each word based on previous words in your brain. You wouldn't start thinking from scratch, rather your thoughts are cumulative. Recurrent Neural Networks implement the same concept using machines; they have loops and allow information to persist where traditional neural networks can't.
  
- ![Recurrent Neural Networks with loops](/engineering-education/stock-price-prediction-using-python/first.png)
+Let's use some illustrations to demonstrate how a RNN works. 
+
+![Recurrent Neural Networks with loops](/engineering-education/stock-price-prediction-using-python/first.png)
+
+When **A** takes the input **Xt**, then **Ht** will be the output.
  
- When **A** take the input **Xt**, then the **Ht** will be the output.
+A recurrent neural network is like multiple copies of the same network which passes the message to a successor. Now let's think a little bit about what happens if we unroll the previous loop:
  
- A recurrent neural network is like multiple copies of the same network which passes the message to a successor. Now let's think a little bit of what will happen if we unroll the previous loop:
+![Unroll the loop in the recurrent neural network](/engineering-education/stock-price-prediction-using-python/second.png)
  
- ![Unroll the loop in the recurrent neural network](/engineering-education/stock-price-prediction-using-python/second.png)
- 
- And here comes the problem of the RNN, which is **vanishing gradient problem**, where it can not handle large sequences. LSTMs are designed to handle long-term dependencies.
+And here comes the **vanishing gradient problem** of the RNN, where it can not handle large sequences. LSTMs are designed to handle long-term dependencies.
  
 ### What is LSTM?
- Long short-term memory (LSTM) is an artificial recurrent neural network (RNN) architecture that you can use in the deep learning field. In LSTM, you can process an entire sequence of data. For example, handwriting generation, question answering or speech recognition, and a lot more.
+Long short-term memory (LSTM) is an artificial recurrent neural network (RNN) architecture that you can use in the deep learning field. In LSTM, you can process an entire sequence of data. For example, handwriting generation, question answering or speech recognition, and a lot more.
 
 Unlike the traditional feed-forward neural network, which passes the values sequentially through each layer of the network, LSTM has a feedback connection that helps it remember preceding information, making it the perfect model for our needs to do time series analysis.
 
 ### Choosing data 
-In this tutorial, I will use a TESLA stock dataset from [Yahoo finance](https://finance.yahoo.com/), which contains the stock data for ten years. You can download it for free from [here](https://github.com/ahmadmardeni1/Stock-price-predection-using-Python).
+In this tutorial, I will use a TESLA stock dataset from [Yahoo finance](https://finance.yahoo.com/), which contains stock data for ten years. You can download it for free from [here](https://github.com/ahmadmardeni1/Stock-price-predection-using-Python).
 
 Also, I'm going to use [Google Colab](https://colab.research.google.com/) because it is powerful, but you are free to use whatever you are comfortable with. 
 
-#### Importing libraries
+### Importing libraries
 ```python
 import pandas as pd
 import numpy as np
@@ -67,7 +69,7 @@ We are going to use `numpy` for scientific operations, `pandas` to modify our da
 First of all, if you take a look at the dataset, you need to know that the "open" column represents the opening price for the stock at that "date" column, and the "close" column is the closing price on that day. The "High" column represents the highest price reached that day, and the "Low" column represents the lowest price.
 
 #### Loading data
-Let's upload our dataset(please ignore the following code if you are not using Google Colab):
+Let's upload our dataset (please ignore the following code if you are not using Google Colab):
 ```python
 from google.colab import files
 dataset = files.upload()
@@ -77,13 +79,13 @@ Then press "choose files" and upload the dataset.
 If you are not using Google Colab, you can put the data file in the same code folder.
 
 #### Reading data
-After uploading our data, we need to make a data frame by:
+After uploading our data, we need to make a data frame:
 ```python
 pd.read_csv('TSLA.csv')
 ```
 
 #### Feature Extraction
-After that, let's get the number of trading days by:
+After that, let's get the number of trading days:
 ```python
 df.shape
 ```
@@ -146,7 +148,7 @@ model.add(LSTM(units=96))
 model.add(Dropout(0.2))
 model.add(Dense(units=1))
 ```
-First of all, we initialized our model as a sequential one with 96 units in the output's dimensionality. We used `return_sequences=True` to make the LSTM layer with three-dimensional input and `input_shape` to shape our dataset.
+First, we initialized our model as a sequential one with 96 units in the output's dimensionality. We used `return_sequences=True` to make the LSTM layer with three-dimensional input and `input_shape` to shape our dataset.
 
 Making the dropout fraction 0.2 drops 20% of the layers. Finally, we added a dense layer with a value of 1 because we want to output one value.
 
@@ -160,7 +162,7 @@ Now we want to compile our model:
 ```python
 model.compile(loss='mean_squared_error', optimizer='adam')
 ```
-We used `loss='mean_squared_error'` because it is a regression problem, and the adam optimizer to update network weights iterative based on training data.
+We used `loss='mean_squared_error'` because it is a regression problem, and the adam optimizer to update network weights iteratively based on training data.
 
 We are ready! Let's save our model and start the training:
 ```python
@@ -169,7 +171,7 @@ model.save('stock_prediction.h5')
 ```
 Every `epoch` refers to one cycle through the full training dataset, and `batch size` refers to the number of training examples utilized in one iteration.
 
-Let's load our model by:
+Let's load our model:
 ```python
 model = load_model('stock_prediction.h5')
 ```
@@ -188,15 +190,15 @@ plt.legend()
 ```
 The result will be:
 
-![Ploting results](/engineering-education/stock-price-prediction-using-python/third.jpg)
+![Plotting results](/engineering-education/stock-price-prediction-using-python/third.png)
 
 That's all. You can find the entire code [here](https://github.com/ahmadmardeni1/Stock-price-predection-using-Python), and you can run it by clicking on "open in colab."
 
 
 ### Wrapping up
-We got a very good prediction result! Imagine if you are working with multiple variables, how much accurate the result will be?
+We got a very good prediction result! Imagine if you are working with multiple variables, how much more accurate the result will be?
 
-Also, I recommend you to change layers numbers, epochs, and batch_size. Try it yourself and change whatever you think may make your prediction better.
+Also, I recommend for you to change layers, numbers, epochs, and batch_size. Try it yourself and change whatever you think may make your prediction better.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
