@@ -19,13 +19,13 @@ In the starter code, I've set up a language and dialect select menu, two buttons
 ![Starter Code Screen](start_screen.png)
 
 ### Let's code
-Create a new JavaScript file and name it as `speechRecognition.js`. Now add the file to the HTML file using the `script` tag after the `body` tag. This will make sure that the script file is loaded after all the elements have been loaded to the DOM.
+Create a new JavaScript file and name it `speechRecognition.js`. Now add the file to the HTML file using the `script` tag after the `body` tag. This will make sure that the script file is loaded after all the elements have been loaded to the DOM.
 
 ```html
 <script src="./speechRecognition.js"></script>
 ```
 
-Now, inside the script file, let's check if the `webkitSpeechRecognition` class is available in the `window` object. If not, let's just `console.log` that it's not available.
+Now, inside the script file, let's check if the `webkitSpeechRecognition` class is available in the `window` object. If not, let's `console.log` that it's not available.
 
 ```JavaScript
 if ("webkitSpeechRecognition" in window) {
@@ -50,7 +50,7 @@ let speechRecognition = new webkitSpeechRecognition();
 Now, let's configure some properties on this `speechRecognition` object.
 
 #### Continuous listening
-The speech recognition object can either stop listening after the user stops speaking or it can keep listening until the user stops it. If you just want to recognize a phrase or a word, you can set this to `false`. For this tutorial, let's set it to `true`.
+The speech recognition object can either stop listening after the user stops speaking or it can keep listening until the user stops it. If you only want to recognize a phrase or a word, you can set this to `false`. For this tutorial, let's set it to `true`.
 
 ```JavaScript
 speechRecognition.continuous = true;
@@ -73,7 +73,7 @@ Let's set the language that the user has chosen from the select menu. You need t
 ```
 
 ### Events & Callbacks
-You can provide callbacks for events like `onStart`, `onEnd`, `onResult` and `onError`.
+You can provide callbacks for events like `onStart`, `onEnd`, `onResult`, and `onError`.
 
 #### onStart
 This event is triggered when speech recognition is started by the user. Let's pass a callback function that will display that the speech recognition instance is listening on the webpage.
@@ -116,7 +116,7 @@ speechRecognition.onError = () => {
 #### onResult
 This event is triggered when the `speechRecognition` object has some results from the recognition. It will contain the final results and interim results. Let's pass a callback function that will set the results to the respective `<span>` inside the transcript box.
 
-This is the HTML code for the transcript box on the web page. The interim results span is colored differently to differentiate between the interim results and the final results.
+This is the HTML code for the transcript box on the web page. The interim results span is colored in a different color to differentiate between the interim results and the final results.
 
 ```html
 <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
@@ -208,7 +208,7 @@ document.querySelector("#stop").onclick = () => {
 
 - We set some properties like `continuous`, `interimResults`, and `language` on that speech recognition instance.
 
-- We added callback methods for different events like `onStart`, `onEnd`, `onError` and `onResult`.
+- We added callback methods for different events like `onStart`, `onEnd`, `onError`, and `onResult`.
 
 - We set the onClick property of the start and stop buttons to start and stop the speech recognition.
 
