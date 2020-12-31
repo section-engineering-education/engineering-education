@@ -134,3 +134,5 @@ $$new\; degree\; of\; membership(x)\; = 1\; -\; degree\; of\; membership(x)$$
 
 In this article, we discussed the various membership functions that can be used to represent fuzzy sets. Moreover, we looked at the various operations that are used frequently on fuzzy sets. 
 
+
+
