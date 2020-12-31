@@ -11,11 +11,11 @@ topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/data-mining-using-crisp-dm-methodology/hero.jpg
-    alt: Data Mining using CRISP-DM methodology
+    alt: Data Mining using the CRISP-DM methodology
 ---
-In this article, we will cover how the CRISP-DM methodology can be used for building successful data science projects. We will also get an overview of how it can be used by analyzing a case study.
+This article will cover how the CRISP-DM methodology can be used for building successful data science projects. We will also get an overview of how it can be used by analyzing a case study.
 <!--more-->
-We’ll be studying a case study to understand how this methodology has helped data scientists build successful projects. As a prerequisite, you must have a beginner level of understanding of how Data science projects are built.
+We’ll be studying a case study to understand how this methodology has helped data scientists build successful projects. As a prerequisite, you must have a beginner understanding of how Data science projects are built.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -24,7 +24,7 @@ We’ll be studying a case study to understand how this methodology has helped d
 - [Further reading](#further-reading)
 
 ### Introduction
-With the rise in usage of Data Mining across several industries, the need for a standard framework is required to achieve the objectives of the project.
+With the rise in usage of Data Mining across several industries, the need for a standard framework is required to achieve the project's objectives.
 
 The use of a standard framework helps us in:
 
@@ -32,7 +32,7 @@ The use of a standard framework helps us in:
 - Improving project planning and management.
 - Encouraging best practices used for achieving better results.
 
-With the increase in complexity of the projects, it is recommended to follow a standard framework for achieving goals faster.
+With the increase in the projects' complexity, it is recommended to follow a standard framework for achieving goals faster.
 
 ### What is CRISP-DM?
 > According to [this](https://analyticsindiamag.com/crisp-dm-data-science-project/) article, CRISP-DM stands for CRoss-Industry Standard Process for Data Mining and was [developed](https://www.the-modeling-agency.com/crisp-dm.pdf) in 1996 under the ESPRIT initiative. It has been a favorite for business analysts and data scientists alike owing to its easily adaptable model.
@@ -83,19 +83,19 @@ This step helps us define the necessary methods to be taken to consider a busine
 For our problem, our objective is "Predict approximate electricity consumption for the next day, to allocate necessary resources".
 
 ##### Assess the situation
-This step helps us analyze the current situation of the project by identifying the resources and the stakeholders of the project.
+This step helps us analyze the project's current situation by identifying the resources and the stakeholders of the project.
 
 For our problem,
 
 - We must find out the factors which affect the increase in electricity consumption. One major factor affecting it is temperature.
 
 ##### Determine data mining goals
-This step helps us identify how to translate the business goals into data mining goals, and select a proper way for its assessment.
+This step helps us identify how to translate the business goals into data mining goals and select a proper way for its assessment.
 
 For our problem,
 
 - We must use data mining techniques to find what other factors affect consumption.
-- We must find out what type of problem is it - Classification, Prediction, or Clustering?
+- We must find out what type of problem it is - Classification, Prediction, or Clustering?
 
 ##### Produce a project plan
 This final step helps us create an initial process plan and estimate the effort and resources needed to achieve our goals.
@@ -108,7 +108,7 @@ For our problem,
 - We must decide on the selection of tools and techniques.
 
 #### Data Understanding
-> According to Wikipedia, the data understanding phase starts with an initial data collection and proceeds with activities to get familiar with the data, to identify data quality problems, to discover first insights into the data, or to detect interesting subsets to form hypotheses for hidden information.
+> According to Wikipedia, the data understanding phase starts with an initial data collection and proceeds with activities to get familiar with the data, identify data quality problems, discover first insights into the data, or detect interesting subsets to form hypotheses for hidden information.
 
 Questions to ask are:
 
@@ -124,20 +124,20 @@ For our problem,
 - We must perform statistical analysis and find the relationship between various types of data.
 
 #### Data Preparation
-> According to Wikipedia, the data preparation phase covers all activities to construct the final dataset (data that will be fed into the modeling tool(s)) from the initial raw data. Data preparation tasks are likely to be performed multiple times, and not in any prescribed order. Tasks include table, record, and attribute selection as well as transformation and cleaning of data for modeling tools.
+> According to Wikipedia, the data preparation phase covers all activities to construct the final dataset (data that will be fed into the modeling tool(s)) from the initial raw data. Data preparation tasks are likely to be performed multiple times and not in any prescribed order. Tasks include table, record, and attribute selection and transformation, and cleaning of data for modeling tools.
 
 In this step, we must follow 5 common steps:
 
 - Gathering: When gathering data - you may need to collect data from multiple sources within your organization.
-- Cleansing: The data set you are working with may have issues that you want to resolve before your analysis. This can be in the form of incorrect or missing data.
-- Formatting: You may need to format the data by changing the way a date field appears, renaming a field, or even rotating the data, similar to using a pivot table.
-- Blending: You may want to blend, or combine, your data with other datasets to enrich it with additional variables, similar to using the `vlookup` function in Excel.
+- Cleansing: The data set you are working with may have issues you want to resolve before your analysis. This can be in the form of incorrect or missing data.
+- Formatting: You may need to format the data by changing how a date field appears, renaming a field, or even rotating the data, similar to using a pivot table.
+- Blending: You may want to blend your data with other datasets to enrich it with additional variables, similar to using the `vlookup` function in Excel.
 - Sampling: Lastly, you may want to sample the dataset and work with a more manageable number of records.
 
 These steps remain common for any type of dataset that we choose, irrespective of the problem.
 
 #### Analysis and Modeling
-> According to Wikipedia, in this phase, various modeling techniques are selected and applied, and their parameters are calibrated to optimal values. Typically, there are several techniques for the same data mining problem type. Some techniques have specific requirements in the form of data. Therefore, stepping back to the data preparation phase is often needed.
+> According to Wikipedia, various modeling techniques are selected and applied in this phase, and their parameters are calibrated to optimal values. Typically, there are several techniques for the same data mining problem type. Some techniques have specific requirements in the form of data. Therefore, stepping back to the data preparation phase is often needed.
 
 Things to consider:
 
@@ -149,12 +149,12 @@ Things to consider:
 In our problem, we find that there is a high correlation between temperature and electricity consumption. This can found by following a series of steps:
 
 1. Build a predictive model - predicting the next days' temperature based on history.
-2. Validate the model - validate this by predicting the electricity of the next day, to check if a correlation exists.
+2. Validate the model - validate this by predicting the electricity of the next day to check if a correlation exists.
 3. Repeat the process - repeat the above 2 processes until gaining correlation confidence.
-4. Perform analysis - on gaining confidence, we can make an analysis that helps us in resource allocation.
+4. Perform analysis - on gaining confidence, we can analyze that helps us in resource allocation.
 
 #### Validation
-> According to Wikipedia, at this stage in the project, you have built a model (or models) that appears to have high quality, from a data analysis perspective. Before proceeding to the final deployment of the model, it is important to more thoroughly evaluate the model, and review the steps executed to construct the model, to be certain it properly achieves the business objectives. A key objective is to determine if there is some important business issue that has not been sufficiently considered. At the end of this phase, a decision on the use of the data mining results should be reached.
+> According to Wikipedia, at this stage in the project, you have built a model (or models) that appears to have high quality from a data analysis perspective. Before proceeding to the model's final deployment, it is important to more thoroughly evaluate the model and review the steps executed to construct the model to be certain it properly achieves the business objectives. A key objective is to determine if there is some important business issue that has not been sufficiently considered. At the end of this phase, a decision on using the data mining results should be reached.
 
 Things to consider:
 
@@ -163,10 +163,10 @@ Things to consider:
 - Determine whether to proceed to the next step or return to a previous phase.
 - Repeat as many times as necessary.
 
-In our problem, we have been working based on our assumption that temperature is one of the key factors affecting consumption. While validating, if we find that temperature does not correlate with electricity consumption, then we must roll back to the previous step and revise our model further.
+In our problem, we have been working based on our assumption that temperature is one of the key factors affecting consumption. While validating, if we find that temperature does not correlate with electricity consumption, we must roll back to the previous step and further revise our model.
 
 #### Presentation
-> According to Wikipedia, the creation of the model is generally not the end of the project. Even if the purpose of the model is to increase knowledge of the data, the knowledge gained will need to be organized and presented in a way that is useful to the customer. Depending on the requirements, the deployment phase can be as simple as generating a report or as complex as implementing a repeatable data scoring (e.g. segment allocation) or data mining process. In many cases, it will be the customer, not the data analyst, who will carry out the deployment steps. Even if the analyst deploys the model the customer needs to understand up front the actions which will need to be carried out to make use of the created models.
+> According to Wikipedia, the creation of the model is generally not the end of the project. Even if the purpose of the model is to increase knowledge of the data, the knowledge gained will need to be organized and presented in a useful way to the customer. Depending on the requirements, the deployment phase can be as simple as generating a report or as complex as implementing a repeatable data scoring (e.g., segment allocation) or data mining process. It will be the customer, not the data analyst, who will carry out the deployment steps in many cases. Even if the analyst deploys the model, the customer needs to understand the actions that will need to be carried out to make use of the created models.
 
 Things to consider:
 
@@ -178,12 +178,12 @@ Things to consider:
 - Always reference the data sources used.
 - Make sure your analysis supports the decisions that need to be made.
 
-This is one of the most important steps while building a data science project. Though the analysts might have analyzed the problem, visualizing, and presenting the insights to the clients/business managers is the key step.
+This is one of the most important steps while building a data science project. Though the analysts might have analyzed the problem, visualizing, and presenting the clients/business managers' insights is the key step.
 
-Visualization can be done by plotting graphs, performing statistical analysis, or by predicting the next possible outcome. To learn more about visualization, please refer to [this](/engineering-education/matplotlib-visualization-python/) article on Matplotlib visualizations and [this](/engineering-education/getting-started-with-data-visualization-using-pandas/) article on Pandas visualization.
+Visualization can be done by plotting graphs, performing statistical analysis, or predicting the next possible outcome. To learn more about visualization, please refer to [this](/engineering-education/matplotlib-visualization-python/) article on Matplotlib visualizations and [this](/engineering-education/getting-started-with-data-visualization-using-pandas/) article on Pandas visualization.
 
 ### Conclusion
-In conclusion, we have learned various steps in CRISP-DM methodology and understood it by analyzing a case study. This can be understood better only by using this methodology for your next data science project.
+In conclusion, we have learned various CRISP-DM methodology steps and understood them by analyzing a case study. This can be understood better only by using this methodology for your next data science project.
 
 ![Summary](/engineering-education/data-mining-using-crisp-dm-methodology/summary.PNG)
 
@@ -204,3 +204,6 @@ To summarize:
 - [Article by AnalyticsIndiaMag](https://analyticsindiamag.com/crisp-dm-data-science-project/)
 - [A Detailed explanation of the CRISP-DM methodology](https://www.sv-europe.com/crisp-dm-methodology/)
 - [Article by Datascience-pm](https://www.datascience-pm.com/crisp-dm-2/)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
