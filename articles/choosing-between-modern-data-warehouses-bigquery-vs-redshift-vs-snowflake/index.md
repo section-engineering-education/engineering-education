@@ -71,3 +71,8 @@ Google scales storage resources automatically with growth in data volume and inc
 ### Conclusion
 
 Each of these cloud data warehouses has its strongest and weakest points. If you require a standard cloud data warehouse and have the capacity for a dedicated database administrator, then go for Redshift. Snowflake and BigQuery architectures make these data warehouse solutions highly scalable. However, Snowflake is best suited for organizations looking for data warehouses that offer concurrency at scale.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+
