@@ -211,22 +211,7 @@ The textcontroller is the added to the TextField widget, as shown below.
 TextField(controller: textcontroller),
 ```
 
-Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
-
-### Retrieving data
-For simplicity, we will retrieve and print out the data in the console. This is shown below.
-
-```dart
-void printFirebase(){
-  databaseRef.once().then((DataSnapshot snapshot) {
-    print('Data : ${snapshot.value}');
-  });
-}
-```
-
-We'll call the above function in the  `_HomePageState` class's `build` method.
-
-Note that the FirebaseApp is initialised using a Future component. This object helps handle errors or other results that occur in future.
+Please note that we need to use a `FutureBuilder` for async operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
 
 ```dart
 class _HomePageState extends State<HomePage> {
@@ -247,6 +232,19 @@ return Scaffold(
               } else {
                 return Container(
 ```
+
+### Retrieving data
+For simplicity, we will retrieve and print out the data in the console. This is shown below.
+
+```dart
+void printFirebase(){
+  databaseRef.once().then((DataSnapshot snapshot) {
+    print('Data : ${snapshot.value}');
+  });
+}
+```
+
+We'll call the above function in the  `_HomePageState` class's `build` method.
 
 Here is the complete code for the HomePage class.
 
