@@ -1,19 +1,21 @@
-Modern sports have immensely applied technology, like many other aspects of life. Today, technology is being used almost in all fields of our lives. Due to many athletes, coaches, and spectators involved, technologists, scientists, and a host of equipment becomes necessary for the sports to be manageable. Technology use ensures accuracy, makes sports more enjoyable, and derives more experiences. The human body is the main protagonist of sports, while technology and science (Technoscience) play the support role. Sometimes, however, technoscience is blamed for giving undue advantages to those who use them. For any game to be fair, all contestants should have an equal chance of winning. Outcomes should not be entirely predictable in any fair game.
+Modern sports have immensely applied technology, like many other aspects of life. Today, technology is being used almost in all fields of our lives. Today's sports involve a massive number of athletes, coaches, and spectators. The vast population involved relies on technologists, scientists, and a host of equipment to manage the sports. Technology use ensures accuracy, makes sports more enjoyable and derives more experiences.
 
-This article outlines the importance of artificial intelligence in modern sports and how has it helped in the evolution of sports. It explains technology&#39;s role in today&#39;s sports and what we expect in the future.
+ The human body is the main protagonist of sports, while technology and science (Technoscience) play the support role. Sometimes, however, technoscience is blamed for giving undue advantages to those who use them. For any game to be fair, all contestants should have an equal chance of winning. Outcomes should not be entirely predictable in any fair game.
+
+This article outlines the importance of artificial intelligence in modern sports and how has it helped in the evolution of sports. It explains technology's role in today's sports and what we expect in the future.
 
 ### [Artificial Intelligence](https://www.section.io/engineering-education/artificial-intelligence-future/) (AI) 
 
 A variety of technologies can learn, take information, analyze, and respond to it without waiting for humans to respond. It can also be defined as computer systems that can perform tasks that normally require human intelligence.
 
-Examples of technology aspects used in the sports industry
+### Examples of technology aspects used in the sports industry
 
 There are so many technologies used in sports today. They are customized to fit user preferences. Some of them are discussed below.
 
-1. Goal-Line Technology; an instant signal in a football game used to determine whether the whole of the ball has crossed the goal-line. The information is transmitted with a second to the referee to ensure that there is no time wasted.
-2. [Video Assistant Referee System](https://www.sportperformanceanalysis.com/article/application-of-video-technology-in-football-refereeing-var); used in football, the referee uses video technology to review and assist in analyzing situations for a decision.
-3. Sensors/ Data Tracking devices; mostly placed under the play&#39;s jersey to monitor the heart rate, fatigue, and injury prevention.
-4. Virtue Imaging in Swimming; used to create a superimposed line on the surface of water and graphics. It also creates virtue flags representing each swimmer in the lane.
+1. Goal-Line Technology: An instant signal in a football game used to determine whether the whole of the ball has crossed the goal-line. The information is transmitted with a second to the referee to ensure that there is no time wasted.
+2. [Video Assistant Referee System](https://www.sportperformanceanalysis.com/article/application-of-video-technology-in-football-refereeing-var): Used in football, the referee uses video technology to review and assist in analyzing situations for a decision.
+3. Sensors/ Data Tracking devices: Mostly placed under the play's jersey to monitor the heart rate, fatigue, and injury prevention.
+4. Virtue Imaging in Swimming: Used to create a superimposed line on the surface of water and graphics. It also creates virtue flags representing each swimmer in the lane.
 
 ### Artificial Intelligence (AI) applications in sports
 
@@ -28,7 +30,7 @@ The fan engagement has increased due to Artificial Intelligence through phones a
 
 #### Training and coaching
 
-Training and coaching in today&#39;s sports has changed with technological advancement. Artificial intelligence contains a huge volume of data, training, and game performances that scientists and coaches use as a knowledge source. The knowledge of artificial intelligence keeps on updating.
+Training and coaching in today's sports has changed with technological advancement. Artificial intelligence contains a huge volume of data, training, and game performances that scientists and coaches use as a knowledge source. The knowledge of artificial intelligence keeps on updating, with real time information. This knowledge is used further by sports scientists, coaches, and coaches, leading to more performance refinement.  
 
 #### Assistant coaching and refereeing
 
@@ -36,11 +38,11 @@ We have already discussed how artificial intelligence is applied in Video Assist
 
 #### Scouting and recruitment
 
-Investing in an athlete is always a big gamble, as a number of them never live up to their billing. There are customized artificial intelligence applications that work on prediction models. Artificial intelligence predicts athlete&#39;s performance and potential based on multiple factors for instance body weight, proportions, strength etcetera.
+Investing in an athlete is always a big gamble, as a number of them never live up to their billing. There are customized artificial intelligence applications that work on prediction models. Artificial intelligence predicts athlete's performance and potential based on multiple factors for instance body weight, proportions, strength etcetera.
 
 #### Wearable Tech
 
-It is a category of devices that use artificial intelligence, worn in clothing or implanted in the user&#39;s body or skin powered by microprocessors, to send or receive data from the internet. This technology has been heavily used to provide data of strains and exertion of a player. It signals that the activity should be stopped to avoid injuries.
+It is a category of devices that use artificial intelligence, worn in clothing or implanted in the user's body or skin powered by microprocessors, to send or receive data from the internet. This technology has been heavily used to provide data of strains and exertion of a player. It signals that the activity should be stopped to avoid injuries.
 
 ### Challenges and areas of consideration while investing artificial intelligence in sports
 
