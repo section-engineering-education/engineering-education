@@ -43,7 +43,7 @@ We use the constructor function when we know the pattern keeps changing or like 
 
 
 #### The JavaScript program</br></br>
-We are going to discuss how to check the strength of  a password a user enters basing on if the password:</br>
+We are going to discuss how to check the strength of  a password a user enters based on if the password:</br>
 - Is at least 8 characters long(`?=.{8,}`)
 - Has at least one uppercase letter(`?=.*[A-Z]`)
 - Has at least one lowercase letter(`?=.*[a-z]`)
@@ -61,7 +61,7 @@ The password has to meet all the requirements to be strong.</br>
 ![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
 
 - **Medium**</br>
-The password can only be medium either if it is atleast 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.</br>
+The password can only be medium either if it is at least 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.</br>
 ```java
 ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
 ```
@@ -190,8 +190,8 @@ The complete code can be accessed in my [Github repository](https://github.com/A
 
 In the event listener, we check the strength when the user has typed something, but
 we won't do it immediately after every input event.</br>
-When typing quickly, we wait until a pause occurs so instead of immediately performing an action in the event handler, we set a timeout.</br>
-We also clear the previous timeout (if any) so that when the input events occur close together, closer than our timeout delay, the timeout from the previous input event will be canceled.</br>
+When typing quickly, we wait until a pause occurs so instead of immediately acting as the event handler, we set a timeout.</br>
+We also clear the previous timeout, if there is any so that when the events occur close together than our timeout duration, the timeout from the preceding input event is canceled.</br>
 
 ```java
        password.addEventListener("input", () => {
