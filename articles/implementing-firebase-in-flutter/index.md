@@ -196,17 +196,18 @@ onPressed: () {
   //call method flutter upload
 })),
 ```
-We will access the user input using a `textcontroller`. This element allows us to listen for changes in a TextField.
 
-we need to include the textcontroller in the HomePageState class.
-```
+We'll access the user input using a `textcontroller`. This element allows us to listen for changes in a TextField.
+
+We need to include the textcontroller in the HomePageState class.
+
+```dart
 class _HomePageState extends State<HomePage> {
   final textcontroller = TextEditingController();
-}
 ```
 The textcontroller is the added to the TextField widget, as shown below.
 
-```
+```dart
 TextField(controller: textcontroller),
 ```
 
@@ -228,6 +229,7 @@ We'll call the above function in the  `_HomePageState` class's `build` method.
 Note that the FirebaseApp is initialised using a Future component. This object helps handle errors or other results that occur in future.
 
 ```dart
+class _HomePageState extends State<HomePage> {
  final Future<FirebaseApp> _future = Firebase.initializeApp();
 ```
 
@@ -235,14 +237,18 @@ Note that the FirebaseApp is initialised using a Future component. This object h
 
 ```dart
 return Scaffold(
-      appBar: AppBar(
-        title: Text("Firebase Demo"),),
-      body: FutureBuilder(
-                future: _future,
-                builder: (context, snapshot)
+  appBar: AppBar(
+  title: Text("Firebase Demo"),),
+  body: FutureBuilder(
+            future: _future,
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Text(snapshot.error.toString());
+              } else {
+                return Container(
 ```
 
-Here is the full code for the HomePage class
+Here is the complete code for the HomePage class.
 
 ```dart
 import 'package:flutter/material.dart';
