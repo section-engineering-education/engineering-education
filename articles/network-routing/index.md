@@ -166,5 +166,6 @@ As much as OSPF helps in large networks, there have been complaints that it gene
 This has been overcome by the introduction of the **DNA**(DoNotAge) bit which makes a link-state packet ageless hence does not have to be refreshed periodically.
 
 That's all for now. We have seen how routers do packet forwarding hence enabling communication to take place.
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
