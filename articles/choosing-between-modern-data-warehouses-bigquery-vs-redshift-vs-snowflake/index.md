@@ -1,6 +1,6 @@
 In today&#39;s world, data is essential as it allows organizations to find the cause of problems and formulate solutions. Organizations are constantly looking for real-time data at a low cost and without maintaining data warehouse infrastructure.
 
-Modern data warehouses such as Snowflake, BigQuery, and Redshift meet the needs of these organizations perfectly. These data warehouse solutions allow businesses to work with raw data and re-transform it on the fly without the need to re-ingest the data stored in a warehouse.
+Modern data-warehouses such as Snowflake, BigQuery, and Redshift meet the needs of these organizations perfectly. These data warehouse solutions allow businesses to work with raw data and re-transform it on the fly without the need to re-ingest the data stored in a warehouse.
 
 Choosing between Snowflake, BigQuery, and Redshift can be challenging. This article compares Snowflake, BigQuery, and Redshift to help you settle on the best data warehouse solution that fully accommodates your data warehouse needs.
 
@@ -10,15 +10,15 @@ Choosing between Snowflake, BigQuery, and Redshift can be challenging. This arti
 
 ### What is Redshift?
 
-[Redshift](https://aws.amazon.com/redshift/) is a fully-managed cloud data warehouse solution that stores petabytes of data. It is offered by Amazon. Redshift is integrable with many business intelligence and reporting tools such as [Holistics](https://www.holistics.io/), [PowerBI](https://powerbi.microsoft.com/en-us/), [Tableau](https://www.tableau.com/), [Looker](https://looker.com/), and [Sisense](https://www.sisense.com/).
+[Redshift](https://aws.amazon.com/redshift/) is a fully-managed cloud data warehouse solution that stores petabytes of data. Amazon offers it. Redshift is integrable with many business intelligence and reporting tools such as [Holistics](https://www.holistics.io/), [PowerBI](https://powerbi.microsoft.com/en-us/), [Tableau](https://www.tableau.com/), [Looker](https://looker.com/), and [Sisense](https://www.sisense.com/).
 
 Redshift connects to SQL-based clients and makes data available in real-time. It is built on PostgreSQL to deliver a fast performance and efficient querying.
 
-Amazon Redshift warehouses are made up of computing resources known as nodes. These nodes are organized in clusters, each containing at least one database and running its own Redshift engine.
+Amazon Redshift warehouses are made up of computing resources known as nodes. These nodes are organized in clusters, each containing at least one database and running its Redshift engine.
 
 ### What is Snowflake?
 
-Besides providing scalable and flexible storage, [Snowflake](https://www.snowflake.com/) hosts solutions for business intelligence. It is built entirely on the cloud, and its subscription based model operates compute and storage resources independently. Snowflake users store both semi-structured and structured data and convert it into usable SQL-compatible format.
+Besides providing scalable and flexible storage, [Snowflake](https://www.snowflake.com/) hosts solutions for business intelligence. It is built entirely on the cloud, and its subscription-based model operates compute and storage resources independently. Snowflake users store both semi-structured and structured data and convert it into usable SQL-compatible format.
 
 Being a cloud-agnostic platform, Snowflake customers can be multi-cloud. Cloud-agnostic environments operate with multiple public cloud providers to guarantee the least possible disruptions to a business. Snowflake is available on [Google Cloud](https://www.snowflake.com/technology-partners/google-cloud-platform/#), [Amazon Web Services](https://www.snowflake.com/technology-partners/amazon-web-services/), and [Microsoft Azure](https://www.snowflake.com/technology-partners/microsoft/).
 
@@ -56,13 +56,13 @@ BigQuery is powered by Dremel technology. Dremel is a query execution engine tha
 
 Snowflake architecture is a composition of a hybrid of shared-nothing and shared-disk architectures. The [shared-disk architecture](https://en.wikipedia.org/wiki/Shared-nothing_architecture) was mainly used in traditional databases. It has one storage layer for access by all cluster nodes. This architecture has multiple cluster nodes along with memory and CPU but no disk storage. The cluster nodes communicate with the central storage layer to access and process data.
 
-In contrast, s[hared-nothing architecture](https://en.wikipedia.org/wiki/Shared_disk_architecture#) has distributed cluster nodes with their own CPU, memory, and disk storage. The availability of disk space for each cluster node allows data partitioning and storage across cluster nodes.
+In contrast, [shared-nothing architecture](https://en.wikipedia.org/wiki/Shared_disk_architecture#) has distributed cluster nodes with their own CPU, memory, and disk storage. The availability of disk space for each cluster node allows data partitioning and storage across cluster nodes.
 
-Amazon Redshift has a shared-nothing, Massively Parallel Processing (MPP) architecture. In an MPP architecture, multiple processors process a single task, with each processor using its own memory and operating system. The processors use a form of messaging interface to communicate with each other. You can setup MPP with either a shared-disk or shared-nothing architecture. Redshift&#39;s MPP architecture is similar to other data warehouse systems, including Greenplum, MS PDW, and Netezza.
+Amazon Redshift has a shared-nothing, Massively Parallel Processing (MPP) architecture. In an MPP architecture, multiple processors process a single task, with each processor using its memory and operating system. The processors use a form of messaging interface to communicate with each other. You can setup MPP with either a shared-disk or shared-nothing architecture. Redshift&#39;s MPP architecture is similar to other data warehouse systems, including Greenplum, MS PDW, and Netezza.
 
 #### Data volume
 
-Amazon S3 automatically scales storage resources based on data volume. Snowflake users do not need to mind reaching an arbitrary storage limit because Snowflake is built on Amazon S3. Snowflake scales storage seamlessly with data volume. Besides, Snowflake does not place an architectural limit on the amount of data that users can process or store.
+Amazon S3 automatically scales storage resources based on data volume. Snowflake users do not need to mind reaching an arbitrary storage limit because Snowflake is built on Amazon S3. Snowflake scales storage seamlessly with data volume. Besides, Snowflake does not place an architectural limit on the amount of data users can process or store.
 
 If your data volume can reach petabytes, then choose Redshift. Redshift favors highly analytical workloads and those that require a lot of column processing.
 
