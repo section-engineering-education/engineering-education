@@ -33,11 +33,11 @@ $$
 
 Graphically the problem can be represented as the following:
 
-![graphical representation]()
+![graphical representation](graphical_rep_1.png)
 
 The same problem can be represented using fuzzy. Observe how a given temperature belongs to two classes of temperature in varying degrees. 
 
-![fuzzy representation]()
+![graphical representation](graphical_rep_2.png)
 
 ### Types of membership functions
 
@@ -50,17 +50,21 @@ Mathematically, the gamma function is given as follows:
 $$ \gamma(x,\alpha, \beta) = \begin{cases} 0 & x\le \alpha \\
 \frac{x-\alpha}{\beta -\alpha} & \alpha\le\beta \\ 1 & x \ge \beta\end{cases}  $$
 
+![gamma](gamma-correct.png)
 #### s- function
 
 The s function gets its name from its shape. The s-shaped function is useful in cases with a gradual change in the membership. 
 
 Mathematially, it is given as:
+
 $$ S(x,\alpha,\beta) = \begin{cases}
 0 & x\le \alpha \\
 2*(\frac{(x -\alpha)}{\gamma - \alpha})^2 &\alpha \lt x \le \beta \\
 1 - 2*(\frac{(x -\alpha)}{\gamma - \alpha})^2 & \beta \lt x \le \gamma \\
 1 & x \gt \gamma
 \end{cases} $$
+
+![s-function](gamma.png)
 
 #### L- function
 This function is the inverse of $\gamma$ function. It is given as follows:
@@ -71,6 +75,7 @@ $$ L(x,\alpha,\beta) = \begin{cases}
 0 & x \gt \beta 
 \end{cases} $$
  
+![L-function](L-function.png)
 #### Triangular function
 
 $$ L(x,\alpha,\beta,\gamma) = \begin{cases} 
@@ -79,6 +84,9 @@ $$ L(x,\alpha,\beta,\gamma) = \begin{cases}
 \frac{\alpha - x}{\beta - \alpha} & \beta \le x \le \gamma \\
 0 & x \gt \gamma
 \end{cases}$$
+
+![triangular function](triangular_function.png)
+
 #### pi function
 
 This function gets its name from the shape of pi. This function looks similar to the symbol pi ($\pi$). Mathematically it is given as follows:
@@ -89,6 +97,9 @@ $$ \pi(x, \alpha, \beta,\gamma, \delta) = \begin{cases}
 1 & \beta \lt x \le \gamma \\
 \frac{\gamma - x }{\delta - \gamma} & \gamma \lt x \le \delta \
 \end{cases}$$
+
+![pi-function](pi_function.png)
+
 #### Gaussian function
 
 Derived from the normal distribution, this function works in most scenarios, where information about the data is unknown. In cases dealing with sampled data, this function is used extensively.
@@ -98,6 +109,7 @@ Mathematically, it is given as follows:
 $$ 
 G(x,\mu,\sigma) = exp (-\frac{(x-\mu)^2}{2\sigma^2})
 $$
+
 ### Operations in fuzzy logic
 
 Various operations can be performed on a crisp set. The same set of operations can be performed on fuzzy sets, with minor modifications. The operations allow changes to be made to the sets. These operations come in handy while building the applications. 
