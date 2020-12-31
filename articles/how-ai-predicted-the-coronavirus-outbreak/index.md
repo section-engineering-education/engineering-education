@@ -15,10 +15,10 @@ In 2014, the BlueDot's software accurately predicted importation risks from the 
 
 ### How their software works
 
-BlueDot's software leverages its predictions on big data. For those not familiar with big data, big data can be simplified as large volumes of structured and unstructured data produced by businesses on a day-to-day basis. This data keeps on growing exponentially with time. Examples include data from healthcare, banks, retails, transportation, and academia systems.
+BlueDot's software leverages its predictions on big data. Big data can be simplified as large volumes of structured and unstructured data produced by businesses on a day-to-day basis for those not familiar with big data. This data keeps on growing exponentially with time. Examples include data from healthcare, banks, retails, transportation, and academia systems.
 BlueDot developers adopted Machine Learning (ML) and Natural Language Processing (NLP) algorithms to curate data from many sources. Also, this information is gathered in 65 different languages every fifteen minutes, twenty-four hours every day. 
 
-That's a lot of data. That would require a team of experts to go through these large amounts of data and clearly take a lot of time and nearly impossible to accomplish. 
+That's a lot of data. That would require a team of experts to go through these large amounts of data and clearly take a lot of time. It is nearly an impossible accomplishment. 
 
 This is where ML and AI is leveraged to augment the detection of the global epidemic threats in near real-time.
 
@@ -45,7 +45,7 @@ For example, in the case of Covid-19, they did predict that there was an emergin
 
 Besides, BlueDot's software made predictions on countries at higher risks of the spread between February and April based on IATA's passengers' travel data from cities in China from 2019.
 
-![Volume of travellers to international destinations from cities in China that received over 100 000 passengers between February through April, from Wuhan, China](/engineering-education/how-ai-predicted-the-coronavirus-outbreak/international-passengers-from-china.PNG)
+![Volume of travelers to international destinations from cities in China that received over 100 000 passengers between February through April, from Wuhan, China](/engineering-education/how-ai-predicted-the-coronavirus-outbreak/international-passengers-from-china.PNG)
 
 *[Image Source: Journal of Travel Medicine](https://academic.oup.com/jtm/article/27/2/taaa011/5716260)*
 
@@ -55,7 +55,7 @@ The Infectious Disease Vulnerability Index (IDVI) is a measure of a country's ca
 
 ### What Next for BlueDot
 
-BlueDot provides a Software-As-A-Service (SAAS) delivery, model. It has partnered with businesses, governments, and healthcare facilities to offer services on a subscription basis. This gives them access to BlueDot's timely insights, focused reports, and their cloud platform for global disease surveillance. 
+BlueDot provides a Software-As-A-Service (SAAS) delivery model. It has partnered with businesses, governments, and healthcare facilities to offer services on a subscription basis. This gives them access to BlueDot's timely insights, focused reports, and their cloud platform for global disease surveillance. 
 
 The city of Chicago, Taiwan's Center for Disease Control, Canada's largest airline (Air Canada), and the Greater Toronto Airport Authority (GTAA) are some of BlueDot's current subscribers.
 
@@ -68,7 +68,7 @@ Diseases spread incredibly quickly. Thus, time is our most valuable resource to 
 
 ### References
 
-1. [Anticipating the international spread of Zika virus from Brazil](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)00080-5/fulltext/) by Isaac I Bogoch, Oliver J Brady, Moritz U G Kraemer,Matthew German, Marisa I Creatore, and Manisha A Kulkarni.
+1. [Anticipating the international spread of Zika virus from Brazil](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)00080-5/fulltext/) by Isaac I Bogoch, Oliver J Brady, Moritz U G Kraemer, Matthew German, Marisa I Creatore, and Manisha A Kulkarni.
 2. [Pneumonia of unknown etiology in Wuhan, China: potential for international spread via commercial air travel](https://pubmed.ncbi.nlm.nih.gov/31943059/) by Isaac I Bogoch, Alexander Watts, Andrea Thomas-Bachli, Carmen Huber, Moritz U G Kraemer, and Kamran Khan in the Journal of Travel Medicine.
 3. [Potential for global spread of a novel coronavirus from China](https://academic.oup.com/jtm/article/27/2/taaa011/5716260) by Isaac I Bogoch, Alexander Watts, Andrea Thomas-Bachli, Carmen Huber, Moritz U G Kraemer, Kamran Khan. 
 4. [BlueDot](https://bluedot.global/)
@@ -79,3 +79,5 @@ Diseases spread incredibly quickly. Thus, time is our most valuable resource to 
 9. [The Ebola virus](https://www.who.int/news-room/fact-sheets/detail/ebola-virus-disease) 
 10. [Hero Image](https://unsplash.com/photos/Tzoe6VCvQYg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink/)
  
+ ---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
