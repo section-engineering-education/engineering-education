@@ -156,20 +156,25 @@ We changed the backend engine to use `postgresql_psycopg2` instead of the defaul
 
 - PASSWORD is the password to the database we created.
 
-Now let's make sure our Django project is working without any error.
+Now, let's make sure that we have connected to the Postgres database.
+
+> The **manage.py** file is a python script which allows us to perform adminstartive tasks like migrations, running the server, etc.
 
 ```python
 python manage.py makemigrations
 ```
-```makemigrations``` is responsible for creating new migrations based on the changes you have made to our models. Since we don't have a model in our Django project, we will not worry much about this. To get a better understanding of what this command does check out this article [Django Migrations: A Primer](https://realpython.com/django-migrations-a-primer/). It provides a detailed explanation of Django migrations.
+
+The `makemigrations` command is responsible for creating new migrations based on the changes you have made to our models. Since we don't have a model in our Django project, we will not worry much about this. To get a better understanding of what this command does, check out this article [Django Migrations: A Primer](https://realpython.com/django-migrations-a-primer/).
+
+When you run it for the first time, the default models in the Django project will get migrated.
 
 ```python
 python manage.py migrate
 ```
 
-```migrate``` is responsible for applying and unapplying migrations in django.
+The `migrate` command is responsible for applying the migrations in django.
 
-After running the above commands you will get something like this in your CLI
+After running the above command, you will get something like this in your CLI.
 ```bash 
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, sessions
@@ -186,12 +191,11 @@ Running migrations:
 ```python manage.py migrate``` command created a default table in our database. The screenshot below shows this.
 ![postgres_database]((/engineering-education/django-app-using-postgresql-database/postgresql_database.jpg)).
 
-Now run the command below.
+Now, to start the server, run this command:
+
 ```bash
 python manage.py runserver
 ```
-
-The **manage.py** file is a python script which allows us to perform adminstartive tasks. `python manage.py runserver` will launch the development server in Django. 
 
 After running the above command, proceed to visit `http://127.0.0.1:8000` in your browser.
 
