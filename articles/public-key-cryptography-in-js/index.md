@@ -256,6 +256,6 @@ Public key cryptography solves the key distribution problem but suffers the thre
 ### Resources
 - [Node.js](https://nodejs.org/en/)
 - [TweetNaCL.js](https://tweetnacl.js.org/#/)
-- [Elliptic curve cryptography](#https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
-- [RSA](#https://en.wikipedia.org/wiki/RSA_(cryptosystem))
-- [Diffie Hellman protocol](#https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
+- [Elliptic curve cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
+- [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+- [Diffie Hellman protocol](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
