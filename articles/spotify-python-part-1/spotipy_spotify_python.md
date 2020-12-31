@@ -46,6 +46,7 @@ Now run the following command to recreate a virtual environment. **Do not skip t
 If you have never installed a virtual environment before or the line above doesn't work, do the following: 
 
 `~/PythonScripts/spotipy_tutorial >> python3 -m pip3 install --user virtualenv`
+
 `~/PythonScripts/spotipy_tutorial >> virtualenv venv`
 
 
