@@ -1,17 +1,17 @@
-Modern sports have immensely applied technology, like many other aspects of life. Today, technology is being used almost in all fields of our lives. Due to many athletes, coaches, and spectators involved, technologists, scientists, and a host of equipment becomes necessary for the sports to be manageable. Technology use ensures accuracy, makes sports more enjoyable, and derives more experiences. The human body is the main protagonist of sports, while technology and science (Technoscience) play the support role. Sometimes, however, technoscience is blamed for giving undue advantages to those who use them. For any game to be fair, all contestants should have an equal chance of winning. Outcomes should not be entirely predictable in any fair game.
+Modern sports have immensely applied technology, like many other aspects of life. Today, technology is being used almost in all fields of our lives. Due to many athletes, coaches, and spectators involved, technologists, scientists, and a host of equipment becomes necessary for the sports to be manageable. Technology use ensures accuracy, makes sports more enjoyable and derives more experiences. The human body is the main protagonist of sports, while technology and science (Technoscience) play the support role. Sometimes, however, technoscience is blamed for giving undue advantages to those who use them. For any game to be fair, all contestants should have an equal chance of winning. Outcomes should not be entirely predictable in any fair game.
 
-This article outlines the importance of artificial intelligence in modern sports and how has it helped in the evolution of sports. It explains technology&#39;s role in today&#39;s sports and what we expect in the future.
+This article outlines the importance of artificial intelligence in modern sports and how it has helped in the evolution of sports. It explains technology&#39;s role in today&#39;s sports and what we expect in the future.
 
 ### [Artificial Intelligence](https://www.section.io/engineering-education/artificial-intelligence-future/) (AI) 
 
-A variety of technologies can learn, take information, analyze, and respond to it without waiting for humans to respond. It can also be defined as computer systems that can perform tasks that normally require human intelligence.
+Many technologies can learn, take information, analyze, and respond to it without waiting for humans to respond. It can also be defined as computer systems that can perform tasks that normally require human intelligence.
 
 Examples of technology aspects used in the sports industry
 
 There are so many technologies used in sports today. They are customized to fit user preferences. Some of them are discussed below.
 
 1. Goal-Line Technology; an instant signal in a football game used to determine whether the whole of the ball has crossed the goal-line. The information is transmitted with a second to the referee to ensure that there is no time wasted.
-2. [Video Assistant Referee System](https://www.sportperformanceanalysis.com/article/application-of-video-technology-in-football-refereeing-var); used in football, the referee uses video technology to review and assist in analyzing situations for a decision.
+2. [Video Assistant Referee System](https://www.sportperformanceanalysis.com/article/application-of-video-technology-in-football-refereeing-var); used in football, the referee, uses video technology to review and assist in analyzing situations for a decision.
 3. Sensors/ Data Tracking devices; mostly placed under the play&#39;s jersey to monitor the heart rate, fatigue, and injury prevention.
 4. Virtue Imaging in Swimming; used to create a superimposed line on the surface of water and graphics. It also creates virtue flags representing each swimmer in the lane.
 
@@ -21,7 +21,7 @@ Below are some of the applications of artificial intelligence applications in th
 
 #### Media and fan experience
 
-The fan engagement has increased due to Artificial Intelligence through phones and stadium apps, which are more personalized. This has led to the enhancement of revenue generation opportunities though:
+The fan engagement has increased due to Artificial Intelligence through phones and stadium apps, which are more personalized. This has led to the enhancement of revenue generation opportunities. 
 
 - Video Highlights – Fans are seeking more personalized viewing habits. They seek to view highlights at different times and different content, which can only be possible using AI. A good example of this is [Wimbledon](https://www.ibm.com/thought-leadership/wimbledon/uk-en/index.html), used to determine the most interesting highlights.
 - Automated Journalism – Expansion of media coverage and even coverage using media languages that different fans can understand.
@@ -36,7 +36,7 @@ We have already discussed how artificial intelligence is applied in Video Assist
 
 #### Scouting and recruitment
 
-Investing in an athlete is always a big gamble, as a number of them never live up to their billing. There are customized artificial intelligence applications that work on prediction models. Artificial intelligence predicts athlete&#39;s performance and potential based on multiple factors for instance body weight, proportions, strength etcetera.
+Investing in an athlete is always a big gamble, as a number of them never live up to their billing. There are customized artificial intelligence applications that work on prediction models. Artificial intelligence predicts athlete&#39;s performance and potential based on multiple factors, for instance, body weight, proportions, strength, etcetera.
 
 #### Wearable Tech
 
@@ -44,13 +44,16 @@ It is a category of devices that use artificial intelligence, worn in clothing o
 
 ### Challenges and areas of consideration while investing artificial intelligence in sports
 
-We have seen that artificial intelligence application has so many benefits such as faster analyses, accuracy, and automation. Despite its importance, artificial intelligence is faced with some challenges as discussed below.
+We have seen that artificial intelligence applications have so many benefits: faster analyses, accuracy, and automation. Despite its importance, artificial intelligence is faced with some challenges, as discussed below.
 
 1. Privacy and data leakages – As artificial intelligence is used to examine athletes based on the previous data, there is a possibility of data leakages to the opponents.
 2. Cybersecurity concerns – Devices may be prone to unauthorized access or criminal use, which may breach information confidentiality and integrity.
-3. Resilience – The ability to recover from shocks and difficulties may be difficult as artificial intelligence devices do not have disaster or crisis management.
+3. Resilience – The ability to recover from shocks and difficulties may be difficult as artificial intelligence devices do not have a disaster or crisis management.
 4. Third-party dependencies – Effective artificial intelligence use needs updated data, which one has to depend on another person to update.
 
 ### Conclusion
 
 Artificial intelligence is providing deeper insights to both players and the coaches. The support that artificial intelligence provides in sports can never be underestimated. This is even expected to disrupt the future of the sports industry as AI technology evolves. New training methods and new techniques, and even new ways of engaging with spectators will be discovered with AI technology evolution. With the current artificial intelligence applications, it can only be anticipated that there will be a steady use of AI technology in the future.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
