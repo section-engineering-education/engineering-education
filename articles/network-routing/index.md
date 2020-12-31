@@ -1,8 +1,6 @@
 ### Understanding Network Routing
 
-![Routing](/engineering-education/network-routing/hero.jpeg)
-
-[Image Source](https://www.networkworld.com/article/3276304/building-iot-ready-networks-must-become-a-priority.html)
+![Routing](/engineering-education/network-routing/hero.jpg)
 
 When using the internet, our devices send requests to servers stored in various data centers in packets. Likewise, the servers return responses to the requests using data packets.</br>
 These packets' journey to the data center from our devices and vice versa form the internet's backbone.</br>
