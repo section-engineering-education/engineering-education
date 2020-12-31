@@ -1,5 +1,3 @@
-
-
 ### Introduction
 MySQL Workbench is a graphical visual database design tool. This tutorial will cover database design and modeling with MySQL Workbench.
 
@@ -40,7 +38,7 @@ MySQL Workbench is used to migrate databases from other relational database mana
 #### MySQL enterprise support
 MySQL Workbench enterprise edition supports [MySQL enterprise products](https://dev.mysql.com/doc/index-enterprise.html).
 
-In this tutorial, the focus will be data modeling.
+In this tutorial, the focus is database design.
 
 ### Setting up MySQL Workbench
 Workbench is one of the MySQL products. Use MySQL Installer to manage MySQL products installations. Find the list of MySQL Workbench supported platforms on [MySQL official website](https://www.mysql.com/support/supportedplatforms/workbench.html). For the MySQL Workbench hardware requirements, check the image below.
@@ -62,7 +60,6 @@ Launch MySQL Workbench. You can do this from the installation wizard.
 - Linux: Launch by typing the command `mysql-workbench`. Alternatively, navigate to `Activities > MySQL WorkBench`.
 - macOS: navigate to `Applications > MySQL Workbench`.
 - Windows: Navigate to `Start > Programs > MySQL > MySQL Workbench`
-
 
 Ensure there is a connection to the MySQL Server's local instance, as shown in the screenshot below. If there is no connection, Click the `+` icon as highlighted in the screenshot below.
 ![MySQL Workbench first time launch Windows](/engineering-education/visual-database-design-with-mysql-workbench/mysql-workbench-first-time-launch.jpg)
@@ -95,6 +92,7 @@ In this tutorial, we will model and create a database for keeping book details. 
 - **Publisher:** id, name
 
 We will use the information in the tables below to design the ER model. All the column names have been defined. Primary keys, foreign keys, and datatypes are also outlined.
+
 **Book table**
 column name | data type | can be null | index type | auto_increment
 --- | --- | --- | --- | ---
@@ -201,7 +199,6 @@ In this step, we are provided with the generated SQL script. Find the SQL file g
 ![MySQL Workbench forward engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-forward-engineering-step-5-review-sql.jpg)
 
 **Step 6**
-
 This is the final step. Click finish to commit. The generated SQL file is used to create a database in the connected MySQL Server.
 
 ![MySQL Workbench forward engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-forward-engineering-step-6-progress.jpg)
@@ -249,7 +246,8 @@ The wizard shows the progress. In the screenshot below, the process was successf
 ![MySQL Workbench reverse engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-reverse-engineering-step-7-progress.jpg)
 
 **Step 8**
-This step shows the summary of the objects generated. In this case, we have four table objects. Click `Finish`
+This step shows the summary of the objects generated. In this case, we have four table objects. Click `Finish`.
+
 ![MySQL Workbench reverse engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-reverse-engineering-step-8-results.jpg)
 
 **Output**
