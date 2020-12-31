@@ -338,17 +338,9 @@ The final project structure should be as shown below.
 ![project structure](/engineering-education/spring-boot-crud-api/project-structure.png)
 
 ### Testing the CRUD endpoints
-**Getting the list of todos**
-Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo` to get all the `todos`.
-
-![Get Todos](/engineering-education/spring-boot-crud-api/get-todos.png)
-
-**Getting a `Todo` by id**
-Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo/2` specifying the id of the `Todo` at the end of the URL, in our case id is 2.
-
-![Get Todo by Id](/engineering-education/spring-boot-crud-api/get-todo-by-id.png)
 
 **Creating a new `Todo`**
+
  Make a `POST` request with JSON body as shown below to `http://127.0.0.1:8080/api/v1/todo`.
 ```json
 {
@@ -360,7 +352,20 @@ Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo/2` specifying the id 
 
 ![Create Todo](/engineering-education/spring-boot-crud-api/create-todo.png)
 
+**Getting the list of todos**
+
+Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo` to get all the `todos`.
+
+![Get Todos](/engineering-education/spring-boot-crud-api/get-todos.png)
+
+**Getting a `Todo` by id**
+
+Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo/2` specifying the id of the `Todo` at the end of the URL, in our case id is 2.
+
+![Get Todo by Id](/engineering-education/spring-boot-crud-api/get-todo-by-id.png)
+
 **Updating a `Todo`**
+
 Make a `PUT` request to `http://127.0.0.1:8080/api/v1/todo/2` adding the id of the `todo` to update in the URL, in our case the id is 2 and a JSON body with the fields to update.
 
 ```json
@@ -374,6 +379,7 @@ Make a `PUT` request to `http://127.0.0.1:8080/api/v1/todo/2` adding the id of t
 ![Update Todo](/engineering-education/spring-boot-crud-api/update-todo.png)
 
 **Deleting a `Todo`**
+
 Make a `DELETE` request to `http://127.0.0.1:8080/api/v1/todo/2` adding to the end of the URL the id of the `todo` to delete, in our case the id is 2.
 
 ![Delete Todo](/engineering-education/spring-boot-crud-api/delete-todo.png)
