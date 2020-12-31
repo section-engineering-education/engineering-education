@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-public-key-cryptography-in-javascript/
+title: Implementing Public Key Cryptography in JavaScript
+description: This article will cover how to implement public key cryptography in Javascript.
+author: kennedy-mwangi
+date: 2020-12-31T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-public-key-cryptography-in-javascript/hero.jpg
+    alt: Implementing Public Key Cryptography in JavaScript image
+---
 Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is also known as asymmetric cryptography. In this method, there is a public key and a private key. The public key is known widely whereas the private key is secret to a communicating pair. When a pair wants to communicate, the sender encrypts the message using the public key of the recipient to come up with the ciphertext. When the recipient receives the message, they decrypt the message using their private key. The private key of the sender and the public key of the receiver are encoded in the ciphertext. This eliminates the [key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3)
+<!--more-->
 
 #### Prerequisites
 Before we begin it would help if you have the following:
