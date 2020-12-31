@@ -158,6 +158,35 @@ We changed the backend engine to use `postgresql_psycopg2` instead of the defaul
 
 Now let's make sure our Django project is working without any error.
 
+```python
+python manage.py makemigrations
+```
+```makemigrations``` is responsible for creating new migrations based on the changes you have made to our models. Since we don't have a model in our Django project, we will not worry much about this. To get a better understanding of what this command does check out this article [Django Migrations: A Primer](https://realpython.com/django-migrations-a-primer/). It provides a detailed explanation of Django migrations.
+
+```python
+python manage.py migrate
+```
+
+```migrate``` is responsible for applying and unapplying migrations in django.
+
+After running the above commands you will get something like this in your CLI
+```bash 
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  ....
+  ....
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+```
+
+```python manage.py migrate``` command created a default table in our database. The screenshot below shows this.
+![postgres_database]((/engineering-education/django-app-using-postgresql-database/postgresql_database.jpg)).
+
+Now run the command below.
 ```bash
 python manage.py runserver
 ```
@@ -276,3 +305,5 @@ If you can see the above image, Congratulations! You just created a Hello World 
 2. [PostgreSQL](https://www.postgresql.org/about/)
 
 3. [views and urls in Django](https://djangobook.com/mdj2-django-views/) 
+
+4.  [Django Migrations: A Primer](https://realpython.com/django-migrations-a-primer/). 
