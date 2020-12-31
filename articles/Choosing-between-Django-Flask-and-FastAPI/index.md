@@ -26,12 +26,12 @@ The three major Python frameworks used in developing web applications are [Djang
 5. Conclusion
 
 ### Django
-Django is a free and open-source Python web development framework used in building websites. It was created by Adrian Holovaty and Simon Willison in 2003 and made use of the Model-Template-View pattern. It is trendy for its robust and straightforward nature. It's one of the most popular frameworks globally and is used by Tech giants like Instagram, Youtube, etc. Django is also popular because it encourages reusable code.
+Django is a free and open-source Python web development framework used in building websites. It was created by Adrian Holovaty and Simon Willison in 2003 and uses the Model-Template-View pattern. It is trendy for its robust and straightforward nature. It's one of the most popular frameworks globally and is used by Tech giants like Instagram, Youtube, etc. Django is also popular because it encourages reusable code.
 
 ### Pros
-- Django code structure is very efficient, which makes it easy for developers to add more functionalities to their websites.
-- The Rest framework (Representational state transfer can be defined as a software architectural style that defines a set of constraints to be used for creating web services) in Django, this is called Django Rest Framework (DRF). It's a flexible toolkit used to build Web APIs in Django. 
-- REST is the general framework while DRF is a specific REST framework used in Django. It's easy to build Web APIs with Django because it's modular and has a customizable architecture.
+- Django code structure is very efficient which makes it easy for developers to add more functionalities to their websites.
+- The Rest framework (Representational state transfer can be defined as a software architectural style that defines a set of constraints to be used for creating web services) in Django this is called Django Rest Framework (DRF). It's a flexible toolkit used to build Web APIs in Django. 
+- REST is the general framework while DRF is a specific REST framework used in Django. It's easy to build Web APIs with Django because of it's modular and customizable architecture.
 - Django emphasizes security by providing defense against joint [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) and [cross-site request forgery attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery).
 
 ### Cons
@@ -50,16 +50,16 @@ Flask is a micro web framework written in Python. A micro web framework is a web
 Flask was more like an April fool's prank by the creator Armin Ronacher on the 1st of April, where he wrapped [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) and [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)Surprisingly it was appreciated which made them work more on it.
 
 ##### Pros
-- Flask is flexible and easy. Most of the parts of Flask have the possibility of changing which is very unlikely for some other web frameworks.
+- Flask is flexible and easy. Most parts of Flask have the possibility of changing which is very unlikely for some other web frameworks.
 - Flask allows unit testing and would enable you to transit to a web framework by tweaking some extensions because of its built-in-development server, integrated support, etc.
-- Flask is very beginner-friendly because of its simplicity, giving room to learn and understand it better. It also enables devs to create apps effortlessly quickly. 
+- Flask is very beginner-friendly because of its simplicity, giving room to learn and understand it better. It also enables devs to create apps effortlessly and quickly. 
 
 #### Cons
 - Flask uses Modules which is a third-party involvement and is prone to cause security breaches. The modules are in between the framework and the developer.
-- Flask has a singular source that implies that it will handle every request in turns, one after the other, so regardless of how many multiple requests it still takes them in turns, it takes more time.
+- Flask has a singular source that implies that it will handle every request in turns, one after the other, so regardless of how many multiple requests it still takes them in turns, which takes more time.
 
 ##### Flask: Use cases
-Flask can be used for commercial projects. It can help you get started quickly but doesn't work well for resembling a real load. Projects you can easily implement in flask are : E-commerce systems, Facebook/ Twitter bot, An online social network, static sites, etc. but it's not advisable to be use it for high-load enterprise software.
+Flask can be used for commercial projects. It can help you get started quickly but doesn't work well for resembling a real load. Projects you can easily implement in flask are : E-commerce systems, Facebook/ Twitter bot, An online social network, static sites, etc. but it's not advisable to use it for high-load enterprise software.
 
 #### FastAPI  
 Fast API is a modern open-source fast and highly performant Python web framework for building Web APIs and is based on Python 3.6+ standard type hints. 
@@ -73,7 +73,7 @@ Fast API is a modern open-source fast and highly performant Python web framework
 - Because FastAPI is relatively new, the community is small compared to other frameworks and regardless of its detailed documentation there are few external educational materials.
 
 ##### FastAPI Use cases
-Fast API which is relatively new amongst the three, works perfectly if your concern is speed. Netflix uses it for its internal crisis management. It also scales perfectly in deploying production-ready machine learning models because ML models work best in production when they are wrapped around a REST API and deployed in a microservice.
+Fast API which is relatively new amongst the three, works perfectly if your concern is speed. Netflix uses it for their internal crisis management. It also scales perfectly in deploying production-ready machine learning models because ML models work best in production when they are wrapped around a REST API and deployed in a microservice.
 
 Now we're going to compare Django, Flask, and FastAPI based on their *packages*, *community*, *performance*, *flexibility*, *job opening*, and *education*.
 
@@ -90,13 +90,13 @@ In performance, FastAPI leads because it is speed-oriented then next to Flask an
 Flexibility is something developers value a lot, and Flask is more flexible than Django. Fast API, on the other hand is flexible code-wise and doesn't restrict the code layout. So we can say Flask is the most flexible among all of the above.
 
 **Job openings**
-No doubt they are more job openings in the python web ecosystem with Django requirement next to Flask and finally Fast API which is few, so if your is aim to get a job quickly then Django should be your go-to guy.
+No doubt there are more job openings in the python web ecosystem with Django requirement next to Flask and finally Fast API which is few, so if your is aim to get a job quickly then Django should be your go-to guy.
 
 **Education**
 Django is more strenuous to learn but has many online materials and resources, Flask is easy and straightforward and has a lot of online materials and resources while Fast API which is the easiest if you're starting with web development but has few online resources.
 
 #### Conclusion
-After looking at them you might be able to choose which one works better for you. In summary, Django is perfect if you want to build robust full-stack websites because it has several functionalities and works very well in production. Flask is ideal for Machine learning Engineers or developers who want to quickly prototype a web application and build APIs easily and quickly. At the same time FastAPI is perfect if you're looking for speed or scalability. Make a choice based on what you want to use it for but generally they are all good and have good market demand.
+After looking at them you might be able to choose which one works better for you. In summary, Django is perfect if you want to build robust full-stack websites because it has several functionalities and works very well in production. Flask is ideal for Machine learning Engineers or developers who want to quickly prototype a web application and build APIs easily and quickly. At the same time FastAPI is perfect if you're looking for speed or scalability. Make a choice based on what you want to use it for but generally they are all good and have a good market demand.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
