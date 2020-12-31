@@ -14,6 +14,8 @@ To follow along with this tutorial, you should have:
 ### Cloning the Starter Code
 To focus more on speech recognition, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/speech-recognition-in-javascript-starter) on GitHub. Follow the Repository's README for instructions.
 
+You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/speech-recognition-in-javascript).
+
 In the starter code, I've set up a language and dialect select menu, two buttons to start/stop the speech recognition, and a box to display the transcript. I've used [Bootstrap](https://getbootstrap.com/) to style the webpage.
 
 ![Starter Code Screen](start_screen.png)
