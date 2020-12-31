@@ -103,7 +103,7 @@ It has a variable ```startTime``` initialised to ``null`` which stores the times
 We then have the ```step()``` function which is used to compute the number to be displayed, where it is displayed and control the animation.</br>
 The first ```if``` block assigns the starting time of the counter to ```startTime``` from ```null```. It negates ```startTime``` to get a *true* value if ```startTime``` is ```null``` and then assigns it the current start time.</br>
 The constant ```progress``` stores a value that will set the interval between the previous and next number which should not exceed 1. It does so by subtracting the start timestamp from the current timestamp then dividing it by the duration.</br>
-Since it does not have to be greater than 1, we use the ```Math.min``` method which takes the lowest value from its parameters.</br>The interval number does not need to change throughout the lifetime of the ``step`` function hence we make it a ```const```.</br>
+Since it does not have to be greater than 1(1,2,3,4,...) we use the ```Math.min``` method which usually takes the lowest value from its parameters.</br>The interval number does not need to change throughout the lifetime of the ``step`` function hence we make it a ```const```.</br>
 The next statement first subtracts the first value from the last value, multiplies the answer gotten by the interval then adds the first value basing on the operator precedence e.g for a reducing counter</br>
 *Current timestamp = 202018500*</br>
 *Start timestamp = 202018200*</br>
