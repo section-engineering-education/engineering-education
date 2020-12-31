@@ -1,6 +1,6 @@
-Node.js and Django are technologies used in building versatile web and mobile applications. Both have an excellent user interface, are open and do not require a license to operate, and therefore they have a vast number of users. Node.js is a framework that JavaScript uses on a client-side web application. Django works on [python applications](https://www.javatpoint.com/python-applications) to help web developers build apps more quickly.
+Node.js and Django are technologies used in building versatile web and mobile applications. Both have an excellent user interface, are open, and do not require a license to operate, and therefore they have a vast number of users. Node.js is a framework that JavaScript uses on a client-side web application. Django works on [python applications](https://www.javatpoint.com/python-applications) to help web developers build apps more quickly.
 
-This article will analyze these two popular technologies. The article will critically give the pros and cons of each, to help the reader choose the best technology depending on the project needs.
+This article will analyze these two popular technologies. The article will critically give each member the pros and cons to help the reader choose the best technology depending on the project needs.
 
 ### Node.js
 
@@ -9,9 +9,9 @@ It is an open-source JavaScript run time. The first version was released in the 
 #### Basic features of Node.js
 
 1. Simplicity – It is easy to learn and use and especially with JavaScript knowledge.
-2. Open-source language – It does not require installation fees and is free to use, and readily available to the public.
+2. Open-source language – It does not require installation fees and is free to use and readily available to the public.
 3. Object-oriented – It can model real-world data rather than functions and codes.
-4. It is very fast to execute codes.
+4. It is swift to execute codes.
 5. A lot of community tutorials, resources, and shared codes are available.
 
 ### Django
@@ -20,7 +20,7 @@ It is an open-source python web framework primarily designed to ensure high-spee
 
 #### Basic features of Django
 
-1. Simplicity – Especially with Python language, Django is easy to learn, use, and implement.
+1. Simplicity – Especially with the Python language, Django is easy to learn, use, and implement.
 2. It is an open-source language – No fees for installation and usage. It is available and freely accessible to the public.
 3. High-level language – It simplifies computer syntax into a language the user can easily understand.
 4. It is both object-oriented and functional – meaning it can model real-world data and focus on functions. Node.js allows code re-useability.
@@ -31,8 +31,8 @@ It is an open-source python web framework primarily designed to ensure high-spee
 
 | Distinctive point | Django | Node.js |
 | --- | --- | --- |
-| Programming language and primary use | It is a [python based framework](https://www.upgrad.com/blog/python-frameworks/) used by developers to build computer apps within a stipulated time frame.| A framework that runs on JavaScript. It is used by developers to build robust application programming interfaces (client-sided). |
-| Architecture | Follows the [MTV model template](https://www.javatpoint.com/django-mvt) for purposes of handling data, validating, and interaction. | A runtime environment, therefore, works on an [event-driven model](https://www.redhat.com/en/topics/integration/what-is-event-driven-architecture). Runs on an operating system, maintaining a small number of requests. |
+| Programming language and primary use | It is a [python based framework](https://www.upgrad.com/blog/python-frameworks/) used by developers to build computer apps within a stipulated time frame.| A framework that runs on JavaScript. Developers use it to build robust application programming interfaces (client-sided). |
+| Architecture | Follows the [MTV model template](https://www.javatpoint.com/django-mvt) for purposes of handling data, validating, and interaction. | A runtime environment, therefore, works on an [event-driven model](https://www.redhat.com/en/topics/integration/what-is-event-driven-architecture). Runs on any operating system, maintaining a small number of requests. |
 | Security | It is more secure, comes with a built-in system, preventing a security breach. | It requires manual operations systems to manage security risks. |
 | Performance | It has a built-in house template system; hence the execution of tasks is quicker, thereby offering better performance. | It allows web professionals freedom in implementations. Though, it has a limitation of increasing the time required to build an application. |
 | Complexity | It is more complicated as a developer has to follow a particular specified path for solving problems. | It is less complicated as a developer has a free hand to solve problems. |
@@ -62,7 +62,7 @@ It is an open-source python web framework primarily designed to ensure high-spee
 
 - It has a very active and large community, and therefore easier to access information and knowledge.
 - It has many libraries around the world.
-- Features are not complicated; therefore, easier to follow.
+- Features are not complicated; therefore, more comfortable to follow.
 - It is more flexible as developers have a free hand to execute commands.
 
 #### Disadvantages
@@ -78,3 +78,6 @@ It is an open-source python web framework primarily designed to ensure high-spee
 Both Node.js and Django are useful platforms in building web-based applications. The decision to choose whether to use Node.js or Django is determined solely by a project's specific requirements to be undertaken by the developer. Therefore, the developer should always focus on the project requirements before choosing whether to use Node.js or Django.
 
 For instance, if a developer wants an app that requires intense data processing, such as social networking apps and game apps, Node.js is the best option. Node.js is a server-side run time environment in nature. Similarly, if a developer wants full-stack apps (an app with both the front end or client-side and the back end or server-side), then the best framework to use in Django.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
