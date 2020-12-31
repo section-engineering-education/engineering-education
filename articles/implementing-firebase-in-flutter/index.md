@@ -21,7 +21,7 @@ Launch Android Studio and create a new Flutter project.
 
 Open the `pubspec.yaml` file and add the following Flutter dependencies.
 
-```
+```yaml
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -53,7 +53,7 @@ Download the `google-services.json` file and paste it into the `android/app` fol
 
 Paste `classpath 'com.google.gms:google-services:4.3.3'` in the project level – `build.gradle` file.
 
-```
+```gradle
 dependencies {
   classpath 'com.android.tools.build:gradle:3.5.0'
   classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -63,7 +63,7 @@ dependencies {
 
 Navigate to the app-level – `build.gradle` file and add `apply plugin: 'com.google.gms.google-services'` as shown below.
 
-```
+```gradle
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -165,14 +165,15 @@ class MyApp extends StatelessWidget {
 ```
 
 Ensure that you have the following imports at the Top of the Home page.
-```
+```dart
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 ```
-`package:flutter/material.dart` - This import allows you to access Flutter's built-in widgets and other functionalities.
-`package:firebase_database/firebase_database.dart` - This import helps access the Firebase Realtime database features.
-`package:firebase_core/firebase_core.dart` - This dependency enables you to connect to different Firebase products. 
+
+- `package:flutter/material.dart` - This import allows you to access Flutter's built-in widgets and other functionalities.
+- `package:firebase_database/firebase_database.dart` - This import helps access the Firebase Realtime database features.
+- `package:firebase_core/firebase_core.dart` - This dependency enables you to connect to different Firebase products. 
 
 ### Storing data
 We will initialize a Firebase `databaseReference` object and use it to store data.
@@ -216,8 +217,9 @@ Note that the FirebaseApp is initialised using a Future component. This object h
 
 ```dart
  final Future<FirebaseApp> _future = Firebase.initializeApp();
- ```
- `_future` is then added to the `FutureBuilder` in the `Scaffold`. As noted, FutureBuilder helps in awaiting long-running operations.
+```
+
+`_future` is then added to the `FutureBuilder` in the `Scaffold`. As noted, FutureBuilder helps in awaiting long-running operations.
 
 Here is the full code for the HomePage class
 
