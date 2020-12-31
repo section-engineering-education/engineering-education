@@ -198,6 +198,18 @@ onPressed: () {
 ```
 We will access the user input using a `textcontroller`. This element allows us to listen for changes in a TextField.
 
+we need to include the textcontroller in the HomePageState class.
+```
+class _HomePageState extends State<HomePage> {
+  final textcontroller = TextEditingController();
+}
+```
+The textcontroller is the added to the TextField widget, as shown below.
+
+```
+TextField(controller: textcontroller),
+```
+
 Please note that we need to use a `FutureBuilder` for long-running operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
 
 ### Retrieving data
@@ -219,7 +231,16 @@ Note that the FirebaseApp is initialised using a Future component. This object h
  final Future<FirebaseApp> _future = Firebase.initializeApp();
 ```
 
-`_future` is then added to the `FutureBuilder` in the `Scaffold`. As noted, FutureBuilder helps in awaiting long-running operations.
+`_future` is then added to the `FutureBuilder` in the `Scaffold`. This operation is illustrated below. As noted, FutureBuilder helps in awaiting long-running operations.
+
+```dart
+return Scaffold(
+      appBar: AppBar(
+        title: Text("Firebase Demo"),),
+      body: FutureBuilder(
+                future: _future,
+                builder: (context, snapshot)
+```
 
 Here is the full code for the HomePage class
 
