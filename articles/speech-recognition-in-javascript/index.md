@@ -37,7 +37,7 @@ if ("webkitSpeechRecognition" in window) {
 }
 ```
 
-#### Initialization
+### Initialization
 Everything we write from now goes inside the `if` condition.
 
 Let's create a `webkitSpeechRecognition` object.
@@ -47,108 +47,126 @@ let speechRecognition = new webkitSpeechRecognition();
 ```
 
 
-#### Properties
+### Properties
 Now, let's configure some properties on this `speechRecognition` object.
 
-- Continuous listening:
+#### Continuous listening
+The speech recognition object can either stop listening after the user stops speaking or it can keep listening until the user stops it. If you just want to recognize a phrase or a word, you can set this to `false`. For this tutorial, let's set it to `true`.
 
-  The speech recognition object can either stop listening after the user stops speaking or it can keep listening until the user stops it. If you just want to recognize a phrase or a word, you can set this to `false`. For this tutorial, let's set it to `true`.
+```JavaScript
+speechRecognition.continuous = true;
+```
 
-  ```JavaScript
-  speechRecognition.continuous = true;
-  ```
+#### Interim results
+Interim results are results that are not yet final. If you enable this property, the `speechRecognition` object will also return the interim results along with the final results. Let's set it to `true`.
 
-- Interim results:
+```JavaScript
+speechRecognition.interimResults = true;
+```
 
-  Interim results are results that are not yet final. If you enable this property, the `speechRecognition` object will also return the interim results along with the final results. Let's set it to `true`.
+#### Language
+This is the language that the user will speak in. You need to use locale codes to set this property. Please note that not all languages are available in this feature yet.
 
-  ```JavaScript
-  speechRecognition.interimResults = true;
-  ```
+Let's set the language that the user has choosen from the select menu. You need to select the Dialect select menu and use it's value for the language property.
 
-- Language:
+```JavaScript
+  speechRecognition.lang = document.querySelector("#select_dialect").value;
+```
 
-  This is the language that the user will speak in. You need to use locale codes to set this property. Please note that not all languages are available in this feature yet.
-
-  Let's set the language that the user has choosen from the select menu. You need to select the Dialect select menu and use it's value for the language property.
-
-  ```JavaScript
-   speechRecognition.lang = document.querySelector("#select_dialect").value;
-  ```
-
-#### Events & Callbacks
+### Events & Callbacks
 You can provide callbacks for events like `onStart`, `onEnd`, `onResult` and `onError`.
 
-- onStart: 
+#### onStart
+This event is triggered when the speech recognition is started by the user. Let's pass a callback function that will display that the speech recognition instance is listening in the webpage.
 
-  This event is triggered when the speech recognition is started by the user. Let's pass a callback function that will display that the speech recognition instance is listening in the webpage.
+In the starter code, there is a `<p>` element with an ID called status that says `Listening...`. It's been hidden by setting the display property of the element to none using CSS.
 
-  In the starter code, there is a `<p>` element with an ID called status that says `Listening...`. It's been hidden by setting the display property of the element to none using CSS.
+Let's set it to `display: block` when the speech recognition starts.
 
-  Let's set it to `display: block` when the speech recognition starts.
+```JavaScript
+speechRecognition.onstart = () => {
+  document.querySelector("#status").style.display = "block";
+  console.log("Speech Recognition Started");
+};
+```
 
-  ```JavaScript
-  speechRecognition.onstart = () => {
-    document.querySelector("#status").style.display = "block";
-    console.log("Speech Recognition Started");
-  };
-  ```
+#### onEnd
+This event is triggered when the speech recognition is ended by the user. Let's pass a callback funtion that will hide the status `<p>` element in the webpage.
 
-- onEnd: 
+Let's set it to `display: none` when the speech recognition starts.
 
-  This event is triggered when the speech recognition is ended by the user. Let's pass a callback funtion that will hide the status `<p>` element in the webpage.
+```JavaScript
+speechRecognition.onend = () => {
+  document.querySelector("#status").style.display = "none";
+  console.log("Speech Recognition Ended");
+};
+```
 
-  Let's set it to `display: none` when the speech recognition starts.
+#### onError
+This event is triggered when there is some sort of error in the speech recognition. Let's pass a callback funtion that will hide the status `<p>` element in the webpage.
 
-  ```JavaScript
-  speechRecognition.onend = () => {
-    document.querySelector("#status").style.display = "none";
-    console.log("Speech Recognition Ended");
-  };
+Let's set it to `display: none` when the speech recognition starts.
 
-- onError: 
+```JavaScript
+speechRecognition.onError = () => {
+  document.querySelector("#status").style.display = "none";
+  console.log("Speech Recognition Error");
+};
+```
 
-  This event is triggered when there is some sort of error in the speech recognition. Let's pass a callback funtion that will hide the status `<p>` element in the webpage.
+#### onResult
+This event is triggered when the `speechRecognition` object has some results from the recognition. It will contain the final results and the interim results. Let's pass a callback funtion that will set the results to the respective `<span>` inside the transcript box.
 
-  Let's set it to `display: none` when the speech recognition starts.
+This is the HTML code for the transcript box in the web page.
 
-  ```JavaScript
-  speechRecognition.onError = () => {
-    document.querySelector("#status").style.display = "none";
-    console.log("Speech Recognition Error");
-  };
-  ```
+```html
+<div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
+  <span id="final" class="text-light"></span>
+  <span id="interim" class="text-secondary"></span>
+</div>
+```
 
-- onResult: 
+We need to set the interim results to the `span` with the ID interim and the final results to the `span` with the ID final.
 
-  This event is triggered when the `speechRecognition` object has some results from the recognition. It will contain the final results and the interim results. Let's pass a callback funtion that will set the results to the respective `<span>` inside the transcript box.
+The onResult event will pass an `event` object to the callback function. This object will contain the results in the form of an array. Each element in the array will have an property called `isFinal` denoting whether that item is an interim result or an final result.
 
-  This is the HTML code for the transcript box in the web page.
+Let's declare a variable for the final transcript outside the callback function and a variable for the interim transcript inside the callback function. 
 
-  ```html
-  <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
-    <span id="final" class="text-light"></span>
-    <span id="interim" class="text-secondary"></span>
-  </div>
-  ```
+```JavaScript
+let final_transcript = "";
 
-  We need to set the interim results to the `span` with the ID interim and the final results to the `span` with the ID final.
+speechRecognition.onresult = (event) => {
+  let interim_transcript = "";
+};
+``` 
 
-  The onResult event will pass an `event` object to the callback function. This object will contain the results in the form of an array. Each element in the array will have an property called `isFinal` denoting whether that item is an interim result or an final result.
+Now let's build a string from the results array. We should run it through a loop and add the result item to the final transcript if the result item is final. If not, we should add it to the interim results string.
 
-  Let's declare a variable for the final transcript outside the callback function and a variable for the interim transcript inside the callback function. 
+```JavaScript
+for (let i = event.resultIndex; i < event.results.length; ++i) {
+  if (event.results[i].isFinal) {
+    final_transcript += event.results[i][0].transcript;
+  } else {
+    interim_transcript += event.results[i][0].transcript;
+  }
+}
+``` 
 
-  ```JavaScript
-  let final_transcript = "";
+Finally, let's update the DOM with the transcript values.
 
-  speechRecognition.onresult = (event) => {
-    let interim_transcript = "";
-  };
-  ``` 
+```JavaScript
+document.querySelector("#final").innerHTML = final_transcript;
+document.querySelector("#interim").innerHTML = interim_transcript;
+```
 
-  Now let's build a string from the results array. We should run it through a loop and add the result item to the final transcript if the result item is final. If not, we should add it to the interim results string.
-  
-  ```JavaScript
+This is the complete code snippet for the `onResult` event.
+
+```JavaScript
+let final_transcript = "";
+
+speechRecognition.onresult = (event) => {
+  let interim_transcript = "";
+
   for (let i = event.resultIndex; i < event.results.length; ++i) {
     if (event.results[i].isFinal) {
       final_transcript += event.results[i][0].transcript;
@@ -156,32 +174,7 @@ You can provide callbacks for events like `onStart`, `onEnd`, `onResult` and `on
       interim_transcript += event.results[i][0].transcript;
     }
   }
-  ``` 
-
-  Finally, let's update the DOM with the transcript values.
-
-  ```JavaScript
   document.querySelector("#final").innerHTML = final_transcript;
   document.querySelector("#interim").innerHTML = interim_transcript;
-  ```
-
-  This is the complete code snippet for the `onResult` event.
-
-  ```JavaScript
-  let final_transcript = "";
-
-  speechRecognition.onresult = (event) => {
-    let interim_transcript = "";
-
-    for (let i = event.resultIndex; i < event.results.length; ++i) {
-      if (event.results[i].isFinal) {
-        final_transcript += event.results[i][0].transcript;
-      } else {
-        interim_transcript += event.results[i][0].transcript;
-      }
-    }
-    document.querySelector("#final").innerHTML = final_transcript;
-    document.querySelector("#interim").innerHTML = interim_transcript;
-  };
-  ``` 
-  
+};
+``` 
