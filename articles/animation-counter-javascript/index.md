@@ -1,4 +1,4 @@
-### Creating an animation counter in JavaScript</br></br>
+### Creating an animated counter in JavaScript</br></br>
 
 ![Hero image](/engineering-education/animation-counter-javascript/hero.jpg)
 
