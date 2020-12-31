@@ -1,11 +1,11 @@
 ### Creating an animation counter in JavaScript</br></br>
 
-![Hero image](hero.jpg)
+![Hero image](/engineering-education/animation-counter-javascript/hero.jpg)
 
 Maybe you want to give some visual statistics about your site visits, members registered or showing some numbers in your online game.</br>To give an appealing look and nice User Experience, you will in one way or another need to animate the digits.</br>
 JavaScript has helper methods which when artistically manipulated can help us achieve that.</br>
 We are going to create one illustrated below:</br>
-![Illustration](illustration.gif)
+![Illustration](/engineering-education/animation-counter-javascript/illustration.gif)
 
 #### The JavaScript code</br>
 The full code can be accessed at my [Github Repository](https://github.com/Agusioma/animation-counter-javascript/blob/main/animation-counter.html)</br>
