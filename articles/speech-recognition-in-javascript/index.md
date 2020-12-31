@@ -35,7 +35,7 @@ You can take a look at the final code in this [GitHub Repository](https://github
 
 In the starter code, I've set up a language and dialect select menu, two buttons to start/stop the speech recognition, and a box to display the transcript. I've used [Bootstrap](https://getbootstrap.com/) to style the webpage.
 
-![Starter Code Screen](start_screen.png)
+![Starter Code Screen](/engineering-education/speech-recognition-using-web-speech-api-in-javascript/start_screen.png)
 
 ### Let's code
 Create a new JavaScript file and name it `speechRecognition.js`. Now add the file to the HTML file using the `script` tag after the `body` tag. This will make sure that the script file is loaded after all the elements have been loaded to the DOM.
@@ -213,7 +213,7 @@ document.querySelector("#stop").onclick = () => {
 
 ### Result
 
-![Final Result](final.gif)
+![Final Result](/engineering-education/speech-recognition-using-web-speech-api-in-javascript/final.gif)
 
 ### Let's Recap
 
