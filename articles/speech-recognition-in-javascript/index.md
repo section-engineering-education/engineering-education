@@ -5,7 +5,7 @@ You can check the browser compatibility for the Web Speech API [here](https://de
 ### Prerequisites
 To follow along with this tutorial, you should have:
 
-- Basic understanding of HTML and JavaScript.
+- A basic understanding of HTML and JavaScript.
 
 - A code editor. I'll be using [Visual Studio Code](https://code.visualstudio.com/download).
 
@@ -45,7 +45,6 @@ Let's create a `webkitSpeechRecognition` object.
 ```JavaScript
 let speechRecognition = new webkitSpeechRecognition();
 ```
-
 
 ### Properties
 Now, let's configure some properties on this `speechRecognition` object.
@@ -117,7 +116,7 @@ speechRecognition.onError = () => {
 #### onResult
 This event is triggered when the `speechRecognition` object has some results from the recognition. It will contain the final results and the interim results. Let's pass a callback funtion that will set the results to the respective `<span>` inside the transcript box.
 
-This is the HTML code for the transcript box in the web page.
+This is the HTML code for the transcript box in the web page. The interim results are colored differently to differentiate between itself and the final results.
 
 ```html
 <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
@@ -178,3 +177,41 @@ speechRecognition.onresult = (event) => {
   document.querySelector("#interim").innerHTML = interim_transcript;
 };
 ``` 
+
+### Start/Stop Recognition
+Finally, Let's start and stop the recognition.
+
+We need to set the onClick property of the start and stop buttons to start and stop the speech recognition.
+
+```JavaScript
+document.querySelector("#start").onclick = () => {
+  speechRecognition.start();
+};
+document.querySelector("#stop").onclick = () => {
+  speechRecognition.stop();
+};
+```
+
+### Result
+
+![Final Result](final.gif)
+
+### Let's Recap
+
+- We cloned the starter code from the GitHub repository.
+
+- We created a new JavaScript file and linked it to the HTML file.
+
+- We checked whether the `webkitSpeechRecognition` class was available on the `window` object.
+
+- We created a new instance of the `webkitSpeechRecognition` class.
+
+- We set some properties like `continuous`, `interimResults` and `language` on that speech recognition instance.
+
+- We added callback methods for different events like `onStart`, `onEnd`, `onError` and `onResult`.
+
+- We set the onClick property of the start and stop buttons to start and stop the speech recognition.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for reading!
