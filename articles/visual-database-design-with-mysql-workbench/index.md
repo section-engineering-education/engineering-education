@@ -90,9 +90,9 @@ A new window will be opened, as in the screenshot below, after adding a new diag
 
 #### Scenario
 In this tutorial, we will model and create a database for keeping book details. The database should store books with author and publisher details. We will skip the [database normalization process](https://www.studytonight.com/dbms/database-normalization.php) details. The final database will have 3 main entities with attributes, as shown below:
-- **Book:** Id, Title, ISBN, Publisher, Total Pages, Year of Publication, Author
-- **Author:** Id, First Name, Last Name
-- **Publisher:** Id, Name
+- **Book:** id, title, ISBN, publisher, total pages, year of publication, author
+- **Author:** id, first name, last name
+- **Publisher:** id, name
 
 We will use the information in the tables below to design the ER model. All the column names have been defined. Primary keys, foreign keys, and datatypes are also outlined.
 **Book table**
