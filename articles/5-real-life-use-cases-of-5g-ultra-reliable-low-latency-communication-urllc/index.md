@@ -1,4 +1,4 @@
-[5G](https://en.wikipedia.org/wiki/5G) adoption continues to progress at a high rate in terms of subscribers and deployment. The 5th generation mobile network enables applications and services requiring better reliability, improved energy efficiency, massive connection density, and lower latency, making industries faster and efficient, and our connected lives better.
+[5G](https://en.wikipedia.org/wiki/5G) adoption continues to progress at a high rate in subscribers and deployment. The 5th generation mobile network enables applications and services requiring better reliability, improved energy efficiency, massive connection density, and lower latency, making industries faster and efficient and our connected lives better.
 
 5G URLLC service makes it possible to support use cases that require very high reliability and extremely low latency. Examples of these use cases include industrial automation, intelligent transportation, smart electricity grid, entertainment support, and remote diagnosis and surgery.
 
@@ -6,11 +6,11 @@ This article explains 5G URLLC and its real-life applications in detail.
 
 ### What is 5G URLLC?
 
-Cellular phone companies started deploying the fifth-generation technology standards, 5G, in 2019. The 5G network has higher download speeds and greater bandwidth compared to its predecessor, the 4G network.
+Cellular phone companies started deploying the fifth-generation technology standards, 5G, in 2019. The 5G network has higher download speeds and greater bandwidth than its predecessor, the 4G network.
 
 5G has three facets:
 
-- Massive Machine Type Communication (mMTC) - It connects a large number of low-power internet of things (IoT) devices to the cellular network.
+- Massive Machine Type Communication (mMTC) - It connects many low-power internet of things (IoT) devices to the cellular network.
 - Enhanced Mobile Broadband (eMBB) – It supports bandwidth-driven use cases that require high data rates to bring a faster and better user experience.
 - Ultra-Reliable Low-Latency Communication (URLLC) – It is applicable in mission-critical use cases such as smart grids, intelligent transport systems, and remote surgery.
 
@@ -26,7 +26,7 @@ Manufacturing companies are automating industrial control by developing networks
 
 Companies are replacing humans with robots in the manufacturing process to achieve higher productivity and reliability.
 
-In car assembly lines, URLLC helps achieve high reliability to avoid damages to car parts during assembly and achieve minimum latency to keep up with the moving tray along the assembly line.
+In-car assembly lines, URLLC helps achieve high reliability to avoid damages to car parts during assembly and achieve minimum latency to keep up with the moving tray along the assembly line.
 
 Industry technical standards, such as PROFINET, demand low latency. They also require strict latency bonds with required guarantee levels to ensure safety in the system. [PROFINET](https://en.wikipedia.org/wiki/PROFINET) is a communication protocol that allows data exchange between devices and controllers over industrial Ethernet. 5G URLLC can meet the PROFINET&#39;s demands with greater flexibility, safety, and efficiency in production lines.
 
@@ -48,20 +48,23 @@ In predictive vehicle maintenance, 5G URLLC provides a secure, highly reliable w
 
 Live events reporting, cloud-based entertainment (AR/VR), live sports events, and online gaming are some of the use cases of 5G URLLC in the sports and entertainment industry.
 
-5G URLLC enables standard use technologies supporting wireless studio, electronic news gathering, audio Programme Making and Special Events (PMSE) production, conferencing, and more. Areas such as cloud gaming and immersive media are expected to advance in the future of 5G.
+5G URLLC enables standard use technologies supporting wireless studio, electronic news gathering, audio Programme Making, Special Events (PMSE) production, conferencing, and more. Areas such as cloud gaming and immersive media are expected to advance in the future of 5G.
 
 More coverage of the 5G network worldwide will promote a more reliable distribution of content within homes and businesses. This is partly due to 5G URLLC&#39;s ability to ensure audio synchronicity and low latency and support for remote presence applications and immersive 3D. Remote presence applications and immersive virtual 3D environments demand low latency interaction.
 
 #### Smart electricity grid and harbor automation
 
-Smart grids are improving electricity distribution worldwide by using communication capabilities to provide better balancing of power while detecting and mitigating faults.
+Smart grids improve electricity distribution worldwide by using communication capabilities to provide better balancing of power while detecting and mitigating faults.
 
 5G URLLC provides a seamless and affordable communication platform for deploying advanced technologies for managing power distribution networks in a time of rising need for flexibility and a growing amount of distributed energy resources.
 
 The Wireless for Verticals ([WIVE](https://wive.turkuamk.fi/)) research project presented one of the real-life use cases of 5G, relating to the electricity grid and harbor automation. Low latency and high reliability are significant in this project to ensure the protection of electricity grid infrastructure and harbor automation.
 
-Protection applications, including those in medium-voltage (MV) distribution networks, use the URLLC technology to release reliable, low-latency safety related messages. This is ensuring immediate clearance of severe faults to keep the electricity distribution network running. In the long run, users benefit from increased safety of personnel and reduced damage to equipment.
+Protection applications, including those in medium-voltage (MV) distribution networks, use the URLLC technology to release reliable, low-latency safety-related messages. This is ensuring immediate clearance of severe faults to keep the electricity distribution network running. In the long run, users benefit from increased safety of personnel and reduced damage to equipment.
 
 ### Conclusion
 
 Ultra-reliable low-latency communication is a revolutionary communications technology in today&#39;s digital world. With 5G URLLC, we can have a better entertainment experience, increase machine productivity in factories, conduct remote diagnosis and surgeries, improve electricity distribution and personnel protection, and manage traffic more efficiently.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
