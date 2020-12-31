@@ -94,7 +94,7 @@ Now we check our work so far in the browser by running the command�
 
 This should display on our browser.
 
-![Register form 1]()
+![Register form 1](register1.png)
 
 As seen from these few lines of code, a form has been created, and Django also provides a password validation field just by importing the `UserCreationForm`.
 
@@ -157,7 +157,7 @@ def register(request):
 
 Note how we changed from UserCreationForm to UserRegisterForm.
 
-![Register form 2 with emailField]()
+![Register form 2 with emailField](register2.png)
 
 
 A few additional styling can be done using either CSS or bootstrap within the template. This additional styling is done using ***Django-crispy-forms**.*  This is an application that allows Django-forms to be styled without re-writing the codes.
@@ -168,7 +168,7 @@ Swiftly, let's add crispy-forms. Firstly, install crispy forms in your�
 
 Once this is installed, go to your **settings.py** file and add the crispy form under installed_apps
 
-![Settings.py file]()
+![Settings.py file](settings.png)
 
 
 Then, at the bottom of the **settings.py** file, add these lines of code.
@@ -199,7 +199,7 @@ Once this is done properly, your form would look like this.
 
  
 
-![Register form 4 with crispy]()
+![Register form 4 with crispy](register4.png)
 
  **2. Saving user form data in a database**
 
