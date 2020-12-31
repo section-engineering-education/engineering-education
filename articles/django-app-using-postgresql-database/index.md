@@ -43,7 +43,9 @@ ALTER ROLE <yourname> SET timezone TO 'UTC';
 ```
 
 - In the first line we are setting the default encoding to UTF-8 expected by Django.
+
 - The second line we are also setting the default transaction isolation scheme to “read committed”, which blocks reads from uncommitted transactions. 
+
 - Lastly, By default Django timezone is UTC we are setting our database's timezone to UTC.
 
 
@@ -92,7 +94,7 @@ Let's create our Hello World Django project.
 Change your current directory into our Django project `django_app`.
 
 ```bash
-cd hello_world
+cd django_app
 ```
 
 Let's create an app in our `django_app` project.
