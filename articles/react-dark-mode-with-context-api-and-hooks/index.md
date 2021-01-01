@@ -59,7 +59,7 @@ We need to create a context object using the `createContext` method.
 const Context = createContext();
 ```
 
-Every context object comes with a Provider component. The Provider component accepts a `value` prop to be passed to consuming components. All the consuming components must be a descendant of the provider component.
+Every context object comes with a Provider component. The Provider component accepts a `value` prop that will be passed to the consuming components. All the consuming components must be a descendant of the provider component.
 
 ```JSX
 <Context.Provider value={value}>
@@ -75,7 +75,7 @@ const context = useContext(Context);
 ```
 
 ### When to use the Context API instead of Redux
-If you don't know about Redux, it serves as a centralized store for the state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion. Redux is an external library. Redux can also be used with other frameworks like [Angular](https://angular.io/), [Flutter](https://flutter.dev/), etc.
+If you don't know about [Redux](https://redux.js.org/), it serves as a centralized store for the state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion. Redux is an external library. Redux can also be used with other frameworks like [Angular](https://angular.io/), [Flutter](https://flutter.dev/), etc.
 
 If you want to learn more about Redux, check out [this tutorial](https://redux.js.org/tutorials/fundamentals/part-1-overview).
 
@@ -131,7 +131,7 @@ export const ThemeContext = createContext();
 
 Now, We should write a HOC (Higher Order Component) that'll be used to wrap any component with the Context provider.
 
-In this HOC, we need to use the `useReducer` hook to produce a state and the dispatch function to update that state and pass it to the provider component.
+In this HOC, we need to use the `useReducer` hook to create a state and the dispatch function to update that state and pass it to the provider component's `value` prop.
 
 We need to write a reducer function to switch between dark mode and light mode. 
 
@@ -175,9 +175,9 @@ export function ThemeProvider(props) {
 ```
 
 ### Consuming the Context
-We should use the ThemeProvider HOC to wrap it around the component we want to consume the context from. Since the theme is supposed to affect the application globally, let's wrap it around the App component.
+We should wrap the `ThemeProvider` HOC around the component from which we want to consume the context from. Since the theme is supposed to affect the application globally, let's wrap it around the App component.
 
-In index.js, let's import the ThemeProvider.
+In `index.js`, let's import the ThemeProvider.
 
 ```JSX
 import { ThemeProvider } from "./ThemeContext";
@@ -196,9 +196,9 @@ ReactDOM.render(
 );
 ```
 
-This will make the Theme Context available for all the descendant components of the App component.
+This will make the theme context available for all the descendant components of the App component.
 
-Now, in the *App.js* file, let's import the `ThemeContext` and the `useContext` hook.
+Now, in the `App.js` file, let's import the `ThemeContext` and the `useContext` hook.
 
 ```JSX
 import React, { useContext } from "react";
@@ -240,7 +240,7 @@ Now, do the same for the `h1` and the `p` tags.
 
 Now, we need to use the dispatch function to update the state between dark mode and light mode.
 
-In Button.js, let's import the `ThemeContext` and the `useContext` hook.
+In `Button.js`, let's import the `ThemeContext` and the `useContext` hook.
 
 ```JSX
 import React, { useContext } from "react";
@@ -254,7 +254,7 @@ const theme = useContext(ThemeContext);
 const darkMode = theme.state.darkMode;
 ```
 
-When the user clicks the button, we need to call the dispatch function with the correct type. If the current state is in light mode, the dispatch type should be of dark mode and vice-versa.
+When the user clicks the button, we need to call the dispatch function with the correct type. If the current theme is in light mode, the dispatch type should be of dark mode and vice-versa.
 
 Let's write a function for when the user clicks on the button and pass it to the `onClick` property of the button.
 
