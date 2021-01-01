@@ -19,37 +19,37 @@ A framework is a collection of packages and modules used to develop software and
 The three major Python frameworks used in developing web applications are [Django](https://www.djangoproject.com/), [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)), and [Fast API](https://fastapi.tiangolo.com/). They come in handy in various use cases. We will evaluate each framework to help you decide on your use cases.
 
 ### Table of contents
-1. Django Pros & Cons
-2. Flask Pros & Cons
-3. FastAPI Pros & Cons
-4. Comparison
+1. Django: Pros, cons and use cases
+2. Flask: Pros, cons and use cases
+3. FastAPI: Pros, cons and use cases
+4. Comparing the three frameworks
 5. Conclusion
 
 ### Django
 Django is a free and open-source Python web development framework used in building websites. It was created by Adrian Holovaty and Simon Willison in 2003 and used the Model-Template-View pattern. It is trendy for its robust and straightforward nature. It's one of the most popular frameworks globally and is used by Tech giants like Instagram, Youtube, etc. Django is also popular because it encourages reusable code.
 
-### Pros
+#### Pros
 - Django code structure is very efficient, making it easy for developers to add more functionalities to their websites.
 - The Rest framework (Representational state transfer can be defined as a software architectural style that defines a set of constraints to be used for creating web services) in Django. This is called Django Rest Framework (DRF). It's a flexible toolkit used to build Web APIs in Django. 
 - REST is the general framework, while DRF is a specific REST framework used in Django. It's easy to build Web APIs with Django because of it's modular and customizable architecture.
 - Django emphasizes security by providing defense against joint [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) and [cross-site request forgery attacks](https://en.wikipedia.org/wiki/Cross-site_request_forgery).
 
-### Cons
+#### Cons
 - Django's cumbersome software may limit development speed because of the many reusable modules. It also needs to make sure that previous versions are still compatible with new releases, contributing to its slow nature. 
 - Django Models can have no mixins, just simple inheritance 
 - Django uses ORM, which was created before SQLAlchemy, making Django ORM inferior to SQLAlchemy because it is less flexible.
 
-##### Django: Use cases
+#### Django: Use cases
 Django can tackle projects of any size and capacity. We can use it for simple sites or high-performance sites. A few example use cases would be : [high load booking engines](https://github.com/amadeus4dev/amadeus-flight-booking-django), [shopping platforms](https://github.com/benedictchen/django-shopping-cart), [School management systems](https://github.com/adigunsherif/Django-School-Management-System), built-in custom CRM systems for internal data, and even IOS and Android applications that support web-based applications. 
 
 Some developer features that can be implemented with Django are admin dashboards, photo-based verification, emailing systems for sending user notifications, etc.
 
-#### Flask
+### Flask
 Flask is a micro web framework written in Python. A micro web framework is a web development framework with easy setup and can be used in developing minimalistic web applications. Flask comes with options like template engines such as ORM, caching, authentication, etc. It was created to build web apps with Python, easy, fast, and scale up to complex applications and microservices (a lightweight application that provides a narrowed list of features with a well-defined contract).  
 
 Flask was more like an April fool's prank by the creator Armin Ronacher on the 1st of April, where he wrapped [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) and [Jinja](https://jinja.palletsprojects.com/en/2.11.x/). Surprisingly, it was appreciated, which made them work more on it.
 
-##### Pros
+#### Pros
 - Flask is flexible and comfortable. Most parts of Flask have the possibility of changing, which is very unlikely for some other web frameworks.
 - Flask allows unit testing and would enable you to transit to a web framework by tweaking some extensions because of its built-in-development server, integrated support, etc.
 - Flask is very beginner-friendly because of its simplicity, giving room to learn and understand it better. It also enables devs to create apps effortlessly and quickly. 
@@ -58,13 +58,13 @@ Flask was more like an April fool's prank by the creator Armin Ronacher on the 1
 - Flask uses Modules, which is a third-party involvement and is prone to cause security breaches. The modules are in between the framework and the developer.
 - Flask has a singular source that implies that it will handle every request in turns, one after the other, so regardless of how many multiple requests, it still takes them in turns, which takes more time.
 
-##### Flask: Use cases
+#### Flask: Use cases
 We can use Flask for commercial projects. It can help you get started quickly but doesn't work well for resembling a real load. You can quickly implement Flask projects: E-commerce systems, Facebook/ Twitter bot, An online social network, static sites, etc. It's not advisable to use it for high-load enterprise software.
 
-#### FastAPI  
+### FastAPI  
 Fast API is a modern open-source fast and highly performant Python web framework for building Web APIs and is based on Python 3.6+ standard type hints. 
 
-##### Pros
+#### Pros
 - Fast API validates the developer's data type even in deeply nested JSON requests.
 - Fast API is built on standards like JSON Schema(a tool for validating the structure of JSON data), OAuth 2.0(it's the industry-standard protocol for authorization), and OpenAPI(which is a publicly available application programming interface)
 - FastAPI makes it easy to build a GraphQL API with a Python library called *graphene-python*.
@@ -72,7 +72,7 @@ Fast API is a modern open-source fast and highly performant Python web framework
 #### Cons
 - Because FastAPI is relatively new, the community is small compared to other frameworks, and regardless of its detailed documentation, there are few external educational materials.
 
-##### FastAPI Use cases
+#### FastAPI Use cases
 Fast API, which is relatively new amongst the three, works perfectly if your concern is speed. Netflix uses it for its internal crisis management. It also scales perfectly in deploying production-ready machine learning models because ML models work best in production when they are wrapped around a REST API and deployed in a microservice.
 
 Now we're going to compare Django, Flask, and FastAPI based on their *packages*, *community*, *performance*, *flexibility*, *job opening*, and *education*.
