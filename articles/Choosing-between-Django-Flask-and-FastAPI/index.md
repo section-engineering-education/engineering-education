@@ -40,7 +40,12 @@ Django is a free and open-source Python web development framework used in buildi
 - Django uses ORM, which was created before SQLAlchemy, making Django ORM inferior to SQLAlchemy because it is less flexible.
 
 #### Django: Use cases
-Django can tackle projects of any size and capacity. We can use it for simple sites or high-performance sites. A few example use cases would be : [high load booking engines](https://github.com/amadeus4dev/amadeus-flight-booking-django), [shopping platforms](https://github.com/benedictchen/django-shopping-cart), [School management systems](https://github.com/adigunsherif/Django-School-Management-System), built-in custom CRM systems for internal data, and even IOS and Android applications that support web-based applications. 
+Django can tackle projects of any size and capacity. We can use it for simple sites or high-performance sites. A few example use cases would be 
+- [High load booking engines](https://github.com/amadeus4dev/amadeus-flight-booking-django)
+- [Shopping platforms](https://github.com/benedictchen/django-shopping-cart)
+- [School management systems](https://github.com/adigunsherif/Django-School-Management-System) 
+- Built-in custom CRM systems for internal data 
+- IOS and Android applications supporting web-based applications. 
 
 Some developer features that can be implemented with Django are admin dashboards, photo-based verification, emailing systems for sending user notifications, etc.
 
@@ -59,7 +64,13 @@ Flask was more like an April fool's prank by the creator Armin Ronacher on the 1
 - Flask has a singular source that implies that it will handle every request in turns, one after the other, so regardless of how many multiple requests, it still takes them in turns, which takes more time.
 
 #### Flask: Use cases
-We can use Flask for commercial projects. It can help you get started quickly but doesn't work well for resembling a real load. You can quickly implement Flask projects: E-commerce systems, Facebook/ Twitter bot, An online social network, static sites, etc. It's not advisable to use it for high-load enterprise software.
+We can use Flask for commercial projects. It can help you get started quickly but doesn't work well for resembling a real load. You can quickly implement Flask projects such as:
+- E-commerce systems
+- Facebook/ Twitter bot
+- An online social network
+- Static sites, etc.
+
+It's not advisable to use it for high-load enterprise software.
 
 ### FastAPI  
 Fast API is a modern open-source fast and highly performant Python web framework for building Web APIs and is based on Python 3.6+ standard type hints. 
