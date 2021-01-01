@@ -47,7 +47,7 @@ Workbench is one of the MySQL products. Use MySQL Installer to manage MySQL prod
 [Image source](https://www.mysql.com/support/supportedplatforms/workbench.html)
 
 #### Installing MySQL Workbench on Windows
-Download MySQL Installer from the [official website](https://dev.mysql.com/downloads/installer/). For this installation, I recommend the default configurations as in the screenshot below.
+Download MySQL Installer from the [official website](https://dev.mysql.com/downloads/installer/). Install MySQL Workbench using the downloaded installer. For this installation, I recommend the default configurations as in the screenshot below.
 
 ![MySQL installer Windows](/engineering-education/visual-database-design-with-mysql-workbench/mysql-installer.jpg)
 
@@ -58,10 +58,11 @@ You can find more detailed installation guidelines for MySQL Workbench on [MySQL
 #### Verifying MySQL Workbench installation
 Launch MySQL Workbench. You can do this from the installation wizard.
 - Linux: Launch by typing the command `mysql-workbench`. Alternatively, navigate to `Activities > MySQL WorkBench`.
-- macOS: navigate to `Applications > MySQL Workbench`.
+- macOS: Navigate to `Applications > MySQL Workbench`.
 - Windows: Navigate to `Start > Programs > MySQL > MySQL Workbench`
 
-Ensure there is a connection to the MySQL Server's local instance, as shown in the screenshot below. If there is no connection, Click the `+` icon as highlighted in the screenshot below.
+Ensure there is a connection to the MySQL Server local instance, as shown in the screenshot below. If there is no connection, click the `+` icon to create a new connection, as highlighted in the screenshot below.
+
 ![MySQL Workbench first time launch Windows](/engineering-education/visual-database-design-with-mysql-workbench/mysql-workbench-first-time-launch.jpg)
 
 Provide the connection details.
@@ -81,12 +82,12 @@ Save the model. Double click `MySQL Schema` and change the name from `mydb` to `
 
 ![MySQL Workbench schema rename](/engineering-education/visual-database-design-with-mysql-workbench/mysql-workbench-rename-schema.jpg)
 
-A new window will be opened, as in the screenshot below, after adding a new diagram.
+After adding a new diagram, a new window will be opened, as in the screenshot below.
 
 ![MySQL Workbench interface](/engineering-education/visual-database-design-with-mysql-workbench/mysql-workbench-modeling-interface.jpg)
 
 #### Scenario
-In this tutorial, we will model and create a database for keeping book details. The database should store books with author and publisher details. We will skip the [database normalization process](https://www.studytonight.com/dbms/database-normalization.php) details. The final database will have 3 main entities with attributes, as shown below:
+In this tutorial, we will model and create a database for keeping book details. The database should store books with author and publisher details. We will skip the [database normalization process](https://www.studytonight.com/dbms/database-normalization.php) details. The final database will have three main entities with attributes, as shown below:
 - **Book:** id, title, ISBN, publisher, total pages, year of publication, author
 - **Author:** id, first name, last name
 - **Publisher:** id, name
@@ -136,17 +137,17 @@ The vertical toolbar has different tools used in creating EER diagrams. The scre
 There are six tools used to create different types of relationships in MySQL Workbench. `1:1` is read as one-to-one; `1:n` is read as one-to-many, `n:m` is read as many-to-many.
 
 #### Add tables
-We are going to add three tables to the EER model. The animation below shows the process of adding a table and adding columns.
+We are going to add three tables to the EER model. The animation below shows the process of adding a table and the columns.
 
 ![MySQL Workbench creating a table animation](/engineering-education/visual-database-design-with-mysql-workbench/mysql-workbench-creating-table.gif)
 
 To add a table, follow these steps:
-- Select the table tool on the vertical tools panel, then click anywhere on the EER diagram canvas.
+- Select the table tool on the vertical tools panel, then click anywhere on the EER diagram canvas. This creates a table with no columns.
 - Double click the table created to open the table properties window.
 - On the table properties window, change the table name.
-- Add columns to the table. To add new columns, click on the last blank column. Edit the column name. Select the appropriate data types for each column.
+- Add columns to the table. To add new columns, click on the last blank column. Edit the column name and select the appropriate data type for each column.
 - Please do not add the columns described as foreign keys. MySQL Workbench has an easier way of adding them by creating relationships, and the foreign keys are added automatically.
-- Select all the column properties (Such as primary key, not null, unique, and autoincrement)
+- Select all the column properties such as primary key, not null, unique, and autoincrement.
 - Repeat the process for all the tables.
 
 Your EER diagram should look as shown below.
@@ -160,7 +161,7 @@ We will add two different relationships to the EER diagram.
 There is a one-to-many relationship between the book and the publisher. We will use the relationship tools to add relationships. To create a one-to-many relationship, make sure that one of the tables has a primary key. Select the appropriate relationship tool. In this case, we are going to use the one-to-many non-identifying relationship. Click the table on the "many" side. In this case, it is the book table. Click the table containing the referenced key. In this case, it is the publisher table. A foreign key is created on the book table with the default name as `fk_book_has_author_book`. To change the foreign key properties, double click the connection line to open the relationship editor.
 
 ##### Many-to-many relationship
-There is a many-to-many relationship between the book and the author. Select the many-to-many tool. Click on the book table, then click on the author table as shown in the animation below. A bridge table with the name `book_has_author` is generated automatically.
+There is a many-to-many relationship between the book and the author. Select the many-to-many relationship tool. Click on the book table, then click on the author table as shown in the animation below. A bridge table with the name `book_has_author` is generated automatically.
 
 ![MySQL Workbench creating relationships animation](/engineering-education/visual-database-design-with-mysql-workbench/mysql-workbench-creating-relationships.gif)
 
@@ -168,13 +169,13 @@ After creating the relationships, the EER diagram will be as shown in the screen
 
 ![MySQL Workbench database model](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-final-book-db-model.jpg)
 
-You can find the EER diagram Workbench file created on this tutorial on [Github](https://github.com/Tsanguu/MySQL-Workbench-database-design-tutorial).
+You can find the EER diagram Workbench file created in this tutorial on [Github](https://github.com/Tsanguu/MySQL-Workbench-database-design-tutorial).
 
 ### Forward engineering with MySQL Workbench
 The visual database model created can be transformed into a physical database. This process is known as forward engineering. SQL code is generated and executed on a target MySQL Server. This is easier than writing the code manually. 
 
 **Step 1**
-To launch forward engineering wizard. Navigate to `Databases` > `Forward Engineer`. 
+To launch forward engineering wizard, Navigate to `Databases` > `Forward Engineer`. 
 
 ![MySQL Workbench forward engineer](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-forward-engineering-step-1.jpg)
 
@@ -184,7 +185,7 @@ Create a new connection to MySQL Server or select an existing one, as shown in t
 ![MySQL Workbench forward engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-forward-engineering-step-2-connecting-to-dbms.jpg)
 
 **Step 3**
-The wizard gives us SQL export options. For this exercise, use the default options.
+The wizard gives us SQL export options. For this exercise, use the default selected options.
 
 ![MySQL Workbench forward engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-forward-engineering-step-3-set-options.jpg)
 
@@ -199,11 +200,11 @@ In this step, we are provided with the generated SQL script. Find the SQL file g
 ![MySQL Workbench forward engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-forward-engineering-step-5-review-sql.jpg)
 
 **Step 6**
-This is the final step. Click finish to commit. The generated SQL file is used to create a database in the connected MySQL Server.
+This is the final step. Click finish to commit. The generated SQL file is used to create a physical database in the connected MySQL Server.
 
 ![MySQL Workbench forward engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-forward-engineering-step-6-progress.jpg)
 
-To view the database created in MySQL Workbench, navigate to `Database` > `Connect to Database`. Choose an existing connection to connect to MySQL Server. The database created will be as shown in the screenshot below.
+To view the database created on MySQL Workbench, navigate to `Database` > `Connect to Database`. Choose an existing connection to connect to MySQL Server or create a new one. The database created will be as shown in the screenshot below.
 
 ![MySQL Workbench databases](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-databases.jpg)
 
@@ -237,12 +238,12 @@ The results of the tasks carried out are displayed in the wizard below. Review t
 ![MySQL Workbench reverse engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-reverse-engineering-step-5-retrieve.jpg)
 
 **Step 6**
-We are prompted to select objects to reverse engineer. By default, all the available objects are selected. Leave the default option, then click `NEXT`.
+We are prompted to select the objects to reverse engineer. By default, all the available objects are selected. Leave the default options, then click `NEXT`.
 
 ![MySQL Workbench reverse engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-reverse-engineering-step-6-select-objects.jpg)
 
 **Step 7**
-The wizard shows the progress. In the screenshot below, the process was successful. In case of an error, check error details by clicking `Show Logs`. Click `NEXT`.
+The wizard shows the reverse engineering progress. In the screenshot below, the process was successful. In case of an error, check error details by clicking `Show Logs`. Click `NEXT`.
 ![MySQL Workbench reverse engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-reverse-engineering-step-7-progress.jpg)
 
 **Step 8**
@@ -252,6 +253,7 @@ This step shows the summary of the objects generated. In this case, we have four
 
 **Output**
 The EER diagram below is generated. You can save it for later use.
+
 ![MySQL Workbench EER Diagram](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-reverse-engineering-eer-output.jpg)
 
 ### Conclusion
