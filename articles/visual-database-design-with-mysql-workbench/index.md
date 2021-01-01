@@ -244,6 +244,7 @@ We are prompted to select the objects to reverse engineer. By default, all the a
 
 **Step 7**
 The wizard shows the reverse engineering progress. In the screenshot below, the process was successful. In case of an error, check error details by clicking `Show Logs`. Click `NEXT`.
+
 ![MySQL Workbench reverse engineer wizard](/engineering-education/visual-database-design-with-mysql-workbench/mysql-wb-reverse-engineering-step-7-progress.jpg)
 
 **Step 8**
