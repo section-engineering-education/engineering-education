@@ -51,9 +51,13 @@ random_numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4, 6,
 random_number_index = 0
 
 def rand():
-    number = random_numbers[random_number_index]
-    random_number_index = (random_number_index + 1) % len(random_numbers)
+  global random_number_index
+  number = random_numbers[random_number_index]
+  random_number_index = (random_number_index + 1) % len(random_numbers)
+  return number
 ```
+
+[Run the code](https://repl.it/@Botahamec/Giant-Random-List)
 
 We get a number from the list and move to the next number in the list. This is a quick and easy way to generate random numbers. This method is used in Fire Emblem, and [clever players have learned to abuse this](https://www.youtube.com/watch?v=Qq8ZRWkhovs). Obviously, this method isn't very good. It repeats in a predictable way that's consistent with every run. We can certainly do better.
 
@@ -65,15 +69,47 @@ The xorshift is a fast random number generator. Only a couple of operations are 
 xorshift_seed = # The initial seed should go here
 
 def xorshift():
-    global xorshift_seed
-    xorshift_seed ^= xorshift_seed << 13
-    xorshift_seed ^= xorshift_seed >> 17
-    xorshift_seed ^= xorshift_seed << 5
-    xorshift_seed %= int("ffffffff", 16) # The modulus limits it to a 32-bit number
-    return xorshift_seed
+  global xorshift_seed
+  xorshift_seed ^= xorshift_seed << 13
+  xorshift_seed ^= xorshift_seed >> 17
+  xorshift_seed ^= xorshift_seed << 5
+  xorshift_seed %= int("ffffffff", 16) # The modulus limits it to a 32-bit number
+  return xorshift_seed
 ```
 
-The problem is that it's just statistically speaking, [not very random](https://www.iro.umontreal.ca/~lecuyer/myftp/papers/xorshift.pdf). However, there are [some variations](https://en.wikipedia.org/wiki/Xorshift#Variations) that work much better. Look into those if you need an incredibly fast random number generator.
+[Run the code](https://repl.it/@Botahamec/Xorshift)
+
+The problem is that it's just statistically speaking, [not very random](https://www.iro.umontreal.ca/~lecuyer/myftp/papers/xorshift.pdf). We can make a [demo](https://repl.it/@Botahamec/Xorshift-Test) to show this. This demo runs both the given implementation of xorshift, and the `random.randint()` function, to see how evenly distributed the results are.
+
+```
+xorshift() % 10
+0: 189 times
+1: 220 times
+2: 179 times
+3: 181 times
+4: 214 times
+5: 169 times
+6: 239 times
+7: 197 times
+8: 203 times
+9: 209 times
+
+random.randint(0, 9)
+0: 198 times
+1: 189 times
+2: 190 times
+3: 218 times
+4: 222 times
+5: 186 times
+6: 197 times
+7: 195 times
+8: 218 times
+9: 187 times
+```
+
+While the xorshift implementation is fairly even, the number 6 is fairly more common, and 5 is a little uncommon. The range of occurrences is about 70. However, with Python's builtin random function, the values are closer. The range is only about 40.
+
+However, there are [some variations](https://en.wikipedia.org/wiki/Xorshift#Variations) of xorshift that work much better. Look into those if you need an incredibly fast random number generator.
 
 #### Middle Square Algorithm
 
