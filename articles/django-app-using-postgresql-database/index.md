@@ -166,7 +166,7 @@ python manage.py makemigrations
 
 The `makemigrations` command is responsible for creating new migrations based on the changes you have made to our models. Since we don't have a model in our Django project, we will not worry much about this. To get a better understanding of what this command does, check out this article [Django Migrations: A Primer](https://realpython.com/django-migrations-a-primer/).
 
-When you run it for the first time, the default models in the Django project will get migrated.
+When you run it for the first time, the default models in the Django project will get migrated and the ```makemigrations``` command creates a file with all the SQL commands that will run while running the ```migrate``` command. 
 
 ```python
 python manage.py migrate
@@ -304,10 +304,10 @@ If you can see the above image, Congratulations! You just created a Hello World 
 
 ### References
 
-1. [Django](https://www.djangoproject.com)
+1. [Django](https://www.djangoproject.com).
 
-2. [PostgreSQL](https://www.postgresql.org/about/)
+2. [PostgreSQL](https://www.postgresql.org/about/).
 
-3. [views and urls in Django](https://djangobook.com/mdj2-django-views/) 
+3. [views and urls in Django](https://djangobook.com/mdj2-django-views/).
 
 4.  [Django Migrations: A Primer](https://realpython.com/django-migrations-a-primer/). 
