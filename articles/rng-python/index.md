@@ -83,7 +83,7 @@ Take the seed, square it, and just use the middle digits. To calculate the next 
 
 To generate a seed, you can choose from a couple of methods. You can use the current time, or you can use `/dev/random` or `/dev/urandom` on Unix.
 
-The problem with this is that, depending on the seed, you might get a repeating pattern sooner than you want. We call the number of times it takes to get a repeating sequence, the *period*. Some seeds will give you a longer period than others. If the numbers repeat very quickly, it will be much easier to predict, and some numbers won't show up at all. A better algorithm is needed.
+The problem with this is that, depending on the seed, you might get a repeating pattern sooner than you want. We call the number of times it takes to get a repeating sequence, the *period*. Some seeds will give you a longer period than others. A two-digit seed of 50 will just repeat 50, forever. If the numbers repeat very quickly, it will be much easier to predict, and some numbers won't show up at all. A better algorithm is needed.
 
 #### Linear Congruential Generator
 
