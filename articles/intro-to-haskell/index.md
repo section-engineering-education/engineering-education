@@ -1,11 +1,11 @@
 
 There are many functional programming languages, and Haskell is one of them. This article covers some aspects of functional programming with Haskell. It assumes that you are familiar with lists, functions, loops, and recursion. 
 
-# The Basics of Functional Programming
+### The Basics of Functional Programming
 
 [Functional programming](https://en.wikipedia.org/wiki/Functional_programming) is all about writing functions and using them to create a larger program. Besides, functional languages don't allow you to change a variable's value once you define it. As a result, you can substitute the value anywhere you see the expression. This idea is called [referential transparency](https://en.wikipedia.org/wiki/Referential_transparency). 
 
-# Haskell is Lazy
+### Haskell is Lazy
 
 Haskell uses a non-strict ("lazy") evaluation. This means expressions aren't evaluated unless it's necessary. Here's an example of lazy evaluation preventing errors from being detected: 
 
@@ -38,7 +38,7 @@ So what happened? Why doesn't Haskell inform us that we have a never-ending list
 Just like before, Haskell performed the lazy evaluation. 
 When we said `take 5 x`, Haskell only took the first 5 elements and evaluated them. We didn't need the last element of the list, so Haskell never bothered to look for it. Thus, Haskell raised no infinite list error. 
 
-# Pattern Matching with Functions
+### Pattern Matching with Functions
 
 Pattern matching is frequently used instead of *if-statements* for conciseness. Let's see an example by writing a function that returns the first element in a list. 
 
@@ -59,7 +59,7 @@ getFirst [7, 0, 0]
 => 7
 ```
 
-# Repeating Tasks with Haskell 
+### Repeating Tasks with Haskell 
 
 You might be familiar with using *for loops* to repeat a task multiple times. Functional languages use recursion instead.
 
@@ -88,7 +88,7 @@ getTotal []
 => 0 
 ```
 
-# More Resources for Haskell
+### More Resources for Haskell
 You've learned ideas such as referential transparency, lazy evaluation, and pattern-matching in Haskell. You've also seen that recursion is used instead of *for-loops*, and it can make code a lot more concise. These topics are not exclusive to Haskell; they can be applied to other functional languages as well. To learn more about these concepts, I encourage you to read [Learn You a Haskell](http://learnyouahaskell.com/), which is available for free online.
 The [HaskellWiki](https://wiki.haskell.org/Haskell) is another excellent resource for beginners. 
 
