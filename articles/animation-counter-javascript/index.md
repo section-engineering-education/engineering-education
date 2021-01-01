@@ -4,7 +4,7 @@
 
 Maybe you want to give some visual statistics about your site visits, members registered or showing some numbers in your online game.</br>To give an appealing look and nice User Experience, you will in one way or another need to animate the digits.</br>
 JavaScript has helper methods which when artistically manipulated can help us achieve that.</br>
-We are going to create one illustrated below:</br>
+We are going to create one illustrated below:</br></br>
 ![Illustration](/engineering-education/animation-counter-javascript/illustration.gif)
 
 #### The JavaScript code</br>
@@ -97,7 +97,7 @@ The it takes four parameters:</br>
 - **A DOM object**(```obj```)
 - **Initial value** which the counter will start with(```initVal```)
 - **Last value** which the counter will end with(```lastVal```)
-- The **duration** which the animation will last(```duration```)
+- The **duration** in milliseconds which the animation will last(```duration```)
 
 It has a variable ```startTime``` initialised to ``null`` which stores the timestamp when the counter starts and ```currentTime``` variable which stores the latest timestamp as the counter executes.</br>
 We then have the ```step()``` function which is used to compute the number to be displayed, where it is displayed and control the animation.</br>
