@@ -1,3 +1,4 @@
+### Introduction
 Releasing your first application to Google Play Store can seem like a nebulous undertaking. Worry no more as you'll be learning how to release your apps to Google Play store in this article. Through this article, the aim is to:
 1. Understand how to make your application store-ready
 2. Learn about the Google Play Console
@@ -94,4 +95,3 @@ The [feature graphic generator](https://www.norio.be/graphic-generator/) will he
 
 ### Conclusion
 You can now comfortably check the boxes on [Google Play Console](https://play.google.com/apps/publish) and publish your application to production.
-
