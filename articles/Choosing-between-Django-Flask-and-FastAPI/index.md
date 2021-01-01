@@ -75,6 +75,7 @@ Fast API is a modern open-source fast and highly performant Python web framework
 #### FastAPI Use cases
 Fast API, which is relatively new amongst the three, works perfectly if your concern is speed. Netflix uses it for its internal crisis management. It also scales perfectly in deploying production-ready machine learning models because ML models work best in production when they are wrapped around a REST API and deployed in a microservice.
 
+### Comparison 
 Now we're going to compare Django, Flask, and FastAPI based on their *packages*, *community*, *performance*, *flexibility*, *job opening*, and *education*.
 
 **Packages**
