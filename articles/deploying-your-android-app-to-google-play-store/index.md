@@ -93,5 +93,5 @@ For high-resolution icons, please go over Google Play’s guidelines: [Icon desi
 The [feature graphic generator](https://www.norio.be/graphic-generator/) will help you make a graphic banner as per Google Play’s specific dimensions.
 
 ### Conclusion
-You can now comfortably check the boxes on Google Play Console and publish your application to production.
+You can now comfortably check the boxes on [Google Play Console](https://play.google.com/apps/publish) and publish your application to production.
 
