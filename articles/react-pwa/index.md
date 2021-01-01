@@ -116,50 +116,16 @@ You can install the `uuid` package from the `npm` registry using this command in
 ```bash
 npm install uuid
 ```
-_________________________________________________________________________________________________________
-_________________________________________________________________________________________________________
 
 
-### Creating the TodoList and Todo Components
-You need to create a new file named `TodosList.js` inside the components folder.
+### Creating the TodoList Component
 This is the component that acts as a container to the list of the todo items.
-The state is in the App component and passed to the TodoList as props.
-Before creating the TodoList component, the App component has its state, so below is the entire code for the `App.js` file:
-A Todo component will represent a single todo item for each row alongside the buttons to mark it as completed or delete. Since our Todo component is a child of the TodoList component, we will first need to create the TodoList.
+You need to create a new file named `TodosList.js` inside the components folder. Since our Todo component is a child of the TodoList component, we will first need to create the TodoList.
 
-The TodoList component is recieving todos state from the App component. We need to [lift its state up](https://reactjs.org/docs/lifting-state-up.html) in the App component so that our `TodoList` and access it the via props.
-Before creating the TodoList component, this is the `App.js` alongside the state and props it passes down to its components:
+The TodoList component is recieving todos state from the App component, which we will create later. We have [lifted its state up](https://reactjs.org/docs/lifting-state-up.html) in the App component so that our `TodoList` can access it via props.
 
-```javascript
-import React,{useState} from 'react';
-
-import Form from './components/Form';
-import TodoList from './components/TodoList';
-
-const App=()=>{
-
-  const [todos,setTodos]=useState([]);
-
-  const addTodo= todo=>{
-          const newTodos=[todo,...todos];
-           setTodos(newTodos);
-       }
-  
-  return (
-    <div>
-      <h1>TODO PWA</h1>
-      <Form addTodo={addTodo}/>
-      <TodoList todos={todos} setTodos={setTodos}/>
-    </div>
-  );
-}
-
-export default App;
-```
-
-### The TodoList Component
-Go into your components folder and create a new file named `TodoList.js`.
-This is the `TodoList` component:
+To create this component, go into your components folder and create a new file named `TodoList.js`.
+This component code is like:
 ```javascript
 import React from "react";
 import Todo from "./Todo";
@@ -194,9 +160,10 @@ const TodoList = ({ todos, setTodos }) => {
 
 export default TodoList;
 ```
-The `TodoList` is receiving `todos` as an array of objects which are accessed from the destructuring the props.
-In the return, we are mapping through the todos and returning a new Todo component as the todo item.
-The `removeTodo` passes an `id` that uniquely identifies the `todo` in our list. Whatever todo that does not match the provided `id` is filtered and stored in the state using `setTodos`.
+In this component:
+- The `TodoList` is receiving `todos` as an array of objects which are accessed by destructuring its props.
+- In the return of our function, we map through the `todos` and return a JSX syntax with a new Todo component as the todo item.
+- The `removeTodo` passes an `id` that uniquely identifies the `todo` in our list. Whatever todo that does not match the provided `id` is filtered and stored in the state using `setTodos`.
 We will use the `completeTodo` method to toggle between marked and completed state to determine the class to style it. 
 Let us now create the `Todo` component.
 
@@ -233,6 +200,45 @@ const Todo=({todo,completeTodo,removeTodo})=>{
 
 export default Todo;
 ```
+
+### The App component 
+Finally, we need to include the App component. The app component was the main parent component of the `TodoList` and the `Form` components. I have included a CSS file for our styling named *App.css* which is in the same `src` root folder as our *App.js* file.
+
+```javascript
+import React,{useState} from 'react';
+
+// components
+import Form from './components/Form';
+import TodoList from './components/TodoList';
+
+// CSS files
+import './App.css'
+
+const App=()=>{
+
+  const [todos,setTodos]=useState([]);
+
+  const addTodo= todo=>{
+          const newTodos=[todo,...todos];
+           setTodos(newTodos);
+       }
+  
+  return (
+    <div>
+      <h1>TODO PWA</h1>
+      <Form addTodo={addTodo}/>
+      <TodoList todos={todos} setTodos={setTodos}/>
+    </div>
+  );
+}
+
+export default App;
+```
+The App component walkthrough:
+- We import the `TodoList` and `Form` component and the CSS file just below the `React` import.
+- Inside the function, the `useState` hook will create our state for todos. 
+- The `addTodo` is a function that is used to add a new todo calling `setTodos` method to update the state.
+- We use JSX to return a div containing `<h1>` tag as the header. The `Form` and `TodoList` components are mounted passing along the appropriate props.
 
 ### Application Styling
 This tutorial assumes you know basics of CSS styling, so I have a basic CSS file: 
@@ -298,7 +304,7 @@ In this part, we will now make our application to implement the Progressive Web 
 2. Must be discoverable and installable
 3. A Progressive web App must be able to work offline
 4. Should look and feel like native apps i.e run on a fullscreen mode etc.
-5. 
+  
 Our application will add functionalities such as running the application offline, caching assets by registering
 service workers, and also installing it on the end user's device home screen.
 
