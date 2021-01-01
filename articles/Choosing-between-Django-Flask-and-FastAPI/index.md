@@ -95,7 +95,7 @@ No doubt there are more job openings in the python web ecosystem with Django req
 **Education**
 Django is more strenuous to learn but has many online materials and resources. Flask is easy and straightforward and has many online materials and resources, while Fast API is the easiest if you're starting with web development but has few online resources.
 
-#### Conclusion
+### Conclusion
 After looking at them, you might be able to choose which one works better for you. In summary, Django is perfect if you want to build robust full-stack websites because it has several functionalities and works very well in production. Flask is ideal for Machine learning Engineers or developers who want to quickly prototype a web application and build APIs easily and quickly. At the same time, FastAPI is perfect if you're looking for speed or scalability. Please choose based on what you want to use it for, but generally, they are all good and have a good market demand.
 
 ---
