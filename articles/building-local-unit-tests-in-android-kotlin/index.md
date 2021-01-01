@@ -136,7 +136,46 @@ fun `signUp function returns false when password is less than two characters`(){
     assertThat(AuthUtil.signUp(userName, password,repeatPassword)).isFalse()
 }
 ```
-That's all the tests we need. To run all the tests at once, right-click on the test class name and select `Run`. All the tests should fail.
+That's all the tests we need. This is how the full test class should look.
+
+```Kotlin
+class AuthUtilTest{
+
+    @Test
+    fun `signUp function returns false when username or password is empty`(){
+        val userName = ""
+        val password = ""
+        val repeatPassword = ""
+        assertThat(AuthUtil.signUp(userName, password,repeatPassword)).isFalse()
+    }
+
+    @Test
+    fun `signUp function returns false when username is taken`(){
+        val userName = "Peter"
+        val password = "12345"
+        val repeatPassword = "12345"
+        assertThat(AuthUtil.signUp(userName, password,repeatPassword)).isFalse()
+    }
+
+    @Test
+    fun `signUp function returns false when password and repeat password don't match`(){
+        val userName = "James"
+        val password = "12345"
+        val repeatPassword = "67890"
+        assertThat(AuthUtil.signUp(userName, password,repeatPassword)).isFalse()
+    }
+
+    @Test
+    fun `signUp function returns false when password is less than two characters`(){
+        val userName = "Brian"
+        val password = "1"
+        val repeatPassword = "1"
+        assertThat(AuthUtil.signUp(userName, password,repeatPassword)).isFalse()
+    }
+}
+```
+
+ To run all the tests at once, right-click on the test class name and select `Run`. All the tests should fail.
 
 ### Step 4 — Writing the funtion implementation
 Now that our tests are all set let's go ahead and write the actual function implementation. The function should fulfill all the test cases. Add the following code inside the `signUp` method.
@@ -150,6 +189,29 @@ return when {
     else -> true
 }
 ```
+
+As a result, the `AuthUtil` object should look as shown.
+
+```Kotlin
+object AuthUtil {
+    private val users = listOf("Peter", "John", "Smith")
+
+    fun signUp(
+        userName: String,
+        password: String,
+        repeatPassword: String
+    ): Boolean{
+        return when {
+            userName.isEmpty() || password.isEmpty() -> false
+            users.contains(userName) -> false
+            password != repeatPassword -> false
+            password.length < 2 -> false
+            else -> true
+        }
+    }
+}
+```
+
 We use the when statement to validate the values. All four statements create the behavior required for the function. When none of them are successful, we return true. This means that the input has passed all the tests. Navigate to the `AuthUtiTest` class and run the tests. The tests should pass.
 
 This is the expected output from the `run` window.
