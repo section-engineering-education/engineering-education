@@ -83,9 +83,12 @@ Here is a quick checklist of all the details you need for Play Store.
 
 ### Useful resources for the application details
 The resources below helped me through some of the Play Store requirements that I was not prepared for as I started. Hopefully, they will be of help to you as they are for me.
+
 Here is a useful tool, [App Store Screenshot Generator](https://www.appstorescreenshot.com/),  to help you present your app screenshots on a mobile frame. You will need a minimum of 2 screenshots and a maximum of 8.
+
 [App Privacy Policy Generator](https://app-privacy-policy-generator.firebaseapp.com/) has made it easy for developers to generate privacy policies that follow the requirements of Google Play, Apple Store, Google Adsense and many 
 more.
+
 For high-resolution icons, please go over Google Play’s guidelines: [Icon design specifications](https://developer.android.com/google-play/resources/icon-design-specifications).
 The [feature graphic generator](https://www.norio.be/graphic-generator/) will help you make a graphic banner as per Google Play’s specific dimensions.
 
