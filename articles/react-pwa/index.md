@@ -115,7 +115,9 @@ The Form component walkthrough:
 
 - The code above implements function components alongside React hooks. Hooks are functions that let you have state and other lifecycle patterns from function components.
 
-- We are using the `useState` hook that returns two values in an array. The first value is the state, and the second is a function to update the state. When the state of the form changes, the method `inputTextHandler` bound on the input tag is invoked to update the state to the current input value by calling the `setInputText` method.
+- We are using the `useState` hook that returns two values in an array. The first value is the state, and the second is a function to update the state. 
+
+- When the state of the form changes, the method `inputTextHandler` bound on the input tag is invoked to update the state to the current input value by calling the `setInputText` method.
 
 - The form is a controlled component that will track the `inputText`. 
 
