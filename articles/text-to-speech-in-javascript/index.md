@@ -62,7 +62,7 @@ There are 6 properties on the `SpeechSynthesisUtterance` instance that we can tw
 
 **Language**:
 
-The language property gets and sets the language of the utterance. If unset, the `<html lang="en">` lang value will be used, or the user-agent default if the `<html lang="en">` lang is unset. 
+The `language` property gets and sets the language of the utterance. If unset, the `<html lang="en">` lang value will be used, or the user-agent default if the `<html lang="en">` lang is unset. 
 
 It accepts a DOMString representing a BCP 47 language tag.
 
@@ -72,7 +72,7 @@ speech.lang = "en";
 
 **Pitch**:
 
-The pitch property gets and sets the pitch of the utterance. It is a float representing the pitch value which can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
+The `pitch` property gets and sets the pitch of the utterance. It is a float representing the pitch value which can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
 
 ```JavaScript
 speech.pitch = 1;
@@ -80,7 +80,7 @@ speech.pitch = 1;
 
 **Rate**:
 
-The rate property gets and sets the rate of the utterance. It is a float representing the rate value which can range between 0.1 (lowest) and 10 (highest). The default value is 1 if this property is unset.
+The `rate` property gets and sets the rate of the utterance. It is a float representing the rate value which can range between 0.1 (lowest) and 10 (highest). The default value is 1 if this property is unset.
 
 ```JavaScript
 speech.rate = 2;
@@ -88,7 +88,7 @@ speech.rate = 2;
 
 **Volume**:
 
-The volume property gets and sets the volume of the utterance. It is a float that represents the volume value, between 0 (lowest) and 1 (highest). The default value is 1 if this property is unset.
+The `volume` property gets and sets the volume of the utterance. It is a float that represents the volume value, between 0 (lowest) and 1 (highest). The default value is 1 if this property is unset.
 
 ```JavaScript
 speech.volume = 0.5;
@@ -96,7 +96,7 @@ speech.volume = 0.5;
 
 **Text**:
 
-The text property gets and sets the text that will be synthesised when the utterance is spoken. The text can be provided as plain text.
+The `text` property gets and sets the text that will be synthesized when the utterance is spoken. The text can be provided as plain text.
 
 ```JavaScript
 speech.text = 'This line will be spoken by the Speech Synthesis Utterance instance';
@@ -104,9 +104,9 @@ speech.text = 'This line will be spoken by the Speech Synthesis Utterance instan
 
 **Voice**:
 
-The voice property gets and sets the voice that will be used to speak the utterance. This should be set to one of the `SpeechSynthesisVoice` object. If it is not set, the most suitable default voice available for the utterance's language setting will be used.
+The `voice` property gets and sets the voice that will be used to speak the utterance. This should be set to one of the `SpeechSynthesisVoice` objects. If it is not set, the most suitable default voice available for the utterance's language setting will be used.
 
-To set the voice of the utterance, we need to get the list of available voices in the `window` object. When the window object loads, the available voices will not be available immedieately. Its an async operation. An event will be triggered when the voices are loaded. We can set a function that should be executed when the voices are loaded.
+To set the voice of the utterance, we need to get the list of available voices in the `window` object. When the window object loads, the available voices will not be available immediately. It's an async operation. An event will be triggered when the voices are loaded. We can set a function that should be executed when the voices are loaded.
 
 ```JavaScript
 window.speechSynthesis.onvoiceschanged = () => {
@@ -114,7 +114,7 @@ window.speechSynthesis.onvoiceschanged = () => {
 };
 ```
 
-We can get the list of voices using `window.speechSynthesis.getVoices()`. It'll return an array of `SpeechSynthesisVoice` objects that are available. Let's store the list in a global array and update the select menu in the web page with the list of available voices.
+We can get the list of voices using `window.speechSynthesis.getVoices()`. It'll return an array of `SpeechSynthesisVoice` objects that are available. Let's store the list in a global array and update the select menu on the web page with the list of available voices.
 
 
 ```JavaScript
@@ -124,7 +124,7 @@ window.speechSynthesis.onvoiceschanged = () => {
   // Get List of Voices
   voices = window.speechSynthesis.getVoices();
 
-  // Initially, set the First Voice in the Array.
+  // Initially set the First Voice in the Array.
   speech.voice = voices[0];
 
   // Set the Voice Select List. (Set the Index as the value, which we'll use later when the user updates the Voice using the Select Menu.)
@@ -147,7 +147,7 @@ Let's add controls to the SpeechSynthesis instance.
 
 **Start**:
 
-Let's select the start button and add an `click` event listener to it. 
+Let's select the start button and add a `click` event listener to it. 
 
 On click, We should set the `SpeechSynthesisUtterance` instance's text property with the value of the text area. Then, we should pass that instance to the `window.speechSynthesis.speak()` method. This will start converting the text to speech.
 
@@ -162,7 +162,7 @@ document.querySelector("#talk").addEventListener("click", () => {
 
 **Pause**:
 
-We can pause the `SpeechSynthesisUtterance` instance that's running at the moment using `window.speechSynthesis.pause()`. Let's select the pause button and add an `click` event listener to it and pause the `SpeechSynthesisUtterance` instance when the button is clicked.
+We can pause the `SpeechSynthesisUtterance` instance that's running at the moment using `window.speechSynthesis.pause()`. Let's select the pause button and add a `click` event listener to it and pause the `SpeechSynthesisUtterance` instance when the button is clicked.
 
 ```JavaScript
 document.querySelector("#pause").addEventListener("click", () => {
@@ -170,9 +170,9 @@ document.querySelector("#pause").addEventListener("click", () => {
 });
 ```
 
-**Reume**:
+**Resume**:
 
-We can resume the `SpeechSynthesisUtterance` instance that's paused at the moment using `window.speechSynthesis.resume()`. Let's select the resume button and add an `click` event listener to it and resume the `SpeechSynthesisUtterance` instance when the button is clicked.
+We can resume the `SpeechSynthesisUtterance` instance that's paused at the moment using `window.speechSynthesis.resume()`. Let's select the resume button and add a `click` event listener to it and resume the `SpeechSynthesisUtterance` instance when the button is clicked.
 
 ```JavaScript
 document.querySelector("#resume").addEventListener("click", () => {
@@ -182,7 +182,7 @@ document.querySelector("#resume").addEventListener("click", () => {
 
 **Cancel**:
 
-We can canel the `SpeechSynthesisUtterance` instance that's running at the moment using `window.speechSynthesis.cancel()`. Let's select the cancel button and add an `click` event listener to it and cancel the `SpeechSynthesisUtterance` instance when the button is clicked.
+We can cancel the `SpeechSynthesisUtterance` instance that's running at the moment using `window.speechSynthesis.cancel()`. Let's select the cancel button and add a `click` event listener to it and cancel the `SpeechSynthesisUtterance` instance when the button is clicked.
 
 ```JavaScript
 document.querySelector("#resume").addEventListener("click", () => {
@@ -194,19 +194,19 @@ document.querySelector("#resume").addEventListener("click", () => {
 
 You can take a look at the project that's been deployed using GitHub pages [here](https://zolomohan.github.io/text-to-speech/).
 
-You can checkout the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech).
+You can check out the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech).
 
 ### Let's Recap
 
-- We created a HTML page with a select menu for the voices, a text area and control buttons.
+- We created an HTML page with a select menu for the voices, a text area, and control buttons.
 
 - We created a new JavaScript file and linked it to the HTML file.
 
 - We created a new `SpeechSynthesisUtterance` object.
 
-- We tweaked the 6 properties of the `SpeechSynthesisUtterance` instance. They are: Pitch, Volume, Text, Voice, Rate and Language.
+- We tweaked the 6 properties of the `SpeechSynthesisUtterance` instance. They are Pitch, Volume, Text, Voice, Rate, and Language.
 
-- We added listeners on the control button to control the `SpeechSynthesisUtterance` instance when they are clicked. They are: Start, Pause, Resume and Cancel.
+- We added listeners on the control button to control the `SpeechSynthesisUtterance` instance when they are clicked. They are Start, Pause, Resume, and Cancel.
 
 Congratulations, :partying_face: You did it.
 
