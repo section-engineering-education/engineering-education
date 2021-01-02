@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/text-to-speech-using-web-speech-api-in-javascript/
+title: Text to Speech using Web Speech API in JavaScript
+description: This tutorial will give readers a detailed guide on how they can implement text to speech using Web speech API in JavaScript.
+author: mohan-raj
+date: 2020-12-02T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/text-to-speech-using-web-speech-api-in-javascript/hero.jpg
+    alt: Text to Speech using Web Speech API in JavaScript Hero Image
+---
 The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement text to speech.
+<!--more-->
 
 You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility.).
 
