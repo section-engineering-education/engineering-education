@@ -12,9 +12,17 @@ To follow along with this tutorial, you should have:
 
 - A browser to view the webpage, preferably [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/).
 
-### The HTML Page
+### Project Directory
 
-Create a new directory for the project and create a new file in the directory called `index.html`.
+Create a new directory for the project and create 2 new files called `index.html` and `textToSpeech.js`.
+
+```bash
+project-directory/
+|-index.html
+|-textToSpeech.js
+```
+
+### The HTML Page
 
 In this HTML file, Let's set up:
 
@@ -64,29 +72,21 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
       <button id="cancel" class="btn btn-danger mt-5 me-3">Cancel</button>
     </div>
   </body>
-  <!-- script tag goes here -->
+  <script src="./textToSpeech.js"></script>
 </html>
 ```
 
-![Starter Code Screen](start_screen.png)
+![HTML Web Page](start_screen.png)
 
 ### The JavaScript file
 
-Create a new JavaScript file and name it `textToSpeech.js`. Now, add the file to the HTML file using the `script` tag after the `body` tag.
-
-> Adding the `script` tag after the `body` tag will make sure that the script file is loaded after all the elements have been loaded to the DOM.
-
-```HTML
-<script src="./textToSpeech.js"></script>
-```
-
-Let's create a `SpeechSynthesisUtterance` object in the javascript file. We'll configure this instance with various properties.
+Let's create an instance of the `SpeechSynthesisUtterance` class. We'll configure this instance with various properties.
 
 ```JavaScript
 let speech = new SpeechSynthesisUtterance();
 ```
 
-### Properties
+#### Properties
 
 Now, let's configure some properties on this `SpeechSynthesisUtterance` instance.
 
@@ -114,7 +114,7 @@ speech.lang = "en";
 
 The `volume` property gets and sets the volume of the utterance. It is a float that represents the volume value, between 0 (lowest) and 1 (highest). The default value is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `volume` range slider and adjust the `volume` property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag. 
+Let's add a `onInput` listener to the `volume` range slider and adjust the `volume` property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag.
 
 Let us also set the `<span>` that displays the value of the `volume` in the webpage next to the range slider.
 
@@ -130,7 +130,7 @@ document.querySelector("#volume").addEventListener("input", () => {
 
 The `rate` property gets and sets the rate of the utterance. It is a float representing the rate value which can range between 0.1 (lowest) and 10 (highest). The default value is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `rate` range slider and adjust the `rate` property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag. 
+Let's add a `onInput` listener to the `rate` range slider and adjust the `rate` property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag.
 
 Let us also set the `<span>` that displays the value of the `rate` in the webpage next to the range slider.
 
@@ -146,7 +146,7 @@ document.querySelector("#rate").addEventListener("input", () => {
 
 The `pitch` property gets and sets the pitch of the utterance. It is a float representing the pitch value which can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag. 
+Let's add a `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag.
 
 Let us also set the `<span>` that displays the value of the `pitch` in the webpage next to the range slider.
 
@@ -196,7 +196,7 @@ document.querySelector("#voices").addEventListener("change", () => {
 });
 ```
 
-### Controls
+#### Controls
 
 Let's add controls to the SpeechSynthesis instance.
 
