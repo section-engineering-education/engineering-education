@@ -1,6 +1,6 @@
 [5G](https://en.wikipedia.org/wiki/5G) adoption continues to progress at a high rate in subscribers and deployment. The 5th generation mobile network enables applications and services requiring better reliability, improved energy efficiency, massive connection density, and lower latency, making industries faster and efficient and our connected lives better.
 
-5G URLLC service makes it possible to support use cases that require very high reliability and extremely low latency. Examples of these use cases include industrial automation, intelligent transportation, smart electricity grid, entertainment support, and remote diagnosis and surgery.
+5G Ultra-Reliable Low-Latency Communication (URLLC) service makes it possible to support use cases that require very high reliability and extremely low latency. Examples of these use cases include industrial automation, intelligent transportation, smart electricity grid, entertainment support, and remote diagnosis and surgery.
 
 This article explains 5G URLLC and its real-life applications in detail.
 
@@ -61,6 +61,14 @@ Smart grids improve electricity distribution worldwide by using communication ca
 The Wireless for Verticals ([WIVE](https://wive.turkuamk.fi/)) research project presented one of the real-life use cases of 5G, relating to the electricity grid and harbor automation. Low latency and high reliability are significant in this project to ensure the protection of electricity grid infrastructure and harbor automation.
 
 Protection applications, including those in medium-voltage (MV) distribution networks, use the URLLC technology to release reliable, low-latency safety-related messages. This is ensuring immediate clearance of severe faults to keep the electricity distribution network running. In the long run, users benefit from increased safety of personnel and reduced damage to equipment.
+
+### Challenges in implementing 5G URLLC use cases
+
+Enabling ultra-reliability and ultra-low latency required by such use cases as the smart electricity grid, industrial automation, intelligent transportation, entertainment support, and remote diagnosis and surgery presents significant challenges.
+
+The areas where these use cases are applied must increase their capacity to cope with increased latency and bandwidth requirements. Besides, the data processing required and the big data generated from more connected equipment and devices is a big challenge.
+
+Deploying 5G URLLC comes with technical requirements, standards, and security demands that industries may find challenging.
 
 ### Conclusion
 
