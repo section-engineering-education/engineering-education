@@ -76,7 +76,7 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
 ![HTML Web Page](start_screen.png)
 
 ### The JavaScript file
-Let's create an instance of the `SpeechSynthesisUtterance` class. We'll configure this instance with various properties.
+Let's create an instance of the [`SpeechSynthesisUtterance`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance) class. We'll configure this instance with various properties.
 
 ```JavaScript
 let speech = new SpeechSynthesisUtterance();
@@ -87,22 +87,28 @@ Now, let's configure some properties on this `SpeechSynthesisUtterance` instance
 
 There are 6 properties on the `SpeechSynthesisUtterance` instance that we can tweak. They are:
 
-**Text**:
-
-The `text` property gets and sets the text that will be synthesized when the utterance is spoken. The text can be provided as plain text.
-
-```JavaScript
-speech.text = 'This line will be spoken by the Speech Synthesis Utterance instance';
-```
-
 **Language**:
 
 The `language` property gets and sets the language of the utterance. If unset, the `<html lang="en">` lang value will be used, or the user-agent default if the `<html lang="en">` lang is unset.
 
-It accepts a DOMString representing a BCP 47 language tag.
+It accepts a DOMString representing a [BCP 47 language tag](https://en.wikipedia.org/wiki/IETF_language_tag).
 
 ```JavaScript
 speech.lang = "en";
+```
+
+**Text**:
+
+The `text` property gets and sets the text that will be synthesized when the utterance is spoken. The text can be provided as plain text. In our case, the text property must be set when the start button is clicked.
+
+Let's add a click listener to the button. When the button is clicked, we should get the text value from the `textarea` and set it to this property.
+
+You can learn more about event listeners [here](https://www.w3schools.com/js/js_htmldom_eventlistener.asp).
+
+```JavaScript
+document.querySelector("#talk").addEventListener("click", () => {
+  speech.text = document.querySelector("textarea").value;
+});
 ```
 
 **Volume**:
@@ -155,7 +161,7 @@ document.querySelector("#pitch").addEventListener("input", () => {
 
 **Voice**:
 
-The `voice` property gets and sets the voice that will be used to speak the utterance. This should be set to one of the `SpeechSynthesisVoice` objects. If it is not set, the most suitable default voice available for the utterance's language setting will be used.
+The `voice` property gets and sets the voice that will be used to speak the utterance. This should be set to one of the [`SpeechSynthesisVoice`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice) objects. If it is not set, the most suitable default voice available for the utterance's language setting will be used.
 
 To set the voice of the utterance, we need to get the list of available voices in the `window` object. When the window object loads, the available voices will not be available immediately. It's an async operation. An event will be triggered when the voices are loaded. We can set a function that should be executed when the voices are loaded.
 
@@ -196,11 +202,9 @@ Let's add controls to the SpeechSynthesis instance.
 
 **Start**:
 
-Let's select the start button and add a `click` event listener to it.
+We should pass the `SpeechSynthesisUtterance` instance to the `window.speechSynthesis.speak()` method when the start button is clicked. This will start converting the text to speech. The text property must be set before calling this method.
 
-On click, We should set the `SpeechSynthesisUtterance` instance's text property with the value of the text area. Then, we should pass that instance to the `window.speechSynthesis.speak()` method. This will start converting the text to speech.
-
-> NOTE: If you start another Text to Speech while an instance is already running, it'll get queued behind the one that is currently running.
+> NOTE: If you start another text to speech while an instance is already running, it'll get queued behind the one that is currently running.
 
 ```JavaScript
 document.querySelector("#talk").addEventListener("click", () => {
