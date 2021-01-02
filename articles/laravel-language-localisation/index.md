@@ -1,4 +1,4 @@
-# Laravel Language Localisation
+# Laravel Language Localization
 
 ## Objectives
 
