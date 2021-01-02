@@ -92,7 +92,7 @@ getTotal []
 => 0 
 ```
 
-Being familiar with recursion is essential for functional programming. Recursion is the **only** way to repeatedly perform a task in Haskell. Consequently, programmers should not forget the base case when they solve problems recursively. Avoiding infinite recursion ensures that our task repetition will end at some point.
+Being familiar with recursion is essential for functional programming. Recursion is the primary way to repeatedly perform a task in Haskell. Consequently, programmers should not forget the base case when they solve problems recursively. Avoiding infinite recursion ensures that our task repetition will end at some point.
 
 ### Putting Haskell to Use
 Generally, Haskell is present in academia. However, the use of Haskell is increasing in the industry. For instance, the finance industry uses functional languages. According to [HaskellWiki](https://wiki.haskell.org/Haskell_in_industry), the Deutsche Bank utilizes Haskell for their software infrastructure. Unfortunately, Haskell has 
