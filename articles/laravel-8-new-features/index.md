@@ -191,7 +191,7 @@ Don't worry if you don't understand,things are all done under the hood,and you o
         Always remember that new auth scaffolding are configured to use the App/Models/User.php model by default.  
         In this new version, another functionality has been added by defaulf when you install Jestream.  
         ```Laravel\Jetstream\HasProfilePhoto```  
-        This new trait comes hand in hand with its own predefined methods,
+        This new trait comes hand in hand with its own predefined methods,  
         * ```updateProfilePhoto,``` 
         * ```getProfilePhotoUrlAttribute,```
         * ```defaultProfilePhotoUrl, and```
