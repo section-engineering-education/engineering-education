@@ -3,7 +3,6 @@ The Web Speech API is used to incorporate voice data into web apps. In this tuto
 You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility.).
 
 ### Prerequisites
-
 To follow along with this tutorial, you should have:
 
 - A basic understanding of HTML and JavaScript.
@@ -13,7 +12,6 @@ To follow along with this tutorial, you should have:
 - A browser to view the webpage, preferably [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/).
 
 ### Project Directory
-
 Create a new directory for the project and create 2 new files called `index.html` and `textToSpeech.js`.
 
 ```bash
@@ -23,10 +21,9 @@ project-directory/
 ```
 
 ### The HTML Page
-
 In this HTML file, Let's set up:
 
-- An empty select menu. We will fill the empty select menu with the list of voices available using javascript later.
+- An empty select menu. We will fill the empty select menu with the list of voices available using JavaScript.
 
 - Range sliders for volume, pitch, and rate.
 
@@ -79,7 +76,6 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
 ![HTML Web Page](start_screen.png)
 
 ### The JavaScript file
-
 Let's create an instance of the `SpeechSynthesisUtterance` class. We'll configure this instance with various properties.
 
 ```JavaScript
@@ -87,7 +83,6 @@ let speech = new SpeechSynthesisUtterance();
 ```
 
 #### Properties
-
 Now, let's configure some properties on this `SpeechSynthesisUtterance` instance.
 
 There are 6 properties on the `SpeechSynthesisUtterance` instance that we can tweak. They are:
@@ -197,7 +192,6 @@ document.querySelector("#voices").addEventListener("change", () => {
 ```
 
 #### Controls
-
 Let's add controls to the SpeechSynthesis instance.
 
 **Start**:
@@ -301,13 +295,11 @@ document.querySelector("#cancel").addEventListener("click", () => {
 ```
 
 ### Result
-
 You can take a look at the project that's been deployed using GitHub pages [here](https://zolomohan.github.io/text-to-speech/).
 
 You can check out the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech).
 
 ### Let's Recap
-
 - We created an HTML page with a select menu for the voices, a text area, and control buttons.
 
 - We created a new JavaScript file and linked it to the HTML file.
