@@ -194,4 +194,20 @@ document.querySelector("#resume").addEventListener("click", () => {
 
 You can take a look at the project that's been deployed using GitHub pages [here](https://zolomohan.github.io/text-to-speech/).
 
-You can checkout the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech). 
+You can checkout the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech).
+
+### Let's Recap
+
+- We created a HTML page with a select menu for the voices, a text area and control buttons.
+
+- We created a new JavaScript file and linked it to the HTML file.
+
+- We created a new `SpeechSynthesisUtterance` object.
+
+- We tweaked the 6 properties of the `SpeechSynthesisUtterance` instance. They are: Pitch, Volume, Text, Voice, Rate and Language.
+
+- We added listeners on the control button to control the `SpeechSynthesisUtterance` instance when they are clicked. They are: Start, Pause, Resume and Cancel.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for reading!
