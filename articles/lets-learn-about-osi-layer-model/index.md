@@ -69,11 +69,11 @@ This layer is responsible for the reliable transfer of data frames from one node
 
 ##### Functions of the Data-link layer
 
-- Framing: The data link layer translates the physical's raw bitstream into packets known as Frames. The Data link layer adds the header and trailer to the frame. The header which is added to the frame contains the hardware destination and source address.
-- Physical Addressing: The Data link layer adds a header to the frame that contains a destination address. The frame is transmitted to the destination address mentioned in the header.
-- Flow Control: Flow control is the main functionality of the - Data-link layer. It is the technique through which the constant data rate is maintained on both sides so that no data get corrupted. It ensures that the transmitting station, such as a server with a higher processing speed, does not exceed the receiving station with a lower processing speed.
-- Error Control: Error control is achieved by adding a calculated value CRC (Cyclic Redundancy Check) placed to the Data link layer's trailer, which is added to the message frame before it is sent to the physical layer. If any error seems to occur, then the receiver sends the acknowledgment for the corrupted frames' retransmission.
-- Access Control: When two or more devices are connected to the same communication channel, then the data link layer protocols are used to determine which device has control over the link at a given time.
+- <em>Framing</em>: The data link layer translates the physical's raw bitstream into packets known as Frames. The Data link layer adds the header and trailer to the frame. The header which is added to the frame contains the hardware destination and source address.
+- <em>Physical Addressing</em>: The Data link layer adds a header to the frame that contains a destination address. The frame is transmitted to the destination address mentioned in the header.
+- <em>Flow Control</em>: Flow control is the main functionality of the - Data-link layer. It is the technique through which the constant data rate is maintained on both sides so that no data get corrupted. It ensures that the transmitting station, such as a server with a higher processing speed, does not exceed the receiving station with a lower processing speed.
+- <em>Error Control</em>: Error control is achieved by adding a calculated value CRC (Cyclic Redundancy Check) placed to the Data link layer's trailer, which is added to the message frame before it is sent to the physical layer. If any error seems to occur, then the receiver sends the acknowledgment for the corrupted frames' retransmission.
+- <em>Access Control</em>: When two or more devices are connected to the same communication channel, then the data link layer protocols are used to determine which device has control over the link at a given time.
 
 #### Network Layer
 - It is a third layer that manages device addressing, tracks the location of devices on the network.
@@ -107,8 +107,8 @@ The Presentation Layer represents the area that is independent of data represent
 
 ##### The function of Presentation Layers:
 - Character code translation from ASCII to EBCDIC.
-- Data compression: This reduces the number of bits that need to be transmitted on the network.
-- Data encryption: Helps you to encrypt data for security purposes — for example, password encryption.
+- <em>Data compression</em>: This reduces the number of bits that need to be transmitted on the network.
+- <em>Data encryption</em>: Helps you to encrypt data for security purposes — for example, password encryption.
 - It provides a user interface and support for services like email and file transfer.
 
 
@@ -127,5 +127,4 @@ Quick Way to memorize the OSI Model Layer concept - <em>A Penguin Said That Nobo
 
 ### Conclusion
 
-<<<<<<< HEAD
 You get to know about its benefits and importance. The core thing from the OSI model is that the bottom four layers (physical to transport) are used for data transmission between the networks and the top three layers (session, presentation & application) are for data transmission between hosts. One thing you have to remember that the OSI model acts as a reference model and its theoretical concept which is not implemented on the Internet yet. TCP/IP model is being used in the current Internet.
