@@ -6,11 +6,11 @@ url: /engineering-education/deploying-machine-learing-models-using-flask/
 title: Deploying Machine Learing models using Flask
 description: This tutorial will serve as an introduction on deploying Machine Learning models using Flask. We will go through various steps for building an end-to-end web application with inbuilt Machine Learning model using Flask.
 author: srishilesh-p-s
-date: 2020-12-00T00:00:00-00:00
+date: 2021-01-00T00:00:00-00:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/deploying-machine-learing-models-using-flask/hero.jpg
+  - url: /engineering-education/deploying-machine-learning-models-using-flask/hero.jpg
     alt: Deploying Machine Learing models using Flask
 ---
 In this article, we will learn about deploying Machine Learning models using Flask. By the end of the article, you will have an overview of how Machine Learning models are built, how Flask servers interact with our Machine Learning model, and how to connect the model with a web application. You will also learn a step-by-step procedure for deploying the model locally.
@@ -18,7 +18,6 @@ In this article, we will learn about deploying Machine Learning models using Fla
 I highly recommend going over [this](/engineering-education/complete-guide-on-installing-flask-for-beginners/) article to better grasp those concepts regarding Flask. As a prerequisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help to follow this article along.
 
 ### Table of contents
-
 - [Objective](#objective)
 - [Machine Learning model](#machine-learning-model)
 - [HTML webpage](#html-webpage)
@@ -57,11 +56,11 @@ from sklearn.linear_model import LogisticRegression # Classification model
 
 After importing the libraries, we import the dataset using `pd.read_csv` command. This command reads the CSV file and transforms it into a data frame called `data`. Generally, working with data frames is much easier when compared to that of arrays.
 
-The CSV file of the dataset can be downloaded [here](https://gist.github.com/netj/8836201).
+The CSV file of the dataset can be downloaded [here](https://gist.github.com/netj/8836201) and saved in the same working directory of `model.py`.
 
 ```python
 # Importing the dataset
-data = pd.read_csv('[YOUR-ABSOLUTE-PATH]/iris.csv')
+data = pd.read_csv('./iris.csv')
 ```
 
 ![Iris dataset](/engineering-education/deploying-machine-learing-models-using-flask/Dataset.PNG)
@@ -297,3 +296,6 @@ To summarize:
 - [Another similar implementation](https://www.analyticsvidhya.com/blog/2017/09/machine-learning-models-as-apis-using-flask/)
 - [Deployment in Cloud for production](https://www.kdnuggets.com/2019/06/approaches-deploying-machine-learning-production.html)
 - [Understanding deployment in detail](https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
