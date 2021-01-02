@@ -3,6 +3,7 @@ The Web Speech API is used to incorporate voice data into web apps. In this tuto
 You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility.).
 
 ### Prerequisites
+
 To follow along with this tutorial, you should have:
 
 - A basic understanding of HTML and JavaScript.
@@ -12,9 +13,18 @@ To follow along with this tutorial, you should have:
 - A browser to view the webpage, preferably [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/).
 
 ### The HTML Page
+
 Create a new directory for the project and create a new file in the directory called `index.html`.
 
-In this HTML file, Let's set up an empty select menu, a text area to type, and control buttons for the speech. We will fill the empty select menu with the list of voices available using javascript later.
+In this HTML file, Let's set up:
+
+- An empty select menu. We will fill the empty select menu with the list of voices available using javascript later.
+
+- Range sliders for volume, pitch, and rate.
+
+- A `textarea` to type.
+
+- Control buttons for the speech.
 
 I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you are new to Bootstrap, check out their [documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) to get a better understanding.
 
@@ -22,17 +32,37 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
 <html lang="en">
   <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
     <title>Text to Speech</title>
   </head>
   <body class="container mt-5 bg-dark">
     <h1 class="text-light">Text to Speech</h1>
-    <p class="lead text-light mt-5">Select Voice</p>
+    <p class="lead text-light mt-4">Select Voice</p>
     <select id="voices" class="form-select bg-secondary text-light"></select>
+    <div class="d-flex mt-4 text-light">
+      <div>
+        <p class="lead">Volume</p>
+        <input type="range" min="0" max="1" value="1" step="0.1" id="volume" />
+        <span id="volume-label" class="ms-2">1</span>
+      </div>
+      <div class="mx-5">
+        <p class="lead">Rate</p>
+        <input type="range" min="0.1" max="10" value="1" id="rate" step="0.1" />
+        <span id="rate-label" class="ms-2">1</span>
+      </div>
+      <div>
+        <p class="lead">Pitch</p>
+        <input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
+        <span id="pitch-label" class="ms-2">1</span>
+      </div>
+    </div>
     <textarea class="form-control bg-dark text-light mt-5" cols="30" rows="10" placeholder="Type here..."></textarea>
-    <button id="start" class="btn btn-success mt-5">Start</button>
-    <button id="pause" class="btn btn-warning mt-5">Pause</button>
-    <button id="resume" class="btn btn-info mt-5">Resume</button>
-    <button id="cancel" class="btn btn-danger mt-5">Cancel</button>
+    <div class="mb-5">
+      <button id="start" class="btn btn-success mt-5 me-3">Start</button>
+      <button id="pause" class="btn btn-warning mt-5 me-3">Pause</button>
+      <button id="resume" class="btn btn-info mt-5 me-3">Resume</button>
+      <button id="cancel" class="btn btn-danger mt-5 me-3">Cancel</button>
+    </div>
   </body>
   <!-- script tag goes here -->
 </html>
@@ -41,6 +71,7 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
 ![Starter Code Screen](start_screen.png)
 
 ### The JavaScript file
+
 Create a new JavaScript file and name it `textToSpeech.js`. Now, add the file to the HTML file using the `script` tag after the `body` tag.
 
 > Adding the `script` tag after the `body` tag will make sure that the script file is loaded after all the elements have been loaded to the DOM.
@@ -56,43 +87,10 @@ let speech = new SpeechSynthesisUtterance();
 ```
 
 ### Properties
+
 Now, let's configure some properties on this `SpeechSynthesisUtterance` instance.
 
 There are 6 properties on the `SpeechSynthesisUtterance` instance that we can tweak. They are:
-
-**Language**:
-
-The `language` property gets and sets the language of the utterance. If unset, the `<html lang="en">` lang value will be used, or the user-agent default if the `<html lang="en">` lang is unset. 
-
-It accepts a DOMString representing a BCP 47 language tag.
-
-```JavaScript
-speech.lang = "en";
-```
-
-**Pitch**:
-
-The `pitch` property gets and sets the pitch of the utterance. It is a float representing the pitch value which can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
-
-```JavaScript
-speech.pitch = 1;
-```
-
-**Rate**:
-
-The `rate` property gets and sets the rate of the utterance. It is a float representing the rate value which can range between 0.1 (lowest) and 10 (highest). The default value is 1 if this property is unset.
-
-```JavaScript
-speech.rate = 1.5;
-```
-
-**Volume**:
-
-The `volume` property gets and sets the volume of the utterance. It is a float that represents the volume value, between 0 (lowest) and 1 (highest). The default value is 1 if this property is unset.
-
-```JavaScript
-speech.volume = 0.5;
-```
 
 **Text**:
 
@@ -100,7 +98,59 @@ The `text` property gets and sets the text that will be synthesized when the utt
 
 ```JavaScript
 speech.text = 'This line will be spoken by the Speech Synthesis Utterance instance';
-```  
+```
+
+**Language**:
+
+The `language` property gets and sets the language of the utterance. If unset, the `<html lang="en">` lang value will be used, or the user-agent default if the `<html lang="en">` lang is unset.
+
+It accepts a DOMString representing a BCP 47 language tag.
+
+```JavaScript
+speech.lang = "en";
+```
+
+**Volume**:
+
+The `volume` property gets and sets the volume of the utterance. It is a float that represents the volume value, between 0 (lowest) and 1 (highest). The default value is 1 if this property is unset.
+
+Let's add a `onInput` listener to the `volume` range slider and adjust the `volume` property when the value of the slider changes. Let us also set the `<span>` that displays the value of the `volume` in the webpage next to the range slider.
+
+```JavaScript
+document.querySelector("#volume").addEventListener("input", () => {
+  const volume = document.querySelector("#volume").value;
+  speech.volume = volume;
+  document.querySelector("#volume-label").innerHTML = volume;
+});
+```
+
+**Rate**:
+
+The `rate` property gets and sets the rate of the utterance. It is a float representing the rate value which can range between 0.1 (lowest) and 10 (highest). The default value is 1 if this property is unset.
+
+Let's add a `onInput` listener to the `rate` range slider and adjust the `rate` property when the value of the slider changes. Let us also set the `<span>` that displays the value of the `rate` in the webpage next to the range slider.
+
+```JavaScript
+document.querySelector("#rate").addEventListener("input", () => {
+  const rate = document.querySelector("#rate").value;
+  speech.rate = rate;
+  document.querySelector("#rate-label").innerHTML = rate;
+});
+```
+
+**Pitch**:
+
+The `pitch` property gets and sets the pitch of the utterance. It is a float representing the pitch value which can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
+
+Let's add a `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. Let us also set the `<span>` that displays the value of the pitch in the webpage next to the range slider.
+
+```JavaScript
+document.querySelector("#pitch").addEventListener("input", () => {
+  const pitch = document.querySelector("#pitch").value;
+  speech.pitch = pitch;
+  document.querySelector("#pitch-label").innerHTML = pitch;
+});
+```
 
 **Voice**:
 
@@ -115,7 +165,6 @@ window.speechSynthesis.onvoiceschanged = () => {
 ```
 
 We can get the list of voices using `window.speechSynthesis.getVoices()`. It'll return an array of `SpeechSynthesisVoice` objects that are available. Let's store the list in a global array and update the select menu on the web page with the list of available voices.
-
 
 ```JavaScript
 let voices = []; // global array
@@ -147,7 +196,7 @@ Let's add controls to the SpeechSynthesis instance.
 
 **Start**:
 
-Let's select the start button and add a `click` event listener to it. 
+Let's select the start button and add a `click` event listener to it.
 
 On click, We should set the `SpeechSynthesisUtterance` instance's text property with the value of the text area. Then, we should pass that instance to the `window.speechSynthesis.speak()` method. This will start converting the text to speech.
 
@@ -195,18 +244,32 @@ The final version of `textToSpeech.js`:
 ```JavaScript
 let speech = new SpeechSynthesisUtterance();
 speech.lang = "en";
-speech.rate = 1.5;
-speech.volume = 0.5;
-speech.pitch = 1;
 
 let voices = [];
-
 window.speechSynthesis.onvoiceschanged = () => {
   voices = window.speechSynthesis.getVoices();
   speech.voice = voices[0];
   let voiceSelect = document.querySelector("#voices");
   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
 };
+
+document.querySelector("#rate").addEventListener("input", () => {
+  const rate = document.querySelector("#rate").value;
+  speech.rate = rate;
+  document.querySelector("#rate-label").innerHTML = rate;
+});
+
+document.querySelector("#volume").addEventListener("input", () => {
+  const volume = document.querySelector("#volume").value;
+  speech.volume = volume;
+  document.querySelector("#volume-label").innerHTML = volume;
+});
+
+document.querySelector("#pitch").addEventListener("input", () => {
+  const pitch = document.querySelector("#pitch").value;
+  speech.pitch = pitch;
+  document.querySelector("#pitch-label").innerHTML = pitch;
+});
 
 document.querySelector("#voices").addEventListener("change", () => {
   speech.voice = voices[document.querySelector("#voices").value];
@@ -228,6 +291,7 @@ document.querySelector("#resume").addEventListener("click", () => {
 document.querySelector("#cancel").addEventListener("click", () => {
   window.speechSynthesis.cancel();
 });
+
 ```
 
 ### Result
