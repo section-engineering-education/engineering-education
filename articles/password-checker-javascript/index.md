@@ -16,14 +16,14 @@ We can either use **simple patterns** such as `/vet/` for finding a direct much 
 **How to use Regex**</br>
 Regex, also denoted as RegExp, can be constructed in one of these two ways:</br></br>
 - **Using Regular Expression literal** where the pattern is enclosed between two slashes.</br>
-```
+`
 let check = /vet/
-```
+`
 
 - **Using the constructor function** of the *RegExp()* class and passing the string to be checked as a parameter.</br>
-```
+`
 let check = new RegExp('vet')
-```
+`
 We use the constructor function when we know the pattern keeps changing or like if we get it from a different source, such as the user input. For this reason, we are going to use the constructor function for we are getting the password from the user input.</br></br>
 
 #### Patterns we are going to use</br></br>
