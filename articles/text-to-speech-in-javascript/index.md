@@ -11,23 +11,45 @@ To follow along with this tutorial, you should have:
 
 - A browser to view the webpage, preferably [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/).
 
-### Get the Starter Code
-To focus more on text to speech, I've prepared a gist for the HTML file. You can copy it [from here](https://gist.github.com/zolomohan/4115e5399f6770f7e74ab235b78ef6ed) on GitHub.
+### The HTML Page
+Create a new directory for the project and create a new file in the directory called `index.html`.
 
-You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech). I've also deployed the project [here](https://zolomohan.github.io/text-to-speech/).
+In this HTML file, Let's set up an empty select menu, a text area to type, and control buttons for the speech. We will fill the empty select menu with the list of voices available using javascript later.
 
-In the starter code, I've set up an empty select menu, a text area to type, and control buttons for the speech. I've used [Bootstrap](https://getbootstrap.com/) to style the webpage.
+I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you are new to Bootstrap, check out their [documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) to get a better understanding.
+
+```HTML
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Text to Speech</title>
+  </head>
+  <body class="container mt-5 bg-dark">
+    <h1 class="text-light">Text to Speech</h1>
+    <p class="lead text-light mt-5">Select Voice</p>
+    <select id="voices" class="form-select bg-secondary text-light"></select>
+    <textarea class="form-control bg-dark text-light mt-5" cols="30" rows="10" placeholder="Type here..."></textarea>
+    <button id="start" class="btn btn-success mt-5">Start</button>
+    <button id="pause" class="btn btn-warning mt-5">Pause</button>
+    <button id="resume" class="btn btn-info mt-5">Resume</button>
+    <button id="cancel" class="btn btn-danger mt-5">Cancel</button>
+  </body>
+  <!-- script tag goes here -->
+</html>
+```
 
 ![Starter Code Screen](start_screen.png)
 
-### Let's Code
-Create a new JavaScript file and name it `textToSpeech.js`. Now add the file to the HTML file using the `script` tag after the `body` tag. This will make sure that the script file is loaded after all the elements have been loaded to the DOM.
+### The JavaScript file
+Create a new JavaScript file and name it `textToSpeech.js`. Now, add the file to the HTML file using the `script` tag after the `body` tag.
 
-```html
+> Adding the `script` tag after the `body` tag will make sure that the script file is loaded after all the elements have been loaded to the DOM.
+
+```HTML
 <script src="./textToSpeech.js"></script>
 ```
 
-Let's create a `SpeechSynthesisUtterance` object. We'll configure this instance with various properties.
+Let's create a `SpeechSynthesisUtterance` object in the javascript file. We'll configure this instance with various properties.
 
 ```JavaScript
 let speech = new SpeechSynthesisUtterance();
@@ -40,13 +62,13 @@ There are 6 properties on the `SpeechSynthesisUtterance` instance that we can tw
 
 **Language**:
 
-The language property gets and sets the language of the utterance. If unset, the `<html>` lang value will be used, or the user-agent default if the `<html>` lang is unset. 
+The language property gets and sets the language of the utterance. If unset, the `<html lang="en">` lang value will be used, or the user-agent default if the `<html lang="en">` lang is unset. 
 
 It accepts a DOMString representing a BCP 47 language tag.
 
 ```JavaScript
 speech.lang = "en";
-  ```
+```
 
 **Pitch**:
 
@@ -54,7 +76,7 @@ The pitch property gets and sets the pitch of the utterance. It is a float repre
 
 ```JavaScript
 speech.pitch = 1;
-  ```
+```
 
 **Rate**:
 
@@ -62,7 +84,7 @@ The rate property gets and sets the rate of the utterance. It is a float represe
 
 ```JavaScript
 speech.rate = 2;
-  ```
+```
 
 **Volume**:
 
@@ -70,7 +92,7 @@ The volume property gets and sets the volume of the utterance. It is a float tha
 
 ```JavaScript
 speech.volume = 0.5;
-  ```
+```
 
 **Text**:
 
@@ -127,7 +149,7 @@ Let's add controls to the SpeechSynthesis instance.
 
 Let's select the start button and add an `click` event listener to it. 
 
-On click, We should set the `SpeechSynthesis` instance's text property with the value of the text area. Then, we should pass the `SpeechSynthesis` instance that we created to the `window.speechSynthesis.speak()` method. This will start converting the text to speech.
+On click, We should set the `SpeechSynthesisUtterance` instance's text property with the value of the text area. Then, we should pass that instance to the `window.speechSynthesis.speak()` method. This will start converting the text to speech.
 
 > NOTE: If you start another Text to Speech while an instance is already running, it'll get queued behind the one that is currently running.
 
@@ -140,7 +162,7 @@ document.querySelector("#talk").addEventListener("click", () => {
 
 **Pause**:
 
-We can pause the `SpeechSynthesis` instance that's running at the moment using `window.speechSynthesis.pause()`. Let's select the pause button and add an `click` event listener to it and pause the `SpeechSynthesis` instance when the button is clicked.
+We can pause the `SpeechSynthesisUtterance` instance that's running at the moment using `window.speechSynthesis.pause()`. Let's select the pause button and add an `click` event listener to it and pause the `SpeechSynthesisUtterance` instance when the button is clicked.
 
 ```JavaScript
 document.querySelector("#pause").addEventListener("click", () => {
@@ -150,7 +172,7 @@ document.querySelector("#pause").addEventListener("click", () => {
 
 **Reume**:
 
-We can resume the `SpeechSynthesis` instance that's paused at the moment using `window.speechSynthesis.resume()`. Let's select the resume button and add an `click` event listener to it and resume the `SpeechSynthesis` instance when the button is clicked.
+We can resume the `SpeechSynthesisUtterance` instance that's paused at the moment using `window.speechSynthesis.resume()`. Let's select the resume button and add an `click` event listener to it and resume the `SpeechSynthesisUtterance` instance when the button is clicked.
 
 ```JavaScript
 document.querySelector("#resume").addEventListener("click", () => {
@@ -160,10 +182,16 @@ document.querySelector("#resume").addEventListener("click", () => {
 
 **Cancel**:
 
-We can canel the `SpeechSynthesis` instance that's running at the moment using `window.speechSynthesis.cancel()`. Let's select the cancel button and add an `click` event listener to it and cancel the `SpeechSynthesis` instance when the button is clicked.
+We can canel the `SpeechSynthesisUtterance` instance that's running at the moment using `window.speechSynthesis.cancel()`. Let's select the cancel button and add an `click` event listener to it and cancel the `SpeechSynthesisUtterance` instance when the button is clicked.
 
 ```JavaScript
 document.querySelector("#resume").addEventListener("click", () => {
   window.speechSynthesis.resume();
 });
 ```
+
+### Result
+
+You can take a look at the project that's been deployed using GitHub pages [here](https://zolomohan.github.io/text-to-speech/).
+
+You can checkout the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech). 
