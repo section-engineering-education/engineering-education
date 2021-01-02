@@ -48,13 +48,8 @@ As mention, the model uses layers to help give a visual description of what is g
 
 ### Functions of the OSI Layers
 There are seven OSI layers. Each layer has different functions. Each layer is assigned a particular task. OSI model divides the whole task into seven smaller and manageable tasks.  Each layer is self-contained so that tasks assigned to each layer can be performed independently. A list of seven layers are given below:
-- Physical Layer
-- Data-Link Layer
-- Network Layer
-- Transport Layer
-- Session Layer
-- Presentation Layer
-- Application Layer
+
+<img src="./osi.png">
 
 #### Physical layer
 - The main functionality of the physical layer is to transmit the individual bits from one node to another node.
@@ -62,10 +57,10 @@ There are seven OSI layers. Each layer has different functions. Each layer is as
 - It specifies the mechanical, electrical, and procedural network interface specifications.
 
 ##### Functions of a Physical layer:
-- Line Configuration: It defines the way how two or more devices can be connected physically.
-- Data Transmission: It defines the transmission mode whether it is simplex, half-duplex, or full-duplex mode between the two devices on the network.
-- Topology: It defines the way how network devices are arranged.
-- Signals: It determines the type of signal used for transmitting the information.
+- <em>Line Configuration</em>: It defines the way how two or more devices can be connected physically.
+- <em>Data Transmission</em>: It defines the transmission mode whether it is simplex, half-duplex, or full-duplex mode between the two devices on the network.
+- <em>Topology</em>: It defines the way how network devices are arranged.
+- <em>Signals</em>: It determines the type of signal used for transmitting the information.
 
 #### Data-Link Layer
 - It defines the format of the data on the network.
@@ -73,11 +68,11 @@ This layer is responsible for the reliable transfer of data frames from one node
 - It provides reliable and efficient communication between two or more devices and mainly responsible for the unique identification of each device that resides on a local network.
 
 ##### Functions of the Data-link layer
-- Framing: The data link layer translates the physical's raw bitstream into packets known as Frames. The Data link layer adds the header and trailer to the frame. The header which is added to the frame contains the hardware destination and source address.
-- Physical Addressing: The Data link layer adds a header to the frame that contains a destination address. The frame is transmitted to the destination address mentioned in the header.
-- Flow Control: Flow control is the main functionality of the - Data-link layer. It is the technique through which the constant data rate is maintained on both sides so that no data get corrupted. It ensures that the transmitting station such as a server with a higher processing speed does not exceed the receiving station, with a lower processing speed.
-- Error Control: Error control is achieved by adding a calculated value CRC (Cyclic Redundancy Check) that is placed to the Data link layer's trailer which is added to the message frame before it is sent to the physical layer. If any error seems to occur, then the receiver sends the acknowledgment for the retransmission of the corrupted frames.
-- Access Control: When two or more devices are connected to the same communication channel, then the data link layer protocols are used to determine which device has control over the link at a given time.
+- <em>Framing</em>: The data link layer translates the physical's raw bitstream into packets known as Frames. The Data link layer adds the header and trailer to the frame. The header which is added to the frame contains the hardware destination and source address.
+- <em>Physical Addressing</em>: The Data link layer adds a header to the frame that contains a destination address. The frame is transmitted to the destination address mentioned in the header.
+- <em>Flow Control</em>: Flow control is the main functionality of the - Data-link layer. It is the technique through which the constant data rate is maintained on both sides so that no data get corrupted. It ensures that the transmitting station such as a server with a higher processing speed does not exceed the receiving station, with a lower processing speed.
+- <em>Error Control</em>: Error control is achieved by adding a calculated value CRC (Cyclic Redundancy Check) that is placed to the Data link layer's trailer which is added to the message frame before it is sent to the physical layer. If any error seems to occur, then the receiver sends the acknowledgment for the retransmission of the corrupted frames.
+- <em>Access Control</em>: When two or more devices are connected to the same communication channel, then the data link layer protocols are used to determine which device has control over the link at a given time.
 
 #### Network Layer
 - It is a third layer that manages device addressing, tracks the location of devices on the network.
@@ -88,10 +83,10 @@ This layer is responsible for the reliable transfer of data frames from one node
 - The protocols used to route the network traffic are known as Network layer protocols. Examples of protocols are IP and Ipv6.
 
 ##### Functions of Network Layer:
-- Internetworking: An internetworking is the main responsibility of the network layer. It provides a logical connection between different devices.
-- Addressing: A Network layer adds the source and destination address to the header of the frame. Addressing is used to identify the device on the internet.
-- Routing: Routing is the major component of the network layer, and it determines the best optimal path out of the multiple paths from source to destination.
-- Packetizing: A Network Layer receives the packets from the upper layer and converts them into packets. This process is known as Packetizing. It is achieved by internet protocol (IP).
+- <em>Inter-networking</em>: An inter-networking is the main responsibility of the network layer. It provides a logical connection between different devices.
+- <em>Addressing</em>: A Network layer adds the source and destination address to the header of the frame. Addressing is used to identify the device on the internet.
+- <em>Routing</em>: Routing is the major component of the network layer, and it determines the best optimal path out of the multiple paths from source to destination.
+- <em>Packetizing</em>: A Network Layer receives the packets from the upper layer and converts them into packets. This process is known as Packetizing. It is achieved by internet protocol (IP).
 
 #### Transport Layer
 - It transmits data using transmission protocols including TCP and UDP. 
@@ -111,8 +106,8 @@ The Presentation Layer represents the area that is independent of data represent
 
 ##### The function of Presentation Layers:
 - Character code translation from ASCII to EBCDIC.
-- Data compression: This allows to reduce the number of bits that need to be transmitted on the network.
-- Data encryption: Helps you to encrypt data for security purposes — for example, password encryption.
+- <em>Data compression</em>: This allows to reduce the number of bits that need to be transmitted on the network.
+- <em>Data encryption</em>: Helps you to encrypt data for security purposes — for example, password encryption.
 - It provides a user interface and support for services like email and file transfer.
 
 
@@ -127,7 +122,8 @@ The Presentation Layer represents the area that is independent of data represent
 - It allows users to log on to a remote host and provides various e-mail services.
 - This application offers distributed database sources and access to global information about various objects and service
  
-Quick Way to memorize the OSI Model Layer concept - A Penguin Said That Nobody Drinks Pepsi
+Quick Way to memorize the OSI Model Layer concept - <em>A Penguin Said That Nobody Drinks Pepsi</em>
 
- 
+### Conclusion
 
+You get to know about its benefits and importance. The core thing from the OSI model is that the bottom four layers (physical to transport) are used for data transmission between the networks and the top three layers (session, presentation & application) are for data transmission between hosts. One thing you have to remember that the OSI model acts as a reference model and its theoretical concept which is not implemented on the Internet yet. TCP/IP model is being used in the current Internet.
