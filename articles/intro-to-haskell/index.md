@@ -59,6 +59,10 @@ getFirst [7, 0, 0]
 => 7
 ```
 
+So why should you use pattern matching? 
+
+Pattern matching is useful for catching errors in your code. Since the syntax is more compact than *if-statements*, your code becomes easier to read. In addition, Haskell generates a warning if you are missing cases in your pattern matching. In the `getFirst` example, if we forgot to handle the empty list case, the compiler would warn us. Without pattern matching, no warning would be issued, and the bug could be left undetected. 
+
 ### Repeating Tasks with Haskell 
 
 You might be familiar with using *for loops* to repeat a task multiple times. Functional languages use recursion instead.
@@ -88,9 +92,16 @@ getTotal []
 => 0 
 ```
 
+Being familiar with recursion is essential for functional programming. Recursion is the **only** way to repeatedly perform a task in Haskell. Consequently, programmers should not forget the base case when they solve problems recursively. Avoiding infinite recursion ensures that our task repetition will end at some point.
+
+### Putting Haskell to Use
+Generally, Haskell is present in academia. However, the use of Haskell is increasing in the industry. For instance, the finance industry uses functional languages. According to [HaskellWiki](https://wiki.haskell.org/Haskell_in_industry), the Deutsche Bank utilizes Haskell for their software infrastructure. Unfortunately, Haskell has 
+developed ["a reputation for being hard to learn"](https://www.huffpost.com/entry/haskell-the-language-most_b_4242119), but this may change as more reference material is developed. 
+
 ### More Resources for Haskell
 You've learned ideas such as referential transparency, lazy evaluation, and pattern-matching in Haskell. You've also seen that recursion is used instead of *for-loops*, and it can make code a lot more concise. These topics are not exclusive to Haskell; they can be applied to other functional languages as well. To learn more about these concepts, I encourage you to read [Learn You a Haskell](http://learnyouahaskell.com/), which is available for free online.
 The [HaskellWiki](https://wiki.haskell.org/Haskell) is another excellent resource for beginners. 
+
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
