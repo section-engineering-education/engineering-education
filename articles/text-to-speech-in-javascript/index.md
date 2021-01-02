@@ -111,7 +111,7 @@ window.speechSynthesis.onvoiceschanged = () => {
 };
 ```
 
-Now that we have updated the voice menu, let's add an `onChange` event listener on it to update the `SpeechSynthesisUtterance` instance's voice. When a user updates the voice, we will use the index number (which is set as the value for each option) and the global array of voices and update the voice.
+Now that we have updated the voice menu, let's add an `onChange` event listener on it to update the `SpeechSynthesisUtterance` instance's voice. When a user updates the voice, we will use the index number (which is set as the value for each option) and the global array of voices to update the voice.
 
 ```JavaScript
 document.querySelector("#voices").addEventListener("change", () => {
@@ -119,7 +119,51 @@ document.querySelector("#voices").addEventListener("change", () => {
 });
 ```
 
+### Controls
 
+Let's add controls to the SpeechSynthesis instance.
 
+**Start**:
 
+Let's select the start button and add an `click` event listener to it. 
 
+On click, We should set the `SpeechSynthesis` instance's text property with the value of the text area. Then, we should pass the `SpeechSynthesis` instance that we created to the `window.speechSynthesis.speak()` method. This will start converting the text to speech.
+
+> NOTE: If you start another Text to Speech while an instance is already running, it'll get queued behind the one that is currently running.
+
+```JavaScript
+document.querySelector("#talk").addEventListener("click", () => {
+  speech.text = document.querySelector("textarea").value;
+  window.speechSynthesis.speak(speech);
+});
+```
+
+**Pause**:
+
+We can pause the `SpeechSynthesis` instance that's running at the moment using `window.speechSynthesis.pause()`. Let's select the pause button and add an `click` event listener to it and pause the `SpeechSynthesis` instance when the button is clicked.
+
+```JavaScript
+document.querySelector("#pause").addEventListener("click", () => {
+  window.speechSynthesis.pause();
+});
+```
+
+**Reume**:
+
+We can resume the `SpeechSynthesis` instance that's paused at the moment using `window.speechSynthesis.resume()`. Let's select the resume button and add an `click` event listener to it and resume the `SpeechSynthesis` instance when the button is clicked.
+
+```JavaScript
+document.querySelector("#resume").addEventListener("click", () => {
+  window.speechSynthesis.resume();
+});
+```
+
+**Cancel**:
+
+We can canel the `SpeechSynthesis` instance that's running at the moment using `window.speechSynthesis.cancel()`. Let's select the cancel button and add an `click` event listener to it and cancel the `SpeechSynthesis` instance when the button is clicked.
+
+```JavaScript
+document.querySelector("#resume").addEventListener("click", () => {
+  window.speechSynthesis.resume();
+});
+```
