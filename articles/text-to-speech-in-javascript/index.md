@@ -114,7 +114,9 @@ speech.lang = "en";
 
 The `volume` property gets and sets the volume of the utterance. It is a float that represents the volume value, between 0 (lowest) and 1 (highest). The default value is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `volume` range slider and adjust the `volume` property when the value of the slider changes. Let us also set the `<span>` that displays the value of the `volume` in the webpage next to the range slider.
+Let's add a `onInput` listener to the `volume` range slider and adjust the `volume` property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag. 
+
+Let us also set the `<span>` that displays the value of the `volume` in the webpage next to the range slider.
 
 ```JavaScript
 document.querySelector("#volume").addEventListener("input", () => {
@@ -128,7 +130,9 @@ document.querySelector("#volume").addEventListener("input", () => {
 
 The `rate` property gets and sets the rate of the utterance. It is a float representing the rate value which can range between 0.1 (lowest) and 10 (highest). The default value is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `rate` range slider and adjust the `rate` property when the value of the slider changes. Let us also set the `<span>` that displays the value of the `rate` in the webpage next to the range slider.
+Let's add a `onInput` listener to the `rate` range slider and adjust the `rate` property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag. 
+
+Let us also set the `<span>` that displays the value of the `rate` in the webpage next to the range slider.
 
 ```JavaScript
 document.querySelector("#rate").addEventListener("input", () => {
@@ -142,7 +146,9 @@ document.querySelector("#rate").addEventListener("input", () => {
 
 The `pitch` property gets and sets the pitch of the utterance. It is a float representing the pitch value which can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. Let us also set the `<span>` that displays the value of the pitch in the webpage next to the range slider.
+Let's add a `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag. 
+
+Let us also set the `<span>` that displays the value of the `pitch` in the webpage next to the range slider.
 
 ```JavaScript
 document.querySelector("#pitch").addEventListener("input", () => {
