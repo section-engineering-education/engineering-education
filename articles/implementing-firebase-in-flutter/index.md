@@ -1,8 +1,24 @@
-Flutter is a SDK (Software Development Kit) used to develop cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-firebase-in-flutter/
+title: Firebase's Realtime Database in a Flutter Application
+description: In this tutorial we will focus on the real-time database. Firebase offers synchronization that ensures that all connected devices are notified whenever data changes. 
+author: michael-barasa
+date: 2021-01-03T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Firebase is a platform developed by Google for creating mobile and web applications. It provides functionalities such as real-time database, cloud storage, authentication, and hosting. This tutorial focuses on the real-time database. Firebase also offers synchronization which ensures that all connected devices are notified whenever data changes. 
+  - url: /engineering-education/implementing-firebase-in-flutter/hero.png
+    alt: Firebase and Flutter image
+---
+Flutter is a SDK (Software Development Kit) used to develop cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base. Firebase is a platform developed by Google for creating mobile and web applications.  
+<!--more-->
+It provides functionalities such as real-time database, cloud storage, authentication, and hosting. This tutorial focuses on the real-time database. Firebase also offers synchronization which ensures that all connected devices are notified whenever data changes. 
 
-### Goal of this Tutorial
+### Goal of this tutorial
 To implement Firebase in a Flutter application and use Firebase's Real-Time Database to store and retrieve data.
 
 You can view the source code of this project from [here](https://github.com/WanjaMIKE/flutterfirebaseexample).
@@ -10,14 +26,18 @@ You can view the source code of this project from [here](https://github.com/Wanj
 ### Prerequisites
 This tutorial is suitable for beginners.
 
-For you to follow along with this tutorial, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. For the IDE, you can either use [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/download). You should have a [Firebase account](https://firebase.google.com/) to access its products.
+For you to follow along with this tutorial, you should have the [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your computer. 
+
+For the IDE, you can either use [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/download). 
+
+You should have a [Firebase account](https://firebase.google.com/) to access its products.
 
 You can learn more on setting up Flutter's development environment from [here](https://flutter.dev/docs/get-started/install/).
 
-### Set up the Project
+### Setting up the project
 Launch Android Studio and create a new Flutter project.
 
-![getting started](/engineering-educationimplementing-firebase-in-flutter/getting-started.png)
+![getting started](/engineering-education/implementing-firebase-in-flutter/getting-started.png)
 
 Open the `pubspec.yaml` file and add the following Flutter dependencies.
 
@@ -33,23 +53,23 @@ Use the `pub get` command to retrieve appropriate dependencies.
 
 Next, open your browser and navigate to [Firebase's website](https://firebase.google.com/). We need to create a new firebase project, as shown below.
 
-![project name](/engineering-educationimplementing-firebase-in-flutter/project-name.png)
+![project name](/engineering-education/implementing-firebase-in-flutter/project-name.png)
 
-Add your flutter application to Firebase by clicking on the android icon.
+Add your Flutter application to Firebase by clicking on the Android icon.
 
-![add app](/engineering-educationimplementing-firebase-in-flutter/add-app.png)
+![add app](/engineering-education/implementing-firebase-in-flutter/add-app.png)
 
 Add your application's package name as shown in the image below. 
 
-![find package](/engineering-educationimplementing-firebase-in-flutter/find-package.png)
+![find package](/engineering-education/implementing-firebase-in-flutter/find-package.png)
 
 You can find your package name in the app-level – `build.gradle` file. Click register app after completing this step.
 
-![package name](/engineering-educationimplementing-firebase-in-flutter/package-name.png)
+![package name](/engineering-education/implementing-firebase-in-flutter/package-name.png)
 
-Download the `google-services.json` file and paste it into the `android/app` folder
+Download the `google-services.json` file and paste it into the `android/app` folder.
 
-![paste json](/engineering-educationimplementing-firebase-in-flutter/paste-json.png)
+![paste json](/engineering-education/implementing-firebase-in-flutter/paste-json.png)
 
 Paste `classpath 'com.google.gms:google-services:4.3.3'` in the project level – `build.gradle` file.
 
@@ -68,13 +88,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: 'com.google.gms.google-services'
-````
+```
 
 After the project is created successfully, navigate back to the Firebase console's realtime database section, and create a new database.
 
-![create database](/engineering-educationimplementing-firebase-in-flutter/create-database.png)
+![create database](/engineering-education/implementing-firebase-in-flutter/create-database.png)
 
-In the `rules` section, ensure that you click on `test mode` rather than the `locked mode`. This allows us to read and write data without authentication. Note that these rules should not be used in a production application since anyone can access data.
+In the `rules` section, ensure that you click on `test mode` rather than the `locked mode`. This allows us to read and write the data without authentication. Note that these rules should not be used in a production application since anyone can access the data.
 
 ```json
 {
@@ -84,14 +104,15 @@ In the `rules` section, ensure that you click on `test mode` rather than the `lo
   }
 }
 ```
-You can find more information about changing the above rules for a production application [here](https://firebase.google.com/docs/rules/manage-deploy)
 
-We have successfully set up Firebase and the flutter project. Let's design the UI.
+You can find more information about changing the rules above for a production application [here](https://firebase.google.com/docs/rules/manage-deploy).
+
+We have successfully set up Firebase and the Flutter project. Let's design the UI.
 
 ### Building the UI
 The app will have a simple user interface. It will allow a user to input a word or sentence and click on a button to save it to the Firebase database.
 
-![ui](/engineering-educationimplementing-firebase-in-flutter/ui.jpeg)
+![ui](/engineering-education/implementing-firebase-in-flutter/ui.jpeg)
 
 Create a new file called `home.dart.` In this file, create a `stateful class` and name it `HomePage.`
 We'll create a stateful widget and scaffold, as shown below.
@@ -164,7 +185,8 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-Ensure that you have the following imports at the Top of the Home page.
+Ensure that you have the following imports at the top of the Home page.
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -205,13 +227,16 @@ We need to include the textcontroller in the HomePageState class.
 class _HomePageState extends State<HomePage> {
   final textcontroller = TextEditingController();
 ```
+
 The textcontroller is the added to the TextField widget, as shown below.
 
 ```dart
 TextField(controller: textcontroller),
 ```
 
-Please note that we need to use a `FutureBuilder` for async operations. This class allows the application to retrieve results once the network operation is completed. This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
+Please note that we need to use a `FutureBuilder` for async operations. This class allows the application to retrieve results once the network operation is completed. 
+
+This class also helps us initialize the Firebase app. You can learn more about FutureBuilder from [here](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html).
 
 ```dart
 class _HomePageState extends State<HomePage> {
@@ -244,7 +269,7 @@ void printFirebase(){
 }
 ```
 
-We'll call the above function in the  `_HomePageState` class's `build` method.
+We'll call the function above in the  `_HomePageState` class's `build` method.
 
 Here is the complete code for the HomePage class.
 
@@ -319,22 +344,27 @@ class _HomePageState extends State<HomePage> {
 ```
 
 ### 5. Results
-When we click on the Save to Database button. The user input is stored in the real-time database, as shown.
+When we click on the Save to Database button. The user input is stored in the real-time database, as shown below.
 
-![results](/engineering-educationimplementing-firebase-in-flutter/firebaseresults.png)
+![results](/engineering-education/implementing-firebase-in-flutter/firebaseresults.png)
 
 The following items are also printed.
 
-![console results](/engineering-educationimplementing-firebase-in-flutter/console.png)
+![console results](/engineering-education/implementing-firebase-in-flutter/console.png)
 
 ### Recap
 We have successfully created a simple Flutter application that can store and retrieve records from the Firebase Realtime Database. Please remember these following points when you are working on your own project.
 
-1. You must create a Firebase account to access its products such as the real-time database.
+- You must create a Firebase account to access its products such as the real-time database.
 
-2. You must instantiate the Firebase Realtime Database before using it in your application.
+- You must instantiate the Firebase Realtime Database before using it in your application.
 
-3. Use a FutureBuilder object when awaiting for network requests or operations.
+- Use a FutureBuilder object when awaiting for network requests or operations.
 
 ### References
-[FlutterFire](https://firebase.flutter.dev/docs/overview/)
+
+- [FlutterFire](https://firebase.flutter.dev/docs/overview/)
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+
