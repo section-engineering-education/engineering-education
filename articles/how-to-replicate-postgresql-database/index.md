@@ -3,14 +3,15 @@ Replication is the act of reproducing or copying with something Several Relation
 ### Introduction
 
 For replication to be achieved in PostgreSQL there must be two servers that can be able to communicate with each other. This server will be identified as Master which is the Master server or the production server and the other one is the Slave server or Replica server or standby Server which will have a copy of master server data. The data is synchronized in such a way that if the Master server fails one can continue to run with the slave database without any problem.
+
 Replication is important to avoid Failover whereby the primary database fails and due to business continuity, there is a need for recovery. This recovery will depend on the replicated database created on Slave Server.
 
 ### Why Replication
 
-1. Online Transaction Processing(OLTP) Performance- removing reporting query load from OLTP system improves both query time and transaction processing time
-2. Data migration- which comes about either through system deployment or change of database server hardware
-3. System Testing in Parallel- when upgrading a new system there need to make sure the new system works well with existing data hence need to test with production database copy before deployment
-4. Fault Tolerance- in case the main server fails the standby server can act as a server since the contained data  is the same
+1. **Online Transaction Processing (OLTP) Performance** - removing reporting query load from OLTP system improves both query time and transaction processing time.
+2. **Data migration** - which comes about either through system deployment or change of database server hardware.
+3. **System Testing in Parallel** - when upgrading a new system there need to make sure the new system works well with existing data hence need to test with production database copy before deployment.
+4. **Fault Tolerance** - in case the main server fails the standby server can act as a server since the contained data is the same.
 
 For this to happen there must be communication between the two hosts or two servers that is through a network or internet as shown below.
 
@@ -22,18 +23,16 @@ For this to happen there must be communication between the two hosts or two serv
 
 For this article, we will use Ubuntu 18.04 LTS and PostgreSQL 10. Several Linux distributions can be used as server operating systems. It is important to note that one can set up Replication in any operating system.
 
-Make sure you have installed the Linux Ubuntu server. To install PostgreSQL 10 in Ubuntu 18.04LTS one must follow the following steps. This must be done to both servers that is the Master Server and Slave Server.
+Make sure you have installed the Linux Ubuntu server. To install PostgreSQL 10 in Ubuntu 18.04 LTS one must follow the following steps. This must be done to both servers that is the Master Server and Slave Server.
 
 1. import PostgreSQL signing key by typing the following command in Terminal
 
-<br>
 ```
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O- | sudo apt-key add -
 ```
 
 2. Add PostgreSQL repository by typing the following command in terminal
 
-<br>
 ```
 echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | 
 sudo tee /etc/apt/sources.list.d/postgresql.list
@@ -41,7 +40,6 @@ sudo tee /etc/apt/sources.list.d/postgresql.list
 
 3. Update Repository Index typing the command below in terminal
 
-<br>
 ```
 sudo apt-get update
 ```
@@ -57,38 +55,37 @@ sudo apt-get install -y postgresql-10
 ```
 sudo passwd postgres
 ```
-<br>
-### Setting up Replication in Master  Server
-<br>
+
+### Setting up Replication in Master Server
+
 1. Login to the PostgreSQL database with the following command
 
-<br>
 ```
-Su - postgres
+su - postgres
 ```
 
 ![postgres-login](/How-to-Replicate-PostgreSQL-database/postgres-login.png)
 
 2. Create replication user with the following command
-<br>
+
 ```
  psql -c "CREATEUSER replication REPLICATION LOGIN CONNECTION LIMIT 1 ENCRYPTED PASSWORD'YOUR_PASSWORD';"
 ```
 
 3.  Edit pg_haba.cnf with any nano app in ubuntu and add the configuration
 
-file edit command
-<br>
+`file edit command`
+
 ```
 nano /etc/postgresql/10/main/pg_hba.conf
 ```
-<br>
+
 configuration
-<br>
+
 ```
 host  replication       replication   MasterIP/24   md5
 ```
-<br>
+
 ![postgres-login](/How-to-Replicate-PostgreSQL-database/pg_hba-edit.png)
 
 `MasterIP is the IP address of the Master Server Computer`
@@ -101,7 +98,7 @@ nano /etc/postgresql/10/main/postgresql.conf
 ```
 
 configuration
-<br>
+
 ```
 listen_addresses = 'localhost,MasterIP'
 
@@ -114,25 +111,24 @@ max_wal_senders = 10
 
 5. Restart PostgreSQL in Master main server
 
-<br>
 ```
 systemctl restart postgresql
 ```
 
-### Setting up Replication in Slave  Server
+### Setting up Replication in Slave Server
 
 1. Login to PostgreSQL RDMS with the command below
-<br>
+
 ```
 su - postgres
 ```
-<br>
+
 2. Stop postgresql service from working to enable us to work on it with the command below
-<br>
+
 ```
 systemctl stop postgresql
 ```
-<br>
+
 3. Edit pg\_hba.conf file with this command and add configuration
 
 edit command
@@ -142,23 +138,23 @@ nano /etc/postgresql/10/main/pg_hba.conf
 ```
 
 Configuration
-<br>
+
 ```
 host  replication       replication   MasterIP/24   md5
 ```
-<br>
+
 4. Open and
 Edit postgresql.conf<span style="mso-spacerun:yes">&nbsp;&nbsp;</span>in slave
 server and put the following configuration or uncomment if it is commented
 
 Edit command
-<br>
+
 ```
 nano /etc/postgresql/10/main/postgresql.conf
 ```
 
 Configuration
-<br>
+
 ```
 listen_addresses = 'localhost,SlaveIP'
 
@@ -174,11 +170,11 @@ max_wal_senders = 10
 `SlaveIP is the address of the Slave Server`
 
 5. Access PostgreSQL data directory in the Slave server and remove everything
-<br>
+
 ```
 cd /var/lib/postgresql/10/main
 ```
-<br>
+
 ```
 rm -rfv *
 ```
@@ -198,13 +194,13 @@ Enter Master Server postgres password and press Enter
 7. Need for recovery.conf file in data Directory to be created and add the following command
 
 Edit command
-<br>
+
 ```
 nano /var/lib/postgresql/10/main/recovery.conf
 ```
-<br>
+
 Configuration
-<br>
+
 ```
 standby_mode          = 'on'
 
@@ -216,11 +212,11 @@ trigger_file = '/tmp/MasterNow'
 `YOUR_PASSWORD is the password for replication user in Master server PostgreSQL created`
 
 8.  Start slave PostgreSQL since it had been stopped
-<br>
+
 ```
 systemctl start postgresql
 ```
-<br>
+
 9. Try creating any database or table in Master PostgreSQL database and observer in Slave PostgreSQL Database
 
 10. Done
