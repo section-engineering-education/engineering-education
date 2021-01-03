@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/lamp-stack/
 title: Understanding the LAMP Stack
-description: This article will go be a brief introduction to wireless mobile networking. We will discuss about the history of mobile network and telephone technology.  
+description: This article will go be a brief introduction to the LAMP Stack. Solution stacks are a combination of software or application programs used to form a computing platform intended to provide web applications the appropriate framework.
 author: kanishkvardhan-a-n
 date: 2021-01-03T00:00:00-13:00
 topics: []
