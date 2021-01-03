@@ -535,3 +535,6 @@ You can learn more about the Razorpay Dashboard and how to use it in [this artic
 Congratulations, :partying_face: You did it.
 
 Thanks for reading!
+
+---
+Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
