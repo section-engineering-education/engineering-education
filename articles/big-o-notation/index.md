@@ -248,3 +248,5 @@ We drop all constants when estimating the Big O notation in that we remain with 
 The code above therefore has **O(n<sup>2</sup>)** complexity.
 
 That's all for now. Hope you will consider the scalability of your algorithm next time you write one.
+
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
