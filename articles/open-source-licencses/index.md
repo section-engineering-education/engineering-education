@@ -6,7 +6,6 @@ However, there are scenarios where a small organization or a group of developers
 
 ### Table of contents
 
-
 1. How to license
 2. MIT license
 3. GNU General Public License(GPL)
@@ -19,7 +18,7 @@ However, there are scenarios where a small organization or a group of developers
 
 After going through this article, you will know which license would be the best fit for your use case. Whichever license you choose, you must include the license along with the source code. There are a couple of ways to ensure the license is included.
 
-1. Go to the link of the licencse page and find the license. Include a link to the license and mention that the work presented is licensed under the respective license.
+1. Go to the link of the license page and find the license. Include a link to the license and mention that the work presented is licensed under the respective license.
 2. The second way is to include the markdown version of the license in a file called LICENSE.md. GitHub recognizes this file and displays the type of license on the right panel of the repository page.
 
 ### MIT License
