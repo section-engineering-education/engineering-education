@@ -4,17 +4,19 @@ status: publish
 published: true
 url: /engineering-education/react-native-razorpay/
 title: React Native Razorpay Integration
-description: This tutorial provides readers with a detailed guide on how to implement Razorpay in React Native using Node.js and Express.
+description: This tutorial provides readers with a detailed guide on how to implement Razorpay in a React Native application with the help of a Express server.
 author: mohan-raj
 date: 2021-1-02T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/react-native-razorpay/hero.jpg
     alt: React Native and Razorpay
 ---
-In this tutorial, we will be building a React Native application to accept payments from users by integrating Razorpay in our application. We will also build a Node.js server to handle sensitive information and processes that should not be exposed or handled from the mobile application..
+In this tutorial, we will be building a React Native application to accept payments from users by integrating Razorpay in our application. We will also build a Node.js (Express) server to handle sensitive information and processes that should not be exposed or handled from the mobile application..
 <!--more-->
+
 ### Razorpay
 Founded in 2013, Razorpay is a payment gateway service. Razorpay enables you to access payment modes like credit and debit cards, UPI, and popular mobile wallets. These payment options can be implemented in your app.
 
@@ -479,11 +481,15 @@ RazorpayCheckout.open(options)
 ### STEP 4: Payment Capture
 When a user makes a payment, it usually flows through the following states:
 
-- Created
-- Authorized
-- Captured
-- Refunded
-- Failed
+- Created.
+
+- Authorized.
+
+- Captured.
+
+- Refunded.
+
+- Failed.
 
 The following state diagram depicts the payment states:
 
