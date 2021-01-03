@@ -59,7 +59,7 @@ We need to create a context object using the `createContext` method.
 const Context = createContext();
 ```
 
-Every context object comes with a Provider component. The Provider component accepts a `value` prop that will be passed to the consuming components. All the consuming components must be a descendant of the provider component.
+Every context object comes with a Provider component. All the components that consume the context must be a descendant of the provider component. The Provider component accepts a `value` prop that will be passed to the consuming components. 
 
 ```JSX
 <Context.Provider value={value}>
