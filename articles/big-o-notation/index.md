@@ -8,7 +8,7 @@ We all need a way to measure the performance (efficiency) of our algorithms as t
 The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.</br>
 
 The **space** used is determined by the number and sizes of variables together with the data structures being used while the **time** is determined by the elementary operations that must be performed during the algorithm execution.</br>
-That said, the **time to run** our algorithms is *highly dependent on the software and hardware environment they run in* eg:</br>
+That said, the **time to run** our algorithms is *highly dependent on the software and hardware environment they run in*. They are influenced by factors such as:</br>
 - **Read/Write Speed**
 - **Number of programs running**
 - **RAM size**
@@ -50,7 +50,7 @@ def first_element(array):
 The function `first_element()` takes an array passed in and prints the first element and does not consider how many elements are present in the array.
 Take a look at the graph representation below:
 
-![O-n-graph](/engineering-education/big-o-notation/o-1.png)
+![O-1-graph](/engineering-education/big-o-notation/o-1.png)
 
 *O(1) graph*</br>
 [Image Source](https://miro.medium.com/max/387/1*C--4xOJ1aDuUykTZ4z5UGg.png)
@@ -62,7 +62,7 @@ Example:
 
 ```python
 def show_array_elements(array):
-    for i in range (len(array)):   
+    for i in range(len(array)):   
         print(array[i]+"\n")
 ```
 
@@ -81,16 +81,16 @@ Example:
 def add_array_elements(array):  
 
     sum = 0  
-     for i in range (len(array)):      
+    for i in range(len(array)):      
         for j in range (len(array)):         
-         sum += array[i]+array[j] 
+            sum += array[i]+array[j] 
          
     return sum
 ```
 
 The code has two loops, the *outer*, and the *inner*. The outer loop iterates n times giving an element to the inner loop which again loops n times, per one loop of the outer array, adding the element given by the outer array and all the array elements.
 
-Taking a case where the array has 3 elements; the outer loop takes  3 operations in total to iterate over each element. For every 3 operations of the outer loop, the inner loop also takes 3 operations to iterate over each element. That is 3 × 3 operations amounting to 9.
+Taking a case where the array has 3 elements; the outer loop takes 3 operations in total to iterate over each element. For every 3 operations of the outer loop, the inner loop also takes 3 operations to iterate over each element. That is 3 × 3 operations amounting to 9.
 
 ![02](/engineering-education/big-o-notation/n-square.png)
 
@@ -105,15 +105,17 @@ Have a look at the code and graphical illustrations below:
 
 ```python
 def binary_search(array, query):
-  lower_bound = 0
-     upper_bound = len(array)-1
-     found_bool = False
- while (lower_bound <= upper_bound and found_bool == False):
- middle_value = (lower_bound + upper_bound) // 2
+    lower_bound = 0
+    upper_bound = len(array)-1
+    found_bool = False
+    while (lower_bound <= upper_bound and found_bool == False):
+
+        middle_value = (lower_bound + upper_bound) // 2
         
         if array[middle_value] == query:
            found_bool = True
            return found_bool
+
         elif query > array[middle_value]:
            lower_bound = middle_value + 1 
            
@@ -175,20 +177,16 @@ We will base our inferences based on the code below:
 ```python
 
 def linear_search(array, query):
-  lin_found_bool=False`
-    while(lin_found_bool == False):
 
-      for i in range (len(array)):
+    for i in range(len(array)):
         if array[i] == query:
-           lin_found_bool=True
-        else
-            lin_found_bool=False
-
+            return i
+    return -1
 
 def binary_search(array, value):
     lower_bound = 0
-   upper_bound = len(array)-1
-    found_bool = False`
+    upper_bound = len(array)-1
+    found_bool = False
     while (lower_bound <= upper_bound and found_bool == False):
 
         middle_value = (lower_bound + upper_bound) // 2
@@ -223,11 +221,12 @@ We will estimate the Big O of the code below (We are simply estimating its compl
 def array_arithmetic(array):
     
     value = 0  # O(1) complexity
-        for e in range (len(array)): # O(n) complexity
-    
-        for j in range (10): # O(10) complexity
+
+    for e in range(len(array)): # O(n) complexity
+
+        for j in range(10): # O(10) complexity
         
-            for k in range (len(array)//2): # O(n/2) complexity
+            for k in range(len(array)//2): # O(n/2) complexity
                 
                 value += array[e] + array[j] + array[k] # O(1) complexity
            
