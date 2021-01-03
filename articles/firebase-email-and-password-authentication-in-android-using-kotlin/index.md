@@ -1,6 +1,23 @@
-### Introduction
-[Firebase authentication](https://firebase.google.com/docs/auth) is a technology used to set up service-access permissions. It does so by creating and managing valid user accounts using firebase APIs and Firebase console provided by Google. In this tutorial, you'll learn how to implement firebase authentication in an android application.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/
+title: Firebase Email and Password Authentication in Android Using Kotlin.
+description: This article gives the user a guide on how to implement firebase authentication in an android application.
+author: eric-gacoki
+date: 2021-01-03T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/hero.png
+    alt: Firebase authentication in android
+---
+[Firebase authentication](https://firebase.google.com/docs/auth) is a technology used to set up service-access permissions. It does so by creating and managing valid user accounts using firebase APIs and Firebase console provided by Google. In this tutorial, you'll learn how to implement firebase authentication in an android application.
+<!--more-->
+
+### Introduction
 ### Prerequisites
 To follow through this tutorial you're required to have:
 
