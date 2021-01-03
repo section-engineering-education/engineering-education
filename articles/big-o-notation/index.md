@@ -1,11 +1,21 @@
-### Understanding the Big O notation
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/big-o-notation/
+title: Understanding the Big O Notation
+description: This article will be an overview on time and space complexities and how the Big O notation is a standard measure of complexity.
+author: terrence-aluda
+date: 2020-01-03T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![Hero Image](/engineering-education/big-o-notation/hero.png)
-
-[Image Source](https://res.cloudinary.com/practicaldev/image/fetch/s--S9kD7Tvi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/0x6qo2na9bk35zy3dwcn.png)
-
-We all need a way to measure the performance (efficiency) of our algorithms as they scale up.</br>
-The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.</br>
+  - url: /engineering-education/big-o-notation/hero.jpg
+    alt: Big O Image
+---
+We all need a way to measure the performance (efficiency) of our algorithms as they scale up. The analysis of the efficiency is performed by considering the number of resources, in this case, **time** and **space**, an algorithm consumes as a function of the **size of the inputs** of the algorithm.
+<!--more-->
 
 The **space** used is determined by the number and sizes of variables together with the data structures being used while the **time** is determined by the elementary operations that must be performed during the algorithm execution.</br>
 That said, the **time to run** our algorithms is *highly dependent on the software and hardware environment they run in*. They are influenced by factors such as:</br>
@@ -16,10 +26,7 @@ That said, the **time to run** our algorithms is *highly dependent on the softwa
 - **Machine configuration**
 - **Compilers or libraries being used**
 
-
-
-We therefore need a methodology that is **independent** of the software and hardware environment which takes into account all possible inputs.</br>
-
+We therefore need a methodology that is **independent** of the software and hardware environment which takes into account all possible inputs.
 
 This is done by a *high-level* description of the algorithm by associating each algorithm with a function **f(n)** that characterizes the running time of the algorithm in terms of the input size **n**.
 Given functions **f(n)** and **g(n)**, we do say that *f(n) is Big O of g(n)* being written as:
