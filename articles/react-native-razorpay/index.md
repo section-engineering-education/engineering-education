@@ -1,14 +1,29 @@
-In this tutorial, we will be building a React Native application to accept payments from users by integrating Razorpay in our application. We will also build a Node.js server to handle sensitive information and processes that shouldn't be exposed or handled from the mobile application.
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/react-native-razorpay/
+title: React Native Razorpay Integration
+description: This tutorial provides readers with a detailed guide on how to implement Razorpay in React Native using Node.js and Express.
+author: mohan-raj
+date: 2021-1-02T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/react-native-razorpay/hero.jpg
+    alt: React Native and Razorpay
+---
+In this tutorial, we will be building a React Native application to accept payments from users by integrating Razorpay in our application. We will also build a Node.js server to handle sensitive information and processes that should not be exposed or handled from the mobile application..
+<!--more-->
 ### Razorpay
-Founded in 2013, Razorpay is a payment gateway service. With Razorpay, you have access to payment modes like credit and debit cards, UPI, and popular mobile wallets to include it in your app.
+Founded in 2013, Razorpay is a payment gateway service. Razorpay enables you to access payment modes like credit and debit cards, UPI, and popular mobile wallets. These payment options can be implemented in your app.
 
-If you are building an application targeting an Indian audience that requires a payment gateway, Razorpay is the most popular choice.
+Therefore, if you are building an application that targets an Indian audience and requires a payment gateway, Razorpay is the preferred choice.
 
 If you'd like to learn more about Razorpay, read [this blog post](https://razorpay.com/blog/best-payment-gateway-india/).
 
 ### Goals
-By the end of this tutorial, you’ll know:
+By the end of this tutorial, you'll know:
 
 - The steps required to initiate and complete a Razorpay transaction.
 
@@ -19,9 +34,9 @@ By the end of this tutorial, you’ll know:
 - How to verify Razorpay payments.
 
 ### Prerequisites
-In this tutorial, we'll be working on the application and the server. The application will be built using React Native and the server will be built using Node.js and Express.
+In this tutorial, we'll be working on the application and the server. The application will be built using `React Native`, and the server will be built using `Node.js` and `Express`.
 
-So, if you are not comfortable with the fundamentals of these technologies, refer to these articles below before proceeding with this project.
+If you are not comfortable with these technologies, refer to these articles below before proceeding with this project.
 
 - [React Native Tutorial](https://reactnative.dev/docs/tutorial).
 - [Node.js & Express Tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150).
@@ -45,23 +60,23 @@ We'll be going through these steps in this article:
 10. Recap.
 
 ### Creating a Razorpay account
-Head to Razorpay and create an account. You can reach the signup page from [here](https://dashboard.razorpay.com/signup?captcha=invisible).
+Head to the Razorpay website and create an account. You can reach the signup page from [here](https://dashboard.razorpay.com/signup?captcha=invisible).
 
 Once you've signed up with all the necessary information, you'll see the dashboard.
 
-![Razorpay Dashboard](razorpay_dashboard.png)
+![Razorpay Dashboard](/engineering-education/react-native-razorpay/razorpay_dashboard.png)
 
 Scroll down the navigation bar and select Settings.
 
-In the Settings tab, you'll see a section called API keys. Enter that section and click on the Generate Test Key button.
+In the Settings tab, you'll see a section called API keys. Enter that section and click on the Generate `Test Key` button.
 
-![Razorpay API Keys](razorpay_apikeys.png)
+![Razorpay API Keys](/engineering-education/react-native-razorpay/razorpay_apikeys.png)
 
 The website will display a modal with the Test API Key and a Secret Key. We'll need the keys in our app and our server.
 
 > The secret key will be displayed only once this time and you won't be able to find it again, so make a copy of it now. The Test API Key and the Secret key must be kept safe.
 
-![API Keys Modal](razorpay_newkey.png)
+![API Keys Modal](/engineering-education/react-native-razorpay/razorpay_newkey.png)
 
 ### Development environment
 > **IMPORTANT** - We will not be using Expo in our project. This is because the Razorpay checkout is a wrapper around native SDK, so it doesn't work with Expo which doesn't support native modules.
@@ -75,16 +90,16 @@ To focus more on the Razorpay Transactions, I've prepared a starter code. You ca
 
 If you'd like to take a look at the final code, please refer to [this GitHub Repository](https://github.com/zolomohan/rn-razorpay-section-io-final).
 
-In the starter code, I've set up a checkout screen that will fetch random products from [fakestoreapi.com](https://fakestoreapi.com/).
+I've set up a checkout screen in the starter code that will fetch random products from [fakestoreapi.com](https://fakestoreapi.com/).
 
 Checkout Screen:
 
-![Starter Page](starter_page.jpeg)
+![Starter Page](/engineering-education/react-native-razorpay/starter_page.jpeg)
 
 ### Installing dependencies
-You can install these in advance or while going through the article.
+You can install these dependencies in advance or while going through the article.
 
-```json
+```JSON
 "axios": "^0.21.0",
 "react": "16.13.1",
 "react-native": "0.63.4",
@@ -98,14 +113,13 @@ npm i --save <package-name>
 ```
 
 After installing the packages, for iOS, go into your `ios/` directory, and run:
-
 ```bash
 pod install
 ```
 
 > **IMPORTANT FOR ANDROID**
 >
-> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while attempting to build your Android application.
+> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while building your Android application.
 >
 > `Execution failed for task ':app:mergeDexDebug'.`
 >
@@ -113,7 +127,7 @@ pod install
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Razorpay Payment Process
-There are 4 steps in the Razorpay payment process.
+There are four steps in the Razorpay payment process.
 
 1. Creating an order.
 2. Checkout.
@@ -122,7 +136,7 @@ There are 4 steps in the Razorpay payment process.
 
 Here is a diagram to represent the payment flow.
 
-![Razporpay Payment Flow Sequence Diagram](razorpay_payment_flow.png)
+![Razorpay Payment Flow Sequence Diagram](/engineering-education/react-native-razorpay/razorpay_payment_flow.png)
 
 _Image Source: Razorpay official documentation_
 
@@ -147,9 +161,9 @@ Let's install `Express` using `NPM`.
 npm install express
 ```
 
-Now, we can import `express` in our code to create a simple server module that'll listen on port 3000.
+We can now import `express` in our code to create a simple server module that'll listen on port 3000.
 
-```JavaScript
+```javascript
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -166,9 +180,9 @@ You can start the server by running:
 node index.js
 ```
 
-This server will be listening on port 3000 and when you hit the `'/'` endpoint, it'll send `"Razorpay Server"`.
+This server will be listening on port 3000, and when you hit the `'/'` endpoint, it'll send `"Razorpay Server"`.
 
-Now that we have the server setup, let's install the `razorpay` package.
+Now that we have the server setup let's install the `razorpay` package.
 
 ```bash
 npm install razorpay
@@ -180,7 +194,7 @@ Let's import `razorpay` into our code.
 const Razorpay = require("razorpay");
 ```
 
-Now that we have imported the package, Let's create an instance of `Razorpay`. To initialize the instance, we need the API key and the Secret Key. It is not a good idea to leave the keys in the code, so you can set environment variables and use them in the code.
+After importing the package, the next step is to create an instance of `Razorpay`. To initialize the instance, we need the API key and the Secret Key. It is not a good idea to leave the keys in the code. A perfect option is to set environment variables and use them in the code.
 
 If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
@@ -191,7 +205,7 @@ const razorpay = new Razorpay({
 });
 ```
 
-Let's add a POST request handler for a new endpoint called `'/createOrder'` to create an order and return the created order as the response.
+Let's add a POST request handler for a new endpoint called "/createOrder" to create an order and return the created order as the response.
 
 ```JavaScript
 app.post("/createOrder", (req, res) => {
@@ -207,9 +221,7 @@ The `razorpay` package provides a function to create an order. The amount and cu
 
 You can learn more about the create order API [here](https://razorpay.com/docs/api/orders/#create-an-order).
 
-Let's write the code to create an order.
-
-> Creating an order returns
+>Let's write the code to create an order.
 
 ```JavaScript
 app.post("/createOrder", async (req, res) => {
@@ -225,7 +237,7 @@ Let's run this as a local server and test it with Postman.
 
 Request Body:
 
-```json
+```JSON
 {
   "amount": 50000,
   "currency": "INR"
@@ -234,7 +246,7 @@ Request Body:
 
 Response:
 
-```json
+```JSON
 {
   "id": "order_G99PhGAo41rsFB",
   "entity": "order",
@@ -251,12 +263,12 @@ Response:
 }
 ```
 
-![Create Order Request](create_order_request.png)
+![Create Order Request](/engineering-education/react-native-razorpay/create_order_request.png)
 
 Now, deploy this server so that we can create an order from our app.
 
 #### Client Side
-From our app, we need to request our server's `/createOrder` endpoint to create a Razorpay order.
+We need to request our server's `/createOrder` endpoint to create a Razorpay order from our app.
 
 Let's write a function to request our server's endpoint. I'm using Axios to make requests from the app.
 
@@ -289,7 +301,7 @@ const onPay = async () => {
 };
 ```
 
-This will create an order, and we'll have the order ID. We need to pass this order ID to the checkout component in the next step and we'll also need this to verify the transaction (If the transaction in the next step is successful).
+This will create an order, and we'll have the order ID. We need to pass this order ID to the checkout component in the next step, and we'll also need this to verify the transaction (If the transaction in the next step is successful).
 
 ### Step 2: Checkout
 Let's install `react-native-razorpay` in our app.
@@ -346,7 +358,7 @@ Add the following lines in the `dependencies` section of your `app/build.gradle`
 implementation project(':react-native-razorpay')
 ```
 
-> > The minimum target SDK for the React Native Razorpay is 19. If your project targets an SDK below 19, bump up the minSDK target in `android/build.gradle`.
+> The minimum target SDK for the React Native Razorpay is 19. If your project targets an SDK below 19, bump up the minSDK target in `android/build.gradle`.
 
 Let's import RazorpayCheckout in `App.js`.
 
@@ -354,17 +366,17 @@ Let's import RazorpayCheckout in `App.js`.
 import RazorpayCheckout from 'react-native-razorpay';
 ```
 
-Now, we need to call the `RazorpayCheckout.open` method with the payment `options`. This method returns a JS Promise.
+Next, we need to call the `RazorpayCheckout.open` method with the payment `options`. This method returns a JS Promise.
 
-In the options, we need to pass the API Key, the Order ID, product details, and the theme color of the UI. We can also pass user information to prefill the form.
+In the options, we need to pass the API Key, the Order ID, product details, and the UI's theme color. We can also pass user information to prefill the form.
 
-Create a new file called `config.js` and add your API key to it like:
+Create a new file called `config.js` and add your API key to it, as shown below.
 
 ```JavaScript
 export const RazorpayApiKey = "<-- Your API Key here -->"
 ```
 
-> Do not forget to add `config.js` to `.gitignore` you are using a git repository.
+> Do not forget to add `config.js` to `.gitignore` if you are using a git repository.
 
 ```JavaScript
 import { RazorpayApiKey } from './config';
@@ -394,26 +406,26 @@ RazorpayCheckout.open(options)
 
 This will open the checkout form for the transaction with all the available payment methods.
 
-![Checkout Form](checkout_form.jpeg)
+![Checkout Form](/engineering-education/react-native-razorpay/checkout_form.jpeg)
 
 You can learn about the test card details [here](https://razorpay.com/docs/payment-gateway/test-card-details/).
 
 When you are working on test mode, you'll see an additional screen that'll let you simulate a successful and failed transaction.
 
-![Test Page](test_page.jpeg)
+![Test Page](/engineering-education/react-native-razorpay/test_page.jpeg)
 
 When the transaction is successful, the transaction details are passed to the `.then()`. We need to verify the payment using the transaction details.
 
 ### STEP 3: Verify Transaction
-This step allows you to confirm the authenticity of the details returned from the checkout form for successful payments.
+This step allows you to check the authenticity of the details returned from the checkout form for successful payments.
 
 #### Server Side
 We will add a new endpoint called `/verifyPayment` to verify the transaction on the server.
 
-Let's add a POST request handler for a new endpoint called `'/verifyPayment'`.
+Let's add a POST request handler for a new endpoint called "/verifyPayment".
 
 ```JavaScript
-app.post("/verifyPayment", (req, res) => {
+app.post('/verifyPayment', (req, res) => {
   // Verify Payment
 });
 ```
@@ -462,7 +474,7 @@ RazorpayCheckout.open(options)
   .catch(console.log);
 ```
 
-![Alert Modal](alert_modal.jpeg)
+![Alert Modal](/engineering-education/react-native-razorpay/alert_modal.jpeg)
 
 ### STEP 4: Payment Capture
 When a user makes a payment, it usually flows through the following states:
@@ -475,7 +487,7 @@ When a user makes a payment, it usually flows through the following states:
 
 The following state diagram depicts the payment states:
 
-![Payment State](payment_states.png)
+![Payment State](/engineering-education/react-native-razorpay/payment_states.png)
 
 _Image Source: Razorpay official documentation_
 
@@ -486,7 +498,7 @@ You can learn more about Payment Capture [here](https://razorpay.com/docs/paymen
 ### Payments Log
 You can check the received payments in the Razorpay dashboard.
 
-![Razorpay Payments Dashboard](razorpay_payments.png)
+![Razorpay Payments Dashboard](/engineering-education/react-native-razorpay/razorpay_payments.png)
 
 You can learn more about the Razorpay Dashboard and how to use it in [this article](https://razorpay.com/blog/how-to-use-razorpay-dashboard/).
 
