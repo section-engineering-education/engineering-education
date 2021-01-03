@@ -211,7 +211,7 @@ trigger_file = '/tmp/MasterNow'
 
 `YOUR_PASSWORD is the password for replication user in Master server PostgreSQL created`
 
-8.  Start slave PostgreSQL since it had been stopped
+8. Start slave PostgreSQL since it had been stopped
 
 ```
 systemctl start postgresql
