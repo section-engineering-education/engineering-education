@@ -47,7 +47,7 @@ There are many notations of the Big O but here we are going to discuss a few of 
 
 In the article, we will also estimate the Big O of a sample algorithm.
 
-*In the code examples, we will Python for illustrations but you can rewrite them using a language of your choice.*
+*In the code examples, we will use Python for illustrations but you can rewrite them using a language of your choice.*
 ### 1. O(1) Constant Runtime complexity
 This means that the algorithm does a fixed number of operations no matter the number of inputs. Let's look at the code snippet below:
 ```python
