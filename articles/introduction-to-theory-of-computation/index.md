@@ -20,12 +20,12 @@ Real-world computers perform computations that by nature run like mathematical m
 
 ### Overview
 This article will cover:
-- [Key considerations of computational problems](#Key-considerations-of-computational-problems)
-- [The importance of Theory of computation](#Importance-of-Theory-of-computation)
-- [Automata Theory](#Automata-Theory)
-- [Computability Theory](#Computability-Theory)
-- [Complexity Theory](#Complexity-Theory)
-- [Conclusion](#Conclusion)
+- [Key considerations of computational problems](#key-considerations-of-computational-problems)
+- [The importance of Theory of computation](#importance-of-theory-of-computation)
+- [Automata Theory](#automata-theory)
+- [Computability Theory](#computability-theory)
+- [Complexity Theory](#complexity-theory)
+- [Conclusion](#conclusion)
 
 ### Key considerations of computational problems
 - What can and cannot be computed.
