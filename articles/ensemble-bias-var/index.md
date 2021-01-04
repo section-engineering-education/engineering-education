@@ -73,7 +73,7 @@ Let’s demonstrate how bagging reduces variance with a simple equation:
 
 • Assume we are measuring a random variable (x), with a normal distribution, which is denoted as N(µ,σ^2). µ is the mean of the distribution. It could also represent its median or mode. The parameter σ is the standard deviation.
 
-• Say we carry out only one measurement of the mean and variance of variable x. The mean we expect for variable x1 is µ. On the other hand, the variance of the distribution will be σ^2.
+• Say we carry out only one measurement of the mean and variance of variable x. The mean we expect for variable x1 is µ. On the other hand, the variance of the distribution will be the square of σ.
 
 • Suppose we measure our random variable (x), P times (x1, x2…… xp). That is, measurement in the form of (x1, x2…… xp)/P. The mean will still be µ. However, as per the equation below, the variance will be smaller.
 
