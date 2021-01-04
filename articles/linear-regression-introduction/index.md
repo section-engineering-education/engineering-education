@@ -69,25 +69,25 @@ This can be solved using many methods, and the solution is computed. Some of the
 
 ### Code
 
-We will code the second approach in this article, since it is a one shot solution. In this article, we will define the class `LinearRegression`. The iterative approach requires further understanding of gradient descent and we will cover the same in the upcoming articles. 
+We will code the second approach in this article since it is a one-shot solution. In this article, we will define the class `LinearRegression.` The iterative approach requires further understanding of gradient descent, and we will cover the same in the upcoming articles. 
 
 You can run the code [here](https://repl.it/@lalithNarayan/ThoseSlimWatchdog):
 ```py
 
 class LinearRegression():
-	def __init__(self):
-		self.bias = None
-		self.weights = None
-				
-	def fit(self,X,y):
-		self.weights = np.dot(np.linalg.inv(np.dot(X.T, X)), np.dot( X.T, y ))
-		self.bias = y.mean() - np.sum(self.weights * X.mean(axis=0))
-	
-	def predict(self,X):
-		return np.dot(X, self.weights )+ self.bias
-	
-	def score(self,X,y):
-		return 1-(np.sum(((y-self.predict(X))**2))/np.sum((y-np.mean(y))**2))
+    def __init__(self):
+        self.bias = None
+        self.weights = None
+                
+    def fit(self,X,y):
+        self.weights = np.dot(np.linalg.inv(np.dot(X.T, X)), np.dot( X.T, y ))
+        self.bias = y.mean() - np.sum(self.weights * X.mean(axis=0))
+    
+    def predict(self,X):
+        return np.dot(X, self.weights )+ self.bias
+    
+    def score(self,X,y):
+        return 1-(np.sum(((y-self.predict(X))**2))/np.sum((y-np.mean(y))**2))
 ```
 
 ### Output
