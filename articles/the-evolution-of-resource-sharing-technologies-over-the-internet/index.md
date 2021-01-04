@@ -2,9 +2,9 @@
 
 With the growth of the internet and the web, there has always been a need for resource sharing and collaboration. We could work more effectively through collaborating with others. This often involved the sharing or interaction of various software products. There was a need for distributed computing. However, one of the biggest challenges of distributed computing was how to get software components located in different geographic locations to interact in a standardized way. Several technologies were created to try and meet this need.
 
-### 1. [CORBA OMG](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture)
+### 1. CORBA OMG
 
-CORBA, which stands for the Common Object Request Broker Architecture (CORBA), is a standard defined by the Object Management Group (OMG). It is a distributed object which provides an interchange that enables collaboration between systems on different operating systems, programming languages, and computing hardware. It uses an object-oriented model, although the systems that use the CORBA do not have to be object-oriented. The object request broker (ORB) allows clients to call methods from a remote object. In simple terms, it helps objects make a request to and get responses from one another, whether on the same machine or across the network. This was made possible using the CORBA Interface Definition Language (IDL).
+[CORBA](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture), which stands for the Common Object Request Broker Architecture (CORBA), is a standard defined by the Object Management Group (OMG). It is a distributed object which provides an interchange that enables collaboration between systems on different operating systems, programming languages, and computing hardware. It uses an object-oriented model, although the systems that use the CORBA do not have to be object-oriented. The object request broker (ORB) allows clients to call methods from a remote object. In simple terms, it helps objects make a request to and get responses from one another, whether on the same machine or across the network. This was made possible using the CORBA Interface Definition Language (IDL).
 
 While the CORBA standard was very promising, several issues were encountered. The biggest of which was the poor implementation of the standard. Also, there was quite a bit of politics brought about by competing vendors, who tried to steer the standard in a particular direction. The standard was also a bit too complex.
 
@@ -13,17 +13,17 @@ CORBA was built with the aim of:
  - It is currently used in Object-oriented programming
  - Allowing multiple programming languages to communicate with each other
 
-### 2. [DCOM](https://en.wikipedia.org/wiki/Distributed_Component_Object_Model)
+### 2. DCOM
 
-Stands for Distributed Component Object Model. It is a proprietary Microsoft technology for communication between software components on networked computers. DCOM was a major competitor to CORBA. These technologies saw them as one day becoming the model for code and service-reuse over the internet. Being based on the Component Object Model (COM) allowed clients and servers to communicate in the same computer through a set of interfaces. However, both these technologies (DCOM and CORBA) faced crippling difficulties when working with internet firewalls.
+Stands for [Distributed Component Object Model](https://en.wikipedia.org/wiki/Distributed_Component_Object_Model). It is a proprietary Microsoft technology for communication between software components on networked computers. DCOM was a major competitor to CORBA. These technologies saw them as one day becoming the model for code and service-reuse over the internet. Being based on the Component Object Model (COM) allowed clients and servers to communicate in the same computer through a set of interfaces. However, both these technologies (DCOM and CORBA) faced crippling difficulties when working with internet firewalls.
 
-### 3. [Java RMI](https://www.javatpoint.com/RMI)
+### 3. Java RMI
 
-RMI stands for Remote Method Invocation. It is an API that provides a mechanism to create distributed applications in java. The RMI allows a java object to invoke methods on remote java objects running in different [JVMs](https://www.guru99.com/java-virtual-machine-jvm.html) (Java Virtual Machines). RMI's design was later enhanced to accommodate CORBA. This now meant that Java objects could interact with remote non-Java objects.
+RMI stands for [Remote Method Invocation](https://www.javatpoint.com/RMI). It is an API that provides a mechanism to create distributed applications in java. The RMI allows a java object to invoke methods on remote java objects running in different [JVMs](https://www.guru99.com/java-virtual-machine-jvm.html) (Java Virtual Machines). RMI's design was later enhanced to accommodate CORBA. This now meant that Java objects could interact with remote non-Java objects.
 
-### 4. [Web Services](https://en.wikipedia.org/wiki/Web_service)
+### 4. Web Services
 
-A web service is a standards-based, language-agnostic software entity that accepts specially formatted requests from other software entities on remote machines via vendor and transports neutral communication protocols, producing application-specific responses. Simply put, a web service is an API that facilitates standards-based application-to-application communication. Unlike CORBA, DCOM, or RMI, which rely on binary messaging, it is harder to play well with many internet technologies - web services use human-readable messaging. This is the key advantage web services have over the preceding technologies. There are two types of web services commonly used, namely SOAP and REST web services.
+A [web service](https://en.wikipedia.org/wiki/Web_service) is a standards-based, language-agnostic software entity that accepts specially formatted requests from other software entities on remote machines via vendor and transports neutral communication protocols, producing application-specific responses. Simply put, a web service is an API that facilitates standards-based application-to-application communication. Unlike CORBA, DCOM, or RMI, which rely on binary messaging, it is harder to play well with many internet technologies - web services use human-readable messaging. This is the key advantage web services have over the preceding technologies. There are two types of web services commonly used, namely SOAP and REST web services.
 
  * **SOAP Web Services**
 
@@ -44,5 +44,10 @@ A web service is a standards-based, language-agnostic software entity that accep
     3. **Statelessness** - There should not be any server-side sessions. A single request should contain all the information the server needs to know.
     4. **Cacheable resources** - Server responses should contain information about whether the data they send is cacheable or not.
     5. **Layered System** - There might be several layers of servers between the client and the server that returns the response. This should not affect either the request or the response.
+
+### Conclusion
+
+In this article we discuss the different methods that have been implemented over the years to enable resources sharing over the internet. From this we can take away that the technologies change over time depending on the data transferred and its current application. The future could hold far better resource sharing technologies than what we currently have.
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
