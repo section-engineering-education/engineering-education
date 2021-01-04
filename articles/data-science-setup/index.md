@@ -107,12 +107,11 @@ conda install PyTorch torchvision torchaudio cudatoolkit=10.2 -c PyTorch
 ### Advantage of using conda 
 
 - The installation that we finished using conda would have taken around 2-3 hours to complete if done correctly. A beginner would take days to figure out the installation instructions and might end up giving up. This approach ensures we get the same results with minimal effort. 
--  Moreover, the creation of virtual environments allows one to isolate compatibility issues.
+- Moreover, the creation of virtual environments allows one to isolate compatibility issues.
 
 _Note:_ Creating virtual environments eats up a lot of space in the hard disk. Therefore, one must be thoughtful of the environments being created. To check for all the environments present, use the following command:
 
 `conda env list` 
-
 
 ### Conclusion
 
