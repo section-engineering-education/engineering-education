@@ -29,7 +29,7 @@ We'll be going through these steps in this article:
 
 > **IMPORTANT** - We will not be using Expo in our project.
 
-You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the environment and create a new React app.
+You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
 
 > Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
@@ -49,11 +49,11 @@ Now, click on the Android icon to add an android app to the Firebase project.
 
 ![register_app](register_app.png)
 
-You will need the package name to register the application. You will find the package name in the `AndroidManifest` which is located in `android/app/src/main/AndroidManifest.xml`.
+You will need the package name of the application to register the application. You will find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
 ![Package Name](package_name.png)
 
-Once you enter the package name and proceed to next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
+Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
 ![Download Google Services JSON](download_services.json.png)
 
@@ -80,13 +80,19 @@ apply plugin: 'com.google.gms.google-services'
 
 You need to perform some additional steps to configure `Firebase` for `iOS`. Follow [this documentation](https://rnfirebase.io/#3-ios-setup) to set it up.
 
+We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
+
+```bash
+npm install @react-native-firebase/app
+```
+
 ### Set up Firebase Storage
 
 Head over to the Storage section in the dashboard and click on `Get Started` button.
 
 ![Get Started Storage](enable_storage.png)
 
-A modal will pop-up with information about the storage rules. By default, only authenticated users can read and write from the cloud storage. Since we are not going to cover authenctication in this tutorial, we will change the rules and set the cloud storage to open.
+A modal will pop up with information about the storage rules. By default, only authenticated users can read and write from the cloud storage. Since we are not going to cover authenctication in this tutorial, we will change the rules and set the cloud storage to open.
 
 > Do not set your cloud storage open in a production application. This will allow anyone to read and write to your cloud storage, compromising all the data in your cloud storage.
 
@@ -100,7 +106,7 @@ Once this is done, you'll see this screen. You can upload files and delete files
 
 ![Storage Setup Done](storage_setup_done.png)
 
-Now, Let's alter the cloud storage rules and set it to open. Switch to the `Rules` tab.
+Now, Let's edit the cloud storage rules and set it to open. Switch to the `Rules` tab.
 
 ![Storage Rules Tab](storage_default_rules.png)
 
@@ -225,17 +231,17 @@ Let's install `react-native-image-picker` to add these functionalities.
 npm install react-native-image-picker
 ```
 
-After the package is installed, import the import `launchCamera` and `launchImageLibrary` funtions from the package.
+After the package is installed, import the `launchCamera` and `launchImageLibrary` functions from the package.
 
 ```JSX
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 ```
 
-Both of these functions accept 2 arguments. The first argument is `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called if the user picks a media or cancels the operation.
+Both functions accept 2 arguments. The first argument is `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called when the user picks a media or cancels the operation.
 
 Check out the [API Reference](https://www.npmjs.com/package/react-native-image-picker#api-reference) for more details about these functions.
 
-Now let's add 4 functions for each button.
+Now let's add 4 functions, one for each button.
 
 ```JSX
 const onTakePhoto = () => launchCamera({ mediaType: 'image' }, onMediaSelect);
@@ -249,7 +255,9 @@ const onSelectVideoPress = () =>
   launchImageLibrary({ mediaType: 'video' }, onMediaSelect);
 ```
 
-Now, pass these function to the `onPressed` prop of the `TouchableOpacity` for the respective buttons.
+> onMediaSelect is the callback function which we will write in the next step.
+
+Now, pass these function to the `onPress` prop of the `TouchableOpacity` for the respective buttons.
 
 For example:
 
@@ -269,7 +277,7 @@ Let's install the package for Firebase storage.
 npm install @react-native-firebase/storage
 ```
 
-Once the package is installed, let's import the package to our app.
+Once the package is installed, let's import the package.
 
 ```JSX
 import storage from '@react-native-firebase/storage';
@@ -277,7 +285,7 @@ import storage from '@react-native-firebase/storage';
 
 To upload a file to the cloud storage, we should create a reference object.
 
-A reference is a pointer to a file on your bucket. This file can either exist already, or it may not exist yet.
+A reference is a pointer to a file in your bucket. This file can either exist already, or it may not exist yet.
 
 We need to use the `ref` method to create a refernce.
 
@@ -285,15 +293,15 @@ We need to use the `ref` method to create a refernce.
 const reference = storage().ref('<filename>');
 ```
 
-You can also specify a file located in a deeply nested directory:
+You can also specify a file located in a nested directory:
 
 ```JSX
 const reference = storage().ref('/directory1/directory2/filename.png');
 ```
 
-Now, we should use the `putFile` method to upload the image from the user's device to the cloud storage. The `putFile` method accepts a string to file on the users device.
+Now, we should use the `putFile` method to upload the image from the users device to the cloud storage. The `putFile` method accepts a path to the file on the users device.
 
-The callback function that we passed to `launchCamera` and the `launchImageLibrary` functions will get the `uri` of the image in the response object. We need to pass that string to the `putFile` method.
+The callback function that we passed to `launchCamera` and the `launchImageLibrary` functions will get the `uri` of the image in the response object. We need to pass the `uri` to the `putFile` method.
 
 You can learn more about the response object that we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
 
@@ -306,7 +314,9 @@ const onMediaSelect = async (media) => {
 
 ### Get Download URL
 
-The `putFile` method returns a [Task](https://rnfirebase.io/reference/storage/task) object. We can add a `.then()` to it which will get called when the upload is completed. If not, the `.catch()` will be called.
+The `putFile` method returns a [Task](https://rnfirebase.io/reference/storage/task) object.
+
+We can add a `.then()` to it which will get called when the upload is completed. If not, the `.catch()` will be called.
 
 ```JSX
 const onMediaSelect = async (media) => {
@@ -322,7 +332,7 @@ We can get the download URL using the refernece to the storage location.
 
 ```JSX
 task.then(async () => {
-  const downloadURL = reference.getDownloadURL();
+  const downloadURL = await reference.getDownloadURL();
 });
 ```
 
@@ -365,7 +375,7 @@ mediaButton: {
 },
 ```
 
-We need to use the `Linking` module from `react-native` to open the link. Let's import it.
+We need to use the `Linking` module from `react-native` to open the link in the phone's browser. Let's import it.
 
 ```JSX
 import { Linking } from 'react-native';
@@ -381,7 +391,7 @@ To open the link, we should use the `openURL` method. Let's pass an annonymous f
 </TouchableOpacity>
 ```
 
-Now, the button should open the media we uploaded on the phone's browser.
+Now, the button should open the media that we uploaded, on the phone's browser.
 
 ### Upload Progress
 
@@ -397,7 +407,7 @@ The callback function that we pass will recieve a [`TaskSnapshot`](https://rnfir
 
 We can use this information to display the upload progress.
 
-Let's create a state 2 states in the application: One to mainitain whether the file is getting uploaded and the other to track the status of the upload.
+Let's create 2 states in the application: One to mainitain whether the file is getting uploaded and the other for the `TaskSnapshot` object.
 
 ```JSX
 const [uploading, setUploading] = useState(false);
@@ -412,7 +422,7 @@ const onMediaSelect = async (media) => {
   const reference = storage().ref(media.fileName);
 ```
 
-Now, we need to set the uploading status on the `state_changed` event handler.
+Now, we need to set the `TaskSnapshot` object on the `state_changed` event handler.
 
 ```JSX
 task.on('state_changed', (taskSnapshot) => {
@@ -424,12 +434,14 @@ Let's display the progress in the UI using these states along with a activity in
 
 ```JSX
 import { ActivityIndicator } from 'react-native';
+```
 
+```JSX
 {uploading && (
   <View style={styles.uploading}>
     <ActivityIndicator size={60} color="#47477b"></ActivityIndicator>
-    <Text style={styles.uploadingText}>Uploading</Text>
-    <Text style={styles.uploadingText}>
+    <Text style={styles.statusText}>Uploading</Text>
+    <Text style={styles.statusText}>
       {`${((uploadTaskSnapshot.bytesTransferred / uploadTaskSnapshot.totalBytes) * 100).toFixed(2)}% / 100%`}
     </Text>
   </View>
@@ -451,7 +463,7 @@ uploading: {
   justifyContent: 'center',
   alignItems: 'center',
 },
-uploadingText: {
+statusText: {
   marginTop: 20,
   fontSize: 20,
 },
@@ -482,7 +494,7 @@ Let's add a button to Pause/Resume the upload when a file is being uploded.
 )}
 ```
 
-Let's update the status text and the hide the activity indicator if the upload is paused.
+Let's update the status text and hide the activity indicator if the upload is paused.
 
 ```JSX
 {!paused && <ActivityIndicator size={60} color="#47477b"></ActivityIndicator>}
@@ -491,7 +503,7 @@ Let's update the status text and the hide the activity indicator if the upload i
 </Text>
 ```
 
-To pause/resume the upload, we need to use the `Task` object. It has 2 methods: `pause` and `resume`. Since the task object is inside the `onMediaSelect` function, let's set up a state outside and assign the Task object to that state when it's created.
+To pause/resume the upload, we need to use the `Task` object. It has 2 methods: `pause` and `resume`. Since the task object is inside the `onMediaSelect` function, let's set up a state outside and assign the `Task` object to that state when it's created.
 
 ```JSX
 const [uploadTask, setUploadTask] = useState();
@@ -535,4 +547,4 @@ Pass this function to the `onPress` pass of the pause button.
 9. We uploaded our file to that location which was being pointed by the refernce we created.
 10. We got the download URL from the refernce and added a button to open it in the phone's browser.
 11. We added a event handler for the `state_changed` event during upload and used the `TaskSnapshot` object to get the upload progress.
-12. We added functionality to pause/resume the upload.
+12. We added a button to pause/resume the upload.
