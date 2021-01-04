@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/google-sheet-advanced-features/
 title: Leveraging Advanced Features in Google Sheets
-description: This guide to Google Search Console will teach you how to add a site (called a property), submit a sitemap, and find and fix any errors that the Google crawlers may come across.
+description: This article will go over advanced features in Google sheets, in an effort to help developers learn how to leverage these functionalities effectively.
 author: peter-ndegwa
 date: 2021-01-04T00:00:00-10:00
 topics: []
