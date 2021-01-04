@@ -1,40 +1,35 @@
 In this tutorial, we will be building a React Native application to upload images and videos to Firebase's cloud storage.
 
 ### Firebase
-
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
 
 ### Prerequisites
-
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
 
 ### Overview
-
 We'll be going through these steps in this article:
 
 1. Development environment.
-2. Set up Firebase Project.
-3. Set up Firebase Storage.
+2. Setting up Firebase project.
+3. Setting up Firebase storage.
 4. Installing dependencies.
 5. Building the UI.
-6. Pick the Media.
-7. Upload the Image.
-8. Get the Download URL
-9. Upload Progress.
-10. Pause/Resume Upload.
+6. Adding media picker.
+7. Uploading media.
+8. Get the download URL.
+9. Adding upload progress.
+10. Adding pause/resume upload.
 
 > You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-storage-non-expo).
 
 ### Development environment
-
 > **IMPORTANT** - We will not be using Expo in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
 
 > Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-### Set up Firebase Project
-
+### Setting up Firebase project
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
 
 Create a new project.
@@ -86,8 +81,7 @@ We should install the `@react-native-firebase/app` package in our app to complet
 npm install @react-native-firebase/app
 ```
 
-### Set up Firebase Storage
-
+### Setting up Firebase storage
 Head over to the Storage section in the dashboard and click on the `Get Started` button.
 
 ![Get Started Storage](enable_storage.png)
@@ -126,7 +120,6 @@ service firebase.storage {
 If you'd like to learn more about cloud storage rules, refer [here](https://firebase.google.com/docs/storage/security).
 
 ### Installing dependencies
-
 You can install these in advance or while going through the article.
 
 ```JSON
@@ -158,13 +151,15 @@ pod install
 > Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable multidexing.
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
-### Build the UI
-
+### Building the UI
 Let's add 4 buttons to the screen.
 
 - Take a Photo.
+
 - Record Video.
+
 - Pick a Photo.
+
 - Pick a Video.
 
 ```JSX
@@ -221,8 +216,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-### Pick the Media
-
+### Adding media picker
 Now, the first 2 buttons should open the camera to take a photo and record a video respectively, and the next 2 buttons should open the gallery to pick an image and video respectively.
 
 Let's install the `react-native-image-picker` to add these functionalities.
@@ -267,8 +261,7 @@ For example:
 </TouchableOpacity>
 ```
 
-### Upload Image
-
+### Uploading media
 We need to upload the image from the callback function that we passed to the `launchCamera` and the `launchImageLibrary` functions.
 
 Let's install the package for Firebase storage.
@@ -312,8 +305,7 @@ const onMediaSelect = async (media) => {
 };
 ```
 
-### Get Download URL
-
+### Get the download URL
 The `putFile` method returns a [Task](https://rnfirebase.io/reference/storage/task) object.
 
 We can add a `.then()` to it which will get called when the upload is completed. If not, the `.catch()` will be called.
@@ -393,8 +385,7 @@ To open the link, we should use the `openURL` method. Let's pass an anonymous fu
 
 Now, the button should open the media that we uploaded, on the phone's browser.
 
-### Upload Progress
-
+### Adding upload progress
 The state of the `Task` object that is returned from the `putFile` method will keep changing when the file is getting uploaded. We can add an event handler to handle this state change.
 
 ```JSX
@@ -469,8 +460,7 @@ statusText: {
 },
 ```
 
-### Pause/Resume Upload
-
+### Adding pause/resume Upload
 Let's add a state to maintain whether the upload is paused or not. This will be a boolean state.
 
 ```JSX
@@ -537,14 +527,25 @@ Pass this function to the `onPress` pass of the pause button.
 ### Let's Recap
 
 1. We set up our development environment and created a React Native app.
+
 2. We create a Firebase project.
+
 3. We set up cloud storage for our Firebase project.
+
 4. We updated the cloud storage rules to be open for everyone. Keep in mind that you should never keep it open in a production environment.
+
 5. We built a simple UI for the app.
+
 6. We added the `react-native-image-picker` package to pick images/videos using the gallery and capture images/video using the camera.
+
 7. We installed the Firebase cloud storage package.
+
 8. We created a cloud storage reference using the `ref` function.
+
 9. We uploaded our file to that location which was being pointed by the reference we created.
+
 10. We got the download URL from the reference and added a button to open it in the phone's browser.
+
 11. We added an event handler for the `state_changed` event during upload and used the `TaskSnapshot` object to get the upload progress.
+
 12. We added a button to pause/resume the upload.
