@@ -2,7 +2,7 @@ Replication is the act of reproducing or copying with something Several Relation
 
 ### Introduction
 
-For replication to be achieved in PostgreSQL there must be two servers that can be able to communicate with each other. This server will be identified as Master which is the Master server or the production server and the other one is the Slave server or Replica server or standby Server which will have a copy of master server data. The data is synchronized in such a way that if the Master server fails one can continue to run with the slave database without any problem.
+For replication to be achieved in PostgreSQL there must be two servers that can be able to communicate with each other. This server will be identified as Master which is the Master server or the production server and the other one is the Slave server or Replica server or standby server which will have a copy of master server data. The data is synchronized in such a way that if the Master server fails one can continue to run with the slave database without any problem.
 
 Replication is important to avoid Failover whereby the primary database fails and due to business continuity, there is a need for recovery. This recovery will depend on the replicated database created on Slave Server.
 
