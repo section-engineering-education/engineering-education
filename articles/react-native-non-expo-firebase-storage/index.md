@@ -521,3 +521,18 @@ Pass this function to the `onPress` pass of the pause button.
   <Text style={styles.buttonText}>{paused ? 'Resume' : 'Pause'}</Text>
 </TouchableOpacity>
 ```
+
+### Let's Recap
+
+1. We set up our development environment and created a React Native app.
+2. We create a Firebase project.
+3. We set up cloud storage for our Firebase project.
+4. We updated the cloud storage rules to be open for everyone. Keep in mind that you should never keep it open on a production environment.
+5. We built a simple UI for the app.
+6. We added the `react-native-image-picker` package to pick image/videos using the gallery and capture images/video using the camera.
+7. We installed the Firebase cloud storage package.
+8. We created a cloud storage reference using the `ref` function.
+9. We uploaded our file to that location which was being pointed by the refernce we created.
+10. We got the download URL from the refernce and added a button to open it in the phone's browser.
+11. We added a event handler for the `state_changed` event during upload and used the `TaskSnapshot` object to get the upload progress.
+12. We added functionality to pause/resume the upload.
