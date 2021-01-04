@@ -6,13 +6,13 @@ url: /engineering-education/google-sheet-advanced-features/
 title: Leveraging Advanced Features in Google Sheets
 description: This guide to Google Search Console will teach you how to add a site (called a property), submit a sitemap, and find and fix any errors that the Google crawlers may come across.
 author: peter-ndegwa
-date: 2021-01-04T00:00:00-07:00
+date: 2021-01-04T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/google-sheet-advanced-features/hero.png
-    alt: google sheets features header image
+    alt: google sheets features image
 ---
 A spreadsheet is a computer program/application used to store data, analyze and organize it in a tabular format. These applications are vital in our day to day activities. Microsoft Excel, LibreOffice, and OpenOffice are other examples of spreadsheets.
 <!--more-->
