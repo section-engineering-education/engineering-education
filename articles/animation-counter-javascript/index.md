@@ -66,7 +66,10 @@ const load = () =>{
 ```
 </br>
 We got three user-defined functions:</br>
-`animate()`, `step()` and `load()`
+
+- `animate()`
+- `step()`
+- `load()`
 
 The `animate()` function is a higher-order function containing the `step()` function.</br>
 
@@ -116,7 +119,7 @@ The next statement first subtracts the first value from the last value, multipli
 </br>
 The `Math.floor` function rounds the number to a whole number lower than the parameter given.</br>
 It then sets the content of `obj` to the number through the `innerHTML` property.</br>
-The second `if` stops the counter once the interval is greater than 1.</br>
+The second `if` block stops the counter once the interval is greater than 1.</br>
 The `window.requestAnimationFrame()` method is used when we need to show an animation and instructs the browser to call a function to update the animation through a callback function it takes in, in our case, the `step()` function.</br>
 The `window.cancelAnimationFrame()` cancels an animation to be called by taking the animation frame request ID as a parameter.</br>
 The `load()` functions assigns `text1`,`text2` and `text3` DOM objects gotten by their respective IDs. It is called when the HTML body loads using the `<body>` `onload` attribute. It uses the `animate()` function to set the values and perform the counter.</br>
