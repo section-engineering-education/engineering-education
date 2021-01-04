@@ -135,8 +135,8 @@ There are four steps in the Razorpay payment process.
 
 1. Creating an order.
 2. Checkout.
-3. Verifying Transaction.
-4. Payment Capture.
+3. Verifying transaction.
+4. Payment capture.
 
 Here is a diagram to represent the payment flow.
 
