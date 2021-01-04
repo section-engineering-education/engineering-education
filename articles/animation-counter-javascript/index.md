@@ -8,7 +8,7 @@ We are going to create one illustrated below:</br></br>
 ![Illustration](/engineering-education/animation-counter-javascript/illustration.gif)
 
 #### The JavaScript code</br>
-The full code can be accessed at my [Github Repository](https://github.com/Agusioma/animation-counter-javascript/blob/main/animation-counter.html)</br>
+The full code can be accessed at my [Github Repository](https://github.com/Agusioma/animation-counter-javascript/)</br>
 
 ```java
 
