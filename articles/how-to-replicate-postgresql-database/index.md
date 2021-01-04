@@ -8,7 +8,7 @@ Replication is important to avoid Failover whereby the primary database fails an
 
 ### Why Replication
 
-1. **Online Transaction Processing (OLTP) Performance** \- removing reporting query load from OLTP system improves both query time and transaction processing time\.Query time is the time it takes for a database management systems to execute a query which is greatly reduced when using replication\. Transaction processing time is a duration it takes for given queries to be executed before a transaction is completed\.
+1. **Online Transaction Processing (OLTP) Performance** -removing reporting query load from OLTP system improves both query time and transaction processing time. Query time is the time it takes for database management systems to execute a query which is greatly reduced when using replication. Transaction processing time is the duration it takes for given queries to be executed before a transaction is completed.
 2. **Data migration** \- which comes about either through system deployment or change of database server hardware\.
 3. **System Testing in Parallel** \- when upgrading a new system there need to make sure the new system works well with existing data hence need to test with production database copy before deployment\.
 4. **Fault Tolerance** \- in case the main server fails the standby server can act as a server since the contained data is the same\.
@@ -214,7 +214,7 @@ systemctl start postgresql
 
 10. Create database or table in Master PostgreSQL database and observer in Slave PostgreSQL Database
 
-**Login to master server**
+**Login to the master server**
 
 ``` bash
 su - postgres
@@ -232,8 +232,21 @@ INSERT INTO testtable VALUES ('github.com');
 
 11. Observe the slave server postgres database by
 
-**Login to master server**
+**Login to the slave server**
+
+``` bash
+su - postgres
+psql
+```
+
+**Check data on  'testtable'  by running the following postgres queries in the terminal**
+
+``` sql
+select * from testtable;
+```
+
+You will be able to observe the same data as the one in the master server
 
 ### Conclusion
 
-In summary, if you can view data in slave server database after making changes in master server database then you would have successfully set up PostgresSQL master to slave replication.
+In summary, if you can view data in the slave server database after making changes in the master server database then you would have successfully set up PostgresSQL master to slave replication.
