@@ -38,7 +38,9 @@ In the starter code, I've set up a language and dialect select menu, two buttons
 ![Starter Code Screen](/engineering-education/speech-recognition-using-web-speech-api-in-javascript/start_screen.png)
 
 ### Let's code
-Create a new JavaScript file and name it `speechRecognition.js`. Now add the file to the HTML file using the `script` tag after the `body` tag. This will make sure that the script file is loaded after all the elements have been loaded to the DOM.
+Create a new JavaScript file and name it `speechRecognition.js`. Now add the script to the HTML file using the `script` tag after the `body` tag. 
+
+> Adding the `script` tag after the `body` tag will make sure that the script file is loaded after all the elements have been loaded to the DOM.
 
 ```html
 <script src="./speechRecognition.js"></script>
