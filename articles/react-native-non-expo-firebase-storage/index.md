@@ -19,6 +19,9 @@ We'll be going through these steps in this article:
 5. Build the UI.
 6. Pick the Media.
 7. Upload the Image.
+8. Get the Download URL
+9. Upload Progress.
+10. Pause/Resume Upload.
 
 > You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-storage-non-expo).
 
@@ -372,10 +375,149 @@ To open the link, we should use the `openURL` method. Let's pass an annonymous f
 
 ```JSX
 <TouchableOpacity
-  style={[styles.button, style.mediaButton]}
+  style={[styles.button, styles.mediaButton]}
   onPress={() => Linking.openURL(downloadURL)}>
   <Text style={styles.buttonText}>View Media</Text>
 </TouchableOpacity>
 ```
 
 Now, the button should open the media we uploaded on the phone's browser.
+
+### Upload Progress
+
+The state of the `Task` object that is returned from the `putFile` method will keep changing when the file is getting uploaded. We can add a event handler to handle this state change.
+
+```JSX
+task.on('state_changed', (taskSnapshot) => {
+  console.log(taskSnapshot);
+});
+```
+
+The callback function that we pass will recieve a [`TaskSnapshot`](https://rnfirebase.io/reference/storage/tasksnapshot) object. It will contain the number of bytes transferred and the total bytes of the file.
+
+We can use this information to display the upload progress.
+
+Let's create a state 2 states in the application: One to mainitain whether the file is getting uploaded and the other to track the status of the upload.
+
+```JSX
+const [uploading, setUploading] = useState(false);
+const [uploadTaskSnapshot, setUploadTaskSnapshot] = useState({});
+```
+
+Let's set the `uploading` state to `true` when the `onMediaSelect` is called.
+
+```JSX
+const onMediaSelect = async (media) => {
+  setUploading(true);
+  const reference = storage().ref(media.fileName);
+```
+
+Now, we need to set the uploading status on the `state_changed` event handler.
+
+```JSX
+task.on('state_changed', (taskSnapshot) => {
+  setUploadTaskSnapshot(taskSnapshot);
+});
+```
+
+Let's display the progress in the UI using these states along with a activity indicator and a status text. This should be displayed only when a file is being uploaded.
+
+```JSX
+import { ActivityIndicator } from 'react-native';
+
+{uploading && (
+  <View style={styles.uploading}>
+    <ActivityIndicator size={60} color="#47477b"></ActivityIndicator>
+    <Text style={styles.uploadingText}>Uploading</Text>
+    <Text style={styles.uploadingText}>
+      {`${((uploadTaskSnapshot.bytesTransferred / uploadTaskSnapshot.totalBytes) * 100).toFixed(2)}% / 100%`}
+    </Text>
+  </View>
+)}
+```
+
+Styles:
+
+```JSX
+center: {
+  flex: 1,
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingHorizontal: 50,
+},
+uploading: {
+  marginTop: 80,
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+uploadingText: {
+  marginTop: 20,
+  fontSize: 20,
+},
+```
+
+### Pause/Resume Upload
+
+Let's add a state to maintain whether the upload is paused or not. This will be a boolean state.
+
+```JSX
+const [paused, setPaused] = useState(false);
+```
+
+Let's add a button to Pause/Resume the upload when a file is being uploded.
+
+```JSX
+{uploading && (
+  <View style={styles.uploading}>
+    <ActivityIndicator size={60} color="#47477b"></ActivityIndicator>
+    <Text style={styles.uploadingText}>Uploading</Text>
+    <Text style={styles.uploadingText}>
+      {`${((uploadTaskSnapshot.bytesTransferred / uploadTaskSnapshot.totalBytes) * 100).toFixed(2)}% / 100%`}
+    </Text>
+    <TouchableOpacity style={styles.button}>
+      <Text style={styles.buttonText}>{paused ? 'Resume' : 'Pause'}</Text>
+    </TouchableOpacity>
+  </View>
+)}
+```
+
+Let's update the status text and the hide the activity indicator if the upload is paused.
+
+```JSX
+{!paused && <ActivityIndicator size={60} color="#47477b"></ActivityIndicator>}
+<Text style={styles.uploadingText}>
+  {!paused ? 'Uploading' : 'Paused'}
+</Text>
+```
+
+To pause/resume the upload, we need to use the `Task` object. It has 2 methods: `pause` and `resume`. Since the task object is inside the `onMediaSelect` function, let's set up a state outside and assign the Task object to that state when it's created.
+
+```JSX
+const [uploadTask, setUploadTask] = useState();
+
+const onMediaSelect = async (media) => {
+  if (!media.didCancel) {
+    setUploading(true);
+    const reference = storage().ref(media.fileName);
+    const task = reference.putFile(media.uri);
+    setUploadTask(task);
+```
+
+Now, we can write a function to toggle between pause and resume.
+
+```JSX
+const togglePause = () => {
+  if (paused) uploadTask.resume();
+  else uploadTask.pause();
+  setPaused((paused) => !paused);
+};
+```
+
+Pass this function to the `onPress` pass of the pause button.
+
+```JSX
+<TouchableOpacity style={styles.button} onPress={togglePause}>
+  <Text style={styles.buttonText}>{paused ? 'Resume' : 'Pause'}</Text>
+</TouchableOpacity>
+```
