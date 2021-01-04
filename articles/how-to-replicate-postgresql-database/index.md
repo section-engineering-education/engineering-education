@@ -221,16 +221,18 @@ su - postgres
 psql
 ```
 
-**Create a  table named 'testtable' and insert data to the table by running the following postgres queries in the terminal below**
+**Create a  table named 'testtable' and insert data to the table by running the following postgres queries in the terminal**
 
-``` bash
+``` sql
 CREATE TABLE testtable (websites varchar(100));
 INSERT INTO testtable VALUES ('section.com');
 INSERT INTO testtable VALUES ('google.com');
 INSERT INTO testtable VALUES ('github.com');
 ```
 
-11. Observe
+11. Observe the slave server postgres database by
+
+**Login to master server**
 
 ### Conclusion
 
