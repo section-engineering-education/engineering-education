@@ -263,6 +263,8 @@ if ("webkitSpeechRecognition" in window) {
 
 ### Result
 
+You can take a look at the deployed version of the project [here](https://zolomohan.github.io/speech-recognition-in-javascript/).
+
 ![Final Result](/engineering-education/speech-recognition-using-web-speech-api-in-javascript/final.gif)
 
 ### Let's Recap
