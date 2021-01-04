@@ -1,12 +1,28 @@
-Database management systems (DBMS) have replaced the traditional filing system by providing an easy, secure, efficient, and reliable way of storing, retrieving, accessing, and sharing data within databases. Some entities in a DBMS may have little value, which makes it difficult to use them for certain operations. In such situations, these entities can be combined with other entities to form a complex one that makes sense. This operation can be done through a process called aggregation. Aggregation in DBMS links trivial entities through relationships to ensure that the entire system functions well. 
+Database management systems (DBMS) have replaced the traditional filing system by providing an easy, secure, efficient, and reliable way of storing, retrieving, accessing, and sharing data within databases. DBMS is advantageous over the file system because it reduces [data redundancy](https://en.wikipedia.org/wiki/Data_redundancy) (through [database normalization](https://en.wikipedia.org/wiki/Database_normalization)) and enhances [data integrity](https://en.wikipedia.org/wiki/Data_integrity). It also offers flexibility, privacy, and data security.
+
+A DBMS consists of entities whose data can be stored. They can be people, things, objects, or places. Two or more entities are joined through a relationship, which is simply a way of connecting data sets. Some entities in a DBMS may have little value, which makes it difficult to use them for certain operations. In such situations, these entities can be combined with other entities to form a complex one that makes sense. This operation can be done through a process called aggregation. Aggregation in DBMS links trivial entities through relationships to ensure that the entire system functions well. 
 
 This article takes you through important aspects regarding aggregation in DBMS. It also explains why it is needed and how it takes place. 
+
+### Table of Contents
+
+- [Introduction to Database Management Systems (DBMS)](#introduction-to-database-management-systems-dbms)
+
+- [Aggregation in DBMS](#aggregation-in-dbms)
+
+- [Reasons for Using Aggregation in DBMS](#reasons-for-using-aggregation-in-dbms)
+
+- [Process Flow for Aggregation in DBMS](#process-flow-for-aggregation-in-dbms)
+
+- [Example of Aggregation in DBMS](#example-of-aggregation-in-dbms)
+
+- [Conclusion](#conclusion)
 
 ### Introduction to Database Management Systems (DBMS)
 
 Before learning what DBMS is, we need to understand two important terms: data and database. Data refers to facts, figures or statistics gathered for various uses, including analysis or future reference. A database refers to a collection of organized or related data. A good example of a database is a collection of cities within a country. This is regarded as a database because all the data in that collection is related. 
 
-A Database Management System (DBMS) is a software package that is used for managing databases. A DBMS facilitates operations such as accessing, updating, administering, fetching, manipulating, creating and deleting the database system. It also enables users to share data with other applications or users. The main aim of this software is to enhance the storage and retrieval of data. Some of the examples of database management systems include MySQL, Oracle, SQLite, Ms-Access, and MariaDB. 
+A Database Management System (DBMS) is a software package that is used for managing databases. A DBMS facilitates operations such as accessing, updating, administering, fetching, manipulating, creating and deleting the database system. It also enables users to share data with other applications or users. The main aim of this software is to enhance the storage and retrieval of data. Some of the examples of database management systems include MySQL, Oracle, SQLite, MS Access, and MariaDB. 
 
 The following are the main characteristics of DBMS:
 
@@ -27,15 +43,15 @@ When using data in the form of numerical values, the following operations can be
 * **Count:** This provides the number of records.
 * **Maximum (Max):** This function provides the maximum value of a given set of data.
 * **Minimum (Min):** This provides the minimum value of a given set of data. 
-* **Standard deviation (std dev):** This provides the dispersion or variation of the sets of data.
+* **Standard deviation (std dev):** This provides the dispersion or variation of the sets of data. Let's take a simple example of a database of student marks. If the standard deviation is high, it means the average is obtained by lower number of students than usual, and the lowest and highest marks is higher.
 
 ### Reasons for Using Aggregation in DBMS
 
 Aggregation is used when the DBMS has the following characteristics.
 
-* **Many trivial entities:** A DBMS may consist of many entities that are not significant enough to provide meaningful information. In such a case, the trivial entities can be combined into one complex entity through aggregation.
-* **One trivial entity:** Aggregation is also needed if a DBMS has a single trivial entity that should be used for multiple operations. In this case, the trivial entity is used to form relationships with other entities. This may lead to many aggregation entities depending on the operations required.
-* **Inapplicable entity-model relationship:** The entity-model relationship cannot be applied to certain entities within the system. These specific entities can be combined with other entities to allow the application of the entity-model relationship in the entire system. This ensures that all the entities in the system are utilized. 
+* **Many trivial entities:** A DBMS may consist of many entities that are not significant enough to provide meaningful information. In such a case, the trivial entities can be combined into one complex entity through aggregation. For example, many trivial entities called *rooms* can be combined to form a single entity called *hotel*.
+* **One trivial entity:** Aggregation is also needed if a DBMS has a single trivial entity that should be used for multiple operations. In this case, the trivial entity is used to form relationships with other entities. This may lead to many aggregation entities depending on the operations required. For example, an employee in an organization may be given an insurance policy that covers his dependants. The entity *dependants* is a trivial entity because it cannot exist without the entity *employee*. 
+* **Inapplicable entity-model relationship:** The entity-model relationship cannot be applied to certain entities within the system. These specific entities can be combined with other entities to allow the application of the entity-model relationship in the entire system. This ensures that all the entities in the system are utilized. For example, the entity-model relationship for students can only be applied if students enrol in a class. The entity *grade* can only be formed if the relationship *enroll* exists.
 
 ### Process Flow for Aggregation in DBMS
 
@@ -43,10 +59,10 @@ Aggregation in DBMS can be explained using [the entity-relationship model (ER mo
 
 The following are the main types of relationships in an ER model:
 
-* **One-to-one:** Here, the trivial entity forms a relationship with only one other entity. ‘
-* **One-to-many:** In this relationship, one entity forms a relationship with multiple entities.
-* **Many-to-one:** Here, multiple entities in a certain entity set can form a relationship with only one entity. 
-* **Many-to-many:** In this category, multiple entities from a certain entity set can form a relationship with many entities from another entity set. 
+* **One-to-one:** Here, the trivial entity forms a relationship with only one other entity. For example, one employee can work in only one department of an organization. 
+* **One-to-many:** In this relationship, one entity forms a relationship with multiple entities. For example, an employee can work in multiple departments within the same organization.
+* **Many-to-one:** Here, multiple entities in a certain entity set can form a relationship with only one entity. For example, many employees can work in only one department. 
+* **Many-to-many:** In this category, multiple entities from a certain entity set can form a relationship with many entities from another entity set. For example, many employees can work in multiple departments within the same organization.
   
 The following diagram shows a simple ER model that can be used to explain the process flow for aggregation in DBMS.
 
