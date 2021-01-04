@@ -272,7 +272,7 @@ Once the package is installed, let's import the package to our app.
 import storage from '@react-native-firebase/storage';
 ```
 
-To upload a file to the cloud storage, we should create a reference object. 
+To upload a file to the cloud storage, we should create a reference object.
 
 A reference is a pointer to a file on your bucket. This file can either exist already, or it may not exist yet.
 
@@ -300,3 +300,82 @@ const onMediaSelect = async (media) => {
   const task = reference.putFile(media.uri);
 };
 ```
+
+### Get Download URL
+
+The `putFile` method returns a [Task](https://rnfirebase.io/reference/storage/task) object. We can add a `.then()` to it which will get called when the upload is completed. If not, the `.catch()` will be called.
+
+```JSX
+const onMediaSelect = async (media) => {
+  const reference = storage().ref(media.fileName);
+  const task = reference.putFile(media.uri);
+  task.then(async () => {
+    // Get Download URL Here
+  });
+};
+```
+
+We can get the download URL using the refernece to the storage location.
+
+```JSX
+task.then(async () => {
+  const downloadURL = reference.getDownloadURL();
+});
+```
+
+Let's create a button that will open the link in your phone's browser.
+
+To do so, let's create a state to store the download URL.
+
+```JSX
+const [downloadURL, setDownloadURL] = useState();
+```
+
+Let's set the URL once we get it.
+
+```JSX
+task.then(async () => {
+  const downloadURL = reference.getDownloadURL();
+  setDownloadURL(downloadURL);
+});
+```
+
+Now, let's create a button in the UI. This button will only be displayed when a download URL is available.
+
+```JSX
+{downloadURL && (
+  <TouchableOpacity
+    style={[styles.button, style.mediaButton]}>
+    <Text style={styles.buttonText}>View Media</Text>
+  </TouchableOpacity>
+)}
+```
+
+Styles:
+
+```JSX
+mediaButton: {
+  position: 'absolute',
+  bottom: 0,
+  marginBottom: 50,
+  width: 300,
+},
+```
+
+We need to use the `Linking` module from `react-native` to open the link. Let's import it.
+
+```JSX
+import { Linking } from 'react-native';
+```
+
+To open the link, we should use the `openURL` method. Let's pass an annonymous function to the `onPress` property of the button.
+
+```JSX
+<TouchableOpacity
+  style={[styles.button, style.mediaButton]}
+  onPress={() => Linking.openURL(downloadURL)}>
+  <Text style={styles.buttonText}>View Media</Text>
+</TouchableOpacity>
+```
+
+Now, the button should open the media we uploaded on the phone's browser.
