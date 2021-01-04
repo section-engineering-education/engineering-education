@@ -26,7 +26,7 @@ By an organization adopting AIOps, it introduces important ML techniques to its 
 
 #### Eliminates data silos
 
-Data silos is a common problem for many organizations and a source of inefficiency. A data solo is a colection of data held by one group in an organiation such that it is not fully or easly accessible to other groups. Organizations faced with [data silos](https://www.plixer.com/blog/data-silo-what-is-it-why-is-it-bad/#) find that only particular employees or one group of employees has access to the source of data or a specific set of data in the organization. In such a situation, you will find multiple teams storing the same data or complementary data separately. This leads to wasted resources in terms of storage costs and inhibited productivity.
+Data silos is a common problem for many organizations and a source of inefficiency. A data silo is a colection of data held by one group in an organiation such that it is not fully or easly accessible to other groups. Organizations faced with [data silos](https://www.plixer.com/blog/data-silo-what-is-it-why-is-it-bad/#) find that only particular employees or one group of employees has access to the source of data or a specific set of data in the organization. In such a situation, you will find multiple teams storing the same data or complementary data separately. This leads to wasted resources in terms of storage costs and inhibited productivity.
 
 With AIOps, organizations break down data silos and the consequent challenges with full effect across all IT environments. AIOps promotes collaboration among teams and makes data available for all teams to analyze and monitor.
 
