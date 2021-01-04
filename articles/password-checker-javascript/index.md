@@ -124,7 +124,7 @@ Green for strong, Blue for medium and Red for weak.</br></br>
 ```
 
 #### JavaScript Code</br>
-The complete code can be accessed in my [Github repository](https://github.com/Agusioma/Password-Strength-Checker/blob/main/password-strength-checker.html).</br>
+The complete code can be accessed in my [Github repository](https://github.com/Agusioma/Password-Strength-Checker/).</br>
 
 ```java
     <script type="text/javascript">
