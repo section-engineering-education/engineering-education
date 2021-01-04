@@ -77,11 +77,11 @@ In the Settings tab, you'll see a section called API keys. Enter that section an
 
 ![Razorpay API Keys](/engineering-education/react-native-razorpay/razorpay_apikeys.png)
 
-The website will display a model with the Test API Key and a Secret Key. We'll need the keys in our app and our server.
+The website will display a modal with the Test API Key and a Secret Key. We'll need the keys in our app and our server.
 
 > The secret key will be displayed only once and you won't be able to find it again, so make a copy of it now. The Test API Key and the Secret key must be kept safe.
 
-![API Keys Model](/engineering-education/react-native-razorpay/razorpay_newkey.png)
+![API Keys modal](/engineering-education/react-native-razorpay/razorpay_newkey.png)
 
 ### Development environment
 > **IMPORTANT** - We will not be using Expo in our project. This is because the Razorpay checkout is a wrapper around the native SDK, so it doesn't work with Expo which doesn't support native modules.
@@ -468,7 +468,7 @@ const verifyPayment = async (orderID, transaction) => {
 };
 ```
 
-Let's call this in the `.then()` of the Razorpay checkout. Once the response from the `/verifyPayment` endpoint comes back, we'll display it in an alert model.
+Let's call this in the `.then()` of the Razorpay checkout. Once the response from the `/verifyPayment` endpoint comes back, we'll display it in an alert modal.
 
 ```JavaScript
 RazorpayCheckout.open(options)
@@ -479,7 +479,7 @@ RazorpayCheckout.open(options)
   .catch(console.log);
 ```
 
-![Alert Model](/engineering-education/react-native-razorpay/alert_modal.jpeg)
+![Alert Modal](/engineering-education/react-native-razorpay/alert_modal.jpeg)
 
 ### STEP 4: Payment capture
 When a user makes a payment, it usually flows through the following states:
