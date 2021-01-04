@@ -15,9 +15,9 @@ Replication is important to avoid Failover whereby the primary database fails an
 
 For this to happen there must be communication between the two hosts or two servers that is through a network or internet as shown below.
 
-![LOCAL-EXAMPLE](/How-to-Replicate-PostgreSQL-database/local-network.png)
+![LOCAL-EXAMPLE](engineering-education/How-to-Replicate-PostgreSQL-database/local-network.png)
 
-![INTERNET-EXAMPLE](/How-to-Replicate-PostgreSQL-database/internet-network.png)
+![INTERNET-EXAMPLE](engineering-education/How-to-Replicate-PostgreSQL-database/internet-network.png)
 
 ### Installing PostgreSQL
 
@@ -27,32 +27,32 @@ Make sure you have installed the Linux Ubuntu server. To install PostgreSQL 10 i
 
 1. import PostgreSQL signing key by typing the following command in Terminal
 
-```
+```bash
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O- | sudo apt-key add -
 ```
 
 2. Add PostgreSQL repository by typing the following command in terminal
 
-```
+```bash
 echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | 
 sudo tee /etc/apt/sources.list.d/postgresql.list
 ```
 
 3. Update Repository Index typing the command below in terminal
 
-```
+```bash
 sudo apt-get update
 ```
 
 4. Install PostgreSQL package using apt command
 
-```
+```bash
 sudo apt-get install -y postgresql-10
 ```
 
 5. Set password for postgres user using the following command
 
-```
+```bash
 sudo passwd postgres
 ```
 
@@ -60,46 +60,46 @@ sudo passwd postgres
 
 1. Login to the PostgreSQL database with the following command
 
-```
+```bash
 su - postgres
 ```
 
-![postgres-login](/How-to-Replicate-PostgreSQL-database/postgres-login.png)
+![postgres-login](engineering-education/How-to-Replicate-PostgreSQL-database/postgres-login.png)
 
 2. Create replication user with the following command
 
-```
+```bash
  psql -c "CREATEUSER replication REPLICATION LOGIN CONNECTION LIMIT 1 ENCRYPTED PASSWORD'YOUR_PASSWORD';"
 ```
 
-3.  Edit pg_haba.cnf with any nano app in ubuntu and add the configuration
+3.  Edit pg_haba.cnf with any nano application in ubuntu and add the configuration
 
 `file edit command`
 
-```
+```bash
 nano /etc/postgresql/10/main/pg_hba.conf
 ```
 
 configuration
 
-```
+```bash
 host  replication       replication   MasterIP/24   md5
 ```
 
-![postgres-login](/How-to-Replicate-PostgreSQL-database/pg_hba-edit.png)
+![postgres-login](engineering-education/How-to-Replicate-PostgreSQL-database/pg_hba-edit.png)
 
 `MasterIP is the IP address of the Master Server Computer`
 
 4. Open and Edit postgresql.conf and put the following configuration or uncomment if it is commented in the master server
 file edit command
 
-```
+```bash
 nano /etc/postgresql/10/main/postgresql.conf
 ```
 
 configuration
 
-```
+```bash
 listen_addresses = 'localhost,MasterIP'
 
 wal_level = replica
@@ -111,7 +111,7 @@ max_wal_senders = 10
 
 5. Restart PostgreSQL in Master main server
 
-```
+```bash
 systemctl restart postgresql
 ```
 
@@ -119,13 +119,13 @@ systemctl restart postgresql
 
 1. Login to PostgreSQL RDMS with the command below
 
-```
+```bash
 su - postgres
 ```
 
 2. Stop postgresql service from working to enable us to work on it with the command below
 
-```
+```bash
 systemctl stop postgresql
 ```
 
@@ -133,13 +133,13 @@ systemctl stop postgresql
 
 edit command
 
-```
+```bash
 nano /etc/postgresql/10/main/pg_hba.conf
 ```
 
 Configuration
 
-```
+```bash
 host  replication       replication   MasterIP/24   md5
 ```
 
@@ -149,13 +149,13 @@ server and put the following configuration or uncomment if it is commented
 
 Edit command
 
-```
+```bash
 nano /etc/postgresql/10/main/postgresql.conf
 ```
 
 Configuration
 
-```
+```bash
 listen_addresses = 'localhost,SlaveIP'
 
 wal_keep_segments = 64
@@ -171,19 +171,19 @@ max_wal_senders = 10
 
 5. Access PostgreSQL data directory in the Slave server and remove everything
 
-```
+```bash
 cd /var/lib/postgresql/10/main
 ```
 
-```
+```bash
 rm -rfv *
 ```
 
-6. Copy POstgreSQL Master Server data Directory files to POstgreSQL Slave Server Data directory.
+6. Copy PostgreSQL Master Server data Directory files to POstgreSQL Slave Server Data directory.
 
 Write this command in Slave Server
 
-```
+```bash
 pg_basebackup -h MasterIP -D /var/lib/postgresql/11/main/ -P -U
 
 replication --wal-method=fetch
@@ -195,13 +195,13 @@ Enter Master Server postgres password and press Enter
 
 Edit command
 
-```
+```bash
 nano /var/lib/postgresql/10/main/recovery.conf
 ```
 
 Configuration
 
-```
+```bash
 standby_mode          = 'on'
 
 primary_conninfo      = 'host=MasterIP port=5432 user=replication password=YOUR_PASSWORD'
@@ -213,7 +213,7 @@ trigger_file = '/tmp/MasterNow'
 
 8. Start slave PostgreSQL since it had been stopped
 
-```
+```bash
 systemctl start postgresql
 ```
 
