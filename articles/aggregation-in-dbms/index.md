@@ -1,4 +1,23 @@
-Database management systems (DBMS) have replaced the traditional filing system by providing an easy, secure, efficient, and reliable way of storing, retrieving, accessing, and sharing data within databases. DBMS is advantageous over the file system because it reduces [data redundancy](https://en.wikipedia.org/wiki/Data_redundancy) (through [database normalization](https://en.wikipedia.org/wiki/Database_normalization)) and enhances [data integrity](https://en.wikipedia.org/wiki/Data_integrity). It also offers flexibility, privacy, and data security.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/aggregation-in-dbms/
+title: Aggregation in Database Management Systems (DBMS)
+description: This article will be an introduction to Database Management Systems and how systems function properly through the concept of aggregation.
+author: onesmus-mbaabu
+date: 2021-01-04T00:00:00-23:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/aggregation-in-dbms/hero.jpg
+    alt: DBMS Image
+---
+Database management systems (DBMS) have replaced the traditional filing system by providing an easy, secure, efficient, and reliable way of storing, retrieving, accessing, and sharing data within databases. 
+<!--more-->
+
+DBMS is advantageous over the file system because it reduces [data redundancy](https://en.wikipedia.org/wiki/Data_redundancy) (through [database normalization](https://en.wikipedia.org/wiki/Database_normalization)) and enhances [data integrity](https://en.wikipedia.org/wiki/Data_integrity). It also offers flexibility, privacy, and data security.
 
 A DBMS consists of entities whose data can be stored. They can be people, things, objects, or places. Two or more entities are joined through a relationship, which is simply a way of connecting data sets. Some entities in a DBMS may have little value, which makes it difficult to use them for certain operations. In such situations, these entities can be combined with other entities to form a complex one that makes sense. This operation can be done through a process called aggregation. Aggregation in DBMS links trivial entities through relationships to ensure that the entire system functions well. 
 
