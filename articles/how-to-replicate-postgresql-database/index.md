@@ -8,7 +8,7 @@ Replication is important to avoid Failover whereby the primary database fails an
 
 ### Why Replication
 
-1. **Online Transaction Processing (OLTP) Performance** \- removing reporting query load from OLTP system improves both query time and transaction processing time\.
+1. **Online Transaction Processing (OLTP) Performance** \- removing reporting query load from OLTP system improves both query time and transaction processing time\.Query time is the time it takes for a database management systems to execute a query which is greatly reduced when using replication\. Transaction processing time is a duration it takes for given queries to be executed before a transaction is completed\.
 2. **Data migration** \- which comes about either through system deployment or change of database server hardware\.
 3. **System Testing in Parallel** \- when upgrading a new system there need to make sure the new system works well with existing data hence need to test with production database copy before deployment\.
 4. **Fault Tolerance** \- in case the main server fails the standby server can act as a server since the contained data is the same\.
@@ -212,8 +212,25 @@ trigger_file = '/tmp/MasterNow'
 systemctl start postgresql
 ```
 
-10. Try creating any database or table in Master PostgreSQL database and observer in Slave PostgreSQL Database
-11. Done
+10. Create database or table in Master PostgreSQL database and observer in Slave PostgreSQL Database
+
+**Login to master server**
+
+``` bash
+su - postgres
+psql
+```
+
+**Create a  table named 'testtable' and insert data to the table by running the following postgres queries in the terminal below**
+
+``` bash
+CREATE TABLE testtable (websites varchar(100));
+INSERT INTO testtable VALUES ('section.com');
+INSERT INTO testtable VALUES ('google.com');
+INSERT INTO testtable VALUES ('github.com');
+```
+
+11. Observe
 
 ### Conclusion
 
