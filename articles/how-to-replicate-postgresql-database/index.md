@@ -25,7 +25,7 @@ For this article, we will use Ubuntu 18.04 LTS and PostgreSQL 10. Several Linux 
 
 Make sure you have installed the Linux Ubuntu server. To install PostgreSQL 10 in Ubuntu 18.04 LTS one must follow the following steps. This must be done to both servers that is the Master Server and Slave Server.
 
-1. import PostgreSQL signing key by typing the following command in Terminal
+1. Import PostgreSQL signing key by typing the following command in Terminal
 
 ```bash
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O- | sudo apt-key add -
@@ -66,13 +66,13 @@ su - postgres
 
 ![postgres-login](engineering-education/How-to-Replicate-PostgreSQL-database/postgres-login.png)
 
-2. Create replication user with the following command
+2. Create replication user with the following command
 
 ```bash
  psql -c "CREATEUSER replication REPLICATION LOGIN CONNECTION LIMIT 1 ENCRYPTED PASSWORD'YOUR_PASSWORD';"
 ```
 
-3.  Edit pg_haba.cnf with any nano application in ubuntu and add the configuration
+3. Edit pg_haba.cnf with any nano application in ubuntu and add the configuration
 
 `file edit command`
 
@@ -80,7 +80,7 @@ su - postgres
 nano /etc/postgresql/10/main/pg_hba.conf
 ```
 
-configuration
+**Configuration**
 
 ```bash
 host  replication       replication   MasterIP/24   md5
@@ -97,7 +97,7 @@ file edit command
 nano /etc/postgresql/10/main/postgresql.conf
 ```
 
-configuration
+**Configuration**
 
 ```bash
 listen_addresses = 'localhost,MasterIP'
@@ -117,43 +117,41 @@ systemctl restart postgresql
 
 ### Setting up Replication in Slave Server
 
-1. Login to PostgreSQL RDMS with the command below
+1. Login to PostgreSQL RDMS with the command below
 
 ```bash
 su - postgres
 ```
 
-2. Stop postgresql service from working to enable us to work on it with the command below
+2. Stop postgresql service from working to enable us to work on it with the command below
 
 ```bash
 systemctl stop postgresql
 ```
 
-3. Edit pg\_hba.conf file with this command and add configuration
+3. Edit pg\_hba.conf file with this command and add configuration
 
-edit command
+**Edit Command**
 
 ```bash
 nano /etc/postgresql/10/main/pg_hba.conf
 ```
 
-Configuration
+**Configuration**
 
 ```bash
 host  replication       replication   MasterIP/24   md5
 ```
 
-4. Open and
-Edit postgresql.conf<span style="mso-spacerun:yes">&nbsp;&nbsp;</span>in slave
-server and put the following configuration or uncomment if it is commented
+4. Open and Edit postgresql.conf<span style="mso-spacerun:yes">&nbsp;</span>in slave server and put the following configuration or uncomment if it is commented
 
-Edit command
+**Edit Command**
 
 ```bash
 nano /etc/postgresql/10/main/postgresql.conf
 ```
 
-Configuration
+**Configuration**
 
 ```bash
 listen_addresses = 'localhost,SlaveIP'
@@ -169,7 +167,7 @@ max_wal_senders = 10
 
 `SlaveIP is the address of the Slave Server`
 
-5. Access PostgreSQL data directory in the Slave server and remove everything
+5. Access PostgreSQL data directory in the Slave server and remove everything
 
 ```bash
 cd /var/lib/postgresql/10/main
@@ -179,9 +177,7 @@ cd /var/lib/postgresql/10/main
 rm -rfv *
 ```
 
-6. Copy PostgreSQL Master Server data Directory files to POstgreSQL Slave Server Data directory.
-
-Write this command in Slave Server
+6. Copy PostgreSQL Master Server data Directory files to POstgreSQL Slave Server Data directory. Write this command in Slave Server
 
 ```bash
 pg_basebackup -h MasterIP -D /var/lib/postgresql/11/main/ -P -U
@@ -189,17 +185,17 @@ pg_basebackup -h MasterIP -D /var/lib/postgresql/11/main/ -P -U
 replication --wal-method=fetch
 ```
 
-Enter Master Server postgres password and press Enter
+7. Enter Master Server postgres password and press Enter.
 
-7. Need for recovery.conf file in data Directory to be created and add the following command
+8. Need for recovery.conf file in data Directory to be created and add the following command
 
-Edit command
+**Edit Command**
 
 ```bash
 nano /var/lib/postgresql/10/main/recovery.conf
 ```
 
-Configuration
+**Configuration**
 
 ```bash
 standby_mode          = 'on'
@@ -211,12 +207,12 @@ trigger_file = '/tmp/MasterNow'
 
 `YOUR_PASSWORD is the password for replication user in Master server PostgreSQL created`
 
-8. Start slave PostgreSQL since it had been stopped
+9. Start slave PostgreSQL since it had been stopped
 
 ```bash
 systemctl start postgresql
 ```
 
-9. Try creating any database or table in Master PostgreSQL database and observer in Slave PostgreSQL Database
+10. Try creating any database or table in Master PostgreSQL database and observer in Slave PostgreSQL Database
 
-10. Done
+11. Done
