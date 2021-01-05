@@ -1,4 +1,21 @@
-In this tutorial, we will be building a React Native application to upload images and videos to Firebase's cloud storage.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/react-native-non-expo-firebase-storage/
+title: React Native Firebase Storage for Non-Expo Workflow
+description: This tutorial will give readers a detailed guide on how to implement firebase storage for a Non-Expo React Native application.
+author: mohan-raj
+date: 2020-12-07T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/react-native-non-expo-firebase-storage/hero.jpg
+    alt: React Native Agora Conference App
+---
+In this tutorial, we will be building a Non-Expo React Native application to upload images and videos to Firebase's cloud storage.
+<!--more-->
 
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
@@ -563,3 +580,7 @@ Now, the button should open the media that we uploaded, on the phone's browser.
 11. We added a button to pause/resume the upload.
 
 12. We got the download URL from the reference and added a button to open it in the phone's browser.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for Reading!
