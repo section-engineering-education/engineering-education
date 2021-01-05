@@ -20,9 +20,9 @@ As a prerequisite, a little knowledge about [C programming language](https://en.
 ### Table of contents
 - [Microcontroller](#microcontroller)
 - [NodeMCU](#nodemcu)
-- [Step by step guide](#step-by-step-guide)
+- [Step by Step Guide](#step-by-step-guide)
 - [Conclusion](#conclusion)
-- [Further reading](#further-reading)
+- [Further Reading](#further-reading)
 
 ### Microcontroller
 > According to [Wikipedia](https://en.wikipedia.org/wiki/Microcontroller), A microcontroller (MCU for microcontroller unit) is a small computer on a single metal-oxide-semiconductor (MOS) integrated circuit (IC) chip. A microcontroller contains one or more CPUs (processor cores) along with memory and programmable input/output peripherals.
@@ -62,7 +62,7 @@ When compared with other microcontrollers like Arduino, we see that:
 - The development board for NodeMCU is much smaller when compared with others.
 - NodeMCU is very cheap with a cost of 5 USD.
 
-### Step by step guide
+### Step by Step Guide
 #### Setup
 Before we get started with building a simple project, it's required to set up the [Arduino IDE](https://www.arduino.cc/en/software/) for the [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU) board as mentioned in [this](https://create.arduino.cc/projecthub/electropeak/getting-started-w-nodemcu-esp8266-on-arduino-ide-28184f) tutorial.
 
@@ -131,7 +131,7 @@ To summarize:
 
 - We built a project for the blinking of LEDs.
 
-### Further reading
+### Further Reading
 - [Microcontrollers on Wikipedia](https://en.wikipedia.org/wiki/Microcontroller)
 - [NodeMCU on Wikipedia](https://en.wikipedia.org/wiki/NodeMCU)
 - [NodeMCU Specifications and Features](https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet)
