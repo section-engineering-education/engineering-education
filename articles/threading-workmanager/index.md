@@ -131,7 +131,7 @@ We can pass in Data to our worker classes in `WorkManager`. It accepts the data 
 private fun getData() = Data.Builder().putInt("USER_ID", (9999..99999).random()).build()
 ```
 
-**NOTE : _Data only accepts values less than 1024 MB. You should only use it to pass small data values otherwise, retrieve the data inside the worker class instead._**
+**NOTE : _Data only accepts values less than 1024 bytes. You should only use it to pass small data values otherwise, retrieve the data inside the worker class instead._**
 
 Then in the same class, add the following code to create our work.
 
