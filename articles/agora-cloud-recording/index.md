@@ -35,7 +35,7 @@ Agora provides SDKs to build apps that require real-time engagement like:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article).
 
-Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
+Agora is a paid service, but the first 10,000 minutes are free every month. You can check their [pricing page](https://www.agora.io/en/pricing/) for a comprehensive breakdown.
 
 If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
 
@@ -58,15 +58,15 @@ We'll be going through these steps in this article:
 
 Agora supports uploads to Amazon S3, Qiniu Cloud, Alibaba Cloud, Tencent Cloud, Kingsoft Cloud.
 
-I recommend using Amazon S3 as it is easy to set up. Refer to [this documentation](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) on how to create a bucket in Amazon S3. Agora will need the bucket name, the access key, and the secret key for the bucket to upload the recorded files to your cloud storage.
+I recommend using [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html) as it is easy to set up. Agora will need the bucket name, the access key, and the secret key for the bucket to upload the recorded files to your cloud storage.
 
 [On-Premise recording](https://docs.agora.io/en/Recording/product_recording?platform=Linux) is similar to cloud recording, but you need to set up your own Linux server using the components provided by Agora to record the streams.
 
 Compared with On-premise Recording, Cloud Recording is more convenient as it does not require deploying Linux servers.
 
-If you'd like to learn more about the differences between cloud recording and on-premise recording, refer [here](https://docs.agora.io/en/All/faq/onpremise_cloud).
+If you'd like to learn more about the differences between cloud recording and on-premise recording, refer to this [FAQ answer](https://docs.agora.io/en/All/faq/onpremise_cloud).
 
-Agora will bill you for the cloud recording service. You can check their billing policies [here](https://docs.agora.io/en/cloud-recording/billing_cloud_recording?platform=RESTful).
+Agora will bill you for the cloud recording service. You can check their [billing policies](https://docs.agora.io/en/cloud-recording/billing_cloud_recording?platform=RESTful) for more information.
 
 ### Enabling cloud recording in the project management console
 To use cloud recording in your application, you must enable cloud recording from the Agora Project Management Console.
@@ -110,7 +110,7 @@ For the API, We should convert the customer ID and secret to base64 using the `B
 Buffer.from(string).toString('base64');
 ```
 
-I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios [here](https://www.npmjs.com/package/axios).
+I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios on the [Axios nmp package page](https://www.npmjs.com/package/axios).
 
 It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
@@ -159,7 +159,7 @@ We need to provide a UID for the recorder. The recorder is like a user who joins
 
 If you have set up token authentication for your Agora project, you should also pass a `token` in the body. To learn more about token authentication, refer to [this article](engineering-education/agora-express-token-server/).
 
-> At the time of writing this article, Agora cloud recording does not support user accounts yet. Make sure that the recording channel uses integer UIDs. If you'd like to learn more about user accounts, refer [here](https://docs.agora.io/en/All/faq/string).
+> At the time of writing this article, Agora cloud recording does not support user accounts yet. Make sure that the recording channel uses integer UIDs. If you'd like to learn more about user accounts, refer to [this FAQ answer](https://docs.agora.io/en/All/faq/string).
 
 ### Acquire resource ID
 Let's add a POST request handler for a new endpoint called `'/acquire'` to acquire the resource ID for the cloud recording.
@@ -269,7 +269,7 @@ In the body of the request, we should specify the UID, the channel ID, authentic
 
   - **backgroundColor**: RGB Hex Value, The background color of the canvas.
 
-  - **mixedVideoLayout**: 0: Floating Layout, 1: Best Fit Layout, 2: Vertical Layout. You can learn more about recording layouts [here](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=RESTful).
+  - **mixedVideoLayout**: 0: Floating Layout, 1: Best Fit Layout, 2: Vertical Layout. You can learn more about recording layouts in the [recording layout documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=RESTful).
 
 **Storage Config:**
 
