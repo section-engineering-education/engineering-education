@@ -60,7 +60,11 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
   <body class="container mt-5 bg-dark">
     <h1 class="text-light">Text to Speech</h1>
     <p class="lead text-light mt-4">Select Voice</p>
+    
+    <!-- Select Menu for Voice -->
     <select id="voices" class="form-select bg-secondary text-light"></select>
+
+    <!-- Range Slliders for Volume, Rate & Pitch -->
     <div class="d-flex mt-4 text-light">
       <div>
         <p class="lead">Volume</p>
@@ -78,7 +82,11 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
         <span id="pitch-label" class="ms-2">1</span>
       </div>
     </div>
+
+    <!-- Text Area  for the User to Type -->
     <textarea class="form-control bg-dark text-light mt-5" cols="30" rows="10" placeholder="Type here..."></textarea>
+
+    <!-- Control Buttons -->
     <div class="mb-5">
       <button id="start" class="btn btn-success mt-5 me-3">Start</button>
       <button id="pause" class="btn btn-warning mt-5 me-3">Pause</button>
@@ -137,10 +145,15 @@ Let's add a `onInput` listener to the `volume` range slider and adjust the `volu
 Let us also set the `<span>` that displays the value of the `volume` in the webpage next to the range slider.
 
 ```JavaScript
-document.querySelector("#volume").addEventListener("input", () => {
-  const volume = document.querySelector("#volume").value;
-  speech.volume = volume;
-  document.querySelector("#volume-label").innerHTML = volume;
+document.querySelector("#rate").addEventListener("input", () => {
+  // Get rate Value from the input
+  const rate = document.querySelector("#rate").value;
+
+  // Set rate property of the SpeechSynthesisUtterance instance
+  speech.rate = rate;
+
+  // Update the rate label
+  document.querySelector("#rate-label").innerHTML = rate;
 });
 ```
 
@@ -153,10 +166,15 @@ Let's add a `onInput` listener to the `rate` range slider and adjust the `rate` 
 Let us also set the `<span>` that displays the value of the `rate` in the webpage next to the range slider.
 
 ```JavaScript
-document.querySelector("#rate").addEventListener("input", () => {
-  const rate = document.querySelector("#rate").value;
-  speech.rate = rate;
-  document.querySelector("#rate-label").innerHTML = rate;
+document.querySelector("#volume").addEventListener("input", () => {
+  // Get volume Value from the input
+  const volume = document.querySelector("#volume").value;
+
+  // Set volume property of the SpeechSynthesisUtterance instance
+  speech.volume = volume;
+
+  // Update the volume label
+  document.querySelector("#volume-label").innerHTML = volume;
 });
 ```
 
@@ -170,10 +188,16 @@ Let us also set the `<span>` that displays the value of the `pitch` in the webpa
 
 ```JavaScript
 document.querySelector("#pitch").addEventListener("input", () => {
+  // Get pitch Value from the input
   const pitch = document.querySelector("#pitch").value;
+
+  // Set pitch property of the SpeechSynthesisUtterance instance
   speech.pitch = pitch;
+
+  // Update the pitch label
   document.querySelector("#pitch-label").innerHTML = pitch;
 });
+
 ```
 
 **Voice**:
@@ -263,53 +287,84 @@ document.querySelector("#resume").addEventListener("click", () => {
 The final version of `textToSpeech.js`:
 
 ```JavaScript
+// Initialize new SpeechSynthesisUtterance object
 let speech = new SpeechSynthesisUtterance();
+
+// Set Speech Language
 speech.lang = "en";
 
-let voices = [];
+let voices = []; // global array of available voices
+
 window.speechSynthesis.onvoiceschanged = () => {
+  // Get List of Voices
   voices = window.speechSynthesis.getVoices();
+
+  // Initially set the First Voice in the Array.
   speech.voice = voices[0];
+
+  // Set the Voice Select List. (Set the Index as the value, which we'll use later when the user updates the Voice using the Select Menu.)
   let voiceSelect = document.querySelector("#voices");
   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
 };
 
 document.querySelector("#rate").addEventListener("input", () => {
+  // Get rate Value from the input
   const rate = document.querySelector("#rate").value;
+
+  // Set rate property of the SpeechSynthesisUtterance instance
   speech.rate = rate;
+
+  // Update the rate label
   document.querySelector("#rate-label").innerHTML = rate;
 });
 
 document.querySelector("#volume").addEventListener("input", () => {
+  // Get volume Value from the input
   const volume = document.querySelector("#volume").value;
+
+  // Set volume property of the SpeechSynthesisUtterance instance
   speech.volume = volume;
+
+  // Update the volume label
   document.querySelector("#volume-label").innerHTML = volume;
 });
 
 document.querySelector("#pitch").addEventListener("input", () => {
+  // Get pitch Value from the input
   const pitch = document.querySelector("#pitch").value;
+
+  // Set pitch property of the SpeechSynthesisUtterance instance
   speech.pitch = pitch;
+
+  // Update the pitch label
   document.querySelector("#pitch-label").innerHTML = pitch;
 });
 
 document.querySelector("#voices").addEventListener("change", () => {
+  // On Voice change, use the value of the select menu (which is the index of the voice in the global voice array)
   speech.voice = voices[document.querySelector("#voices").value];
 });
 
 document.querySelector("#start").addEventListener("click", () => {
+  // Set the text property with the value of the textarea
   speech.text = document.querySelector("textarea").value;
+
+  // Start Speaking
   window.speechSynthesis.speak(speech);
 });
 
 document.querySelector("#pause").addEventListener("click", () => {
+  // Pause the speechSynthesis instance
   window.speechSynthesis.pause();
 });
 
 document.querySelector("#resume").addEventListener("click", () => {
+  // Resume the paused speechSynthesis instance
   window.speechSynthesis.resume();
 });
 
 document.querySelector("#cancel").addEventListener("click", () => {
+  // Cancel the speechSynthesis instance
   window.speechSynthesis.cancel();
 });
 
