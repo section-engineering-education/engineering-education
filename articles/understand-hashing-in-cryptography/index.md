@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/understand-hashing-in-cryptography/
 title: Understanding Hashing in Cryptography
-description: In this article we will cover the objectives of hashing which include data integrity and authentication. We have learned what hashing is, how it works, and went over hash functions in cryptography.
+description: In this article we will cover the objectives of hashing which include data integrity and authentication. We will  learn what hashing is, how it works, and what hash functions are in cryptography.
 author: judy-nduati
 date: 2021-01-05T00:00:00-14:00
 topics: [Security]
