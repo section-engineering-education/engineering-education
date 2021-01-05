@@ -6,7 +6,7 @@ url: /engineering-education/getting-started-with-nodemcu/
 title: Getting started with NodeMCU
 description: A tutorial on introduction to microcontroller, NodeMCU, and its uses in IoT.
 author: srishilesh-p-s
-date: 2021-01-00T00:00:00-00:00
+date: 2021-01-05T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
