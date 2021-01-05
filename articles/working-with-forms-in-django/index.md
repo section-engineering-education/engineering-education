@@ -6,24 +6,26 @@ url: /engineering-education/working-with-forms-in-django/
 title: Working with Forms in Django
 description: This article provides a walkthrough on the various types of Django forms, how these forms can be created in the Django framework and how form data is saved in the database
 author: anita-achu
-date: 2021-01-04T00:00:00-18:00
+date: 2021-01-05T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images: 
 
   - url: /engineering-education/working-with-forms-in-django/hero.jpg
-    alt: django image example
+    alt: django forms image example
 ---
-A large percent of modern applications collect data from their users, which is done using forms. These forms could be used for logging into an application, registering, or even data needed for a survey. User forms are very important and required in every application.
+A large percent of modern applications collect data from their users, which is done using forms. These forms could be used to log into an application, any registering, or even to gather data needed for a survey. User forms are very important and are required in every application.
 <!--more-->
-Forms are presented in simple HTML and can be styled with CSS and JavaScript. Luckily, the Django framework provides its model forms that save data on the backend, making it a lot easier, and the developer does not need to start from scratch while creating a form.
+These forms are presented in simple HTML and can be styled with CSS and JavaScript. Luckily, the Django framework provides its model forms that save data on the backend, making it a lot easier, and the developer doesn't need to start from scratch when creating a form.
 
-Usually, while it requires the developer to create a form, do some styling, validating of the form, ensure the user data has no error, and save it in the database. This is the advantage of the Django framework; it provides all of these functions for the developer with its ModelForm.
+Typically, when creating a form, it would require a developer to do some styling, some validation of the form to ensure the user data has no error, and they would save it in a database. This is the advantage of the Django framework; it provides all of these functions with its ModelForm.
 
 ### Introduction
-Django is a high-level Python open-source backend framework with various in-built libraries and packages. The Django framework is easy, fast, and secure. Due to its inbuilt libraries, many functions can be created with a few lines of code rather than starting from scratch. One of the inbuilt packages is **Django forms.**
+Django is a high-level Python open-source backend framework with various in-built libraries and packages. The Django framework is easy, fast, and secure. Due to its inbuilt libraries, many functions can be created with only a few lines of code rather than creating them from scratch. 
 
-Django forms are used when collecting user data and saving that data in a database. There are various model field forms available in Django for different purposes, and these fields have various patterns. The most important part about Django forms is that the form handles the basic aspects of form creation in only a few code lines.
+One of these inbuilt packages is **Django forms.**
+
+We use Django forms when collecting user data to save in a database. There are various model field forms available in Django for different purposes, and these fields have various patterns. The most important part of Django forms is that the form handles the basic aspects of form creation in only a few code lines.
 
 However, the developer can choose to create a form from scratch, but it is a lot easier to use the Django model form, which handles a user form's basic aspect. These basic aspects include: creating the form, styling the form, receiving user data, validating the form (checking for errors), and saving the data in a database. 
 
@@ -209,9 +211,9 @@ Once this is done properly, your form would look like this.
 ![Register form 4 with crispy](/engineering-education/working-with-forms-in-django/register4.png)
 
 ### Saving user form data in a database
-This is one of the most awesome features of Django. Django framework comes with its own immersed database, ***sqlite3***. The Django app is immediately created from the terminal, and it comes with an SQLite database. 
+This is one of the greatest features of Django. The Django framework comes with its own immersed database, ***sqlite3***. It immediately creates the Django app from the terminal, and it comes with an SQLite database.
 
-The Django *ModelForm* automatically saves to the database without an additional line of code. How cool! More reason to love and to work with the Django framework.
+The Django *ModelForm* automatically saves to the database without any additional line of code. How cool! More reason to love and to work with the Django framework.
 
 ***I hope this tutorial was of help to you.*** 
 
