@@ -1,4 +1,22 @@
-Search engine optimization is a tool you may be familiar with using to help rank your website by utilizing keywords to make your website more discoverable to relevant users. The same process can be used when creating a mobile application. Although website optimization might differ slightly from optimization for mobile applications, they bind to the same algorithms. The difference lies in how you get users. For a user to have your application, they have to download and install that application. According to [statista](https://www.statista.com/statistics/266210/number-of-available-applications-in-the-google-play-store/) there are over 3 million applications in the Google Play store alone, and the number keeps growing day by day.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/google-play-store-application-optimization/
+title: Google Play Store Application Optimization
+description: This guide will discuss practical insights that will help your application climb the Google Play store’s visibility ladder and increase download conversion rates.
+author: joseph-chege
+date: 2021-01-05T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/google-play-store-application-optimization/hero.png
+    alt: Google Play Store app optimization
+---
+Search engine optimization is a tool you may be familiar with using to help rank your website by utilizing keywords to make your website more discoverable to relevant searches. The same process can be used when creating a mobile application.
+<!--more-->
+Although website optimization might differ slightly from optimization for mobile applications, they bind to the same algorithms. The difference lies in how you get users. For a user to have your application, they have to download and install that application. According to [statista](https://www.statista.com/statistics/266210/number-of-available-applications-in-the-google-play-store/) there are over 3 million applications in the Google Play store alone, and the number keeps growing day by day.
 
 ![](/engineering-education/google-play-store-application-optimization/number-of-google-play-store-apps.png)
 
