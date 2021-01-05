@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/understand-hashing-in-cryptography/hero.jpg
-    alt: JavaScript Exception Handling image example
+    alt: Hashing in Cryptography image example
 ---
 Hashing is a form of computer security that enables data integrity and authentication. Hashing, in most cases, is mistaken with encryption. Hashing is different from encryption. In this article, we will explore and learn more about hashing. We will also go over their differences.
 <!--more-->
