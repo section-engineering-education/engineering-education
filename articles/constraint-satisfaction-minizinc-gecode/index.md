@@ -95,7 +95,7 @@ Note that the "Solver configuration" in the top right corner says "Gecode 6.3.0"
 
 ### Setting Up the Problem
 
-MiniZinc (the language) is used to model Constraint-Satisfaction Problems. It works like many languages you may have already encountered. We'll start with a integer, the parameter `num_colors`. It represents the number of colors we want to use on our problem. We can't change this number (it's a constant), since it will constrain how many colors we can use.
+MiniZinc (the language) is used to model Constraint-Satisfaction Problems. It works like many languages you may have already encountered. We'll start with an integer, the parameter `num_colors`. It represents the number of colors we want to use on our problem. We can't change this number (it's a constant), since it will constrain how many colors we can use.
 
 ```
 int: num_colors = 4;
