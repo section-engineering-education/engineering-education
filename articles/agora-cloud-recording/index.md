@@ -1,4 +1,4 @@
-In this tutorial, we will be building a server using Node.js and Express to acquire recording resource, start, and stop cloud recording of audio/video streams that occur using the Agora SDKs in your application using the Cloud Recording APIs provided by Agora.
+In this tutorial, we will be building a server using Node.js and Express to start and stop cloud recording of audio/video streams that occur using Agora SDKs in your application using the Cloud Recording APIs provided by Agora.
 
 The client application that's using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
 
@@ -21,6 +21,8 @@ If you'd like to learn how to build some applications with React Native and Agor
 - [Video Conferencing](/engineering-education/react-native-agora-video-conference-app/).
 
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
+
+You'll need [Node.js](https://nodejs.org/en/) to set up an Express server. I'll be using [Postman](https://www.postman.com/downloads/) to make requests to this server to test it.
 
 ### Agora
 Agora.io was founded in 2014. It's a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
@@ -115,8 +117,6 @@ I'll be using Axios to make requests to the Agora APIs. We need to pass the cons
 It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
 ### Setting up the server
-> You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
-
 Let's install `Express` using `NPM`.
 
 ```bash
