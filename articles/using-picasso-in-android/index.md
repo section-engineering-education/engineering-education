@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/using-picasso-in-android/
 title: Using Picasso in Android
-description: In this article, we will will illustrate the different features offered by Picasso in Android applications such as image resizing, cropping, and rotation.
+description: In this article, we will illustrate the different features offered by Picasso in Android applications such as image resizing, cropping, and rotation.
 author: briana-nzivu
 date: 2021-01-05T00:00:00-16:00
 topics: []
