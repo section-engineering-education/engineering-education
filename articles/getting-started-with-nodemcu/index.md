@@ -6,7 +6,7 @@ url: /engineering-education/getting-started-with-nodemcu/
 title: Getting started with NodeMCU
 description: A tutorial on introduction to microcontroller, NodeMCU, and its uses in IoT.
 author: srishilesh-p-s
-date: 2021-01-00T00:00:00-00:00
+date: 2021-01-05T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -48,8 +48,8 @@ In this article, we will be focusing on the NodeMCU microcontroller. NodeMCU sta
 - Operating voltage of 3.3V.
 - 128KB RAM and 4MB of Flash memory.
 - Contains inbuilt 802.11b/g/n WiFi transceiver.
-- Contains 17 GPIOs (General Purpose Input Output).
-- Provides serial communication via the UART interface.
+- Contains 17 GPIOs (General Purpose Input Output). GPIO is a standard interface which connects the microcontroller to other electronic devices. For example, LEDs, Buzzers and other sensors are GPIOs.
+- Provides serial communication via the UART (Universal Asynchronous Receiver-Transmitter) interface. UART is a physical interface which transmits the data between two nodes using a data bus. More about UART can be understood [here](https://www.circuitbasics.com/basics-uart-communication).
 
 All the above components with several additional features can be seen in this pin diagram.
 
@@ -58,11 +58,10 @@ All the above components with several additional features can be seen in this pi
 [Image source](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
 
 When compared with other microcontrollers like Arduino, we see that:
-- NodeMCU comes with 128KB RAM, whereas Arduino has 2KB RAM.
-- NodeMCU has 4MB ROM, whereas Arduino has 32KB ROM.
-- NodeMCU comes with a MicroUSB port, but Arduino requires a USB-B type.
-- The development board for NodeMCU is much smaller when compared with others.
-- NodeMCU is very cheap with a cost of 5 USD.
+- NodeMCU comes with 128KB RAM, whereas Arduino has 2KB RAM. With better RAM memory, parallel processing of tasks can be achieved seamlessely.
+- NodeMCU has 4MB ROM, whereas Arduino has 32KB ROM. With bigger ROM size, NodeMCU allows us to store more information without any need of external storage devices.
+- NodeMCU comes with a MicroUSB port, but Arduino requires a USB-B type. Usage of MicroUSB is more extensive, and ensures better connectivity.
+- The development board for NodeMCU is much smaller when compared with others. The size of board is a major factor to consider while building electronic appliances.
 
 ### Step by Step Guide
 #### Setup
