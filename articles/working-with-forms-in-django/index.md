@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images: 
 
   - url: /engineering-education/working-with-forms-in-django/hero.jpg
-    alt: django forms image example
+    alt: django forms example image
 ---
 A large percent of modern applications collect data from their users, which is done using forms. These forms could be used to log into an application, any registering, or even to gather data needed for a survey. User forms are very important and are required in every application.
 <!--more-->
