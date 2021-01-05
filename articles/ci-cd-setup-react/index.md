@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/ci-cd-setup-react/
-title: How to setup CI/CD to React with Circle CI, AWS S3, and AWS CloudFront 
-description: In this tutorial, we walk through how to setup CI/CD to React with Circle CI, AWS S3, and AWS CloudFront.
+title: How to Set Up CI/CD in a React Project with Circle CI, AWS S3, and AWS CloudFront 
+description: In this tutorial, we walk through how to set up CI/CD in a React project with Circle CI, AWS S3, and AWS CloudFront.
 author: worawat-kaewsanmaung
 date: 2021-01-05T00:00:00-07:00
 topics: []
@@ -69,7 +69,7 @@ Initially, the bucket will be set to private. So, we need to make the bucket mod
 
 ![make the bucket mode public](4-make-the-bucket-mode-public.png)
 
-Then, we need to select the ‘**Permissions**’ tab as displayed in the code snippet below:
+Then, we need to select the **Permissions** tab as displayed in the code snippet below:
 
 ![select the permissions](5-select-the-permissions-tab.png)
 
@@ -128,7 +128,7 @@ Hence, we are done with the local deployment of our project. This also completes
 
 Now, we move on to set up CircleCI in our react project.
 
-### Step 4:  CircleCI Setup
+### Step 4: CircleCI Setup
 
 First, we need to create an account on CircleCI. We can do that using GitHub login, which simplifies the register and login process. Then, we will be redirected to [https://circleci.com/dashboard](https://circleci.com/dashboard). If not, we need to go to the same URL which is the CircleCI dashboard.
 
