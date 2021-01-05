@@ -1,7 +1,7 @@
 Java database connectivity (JDBC) is an application programming interface that defines how Java application programs connect and execute database queries.
 
 ### Prerequisites
-1. Java development kit [JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your computer.
+1. Java development kit [JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your machine.
 2. Code Editor of your choice. I use [Intellij community edition](https://www.jetbrains.com/idea/download/#section=linux) which is free.
 3. Knowledge in [Java](https://www.javatpoint.com/java-tutorial) programming language.
 
