@@ -16,15 +16,15 @@ images:
 ---
 Constraint-Satisfaction Problems (CSPs) represent problems as variables, their possible values, and constraints on those values. Many problems, from graph theory to type inference to puzzle-solving, are converted into CSPs. In this tutorial, we will use MiniZinc, a programming language built for CSPs, and Gecode, a CSP solver, to model and solve a simple graph-coloring problem.
 
-## **Prerequisites**
+### Prerequisites
 
 This tutorial does not assume existing knowledge about CSPs, as we cover the basics at the beginning. Yet it helps if you already know some programming basics (like types and constants). This makes some of the MiniZinc language easier to understand.
 
-## Constraint-Satisfaction Basics
+### Constraint-Satisfaction Basics
 
 A Constraint-Satisfaction Problem is composed of 3 **sets**, 3 groups of items with no repeats in a set. These groups are X, the variables; D, the domains, and C, the constraints.
 
-### Defining a CSP
+#### Defining a CSP
 
 The first set, *X*, is the set of **variables**, which are like programming variables. These can be *x*, *y*, *z*, *x<sub>1</sub>*, *x<sub>2</sub>*, or any other variables. Each variable can take on a value from its **domain**, which is found in the second set *D*.
 
@@ -44,13 +44,16 @@ The "solutions" to this CSP are the possible values of *x* and *y* that make the
 
 For more theoretical details, you can check [Enric Rodríguez-Carbonell's notes](https://www.cs.upc.edu/~erodri/webpage/cps/theory/cp/intro/slides.pdf) on the subject.
 
-### CSP Applications
+#### CSP Applications
 
 You'll find that many problems lend themselves to CSP solutions. They have some number of objects (variables) with possible values (domains) and rules about their interactions (constraints). One example is any problem involving a graph, or a network of nodes.
 
 In the below graph, there are 5 nodes, and several connections between them. Each connection has a "cost", given by its number. In real life, each node could be a city (city 1, city 2, etc.), and each connection a road with a cost. So the road from city 1 to city 2 costs $2 toll (or takes 2 hours) to drive on.
 
-FINISH INSERT LINK IMAGE https://commons.wikimedia.org/wiki/File:Example_The_travelling_salesman_problem_(TSP).gif
+![TSP](/engineering-education/constraint-satisfaction-minizinc-gecode/tsp.gif)
+<br/>
+*Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Example_The_travelling_salesman_problem_(TSP).gif)*
+ 
 
 If you want to visit every city exactly once (no repeated nodes), at the lowest cost (smallest sum of connection-costs), how do you solve the problem?
 
@@ -58,7 +61,7 @@ You can convert the information about the graph into a Constraint-Satisfaction P
 
 This is a version of the [traveling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem). Such problems crop up in GPS navigation, where Google Maps wants to find the quickest route from your house to your workplace. Other problems break down to CSP components in a similar fashion, including "schedule these jobs to minimize wasted time", and "figure out if this data is a number or a letter".
 
-## Our Example Problem: Map-Coloring
+### Our Example Problem: Map-Coloring
 
 Map-coloring is easy to convert into a Constraint-Satisfaction Problem. Here, you want to color countries or states on a map, *without* coloring two touching states with the same color. We will find such a coloring for the below map of the United States (continental 48 states only, so we exclude, Alaska, Hawaii, and the territories).
 
@@ -68,13 +71,13 @@ Map-coloring is easy to convert into a Constraint-Satisfaction Problem. Here, yo
 
 Our coloring can be rewritten as a CSP, where the constraint is that any states that touch each other cannot be the same color. Texas (TX) cannot be green if Louisiana (LA) is green. So we need at least two colors for a valid map-coloring. Doing this by trial-and-error is hard, while CSP modeling makes it easy.
 
-## CSP Tools for Pros
+### CSP Tools for Pros
 
 Some basic CSP tools exist for common languages, like [Python](https://pypi.org/project/python-constraint/) and [JavaScript](http://prajitr.github.io/jusCSP/). However, the basic options don't work as well for a professional, who needs to model and solve large, complex problems. Specialized tools also speed up CSP solving, as they can be optimized for that purpose alone.
 
 That is why we will use MiniZinc and Gecode in our Constraint-Satisfaction Problem. [MiniZinc](https://www.minizinc.org/) is a language designed for constraint-modeling, making constraints far easier to define than most environments. [Gecode](https://www.gecode.org/) is a solver, a separate module that finds values for the defined variables that satisfy the constraints. These tools give you fine-grained control when defining their problem, and the speed to solve them quickly.
 
-### Installing MiniZinc
+#### Installing MiniZinc
 
 To get started, we have to download and install MiniZinc. MiniZinc is best used with the (free, open-source) MiniZinc IDE, which MiniZinc IDE, which comes with Gecode, other solvers, and a MiniZinc compiler built-in for convenience.
 
@@ -90,7 +93,7 @@ A window will pop up asking for automatic-update checking. Click "No" unless you
 
 Note that the "Solver configuration" in the top right corner says "Gecode 6.3.0". That's exactly what we want, as we're using Gecode as our solver. If that box says something else, click it and select a "Gecode" option from the drop-down menu. MiniZinc *does* support custom solvers, which you can learn more about [here](https://www.minizinc.org/doc-2.5.3/en/command_line.html#adding-solvers).
 
-## Setting Up the Problem
+### Setting Up the Problem
 
 MiniZinc (the language) is used to model Constraint-Satisfaction Problems. It works like many languages you may have already encountered. We'll start with a integer, the parameter `num_colors`. It represents the number of colors we want to use on our problem. We can't change this number (it's a constant), since it will constrain how many colors we can use.
 
@@ -120,7 +123,7 @@ The "satisfy" keyword tells MiniZinc that we just need *some* kind of solution t
 
 Press `Ctrl-S` or click File>Save to save the file. Call it `us_map.mzn`, as .mzn files are MiniZinc's code format.
 
-### Variables and Domains
+#### Variables and Domains
 
 Now, we need our variables and domains: each state is a variable, which can be colored with one of 4 colors. Each color is actually an integer (from 1-4 inclusive). It doesn't matter which color each integer represents, as long as they are different.
 
@@ -148,7 +151,7 @@ array[States] of var 1..num_colors: colors;
 
 An array declaration in MiniZinc can be structured as `array[keys or size] of type: arrayname`. So our state-color array is named "colors", the "key" value (name of each item) is based on the variables in the States enum, and each color is typed like our previous single-variable, `var 1..num_colors`. The key can also be an index range of items (`0..2`).
 
-### Constraints
+#### Constraints
 
 Now that we have our variables, let's set constraints.
 
@@ -172,7 +175,7 @@ constraint colors[TX] != colors[AR];
 constraint colors[TX] != colors[NM];
 ```
 
-FINISH FILE LINK THING `all_state_touching_constraints.mzn` contains the full list of state-touching constraints. Download that file by clicking the link, then click and drag it into the folder you saved `us_map.mzn` in. You can import this list of constraints into MiniZinc much like a library in another language. Your code should look like this:
+We've provided the full U.S. state [constraints file](/engineering-education/constraint-satisfaction-minizinc-gecode/all_state_touching_constraints.mzn), `all_state_touching_constraints.mzn`. It contains the full list of state-touching constraints. Download that file by clicking the link and pressing `Ctrl-S` (or clicking File>Save in your browser), then click and drag it into the folder you saved `us_map.mzn` in. You can import this list of constraints into MiniZinc, allowing the current file to use the code from the constraints file. Your code should look like this:
 
 ```
 int: num_colors = 4;
@@ -198,9 +201,9 @@ output [ "\(s) = \(colors[s]);\n" | s in States ];
 
 The `\(variable)` syntax lets you output strings of the variables. The `\(s)` is the state code, the `\(colors[s])` is the color number assigned, and `| s in States` means "for every state `s` in the States enum".
 
-## Solving the Model with Gecode
+### Solving the Model with Gecode
 
-### Satisfying the Problem
+#### Satisfying the Problem
 
 Finally, we can solve the model with Gecode. Make sure the "Solver configuration" is set to "Gecode 6.3.0", and click on the "Run" button (or press `Ctrl-R`) to run our code.
 
@@ -262,7 +265,7 @@ Finished in 178msec
 
 To read this output, we see the state's abbreviation on the left, and its color-number on the right. So WY (Wyoming) and TN (Tennessee) are the same color.
 
-### Optimizing the Problem
+#### Optimizing the Problem
 
 Now, what if you not only wanted to solve this problem, but to solve it with the *minimum number* of colors? MiniZinc makes this easy, requiring only 4 minor changes:
 
@@ -353,4 +356,5 @@ Finished in 174msec
 
 ... identical! As it turns out, you still need 4 colors for the United States map.
 
+### Conclusion
 Congratulations, you've learned about and implemented a Constraint-Satisfaction Problem in MiniZinc, and solved it with Gecode. If you want to make more flexible or complex models (that you can run from the command line!), MiniZinc has several [tutorials](https://www.minizinc.org/doc-2.5.3/en/part_2_tutorial.html) for these advanced features.
