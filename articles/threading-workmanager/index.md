@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/threading-workmanager/
+title: Threading in WorkManager
+description: This article goes through how `WorkManager` manages threading and how to use the RxJava and Coroutines libraries in `WorkManager`.
+author: linus-muema
+date: 2021-01-05T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/threading-workmanager/hero.png
+    alt: Threading in WorkManager image example
+---
+Threading is a critical area in Android that every developer must be well informed in. Thread management determines how an application uses the device's resources. This ultimately affects the general performance of an application.
+<!--more-->
 ### Introduction
-Threading is a critical area in Android that every developer must be well informed in. Thread management determines how an application uses the device's resources. This ultimately affects the general performance of an application. In `WorkManager`, threading is very vital as it determines whether our work will be executed to completion. This article goes through how `WorkManager` manages threading and how to use the RxJava and Coroutines libraries in `WorkManager`.
+In `WorkManager`, threading is very vital as it determines whether our work will be executed to completion. This article goes through how `WorkManager` manages threading and how to use the RxJava and Coroutines libraries in `WorkManager`.
 
 ### Prerequisites
 1. Have Android studio installed
