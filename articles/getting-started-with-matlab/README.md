@@ -16,7 +16,7 @@ Although MATLAB is intended primarily for numerical computing, an optional toolb
 - Modeling, simulation, and prototyping.
 
 ### Lets code!
-In heart, MATLAB is a calculater. For example, try: `1+1`, `sqrt(4)`, or `sin(pi/2)`.
+In heart, MATLAB is a calculator. For example, try: `1+1`, `sqrt(4)`, or `sin(pi/2)`.
 
 Also, you can present complex numbers by:
 | Symbol  | Function  |   
@@ -41,7 +41,7 @@ a =
      1     2     3     4
 ```
 ##### Column vector
-You need to use simecolons between values. For example:
+You need to use semicolons between values. For example:
 ```matlab
 a = [1;2;3;4]
 ```
@@ -65,7 +65,7 @@ ans =
 
    513    21     9    23
 ```
-And if you want to list all of the vector elements you can use `values(:)`.
+And if you want to list all of the vector elements, you can use `values(:)`.
 
 #### Matrix
 The matrix is a two-dimensional array of numbers.
@@ -93,7 +93,7 @@ ans =
 You can specify the rows you want before the comma, in our case, it is every row in that matrix. Also, you can specify the columns you want after the comma, in the code above it is the first and the second rows.
 
 Now go and execute `values(1:3, 2:4)` yourself. What will be the result?
-#### Zeros, Ones, and Eye
+#### Zeros, Ones and Eye
 When you use `zeros` which is a built-in function, it makes every value equal to zero. For example, if you write `a = zeros(4:5)` then the result will be four rows and five columns of zeros:
 ```matlab
 a =
@@ -119,7 +119,7 @@ c =
      0     0     0     1
 ```
 #### Linspace 
-linspace function generates linearly spaced vectors. The difference between colon operator and linspace is that the second one gives us control over the points. For example, if you write `linspace(1,10,10)` then the result will be:
+Linspace function generates linearly spaced vectors. The difference between colon operator and linspace is that the second one gives us control over the points. For example, if you write `linspace(1,10,10)` then the result will be:
 ```matlab
 ans =
 
