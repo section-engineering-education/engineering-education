@@ -284,7 +284,19 @@ For example:
 ```
 
 ### Uploading media
-We need to upload the image from the callback function that we passed to the `launchCamera` and the `launchImageLibrary` functions.
+Let's create a function called `onMediaSelect`. This is the callback function that we passed to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the media that the user picked in this callback function. We'll use that to upload the media to the cloud storage.
+
+We should start the upload process only when the user did not cancel the media picker. If the user cancelled the operation, the picker will send a `didCancel` property in the response object.
+
+```JSX
+const onMediaSelect = async (media) => {
+  if (!media.didCancel) {
+    // Upload Process
+  }
+};
+```
+
+You can learn more about the response object that we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
 
 Let's install the package for Firebase storage.
 
@@ -314,13 +326,9 @@ You can also specify a file located in a nested directory:
 const reference = storage().ref('/directory1/directory2/filename.png');
 ```
 
-Now, we should use the `putFile` method to upload the image from the user's device to the cloud storage. The `putFile` method accepts a path to the file on the user's device.
+Now, we should use the `putFile` method in the `reference` object to upload the image from the user's device to the cloud storage. The `putFile` method accepts a path to the file on the user's device.
 
 The callback function that we passed to `launchCamera` and the `launchImageLibrary` functions will get the `URI` of the image in the response object. We need to pass the `URI` to the `putFile` method.
-
-You can learn more about the response object that we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
-
-We should start the upload progress only when the user did not cancel the media picker.
 
 ```JSX
 const onMediaSelect = async (media) => {
@@ -330,6 +338,12 @@ const onMediaSelect = async (media) => {
   }
 };
 ```
+
+Once the media has been uploaded, you can take a look at it in the Firebase console.
+
+![uploaded media](/engineering-education/react-native-non-expo-firebase-storage/uploaded_media.png)
+
+We don't have any visual feedback while the media is uploading. Let's add that in the next step.
 
 ### Adding upload progress
 The state of the `Task` object that is returned from the `putFile` method will keep changing while the file is getting uploaded. We can add an event handler to handle this state change.
