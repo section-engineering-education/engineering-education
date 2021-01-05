@@ -234,3 +234,6 @@ This article is an introduction to Amazon DynamoDB. There is more to explore on 
 - Programming with DynamoDB using different programming languages
 
 You can also get a certification for DynamoDB under [AWS Certified Solutions Architect Associate](https://digitalcloud.training/certification-training/aws-solutions-architect-associate/database/).
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
