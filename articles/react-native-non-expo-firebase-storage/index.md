@@ -245,6 +245,8 @@ Let's install the `react-native-image-picker` to add these functionalities.
 npm install react-native-image-picker
 ```
 
+> The minimum target SDK for the React Native Image Picker is 21. If your project targets an SDK below 21, bump up the minSDK target in `android/build.gradle`.
+
 After the package is installed, import the `launchCamera` and `launchImageLibrary` functions from the package.
 
 ```JSX
