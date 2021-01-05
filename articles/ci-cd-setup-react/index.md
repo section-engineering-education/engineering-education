@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-setup-ci-cd-to-react-with-circle-ci-aws-s3-and-aws-cloudfront/
+url: /engineering-education/ci-cd-setup-react/
 title: How to setup CI/CD to React with Circle CI, AWS S3, and AWS CloudFront 
 description: Learn How to setup CI/CD to React with Circle CI, AWS S3, and AWS CloudFront.
 author: worawat-kaewsanmaung
-date: 2020-04-24T00:00:00-07:00
+date: 2021-01-05T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-setup-ci-cd-to-react-with-circle-ci-aws-s3-and-aws-cloudfront/hero.jpg
-    alt: How to setup CI/CD to React with Circle CI, AWS S3, and AWS CloudFront 
+  - url: /engineering-education/ci-cd-setup-react/hero.jpg
+    alt: CI CD React 
 ---
 In the present software development context, the important workflows for software development are run, tested, built, and deployed without setting up CI/CD. All the processes in the software development are done manually from running tests to running build to get the build file and deploying on the server. The development cycle for adding new features and fixing bugs done manually becomes inefficient and hectic due to processes being run repeatedly.
 <!--more-->
