@@ -90,7 +90,7 @@ This is the language that the user will speak in. You need to use locale codes t
 Let's set the language that the user has chosen from the select menu. You need to select the Dialect select menu and use its value for the language property.
 
 ```JavaScript
-  speechRecognition.lang = document.querySelector("#select_dialect").value;
+speechRecognition.lang = document.querySelector("#select_dialect").value;
 ```
 
 ### Events & Callbacks
@@ -106,7 +106,6 @@ Let's set it to `display: block` when the speech recognition starts.
 ```JavaScript
 speechRecognition.onstart = () => {
   document.querySelector("#status").style.display = "block";
-  console.log("Speech Recognition Started");
 };
 ```
 
@@ -118,7 +117,6 @@ Let's set it to `display: none` when the speech recognition starts.
 ```JavaScript
 speechRecognition.onend = () => {
   document.querySelector("#status").style.display = "none";
-  console.log("Speech Recognition Ended");
 };
 ```
 
@@ -130,7 +128,6 @@ Let's set it to `display: none` when the speech recognition starts.
 ```JavaScript
 speechRecognition.onError = () => {
   document.querySelector("#status").style.display = "none";
-  console.log("Speech Recognition Error");
 };
 ```
 
@@ -156,6 +153,7 @@ Let's declare a variable for the final transcript outside the callback function 
 let final_transcript = "";
 
 speechRecognition.onresult = (event) => {
+  // Create the interim transcript string locally because we don't want it to persist like final transcript
   let interim_transcript = "";
 };
 ``` 
@@ -163,7 +161,9 @@ speechRecognition.onresult = (event) => {
 Now let's build a string from the results array. We should run it through a loop and add the result item to the final transcript if the result item is final. If not, we should add it to the interim results string.
 
 ```JavaScript
+// Loop through the results from the speech recognition object.
 for (let i = event.resultIndex; i < event.results.length; ++i) {
+  // If the result item is Final, add it to Final Transcript, Else add it to Interim transcript
   if (event.results[i].isFinal) {
     final_transcript += event.results[i][0].transcript;
   } else {
@@ -185,15 +185,20 @@ This is the complete code snippet for the `onResult` event.
 let final_transcript = "";
 
 speechRecognition.onresult = (event) => {
+  // Create the interim transcript string locally because we don't want it to persist like final transcript
   let interim_transcript = "";
 
+  // Loop through the results from the speech recognition object.
   for (let i = event.resultIndex; i < event.results.length; ++i) {
+    // If the result item is Final, add it to Final Transcript, Else add it to Interim transcript
     if (event.results[i].isFinal) {
       final_transcript += event.results[i][0].transcript;
     } else {
       interim_transcript += event.results[i][0].transcript;
     }
   }
+
+  // Set the Final franscript and Interim transcript.
   document.querySelector("#final").innerHTML = final_transcript;
   document.querySelector("#interim").innerHTML = interim_transcript;
 };
@@ -217,43 +222,58 @@ Here is the final code for `speechRecognition.js`:
 
 ```JavaScript
 if ("webkitSpeechRecognition" in window) {
+  // Initialize webkitSpeechRecognition
   let speechRecognition = new webkitSpeechRecognition();
+
+  // String for the Final Transcript
   let final_transcript = "";
 
+  // Set the properties for the Speech Recognition object
   speechRecognition.continuous = true;
   speechRecognition.interimResults = true;
   speechRecognition.lang = document.querySelector("#select_dialect").value;
 
+  // Callback Function for the onStart Event
   speechRecognition.onstart = () => {
+    // Show the Status Element
     document.querySelector("#status").style.display = "block";
   };
   speechRecognition.onerror = () => {
+    // Hide the Status Element
     document.querySelector("#status").style.display = "none";
-    console.log("Speech Recognition Error");
   };
   speechRecognition.onend = () => {
+    // Hide the Status Element
     document.querySelector("#status").style.display = "none";
-    console.log("Speech Recognition Ended");
   };
 
   speechRecognition.onresult = (event) => {
+    // Create the interim transcript string locally because we don't want it to persist like final transcript
     let interim_transcript = "";
 
+    // Loop through the results from the speech recognition object.
     for (let i = event.resultIndex; i < event.results.length; ++i) {
+      // If the result item is Final, add it to Final Transcript, Else add it to Interim transcript
       if (event.results[i].isFinal) {
         final_transcript += event.results[i][0].transcript;
       } else {
         interim_transcript += event.results[i][0].transcript;
       }
     }
+
+    // Set the Final franscript and Interim transcript.
     document.querySelector("#final").innerHTML = final_transcript;
     document.querySelector("#interim").innerHTML = interim_transcript;
   };
 
+  // Set the onClick property of the start button
   document.querySelector("#start").onclick = () => {
+    // Start the Speech Recognition
     speechRecognition.start();
   };
+  // Set the onClick property of the stop button
   document.querySelector("#stop").onclick = () => {
+    // Stop the Speech Recognition
     speechRecognition.stop();
   };
 } else {
