@@ -138,3 +138,6 @@ To summarize:
 - [NodeMCU on Wikipedia](https://en.wikipedia.org/wiki/NodeMCU)
 - [NodeMCU Specifications and Features](https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet)
 - [Detailed specifications](https://lastminuteengineers.com/esp8266-nodemcu-arduino-tutorial/)
+
+---
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
