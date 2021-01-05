@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/agora-cloud-recording-part-2/
+title: Agora Cloud Recording Part 2
+description: In this tutorial, we will be building a server using Node.js and Express to implement additional operations of Agora Cloud Recording like querying the recording session, updating subscriber list and updating mixing layout.
+author: mohan-raj
+date: 2021-01-05T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/agora-cloud-recording-part-2/hero.jpg
+    alt: agora cloud recording
+---
 In this tutorial, we will be building a server using Node.js and Express to implement additional operations of Agora Cloud Recording like querying the recording session, updating subscriber list and updating mixing layout.
 
 To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/). The previous tutorial covers:
@@ -8,16 +24,16 @@ To follow along with this tutorial, you need to go through [my previous tutorial
 The client application that's using the Agora SDKs should request this server to perform these actions. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the client application.
 
 ### Goals
-By the end of this tutorial, you’ll know:
+By the end of this tutorial, you should know how to:
 
-- How to query an Agora cloud recording session.
+- Query an Agora cloud recording session.
 
-- How to update the recorder's subscriber list.
+- Update the recorder's subscriber list.
 
-- How to update the layout of the recording.
+- Update the layout of the recording.
 
 ### Prerequisites
-This tutorial and the previous tutorial is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora's SDKs in your application, then this tutorial is not for you.
+This tutorial (along with the previous tutorial) is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora's SDKs in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
 
@@ -40,7 +56,7 @@ We'll be going through these steps in this article:
 ### Querying the recording session
 You can query a recording session while it's in progress to get the details of the session. You can only query an ongoing session. If you query a session that has ended, the endpoint will respond with a 404.
 
-Now, Let's add a POST request handler for a new endpoint called `'/query'` to query the recording session.
+Now, let's add a POST request handler for a new endpoint called `/query` to query the recording session.
 
 ```JavaScript
 app.post("/query", async (req, res) => {
@@ -98,7 +114,7 @@ If the request is successful, the response will contain the details about the re
 
   - **JSON**: The file list is a JSONArray. In individual mode, fileListMode is always "json".
 
-- **File list**: If the file list mode is "string", the file list is a string that represents the filename of the M3U8 file. If the file list mode is "json", the file list is an array that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
+- **File List**: If the file list mode is "string", the file list is a string that represents the filename of the M3U8 file. If the file list mode is "json", the file list is an array that contains the details of each recorded file. The query method does not return this field if you have set snapshotConfig.
 
 - **Slice Start Time**: The time when the recording starts. It's a UNIX timestamp.
 
@@ -261,7 +277,7 @@ Requesting this endpoint will override the existing configurations.
 
 To learn more about setting video layout, refer to [this documentation](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=RESTful).
 
-Now, Let's add a POST request handler for a new endpoint called `'/updateLayout'` to update the mixing layout of the recording.
+Now, Let's add a POST request handler for a new endpoint called `/updateLayout` to update the mixing layout of the recording.
 
 ```JavaScript
 app.post("/updateLayout", async (req, res) => {
