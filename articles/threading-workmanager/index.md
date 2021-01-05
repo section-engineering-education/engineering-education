@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/threading-workmanager/
 title: Threading in WorkManager
-description: This article goes through how `WorkManager` manages threading and how to use the RxJava and Coroutines libraries in WorkManager.
+description: This article goes through how `WorkManager` manages threading and how to use the RxJava and Coroutines libraries in WorkManager using Kotlin.
 author: linus-muema
 date: 2021-01-05T00:00:00-12:00
 topics: []
