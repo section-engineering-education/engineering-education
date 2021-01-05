@@ -38,14 +38,14 @@ We'll be going through these steps in this article:
 10. Get the download URL.
 11. Recap.
 
-> You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-storage-non-expo).
+You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-storage-non-expo).
 
 ### Development environment
 > **IMPORTANT** - We will not be using Expo in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
 
-> Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
+Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
 ### Setting up the Firebase project
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
@@ -62,7 +62,7 @@ Now, click on the Android icon to add an android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-non-expo-firebase-storage/register_app.png)
 
-You will need the package name of the application to register the application. You will find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
 ![Package Name](/engineering-education/react-native-non-expo-firebase-storage/package_name.png)
 
@@ -170,7 +170,7 @@ pod install
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Building the UI
-Let's add 4 buttons to the screen.
+In the `App.js`, let's add 4 buttons to the screen.
 
 - Take a Photo.
 
@@ -318,6 +318,8 @@ The callback function that we passed to `launchCamera` and the `launchImageLibra
 
 You can learn more about the response object that we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
 
+We should start the upload progress only when the user did not cancel the media picker.
+
 ```JSX
 const onMediaSelect = async (media) => {
   if (!media.didCancel) {
@@ -418,8 +420,8 @@ Let's add a button to Pause/Resume the upload when a file is being uploaded.
 {uploading && (
   <View style={styles.uploading}>
     <ActivityIndicator size={60} color="#47477b"></ActivityIndicator>
-    <Text style={styles.uploadingText}>Uploading</Text>
-    <Text style={styles.uploadingText}>
+    <Text style={styles.statusText}>Uploading</Text>
+    <Text style={styles.statusText}>
       {`${((uploadTaskSnapshot.bytesTransferred / uploadTaskSnapshot.totalBytes) * 100).toFixed(2)}% / 100%`}
     </Text>
     <TouchableOpacity style={styles.button}>
@@ -430,17 +432,6 @@ Let's add a button to Pause/Resume the upload when a file is being uploaded.
 ```
 
 ![Pause](/engineering-education/react-native-non-expo-firebase-storage/pause.gif)
-
-Let's update the status text and hide the activity indicator if the upload is paused.
-
-```JSX
-{!paused && <ActivityIndicator size={60} color="#47477b"></ActivityIndicator>}
-<Text style={styles.statusText}>
-  {!paused ? 'Uploading' : 'Paused'}
-</Text>
-```
-
-![Resume](/engineering-education/react-native-non-expo-firebase-storage/resume.jpg)
 
 To pause/resume the upload, we need to use the `Task` object. It has 2 methods: `pause` and `resume`. Since the task object is inside the `onMediaSelect` function, let's set up a state outside and assign the `Task` object to that state when it's created.
 
@@ -473,6 +464,17 @@ Pass this function to the `onPress` pass of the pause button.
 </TouchableOpacity>
 ```
 
+Let's update the status text to *paused* and hide the activity indicator if the upload is paused.
+
+```JSX
+{!paused && <ActivityIndicator size={60} color="#47477b"></ActivityIndicator>}
+<Text style={styles.statusText}>
+  {paused ? 'Paused' : 'Uploading'}
+</Text>
+```
+
+![Resume](/engineering-education/react-native-non-expo-firebase-storage/resume.jpg)
+
 ### Get the download URL
 The `putFile` method returns a [Task](https://rnfirebase.io/reference/storage/task) object.
 
@@ -498,7 +500,7 @@ task.then(async () => {
 
 Let's create a button that will open the link in your phone's browser.
 
-To do so, let's create a state to store the download URL.
+To do so, let's create a state to store the download URL and access it outside this function.
 
 ```JSX
 const [downloadURL, setDownloadURL] = useState();
@@ -541,7 +543,7 @@ We need to use the `Linking` module from `react-native` to open the link in the 
 import { Linking } from 'react-native';
 ```
 
-To open the link, we should use the `openURL` method. Let's pass an anonymous function to the `onPress` property of the button.
+To open the link, we should use the `openURL` method in the `Linking` module.
 
 ```JSX
 <TouchableOpacity
@@ -551,7 +553,7 @@ To open the link, we should use the `openURL` method. Let's pass an anonymous fu
 </TouchableOpacity>
 ```
 
-Now, the button should open the media that we uploaded, on the phone's browser.
+Now, the button should open the media that we uploaded on the phone's browser.
 
 ![View Media](/engineering-education/react-native-non-expo-firebase-storage/view_media.jpg)
 
