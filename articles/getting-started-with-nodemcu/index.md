@@ -37,6 +37,7 @@ For example, Microcontrollers are used as embedded devices in appliances like AC
 In this article, we will be focusing on the NodeMCU microcontroller. NodeMCU stands for Node MicroController Unit. The below image shows a NodeMCU microcontroller board.
 
 ![NodeMCU ESP2866](/engineering-education/getting-started-with-nodemcu/nodemcu.png)
+
 [Image Source](https://cityos-air.readme.io/docs/esp8266-nodemcu)
 
 > According to [this](https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet) article, NodeMCU is an open-source Lua based firmware and development board specially targeted for IoT based applications. It includes firmware that runs on the ESP8266 Wi-Fi SoC from Espressif Systems, and hardware that is based on the ESP-12 module.
@@ -53,6 +54,7 @@ In this article, we will be focusing on the NodeMCU microcontroller. NodeMCU sta
 All the above components with several additional features can be seen in this pin diagram.
 
 ![ESP2866 Pin Diagram](/engineering-education/getting-started-with-nodemcu/pin-diagram.png)
+
 [Image source](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
 
 When compared with other microcontrollers like Arduino, we see that:
