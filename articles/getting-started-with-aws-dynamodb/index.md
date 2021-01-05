@@ -1,6 +1,20 @@
-### Introduction to DynamoDB
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-aws-dynamodb/
+title: Getting Started With AWS DynamoDB
+description: This article will be an introduction to DynamoDB. DynamoDB is a managed NoSQL database service that offers top-notch performance.
+author: benson-kariuki
+date: 2021-01-05T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/getting-started-with-aws-dynamodb/hero.jpg
+    alt: DynamoDB Label Image
+---
 DynamoDB is a platform as a service(PaaS) AWS product. The product is a managed NoSQL database service that offers top-notch performance. DynamoDB is seamlessly scalable. It comes without the administrative burdens of setting up, replication, scaling, among others.
-
+<!--more-->
 ### Prerequisites
 This article is suitable for any reader interested in digging into DynamoDB. Most of the time, we are introduced to relational databases. Relational databases are SQL based. Nonrelational databases are also referred to as NoSQL databases, DynamoDB being one of them. It is recommended you get to know the differences between an SQL and a NoSQL database. The article [SQL or NoSQL - Which Database is Ideal](/engineering-education/sql-or-nosql-when-to-choose-what/) will come in handy.
 
