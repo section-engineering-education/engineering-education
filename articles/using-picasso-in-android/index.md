@@ -1,63 +1,81 @@
-This article will illustrate the different features offered by Picasso in Android applications.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/using-picasso-in-android/
+title: Using Picasso in Android
+description: In this article, we will will illustrate the different features offered by Picasso in Android applications.
+author: briana-nzivu
+date: 2021-01-05T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/using-picasso-in-android/hero.jpg
+    alt: example image Picasso Android applications
+---
+Visual representation in mobile application development is a growing UI/UX trend. In this current era, most of our minds seem to understand either graphics in motion or pictures rather than words. With time, most mobile applications such as Instagram, Facebook, Twitter, and LinkedIn started implementing visual representation. This was not perfect the first time around.
+<!--more-->
 ### Introduction
-Visual representation in mobile application development is a growing UI/UX trend. In this current era, most of our minds seem to understand either graphics in motion or pictures rather than words. With time, most mobile applications such as Instagram, Facebook, Twitter, LinkedIn, etc, started implementing visual representation. It was not perfect the first time. Images were of low quality, could neither be downloaded nor edited, and screens would "freeze" as pictures loaded. As much as it was an improvement in mobile development, it was still hectic. Developers had to solve these problems. Many visual representation libraries such as `Glide`, `Picasso`, `Image loader`, `Fresco`, etc ,were then developed. In his article, we will discuss **Picasso**. **Picasso** is a powerful image loading, downloading, and caching library developed by Square. Picasso offers better image quality, disk caching, and simpler syntax to carry out various library features.
+Images were of low quality, could neither be downloaded, nor edited, and screens would "freeze" as pictures loaded. As much as it was an improvement in mobile development, it was still hectic. Developers had to solve these problems. Many visual representation libraries such as `Glide`, `Picasso`, `Image loader`, and `Fresco` were then developed. 
+
+In this article, we will discuss **Picasso**. Picasso is a powerful image loading, downloading, and caching library developed by Square. Picasso offers better image quality, disk caching, and simpler syntax to carry out various library features.
 
 ### Uses of Picasso
 Picasso has the following features:
-- Image loading - This refers to accessing an image via a URL.
-- Resizing and Scaling of images - This refers to adjusting the size of an image.
-- Center Cropping images - This is scaling a whole image by resampling it.
-- Rotation and Transformation of images - This refers to changing the orientation of an image from a point.
-- Placeholder and Error images - This refers to images displayed when there is an error or when an image is being loaded into an `ImageView`.
-- Priority requests -  This refers to an option of loading images into an `ImageView` depending on its priority to be displayed e.g a Hero image can be given the first priority to load an image before other minor image views.
-- Memory and disk Caching - Caching allows for offline capabilities and less resource usage. It ensures the image is not downloaded every time it is needed.
-- Fading - This refers to an animation feature offered by Picasso.
-- Supports parallel downloading and request cancellation - Parallel downloading refers to downloading two images at the same time where as request cancellation refers to cancelling image requests.
+- Image loading: This refers to accessing an image via a URL.
+- Resizing and scaling of images: This refers to adjusting the size of an image.
+- Center cropping images: This is scaling a whole image by resampling it.
+- Rotation and transformation of images: This refers to changing the orientation of an image from a point.
+- Placeholder and error images: This refers to images displayed when there is an error or when an image is being loaded into an `ImageView`.
+- Priority requests:  This refers to an option of loading images into an `ImageView` depending on its priority to be displayed, such as a Hero image, can be given the first priority to load an image before other minor image views.
+- Memory and disk caching: Caching allows for offline capabilities and less resource usage. It ensures the image is not downloaded every time it is needed.
+- Fading: This refers to an animation feature offered by Picasso.
+- Supports parallel downloading and request cancellation: Parallel downloading refers to downloading two images at the same time where as request cancellation refers to cancelling image requests.
 
-### Advantages of Picasso.
+### Advantages of Picasso
 - Picasso offers high quality loaded images.
 - Full size caching.
 - Picasso supports request cancellation and parallel downloading.
-- It is easy to use. .
+- It is easy to use.
 - Picasso offers various editing tools, for example, resizing, cropping, and others.
 - Picasso offers efficient multi-threaded networking.
 
-### Disadvantages of Picasso.
+### Disadvantages of Picasso
 - Picasso does not support GIF animation on a simple image view.
 - [Glide](https://github.com/bumptech/glide) loads images faster than Picasso.
 
-### Useful Terminology
+### Useful terminology
 - [Library](https://developer.android.com/studio/projects/android-library#:~:text=An%20Android%20library%20is%20structurally,files%2C%20and%20an%20Android%20manifest.&text=AAR%20files%20can%20contain%20C,app%20module's%20C%2FC%2B%2B%20code) - This refers to a file that compiles into an Android Archive (AAR) file used as a dependency.
-- [Caching](https://appmattus.medium.com/caching-made-simple-on-android-d6e024e3726b) - The process of storing data in a temporary storage area(cache).
+- [Caching](https://appmattus.medium.com/caching-made-simple-on-android-d6e024e3726b) - The process of storing data in a temporary storage area (cache).
 - [Multi-thread networking](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)) This refers to the ability to work on multiple tasks at the same time.
 - Bitmap - This refers to a digital image composed of a matrix and dots used to store digital photos.
 
 ### Prerequisites
 - Have [Android Studio](https://developer.android.com/studio) installed.
-- The reader should have a beginner level understanding of  Java and XML.  
-- The reader should have basic understanding of image loading in android applications.
+- The reader should have a beginner level understanding of Java and XML.  
+- The reader should have basic understanding of image loading in Android applications.
 
 
-### Step 1 – Create a new AndroidStudio Project
+### Step 1 – Create a new AndroidStudio project
 - Open Android studio. Select Start new Android Studio Project ->  Empty Activity ->. Let us name the **Picasso**. Click Finish and wait for the project to build.
 
 ![Name the project](/engineering-education/using-picasso-in-android/name.jpg)
 
-### Step 2 - Adding Picasso to our project.
+### Step 2 - Adding Picasso to our project
 Add the following dependency to the app module-level build.gradle file:
-
 ```gradle
   implementation 'com.squareup.picasso:picasso:2.71828'
 ```
-Add internet permission to you application.
+
+Add internet permission to your application.
 
 ```manifest
 <uses-permission android:name="android.permission.INTERNET />
 ```
 
-#### Step 3 – Design the XML layout resource file.
-In this step, we will design our layout for our application. Our layout will contain an ImageView, which will display our image and nine buttons, each with a different function to illustrate Picasso's features.
+#### Step 3 – Design the XML layout resource file
+In this step, we will design our layout for our application. Our layout will contain an ImageView, that will display our image and nine buttons, each with a different function to illustrate Picasso's features.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -217,16 +235,19 @@ In this step, we will design our layout for our application. Our layout will con
 	</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-### Step 3 – Initialize objects.
+### Step 3 – Initialize objects
 In our `MainActivity` class, initialize the image view and the buttons that are in the layout resource file.
+
 ```java
 ImageView imageView;
 int i = 0;
 Button buttonDrawableImage,buttonUrlImage, buttonErrorImage, buttonPlaceholderImage, buttonCallback, buttonResizeImage, buttonRotateImage, buttonScaleImage, buttonTarget;
 ```
 
-### Step 4 – Create a custom method.
- First, we will set an `OnClickListener` for all the buttons. Afterward, create a method called `initializeView`. This method will contain the code required to illustrate the following features of Picasso:
+### Step 4 – Create a custom method
+First, we will set an `OnClickListener` for all the buttons. Afterward, create a method called `initializeView`. 
+
+This method will contain the code required to illustrate the following features of Picasso:
 - Resizing an image.
 - Scaling an image.
 - Loading a Drawable image.
@@ -237,7 +258,7 @@ Button buttonDrawableImage,buttonUrlImage, buttonErrorImage, buttonPlaceholderIm
 - Target.
 - URL.
 
-### a) Resizing an image.
+### A) Resizing an image
  **Resizing** refers to adjusting the size of an image by cropping, scaling, etc. Picasso allows us to resize images before displaying an image using the `resize()` method and setting the desired height and width. In our `MainActivity.java`, add the following lines of code;
 
 ```java
@@ -249,10 +270,12 @@ case R.id.showResize:
 Picasso.get().load(R.drawable.image).resize(200, 200).into(imageView);
 	 break;
 ```
-### b)Scaling an image.
-**Scaling** is resizing a whole image by resampling it. In this project, we will sample three ways, which are: **Fit**, **Center Crop**, and **Center Inside**. We will use `centerCrop()`, `centerInside()` and `fit()` method.
+### B) Scaling an image
+**Scaling** is resizing a whole image by resampling it. In this project, we will sample three ways, those being: **Fit**, **Center Crop**, and **Center Inside**. 
 
-**Note: The `fit ()` method is not used together with the `resize()` method since it has in-built dimensions. `centerCrop()` and `centerInside()` methods are used together with the `resize()` method.
+We will use `centerCrop()`, `centerInside()` and the `fit()` method.
+
+**Note: The `fit ()` method is not used together with the `resize()` method since it has in-built dimensions. `centerCrop()` and `centerInside()` methods are used together with the `resize()` method.**
 
 In our `MainActivity.java`, add the following lines of code in the `onClick` method.
 
@@ -276,7 +299,7 @@ case R.id.showScaling:
     break;
  ```
 
-### c) Loading a Drawable image.
+### C) Loading a drawable image
 Loading a drawable image is a basic feature offered by Picasso. Other than assigning an image view on the XML manually, one can easily assign an image through Picasso. In our `MainActivity.java` file, add the following lines of code.
 
 ```java
@@ -290,9 +313,10 @@ buttonDrawableImage = (Button) findViewById(R.id.showDrawable); buttonDrawableIm
 	 break;
 ```
 
-### d) Placeholder
-A placeholder usually is a drawable image displayed before an image is loaded into an image view. This feature comes in handy, especially if an image takes time to be loaded. In our `MainActivity.java`, in the `onClick` method, add the following lines of code;
+### D) Placeholder
+A placeholder usually is a drawable image displayed before an image is loaded into an image view. This feature comes in handy, especially if an image takes time to be loaded. 
 
+In our `MainActivity.java`, in the `onClick` method, add the following lines of code:
 ```java
 // In the initializeView method
 buttonPlaceholderImage = (Button) findViewById(R.id.showPlaceholder); buttonPlaceholderImage.setOnClickListener(this);
@@ -302,9 +326,11 @@ buttonPlaceholderImage = (Button) findViewById(R.id.showPlaceholder); buttonPlac
 	 Picasso.get().load(R.drawable.placeholder).into(imageView);
 	 break;
 ```
-### e) Callback methods.
-Picasso provides callback methods to keep track and show the status of a loaded image and display a text/toast accordingly. We have displayed a toast message to show either an image is loaded successfully or an error. In our `MainActivity.java` file, add the following lines of code;
 
+### E) Callback methods
+Picasso provides callback methods to keep track and show the status of a loaded image and display a text/toast accordingly. We have displayed a toast message to show either an image is loaded successfully or an error. 
+
+In our `MainActivity.java` file, add the following lines of code:
 ```java
 // In the initializeView method
  buttonCallback = (Button) findViewById(R.id.showCallBack); buttonCallback.setOnClickListener(this);
@@ -323,8 +349,9 @@ case R.id.showCallback:
     });
     break;
 ```
-### f) Errors
-An error drawable is usually displayed when an image is not loaded successfully. We use the `error()` method. In our `MainActivity.java` file, add the following lines of code;
+
+### F) Errors
+An error drawable is usually displayed when an image is not loaded successfully. We use the `error()` method. In our `MainActivity.java` file, add the following lines of code:
 
 ```java
 // In the initializeView method
@@ -335,8 +362,9 @@ case R.id.showError:
  Picasso.get().load("www.google.com").placeholder(R.drawable.placeholder).error(R.drawable.error).into(imageView);
  break;
 ```
-### g) Rotate
-This refers to changing the orientation of an image by degrees from a point (0,0). A `rotate()` method is normally used. In our `MainActivity.java` file, add the following lines of code;
+
+### G) Rotate
+This refers to changing the orientation of an image by degrees from a point (0,0). A `rotate()` method is normally used. In our `MainActivity.java` file, add the following lines of code:
 
 ```java
 // In the initializeView method
@@ -348,9 +376,10 @@ case R.id.showRotate:
 	 break;
 ```  
 
-### h) Targets  
-Targets combine image loading, callbacks, and errors. They return bitmap images. Targets normally use `onBitmapLoaded()`, `onBitmapFailed()` and on `Prepared()` methods.In our `MainActivity.java` file, add the following lines of code;
+### H) Targets  
+Targets combine image loading, callbacks, and errors. They return bitmap images. Targets normally use `onBitmapLoaded()`, `onBitmapFailed()` and on `Prepared()` methods. 
 
+In our `MainActivity.java` file, add the following lines of code:
 ```java
 // In the initializeView method
 buttonTarget = (Button) findViewById(R.id.showTarget); buttonTarget.setOnClickListener(this);
@@ -383,8 +412,10 @@ Next, create a `Target` object with it's respective methods.
     };
 ```
 
-### i) Loading an image from a URL.
-Rather than downloading images, we can simply display the images through picasso using a link without downloading them. We normally use a load() method. In our `MainActivity.java` file, add the following lines of code;
+### I) Loading an image from an URL
+Rather than downloading images, we can simply display the images through picasso using a link without downloading them. We normally use a load() method for this. 
+
+In our `MainActivity.java` file, add the following lines of code:
 
 ```java
  String url = "https://www.pexels.com/photo/low-angle-photo-of-woman-leaning-on-metal-railing-3621953/";
@@ -402,12 +433,17 @@ case R.id.showUrl:
 **Note: Picasso does not cache images from URLs without image extensions, i.e if the image URL does not end with `.png`, `.jpg` etc.**
 
 We are done! Let us run the app.
+
+
 ![Picasso](/engineering-education/using-picasso-in-android/app.gif)
 
 ### Conclusion.
-Picasso is a powerful image loading library with various features. We have discussed scaling, resizing, targets, callbacks, and the rest. Instead of manually implementing all these features with a bunch of code, why not use Picasso, which is easy to use and offers better syntax. Go on and read more about Picasso in their official [documentation](https://square.github.io/picasso/) and other features it offers and implement them in Android Applications.
+Picasso is a powerful image loading library with various features. We have discussed scaling, resizing, targets, callbacks, and the rest. Instead of manually implementing all these features with a bunch of code, why not use Picasso, which is easy to use and offers better syntax. 
 
-Access the source code on [Github](https://github.com/BrianaNzivu/EngineeringEducation/tree-save/main/Picasso).
+Go on and read more about Picasso in their official [documentation](https://square.github.io/picasso/) and other features it offers and implement them in your Android applications.
+
+Access the source code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree-save/main/Picasso).
+
 Download the sample APK from Google [Drive](https://drive.google.com/file/d/1wkweiHuBYV5jwncJbYRWRcRxxzrXCwGk/view?usp=sharing).
 
 ---
