@@ -53,13 +53,13 @@ A factorial is a mathematical expression that most students would have come acro
   
 For example,
 
-`factorial(4) = 4*3*2*1 = 24`
+`factorial(4) = 4 * 3 * 2 * 1 = 24`
 
-`factorial(5) = 5*4*3*2*1 = 120`
+`factorial(5) = 5 * 4 * 3 * 2 * 1 = 120`
 
-`factorial(6) = 6*5*4*3*2*1 = 720`
+`factorial(6) = 6 * 5 * 4 * 3 * 2 * 1 = 720`
 
-`factorial(1) = 1*1 = 1`
+`factorial(1) = 1 * 1 = 1`
 
 One interesting pattern that we observe here is that the factorial of 'n' is equal to `n` multiplied by `factorial(n - 1)`. In other words, `factorial(5) = 5*factorial(4)`. Similarly, `factorial(6) = 6*factorial(5)`. In general, `factorial(n) = n*factorial(n - 1)`. Interestingly, this looks exactly like a recursive function in which we call the 'factorial' function multiple times with different arguments. We know that `factorial(1) = 1`, which will be the terminating condition for our function.
 
