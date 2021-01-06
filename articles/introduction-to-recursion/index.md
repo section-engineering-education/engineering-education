@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-recursion/
+title: Introduction to Recursion
+description: This article will help the readers to understand the basics of recursion using Python.
+author: adith-bharadwaj
+date: 2021-1-06T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-*Algorithms and data structures are the fundamental building blocks of computer science*. Most real-world problems can be modeled and solved using algorithms and data structures. In this tutorial, we are going to understand one such algorithmic technique called recursion. We are also going to explore various coding interview problems that can be solved using recursion.
-  
+  - url: /engineering-education/introduction-to-recursion/hero.jpg
+    alt: Introduction to Recursion Hero Image
+---
+Algorithms and data structures are the fundamental building blocks of computer science. Most real-world problems can be modeled and solved using algorithms and data structures. In this tutorial, we are going to understand one such algorithmic technique called recursion. We are also going to explore various coding interview problems that can be solved using recursion.
+<!--more-->
+
 ### Table of contents
 1. [Prerequisites](#prerequisites)
 
