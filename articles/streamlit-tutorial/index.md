@@ -233,15 +233,9 @@ We will use the following functions for this part of our webapp
 
   
 
-**title( str )**: This method is like a \<h1> tag. It takes in a string as a parameter and displays the text as a title.
-
-  
-
-**subheader( str)**: It is like the title method, but the font of text displayed is smaller than the one displayed by the title
-
-  
-
-**table( dataframe )**: The table() method takes a datframe as a parameter and displays it. You can also use the .dataframe() method but the .table() method displays a much nicer looking table.
+- **title( str )**: This method is like a \<h1> tag. It takes in a string as a parameter and displays the text as a title.
+- **subheader( str)**: It is like the title method, but the font of text displayed is smaller than the one displayed by the title
+- **table( dataframe )**: The table() method takes a datframe as a parameter and displays it. You can also use the .dataframe() method but the .table() method displays a much nicer looking table.
 
   
 
@@ -268,7 +262,9 @@ An alternative to **st.table()** is **st.dataframe()**. Both of them support a d
   
 
 First, we will need to form the confusion matrix and get False Negatives, True Negatives, True Positives, and False Positives.
-
+```suggestion
+How about explaining confusion matrix? I think there is an article on evaluation metrics in eng-ed library. Link that here. 
+```
   
 ```
 confusion = confusion_matrix(y_test, y_predict)
@@ -307,29 +303,21 @@ You can think pf **st.pyplot()** as an equivalent to **plt.show()**
 
 ### Taking Input from the User
 
-  
-
 ![image title](/engineering-education/streamlit-tutorial/predict.png)
-
-  
-
   
 
 Next, we allow the user to input data and display the prediction. We will use the following methods.
 
-  
-
-**text_input(str)**: This method takes a string as a parameter and creates a text input field with the input parameter as its label
-
-  
-
-**st.selectbox(str , options = [ ]):** This method creates a drop-down menu. It takes in two parameters, the string to use as the label and the list of options. The options need to be passed as a list of string values.
+ 
+- **text_input(str)**: This method takes a string as a parameter and creates a text input field with the input parameter as its label
 
   
 
-**st.slider(str, start, end,step):** This creates a slider with the given parameters
+- **st.selectbox(str , options = [ ]):** This method creates a drop-down menu. It takes in two parameters, the string to use as the label and the list of options. The options need to be passed as a list of string values.
 
   
+
+- **st.slider(str, start, end,step):** This creates a slider with the given parameters
 
 Below is the code
 
@@ -340,19 +328,11 @@ sex = st.selectbox("Sex",options=['Male' , 'Female'])
 age = st.slider("Age", 1, 100,1)
 p_class = st.selectbox("Passenger Class",options=['First Class' , 'Second Class' , 'Third Class'])
 ```
-  
-
-  
 
 Every time the user gives an input, the script is re-run, and the respective variables will store the input values.
 
-  
-
-  
 
 Before we use these values for prediction, we will need to scale them and modify them.
-
-  
 
   
 ```
