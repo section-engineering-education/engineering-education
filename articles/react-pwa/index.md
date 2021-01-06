@@ -534,7 +534,7 @@ Here is the final version of the App:
 
 Our app is now installable by clicking on the plus(+) icon in google chrome. The cache will make it available for offline use.
 
-Check the deployed app on [netlify](https://infallible-brahmagupta-cdcafd.netlify.app/) and the project in my repository [here](https://github.com/ReactifyStudio/React-Progressive-Web-App).
+Check the deployed app on [netlify](https://reactify-pwa.netlify.app/) and the project in my repository [here](https://github.com/ReactifyStudio/React-Progressive-Web-App).
 
 ### Summary
 In summary, we learned how to create a Todo app using the React library, with outstanding features such as React Hooks and functional components. We created a Form input and functionality to add todo tasks, mark them as complete and delete the todo tasks. We then explored some introduction to Progressive Web Apps and turned our Todo app into a PWA.
