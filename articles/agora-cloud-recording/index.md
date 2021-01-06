@@ -63,7 +63,7 @@ We'll be going through these steps in this article:
 
 1. Cloud recording vs. On-Premise recording.
 2. Enabling Cloud Recording in Project management console.
-3. Acquiring Authentication Keys for Agora APIs.
+3. Acquiring Customer ID and Customer Secret for Agora APIs
 4. Setting up the server.
 5. Acquire resource ID.
 6. Start recording.
@@ -112,8 +112,8 @@ Once you hit Apply, you'll see the statistics page of the cloud recording.
 
 You have successfully enabled cloud recording for your project.
 
-### Acquiring authentication keys for Agora APIs
-If you want to work with Agora's APIs, you need to acquire the client ID and client secret from Agora.
+### Acquiring Customer ID and Customer Secret for Agora APIs
+If you want to work with Agora's APIs, you need to acquire the customer ID and customer secret from Agora.
 
 Head to the console and click the account name on the top right corner and click on RESTful API from the dropdown.
 
@@ -203,7 +203,7 @@ If this request succeeds, you'll get a resource ID as the response. You need to 
 
 ```JavaScript
 app.post("/acquire", async (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString("base64")}`;
+  const Authorization = `Basic ${Buffer.from(`${process.env.CUSTOMERID}:${process.env.CUSTOMER_SECRET}`).toString("base64")}`;
   const acquire = await axios.post(
     `https://api.agora.io/v1/apps/${process.env.appID}/cloud_recording/acquire`,
     {
@@ -326,7 +326,7 @@ Let's write the POST request to Agora to start the cloud recording. Use environm
 
 ```JavaScript
 app.post("/start", async (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString("base64")}`;
+  const Authorization = `Basic ${Buffer.from(`${process.env.CUSTOMERID}:${process.env.CUSTOMER_SECRET}`).toString("base64")}`;
   const appID = process.env.appID;
   const resource = req.body.resource;
   const mode = req.body.mode;
@@ -412,7 +412,7 @@ In the request body, We should specify the UID, the channel ID, and an empty `cl
 
 ```JavaScript
 app.post("/stop", async (req, res) => {
-  const Authorization = `Basic ${Buffer.from(`${process.env.RESTkey}:${process.env.RESTsecret}`).toString("base64")}`;
+  const Authorization = `Basic ${Buffer.from(`${process.env.CUSTOMERID}:${process.env.CUSTOMER_SECRET}`).toString("base64")}`;
   const appID = process.env.appID;
   const resource = req.body.resource;
   const sid = req.body.sid;
