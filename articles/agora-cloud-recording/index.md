@@ -94,6 +94,8 @@ Head to the console and open Project Management.
 
 Click on usage for the project you want to enable cloud recording for.
 
+> You can acquire the app ID right next to the Usage button. Click on the eye icon to reveal the app ID. We'll be needing the app ID later in this tutorial.
+
 ![Usage Button](usage_button.png)
 
 Click on duration under cloud recording. If you haven't already enabled it yet, It will ask you whether you want to enable cloud recording for this project. Click on the enable button.
@@ -130,6 +132,12 @@ Buffer.from(string).toString('base64');
 ```
 
 I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios on the [Axios nmp package page](https://www.npmjs.com/package/axios).
+
+To install Axios, run:
+
+```
+npm install axios
+```
 
 It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
