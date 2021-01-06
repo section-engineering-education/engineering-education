@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/deploying-machine-learing-models-using-flask/
-title: Deploying Machine Learing models using Flask
+url: /engineering-education/deploying-machine-learning-models-using-flask/
+title: Deploying Machine Learning models using Flask
 description: This tutorial will serve as an introduction on deploying Machine Learning models using Flask. We will go through various steps for building an end-to-end web application with inbuilt Machine Learning model using Flask.
 author: srishilesh-p-s
 date: 2021-01-00T00:00:00-00:00
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/deploying-machine-learning-models-using-flask/hero.jpg
-    alt: Deploying Machine Learing models using Flask
+    alt: Deploying Machine Learning models using Flask
 ---
 In this article, we will learn about deploying Machine Learning models using Flask. By the end of the article, you will have an overview of how Machine Learning models are built, how Flask servers interact with our Machine Learning model, and how to connect the model with a web application. You will also learn a step-by-step procedure for deploying the model locally.
 <!--more-->
@@ -34,7 +34,7 @@ In this tutorial, we are going to deploy a simple Machine Learning model using t
 ##### Dataset
 For building the Machine Learning model, we make use of the [Iris](https://gist.github.com/netj/8836201) dataset. A glimpse of the data is as shown below:
 
-![A few rows of Iris dataset](/engineering-education/deploying-machine-learing-models-using-flask/Dataset.PNG)
+![A few rows of Iris dataset](/engineering-education/deploying-machine-learning-models-using-flask/Dataset.PNG)
 
 ##### Classification model
 Having chosen the dataset, it's time to build our classification model. Let's name the file `model.py`.
@@ -63,7 +63,7 @@ The CSV file of the dataset can be downloaded [here](https://gist.github.com/net
 data = pd.read_csv('./iris.csv')
 ```
 
-![Iris dataset](/engineering-education/deploying-machine-learing-models-using-flask/Dataset.PNG)
+![Iris dataset](/engineering-education/deploying-machine-learning-models-using-flask/Dataset.PNG)
 
 As you see in the image, the target variable under the `variety` column has textual data. Since the textual data is made use of in building our Machine Learning model, we must encode the textual data as numbers.
 
@@ -271,9 +271,9 @@ Now, on running the flask server using the command `python server.py` on your te
 
 To view the landing page, append `/home` to the existing URL. You can view sample inputs and outputs in the below screenshots.
 
-![HTML page to accept details](/engineering-education/deploying-machine-learing-models-using-flask/Input.PNG)
+![HTML page to accept details](/engineering-education/deploying-machine-learning-models-using-flask/Input.PNG)
 
-![HTML page to display the variety of flower](/engineering-education/deploying-machine-learing-models-using-flask/Output.PNG)
+![HTML page to display the variety of flower](/engineering-education/deploying-machine-learning-models-using-flask/Output.PNG)
 
 From the above images, you can see that `Virginica` is the classified variety for the given inputs of sepal and petal.
 
