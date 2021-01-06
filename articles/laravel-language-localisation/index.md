@@ -10,11 +10,6 @@ This is what is known as internationalization, commonly denoted as (i18n).
 Simply presenting your website in different languages.  
 With this feature, an application can be designed to fit various cultures and languages through translations.  
 
-
-## Requirements
-* PHP 7.4.x
-* Laravel 8.x
-
 ## Objectives
 
 * At the end of this tutorial, you should be able to   present your application in multiple languages
@@ -22,6 +17,10 @@ With this feature, an application can be designed to fit various cultures and la
 * Discover how to define translation strings
 * Learn how to retrieve Translation Strings
 * Working with package language files  
+
+## Requirements
+* PHP 7.4.x
+* Laravel 8.x
 
 ## Getting Started
 Localization in Laravel can be achieved in two different ways to manage translation strings:-  
