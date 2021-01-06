@@ -3,7 +3,6 @@ In this tutorial, we will be building a server using Node.js and Express to capt
 The client application that's using the Agora SDKs should request this server to capture the screenshots. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app.
 
 ### Goals
-
 By the end of this tutorial, you’ll know:
 
 - How capturing screenshots from Agora streams works.
@@ -13,7 +12,6 @@ By the end of this tutorial, you’ll know:
 - How to start and stop capturing screenshots.
 
 ### Prerequisites
-
 This tutorial is for applications that use [Agora](https://www.agora.io/) and want to capture screenshots of the streams. If you are not using Agora SDKs in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
@@ -24,8 +22,9 @@ If you'd like to learn how to build some applications with React Native and Agor
 
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
-### Agora
+You'll need [Node.js](https://nodejs.org/en/) to set up an Express server. I'll be using [Postman](https://www.postman.com/downloads/) to make requests to this server to test it.
 
+### Agora
 Agora.io was founded in 2014. It's a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
 
 Agora provides SDKs to build apps that require real-time engagement like:
@@ -43,12 +42,11 @@ Agora is a paid service, but the first 10,000 minutes are free every month. You 
 If you'd like to learn more about Agora, visit their [website](https://www.agora.io/en/) or read [this article](https://equalocean.com/analysis/201904121773).
 
 ### Overview
-
 We'll be going through these steps in this article:
 
 1. Cloud recording vs. On-Premise recording
 2. Enabling Cloud Recording in Project management console.
-3. Acquiring Authentication Keys for Agora APIs.
+3. Acquiring Customer ID and Customer Secret for Agora APIs
 4. Setting up the server.
 5. Acquire resource ID.
 6. Start capturing screenshots.
@@ -73,12 +71,13 @@ If you'd like to learn more about the differences between cloud recording and on
 Agora will bill you for the cloud recording service. You can check their billing policies [here](https://docs.agora.io/en/cloud-recording/billing_cloud_recording?platform=RESTful).
 
 ### Enabling cloud recording in the project management console
-
 To capture screenshots, you must enable cloud recording from the Agora Project Management Console.
 
 Head to the console and open Project Management.
 
 Click on usage for the project you want to enable cloud recording for.
+
+> You can acquire the app ID right next to the Usage button. Click on the eye icon to reveal the app ID. We'll be needing the app ID later in this tutorial.
 
 ![Usage Button](usage_button.png)
 
@@ -96,9 +95,8 @@ Once you hit Apply, you'll see the statistics page of the cloud recording.
 
 You have successfully enabled cloud recording for your project.
 
-### Acquiring authentication keys for Agora APIs
-
-If you want to work with Agora's APIs, you need to acquire the client ID and client secret from Agora.
+### Acquiring Customer ID and Customer Secret for Agora APIs
+If you want to work with Agora's APIs, you need to acquire the customer ID and customer secret from Agora.
 
 Head to the console and click the account name on the top right corner and click on RESTful API from the dropdown.
 
@@ -116,7 +114,13 @@ For the API, We should convert the customer ID and secret to base64 using the `B
 Buffer.from(string).toString('base64');
 ```
 
-I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios [here](https://www.npmjs.com/package/axios).
+I'll be using Axios to make requests to the Agora APIs. We need to pass the constructed base64 string as the authorization header on the request. You can learn more about Axios on the [Axios nmp package page](https://www.npmjs.com/package/axios).
+
+To install Axios, run:
+
+```
+npm install axios
+```
 
 It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
