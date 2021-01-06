@@ -21,7 +21,7 @@ node --version
 
 This will show the version of Node.js running on your system and that Node.js has been installed.
 
-First, we need to create a new React application using the `create-react-app` command-line utility. On your terminal, execute the following command:
+First, we should create a new React application using the `create-react-app` command-line utility. On your terminal, execute the following command:
 
 ```bash
 npx create-react-app react-pwa
@@ -85,7 +85,7 @@ const App=()=>{
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
-    const newTodos=[todo,...todos];
+    const newTodos = [todo, ...todos];
     setTodos(newTodos);
   }
   
@@ -105,11 +105,11 @@ The App component walkthrough:
 
 - We import the `TodoList` and `Form` component which we will create in the next steps. The CSS file named `App.css` is for basic styling of the application.
 
-- Inside the function, the `useState` hook with `todos` and `setTodos` will create our state for todos as well as track changes on the application.
+- Inside the component, we'll create our state for the list of todos to using the `useState` hooks.
 
-- The `addTodo` is a function that is used to add a new todo by calling the `setTodos` method to update the state.
+- The `addTodo` is a function that is used to add a new todo by calling the `setTodos` method to update the state. The component which is calling the `addTodo` function should pass the new todo to the function.
 
-- We use JSX to return a div containing `<h1>` tag as the header. The `Form` and `TodoList` components are mounted passing along the appropriate props. Let us now create the components in the below steps.
+- We use JSX to return a div containing `<h1>` tag as the header, the `Form` and `TodoList` components. Let us now create the components in the below steps.
 
 ### Form component
 This component will be used to add new todos. In your `src/` folder, create a new folder named `components`. Inside the `components` folder, you should create a file named `Form.js`. 
@@ -151,17 +151,16 @@ export default Form;
 
 The Form component walkthrough:
 
-- The code above implements function components alongside React hooks. Hooks are functions that let you have state and other lifecycle patterns from function components.
+- The method `inputTextHandler` bound to the input tag is invoked every time when the value of the input element changes.
 
-- We are using the `useState` hook that returns two values in an array. The first value is the state, and the second is a function to update the state. The method `inputTextHandler` bound on the input tag is invoked every time when the value of the input element changes.
-
-- The form is a controlled component that will track the `inputText`. 
+- The input element is a controlled component that will track the `inputText`. 
 
 - When the submit event is fired on the form, the function `submitTodoHandler` is executed. We are checking that the input is not empty before creating a new todo in our `addTodo` function passed down from `App` component.
 
 - The method `setInputText` inside the `submitTodoHandler` will reset the form.
 
 The todo will be an object with a structure like:
+
 ```javascript
 {
   id: v4(),
@@ -170,7 +169,7 @@ The todo will be an object with a structure like:
 }
 ```
 
-This is the explanation for our todo:  
+In the Todo object that we are passing to the `addTodo` function:  
 
 - The ID is a unique identifier or key for a specific todo task. I am using the `uuid` library to generate a unique id.
 
@@ -180,7 +179,7 @@ This is the explanation for our todo:
   npm install uuid
   ```
 
-- The complete property in the object is a boolean that checks whether our todo task is completed or not. If the task is complete, we'll use a CSS class that adds a strike-through on the todo task marking it as complete.
+- The complete property in the object is a boolean that is used to track whether the todo task is completed or not. If the task is complete, we'll use a CSS class that adds a strike-through on the todo task marking it as complete.
 
 ### Creating the TodoList Component
 This is the component that acts as a container to the list of the todo items.
@@ -232,20 +231,18 @@ export default TodoList;
 
 In this component:
 
-- The `TodoList` is receiving `todos` as an array of objects from the `App` component as props.
+- The `TodoList` is receiving `todos` as an array of objects from the `App` component as a prop.
   
-- In the return of our function, we map through the `todos` and return a JSX syntax with a new Todo component as the todo item.
+- We map through the `todos` and return a JSX syntax with a new Todo component as the todo item.
   
 - The `removeTodo` is a function which accepts an `id` that uniquely identifies the `todo` in our list. Whatever todo that does not match the provided `id` is filtered and stored in the state using `setTodos`.
 
-We will use the `completeTodo` method to toggle between marked and completed state to determine the class to style it. 
+- We will use the `completeTodo` method to toggle between not completed and completed state using the ID of the todo that we recieve as an argument when the function is called.
 
 ### The Todo component
 You need to add a new file and name it `Todo.js` in the components folder.
 
-We created the functions that perform the complete and delete operations in our `TodoList` component. Clicking the *Check* button will invoke the `HandleComplete` function that will call the function `completeTodo` and pass the `id` of the todo.
-
-The `HandleDelete` method will call the function `removeTodo` to filter out the todo by its `id`.
+We created the functions that perform the complete and delete operations in our `TodoList` component. 
 
 This is the code for the `Todo.js`:
 
