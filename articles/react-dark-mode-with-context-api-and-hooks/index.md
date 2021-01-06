@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/
 title: Dark Mode for React Application using Context API and Hooks
-description: This tutorial will give readers a detailed guide on how to use the context api with reducers to implement dark mode in a react application.
+description: This tutorial gives readers a detailed guide on how to use the context api with reducers to implement dark mode in a react application.
 author: mohan-raj
 date: 2020-12-26T00:00:00-13:00
 topics: []
@@ -27,10 +27,10 @@ By the end of this tutorial, you’ll know:
 - How to implement dark mode in a React application using React's Context API.
 
 ### Prerequisites
-The fundamentals of React will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactjs.org/tutorial/tutorial.html) that you can go through before beginning with this project.
+The fundamentals of React will not be covered in this tutorial. If you are not comfortable with the fundamentals, here is a [helpful site](https://reactjs.org/tutorial/tutorial.html) that you can visit before beginning this project.
 
 ### Overview
-We'll be going through these steps in this article:
+We will follow the steps below in this article:
 
 - [Context API](#context-api).
 - [When to use the Context API instead of Redux](#When-to-use-React's-Context-API-instead-of-Redux).
@@ -41,11 +41,11 @@ We'll be going through these steps in this article:
 - [Recap](#Let's-Recap).
 
 ### Context API
-According to the [official documentation](https://reactjs.org/docs/context.html), Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+According to the [official documentation](https://reactjs.org/docs/context.html), Context API provides a way to pass data through the component tree without having to pass props down manually at each level.
 
-In other words, React’s Context API is there to solve a simple problem. How to manage state that is required in multiple components (not necessarily a direct child component) without passing it all the way down.
+In other words, React’s Context API is there to solve a simple problem. **How to manage state that is required in multiple components (not necessarily a direct child component) without passing it down.**
 
-The context API generally consists of three building blocks:
+The context API consists of three building blocks:
 
 - A Context Object.
 
@@ -53,35 +53,35 @@ The context API generally consists of three building blocks:
 
 - A Context Consumer.
 
-We need to create a context object using the `createContext` method.
+We need to create a Context object using the `createContext` method.
 
 ```JSX
 const Context = createContext();
 ```
 
-Every context object comes with a Provider component. All the components that consume the context must be a descendant of the provider component. The Provider component accepts a `value` prop that will be passed to the consuming components. 
+Every Context object comes with a Provider component. All the components that consume the context must be a descendant of the Provider component. The Provider component accepts a `value` prop that will be passed to the consuming components. 
 
 ```JSX
 <Context.Provider value={value}>
   {/* Children */}
 </Context.Provider>;
 ```
-To subscribe to the context object, we will use the `useContext` hook and pass the context object created by `createContext` to it.
+To subscribe to the Context object, we will use the `useContext` hook and pass the Context object created by `createContext` to it.
 
-When a component subscribes to the context object, it will read the current context value from the closest matching Provider above it in the tree.
+When a component subscribes to the Context object, it will read the current context value from the closest matching Provider above it in the tree.
 
 ```JSX
 const context = useContext(Context);
 ```
 
 ### When to use the Context API instead of Redux
-If you don't know about [Redux](https://redux.js.org/), it serves as a centralized store for the state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion. Redux is an external library. Redux can also be used with other frameworks like [Angular](https://angular.io/), [Flutter](https://flutter.dev/), etc.
+[Redux](https://redux.js.org/) serves as a centralized store for the state that needs to be used across your entire application. It has rules that ensure that the state can only be updated in a specific manner. Redux can, therefore, be regarded as an external library. It is supported by other frameworks such as [Angular](https://angular.io/), [Flutter](https://flutter.dev/), etc.
 
 If you want to learn more about Redux, check out [this tutorial](https://redux.js.org/tutorials/fundamentals/part-1-overview).
 
-If you are building a small application that won't benefit a lot from using Redux, you can use the Context API. The context API is also easier to implement. This will result in smaller bundle size and improved project maintainability.
+Context API is a perfect alternative to Redux when building small applications. It is much easier to implement. Furthermore, it results in smaller bundle size and improved project maintainability.
 
-But, the Context API (currently) is not built for high-frequency updates. You should only use it for low-frequency updates like the theme, authentication, etc. This is because whenever the value of the context changes, the descendant components of the Provider will be re-rendered.
+However, the Context API does not currently support high-frequency updates. You should, therefore, only use it for low-frequency updates like the theme and authentication. This is because whenever the context's value changes, the descendant components of the Provider will be re-rendered.
 
 ### Reducers
 A Reducer is a function that takes 2 arguments, the current state, and an action. Based on the type of action, the function will return a new state.
@@ -121,9 +121,9 @@ In the starter code, I've set up a simple screen with text and a button to switc
 ![Starter Screen](/engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/lightmode.png)
 
 ### Adding the Context and Reducer
-Let's create a new file called ThemeContext.js. 
+In the `src` folder, create a new file called `ThemeContext.js`. 
 
-Now, Let's create a context object for the theme. We need to export this object from this file so that we can import it into the component from where we want to consume this context.
+The next step is to create a Context object for the theme. We need to export this object from this file. This allows us to import it into the component where we want to consume this context.
 
 ```JSX
 export const ThemeContext = createContext();
@@ -135,7 +135,7 @@ In this HOC, we need to use the `useReducer` hook to create a state and the disp
 
 We need to write a reducer function to switch between dark mode and light mode. 
 
-> Realistically, you won't need a reducer for this simple state update. You can just use a normal `state` and `setState` from the `useState` hook. But, just for the sake of learning how to use reducers along with the Context API, I'll be using reducers to update the theme state.
+> Realistically, you won't need a reducer for this simple state update. You can just use a normal `state` and `setState` from the `useState` hook. But, for the sake of learning how to use reducers along with the Context API, I'll be using reducers to update the theme state.
 
 The initial state will be:
 
@@ -175,9 +175,9 @@ export function ThemeProvider(props) {
 ```
 
 ### Consuming the Context
-We should wrap the `ThemeProvider` HOC around the component from which we want to consume the context from. Since the theme is supposed to affect the application globally, let's wrap it around the App component.
+We should wrap the `ThemeProvider` HOC around the component from which we want to consume the context. Since the theme is supposed to affect the application globally, let's wrap it around the App component.
 
-In `index.js`, let's import the ThemeProvider.
+In the `index.js` file, import the ThemeProvider, as shown below.
 
 ```JSX
 import { ThemeProvider } from "./ThemeContext";
@@ -196,9 +196,9 @@ ReactDOM.render(
 );
 ```
 
-This will make the theme context available for all the descendant components of the App component.
+This will make the theme context available for all the App's descendant components.
 
-Now, in the `App.js` file, let's import the `ThemeContext` and the `useContext` hook.
+In the `App.js` file, import the `ThemeContext` and the `useContext` hook.
 
 ```JSX
 import React, { useContext } from "react";
@@ -213,13 +213,13 @@ const theme = useContext(ThemeContext);
 
 The `useContext` hook will return the object that we passed to the value prop of the provider.
 
-So, to access the dark mode state, we need to access it like `theme.state.darkMode`.
+So, to access the dark mode state, we use `theme.state.darkMode`.
 
 ```JSX
 const darkMode = theme.state.darkMode;
 ```
 
-Now, we can use this state to alternate between the CSS classes that we need to apply for the elements.
+We can now use this state to alternate between the CSS classes that we need to apply for the elements.
 
 For example,
 
@@ -238,7 +238,7 @@ Now, do the same for the `h1` and the `p` tags.
 </p>
 ```
 
-Now, we need to use the dispatch function to update the state between dark mode and light mode.
+Next, we use the dispatch function to update the state between dark mode and light mode.
 
 In `Button.js`, let's import the `ThemeContext` and the `useContext` hook.
 
@@ -247,14 +247,14 @@ import React, { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 ```
 
-Similar to what we did in the App.js file, we need to pass the `ThemeContext` object to the `useContext` hook.
+Similar to what we did in the `App.js` file, we need to pass the `ThemeContext` object to the `useContext` hook.
 
 ```JSX
 const theme = useContext(ThemeContext);
 const darkMode = theme.state.darkMode;
 ```
 
-When the user clicks the button, we need to call the dispatch function with the correct type. If the current theme is in light mode, the dispatch type should be of dark mode and vice-versa.
+When the user clicks the dark/light mode button, we need to call the dispatch function with the correct type. If the current theme is in light mode, the dispatch type should be of dark mode and vice-versa.
 
 Let's write a function for when the user clicks on the button and pass it to the `onClick` property of the button.
 
@@ -290,7 +290,7 @@ Now, when you click on the button, the theme should change.
 
 - We learned about Reducers and how to use them along with the Context API.
 
-- We built an application that uses context API and reducers to implement dark mode for the application.
+- We built an application that uses context API and reducers to implement dark mode in the application.
 
 Congratulations, :partying_face: You did it.
 
