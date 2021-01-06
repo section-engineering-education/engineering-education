@@ -17,7 +17,7 @@ In the previous article on recursion, we explored how we can break a problem int
 3. A basic understanding of [Recursion](https://www.section.io/engineering-education/introduction-to-recursion)
 
 ### Understanding DP
-According to [educative](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0), Dynamic Programming (DP) is an algorithmic technique for solving an optimization problem by breaking it down into simpler subproblems and utilizing the fact that the optimal solution to the overall problem depends upon the optimal solution to its subproblems. It sounds similar to recursion. That's because DP is just an optimized version of recursion. Before we delve into DP, let us look at the drawbacks of recursion:
+Dynamic Programming (DP) is an algorithmic technique for solving an optimization problem by breaking it down into simpler subproblems and utilizing the fact that the optimal solution to the overall problem depends upon the optimal solution to its subproblems. [educative](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0) has a great article on DP and how it works. It sounds similar to recursion. That's because DP is just an optimized version of recursion. Before we delve into DP, let us look at the drawbacks of recursion:
 
 **It is not efficient in terms of memory:** Since recursion involves function calls, each recursive call creates an entry for all the variables and constants in the function stack. These values are kept there until the function returns. Therefore, recursion is always limited by the stack space in the system. If a recursive function requires more memory than what is available in the stack, a common and prevalent error called [stack overflow](https://stackoverflow.com/questions/214741/what-is-a-stackoverflowerror) occurs. Check [this](https://benpfaff.org/writings/clc/recursion-vs-iteration.html) article for more details.
 
@@ -52,7 +52,9 @@ As you can observe, fibonacci(4), fibonacci(3), fibonacci(2) are called multiple
 ![Fibonacci](/engineering-education/introduction-to-dynamic-programming/fibonacci.png)
 [Image source](https://www.slitherintopython.com/assets/img/fibtree.png)
 
-A better way to solve this would be to store all the intermediate results to calculate them once. There are two ways to do this, but in this article, we will explore one method called tabulation. To understand the other method, check out [This](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0) article. In the tabulation method, we store the results of each function call in a data structure. Whenever an already stored value is needed, we fetch the value from the data structure instead of computing it repeatedly. For the Fibonacci example, we can use an array to store all the intermediate numbers.
+A better way to solve this would be to store all the intermediate results to calculate them once. There are two ways to do this, but in this article, we will explore one method called tabulation. The other method is called memoization, in which we store the intermediate results and return them within the function itself. To accomplish this, we can use any data structure such as a dictionary or an array. To understand more about the other method, check out [This](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0) article. 
+
+In the tabulation method, we store the results of each function call in a data structure. Whenever an already stored value is needed, we fetch the value from the data structure instead of computing it repeatedly. For the Fibonacci example, we can use an array to store all the intermediate numbers.
 
 **Code:**  
 ```py
