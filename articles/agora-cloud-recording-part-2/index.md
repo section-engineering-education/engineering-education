@@ -6,19 +6,23 @@ url: /engineering-education/agora-cloud-recording-part-2/
 title: Agora Cloud Recording Part 2
 description: In this tutorial, we will be building a server using Node.js and Express to implement additional operations of Agora Cloud Recording like querying the recording session, updating subscriber list and updating mixing layout.
 author: mohan-raj
-date: 2021-01-05T00:00:00-10:00
+date: 2021-06-05T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/agora-cloud-recording-part-2/hero.jpg
-    alt: agora cloud recording
+    alt: agora cloud recording part 2 hero image
 ---
 In this tutorial, we will be building a server using Node.js and Express to implement additional operations of Agora Cloud Recording like querying the recording session, updating subscriber list and updating mixing layout.
+<!--more-->
 
-To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/). The previous tutorial covers:
+To follow along with this tutorial, you need to go through [my previous tutorial](/engineering-education/agora-cloud-recording/). 
+
+The previous tutorial covers:
 
 - How to set up cloud recording for your Agora project.
+
 - How to develop an express server to acquire resource ID, start and stop the cloud recording.
 
 The client application that's using the Agora SDKs should request this server to perform these actions. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the client application.
