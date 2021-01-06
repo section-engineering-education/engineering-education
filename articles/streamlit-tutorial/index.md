@@ -1,30 +1,21 @@
-
-  
-
-  
-
 # How to build a UI for your model using Streamlit
 
   
 
-Streamlit is a Python library that helps us to develop UIs for our models without any HTML/CSS/JS. Most models die inside a jupyter notebook and are not appealing. But, using Streamlit you can create a clean UI for your model and showcase it to others. Building a UI lets users use your model in a more user-friendly format
-
-  
-
-![Web App Screencast](/engineering-educationstreamlit-tutorial/screencast.gif)
+Streamlit is a Python library that helps us develop UIs for our models without HTML/CSS/JS. Most models die inside a jupyter notebook and are not appealing. But, using Streamlit, you can create a clean UI for your model and showcase it to others. Building a UI lets users use your model in a more user-friendly format.
 
 ## Table of Contents
 1. Introduction
 2. Prerequisites
 3. Installing Required Libraries
-4. Logisitic Regression Model
+4. Logistic Regression Model
 5. Streamlit UI
 6. Conclusion  
   
 
 ## Introduction
 
-Streamlit is an open-source Python library that can be used to build a UI for various purposes, not limited to Data Apps/ Machine Learning. It is easy to learn and a few lines of code can create a beautiful web app.
+Streamlit is an open-source Python library that can build a UI for various purposes, not limited to Data Apps/ Machine Learning. It is easy to learn, and a few lines of code can create a beautiful web app.
 
 ### Why you should use Streamlit?
 
@@ -32,27 +23,27 @@ Streamlit is an open-source Python library that can be used to build a UI for va
 
 - It supports markdown
 
-- Many prebuilt widgets available further reducing the time you spend on building the UI
+- Many prebuilt widgets available, further reducing the time you spend on building the UI
 
 - Builts a Responsive UI
 
 - Easy to deploy Streamlit Apps using Streamlit Sharing
 
-- It's open-source and you can create your own widgets if needed
+- It's open-source, and you can create your widgets if needed
 
   
 
-In this tutorial, we will build a Logistic Regression Model to predict if a person would survive the Titanic Disaster. After building the model, we will use Streamlit to build a web app and a UI for our Model. The web app will let the user input values and get the predicted results.
+This tutorial will build a Logistic Regression Model to predict if a person would survive the Titanic Disaster. After building the model, we will use Streamlit to build a web app and a UI for our Model. The web app will let the user input values and get the predicted results.
 
   
 
 ## Prerequisites
 
-This tutorial is focused on Streamlit so familiarity with building ML models using scikit-learn is expected
+This tutorial is focused on Streamlit, so familiarity with building ML models using scikit-learn is expected.
 
 - A good understanding of Python
 
-- A basic understanding of data cleaning and common techniques such as numerical-encoding, one-hot-encoding.
+- A basic understanding of data cleaning and standard techniques such as numerical-encoding, one-hot-encoding.
 
 - Familiarity with the scikit-learn library
 
@@ -74,7 +65,7 @@ pip install streamlit,scikit-learn, pandas, matplotlib
 
   
 
-First, we will need to create a virtual environment to manage our packages and install the required packages: streamlit,scikit-learn,pandas and matplotlib. Once the installation is complete, type the following command to ensure that streamlit has been installed as expected.
+First, we will need to create a virtual environment to manage our packages and install the required packages: streamlit,scikit-learn, pandas, and matplotlib. Once the installation is complete, type the following command to ensure that streamlit has been installed as expected.
 
   
 ```
@@ -88,7 +79,7 @@ This should launch a sample Streamlit app. You can press ctrl+C on the command l
 
 ## Import Necessary Libraries
 
-We will need to import all the installed libraries
+We will need to import all the installed libraries.
 
   
   
@@ -124,11 +115,11 @@ You can print the dataframe to check the columns inside it.
 
   
 
-We need to perform the following on our data before it can be used by our Logistic Regression Model
+We need to perform the following on our data before our Logistic Regression Model can use it.
 
-- Assign a numerical value to the feature ‘Sex’
+- Assign a numerical value to the feature 'Sex.'
 
-- Use one-hot encoding on the feature ‘Pclass’
+- Use one-hot encoding on the feature 'Pclass.'
 
 - Fill the missing values in the age column
 
@@ -136,7 +127,7 @@ We need to perform the following on our data before it can be used by our Logist
 
   
 
-We will define a function to transform our data to make it useable for our Logistic Regression Model
+We will define a function to transform our data to make it useable for our Logistic Regression Model.
 
 ### Manipulate Data
 ```
@@ -155,11 +146,11 @@ def manipulate_df(df):
 	df= df[['Sex' , 'Age' , 'FirstClass', 'SecondClass' ,'ThirdClass' 'Survived']]
 	return df
 ```
-- For the sex column , we set a value of 0 if the passenger is male and 1 if the passenger is female
+- For the `sex` column, we set a value of 0 if the passenger is male and 1 if the passenger is female
 
 - We use the mean value to fill the missing data in the age columns
 
-- We use one-hot-encoding for the Pclass
+- We use one-hot-encoding for the `Pclass.`
 
 - Since we are not focused on building the model, we will only select 6 features from our dataframe.
 
@@ -190,7 +181,7 @@ test_features = scaler.transform(X_test)
 ```
   
 
-We will need to scale the data so it has mean = 0 and standard deviation = 1
+We will need to scale the data, so it has mean = 0 and standard deviation = 1
 
 ### Build Model
 ```
@@ -207,7 +198,7 @@ After training our model, we store the accuracy scores of our model.
 
   
 
->  **We have successfully built our model, now we will move on to Streamlit**
+>  **We have successfully built our model. Now we will move on to Streamlit**
 
   
 
@@ -215,13 +206,13 @@ After training our model, we store the accuracy scores of our model.
 
 ## Streamlit
 
-To run a streamlit app, type the following command
+To run a streamlit app, type the following command.
 
   
 ```
 streamlit run app.py
 ```
-You should see a blank screen since we do not have any components being displayed right now. On the top right corner, Select ‘Always Rerun’. This tells streamlit to reload each time we make changes to our code
+You should see a blank screen since we do not have any components being displayed right now. On the top right corner, Select 'Always Rerun'. This tells streamlit to reload each time we make changes to our code.
 
   
 
@@ -238,15 +229,9 @@ We will use the following functions for this part of our webapp
 
   
 
-**title( str )**: This method is like a \<h1> tag. It takes in a string as a parameter and displays the text as a title.
-
-  
-
-**subheader( str)**: It is like the title method, but the font of text displayed is smaller than the one displayed by title
-
-  
-
-**table( dataframe )**: The table() method takes in a datframe as a parameter and displays it. You can also use the .dataframe() method but the .table() method displays a much nicer looking table.
+- **title( str )**: This method is like a \<h1> tag. It takes in a string as a parameter and displays the text as a title.
+- **subheader( str)**: It is like the title method, but the font of text displayed is smaller than the one displayed by the title
+- **table( dataframe )**: The table() method takes a datframe as a parameter and displays it. You can also use the .dataframe() method but the .table() method displays a much nicer looking table.
 
   
 
@@ -272,9 +257,8 @@ An alternative to **st.table()** is **st.dataframe()**. Both of them support a d
 
   
 
-First, we will need to form the confusion matrix and get False Negatives, True Negatives, True Positives, and False Positives.
+First, we will need to form the confusion matrix and compute the values.
 
-  
 ```
 confusion = confusion_matrix(y_test, y_predict)
 FN = confusion[1][0]
@@ -283,7 +267,7 @@ TP = confusion[1][1]
 FP = confusion[0][1]
   ```
 
-We can use the **subheader()** method to display the train and test scores
+We can use the **subheader()** method to display the train and test scores.
 
   
 ```
@@ -292,13 +276,13 @@ st.subheader("Test Set Score: {}".format(round(test_score,3)))
 ```
   
 
-Now, we will create a bar graph with the above data
+Now, we will create a bar graph with the above data.
 
   
 ```
 plt.bar(['False Negative' , 'True Negative' , 'True Positive' , 'False Positive'],[FN,TN,TP,FP])
 ```
-To display the graph, we will use streamlit’s **pyplot()** method.
+To display the graph, we will use streamlit's **pyplot()** method.
 
   
 ```
@@ -312,29 +296,21 @@ You can think pf **st.pyplot()** as an equivalent to **plt.show()**
 
 ### Taking Input from the User
 
-  
-
 ![image title](/engineering-education/streamlit-tutorial/predict.png)
+  
+
+Next, we allow the user to input data and display the prediction. We will use the following methods.
+
+ 
+- **text_input(str)**: This method takes a string as a parameter and creates a text input field with the input parameter as its label
 
   
 
-  
-
-Next, we allow the user to input data and display the prediction. We will use the following methods
+- **st.selectbox(str , options = [ ]):** This method creates a drop-down menu. It takes in two parameters, the string to use as the label and the list of options. The options need to be passed as a list of string values.
 
   
 
-**text_input(str)**: This method takes a string as a parameter and creates a text input field with the input parameter as its label
-
-  
-
-**st.selectbox(str , options = [ ]):** This method creates a drop-down menu. It takes in two parameters, the string to use as the label and the list of options. The options need to be passed as a list of string values.
-
-  
-
-**st.slider(str, start, end,step):** This creates a slider with the given parameters
-
-  
+- **st.slider(str, start, end,step):** This creates a slider with the given parameters
 
 Below is the code
 
@@ -345,19 +321,11 @@ sex = st.selectbox("Sex",options=['Male' , 'Female'])
 age = st.slider("Age", 1, 100,1)
 p_class = st.selectbox("Passenger Class",options=['First Class' , 'Second Class' , 'Third Class'])
 ```
-  
 
-  
+Every time the user gives an input, the script is re-run, and the respective variables will store the input values.
 
-Every time the user gives an input, the script is re-run and the respective variables will store the input values.
 
-  
-
-  
-
-Before we use these values for prediction, we will need to scale them and modify them
-
-  
+Before we use these values for prediction, we will need to scale them and modify them.
 
   
 ```
@@ -378,7 +346,7 @@ predict_probability = model.predict_proba(input_data)
 
 - First, we set the value of sex to either 0 or 1
 
-- Then we use one-hot encoding on the passenger class
+- Then, we use one-hot encoding on the passenger class
 
 - Finally, we scale the input and calculate the prediction and probability
 
@@ -395,7 +363,7 @@ else:
 ```
   
 
-Based on the prediction, we display a text message
+Based on the prediction, we display a text message.
 
   
 
@@ -405,4 +373,7 @@ Based on the prediction, we display a text message
 
 ## Conclusion
 
-With just a few extra lines of code, we were able to transform a plain and boring script into a web app with a neat and clean UI. A lot of people might have built a model to predict the survival of a passenger in the Titanic Disaster but building a web app for it will make you stand out.
+With just a few extra lines of code, we were able to transform a plain and boring script into a web app with a neat and clean UI. Many people might have built a model to predict the survival of a passenger in the Titanic Disaster, but building a web app for it will make you stand out.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
