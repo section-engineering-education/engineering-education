@@ -1,20 +1,6 @@
 # Laravel Language Localization
 
-## Objectives
-
-* At the end of this tutorial, you should be able to   present your application in multiple languages
-* Configuring locales
-* Discover how to define translation strings
-* Learn how to retrieve Translation Strings
-* Working with package language files  
-
-## Requirements
-
-A piece of basic knowledge in Laravel will be helpful to get you started.  
-In this tutorial, we will be using Laravel 8.x.  
-
-## Getting Started
-
+## Introduction
 Language localization to programming refers to the way a given software product, for instance, online shopping sites, are adapted to a specific language translation depending on regions or countries.  
 
 Take, for example, most Chinese do not speak English, but they still access Alibaba(online shopping site) platform to shop in Chinese.  
@@ -24,6 +10,20 @@ This is what is known as internationalization, commonly denoted as (i18n).
 Simply presenting your website in different languages.  
 With this feature, an application can be designed to fit various cultures and languages through translations.  
 
+
+## Requirements
+* PHP 7.4.x
+* Laravel 8.x
+
+## Objectives
+
+* At the end of this tutorial, you should be able to   present your application in multiple languages
+* Configuring locales
+* Discover how to define translation strings
+* Learn how to retrieve Translation Strings
+* Working with package language files  
+
+## Getting Started
 Localization in Laravel can be achieved in two different ways to manage translation strings:-  
 
 * Storing the language strings within the   
