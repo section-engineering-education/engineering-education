@@ -38,7 +38,9 @@ Such as listed below:
 
 The image below shows how the fragment lifecycle methods are classified.
 
-![fragment lifecycle](https://developer.android.com/images/guide/fragments/fragment-view-lifecycle.png)
+![fragment lifecycle](/engineering-education/all-about-fragments-in-android-applications/fragment-view-lifecycle.png)
+
+*[Image Source](https://developer.android.com/images/guide/fragments/fragment-view-lifecycle.png)*
 
 ### Fragment and activity context
 `Context` is an important aspect of Android development. It allows you to start different activities, processes, and even displays certain messages to the user.
