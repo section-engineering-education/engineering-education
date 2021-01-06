@@ -44,7 +44,7 @@ n = int(input('Enter the nth term: '))
 print(fibonacci(n))
 ```
 
-The `if(n == 1 or n == 2)` condition in the function is called a "terminating condition" and is essential for every recursive function, as a function without this condition will keep calling itself and never terminate(infinite loop causes the program to crash). We know that the first two terms are 1, so we can return 1 when n is 1 or 2. This is also called a "base case" or a "base condition", and is usually something that we already know. For instance, we might know the answer for n = 0 or some other specific value of n. If we know this "base" value, we can use it to calculate all the other values.
+The `(n == 1 or n == 2)` condition in the function is called a "terminating condition". It is essential for every recursive function, as a function without this condition will keep calling itself and never terminate (infinite loop causes the program to crash). We know that the first two terms are 1, so we can return 1 when n is 1 or 2. This is also called a "base case" or a "base condition", and is usually something that we already know. For instance, we might know the answer for n = 0 or some other specific value of n. If we know this "base" value, we can use it to calculate all the other values.
  
 ### Factorial
 A factorial is a mathematical expression that most students would have come across. The factorial of a number is defined as the product of all positive integers less than or equal to that number. In other words, if `n` is a positive integer, the factorial of n will be:  
