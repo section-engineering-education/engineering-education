@@ -2,17 +2,17 @@
 
 # Spotify API with Spotipy Part 1
 
-## Introduction 
+### Introduction 
 
 Spotify is a wonderful music streaming app with powerful API functionality. The API is both beginner-friendly and offers a wide range of endpoints. This makes Spotify API a great way to get started for beginner programmers who are interested in getting involved in web APIs and even data science, or advanced programmers who want more control over their playlists. [Spotipy](https://spotipy.readthedocs.io/en/2.16.1/) is a popular wrapper for the Spotify API. It enables and supports all the features of the Spotify API but allows them to be designed and run in python. This allows for scalability and also will come in handy when we start dealing with large amounts of data.
 
-## Goals 
+### Goals 
 
 This is part one of a three-part tutorial series on Spotipy and its applications. By the end, you should be able to design and implement algorithms for creating unique playlists, search for recommended music, and analyze metadata about your music selection.
 
 To achieve these lofty goals, it will require a strong foundation. That's the goal of part 1 of this series. By the end, you should understand how to set up a spotipy project, the authentication process, and finishing it off, we'll start using some of the spotipy endpoints.
 
-## Prerequisites
+### Prerequisites
 
 1. You need a Spotify account. It doesn't have to be a Spotify premium account, a free account will work. 
 
@@ -21,7 +21,7 @@ To achieve these lofty goals, it will require a strong foundation. That's the go
 3. You should understand how to use the terminal
 
 
-## Step 1: Set up a Developer account
+### Step 1: Set up a Developer account
 
 
 The first step is to create a [Spotify developer account](https://developer.spotify.com/dashboard/). Click on the link, sign in to your Spotify account, and follow the instructions to create a developer account.
@@ -34,7 +34,7 @@ I have tried using a different website and it usually creates bugs so I am speak
 You will need to save your client ID and client secret for the authentication process.
 
 
-## Step 2: Creating a python environment 
+### Step 2: Creating a python environment 
 
 
 A good developer practice is to have an organized file system. If this is your first python project consider making a directory called PythonScripts (you can name it whatever you want). Inside that directory create a folder called spotipy_tutorial.
@@ -70,7 +70,7 @@ Run the following command in your terminal window with the active virtual enviro
 
 `~/PythonScripts/spotipy_tutorial >> pip install spotipy`
 
-## Step 3: Authenticate and Run 
+### Step 3: Authenticate and Run 
 
 You are going to need to client ID, client Secret, and redirect url for this part. You can either set these values as environment variables:
 
@@ -129,7 +129,7 @@ If everything went well, your code should look like this:
 
 Voila! If you want to learn about other spotipy functions, check out their [website](https://spotipy.readthedocs.io/en/2.16.1/). 
 
-## Conclusion
+### Conclusion
 
 In the next tutorial, we will start analyzing our data, and to do this, we have to beat Spotify's data limit, which restricts the number of items the API can call. For now, play around with other spotipy functions, so you are comfortable with the API.  
 ---
