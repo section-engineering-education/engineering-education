@@ -1,16 +1,16 @@
-Cybercriminals use infected websites and phishing emails to spread [ransomware](https://www.section.io/engineering-education/what-is-ransomware/). Criminals use this type of malware to encrypt victims&#39; files, hold them hostage, and demand a ransom pay for decryption.
+Cybercriminals use infected websites and phishing emails to spread [ransomware](https://www.section.io/engineering-education/what-is-ransomware/). Criminals use this type of malware to encrypt victims&#39; files, hold them hostage and demand a ransom pay for decryption.
 
 Victims have lost billions in the recent past to ransomware attacks. Now, attackers have taken this threat to a whole new level by developing a new ransomware delivery model known as ransomware as a service (RaaS).
 
 RaaS enables cybercriminals to conduct their ransomware operations, including malware delivery and taking ransom payments, through the dark web or a for hire-as-a-service arrangement. The criminals take a portion of the ransom gains of charge a fixed fee.
 
-This article discusses RaaS, how it functions and gives tips to protect against RaaS.
+This article discusses RaaS, how it functions, and gives tips to protect against RaaS.
 
 ### What is Ransomware-as-a-Service (RaaS)?
 
 Ransomware-as-a-Service (RaaS) borrows from the Software-as-a-Service (SaaS)&#39;s subscription-based model. But the RaaS model is a malicious one that allows even the most inexperienced cybercriminals to launch ransomware attacks with ease.
 
-RaaS dealers offer their services over the [dark web](https://en.wikipedia.org/wiki/Dark_web). This hidden, &quot;underground&quot; internet is a hub of cyber-criminal activities such as malware, data breaches, identify theft, and more.
+RaaS dealers offer their services over the [dark web](https://en.wikipedia.org/wiki/Dark_web). This hidden, &quot;underground&quot, the internet is a hub of cyber-criminal activities such as malware, data breaches, identity theft, and more.
 
 The ease of use of RaaS applications is a significant driver of increased attacks. Setting up a ransomware attack requires criminals to create an account with RaaS providers over the dark web. These providers offer various price packages based on the services included. Generally, this is a cloud-based subscription model where you pay a subscription fee.
 
@@ -18,9 +18,9 @@ Other providers use the &quot;affiliate&quot; model instead of asking for a subs
 
 ### How does RaaS function?
 
-Raas is a malicious franchise-like deployment model whereby deceitful vendors write ransomware code intending to rent or sell to other cyber criminals planning to launch attacks under an affiliate program. The vendors use the RaaS service to provide step-by-step information and technical know-how on launching a ransomware attack. Raas platforms allow monitoring of attacks through a real-time dashboard.
+Raas is a malicious franchise-like deployment model whereby deceitful vendors write ransomware code intending to rent or sell to other cybercriminals planning to launch attacks under an affiliate program. The vendors use the RaaS service to provide step-by-step information and technical know-how on launching a ransomware attack. Raas platforms allow monitoring of attacks through a real-time dashboard.
 
-Attacks may target to take control of the victim&#39;s computer files and storage systems. Malicious actors and hackers hold these storage systems and computer files hostage and demand ransom payment to return information access to the victim. Proceeds from successful attacks are shared among the attacker, coder, and the service provider.
+Attacks may target to take control of victim&#39;s computer files and storage systems. Malicious actors and hackers hold these storage systems and computer files hostage and demand ransom payment to return information access to the victim. Proceeds from successful attacks are shared among the attacker, coder, and the service provider.
 
 ### How do RaaS Attacks Happen?
 
@@ -38,14 +38,17 @@ Gmail [reports](https://cloud.google.com/blog/products/identity-security/protect
 
 The RaaS model&#39;s ease of use and high availability has created more opportunities for novice hackers. It is therefore imperative to take measures that protect your system from ransomware. Some of the preventive measures are explained below.
 
-- Keep a complete back up of your information and systems. In case of a ransomware attack, you can wipe your systems and data and restore the backup.
+- Keep a complete backup of your information and systems. In case of a ransomware attack, you can wipe your systems and data and restore the backup.
 - Where possible, keep remote desktop connections disabled. This prevents malware or attackers from accessing user&#39;s files and devices remotely.
 - Keep macro content in [Microsoft Office applications](https://docs.microsoft.com/en-us/office365/servicedescriptions/office-applications-service-description/office-applications) disabled. Mostly, cybercriminals spread ransomware through infected Microsoft Office documents containing malicious macros that download and execute malware once run. By disabling macros, you prevent compromises even from infected files.
 - Avoid clicking on links and email attachments from unconfirmed sources. Also, turn on email spam filters and blacklist access to unsafe websites.
 - Secure your data and systems from viruses and ransomware with antivirus solutions. Only use licensed software and ensure they are always updated to the latest version.
 - Invest in phishing protection. This helps to detect and block phishing emails immediately they are delivered.
-- Take training on how to recognize potential security threats: draft processes and policies of how to deal with suspicious activities.
+- Take training on recognizing potential security threats: draft processes and policies of how to deal with suspicious activities.
 
 ### Conclusion
 
 Ransomware-as-a-Service (RaaS) adds to the list of the latest driving force of cyber-criminal activities. You must take preventive measures to address this problem. Affordability and ease of deployment are some of the primary reasons why RaaS is on the rise.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
