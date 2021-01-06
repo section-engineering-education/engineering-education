@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/agora-cloud-recording/
 title: Agora Cloud Recording
-description: In this tutorial, we will be building a server using Node.js and Express to  to start and stop cloud recording of audio/video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
+description: In this tutorial, we will be building a server using Node.js and Express to start and stop cloud recording of audio/video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
 author: mohan-raj
 date: 2021-06-05T00:00:00-10:00
 topics: []
