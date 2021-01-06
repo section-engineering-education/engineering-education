@@ -261,11 +261,8 @@ An alternative to **st.table()** is **st.dataframe()**. Both of them support a d
 
   
 
-First, we will need to form the confusion matrix and get False Negatives, True Negatives, True Positives, and False Positives.
-```suggestion
-How about explaining confusion matrix? I think there is an article on evaluation metrics in eng-ed library. Link that here. 
-```
-  
+First, we will need to form the confusion matrix and compute the values.
+
 ```
 confusion = confusion_matrix(y_test, y_predict)
 FN = confusion[1][0]
