@@ -1,5 +1,5 @@
 ### Introduction
-All user’s interaction with an Android application is via the user interface (UI) <cite>[User interface](https://www.studytonight.com/android/introduction-to-views)<cite>. Therefore, knowing the fundamentals of the android application’s user interface is very essential. The user interface of an android application is made up of a collection of views and view groups <cite>[User interface](https://www.programmersought.com/article/47124971866/)<cite>. This article goes through commonly used views, view groups, and the attributes associated with them.
+All user’s interaction with an Android application is via the user interface (UI) [User interface](https://www.studytonight.com/android/introduction-to-views). Therefore, knowing the fundamentals of the android application’s user interface is very essential. The user interface of an android application is made up of a collection of views and view groups [User interface](https://www.programmersought.com/article/47124971866/). This article goes through commonly used views, view groups, and the attributes associated with them.
 
 #### Prerequisites
 You will need the following to follow through this article:
@@ -43,7 +43,7 @@ let's define the attributes stated above:
 - `android:textColor=”#df3e4c”` – The color of the text is set by this attribute. `"#df3e4c"` is a color code that can be accessed from material design websites.
 - `android:textSize=”20sp”` – This attribute is used to set the text size. Scale pixel(sp) is for text size scaled by the user's font performance. Density pixel(dp) is used for everything else.
 
-**NOTE:** Android provides many different attributes that can be applied to manage various properties <cite>[Android attributes](https://www.xspdf.com/resolution/50853945.html)<cite>. Therefore, the developer is not limited to the above only.
+**NOTE:** Android provides many different attributes that can be applied to manage various properties [Android attributes](https://www.xspdf.com/resolution/50853945.html). Therefore, the developer is not limited to the above only.
 
 **EditText**
 It is a widget that allows the user to enter text. The `android:inputType` attribute is not a must since it has a default value of text.
@@ -109,13 +109,13 @@ Example of `ImageView` in XML:
 The attribute above is defined as follows:
 
 `android:src=”@drawable/ic_campaign” />` - Sets the drawable as the `ImageView` content.
-A drawable resource is a general term for a graph that can be drawn on the screen and can be retrieved by adding attributes such as `android:drawable` and `android:icon` to another XML resource <cite>[drawable resource](http://web.archive.org/web/20201119081656/https://developer.android.com/guide/topics/resources/drawable-resource.)<cite>.
+A drawable resource is a general term for a graph that can be drawn on the screen and can be retrieved by adding attributes such as `android:drawable` and `android:icon` to another XML resource <[drawable resource](http://web.archive.org/web/20201119081656/https://developer.android.com/guide/topics/resources/drawable-resource.).
 
 Android also provides more views such as Spinners, `CheckBox` and `RadioButtons` for more user input
 Output screen.
 
 #### ViewGroups
-A `ViewGroup` is a view that holds other views <cite>[viewgroups](https://www.xspdf.com/resolution/52346774.html.)<cite>. Views use `LayoutParams` that serves to inform the parent class how to lay them out. For an easier understanding of viewgroups, we'll use the views we discussed to illustrate how we can align each of them in the same viewgroup. Some of the layout parameters take boolean values i.e. "true" or "false".
+A `ViewGroup` is a view that holds other views [viewgroups](https://www.xspdf.com/resolution/52346774.html.). Views use `LayoutParams` that serves to inform the parent class how to lay them out. For an easier understanding of viewgroups, we'll use the views we discussed to illustrate how we can align each of them in the same viewgroup. Some of the layout parameters take boolean values i.e. "true" or "false".
 
 Some of the commonly used `Viewgroups` are:
 - RelativeLayout
@@ -177,7 +177,7 @@ The attributes are defined as follows:
 - `android:layout_alignParentBottom="true"` - True, makes the bottom edge of the `ImageView` match the bottom edge of the parent.
 
 **LinearLayout**
-Views are arranged in a linear format either vertically or horizontally. `LinearLayout` children are stacked one by one, so no matter how large they are, a vertical list will only have one child per row and a horizontal list will only be one row long <cite>[LinearLayout](https://stackoverflow.com/questions/64747509/android-layout-0dp-shows-suspicious-size-error)<cite>.
+Views are arranged in a linear format either vertically or horizontally. `LinearLayout` children are stacked one by one, so no matter how large they are, a vertical list will only have one child per row and a horizontal list will only be one row long [LinearLayout](https://stackoverflow.com/questions/64747509/android-layout-0dp-shows-suspicious-size-error).
 
 Example of `LinearLayout` in XML:
 
@@ -225,7 +225,7 @@ The attributes above can be defined as follows:
 -`android:orientation="vertical"` - This determines the arrangement direction. We use "vertical" for a column" and "horizontal" for a row. In this instance, the views are aligned in a column.
 
 **ConstraintLayout**
-It allows developers to position and size widgets in a flexible way <cite>[ConstraintLayout](https://www.xspdf.com/resolution/54152766.html)<cite>. One of the fundamental building blocks of layout formation in `ConstraintLayout` is relative positioning <cite>[ConstraintLayout](https://www.techtravelhub.com/guide-on-android-layouts)<cite>. This enables you to place a given view relative to another one. A view will restrict to the horizontal and vertical axes. The general idea is to constrain a specific side of a widget to another side of some other widget.
+It allows developers to position and size widgets in a flexible way [ConstraintLayout](https://www.xspdf.com/resolution/54152766.html). One of the fundamental building blocks of layout formation in `ConstraintLayout` is relative positioning [ConstraintLayout](https://www.techtravelhub.com/guide-on-android-layouts). This enables you to place a given view relative to another one. A view will restrict to the horizontal and vertical axes. The general idea is to constrain a specific side of a widget to another side of some other widget.
 
 Example of `ConstraintLayout` in XML:
 
