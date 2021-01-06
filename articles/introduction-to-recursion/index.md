@@ -10,6 +10,8 @@
 
 [Factorial](#factorial)
 
+[Pros And Cons Of Recursion](#pros-and-cons-of-recursion)
+
 [Conclusion](#conclusion)
   
 ### Prerequisites
@@ -82,6 +84,16 @@ print(factorial(n))
 ```
 
 In the above function, the terminating condition, as stated above, is: `(n == 0 or n == 1)`. We return 1 since `factorial(1) = factorial(0) = 1`. Otherwise, we use the formula described above to calculate the factorial when n is greater than 1.
+
+### Pros And Cons Of Recursion
+**Pros**:
+1. **It is intuitive**: Recursion is easier to understand since a recursive function is similar to functions in mathematics. Some functions such as the Fibonacci and factorial are inherently recursive and easier to code. 
+
+**Cons**:
+
+1. **It is not efficient in terms of memory:** Since recursion involves function calls, each recursive call creates an entry for all the variables and constants in the function stack. These values are kept there until the function returns. Therefore, recursion is always limited by the stack space in the system. If a recursive function requires more memory than what is available in the stack, a common and prevalent error called [stack overflow](https://stackoverflow.com/questions/214741/what-is-a-stackoverflowerror) occurs. Check out [this](https://benpfaff.org/writings/clc/recursion-vs-iteration.html) article for more details.
+
+2. **It is not fast:** Iteration(using loops) is faster than recursion because every time a function is called, there is an overhead of allocating space for the function and all its data in the function stack. This causes a slight delay in recursive functions when compared to iteration. [This](https://stackoverflow.com/questions/10057443/explain-the-concept-of-a-stack-frame-in-a-nutshell) is a good read on the function call stack and how it works.
 
 ### Conclusion
 In this article, we understood how recursion works and looked at a few interesting problems. Recursion is an intuitive algorithmic technique, as a wide array of problems are inherently recursive and can be solved by dividing the problem into smaller subproblems. However, recursion is not the most efficient or most optimal technique and has its flaws. Fortunately, there are many ways to overcome this hurdle and solve problems optimally by consuming less time and less memory. One such technique is called *dynamic programming* and will be discussed in the next article. You can head over to [Hackerrank](https://www.hackerrank.com) and practice a wide array of problems on recursion. Hackerrank allows you to select the difficulty level of the problems, making it ideal for beginners.
