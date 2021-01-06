@@ -61,7 +61,7 @@ For example,
 
 `factorial(1) = 1 * 1 = 1`
 
-One interesting pattern that we observe here is that the factorial of 'n' is equal to `n` multiplied by `factorial(n - 1)`. In other words, `factorial(5) = 5*factorial(4)`. Similarly, `factorial(6) = 6*factorial(5)`. In general, `factorial(n) = n*factorial(n - 1)`. Interestingly, this looks exactly like a recursive function in which we call the 'factorial' function multiple times with different arguments. We know that `factorial(1) = 1`, which will be the terminating condition for our function.
+One interesting pattern that we observe here is that the factorial of 'n' is equal to `n` multiplied by `factorial(n - 1)`. In other words, `factorial(5) = 5 * factorial(4)`. Similarly, `factorial(6) = 6 * factorial(5)`. In general, `factorial(n) = n * factorial(n - 1)`. Interestingly, this looks exactly like a recursive function in which we call the *factorial* function multiple times with different arguments. We know that `factorial(1) = 1`, which will be the terminating condition for our function.
 
 `Note: An important rule in mathematics is that the factorial of 0 is 1. In other words, factorial(0) = 1. We are going to use this as the base case of our function.`
 
