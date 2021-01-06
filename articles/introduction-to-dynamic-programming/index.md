@@ -1,5 +1,5 @@
 
-In the previous article on recursion, we explored how we can break a problem into smaller sub-problems and solve them individually. However, recursion is not the most optimal technique and has its share of obstacles. Fortunately, there is a powerful algorithmic technique called dynamic programming that helps us overcome the hurdles posed by recursion and solve problems optimally. In this article, we will understand how dynamic programming(popularly referred to as DP) works by solving coding questions.
+In the previous article on recursion, we explored how we can break a problem into smaller sub-problems and solve them individually. However, recursion is not the most optimal technique and has its share of obstacles. Fortunately, there is a powerful algorithmic technique called dynamic programming that helps us overcome the hurdles posed by recursion and solve problems optimally. In this article, we will understand how dynamic programming (popularly referred to as DP) works by solving coding questions.
 
 ### Table of contents
 [Prerequisites](#prerequisites)
@@ -20,7 +20,7 @@ In the previous article on recursion, we explored how we can break a problem int
 ### Understanding DP
 According to [educative](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0), Dynamic Programming (DP) is an algorithmic technique for solving an optimization problem by breaking it down into simpler subproblems and utilizing the fact that the optimal solution to the overall problem depends upon the optimal solution to its subproblems. It sounds similar to recursion. That's because DP is just an optimized version of recursion. Before we delve into DP, let us look at the drawbacks of recursion:
 
-**It is not efficient in terms of memory:** Since recursion involves function calls, each recursive call creates an entry for all the variables and constants in the function stack. These values are kept there until the function returns. Therefore, recursion is always limited by the stack space in the system. If a recursive function requires more memory than what is available in the stack, a common and prevalent error called [stack overflow](https://stackoverflow.com/questions/214741/what-is-a-stackoverflowerror) occurs. Check out [this](https://benpfaff.org/writings/clc/recursion-vs-iteration.html) article for more details.
+**It is not efficient in terms of memory:** Since recursion involves function calls, each recursive call creates an entry for all the variables and constants in the function stack. These values are kept there until the function returns. Therefore, recursion is always limited by the stack space in the system. If a recursive function requires more memory than what is available in the stack, a common and prevalent error called [stack overflow](https://stackoverflow.com/questions/214741/what-is-a-stackoverflowerror) occurs. Check [this](https://benpfaff.org/writings/clc/recursion-vs-iteration.html) article for more details.
 
 **It is not fast:** Iteration(using loops) is faster than recursion because every time a function is called, there is an overhead of allocating space for the function and all its data in the function stack. This causes a slight delay in recursive functions when compared to iteration. [This](https://stackoverflow.com/questions/10057443/explain-the-concept-of-a-stack-frame-in-a-nutshell) is a good read on the function call stack and how it works.
 
@@ -39,7 +39,7 @@ n = int(input('Enter the nth term: '))
 print(fibonacci(n))
 ```
 
-The above code is the recursive implementation of Fibonacci numbers covered in the previous article. The `fibonacci()` function is called twice: once to calculate `(n - 1)` and once to calculate `(n - 2)`. Therefore, the time complexity of this function is 2 raised to the power 'n'. [This](https://www.geeksforgeeks.org/time-complexity-recursive-fibonacci-program/) is a good article on the time complexity of the recursive Fibonacci function. For example:
+The above code is the recursive implementation of Fibonacci numbers covered in the previous article. The `fibonacci()` function is called twice: once to calculate `(n - 1)` and once to calculate `(n - 2)`. Therefore, the time complexity of this function is 2 raised to the power 'n'. $ O(2^n) $ [This](https://www.geeksforgeeks.org/time-complexity-recursive-fibonacci-program/) is a good article on the time complexity of the recursive Fibonacci function. For example:
 
 Consider the case when n = 5.
 
@@ -126,3 +126,32 @@ In conclusion, dynamic programming is an exceptional variant of recursion that c
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
