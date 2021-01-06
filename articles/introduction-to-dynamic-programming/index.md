@@ -1,4 +1,3 @@
-
 In the previous article on recursion, we explored how we can break a problem into smaller sub-problems and solve them individually. However, recursion is not the most optimal technique and has its share of obstacles. Fortunately, there is a powerful algorithmic technique called dynamic programming that helps us overcome the hurdles posed by recursion and solve problems optimally. In this article, we will understand how dynamic programming (popularly referred to as DP) works by solving coding questions.
 
 ### Table of contents
@@ -29,17 +28,14 @@ In recursion, the same function can be called multiple times with the same argum
 ### Fibonacci Numbers
 ```py
 def fibonacci(n):
-
 	if(n == 1 or n == 2):
 		return 1
-
 	return fibonacci(n - 1) + fibonacci(n - 2)
-
 n = int(input('Enter the nth term: '))
 print(fibonacci(n))
 ```
 
-The above code is the recursive implementation of Fibonacci numbers covered in the previous article. The `fibonacci()` function is called twice: once to calculate `(n - 1)` and once to calculate `(n - 2)`. Therefore, the time complexity of this function is 2 raised to the power 'n'. $ O(2^n) $ [This](https://www.geeksforgeeks.org/time-complexity-recursive-fibonacci-program/) is a good article on the time complexity of the recursive Fibonacci function. For example:
+The above code is the recursive implementation of Fibonacci numbers covered in the previous article. The `fibonacci()` function is called twice: once to calculate `(n - 1)` and once to calculate `(n - 2)`. Therefore, the time complexity of this function is 2 raised to the power 'n'. $O(2^n)$. [This](https://www.geeksforgeeks.org/time-complexity-recursive-fibonacci-program/) is a good article on the time complexity of the recursive Fibonacci function. For example:
 
 Consider the case when n = 5.
 
@@ -61,7 +57,6 @@ A better way to solve this would be to store all the intermediate results to cal
 **Code:**  
 ```py
 def dynamic_fibonacci(n):
-
 	# the first two values are 1 since the first
 	# two terms of the series are also 1.
 	array = [1, 1]
@@ -71,13 +66,9 @@ def dynamic_fibonacci(n):
 	for i in range(2, n):
 		term = array[i - 1] + array[i - 2]
 		array.append(term)
-
 	# return the nth term of the array
-
 	return array[n - 1]
-
 n = int(input('Enter the number: '))
-
 print(dynamic_fibonacci(n))
 ```
 
@@ -86,7 +77,6 @@ As you can observe in the above code, we use an array to store all the terms in 
 **Optimized version:**
 ```py
 def dynamic_fibonacci(n):
-
 	# the first two values are 1 since the first
 	# two terms of the series are also 1.
 	# we have two variables for the same
@@ -107,14 +97,13 @@ def dynamic_fibonacci(n):
   
 	# return the second term that contains the nth value
 	return second
-
 n = int(input('Enter the number: '))
 print(dynamic_fibonacci(n))
 ```
 
 This is how we can convert a recursive function into an optimized DP solution. The time complexity of the above function is linear or `O(n)` since we only have one for loop that runs till 'n'.
 
-  
+
 ### Conclusion
 In conclusion, dynamic programming is an exceptional variant of recursion that compensates for its drawbacks. However, DP can sometimes be hard to understand and grasp, making it a popular candidate for coding interviews. Whether you are a student preparing for a job or a professional, understanding how DP works can benefit you. Head over to these websites and resources to better understand DP and solve problems on your own because that is the best way to learn something new.
 
@@ -126,6 +115,7 @@ In conclusion, dynamic programming is an exceptional variant of recursion that c
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
 
 <!-- MathJax script -->
 <script type="text/javascript" async
