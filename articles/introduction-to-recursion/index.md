@@ -19,7 +19,7 @@
 ### Understanding Recursion
 According to [Wikipedia](https://en.wikipedia.org/wiki/Recursion_(computer_science)), In computer science, **recursion** is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem. Recursion falls under a category of algorithms called "divide and conquer", in which a problem is broken down into smaller sub-problems that are easy to solve. These subproblems are solved individually, and the final result is the culmination of the results of all these subproblems. In other words, if you write a function that performs a certain task by calling itself, the function is called a recursive function, and this process is called recursion. Let us look at a mathematical interpretation:
 
-If `f(x)` is a function defined as:
+`f(x)` is a function defined as:
 
 `f(x) = f(x - 1) +f(x - 2)`
 
