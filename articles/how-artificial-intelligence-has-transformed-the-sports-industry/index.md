@@ -2,7 +2,7 @@ Modern sports have immensely applied technology, like many other aspects of life
 
  The human body is the main protagonist of sports, while technology and science (Technoscience) play the support role. Sometimes, however, technoscience is blamed for giving undue advantages to those who use them. For any game to be fair, all contestants should have an equal chance of winning. Outcomes should not be entirely predictable in any fair game.
 
-This article outlines the importance of artificial intelligence in modern sports and how it has helped in the evolution of sports. It explains technology's role in today's sports and what we expect in the future.
+This article outlines the importance of artificial intelligence in modern sports and how it has helped in sports evolution. It explains technology's role in today's sports and what we expect in the future.
 
 
 ### [Artificial Intelligence](https://www.section.io/engineering-education/artificial-intelligence-future/) (AI) 
@@ -39,7 +39,7 @@ We have already discussed how artificial intelligence is applied in Video Assist
 Investing in an athlete is always a big gamble, as a number of them never live up to their billing. There are customized artificial intelligence applications that work on prediction models. Artificial intelligence predicts an athlete's performance and potential based on multiple factors, for instance, body weight, proportions, strength, etcetera.
 
 #### Wearable Tech
-It is a category of devices that use artificial intelligence, worn in clothing or implanted in the user's body or skin powered by microprocessors, to send or receive data from the internet. This technology has been heavily used to provide data of strains and exertion of a player. It signals that the activity should be stopped to avoid injuries.
+It is a category of devices that use artificial intelligence, worn in clothing or implanted in the user's body or skin powered by microprocessors, to send or receive data from the internet. This technology has been heavily used to provide data of strains and exertion of a player. It signals that the player should stop the activity to avoid injuries.
 
 ### Challenges and areas of consideration while investing artificial intelligence in sports
 
@@ -52,7 +52,7 @@ We have seen that artificial intelligence applications have so many benefits: fa
 
 ### Conclusion
 
-Artificial intelligence is providing deeper insights to both players and the coaches. The support that artificial intelligence provides in sports can never be underestimated. This is even expected to disrupt the future of the sports industry as AI technology evolves. New training methods and new techniques, and even new ways of engaging with spectators will be discovered with AI technology evolution. With the current artificial intelligence applications, it can only be anticipated that there will be a steady use of AI technology in the future.
+Artificial intelligence is providing deeper insights to both players and the coaches. The support that artificial intelligence provides in sports can never be underestimated. This is even expected to disrupt the future of the sports industry as AI technology evolves. We will discover new training methods, new techniques, and modern ways of engaging with spectators through the evolution of AI technology. With the current artificial intelligence applications, it can only be anticipated that there will be a steady use of AI technology in the future.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
