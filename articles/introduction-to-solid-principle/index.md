@@ -1,16 +1,16 @@
 # Introduction to Solid Principle
 Writing clean code is one of the core precepts of software development. There are various software design approaches to ensure an understandable, flexible, and maintainable code base.
 
-This article explains one of the object-oriented programming design principles that assist you as a software developer towards writing clean code.
+This article explains one of the object-oriented programming design principles that assist you as a software developer in writing clean code.
 
-The application of this principle will be from a universal point of view towards understanding the concept of the SOLID principle, and not in relation to any specific programming language.
+This principle's application will be from a universal point of view towards understanding the concept of the SOLID principle, not in relation to any specific programming language.
 
-# What is Solid Principle?
-The SOLID principle is a design principle and pattern intended to make software designs more understandable, flexible, and maintainable. In the software development process, when creating an object, the object's design is essential, notably in deciding the accessibility scope.
+# What is the Solid Principle?
+The SOLID principle is a design principle and pattern intended to make software designs more understandable, flexible, and maintainable. When creating an object, the object's design is essential in the software development process, notably in deciding the accessibility scope.
 
 The object case scenario might confuse newbies in software development. Here's a better analogy; imagine if cups had their handles at the top rather than at the side. How accessible or comfortable would it be to use this cup (object)? But if the handle remains at the side, they remain readily accessible and comfortable to use.
 
-In a software development lifecyle, the decision on how accessible and flexible an object is during thsi object's design phase will ensure its usability, simplicity, ease of implementation and accessibility towards making reliable software.
+In a software development lifecycle, the decision on how accessible and flexible an object is during this object's design phase will ensure its usability, simplicity, ease of implementation, and accessibility towards making reliable software.
 
 SOLID principles have been tested and trusted by software developers, and the underlying technique of this principle, when applied correctly, can aid in developing standard object-oriented software applications.
 
@@ -24,15 +24,15 @@ The SOLID Principle ensures easy access and control to object entities. The inte
 Software change over time. Therefore developers need to build applications while keeping in mind the possibility of future changes. Poorly structured software applications make it difficult to refactor, but there is effortlessness in refactoring your codebase with the SOLID principle.
 
 ## Extensibility
-Software go through phases of upgrades, including the addition of extra features. If extending the features of an application is not done tactfully, this could affect existing functionalities and cause unintended problems.
+Software go through phases of upgrades, including extra features. If extending the features of an application is not done tactfully, this could affect existing functionalities and cause unintended problems.
 
 The procedure of extensibility could be a gruesome process, as you need to build on functionalities that already exist in the codebase, and if the existing functionalities are not adequately designed, this makes it even more difficult to add extra features. But the application of SOLID principles makes the extensibility process easier.
 
 ## Debugging
-Debugging is a crucial part of the software development process. When software applications are not adequately designed, and the codebase is clustered like spaghetti, it is hard to debug applications. The SOLID principle incorporates the feature of ensuring that the debugging process of software is much easier.
+Debugging is a crucial part of the software development process. When software applications are not adequately designed, and the codebase is clustered like spaghetti, it is hard to debug applications. The SOLID principle incorporates the feature of ensuring that the debugging process of software is much more comfortable.
 
 ## Readability
-A well-designed codebase can be easy to understand and read. Readability is also an important element in software development because it makes debugging and refactoring operations easier, especially in open-source projects.
+A well-designed codebase can be easy to understand and read. Readability is also an essential element in software development because it makes debugging and refactoring operations easier, especially in open-source projects.
 The SOLID principle approach ensures that your code is relatively easier to read and understand.
 
 # A Brief Review On Interfaces and Concrete Classes
@@ -122,7 +122,7 @@ class TravelCosting {
  }
 }
 ```
-What if the travel agency needs to change the way they calculate their food cost from the above code? To do this, the entire function has to be reworked. The way to reimplement the above pseudocode to ensure extensibility and reusability is:
+What if the travel agency needs to change how they calculate their food cost from the above code? To do this, the entire function has to be reworked. The way to reimplement the above pseudocode to ensure extensibility and reusability is:
 
 ```
 class TravelCosting {
@@ -137,12 +137,12 @@ public function calculateTotalCost() {
  }
 }
 ```
-The above code ensures that to write new costing criteria, we don't have to rewrite the costing criteria' functions, which is how you apply the open and close principle.
+The above code ensures that we don't have to rewrite the costing criteria' functions to write new costing criteria, which is how you apply the open and close principle.
 
 ### LISKOV Substitution Principle
-This principle illustrates that if a section of your code is extending a superclass, then all subclasses of the superclass should be able to replace the superclass in your code. A section of your code does not have to know which class it is as far as it is a subclass of the superclass. 
+This principle illustrates that if a section of your code is extending a superclass, then all subclasses of the superclass should be able to replace the superclass in your code. A section of your code does not have to know which class it is as far as it is a superclass subclass. 
 
-The LISKOV substitution principle analogy might seem confusing, but what it is simply implying is that; functions that use pointers of references to a base class must be able to use the derived class objects without knowing it. The application of this principle ensures the easy integration of classes.
+The LISKOV substitution principle analogy might seem confusing, but what it implies is that functions that use pointers of references to a base class must use the derived class objects without knowing it. The application of this principle ensures the easy integration of classes.
 
 Below is an application of this concept, but without the use of the LISKOV substitution principle:
 ```
@@ -244,9 +244,9 @@ class CarManufacturer {
 }
 ```
 
-In the above implementation, the CarManufacturer class does not rely on a concrete class. Rather it relies on an interface. Therefore, if we intend to change the database technology, we can change the class that implements the DatabaseManagement interface.
+In the above implementation, the CarManufacturer class does not rely on a concrete class. Instead, it relies on an interface. Therefore, if we intend to change the database technology, we can change the class that implements the DatabaseManagement interface.
 
-By following the dependency inversion principle, we do not have to change our code, which helps in our code readability and extensiveness.
+By following the dependency inversion principle, we do not have to change our code, which helps code readability and extensiveness.
 
 # Conclusion
 At the end of this article, you now have a firm understanding of the benefits of using the SOLID principle, a brief review of interfaces and concrete classes, and implementing the SOLID principle in the software development process.
