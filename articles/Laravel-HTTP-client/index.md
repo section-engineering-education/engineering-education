@@ -3,9 +3,9 @@
 Laravel has evolved significantly over the past few years from the release of version 7.x.x, one of the key areas of improvement evolves around Guzzle HTTP Client.  
 
 ## Requirements
-PHP 7.4.x
-Laravel 8.x
-Postman
+* PHP 7.4.x
+* Laravel 8.x
+* Postman
 
 ### A Quick Introduction to Guzzle API
 
