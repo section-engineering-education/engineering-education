@@ -14,22 +14,24 @@ images:
   - url: /engineering-education/ci-cd-setup-react/hero.jpg
     alt: CI CD React 
 ---
-Will it be better? if we reduce this repetitive manual process using CI/CD and dedicate most of the valuable time in developing new, innovative, and problem-solving features?
+Good developers are always looking for ways to reduce repetitive, manual processes. Leveraging CI/CD (Continuous Integration / Continuous Delivery) methodologies helps developers automate processes so they can focus valuable time on developing new, innovative, and problem-solving features.
 <!--more-->
-### Tutorial Overview...
+In the present software development context, important workflows for software development are often run, tested, built, and deployed without setting up CI/CD, meaning that all the processes in the software development cycle are done manually, from running tests to running the build, to getting the build file and deploying on the server. These manual processes quickly become inefficient. Setting up CI/CD helps alleviate these burdens by automating much of the software development process, making it easy to test and deploy end products.
 
-In the present software development context, the important workflows for software development are run, tested, built, and deployed without setting up CI/CD. All the processes in the software development are done manually from running tests to running the build to get the build file and deploying on the server. The development cycle for adding new features and fixing bugs done manually becomes inefficient and hectic due to processes being run repeatedly. This is one of the reasons why CI/CD is necessary. Hence, setting up CI/CD automates most of the software development process making it easy to test and deploy the end products. The process of making it automated can be:
+### Tutorial Overview
 
-- Creating a React application and push the repo to Github.
+In this tutorial, we will be integrating CI/CD into a development cycle by:
+
+- Creating a React application and pushing the repo to GitHub.
 - Setting up AWS S3 for deployment.
 - Setting AWS Cloudfront with HTTPS and CDN.
-- Setting up Circle CI to subscribing repository and trigger it when commit received while starting the test, build, and deploy to AWS.
+- Setting up CircleCI to subscribing repository and trigger it when a commit is received to start the test, build, and deployment to AWS.
 
-Now, the steps to set these ups are:
+Now, the steps that we will take to set this up are:
 
-- When pushing code to the repository (e.g. GitHub, Bitbucket), the repository will trigger (webhook) to CI that subscribes to this repository.
-- CI server starts the run command that we prepared( eg run test, check syntax, build, deploy).
-- In case an error occurs, notification will be sent.
+- When pushing code to the repository (e.g. GitHub, Bitbucket), the repository will send a trigger (webhook) to CI that subscribes to this repository.
+- CI server starts the run command that we prepared (e.g. run test, check syntax, build, deploy).
+- In case an error occurs, a notification will be sent.
 - A developer will fix the bug and commit code again and loop back to first until the error is resolved.
 
 The steps to setup CI/CD to React ecosystem is explained below:
