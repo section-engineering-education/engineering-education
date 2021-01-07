@@ -116,7 +116,7 @@ Many times the author or contributors may release the code without any license f
 | License | Permissions | Limitations |
 | ------- | ----------- | ----------- |
 | MIT License | A no-frills license allowing users to use the code unconditionally provided the author's attribution. | The code or work is provided without a warranty of any kind.|
-| GNU General Public License(GPL)| Created to ensure the work is used for educational purposes. Proper attribution to the original author is necessary. | One should not use work with GNU license for commercial purposes, and any derived work must be kept open sourced |
+| GNU General Public License(GPL)| Created to ensure the work is used for educational purposes. Proper attribution to the original author is necessary. | One should not use work with GNU license for commercial purposes, and any derived work must be kept open-sourced |
 | Apache License | Similar to MIT license, except it allows one to patent any derived work as well.| The code or work is provided without a warranty of any kind. |
 | Creative Commons Attribution License | Created to enable sharing knowledge with appropriate attribution. Commercial usage is allowed. | The same license needs to be used to modify or build over the work licensed through CC BY-SA 4.0.  |
 | The Unlicense | This is a no-frills license that one can assign to allow maximum reach | The code or work does not come with any warranty. |
