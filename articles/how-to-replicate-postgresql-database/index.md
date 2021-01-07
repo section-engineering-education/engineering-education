@@ -27,32 +27,32 @@ Make sure you have installed the Linux Ubuntu server. To install PostgreSQL 10 i
 
 1. Import PostgreSQL signing key by typing the following command in Terminal
 
-``` bash
+```bash
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O- | sudo apt-key add -
 ```
 
 2. Add PostgreSQL repository by typing the following command in terminal
 
-``` bash
+```bash
 echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | 
 sudo tee /etc/apt/sources.list.d/postgresql.list
 ```
 
 3. Update Repository Index typing the command below in terminal
 
-``` bash
+```bash
 sudo apt-get update
 ```
 
 4. Install PostgreSQL package using apt command
 
-``` bash
+```bash
 sudo apt-get install -y postgresql-10
 ```
 
 5. Set password for postgres user using the following command
 
-``` bash
+```bash
 sudo passwd postgres
 ```
 
@@ -60,7 +60,7 @@ sudo passwd postgres
 
 1. Login to the PostgreSQL database with the following command
 
-``` bash
+```bash
 su - postgres
 ```
 
@@ -68,7 +68,7 @@ su - postgres
 
 2. Create replication user with the following command
 
-``` bash
+```bash
  psql -c "CREATEUSER replication REPLICATION LOGIN CONNECTION LIMIT 1 ENCRYPTED PASSWORD'YOUR_PASSWORD';"
 ```
 
@@ -76,13 +76,13 @@ su - postgres
 
 `file edit command`
 
-``` bash
+```bash
 nano /etc/postgresql/10/main/pg_hba.conf
 ```
 
 **Configuration**
 
-``` bash
+```bash
 host  replication       replication   MasterIP/24   md5
 ```
 
@@ -93,13 +93,13 @@ host  replication       replication   MasterIP/24   md5
 4. Open and Edit postgresql.conf and put the following configuration or uncomment if it is commented in the master server
 file edit command
 
-``` bash
+```bash
 nano /etc/postgresql/10/main/postgresql.conf
 ```
 
 **Configuration**
 
-``` bash
+```bash
 listen_addresses = 'localhost,MasterIP'
 
 wal_level = replica
@@ -111,7 +111,7 @@ max_wal_senders = 10
 
 5. Restart PostgreSQL in Master main server
 
-``` bash
+```bash
 systemctl restart postgresql
 ```
 
@@ -119,13 +119,13 @@ systemctl restart postgresql
 
 1. Login to PostgreSQL RDMS with the command below
 
-``` bash
+```bash
 su - postgres
 ```
 
 2. Stop postgresql service from working to enable us to work on it with the command below
 
-``` bash
+```bash
 systemctl stop postgresql
 ```
 
@@ -133,13 +133,13 @@ systemctl stop postgresql
 
 **Edit Command**
 
-``` bash
+```bash
 nano /etc/postgresql/10/main/pg_hba.conf
 ```
 
 **Configuration**
 
-``` bash
+```bash
 host  replication       replication   MasterIP/24   md5
 ```
 
@@ -147,13 +147,13 @@ host  replication       replication   MasterIP/24   md5
 
 **Edit Command**
 
-``` bash
+```bash
 nano /etc/postgresql/10/main/postgresql.conf
 ```
 
 **Configuration**
 
-``` bash
+```bash
 listen_addresses = 'localhost,SlaveIP'
 
 wal_keep_segments = 64
@@ -169,17 +169,17 @@ max_wal_senders = 10
 
 5. Access PostgreSQL data directory in the Slave server and remove everything
 
-``` bash
+```bash
 cd /var/lib/postgresql/10/main
 ```
 
-``` bash
+```bash
 rm -rfv *
 ```
 
 6. Copy PostgreSQL Master Server data Directory files to PostgreSQL Slave Server Data directory. Write this command in Slave Server
 
-``` bash
+```bash
 pg_basebackup -h MasterIP -D /var/lib/postgresql/11/main/ -P -U
 
 replication --wal-method=fetch
@@ -190,13 +190,13 @@ replication --wal-method=fetch
 
 **Edit Command**
 
-``` bash
+```bash
 nano /var/lib/postgresql/10/main/recovery.conf
 ```
 
 **Configuration**
 
-``` bash
+```bash
 standby_mode          = 'on'
 
 primary_conninfo      = 'host=MasterIP port=5432 user=replication password=YOUR_PASSWORD'
@@ -208,7 +208,7 @@ trigger_file = '/tmp/MasterNow'
 
 9. Start slave PostgreSQL since it had been stopped
 
-``` bash
+```bash
 systemctl start postgresql
 ```
 
@@ -216,14 +216,14 @@ systemctl start postgresql
 
 **Login to the master server**
 
-``` bash
+```bash
 su - postgres
 psql
 ```
 
 **Create a  table named 'testtable' and insert data to the table by running the following postgres queries in the terminal**
 
-``` sql
+```sql
 CREATE TABLE testtable (websites varchar(100));
 INSERT INTO testtable VALUES ('section.com');
 INSERT INTO testtable VALUES ('google.com');
@@ -234,14 +234,14 @@ INSERT INTO testtable VALUES ('github.com');
 
 **Login to the slave server**
 
-``` bash
+```bash
 su - postgres
 psql
 ```
 
 **Check data on  'testtable'  by running the following postgres queries in the terminal**
 
-``` sql
+```sql
 select * from testtable;
 ```
 
