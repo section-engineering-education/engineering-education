@@ -1,4 +1,4 @@
-DBMS or database management systems play a key role as the foundational building blocks of any modern application. Whether you are a database administrator, a developer, or an IT professional, extensive knowledge of databases is essential. In this article, we are going to look at a class of databases called time-series databases and understand how they work. We are also going to explore the basics of the most popular time-series database called influx DB. By the end of this article, you will have influx DB installed on your system and be able to execute your own queries. 
+DBMS or database management systems play a key role as the foundational building blocks of any modern application. Whether you are a database administrator, a developer, or an IT professional, extensive knowledge of databases is essential. In this article, we will look at a class of databases called time-series databases and understand how they work. We are also going to explore the basics of the most popular time-series database called influx DB. By the end of this article, you will have influx DB installed on your system and be able to execute custom queries. 
   
 ### Table of contents
 [Prerequisites](#prerequisites)
@@ -14,12 +14,12 @@ basic understanding of [database management systems](https://www.tutorialspoint.
 Basic understanding of [Python](https://www.python.org/about/gettingstarted/).
 
 ### Time Series Database
-According to the [official documentation](https://www.influxdata.com/time-series-database/), A time-series database (TSDB) is a database optimized for time-stamped or time-series data. Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. Furthermore, time-series databases are built to specifically handle this type of data that has a timestamp associated with it. 
+According to the [official documentation](https://www.influxdata.com/time-series-database/), A time-series database (TSDB) is a database optimized for timestamped or time-series data. Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. Furthermore, time-series databases are built to specifically handle this type of data with a timestamp associated with it. 
 
-Let us consider a few examples to understand this better. The stock market is a very volatile and time-dependent system. It is essential to monitor and store this information along with the timestamp of when the transactions happened. Another example would be gathering sensor data on temperature, pressure, or humidity. These types of data require a time associated with each record to help us understand the "trend" or analyze a pattern that changes over time. However, one might ask: Why can't we just add a column/field called time and keep track of the timestamp of when the event occurred. This is possible but there are two ways to do this: When we get a new record or data for a particular value such as temperature, should we overwrite the previous reading, or should we create a new row in the database? Both methods will provide the current or most recent values. However, we can only analyze the trend or the changes in the system over a period of time if we insert a new row. This is what time-series databases are optimized to do.
+Let us consider a few examples to understand this better. The stock market is a very volatile and time-dependent system. It is essential to monitor and store this information along with the timestamp of when the transactions happened. Another example would be gathering sensor data on temperature, pressure, or humidity. These data types require a time associated with each record to help us understand the "trend" or analyze a pattern that changes over time. However, one might ask: Why can't we just add a column/field called time and keep track of the timestamp when the event occurred. This is possible, but there are two ways to do this: When we get a new record or data for a particular value such as temperature, should we overwrite the previous reading, or should we create a new row in the database? Both methods will provide the current or most recent values. However, we can only analyze the trend or the system changes over a period of time if we insert a new row. This is what time-series databases are optimized to do.
 
 ### InfluxDB
-InfluxDB is the most popular open-source time-series database, created by a company called Influx data in 2013. InfluxDB provides APIs for an array of popular programming languages such as Python, golang, java, etc. 
+InfluxDB is the most popular open-source time-series database, created by a company called Influx data in 2013. InfluxDB provides APIs for various popular programming languages such as Python, golang, java, etc. 
 
 #### Installing InfluxDB
 
@@ -87,13 +87,13 @@ USE test
 
 InfluxDB requires a certain format for inserting data. Every record or row is referred to as a "point" and has 4 elements: 
 
-**measurement:** The name of the measurement and requires one measurement per point. This is similar to the name of the "table" in a conventional database system such as SQL.
+**measurement:** The name of the measurement and requires one measurement per point. This is similar to the "table" in a conventional database system such as SQL.
 
 **tag:** This is a key-value pair that corresponds to a row in the table.  
 
 **field:** The field is an optional argument and is a set of key-value pairs that store information. 
 
-**timestamp:** This is also an optional argument that tells us the time at which the data was inserted. If the timestamp is not specified, InfluxDB automatically stores the current time as the timestamp. 
+** timestamp:** This is also an optional argument that tells us the time at which the data was inserted. If the timestamp is not specified, InfluxDB automatically stores the current time as the timestamp. 
 
 For more information on these elements, have a look at the [official documentation](https://docs.influxdata.com/influxdb/cloud/reference/key-concepts/data-elements/). The format for inserting data is as follows:
 
@@ -118,4 +118,6 @@ SELECT * FROM temperature
 ![Select temp](/engineering-education/introduction-to-influxdb/select_temperature.png)
 
 ### Conclusion
-In this tutorial, we understood the basics of time-series data and the most popular time-series database called InfluxDB. We installed InfluxDB on our local system and executed an array of queries on time-series data. In the next tutorial, we are going to build an analytics system using the API provided by InfluxDB for Python. 
+In this tutorial, we understood the basics of time-series data and the most popular time-series database called InfluxDB. We installed InfluxDB on our local system and executed an array of queries on time-series data. In the next tutorial, we will build an analytics system using the API provided by InfluxDB for Python. 
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
