@@ -23,7 +23,7 @@ There are a couple of methods that can be used to find the best fit line. The fi
 
 #### Using gradients
 
-Let the line of best fir passing through the data points be given as:
+Let the line of best fit passing through the data points be given as:
 $$ \hat{y_i} = mx_i + c, \; where \; \hat{y_i}\;is\;the\;predicted\;output$$
 
 We use a cost function to measure the performance of the best fit line. The cost function, also known as an error function, calculates how close the predicted value is to the actual value. The error function is given as:
@@ -41,7 +41,7 @@ $$ m = \frac{\sum_{i=1}^n x_iy_i - x_i\bar{Y}}{\sum_{i=1}^n x_i^2 - x_i\bar{X}} 
 
 In the above equations, $\bar{X}$ denotes the average of input values, and $\bar{Y}$ denotes the average of output values. Substituting the values of c and m in the output equation, we obtain the equation of the straight line. 
 
-### Least-squares solution
+#### Least-squares solution
 
 In the least-squares solution, we find the error in the same manner as the earlier method. We describe the linear regression model as follows:
 
@@ -62,10 +62,12 @@ Therefore, the parameter b is found by taking the inverse of $X^TX$ on both side
 
 $$ b= (X^TX)^{-1}X^TY $$
 
-This can be solved using many methods, and the solution is computed. Some of the methods that can be used to solve the same are:
+This can be solved using many methods, and the solution is computed. Some of the methods that can be used to solve the same are given below: 
 - QR decomposition
-- Moore - Penrose inverse
 - SVD decomposition
+- Moore - Penrose inverse
+
+These methods help compute the inverse of a matrix. Moore-Penrose inverse is used when an inverse is not available and an approximated solution is used. These methods have their advantages and disadvantages in terms of computational efficiency and accuracy of inverses computed. These topics are beyond the scope of this article and therefore we will restrict our discussion.
 
 ### Code
 
@@ -95,8 +97,8 @@ class LinearRegression():
 We get a training accuracy of 70.7% and a testing accuracy of 77.5%. 
 
 ```txt
-Train Score: 0.7071189142812431
-Test Score:  0.7748975702292309
+Train Score: 0.711553862551374
+Test Score:  0.6754645412095844
 ```
 
 ### Applications
@@ -105,9 +107,9 @@ The applications of linear regression analysis are multifold. The idea of linear
 
 A few examples of linear regression in action are given below:
 
-- Risk profiling 
-- Stock market portfolio analysis 
-- Analysis and optimization
+- Risk profiling: Analyzing the risk of an investor on the basis of the income and commitments of the investor can be posed as a regression task. The output is the maximum risk the investor can take.  
+- Stock market portfolio analysis: Predicting the future prices given the current conditions and historic data is a problem many mathematicians and analysts work on. Regression models are often used in such applications. 
+- Analysis and optimization: Finding optimal solutions for a given problem given the constraints can be modelled using regression methods. For example, predicting the price of houses or used cars using regression is a famous machine learning problem. 
 
 
 ### Conclusion
