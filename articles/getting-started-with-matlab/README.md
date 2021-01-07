@@ -1,8 +1,6 @@
 # Getting-started-with-MATLAB
 ### Introduction
-According to Wikipedia, MATLAB (an abbreviation of "matrix laboratory") is a proprietary multi-paradigm programming language and numerical computing environment developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementing algorithms, creating user interfaces, and interfacing with programs written in other languages.
-
-Although MATLAB is intended primarily for numerical computing, an optional toolbox uses the MuPAD symbolic engine allowing access to symbolic computing abilities. An additional package, Simulink, adds graphical multi-domain simulation and model-based design for dynamic and embedded systems.
+MATLAB (an abbreviation of "matrix laboratory") is a programming language and numerical computing environment developed by MathWorks.
 
 ### Prerequisites
 - Good understanding of any programming language.
@@ -14,6 +12,8 @@ Although MATLAB is intended primarily for numerical computing, an optional toolb
 - Scientific and engineering graphics.
 - Developing algorithms.
 - Modeling, simulation, and prototyping.
+
+MATLAB has an additional package "Simulink" which you can use for graphical multi-domain simulation and model-based design for dynamic and embedded systems. And you can get access to the symbolic computing abilities by using an optional toolbox that uses the MuPAD symbolic engine.
 
 ### Lets code!
 In heart, MATLAB is a calculator. For example, try: `1+1`, `sqrt(4)`, or `sin(pi/2)`.
@@ -29,6 +29,7 @@ Also, you can present complex numbers by:
 
 #### Vector
 The vector is a one-dimensional array of numbers.
+
 ##### Row vector
 You can create row vectors by:
 ```matlab
@@ -70,7 +71,7 @@ And if you want to list all of the vector elements, you can use `values(:)`.
 #### Matrix
 The matrix is a two-dimensional array of numbers.
 
-To create a matrix, you have to enter the elements in each row with a space or colon between them. Then you have to use semicolons to delimit the rows as we saw above. For example:
+To create a matrix, you have to enter the elements in each row with space or colon between them. Then you have to use semicolons to delimit the rows as we saw above. For example:
 ```matlab
 values=[1 2 3 4;5 6 7 8; 9 10 11 12]
 ```
@@ -133,7 +134,7 @@ ans =
 ```
 
 #### M-files
-Entering commands at MATLAB prompt is not practical when the problems will be complicated and require re-evaluation. The solution will be using M-files which is user-defined commands normally have input & output and the script will be executed in sequence when it is called.
+Entering commands at MATLAB prompt is not practical when the problems will be complicated. The solution will be using M-files which is user-defined commands that normally have input & output and the script will be executed in sequence when it is called.
 
 It is saved with the extension ".m".
 
@@ -167,24 +168,24 @@ If you are familiar with the Matplotlib plotting library for Python programming 
 
 To plot any graph we need to define the range of *X* and *Y* values. Then to call the plot command which is `plot(X,Y)`.
 
-Now let's move on to a complex example. We are going to create sin and cos waves. We will create the following figure:
+Now let's move on to a complex example. We are going to create the following figure:
 
 ![sin and cos waves](/engineering-education/getting-started-with-matlab/sin-cos.jpg)
 
-First of all, let's define the t which is a variable indicating time.
+First of all, let's define the t (a variable indicating time).
 ```matlab
 t = 0:0.01:5
 ```
-Second, we are going to define the first sin wave:
+Second, let's define the first sin wave:
 ```matlab
 first = 3*sin(2*t+pi/2)
 subplot(2,2,1),plot(t,first)
 title('3sin(2t+pi/2)')
 ```
-The subplot allows you to create multiple plots in one figure. The first and second numbers specify how many rows and columns we want, in our case, it is 2 rows and 2 columns. The last number (1) specify that our plot will be in the first row and the first column (in the upper left corner).
+The subplot allows you to create multiple plots in one figure. The first and the second numbers specify how many rows and columns we want, in our case, it is 2 rows and 2 columns. The last number (1) specify that our plot will be in the first row and the first column (in the upper left corner).
 And the title to define our plot title.
 
-Now we are going to do the same for the second and the third waves.
+Let's do the same for the second and the third waves.
 ```matlab
 second = 3*cos(2*t)
 subplot(2,2,3),plot(t,second)
