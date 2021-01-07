@@ -1,8 +1,7 @@
-### Introduction
-MySQL Workbench is a graphical visual database design tool. This tutorial will cover database design and modeling with MySQL Workbench.
+MySQL Workbench is a graphical visual database design tool with multiple functionalities. This tutorial will cover database design and modeling with MySQL Workbench.
 
 ### Prerequisites
-This article is suitable for beginner to intermediate MySQL Workbench users. No prior knowledge of MySQL Workbench is required. Knowledge in [relational databases](http://www.geeksengine.com/database/design/) and database design may be required. To get started with the MySQL database, check the [MySQL Tutorial]( https://www.mysqltutorial.org/) website.
+This article is suitable for beginner to intermediate MySQL Workbench users. No prior knowledge of MySQL Workbench is required. However, knowledge in [relational databases](http://www.geeksengine.com/database/design/) and database design may be required. To get started with the MySQL database, check the [MySQL Tutorial]( https://www.mysqltutorial.org/) website.
  
 ### Introduction to MySQL Workbench
 There are two editions of MySQL Workbench: the community edition and the commercial edition. The community edition is open source. Both editions are available for three major platforms; MS Windows, macOS, and Linux. The commercial edition comes with more functionalities at a cost. Some of the extra functionalities available in the commercial edition are:
@@ -47,7 +46,7 @@ Workbench is one of the MySQL products. Use MySQL Installer to manage MySQL prod
 [Image source](https://www.mysql.com/support/supportedplatforms/workbench.html)
 
 #### Installing MySQL Workbench on Windows
-Download MySQL Installer from the [official website](https://dev.mysql.com/downloads/installer/). Install MySQL Workbench using the downloaded installer. For this installation, I recommend the default configurations as in the screenshot below.
+Download MySQL Installer from the [official website](https://dev.mysql.com/downloads/installer/). Install MySQL Workbench using the downloaded installer. For this installation, I recommend the default configurations, as shown in the screenshot below.
 
 ![MySQL installer Windows](/engineering-education/visual-database-design-with-mysql-workbench/mysql-installer.jpg)
 
@@ -88,8 +87,8 @@ After adding a new diagram, a new window will be opened, as in the screenshot be
 
 #### Scenario
 In this tutorial, we will model and create a database for keeping book details. The database should store books with author and publisher details. We will skip the [database normalization process](https://www.studytonight.com/dbms/database-normalization.php) details. The final database will have three main entities with attributes, as shown below:
-- **Book:** id, title, ISBN, publisher, total pages, year of publication, author
-- **Author:** id, first name, last name
+- **Book:** id, title, ISBN, publisher, total_pages, publication_year, author
+- **Author:** id, first_name, last_name
 - **Publisher:** id, name
 
 We will use the information in the tables below to design the ER model. All the column names have been defined. Primary keys, foreign keys, and datatypes are also outlined.
@@ -119,8 +118,8 @@ id | integer| no | primary key | yes
 name | varchar(45) |no|
 
 The relationships between the entities are as below:
-- The relationship between the book and the author is many-to-many. This type of relationship requires an extra table called a [bridge table](https://www.ibm.com/support/knowledgecenter/SSEP7J_11.1.0/com.ibm.swg.ba.cognos.ug_fm.doc/c_dyn_query_bridge_tables.html). MySQL Workbench automatically creates a bridge table when we add a many-to-many relationship.
-- There is a one-to-many relationship between the book and the publisher.
+- The relationship between the book and the author is many-to-many. An author can have multiple publications. A book can also have multiple authors. This type of relationship requires an extra table called a [bridge table](https://www.ibm.com/support/knowledgecenter/SSEP7J_11.1.0/com.ibm.swg.ba.cognos.ug_fm.doc/c_dyn_query_bridge_tables.html). MySQL Workbench automatically creates a bridge table when we add a many-to-many relationship.
+- The relationship between the book and the publisher is one-to-many. A book can only have one publisher. A publisher can publish multiple books. 
 
 Using MySQL Workbench, we will design an enhanced entity-relationship(EER) diagram. MySQL Workbench allows us to create tables, edit the attributes, and create relationships between the tables.
 
