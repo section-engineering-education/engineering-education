@@ -6,7 +6,7 @@ url: /engineering-education/ci-cd-setup-react/
 title: How to Set Up CI/CD in a React Project with Circle CI, AWS S3, and AWS CloudFront 
 description: In this tutorial, we walk through how to set up CI/CD in a React project with Circle CI, AWS S3, and AWS CloudFront.
 author: worawat-kaewsanmaung
-date: 2021-01-05T00:00:00-07:00
+date: 2021-01-07T00:00:00-07:00
 topics: []
 excerpt_separator: <!--more-->
 images:
