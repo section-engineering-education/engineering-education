@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/agora-cloud-recording-part-2/
-title: Agora Cloud Recording Part 2
+title: Cloud Recording with Agora - Queries and Updates
 description: In this tutorial, we will be building a server using Node.js and Express to implement additional operations of Agora Cloud Recording like querying the recording session, updating subscriber list and updating mixing layout.
 author: mohan-raj
-date: 2021-06-05T00:00:00-10:00
+date: 2021-01-06T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -37,7 +37,7 @@ By the end of this tutorial, you should know how to:
 - Update the layout of the recording.
 
 ### Prerequisites
-This tutorial (along with the previous tutorial) is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora's SDKs in your application, then this tutorial is not for you.
+This tutorial (along with the [previous tutorial](/engineering-education/agora-cloud-recording/)) is for applications that use [Agora's](https://www.agora.io/) SDKs and want to implement cloud recording. If you are not using Agora's SDKs in your application, then this tutorial is not for you.
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
 
@@ -396,7 +396,7 @@ Response:
 
 If you'd like to learn more about this endpoint, check out the [API reference](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout).
 
-### Let's Recap
+### Let's recap
 1. We added a POST request handler to query the recording session.
 
 2. We added a POST request handler to update the subscriber list of the recorder.
