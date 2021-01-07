@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/react-native-landmark-recognition-with-firebase/
+title: Landmark Recognition Using Firebase ML in a Non-Expo React Native Application 
+description: This tutorial will give readers a detailed guide on how to implment landmark recognition using Firebase's ML kit in a Non-Expo React Native appliaction.
+author: mohan-raj
+date: 2021-01-07T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/react-native-landmark-recognition-with-firebase/hero.jpg
+    alt: React Native Landmark Recognition With Firebase Hero Image
+---
 In this tutorial, we will be building a Non-Expo React Native application to recognize landmarks from images using Firebase's machine learning kit.
+<!--more-->
 
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
