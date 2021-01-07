@@ -369,3 +369,26 @@ The `cloudLandmarkRecognizerProcessImage` method accepts an optional configurati
 - **apiKeyOverride**: API key to use for ML API. If not set, the default API key from `firebase.app()` will be used.
 
 - **enforceCertFingerprintMatch**: nly allow registered application instances with matching certificate fingerprint to use ML API.
+
+### Let's Recap
+1. We set up our development environment and created a React Native app.
+
+2. We created a Firebase project.
+
+3. We set up the Cloud Vision API to use the Landmark Recognizer in the Firebase ML Kit.
+
+4. We built a simple UI for the app.
+
+5. We added the `react-native-image-picker` package to pick images using the gallery or capture images using the camera.
+
+6. We installed the Firebase ML package.
+
+7. We used the `cloudLandmarkRecognizerProcessImage` function in the `ml` package to recognize the landmarks in the images.
+
+8. We displayed the results in the UI.
+
+9. We learned about the additional configurations that we can pass to the `cloudLandmarkRecognizerProcessImage` function.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for Reading!
