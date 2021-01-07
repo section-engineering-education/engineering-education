@@ -1,6 +1,6 @@
 # Getting-started-with-MATLAB
 ### Introduction
-According to Wikipedia MATLAB (an abbreviation of "matrix laboratory") is a proprietary multi-paradigm programming language and numerical computing environment developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages.
+According to Wikipedia, MATLAB (an abbreviation of "matrix laboratory") is a proprietary multi-paradigm programming language and numerical computing environment developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementing algorithms, creating user interfaces, and interfacing with programs written in other languages.
 
 Although MATLAB is intended primarily for numerical computing, an optional toolbox uses the MuPAD symbolic engine allowing access to symbolic computing abilities. An additional package, Simulink, adds graphical multi-domain simulation and model-based design for dynamic and embedded systems.
 
@@ -70,7 +70,7 @@ And if you want to list all of the vector elements, you can use `values(:)`.
 #### Matrix
 The matrix is a two-dimensional array of numbers.
 
-To create a matrix, you have to enter the elements in each row with a space or colon between them, then you have to use semicolons to delimit the rows as we saw above. For example:
+To create a matrix, you have to enter the elements in each row with a space or colon between them. Then you have to use semicolons to delimit the rows as we saw above. For example:
 ```matlab
 values=[1 2 3 4;5 6 7 8; 9 10 11 12]
 ```
@@ -154,7 +154,7 @@ area = pi*r*r;
 end
 ```
 
-After that, you have to save the function which will be with the extension ".m" as we mentioned above.
+After that, you have to save the function with the extension ".m" as we mentioned above.
 Finally, write `areafunction(2)` in the command window and the result will be:
 ```matlab
 ans =
@@ -163,9 +163,9 @@ ans =
 ```
 
 #### Plotting
-If you are familiar with the Matplotlib plotting library for Python programming language then it will be very easy for you to follow along with this section. However, we will explain it simply as possible.
+If you are familiar with the Matplotlib plotting library for Python programming language, it will be very easy for you to follow this section. However, we will explain it simply as possible.
 
-As we know, to plot any graph we need to define the range of *X* and *Y* values. Then to call the plot command which is `plot(X,Y)`.
+To plot any graph we need to define the range of *X* and *Y* values. Then to call the plot command which is `plot(X,Y)`.
 
 Now let's move on to a complex example. We are going to create sin and cos waves. We will create the following figure:
 
@@ -200,7 +200,7 @@ The `xlabel('')` and the `ylabel('')` defined the names of those labels.
 
 That's all! 
 
-*Note*: please be sure to execute all of the code together in order to allow the 3 plots to appear in the same figure.
+*Note*: please be sure to execute all of the code together to allow the 3 plots to appear in the same figure.
 
 ### Conclusion
-This is just a *tip of the iceberg*. Change the amplitude, frequency, phase, subplot numbers, etc.. . Try it out for yourself and see the results. If you are interested more in MATLAB then keep following our [languages](https://www.section.io/engineering-education/topic/languages/) section where we will create future tutorials about SIMULINK and a lot more. Have a nice day!
+This is just a *tip of the iceberg*. Change the amplitude, frequency, phase, subplot numbers, etc.. . Try it out for yourself and see the results. If you are interested more in MATLAB, keep following our [languages](https://www.section.io/engineering-education/topic/languages/) section to create future tutorials about SIMULINK and a lot more. Have a nice day!
