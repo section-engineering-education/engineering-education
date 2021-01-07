@@ -8,7 +8,7 @@ This article discusses batch processing and stream processing, their benefits, d
 
 In batch processing, large data volumes are processed in a batch or a group within a specified time interval. The batch processing system is programmed so that once it is fed with a set of data files as input, it processes the data and then produces a set of data files as output.
 
-You have to wait for a certain amount of raw data to accumulate before running theextract, transform, load (ETL) process in batch processing. [ETL](https://www.webopedia.com/definitions/etl/) represents three database functions (extract, transform, load), which pull data out of a database, transform the data by performing concatenations and calculations, and loads the data into another data warehouse system.
+You have to wait for a certain amount of raw data to accumulate before running the extract, transform, load (ETL) process in batch processing. [ETL](https://www.webopedia.com/definitions/etl/) represents three database functions (extract, transform, load), which pull data out of a database, transform the data by performing concatenations and calculations, and loads the data into another data warehouse system.
 
 Basically, in batch processing, data is available for analysis after an hour or a few days. Batch ETL is run on a specified schedule, for instance, every 24 hours. You can also set the system to run batch ETL once the data reaches a certain limit.
 
@@ -16,7 +16,7 @@ Basically, in batch processing, data is available for analysis after an hour or 
 
 In stream processing, data is processed as soon as it arrives at the storage layer, unlike in batch processing, where you have to wait for data to accumulate. The data generated is processed in sub-second timeframes. For end-users, data processing occurs in real-time. Since this is a stateless operation, data processing only involves a simple calculation or transformation.
 
-Stream processing queries continuous data stream and detects conditions quickly within a limited time. Stream processing systems are fed on actions that happen in real-time such as web pages clicks, sensor readings, e-commerce transactions, social media messages, and more.
+Stream processing queries continuous data stream and detects conditions quickly within a limited time. Stream processing systems are fed on actions that happen in real-time such as web page clicks, sensor readings, e-commerce transactions, social media messages, and more.
 
 ### Batch processing pros and cons
 
@@ -59,7 +59,7 @@ Examples of batch processing systems include distributed programming platforms s
 
 ### Use cases of real-time stream processing
 
-Stream processing is applied in use cases that respond to new data immediately is generated as opposed to when data crosses a predefined threshold. Some data is most valuable at the time it is created. Other data require a response, that is, processing and data collection, at the time data is generated. Stream processing is most applicable to use cases that involve such kind of data sets.
+Stream processing is applied in use cases that respond to new data immediately is generated as opposed to when data crosses a predefined threshold. Some data is most valuable at the time it is created. Other data require a response, that is, processing and data collection, at the time data is generated. Stream processing is most applicable to use cases that involve such kinds of data sets.
 
 Stream processing is used in:
 
