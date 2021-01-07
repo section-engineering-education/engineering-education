@@ -47,6 +47,38 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
+### Installing dependencies
+You can install these in advance or while going through the article.
+
+```JSON
+"@react-native-firebase/app": "^10.4.0",
+"@react-native-firebase/storage": "^10.4.0",
+"react": "16.13.1",
+"react-native": "0.63.4",
+"react-native-image-picker": "^3.1.3",
+```
+
+To install a dependency, run:
+
+```bash
+npm i --save <package-name>
+```
+
+After installing the packages, for iOS, go into your `ios/` directory, and run:
+
+```bash
+pod install
+```
+
+> **IMPORTANT FOR ANDROID**
+>
+> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while attempting to build your Android application.
+>
+> `Execution failed for task ':app:mergeDexDebug'.`
+>
+> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable multidexing.
+> To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
+
 ### Setting up the Firebase project
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
 
@@ -93,7 +125,7 @@ apply plugin: 'com.google.gms.google-services'
 
 You need to perform some additional steps to configure `Firebase` for `iOS`. Follow [this documentation](https://rnfirebase.io/#3-ios-setup) to set it up.
 
-We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
+Finally, We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
 
 ```bash
 npm install @react-native-firebase/app
@@ -136,38 +168,6 @@ service firebase.storage {
 ```
 
 If you'd like to learn more about cloud storage rules, refer [here](https://firebase.google.com/docs/storage/security).
-
-### Installing dependencies
-You can install these in advance or while going through the article.
-
-```JSON
-"@react-native-firebase/app": "^10.4.0",
-"@react-native-firebase/storage": "^10.4.0",
-"react": "16.13.1",
-"react-native": "0.63.4",
-"react-native-image-picker": "^3.1.3",
-```
-
-To install a dependency, run:
-
-```bash
-npm i --save <package-name>
-```
-
-After installing the packages, for iOS, go into your `ios/` directory, and run:
-
-```bash
-pod install
-```
-
-> **IMPORTANT FOR ANDROID**
->
-> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while attempting to build your Android application.
->
-> `Execution failed for task ':app:mergeDexDebug'.`
->
-> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable multidexing.
-> To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Building the UI
 In the `App.js`, let's add 4 buttons to the screen.
@@ -271,19 +271,6 @@ const onSelectVideoPress = () =>
   launchImageLibrary({ mediaType: 'video' }, onMediaSelect);
 ```
 
-> onMediaSelect is the callback function which we will write in the next step.
-
-Now, pass these functions to the `onPress` prop of the `TouchableOpacity` for the respective buttons.
-
-For example:
-
-```JSX
-<TouchableOpacity style={styles.button} onPress={onTakePhoto}>
-  <Text style={styles.buttonText}>Take Photo</Text>
-</TouchableOpacity>
-```
-
-### Uploading media
 Let's create a function called `onMediaSelect`. This is the callback function that we passed to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the media that the user picked in this callback function. We'll use that to upload the media to the cloud storage.
 
 We should start the upload process only when the user did not cancel the media picker. If the user cancelled the operation, the picker will send a `didCancel` property in the response object.
@@ -297,6 +284,18 @@ const onMediaSelect = async (media) => {
 ```
 
 You can learn more about the response object that we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
+
+Now, pass the 4 functions to the `onPress` prop of the `TouchableOpacity` for the respective buttons.
+
+For example:
+
+```JSX
+<TouchableOpacity style={styles.button} onPress={onTakePhoto}>
+  <Text style={styles.buttonText}>Take Photo</Text>
+</TouchableOpacity>
+```
+
+### Uploading media
 
 Let's install the package for Firebase storage.
 
