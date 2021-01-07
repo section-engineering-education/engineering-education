@@ -221,7 +221,7 @@ su - postgres
 psql
 ```
 
-**Create a  table named 'testtable' and insert data to the table by running the following postgres queries in the terminal**
+**Create a table named 'testtable' and insert data to the table by running the following postgres queries in the terminal**
 
 ```sql
 CREATE TABLE testtable (websites varchar(100));
@@ -239,7 +239,7 @@ su - postgres
 psql
 ```
 
-**Check data on  'testtable'  by running the following postgres queries in the terminal**
+**Check data on 'testtable' by running the following postgres queries in the terminal**
 
 ```sql
 select * from testtable;
