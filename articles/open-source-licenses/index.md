@@ -143,3 +143,6 @@ Many times the author or contributors may release the code without any license f
 ### Conclusion
 
 While deciding what license to use for a project, I find this [website](https://choosealicense.com/) particularly helpful. The majority of my work is MIT licensed. Other projects that need to be kept private are stored under private repositories. I hope reading this article helped you understand the various licenses and guidelines. While this article is an overview of the various licenses available, always check the original licenses for accurate and up to date information. 
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
