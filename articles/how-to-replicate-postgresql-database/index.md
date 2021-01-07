@@ -250,3 +250,6 @@ You will be able to observe the same data as the one in the master server
 ### Conclusion
 
 In summary, if you can view data in the slave server database after making changes in the master server database then you would have successfully set up PostgresSQL master to slave replication.
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
