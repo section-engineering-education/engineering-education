@@ -1,20 +1,38 @@
-#### prerequisites
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/lipa-na-mpesa-online/
+title: 
+description: In this article,
+author: kennedy-mwangi
+date: 2021-01-07T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/lipa-na-mpesa-online/hero.jpg
+    alt: JavaScript objects example
+---
+Mpesa is a mobile money payment service by Safaricom based in Kenya. It was released in 2007 and since then has become the common means of payment in Kenya. To help developers implement Mpesa in their platforms, Safaricom released the Daraja API. 
+<!--more-->
+### Introduction to Mpesa
+It is a REST-based API that shifts the functionalities of Mpesa to system developers. `Lipa na Mpesa online` is one of the functionalities provided by the Daraja API. It is a service used to initiate Mpesa transactions on behalf of the customer using `STK-PUSH`. This means that the user is only required to enter the PIN. It is applied in e-commerce and bill payment systems among others.
+
+### Prerequisites
 - Have a Kenyan based Safaricom phone number.
 - Have [Node.js](https://nodejs.org/en/) installed on your computer.
 - Have some basic knowledge of JavaScript and using [Express JS](#https://expressjs.com/).
 - Have [Postman](https://www.postman.com/) installed on your computer.
 
-### What we shall cover.
-- [Introduction to Mpesa.](#introduction-to-mpesa)
+### What will we cover
+- [Introduction to Mpesa](#introduction-to-mpesa)
 - [Creating a Safaricom developer account](#creating-a-safaricom-developer-account)
 - [Creating-an-app](#creating-an-app)
 - [Getting an Oauth token](#getting-an-oauth-token)
 - [Lipa na Mpesa online](#lipa-na-mpesa-online)
 
-### Introduction to Mpesa.
-Mpesa is a mobile money payment service by Safaricom based in Kenya. It was released in 2007 and since then has become the common means of payment in Kenya. To help developers implement Mpesa in their platforms, Safaricom released the Daraja API. It is a REST-based API that shifts the functionalities of Mpesa to system developers. `Lipa na Mpesa online` is one of the functionalities provided by the Daraja API. It is a service used to initiate Mpesa transactions on behalf of the customer using `STK-PUSH`. This means that the user is only required to enter the PIN. It is applied in e-commerce and bill payment systems among others.
-
-### Creating a Safaricom developer account.
+### Creating a Safaricom developer account
 Safaricom controls all the operations concerning Mpesa and Daraja API. For you to access Daraja API, you need to have a developer account. The following steps explain how you can create a developer account. Feel free to skip if you already have one.
 
 - Step 1: The first step is to proceed to [Safaricom Developer website](https://developer.safaricom.co.ke/home).
@@ -22,17 +40,17 @@ Safaricom controls all the operations concerning Mpesa and Daraja API. For you t
 - Step 3: After registering, a welcome message with further instructions is sent to your email address. In the email, you shall find a confirmation link, click on it and it shall direct you to a password entry page.
 - Step 4: Enter your password and confirm it and then click login. On the page that follows, you shall view the credentials that you have entered. If you want to edit the credentials, make sure you do the changes and hit save. Else, you are all set.
 
-### Creating an app.
+### Creating an app
 To be able to use Daraja API, you need to have an app so that you have the required access keys. Creating an app is a very simple process. Follow the following steps:
 
 - Step 1: Click on `My Apps` link on the navbar in the developer portal.
 - Step 2: On that page, click the `Add a new app` button.
 - Step 3: On the page that follows, enter your preferred app name. Check the `Lipa na Mpesa Sandbox` and then click `create app`. After that, you are all set.
 
-#### Configuring our application.
+#### Configuring our application
 Having set up the developer account and an app, it's time we set up our application shall. For this article, we shall implement a REST API with Express JS framework. This means that our end goal is to implement a working endpoint for Lipa na Mpesa online. To handle communication to and from Daraja API we shall [Axios](https://www.npmjs.com/package/axios). To follow along effectively, clone the finalized project from [here](https://github.com/mwangiKibui/starter-kit-lipa-na-mpesa-online). For testing our API, we shall use [Postman](https://postman.com). If you are not experienced in postman, feel free to watch this [video](https://www.youtube.com/watch?v=t5n07Ybz7yI)
 
-### Obtaining Consumer Key and Consumer Secret.
+### Obtaining consumer key and consumer secret
 On the portal's apps page, click on the newly created app from the previous process. In the Keys section, Copy the Consumer Key and the Consumer Secret and paste them in your `.env` file respectively as shown:
 
 ```javascript
@@ -43,7 +61,7 @@ consumer_secret = "your consumer secret"
 
 After you have saved the Consumer Key and the Consumer Secret, you are set to proceed to the next step of getting an OAuth token. 
 
-### Getting an OAuth token.
+### Getting an OAuth token
 To make every call to Daraja API, we need to always supply an OAuth token. For this reason, we shall implement it as a middleware to be called every time we are accessing an endpoint. The function shall be as follows:
 
 ```javascript
@@ -89,7 +107,7 @@ To make every call to Daraja API, we need to always supply an OAuth token. For t
 - Use a `try`,`catch` block to communicate with Daraja API. If the request is successful, set the token on the request object, and then execute the next middleware. Else return the error. 
 
 
-### Lipa na Mpesa online.
+### Lipa na Mpesa online
 Having generated an access token, we can now implement our core functionality. Since Express JS is a series of middleware calls, we shall also implement it as a middleware. The implementation shall be as follows: 
 
 ```javascript 
@@ -182,7 +200,7 @@ This shall forward you to a particular link such as `http://78066c1c2d6b.ngrok.i
 - Set the transaction description which describes what the transaction is for.
 - Use a `try`,`catch` block when communicating with Daraja API. If the process is successful, return the message from the API. Else return the error from the API.
 
-#### Lipa na Mpesa online callback.
+#### Lipa na Mpesa online callback
 When we send a request, the response from the API shall be sent through the callback. In case we want to update some records, we update them here based on the response sent back. We implement a simple callback as a method in the class.
 
 ```javascript
@@ -216,7 +234,7 @@ lipaNaMpesaOnlineCallback(req,res){
 - [Nodemon](https://nodemon.io/)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 
-### Conclusion.
+### Conclusions
 Mpesa users are rapidly growing hence software developers need to familiarize themselves with Daraja API. In this article, we have covered an introduction to Mpesa, creating a Safaricom developer account, creating an app, getting an OAuth token, and implementing Lipa na Mpesa online. Apart from what we have covered here, there are more functionalities from the [documentation](https://developer.safaricom.co.ke/docs). Feel free to check them out.
 
 ---
