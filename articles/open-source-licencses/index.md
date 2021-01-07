@@ -6,20 +6,33 @@ However, there are scenarios where a small organization or a group of developers
 
 ### Table of contents
 
-1. How to license
-2. MIT license
-3. GNU General Public License(GPL)
-4. Apache License
-5. Creative Commons Attribution
-6. The Unlicense
-7. Codebases with no license included
+- [Introduction to open source licenses](#introduction-to-open-source-licenses)
+    - [Table of contents](#table-of-contents)
+    - [How to license](#how-to-license)
+    - [MIT License](#mit-license)
+      - [Permissions](#permissions)
+      - [Limitations](#limitations)
+    - [GNU General Public License(GPL)](#gnu-general-public-licensegpl)
+      - [Permissions](#permissions-1)
+      - [Limitations](#limitations-1)
+    - [Apache License](#apache-license)
+      - [Permissions](#permissions-2)
+      - [Limitations](#limitations-2)
+    - [Creative Commons Attribution](#creative-commons-attribution)
+      - [Permissions](#permissions-3)
+    - [The Unlicense](#the-unlicense)
+      - [Permissions](#permissions-4)
+      - [Limitations](#limitations-3)
+    - [Codebase with no license included](#codebase-with-no-license-included)
+    - [Comparison](#comparison)
+    - [Conclusion](#conclusion)
 
 ### How to license
 
-After going through this article, you will know which license would be the best fit for your use case. Whichever license you choose, you must include the license along with the source code. There are a couple of ways to ensure the license is included.
+After going through this article, you will know which license would best fit your use case. Whichever license you choose, you must include the license along with the source code. There are a couple of ways to ensure the license is included.
 
 1. Go to the link of the license page and find the license. Include a link to the license and mention that the work presented is licensed under the respective license.
-2. The second way is to include the markdown version of the license in a file called LICENSE.md. GitHub recognizes this file and displays the type of license on the right panel of the repository page.
+2. The second way is to include the markdown version of the license in a `LICENSE.md` file. GitHub recognizes this file and displays the type of license on the right panel of the repository page.
 
 ### MIT License
 
@@ -46,7 +59,7 @@ There are two versions of the GNU GPL license. The earlier version is called GPL
   
 #### Limitations
 - Should not be commercialized
-- No private use: should be kept open-sourced.
+- Derived work should be kept open-sourced.
 
 ### Apache License
 
@@ -65,22 +78,18 @@ Designed to enable faster progress of open source development, the Apache licens
 
 ### Creative Commons Attribution
 
-This is one of the stricter licenses made for sharing knowledge with the world without boundaries. This is the sole objective of this license. Apart from this objective, it does not allow one to create, distribute copies, either original or modified, through any other channels than the original one. There are several variants of this license. 
+This is one of the stricter licenses made for sharing knowledge with the world without boundaries. This is the sole objective of this license. 
 
 #### Permissions
 
-Share — copy and redistribute the material in any medium or format
-Adapt — remix, transform, and build upon the material
-for any purpose, even commercially.
-under the terms that attribution where necessary is given. 
+There are two main variants of this license:
+- Creative Commons Attribution
+  - Allows the user to copy, redistribute, transform, and build over the work given the attribution. 
+  - Commercial usage is allowed.
+- Creative Commons Attribution ShareAlike License (CC BY-SA 4.0)
+  - Allows the user to copy, redistribute, transform, and build over the work given the attribution. 
+  - Commercial usage is allowed, provided the work is licensed with the same license, CC BY-SA 4.0.
 
-Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-
-Share — copy and redistribute the material in any medium or format
-Adapt — remix, transform, and build upon the material
-for any purpose, even commercially.
-
-under the terms that attribution where necessary is given. and the same file is shared under the same license as the original.
 
 ### The Unlicense
 
@@ -101,6 +110,19 @@ under the terms that attribution where necessary is given. and the same file is 
 ### Codebase with no license included
 
 Many times the author or contributors may release the code without any license file attached with it. In such cases, one should contact the contributors and ask them to include a license. This would ensure minimal legal conflicts, if any, in the future. Until a license is included, the author or contributors have exclusive rights over the code. One may not copy or use it without their permission. 
+
+### Comparison 
+
+| License | Permissions | Limitations |
+| ------- | ----------- | ----------- |
+| MIT License | A no-frills license allowing users to use the code unconditionally provided the author's attribution. | The code or work is provided without a warranty of any kind.|
+| GNU General Public License(GPL)| Created to ensure the work is used for educational purposes. Proper attribution to the original author is necessary. | One should not use work with GNU license for commercial purposes, and any derived work must be kept open sourced |
+| Apache License | Similar to MIT license, except it allows one to patent any derived work as well.| The code or work is provided without a warranty of any kind. |
+| Creative Commons Attribution License | Created to enable sharing knowledge with appropriate attribution. Commercial usage is allowed. | The same license needs to be used to modify or build over the work licensed through CC BY-SA 4.0.  |
+| The Unlicense | This is a no-frills license that one can assign to allow maximum reach | The code or work does not come with any warranty. |
+| Codebase with no license included | None | Request the author to attach a license before building on the work. |
+
+
 
 ### Conclusion
 
