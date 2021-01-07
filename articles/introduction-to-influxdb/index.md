@@ -87,13 +87,13 @@ USE test
 
 InfluxDB requires a certain format for inserting data. Every record or row is referred to as a "point" and has 4 elements: 
 
-**measurement:** The name of the measurement and requires one measurement per point. This is similar to the "table" in a conventional database system such as SQL.
+- **measurement:** The name of the measurement and requires one measurement per point. This is similar to the "table" in a conventional database system such as SQL.
 
-**tag:** This is a key-value pair that corresponds to a row in the table.  
+- **tag:** This is a key-value pair that corresponds to a row in the table.  
 
-**field:** The field is an optional argument and is a set of key-value pairs that store information. 
+- **field:** The field is an optional argument and is a set of key-value pairs that store information. 
 
-** timestamp:** This is also an optional argument that tells us the time at which the data was inserted. If the timestamp is not specified, InfluxDB automatically stores the current time as the timestamp. 
+- ** timestamp:** This is also an optional argument that tells us the time at which the data was inserted. If the timestamp is not specified, InfluxDB automatically stores the current time as the timestamp. 
 
 For more information on these elements, have a look at the [official documentation](https://docs.influxdata.com/influxdb/cloud/reference/key-concepts/data-elements/). The format for inserting data is as follows:
 
