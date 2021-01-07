@@ -18,7 +18,9 @@ All that is required is a general understanding of concepts in [machine learning
 ### Significance of a Hypothesis
 
 A hypothesis can be described as a theory or argument which explains some observed phenomenon. In a scientific setting, a hypothesis is meant to be proven (or disproven) through experimentation.
+
 In data science, a crucial part of the modeling process is first coming up with an important question or assumption. For example, we can say something like “different cars use the communal parking lot every day.” The framing of this statement makes it seem like we are declaring it to be true. However, using a statistical approach, it might be better to frame it as “the cars that use the parking lot are the same.” We have framed the assumption as a null hypothesis, which we shall seek to disprove. The first statement can be thought of as an alternative hypothesis. We shall define these two types of hypotheses later on.
+
 The significance of framing the two statements as we did above is to help eliminate randomness. We can compare it to the phrase “innocent until proven guilty” since we seek to disprove the null hypothesis and validate the alternative hypothesis. When these two hypotheses are tested, we seek to prove that the data we used is statistically significant. This means that occurrences were not by chance alone. We shall define statistical significance later in this article.
 
 ### Statistical vs. Machine Learning Hypotheses
@@ -27,7 +29,8 @@ Even though most of the concepts we cover in this article are predominantly stat
 
 When carrying out statistical hypothesis tests, we attempt to calculate the critical value, which shall be covered later. We can refer to this critical value as an effect.
 The interpretation of the critical value is significant. It determines the likelihood of observing the effect if observations do not have a relationship. The suggestion that the effect is real comes about if the likelihood mentioned above is minute. If the likelihood is large, the effect is likely not to be real. In statistical hypothesis tests, there is no comment on the size of the effect. These tests are concerned with how likely the effect is present or absent in the population in consideration. This is based on the observed data samples.
-Statistical hypotheses are thus based on identifying the relationships between observations. They are probabilistic explanations about these relationships. Null and alternative hypotheses are denoted as H0 and Ha, respectively.
+
+Statistical hypotheses are thus based on identifying the relationships between observations. They are probabilistic explanations about these relationships. Null and alternative hypotheses are denoted as $H_0 and H_a$, respectively.
 
 In machine learning, a hypothesis involves approximating a target function and the performing of mappings of inputs to outputs. This approximation is known as function approximation. We approximate an unknown target function, which we assume exists. This target function should best carry out the mapping of inputs to outputs on all possible observations existing in the problem domain. The notation in this context is (h) for hypothesis and (H) for a hypothesis set. To better understand a hypothesis in machine learning, this [post](https://www.geeksforgeeks.org/ml-understanding-hypothesis/) will be of use.
 
@@ -113,3 +116,32 @@ A crucial part of the modeling process is having a significant question or assum
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
