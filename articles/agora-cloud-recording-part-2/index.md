@@ -6,7 +6,7 @@ url: /engineering-education/agora-cloud-recording-part-2/
 title: Cloud Recording with Agora - Queries and Updates
 description: In this tutorial, we will be building a server using Node.js and Express to implement additional operations of Agora Cloud Recording like querying the recording session, updating subscriber list and updating mixing layout.
 author: mohan-raj
-date: 2021-01-06T00:00:00-18:00
+date: 2021-01-06T00:00:00-19:00
 topics: []
 excerpt_separator: <!--more-->
 images:
