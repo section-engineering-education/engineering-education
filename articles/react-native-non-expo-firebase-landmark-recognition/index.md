@@ -194,6 +194,8 @@ const styles = StyleSheet.create({
 });
 ```
 
+![Buttons](buttons_ui.jpg)
+
 ### Adding media picker
 
 Now, the first 2 buttons should open the camera to take a photo and record a video respectively, and the next 2 buttons should open the gallery to pick an image and video respectively.
@@ -291,6 +293,8 @@ const onImageSelect = async (media) => {
 };
 ```
 
+![Image UI](with_image.jpg)
+
 ### Recognize Landmarks from Images
 
 Let's install the package for Firebase ML.
@@ -357,6 +361,8 @@ We can use this state to render the details in the UI.
   </View>
 ))}
 ```
+
+![Final Result](final_result.jpg)
 
 ### Additional Configurations
 
