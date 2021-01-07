@@ -14,24 +14,23 @@ images:
   - url: /engineering-education/ci-cd-setup-react/hero.jpg
     alt: CI CD React 
 ---
-In the present software development context, the important workflows for software development are run, tested, built, and deployed without setting up CI/CD. All the processes in the software development are done manually from running tests to running build to get the build file and deploying on the server. The development cycle for adding new features and fixing bugs done manually becomes inefficient and hectic due to processes being run repeatedly.
+Will it be better? if we reduce this repetitive manual process using CI/CD and dedicate most of the valuable time in developing new, innovative, and problem-solving features?
 <!--more-->
+### Tutorial Overview...
 
-Will it be better? if we reduce this repetitive manual process using  CI/CD and dedicate most of the valuable time in developing new, innovative, and problem-solving features?
+In the present software development context, the important workflows for software development are run, tested, built, and deployed without setting up CI/CD. All the processes in the software development are done manually from running tests to running the build to get the build file and deploying on the server. The development cycle for adding new features and fixing bugs done manually becomes inefficient and hectic due to processes being run repeatedly. This is one of the reasons why CI/CD is necessary. Hence, setting up CI/CD automates most of the software development process making it easy to test and deploy the end products. The process of making it automated can be:
 
-### The solutions can be...
+- Creating a React application and push the repo to Github.
+- Setting up AWS S3 for deployment.
+- Setting AWS Cloudfront with HTTPS and CDN.
+- Setting up Circle CI to subscribing repository and trigger it when commit received while starting the test, build, and deploy to AWS.
 
-* Creating a React application and push the repo to Github.
-* Setting up AWS S3 for deployment.
-* Setting AWS Cloudfront with HTTPS and CDN.
-* Setting up Circle CI to subscribing repository and trigger it when commit received while starting the test, build, and deploy to AWS.
+Now, the steps to set these ups are:
 
-### How it works…
-
-* When pushing code to the repository (e.g. GitHub, Bitbucket), the repository will trigger (webhook) to CI that subscribes to this repository.
-* CI server starts the run command that we prepared( eg run test, check syntax, build, deploy).
-* In case an error occurs, notification will be sent.
-* A developer will fix the bug and commit code again and loop back to first until the error is resolved.
+- When pushing code to the repository (e.g. GitHub, Bitbucket), the repository will trigger (webhook) to CI that subscribes to this repository.
+- CI server starts the run command that we prepared( eg run test, check syntax, build, deploy).
+- In case an error occurs, notification will be sent.
+- A developer will fix the bug and commit code again and loop back to first until the error is resolved.
 
 The steps to setup CI/CD to React ecosystem is explained below:
 
@@ -240,12 +239,6 @@ After the status changes to **Deployed**, we will be able to access the site fro
 ![final result](22-final-result.png)
 
 Hence, we have successfully set up the CircleCI and AWS CloudFront to our React Native project.
-
-### What’s next …
-
-* Using Circle CI with different platforms such as iOS, Android, etc.
-
-* [Netlify](https://www.netlify.com/) will be an interesting platform if you host your repository on Gitlab (CircleCI are supported only Github and Bitbucket)
 
 ### Conclusion
 CircleCI can do more than what we learned in the article, and it is worth exploring further. It is highly advantageous to setup CI/CD when starting a new project. Running the test, build, and deployment manually can be hefty work and come at an unacceptable cost. CI/CD helps automate tasks to streamline workflows. The CI/CD process also helps identify bugs in the project more easily. Additional CI/CD options are available with alternatives such as Jenkins, Travis CI, etc.
