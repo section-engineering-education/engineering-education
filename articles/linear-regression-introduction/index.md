@@ -39,7 +39,7 @@ $$ c = \frac{\sum_{i=1}^n y_i -m\sum_{i=1}^n x_i}{n} $$
 
 $$ m = \frac{\sum_{i=1}^n x_iy_i - x_i\bar{Y}}{\sum_{i=1}^n x_i^2 - x_i\bar{X}} $$
 
-In the above equations, $\bar{X}$ denotes the average of input values, and $\bar{Y}$ denotes the average of output values. Substituting the values of c and m in the output equation, we obtain the equation of the straight line. 
+In the above equations, $\bar{X}$ denotes the average of input values, and $\bar{Y}$ denotes the average of output values. Substituting the values of c and m in the output equation, we obtain the straight-line equation. 
 
 #### Least-squares solution
 
@@ -67,7 +67,7 @@ This can be solved using many methods, and the solution is computed. Some of the
 - SVD decomposition
 - Moore - Penrose inverse
 
-These methods help compute the inverse of a matrix. Moore-Penrose inverse is used when an inverse is not available and an approximated solution is used. These methods have their advantages and disadvantages in terms of computational efficiency and accuracy of inverses computed. These topics are beyond the scope of this article and therefore we will restrict our discussion.
+These methods help compute the inverse of a matrix. Moore-Penrose inverse is used when an inverse is not available, and an approximated solution is used. These methods have their advantages and disadvantages in terms of computational efficiency and accuracy of inverses computed. These topics are beyond the scope of this article, and therefore we will restrict our discussion.
 
 ### Code
 
@@ -107,9 +107,9 @@ The applications of linear regression analysis are multifold. The idea of linear
 
 A few examples of linear regression in action are given below:
 
-- Risk profiling: Analyzing the risk of an investor on the basis of the income and commitments of the investor can be posed as a regression task. The output is the maximum risk the investor can take.  
-- Stock market portfolio analysis: Predicting the future prices given the current conditions and historic data is a problem many mathematicians and analysts work on. Regression models are often used in such applications. 
-- Analysis and optimization: Finding optimal solutions for a given problem given the constraints can be modelled using regression methods. For example, predicting the price of houses or used cars using regression is a famous machine learning problem. 
+**Risk profiling**: Analyzing an investor's risk based on the investor's income and commitments can be a regression task. The output is the maximum risk the investor can take.  
+- Stock market portfolio analysis: Predicting the future prices given the current conditions and historical data is a problem many mathematicians and analysts work on. Regression models are often used in such applications. 
+- Analysis and optimization: Finding optimal solutions for a given problem given the constraints can be modeled using regression methods. For example, predicting houses' prices or used car prices using regression is a famous machine learning problem. 
 
 
 ### Conclusion
