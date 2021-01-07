@@ -72,7 +72,7 @@ su - postgres
  psql -c "CREATEUSER replication REPLICATION LOGIN CONNECTION LIMIT 1 ENCRYPTED PASSWORD'YOUR_PASSWORD';"
 ```
 
-3. Edit pg\_haba.cnf with any nano application in ubuntu and add the configuration
+3. Edit pg\_hba.cnf with any nano application in ubuntu and add the configuration
 
 `file edit command`
 
