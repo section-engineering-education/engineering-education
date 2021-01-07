@@ -1,4 +1,4 @@
-## Laravel HTTP Client Request
+## Laravel 8 HTTP Client Request
 
 Laravel has evolved significantly over the past few years from the release of version 7.x.x, one of the key areas of improvement evolves around Guzzle HTTP Client.  
 
