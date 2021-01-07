@@ -27,7 +27,7 @@ By the end of this tutorial, you’ll know:
 - How to implement dark mode in a React application using React's Context API.
 
 ### Prerequisites
-The fundamentals of React will not be covered in this tutorial. If you are not comfortable with the fundamentals, here is a [helpful site](https://reactjs.org/tutorial/tutorial.html) that you can visit before beginning this project.
+The fundamentals of React will not be covered in this tutorial. If you are not comfortable with the fundamentals, here is a [helpful tutorial](https://reactjs.org/tutorial/tutorial.html) that you can go through before beginning with this project.
 
 ### Overview
 We'll be going through these steps in this article:
