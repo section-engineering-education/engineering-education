@@ -21,7 +21,11 @@ In this tutorial, we will be building a Non-Expo React Native application to rec
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
 
 ### Prerequisites
-The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
+To proceed with this tutorial:
+
+- You will need a fundamenal knowledge of React & React Native. 
+
+- You will need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
 
 ### Overview
 We'll be going through these steps in this article:
@@ -86,7 +90,7 @@ Create a new project.
 
 ![Create New Project](firebase_new.png)
 
-Once you create a new project, you'll see the dashboard.
+Once you create a new project, you'll see the dashboard. Upgrade you project to the Blaze plan.
 
 ![New Dashboard](new_dashboard.png)
 
