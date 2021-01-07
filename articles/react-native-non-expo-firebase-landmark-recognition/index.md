@@ -1,18 +1,21 @@
 In this tutorial, we will be building a Non-Expo React Native application to recognize landmarks from images using Firebase's machine learning kit.
 
 ### Firebase
+
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
 
 ### Prerequisites
+
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
 
 ### Overview
+
 We'll be going through these steps in this article:
 
 1. Development environment.
 2. Installing dependencies.
 3. Setting up the Firebase project.
-4. Setting up Firebase ML.
+4. Setting up Cloud Vision API.
 5. Building the UI.
 6. Adding media picker.
 7. Recognize Landmarks from Images.
@@ -21,6 +24,7 @@ We'll be going through these steps in this article:
 You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-ml-landmark-recognition).
 
 ### Development environment
+
 > **IMPORTANT** - We will not be using Expo in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
@@ -28,6 +32,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
 ### Installing dependencies
+
 You can install these packages in advance or while going through the article.
 
 ```JSON
@@ -60,6 +65,7 @@ pod install
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Setting up the Firebase project
+
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
 
 Create a new project.
@@ -111,7 +117,32 @@ We should install the `@react-native-firebase/app` package in our app to complet
 npm install @react-native-firebase/app
 ```
 
+### Setting up Cloud Vision API
+
+Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on.
+
+![Cloud Dashboard](cloud_dashboard.png)
+
+Go to the API & Services tab.
+
+![API & Services Tab](api_services.png)
+
+In the API & Service tab, Head to the Libraries section.
+
+![API Library Section](search_libraries.png)
+
+Search for Cloud Vision API. Once you open the API page, click on the Enable button.
+
+![Enable Cloud Vision](enable_cloud_vision.png)
+
+Once you've enabled the API, you'll see the Cloud Vision API Overview page.
+
+![Cloud Vision Metrics](cloud_vision_dashboard.png)
+
+With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for landmark recognition.
+
 ### Building the UI
+
 In the `App.js`, let's add 2 buttons to the screen to take a photo and pick a photo.
 
 ```JSX
@@ -163,6 +194,7 @@ const styles = StyleSheet.create({
 ```
 
 ### Adding media picker
+
 Now, the first 2 buttons should open the camera to take a photo and record a video respectively, and the next 2 buttons should open the gallery to pick an image and video respectively.
 
 Let's install the `react-native-image-picker` to add these functionalities.
@@ -204,4 +236,3 @@ Now, pass these functions to the `onPress` prop of the `TouchableOpacity` for th
   <Text style={styles.buttonText}>Pick a Photo</Text>
 </TouchableOpacity>
 ```
-
