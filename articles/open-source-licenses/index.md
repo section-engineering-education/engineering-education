@@ -1,31 +1,47 @@
-# Introduction to open source licenses
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/open-source-licenses/
+title: Guide to Open Source Licenses
+description: This article will go over some of the most commonly used open source license agreements.
+author: lalithnarayan-c
+date: 2021-01-07T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-An essential aspect of a developer's job is assigning the appropriate license to the work done. The license ensures the work gets the due credit it deserves. They help in defining the boundaries of usage by an external party. The open-source community is responsible for the tremendous growth the world of technology has seen. Every aspect of technology, be it distributed computing, virtualization, machine learning, or web development, has been transformed through open source community contributions. 
+  - url: /engineering-education/open-source-licenses/hero.jpg
+    alt: open source licenses
+---
+An essential aspect of a developer's job is assigning the appropriate license to the work done. The license ensures the work gets the due credit it deserves. 
+<!--more-->
+
+They help in defining the boundaries of usage by an external party. The open-source community is responsible for the tremendous growth the world of technology has seen. Every aspect of technology, be it distributed computing, virtualization, machine learning, or web development, has been transformed through open source community contributions. 
 
 However, there are scenarios where a small organization or a group of developers would push code onto the web. The reason behind making the code public can be many. It might be to educate the public and help bridge the gap to learn the technology, or it might be a way to let others use the software commercially without any restrictions. This article will go over some of the most often used license agreements and understand their utilities.
 
 ### Table of contents
 
-- [Introduction to open source licenses](#introduction-to-open-source-licenses)
-    - [Table of contents](#table-of-contents)
-    - [How to license](#how-to-license)
-    - [MIT License](#mit-license)
-      - [Permissions](#permissions)
-      - [Limitations](#limitations)
-    - [GNU General Public License(GPL)](#gnu-general-public-licensegpl)
-      - [Permissions](#permissions-1)
-      - [Limitations](#limitations-1)
-    - [Apache License](#apache-license)
-      - [Permissions](#permissions-2)
-      - [Limitations](#limitations-2)
-    - [Creative Commons Attribution](#creative-commons-attribution)
-      - [Permissions](#permissions-3)
-    - [The Unlicense](#the-unlicense)
-      - [Permissions](#permissions-4)
-      - [Limitations](#limitations-3)
-    - [Codebase with no license included](#codebase-with-no-license-included)
-    - [Comparison](#comparison)
-    - [Conclusion](#conclusion)
+- [Table of contents](#table-of-contents)
+- [How to license](#how-to-license)
+- [MIT License](#mit-license)
+  - [Permissions](#permissions)
+  - [Limitations](#limitations)
+- [GNU General Public License(GPL)](#gnu-general-public-licensegpl)
+  - [Permissions](#permissions-1)
+  - [Limitations](#limitations-1)
+- [Apache License](#apache-license)
+  - [Permissions](#permissions-2)
+  - [Limitations](#limitations-2)
+- [Creative Commons Attribution](#creative-commons-attribution)
+  - [Permissions](#permissions-3)
+- [The Unlicense](#the-unlicense)
+  - [Permissions](#permissions-4)
+  - [Limitations](#limitations-3)
+- [Codebase with no license included](#codebase-with-no-license-included)
+- [Comparison](#comparison)
+- [Conclusion](#conclusion)
 
 ### How to license
 
