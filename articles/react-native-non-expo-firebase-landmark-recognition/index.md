@@ -19,7 +19,8 @@ We'll be going through these steps in this article:
 5. Building the UI.
 6. Adding media picker.
 7. Recognize Landmarks from Images.
-8. Recap.
+8. Additional Configurations.
+9. Recap.
 
 You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-ml-landmark-recognition).
 
@@ -280,7 +281,7 @@ image: {
 },
 ```
 
-Let's set the Image URI to the state when the inside the `onImageSelect` function when the user did not cancel the operation.
+Let's set the image state with the URI of the selected image in the `onImageSelect` function when the user did not cancel the operation.
 
 ```JSX
 const onImageSelect = async (media) => {
@@ -291,7 +292,6 @@ const onImageSelect = async (media) => {
 ```
 
 ### Recognize Landmarks from Images
-
 
 Let's install the package for Firebase ML.
 
@@ -304,3 +304,68 @@ Once the package is installed, let's import the package.
 ```JSX
 import ml from '@react-native-firebase/ml';
 ```
+
+We should use `cloudLandmarkRecognizerProcessImage` method in the `ml` package to process the image and get the landmaks in the image.
+
+We will pass the URI of the selected image to this function.
+
+```JSX
+const landmarks = await ml().cloudLandmarkRecognizerProcessImage(media.uri);
+```
+
+The function will process the image and return the list of landmarks that are identified in the image along with:
+
+- The 4-point coordinates of the landmarks on the image.
+
+- Latitude & Longitude of the landmarks.
+
+- The confidence the Machine Learning service has in it's own results.
+
+- An entity ID for use on Google's [Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+
+
+Let's set up a state to store the results and render it in the UI. Since the result will be an array of landmarks, let's set the initial state to an empty array.
+
+```JSX
+const [landmarks, setLandmarks] = useState([]);
+```
+
+Let's set the state to the response of the `cloudLandmarkRecognizerProcessImage` function.
+
+```JSX
+const onImageSelect = async (media) => {
+  if (!media.didCancel) {
+    setImage(media.uri);
+    const landmarks = await ml().cloudLandmarkRecognizerProcessImage(
+      media.uri,
+    );
+    setLandmarks(landmarks);
+  }
+};
+```
+
+We can use this state to render the details in the UI.
+
+```JSX
+{landmarks.map((item, i) => (
+  <View style={{ marginTop: 20, width: 300 }} key={i}>
+    <Text>LandMark: {item.landmark}</Text>
+    <Text>BoundingBox: {JSON.stringify(item.boundingBox)}</Text>
+    <Text>Coordinates: {JSON.stringify(item.locations)}</Text>
+    <Text>Confidence: {item.confidence}</Text>
+    <Text>Confidence: {item.entityId}</Text>
+  </View>
+))}
+```
+
+### Additional Configurations
+
+The `cloudLandmarkRecognizerProcessImage` method accepts an optional configuration object.
+
+- **maxResults**: Sets the maximum number of results of this type.
+
+- **modelType**: Sets model type for the detection. By default, the function will use the `STABLE_MODEL`. However, if you feel that the results are not up-to-date, you can optionally use the `LATEST_MODEL`.
+
+- **apiKeyOverride**: API key to use for ML API. If not set, the default API key from `firebase.app()` will be used.
+
+- **enforceCertFingerprintMatch**: nly allow registered application instances with matching certificate fingerprint to use ML API.
