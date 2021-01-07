@@ -1,0 +1,207 @@
+In this tutorial, we will be building a Non-Expo React Native application to recognize landmarks from images using Firebase's machine learning kit.
+
+### Firebase
+Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
+
+### Prerequisites
+The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
+
+### Overview
+We'll be going through these steps in this article:
+
+1. Development environment.
+2. Installing dependencies.
+3. Setting up the Firebase project.
+4. Setting up Firebase ML.
+5. Building the UI.
+6. Adding media picker.
+7. Recognize Landmarks from Images.
+8. Recap.
+
+You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-ml-landmark-recognition).
+
+### Development environment
+> **IMPORTANT** - We will not be using Expo in our project.
+
+You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
+
+Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
+
+### Installing dependencies
+You can install these packages in advance or while going through the article.
+
+```JSON
+"@react-native-firebase/app": "^10.4.0",
+"@react-native-firebase/ml": "^10.4.0",
+"react": "16.13.1",
+"react-native": "0.63.4",
+"react-native-image-picker": "^3.1.3"
+```
+
+To install a dependency, run:
+
+```bash
+npm i --save <package-name>
+```
+
+After installing the packages, for iOS, go into your `ios/` directory, and run:
+
+```bash
+pod install
+```
+
+> **IMPORTANT FOR ANDROID**
+>
+> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while attempting to build your Android application.
+>
+> `Execution failed for task ':app:mergeDexDebug'.`
+>
+> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable multidexing.
+> To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
+
+### Setting up the Firebase project
+Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
+
+Create a new project.
+
+![Create New Project](firebase_new.png)
+
+Once you create a new project, you'll see the dashboard.
+
+![New Dashboard](new_dashboard.png)
+
+Now, click on the Android icon to add an android app to the Firebase project.
+
+![register_app](register_app.png)
+
+You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+
+![Package Name](package_name.png)
+
+Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
+
+![Download Google Services JSON](download_services.json.png)
+
+After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
+
+First, add the `google-services` plugin as a dependency inside of your `android/build.gradle` file:
+
+```gradle
+buildscript {
+  dependencies {
+    // ... other dependencies
+
+    classpath 'com.google.gms:google-services:4.3.3'
+  }
+}
+```
+
+Then, execute the plugin by adding the following to your `android/app/build.gradle` file:
+
+```Gradle
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+```
+
+You need to perform some additional steps to configure `Firebase` for `iOS`. Follow [this documentation](https://rnfirebase.io/#3-ios-setup) to set it up.
+
+We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
+
+```bash
+npm install @react-native-firebase/app
+```
+
+### Building the UI
+In the `App.js`, let's add 2 buttons to the screen to take a photo and pick a photo.
+
+```JSX
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.screen}>
+      <Text style={styles.title}>Landmark Recognition</Text>
+      <View>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Take Photo</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Pick a Photo</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+```
+
+Styles:
+
+```JSX
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 35,
+    marginVertical: 40,
+  },
+  button: {
+    backgroundColor: '#47477b',
+    color: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 50,
+    marginTop: 20,
+  },
+  buttonText: {
+    color: '#fff',
+  },
+});
+```
+
+### Adding media picker
+Now, the first 2 buttons should open the camera to take a photo and record a video respectively, and the next 2 buttons should open the gallery to pick an image and video respectively.
+
+Let's install the `react-native-image-picker` to add these functionalities.
+
+```bash
+npm install react-native-image-picker
+```
+
+> The minimum target SDK for the React Native Image Picker is 21. If your project targets an SDK below 21, bump up the minSDK target in `android/build.gradle`.
+
+After the package is installed, import the `launchCamera` and `launchImageLibrary` functions from the package.
+
+```JSX
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+```
+
+Both functions accept 2 arguments. The first argument is `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called when the user picks an image or cancels the operation.
+
+Check out the [API Reference](https://www.npmjs.com/package/react-native-image-picker#api-reference) for more details about these functions.
+
+Now let's add 2 functions, one for each button.
+
+```JSX
+const onTakePhoto = () => launchCamera({ mediaType: 'image' }, onMediaSelect);
+
+const onSelectImagePress = () =>
+  launchImageLibrary({ mediaType: 'image' }, onMediaSelect);
+```
+
+> onMediaSelect is the callback function which we will write in the next step.
+
+Now, pass these functions to the `onPress` prop of the `TouchableOpacity` for the respective buttons.
+
+```JSX
+<TouchableOpacity style={styles.button} onPress={onTakePhoto}>
+  <Text style={styles.buttonText}>Take Photo</Text>
+</TouchableOpacity>
+<TouchableOpacity style={styles.button} onPress={onSelectImagePress}>
+  <Text style={styles.buttonText}>Pick a Photo</Text>
+</TouchableOpacity>
+```
+
