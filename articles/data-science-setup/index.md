@@ -1,9 +1,25 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/data-science-setup/
+title: Basic Setup for Data Science
+description: This article is an overview about how to setup your computer and install data science tools.
+author: lalithnarayan-c
+date: 2021-01-07T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-The path to becoming a data scientist begins with setting up your computer with the appropriate tools. The majority of the data science ecosystem is built around Python and R. In this article, we will create a basic Python setup using the Anaconda Package Manager. This guide will guide you to install popular machine learning packages.   
+  - url: /engineering-education/data-science-setup/hero.jpg
+    alt: basic setup for data science
+---
+The path to becoming a data scientist begins with setting up your computer with the appropriate tools. The majority of the data science ecosystem is built around Python and R. 
+<!--more-->
+
+In this article, we will create a basic Python setup using the Anaconda Package Manager. This guide will guide you to install popular machine learning packages.   
 
 ### Table of contents
-- [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Installing Anaconda Package Manager](#installing-anaconda-package-manager)
 - [Installing machine learning libraries](#installing-machine-learning-libraries)
@@ -121,3 +137,6 @@ _Note:_ Creating virtual environments eats up a lot of space in the hard disk. T
 ### Conclusion
 
 In this article, we have covered the installation of Anaconda Package Manager and the creation of virtual environments. For all the future articles, we will refer to this article. I hope you enjoyed reading the article. 
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
