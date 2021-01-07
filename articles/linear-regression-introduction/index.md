@@ -108,8 +108,8 @@ The applications of linear regression analysis are multifold. The idea of linear
 A few examples of linear regression in action are given below:
 
 **Risk profiling**: Analyzing an investor's risk based on the investor's income and commitments can be a regression task. The output is the maximum risk the investor can take.  
-- Stock market portfolio analysis: Predicting the future prices given the current conditions and historical data is a problem many mathematicians and analysts work on. Regression models are often used in such applications. 
-- Analysis and optimization: Finding optimal solutions for a given problem given the constraints can be modeled using regression methods. For example, predicting houses' prices or used car prices using regression is a famous machine learning problem. 
+- **Stock market portfolio analysis**: Predicting the future prices given the current conditions and historical data is a problem many mathematicians and analysts work on. Regression models are often used in such applications. 
+- **Analysis and optimization**: Finding optimal solutions for a given problem given the constraints can be modeled using regression methods. For example, predicting houses' prices or used car prices using regression is a famous machine learning problem. 
 
 
 ### Conclusion
