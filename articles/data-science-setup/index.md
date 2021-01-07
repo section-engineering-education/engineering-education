@@ -3,13 +3,18 @@
 The path to becoming a data scientist begins with setting up your computer with the appropriate tools. The majority of the data science ecosystem is built around Python and R. In this article, we will create a basic Python setup using the Anaconda Package Manager. This guide will guide you to install popular machine learning packages.   
 
 ### Table of contents
-- Installation
-  - Anaconda Package Manager
-  - Installing machine learning libraries
-- Creating virtual environments
-- Accessing virtual environments
-
-### Installation
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
+- [Installing Anaconda Package Manager](#installing-anaconda-package-manager)
+- [Installing machine learning libraries](#installing-machine-learning-libraries)
+- [Creating and accessing virtual environments using conda](#creating-and-accessing-virtual-environments-using-conda)
+- [Installing commonly used packages](#installing-commonly-used-packages)
+  - [Installing scikit-learn](#installing-scikit-learn)
+  - [Installing TensorFlow](#installing-tensorflow)
+  - [Installing PyTorch](#installing-pytorch)
+- [Advantage of using conda](#advantage-of-using-conda)
+- [Conclusion](#conclusion)
+### Installing Anaconda Package Manager
 
 Go to the Anaconda Package manager website and install the individual edition. It is available at this [link](https://www.anaconda.com/products/individual).
 
@@ -45,7 +50,7 @@ As new features are added and introduced, the libraries are updated continuously
 
 Therefore, to avoid possible compatibility issues in the future, we use virtual environments that keep the installation of libraries local to the project. If another version of a library is needed, we can create a new virtual environment. Let us create a new virtual environment using conda.
 
-### Creating virtual environments using conda
+### Creating and accessing virtual environments using conda
 
 Creating a virtual environment is easy using Anaconda Package Manager. This is accomplished using the `conda create` command. The structure of the command goes as follows:
 
