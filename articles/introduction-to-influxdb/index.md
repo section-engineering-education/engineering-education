@@ -1,17 +1,17 @@
 DBMS or database management systems play a key role as the foundational building blocks of any modern application. Whether you are a database administrator, a developer, or an IT professional, extensive knowledge of databases is essential. In this article, we will look at a class of databases called time-series databases and understand how they work. We are also going to explore the basics of the most popular time-series database called influx DB. By the end of this article, you will have influx DB installed on your system and be able to execute custom queries. 
   
 ### Table of contents
-[Prerequisites](#prerequisites)
-[Time Series Database](#time-series-database)
-[InfluxDB](#influxdb)
-[Installing InfluxDB](#installing-influxdb)
-[Running InfluxDB](#running-influxdb)
-[Executing Queries](#executing-queries)
-[Conclusion](#conclusion)
+- [Prerequisites](#prerequisites)
+- [Time Series Database](#time-series-database)
+- [InfluxDB](#influxdb)
+- [Installing InfluxDB](#installing-influxdb)
+- [Running InfluxDB](#running-influxdb)
+- [Executing Queries](#executing-queries)
+- [Conclusion](#conclusion)
   
 ### Prerequisites
-basic understanding of [database management systems](https://www.tutorialspoint.com/dbms/index.htm)
-Basic understanding of [Python](https://www.python.org/about/gettingstarted/).
+- Basic understanding of [database management systems](https://www.tutorialspoint.com/dbms/index.htm)
+- Basic understanding of [Python](https://www.python.org/about/gettingstarted/).
 
 ### Time Series Database
 According to the [official documentation](https://www.influxdata.com/time-series-database/), A time-series database (TSDB) is a database optimized for timestamped or time-series data. Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. Furthermore, time-series databases are built to specifically handle this type of data with a timestamp associated with it. 
