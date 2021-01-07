@@ -17,7 +17,7 @@ images:
 In this tutorial, we will be building a server using Node.js and Express to start and stop cloud recording of audio/video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
 <!--more-->
 
-The client application thats using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
+The client application that's using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
 ### Goals
 By the end of this tutorial, you’ll know:
 
