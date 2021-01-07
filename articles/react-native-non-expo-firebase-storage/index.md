@@ -47,6 +47,8 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
+![Env Setup](env_setup.png)
+
 ### Installing dependencies
 You can install these in advance or while going through the article.
 
