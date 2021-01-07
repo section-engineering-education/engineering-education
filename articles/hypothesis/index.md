@@ -8,7 +8,7 @@ In machine learning, we need to be able to trust our models and the predictions 
 ### Contents
 
 1. Significance of hypotheses
-2. Hypothesis in ML vs statistics
+2. Hypothesis in ML vs. statistics
 3. 5 steps to test a hypothesis
 
 ### Prerequisites
@@ -18,32 +18,32 @@ All that is required is a general understanding of concepts in [machine learning
 ### Significance of a Hypothesis
 
 A hypothesis can be described as a theory or argument which explains some observed phenomenon. In a scientific setting, a hypothesis is meant to be proven (or disproven) through experimentation.
-In data science, a crucial part of the modeling process is first coming up with a significant question or assumption. For example, we can say something like “different cars use the communal parking lot every day”. The framing of this statement makes it seem like we are declaring it to be true. However, using a statistical approach, it might be better to frame it as “the cars that use the parking lot are the same”. We have framed the assumption as a null hypothesis, which we shall seek to disprove. The first statement can be thought of as an alternative hypothesis. We shall define these two types of hypotheses later on.
+In data science, a crucial part of the modeling process is first coming up with an important question or assumption. For example, we can say something like “different cars use the communal parking lot every day.” The framing of this statement makes it seem like we are declaring it to be true. However, using a statistical approach, it might be better to frame it as “the cars that use the parking lot are the same.” We have framed the assumption as a null hypothesis, which we shall seek to disprove. The first statement can be thought of as an alternative hypothesis. We shall define these two types of hypotheses later on.
 The significance of framing the two statements as we did above is to help eliminate randomness. We can compare it to the phrase “innocent until proven guilty” since we seek to disprove the null hypothesis and validate the alternative hypothesis. When these two hypotheses are tested, we seek to prove that the data we used is statistically significant. This means that occurrences were not by chance alone. We shall define statistical significance later in this article.
 
-### Statistical vs Machine Learning Hypotheses
+### Statistical vs. Machine Learning Hypotheses
 
 Even though most of the concepts we cover in this article are predominantly statistical, it is important to understand how the term hypothesis is perceived from either a purely statistical or machine learning perspective.
 
-When carrying out statistical hypothesis tests, we attempt to calculate the critical value, which shall be covered later on. We can refer to this critical value as an effect.
-The interpretation of the critical value is significant. It determines the likelihood of observing the effect if observations do not have a relationship. The suggestion that the effect is real comes about if the aforementioned likelihood is minute. If the likelihood is large, the effect is likely not to be real. In statistical hypothesis tests, there is no comment on the size of the effect. These tests are concerned with how likely the effect is present or absent in the population in consideration. This is based on the observed data samples.
-Statistical hypotheses are thus based on identifying the relationships between observations. They are probabilistic explanations about these relationships. Null and alternative hypotheses are denoted as H0 and Ha respectively.
+When carrying out statistical hypothesis tests, we attempt to calculate the critical value, which shall be covered later. We can refer to this critical value as an effect.
+The interpretation of the critical value is significant. It determines the likelihood of observing the effect if observations do not have a relationship. The suggestion that the effect is real comes about if the likelihood mentioned above is minute. If the likelihood is large, the effect is likely not to be real. In statistical hypothesis tests, there is no comment on the size of the effect. These tests are concerned with how likely the effect is present or absent in the population in consideration. This is based on the observed data samples.
+Statistical hypotheses are thus based on identifying the relationships between observations. They are probabilistic explanations about these relationships. Null and alternative hypotheses are denoted as H0 and Ha, respectively.
 
-In machine learning, a hypothesis involves the approximation of a target function and the performing of mappings of inputs to outputs. This approximation is known as function approximation. We approximate an unknown target function, which we assume exists. This target function should best carry out the mapping of inputs to outputs on all possible observations existing in the problem domain. The notation in this context is (h) for hypothesis and (H) for a hypothesis set. To understand a hypothesis in machine learning better, this [post](https://www.geeksforgeeks.org/ml-understanding-hypothesis/) will be of use.
+In machine learning, a hypothesis involves approximating a target function and the performing of mappings of inputs to outputs. This approximation is known as function approximation. We approximate an unknown target function, which we assume exists. This target function should best carry out the mapping of inputs to outputs on all possible observations existing in the problem domain. The notation in this context is (h) for hypothesis and (H) for a hypothesis set. To better understand a hypothesis in machine learning, this [post](https://www.geeksforgeeks.org/ml-understanding-hypothesis/) will be of use.
 
 ### Steps to Test a Hypothesis
 
-A hypothesis test evaluates two statements about a population. The statements are mutually exclusive. The test concludes which statement best reflects the sample data. A hypothesis test helps us determine the statistical significance of a finding. We say a finding is statistically significant when its likelihood of occurrence is very low, given the null hypothesis. In this section, we describe the steps to test a hypothesis as we define the concepts involved in the testing process.
+A hypothesis test evaluates two statements about a population. The statements are mutually exclusive. The test concludes which statement best reflects the sample data. A hypothesis test helps us determine the statistical significance of a finding. We say a finding is statistically significant when its likelihood of occurrence is very low, given the null hypothesis. This section describes the steps to test a hypothesis as we define the concepts involved in the testing process.
 
 #### Establish hypotheses
 
-The first step in the testing of a hypothesis is first defining a hypothesis. This is done by establishing both a null and alternative hypothesis. A null hypothesis can be thought of as a statement that claims that there exists no relationship between two measured events. It is an assumption made, which may be based on domain experience. Scientists carry out experiments to retain or reject a null hypothesis based upon the nature of (or lack of) the relationship between occurrences. A null hypothesis is usually considered to be true until proven otherwise. It is denoted as H0.
+The first step in the testing of a hypothesis is first defining a hypothesis. This is done by establishing both a null and alternative hypothesis. A null hypothesis can be thought of as a statement claiming no relationship between two measured events. It is an assumption made, which may be based on domain experience. Scientists carry out experiments to retain or reject a null hypothesis based upon the nature of (or lack of) the relationship between occurrences. A null hypothesis is usually considered to be true until proven otherwise. It is denoted as H0.
 
-On the other hand, an alternative hypothesis is the result of the experiment that we hope to show. We want the alternative hypothesis to be true. It is the hypothesis that is the alternate of the null hypothesis. The image below shall aid in the understanding of these two types of hypotheses.
+On the other hand, an alternative hypothesis results from the experiment that we hope to show. We want the alternative hypothesis to be true. It is the hypothesis that is the alternate of the null hypothesis. The image below shall aid in the understanding of these two types of hypotheses.
 
 ![nullalternative](/engineering-education/hypothesis/nullalternative.png)
 
-*Null vs alternative hypothesis*
+*Null vs. alternative hypothesis*
 
 [Source](https://towardsdatascience.com/hypothesis-testing-in-machine-learning-using-python-a0dc89e169ce)
 
@@ -59,27 +59,27 @@ After forming our null and alternative hypotheses, we should select a significan
 
 Since the significance level is 5%, our level of confidence becomes 95%. This means that 95% of hypothesis tests won’t end in a type I error. You may ask why 5% and not any other value is commonly chosen. It simply is standard practice to use 5%.
 We mentioned a type I error above. Let’s define what type I and II errors are.
-**Type I error**. This is an error characterized by a scenario where we reject a true null hypothesis. It is represented by the symbol alpha.
+**Type I error**. This is an error characterized by a scenario where we reject a true null hypothesis. The symbol alpha represents it.
 
 **Type II error**. We can define a type II error as a situation where we retain a null hypothesis, but it is false. It is denoted by beta.
 
 #### Find the region of rejection for the null hypothesis
 
-There exists a region in the sample space where we reject the null hypothesis. The rejection is if a calculated value lies in the region. This region is known as the critical region. We may reference the image in the previous section. The critical region may be depicted by a normal curve in hypothesis testing. In the case of a type I error, it is referred to as the alpha region. It is a beta region in the context of a type II error.
+There exists a region in the sample space where we reject the null hypothesis. The rejection is if a calculated value lies in the region. This region is known as the critical region. We may reference the image in the previous section. A normal curve depicts the critical region in hypothesis testing. In the case of a type I error, it is referred to as the alpha region. It is a beta region in the context of a type II error.
 
 #### Compute p-value
 
-Assuming the null hypothesis is true, the probability of getting an outcome at least as extreme as the observed outcome of a hypothesis test is the p-value. The meaning of “extreme” is dependent on how the testing is carried out. The p-value determines whether or not there is enough evidence to retain the alternative hypothesis or retain the null hypothesis.
+Assuming the null hypothesis is true, the probability of getting an outcome at least as extreme as the observed outcome of a hypothesis test is the p-value. The meaning of “extreme” is dependent on how the testing is carried out. The p-value determines whether there is enough evidence to retain the alternative hypothesis or retain the null hypothesis.
 Given the probability distribution of a specific statistic we are testing, we may use the deviation between an observed value and a selected reference value. The greater the difference between the two values, the lower the p-value. The p-value is lower as a result of this kind of difference, which shows that it is less likely that the difference is thanks to random chance.
 To understand how to calculate the p-value, with examples, I suggest going through this [post](https://www.wallstreetmojo.com/p-value-formula/).
 
 #### Compare p-value to the significance level to retain or reject the null hypothesis
 
-To know whether to reattain or reject the null hypothesis, we can compare our significance level to the p-value. Let’s assume our significance level is 5% (or 0.05). The smaller the p-value, the greater the evidence favoring the alternative hypothesis. If the p-value is less than the significance level we select, we reject the null hypothesis. This means that if the p-value is less than our 0.05 significance level, we accept that the sample we used supports the alternative hypothesis.
+To know whether to reattain or reject the null hypothesis, we can compare our significance level to the p-value. Let’s assume our significance level is 5% (or 0.05). The smaller the p-value, the greater the evidence is favoring the alternative hypothesis. If the p-value is less than the significance level we select, we reject the null hypothesis. This means that if the p-value is less than our 0.05 significance level, we accept that the sample we used supports the alternative hypothesis.
 
 ### Closing
 
-A crucial part of the modeling process is having a significant question or assumption. These are what form our hypothesis. In addition to formulating the right hypotheses, it is very important to test them out. We have introduced the concept of a hypothesis and discussed its significance. We have gone further to give a basic overview of the steps taken to test a hypothesis. In the future, we may dive into the different tests used to test out hypotheses. Until then, happy reading!
+A crucial part of the modeling process is having a significant question or assumption. These are what form our hypothesis. In addition to formulating the right hypotheses, it is essential to test them out. We have introduced the concept of a hypothesis and discussed its significance. We have gone further to give a basic overview of the steps taken to test a hypothesis. In the future, we may dive into the different tests used to test out hypotheses. Until then, happy reading!
 
 ### References and Further Reading
 
@@ -110,3 +110,6 @@ A crucial part of the modeling process is having a significant question or assum
 13. [p-value and level of significance explained](https://www.datasciencecentral.com/profiles/blogs/p-value-and-level-of-significance-explained)
 
 14. [Understanding Hypothesis Tests: Significance Levels (Alpha) and P values in Statistics](https://blog.minitab.com/blog/adventures-in-statistics-2/understanding-hypothesis-tests-significance-levels-alpha-and-p-values-in-statistics)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
