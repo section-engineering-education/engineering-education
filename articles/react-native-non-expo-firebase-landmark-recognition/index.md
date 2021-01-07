@@ -146,11 +146,11 @@ With this, you have set up the Cloud Vision API for your Firebase project. This 
 In the `App.js`, let's add 2 buttons to the screen to take a photo and pick a photo.
 
 ```JSX
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.screen}>
+    <ScrollView contentContainerStyle={styles.screen}>
       <Text style={styles.title}>Landmark Recognition</Text>
       <View>
         <TouchableOpacity style={styles.button}>
@@ -160,7 +160,7 @@ export default function App() {
           <Text style={styles.buttonText}>Pick a Photo</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 ```
@@ -218,13 +218,25 @@ Check out the [API Reference](https://www.npmjs.com/package/react-native-image-p
 Now let's add 2 functions, one for each button.
 
 ```JSX
-const onTakePhoto = () => launchCamera({ mediaType: 'image' }, onMediaSelect);
+const onTakePhoto = () => launchCamera({ mediaType: 'image' }, onImageSelect);
 
-const onSelectImagePress = () =>
-  launchImageLibrary({ mediaType: 'image' }, onMediaSelect);
+const onSelectImagePress = () => launchImageLibrary({ mediaType: 'image' }, onImageSelect);
 ```
 
-> onMediaSelect is the callback function which we will write in the next step.
+Let's create a function called `onImageSelect`. This is the callback function that we are passing to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the image that the user picked in this callback function.
+
+We should start the landmark recognition only when the user did not cancel the media picker. If the user cancelled the operation, the picker will send a `didCancel` property in the response object.
+
+```JSX
+const onImageSelect = async (media) => {
+  if (!media.didCancel) {
+    // Landmark Recognition Process
+  }
+};
+```
+
+You can learn more about the response object that we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
+
 
 Now, pass these functions to the `onPress` prop of the `TouchableOpacity` for the respective buttons.
 
@@ -235,4 +247,60 @@ Now, pass these functions to the `onPress` prop of the `TouchableOpacity` for th
 <TouchableOpacity style={styles.button} onPress={onSelectImagePress}>
   <Text style={styles.buttonText}>Pick a Photo</Text>
 </TouchableOpacity>
+```
+
+Let's create a state to display the selected image on the UI.
+
+```JSX
+const [image, setImage] = useState();
+```
+
+Now, let's add a Image component below the buttons to display the selected image.
+
+```JSX
+<View>
+  <TouchableOpacity style={styles.button} onPress={onTakePhoto}>
+    <Text style={styles.buttonText}>Take Photo</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={styles.button} onPress={onSelectImagePress}>
+    <Text style={styles.buttonText}>Pick a Photo</Text>
+  </TouchableOpacity>
+  <Image source={{ uri: image }} style={styles.image} />
+</View>
+```
+
+Styles for the Image:
+
+```JSX
+image: {
+  height: 300,
+  width: 300,
+  marginTop: 20,
+  borderRadius: 10,
+},
+```
+
+Let's set the Image URI to the state when the inside the `onImageSelect` function when the user did not cancel the operation.
+
+```JSX
+const onImageSelect = async (media) => {
+  if (!media.didCancel) {
+    setImage(media.uri);
+  }
+};
+```
+
+### Recognize Landmarks from Images
+
+
+Let's install the package for Firebase ML.
+
+```bash
+npm install @react-native-firebase/ml
+```
+
+Once the package is installed, let's import the package.
+
+```JSX
+import ml from '@react-native-firebase/ml';
 ```
