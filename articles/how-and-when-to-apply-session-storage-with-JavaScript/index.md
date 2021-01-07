@@ -1,3 +1,8 @@
+test
+
+
+
+
 sessionStorage is a popular choice when it comes to storing data on the browser. It enables developers to save and retrieve different values. Unlike localStorage, sessionStorage only keeps data for a particular session. The data is cleared once the user closes the browser window.
 
 ### Introduction
