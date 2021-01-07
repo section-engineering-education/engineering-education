@@ -3,22 +3,19 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/agora-cloud-recording/
-title: Agora Cloud Recording
+title: Cloud Recording with Agora
 description: In this tutorial, we will be building a server using Node.js and Express to start and stop cloud recording of audio/video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
 author: mohan-raj
-date: 2021-06-05T00:00:00-10:00
-topics: []
+date: 2021-01-06T00:00:00-18:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/agora-cloud-recording/hero.jpg
     alt: agora cloud recording hero image
 ---
-In this tutorial, we will be building a server using Node.js and Express to start and stop cloud recording of audio/video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
+The client application thats using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
 <!--more-->
-
-The client application that's using the Agora SDKs should request this server to record the streams. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app. 
-
 ### Goals
 By the end of this tutorial, you’ll know:
 
@@ -112,7 +109,7 @@ Once you hit Apply, you'll see the statistics page of the cloud recording.
 
 You have successfully enabled cloud recording for your project.
 
-### Acquiring Customer ID and Customer Secret for Agora APIs
+### Acquiring customer ID and customer secret for Agora APIs
 If you want to work with Agora's APIs, you need to acquire the customer ID and customer secret from Agora.
 
 Head to the console and click the account name on the top right corner and click on RESTful API from the dropdown.
@@ -125,7 +122,7 @@ Copy the customer ID and click on download under customer secret to get the cust
 
 ![Customer Secret](/engineering-education/agora-cloud-recording/customer_secret.png)
 
-For the API, We should convert the customer ID and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
+For the API, we should convert the customer ID and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
 
 ```JavaScript
 Buffer.from(string).toString('base64');
@@ -135,7 +132,7 @@ I'll be using Axios to make requests to the Agora APIs. We need to pass the cons
 
 To install Axios, run:
 
-```
+```bash
 npm install axios
 ```
 
@@ -240,7 +237,7 @@ Response:
 ![Acquire Request & Response](/engineering-education/agora-cloud-recording/postman_acquire.png)
 
 ### Start recording
-Now, Let's add a POST request handler for a new endpoint called `'/start'` to start the cloud recording.
+Now, let's add a POST request handler for a new endpoint called `'/start'` to start the cloud recording.
 
 ```JavaScript
 app.post("/start", (req, res) => {
@@ -284,9 +281,9 @@ In the body of the request, we should specify the UID, the channel ID, authentic
 
 - **Transcoding Config**: The video transcoding configuration. You cannot set this parameter in individual recording mode.
 
-  - **height**: In pixels, Should not exceed 1920. **width * height** should not exceed 1920 * 1080.
+  - **height**: In pixels, should not exceed 1920. **width * height** should not exceed 1920 * 1080.
 
-  - **width**: In pixels, Should not exceed 1920. **width * height** should not exceed 1920 * 1080.
+  - **width**: In pixels, should not exceed 1920. **width * height** should not exceed 1920 * 1080.
 
   - **bitrate**: The video bitrate.
 
@@ -408,7 +405,7 @@ You need to send a POST request to this endpoint `https://api.agora.io/v1/apps/{
 
 The endpoint URL must contain the `appID`, the `resourceID`, the `sid` (recording ID), and the `mode` of recording.
 
-In the request body, We should specify the UID, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the recording status.
+In the request body, we should specify the UID, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the recording status.
 
 ```JavaScript
 app.post("/stop", async (req, res) => {
@@ -431,7 +428,7 @@ app.post("/stop", async (req, res) => {
 });
 ```
 
-The response will contain an object called `serverResponse`. It'll contain the list of files, which is an array of objects containing the details about the files and the uploading status of these files.
+The response will contain an object called `serverResponse`. It'll contain the list of files, that is an array of objects containing the details about the files and the uploading status of these files.
 
 The uploading status can either be,
 
@@ -502,3 +499,6 @@ Response:
 Congratulations, :partying_face: You did it.
 
 Thanks for reading!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
