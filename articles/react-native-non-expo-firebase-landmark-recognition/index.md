@@ -226,7 +226,7 @@ const onSelectImagePress = () => launchImageLibrary({ mediaType: 'image' }, onIm
 
 Let's create a function called `onImageSelect`. This is the callback function that we are passing to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the image that the user picked in this callback function.
 
-We should start the landmark recognition only when the user did not cancel the media picker. If the user cancelled the operation, the picker will send a `didCancel` property in the response object.
+We should start the landmark recognition only when the user did not cancel the media picker. If the user canceled the operation, the picker will send a `didCancel` property in the response object.
 
 ```JSX
 const onImageSelect = async (media) => {
@@ -256,7 +256,7 @@ Let's create a state to display the selected image on the UI.
 const [image, setImage] = useState();
 ```
 
-Now, let's add a Image component below the buttons to display the selected image.
+Now, let's add an Image component below the buttons to display the selected image.
 
 ```JSX
 <View>
@@ -305,7 +305,7 @@ Once the package is installed, let's import the package.
 import ml from '@react-native-firebase/ml';
 ```
 
-We should use `cloudLandmarkRecognizerProcessImage` method in the `ml` package to process the image and get the landmaks in the image.
+We should use the `cloudLandmarkRecognizerProcessImage` method in the `ml` package to process the image and get the landmarks in the image.
 
 We will pass the URI of the selected image to this function.
 
@@ -319,12 +319,12 @@ The function will process the image and return the list of landmarks that are id
 
 - Latitude & Longitude of the landmarks.
 
-- The confidence the Machine Learning service has in it's own results.
+- The confidence the Machine Learning service has in its own results.
 
 - An entity ID for use on Google's [Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
 
 
-Let's set up a state to store the results and render it in the UI. Since the result will be an array of landmarks, let's set the initial state to an empty array.
+Let's set up a state to store the results and render them in the UI. Since the result will be an array of landmarks, let's set the initial state to an empty array.
 
 ```JSX
 const [landmarks, setLandmarks] = useState([]);
@@ -368,7 +368,7 @@ The `cloudLandmarkRecognizerProcessImage` method accepts an optional configurati
 
 - **apiKeyOverride**: API key to use for ML API. If not set, the default API key from `firebase.app()` will be used.
 
-- **enforceCertFingerprintMatch**: nly allow registered application instances with matching certificate fingerprint to use ML API.
+- **enforceCertFingerprintMatch**: Only allow registered application instances with matching certificate fingerprints to use ML API.
 
 ### Let's Recap
 1. We set up our development environment and created a React Native app.
