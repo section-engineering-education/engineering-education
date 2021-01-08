@@ -300,3 +300,58 @@ const onImageSelect = async (media) => {
 ```
 
 ![Image UI](with_image.jpg)
+
+### Label the image using Firebase ML
+
+Let's install the package for Firebase ML.
+
+```bash
+npm install @react-native-firebase/ml
+```
+
+Once the package is installed, let's import the package.
+
+```JSX
+import ml from '@react-native-firebase/ml';
+```
+
+We should use the `cloudImageLabelerProcessImage` method in the `ml` package to process the image and label the image.
+
+We will pass the URI of the selected image to this function.
+
+```JSX
+const labels = await ml().cloudImageLabelerProcessImage(media.uri);
+```
+
+The function will process the image and return the list of labels along with the confidence the Machine Learning service has in that label.
+
+Let's set up a state to store the results and render them in the UI. Since the result will be an array of labels, let's set the initial state to an empty array.
+
+```JSX
+const [labels, setLabels] = useState([]);
+```
+
+Let's set the state to the response of the `cloudImageLabelerProcessImage` function.
+
+```JSX
+const onImageSelect = async (media) => {
+  if (!media.didCancel) {
+    setImage(media.uri);
+    const label = await ml().cloudImageLabelerProcessImage(media.uri);
+    setLabels(label);
+  }
+};
+```
+
+We'll use this state to render the details in the UI.
+
+```JSX
+{labels.map((item, i) => (
+  <View style={{ marginTop: 20, width: 300 }} key={i}>
+    <Text>Label: {item.text}</Text>
+    <Text>Confidence: {item.confidence}</Text>
+  </View>
+))}
+```
+
+![Final Result](final_result.jpg)
