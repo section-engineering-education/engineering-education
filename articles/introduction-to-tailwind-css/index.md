@@ -1,16 +1,16 @@
 ### Getting Started with Tailwindcss
 
-CSS technology was one of the biggest game-changers in web development. It allowed for more styling capabilities and freedom. As CSS grew, so did it's difficulty. CSS in retrospect is not challenging to write, but it can be tricky to implement.
+CSS technology was one of the biggest game-changers in web development. It allowed for more styling capabilities and freedom. As CSS grew, so did its complexity. CSS in retrospect is not challenging to write, but it can be tricky to implement.
 
 The next phase in CSS was the development of libraries and frameworks. One of the most famous examples of CSS frameworks is bootstrap.
 
-Frameworks like Boostrap have one major disadvantage due to increased growth and usage. They became too big and offered less control over the styles. The learning path became hard since the developer has to learn hundreds of classes.
+Frameworks like Boostrap have one major disadvantage. Due to increased growth and usage, they became too big and offer less control over the styles. The learning path became hard since the developer has to learn hundreds of classes.
 
 In this article, we will cover:
 
-- What Tailwindcss is,
-- Different ways to install and configure tailwind,
-- and How to use utility-based classes over regular prewritten classes.
+- What Tailwindcss is
+- Different ways to install and configure tailwind
+- How to use utility-based classes over regular prewritten classes
 
 To follow along with this tutorial, a basic understanding of HTML and CSS is necessary. Experience with any CSS framework is an added advantage.
 
@@ -24,7 +24,7 @@ Let's get right into it and install tailwind so we can discover more about it. T
 
 #### Method 1: Using CDN
 
-Using a CDN is the most common way of using any CSS framework, and tailwind is no exception. We add a CDN as a link to the tailwind css file in the HTML page's head section.
+Using a CDN is the most common way of using any CSS framework, and tailwind is no exception. We add the tailwind CSS file from the CDN in form of a link in the HTML page's head section.
 
 Create a HTML file and name it anything. We will name ours `index.html`. Inside it, Write the boilerplate code for HTML and add the CDN as shown below:
 
@@ -56,15 +56,15 @@ Note: This might not be the best way to install tailwind into your project becau
 
 Using the npm method bestows the full freedom of tailwind on the developer. It is common because most Javascript frameworks use a similar approach. There are minimal differences in the installation process, depending on the framework's architecture.
 
-Let's get started. First, let's create a directory where we will be working. Within the folder, initialize npm. In your terminal, run.
+Let's get started. First, let's create a directory where we will be working. Within the folder, initialize npm and set everything to default. In your terminal, run.
 
 ```terminal
 mkdir section-tailwind-demo && cd section-tailwind-demo
 
-npm init -y // to initialize npm with everything set to default
+npm init -y
 ```
 
-Now let's install tailwind. We need a few things alongside tailwind. We need postcss because tailwind relies on a preprocessor to bundle the CSS. Tailwind uses a postcss plugin called autoprefixer to transpile the CSS into vanilla CSS.
+Now let's install tailwind. We need a few things alongside tailwind. We need `postcss` because tailwind relies on a preprocessor to bundle the CSS. Tailwind uses a `postcss` plugin called `autoprefixer` to transpile the CSS into vanilla CSS.
 
 In the terminal run :
 
@@ -72,7 +72,7 @@ In the terminal run :
 npm install tailwindcss@latest postcss@latest autoprefixer@latest
 ```
 
-The command above will install all the dependencies we need. Next, we have to create a script to configure tailwind and postcss. To generate the scripts, we make use of the tailwind cli utility provided by tailwind.
+The command above will install all the dependencies we need. Next, we have to create a script to configure tailwind and postcss. To generate the scripts, we make use of the `tailwind cli` utility provided by tailwind.
 
 In the terminal run :
 
@@ -112,7 +112,7 @@ We have successfully set up the environment, now let's setup tailwind in our pro
 
 Let's create two files—an HTML file called `index.html` and a stylesheet called `style.css`.
 
-The HTML part can have the basic boilerplate syntax at the beginning of the article. In the CSS file, we need to tell autoprefixer that we will use tailwind. We do this by importing the tailwind files, as shown below:
+The HTML part can have the basic boilerplate syntax at the beginning of the article. In the CSS file, we need to tell `autoprefixer` that we will use tailwind. We do this by importing the tailwind files, as shown below:
 
 ```CSS
 @tailwind base;
@@ -128,9 +128,9 @@ npx tailwindcss-cli@latest build -o css/tailwind.css
 
 This command will create a tailwind.css file in the CSS folder. The `-o` in the command stands for the output path, and we specified that our output file would be in the _css/tailwind.css_ path.
 
-Note: You do not need to have a CSS file to work with that command, it will still generate the tailwind file. You may however, need the style.css file to add custom styles, write tailwind css in that file, or mix in tailwind with custom CSS.
+Note: You do not need to have a CSS file to work with that command, it will still generate the tailwind file. You may, however, need the style.css file to add custom styles, write tailwind css in that file, or mix in tailwind with custom CSS.
 
-A different way of processing the CSS is to do it in production by adding a script in the `package.json`. We will use the postcss cli to run the operation during build time.
+A different way of processing the CSS is to do it in production by adding a script in the `package.json`. We will use the `postcss cli` to run the operation during build time.
 
 To do this, let's install postcss cli. Run this in the terminal:
 
@@ -173,11 +173,11 @@ Within the Body tags in the HTML page, add:
 <button>Section</button>
 ```
 
-Let's add some classes to our button because it looks plain. In tailwind, the colour value ranges depending on the colour intensity from 100 to 900. The utility class for the background is `bg`. To make our button's background a faint shade of green, we add a class `bg-green-100`.
+Let's add some classes to our button because it looks plain. In tailwind, the color value ranges depending on the color intensity from 100 to 900. The utility class for the background is `bg`. To make our button's background a faint shade of green, we add a class `bg-green-100`.
 
-Next, let's style the text in the button. We use the utility class `text`. Colour rules remain, hence to add text to the colour, we add a class `text-green-100`.
+Next, let's style the text in the button. We use the utility class `text`. Color rules remain, hence to add text to the color, we add a class `text-green-100`.
 
-Our button is looking good, now let's add some padding. For padding, the syntax is direct. It's the _property, size then the value_. This applies for all size and spacing properties as well, like margin. To add padding on the bottom, it would be `pb-8`. The value ranges from 0 to 64. To see how the ranges work in-depth, check the [documentation](https://tailwindcss.com/docs/padding).
+Our button is looking good, now let's add some padding. For padding, the syntax is direct. It's the _property, size, then the value_. This applies to all size and spacing properties as well, like margin. To add padding on the bottom, it would be `pb-8`. The value ranges from 0 to 64. To see how the ranges work in-depth, check the [documentation](https://tailwindcss.com/docs/padding).
 
 In our example, our padding will be `py-2` for top and bottom and `px-6` for left and right. Let's add some margin on the top with `my-20` and some on the left with `mx-20`.
 
@@ -210,9 +210,9 @@ Our final code looks like this:
 </html>
 ```
 
-and our button looks like this:
+and our button should look like this:
 
-![Final Product](/engineering-education/introduction-to-tailwind-css/button.png)
+![Final Product](/engineering-education/introduction-to-tailwind-css/result.png)
 
 ### Conclusion
 
@@ -222,4 +222,4 @@ Tailwind also gives you more control over the look you want, which can be an adv
 
 Another thing to note is how we added all the CSS classes we used in the demo to the HTML elements. As complexity grows, the code will get untidy. We will tackle how to clean up tailwind projects and a full demo in the next article.
 
-You should now be able to build a simple layout using tailwind. You can use the official [documentation](https://tailwindcss.com/docs) as reference.
+You should now be able to build a simple layout using tailwind. You can use the official [documentation](https://tailwindcss.com/docs) as a reference.
