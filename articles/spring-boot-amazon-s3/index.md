@@ -283,7 +283,7 @@ public class TodoController {
 }
 ```
 
-### Testing upload and download
+### Testing upload and download from S3 bucket
 ![](amazon-upload-image.png)
 
 ### Conclusion
