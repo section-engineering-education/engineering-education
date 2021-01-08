@@ -106,7 +106,7 @@ The `Math.floor` function rounds the number to a whole number lower than the par
 
 The `window.requestAnimationFrame()` method is used when we need to show an animation and instructs the browser to call a function to update the animation through a callback function it takes in, in our case, the `step()` function.
 
-The `window.cancelAnimationFrame()` cancels an animation to be called by taking the animation frame request ID as a parameter. The `load()` functions assigns `text1`, `text2` and `text3` DOM objects gotten by their respective IDs. It is called when the HTML body loads using the `<body>` `onload` attribute. It uses the `animate()` function to set the values and perform the counter.<br>
+The `window.cancelAnimationFrame()` cancels an animation to be called by taking the animation frame request ID as a parameter. The `load()` functions assigns `text1`, `text2` and `text3` DOM objects gotten by their respective IDs. It is called when the HTML body loads using the `<body>` `onload` attribute(This is shown in the HTML code below). It uses the `animate()` function to set the values and perform the counter.<br>
 
 #### The HTML code
 
