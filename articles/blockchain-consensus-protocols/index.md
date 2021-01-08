@@ -1,0 +1,83 @@
+# An Overview of Consensus Protocols in Blockchain
+
+An exciting application called Bitcoin was introduced after the great recession in 2008. This was one of the first real applications of blockchain technology. Also known as distributed ledger technology, blockchain stands out as a promising solution due to the following properties:
+
+- Security
+- Accountability
+- Distributed
+- Transparent 
+- Immutable
+
+This article will discuss the role of consensus protocols in blockchain technology and dive deeper into the various consensus protocols. 
+
+### Introduction
+
+Blockchain technology is a distributed ledger to record any transactions that happen over the network. The concept of decentralization is deeply engraved into the design of blockchain technology. Decentralization means there is no major entity keeping track of the transactions, and instead, it is distributed across many nodes in the network. The technology allows one to verify the transactions via cryptographic hash functions. The underlying assumption is that the record present with most nodes is likely to be the least falsible. 
+
+Consensus protocols form the backbone of blockchain by helping all the nodes in the network verify the transactions. Bitcoin uses proof of work(PoW) as its consensus protocol, which is energy and time-intensive. The rate of verification of transactions in Bitcoin is relatively slow compared to Visa and MasterCard's likes. Therefore, alternate consensus protocols were proposed. All the crypto-currencies and other blockchain applications, also known as decentralized applications (DApps), vary in how the network reaches a consensus. 
+
+### Types of consensus protocols
+
+Before we move on to the consensus protocols, let us examine a statistical fact related to consensus protocols. Theoretically, the blockchain is considered compromised if a hacker gets access to 51% or a more significant part of the network. The various types of consensus protocols solve the 51% attack problem in various ways.
+
+#### Proof of Work
+
+Proof of work is one of the first consensus protocols used in blockchain applications. It is based on computing the hash values and validating the transactions until a specified number of trailing zeros are found in the hash value. The number that generates the hash with the specified number of trailing zeros is known as a nonce. A nonce is defined as a random number that generates the specified number of trailing zeros in the hash function. 
+
+##### Properties
+
+- Proof of Work is designed for permissionless public ledgers and uses the computational resources from the systems in the node to reach consensus
+- The blocks are represented in a linear structure. Each block represents a group of transactions.
+- The mining aspect of bitcoins is solving the cryptographic puzzle of finding a random integer, which leads to hashes with a specified number of leading zeros. 
+- Every transaction is validated and signed using the public and private keys assigned to each user. 
+
+
+##### Popular Crypto-currencies
+
+Bitcoin and Litecoin are two prominent cryptocurrencies using Proof of Work. These are energy-intensive algorithms. The idea behind making the computation of such transactions costly and verification of transactions cheap is as follows: 
+
+An asymmetry between the verification and updation of ledgers results in more comfortable access to the ledger and greater resistance to changing values in the ledger. 
+
+#### Proof of  Stake
+
+Ethereum was one of the largest cryptocurrencies to decide to move onto proof of stake consensus. Let us understand the example intuitively. Let us say we are miners and are validating the transactions made. In bitcoin, a person to validate the transactions by computing the hash value with a certain number of leading zeros gets the allocated amount of bitcoins. 
+
+In proof of stake consensus, a validator is picked and assigned a block. The miner has to allocate a certain part of his cryptocurrency to start validating. If the miner succeeds in invalidating the transaction, then the award is the stake they had pledged initially, along with certain transaction fees. This is a way to penalize bad behavior and incentivize good behavior.
+
+##### Properties
+
+- The validators are picked according to their economic stake in the network
+- The objective is to avoid centralization of mining centers and provide a chance to validate to all the miners
+- It is environmentally friendly as there is no computational puzzle to be solved
+- Special hardware for mining is not required
+
+
+#### Proof of Space
+
+Proof of space, also known as PoSpace, is a network consensus protocol similar to the Proof of Work consensus protocol. Instead of the computational resources, PoSpace uses disk storage to validate transactions.
+
+PoSpace consumes disk space and incentivizes miners with the most considerable disk space allocated to a block. PoSpace is implemented using the hard-to-pebble graphs. 
+
+All the feasible solutions to the problem are generated randomly, called plots. These plots are stored on the disks and solved using an algorithm called Shabal's algorithm. Once the solutions are computed, the miners compare their solutions, and the solution with the best time and space complexity is rewarded with the next block.
+
+#### Applications
+- Burstcoin is a decentralized cryptocurrency built using PoSpace. The value proposition is to aid payment systems. 
+- SpaceMint is another example in its early conceptual stages.
+- 
+#### Proof Elapsed Time
+
+Proof of Elapsed time is a network consensus protocol developed by Intel Corporation. The algorithm is predominantly used in permissioned blockchain ledgers. The hardware used in PoET is specially designed for this protocol. For example, Intel Software Guarded Extension (SGX) is used in networks using PoET. 
+
+This consensus protocol is used to allocate blocks to miners on the network. In permissioned blockchain systems, the miners' identity is determined before they are allowed access into the network. Therefore, anonymity is not achieved in this protocol. 
+
+Each node in the network is assigned a random waiting time. The first node to complete the randomly chosen time period validates the new block. The specialized hardware puts the processor to sleep during the wait time—this repeats over all the blocks in the network. 
+
+##### Applications
+
+- IBMs Hyperledger Sawtooth supports PoET mechanism for custom blockchain applications development.
+
+### Conclusion
+
+In this article, we have analyzed and discussed the various consensus protocols and their properties. I hope this article helps generate curiosity in the subject of blockchain in general. There is a huge scope of research in the field of blockchain to make it faster and efficient. Happy learning. 
+
+
