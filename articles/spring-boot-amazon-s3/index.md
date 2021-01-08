@@ -41,7 +41,24 @@ In the `pom.xml` file add the Amazon SDK dependency as shown below.
         <version>1.11.931</version>
     </dependency>
 ```
+### Project structure
+```bash
+config/
+|--- AmazonConfig.java
+|--- BucketName.java
+controllers/
+|--- TodoController.java
+domain/
+|--- Todo.java
+repositories/
+|--- TodoRepository.java
+service/
+|--- FileStore.java
+|--- TodoService.java
+|--- TodoServiceImpl.java
+SpringAmazonApplication.java
 
+```
 ### Configuration package
 In the configuration package, we have two Java files, one which authenticates with Amazon S3 and the other which contains the bucket name.
 
