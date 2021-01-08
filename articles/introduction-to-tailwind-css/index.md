@@ -223,3 +223,6 @@ Tailwind also gives you more control over the look you want, which can be an adv
 Another thing to note is how we added all the CSS classes we used in the demo to the HTML elements. As complexity grows, the code will get untidy. We will tackle how to clean up tailwind projects and a full demo in the next article.
 
 You should now be able to build a simple layout using tailwind. You can use the official [documentation](https://tailwindcss.com/docs) as a reference.
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
