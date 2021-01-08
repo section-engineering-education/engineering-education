@@ -26,21 +26,21 @@ This involves the following steps;
 2. Move the  archive file to the `/htdocs` inside where Xampp was installed . In my case it is `/opt/lampp/htdocs`.
 
 ```bash
-$ sudo mv yii-advanced-app-2.0.39.tgz /opt/xampp/htdocs
+$ sudo mv yii-advanced-app-2.0.39.tgz /opt/lampp/htdocs
 ```
-3. Using the terminal open the  `/opt/xampp/htdocs` and unzip the Yii-2-advanced file.
+3. Using the terminal open the  `/opt/lampp/htdocs` and unzip the yii-2-advanced file. After unzipping a folder `advanced` will be created.
 ```bash
 $ sudo tar -xvzf yii-advanced-app-2.0.39.tgz
 ```
 Click [here](https://askubuntu.com/questions/499807/how-to-unzip-tgz-file-using-the-terminal) if you encounter any problem. 
 
-4. Initialize your project by entering the following command.
+4. Initialize your project by entering the following command in `/opt/lampp/htdocs/advanced` .
 ```
-$ PHP init
+$ sudo php init
 ```
 To initialize your application, you should select 0 (Development environment).
 
-At this point, you have installed  Yii 2 Advanced Template. Open your browser and navigate, http://localhost/advanced/frontend/web to test it.
+At this point, you have installed  yii 2 Advanced Template. Open your browser and navigate, http://localhost/advanced/frontend/web to test it.
 
 If you see the Congratulations! page in your browser, it means that the installation was successful.
 
