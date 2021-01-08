@@ -1,5 +1,14 @@
-Maybe you want to give some visual statistics about your site visits, members registered or showing some numbers in your online game.</br>To give an appealing look and nice User Experience, you will in one way or another need to animate the digits.</br>
-JavaScript has helper methods which when artistically manipulated can help us achieve that.</br>
+Maybe you want to give some visual statistics about your site visits, members registered, or showing some numbers in your online game.</br>To give an appealing look and nice User Experience, you will in one way or another need to animate the digits which also aids in grabbing the attention of your site visitors for example in a social site. Moreover, it can be used as a marketing tool. </br>This could be otherwise be implemented using some static boring numbers.</br>The counters help us give our sites an expressive and professional look.</br></br>
+JavaScript has helper methods which when artistically manipulated can help us achieve that in a very easy manner.</br>
+Of course, we can do this in a few statements using a framework or library, but it's better to create one for ourselves from scratch and understand the underlying code.</br>It also gives us an upper hand in customizing the code and adding more functionalities ourselves.</br>
+#### Overview
+We only need to use a few JavaScript helper methods and set the duration in which we will use it in animating.</br>
+The JavaScript methods used are:<br>
+**Math.min()**
+**Math.floor()**
+**window.requestAnimationFrame()**
+**window.cancelAnimationFrame()**</br>
+We will discuss the functions as we move on in case they look incomprehensible.</br>
 We are going to create one as illustrated below:
 
 ![Illustration](/engineering-education/animation-counter-javascript/illustration.gif)
@@ -67,40 +76,18 @@ We got three user-defined functions:
 - `animate()`
 - `step()`
 - `load()`
-
-The `animate()` function is a higher-order function containing the `step()` function.
-
-```Javascript
-function animate(obj, initVal, lastVal, duration) {
-        let startTime = null;
-        let currentTime = Date.now();
-        const step = (currentTime ) => {
-            if (!startTime) {
-            startTime = currentTime ;
-            }
-            const progress = Math.min((currentTime  - startTime) / duration, 1);
-            obj.innerHTML = Math.floor(progress * (lastVal - initVal) + initVal);
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }else{
-                window.cancelAnimationFrame(window.requestAnimationFrame(step));
-            }
-        };
-        window.requestAnimationFrame(step);
-}
-```
-
+##### The code explanation</br>
+The `animate()` function is a higher-order function containing the `step()` function.</br>
 The function takes four parameters:
-
 - **A DOM object**(```obj```)
 - **Initial value** which the counter will start with(`initVal`)
 - **Last value** which the counter will end with(`lastVal`)
 - The **duration** in milliseconds which the animation will last(`duration`)
 
-It has a variable `startTime` initialised to `null` which stores the timestamp when the counter starts and `currentTime` variable which stores the latest timestamp as the counter executes. We then have the `step()` function which is used to compute the number to be displayed, where it is displayed and control the animation.
+It has a variable `startTime` initialized to `null` which stores the timestamp when the counter starts and `currentTime` variable which stores the latest timestamp as the counter executes. We then have the `step()` function which is used to compute the number to be displayed, where it is displayed, and control the animation.
 
-The first `if` block assigns the starting time of the counter to `startTime` from `null`. It negates `startTime` to get a *true* value if `startTime` is `null` and then assigns it the current start time. The constant `progress` stores a value that will set the interval between the previous and next number which should not exceed 1. It does so by subtracting the start timestamp from the current timestamp then dividing it by the duration. Since it does not have to be greater than 1(1,2,3,4,...) we use the `Math.min` method which usually takes the lowest value from its parameters. The interval number does not need to change throughout the lifetime of the `step` function hence we make it a `const`.
-
+The first `if` block assigns the starting time of the counter to `startTime` from `null`. It negates `startTime` to get a *true* value if `startTime` is `null` and then assigns it the current start time. The constant `progress` stores a value that will set the interval between the previous and next number which should not exceed 1. It does so by subtracting the start timestamp from the current timestamp then dividing it by the duration. Since it does not have to be greater than 1(1,2,3,4,...) we use the `Math.min` method which usually takes the lowest value from its parameters. The interval number does not need to change throughout the lifetime of the `step` function hence we make it a `const`.<br>
+***A mathematical example***</br>
 The next statement first subtracts the first value from the last value, multiplies the answer gotten by the interval then adds the first value basing on the operator precedence e.g. for a reducing counter</br>
 *Current timestamp = 202018500*</br>
 *Start timestamp = 202018200*</br>
@@ -111,9 +98,11 @@ The next statement first subtracts the first value from the last value, multipli
 *-6 + 100 = 94*</br>
 ***At the timestamp 202018500 the counter will have reduced to 94***
 
-The `Math.floor` function rounds the number to a whole number lower than the parameter given. It then sets the content of `obj` to the number through the `innerHTML` property. The second `if` block stops the counter once the interval is greater than 1. The `window.requestAnimationFrame()` method is used when we need to show an animation and instructs the browser to call a function to update the animation through a callback function it takes in, in our case, the `step()` function.
+The `Math.floor` function rounds the number to a whole number lower than the parameter given. It then sets the content of `obj` to the number through the `innerHTML` property. The second `if` block stops the counter once the interval is greater than 1.<br>***The window.requestAnimationFrame() and window.cancelAnimationFrame()***
+The `window.requestAnimationFrame()` method is used when we need to show an animation and instructs the browser to call a function to update the animation through a callback function it takes in, in our case, the `step()` function.
 
-The `window.cancelAnimationFrame()` cancels an animation to be called by taking the animation frame request ID as a parameter. The `load()` functions assigns `text1`, `text2` and `text3` DOM objects gotten by their respective IDs. It is called when the HTML body loads using the `<body>` `onload` attribute. It uses the `animate()` function to set the values and perform the counter.
+The `window.cancelAnimationFrame()` cancels an animation to be called by taking the animation frame request ID as a parameter. The `load()` functions assigns `text1`, `text2` and `text3` DOM objects gotten by their respective IDs. It is called when the HTML body loads using the `<body>` `onload` attribute. It uses the `animate()` function to set the values and perform the counter.<br>
+#### The HTML code
 
 Below is the HTML code. Bootstrap 5 is used for styling.
 ```html
