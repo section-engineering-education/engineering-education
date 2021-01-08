@@ -355,3 +355,23 @@ We'll use this state to render the details in the UI.
 ```
 
 ![Final Result](final_result.jpg)
+
+### Additional Configurations
+
+The `cloudImageLabelerProcessImage` method accepts an optional configuration object.
+
+- **confidenceThreshold**: Sets confidence threshold in the range of [0.0 - 1.0] of detected labels. Only labels detected with confidence higher than this threshold are returned.
+
+- **apiKeyOverride**: API key to use for ML API. If not set, the default API key from `firebase.app()` will be used.
+
+- **enforceCertFingerprintMatch**: Only allow registered application instances with matching certificate fingerprints to use ML API.
+
+Example: 
+
+```JSX
+await ml().cloudImageLabelerProcessImage(imagePath, {
+  confidenceThreshold: 0.8, // undefined | number
+  apiKeyOverride: "<-- API KEY -->",  undefined | string,
+  enforceCertFingerprintMatch: true, // undefined | false | true,
+});
+```
