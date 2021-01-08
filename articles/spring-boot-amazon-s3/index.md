@@ -10,23 +10,23 @@ Before we start creating our application, head over to [Amazon console](https://
 
 After signing up, head over to [Amazon console](https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1#) and search for Amazon S3 in the search box provided in the console.
 
-![](amazon-search-s3.png)
+![](/engineering-education/spring-boot-amazon-s3/amazon-search-s3.png)
 
 ### Amazon S3 bucket.
 After selecting amazon S3 from the above step, create a new S3 bucket which we will use to store the files we will be uploading from our application.
 
-![](amazon-s3-create-bucket.png)
+![](/engineering-education/spring-boot-amazon-s3/amazon-s3-create-bucket.png)
 Name the bucket as `spring-amazon-storage` and leave all other settings as default and create the bucket.
 
 ### Access and secret keys
 Create a new access key from my security credentials navigation menu as shown in the image below. Copy the access and the secret key generated as we will be using them to access the bucket we created earlier from the application we will be creating.
 
-![](amazon-security-key.png)
+![](/engineering-education/spring-boot-amazon-s3/amazon-security-key.png)
 
 ### Creating application
 We will be using [spring initializr](https://start.spring.io/) to create our application. Head over to [spring initializr](https://start.spring.io/) and create a new Spring Boot application adding `h2`, `spring boot dev tools`, `spring data jpa` and `spring web` as dependencies then generate the project.
 
-![](amazon-spring-boot-project.png)
+![](/engineering-education/spring-boot-amazon-s3/amazon-spring-boot-project.png)
 
 Unzip the downloaded project and open it in your favorite IDE.
 
@@ -284,7 +284,7 @@ public class TodoController {
 ```
 
 ### Testing upload and download from S3 bucket
-![](amazon-upload-image.png)
+![](/engineering-education/spring-boot-amazon-s3/amazon-upload-image.png)
 
 ### Conclusion
 Now that you have learned how to upload and download files from Amazon S3, go ahead and implement the logic for uploading multiple files to Amazon S3.
