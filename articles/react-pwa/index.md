@@ -19,7 +19,7 @@ To confirm that Node.js has been installed, open the terminal and execute the be
 node --version
 ```
 
-This will show the version of Node.js running on your system and that Node.js has been installed.
+This will show the version of Node.js running on your system and that will confirm that Node.js is installed in your system.
 
 First, we should create a new React application using the `create-react-app` command-line utility. On your terminal, execute the following command:
 
@@ -69,7 +69,7 @@ We'll have four functional components:
 4. The Todo component.
 
 ### The App component 
-Let's start with the `App` component since it is the parent component of the `TodoList` and the `Form` components. I have included a CSS file named `App.css` which should be in the `src/` folder as our *App.js* file.
+Let's start with the `App` component since it is the parent component of the `TodoList` and the `Form` components.
 
 ```javascript
 import React, { useState } from 'react';
@@ -105,14 +105,14 @@ The App component walkthrough:
 
 - We import the `TodoList` and `Form` component which we will create in the next steps. The CSS file named `App.css` is for basic styling of the application.
 
-- Inside the component, we'll create our state for the list of todos to using the `useState` hooks.
+- Inside the component, we'll create our state for the list of todos to using the `useState` hook.
 
 - The `addTodo` is a function that is used to add a new todo by calling the `setTodos` method to update the state. The component which is calling the `addTodo` function should pass the new todo to the function.
 
-- We use JSX to return a div containing `<h1>` tag as the header, the `Form` and `TodoList` components. Let us now create the components in the below steps.
+- We use JSX to return a div containing `<h1>` tag as the header, the `Form` and the `TodoList` components. Let us now create the components in the below steps.
 
 ### Form component
-This component will be used to add new todos. In your `src/` folder, create a new folder named `components`. Inside the `components` folder, you should create a file named `Form.js`. 
+This component will be used to add new todos. In your `src/` folder, create a new folder named `components`. Inside the `components` folder, create a file named `Form.js`. 
 
 This is the code for the `Form.js`:
 
@@ -151,20 +151,18 @@ export default Form;
 
 The Form component walkthrough:
 
-- The method `inputTextHandler` bound to the input tag is invoked every time when the value of the input element changes.
+- The method `inputTextHandler` set to the `onChange` property of the input tag is invoked every time the value of the input element changes.
 
-- The input element is a controlled component that will track the `inputText`. 
+- When the submit event is fired on the form, the function `submitTodoHandler` is executed. We are checking that the input is not empty before creating a new todo using the `addTodo` function passed down from `App` component.
 
-- When the submit event is fired on the form, the function `submitTodoHandler` is executed. We are checking that the input is not empty before creating a new todo in our `addTodo` function passed down from `App` component.
+- The method `setInputText` with an empty string as its argument inside the `submitTodoHandler` will reset the input tag.
 
-- The method `setInputText` inside the `submitTodoHandler` will reset the form.
-
-The todo will be an object with a structure like:
+The todo object that we pass the `addTodo` function should have a structure like:
 
 ```javascript
 {
   id: v4(),
-  task,
+  task: task,
   complete: false
 }
 ```
@@ -209,7 +207,7 @@ const TodoList = ({ todos, setTodos }) => {
   };
   
   const removeTodo=(id)=>{
-    setTodos(todos.filter(todo=>todo.id!==id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   }
 
   return (
@@ -235,7 +233,7 @@ In this component:
   
 - We map through the `todos` and return a JSX syntax with a new Todo component as the todo item.
   
-- The `removeTodo` is a function which accepts an `id` that uniquely identifies the `todo` in our list. Whatever todo that does not match the provided `id` is filtered and stored in the state using `setTodos`.
+- The `removeTodo` is a function which accepts an `id` that uniquely identifies the `todo` in our list.
 
 - We will use the `completeTodo` method to toggle between not completed and completed state using the ID of the todo that we recieve as an argument when the function is called.
 
@@ -275,7 +273,7 @@ export default Todo;
 ```
 
 ### Application Styling
-This tutorial assumes you know basics of CSS styling, so I have a basic CSS file: 
+This CSS file should be named `App.css` which should be in the `src/` folder like our `App.js` file.
 
 ```css
 body{
@@ -335,11 +333,11 @@ So far, your applicaation should look like this:
 ### Adding functionality to make it a Progressive Web App
 In this part, we will implement the Progressive Web App features. Some features of a progressive web app include:
 
-1. It must be discoverable and installable.
+1. A Progressive web App must be able to work offline.
    
-2. A Progressive web App must be able to work offline.
+2. It must be discoverable and installable.
 
-3. Safety as it should rely on the HTTPS protocol .
+3. Safety as it should rely on the HTTPS protocol.
 
 4. Should look and feel like native apps i.e run on a fullscreen mode etc.
   
@@ -423,28 +421,16 @@ This code does the following:
 
 - This returns a promise to install the service worker when we've cached our assets.
 
-- The activate listener is will manage our old caches and activate the service worker. 
+- The activate listener will manage our old caches and activate the service worker. 
 
 - The `CACHE_NAME` variable will help us fetch resources from the cache when offline. The `offline.html` file is the fallback markup file when there is no cache.
 
 - The `self` in the `self.addEventListener` references this keyword of the global service worker itself.
 
-### The Public folder
-The public folder currently has this structure:
-
-```bash
-favicon.ico
-index.html
-logo192.png
-logo512.png
-manifest.json
-robots.txt
-```
-I will use these default icons from our `create-react-app`. The `favicon.ico`, `logo192.png`, and `logo512.png` are icons that the user sees on the tab of mobile
-or desktop devices.
-
 ### Editing index.html file and Manifest
-Manifest is a JSON file that has metadata to describe how the app will appear to the user.
+I will use these default icons that is already in the `public` folder. The `favicon.ico`, `logo192.png`, and `logo512.png` are icons that the user will see on the tab of a mobile or a desktop device.
+
+`manifest.json` is a JSON file that has metadata to describe how the app will appear to the user.
 
 ```HTML
 <link rel="manifest" href="./manifest.json" />
@@ -483,9 +469,9 @@ on the home screen.
 
 ```
 
-We need to edit the `index.html` file to have these changes in our manifest file.
+We need to link the manifest file to the `index.html` file.
 
-The `index.html` file now looks like:
+The `index.html` file should look like:
 
 ```html
 <!DOCTYPE html>
@@ -520,9 +506,9 @@ The `index.html` file now looks like:
 ```
 
 ### Performance of the App
-I used lighthouse to generate an audit report. Our App scores 89/100 on performance.
+I used Lighthouse to generate an audit report. Our App scores 89/100 on performance.
 
-> Note that this will not pass the HTTPS audit in the development environment. So if we need hosting, make sure the production web-server supports HTTPS.
+> Note: This application will not pass the HTTPS audit in the development environment. So if we need hosting, make sure the production web-server supports HTTPS.
 
 Here is the final version of the App:
 
