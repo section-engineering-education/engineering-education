@@ -388,3 +388,6 @@ Make a `DELETE` request to `http://127.0.0.1:8080/api/v1/todo/2` adding to the e
 Now that you have learned how to create a Restful web service in Spring Boot, Clone the project [here](https://github.com/paulodhiambo/springbootcrud) and `IN_PROGRESS` status to our `TodoStatus` enum in the `models` package.
 
 In our next secure our Restful endpoints and handle various exceptions in our application.
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
