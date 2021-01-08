@@ -30,7 +30,7 @@ $ sudo mv yii-advanced-app-2.0.39.tgz /opt/xampp/htdocs
 ```
 3. Using the terminal open the  `/opt/xampp/htdocs` and unzip the Yii-2-advanced file.
 ```bash
-$ sudo tar-xvzf Yii-advanced-app-2.0.39.tgz
+$ sudo tar -xvzf yii-advanced-app-2.0.39.tgz
 ```
 Click [here](https://askubuntu.com/questions/499807/how-to-unzip-tgz-file-using-the-terminal) if you encounter any problem. 
 
