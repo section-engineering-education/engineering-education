@@ -119,7 +119,7 @@ In this case, we only have one entity: Device
 
 Attributes for the entity:
 
-```
+```bash
 device_id
 datacount
 timestamp
