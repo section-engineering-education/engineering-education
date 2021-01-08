@@ -1,5 +1,5 @@
 ### Introduction
-The base of every programming language is operators. Thus, without the use of  operators, the C++ programming language functionality is incomplete. Operators can be described as symbols that help us perform specific mathematical and logical operand computations. C++ language has several types of  operators built-in to the language. This article will take a look at the commonly used operators.
+The base of every programming language is operators. Thus, without the use of  operators, the C++ programming language functionality is incomplete. Operators can be described as symbols that help us perform specific mathematical and logical operand computations [Operators definition](https://www.geeksforgeeks.org/operators-c-c). C++ language has several types of  operators built-in to the language. This article will go through the commonly used operators.
 
 #### Prerequisites
 To follow this article, you’ll need to have:
@@ -15,12 +15,12 @@ To follow this article, you’ll need to have:
 6. [Bitwise operators](#bitwise-operators)
 
 #### Operator and operand definition
-An operator is a symbol that tells the compiler that it should execute a certain mathematical or logical manipulation. They are used in programs to modify data and variables. Operand on the other hand is any numerical value, variable and constant on which a program makes an operation.
+An operator is a symbol that tells the compiler that it should execute a certain mathematical or logical manipulation [Definition of an operator](https://www.studytonight.com/c/operators-in-c.php). They are used in programs to modify data and variables. Operand on the other hand is any numerical value, variable and constant on which a program makes an operation.
 For example, consider the statement below:
 `a= x+y;`
 
 Here, `+` is the addition operator and `x` and `y` are operands. 
-The addition operator instructs the compiler to add both `x` and `y` operands.
+The addition operator instructs the compiler to add both `x` and `y` operands [Operator and operand definition](https://www.geeksforgeeks.org/operators-c-c).
 
 #### Assignment operators
 They are used to assign a variable with a value. On the left-hand side of the assignment operator, the operand is a variable, while the operand is a value on the right-hand side. The value being assigned to the variable must be identical to the data type of the variable, or an error would be produced by the compiler.
@@ -73,7 +73,7 @@ Types of mathematical operators:
 - Unary operators - They operate with one operand. For example: `++` , `--`
 - Binary operators – They operate with two operands. For example: `+` ,` –` , `* `, `/`
 
-There are two unary operators for increasing and decreasing scalar objects. They can be used as either before the variable(prefix: ++n) or after the variable( postfix: n++). In prefix mode, it increments(adds 1)first then displays while in postfix it displays first then increments. The same applies for the decrement(subtracts 1) operator.
+There are two unary operators for increasing and decreasing scalar objects. They can be used as either before the variable(prefix: ++n) or after the variable( postfix: n++). In prefix mode, it increments(adds 1)first then displays while in postfix it displays first then increments. The same applies to the decrement(subtracts 1) operator.
 
 Binary operators are classified as follows:
 - `+ `(Addition) – Adds two operands.
@@ -124,14 +124,14 @@ x % y=2
 We used the'++' and'--' operators in the program above as prefixes. We can as well use it in postfix mode if required.
 
 #### Relational operators
-They are used, by comparison, to compare the values of two operands. If the condition is true, 1 will be returned, and if it is false, 0.
+They are used in the comparison of the values of operands. If the condition is true, 1 will be returned, and if it is false, 0.
 
-- `==` Is Equal To – It confirms whether or not the two operands given are equal. If so, then it's true. Otherwise, returns false.
-- `! =` Not Equal To – It confirms whether or not the two operands given are equal. If not, returns true. Otherwise, it returns false.
-- `>` Greater Than- It confirms that the first operand is or is not greater than the second operand. If so, then it's true. If not, returns false.
-- `< ` Less Than- It tests if the first operand is lower than the second. it returns true if so. Otherwise, returns false.
-- `>=` Greater Than or Equal To - It tests if the first operand is greater than the second operand or equal to the second operand. If so, true is returned. Otherwise, returns false.
-- `<=` Less Than or Equal To- It tests if the first operand is less than the second operand or equal to the second operand. It returns true if so, otherwise returns false.
+- `==` Is Equal To – It confirms whether or not the two operands given are equal. if true it returns 1 and when false it returns 0.
+- `! =` Not Equal To – It confirms whether or not the two operands given are equal. if true it returns 1 and when false it returns 0.
+- `>` Greater Than- It confirms whether the operand on the left is or is not greater than the operand on the right. if true it returns 1 and when false it returns 0.
+- `< ` Less Than- It confirms if the operand on the left is lower than the one on the right. if true it returns 1 and when false it returns 0.
+- `>=` Greater Than or Equal To - It confirms if the operand on the left is greater than the operand on the right or equal to it. if true it returns 1 and when false it returns 0.
+- `<=` Less Than or Equal To- It confirms if the operand on the left is less than the operand on the right or equal to it. if true it returns 1 and when false it returns 0.
 
 Program to illustrate the working of relational operators:
 ```c++
@@ -189,9 +189,9 @@ X > || != Y
 In the program above, if the condition is true, it displays the first statement otherwise if false, it will display the second statement. We use relational operators in programs to make decisions and create loops.
 
 #### Logical operators
-They are used to incorporate two or more conditions or to supplement the initial condition evaluation under consideration. If the expression is true, it returns 1. Otherwise, it returns 0.
+They are used to incorporate two or more conditions or to supplement the initial condition evaluation under consideration. If the expression under consideration is true, it returns 1. Otherwise, it returns 0.
 
-Types of Logical operators:
+Logical operators in C++:
 - `&&` Logical AND.- It returns true when both conditions under consideration are met.
 Otherwise, returns false.
 -`||`  Logical OR. - It returns true if one or both of the conditions under consideration is met. Otherwise, false returns.
@@ -241,8 +241,9 @@ The Logical `&&` operator evaluates to 1 because both operands are true. The log
 They are used on individual bits to perform operations. They are used beside `int` and `char` data types. These operations require the individual bits to be checked, set, or moved. They are needed since arithmetic operations at the bit-level are carried out by the Arithmetic-Logic Unit (ALU) present in the computer's CPU.
 
 Types of bitwise operators:
-- `&` Bitwise AND-  It takes two digits as operands and does AND on the two numbers each bit. The result of AND is 1 only when all the bits are 1. Or else, 0 will be returned.
-- `|` Bitwise OR- It takes two digits as operands and does OR on the two numbers each bit. The result of the OR is 1 if any of the two bits is 1. Or else, 0 will be returned.
+- `&` Bitwise AND-  It takes two digits as operands and does AND on the two numbers each bit. The AND output is 1 only when all of the bits are 1.
+- `|` Bitwise OR- It takes two digits as operands and does OR on the two numbers each bit. 
+If either of the two bits is 1., the output of the OR is 1, Or else, 0 gets returned.
 - `^` Bitwise XOR - takes two digits as operands and executes XOR on the two numbers each bit. If its two bits are distinct, so XOR's result is 1. Or else, 0 will be returned.
 - `~` Bitwise  NOT - One number is taken and all bits of it are inverted.
 - `<<` Bitwise Shift Left - It takes two digits, moves the first operand's bits to the left, and the second operand determines the number of positions to shift.
@@ -289,7 +290,7 @@ The value of x: -61
 The value of x: 240
 The value of x: 15
 ```
-In the program above we compare each of the binary digit of the two integers we have and return a 1 with a new integer anywhere both of the binary digits of the two integrs had a 1 and a 0 where the two binary digits are not 1. For example in the `&` operator we have:
+In the program above we compare each of the binary digits of the two integers we have and return a 1 with a new integer anywhere both of the binary digits of the two integers had a 1 and a 0 where the two binary digits are not 1. For example in the `&` operator we have:
 ```
  60 = 0011 1100
 &13 = 0000 1101
@@ -303,7 +304,7 @@ The bitwise OR `|` operator performs the following operation when the program is
 |13 = 0000 1101
       0000 1100  =61 
 ```
-Here, it compares the two integers binary digits and returns 1 if "either" of them are 1.
+Here, it compares the two integers binary digits and returns 1 if "either" of them is 1.
 
 The bitwise XOR `^` operator performs the following operation when the program is executed:
 ```
@@ -311,14 +312,14 @@ The bitwise XOR `^` operator performs the following operation when the program i
 |13 = 0000 1101
       0011 0001  =49 
 ```
-Here, it also compares the two number binary digits and returns 1 if "either" of them are 1.
+Here, it also compares the two number binary digits and returns 1 if "either" of them is 1.
 
 The bitwise NOT `~` operator performs the following operation when the program is executed:
 ```
  ~60 = 0011 1100
        1100 0011  = -61 
 ```
-Here,  It is somewhat different than the ones we've looked at so far. It only takes an integer after it rather than taking an integer on both of the sides. For any binary digit, the ~ operator inverts a number: from 0 to 1 and from 1 to 0.
+Here,  It is somewhat different from the ones we've looked at so far. It only takes an integer after it rather than taking an integer on both of the sides. For any binary digit, the ~ operator inverts a number: from 0 to 1 and from 1 to 0.
 
 The bitwise SHIFT LEFT `<<` operator performs the following operation when the program is executed:
 ```
@@ -327,7 +328,7 @@ The bitwise SHIFT LEFT `<<` operator performs the following operation when the p
     0
    0
 ```
-Here, instead of comparing two integers they shift an integer. The integer that is being shifted is on the left side of the operator, and on the right is the number to shift by. So, for example, 60 << 2 is shifting the number 60 to the left by 2 places. The 2 open bits of memory are replaced with zeros as shown below:
+Here, instead of comparing two integers, they shift an integer. The integer that is being shifted is on the left side of the operator, and the right is the number to shift by [Bitwise SHIFT LEFT operator](https://computerscience4beginners.wordpress.com/2016/09/27/bitwise-operators). So, for example, 60 << 2 is shifting the number 60 to the left by 2 places. The 2 open bits of memory are replaced with zeros as shown below:
 
 ```
 60<<2
@@ -345,7 +346,7 @@ The bitwise SHIFT RIGHT `>>` operator performs the following operation when the 
                 0
                   0
 ```
-Here, 60 >> 2 is shifting the number 60 to the right by 2 places.If we begin with a positive number with a 0 on the left, then all the empty spaces are filled with a 0. If a binary number where the leftmost bit is a 1 begins with a negative number, all the empty spaces are filled with a 1. The 2 open bits of memory are replaced with ones as shown below:
+Here, 60 >> 2 is shifting the number 60 to the right by 2 places. If we begin with a positive number with a 0 on the left, then all the empty spaces are filled with a 0 [Bitwise SHIFT RIGHT](https://computerscience4beginners.wordpress.com/2016/09/27/bitwise-operators). If a binary number starts with a negative number where the leftmost bit is a1, all empty spaces are filled with 1. The 2 open bits of memory are replaced with ones as shown below:
 
 ```
 60>>2
@@ -357,4 +358,4 @@ Here, 60 >> 2 is shifting the number 60 to the right by 2 places.If we begin wit
 ```
 
 ### Conclusion
-In this article, we got to explore operators provided by the c++ language. You need to know each operator as a beginner, when and how to use it. With that, you can perform any operation of mathematical and logical computation in your program with ease.
+In this article, we got to explore operators provided by the c++ language. You need to know each operator as a beginner, when, and how to use it. With that, you can perform any operation of mathematical and logical computation in your program with ease.
