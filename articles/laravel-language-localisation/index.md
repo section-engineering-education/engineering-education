@@ -1,7 +1,7 @@
 ### Introduction
 In software applications, Language localization refers to how a given product is adapted to a specific language translation depending on regions or countries. A perfect example is an online shopping site.
 
-For instance, Chinese can access Alibaba site in chinese while those in other regions such as the US can navigate the website using English. This is known as internationalization, commonly denoted as (i18n).  
+For instance, Chinese can access the Alibaba site in Chinese while those in other regions such as the US can navigate the website using English. This is known as internationalization, commonly denoted as (i18n).  
 
 It simply involves presenting your website in different languages.  
 Developers can use this feature to design applications that fit various cultures and languages through translations.  
@@ -30,11 +30,11 @@ Localization in Laravel can be achieved in two different ways.
 Laravel configurations are always stored in the `app/config` directory. Files such as database and other file systems are all configured here. This includes the application's default language. Let us start by building a simple application to help you follow along.  
 
 ### Setting Up Laravel
-We will be using Laravel 8.x and PHP 7.4.x in our application. Php dependencies are managed via composer. Think of it as NPM for Javascript. Therefore, to install Laravel, we should have composer on our computer.  
+We will be using Laravel 8.x and PHP 7.4.x in our application. Php dependencies are managed via composer. Think of it as NPM for Javascript. Therefore, to install Laravel, we should have a composer on our computer.  
 Follow these simple steps to make the composer available in your system.  
 
 To download composer, click [here](https://getcomposer.org/download/).  
-Once composer has been successfully downloaded, the next step is to run the following command in the command prompt.
+Once the composer has been successfully downloaded, the next step is to run the following command in the command prompt.
 
 ``` 
 composer global require laravel/installer
@@ -101,17 +101,17 @@ return [
 
 ```
 This is the part we're interested in, you can scroll down within the file to find this section.  
-A closer look at this part, the default `locale`  is set to `en ` , English
+A closer look at this part, the default `locale`  is set to `en `, English
 
 ```
 'locale'=>'en'
 ```
 Let's discuss where `en` is coming from:-  
-Remember at the beginning we said there are two ways to manage translation strings in Laravel. One techique involved storing translation strings in the `resources/lang` directory.
+Remember at the beginning we said there are two ways to manage translation strings in Laravel. One technique involved storing translation strings in the `resources/lang` directory.
 
 ### Lang Directory
 
-In this directory, there is a `en` folder which is included by default. It contains a few translation strings.  
+In this directory, there is an `en` folder which is included by default. It contains a few translation strings.  
 Let's have at the `resources/lang/en/auth.php` fil which also comes with Laravel by default:-
 
 ```php
@@ -201,12 +201,12 @@ Open the `language.php` file in your text editor for Spanish translation, ``es``
  ?>
 
  ```
-Pay attention to what's going on in these two files.
+Pay attention to what's going on in these two files:
 * Filename to hold strings are the same.
 * The array element names are the same for files.
 * The assignment strings have been translated to respective languages, in this case, Espanol and English.
 
-If you're comfortable with whats we have learned so far, it's time to make this simple application into action. 
+So far we have learned the basics of localization in Laravel, let's look at an example.
 
 ### View Directory
 By default, Laravel comes with a view `welcome.blade.php`, open this file and add the following:-
@@ -264,7 +264,7 @@ This is used to present translation strings, you can also use the @lang directiv
 ```
 
 If you open the browser, you will notice that the form is presented in English.  
-To change locale to Spanish,follow these simple steps:-  
+To change locale to Spanish, follow these simple steps:-  
 * Open ```app.php``` in the ```config``` directory.  
 * Scroll down to line:-
 ```php
