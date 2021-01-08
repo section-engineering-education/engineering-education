@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-aws-dynamodb/
 title: Getting Started With AWS DynamoDB
-description: This article will be an introduction to DynamoDB. DynamoDB is a managed NoSQL database service that offers top-notch performance.
+description: This article will be an introduction to AWS DynamoDB. Amazon web services DynamoDB is a managed NoSQL database service that offers top-notch performance.
 author: benson-kariuki
 date: 2021-01-08T00:00:00-12:00
 topics: []
