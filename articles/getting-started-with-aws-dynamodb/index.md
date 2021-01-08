@@ -251,11 +251,11 @@ The supported programming languages include PHP, Python, .Net, and Node.js. The 
 ### Conclusion
 This article is an introduction to Amazon DynamoDB. There is more to explore on Amazon DynamoDB. Further research, reading and hands-on areas on DynamoDB include:
 
-- Security issues
-- Monitoring
-- Best practices
-- DynamoDB transactions
-- Programming with DynamoDB using different programming languages
+- Security issues.
+- Monitoring.
+- Best practices.
+- DynamoDB transactions.
+- Programming with DynamoDB using different programming languages.
 
 You can also get a certification for DynamoDB under [AWS certified solutions architect associate](https://digitalcloud.training/certification-training/aws-solutions-architect-associate/database/).
 
