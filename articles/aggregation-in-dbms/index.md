@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/aggregation-in-dbms/
 title: Aggregation in Database Management Systems (DBMS)
-description: This article will be an introduction to Database Management Systems and how systems function properly through the concept of aggregation.
+description: This article will be an introduction to Database Management Systems and how systems function properly through the concept of aggregation. It also explains why aggregation is needed and how it functions. 
 author: onesmus-mbaabu
 date: 2021-01-08T00:00:00-16:00
 topics: []
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/aggregation-in-dbms/hero.jpg
-    alt: DBMS Image
+    alt: DBMS Database Management Systems Image
 ---
 Database management systems (DBMS) have replaced the traditional filing system by providing an easy, secure, efficient, and reliable way of storing, retrieving, accessing, and sharing data within databases. 
 <!--more-->
