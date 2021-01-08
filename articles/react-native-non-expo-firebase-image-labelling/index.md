@@ -69,3 +69,57 @@ pod install
 >
 > Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable multidexing.
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
+
+
+### Setting up the Firebase project
+
+Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
+
+Create a new project.
+
+![Create New Project](firebase_new.png)
+
+Once you create a new project, you'll see the dashboard. Upgrade you project to the Blaze plan.
+
+![New Dashboard](new_dashboard.png)
+
+Now, click on the Android icon to add an android app to the Firebase project.
+
+![register_app](register_app.png)
+
+You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+
+![Package Name](package_name.png)
+
+Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
+
+![Download Google Services JSON](download_services.json.png)
+
+After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
+
+First, add the `google-services` plugin as a dependency inside of your `android/build.gradle` file:
+
+```gradle
+buildscript {
+  dependencies {
+    // ... other dependencies
+
+    classpath 'com.google.gms:google-services:4.3.3'
+  }
+}
+```
+
+Then, execute the plugin by adding the following to your `android/app/build.gradle` file:
+
+```Gradle
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+```
+
+You need to perform some additional steps to configure `Firebase` for `iOS`. Follow [this documentation](https://rnfirebase.io/#3-ios-setup) to set it up.
+
+We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
+
+```bash
+npm install @react-native-firebase/app
+```
