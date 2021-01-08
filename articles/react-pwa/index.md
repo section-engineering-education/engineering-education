@@ -507,7 +507,7 @@ The `index.html` file now looks like:
 ```
 
 ### Performance of the App
-I have used lighthouse to generate an audit report. Our App scores 89/100 on performance.
+I have used [lighthouse](https://developers.google.com/web/tools/lighthouse) to generate an audit report. Lighthouse is an open-source automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps,SEO and more. In the current versions of Google Chrome, the tool will come pre-installed in the developer tools. Our App scores 89/100 on performance.
 
 > Note that this will not pass the HTTPS audit in the development environment. So if we need hosting, make sure the production web-server supports HTTPS.
 
