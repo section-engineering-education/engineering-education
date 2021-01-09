@@ -351,7 +351,7 @@ A service worker is a script that runs in the browser's background. It handles n
 // Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.unregister() 
 ```
-To opt in using the service worker, change the `serviceWorkerRegistration.unregister()` to `serviceWorkerRegistration.register()`. Workbox has helped us reduce the boilerplate needed every time when working with service workers such as installations,precaching, strategies, requests routing,  and activation. As this will always be generated for you, that resolves the part on how to create a service worker using React.
+To opt in using the service worker, change the `serviceWorkerRegistration.unregister()` to `serviceWorkerRegistration.register()`. Workbox has helped us reduce the boilerplate needed every time when working with service workers such as installations, precaching, strategies, requests routing,  and activation. As this will always be generated for you, that resolves the part on how to create a service worker using React.
 
 ### Configuring the Web App Manifest
 I will use these default icons that is already in the public folder. The favicon.ico, logo192.png, and logo512.png are icons that the user will see on the tab of a mobile or a desktop device.
