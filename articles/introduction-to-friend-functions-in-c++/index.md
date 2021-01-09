@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-friend-functions-in-c++/
 title: Introduction to Friend Functions in C++
-description:
+description: This article will serve as an introduction to friend functions in C++ and where to use it.
 author: dawe-daniel
 date: 2021-01-09T00:00:00-12:00
 topics: [Languages]
