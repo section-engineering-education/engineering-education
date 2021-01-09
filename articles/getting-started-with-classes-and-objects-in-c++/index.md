@@ -2,10 +2,10 @@
 The C language limitations are evident when a software project is too large to manage. This problem was addressed by adding several extensions to the C language. The main incorporation was the concept of class. The most significant aspect of C++ classes is that it promotes object-oriented programming which treats data as a critical element.  This article goes through the creation of classes, objects, and objects as function arguments.
 
 #### Prerequisites
-To follow this article, you’ll need to:
-- Have [Codeblocks](http://www.codeblocks.org/downloads) IDE to run the code.
-- Have a basic understanding of C++ language.
-- Have a basic understanding of functions.
+To follow this article, you’ll need to have:
+- [Codeblocks IDE](http://www.codeblocks.org/downloads) to run the code.
+- A basic understanding of C++ language.
+- A basic understanding of functions.
 
 #### What is a Class?
 A class is a logical method of grouping data and functions in the same construct. It is declared using the `class` keyword whose functionality is similar to that of the `struct` C keyword, but with the option of including functions as members rather than data only. Classes are data types specified by users and behave like a programming language's built-in types. We are able to construct objects of any number belonging to that class after the class has been defined.
