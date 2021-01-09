@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/introduction-to-android-views-and-view-groups/
-title: 
+title: Introduction to Android Views and Viewgroups
 description: In this article we will go through creating views and viewgroups. We will also see some of the attributes associated with our views and viewgroups, where they are used and what they are used for.
 author: dawe-daniel
 date: 2021-01-09T00:00:00-16:00
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-android-views-and-view-groups/hero.png
-    alt:  example image
+    alt: Android Views and Viewgroups example image
 ---
 All user’s interaction with an Android application is via the [user interface](https://www.studytonight.com/android/introduction-to-views) (UI). Knowing the fundamentals of the Android application’s user interface is essential. The UI of an Android application is made up of a collection of views and [view groups](https://www.programmersought.com/article/47124971866/). This article will go through commonly used views, view groups, and the attributes associated with them.
 <!--more-->
