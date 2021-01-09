@@ -223,3 +223,6 @@ In this article, we learned about friend functions and friend class, what they a
 - [Friend function of base classs and derived class](https://www.iditect.com/how-to/10227802.html)
 
 - [C++ friend Function and friend Classes](https://www.programiz.com/cpp-programming/friend-function-class)
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
