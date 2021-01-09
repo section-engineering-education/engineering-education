@@ -444,7 +444,7 @@ We will need to link the manifest file to the `index.html` as `<link rel="manife
 ```
 
 ### Performance of the App
-I have used lighthouse to generate an audit report. To test this, we need to generate the build app by runnnin `npm run build` on the terminal. When in developement mode, a static server may be used. Install via npm by running the command `npm install serve`. To start the static server, run the command `serve -s build` and open your browser on `http://localhost:5000`.
+I have used lighthouse to generate an audit report. [Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more. To test this, we need to generate the production build by running `npm run build` on the terminal. When in developement mode, a static server may be used. Install one via npm by running the command `npm install serve`. To start the static server, run the command `serve -s build` and open your browser on `http://localhost:5000`.
 
 > Note that this will not pass the HTTPS audit in the development environment. So if you need hosting, make sure the production web-server supports HTTPS.
 
