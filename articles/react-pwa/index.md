@@ -26,10 +26,10 @@ First, we now need to create a new React application using the boilerplate code 
 create-react-app command-line utility. On your terminal, execute the following command:
 
 ```bash
-npx create-react-app react-pwa
+npx create-react-app react-pwa --template cra-template-pwa
 ```
 
-This will create a folder named `react-pwa`. You can now open the project in your favorite code editor.
+This will create a folder named `react-pwa`. The argument `--template cra-template-pwa` is added to create an app with service worker for Progressive Web App functionality,as version 4 or later will not provide a built-in service worker. We will use this part of the later. You can now open the project in your favorite code editor.
 
 The folder structure will initially look similar to this:
 
@@ -47,12 +47,15 @@ src/
 |--- App.test.js
 |--- index.js
 |--- index.css
-|--- serviceWorker.js
+|--- service-worker.js
+|--- serviceWorkerRegistration.js
+|--- setupTest.js
 |--- logo.svg
+.eslintcache
 .gitignore
 package.json
+package-lock.json
 README.md
-yarn.lock
 ```
 
 Our React code will be in the `src` folder. Inside this folder, delete the `logo.svg` and remove everything in both `App.css` and `App.js` files before we start to build the application.
@@ -326,7 +329,9 @@ Your app so far should look like this:
 
 
 ### Adding functionality to make it a Progressive Web App
-In this part, we will implement the Progressive Web App features. Some features of a progressive web app include:
+This is the section that we will briefly configure the Progressive Web App features using the workbox tool added during create-react-app installation. [Workbox](https://developers.google.com/web/tools/workbox) is a set of tools and libraries that help to manage service workers and caching with the `CacheStorage` API.
+
+Some features of a progressive web app include:
 1. It must be discoverable and installable
    
 2. A Progressive web App must be able to work offline
@@ -335,111 +340,24 @@ In this part, we will implement the Progressive Web App features. Some features 
 
 4. Should look and feel like native apps i.e run on a fullscreen mode etc.
   
-Our application will add functionalities such as running the application offline, caching assets by registering
+Our application will need functionalities to run offline, caching assets by registering
 service workers, and also installing it on the end user's device home screen.
 
 ### Registering a service worker
-A service worker is a script that runs in the browser's background. It handles network intercepts from requests and managing caching for offline availability.
-
-Inside our `public` folder, open the index.html file. Below the file, add the following code. The code below will be inside a script tag.
-
+A service worker is a script that runs in the browser's background. It handles network intercepts from requests and managing caching for offline availability. The create-react-app provided all the tools needed to create a Progressive Web App in React. To configure this to run offline, we need to register the generated service worker file. In the project, open the file named `index.js` and find the code like:
 ```javascript
-if("serviceWorker" in navigator){
-window.addEventListener("load",()=>{
-  navigator.serviceWorker.register('./serviceworker.js')
-  .then(registration=>console.log('Success',registration.scope))
-  .catch(err=>console.log("Error",err))
-})
-}
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://cra.link/PWA
+serviceWorkerRegistration.unregister() 
 ```
+To opt in using the service worker, change the `serviceWorkerRegistration.unregister()` to `serviceWorkerRegistration.register()`. Workbox has helped us reduce the boilerplate needed every time when working with service workers such as installations,precaching, strategies, requests routing,  and activation. As this will always be generated for you, that resolves the part on how to create a service worker using React.
 
-In the above code:
+### Configuring the Web App Manifest
+I will use these default icons that is already in the public folder. The favicon.ico, logo192.png, and logo512.png are icons that the user will see on the tab of a mobile or a desktop device.
 
-- The `if statement` is checking if the browser supports service workers.
-
-- This should return a boolean. When this is returns true, a service worker is registered pointing to the file named `serviceWorker.js` on the `load` event listener.
-
-Now that our service worker is registered, we will create the worker file named `serviceworker.js` inside the `public` directory.
-
-The `serviceworker.js` file will have the following code.
-
-```javascript
-const CACHE_NAME="version-1"
-const urlsToCache=[" index.html","offline.html"]
-
-const self=this;
-// istall service worker
-self.addEventListener("install",(e)=>{
-    e.waitUntil(
-        caches.open(CACHE_NAME)
-        .then((cache)=>{
-            console.log("Opened cache...")
-            return cache.addAll(urlsToCache)
-        })
-    )
-})
-// listen request
-self.addEventListener("fetch",(e)=>{
-        e.respondWith(
-            caches.match(e.request)
-                    .then(()=>{
-                        return fetch(e.request)
-                                .catch(()=>caches.match('offline.html'))
-                    })
-        )
-})
-// activate service worker
-self.addEventListener("activate",(e)=>{
-    const cacheWhitelist=[]
-    cacheWhitelist.push(CACHE_NAME);
-
-    e.waitUntil(
-        caches.keys().then((cacheNames)=>Promise.all(
-            cacheNames.map((cacheName)=>{
-                if(!cacheWhitelist.includes(cacheName)){
-                    return caches.delete(cacheName)
-                }
-            })
-        ))
-    )
-})
-```
-This code does the following:
-
-- We are starting with the install step. At this step, we are trying to cache some static assets that will be available offline.
-
-- This returns a promise to install the service worker when we've cached our assets.
-
-- The activate listener is will manage our old caches and activate the service worker. 
-
-- The `CACHE_NAME` variable will help us fetch resources from the cache when offline. The `offline.html` file is the fallback markup file when there is no cache.
-
-- The `self` in the `self.addEventListener` references this keyword of the global service worker itself.
-
-### The Public folder
-The public folder currently has this structure:
-
-```bash
-favicon.ico
-index.html
-logo192.png
-logo512.png
-manifest.json
-robots.txt
-```
-I will use these default icons from our `create-react-app`. The `favicon.ico`, `logo192.png`, and `logo512.png` are icons that the user sees on the tab of mobile
-or desktop devices.
-
-### Editing index.html file and Manifest
-Manifest is a JSON file that has metadata to describe how the app will appear to the user.
-
-```HTML
-<link rel="manifest" href="./manifest.json" />
-```
-
-In our `manifest.json` file, the code contains icons used as images of different sizes
-on the home screen.
-
+The `manifest.json` is a JSON file that has metadata to describe how the app will appear to the user.
+In our manifest.json file, the code contains icons used as images of different sizes on the home screen.
 ```JSON
 {
   "short_name": "React PWA",
@@ -465,63 +383,83 @@ on the home screen.
   "display": "standalone",
   "theme_color": "#F4BD42",
   "background_color": "#2B2929",
-  "scope":"/"
 }
-
 ```
+The functionality of this attributes in the manifest are:
 
-We need to edit the `index.html` file to have these changes in our manifest file.
+- The attributes `"short_name"` and `"name"` are used within the users' home screens and icon banners respectively.
+  
+- The `"icons"` is an array containing the set of icons used on home or splash screens.
 
-The `index.html` file now looks like:
+- The `"start_url"` is the page displayed on startup. In this case the home page.
+  
+- The `"display"` property will be responsible for the browser view. When standalone, the app hides address bar and runs in a new window like a native app.
+  
+- `"theme_color"` is the color of the toolbar in the app.
 
-```html
+- `"background_color"` is the color of the splash screen.
+
+We will need to link the manifest file to the `index.html` as `<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />`and add the icon that will point to the apple devices home screen as `<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />` . The index.html markup looks like:
+```HTML
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Todo Web App on PWA"
-    />
-    <link rel="apple-touch-icon" href="./logo192.png" />
-    <link rel="manifest" href="./manifest.json" />
-    <title>React Todo PWA</title>
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React Progresive Web App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-        <script>
-      if("serviceWorker" in navigator){
-        window.addEventListener("load",()=>{
-          navigator.serviceWorker.register('./serviceworker.js')
-          .then(registration=>console.log('Success',registration.scope))
-          .catch(err=>console.log("Error",err))
-        })
-      }
-    </script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
 ```
 
 ### Performance of the App
-I have used lighthouse to generate an audit report. Our App scores 89/100 on performance.
+I have used lighthouse to generate an audit report. To test this, we need to generate the build app by runnnin `npm run build` on the terminal. When in developement mode, a static server may be used. Install via npm by running the command `npm install serve`. To start the static server, run the command `serve -s build` and open your browser on `http://localhost:5000`.
 
-> Note that this will not pass the HTTPS audit in the development environment. So if we need hosting, make sure the production web-server supports HTTPS.
+> Note that this will not pass the HTTPS audit in the development environment. So if you need hosting, make sure the production web-server supports HTTPS.
 
 Here is the final version of the App:
+The development version performance
 
-![PWA Performance](/engineering-education/react-pwa/performance.png)
+![PWA Performance](/engineering-education/react-pwa/pwa-performance.png)
 
 ![PWA install](/engineering-education/react-pwa/install.png)
 
 ![Requirements for PWA](/engineering-education/react-pwa/requirements.png)
 
-Our app is now installable by clicking the plus(+) icon on google chrome. The cache will make it available for offline use.
+Our app is now installable by clicking the plus(+) icon on google chrome near bookmarks icon and available for offline use.
 
-Check the deployed app on [netlify](https://infallible-brahmagupta-cdcafd.netlify.app/) and the project in my repository [here](https://github.com/ReactifyStudio/React-Progressive-Web-App).
+Check the deployed app on [netlify](https://reactify-pwa.netlify.app/) and the project source code in my repository [here](https://github.com/ReactifyStudio/React-Progressive-Web-App).
 
 ### Summary
 In summary, we learned how to create a Todo app using the React library, with outstanding features such as React Hooks and functional components. We created a Form input and functionality to add todo tasks, mark them as complete and delete the todo tasks. We then explored some introduction to Progressive Web Apps and turned our Todo app into a PWA.
