@@ -90,7 +90,7 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/engineering-education/react-native-agora-video-conference-appenv_setup.png)
+![Env Setup](/engineering-education/react-native-razorpay/env_setup.png)
 
 ### Cloning the starter code
 To focus more on the Razorpay Transactions, I've prepared a starter code. You can clone it from [this repository](https://github.com/zolomohan/rn-razorpay-app-starter) on GitHub. Follow the Repository's README for instructions.
