@@ -344,7 +344,7 @@ Our application will need functionalities to run offline, caching assets by regi
 service workers, and also installing it on the end user's device home screen.
 
 ### Registering a service worker
-A service worker is a script that runs in the browser's background. It handles network intercepts from requests and managing caching for offline availability. The create-react-app provided all the tools needed to create a Progressive Web App in React. To configure this to run offline, we need to register the generated service worker file. In the project, open the file named `index.js` and find the code like:
+A service worker is a script that runs in the browser's background. It handles network intercepts from requests and managing caching for offline availability. The create-react-app provided all the tools needed to create a Progressive Web App in React. To configure this to run offline, we need to register the generated service worker file. In the project, open the file named `index.js` and find the code that looks like:
 ```javascript
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
@@ -354,10 +354,10 @@ serviceWorkerRegistration.unregister()
 To opt in using the service worker, change the `serviceWorkerRegistration.unregister()` to `serviceWorkerRegistration.register()`. Workbox has helped us reduce the boilerplate needed every time when working with service workers such as installations, precaching, strategies, requests routing,  and activation. As this will always be generated for you, that resolves the part on how to create a service worker using React.
 
 ### Configuring the Web App Manifest
-I will use these default icons that is already in the public folder. The favicon.ico, logo192.png, and logo512.png are icons that the user will see on the tab of a mobile or a desktop device.
+I will use these default icons in the public folder. The favicon.ico, logo192.png, and logo512.png are icons that the user will see on the tab of a mobile or a desktop device.
 
 The `manifest.json` is a JSON file that has metadata to describe how the app will appear to the user.
-In our manifest.json file, the code contains icons used as images of different sizes on the home screen.
+In our `manifest.json` file, the code contains icons used as images of different sizes on the home screen.
 ```JSON
 {
   "short_name": "React PWA",
@@ -385,7 +385,7 @@ In our manifest.json file, the code contains icons used as images of different s
   "background_color": "#2B2929",
 }
 ```
-The functionality of this attributes in the manifest are:
+The functionality of these attributes in the manifest are:
 
 - The attributes `"short_name"` and `"name"` are used within the users' home screens and icon banners respectively.
   
@@ -395,9 +395,9 @@ The functionality of this attributes in the manifest are:
   
 - The `"display"` property will be responsible for the browser view. When standalone, the app hides address bar and runs in a new window like a native app.
   
-- `"theme_color"` is the color of the toolbar in the app.
+- Property `"theme_color"` is the color of the toolbar in the app.
 
-- `"background_color"` is the color of the splash screen.
+- Property `"background_color"` is the color of the splash screen.
 
 We will need to link the manifest file to the `index.html` as `<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />`and add the icon that will point to the apple devices home screen as `<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />` . The index.html markup looks like:
 ```HTML
