@@ -7,19 +7,19 @@ Now, **Multer is an npm package that makes it easy to handle the file uploads.**
 
 ### Prerequisites
 
-**1.** Good understanding of HTML and CSS.
-**2.** Node.js should be installed in your system and you should have a working knowledge of it.
-**3.** MongoDB should be installed in your system and you should have a working knowledge of it.
-**4.** Good understanding of Command-Line or Integrated Terminal in code-editors.
+**1.** Good understanding of HTML and CSS.<br/>
+**2.** Node.js should be installed in your system and you should have a working knowledge of it.<br/>
+**3.** MongoDB should be installed in your system and you should have a working knowledge of it.<br/>
+**4.** Good understanding of Command-Line or Integrated Terminal in code-editors.<br/>
 
 ### Goals of the Tutorial
 
 The goal of this tutorial is to help you understand these things:-
 
-**1.** How to design an API endpoint for posting data.
-**2.** How to use Multer as a middleware for that API.
-**3.** How to manage and store those files on the server-side.
-**4.** How to view those files on the Frontend.
+**1.** How to design an API endpoint for posting data.<br/>
+**2.** How to use Multer as a middleware for that API.<br/>
+**3.** How to manage and store those files on the server-side.<br/>
+**4.** How to view those files on the Frontend.<br/>
 
 ### Project setup
 
@@ -117,9 +117,9 @@ Now, before that, we have to install the **three most important npm packages tha
 npm i express body-parser mongoose
 ```
 
-**1)** Express will help us creating different API endpoints and much more.
-**2)** body-parser will mount the data coming from the form onto the incoming request.
-**3)** mongoose will help us to work with MongoDB much easily.
+**1)** Express will help us creating different API endpoints and much more.<br/>
+**2)** body-parser will mount the data coming from the form onto the incoming request.<br/>
+**3)** mongoose will help us to work with MongoDB much easily.<br/>
 
 **Let's start by creating a new file named "app.js" in our root directory.**
 In this file, we will make different routes and also write some configuration code.
@@ -231,16 +231,16 @@ to this:-
 
 **Now your folder structure must look like this.**
 
-├───node_modules (folder)
-├───public (folder)
-│ └───css (folder)
-|──────└───style.css (file)
-|───views (folder)
-│────└───index.ejs (file)
-├───app.js (file)
-├───package-lock.json (file)
-├───package.json (file)
-├───server.js (file)
+├───node_modules (folder) <br/>
+├───public (folder) <br/>
+│ └───css (folder) <br/>
+|──────└───style.css (file) <br/>
+|───views (folder)<br/>
+│────└───index.ejs (file)<br/>
+├───app.js (file)<br/>
+├───package-lock.json (file)<br/>
+├───package.json (file)<br/>
+├───server.js (file)<br/>
 
 **Finally, we can define some routes in our app.js file.** So, we will start by defining the route for our home page.
 
@@ -330,19 +330,19 @@ const File = require("./model/fileSchema");
 
 :rocket: **Create a new folder named "files" inside the public folder. This is where we'll be storing the uploaded files.** :rocket:
 
-**Folder Structure:-**
-├───model (folder)
-│ └───fileSchema.js (file)
-├───node_modules (folder)
-├───public (folder)
-│ └───css (folder), files(folder)
-|──────└───style.css (file)
-|───views (folder)
-│────└───index.ejs (file)
-├───app.js (file)
-├───package-lock.json (file)
-├───package.json (file)
-├───server.js (file)
+**Folder Structure:-** <br/>
+├───model (folder) <br/>
+│ └───fileSchema.js (file) <br/>
+├───node_modules (folder) <br/>
+├───public (folder) <br/>
+│ └───css (folder), files(folder) <br/>
+|──────└───style.css (file) <br/>
+|───views (folder) <br/>
+│────└───index.ejs (file) <br/>
+├───app.js (file) <br/>
+├───package-lock.json (file) <br/>
+├───package.json (file) <br/>
+├───server.js (file) <br/>
 
 ### MULTER
 
