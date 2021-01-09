@@ -44,11 +44,9 @@ To make a function that is declared outside the class "friendly" to that class, 
 
 ```c++
 class className{
-
- ……
-
- friend returnType functionName(arg list);
- };
+  // Other Declarations
+  friend returnType functionName(arg list);
+};
 ```
 
 As we can see above, the friend function should be declared inside the class whose private and protected members are to be accessed [Friend function syntax](https://www.softwaretestinghelp.com/friend-functions-in-cpp).
@@ -68,8 +66,7 @@ The friend function definition is found outside the class like a normal member f
 #### Friend function declaration
 
 ```c++
-//Program to illustrate 
-//Friend function
+// Program to illustrate friend function
 
 #include<iostream>
 
@@ -77,51 +74,47 @@ using namespace std;
 
 class integer
 {
-int a, b;
-public:
-void set_value()
-{
-a=50;
-b=30;
-}
-friend int mean(integer s);  //declaration of friend function
+  int a, b;
+  public:
+    void set_value()
+    {
+    a=50;
+    b=30;
+    }
+  friend int mean(integer s);  //declaration of friend function
 };
 
 int mean(integer s)
 {
-return int(s.a+s.b)/2.0; //friend function definition
+  return int(s.a+s.b)/2.0; //friend function definition
 }
 int main()
 {
-integer c;
-c.set_value();
-cout<< "Mean value:" <<mean(c);
-return 0;
+  integer c;
+  c.set_value();
+  cout<< "Mean value:" <<mean(c);
+  return 0;
 }
 ```
 
-The output of our program will be:
-Mean value: 40
+The output of our program will be: `Mean value: 40`
 
 Let's break down the program below:
 
-We have declared the friend function `int mean` that takes objects as arguments. The function definition is outside the scope of the class. The function uses the dot membership operator `.` and the object passed as an argument to it to access the variables of the class `a` and `b`. The function call `mean(c)` passes by value the object `c`  to the friend function.
+We have declared the friend function `mean` that takes objects as arguments. The function definition is outside the scope of the class. The function uses the dot membership operator `.` and the object passed as an argument to it to access the variables of the class `a` and `b`. The function call `mean(c)` passes by value the object `c`  to the friend function.
 
 Through the use of the `friend` keyword, member functions of one class can also be made friend functions of another class by defining the function using the scope resolution operator as shown below:
 
 ```c++
 class className1{
-
- ……
-int functionName1();    // member function of className1
-
- };
+  // Other Declarations
+  int functionName1(); // member function of className1
+};
 
 class className2
 {
-……
-
-friend int className1::functionName();	//The functionName1() is a friend of className2
+  // Other Declarations
+  friend int className1::functionName();	//The functionName1() is a friend of className2
 };
 ```
 
@@ -132,14 +125,15 @@ A friend class can have access to the data members and functions of another clas
 
 ##### Syntax of friend class:
 ```c++
-class S     //forward declaration
+class S; //forward declaration
 
 class P{
-……
-friend class S;
+  // Other Declarations
+  friend class S;
 };
+
 class S{
-……..
+  // Declarations
 };
 ```
 
@@ -149,8 +143,6 @@ In the illustration above, `class S` is a friend of `class P`. As a result `clas
 
 Example of a program to illustrate friend class:
 ```c++
-//program to illustrate
-//friend class
 #include <iostream>
 using namespace std;
 
@@ -158,18 +150,18 @@ using namespace std;
 class ClassY;
 
 class ClassX {
-        int digit1;
+  int digit1;
 
-        // friend class declaration
-        friend class ClassY;
+  // friend class declaration
+  friend class ClassY;
 
-    public:
-        // constructor to initialize num1 to 10
-        ClassX() : digit1(10) {}
+  public:
+      // constructor to initialize num1 to 10
+      ClassX() : digit1(10) {}
 };
 
 class ClassY {
-        int digit2;
+    int digit2;
 
     public:
         // constructor to initialize num2 to 5
@@ -190,7 +182,7 @@ int main() {
 }
 ```
 
-The output will be: `50`
+The output will be: `Multiplication: 50`
 
 In the program above, we have declared two classes X and Y. `ClassY` is a friend class of `ClassX`. Therefore, `ClassY` has access to the member function of `classX`. In ClassY, we have created a function` multiply()` that returns the multiplication of `digit1` and `digit2`. `ClassY` being a friend class enables us to create objects of `ClassX` inside of ClassY. This is possible through forward declaration of the `classY`. 
 
@@ -202,15 +194,15 @@ In the program above, we have declared two classes X and Y. `ClassY` is a friend
 - Friendship cannot be inherited.
 
 ### Conclusion
-In this article, we got to explore friend functions and friend class, what they and where they are used. By making a function and class "friendly" we reduce having too many functions therefore, we have programs that are maintainable and easy to read.
+In this article, we learned about friend functions and friend class, what they and where they are used. By making a function and class "friendly" we reduce having too many functions therefore, we have programs that are maintainable and easy to read.
 
 ### Additional Resources
- [Friend class and friend functions in C++](https://codevidyalay.blogspot.com/2019/09/friend-class-and-friend-function-in-c.html)
+- [Friend class and friend functions in C++](https://codevidyalay.blogspot.com/2019/09/friend-class-and-friend-function-in-c.html)
 
- [Friend functions](https://mounanaravani.files.wordpress.com/2017/02/17-friend-functions.pdf)
+- [Friend functions](https://mounanaravani.files.wordpress.com/2017/02/17-friend-functions.pdf)
 
- [Friend functions in C++](https://www.softwaretestinghelp.com/friend-functions-in-cpp)
+- [Friend functions in C++](https://www.softwaretestinghelp.com/friend-functions-in-cpp)
 
- [Friend function of base classs and derived class](https://www.iditect.com/how-to/10227802.html)
+- [Friend function of base classs and derived class](https://www.iditect.com/how-to/10227802.html)
 
- [C++ friend Function and friend Classes](https://www.programiz.com/cpp-programming/friend-function-class)
+- [C++ friend Function and friend Classes](https://www.programiz.com/cpp-programming/friend-function-class)
