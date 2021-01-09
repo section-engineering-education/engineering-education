@@ -9,6 +9,7 @@ To follow this article, you’ll need to:
 
 #### What is a Class?
 A class is a logical method of grouping data and functions in the same construct. It is declared using the `class` keyword whose functionality is similar to that of the `struct` C keyword, but with the option of including functions as members rather than data only. Classes are data types specified by users and behave like a programming language's built-in types. We are able to construct objects of any number belonging to that class after the class has been defined.
+
 #### What is an Object?
 An object is a data structure that encapsulates data and functions in a single construct. In an object-oriented framework, they are the basic run-time entities. Objects can represent anything the program has to handle such as a shape, a place, time, and many others.
 
