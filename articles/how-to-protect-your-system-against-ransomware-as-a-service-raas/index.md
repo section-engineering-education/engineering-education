@@ -61,7 +61,7 @@ Some of these preventive measures are outlined below.
 - Take training or courses on recognizing potential security threats, draft processes, and policies on how to deal with suspicious activities.
 
 ### Conclusion
-Ransomware-as-a-Service (RaaS) adds to the list of the latest driving force of cyber-criminal activities. You must take preventive measures to address this problem. Affordability and ease of deployment are some of the primary reasons why RaaS is on the rise.
+Ransomware-as-a-Service (RaaS) adds to the list of the latest driving forces of cyber-criminal activities. One must take preventive measures to address this problem and take it seriously. Affordability and the ease of deployment (among professional and novice hackers) are some primary reasons why RaaS is on the rise.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
