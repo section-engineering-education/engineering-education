@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/introduction-to-solid-principle/
-title: Introduction to Solid Principle
+title: Introduction to the Solid Principle
 description: This tutorial will serve as an introduction to the SOLID principle. Which is a design principle and pattern intended to make software designs more understandable, flexible, and maintainable.
 author: adetu-ridwan
 date: 2021-01-09T00:00:00-17:00
