@@ -1,25 +1,36 @@
-test
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-and-when-to-apply-session-storage-with-javascript/
+title: How and When to Apply Session Storage with JavaScript
+description: In the guide, learn when it's best to use Session Storage and how to implement it using JavaScript.
+author: michael-barasa
+date: 2021-01-10T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-
-
-
-sessionStorage is a popular choice when it comes to storing data on the browser. It enables developers to save and retrieve different values. Unlike localStorage, sessionStorage only keeps data for a particular session. The data is cleared once the user closes the browser window.
+  - url: /engineering-education/how-and-when-to-apply-session-storage-with-javascript/hero.jpg
+    alt: How and When to Apply Session Storage with JavaScript image
+---
+sessionStorage is a popular choice when it comes to storing data on the browser. It enables developers to save and retrieve different values. <!--more--> Unlike localStorage, sessionStorage only keeps data for a particular session. The data is cleared once the user closes the browser window.
 
 ### Introduction
 
-`sessionStorage` is a perfect alternative to cookies. Its syntax is quite straightforward. This means that it can easily be learned and implemented by beginners. sessionStorage can also accommodate a huge amount of data. Most browsers, including Chrome and Firefox, can store about 10 MBs of data in sessionStorage.
+sessionStorage is a perfect alternative to cookies. Its syntax is quite straightforward. This means that it can easily be learned and implemented by beginners. sessionStorage can also accommodate a huge amount of data. Most browsers, including Chrome and Firefox, can store about 10 MBs of data in sessionStorage.
 
 ### Prerequisites
 
-To follow along, you must have some basic understanding of `HTML` and `JavaScript`. You should also have a browser installed on your computer.
+To follow along, you must have some basic understanding of HTML and JavaScript. You should also have a browser installed on your computer.
 
 ### Goal
 
-To demonstrate how to store, retrieve, delete, and clear items in the sessionStorage.
+To demonstrate how to store, retrieve, delete, and clear items in sessionStorage.
 
 ### Step 1 – Creating the project
 
-Create a new folder on your desktop. In this folder, create `index.html` and `main.js` files. You can then open these files in Visual Studio Code or your preferred editor. All our JavaScript functions relating to the `sessionStorage` object will be in the `main.js` file. We will then import this file in the `index.html`.
+First, create a new folder on your desktop. In this folder, create `index.html` and `main.js` files. You can then open these files in Visual Studio Code or your preferred editor. All our JavaScript functions relating to the `sessionStorage` object will be in the `main.js` file. We will then import this file in the `index.html`.
 
 ### Step 2 – Understanding sessionStorage functions
 
@@ -27,48 +38,57 @@ Before we get started, it is important to understand the different methods suppo
 
 #### setItem()
 
-This method is called to store values in the sessionStorage. This method takes in the key and values as parameters.
+This method is called to store values in sessionStorage. This method takes in the key and values as parameters.
+
 ```javascript
-sessionStorage.setItem("name:, "John Smith");
+sessionStorage.setItem("name:, "John Smith");;
 ```
+
 In the above function, `name` is the key, while `John Smith` is the value.
 
 #### getItem()
 
 This function is used to retrieve values from the sessionStorage. It takes in the `key` as a parameter. Using the above example, the key is `name`.
+
 ```javascript
 var user = sessionStorage.getItem("name");
 ```
 
 #### removeItem()
-This method also requires a `key` as a parameter. The method will then delete the specified item from the sessionStorage.
+
+This method also requires a `key` as a parameter. The method will then delete the specified item from sessionStorage.
+
 ```javascript
 sessionStorage.remove("name");
 ```
-When called, the above statement will remove `John Smith` from the sessionStorage.
+
+When called, the above statement will remove `John Smith` from sessionStorage.
 
 #### clear()
 
 As the name suggests, this function deletes all items from the sessionStorage. This method does not require any parameters.
+
 ```javascript
 sessionStorage.clear();
 ```
-Let&#39;s implement sessionStorage in a real-life application.
+
+Let's implement sessionStorage in a real-life application.
 
 ### Step 3 – Creating the view
 
-In this step, we will design a simple web page that we will use to interact with the sessionStorage functionalities. The page is designed using HTML 5. The `main.js` file must be imported in the `index.html` file. This allows us to access the required sessionStorage functions. Kindly, note that we will use Bootstrap to style our web page. 
-Here is the Bootstrap link.
-```
+In this step, we will design a simple web page that we will use to interact with the sessionStorage functionalities. The page is designed using HTML5. The `main.js` file must be imported in the `index.html` file. This allows us to access the required sessionStorage functions. Kindly, note that we will use Bootstrap to style our web page. Here is the Bootstrap link.
+
+``` html
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 ```
+
 We import the main.js file using the below code snippet.
 
 ```html
   <script type="text/javascript" src="main.js"></script>
 ```
 
-It&#39;s important to ensure that all of our buttons have an `id`. This is because we will handle their click events in the `main.js` file.
+It's important to ensure that all of our buttons have an `id`. This is because we will handle their click events in the `main.js` file.
 
 ```html
 <!DOCTYPE html>
@@ -80,13 +100,9 @@ It&#39;s important to ensure that all of our buttons have an `id`. This is becau
   <title>sessionStorage</title>
   <script type="text/javascript" src="main.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 </head>
 
 <body>
-
-  <br>
-  <br>
   <div class="container" id="formDiv">
         <form class="form-signin" id="carForm">
             <h1>Enter details</h1>
@@ -96,20 +112,12 @@ It&#39;s important to ensure that all of our buttons have an `id`. This is becau
             <input type="text" id="carPrice" class="form-control" placeholder="Price" required><br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </form>
-        <br>
-        <br>
 
         <button class="btn btn-lg btn-primary btn-block" id="retrieveButton">Retrieve records</button>
-        <br>
         <div id="retrieve"></div>
-        <br>
 
         <button class="btn btn-lg btn-danger btn-block" id="removeButton">Remove record</button>
-        <br>
-        <br>
-
         <button class="btn btn-lg btn-danger btn-block" id="clearButton">Clear all records</button>
-
   </div>
 
 </body>
@@ -123,16 +131,16 @@ The above web page has four buttons with the `ids` of `removeButton`, `clearButt
 
 `clearButton` – this button calls the `clearStorage` method.
 
-`submit` – stores or saves values in the `sessionStorage`.
+`submit` – stores or saves values in `sessionStorage`.
 
-`clearButton` – deletes all items in the `sessionStorage`.
+`clearButton` – deletes all items in `sessionStorage`.
 
-All of these functions are defined in the `main.js` file.
+All of these functions are defined in `main.js` file.
 
-The `store()` will take in the user input and pass the values to the `setItem()` method as parameters. As a result, these values or objects will be stored in the `sessionStorage`. The code for the `store()` method is included below.
+The `store()` will take in the user input and pass the values to the `setItem()` method as parameters. As a result, these values or objects will be stored in `sessionStorage`. The code for the `store()` method is included below.
 
 ```javascript
-function store(){ //stores items in the local storage
+function store(){ //stores items in sessionStorage
     var brand = document.getElementById('carBrand').value;
     var price = document.getElementById('carPrice').value;
 
@@ -149,7 +157,7 @@ function store(){ //stores items in the local storage
 The `main.js` also has a `retrieveRecords()` function to fetch the items in the `sessionStorage`. This function is outlined below. As noted, the `getItem()` requires a key to retrieve a specific object or value.
 
 ```javascript
-function retrieveRecords(){ //retrieves items in the sessionStorage
+function retrieveRecords(){ //retrieves items in sessionStorage
         console.log("retrive records");
         var records = window.sessionStorage.getItem('car');
         var paragraph = document.createElement("p");
@@ -164,25 +172,25 @@ Just like the `getItem()`, the `removeItem()` method requires a key. In this exa
 
 ```javascript
 function removeItem(){//deletes item from sessionStorage
-        sessionStorage.removeItem('car')
+        sessionStorage.removeItem('car');
         console.log("remove items");
 }
 ```
 
-The clearStorage function will delete all items in the sessionStorage when called. Here is the required code snippet.
+The clearStorage function will delete all items in the sessionStorage when called. Here is the required code snippet:
 
 ```javascript
 function clearStorage(){ //clears the entire sessionStorage
-        sessionStorage.clear()
+        sessionStorage.clear();
         console.log("clear records");
 }
 ```
 
-Here is the entire code in the main.js file.
+Here is the entire code in the main.js file:
 
 ```javascript
 
-function store(){ //stores items in the local storage
+function store() { //stores items in the sessionStorage
     var brand = document.getElementById('carBrand').value;
     var price = document.getElementById('carPrice').value;
 
@@ -194,7 +202,8 @@ function store(){ //stores items in the local storage
     window.sessionStorage.setItem('car',JSON.stringify(car));  
     //converting object to string
 }
-function retrieveRecords(){ //retrieves items in the sessionStorage
+
+function retrieveRecords() { //retrieves items in the sessionStorage
         console.log("retrive records");
         var records = window.sessionStorage.getItem('car');
         var paragraph = document.createElement("p");
@@ -203,47 +212,56 @@ function retrieveRecords(){ //retrieves items in the sessionStorage
         var element = document.getElementById("retrieve");
         element.appendChild(paragraph);
 }
-function removeItem(){//deletes item from sessionStorage
-        sessionStorage.removeItem('car')
+
+function removeItem() {//deletes item from sessionStorage
+        sessionStorage.removeItem('car');
         console.log("remove items");
 }
 
-function clearStorage(){ //clears the entire sessionStorage
-        sessionStorage.clear()
+function clearStorage() { //clears the entire sessionStorage
+        sessionStorage.clear();
         console.log("clear records");
 }
 
-window.onload =function(){ //ensures the page is loaded before functions are executed.
-        document.getElementById("carForm").onsubmit = store
-        document.getElementById("clearButton").onclick = clearStorage
-        document.getElementById("removeButton").onclick = removeItem
-        document.getElementById("retrieveButton").onclick = retrieveRecords
+window.onload =function() { //ensures the page is loaded before functions are executed.
+        document.getElementById("carForm").onsubmit = store;
+        document.getElementById("clearButton").onclick = clearStorage;
+        document.getElementById("removeButton").onclick = removeItem;
+        document.getElementById("retrieveButton").onclick = retrieveRecords;
 }
 ```
-You can follow the code below to store a list in sessionStorage.
+
+You can follow the code below to store a list in sessionStorage:
 
 ```javascript
 
-function store(){ //stores items in the local storage
+function store() { //stores items in the local storage
     var brand = document.getElementById('carBrand').value; //retrieves value
     var price = document.getElementById('carPrice').value; //retrieve value
 
     const car = {brand: brand,price: price}
 
-    var vehicles =[car]; // adding an object to list
+    var vehicles = [car]; // adding an object to list
     window.sessionStorage.setItem('car',JSON.stringify(vehicles));  
     //converting the list to string. SessionStorage only stores values in Strings
 }
-```
-### Results
-Kindly, note that the item been stored in sessionStorage is the `car` object used in this tutorial. You can follow the video below to test the web page. 
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/bQ6R14jwMIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+
+### Results
+
+Kindly, note that the item been stored in sessionStorage is the `car` object used in this tutorial. You can follow the video below to test the web page.
+
+<iframe width="478" height="269" style="margin-bottom: 5%;" src="https://www.youtube.com/embed/bQ6R14jwMIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### When to use sessionStorage
-sessionStorage can be used to check for the user&#39;s authentication state. Users who are logged in can be redirected to the home page. Unregistered users, on the other hand, are directed to the authentication pages. SessionStorage also helps prevent certain actions. For instance, it helps barr some users from making certain purchases. Developers can also use sessionStorage to improve data safety. Once the user closes the browser tab, all their data is cleared. This makes it much difficult for third parties to gain access.
+
+sessionStorage can be used to check for the user's authentication state. Users who are logged in can be redirected to the homepage. Unregistered users, on the other hand, are directed to the authentication page.
+
+sessionStorage also helps prevent certain actions. For instance, it helps bar some users from making certain purchases. Developers can also use sessionStorage to improve data safety. Once the user closes the browser tab, all their data is cleared. This makes it much difficult for third parties to gain access.
 
 ### Conclusion
+
 By now, you understand the ins and outs of sessionStorage. You should consider using sessionStorage as an alternative to cookies. This is because it offers great flexibility.
 
 ---
