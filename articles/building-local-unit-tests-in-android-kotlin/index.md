@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/building-local-unit-tests-in-android-kotlin/
 title: Building Local Unit Tests in Android Kotlin
-description: This article shows you how to create and implement local unit tests in Android Studio using Kotlin.
+description: This article shows you how to create and implement local unit tests in Android Studio using Kotlin. The most popular library used to write these unit tests is JUnit4 and the Assert class.
 author: peter-kayere
 date: 2021-01-10T00:00:00-17:00
 topics: []
