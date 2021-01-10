@@ -67,7 +67,7 @@ By following the single responsibility principle, a class should only resolve on
 Let's take a brief look at the pseudocode implementation of the single responsibility principle. Lets say we have a factory where cars are manufactured and where cars are also painted. 
 
 Below is an illustration implementing such a feature using the single responsibility principle:
-```
+```bash
 class DatabaseManagement {
  public function store(argument1, argument2) {
  //store information to the database
@@ -134,7 +134,7 @@ Let's take a brief look at the pseudocode implementation of the single responsib
 
 The pseudocode below calculates travel and food costs during our trip in the `calculateRoadTripTotalCost()` function.
 
-```
+```bash
 class TravelCosting {
  public function calculateRoadTripTotalCost() {
  //calculate’s cost of food,trip fare and return total cost
@@ -146,7 +146,7 @@ What if the travel agency needed to change how they calculate their food cost fr
 
 The way to reimplement the pseudocode above to ensure extensibility and reusability would be:
 
-```
+```bash
 class TravelCosting {
  public function calculateFoodCost() {
  //calculate cost of food
@@ -168,7 +168,7 @@ This principle illustrates that if a section of your code is extending a supercl
 The LISKOV substitution principle analogy might seem confusing, but what it implies is that functions that use pointers of references to a base class must use the derived class objects without knowing it. The application of this principle ensures the easy integration of classes.
 
 Below is an application of this concept, but without the use of the LISKOV substitution principle:
-```
+```bash
 class CheesPiece {
  // class to create a chess piece
 }
@@ -196,7 +196,7 @@ class MoveQueenPiece {
 
 The code above has a lot of redundancy and repetition. Let's see how this is resolved by applying the LISKOV substitution principle.
 
-```
+```bash
 import Bishop
 class MoveChessPiece {
  public function moveRight(ChessPiece chessPiece){
@@ -214,7 +214,7 @@ Throughout the software development process, there is a likelihood of depending 
 
 To illustrate the application of the dependency inversion principle, we would use the car analogy of the single responsibility principle, but without the adoption of the dependency inversion principle.
 
-```
+```bash
 class MySQLDatabaseManagement {
  protected function store(argument1, argument2) {
  //store information to the database
@@ -245,7 +245,7 @@ The problem with this approach is that if you had used the MySQLDatabaseManageme
 
 Let’s solve this problem using the dependency inversion principle:
 
-```
+```bash
 interface DatabaseManagement {
  public function store();
 }
