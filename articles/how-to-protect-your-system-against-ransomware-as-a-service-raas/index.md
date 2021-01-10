@@ -36,7 +36,7 @@ Raas is a malicious franchise-like deployment model whereby deceitful vendors wr
 
 Attacks may target to take control of victim’s computer files and storage systems. Malicious actors and hackers hold these storage systems and computer files hostage and demand ransom payment to return information access to the victim. They share proceeds from successful attacks between the attacker, coder, and the service provider.
 
-### How do RaaS attacks Happen?
+### How do RaaS attacks happen?
 The phishing attack is the most common method used by cybercriminals to spread malware. Through [phishing](https://www.phishing.org/what-is-phishing#), attackers can steal sensitive data such as payment details and passwords. They make sure that their email messages seem harmless. Attackers present you with a seemingly legitimate email message with links.
 
 By clicking on a link, you unknowingly activate a cyber-attack. The link directs you to an exploit site where you download the ransomware. This ransomware infects your system, disables all antivirus software and firewalls.
@@ -61,7 +61,7 @@ Some of these preventive measures are outlined below.
 - Take training or courses on recognizing potential security threats, draft processes, and policies on how to deal with suspicious activities.
 
 ### Conclusion
-Ransomware-as-a-Service (RaaS) adds to the list of the latest driving forces of cyber-criminal activities. One must take preventive measures to address this problem and take it seriously. Affordability and the ease of deployment (among professional and novice hackers) are some primary reasons why RaaS is on the rise.
+Ransomware-as-a-Service (RaaS) adds to the list of the latest driving forces of cyber-criminal activities. One must take preventive measures to address this problem and take it seriously. Affordability and the ease of deployment (among professional and novice hackers) are some primary reasons why RaaS is on the rise.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
