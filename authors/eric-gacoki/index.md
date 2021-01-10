@@ -1,5 +1,5 @@
 ---
-title: Eric gacoki
+title: Eric Gacoki
 type: engineering-education/author
 interests: Android & Kotlin
 email: gacokieric@gmail.com
