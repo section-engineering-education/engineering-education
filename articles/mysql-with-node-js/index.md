@@ -6,7 +6,7 @@ url: /engineering-education/mysql-with-node-js/
 title: MySQL with Node.js
 description: This tutorial will explain the basics of MySQL and how to use it with Node.js
 author: joseph-chege
-date: 2021-01-08T00:00:00-11:00
+date: 2021-01-10T00:00:00-14:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -18,35 +18,30 @@ If you are new to MySQL with Node.js, this guide will help you learn the basics 
 <!--more-->
 
 ### Prerequisites
-
-To get along with this guide, you need;
+To get along with this guide, you need:
 
 - Basic knowledge of how to [write SQL queries](https://www.w3schools.com/sql/).
 
 - Basic understanding of [Node.js](https://www.w3schools.com/nodejs/nodejs_get_started.asp).
 
 ### Background
-
-MySQL is a fast and easy to use Relational Database Management System (RDBMS). A DBMS is a collection of systems that allows us to access the relational database and manipulate data. It is written in C and C++. MySQL is based on Structured Query Language (SQL) which is used to interact with relational databases.
+MySQL is a fast and easy to use Relational Database Management System (RDBMS). A DBMS is a collection of systems that allows us to access the relational database and manipulate data. It is written in C and C++. MySQL is based on Structured Query Language (SQL) that is used to interact with relational databases.
 
 Here are the reasons why you should use MySQL:
-
 - It is an open-source and scalable database and is suitable for both small and large applications.
 
 - MySQL is very powerful because it can handle large datasets.
 
-- It supports numerous operating systems and a wide list of programming languages such as JavaScript, PHP and JAVA, etc.
+- It supports numerous operating systems and a wide list of programming languages such as JavaScript, PHP, and JAVA.
 
 - It has excellent performance in terms of speed.
 
 - MySQL is secure and efficient to use.
 
 ### Setting up the MySQL server
-
 The first step to use MySQL is to setup a MySQL development server and MySQL workbench to host and manage databases.
 
-#### MySQL Windows Installation
-
+#### MySQL Windows installation
 - Download the [MySQL Installer](https://dev.mysql.com/downloads/installer/) for Windows and double click the installer file to start the installation.
 
 - Choose the setup type to install, as shown in the screenshot below.
@@ -90,8 +85,9 @@ For other operating systems, visit the MySQL [Mac](https://dev.mysql.com/doc/mys
 Other options that will work include using [WAMP](https://www.wampserver.com/en/) and [XAMPP](https://www.apachefriends.org/index.html). They both run a Database Management System (DBMS) using Apache.
 
 ### Setting up Node.js
+Since we are using Node.js, you will need it installed on your computer. 
 
-Since we are using Node.js, you need it installed on your computer. Download it [here](https://nodejs.org/en/).
+Download it [here](https://nodejs.org/en/).
 
 Once installed, create a project folder and initialize the project with `npm init -y`. Here’s a [guide](/engineering-education/beginner-guide-to-npm) that will help you to understand NPM in more detail.
 
@@ -100,7 +96,6 @@ To connect Node.js with an SQL database, you need the MySQL package installed.
 Run `npm install mysql` to install the package. Then create a `.js` file to work on, for example, `app.js`.
 
 ### Creating a connection to the MySQL server
-
 Before carrying out any database operation, you first need to create a connection to the MySQL server.
 
 In just a few steps mentioned below, you'll establish a connection to the database.
@@ -157,15 +152,14 @@ Follow [these steps](https://stackoverflow.com/questions/50093144/mysql-8-0-clie
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 ```
 
-Where `root` is the user, `localhost` is the URL and `password` is the password. In this case, the password you provided earlier will be overridden, and thus your new password will be `password`.
+Where `root` is the user, `localhost` is the URL, and `password` is the password. In this case, the password you provided earlier will be overridden, and thus your new password will be `password`.
 
 - Run `flush privileges` to refresh privileges.
 
 We need to create a database that will be queried by the connection we have created.
 
 ### Creating a database
-
-Next, we need to create a database for storing our information. To start with, create a function called `createDB()`. We will use this function to create a new database. After making a successful connection, call the function `createDB()` as shown below.
+Next, we need to create a database to store our information. To start, create a function called `createDB()`. We will use this function to create a new database. After making a successful connection, call the function `createDB()` as shown below.
 
 ```js
 let mysql = require("mysql");
@@ -215,7 +209,6 @@ database: "Company"
 ```
 
 ### Creating a table and adding rows
-
 Next, we need to add a table and rows to our database. Instead of manually creating tables and rows, let's write some code that will create a table and automatically insert some rows.
 
 A relational database comprises tables of related data. Data in a table is stored in rows and columns. Rows specify an entry recorded in a table. Columns hold data of the same kind, for example, first names.
@@ -290,7 +283,7 @@ Call `createTableOffices()` after the connection is established and run `node ap
 
 ![Create a MySQL Database Table and Rows Using Node.js](/engineering-education/mysql-with-node-js/table-and-rows-created.jpg)
 
-In the above code: we've created a table called `offices`, included several rows and an `officeCode` was set to auto-increment. Every time we insert a record in this table, the `officeCode` will auto-increment without specifying that during the data insertion.
+In the code above: we've created a table called `offices`, included several rows and an `officeCode` was set to auto-increment. Every time we insert a record in this table, the `officeCode` will auto-increment without specifying that during the data insertion.
 
 When working with relational databases, you need to specify a primary key in each table. A primary key is a unique value found in every record. The primary key forms a column in a table, and each table has only one primary key. The choice of a primary key depends on the table preference to meet the users' preferences.
 
@@ -299,7 +292,6 @@ For example, Uber drivers can uniquely be identified with their driver's license
 When executing such SQL queries, remember to set the correct data types such as integers, varchar, date, or time to enhance data consistency.
 
 ### Inserting into a database
-
 Now, we have a table and rows set, it's time to insert some data into our table. Inserting into a table involves specifying the data to insert into the rows.
 
 ```js
@@ -364,7 +356,6 @@ Go ahead and try adding more offices to the `offices` table.
 ![Add Rows into a MySQL Database Table Using Node.js](/engineering-education/mysql-with-node-js/add-more-rows.jpg)
 
 ### Fetching from a database
-
 Fetching data allows displaying data to end-users.
 
 To fetch from a database, specify a select operation while specifying the rows you want to display. Let's do that from the data we have inserted.
@@ -402,7 +393,7 @@ let sqlQuery = `SELECT * FROM offices ORDER BY officeCode DESC`;
 let sqlQuery = `SELECT * FROM offices LIMIT 3`;
 ```
 
-- And you can combine them all in one selection.
+- You can combine them all in one selection.
 
 ```js
 let sqlQuery = `SELECT officeCode, phone, state, postalCode, territory FROM offices WHERE country="USA" ORDER BY officeCode DESC LIMIT 2`;
@@ -473,7 +464,6 @@ app.listen(3000, () => {
 ```
 
 ### Making a selection from the server
-
 We have already done a couple of selects. In this example, I want the select offices base on the `officeCode`. To do this, we will create and set a route and specify the `officeCode` of the office we want to select.
 
 ```js
@@ -511,10 +501,9 @@ Open `localhost:3000/offices/1` to get the result, where `1` is the officeCode r
 We specify the `officeCode` while making a request to the server. The server returns a response equal to the request we sent. The server communicates with the database. The server will return the database results where the `officeCode` is equal to the `officeCode` we specified.
 
 ### Updating
-
 The next thing we are going to do is update or change specific values in our table.
 
-When managing data, at times, you need to change some data. With a relational database, an update command allows you to change and update specific row's values and update it with the news values.
+When managing data, at times, you may need to change some data. With a relational database, an update command allows you to change and update specific row's values and update it with the news values.
 
 Let's see that with an example.
 
@@ -540,7 +529,6 @@ Open `localhost:3000/updateoffice/1` to get the results and then open the office
 SQL uses a set command to tell a MySQL server which values to update by setting the updating values. The `SET` value is followed by a `WHERE` condition to match the record we want to update.
 
 ### Deleting
-
 Perhaps you want to delete one or multiple records in a database. The `DELETE` command is available to do this while observing some condition from where a deletion should be performed.
 
 ```js
@@ -560,14 +548,13 @@ Open `localhost:3000/deleteoffice/1` to get the results and then open the office
 ![Delete records in a MySQL Workbench Database Table Using Node.js](/engineering-education/mysql-with-node-js/office-deleted.jpg)
 
 ### Closing the connection
-
 Once the queries are executed, you need to close/terminate the connection. This ensures that all queries are executed and sends the quit packet to the MySQL server.
 
 There are a few different methods to close a MySQL database connection.
 
 - Using a `end()` function.
 
-`end()` terminates a connection when the queued queries finished executing before sending a `COM_QUIT` message to the server.
+This `end()` function terminates a connection when the queued queries finished executing before sending a `COM_QUIT` message to the server.
 
 ```js
 dbconnection.end((err) => {
@@ -586,12 +573,11 @@ dbconnection.destroy();
 ```
 
 ### Connection pooling
-
 Connection pooling is a concept that creates multiple connections to execute queries in parallel. In our examples, we've used `createConnection()`, which creates a connection once. Whenever executing another query, a connection to the server has to be established again.
 
 With `createPool()`, a new connection doesn't have to be established multiple times, as a connection is created in a pool.
 
-Connection pooling comes into play when an application has, for example, many users. Execution happens parallel. It maintains a cache of database connections for executing queries. This saves the time and resources needed to create a new connection for each user.
+Connection pooling comes into play when an application has, for example, many users. Execution happens in parallel. It maintains a cache of database connections for executing queries. This saves the time and resources needed to create a new connection for each user.
 
 Here is a basic example of connection pooling:
 
@@ -621,7 +607,6 @@ This creates multiple connections to execute the queries in parallel. A new conn
 I hope this guide helps get you started writing SQL queries and executing them within the Node.js application.
 
 ### Related Topics and Additional Resources
-
 - [Introduction to Express.js](/engineering-education/express/)
 
 - [Understanding HTTP Requests in Node.js](/engineering-education/http-requests-nodejs/)
