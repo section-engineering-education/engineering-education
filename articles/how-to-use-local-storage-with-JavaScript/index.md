@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-use-localstorage-with-javascript/
-title: How to Use localStorage with JavaScript
-description: This article will cover how to use localStorage in a browser with JavaScript.
+title: How to Use Local Storage with JavaScript
+description: This article will cover how to use local storage in a browser with JavaScript.
 author: michael-barasa
 date: 2021-01-09T00:00:00-21:00
 topics: []
@@ -12,26 +12,26 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-use-localstorage-with-javascript/hero.jpg
-    alt: How to Use localStorage with JavaScript Image
+    alt: How to Use local storage with JavaScript Image
 ---
-localStorage allows developers to store and retrieve data in the browser. The data stored in localStorage will not expire. This means the data will persist even if the tab or the browser window is closed.
+Local storage allows developers to store and retrieve data in the browser. The data stored in local storage will not expire. This means the data will persist even if the tab or the browser window is closed.
 <!--more-->
 
 ### Prerequisites
 
 You must have a basic understanding of JavaScript. You also need a code editor and browser to test the project. In this tutorial, we will be using Visual Studio Code and Google Chrome.
 
-### What is localStorage
+### What is Local Storage
 
-localStorage is a form of web storage that stores data for a long time. This could be a day, a week, or even a year. This depends upon the developer's preference. It is important to note that localStorage only stores strings so, if you wish to store objects, lists, or arrays, you must convert them into a string using `JSON.stringify().`
+local storage is a form of web storage that stores data for a long time. This could be a day, a week, or even a year. This depends upon the developer's preference. It is important to note that local storage only stores strings so, if you wish to store objects, lists, or arrays, you must convert them into a string using `JSON.stringify().`
 
-### When to Use localStorage
+### When to Use Local Storage
 
-You should only use localStorage when storing insensitive information. This is because third-party individuals can easily access the information. localStorage can help in storing temporary data before it is pushed to the server. It is important to clear the localStorage once this operation is completed.
+You should only use local storage when storing insensitive information. This is because third-party individuals can easily access the information. local storage can help in storing temporary data before it is pushed to the server. It is important to clear the local storage once this operation is completed.
 
 ### Limitations
 
-The major limitations of localStorage are:
+The major limitations of local storage are:
 
 - Insecure data.
 
@@ -39,9 +39,9 @@ The major limitations of localStorage are:
 
 - Limited storage capacity.
 
-### Main Methods in localStorage
+### Main Methods in Local Storage
 
-The primary methods when using localStorage are `key()`, `setItem()`, `removeItem()`, `getItem()`, and `clear()`.
+The primary methods when using local storage are `key()`, `setItem()`, `removeItem()`, `getItem()`, and `clear()`.
 
 #### key()
 
@@ -52,18 +52,18 @@ var answer = localStorage.key(1);
 // this statement will retrieve the value of the second item in localStorage.
 ```
 
-The `key()` can also be used in a loop statement to retrieve all the items in the localStorage.
+The `key()` can also be used in a loop statement to retrieve all the items in the local storage.
 
 #### setItem()
 
-This function is used to store items in localStorage. An example of this function is shown below.
+This function is used to store items in local storage. An example of this function is shown below.
 
 ```JavaScript
 window.localStorage.setItem("grade","One");
 //in this case, the `grade` is the key while `One` is the value.
 ```
 
-As mentioned before, we must `stringify` objects before we store them in the localStorage. An example is outlined below:
+As mentioned before, we must `stringify` objects before we store them in the local storage. An example is outlined below:
 
 ```JavaScript
 const Car = {
@@ -79,7 +79,7 @@ Failure to stringify the object will result in an error.
 
 #### getItem()
 
-This function is used to access or retrieve the data in the localStorage. The method takes in a `key` as a parameter. It then extracts the required value from the localSstorage.
+This function is used to access or retrieve the data in the local storage. The method takes in a `key` as a parameter. It then extracts the required value from the localSstorage.
 
 For example, to retrieve the above `Car` object, we will use the following statement:
 
@@ -101,7 +101,7 @@ JSON.parse(window.localStorage.getItem('car'));
 
 #### removeItem()
 
-This method is used to delete an item from localStorage. The `removeItem()` method requires a key as a parameter.
+This method is used to delete an item from local storage. The `removeItem()` method requires a key as a parameter.
 
 ```javascript
 window.localStorage.removeItem('brand');
@@ -109,7 +109,7 @@ window.localStorage.removeItem('brand');
 
 #### clear()
 
-This method is used to clear all values stored in localStorage. It does not require any parameters.
+This method is used to clear all values stored in local storage. It does not require any parameters.
 
 ```JavaScript
 window.localStorage.clear()
@@ -117,9 +117,9 @@ window.localStorage.clear()
 
 ### Project
 
-Now that we have learned about the primary functions of localStorage, let's create a web application that stores, retrieves, deletes, and clears items from localStorage.
+Now that we have learned about the primary functions of local storage, let's create a web application that stores, retrieves, deletes, and clears items from local storage.
 
-Create a new folder and open it in your code editor. Create two files, `index.html` and `main.js`. The `index.html` file will showcase the webpage to the user, while the `main.js` file will store our JavaScript functions. These functions will be used to access different functionalities of localStorage.
+Create a new folder and open it in your code editor. Create two files, `index.html` and `main.js`. The `index.html` file will showcase the webpage to the user, while the `main.js` file will store our JavaScript functions. These functions will be used to access different functionalities of local storage.
 
 ### Let's Code
 
@@ -163,7 +163,7 @@ Our `index.html` will have a `form` and several `buttons`, as shown below.
 </html>
 ```
 
-When the `submit` button is clicked, it takes the user input and passes it to the `store` function in the `main.js` file. The `document.getElementById('carBrand').value` gets the user input. These values are then passed to the car object and stored in localStorage using the `setItem` method.
+When the `submit` button is clicked, it takes the user input and passes it to the `store` function in the `main.js` file. The `document.getElementById('carBrand').value` gets the user input. These values are then passed to the car object and stored in local storage using the `setItem` method.
 
 ```JavaScript
 function store(){ //stores items in the localStorage
@@ -204,7 +204,7 @@ function retrieveRecords(){ //retrieves items in the localStorage
 }
 ```
 
-`removeButton` invokes `removeItem()`. This `method` will delete a value from the localStorage using the `removeItem` function.
+`removeButton` invokes `removeItem()`. This `method` will delete a value from the local storage using the `removeItem` function.
 
 ```JavaScript
 function removeItem(){  //deletes item from localStorage
@@ -214,7 +214,7 @@ function removeItem(){  //deletes item from localStorage
 }
 ```
 
-`clearButton` calls the `clearStorage()`. The `clear()` method is used to remove all values in the localStorage.
+`clearButton` calls the `clearStorage()`. The `clear()` method is used to remove all values in the local storage.
 
 ```JavaScript
 function clearStorage(){ /
@@ -298,7 +298,7 @@ The following video shows how the site works:
 
 #### Conclusion
 
-You are now familiar with the different functionalities of localStorage. The major methods in localStorage are `setItem`, `getItem`, `removeItem` and `clear`. A `key` is required when storing, retrieving, and removing items from the localStorage. In case, you didn't understand any concept, feel free to go through the localStorage functions again.
+You are now familiar with the different functionalities of local storage. The major methods in local storage are `setItem`, `getItem`, `removeItem` and `clear`. A `key` is required when storing, retrieving, and removing items from the local storage. In case, you didn't understand any concept, feel free to go through the local storage functions again.
 
 ### References
 
