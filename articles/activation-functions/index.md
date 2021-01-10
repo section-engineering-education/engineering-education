@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/activation-functions/hero.jpg
     alt: activation function with Python example image
 ---
-In an earlier article on [perceptron](engineering-education/perceptron-algorithm/) algorithms, we looked at the concepts of weighted sums and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
+In an earlier article on [perceptron](/engineering-education/perceptron-algorithm/) algorithms, we looked at the concepts of weighted sums and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
 <!--more-->
 
 ### Activation functions
