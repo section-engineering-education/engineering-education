@@ -363,3 +363,6 @@ Finished in 174msec
 
 ### Conclusion
 Congratulations! You've learned about and implemented a Constraint-Satisfaction Problem in MiniZinc, and solved it with Gecode. If you want to make more flexible or complex models (that you can run from the command line!), MiniZinc has several [tutorials](https://www.minizinc.org/doc-2.5.3/en/part_2_tutorial.html) for these advanced features.
+
+---
+Peer Review Contributions by: [Mike White](https://www.section.io/engineering-education/authors/mike-white/)
