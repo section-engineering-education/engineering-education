@@ -351,7 +351,7 @@ A service worker is a script that runs in the browser's background. It handles n
 // Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.unregister() 
 ```
-To opt in using the service worker, change the `serviceWorkerRegistration.unregister()` to `serviceWorkerRegistration.register()`. Workbox has helped us reduce the boilerplate needed every time when working with service workers such as installations, precaching, strategies, requests routing,  and activation. As this will always be generated for you, that resolves the part on how to create a service worker using React.
+To opt in using the service worker, change the `serviceWorkerRegistration.unregister()` to `serviceWorkerRegistration.register()`. The Workbox handles the compiling and injection of service worker [lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle) into the app's precaching list. The default precaching strategy in Workbox in the create-react-app is cache-first. The Workbox tool has helped us reduce the boilerplate needed every time when working with service workers such as installations, precaching, strategies, requests routing,  and activation. As this will always be generated for you, that resolves the part on how to create a service worker using React.
 
 ### Configuring the Web App Manifest
 I will use these default icons in the public folder. The favicon.ico, logo192.png, and logo512.png are icons that the user will see on the tab of a mobile or a desktop device.
@@ -447,6 +447,7 @@ We will need to link the manifest file to the `index.html` as `<link rel="manife
 I have used lighthouse to generate an audit report. [Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more. To test this, we need to generate the production build by running `npm run build` on the terminal. When in developement mode, a static server may be used. Install one via npm by running the command `npm install serve`. To start the static server, run the command `serve -s build` and open your browser on `http://localhost:5000`.
 
 > Note that this will not pass the HTTPS audit in the development environment. So if you need hosting, make sure the production web-server supports HTTPS.
+Try to simulating an offline experience. In your browser DevTools, in the Network tab, enable the offline checkbox and reload the app. The application should be able to work offline.
 
 Here is the final version of the App:
 The development version performance
