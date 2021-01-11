@@ -223,7 +223,7 @@ In this component:
 
 - When the submit event is fired on the form, the function `submitTodoHandler` is called. We are checking whether the input is not empty before creating a new todo using the `addTodo` function that's passed down from the `App` component.
 
-- The method `setInputText` inside the `submitTodoHandler` will reset the form.
+- We are setting the input's value to an empty string at the end of the `submitTodoHandler` function.
 
 The todo will be an object with a structure like:
 
