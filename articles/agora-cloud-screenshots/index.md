@@ -6,7 +6,7 @@ url: /engineering-education/agora-cloud-screenshots/
 title: Agora Cloud Screenshots
 description: In this tutorial, we will be building a server using Node.js and Express to start and stop capturing screenshots of video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
 author: mohan-raj
-date: 2021-06-05T00:00:00-10:00
+date: 2021-01-11T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,6 @@ images:
 ---
 In this tutorial, we will be building a server using Node.js and Express to capture screenshots of video streams that occur using the Agora SDKs in your application by using the Cloud Recording APIs.
 <!--more-->
-
 The client application that's using the Agora SDKs should request this server to capture the screenshots. Then, the server will request the Agora APIs on behalf of the client application. This will ensure that credentials for the Agora APIs are secure rather than exposing them in the app.
 
 ### Goals
@@ -48,7 +47,7 @@ Agora provides SDKs to build apps that require real-time engagement like:
 
 - Audio/Video Calls.
 
-- Interactive Livestreaming (Audio/ Video).
+- Interactive Livestreaming (Audio/Video).
 
 - Interactive Gaming.
 
@@ -61,14 +60,14 @@ If you'd like to learn more about Agora, visit their [website](https://www.agora
 ### Overview
 We'll be going through these steps in this article:
 
-1. Cloud recording vs. On-Premise recording
-2. Enabling Cloud Recording in Project management console.
-3. Acquiring Customer ID and Customer Secret for Agora APIs
-4. Setting up the server.
-5. Acquire resource ID.
-6. Start capturing screenshots.
-7. Stop capturing screenshots.
-8. Recap.
+- Cloud recording vs. On-Premise recording
+- Enabling Cloud Recording in Project management console.
+- Acquiring Customer ID and Customer Secret for Agora APIs
+- Setting up the server.
+- Acquire resource ID.
+- Start capturing screenshots.
+- Stop capturing screenshots.
+- Recap.
 
 > You can refer to the final code in this [GitHub repository](https://github.com/zolomohan/agora-cloud-capture-screenshots-express).
 
@@ -81,7 +80,7 @@ I recommend using [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/user-g
 
 [On-Premise recording](https://docs.agora.io/en/Recording/product_recording?platform=Linux) is similar to cloud recording, but you need to set up your own Linux server using the components provided by Agora to record the streams or capture screenshots.
 
-Compared with On-premise Recording, Cloud Recording is more convenient as it does not require deploying Linux servers.
+Compared with on-premise recording, cloud recording is more convenient as it does not require deploying Linux servers.
 
 If you'd like to learn more about the differences between cloud recording and on-premise recording, refer to this [FAQ answer](https://docs.agora.io/en/All/faq/onpremise_cloud).
 
@@ -112,7 +111,7 @@ Once you hit Apply, you'll see the statistics page of the cloud recording.
 
 You have successfully enabled cloud recording for your project.
 
-### Acquiring Customer ID and Customer Secret for Agora APIs
+### Acquiring customer ID and customer cecret for Agora APIs
 If you want to work with Agora's APIs, you need to acquire the customer ID and customer secret from Agora.
 
 Head to the console and click the account name on the top right corner and click on RESTful API from the dropdown.
@@ -125,7 +124,7 @@ Copy the customer ID and click on download under customer secret to get the cust
 
 ![Customer Secret](/engineering-education/agora-cloud-screenshots/customer_secret.png)
 
-For the API, We should convert the customer ID and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
+For the API, we should convert the customer ID and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
 
 ```JavaScript
 Buffer.from(string).toString('base64');
@@ -142,7 +141,6 @@ npm install axios
 It is not a good idea to add the key and the secret in the code. So, you can use environment variables. If you'd like to learn more about environment variables, refer to [this article](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786).
 
 ### Setting up the server
-
 > You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/). I'll be using [Postman](https://www.postman.com/) to make requests to this server. You can download it from [here](https://www.postman.com/downloads/).
 
 Let's install `Express` using `NPM`.
@@ -173,14 +171,13 @@ node index.js
 This server will be listening on port 3000 and when you hit the `'/'` endpoint, it'll send `"Agora Cloud Screenshots Server"`.
 
 ### Capturing screenshots
-
 We need to use the RESTful APIs in the following sequence.
 
 1. Acquire resources for capturing screenshots.
 2. Start capturing screenshots.
 3. Stop capturing screenshots.
 
-Capturing screenshots is part of Agora's cloud recording. Hence the process for capturing screenshots is very similar to recording streams. If you'd like to learn how to record streams, refer to [this article](/engineering-education/agora-cloud-recording/).
+Capturing screenshots is part of Agora's cloud recording. Hence why the process for capturing screenshots is very similar to recording streams. If you'd like to learn how to record streams, refer to [this article](/engineering-education/agora-cloud-recording/).
 
 > You can't record and take screenshots simultaneously in one session. To do both, acquire two resource IDs, one for recording and the other for capturing screenshots. Agora will charge you for both the sessions.
 
@@ -193,7 +190,6 @@ If you have set up token authentication for your Agora project, you should also 
 > At the time of writing this article, Agora cloud recording does not support user accounts yet. Make sure that the recording channel uses integer UIDs. If you'd like to learn more about user accounts, refer to [this FAQ answer](https://docs.agora.io/en/All/faq/string).
 
 ### Acquire resource ID
-
 Let's add a POST request handler for a new endpoint called `'/acquire'` to acquire the resource ID for the recorder.
 
 ```JavaScript
@@ -204,7 +200,7 @@ app.post("/acquire", (req, res) => {
 
 You need to request this endpoint `https://api.agora.io/v1/apps/{appId}/cloud_recording/acquire` to get a resource ID. The endpoint URL should contain the Agora app ID.
 
-In the body of the request, We should specify a UID for the recorder, the channel ID, and the time limit (in hours) for the cloud recording API calls. The time limit must be between 1 hour and 720 hours. The countdown starts when you start capturing screenshots. When you exceed the limit, you can no longer call other API methods.
+In the body of the request, we should specify a UID for the recorder, the channel ID, and the time limit (in hours) for the cloud recording API calls. The time limit must be between 1 hour and 720 hours. The countdown starts when you start capturing screenshots. When you exceed the limit, you can no longer call other API methods.
 
 If this request succeeds, you'll get a resource ID as the response. You need to start capturing screenshots with this resource ID within five minutes.
 
@@ -247,8 +243,7 @@ Response:
 ![Acquire Request & Response](/engineering-education/agora-cloud-screenshots/postman_acquire.png)
 
 ### Start capturing screenshots
-
-Now, Let's add a POST handler for a new endpoint called `'/start'` to start capturing screenshots.
+Now, let's add a POST handler for a new endpoint called `'/start'` to start capturing screenshots.
 
 ```JavaScript
 app.post("/start", (req, res) => {
@@ -260,7 +255,7 @@ You need to request this endpoint `https://api.agora.io/v1/apps/{appID}/cloud_re
 
 The endpoint URL must contain the `appID` and the `resourceID` (from the previous step).
 
-> There are two recording modes, [composite](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=RESTful) and [indvidual](https://docs.agora.io/en/cloud-recording/cloud_recording_individual_mode?platform=RESTful). You can't take screenshots on `composite` mode. You can only take screenshots on `indvidual` mode.
+> There are two recording modes, [composite](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=RESTful) and [indvidual](https://docs.agora.io/en/cloud-recording/cloud_recording_individual_mode?platform=RESTful). You can't take screenshots on the `composite` mode. You can only take screenshots on the `indvidual` mode.
 
 In the body of the request, we should specify the UID of the recorder, the channel ID, authentication token (if app certificate is enabled for your application), and configurations like `recordingConfig`, `storageConfig`, and `snapshotConfig`.
 
@@ -268,13 +263,13 @@ In the body of the request, we should specify the UID of the recorder, the chann
 
 - **Capture Interval**: The time interval between two successive screenshots in seconds. The minimum value is 5 and the maximum value is 3600.
 
-- **File Type**: The file format of the captured screenshots. At the time of writing this article, This field can only accept the `jpg` format. You should pass it like `["jpg"]`.
+- **File Type**: The file format of the captured screenshots. At the time of writing this article, this field can only accept the `jpg` format. You should pass it like `["jpg"]`.
 
 **Recording Config:**
 
 - **Max Idle Time**: The recorder automatically stops capturing screenshots and leaves the channel when there is no user in the channel after a period (in seconds) set by this parameter. The value range is from 5 to 2^32-1.
 
-- **Stream Types**: The type of media stream to record. Make sure you don't set Audio streams only (0) for capturing screenshots.
+- **Stream Types**: The type of media stream to record. Make sure you don't set audio streams only (0) for capturing screenshots.
 
   - **0**: Audio streams only.
 
@@ -381,8 +376,7 @@ Response:
 ![Start Request & Reponse](/engineering-education/agora-cloud-screenshots/postman_start.png)
 
 ### Stop capturing screenshots
-
-Now, Let's add a POST request handler for a new endpoint called `'/stop'` to stop capturing screenshots.
+Now, let's add a POST request handler for a new endpoint called `'/stop'` to stop capturing screenshots.
 
 ```JavaScript
 app.post("/stop", (req, res) => {
@@ -394,7 +388,7 @@ You need to send a POST request to this endpoint `https://api.agora.io/v1/apps/{
 
 The endpoint URL must contain the `appID`, the `resourceID`, and the `sid` (recording ID).
 
-In the request body, We should specify the UID of the recorder, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the upload status.
+In the request body, we should specify the UID of the recorder, the channel ID, and an empty `clientRequest` object. If the request is successful, the endpoint will respond with the resource ID, the SID, and the details about the upload status.
 
 ```JavaScript
 app.post("/stop", async (req, res) => {
@@ -422,7 +416,7 @@ The upload status can either be,
 
 - **uploaded**: All the recorded files are uploaded to the third-party cloud storage.
 
-- **backuped**: Some of the recorded files fail to upload to the third-party cloud storage and upload to Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage.
+- **backuped**: Some of the recorded files fail to upload to the third-party cloud storage and upload to the Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage.
 
 - **unknown**: Unknown status.
 
@@ -469,20 +463,19 @@ Response:
 ```
 
 ### Let's Recap
+- We learned the difference between Cloud Recording and On-Premise recording.
 
-1. We learned the difference between Cloud Recording and On-Premise recording.
+- We enabled cloud recording from the project management console.
 
-2. We enabled cloud recording from the project management console.
+- We acquired the customer ID and the customer secret from the project management console.
 
-3. We acquired the customer ID and the customer secret from the project management console.
+- We set up a simple Express server.
 
-4. We set up a simple Express server.
+- We added a POST request handler to acquire the resource ID for the recording session.
 
-5. We added a POST request handler to acquire the resource ID for the recording session.
+- We added a POST request handler to start capturing the screenshots. We learned about all the parameters that we need to pass to start capturing screenshots.
 
-6. We added a POST request handler to start capturing the screenshots. We learned about all the parameters that we need to pass to start capturing screenshots.
-
-7. We added a POST request handler to stop capturing the screenshots.
+- We added a POST request handler to stop capturing the screenshots.
 
 Congratulations, :partying_face: You did it.
 
