@@ -197,7 +197,7 @@ const Form =({addTodo})=>{
     const submitTodoHandler=(e)=>{
         e.preventDefault();
         if(inputText){
-          addTodo({text:inputText,completed:false,id:uuidv4()});
+          addTodo({text:inputText, completed:false, id:uuidv4()});
         } 
         setInputText("");
     }
@@ -229,9 +229,9 @@ The todo will be an object with a structure like:
 
 ```javascript
 {
-  id:v4(),
-  task,
-  complete:false
+  id: v4(),
+  task: inputText,
+  complete: false
 }
 ```  
 
